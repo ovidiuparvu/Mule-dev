@@ -1,0 +1,2 @@
+set object OBJ_INDEX circle center screen 0.5, 0.5, 0 size screen OBJ_END_RADIUS arc [OBJ_START_ANGLE:OBJ_END_ANGLE] 
+set object OBJ_INDEX back fillcolor palette frac OBJ_CONCENTRATION fillstyle solid 1.00 noborder

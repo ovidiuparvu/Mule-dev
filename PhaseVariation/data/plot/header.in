@@ -1,0 +1,20 @@
+# Output preferences
+set terminal pngcairo background "#FFFFFF" font "Arial" fontscale 3 size 2048, 1572
+set output 'OUTPUT_FILENAME.png'
+
+# Set the environment for using colorbox
+set pm3d implicit at s
+
+# Colorbox options
+set style line 1234 linetype -1 linewidth 1
+set colorbox border 1234
+set cbrange [0:1]
+set cblabel "Concentrations"
+
+# Unset unnecessary elements
+unset border
+unset key
+set   noxtics
+set   noytics
+
+# Plot the objects

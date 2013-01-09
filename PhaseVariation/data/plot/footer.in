@@ -1,0 +1,6 @@
+
+# Set a very small range for the y values
+set yrange [0.0000 : 0.00000001]
+
+# Plot just in order for the objects to be visible
+plot 1
