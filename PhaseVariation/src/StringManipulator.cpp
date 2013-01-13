@@ -61,11 +61,9 @@ string StringManipulator::toString(double number) {
 }
 
 // Split a string and return all tokens as a new vector
-vector<string>& StringManipulator::split(string initialString,
+vector<string> StringManipulator::split(string initialString,
 										 string delimiter) {
 	vector<string> tokens;
 
-	boost::split(tokens, initialString, boost::is_any_of(delimiter));
-
-	return tokens;
+	return boost::split(tokens, initialString, boost::is_any_of(delimiter));
 }

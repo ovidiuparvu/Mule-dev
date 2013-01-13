@@ -90,7 +90,7 @@ vector<double>& CsvToInputFilesConverter::splitLineInConcentrations(string line)
 
 	vector<string> tokens = StringManipulator::split(line, INPUT_FILE_SEPARATOR);
 
-	int concentrationsIndex = 0;
+	concentrationsIndex = 0;
 
 	circlesIterator.reset();
 
@@ -99,18 +99,46 @@ vector<double>& CsvToInputFilesConverter::splitLineInConcentrations(string line)
 
 		sectorsIterator.reset();
 
-		while (sectorsIterator.hasNext()) {
-			unsigned int sectorIndex = sectorsIterator.number();
-
-			double concentration = computeNextPositionConcentration(circleIndex,
-					                                                concentrationsIndex++,
-					                                                tokens);
-
-			concentrations[((circleIndex - 1) * nrOfSectors) + (sectorIndex - 1)] = concentration;
+		if (circleIndex == 1) {
+			splitFirstLineInConcentrations(concentrations, tokens, circleIndex);
+		} else {
+			splitOtherLinesInConcentrations(concentrations, tokens, circleIndex);
 		}
 	}
 
 	return concentrations;
+}
+
+// Split the first line into concentrations
+void CsvToInputFilesConverter::splitFirstLineInConcentrations(vector<double>& concentrations,
+		                                                      vector<string>& tokens,
+		 	 	 	 	 	 	 	 	 	 	 	 	 	  unsigned int circleIndex) {
+	unsigned int sectorIndex = sectorsIterator.number();
+
+	double concentration = computeNextPositionConcentration(circleIndex,
+															concentrationsIndex,
+															tokens);
+
+	concentrations[((circleIndex - 1) * nrOfSectors) + (sectorIndex - 1)] = concentration;
+
+	concentrationsIndex++;
+}
+
+// Split the first line into concentrations
+void CsvToInputFilesConverter::splitOtherLinesInConcentrations(vector<double>& concentrations,
+		                                                      vector<string>& tokens,
+		 	 	 	 	 	 	 	 	 	 	 	 	 	  unsigned int circleIndex) {
+	while (sectorsIterator.hasNext()) {
+		unsigned int sectorIndex = sectorsIterator.number();
+
+		double concentration = computeNextPositionConcentration(circleIndex,
+																concentrationsIndex,
+																tokens);
+
+		concentrations[((circleIndex - 1) * nrOfSectors) + (sectorIndex - 1)] = concentration;
+
+		concentrationsIndex++;
+	}
 }
 
 // Compute the concentration of the next position

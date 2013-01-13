@@ -19,6 +19,8 @@ namespace multiscale {
 		vector<unsigned char> upperBoundDigits;
 		vector<unsigned char> currentNumberDigits;
 
+		bool isInitialised;
+
 	public:
 
 		LexicographicNumberIterator(unsigned int upperBound);

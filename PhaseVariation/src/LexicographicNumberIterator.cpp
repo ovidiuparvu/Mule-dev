@@ -21,6 +21,12 @@ LexicographicNumberIterator::~LexicographicNumberIterator() {
 
 // Check if there is a next number
 bool LexicographicNumberIterator::hasNext() {
+	if (!isInitialised) {
+		isInitialised = true;
+
+		return true;
+	}
+
 	unsigned char lastDigit = currentNumberDigits.back();
 
 	if (((lastDigit + 1) <= 9) && (!isLargerThanUpperBound(lastDigit + 1))) {
@@ -43,6 +49,7 @@ unsigned int LexicographicNumberIterator::number() {
 
 // Reset the value of the current number to uninitialised
 void LexicographicNumberIterator::reset() {
+	currentNumberDigits.clear();
 	currentNumberDigits.push_back(1);
 
 	int nrOfDigits = upperBoundDigits.size();
@@ -50,6 +57,8 @@ void LexicographicNumberIterator::reset() {
 	for (int i = 1; i < nrOfDigits; i++) {
 		currentNumberDigits.push_back(0);
 	}
+
+	isInitialised = false;
 }
 
 // Convert the number to a vector of digits

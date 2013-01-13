@@ -30,6 +30,8 @@ namespace multiscale {
 		unsigned int nrOfSectors;
 		unsigned int nrOfConcentrationsForPosition;
 
+		unsigned int concentrationsIndex;
+
 		LexicographicNumberIterator circlesIterator;
 		LexicographicNumberIterator sectorsIterator;
 
@@ -50,6 +52,12 @@ namespace multiscale {
 		void	 		initOutputFile					(ofstream& fout, unsigned int index);
 		void	  		processLine						(string line, unsigned int outputIndex);
 		vector<double>&	splitLineInConcentrations		(string line);
+		void			splitFirstLineInConcentrations  (vector<double>& concentrations,
+														 vector<string>& tokens,
+														 unsigned int circleIndex);
+		void			splitOtherLinesInConcentrations (vector<double>& concentrations,
+														 vector<string>& tokens,
+														 unsigned int circleIndex);
 		double	  		computeNextPositionConcentration(unsigned int circleIndex,
 				                                         int concentrationIndex,
 				                                         vector<string>& tokens);

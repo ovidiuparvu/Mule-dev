@@ -20,7 +20,7 @@ namespace multiscale {
 		static string 			toString		  (int number);
 		static string 			toString		  (unsigned int number);
 		static string 			toString		  (double number);
-		static vector<string>&	split			  (string initialString,
+		static vector<string> 	split			  (string initialString,
 												   string delimiter);
 
 	};
