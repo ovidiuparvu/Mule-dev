@@ -32,6 +32,7 @@
  * The script will generate the gnuplot script corresponding to the input file.
  *
  * GNUPLOT version: 4.6
+ * BOOST version: 1.52.0
  *
  * Author: Ovidiu Parvu
  * Date created: 21.12.2012
@@ -55,12 +56,12 @@ namespace po = boost::program_options;
 // Initialise the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description usageDescription, int argc, char** argv) {
 	usageDescription.add_options()("help,h", "display help message\n")
-			("input-file,i", po::value<string>(), "provide the path to the input file\n")
-			("output-file,o",po::value<string>(), "provide the path of the output file (without extension)\n")
-			("output-type,t", po::value<int>()->default_value(0), "Specify the type of the output:\n"
-																"\t 0 - output as script.\n"
-																"\t 1 - output as file.\n\n"
-																"Remark: Output is implicitly script.");
+						          ("input-file,i", po::value<string>(), "provide the path to the input file\n")
+						          ("output-file,o",po::value<string>(), "provide the path of the output file (without extension)\n")
+						          ("output-type,t", po::value<int>()->default_value(0), "Specify the type of the output:\n"
+																					    "\t 0 - output as script.\n"
+																						"\t 1 - output as file.\n\n"
+																						"Remark: Output is implicitly script.");
 
 	po::variables_map vm;
 	po::store(po::parse_command_line(argc, argv, usageDescription), vm);
