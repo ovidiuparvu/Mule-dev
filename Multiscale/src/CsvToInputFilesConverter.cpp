@@ -61,7 +61,8 @@ void CsvToInputFilesConverter::initInputFile(ifstream& fin) {
 // Initialise the output file
 void CsvToInputFilesConverter::initOutputFile(ofstream& fout, unsigned int index) {
 	fout.open(((outputFilepath + OUTPUT_FILE_SEPARATOR) +
-		        StringManipulator::toString(index)).c_str(),
+		        StringManipulator::toString(index) +
+		        OUTPUT_EXTENSION).c_str(),
 	            ios_base::trunc);
 
 	assert(fout.is_open());

@@ -21,7 +21,7 @@ IMG_FOLDER=${OUT_FOLDER}/img
 #   4. The number of sectors (D2)
 if [ $# -ne 4 ]; 
 then
-    echo "You have to provide the path to the .csv file, the number of concentric circles and the number of sectors as parameters.";
+    echo "You have to provide the path to the .csv file, the number of concentrations for each position, the number of concentric circles and the number of sectors as parameters.";
 
     exit 1;
 fi
@@ -34,10 +34,8 @@ nrOfSectors=$4;
 
 # Get the basename of the file, the filename and the extension
 csvFileBasename=`basename ${csvFile}`;
-csvFilename="${filename##*.}";
+csvFilename=${csvFileBasename%.*};
 csvExtension=$([[ "$csvFileBaseName" = *.* ]] && echo ".${csvFileBasename##*.}" || echo '');
-
-# TODO: Validate input
 
 # Create a folder name for this execution according to time
 folderName=`date +"%F-%T"`;
@@ -49,11 +47,11 @@ mkdir ${MOVIE_FOLDER}/${folderName}
 mkdir ${IMG_FOLDER}/${folderName}
 
 # Copy the part of the csv file with necessary information to its corresponding input folder
-sed 's/[;,:\t ]/,/g' <${csvFile} | cut -d "," -f 2- | head -n-1 ${csvFile} > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
+sed 's/[;,:\t ]/,/g' <${csvFile} | cut -d "," -f 2- | tail -n +2 > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
 
 # Run the program for converting the ".csv" file to N*M input files
 # for the MapCartesianToPolar program
-bin/MapCsvToInputFiles --input-file "../${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --nr-concentric-circles $nrOfConcentricCircles --nr-sectors $nrOfSectors --output-file "../${INPUT_FOLDER}/${folderName}/${csvFilename}"
+bin/MapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --nr-concentric-circles $nrOfConcentricCircles --nr-sectors $nrOfSectors --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}"
 
 # TODO: Continue
 
