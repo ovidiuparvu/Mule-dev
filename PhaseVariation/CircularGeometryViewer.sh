@@ -49,7 +49,7 @@ mkdir ${MOVIE_FOLDER}/${folderName}
 mkdir ${IMG_FOLDER}/${folderName}
 
 # Copy the part of the csv file with necessary information to its corresponding input folder
-sed 's/[;,:\t]/,/g' <${csvFile} | cut -d "," -f 2- | head -n-1 ${csvFile} > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
+sed 's/[;,:\t ]/,/g' <${csvFile} | cut -d "," -f 2- | head -n-1 ${csvFile} > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
 
 # Run the program for converting the ".csv" file to N*M input files
 # for the MapCartesianToPolar program
@@ -60,4 +60,4 @@ bin/MapCsvToInputFiles --input-file "../${INPUT_FOLDER}/${folderName}/${csvFileB
 
 
 
-avconv -r ${MOVIE_FRAME_RATE} -f image2 -i mapcart2pol_%d.png ../movie/output.avi
+# avconv -r ${MOVIE_FRAME_RATE} -f image2 -i mapcart2pol_%d.png ../movie/output.avi
