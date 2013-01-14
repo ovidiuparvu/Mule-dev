@@ -2,8 +2,9 @@
 #include "../include/StringManipulator.hpp"
 
 #include <cassert>
-#include <fstream>
 #include <cstdlib>
+#include <fstream>
+#include <limits>
 
 using namespace multiscale;
 using namespace std;
@@ -41,7 +42,10 @@ void CsvToInputFilesConverter::convert() {
 	while (!fin.eof()) {
 		getline(fin, currentLine);
 
-		processLine(currentLine, index++);
+		// Consider processing the line only if it has content
+		if (!currentLine.empty()) {
+			processLine(currentLine, index++);
+		}
 	}
 
 	fin.close();
@@ -85,7 +89,7 @@ void CsvToInputFilesConverter::processLine(string line, unsigned int outputIndex
 }
 
 // Split the line in concentrations
-vector<double>& CsvToInputFilesConverter::splitLineInConcentrations(string line) {
+vector<double> CsvToInputFilesConverter::splitLineInConcentrations(string line) {
 	vector<double> concentrations((nrOfSectors * (nrOfConcentricCircles - 1)) + 1);
 
 	vector<string> tokens = StringManipulator::split(line, INPUT_FILE_SEPARATOR);
@@ -135,7 +139,7 @@ void CsvToInputFilesConverter::splitOtherLinesInConcentrations(vector<double>& c
 																concentrationsIndex,
 																tokens);
 
-		concentrations[((circleIndex - 1) * nrOfSectors) + (sectorIndex - 1)] = concentration;
+		concentrations[((circleIndex - 2) * nrOfSectors) + sectorIndex] = concentration;
 
 		concentrationsIndex++;
 	}
@@ -146,25 +150,28 @@ double CsvToInputFilesConverter::computeNextPositionConcentration(unsigned int c
         														  int concentrationIndex,
         														  vector<string>& tokens) {
 	// Read the first concentration
-	double firstConcentration = atof(tokens[(nrOfConcentrationsForPosition * concentrationIndex)].c_str());
+	double concentration = atof(tokens[(nrOfConcentrationsForPosition * concentrationIndex)].c_str());
 
-	if (firstConcentration < 0) throw ERR_NEG_CONCENTRATION;
+	if (concentration < 0) throw ERR_NEG_CONCENTRATION;
 
-	double totalConcentration = firstConcentration;
+	double totalConcentration = concentration;
 
 	// Read the other concentrations if they exist
 	for (int i = 1; i < nrOfConcentrationsForPosition; i++) {
-		double concentration = atof(tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i].c_str());
+		double tmpConcentration = atof(tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i].c_str());
 
-		if (concentration < 0) throw ERR_NEG_CONCENTRATION;
+		if (tmpConcentration < 0) throw ERR_NEG_CONCENTRATION;
 
-		totalConcentration += concentration;
+		totalConcentration += tmpConcentration;
 	}
 
 	// Return concentration from file / area of circular segment
 	if (nrOfConcentrationsForPosition == 1) {
-		return ((firstConcentration * nrOfSectors) / (circleIndex * circleIndex * PI));
+		concentration = ((concentration * nrOfSectors) / (circleIndex * circleIndex * PI));
 	} else {
-		return (((firstConcentration/totalConcentration) * nrOfSectors) / (circleIndex * circleIndex * PI));
+		concentration = (((concentration/totalConcentration) * nrOfSectors) / (circleIndex * circleIndex * PI));
 	}
+
+	// Normalise the value
+	return (concentration / numeric_limits<double>::max());
 }

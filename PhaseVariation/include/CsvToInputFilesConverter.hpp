@@ -51,7 +51,7 @@ namespace multiscale {
 		void 			initInputFile					(ifstream& fin);
 		void	 		initOutputFile					(ofstream& fout, unsigned int index);
 		void	  		processLine						(string line, unsigned int outputIndex);
-		vector<double>&	splitLineInConcentrations		(string line);
+		vector<double> 	splitLineInConcentrations		(string line);
 		void			splitFirstLineInConcentrations  (vector<double>& concentrations,
 														 vector<string>& tokens,
 														 unsigned int circleIndex);
