@@ -11,7 +11,7 @@
 #define OUTPUT_FILE_SEPARATOR	"_"
 #define INPUT_FILE_SEPARATOR	","
 
-#define PI						3.141592
+#define RADIUS_MIN				1
 
 #define ERR_NEG_CONCENTRATION   "All concentrations must be non-negative.";
 
@@ -32,6 +32,8 @@ namespace multiscale {
 
 		unsigned int concentrationsIndex;
 
+		double maximumConcentration;
+
 		LexicographicNumberIterator circlesIterator;
 		LexicographicNumberIterator sectorsIterator;
 
@@ -49,6 +51,7 @@ namespace multiscale {
 	private:
 
 		void 			initInputFile					(ifstream& fin);
+		void			initMaximumConcentration		(ifstream& fin);
 		void	 		initOutputFile					(ofstream& fout, unsigned int index);
 		void	  		processLine						(string line, unsigned int outputIndex);
 		vector<double> 	splitLineInConcentrations		(string line);
@@ -61,7 +64,7 @@ namespace multiscale {
 		double	  		computeNextPositionConcentration(unsigned int circleIndex,
 				                                         int concentrationIndex,
 				                                         vector<string>& tokens);
-
+		void			updateMaximumConcentration		(string& line);
 
 	};
 

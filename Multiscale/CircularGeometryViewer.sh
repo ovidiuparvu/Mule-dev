@@ -47,7 +47,7 @@ mkdir ${MOVIE_FOLDER}/${folderName}
 mkdir ${IMG_FOLDER}/${folderName}
 
 # Copy the part of the csv file with necessary information to its corresponding input folder
-sed 's/[;,:\t ]/,/g' <${csvFile} | cut -d "," -f 2- | tail -n +2 > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
+sed 's/[;,:\t ]+/,/g' <${csvFile} | cut -d "," -f 2- | tail -n +2 > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
 
 # Run the program for converting the ".csv" file to N*M input files
 # for the MapCartesianToPolar program

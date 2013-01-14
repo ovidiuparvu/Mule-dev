@@ -19,9 +19,12 @@ CsvToInputFilesConverter::CsvToInputFilesConverter(string inputFilepath,
 												   sectorsIterator(nrOfSectors) {
 	this->inputFilepath					= inputFilepath;
 	this->outputFilepath 				= outputFilepath;
+
 	this->nrOfConcentricCircles 		= nrOfConcentricCircles;
 	this->nrOfSectors 					= nrOfSectors;
 	this->nrOfConcentrationsForPosition = nrOfConcentrationsForPosition;
+
+	this->maximumConcentration = numeric_limits<double>::min();
 }
 
 // Destructor for the class
@@ -33,6 +36,7 @@ CsvToInputFilesConverter::~CsvToInputFilesConverter() {
 void CsvToInputFilesConverter::convert() {
 	ifstream fin;
 
+	initMaximumConcentration(fin);
 	initInputFile(fin);
 
 	string currentLine;
@@ -56,6 +60,23 @@ void CsvToInputFilesConverter::initInputFile(ifstream& fin) {
 	fin.open(inputFilepath.c_str(), ios_base::in);
 
 	assert(fin.is_open());
+}
+
+// Initialise the maximum concentration value
+void CsvToInputFilesConverter::initMaximumConcentration(ifstream& fin) {
+	fin.open(inputFilepath.c_str(), ios_base::in);
+
+	assert(fin.is_open());
+
+	string currentLine;
+
+	while (!fin.eof()) {
+		getline(fin, currentLine);
+
+		updateMaximumConcentration(currentLine);
+	}
+
+	fin.close();
 }
 
 // Initialise the output file
@@ -166,13 +187,26 @@ double CsvToInputFilesConverter::computeNextPositionConcentration(unsigned int c
 		totalConcentration += tmpConcentration;
 	}
 
-	// Return concentration from file / area of circular segment
+	// Return normalised concentration
 	if (nrOfConcentrationsForPosition == 1) {
-		concentration = ((concentration * nrOfSectors) / (circleIndex * circleIndex * PI));
+		return ((concentration * RADIUS_MIN * RADIUS_MIN) /
+				(maximumConcentration * circleIndex * circleIndex));
 	} else {
-		concentration = (((concentration/totalConcentration) * nrOfSectors) / (circleIndex * circleIndex * PI));
+		return (((concentration/totalConcentration) * RADIUS_MIN * RADIUS_MIN) /
+                 (maximumConcentration * circleIndex * circleIndex));
 	}
+}
 
-	// Normalise the value
-	return (concentration / numeric_limits<double>::max());
+// Update the maximum value if any of the concentrations from the
+// provided string are greater than it
+void CsvToInputFilesConverter::updateMaximumConcentration(string& currentLine) {
+	vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
+
+	for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
+		double concentration = atof((*it).c_str());
+
+		if (concentration > maximumConcentration) {
+			maximumConcentration = concentration;
+		}
+	}
 }
