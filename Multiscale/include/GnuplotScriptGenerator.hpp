@@ -22,7 +22,7 @@ using namespace std;
 
 #define GNUPLOT_EXTENSION				".plt"
 
-// Class for generating a Gnuplot script from the provided annularsectors
+// Class for generating a Gnuplot script from the provided annular sectors
 
 namespace multiscale {
 
