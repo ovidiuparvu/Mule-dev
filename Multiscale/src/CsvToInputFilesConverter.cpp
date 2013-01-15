@@ -102,11 +102,11 @@ void CsvToInputFilesConverter::processLine(string line, unsigned int outputIndex
 	fout << concentrations[0] << endl;
 
 	for (int i = 1; i < nrOfConcentricCircles; i++) {
-		for (int j = 0; j < nrOfSectors; j++) {
+		for (int j = 0; j < (nrOfSectors - 1); j++) {
 			fout << concentrations[(i - 1) * nrOfSectors + j + 1] << OUTPUT_SEPARATOR;
 		}
 
-		fout << endl;
+		fout << concentrations[i * nrOfSectors] << endl;
 	}
 }
 

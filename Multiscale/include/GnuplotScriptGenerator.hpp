@@ -6,9 +6,9 @@
 
 using namespace std;
 
-#define HEADER_IN						"../data/plot/header.in"
-#define CONTENT_IN						"../data/plot/content.in"
-#define FOOTER_IN						"../data/plot/footer.in"
+#define HEADER_IN						"data/plot/header.in"
+#define CONTENT_IN						"data/plot/content.in"
+#define FOOTER_IN						"data/plot/footer.in"
 
 #define LINE_BUF_SIZE					1024
 

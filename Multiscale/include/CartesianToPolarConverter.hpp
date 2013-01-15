@@ -1,7 +1,7 @@
 #ifndef CARTESIANTOPOLARCONVERTER_HPP_
 #define CARTESIANTOPOLARCONVERTER_HPP_
 
-#include "CircularSegment.hpp"
+#include "AnnularSector.hpp"
 
 #include <string>
 #include <vector>
@@ -17,7 +17,7 @@ using namespace std;
 #define RADIUS_MIN				0.001
 #define RADIUS_MAX				0.3
 
-// Class for converting from grid cells to circular segments
+// Class for converting from grid cells to annular sectors
 
 namespace multiscale {
 
