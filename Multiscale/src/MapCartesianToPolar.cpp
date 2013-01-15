@@ -24,7 +24,7 @@
  * in the grid. Each concentration has a value between 0 and 1.
  *
  * FORMAT OF OUTPUT FILE:
- * Each line corresponds to a circular segment and contains information about the
+ * Each line corresponds to an annular sector and contains information about the
  * starting radius, ending radius, starting angle, ending angle and the concentration
  * of bacteria. 
  *

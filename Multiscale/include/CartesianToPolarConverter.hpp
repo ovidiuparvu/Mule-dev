@@ -25,7 +25,7 @@ namespace multiscale {
 
 	private:
 
-    	vector<CircularSegment> circularSegments;
+    	vector<AnnularSector>   annularSectors;
     	vector<double>			concentrations;
 
     	unsigned long nrOfConcentricCircles;
@@ -46,7 +46,7 @@ namespace multiscale {
 		void readInputData				() throw (string);
 		void readHeaderLine				(ifstream& fin) throw (string);
 		void readConcentrations			(ifstream& fin) throw (string);
-		void transformToCircularSegments();
+		void transformToAnnularSectors  ();
 		void outputResultsAsFile		();
 		void outputResultsAsScript		();
 

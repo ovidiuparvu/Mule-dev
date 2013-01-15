@@ -1,15 +1,15 @@
-#ifndef CIRCULARSEGMENT_HPP_
-#define CIRCULARSEGMENT_HPP_
+#ifndef ANNULARSECTOR_HPP_
+#define ANNULARSECTOR_HPP_
 
 #include <string>
 
 using namespace std;
 
-// Class for defining a circular segment (sector of circular disc)
+// Class for defining an annular sector
 
 namespace multiscale {
 
-    class CircularSegment {
+    class AnnularSector {
 
 	private:
 
@@ -21,8 +21,8 @@ namespace multiscale {
 
 	public:
 
-		CircularSegment ();
-		~CircularSegment();
+		AnnularSector ();
+		~AnnularSector();
 
 		void   initialise(double startingRadius, double endingRadius,
 				          double startingAngle,  double endingAngle, double concentration);

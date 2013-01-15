@@ -1,7 +1,7 @@
 #ifndef GNUPLOTSCRIPTGENERATOR_HPP_
 #define GNUPLOTSCRIPTGENERATOR_HPP_
 
-#include "CircularSegment.hpp"
+#include "AnnularSector.hpp"
 #include <vector>
 
 using namespace std;
@@ -22,25 +22,25 @@ using namespace std;
 
 #define GNUPLOT_EXTENSION				".plt"
 
-// Class for generating a Gnuplot script from the provided circular segments
+// Class for generating a Gnuplot script from the provided annularsectors
 
 namespace multiscale {
 
 	class GnuplotScriptGenerator {
 
 	public:
-		static void generateScript(vector<CircularSegment>& circularSegments,
+		static void generateScript(vector<AnnularSector>& annularSectors,
 				            	   string outputFilename) throw (string);
 
 
 	private:
 		static void 	 generateHeader		(ofstream& fout, string outputFilename);
-		static void 	 generateBody  		(vector<CircularSegment>& circularSegments,
+		static void 	 generateBody  		(vector<AnnularSector>& annularSectors,
 											 ofstream& fout);
 		static void 	 generateFooter		(ofstream& fout);
 		static void		 outputHeader  		(ifstream& fin, string outputFilename,
 									    	 ofstream& fout);
-		static void		 outputContent		(vector<CircularSegment>& circularSegments,
+		static void		 outputContent		(vector<AnnularSector>& annularSectors,
 		 	 	 	 	 	 	 	 	 	 string& contentTemplate,
 		 	 	 	 	 	 	 	 	 	 ofstream& fout);
 		static void		outputFooter		(ifstream& fin, ofstream& fout);

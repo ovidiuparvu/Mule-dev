@@ -25,10 +25,10 @@ CartesianToPolarConverter::~CartesianToPolarConverter() {
 	// Do nothing
 }
 
-// Convert the cell from the grid to circular segments
+// Convert the cell from the grid to annular sectors
 void CartesianToPolarConverter::convert(bool outputToScript) {
 	readInputData();
-	transformToCircularSegments();
+	transformToAnnularSectors();
 
 	if (outputToScript) {
 		outputResultsAsScript();
@@ -86,21 +86,21 @@ void CartesianToPolarConverter::readConcentrations(ifstream& fin) throw (string)
 	}
 }
 
-// Transform the cells of the grid into circular segments
-void CartesianToPolarConverter::transformToCircularSegments() {
+// Transform the cells of the grid into annular sectors
+void CartesianToPolarConverter::transformToAnnularSectors() {
 	int nrOfConcentrations = ((nrOfConcentricCircles - 1) * nrOfSectors) + 1;
 
-	circularSegments.resize(nrOfConcentrations);
+	annularSectors.resize(nrOfConcentrations);
 
-	// Tranform the cell of the grid to the circular segment corresponding
+	// Tranform the cell of the grid to the annular sector corresponding
 	// to the circle of radius 0
-	(circularSegments.at(0)).initialise(0.0, RADIUS_MIN, 0.0, 360.0, concentrations.at(0));
+	(annularSectors.at(0)).initialise(0.0, RADIUS_MIN, 0.0, 360.0, concentrations.at(0));
 
 	// Define the constants
 	double angle     = 360 / nrOfSectors;
 	int    maxRadius = (nrOfConcentricCircles - 1);
 
-	// Transform the rest of the grid to circular segments
+	// Transform the rest of the grid to annular sectors
 	for (int i = 1; i < nrOfConcentrations; i++) {
 		int row = (i - 1) / nrOfSectors;
 		int col = (i - 1) % nrOfSectors;
@@ -108,21 +108,21 @@ void CartesianToPolarConverter::transformToCircularSegments() {
 		double startRadius = NumericRangeManipulator::convertFromRange(0, maxRadius, RADIUS_MIN, RADIUS_MAX, row);
 		double endRadius   = NumericRangeManipulator::convertFromRange(0, maxRadius, RADIUS_MIN, RADIUS_MAX, row + 1);
 
-		(circularSegments.at(i)).initialise(startRadius, endRadius, col * angle, (col + 1) * angle, concentrations.at(i));
+		(annularSectors.at(i)).initialise(startRadius, endRadius, col * angle, (col + 1) * angle, concentrations.at(i));
 	}
 }
 
 // Output the results as a text file
 void CartesianToPolarConverter::outputResultsAsFile() {
-	int nrOfCircularSegments = circularSegments.size();
+	int nrOfAnnularSectors = annularSectors.size();
 
 	ofstream fout((outputFilepath.append(OUTPUT_FILE_EXTENSION)).c_str(), ios_base::trunc);
 
 	assert(fout.is_open());
 
-	// Output the information of the circular segments
-	for (int i = 0; i < nrOfCircularSegments; i++) {
-		fout << (circularSegments.at(i)).toString() << endl;
+	// Output the information of the annular sectors
+	for (int i = 0; i < nrOfAnnularSectors; i++) {
+		fout << (annularSectors.at(i)).toString() << endl;
 	}
 
 	fout.close();
@@ -130,5 +130,5 @@ void CartesianToPolarConverter::outputResultsAsFile() {
 
 // Output the results as a gnuplot script
 void CartesianToPolarConverter::outputResultsAsScript() {
-	GnuplotScriptGenerator::generateScript(circularSegments, outputFilepath);
+	GnuplotScriptGenerator::generateScript(annularSectors, outputFilepath);
 }

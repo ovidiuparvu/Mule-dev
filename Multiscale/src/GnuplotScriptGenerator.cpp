@@ -12,16 +12,16 @@ using namespace multiscale;
 using namespace std;
 
 
-// Using the circular segments generate the corresponding gnuplot script in the
+// Using the annular sectors generate the corresponding gnuplot script in the
 // output file
-void GnuplotScriptGenerator::generateScript(vector<CircularSegment>& circularSegments,
+void GnuplotScriptGenerator::generateScript(vector<AnnularSector>& annularSectors,
 		                                    string outputFilepath) throw (string) {
 	ofstream fout((outputFilepath + GNUPLOT_EXTENSION).c_str(), std::ios_base::trunc);
 
 	assert(fout.is_open());
 
 	generateHeader(fout, outputFilepath);
-	generateBody  (circularSegments, fout);
+	generateBody  (annularSectors, fout);
 	generateFooter(fout);
 
 	fout.close();
@@ -41,7 +41,7 @@ void GnuplotScriptGenerator::generateHeader(ofstream& fout, string outputFilepat
 }
 
 // Generate the body of the script
-void GnuplotScriptGenerator::generateBody(vector<CircularSegment>& circularSegments,
+void GnuplotScriptGenerator::generateBody(vector<AnnularSector>& annularSectors,
 										  ofstream& fout) {
 	ifstream fin(CONTENT_IN);
 
@@ -49,7 +49,7 @@ void GnuplotScriptGenerator::generateBody(vector<CircularSegment>& circularSegme
 
 	string contentTemplate = readContentTemplate(fin);
 
-	outputContent(circularSegments, contentTemplate, fout);
+	outputContent(annularSectors, contentTemplate, fout);
 
 	fin.close();
 }
@@ -77,10 +77,10 @@ void GnuplotScriptGenerator::outputHeader(ifstream& fin, string outputFilename, 
 }
 
 // Output the content of the script
-void GnuplotScriptGenerator::outputContent(vector<CircularSegment>& circularSegments, string& contentTemplate, ofstream& fout) {
-	int index = circularSegments.size();
+void GnuplotScriptGenerator::outputContent(vector<AnnularSector>& annularSectors, string& contentTemplate, ofstream& fout) {
+	int index = annularSectors.size();
 
-	for (vector<CircularSegment>::iterator it = circularSegments.begin(); it != circularSegments.end(); it++) {
+	for (vector<AnnularSector>::iterator it = annularSectors.begin(); it != annularSectors.end(); it++) {
 		string content = contentTemplate;
 
 		content = StringManipulator::replace(content, REPLACE_CONTENT_INDEX, StringManipulator::toString(index--));
