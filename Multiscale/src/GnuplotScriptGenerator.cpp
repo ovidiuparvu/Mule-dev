@@ -83,11 +83,11 @@ void GnuplotScriptGenerator::outputContent(vector<AnnularSector>& annularSectors
 	for (vector<AnnularSector>::iterator it = annularSectors.begin(); it != annularSectors.end(); it++) {
 		string content = contentTemplate;
 
-		content = StringManipulator::replace(content, REPLACE_CONTENT_INDEX, StringManipulator::toString(index--));
-		content = StringManipulator::replace(content, REPLACE_CONTENT_RADIUS, StringManipulator::toString((*it).getEndingRadius()));
-		content = StringManipulator::replace(content, REPLACE_CONTENT_START_ANGLE, StringManipulator::toString((*it).getStartingAngle()));
-		content = StringManipulator::replace(content, REPLACE_CONTENT_END_ANGLE, StringManipulator::toString((*it).getEndingAngle()));
-		content = StringManipulator::replace(content, REPLACE_CONTENT_CONCENTRATION, StringManipulator::toString((*it).getConcentration()));
+		content = StringManipulator::replace(content, REPLACE_CONTENT_INDEX, StringManipulator::toString<int>(index--));
+		content = StringManipulator::replace(content, REPLACE_CONTENT_RADIUS, StringManipulator::toString<double>((*it).getEndingRadius()));
+		content = StringManipulator::replace(content, REPLACE_CONTENT_START_ANGLE, StringManipulator::toString<double>((*it).getStartingAngle()));
+		content = StringManipulator::replace(content, REPLACE_CONTENT_END_ANGLE, StringManipulator::toString<double>((*it).getEndingAngle()));
+		content = StringManipulator::replace(content, REPLACE_CONTENT_CONCENTRATION, StringManipulator::toString<double>((*it).getConcentration()));
 
 		fout << content << endl;
 	}

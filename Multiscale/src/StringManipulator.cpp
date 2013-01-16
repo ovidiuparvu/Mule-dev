@@ -1,6 +1,5 @@
 #include "../include/StringManipulator.hpp"
 
-#include <sstream>
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string.hpp>
 
@@ -31,33 +30,6 @@ string StringManipulator::replace(string& initialString,
 	}
 
 	return initialString;
-}
-
-// Convert an integer to a string
-string StringManipulator::toString(int number) {
-	ostringstream stringStream;
-
-	stringStream << number;
-
-	return stringStream.str();
-}
-
-// Convert an unsigned integer to a string
-string StringManipulator::toString(unsigned int number) {
-	ostringstream stringStream;
-
-	stringStream << number;
-
-	return stringStream.str();
-}
-
-// Convert an integer to a string
-string StringManipulator::toString(double number) {
-	ostringstream stringStream;
-
-	stringStream << number;
-
-	return stringStream.str();
 }
 
 // Split a string and return all tokens as a new vector

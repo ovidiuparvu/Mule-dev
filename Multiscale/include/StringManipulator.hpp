@@ -3,12 +3,14 @@
 
 #include <string>
 #include <vector>
+#include <sstream>
 
 #define DIR_SEPARATOR '/'
 
 using namespace std;
 
 namespace multiscale {
+
 
 	class StringManipulator {
 
@@ -17,15 +19,24 @@ namespace multiscale {
 		static string 			replace 		  (string& initialString,
 							   	       	   	   	   string  replaceWhat,
 							   	       	   	   	   string  replaceTo);
-		static string 			toString		  (int number);
-		static string 			toString		  (unsigned int number);
-		static string 			toString		  (double number);
+		template <class T>
+		static string 			toString 		  (T number);
 		static vector<string> 	split			  (string initialString,
 												   string delimiter);
 
 	};
 
 };
+
+// Convert an instance of type T to a string
+template <class T>
+string multiscale::StringManipulator::toString(T number) {
+	ostringstream stringStream;
+
+	stringStream << number;
+
+	return stringStream.str();
+}
 
 
 #endif

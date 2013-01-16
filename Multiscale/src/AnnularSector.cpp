@@ -53,15 +53,15 @@ double AnnularSector::getStartingRadius() const {
 string AnnularSector::toString() {
     string annularSectorDescription = "";
 
-    annularSectorDescription += StringManipulator::toString(startingRadius);
+    annularSectorDescription += StringManipulator::toString<double>(startingRadius);
 	annularSectorDescription += SEPARATOR;
-    annularSectorDescription += StringManipulator::toString(endingRadius);
+    annularSectorDescription += StringManipulator::toString<double>(endingRadius);
 	annularSectorDescription += SEPARATOR;
-    annularSectorDescription += StringManipulator::toString(startingAngle);
+    annularSectorDescription += StringManipulator::toString<double>(startingAngle);
 	annularSectorDescription += SEPARATOR;
-    annularSectorDescription += StringManipulator::toString(endingAngle);
+    annularSectorDescription += StringManipulator::toString<double>(endingAngle);
 	annularSectorDescription += SEPARATOR;
-    annularSectorDescription += StringManipulator::toString(concentration);
+    annularSectorDescription += StringManipulator::toString<double>(concentration);
 
     return annularSectorDescription;
 }
