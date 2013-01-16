@@ -1,6 +1,7 @@
 #include "../include/CsvToInputFilesConverter.hpp"
 #include "../include/StringManipulator.hpp"
 
+#include <cmath>
 #include <cassert>
 #include <cstdlib>
 #include <fstream>
@@ -24,6 +25,7 @@ CsvToInputFilesConverter::CsvToInputFilesConverter(string inputFilepath,
 	this->nrOfSectors 					= nrOfSectors;
 	this->nrOfConcentrationsForPosition = nrOfConcentrationsForPosition;
 
+	this->concentrationsIndex  = 0;
 	this->maximumConcentration = numeric_limits<double>::min();
 }
 
@@ -101,7 +103,7 @@ void CsvToInputFilesConverter::processLine(string line, unsigned int outputIndex
 
 	fout << concentrations[0] << endl;
 
-	for (int i = 1; i < nrOfConcentricCircles; i++) {
+	for (unsigned int i = 1; i < nrOfConcentricCircles; i++) {
 		for (int j = 0; j < (nrOfSectors - 1); j++) {
 			fout << concentrations[(i - 1) * nrOfSectors + j + 1] << OUTPUT_SEPARATOR;
 		}
@@ -139,7 +141,7 @@ vector<double> CsvToInputFilesConverter::splitLineInConcentrations(string line) 
 void CsvToInputFilesConverter::splitFirstLineInConcentrations(vector<double>& concentrations,
 		                                                      vector<string>& tokens,
 		 	 	 	 	 	 	 	 	 	 	 	 	 	  unsigned int circleIndex) {
-	unsigned int sectorIndex = sectorsIterator.number();
+	unsigned int sectorIndex = 1;
 
 	double concentration = computeNextPositionConcentration(circleIndex,
 															concentrationsIndex,
@@ -172,29 +174,48 @@ double CsvToInputFilesConverter::computeNextPositionConcentration(unsigned int c
         														  int concentrationIndex,
         														  vector<string>& tokens) {
 	// Read the first concentration
-	double concentration = atof(tokens[(nrOfConcentrationsForPosition * concentrationIndex)].c_str());
-
-	if (concentration < 0) throw ERR_NEG_CONCENTRATION;
+	double concentration = computeScaledConcentration(
+							   tokens[(nrOfConcentrationsForPosition * concentrationIndex)]
+						   );
 
 	double totalConcentration = concentration;
 
 	// Read the other concentrations if they exist
-	for (int i = 1; i < nrOfConcentrationsForPosition; i++) {
-		double tmpConcentration = atof(tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i].c_str());
-
-		if (tmpConcentration < 0) throw ERR_NEG_CONCENTRATION;
+	for (unsigned int i = 1; i < nrOfConcentrationsForPosition; i++) {
+		double tmpConcentration = computeScaledConcentration(
+				                      tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i]
+				                  );
 
 		totalConcentration += tmpConcentration;
 	}
 
 	// Return normalised concentration
 	if (nrOfConcentrationsForPosition == 1) {
-		return ((concentration * RADIUS_MIN * RADIUS_MIN) /
-				(maximumConcentration * circleIndex * circleIndex));
+		return computeNormalisedConcentration(concentration, circleIndex);
 	} else {
-		return (((concentration/totalConcentration) * RADIUS_MIN * RADIUS_MIN) /
-                 (maximumConcentration * circleIndex * circleIndex));
+		return computeNormalisedConcentration((concentration/totalConcentration), circleIndex);
 	}
+}
+
+// Compute the scaled concentration from the given string by applying
+// a logit transformation to it
+double CsvToInputFilesConverter::computeScaledConcentration(string concentration) {
+	double dConcentration = atof(concentration.c_str());
+
+	// Convert all concentrations which are lower than 1 to 1,
+	// such that we don't obtain negative values after applying log10
+	if (dConcentration < 1) {
+		dConcentration = 1;
+	}
+
+	return log10(dConcentration);
+}
+
+// Compute the normalised concentration by considering the maximum concentration
+// and the area of the current annular sector
+double CsvToInputFilesConverter::computeNormalisedConcentration(double concentration, int circleIndex) {
+	return (concentration * RADIUS_MIN * RADIUS_MIN) /
+		   (maximumConcentration * circleIndex * circleIndex);
 }
 
 // Update the maximum value if any of the concentrations from the
@@ -203,7 +224,7 @@ void CsvToInputFilesConverter::updateMaximumConcentration(string& currentLine) {
 	vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
 	for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
-		double concentration = atof((*it).c_str());
+		double concentration = computeScaledConcentration(*it);
 
 		if (concentration > maximumConcentration) {
 			maximumConcentration = concentration;

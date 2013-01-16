@@ -106,8 +106,10 @@ bool LexicographicNumberIterator::isLargerThanUpperBound(unsigned char lastDigit
 
 	if (nrOfDigitsCurrent == nrOfDigitsUpper) {
 		for (int i = 0; i < (nrOfDigitsCurrent - 1); i++) {
-			if (currentNumberDigits[i] > upperBoundDigits[(nrOfDigitsUpper - nrOfDigitsCurrent) + i]) {
+			if (currentNumberDigits[i] > upperBoundDigits[i]) {
 				return true;
+			} else if (currentNumberDigits[i] < upperBoundDigits[i]) {
+				return false;
 			}
 		}
 
@@ -130,7 +132,7 @@ void LexicographicNumberIterator::padWithZeros() {
 
 	unsigned int currentNumber = digitsToNumber(currentNumberDigits);
 
-	if ((currentNumber * 10) < upperBound) {
+	if ((currentNumber * 10) <= upperBound) {
 		currentNumberDigits.push_back(0);
 	}
 }

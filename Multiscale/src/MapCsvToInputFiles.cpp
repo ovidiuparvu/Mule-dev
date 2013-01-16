@@ -126,16 +126,20 @@ int main(int argc, char** argv) {
     		converter.convert();
     	}
     } catch(const string& e) {
-        cerr << ERR_MSG << e << "\n";
+        cerr << ERR_MSG << e << endl;
 
         return ERR_CODE;
+    } catch(const char* e) {
+            cerr << ERR_MSG << e << endl;
+
+            return ERR_CODE;
     } catch(exception& e) {
-        cerr << ERR_MSG << e.what() << "\n";
+        cerr << ERR_MSG << e.what() << endl;
 
         return ERR_CODE;
     } catch(...) {
-        cerr << "Exception of unknown type!\n";
-    }
+            cerr << "Exception of unknown type!" << endl;
+        }
 
     return 0;
 }

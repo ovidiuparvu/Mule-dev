@@ -64,6 +64,9 @@ namespace multiscale {
 		double	  		computeNextPositionConcentration(unsigned int circleIndex,
 				                                         int concentrationIndex,
 				                                         vector<string>& tokens);
+		double			computeScaledConcentration	    (string concentration);
+		double			computeNormalisedConcentration	(double concentration,
+														 int circleIndex);
 		void			updateMaximumConcentration		(string& line);
 
 	};

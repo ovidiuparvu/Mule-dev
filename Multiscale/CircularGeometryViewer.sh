@@ -4,7 +4,8 @@
 set -e;
 
 # Defining the constants for the script
-MOVIE_FRAME_RATE=25;
+MOVIE_FRAME_RATE=10;
+MOVIE_FLAGS="-r ${MOVIE_FRAME_RATE} -same_quant"
 
 OUT_FOLDER=out;
 
@@ -83,7 +84,7 @@ cd ../../../;
 echo "Generating the movie from the images...";
 
 # Generate the movie
-avconv -r ${MOVIE_FRAME_RATE} -f image2 -i ${IMG_FOLDER}/${folderName}/${csvFilename}_%d.png ${MOVIE_FOLDER}/${folderName}/${csvFilename}.avi
+avconv ${MOVIE_FLAGS} -f image2 -i ${IMG_FOLDER}/${folderName}/${csvFilename}_%d.png ${MOVIE_FOLDER}/${folderName}/${csvFilename}.avi
 
 # Print end message
 echo "The movie was generated successfully.";
