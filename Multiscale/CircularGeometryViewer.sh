@@ -53,6 +53,9 @@ mkdir ${SCRIPT_FOLDER}/${folderName}
 mkdir ${MOVIE_FOLDER}/${folderName}
 mkdir ${IMG_FOLDER}/${folderName}
 
+# Copy a backup of the csv file to its corresponding input folder
+cp ${csvFile} ${INPUT_FOLDER}/${folderName}/${csvFile}.bak
+
 # Copy the part of the csv file with necessary information to its corresponding input folder
 sed 's/[;,:\t ]+/,/g' <${csvFile} | cut -d "," -f 2- | tail -n +2 > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
 
