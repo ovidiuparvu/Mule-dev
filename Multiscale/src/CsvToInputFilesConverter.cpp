@@ -203,19 +203,18 @@ double CsvToInputFilesConverter::computeScaledConcentration(string concentration
 	double dConcentration = atof(concentration.c_str());
 
 	// Convert all concentrations which are lower than 1 to 1,
-	// such that we don't obtain negative values after applying log10
+	// such that we don't obtain negative values after applying log
 	if (dConcentration < 1) {
 		dConcentration = 1;
 	}
 
-	return log10(dConcentration);
+	return log2(dConcentration);
 }
 
 // Compute the normalised concentration by considering the maximum concentration
 // and the area of the current annular sector
 double CsvToInputFilesConverter::computeNormalisedConcentration(double concentration, int circleIndex) {
-	return (concentration * RADIUS_MIN * RADIUS_MIN) /
-		   (maximumConcentration * circleIndex * circleIndex);
+	return (concentration / maximumConcentration);
 }
 
 // Update the maximum value if any of the concentrations from the
