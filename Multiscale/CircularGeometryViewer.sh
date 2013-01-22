@@ -5,7 +5,7 @@ set -e;
 
 # Defining the constants for the script
 MOVIE_FRAME_RATE=10;
-MOVIE_FLAGS="-r ${MOVIE_FRAME_RATE} -same_quant"
+MOVIE_FLAGS="-same_quant -r ${MOVIE_FRAME_RATE}"
 
 OUT_FOLDER=out;
 
@@ -47,6 +47,9 @@ folderName="${csvFilename}_${currentDate}";
 # Inform user of the next action
 echo "Creating the output directories...";
 
+# Start the timer for measuring the total execution time
+startTime=$(date +%s.%N);
+
 # Create all the required folders for this execution
 mkdir ${INPUT_FOLDER}/${folderName}
 mkdir ${SCRIPT_FOLDER}/${folderName}
@@ -87,7 +90,14 @@ cd ../../../;
 echo "Generating the movie from the images...";
 
 # Generate the movie
-avconv ${MOVIE_FLAGS} -f image2 -i ${IMG_FOLDER}/${folderName}/${csvFilename}_%d.png ${MOVIE_FOLDER}/${folderName}/${csvFilename}.avi
+avconv ${MOVIE_FLAGS} -f image2 -i ${IMG_FOLDER}/${folderName}/${csvFilename}_%d.png ${MOVIE_FOLDER}/${folderName}/${csvFilename}.mp4
 
 # Print end message
 echo "The movie was generated successfully.";
+
+# End the timer for measuring the total execution time
+endTime=$(date +%s.%N);
+
+# Print the total execution time
+echo 
+echo "Total execution time: " $(echo "${endTime} - ${startTime}" | bc) " seconds.";
