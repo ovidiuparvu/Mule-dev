@@ -26,7 +26,7 @@ CsvToInputFilesConverter::CsvToInputFilesConverter(string inputFilepath,
 	this->nrOfConcentrationsForPosition = nrOfConcentrationsForPosition;
 
 	this->concentrationsIndex  = 0;
-	this->maximumConcentration = numeric_limits<double>::min();
+	this->maximumConcentration = 1;
 }
 
 // Destructor for the class
@@ -66,19 +66,25 @@ void CsvToInputFilesConverter::initInputFile(ifstream& fin) {
 
 // Initialise the maximum concentration value
 void CsvToInputFilesConverter::initMaximumConcentration(ifstream& fin) {
+	double maximumConcentration = numeric_limits<double>::min();
+	string currentLine;
+
 	fin.open(inputFilepath.c_str(), ios_base::in);
 
 	assert(fin.is_open());
 
-	string currentLine;
-
 	while (!fin.eof()) {
 		getline(fin, currentLine);
 
-		updateMaximumConcentration(currentLine);
+		// Consider processing the line only if it has content
+		if (!currentLine.empty()) {
+			updateMaximumConcentration(currentLine, maximumConcentration);
+		}
 	}
 
 	fin.close();
+
+	this->maximumConcentration = maximumConcentration;
 }
 
 // Initialise the output file
@@ -175,7 +181,8 @@ double CsvToInputFilesConverter::computeNextPositionConcentration(unsigned int c
         														  vector<string>& tokens) {
 	// Read the first concentration
 	double concentration = computeScaledConcentration(
-							   tokens[(nrOfConcentrationsForPosition * concentrationIndex)]
+							   tokens[(nrOfConcentrationsForPosition * concentrationIndex)],
+							   circleIndex
 						   );
 
 	double totalConcentration = concentration;
@@ -183,32 +190,39 @@ double CsvToInputFilesConverter::computeNextPositionConcentration(unsigned int c
 	// Read the other concentrations if they exist
 	for (unsigned int i = 1; i < nrOfConcentrationsForPosition; i++) {
 		double tmpConcentration = computeScaledConcentration(
-				                      tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i]
+				                      tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i],
+				                      circleIndex
 				                  );
 
 		totalConcentration += tmpConcentration;
 	}
 
 	// Return normalised concentration
-	if (nrOfConcentrationsForPosition == 1) {
-		return computeNormalisedConcentration(concentration, circleIndex);
-	} else {
-		return computeNormalisedConcentration((concentration/totalConcentration), circleIndex);
-	}
+	return (nrOfConcentrationsForPosition == 1) ?
+		computeNormalisedConcentration(concentration, circleIndex) :
+		computeNormalisedConcentration((concentration/totalConcentration), circleIndex);
 }
 
 // Compute the scaled concentration from the given string by applying
 // a logit transformation to it
-double CsvToInputFilesConverter::computeScaledConcentration(string concentration) {
-	double dConcentration = atof(concentration.c_str());
+double CsvToInputFilesConverter::computeScaledConcentration(string concentration, int circleIndex) {
+	double amount = atof(concentration.c_str());
+
+	double scaledConcentration = computeConcentrationWrtArea(amount, circleIndex);
 
 	// Convert all concentrations which are lower than 1 to 1,
 	// such that we don't obtain negative values after applying log
-	if (dConcentration < 1) {
-		dConcentration = 1;
+	if (scaledConcentration < 1) {
+		scaledConcentration = 1;
 	}
 
-	return log2(dConcentration);
+	return log2(scaledConcentration);
+}
+
+// Compute the concentration of a annular sector given the number of species
+// and the level at which the annular sector is positioned
+double CsvToInputFilesConverter::computeConcentrationWrtArea(double amount, int circleIndex) {
+	return amount / ((2 * (circleIndex - 1)) + 1);
 }
 
 // Compute the normalised concentration by considering the maximum concentration
@@ -219,14 +233,12 @@ double CsvToInputFilesConverter::computeNormalisedConcentration(double concentra
 
 // Update the maximum value if any of the concentrations from the
 // provided string are greater than it
-void CsvToInputFilesConverter::updateMaximumConcentration(string& currentLine) {
-	vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
+void CsvToInputFilesConverter::updateMaximumConcentration(string& currentLine, double& maximumConcentration) {
+	vector<double> concentrations = splitLineInConcentrations(currentLine);
 
-	for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
-		double concentration = computeScaledConcentration(*it);
-
-		if (concentration > maximumConcentration) {
-			maximumConcentration = concentration;
+	for (vector<double>::iterator it = concentrations.begin(); it != concentrations.end(); it++) {
+		if ((*it) > maximumConcentration) {
+			maximumConcentration = (*it);
 		}
 	}
 }
