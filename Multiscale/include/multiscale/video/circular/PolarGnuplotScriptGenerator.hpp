@@ -29,7 +29,7 @@ namespace multiscale {
 
 	namespace video {
 
-		class GnuplotScriptGenerator {
+		class PolarGnuplotScriptGenerator {
 
 			public:
 

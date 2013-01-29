@@ -4,8 +4,8 @@
 namespace multiscale {
 
 	enum NumberIteratorType {
-		StandardNumberIterator,
-		LexicographicNumberIterator
+		STANDARD = 1,
+		LEXICOGRAPHIC = 2
 	};
 
 };

@@ -2,6 +2,14 @@
 
 using namespace multiscale;
 
+
+// Constructor for the class
+StandardNumberIterator::StandardNumberIterator(unsigned int upperBound)
+							: NumberIterator(upperBound) {
+	initialise();
+	reset();
+}
+
 // Destructor for the class
 StandardNumberIterator::~StandardNumberIterator() {
 	// Do nothing

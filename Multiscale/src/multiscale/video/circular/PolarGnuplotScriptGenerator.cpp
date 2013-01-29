@@ -1,4 +1,4 @@
-#include "multiscale/video/circular/GnuplotScriptGenerator.hpp"
+#include "multiscale/video/circular/PolarGnuplotScriptGenerator.hpp"
 #include "multiscale/util/RGBColourGenerator.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
@@ -14,7 +14,7 @@ using namespace std;
 
 // Using the annular sectors generate the corresponding gnuplot script in the
 // output file
-void GnuplotScriptGenerator::generateScript(vector<AnnularSector>& annularSectors,
+void PolarGnuplotScriptGenerator::generateScript(vector<AnnularSector>& annularSectors,
 		                                    string outputFilepath) throw (string) {
 	ofstream fout((outputFilepath + GNUPLOT_EXTENSION).c_str(), std::ios_base::trunc);
 
@@ -28,7 +28,7 @@ void GnuplotScriptGenerator::generateScript(vector<AnnularSector>& annularSector
 }
 
 // Generate the header of the script
-void GnuplotScriptGenerator::generateHeader(ofstream& fout, string outputFilepath) {
+void PolarGnuplotScriptGenerator::generateHeader(ofstream& fout, string outputFilepath) {
 	ifstream fin(HEADER_IN);
 
 	assert(fin.is_open());
@@ -41,7 +41,7 @@ void GnuplotScriptGenerator::generateHeader(ofstream& fout, string outputFilepat
 }
 
 // Generate the body of the script
-void GnuplotScriptGenerator::generateBody(vector<AnnularSector>& annularSectors,
+void PolarGnuplotScriptGenerator::generateBody(vector<AnnularSector>& annularSectors,
 										  ofstream& fout) {
 	ifstream fin(CONTENT_IN);
 
@@ -55,7 +55,7 @@ void GnuplotScriptGenerator::generateBody(vector<AnnularSector>& annularSectors,
 }
 
 // Generate the footer of the script
-void GnuplotScriptGenerator::generateFooter(ofstream& fout) {
+void PolarGnuplotScriptGenerator::generateFooter(ofstream& fout) {
 	ifstream fin(FOOTER_IN);
 
 	assert(fin.is_open());
@@ -66,7 +66,7 @@ void GnuplotScriptGenerator::generateFooter(ofstream& fout) {
 }
 
 // Output the header of the script
-void GnuplotScriptGenerator::outputHeader(ifstream& fin, string outputFilename, ofstream& fout) {
+void PolarGnuplotScriptGenerator::outputHeader(ifstream& fin, string outputFilename, ofstream& fout) {
 	string line;
 
 	while (getline(fin, line)) {
@@ -77,7 +77,7 @@ void GnuplotScriptGenerator::outputHeader(ifstream& fin, string outputFilename, 
 }
 
 // Output the content of the script
-void GnuplotScriptGenerator::outputContent(vector<AnnularSector>& annularSectors, string& contentTemplate, ofstream& fout) {
+void PolarGnuplotScriptGenerator::outputContent(vector<AnnularSector>& annularSectors, string& contentTemplate, ofstream& fout) {
 	int index = annularSectors.size();
 
 	for (vector<AnnularSector>::iterator it = annularSectors.begin(); it != annularSectors.end(); it++) {
@@ -96,7 +96,7 @@ void GnuplotScriptGenerator::outputContent(vector<AnnularSector>& annularSectors
 }
 
 // Output the footer of the script
-void GnuplotScriptGenerator::outputFooter(ifstream& fin, ofstream& fout) {
+void PolarGnuplotScriptGenerator::outputFooter(ifstream& fin, ofstream& fout) {
 	string line;
 
 	while (getline(fin, line)) {
@@ -107,7 +107,7 @@ void GnuplotScriptGenerator::outputFooter(ifstream& fin, ofstream& fout) {
 }
 
 // Read the template for content and return it as a string
-string GnuplotScriptGenerator::readContentTemplate(ifstream& fin) {
+string PolarGnuplotScriptGenerator::readContentTemplate(ifstream& fin) {
 	ostringstream stringStream;
 	string line;
 

@@ -2,6 +2,14 @@
 
 using namespace multiscale;
 
+
+// Constructor for the class
+LexicographicNumberIterator::LexicographicNumberIterator(unsigned int upperBound)
+								: NumberIterator(upperBound) {
+	initialise();
+	reset();
+}
+
 // Destructor for the class
 LexicographicNumberIterator::~LexicographicNumberIterator() {
 	upperBoundDigits.clear();

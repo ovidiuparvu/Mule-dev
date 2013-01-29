@@ -18,12 +18,14 @@
  * Date modified: 13.01.2013
  */
 
-#include "multiscale/video/circular/CsvToInputFilesConverter.hpp"
+#include "multiscale/video/circular/PolarCsvToInputFilesConverter.hpp"
+#include "multiscale/util/iterator/NumberIteratorType.hpp"
 
 #include <boost/program_options.hpp>
 #include <iostream>
 
 using namespace std;
+using namespace multiscale;
 using namespace multiscale::video;
 
 namespace po = boost::program_options;
@@ -39,7 +41,8 @@ po::variables_map initArgumentsConfig(po::options_description usageDescription, 
 						          ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
 						          ("nr-concentric-circles,c", po::value<unsigned int>(), "provide the number of concentric circles\n")
 						          ("nr-sectors,s", po::value<unsigned int>(), "provide the number of sectors\n")
-						          ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n");
+						          ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n")
+						          ("lexicographic-iterator,l", "use lexicographic number iterator for numbering the columns of the .csv file\n");
 
 	po::variables_map vm;
 	po::store(po::parse_command_line(argc, argv, usageDescription), vm);
@@ -52,6 +55,13 @@ void printIfHelp(const po::variables_map& vm,
 		const po::options_description& usageDescription) {
 	if (vm.count("help")) {
 		cout << usageDescription << endl;
+	}
+}
+
+// Set the number iterator type to lexicographic if requested
+void setNumberIteratorTypeIfPresent(const po::variables_map& vm, NumberIteratorType& numberIteratorType) {
+	if (vm.count("lexicographic-iterator")) {
+		numberIteratorType = multiscale::LEXICOGRAPHIC;
 	}
 }
 
@@ -83,12 +93,13 @@ bool isValidNrOfConcentrationsForPosition(const po::variables_map& vm, unsigned 
 // Get the needed parameters
 bool areParameters(string& inputFilepath, string& outputFilename, unsigned int& nrOfConcentricCircles,
 		           unsigned int& nrOfSectors, unsigned int& nrOfConcentrationsForPosition,
-		           int argc, char** argv) {
+		           NumberIteratorType& numberIteratorType, int argc, char** argv) {
 	po::options_description usageDescription("Usage");
 
 	po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
 
 	printIfHelp(vm, usageDescription);
+	setNumberIteratorTypeIfPresent(vm, numberIteratorType);
 
 	if ((vm.count("input-file")) && (vm.count("output-file")) &&
 		(vm.count("nr-concentric-circles")) && (vm.count("nr-sectors"))) {
@@ -117,11 +128,16 @@ int main(int argc, char** argv) {
 	unsigned int nrOfSectors;
 	unsigned int nrOfConcentrationsForPosition;
 
+	NumberIteratorType numberIteratorType = multiscale::STANDARD;
+
     try {
     	if (areParameters(inputFilePath, outputFilepath, nrOfConcentricCircles,
-    			          nrOfSectors, nrOfConcentrationsForPosition, argc, argv)) {
-    		CsvToInputFilesConverter converter(inputFilePath, outputFilepath, nrOfConcentricCircles,
-    										   nrOfSectors, nrOfConcentrationsForPosition);
+    			          nrOfSectors, nrOfConcentrationsForPosition, numberIteratorType,
+    			          argc, argv)) {
+    		PolarCsvToInputFilesConverter converter(inputFilePath, outputFilepath,
+    											    nrOfConcentricCircles, nrOfSectors,
+    											    nrOfConcentrationsForPosition,
+    											    numberIteratorType);
 
     		converter.convert();
     	}
@@ -130,16 +146,16 @@ int main(int argc, char** argv) {
 
         return ERR_CODE;
     } catch(const char* e) {
-            cerr << ERR_MSG << e << endl;
+		cerr << ERR_MSG << e << endl;
 
-            return ERR_CODE;
+		return ERR_CODE;
     } catch(exception& e) {
         cerr << ERR_MSG << e.what() << endl;
 
         return ERR_CODE;
     } catch(...) {
-            cerr << "Exception of unknown type!" << endl;
-        }
+    	cerr << "Exception of unknown type!" << endl;
+    }
 
     return 0;
 }

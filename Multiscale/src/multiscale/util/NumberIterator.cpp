@@ -5,14 +5,11 @@ using namespace multiscale;
 // Constructor for the class
 NumberIterator::NumberIterator(unsigned int upperBound) {
 	init(upperBound);
-	reset();
 }
 
 // Initialisation function
 void NumberIterator::init(unsigned int upperBound) {
 	this->upperBound = upperBound;
-
-	initialise();
 }
 
 // Check if there is a next number and update the current number accordingly

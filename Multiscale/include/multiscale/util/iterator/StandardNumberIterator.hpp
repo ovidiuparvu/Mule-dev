@@ -18,7 +18,7 @@ namespace multiscale {
 
 		public:
 
-			StandardNumberIterator (unsigned int upperBound) : NumberIterator(upperBound) {};
+			StandardNumberIterator (unsigned int upperBound);
 			~StandardNumberIterator();
 
 			unsigned int number ();

@@ -1,5 +1,5 @@
 #include "multiscale/video/circular/CartesianToPolarConverter.hpp"
-#include "multiscale/video/circular/GnuplotScriptGenerator.hpp"
+#include "multiscale/video/circular/PolarGnuplotScriptGenerator.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
 
 #include <iostream>
@@ -130,5 +130,5 @@ void CartesianToPolarConverter::outputResultsAsFile() {
 
 // Output the results as a gnuplot script
 void CartesianToPolarConverter::outputResultsAsScript() {
-	GnuplotScriptGenerator::generateScript(annularSectors, outputFilepath);
+	PolarGnuplotScriptGenerator::generateScript(annularSectors, outputFilepath);
 }

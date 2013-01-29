@@ -22,7 +22,7 @@ namespace multiscale {
 
 		public:
 
-			LexicographicNumberIterator (unsigned int upperBound) : NumberIterator(upperBound) {};
+			LexicographicNumberIterator (unsigned int upperBound);
 			~LexicographicNumberIterator();
 
 			unsigned int number ();

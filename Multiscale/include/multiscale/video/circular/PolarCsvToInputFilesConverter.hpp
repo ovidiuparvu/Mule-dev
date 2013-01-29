@@ -1,7 +1,8 @@
 #ifndef CSVTOINPUTFILESCONVERTER_HPP_
 #define CSVTOINPUTFILESCONVERTER_HPP_
 
-#include "multiscale/util/iterator/LexicographicNumberIterator.hpp"
+#include "multiscale/util/NumberIterator.hpp"
+#include "multiscale/util/iterator/NumberIteratorType.hpp"
 
 #include <string>
 #include <vector>
@@ -21,7 +22,7 @@ namespace multiscale {
 
 	namespace video {
 
-		class CsvToInputFilesConverter {
+		class PolarCsvToInputFilesConverter {
 
 			private:
 
@@ -36,17 +37,18 @@ namespace multiscale {
 
 				double maximumConcentration;
 
-				LexicographicNumberIterator circlesIterator;
-				LexicographicNumberIterator sectorsIterator;
+				NumberIterator* circlesIterator;
+				NumberIterator* sectorsIterator;
 
 			public:
 
-				CsvToInputFilesConverter	(string inputFilepath,
-											 string outputFilepath,
-											 unsigned int nrOfConcentricCircles,
-											 unsigned int nrOfSectors,
-											 unsigned int nrOfConcentrationsForPosition);
-				~CsvToInputFilesConverter();
+				PolarCsvToInputFilesConverter	(string inputFilepath,
+											 	 string outputFilepath,
+											 	 unsigned int nrOfConcentricCircles,
+											 	 unsigned int nrOfSectors,
+											 	 unsigned int nrOfConcentrationsForPosition,
+											 	 NumberIteratorType numberIteratorType);
+				~PolarCsvToInputFilesConverter();
 
 				void convert();
 
@@ -55,6 +57,7 @@ namespace multiscale {
 				void 			initInputFile					(ifstream& fin);
 				void			initMaximumConcentration 		(ifstream& fin);
 				void	 		initOutputFile					(ofstream& fout, unsigned int index);
+				void			initIterators					(NumberIteratorType numberIteratorType);
 				void	  		processLine						(string line, unsigned int outputIndex);
 				vector<double>  splitLineInConcentrations		(string line);
 				void			splitFirstLineInConcentrations	(vector<double>& concentrations,
