@@ -1,6 +1,6 @@
-#include "../include/CartesianToPolarConverter.hpp"
-#include "../include/GnuplotScriptGenerator.hpp"
-#include "../include/NumericRangeManipulator.hpp"
+#include "multiscale/video/circular/CartesianToPolarConverter.hpp"
+#include "multiscale/video/circular/GnuplotScriptGenerator.hpp"
+#include "multiscale/util/NumericRangeManipulator.hpp"
 
 #include <iostream>
 #include <fstream>
@@ -8,7 +8,7 @@
 #include <cassert>
 #include <vector>
 
-using namespace multiscale;
+using namespace multiscale::video;
 
 
 // Constructor for the class
@@ -105,8 +105,8 @@ void CartesianToPolarConverter::transformToAnnularSectors() {
 		int row = (i - 1) / nrOfSectors;
 		int col = (i - 1) % nrOfSectors;
 
-		double startRadius = NumericRangeManipulator::convertFromRange(0, maxRadius, RADIUS_MIN, RADIUS_MAX, row);
-		double endRadius   = NumericRangeManipulator::convertFromRange(0, maxRadius, RADIUS_MIN, RADIUS_MAX, row + 1);
+		double startRadius = NumericRangeManipulator::convertFromRange<int, double>(0, maxRadius, RADIUS_MIN, RADIUS_MAX, row);
+		double endRadius   = NumericRangeManipulator::convertFromRange<int, double>(0, maxRadius, RADIUS_MIN, RADIUS_MAX, row + 1);
 
 		(annularSectors.at(i)).initialise(startRadius, endRadius, col * angle, (col + 1) * angle, concentrations.at(i));
 	}

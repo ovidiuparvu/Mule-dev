@@ -18,13 +18,13 @@
  * Date modified: 13.01.2013
  */
 
-#include "../include/CsvToInputFilesConverter.hpp"
+#include "multiscale/video/circular/CsvToInputFilesConverter.hpp"
 
 #include <boost/program_options.hpp>
 #include <iostream>
 
 using namespace std;
-using namespace multiscale;
+using namespace multiscale::video;
 
 namespace po = boost::program_options;
 

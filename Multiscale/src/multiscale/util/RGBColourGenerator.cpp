@@ -1,4 +1,4 @@
-#include "../include/RGBColourGenerator.hpp"
+#include "multiscale/util/RGBColourGenerator.hpp"
 
 #include <cmath>
 #include <iomanip>

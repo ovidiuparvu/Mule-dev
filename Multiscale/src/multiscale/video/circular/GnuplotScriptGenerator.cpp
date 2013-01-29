@@ -1,6 +1,6 @@
-#include "../include/GnuplotScriptGenerator.hpp"
-#include "../include/RGBColourGenerator.hpp"
-#include "../include/StringManipulator.hpp"
+#include "multiscale/video/circular/GnuplotScriptGenerator.hpp"
+#include "multiscale/util/RGBColourGenerator.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 
 #include <cassert>
 #include <iostream>
@@ -8,7 +8,7 @@
 #include <sstream>
 #include <fstream>
 
-using namespace multiscale;
+using namespace multiscale::video;
 using namespace std;
 
 

@@ -1,5 +1,5 @@
-#include "../include/CsvToInputFilesConverter.hpp"
-#include "../include/StringManipulator.hpp"
+#include "multiscale/video/circular/CsvToInputFilesConverter.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 
 #include <cmath>
 #include <cassert>
@@ -7,7 +7,7 @@
 #include <fstream>
 #include <limits>
 
-using namespace multiscale;
+using namespace multiscale::video;
 using namespace std;
 
 // Constructor for the class

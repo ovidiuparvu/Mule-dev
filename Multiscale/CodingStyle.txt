@@ -1,0 +1,20 @@
+Coding style rules:
+
+  - Tab size: 4
+  - Use camel case for the names of classes, fields, methods and enums
+  
+  - Order of writing in source files: include, define, using, definitions
+  
+  - Include paths are relative to the include folder and do not contain "." or ".."
+  
+  - Insert one empty line between visibility modifiers (public, private, protected) and the 
+    subsequent field and method's declarations/definitions.
+    
+  - Template methods are implemented in the header files and inside the class
+  
+  - The parent namespace is multiscale
+  - Any subproject/module of the main project is a namespace in itself
+  - Write the name of the namespace in lowercase
+  - Indent all the content of a namespace
+  - Additional folders can be created for organising the source files which do not have a direct 
+    corresponding namespace

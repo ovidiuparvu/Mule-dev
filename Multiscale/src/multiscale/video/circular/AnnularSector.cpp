@@ -1,11 +1,11 @@
-#include "../include/AnnularSector.hpp"
-#include "../include/StringManipulator.hpp"
+#include "multiscale/video/circular/AnnularSector.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 
 #include <sstream>
 
 #define SEPARATOR " "
 
-using namespace multiscale;
+using namespace multiscale::video;
 
 
 AnnularSector::AnnularSector() {
@@ -19,7 +19,6 @@ AnnularSector::AnnularSector() {
 AnnularSector::~AnnularSector() {
     // Do nothing
 }
-
 
 void AnnularSector::initialise(double startingRadius, double endingRadius, double startingAngle,
                                  double endingAngle, double concentration) {

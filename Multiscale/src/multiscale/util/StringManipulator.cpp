@@ -1,4 +1,4 @@
-#include "../include/StringManipulator.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string.hpp>
@@ -34,7 +34,7 @@ string StringManipulator::replace(string& initialString,
 
 // Split a string and return all tokens as a new vector
 vector<string> StringManipulator::split(string initialString,
-										 string delimiter) {
+										string delimiter) {
 	vector<string> tokens;
 
 	return boost::split(tokens, initialString, boost::is_any_of(delimiter));

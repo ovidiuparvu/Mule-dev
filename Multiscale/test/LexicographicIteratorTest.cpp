@@ -1,4 +1,4 @@
-#include "../include/LexicographicNumberIterator.hpp"
+#include "multiscale/util/iterator/LexicographicNumberIterator.hpp"
 
 #include <iostream>
 
