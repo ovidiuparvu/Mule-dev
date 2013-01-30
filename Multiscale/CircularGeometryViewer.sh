@@ -22,8 +22,11 @@ IMG_FOLDER=${OUT_FOLDER}/img;
 #   4. The number of sectors (D2)
 if [ $# -ne 4 ]; 
 then
-    echo "You have to provide the path to the .csv file, the number of concentrations for each position, the number of concentric circles and the number of sectors as parameters.";
-
+    echo "Incorrect number of parameters provided."
+    echo
+    echo "Usage:";
+    echo "    CircularGeometryViewer <path_to_csv_file> <nr_concentrations_for_each_position> <nr_concentric_circles> <nr_sectors>";
+    
     exit 1;
 fi
 
