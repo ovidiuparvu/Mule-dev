@@ -13,7 +13,6 @@ namespace multiscale {
 
 		private:
 
-			unsigned int upperBound;
 			unsigned int currentNumber;
 
 		public:
