@@ -41,8 +41,6 @@ csvFileBasename=`basename ${csvFile}`;
 csvFilename=${csvFileBasename%.*};
 csvExtension=$([[ "$csvFileBaseName" = *.* ]] && echo ".${csvFileBasename##*.}" || echo '');
 
-# TODO: Validate the input
-
 # Create a folder name for this execution according to time
 currentDate=`date +"%F-%T"`;
 folderName="${csvFilename}_${currentDate}";
@@ -70,7 +68,7 @@ echo "Generating the input files from the .csv file...";
 
 # Run the program for converting the ".csv" file to "Number of time points" input files
 # for the MapCartesianToPolar program
-bin/MapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --nr-concentric-circles $nrOfConcentricCircles --nr-sectors $nrOfSectors --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}";
+bin/PolarMapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --nr-concentric-circles $nrOfConcentricCircles --nr-sectors $nrOfSectors --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}";
 
 # Inform user of the next action
 echo "Generating in parallel the gnuplot script for each of the input files...";

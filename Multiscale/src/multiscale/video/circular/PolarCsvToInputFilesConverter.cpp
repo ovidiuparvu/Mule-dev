@@ -44,6 +44,7 @@ PolarCsvToInputFilesConverter::~PolarCsvToInputFilesConverter() {
 void PolarCsvToInputFilesConverter::convert() {
 	ifstream fin;
 
+	validateInput(fin);
 	initMaximumConcentration(fin);
 	initInputFile(fin);
 
@@ -120,8 +121,48 @@ void PolarCsvToInputFilesConverter::initIterators(NumberIteratorType numberItera
 	}
 }
 
+// Validate the input file
+void PolarCsvToInputFilesConverter::validateInput(ifstream& fin) {
+	unsigned int lineNumber = 0;
+	string currentLine;
+
+	fin.open(inputFilepath.c_str(), ios_base::in);
+
+	assert(fin.is_open());
+
+	while (!fin.eof()) {
+		getline(fin, currentLine);
+
+		lineNumber++;
+
+		// Consider processing the line only if it has content
+		if (!currentLine.empty()) {
+			validateInputLine(currentLine, lineNumber);
+		}
+	}
+
+	fin.close();
+}
+
+// Validate the provided line
+void PolarCsvToInputFilesConverter::validateInputLine(string& currentLine, unsigned int lineNumber) {
+	vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
+
+	if (tokens.size() < ((nrOfConcentricCircles - 1) * nrOfSectors + 1))
+		throw ERR_NR_CONCENTRATIONS;
+
+	for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
+		double concentration = atof((*it).c_str());
+
+		if (concentration < 0)
+			throw string(ERR_INVALID_CONCENTRATION_LINE)  +
+			      StringManipulator::toString<unsigned int>(lineNumber) +
+				  string(ERR_INVALID_CONCENTRATION_TOKEN) + (*it);
+	}
+}
+
 // Process the current line
-void PolarCsvToInputFilesConverter::processLine(string line, unsigned int outputIndex) {
+void PolarCsvToInputFilesConverter::processLine(string& line, unsigned int outputIndex) {
 	ofstream fout;
 
 	initOutputFile(fout, outputIndex);
@@ -155,9 +196,9 @@ vector<double> PolarCsvToInputFilesConverter::splitLineInConcentrations(string l
 		sectorsIterator->reset();
 
 		if (circleIndex == 1) {
-			splitFirstLineInConcentrations(concentrations, tokens, circleIndex);
+			splitFirstPartInConcentrations(concentrations, tokens, circleIndex);
 		} else {
-			splitOtherLinesInConcentrations(concentrations, tokens, circleIndex);
+			splitOtherPartsInConcentrations(concentrations, tokens, circleIndex);
 		}
 	}
 
@@ -165,7 +206,7 @@ vector<double> PolarCsvToInputFilesConverter::splitLineInConcentrations(string l
 }
 
 // Split the first line into concentrations
-void PolarCsvToInputFilesConverter::splitFirstLineInConcentrations(vector<double>& concentrations,
+void PolarCsvToInputFilesConverter::splitFirstPartInConcentrations(vector<double>& concentrations,
 		                                                      vector<string>& tokens,
 		 	 	 	 	 	 	 	 	 	 	 	 	 	  unsigned int circleIndex) {
 	unsigned int sectorIndex = 1;
@@ -180,7 +221,7 @@ void PolarCsvToInputFilesConverter::splitFirstLineInConcentrations(vector<double
 }
 
 // Split the first line into concentrations
-void PolarCsvToInputFilesConverter::splitOtherLinesInConcentrations(vector<double>& concentrations,
+void PolarCsvToInputFilesConverter::splitOtherPartsInConcentrations(vector<double>& concentrations,
 		                                                      vector<string>& tokens,
 		 	 	 	 	 	 	 	 	 	 	 	 	 	  unsigned int circleIndex) {
 	while (sectorsIterator->hasNext()) {
