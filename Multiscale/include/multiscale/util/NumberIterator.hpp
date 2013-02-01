@@ -3,31 +3,31 @@
 
 namespace multiscale {
 
-	class NumberIterator {
+    class NumberIterator {
 
-		protected:
+        protected:
 
-			bool 		 isInitialised;
-			unsigned int upperBound;
+            bool 		 isInitialised;
+            unsigned int upperBound;
 
-		public:
+        public:
 
-			NumberIterator(unsigned int upperBound);
-			virtual ~NumberIterator() {};
+            NumberIterator(unsigned int upperBound);
+            virtual ~NumberIterator() {};
 
-			void					init   (unsigned int upperBound);
-			bool	    		    hasNext();
-			virtual unsigned int	number () = 0;
-			void					reset  ();
+            void					init   (unsigned int upperBound);
+            bool	    		    hasNext();
+            virtual unsigned int	number () = 0;
+            void					reset  ();
 
-		private:
+        private:
 
-			virtual void			initialise			 () = 0;
-			virtual bool			hasNextInitialised   () = 0;
-			bool		   			hasNextNotInitialised();
-			virtual void			resetCurrentNumber	 () = 0;
+            virtual void			initialise			 () = 0;
+            virtual bool			hasNextInitialised   () = 0;
+            bool		   			hasNextNotInitialised();
+            virtual void			resetCurrentNumber	 () = 0;
 
-	};
+    };
 
 };
 

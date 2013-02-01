@@ -11,26 +11,26 @@ using namespace std;
 
 namespace multiscale {
 
-	class StringManipulator {
+    class StringManipulator {
 
-		public:
+        public:
 
-			static string 			filenameFromPath(string& filepath);
-			static string 			replace 		(string& initialString,
-													 string  replaceWhat,
-													 string  replaceTo);
-			static vector<string>	split			(string  initialString,
-													 string  delimiter);
-			template <class T>
-			static string toString(T number) {
-				ostringstream stringStream;
+            static string 			filenameFromPath(string& filepath);
+            static string 			replace 		(string& initialString,
+                                                     string  replaceWhat,
+                                                     string  replaceTo);
+            static vector<string>	split			(string  initialString,
+                                                     string  delimiter);
+            template <class T>
+            static string toString(T number) {
+                ostringstream stringStream;
 
-				stringStream << number;
+                stringStream << number;
 
-				return stringStream.str();
-			}
+                return stringStream.str();
+            }
 
-	};
+    };
 
 };
 

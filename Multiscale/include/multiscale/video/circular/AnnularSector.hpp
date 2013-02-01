@@ -9,36 +9,36 @@ using namespace std;
 
 namespace multiscale {
 
-	namespace video {
+    namespace video {
 
-		class AnnularSector {
+        class AnnularSector {
 
-			private:
+            private:
 
-				double startingRadius;
-				double endingRadius;
-				double startingAngle;
-				double endingAngle;
-				double concentration;
+                double startingRadius;
+                double endingRadius;
+                double startingAngle;
+                double endingAngle;
+                double concentration;
 
-			public:
+            public:
 
-				AnnularSector ();
-				~AnnularSector();
+                AnnularSector ();
+                ~AnnularSector();
 
-				void   initialise       (double startingRadius, double endingRadius,
-										 double startingAngle,  double endingAngle,
-										 double concentration);
-				double getConcentration () const;
-				double getEndingAngle   () const;
-				double getEndingRadius  () const;
-				double getStartingAngle () const;
-				double getStartingRadius() const;
-				string toString();
+                void   initialise       (double startingRadius, double endingRadius,
+                                         double startingAngle,  double endingAngle,
+                                         double concentration);
+                double getConcentration () const;
+                double getEndingAngle   () const;
+                double getEndingRadius  () const;
+                double getStartingAngle () const;
+                double getStartingRadius() const;
+                string toString();
 
-		};
+        };
 
-	};
+    };
 
 };
 

@@ -4,93 +4,92 @@ using namespace multiscale;
 
 
 // Constructor for the class
-LexicographicNumberIterator::LexicographicNumberIterator(unsigned int upperBound)
-								: NumberIterator(upperBound) {
-	initialise();
-	reset();
+LexicographicNumberIterator::LexicographicNumberIterator(unsigned int upperBound) : NumberIterator(upperBound) {
+    initialise();
+    reset();
 }
 
 // Destructor for the class
 LexicographicNumberIterator::~LexicographicNumberIterator() {
-	upperBoundDigits.clear();
-	currentNumberDigits.clear();
+    upperBoundDigits.clear();
+    currentNumberDigits.clear();
 }
 
 // Return the current number
 unsigned int LexicographicNumberIterator::number() {
-	return digitsToNumber(currentNumberDigits);
+    return digitsToNumber(currentNumberDigits);
 }
 
 // Initialise the vectors of digits
 void LexicographicNumberIterator::initialise() {
-	numberToDigits(upperBound, upperBoundDigits);
+    numberToDigits(upperBound, upperBoundDigits);
 
-	currentNumberDigits.reserve(upperBoundDigits.size());
+    currentNumberDigits.reserve(upperBoundDigits.size());
 }
 
 // Check if there is a next number when in initialised state
 bool LexicographicNumberIterator::hasNextInitialised() {
-	unsigned char lastDigit = currentNumberDigits.back();
+    unsigned char lastDigit = currentNumberDigits.back();
 
-	if (((lastDigit + 1) <= 9) && (!isLargerThanUpperBound(lastDigit + 1))) {
-		currentNumberDigits[currentNumberDigits.size() - 1]++;
+    if (((lastDigit + 1) <= 9) && (!isLargerThanUpperBound(lastDigit + 1))) {
+        currentNumberDigits[currentNumberDigits.size() - 1]++;
 
-		padWithZeros();
-	} else if (currentNumberDigits.size() > 1) {
-		currentNumberDigits.pop_back();
-	} else {
-		return false;
-	}
+        padWithZeros();
+    } else if (currentNumberDigits.size() > 1) {
+        currentNumberDigits.pop_back();
+    } else {
+        return false;
+    }
 
-	return true;
+    return true;
 }
 
 // Reset the value of the current number
 void LexicographicNumberIterator::resetCurrentNumber() {
-	currentNumberDigits.clear();
-	currentNumberDigits.push_back(1);
+    currentNumberDigits.clear();
+    currentNumberDigits.push_back(1);
 
-	int nrOfDigits = upperBoundDigits.size();
+    int nrOfDigits = upperBoundDigits.size();
 
-	for (int i = 1; i < nrOfDigits; i++) {
-		currentNumberDigits.push_back(0);
-	}
+    for (int i = 1; i < nrOfDigits; i++) {
+        currentNumberDigits.push_back(0);
+    }
 }
 
 // Convert the number to a vector of digits
 void LexicographicNumberIterator::numberToDigits(unsigned int number, vector<unsigned char>& digits) {
-	while (number != 0) {
-		digits.push_back(number % 10);
+    while (number != 0) {
+        digits.push_back(number % 10);
 
-		number = number / 10;
-	}
+        number = number / 10;
+    }
 
-	reverseDigits(digits);
+    reverseDigits(digits);
 }
 
 // Reverse the order of the digits
 void LexicographicNumberIterator::reverseDigits(vector<unsigned char>& digits) {
-	int 			nrOfDigits = digits.size();
-	unsigned char 	tmpDigit   = 0;
+    int 			nrOfDigits = digits.size();
+    unsigned char 	tmpDigit   = 0;
 
-	for (int i = 0; i < (nrOfDigits / 2); i++) {
-		tmpDigit 					= digits[i];
-		digits[i] 					= digits[nrOfDigits - 1 - i];
-		digits[nrOfDigits - 1 - i] 	= tmpDigit;
-	}
+    for (int i = 0; i < (nrOfDigits / 2); i++) {
+        tmpDigit 					= digits[i];
+        digits[i] 					= digits[nrOfDigits - 1 - i];
+        digits[nrOfDigits - 1 - i] 	= tmpDigit;
+    }
 }
 
 // Convert the digits into a number
 unsigned int LexicographicNumberIterator::digitsToNumber(vector<unsigned char>& digits) {
-	unsigned int number = 0;
+    unsigned int number = 0;
 
-	int nrOfDigits = digits.size();
+    int nrOfDigits = digits.size();
 
-	for (int i = nrOfDigits; i > 0; i--) {
-		number = (number * 10) + digits[nrOfDigits - i];
-	}
+    for (int i = nrOfDigits; i > 0; i--) {
+        number = (number * 10) + digits[nrOfDigits - i];
+    }
 
-	return number;
+    return number;
 }
 
 /*
@@ -99,24 +98,24 @@ unsigned int LexicographicNumberIterator::digitsToNumber(vector<unsigned char>& 
  * provided digit
  */
 bool LexicographicNumberIterator::isLargerThanUpperBound(unsigned char lastDigit) {
-	unsigned int nrOfDigitsCurrent = currentNumberDigits.size();
-	unsigned int nrOfDigitsUpper   = upperBoundDigits.size();
+    unsigned int nrOfDigitsCurrent = currentNumberDigits.size();
+    unsigned int nrOfDigitsUpper   = upperBoundDigits.size();
 
-	if (nrOfDigitsCurrent == nrOfDigitsUpper) {
-		for (int i = 0; i < (nrOfDigitsCurrent - 1); i++) {
-			if (currentNumberDigits[i] > upperBoundDigits[i]) {
-				return true;
-			} else if (currentNumberDigits[i] < upperBoundDigits[i]) {
-				return false;
-			}
-		}
+    if (nrOfDigitsCurrent == nrOfDigitsUpper) {
+        for (int i = 0; i < (nrOfDigitsCurrent - 1); i++) {
+            if (currentNumberDigits[i] > upperBoundDigits[i]) {
+                return true;
+            } else if (currentNumberDigits[i] < upperBoundDigits[i]) {
+                return false;
+            }
+        }
 
-		if (lastDigit > upperBoundDigits[nrOfDigitsUpper - 1]) {
-			return true;
-		}
-	}
+        if (lastDigit > upperBoundDigits[nrOfDigitsUpper - 1]) {
+            return true;
+        }
+    }
 
-	return false;
+    return false;
 }
 
 /*
@@ -124,15 +123,15 @@ bool LexicographicNumberIterator::isLargerThanUpperBound(unsigned char lastDigit
  * become larger than the upper bound
  */
 void LexicographicNumberIterator::padWithZeros() {
-	int possibleZeros = upperBoundDigits.size() - currentNumberDigits.size() - 1;
+    int possibleZeros = upperBoundDigits.size() - currentNumberDigits.size() - 1;
 
-	for (int i = 0; i < possibleZeros; i++) {
-		currentNumberDigits.push_back(0);
-	}
+    for (int i = 0; i < possibleZeros; i++) {
+        currentNumberDigits.push_back(0);
+    }
 
-	unsigned int currentNumber = digitsToNumber(currentNumberDigits);
+    unsigned int currentNumber = digitsToNumber(currentNumberDigits);
 
-	if ((currentNumber * 10) <= upperBound) {
-		currentNumberDigits.push_back(0);
-	}
+    if ((currentNumber * 10) <= upperBound) {
+        currentNumberDigits.push_back(0);
+    }
 }

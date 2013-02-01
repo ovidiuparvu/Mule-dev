@@ -21,7 +21,7 @@ AnnularSector::~AnnularSector() {
 }
 
 void AnnularSector::initialise(double startingRadius, double endingRadius, double startingAngle,
-                                 double endingAngle, double concentration) {
+                               double endingAngle,    double concentration) {
     this->startingRadius = startingRadius;
     this->endingRadius   = endingRadius;
     this->startingAngle  = startingAngle;
@@ -30,36 +30,36 @@ void AnnularSector::initialise(double startingRadius, double endingRadius, doubl
 }
 
 double AnnularSector::getConcentration() const {
-	return concentration;
+    return concentration;
 }
 
 double AnnularSector::getEndingAngle() const {
-	return endingAngle;
+    return endingAngle;
 }
 
 double AnnularSector::getEndingRadius() const {
-	return endingRadius;
+    return endingRadius;
 }
 
 double AnnularSector::getStartingAngle() const {
-	return startingAngle;
+    return startingAngle;
 }
 
 double AnnularSector::getStartingRadius() const {
-	return startingRadius;
+    return startingRadius;
 }
 
 string AnnularSector::toString() {
     string annularSectorDescription = "";
 
     annularSectorDescription += StringManipulator::toString<double>(startingRadius);
-	annularSectorDescription += SEPARATOR;
+    annularSectorDescription += SEPARATOR;
     annularSectorDescription += StringManipulator::toString<double>(endingRadius);
-	annularSectorDescription += SEPARATOR;
+    annularSectorDescription += SEPARATOR;
     annularSectorDescription += StringManipulator::toString<double>(startingAngle);
-	annularSectorDescription += SEPARATOR;
+    annularSectorDescription += SEPARATOR;
     annularSectorDescription += StringManipulator::toString<double>(endingAngle);
-	annularSectorDescription += SEPARATOR;
+    annularSectorDescription += SEPARATOR;
     annularSectorDescription += StringManipulator::toString<double>(concentration);
 
     return annularSectorDescription;

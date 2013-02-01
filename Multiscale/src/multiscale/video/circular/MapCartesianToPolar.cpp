@@ -55,105 +55,105 @@ namespace po = boost::program_options;
 
 // Initialise the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description usageDescription, int argc, char** argv) {
-	usageDescription.add_options()("help,h", "display help message\n")
+    usageDescription.add_options()("help,h", "display help message\n")
 						          ("input-file,i", po::value<string>(), "provide the path to the input file\n")
 						          ("output-file,o",po::value<string>(), "provide the path of the output file (without extension)\n")
 						          ("output-type,t", po::value<int>()->default_value(0), "Specify the type of the output:\n"
-																					    "\t 0 - output as script.\n"
-																						"\t 1 - output as file.\n\n"
-																						"Remark: Output is implicitly script.");
+						                                                                "\t 0 - output as script.\n"
+						                                                                "\t 1 - output as file.\n\n"
+						                                                                "Remark: Output is implicitly script.");
 
-	po::variables_map vm;
-	po::store(po::parse_command_line(argc, argv, usageDescription), vm);
-	po::notify(vm);
-	return vm;
+    po::variables_map vm;
+    po::store(po::parse_command_line(argc, argv, usageDescription), vm);
+    po::notify(vm);
+    return vm;
 }
 
 // Print help message if needed
 void printIfHelp(const po::variables_map& vm,
-		const po::options_description& usageDescription) {
-	if (vm.count("help")) {
-		cout << usageDescription << endl;
-	}
+        const po::options_description& usageDescription) {
+    if (vm.count("help")) {
+        cout << usageDescription << endl;
+    }
 }
 
 // Print error message if no arguments are provided
 void printIfNoArguments(int argc) {
-	if (argc == 1) {
-		cout << ERR_MSG << "No input arguments provided." << endl;
-		cout << "Run the program with the argument \"--help\" for more information." << endl;
-	}
+    if (argc == 1) {
+        cout << ERR_MSG << "No input arguments provided." << endl;
+        cout << "Run the program with the argument \"--help\" for more information." << endl;
+    }
 }
 
 // Check if the output type is valid
 bool isValidOutputType(const po::variables_map& vm, bool& isScript) {
-	if (vm.count("output-type")) {
-		int outputType = vm["output-type"].as<int>();
+    if (vm.count("output-type")) {
+        int outputType = vm["output-type"].as<int>();
 
-		if ((outputType < 0) || (outputType > 1)) {
-			cout << ERR_MSG
-					<< "Parameter output-type can have either the value 0 or 1."
-					<< endl;
+        if ((outputType < 0) || (outputType > 1)) {
+            cout << ERR_MSG
+                    << "Parameter output-type can have either the value 0 or 1."
+                    << endl;
 
-			return false;
-		}
+            return false;
+        }
 
-		if (outputType == 1) {
-			isScript = false;
-		}
-	}
+        if (outputType == 1) {
+            isScript = false;
+        }
+    }
 
-	return true;
+    return true;
 }
 
 // Get the needed parameters
 bool areParameters(string& inputFilepath, string& outputFilename, bool& isScript, int argc, char** argv) {
-	po::options_description usageDescription("Usage");
+    po::options_description usageDescription("Usage");
 
-	po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
+    po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
 
-	isScript = true;
-	
-	printIfHelp(vm, usageDescription);
+    isScript = true;
 
-	if ((vm.count("input-file")) && (vm.count("output-file"))) {
-		inputFilepath  = vm["input-file"].as<string>();
-		outputFilename = vm["output-file"].as<string>();
+    printIfHelp(vm, usageDescription);
 
-		if (isValidOutputType(vm, isScript)) {
-			return true;
-		}
-	}
+    if ((vm.count("input-file")) && (vm.count("output-file"))) {
+        inputFilepath  = vm["input-file"].as<string>();
+        outputFilename = vm["output-file"].as<string>();
 
-	printIfNoArguments(argc);
+        if (isValidOutputType(vm, isScript)) {
+            return true;
+        }
+    }
 
-	return false;
+    printIfNoArguments(argc);
+
+    return false;
 }
 
 // Main function
 int main(int argc, char** argv) {
-	string inputFilePath;
-	string outputFilepath;
-	bool   isScript = true;
+    string inputFilePath;
+    string outputFilepath;
+    bool   isScript = true;
 
     try {
-    	if (areParameters(inputFilePath, outputFilepath, isScript, argc, argv)) {
-    		CartesianToPolarConverter converter(inputFilePath, outputFilepath);
+        if (areParameters(inputFilePath, outputFilepath, isScript, argc, argv)) {
+            CartesianToPolarConverter converter(inputFilePath, outputFilepath);
 
-    		converter.convert(isScript);
-    	}
+            converter.convert(isScript);
+        }
     } catch(const string& e) {
-		cerr << ERR_MSG << e << endl;
+        cerr << ERR_MSG << e << endl;
 
-		return ERR_CODE;
-	} catch(const char* e) {
-		cerr << ERR_MSG << e << endl;
+        return ERR_CODE;
+    } catch(const char* e) {
+        cerr << ERR_MSG << e << endl;
 
-		return ERR_CODE;
-	} catch(exception& e) {
-		cerr << ERR_MSG << e.what() << endl;
+        return ERR_CODE;
+    } catch(exception& e) {
+        cerr << ERR_MSG << e.what() << endl;
 
-		return ERR_CODE;
+        return ERR_CODE;
     } catch(...) {
         cerr << "Exception of unknown type!" << endl;
     }

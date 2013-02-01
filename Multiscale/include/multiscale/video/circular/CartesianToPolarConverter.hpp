@@ -21,40 +21,40 @@ using namespace std;
 
 namespace multiscale {
 
-	namespace video {
+    namespace video {
 
-		class CartesianToPolarConverter {
+        class CartesianToPolarConverter {
 
-			private:
+            private:
 
-				vector<AnnularSector>   annularSectors;
-				vector<double>			    concentrations;
+                vector<AnnularSector>   annularSectors;
+                vector<double>			concentrations;
 
-				unsigned long nrOfConcentricCircles;
-				unsigned long nrOfSectors;
+                unsigned long nrOfConcentricCircles;
+                unsigned long nrOfSectors;
 
-				string inputFilepath;
-				string outputFilepath;
+                string inputFilepath;
+                string outputFilepath;
 
-			public:
+            public:
 
-				CartesianToPolarConverter (string inputFilepath, string outputFilename);
-				~CartesianToPolarConverter();
+                CartesianToPolarConverter (string inputFilepath, string outputFilename);
+                ~CartesianToPolarConverter();
 
-				void convert(bool outputToScript);
+                void convert(bool outputToScript);
 
-			private:
+            private:
 
-				void readInputData				() throw (string);
-				void readHeaderLine				(ifstream& fin) throw (string);
-				void readConcentrations			(ifstream& fin) throw (string);
-				void transformToAnnularSectors	();
-				void outputResultsAsFile		();
-				void outputResultsAsScript		();
+                void readInputData				() throw (string);
+                void readHeaderLine				(ifstream& fin) throw (string);
+                void readConcentrations			(ifstream& fin) throw (string);
+                void transformToAnnularSectors	();
+                void outputResultsAsFile		();
+                void outputResultsAsScript		();
 
-		};
+        };
 
-	};
+    };
 
 };
 

@@ -36,7 +36,7 @@ namespace po = boost::program_options;
 
 // Initialise the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description usageDescription, int argc, char** argv) {
-	usageDescription.add_options()("help,h", "display help message\n")
+    usageDescription.add_options()("help,h", "display help message\n")
 						          ("input-file,i", po::value<string>(), "provide the path to the input file\n")
 						          ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
 						          ("nr-concentric-circles,c", po::value<unsigned int>(), "provide the number of concentric circles\n")
@@ -44,117 +44,117 @@ po::variables_map initArgumentsConfig(po::options_description usageDescription, 
 						          ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n")
 						          ("lexicographic-iterator,l", "use lexicographic number iterator for numbering the columns of the .csv file\n");
 
-	po::variables_map vm;
-	po::store(po::parse_command_line(argc, argv, usageDescription), vm);
-	po::notify(vm);
-	return vm;
+    po::variables_map vm;
+    po::store(po::parse_command_line(argc, argv, usageDescription), vm);
+    po::notify(vm);
+    return vm;
 }
 
 // Print help message if needed
 void printIfHelp(const po::variables_map& vm,
-		const po::options_description& usageDescription) {
-	if (vm.count("help")) {
-		cout << usageDescription << endl;
-	}
+        const po::options_description& usageDescription) {
+    if (vm.count("help")) {
+        cout << usageDescription << endl;
+    }
 }
 
 // Set the number iterator type to lexicographic if requested
 void setNumberIteratorTypeIfPresent(const po::variables_map& vm, NumberIteratorType& numberIteratorType) {
-	if (vm.count("lexicographic-iterator")) {
-		numberIteratorType = multiscale::LEXICOGRAPHIC;
-	}
+    if (vm.count("lexicographic-iterator")) {
+        numberIteratorType = multiscale::LEXICOGRAPHIC;
+    }
 }
 
 // Print error message if no arguments are provided
 void printIfNoArguments(int argc) {
-	if (argc == 1) {
-		cout << ERR_MSG << "No input arguments provided." << endl;
-		cout << "Run the program with the argument \"--help\" for more information." << endl;
-	}
+    if (argc == 1) {
+        cout << ERR_MSG << "No input arguments provided." << endl;
+        cout << "Run the program with the argument \"--help\" for more information." << endl;
+    }
 }
 
 // Check if the number of concentrations for one position is valid
 bool isValidNrOfConcentrationsForPosition(const po::variables_map& vm, unsigned int& nrOfConcentrationsForPosition) {
-	if (vm.count("nr-concentrations-position")) {
-		nrOfConcentrationsForPosition = vm["nr-concentrations-position"].as<unsigned int>();
+    if (vm.count("nr-concentrations-position")) {
+        nrOfConcentrationsForPosition = vm["nr-concentrations-position"].as<unsigned int>();
 
-		if (nrOfConcentrationsForPosition == 0) {
-			cout << ERR_MSG
-					<< "Parameter nr-concentrations-position must be greater than 0."
-					<< endl;
+        if (nrOfConcentrationsForPosition == 0) {
+            cout << ERR_MSG
+                 << "Parameter nr-concentrations-position must be greater than 0."
+                 << endl;
 
-			return false;
-		}
-	}
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 }
 
 // Get the needed parameters
 bool areParameters(string& inputFilepath, string& outputFilename, unsigned int& nrOfConcentricCircles,
-		           unsigned int& nrOfSectors, unsigned int& nrOfConcentrationsForPosition,
-		           NumberIteratorType& numberIteratorType, int argc, char** argv) {
-	po::options_description usageDescription("Usage");
+                   unsigned int& nrOfSectors, unsigned int& nrOfConcentrationsForPosition,
+                   NumberIteratorType& numberIteratorType, int argc, char** argv) {
+    po::options_description usageDescription("Usage");
 
-	po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
+    po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
 
-	printIfHelp(vm, usageDescription);
-	setNumberIteratorTypeIfPresent(vm, numberIteratorType);
+    printIfHelp(vm, usageDescription);
+    setNumberIteratorTypeIfPresent(vm, numberIteratorType);
 
-	if ((vm.count("input-file")) && (vm.count("output-file")) &&
-		(vm.count("nr-concentric-circles")) && (vm.count("nr-sectors"))) {
-		inputFilepath  = vm["input-file"].as<string>();
-		outputFilename = vm["output-file"].as<string>();
+    if ((vm.count("input-file")) && (vm.count("output-file")) &&
+        (vm.count("nr-concentric-circles")) && (vm.count("nr-sectors"))) {
+        inputFilepath  = vm["input-file"].as<string>();
+        outputFilename = vm["output-file"].as<string>();
 
-		nrOfConcentricCircles = vm["nr-concentric-circles"].as<unsigned int>();
-		nrOfSectors			  = vm["nr-sectors"].as<unsigned int>();
+        nrOfConcentricCircles = vm["nr-concentric-circles"].as<unsigned int>();
+        nrOfSectors			  = vm["nr-sectors"].as<unsigned int>();
 
-		if (isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition)) {
-			return true;
-		}
-	}
+        if (isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition)) {
+            return true;
+        }
+    }
 
-	printIfNoArguments(argc);
+    printIfNoArguments(argc);
 
-	return false;
+    return false;
 }
 
 // Main function
 int main(int argc, char** argv) {
-	string inputFilePath;
-	string outputFilepath;
+    string inputFilePath;
+    string outputFilepath;
 
-	unsigned int nrOfConcentricCircles;
-	unsigned int nrOfSectors;
-	unsigned int nrOfConcentrationsForPosition;
+    unsigned int nrOfConcentricCircles;
+    unsigned int nrOfSectors;
+    unsigned int nrOfConcentrationsForPosition;
 
-	NumberIteratorType numberIteratorType = multiscale::STANDARD;
+    NumberIteratorType numberIteratorType = multiscale::STANDARD;
 
     try {
-    	if (areParameters(inputFilePath, outputFilepath, nrOfConcentricCircles,
-    			          nrOfSectors, nrOfConcentrationsForPosition, numberIteratorType,
-    			          argc, argv)) {
-    		PolarCsvToInputFilesConverter converter(inputFilePath, outputFilepath,
-    											    nrOfConcentricCircles, nrOfSectors,
-    											    nrOfConcentrationsForPosition,
-    											    numberIteratorType);
+        if (areParameters(inputFilePath, outputFilepath, nrOfConcentricCircles,
+                          nrOfSectors, nrOfConcentrationsForPosition, numberIteratorType,
+                          argc, argv)) {
+            PolarCsvToInputFilesConverter converter(inputFilePath, outputFilepath,
+                                                    nrOfConcentricCircles, nrOfSectors,
+                                                    nrOfConcentrationsForPosition,
+                                                    numberIteratorType);
 
-    		converter.convert();
-    	}
+            converter.convert();
+        }
     } catch(const string& e) {
         cerr << ERR_MSG << e << endl;
 
         return ERR_CODE;
     } catch(const char* e) {
-		cerr << ERR_MSG << e << endl;
+        cerr << ERR_MSG << e << endl;
 
-		return ERR_CODE;
+        return ERR_CODE;
     } catch(exception& e) {
         cerr << ERR_MSG << e.what() << endl;
 
         return ERR_CODE;
     } catch(...) {
-    	cerr << "Exception of unknown type!" << endl;
+        cerr << "Exception of unknown type!" << endl;
     }
 
     return 0;

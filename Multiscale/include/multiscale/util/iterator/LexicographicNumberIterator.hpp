@@ -13,33 +13,33 @@ using namespace std;
  */
 namespace multiscale {
 
-	class LexicographicNumberIterator : public NumberIterator {
+    class LexicographicNumberIterator : public NumberIterator {
 
-		private:
+        private:
 
-			vector<unsigned char> upperBoundDigits;
-			vector<unsigned char> currentNumberDigits;
+            vector<unsigned char> upperBoundDigits;
+            vector<unsigned char> currentNumberDigits;
 
-		public:
+        public:
 
-			LexicographicNumberIterator (unsigned int upperBound);
-			~LexicographicNumberIterator();
+            LexicographicNumberIterator (unsigned int upperBound);
+            ~LexicographicNumberIterator();
 
-			unsigned int number ();
+            unsigned int number ();
 
-		private:
+        private:
 
-			void				initialise			 	();
-			bool				hasNextInitialised   	();
-			void 			    resetCurrentNumber		();
-			void 			 	numberToDigits		  	(unsigned int number,
-					                                     vector<unsigned char>& digits);
-			void				reverseDigits			(vector<unsigned char>& digits);
-			unsigned int 		digitsToNumber			(vector<unsigned char>& digits);
-			bool 				isLargerThanUpperBound	(unsigned char lastDigit);
-			void 				padWithZeros  			();
+            void				initialise			 	();
+            bool				hasNextInitialised   	();
+            void 			    resetCurrentNumber		();
+            void 			 	numberToDigits		  	(unsigned int number,
+                                                         vector<unsigned char>& digits);
+            void				reverseDigits			(vector<unsigned char>& digits);
+            unsigned int 		digitsToNumber			(vector<unsigned char>& digits);
+            bool 				isLargerThanUpperBound	(unsigned char lastDigit);
+            void 				padWithZeros  			();
 
-	};
+    };
 
 };
 

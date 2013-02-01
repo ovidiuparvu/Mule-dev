@@ -3,22 +3,18 @@
 
 namespace multiscale {
 
-	class NumericRangeManipulator {
+    class NumericRangeManipulator {
 
-	public:
+        public:
 
-		template <class T, class U>
-		static U convertFromRange(T oldRangeMin, T oldRangeMax,
-				                  U newRangeMin, U newRangeMax,
-				                  T oldValue) {
-			U normalisedValue = ((U)(oldValue - oldRangeMin)) /
-					             (oldRangeMax - oldRangeMin);
+            template <class T, class U>
+            static U convertFromRange(T oldRangeMin, T oldRangeMax, U newRangeMin, U newRangeMax, T oldValue) {
+                U normalisedValue = ((U)(oldValue - oldRangeMin)) / (oldRangeMax - oldRangeMin);
 
-			return (newRangeMin +
-					normalisedValue * (newRangeMax - newRangeMin));
-		}
+                return (newRangeMin + normalisedValue * (newRangeMax - newRangeMin));
+            }
 
-	};
+    };
 
 };
 

@@ -27,33 +27,33 @@ using namespace std;
 
 namespace multiscale {
 
-	namespace video {
+    namespace video {
 
-		class PolarGnuplotScriptGenerator {
+        class PolarGnuplotScriptGenerator {
 
-			public:
+            public:
 
-				static void		generateScript      (vector<AnnularSector>& annularSectors,
-													 string outputFilename)
-													 throw (string);
+                static void		generateScript      (vector<AnnularSector>& annularSectors,
+                                                     string outputFilename)
+                                                     throw (string);
 
-			private:
+            private:
 
-				static void 	generateHeader		(ofstream& fout, string outputFilename);
-				static void 	generateBody  		(vector<AnnularSector>& annularSectors,
-													 ofstream& fout);
-				static void 	generateFooter		(ofstream& fout);
-				static void		outputHeader  		(ifstream& fin, string outputFilename,
-													 ofstream& fout);
-				static void		outputContent		(vector<AnnularSector>& annularSectors,
-													 string& contentTemplate,
-													 ofstream& fout);
-				static void		outputFooter		(ifstream& fin, ofstream& fout);
-				static string	readContentTemplate	(ifstream& fin);
+                static void 	generateHeader		(ofstream& fout, string outputFilename);
+                static void 	generateBody  		(vector<AnnularSector>& annularSectors,
+                                                     ofstream& fout);
+                static void 	generateFooter		(ofstream& fout);
+                static void		outputHeader  		(ifstream& fin, string outputFilename,
+                                                     ofstream& fout);
+                static void		outputContent		(vector<AnnularSector>& annularSectors,
+                                                     string& contentTemplate,
+                                                     ofstream& fout);
+                static void		outputFooter		(ifstream& fin, ofstream& fout);
+                static string	readContentTemplate	(ifstream& fin);
 
-		};
+        };
 
-	};
+    };
 
 };
 

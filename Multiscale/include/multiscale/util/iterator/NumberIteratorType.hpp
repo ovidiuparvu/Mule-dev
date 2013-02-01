@@ -3,10 +3,10 @@
 
 namespace multiscale {
 
-	enum NumberIteratorType {
-		STANDARD = 1,
-		LEXICOGRAPHIC = 2
-	};
+    enum NumberIteratorType {
+        STANDARD = 1,
+        LEXICOGRAPHIC = 2
+    };
 
 };
 

@@ -9,26 +9,26 @@
  */
 namespace multiscale {
 
-	class StandardNumberIterator : public NumberIterator {
+    class StandardNumberIterator : public NumberIterator {
 
-		private:
+        private:
 
-			unsigned int currentNumber;
+            unsigned int currentNumber;
 
-		public:
+        public:
 
-			StandardNumberIterator (unsigned int upperBound);
-			~StandardNumberIterator();
+            StandardNumberIterator (unsigned int upperBound);
+            ~StandardNumberIterator();
 
-			unsigned int number ();
+            unsigned int number ();
 
-		private:
+        private:
 
-			void initialise		   ();
-			bool hasNextInitialised();
-			void resetCurrentNumber();
+            void initialise		   ();
+            bool hasNextInitialised();
+            void resetCurrentNumber();
 
-	};
+    };
 
 };
 

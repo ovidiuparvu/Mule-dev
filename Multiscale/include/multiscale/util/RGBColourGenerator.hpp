@@ -18,30 +18,30 @@ using namespace std;
  */
 namespace multiscale {
 
-	class RGBColourGenerator {
+    class RGBColourGenerator {
 
-	private:
+        private:
 
-		static double red;
-		static double green;
-		static double blue;
+            static double red;
+            static double green;
+            static double blue;
 
-	public:
+        public:
 
-		static string generate(double concentrationMin,
-						       double concentrationMax,
-						       double concentration);
+            static string generate(double concentrationMin,
+                                   double concentrationMax,
+                                   double concentration);
 
-	private:
+        private:
 
-		static string convertHSVToRGB		(double hue,
-									  		 double saturation,
-									  		 double value);
-		static void	  computeRGBValues    	(int huePrime, double X,
-				                           	 double chroma, double m);
-		static string convertRGBToString	();
+            static string convertHSVToRGB	(double hue,
+                                             double saturation,
+                                             double value);
+            static void	  computeRGBValues  (int huePrime, double X,
+                                             double chroma, double m);
+            static string convertRGBToString();
 
-	};
+    };
 
 };
 
