@@ -69,13 +69,13 @@ void LexicographicNumberIterator::numberToDigits(unsigned int number, vector<uns
 
 // Reverse the order of the digits
 void LexicographicNumberIterator::reverseDigits(vector<unsigned char>& digits) {
-    int 			nrOfDigits = digits.size();
-    unsigned char 	tmpDigit   = 0;
+    int             nrOfDigits = digits.size();
+    unsigned char   tmpDigit   = 0;
 
     for (int i = 0; i < (nrOfDigits / 2); i++) {
-        tmpDigit 					= digits[i];
-        digits[i] 					= digits[nrOfDigits - 1 - i];
-        digits[nrOfDigits - 1 - i] 	= tmpDigit;
+        tmpDigit                    = digits[i];
+        digits[i]                   = digits[nrOfDigits - 1 - i];
+        digits[nrOfDigits - 1 - i]  = tmpDigit;
     }
 }
 

@@ -5,10 +5,10 @@
 
 using namespace std;
 
-#define HUE_MIN	   0
+#define HUE_MIN       0
 #define HUE_MAX    120
 #define SATURATION 1
-#define VALUE			 1
+#define VALUE             1
 
 /*
  * Class for generating a RGB colour given the possible range for
@@ -34,10 +34,10 @@ namespace multiscale {
 
         private:
 
-            static string convertHSVToRGB	(double hue,
+            static string convertHSVToRGB   (double hue,
                                              double saturation,
                                              double value);
-            static void	  computeRGBValues  (int huePrime, double X,
+            static void   computeRGBValues  (int huePrime, double X,
                                              double chroma, double m);
             static string convertRGBToString();
 

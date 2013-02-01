@@ -19,9 +19,9 @@ double RGBColourGenerator::blue = 0;
 string RGBColourGenerator::generate(double concentrationMin, double concentrationMax, double concentration) {
     concentration = (concentration - concentrationMin)/(concentrationMax - concentrationMin);
 
-    double hue 		  = HUE_MIN + (concentration * (HUE_MAX - HUE_MIN));
+    double hue        = HUE_MIN + (concentration * (HUE_MAX - HUE_MIN));
     double saturation = SATURATION;
-    double value	  = VALUE;
+    double value      = VALUE;
 
     return convertHSVToRGB(hue, saturation, value);
 }
@@ -29,7 +29,7 @@ string RGBColourGenerator::generate(double concentrationMin, double concentratio
 string RGBColourGenerator::convertHSVToRGB(double hue, double saturation, double value) {
     assert((hue >= 0) && (hue < 360));
 
-    double chroma = value * saturation;
+    double chroma   = value * saturation;
     int    huePrime = hue / 60;
 
     double X = chroma * (1 - abs((huePrime % 2) - 1));
@@ -44,45 +44,45 @@ void RGBColourGenerator::computeRGBValues(int    huePrime, double X,
                                           double chroma,   double m) {
     switch (huePrime) {
     case 0:
-        red = chroma;
+        red   = chroma;
         green = X;
-        blue = 0;
+        blue  = 0;
         break;
 
     case 1:
-        red = X;
+        red   = X;
         green = chroma;
-        blue = 0;
+        blue  = 0;
         break;
 
     case 2:
-        red = 0;
+        red   = 0;
         green = chroma;
-        blue = X;
+        blue  = X;
         break;
 
     case 3:
-        red = 0;
+        red   = 0;
         green = X;
-        blue = chroma;
+        blue  = chroma;
         break;
 
     case 4:
-        red = X;
+        red   = X;
         green = 0;
-        blue = chroma;
+        blue  = chroma;
         break;
 
     case 5:
-        red = chroma;
+        red   = chroma;
         green = 0;
-        blue = X;
+        blue  = X;
         break;
     }
 
-    red += m;
+    red   += m;
     green += m;
-    blue += m;
+    blue  += m;
 }
 
 string RGBColourGenerator::convertRGBToString() {

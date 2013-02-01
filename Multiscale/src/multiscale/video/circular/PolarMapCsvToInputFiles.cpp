@@ -37,12 +37,12 @@ namespace po = boost::program_options;
 // Initialise the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description usageDescription, int argc, char** argv) {
     usageDescription.add_options()("help,h", "display help message\n")
-						          ("input-file,i", po::value<string>(), "provide the path to the input file\n")
-						          ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
-						          ("nr-concentric-circles,c", po::value<unsigned int>(), "provide the number of concentric circles\n")
-						          ("nr-sectors,s", po::value<unsigned int>(), "provide the number of sectors\n")
-						          ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n")
-						          ("lexicographic-iterator,l", "use lexicographic number iterator for numbering the columns of the .csv file\n");
+                                  ("input-file,i", po::value<string>(), "provide the path to the input file\n")
+                                  ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
+                                  ("nr-concentric-circles,c", po::value<unsigned int>(), "provide the number of concentric circles\n")
+                                  ("nr-sectors,s", po::value<unsigned int>(), "provide the number of sectors\n")
+                                  ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n")
+                                  ("lexicographic-iterator,l", "use lexicographic number iterator for numbering the columns of the .csv file\n");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, usageDescription), vm);
@@ -51,8 +51,7 @@ po::variables_map initArgumentsConfig(po::options_description usageDescription, 
 }
 
 // Print help message if needed
-void printIfHelp(const po::variables_map& vm,
-        const po::options_description& usageDescription) {
+void printIfHelp(const po::variables_map& vm, const po::options_description& usageDescription) {
     if (vm.count("help")) {
         cout << usageDescription << endl;
     }
@@ -107,7 +106,7 @@ bool areParameters(string& inputFilepath, string& outputFilename, unsigned int& 
         outputFilename = vm["output-file"].as<string>();
 
         nrOfConcentricCircles = vm["nr-concentric-circles"].as<unsigned int>();
-        nrOfSectors			  = vm["nr-sectors"].as<unsigned int>();
+        nrOfSectors              = vm["nr-sectors"].as<unsigned int>();
 
         if (isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition)) {
             return true;

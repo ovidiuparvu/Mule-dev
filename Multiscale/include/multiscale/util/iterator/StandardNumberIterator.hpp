@@ -20,11 +20,11 @@ namespace multiscale {
             StandardNumberIterator (unsigned int upperBound);
             ~StandardNumberIterator();
 
-            unsigned int number ();
+            unsigned int number();
 
         private:
 
-            void initialise		   ();
+            void initialise        ();
             bool hasNextInitialised();
             void resetCurrentNumber();
 

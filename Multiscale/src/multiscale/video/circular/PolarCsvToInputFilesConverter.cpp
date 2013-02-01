@@ -21,11 +21,11 @@ PolarCsvToInputFilesConverter::PolarCsvToInputFilesConverter(string inputFilepat
                                                              unsigned int nrOfSectors,
                                                              unsigned int nrOfConcentrationsForPosition,
                                                              NumberIteratorType numberIteratorType) {
-    this->inputFilepath					= inputFilepath;
-    this->outputFilepath 				= outputFilepath;
+    this->inputFilepath                 = inputFilepath;
+    this->outputFilepath                = outputFilepath;
 
-    this->nrOfConcentricCircles 		= nrOfConcentricCircles;
-    this->nrOfSectors 					= nrOfSectors;
+    this->nrOfConcentricCircles         = nrOfConcentricCircles;
+    this->nrOfSectors                   = nrOfSectors;
     this->nrOfConcentrationsForPosition = nrOfConcentrationsForPosition;
 
     this->concentrationsIndex  = 0;

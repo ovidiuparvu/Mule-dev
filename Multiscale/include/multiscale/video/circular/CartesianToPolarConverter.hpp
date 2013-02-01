@@ -8,14 +8,14 @@
 
 using namespace std;
 
-#define ERR_CONC        		  "All concentrations have to be between 0 and 1."
-#define ERR_NEG_DIMENSION   	"The dimensions N and M must be non-negative."
-#define ERR_IN_EXTRA_DATA   	"The input file contains more data than required."
+#define ERR_CONC                "All concentrations have to be between 0 and 1."
+#define ERR_NEG_DIMENSION       "The dimensions N and M must be non-negative."
+#define ERR_IN_EXTRA_DATA       "The input file contains more data than required."
 
-#define OUTPUT_FILE_EXTENSION ".out"
+#define OUTPUT_FILE_EXTENSION   ".out"
 
-#define RADIUS_MIN 						0.001
-#define RADIUS_MAX 						0.3
+#define RADIUS_MIN              0.001
+#define RADIUS_MAX              0.3
 
 // Converter from the rectangular geometry grid cells to annular sectors
 
@@ -28,7 +28,7 @@ namespace multiscale {
             private:
 
                 vector<AnnularSector>   annularSectors;
-                vector<double>			concentrations;
+                vector<double>          concentrations;
 
                 unsigned long nrOfConcentricCircles;
                 unsigned long nrOfSectors;
@@ -45,12 +45,12 @@ namespace multiscale {
 
             private:
 
-                void readInputData				() throw (string);
-                void readHeaderLine				(ifstream& fin) throw (string);
-                void readConcentrations			(ifstream& fin) throw (string);
-                void transformToAnnularSectors	();
-                void outputResultsAsFile		();
-                void outputResultsAsScript		();
+                void readInputData              () throw (string);
+                void readHeaderLine             (ifstream& fin) throw (string);
+                void readConcentrations         (ifstream& fin) throw (string);
+                void transformToAnnularSectors  ();
+                void outputResultsAsFile        ();
+                void outputResultsAsScript      ();
 
         };
 

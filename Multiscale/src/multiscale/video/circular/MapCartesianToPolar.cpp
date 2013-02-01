@@ -1,5 +1,5 @@
 /**
- * This program is used for mapping a grid from the cartesian to the 
+ * This program is used for mapping a grid from the cartesian to the
  * polar coordinate system.
  *
  * The purpose of this program is to help simulate the "Phase Variation" case
@@ -26,7 +26,7 @@
  * FORMAT OF OUTPUT FILE:
  * Each line corresponds to an annular sector and contains information about the
  * starting radius, ending radius, starting angle, ending angle and the concentration
- * of bacteria. 
+ * of bacteria.
  *
  * FORMAT OF SCRIPT:
  * The script will generate the gnuplot script corresponding to the input file.
@@ -56,12 +56,12 @@ namespace po = boost::program_options;
 // Initialise the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description usageDescription, int argc, char** argv) {
     usageDescription.add_options()("help,h", "display help message\n")
-						          ("input-file,i", po::value<string>(), "provide the path to the input file\n")
-						          ("output-file,o",po::value<string>(), "provide the path of the output file (without extension)\n")
-						          ("output-type,t", po::value<int>()->default_value(0), "Specify the type of the output:\n"
-						                                                                "\t 0 - output as script.\n"
-						                                                                "\t 1 - output as file.\n\n"
-						                                                                "Remark: Output is implicitly script.");
+                                  ("input-file,i", po::value<string>(), "provide the path to the input file\n")
+                                  ("output-file,o",po::value<string>(), "provide the path of the output file (without extension)\n")
+                                  ("output-type,t", po::value<int>()->default_value(0), "Specify the type of the output:\n"
+                                                                                        "\t 0 - output as script.\n"
+                                                                                        "\t 1 - output as file.\n\n"
+                                                                                        "Remark: Output is implicitly script.");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, usageDescription), vm);
@@ -70,8 +70,7 @@ po::variables_map initArgumentsConfig(po::options_description usageDescription, 
 }
 
 // Print help message if needed
-void printIfHelp(const po::variables_map& vm,
-        const po::options_description& usageDescription) {
+void printIfHelp(const po::variables_map& vm, const po::options_description& usageDescription) {
     if (vm.count("help")) {
         cout << usageDescription << endl;
     }

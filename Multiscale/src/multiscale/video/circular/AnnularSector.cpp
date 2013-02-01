@@ -13,7 +13,7 @@ AnnularSector::AnnularSector() {
     this->endingRadius   = 0;
     this->startingAngle  = 0;
     this->endingAngle    = 0;
-    this->concentration  = 0;    
+    this->concentration  = 0;
 }
 
 AnnularSector::~AnnularSector() {
@@ -26,7 +26,7 @@ void AnnularSector::initialise(double startingRadius, double endingRadius, doubl
     this->endingRadius   = endingRadius;
     this->startingAngle  = startingAngle;
     this->endingAngle    = endingAngle;
-    this->concentration  = concentration;    
+    this->concentration  = concentration;
 }
 
 double AnnularSector::getConcentration() const {

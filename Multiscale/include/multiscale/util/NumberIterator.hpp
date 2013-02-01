@@ -7,7 +7,7 @@ namespace multiscale {
 
         protected:
 
-            bool 		 isInitialised;
+            bool         isInitialised;
             unsigned int upperBound;
 
         public:
@@ -15,17 +15,17 @@ namespace multiscale {
             NumberIterator(unsigned int upperBound);
             virtual ~NumberIterator() {};
 
-            void					init   (unsigned int upperBound);
-            bool	    		    hasNext();
-            virtual unsigned int	number () = 0;
-            void					reset  ();
+            void                    init   (unsigned int upperBound);
+            bool                    hasNext();
+            virtual unsigned int    number () = 0;
+            void                    reset  ();
 
         private:
 
-            virtual void			initialise			 () = 0;
-            virtual bool			hasNextInitialised   () = 0;
-            bool		   			hasNextNotInitialised();
-            virtual void			resetCurrentNumber	 () = 0;
+            virtual void            initialise           () = 0;
+            virtual bool            hasNextInitialised   () = 0;
+            bool                    hasNextNotInitialised();
+            virtual void            resetCurrentNumber   () = 0;
 
     };
 

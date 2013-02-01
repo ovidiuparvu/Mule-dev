@@ -15,11 +15,11 @@ namespace multiscale {
 
         public:
 
-            static string 			filenameFromPath(string& filepath);
-            static string 			replace 		(string& initialString,
+            static string           filenameFromPath(string& filepath);
+            static string           replace         (string& initialString,
                                                      string  replaceWhat,
                                                      string  replaceTo);
-            static vector<string>	split			(string  initialString,
+            static vector<string>   split           (string  initialString,
                                                      string  delimiter);
             template <class T>
             static string toString(T number) {
