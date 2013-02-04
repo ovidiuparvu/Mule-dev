@@ -97,7 +97,7 @@ void CartesianToPolarConverter::transformToAnnularSectors() {
     (annularSectors.at(0)).initialise(0.0, RADIUS_MIN, 0.0, 360.0, concentrations.at(0));
 
     // Define the constants
-    double angle     = 360 / nrOfSectors;
+    double angle     = 360.0 / nrOfSectors;
     int    maxRadius = (nrOfConcentricCircles - 1);
 
     // Transform the rest of the grid to annular sectors
