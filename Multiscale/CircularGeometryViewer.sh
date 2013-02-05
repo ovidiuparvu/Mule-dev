@@ -67,15 +67,15 @@ sed 's/[;,:\t ]+/,/g' <${csvFile} | cut -d "," -f 2- | tail -n +2 > ${INPUT_FOLD
 echo "Generating the input files from the .csv file...";
 
 # Run the program for converting the ".csv" file to "Number of time points" input files
-# for the MapCartesianToPolar program
+# for the MapCartesianToPolarScript program
 bin/PolarMapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --nr-concentric-circles $nrOfConcentricCircles --nr-sectors $nrOfSectors --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}";
 
 # Inform user of the next action
 echo "Generating in parallel the gnuplot script for each of the input files...";
 
-# Run the MapCartesianToPolar for converting each of the generated input files
+# Run the MapCartesianToPolarScript for converting each of the generated input files
 # into gnuplot scripts
-ls -1 ${INPUT_FOLDER}/${folderName}/*.in | parallel bin/MapCartesianToPolar --input-file {} --output-file ${SCRIPT_FOLDER}/${folderName}/{/.}
+ls -1 ${INPUT_FOLDER}/${folderName}/*.in | parallel bin/MapCartesianToPolarScript --input-file {} --output-file ${SCRIPT_FOLDER}/${folderName}/{/.}
 
 # Inform user of the next action
 echo "Running in parallel gnuplot and taking as input each one of the generated scripts...";
