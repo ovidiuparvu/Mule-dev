@@ -3,19 +3,19 @@ Project multiscale
 
 ## Contents
 
-0. Introduction
-1. Requirements
-    1.1. Building
-    1.2. Running
+0. **Introduction**
+1. **Requirements**
+    1. Building
+    2. Running
 
-## Introduction
+## 1. Introduction
 
- VERSION: 0.1
- AUTHOR: Ovidiu Parvu                                                        
- CREATED ON: 4th of February, 2013                                           
- MODIFIED ON: 5th of February, 2013                                          
+**Author:** Ovidiu Parvu                                                        
+**Created on:** 4th of February, 2013                                           
+**Modified on:** 5th of February, 2013                                          
+**Current version:** 0.1
                
-## 1. Requirements
+## 2. Requirements
    
 ### 1.1. Requirements for building the program
 
