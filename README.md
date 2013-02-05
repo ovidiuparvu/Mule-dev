@@ -7,6 +7,7 @@ Project multiscale
 1. **Requirements**
     1. Building
     2. Running
+2. **Contact**
 
 ## 1. Introduction
 
@@ -14,7 +15,7 @@ Project multiscale
 **Created on:** 4th of February, 2013                                           
 **Modified on:** 5th of February, 2013                                          
 **Current version:** 0.1
-               
+
 ## 2. Requirements
    
 ### 1.1. Requirements for building the program
@@ -33,3 +34,9 @@ computer:
 * Bash or an alternative shell which supports the same commands
 * gnuplot (ver. 4.6)
 * GNU parallel
+
+
+## 3. Contact
+
+For more details please visit my [personal webpage](http://brunel.ac.uk/~cspgoop).
+
