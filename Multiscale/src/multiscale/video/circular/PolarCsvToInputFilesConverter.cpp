@@ -209,7 +209,7 @@ vector<double> PolarCsvToInputFilesConverter::splitLineInConcentrations(string l
     return concentrations;
 }
 
-// Split the first line into concentrations
+// Split the first part of the line into concentrations
 void PolarCsvToInputFilesConverter::splitFirstPartInConcentrations(vector<double>& concentrations,
                                                                    vector<string>& tokens,
                                                                    unsigned int circleIndex) {
@@ -224,7 +224,7 @@ void PolarCsvToInputFilesConverter::splitFirstPartInConcentrations(vector<double
     concentrationsIndex++;
 }
 
-// Split the first line into concentrations
+// Split the next/other parts of the line into concentrations
 void PolarCsvToInputFilesConverter::splitOtherPartsInConcentrations(vector<double>& concentrations,
                                                                     vector<string>& tokens,
                                                                     unsigned int circleIndex) {

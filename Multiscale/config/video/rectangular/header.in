@@ -1,0 +1,26 @@
+# Output preferences
+set terminal pngcairo background "#FFFFFF" font "Arial" fontscale 3 size 2048, 2048
+set output 'OUTPUT_FILENAME.png'
+
+# Set the environment for using colorbox
+set pm3d implicit at s
+
+# Colorbox options
+set style line 1234 linetype -1 linewidth 1
+set colorbox border 1234
+set cbrange [0:1]
+set cblabel "Concentrations"
+
+# Unset unnecessary elements
+unset border
+unset key
+set   noxtics
+set   noytics
+
+# Set the ranges
+set xrange [-0.5:OUTPUT_DIMENSION1]
+set yrange [-0.5:OUTPUT_DIMENSION2]
+
+# Plot the heatmap
+set view map
+splot '-' matrix with image
