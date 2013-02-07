@@ -60,7 +60,7 @@ namespace multiscale {
                 void            initInputFile                   (ifstream& fin);
                 void            initMaximumConcentration        (ifstream& fin);
                 void            initOutputFile                  (ofstream& fout, unsigned int index);
-                void            initIterators                   (NumberIteratorType numberIteratorType);
+                void            initIterators                   (NumberIteratorType& numberIteratorType);
                 void            validateInput                   (ifstream& fin);
                 void            validateInputLine               (string& line, unsigned int lineNumber);
                 void            processLine                     (string& line, unsigned int outputIndex);

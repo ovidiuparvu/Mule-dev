@@ -39,11 +39,11 @@ namespace multiscale {
 
             private:
 
-                static void     generateHeader      (ofstream& fout, string outputFilename);
+                static void     generateHeader      (ofstream& fout, string& outputFilename);
                 static void     generateBody        (vector<AnnularSector>& annularSectors,
                                                      ofstream& fout);
                 static void     generateFooter      (ofstream& fout);
-                static void     outputHeader        (ifstream& fin, string outputFilename,
+                static void     outputHeader        (ifstream& fin, string& outputFilename,
                                                      ofstream& fout);
                 static void     outputContent       (vector<AnnularSector>& annularSectors,
                                                      string& contentTemplate,

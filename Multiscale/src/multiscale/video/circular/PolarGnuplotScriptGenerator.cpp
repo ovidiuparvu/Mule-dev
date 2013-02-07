@@ -29,7 +29,7 @@ void PolarGnuplotScriptGenerator::generateScript(vector<AnnularSector>& annularS
 }
 
 // Generate the header of the script
-void PolarGnuplotScriptGenerator::generateHeader(ofstream& fout, string outputFilepath) {
+void PolarGnuplotScriptGenerator::generateHeader(ofstream& fout, string& outputFilepath) {
     ifstream fin(HEADER_IN);
 
     assert(fin.is_open());
@@ -66,7 +66,7 @@ void PolarGnuplotScriptGenerator::generateFooter(ofstream& fout) {
 }
 
 // Output the header of the script
-void PolarGnuplotScriptGenerator::outputHeader(ifstream& fin, string outputFilename, ofstream& fout) {
+void PolarGnuplotScriptGenerator::outputHeader(ifstream& fin, string& outputFilename, ofstream& fout) {
     string line;
 
     while (getline(fin, line)) {

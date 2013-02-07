@@ -111,7 +111,7 @@ void PolarCsvToInputFilesConverter::initOutputFile(ofstream& fout, unsigned int 
 }
 
 // Initialise the iterators
-void PolarCsvToInputFilesConverter::initIterators(NumberIteratorType numberIteratorType) {
+void PolarCsvToInputFilesConverter::initIterators(NumberIteratorType& numberIteratorType) {
     switch (numberIteratorType) {
     case multiscale::STANDARD:
         circlesIterator = new StandardNumberIterator(nrOfConcentricCircles);
