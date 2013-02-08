@@ -35,7 +35,7 @@ namespace po = boost::program_options;
 
 
 // Initialise the arguments configuration
-po::variables_map initArgumentsConfig(po::options_description usageDescription, int argc, char** argv) {
+po::variables_map initArgumentsConfig(po::options_description& usageDescription, int argc, char** argv) {
     usageDescription.add_options()("help,h", "display help message\n")
                                   ("input-file,i", po::value<string>(), "provide the path to the input file\n")
                                   ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
@@ -51,39 +51,31 @@ po::variables_map initArgumentsConfig(po::options_description usageDescription, 
 }
 
 // Print help message if needed
-void printIfHelp(const po::variables_map& vm, const po::options_description& usageDescription) {
-    if (vm.count("help")) {
-        cout << usageDescription << endl;
-    }
+void printHelpInformation(const po::variables_map& vm, const po::options_description& usageDescription) {
+    cout << usageDescription << endl;
+}
+
+// Print error message if wrong arguments are provided
+void printWrongArguments() {
+    cout << ERR_MSG << "Wrong input arguments provided." << endl;
+    cout << "Run the program with the argument \"--help\" for more information." << endl;
 }
 
 // Set the number iterator type to lexicographic if requested
-void setNumberIteratorTypeIfPresent(const po::variables_map& vm, NumberIteratorType& numberIteratorType) {
-    if (vm.count("lexicographic-iterator")) {
-        numberIteratorType = multiscale::LEXICOGRAPHIC;
-    }
-}
-
-// Print error message if no arguments are provided
-void printIfNoArguments(int argc) {
-    if (argc == 1) {
-        cout << ERR_MSG << "No input arguments provided." << endl;
-        cout << "Run the program with the argument \"--help\" for more information." << endl;
-    }
+void setNumberIteratorType(const po::variables_map& vm, NumberIteratorType& numberIteratorType) {
+    numberIteratorType = multiscale::LEXICOGRAPHIC;
 }
 
 // Check if the number of concentrations for one position is valid
 bool isValidNrOfConcentrationsForPosition(const po::variables_map& vm, unsigned int& nrOfConcentrationsForPosition) {
-    if (vm.count("nr-concentrations-position")) {
-        nrOfConcentrationsForPosition = vm["nr-concentrations-position"].as<unsigned int>();
+    nrOfConcentrationsForPosition = vm["nr-concentrations-position"].as<unsigned int>();
 
-        if (nrOfConcentrationsForPosition == 0) {
-            cout << ERR_MSG
-                 << "Parameter nr-concentrations-position must be greater than 0."
-                 << endl;
+    if (nrOfConcentrationsForPosition == 0) {
+        cout << ERR_MSG
+             << "Parameter nr-concentrations-position must be greater than 0."
+             << endl;
 
-            return false;
-        }
+        return false;
     }
 
     return true;
@@ -97,23 +89,42 @@ bool areParameters(string& inputFilepath, string& outputFilename, unsigned int& 
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
 
-    printIfHelp(vm, usageDescription);
-    setNumberIteratorTypeIfPresent(vm, numberIteratorType);
+    // Check if the user wants to print help information
+    if (vm.count("help")) {
+        printHelpInformation(vm, usageDescription);
 
+        return false;
+    }
+
+    // Check if the given parameters are correct
     if ((vm.count("input-file")) && (vm.count("output-file")) &&
         (vm.count("nr-concentric-circles")) && (vm.count("nr-sectors"))) {
         inputFilepath  = vm["input-file"].as<string>();
         outputFilename = vm["output-file"].as<string>();
 
         nrOfConcentricCircles = vm["nr-concentric-circles"].as<unsigned int>();
-        nrOfSectors              = vm["nr-sectors"].as<unsigned int>();
+        nrOfSectors           = vm["nr-sectors"].as<unsigned int>();
 
-        if (isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition)) {
+        if (argc == 9) {
             return true;
+        } else if (argc == 11) {
+            if (vm.count("nr-concentrations-position")) {
+                return isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition);
+            } else if (vm.count("lexicographic-iterator")) {
+                setNumberIteratorType(vm, numberIteratorType);
+
+                return true;
+            }
+        } else if (argc == 13) {
+            if ((vm.count("nr-concentrations-position")) && (vm.count("lexicographic-iterator"))) {
+                setNumberIteratorType(vm, numberIteratorType);
+
+                return isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition);
+            }
         }
     }
 
-    printIfNoArguments(argc);
+    printWrongArguments();
 
     return false;
 }

@@ -1,5 +1,4 @@
 #include "multiscale/video/circular/PolarGnuplotScriptGenerator.hpp"
-#include "multiscale/util/RGBColourGenerator.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
 #include <cassert>

@@ -54,7 +54,7 @@ namespace po = boost::program_options;
 
 
 // Initialise the arguments configuration
-po::variables_map initArgumentsConfig(po::options_description usageDescription, int argc, char** argv) {
+po::variables_map initArgumentsConfig(po::options_description& usageDescription, int argc, char** argv) {
     usageDescription.add_options()("help,h", "display help message\n")
                                   ("input-file,i", po::value<string>(), "provide the path to the input file\n")
                                   ("output-file,o",po::value<string>(), "provide the path of the output file (without extension)\n")
@@ -70,18 +70,14 @@ po::variables_map initArgumentsConfig(po::options_description usageDescription, 
 }
 
 // Print help message if needed
-void printIfHelp(const po::variables_map& vm, const po::options_description& usageDescription) {
-    if (vm.count("help")) {
-        cout << usageDescription << endl;
-    }
+void printHelpInformation(const po::variables_map& vm, const po::options_description& usageDescription) {
+    cout << usageDescription << endl;
 }
 
-// Print error message if no arguments are provided
-void printIfNoArguments(int argc) {
-    if (argc == 1) {
-        cout << ERR_MSG << "No input arguments provided." << endl;
-        cout << "Run the program with the argument \"--help\" for more information." << endl;
-    }
+// Print error message if wrong arguments are provided
+void printWrongArguments() {
+    cout << ERR_MSG << "Wrong input arguments provided." << endl;
+    cout << "Run the program with the argument \"--help\" for more information." << endl;
 }
 
 // Check if the output type is valid
@@ -113,18 +109,26 @@ bool areParameters(string& inputFilepath, string& outputFilename, bool& isScript
 
     isScript = true;
 
-    printIfHelp(vm, usageDescription);
+    // Check if the user wants to print help information
+    if (vm.count("help")) {
+        printHelpInformation(vm, usageDescription);
 
+        return false;
+    }
+
+    // Check if the given parameters are correct
     if ((vm.count("input-file")) && (vm.count("output-file"))) {
         inputFilepath  = vm["input-file"].as<string>();
         outputFilename = vm["output-file"].as<string>();
 
-        if (isValidOutputType(vm, isScript)) {
+        if (argc == 5) {
             return true;
+        } else if (argc == 7) {
+            return isValidOutputType(vm, isScript);
         }
     }
 
-    printIfNoArguments(argc);
+    printWrongArguments();
 
     return false;
 }

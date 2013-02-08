@@ -1,7 +1,5 @@
-#ifndef CARTESIANTOPOLARCONVERTER_HPP_
-#define CARTESIANTOPOLARCONVERTER_HPP_
-
-#include "multiscale/video/circular/AnnularSector.hpp"
+#ifndef CARTESIANTOCONCENTRATIONSCONVERTER_HPP_
+#define CARTESIANTOCONCENTRATIONSCONVERTER_HPP_
 
 #include <string>
 #include <vector>
@@ -17,40 +15,37 @@ using namespace std;
 #define RADIUS_MIN              0.001
 #define RADIUS_MAX              0.3
 
-// Converter from the rectangular geometry grid cells to annular sectors
+// Scale the values of the rectangular geometry grid cells
 
 namespace multiscale {
 
     namespace video {
 
-        class CartesianToPolarConverter {
+        class CartesianToConcentrationsConverter {
 
             private:
 
-                vector<AnnularSector>   annularSectors;
-                vector<double>          concentrations;
+                vector<double>  concentrations;
 
-                unsigned long nrOfConcentricCircles;
-                unsigned long nrOfSectors;
+                unsigned long   height;
+                unsigned long   width;
 
                 string inputFilepath;
                 string outputFilepath;
 
             public:
 
-                CartesianToPolarConverter (string inputFilepath, string outputFilepath);
-                ~CartesianToPolarConverter();
+                CartesianToConcentrationsConverter (string inputFilepath, string outputFilepath);
+                ~CartesianToConcentrationsConverter();
 
-                void convert(bool outputToScript);
+                void convert();
 
             private:
 
                 void readInputData              () throw (string);
                 void readHeaderLine             (ifstream& fin) throw (string);
                 void readConcentrations         (ifstream& fin) throw (string);
-                void transformToAnnularSectors  ();
-                void outputResultsAsFile        ();
-                void outputResultsAsScript      ();
+                void outputResults              ();
 
         };
 

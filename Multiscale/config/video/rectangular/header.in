@@ -19,7 +19,7 @@ set   noytics
 
 # Set the ranges
 set xrange [-0.5:OUTPUT_DIMENSION1]
-set yrange [-0.5:OUTPUT_DIMENSION2]
+set yrange [-0.5:OUTPUT_DIMENSION2] reverse
 
 # Plot the heatmap
 set view map

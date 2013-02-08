@@ -1,5 +1,5 @@
-#ifndef POLARCSVTOINPUTFILESCONVERTER_HPP_
-#define POLARCSVTOINPUTFILESCONVERTER_HPP_
+#ifndef RECTANGULARCSVTOINPUTFILESCONVERTER_HPP_
+#define RECTANGULARCSVTOINPUTFILESCONVERTER_HPP_
 
 #include "multiscale/util/NumberIterator.hpp"
 #include "multiscale/util/iterator/NumberIteratorType.hpp"
@@ -12,8 +12,6 @@
 #define OUTPUT_FILE_SEPARATOR   "_"
 #define INPUT_FILE_SEPARATOR    ","
 
-#define RADIUS_MIN              1
-
 #define ERR_NEG_CONCENTRATION           "All concentrations must be non-negative.";
 #define ERR_NR_CONCENTRATIONS           "The number of concentrations in the input file does not match the values of the input parameters nr-concentric-circles and nr-sectors.";
 #define ERR_INVALID_CONCENTRATION_LINE  "Invalid concentration on line: "
@@ -25,15 +23,15 @@ namespace multiscale {
 
     namespace video {
 
-        class PolarCsvToInputFilesConverter {
+        class RectangularCsvToInputFilesConverter {
 
             private:
 
                 string inputFilepath;
                 string outputFilepath;
 
-                unsigned int nrOfConcentricCircles;
-                unsigned int nrOfSectors;
+                unsigned int height;
+                unsigned int width;
                 unsigned int nrOfConcentrationsForPosition;
 
                 unsigned int concentrationsIndex;
@@ -45,13 +43,13 @@ namespace multiscale {
 
             public:
 
-                PolarCsvToInputFilesConverter (string inputFilepath,
-                                               string outputFilepath,
-                                               unsigned int nrOfConcentricCircles,
-                                               unsigned int nrOfSectors,
-                                               unsigned int nrOfConcentrationsForPosition,
-                                               NumberIteratorType numberIteratorType);
-                ~PolarCsvToInputFilesConverter();
+                RectangularCsvToInputFilesConverter (string inputFilepath,
+                                                     string outputFilepath,
+                                                     unsigned int height,
+                                                     unsigned int width,
+                                                     unsigned int nrOfConcentrationsForPosition,
+                                                     NumberIteratorType numberIteratorType);
+                ~RectangularCsvToInputFilesConverter();
 
                 void convert();
 
@@ -65,21 +63,13 @@ namespace multiscale {
                 void            validateInputLine               (string& line, unsigned int lineNumber);
                 void            processLine                     (string& line, unsigned int outputIndex);
                 vector<double>  splitLineInConcentrations       (string line);
-                void            splitFirstPartInConcentrations  (vector<double>& concentrations,
-                                                                 vector<string>& tokens,
-                                                                 unsigned int circleIndex);
-                void            splitOtherPartsInConcentrations (vector<double>& concentrations,
-                                                                 vector<string>& tokens,
-                                                                 unsigned int circleIndex);
-                double          computeNextPositionConcentration(unsigned int circleIndex,
-                                                                 int concentrationIndex,
+                void            splitLineInConcentrations       (vector<double>& concentrations,
                                                                  vector<string>& tokens);
-                double          computeScaledConcentration      (string concentration,
-                                                                 int circleIndex);
-                double          computeConcentrationWrtArea     (double amount,
-                                                                 int circleIndex);
-                double          computeNormalisedConcentration  (double concentration,
-                                                                 int circleIndex);
+                double          computeNextPositionConcentration(int concentrationIndex,
+                                                                 vector<string>& tokens);
+                double          computeScaledConcentration      (string concentration);
+                double          computeConcentrationWrtArea     (double amount);
+                double          computeNormalisedConcentration  (double concentration);
                 void            updateMaximumConcentration      (string& line,
                                                                  double& maximumConcentration);
 

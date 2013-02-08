@@ -1,5 +1,5 @@
-#ifndef GNUPLOTSCRIPTGENERATOR_HPP_
-#define GNUPLOTSCRIPTGENERATOR_HPP_
+#ifndef POLARGNUPLOTSCRIPTGENERATOR_HPP_
+#define POLARGNUPLOTSCRIPTGENERATOR_HPP_
 
 #include "multiscale/video/circular/AnnularSector.hpp"
 
@@ -10,8 +10,6 @@ using namespace std;
 #define HEADER_IN       "config/video/circular/header.in"
 #define CONTENT_IN      "config/video/circular/content.in"
 #define FOOTER_IN       "config/video/circular/footer.in"
-
-#define LINE_BUF_SIZE   1024
 
 #define REPLACE_HEADER_FILENAME         "OUTPUT_FILENAME"
 
@@ -34,12 +32,12 @@ namespace multiscale {
             public:
 
                 static void     generateScript      (vector<AnnularSector>& annularSectors,
-                                                     string outputFilename)
+                                                     string outputFilepath)
                                                      throw (string);
 
             private:
 
-                static void     generateHeader      (ofstream& fout, string& outputFilename);
+                static void     generateHeader      (ofstream& fout, string& outputFilepath);
                 static void     generateBody        (vector<AnnularSector>& annularSectors,
                                                      ofstream& fout);
                 static void     generateFooter      (ofstream& fout);
