@@ -25,6 +25,8 @@ computer:
     - Boost library (ver. 1.52.0)
     - g++ (ver. 4.7 or higher)
 
+Note: You will have to update the paths to the boost libraries in the Makefile before building the project.
+
 
     1.2. Requirements for running the software
 
