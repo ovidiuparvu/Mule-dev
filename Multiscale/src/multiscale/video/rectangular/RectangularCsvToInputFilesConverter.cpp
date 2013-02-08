@@ -1,4 +1,4 @@
-#include "multiscale/video/circular/PolarCsvToInputFilesConverter.hpp"
+#include "multiscale/video/rectangular/RectangularCsvToInputFilesConverter.hpp"
 #include "multiscale/util/iterator/NumberIteratorType.hpp"
 #include "multiscale/util/iterator/LexicographicNumberIterator.hpp"
 #include "multiscale/util/iterator/StandardNumberIterator.hpp"
@@ -15,17 +15,17 @@ using namespace multiscale;
 using namespace std;
 
 // Constructor for the class
-PolarCsvToInputFilesConverter::PolarCsvToInputFilesConverter(string inputFilepath,
+RectangularCsvToInputFilesConverter::RectangularCsvToInputFilesConverter(string inputFilepath,
                                                              string outputFilepath,
-                                                             unsigned int nrOfConcentricCircles,
-                                                             unsigned int nrOfSectors,
+                                                             unsigned int height,
+                                                             unsigned int width,
                                                              unsigned int nrOfConcentrationsForPosition,
                                                              NumberIteratorType numberIteratorType) {
     this->inputFilepath                 = inputFilepath;
     this->outputFilepath                = outputFilepath;
 
-    this->nrOfConcentricCircles         = nrOfConcentricCircles;
-    this->nrOfSectors                   = nrOfSectors;
+    this->height                        = height;
+    this->width                         = width;
     this->nrOfConcentrationsForPosition = nrOfConcentrationsForPosition;
 
     this->concentrationsIndex  = 0;
@@ -35,13 +35,13 @@ PolarCsvToInputFilesConverter::PolarCsvToInputFilesConverter(string inputFilepat
 }
 
 // Destructor for the class
-PolarCsvToInputFilesConverter::~PolarCsvToInputFilesConverter() {
+RectangularCsvToInputFilesConverter::~RectangularCsvToInputFilesConverter() {
     delete circlesIterator;
     delete sectorsIterator;
 }
 
 // Convert the ".csv" file to input files
-void PolarCsvToInputFilesConverter::convert() {
+void RectangularCsvToInputFilesConverter::convert() {
     ifstream fin;
 
     validateInput(fin);
@@ -65,14 +65,14 @@ void PolarCsvToInputFilesConverter::convert() {
 }
 
 // Initialise the input file
-void PolarCsvToInputFilesConverter::initInputFile(ifstream& fin) {
+void RectangularCsvToInputFilesConverter::initInputFile(ifstream& fin) {
     fin.open(inputFilepath.c_str(), ios_base::in);
 
     assert(fin.is_open());
 }
 
 // Initialise the maximum concentration value
-void PolarCsvToInputFilesConverter::initMaximumConcentration(ifstream& fin) {
+void RectangularCsvToInputFilesConverter::initMaximumConcentration(ifstream& fin) {
     double maximumConcentration = numeric_limits<double>::min();
     string currentLine;
 
@@ -95,7 +95,7 @@ void PolarCsvToInputFilesConverter::initMaximumConcentration(ifstream& fin) {
 }
 
 // Initialise the output file
-void PolarCsvToInputFilesConverter::initOutputFile(ofstream& fout, unsigned int index) {
+void RectangularCsvToInputFilesConverter::initOutputFile(ofstream& fout, unsigned int index) {
     fout.open(
                 (
                     (outputFilepath + OUTPUT_FILE_SEPARATOR) +
@@ -107,26 +107,26 @@ void PolarCsvToInputFilesConverter::initOutputFile(ofstream& fout, unsigned int 
 
     assert(fout.is_open());
 
-    fout << nrOfConcentricCircles << OUTPUT_SEPARATOR << nrOfSectors << endl;
+    fout << height << OUTPUT_SEPARATOR << width << endl;
 }
 
 // Initialise the iterators
-void PolarCsvToInputFilesConverter::initIterators(NumberIteratorType& numberIteratorType) {
+void RectangularCsvToInputFilesConverter::initIterators(NumberIteratorType& numberIteratorType) {
     switch (numberIteratorType) {
     case multiscale::STANDARD:
-        circlesIterator = new StandardNumberIterator(nrOfConcentricCircles);
-        sectorsIterator = new StandardNumberIterator(nrOfSectors);
+        circlesIterator = new StandardNumberIterator(height);
+        sectorsIterator = new StandardNumberIterator(width);
         break;
 
     case multiscale::LEXICOGRAPHIC:
-        circlesIterator = new LexicographicNumberIterator(nrOfConcentricCircles);
-        sectorsIterator = new LexicographicNumberIterator(nrOfSectors);
+        circlesIterator = new LexicographicNumberIterator(height);
+        sectorsIterator = new LexicographicNumberIterator(width);
         break;
     }
 }
 
 // Validate the input file
-void PolarCsvToInputFilesConverter::validateInput(ifstream& fin) {
+void RectangularCsvToInputFilesConverter::validateInput(ifstream& fin) {
     unsigned int lineNumber = 0;
     string currentLine;
 
@@ -149,10 +149,10 @@ void PolarCsvToInputFilesConverter::validateInput(ifstream& fin) {
 }
 
 // Validate the provided line
-void PolarCsvToInputFilesConverter::validateInputLine(string& currentLine, unsigned int lineNumber) {
+void RectangularCsvToInputFilesConverter::validateInputLine(string& currentLine, unsigned int lineNumber) {
     vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
-    if (tokens.size() < ((nrOfConcentricCircles - 1) * nrOfSectors + 1))
+    if (tokens.size() < (height * width))
         throw ERR_NR_CONCENTRATIONS;
 
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
@@ -166,27 +166,25 @@ void PolarCsvToInputFilesConverter::validateInputLine(string& currentLine, unsig
 }
 
 // Process the current line
-void PolarCsvToInputFilesConverter::processLine(string& line, unsigned int outputIndex) {
+void RectangularCsvToInputFilesConverter::processLine(string& line, unsigned int outputIndex) {
     ofstream fout;
 
     initOutputFile(fout, outputIndex);
 
     vector<double> concentrations = splitLineInConcentrations(line);
 
-    fout << concentrations[0] << endl;
-
-    for (unsigned int i = 1; i < nrOfConcentricCircles; i++) {
-        for (int j = 0; j < (nrOfSectors - 1); j++) {
-            fout << concentrations[(i - 1) * nrOfSectors + j + 1] << OUTPUT_SEPARATOR;
+    for (unsigned int i = 0; i < height; i++) {
+        for (int j = 0; j < (width - 1); j++) {
+            fout << concentrations[(i * width) + j] << OUTPUT_SEPARATOR;
         }
 
-        fout << concentrations[i * nrOfSectors] << endl;
+        fout << concentrations[(i * width) + width - 1] << endl;
     }
 }
 
 // Split the line in concentrations
-vector<double> PolarCsvToInputFilesConverter::splitLineInConcentrations(string line) {
-    vector<double> concentrations((nrOfSectors * (nrOfConcentricCircles - 1)) + 1);
+vector<double> RectangularCsvToInputFilesConverter::splitLineInConcentrations(string line) {
+    vector<double> concentrations(height * width);
 
     vector<string> tokens = StringManipulator::split(line, INPUT_FILE_SEPARATOR);
 
@@ -195,86 +193,59 @@ vector<double> PolarCsvToInputFilesConverter::splitLineInConcentrations(string l
     circlesIterator->reset();
 
     while (circlesIterator->hasNext()) {
-        unsigned int circleIndex = circlesIterator->number();
+        unsigned int rowIndex = circlesIterator->number();
 
         sectorsIterator->reset();
 
-        if (circleIndex == 1) {
-            splitFirstPartInConcentrations(concentrations, tokens, circleIndex);
-        } else {
-            splitOtherPartsInConcentrations(concentrations, tokens, circleIndex);
-        }
+        splitLineInConcentrations(concentrations, tokens, rowIndex);
     }
 
     return concentrations;
 }
 
-// Split the first part of the line into concentrations
-void PolarCsvToInputFilesConverter::splitFirstPartInConcentrations(vector<double>& concentrations,
-                                                                   vector<string>& tokens,
-                                                                   unsigned int circleIndex) {
-    unsigned int sectorIndex = 1;
-
-    double concentration = computeNextPositionConcentration(circleIndex,
-                                                            concentrationsIndex,
-                                                            tokens);
-
-    concentrations[((circleIndex - 1) * nrOfSectors) + (sectorIndex - 1)] = concentration;
-
-    concentrationsIndex++;
-}
-
-// Split the next/other parts of the line into concentrations
-void PolarCsvToInputFilesConverter::splitOtherPartsInConcentrations(vector<double>& concentrations,
+// Split the line into concentrations
+void RectangularCsvToInputFilesConverter::splitLineInConcentrations(vector<double>& concentrations,
                                                                     vector<string>& tokens,
-                                                                    unsigned int circleIndex) {
+                                                                    unsigned int rowIndex) {
     while (sectorsIterator->hasNext()) {
         unsigned int sectorIndex = sectorsIterator->number();
 
-        double concentration = computeNextPositionConcentration(circleIndex,
-                                                                concentrationsIndex,
+        double concentration = computeNextPositionConcentration(concentrationsIndex,
                                                                 tokens);
 
-        concentrations[((circleIndex - 2) * nrOfSectors) + sectorIndex] = concentration;
+        concentrations[((rowIndex - 1) * width) + sectorIndex - 1] = concentration;
 
         concentrationsIndex++;
     }
 }
 
 // Compute the concentration of the next position
-double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned int circleIndex,
-                                                                       int concentrationIndex,
-                                                                       vector<string>& tokens) {
+double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int concentrationIndex,
+                                                                             vector<string>& tokens) {
     // Read the first concentration
-    double concentration = computeScaledConcentration(
-            tokens[(nrOfConcentrationsForPosition * concentrationIndex)],
-            circleIndex
-    );
+    double concentration = computeScaledConcentration(tokens[(nrOfConcentrationsForPosition * concentrationIndex)]);
 
     double totalConcentration = concentration;
 
     // Read the other concentrations if they exist
     for (unsigned int i = 1; i < nrOfConcentrationsForPosition; i++) {
-        double tmpConcentration = computeScaledConcentration(
-                tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i],
-                circleIndex
-        );
+        double tmpConcentration = computeScaledConcentration(tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i]);
 
         totalConcentration += tmpConcentration;
     }
 
     // Return normalised concentration
     return (nrOfConcentrationsForPosition == 1) ?
-            computeNormalisedConcentration(concentration, circleIndex) :
-            computeNormalisedConcentration((concentration/totalConcentration), circleIndex);
+            computeNormalisedConcentration(concentration) :
+            computeNormalisedConcentration((concentration/totalConcentration));
 }
 
 // Compute the scaled concentration from the given string by applying
 // a logit transformation to it
-double PolarCsvToInputFilesConverter::computeScaledConcentration(string concentration, int circleIndex) {
+double RectangularCsvToInputFilesConverter::computeScaledConcentration(string concentration) {
     double amount = atof(concentration.c_str());
 
-    double scaledConcentration = computeConcentrationWrtArea(amount, circleIndex);
+    double scaledConcentration = computeConcentrationWrtArea(amount);
 
     // Convert all concentrations which are lower than 1 to 1,
     // such that we don't obtain negative values after applying log
@@ -287,19 +258,19 @@ double PolarCsvToInputFilesConverter::computeScaledConcentration(string concentr
 
 // Compute the concentration of a annular sector given the number of species
 // and the level at which the annular sector is positioned
-double PolarCsvToInputFilesConverter::computeConcentrationWrtArea(double amount, int circleIndex) {
-    return amount / ((2 * (circleIndex - 1)) + 1);
+double RectangularCsvToInputFilesConverter::computeConcentrationWrtArea(double amount) {
+    return amount / 1;
 }
 
 // Compute the normalised concentration by considering the maximum concentration
 // and the area of the current annular sector
-double PolarCsvToInputFilesConverter::computeNormalisedConcentration(double concentration, int circleIndex) {
+double RectangularCsvToInputFilesConverter::computeNormalisedConcentration(double concentration) {
     return (concentration / maximumConcentration);
 }
 
 // Update the maximum value if any of the concentrations from the
 // provided string are greater than it
-void PolarCsvToInputFilesConverter::updateMaximumConcentration(string& currentLine, double& maximumConcentration) {
+void RectangularCsvToInputFilesConverter::updateMaximumConcentration(string& currentLine, double& maximumConcentration) {
     vector<double> concentrations = splitLineInConcentrations(currentLine);
 
     for (vector<double>::iterator it = concentrations.begin(); it != concentrations.end(); it++) {

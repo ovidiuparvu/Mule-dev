@@ -1,19 +1,19 @@
 /**
  * This program is used for converting one .csv file to "n" input files for the
- * MapCartesianToPolarScript program
+ * MapCartesianToScript program
  *
  * FORMAT OF INPUT FILE:
  * Typical .csv file containing time series information
  *
  * FORMAT OF OUTPUT FILE:
- * Check format of input files for MapCartesianToPolarScript program
+ * Check format of input files for MapCartesianToScript program
  *
  * Author: Ovidiu Parvu
- * Date created: 13.01.2013
- * Date modified: 13.01.2013
+ * Date created: 08.02.2013
+ * Date modified: 08.02.2013
  */
 
-#include "multiscale/video/circular/PolarCsvToInputFilesConverter.hpp"
+#include "multiscale/video/rectangular/RectangularCsvToInputFilesConverter.hpp"
 #include "multiscale/util/iterator/NumberIteratorType.hpp"
 
 #include <boost/program_options.hpp>
@@ -34,8 +34,8 @@ po::variables_map initArgumentsConfig(po::options_description& usageDescription,
     usageDescription.add_options()("help,h", "display help message\n")
                                   ("input-file,i", po::value<string>(), "provide the path to the input file\n")
                                   ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
-                                  ("nr-concentric-circles,c", po::value<unsigned int>(), "provide the number of concentric circles\n")
-                                  ("nr-sectors,s", po::value<unsigned int>(), "provide the number of sectors\n")
+                                  ("height,h", po::value<unsigned int>(), "provide the height of the grid (number of rows)\n")
+                                  ("width,w", po::value<unsigned int>(), "provide the width of the grid (number of columns)\n")
                                   ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n")
                                   ("lexicographic-iterator,l", "use lexicographic number iterator for numbering the columns of the .csv file\n");
 
@@ -77,8 +77,8 @@ bool isValidNrOfConcentrationsForPosition(const po::variables_map& vm, unsigned 
 }
 
 // Get the needed parameters
-bool areParameters(string& inputFilepath, string& outputFilename, unsigned int& nrOfConcentricCircles,
-                   unsigned int& nrOfSectors, unsigned int& nrOfConcentrationsForPosition,
+bool areParameters(string& inputFilepath, string& outputFilename, unsigned int& height,
+                   unsigned int& width, unsigned int& nrOfConcentrationsForPosition,
                    NumberIteratorType& numberIteratorType, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
@@ -93,12 +93,12 @@ bool areParameters(string& inputFilepath, string& outputFilename, unsigned int& 
 
     // Check if the given parameters are correct
     if ((vm.count("input-file")) && (vm.count("output-file")) &&
-        (vm.count("nr-concentric-circles")) && (vm.count("nr-sectors"))) {
+        (vm.count("height")) && (vm.count("width"))) {
         inputFilepath  = vm["input-file"].as<string>();
         outputFilename = vm["output-file"].as<string>();
 
-        nrOfConcentricCircles = vm["nr-concentric-circles"].as<unsigned int>();
-        nrOfSectors           = vm["nr-sectors"].as<unsigned int>();
+        height = vm["height"].as<unsigned int>();
+        width  = vm["width"].as<unsigned int>();
 
         if (argc == 9) {
             return true;
@@ -129,20 +129,18 @@ int main(int argc, char** argv) {
     string inputFilePath;
     string outputFilepath;
 
-    unsigned int nrOfConcentricCircles;
-    unsigned int nrOfSectors;
+    unsigned int height;
+    unsigned int width;
     unsigned int nrOfConcentrationsForPosition;
 
     NumberIteratorType numberIteratorType = multiscale::STANDARD;
 
     try {
-        if (areParameters(inputFilePath, outputFilepath, nrOfConcentricCircles,
-                          nrOfSectors, nrOfConcentrationsForPosition, numberIteratorType,
-                          argc, argv)) {
-            PolarCsvToInputFilesConverter converter(inputFilePath, outputFilepath,
-                                                    nrOfConcentricCircles, nrOfSectors,
-                                                    nrOfConcentrationsForPosition,
-                                                    numberIteratorType);
+        if (areParameters(inputFilePath, outputFilepath, height, width, nrOfConcentrationsForPosition,
+                          numberIteratorType, argc, argv)) {
+            RectangularCsvToInputFilesConverter converter(inputFilePath, outputFilepath,
+                                                          height, width, nrOfConcentrationsForPosition,
+                                                          numberIteratorType);
 
             converter.convert();
         }

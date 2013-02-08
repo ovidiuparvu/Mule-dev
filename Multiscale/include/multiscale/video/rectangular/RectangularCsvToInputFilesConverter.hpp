@@ -64,7 +64,8 @@ namespace multiscale {
                 void            processLine                     (string& line, unsigned int outputIndex);
                 vector<double>  splitLineInConcentrations       (string line);
                 void            splitLineInConcentrations       (vector<double>& concentrations,
-                                                                 vector<string>& tokens);
+                                                                 vector<string>& tokens,
+                                                                 unsigned int rowIndex);
                 double          computeNextPositionConcentration(int concentrationIndex,
                                                                  vector<string>& tokens);
                 double          computeScaledConcentration      (string concentration);

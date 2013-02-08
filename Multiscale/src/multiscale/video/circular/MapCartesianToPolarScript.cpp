@@ -2,11 +2,6 @@
  * This program is used for mapping a grid from the cartesian to the
  * polar coordinate system.
  *
- * The purpose of this program is to help simulate the "Phase Variation" case
- * study using a polar coordinate system instead of a cartesian one. It is our
- * belief that the polar approach will better reflect what is observed by biologists
- * in vitro.
- *
  * Snoopy, the simulator used by us, cannot handle polar coordinates. Therefore, we will
  * discretise the polar space and map it onto a matrix which Snoopy can handle. Then,
  * the results need to be mapped back to the polar representation and this is what this
