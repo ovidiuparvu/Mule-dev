@@ -13,6 +13,7 @@ using namespace std;
 
 // Using the concentrations generate the corresponding gnuplot script in the output file
 void RectangularGnuplotScriptGenerator::generateScript(vector<double>& concentrations,
+                                                       double simulationTime,
                                                        unsigned long height,
                                                        unsigned long width,
                                                        string outputFilepath)
@@ -21,7 +22,7 @@ void RectangularGnuplotScriptGenerator::generateScript(vector<double>& concentra
 
     assert(fout.is_open());
 
-    generateHeader(fout, outputFilepath, height, width);
+    generateHeader(fout, outputFilepath, simulationTime, height, width);
     generateBody  (concentrations, height, width, fout);
     generateFooter(fout);
 
@@ -30,14 +31,15 @@ void RectangularGnuplotScriptGenerator::generateScript(vector<double>& concentra
 
 // Generate the header of the script
 void RectangularGnuplotScriptGenerator::generateHeader(ofstream& fout, string& outputFilepath,
-                                                       unsigned long height, unsigned long width) {
+                                                       double& simulationTime, unsigned long height,
+                                                       unsigned long width) {
     ifstream fin(HEADER_IN);
 
     assert(fin.is_open());
 
     string outputFilename = StringManipulator::filenameFromPath(outputFilepath);
 
-    outputHeader(fin, outputFilename, height, width, fout);
+    outputHeader(fin, outputFilename, simulationTime, height, width, fout);
 
     fin.close();
 }
@@ -66,14 +68,15 @@ void RectangularGnuplotScriptGenerator::generateFooter(ofstream& fout) {
 }
 
 // Output the header of the script
-void RectangularGnuplotScriptGenerator::outputHeader(ifstream& fin, string& outputFilename, unsigned long height,
-                                                     unsigned long width, ofstream& fout) {
+void RectangularGnuplotScriptGenerator::outputHeader(ifstream& fin, string& outputFilename, double& simulationTime,
+                                                     unsigned long height, unsigned long width, ofstream& fout) {
     string line;
 
     while (getline(fin, line)) {
         line = StringManipulator::replace(line, REPLACE_HEADER_FILENAME, outputFilename);
         line = StringManipulator::replace(line, REPLACE_HEADER_HEIGHT, StringManipulator::toString<double>(height - REPLACE_DIMENSION_EXTRA));
         line = StringManipulator::replace(line, REPLACE_HEADER_WIDTH, StringManipulator::toString<double>(width - REPLACE_DIMENSION_EXTRA));
+        line = StringManipulator::replace(line, REPLACE_HEADER_SIM_TIME, StringManipulator::toString<double>(simulationTime));
 
         fout << line << endl;
     }

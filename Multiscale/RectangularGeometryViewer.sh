@@ -61,7 +61,7 @@ mkdir ${IMG_FOLDER}/${folderName}
 cp ${csvFile} ${INPUT_FOLDER}/${folderName}/${csvFile}.bak
 
 # Copy the part of the csv file with necessary information to its corresponding input folder
-sed 's/[;,:\t ]+/,/g' <${csvFile} | cut -d "," -f 2- | tail -n +2 > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
+sed 's/[;,:\t ]+/,/g' <${csvFile} | tail -n +2 > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
 
 # Inform user of the next action
 echo "Generating the input files from the .csv file...";

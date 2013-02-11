@@ -18,6 +18,7 @@ CartesianToConcentrationsConverter::CartesianToConcentrationsConverter(string in
 
     height = 0;
     width = 0;
+    simulationTime = 0;
 }
 
 // Destructor for the class
@@ -54,11 +55,12 @@ void CartesianToConcentrationsConverter::readInputData() throw (string) {
 
 // Read the header line from the input file
 void CartesianToConcentrationsConverter::readHeaderLine(ifstream& fin) throw (string) {
-    fin >> height >> width;
+    fin >> height >> width >> simulationTime;
 
     // Validate the header line
     if (height < 0) throw string(ERR_NEG_DIMENSION);
     if (width < 0)  throw string(ERR_NEG_DIMENSION);
+    if (simulationTime < 0) throw string(ERR_NEG_DIMENSION);
 }
 
 // Read the concentrations from the input file
@@ -82,5 +84,5 @@ void CartesianToConcentrationsConverter::readConcentrations(ifstream& fin) throw
 
 // Output the results as a gnuplot script
 void CartesianToConcentrationsConverter::outputResults() {
-    RectangularGnuplotScriptGenerator::generateScript(concentrations, height, width, outputFilepath);
+    RectangularGnuplotScriptGenerator::generateScript(concentrations, simulationTime, height, width, outputFilepath);
 }

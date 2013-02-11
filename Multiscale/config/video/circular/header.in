@@ -2,6 +2,9 @@
 set terminal pngcairo background "#FFFFFF" font "Arial" fontscale 3 size 2048, 1572
 set output 'OUTPUT_FILENAME.png'
 
+# Set the label with the simulation time
+set label "Simulation time: OUTPUT_SIM_TIME" at screen 0.45, screen 0.95 left
+
 # Set the environment for using colorbox
 set pm3d implicit at s
 

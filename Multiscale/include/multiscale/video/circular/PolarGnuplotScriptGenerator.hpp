@@ -12,6 +12,7 @@ using namespace std;
 #define FOOTER_IN       "config/video/circular/footer.in"
 
 #define REPLACE_HEADER_FILENAME         "OUTPUT_FILENAME"
+#define REPLACE_HEADER_SIM_TIME         "OUTPUT_SIM_TIME"
 
 #define REPLACE_CONTENT_INDEX           "OBJ_INDEX"
 #define REPLACE_CONTENT_RADIUS          "OBJ_END_RADIUS"
@@ -32,17 +33,19 @@ namespace multiscale {
             public:
 
                 static void     generateScript      (vector<AnnularSector>& annularSectors,
+                                                     double simulationTime,
                                                      string outputFilepath)
                                                      throw (string);
 
             private:
 
-                static void     generateHeader      (ofstream& fout, string& outputFilepath);
+                static void     generateHeader      (ofstream& fout, string& outputFilepath,
+                                                     double& simulationTime);
                 static void     generateBody        (vector<AnnularSector>& annularSectors,
                                                      ofstream& fout);
                 static void     generateFooter      (ofstream& fout);
                 static void     outputHeader        (ifstream& fin, string& outputFilename,
-                                                     ofstream& fout);
+                                                     double& simulationTime, ofstream& fout);
                 static void     outputContent       (vector<AnnularSector>& annularSectors,
                                                      string& contentTemplate,
                                                      ofstream& fout);

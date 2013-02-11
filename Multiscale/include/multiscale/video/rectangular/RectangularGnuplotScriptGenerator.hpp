@@ -13,6 +13,7 @@ using namespace std;
 #define REPLACE_HEADER_FILENAME         "OUTPUT_FILENAME"
 #define REPLACE_HEADER_HEIGHT           "OUTPUT_DIMENSION1"
 #define REPLACE_HEADER_WIDTH            "OUTPUT_DIMENSION2"
+#define REPLACE_HEADER_SIM_TIME         "OUTPUT_SIM_TIME"
 
 #define REPLACE_DIMENSION_EXTRA         0.5
 
@@ -31,6 +32,7 @@ namespace multiscale {
             public:
 
                 static void     generateScript      (vector<double>& concentrations,
+                                                     double simulationTime,
                                                      unsigned long height,
                                                      unsigned long width,
                                                      string outputFilepath)
@@ -39,7 +41,8 @@ namespace multiscale {
             private:
 
                 static void     generateHeader      (ofstream& fout, string& outputFilepath,
-                                                     unsigned long height, unsigned long width);
+                                                     double& simulationTime, unsigned long height,
+                                                     unsigned long width);
                 static void     generateBody        (vector<double>& concentrations,
                                                      unsigned long height,
                                                      unsigned long width,
@@ -47,6 +50,7 @@ namespace multiscale {
                 static void     generateFooter      (ofstream& fout);
                 static void     outputHeader        (ifstream& fin,
                                                      string& outputFilename,
+                                                     double& simulationTime,
                                                      unsigned long height,
                                                      unsigned long width,
                                                      ofstream& fout);

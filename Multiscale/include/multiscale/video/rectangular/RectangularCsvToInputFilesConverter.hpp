@@ -14,6 +14,7 @@
 
 #define ERR_NEG_CONCENTRATION           "All concentrations must be non-negative.";
 #define ERR_NR_CONCENTRATIONS           "The number of concentrations in the input file does not match the values of the input parameters nr-concentric-circles and nr-sectors.";
+#define ERR_NEG_SIM_TIME                "The simulation time must be non-negative."
 #define ERR_INVALID_CONCENTRATION_LINE  "Invalid concentration on line: "
 #define ERR_INVALID_CONCENTRATION_TOKEN ", concentration: "
 
@@ -57,15 +58,17 @@ namespace multiscale {
 
                 void            initInputFile                   (ifstream& fin);
                 void            initMaximumConcentration        (ifstream& fin);
-                void            initOutputFile                  (ofstream& fout, unsigned int index);
+                void            initOutputFile                  (ofstream& fout, unsigned int index,
+                                                                 double& simulationTime);
                 void            initIterators                   (NumberIteratorType& numberIteratorType);
                 void            validateInput                   (ifstream& fin);
                 void            validateInputLine               (string& line, unsigned int lineNumber);
                 void            processLine                     (string& line, unsigned int outputIndex);
-                vector<double>  splitLineInConcentrations       (string line);
+                vector<double>  splitLineInConcentrations       (string line, double& simulationTime);
                 void            splitLineInConcentrations       (vector<double>& concentrations,
                                                                  vector<string>& tokens,
                                                                  unsigned int rowIndex);
+                double          computeSimulationTime           (string token);
                 double          computeNextPositionConcentration(int concentrationIndex,
                                                                  vector<string>& tokens);
                 double          computeScaledConcentration      (string concentration);
