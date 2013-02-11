@@ -59,12 +59,13 @@ namespace multiscale {
 
                 void            initInputFile                   (ifstream& fin);
                 void            initMaximumConcentration        (ifstream& fin);
-                void            initOutputFile                  (ofstream& fout, unsigned int index);
+                void            initOutputFile                  (ofstream& fout, unsigned int index,
+                                                                 double& simulationTime);
                 void            initIterators                   (NumberIteratorType& numberIteratorType);
                 void            validateInput                   (ifstream& fin);
                 void            validateInputLine               (string& line, unsigned int lineNumber);
                 void            processLine                     (string& line, unsigned int outputIndex);
-                vector<double>  splitLineInConcentrations       (string line);
+                vector<double>  splitLineInConcentrations       (string line, double& simulationTime);
                 void            splitFirstPartInConcentrations  (vector<double>& concentrations,
                                                                  vector<string>& tokens,
                                                                  unsigned int circleIndex);

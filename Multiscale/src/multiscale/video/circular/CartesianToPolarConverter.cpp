@@ -18,6 +18,7 @@ CartesianToPolarConverter::CartesianToPolarConverter(string inputFilepath, strin
 
     nrOfSectors = 0;
     nrOfConcentricCircles = 0;
+    simulationTime = 0.0;
 }
 
 // Destructor for the class
@@ -60,11 +61,12 @@ void CartesianToPolarConverter::readInputData() throw (string) {
 
 // Read the header line from the input file
 void CartesianToPolarConverter::readHeaderLine(ifstream& fin) throw (string) {
-    fin >> nrOfConcentricCircles >> nrOfSectors;
+    fin >> nrOfConcentricCircles >> nrOfSectors >> simulationTime;
 
     // Validate the header line
     if (nrOfConcentricCircles < 0) throw string(ERR_NEG_DIMENSION);
     if (nrOfSectors < 0)           throw string(ERR_NEG_DIMENSION);
+    if (simulationTime < 0)        throw string(ERR_NEG_SIM_TIME);
 }
 
 // Read the concentrations from the input file
@@ -130,5 +132,5 @@ void CartesianToPolarConverter::outputResultsAsFile() {
 
 // Output the results as a gnuplot script
 void CartesianToPolarConverter::outputResultsAsScript() {
-    PolarGnuplotScriptGenerator::generateScript(annularSectors, outputFilepath);
+    PolarGnuplotScriptGenerator::generateScript(annularSectors, simulationTime, outputFilepath);
 }

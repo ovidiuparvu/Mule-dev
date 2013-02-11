@@ -14,13 +14,14 @@ using namespace std;
 // Using the annular sectors generate the corresponding gnuplot script in the
 // output file
 void PolarGnuplotScriptGenerator::generateScript(vector<AnnularSector>& annularSectors,
+                                                 double simulationTime,
                                                  string outputFilepath)
                                                  throw (string) {
     ofstream fout((outputFilepath + GNUPLOT_EXTENSION).c_str(), std::ios_base::trunc);
 
     assert(fout.is_open());
 
-    generateHeader(fout, outputFilepath);
+    generateHeader(fout, outputFilepath, simulationTime);
     generateBody  (annularSectors, fout);
     generateFooter(fout);
 
@@ -28,14 +29,14 @@ void PolarGnuplotScriptGenerator::generateScript(vector<AnnularSector>& annularS
 }
 
 // Generate the header of the script
-void PolarGnuplotScriptGenerator::generateHeader(ofstream& fout, string& outputFilepath) {
+void PolarGnuplotScriptGenerator::generateHeader(ofstream& fout, string& outputFilepath, double& simulationTime) {
     ifstream fin(HEADER_IN);
 
     assert(fin.is_open());
 
     string outputFilename = StringManipulator::filenameFromPath(outputFilepath);
 
-    outputHeader(fin, outputFilename, fout);
+    outputHeader(fin, outputFilename, simulationTime, fout);
 
     fin.close();
 }
@@ -65,11 +66,14 @@ void PolarGnuplotScriptGenerator::generateFooter(ofstream& fout) {
 }
 
 // Output the header of the script
-void PolarGnuplotScriptGenerator::outputHeader(ifstream& fin, string& outputFilename, ofstream& fout) {
+void PolarGnuplotScriptGenerator::outputHeader(ifstream& fin, string& outputFilename, double& simulationTime, ofstream& fout) {
     string line;
 
     while (getline(fin, line)) {
-        fout << StringManipulator::replace(line, REPLACE_HEADER_FILENAME, outputFilename) << endl;
+        line = StringManipulator::replace(line, REPLACE_HEADER_FILENAME, outputFilename);
+        line = StringManipulator::replace(line, REPLACE_HEADER_SIM_TIME, StringManipulator::toString<double>(simulationTime));
+
+        fout << line << endl;
     }
 
     fout.flush();
