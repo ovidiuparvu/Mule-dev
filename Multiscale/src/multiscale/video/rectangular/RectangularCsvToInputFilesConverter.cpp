@@ -154,16 +154,16 @@ void RectangularCsvToInputFilesConverter::validateInput(ifstream& fin) {
 void RectangularCsvToInputFilesConverter::validateInputLine(string& currentLine, unsigned int lineNumber) {
     vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
-    if (tokens.size() < (height * width))
+    if (tokens.size() < ((height * width * nrOfConcentrationsForPosition) + 1))
         throw ERR_NR_CONCENTRATIONS;
 
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
-        double concentration = atof((*it).c_str());
+        double value = atof((*it).c_str());
 
-        if (concentration < 0)
-            throw string(ERR_INVALID_CONCENTRATION_LINE)  +
+        if (value < 0)
+            throw string(ERR_INVALID_VALUE_LINE)  +
                   StringManipulator::toString<unsigned int>(lineNumber) +
-                  string(ERR_INVALID_CONCENTRATION_TOKEN) + (*it);
+                  string(ERR_INVALID_VALUE_TOKEN) + (*it);
     }
 }
 
@@ -236,13 +236,16 @@ double RectangularCsvToInputFilesConverter::computeSimulationTime(string token) 
 double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int concentrationIndex,
                                                                              vector<string>& tokens) {
     // Read the first concentration
-    double concentration = computeScaledConcentration(tokens[(nrOfConcentrationsForPosition * concentrationIndex)]);
+    double concentration = computeScaledConcentration(tokens[(nrOfConcentrationsForPosition *
+                                                             (concentrationIndex - 1)) + 1]);
 
     double totalConcentration = concentration;
 
     // Read the other concentrations if they exist
     for (unsigned int i = 1; i < nrOfConcentrationsForPosition; i++) {
-        double tmpConcentration = computeScaledConcentration(tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i]);
+        double tmpConcentration = computeScaledConcentration(tokens[(nrOfConcentrationsForPosition *
+                                                                    (concentrationIndex - 1)) +
+                                                                    1 + i]);
 
         totalConcentration += tmpConcentration;
     }
@@ -250,7 +253,7 @@ double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int
     // Return normalised concentration
     return (nrOfConcentrationsForPosition == 1) ?
             computeNormalisedConcentration(concentration) :
-            computeNormalisedConcentration((concentration/totalConcentration));
+            (concentration/totalConcentration);
 }
 
 // Compute the scaled concentration from the given string by applying

@@ -154,16 +154,16 @@ void PolarCsvToInputFilesConverter::validateInput(ifstream& fin) {
 void PolarCsvToInputFilesConverter::validateInputLine(string& currentLine, unsigned int lineNumber) {
     vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
-    if (tokens.size() < ((nrOfConcentricCircles - 1) * nrOfSectors + 1))
+    if (tokens.size() < (((nrOfConcentricCircles - 1) * nrOfSectors + 1) * nrOfConcentrationsForPosition))
         throw ERR_NR_CONCENTRATIONS;
 
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
-        double concentration = atof((*it).c_str());
+        double value = atof((*it).c_str());
 
-        if (concentration < 0)
-            throw string(ERR_INVALID_CONCENTRATION_LINE)  +
+        if (value < 0)
+            throw string(ERR_INVALID_VALUE_LINE)  +
                   StringManipulator::toString<unsigned int>(lineNumber) +
-                  string(ERR_INVALID_CONCENTRATION_TOKEN) + (*it);
+                  string(ERR_INVALID_VALUE_TOKEN) + (*it);
     }
 }
 
@@ -189,7 +189,7 @@ void PolarCsvToInputFilesConverter::processLine(string& line, unsigned int outpu
 
 // Split the line in concentrations and simulation time
 vector<double> PolarCsvToInputFilesConverter::splitLineInConcentrations(string line, double& simulationTime) {
-    vector<double> concentrations((nrOfSectors * (nrOfConcentricCircles - 1)) + 1);
+    vector<double> concentrations(((nrOfSectors * (nrOfConcentricCircles - 1)) + 1));
 
     vector<string> tokens = StringManipulator::split(line, INPUT_FILE_SEPARATOR);
 
@@ -260,7 +260,7 @@ double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned 
                                                                        vector<string>& tokens) {
     // Read the first concentration
     double concentration = computeScaledConcentration(
-            tokens[(nrOfConcentrationsForPosition * concentrationIndex)],
+            tokens[(nrOfConcentrationsForPosition * (concentrationIndex - 1)) + 1],
             circleIndex
     );
 
@@ -269,7 +269,7 @@ double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned 
     // Read the other concentrations if they exist
     for (unsigned int i = 1; i < nrOfConcentrationsForPosition; i++) {
         double tmpConcentration = computeScaledConcentration(
-                tokens[(nrOfConcentrationsForPosition * concentrationIndex) + i],
+                tokens[(nrOfConcentrationsForPosition * (concentrationIndex - 1)) + 1 + i],
                 circleIndex
         );
 
@@ -279,7 +279,7 @@ double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned 
     // Return normalised concentration
     return (nrOfConcentrationsForPosition == 1) ?
             computeNormalisedConcentration(concentration, circleIndex) :
-            computeNormalisedConcentration((concentration/totalConcentration), circleIndex);
+            (concentration/totalConcentration);
 }
 
 // Compute the scaled concentration from the given string by applying
