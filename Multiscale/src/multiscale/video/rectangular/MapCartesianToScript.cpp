@@ -50,14 +50,14 @@ void printHelpInformation(const po::variables_map& vm, const po::options_descrip
     cout << usageDescription << endl;
 }
 
-// Print error message if wrong arguments are provided
-void printWrongArguments() {
+// Print error message if wrong parameters are provided
+void printWrongParameters() {
     cout << ERR_MSG << "Wrong input arguments provided." << endl;
     cout << "Run the program with the argument \"--help\" for more information." << endl;
 }
 
 // Get the needed parameters
-bool areParameters(string& inputFilepath, string& outputFilename, int argc, char** argv) {
+bool areValidParameters(string& inputFilepath, string& outputFilename, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
@@ -77,8 +77,6 @@ bool areParameters(string& inputFilepath, string& outputFilename, int argc, char
         return true;
     }
 
-    printWrongArguments();
-
     return false;
 }
 
@@ -88,10 +86,12 @@ int main(int argc, char** argv) {
     string outputFilepath;
 
     try {
-        if (areParameters(inputFilePath, outputFilepath, argc, argv)) {
+        if (areValidParameters(inputFilePath, outputFilepath, argc, argv)) {
             CartesianToConcentrationsConverter converter(inputFilePath, outputFilepath);
 
             converter.convert();
+        } else {
+            printWrongParameters();
         }
     } catch(const string& e) {
         cerr << ERR_MSG << e << endl;

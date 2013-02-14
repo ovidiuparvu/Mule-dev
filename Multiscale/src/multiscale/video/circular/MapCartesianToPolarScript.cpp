@@ -69,8 +69,8 @@ void printHelpInformation(const po::variables_map& vm, const po::options_descrip
     cout << usageDescription << endl;
 }
 
-// Print error message if wrong arguments are provided
-void printWrongArguments() {
+// Print error message if wrong parameters are provided
+void printWrongParameters() {
     cout << ERR_MSG << "Wrong input arguments provided." << endl;
     cout << "Run the program with the argument \"--help\" for more information." << endl;
 }
@@ -97,7 +97,7 @@ bool isValidOutputType(const po::variables_map& vm, bool& isScript) {
 }
 
 // Get the needed parameters
-bool areParameters(string& inputFilepath, string& outputFilename, bool& isScript, int argc, char** argv) {
+bool areValidParameters(string& inputFilepath, string& outputFilename, bool& isScript, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
@@ -116,14 +116,8 @@ bool areParameters(string& inputFilepath, string& outputFilename, bool& isScript
         inputFilepath  = vm["input-file"].as<string>();
         outputFilename = vm["output-file"].as<string>();
 
-        if (argc == 5) {
-            return true;
-        } else if (argc == 7) {
-            return isValidOutputType(vm, isScript);
-        }
+        return isValidOutputType(vm, isScript);
     }
-
-    printWrongArguments();
 
     return false;
 }
@@ -135,10 +129,12 @@ int main(int argc, char** argv) {
     bool   isScript = true;
 
     try {
-        if (areParameters(inputFilePath, outputFilepath, isScript, argc, argv)) {
+        if (areValidParameters(inputFilePath, outputFilepath, isScript, argc, argv)) {
             CartesianToPolarConverter converter(inputFilePath, outputFilepath);
 
             converter.convert(isScript);
+        } else {
+            printWrongParameters();
         }
     } catch(const string& e) {
         cerr << ERR_MSG << e << endl;

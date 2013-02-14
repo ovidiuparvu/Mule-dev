@@ -17,6 +17,7 @@
 #define ERR_NEG_CONCENTRATION   "All concentrations must be non-negative.";
 #define ERR_NR_CONCENTRATIONS   "The number of concentrations in the input file does not match the values of the input parameters nr-concentric-circles and nr-sectors.";
 #define ERR_NEG_SIM_TIME        "The simulation time must be non-negative."
+#define ERR_INPUT_OPEN          "The input file could not be opened."
 #define ERR_INVALID_VALUE_LINE  "Invalid value on line: "
 #define ERR_INVALID_VALUE_TOKEN ", value: "
 
@@ -65,6 +66,7 @@ namespace multiscale {
                 void            initIterators                   (NumberIteratorType& numberIteratorType);
                 void            validateInput                   (ifstream& fin);
                 void            validateInputLine               (string& line, unsigned int lineNumber);
+                void            processInputFile                (ifstream& fin);
                 void            processLine                     (string& line, unsigned int outputIndex);
                 vector<double>  splitLineInConcentrations       (string line, double& simulationTime);
                 void            splitFirstPartInConcentrations  (vector<double>& concentrations,

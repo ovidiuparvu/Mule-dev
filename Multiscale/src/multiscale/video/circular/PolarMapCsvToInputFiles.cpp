@@ -50,8 +50,8 @@ void printHelpInformation(const po::variables_map& vm, const po::options_descrip
     cout << usageDescription << endl;
 }
 
-// Print error message if wrong arguments are provided
-void printWrongArguments() {
+// Print error message if wrong parameters are provided
+void printWrongParameters() {
     cout << ERR_MSG << "Wrong input arguments provided." << endl;
     cout << "Run the program with the argument \"--help\" for more information." << endl;
 }
@@ -77,7 +77,7 @@ bool isValidNrOfConcentrationsForPosition(const po::variables_map& vm, unsigned 
 }
 
 // Get the needed parameters
-bool areParameters(string& inputFilepath, string& outputFilename, unsigned int& nrOfConcentricCircles,
+bool areValidParameters(string& inputFilepath, string& outputFilename, unsigned int& nrOfConcentricCircles,
                    unsigned int& nrOfSectors, unsigned int& nrOfConcentrationsForPosition,
                    NumberIteratorType& numberIteratorType, int argc, char** argv) {
     po::options_description usageDescription("Usage");
@@ -100,26 +100,14 @@ bool areParameters(string& inputFilepath, string& outputFilename, unsigned int& 
         nrOfConcentricCircles = vm["nr-concentric-circles"].as<unsigned int>();
         nrOfSectors           = vm["nr-sectors"].as<unsigned int>();
 
-        if (argc == 9) {
-            return true;
-        } else if (argc == 11) {
-            if (vm.count("nr-concentrations-position")) {
-                return isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition);
-            } else if (vm.count("lexicographic-iterator")) {
-                setNumberIteratorType(vm, numberIteratorType);
+        if (vm.count("lexicographic-iterator"))
+            setNumberIteratorType(vm, numberIteratorType);
 
-                return true;
-            }
-        } else if (argc == 13) {
-            if ((vm.count("nr-concentrations-position")) && (vm.count("lexicographic-iterator"))) {
-                setNumberIteratorType(vm, numberIteratorType);
+        if (vm.count("nr-concentrations-position"))
+            return isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition);
 
-                return isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition);
-            }
-        }
+        return true;
     }
-
-    printWrongArguments();
 
     return false;
 }
@@ -136,15 +124,17 @@ int main(int argc, char** argv) {
     NumberIteratorType numberIteratorType = multiscale::STANDARD;
 
     try {
-        if (areParameters(inputFilePath, outputFilepath, nrOfConcentricCircles,
-                          nrOfSectors, nrOfConcentrationsForPosition, numberIteratorType,
-                          argc, argv)) {
+        if (areValidParameters(inputFilePath, outputFilepath, nrOfConcentricCircles,
+                               nrOfSectors, nrOfConcentrationsForPosition, numberIteratorType,
+                               argc, argv)) {
             PolarCsvToInputFilesConverter converter(inputFilePath, outputFilepath,
                                                     nrOfConcentricCircles, nrOfSectors,
                                                     nrOfConcentrationsForPosition,
                                                     numberIteratorType);
 
             converter.convert();
+        } else {
+            printWrongParameters();
         }
     } catch(const string& e) {
         cerr << ERR_MSG << e << endl;

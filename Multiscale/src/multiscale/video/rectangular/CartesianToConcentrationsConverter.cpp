@@ -36,7 +36,7 @@ void CartesianToConcentrationsConverter::convert() {
 void CartesianToConcentrationsConverter::readInputData() throw (string) {
     ifstream fin(inputFilepath.c_str());
 
-    assert(fin.is_open());
+    if (!fin.is_open()) throw ERR_INPUT_OPEN;
 
     // Read the header line
     readHeaderLine(fin);
@@ -58,9 +58,9 @@ void CartesianToConcentrationsConverter::readHeaderLine(ifstream& fin) throw (st
     fin >> height >> width >> simulationTime;
 
     // Validate the header line
-    if (height < 0) throw string(ERR_NEG_DIMENSION);
-    if (width < 0)  throw string(ERR_NEG_DIMENSION);
-    if (simulationTime < 0) throw string(ERR_NEG_DIMENSION);
+    if (height <= 0) throw string(ERR_NONPOS_DIMENSION);
+    if (width <= 0)  throw string(ERR_NONPOS_DIMENSION);
+    if (simulationTime < 0) throw string(ERR_NEG_SIM_TIME);
 }
 
 // Read the concentrations from the input file

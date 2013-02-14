@@ -7,8 +7,9 @@
 using namespace std;
 
 #define ERR_CONC                "All concentrations have to be between 0 and 1."
-#define ERR_NEG_DIMENSION       "The dimensions N and M must be non-negative."
+#define ERR_NONPOS_DIMENSION    "The dimensions N and M must be positive."
 #define ERR_NEG_SIM_TIME        "The simulation time must be non-negative."
+#define ERR_INPUT_OPEN          "The input file could not be opened"
 #define ERR_IN_EXTRA_DATA       "The input file contains more data than required."
 
 #define OUTPUT_FILE_EXTENSION   ".out"

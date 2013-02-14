@@ -45,21 +45,10 @@ void PolarCsvToInputFilesConverter::convert() {
     ifstream fin;
 
     validateInput(fin);
+
     initMaximumConcentration(fin);
     initInputFile(fin);
-
-    string currentLine;
-
-    unsigned int index = 1;
-
-    while (!fin.eof()) {
-        getline(fin, currentLine);
-
-        // Consider processing the line only if it has content
-        if (!currentLine.empty()) {
-            processLine(currentLine, index++);
-        }
-    }
+    processInputFile(fin);
 
     fin.close();
 }
@@ -68,7 +57,7 @@ void PolarCsvToInputFilesConverter::convert() {
 void PolarCsvToInputFilesConverter::initInputFile(ifstream& fin) {
     fin.open(inputFilepath.c_str(), ios_base::in);
 
-    assert(fin.is_open());
+    if (!fin.is_open()) throw ERR_INPUT_OPEN;
 }
 
 // Initialise the maximum concentration value
@@ -78,7 +67,7 @@ void PolarCsvToInputFilesConverter::initMaximumConcentration(ifstream& fin) {
 
     fin.open(inputFilepath.c_str(), ios_base::in);
 
-    assert(fin.is_open());
+    if (!fin.is_open()) throw ERR_INPUT_OPEN;
 
     while (!fin.eof()) {
         getline(fin, currentLine);
@@ -124,6 +113,9 @@ void PolarCsvToInputFilesConverter::initIterators(NumberIteratorType& numberIter
         circlesIterator = new LexicographicNumberIterator(nrOfConcentricCircles);
         sectorsIterator = new LexicographicNumberIterator(nrOfSectors);
         break;
+
+    default:
+        break;
     }
 }
 
@@ -134,7 +126,7 @@ void PolarCsvToInputFilesConverter::validateInput(ifstream& fin) {
 
     fin.open(inputFilepath.c_str(), ios_base::in);
 
-    assert(fin.is_open());
+    if (!fin.is_open()) throw ERR_INPUT_OPEN;
 
     while (!fin.eof()) {
         getline(fin, currentLine);
@@ -164,6 +156,22 @@ void PolarCsvToInputFilesConverter::validateInputLine(string& currentLine, unsig
             throw string(ERR_INVALID_VALUE_LINE)  +
                   StringManipulator::toString<unsigned int>(lineNumber) +
                   string(ERR_INVALID_VALUE_TOKEN) + (*it);
+    }
+}
+
+// Process the given input file
+void PolarCsvToInputFilesConverter::processInputFile(ifstream& fin) {
+    string currentLine;
+
+    unsigned int index = 1;
+
+    while (!fin.eof()) {
+        getline(fin, currentLine);
+
+        // Consider processing the line only if it has content
+        if (!currentLine.empty()) {
+            processLine(currentLine, index++);
+        }
     }
 }
 

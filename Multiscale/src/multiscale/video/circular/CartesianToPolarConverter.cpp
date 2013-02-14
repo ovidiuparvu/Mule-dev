@@ -42,7 +42,7 @@ void CartesianToPolarConverter::convert(bool outputToScript) {
 void CartesianToPolarConverter::readInputData() throw (string) {
     ifstream fin(inputFilepath.c_str());
 
-    assert(fin.is_open());
+    if (!fin.is_open()) throw ERR_INPUT_OPEN;
 
     // Read the header line
     readHeaderLine(fin);
@@ -64,9 +64,9 @@ void CartesianToPolarConverter::readHeaderLine(ifstream& fin) throw (string) {
     fin >> nrOfConcentricCircles >> nrOfSectors >> simulationTime;
 
     // Validate the header line
-    if (nrOfConcentricCircles < 0) throw string(ERR_NEG_DIMENSION);
-    if (nrOfSectors < 0)           throw string(ERR_NEG_DIMENSION);
-    if (simulationTime < 0)        throw string(ERR_NEG_SIM_TIME);
+    if (nrOfConcentricCircles <= 0) throw string(ERR_NONPOS_DIMENSION);
+    if (nrOfSectors <= 0)           throw string(ERR_NONPOS_DIMENSION);
+    if (simulationTime < 0)         throw string(ERR_NEG_SIM_TIME);
 }
 
 // Read the concentrations from the input file
