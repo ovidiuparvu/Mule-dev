@@ -16,11 +16,11 @@ using namespace std;
 
 // Constructor for the class
 RectangularCsvToInputFilesConverter::RectangularCsvToInputFilesConverter(string inputFilepath,
-                                                             string outputFilepath,
-                                                             unsigned int height,
-                                                             unsigned int width,
-                                                             unsigned int nrOfConcentrationsForPosition,
-                                                             NumberIteratorType numberIteratorType) {
+                                                                         string outputFilepath,
+                                                                         unsigned int height,
+                                                                         unsigned int width,
+                                                                         unsigned int nrOfConcentrationsForPosition,
+                                                                         NumberIteratorType numberIteratorType) {
     this->inputFilepath                 = inputFilepath;
     this->outputFilepath                = outputFilepath;
 
@@ -251,9 +251,11 @@ double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int
     }
 
     // Return normalised concentration
-    return (nrOfConcentrationsForPosition == 1) ?
-            computeNormalisedConcentration(concentration) :
-            (concentration/totalConcentration);
+    if (nrOfConcentrationsForPosition == 1)
+        return computeNormalisedConcentration(concentration);
+    else {
+        return (totalConcentration != 0) ? (concentration/totalConcentration) : 0;
+    }
 }
 
 // Compute the scaled concentration from the given string by applying

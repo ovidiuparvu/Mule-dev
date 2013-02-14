@@ -1,4 +1,4 @@
-all: mapcart2pol mapcart2conc polmapcsv2input rectmapcsv2input_debug
+all: mapcart2pol mapcart2conc polmapcsv2input rectmapcsv2input
 	
 mapcart2pol:
 	g++ -I ${BOOST_ROOT} -I include src/multiscale/video/circular/CartesianToPolarConverter.cpp src/multiscale/video/circular/AnnularSector.cpp src/multiscale/video/circular/PolarGnuplotScriptGenerator.cpp src/multiscale/video/circular/MapCartesianToPolarScript.cpp src/multiscale/util/StringManipulator.cpp -o bin/MapCartesianToPolarScript -Wall ${BOOST_LIBS}/program_options/build/gcc-4.6/release/link-static/threading-multi/libboost_program_options.a
