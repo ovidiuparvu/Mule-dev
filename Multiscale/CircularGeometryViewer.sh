@@ -52,10 +52,10 @@ echo "Creating the output directories...";
 startTime=$(date +%s.%N);
 
 # Create all the required folders for this execution
-mkdir ${INPUT_FOLDER}/${folderName}
-mkdir ${SCRIPT_FOLDER}/${folderName}
-mkdir ${MOVIE_FOLDER}/${folderName}
-mkdir ${IMG_FOLDER}/${folderName}
+mkdir -p ${INPUT_FOLDER}/${folderName}
+mkdir -p ${SCRIPT_FOLDER}/${folderName}
+mkdir -p ${MOVIE_FOLDER}/${folderName}
+mkdir -p ${IMG_FOLDER}/${folderName}
 
 # Copy a backup of the csv file to its corresponding input folder
 cp ${csvFile} ${INPUT_FOLDER}/${folderName}/${csvFile}.bak
