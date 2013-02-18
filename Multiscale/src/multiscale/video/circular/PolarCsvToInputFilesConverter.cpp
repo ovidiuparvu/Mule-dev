@@ -271,10 +271,10 @@ double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned 
 
     // Read the concentrations
     for (unsigned int i = 0; i < nrOfConcentrationsForPosition; i++) {
-        double tmpConcentration = computeScaledConcentration(
-                tokens[(nrOfConcentrationsForPosition * (concentrationIndex - 1)) + 1 + i],
-                circleIndex
-        );
+        double tmpConcentration = computeConcentration(
+                                      tokens[(nrOfConcentrationsForPosition * (concentrationIndex - 1)) + 1 + i],
+                                      circleIndex
+                                  );
 
         // Set the concentration A for computing "A / sum(concentrations)"
         if (i == 1) {
@@ -290,6 +290,20 @@ double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned 
     else {
         return (totalConcentration != 0) ? (concentration/totalConcentration) : 0;
     }
+}
+
+// Compute the concentration from the given string considering the number of concentrations for each position
+double PolarCsvToInputFilesConverter::computeConcentration(string concentration, int circleIndex) {
+    return (nrOfConcentrationsForPosition == 1)
+                ? computeScaledConcentration(concentration, circleIndex)
+                : computeNonScaledConcentration(concentration, circleIndex);
+}
+
+// Compute the non scaled concentration from the given string
+double PolarCsvToInputFilesConverter::computeNonScaledConcentration(string concentration, int circleIndex) {
+    double amount = atof(concentration.c_str());
+
+    return computeConcentrationWrtArea(amount, circleIndex);
 }
 
 // Compute the scaled concentration from the given string by applying

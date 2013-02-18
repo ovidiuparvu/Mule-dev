@@ -73,8 +73,9 @@ namespace multiscale {
                 double          computeSimulationTime           (string token);
                 double          computeNextPositionConcentration(int concentrationIndex,
                                                                  vector<string>& tokens);
+                double          computeConcentration            (string concentration);
+                double          computeNonScaledConcentration   (string concentration);
                 double          computeScaledConcentration      (string concentration);
-                double          computeConcentrationWrtArea     (double amount);
                 double          computeNormalisedConcentration  (double concentration);
                 void            updateMaximumConcentration      (string& line,
                                                                  double& maximumConcentration);

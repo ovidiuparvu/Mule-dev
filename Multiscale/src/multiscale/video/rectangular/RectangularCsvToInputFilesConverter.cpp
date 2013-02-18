@@ -248,9 +248,10 @@ double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int
 
     // Read the concentrations
     for (unsigned int i = 0; i < nrOfConcentrationsForPosition; i++) {
-        double tmpConcentration = computeScaledConcentration(tokens[(nrOfConcentrationsForPosition *
-                                                                    (concentrationIndex - 1)) +
-                                                                    1 + i]);
+        double tmpConcentration = computeConcentration(tokens[(nrOfConcentrationsForPosition *
+                                                              (concentrationIndex - 1)) +
+                                                              1 + i]
+                                                      );
         // Set the concentration A for computing "A / sum(concentrations)"
         if (i == 1) {
             concentration = tmpConcentration;
@@ -267,12 +268,22 @@ double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int
     }
 }
 
+// Compute the concentration from the given string considering the number of concentrations for each position
+double RectangularCsvToInputFilesConverter::computeConcentration(string concentration) {
+    return (nrOfConcentrationsForPosition == 1)
+                ? computeScaledConcentration(concentration)
+                : computeNonScaledConcentration(concentration);
+}
+
+// Compute the non scaled concentration from the given string
+double RectangularCsvToInputFilesConverter::computeNonScaledConcentration(string concentration) {
+    return atof(concentration.c_str());
+}
+
 // Compute the scaled concentration from the given string by applying
 // a logit transformation to it
 double RectangularCsvToInputFilesConverter::computeScaledConcentration(string concentration) {
-    double amount = atof(concentration.c_str());
-
-    double scaledConcentration = computeConcentrationWrtArea(amount);
+    double scaledConcentration = atof(concentration.c_str());
 
     // Convert all concentrations which are lower than 1 to 1,
     // such that we don't obtain negative values after applying log
@@ -281,12 +292,6 @@ double RectangularCsvToInputFilesConverter::computeScaledConcentration(string co
     }
 
     return log2(scaledConcentration);
-}
-
-// Compute the concentration of a annular sector given the number of species
-// and the level at which the annular sector is positioned
-double RectangularCsvToInputFilesConverter::computeConcentrationWrtArea(double amount) {
-    return amount / 1;
 }
 
 // Compute the normalised concentration by considering the maximum concentration

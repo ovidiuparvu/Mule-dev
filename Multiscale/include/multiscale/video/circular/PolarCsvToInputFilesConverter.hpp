@@ -79,6 +79,10 @@ namespace multiscale {
                 double          computeNextPositionConcentration(unsigned int circleIndex,
                                                                  int concentrationIndex,
                                                                  vector<string>& tokens);
+                double          computeConcentration            (string concentration,
+                                                                 int circleIndex);
+                double          computeNonScaledConcentration   (string concentration,
+                                                                 int circleIndex);
                 double          computeScaledConcentration      (string concentration,
                                                                  int circleIndex);
                 double          computeConcentrationWrtArea     (double amount,
