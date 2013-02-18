@@ -49,7 +49,7 @@ For generating a movie from a _.csv_ file considering a rectangular geometry use
 
 For generating a movie from a _.csv_ file considering a circular geometry use the script _CircularGeometryViewer.sh_. The information regarding required parameters is displayed when running the script.
 
-## 3. Contact
+## 4. Contact
 
 For more details please visit my [personal webpage](http://brunel.ac.uk/~cspgoop).
 
