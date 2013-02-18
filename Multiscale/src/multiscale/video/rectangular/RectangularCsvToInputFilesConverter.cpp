@@ -243,24 +243,25 @@ double RectangularCsvToInputFilesConverter::computeSimulationTime(string token) 
 // Compute the concentration of the next position
 double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int concentrationIndex,
                                                                              vector<string>& tokens) {
-    // Read the first concentration
-    double concentration = computeScaledConcentration(tokens[(nrOfConcentrationsForPosition *
-                                                             (concentrationIndex - 1)) + 1]);
+    double concentration = 0;
+    double totalConcentration = 0;
 
-    double totalConcentration = concentration;
-
-    // Read the other concentrations if they exist
-    for (unsigned int i = 1; i < nrOfConcentrationsForPosition; i++) {
+    // Read the concentrations
+    for (unsigned int i = 0; i < nrOfConcentrationsForPosition; i++) {
         double tmpConcentration = computeScaledConcentration(tokens[(nrOfConcentrationsForPosition *
                                                                     (concentrationIndex - 1)) +
                                                                     1 + i]);
+        // Set the concentration A for computing "A / sum(concentrations)"
+        if (i == 1) {
+            concentration = tmpConcentration;
+        }
 
         totalConcentration += tmpConcentration;
     }
 
     // Return normalised concentration
     if (nrOfConcentrationsForPosition == 1)
-        return computeNormalisedConcentration(concentration);
+        return computeNormalisedConcentration(totalConcentration);
     else {
         return (totalConcentration != 0) ? (concentration/totalConcentration) : 0;
     }

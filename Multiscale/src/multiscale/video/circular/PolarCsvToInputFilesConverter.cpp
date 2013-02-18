@@ -266,20 +266,20 @@ double PolarCsvToInputFilesConverter::computeSimulationTime(string token) {
 double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned int circleIndex,
                                                                        int concentrationIndex,
                                                                        vector<string>& tokens) {
-    // Read the first concentration
-    double concentration = computeScaledConcentration(
-            tokens[(nrOfConcentrationsForPosition * (concentrationIndex - 1)) + 1],
-            circleIndex
-    );
+    double concentration = 0;
+    double totalConcentration = 0;
 
-    double totalConcentration = concentration;
-
-    // Read the other concentrations if they exist
-    for (unsigned int i = 1; i < nrOfConcentrationsForPosition; i++) {
+    // Read the concentrations
+    for (unsigned int i = 0; i < nrOfConcentrationsForPosition; i++) {
         double tmpConcentration = computeScaledConcentration(
                 tokens[(nrOfConcentrationsForPosition * (concentrationIndex - 1)) + 1 + i],
                 circleIndex
         );
+
+        // Set the concentration A for computing "A / sum(concentrations)"
+        if (i == 1) {
+            concentration = tmpConcentration;
+        }
 
         totalConcentration += tmpConcentration;
     }
