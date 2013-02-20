@@ -286,7 +286,7 @@ double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned 
 
     // Return normalised concentration
     if (nrOfConcentrationsForPosition == 1)
-        return computeNormalisedConcentration(concentration, circleIndex);
+        return computeNormalisedConcentration(totalConcentration, circleIndex);
     else {
         return (totalConcentration != 0) ? (concentration/totalConcentration) : 0;
     }
