@@ -37,6 +37,7 @@ po::variables_map initArgumentsConfig(po::options_description& usageDescription,
                                   ("height,h", po::value<unsigned int>(), "provide the height of the grid (number of rows)\n")
                                   ("width,w", po::value<unsigned int>(), "provide the width of the grid (number of columns)\n")
                                   ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n")
+                                  ("selected-concentration-index,x", po::value<unsigned int>()->default_value(1), "provide the index of the concentration considered as numerator when the number of concentrations for each position is greater than 1\n")
                                   ("lexicographic-iterator,l", "use lexicographic number iterator for numbering the columns of the .csv file\n");
 
     po::variables_map vm;
@@ -61,6 +62,14 @@ void setNumberIteratorType(const po::variables_map& vm, NumberIteratorType& numb
     numberIteratorType = multiscale::LEXICOGRAPHIC;
 }
 
+// Set the selected concentration index
+void setSelectedConcentrationIndex(const po::variables_map& vm, unsigned int& selectedConcentrationIndex) {
+    selectedConcentrationIndex = vm["selected-concentration-index"].as<unsigned int>();
+
+    selectedConcentrationIndex = (selectedConcentrationIndex > 0) ? selectedConcentrationIndex
+                                                                  : 1;
+}
+
 // Check if the number of concentrations for one position is valid
 bool isValidNrOfConcentrationsForPosition(const po::variables_map& vm, unsigned int& nrOfConcentrationsForPosition) {
     nrOfConcentrationsForPosition = vm["nr-concentrations-position"].as<unsigned int>();
@@ -79,7 +88,8 @@ bool isValidNrOfConcentrationsForPosition(const po::variables_map& vm, unsigned 
 // Get the needed parameters
 bool areValidParameters(string& inputFilepath, string& outputFilename, unsigned int& height,
                    unsigned int& width, unsigned int& nrOfConcentrationsForPosition,
-                   NumberIteratorType& numberIteratorType, int argc, char** argv) {
+                   unsigned int& selectedConcentrationIndex, NumberIteratorType& numberIteratorType,
+                   int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
@@ -99,6 +109,9 @@ bool areValidParameters(string& inputFilepath, string& outputFilename, unsigned 
 
         height = vm["height"].as<unsigned int>();
         width  = vm["width"].as<unsigned int>();
+
+        if (vm.count("selected-concentration-index"))
+            setSelectedConcentrationIndex(vm, selectedConcentrationIndex);
 
         if (vm.count("lexicographic-iterator"))
             setNumberIteratorType(vm, numberIteratorType);
@@ -121,13 +134,16 @@ int main(int argc, char** argv) {
     unsigned int width;
     unsigned int nrOfConcentrationsForPosition;
 
+    unsigned int selectedConcentrationIndex = 1;
+
     NumberIteratorType numberIteratorType = multiscale::STANDARD;
 
     try {
         if (areValidParameters(inputFilePath, outputFilepath, height, width, nrOfConcentrationsForPosition,
-                               numberIteratorType, argc, argv)) {
+                               selectedConcentrationIndex, numberIteratorType, argc, argv)) {
             RectangularCsvToInputFilesConverter converter(inputFilePath, outputFilepath,
                                                           height, width, nrOfConcentrationsForPosition,
+                                                          selectedConcentrationIndex,
                                                           numberIteratorType);
 
             converter.convert();

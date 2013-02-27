@@ -54,6 +54,7 @@ namespace multiscale {
                                                unsigned int nrOfConcentricCircles,
                                                unsigned int nrOfSectors,
                                                unsigned int nrOfConcentrationsForPosition,
+                                               unsigned int selectedConcentrationIndex,
                                                NumberIteratorType numberIteratorType);
                 ~PolarCsvToInputFilesConverter();
 

@@ -20,6 +20,7 @@ RectangularCsvToInputFilesConverter::RectangularCsvToInputFilesConverter(string 
                                                                          unsigned int height,
                                                                          unsigned int width,
                                                                          unsigned int nrOfConcentrationsForPosition,
+                                                                         unsigned int selectedConcentrationIndex,
                                                                          NumberIteratorType numberIteratorType) {
     this->inputFilepath                 = inputFilepath;
     this->outputFilepath                = outputFilepath;
@@ -29,7 +30,7 @@ RectangularCsvToInputFilesConverter::RectangularCsvToInputFilesConverter(string 
     this->nrOfConcentrationsForPosition = nrOfConcentrationsForPosition;
 
     this->concentrationsIndex           = 0;
-    this->selectedConcentrationIndex    = 1;
+    this->selectedConcentrationIndex    = selectedConcentrationIndex;
     this->maximumConcentration          = 1;
 
     initIterators(numberIteratorType);

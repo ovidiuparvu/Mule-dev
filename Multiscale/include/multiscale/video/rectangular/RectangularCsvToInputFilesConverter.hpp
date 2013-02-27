@@ -52,6 +52,7 @@ namespace multiscale {
                                                      unsigned int height,
                                                      unsigned int width,
                                                      unsigned int nrOfConcentrationsForPosition,
+                                                     unsigned int selectedConcentrationIndex,
                                                      NumberIteratorType numberIteratorType);
                 ~RectangularCsvToInputFilesConverter();
 
