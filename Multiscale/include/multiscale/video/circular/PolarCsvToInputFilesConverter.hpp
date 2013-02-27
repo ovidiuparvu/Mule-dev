@@ -40,6 +40,8 @@ namespace multiscale {
 
                 unsigned int concentrationsIndex;
 
+                unsigned int selectedConcentrationIndex;
+
                 double maximumConcentration;
 
                 NumberIterator* circlesIterator;

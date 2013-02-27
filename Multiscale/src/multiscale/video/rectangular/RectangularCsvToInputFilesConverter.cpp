@@ -28,8 +28,9 @@ RectangularCsvToInputFilesConverter::RectangularCsvToInputFilesConverter(string 
     this->width                         = width;
     this->nrOfConcentrationsForPosition = nrOfConcentrationsForPosition;
 
-    this->concentrationsIndex  = 0;
-    this->maximumConcentration = 1;
+    this->concentrationsIndex           = 0;
+    this->selectedConcentrationIndex    = 1;
+    this->maximumConcentration          = 1;
 
     initIterators(numberIteratorType);
 }
@@ -253,7 +254,7 @@ double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int
                                                               1 + i]
                                                       );
         // Set the concentration A for computing "A / sum(concentrations)"
-        if (i == 1) {
+        if (i == selectedConcentrationIndex) {
             concentration = tmpConcentration;
         }
 
