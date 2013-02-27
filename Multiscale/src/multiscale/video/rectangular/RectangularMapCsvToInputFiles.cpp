@@ -65,9 +65,6 @@ void setNumberIteratorType(const po::variables_map& vm, NumberIteratorType& numb
 // Set the selected concentration index
 void setSelectedConcentrationIndex(const po::variables_map& vm, unsigned int& selectedConcentrationIndex) {
     selectedConcentrationIndex = vm["selected-concentration-index"].as<unsigned int>();
-
-    selectedConcentrationIndex = (selectedConcentrationIndex > 0) ? selectedConcentrationIndex
-                                                                  : 1;
 }
 
 // Check if the number of concentrations for one position is valid

@@ -20,14 +20,20 @@ IMG_FOLDER=${OUT_FOLDER}/img;
 #   2. The number of concentrations for position
 #   3. The number of rows/height (D1)
 #   4. The number of columns/width (D2)
-if [ $# -ne 4 ]; 
+if [ $# -lt 4 ]; 
 then
     echo "Incorrect number of parameters provided."
     echo
     echo "Usage:";
-    echo "    RectangularGeometryViewer <path_to_csv_file> <nr_concentrations_for_each_position> <height> <width>";
-    
+    echo "    RectangularGeometryViewer <path_to_csv_file> <nr_concentrations_for_each_position> <height> <width> [<selected-concentration-index>]";
+
     exit 1;
+fi
+
+# If the selected concentration index is provided, then take it into account
+if [ $# -eq 5 ];
+then
+    selectedConcentrationIndex=`echo "--selected-concentration-index" $5`;
 fi
 
 # Get the parameters in separate variables
@@ -68,7 +74,7 @@ echo "Generating the input files from the .csv file...";
 
 # Run the program for converting the ".csv" file to "Number of time points" input files
 # for the MapCartesianToScript program
-bin/RectangularMapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --height $height --width $width --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}";
+bin/RectangularMapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --height $height --width $width --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}" ${selectedConcentrationIndex};
 
 # Inform user of the next action
 echo "Generating in parallel the gnuplot script for each of the input files...";
