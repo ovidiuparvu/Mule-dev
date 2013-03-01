@@ -15,17 +15,17 @@ namespace multiscale {
 
         public:
 
-            static string           filenameFromPath(string& filepath);
+            static string           filenameFromPath(const string& filepath);
             static string           replace         (string& initialString,
-                                                     string  replaceWhat,
-                                                     string  replaceTo);
-            static vector<string>   split           (string  initialString,
-                                                     string  delimiter);
+                                                     const string& replaceWhat,
+                                                     const string& replaceTo);
+            static vector<string>   split           (string& initialString,
+                                                     const string& delimiter);
             template <class T>
-            static string toString(T number) {
+            static string toString(T variable) {
                 ostringstream stringStream;
 
-                stringStream << number;
+                stringStream << variable;
 
                 return stringStream.str();
             }

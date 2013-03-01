@@ -5,10 +5,10 @@
 
 using namespace std;
 
-#define HUE_MIN       0
-#define HUE_MAX    120
-#define SATURATION 1
-#define VALUE             1
+#define HUE_MIN     0
+#define HUE_MAX     120
+#define SATURATION  1
+#define VALUE       1
 
 /*
  * Class for generating a RGB colour given the possible range for
