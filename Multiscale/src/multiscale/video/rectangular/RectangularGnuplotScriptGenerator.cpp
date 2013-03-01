@@ -12,11 +12,11 @@ using namespace std;
 
 
 // Using the concentrations generate the corresponding gnuplot script in the output file
-void RectangularGnuplotScriptGenerator::generateScript(vector<double>& concentrations,
+void RectangularGnuplotScriptGenerator::generateScript(const vector<double> &concentrations,
                                                        double simulationTime,
                                                        unsigned long height,
                                                        unsigned long width,
-                                                       string outputFilepath)
+                                                       const string &outputFilepath)
                                                        throw (string) {
     ofstream fout((outputFilepath + GNUPLOT_EXTENSION).c_str(), std::ios_base::trunc);
 
@@ -30,8 +30,8 @@ void RectangularGnuplotScriptGenerator::generateScript(vector<double>& concentra
 }
 
 // Generate the header of the script
-void RectangularGnuplotScriptGenerator::generateHeader(ofstream& fout, string& outputFilepath,
-                                                       double& simulationTime, unsigned long height,
+void RectangularGnuplotScriptGenerator::generateHeader(ofstream &fout, const string &outputFilepath,
+                                                       double simulationTime, unsigned long height,
                                                        unsigned long width) {
     ifstream fin(HEADER_IN);
 
@@ -45,8 +45,8 @@ void RectangularGnuplotScriptGenerator::generateHeader(ofstream& fout, string& o
 }
 
 // Generate the body of the script
-void RectangularGnuplotScriptGenerator::generateBody(vector<double>& concentrations, unsigned long height,
-                                                     unsigned long width, ofstream& fout) {
+void RectangularGnuplotScriptGenerator::generateBody(const vector<double> &concentrations, unsigned long height,
+                                                     unsigned long width, ofstream &fout) {
     ifstream fin(CONTENT_IN);
 
     assert(fin.is_open());
@@ -57,7 +57,7 @@ void RectangularGnuplotScriptGenerator::generateBody(vector<double>& concentrati
 }
 
 // Generate the footer of the script
-void RectangularGnuplotScriptGenerator::generateFooter(ofstream& fout) {
+void RectangularGnuplotScriptGenerator::generateFooter(ofstream &fout) {
     ifstream fin(FOOTER_IN);
 
     assert(fin.is_open());
@@ -68,8 +68,8 @@ void RectangularGnuplotScriptGenerator::generateFooter(ofstream& fout) {
 }
 
 // Output the header of the script
-void RectangularGnuplotScriptGenerator::outputHeader(ifstream& fin, string& outputFilename, double& simulationTime,
-                                                     unsigned long height, unsigned long width, ofstream& fout) {
+void RectangularGnuplotScriptGenerator::outputHeader(ifstream &fin, const string &outputFilename, double simulationTime,
+                                                     unsigned long height, unsigned long width, ofstream &fout) {
     string line;
 
     while (getline(fin, line)) {
@@ -85,8 +85,8 @@ void RectangularGnuplotScriptGenerator::outputHeader(ifstream& fin, string& outp
 }
 
 // Output the content of the script
-void RectangularGnuplotScriptGenerator::outputContent(vector<double>& concentrations, unsigned long height,
-                                                      unsigned long width, ofstream& fout) {
+void RectangularGnuplotScriptGenerator::outputContent(const vector<double> &concentrations, unsigned long height,
+                                                      unsigned long width, ofstream &fout) {
     for (unsigned int i = 0; i < height; i++) {
         for (unsigned int j = 0; j < (width - 1); j++) {
             fout << concentrations[(i * width) + j] << OUTPUT_SEPARATOR;
@@ -99,7 +99,7 @@ void RectangularGnuplotScriptGenerator::outputContent(vector<double>& concentrat
 }
 
 // Output the footer of the script
-void RectangularGnuplotScriptGenerator::outputFooter(ifstream& fin, ofstream& fout) {
+void RectangularGnuplotScriptGenerator::outputFooter(ifstream &fin, ofstream &fout) {
     string line;
 
     while (getline(fin, line)) {

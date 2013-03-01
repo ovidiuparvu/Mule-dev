@@ -31,34 +31,34 @@ namespace multiscale {
 
             public:
 
-                static void     generateScript      (vector<double>& concentrations,
+                static void     generateScript      (const vector<double> &concentrations,
                                                      double simulationTime,
                                                      unsigned long height,
                                                      unsigned long width,
-                                                     string outputFilepath)
+                                                     const string &outputFilepath)
                                                      throw (string);
 
             private:
 
-                static void     generateHeader      (ofstream& fout, string& outputFilepath,
-                                                     double& simulationTime, unsigned long height,
+                static void     generateHeader      (ofstream &fout, const string &outputFilepath,
+                                                     double simulationTime, unsigned long height,
                                                      unsigned long width);
-                static void     generateBody        (vector<double>& concentrations,
+                static void     generateBody        (const vector<double> &concentrations,
                                                      unsigned long height,
                                                      unsigned long width,
-                                                     ofstream& fout);
-                static void     generateFooter      (ofstream& fout);
-                static void     outputHeader        (ifstream& fin,
-                                                     string& outputFilename,
-                                                     double& simulationTime,
+                                                     ofstream &fout);
+                static void     generateFooter      (ofstream &fout);
+                static void     outputHeader        (ifstream &fin,
+                                                     const string &outputFilename,
+                                                     double simulationTime,
                                                      unsigned long height,
                                                      unsigned long width,
-                                                     ofstream& fout);
-                static void     outputContent       (vector<double>& concentrations,
+                                                     ofstream &fout);
+                static void     outputContent       (const vector<double> &concentrations,
                                                      unsigned long height,
                                                      unsigned long width,
-                                                     ofstream& fout);
-                static void     outputFooter        (ifstream& fin, ofstream& fout);
+                                                     ofstream &fout);
+                static void     outputFooter        (ifstream &fin, ofstream &fout);
 
         };
 

@@ -20,7 +20,9 @@ IMG_FOLDER=${OUT_FOLDER}/img;
 #   2. The number of concentrations for position
 #   3. The number of concentric circles (D1)
 #   4. The number of sectors (D2)
-if [ $# -lt 4 ]; 
+# OPTIONAL PARAMETERS:
+#   5. The index of the selected concentration when the number of concentrations for each position is greater than 1.
+if [ $# -lt 4 ] || [ $# -gt 5 ]; 
 then
     echo "Incorrect number of parameters provided."
     echo
@@ -33,6 +35,13 @@ fi
 # If the selected concentration index is provided, then take it into account
 if [ $# -eq 5 ];
 then
+    if [ $5 -ge $2 ];
+    then
+        echo "The selected concentration index (0-based indexing) should be smaller than the number of concentrations."
+
+	exit 1;
+    fi
+
     selectedConcentrationIndex=`echo "--selected-concentration-index" $5`;
 fi
 

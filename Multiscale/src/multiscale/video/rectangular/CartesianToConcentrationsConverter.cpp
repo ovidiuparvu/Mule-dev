@@ -12,7 +12,7 @@ using namespace multiscale::video;
 
 
 // Constructor for the class
-CartesianToConcentrationsConverter::CartesianToConcentrationsConverter(string inputFilepath, string outputFilepath) {
+CartesianToConcentrationsConverter::CartesianToConcentrationsConverter(const string &inputFilepath, const string &outputFilepath) {
     this->inputFilepath.assign(inputFilepath);
     this->outputFilepath.assign(outputFilepath);
 
@@ -54,7 +54,7 @@ void CartesianToConcentrationsConverter::readInputData() throw (string) {
 }
 
 // Read the header line from the input file
-void CartesianToConcentrationsConverter::readHeaderLine(ifstream& fin) throw (string) {
+void CartesianToConcentrationsConverter::readHeaderLine(ifstream &fin) throw (string) {
     fin >> height >> width >> simulationTime;
 
     // Validate the header line
@@ -64,7 +64,7 @@ void CartesianToConcentrationsConverter::readHeaderLine(ifstream& fin) throw (st
 }
 
 // Read the concentrations from the input file
-void CartesianToConcentrationsConverter::readConcentrations(ifstream& fin) throw (string) {
+void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) throw (string) {
     int nrOfConcentrations = height * width;
 
     concentrations.resize(nrOfConcentrations);

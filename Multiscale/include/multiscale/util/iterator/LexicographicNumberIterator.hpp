@@ -33,9 +33,9 @@ namespace multiscale {
             bool            hasNextInitialised      ();
             void            resetCurrentNumber      ();
             void            numberToDigits          (unsigned int number,
-                                                     vector<unsigned char>& digits);
-            void            reverseDigits           (vector<unsigned char>& digits);
-            unsigned int    digitsToNumber          (vector<unsigned char>& digits);
+                                                     vector<unsigned char> &digits);
+            void            reverseDigits           (vector<unsigned char> &digits);
+            unsigned int    digitsToNumber          (vector<unsigned char> &digits);
             bool            isLargerThanUpperBound  (unsigned char lastDigit);
             void            padWithZeros            ();
 

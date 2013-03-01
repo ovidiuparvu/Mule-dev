@@ -27,7 +27,7 @@ string RGBColourGenerator::generate(double concentrationMin, double concentratio
 }
 
 string RGBColourGenerator::convertHSVToRGB(double hue, double saturation, double value) {
-    assert((hue >= 0) && (hue < 360));
+    assert((hue >= 0) & &(hue < 360));
 
     double chroma   = value * saturation;
     int    huePrime = hue / 60;

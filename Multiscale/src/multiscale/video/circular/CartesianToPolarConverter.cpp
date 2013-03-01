@@ -12,7 +12,7 @@ using namespace multiscale::video;
 
 
 // Constructor for the class
-CartesianToPolarConverter::CartesianToPolarConverter(string inputFilepath, string outputFilepath) {
+CartesianToPolarConverter::CartesianToPolarConverter(const string &inputFilepath, const string &outputFilepath) {
     this->inputFilepath.assign(inputFilepath);
     this->outputFilepath.assign(outputFilepath);
 
@@ -60,7 +60,7 @@ void CartesianToPolarConverter::readInputData() throw (string) {
 }
 
 // Read the header line from the input file
-void CartesianToPolarConverter::readHeaderLine(ifstream& fin) throw (string) {
+void CartesianToPolarConverter::readHeaderLine(ifstream &fin) throw (string) {
     fin >> nrOfConcentricCircles >> nrOfSectors >> simulationTime;
 
     // Validate the header line
@@ -70,7 +70,7 @@ void CartesianToPolarConverter::readHeaderLine(ifstream& fin) throw (string) {
 }
 
 // Read the concentrations from the input file
-void CartesianToPolarConverter::readConcentrations(ifstream& fin) throw (string) {
+void CartesianToPolarConverter::readConcentrations(ifstream &fin) throw (string) {
     int nrOfConcentrations = ((nrOfConcentricCircles - 1) * nrOfSectors) + 1;
 
     concentrations.resize(nrOfConcentrations);

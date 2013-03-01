@@ -34,7 +34,7 @@ namespace po = boost::program_options;
 
 
 // Initialise the arguments configuration
-po::variables_map initArgumentsConfig(po::options_description& usageDescription, int argc, char** argv) {
+po::variables_map initArgumentsConfig(po::options_description &usageDescription, int argc, char** argv) {
     usageDescription.add_options()("help,h", "display help message\n")
                                   ("input-file,i", po::value<string>(), "provide the path to the input file\n")
                                   ("output-file,o",po::value<string>(), "provide the path of the output file (without extension)\n");
@@ -46,7 +46,7 @@ po::variables_map initArgumentsConfig(po::options_description& usageDescription,
 }
 
 // Print help message if needed
-void printHelpInformation(const po::variables_map& vm, const po::options_description& usageDescription) {
+void printHelpInformation(const po::variables_map &vm, const po::options_description &usageDescription) {
     cout << usageDescription << endl;
 }
 
@@ -57,7 +57,7 @@ void printWrongParameters() {
 }
 
 // Get the needed parameters
-bool areValidParameters(string& inputFilepath, string& outputFilename, int argc, char** argv) {
+bool areValidParameters(string &inputFilepath, string &outputFilename, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
@@ -70,7 +70,7 @@ bool areValidParameters(string& inputFilepath, string& outputFilename, int argc,
     }
 
     // Check if the given parameters are correct
-    if ((vm.count("input-file")) && (vm.count("output-file")) && (argc == 5)) {
+    if ((vm.count("input-file")) && (vm.count("output-file"))) {
         inputFilepath  = vm["input-file"].as<string>();
         outputFilename = vm["output-file"].as<string>();
 
@@ -93,7 +93,7 @@ int main(int argc, char** argv) {
         } else {
             printWrongParameters();
         }
-    } catch(const string& e) {
+    } catch(const string &e) {
         cerr << ERR_MSG << e << endl;
 
         return ERR_CODE;
@@ -101,7 +101,7 @@ int main(int argc, char** argv) {
         cerr << ERR_MSG << e << endl;
 
         return ERR_CODE;
-    } catch(exception& e) {
+    } catch(exception &e) {
         cerr << ERR_MSG << e.what() << endl;
 
         return ERR_CODE;

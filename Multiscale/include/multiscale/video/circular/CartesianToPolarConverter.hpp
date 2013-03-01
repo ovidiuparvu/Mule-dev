@@ -41,7 +41,7 @@ namespace multiscale {
 
             public:
 
-                CartesianToPolarConverter (string inputFilepath, string outputFilepath);
+                CartesianToPolarConverter (const string &inputFilepath, const string &outputFilepath);
                 ~CartesianToPolarConverter();
 
                 void convert(bool outputToScript);
@@ -49,8 +49,8 @@ namespace multiscale {
             private:
 
                 void readInputData              () throw (string);
-                void readHeaderLine             (ifstream& fin) throw (string);
-                void readConcentrations         (ifstream& fin) throw (string);
+                void readHeaderLine             (ifstream &fin) throw (string);
+                void readConcentrations         (ifstream &fin) throw (string);
                 void transformToAnnularSectors  ();
                 void outputResultsAsFile        ();
                 void outputResultsAsScript      ();

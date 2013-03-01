@@ -7,7 +7,7 @@ using namespace multiscale;
 
 
 // Get the filename from an absolute/relative path
-string StringManipulator::filenameFromPath(const string& filepath) {
+string StringManipulator::filenameFromPath(const string &filepath) {
     unsigned int position = filepath.find_last_of(DIR_SEPARATOR);
 
     if (position != string::npos) {
@@ -18,21 +18,23 @@ string StringManipulator::filenameFromPath(const string& filepath) {
 }
 
 // Find and replace a part of a string with another string
-string StringManipulator::replace(string& initialString, const string& replaceWhat, const string& replaceWith) {
+string StringManipulator::replace(const string &initialString, const string &replaceWhat, const string &replaceWith) {
     size_t index = initialString.find(replaceWhat);
+    string initialStringCopy = initialString;
 
     while (index != string::npos) {
-        initialString.replace(initialString.find(replaceWhat), replaceWhat.length(), replaceWith);
+        initialStringCopy.replace(initialStringCopy.find(replaceWhat), replaceWhat.length(), replaceWith);
 
-        index = initialString.find(replaceWhat);
+        index = initialStringCopy.find(replaceWhat);
     }
 
-    return initialString;
+    return initialStringCopy;
 }
 
 // Split a string and return all tokens as a new vector
-vector<string> StringManipulator::split(string& initialString, const string& delimiter) {
+vector<string> StringManipulator::split(const string &initialString, const string &delimiter) {
     vector<string> tokens;
+    string initialStringCopy = initialString;
 
-    return boost::split(tokens, initialString, boost::is_any_of(delimiter));
+    return boost::split(tokens, initialStringCopy, boost::is_any_of(delimiter));
 }

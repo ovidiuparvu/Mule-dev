@@ -38,7 +38,7 @@ namespace multiscale {
 
             public:
 
-                CartesianToConcentrationsConverter (string inputFilepath, string outputFilepath);
+                CartesianToConcentrationsConverter (const string &inputFilepath, const string &outputFilepath);
                 ~CartesianToConcentrationsConverter();
 
                 void convert();
@@ -46,8 +46,8 @@ namespace multiscale {
             private:
 
                 void readInputData              () throw (string);
-                void readHeaderLine             (ifstream& fin) throw (string);
-                void readConcentrations         (ifstream& fin) throw (string);
+                void readHeaderLine             (ifstream &fin) throw (string);
+                void readConcentrations         (ifstream &fin) throw (string);
                 void outputResults              ();
 
         };

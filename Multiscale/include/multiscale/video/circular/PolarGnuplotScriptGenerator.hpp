@@ -32,25 +32,25 @@ namespace multiscale {
 
             public:
 
-                static void     generateScript      (vector<AnnularSector>& annularSectors,
+                static void     generateScript      (const vector<AnnularSector> &annularSectors,
                                                      double simulationTime,
-                                                     string outputFilepath)
+                                                     const string &outputFilepath)
                                                      throw (string);
 
             private:
 
-                static void     generateHeader      (ofstream& fout, string& outputFilepath,
-                                                     double& simulationTime);
-                static void     generateBody        (vector<AnnularSector>& annularSectors,
-                                                     ofstream& fout);
-                static void     generateFooter      (ofstream& fout);
-                static void     outputHeader        (ifstream& fin, string& outputFilename,
-                                                     double& simulationTime, ofstream& fout);
-                static void     outputContent       (vector<AnnularSector>& annularSectors,
-                                                     string& contentTemplate,
-                                                     ofstream& fout);
-                static void     outputFooter        (ifstream& fin, ofstream& fout);
-                static string   readContentTemplate (ifstream& fin);
+                static void     generateHeader      (ofstream &fout, const string &outputFilepath,
+                                                     double simulationTime);
+                static void     generateBody        (const vector<AnnularSector> &annularSectors,
+                                                     ofstream &fout);
+                static void     generateFooter      (ofstream &fout);
+                static void     outputHeader        (ifstream &fin, const string &outputFilename,
+                                                     double simulationTime, ofstream &fout);
+                static void     outputContent       (const vector<AnnularSector> &annularSectors,
+                                                     const string &contentTemplate,
+                                                     ofstream &fout);
+                static void     outputFooter        (ifstream &fin, ofstream &fout);
+                static string   readContentTemplate (ifstream &fin);
 
         };
 
