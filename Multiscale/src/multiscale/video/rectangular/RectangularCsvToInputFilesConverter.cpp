@@ -241,7 +241,7 @@ void RectangularCsvToInputFilesConverter::splitLineInConcentrations(vector<doubl
 }
 
 // Compute the simulation time from the given string and verify if it is valid
-double RectangularCsvToInputFilesConverter::computeSimulationTime(const string &token) {
+inline double RectangularCsvToInputFilesConverter::computeSimulationTime(const string &token) {
     double simulationTime = atof(token.c_str());
 
     if (simulationTime < 0) throw ERR_NEG_SIM_TIME;
@@ -250,7 +250,7 @@ double RectangularCsvToInputFilesConverter::computeSimulationTime(const string &
 }
 
 // Compute the concentration of the next position
-double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int concentrationIndex,
+inline double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int concentrationIndex,
                                                                              vector<string> &tokens) {
     double concentration = 0;
     double totalConcentration = 0;
@@ -278,20 +278,20 @@ double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int
 }
 
 // Compute the concentration from the given string considering the number of concentrations for each position
-double RectangularCsvToInputFilesConverter::computeConcentration(const string &concentration) {
+inline double RectangularCsvToInputFilesConverter::computeConcentration(const string &concentration) {
     return (nrOfConcentrationsForPosition == 1)
                 ? computeScaledConcentration(concentration)
                 : computeNonScaledConcentration(concentration);
 }
 
 // Compute the non scaled concentration from the given string
-double RectangularCsvToInputFilesConverter::computeNonScaledConcentration(const string &concentration) {
+inline double RectangularCsvToInputFilesConverter::computeNonScaledConcentration(const string &concentration) {
     return atof(concentration.c_str());
 }
 
 // Compute the scaled concentration from the given string by applying
 // a logit transformation to it
-double RectangularCsvToInputFilesConverter::computeScaledConcentration(const string &concentration) {
+inline double RectangularCsvToInputFilesConverter::computeScaledConcentration(const string &concentration) {
     double scaledConcentration = atof(concentration.c_str());
 
     // Convert all concentrations which are lower than 1 to 1,
@@ -305,7 +305,7 @@ double RectangularCsvToInputFilesConverter::computeScaledConcentration(const str
 
 // Compute the normalised concentration by considering the maximum concentration
 // and the area of the current annular sector
-double RectangularCsvToInputFilesConverter::computeNormalisedConcentration(double concentration) {
+inline double RectangularCsvToInputFilesConverter::computeNormalisedConcentration(double concentration) {
     return (concentration / maximumConcentration);
 }
 

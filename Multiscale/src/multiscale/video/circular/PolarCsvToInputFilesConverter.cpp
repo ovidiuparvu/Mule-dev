@@ -263,7 +263,7 @@ void PolarCsvToInputFilesConverter::splitOtherPartsInConcentrations(vector<doubl
 }
 
 // Compute the simulation time and verify if it is valid
-double PolarCsvToInputFilesConverter::computeSimulationTime(const string &token) {
+inline double PolarCsvToInputFilesConverter::computeSimulationTime(const string &token) {
     double simulationTime = atof(token.c_str());
 
     if (simulationTime < 0) throw ERR_NEG_SIM_TIME;
@@ -272,7 +272,7 @@ double PolarCsvToInputFilesConverter::computeSimulationTime(const string &token)
 }
 
 // Compute the concentration of the next position
-double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned int circleIndex,
+inline double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned int circleIndex,
                                                                        int concentrationIndex,
                                                                        const vector<string> &tokens) {
     double concentration = 0;
@@ -302,14 +302,14 @@ double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned 
 }
 
 // Compute the concentration from the given string considering the number of concentrations for each position
-double PolarCsvToInputFilesConverter::computeConcentration(const string &concentration, int circleIndex) {
+inline double PolarCsvToInputFilesConverter::computeConcentration(const string &concentration, int circleIndex) {
     return (nrOfConcentrationsForPosition == 1)
                 ? computeScaledConcentration(concentration, circleIndex)
                 : computeNonScaledConcentration(concentration, circleIndex);
 }
 
 // Compute the non scaled concentration from the given string
-double PolarCsvToInputFilesConverter::computeNonScaledConcentration(const string &concentration, int circleIndex) {
+inline double PolarCsvToInputFilesConverter::computeNonScaledConcentration(const string &concentration, int circleIndex) {
     double amount = atof(concentration.c_str());
 
     return computeConcentrationWrtArea(amount, circleIndex);
@@ -317,7 +317,7 @@ double PolarCsvToInputFilesConverter::computeNonScaledConcentration(const string
 
 // Compute the scaled concentration from the given string by applying
 // a logit transformation to it
-double PolarCsvToInputFilesConverter::computeScaledConcentration(const string &concentration, int circleIndex) {
+inline double PolarCsvToInputFilesConverter::computeScaledConcentration(const string &concentration, int circleIndex) {
     double amount = atof(concentration.c_str());
 
     double scaledConcentration = computeConcentrationWrtArea(amount, circleIndex);
@@ -333,13 +333,13 @@ double PolarCsvToInputFilesConverter::computeScaledConcentration(const string &c
 
 // Compute the concentration of a annular sector given the number of species
 // and the level at which the annular sector is positioned
-double PolarCsvToInputFilesConverter::computeConcentrationWrtArea(double amount, int circleIndex) {
+inline double PolarCsvToInputFilesConverter::computeConcentrationWrtArea(double amount, int circleIndex) {
     return amount / ((2 * (circleIndex - 1)) + 1);
 }
 
 // Compute the normalised concentration by considering the maximum concentration
 // and the area of the current annular sector
-double PolarCsvToInputFilesConverter::computeNormalisedConcentration(double concentration, int circleIndex) {
+inline double PolarCsvToInputFilesConverter::computeNormalisedConcentration(double concentration, int circleIndex) {
     return (concentration / maximumConcentration);
 }
 
