@@ -9,7 +9,7 @@ namespace multiscale {
 
             template <class T, class U>
             static U convertFromRange(T oldRangeMin, T oldRangeMax, U newRangeMin, U newRangeMax, T oldValue) {
-                U normalisedValue = ((U)(oldValue - oldRangeMin)) / (oldRangeMax - oldRangeMin);
+                double normalisedValue = ((double)(oldValue - oldRangeMin)) / (oldRangeMax - oldRangeMin);
 
                 return (newRangeMin + normalisedValue * (newRangeMax - newRangeMin));
             }
