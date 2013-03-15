@@ -6,11 +6,6 @@
 #include <fstream>
 #include <iostream>
 
-namespace {
-
-    const int IMAGE_MIN_INDEX = 1;
-
-}
 
 using namespace multiscale::analysis;
 using namespace std;
@@ -43,6 +38,7 @@ using namespace std;
 #define THRESHOLD_MAX           255
 
 #define KEY_ESC 27
+#define IMAGE_MIN_INDEX 1
 
 #define PI  3.141592
 
