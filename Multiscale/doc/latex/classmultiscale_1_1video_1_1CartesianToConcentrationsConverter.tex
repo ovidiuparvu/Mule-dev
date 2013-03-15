@@ -1,0 +1,252 @@
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter}{\section{multiscale\-:\-:video\-:\-:Cartesian\-To\-Concentrations\-Converter Class Reference}
+\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter}\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+}
+
+
+{\ttfamily \#include $<$Cartesian\-To\-Concentrations\-Converter.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_ae2f641fe6c2af730a5aedc83f4bc1244}{Cartesian\-To\-Concentrations\-Converter} (const string \&\hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_affebbc7e1c67692bd529f19fc0451e58}{input\-Filepath}, const string \&\hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a9215448e33876a581b206a89b6651fd0}{output\-Filepath})
+\item 
+\hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a4250cb00af6f3c254c0577479ae25553}{$\sim$\-Cartesian\-To\-Concentrations\-Converter} ()
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a27de97c7e35097bd17453fd07f33a6f1}{convert} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a94094cdeaf0f48164911188709dc0e2f}{read\-Input\-Data} ()  throw (string)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a2e9967ae6fb2efc39ed377aca2fa222c}{read\-Header\-Line} (ifstream \&fin)  throw (string)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a9134409b814fafe62c896c6b473bc574}{read\-Concentrations} (ifstream \&fin)  throw (string)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a346e054266585ae6922d159b8d5fb804}{output\-Results} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ double $>$ \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a335f54163cbabeaa80c1da811b9f9c0c}{concentrations}
+\item 
+unsigned long \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a94e58072f2e143bd6476133370ffb37f}{height}
+\item 
+unsigned long \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_ae6fba5af405d884c7b70ed206a6d5cb1}{width}
+\item 
+double \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a6e66af60b82513b3186fdb32cad44597}{simulation\-Time}
+\item 
+string \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_affebbc7e1c67692bd529f19fc0451e58}{input\-Filepath}
+\item 
+string \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a9215448e33876a581b206a89b6651fd0}{output\-Filepath}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_ae2f641fe6c2af730a5aedc83f4bc1244}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!Cartesian\-To\-Concentrations\-Converter@{Cartesian\-To\-Concentrations\-Converter}}
+\index{Cartesian\-To\-Concentrations\-Converter@{Cartesian\-To\-Concentrations\-Converter}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{Cartesian\-To\-Concentrations\-Converter}]{\setlength{\rightskip}{0pt plus 5cm}Cartesian\-To\-Concentrations\-Converter\-::\-Cartesian\-To\-Concentrations\-Converter (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{input\-Filepath, }
+\item[{const string \&}]{output\-Filepath}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_ae2f641fe6c2af730a5aedc83f4bc1244}
+
+
+Definition at line 15 of file Cartesian\-To\-Concentrations\-Converter.\-cpp.
+
+
+
+References height, simulation\-Time, and width.
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a4250cb00af6f3c254c0577479ae25553}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!$\sim$\-Cartesian\-To\-Concentrations\-Converter@{$\sim$\-Cartesian\-To\-Concentrations\-Converter}}
+\index{$\sim$\-Cartesian\-To\-Concentrations\-Converter@{$\sim$\-Cartesian\-To\-Concentrations\-Converter}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{$\sim$\-Cartesian\-To\-Concentrations\-Converter}]{\setlength{\rightskip}{0pt plus 5cm}Cartesian\-To\-Concentrations\-Converter\-::$\sim$\-Cartesian\-To\-Concentrations\-Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a4250cb00af6f3c254c0577479ae25553}
+
+
+Definition at line 25 of file Cartesian\-To\-Concentrations\-Converter.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a27de97c7e35097bd17453fd07f33a6f1}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!convert@{convert}}
+\index{convert@{convert}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Concentrations\-Converter\-::convert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a27de97c7e35097bd17453fd07f33a6f1}
+
+
+Definition at line 30 of file Cartesian\-To\-Concentrations\-Converter.\-cpp.
+
+
+
+References output\-Results(), and read\-Input\-Data().
+
+
+
+Referenced by main().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a346e054266585ae6922d159b8d5fb804}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!output\-Results@{output\-Results}}
+\index{output\-Results@{output\-Results}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{output\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Concentrations\-Converter\-::output\-Results (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a346e054266585ae6922d159b8d5fb804}
+
+
+Definition at line 86 of file Cartesian\-To\-Concentrations\-Converter.\-cpp.
+
+
+
+References concentrations, multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Script(), height, output\-Filepath, simulation\-Time, and width.
+
+
+
+Referenced by convert().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a9134409b814fafe62c896c6b473bc574}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!read\-Concentrations@{read\-Concentrations}}
+\index{read\-Concentrations@{read\-Concentrations}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{read\-Concentrations}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Concentrations\-Converter\-::read\-Concentrations (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)  throw (string)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a9134409b814fafe62c896c6b473bc574}
+
+
+Definition at line 67 of file Cartesian\-To\-Concentrations\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-C\-O\-N\-C.
+
+
+
+Referenced by read\-Input\-Data().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a2e9967ae6fb2efc39ed377aca2fa222c}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!read\-Header\-Line@{read\-Header\-Line}}
+\index{read\-Header\-Line@{read\-Header\-Line}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{read\-Header\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Concentrations\-Converter\-::read\-Header\-Line (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)  throw (string)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a2e9967ae6fb2efc39ed377aca2fa222c}
+
+
+Definition at line 57 of file Cartesian\-To\-Concentrations\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E, and E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N.
+
+
+
+Referenced by read\-Input\-Data().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a94094cdeaf0f48164911188709dc0e2f}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!read\-Input\-Data@{read\-Input\-Data}}
+\index{read\-Input\-Data@{read\-Input\-Data}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{read\-Input\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Concentrations\-Converter\-::read\-Input\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)  throw (string)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a94094cdeaf0f48164911188709dc0e2f}
+
+
+Definition at line 36 of file Cartesian\-To\-Concentrations\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A, E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N, input\-Filepath, read\-Concentrations(), and read\-Header\-Line().
+
+
+
+Referenced by convert().
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a335f54163cbabeaa80c1da811b9f9c0c}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!concentrations@{concentrations}}
+\index{concentrations@{concentrations}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{concentrations}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$double$>$ multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter\-::concentrations\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a335f54163cbabeaa80c1da811b9f9c0c}
+
+
+Definition at line 30 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+
+
+Referenced by output\-Results().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a94e58072f2e143bd6476133370ffb37f}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!height@{height}}
+\index{height@{height}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter\-::height\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a94e58072f2e143bd6476133370ffb37f}
+
+
+Definition at line 32 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+
+
+Referenced by Cartesian\-To\-Concentrations\-Converter(), and output\-Results().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_affebbc7e1c67692bd529f19fc0451e58}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!input\-Filepath@{input\-Filepath}}
+\index{input\-Filepath@{input\-Filepath}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{input\-Filepath}]{\setlength{\rightskip}{0pt plus 5cm}string multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter\-::input\-Filepath\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_affebbc7e1c67692bd529f19fc0451e58}
+
+
+Definition at line 36 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+
+
+Referenced by read\-Input\-Data().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a9215448e33876a581b206a89b6651fd0}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!output\-Filepath@{output\-Filepath}}
+\index{output\-Filepath@{output\-Filepath}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{output\-Filepath}]{\setlength{\rightskip}{0pt plus 5cm}string multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter\-::output\-Filepath\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a9215448e33876a581b206a89b6651fd0}
+
+
+Definition at line 37 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+
+
+Referenced by output\-Results().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a6e66af60b82513b3186fdb32cad44597}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!simulation\-Time@{simulation\-Time}}
+\index{simulation\-Time@{simulation\-Time}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{simulation\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter\-::simulation\-Time\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_a6e66af60b82513b3186fdb32cad44597}
+
+
+Definition at line 34 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+
+
+Referenced by Cartesian\-To\-Concentrations\-Converter(), and output\-Results().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_ae6fba5af405d884c7b70ed206a6d5cb1}{\index{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}!width@{width}}
+\index{width@{width}!multiscale::video::CartesianToConcentrationsConverter@{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter\-::width\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter_ae6fba5af405d884c7b70ed206a6d5cb1}
+
+
+Definition at line 33 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+
+
+Referenced by Cartesian\-To\-Concentrations\-Converter(), and output\-Results().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/multiscale/video/rectangular/\hyperlink{CartesianToConcentrationsConverter_8hpp}{Cartesian\-To\-Concentrations\-Converter.\-hpp}\item 
+src/multiscale/video/rectangular/\hyperlink{CartesianToConcentrationsConverter_8cpp}{Cartesian\-To\-Concentrations\-Converter.\-cpp}\end{DoxyCompactItemize}

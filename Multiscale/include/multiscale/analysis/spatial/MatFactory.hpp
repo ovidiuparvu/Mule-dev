@@ -14,6 +14,7 @@ namespace multiscale {
 
     namespace analysis {
 
+        //! Class for creating a Mat object
         class MatFactory {
 
             protected:
@@ -50,14 +51,14 @@ namespace multiscale {
                  */
                 void initInputFile(ifstream &fin, const string &inputFile);
 
-                //! Process concentrations
+                //! Process concentrations from file
                 /*!
                  * Process the concentrations from the file. This method will be implemented only by subclasses
                  * of this abstract class
                  */
                 virtual unsigned char *processConcentrations(ifstream &fin) = 0;
 
-                //! Convert concentration
+                //! Convert concentration to intensity
                 /*!
                  * Convert the concentration (real value between 0 and 1) to intensity (integer value between 0 and 255)
                  *

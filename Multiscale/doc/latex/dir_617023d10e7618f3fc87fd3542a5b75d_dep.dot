@@ -1,0 +1,13 @@
+digraph "include/multiscale/analysis" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_7b9db7c2b41001ca254481ac0f65af63 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="multiscale" fontname="Helvetica", fontsize="10", URL="dir_7b9db7c2b41001ca254481ac0f65af63.html"]
+  subgraph clusterdir_617023d10e7618f3fc87fd3542a5b75d {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_617023d10e7618f3fc87fd3542a5b75d.html"];
+    dir_617023d10e7618f3fc87fd3542a5b75d [shape=plaintext label="analysis"];
+    dir_525f610367b169c5221b707333271043 [shape=box label="spatial" color="red" fillcolor="white" style="filled" URL="dir_525f610367b169c5221b707333271043.html"];
+  }
+  }
+}

@@ -1,0 +1,99 @@
+\hypertarget{classmultiscale_1_1analysis_1_1RectangularMatFactory}{\section{multiscale\-:\-:analysis\-:\-:Rectangular\-Mat\-Factory Class Reference}
+\label{classmultiscale_1_1analysis_1_1RectangularMatFactory}\index{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory@{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory}}
+}
+
+
+{\ttfamily \#include $<$Rectangular\-Mat\-Factory.\-hpp$>$}
+
+
+
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Rectangular\-Mat\-Factory\-:
+
+
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Rectangular\-Mat\-Factory\-:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmultiscale_1_1analysis_1_1RectangularMatFactory_a20b4c70b7964fb40c4767ab2d7e1ae92}{Rectangular\-Mat\-Factory} ()
+\item 
+\hyperlink{classmultiscale_1_1analysis_1_1RectangularMatFactory_a3ebedd3691965c3d89c3ecdaa3e66d70}{$\sim$\-Rectangular\-Mat\-Factory} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char $\ast$ \hyperlink{classmultiscale_1_1analysis_1_1RectangularMatFactory_a82d24e96f1904577c693605ecc9675a5}{process\-Concentrations} (ifstream \&fin)
+\begin{DoxyCompactList}\small\item\em Process the concentrations from the input file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Rectangular\-Mat\-Factory.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1RectangularMatFactory_a20b4c70b7964fb40c4767ab2d7e1ae92}{\index{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory@{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory}!Rectangular\-Mat\-Factory@{Rectangular\-Mat\-Factory}}
+\index{Rectangular\-Mat\-Factory@{Rectangular\-Mat\-Factory}!multiscale::analysis::RectangularMatFactory@{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory}}
+\subsubsection[{Rectangular\-Mat\-Factory}]{\setlength{\rightskip}{0pt plus 5cm}Rectangular\-Mat\-Factory\-::\-Rectangular\-Mat\-Factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1RectangularMatFactory_a20b4c70b7964fb40c4767ab2d7e1ae92}
+
+
+Definition at line 6 of file Rectangular\-Mat\-Factory.\-cpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1RectangularMatFactory_a3ebedd3691965c3d89c3ecdaa3e66d70}{\index{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory@{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory}!$\sim$\-Rectangular\-Mat\-Factory@{$\sim$\-Rectangular\-Mat\-Factory}}
+\index{$\sim$\-Rectangular\-Mat\-Factory@{$\sim$\-Rectangular\-Mat\-Factory}!multiscale::analysis::RectangularMatFactory@{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory}}
+\subsubsection[{$\sim$\-Rectangular\-Mat\-Factory}]{\setlength{\rightskip}{0pt plus 5cm}Rectangular\-Mat\-Factory\-::$\sim$\-Rectangular\-Mat\-Factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1RectangularMatFactory_a3ebedd3691965c3d89c3ecdaa3e66d70}
+
+
+Definition at line 9 of file Rectangular\-Mat\-Factory.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1RectangularMatFactory_a82d24e96f1904577c693605ecc9675a5}{\index{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory@{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory}!process\-Concentrations@{process\-Concentrations}}
+\index{process\-Concentrations@{process\-Concentrations}!multiscale::analysis::RectangularMatFactory@{multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory}}
+\subsubsection[{process\-Concentrations}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ Rectangular\-Mat\-Factory\-::process\-Concentrations (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1RectangularMatFactory_a82d24e96f1904577c693605ecc9675a5}
+
+
+Process the concentrations from the input file. 
+
+Read the concentrations from the input file and return them as an array which can be used afterwards to create a Mat object from them
+
+R\-E\-M\-A\-R\-K\-: The constructor of Mat does not copy the data. Therefore, D\-O N\-O\-T deallocate it in this class.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fin} & Input file stream from which the concentrations are read \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1MatFactory_a0493c87d7b74619a95f14c0e31a3e178}{multiscale\-::analysis\-::\-Mat\-Factory}.
+
+
+
+Definition at line 12 of file Rectangular\-Mat\-Factory.\-cpp.
+
+
+
+References multiscale\-::analysis\-::\-Mat\-Factory\-::cols, multiscale\-::analysis\-::\-Mat\-Factory\-::convert\-To\-Intensity(), and multiscale\-::analysis\-::\-Mat\-Factory\-::rows.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/multiscale/analysis/spatial/factory/\hyperlink{RectangularMatFactory_8hpp}{Rectangular\-Mat\-Factory.\-hpp}\item 
+src/multiscale/analysis/spatial/factory/\hyperlink{RectangularMatFactory_8cpp}{Rectangular\-Mat\-Factory.\-cpp}\end{DoxyCompactItemize}

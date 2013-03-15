@@ -1,0 +1,101 @@
+\hypertarget{classmultiscale_1_1StringManipulator}{\section{multiscale\-:\-:String\-Manipulator Class Reference}
+\label{classmultiscale_1_1StringManipulator}\index{multiscale\-::\-String\-Manipulator@{multiscale\-::\-String\-Manipulator}}
+}
+
+
+{\ttfamily \#include $<$String\-Manipulator.\-hpp$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classmultiscale_1_1StringManipulator_ab0354ab5ca48df4394695445fe105640}{filename\-From\-Path} (const string \&filepath)
+\item 
+static string \hyperlink{classmultiscale_1_1StringManipulator_afe65f4f4cdf70976df2a8749b9e2fc7b}{replace} (const string \&initial\-String, const string \&replace\-What, const string \&replace\-To)
+\item 
+static vector$<$ string $>$ \hyperlink{classmultiscale_1_1StringManipulator_a899c72a05bbd8fb525f31bca3c1ec3c4}{split} (const string \&initial\-String, const string \&delimiter)
+\item 
+{\footnotesize template$<$class T $>$ }\\static string \hyperlink{classmultiscale_1_1StringManipulator_a91858c4faa5ee210a9b67e4885835368}{to\-String} (T variable)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file String\-Manipulator.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1StringManipulator_ab0354ab5ca48df4394695445fe105640}{\index{multiscale\-::\-String\-Manipulator@{multiscale\-::\-String\-Manipulator}!filename\-From\-Path@{filename\-From\-Path}}
+\index{filename\-From\-Path@{filename\-From\-Path}!multiscale::StringManipulator@{multiscale\-::\-String\-Manipulator}}
+\subsubsection[{filename\-From\-Path}]{\setlength{\rightskip}{0pt plus 5cm}string String\-Manipulator\-::filename\-From\-Path (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filepath}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1StringManipulator_ab0354ab5ca48df4394695445fe105640}
+
+
+Definition at line 10 of file String\-Manipulator.\-cpp.
+
+
+
+References D\-I\-R\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R.
+
+
+
+Referenced by multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator\-::generate\-Header(), and multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Header().
+
+\hypertarget{classmultiscale_1_1StringManipulator_afe65f4f4cdf70976df2a8749b9e2fc7b}{\index{multiscale\-::\-String\-Manipulator@{multiscale\-::\-String\-Manipulator}!replace@{replace}}
+\index{replace@{replace}!multiscale::StringManipulator@{multiscale\-::\-String\-Manipulator}}
+\subsubsection[{replace}]{\setlength{\rightskip}{0pt plus 5cm}string String\-Manipulator\-::replace (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{initial\-String, }
+\item[{const string \&}]{replace\-What, }
+\item[{const string \&}]{replace\-To}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1StringManipulator_afe65f4f4cdf70976df2a8749b9e2fc7b}
+
+
+Definition at line 21 of file String\-Manipulator.\-cpp.
+
+
+
+Referenced by multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator\-::output\-Content(), multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator\-::output\-Header(), and multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator\-::output\-Header().
+
+\hypertarget{classmultiscale_1_1StringManipulator_a899c72a05bbd8fb525f31bca3c1ec3c4}{\index{multiscale\-::\-String\-Manipulator@{multiscale\-::\-String\-Manipulator}!split@{split}}
+\index{split@{split}!multiscale::StringManipulator@{multiscale\-::\-String\-Manipulator}}
+\subsubsection[{split}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ String\-Manipulator\-::split (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{initial\-String, }
+\item[{const string \&}]{delimiter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1StringManipulator_a899c72a05bbd8fb525f31bca3c1ec3c4}
+
+
+Definition at line 35 of file String\-Manipulator.\-cpp.
+
+
+
+Referenced by multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::split\-Line\-In\-Concentrations(), multiscale\-::video\-::\-Polar\-Csv\-To\-Input\-Files\-Converter\-::split\-Line\-In\-Concentrations(), multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::validate\-Input\-Line(), and multiscale\-::video\-::\-Polar\-Csv\-To\-Input\-Files\-Converter\-::validate\-Input\-Line().
+
+\hypertarget{classmultiscale_1_1StringManipulator_a91858c4faa5ee210a9b67e4885835368}{\index{multiscale\-::\-String\-Manipulator@{multiscale\-::\-String\-Manipulator}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!multiscale::StringManipulator@{multiscale\-::\-String\-Manipulator}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ static string multiscale\-::\-String\-Manipulator\-::to\-String (
+\begin{DoxyParamCaption}
+\item[{T}]{variable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{classmultiscale_1_1StringManipulator_a91858c4faa5ee210a9b67e4885835368}
+
+
+Definition at line 25 of file String\-Manipulator.\-hpp.
+
+
+
+Referenced by multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::init\-Output\-File(), and multiscale\-::video\-::\-Polar\-Csv\-To\-Input\-Files\-Converter\-::init\-Output\-File().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/multiscale/util/\hyperlink{StringManipulator_8hpp}{String\-Manipulator.\-hpp}\item 
+src/multiscale/util/\hyperlink{StringManipulator_8cpp}{String\-Manipulator.\-cpp}\end{DoxyCompactItemize}

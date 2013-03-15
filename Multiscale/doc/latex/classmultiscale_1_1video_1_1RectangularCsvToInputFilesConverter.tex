@@ -1,0 +1,463 @@
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter}{\section{multiscale\-:\-:video\-:\-:Rectangular\-Csv\-To\-Input\-Files\-Converter Class Reference}
+\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter}\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+}
+
+
+{\ttfamily \#include $<$Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp$>$}
+
+
+
+Collaboration diagram for multiscale\-:\-:video\-:\-:Rectangular\-Csv\-To\-Input\-Files\-Converter\-:
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a7555022f95707f526571ea1ca51da102}{Rectangular\-Csv\-To\-Input\-Files\-Converter} (const string \&\hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a407e3c2607f036d531445e22454a910e}{input\-Filepath}, const string \&\hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a2bb6a802fac9b0928bc53a8c71a1c33c}{output\-Filepath}, unsigned int \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a766bc7eea1c602f46a4a6c0948464c8a}{height}, unsigned int \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a7fe7f3d014535567fbeb465eb01cde1b}{width}, unsigned int \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0bfea1eb0f7dc76deee05af1e2eb744b}{nr\-Of\-Concentrations\-For\-Position}, unsigned int \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a5143d25a98a097107c2bed748b4d8df0}{selected\-Concentration\-Index}, \hyperlink{namespacemultiscale_a6ef911f4d48a4bf5e657c237ec169ff5}{Number\-Iterator\-Type} number\-Iterator\-Type)
+\item 
+\hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ad45bb79ad6c37954376d4f9904872870}{$\sim$\-Rectangular\-Csv\-To\-Input\-Files\-Converter} ()
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a5872c0ae1f39c52103ed3e62a388f80b}{convert} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ad35e0c15d987c739c97cf45305200274}{init\-Input\-File} (ifstream \&fin)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0badb31ed73468172d33f8542d344fc1}{init\-Maximum\-Concentration} (ifstream \&fin)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a570257a89fa37733ba66624ede2e4377}{init\-Output\-File} (ofstream \&fout, unsigned int index, double \&simulation\-Time)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a25201e3fa775f214d121ebfe1e21767e}{init\-Iterators} (const \hyperlink{namespacemultiscale_a6ef911f4d48a4bf5e657c237ec169ff5}{Number\-Iterator\-Type} \&number\-Iterator\-Type)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a63a0a390336863c05e0d2df296a0f324}{validate\-Selected\-Concentration\-Index} ()
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ad8be93ca4e4efbc6394de6f9d688df51}{validate\-Input} (ifstream \&fin)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a876c93163765bcae5d0b12047df99d58}{validate\-Input\-Line} (const string \&line, unsigned int line\-Number)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_acf389f7384f0646e922df99c27768a6f}{process\-Input\-File} (ifstream \&fin)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a56fb3e2a0f7a24a73c24e3be8888774d}{process\-Line} (const string \&line, unsigned int output\-Index)
+\item 
+vector$<$ double $>$ \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ab297918325583ff85c8740fa9c5661f6}{split\-Line\-In\-Concentrations} (const string \&line, double \&simulation\-Time)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a6cfe59bda4fbe1944199b6d27f8ee8b0}{split\-Line\-In\-Concentrations} (vector$<$ double $>$ \&concentrations, vector$<$ string $>$ \&tokens, unsigned int row\-Index)
+\item 
+double \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_aac755ecce42a0b8772de0716ff310e2b}{compute\-Simulation\-Time} (const string \&token)
+\item 
+double \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0e0c0245ace5606623e8912b1458d3d4}{compute\-Next\-Position\-Concentration} (int concentration\-Index, vector$<$ string $>$ \&tokens)
+\item 
+double \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ab6fae5f617920d8f09cfab347b6b4e54}{compute\-Concentration} (const string \&concentration)
+\item 
+double \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a13f67ac3ecd8f02322ee04befe4935e8}{compute\-Non\-Scaled\-Concentration} (const string \&concentration)
+\item 
+double \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a34a7ab9fbff04a3c254d5117b3268393}{compute\-Scaled\-Concentration} (const string \&concentration)
+\item 
+double \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a06e8db122fd188559d619108127fc318}{compute\-Normalised\-Concentration} (double concentration)
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ae93b5df92dd2bd02c04fde5b85c3ea75}{update\-Maximum\-Concentration} (const string \&line, double \&\hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_aeddcdf92c6f79bf41546fd417d0808b1}{maximum\-Concentration})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a407e3c2607f036d531445e22454a910e}{input\-Filepath}
+\item 
+string \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a2bb6a802fac9b0928bc53a8c71a1c33c}{output\-Filepath}
+\item 
+unsigned int \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a766bc7eea1c602f46a4a6c0948464c8a}{height}
+\item 
+unsigned int \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a7fe7f3d014535567fbeb465eb01cde1b}{width}
+\item 
+unsigned int \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0bfea1eb0f7dc76deee05af1e2eb744b}{nr\-Of\-Concentrations\-For\-Position}
+\item 
+unsigned int \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a48b31e858d0ebac757af77703202634f}{concentrations\-Index}
+\item 
+unsigned int \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a5143d25a98a097107c2bed748b4d8df0}{selected\-Concentration\-Index}
+\item 
+double \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_aeddcdf92c6f79bf41546fd417d0808b1}{maximum\-Concentration}
+\item 
+\hyperlink{classmultiscale_1_1NumberIterator}{Number\-Iterator} $\ast$ \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a065c299e68a9732ab79fe788c3b732dd}{circles\-Iterator}
+\item 
+\hyperlink{classmultiscale_1_1NumberIterator}{Number\-Iterator} $\ast$ \hyperlink{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ab0aaf585308839446bc23a9d3e6e7306}{sectors\-Iterator}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 29 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a7555022f95707f526571ea1ca51da102}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!Rectangular\-Csv\-To\-Input\-Files\-Converter@{Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\index{Rectangular\-Csv\-To\-Input\-Files\-Converter@{Rectangular\-Csv\-To\-Input\-Files\-Converter}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{Rectangular\-Csv\-To\-Input\-Files\-Converter}]{\setlength{\rightskip}{0pt plus 5cm}Rectangular\-Csv\-To\-Input\-Files\-Converter\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{input\-Filepath, }
+\item[{const string \&}]{output\-Filepath, }
+\item[{unsigned int}]{height, }
+\item[{unsigned int}]{width, }
+\item[{unsigned int}]{nr\-Of\-Concentrations\-For\-Position, }
+\item[{unsigned int}]{selected\-Concentration\-Index, }
+\item[{{\bf Number\-Iterator\-Type}}]{number\-Iterator\-Type}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a7555022f95707f526571ea1ca51da102}
+
+
+Definition at line 18 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ad45bb79ad6c37954376d4f9904872870}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!$\sim$\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{$\sim$\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\index{$\sim$\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{$\sim$\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{$\sim$\-Rectangular\-Csv\-To\-Input\-Files\-Converter}]{\setlength{\rightskip}{0pt plus 5cm}Rectangular\-Csv\-To\-Input\-Files\-Converter\-::$\sim$\-Rectangular\-Csv\-To\-Input\-Files\-Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ad45bb79ad6c37954376d4f9904872870}
+
+
+Definition at line 40 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ab6fae5f617920d8f09cfab347b6b4e54}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!compute\-Concentration@{compute\-Concentration}}
+\index{compute\-Concentration@{compute\-Concentration}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{compute\-Concentration}]{\setlength{\rightskip}{0pt plus 5cm}double Rectangular\-Csv\-To\-Input\-Files\-Converter\-::compute\-Concentration (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{concentration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ab6fae5f617920d8f09cfab347b6b4e54}
+
+
+Definition at line 281 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0e0c0245ace5606623e8912b1458d3d4}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!compute\-Next\-Position\-Concentration@{compute\-Next\-Position\-Concentration}}
+\index{compute\-Next\-Position\-Concentration@{compute\-Next\-Position\-Concentration}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{compute\-Next\-Position\-Concentration}]{\setlength{\rightskip}{0pt plus 5cm}double Rectangular\-Csv\-To\-Input\-Files\-Converter\-::compute\-Next\-Position\-Concentration (
+\begin{DoxyParamCaption}
+\item[{int}]{concentration\-Index, }
+\item[{vector$<$ string $>$ \&}]{tokens}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0e0c0245ace5606623e8912b1458d3d4}
+
+
+Definition at line 253 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a13f67ac3ecd8f02322ee04befe4935e8}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!compute\-Non\-Scaled\-Concentration@{compute\-Non\-Scaled\-Concentration}}
+\index{compute\-Non\-Scaled\-Concentration@{compute\-Non\-Scaled\-Concentration}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{compute\-Non\-Scaled\-Concentration}]{\setlength{\rightskip}{0pt plus 5cm}double Rectangular\-Csv\-To\-Input\-Files\-Converter\-::compute\-Non\-Scaled\-Concentration (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{concentration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a13f67ac3ecd8f02322ee04befe4935e8}
+
+
+Definition at line 288 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a06e8db122fd188559d619108127fc318}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!compute\-Normalised\-Concentration@{compute\-Normalised\-Concentration}}
+\index{compute\-Normalised\-Concentration@{compute\-Normalised\-Concentration}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{compute\-Normalised\-Concentration}]{\setlength{\rightskip}{0pt plus 5cm}double Rectangular\-Csv\-To\-Input\-Files\-Converter\-::compute\-Normalised\-Concentration (
+\begin{DoxyParamCaption}
+\item[{double}]{concentration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a06e8db122fd188559d619108127fc318}
+
+
+Definition at line 308 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a34a7ab9fbff04a3c254d5117b3268393}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!compute\-Scaled\-Concentration@{compute\-Scaled\-Concentration}}
+\index{compute\-Scaled\-Concentration@{compute\-Scaled\-Concentration}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{compute\-Scaled\-Concentration}]{\setlength{\rightskip}{0pt plus 5cm}double Rectangular\-Csv\-To\-Input\-Files\-Converter\-::compute\-Scaled\-Concentration (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{concentration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a34a7ab9fbff04a3c254d5117b3268393}
+
+
+Definition at line 294 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_aac755ecce42a0b8772de0716ff310e2b}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!compute\-Simulation\-Time@{compute\-Simulation\-Time}}
+\index{compute\-Simulation\-Time@{compute\-Simulation\-Time}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{compute\-Simulation\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double Rectangular\-Csv\-To\-Input\-Files\-Converter\-::compute\-Simulation\-Time (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{token}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_aac755ecce42a0b8772de0716ff310e2b}
+
+
+Definition at line 244 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a5872c0ae1f39c52103ed3e62a388f80b}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!convert@{convert}}
+\index{convert@{convert}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::convert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a5872c0ae1f39c52103ed3e62a388f80b}
+
+
+Definition at line 46 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+Referenced by main().
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ad35e0c15d987c739c97cf45305200274}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!init\-Input\-File@{init\-Input\-File}}
+\index{init\-Input\-File@{init\-Input\-File}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{init\-Input\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::init\-Input\-File (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ad35e0c15d987c739c97cf45305200274}
+
+
+Definition at line 60 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a25201e3fa775f214d121ebfe1e21767e}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!init\-Iterators@{init\-Iterators}}
+\index{init\-Iterators@{init\-Iterators}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{init\-Iterators}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::init\-Iterators (
+\begin{DoxyParamCaption}
+\item[{const {\bf Number\-Iterator\-Type} \&}]{number\-Iterator\-Type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a25201e3fa775f214d121ebfe1e21767e}
+
+
+Definition at line 108 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References multiscale\-::\-L\-E\-X\-I\-C\-O\-G\-R\-A\-P\-H\-I\-C, and multiscale\-::\-S\-T\-A\-N\-D\-A\-R\-D.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0badb31ed73468172d33f8542d344fc1}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!init\-Maximum\-Concentration@{init\-Maximum\-Concentration}}
+\index{init\-Maximum\-Concentration@{init\-Maximum\-Concentration}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{init\-Maximum\-Concentration}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::init\-Maximum\-Concentration (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0badb31ed73468172d33f8542d344fc1}
+
+
+Definition at line 67 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a570257a89fa37733ba66624ede2e4377}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!init\-Output\-File@{init\-Output\-File}}
+\index{init\-Output\-File@{init\-Output\-File}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{init\-Output\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::init\-Output\-File (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{fout, }
+\item[{unsigned int}]{index, }
+\item[{double \&}]{simulation\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a570257a89fa37733ba66624ede2e4377}
+
+
+Definition at line 90 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N, O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R, O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R, and multiscale\-::\-String\-Manipulator\-::to\-String().
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_acf389f7384f0646e922df99c27768a6f}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!process\-Input\-File@{process\-Input\-File}}
+\index{process\-Input\-File@{process\-Input\-File}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{process\-Input\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::process\-Input\-File (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_acf389f7384f0646e922df99c27768a6f}
+
+
+Definition at line 172 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a56fb3e2a0f7a24a73c24e3be8888774d}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!process\-Line@{process\-Line}}
+\index{process\-Line@{process\-Line}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{process\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::process\-Line (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{line, }
+\item[{unsigned int}]{output\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a56fb3e2a0f7a24a73c24e3be8888774d}
+
+
+Definition at line 188 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ab297918325583ff85c8740fa9c5661f6}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!split\-Line\-In\-Concentrations@{split\-Line\-In\-Concentrations}}
+\index{split\-Line\-In\-Concentrations@{split\-Line\-In\-Concentrations}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{split\-Line\-In\-Concentrations}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ Rectangular\-Csv\-To\-Input\-Files\-Converter\-::split\-Line\-In\-Concentrations (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{line, }
+\item[{double \&}]{simulation\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ab297918325583ff85c8740fa9c5661f6}
+
+
+Definition at line 206 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References I\-N\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R, and multiscale\-::\-String\-Manipulator\-::split().
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a6cfe59bda4fbe1944199b6d27f8ee8b0}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!split\-Line\-In\-Concentrations@{split\-Line\-In\-Concentrations}}
+\index{split\-Line\-In\-Concentrations@{split\-Line\-In\-Concentrations}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{split\-Line\-In\-Concentrations}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::split\-Line\-In\-Concentrations (
+\begin{DoxyParamCaption}
+\item[{vector$<$ double $>$ \&}]{concentrations, }
+\item[{vector$<$ string $>$ \&}]{tokens, }
+\item[{unsigned int}]{row\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a6cfe59bda4fbe1944199b6d27f8ee8b0}
+
+
+Definition at line 228 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ae93b5df92dd2bd02c04fde5b85c3ea75}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!update\-Maximum\-Concentration@{update\-Maximum\-Concentration}}
+\index{update\-Maximum\-Concentration@{update\-Maximum\-Concentration}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{update\-Maximum\-Concentration}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::update\-Maximum\-Concentration (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{line, }
+\item[{double \&}]{maximum\-Concentration}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ae93b5df92dd2bd02c04fde5b85c3ea75}
+
+
+Definition at line 314 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ad8be93ca4e4efbc6394de6f9d688df51}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!validate\-Input@{validate\-Input}}
+\index{validate\-Input@{validate\-Input}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{validate\-Input}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::validate\-Input (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ad8be93ca4e4efbc6394de6f9d688df51}
+
+
+Definition at line 132 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a876c93163765bcae5d0b12047df99d58}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!validate\-Input\-Line@{validate\-Input\-Line}}
+\index{validate\-Input\-Line@{validate\-Input\-Line}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{validate\-Input\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::validate\-Input\-Line (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{line, }
+\item[{unsigned int}]{line\-Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a876c93163765bcae5d0b12047df99d58}
+
+
+Definition at line 155 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-A\-L\-U\-E\-\_\-\-L\-I\-N\-E, E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-V\-A\-L\-U\-E\-\_\-\-T\-O\-K\-E\-N, E\-R\-R\-\_\-\-N\-R\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N\-S, I\-N\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R, and multiscale\-::\-String\-Manipulator\-::split().
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a63a0a390336863c05e0d2df296a0f324}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!validate\-Selected\-Concentration\-Index@{validate\-Selected\-Concentration\-Index}}
+\index{validate\-Selected\-Concentration\-Index@{validate\-Selected\-Concentration\-Index}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{validate\-Selected\-Concentration\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Csv\-To\-Input\-Files\-Converter\-::validate\-Selected\-Concentration\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a63a0a390336863c05e0d2df296a0f324}
+
+
+Definition at line 126 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-S\-E\-L\-E\-C\-T\-E\-D\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-D\-E\-X.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a065c299e68a9732ab79fe788c3b732dd}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!circles\-Iterator@{circles\-Iterator}}
+\index{circles\-Iterator@{circles\-Iterator}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{circles\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number\-Iterator}$\ast$ multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::circles\-Iterator\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a065c299e68a9732ab79fe788c3b732dd}
+
+
+Definition at line 46 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a48b31e858d0ebac757af77703202634f}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!concentrations\-Index@{concentrations\-Index}}
+\index{concentrations\-Index@{concentrations\-Index}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{concentrations\-Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::concentrations\-Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a48b31e858d0ebac757af77703202634f}
+
+
+Definition at line 40 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a766bc7eea1c602f46a4a6c0948464c8a}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!height@{height}}
+\index{height@{height}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::height\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a766bc7eea1c602f46a4a6c0948464c8a}
+
+
+Definition at line 36 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a407e3c2607f036d531445e22454a910e}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!input\-Filepath@{input\-Filepath}}
+\index{input\-Filepath@{input\-Filepath}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{input\-Filepath}]{\setlength{\rightskip}{0pt plus 5cm}string multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::input\-Filepath\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a407e3c2607f036d531445e22454a910e}
+
+
+Definition at line 33 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_aeddcdf92c6f79bf41546fd417d0808b1}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!maximum\-Concentration@{maximum\-Concentration}}
+\index{maximum\-Concentration@{maximum\-Concentration}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{maximum\-Concentration}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::maximum\-Concentration\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_aeddcdf92c6f79bf41546fd417d0808b1}
+
+
+Definition at line 44 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0bfea1eb0f7dc76deee05af1e2eb744b}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!nr\-Of\-Concentrations\-For\-Position@{nr\-Of\-Concentrations\-For\-Position}}
+\index{nr\-Of\-Concentrations\-For\-Position@{nr\-Of\-Concentrations\-For\-Position}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{nr\-Of\-Concentrations\-For\-Position}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::nr\-Of\-Concentrations\-For\-Position\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a0bfea1eb0f7dc76deee05af1e2eb744b}
+
+
+Definition at line 38 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a2bb6a802fac9b0928bc53a8c71a1c33c}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!output\-Filepath@{output\-Filepath}}
+\index{output\-Filepath@{output\-Filepath}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{output\-Filepath}]{\setlength{\rightskip}{0pt plus 5cm}string multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::output\-Filepath\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a2bb6a802fac9b0928bc53a8c71a1c33c}
+
+
+Definition at line 34 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ab0aaf585308839446bc23a9d3e6e7306}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!sectors\-Iterator@{sectors\-Iterator}}
+\index{sectors\-Iterator@{sectors\-Iterator}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{sectors\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Number\-Iterator}$\ast$ multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::sectors\-Iterator\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_ab0aaf585308839446bc23a9d3e6e7306}
+
+
+Definition at line 47 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a5143d25a98a097107c2bed748b4d8df0}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!selected\-Concentration\-Index@{selected\-Concentration\-Index}}
+\index{selected\-Concentration\-Index@{selected\-Concentration\-Index}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{selected\-Concentration\-Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::selected\-Concentration\-Index\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a5143d25a98a097107c2bed748b4d8df0}
+
+
+Definition at line 42 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a7fe7f3d014535567fbeb465eb01cde1b}{\index{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}!width@{width}}
+\index{width@{width}!multiscale::video::RectangularCsvToInputFilesConverter@{multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::width\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter_a7fe7f3d014535567fbeb465eb01cde1b}
+
+
+Definition at line 37 of file Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/multiscale/video/rectangular/\hyperlink{RectangularCsvToInputFilesConverter_8hpp}{Rectangular\-Csv\-To\-Input\-Files\-Converter.\-hpp}\item 
+src/multiscale/video/rectangular/\hyperlink{RectangularCsvToInputFilesConverter_8cpp}{Rectangular\-Csv\-To\-Input\-Files\-Converter.\-cpp}\end{DoxyCompactItemize}
