@@ -11,7 +11,6 @@
 using namespace multiscale::video;
 
 
-// Constructor for the class
 CartesianToPolarConverter::CartesianToPolarConverter(const string &inputFilepath, const string &outputFilepath) {
     this->inputFilepath.assign(inputFilepath);
     this->outputFilepath.assign(outputFilepath);
@@ -21,12 +20,8 @@ CartesianToPolarConverter::CartesianToPolarConverter(const string &inputFilepath
     simulationTime = 0.0;
 }
 
-// Destructor for the class
-CartesianToPolarConverter::~CartesianToPolarConverter() {
-    // Do nothing
-}
+CartesianToPolarConverter::~CartesianToPolarConverter() {}
 
-// Convert the cell from the grid to annular sectors
 void CartesianToPolarConverter::convert(bool outputToScript) {
     readInputData();
     transformToAnnularSectors();
@@ -38,7 +33,6 @@ void CartesianToPolarConverter::convert(bool outputToScript) {
     }
 }
 
-// Read the input data
 void CartesianToPolarConverter::readInputData() throw (string) {
     ifstream fin(inputFilepath.c_str());
 
@@ -59,7 +53,6 @@ void CartesianToPolarConverter::readInputData() throw (string) {
     fin.close();
 }
 
-// Read the header line from the input file
 void CartesianToPolarConverter::readHeaderLine(ifstream &fin) throw (string) {
     fin >> nrOfConcentricCircles >> nrOfSectors >> simulationTime;
 
@@ -69,7 +62,6 @@ void CartesianToPolarConverter::readHeaderLine(ifstream &fin) throw (string) {
     if (simulationTime < 0)         throw string(ERR_NEG_SIM_TIME);
 }
 
-// Read the concentrations from the input file
 void CartesianToPolarConverter::readConcentrations(ifstream &fin) throw (string) {
     int nrOfConcentrations = ((nrOfConcentricCircles - 1) * nrOfSectors) + 1;
 
@@ -88,7 +80,6 @@ void CartesianToPolarConverter::readConcentrations(ifstream &fin) throw (string)
     }
 }
 
-// Transform the cells of the grid into annular sectors
 void CartesianToPolarConverter::transformToAnnularSectors() {
     int nrOfConcentrations = ((nrOfConcentricCircles - 1) * nrOfSectors) + 1;
 
@@ -114,7 +105,6 @@ void CartesianToPolarConverter::transformToAnnularSectors() {
     }
 }
 
-// Output the results as a text file
 void CartesianToPolarConverter::outputResultsAsFile() {
     int nrOfAnnularSectors = annularSectors.size();
 
@@ -130,7 +120,6 @@ void CartesianToPolarConverter::outputResultsAsFile() {
     fout.close();
 }
 
-// Output the results as a gnuplot script
 void CartesianToPolarConverter::outputResultsAsScript() {
     PolarGnuplotScriptGenerator::generateScript(annularSectors, simulationTime, outputFilepath);
 }

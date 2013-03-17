@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lexicographicnumberiterator',['LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#a02a95a6f7876b84909e08555730ff08a',1,'multiscale::LexicographicNumberIterator']]]
+  ['lexicographicnumberiterator',['LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#a0dfe92cad110c2e4d5e5b72e97481c97',1,'multiscale::LexicographicNumberIterator']]]
 ];

@@ -10,6 +10,7 @@ namespace multiscale {
 
     namespace analysis {
 
+        //! Class for creating a Mat object considering a rectangular grid
         class RectangularMatFactory : public MatFactory {
 
             public:

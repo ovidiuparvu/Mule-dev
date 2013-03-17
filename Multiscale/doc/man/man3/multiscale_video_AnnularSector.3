@@ -1,0 +1,152 @@
+.TH "multiscale::video::AnnularSector" 3 "Sun Mar 17 2013" "Version 0.0.1" "Multiscale" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+multiscale::video::AnnularSector \- 
+.PP
+An annular sector is the basic element in the considered circular geometry\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AnnularSector\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnnularSector\fP ()"
+.br
+.ti -1c
+.RI "\fB~AnnularSector\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitialise\fP (double \fBstartingRadius\fP, double \fBendingRadius\fP, double \fBstartingAngle\fP, double \fBendingAngle\fP, double \fBconcentration\fP)"
+.br
+.RI "\fIInitialise the members of the class\&. \fP"
+.ti -1c
+.RI "double \fBgetConcentration\fP () const "
+.br
+.RI "\fIGet the value of the concentration\&. \fP"
+.ti -1c
+.RI "double \fBgetEndingAngle\fP () const "
+.br
+.RI "\fIGet the value of the ending angle\&. \fP"
+.ti -1c
+.RI "double \fBgetEndingRadius\fP () const "
+.br
+.RI "\fIGet the value of the ending radius\&. \fP"
+.ti -1c
+.RI "double \fBgetStartingAngle\fP () const "
+.br
+.RI "\fIGet the value of the starting angle\&. \fP"
+.ti -1c
+.RI "double \fBgetStartingRadius\fP () const "
+.br
+.RI "\fIGet the value of the starting radius\&. \fP"
+.ti -1c
+.RI "string \fBtoString\fP ()"
+.br
+.RI "\fIGet the string representation of the annular sector\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBstartingRadius\fP"
+.br
+.ti -1c
+.RI "double \fBendingRadius\fP"
+.br
+.ti -1c
+.RI "double \fBstartingAngle\fP"
+.br
+.ti -1c
+.RI "double \fBendingAngle\fP"
+.br
+.ti -1c
+.RI "double \fBconcentration\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+An annular sector is the basic element in the considered circular geometry\&. 
+
+More information about annuli and sectors of annuli can be found online (e\&.g\&. Wikipedia)\&. 
+.PP
+Definition at line 16 of file AnnularSector\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "multiscale::video::AnnularSector::AnnularSector ()"
+
+.SS "multiscale::video::AnnularSector::~AnnularSector ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double multiscale::video::AnnularSector::getConcentration () const"
+
+.PP
+Get the value of the concentration\&. 
+.SS "double multiscale::video::AnnularSector::getEndingAngle () const"
+
+.PP
+Get the value of the ending angle\&. 
+.SS "double multiscale::video::AnnularSector::getEndingRadius () const"
+
+.PP
+Get the value of the ending radius\&. 
+.SS "double multiscale::video::AnnularSector::getStartingAngle () const"
+
+.PP
+Get the value of the starting angle\&. 
+.SS "double multiscale::video::AnnularSector::getStartingRadius () const"
+
+.PP
+Get the value of the starting radius\&. 
+.SS "void multiscale::video::AnnularSector::initialise (doublestartingRadius, doubleendingRadius, doublestartingAngle, doubleendingAngle, doubleconcentration)"
+
+.PP
+Initialise the members of the class\&. \fBParameters:\fP
+.RS 4
+\fIstartingRadius\fP Starting radius 
+.br
+\fIendingRadius\fP Ending radius 
+.br
+\fIstartingAngle\fP Starting angle 
+.br
+\fIendingAngle\fP Ending angle 
+.br
+\fIconcentration\fP Concentration 
+.RE
+.PP
+
+.SS "string multiscale::video::AnnularSector::toString ()"
+
+.PP
+Get the string representation of the annular sector\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "double multiscale::video::AnnularSector::concentration\fC [private]\fP"
+
+.PP
+Definition at line 24 of file AnnularSector\&.hpp\&.
+.SS "double multiscale::video::AnnularSector::endingAngle\fC [private]\fP"
+
+.PP
+Definition at line 23 of file AnnularSector\&.hpp\&.
+.SS "double multiscale::video::AnnularSector::endingRadius\fC [private]\fP"
+
+.PP
+Definition at line 21 of file AnnularSector\&.hpp\&.
+.SS "double multiscale::video::AnnularSector::startingAngle\fC [private]\fP"
+
+.PP
+Definition at line 22 of file AnnularSector\&.hpp\&.
+.SS "double multiscale::video::AnnularSector::startingRadius\fC [private]\fP"
+
+.PP
+Definition at line 20 of file AnnularSector\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Multiscale from the source code\&.

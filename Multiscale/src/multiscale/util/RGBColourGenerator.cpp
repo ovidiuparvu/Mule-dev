@@ -8,14 +8,12 @@
 using namespace std;
 using namespace multiscale;
 
-// Static members definition
+
 double RGBColourGenerator::red = 0;
 double RGBColourGenerator::green = 0;
 double RGBColourGenerator::blue = 0;
 
 
-// Generate the colour of the concentration having given the minimum and maximum
-// possible value for a concentration
 string RGBColourGenerator::generate(double concentrationMin, double concentrationMax, double concentration) {
     concentration = (concentration - concentrationMin)/(concentrationMax - concentrationMin);
 

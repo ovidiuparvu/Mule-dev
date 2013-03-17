@@ -11,8 +11,6 @@ using namespace multiscale::video;
 using namespace std;
 
 
-// Using the annular sectors generate the corresponding gnuplot script in the
-// output file
 void PolarGnuplotScriptGenerator::generateScript(const vector<AnnularSector> &annularSectors,
                                                  double simulationTime,
                                                  const string &outputFilepath)
@@ -28,7 +26,6 @@ void PolarGnuplotScriptGenerator::generateScript(const vector<AnnularSector> &an
     fout.close();
 }
 
-// Generate the header of the script
 void PolarGnuplotScriptGenerator::generateHeader(ofstream &fout, const string &outputFilepath, double simulationTime) {
     ifstream fin(HEADER_IN);
 
@@ -41,7 +38,6 @@ void PolarGnuplotScriptGenerator::generateHeader(ofstream &fout, const string &o
     fin.close();
 }
 
-// Generate the body of the script
 void PolarGnuplotScriptGenerator::generateBody(const vector<AnnularSector> &annularSectors, ofstream &fout) {
     ifstream fin(CONTENT_IN);
 
@@ -54,7 +50,6 @@ void PolarGnuplotScriptGenerator::generateBody(const vector<AnnularSector> &annu
     fin.close();
 }
 
-// Generate the footer of the script
 void PolarGnuplotScriptGenerator::generateFooter(ofstream &fout) {
     ifstream fin(FOOTER_IN);
 
@@ -65,7 +60,6 @@ void PolarGnuplotScriptGenerator::generateFooter(ofstream &fout) {
     fin.close();
 }
 
-// Output the header of the script
 void PolarGnuplotScriptGenerator::outputHeader(ifstream &fin, const string &outputFilename, double simulationTime, ofstream &fout) {
     string line;
 
@@ -79,7 +73,6 @@ void PolarGnuplotScriptGenerator::outputHeader(ifstream &fin, const string &outp
     fout.flush();
 }
 
-// Output the content of the script
 void PolarGnuplotScriptGenerator::outputContent(const vector<AnnularSector> &annularSectors, const string &contentTemplate, ofstream &fout) {
     int index = annularSectors.size();
 
@@ -98,7 +91,6 @@ void PolarGnuplotScriptGenerator::outputContent(const vector<AnnularSector> &ann
     fout.flush();
 }
 
-// Output the footer of the script
 void PolarGnuplotScriptGenerator::outputFooter(ifstream &fin, ofstream &fout) {
     string line;
 
@@ -109,7 +101,6 @@ void PolarGnuplotScriptGenerator::outputFooter(ifstream &fin, ofstream &fout) {
     fout.flush();
 }
 
-// Read the template for content and return it as a string
 string PolarGnuplotScriptGenerator::readContentTemplate(ifstream &fin) {
     ostringstream stringStream;
     string line;

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['blue',['blue',['../classmultiscale_1_1RGBColourGenerator.html#a745a07b6c9458793da66adf836e11dcb',1,'multiscale::RGBColourGenerator']]]
+  ['blue',['blue',['../classmultiscale_1_1RGBColourGenerator.html#a5b48dae9174a794eb70c779c05d87c3f',1,'multiscale::RGBColourGenerator']]]
 ];

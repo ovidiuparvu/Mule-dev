@@ -1,0 +1,158 @@
+.TH "multiscale::video::PolarGnuplotScriptGenerator" 3 "Sun Mar 17 2013" "Version 0.0.1" "Multiscale" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+multiscale::video::PolarGnuplotScriptGenerator \- 
+.PP
+Gnuplot script generator from the provided annular sectors\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <PolarGnuplotScriptGenerator\&.hpp>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBgenerateScript\fP (const vector< \fBAnnularSector\fP > &annularSectors, double simulationTime, const string &outputFilepath)  throw (string)"
+.br
+.RI "\fIGenerate the script\&. \fP"
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBgenerateHeader\fP (ofstream &fout, const string &outputFilepath, double simulationTime)"
+.br
+.RI "\fIGenerate the header of the script\&. \fP"
+.ti -1c
+.RI "static void \fBgenerateBody\fP (const vector< \fBAnnularSector\fP > &annularSectors, ofstream &fout)"
+.br
+.RI "\fIGenerate the body/content of the script\&. \fP"
+.ti -1c
+.RI "static void \fBgenerateFooter\fP (ofstream &fout)"
+.br
+.RI "\fIGenerate the footer of the script\&. \fP"
+.ti -1c
+.RI "static void \fBoutputHeader\fP (ifstream &fin, const string &outputFilename, double simulationTime, ofstream &fout)"
+.br
+.RI "\fIOutput the header of the script\&. \fP"
+.ti -1c
+.RI "static void \fBoutputContent\fP (const vector< \fBAnnularSector\fP > &annularSectors, const string &contentTemplate, ofstream &fout)"
+.br
+.RI "\fIOutput the content of the script\&. \fP"
+.ti -1c
+.RI "static void \fBoutputFooter\fP (ifstream &fin, ofstream &fout)"
+.br
+.RI "\fIOutput the footer of the script\&. \fP"
+.ti -1c
+.RI "static string \fBreadContentTemplate\fP (ifstream &fin)"
+.br
+.RI "\fIRead content template\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Gnuplot script generator from the provided annular sectors\&. 
+.PP
+Definition at line 31 of file PolarGnuplotScriptGenerator\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void multiscale::video::PolarGnuplotScriptGenerator::generateBody (const vector< \fBAnnularSector\fP > &annularSectors, ofstream &fout)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Generate the body/content of the script\&. \fBParameters:\fP
+.RS 4
+\fIannularSectors\fP Annular sectors 
+.br
+\fIfout\fP Output file stream 
+.RE
+.PP
+
+.SS "static void multiscale::video::PolarGnuplotScriptGenerator::generateFooter (ofstream &fout)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Generate the footer of the script\&. \fBParameters:\fP
+.RS 4
+\fIfout\fP Output file stream 
+.RE
+.PP
+
+.SS "static void multiscale::video::PolarGnuplotScriptGenerator::generateHeader (ofstream &fout, const string &outputFilepath, doublesimulationTime)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Generate the header of the script\&. \fBParameters:\fP
+.RS 4
+\fIfout\fP Output file stream 
+.br
+\fIoutputFilepath\fP Path to the output file 
+.br
+\fIsimulationTime\fP Simulation time 
+.RE
+.PP
+
+.SS "static void multiscale::video::PolarGnuplotScriptGenerator::generateScript (const vector< \fBAnnularSector\fP > &annularSectors, doublesimulationTime, const string &outputFilepath)  throw (string)\fC [static]\fP"
+
+.PP
+Generate the script\&. \fBParameters:\fP
+.RS 4
+\fIannularSectors\fP Annular sectors 
+.br
+\fIsimulationTime\fP Simulation time 
+.br
+\fIoutputFilepath\fP Path of the output file 
+.RE
+.PP
+
+.SS "static void multiscale::video::PolarGnuplotScriptGenerator::outputContent (const vector< \fBAnnularSector\fP > &annularSectors, const string &contentTemplate, ofstream &fout)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Output the content of the script\&. \fBParameters:\fP
+.RS 4
+\fIannularSectors\fP Annular sectors 
+.br
+\fIcontentTemplate\fP Template used for generating output for each annular sector 
+.br
+\fIfout\fP Output file stream 
+.RE
+.PP
+
+.SS "static void multiscale::video::PolarGnuplotScriptGenerator::outputFooter (ifstream &fin, ofstream &fout)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Output the footer of the script\&. \fBParameters:\fP
+.RS 4
+\fIfin\fP Input file stream 
+.br
+\fIfout\fP Output file stream 
+.RE
+.PP
+
+.SS "static void multiscale::video::PolarGnuplotScriptGenerator::outputHeader (ifstream &fin, const string &outputFilename, doublesimulationTime, ofstream &fout)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Output the header of the script\&. \fBParameters:\fP
+.RS 4
+\fIfin\fP Input file stream 
+.br
+\fIoutputFilename\fP Name of the output file 
+.br
+\fIsimulationTime\fP Simulation time 
+.br
+\fIfout\fP Output file stream 
+.RE
+.PP
+
+.SS "static string multiscale::video::PolarGnuplotScriptGenerator::readContentTemplate (ifstream &fin)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Read content template\&. \fBParameters:\fP
+.RS 4
+\fIfin\fP Input file stream 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Multiscale from the source code\&.

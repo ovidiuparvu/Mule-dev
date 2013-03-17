@@ -10,35 +10,57 @@ using namespace std;
 #define SATURATION  1
 #define VALUE       1
 
-/*
- * Class for generating a RGB colour given the possible range for
- * concentrations and the value of one of the concentrations
- *
- * The conversion HSV->RGB is based on the wikipedia page on this topic
- */
+
 namespace multiscale {
 
+    //! Generate a RGB colour
+    /*! Generate a RGB colour given the possible range for
+     *  concentrations and the value of one of the concentrations
+     *
+     *  The conversion HSV->RGB is based on the wikipedia page on this topic
+     */
     class RGBColourGenerator {
 
         private:
 
-            static double red;
-            static double green;
-            static double blue;
+            static double red;      /*!< The amount of red */
+            static double green;    /*!< The amount of green */
+            static double blue;     /*!< The amount of blue */
 
         public:
 
+            //! Generate a RGB colour for the given concentration
+            /*! Generate a RGB colour considering the range of values a concentration can have
+             *  and the value of the concentration
+             *
+             *  \param concentrationMin The minimum of the range of values a concentration can take
+             *  \param concentrationMax The maximum of the range of values a concentration can take
+             *  \param concentration    The concentration
+             */
             static string generate(double concentrationMin,
                                    double concentrationMax,
                                    double concentration);
 
         private:
 
-            static string convertHSVToRGB   (double hue,
-                                             double saturation,
-                                             double value);
-            static void   computeRGBValues  (int huePrime, double X,
-                                             double chroma, double m);
+            //! Convert a colour from HSV to RGB colour space
+            /*!
+             *  \param hue Hue
+             *  \param saturation Saturation
+             *  \param value Value
+             */
+            static string convertHSVToRGB(double hue, double saturation, double value);
+
+            //! Compute RGB values from HSV specific values
+            /*!
+             * \param huePrime Hue'
+             * \param X X
+             * \param chroma Chroma
+             * \param m m
+             */
+            static void computeRGBValues(int huePrime, double X, double chroma, double m);
+
+            //! Convert the RGB colour to a string
             static string convertRGBToString();
 
     };

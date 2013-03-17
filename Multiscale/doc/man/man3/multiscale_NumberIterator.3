@@ -1,0 +1,145 @@
+.TH "multiscale::NumberIterator" 3 "Sun Mar 17 2013" "Version 0.0.1" "Multiscale" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+multiscale::NumberIterator \- 
+.PP
+Abstract class representing a number iterator\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NumberIterator\&.hpp>\fP
+.PP
+Inherited by \fBmultiscale::LexicographicNumberIterator\fP, and \fBmultiscale::StandardNumberIterator\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNumberIterator\fP (unsigned int \fBupperBound\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~NumberIterator\fP ()"
+.br
+.ti -1c
+.RI "void \fBinit\fP (unsigned int \fBupperBound\fP)"
+.br
+.RI "\fIInitialise the iterator considering the given upper bound\&. \fP"
+.ti -1c
+.RI "bool \fBhasNext\fP ()"
+.br
+.RI "\fICheck if there is a next number\&. \fP"
+.ti -1c
+.RI "virtual unsigned int \fBnumber\fP ()=0"
+.br
+.RI "\fIGet the number pointed by the iterator\&. \fP"
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.RI "\fIReset the iterator\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisInitialised\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBupperBound\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinitialise\fP ()=0"
+.br
+.RI "\fIInitialisation of the members of the class\&. \fP"
+.ti -1c
+.RI "virtual bool \fBhasNextInitialised\fP ()=0"
+.br
+.RI "\fICheck if there is a next number when in initialised state\&. \fP"
+.ti -1c
+.RI "bool \fBhasNextNotInitialised\fP ()"
+.br
+.RI "\fICheck if there is a next number when in not initialised state\&. \fP"
+.ti -1c
+.RI "virtual void \fBresetCurrentNumber\fP ()=0"
+.br
+.RI "\fIReset the current number to its initial value\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract class representing a number iterator\&. 
+.PP
+Definition at line 7 of file NumberIterator\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "multiscale::NumberIterator::NumberIterator (unsigned intupperBound)"
+
+.SS "virtual multiscale::NumberIterator::~NumberIterator ()\fC [inline]\fP, \fC [virtual]\fP"
+
+.PP
+Definition at line 17 of file NumberIterator\&.hpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool multiscale::NumberIterator::hasNext ()"
+
+.PP
+Check if there is a next number\&. 
+.SS "virtual bool multiscale::NumberIterator::hasNextInitialised ()\fC [private]\fP, \fC [pure virtual]\fP"
+
+.PP
+Check if there is a next number when in initialised state\&. 
+.PP
+Implemented in \fBmultiscale::LexicographicNumberIterator\fP, and \fBmultiscale::StandardNumberIterator\fP\&.
+.SS "bool multiscale::NumberIterator::hasNextNotInitialised ()\fC [private]\fP"
+
+.PP
+Check if there is a next number when in not initialised state\&. 
+.SS "void multiscale::NumberIterator::init (unsigned intupperBound)"
+
+.PP
+Initialise the iterator considering the given upper bound\&. \fBParameters:\fP
+.RS 4
+\fIupperBound\fP The upper bound 
+.RE
+.PP
+
+.SS "virtual void multiscale::NumberIterator::initialise ()\fC [private]\fP, \fC [pure virtual]\fP"
+
+.PP
+Initialisation of the members of the class\&. 
+.PP
+Implemented in \fBmultiscale::LexicographicNumberIterator\fP, and \fBmultiscale::StandardNumberIterator\fP\&.
+.SS "virtual unsigned int multiscale::NumberIterator::number ()\fC [pure virtual]\fP"
+
+.PP
+Get the number pointed by the iterator\&. 
+.PP
+Implemented in \fBmultiscale::LexicographicNumberIterator\fP, and \fBmultiscale::StandardNumberIterator\fP\&.
+.SS "void multiscale::NumberIterator::reset ()"
+
+.PP
+Reset the iterator\&. Reset the iterator such that it is not initialised and the value of the current number is reset to its initial value 
+.SS "virtual void multiscale::NumberIterator::resetCurrentNumber ()\fC [private]\fP, \fC [pure virtual]\fP"
+
+.PP
+Reset the current number to its initial value\&. 
+.PP
+Implemented in \fBmultiscale::LexicographicNumberIterator\fP, and \fBmultiscale::StandardNumberIterator\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool multiscale::NumberIterator::isInitialised\fC [protected]\fP"
+Flag for checking if the iterator was initialised 
+.PP
+Definition at line 11 of file NumberIterator\&.hpp\&.
+.SS "unsigned int multiscale::NumberIterator::upperBound\fC [protected]\fP"
+Upper bound of the iterator 
+.PP
+Definition at line 12 of file NumberIterator\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Multiscale from the source code\&.

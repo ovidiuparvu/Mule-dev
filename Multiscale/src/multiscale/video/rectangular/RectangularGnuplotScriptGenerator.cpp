@@ -11,7 +11,6 @@ using namespace multiscale::video;
 using namespace std;
 
 
-// Using the concentrations generate the corresponding gnuplot script in the output file
 void RectangularGnuplotScriptGenerator::generateScript(const vector<double> &concentrations,
                                                        double simulationTime,
                                                        unsigned long height,
@@ -29,7 +28,6 @@ void RectangularGnuplotScriptGenerator::generateScript(const vector<double> &con
     fout.close();
 }
 
-// Generate the header of the script
 void RectangularGnuplotScriptGenerator::generateHeader(ofstream &fout, const string &outputFilepath,
                                                        double simulationTime, unsigned long height,
                                                        unsigned long width) {
@@ -44,7 +42,6 @@ void RectangularGnuplotScriptGenerator::generateHeader(ofstream &fout, const str
     fin.close();
 }
 
-// Generate the body of the script
 void RectangularGnuplotScriptGenerator::generateBody(const vector<double> &concentrations, unsigned long height,
                                                      unsigned long width, ofstream &fout) {
     ifstream fin(CONTENT_IN);
@@ -56,7 +53,6 @@ void RectangularGnuplotScriptGenerator::generateBody(const vector<double> &conce
     fin.close();
 }
 
-// Generate the footer of the script
 void RectangularGnuplotScriptGenerator::generateFooter(ofstream &fout) {
     ifstream fin(FOOTER_IN);
 
@@ -67,7 +63,6 @@ void RectangularGnuplotScriptGenerator::generateFooter(ofstream &fout) {
     fin.close();
 }
 
-// Output the header of the script
 void RectangularGnuplotScriptGenerator::outputHeader(ifstream &fin, const string &outputFilename, double simulationTime,
                                                      unsigned long height, unsigned long width, ofstream &fout) {
     string line;
@@ -84,7 +79,6 @@ void RectangularGnuplotScriptGenerator::outputHeader(ifstream &fin, const string
     fout.flush();
 }
 
-// Output the content of the script
 void RectangularGnuplotScriptGenerator::outputContent(const vector<double> &concentrations, unsigned long height,
                                                       unsigned long width, ofstream &fout) {
     for (unsigned int i = 0; i < height; i++) {
@@ -98,7 +92,6 @@ void RectangularGnuplotScriptGenerator::outputContent(const vector<double> &conc
     fout.flush();
 }
 
-// Output the footer of the script
 void RectangularGnuplotScriptGenerator::outputFooter(ifstream &fin, ofstream &fout) {
     string line;
 

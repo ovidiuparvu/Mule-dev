@@ -1,4 +1,4 @@
-all: spatial_analysis_debug
+all: mapcart2pol mapcart2conc polmapcsv2input rectmapcsv2input spatial_analysis_debug
 	
 mapcart2pol:
 	g++ -std=c++11 -I ${BOOST_ROOT} -I include src/multiscale/video/circular/CartesianToPolarConverter.cpp src/multiscale/video/circular/AnnularSector.cpp src/multiscale/video/circular/PolarGnuplotScriptGenerator.cpp src/multiscale/video/circular/MapCartesianToPolarScript.cpp src/multiscale/util/StringManipulator.cpp -o bin/MapCartesianToPolarScript -Wall /usr/local/lib/libboost_program_options.a

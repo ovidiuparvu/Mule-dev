@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -112,17 +112,22 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1NumericRangeManipul
 </div><!--header-->
 <div class="contents">
 
+<p>Operations for ranges of numeric values.  
+ <a href="classmultiscale_1_1NumericRangeManipulator.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="NumericRangeManipulator_8hpp_source.html">NumericRangeManipulator.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4459c449fb7ebc07bcb8934d3a860e7e"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
 <tr class="memitem:a4459c449fb7ebc07bcb8934d3a860e7e"><td class="memTemplItemLeft" align="right" valign="top">static U&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1NumericRangeManipulator.html#a4459c449fb7ebc07bcb8934d3a860e7e">convertFromRange</a> (T oldRangeMin, T oldRangeMax, U newRangeMin, U newRangeMax, T oldValue)</td></tr>
+<tr class="memdesc:a4459c449fb7ebc07bcb8934d3a860e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a value from an old range to a new one.  <a href="#a4459c449fb7ebc07bcb8934d3a860e7e">More...</a><br/></td></tr>
 <tr class="separator:a4459c449fb7ebc07bcb8934d3a860e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="NumericRangeManipulator_8hpp_source.html#l00006">6</a> of file <a class="el" href="NumericRangeManipulator_8hpp_source.html">NumericRangeManipulator.hpp</a>.</p>
+<div class="textblock"><p>Operations for ranges of numeric values. </p>
+
+<p>Definition at line <a class="el" href="NumericRangeManipulator_8hpp_source.html#l00007">7</a> of file <a class="el" href="NumericRangeManipulator_8hpp_source.html">NumericRangeManipulator.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a4459c449fb7ebc07bcb8934d3a860e7e"></a>
 <div class="memitem">
@@ -176,7 +181,19 @@ template&lt;class T , class U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="NumericRangeManipulator_8hpp_source.html#l00011">11</a> of file <a class="el" href="NumericRangeManipulator_8hpp_source.html">NumericRangeManipulator.hpp</a>.</p>
+<p>Convert a value from an old range to a new one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oldRangeMin</td><td>The minimum of the old range </td></tr>
+    <tr><td class="paramname">oldRangeMax</td><td>The maximum of the old range </td></tr>
+    <tr><td class="paramname">newRangeMin</td><td>The minimum of the new range </td></tr>
+    <tr><td class="paramname">newRangeMax</td><td>The maximum of the new range </td></tr>
+    <tr><td class="paramname">oldValue</td><td>The old value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="NumericRangeManipulator_8hpp_source.html#l00020">20</a> of file <a class="el" href="NumericRangeManipulator_8hpp_source.html">NumericRangeManipulator.hpp</a>.</p>
 
 </div>
 </div>
@@ -189,7 +206,7 @@ template&lt;class T , class U &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1NumericRangeManipulator.html">NumericRangeManipulator</a></li>
-    <li class="footer">Generated on Wed Mar 13 2013 11:14:42 for Multiscale by
+    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

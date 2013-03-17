@@ -3,31 +3,26 @@
 using namespace multiscale;
 
 
-// Constructor for the class
 LexicographicNumberIterator::LexicographicNumberIterator(unsigned int upperBound) : NumberIterator(upperBound) {
     initialise();
     reset();
 }
 
-// Destructor for the class
 LexicographicNumberIterator::~LexicographicNumberIterator() {
     upperBoundDigits.clear();
     currentNumberDigits.clear();
 }
 
-// Return the current number
 unsigned int LexicographicNumberIterator::number() {
     return digitsToNumber(currentNumberDigits);
 }
 
-// Initialise the vectors of digits
 void LexicographicNumberIterator::initialise() {
     numberToDigits(upperBound, upperBoundDigits);
 
     currentNumberDigits.reserve(upperBoundDigits.size());
 }
 
-// Check if there is a next number when in initialised state
 bool LexicographicNumberIterator::hasNextInitialised() {
     unsigned char lastDigit = currentNumberDigits.back();
 
@@ -44,7 +39,6 @@ bool LexicographicNumberIterator::hasNextInitialised() {
     return true;
 }
 
-// Reset the value of the current number
 void LexicographicNumberIterator::resetCurrentNumber() {
     currentNumberDigits.clear();
     currentNumberDigits.push_back(1);
@@ -56,7 +50,6 @@ void LexicographicNumberIterator::resetCurrentNumber() {
     }
 }
 
-// Convert the number to a vector of digits
 void LexicographicNumberIterator::numberToDigits(unsigned int number, vector<unsigned char> &digits) {
     while (number != 0) {
         digits.push_back(number % 10);
@@ -67,7 +60,6 @@ void LexicographicNumberIterator::numberToDigits(unsigned int number, vector<uns
     reverseDigits(digits);
 }
 
-// Reverse the order of the digits
 void LexicographicNumberIterator::reverseDigits(vector<unsigned char> &digits) {
     int             nrOfDigits = digits.size();
     unsigned char   tmpDigit   = 0;
@@ -79,7 +71,6 @@ void LexicographicNumberIterator::reverseDigits(vector<unsigned char> &digits) {
     }
 }
 
-// Convert the digits into a number
 unsigned int LexicographicNumberIterator::digitsToNumber(vector<unsigned char> &digits) {
     unsigned int number = 0;
 
@@ -92,17 +83,12 @@ unsigned int LexicographicNumberIterator::digitsToNumber(vector<unsigned char> &
     return number;
 }
 
-/*
- * Check if the current number is greater than the upper bound
- * when replacing the last digit of the current number with the
- * provided digit
- */
 bool LexicographicNumberIterator::isLargerThanUpperBound(unsigned char lastDigit) {
     unsigned int nrOfDigitsCurrent = currentNumberDigits.size();
     unsigned int nrOfDigitsUpper   = upperBoundDigits.size();
 
     if (nrOfDigitsCurrent == nrOfDigitsUpper) {
-        for (int i = 0; i < (nrOfDigitsCurrent - 1); i++) {
+        for (unsigned int i = 0; i < (nrOfDigitsCurrent - 1); i++) {
             if (currentNumberDigits[i] > upperBoundDigits[i]) {
                 return true;
             } else if (currentNumberDigits[i] < upperBoundDigits[i]) {
@@ -118,10 +104,6 @@ bool LexicographicNumberIterator::isLargerThanUpperBound(unsigned char lastDigit
     return false;
 }
 
-/*
- * Pad the current number with as many zeros as possible in order not to
- * become larger than the upper bound
- */
 void LexicographicNumberIterator::padWithZeros() {
     int possibleZeros = upperBoundDigits.size() - currentNumberDigits.size() - 1;
 

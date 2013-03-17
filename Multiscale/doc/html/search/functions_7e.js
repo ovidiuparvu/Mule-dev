@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['_7eannularsector',['~AnnularSector',['../classmultiscale_1_1video_1_1AnnularSector.html#a2ced14f6af200e6e4c1c5f3e189bde4b',1,'multiscale::video::AnnularSector']]],
-  ['_7ecartesiantoconcentrationsconverter',['~CartesianToConcentrationsConverter',['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a4250cb00af6f3c254c0577479ae25553',1,'multiscale::video::CartesianToConcentrationsConverter']]],
-  ['_7ecartesiantopolarconverter',['~CartesianToPolarConverter',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7842464665976d381df75f03d7c71347',1,'multiscale::video::CartesianToPolarConverter']]],
-  ['_7elexicographicnumberiterator',['~LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#affe04d9733b7d0984a5ab3957cb0096a',1,'multiscale::LexicographicNumberIterator']]],
-  ['_7ematfactory',['~MatFactory',['../classmultiscale_1_1analysis_1_1MatFactory.html#aa339532cb504caebcf9ece2c847f4847',1,'multiscale::analysis::MatFactory']]],
+  ['_7eannularsector',['~AnnularSector',['../classmultiscale_1_1video_1_1AnnularSector.html#af818671c028456977ca1fef11f07af3d',1,'multiscale::video::AnnularSector']]],
+  ['_7ecartesiantoconcentrationsconverter',['~CartesianToConcentrationsConverter',['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#aa44c78da07d44e5de13f3e7e9894776d',1,'multiscale::video::CartesianToConcentrationsConverter']]],
+  ['_7ecartesiantopolarconverter',['~CartesianToPolarConverter',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a91aa23f926ab1105ee9045e5ef8b509b',1,'multiscale::video::CartesianToPolarConverter']]],
+  ['_7elexicographicnumberiterator',['~LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#a7f6070d2341becce47d4cadb7b4a571d',1,'multiscale::LexicographicNumberIterator']]],
+  ['_7ematfactory',['~MatFactory',['../classmultiscale_1_1analysis_1_1MatFactory.html#a3d5db3cc2391b83824567733a587836f',1,'multiscale::analysis::MatFactory']]],
   ['_7enumberiterator',['~NumberIterator',['../classmultiscale_1_1NumberIterator.html#aae2ce809339ed853f49619ad69596229',1,'multiscale::NumberIterator']]],
-  ['_7epolarcsvtoinputfilesconverter',['~PolarCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#afdd156ae24d5d6194b113dd661110ed5',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
-  ['_7erectangularcsvtoinputfilesconverter',['~RectangularCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ad45bb79ad6c37954376d4f9904872870',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
-  ['_7erectangularmatfactory',['~RectangularMatFactory',['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3ebedd3691965c3d89c3ecdaa3e66d70',1,'multiscale::analysis::RectangularMatFactory']]],
-  ['_7estandardnumberiterator',['~StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html#aa5b9da824bd014eebab86462f7d08219',1,'multiscale::StandardNumberIterator']]]
+  ['_7epolarcsvtoinputfilesconverter',['~PolarCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a0652ee20872717fca98e727933b6358a',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
+  ['_7erectangularcsvtoinputfilesconverter',['~RectangularCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a9a543e7612cab380778b6136fadb8bbb',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
+  ['_7erectangularmatfactory',['~RectangularMatFactory',['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a7c3e88063bd0b1c339093f8e021de25e',1,'multiscale::analysis::RectangularMatFactory']]],
+  ['_7estandardnumberiterator',['~StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html#a72d47409c7cf44c7f2ad3c1edc2890ff',1,'multiscale::StandardNumberIterator']]]
 ];

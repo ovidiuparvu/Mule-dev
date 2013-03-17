@@ -127,56 +127,60 @@ $(document).ready(function(){initNavTree('CartesianToPolarConverter_8hpp_source.
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#a6b9880fa336856728f874385983f7737">   19</a></span>&#160;<span class="preprocessor">#define RADIUS_MIN              0.001</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#a3923a2502324557507dda8740810aca3">   20</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RADIUS_MAX              0.3</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Converter from the rectangular geometry grid cells to annular sectors</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">namespace </span>video {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html">   28</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html">CartesianToPolarConverter</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">namespace </span>video {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html">   28</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html" title="Converter from the rectangular geometry grid cells to annular sectors.">CartesianToPolarConverter</a> {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">   32</a></span>&#160;                vector&lt;AnnularSector&gt;   <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">   33</a></span>&#160;                vector&lt;double&gt;          <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">concentrations</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">   35</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">   36</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">   37</a></span>&#160;                <span class="keywordtype">double</span>        <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">simulationTime</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05">   39</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05">inputFilepath</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">   40</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">outputFilepath</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">   32</a></span>&#160;                vector&lt;AnnularSector&gt;   <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>;     </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">   33</a></span>&#160;                vector&lt;double&gt;          <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">concentrations</a>;     </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">   35</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a>;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">   36</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>;              </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">   37</a></span>&#160;                <span class="keywordtype">double</span>        <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">simulationTime</a>;           </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05">   39</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05">inputFilepath</a>;   </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">   40</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">outputFilepath</a>;  </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html">CartesianToPolarConverter</a> (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFilepath, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                ~<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html">CartesianToPolarConverter</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html" title="Converter from the rectangular geometry grid cells to annular sectors.">CartesianToPolarConverter</a> (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFilepath, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                ~<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html" title="Converter from the rectangular geometry grid cells to annular sectors.">CartesianToPolarConverter</a>();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordtype">void</span> convert(<span class="keywordtype">bool</span> outputToScript);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordtype">void</span> readInputData              () throw (<span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordtype">void</span> readHeaderLine             (ifstream &amp;fin) throw (<span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordtype">void</span> readConcentrations         (ifstream &amp;fin) throw (<span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordtype">void</span> transformToAnnularSectors  ();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordtype">void</span> outputResultsAsFile        ();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordtype">void</span> outputResultsAsScript      ();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordtype">void</span> convert(<span class="keywordtype">bool</span> outputToScript);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordtype">void</span> readInputData() throw (<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        };</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">void</span> readHeaderLine(ifstream &amp;fin) throw (<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordtype">void</span> readConcentrations(ifstream &amp;fin) throw (<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordtype">void</span> transformToAnnularSectors();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">void</span> outputResultsAsFile();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordtype">void</span> outputResultsAsScript();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        };</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    };</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_42064059602c6fa33b8ba885198a4a6b.html">video</a></li><li class="navelem"><a class="el" href="dir_8fdce005bc57a4ee2e526eacad0b3585.html">circular</a></li><li class="navelem"><a class="el" href="CartesianToPolarConverter_8hpp.html">CartesianToPolarConverter.hpp</a></li>
-    <li class="footer">Generated on Wed Mar 13 2013 11:14:42 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_981af49a0233aee53393df9c69217344.html">video</a></li><li class="navelem"><a class="el" href="dir_17c85bf0b6ab5ac3209cf18bf26c9fdc.html">circular</a></li><li class="navelem"><a class="el" href="CartesianToPolarConverter_8hpp.html">CartesianToPolarConverter.hpp</a></li>
+    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

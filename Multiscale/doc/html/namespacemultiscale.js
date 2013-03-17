@@ -2,6 +2,7 @@ var namespacemultiscale =
 [
     [ "analysis", "namespacemultiscale_1_1analysis.html", "namespacemultiscale_1_1analysis" ],
     [ "video", "namespacemultiscale_1_1video.html", "namespacemultiscale_1_1video" ],
+    [ "Geometry2D", "classmultiscale_1_1Geometry2D.html", "classmultiscale_1_1Geometry2D" ],
     [ "LexicographicNumberIterator", "classmultiscale_1_1LexicographicNumberIterator.html", "classmultiscale_1_1LexicographicNumberIterator" ],
     [ "StandardNumberIterator", "classmultiscale_1_1StandardNumberIterator.html", "classmultiscale_1_1StandardNumberIterator" ],
     [ "NumberIterator", "classmultiscale_1_1NumberIterator.html", "classmultiscale_1_1NumberIterator" ],

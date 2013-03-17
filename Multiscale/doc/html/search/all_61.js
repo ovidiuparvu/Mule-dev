@@ -1,9 +1,7 @@
 var searchData=
 [
   ['annularsector',['AnnularSector',['../classmultiscale_1_1video_1_1AnnularSector.html',1,'multiscale::video']]],
-  ['annularsector',['AnnularSector',['../classmultiscale_1_1video_1_1AnnularSector.html#a96ea49d6d05346ef9ae99289945eb578',1,'multiscale::video::AnnularSector']]],
-  ['annularsector_2ecpp',['AnnularSector.cpp',['../AnnularSector_8cpp.html',1,'']]],
+  ['annularsector',['AnnularSector',['../classmultiscale_1_1video_1_1AnnularSector.html#ac4d6136fb13874a743894d2d9d29883e',1,'multiscale::video::AnnularSector']]],
   ['annularsector_2ehpp',['AnnularSector.hpp',['../AnnularSector_8hpp.html',1,'']]],
-  ['annularsectors',['annularSectors',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac',1,'multiscale::video::CartesianToPolarConverter']]],
-  ['arevalidparameters',['areValidParameters',['../MapCartesianToPolarScript_8cpp.html#a9a12fbda3c38c990d0ba2df173b00a23',1,'areValidParameters(string &amp;inputFilepath, string &amp;outputFilename, bool &amp;isScript, int argc, char **argv):&#160;MapCartesianToPolarScript.cpp'],['../PolarMapCsvToInputFiles_8cpp.html#a6311bcb010d96000cefb738f7da627c9',1,'areValidParameters(string &amp;inputFilepath, string &amp;outputFilename, unsigned int &amp;nrOfConcentricCircles, unsigned int &amp;nrOfSectors, unsigned int &amp;nrOfConcentrationsForPosition, unsigned int &amp;selectedConcentrationIndex, NumberIteratorType &amp;numberIteratorType, int argc, char **argv):&#160;PolarMapCsvToInputFiles.cpp'],['../MapCartesianToScript_8cpp.html#a49c258f2a31008988e64d7d47274e3b8',1,'areValidParameters(string &amp;inputFilepath, string &amp;outputFilename, int argc, char **argv):&#160;MapCartesianToScript.cpp'],['../RectangularMapCsvToInputFiles_8cpp.html#a46e6c03bcbb5e5a8a587157ec4995793',1,'areValidParameters(string &amp;inputFilepath, string &amp;outputFilename, unsigned int &amp;height, unsigned int &amp;width, unsigned int &amp;nrOfConcentrationsForPosition, unsigned int &amp;selectedConcentrationIndex, NumberIteratorType &amp;numberIteratorType, int argc, char **argv):&#160;RectangularMapCsvToInputFiles.cpp']]]
+  ['annularsectors',['annularSectors',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac',1,'multiscale::video::CartesianToPolarConverter']]]
 ];

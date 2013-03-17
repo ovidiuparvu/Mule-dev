@@ -1,0 +1,66 @@
+.TH "multiscale::analysis::RectangularMatFactory" 3 "Sun Mar 17 2013" "Version 0.0.1" "Multiscale" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+multiscale::analysis::RectangularMatFactory \- 
+.PP
+Class for creating a Mat object considering a rectangular grid\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RectangularMatFactory\&.hpp>\fP
+.PP
+Inherits \fBmultiscale::analysis::MatFactory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRectangularMatFactory\fP ()"
+.br
+.ti -1c
+.RI "\fB~RectangularMatFactory\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned char * \fBprocessConcentrations\fP (ifstream &fin)"
+.br
+.RI "\fIProcess the concentrations from the input file\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Class for creating a Mat object considering a rectangular grid\&. 
+.PP
+Definition at line 14 of file RectangularMatFactory\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "multiscale::analysis::RectangularMatFactory::RectangularMatFactory ()"
+
+.SS "multiscale::analysis::RectangularMatFactory::~RectangularMatFactory ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned char* multiscale::analysis::RectangularMatFactory::processConcentrations (ifstream &fin)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Process the concentrations from the input file\&. Read the concentrations from the input file and return them as an array which can be used afterwards to create a Mat object from them
+.PP
+REMARK: The constructor of Mat does not copy the data\&. Therefore, DO NOT deallocate it in this class\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfin\fP Input file stream from which the concentrations are read 
+.RE
+.PP
+
+.PP
+Implements \fBmultiscale::analysis::MatFactory\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Multiscale from the source code\&.

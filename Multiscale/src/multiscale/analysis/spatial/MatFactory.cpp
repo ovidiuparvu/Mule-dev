@@ -4,11 +4,10 @@
 using namespace multiscale;
 using namespace analysis;
 
+
 MatFactory::MatFactory() : rows(0), cols(0), simulationTime(0) {}
 
-
 MatFactory::~MatFactory() {}
-
 
 Mat MatFactory::create(const string &inputFile) {
     ifstream fin;
@@ -22,7 +21,6 @@ Mat MatFactory::create(const string &inputFile) {
     return Mat(rows, cols, CV_8UC1, data);
 }
 
-
 void MatFactory::initInputFile(ifstream &fin, const string& inputFile) {
     fin.open(inputFile.c_str(), ios_base::in);
 
@@ -31,7 +29,6 @@ void MatFactory::initInputFile(ifstream &fin, const string& inputFile) {
 
     fin >> rows >> cols >> simulationTime;
 }
-
 
 unsigned char MatFactory::convertToIntensity(double concentration) {
     return NumericRangeManipulator::convertFromRange<double, unsigned char>(0, 1, 0, 255, concentration);

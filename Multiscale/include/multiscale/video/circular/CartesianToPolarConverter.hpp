@@ -19,41 +19,65 @@ using namespace std;
 #define RADIUS_MIN              0.001
 #define RADIUS_MAX              0.3
 
-// Converter from the rectangular geometry grid cells to annular sectors
 
 namespace multiscale {
 
     namespace video {
 
+        //! Converter from the rectangular geometry grid cells to annular sectors
         class CartesianToPolarConverter {
 
             private:
 
-                vector<AnnularSector>   annularSectors;
-                vector<double>          concentrations;
+                vector<AnnularSector>   annularSectors;     /*!< Resulting annular sectors */
+                vector<double>          concentrations;     /*!< Concentrations received as input */
 
-                unsigned long nrOfConcentricCircles;
-                unsigned long nrOfSectors;
-                double        simulationTime;
+                unsigned long nrOfConcentricCircles;    /*!< Number of concentric circles */
+                unsigned long nrOfSectors;              /*!< Number of sectors */
+                double        simulationTime;           /*!< Simulation time corresponding to the input data */
 
-                string inputFilepath;
-                string outputFilepath;
+                string inputFilepath;   /*!< Path to the input file */
+                string outputFilepath;  /*!< Path to the output file */
 
             public:
 
                 CartesianToPolarConverter (const string &inputFilepath, const string &outputFilepath);
                 ~CartesianToPolarConverter();
 
+                //! Start the conversion
+                /*!
+                 * \param outputToScript Output to script or to plain file
+                 */
                 void convert(bool outputToScript);
 
             private:
 
-                void readInputData              () throw (string);
-                void readHeaderLine             (ifstream &fin) throw (string);
-                void readConcentrations         (ifstream &fin) throw (string);
-                void transformToAnnularSectors  ();
-                void outputResultsAsFile        ();
-                void outputResultsAsScript      ();
+                //! Read the input data
+                void readInputData() throw (string);
+
+                //! Read the header line
+                /*!
+                 * The header line contains values for number of concentric circles,
+                 * number of sectors and simulation time
+                 *
+                 * \param fin Input file stream
+                 */
+                void readHeaderLine(ifstream &fin) throw (string);
+
+                //! Read the concentrations
+                /*!
+                 * \param fin Input file stream
+                 */
+                void readConcentrations(ifstream &fin) throw (string);
+
+                //! Convert the concentrations to annular sectors
+                void transformToAnnularSectors();
+
+                //! Output the results as a plain file
+                void outputResultsAsFile();
+
+                //! Output the results as a gnuplot script
+                void outputResultsAsScript();
 
         };
 

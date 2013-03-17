@@ -5,9 +5,7 @@ using namespace multiscale::analysis;
 
 RectangularMatFactory::RectangularMatFactory() : MatFactory() {}
 
-
 RectangularMatFactory::~RectangularMatFactory() {}
-
 
 unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
     unsigned char *data = new unsigned char[rows*cols];

@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -112,25 +112,33 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1StringManipulator.h
 </div><!--header-->
 <div class="contents">
 
+<p>Class for manipulating strings.  
+ <a href="classmultiscale_1_1StringManipulator.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="StringManipulator_8hpp_source.html">StringManipulator.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab0354ab5ca48df4394695445fe105640"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StringManipulator.html#ab0354ab5ca48df4394695445fe105640">filenameFromPath</a> (const string &amp;filepath)</td></tr>
-<tr class="separator:ab0354ab5ca48df4394695445fe105640"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe65f4f4cdf70976df2a8749b9e2fc7b"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b">replace</a> (const string &amp;initialString, const string &amp;replaceWhat, const string &amp;replaceTo)</td></tr>
-<tr class="separator:afe65f4f4cdf70976df2a8749b9e2fc7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a899c72a05bbd8fb525f31bca3c1ec3c4"><td class="memItemLeft" align="right" valign="top">static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StringManipulator.html#a899c72a05bbd8fb525f31bca3c1ec3c4">split</a> (const string &amp;initialString, const string &amp;delimiter)</td></tr>
-<tr class="separator:a899c72a05bbd8fb525f31bca3c1ec3c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761ce04ef3f0a702eb4fcb816492ea82"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StringManipulator.html#a761ce04ef3f0a702eb4fcb816492ea82">filenameFromPath</a> (const string &amp;filepath)</td></tr>
+<tr class="memdesc:a761ce04ef3f0a702eb4fcb816492ea82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the file name from the given file path.  <a href="#a761ce04ef3f0a702eb4fcb816492ea82">More...</a><br/></td></tr>
+<tr class="separator:a761ce04ef3f0a702eb4fcb816492ea82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd8c91229eef87e3d175c3544baf82e"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StringManipulator.html#a8bd8c91229eef87e3d175c3544baf82e">replace</a> (const string &amp;initialString, const string &amp;replaceWhat, const string &amp;replaceTo)</td></tr>
+<tr class="memdesc:a8bd8c91229eef87e3d175c3544baf82e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace a substring of the given string with another string.  <a href="#a8bd8c91229eef87e3d175c3544baf82e">More...</a><br/></td></tr>
+<tr class="separator:a8bd8c91229eef87e3d175c3544baf82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd1091a0cf87508dbf99b5f196b37667"><td class="memItemLeft" align="right" valign="top">static vector&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StringManipulator.html#afd1091a0cf87508dbf99b5f196b37667">split</a> (const string &amp;initialString, const string &amp;delimiter)</td></tr>
+<tr class="memdesc:afd1091a0cf87508dbf99b5f196b37667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split the given string into a vector of strings considering the given delimiter.  <a href="#afd1091a0cf87508dbf99b5f196b37667">More...</a><br/></td></tr>
+<tr class="separator:afd1091a0cf87508dbf99b5f196b37667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91858c4faa5ee210a9b67e4885835368"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a91858c4faa5ee210a9b67e4885835368"><td class="memTemplItemLeft" align="right" valign="top">static string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StringManipulator.html#a91858c4faa5ee210a9b67e4885835368">toString</a> (T variable)</td></tr>
+<tr class="memdesc:a91858c4faa5ee210a9b67e4885835368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the variable to a string.  <a href="#a91858c4faa5ee210a9b67e4885835368">More...</a><br/></td></tr>
 <tr class="separator:a91858c4faa5ee210a9b67e4885835368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="StringManipulator_8hpp_source.html#l00014">14</a> of file <a class="el" href="StringManipulator_8hpp_source.html">StringManipulator.hpp</a>.</p>
+<div class="textblock"><p>Class for manipulating strings. </p>
+
+<p>Definition at line <a class="el" href="StringManipulator_8hpp_source.html#l00015">15</a> of file <a class="el" href="StringManipulator_8hpp_source.html">StringManipulator.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab0354ab5ca48df4394695445fe105640"></a>
+<a class="anchor" id="a761ce04ef3f0a702eb4fcb816492ea82"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -138,7 +146,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string StringManipulator::filenameFromPath </td>
+          <td class="memname">static string multiscale::StringManipulator::filenameFromPath </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>filepath</em></td><td>)</td>
@@ -152,15 +160,17 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="StringManipulator_8cpp_source.html#l00010">10</a> of file <a class="el" href="StringManipulator_8cpp_source.html">StringManipulator.cpp</a>.</p>
-
-<p>References <a class="el" href="StringManipulator_8hpp_source.html#l00008">DIR_SEPARATOR</a>.</p>
-
-<p>Referenced by <a class="el" href="PolarGnuplotScriptGenerator_8cpp_source.html#l00032">multiscale::video::PolarGnuplotScriptGenerator::generateHeader()</a>, and <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00033">multiscale::video::RectangularGnuplotScriptGenerator::generateHeader()</a>.</p>
+<p>Obtain the file name from the given file path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepath</td><td>File path </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="afe65f4f4cdf70976df2a8749b9e2fc7b"></a>
+<a class="anchor" id="a8bd8c91229eef87e3d175c3544baf82e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -168,7 +178,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string StringManipulator::replace </td>
+          <td class="memname">static string multiscale::StringManipulator::replace </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>initialString</em>, </td>
@@ -198,13 +208,19 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="StringManipulator_8cpp_source.html#l00021">21</a> of file <a class="el" href="StringManipulator_8cpp_source.html">StringManipulator.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="PolarGnuplotScriptGenerator_8cpp_source.html#l00083">multiscale::video::PolarGnuplotScriptGenerator::outputContent()</a>, <a class="el" href="PolarGnuplotScriptGenerator_8cpp_source.html#l00069">multiscale::video::PolarGnuplotScriptGenerator::outputHeader()</a>, and <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00071">multiscale::video::RectangularGnuplotScriptGenerator::outputHeader()</a>.</p>
+<p>Replace a substring of the given string with another string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initialString</td><td>Initial string </td></tr>
+    <tr><td class="paramname">replaceWhat</td><td>Substring which will be replaced </td></tr>
+    <tr><td class="paramname">replaceTo</td><td>String which will be inserted instead of the replaceWhat string </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a899c72a05bbd8fb525f31bca3c1ec3c4"></a>
+<a class="anchor" id="afd1091a0cf87508dbf99b5f196b37667"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -212,7 +228,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; string &gt; StringManipulator::split </td>
+          <td class="memname">static vector&lt;string&gt; multiscale::StringManipulator::split </td>
           <td>(</td>
           <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>initialString</em>, </td>
@@ -236,9 +252,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="StringManipulator_8cpp_source.html#l00035">35</a> of file <a class="el" href="StringManipulator_8cpp_source.html">StringManipulator.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="RectangularCsvToInputFilesConverter_8cpp_source.html#l00206">multiscale::video::RectangularCsvToInputFilesConverter::splitLineInConcentrations()</a>, <a class="el" href="PolarCsvToInputFilesConverter_8cpp_source.html#l00208">multiscale::video::PolarCsvToInputFilesConverter::splitLineInConcentrations()</a>, <a class="el" href="RectangularCsvToInputFilesConverter_8cpp_source.html#l00155">multiscale::video::RectangularCsvToInputFilesConverter::validateInputLine()</a>, and <a class="el" href="PolarCsvToInputFilesConverter_8cpp_source.html#l00155">multiscale::video::PolarCsvToInputFilesConverter::validateInputLine()</a>.</p>
+<p>Split the given string into a vector of strings considering the given delimiter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initialString</td><td>Initial string </td></tr>
+    <tr><td class="paramname">delimiter</td><td>Delimiter </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -266,15 +287,20 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="StringManipulator_8hpp_source.html#l00025">25</a> of file <a class="el" href="StringManipulator_8hpp_source.html">StringManipulator.hpp</a>.</p>
+<p>Convert the variable to a string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable</td><td>Variable </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Referenced by <a class="el" href="RectangularCsvToInputFilesConverter_8cpp_source.html#l00090">multiscale::video::RectangularCsvToInputFilesConverter::initOutputFile()</a>, and <a class="el" href="PolarCsvToInputFilesConverter_8cpp_source.html#l00090">multiscale::video::PolarCsvToInputFilesConverter::initOutputFile()</a>.</p>
+<p>Definition at line <a class="el" href="StringManipulator_8hpp_source.html#l00047">47</a> of file <a class="el" href="StringManipulator_8hpp_source.html">StringManipulator.hpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/multiscale/util/<a class="el" href="StringManipulator_8hpp_source.html">StringManipulator.hpp</a></li>
-<li>src/multiscale/util/<a class="el" href="StringManipulator_8cpp_source.html">StringManipulator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -282,7 +308,7 @@ template&lt;class T &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1StringManipulator.html">StringManipulator</a></li>
-    <li class="footer">Generated on Wed Mar 13 2013 11:14:42 for Multiscale by
+    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

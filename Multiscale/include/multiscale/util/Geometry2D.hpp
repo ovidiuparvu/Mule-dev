@@ -7,7 +7,7 @@ using namespace std;
 
 namespace multiscale {
 
-    //! Class for two-dimensional geometrical operations
+    //! Two-dimensional geometric operations
     class Geometry2D {
 
         private:
@@ -34,8 +34,7 @@ namespace multiscale {
             double computeAngle(Point a, Point b, Point c);
 
             //! Find the subset of points from the given set of points which lie on the edge
-            /*! Find the subset of points from the given set of points which lie on the edge
-             *
+            /*!
              *  A point "p" is considered to be on the edge if:
              *      ((p.x == 1) && (p.y > 1) && (p.y < nrOfCols)) OR
              *      ((p.x == nrOfRows) && (p.y > 1) && (p.y < nrOfCols)) OR
@@ -51,8 +50,7 @@ namespace multiscale {
         private:
 
             //! Check if the given point is on the edge
-            /*! Check if the given point is on the edge
-             *
+            /*!
              *  A point "p" is considered to be on the edge if:
              *      ((p.x == 1) && (p.y > 1) && (p.y < nrOfCols)) OR
              *      ((p.x == nrOfRows) && (p.y > 1) && (p.y < nrOfCols)) OR

@@ -136,89 +136,112 @@ $(document).ready(function(){initNavTree('PolarCsvToInputFilesConverter_8hpp_sou
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">namespace </span>video {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html">   31</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html">PolarCsvToInputFilesConverter</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7b33b6d00b5e0d809f4fb0d76985ab59">   35</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7b33b6d00b5e0d809f4fb0d76985ab59">inputFilepath</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a1033d31c9bfc7ccad08337c7b0fa6e6e">   36</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a1033d31c9bfc7ccad08337c7b0fa6e6e">outputFilepath</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7aa37d18880e822369cbe118a093e24f">   38</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7aa37d18880e822369cbe118a093e24f">nrOfConcentricCircles</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a9246a2c9749602af145d5579bde8a9d1">   39</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a9246a2c9749602af145d5579bde8a9d1">nrOfSectors</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a3a9301788514c50c295ca113a4114938">   40</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a3a9301788514c50c295ca113a4114938">nrOfConcentrationsForPosition</a>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#afd9f17e6ba2dc46b920ab28538278362">   42</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#afd9f17e6ba2dc46b920ab28538278362">concentrationsIndex</a>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a121d592659f9f5075c8c78aa46c2950c">   44</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a121d592659f9f5075c8c78aa46c2950c">selectedConcentrationIndex</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a89b7dce2825cd5c8c45a1e6f19770e5f">   46</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a89b7dce2825cd5c8c45a1e6f19770e5f">maximumConcentration</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ad4cf12c7f3951f0bb388939797cbcc0c">   48</a></span>&#160;                <a class="code" href="classmultiscale_1_1NumberIterator.html">NumberIterator</a>* <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ad4cf12c7f3951f0bb388939797cbcc0c">circlesIterator</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b">   49</a></span>&#160;                <a class="code" href="classmultiscale_1_1NumberIterator.html">NumberIterator</a>* <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b">sectorsIterator</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html">PolarCsvToInputFilesConverter</a> (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFilepath,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                               <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                               <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfConcentricCircles,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                               <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfSectors,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                               <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfConcentrationsForPosition,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                               <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> selectedConcentrationIndex,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                               <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5">NumberIteratorType</a> numberIteratorType);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                ~<a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html">PolarCsvToInputFilesConverter</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">void</span> convert();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordtype">void</span>            initInputFile                       (ifstream &amp;fin);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">void</span>            initMaximumConcentration            (ifstream &amp;fin);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordtype">void</span>            initOutputFile                      (ofstream &amp;fout, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                                     <span class="keywordtype">double</span> &amp;simulationTime);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordtype">void</span>            initIterators                       (<span class="keyword">const</span> <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5">NumberIteratorType</a> &amp;numberIteratorType);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordtype">void</span>            validateSelectedConcentrationIndex  ();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordtype">void</span>            validateInput                       (ifstream &amp;fin);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordtype">void</span>            validateInputLine                   (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;line, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> lineNumber);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordtype">void</span>            processInputFile                    (ifstream &amp;fin);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordtype">void</span>            processLine                         (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;line, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> outputIndex);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                vector&lt;double&gt;  splitLineInConcentrations           (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;line, <span class="keywordtype">double</span> &amp;simulationTime);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">void</span>            splitFirstPartInConcentrations      (vector&lt;double&gt; &amp;concentrations,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                                     <span class="keyword">const</span> vector&lt;string&gt; &amp;tokens,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                                                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> circleIndex);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordtype">void</span>            splitOtherPartsInConcentrations     (vector&lt;double&gt; &amp;concentrations,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                                     <span class="keyword">const</span> vector&lt;string&gt; &amp;tokens,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> circleIndex);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordtype">double</span>          computeSimulationTime               (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;token);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordtype">double</span>          computeNextPositionConcentration    (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> circleIndex,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                                     <span class="keywordtype">int</span> concentrationIndex,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                                                     <span class="keyword">const</span> vector&lt;string&gt; &amp;tokens);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordtype">double</span>          computeConcentration                (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;concentration,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                                                     <span class="keywordtype">int</span> circleIndex);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordtype">double</span>          computeNonScaledConcentration       (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;concentration,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                                     <span class="keywordtype">int</span> circleIndex);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordtype">double</span>          computeScaledConcentration          (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;concentration,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                                     <span class="keywordtype">int</span> circleIndex);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordtype">double</span>          computeConcentrationWrtArea         (<span class="keywordtype">double</span> amount,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                                     <span class="keywordtype">int</span> circleIndex);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordtype">double</span>          computeNormalisedConcentration      (<span class="keywordtype">double</span> concentration,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                                     <span class="keywordtype">int</span> circleIndex);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordtype">void</span>            updateMaximumConcentration          (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;line,</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                                                     <span class="keywordtype">double</span> &amp;maximumConcentration);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        };</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html">   32</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html" title="Csv file to input file converter considering polar coordinates.">PolarCsvToInputFilesConverter</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7b33b6d00b5e0d809f4fb0d76985ab59">   36</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7b33b6d00b5e0d809f4fb0d76985ab59">inputFilepath</a>;   </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a1033d31c9bfc7ccad08337c7b0fa6e6e">   37</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a1033d31c9bfc7ccad08337c7b0fa6e6e">outputFilepath</a>;  </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7aa37d18880e822369cbe118a093e24f">   39</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7aa37d18880e822369cbe118a093e24f">nrOfConcentricCircles</a>;             </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a9246a2c9749602af145d5579bde8a9d1">   40</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a9246a2c9749602af145d5579bde8a9d1">nrOfSectors</a>;                       </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a3a9301788514c50c295ca113a4114938">   41</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a3a9301788514c50c295ca113a4114938">nrOfConcentrationsForPosition</a>;     </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#afd9f17e6ba2dc46b920ab28538278362">   43</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#afd9f17e6ba2dc46b920ab28538278362">concentrationsIndex</a>;           </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a121d592659f9f5075c8c78aa46c2950c">   45</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> selectedConcentrationIndex;    </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a89b7dce2825cd5c8c45a1e6f19770e5f">   52</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a89b7dce2825cd5c8c45a1e6f19770e5f">maximumConcentration</a>;        </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ad4cf12c7f3951f0bb388939797cbcc0c">   54</a></span>&#160;                <a class="code" href="classmultiscale_1_1NumberIterator.html" title="Abstract class representing a number iterator.">NumberIterator</a>* <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ad4cf12c7f3951f0bb388939797cbcc0c">circlesIterator</a>;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b">   55</a></span>&#160;                <a class="code" href="classmultiscale_1_1NumberIterator.html" title="Abstract class representing a number iterator.">NumberIterator</a>* <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b">sectorsIterator</a>;    </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html" title="Csv file to input file converter considering polar coordinates.">PolarCsvToInputFilesConverter</a> (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFilepath,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                               <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                               <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfConcentricCircles,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                               <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfSectors,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                               <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfConcentrationsForPosition,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                               <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> selectedConcentrationIndex,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                               <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5" title="The type of the number iterator.">NumberIteratorType</a> numberIteratorType);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                ~<a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html" title="Csv file to input file converter considering polar coordinates.">PolarCsvToInputFilesConverter</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordtype">void</span> convert();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">void</span> initInputFile(ifstream &amp;fin);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordtype">void</span> initMaximumConcentration(ifstream &amp;fin);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordtype">void</span> initOutputFile(ofstream &amp;fout, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, <span class="keywordtype">double</span> &amp;simulationTime);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordtype">void</span> initIterators(<span class="keyword">const</span> <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5" title="The type of the number iterator.">NumberIteratorType</a> &amp;numberIteratorType);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordtype">void</span> validateSelectedConcentrationIndex();</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    };</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordtype">void</span> validateInput(ifstream &amp;fin);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordtype">void</span> validateInputLine(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;line, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> lineNumber);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordtype">void</span> processInputFile(ifstream &amp;fin);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordtype">void</span> processLine(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;line, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> outputIndex);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                vector&lt;double&gt;  splitLineInConcentrations(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;line, <span class="keywordtype">double</span> &amp;simulationTime);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <span class="keywordtype">void</span> splitFirstPartInConcentrations(vector&lt;double&gt; &amp;concentrations,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                                    <span class="keyword">const</span> vector&lt;string&gt; &amp;tokens,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                                    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> circleIndex);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keywordtype">void</span> splitOtherPartsInConcentrations(vector&lt;double&gt; &amp;concentrations,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                                     <span class="keyword">const</span> vector&lt;string&gt; &amp;tokens,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                                     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> circleIndex);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="keywordtype">double</span> computeSimulationTime(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;token);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                <span class="keywordtype">double</span> computeNextPositionConcentration(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> circleIndex,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                                                        <span class="keywordtype">int</span> concentrationIndex,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                                        <span class="keyword">const</span> vector&lt;string&gt; &amp;tokens);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <span class="keywordtype">double</span> computeConcentration(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;concentration, <span class="keywordtype">int</span> circleIndex);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                <span class="keywordtype">double</span> computeNonScaledConcentration(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;concentration, <span class="keywordtype">int</span> circleIndex);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordtype">double</span> computeScaledConcentration(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;concentration, <span class="keywordtype">int</span> circleIndex);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordtype">double</span> computeConcentrationWrtArea(<span class="keywordtype">double</span> amount, <span class="keywordtype">int</span> circleIndex);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <span class="keywordtype">double</span> computeNormalisedConcentration(<span class="keywordtype">double</span> concentration, <span class="keywordtype">int</span> circleIndex);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <span class="keywordtype">void</span> updateMaximumConcentration(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;line, <span class="keywordtype">double</span> &amp;maximumConcentration);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        };</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    };</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;};</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_42064059602c6fa33b8ba885198a4a6b.html">video</a></li><li class="navelem"><a class="el" href="dir_8fdce005bc57a4ee2e526eacad0b3585.html">circular</a></li><li class="navelem"><a class="el" href="PolarCsvToInputFilesConverter_8hpp.html">PolarCsvToInputFilesConverter.hpp</a></li>
-    <li class="footer">Generated on Wed Mar 13 2013 11:14:42 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_981af49a0233aee53393df9c69217344.html">video</a></li><li class="navelem"><a class="el" href="dir_17c85bf0b6ab5ac3209cf18bf26c9fdc.html">circular</a></li><li class="navelem"><a class="el" href="PolarCsvToInputFilesConverter_8hpp.html">PolarCsvToInputFilesConverter.hpp</a></li>
+    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

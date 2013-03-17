@@ -1,0 +1,137 @@
+.TH "multiscale::analysis::MatFactory" 3 "Sun Mar 17 2013" "Version 0.0.1" "Multiscale" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+multiscale::analysis::MatFactory \- 
+.PP
+Class for creating a Mat object\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MatFactory\&.hpp>\fP
+.PP
+Inherited by \fBmultiscale::analysis::RectangularMatFactory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatFactory\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~MatFactory\fP ()"
+.br
+.ti -1c
+.RI "Mat \fBcreate\fP (const string &inputFile)"
+.br
+.RI "\fICreate a Mat object from the input file\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitInputFile\fP (ifstream &fin, const string &inputFile)"
+.br
+.RI "\fIInitialise the input file\&. \fP"
+.ti -1c
+.RI "virtual unsigned char * \fBprocessConcentrations\fP (ifstream &fin)=0"
+.br
+.RI "\fIProcess concentrations from file\&. \fP"
+.ti -1c
+.RI "unsigned char \fBconvertToIntensity\fP (double concentration)"
+.br
+.RI "\fIConvert concentration to intensity\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBrows\fP"
+.br
+.ti -1c
+.RI "int \fBcols\fP"
+.br
+.ti -1c
+.RI "double \fBsimulationTime\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Class for creating a Mat object\&. 
+.PP
+Definition at line 18 of file MatFactory\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "multiscale::analysis::MatFactory::MatFactory ()"
+
+.SS "virtual multiscale::analysis::MatFactory::~MatFactory ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned char multiscale::analysis::MatFactory::convertToIntensity (doubleconcentration)\fC [protected]\fP"
+
+.PP
+Convert concentration to intensity\&. Convert the concentration (real value between 0 and 1) to intensity (integer value between 0 and 255)
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconcentration\fP A value between 0 and 1 
+.RE
+.PP
+
+.SS "Mat multiscale::analysis::MatFactory::create (const string &inputFile)"
+
+.PP
+Create a Mat object from the input file\&. Create the Mat instance from the values given in the input file
+.PP
+FORMAT OF INPUT FILE:
+.IP "\(bu" 2
+1st line contains two positive integers and a real value: nr_rows, nr_cols and simulation_time
+.IP "\(bu" 2
+2nd - (nr_rows + 1)th lines contain the concentrations of the positions in the grid
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinputFile\fP The path to the input file 
+.RE
+.PP
+
+.SS "void multiscale::analysis::MatFactory::initInputFile (ifstream &fin, const string &inputFile)\fC [protected]\fP"
+
+.PP
+Initialise the input file\&. Initialise the input file\&. Open an input file stream to the given input file path\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfin\fP An input stream for reading data from the input file 
+.br
+\fIinputFile\fP The path to the input file 
+.RE
+.PP
+
+.SS "virtual unsigned char* multiscale::analysis::MatFactory::processConcentrations (ifstream &fin)\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Process concentrations from file\&. Process the concentrations from the file\&. This method will be implemented only by subclasses of this abstract class 
+.PP
+Implemented in \fBmultiscale::analysis::RectangularMatFactory\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int multiscale::analysis::MatFactory::cols\fC [protected]\fP"
+Number of columns in the Mat object 
+.PP
+Definition at line 23 of file MatFactory\&.hpp\&.
+.SS "int multiscale::analysis::MatFactory::rows\fC [protected]\fP"
+Number of rows in the Mat object 
+.PP
+Definition at line 22 of file MatFactory\&.hpp\&.
+.SS "double multiscale::analysis::MatFactory::simulationTime\fC [protected]\fP"
+Simulation time read from the input file 
+.PP
+Definition at line 24 of file MatFactory\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Multiscale from the source code\&.

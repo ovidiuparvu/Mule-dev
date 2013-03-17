@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -113,33 +113,44 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1video_1_1Rectangula
 </div><!--header-->
 <div class="contents">
 
+<p>Gnuplot script generator from the provided concentrations considering a rectangular geometry.  
+ <a href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="RectangularGnuplotScriptGenerator_8hpp_source.html">RectangularGnuplotScriptGenerator.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a2e69a85d54df5bacd2e18d27993c14"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a8a2e69a85d54df5bacd2e18d27993c14">generateScript</a> (const vector&lt; double &gt; &amp;concentrations, double simulationTime, unsigned long height, unsigned long width, const string &amp;outputFilepath)  throw (string)</td></tr>
-<tr class="separator:a8a2e69a85d54df5bacd2e18d27993c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e317c70e68eec31d9ec4b5029debc3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a92e317c70e68eec31d9ec4b5029debc3">generateScript</a> (const vector&lt; double &gt; &amp;concentrations, double simulationTime, unsigned long height, unsigned long width, const string &amp;outputFilepath)  throw (string)</td></tr>
+<tr class="memdesc:a92e317c70e68eec31d9ec4b5029debc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the script.  <a href="#a92e317c70e68eec31d9ec4b5029debc3">More...</a><br/></td></tr>
+<tr class="separator:a92e317c70e68eec31d9ec4b5029debc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:abe3a62a21428183cdaf91c405c59264f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#abe3a62a21428183cdaf91c405c59264f">generateHeader</a> (ofstream &amp;fout, const string &amp;outputFilepath, double simulationTime, unsigned long height, unsigned long width)</td></tr>
-<tr class="separator:abe3a62a21428183cdaf91c405c59264f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8464c4b7b05d86ea8bcbfa5a26f7374"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#ae8464c4b7b05d86ea8bcbfa5a26f7374">generateBody</a> (const vector&lt; double &gt; &amp;concentrations, unsigned long height, unsigned long width, ofstream &amp;fout)</td></tr>
-<tr class="separator:ae8464c4b7b05d86ea8bcbfa5a26f7374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b37e76bc9d825de0fd9d168f15a56be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a0b37e76bc9d825de0fd9d168f15a56be">generateFooter</a> (ofstream &amp;fout)</td></tr>
-<tr class="separator:a0b37e76bc9d825de0fd9d168f15a56be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b0c7a7b1e0b21dd2a432787ce8830d0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a4b0c7a7b1e0b21dd2a432787ce8830d0">outputHeader</a> (ifstream &amp;fin, const string &amp;outputFilename, double simulationTime, unsigned long height, unsigned long width, ofstream &amp;fout)</td></tr>
-<tr class="separator:a4b0c7a7b1e0b21dd2a432787ce8830d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74e7f2fee2df4fc22a9ee3f1caee4e71"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a74e7f2fee2df4fc22a9ee3f1caee4e71">outputContent</a> (const vector&lt; double &gt; &amp;concentrations, unsigned long height, unsigned long width, ofstream &amp;fout)</td></tr>
-<tr class="separator:a74e7f2fee2df4fc22a9ee3f1caee4e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58ff6a7a353edb0dcda39ac8f1bac1c3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a58ff6a7a353edb0dcda39ac8f1bac1c3">outputFooter</a> (ifstream &amp;fin, ofstream &amp;fout)</td></tr>
-<tr class="separator:a58ff6a7a353edb0dcda39ac8f1bac1c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa42f88d69d564ea71c5b360345f07d11"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#aa42f88d69d564ea71c5b360345f07d11">generateHeader</a> (ofstream &amp;fout, const string &amp;outputFilepath, double simulationTime, unsigned long height, unsigned long width)</td></tr>
+<tr class="memdesc:aa42f88d69d564ea71c5b360345f07d11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the header of the script.  <a href="#aa42f88d69d564ea71c5b360345f07d11">More...</a><br/></td></tr>
+<tr class="separator:aa42f88d69d564ea71c5b360345f07d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50b50a721930e7a94bd792ab573c3f9b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a50b50a721930e7a94bd792ab573c3f9b">generateBody</a> (const vector&lt; double &gt; &amp;concentrations, unsigned long height, unsigned long width, ofstream &amp;fout)</td></tr>
+<tr class="memdesc:a50b50a721930e7a94bd792ab573c3f9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the body/content of the script.  <a href="#a50b50a721930e7a94bd792ab573c3f9b">More...</a><br/></td></tr>
+<tr class="separator:a50b50a721930e7a94bd792ab573c3f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8102ecd6f4491cc2ed6515b9dcea56"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a7c8102ecd6f4491cc2ed6515b9dcea56">generateFooter</a> (ofstream &amp;fout)</td></tr>
+<tr class="memdesc:a7c8102ecd6f4491cc2ed6515b9dcea56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the footer of the script.  <a href="#a7c8102ecd6f4491cc2ed6515b9dcea56">More...</a><br/></td></tr>
+<tr class="separator:a7c8102ecd6f4491cc2ed6515b9dcea56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c343b896bf282fe0f66b0fe8be048b2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a1c343b896bf282fe0f66b0fe8be048b2">outputHeader</a> (ifstream &amp;fin, const string &amp;outputFilename, double simulationTime, unsigned long height, unsigned long width, ofstream &amp;fout)</td></tr>
+<tr class="memdesc:a1c343b896bf282fe0f66b0fe8be048b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the header of the script.  <a href="#a1c343b896bf282fe0f66b0fe8be048b2">More...</a><br/></td></tr>
+<tr class="separator:a1c343b896bf282fe0f66b0fe8be048b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428f503d9909d9502fdbf423c53fe2a3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a428f503d9909d9502fdbf423c53fe2a3">outputContent</a> (const vector&lt; double &gt; &amp;concentrations, unsigned long height, unsigned long width, ofstream &amp;fout)</td></tr>
+<tr class="memdesc:a428f503d9909d9502fdbf423c53fe2a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the content of the script.  <a href="#a428f503d9909d9502fdbf423c53fe2a3">More...</a><br/></td></tr>
+<tr class="separator:a428f503d9909d9502fdbf423c53fe2a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8d9a4f155ab49803db4f181252f868"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#acc8d9a4f155ab49803db4f181252f868">outputFooter</a> (ifstream &amp;fin, ofstream &amp;fout)</td></tr>
+<tr class="memdesc:acc8d9a4f155ab49803db4f181252f868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the footer of the script.  <a href="#acc8d9a4f155ab49803db4f181252f868">More...</a><br/></td></tr>
+<tr class="separator:acc8d9a4f155ab49803db4f181252f868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
+<div class="textblock"><p>Gnuplot script generator from the provided concentrations considering a rectangular geometry. </p>
+
 <p>Definition at line <a class="el" href="RectangularGnuplotScriptGenerator_8hpp_source.html#l00030">30</a> of file <a class="el" href="RectangularGnuplotScriptGenerator_8hpp_source.html">RectangularGnuplotScriptGenerator.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ae8464c4b7b05d86ea8bcbfa5a26f7374"></a>
+<a class="anchor" id="a50b50a721930e7a94bd792ab573c3f9b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -147,7 +158,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void RectangularGnuplotScriptGenerator::generateBody </td>
+          <td class="memname">static void multiscale::video::RectangularGnuplotScriptGenerator::generateBody </td>
           <td>(</td>
           <td class="paramtype">const vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>concentrations</em>, </td>
@@ -183,13 +194,20 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00048">48</a> of file <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html">RectangularGnuplotScriptGenerator.cpp</a>.</p>
-
-<p>References <a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html#l00011">CONTENT_IN</a>.</p>
+<p>Generate the body/content of the script. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">concentrations</td><td>The concentrations </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the grid </td></tr>
+    <tr><td class="paramname">width</td><td>The width of the grid </td></tr>
+    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a0b37e76bc9d825de0fd9d168f15a56be"></a>
+<a class="anchor" id="a7c8102ecd6f4491cc2ed6515b9dcea56"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -197,7 +215,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void RectangularGnuplotScriptGenerator::generateFooter </td>
+          <td class="memname">static void multiscale::video::RectangularGnuplotScriptGenerator::generateFooter </td>
           <td>(</td>
           <td class="paramtype">ofstream &amp;&#160;</td>
           <td class="paramname"><em>fout</em></td><td>)</td>
@@ -211,13 +229,17 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00060">60</a> of file <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html">RectangularGnuplotScriptGenerator.cpp</a>.</p>
-
-<p>References <a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html#l00012">FOOTER_IN</a>.</p>
+<p>Generate the footer of the script. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="abe3a62a21428183cdaf91c405c59264f"></a>
+<a class="anchor" id="aa42f88d69d564ea71c5b360345f07d11"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -225,7 +247,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void RectangularGnuplotScriptGenerator::generateHeader </td>
+          <td class="memname">static void multiscale::video::RectangularGnuplotScriptGenerator::generateHeader </td>
           <td>(</td>
           <td class="paramtype">ofstream &amp;&#160;</td>
           <td class="paramname"><em>fout</em>, </td>
@@ -267,13 +289,21 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00033">33</a> of file <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html">RectangularGnuplotScriptGenerator.cpp</a>.</p>
-
-<p>References <a class="el" href="StringManipulator_8cpp_source.html#l00010">multiscale::StringManipulator::filenameFromPath()</a>, and <a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html#l00010">HEADER_IN</a>.</p>
+<p>Generate the header of the script. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
+    <tr><td class="paramname">outputFilepath</td><td>Path to the output file </td></tr>
+    <tr><td class="paramname">simulationTime</td><td>Simulation time </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the grid </td></tr>
+    <tr><td class="paramname">width</td><td>Width of the grid </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a8a2e69a85d54df5bacd2e18d27993c14"></a>
+<a class="anchor" id="a92e317c70e68eec31d9ec4b5029debc3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -281,7 +311,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void RectangularGnuplotScriptGenerator::generateScript </td>
+          <td class="memname">static void multiscale::video::RectangularGnuplotScriptGenerator::generateScript </td>
           <td>(</td>
           <td class="paramtype">const vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>concentrations</em>, </td>
@@ -323,15 +353,21 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00015">15</a> of file <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html">RectangularGnuplotScriptGenerator.cpp</a>.</p>
-
-<p>References <a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html#l00023">GNUPLOT_EXTENSION</a>.</p>
-
-<p>Referenced by <a class="el" href="CartesianToConcentrationsConverter_8cpp_source.html#l00086">multiscale::video::CartesianToConcentrationsConverter::outputResults()</a>.</p>
+<p>Generate the script. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">concentrations</td><td>Concentrations </td></tr>
+    <tr><td class="paramname">simulationTime</td><td>Simulation time </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the grid </td></tr>
+    <tr><td class="paramname">width</td><td>Width of the grid </td></tr>
+    <tr><td class="paramname">outputFilepath</td><td>Path of the output file </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a74e7f2fee2df4fc22a9ee3f1caee4e71"></a>
+<a class="anchor" id="a428f503d9909d9502fdbf423c53fe2a3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -339,7 +375,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void RectangularGnuplotScriptGenerator::outputContent </td>
+          <td class="memname">static void multiscale::video::RectangularGnuplotScriptGenerator::outputContent </td>
           <td>(</td>
           <td class="paramtype">const vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>concentrations</em>, </td>
@@ -375,13 +411,20 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00088">88</a> of file <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html">RectangularGnuplotScriptGenerator.cpp</a>.</p>
-
-<p>References <a class="el" href="PolarCsvToInputFilesConverter_8hpp_source.html#l00011">OUTPUT_SEPARATOR</a>.</p>
+<p>Output the content of the script. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">concentrations</td><td>The concentrations </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the grid </td></tr>
+    <tr><td class="paramname">width</td><td>The width of the grid </td></tr>
+    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a58ff6a7a353edb0dcda39ac8f1bac1c3"></a>
+<a class="anchor" id="acc8d9a4f155ab49803db4f181252f868"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -389,7 +432,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void RectangularGnuplotScriptGenerator::outputFooter </td>
+          <td class="memname">static void multiscale::video::RectangularGnuplotScriptGenerator::outputFooter </td>
           <td>(</td>
           <td class="paramtype">ifstream &amp;&#160;</td>
           <td class="paramname"><em>fin</em>, </td>
@@ -413,11 +456,18 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00102">102</a> of file <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html">RectangularGnuplotScriptGenerator.cpp</a>.</p>
+<p>Output the footer of the script. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fin</td><td>Input file stream </td></tr>
+    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a class="anchor" id="a4b0c7a7b1e0b21dd2a432787ce8830d0"></a>
+<a class="anchor" id="a1c343b896bf282fe0f66b0fe8be048b2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -425,7 +475,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void RectangularGnuplotScriptGenerator::outputHeader </td>
+          <td class="memname">static void multiscale::video::RectangularGnuplotScriptGenerator::outputHeader </td>
           <td>(</td>
           <td class="paramtype">ifstream &amp;&#160;</td>
           <td class="paramname"><em>fin</em>, </td>
@@ -473,15 +523,23 @@ Static Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00071">71</a> of file <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html">RectangularGnuplotScriptGenerator.cpp</a>.</p>
-
-<p>References <a class="el" href="StringManipulator_8cpp_source.html#l00021">multiscale::StringManipulator::replace()</a>, <a class="el" href="RectangularGnuplotScriptGenerator_8hpp_source.html#l00018">REPLACE_DIMENSION_EXTRA</a>, <a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html#l00014">REPLACE_HEADER_FILENAME</a>, <a class="el" href="RectangularGnuplotScriptGenerator_8hpp_source.html#l00014">REPLACE_HEADER_HEIGHT</a>, <a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html#l00015">REPLACE_HEADER_SIM_TIME</a>, and <a class="el" href="RectangularGnuplotScriptGenerator_8hpp_source.html#l00015">REPLACE_HEADER_WIDTH</a>.</p>
+<p>Output the header of the script. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fin</td><td>Input file stream </td></tr>
+    <tr><td class="paramname">outputFilename</td><td>Name of the output file </td></tr>
+    <tr><td class="paramname">simulationTime</td><td>Simulation time </td></tr>
+    <tr><td class="paramname">height</td><td>The height of the grid </td></tr>
+    <tr><td class="paramname">width</td><td>The width of the grid </td></tr>
+    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/multiscale/video/rectangular/<a class="el" href="RectangularGnuplotScriptGenerator_8hpp_source.html">RectangularGnuplotScriptGenerator.hpp</a></li>
-<li>src/multiscale/video/rectangular/<a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html">RectangularGnuplotScriptGenerator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -489,7 +547,7 @@ Static Private Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1video.html">video</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html">RectangularGnuplotScriptGenerator</a></li>
-    <li class="footer">Generated on Wed Mar 13 2013 11:14:42 for Multiscale by
+    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

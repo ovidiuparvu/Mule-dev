@@ -16,9 +16,7 @@ AnnularSector::AnnularSector() {
     this->concentration  = 0;
 }
 
-AnnularSector::~AnnularSector() {
-    // Do nothing
-}
+AnnularSector::~AnnularSector() {}
 
 void AnnularSector::initialise(double startingRadius, double endingRadius, double startingAngle,
                                double endingAngle,    double concentration) {

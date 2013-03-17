@@ -11,7 +11,6 @@
 using namespace multiscale::video;
 
 
-// Constructor for the class
 CartesianToConcentrationsConverter::CartesianToConcentrationsConverter(const string &inputFilepath, const string &outputFilepath) {
     this->inputFilepath.assign(inputFilepath);
     this->outputFilepath.assign(outputFilepath);
@@ -21,18 +20,13 @@ CartesianToConcentrationsConverter::CartesianToConcentrationsConverter(const str
     simulationTime = 0;
 }
 
-// Destructor for the class
-CartesianToConcentrationsConverter::~CartesianToConcentrationsConverter() {
-    // Do nothing
-}
+CartesianToConcentrationsConverter::~CartesianToConcentrationsConverter() {}
 
-// Convert the cell from the grid to scaled concentrations
 void CartesianToConcentrationsConverter::convert() {
     readInputData();
     outputResults();
 }
 
-// Read the input data
 void CartesianToConcentrationsConverter::readInputData() throw (string) {
     ifstream fin(inputFilepath.c_str());
 
@@ -53,7 +47,6 @@ void CartesianToConcentrationsConverter::readInputData() throw (string) {
     fin.close();
 }
 
-// Read the header line from the input file
 void CartesianToConcentrationsConverter::readHeaderLine(ifstream &fin) throw (string) {
     fin >> height >> width >> simulationTime;
 
@@ -63,7 +56,6 @@ void CartesianToConcentrationsConverter::readHeaderLine(ifstream &fin) throw (st
     if (simulationTime < 0) throw string(ERR_NEG_SIM_TIME);
 }
 
-// Read the concentrations from the input file
 void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) throw (string) {
     int nrOfConcentrations = height * width;
 
@@ -82,7 +74,6 @@ void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) throw
     }
 }
 
-// Output the results as a gnuplot script
 void CartesianToConcentrationsConverter::outputResults() {
     RectangularGnuplotScriptGenerator::generateScript(concentrations, simulationTime, height, width, outputFilepath);
 }

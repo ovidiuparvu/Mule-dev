@@ -19,9 +19,9 @@ namespace multiscale {
 
             protected:
 
-                int     rows;
-                int     cols;
-                double  simulationTime;
+                int     rows;           /*!< Number of rows in the Mat object */
+                int     cols;           /*!< Number of columns in the Mat object */
+                double  simulationTime; /*!< Simulation time read from the input file */
 
             public:
 
