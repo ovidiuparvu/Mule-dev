@@ -1,5 +1,16 @@
 var searchData=
 [
+  ['readconcentrations',['readConcentrations',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#af0bdc97fb8fe956e8149f768b20a5cee',1,'multiscale::video::CartesianToPolarConverter::readConcentrations()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a76cee629e91caa7b04590e8051a3d351',1,'multiscale::video::CartesianToConcentrationsConverter::readConcentrations()']]],
+  ['readcontenttemplate',['readContentTemplate',['../classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a2e104e3f6bc29489ce116b703331e7b8',1,'multiscale::video::PolarGnuplotScriptGenerator']]],
+  ['readheaderline',['readHeaderLine',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a1a1849f65d18b3403a5007d42601a815',1,'multiscale::video::CartesianToPolarConverter::readHeaderLine()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#ac0fd68601cce10dce22677e460a5439d',1,'multiscale::video::CartesianToConcentrationsConverter::readHeaderLine()']]],
+  ['readinputdata',['readInputData',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#acd3e80d1d527bc3a8fa47c6950845455',1,'multiscale::video::CartesianToPolarConverter::readInputData()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a361b8f2b6a4de7b531bffe554b6d6ffb',1,'multiscale::video::CartesianToConcentrationsConverter::readInputData()']]],
+  ['rectangularcsvtoinputfilesconverter',['RectangularCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#afb10956b6af429826f6077d65616431a',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
+  ['rectangularmatfactory',['RectangularMatFactory',['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a869e435db6834024bd864a68f051b022',1,'multiscale::analysis::RectangularMatFactory']]],
+  ['region',['Region',['../classmultiscale_1_1analysis_1_1Region.html#a7a527961fb8acfbe737ff994f86d80f7',1,'multiscale::analysis::Region']]],
+  ['regionangle',['regionAngle',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a33fd29babd86192541a1a9fb02780b56',1,'multiscale::analysis::RegionDetector']]],
+  ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a935728b34b703878d7e9881893edd1a9',1,'multiscale::analysis::RegionDetector']]],
   ['replace',['replace',['../classmultiscale_1_1StringManipulator.html#a8bd8c91229eef87e3d175c3544baf82e',1,'multiscale::StringManipulator']]],
-  ['reset',['reset',['../classmultiscale_1_1NumberIterator.html#a17220743680f370fcb311f155ade7e50',1,'multiscale::NumberIterator']]]
+  ['reset',['reset',['../classmultiscale_1_1NumberIterator.html#a17220743680f370fcb311f155ade7e50',1,'multiscale::NumberIterator']]],
+  ['resetcurrentnumber',['resetCurrentNumber',['../classmultiscale_1_1LexicographicNumberIterator.html#ab84facf8bec1c2f0544d82e5e49b4ddf',1,'multiscale::LexicographicNumberIterator::resetCurrentNumber()'],['../classmultiscale_1_1StandardNumberIterator.html#a432d980c285cd7be1f5fb2da0265bea2',1,'multiscale::StandardNumberIterator::resetCurrentNumber()'],['../classmultiscale_1_1NumberIterator.html#a21e658de178b6c957df5ea0482e6fbd6',1,'multiscale::NumberIterator::resetCurrentNumber()']]],
+  ['reversedigits',['reverseDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#a8af70d88c6b445d27ae935fa261cdf34',1,'multiscale::LexicographicNumberIterator']]]
 ];

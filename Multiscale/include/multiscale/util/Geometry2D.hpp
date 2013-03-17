@@ -12,8 +12,8 @@ namespace multiscale {
 
         private:
 
-            const int MATRIX_START_INDEX = 1;
-            const double PI = 3.141592;
+            static const int MATRIX_START_INDEX = 1;
+            static const double PI = 3.141592;
 
         public:
 
@@ -22,7 +22,7 @@ namespace multiscale {
              * \param a Point a
              * \param b Point b
              */
-            double computeDistance(Point a, Point b);
+            static double distanceBtwPoints(Point a, Point b);
 
             //! Compute the angle between three points
             /*! Compute the angle between the lines determined by
@@ -31,7 +31,7 @@ namespace multiscale {
              * \param b Point b
              * \param c Point c
              */
-            double computeAngle(Point a, Point b, Point c);
+            static double angleBtwPoints(Point a, Point b, Point c);
 
             //! Find the subset of points from the given set of points which lie on the edge
             /*!
@@ -45,7 +45,16 @@ namespace multiscale {
              *  \param nrOfRows The number of rows
              *  \param nrOfCols The number of columns
              */
-            vector<Point> findPointsOnEdge(const vector<Point> &points, unsigned int nrOfRows, unsigned int nrOfCols);
+            static vector<Point> findPointsOnEdge(const vector<Point> &points, unsigned int nrOfRows, unsigned int nrOfCols);
+
+            //! Get the index of the point which is the closest to the origin
+            /*! Get the index of the point P from the given set of points, such that
+             *  for any point A from the set of points dist(A, origin) >= dist(P, origin).
+             *
+             * \param points The set of points
+             * \param origin The origin
+             */
+            static unsigned int minimumDistancePointIndex(const vector<Point> &points, const Point &origin);
 
         private:
 
@@ -61,7 +70,7 @@ namespace multiscale {
              *  \param nrOfRows The number of rows
              *  \param nrOfCols The number of columns
              */
-            bool isPointOnEdge(Point p, int nrOfRows, int nrOfCols);
+            static bool isPointOnEdge(Point p, int nrOfRows, int nrOfCols);
 
     };
 

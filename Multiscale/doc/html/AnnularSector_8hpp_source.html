@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -90,7 +92,7 @@ $(document).ready(function(){initNavTree('AnnularSector_8hpp_source.html','');})
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,7 +106,7 @@ $(document).ready(function(){initNavTree('AnnularSector_8hpp_source.html','');})
 <div class="title">AnnularSector.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ANNULARSECTOR_HPP_</span></div>
+<a href="AnnularSector_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ANNULARSECTOR_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ANNULARSECTOR_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -113,18 +115,18 @@ $(document).ready(function(){initNavTree('AnnularSector_8hpp_source.html','');})
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">namespace </span>video {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="namespacemultiscale_1_1video.html">   10</a></span>&#160;    <span class="keyword">namespace </span>video {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html">   16</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html" title="An annular sector is the basic element in the considered circular geometry.">AnnularSector</a> {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordtype">double</span> startingRadius;  <span class="comment">/*&lt; The distance from the origin to the lower part of the sector */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="keywordtype">double</span> endingRadius;    <span class="comment">/*&lt; The distance from the origin to the upper part of the sector */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <span class="keywordtype">double</span> startingAngle;   <span class="comment">/*&lt; The angle from which the sector starts */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordtype">double</span> endingAngle;     <span class="comment">/*&lt; The angle at which the sector ends */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordtype">double</span> concentration;   <span class="comment">/*&lt; Concentration in the sector */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a4c0094d8993edb40b15580fa58a8a393">   20</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a4c0094d8993edb40b15580fa58a8a393">startingRadius</a>;  <span class="comment">/*&lt; The distance from the origin to the lower part of the sector */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#aa45c5399240707d0b3fc02ee86b97c79">   21</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#aa45c5399240707d0b3fc02ee86b97c79">endingRadius</a>;    <span class="comment">/*&lt; The distance from the origin to the upper part of the sector */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a437d3dc1b2fadace28bdc3d26a78c0b3">   22</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a437d3dc1b2fadace28bdc3d26a78c0b3">startingAngle</a>;   <span class="comment">/*&lt; The angle from which the sector starts */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a0aebd11072dbefe42196d6bda2e4318d">   23</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a0aebd11072dbefe42196d6bda2e4318d">endingAngle</a>;     <span class="comment">/*&lt; The angle at which the sector ends */</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a7f6a1e7618c9e2a10e35efb5740395b1">   24</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a7f6a1e7618c9e2a10e35efb5740395b1">concentration</a>;   <span class="comment">/*&lt; Concentration in the sector */</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
@@ -160,8 +162,8 @@ $(document).ready(function(){initNavTree('AnnularSector_8hpp_source.html','');})
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_981af49a0233aee53393df9c69217344.html">video</a></li><li class="navelem"><a class="el" href="dir_17c85bf0b6ab5ac3209cf18bf26c9fdc.html">circular</a></li><li class="navelem"><b>AnnularSector.hpp</b></li>
-    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_981af49a0233aee53393df9c69217344.html">video</a></li><li class="navelem"><a class="el" href="dir_17c85bf0b6ab5ac3209cf18bf26c9fdc.html">circular</a></li><li class="navelem"><a class="el" href="AnnularSector_8hpp.html">AnnularSector.hpp</a></li>
+    <li class="footer">Generated on Sun Mar 17 2013 18:45:12 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

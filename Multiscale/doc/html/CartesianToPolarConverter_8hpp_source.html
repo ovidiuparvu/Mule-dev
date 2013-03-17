@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -90,7 +92,7 @@ $(document).ready(function(){initNavTree('CartesianToPolarConverter_8hpp_source.
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,26 +106,26 @@ $(document).ready(function(){initNavTree('CartesianToPolarConverter_8hpp_source.
 <div class="title">CartesianToPolarConverter.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CARTESIANTOPOLARCONVERTER_HPP_</span></div>
+<a href="CartesianToPolarConverter_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CARTESIANTOPOLARCONVERTER_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CARTESIANTOPOLARCONVERTER_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;multiscale/video/circular/AnnularSector.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AnnularSector_8hpp.html">multiscale/video/circular/AnnularSector.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define ERR_CONC                &quot;All concentrations have to be between 0 and 1.&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_NONPOS_DIMENSION    &quot;The dimensions N and M must be positive.&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_NEG_SIM_TIME        &quot;The simulation time must be non-negative.&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_INPUT_OPEN          &quot;The input file could not be opened&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_IN_EXTRA_DATA       &quot;The input file contains more data than required.&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#a88bb4dcef0e2bea00bce86c02cf5f813">   11</a></span>&#160;<span class="preprocessor">#define ERR_CONC                &quot;All concentrations have to be between 0 and 1.&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#a1cf49e653837247035d3d9d1fbdb0dee">   12</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_NONPOS_DIMENSION    &quot;The dimensions N and M must be positive.&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#a3ad0d4f95970c66da7d75bf997714f6f">   13</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_NEG_SIM_TIME        &quot;The simulation time must be non-negative.&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">   14</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_INPUT_OPEN          &quot;The input file could not be opened&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038">   15</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_IN_EXTRA_DATA       &quot;The input file contains more data than required.&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define OUTPUT_FILE_EXTENSION   &quot;.out&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#aafd58e116a65aeb70ace2b91d42a22ae">   17</a></span>&#160;<span class="preprocessor">#define OUTPUT_FILE_EXTENSION   &quot;.out&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define RADIUS_MIN              0.001</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RADIUS_MAX              0.3</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#a6b9880fa336856728f874385983f7737">   19</a></span>&#160;<span class="preprocessor">#define RADIUS_MIN              0.001</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="CartesianToPolarConverter_8hpp.html#a3923a2502324557507dda8740810aca3">   20</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RADIUS_MAX              0.3</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
@@ -134,13 +136,13 @@ $(document).ready(function(){initNavTree('CartesianToPolarConverter_8hpp_source.
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                vector&lt;AnnularSector&gt;   annularSectors;     </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                vector&lt;double&gt;          concentrations;     </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nrOfConcentricCircles;    </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nrOfSectors;              </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordtype">double</span>        simulationTime;           </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordtype">string</span> inputFilepath;   </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordtype">string</span> outputFilepath;  </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">   32</a></span>&#160;                vector&lt;AnnularSector&gt;   <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>;     </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">   33</a></span>&#160;                vector&lt;double&gt;          <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">concentrations</a>;     </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">   35</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a>;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">   36</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>;              </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">   37</a></span>&#160;                <span class="keywordtype">double</span>        <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">simulationTime</a>;           </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05">   39</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05">inputFilepath</a>;   </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">   40</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">outputFilepath</a>;  </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html" title="Converter from the rectangular geometry grid cells to annular sectors.">CartesianToPolarConverter</a> (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFilepath, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath);</div>
@@ -151,13 +153,13 @@ $(document).ready(function(){initNavTree('CartesianToPolarConverter_8hpp_source.
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordtype">void</span> readInputData() <span class="keywordflow">throw</span> (<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordtype">void</span> readInputData() throw (<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">void</span> readHeaderLine(ifstream &amp;fin) <span class="keywordflow">throw</span> (<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">void</span> readHeaderLine(ifstream &amp;fin) throw (<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordtype">void</span> readConcentrations(ifstream &amp;fin) <span class="keywordflow">throw</span> (<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordtype">void</span> readConcentrations(ifstream &amp;fin) throw (<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordtype">void</span> transformToAnnularSectors();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
@@ -177,8 +179,8 @@ $(document).ready(function(){initNavTree('CartesianToPolarConverter_8hpp_source.
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_981af49a0233aee53393df9c69217344.html">video</a></li><li class="navelem"><a class="el" href="dir_17c85bf0b6ab5ac3209cf18bf26c9fdc.html">circular</a></li><li class="navelem"><b>CartesianToPolarConverter.hpp</b></li>
-    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_981af49a0233aee53393df9c69217344.html">video</a></li><li class="navelem"><a class="el" href="dir_17c85bf0b6ab5ac3209cf18bf26c9fdc.html">circular</a></li><li class="navelem"><a class="el" href="CartesianToPolarConverter_8hpp.html">CartesianToPolarConverter.hpp</a></li>
+    <li class="footer">Generated on Sun Mar 17 2013 18:45:12 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

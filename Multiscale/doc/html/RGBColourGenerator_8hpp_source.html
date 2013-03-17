@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -90,7 +92,7 @@ $(document).ready(function(){initNavTree('RGBColourGenerator_8hpp_source.html','
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,17 +106,17 @@ $(document).ready(function(){initNavTree('RGBColourGenerator_8hpp_source.html','
 <div class="title">RGBColourGenerator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RGBCOLOURGENERATOR_HPP_</span></div>
+<a href="RGBColourGenerator_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RGBCOLOURGENERATOR_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RGBCOLOURGENERATOR_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define HUE_MIN     0</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HUE_MAX     120</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SATURATION  1</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define VALUE       1</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="RGBColourGenerator_8hpp.html#a592a98f68d79b49510dd5cc4830bf225">    8</a></span>&#160;<span class="preprocessor">#define HUE_MIN     0</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="RGBColourGenerator_8hpp.html#a25585eb2c24bd5f1b3b292dce24da048">    9</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HUE_MAX     120</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="RGBColourGenerator_8hpp.html#a5ea44383e0ece01ce2b69111da09207f">   10</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SATURATION  1</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="RGBColourGenerator_8hpp.html#aa0b03826c8f7cc324ac2db0ada2dce0a">   11</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define VALUE       1</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
@@ -124,9 +126,9 @@ $(document).ready(function(){initNavTree('RGBColourGenerator_8hpp_source.html','
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> red;      </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> green;    </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> blue;     </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classmultiscale_1_1RGBColourGenerator.html#a11da8c4a9ca59ea8c20177cbb5b57ceb">   26</a></span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1RGBColourGenerator.html#a11da8c4a9ca59ea8c20177cbb5b57ceb">red</a>;      </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classmultiscale_1_1RGBColourGenerator.html#ae8d94d24b109954be1da2a04c8ec9af7">   27</a></span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1RGBColourGenerator.html#ae8d94d24b109954be1da2a04c8ec9af7">green</a>;    </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classmultiscale_1_1RGBColourGenerator.html#a5b48dae9174a794eb70c779c05d87c3f">   28</a></span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1RGBColourGenerator.html#a5b48dae9174a794eb70c779c05d87c3f">blue</a>;     </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
@@ -154,8 +156,8 @@ $(document).ready(function(){initNavTree('RGBColourGenerator_8hpp_source.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_9c52920f535709bb700f42abc2703532.html">util</a></li><li class="navelem"><b>RGBColourGenerator.hpp</b></li>
-    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_9c52920f535709bb700f42abc2703532.html">util</a></li><li class="navelem"><a class="el" href="RGBColourGenerator_8hpp.html">RGBColourGenerator.hpp</a></li>
+    <li class="footer">Generated on Sun Mar 17 2013 18:45:12 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

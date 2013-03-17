@@ -16,6 +16,8 @@ var hierarchy =
     [ "multiscale::video::PolarGnuplotScriptGenerator", "classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html", null ],
     [ "multiscale::video::RectangularCsvToInputFilesConverter", "classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html", null ],
     [ "multiscale::video::RectangularGnuplotScriptGenerator", "classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html", null ],
+    [ "multiscale::analysis::Region", "classmultiscale_1_1analysis_1_1Region.html", null ],
+    [ "multiscale::analysis::RegionDetector", "classmultiscale_1_1analysis_1_1RegionDetector.html", null ],
     [ "multiscale::RGBColourGenerator", "classmultiscale_1_1RGBColourGenerator.html", null ],
     [ "multiscale::StringManipulator", "classmultiscale_1_1StringManipulator.html", null ]
 ];

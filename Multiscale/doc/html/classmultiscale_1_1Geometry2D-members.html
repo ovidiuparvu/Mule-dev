@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1Geometry2D.html',''
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,15 +111,19 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1Geometry2D.html',''
 
 <p>This is the complete list of members for <a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#a38aac604b2e7805b224b975c619b9486">computeAngle</a>(Point a, Point b, Point c)</td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#a7fccad2dd0df5535281470ffedd6ea7c">computeDistance</a>(Point a, Point b)</td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#a1d28574fea5ac857191dc88ca9802728">findPointsOnEdge</a>(const vector&lt; Point &gt; &amp;points, unsigned int nrOfRows, unsigned int nrOfCols)</td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#a4a97b1fa7409b22242ae5e0130bd9878">angleBtwPoints</a>(Point a, Point b, Point c)</td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#a86b6aa7d7b791e433f02fdb6ad42643a">distanceBtwPoints</a>(Point a, Point b)</td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#a40b6ea1e99dbdb26faed41ef24af2d12">findPointsOnEdge</a>(const vector&lt; Point &gt; &amp;points, unsigned int nrOfRows, unsigned int nrOfCols)</td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#ab98d1ed1e3cf6b9caac466bc97cf46d0">isPointOnEdge</a>(Point p, int nrOfRows, int nrOfCols)</td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#a83b172d713cfb34a4cf0e63fae5ff013">MATRIX_START_INDEX</a></td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#ab13bbf1dc0bf164fdb9ab0b17ae681a6">minimumDistancePointIndex</a>(const vector&lt; Point &gt; &amp;points, const Point &amp;origin)</td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html#afa60fa16a52b7ce5096a1d3fedf8b3d9">PI</a></td><td class="entry"><a class="el" href="classmultiscale_1_1Geometry2D.html">multiscale::Geometry2D</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
+    <li class="footer">Generated on Sun Mar 17 2013 18:45:12 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

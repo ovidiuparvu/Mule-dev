@@ -28,8 +28,13 @@ using namespace std;
 #define USE_CANNY_L2            true
 #define CONTOUR_AREA_ORIENTED   false
 
+#define ALPHA_REAL_MIN          1.0
+#define ALPHA_REAL_MAX          3.0
+#define BETA_REAL_MIN           -100
+#define BETA_REAL_MAX           100
+
 #define ALPHA_MAX               1000
-#define BETA_MAX                1000
+#define BETA_MAX                200
 #define KERNEL_MAX              100
 #define ITER_MAX                100
 #define CANNY_THRESH_MAX        100
@@ -46,12 +51,12 @@ using namespace std;
 
 int alpha                           = 750;
 int beta                            = 0;
-int blurKernelSize = IMAGE_MIN_INDEX;
+int blurKernelSize                  = 1;
 int morphologicalCloseIterations    = 2;
 int cannyThresholdRatio             = 3;
 int cannyLowerThreshold             = 50;
 int cannyAppertureSize              = 3;
-int epsilon = IMAGE_MIN_INDEX;
+int epsilon                         = 1;
 int sectorAreaThresh                = 140;
 int thresholdValue                  = 50;
 
@@ -78,7 +83,7 @@ void createTrackbars() {
     createTrackbar(TRACKBAR_THRESHOLD, WIN_PROCESSED_IMAGE, &thresholdValue, SECTOR_AREA_THRESH_MAX, nullptr, nullptr);
 }
 
-// Convert alpha from the range [0, 100] to [1.0, 3.0]
+// Convert alpha from the range [0, ALPHA_MAX] to [1.0, 3.0]
 
 double convertAlpha(int alpha) {
     return 1.0 + (((double) alpha) / (ALPHA_MAX)) * (3.0 - 1.0);
@@ -100,7 +105,7 @@ int convertToOdd(int number) {
 // Change the contrast and the brightness of the image
 
 void changeContrastAndBrightness(const Mat &originalImage, Mat &processedImage) {
-    originalImage.convertTo(processedImage, -IMAGE_MIN_INDEX, convertAlpha(alpha), convertBeta(beta));
+    originalImage.convertTo(processedImage, -1, convertAlpha(alpha), convertBeta(beta));
 }
 
 // Smooth out the differences in the image
@@ -115,9 +120,8 @@ void smoothImage(Mat &image) {
 
 // Apply the morphological open filter to the image
 
-void morphologicalOps(Mat &image) {
-    morphologyEx(image, image, MORPH_CLOSE, Mat(), Point(-IMAGE_MIN_INDEX, -IMAGE_MIN_INDEX),
-            morphologicalCloseIterations);
+void morphologicalClose(Mat &image) {
+    morphologyEx(image, image, MORPH_CLOSE, Mat(), Point(-1, -1), morphologicalCloseIterations);
 }
 
 /* Detect the edges in the image using Canny, apply dilate to fill gaps between edge segments
@@ -223,7 +227,7 @@ double sectorAngle(const vector<Point> &sector, int closestPointIndex, int nrOfR
     vector<Point> edgePoints = findPointsOnEdge(sector, nrOfRows, nrOfCols);
 
     // Consider that there are no more than 2 points on the edge
-    return angleBtwPoints(edgePoints[0], closestPoint, edgePoints[IMAGE_MIN_INDEX]);
+    return angleBtwPoints(edgePoints[0], closestPoint, edgePoints[1]);
 }
 
 // Print the details regarding the polygon
@@ -282,17 +286,16 @@ void findAndDisplayContours(const Mat &image, const Mat &originalImage) {
         displayPolygonInformation(approxCurve, originalImage.rows, originalImage.cols);
     }
 
-    displayImage(polygonsImage(Rect(IMAGE_MIN_INDEX, IMAGE_MIN_INDEX, originalImage.cols, originalImage.rows)),
-            WIN_POLYGONS);
+    displayImage(polygonsImage(Rect(1, 1, originalImage.cols, originalImage.rows)), WIN_POLYGONS);
 }
 
-// Process the image such that regions are easier to detect
+// Process the image and detect regions
 
 void processImage(const Mat &originalImage, Mat &processedImage) {
     Mat thresholdedImage;
 
     changeContrastAndBrightness(originalImage, processedImage);
-    morphologicalOps(processedImage);
+    morphologicalClose(processedImage);
     thresholdImage(processedImage, thresholdedImage);
     findAndDisplayContours(thresholdedImage, originalImage);
 }

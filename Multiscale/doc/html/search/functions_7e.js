@@ -9,5 +9,7 @@ var searchData=
   ['_7epolarcsvtoinputfilesconverter',['~PolarCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a0652ee20872717fca98e727933b6358a',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['_7erectangularcsvtoinputfilesconverter',['~RectangularCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a9a543e7612cab380778b6136fadb8bbb',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
   ['_7erectangularmatfactory',['~RectangularMatFactory',['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a7c3e88063bd0b1c339093f8e021de25e',1,'multiscale::analysis::RectangularMatFactory']]],
+  ['_7eregion',['~Region',['../classmultiscale_1_1analysis_1_1Region.html#ad808ff7d0cb92b532a2c3d5ac3c9bd92',1,'multiscale::analysis::Region']]],
+  ['_7eregiondetector',['~RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a6649d76cab7f3534fd10722e58bb868f',1,'multiscale::analysis::RegionDetector']]],
   ['_7estandardnumberiterator',['~StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html#a72d47409c7cf44c7f2ad3c1edc2890ff',1,'multiscale::StandardNumberIterator']]]
 ];

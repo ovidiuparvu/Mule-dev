@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -90,7 +92,7 @@ $(document).ready(function(){initNavTree('CartesianToConcentrationsConverter_8hp
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -104,7 +106,7 @@ $(document).ready(function(){initNavTree('CartesianToConcentrationsConverter_8hp
 <div class="title">CartesianToConcentrationsConverter.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CARTESIANTOCONCENTRATIONSCONVERTER_HPP_</span></div>
+<a href="CartesianToConcentrationsConverter_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CARTESIANTOCONCENTRATIONSCONVERTER_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CARTESIANTOCONCENTRATIONSCONVERTER_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -112,16 +114,16 @@ $(document).ready(function(){initNavTree('CartesianToConcentrationsConverter_8hp
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define ERR_CONC                &quot;All concentrations have to be between 0 and 1.&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_NONPOS_DIMENSION    &quot;The dimensions N and M must be positive.&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_NEG_SIM_TIME        &quot;The simulation time must be non-negative.&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_INPUT_OPEN          &quot;The input file could not be opened&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_IN_EXTRA_DATA       &quot;The input file contains more data than required.&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="CartesianToConcentrationsConverter_8hpp.html#a88bb4dcef0e2bea00bce86c02cf5f813">    9</a></span>&#160;<span class="preprocessor">#define ERR_CONC                &quot;All concentrations have to be between 0 and 1.&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="CartesianToConcentrationsConverter_8hpp.html#a1cf49e653837247035d3d9d1fbdb0dee">   10</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_NONPOS_DIMENSION    &quot;The dimensions N and M must be positive.&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="CartesianToConcentrationsConverter_8hpp.html#a3ad0d4f95970c66da7d75bf997714f6f">   11</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_NEG_SIM_TIME        &quot;The simulation time must be non-negative.&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="CartesianToConcentrationsConverter_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">   12</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_INPUT_OPEN          &quot;The input file could not be opened&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="CartesianToConcentrationsConverter_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038">   13</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_IN_EXTRA_DATA       &quot;The input file contains more data than required.&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define OUTPUT_FILE_EXTENSION   &quot;.out&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="CartesianToConcentrationsConverter_8hpp.html#aafd58e116a65aeb70ace2b91d42a22ae">   15</a></span>&#160;<span class="preprocessor">#define OUTPUT_FILE_EXTENSION   &quot;.out&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define RADIUS_MIN              0.001</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RADIUS_MAX              0.3</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="CartesianToConcentrationsConverter_8hpp.html#a6b9880fa336856728f874385983f7737">   17</a></span>&#160;<span class="preprocessor">#define RADIUS_MIN              0.001</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="CartesianToConcentrationsConverter_8hpp.html#a3923a2502324557507dda8740810aca3">   18</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RADIUS_MAX              0.3</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
@@ -132,12 +134,12 @@ $(document).ready(function(){initNavTree('CartesianToConcentrationsConverter_8hp
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                vector&lt;double&gt;  concentrations;     </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>   height;             </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>   width;              </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordtype">double</span>          simulationTime;     </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordtype">string</span> inputFilepath;       </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordtype">string</span> outputFilepath;      </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a335f54163cbabeaa80c1da811b9f9c0c">   30</a></span>&#160;                vector&lt;double&gt;  <a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a335f54163cbabeaa80c1da811b9f9c0c">concentrations</a>;     </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a94e58072f2e143bd6476133370ffb37f">   32</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>   <a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a94e58072f2e143bd6476133370ffb37f">height</a>;             </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#ae6fba5af405d884c7b70ed206a6d5cb1">   33</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>   <a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#ae6fba5af405d884c7b70ed206a6d5cb1">width</a>;              </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a6e66af60b82513b3186fdb32cad44597">   34</a></span>&#160;                <span class="keywordtype">double</span>          <a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a6e66af60b82513b3186fdb32cad44597">simulationTime</a>;     </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#affebbc7e1c67692bd529f19fc0451e58">   36</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#affebbc7e1c67692bd529f19fc0451e58">inputFilepath</a>;       </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9215448e33876a581b206a89b6651fd0">   37</a></span>&#160;                <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9215448e33876a581b206a89b6651fd0">outputFilepath</a>;      </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html" title="Scale the values of the rectangular geometry grid cells.">CartesianToConcentrationsConverter</a> (<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFilepath, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath);</div>
@@ -147,13 +149,13 @@ $(document).ready(function(){initNavTree('CartesianToConcentrationsConverter_8hp
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">void</span> readInputData() <span class="keywordflow">throw</span> (<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">void</span> readInputData() throw (<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordtype">void</span> readHeaderLine(ifstream &amp;fin) <span class="keywordflow">throw</span> (<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordtype">void</span> readHeaderLine(ifstream &amp;fin) throw (<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">void</span> readConcentrations(ifstream &amp;fin) <span class="keywordflow">throw</span> (<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">void</span> readConcentrations(ifstream &amp;fin) throw (<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordtype">void</span> outputResults();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
@@ -169,8 +171,8 @@ $(document).ready(function(){initNavTree('CartesianToConcentrationsConverter_8hp
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_981af49a0233aee53393df9c69217344.html">video</a></li><li class="navelem"><a class="el" href="dir_aa5e054497fb3f43f97b2c0819d5c059.html">rectangular</a></li><li class="navelem"><b>CartesianToConcentrationsConverter.hpp</b></li>
-    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_981af49a0233aee53393df9c69217344.html">video</a></li><li class="navelem"><a class="el" href="dir_aa5e054497fb3f43f97b2c0819d5c059.html">rectangular</a></li><li class="navelem"><a class="el" href="CartesianToConcentrationsConverter_8hpp.html">CartesianToConcentrationsConverter.hpp</a></li>
+    <li class="footer">Generated on Sun Mar 17 2013 18:45:12 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
