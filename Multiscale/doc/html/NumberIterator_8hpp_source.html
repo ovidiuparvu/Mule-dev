@@ -45,7 +45,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -69,7 +68,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -92,7 +90,7 @@ $(document).ready(function(){initNavTree('NumberIterator_8hpp_source.html','');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,7 +104,7 @@ $(document).ready(function(){initNavTree('NumberIterator_8hpp_source.html','');}
 <div class="title">NumberIterator.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="NumberIterator_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef NUMBERITERATOR_HPP_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef NUMBERITERATOR_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define NUMBERITERATOR_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
@@ -119,8 +117,8 @@ $(document).ready(function(){initNavTree('NumberIterator_8hpp_source.html','');}
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">   12</a></span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">upperBound</a>;    </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classmultiscale_1_1NumberIterator.html#a4ebe60757a8ace6d029d5884a1b7961e">NumberIterator</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">upperBound</a>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classmultiscale_1_1NumberIterator.html#aae2ce809339ed853f49619ad69596229">   17</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#aae2ce809339ed853f49619ad69596229">~NumberIterator</a>() {};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classmultiscale_1_1NumberIterator.html" title="Abstract class representing a number iterator.">NumberIterator</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">upperBound</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="classmultiscale_1_1NumberIterator.html" title="Abstract class representing a number iterator.">NumberIterator</a>() {};</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#ab0eda219688eeeecc4b8204557f04c8a" title="Initialise the iterator considering the given upper bound.">init</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">upperBound</a>);</div>
@@ -134,13 +132,13 @@ $(document).ready(function(){initNavTree('NumberIterator_8hpp_source.html','');}
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#a0bfeef7c3f120a5ae8d49d89b4529d6e" title="Initialisation of the members of the class.">initialise</a>() = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> initialise() = 0;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#a3c84ccdf0e279e67861b3cce34a26588" title="Check if there is a next number when in initialised state.">hasNextInitialised</a>() = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">bool</span> hasNextInitialised() = 0;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#a8004b1d304f8bac60ad7f4b353d20710" title="Check if there is a next number when in not initialised state.">hasNextNotInitialised</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordtype">bool</span> hasNextNotInitialised();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1NumberIterator.html#a21e658de178b6c957df5ea0482e6fbd6" title="Reset the current number to its initial value.">resetCurrentNumber</a>() = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> resetCurrentNumber() = 0;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    };</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
@@ -152,8 +150,8 @@ $(document).ready(function(){initNavTree('NumberIterator_8hpp_source.html','');}
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_9c52920f535709bb700f42abc2703532.html">util</a></li><li class="navelem"><a class="el" href="NumberIterator_8hpp.html">NumberIterator.hpp</a></li>
-    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_9c52920f535709bb700f42abc2703532.html">util</a></li><li class="navelem"><b>NumberIterator.hpp</b></li>
+    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

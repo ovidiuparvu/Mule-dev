@@ -45,7 +45,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -94,7 +93,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1video_1_1PolarGnupl
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,7 +105,6 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1video_1_1PolarGnupl
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">multiscale::video::PolarGnuplotScriptGenerator Class Reference</div>  </div>
@@ -117,167 +115,23 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1video_1_1PolarGnupl
  <a href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html">PolarGnuplotScriptGenerator.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for multiscale::video::PolarGnuplotScriptGenerator:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator__coll__graph.png" border="0" usemap="#multiscale_1_1video_1_1PolarGnuplotScriptGenerator_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3a3b9b044e1d0ae7095f2d2aa68fb381"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a3a3b9b044e1d0ae7095f2d2aa68fb381">generateScript</a> (const vector&lt; <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html">AnnularSector</a> &gt; &amp;annularSectors, double simulationTime, const string &amp;outputFilepath)  throw (string)</td></tr>
 <tr class="memdesc:a3a3b9b044e1d0ae7095f2d2aa68fb381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the script.  <a href="#a3a3b9b044e1d0ae7095f2d2aa68fb381">More...</a><br/></td></tr>
 <tr class="separator:a3a3b9b044e1d0ae7095f2d2aa68fb381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
-Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a6025d5e276d83f1b6bb78efb183cdafa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a6025d5e276d83f1b6bb78efb183cdafa">generateHeader</a> (ofstream &amp;fout, const string &amp;outputFilepath, double simulationTime)</td></tr>
-<tr class="memdesc:a6025d5e276d83f1b6bb78efb183cdafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the header of the script.  <a href="#a6025d5e276d83f1b6bb78efb183cdafa">More...</a><br/></td></tr>
-<tr class="separator:a6025d5e276d83f1b6bb78efb183cdafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a1d702948d59335f3e060e1620fe997"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a2a1d702948d59335f3e060e1620fe997">generateBody</a> (const vector&lt; <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html">AnnularSector</a> &gt; &amp;annularSectors, ofstream &amp;fout)</td></tr>
-<tr class="memdesc:a2a1d702948d59335f3e060e1620fe997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the body/content of the script.  <a href="#a2a1d702948d59335f3e060e1620fe997">More...</a><br/></td></tr>
-<tr class="separator:a2a1d702948d59335f3e060e1620fe997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee6866479f12315686f0496e7a6303e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#aee6866479f12315686f0496e7a6303e4">generateFooter</a> (ofstream &amp;fout)</td></tr>
-<tr class="memdesc:aee6866479f12315686f0496e7a6303e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the footer of the script.  <a href="#aee6866479f12315686f0496e7a6303e4">More...</a><br/></td></tr>
-<tr class="separator:aee6866479f12315686f0496e7a6303e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77e56aa676f6a3f087ec4bf037844b62"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a77e56aa676f6a3f087ec4bf037844b62">outputHeader</a> (ifstream &amp;fin, const string &amp;outputFilename, double simulationTime, ofstream &amp;fout)</td></tr>
-<tr class="memdesc:a77e56aa676f6a3f087ec4bf037844b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the header of the script.  <a href="#a77e56aa676f6a3f087ec4bf037844b62">More...</a><br/></td></tr>
-<tr class="separator:a77e56aa676f6a3f087ec4bf037844b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af84e8dd289a5ae68cded20d4ea1d289f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#af84e8dd289a5ae68cded20d4ea1d289f">outputContent</a> (const vector&lt; <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html">AnnularSector</a> &gt; &amp;annularSectors, const string &amp;contentTemplate, ofstream &amp;fout)</td></tr>
-<tr class="memdesc:af84e8dd289a5ae68cded20d4ea1d289f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the content of the script.  <a href="#af84e8dd289a5ae68cded20d4ea1d289f">More...</a><br/></td></tr>
-<tr class="separator:af84e8dd289a5ae68cded20d4ea1d289f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa1cce98e3ffb25fc9d1f5a8f2838ee1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#aaa1cce98e3ffb25fc9d1f5a8f2838ee1">outputFooter</a> (ifstream &amp;fin, ofstream &amp;fout)</td></tr>
-<tr class="memdesc:aaa1cce98e3ffb25fc9d1f5a8f2838ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the footer of the script.  <a href="#aaa1cce98e3ffb25fc9d1f5a8f2838ee1">More...</a><br/></td></tr>
-<tr class="separator:aaa1cce98e3ffb25fc9d1f5a8f2838ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e104e3f6bc29489ce116b703331e7b8"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a2e104e3f6bc29489ce116b703331e7b8">readContentTemplate</a> (ifstream &amp;fin)</td></tr>
-<tr class="memdesc:a2e104e3f6bc29489ce116b703331e7b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read content template.  <a href="#a2e104e3f6bc29489ce116b703331e7b8">More...</a><br/></td></tr>
-<tr class="separator:a2e104e3f6bc29489ce116b703331e7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Gnuplot script generator from the provided annular sectors. </p>
 
 <p>Definition at line <a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html#l00031">31</a> of file <a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html">PolarGnuplotScriptGenerator.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2a1d702948d59335f3e060e1620fe997"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void multiscale::video::PolarGnuplotScriptGenerator::generateBody </td>
-          <td>(</td>
-          <td class="paramtype">const vector&lt; <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html">AnnularSector</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>annularSectors</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ofstream &amp;&#160;</td>
-          <td class="paramname"><em>fout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generate the body/content of the script. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">annularSectors</td><td>Annular sectors </td></tr>
-    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="aee6866479f12315686f0496e7a6303e4"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void multiscale::video::PolarGnuplotScriptGenerator::generateFooter </td>
-          <td>(</td>
-          <td class="paramtype">ofstream &amp;&#160;</td>
-          <td class="paramname"><em>fout</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generate the footer of the script. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a6025d5e276d83f1b6bb78efb183cdafa"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void multiscale::video::PolarGnuplotScriptGenerator::generateHeader </td>
-          <td>(</td>
-          <td class="paramtype">ofstream &amp;&#160;</td>
-          <td class="paramname"><em>fout</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>outputFilepath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>simulationTime</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generate the header of the script. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
-    <tr><td class="paramname">outputFilepath</td><td>Path to the output file </td></tr>
-    <tr><td class="paramname">simulationTime</td><td>Simulation time </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="a3a3b9b044e1d0ae7095f2d2aa68fb381"></a>
 <div class="memitem">
 <div class="memproto">
@@ -328,188 +182,6 @@ Static Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af84e8dd289a5ae68cded20d4ea1d289f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void multiscale::video::PolarGnuplotScriptGenerator::outputContent </td>
-          <td>(</td>
-          <td class="paramtype">const vector&lt; <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html">AnnularSector</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>annularSectors</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>contentTemplate</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ofstream &amp;&#160;</td>
-          <td class="paramname"><em>fout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Output the content of the script. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">annularSectors</td><td>Annular sectors </td></tr>
-    <tr><td class="paramname">contentTemplate</td><td>Template used for generating output for each annular sector </td></tr>
-    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="aaa1cce98e3ffb25fc9d1f5a8f2838ee1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void multiscale::video::PolarGnuplotScriptGenerator::outputFooter </td>
-          <td>(</td>
-          <td class="paramtype">ifstream &amp;&#160;</td>
-          <td class="paramname"><em>fin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ofstream &amp;&#160;</td>
-          <td class="paramname"><em>fout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Output the footer of the script. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fin</td><td>Input file stream </td></tr>
-    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a77e56aa676f6a3f087ec4bf037844b62"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void multiscale::video::PolarGnuplotScriptGenerator::outputHeader </td>
-          <td>(</td>
-          <td class="paramtype">ifstream &amp;&#160;</td>
-          <td class="paramname"><em>fin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>outputFilename</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>simulationTime</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">ofstream &amp;&#160;</td>
-          <td class="paramname"><em>fout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Output the header of the script. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fin</td><td>Input file stream </td></tr>
-    <tr><td class="paramname">outputFilename</td><td>Name of the output file </td></tr>
-    <tr><td class="paramname">simulationTime</td><td>Simulation time </td></tr>
-    <tr><td class="paramname">fout</td><td>Output file stream </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a2e104e3f6bc29489ce116b703331e7b8"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static string multiscale::video::PolarGnuplotScriptGenerator::readContentTemplate </td>
-          <td>(</td>
-          <td class="paramtype">ifstream &amp;&#160;</td>
-          <td class="paramname"><em>fin</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Read content template. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fin</td><td>Input file stream </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/multiscale/video/circular/<a class="el" href="PolarGnuplotScriptGenerator_8hpp_source.html">PolarGnuplotScriptGenerator.hpp</a></li>
 </ul>
@@ -518,8 +190,8 @@ Static Private Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1video.html">video</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">PolarGnuplotScriptGenerator</a></li>
-    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
+    <li class="navelem"><b>multiscale</b></li><li class="navelem"><b>video</b></li><li class="navelem"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">PolarGnuplotScriptGenerator</a></li>
+    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -1,7 +1,5 @@
 var classmultiscale_1_1analysis_1_1MatFactory =
 [
-    [ "MatFactory", "classmultiscale_1_1analysis_1_1MatFactory.html#a2ec86a1042f94235530a818075e7f9e9", null ],
-    [ "~MatFactory", "classmultiscale_1_1analysis_1_1MatFactory.html#a3d5db3cc2391b83824567733a587836f", null ],
     [ "convertToIntensity", "classmultiscale_1_1analysis_1_1MatFactory.html#a5b9ff7b116b6e0d2af7c79cf2a2bdb61", null ],
     [ "create", "classmultiscale_1_1analysis_1_1MatFactory.html#a9ee822a8ea24726d92c598a6fc2ddf7a", null ],
     [ "initInputFile", "classmultiscale_1_1analysis_1_1MatFactory.html#ae91f33b0efb03e107d32a7c6e5bee780", null ],

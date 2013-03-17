@@ -1,14 +1,6 @@
 var NAVTREE =
 [
   [ "Multiscale", "index.html", [
-    [ "Namespaces", null, [
-      [ "Namespace List", "namespaces.html", "namespaces" ],
-      [ "Namespace Members", "namespacemembers.html", [
-        [ "All", "namespacemembers.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
-      ] ]
-    ] ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
       [ "Class Index", "classes.html", null ],
@@ -20,19 +12,14 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", null, [
-      [ "File List", "files.html", "files" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Macros", "globals_defs.html", null ]
-      ] ]
+      [ "File List", "files.html", "files" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"AnnularSector_8hpp.html",
-"classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ac50f333a0724de27857272e8a1412fa2"
+".html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

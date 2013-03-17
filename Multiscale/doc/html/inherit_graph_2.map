@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classmultiscale_1_1NumberIterator.html" title="Abstract class representing a number iterator." alt="" coords="5,48,181,77"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1LexicographicNumberIterator.html" title="Iterator class starting at 1 and ending at the provided upper bound considering that each number is f..." alt="" coords="239,5,407,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1StandardNumberIterator.html" title="Iterator class starting at 1 and iterating over all natural numbers until the provided upper bound is..." alt="" coords="229,74,416,121"/>
+</map>

@@ -45,7 +45,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -94,7 +93,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1video_1_1PolarGnupl
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,20 +110,13 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1video_1_1PolarGnupl
 
 <p>This is the complete list of members for <a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a2a1d702948d59335f3e060e1620fe997">generateBody</a>(const vector&lt; AnnularSector &gt; &amp;annularSectors, ofstream &amp;fout)</td><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#aee6866479f12315686f0496e7a6303e4">generateFooter</a>(ofstream &amp;fout)</td><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a6025d5e276d83f1b6bb78efb183cdafa">generateHeader</a>(ofstream &amp;fout, const string &amp;outputFilepath, double simulationTime)</td><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a3a3b9b044e1d0ae7095f2d2aa68fb381">generateScript</a>(const vector&lt; AnnularSector &gt; &amp;annularSectors, double simulationTime, const string &amp;outputFilepath)</td><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#af84e8dd289a5ae68cded20d4ea1d289f">outputContent</a>(const vector&lt; AnnularSector &gt; &amp;annularSectors, const string &amp;contentTemplate, ofstream &amp;fout)</td><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#aaa1cce98e3ffb25fc9d1f5a8f2838ee1">outputFooter</a>(ifstream &amp;fin, ofstream &amp;fout)</td><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a77e56aa676f6a3f087ec4bf037844b62">outputHeader</a>(ifstream &amp;fin, const string &amp;outputFilename, double simulationTime, ofstream &amp;fout)</td><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a2e104e3f6bc29489ce116b703331e7b8">readContentTemplate</a>(ifstream &amp;fin)</td><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a3a3b9b044e1d0ae7095f2d2aa68fb381">generateScript</a>(const vector&lt; AnnularSector &gt; &amp;annularSectors, double simulationTime, const string &amp;outputFilepath)</td><td class="entry"><a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html">multiscale::video::PolarGnuplotScriptGenerator</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
+    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

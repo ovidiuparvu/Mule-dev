@@ -45,7 +45,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li class="current"><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -83,27 +82,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
-      <li><a href="#index_a"><span>a</span></a></li>
-      <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
-      <li><a href="#index_d"><span>d</span></a></li>
-      <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
-      <li><a href="#index_l"><span>l</span></a></li>
-      <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_n"><span>n</span></a></li>
-      <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
       <li><a href="#index_u"><span>u</span></a></li>
-      <li><a href="#index_v"><span>v</span></a></li>
-      <li><a href="#index_w"><span>w</span></a></li>
-      <li><a href="#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -126,7 +115,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -136,131 +125,32 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
-
-<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
-<li>AnnularSector()
-: <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#ac4d6136fb13874a743894d2d9d29883e">multiscale::video::AnnularSector</a>
-</li>
-<li>annularSectors
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">multiscale::video::CartesianToPolarConverter</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
-<li>blue
-: <a class="el" href="classmultiscale_1_1RGBColourGenerator.html#a5b48dae9174a794eb70c779c05d87c3f">multiscale::RGBColourGenerator</a>
-</li>
-</ul>
-
+<div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
-<li>CartesianToConcentrationsConverter()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#aea8d09697d52178610f3d8ced458740c">multiscale::video::CartesianToConcentrationsConverter</a>
-</li>
-<li>CartesianToPolarConverter()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a54537c7ee76b2ce2f012b3a57445888e">multiscale::video::CartesianToPolarConverter</a>
-</li>
-<li>circlesIterator
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ad4cf12c7f3951f0bb388939797cbcc0c">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
 <li>cols
 : <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">multiscale::analysis::MatFactory</a>
-</li>
-<li>columnsIterator
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#aeeee251d65b8c189a72d08f3c70a94be">multiscale::video::RectangularCsvToInputFilesConverter</a>
 </li>
 <li>computeAngle()
 : <a class="el" href="classmultiscale_1_1Geometry2D.html#a38aac604b2e7805b224b975c619b9486">multiscale::Geometry2D</a>
 </li>
-<li>computeConcentration()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a80b141f2688797b0a9f17402158e43c0">multiscale::video::RectangularCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a66cd3de6ec672dd76363d9ecd02f11ad">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-<li>computeConcentrationWrtArea()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a39ffd17c93bf422a13edadb58c1c07b4">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
 <li>computeDistance()
 : <a class="el" href="classmultiscale_1_1Geometry2D.html#a7fccad2dd0df5535281470ffedd6ea7c">multiscale::Geometry2D</a>
 </li>
-<li>computeNextPositionConcentration()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ac50f333a0724de27857272e8a1412fa2">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a16fbcea80de7b916e0d499f887aea178">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>computeNonScaledConcentration()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a0dd89253bba2ad1c23febb27d99622bf">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a2c3ae2a63be955deabbb0df00fd48f35">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>computeNormalisedConcentration()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#abedfe8f202011fb92d4cb9c88e7d91cc">multiscale::video::RectangularCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a32753b188d18c7589513263ab40766ce">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-<li>computeRGBValues()
-: <a class="el" href="classmultiscale_1_1RGBColourGenerator.html#a47f272a81131b78037252d0fa2ed853d">multiscale::RGBColourGenerator</a>
-</li>
-<li>computeScaledConcentration()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ae0ec072f545253a81b8423fd926dc133">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a57e2685107e8cb1c20ca44ccd56c2d1f">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>computeSimulationTime()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a3d2bacb4672a8387d978dbc65395450f">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#aedaaaf82f6724dfec55f4140318c5687">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>concentration
-: <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#a7f6a1e7618c9e2a10e35efb5740395b1">multiscale::video::AnnularSector</a>
-</li>
-<li>concentrations
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">multiscale::video::CartesianToPolarConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a335f54163cbabeaa80c1da811b9f9c0c">multiscale::video::CartesianToConcentrationsConverter</a>
-</li>
-<li>concentrationsIndex
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#afd9f17e6ba2dc46b920ab28538278362">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a48b31e858d0ebac757af77703202634f">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
 <li>convert()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9a14c8de44d0cdfb0c6c777cd21bb3dc">multiscale::video::CartesianToConcentrationsConverter</a>
+: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a084b9efe7dad336be46c035f57c7be40">multiscale::video::CartesianToPolarConverter</a>
 , <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#af501ba87b0a4dffc9e0f163f5db80a33">multiscale::video::RectangularCsvToInputFilesConverter</a>
 , <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a149b58e01b6a6936af5323eddaf7ca5c">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a084b9efe7dad336be46c035f57c7be40">multiscale::video::CartesianToPolarConverter</a>
+, <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9a14c8de44d0cdfb0c6c777cd21bb3dc">multiscale::video::CartesianToConcentrationsConverter</a>
 </li>
 <li>convertFromRange()
 : <a class="el" href="classmultiscale_1_1NumericRangeManipulator.html#a4459c449fb7ebc07bcb8934d3a860e7e">multiscale::NumericRangeManipulator</a>
-</li>
-<li>convertHSVToRGB()
-: <a class="el" href="classmultiscale_1_1RGBColourGenerator.html#a893ffc32e2d7985c681d185a90325628">multiscale::RGBColourGenerator</a>
-</li>
-<li>convertRGBToString()
-: <a class="el" href="classmultiscale_1_1RGBColourGenerator.html#a244d4daeabfb3b1d6320dd8a79e33543">multiscale::RGBColourGenerator</a>
 </li>
 <li>convertToIntensity()
 : <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a5b9ff7b116b6e0d2af7c79cf2a2bdb61">multiscale::analysis::MatFactory</a>
 </li>
 <li>create()
 : <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9ee822a8ea24726d92c598a6fc2ddf7a">multiscale::analysis::MatFactory</a>
-</li>
-<li>currentNumber
-: <a class="el" href="classmultiscale_1_1StandardNumberIterator.html#a1f40c321994d53f705331badd64542be">multiscale::StandardNumberIterator</a>
-</li>
-<li>currentNumberDigits
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#af42ebeea695a31c2da714332c520ae79">multiscale::LexicographicNumberIterator</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
-<li>digitsToNumber()
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a43ff7a3ec6e49070ab35d56310478991">multiscale::LexicographicNumberIterator</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
-<li>endingAngle
-: <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#a0aebd11072dbefe42196d6bda2e4318d">multiscale::video::AnnularSector</a>
-</li>
-<li>endingRadius
-: <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#aa45c5399240707d0b3fc02ee86b97c79">multiscale::video::AnnularSector</a>
 </li>
 </ul>
 
@@ -278,18 +168,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>generate()
 : <a class="el" href="classmultiscale_1_1RGBColourGenerator.html#a36390e821e7718f237a50a4936eac223">multiscale::RGBColourGenerator</a>
-</li>
-<li>generateBody()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a2a1d702948d59335f3e060e1620fe997">multiscale::video::PolarGnuplotScriptGenerator</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a50b50a721930e7a94bd792ab573c3f9b">multiscale::video::RectangularGnuplotScriptGenerator</a>
-</li>
-<li>generateFooter()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#aee6866479f12315686f0496e7a6303e4">multiscale::video::PolarGnuplotScriptGenerator</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a7c8102ecd6f4491cc2ed6515b9dcea56">multiscale::video::RectangularGnuplotScriptGenerator</a>
-</li>
-<li>generateHeader()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a6025d5e276d83f1b6bb78efb183cdafa">multiscale::video::PolarGnuplotScriptGenerator</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#aa42f88d69d564ea71c5b360345f07d11">multiscale::video::RectangularGnuplotScriptGenerator</a>
 </li>
 <li>generateScript()
 : <a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a3a3b9b044e1d0ae7095f2d2aa68fb381">multiscale::video::PolarGnuplotScriptGenerator</a>
@@ -310,27 +188,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>getStartingRadius()
 : <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#afeb27e31a55db1b2a69803f34c2956f6">multiscale::video::AnnularSector</a>
 </li>
-<li>green
-: <a class="el" href="classmultiscale_1_1RGBColourGenerator.html#ae8d94d24b109954be1da2a04c8ec9af7">multiscale::RGBColourGenerator</a>
-</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
 <li>hasNext()
 : <a class="el" href="classmultiscale_1_1NumberIterator.html#acd6827f0d626477474ad05d1134d652c">multiscale::NumberIterator</a>
-</li>
-<li>hasNextInitialised()
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#ab4e4280e8164688edab479743c5310b8">multiscale::LexicographicNumberIterator</a>
-, <a class="el" href="classmultiscale_1_1NumberIterator.html#a3c84ccdf0e279e67861b3cce34a26588">multiscale::NumberIterator</a>
-, <a class="el" href="classmultiscale_1_1StandardNumberIterator.html#a762814724e727f424c0258487d0d7303">multiscale::StandardNumberIterator</a>
-</li>
-<li>hasNextNotInitialised()
-: <a class="el" href="classmultiscale_1_1NumberIterator.html#a8004b1d304f8bac60ad7f4b353d20710">multiscale::NumberIterator</a>
-</li>
-<li>height
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a94e58072f2e143bd6476133370ffb37f">multiscale::video::CartesianToConcentrationsConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a766bc7eea1c602f46a4a6c0948464c8a">multiscale::video::RectangularCsvToInputFilesConverter</a>
 </li>
 </ul>
 
@@ -340,232 +203,53 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="classmultiscale_1_1NumberIterator.html#ab0eda219688eeeecc4b8204557f04c8a">multiscale::NumberIterator</a>
 </li>
 <li>initialise()
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#af923903a528438efbddfd14c4bfe1b0d">multiscale::LexicographicNumberIterator</a>
-, <a class="el" href="classmultiscale_1_1NumberIterator.html#a0bfeef7c3f120a5ae8d49d89b4529d6e">multiscale::NumberIterator</a>
-, <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#aa7da3fa69b37238f79caa3e3938d5b32">multiscale::video::AnnularSector</a>
-, <a class="el" href="classmultiscale_1_1StandardNumberIterator.html#aa63d435ae9f209d2403ca5083d57ae2b">multiscale::StandardNumberIterator</a>
+: <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#aa7da3fa69b37238f79caa3e3938d5b32">multiscale::video::AnnularSector</a>
 </li>
 <li>initInputFile()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ad10db00c518ac3ac63364de5cd596408">multiscale::video::RectangularCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#ae91f33b0efb03e107d32a7c6e5bee780">multiscale::analysis::MatFactory</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aae69bb95f88baa7310b4b940a4d9f9f6">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-<li>initIterators()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a8509319e9539bc486641937daf3e9375">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a54600217f2e5314debbfedcc69acf8f5">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>initMaximumConcentration()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a22d74f678b8f6c98329a36431f084ab9">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a64f88972f497179607d35c761dade644">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>initOutputFile()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a40dad8138384df170b5f1ddf44a242f2">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a70347343d16eb086692e9a50f752e95e">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>inputFilepath
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#affebbc7e1c67692bd529f19fc0451e58">multiscale::video::CartesianToConcentrationsConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7b33b6d00b5e0d809f4fb0d76985ab59">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05">multiscale::video::CartesianToPolarConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a407e3c2607f036d531445e22454a910e">multiscale::video::RectangularCsvToInputFilesConverter</a>
+: <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#ae91f33b0efb03e107d32a7c6e5bee780">multiscale::analysis::MatFactory</a>
 </li>
 <li>isInitialised
 : <a class="el" href="classmultiscale_1_1NumberIterator.html#ae3d929444e14677de0b616a059380f3f">multiscale::NumberIterator</a>
-</li>
-<li>isLargerThanUpperBound()
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a49d9a28b7a6e9b29c78425b38dff0040">multiscale::LexicographicNumberIterator</a>
-</li>
-<li>isPointOnEdge()
-: <a class="el" href="classmultiscale_1_1Geometry2D.html#a446637e82e3c5d12cc63c993d2abac55">multiscale::Geometry2D</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
-<li>LexicographicNumberIterator()
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a0dfe92cad110c2e4d5e5b72e97481c97">multiscale::LexicographicNumberIterator</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
-<li>MatFactory()
-: <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a2ec86a1042f94235530a818075e7f9e9">multiscale::analysis::MatFactory</a>
-</li>
-<li>MATRIX_START_INDEX
-: <a class="el" href="classmultiscale_1_1Geometry2D.html#a83b172d713cfb34a4cf0e63fae5ff013">multiscale::Geometry2D</a>
-</li>
-<li>maximumConcentration
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a89b7dce2825cd5c8c45a1e6f19770e5f">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#aeddcdf92c6f79bf41546fd417d0808b1">multiscale::video::RectangularCsvToInputFilesConverter</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
-<li>nrOfConcentrationsForPosition
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a3a9301788514c50c295ca113a4114938">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a0bfea1eb0f7dc76deee05af1e2eb744b">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>nrOfConcentricCircles
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7aa37d18880e822369cbe118a093e24f">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">multiscale::video::CartesianToPolarConverter</a>
-</li>
-<li>nrOfSectors
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">multiscale::video::CartesianToPolarConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a9246a2c9749602af145d5579bde8a9d1">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
 <li>number()
-: <a class="el" href="classmultiscale_1_1NumberIterator.html#a967fc14523f8726d5d6352d4ed6439ca">multiscale::NumberIterator</a>
+: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a8cd2da370f1ac6f44a8d4c90bdef8758">multiscale::LexicographicNumberIterator</a>
+, <a class="el" href="classmultiscale_1_1NumberIterator.html#a967fc14523f8726d5d6352d4ed6439ca">multiscale::NumberIterator</a>
 , <a class="el" href="classmultiscale_1_1StandardNumberIterator.html#aec97b7757778aa8983b13baa975c626a">multiscale::StandardNumberIterator</a>
-, <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a8cd2da370f1ac6f44a8d4c90bdef8758">multiscale::LexicographicNumberIterator</a>
-</li>
-<li>NumberIterator()
-: <a class="el" href="classmultiscale_1_1NumberIterator.html#a4ebe60757a8ace6d029d5884a1b7961e">multiscale::NumberIterator</a>
-</li>
-<li>numberToDigits()
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#ae18dc6f3c91acdcadcc1998108fb446f">multiscale::LexicographicNumberIterator</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
-<li>outputContent()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#af84e8dd289a5ae68cded20d4ea1d289f">multiscale::video::PolarGnuplotScriptGenerator</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a428f503d9909d9502fdbf423c53fe2a3">multiscale::video::RectangularGnuplotScriptGenerator</a>
-</li>
-<li>outputFilepath
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a1033d31c9bfc7ccad08337c7b0fa6e6e">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9215448e33876a581b206a89b6651fd0">multiscale::video::CartesianToConcentrationsConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">multiscale::video::CartesianToPolarConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a2bb6a802fac9b0928bc53a8c71a1c33c">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>outputFooter()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#acc8d9a4f155ab49803db4f181252f868">multiscale::video::RectangularGnuplotScriptGenerator</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#aaa1cce98e3ffb25fc9d1f5a8f2838ee1">multiscale::video::PolarGnuplotScriptGenerator</a>
-</li>
-<li>outputHeader()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a77e56aa676f6a3f087ec4bf037844b62">multiscale::video::PolarGnuplotScriptGenerator</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a1c343b896bf282fe0f66b0fe8be048b2">multiscale::video::RectangularGnuplotScriptGenerator</a>
-</li>
-<li>outputResults()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a74ccca478fe2bd6fca48a528b03edcdc">multiscale::video::CartesianToConcentrationsConverter</a>
-</li>
-<li>outputResultsAsFile()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ae4bf38c19ecfb3478eeb815610ecaedd">multiscale::video::CartesianToPolarConverter</a>
-</li>
-<li>outputResultsAsScript()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a6dbd90d515a1fe4b702ef238f54dc5b9">multiscale::video::CartesianToPolarConverter</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
-<li>padWithZeros()
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a303760947326df5dfa92a4f752bf739a">multiscale::LexicographicNumberIterator</a>
-</li>
-<li>PI
-: <a class="el" href="classmultiscale_1_1Geometry2D.html#afa60fa16a52b7ce5096a1d3fedf8b3d9">multiscale::Geometry2D</a>
-</li>
-<li>PolarCsvToInputFilesConverter()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ae13140d68ba92fa3c50f2a5c1aab8c09">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
 <li>processConcentrations()
 : <a class="el" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a2d8e5697826dea28b4783442cf038c53">multiscale::analysis::RectangularMatFactory</a>
 , <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a0493c87d7b74619a95f14c0e31a3e178">multiscale::analysis::MatFactory</a>
-</li>
-<li>processInputFile()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ac4afa7b0362f4bfa7d4d3e0278f848e8">multiscale::video::RectangularCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ae637dd1e455acb90ba10295989b21586">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-<li>processLine()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a0a5aa68b87e9a97d01ffb778ccd44cea">multiscale::video::RectangularCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a1ca46c2117af617a73a546af0b4d83c3">multiscale::video::PolarCsvToInputFilesConverter</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>readConcentrations()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#af0bdc97fb8fe956e8149f768b20a5cee">multiscale::video::CartesianToPolarConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a76cee629e91caa7b04590e8051a3d351">multiscale::video::CartesianToConcentrationsConverter</a>
-</li>
-<li>readContentTemplate()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a2e104e3f6bc29489ce116b703331e7b8">multiscale::video::PolarGnuplotScriptGenerator</a>
-</li>
-<li>readHeaderLine()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a1a1849f65d18b3403a5007d42601a815">multiscale::video::CartesianToPolarConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#ac0fd68601cce10dce22677e460a5439d">multiscale::video::CartesianToConcentrationsConverter</a>
-</li>
-<li>readInputData()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#acd3e80d1d527bc3a8fa47c6950845455">multiscale::video::CartesianToPolarConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a361b8f2b6a4de7b531bffe554b6d6ffb">multiscale::video::CartesianToConcentrationsConverter</a>
-</li>
-<li>RectangularCsvToInputFilesConverter()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#afb10956b6af429826f6077d65616431a">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>RectangularMatFactory()
-: <a class="el" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a869e435db6834024bd864a68f051b022">multiscale::analysis::RectangularMatFactory</a>
-</li>
-<li>red
-: <a class="el" href="classmultiscale_1_1RGBColourGenerator.html#a11da8c4a9ca59ea8c20177cbb5b57ceb">multiscale::RGBColourGenerator</a>
-</li>
 <li>replace()
 : <a class="el" href="classmultiscale_1_1StringManipulator.html#a8bd8c91229eef87e3d175c3544baf82e">multiscale::StringManipulator</a>
 </li>
 <li>reset()
 : <a class="el" href="classmultiscale_1_1NumberIterator.html#a17220743680f370fcb311f155ade7e50">multiscale::NumberIterator</a>
 </li>
-<li>resetCurrentNumber()
-: <a class="el" href="classmultiscale_1_1StandardNumberIterator.html#a432d980c285cd7be1f5fb2da0265bea2">multiscale::StandardNumberIterator</a>
-, <a class="el" href="classmultiscale_1_1NumberIterator.html#a21e658de178b6c957df5ea0482e6fbd6">multiscale::NumberIterator</a>
-, <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#ab84facf8bec1c2f0544d82e5e49b4ddf">multiscale::LexicographicNumberIterator</a>
-</li>
-<li>reverseDigits()
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a8af70d88c6b445d27ae935fa261cdf34">multiscale::LexicographicNumberIterator</a>
-</li>
 <li>rows
 : <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">multiscale::analysis::MatFactory</a>
-</li>
-<li>rowsIterator
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a19fa13140bc5d6b163222030b6dfe61e">multiscale::video::RectangularCsvToInputFilesConverter</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
-<li>sectorsIterator
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-<li>selectedConcentrationIndex
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a121d592659f9f5075c8c78aa46c2950c">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a5143d25a98a097107c2bed748b4d8df0">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
 <li>simulationTime
 : <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96">multiscale::analysis::MatFactory</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">multiscale::video::CartesianToPolarConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a6e66af60b82513b3186fdb32cad44597">multiscale::video::CartesianToConcentrationsConverter</a>
 </li>
 <li>split()
 : <a class="el" href="classmultiscale_1_1StringManipulator.html#afd1091a0cf87508dbf99b5f196b37667">multiscale::StringManipulator</a>
-</li>
-<li>splitFirstPartInConcentrations()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a010e7df8b1e664079bede8353dc64712">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-<li>splitLineInConcentrations()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a71801c9edc74175a4b1876ac09cc578a">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#acc95e5f312764f70b00f6aa884e7bd51">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>splitOtherPartsInConcentrations()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a5773823226797a2f04cf1dda5a0f6c0f">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-<li>StandardNumberIterator()
-: <a class="el" href="classmultiscale_1_1StandardNumberIterator.html#abca65fca3d1d735f67c0f95b70fe2023">multiscale::StandardNumberIterator</a>
-</li>
-<li>startingAngle
-: <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#a437d3dc1b2fadace28bdc3d26a78c0b3">multiscale::video::AnnularSector</a>
-</li>
-<li>startingRadius
-: <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#a4c0094d8993edb40b15580fa58a8a393">multiscale::video::AnnularSector</a>
 </li>
 </ul>
 
@@ -575,80 +259,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="classmultiscale_1_1StringManipulator.html#a91858c4faa5ee210a9b67e4885835368">multiscale::StringManipulator</a>
 , <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#a0fa27e34203f3e93c6ac87802234e368">multiscale::video::AnnularSector</a>
 </li>
-<li>transformToAnnularSectors()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a60abebb682eed4432ac3f75555e31f32">multiscale::video::CartesianToPolarConverter</a>
-</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
-<li>updateMaximumConcentration()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a1817592d3f7a21cfea184d4678a8b5de">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a8ea74133a12f5908bc6d135cb11b7e5e">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
 <li>upperBound
 : <a class="el" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">multiscale::NumberIterator</a>
-</li>
-<li>upperBoundDigits
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a909a054ae4d3e79e5daa3059a94000d0">multiscale::LexicographicNumberIterator</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
-<li>validateInput()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a9f47b4eb2e7424d710d53c28923b0960">multiscale::video::PolarCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a0e2261de8c4c413bbcf1152570e830ea">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>validateInputLine()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ad0394f35d91dfbb5413d942fcb91b2e6">multiscale::video::RectangularCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a3754e1ab09993f63829e4c3878f1f2fb">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-<li>validateSelectedConcentrationIndex()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#aa07ca877fbbcef1aca6a8840015e5a9d">multiscale::video::RectangularCsvToInputFilesConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a671eda514db8283b0bdc36405832e340">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
-<li>width
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#ae6fba5af405d884c7b70ed206a6d5cb1">multiscale::video::CartesianToConcentrationsConverter</a>
-, <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a7fe7f3d014535567fbeb465eb01cde1b">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_0x7e"></a>- ~ -</h3><ul>
-<li>~AnnularSector()
-: <a class="el" href="classmultiscale_1_1video_1_1AnnularSector.html#af818671c028456977ca1fef11f07af3d">multiscale::video::AnnularSector</a>
-</li>
-<li>~CartesianToConcentrationsConverter()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#aa44c78da07d44e5de13f3e7e9894776d">multiscale::video::CartesianToConcentrationsConverter</a>
-</li>
-<li>~CartesianToPolarConverter()
-: <a class="el" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a91aa23f926ab1105ee9045e5ef8b509b">multiscale::video::CartesianToPolarConverter</a>
-</li>
-<li>~LexicographicNumberIterator()
-: <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a7f6070d2341becce47d4cadb7b4a571d">multiscale::LexicographicNumberIterator</a>
-</li>
-<li>~MatFactory()
-: <a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a3d5db3cc2391b83824567733a587836f">multiscale::analysis::MatFactory</a>
-</li>
-<li>~NumberIterator()
-: <a class="el" href="classmultiscale_1_1NumberIterator.html#aae2ce809339ed853f49619ad69596229">multiscale::NumberIterator</a>
-</li>
-<li>~PolarCsvToInputFilesConverter()
-: <a class="el" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a0652ee20872717fca98e727933b6358a">multiscale::video::PolarCsvToInputFilesConverter</a>
-</li>
-<li>~RectangularCsvToInputFilesConverter()
-: <a class="el" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a9a543e7612cab380778b6136fadb8bbb">multiscale::video::RectangularCsvToInputFilesConverter</a>
-</li>
-<li>~RectangularMatFactory()
-: <a class="el" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a7c3e88063bd0b1c339093f8e021de25e">multiscale::analysis::RectangularMatFactory</a>
-</li>
-<li>~StandardNumberIterator()
-: <a class="el" href="classmultiscale_1_1StandardNumberIterator.html#a72d47409c7cf44c7f2ad3c1edc2890ff">multiscale::StandardNumberIterator</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -656,7 +272,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
+    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

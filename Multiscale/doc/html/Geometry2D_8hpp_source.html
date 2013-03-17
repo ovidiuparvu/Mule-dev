@@ -45,7 +45,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -69,7 +68,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -92,7 +90,7 @@ $(document).ready(function(){initNavTree('Geometry2D_8hpp_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,7 +104,7 @@ $(document).ready(function(){initNavTree('Geometry2D_8hpp_source.html','');});
 <div class="title">Geometry2D.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="Geometry2D_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GEOMETRY2D_HPP_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GEOMETRY2D_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GEOMETRY2D_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>cv;</div>
@@ -119,8 +117,8 @@ $(document).ready(function(){initNavTree('Geometry2D_8hpp_source.html','');});
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="classmultiscale_1_1Geometry2D.html#a83b172d713cfb34a4cf0e63fae5ff013">   15</a></span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> MATRIX_START_INDEX = 1;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="classmultiscale_1_1Geometry2D.html#afa60fa16a52b7ce5096a1d3fedf8b3d9">   16</a></span>&#160;            <span class="keyword">const</span> <span class="keywordtype">double</span> PI = 3.141592;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> MATRIX_START_INDEX = 1;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">double</span> PI = 3.141592;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
@@ -148,8 +146,8 @@ $(document).ready(function(){initNavTree('Geometry2D_8hpp_source.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_9c52920f535709bb700f42abc2703532.html">util</a></li><li class="navelem"><a class="el" href="Geometry2D_8hpp.html">Geometry2D.hpp</a></li>
-    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_9c52920f535709bb700f42abc2703532.html">util</a></li><li class="navelem"><b>Geometry2D.hpp</b></li>
+    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

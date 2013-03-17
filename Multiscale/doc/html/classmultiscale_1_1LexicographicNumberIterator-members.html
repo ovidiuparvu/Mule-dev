@@ -45,7 +45,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -94,7 +93,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1LexicographicNumber
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,32 +110,18 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1LexicographicNumber
 
 <p>This is the complete list of members for <a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#af42ebeea695a31c2da714332c520ae79">currentNumberDigits</a></td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a43ff7a3ec6e49070ab35d56310478991">digitsToNumber</a>(vector&lt; unsigned char &gt; &amp;digits)</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#acd6827f0d626477474ad05d1134d652c">hasNext</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#ab4e4280e8164688edab479743c5310b8">hasNextInitialised</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#ab0eda219688eeeecc4b8204557f04c8a">init</a>(unsigned int upperBound)</td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#af923903a528438efbddfd14c4bfe1b0d">initialise</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#ab0eda219688eeeecc4b8204557f04c8a">init</a>(unsigned int upperBound)</td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#ae3d929444e14677de0b616a059380f3f">isInitialised</a></td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a49d9a28b7a6e9b29c78425b38dff0040">isLargerThanUpperBound</a>(unsigned char lastDigit)</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a0dfe92cad110c2e4d5e5b72e97481c97">LexicographicNumberIterator</a>(unsigned int upperBound)</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a8cd2da370f1ac6f44a8d4c90bdef8758">number</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#a4ebe60757a8ace6d029d5884a1b7961e">NumberIterator</a>(unsigned int upperBound)</td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#ae18dc6f3c91acdcadcc1998108fb446f">numberToDigits</a>(unsigned int number, vector&lt; unsigned char &gt; &amp;digits)</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a303760947326df5dfa92a4f752bf739a">padWithZeros</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#a17220743680f370fcb311f155ade7e50">reset</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#ab84facf8bec1c2f0544d82e5e49b4ddf">resetCurrentNumber</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a8af70d88c6b445d27ae935fa261cdf34">reverseDigits</a>(vector&lt; unsigned char &gt; &amp;digits)</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">upperBound</a></td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a909a054ae4d3e79e5daa3059a94000d0">upperBoundDigits</a></td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html#a7f6070d2341becce47d4cadb7b4a571d">~LexicographicNumberIterator</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1LexicographicNumberIterator.html">multiscale::LexicographicNumberIterator</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#aae2ce809339ed853f49619ad69596229">~NumberIterator</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#a17220743680f370fcb311f155ade7e50">reset</a>()</td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">upperBound</a></td><td class="entry"><a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
+    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -45,7 +45,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -94,7 +93,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1StandardNumberItera
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,8 +105,6 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1StandardNumberItera
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classmultiscale_1_1StandardNumberIterator-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">multiscale::StandardNumberIterator Class Reference</div>  </div>
@@ -121,27 +118,24 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1StandardNumberItera
 <div class="dynheader">
 Inheritance diagram for multiscale::StandardNumberIterator:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classmultiscale_1_1StandardNumberIterator.png" usemap="#multiscale::StandardNumberIterator_map" alt=""/>
-  <map id="multiscale::StandardNumberIterator_map" name="multiscale::StandardNumberIterator_map">
-<area href="classmultiscale_1_1NumberIterator.html" title="Abstract class representing a number iterator." alt="multiscale::NumberIterator" shape="rect" coords="0,0,208,24"/>
-</map>
- </div></div>
+<div class="center"><img src="classmultiscale_1_1StandardNumberIterator__inherit__graph.png" border="0" usemap="#multiscale_1_1StandardNumberIterator_inherit__map" alt="Inheritance graph"/></div>
+<map name="multiscale_1_1StandardNumberIterator_inherit__map" id="multiscale_1_1StandardNumberIterator_inherit__map">
+<area shape="rect" id="node2" href="classmultiscale_1_1NumberIterator.html" title="Abstract class representing a number iterator." alt="" coords="12,5,188,195"/></map>
+</div>
+<div class="dynheader">
+Collaboration diagram for multiscale::StandardNumberIterator:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmultiscale_1_1StandardNumberIterator__coll__graph.png" border="0" usemap="#multiscale_1_1StandardNumberIterator_coll__map" alt="Collaboration graph"/></div>
+<map name="multiscale_1_1StandardNumberIterator_coll__map" id="multiscale_1_1StandardNumberIterator_coll__map">
+<area shape="rect" id="node2" href="classmultiscale_1_1NumberIterator.html" title="Abstract class representing a number iterator." alt="" coords="12,5,188,195"/></map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abca65fca3d1d735f67c0f95b70fe2023"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StandardNumberIterator.html#abca65fca3d1d735f67c0f95b70fe2023">StandardNumberIterator</a> (unsigned int <a class="el" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">upperBound</a>)</td></tr>
-<tr class="separator:abca65fca3d1d735f67c0f95b70fe2023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72d47409c7cf44c7f2ad3c1edc2890ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StandardNumberIterator.html#a72d47409c7cf44c7f2ad3c1edc2890ff">~StandardNumberIterator</a> ()</td></tr>
-<tr class="separator:a72d47409c7cf44c7f2ad3c1edc2890ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec97b7757778aa8983b13baa975c626a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StandardNumberIterator.html#aec97b7757778aa8983b13baa975c626a">number</a> ()</td></tr>
 <tr class="memdesc:aec97b7757778aa8983b13baa975c626a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number pointed by the iterator.  <a href="#aec97b7757778aa8983b13baa975c626a">More...</a><br/></td></tr>
 <tr class="separator:aec97b7757778aa8983b13baa975c626a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmultiscale_1_1NumberIterator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmultiscale_1_1NumberIterator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmultiscale_1_1NumberIterator.html">multiscale::NumberIterator</a></td></tr>
-<tr class="memitem:a4ebe60757a8ace6d029d5884a1b7961e inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1NumberIterator.html#a4ebe60757a8ace6d029d5884a1b7961e">NumberIterator</a> (unsigned int <a class="el" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">upperBound</a>)</td></tr>
-<tr class="separator:a4ebe60757a8ace6d029d5884a1b7961e inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae2ce809339ed853f49619ad69596229 inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1NumberIterator.html#aae2ce809339ed853f49619ad69596229">~NumberIterator</a> ()</td></tr>
-<tr class="separator:aae2ce809339ed853f49619ad69596229 inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0eda219688eeeecc4b8204557f04c8a inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1NumberIterator.html#ab0eda219688eeeecc4b8204557f04c8a">init</a> (unsigned int <a class="el" href="classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886">upperBound</a>)</td></tr>
 <tr class="memdesc:ab0eda219688eeeecc4b8204557f04c8a inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the iterator considering the given upper bound.  <a href="#ab0eda219688eeeecc4b8204557f04c8a">More...</a><br/></td></tr>
 <tr class="separator:ab0eda219688eeeecc4b8204557f04c8a inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,23 +145,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a17220743680f370fcb311f155ade7e50 inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1NumberIterator.html#a17220743680f370fcb311f155ade7e50">reset</a> ()</td></tr>
 <tr class="memdesc:a17220743680f370fcb311f155ade7e50 inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the iterator.  <a href="#a17220743680f370fcb311f155ade7e50">More...</a><br/></td></tr>
 <tr class="separator:a17220743680f370fcb311f155ade7e50 inherit pub_methods_classmultiscale_1_1NumberIterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:aa63d435ae9f209d2403ca5083d57ae2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StandardNumberIterator.html#aa63d435ae9f209d2403ca5083d57ae2b">initialise</a> ()</td></tr>
-<tr class="memdesc:aa63d435ae9f209d2403ca5083d57ae2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the value of the current number.  <a href="#aa63d435ae9f209d2403ca5083d57ae2b">More...</a><br/></td></tr>
-<tr class="separator:aa63d435ae9f209d2403ca5083d57ae2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a762814724e727f424c0258487d0d7303"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StandardNumberIterator.html#a762814724e727f424c0258487d0d7303">hasNextInitialised</a> ()</td></tr>
-<tr class="memdesc:a762814724e727f424c0258487d0d7303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if there is a next number when in initialised state.  <a href="#a762814724e727f424c0258487d0d7303">More...</a><br/></td></tr>
-<tr class="separator:a762814724e727f424c0258487d0d7303"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a432d980c285cd7be1f5fb2da0265bea2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StandardNumberIterator.html#a432d980c285cd7be1f5fb2da0265bea2">resetCurrentNumber</a> ()</td></tr>
-<tr class="memdesc:a432d980c285cd7be1f5fb2da0265bea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the current number to the initial value.  <a href="#a432d980c285cd7be1f5fb2da0265bea2">More...</a><br/></td></tr>
-<tr class="separator:a432d980c285cd7be1f5fb2da0265bea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr class="memitem:a1f40c321994d53f705331badd64542be"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1StandardNumberIterator.html#a1f40c321994d53f705331badd64542be">currentNumber</a></td></tr>
-<tr class="separator:a1f40c321994d53f705331badd64542be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -181,93 +158,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Iterator class starting at 1 and iterating over all natural numbers until the provided upper bound is reached. </p>
 
 <p>Definition at line <a class="el" href="StandardNumberIterator_8hpp_source.html#l00010">10</a> of file <a class="el" href="StandardNumberIterator_8hpp_source.html">StandardNumberIterator.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="abca65fca3d1d735f67c0f95b70fe2023"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">multiscale::StandardNumberIterator::StandardNumberIterator </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>upperBound</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a72d47409c7cf44c7f2ad3c1edc2890ff"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">multiscale::StandardNumberIterator::~StandardNumberIterator </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a762814724e727f424c0258487d0d7303"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool multiscale::StandardNumberIterator::hasNextInitialised </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check if there is a next number when in initialised state. </p>
-
-<p>Implements <a class="el" href="classmultiscale_1_1NumberIterator.html#a3c84ccdf0e279e67861b3cce34a26588">multiscale::NumberIterator</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa63d435ae9f209d2403ca5083d57ae2b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void multiscale::StandardNumberIterator::initialise </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Initialise the value of the current number. </p>
-
-<p>Implements <a class="el" href="classmultiscale_1_1NumberIterator.html#a0bfeef7c3f120a5ae8d49d89b4529d6e">multiscale::NumberIterator</a>.</p>
-
-</div>
-</div>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aec97b7757778aa8983b13baa975c626a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -295,57 +186,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a432d980c285cd7be1f5fb2da0265bea2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void multiscale::StandardNumberIterator::resetCurrentNumber </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reset the current number to the initial value. </p>
-
-<p>Implements <a class="el" href="classmultiscale_1_1NumberIterator.html#a21e658de178b6c957df5ea0482e6fbd6">multiscale::NumberIterator</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a1f40c321994d53f705331badd64542be"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int multiscale::StandardNumberIterator::currentNumber</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The current number </p>
-
-<p>Definition at line <a class="el" href="StandardNumberIterator_8hpp_source.html#l00014">14</a> of file <a class="el" href="StandardNumberIterator_8hpp_source.html">StandardNumberIterator.hpp</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/multiscale/util/iterator/<a class="el" href="StandardNumberIterator_8hpp_source.html">StandardNumberIterator.hpp</a></li>
 </ul>
@@ -354,8 +194,8 @@ Additional Inherited Members</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1StandardNumberIterator.html">StandardNumberIterator</a></li>
-    <li class="footer">Generated on Sun Mar 17 2013 11:13:58 for Multiscale by
+    <li class="navelem"><b>multiscale</b></li><li class="navelem"><a class="el" href="classmultiscale_1_1StandardNumberIterator.html">StandardNumberIterator</a></li>
+    <li class="footer">Generated on Sun Mar 17 2013 11:46:35 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
