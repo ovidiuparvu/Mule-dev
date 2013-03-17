@@ -150,7 +150,7 @@ void RectangularCsvToInputFilesConverter::validateInputLine(const string &curren
         throw ERR_NR_CONCENTRATIONS;
 
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
-        double value = atof((*it).c_str());
+        double value = stod(*it);
 
         if (value < 0)
             throw string(ERR_INVALID_VALUE_LINE)  +
@@ -228,7 +228,7 @@ void RectangularCsvToInputFilesConverter::splitLineInConcentrations(vector<doubl
 }
 
 inline double RectangularCsvToInputFilesConverter::computeSimulationTime(const string &token) {
-    double simulationTime = atof(token.c_str());
+    double simulationTime = stod(token);
 
     if (simulationTime < 0) throw ERR_NEG_SIM_TIME;
 
@@ -269,11 +269,11 @@ inline double RectangularCsvToInputFilesConverter::computeConcentration(const st
 }
 
 inline double RectangularCsvToInputFilesConverter::computeNonScaledConcentration(const string &concentration) {
-    return atof(concentration.c_str());
+    return stod(concentration);
 }
 
 inline double RectangularCsvToInputFilesConverter::computeScaledConcentration(const string &concentration) {
-    double scaledConcentration = atof(concentration.c_str());
+    double scaledConcentration = stod(concentration);
 
     // Convert all concentrations which are lower than 1 to 1,
     // such that we don't obtain negative values after applying log

@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <limits>
+#include <string>
 
 using namespace multiscale::video;
 using namespace multiscale;
@@ -150,7 +151,7 @@ void PolarCsvToInputFilesConverter::validateInputLine(const string &currentLine,
         throw ERR_NR_CONCENTRATIONS;
 
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
-        double value = atof((*it).c_str());
+        double value = stod(*it);
 
         if (value < 0)
             throw string(ERR_INVALID_VALUE_LINE)  +
@@ -249,7 +250,7 @@ void PolarCsvToInputFilesConverter::splitOtherPartsInConcentrations(vector<doubl
 }
 
 inline double PolarCsvToInputFilesConverter::computeSimulationTime(const string &token) {
-    double simulationTime = atof(token.c_str());
+    double simulationTime = stod(token);
 
     if (simulationTime < 0) throw ERR_NEG_SIM_TIME;
 
@@ -292,13 +293,13 @@ inline double PolarCsvToInputFilesConverter::computeConcentration(const string &
 }
 
 inline double PolarCsvToInputFilesConverter::computeNonScaledConcentration(const string &concentration, int circleIndex) {
-    double amount = atof(concentration.c_str());
+    double amount = stod(concentration);
 
     return computeConcentrationWrtArea(amount, circleIndex);
 }
 
 inline double PolarCsvToInputFilesConverter::computeScaledConcentration(const string &concentration, int circleIndex) {
-    double amount = atof(concentration.c_str());
+    double amount = stod(concentration);
 
     double scaledConcentration = computeConcentrationWrtArea(amount, circleIndex);
 

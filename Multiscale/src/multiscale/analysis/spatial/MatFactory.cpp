@@ -16,6 +16,12 @@ Mat MatFactory::create(const string &inputFile) {
 
     unsigned char *data = processConcentrations(fin);
 
+    // Check if the file contains additional unnecessary data
+    // after excluding the line feed character
+    fin.get();
+
+    if (fin.peek() != EOF) throw string(ERR_IN_EXTRA_DATA);
+
     fin.close();
 
     return Mat(rows, cols, CV_8UC1, data);

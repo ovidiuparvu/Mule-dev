@@ -5,16 +5,16 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.base.177525991" moduleId="org.eclipse.cdt.core.settings" name="Default">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration buildProperties="" description="" id="cdt.managedbuild.toolchain.gnu.base.177525991" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+				<configuration artifactName="Multiscale" buildProperties="" description="" id="cdt.managedbuild.toolchain.gnu.base.177525991" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
 					<folderInfo id="cdt.managedbuild.toolchain.gnu.base.177525991.1971843937" name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.base.5144893" name="cdt.managedbuild.toolchain.gnu.base" superClass="cdt.managedbuild.toolchain.gnu.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.695110607" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
@@ -56,21 +56,25 @@
 		<project id="Multiscale.null.1742950432" name="Multiscale"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Default">
+			<resource resourceType="PROJECT" workspacePath="/Multiscale"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1012630026;cdt.managedbuild.toolchain.gnu.base.1012630026.2145134136;cdt.managedbuild.tool.gnu.cpp.compiler.base.709935023;cdt.managedbuild.tool.gnu.cpp.compiler.input.406037813">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1012630026;cdt.managedbuild.toolchain.gnu.base.1012630026.2145134136;cdt.managedbuild.tool.gnu.c.compiler.base.1732746535;cdt.managedbuild.tool.gnu.c.compiler.input.232602459">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991;cdt.managedbuild.toolchain.gnu.base.177525991.1971843937;cdt.managedbuild.tool.gnu.c.compiler.base.1854045267;cdt.managedbuild.tool.gnu.c.compiler.input.1121049176">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991;cdt.managedbuild.toolchain.gnu.base.177525991.1971843937;cdt.managedbuild.tool.gnu.cpp.compiler.base.1939144500;cdt.managedbuild.tool.gnu.cpp.compiler.input.1535479841">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991;cdt.managedbuild.toolchain.gnu.base.177525991.1971843937;cdt.managedbuild.tool.gnu.c.compiler.base.1854045267;cdt.managedbuild.tool.gnu.c.compiler.input.1121049176">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1012630026;cdt.managedbuild.toolchain.gnu.base.1012630026.2145134136;cdt.managedbuild.tool.gnu.c.compiler.base.1732746535;cdt.managedbuild.tool.gnu.c.compiler.input.232602459">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1012630026;cdt.managedbuild.toolchain.gnu.base.1012630026.2145134136;cdt.managedbuild.tool.gnu.cpp.compiler.base.709935023;cdt.managedbuild.tool.gnu.cpp.compiler.input.406037813">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

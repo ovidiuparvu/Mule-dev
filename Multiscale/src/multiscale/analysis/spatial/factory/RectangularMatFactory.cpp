@@ -15,6 +15,9 @@ unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
     for (int i = 0; i < nrOfConcentrations; i++) {
         fin >> concentration;
 
+        if ((concentration < 0) || (concentration > 1))
+            throw ERR_CONC;
+
         data[i] = convertToIntensity(concentration);
     }
 

@@ -7,7 +7,8 @@
 using namespace cv;
 using namespace std;
 
-#define ERR_INPUT_OPEN  "The input file could not be opened."
+#define ERR_INPUT_OPEN      "The input file could not be opened."
+#define ERR_IN_EXTRA_DATA   "The input file contains more data than required."
 
 
 namespace multiscale {

@@ -5,6 +5,8 @@
 
 using namespace std;
 
+#define ERR_CONC    "All concentrations have to be between 0 and 1."
+
 
 namespace multiscale {
 
