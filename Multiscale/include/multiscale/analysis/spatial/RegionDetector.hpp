@@ -9,11 +9,10 @@
 using namespace std;
 using namespace cv;
 
+#define ERR_OUTPUT_FILE     "Unable to create output file."
+
 #define WIN_ORIGINAL_IMAGE  "Original image"
 #define WIN_PROCESSED_IMAGE "Processed image"
-#define WIN_EDGES_IN_IMAGE  "Edges in image"
-#define WIN_CONTOURS        "Contours"
-#define WIN_POLYGONS        "Polygons"
 
 #define TRACKBAR_ALPHA              "Alpha"
 #define TRACKBAR_BETA               "Beta"
@@ -21,7 +20,7 @@ using namespace cv;
 #define TRACKBAR_MORPH              "Morphological open, number of iterations"
 #define TRACKBAR_CANNY              "Canny lower threshold"
 #define TRACKBAR_EPSILON            "Epsilon"
-#define TRACKBAR_SECTOR_AREA_THRESH "Sector area threshold"
+#define TRACKBAR_REGION_AREA_THRESH "Region area threshold"
 #define TRACKBAR_THRESHOLD          "Threshold value"
 
 #define USE_CANNY_L2            true
@@ -38,7 +37,7 @@ using namespace cv;
 #define ITER_MAX                100
 #define CANNY_THRESH_MAX        100
 #define EPSILON_MAX             100
-#define SECTOR_AREA_THRESH_MAX  500
+#define REGION_AREA_THRESH_MAX  500
 #define THRESHOLD_MAX           255
 #define INTENSITY_MAX           255
 
@@ -200,8 +199,9 @@ namespace multiscale {
                 /*!
                  * \param image The image from which the regions were extracted
                  * \param regions The regions
+                 * \param isDebugMode True, if in debug mode
                  */
-                void outputRegions(const Mat &image, const vector<Region> &regions);
+                void outputRegions(const Mat &image, const vector<Region> &regions, bool isDebugMode);
 
                 //! Output the regions as an XML file
                 /*!
@@ -209,11 +209,18 @@ namespace multiscale {
                  */
                 void outputRegionsAsXMLFile(const vector<Region> &regions);
 
-                //! Output the regions as a plain text file
+                //! Output the regions as a csv file
                 /*!
                  * \param regions The regions
                  */
-                void outputRegionsAsPlainTextFile(const vector<Region> &regions);
+                void outputRegionsAsCsvFile(const vector<Region> &regions);
+
+                //! Output the regions as a csv file
+                /*!
+                 * \param regions The regions
+                 * \param fout Output file stream
+                 */
+                void outputRegionsAsCsvFile(const vector<Region> &regions, ofstream &fout);
 
                 //! Output the regions in debug mode
                 /*! Overlay the regions with the original image and display them. Also provide

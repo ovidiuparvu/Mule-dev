@@ -28,7 +28,7 @@ Mat MatFactory::create(const string &inputFile) {
 }
 
 void MatFactory::initInputFile(ifstream &fin, const string& inputFile) {
-    fin.open(inputFile.c_str(), ios_base::in);
+    fin.open(inputFile, ios_base::in);
 
     if (!fin.is_open())
         throw ERR_INPUT_OPEN;

@@ -1,10 +1,14 @@
 #ifndef REGION_HPP_
 #define REGION_HPP_
 
+#include "opencv2/imgproc/imgproc.hpp"
+
 #include <vector>
 
 using namespace cv;
 using namespace std;
+
+#define OUTPUT_SEPARATOR ","
 
 
 namespace multiscale {
@@ -39,6 +43,12 @@ namespace multiscale {
 
                 //! Get the polygon defining the region
                 const vector<Point>& getPolygon() const;
+
+                //! Get a string representation of all the field names except polygon
+                string fieldNamesToString();
+
+                //! Get a string representation of all the field values except polygon
+                string toString();
 
         };
 

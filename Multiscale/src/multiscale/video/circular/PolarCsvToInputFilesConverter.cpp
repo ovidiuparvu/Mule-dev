@@ -56,7 +56,7 @@ void PolarCsvToInputFilesConverter::convert() {
 }
 
 void PolarCsvToInputFilesConverter::initInputFile(ifstream &fin) {
-    fin.open(inputFilepath.c_str(), ios_base::in);
+    fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) throw ERR_INPUT_OPEN;
 }
@@ -65,7 +65,7 @@ void PolarCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin) {
     double maximumConcentration = numeric_limits<double>::min();
     string currentLine;
 
-    fin.open(inputFilepath.c_str(), ios_base::in);
+    fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) throw ERR_INPUT_OPEN;
 
@@ -89,7 +89,7 @@ void PolarCsvToInputFilesConverter::initOutputFile(ofstream &fout, unsigned int 
                     (outputFilepath + OUTPUT_FILE_SEPARATOR) +
                     StringManipulator::toString(index) +
                     OUTPUT_EXTENSION
-                ).c_str(),
+                ),
                 ios_base::trunc
             );
 
@@ -126,7 +126,7 @@ void PolarCsvToInputFilesConverter::validateInput(ifstream &fin) {
     unsigned int lineNumber = 0;
     string currentLine;
 
-    fin.open(inputFilepath.c_str(), ios_base::in);
+    fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) throw ERR_INPUT_OPEN;
 

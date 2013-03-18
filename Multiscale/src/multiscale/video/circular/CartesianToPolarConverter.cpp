@@ -34,7 +34,7 @@ void CartesianToPolarConverter::convert(bool outputToScript) {
 }
 
 void CartesianToPolarConverter::readInputData() throw (string) {
-    ifstream fin(inputFilepath.c_str());
+    ifstream fin(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) throw ERR_INPUT_OPEN;
 
@@ -108,7 +108,7 @@ void CartesianToPolarConverter::transformToAnnularSectors() {
 void CartesianToPolarConverter::outputResultsAsFile() {
     int nrOfAnnularSectors = annularSectors.size();
 
-    ofstream fout((outputFilepath.append(OUTPUT_FILE_EXTENSION)).c_str(), ios_base::trunc);
+    ofstream fout((outputFilepath.append(OUTPUT_FILE_EXTENSION)), ios_base::trunc);
 
     assert(fout.is_open());
 

@@ -17,7 +17,7 @@ void RectangularGnuplotScriptGenerator::generateScript(const vector<double> &con
                                                        unsigned long width,
                                                        const string &outputFilepath)
                                                        throw (string) {
-    ofstream fout((outputFilepath + GNUPLOT_EXTENSION).c_str(), std::ios_base::trunc);
+    ofstream fout((outputFilepath + GNUPLOT_EXTENSION), std::ios_base::trunc);
 
     assert(fout.is_open());
 

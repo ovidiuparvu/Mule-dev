@@ -28,7 +28,7 @@ void CartesianToConcentrationsConverter::convert() {
 }
 
 void CartesianToConcentrationsConverter::readInputData() throw (string) {
-    ifstream fin(inputFilepath.c_str());
+    ifstream fin(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) throw ERR_INPUT_OPEN;
 

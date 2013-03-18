@@ -1,4 +1,5 @@
 #include "multiscale/analysis/spatial/Region.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 
 using namespace multiscale::analysis;
 
@@ -15,18 +16,28 @@ Region::~Region() {
     polygon.clear();
 }
 
-inline double Region::getAngle() const {
+double Region::getAngle() const {
     return angle;
 }
 
-inline double Region::getArea() const {
+double Region::getArea() const {
     return area;
 }
 
-inline double Region::getDistanceFromOrigin() const {
+double Region::getDistanceFromOrigin() const {
     return distanceFromOrigin;
 }
 
-inline const vector<Point>& Region::getPolygon() const {
+const vector<Point>& Region::getPolygon() const {
     return polygon;
+}
+
+string Region::fieldNamesToString() {
+    return "Area,Distance from origin,Angle(degrees)";
+}
+
+string Region::toString() {
+    return StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(distanceFromOrigin) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(angle);
 }

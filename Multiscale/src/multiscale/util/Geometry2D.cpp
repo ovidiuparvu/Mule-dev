@@ -2,6 +2,7 @@
 
 using namespace multiscale;
 
+
 double Geometry2D::distanceBtwPoints(Point a, Point b) {
     double xDiff = a.x - b.x;
     double yDiff = a.y - b.y;

@@ -1,19 +1,20 @@
 #ifndef GEOMETRY2D_HPP_
 #define GEOMETRY2D_HPP_
 
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
+
 using namespace cv;
 using namespace std;
+
+#define PI                  3.141592
+#define MATRIX_START_INDEX  1
 
 
 namespace multiscale {
 
     //! Two-dimensional geometric operations
     class Geometry2D {
-
-        private:
-
-            static const int MATRIX_START_INDEX = 1;
-            static const double PI = 3.141592;
 
         public:
 

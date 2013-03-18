@@ -1,7 +1,13 @@
+#include "multiscale/analysis/spatial/MatFactory.hpp"
+#include "multiscale/analysis/spatial/factory/RectangularMatFactory.hpp"
 #include "multiscale/analysis/spatial/RegionDetector.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
+#include <fstream>
+#include <string>
+
+using namespace std;
 using namespace multiscale::analysis;
 
 RegionDetector::RegionDetector(const string &inputFilepath, const string &outputFilepath, bool debugMode) {
@@ -33,7 +39,7 @@ void RegionDetector::initialiseVisionMembers() {
     blurKernelSize = 1;
     morphologicalCloseIterations = 2;
     epsilon = 1;
-    regionAreaThresh = 140;
+    regionAreaThresh = 60;
     thresholdValue = 50;
 }
 
@@ -54,10 +60,9 @@ void RegionDetector::createTrackbars() {
     createTrackbar(TRACKBAR_BETA, WIN_PROCESSED_IMAGE, &beta, BETA_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_KERNEL, WIN_PROCESSED_IMAGE, &blurKernelSize, KERNEL_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_MORPH, WIN_PROCESSED_IMAGE, &morphologicalCloseIterations, ITER_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_CANNY, WIN_PROCESSED_IMAGE, &cannyLowerThreshold, CANNY_THRESH_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_EPSILON, WIN_PROCESSED_IMAGE, &epsilon, EPSILON_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_SECTOR_AREA_THRESH, WIN_PROCESSED_IMAGE, &regionAreaThresh, SECTOR_AREA_THRESH_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_THRESHOLD, WIN_PROCESSED_IMAGE, &thresholdValue, SECTOR_AREA_THRESH_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_REGION_AREA_THRESH, WIN_PROCESSED_IMAGE, &regionAreaThresh, REGION_AREA_THRESH_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_THRESHOLD, WIN_PROCESSED_IMAGE, &thresholdValue, THRESHOLD_MAX, nullptr, nullptr);
 }
 
 void RegionDetector::detectRegions(const Mat &image) {
@@ -71,7 +76,7 @@ void RegionDetector::detectRegions(const Mat &image) {
 }
 
 void RegionDetector::detectRegionsInDebugMode(const Mat& image, vector<Region> &regions) {
-    int pressedKey = 0;
+    int pressedKey = -1;
 
     createTrackbars();
 
@@ -79,15 +84,17 @@ void RegionDetector::detectRegionsInDebugMode(const Mat& image, vector<Region> &
         regions.clear();
 
         processImage(image, regions);
-        outputRegions(image, regions);
+        outputRegions(image, regions, isDebugMode);
 
         pressedKey = cvWaitKey(1);
     }
+
+    outputRegions(image, regions, !isDebugMode);
 }
 
 void RegionDetector::detectRegionsInNormalMode(const Mat& image, vector<Region> &regions) {
     processImage(image, regions);
-    outputRegions(image, regions);
+    outputRegions(image, regions, isDebugMode);
 }
 
 void RegionDetector::processImage(const Mat &image, vector<Region> &regions) {
@@ -124,7 +131,7 @@ void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
 
     int nrOfContours = contours.size();
 
-    for(unsigned int i = 0; i < nrOfContours; i++ ) {
+    for(int i = 0; i < nrOfContours; i++ ) {
         if (!isValidRegion(contours[i]))
             continue;
 
@@ -159,11 +166,8 @@ Region RegionDetector::createRegionFromPolygon(const vector<Point> &polygon) {
     return Region(area, distance, angle, polygon);
 }
 
-// TODO: Change this method with the one considering the actual area?
-
 bool RegionDetector::isValidRegion(const vector<Point> &polygon) {
-    RotatedRect boundingBox = minAreaRect(polygon);
-    double area = boundingBox.size.width * boundingBox.size.height;
+    double area = contourArea(polygon, CONTOUR_AREA_ORIENTED);
 
     return (area >= regionAreaThresh);
 }
@@ -177,11 +181,11 @@ double RegionDetector::regionAngle(const vector<Point> &polygon, unsigned int cl
     return Geometry2D::angleBtwPoints(edgePoints[0], closestPoint, edgePoints[1]);
 }
 
-void RegionDetector::outputRegions(const Mat &image, const vector<Region> &regions) {
+void RegionDetector::outputRegions(const Mat &image, const vector<Region> &regions, bool isDebugMode) {
     if (isDebugMode) {
         outputRegionsInDebugMode(image, regions);
     } else {
-        outputRegionsAsPlainTextFile(regions);
+        outputRegionsAsCsvFile(regions);
     }
 }
 
@@ -189,18 +193,41 @@ void RegionDetector::outputRegionsAsXMLFile(const vector<Region> &regions) {
     // TODO: Implement
 }
 
-void RegionDetector::outputRegionsAsPlainTextFile(const vector<Region> &regions) {
-    // TODO: Implement
+void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions) {
+    ofstream fout(outputFilepath, ios_base::trunc);
+
+    if (!fout.is_open())
+        throw ERR_OUTPUT_FILE;
+
+    outputRegionsAsCsvFile(regions, fout);
+
+    fout.close();
+}
+
+void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions, ofstream &fout) {
+    if (!regions.empty()) {
+        Region firstRegion = regions.front();
+
+        // Output header
+        fout << firstRegion.fieldNamesToString() << endl;
+
+        // Output content
+        for (auto region : regions) {
+            fout << region.toString() << endl;
+        }
+    }
 }
 
 void RegionDetector::outputRegionsInDebugMode(const Mat &image, const vector<Region> &regions) {
-    Mat outputImage = image.clone();
+    Mat outputImage = Mat::zeros(image.rows + 2, image.cols + 2, image.type());
+
+    image.copyTo(outputImage(Rect(1, 1, image.cols, image.rows)));
 
     for (const auto &region : regions) {
         polylines(outputImage, region.getPolygon(), true, Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX));
     }
 
-    displayImage(outputImage, WIN_PROCESSED_IMAGE);
+    displayImage(outputImage(Rect(1, 1, image.cols, image.rows)), WIN_PROCESSED_IMAGE);
 }
 
 void RegionDetector::displayImage(const Mat& image, const string &windowName) {
