@@ -2,6 +2,7 @@ var searchData=
 [
   ['radius_5fmax',['RADIUS_MAX',['../CartesianToPolarConverter_8hpp.html#a3923a2502324557507dda8740810aca3',1,'RADIUS_MAX():&#160;CartesianToPolarConverter.hpp'],['../CartesianToConcentrationsConverter_8hpp.html#a3923a2502324557507dda8740810aca3',1,'RADIUS_MAX():&#160;CartesianToConcentrationsConverter.hpp']]],
   ['radius_5fmin',['RADIUS_MIN',['../CartesianToPolarConverter_8hpp.html#a6b9880fa336856728f874385983f7737',1,'RADIUS_MIN():&#160;CartesianToPolarConverter.hpp'],['../PolarCsvToInputFilesConverter_8hpp.html#a6b9880fa336856728f874385983f7737',1,'RADIUS_MIN():&#160;PolarCsvToInputFilesConverter.hpp'],['../CartesianToConcentrationsConverter_8hpp.html#a6b9880fa336856728f874385983f7737',1,'RADIUS_MIN():&#160;CartesianToConcentrationsConverter.hpp']]],
+  ['region_5farea_5fthresh_5fmax',['REGION_AREA_THRESH_MAX',['../RegionDetector_8hpp.html#ad9b19b601c85b0ec4f89b2e8c9f9c985',1,'RegionDetector.hpp']]],
   ['replace_5fcontent_5fconcentration',['REPLACE_CONTENT_CONCENTRATION',['../PolarGnuplotScriptGenerator_8hpp.html#a7fa1668ec9158f11e27886ddcc0ee467',1,'PolarGnuplotScriptGenerator.hpp']]],
   ['replace_5fcontent_5fend_5fangle',['REPLACE_CONTENT_END_ANGLE',['../PolarGnuplotScriptGenerator_8hpp.html#ac4405143cf7c258572171456739113c5',1,'PolarGnuplotScriptGenerator.hpp']]],
   ['replace_5fcontent_5findex',['REPLACE_CONTENT_INDEX',['../PolarGnuplotScriptGenerator_8hpp.html#aff375f821ef7f6a9b45db670a14956e6',1,'PolarGnuplotScriptGenerator.hpp']]],

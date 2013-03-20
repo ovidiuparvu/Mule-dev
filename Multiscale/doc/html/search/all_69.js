@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['image',['image',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a3a43869edd2842a84aa7dfc1d05968cc',1,'multiscale::analysis::RegionDetector']]],
   ['init',['init',['../classmultiscale_1_1NumberIterator.html#ab0eda219688eeeecc4b8204557f04c8a',1,'multiscale::NumberIterator']]],
   ['initialise',['initialise',['../classmultiscale_1_1LexicographicNumberIterator.html#af923903a528438efbddfd14c4bfe1b0d',1,'multiscale::LexicographicNumberIterator::initialise()'],['../classmultiscale_1_1StandardNumberIterator.html#aa63d435ae9f209d2403ca5083d57ae2b',1,'multiscale::StandardNumberIterator::initialise()'],['../classmultiscale_1_1NumberIterator.html#a0bfeef7c3f120a5ae8d49d89b4529d6e',1,'multiscale::NumberIterator::initialise()'],['../classmultiscale_1_1video_1_1AnnularSector.html#aa7da3fa69b37238f79caa3e3938d5b32',1,'multiscale::video::AnnularSector::initialise()']]],
   ['initialiseimagedependentmembers',['initialiseImageDependentMembers',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a57cb7a031da860ddfeb85563885f126f',1,'multiscale::analysis::RegionDetector']]],
@@ -11,10 +12,11 @@ var searchData=
   ['input_5ffile_5fseparator',['INPUT_FILE_SEPARATOR',['../PolarCsvToInputFilesConverter_8hpp.html#a61a924c0facd0c49b03d7026b9709532',1,'INPUT_FILE_SEPARATOR():&#160;PolarCsvToInputFilesConverter.hpp'],['../RectangularCsvToInputFilesConverter_8hpp.html#a61a924c0facd0c49b03d7026b9709532',1,'INPUT_FILE_SEPARATOR():&#160;RectangularCsvToInputFilesConverter.hpp']]],
   ['inputfilepath',['inputFilepath',['../classmultiscale_1_1analysis_1_1RegionDetector.html#ac7acb4022f2289ac8c1ab1fa12be0a05',1,'multiscale::analysis::RegionDetector::inputFilepath()'],['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05',1,'multiscale::video::CartesianToPolarConverter::inputFilepath()'],['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a7b33b6d00b5e0d809f4fb0d76985ab59',1,'multiscale::video::PolarCsvToInputFilesConverter::inputFilepath()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#affebbc7e1c67692bd529f19fc0451e58',1,'multiscale::video::CartesianToConcentrationsConverter::inputFilepath()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a407e3c2607f036d531445e22454a910e',1,'multiscale::video::RectangularCsvToInputFilesConverter::inputFilepath()']]],
   ['intensity_5fmax',['INTENSITY_MAX',['../RegionDetector_8hpp.html#a8f47a4307f9eea88d06b5383da431917',1,'RegionDetector.hpp']]],
+  ['isbetweencoordinates',['isBetweenCoordinates',['../classmultiscale_1_1Geometry2D.html#ab6627cdda7ca6b6fcc08d14617cfa9a6',1,'multiscale::Geometry2D']]],
   ['isdebugmode',['isDebugMode',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a5a79504c126724e3e01eb54be3a478ae',1,'multiscale::analysis::RegionDetector']]],
   ['isinitialised',['isInitialised',['../classmultiscale_1_1NumberIterator.html#ae3d929444e14677de0b616a059380f3f',1,'multiscale::NumberIterator']]],
   ['islargerthanupperbound',['isLargerThanUpperBound',['../classmultiscale_1_1LexicographicNumberIterator.html#a49d9a28b7a6e9b29c78425b38dff0040',1,'multiscale::LexicographicNumberIterator']]],
-  ['ispointonedge',['isPointOnEdge',['../classmultiscale_1_1Geometry2D.html#ab98d1ed1e3cf6b9caac466bc97cf46d0',1,'multiscale::Geometry2D']]],
+  ['ispointonedge',['isPointOnEdge',['../classmultiscale_1_1Geometry2D.html#a4f9aca7320781573a7868c17eb1c2559',1,'multiscale::Geometry2D']]],
   ['isvalidregion',['isValidRegion',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a8c20afe3768ab9cf6e3b598a063b4657',1,'multiscale::analysis::RegionDetector']]],
   ['iter_5fmax',['ITER_MAX',['../RegionDetector_8hpp.html#a82e33b17ccb9be80dc09a1f38b5330b2',1,'RegionDetector.hpp']]]
 ];

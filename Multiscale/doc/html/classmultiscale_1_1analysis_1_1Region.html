@@ -143,6 +143,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac69f6de711880dcd2181eeef2dc0e25e"><td class="memItemLeft" align="right" valign="top">const vector&lt; Point &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Region.html#ac69f6de711880dcd2181eeef2dc0e25e">getPolygon</a> () const </td></tr>
 <tr class="memdesc:ac69f6de711880dcd2181eeef2dc0e25e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the polygon defining the region.  <a href="#ac69f6de711880dcd2181eeef2dc0e25e">More...</a><br/></td></tr>
 <tr class="separator:ac69f6de711880dcd2181eeef2dc0e25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38eeab141ea837f213fca63219fb5a80"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Region.html#a38eeab141ea837f213fca63219fb5a80">fieldNamesToString</a> ()</td></tr>
+<tr class="memdesc:a38eeab141ea837f213fca63219fb5a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string representation of all the field names except polygon.  <a href="#a38eeab141ea837f213fca63219fb5a80">More...</a><br/></td></tr>
+<tr class="separator:a38eeab141ea837f213fca63219fb5a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2219a16d4e68a304ef3b1c047c09170"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Region.html#aa2219a16d4e68a304ef3b1c047c09170">toString</a> ()</td></tr>
+<tr class="memdesc:aa2219a16d4e68a304ef3b1c047c09170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string representation of all the field values except polygon.  <a href="#aa2219a16d4e68a304ef3b1c047c09170">More...</a><br/></td></tr>
+<tr class="separator:aa2219a16d4e68a304ef3b1c047c09170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -158,7 +164,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for representing a region. </p>
 
-<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00015">15</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00019">19</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7a527961fb8acfbe737ff994f86d80f7"></a>
 <div class="memitem">
@@ -214,6 +220,23 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a38eeab141ea837f213fca63219fb5a80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string multiscale::analysis::Region::fieldNamesToString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a string representation of all the field names except polygon. </p>
+
+</div>
+</div>
 <a class="anchor" id="a31df1329a6c770716d5d4160dd37a30e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -282,6 +305,23 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa2219a16d4e68a304ef3b1c047c09170"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string multiscale::analysis::Region::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a string representation of all the field values except polygon. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a86c960769a9e8bc1a29dc00c1d43f20a"></a>
 <div class="memitem">
@@ -302,7 +342,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Angle of the region </p>
 
-<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00021">21</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00025">25</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
 
 </div>
 </div>
@@ -325,7 +365,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Area of the region </p>
 
-<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00019">19</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00023">23</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
 
 </div>
 </div>
@@ -348,7 +388,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Distance from the origin </p>
 
-<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00020">20</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00024">24</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
 
 </div>
 </div>
@@ -371,7 +411,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Polygon defining the region </p>
 
-<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00023">23</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00027">27</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
 
 </div>
 </div>
@@ -384,7 +424,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a></li>
-    <li class="footer">Generated on Sun Mar 17 2013 18:45:12 for Multiscale by
+    <li class="footer">Generated on Wed Mar 20 2013 18:09:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

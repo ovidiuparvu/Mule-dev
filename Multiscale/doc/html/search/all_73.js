@@ -1,9 +1,9 @@
 var searchData=
 [
   ['saturation',['SATURATION',['../RGBColourGenerator_8hpp.html#a5ea44383e0ece01ce2b69111da09207f',1,'RGBColourGenerator.hpp']]],
-  ['sector_5farea_5fthresh_5fmax',['SECTOR_AREA_THRESH_MAX',['../RegionDetector_8hpp.html#a094ae8ae4327d2b76c5522c80f1adea7',1,'RegionDetector.hpp']]],
   ['sectorsiterator',['sectorsIterator',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['selectedconcentrationindex',['selectedConcentrationIndex',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a121d592659f9f5075c8c78aa46c2950c',1,'multiscale::video::PolarCsvToInputFilesConverter::selectedConcentrationIndex()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a5143d25a98a097107c2bed748b4d8df0',1,'multiscale::video::RectangularCsvToInputFilesConverter::selectedConcentrationIndex()']]],
+  ['sgn',['sgn',['../classmultiscale_1_1Geometry2D.html#a4e7fc2a1f46f34d56c99a6ace8a1574c',1,'multiscale::Geometry2D']]],
   ['simulationtime',['simulationTime',['../classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96',1,'multiscale::analysis::MatFactory::simulationTime()'],['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda',1,'multiscale::video::CartesianToPolarConverter::simulationTime()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a6e66af60b82513b3186fdb32cad44597',1,'multiscale::video::CartesianToConcentrationsConverter::simulationTime()']]],
   ['smoothimage',['smoothImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a2e4a84cf8cf14bc81e9eaac5e6578c73',1,'multiscale::analysis::RegionDetector']]],
   ['split',['split',['../classmultiscale_1_1StringManipulator.html#afd1091a0cf87508dbf99b5f196b37667',1,'multiscale::StringManipulator']]],

@@ -109,50 +109,73 @@ $(document).ready(function(){initNavTree('Geometry2D_8hpp_source.html','');});
 <a href="Geometry2D_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GEOMETRY2D_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GEOMETRY2D_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>cv;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;opencv2/imgproc/imgproc.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;opencv2/highgui/highgui.hpp&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>cv;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="classmultiscale_1_1Geometry2D.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classmultiscale_1_1Geometry2D.html" title="Two-dimensional geometric operations.">Geometry2D</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="classmultiscale_1_1Geometry2D.html#a83b172d713cfb34a4cf0e63fae5ff013">   15</a></span>&#160;            <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> MATRIX_START_INDEX = 1;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="classmultiscale_1_1Geometry2D.html#afa60fa16a52b7ce5096a1d3fedf8b3d9">   16</a></span>&#160;            <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="RegionDetector_8hpp.html#a598a3330b3c21701223ee0ca14316eca">PI</a> = 3.141592;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> distanceBtwPoints(Point a, Point b);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> angleBtwPoints(Point a, Point b, Point c);</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="Geometry2D_8hpp.html#a598a3330b3c21701223ee0ca14316eca">   10</a></span>&#160;<span class="preprocessor">#define PI                  3.141592</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="Geometry2D_8hpp.html#a7758589e42ccb014f07e996928fb2c9f">   11</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MATRIX_START_INDEX  1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classmultiscale_1_1Geometry2D.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classmultiscale_1_1Geometry2D.html" title="Two-dimensional geometric operations.">Geometry2D</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> distanceBtwPoints(<span class="keyword">const</span> Point &amp;a, <span class="keyword">const</span> Point &amp;b);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> distanceFromPointToLine(<span class="keyword">const</span> Point &amp;a, <span class="keyword">const</span> Point &amp;linePointB, <span class="keyword">const</span> Point &amp;linePointC);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">static</span> vector&lt;Point&gt; findPointsOnEdge(<span class="keyword">const</span> vector&lt;Point&gt; &amp;points, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfRows, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfCols);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> minimumDistancePointIndex(<span class="keyword">const</span> vector&lt;Point&gt; &amp;points, <span class="keyword">const</span> Point &amp;origin);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">bool</span> isPointOnEdge(Point p, <span class="keywordtype">int</span> nrOfRows, <span class="keywordtype">int</span> nrOfCols);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">static</span> Point middlePoint(<span class="keyword">const</span> Point &amp;a, <span class="keyword">const</span> Point &amp;b);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">void</span> orthogonalLineToAnotherLineEdgePoints(<span class="keyword">const</span> Point &amp;a1, <span class="keyword">const</span> Point &amp;b1, Point &amp;a2,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                              Point &amp;b2, <span class="keywordtype">int</span> nrOfRows, <span class="keywordtype">int</span> nrOfCols);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">bool</span> lineIntersection(<span class="keyword">const</span> Point &amp;a1, <span class="keyword">const</span> Point &amp;b1, <span class="keyword">const</span> Point &amp;a2, <span class="keyword">const</span> Point &amp;b2, Point &amp;intersection);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">bool</span> lineSegmentIntersection(<span class="keyword">const</span> Point &amp;a1, <span class="keyword">const</span> Point &amp;b1, <span class="keyword">const</span> Point &amp;a2, <span class="keyword">const</span> Point &amp;b2, Point &amp;intersection);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> angleBtwPoints(<span class="keyword">const</span> Point &amp;a, <span class="keyword">const</span> Point &amp;b, <span class="keyword">const</span> Point &amp;c);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keyword">static</span> vector&lt;Point&gt; findPointsOnEdge(<span class="keyword">const</span> vector&lt;Point&gt; &amp;points, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfRows, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfCols);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> minimumDistancePointIndex(<span class="keyword">const</span> vector&lt;Point&gt; &amp;points, <span class="keyword">const</span> Point &amp;origin);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">bool</span> isPointOnEdge(<span class="keyword">const</span> Point &amp;p, <span class="keywordtype">int</span> nrOfRows, <span class="keywordtype">int</span> nrOfCols);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">bool</span> isBetweenCoordinates(<span class="keywordtype">int</span> c, <span class="keywordtype">int</span> c1, <span class="keywordtype">int</span> c2);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">int</span> sgn(<span class="keywordtype">int</span> number);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    };</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;};</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_9c52920f535709bb700f42abc2703532.html">util</a></li><li class="navelem"><a class="el" href="Geometry2D_8hpp.html">Geometry2D.hpp</a></li>
-    <li class="footer">Generated on Sun Mar 17 2013 18:45:12 for Multiscale by
+    <li class="footer">Generated on Wed Mar 20 2013 18:09:50 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

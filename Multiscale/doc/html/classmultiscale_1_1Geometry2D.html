@@ -107,7 +107,6 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1Geometry2D.html',''
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classmultiscale_1_1Geometry2D-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">multiscale::Geometry2D Class Reference</div>  </div>
@@ -128,12 +127,27 @@ Collaboration diagram for multiscale::Geometry2D:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a86b6aa7d7b791e433f02fdb6ad42643a"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a86b6aa7d7b791e433f02fdb6ad42643a">distanceBtwPoints</a> (Point a, Point b)</td></tr>
-<tr class="memdesc:a86b6aa7d7b791e433f02fdb6ad42643a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the distance between two points.  <a href="#a86b6aa7d7b791e433f02fdb6ad42643a">More...</a><br/></td></tr>
-<tr class="separator:a86b6aa7d7b791e433f02fdb6ad42643a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a97b1fa7409b22242ae5e0130bd9878"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a4a97b1fa7409b22242ae5e0130bd9878">angleBtwPoints</a> (Point a, Point b, Point c)</td></tr>
-<tr class="memdesc:a4a97b1fa7409b22242ae5e0130bd9878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the angle between three points.  <a href="#a4a97b1fa7409b22242ae5e0130bd9878">More...</a><br/></td></tr>
-<tr class="separator:a4a97b1fa7409b22242ae5e0130bd9878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f7df67a00e1002375fb3c87d546dfd"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a63f7df67a00e1002375fb3c87d546dfd">distanceBtwPoints</a> (const Point &amp;a, const Point &amp;b)</td></tr>
+<tr class="memdesc:a63f7df67a00e1002375fb3c87d546dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the distance between two points.  <a href="#a63f7df67a00e1002375fb3c87d546dfd">More...</a><br/></td></tr>
+<tr class="separator:a63f7df67a00e1002375fb3c87d546dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aa28e30fc3b468b9ef3dc4b5b454620"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a4aa28e30fc3b468b9ef3dc4b5b454620">distanceFromPointToLine</a> (const Point &amp;a, const Point &amp;linePointB, const Point &amp;linePointC)</td></tr>
+<tr class="memdesc:a4aa28e30fc3b468b9ef3dc4b5b454620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the distance from a point to a line specified by two points.  <a href="#a4aa28e30fc3b468b9ef3dc4b5b454620">More...</a><br/></td></tr>
+<tr class="separator:a4aa28e30fc3b468b9ef3dc4b5b454620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a266b965a05bb6dac7e03a1b71d41b652"><td class="memItemLeft" align="right" valign="top">static Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a266b965a05bb6dac7e03a1b71d41b652">middlePoint</a> (const Point &amp;a, const Point &amp;b)</td></tr>
+<tr class="memdesc:a266b965a05bb6dac7e03a1b71d41b652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the point in the middle of the segment determined by points "a" and "b".  <a href="#a266b965a05bb6dac7e03a1b71d41b652">More...</a><br/></td></tr>
+<tr class="separator:a266b965a05bb6dac7e03a1b71d41b652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00034196437bbd11ae7297c14f8e59c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#aa00034196437bbd11ae7297c14f8e59c">orthogonalLineToAnotherLineEdgePoints</a> (const Point &amp;a1, const Point &amp;b1, Point &amp;a2, Point &amp;b2, int nrOfRows, int nrOfCols)</td></tr>
+<tr class="memdesc:aa00034196437bbd11ae7297c14f8e59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points.  <a href="#aa00034196437bbd11ae7297c14f8e59c">More...</a><br/></td></tr>
+<tr class="separator:aa00034196437bbd11ae7297c14f8e59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac416b95460bde332c8ef58cba27b70ad"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#ac416b95460bde332c8ef58cba27b70ad">lineIntersection</a> (const Point &amp;a1, const Point &amp;b1, const Point &amp;a2, const Point &amp;b2, Point &amp;intersection)</td></tr>
+<tr class="memdesc:ac416b95460bde332c8ef58cba27b70ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the intersection point of two lines, if this point exists.  <a href="#ac416b95460bde332c8ef58cba27b70ad">More...</a><br/></td></tr>
+<tr class="separator:ac416b95460bde332c8ef58cba27b70ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a573bc0c496ae02349241f5c4991de3d2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a573bc0c496ae02349241f5c4991de3d2">lineSegmentIntersection</a> (const Point &amp;a1, const Point &amp;b1, const Point &amp;a2, const Point &amp;b2, Point &amp;intersection)</td></tr>
+<tr class="memdesc:a573bc0c496ae02349241f5c4991de3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the intersection point of two line segments, if this point exists.  <a href="#a573bc0c496ae02349241f5c4991de3d2">More...</a><br/></td></tr>
+<tr class="separator:a573bc0c496ae02349241f5c4991de3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab77831722e89d9a6951b390a179150d1"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#ab77831722e89d9a6951b390a179150d1">angleBtwPoints</a> (const Point &amp;a, const Point &amp;b, const Point &amp;c)</td></tr>
+<tr class="memdesc:ab77831722e89d9a6951b390a179150d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the angle between three points.  <a href="#ab77831722e89d9a6951b390a179150d1">More...</a><br/></td></tr>
+<tr class="separator:ab77831722e89d9a6951b390a179150d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40b6ea1e99dbdb26faed41ef24af2d12"><td class="memItemLeft" align="right" valign="top">static vector&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a40b6ea1e99dbdb26faed41ef24af2d12">findPointsOnEdge</a> (const vector&lt; Point &gt; &amp;points, unsigned int nrOfRows, unsigned int nrOfCols)</td></tr>
 <tr class="memdesc:a40b6ea1e99dbdb26faed41ef24af2d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the subset of points from the given set of points which lie on the edge.  <a href="#a40b6ea1e99dbdb26faed41ef24af2d12">More...</a><br/></td></tr>
 <tr class="separator:a40b6ea1e99dbdb26faed41ef24af2d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,23 +157,22 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:ab98d1ed1e3cf6b9caac466bc97cf46d0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#ab98d1ed1e3cf6b9caac466bc97cf46d0">isPointOnEdge</a> (Point p, int nrOfRows, int nrOfCols)</td></tr>
-<tr class="memdesc:ab98d1ed1e3cf6b9caac466bc97cf46d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given point is on the edge.  <a href="#ab98d1ed1e3cf6b9caac466bc97cf46d0">More...</a><br/></td></tr>
-<tr class="separator:ab98d1ed1e3cf6b9caac466bc97cf46d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:a83b172d713cfb34a4cf0e63fae5ff013"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a83b172d713cfb34a4cf0e63fae5ff013">MATRIX_START_INDEX</a> = 1</td></tr>
-<tr class="separator:a83b172d713cfb34a4cf0e63fae5ff013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa60fa16a52b7ce5096a1d3fedf8b3d9"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#afa60fa16a52b7ce5096a1d3fedf8b3d9">PI</a> = 3.141592</td></tr>
-<tr class="separator:afa60fa16a52b7ce5096a1d3fedf8b3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f9aca7320781573a7868c17eb1c2559"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a4f9aca7320781573a7868c17eb1c2559">isPointOnEdge</a> (const Point &amp;p, int nrOfRows, int nrOfCols)</td></tr>
+<tr class="memdesc:a4f9aca7320781573a7868c17eb1c2559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given point is on the edge.  <a href="#a4f9aca7320781573a7868c17eb1c2559">More...</a><br/></td></tr>
+<tr class="separator:a4f9aca7320781573a7868c17eb1c2559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6627cdda7ca6b6fcc08d14617cfa9a6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#ab6627cdda7ca6b6fcc08d14617cfa9a6">isBetweenCoordinates</a> (int c, int c1, int c2)</td></tr>
+<tr class="memdesc:ab6627cdda7ca6b6fcc08d14617cfa9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the coordinate c lies between c1 and c2.  <a href="#ab6627cdda7ca6b6fcc08d14617cfa9a6">More...</a><br/></td></tr>
+<tr class="separator:ab6627cdda7ca6b6fcc08d14617cfa9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e7fc2a1f46f34d56c99a6ace8a1574c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a4e7fc2a1f46f34d56c99a6ace8a1574c">sgn</a> (int number)</td></tr>
+<tr class="memdesc:a4e7fc2a1f46f34d56c99a6ace8a1574c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute sgn(number)  <a href="#a4e7fc2a1f46f34d56c99a6ace8a1574c">More...</a><br/></td></tr>
+<tr class="separator:a4e7fc2a1f46f34d56c99a6ace8a1574c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Two-dimensional geometric operations. </p>
 
-<p>Definition at line <a class="el" href="Geometry2D_8hpp_source.html#l00011">11</a> of file <a class="el" href="Geometry2D_8hpp_source.html">Geometry2D.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Geometry2D_8hpp_source.html#l00017">17</a> of file <a class="el" href="Geometry2D_8hpp_source.html">Geometry2D.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4a97b1fa7409b22242ae5e0130bd9878"></a>
+<a class="anchor" id="ab77831722e89d9a6951b390a179150d1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -169,19 +182,19 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">static double multiscale::Geometry2D::angleBtwPoints </td>
           <td>(</td>
-          <td class="paramtype">Point&#160;</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Point&#160;</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Point&#160;</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>c</em>&#160;</td>
         </tr>
         <tr>
@@ -210,7 +223,7 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a86b6aa7d7b791e433f02fdb6ad42643a"></a>
+<a class="anchor" id="a63f7df67a00e1002375fb3c87d546dfd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -220,13 +233,13 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">static double multiscale::Geometry2D::distanceBtwPoints </td>
           <td>(</td>
-          <td class="paramtype">Point&#160;</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Point&#160;</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -248,6 +261,56 @@ Static Private Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">a</td><td>Point a </td></tr>
     <tr><td class="paramname">b</td><td>Point b </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4aa28e30fc3b468b9ef3dc4b5b454620"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double multiscale::Geometry2D::distanceFromPointToLine </td>
+          <td>(</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>linePointB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>linePointC</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the distance from a point to a line specified by two points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Point from which the distance is measures </td></tr>
+    <tr><td class="paramname">linePointB</td><td>One of the points determining the line </td></tr>
+    <tr><td class="paramname">linePointC</td><td>One of the points determining the line </td></tr>
   </table>
   </dd>
 </dl>
@@ -305,7 +368,57 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab98d1ed1e3cf6b9caac466bc97cf46d0"></a>
+<a class="anchor" id="ab6627cdda7ca6b6fcc08d14617cfa9a6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool multiscale::Geometry2D::isBetweenCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>c2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the coordinate c lies between c1 and c2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Coordinate c </td></tr>
+    <tr><td class="paramname">c1</td><td>Coordinate c1 </td></tr>
+    <tr><td class="paramname">c2</td><td>Coordinate c2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f9aca7320781573a7868c17eb1c2559"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -315,7 +428,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">static bool multiscale::Geometry2D::isPointOnEdge </td>
           <td>(</td>
-          <td class="paramtype">Point&#160;</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -350,6 +463,189 @@ Static Private Attributes</h2></td></tr>
     <tr><td class="paramname">p</td><td>Point p </td></tr>
     <tr><td class="paramname">nrOfRows</td><td>The number of rows </td></tr>
     <tr><td class="paramname">nrOfCols</td><td>The number of columns </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac416b95460bde332c8ef58cba27b70ad"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool multiscale::Geometry2D::lineIntersection </td>
+          <td>(</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>a1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>b1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>a2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>b2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Point &amp;&#160;</td>
+          <td class="paramname"><em>intersection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determine the intersection point of two lines, if this point exists. </p>
+<p>Two lines intersect if they are not parallel (Parallel lines intersect at +/- infinity, but we do not consider this case here).</p>
+<p>The lines are specified by a pair of points each. If they intersect, then the function returns true, else it returns false.</p>
+<p>Lines are specified in the following form: A1x + B1x = C1 A2x + B2x = C2</p>
+<p>If det (= A1xB2 - A2xB1) == 0, then lines are parallel else they intersect</p>
+<p>If they intersect, then let us denote the intersection point with P(x, y) where: x = (C1xB2 - C2xB1) / (det) y = (C2xA1 - C1xA2) / (det)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a1</td><td>First point for determining the first line </td></tr>
+    <tr><td class="paramname">b1</td><td>Second point for determining the first line </td></tr>
+    <tr><td class="paramname">a2</td><td>First point for determining the second line </td></tr>
+    <tr><td class="paramname">b2</td><td>Second point for determining the second line </td></tr>
+    <tr><td class="paramname">intersection</td><td>The intersection point, if this point exists </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a573bc0c496ae02349241f5c4991de3d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool multiscale::Geometry2D::lineSegmentIntersection </td>
+          <td>(</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>a1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>b1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>a2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>b2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Point &amp;&#160;</td>
+          <td class="paramname"><em>intersection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determine the intersection point of two line segments, if this point exists. </p>
+<p>Find the intersection point of the lines, if this point exists. Let us assume that this point exists and let us denote it with P(x, y). Then, in order for the point to be the intersection of the segments and not of the lines, we have to verify the following conditions:</p>
+<ol type="1">
+<li>min(a1.x, b1.x) &lt;= x &lt;= max(a1.x, b1.x) &ndash; x coordinate is valid for first line segment</li>
+<li>min(a2.x, b2.x) &lt;= x &lt;= max(a2.x, b2.x) &ndash; x coordinate is valid for second line segment</li>
+<li>min(a1.y, b1.y) &lt;= y &lt;= max(a1.y, b1.y) &ndash; y coordinate is valid for first line segment</li>
+<li>min(a2.y, b2.y) &lt;= y &lt;= max(a2.y, b2.y) &ndash; y coordinate is valid for second line segment</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a1</td><td>First point for determining the first line </td></tr>
+    <tr><td class="paramname">b1</td><td>Second point for determining the first line </td></tr>
+    <tr><td class="paramname">a2</td><td>First point for determining the second line </td></tr>
+    <tr><td class="paramname">b2</td><td>Second point for determining the second line </td></tr>
+    <tr><td class="paramname">intersection</td><td>The intersection point, if this point exists </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a266b965a05bb6dac7e03a1b71d41b652"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Point multiscale::Geometry2D::middlePoint </td>
+          <td>(</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the point in the middle of the segment determined by points "a" and "b". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Point a </td></tr>
+    <tr><td class="paramname">b</td><td>Point b </td></tr>
   </table>
   </dd>
 </dl>
@@ -400,8 +696,7 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a83b172d713cfb34a4cf0e63fae5ff013"></a>
+<a class="anchor" id="aa00034196437bbd11ae7297c14f8e59c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -409,7 +704,80 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int multiscale::Geometry2D::MATRIX_START_INDEX = 1</td>
+          <td class="memname">static void multiscale::Geometry2D::orthogonalLineToAnotherLineEdgePoints </td>
+          <td>(</td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>a1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Point &amp;&#160;</td>
+          <td class="paramname"><em>b1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Point &amp;&#160;</td>
+          <td class="paramname"><em>a2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Point &amp;&#160;</td>
+          <td class="paramname"><em>b2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nrOfRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nrOfCols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a1</td><td>First point for determining the first line </td></tr>
+    <tr><td class="paramname">b1</td><td>Second point for determining the first line </td></tr>
+    <tr><td class="paramname">a2</td><td>First point for determining the second line </td></tr>
+    <tr><td class="paramname">b2</td><td>Second point for determining the second line </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a4e7fc2a1f46f34d56c99a6ace8a1574c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int multiscale::Geometry2D::sgn </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -419,29 +787,13 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Geometry2D_8hpp_source.html#l00015">15</a> of file <a class="el" href="Geometry2D_8hpp_source.html">Geometry2D.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afa60fa16a52b7ce5096a1d3fedf8b3d9"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double multiscale::Geometry2D::PI = 3.141592</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="Geometry2D_8hpp_source.html#l00016">16</a> of file <a class="el" href="Geometry2D_8hpp_source.html">Geometry2D.hpp</a>.</p>
+<p>Compute sgn(number) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>The number </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -454,7 +806,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1Geometry2D.html">Geometry2D</a></li>
-    <li class="footer">Generated on Sun Mar 17 2013 18:45:12 for Multiscale by
+    <li class="footer">Generated on Wed Mar 20 2013 18:09:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

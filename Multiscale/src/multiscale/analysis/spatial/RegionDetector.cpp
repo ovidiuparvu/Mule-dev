@@ -4,6 +4,7 @@
 #include "multiscale/util/NumericRangeManipulator.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
+#include <iostream>
 #include <fstream>
 #include <string>
 
@@ -23,32 +24,29 @@ RegionDetector::~RegionDetector() {}
 void RegionDetector::detect() {
     MatFactory* factory = new RectangularMatFactory();
 
-    Mat originalImage = factory->create(inputFilepath);
+    image = factory->create(inputFilepath);
 
     delete factory;
 
-    // Initialise the number of rows and columns and the origin
-    initialiseImageDependentMembers(originalImage);
+    // Initialise the origin
+    initialiseImageDependentMembers(image);
 
-    detectRegions(originalImage);
+    detectRegions(image);
 }
 
 void RegionDetector::initialiseVisionMembers() {
     alpha = 750;
     beta = 0;
     blurKernelSize = 1;
-    morphologicalCloseIterations = 2;
+    morphologicalCloseIterations = 1;
     epsilon = 1;
-    regionAreaThresh = 60;
-    thresholdValue = 50;
+    regionAreaThresh = 40;
+    thresholdValue = 100;
 }
 
 void RegionDetector::initialiseImageDependentMembers(const Mat &image) {
-    nrOfRows = image.rows;
-    nrOfCols = image.cols;
-
-    int originX = (nrOfRows + 1) / 2;
-    int originY = (nrOfCols + 1) / 2;
+    int originX = (image.rows + 1) / 2;
+    int originY = (image.cols + 1) / 2;
 
     origin = Point(originX, originY);
 }
@@ -119,7 +117,9 @@ void RegionDetector::smoothImage(Mat &image) {
 }
 
 void RegionDetector::morphologicalClose(Mat &image) {
-    morphologyEx(image, image, MORPH_CLOSE, Mat(), Point(-1, -1), morphologicalCloseIterations);
+    if (morphologicalCloseIterations > 0) {
+        morphologyEx(image, image, MORPH_CLOSE, Mat(), Point(-1, -1), morphologicalCloseIterations);
+    }
 }
 
 void RegionDetector::thresholdImage(const Mat &image, Mat &thresholdedImage) {
@@ -132,15 +132,15 @@ void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
     int nrOfContours = contours.size();
 
     for(int i = 0; i < nrOfContours; i++ ) {
-        if (!isValidRegion(contours[i]))
+        if (!isValidRegion(contours.at(i)))
             continue;
 
-        // Obtain the approximated polygon and draw it
+        // Obtain the approximated polygon
         vector<Point> approxPolygon;
 
-        approxPolyDP( contours[i], approxPolygon, epsilon, true );
+        approxPolyDP( contours.at(i), approxPolygon, epsilon, true );
 
-        // Display information about the polygon
+        // Process and store information about the region
         regions.push_back(createRegionFromPolygon(approxPolygon));
     }
 }
@@ -173,12 +173,52 @@ bool RegionDetector::isValidRegion(const vector<Point> &polygon) {
 }
 
 double RegionDetector::regionAngle(const vector<Point> &polygon, unsigned int closestPointIndex) {
-    Point closestPoint = polygon[closestPointIndex];
-    vector<Point> edgePoints = Geometry2D::findPointsOnEdge(polygon, nrOfRows, nrOfCols);
+    vector<Point> polygonConvexHull;
 
-    // Consider that there are no more than 2 points on the edge
-    // TODO: Consider cases in which there are more than 2 points on the edge - take the ones farthest apart
-    return Geometry2D::angleBtwPoints(edgePoints[0], closestPoint, edgePoints[1]);
+    convexHull(polygon, polygonConvexHull);
+
+    return regionAngle(polygonConvexHull, polygon[closestPointIndex]);
+}
+
+double RegionDetector::regionAngle(const vector<Point> &polygonConvexHull, const Point &closestPoint) {
+    Point centre;
+    vector<Point> goodPointsForAngle;
+
+    minAreaRectCentre(polygonConvexHull, centre);
+    findGoodPointsForAngle(polygonConvexHull, centre, closestPoint, goodPointsForAngle);
+
+    return Geometry2D::angleBtwPoints(goodPointsForAngle.at(0), closestPoint, goodPointsForAngle.at(1));
+}
+
+void RegionDetector::minAreaRectCentre(const vector<Point> &polygon, Point &centre) {
+    RotatedRect enclosingRectangle = minAreaRect(polygon);
+
+    centre = enclosingRectangle.center;
+}
+
+void RegionDetector::findGoodPointsForAngle(const vector<Point> &polygonConvexHull,
+                                            const Point &boundingRectCentre,
+                                            const Point &closestPoint,
+                                            vector<Point> &goodPointsForAngle) {
+    Point firstEdgePoint, secondEdgePoint;
+
+    Geometry2D::orthogonalLineToAnotherLineEdgePoints(closestPoint, boundingRectCentre, firstEdgePoint,
+                                                      secondEdgePoint, image.rows, image.cols);
+
+    findGoodIntersectionPoints(polygonConvexHull, firstEdgePoint, secondEdgePoint, goodPointsForAngle);
+}
+
+void RegionDetector::findGoodIntersectionPoints(const vector<Point> &polygonConvexHull, const Point &edgePointA,
+                                                const Point &edgePointB, vector<Point> &goodPointsForAngle) {
+    Point intersection;
+    int nrOfPolygonPoints = polygonConvexHull.size();
+
+    for (int i = 0; i < nrOfPolygonPoints; i++) {
+        if (Geometry2D::lineSegmentIntersection(polygonConvexHull.at(i), polygonConvexHull.at((i+1) % nrOfPolygonPoints),
+                                                edgePointA, edgePointB, intersection)) {
+            goodPointsForAngle.push_back(intersection);
+        }
+    }
 }
 
 void RegionDetector::outputRegions(const Mat &image, const vector<Region> &regions, bool isDebugMode) {
@@ -194,7 +234,7 @@ void RegionDetector::outputRegionsAsXMLFile(const vector<Region> &regions) {
 }
 
 void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions) {
-    ofstream fout(outputFilepath, ios_base::trunc);
+    ofstream fout(outputFilepath + OUTPUT_EXTENSION, ios_base::trunc);
 
     if (!fout.is_open())
         throw ERR_OUTPUT_FILE;
@@ -223,8 +263,10 @@ void RegionDetector::outputRegionsInDebugMode(const Mat &image, const vector<Reg
 
     image.copyTo(outputImage(Rect(1, 1, image.cols, image.rows)));
 
+    cvtColor(outputImage, outputImage, CV_GRAY2BGR);
+
     for (const auto &region : regions) {
-        polylines(outputImage, region.getPolygon(), true, Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX));
+        polylines(outputImage, region.getPolygon(), true, Scalar(INTENSITY_MAX, 0, 0));
     }
 
     displayImage(outputImage(Rect(1, 1, image.cols, image.rows)), WIN_PROCESSED_IMAGE);
@@ -241,4 +283,10 @@ double RegionDetector::convertAlpha(int alpha) {
 
 int RegionDetector::convertBeta(int beta) {
     return NumericRangeManipulator::convertFromRange<int, int>(0, BETA_MAX, BETA_REAL_MIN, BETA_REAL_MAX, beta);
+}
+
+void convertVertices(const Point2f *src, vector<Point> &dst) {
+    for (int i = 0; i < ENCLOSING_RECT_VERTICES; i++) {
+      dst.push_back(src[i]);
+    }
 }

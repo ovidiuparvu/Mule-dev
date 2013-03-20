@@ -7,7 +7,7 @@ var searchData=
   ['rectangularcsvtoinputfilesconverter',['RectangularCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#afb10956b6af429826f6077d65616431a',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
   ['rectangularmatfactory',['RectangularMatFactory',['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a869e435db6834024bd864a68f051b022',1,'multiscale::analysis::RectangularMatFactory']]],
   ['region',['Region',['../classmultiscale_1_1analysis_1_1Region.html#a7a527961fb8acfbe737ff994f86d80f7',1,'multiscale::analysis::Region']]],
-  ['regionangle',['regionAngle',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a33fd29babd86192541a1a9fb02780b56',1,'multiscale::analysis::RegionDetector']]],
+  ['regionangle',['regionAngle',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a33fd29babd86192541a1a9fb02780b56',1,'multiscale::analysis::RegionDetector::regionAngle(const vector&lt; Point &gt; &amp;polygon, unsigned int closestPointIndex)'],['../classmultiscale_1_1analysis_1_1RegionDetector.html#af9054eb39e943eb846298a646835934e',1,'multiscale::analysis::RegionDetector::regionAngle(const vector&lt; Point &gt; &amp;polygonConvexHull, const Point &amp;closestPoint)']]],
   ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a935728b34b703878d7e9881893edd1a9',1,'multiscale::analysis::RegionDetector']]],
   ['replace',['replace',['../classmultiscale_1_1StringManipulator.html#a8bd8c91229eef87e3d175c3544baf82e',1,'multiscale::StringManipulator']]],
   ['reset',['reset',['../classmultiscale_1_1NumberIterator.html#a17220743680f370fcb311f155ade7e50',1,'multiscale::NumberIterator']]],

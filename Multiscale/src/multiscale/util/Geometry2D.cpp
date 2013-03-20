@@ -1,16 +1,114 @@
 #include "multiscale/util/Geometry2D.hpp"
 
+#include <algorithm>
+
 using namespace multiscale;
 
 
-double Geometry2D::distanceBtwPoints(Point a, Point b) {
+double Geometry2D::distanceBtwPoints(const Point &a, const Point &b) {
     double xDiff = a.x - b.x;
     double yDiff = a.y - b.y;
 
     return sqrt((xDiff * xDiff) + (yDiff * yDiff));
 }
 
-double Geometry2D::angleBtwPoints(Point a, Point b, Point c) {
+double Geometry2D::distanceFromPointToLine(const Point &a, const Point &linePointB, const Point &linePointC) {
+    double term1 = linePointC.x - linePointB.x;
+    double term2 = linePointB.y - a.y;
+    double term3 = linePointB.x - a.x;
+    double term4 = linePointC.y - linePointB.y;
+
+    double nominator = abs((term1 * term2) - (term3 * term4));
+    double denominator = sqrt((term1 * term1) + (term4 * term4));
+
+    return (nominator / denominator);
+}
+
+Point Geometry2D::middlePoint(const Point &a, const Point &b) {
+    int middleX = (a.x + b.x) / 2;
+    int middleY = (a.y + b.y) / 2;
+
+    return Point(middleX, middleY);
+}
+
+void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Point &b1, Point &a2 ,
+                                                       Point &b2, int nrOfRows, int nrOfCols) {
+    assert((a1.x != b1.x) || (a1.y != b1.y));
+
+    if ((b1.x - a1.x) == 0) {   // Vertical line
+        a2 = b1;
+        b2 = b1;
+
+        while (!isPointOnEdge(a2, nrOfRows, nrOfCols))
+            a2.y--;
+
+        while (!isPointOnEdge(b2, nrOfRows, nrOfCols))
+            b2.y++;
+    } else if (b1.y - a1.y == 0) {  // Horizontal line
+        a2 = b1;
+        b2 = b1;
+
+        while (!isPointOnEdge(a2, nrOfRows, nrOfCols))
+            a2.x--;
+
+        while (!isPointOnEdge(b2, nrOfRows, nrOfCols))
+            b2.x++;
+    } else {                        // Otherwise
+        double oldSlope = ((double)(b1.y - a1.y)) / (b1.x - a1.x);
+
+        double newSlope = (-1) / (oldSlope);
+        double intercept = b1.y - (newSlope * b1.x);
+
+        a2 = b1;
+        b2 = b1;
+
+        while (!isPointOnEdge(a2, nrOfRows, nrOfCols)) {
+            a2.x = a2.x - 1;
+            a2.y = a2.x * newSlope + intercept;
+        }
+
+        while (!isPointOnEdge(b2, nrOfRows, nrOfCols)) {
+            b2.x = b2.x + 1;
+            b2.y = b2.x * newSlope + intercept;
+        }
+    }
+}
+
+bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection) {
+    int A1 = b1.y - a1.y;
+    int B1 = a1.x - b1.x;
+    int C1 = (a1.x * A1) + (a1.y * B1);
+
+    int A2 = b2.y - a2.y;
+    int B2 = a2.x - b2.x;
+    int C2 = (a2.x * A2) + (a2.y * B2);
+
+    int det = (A1 * B2) - (A2 * B1);
+
+    if (det != 0) {
+        intersection.x = ((C1 * B2) - (C2 * B1)) / (det);
+        intersection.y = ((C2 * A1) - (C1 * A2)) / (det);
+
+        return true;
+    }
+
+    return false;
+}
+
+bool Geometry2D::lineSegmentIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection) {
+    if (lineIntersection(a1, b1, a2, b2, intersection)) {
+        return (
+                    isBetweenCoordinates(intersection.x, a1.x, b1.x) &&
+                    isBetweenCoordinates(intersection.x, a2.x, b2.x) &&
+                    isBetweenCoordinates(intersection.y, a1.y, b1.y) &&
+                    isBetweenCoordinates(intersection.y, a2.y, b2.y)
+               );
+    }
+
+    return false;
+}
+
+double Geometry2D::angleBtwPoints(const Point &a, const Point &b, const Point &c) {
     Point2f ab(b.x - a.x, b.y - a.y);
     Point2f cb(b.x - c.x, b.y - c.y);
 
@@ -55,11 +153,20 @@ unsigned int Geometry2D::minimumDistancePointIndex(const vector<Point> &contour,
     return minimumDistancePointIndex;
 }
 
-bool Geometry2D::isPointOnEdge(Point p, int nrOfRows, int nrOfCols) {
+bool Geometry2D::isPointOnEdge(const Point &p, int nrOfRows, int nrOfCols) {
     return (
-              ((p.x == MATRIX_START_INDEX) && (p.y > MATRIX_START_INDEX) && (p.y < nrOfCols)) ||
-              ((p.x == nrOfRows) && (p.y > MATRIX_START_INDEX) && (p.y < nrOfCols)) ||
-              ((p.y == MATRIX_START_INDEX) && (p.x > MATRIX_START_INDEX) && (p.x < nrOfRows)) ||
-              ((p.y == nrOfCols) && (p.x > MATRIX_START_INDEX) && (p.x < nrOfRows))
+              ((p.x <= MATRIX_START_INDEX) && (p.y > MATRIX_START_INDEX) && (p.y < nrOfCols)) ||
+              ((p.x >= nrOfRows) && (p.y > MATRIX_START_INDEX) && (p.y < nrOfCols)) ||
+              ((p.y <= MATRIX_START_INDEX) && (p.x > MATRIX_START_INDEX) && (p.x < nrOfRows)) ||
+              ((p.y >= nrOfCols) && (p.x > MATRIX_START_INDEX) && (p.x < nrOfRows))
            );
+}
+
+bool Geometry2D::isBetweenCoordinates(int c, int c1, int c2) {
+    return ((min(c1, c2) <= c) && (c <= max(c1, c2)));
+}
+
+int Geometry2D::sgn(int number) {
+    return (number < 0) ? -1
+                        : 1;
 }

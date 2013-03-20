@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['enclosing_5frect_5fvertices',['ENCLOSING_RECT_VERTICES',['../RegionDetector_8hpp.html#a5079a6aecf30e939ba1344b2e427cbec',1,'RegionDetector.hpp']]],
   ['endingangle',['endingAngle',['../classmultiscale_1_1video_1_1AnnularSector.html#a0aebd11072dbefe42196d6bda2e4318d',1,'multiscale::video::AnnularSector']]],
   ['endingradius',['endingRadius',['../classmultiscale_1_1video_1_1AnnularSector.html#aa45c5399240707d0b3fc02ee86b97c79',1,'multiscale::video::AnnularSector']]],
   ['epsilon',['epsilon',['../classmultiscale_1_1analysis_1_1RegionDetector.html#acf21910fadd7c6ef2810743a78a0aeb9',1,'multiscale::analysis::RegionDetector']]],
@@ -13,5 +14,6 @@ var searchData=
   ['err_5fneg_5fsim_5ftime',['ERR_NEG_SIM_TIME',['../CartesianToPolarConverter_8hpp.html#a3ad0d4f95970c66da7d75bf997714f6f',1,'ERR_NEG_SIM_TIME():&#160;CartesianToPolarConverter.hpp'],['../PolarCsvToInputFilesConverter_8hpp.html#a3ad0d4f95970c66da7d75bf997714f6f',1,'ERR_NEG_SIM_TIME():&#160;PolarCsvToInputFilesConverter.hpp'],['../CartesianToConcentrationsConverter_8hpp.html#a3ad0d4f95970c66da7d75bf997714f6f',1,'ERR_NEG_SIM_TIME():&#160;CartesianToConcentrationsConverter.hpp'],['../RectangularCsvToInputFilesConverter_8hpp.html#a3ad0d4f95970c66da7d75bf997714f6f',1,'ERR_NEG_SIM_TIME():&#160;RectangularCsvToInputFilesConverter.hpp']]],
   ['err_5fnonpos_5fdimension',['ERR_NONPOS_DIMENSION',['../CartesianToPolarConverter_8hpp.html#a1cf49e653837247035d3d9d1fbdb0dee',1,'ERR_NONPOS_DIMENSION():&#160;CartesianToPolarConverter.hpp'],['../CartesianToConcentrationsConverter_8hpp.html#a1cf49e653837247035d3d9d1fbdb0dee',1,'ERR_NONPOS_DIMENSION():&#160;CartesianToConcentrationsConverter.hpp']]],
   ['err_5fnr_5fconcentrations',['ERR_NR_CONCENTRATIONS',['../PolarCsvToInputFilesConverter_8hpp.html#a6328562b85e8bcbb1f603131b4df6da8',1,'ERR_NR_CONCENTRATIONS():&#160;PolarCsvToInputFilesConverter.hpp'],['../RectangularCsvToInputFilesConverter_8hpp.html#a6328562b85e8bcbb1f603131b4df6da8',1,'ERR_NR_CONCENTRATIONS():&#160;RectangularCsvToInputFilesConverter.hpp']]],
+  ['err_5foutput_5ffile',['ERR_OUTPUT_FILE',['../RegionDetector_8hpp.html#a802932639681d325fff007066f0df5c4',1,'RegionDetector.hpp']]],
   ['err_5fselected_5fconcentration_5findex',['ERR_SELECTED_CONCENTRATION_INDEX',['../PolarCsvToInputFilesConverter_8hpp.html#a7e19750ee177931a4cc33778274b2727',1,'ERR_SELECTED_CONCENTRATION_INDEX():&#160;PolarCsvToInputFilesConverter.hpp'],['../RectangularCsvToInputFilesConverter_8hpp.html#a7e19750ee177931a4cc33778274b2727',1,'ERR_SELECTED_CONCENTRATION_INDEX():&#160;RectangularCsvToInputFilesConverter.hpp']]]
 ];

@@ -11,7 +11,9 @@ using namespace cv;
 
 #define ERR_OUTPUT_FILE     "Unable to create output file."
 
-#define WIN_ORIGINAL_IMAGE  "Original image"
+#define OUTPUT_EXTENSION    ".out"
+
+#define WIN_DEBUG_IMAGE     "Debug image"
 #define WIN_PROCESSED_IMAGE "Processed image"
 
 #define TRACKBAR_ALPHA              "Alpha"
@@ -45,6 +47,8 @@ using namespace cv;
 
 #define PI  3.141592
 
+#define ENCLOSING_RECT_VERTICES 4
+
 
 namespace multiscale {
 
@@ -65,8 +69,7 @@ namespace multiscale {
 
                 Point origin;           /*!< The point representing the origin */
 
-                unsigned int nrOfRows;  /*!< The number of rows in the image */
-                unsigned int nrOfCols;  /*!< The number of columns in the image */
+                Mat image;              /*!< The original image */
 
                 string inputFilepath;   /*!< Path of the input file */
                 string outputFilepath;  /*!< Path of the output file */
@@ -187,13 +190,53 @@ namespace multiscale {
                 bool isValidRegion(const vector<Point> &polygon);
 
                 //! Compute the angle of the polygon
-                /*! Compute the angle determined by the points from the contour which are
-                 *  on the edge and the closest point to the origin.
+                /*! Compute the angle determined by the closest point to the origin and the points P1 and P2.
+                 * These points are obtained from the intersection of the polygon with the line AB, determined
+                 * by points A and B. Points A and B are the middle points of the sides of the rotated rectangle enclosing
+                 * the polygon that are orthogonal to the line which is the nearest to the closestPoint.
                  *
                  *  \param polygon Polygon determining the region
                  *  \param closestPointIndex Index of the closest point to the origin from the set of points defining the polygon
                  */
                 double regionAngle(const vector<Point> &polygon, unsigned int closestPointIndex);
+
+                //! Compute the angle of the polygon
+                /*! Compute the angle determined by the closest point to the origin and the points P1 and P2.
+                 * These points are obtained from the intersection of the convex hull with the line AB, determined
+                 * by points A and B. Points A and B are the middle points of the sides of the rotated rectangle enclosing
+                 * the polygon that are orthogonal to the line which is the nearest to the closestPoint.
+                 *
+                 *  \param polygonConvexHull Convex hull of polygon determining the region
+                 *  \param closestPoint Closest point to the origin from the set of points defining the polygon
+                 */
+                double regionAngle(const vector<Point> &polygonConvexHull, const Point &closestPoint);
+
+                //! Get the centre of the minimum area bounding rectangle
+                /*!
+                 * \param polygon The polygon
+                 * \param centre The centre of the bounding rectangle
+                 */
+                void minAreaRectCentre(const vector<Point> &polygon, Point &centre);
+
+                //! Find the points for determining the angle of the region
+                /*!
+                 *  \param polygonConvexHull Convex hull of polygon determining the region
+                 *  \param boundingRectCentre Centre of the rotated rectangle enclosing the polygon convex hull
+                 *  \param closestPoint Closest point to the origin from the set of points defining the polygon
+                 *  \param goodPointsForAngle The points which are relevant for computing the angle
+                 */
+                void findGoodPointsForAngle(const vector<Point> &polygonConvexHull, const Point &boundingRectCentre,
+                                            const Point &closestPoint, vector<Point> &goodPointsForAngle);
+
+                //! Find good intersection points for computing the angle of the region
+                /*!
+                 * \param polygonConvexHull The convex hull of the polygon
+                 * \param edgePointA Point A on the edge
+                 * \param edgePointB Point B on the edge
+                 * \param goodPointsForAngle The "good" points for computing the angle
+                 */
+                void findGoodIntersectionPoints(const vector<Point> &polygonConvexHull, const Point &edgePointA,
+                                                const Point &edgePointB, vector<Point> &goodPointsForAngle);
 
                 //! Output the regions
                 /*!

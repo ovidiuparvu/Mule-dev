@@ -1,7 +1,7 @@
 var searchData=
 [
   ['padwithzeros',['padWithZeros',['../classmultiscale_1_1LexicographicNumberIterator.html#a303760947326df5dfa92a4f752bf739a',1,'multiscale::LexicographicNumberIterator']]],
-  ['pi',['PI',['../classmultiscale_1_1Geometry2D.html#afa60fa16a52b7ce5096a1d3fedf8b3d9',1,'multiscale::Geometry2D::PI()'],['../RegionDetector_8hpp.html#a598a3330b3c21701223ee0ca14316eca',1,'PI():&#160;RegionDetector.hpp']]],
+  ['pi',['PI',['../RegionDetector_8hpp.html#a598a3330b3c21701223ee0ca14316eca',1,'PI():&#160;RegionDetector.hpp'],['../Geometry2D_8hpp.html#a598a3330b3c21701223ee0ca14316eca',1,'PI():&#160;Geometry2D.hpp']]],
   ['polarcsvtoinputfilesconverter',['PolarCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html',1,'multiscale::video']]],
   ['polarcsvtoinputfilesconverter',['PolarCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ae13140d68ba92fa3c50f2a5c1aab8c09',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['polarcsvtoinputfilesconverter_2ehpp',['PolarCsvToInputFilesConverter.hpp',['../PolarCsvToInputFilesConverter_8hpp.html',1,'']]],

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['sgn',['sgn',['../classmultiscale_1_1Geometry2D.html#a4e7fc2a1f46f34d56c99a6ace8a1574c',1,'multiscale::Geometry2D']]],
   ['smoothimage',['smoothImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a2e4a84cf8cf14bc81e9eaac5e6578c73',1,'multiscale::analysis::RegionDetector']]],
   ['split',['split',['../classmultiscale_1_1StringManipulator.html#afd1091a0cf87508dbf99b5f196b37667',1,'multiscale::StringManipulator']]],
   ['splitfirstpartinconcentrations',['splitFirstPartInConcentrations',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a010e7df8b1e664079bede8353dc64712',1,'multiscale::video::PolarCsvToInputFilesConverter']]],

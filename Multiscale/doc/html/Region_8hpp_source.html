@@ -109,52 +109,60 @@ $(document).ready(function(){initNavTree('Region_8hpp_source.html','');});
 <a href="Region_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef REGION_HPP_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define REGION_HPP_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;opencv2/imgproc/imgproc.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>cv;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">namespace </span>analysis {</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>cv;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="Region_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">   11</a></span>&#160;<span class="preprocessor">#define OUTPUT_SEPARATOR &quot;,&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html">   15</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region.">Region</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a5dbd3560c0acaa3ae1b93d04ece6eb96">   19</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a5dbd3560c0acaa3ae1b93d04ece6eb96">area</a>;                </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html#ad5f128003a97d9d41fd4cf1c01d9a709">   20</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Region.html#ad5f128003a97d9d41fd4cf1c01d9a709">distanceFromOrigin</a>;  </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a86c960769a9e8bc1a29dc00c1d43f20a">   21</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a86c960769a9e8bc1a29dc00c1d43f20a">angle</a>;               </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a40d1b47f30bb09c6a47521a968163b6d">   23</a></span>&#160;                vector&lt;Point&gt; <a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a40d1b47f30bb09c6a47521a968163b6d">polygon</a>;      </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region.">Region</a>(<span class="keywordtype">double</span> area, <span class="keywordtype">double</span> distanceFromOrigin,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                       <span class="keywordtype">double</span> angle, <span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region.">Region</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordtype">double</span> getAngle() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordtype">double</span> getArea() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="keywordtype">double</span> getDistanceFromOrigin() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keyword">const</span> vector&lt;Point&gt;&amp; getPolygon() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        };</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">namespace </span>analysis {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html">   19</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region.">Region</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a5dbd3560c0acaa3ae1b93d04ece6eb96">   23</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a5dbd3560c0acaa3ae1b93d04ece6eb96">area</a>;                </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html#ad5f128003a97d9d41fd4cf1c01d9a709">   24</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Region.html#ad5f128003a97d9d41fd4cf1c01d9a709">distanceFromOrigin</a>;  </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a86c960769a9e8bc1a29dc00c1d43f20a">   25</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a86c960769a9e8bc1a29dc00c1d43f20a">angle</a>;               </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a40d1b47f30bb09c6a47521a968163b6d">   27</a></span>&#160;                vector&lt;Point&gt; <a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a40d1b47f30bb09c6a47521a968163b6d">polygon</a>;      </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region.">Region</a>(<span class="keywordtype">double</span> area, <span class="keywordtype">double</span> distanceFromOrigin,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                       <span class="keywordtype">double</span> angle, <span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region.">Region</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordtype">double</span> getAngle() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordtype">double</span> getArea() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordtype">double</span> getDistanceFromOrigin() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keyword">const</span> vector&lt;Point&gt;&amp; getPolygon() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordtype">string</span> fieldNamesToString();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordtype">string</span> toString();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_6e6b05d31d702f931da8a7ff680120e8.html">analysis</a></li><li class="navelem"><a class="el" href="dir_debaf27b098421965d0ee193c694d3c2.html">spatial</a></li><li class="navelem"><a class="el" href="Region_8hpp.html">Region.hpp</a></li>
-    <li class="footer">Generated on Sun Mar 17 2013 18:45:12 for Multiscale by
+    <li class="footer">Generated on Wed Mar 20 2013 18:09:50 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
