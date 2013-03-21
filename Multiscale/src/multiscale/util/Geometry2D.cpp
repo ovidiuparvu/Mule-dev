@@ -98,11 +98,59 @@ bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point 
 bool Geometry2D::lineSegmentIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection) {
     if (lineIntersection(a1, b1, a2, b2, intersection)) {
         return (
-                    isBetweenCoordinates(intersection.x, a1.x, b1.x) &&
-                    isBetweenCoordinates(intersection.x, a2.x, b2.x) &&
-                    isBetweenCoordinates(intersection.y, a1.y, b1.y) &&
-                    isBetweenCoordinates(intersection.y, a2.y, b2.y)
+                    isBetweenCoordinates<int, int>(intersection.x, a1.x, b1.x) &&
+                    isBetweenCoordinates<int, int>(intersection.x, a2.x, b2.x) &&
+                    isBetweenCoordinates<int, int>(intersection.y, a1.y, b1.y) &&
+                    isBetweenCoordinates<int, int>(intersection.y, a2.y, b2.y)
                );
+    }
+
+    return false;
+}
+
+bool Geometry2D::lineCircleIntersection(Point a, Point b, const Point &circleOrigin,
+                                        double radius, vector<Point2f> &intersectionPoints) {
+    translate(a, Point(-circleOrigin.x, -circleOrigin.y));
+    translate(b, Point(-circleOrigin.x, -circleOrigin.y));
+
+    double A = b.y - a.y;
+    double B = a.x - b.x;
+    double C = (a.x * A) + (a.y * B);
+
+    double A2 = A * A;
+    double B2 = B * B;
+    double C2 = C * C;
+    double R2 = radius * radius;
+
+    double delta = (4 * B2 * C2) - (4 * (A2 + B2) * (C2 - (R2 * A2)));
+
+    if (delta > 0) {            /*!< Two intersection points */
+        lineCircleTwoIntersectionPoints(circleOrigin, A, B, C, delta, intersectionPoints);
+
+        return true;
+    } else if (delta == 0) {    /*!< One intersection point */
+        lineCircleOneIntersectionPoint(circleOrigin, A, B, C, delta, intersectionPoints);
+
+        return true;
+    }
+
+    return false;
+}
+
+bool Geometry2D::lineSegmentCircleIntersection(const Point &a, const Point &b, const Point &circleOrigin,
+                                                      double radius, vector<Point2f> &intersectionPoints) {
+    if (lineCircleIntersection(a, b, circleOrigin, radius, intersectionPoints)) {
+        for (vector<Point2f>::iterator it = intersectionPoints.begin(); it != intersectionPoints.end(); ) {
+            if (isBetweenCoordinates<float, int>((*it).x, a.x, b.x) &&
+                isBetweenCoordinates<float, int>((*it).y, a.y, b.y)
+               ) {
+                ++it;
+            } else {
+                intersectionPoints.erase(it);
+            }
+        }
+
+        return (intersectionPoints.size() > 0);
     }
 
     return false;
@@ -162,11 +210,52 @@ bool Geometry2D::isPointOnEdge(const Point &p, int nrOfRows, int nrOfCols) {
            );
 }
 
-bool Geometry2D::isBetweenCoordinates(int c, int c1, int c2) {
-    return ((min(c1, c2) <= c) && (c <= max(c1, c2)));
+template <typename T, typename U>
+bool Geometry2D::isBetweenCoordinates(T c, U c1, U c2) {
+    return ((std::min(c1, c2) <= c) && (c <= std::max(c1, c2)));
 }
 
 int Geometry2D::sgn(int number) {
     return (number < 0) ? -1
                         : 1;
+}
+
+void Geometry2D::translate(Point &point, const Point &translation) {
+    point.x += translation.x;
+    point.y += translation.y;
+}
+
+void Geometry2D::inverseTranslate(Point2f &point, const Point &translation) {
+    point.x -= translation.x;
+    point.y -= translation.y;
+}
+
+void Geometry2D::lineCircleTwoIntersectionPoints(const Point &circleOrigin, double A, double B,
+                                                 double C, double delta, vector<Point2f> &intersectionPoints) {
+    double y1 = ((2 * B * C) + (sqrt(delta))) / (2 * ((A * A) + (B * B)));
+    double y2 = ((2 * B * C) - (sqrt(delta))) / (2 * ((A * A) + (B * B)));
+
+    double x1 = (C - (B * y1)) / (A);
+    double x2 = (C - (B * y2)) / (A);
+
+    Point2f firstIntersectionPoint(x1, y1);
+    Point2f secondIntersectionPoint(x2, y2);
+
+    inverseTranslate(firstIntersectionPoint, Point(-circleOrigin.x, -circleOrigin.y));
+    inverseTranslate(secondIntersectionPoint, Point(-circleOrigin.x, -circleOrigin.y));
+
+    intersectionPoints.push_back(firstIntersectionPoint);
+    intersectionPoints.push_back(secondIntersectionPoint);
+}
+
+void Geometry2D::lineCircleOneIntersectionPoint(const Point &circleOrigin, double A, double B,
+                                                double C, double delta, vector<Point2f> &intersectionPoints) {
+    double y = (B * C) / ((A * A) + (B * B));
+    double x = (C - (B * y)) / (A);
+
+    Point2f intersectionPoint(x, y);
+
+    inverseTranslate(intersectionPoint, Point(-circleOrigin.x, -circleOrigin.y));
+
+    intersectionPoints.push_back(intersectionPoint);
 }

@@ -12,5 +12,6 @@ var searchData=
   ['trackbar_5fmorph',['TRACKBAR_MORPH',['../RegionDetector_8hpp.html#a3d9d5b70f8e60cfaf583ca65d0244d74',1,'RegionDetector.hpp']]],
   ['trackbar_5fregion_5farea_5fthresh',['TRACKBAR_REGION_AREA_THRESH',['../RegionDetector_8hpp.html#a89f82c8c6d79b896d6157583c61d8d74',1,'RegionDetector.hpp']]],
   ['trackbar_5fthreshold',['TRACKBAR_THRESHOLD',['../RegionDetector_8hpp.html#ac19d7ea03e314da1a1e96a5355cfeb67',1,'RegionDetector.hpp']]],
-  ['transformtoannularsectors',['transformToAnnularSectors',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a60abebb682eed4432ac3f75555e31f32',1,'multiscale::video::CartesianToPolarConverter']]]
+  ['transformtoannularsectors',['transformToAnnularSectors',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a60abebb682eed4432ac3f75555e31f32',1,'multiscale::video::CartesianToPolarConverter']]],
+  ['translate',['translate',['../classmultiscale_1_1Geometry2D.html#a64fe14ed0756b883b5826062b14cbff5',1,'multiscale::Geometry2D']]]
 ];

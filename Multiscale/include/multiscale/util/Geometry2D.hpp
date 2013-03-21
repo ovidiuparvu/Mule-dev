@@ -46,6 +46,8 @@ namespace multiscale {
              *\param b1 Second point for determining the first line
              *\param a2 First point for determining the second line
              *\param b2 Second point for determining the second line
+             *\param nrOfRows Maximum number of rows in the considered matrix
+             *\param nrOfCols Maximum number of columns in the considered matrix
              */
             static void orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Point &b1, Point &a2,
                                                               Point &b2, int nrOfRows, int nrOfCols);
@@ -93,6 +95,34 @@ namespace multiscale {
              *\param intersection The intersection point, if this point exists
              */
             static bool lineSegmentIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection);
+
+            //! Determine if a line and a circle intersect and return the intersection points if they exist
+            /*!
+             * We translate all the points such that the circle origin coincides with the origin of the
+             * coordinate system. When returning the results, the intersection points are inverse translated.
+             *
+             * \param a First point for determining the line
+             * \param b Second point for determining the line
+             * \param circleOrigin Origin of the circle
+             * \param radius Radius of the circle
+             * \param intersectionPoints The intersection points between the circle and the line
+             */
+            static bool lineCircleIntersection(Point a, Point b, const Point &circleOrigin,
+                                               double radius, vector<Point2f> &intersectionPoints);
+
+            //! Determine if a line segment and a circle intersect and return the intersection points if they exist
+            /*!
+             * We translate all the points such that the circle origin coincides with the origin of the
+             * coordinate system. When returning the results, the intersection points are inverse translated.
+             *
+             * \param a First point for determining the line
+             * \param b Second point for determining the line
+             * \param circleOrigin Origin of the circle
+             * \param radius Radius of the circle
+             * \param intersectionPoints The intersection points between the circle and the line
+             */
+            static bool lineSegmentCircleIntersection(const Point &a, const Point &b, const Point &circleOrigin,
+                                                      double radius, vector<Point2f> &intersectionPoints);
 
             //! Compute the angle between three points
             /*! Compute the angle between the lines determined by
@@ -148,13 +178,52 @@ namespace multiscale {
              * \param c1 Coordinate c1
              * \param c2 Coordinate c2
              */
-            static bool isBetweenCoordinates(int c, int c1, int c2);
+            template <typename T, typename U>
+            static bool isBetweenCoordinates(T c, U c1, U c2);
 
             //! Compute sgn(number)
             /*!
              *\param number The number
              */
             static int sgn(int number);
+
+            //! Translate a point by the given values
+            /*!
+             * \param point The point
+             * \param translation Translation values
+             */
+            static void translate(Point &point, const Point &translation);
+
+            //! Inverse translate a point by the given values
+            /*!
+             * \param point The point
+             * \param translation Translation values
+             */
+            static void inverseTranslate(Point2f &point, const Point &translation);
+
+            //! Treat the case when the line and circle intersect in two points
+            /*!
+             * \param circleOrigin Origin of the circle
+             * \param A y2 - y1
+             * \param B x1 - x2
+             * \param C A*x1 + B*y1
+             * \param delta (4 * B^2 * C^2) - (4 * (A^2 + B^2) * (C^2 - (R^2 * A^2)))
+             * \param intersectionPoints Intersection points
+             */
+            static void lineCircleTwoIntersectionPoints(const Point &circleOrigin, double A, double B,
+                                                        double C, double delta, vector<Point2f> &intersectionPoints);
+
+            //! Treat the case when the line and circle intersect in one point
+            /*!
+             * \param circleOrigin Origin of the circle
+             * \param A y2 - y1
+             * \param B x1 - x2
+             * \param C A*x1 + B*y1
+             * \param delta (4 * B^2 * C^2) - (4 * (A^2 + B^2) * (C^2 - (R^2 * A^2)))
+             * \param intersectionPoints Intersection points
+             */
+            static void lineCircleOneIntersectionPoint(const Point &circleOrigin, double A, double B,
+                                                       double C, double delta, vector<Point2f> &intersectionPoints);
 
     };
 

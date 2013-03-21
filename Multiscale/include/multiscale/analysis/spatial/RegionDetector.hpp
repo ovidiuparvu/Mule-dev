@@ -109,12 +109,14 @@ namespace multiscale {
                 //! Detect the regions in the provided image in debug mode
                 /*!
                  * \param image The image
+                 * \param regions The regions from the image
                  */
                 void detectRegionsInDebugMode(const Mat& image, vector<Region> &regions);
 
                 //! Detect the regions in the provided image in normal mode
                 /*!
                  * \param image The image
+                 * \param regions The regions from the image
                  */
                 void detectRegionsInNormalMode(const Mat& image, vector<Region>& regions);
 
@@ -165,6 +167,7 @@ namespace multiscale {
                  * information from them.
                  *
                  * \param image The image
+                 * \param regions The regions in the image
                  */
                 void findRegions(const Mat &image, vector<Region>& regions);
 
