@@ -19,6 +19,7 @@ var searchData=
   ['convertrgbtostring',['convertRGBToString',['../classmultiscale_1_1RGBColourGenerator.html#a244d4daeabfb3b1d6320dd8a79e33543',1,'multiscale::RGBColourGenerator']]],
   ['converttointensity',['convertToIntensity',['../classmultiscale_1_1analysis_1_1MatFactory.html#a5b9ff7b116b6e0d2af7c79cf2a2bdb61',1,'multiscale::analysis::MatFactory']]],
   ['create',['create',['../classmultiscale_1_1analysis_1_1MatFactory.html#a9ee822a8ea24726d92c598a6fc2ddf7a',1,'multiscale::analysis::MatFactory']]],
+  ['createfromimage',['createFromImage',['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a473045ff499ffb88426b4c9beabcacc2',1,'multiscale::analysis::RectangularMatFactory::createFromImage()'],['../classmultiscale_1_1analysis_1_1MatFactory.html#aba0673c81ad5054f9381f72c4a7adc39',1,'multiscale::analysis::MatFactory::createFromImage()']]],
   ['createregionfrompolygon',['createRegionFromPolygon',['../classmultiscale_1_1analysis_1_1RegionDetector.html#afba3e4f6c02fed1728120bd189130b8e',1,'multiscale::analysis::RegionDetector']]],
   ['createtrackbars',['createTrackbars',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a1c293d63a8824f8fac82a4aeec10275a',1,'multiscale::analysis::RegionDetector']]]
 ];

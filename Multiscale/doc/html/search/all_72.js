@@ -22,7 +22,7 @@ var searchData=
   ['regionangle',['regionAngle',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a33fd29babd86192541a1a9fb02780b56',1,'multiscale::analysis::RegionDetector::regionAngle(const vector&lt; Point &gt; &amp;polygon, unsigned int closestPointIndex)'],['../classmultiscale_1_1analysis_1_1RegionDetector.html#af9054eb39e943eb846298a646835934e',1,'multiscale::analysis::RegionDetector::regionAngle(const vector&lt; Point &gt; &amp;polygonConvexHull, const Point &amp;closestPoint)']]],
   ['regionareathresh',['regionAreaThresh',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a1f637073a3d946d000dceed01412f19a',1,'multiscale::analysis::RegionDetector']]],
   ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html',1,'multiscale::analysis']]],
-  ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a935728b34b703878d7e9881893edd1a9',1,'multiscale::analysis::RegionDetector']]],
+  ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a9dc95bdb46a8855ffe7a1b1e56ffd74c',1,'multiscale::analysis::RegionDetector']]],
   ['regiondetector_2ehpp',['RegionDetector.hpp',['../RegionDetector_8hpp.html',1,'']]],
   ['replace',['replace',['../classmultiscale_1_1StringManipulator.html#a8bd8c91229eef87e3d175c3544baf82e',1,'multiscale::StringManipulator']]],
   ['replace_5fcontent_5fconcentration',['REPLACE_CONTENT_CONCENTRATION',['../PolarGnuplotScriptGenerator_8hpp.html#a7fa1668ec9158f11e27886ddcc0ee467',1,'PolarGnuplotScriptGenerator.hpp']]],
@@ -40,6 +40,10 @@ var searchData=
   ['reversedigits',['reverseDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#a8af70d88c6b445d27ae935fa261cdf34',1,'multiscale::LexicographicNumberIterator']]],
   ['rgbcolourgenerator',['RGBColourGenerator',['../classmultiscale_1_1RGBColourGenerator.html',1,'multiscale']]],
   ['rgbcolourgenerator_2ehpp',['RGBColourGenerator.hpp',['../RGBColourGenerator_8hpp.html',1,'']]],
+  ['roi_5fheight',['ROI_HEIGHT',['../RectangularMatFactory_8hpp.html#a8dc6ce6371f00cb707b29521bd07fc51',1,'RectangularMatFactory.hpp']]],
+  ['roi_5fstart_5fx',['ROI_START_X',['../RectangularMatFactory_8hpp.html#a45b48336a4e1e5ee103e64d60ff70d8b',1,'RectangularMatFactory.hpp']]],
+  ['roi_5fstart_5fy',['ROI_START_Y',['../RectangularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1',1,'RectangularMatFactory.hpp']]],
+  ['roi_5fwidth',['ROI_WIDTH',['../RectangularMatFactory_8hpp.html#a69091d35a8755f7ef1f88a5bf3411ee7',1,'RectangularMatFactory.hpp']]],
   ['rows',['rows',['../classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474',1,'multiscale::analysis::MatFactory']]],
   ['rowsiterator',['rowsIterator',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a19fa13140bc5d6b163222030b6dfe61e',1,'multiscale::video::RectangularCsvToInputFilesConverter']]]
 ];

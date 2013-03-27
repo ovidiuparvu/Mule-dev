@@ -9,6 +9,7 @@ var RegionDetector_8hpp =
     [ "BETA_REAL_MIN", "RegionDetector_8hpp.html#af80faafc6dc69d8b17a6ddfecc604c7b", null ],
     [ "CANNY_THRESH_MAX", "RegionDetector_8hpp.html#aa34eb5b9041c17d6bcfbe595f2afbe45", null ],
     [ "CONTOUR_AREA_ORIENTED", "RegionDetector_8hpp.html#a184024ccbc2a88f3d6748c1d7a265477", null ],
+    [ "DISPLAY_LINE_THICKNESS", "RegionDetector_8hpp.html#a19df04c3f86479da35968fed776d2142", null ],
     [ "ENCLOSING_RECT_VERTICES", "RegionDetector_8hpp.html#a5079a6aecf30e939ba1344b2e427cbec", null ],
     [ "EPSILON_MAX", "RegionDetector_8hpp.html#a98ec0e52f8069544e6ed952c7de1dba2", null ],
     [ "ERR_OUTPUT_FILE", "RegionDetector_8hpp.html#a802932639681d325fff007066f0df5c4", null ],

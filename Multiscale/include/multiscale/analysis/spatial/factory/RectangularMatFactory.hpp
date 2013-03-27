@@ -7,6 +7,11 @@ using namespace std;
 
 #define ERR_CONC    "All concentrations have to be between 0 and 1."
 
+#define ROI_START_X 320
+#define ROI_START_Y 318
+#define ROI_WIDTH   1408
+#define ROI_HEIGHT  1358
+
 
 namespace multiscale {
 
@@ -19,6 +24,14 @@ namespace multiscale {
 
                 RectangularMatFactory();
                 ~RectangularMatFactory();
+
+                //! Create a Mat object from the image file obtained from the RectangularGeometryViewer
+                /*!
+                 * Create the Mat instance from the given image file
+                 *
+                 *  \param inputFile The path to the image file
+                 */
+                Mat createFromViewerImage(const string &inputFile);
 
             protected:
 

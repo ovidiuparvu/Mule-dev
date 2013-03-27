@@ -39,9 +39,11 @@ using namespace cv;
 #define ITER_MAX                100
 #define CANNY_THRESH_MAX        100
 #define EPSILON_MAX             100
-#define REGION_AREA_THRESH_MAX  500
+#define REGION_AREA_THRESH_MAX  200000
 #define THRESHOLD_MAX           255
 #define INTENSITY_MAX           255
+
+#define DISPLAY_LINE_THICKNESS   10
 
 #define KEY_ESC 27
 
@@ -71,14 +73,13 @@ namespace multiscale {
 
                 Mat image;              /*!< The original image */
 
-                string inputFilepath;   /*!< Path of the input file */
                 string outputFilepath;  /*!< Path of the output file */
 
                 bool isDebugMode;       /*!< Flag for determining the mode in which the detector runs */
 
             public:
 
-                RegionDetector(const string &inputFilepath,
+                RegionDetector(const Mat    &inputImage,
                                const string &outputFilepath,
                                bool debugMode = false);
                 ~RegionDetector();

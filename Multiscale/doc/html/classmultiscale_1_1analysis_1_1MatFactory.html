@@ -123,12 +123,14 @@ Inheritance diagram for multiscale::analysis::MatFactory:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1MatFactory__inherit__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1MatFactory_inherit__map" alt="Inheritance graph"/></div>
 <map name="multiscale_1_1analysis_1_1MatFactory_inherit__map" id="multiscale_1_1analysis_1_1MatFactory_inherit__map">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid." alt="" coords="5,278,192,415"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid." alt="" coords="5,296,192,451"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for multiscale::analysis::MatFactory:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1MatFactory__coll__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1MatFactory_coll__map" alt="Collaboration graph"/></div>
+<map name="multiscale_1_1analysis_1_1MatFactory_coll__map" id="multiscale_1_1analysis_1_1MatFactory_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -140,6 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9ee822a8ea24726d92c598a6fc2ddf7a"><td class="memItemLeft" align="right" valign="top">Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9ee822a8ea24726d92c598a6fc2ddf7a">create</a> (const string &amp;inputFile)</td></tr>
 <tr class="memdesc:a9ee822a8ea24726d92c598a6fc2ddf7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Mat object from the input file.  <a href="#a9ee822a8ea24726d92c598a6fc2ddf7a">More...</a><br/></td></tr>
 <tr class="separator:a9ee822a8ea24726d92c598a6fc2ddf7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba0673c81ad5054f9381f72c4a7adc39"><td class="memItemLeft" align="right" valign="top">virtual Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#aba0673c81ad5054f9381f72c4a7adc39">createFromImage</a> (const string &amp;inputFile)=0</td></tr>
+<tr class="memdesc:aba0673c81ad5054f9381f72c4a7adc39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Mat object from the image file.  <a href="#aba0673c81ad5054f9381f72c4a7adc39">More...</a><br/></td></tr>
+<tr class="separator:aba0673c81ad5054f9381f72c4a7adc39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -266,6 +271,41 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="aba0673c81ad5054f9381f72c4a7adc39"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Mat multiscale::analysis::MatFactory::createFromImage </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>inputFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a Mat object from the image file. </p>
+<p>Create the Mat instance from the given image file</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputFile</td><td>The path to the image file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a473045ff499ffb88426b4c9beabcacc2">multiscale::analysis::RectangularMatFactory</a>.</p>
 
 </div>
 </div>
@@ -421,7 +461,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html">MatFactory</a></li>
-    <li class="footer">Generated on Thu Mar 21 2013 15:30:10 for Multiscale by
+    <li class="footer">Generated on Wed Mar 27 2013 15:49:04 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -122,12 +122,14 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1RegionD
 Collaboration diagram for multiscale::analysis::RegionDetector:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector__coll__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1RegionDetector_coll__map" alt="Collaboration graph"/></div>
+<map name="multiscale_1_1analysis_1_1RegionDetector_coll__map" id="multiscale_1_1analysis_1_1RegionDetector_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a935728b34b703878d7e9881893edd1a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a935728b34b703878d7e9881893edd1a9">RegionDetector</a> (const string &amp;<a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ac7acb4022f2289ac8c1ab1fa12be0a05">inputFilepath</a>, const string &amp;<a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7437cca0c8a80d8f1a3de6fc309faeb3">outputFilepath</a>, bool debugMode=false)</td></tr>
-<tr class="separator:a935728b34b703878d7e9881893edd1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dc95bdb46a8855ffe7a1b1e56ffd74c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a9dc95bdb46a8855ffe7a1b1e56ffd74c">RegionDetector</a> (const Mat &amp;inputImage, const string &amp;<a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7437cca0c8a80d8f1a3de6fc309faeb3">outputFilepath</a>, bool debugMode=false)</td></tr>
+<tr class="separator:a9dc95bdb46a8855ffe7a1b1e56ffd74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6649d76cab7f3534fd10722e58bb868f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6649d76cab7f3534fd10722e58bb868f">~RegionDetector</a> ()</td></tr>
 <tr class="separator:a6649d76cab7f3534fd10722e58bb868f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9eb57eae92e9740280b1d543bcf2c5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae9eb57eae92e9740280b1d543bcf2c5a">detect</a> ()</td></tr>
@@ -241,8 +243,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8d2a487b7a4168ba94caa3596efbf794"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a43869edd2842a84aa7dfc1d05968cc"><td class="memItemLeft" align="right" valign="top">Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3a43869edd2842a84aa7dfc1d05968cc">image</a></td></tr>
 <tr class="separator:a3a43869edd2842a84aa7dfc1d05968cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7acb4022f2289ac8c1ab1fa12be0a05"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ac7acb4022f2289ac8c1ab1fa12be0a05">inputFilepath</a></td></tr>
-<tr class="separator:ac7acb4022f2289ac8c1ab1fa12be0a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7437cca0c8a80d8f1a3de6fc309faeb3"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7437cca0c8a80d8f1a3de6fc309faeb3">outputFilepath</a></td></tr>
 <tr class="separator:a7437cca0c8a80d8f1a3de6fc309faeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a79504c126724e3e01eb54be3a478ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5a79504c126724e3e01eb54be3a478ae">isDebugMode</a></td></tr>
@@ -251,17 +251,17 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for detecting regions of high intensity in grayscale images. </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00058">58</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00060">60</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a935728b34b703878d7e9881893edd1a9"></a>
+<a class="anchor" id="a9dc95bdb46a8855ffe7a1b1e56ffd74c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">multiscale::analysis::RegionDetector::RegionDetector </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;&#160;</td>
-          <td class="paramname"><em>inputFilepath</em>, </td>
+          <td class="paramtype">const Mat &amp;&#160;</td>
+          <td class="paramname"><em>inputImage</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1429,7 +1429,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Alpha for brightness and contrast adjustments </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00062">62</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00064">64</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1452,7 +1452,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Beta for brightness and contrast adjustments </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00063">63</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00065">65</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1475,7 +1475,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Kernel size for Gaussian blur </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00064">64</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00066">66</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1498,7 +1498,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Epsilon for polygon approximation </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00066">66</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00068">68</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1520,29 +1520,6 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>The original image </p>
-
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00072">72</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac7acb4022f2289ac8c1ab1fa12be0a05"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">string multiscale::analysis::RegionDetector::inputFilepath</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Path of the input file </p>
 
 <p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00074">74</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
@@ -1567,7 +1544,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Flag for determining the mode in which the detector runs </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00077">77</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00078">78</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1590,7 +1567,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Number of iterations for morphological close operator </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00065">65</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00067">67</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1613,7 +1590,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The point representing the origin </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00070">70</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00072">72</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1636,7 +1613,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Path of the output file </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00075">75</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00076">76</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1659,7 +1636,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Threshold for considering a region </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00067">67</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00069">69</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1682,7 +1659,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Value of the threshold for the threshold filter </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00068">68</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00070">70</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1695,7 +1672,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html">RegionDetector</a></li>
-    <li class="footer">Generated on Thu Mar 21 2013 15:30:10 for Multiscale by
+    <li class="footer">Generated on Wed Mar 27 2013 15:49:04 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

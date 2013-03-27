@@ -1,18 +1,19 @@
 /**
- * This program is used for detecting regions of high intensity in grayscale images
+ * This program is used for detecting regions of high intensity in grayscale images considering a rectangular geometry
  *
  * FORMAT OF INPUT FILE:
- * Output of the RectangularMapCsvToInputFiles module
+ * Images generated with RectangularGeometryViewer
  *
  * FORMAT OF OUTPUT FILE:
  * If in debug mode, then display results. Else print them to a .csv/xml file.
  *
  * Author: Ovidiu Parvu
  * Date created: 18.03.2013
- * Date modified: 18.03.2013
+ * Date modified: 27.03.2013
  */
 
 #include "multiscale/analysis/spatial/RegionDetector.hpp"
+#include "multiscale/analysis/spatial/factory/RectangularMatFactory.hpp"
 
 #include <boost/program_options.hpp>
 #include <iostream>
@@ -80,7 +81,9 @@ int main(int argc, char** argv) {
 
     try {
         if (areValidParameters(inputFilePath, outputFilepath, argc, argv)) {
-            RegionDetector detector(inputFilePath, outputFilepath, true);
+            Mat image = RectangularMatFactory().createFromViewerImage(inputFilePath);
+
+            RegionDetector detector(image, outputFilepath, true);
 
             detector.detect();
         } else {

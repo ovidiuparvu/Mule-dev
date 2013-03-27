@@ -6,6 +6,7 @@ var searchData=
   ['detectregionsinnormalmode',['detectRegionsInNormalMode',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a8594aeea176501bd30b0c721e57394ca',1,'multiscale::analysis::RegionDetector']]],
   ['digitstonumber',['digitsToNumber',['../classmultiscale_1_1LexicographicNumberIterator.html#a43ff7a3ec6e49070ab35d56310478991',1,'multiscale::LexicographicNumberIterator']]],
   ['dir_5fseparator',['DIR_SEPARATOR',['../StringManipulator_8hpp.html#a0920890c442b665b0c6609fa796e9047',1,'StringManipulator.hpp']]],
+  ['display_5fline_5fthickness',['DISPLAY_LINE_THICKNESS',['../RegionDetector_8hpp.html#a19df04c3f86479da35968fed776d2142',1,'RegionDetector.hpp']]],
   ['displayimage',['displayImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a4fbf3c3850bc656942cd12dc7f6a4d54',1,'multiscale::analysis::RegionDetector']]],
   ['distancebtwpoints',['distanceBtwPoints',['../classmultiscale_1_1Geometry2D.html#a63f7df67a00e1002375fb3c87d546dfd',1,'multiscale::Geometry2D']]],
   ['distancefromorigin',['distanceFromOrigin',['../classmultiscale_1_1analysis_1_1Region.html#ad5f128003a97d9d41fd4cf1c01d9a709',1,'multiscale::analysis::Region']]],

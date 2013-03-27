@@ -11,8 +11,9 @@
 using namespace std;
 using namespace multiscale::analysis;
 
-RegionDetector::RegionDetector(const string &inputFilepath, const string &outputFilepath, bool debugMode) {
-    this->inputFilepath = inputFilepath;
+
+RegionDetector::RegionDetector(const Mat &inputImage, const string &outputFilepath, bool debugMode) {
+    this->image = inputImage;
     this->outputFilepath = outputFilepath;
     this->isDebugMode = debugMode;
 
@@ -22,15 +23,8 @@ RegionDetector::RegionDetector(const string &inputFilepath, const string &output
 RegionDetector::~RegionDetector() {}
 
 void RegionDetector::detect() {
-    MatFactory* factory = new RectangularMatFactory();
-
-    image = factory->create(inputFilepath);
-
-    delete factory;
-
     // Initialise the origin
     initialiseImageDependentMembers(image);
-
     detectRegions(image);
 }
 
@@ -40,7 +34,7 @@ void RegionDetector::initialiseVisionMembers() {
     blurKernelSize = 1;
     morphologicalCloseIterations = 1;
     epsilon = 1;
-    regionAreaThresh = 40;
+    regionAreaThresh = 30000;
     thresholdValue = 100;
 }
 
@@ -266,7 +260,7 @@ void RegionDetector::outputRegionsInDebugMode(const Mat &image, const vector<Reg
     cvtColor(outputImage, outputImage, CV_GRAY2BGR);
 
     for (const auto &region : regions) {
-        polylines(outputImage, region.getPolygon(), true, Scalar(INTENSITY_MAX, 0, 0));
+        polylines(outputImage, region.getPolygon(), true, Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
     }
 
     displayImage(outputImage(Rect(1, 1, image.cols, image.rows)), WIN_PROCESSED_IMAGE);

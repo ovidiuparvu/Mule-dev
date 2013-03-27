@@ -41,6 +41,14 @@ namespace multiscale {
                  */
                 Mat create(const string &inputFile);
 
+                //! Create a Mat object from the image file obtained from Rectangular/CircularGeometryViewer
+                /*!
+                 * Create the Mat instance from the given image file
+                 *
+                 *  \param inputFile The path to the image file
+                 */
+                virtual Mat createFromViewerImage(const string &inputFile) = 0;
+
             protected:
 
                 //! Initialise the input file

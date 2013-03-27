@@ -115,37 +115,45 @@ $(document).ready(function(){initNavTree('RectangularMatFactory_8hpp_source.html
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="RectangularMatFactory_8hpp.html#a88bb4dcef0e2bea00bce86c02cf5f813">    8</a></span>&#160;<span class="preprocessor">#define ERR_CONC    &quot;All concentrations have to be between 0 and 1.&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="namespacemultiscale.html">   11</a></span>&#160;<span class="keyword">namespace </span>multiscale {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="namespacemultiscale_1_1analysis.html">   13</a></span>&#160;    <span class="keyword">namespace </span>analysis {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html">   16</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid.">RectangularMatFactory</a> : <span class="keyword">public</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="RectangularMatFactory_8hpp.html#a45b48336a4e1e5ee103e64d60ff70d8b">   10</a></span>&#160;<span class="preprocessor">#define ROI_START_X 320</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="RectangularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1">   11</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ROI_START_Y 318</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="RectangularMatFactory_8hpp.html#a69091d35a8755f7ef1f88a5bf3411ee7">   12</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ROI_WIDTH   1408</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="RectangularMatFactory_8hpp.html#a8dc6ce6371f00cb707b29521bd07fc51">   13</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ROI_HEIGHT  1358</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="namespacemultiscale.html">   16</a></span>&#160;<span class="keyword">namespace </span>multiscale {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="namespacemultiscale_1_1analysis.html">   18</a></span>&#160;    <span class="keyword">namespace </span>analysis {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid.">RectangularMatFactory</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid.">RectangularMatFactory</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html">   21</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid.">RectangularMatFactory</a> : <span class="keyword">public</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a> {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *processConcentrations(ifstream&amp; fin);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        };</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid.">RectangularMatFactory</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid.">RectangularMatFactory</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                Mat createFromImage(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *processConcentrations(ifstream&amp; fin);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    };</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_6e6b05d31d702f931da8a7ff680120e8.html">analysis</a></li><li class="navelem"><a class="el" href="dir_debaf27b098421965d0ee193c694d3c2.html">spatial</a></li><li class="navelem"><a class="el" href="dir_47d787b3de841cd6cbf5a6c4030567d8.html">factory</a></li><li class="navelem"><a class="el" href="RectangularMatFactory_8hpp.html">RectangularMatFactory.hpp</a></li>
-    <li class="footer">Generated on Thu Mar 21 2013 15:30:09 for Multiscale by
+    <li class="footer">Generated on Wed Mar 27 2013 15:49:04 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

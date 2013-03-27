@@ -12,5 +12,9 @@ var searchData=
   ['replace_5fheader_5ffilename',['REPLACE_HEADER_FILENAME',['../PolarGnuplotScriptGenerator_8hpp.html#a62f869eb7f2cb72d3239c9dda88a618a',1,'REPLACE_HEADER_FILENAME():&#160;PolarGnuplotScriptGenerator.hpp'],['../RectangularGnuplotScriptGenerator_8hpp.html#a62f869eb7f2cb72d3239c9dda88a618a',1,'REPLACE_HEADER_FILENAME():&#160;RectangularGnuplotScriptGenerator.hpp']]],
   ['replace_5fheader_5fheight',['REPLACE_HEADER_HEIGHT',['../RectangularGnuplotScriptGenerator_8hpp.html#acc1d8b3e09f307e97f90278bdf28849d',1,'RectangularGnuplotScriptGenerator.hpp']]],
   ['replace_5fheader_5fsim_5ftime',['REPLACE_HEADER_SIM_TIME',['../PolarGnuplotScriptGenerator_8hpp.html#a346d2dc87a2a3cfa966ff3e780779f86',1,'REPLACE_HEADER_SIM_TIME():&#160;PolarGnuplotScriptGenerator.hpp'],['../RectangularGnuplotScriptGenerator_8hpp.html#a346d2dc87a2a3cfa966ff3e780779f86',1,'REPLACE_HEADER_SIM_TIME():&#160;RectangularGnuplotScriptGenerator.hpp']]],
-  ['replace_5fheader_5fwidth',['REPLACE_HEADER_WIDTH',['../RectangularGnuplotScriptGenerator_8hpp.html#aad25c2d9aee80f359bd01bccaca636b9',1,'RectangularGnuplotScriptGenerator.hpp']]]
+  ['replace_5fheader_5fwidth',['REPLACE_HEADER_WIDTH',['../RectangularGnuplotScriptGenerator_8hpp.html#aad25c2d9aee80f359bd01bccaca636b9',1,'RectangularGnuplotScriptGenerator.hpp']]],
+  ['roi_5fheight',['ROI_HEIGHT',['../RectangularMatFactory_8hpp.html#a8dc6ce6371f00cb707b29521bd07fc51',1,'RectangularMatFactory.hpp']]],
+  ['roi_5fstart_5fx',['ROI_START_X',['../RectangularMatFactory_8hpp.html#a45b48336a4e1e5ee103e64d60ff70d8b',1,'RectangularMatFactory.hpp']]],
+  ['roi_5fstart_5fy',['ROI_START_Y',['../RectangularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1',1,'RectangularMatFactory.hpp']]],
+  ['roi_5fwidth',['ROI_WIDTH',['../RectangularMatFactory_8hpp.html#a69091d35a8755f7ef1f88a5bf3411ee7',1,'RectangularMatFactory.hpp']]]
 ];
