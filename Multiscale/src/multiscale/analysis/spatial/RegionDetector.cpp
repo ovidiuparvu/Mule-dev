@@ -31,7 +31,7 @@ void RegionDetector::detect() {
 void RegionDetector::initialiseVisionMembers() {
     alpha = 750;
     beta = 0;
-    blurKernelSize = 1;
+    blurKernelSize = 15;
     morphologicalCloseIterations = 1;
     epsilon = 1;
     regionAreaThresh = 30000;
@@ -94,6 +94,7 @@ void RegionDetector::processImage(const Mat &image, vector<Region> &regions) {
 
     changeContrastAndBrightness(image, processedImage);
     morphologicalClose(processedImage);
+    smoothImage(processedImage);
     thresholdImage(processedImage, thresholdedImage);
     findRegions(thresholdedImage, regions);
 }
@@ -181,7 +182,8 @@ double RegionDetector::regionAngle(const vector<Point> &polygonConvexHull, const
     minAreaRectCentre(polygonConvexHull, centre);
     findGoodPointsForAngle(polygonConvexHull, centre, closestPoint, goodPointsForAngle);
 
-    return Geometry2D::angleBtwPoints(goodPointsForAngle.at(0), closestPoint, goodPointsForAngle.at(1));
+    return (goodPointsForAngle.size() == 2) ? Geometry2D::angleBtwPoints(goodPointsForAngle.at(0), closestPoint, goodPointsForAngle.at(1))
+                                            : 0;
 }
 
 void RegionDetector::minAreaRectCentre(const vector<Point> &polygon, Point &centre) {
@@ -239,11 +241,11 @@ void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions) {
 }
 
 void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions, ofstream &fout) {
+    // Output header
+    fout << Region::fieldNamesToString() << endl;
+
     if (!regions.empty()) {
         Region firstRegion = regions.front();
-
-        // Output header
-        fout << firstRegion.fieldNamesToString() << endl;
 
         // Output content
         for (auto region : regions) {

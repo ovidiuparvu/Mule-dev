@@ -33,43 +33,46 @@ Point Geometry2D::middlePoint(const Point &a, const Point &b) {
 
 void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Point &b1, Point &a2 ,
                                                        Point &b2, int nrOfRows, int nrOfCols) {
-    assert((a1.x != b1.x) || (a1.y != b1.y));
-
-    if ((b1.x - a1.x) == 0) {   // Vertical line
-        a2 = b1;
+    if ((a1.x == b1.x) && (a1.y == b1.y)) {
+        a2 = a1;
         b2 = b1;
+    } else {
+        if ((b1.x - a1.x) == 0) {   // Vertical line
+            a2 = b1;
+            b2 = b1;
 
-        while (!isPointOnEdge(a2, nrOfRows, nrOfCols))
-            a2.y--;
+            while (!isPointOnEdge(a2, nrOfRows, nrOfCols))
+                a2.y--;
 
-        while (!isPointOnEdge(b2, nrOfRows, nrOfCols))
-            b2.y++;
-    } else if (b1.y - a1.y == 0) {  // Horizontal line
-        a2 = b1;
-        b2 = b1;
+            while (!isPointOnEdge(b2, nrOfRows, nrOfCols))
+                b2.y++;
+        } else if (b1.y - a1.y == 0) {  // Horizontal line
+            a2 = b1;
+            b2 = b1;
 
-        while (!isPointOnEdge(a2, nrOfRows, nrOfCols))
-            a2.x--;
+            while (!isPointOnEdge(a2, nrOfRows, nrOfCols))
+                a2.x--;
 
-        while (!isPointOnEdge(b2, nrOfRows, nrOfCols))
-            b2.x++;
-    } else {                        // Otherwise
-        double oldSlope = ((double)(b1.y - a1.y)) / (b1.x - a1.x);
+            while (!isPointOnEdge(b2, nrOfRows, nrOfCols))
+                b2.x++;
+        } else {                        // Otherwise
+            double oldSlope = ((double)(b1.y - a1.y)) / (b1.x - a1.x);
 
-        double newSlope = (-1) / (oldSlope);
-        double intercept = b1.y - (newSlope * b1.x);
+            double newSlope = (-1) / (oldSlope);
+            double intercept = b1.y - (newSlope * b1.x);
 
-        a2 = b1;
-        b2 = b1;
+            a2 = b1;
+            b2 = b1;
 
-        while (!isPointOnEdge(a2, nrOfRows, nrOfCols)) {
-            a2.x = a2.x - 1;
-            a2.y = a2.x * newSlope + intercept;
-        }
+            while (!isPointOnEdge(a2, nrOfRows, nrOfCols)) {
+                a2.x = a2.x - 1;
+                a2.y = a2.x * newSlope + intercept;
+            }
 
-        while (!isPointOnEdge(b2, nrOfRows, nrOfCols)) {
-            b2.x = b2.x + 1;
-            b2.y = b2.x * newSlope + intercept;
+            while (!isPointOnEdge(b2, nrOfRows, nrOfCols)) {
+                b2.x = b2.x + 1;
+                b2.y = b2.x * newSlope + intercept;
+            }
         }
     }
 }

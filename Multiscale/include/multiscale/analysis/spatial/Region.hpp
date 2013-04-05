@@ -45,7 +45,7 @@ namespace multiscale {
                 const vector<Point>& getPolygon() const;
 
                 //! Get a string representation of all the field names except polygon
-                string fieldNamesToString();
+                static string fieldNamesToString();
 
                 //! Get a string representation of all the field values except polygon
                 string toString();
