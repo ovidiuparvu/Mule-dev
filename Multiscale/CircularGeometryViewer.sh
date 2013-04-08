@@ -73,7 +73,7 @@ mkdir -p ${MOVIE_FOLDER}/${folderName}
 mkdir -p ${IMG_FOLDER}/${folderName}
 
 # Copy a backup of the csv file to its corresponding input folder
-cp ${csvFile} ${INPUT_FOLDER}/${folderName}/${csvFile}.bak
+cp ${csvFile} ${INPUT_FOLDER}/${folderName}/${csvFilename}.bak
 
 # Copy the part of the csv file with necessary information to its corresponding input folder
 sed 's/[;,:\t ]+/,/g' <${csvFile} | tail -n +2 > ${INPUT_FOLDER}/${folderName}/${csvFileBasename}
