@@ -5,6 +5,10 @@ then
     inputFolder=$1;
     outputFolder=$2;
 
+    # Create the output folder
+
+    mkdir -p ${outputFolder}
+
     RESULT_FILE_NR_REGIONS=${outputFolder}/"results_number_regions";
     RESULT_FILE=${outputFolder}/"results";
 

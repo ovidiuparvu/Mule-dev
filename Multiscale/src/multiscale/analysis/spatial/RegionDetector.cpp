@@ -73,8 +73,6 @@ void RegionDetector::detectRegionsInDebugMode(const Mat& image, vector<Region> &
     createTrackbars();
 
     while (pressedKey != KEY_ESC) {
-        cout << pressedKey << endl;
-
         regions.clear();
 
         processImage(image, regions);
