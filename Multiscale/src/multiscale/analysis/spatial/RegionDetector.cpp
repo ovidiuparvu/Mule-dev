@@ -47,6 +47,7 @@ void RegionDetector::initialiseImageDependentMembers(const Mat &image) {
 
 void RegionDetector::createTrackbars() {
     namedWindow( WIN_PROCESSED_IMAGE, WINDOW_NORMAL);
+    setWindowProperty( WIN_PROCESSED_IMAGE, CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN );
 
     createTrackbar(TRACKBAR_ALPHA, WIN_PROCESSED_IMAGE, &alpha, ALPHA_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_BETA, WIN_PROCESSED_IMAGE, &beta, BETA_MAX, nullptr, nullptr);
