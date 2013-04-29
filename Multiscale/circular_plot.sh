@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ls -1 $1 | tail -n430 | head -n134 | while read file;
+for file in ./$1*.csv ;
 do
-    ./CircularGeometryViewer2.sh $1/${file} 2 $2 $3
+    ./CircularGeometryViewer.sh ${file} 2 $2 $3
 done

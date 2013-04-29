@@ -10,6 +10,7 @@ using namespace std;
 using namespace cv;
 
 #define ERR_OUTPUT_FILE     "Unable to create output file."
+#define ERR_INVALID_IMAGE   "The input image is invalid."
 
 #define OUTPUT_EXTENSION    ".out"
 
@@ -93,33 +94,32 @@ namespace multiscale {
                 void initialiseVisionMembers();
 
                 //! Initialise the members dependent on the image
+                void initialiseImageDependentMembers();
+
+                //! Check if the image is valid
                 /*!
-                 * \param image The image
+                 * Check if the number of dimensions = 2 and if the
+                 * number of rows and number of columns is greater than one
                  */
-                void initialiseImageDependentMembers(const Mat &image);
+                bool isValidImage();
 
                 //! Create the trackbars
                 void createTrackbars();
 
                 //! Detect the regions in the provided image
-                /*!
-                 * \param image The image
-                 */
-                void detectRegions(const Mat& image);
+                void detectRegions();
 
                 //! Detect the regions in the provided image in debug mode
                 /*!
-                 * \param image The image
                  * \param regions The regions from the image
                  */
-                void detectRegionsInDebugMode(const Mat& image, vector<Region> &regions);
+                void detectRegionsInDebugMode(vector<Region> &regions);
 
                 //! Detect the regions in the provided image in normal mode
                 /*!
-                 * \param image The image
                  * \param regions The regions from the image
                  */
-                void detectRegionsInNormalMode(const Mat& image, vector<Region>& regions);
+                void detectRegionsInNormalMode(vector<Region>& regions);
 
                 //! Process the given image
                 /*! Apply filters to the image, threshold it, find its contours,
@@ -129,19 +129,17 @@ namespace multiscale {
                  *  the origin. Return all the polygons together with the processed information
                  *  as a vector of regions.
                  *
-                 *  \param image The image
                  *  \param regions The regions from the image
                  */
-                void processImage(const Mat &image, vector<Region> &regions);
+                void processImage(vector<Region> &regions);
 
                 //! Change the contrast and brightness of the image
                 /*! Change the contrast and brightness of the image by the factors
                  *  alpha and gamma
                  *
-                 *  \param originalImage The original image
                  *  \param processedImage The processed image
                  */
-                void changeContrastAndBrightness(const Mat &originalImage, Mat &processedImage);
+                void changeContrastAndBrightness(Mat &processedImage);
 
                 //! Smooth out differences in the image
                 /*! Apply a Gaussian blur filter
@@ -248,7 +246,7 @@ namespace multiscale {
                  * \param regions The regions
                  * \param isDebugMode True, if in debug mode
                  */
-                void outputRegions(const Mat &image, const vector<Region> &regions, bool isDebugMode);
+                void outputRegions(const vector<Region> &regions, bool isDebugMode);
 
                 //! Output the regions as an XML file
                 /*!

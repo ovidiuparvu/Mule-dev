@@ -2,6 +2,10 @@
 
 /out
 
+# Results for the CMSB 2013 paper
+
+/results
+
 # Results from the simulation
 
 *.csv

@@ -13,19 +13,25 @@ using namespace multiscale::analysis;
 
 
 RegionDetector::RegionDetector(const Mat &inputImage, const string &outputFilepath, bool debugMode) {
-    this->image = inputImage;
+    inputImage.copyTo(image);
+
     this->outputFilepath = outputFilepath;
     this->isDebugMode = debugMode;
 
     initialiseVisionMembers();
 }
 
-RegionDetector::~RegionDetector() {}
+RegionDetector::~RegionDetector() {
+    image.release();
+}
 
 void RegionDetector::detect() {
+    if (!isValidImage())
+        throw ERR_INVALID_IMAGE;
+
     // Initialise the origin
-    initialiseImageDependentMembers(image);
-    detectRegions(image);
+    initialiseImageDependentMembers();
+    detectRegions();
 }
 
 void RegionDetector::initialiseVisionMembers() {
@@ -38,11 +44,15 @@ void RegionDetector::initialiseVisionMembers() {
     thresholdValue = 100;
 }
 
-void RegionDetector::initialiseImageDependentMembers(const Mat &image) {
+void RegionDetector::initialiseImageDependentMembers() {
     int originX = (image.rows + 1) / 2;
     int originY = (image.cols + 1) / 2;
 
     origin = Point(originX, originY);
+}
+
+bool RegionDetector::isValidImage() {
+    return ((image.dims == 2) && (image.rows > 1) && (image.cols > 1));
 }
 
 void RegionDetector::createTrackbars() {
@@ -58,17 +68,17 @@ void RegionDetector::createTrackbars() {
     createTrackbar(TRACKBAR_THRESHOLD, WIN_PROCESSED_IMAGE, &thresholdValue, THRESHOLD_MAX, nullptr, nullptr);
 }
 
-void RegionDetector::detectRegions(const Mat &image) {
+void RegionDetector::detectRegions() {
     vector<Region> regions;
 
     if (isDebugMode) {
-        detectRegionsInDebugMode(image, regions);
+        detectRegionsInDebugMode(regions);
     } else {
-        detectRegionsInNormalMode(image, regions);
+        detectRegionsInNormalMode(regions);
     }
 }
 
-void RegionDetector::detectRegionsInDebugMode(const Mat& image, vector<Region> &regions) {
+void RegionDetector::detectRegionsInDebugMode(vector<Region> &regions) {
     char pressedKey = -1;
 
     createTrackbars();
@@ -76,32 +86,32 @@ void RegionDetector::detectRegionsInDebugMode(const Mat& image, vector<Region> &
     while (pressedKey != KEY_ESC) {
         regions.clear();
 
-        processImage(image, regions);
-        outputRegions(image, regions, isDebugMode);
+        processImage(regions);
+        outputRegions(regions, isDebugMode);
 
         pressedKey = waitKey(1);
     }
 
-    outputRegions(image, regions, !isDebugMode);
+    outputRegions(regions, !isDebugMode);
 }
 
-void RegionDetector::detectRegionsInNormalMode(const Mat& image, vector<Region> &regions) {
-    processImage(image, regions);
-    outputRegions(image, regions, isDebugMode);
+void RegionDetector::detectRegionsInNormalMode(vector<Region> &regions) {
+    processImage(regions);
+    outputRegions(regions, isDebugMode);
 }
 
-void RegionDetector::processImage(const Mat &image, vector<Region> &regions) {
+void RegionDetector::processImage(vector<Region> &regions) {
     Mat processedImage, thresholdedImage;
 
-    changeContrastAndBrightness(image, processedImage);
+    changeContrastAndBrightness(processedImage);
     morphologicalClose(processedImage);
     smoothImage(processedImage);
     thresholdImage(processedImage, thresholdedImage);
     findRegions(thresholdedImage, regions);
 }
 
-void RegionDetector::changeContrastAndBrightness(const Mat &originalImage, Mat &processedImage) {
-    originalImage.convertTo(processedImage, -1, convertAlpha(alpha), convertBeta(beta));
+void RegionDetector::changeContrastAndBrightness(Mat &processedImage) {
+    image.convertTo(processedImage, -1, convertAlpha(alpha), convertBeta(beta));
 }
 
 void RegionDetector::smoothImage(Mat &image) {
@@ -125,16 +135,14 @@ void RegionDetector::thresholdImage(const Mat &image, Mat &thresholdedImage) {
 void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
     vector<vector<Point> > contours = findContoursInImage(image);
 
-    int nrOfContours = contours.size();
-
-    for(int i = 0; i < nrOfContours; i++ ) {
-        if (!isValidRegion(contours.at(i)))
+    for (const vector<Point> &contour : contours) {
+        if (!isValidRegion(contour))
             continue;
 
         // Obtain the approximated polygon
         vector<Point> approxPolygon;
 
-        approxPolyDP( contours.at(i), approxPolygon, epsilon, true );
+        approxPolyDP(contour, approxPolygon, epsilon, true);
 
         // Process and store information about the region
         regions.push_back(createRegionFromPolygon(approxPolygon));
@@ -142,6 +150,10 @@ void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
 }
 
 vector<vector<Point> > RegionDetector::findContoursInImage(const Mat &image) {
+    // Two extra pixels required for each dimension, because the contour detection
+    // algorithm ignores the first and last lines and columns of the image matrix. In order
+    // to consider the entire input image we add blank first and last lines and columns
+    // to the image matrix
     Mat modifiedImage = Mat::zeros(image.rows + 2, image.cols + 2, image.type());
     vector<vector<Point> > contours;
 
@@ -218,7 +230,7 @@ void RegionDetector::findGoodIntersectionPoints(const vector<Point> &polygonConv
     }
 }
 
-void RegionDetector::outputRegions(const Mat &image, const vector<Region> &regions, bool isDebugMode) {
+void RegionDetector::outputRegions(const vector<Region> &regions, bool isDebugMode) {
     if (isDebugMode) {
         outputRegionsInDebugMode(image, regions);
     } else {
@@ -256,6 +268,10 @@ void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions, ofstr
 }
 
 void RegionDetector::outputRegionsInDebugMode(const Mat &image, const vector<Region> &regions) {
+    // Two extra pixels required for each dimension, because the contour detection
+    // algorithm ignores the first and last lines and columns of the image matrix. In order
+    // to consider the entire input image we add blank first and last lines and columns
+    // to the image matrix
     Mat outputImage = Mat::zeros(image.rows + 2, image.cols + 2, image.type());
 
     image.copyTo(outputImage(Rect(1, 1, image.cols, image.rows)));
@@ -283,6 +299,8 @@ int RegionDetector::convertBeta(int beta) {
 }
 
 void convertVertices(const Point2f *src, vector<Point> &dst) {
+    dst.clear();
+
     for (int i = 0; i < ENCLOSING_RECT_VERTICES; i++) {
       dst.push_back(src[i]);
     }
