@@ -37,7 +37,7 @@ po::variables_map initArgumentsConfig(po::options_description &usageDescription,
                                   ("nr-concentric-circles,c", po::value<unsigned int>(), "provide the number of concentric circles\n")
                                   ("nr-sectors,s", po::value<unsigned int>(), "provide the number of sectors\n")
                                   ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n")
-                                  ("selected-concentration-index,x", po::value<unsigned int>()->default_value(1), "provide the index of the concentration considered as numerator when the number of concentrations for each position is greater than 1\n")
+                                  ("selected-concentration-index,x", po::value<unsigned int>()->default_value(0), "provide the index of the concentration considered as numerator when the number of concentrations for each position is greater than 1\n")
                                   ("lexicographic-iterator,l", "use lexicographic number iterator for numbering the columns of the .csv file\n");
 
     po::variables_map vm;
@@ -131,7 +131,7 @@ int main(int argc, char** argv) {
     unsigned int nrOfSectors;
     unsigned int nrOfConcentrationsForPosition;
 
-    unsigned int selectedConcentrationIndex = 1;
+    unsigned int selectedConcentrationIndex = 0;
 
     NumberIteratorType numberIteratorType = multiscale::STANDARD;
 
