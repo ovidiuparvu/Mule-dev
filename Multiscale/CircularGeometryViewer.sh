@@ -22,12 +22,12 @@ IMG_FOLDER=${OUT_FOLDER}/img;
 #   4. The number of sectors (D2)
 # OPTIONAL PARAMETERS:
 #   5. The index of the selected concentration when the number of concentrations for each position is greater than 1.
-if [ $# -lt 4 ] || [ $# -gt 5 ]; 
+if [ $# -lt 4 ] || [ $# -gt 6 ]; 
 then
     echo "Incorrect number of parameters provided."
     echo
     echo "Usage:";
-    echo "    CircularGeometryViewer <path_to_csv_file> <nr_concentrations_for_each_position> <nr_concentric_circles> <nr_sectors> [<selected-concentration-index>]";
+    echo "    CircularGeometryViewer <path_to_csv_file> <nr_concentrations_for_each_position> <nr_concentric_circles> <nr_sectors> [<selected-concentration-index>] [<use-log-scaling>]";
     
     exit 1;
 fi
@@ -43,6 +43,19 @@ then
     fi
 
     selectedConcentrationIndex=`echo "--selected-concentration-index" $5`;
+fi
+
+# If the log scaling option is provided, then take it into account
+if [ $# -eq 6 ];
+then
+    if [ $6 -ge 2 ];
+    then
+        echo "The \"use logarithmic scaling\" option can be either true (1) or false (0)."
+
+	exit 1;
+    fi
+
+    useLogScaling=`echo "--use-log-scaling" $6`;
 fi
 
 # Get the parameters in separate variables
@@ -83,7 +96,7 @@ echo "Generating the input files from the .csv file...";
 
 # Run the program for converting the ".csv" file to "Number of time points" input files
 # for the MapCartesianToPolarScript program
-bin/PolarMapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --nr-concentric-circles $nrOfConcentricCircles --nr-sectors $nrOfSectors --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}" ${selectedConcentrationIndex};
+bin/PolarMapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --nr-concentric-circles $nrOfConcentricCircles --nr-sectors $nrOfSectors --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}" ${selectedConcentrationIndex} ${useLogScaling};
 
 # Inform user of the next action
 echo "Generating in parallel the gnuplot script for each of the input files...";

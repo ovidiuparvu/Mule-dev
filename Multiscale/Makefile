@@ -28,7 +28,7 @@ all: mapcart2pol mapcart2conc polmapcsv2input rectmapcsv2input rectspatial_analy
 #########################################################################################
 # Targets
 #
-# DO NOT EDIT this section for editing the include and libraries path. Refer to the 
+# DO NOT EDIT this section for changing the include and libraries path. Refer to the 
 # "Flags" section for these changes.
 #########################################################################################
 	

@@ -21,6 +21,7 @@ RectangularCsvToInputFilesConverter::RectangularCsvToInputFilesConverter(const s
                                                                          unsigned int width,
                                                                          unsigned int nrOfConcentrationsForPosition,
                                                                          unsigned int selectedConcentrationIndex,
+                                                                         bool useLogScaling,
                                                                          NumberIteratorType numberIteratorType) {
     this->inputFilepath                 = inputFilepath;
     this->outputFilepath                = outputFilepath;
@@ -32,6 +33,8 @@ RectangularCsvToInputFilesConverter::RectangularCsvToInputFilesConverter(const s
     this->concentrationsIndex           = 0;
     this->selectedConcentrationIndex    = selectedConcentrationIndex;
     this->maximumConcentration          = 1;
+
+    this->useLogScaling                 = useLogScaling;
 
     initIterators(numberIteratorType);
 }
@@ -263,7 +266,7 @@ inline double RectangularCsvToInputFilesConverter::computeNextPositionConcentrat
 }
 
 inline double RectangularCsvToInputFilesConverter::computeConcentration(const string &concentration) {
-    return (nrOfConcentrationsForPosition == 1)
+    return ((nrOfConcentrationsForPosition == 1) && (useLogScaling))
                 ? computeScaledConcentration(concentration)
                 : computeNonScaledConcentration(concentration);
 }

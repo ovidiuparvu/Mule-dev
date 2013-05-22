@@ -22,6 +22,7 @@ PolarCsvToInputFilesConverter::PolarCsvToInputFilesConverter(const string &input
                                                              unsigned int nrOfSectors,
                                                              unsigned int nrOfConcentrationsForPosition,
                                                              unsigned int selectedConcentrationIndex,
+                                                             bool useLogScaling,
                                                              NumberIteratorType numberIteratorType) {
     this->inputFilepath                 = inputFilepath;
     this->outputFilepath                = outputFilepath;
@@ -33,6 +34,8 @@ PolarCsvToInputFilesConverter::PolarCsvToInputFilesConverter(const string &input
     this->concentrationsIndex           = 0;
     this->selectedConcentrationIndex    = selectedConcentrationIndex;
     this->maximumConcentration          = 1;
+
+    this->useLogScaling                 = useLogScaling;
 
     initIterators(numberIteratorType);
 }
@@ -287,7 +290,7 @@ inline double PolarCsvToInputFilesConverter::computeNextPositionConcentration(un
 }
 
 inline double PolarCsvToInputFilesConverter::computeConcentration(const string &concentration, int circleIndex) {
-    return (nrOfConcentrationsForPosition == 1)
+    return ((nrOfConcentrationsForPosition == 1) && (useLogScaling))
                 ? computeScaledConcentration(concentration, circleIndex)
                 : computeNonScaledConcentration(concentration, circleIndex);
 }
