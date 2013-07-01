@@ -1,0 +1,12 @@
+<map id="main" name="main">
+<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a49c258f2a31008988e64d7d47274e3b8" title="areValidParameters" alt="" coords="156,59,292,88"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a27de97c7e35097bd17453fd07f33a6f1" title="Start the conversion." alt="" coords="105,112,343,176"/>
+<area shape="rect" id="node21" href="$CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb" title="printWrongParameters" alt="" coords="148,200,300,229"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="443,5,581,35"/>
+<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="443,59,581,88"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a94094cdeaf0f48164911188709dc0e2f" title="Read the input data." alt="" coords="393,112,631,176"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a346e054266585ae6922d159b8d5fb804" title="Output the results." alt="" coords="393,200,631,264"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a2e9967ae6fb2efc39ed377aca2fa222c" title="Read the header line." alt="" coords="681,24,919,88"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9134409b814fafe62c896c6b473bc574" title="Read the concentrations." alt="" coords="681,112,919,176"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a8a2e69a85d54df5bacd2e18d27993c14" title="Generate the script." alt="" coords="687,200,913,264"/>
+</map>

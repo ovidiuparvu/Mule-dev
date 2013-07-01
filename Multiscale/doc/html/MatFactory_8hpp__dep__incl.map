@@ -1,3 +1,10 @@
 <map id="include/multiscale/analysis/spatial/MatFactory.hpp" name="include/multiscale/analysis/spatial/MatFactory.hpp">
-<area shape="rect" id="node3" href="$RectangularMatFactory_8hpp.html" title="include/multiscale\l/analysis/spatial/factory\l/RectangularMatFactory.hpp" alt="" coords="17,101,204,165"/>
+<area shape="rect" id="node3" href="$CircularMatFactory_8hpp.html" title="include/multiscale\l/analysis/spatial/factory\l/CircularMatFactory.hpp" alt="" coords="261,101,424,165"/>
+<area shape="rect" id="node9" href="$RectangularMatFactory_8hpp.html" title="include/multiscale\l/analysis/spatial/factory\l/RectangularMatFactory.hpp" alt="" coords="693,101,880,165"/>
+<area shape="rect" id="node15" href="$RegionDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/RegionDetector.cpp" alt="" coords="936,222,1120,269"/>
+<area shape="rect" id="node17" href="$MatFactory_8cpp.html" title="src/multiscale/analysis\l/spatial/MatFactory.cpp" alt="" coords="955,110,1112,157"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html" title="src/multiscale/analysis\l/spatial/CircularDetectRegions.cpp" alt="" coords="5,222,229,269"/>
+<area shape="rect" id="node7" href="$CircularMatFactory_8cpp.html" title="src/multiscale/analysis\l/spatial/factory/CircularMat\lFactory.cpp" alt="" coords="253,213,432,277"/>
+<area shape="rect" id="node11" href="$RectangularMatFactory_8cpp.html" title="src/multiscale/analysis\l/spatial/factory/Rectangular\lMatFactory.cpp" alt="" coords="456,213,637,277"/>
+<area shape="rect" id="node13" href="$RectangularDetectRegions_8cpp.html" title="src/multiscale/analysis\l/spatial/RectangularDetectRegions.cpp" alt="" coords="661,222,912,269"/>
 </map>

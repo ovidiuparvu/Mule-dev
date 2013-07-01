@@ -1,7 +1,7 @@
 var classmultiscale_1_1analysis_1_1RectangularMatFactory =
 [
-    [ "RectangularMatFactory", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a869e435db6834024bd864a68f051b022", null ],
-    [ "~RectangularMatFactory", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a7c3e88063bd0b1c339093f8e021de25e", null ],
-    [ "createFromImage", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a473045ff499ffb88426b4c9beabcacc2", null ],
-    [ "processConcentrations", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a2d8e5697826dea28b4783442cf038c53", null ]
+    [ "RectangularMatFactory", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a20b4c70b7964fb40c4767ab2d7e1ae92", null ],
+    [ "~RectangularMatFactory", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3ebedd3691965c3d89c3ecdaa3e66d70", null ],
+    [ "createFromViewerImage", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a04345ff6bcd6a8b474f75a76ea731634", null ],
+    [ "processConcentrations", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a82d24e96f1904577c693605ecc9675a5", null ]
 ];

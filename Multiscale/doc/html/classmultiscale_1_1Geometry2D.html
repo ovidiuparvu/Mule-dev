@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1Geometry2D.html',''
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1Geometry2D.html',''
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="classmultiscale_1_1Geometry2D-members.html">List of all members</a>  </div>
@@ -117,79 +118,87 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1Geometry2D.html',''
  <a href="classmultiscale_1_1Geometry2D.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Geometry2D_8hpp_source.html">Geometry2D.hpp</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for multiscale::Geometry2D:</div>
-<div class="dyncontent">
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for multiscale::Geometry2D:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1Geometry2D__coll__graph.png" border="0" usemap="#multiscale_1_1Geometry2D_coll__map" alt="Collaboration graph"/></div>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:adc334365732eb2db3419a4cc2063485c"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:adc334365732eb2db3419a4cc2063485c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#adc334365732eb2db3419a4cc2063485c">isBetweenCoordinates</a> (T c, U c1, U c2)</td></tr>
+<tr class="separator:adc334365732eb2db3419a4cc2063485c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a63f7df67a00e1002375fb3c87d546dfd"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a63f7df67a00e1002375fb3c87d546dfd">distanceBtwPoints</a> (const Point &amp;a, const Point &amp;b)</td></tr>
-<tr class="memdesc:a63f7df67a00e1002375fb3c87d546dfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the distance between two points.  <a href="#a63f7df67a00e1002375fb3c87d546dfd">More...</a><br/></td></tr>
-<tr class="separator:a63f7df67a00e1002375fb3c87d546dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4aa28e30fc3b468b9ef3dc4b5b454620"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a4aa28e30fc3b468b9ef3dc4b5b454620">distanceFromPointToLine</a> (const Point &amp;a, const Point &amp;linePointB, const Point &amp;linePointC)</td></tr>
-<tr class="memdesc:a4aa28e30fc3b468b9ef3dc4b5b454620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the distance from a point to a line specified by two points.  <a href="#a4aa28e30fc3b468b9ef3dc4b5b454620">More...</a><br/></td></tr>
-<tr class="separator:a4aa28e30fc3b468b9ef3dc4b5b454620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a266b965a05bb6dac7e03a1b71d41b652"><td class="memItemLeft" align="right" valign="top">static Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a266b965a05bb6dac7e03a1b71d41b652">middlePoint</a> (const Point &amp;a, const Point &amp;b)</td></tr>
-<tr class="memdesc:a266b965a05bb6dac7e03a1b71d41b652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the point in the middle of the segment determined by points "a" and "b".  <a href="#a266b965a05bb6dac7e03a1b71d41b652">More...</a><br/></td></tr>
-<tr class="separator:a266b965a05bb6dac7e03a1b71d41b652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa00034196437bbd11ae7297c14f8e59c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#aa00034196437bbd11ae7297c14f8e59c">orthogonalLineToAnotherLineEdgePoints</a> (const Point &amp;a1, const Point &amp;b1, Point &amp;a2, Point &amp;b2, int nrOfRows, int nrOfCols)</td></tr>
-<tr class="memdesc:aa00034196437bbd11ae7297c14f8e59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points.  <a href="#aa00034196437bbd11ae7297c14f8e59c">More...</a><br/></td></tr>
-<tr class="separator:aa00034196437bbd11ae7297c14f8e59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac416b95460bde332c8ef58cba27b70ad"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#ac416b95460bde332c8ef58cba27b70ad">lineIntersection</a> (const Point &amp;a1, const Point &amp;b1, const Point &amp;a2, const Point &amp;b2, Point &amp;intersection)</td></tr>
-<tr class="memdesc:ac416b95460bde332c8ef58cba27b70ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the intersection point of two lines, if this point exists.  <a href="#ac416b95460bde332c8ef58cba27b70ad">More...</a><br/></td></tr>
-<tr class="separator:ac416b95460bde332c8ef58cba27b70ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a573bc0c496ae02349241f5c4991de3d2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a573bc0c496ae02349241f5c4991de3d2">lineSegmentIntersection</a> (const Point &amp;a1, const Point &amp;b1, const Point &amp;a2, const Point &amp;b2, Point &amp;intersection)</td></tr>
-<tr class="memdesc:a573bc0c496ae02349241f5c4991de3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the intersection point of two line segments, if this point exists.  <a href="#a573bc0c496ae02349241f5c4991de3d2">More...</a><br/></td></tr>
-<tr class="separator:a573bc0c496ae02349241f5c4991de3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f10e05b0786b065de69b91c3082bb0b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a3f10e05b0786b065de69b91c3082bb0b">lineCircleIntersection</a> (Point a, Point b, const Point &amp;circleOrigin, double radius, vector&lt; Point2f &gt; &amp;intersectionPoints)</td></tr>
-<tr class="memdesc:a3f10e05b0786b065de69b91c3082bb0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a line and a circle intersect and return the intersection points if they exist.  <a href="#a3f10e05b0786b065de69b91c3082bb0b">More...</a><br/></td></tr>
-<tr class="separator:a3f10e05b0786b065de69b91c3082bb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7368c3750d2f9e86a3d4ebb204e7717"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#ae7368c3750d2f9e86a3d4ebb204e7717">lineSegmentCircleIntersection</a> (const Point &amp;a, const Point &amp;b, const Point &amp;circleOrigin, double radius, vector&lt; Point2f &gt; &amp;intersectionPoints)</td></tr>
-<tr class="memdesc:ae7368c3750d2f9e86a3d4ebb204e7717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a line segment and a circle intersect and return the intersection points if they exist.  <a href="#ae7368c3750d2f9e86a3d4ebb204e7717">More...</a><br/></td></tr>
-<tr class="separator:ae7368c3750d2f9e86a3d4ebb204e7717"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab77831722e89d9a6951b390a179150d1"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#ab77831722e89d9a6951b390a179150d1">angleBtwPoints</a> (const Point &amp;a, const Point &amp;b, const Point &amp;c)</td></tr>
-<tr class="memdesc:ab77831722e89d9a6951b390a179150d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the angle between three points.  <a href="#ab77831722e89d9a6951b390a179150d1">More...</a><br/></td></tr>
-<tr class="separator:ab77831722e89d9a6951b390a179150d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40b6ea1e99dbdb26faed41ef24af2d12"><td class="memItemLeft" align="right" valign="top">static vector&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a40b6ea1e99dbdb26faed41ef24af2d12">findPointsOnEdge</a> (const vector&lt; Point &gt; &amp;points, unsigned int nrOfRows, unsigned int nrOfCols)</td></tr>
-<tr class="memdesc:a40b6ea1e99dbdb26faed41ef24af2d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the subset of points from the given set of points which lie on the edge.  <a href="#a40b6ea1e99dbdb26faed41ef24af2d12">More...</a><br/></td></tr>
-<tr class="separator:a40b6ea1e99dbdb26faed41ef24af2d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab13bbf1dc0bf164fdb9ab0b17ae681a6"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#ab13bbf1dc0bf164fdb9ab0b17ae681a6">minimumDistancePointIndex</a> (const vector&lt; Point &gt; &amp;points, const Point &amp;origin)</td></tr>
-<tr class="memdesc:ab13bbf1dc0bf164fdb9ab0b17ae681a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the point which is the closest to the origin.  <a href="#ab13bbf1dc0bf164fdb9ab0b17ae681a6">More...</a><br/></td></tr>
-<tr class="separator:ab13bbf1dc0bf164fdb9ab0b17ae681a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702d65aaced6ff971809ea7a537fc70a"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a702d65aaced6ff971809ea7a537fc70a">distanceBtwPoints</a> (const Point &amp;a, const Point &amp;b)</td></tr>
+<tr class="memdesc:a702d65aaced6ff971809ea7a537fc70a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the distance between two points.  <a href="#a702d65aaced6ff971809ea7a537fc70a">More...</a><br/></td></tr>
+<tr class="separator:a702d65aaced6ff971809ea7a537fc70a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9974bf3050ce8038ef45c0a731d9d498"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a9974bf3050ce8038ef45c0a731d9d498">distanceFromPointToLine</a> (const Point &amp;a, const Point &amp;linePointB, const Point &amp;linePointC)</td></tr>
+<tr class="memdesc:a9974bf3050ce8038ef45c0a731d9d498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the distance from a point to a line specified by two points.  <a href="#a9974bf3050ce8038ef45c0a731d9d498">More...</a><br/></td></tr>
+<tr class="separator:a9974bf3050ce8038ef45c0a731d9d498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6422ff6e704c3f64be2d4e7197d8dbd"><td class="memItemLeft" align="right" valign="top">static Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#aa6422ff6e704c3f64be2d4e7197d8dbd">middlePoint</a> (const Point &amp;a, const Point &amp;b)</td></tr>
+<tr class="memdesc:aa6422ff6e704c3f64be2d4e7197d8dbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the point in the middle of the segment determined by points "a" and "b".  <a href="#aa6422ff6e704c3f64be2d4e7197d8dbd">More...</a><br/></td></tr>
+<tr class="separator:aa6422ff6e704c3f64be2d4e7197d8dbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3da27e8cecb0a0d2733afa85d356a912"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912">orthogonalLineToAnotherLineEdgePoints</a> (const Point &amp;a1, const Point &amp;b1, Point &amp;a2, Point &amp;b2, int nrOfRows, int nrOfCols)</td></tr>
+<tr class="memdesc:a3da27e8cecb0a0d2733afa85d356a912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points.  <a href="#a3da27e8cecb0a0d2733afa85d356a912">More...</a><br/></td></tr>
+<tr class="separator:a3da27e8cecb0a0d2733afa85d356a912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d9b17a7e5098c8bde0cd9d3dc08dc2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#aa9d9b17a7e5098c8bde0cd9d3dc08dc2">lineIntersection</a> (const Point &amp;a1, const Point &amp;b1, const Point &amp;a2, const Point &amp;b2, Point &amp;intersection)</td></tr>
+<tr class="memdesc:aa9d9b17a7e5098c8bde0cd9d3dc08dc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the intersection point of two lines, if this point exists.  <a href="#aa9d9b17a7e5098c8bde0cd9d3dc08dc2">More...</a><br/></td></tr>
+<tr class="separator:aa9d9b17a7e5098c8bde0cd9d3dc08dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9931c3d8089d658186a8c1ac78db5773"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a9931c3d8089d658186a8c1ac78db5773">lineSegmentIntersection</a> (const Point &amp;a1, const Point &amp;b1, const Point &amp;a2, const Point &amp;b2, Point &amp;intersection)</td></tr>
+<tr class="memdesc:a9931c3d8089d658186a8c1ac78db5773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the intersection point of two line segments, if this point exists.  <a href="#a9931c3d8089d658186a8c1ac78db5773">More...</a><br/></td></tr>
+<tr class="separator:a9931c3d8089d658186a8c1ac78db5773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd757a54d9ffa99752fc1cf6b4b29cc5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#acd757a54d9ffa99752fc1cf6b4b29cc5">lineCircleIntersection</a> (Point a, Point b, const Point &amp;circleOrigin, double radius, vector&lt; Point2f &gt; &amp;intersectionPoints)</td></tr>
+<tr class="memdesc:acd757a54d9ffa99752fc1cf6b4b29cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a line and a circle intersect and return the intersection points if they exist.  <a href="#acd757a54d9ffa99752fc1cf6b4b29cc5">More...</a><br/></td></tr>
+<tr class="separator:acd757a54d9ffa99752fc1cf6b4b29cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a287f945dac65cbd213befdc50f183ef8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a287f945dac65cbd213befdc50f183ef8">lineSegmentCircleIntersection</a> (const Point &amp;a, const Point &amp;b, const Point &amp;circleOrigin, double radius, vector&lt; Point2f &gt; &amp;intersectionPoints)</td></tr>
+<tr class="memdesc:a287f945dac65cbd213befdc50f183ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a line segment and a circle intersect and return the intersection points if they exist.  <a href="#a287f945dac65cbd213befdc50f183ef8">More...</a><br/></td></tr>
+<tr class="separator:a287f945dac65cbd213befdc50f183ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae350dc61448d3912bdaff41b40b8fb7e"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#ae350dc61448d3912bdaff41b40b8fb7e">angleBtwPoints</a> (const Point &amp;a, const Point &amp;b, const Point &amp;c)</td></tr>
+<tr class="memdesc:ae350dc61448d3912bdaff41b40b8fb7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the angle between three points.  <a href="#ae350dc61448d3912bdaff41b40b8fb7e">More...</a><br/></td></tr>
+<tr class="separator:ae350dc61448d3912bdaff41b40b8fb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ae1e3197b01d5f713796820303beee5"><td class="memItemLeft" align="right" valign="top">static vector&lt; Point &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a0ae1e3197b01d5f713796820303beee5">findPointsOnEdge</a> (const vector&lt; Point &gt; &amp;points, unsigned int nrOfRows, unsigned int nrOfCols)</td></tr>
+<tr class="memdesc:a0ae1e3197b01d5f713796820303beee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the subset of points from the given set of points which lie on the edge.  <a href="#a0ae1e3197b01d5f713796820303beee5">More...</a><br/></td></tr>
+<tr class="separator:a0ae1e3197b01d5f713796820303beee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ae0be0491a149417bb690d0676166c1"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a8ae0be0491a149417bb690d0676166c1">minimumDistancePointIndex</a> (const vector&lt; Point &gt; &amp;points, const Point &amp;origin)</td></tr>
+<tr class="memdesc:a8ae0be0491a149417bb690d0676166c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the point which is the closest to the origin.  <a href="#a8ae0be0491a149417bb690d0676166c1">More...</a><br/></td></tr>
+<tr class="separator:a8ae0be0491a149417bb690d0676166c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:a4f9aca7320781573a7868c17eb1c2559"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a4f9aca7320781573a7868c17eb1c2559">isPointOnEdge</a> (const Point &amp;p, int nrOfRows, int nrOfCols)</td></tr>
-<tr class="memdesc:a4f9aca7320781573a7868c17eb1c2559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given point is on the edge.  <a href="#a4f9aca7320781573a7868c17eb1c2559">More...</a><br/></td></tr>
-<tr class="separator:a4f9aca7320781573a7868c17eb1c2559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7613f5291b763c025deb3383488aa42a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a7613f5291b763c025deb3383488aa42a">isPointOnEdge</a> (const Point &amp;p, int nrOfRows, int nrOfCols)</td></tr>
+<tr class="memdesc:a7613f5291b763c025deb3383488aa42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given point is on the edge.  <a href="#a7613f5291b763c025deb3383488aa42a">More...</a><br/></td></tr>
+<tr class="separator:a7613f5291b763c025deb3383488aa42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3574944f4c4a7cb422bc01b92330d862"><td class="memTemplParams" colspan="2">template&lt;typename T , typename U &gt; </td></tr>
 <tr class="memitem:a3574944f4c4a7cb422bc01b92330d862"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a3574944f4c4a7cb422bc01b92330d862">isBetweenCoordinates</a> (T c, U c1, U c2)</td></tr>
 <tr class="memdesc:a3574944f4c4a7cb422bc01b92330d862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the coordinate c lies between c1 and c2.  <a href="#a3574944f4c4a7cb422bc01b92330d862">More...</a><br/></td></tr>
 <tr class="separator:a3574944f4c4a7cb422bc01b92330d862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e7fc2a1f46f34d56c99a6ace8a1574c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a4e7fc2a1f46f34d56c99a6ace8a1574c">sgn</a> (int number)</td></tr>
-<tr class="memdesc:a4e7fc2a1f46f34d56c99a6ace8a1574c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute sgn(number)  <a href="#a4e7fc2a1f46f34d56c99a6ace8a1574c">More...</a><br/></td></tr>
-<tr class="separator:a4e7fc2a1f46f34d56c99a6ace8a1574c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64fe14ed0756b883b5826062b14cbff5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a64fe14ed0756b883b5826062b14cbff5">translate</a> (Point &amp;point, const Point &amp;translation)</td></tr>
-<tr class="memdesc:a64fe14ed0756b883b5826062b14cbff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate a point by the given values.  <a href="#a64fe14ed0756b883b5826062b14cbff5">More...</a><br/></td></tr>
-<tr class="separator:a64fe14ed0756b883b5826062b14cbff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a141e540194834cbc053b0d468675659f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a141e540194834cbc053b0d468675659f">inverseTranslate</a> (Point2f &amp;point, const Point &amp;translation)</td></tr>
-<tr class="memdesc:a141e540194834cbc053b0d468675659f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse translate a point by the given values.  <a href="#a141e540194834cbc053b0d468675659f">More...</a><br/></td></tr>
-<tr class="separator:a141e540194834cbc053b0d468675659f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d4e6b64b1efdf07af6ad8bb4ed09229"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a4d4e6b64b1efdf07af6ad8bb4ed09229">lineCircleTwoIntersectionPoints</a> (const Point &amp;circleOrigin, double A, double B, double C, double delta, vector&lt; Point2f &gt; &amp;intersectionPoints)</td></tr>
-<tr class="memdesc:a4d4e6b64b1efdf07af6ad8bb4ed09229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Treat the case when the line and circle intersect in two points.  <a href="#a4d4e6b64b1efdf07af6ad8bb4ed09229">More...</a><br/></td></tr>
-<tr class="separator:a4d4e6b64b1efdf07af6ad8bb4ed09229"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fad5ed2fda70054a74926838c44864c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a1fad5ed2fda70054a74926838c44864c">lineCircleOneIntersectionPoint</a> (const Point &amp;circleOrigin, double A, double B, double C, double delta, vector&lt; Point2f &gt; &amp;intersectionPoints)</td></tr>
-<tr class="memdesc:a1fad5ed2fda70054a74926838c44864c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Treat the case when the line and circle intersect in one point.  <a href="#a1fad5ed2fda70054a74926838c44864c">More...</a><br/></td></tr>
-<tr class="separator:a1fad5ed2fda70054a74926838c44864c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5561fa98c33d44757b65628a1b6fa35b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a5561fa98c33d44757b65628a1b6fa35b">sgn</a> (int number)</td></tr>
+<tr class="memdesc:a5561fa98c33d44757b65628a1b6fa35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute sgn(number)  <a href="#a5561fa98c33d44757b65628a1b6fa35b">More...</a><br/></td></tr>
+<tr class="separator:a5561fa98c33d44757b65628a1b6fa35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d90fd709cc439f2d0ff0518d1edb679"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a2d90fd709cc439f2d0ff0518d1edb679">translate</a> (Point &amp;point, const Point &amp;translation)</td></tr>
+<tr class="memdesc:a2d90fd709cc439f2d0ff0518d1edb679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate a point by the given values.  <a href="#a2d90fd709cc439f2d0ff0518d1edb679">More...</a><br/></td></tr>
+<tr class="separator:a2d90fd709cc439f2d0ff0518d1edb679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ed6754218717c2014c7eeedde305c9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#a92ed6754218717c2014c7eeedde305c9">inverseTranslate</a> (Point2f &amp;point, const Point &amp;translation)</td></tr>
+<tr class="memdesc:a92ed6754218717c2014c7eeedde305c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverse translate a point by the given values.  <a href="#a92ed6754218717c2014c7eeedde305c9">More...</a><br/></td></tr>
+<tr class="separator:a92ed6754218717c2014c7eeedde305c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addae5914497aec6e2c217364ce15b414"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#addae5914497aec6e2c217364ce15b414">lineCircleTwoIntersectionPoints</a> (const Point &amp;circleOrigin, double A, double B, double C, double delta, vector&lt; Point2f &gt; &amp;intersectionPoints)</td></tr>
+<tr class="memdesc:addae5914497aec6e2c217364ce15b414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Treat the case when the line and circle intersect in two points.  <a href="#addae5914497aec6e2c217364ce15b414">More...</a><br/></td></tr>
+<tr class="separator:addae5914497aec6e2c217364ce15b414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4baa01aa42d2517d70774fbe216239b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Geometry2D.html#af4baa01aa42d2517d70774fbe216239b">lineCircleOneIntersectionPoint</a> (const Point &amp;circleOrigin, double A, double B, double C, double delta, vector&lt; Point2f &gt; &amp;intersectionPoints)</td></tr>
+<tr class="memdesc:af4baa01aa42d2517d70774fbe216239b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Treat the case when the line and circle intersect in one point.  <a href="#af4baa01aa42d2517d70774fbe216239b">More...</a><br/></td></tr>
+<tr class="separator:af4baa01aa42d2517d70774fbe216239b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Two-dimensional geometric operations. </p>
 
 <p>Definition at line <a class="el" href="Geometry2D_8hpp_source.html#l00017">17</a> of file <a class="el" href="Geometry2D_8hpp_source.html">Geometry2D.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ab77831722e89d9a6951b390a179150d1"></a>
+<a class="anchor" id="ae350dc61448d3912bdaff41b40b8fb7e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -197,7 +206,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static double multiscale::Geometry2D::angleBtwPoints </td>
+          <td class="memname">double Geometry2D::angleBtwPoints </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -238,9 +247,13 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00162">162</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00051">PI</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a63f7df67a00e1002375fb3c87d546dfd"></a>
+<a class="anchor" id="a702d65aaced6ff971809ea7a537fc70a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -248,7 +261,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static double multiscale::Geometry2D::distanceBtwPoints </td>
+          <td class="memname">double Geometry2D::distanceBtwPoints </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -282,9 +295,24 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00008">8</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00188">minimumDistancePointIndex()</a>.</p>
+
+<p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_a702d65aaced6ff971809ea7a537fc70a_icgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_a702d65aaced6ff971809ea7a537fc70a_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_a702d65aaced6ff971809ea7a537fc70a_icgraph" id="classmultiscale_1_1Geometry2D_a702d65aaced6ff971809ea7a537fc70a_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a8ae0be0491a149417bb690d0676166c1" title="Get the index of the point which is the closest to the origin." alt="" coords="216,5,413,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a4aa28e30fc3b468b9ef3dc4b5b454620"></a>
+<a class="anchor" id="a9974bf3050ce8038ef45c0a731d9d498"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -292,7 +320,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static double multiscale::Geometry2D::distanceFromPointToLine </td>
+          <td class="memname">double Geometry2D::distanceFromPointToLine </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -332,9 +360,11 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00015">15</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a40b6ea1e99dbdb26faed41ef24af2d12"></a>
+<a class="anchor" id="a0ae1e3197b01d5f713796820303beee5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -342,7 +372,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static vector&lt;Point&gt; multiscale::Geometry2D::findPointsOnEdge </td>
+          <td class="memname">vector&lt; Point &gt; Geometry2D::findPointsOnEdge </td>
           <td>(</td>
           <td class="paramtype">const vector&lt; Point &gt; &amp;&#160;</td>
           <td class="paramname"><em>points</em>, </td>
@@ -383,9 +413,24 @@ Static Private Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00174">174</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00207">isPointOnEdge()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_a0ae1e3197b01d5f713796820303beee5_cgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_a0ae1e3197b01d5f713796820303beee5_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_a0ae1e3197b01d5f713796820303beee5_cgraph" id="classmultiscale_1_1Geometry2D_a0ae1e3197b01d5f713796820303beee5_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a7613f5291b763c025deb3383488aa42a" title="Check if the given point is on the edge." alt="" coords="216,5,379,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a141e540194834cbc053b0d468675659f"></a>
+<a class="anchor" id="a92ed6754218717c2014c7eeedde305c9"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -393,7 +438,7 @@ Static Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void multiscale::Geometry2D::inverseTranslate </td>
+          <td class="memname">void Geometry2D::inverseTranslate </td>
           <td>(</td>
           <td class="paramtype">Point2f &amp;&#160;</td>
           <td class="paramname"><em>point</em>, </td>
@@ -425,6 +470,21 @@ Static Private Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00231">231</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00254">lineCircleOneIntersectionPoint()</a>, and <a class="el" href="Geometry2D_8cpp_source.html#l00236">lineCircleTwoIntersectionPoints()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_a92ed6754218717c2014c7eeedde305c9_icgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_a92ed6754218717c2014c7eeedde305c9_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_a92ed6754218717c2014c7eeedde305c9_icgraph" id="classmultiscale_1_1Geometry2D_a92ed6754218717c2014c7eeedde305c9_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#af4baa01aa42d2517d70774fbe216239b" title="Treat the case when the line and circle intersect in one point." alt="" coords="221,5,427,51"/><area shape="rect" id="node9" href="classmultiscale_1_1Geometry2D.html#addae5914497aec6e2c217364ce15b414" title="Treat the case when the line and circle intersect in two points." alt="" coords="217,74,431,121"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#acd757a54d9ffa99752fc1cf6b4b29cc5" title="Determine if a line and a circle intersect and return the intersection points if they exist..." alt="" coords="480,39,643,86"/><area shape="rect" id="node7" href="classmultiscale_1_1Geometry2D.html#a287f945dac65cbd213befdc50f183ef8" title="Determine if a line segment and a circle intersect and return the intersection points if they exist..." alt="" coords="692,39,895,86"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -480,7 +540,43 @@ template&lt;typename T , typename U &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a4f9aca7320781573a7868c17eb1c2559"></a>
+<a class="anchor" id="adc334365732eb2db3419a4cc2063485c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool multiscale::Geometry2D::isBetweenCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">U&#160;</td>
+          <td class="paramname"><em>c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">U&#160;</td>
+          <td class="paramname"><em>c2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00217">217</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7613f5291b763c025deb3383488aa42a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -488,7 +584,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool multiscale::Geometry2D::isPointOnEdge </td>
+          <td class="memname">bool Geometry2D::isPointOnEdge </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
@@ -529,9 +625,26 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00207">207</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="Geometry2D_8hpp_source.html#l00011">MATRIX_START_INDEX</a>.</p>
+
+<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00174">findPointsOnEdge()</a>, and <a class="el" href="Geometry2D_8cpp_source.html#l00034">orthogonalLineToAnotherLineEdgePoints()</a>.</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_a7613f5291b763c025deb3383488aa42a_icgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_a7613f5291b763c025deb3383488aa42a_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_a7613f5291b763c025deb3383488aa42a_icgraph" id="classmultiscale_1_1Geometry2D_a7613f5291b763c025deb3383488aa42a_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a0ae1e3197b01d5f713796820303beee5" title="Find the subset of points from the given set of points which lie on the edge." alt="" coords="235,5,397,51"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="217,75,415,139"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a3f10e05b0786b065de69b91c3082bb0b"></a>
+<a class="anchor" id="acd757a54d9ffa99752fc1cf6b4b29cc5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -539,7 +652,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool multiscale::Geometry2D::lineCircleIntersection </td>
+          <td class="memname">bool Geometry2D::lineCircleIntersection </td>
           <td>(</td>
           <td class="paramtype">Point&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -593,10 +706,40 @@ template&lt;typename T , typename U &gt; </div>
   </table>
   </dd>
 </dl>
+<p>&lt; Two intersection points</p>
+<p>&lt; One intersection point </p>
+
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00114">114</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00254">lineCircleOneIntersectionPoint()</a>, <a class="el" href="Geometry2D_8cpp_source.html#l00236">lineCircleTwoIntersectionPoints()</a>, and <a class="el" href="Geometry2D_8cpp_source.html#l00226">translate()</a>.</p>
+
+<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00143">lineSegmentCircleIntersection()</a>.</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_acd757a54d9ffa99752fc1cf6b4b29cc5_cgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_acd757a54d9ffa99752fc1cf6b4b29cc5_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_acd757a54d9ffa99752fc1cf6b4b29cc5_cgraph" id="classmultiscale_1_1Geometry2D_acd757a54d9ffa99752fc1cf6b4b29cc5_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#af4baa01aa42d2517d70774fbe216239b" title="Treat the case when the line and circle intersect in one point." alt="" coords="221,5,427,51"/><area shape="rect" id="node7" href="classmultiscale_1_1Geometry2D.html#addae5914497aec6e2c217364ce15b414" title="Treat the case when the line and circle intersect in two points." alt="" coords="217,74,431,121"/><area shape="rect" id="node10" href="classmultiscale_1_1Geometry2D.html#a2d90fd709cc439f2d0ff0518d1edb679" title="Translate a point by the given values." alt="" coords="243,143,405,190"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#a92ed6754218717c2014c7eeedde305c9" title="Inverse translate a point by the given values." alt="" coords="480,39,643,86"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_acd757a54d9ffa99752fc1cf6b4b29cc5_icgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_acd757a54d9ffa99752fc1cf6b4b29cc5_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_acd757a54d9ffa99752fc1cf6b4b29cc5_icgraph" id="classmultiscale_1_1Geometry2D_acd757a54d9ffa99752fc1cf6b4b29cc5_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a287f945dac65cbd213befdc50f183ef8" title="Determine if a line segment and a circle intersect and return the intersection points if they exist..." alt="" coords="217,5,420,51"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="a1fad5ed2fda70054a74926838c44864c"></a>
+<a class="anchor" id="af4baa01aa42d2517d70774fbe216239b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -604,7 +747,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void multiscale::Geometry2D::lineCircleOneIntersectionPoint </td>
+          <td class="memname">void Geometry2D::lineCircleOneIntersectionPoint </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>circleOrigin</em>, </td>
@@ -665,9 +808,37 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00254">254</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00231">inverseTranslate()</a>.</p>
+
+<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00114">lineCircleIntersection()</a>.</p>
+
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_af4baa01aa42d2517d70774fbe216239b_cgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_af4baa01aa42d2517d70774fbe216239b_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_af4baa01aa42d2517d70774fbe216239b_cgraph" id="classmultiscale_1_1Geometry2D_af4baa01aa42d2517d70774fbe216239b_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a92ed6754218717c2014c7eeedde305c9" title="Inverse translate a point by the given values." alt="" coords="261,5,424,51"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_af4baa01aa42d2517d70774fbe216239b_icgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_af4baa01aa42d2517d70774fbe216239b_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_af4baa01aa42d2517d70774fbe216239b_icgraph" id="classmultiscale_1_1Geometry2D_af4baa01aa42d2517d70774fbe216239b_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#acd757a54d9ffa99752fc1cf6b4b29cc5" title="Determine if a line and a circle intersect and return the intersection points if they exist..." alt="" coords="261,5,424,51"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#a287f945dac65cbd213befdc50f183ef8" title="Determine if a line segment and a circle intersect and return the intersection points if they exist..." alt="" coords="473,5,676,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a4d4e6b64b1efdf07af6ad8bb4ed09229"></a>
+<a class="anchor" id="addae5914497aec6e2c217364ce15b414"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -675,7 +846,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void multiscale::Geometry2D::lineCircleTwoIntersectionPoints </td>
+          <td class="memname">void Geometry2D::lineCircleTwoIntersectionPoints </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>circleOrigin</em>, </td>
@@ -736,9 +907,37 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00236">236</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00231">inverseTranslate()</a>.</p>
+
+<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00114">lineCircleIntersection()</a>.</p>
+
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_addae5914497aec6e2c217364ce15b414_cgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_addae5914497aec6e2c217364ce15b414_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_addae5914497aec6e2c217364ce15b414_cgraph" id="classmultiscale_1_1Geometry2D_addae5914497aec6e2c217364ce15b414_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a92ed6754218717c2014c7eeedde305c9" title="Inverse translate a point by the given values." alt="" coords="269,5,432,51"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_addae5914497aec6e2c217364ce15b414_icgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_addae5914497aec6e2c217364ce15b414_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_addae5914497aec6e2c217364ce15b414_icgraph" id="classmultiscale_1_1Geometry2D_addae5914497aec6e2c217364ce15b414_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#acd757a54d9ffa99752fc1cf6b4b29cc5" title="Determine if a line and a circle intersect and return the intersection points if they exist..." alt="" coords="269,5,432,51"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#a287f945dac65cbd213befdc50f183ef8" title="Determine if a line segment and a circle intersect and return the intersection points if they exist..." alt="" coords="481,5,684,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="ac416b95460bde332c8ef58cba27b70ad"></a>
+<a class="anchor" id="aa9d9b17a7e5098c8bde0cd9d3dc08dc2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -746,7 +945,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool multiscale::Geometry2D::lineIntersection </td>
+          <td class="memname">bool Geometry2D::lineIntersection </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a1</em>, </td>
@@ -805,9 +1004,24 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00080">80</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00101">lineSegmentIntersection()</a>.</p>
+
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_aa9d9b17a7e5098c8bde0cd9d3dc08dc2_icgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_aa9d9b17a7e5098c8bde0cd9d3dc08dc2_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_aa9d9b17a7e5098c8bde0cd9d3dc08dc2_icgraph" id="classmultiscale_1_1Geometry2D_aa9d9b17a7e5098c8bde0cd9d3dc08dc2_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a9931c3d8089d658186a8c1ac78db5773" title="Determine the intersection point of two line segments, if this point exists." alt="" coords="216,5,387,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="ae7368c3750d2f9e86a3d4ebb204e7717"></a>
+<a class="anchor" id="a287f945dac65cbd213befdc50f183ef8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -815,7 +1029,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool multiscale::Geometry2D::lineSegmentCircleIntersection </td>
+          <td class="memname">bool Geometry2D::lineSegmentCircleIntersection </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -870,9 +1084,24 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00143">143</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00114">lineCircleIntersection()</a>.</p>
+
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_a287f945dac65cbd213befdc50f183ef8_cgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_a287f945dac65cbd213befdc50f183ef8_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_a287f945dac65cbd213befdc50f183ef8_cgraph" id="classmultiscale_1_1Geometry2D_a287f945dac65cbd213befdc50f183ef8_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#acd757a54d9ffa99752fc1cf6b4b29cc5" title="Determine if a line and a circle intersect and return the intersection points if they exist..." alt="" coords="259,74,421,121"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#af4baa01aa42d2517d70774fbe216239b" title="Treat the case when the line and circle intersect in one point." alt="" coords="475,5,680,51"/><area shape="rect" id="node9" href="classmultiscale_1_1Geometry2D.html#addae5914497aec6e2c217364ce15b414" title="Treat the case when the line and circle intersect in two points." alt="" coords="471,74,684,121"/><area shape="rect" id="node12" href="classmultiscale_1_1Geometry2D.html#a2d90fd709cc439f2d0ff0518d1edb679" title="Translate a point by the given values." alt="" coords="496,143,659,190"/><area shape="rect" id="node7" href="classmultiscale_1_1Geometry2D.html#a92ed6754218717c2014c7eeedde305c9" title="Inverse translate a point by the given values." alt="" coords="733,39,896,86"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a573bc0c496ae02349241f5c4991de3d2"></a>
+<a class="anchor" id="a9931c3d8089d658186a8c1ac78db5773"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -880,7 +1109,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool multiscale::Geometry2D::lineSegmentIntersection </td>
+          <td class="memname">bool Geometry2D::lineSegmentIntersection </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a1</em>, </td>
@@ -941,9 +1170,24 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00101">101</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00080">lineIntersection()</a>.</p>
+
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_a9931c3d8089d658186a8c1ac78db5773_cgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_a9931c3d8089d658186a8c1ac78db5773_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_a9931c3d8089d658186a8c1ac78db5773_cgraph" id="classmultiscale_1_1Geometry2D_a9931c3d8089d658186a8c1ac78db5773_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#aa9d9b17a7e5098c8bde0cd9d3dc08dc2" title="Determine the intersection point of two lines, if this point exists." alt="" coords="224,5,387,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a266b965a05bb6dac7e03a1b71d41b652"></a>
+<a class="anchor" id="aa6422ff6e704c3f64be2d4e7197d8dbd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -951,7 +1195,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Point multiscale::Geometry2D::middlePoint </td>
+          <td class="memname">Point Geometry2D::middlePoint </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -984,9 +1228,11 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00027">27</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="ab13bbf1dc0bf164fdb9ab0b17ae681a6"></a>
+<a class="anchor" id="a8ae0be0491a149417bb690d0676166c1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -994,7 +1240,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static unsigned int multiscale::Geometry2D::minimumDistancePointIndex </td>
+          <td class="memname">unsigned int Geometry2D::minimumDistancePointIndex </td>
           <td>(</td>
           <td class="paramtype">const vector&lt; Point &gt; &amp;&#160;</td>
           <td class="paramname"><em>points</em>, </td>
@@ -1028,9 +1274,24 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00188">188</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00008">distanceBtwPoints()</a>.</p>
+
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_a8ae0be0491a149417bb690d0676166c1_cgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_a8ae0be0491a149417bb690d0676166c1_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_a8ae0be0491a149417bb690d0676166c1_cgraph" id="classmultiscale_1_1Geometry2D_a8ae0be0491a149417bb690d0676166c1_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a702d65aaced6ff971809ea7a537fc70a" title="Compute the distance between two points." alt="" coords="251,5,413,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="aa00034196437bbd11ae7297c14f8e59c"></a>
+<a class="anchor" id="a3da27e8cecb0a0d2733afa85d356a912"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1038,7 +1299,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void multiscale::Geometry2D::orthogonalLineToAnotherLineEdgePoints </td>
+          <td class="memname">void Geometry2D::orthogonalLineToAnotherLineEdgePoints </td>
           <td>(</td>
           <td class="paramtype">const Point &amp;&#160;</td>
           <td class="paramname"><em>a1</em>, </td>
@@ -1099,9 +1360,24 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00034">34</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00207">isPointOnEdge()</a>.</p>
+
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_a3da27e8cecb0a0d2733afa85d356a912_cgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_a3da27e8cecb0a0d2733afa85d356a912_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_a3da27e8cecb0a0d2733afa85d356a912_cgraph" id="classmultiscale_1_1Geometry2D_a3da27e8cecb0a0d2733afa85d356a912_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a7613f5291b763c025deb3383488aa42a" title="Check if the given point is on the edge." alt="" coords="253,14,416,61"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a4e7fc2a1f46f34d56c99a6ace8a1574c"></a>
+<a class="anchor" id="a5561fa98c33d44757b65628a1b6fa35b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1109,7 +1385,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int multiscale::Geometry2D::sgn </td>
+          <td class="memname">int Geometry2D::sgn </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>number</em></td><td>)</td>
@@ -1131,9 +1407,11 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00221">221</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a64fe14ed0756b883b5826062b14cbff5"></a>
+<a class="anchor" id="a2d90fd709cc439f2d0ff0518d1edb679"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1141,7 +1419,7 @@ template&lt;typename T , typename U &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void multiscale::Geometry2D::translate </td>
+          <td class="memname">void Geometry2D::translate </td>
           <td>(</td>
           <td class="paramtype">Point &amp;&#160;</td>
           <td class="paramname"><em>point</em>, </td>
@@ -1174,10 +1452,26 @@ template&lt;typename T , typename U &gt; </div>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="Geometry2D_8cpp_source.html#l00226">226</a> of file <a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00114">lineCircleIntersection()</a>.</p>
+
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1Geometry2D_a2d90fd709cc439f2d0ff0518d1edb679_icgraph.png" border="0" usemap="#classmultiscale_1_1Geometry2D_a2d90fd709cc439f2d0ff0518d1edb679_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1Geometry2D_a2d90fd709cc439f2d0ff0518d1edb679_icgraph" id="classmultiscale_1_1Geometry2D_a2d90fd709cc439f2d0ff0518d1edb679_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#acd757a54d9ffa99752fc1cf6b4b29cc5" title="Determine if a line and a circle intersect and return the intersection points if they exist..." alt="" coords="216,5,379,51"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#a287f945dac65cbd213befdc50f183ef8" title="Determine if a line segment and a circle intersect and return the intersection points if they exist..." alt="" coords="428,5,631,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/multiscale/util/<a class="el" href="Geometry2D_8hpp_source.html">Geometry2D.hpp</a></li>
+<li>src/multiscale/util/<a class="el" href="Geometry2D_8cpp_source.html">Geometry2D.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1185,7 +1479,7 @@ template&lt;typename T , typename U &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1Geometry2D.html">Geometry2D</a></li>
-    <li class="footer">Generated on Wed Mar 27 2013 15:49:04 for Multiscale by
+    <li class="footer">Generated on Mon Jul 1 2013 18:29:33 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

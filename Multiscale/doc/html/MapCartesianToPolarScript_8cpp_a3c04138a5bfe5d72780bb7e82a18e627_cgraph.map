@@ -1,0 +1,14 @@
+<map id="main" name="main">
+<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a49c258f2a31008988e64d7d47274e3b8" title="areValidParameters" alt="" coords="127,59,263,88"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aae3e7e842456da18741bccccdf084922" title="Start the conversion." alt="" coords="105,200,284,264"/>
+<area shape="rect" id="node25" href="$CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb" title="printWrongParameters" alt="" coords="119,288,271,317"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="359,5,497,35"/>
+<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="359,59,497,88"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a37891007ade23e05047d33d0c9cb3e13" title="Read the input data." alt="" coords="339,112,517,176"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178" title="Convert the concentrations to annular sectors." alt="" coords="333,200,523,264"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e" title="Output the results as a gnuplot script." alt="" coords="339,288,517,352"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#adb3aeeb5f2994f8aa9dc03c8c8f270ad" title="Output the results as a plain file." alt="" coords="339,376,517,440"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a88d7c95fb76c9e139cb013c11a8dfae0" title="Read the header line." alt="" coords="576,68,755,132"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140" title="Read the concentrations." alt="" coords="576,156,755,220"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a9e60fa7dd9c47dc89cdce30a39175a6e" title="Generate the script." alt="" coords="572,288,759,352"/>
+</map>

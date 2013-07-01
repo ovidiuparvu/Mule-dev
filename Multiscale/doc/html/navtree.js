@@ -2,6 +2,8 @@ var NAVTREE =
 [
   [ "Multiscale", "index.html", [
     [ "Namespaces", null, [
+      [ "Brief description", "index.html#sec_brief_description", null ],
+      [ "Contact", "index.html#sec_contact", null ],
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
@@ -23,6 +25,7 @@ var NAVTREE =
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -31,8 +34,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"AnnularSector_8hpp.html",
-"classmultiscale_1_1analysis_1_1RegionDetector.html#a0f7469d124c0b906d199e00ea5713007"
+"AnnularSector_8cpp.html",
+"StandardNumberIterator_8hpp_source.html",
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -5,6 +5,7 @@ var hierarchy =
     [ "multiscale::video::CartesianToPolarConverter", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html", null ],
     [ "multiscale::Geometry2D", "classmultiscale_1_1Geometry2D.html", null ],
     [ "multiscale::analysis::MatFactory", "classmultiscale_1_1analysis_1_1MatFactory.html", [
+      [ "multiscale::analysis::CircularMatFactory", "classmultiscale_1_1analysis_1_1CircularMatFactory.html", null ],
       [ "multiscale::analysis::RectangularMatFactory", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html", null ]
     ] ],
     [ "multiscale::NumberIterator", "classmultiscale_1_1NumberIterator.html", [

@@ -1,0 +1,6 @@
+<map id="multiscale::Geometry2D::inverseTranslate" name="multiscale::Geometry2D::inverseTranslate">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#af4baa01aa42d2517d70774fbe216239b" title="Treat the case when the line and circle intersect in one point." alt="" coords="221,5,427,51"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Geometry2D.html#addae5914497aec6e2c217364ce15b414" title="Treat the case when the line and circle intersect in two points." alt="" coords="217,74,431,121"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#acd757a54d9ffa99752fc1cf6b4b29cc5" title="Determine if a line and a circle intersect and return the intersection points if they exist..." alt="" coords="480,39,643,86"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Geometry2D.html#a287f945dac65cbd213befdc50f183ef8" title="Determine if a line segment and a circle intersect and return the intersection points if they exist..." alt="" coords="692,39,895,86"/>
+</map>

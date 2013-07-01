@@ -1,0 +1,8 @@
+<map id="main" name="main">
+<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a49c258f2a31008988e64d7d47274e3b8" title="areValidParameters" alt="" coords="123,32,259,61"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a04345ff6bcd6a8b474f75a76ea731634" title="Create a Mat object from the image file obtained from the RectangularGeometryViewer." alt="" coords="105,85,276,149"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#aad54fd30f7ccf8a28d1cb2f656b08bb3" title="Detect the regions in the image and output the results." alt="" coords="108,173,273,219"/>
+<area shape="rect" id="node13" href="$CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb" title="printWrongParameters" alt="" coords="115,243,267,272"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="327,5,465,35"/>
+<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="327,59,465,88"/>
+</map>

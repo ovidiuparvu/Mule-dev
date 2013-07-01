@@ -1,6 +1,6 @@
 var PolarGnuplotScriptGenerator_8hpp =
 [
-    [ "PolarGnuplotScriptGenerator", "classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html", "classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator" ],
+    [ "PolarGnuplotScriptGenerator", "classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html", null ],
     [ "CONTENT_IN", "PolarGnuplotScriptGenerator_8hpp.html#a24ff1788e402c9b442516547abbc9cc1", null ],
     [ "FOOTER_IN", "PolarGnuplotScriptGenerator_8hpp.html#a659b095a04ee66db6555c930dd5eb1ee", null ],
     [ "GNUPLOT_EXTENSION", "PolarGnuplotScriptGenerator_8hpp.html#a85e11e2c1d735f878817c23fc52da09a", null ],

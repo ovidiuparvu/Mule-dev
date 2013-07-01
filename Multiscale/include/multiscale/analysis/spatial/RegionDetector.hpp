@@ -242,7 +242,6 @@ namespace multiscale {
 
                 //! Output the regions
                 /*!
-                 * \param image The image from which the regions were extracted
                  * \param regions The regions
                  * \param isDebugMode True, if in debug mode
                  */

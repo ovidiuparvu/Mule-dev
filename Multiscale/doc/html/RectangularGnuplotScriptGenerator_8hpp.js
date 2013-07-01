@@ -1,6 +1,6 @@
 var RectangularGnuplotScriptGenerator_8hpp =
 [
-    [ "RectangularGnuplotScriptGenerator", "classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html", "classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator" ],
+    [ "RectangularGnuplotScriptGenerator", "classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html", null ],
     [ "CONTENT_IN", "RectangularGnuplotScriptGenerator_8hpp.html#a24ff1788e402c9b442516547abbc9cc1", null ],
     [ "FOOTER_IN", "RectangularGnuplotScriptGenerator_8hpp.html#a659b095a04ee66db6555c930dd5eb1ee", null ],
     [ "GNUPLOT_EXTENSION", "RectangularGnuplotScriptGenerator_8hpp.html#a85e11e2c1d735f878817c23fc52da09a", null ],

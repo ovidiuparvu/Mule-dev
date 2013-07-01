@@ -1,0 +1,6 @@
+<map id="multiscale::StringManipulator::split" name="multiscale::StringManipulator::split">
+<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#af2d31d32cdba42aeb5589b3faab315ad" title="Split the line in concentrations." alt="" coords="260,5,465,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ab297918325583ff85c8740fa9c5661f6" title="Split the line in concentrations." alt="" coords="245,93,480,157"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a876c93163765bcae5d0b12047df99d58" title="Validate the provided line identified by a line number." alt="" coords="269,181,456,245"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a71741de958cfecc133a303ea3a5af22c" title="Validate the provided line identified by a line number." alt="" coords="260,269,465,333"/>
+</map>

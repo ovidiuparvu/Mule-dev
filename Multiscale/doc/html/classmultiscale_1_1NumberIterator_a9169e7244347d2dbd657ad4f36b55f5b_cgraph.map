@@ -1,0 +1,4 @@
+<map id="multiscale::NumberIterator::hasNext" name="multiscale::NumberIterator::hasNext">
+<area shape="rect" id="node3" href="$classmultiscale_1_1NumberIterator.html#a3c84ccdf0e279e67861b3cce34a26588" title="Check if there is a next number when in initialised state." alt="" coords="229,5,405,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1NumberIterator.html#a446f1ec484d5e16092674c5de25150f1" title="Check if there is a next number when in not initialised state." alt="" coords="229,74,405,121"/>
+</map>
