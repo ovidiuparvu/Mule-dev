@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/Entity.hpp"
 #include "multiscale/util/StringManipulator.hpp"
+#include "multiscale/util/Geometry2D.hpp"
 
 using namespace multiscale::analysis;
 
@@ -31,6 +32,13 @@ string Entity::toString() {
     return StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.y);
+}
+
+double Entity::distanceTo(const DataPoint &point) {
+    if (typeid(this) != typeid(point))
+        throw ERR_DISTANCE;
+
+    return Geometry2D::distanceBtwPoints(this->centre, ((Entity)point).centre);
 }
 
 bool Entity::areValid(double pileUpDegree, double area, const Point &centre) {

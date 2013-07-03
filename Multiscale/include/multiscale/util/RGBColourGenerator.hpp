@@ -2,7 +2,10 @@
 #define RGBCOLOURGENERATOR_HPP_
 
 #include <string>
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
 
+using namespace cv;
 using namespace std;
 
 #define HUE_MIN     0
@@ -40,6 +43,13 @@ namespace multiscale {
             static string generate(double concentrationMin,
                                    double concentrationMax,
                                    double concentration);
+
+            //! Generate a random RGB colour
+            /*! Generate a random RGB colour using the given random number generator
+             *
+             * \param randomNumberGenerator Random number generator
+             */
+            static Scalar generate(const RNG &randomNumberGenerator);
 
         private:
 

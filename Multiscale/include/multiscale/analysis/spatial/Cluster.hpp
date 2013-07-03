@@ -41,13 +41,17 @@ namespace multiscale {
                 Point2f minAreaEnclosingCircleCentre;   /*!< The minimum area enclosing circle centre point */
                 float minAreaEnclosingCircleRadius;     /*!< The minimum area enclosing circle radius */
 
+                // TODO: Update
                 vector<Point> minAreaEnclosingTriangle; /*!< The minimum area enclosing triangle */
 
                 Shape2D shape;                          /*!< Shape of the cluster */
                 Point centre;                           /*!< Point defining the centre of the cluster */
                 vector<Entity> entities;                /*!< Entities which belong to this cluster */
 
-                bool updateFlag;                        /*!< Flag indicating if the field values dependent on the collection of entities needs to be updated */
+                bool updateFlag;                        /*!< Flag indicating if the field values dependent on the
+                                                             collection of entities need to be updated. This flag is
+                                                             used for lazy evaluation purposes, such that new field
+                                                             values are computed only when required*/
 
             public:
 
@@ -71,6 +75,9 @@ namespace multiscale {
 
                 //! Get the point defining the centre of the entity
                 double getCentre() const;
+
+                //! Get the collection of underlying entities
+                vector<Entity> getEntities() const;
 
                 //! Get a string representation of all the field values
                 string toString();

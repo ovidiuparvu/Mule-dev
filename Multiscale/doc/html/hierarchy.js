@@ -3,6 +3,9 @@ var hierarchy =
     [ "multiscale::video::AnnularSector", "classmultiscale_1_1video_1_1AnnularSector.html", null ],
     [ "multiscale::video::CartesianToConcentrationsConverter", "classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html", null ],
     [ "multiscale::video::CartesianToPolarConverter", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html", null ],
+    [ "multiscale::analysis::Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", null ],
+    [ "multiscale::analysis::ClusterDetector", "classmultiscale_1_1analysis_1_1ClusterDetector.html", null ],
+    [ "multiscale::analysis::Entity", "classmultiscale_1_1analysis_1_1Entity.html", null ],
     [ "multiscale::Geometry2D", "classmultiscale_1_1Geometry2D.html", null ],
     [ "multiscale::analysis::MatFactory", "classmultiscale_1_1analysis_1_1MatFactory.html", [
       [ "multiscale::analysis::CircularMatFactory", "classmultiscale_1_1analysis_1_1CircularMatFactory.html", null ],

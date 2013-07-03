@@ -131,6 +131,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab96622fb17f93d1f92a3b8b9fd978725"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1RGBColourGenerator.html#ab96622fb17f93d1f92a3b8b9fd978725">generate</a> (double concentrationMin, double concentrationMax, double concentration)</td></tr>
 <tr class="memdesc:ab96622fb17f93d1f92a3b8b9fd978725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a RGB colour for the given concentration.  <a href="#ab96622fb17f93d1f92a3b8b9fd978725">More...</a><br/></td></tr>
 <tr class="separator:ab96622fb17f93d1f92a3b8b9fd978725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba82e5377cef3774722641d9f06e26f5"><td class="memItemLeft" align="right" valign="top">static Scalar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1RGBColourGenerator.html#aba82e5377cef3774722641d9f06e26f5">generate</a> (const RNG &amp;randomNumberGenerator)</td></tr>
+<tr class="memdesc:aba82e5377cef3774722641d9f06e26f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a random RGB colour.  <a href="#aba82e5377cef3774722641d9f06e26f5">More...</a><br/></td></tr>
+<tr class="separator:aba82e5377cef3774722641d9f06e26f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -158,7 +161,7 @@ Static Private Attributes</h2></td></tr>
 <p>Generate a RGB colour given the possible range for concentrations and the value of one of the concentrations</p>
 <p>The conversion HSV-&gt;RGB is based on the wikipedia page on this topic </p>
 
-<p>Definition at line <a class="el" href="RGBColourGenerator_8hpp_source.html#l00022">22</a> of file <a class="el" href="RGBColourGenerator_8hpp_source.html">RGBColourGenerator.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RGBColourGenerator_8hpp_source.html#l00025">25</a> of file <a class="el" href="RGBColourGenerator_8hpp_source.html">RGBColourGenerator.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a3c72c2ef3fa50215e73732e324f6f1e1"></a>
 <div class="memitem">
@@ -215,7 +218,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RGBColourGenerator_8cpp_source.html#l00041">41</a> of file <a class="el" href="RGBColourGenerator_8cpp_source.html">RGBColourGenerator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RGBColourGenerator_8cpp_source.html#l00047">47</a> of file <a class="el" href="RGBColourGenerator_8cpp_source.html">RGBColourGenerator.cpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +270,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RGBColourGenerator_8cpp_source.html#l00027">27</a> of file <a class="el" href="RGBColourGenerator_8cpp_source.html">RGBColourGenerator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RGBColourGenerator_8cpp_source.html#l00033">33</a> of file <a class="el" href="RGBColourGenerator_8cpp_source.html">RGBColourGenerator.cpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +297,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Convert the RGB colour to a string. </p>
 
-<p>Definition at line <a class="el" href="RGBColourGenerator_8cpp_source.html#l00086">86</a> of file <a class="el" href="RGBColourGenerator_8cpp_source.html">RGBColourGenerator.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RGBColourGenerator_8cpp_source.html#l00092">92</a> of file <a class="el" href="RGBColourGenerator_8cpp_source.html">RGBColourGenerator.cpp</a>.</p>
 
 </div>
 </div>
@@ -349,7 +352,42 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RGBColourGenerator_8cpp_source.html#l00017">17</a> of file <a class="el" href="RGBColourGenerator_8cpp_source.html">RGBColourGenerator.cpp</a>.</p>
 
-<p>References <a class="el" href="RGBColourGenerator_8hpp_source.html#l00009">HUE_MAX</a>, <a class="el" href="RGBColourGenerator_8hpp_source.html#l00008">HUE_MIN</a>, <a class="el" href="RGBColourGenerator_8hpp_source.html#l00010">SATURATION</a>, and <a class="el" href="RGBColourGenerator_8hpp_source.html#l00011">VALUE</a>.</p>
+<p>References <a class="el" href="RGBColourGenerator_8hpp_source.html#l00012">HUE_MAX</a>, <a class="el" href="RGBColourGenerator_8hpp_source.html#l00011">HUE_MIN</a>, <a class="el" href="RGBColourGenerator_8hpp_source.html#l00013">SATURATION</a>, and <a class="el" href="RGBColourGenerator_8hpp_source.html#l00014">VALUE</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aba82e5377cef3774722641d9f06e26f5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Scalar RGBColourGenerator::generate </td>
+          <td>(</td>
+          <td class="paramtype">const RNG &amp;&#160;</td>
+          <td class="paramname"><em>randomNumberGenerator</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate a random RGB colour. </p>
+<p>Generate a random RGB colour using the given random number generator</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">randomNumberGenerator</td><td>Random number generator </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="RGBColourGenerator_8cpp_source.html#l00027">27</a> of file <a class="el" href="RGBColourGenerator_8cpp_source.html">RGBColourGenerator.cpp</a>.</p>
 
 </div>
 </div>
@@ -373,7 +411,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The amount of blue </p>
 
-<p>Definition at line <a class="el" href="RGBColourGenerator_8hpp_source.html#l00028">28</a> of file <a class="el" href="RGBColourGenerator_8hpp_source.html">RGBColourGenerator.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RGBColourGenerator_8hpp_source.html#l00031">31</a> of file <a class="el" href="RGBColourGenerator_8hpp_source.html">RGBColourGenerator.hpp</a>.</p>
 
 </div>
 </div>
@@ -396,7 +434,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The amount of green </p>
 
-<p>Definition at line <a class="el" href="RGBColourGenerator_8hpp_source.html#l00027">27</a> of file <a class="el" href="RGBColourGenerator_8hpp_source.html">RGBColourGenerator.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RGBColourGenerator_8hpp_source.html#l00030">30</a> of file <a class="el" href="RGBColourGenerator_8hpp_source.html">RGBColourGenerator.hpp</a>.</p>
 
 </div>
 </div>
@@ -419,7 +457,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The amount of red </p>
 
-<p>Definition at line <a class="el" href="RGBColourGenerator_8hpp_source.html#l00026">26</a> of file <a class="el" href="RGBColourGenerator_8hpp_source.html">RGBColourGenerator.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RGBColourGenerator_8hpp_source.html#l00029">29</a> of file <a class="el" href="RGBColourGenerator_8hpp_source.html">RGBColourGenerator.hpp</a>.</p>
 
 </div>
 </div>
@@ -433,7 +471,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1RGBColourGenerator.html">RGBColourGenerator</a></li>
-    <li class="footer">Generated on Mon Jul 1 2013 18:29:33 for Multiscale by
+    <li class="footer">Generated on Thu Jul 4 2013 15:32:50 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

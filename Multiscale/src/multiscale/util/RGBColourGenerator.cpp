@@ -24,6 +24,12 @@ string RGBColourGenerator::generate(double concentrationMin, double concentratio
     return convertHSVToRGB(hue, saturation, value);
 }
 
+Scalar RGBColourGenerator::generate(const RNG &randomNumberGenerator) {
+    int colour = (unsigned) randomNumberGenerator;
+
+    return Scalar(colour & 255, ((colour >> 8) & 255), ((colour >> 16) & 255));
+}
+
 string RGBColourGenerator::convertHSVToRGB(double hue, double saturation, double value) {
     assert((hue >= 0) & &(hue < 360));
 

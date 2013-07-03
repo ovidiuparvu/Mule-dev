@@ -1,0 +1,12 @@
+<map id="multiscale::analysis::Cluster::isTriangularProbability" name="multiscale::analysis::Cluster::isTriangularProbability">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a3af6980def4fbfea38ccd86620f127f8" title="Initialisation function for the class." alt="" coords="272,93,408,139"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#ab164d2395be9692d0a20ded5a2422720" title="Update the shape of the cluster." alt="" coords="263,162,417,209"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#aee7feb1d599d4c8fda6c3ee83e86ba81" title="multiscale::analysis\l::Cluster::Cluster" alt="" coords="487,93,623,139"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#aec76c5ef5523db79ee334a5cd0f1e1cb" title="Update the values of all measures." alt="" coords="467,162,643,209"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Cluster.html#a0d37cb656f212af09dd9339ffa322d55" title="Update the values of all measures if required." alt="" coords="691,153,875,217"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1Cluster.html#a21807d4d70d5dabb13eeee561237dcaa" title="Get the degree of clusteredness." alt="" coords="924,5,1105,69"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1Cluster.html#af5c3c9501a43b46b8fbafdd6332d1c12" title="Get the degree of pile up." alt="" coords="925,93,1104,139"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1Cluster.html#a5076075e1278b70a1361df747ff89175" title="Get the area." alt="" coords="947,162,1083,209"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1Cluster.html#a3023fab07bca5b70120d2faeb35ac9d1" title="Get the shape best fitting the cluster of entities." alt="" coords="947,231,1083,278"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1Cluster.html#aacd49c175fec9728b17291c74c410d3b" title="Get the point defining the centre of the entity." alt="" coords="947,301,1083,347"/>
+</map>

@@ -1,6 +1,8 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 
+#include "multiscale/analysis/spatial/DataPoint.hpp"
+
 #include "opencv2/imgproc/imgproc.hpp"
 
 #include <vector>
@@ -8,7 +10,8 @@
 using namespace cv;
 using namespace std;
 
-#define ERR_INPUT "Invalid input parameters were provided to the constructor."
+#define ERR_INPUT       "Invalid input parameters were provided to the constructor."
+#define ERR_DISTANCE    "The distance to an object of a different type cannot be computed."
 
 
 namespace multiscale {
@@ -16,7 +19,7 @@ namespace multiscale {
     namespace analysis {
 
         //! Class for representing an entity in an image (e.g. cell, organism etc.)
-        class Entity {
+        class Entity : public DataPoint {
 
             private:
 
@@ -41,6 +44,9 @@ namespace multiscale {
 
                 //! Get a string representation of all the field values
                 string toString();
+
+                //! Get the distance between this entity and another one
+                double distanceTo(const DataPoint &point);
 
             private:
 

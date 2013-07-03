@@ -1,9 +1,11 @@
 <map id="include/multiscale/util/StringManipulator.hpp" name="include/multiscale/util/StringManipulator.hpp">
-<area shape="rect" id="node3" href="$Region_8cpp.html" title="src/multiscale/analysis\l/spatial/Region.cpp" alt="" coords="5,110,160,157"/>
-<area shape="rect" id="node5" href="$StringManipulator_8cpp.html" title="src/multiscale/util\l/StringManipulator.cpp" alt="" coords="184,110,336,157"/>
-<area shape="rect" id="node7" href="$AnnularSector_8cpp.html" title="src/multiscale/video\l/circular/AnnularSector.cpp" alt="" coords="360,110,539,157"/>
-<area shape="rect" id="node9" href="$PolarCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/circular/PolarCsvToInputFiles\lConverter.cpp" alt="" coords="563,101,760,165"/>
-<area shape="rect" id="node11" href="$PolarGnuplotScriptGenerator_8cpp.html" title="src/multiscale/video\l/circular/PolarGnuplotScript\lGenerator.cpp" alt="" coords="784,101,965,165"/>
-<area shape="rect" id="node13" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularCsv\lToInputFilesConverter.cpp" alt="" coords="989,101,1176,165"/>
-<area shape="rect" id="node15" href="$RectangularGnuplotScriptGenerator_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularGnuplot\lScriptGenerator.cpp" alt="" coords="1200,101,1408,165"/>
+<area shape="rect" id="node3" href="$Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="5,110,160,157"/>
+<area shape="rect" id="node5" href="$Entity_8cpp.html" title="src/multiscale/analysis\l/spatial/Entity.cpp" alt="" coords="184,110,339,157"/>
+<area shape="rect" id="node7" href="$Region_8cpp.html" title="src/multiscale/analysis\l/spatial/Region.cpp" alt="" coords="363,110,517,157"/>
+<area shape="rect" id="node9" href="$StringManipulator_8cpp.html" title="src/multiscale/util\l/StringManipulator.cpp" alt="" coords="541,110,693,157"/>
+<area shape="rect" id="node11" href="$AnnularSector_8cpp.html" title="src/multiscale/video\l/circular/AnnularSector.cpp" alt="" coords="717,110,896,157"/>
+<area shape="rect" id="node13" href="$PolarCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/circular/PolarCsvToInputFiles\lConverter.cpp" alt="" coords="920,101,1117,165"/>
+<area shape="rect" id="node15" href="$PolarGnuplotScriptGenerator_8cpp.html" title="src/multiscale/video\l/circular/PolarGnuplotScript\lGenerator.cpp" alt="" coords="1141,101,1323,165"/>
+<area shape="rect" id="node17" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularCsv\lToInputFilesConverter.cpp" alt="" coords="1347,101,1533,165"/>
+<area shape="rect" id="node19" href="$RectangularGnuplotScriptGenerator_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularGnuplot\lScriptGenerator.cpp" alt="" coords="1557,101,1765,165"/>
 </map>

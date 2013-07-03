@@ -47,6 +47,10 @@ Point Cluster::getCentre() const {
     return centre;
 }
 
+vector<Entity> Cluster::getEntities() const {
+    return entities;
+}
+
 string Cluster::toString() {
     return StringManipulator::toString<double>(clusterednessDegree) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
@@ -103,14 +107,14 @@ void Cluster::updateMeasures() {
     }
 }
 
-void Cluster::updateCluserednessDegree() {
+void Cluster::updateClusterednessDegree() {
     clusterednessDegree = 0;
 
     for (const Entity &e1 : entities) {
         double avgDistance = 0;
 
         for (const Entity &e2 : entities) {
-            avgDistance += Geometry2D::distanceBtwPoints(e1.getCentre(), e2.getCentre());
+            avgDistance += e1.distanceTo(e2);
         }
 
         clusterednessDegree += avgDistance / (entities.size() - 1);
@@ -177,7 +181,8 @@ double Cluster::isTriangularProbability() {
 
 double Cluster::isRectangularProbability() {
     vector<Point> entitiesCentrePoints = getEntitiesCentrePoints();
-    RotatedRect minAreaEnclosingRect = minAreaRect(entitiesCentrePoints);
+
+    minAreaEnclosingRect = minAreaRect(entitiesCentrePoints);
 
     // Compute the area of the minimum area enclosing rectangle
     double rectArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
@@ -187,15 +192,12 @@ double Cluster::isRectangularProbability() {
 }
 
 double Cluster::isCircularProbability() {
-    Point2f centre;
-    float radius;
-
     vector<Point> entitiesCentrePoints = getEntitiesCentrePoints();
 
-    minEnclosingCircle(entitiesCentrePoints, centre, radius);
+    minEnclosingCircle(entitiesCentrePoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
     // Compute the area of the minimum area enclosing circle
-    double circleArea = PI * radius * radius;
+    double circleArea = PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
 
     return (circleArea == 0) ? 0
                              : (area / circleArea);

@@ -15,22 +15,31 @@ using namespace cv;
 
 #define OUTPUT_EXTENSION    ".out"
 
-#define WIN_DEBUG_IMAGE     "Debug image"
-#define WIN_PROCESSED_IMAGE "Processed image"
+#define WIN_OUTPUT_IMAGE    "Output image"
+
+#define KEY_ESC 27
 
 
 namespace multiscale {
 
     namespace analysis {
 
-        //! Class for detecting clusters in grayscale images
+        //! Class for detecting clusters in 2D images
         class ClusterDetector {
 
-            private:
+            protected:
 
-                Mat inputImage;         /*!< Input image */
-                string outputFilepath;  /*!< Path of the output file */
-                bool debugMode;         /*!< Flag for indicating if debug mode is set */
+                Mat image;                      /*!< Input image */
+                string outputFilepath;          /*!< Path of the output file */
+                bool debugMode;                 /*!< Flag for indicating if debug mode is set */
+
+                double avgClusterednessDegree;  /*!< Average clusteredness degree of all clusters */
+                double avgPileUpDegree;         /*!< Average pile up degree of all clusters */
+
+                double eps;                     /*!< DBSCAN algorithm parameter for specifying the maximum radius
+                                                     of the neighbourhood */
+                int minPoints;                  /*!< DBSCAN algorithm parameter for specifying the minimum number
+                                                     of points in an eps-neighbourhood of that point */
 
             public:
 
@@ -42,7 +51,47 @@ namespace multiscale {
                 //! Detect the clusters in the image and output the results
                 void detect();
 
-            private:
+            protected:
+
+                //! Initialisation function for the class
+                void initialise();
+
+                //! Initialise the values of the member fields which depend on the input image
+                /*! Initialise the values of the member fields which depend on the input image
+                 *  The class members which depend on the input image are "eps" and "minPoints"
+                 */
+                void initialiseImageDependentMembers();
+
+                //! Check if the image is valid
+                /*!
+                 * Check if the number of dimensions = 2 and if the
+                 * number of rows and number of columns is greater than one
+                 */
+                bool isValidImage();
+
+                //! Create the trackbars
+                void createTrackbars();
+
+                //! Detect the clusters in the provided image
+                void detectClusters();
+
+                //! Detect the clusters in the provided image in debug mode
+                /*!
+                 * \param clusters The clusters from the image
+                 */
+                void detectClustersInDebugMode(vector<Cluster> &clusters);
+
+                //! Detect the clusters in the provided image in normal mode
+                /*!
+                 * \param clusters The clusters from the image
+                 */
+                void detectClustersInNormalMode(vector<Cluster>& clusters);
+
+                //! Find clusters in the provided image
+                /*!
+                 * \param clusters The clusters from the image
+                 */
+                void findClusters(vector<Cluster> clusters);
 
                 //! Detect the entities in the image
                 /*! Detect the entities in the image, compute their centre point and degree of pile up
@@ -51,24 +100,44 @@ namespace multiscale {
                  */
                 virtual void detectEntitiesInImage(vector<Entity> &entities) = 0;
 
+                //! Detect and analyse the clusters of entities in the image
+                /*! Detect and analyse the clusters of entities in the image
+                 *
+                 *  \param entities     Entities detected in the image
+                 *  \param clusters     Clusters of entities detected in the image
+                 */
+                void detectAndAnalyseClusters(const vector<Entity> &entities, vector<Cluster> &clusters);
+
                 //! Detect the clusters of entities in the image
                 /*! Detect the clusters of entities in the image using Density Based scan (DBscan) clustering algorithm
+                 *  Clusters start from index 1, because cluster 0 contains only noise data/points.
                  *
-                 *  \param entities     Entities detected in the image
-                 *  \param clusters     Indexes to which cluster each entity belongs
-                 *  \param nrOfClusters Total number of clusters
+                 *  \param entities         Entities detected in the image
+                 *  \param clusterIndexes   Indexes to which cluster each entity belongs
+                 *  \param nrOfClusters     Total number of clusters
                  */
-                void detectClusters(const vector<Entity> &entities, vector<int> &clusters, int &nrOfClusters);
+                void detectClusters(const vector<Entity> &entities, vector<int> &clusterIndexes, int &nrOfClusters);
+
+                //! Add the entities to the clusters as indicated by the clusterIndexes parameter
+                /*! Add the entities to the clusters as indicated by the clusterIndexes parameter
+                 *
+                 *  \param entities         Entities detected in the image
+                 *  \param clusterIndexes   Indexes to which cluster each entity belongs
+                 *  \param nrOfClusters     Total number of clusters
+                 *  \param clusters         Collection of clusters, each one with the updated measures
+                 */
+                void addEntitiesToClusters(const vector<Entity> &entities, const vector<int> &clusterIndexes, int nrOfClusters,
+                                           vector<Cluster> clusters);
 
                 //! Analyse the clusters
-                /*! Analyse the clusters and compute the values for the measures of interest
+                /*! Analyse the clusters and compute the average clusteredness and pile up degree
                  *
-                 *  \param entities     Entities detected in the image
-                 *  \param clusters     Indexes to which cluster each entity belongs
-                 *  \param nrOfClusters Total number of clusters
-                 *  \param clusters     Collection of clusters, each one with the updated measures
+                 *  \param entities         Entities detected in the image
+                 *  \param clusterIndexes   Indexes to which cluster each entity belongs
+                 *  \param nrOfClusters     Total number of clusters
+                 *  \param clusters         Collection of clusters, each one with the updated measures
                  */
-                void analyseClusters(const vector<Entity> &entities, const vector<int> &clusters, int nrOfClusters,
+                void analyseClusters(const vector<Entity> &entities, const vector<int> &clusterIndexes, int nrOfClusters,
                                      vector<Cluster> clusters);
 
                 //! Compute the clusteredness index for all the entities detected in the image
@@ -91,8 +160,30 @@ namespace multiscale {
                 /*! Output the information computed for the clusters considering the state of the debug flag
                  *
                  *  \param clusters Clusters of entities detected in the image
+                 *  \param debugMode Flag for indicating if debug mode is set or not
                  */
-                void outputClusters(const vector<Cluster> &clusters);
+                void outputClusters(const vector<Cluster> &clusters, bool debugMode);
+
+                //! Output the information computed for the clusters visually in a separate window
+                /*! Output the information computed for the clusters visually in a separate window
+                 *
+                 *  \param clusters Clusters of entities detected in the image
+                 */
+                virtual void outputClustersInDebugMode(const vector<Cluster> &clusters) = 0;
+
+                //! Output the information computed for the clusters in a csv file
+                /*! Output the information computed for the clusters in a csv file
+                 *
+                 *  \param clusters Clusters of entities detected in the image
+                 */
+                void outputClustersAsCsvFile(const vector<Cluster> &clusters);
+
+                //! Display an image in a particular window
+                /*!
+                 * \param image The image
+                 * \param windowName The name of the window
+                 */
+                void displayImage(const Mat &image, const string &windowName);
 
         };
 

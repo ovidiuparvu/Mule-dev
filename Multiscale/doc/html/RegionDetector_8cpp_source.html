@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('RegionDetector_8cpp_source.html','');}
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aad54fd30f7ccf8a28d1cb2f656b08bb3">   28</a></span>&#160;<span class="keywordtype">void</span> RegionDetector::detect() {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (!isValidImage())</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="RegionDetector_8hpp.html#a436f1d8a73f8ce98507b031eb65b84ac">ERR_INVALID_IMAGE</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="ClusterDetector_8hpp.html#a436f1d8a73f8ce98507b031eb65b84ac">ERR_INVALID_IMAGE</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Initialise the origin</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    initialiseImageDependentMembers();</div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('RegionDetector_8cpp_source.html','');}
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    createTrackbars();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">while</span> (pressedKey != <a class="code" href="RegionDetector_8hpp.html#a86b2b2d4eda22067d85d2287c118e2d8">KEY_ESC</a>) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">while</span> (pressedKey != <a class="code" href="ClusterDetector_8hpp.html#a86b2b2d4eda22067d85d2287c118e2d8">KEY_ESC</a>) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        regions.clear();</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        processImage(regions);</div>
@@ -347,14 +347,14 @@ $(document).ready(function(){initNavTree('RegionDetector_8cpp_source.html','');}
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
 <div class="line"><a name="l00241"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#afc5278b64f1ad6aec240fae28583fdb7">  241</a></span>&#160;<span class="keywordtype">void</span> RegionDetector::outputRegionsAsXMLFile(<span class="keyword">const</span> vector&lt;Region&gt; &amp;regions) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">// TODO: Implement</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">// TODO: Unimplemented method</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
 <div class="line"><a name="l00245"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a033a6502fb5a05c6062b90dd8e263f35">  245</a></span>&#160;<span class="keywordtype">void</span> RegionDetector::outputRegionsAsCsvFile(<span class="keyword">const</span> vector&lt;Region&gt; &amp;regions) {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    ofstream fout(outputFilepath + <a class="code" href="RegionDetector_8hpp.html#a6722eaa5c4c15a1ef661967d81135500">OUTPUT_EXTENSION</a>, ios_base::trunc);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    ofstream fout(outputFilepath + <a class="code" href="ClusterDetector_8hpp.html#a6722eaa5c4c15a1ef661967d81135500">OUTPUT_EXTENSION</a>, ios_base::trunc);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (!fout.is_open())</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="RegionDetector_8hpp.html#a802932639681d325fff007066f0df5c4">ERR_OUTPUT_FILE</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="ClusterDetector_8hpp.html#a802932639681d325fff007066f0df5c4">ERR_OUTPUT_FILE</a>;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    outputRegionsAsCsvFile(regions, fout);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
@@ -419,7 +419,7 @@ $(document).ready(function(){initNavTree('RegionDetector_8cpp_source.html','');}
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="RegionDetector_8cpp.html">RegionDetector.cpp</a></li>
-    <li class="footer">Generated on Mon Jul 1 2013 18:29:33 for Multiscale by
+    <li class="footer">Generated on Thu Jul 4 2013 15:32:50 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

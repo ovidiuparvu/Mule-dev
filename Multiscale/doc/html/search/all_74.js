@@ -3,7 +3,7 @@ var searchData=
   ['threshold_5fmax',['THRESHOLD_MAX',['../RegionDetector_8hpp.html#ab468cd6410e5d23829fc609c96431489',1,'RegionDetector.hpp']]],
   ['thresholdimage',['thresholdImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a614cd80fac5d3df2a25c401bb221149c',1,'multiscale::analysis::RegionDetector']]],
   ['thresholdvalue',['thresholdValue',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a0f7469d124c0b906d199e00ea5713007',1,'multiscale::analysis::RegionDetector']]],
-  ['tostring',['toString',['../classmultiscale_1_1analysis_1_1Region.html#a43c2dc219bf8661a712b8c0c8b660711',1,'multiscale::analysis::Region::toString()'],['../classmultiscale_1_1StringManipulator.html#a91858c4faa5ee210a9b67e4885835368',1,'multiscale::StringManipulator::toString()'],['../classmultiscale_1_1video_1_1AnnularSector.html#ab277036c93f9dcabc08e13ca49c78e53',1,'multiscale::video::AnnularSector::toString()']]],
+  ['tostring',['toString',['../classmultiscale_1_1analysis_1_1Cluster.html#a54b955bf0c142a5c96c7a6803cc0c163',1,'multiscale::analysis::Cluster::toString()'],['../classmultiscale_1_1analysis_1_1Entity.html#aedae50d85d369b0e68fa6433d7e3fec6',1,'multiscale::analysis::Entity::toString()'],['../classmultiscale_1_1analysis_1_1Region.html#a43c2dc219bf8661a712b8c0c8b660711',1,'multiscale::analysis::Region::toString()'],['../classmultiscale_1_1StringManipulator.html#a91858c4faa5ee210a9b67e4885835368',1,'multiscale::StringManipulator::toString()'],['../classmultiscale_1_1video_1_1AnnularSector.html#ab277036c93f9dcabc08e13ca49c78e53',1,'multiscale::video::AnnularSector::toString()']]],
   ['trackbar_5falpha',['TRACKBAR_ALPHA',['../RegionDetector_8hpp.html#a14b7e799d0e3e29cfe0e2e40d4b57474',1,'RegionDetector.hpp']]],
   ['trackbar_5fbeta',['TRACKBAR_BETA',['../RegionDetector_8hpp.html#a52062c043da065ed04cda0561043d1b5',1,'RegionDetector.hpp']]],
   ['trackbar_5fcanny',['TRACKBAR_CANNY',['../RegionDetector_8hpp.html#a057d75fb331a9d1658951a2f59fd7c6d',1,'RegionDetector.hpp']]],
@@ -13,5 +13,7 @@ var searchData=
   ['trackbar_5fregion_5farea_5fthresh',['TRACKBAR_REGION_AREA_THRESH',['../RegionDetector_8hpp.html#a89f82c8c6d79b896d6157583c61d8d74',1,'RegionDetector.hpp']]],
   ['trackbar_5fthreshold',['TRACKBAR_THRESHOLD',['../RegionDetector_8hpp.html#ac19d7ea03e314da1a1e96a5355cfeb67',1,'RegionDetector.hpp']]],
   ['transformtoannularsectors',['transformToAnnularSectors',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178',1,'multiscale::video::CartesianToPolarConverter']]],
-  ['translate',['translate',['../classmultiscale_1_1Geometry2D.html#a2d90fd709cc439f2d0ff0518d1edb679',1,'multiscale::Geometry2D']]]
+  ['translate',['translate',['../classmultiscale_1_1Geometry2D.html#a2d90fd709cc439f2d0ff0518d1edb679',1,'multiscale::Geometry2D']]],
+  ['triangle',['Triangle',['../namespacemultiscale_1_1analysis.html#ad1ef6155ab2e954c1c33d3e2e6b53fbfaa93f37adbed49c6062576ec26eb845f7',1,'multiscale::analysis']]],
+  ['triangularprobability',['triangularProbability',['../classmultiscale_1_1analysis_1_1Cluster.html#a9f86b7395d4e8fdd235641eff8ad7f94',1,'multiscale::analysis::Cluster']]]
 ];
