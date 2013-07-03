@@ -239,7 +239,7 @@ void RegionDetector::outputRegions(const vector<Region> &regions, bool isDebugMo
 }
 
 void RegionDetector::outputRegionsAsXMLFile(const vector<Region> &regions) {
-    // TODO: Implement
+    // TODO: Unimplemented method
 }
 
 void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions) {
