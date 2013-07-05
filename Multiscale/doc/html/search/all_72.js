@@ -46,6 +46,7 @@ var searchData=
   ['replace_5fheader_5fwidth',['REPLACE_HEADER_WIDTH',['../RectangularGnuplotScriptGenerator_8hpp.html#aad25c2d9aee80f359bd01bccaca636b9',1,'RectangularGnuplotScriptGenerator.hpp']]],
   ['reset',['reset',['../classmultiscale_1_1NumberIterator.html#a9e22075eb67dd5ebf4b03a4a67734a36',1,'multiscale::NumberIterator']]],
   ['resetcurrentnumber',['resetCurrentNumber',['../classmultiscale_1_1LexicographicNumberIterator.html#a18311f68a49156a415c817a947abcd7d',1,'multiscale::LexicographicNumberIterator::resetCurrentNumber()'],['../classmultiscale_1_1StandardNumberIterator.html#a678d43170a27106e1d8c5475b7088d9e',1,'multiscale::StandardNumberIterator::resetCurrentNumber()'],['../classmultiscale_1_1NumberIterator.html#a21e658de178b6c957df5ea0482e6fbd6',1,'multiscale::NumberIterator::resetCurrentNumber()']]],
+  ['retrieveneighbours',['retrieveNeighbours',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a2524149cf55398e2038aaa389b56bfec',1,'multiscale::analysis::DBSCAN']]],
   ['reversedigits',['reverseDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#a4c0a17e03a12256584d9ed3ae19a78c9',1,'multiscale::LexicographicNumberIterator']]],
   ['rgbcolourgenerator',['RGBColourGenerator',['../classmultiscale_1_1RGBColourGenerator.html',1,'multiscale']]],
   ['rgbcolourgenerator_2ecpp',['RGBColourGenerator.cpp',['../RGBColourGenerator_8cpp.html',1,'']]],
@@ -56,5 +57,7 @@ var searchData=
   ['roi_5fstart_5fy',['ROI_START_Y',['../CircularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1',1,'ROI_START_Y():&#160;CircularMatFactory.hpp'],['../RectangularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1',1,'ROI_START_Y():&#160;RectangularMatFactory.hpp']]],
   ['roi_5fwidth',['ROI_WIDTH',['../RectangularMatFactory_8hpp.html#a69091d35a8755f7ef1f88a5bf3411ee7',1,'RectangularMatFactory.hpp']]],
   ['rows',['rows',['../classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474',1,'multiscale::analysis::MatFactory']]],
-  ['rowsiterator',['rowsIterator',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a19fa13140bc5d6b163222030b6dfe61e',1,'multiscale::video::RectangularCsvToInputFilesConverter']]]
+  ['rowsiterator',['rowsIterator',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a19fa13140bc5d6b163222030b6dfe61e',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
+  ['run',['run',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aed71fe17e6d922819499ff31bc4a6cf4',1,'multiscale::analysis::DBSCAN']]],
+  ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a871b5ac801d93a753443b30e00d39896',1,'multiscale::analysis::DBSCAN']]]
 ];

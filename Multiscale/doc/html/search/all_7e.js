@@ -6,6 +6,7 @@ var searchData=
   ['_7ecircularmatfactory',['~CircularMatFactory',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html#aaf49d7ad7e1955709929d180686e99d8',1,'multiscale::analysis::CircularMatFactory']]],
   ['_7ecluster',['~Cluster',['../classmultiscale_1_1analysis_1_1Cluster.html#a4bddfc88ac859610acab15dd12851b58',1,'multiscale::analysis::Cluster']]],
   ['_7eclusterdetector',['~ClusterDetector',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a18f5d5aab155a0a30137364749fb837c',1,'multiscale::analysis::ClusterDetector']]],
+  ['_7edatapoint',['~DataPoint',['../classmultiscale_1_1analysis_1_1DataPoint.html#ab7a7d2baf190376980cd3c2e130a9905',1,'multiscale::analysis::DataPoint']]],
   ['_7eentity',['~Entity',['../classmultiscale_1_1analysis_1_1Entity.html#adf6d3f7cb1b2ba029b6b048a395cc8ae',1,'multiscale::analysis::Entity']]],
   ['_7elexicographicnumberiterator',['~LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#affe04d9733b7d0984a5ab3957cb0096a',1,'multiscale::LexicographicNumberIterator']]],
   ['_7ematfactory',['~MatFactory',['../classmultiscale_1_1analysis_1_1MatFactory.html#aa339532cb504caebcf9ece2c847f4847',1,'multiscale::analysis::MatFactory']]],
@@ -15,5 +16,6 @@ var searchData=
   ['_7erectangularmatfactory',['~RectangularMatFactory',['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3ebedd3691965c3d89c3ecdaa3e66d70',1,'multiscale::analysis::RectangularMatFactory']]],
   ['_7eregion',['~Region',['../classmultiscale_1_1analysis_1_1Region.html#a3c3670fff78f7511d156e3b2f0bc6266',1,'multiscale::analysis::Region']]],
   ['_7eregiondetector',['~RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a8e41bcae0698a746fee06e8fb9a63bd1',1,'multiscale::analysis::RegionDetector']]],
+  ['_7esimulationclusterdetector',['~SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a8df6b5abd6d2dd48e691bf999d35dd43',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['_7estandardnumberiterator',['~StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html#aa5b9da824bd014eebab86462f7d08219',1,'multiscale::StandardNumberIterator']]]
 ];

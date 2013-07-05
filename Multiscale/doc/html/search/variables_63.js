@@ -4,6 +4,7 @@ var searchData=
   ['circlesiterator',['circlesIterator',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ad4cf12c7f3951f0bb388939797cbcc0c',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['circularprobability',['circularProbability',['../classmultiscale_1_1analysis_1_1Cluster.html#a4c5ed70a54b9ab88e32e186bb98de864',1,'multiscale::analysis::Cluster']]],
   ['clusterednessdegree',['clusterednessDegree',['../classmultiscale_1_1analysis_1_1Cluster.html#a9e6a2613808e1a08b2d3dbfd3af8e23d',1,'multiscale::analysis::Cluster']]],
+  ['clusterednessindex',['clusterednessIndex',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a5e2bf77041bd0d5047dd16c4632c16b7',1,'multiscale::analysis::ClusterDetector']]],
   ['cols',['cols',['../classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c',1,'multiscale::analysis::MatFactory']]],
   ['columnsiterator',['columnsIterator',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#aeeee251d65b8c189a72d08f3c70a94be',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
   ['concentration',['concentration',['../classmultiscale_1_1video_1_1AnnularSector.html#a7f6a1e7618c9e2a10e35efb5740395b1',1,'multiscale::video::AnnularSector']]],

@@ -1,9 +1,19 @@
 <map id="multiscale::analysis::Cluster::updateClusterednessDegree" name="multiscale::analysis::Cluster::updateClusterednessDegree">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#aec76c5ef5523db79ee334a5cd0f1e1cb" title="Update the values of all measures." alt="" coords="256,162,432,209"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#a0d37cb656f212af09dd9339ffa322d55" title="Update the values of all measures if required." alt="" coords="480,153,664,217"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#a21807d4d70d5dabb13eeee561237dcaa" title="Get the degree of clusteredness." alt="" coords="713,5,895,69"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#af5c3c9501a43b46b8fbafdd6332d1c12" title="Get the degree of pile up." alt="" coords="715,93,893,139"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Cluster.html#a5076075e1278b70a1361df747ff89175" title="Get the area." alt="" coords="736,162,872,209"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1Cluster.html#a3023fab07bca5b70120d2faeb35ac9d1" title="Get the shape best fitting the cluster of entities." alt="" coords="736,231,872,278"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1Cluster.html#aacd49c175fec9728b17291c74c410d3b" title="Get the point defining the centre of the entity." alt="" coords="736,301,872,347"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#aec76c5ef5523db79ee334a5cd0f1e1cb" title="Update the values of all measures." alt="" coords="256,291,432,338"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#a0d37cb656f212af09dd9339ffa322d55" title="Update the values of all measures if required." alt="" coords="480,283,664,347"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#ac93832bbbb478747825538e53646c166" title="Get the degree of clusteredness." alt="" coords="737,5,919,69"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#acff6c7308641af041598bed55005f2bf" title="Get the degree of pile up." alt="" coords="739,93,917,139"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Cluster.html#a33d8ef7eb3b9e9475c7120a4eaae09bd" title="Get the area." alt="" coords="760,162,896,209"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1Cluster.html#ada6b14fcff697b3e7365070dd13513c7" title="Get the shape best fitting the cluster of entities." alt="" coords="1032,213,1168,259"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9432f23f7c776108ccad35b8640bd3c7" title="Get the minimum area enclosing triangle." alt="" coords="727,283,929,347"/>
+<area shape="rect" id="node26" href="$classmultiscale_1_1analysis_1_1Cluster.html#a6417e3328622a848a7dedeebb5821750" title="Get the minimum area enclosing rectangle." alt="" coords="713,370,943,417"/>
+<area shape="rect" id="node31" href="$classmultiscale_1_1analysis_1_1Cluster.html#a4d93f85faf929336818248e1fd604fb6" title="Get the minimum area enclosing circle centre." alt="" coords="727,440,929,504"/>
+<area shape="rect" id="node36" href="$classmultiscale_1_1analysis_1_1Cluster.html#aecf5fa56fa21e3b22130242694be744f" title="Get the minimum area enclosing circle radius." alt="" coords="727,528,929,592"/>
+<area shape="rect" id="node39" href="$classmultiscale_1_1analysis_1_1Cluster.html#a8fdd4229c940bc76c28df9df1ca57ee5" title="Get the point defining the centre of the entity." alt="" coords="760,615,896,662"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a8dc451d799404ba7ecd72d85d2f7e955" title="Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image..." alt="" coords="1257,327,1439,391"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aaace678f25a976de72f03f4076bc0e0a" title="Display cluster on the image." alt="" coords="1488,327,1677,391"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a1e1853068712fa3eeec399d6e9a8f2bc" title="Output the information computed for the clusters visually in a separate window." alt="" coords="1727,327,1921,391"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a9894288a54c8e3fdeff3917d81e2ad9b" title="Draw the best matching triangular shape of the cluster on the image." alt="" coords="999,283,1201,347"/>
+<area shape="rect" id="node28" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ab7bfa2a55991a5708abfea7fa362214c" title="Draw the best matching rectangular shape of the cluster on the image." alt="" coords="993,371,1207,435"/>
+<area shape="rect" id="node33" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ab4e0ae4d5850be64ec2399d5c2c36828" title="Draw the best matching circular shape of the cluster on the image." alt="" coords="1005,459,1195,523"/>
 </map>

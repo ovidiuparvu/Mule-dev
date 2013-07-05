@@ -34,7 +34,7 @@ po::variables_map initArgumentsConfig(po::options_description &usageDescription,
     usageDescription.add_options()("help,h", "display help message\n")
                                   ("input-file,i", po::value<string>(), "provide the path to the input file\n")
                                   ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
-                                  ("height,h", po::value<unsigned int>(), "provide the height of the grid (number of rows)\n")
+                                  ("height,e", po::value<unsigned int>(), "provide the height of the grid (number of rows)\n")
                                   ("width,w", po::value<unsigned int>(), "provide the width of the grid (number of columns)\n")
                                   ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n")
                                   ("selected-concentration-index,x", po::value<unsigned int>()->default_value(0), "provide the index of the concentration considered as numerator when the number of concentrations for each position is greater than 1\n")

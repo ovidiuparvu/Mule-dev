@@ -10,12 +10,26 @@
 using namespace std;
 using namespace cv;
 
-#define ERR_OUTPUT_FILE     "Unable to create output file."
-#define ERR_INVALID_IMAGE   "The input image is invalid."
+#define ERR_OUTPUT_FILE         "Unable to create output file."
+#define ERR_INVALID_IMAGE       "The input image is invalid."
 
-#define OUTPUT_EXTENSION    ".out"
+#define OUTPUT_CLUSTEREDNESS    "Clusteredness index: "
+#define OUTPUT_PILE_UP          "Average pile up degree: "
 
-#define WIN_OUTPUT_IMAGE    "Output image"
+#define OUTPUT_EXTENSION        ".out"
+
+#define TRACKBAR_EPS            "Eps"
+#define TRACKBAR_MINPOINTS      "Minimum number of points"
+
+#define MIN_POINTS_MIN          0
+#define MIN_POINTS_MAX          100
+
+#define EPS_MIN                 0
+#define EPS_MAX                 1000
+#define EPS_REAL_MIN            0
+#define EPS_REAL_MAX            100
+
+#define WIN_OUTPUT_IMAGE        "Output image"
 
 #define KEY_ESC 27
 
@@ -33,10 +47,10 @@ namespace multiscale {
                 string outputFilepath;          /*!< Path of the output file */
                 bool debugMode;                 /*!< Flag for indicating if debug mode is set */
 
-                double avgClusterednessDegree;  /*!< Average clusteredness degree of all clusters */
+                double clusterednessIndex;      /*!< Index of clusteredness for all clusters */
                 double avgPileUpDegree;         /*!< Average pile up degree of all clusters */
 
-                double eps;                     /*!< DBSCAN algorithm parameter for specifying the maximum radius
+                int eps;                        /*!< DBSCAN algorithm parameter for specifying the maximum radius
                                                      of the neighbourhood */
                 int minPoints;                  /*!< DBSCAN algorithm parameter for specifying the minimum number
                                                      of points in an eps-neighbourhood of that point */
@@ -56,16 +70,14 @@ namespace multiscale {
                 //! Initialisation function for the class
                 void initialise();
 
-                //! Initialise the values of the member fields which depend on the input image
-                /*! Initialise the values of the member fields which depend on the input image
-                 *  The class members which depend on the input image are "eps" and "minPoints"
-                 */
-                void initialiseImageDependentMembers();
+                //! Initialise clustering values
+                void initialiseClusteringValues();
 
                 //! Check if the image is valid
                 /*!
-                 * Check if the number of dimensions = 2 and if the
+                 * Check if the number of dimensions = 2,  if the
                  * number of rows and number of columns is greater than one
+                 * and if the image is of type CV_8UC1
                  */
                 bool isValidImage();
 
@@ -91,7 +103,7 @@ namespace multiscale {
                 /*!
                  * \param clusters The clusters from the image
                  */
-                void findClusters(vector<Cluster> clusters);
+                void findClusters(vector<Cluster> &clusters);
 
                 //! Detect the entities in the image
                 /*! Detect the entities in the image, compute their centre point and degree of pile up
@@ -118,6 +130,12 @@ namespace multiscale {
                  */
                 void detectClusters(const vector<Entity> &entities, vector<int> &clusterIndexes, int &nrOfClusters);
 
+                //! Convert the entities to the required format by the DBSCAN class
+                /*!
+                 * \param entities Entities detected in the image
+                 */
+                vector<shared_ptr<DataPoint>> convertEntities(const vector<Entity> &entities);
+
                 //! Add the entities to the clusters as indicated by the clusterIndexes parameter
                 /*! Add the entities to the clusters as indicated by the clusterIndexes parameter
                  *
@@ -127,25 +145,23 @@ namespace multiscale {
                  *  \param clusters         Collection of clusters, each one with the updated measures
                  */
                 void addEntitiesToClusters(const vector<Entity> &entities, const vector<int> &clusterIndexes, int nrOfClusters,
-                                           vector<Cluster> clusters);
+                                           vector<Cluster> &clusters);
 
                 //! Analyse the clusters
                 /*! Analyse the clusters and compute the average clusteredness and pile up degree
                  *
-                 *  \param entities         Entities detected in the image
-                 *  \param clusterIndexes   Indexes to which cluster each entity belongs
-                 *  \param nrOfClusters     Total number of clusters
-                 *  \param clusters         Collection of clusters, each one with the updated measures
+                 *  \param clusters Collection of clusters, each one with the updated measures
                  */
-                void analyseClusters(const vector<Entity> &entities, const vector<int> &clusterIndexes, int nrOfClusters,
-                                     vector<Cluster> clusters);
+                void analyseClusters(vector<Cluster> &clusters);
 
                 //! Compute the clusteredness index for all the entities detected in the image
                 /*! Compute the clusteredness index for all the entities detected in the image using X index
                  *
                  * TODO: Pick one of the indexes in the literature to compute the value of the clusteredness index
+                 *
+                 *  \param clusters Collection of clusters, each one with the updated measures
                  */
-                double computeClusterednessIndex();
+                double computeClusterednessIndex(const vector<Cluster> &clusters);
 
                 //! Compute the average pile up degree for all entities in the image
                 /*! Compute the average pile up degree for all entities in the image
@@ -154,7 +170,7 @@ namespace multiscale {
                  *
                  *  \param clusters Clusters of entities detected in the image
                  */
-                double computeAveragePileUpDegree(const vector<Cluster> &clusters);
+                double computeAveragePileUpDegree(vector<Cluster> &clusters);
 
                 //! Output the information computed for the clusters
                 /*! Output the information computed for the clusters considering the state of the debug flag
@@ -162,21 +178,29 @@ namespace multiscale {
                  *  \param clusters Clusters of entities detected in the image
                  *  \param debugMode Flag for indicating if debug mode is set or not
                  */
-                void outputClusters(const vector<Cluster> &clusters, bool debugMode);
+                void outputClusters(vector<Cluster> &clusters, bool debugMode);
 
                 //! Output the information computed for the clusters visually in a separate window
                 /*! Output the information computed for the clusters visually in a separate window
                  *
                  *  \param clusters Clusters of entities detected in the image
                  */
-                virtual void outputClustersInDebugMode(const vector<Cluster> &clusters) = 0;
+                virtual void outputClustersInDebugMode(vector<Cluster> &clusters) = 0;
 
                 //! Output the information computed for the clusters in a csv file
                 /*! Output the information computed for the clusters in a csv file
                  *
                  *  \param clusters Clusters of entities detected in the image
                  */
-                void outputClustersAsCsvFile(const vector<Cluster> &clusters);
+                void outputClustersAsCsvFile(vector<Cluster> &clusters);
+
+                //! Output the information computed for the clusters in a csv file
+                /*! Output the information computed for the clusters in a csv file
+                 *
+                 *  \param clusters Clusters of entities detected in the image
+                 *  \param fout     Output file stream
+                 */
+                void outputClustersAsCsvFile(vector<Cluster> &clusters, ofstream &fout);
 
                 //! Display an image in a particular window
                 /*!
@@ -185,6 +209,8 @@ namespace multiscale {
                  */
                 void displayImage(const Mat &image, const string &windowName);
 
+                //! Convert the value of eps from integer to double
+                double convertEpsValue();
         };
 
     };

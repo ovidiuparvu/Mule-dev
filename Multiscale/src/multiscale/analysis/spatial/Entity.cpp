@@ -14,6 +14,15 @@ Entity::Entity(double pileUpDegree, double area, const Point &centre) {
     this->centre = centre;
 }
 
+Entity::Entity(const Entity &entity) {
+    if (!areValid(entity.pileUpDegree, entity.area, entity.centre))
+        throw ERR_INPUT;
+
+    pileUpDegree = entity.pileUpDegree;
+    area = entity.area;
+    centre = entity.centre;
+}
+
 Entity::~Entity() {}
 
 double Entity::getPileUpDegree() const {
@@ -34,11 +43,17 @@ string Entity::toString() {
            StringManipulator::toString<double>(centre.y);
 }
 
-double Entity::distanceTo(const DataPoint &point) {
+double Entity::distanceTo(shared_ptr<DataPoint> point) {
     if (typeid(this) != typeid(point))
         throw ERR_DISTANCE;
 
-    return Geometry2D::distanceBtwPoints(this->centre, ((Entity)point).centre);
+    Entity entity = *(dynamic_pointer_cast<Entity>(point));
+
+    return distanceTo(entity);
+}
+
+double Entity::distanceTo(const Entity &entity) {
+    return Geometry2D::distanceBtwPoints(centre, entity.centre);
 }
 
 bool Entity::areValid(double pileUpDegree, double area, const Point &centre) {

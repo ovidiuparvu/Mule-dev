@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Multiscale
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('ClusterDetector_8hpp.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="ClusterDetector_8hpp__incl.png" border="0" usemap="#include_2multiscale_2analysis_2spatial_2ClusterDetector_8hpp" alt=""/></div>
 <map name="include_2multiscale_2analysis_2spatial_2ClusterDetector_8hpp" id="include_2multiscale_2analysis_2spatial_2ClusterDetector_8hpp">
-<area shape="rect" id="node3" href="Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="36,198,169,245"/><area shape="rect" id="node9" href="Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="140,102,273,149"/><area shape="rect" id="node13" href="Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="295,198,441,245"/></map>
+<area shape="rect" id="node3" href="Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="227,198,360,245"/><area shape="rect" id="node13" href="Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="279,102,412,149"/><area shape="rect" id="node5" href="DataPoint_8hpp.html" title="multiscale/analysis\l/spatial/DataPoint.hpp" alt="" coords="224,294,373,341"/><area shape="rect" id="node17" href="Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="435,198,581,245"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('ClusterDetector_8hpp.html','');});
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="ClusterDetector_8hpp__dep__incl.png" border="0" usemap="#include_2multiscale_2analysis_2spatial_2ClusterDetector_8hppdep" alt=""/></div>
 <map name="include_2multiscale_2analysis_2spatial_2ClusterDetector_8hppdep" id="include_2multiscale_2analysis_2spatial_2ClusterDetector_8hppdep">
-<area shape="rect" id="node3" href="ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="32,102,216,149"/></map>
+<area shape="rect" id="node3" href="SimulationClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/cluster\l/SimulationClusterDetector.hpp" alt="" coords="136,101,339,165"/><area shape="rect" id="node9" href="ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="363,110,547,157"/><area shape="rect" id="node5" href="SimulationClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,213,219,277"/><area shape="rect" id="node7" href="SimulationDetectClusters_8cpp.html" title="src/multiscale/analysis\l/spatial/SimulationDetectClusters.cpp" alt="" coords="243,222,485,269"/></map>
 </div>
 </div>
 <p><a href="ClusterDetector_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -154,14 +154,98 @@ Macros</h2></td></tr>
 <tr class="separator:a802932639681d325fff007066f0df5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a436f1d8a73f8ce98507b031eb65b84ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#a436f1d8a73f8ce98507b031eb65b84ac">ERR_INVALID_IMAGE</a>&#160;&#160;&#160;&quot;The input image is invalid.&quot;</td></tr>
 <tr class="separator:a436f1d8a73f8ce98507b031eb65b84ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03d08fcd24072f600fedefea105192c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#a03d08fcd24072f600fedefea105192c5">OUTPUT_CLUSTEREDNESS</a>&#160;&#160;&#160;&quot;Clusteredness index: &quot;</td></tr>
+<tr class="separator:a03d08fcd24072f600fedefea105192c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8835e4a55ef1753868cbad4d2a144779"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#a8835e4a55ef1753868cbad4d2a144779">OUTPUT_PILE_UP</a>&#160;&#160;&#160;&quot;Average pile up degree: &quot;</td></tr>
+<tr class="separator:a8835e4a55ef1753868cbad4d2a144779"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6722eaa5c4c15a1ef661967d81135500"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#a6722eaa5c4c15a1ef661967d81135500">OUTPUT_EXTENSION</a>&#160;&#160;&#160;&quot;.out&quot;</td></tr>
 <tr class="separator:a6722eaa5c4c15a1ef661967d81135500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf14bbe82bf908bbaa3e307ba6f0c0e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#acf14bbe82bf908bbaa3e307ba6f0c0e7">TRACKBAR_EPS</a>&#160;&#160;&#160;&quot;Eps&quot;</td></tr>
+<tr class="separator:acf14bbe82bf908bbaa3e307ba6f0c0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0854d3b9ea4cf7d6115dc5f7f079a458"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#a0854d3b9ea4cf7d6115dc5f7f079a458">TRACKBAR_MINPOINTS</a>&#160;&#160;&#160;&quot;Minimum number of points&quot;</td></tr>
+<tr class="separator:a0854d3b9ea4cf7d6115dc5f7f079a458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d4dbf032dec9fc3f1a2ba9c11afe2e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#a44d4dbf032dec9fc3f1a2ba9c11afe2e">MIN_POINTS_MIN</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a44d4dbf032dec9fc3f1a2ba9c11afe2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e81e4fb4ebf2cc5efb012723d37fcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#ac5e81e4fb4ebf2cc5efb012723d37fcd">MIN_POINTS_MAX</a>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:ac5e81e4fb4ebf2cc5efb012723d37fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1faf458dee5b0c5bb1b33b1c55db5976"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#a1faf458dee5b0c5bb1b33b1c55db5976">EPS_MIN</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a1faf458dee5b0c5bb1b33b1c55db5976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9b63e21628e567cbafa966fb6a7ad0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#aac9b63e21628e567cbafa966fb6a7ad0">EPS_MAX</a>&#160;&#160;&#160;1000</td></tr>
+<tr class="separator:aac9b63e21628e567cbafa966fb6a7ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6f6eaf3b08254485de414e4b2eb4f30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#af6f6eaf3b08254485de414e4b2eb4f30">EPS_REAL_MIN</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:af6f6eaf3b08254485de414e4b2eb4f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3e53c39cec5f193420cef7dbba2534"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#a4e3e53c39cec5f193420cef7dbba2534">EPS_REAL_MAX</a>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:a4e3e53c39cec5f193420cef7dbba2534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee857f4a97612b0a45a3322ce1909688"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#aee857f4a97612b0a45a3322ce1909688">WIN_OUTPUT_IMAGE</a>&#160;&#160;&#160;&quot;Output image&quot;</td></tr>
 <tr class="separator:aee857f4a97612b0a45a3322ce1909688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86b2b2d4eda22067d85d2287c118e2d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ClusterDetector_8hpp.html#a86b2b2d4eda22067d85d2287c118e2d8">KEY_ESC</a>&#160;&#160;&#160;27</td></tr>
 <tr class="separator:a86b2b2d4eda22067d85d2287c118e2d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="aac9b63e21628e567cbafa966fb6a7ad0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPS_MAX&#160;&#160;&#160;1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00028">28</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00187">multiscale::analysis::ClusterDetector::convertEpsValue()</a>, and <a class="el" href="ClusterDetector_8cpp_source.html#l00050">multiscale::analysis::ClusterDetector::createTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1faf458dee5b0c5bb1b33b1c55db5976"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPS_MIN&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00027">27</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00187">multiscale::analysis::ClusterDetector::convertEpsValue()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4e3e53c39cec5f193420cef7dbba2534"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPS_REAL_MAX&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00030">30</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00187">multiscale::analysis::ClusterDetector::convertEpsValue()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af6f6eaf3b08254485de414e4b2eb4f30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EPS_REAL_MIN&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00029">29</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00187">multiscale::analysis::ClusterDetector::convertEpsValue()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a436f1d8a73f8ce98507b031eb65b84ac"></a>
 <div class="memitem">
 <div class="memproto">
@@ -174,7 +258,7 @@ Macros</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00014">14</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00025">multiscale::analysis::ClusterDetector::detect()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00028">multiscale::analysis::RegionDetector::detect()</a>.</p>
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00027">multiscale::analysis::ClusterDetector::detect()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00028">multiscale::analysis::RegionDetector::detect()</a>.</p>
 
 </div>
 </div>
@@ -190,7 +274,7 @@ Macros</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00013">13</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00245">multiscale::analysis::RegionDetector::outputRegionsAsCsvFile()</a>.</p>
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00159">multiscale::analysis::ClusterDetector::outputClustersAsCsvFile()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00245">multiscale::analysis::RegionDetector::outputRegionsAsCsvFile()</a>.</p>
 
 </div>
 </div>
@@ -204,9 +288,55 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00020">20</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00034">34</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00052">multiscale::analysis::ClusterDetector::detectClustersInDebugMode()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00081">multiscale::analysis::RegionDetector::detectRegionsInDebugMode()</a>.</p>
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00067">multiscale::analysis::ClusterDetector::detectClustersInDebugMode()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00081">multiscale::analysis::RegionDetector::detectRegionsInDebugMode()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac5e81e4fb4ebf2cc5efb012723d37fcd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_POINTS_MAX&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00025">25</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00050">multiscale::analysis::ClusterDetector::createTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a44d4dbf032dec9fc3f1a2ba9c11afe2e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_POINTS_MIN&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00024">24</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a03d08fcd24072f600fedefea105192c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_CLUSTEREDNESS&#160;&#160;&#160;&quot;Clusteredness index: &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00016">16</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00170">multiscale::analysis::ClusterDetector::outputClustersAsCsvFile()</a>.</p>
 
 </div>
 </div>
@@ -220,9 +350,57 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00016">16</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00019">19</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="PolarCsvToInputFilesConverter_8cpp_source.html#l00089">multiscale::video::PolarCsvToInputFilesConverter::initOutputFile()</a>, <a class="el" href="RectangularCsvToInputFilesConverter_8cpp_source.html#l00088">multiscale::video::RectangularCsvToInputFilesConverter::initOutputFile()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00245">multiscale::analysis::RegionDetector::outputRegionsAsCsvFile()</a>.</p>
+<p>Referenced by <a class="el" href="PolarCsvToInputFilesConverter_8cpp_source.html#l00089">multiscale::video::PolarCsvToInputFilesConverter::initOutputFile()</a>, <a class="el" href="RectangularCsvToInputFilesConverter_8cpp_source.html#l00088">multiscale::video::RectangularCsvToInputFilesConverter::initOutputFile()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00159">multiscale::analysis::ClusterDetector::outputClustersAsCsvFile()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00245">multiscale::analysis::RegionDetector::outputRegionsAsCsvFile()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8835e4a55ef1753868cbad4d2a144779"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_PILE_UP&#160;&#160;&#160;&quot;Average pile up degree: &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00017">17</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00170">multiscale::analysis::ClusterDetector::outputClustersAsCsvFile()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf14bbe82bf908bbaa3e307ba6f0c0e7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRACKBAR_EPS&#160;&#160;&#160;&quot;Eps&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00021">21</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00050">multiscale::analysis::ClusterDetector::createTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0854d3b9ea4cf7d6115dc5f7f079a458"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRACKBAR_MINPOINTS&#160;&#160;&#160;&quot;Minimum number of points&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00022">22</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00050">multiscale::analysis::ClusterDetector::createTrackbars()</a>.</p>
 
 </div>
 </div>
@@ -236,7 +414,9 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00018">18</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00032">32</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00050">multiscale::analysis::ClusterDetector::createTrackbars()</a>, and <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00059">multiscale::analysis::SimulationClusterDetector::outputClustersInDebugMode()</a>.</p>
 
 </div>
 </div>
@@ -246,7 +426,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_617023d10e7618f3fc87fd3542a5b75d.html">analysis</a></li><li class="navelem"><a class="el" href="dir_525f610367b169c5221b707333271043.html">spatial</a></li><li class="navelem"><a class="el" href="ClusterDetector_8hpp.html">ClusterDetector.hpp</a></li>
-    <li class="footer">Generated on Thu Jul 4 2013 15:32:50 for Multiscale by
+    <li class="footer">Generated on Fri Jul 5 2013 18:51:16 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

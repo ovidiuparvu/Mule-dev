@@ -22,7 +22,7 @@ LIBS_OPENCV=/usr/local/lib/libopencv_calib3d.so /usr/local/lib/libopencv_contrib
 # Default target
 #########################################################################################
 
-all: mapcart2pol mapcart2conc polmapcsv2input rectmapcsv2input rectspatial_analysis circspatial_analysis rect_mat_factory_test circ_mat_factory_test
+all: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
 
 
 #########################################################################################
@@ -56,17 +56,23 @@ rectmapcsv2input:
 rectmapcsv2input_debug:
 	$(CC) $(CFLAGS_DEBUG) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/video/rectangular/RectangularCsvToInputFilesConverter.cpp src/multiscale/util/iterator/LexicographicNumberIterator.cpp src/multiscale/video/rectangular/RectangularMapCsvToInputFiles.cpp src/multiscale/util/NumberIterator.cpp src/multiscale/util/iterator/StandardNumberIterator.cpp src/multiscale/util/StringManipulator.cpp -o bin/RectangularMapCsvToInputFiles_d $(LIBS_BOOST)
 
-rectspatial_analysis:
+rect_region_detection:
 	$(CC) $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/RectangularDetectRegions.cpp src/multiscale/analysis/spatial/factory/RectangularMatFactory.cpp src/multiscale/analysis/spatial/Region.cpp src/multiscale/analysis/spatial/RegionDetector.cpp -o bin/RectangularDetectRegions $(LIBS_BOOST) $(LIBS_OPENCV) 
 
-rectspatial_analysis_debug:
+rect_region_detection_debug:
 	$(CC) $(CFLAGS_DEBUG) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/RectangularDetectRegions.cpp src/multiscale/analysis/spatial/factory/RectangularMatFactory.cpp src/multiscale/analysis/spatial/Region.cpp src/multiscale/analysis/spatial/RegionDetector.cpp -o bin/RectangularDetectRegions_d $(LIBS_BOOST) $(LIBS_OPENCV) 
 
-circspatial_analysis:
+circ_region_detection:
 	$(CC) $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/CircularDetectRegions.cpp src/multiscale/analysis/spatial/factory/CircularMatFactory.cpp src/multiscale/analysis/spatial/Region.cpp src/multiscale/analysis/spatial/RegionDetector.cpp -o bin/CircularDetectRegions $(LIBS_BOOST) $(LIBS_OPENCV) 
 
-circspatial_analysis_debug:
-	$(CC) $(CFLAGS_DEBUG) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/CircularDetectRegions.cpp src/multiscale/analysis/spatial/factory/CircularMatFactory.cpp src/multiscale/analysis/spatial/Region.cpp src/multiscale/analysis/spatial/RegionDetector.cpp -o bin/CircularDetectRegions $(LIBS_BOOST) $(LIBS_OPENCV) 
+circ_region_detection_debug:
+	$(CC) $(CFLAGS_DEBUG) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/CircularDetectRegions.cpp src/multiscale/analysis/spatial/factory/CircularMatFactory.cpp src/multiscale/analysis/spatial/Region.cpp src/multiscale/analysis/spatial/RegionDetector.cpp -o bin/CircularDetectRegions_d $(LIBS_BOOST) $(LIBS_OPENCV) 
+
+simulation_cluster_detection:
+	$(CC) $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/analysis/spatial/Cluster.cpp src/multiscale/analysis/spatial/ClusterDetector.cpp src/multiscale/analysis/spatial/DBSCAN.cpp src/multiscale/analysis/spatial/Entity.cpp src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/factory/RectangularMatFactory.cpp src/multiscale/util/RGBColourGenerator.cpp src/multiscale/analysis/spatial/cluster/SimulationClusterDetector.cpp src/multiscale/analysis/spatial/SimulationDetectClusters.cpp -o bin/SimulationDetectClusters $(LIBS_BOOST) $(LIBS_OPENCV) 
+
+simulation_cluster_detection_debug:
+	$(CC) $(CFLAGS_DEBUG) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/analysis/spatial/Cluster.cpp src/multiscale/analysis/spatial/ClusterDetector.cpp src/multiscale/analysis/spatial/DBSCAN.cpp src/multiscale/analysis/spatial/Entity.cpp src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/factory/RectangularMatFactory.cpp src/multiscale/util/RGBColourGenerator.cpp src/multiscale/analysis/spatial/cluster/SimulationClusterDetector.cpp src/multiscale/analysis/spatial/SimulationDetectClusters.cpp -o bin/SimulationDetectClusters_d $(LIBS_BOOST) $(LIBS_OPENCV) 
 
 
 #########################################################################################

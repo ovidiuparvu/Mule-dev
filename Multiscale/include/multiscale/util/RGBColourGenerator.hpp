@@ -49,7 +49,7 @@ namespace multiscale {
              *
              * \param randomNumberGenerator Random number generator
              */
-            static Scalar generate(const RNG &randomNumberGenerator);
+            static Scalar generate(RNG &randomNumberGenerator);
 
         private:
 

@@ -78,6 +78,97 @@
               <Path>namespacemultiscale_1_1analysis.html</Path>
               <Subnodes>
                <Node>
+                <Name>SimulationClusterDetector</Name>
+                <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>SimulationClusterDetector</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>aaf89be91572a4378d6cece5bba361627</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>~SimulationClusterDetector</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a8df6b5abd6d2dd48e691bf999d35dd43</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>computePileUpDegreeAtPosition</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>ac6efeb562212300dfd7e08936027b2b6</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>detectEntitiesInImage</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a1342c3ff6df5451c54d5c972f15d6ef0</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>initialiseThresholdedImage</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>ae36c793acaa548cc3ce74f72621d8bd7</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>isEntityAtPosition</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a886031cb8d576c4cf380c1105eeee4d2</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputClusterCircularShape</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>ab4e0ae4d5850be64ec2399d5c2c36828</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputClusterInDebugMode</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>aaace678f25a976de72f03f4076bc0e0a</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputClusterRectangularShape</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>ab7bfa2a55991a5708abfea7fa362214c</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputClusterShape</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a8dc451d799404ba7ecd72d85d2f7e955</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputClustersInDebugMode</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a1e1853068712fa3eeec399d6e9a8f2bc</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputClusterTriangularShape</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a9894288a54c8e3fdeff3917d81e2ad9b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>entityHeight</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a18b83e5060e319eca337189e0819d064</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>entityWidth</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a3f1027d3143c9a20516828d4b385e27b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>height</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a9d0a0fe5d9ea0f2516d07bf44b1da257</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>thresholdedImage</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>aca2aae9914ef643a543a834e61b1cccf</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>width</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                  <Anchor>a4c66a82aa1749dce31c767bc4008d904</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>Cluster</Name>
                 <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                 <Subnodes>
@@ -99,17 +190,17 @@
                  <Node>
                   <Name>getArea</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>a5076075e1278b70a1361df747ff89175</Anchor>
+                  <Anchor>a33d8ef7eb3b9e9475c7120a4eaae09bd</Anchor>
                  </Node>
                  <Node>
                   <Name>getCentre</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>aacd49c175fec9728b17291c74c410d3b</Anchor>
+                  <Anchor>a8fdd4229c940bc76c28df9df1ca57ee5</Anchor>
                  </Node>
                  <Node>
                   <Name>getClusterednessDegree</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>a21807d4d70d5dabb13eeee561237dcaa</Anchor>
+                  <Anchor>ac93832bbbb478747825538e53646c166</Anchor>
                  </Node>
                  <Node>
                   <Name>getEntities</Name>
@@ -122,14 +213,34 @@
                   <Anchor>aa4efa0db1c554831363b7897d8b2f5a7</Anchor>
                  </Node>
                  <Node>
+                  <Name>getMinAreaEnclosingCircleCentre</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                  <Anchor>a4d93f85faf929336818248e1fd604fb6</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getMinAreaEnclosingCircleRadius</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                  <Anchor>aecf5fa56fa21e3b22130242694be744f</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getMinAreaEnclosingRect</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                  <Anchor>a6417e3328622a848a7dedeebb5821750</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getMinAreaEnclosingTriangle</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                  <Anchor>a9432f23f7c776108ccad35b8640bd3c7</Anchor>
+                 </Node>
+                 <Node>
                   <Name>getPileUpDegree</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>af5c3c9501a43b46b8fbafdd6332d1c12</Anchor>
+                  <Anchor>acff6c7308641af041598bed55005f2bf</Anchor>
                  </Node>
                  <Node>
                   <Name>getShape</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>a3023fab07bca5b70120d2faeb35ac9d1</Anchor>
+                  <Anchor>ada6b14fcff697b3e7365070dd13513c7</Anchor>
                  </Node>
                  <Node>
                   <Name>initialise</Name>
@@ -285,32 +396,47 @@
                  <Node>
                   <Name>addEntitiesToClusters</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a4982a49faecb03537026c8221c84041b</Anchor>
+                  <Anchor>aefc4d0736d8af4ab53f1e5e76440f447</Anchor>
                  </Node>
                  <Node>
                   <Name>analyseClusters</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a76d2ea235fc1d78239fccd35054c5a29</Anchor>
+                  <Anchor>af994e960ba3cd76cc67e714ea276264a</Anchor>
                  </Node>
                  <Node>
                   <Name>computeAveragePileUpDegree</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a38fcb78f1c5b966e46d1325f2f22017e</Anchor>
+                  <Anchor>a1efab8446c79feb8a9285d895bb64b05</Anchor>
                  </Node>
                  <Node>
                   <Name>computeClusterednessIndex</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>aeb107826159f2d34217944cc258674b5</Anchor>
+                  <Anchor>aaa7937daf9872614e09b23cb4f6e5aa8</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>convertEntities</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>aa45fe0a4a548b4d44407ee7f346e66d3</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>convertEpsValue</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>afccb86bfb93df00fff8408faea7a2651</Anchor>
                  </Node>
                  <Node>
                   <Name>createTrackbars</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>abca03c25193fe460a738f93f8741f7a5</Anchor>
+                  <Anchor>a7332c81689d61b800007785c4974ce7a</Anchor>
                  </Node>
                  <Node>
                   <Name>detect</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>a80e466ef4ac2c13cbd1ba9251c5e6767</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>detectAndAnalyseClusters</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>a46f98e066e74171774f0b6728118bc7b</Anchor>
                  </Node>
                  <Node>
                   <Name>detectClusters</Name>
@@ -320,12 +446,7 @@
                  <Node>
                   <Name>detectClusters</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>ab21f55fe6e3840c18e9eb2fe0bab4540</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>detectClusters</Name>
-                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a5d83c834f72314b91e4bf88c80607996</Anchor>
+                  <Anchor>a8c9c3ac0c3d8e924468a58f558984dda</Anchor>
                  </Node>
                  <Node>
                   <Name>detectClustersInDebugMode</Name>
@@ -350,7 +471,7 @@
                  <Node>
                   <Name>findClusters</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>ac98d5c84a97eb5c2b6ff996eb1959648</Anchor>
+                  <Anchor>a873ec1e214a0817c2958378093376e89</Anchor>
                  </Node>
                  <Node>
                   <Name>initialise</Name>
@@ -358,39 +479,44 @@
                   <Anchor>aebd5a932b49dd420a9d2e73cd6afa7b4</Anchor>
                  </Node>
                  <Node>
-                  <Name>initialiseImageDependentMembers</Name>
+                  <Name>initialiseClusteringValues</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a1a19ddf8e6fd273b34f3d1d0898b8e33</Anchor>
+                  <Anchor>a1464d37d8bcf96cf0f8b5538143cb5a9</Anchor>
                  </Node>
                  <Node>
                   <Name>isValidImage</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a9383949ba2ec304663268bb6e3f2ebb2</Anchor>
+                  <Anchor>ae0bd3b36341a602be89d2aa84b47e5b0</Anchor>
                  </Node>
                  <Node>
                   <Name>outputClusters</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>ad9b13212a56f15d0d2cc4f92da945012</Anchor>
+                  <Anchor>a49cb6e763fec53dfa3dd769351c280ab</Anchor>
                  </Node>
                  <Node>
                   <Name>outputClustersAsCsvFile</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a5e3afe2ce1da4a2cac787a841f6bbad5</Anchor>
+                  <Anchor>a64d699b579ec010ebc495d9d7774d3d2</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputClustersAsCsvFile</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>a3d1d211ae726fdeff1d1633b3892f1d0</Anchor>
                  </Node>
                  <Node>
                   <Name>outputClustersInDebugMode</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>aa72d1ba79f7f60b12c6b5c65c63c8cfd</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>avgClusterednessDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a7d81230f7d43cf338ea20da20acd7215</Anchor>
+                  <Anchor>ad139564f58d5b2308dcf04eee304d0f2</Anchor>
                  </Node>
                  <Node>
                   <Name>avgPileUpDegree</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>a6f6cfa50cf21ac400d41d6c6f2112bc9</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>clusterednessIndex</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>a5e2bf77041bd0d5047dd16c4632c16b7</Anchor>
                  </Node>
                  <Node>
                   <Name>debugMode</Name>
@@ -400,7 +526,7 @@
                  <Node>
                   <Name>eps</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a19570a9689495dfef16fa8655abc7453</Anchor>
+                  <Anchor>a61e876f87d62245eada8f56d587d39cd</Anchor>
                  </Node>
                  <Node>
                   <Name>image</Name>
@@ -420,6 +546,28 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>DataPoint</Name>
+                <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>~DataPoint</Name>
+                  <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+                  <Anchor>ab7a7d2baf190376980cd3c2e130a9905</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>distanceTo</Name>
+                  <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+                  <Anchor>a8dd5def96eab756085461e8f6a201dce</Anchor>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>DBSCAN</Name>
+                <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>Entity</Name>
                 <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
                 <Subnodes>
@@ -427,6 +575,11 @@
                   <Name>Entity</Name>
                   <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
                   <Anchor>af0b3984eda0ae9e2e7d14277efd48954</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>Entity</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+                  <Anchor>ab7136fc011809bc9bcc43862fd4c38ae</Anchor>
                  </Node>
                  <Node>
                   <Name>~Entity</Name>
@@ -437,6 +590,16 @@
                   <Name>areValid</Name>
                   <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
                   <Anchor>a424676e8bdda427a1ddd68db5063bbed</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>distanceTo</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+                  <Anchor>ac14148e411030e959e36e8da0bd60736</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>distanceTo</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+                  <Anchor>a9c3eb0f38038fe3bd0b7680c62577a64</Anchor>
                  </Node>
                  <Node>
                   <Name>getArea</Name>
@@ -1703,10 +1866,26 @@
            <Node>
             <Name>multiscale::analysis::ClusterDetector</Name>
             <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>multiscale::analysis::SimulationClusterDetector</Name>
+              <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+             </Node>
+            </Subnodes>
            </Node>
            <Node>
-            <Name>multiscale::analysis::Entity</Name>
-            <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+            <Name>multiscale::analysis::DataPoint</Name>
+            <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>multiscale::analysis::Entity</Name>
+              <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiscale::analysis::DBSCAN</Name>
+            <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
            </Node>
            <Node>
             <Name>multiscale::Geometry2D</Name>
@@ -1987,6 +2166,129 @@
                   <Path>dir_525f610367b169c5221b707333271043.html</Path>
                   <Subnodes>
                    <Node>
+                    <Name>cluster</Name>
+                    <Path>dir_e0c8afcfe04fc4bc06e8e3338ab9a9f9.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>SimulationClusterDetector.hpp</Name>
+                      <Path>SimulationClusterDetector_8hpp.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>SimulationClusterDetector</Name>
+                        <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                        <Subnodes>
+                         <Node>
+                          <Name>SimulationClusterDetector</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>aaf89be91572a4378d6cece5bba361627</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>~SimulationClusterDetector</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a8df6b5abd6d2dd48e691bf999d35dd43</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>computePileUpDegreeAtPosition</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>ac6efeb562212300dfd7e08936027b2b6</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>detectEntitiesInImage</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a1342c3ff6df5451c54d5c972f15d6ef0</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>initialiseThresholdedImage</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>ae36c793acaa548cc3ce74f72621d8bd7</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>isEntityAtPosition</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a886031cb8d576c4cf380c1105eeee4d2</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>outputClusterCircularShape</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>ab4e0ae4d5850be64ec2399d5c2c36828</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>outputClusterInDebugMode</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>aaace678f25a976de72f03f4076bc0e0a</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>outputClusterRectangularShape</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>ab7bfa2a55991a5708abfea7fa362214c</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>outputClusterShape</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a8dc451d799404ba7ecd72d85d2f7e955</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>outputClustersInDebugMode</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a1e1853068712fa3eeec399d6e9a8f2bc</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>outputClusterTriangularShape</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a9894288a54c8e3fdeff3917d81e2ad9b</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>entityHeight</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a18b83e5060e319eca337189e0819d064</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>entityWidth</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a3f1027d3143c9a20516828d4b385e27b</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>height</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a9d0a0fe5d9ea0f2516d07bf44b1da257</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>thresholdedImage</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>aca2aae9914ef643a543a834e61b1cccf</Anchor>
+                         </Node>
+                         <Node>
+                          <Name>width</Name>
+                          <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+                          <Anchor>a4c66a82aa1749dce31c767bc4008d904</Anchor>
+                         </Node>
+                        </Subnodes>
+                       </Node>
+                       <Node>
+                        <Name>DATAPOINT_WIDTH</Name>
+                        <Path>SimulationClusterDetector_8hpp.html</Path>
+                        <Anchor>a1bd547d2536e6176c55b7392937e6d72</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>ENTITY_THRESH</Name>
+                        <Path>SimulationClusterDetector_8hpp.html</Path>
+                        <Anchor>a218c9917be3a60a65547b32d6dbb3351</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>THRESHOLD</Name>
+                        <Path>SimulationClusterDetector_8hpp.html</Path>
+                        <Anchor>a4679d8ea8690999a6c6c7c0cb245c879</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>THRESHOLD_MAX</Name>
+                        <Path>SimulationClusterDetector_8hpp.html</Path>
+                        <Anchor>ab468cd6410e5d23829fc609c96431489</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
                     <Name>factory</Name>
                     <Path>dir_dc58f59ab08c37a8d6db78fec5d299c9.html</Path>
                     <Subnodes>
@@ -2137,17 +2439,17 @@
                        <Node>
                         <Name>getArea</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                        <Anchor>a5076075e1278b70a1361df747ff89175</Anchor>
+                        <Anchor>a33d8ef7eb3b9e9475c7120a4eaae09bd</Anchor>
                        </Node>
                        <Node>
                         <Name>getCentre</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                        <Anchor>aacd49c175fec9728b17291c74c410d3b</Anchor>
+                        <Anchor>a8fdd4229c940bc76c28df9df1ca57ee5</Anchor>
                        </Node>
                        <Node>
                         <Name>getClusterednessDegree</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                        <Anchor>a21807d4d70d5dabb13eeee561237dcaa</Anchor>
+                        <Anchor>ac93832bbbb478747825538e53646c166</Anchor>
                        </Node>
                        <Node>
                         <Name>getEntities</Name>
@@ -2160,14 +2462,34 @@
                         <Anchor>aa4efa0db1c554831363b7897d8b2f5a7</Anchor>
                        </Node>
                        <Node>
+                        <Name>getMinAreaEnclosingCircleCentre</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                        <Anchor>a4d93f85faf929336818248e1fd604fb6</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>getMinAreaEnclosingCircleRadius</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                        <Anchor>aecf5fa56fa21e3b22130242694be744f</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>getMinAreaEnclosingRect</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                        <Anchor>a6417e3328622a848a7dedeebb5821750</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>getMinAreaEnclosingTriangle</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                        <Anchor>a9432f23f7c776108ccad35b8640bd3c7</Anchor>
+                       </Node>
+                       <Node>
                         <Name>getPileUpDegree</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                        <Anchor>af5c3c9501a43b46b8fbafdd6332d1c12</Anchor>
+                        <Anchor>acff6c7308641af041598bed55005f2bf</Anchor>
                        </Node>
                        <Node>
                         <Name>getShape</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                        <Anchor>a3023fab07bca5b70120d2faeb35ac9d1</Anchor>
+                        <Anchor>ada6b14fcff697b3e7365070dd13513c7</Anchor>
                        </Node>
                        <Node>
                         <Name>initialise</Name>
@@ -2312,6 +2634,11 @@
                       <Anchor>a1fdd779f7dc41df9ddcde20f1f1d2978</Anchor>
                      </Node>
                      <Node>
+                      <Name>OUTPUT_SEPARATOR</Name>
+                      <Path>Cluster_8hpp.html</Path>
+                      <Anchor>ad80cfbe7456c7d029544e8bc2cec16c8</Anchor>
+                     </Node>
+                     <Node>
                       <Name>PI</Name>
                       <Path>Cluster_8hpp.html</Path>
                       <Anchor>a598a3330b3c21701223ee0ca14316eca</Anchor>
@@ -2354,32 +2681,47 @@
                        <Node>
                         <Name>addEntitiesToClusters</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a4982a49faecb03537026c8221c84041b</Anchor>
+                        <Anchor>aefc4d0736d8af4ab53f1e5e76440f447</Anchor>
                        </Node>
                        <Node>
                         <Name>analyseClusters</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a76d2ea235fc1d78239fccd35054c5a29</Anchor>
+                        <Anchor>af994e960ba3cd76cc67e714ea276264a</Anchor>
                        </Node>
                        <Node>
                         <Name>computeAveragePileUpDegree</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a38fcb78f1c5b966e46d1325f2f22017e</Anchor>
+                        <Anchor>a1efab8446c79feb8a9285d895bb64b05</Anchor>
                        </Node>
                        <Node>
                         <Name>computeClusterednessIndex</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>aeb107826159f2d34217944cc258674b5</Anchor>
+                        <Anchor>aaa7937daf9872614e09b23cb4f6e5aa8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>convertEntities</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>aa45fe0a4a548b4d44407ee7f346e66d3</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>convertEpsValue</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>afccb86bfb93df00fff8408faea7a2651</Anchor>
                        </Node>
                        <Node>
                         <Name>createTrackbars</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>abca03c25193fe460a738f93f8741f7a5</Anchor>
+                        <Anchor>a7332c81689d61b800007785c4974ce7a</Anchor>
                        </Node>
                        <Node>
                         <Name>detect</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                         <Anchor>a80e466ef4ac2c13cbd1ba9251c5e6767</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>detectAndAnalyseClusters</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>a46f98e066e74171774f0b6728118bc7b</Anchor>
                        </Node>
                        <Node>
                         <Name>detectClusters</Name>
@@ -2389,12 +2731,7 @@
                        <Node>
                         <Name>detectClusters</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>ab21f55fe6e3840c18e9eb2fe0bab4540</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>detectClusters</Name>
-                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a5d83c834f72314b91e4bf88c80607996</Anchor>
+                        <Anchor>a8c9c3ac0c3d8e924468a58f558984dda</Anchor>
                        </Node>
                        <Node>
                         <Name>detectClustersInDebugMode</Name>
@@ -2419,7 +2756,7 @@
                        <Node>
                         <Name>findClusters</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>ac98d5c84a97eb5c2b6ff996eb1959648</Anchor>
+                        <Anchor>a873ec1e214a0817c2958378093376e89</Anchor>
                        </Node>
                        <Node>
                         <Name>initialise</Name>
@@ -2427,39 +2764,44 @@
                         <Anchor>aebd5a932b49dd420a9d2e73cd6afa7b4</Anchor>
                        </Node>
                        <Node>
-                        <Name>initialiseImageDependentMembers</Name>
+                        <Name>initialiseClusteringValues</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a1a19ddf8e6fd273b34f3d1d0898b8e33</Anchor>
+                        <Anchor>a1464d37d8bcf96cf0f8b5538143cb5a9</Anchor>
                        </Node>
                        <Node>
                         <Name>isValidImage</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a9383949ba2ec304663268bb6e3f2ebb2</Anchor>
+                        <Anchor>ae0bd3b36341a602be89d2aa84b47e5b0</Anchor>
                        </Node>
                        <Node>
                         <Name>outputClusters</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>ad9b13212a56f15d0d2cc4f92da945012</Anchor>
+                        <Anchor>a49cb6e763fec53dfa3dd769351c280ab</Anchor>
                        </Node>
                        <Node>
                         <Name>outputClustersAsCsvFile</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a5e3afe2ce1da4a2cac787a841f6bbad5</Anchor>
+                        <Anchor>a64d699b579ec010ebc495d9d7774d3d2</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>outputClustersAsCsvFile</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>a3d1d211ae726fdeff1d1633b3892f1d0</Anchor>
                        </Node>
                        <Node>
                         <Name>outputClustersInDebugMode</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>aa72d1ba79f7f60b12c6b5c65c63c8cfd</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>avgClusterednessDegree</Name>
-                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a7d81230f7d43cf338ea20da20acd7215</Anchor>
+                        <Anchor>ad139564f58d5b2308dcf04eee304d0f2</Anchor>
                        </Node>
                        <Node>
                         <Name>avgPileUpDegree</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                         <Anchor>a6f6cfa50cf21ac400d41d6c6f2112bc9</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>clusterednessIndex</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>a5e2bf77041bd0d5047dd16c4632c16b7</Anchor>
                        </Node>
                        <Node>
                         <Name>debugMode</Name>
@@ -2469,7 +2811,7 @@
                        <Node>
                         <Name>eps</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a19570a9689495dfef16fa8655abc7453</Anchor>
+                        <Anchor>a61e876f87d62245eada8f56d587d39cd</Anchor>
                        </Node>
                        <Node>
                         <Name>image</Name>
@@ -2489,6 +2831,26 @@
                       </Subnodes>
                      </Node>
                      <Node>
+                      <Name>EPS_MAX</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>aac9b63e21628e567cbafa966fb6a7ad0</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>EPS_MIN</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>a1faf458dee5b0c5bb1b33b1c55db5976</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>EPS_REAL_MAX</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>a4e3e53c39cec5f193420cef7dbba2534</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>EPS_REAL_MIN</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>af6f6eaf3b08254485de414e4b2eb4f30</Anchor>
+                     </Node>
+                     <Node>
                       <Name>ERR_INVALID_IMAGE</Name>
                       <Path>ClusterDetector_8hpp.html</Path>
                       <Anchor>a436f1d8a73f8ce98507b031eb65b84ac</Anchor>
@@ -2504,14 +2866,93 @@
                       <Anchor>a86b2b2d4eda22067d85d2287c118e2d8</Anchor>
                      </Node>
                      <Node>
+                      <Name>MIN_POINTS_MAX</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>ac5e81e4fb4ebf2cc5efb012723d37fcd</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>MIN_POINTS_MIN</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>a44d4dbf032dec9fc3f1a2ba9c11afe2e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>OUTPUT_CLUSTEREDNESS</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>a03d08fcd24072f600fedefea105192c5</Anchor>
+                     </Node>
+                     <Node>
                       <Name>OUTPUT_EXTENSION</Name>
                       <Path>ClusterDetector_8hpp.html</Path>
                       <Anchor>a6722eaa5c4c15a1ef661967d81135500</Anchor>
                      </Node>
                      <Node>
+                      <Name>OUTPUT_PILE_UP</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>a8835e4a55ef1753868cbad4d2a144779</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>TRACKBAR_EPS</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>acf14bbe82bf908bbaa3e307ba6f0c0e7</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>TRACKBAR_MINPOINTS</Name>
+                      <Path>ClusterDetector_8hpp.html</Path>
+                      <Anchor>a0854d3b9ea4cf7d6115dc5f7f079a458</Anchor>
+                     </Node>
+                     <Node>
                       <Name>WIN_OUTPUT_IMAGE</Name>
                       <Path>ClusterDetector_8hpp.html</Path>
                       <Anchor>aee857f4a97612b0a45a3322ce1909688</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>DataPoint.hpp</Name>
+                    <Path>DataPoint_8hpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>DataPoint</Name>
+                      <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>~DataPoint</Name>
+                        <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+                        <Anchor>ab7a7d2baf190376980cd3c2e130a9905</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>distanceTo</Name>
+                        <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+                        <Anchor>a8dd5def96eab756085461e8f6a201dce</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>DBSCAN.hpp</Name>
+                    <Path>DBSCAN_8hpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>DBSCAN</Name>
+                      <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>CLUSTERING_BORDER</Name>
+                      <Path>DBSCAN_8hpp.html</Path>
+                      <Anchor>a98878ae08fa05c29de2a5376ce1fd264</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CLUSTERING_NOISE</Name>
+                      <Path>DBSCAN_8hpp.html</Path>
+                      <Anchor>af6172e9cfdcbb017dadc35b145629c29</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>CLUSTERING_UNCLASSIFIED</Name>
+                      <Path>DBSCAN_8hpp.html</Path>
+                      <Anchor>a2d0f4bb28393a6bee95b6503c6d29676</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -2529,6 +2970,11 @@
                         <Anchor>af0b3984eda0ae9e2e7d14277efd48954</Anchor>
                        </Node>
                        <Node>
+                        <Name>Entity</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+                        <Anchor>ab7136fc011809bc9bcc43862fd4c38ae</Anchor>
+                       </Node>
+                       <Node>
                         <Name>~Entity</Name>
                         <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
                         <Anchor>adf6d3f7cb1b2ba029b6b048a395cc8ae</Anchor>
@@ -2537,6 +2983,16 @@
                         <Name>areValid</Name>
                         <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
                         <Anchor>a424676e8bdda427a1ddd68db5063bbed</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>distanceTo</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+                        <Anchor>ac14148e411030e959e36e8da0bd60736</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>distanceTo</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+                        <Anchor>a9c3eb0f38038fe3bd0b7680c62577a64</Anchor>
                        </Node>
                        <Node>
                         <Name>getArea</Name>
@@ -2576,9 +3032,19 @@
                       </Subnodes>
                      </Node>
                      <Node>
+                      <Name>ERR_DISTANCE</Name>
+                      <Path>Entity_8hpp.html</Path>
+                      <Anchor>a71f387ccbb38cba9aaf69812abc6c505</Anchor>
+                     </Node>
+                     <Node>
                       <Name>ERR_INPUT</Name>
                       <Path>Entity_8hpp.html</Path>
                       <Anchor>a617a89dc9ced4a63643f98263cde3e91</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>OUTPUT_SEPARATOR</Name>
+                      <Path>Entity_8hpp.html</Path>
+                      <Anchor>ad80cfbe7456c7d029544e8bc2cec16c8</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -4437,6 +4903,16 @@
                   <Path>dir_eecdf75660cbdeda8cf07b528b48c623.html</Path>
                   <Subnodes>
                    <Node>
+                    <Name>cluster</Name>
+                    <Path>dir_14d4a5c81cfca477e2fe1aacf9a79d9a.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>SimulationClusterDetector.cpp</Name>
+                      <Path>SimulationClusterDetector_8cpp.html</Path>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
                     <Name>factory</Name>
                     <Path>dir_2ec31c6d420cd82ac240875edf88252f.html</Path>
                     <Subnodes>
@@ -4500,6 +4976,10 @@
                     <Path>ClusterDetector_8cpp.html</Path>
                    </Node>
                    <Node>
+                    <Name>DBSCAN.cpp</Name>
+                    <Path>DBSCAN_8cpp.html</Path>
+                   </Node>
+                   <Node>
                     <Name>Entity.cpp</Name>
                     <Path>Entity_8cpp.html</Path>
                    </Node>
@@ -4560,6 +5040,47 @@
                       <Name>convertVertices</Name>
                       <Path>RegionDetector_8cpp.html</Path>
                       <Anchor>a31cd0a7bc23ff3a928996d2890ce9a31</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>SimulationDetectClusters.cpp</Name>
+                    <Path>SimulationDetectClusters_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>ERR_CODE</Name>
+                      <Path>SimulationDetectClusters_8cpp.html</Path>
+                      <Anchor>aed46bc434b6a10f9663dbbe5fd15349f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ERR_MSG</Name>
+                      <Path>SimulationDetectClusters_8cpp.html</Path>
+                      <Anchor>a7a18f09d3bb5a5f03a55546e38f8efd8</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>areValidParameters</Name>
+                      <Path>SimulationDetectClusters_8cpp.html</Path>
+                      <Anchor>a24da6cc304f0f5bb05c2b0bf721c72d3</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>initArgumentsConfig</Name>
+                      <Path>SimulationDetectClusters_8cpp.html</Path>
+                      <Anchor>a6dab5a70bdde13257ac586fd8b81b16e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>SimulationDetectClusters_8cpp.html</Path>
+                      <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>printHelpInformation</Name>
+                      <Path>SimulationDetectClusters_8cpp.html</Path>
+                      <Anchor>a49535fad6e4e5f21ee2eae91dff5a831</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>printWrongParameters</Name>
+                      <Path>SimulationDetectClusters_8cpp.html</Path>
+                      <Anchor>a573a6d091545f311c155eb4f04c8a2cb</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -4878,6 +5399,84 @@
            <Node>
             <Name>All</Name>
             <Path>globals.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>a</Name>
+              <Path>globals.html</Path>
+             </Node>
+             <Node>
+              <Name>b</Name>
+              <Path>globals_0x62.html</Path>
+             </Node>
+             <Node>
+              <Name>c</Name>
+              <Path>globals_0x63.html</Path>
+             </Node>
+             <Node>
+              <Name>d</Name>
+              <Path>globals_0x64.html</Path>
+             </Node>
+             <Node>
+              <Name>e</Name>
+              <Path>globals_0x65.html</Path>
+             </Node>
+             <Node>
+              <Name>f</Name>
+              <Path>globals_0x66.html</Path>
+             </Node>
+             <Node>
+              <Name>g</Name>
+              <Path>globals_0x67.html</Path>
+             </Node>
+             <Node>
+              <Name>h</Name>
+              <Path>globals_0x68.html</Path>
+             </Node>
+             <Node>
+              <Name>i</Name>
+              <Path>globals_0x69.html</Path>
+             </Node>
+             <Node>
+              <Name>k</Name>
+              <Path>globals_0x6b.html</Path>
+             </Node>
+             <Node>
+              <Name>m</Name>
+              <Path>globals_0x6d.html</Path>
+             </Node>
+             <Node>
+              <Name>o</Name>
+              <Path>globals_0x6f.html</Path>
+             </Node>
+             <Node>
+              <Name>p</Name>
+              <Path>globals_0x70.html</Path>
+             </Node>
+             <Node>
+              <Name>r</Name>
+              <Path>globals_0x72.html</Path>
+             </Node>
+             <Node>
+              <Name>s</Name>
+              <Path>globals_0x73.html</Path>
+             </Node>
+             <Node>
+              <Name>t</Name>
+              <Path>globals_0x74.html</Path>
+             </Node>
+             <Node>
+              <Name>u</Name>
+              <Path>globals_0x75.html</Path>
+             </Node>
+             <Node>
+              <Name>v</Name>
+              <Path>globals_0x76.html</Path>
+             </Node>
+             <Node>
+              <Name>w</Name>
+              <Path>globals_0x77.html</Path>
+             </Node>
+            </Subnodes>
            </Node>
            <Node>
             <Name>Functions</Name>

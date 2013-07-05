@@ -17,31 +17,55 @@ void Cluster::addEntity(const Entity &entity) {
     updateFlag = true;
 }
 
-double Cluster::getClusterednessDegree() const {
+double Cluster::getClusterednessDegree() {
     updateMeasuresIfRequired();
 
     return clusterednessDegree;
 }
 
-double Cluster::getPileUpDegree() const {
+double Cluster::getPileUpDegree() {
     updateMeasuresIfRequired();
 
     return pileUpDegree;
 }
 
-double Cluster::getArea() const {
+double Cluster::getArea() {
     updateMeasuresIfRequired();
 
     return area;
 }
 
-Shape2D Cluster::getShape() const {
+Shape2D Cluster::getShape() {
     updateMeasuresIfRequired();
 
     return shape;
 }
 
-Point Cluster::getCentre() const {
+vector<Point> Cluster::getMinAreaEnclosingTriangle() {
+    updateMeasuresIfRequired();
+
+    return minAreaEnclosingTriangle;
+}
+
+RotatedRect Cluster::getMinAreaEnclosingRect() {
+    updateMeasuresIfRequired();
+
+    return minAreaEnclosingRect;
+}
+
+Point2f Cluster::getMinAreaEnclosingCircleCentre() {
+    updateMeasuresIfRequired();
+
+    return minAreaEnclosingCircleCentre;
+}
+
+float Cluster::getMinAreaEnclosingCircleRadius() {
+    updateMeasuresIfRequired();
+
+    return minAreaEnclosingCircleRadius;
+}
+
+Point Cluster::getCentre() {
     updateMeasuresIfRequired();
 
     return centre;
@@ -65,9 +89,9 @@ void Cluster::initialise() {
     this->pileUpDegree = 0;
     this->area = 0;
 
-    this->isTriangularProbability = 0;
-    this->isRectangularProbability = 0;
-    this->isCircularProbability = 0;
+    this->triangularProbability = 0;
+    this->rectangularProbability = 0;
+    this->circularProbability = 0;
 
     this->minAreaEnclosingCircleRadius = 0;
 
@@ -110,10 +134,10 @@ void Cluster::updateMeasures() {
 void Cluster::updateClusterednessDegree() {
     clusterednessDegree = 0;
 
-    for (const Entity &e1 : entities) {
+    for (Entity &e1 : entities) {
         double avgDistance = 0;
 
-        for (const Entity &e2 : entities) {
+        for (Entity &e2 : entities) {
             avgDistance += e1.distanceTo(e2);
         }
 
@@ -217,8 +241,10 @@ string Cluster::shapeAsString() {
             return STR_CIRCLE;
             break;
 
-        default:
+        case Shape2D::Undefined:
             throw ERR_UNDEFINED_SHAPE;
             break;
     }
+
+    throw ERR_UNDEFINED_SHAPE;
 }

@@ -42,6 +42,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>OUTPUT_SEPARATOR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Cluster_8hpp.html</Path>
+    <Anchor>ad80cfbe7456c7d029544e8bc2cec16c8</Anchor>
+    <DeclaredIn>Cluster.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_UNDEFINED_SHAPE</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -49,6 +59,46 @@
     <Path>Cluster_8hpp.html</Path>
     <Anchor>a1fdd779f7dc41df9ddcde20f1f1d2978</Anchor>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>THRESHOLD</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationClusterDetector_8hpp.html</Path>
+    <Anchor>a4679d8ea8690999a6c6c7c0cb245c879</Anchor>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>THRESHOLD_MAX</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationClusterDetector_8hpp.html</Path>
+    <Anchor>ab468cd6410e5d23829fc609c96431489</Anchor>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ENTITY_THRESH</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationClusterDetector_8hpp.html</Path>
+    <Anchor>a218c9917be3a60a65547b32d6dbb3351</Anchor>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>DATAPOINT_WIDTH</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationClusterDetector_8hpp.html</Path>
+    <Anchor>a1bd547d2536e6176c55b7392937e6d72</Anchor>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -72,12 +122,112 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>OUTPUT_CLUSTEREDNESS</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>a03d08fcd24072f600fedefea105192c5</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OUTPUT_PILE_UP</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>a8835e4a55ef1753868cbad4d2a144779</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>OUTPUT_EXTENSION</Name>
       <APILanguage>c</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>ClusterDetector_8hpp.html</Path>
     <Anchor>a6722eaa5c4c15a1ef661967d81135500</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TRACKBAR_EPS</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>acf14bbe82bf908bbaa3e307ba6f0c0e7</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>TRACKBAR_MINPOINTS</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>a0854d3b9ea4cf7d6115dc5f7f079a458</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MIN_POINTS_MIN</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>a44d4dbf032dec9fc3f1a2ba9c11afe2e</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MIN_POINTS_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>ac5e81e4fb4ebf2cc5efb012723d37fcd</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EPS_MIN</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>a1faf458dee5b0c5bb1b33b1c55db5976</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EPS_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>aac9b63e21628e567cbafa966fb6a7ad0</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EPS_REAL_MIN</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>af6f6eaf3b08254485de414e4b2eb4f30</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EPS_REAL_MAX</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>ClusterDetector_8hpp.html</Path>
+    <Anchor>a4e3e53c39cec5f193420cef7dbba2534</Anchor>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -102,12 +252,62 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CLUSTERING_UNCLASSIFIED</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>DBSCAN_8hpp.html</Path>
+    <Anchor>a2d0f4bb28393a6bee95b6503c6d29676</Anchor>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CLUSTERING_BORDER</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>DBSCAN_8hpp.html</Path>
+    <Anchor>a98878ae08fa05c29de2a5376ce1fd264</Anchor>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>CLUSTERING_NOISE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>DBSCAN_8hpp.html</Path>
+    <Anchor>af6172e9cfdcbb017dadc35b145629c29</Anchor>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_INPUT</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>Entity_8hpp.html</Path>
     <Anchor>a617a89dc9ced4a63643f98263cde3e91</Anchor>
+    <DeclaredIn>Entity.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_DISTANCE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Entity_8hpp.html</Path>
+    <Anchor>a71f387ccbb38cba9aaf69812abc6c505</Anchor>
+    <DeclaredIn>Entity.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OUTPUT_SEPARATOR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Entity_8hpp.html</Path>
+    <Anchor>ad80cfbe7456c7d029544e8bc2cec16c8</Anchor>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -503,7 +703,7 @@
   <Token>
     <TokenIdentifier>
       <Name>THRESHOLD_MAX</Name>
-      <APILanguage>unknown</APILanguage>
+      <APILanguage>c</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>RegionDetector_8hpp.html</Path>
@@ -1379,6 +1579,76 @@
     <Path>RegionDetector_8cpp.html</Path>
     <Anchor>a31cd0a7bc23ff3a928996d2890ce9a31</Anchor>
     <DeclaredIn>RegionDetector.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_CODE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>aed46bc434b6a10f9663dbbe5fd15349f</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_MSG</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a7a18f09d3bb5a5f03a55546e38f8efd8</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initArgumentsConfig</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a6dab5a70bdde13257ac586fd8b81b16e</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printHelpInformation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a49535fad6e4e5f21ee2eae91dff5a831</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printWrongParameters</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a573a6d091545f311c155eb4f04c8a2cb</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>areValidParameters</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a24da6cc304f0f5bb05c2b0bf721c72d3</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2640,7 +2910,7 @@
       <Scope>multiscale::RGBColourGenerator</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1RGBColourGenerator.html</Path>
-    <Anchor>aba82e5377cef3774722641d9f06e26f5</Anchor>
+    <Anchor>a9eadd001d970bdb3c4237ab3a1b6683a</Anchor>
     <Abstract>Generate a random RGB colour.</Abstract>
     <DeclaredIn>RGBColourGenerator.hpp</DeclaredIn>
   </Token>
@@ -2824,6 +3094,553 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>multiscale::analysis::SimulationClusterDetector</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Abstract>Class for detecting clusters in 2D images obtained from simulations.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SimulationClusterDetector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>aaf89be91572a4378d6cece5bba361627</Anchor>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~SimulationClusterDetector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a8df6b5abd6d2dd48e691bf999d35dd43</Anchor>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ClusterDetector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>af47af4e340532f030473ad8271e2c953</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~ClusterDetector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a18f5d5aab155a0a30137364749fb837c</Anchor>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a80e466ef4ac2c13cbd1ba9251c5e6767</Anchor>
+    <Abstract>Detect the clusters in the image and output the results.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseThresholdedImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>ae36c793acaa548cc3ce74f72621d8bd7</Anchor>
+    <Abstract>Initialise the thresholdedImage field.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectEntitiesInImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a1342c3ff6df5451c54d5c972f15d6ef0</Anchor>
+    <Abstract>Detect the entities in the image.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isEntityAtPosition</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a886031cb8d576c4cf380c1105eeee4d2</Anchor>
+    <Abstract>Check if there is an entity in the image at the given position.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computePileUpDegreeAtPosition</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>ac6efeb562212300dfd7e08936027b2b6</Anchor>
+    <Abstract>Compute the pile up degree at the given position.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClustersInDebugMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a1e1853068712fa3eeec399d6e9a8f2bc</Anchor>
+    <Abstract>Output the information computed for the clusters visually in a separate window.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClusterInDebugMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>aaace678f25a976de72f03f4076bc0e0a</Anchor>
+    <Abstract>Display cluster on the image.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClusterShape</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a8dc451d799404ba7ecd72d85d2f7e955</Anchor>
+    <Abstract>Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image...</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClusterTriangularShape</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a9894288a54c8e3fdeff3917d81e2ad9b</Anchor>
+    <Abstract>Draw the best matching triangular shape of the cluster on the image.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClusterRectangularShape</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>ab7bfa2a55991a5708abfea7fa362214c</Anchor>
+    <Abstract>Draw the best matching rectangular shape of the cluster on the image.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClusterCircularShape</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>ab4e0ae4d5850be64ec2399d5c2c36828</Anchor>
+    <Abstract>Draw the best matching circular shape of the cluster on the image.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>thresholdedImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>aca2aae9914ef643a543a834e61b1cccf</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>height</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a9d0a0fe5d9ea0f2516d07bf44b1da257</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>width</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a4c66a82aa1749dce31c767bc4008d904</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>entityHeight</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a18b83e5060e319eca337189e0819d064</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>entityWidth</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a3f1027d3143c9a20516828d4b385e27b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialise</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aebd5a932b49dd420a9d2e73cd6afa7b4</Anchor>
+    <Abstract>Initialisation function for the class.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseClusteringValues</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a1464d37d8bcf96cf0f8b5538143cb5a9</Anchor>
+    <Abstract>Initialise clustering values.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isValidImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>ae0bd3b36341a602be89d2aa84b47e5b0</Anchor>
+    <Abstract>Check if the image is valid.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>createTrackbars</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a7332c81689d61b800007785c4974ce7a</Anchor>
+    <Abstract>Create the trackbars.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a1c69ae8027124dbf0f36c7d859b159be</Anchor>
+    <Abstract>Detect the clusters in the provided image.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectClustersInDebugMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>ac90824ef29684966a2459a36cd521f48</Anchor>
+    <Abstract>Detect the clusters in the provided image in debug mode.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectClustersInNormalMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a582c28920bd87931948819ed0024e4b8</Anchor>
+    <Abstract>Detect the clusters in the provided image in normal mode.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>findClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a873ec1e214a0817c2958378093376e89</Anchor>
+    <Abstract>Find clusters in the provided image.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectAndAnalyseClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a46f98e066e74171774f0b6728118bc7b</Anchor>
+    <Abstract>Detect and analyse the clusters of entities in the image.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a8c9c3ac0c3d8e924468a58f558984dda</Anchor>
+    <Abstract>Detect the clusters of entities in the image.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>convertEntities</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aa45fe0a4a548b4d44407ee7f346e66d3</Anchor>
+    <Abstract>Convert the entities to the required format by the DBSCAN class.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>addEntitiesToClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aefc4d0736d8af4ab53f1e5e76440f447</Anchor>
+    <Abstract>Add the entities to the clusters as indicated by the clusterIndexes parameter.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>analyseClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>af994e960ba3cd76cc67e714ea276264a</Anchor>
+    <Abstract>Analyse the clusters.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeClusterednessIndex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aaa7937daf9872614e09b23cb4f6e5aa8</Anchor>
+    <Abstract>Compute the clusteredness index for all the entities detected in the image.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeAveragePileUpDegree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a1efab8446c79feb8a9285d895bb64b05</Anchor>
+    <Abstract>Compute the average pile up degree for all entities in the image.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a49cb6e763fec53dfa3dd769351c280ab</Anchor>
+    <Abstract>Output the information computed for the clusters.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClustersAsCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a64d699b579ec010ebc495d9d7774d3d2</Anchor>
+    <Abstract>Output the information computed for the clusters in a csv file.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClustersAsCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a3d1d211ae726fdeff1d1633b3892f1d0</Anchor>
+    <Abstract>Output the information computed for the clusters in a csv file.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>displayImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a19e76d92a93bb69cbe1c7cddeafe4d96</Anchor>
+    <Abstract>Display an image in a particular window.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>convertEpsValue</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>afccb86bfb93df00fff8408faea7a2651</Anchor>
+    <Abstract>Convert the value of eps from integer to double.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>image</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a02887cd17526e25dc9e99086590df685</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputFilepath</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>ae24077be8f3ddc4decf3d4304e41fec1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>debugMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a8efd24929d653df8a9d92723878394f0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>clusterednessIndex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a5e2bf77041bd0d5047dd16c4632c16b7</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avgPileUpDegree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a6f6cfa50cf21ac400d41d6c6f2112bc9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>eps</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a61e876f87d62245eada8f56d587d39cd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>minPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aa94df1adc462be5931ec25ba24122fe9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::analysis::Cluster</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -2875,7 +3692,7 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a21807d4d70d5dabb13eeee561237dcaa</Anchor>
+    <Anchor>ac93832bbbb478747825538e53646c166</Anchor>
     <Abstract>Get the degree of clusteredness.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
@@ -2887,7 +3704,7 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>af5c3c9501a43b46b8fbafdd6332d1c12</Anchor>
+    <Anchor>acff6c7308641af041598bed55005f2bf</Anchor>
     <Abstract>Get the degree of pile up.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
@@ -2899,7 +3716,7 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a5076075e1278b70a1361df747ff89175</Anchor>
+    <Anchor>a33d8ef7eb3b9e9475c7120a4eaae09bd</Anchor>
     <Abstract>Get the area.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
@@ -2911,8 +3728,56 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a3023fab07bca5b70120d2faeb35ac9d1</Anchor>
+    <Anchor>ada6b14fcff697b3e7365070dd13513c7</Anchor>
     <Abstract>Get the shape best fitting the cluster of entities.</Abstract>
+    <DeclaredIn>Cluster.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getMinAreaEnclosingTriangle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Cluster</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+    <Anchor>a9432f23f7c776108ccad35b8640bd3c7</Anchor>
+    <Abstract>Get the minimum area enclosing triangle.</Abstract>
+    <DeclaredIn>Cluster.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getMinAreaEnclosingRect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Cluster</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+    <Anchor>a6417e3328622a848a7dedeebb5821750</Anchor>
+    <Abstract>Get the minimum area enclosing rectangle.</Abstract>
+    <DeclaredIn>Cluster.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getMinAreaEnclosingCircleCentre</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Cluster</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+    <Anchor>a4d93f85faf929336818248e1fd604fb6</Anchor>
+    <Abstract>Get the minimum area enclosing circle centre.</Abstract>
+    <DeclaredIn>Cluster.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getMinAreaEnclosingCircleRadius</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Cluster</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+    <Anchor>aecf5fa56fa21e3b22130242694be744f</Anchor>
+    <Abstract>Get the minimum area enclosing circle radius.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2923,7 +3788,7 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>aacd49c175fec9728b17291c74c410d3b</Anchor>
+    <Anchor>a8fdd4229c940bc76c28df9df1ca57ee5</Anchor>
     <Abstract>Get the point defining the centre of the entity.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
@@ -3169,6 +4034,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>minAreaEnclosingTriangle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Cluster</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+    <Anchor>a2a370edd065e8c6b78788afa3754fae2</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>minAreaEnclosingRect</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -3196,16 +4071,6 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
     <Anchor>a070994481884a4c7f5aa4879ce7b0568</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>minAreaEnclosingTriangle</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::Cluster</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a2a370edd065e8c6b78788afa3754fae2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3306,14 +4171,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initialiseImageDependentMembers</Name>
+      <Name>initialiseClusteringValues</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a1a19ddf8e6fd273b34f3d1d0898b8e33</Anchor>
-    <Abstract>Initialise the values of the member fields which depend on the input image.</Abstract>
+    <Anchor>a1464d37d8bcf96cf0f8b5538143cb5a9</Anchor>
+    <Abstract>Initialise clustering values.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3324,7 +4189,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a9383949ba2ec304663268bb6e3f2ebb2</Anchor>
+    <Anchor>ae0bd3b36341a602be89d2aa84b47e5b0</Anchor>
     <Abstract>Check if the image is valid.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3336,7 +4201,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>abca03c25193fe460a738f93f8741f7a5</Anchor>
+    <Anchor>a7332c81689d61b800007785c4974ce7a</Anchor>
     <Abstract>Create the trackbars.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3384,7 +4249,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ac98d5c84a97eb5c2b6ff996eb1959648</Anchor>
+    <Anchor>a873ec1e214a0817c2958378093376e89</Anchor>
     <Abstract>Find clusters in the provided image.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3402,14 +4267,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>detectClusters</Name>
+      <Name>detectAndAnalyseClusters</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ab21f55fe6e3840c18e9eb2fe0bab4540</Anchor>
-    <Abstract>Detect the clusters of entities in the image.</Abstract>
+    <Anchor>a46f98e066e74171774f0b6728118bc7b</Anchor>
+    <Abstract>Detect and analyse the clusters of entities in the image.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3420,8 +4285,20 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a5d83c834f72314b91e4bf88c80607996</Anchor>
+    <Anchor>a8c9c3ac0c3d8e924468a58f558984dda</Anchor>
     <Abstract>Detect the clusters of entities in the image.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>convertEntities</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aa45fe0a4a548b4d44407ee7f346e66d3</Anchor>
+    <Abstract>Convert the entities to the required format by the DBSCAN class.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3432,7 +4309,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a4982a49faecb03537026c8221c84041b</Anchor>
+    <Anchor>aefc4d0736d8af4ab53f1e5e76440f447</Anchor>
     <Abstract>Add the entities to the clusters as indicated by the clusterIndexes parameter.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3444,7 +4321,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a76d2ea235fc1d78239fccd35054c5a29</Anchor>
+    <Anchor>af994e960ba3cd76cc67e714ea276264a</Anchor>
     <Abstract>Analyse the clusters.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3456,7 +4333,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>aeb107826159f2d34217944cc258674b5</Anchor>
+    <Anchor>aaa7937daf9872614e09b23cb4f6e5aa8</Anchor>
     <Abstract>Compute the clusteredness index for all the entities detected in the image.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3468,7 +4345,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a38fcb78f1c5b966e46d1325f2f22017e</Anchor>
+    <Anchor>a1efab8446c79feb8a9285d895bb64b05</Anchor>
     <Abstract>Compute the average pile up degree for all entities in the image.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3480,7 +4357,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ad9b13212a56f15d0d2cc4f92da945012</Anchor>
+    <Anchor>a49cb6e763fec53dfa3dd769351c280ab</Anchor>
     <Abstract>Output the information computed for the clusters.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3492,7 +4369,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>aa72d1ba79f7f60b12c6b5c65c63c8cfd</Anchor>
+    <Anchor>ad139564f58d5b2308dcf04eee304d0f2</Anchor>
     <Abstract>Output the information computed for the clusters visually in a separate window.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3504,7 +4381,19 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a5e3afe2ce1da4a2cac787a841f6bbad5</Anchor>
+    <Anchor>a64d699b579ec010ebc495d9d7774d3d2</Anchor>
+    <Abstract>Output the information computed for the clusters in a csv file.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClustersAsCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a3d1d211ae726fdeff1d1633b3892f1d0</Anchor>
     <Abstract>Output the information computed for the clusters in a csv file.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3518,6 +4407,18 @@
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>a19e76d92a93bb69cbe1c7cddeafe4d96</Anchor>
     <Abstract>Display an image in a particular window.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>convertEpsValue</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>afccb86bfb93df00fff8408faea7a2651</Anchor>
+    <Abstract>Convert the value of eps from integer to double.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3552,13 +4453,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>avgClusterednessDegree</Name>
+      <Name>clusterednessIndex</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a7d81230f7d43cf338ea20da20acd7215</Anchor>
+    <Anchor>a5e2bf77041bd0d5047dd16c4632c16b7</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3578,7 +4479,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a19570a9689495dfef16fa8655abc7453</Anchor>
+    <Anchor>a61e876f87d62245eada8f56d587d39cd</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3589,6 +4490,209 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>aa94df1adc462be5931ec25ba24122fe9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::analysis::DataPoint</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::analysis::DataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+    <DeclaredIn>DataPoint.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~DataPoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::DataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+    <Anchor>ab7a7d2baf190376980cd3c2e130a9905</Anchor>
+    <DeclaredIn>DataPoint.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>distanceTo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::DataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+    <Anchor>a8dd5def96eab756085461e8f6a201dce</Anchor>
+    <Abstract>Compute the distance between this data point and another one.</Abstract>
+    <DeclaredIn>DataPoint.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::analysis::DBSCAN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>run</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>aed71fe17e6d922819499ff31bc4a6cf4</Anchor>
+    <Abstract>Run the improved DBSCAN algorithm on the provided set of points.</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>runAlgorithm</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>a871b5ac801d93a753443b30e00d39896</Anchor>
+    <Abstract>Run the improved DBSCAN algorithm on the provided set of points.</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>constructDistanceMatrix</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>a4770eddfc02c41deb114e5d42affd93a</Anchor>
+    <Abstract>Construct the distance matrix between any two data points.</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>expandCoreCluster</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>ae9dc899c0ce2e5679e3c51ca9e54963c</Anchor>
+    <Abstract>Expand the cluster around the given core data point.</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>addUnclassifiedNodesToSeedsList</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>a6ead683810b4f04a48cd0a4d0f5f7a6b</Anchor>
+    <Abstract>Add all unclassified neighbour nodes to the seeds list.</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>labelUnclassifiedAndNoiseAsBorder</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>a5b0d19aab403005cac7fbe0851f5a969</Anchor>
+    <Abstract>Label all unclassified and noise neighbour nodes as border nodes.</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>retrieveNeighbours</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>a2524149cf55398e2038aaa389b56bfec</Anchor>
+    <Abstract>Retrieve the list of neighbour indexes which are at a distance &amp;lt; eps far from the given data point...</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>assignBorderNodesToClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>a1c55a2e893f28de4a68129407c55d5f3</Anchor>
+    <Abstract>Assign the border nodes to the clusters to which the closest core objects belong.</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>findClosestCoreDataPoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>a988f4484bcf65ea0444b0e1f0a4bce7f</Anchor>
+    <Abstract>Find the closest core data point from the given set of neighbours to the given border data point...</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>allocateDistanceMatrix</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>af50079a4d370fb35b13b0a1557a454f0</Anchor>
+    <Abstract>Allocate the distance matrix.</Abstract>
+    <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>eps</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>ac19e3e98b0db882c5676088a34197ec7</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>minPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>a285a04240518d17e99565d78e9b78ff0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>nrOfDataPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>a3dc35392b02ad266642901964d3b3076</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>distanceMatrix</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::DBSCAN</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Anchor>aa54a9933d643b06a6a2624d6f76b700f</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3610,6 +4714,17 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
     <Anchor>af0b3984eda0ae9e2e7d14277efd48954</Anchor>
+    <DeclaredIn>Entity.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Entity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Entity</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+    <Anchor>ab7136fc011809bc9bcc43862fd4c38ae</Anchor>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3670,6 +4785,41 @@
     <Anchor>aedae50d85d369b0e68fa6433d7e3fec6</Anchor>
     <Abstract>Get a string representation of all the field values.</Abstract>
     <DeclaredIn>Entity.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>distanceTo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Entity</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+    <Anchor>ac14148e411030e959e36e8da0bd60736</Anchor>
+    <Abstract>Get the distance between this entity and another one.</Abstract>
+    <DeclaredIn>Entity.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>distanceTo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Entity</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+    <Anchor>a9c3eb0f38038fe3bd0b7680c62577a64</Anchor>
+    <Abstract>Get the distance between this entity and another one.</Abstract>
+    <DeclaredIn>Entity.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~DataPoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::DataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+    <Anchor>ab7a7d2baf190376980cd3c2e130a9905</Anchor>
+    <DeclaredIn>DataPoint.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>

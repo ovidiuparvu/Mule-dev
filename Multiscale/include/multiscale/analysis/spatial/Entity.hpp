@@ -10,8 +10,10 @@
 using namespace cv;
 using namespace std;
 
-#define ERR_INPUT       "Invalid input parameters were provided to the constructor."
-#define ERR_DISTANCE    "The distance to an object of a different type cannot be computed."
+#define ERR_INPUT           "Invalid input parameters were provided to the constructor."
+#define ERR_DISTANCE        "The distance to an object of a different type cannot be computed."
+
+#define OUTPUT_SEPARATOR    ","
 
 
 namespace multiscale {
@@ -31,6 +33,7 @@ namespace multiscale {
             public:
 
                 Entity(double pileUpDegree, double area, const Point &centre);
+                Entity(const Entity &entity);
                 ~Entity();
 
                 //! Get the degree of pile up
@@ -46,7 +49,10 @@ namespace multiscale {
                 string toString();
 
                 //! Get the distance between this entity and another one
-                double distanceTo(const DataPoint &point);
+                double distanceTo(shared_ptr<DataPoint> point);
+
+                //! Get the distance between this entity and another one
+                double distanceTo(const Entity &entity);
 
             private:
 

@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Multiscale
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('Cluster_8hpp.html','');});
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="Cluster_8hpp__incl.png" border="0" usemap="#include_2multiscale_2analysis_2spatial_2Cluster_8hpp" alt=""/></div>
 <map name="include_2multiscale_2analysis_2spatial_2Cluster_8hpp" id="include_2multiscale_2analysis_2spatial_2Cluster_8hpp">
-<area shape="rect" id="node5" href="Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="125,102,259,149"/><area shape="rect" id="node10" href="Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="333,102,480,149"/></map>
+<area shape="rect" id="node5" href="Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="232,102,365,149"/><area shape="rect" id="node14" href="Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="440,102,587,149"/><area shape="rect" id="node7" href="DataPoint_8hpp.html" title="multiscale/analysis\l/spatial/DataPoint.hpp" alt="" coords="224,198,373,245"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('Cluster_8hpp.html','');});
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="Cluster_8hpp__dep__incl.png" border="0" usemap="#include_2multiscale_2analysis_2spatial_2Cluster_8hppdep" alt=""/></div>
 <map name="include_2multiscale_2analysis_2spatial_2Cluster_8hppdep" id="include_2multiscale_2analysis_2spatial_2Cluster_8hppdep">
-<area shape="rect" id="node3" href="ClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/ClusterDetector.hpp" alt="" coords="5,102,243,149"/><area shape="rect" id="node7" href="Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="267,102,421,149"/><area shape="rect" id="node5" href="ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="32,198,216,245"/></map>
+<area shape="rect" id="node3" href="ClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/ClusterDetector.hpp" alt="" coords="227,102,464,149"/><area shape="rect" id="node13" href="Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="488,102,643,149"/><area shape="rect" id="node5" href="SimulationClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/cluster\l/SimulationClusterDetector.hpp" alt="" coords="136,197,339,261"/><area shape="rect" id="node11" href="ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="363,206,547,253"/><area shape="rect" id="node7" href="SimulationClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,309,219,373"/><area shape="rect" id="node9" href="SimulationDetectClusters_8cpp.html" title="src/multiscale/analysis\l/spatial/SimulationDetectClusters.cpp" alt="" coords="243,318,485,365"/></map>
 </div>
 </div>
 <p><a href="Cluster_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -158,6 +158,8 @@ Macros</h2></td></tr>
 <tr class="separator:a6118590055a4d065d89fb2572e82fb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59a44e46858e41be91426108858362de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8hpp.html#a59a44e46858e41be91426108858362de">STR_CIRCLE</a>&#160;&#160;&#160;&quot;circle&quot;</td></tr>
 <tr class="separator:a59a44e46858e41be91426108858362de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80cfbe7456c7d029544e8bc2cec16c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a>&#160;&#160;&#160;&quot;,&quot;</td></tr>
+<tr class="separator:ad80cfbe7456c7d029544e8bc2cec16c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fdd779f7dc41df9ddcde20f1f1d2978"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Cluster_8hpp.html#a1fdd779f7dc41df9ddcde20f1f1d2978">ERR_UNDEFINED_SHAPE</a>&#160;&#160;&#160;&quot;The shape of the given cluster is undefined.&quot;</td></tr>
 <tr class="separator:a1fdd779f7dc41df9ddcde20f1f1d2978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -172,9 +174,25 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00021">21</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00085">multiscale::analysis::SimulationClusterDetector::outputClusterShape()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00230">multiscale::analysis::Cluster::shapeAsString()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad80cfbe7456c7d029544e8bc2cec16c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_SEPARATOR&#160;&#160;&#160;&quot;,&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00019">19</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00206">multiscale::analysis::Cluster::shapeAsString()</a>.</p>
+<p>Referenced by <a class="el" href="PolarCsvToInputFilesConverter_8cpp_source.html#l00089">multiscale::video::PolarCsvToInputFilesConverter::initOutputFile()</a>, <a class="el" href="RectangularCsvToInputFilesConverter_8cpp_source.html#l00088">multiscale::video::RectangularCsvToInputFilesConverter::initOutputFile()</a>, <a class="el" href="RectangularGnuplotScriptGenerator_8cpp_source.html#l00082">multiscale::video::RectangularGnuplotScriptGenerator::outputContent()</a>, <a class="el" href="PolarCsvToInputFilesConverter_8cpp_source.html#l00181">multiscale::video::PolarCsvToInputFilesConverter::processLine()</a>, <a class="el" href="RectangularCsvToInputFilesConverter_8cpp_source.html#l00180">multiscale::video::RectangularCsvToInputFilesConverter::processLine()</a>, <a class="el" href="Entity_8cpp_source.html#l00040">multiscale::analysis::Entity::toString()</a>, <a class="el" href="Region_8cpp_source.html#l00039">multiscale::analysis::Region::toString()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00078">multiscale::analysis::Cluster::toString()</a>.</p>
 
 </div>
 </div>
@@ -190,7 +208,7 @@ Macros</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00013">13</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00162">multiscale::Geometry2D::angleBtwPoints()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00194">multiscale::analysis::Cluster::isCircularProbability()</a>.</p>
+<p>Referenced by <a class="el" href="Geometry2D_8cpp_source.html#l00162">multiscale::Geometry2D::angleBtwPoints()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00218">multiscale::analysis::Cluster::isCircularProbability()</a>.</p>
 
 </div>
 </div>
@@ -206,7 +224,7 @@ Macros</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00017">17</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00206">multiscale::analysis::Cluster::shapeAsString()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00230">multiscale::analysis::Cluster::shapeAsString()</a>.</p>
 
 </div>
 </div>
@@ -222,7 +240,7 @@ Macros</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00016">16</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00206">multiscale::analysis::Cluster::shapeAsString()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00230">multiscale::analysis::Cluster::shapeAsString()</a>.</p>
 
 </div>
 </div>
@@ -238,7 +256,7 @@ Macros</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00015">15</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00206">multiscale::analysis::Cluster::shapeAsString()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00230">multiscale::analysis::Cluster::shapeAsString()</a>.</p>
 
 </div>
 </div>
@@ -248,7 +266,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_617023d10e7618f3fc87fd3542a5b75d.html">analysis</a></li><li class="navelem"><a class="el" href="dir_525f610367b169c5221b707333271043.html">spatial</a></li><li class="navelem"><a class="el" href="Cluster_8hpp.html">Cluster.hpp</a></li>
-    <li class="footer">Generated on Thu Jul 4 2013 15:32:50 for Multiscale by
+    <li class="footer">Generated on Fri Jul 5 2013 18:51:16 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

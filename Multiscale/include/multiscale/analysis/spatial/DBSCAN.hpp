@@ -1,6 +1,9 @@
 #ifndef DBSCAN_HPP
 #define DBSCAN_HPP
 
+#include "multiscale/analysis/spatial/DataPoint.hpp"
+
+#include <memory>
 #include <vector>
 
 using namespace std;
@@ -18,10 +21,12 @@ namespace multiscale {
 
             private:
 
-                double eps;                                     /*!< DBSCAN algorithm parameter for specifying the maximum radius
+                static double eps;                              /*!< DBSCAN algorithm parameter for specifying the maximum radius
                                                                      of the neighbourhood */
-                int minPoints;                                  /*!< DBSCAN algorithm parameter for specifying the minimum number
+                static unsigned int minPoints;                  /*!< DBSCAN algorithm parameter for specifying the minimum number
                                                                      of points in an eps-neighbourhood of that point */
+
+                static int nrOfDataPoints;                      /*!< Number of data points in the data set */
 
                 static vector<vector<double>> distanceMatrix;   /*!< The matrix containing the distances between any two data points */
 
@@ -39,7 +44,7 @@ namespace multiscale {
                  *  \param eps              Maximum distance between two neighbours
                  *  \param minPoints        Minimum number of points in one cluster
                  */
-                static void run(const vector<DataPoint> &dataPoints, vector<int> clusterIndexes, int &nrOfClusters,
+                static void run(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> clusterIndexes, int &nrOfClusters,
                                 double eps, int minPoints);
 
             private:
@@ -54,51 +59,61 @@ namespace multiscale {
                  *  \param clusterIndexes   Indexes to which cluster each data point belongs
                  *  \param nrOfClusters     Total number of clusters
                  */
-                static void runAlgorithm(const vector<DataPoint> &dataPoints, vector<int> clusterIndexes, int &nrOfClusters);
+                static void runAlgorithm(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> clusterIndexes, int &nrOfClusters);
 
                 //! Construct the distance matrix between any two data points
                 /*!
                  * \param dataPoints Data points
                  */
-                static void constructDistanceMatrix(const vector<DataPoint> &dataPoints);
+                static void constructDistanceMatrix(const vector<shared_ptr<DataPoint>> &dataPoints);
 
                 //! Expand the cluster around the given core data point
                 /*!
-                 *  \param dataPoints           Collection of data points
                  *  \param clusterIndexes       Indexes to which cluster each data point belongs
                  *  \param nrOfClusters         Total number of clusters
                  *  \param coreDataPointIndex   Core data point index
                  *  \param clusterId            Id of the cluster to which the core data point belongs
                  */
-                static bool expandCoreCluster(const vector<DataPoint> &dataPoints, vector<int> clusterIndexes,
-                                              int &nrOfClusters, int coreDataPointIndex, int clusterId);
+                static bool expandCoreCluster(vector<int> clusterIndexes, int &nrOfClusters, int coreDataPointIndex,
+                                              int clusterId);
 
-                //! Mark the given data point as noise
+                //! Add all unclassified neighbour nodes to the seeds list
                 /*!
-                 *  \param clusterIndexes   Indexes to which cluster each data point belongs
-                 *  \param dataPointIndex   Index of the data point
+                 * \param neighbours        Neighbour nodes
+                 * \param clusterIndexes    Indexes to which cluster each data point belongs
+                 * \param seeds             List of seeds (see DBSCAN algorithm)
                  */
-                static void markDataPointAsNoise(vector<int> &clusterIndexes, int dataPointIndex);
+                static void addUnclassifiedNodesToSeedsList(const vector<int> &neighbours, const vector<int> &clusterIndexes,
+                                                            vector<int> &seeds);
+
+               //! Label all unclassified and noise neighbour nodes as border nodes
+               /*!
+                * \param neighbours        Neighbour nodes
+                * \param clusterIndexes    Indexes to which cluster each data point belongs
+                */
+                static void labelUnclassifiedAndNoiseAsBorder(const vector<int> &neighbours, vector<int> &clusterIndexes);
 
                 //! Retrieve the list of neighbour indexes which are at a distance < eps far from the given data point
                 /*!
                  * \param dataPointIndex    Index of the data point for which the neighbours will be retrieved
-                 * \param dataPoints        Data points
                  */
-                static vector<int> retrieveNeighbours(int dataPointIndex, const vector<DataPoint> &dataPoints);
+                static vector<int> retrieveNeighbours(int dataPointIndex);
 
                 //! Assign the border nodes to the clusters to which the closest core objects belong
                 /*!
-                 * \param dataPoints        Data points
                  * \param clusterIndexes    Indexes to which cluster each data point belongs
                  */
-                static void assignBorderNodesToClusters(const vector<DataPoint> &dataPoints, vector<int> clusterIndexes);
+                static void assignBorderNodesToClusters(vector<int> &clusterIndexes);
+
+                //! Find the closest core data point from the given set of neighbours to the given border data point
+                /*!
+                 * \param neighbours Set of neighbours
+                 * \param borderDataPointIndex Index of the border data point
+                 */
+                static int findClosestCoreDataPoint(const vector<int> &neighbours, int borderDataPointIndex);
 
                 //! Allocate the distance matrix
-                /*!
-                 * \param nrOfDataPoints Number of data points
-                 */
-                static void allocateDistanceMatrix(int nrOfDataPoints);
+                static void allocateDistanceMatrix();
         };
 
     };

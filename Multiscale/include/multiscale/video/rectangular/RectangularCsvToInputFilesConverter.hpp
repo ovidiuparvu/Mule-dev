@@ -48,7 +48,7 @@ namespace multiscale {
                                                                  N is the number of concentrations for each position
                                                             */
 
-                bool useLogScaling;                  /*!< Flag for using logarithmic scaling for concentrations or not */
+                bool useLogScaling;                 /*!< Flag for using logarithmic scaling for concentrations or not */
 
                 double maximumConcentration;        /*!< The maximum concentration in the input file */
 

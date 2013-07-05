@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Multiscale
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -110,7 +110,8 @@ $(document).ready(function(){initNavTree('Entity_8hpp.html','');});
 <div class="title">Entity.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;opencv2/imgproc/imgproc.hpp&quot;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="DataPoint_8hpp_source.html">multiscale/analysis/spatial/DataPoint.hpp</a>&quot;</code><br/>
+<code>#include &quot;opencv2/imgproc/imgproc.hpp&quot;</code><br/>
 <code>#include &lt;vector&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for Entity.hpp:</div>
@@ -118,6 +119,8 @@ $(document).ready(function(){initNavTree('Entity_8hpp.html','');});
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="Entity_8hpp__incl.png" border="0" usemap="#include_2multiscale_2analysis_2spatial_2Entity_8hpp" alt=""/></div>
+<map name="include_2multiscale_2analysis_2spatial_2Entity_8hpp" id="include_2multiscale_2analysis_2spatial_2Entity_8hpp">
+<area shape="rect" id="node3" href="DataPoint_8hpp.html" title="multiscale/analysis\l/spatial/DataPoint.hpp" alt="" coords="5,102,155,149"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -126,7 +129,7 @@ $(document).ready(function(){initNavTree('Entity_8hpp.html','');});
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="Entity_8hpp__dep__incl.png" border="0" usemap="#include_2multiscale_2analysis_2spatial_2Entity_8hppdep" alt=""/></div>
 <map name="include_2multiscale_2analysis_2spatial_2Entity_8hppdep" id="include_2multiscale_2analysis_2spatial_2Entity_8hppdep">
-<area shape="rect" id="node3" href="Cluster_8hpp.html" title="include/multiscale\l/analysis/spatial/Cluster.hpp" alt="" coords="161,102,348,149"/><area shape="rect" id="node5" href="ClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/ClusterDetector.hpp" alt="" coords="5,198,243,245"/><area shape="rect" id="node12" href="Entity_8cpp.html" title="src/multiscale/analysis\l/spatial/Entity.cpp" alt="" coords="372,102,527,149"/><area shape="rect" id="node9" href="Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="267,198,421,245"/><area shape="rect" id="node7" href="ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="32,294,216,341"/></map>
+<area shape="rect" id="node3" href="Cluster_8hpp.html" title="include/multiscale\l/analysis/spatial/Cluster.hpp" alt="" coords="383,102,569,149"/><area shape="rect" id="node5" href="ClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/ClusterDetector.hpp" alt="" coords="227,198,464,245"/><area shape="rect" id="node18" href="Entity_8cpp.html" title="src/multiscale/analysis\l/spatial/Entity.cpp" alt="" coords="593,102,748,149"/><area shape="rect" id="node15" href="Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="488,198,643,245"/><area shape="rect" id="node7" href="SimulationClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/cluster\l/SimulationClusterDetector.hpp" alt="" coords="136,293,339,357"/><area shape="rect" id="node13" href="ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="363,302,547,349"/><area shape="rect" id="node9" href="SimulationClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,405,219,469"/><area shape="rect" id="node11" href="SimulationDetectClusters_8cpp.html" title="src/multiscale/analysis\l/spatial/SimulationDetectClusters.cpp" alt="" coords="243,414,485,461"/></map>
 </div>
 </div>
 <p><a href="Entity_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -148,8 +151,28 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a617a89dc9ced4a63643f98263cde3e91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Entity_8hpp.html#a617a89dc9ced4a63643f98263cde3e91">ERR_INPUT</a>&#160;&#160;&#160;&quot;Invalid input parameters were provided to the constructor.&quot;</td></tr>
 <tr class="separator:a617a89dc9ced4a63643f98263cde3e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f387ccbb38cba9aaf69812abc6c505"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Entity_8hpp.html#a71f387ccbb38cba9aaf69812abc6c505">ERR_DISTANCE</a>&#160;&#160;&#160;&quot;The distance to an object of a different type cannot be computed.&quot;</td></tr>
+<tr class="separator:a71f387ccbb38cba9aaf69812abc6c505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80cfbe7456c7d029544e8bc2cec16c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Entity_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a>&#160;&#160;&#160;&quot;,&quot;</td></tr>
+<tr class="separator:ad80cfbe7456c7d029544e8bc2cec16c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a71f387ccbb38cba9aaf69812abc6c505"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ERR_DISTANCE&#160;&#160;&#160;&quot;The distance to an object of a different type cannot be computed.&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Entity_8hpp_source.html#l00014">14</a> of file <a class="el" href="Entity_8hpp_source.html">Entity.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Entity_8cpp_source.html#l00046">multiscale::analysis::Entity::distanceTo()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a617a89dc9ced4a63643f98263cde3e91"></a>
 <div class="memitem">
 <div class="memproto">
@@ -160,9 +183,23 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Entity_8hpp_source.html#l00011">11</a> of file <a class="el" href="Entity_8hpp_source.html">Entity.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Entity_8hpp_source.html#l00013">13</a> of file <a class="el" href="Entity_8hpp_source.html">Entity.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Entity_8cpp_source.html#l00007">multiscale::analysis::Entity::Entity()</a>.</p>
+<p>Referenced by <a class="el" href="Entity_8cpp_source.html#l00008">multiscale::analysis::Entity::Entity()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad80cfbe7456c7d029544e8bc2cec16c8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_SEPARATOR&#160;&#160;&#160;&quot;,&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Entity_8hpp_source.html#l00016">16</a> of file <a class="el" href="Entity_8hpp_source.html">Entity.hpp</a>.</p>
 
 </div>
 </div>
@@ -172,7 +209,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_617023d10e7618f3fc87fd3542a5b75d.html">analysis</a></li><li class="navelem"><a class="el" href="dir_525f610367b169c5221b707333271043.html">spatial</a></li><li class="navelem"><a class="el" href="Entity_8hpp.html">Entity.hpp</a></li>
-    <li class="footer">Generated on Thu Jul 4 2013 15:32:50 for Multiscale by
+    <li class="footer">Generated on Fri Jul 5 2013 18:51:16 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

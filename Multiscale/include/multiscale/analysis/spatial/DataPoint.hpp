@@ -1,5 +1,9 @@
-#ifndef DATAPOINT_HPP_
-#define DATAPOINT_HPP_
+#ifndef DATAPOINT_HPP
+#define DATAPOINT_HPP
+
+#include <memory>
+
+using namespace std;
 
 namespace multiscale {
 
@@ -12,13 +16,15 @@ namespace multiscale {
                 virtual ~DataPoint() {};
 
                 //! Compute the distance between this data point and another one
-                virtual double distanceTo(const DataPoint &p) = 0;
+                /*!
+                 * \param point Data point to which the distance is measured
+                 */
+                virtual double distanceTo(shared_ptr<DataPoint> point) = 0;
 
         };
 
     };
 
 };
-
 
 #endif

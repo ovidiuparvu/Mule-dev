@@ -24,7 +24,7 @@ var NAVTREE =
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
+        [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -35,8 +35,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AnnularSector_8cpp.html",
-"RegionDetector_8hpp.html#a802932639681d325fff007066f0df5c4",
-"classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html"
+"RegionDetector_8cpp.html",
+"classmultiscale_1_1analysis_1_1RegionDetector.html#a23c831170c2264dd7e59067a1a7d3c8e",
+"globals_0x6f.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

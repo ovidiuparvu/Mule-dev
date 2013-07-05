@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Multiscale
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -206,8 +206,8 @@ $(document).ready(function(){initNavTree('PolarCsvToInputFilesConverter_8cpp_sou
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    assert(fout.is_open());</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    fout &lt;&lt; nrOfConcentricCircles &lt;&lt; <a class="code" href="Region_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;         &lt;&lt; nrOfSectors           &lt;&lt; <a class="code" href="Region_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    fout &lt;&lt; nrOfConcentricCircles &lt;&lt; <a class="code" href="Cluster_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;         &lt;&lt; nrOfSectors           &lt;&lt; <a class="code" href="Cluster_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;         &lt;&lt; simulationTime        &lt;&lt; endl;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
@@ -298,7 +298,7 @@ $(document).ready(function(){initNavTree('PolarCsvToInputFilesConverter_8cpp_sou
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 1; i &lt; nrOfConcentricCircles; i++) {</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = 0; j &lt; (nrOfSectors - 1); j++) {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            fout &lt;&lt; concentrations[(i - 1) * nrOfSectors + j + 1] &lt;&lt; <a class="code" href="Region_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            fout &lt;&lt; concentrations[(i - 1) * nrOfSectors + j + 1] &lt;&lt; <a class="code" href="Cluster_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a>;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        fout &lt;&lt; concentrations[i * nrOfSectors] &lt;&lt; endl;</div>
@@ -448,7 +448,7 @@ $(document).ready(function(){initNavTree('PolarCsvToInputFilesConverter_8cpp_sou
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_181e58fb894b6db2e2ebe48170ed182a.html">video</a></li><li class="navelem"><a class="el" href="dir_9ab520bd455cc605d2cf735513bae990.html">circular</a></li><li class="navelem"><a class="el" href="PolarCsvToInputFilesConverter_8cpp.html">PolarCsvToInputFilesConverter.cpp</a></li>
-    <li class="footer">Generated on Thu Jul 4 2013 15:32:50 for Multiscale by
+    <li class="footer">Generated on Fri Jul 5 2013 18:51:16 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

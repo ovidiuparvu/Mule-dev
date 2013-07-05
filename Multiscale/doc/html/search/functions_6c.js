@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['labelunclassifiedandnoiseasborder',['labelUnclassifiedAndNoiseAsBorder',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a5b0d19aab403005cac7fbe0851f5a969',1,'multiscale::analysis::DBSCAN']]],
   ['lexicographicnumberiterator',['LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#a02a95a6f7876b84909e08555730ff08a',1,'multiscale::LexicographicNumberIterator']]],
   ['linecircleintersection',['lineCircleIntersection',['../classmultiscale_1_1Geometry2D.html#acd757a54d9ffa99752fc1cf6b4b29cc5',1,'multiscale::Geometry2D']]],
   ['linecircleoneintersectionpoint',['lineCircleOneIntersectionPoint',['../classmultiscale_1_1Geometry2D.html#af4baa01aa42d2517d70774fbe216239b',1,'multiscale::Geometry2D']]],

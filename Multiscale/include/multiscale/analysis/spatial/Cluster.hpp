@@ -16,6 +16,8 @@ using namespace std;
 #define STR_RECTANGLE       "rectangle"
 #define STR_CIRCLE          "circle"
 
+#define OUTPUT_SEPARATOR    ","
+
 #define ERR_UNDEFINED_SHAPE "The shape of the given cluster is undefined."
 
 
@@ -36,13 +38,13 @@ namespace multiscale {
                 double rectangularProbability;          /*!< Probability that the shape of the cluster is rectangular */
                 double circularProbability;             /*!< Probability that the shape of the cluster is circular */
 
+                // TODO: Update
+                vector<Point> minAreaEnclosingTriangle; /*!< The minimum area enclosing triangle */
+
                 RotatedRect minAreaEnclosingRect;       /*!< The minimum area enclosing rectangle */
 
                 Point2f minAreaEnclosingCircleCentre;   /*!< The minimum area enclosing circle centre point */
                 float minAreaEnclosingCircleRadius;     /*!< The minimum area enclosing circle radius */
-
-                // TODO: Update
-                vector<Point> minAreaEnclosingTriangle; /*!< The minimum area enclosing triangle */
 
                 Shape2D shape;                          /*!< Shape of the cluster */
                 Point centre;                           /*!< Point defining the centre of the cluster */
@@ -62,19 +64,31 @@ namespace multiscale {
                 void addEntity(const Entity &entity);
 
                 //! Get the degree of clusteredness
-                double getClusterednessDegree() const;
+                double getClusterednessDegree();
 
                 //! Get the degree of pile up
-                double getPileUpDegree() const;
+                double getPileUpDegree();
 
                 //! Get the area
-                double getArea() const;
+                double getArea();
 
                 //! Get the shape best fitting the cluster of entities
-                Shape2D getShape() const;
+                Shape2D getShape();
+
+                //! Get the minimum area enclosing triangle
+                vector<Point> getMinAreaEnclosingTriangle();
+
+                //! Get the minimum area enclosing rectangle
+                RotatedRect getMinAreaEnclosingRect();
+
+                //! Get the minimum area enclosing circle centre
+                Point2f getMinAreaEnclosingCircleCentre();
+
+                //! Get the minimum area enclosing circle radius
+                float getMinAreaEnclosingCircleRadius();
 
                 //! Get the point defining the centre of the entity
-                double getCentre() const;
+                Point getCentre();
 
                 //! Get the collection of underlying entities
                 vector<Entity> getEntities() const;

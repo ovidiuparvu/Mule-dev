@@ -12,5 +12,8 @@ var searchData=
   ['replace',['replace',['../classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b',1,'multiscale::StringManipulator']]],
   ['reset',['reset',['../classmultiscale_1_1NumberIterator.html#a9e22075eb67dd5ebf4b03a4a67734a36',1,'multiscale::NumberIterator']]],
   ['resetcurrentnumber',['resetCurrentNumber',['../classmultiscale_1_1LexicographicNumberIterator.html#a18311f68a49156a415c817a947abcd7d',1,'multiscale::LexicographicNumberIterator::resetCurrentNumber()'],['../classmultiscale_1_1StandardNumberIterator.html#a678d43170a27106e1d8c5475b7088d9e',1,'multiscale::StandardNumberIterator::resetCurrentNumber()'],['../classmultiscale_1_1NumberIterator.html#a21e658de178b6c957df5ea0482e6fbd6',1,'multiscale::NumberIterator::resetCurrentNumber()']]],
-  ['reversedigits',['reverseDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#a4c0a17e03a12256584d9ed3ae19a78c9',1,'multiscale::LexicographicNumberIterator']]]
+  ['retrieveneighbours',['retrieveNeighbours',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a2524149cf55398e2038aaa389b56bfec',1,'multiscale::analysis::DBSCAN']]],
+  ['reversedigits',['reverseDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#a4c0a17e03a12256584d9ed3ae19a78c9',1,'multiscale::LexicographicNumberIterator']]],
+  ['run',['run',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aed71fe17e6d922819499ff31bc4a6cf4',1,'multiscale::analysis::DBSCAN']]],
+  ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a871b5ac801d93a753443b30e00d39896',1,'multiscale::analysis::DBSCAN']]]
 ];

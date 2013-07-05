@@ -1,7 +1,10 @@
 var namespacemultiscale_1_1analysis =
 [
+    [ "SimulationClusterDetector", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html", "classmultiscale_1_1analysis_1_1SimulationClusterDetector" ],
     [ "Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", "classmultiscale_1_1analysis_1_1Cluster" ],
     [ "ClusterDetector", "classmultiscale_1_1analysis_1_1ClusterDetector.html", "classmultiscale_1_1analysis_1_1ClusterDetector" ],
+    [ "DataPoint", "classmultiscale_1_1analysis_1_1DataPoint.html", "classmultiscale_1_1analysis_1_1DataPoint" ],
+    [ "DBSCAN", "classmultiscale_1_1analysis_1_1DBSCAN.html", null ],
     [ "Entity", "classmultiscale_1_1analysis_1_1Entity.html", "classmultiscale_1_1analysis_1_1Entity" ],
     [ "CircularMatFactory", "classmultiscale_1_1analysis_1_1CircularMatFactory.html", "classmultiscale_1_1analysis_1_1CircularMatFactory" ],
     [ "RectangularMatFactory", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html", "classmultiscale_1_1analysis_1_1RectangularMatFactory" ],

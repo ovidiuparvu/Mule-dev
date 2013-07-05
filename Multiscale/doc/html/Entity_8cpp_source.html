@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Multiscale
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
   </td>
  </tr>
@@ -108,53 +108,76 @@ $(document).ready(function(){initNavTree('Entity_8cpp_source.html','');});
 <div class="contents">
 <a href="Entity_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Entity_8hpp.html">multiscale/analysis/spatial/Entity.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="StringManipulator_8hpp.html">multiscale/util/StringManipulator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>multiscale::analysis;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Geometry2D_8hpp.html">multiscale/util/Geometry2D.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>multiscale::analysis;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#af0b3984eda0ae9e2e7d14277efd48954">    7</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#af0b3984eda0ae9e2e7d14277efd48954">Entity::Entity</a>(<span class="keywordtype">double</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keyword">const</span> Point &amp;centre) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a424676e8bdda427a1ddd68db5063bbed" title="Check if the provided degree of pile up, area and centre are valid.">areValid</a>(pileUpDegree, area, centre))</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="Entity_8hpp.html#a617a89dc9ced4a63643f98263cde3e91">ERR_INPUT</a>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    this-&gt;pileUpDegree = <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    this-&gt;area = <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc">area</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;centre = <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#adf6d3f7cb1b2ba029b6b048a395cc8ae">   16</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#adf6d3f7cb1b2ba029b6b048a395cc8ae">Entity::~Entity</a>() {}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a2b90f7783c4e3aa5836964bcc1cf0796">   18</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a2b90f7783c4e3aa5836964bcc1cf0796" title="Get the degree of pile up.">Entity::getPileUpDegree</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a5daf3865a5f3bfd4d4dd2fe0262af889">   22</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a5daf3865a5f3bfd4d4dd2fe0262af889" title="Get the area.">Entity::getArea</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc">area</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#af0b3984eda0ae9e2e7d14277efd48954">    8</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#af0b3984eda0ae9e2e7d14277efd48954">Entity::Entity</a>(<span class="keywordtype">double</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keyword">const</span> Point &amp;centre) {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a424676e8bdda427a1ddd68db5063bbed" title="Check if the provided degree of pile up, area and centre are valid.">areValid</a>(pileUpDegree, area, centre))</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="Entity_8hpp.html#a617a89dc9ced4a63643f98263cde3e91">ERR_INPUT</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    this-&gt;pileUpDegree = <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;area = <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc">area</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    this-&gt;centre = <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ab7136fc011809bc9bcc43862fd4c38ae">   17</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#af0b3984eda0ae9e2e7d14277efd48954">Entity::Entity</a>(<span class="keyword">const</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)">Entity</a> &amp;entity) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a424676e8bdda427a1ddd68db5063bbed" title="Check if the provided degree of pile up, area and centre are valid.">areValid</a>(entity.<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a>, entity.<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc">area</a>, entity.<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>))</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="Entity_8hpp.html#a617a89dc9ced4a63643f98263cde3e91">ERR_INPUT</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a> = entity.<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc">area</a> = entity.<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc">area</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a> = entity.<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a702f461a09f5c0c82dbfaa6dae48a284">   26</a></span>&#160;Point <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a702f461a09f5c0c82dbfaa6dae48a284" title="Get the point defining the centre of the entity.">Entity::getCentre</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#aedae50d85d369b0e68fa6433d7e3fec6">   30</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#aedae50d85d369b0e68fa6433d7e3fec6" title="Get a string representation of all the field values.">Entity::toString</a>() {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a>) + <a class="code" href="Region_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a> +</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;           StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>.x) + <a class="code" href="Region_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a> +</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;           StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>.y);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#adf6d3f7cb1b2ba029b6b048a395cc8ae">   26</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#adf6d3f7cb1b2ba029b6b048a395cc8ae">Entity::~Entity</a>() {}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a2b90f7783c4e3aa5836964bcc1cf0796">   28</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a2b90f7783c4e3aa5836964bcc1cf0796" title="Get the degree of pile up.">Entity::getPileUpDegree</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a5daf3865a5f3bfd4d4dd2fe0262af889">   32</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a5daf3865a5f3bfd4d4dd2fe0262af889" title="Get the area.">Entity::getArea</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc">area</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a424676e8bdda427a1ddd68db5063bbed">   36</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a424676e8bdda427a1ddd68db5063bbed" title="Check if the provided degree of pile up, area and centre are valid.">Entity::areValid</a>(<span class="keywordtype">double</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keyword">const</span> Point &amp;centre) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> (</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        (pileUpDegree &gt; 0) &amp;&amp;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        (area &gt; 0) &amp;&amp;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        ((centre.x &gt; 0) &amp;&amp; (centre.y &gt;0))</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a702f461a09f5c0c82dbfaa6dae48a284">   36</a></span>&#160;Point <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a702f461a09f5c0c82dbfaa6dae48a284" title="Get the point defining the centre of the entity.">Entity::getCentre</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#aedae50d85d369b0e68fa6433d7e3fec6">   40</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#aedae50d85d369b0e68fa6433d7e3fec6" title="Get a string representation of all the field values.">Entity::toString</a>() {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a>) + <a class="code" href="Cluster_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a> +</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;           StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>.x) + <a class="code" href="Cluster_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a> +</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;           StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>.y);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ac14148e411030e959e36e8da0bd60736">   46</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ac14148e411030e959e36e8da0bd60736" title="Get the distance between this entity and another one.">Entity::distanceTo</a>(shared_ptr&lt;DataPoint&gt; point) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(<span class="keyword">this</span>) != <span class="keyword">typeid</span>(point))</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="Entity_8hpp.html#a71f387ccbb38cba9aaf69812abc6c505">ERR_DISTANCE</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)">Entity</a> entity = *(dynamic_pointer_cast&lt;<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)">Entity</a>&gt;(point));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ac14148e411030e959e36e8da0bd60736" title="Get the distance between this entity and another one.">distanceTo</a>(entity);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a9c3eb0f38038fe3bd0b7680c62577a64">   55</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ac14148e411030e959e36e8da0bd60736" title="Get the distance between this entity and another one.">Entity::distanceTo</a>(<span class="keyword">const</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)">Entity</a> &amp;entity) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classmultiscale_1_1Geometry2D.html#a702d65aaced6ff971809ea7a537fc70a" title="Compute the distance between two points.">Geometry2D::distanceBtwPoints</a>(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>, entity.<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a424676e8bdda427a1ddd68db5063bbed">   59</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a424676e8bdda427a1ddd68db5063bbed" title="Check if the provided degree of pile up, area and centre are valid.">Entity::areValid</a>(<span class="keywordtype">double</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keyword">const</span> Point &amp;centre) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> (</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        (pileUpDegree &gt; 0) &amp;&amp;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        (area &gt; 0) &amp;&amp;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        ((centre.x &gt; 0) &amp;&amp; (centre.y &gt;0))</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="Entity_8cpp.html">Entity.cpp</a></li>
-    <li class="footer">Generated on Thu Jul 4 2013 15:32:50 for Multiscale by
+    <li class="footer">Generated on Fri Jul 5 2013 18:51:16 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
