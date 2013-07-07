@@ -32,7 +32,8 @@ computer:
 * g++ (ver. 4.7 or higher)
 * OpenCV (ver. 2.4.4 or higher)
 
-__Notes:__ 
+__Remarks:__ 
+
 1. You will have to change the paths to the boost libraries in the Makefile before building the project.
 2. You will have to change the paths to the OpenCV libraries and header files in the Makefile before building the project.
 
@@ -46,7 +47,8 @@ computer:
 * GNU parallel
 * OpenCV (ver. 2.4.4 or higher)
 
-__Notes:__ 
+__Remarks:__ 
+
 1. The path to the OpenCV libraries should be included in your PATH environment variable, such that they are accessible at runtime.
 
 ## 3. Running the movie generating scripts
