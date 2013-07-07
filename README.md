@@ -10,14 +10,17 @@ Project multiscale
 3. **Running the movie generating scripts** 
     1. Rectangular geometry
     2. Circular geometry
-4. **Contact**
+4. **Running the region detection and analysis scripts**
+    1. Rectangular geometry
+    2. Circular geometry
+5. **Contact**
 
 ## 1. Introduction
 
 **Author:** Ovidiu Parvu                                                        
 **Created on:** 4th of February, 2013                                           
-**Modified on:** 5th of February, 2013                                          
-**Current version:** 0.1
+**Modified on:** 6th of July, 2013                                          
+**Current version:** 0.1.0
 
 ## 2. Requirements
    
@@ -38,6 +41,7 @@ computer:
 * Bash or an alternative shell which supports the same commands
 * gnuplot (ver. 4.6)
 * GNU parallel
+* OpenCV (ver. 2.4.4 or higher)
 
 ## 3. Running the movie generating scripts
    
@@ -49,7 +53,17 @@ For generating a movie from a _.csv_ file considering a rectangular geometry use
 
 For generating a movie from a _.csv_ file considering a circular geometry use the script _CircularGeometryViewer.sh_. The information regarding required parameters is displayed when running the script.
 
-## 4. Contact
+## 4. Running the region detection and analysis scripts
+   
+### 4.1. Rectangular geometry
+
+For detecting and analysing regions of high intensity in an image considering a rectangular geometry use the script _RunRectangularRegionDetector.sh_. The information regarding required parameters is displayed when running the script.
+
+### 4.2. Circular geometry
+
+For detecting and analysing regions of high intensity in an image considering a circular geometry use the script _RunCircularRegionDetector.sh_. The information regarding required parameters is displayed when running the script.
+
+## 5. Contact
 
 For more details please visit my [personal webpage](http://brunel.ac.uk/~cspgoop).
 
