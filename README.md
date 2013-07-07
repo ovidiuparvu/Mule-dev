@@ -30,6 +30,7 @@ For building the program the following software need to be installed on your
 computer:
 * Boost library (ver. 1.52.0)
 * g++ (ver. 4.7 or higher)
+* OpenCV (ver. 2.4.4 or higher)
 
 __Note:__ You will have to change the paths to the boost libraries in the Makefile before building the project.
 
