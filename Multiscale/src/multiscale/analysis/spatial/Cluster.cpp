@@ -242,9 +242,9 @@ string Cluster::shapeAsString() {
             break;
 
         case Shape2D::Undefined:
-            throw ERR_UNDEFINED_SHAPE;
+            // There are no entities in this cluster
             break;
     }
 
-    throw ERR_UNDEFINED_SHAPE;
+    return STR_UNDEFINED;
 }

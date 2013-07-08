@@ -75,7 +75,7 @@ void ClusterDetector::detectClustersInDebugMode(vector<Cluster> &clusters) {
         findClusters(clusters);
         outputClusters(clusters, debugMode);
 
-        pressedKey = waitKey(1);
+        processPressedKeyRequest(pressedKey);
     }
 
     outputClusters(clusters, !debugMode);
@@ -177,6 +177,14 @@ void ClusterDetector::outputClustersAsCsvFile(vector<Cluster> &clusters, ofstrea
     fout << OUTPUT_CLUSTEREDNESS << clusterednessIndex
          << OUTPUT_PILE_UP << avgPileUpDegree
          << endl;
+}
+
+void ClusterDetector::processPressedKeyRequest(char &pressedKey) {
+    pressedKey = waitKey(1);
+
+    if (pressedKey == KEY_SAVE) {
+        processSaveRequest();
+    }
 }
 
 void ClusterDetector::displayImage(const Mat& image, const string &windowName) {

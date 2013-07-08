@@ -1,6 +1,8 @@
 #include "multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp"
 #include "multiscale/util/RGBColourGenerator.hpp"
 
+#include <iostream>
+
 using namespace multiscale::analysis;
 
 
@@ -57,10 +59,9 @@ double SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int y) {
 }
 
 void SimulationClusterDetector::outputClustersInDebugMode(vector<Cluster> &clusters) {
-    Mat colouredImage;
     RNG randomNumberGenerator;
 
-    cvtColor(image, colouredImage, CV_GRAY2RGB);
+    cvtColor(image, outputImage, CV_GRAY2RGB);
 
     unsigned int nrOfClusters = clusters.size();
 
@@ -69,10 +70,10 @@ void SimulationClusterDetector::outputClustersInDebugMode(vector<Cluster> &clust
         // Choose a random colour for the cluster
         Scalar colour = RGBColourGenerator::generate(randomNumberGenerator);
 
-        outputClusterInDebugMode(clusters[i], colour, colouredImage);
+        outputClusterInDebugMode(clusters[i], colour, outputImage);
     }
 
-    displayImage(colouredImage, WIN_OUTPUT_IMAGE);
+    displayImage(outputImage, WIN_OUTPUT_IMAGE);
 }
 
 void SimulationClusterDetector::outputClusterInDebugMode(Cluster &cluster, Scalar colour, Mat &image) {
@@ -132,4 +133,10 @@ void SimulationClusterDetector::outputClusterCircularShape(Cluster &cluster, Sca
     float radius = cluster.getMinAreaEnclosingCircleRadius();
 
     circle(image, centre, radius, colour, DATAPOINT_WIDTH);
+}
+
+void SimulationClusterDetector::processSaveRequest() {
+    imwrite(outputFilepath + IMG_EXTENSION, outputImage);
+
+    cout << MSG_IMG_SAVED << endl;
 }

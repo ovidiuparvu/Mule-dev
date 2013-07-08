@@ -4,7 +4,7 @@ var classmultiscale_1_1analysis_1_1Entity =
     [ "Entity", "classmultiscale_1_1analysis_1_1Entity.html#ab7136fc011809bc9bcc43862fd4c38ae", null ],
     [ "~Entity", "classmultiscale_1_1analysis_1_1Entity.html#adf6d3f7cb1b2ba029b6b048a395cc8ae", null ],
     [ "areValid", "classmultiscale_1_1analysis_1_1Entity.html#a424676e8bdda427a1ddd68db5063bbed", null ],
-    [ "distanceTo", "classmultiscale_1_1analysis_1_1Entity.html#ac14148e411030e959e36e8da0bd60736", null ],
+    [ "distanceTo", "classmultiscale_1_1analysis_1_1Entity.html#a39cb4bb856c295c82676085d976d58e8", null ],
     [ "distanceTo", "classmultiscale_1_1analysis_1_1Entity.html#a9c3eb0f38038fe3bd0b7680c62577a64", null ],
     [ "getArea", "classmultiscale_1_1analysis_1_1Entity.html#a5daf3865a5f3bfd4d4dd2fe0262af889", null ],
     [ "getCentre", "classmultiscale_1_1analysis_1_1Entity.html#a702f461a09f5c0c82dbfaa6dae48a284", null ],

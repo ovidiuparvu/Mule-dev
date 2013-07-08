@@ -35,9 +35,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AnnularSector_8cpp.html",
-"RegionDetector_8cpp.html",
-"classmultiscale_1_1analysis_1_1RegionDetector.html#a23c831170c2264dd7e59067a1a7d3c8e",
-"globals_0x6f.html"
+"RectangularMatFactory_8hpp.html#a88bb4dcef0e2bea00bce86c02cf5f813",
+"classmultiscale_1_1analysis_1_1Region.html#ada209b4bff83d9186d18c15254d219da",
+"globals_0x63.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

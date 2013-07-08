@@ -17,6 +17,9 @@ using namespace cv;
 #define OUTPUT_PILE_UP          "Average pile up degree: "
 
 #define OUTPUT_EXTENSION        ".out"
+#define IMG_EXTENSION           ".png"
+
+#define MSG_IMG_SAVED           "The image was successfully saved to disk."
 
 #define TRACKBAR_EPS            "Eps (Multiplied by 10)"
 #define TRACKBAR_MINPOINTS      "Minimum number of points"
@@ -31,7 +34,8 @@ using namespace cv;
 
 #define WIN_OUTPUT_IMAGE        "Output image"
 
-#define KEY_ESC 27
+#define KEY_ESC     27
+#define KEY_SAVE    115
 
 
 namespace multiscale {
@@ -201,6 +205,15 @@ namespace multiscale {
                  *  \param fout     Output file stream
                  */
                 void outputClustersAsCsvFile(vector<Cluster> &clusters, ofstream &fout);
+
+                //! Process the request of the user by pressing the key
+                /*!
+                 * \param pressedKey Key pressed by the user, if a key was pressed, or "-1", otherwise
+                 */
+                void processPressedKeyRequest(char &pressedKey);
+
+                //! Process the save request in case the lowercase "s" key was pressed
+                virtual void processSaveRequest() = 0;
 
                 //! Display an image in a particular window
                 /*!

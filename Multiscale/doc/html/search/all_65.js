@@ -36,5 +36,5 @@ var searchData=
   ['err_5fselected_5fconcentration_5findex',['ERR_SELECTED_CONCENTRATION_INDEX',['../PolarCsvToInputFilesConverter_8hpp.html#a7e19750ee177931a4cc33778274b2727',1,'ERR_SELECTED_CONCENTRATION_INDEX():&#160;PolarCsvToInputFilesConverter.hpp'],['../RectangularCsvToInputFilesConverter_8hpp.html#a7e19750ee177931a4cc33778274b2727',1,'ERR_SELECTED_CONCENTRATION_INDEX():&#160;RectangularCsvToInputFilesConverter.hpp']]],
   ['err_5fundefined_5fshape',['ERR_UNDEFINED_SHAPE',['../Cluster_8hpp.html#a1fdd779f7dc41df9ddcde20f1f1d2978',1,'Cluster.hpp']]],
   ['err_5funimplemented_5fmethod',['ERR_UNIMPLEMENTED_METHOD',['../CircularMatFactory_8hpp.html#a9f274071cceaab487364e0e4259db786',1,'CircularMatFactory.hpp']]],
-  ['expandcorecluster',['expandCoreCluster',['../classmultiscale_1_1analysis_1_1DBSCAN.html#ae9dc899c0ce2e5679e3c51ca9e54963c',1,'multiscale::analysis::DBSCAN']]]
+  ['expandcorecluster',['expandCoreCluster',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a400c4e9fb1d9e9bafa970b33912a5ce1',1,'multiscale::analysis::DBSCAN']]]
 ];

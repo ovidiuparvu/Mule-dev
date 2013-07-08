@@ -10,11 +10,13 @@ var classmultiscale_1_1analysis_1_1SimulationClusterDetector =
     [ "outputClusterInDebugMode", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aaace678f25a976de72f03f4076bc0e0a", null ],
     [ "outputClusterRectangularShape", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ab7bfa2a55991a5708abfea7fa362214c", null ],
     [ "outputClusterShape", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a8dc451d799404ba7ecd72d85d2f7e955", null ],
-    [ "outputClustersInDebugMode", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a1e1853068712fa3eeec399d6e9a8f2bc", null ],
+    [ "outputClustersInDebugMode", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a5d232391a0da923df439f378dc669f79", null ],
     [ "outputClusterTriangularShape", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a9894288a54c8e3fdeff3917d81e2ad9b", null ],
+    [ "processSaveRequest", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#afeb17d0d9cf27eadfad79042951dfe43", null ],
     [ "entityHeight", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a18b83e5060e319eca337189e0819d064", null ],
     [ "entityWidth", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a3f1027d3143c9a20516828d4b385e27b", null ],
     [ "height", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a9d0a0fe5d9ea0f2516d07bf44b1da257", null ],
+    [ "outputImage", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a37a2409772f8011c5ab5c657c894104e", null ],
     [ "thresholdedImage", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aca2aae9914ef643a543a834e61b1cccf", null ],
     [ "width", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a4c66a82aa1749dce31c767bc4008d904", null ]
 ];

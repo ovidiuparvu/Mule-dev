@@ -24,6 +24,7 @@ var searchData=
   ['minpoints',['minPoints',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#aa94df1adc462be5931ec25ba24122fe9',1,'multiscale::analysis::ClusterDetector::minPoints()'],['../classmultiscale_1_1analysis_1_1DBSCAN.html#a285a04240518d17e99565d78e9b78ff0',1,'multiscale::analysis::DBSCAN::minPoints()']]],
   ['morphologicalclose',['morphologicalClose',['../classmultiscale_1_1analysis_1_1RegionDetector.html#adcb8ab3ced63de9168734f0b24072705',1,'multiscale::analysis::RegionDetector']]],
   ['morphologicalcloseiterations',['morphologicalCloseIterations',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a700a2f299d7c56fbd1fdbec68092f23a',1,'multiscale::analysis::RegionDetector']]],
+  ['msg_5fimg_5fsaved',['MSG_IMG_SAVED',['../ClusterDetector_8hpp.html#a5983e46623488305fa51715528fb9678',1,'ClusterDetector.hpp']]],
   ['multiscale',['multiscale',['../namespacemultiscale.html',1,'']]],
   ['video',['video',['../namespacemultiscale_1_1video.html',1,'multiscale']]]
 ];

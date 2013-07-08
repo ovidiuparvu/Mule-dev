@@ -15,6 +15,7 @@ using namespace std;
 #define STR_TRIANGLE        "triangle"
 #define STR_RECTANGLE       "rectangle"
 #define STR_CIRCLE          "circle"
+#define STR_UNDEFINED       "undefined"
 
 #define OUTPUT_SEPARATOR    ","
 

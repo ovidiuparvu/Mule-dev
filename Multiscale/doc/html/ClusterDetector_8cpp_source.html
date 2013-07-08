@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('ClusterDetector_8cpp_source.html','');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a1464d37d8bcf96cf0f8b5538143cb5a9">   41</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::initialiseClusteringValues() {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    eps = 50;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    eps = 5000;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    minPoints = 2;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
@@ -159,8 +159,8 @@ $(document).ready(function(){initNavTree('ClusterDetector_8cpp_source.html','');
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    namedWindow( <a class="code" href="ClusterDetector_8hpp.html#aee857f4a97612b0a45a3322ce1909688">WIN_OUTPUT_IMAGE</a>, WINDOW_NORMAL);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    setWindowProperty( <a class="code" href="ClusterDetector_8hpp.html#aee857f4a97612b0a45a3322ce1909688">WIN_OUTPUT_IMAGE</a>, CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN );</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    createTrackbar(<a class="code" href="ClusterDetector_8hpp.html#acf14bbe82bf908bbaa3e307ba6f0c0e7">TRACKBAR_EPS</a>, <a class="code" href="ClusterDetector_8hpp.html#aee857f4a97612b0a45a3322ce1909688">WIN_OUTPUT_IMAGE</a>, &amp;minPoints, <a class="code" href="ClusterDetector_8hpp.html#ac5e81e4fb4ebf2cc5efb012723d37fcd">MIN_POINTS_MAX</a>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    createTrackbar(<a class="code" href="ClusterDetector_8hpp.html#a0854d3b9ea4cf7d6115dc5f7f079a458">TRACKBAR_MINPOINTS</a>, <a class="code" href="ClusterDetector_8hpp.html#aee857f4a97612b0a45a3322ce1909688">WIN_OUTPUT_IMAGE</a>, &amp;eps, <a class="code" href="ClusterDetector_8hpp.html#aac9b63e21628e567cbafa966fb6a7ad0">EPS_MAX</a>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    createTrackbar(<a class="code" href="ClusterDetector_8hpp.html#a0854d3b9ea4cf7d6115dc5f7f079a458">TRACKBAR_MINPOINTS</a>, <a class="code" href="ClusterDetector_8hpp.html#aee857f4a97612b0a45a3322ce1909688">WIN_OUTPUT_IMAGE</a>, &amp;minPoints, <a class="code" href="ClusterDetector_8hpp.html#ac5e81e4fb4ebf2cc5efb012723d37fcd">MIN_POINTS_MAX</a>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    createTrackbar(<a class="code" href="ClusterDetector_8hpp.html#acf14bbe82bf908bbaa3e307ba6f0c0e7">TRACKBAR_EPS</a>, <a class="code" href="ClusterDetector_8hpp.html#aee857f4a97612b0a45a3322ce1909688">WIN_OUTPUT_IMAGE</a>, &amp;eps, <a class="code" href="ClusterDetector_8hpp.html#aac9b63e21628e567cbafa966fb6a7ad0">EPS_MAX</a>, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a1c69ae8027124dbf0f36c7d859b159be">   57</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::detectClusters() {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    vector&lt;Cluster&gt; clusters;</div>
@@ -183,7 +183,7 @@ $(document).ready(function(){initNavTree('ClusterDetector_8cpp_source.html','');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        findClusters(clusters);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        outputClusters(clusters, debugMode);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        pressedKey = waitKey(1);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        processPressedKeyRequest(pressedKey);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    outputClusters(clusters, !debugMode);</div>
@@ -287,21 +287,29 @@ $(document).ready(function(){initNavTree('ClusterDetector_8cpp_source.html','');
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;         &lt;&lt; endl;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a19e76d92a93bb69cbe1c7cddeafe4d96">  182</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::displayImage(<span class="keyword">const</span> Mat&amp; image, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;windowName) {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    namedWindow( windowName, WINDOW_NORMAL );</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    imshow( windowName, image );</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#afccb86bfb93df00fff8408faea7a2651">  187</a></span>&#160;<span class="keywordtype">double</span> ClusterDetector::convertEpsValue() {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">return</span> NumericRangeManipulator::convertFromRange&lt;int, double&gt;(<a class="code" href="ClusterDetector_8hpp.html#a1faf458dee5b0c5bb1b33b1c55db5976">EPS_MIN</a>, <a class="code" href="ClusterDetector_8hpp.html#aac9b63e21628e567cbafa966fb6a7ad0">EPS_MAX</a>, <a class="code" href="ClusterDetector_8hpp.html#af6f6eaf3b08254485de414e4b2eb4f30">EPS_REAL_MIN</a>, <a class="code" href="ClusterDetector_8hpp.html#a4e3e53c39cec5f193420cef7dbba2534">EPS_REAL_MAX</a>, eps);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a8b1083467a9b7ac3e14ca24806728947">  182</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::processPressedKeyRequest(<span class="keywordtype">char</span> &amp;pressedKey) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    pressedKey = waitKey(1);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (pressedKey == <a class="code" href="ClusterDetector_8hpp.html#a735bd78d12a58f1d9dbbf79d2b30e5df">KEY_SAVE</a>) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        processSaveRequest();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a19e76d92a93bb69cbe1c7cddeafe4d96">  190</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::displayImage(<span class="keyword">const</span> Mat&amp; image, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;windowName) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    namedWindow( windowName, WINDOW_NORMAL );</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    imshow( windowName, image );</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#afccb86bfb93df00fff8408faea7a2651">  195</a></span>&#160;<span class="keywordtype">double</span> ClusterDetector::convertEpsValue() {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">return</span> NumericRangeManipulator::convertFromRange&lt;int, double&gt;(<a class="code" href="ClusterDetector_8hpp.html#a1faf458dee5b0c5bb1b33b1c55db5976">EPS_MIN</a>, <a class="code" href="ClusterDetector_8hpp.html#aac9b63e21628e567cbafa966fb6a7ad0">EPS_MAX</a>, <a class="code" href="ClusterDetector_8hpp.html#af6f6eaf3b08254485de414e4b2eb4f30">EPS_REAL_MIN</a>, <a class="code" href="ClusterDetector_8hpp.html#a4e3e53c39cec5f193420cef7dbba2534">EPS_REAL_MAX</a>, eps);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="ClusterDetector_8cpp.html">ClusterDetector.cpp</a></li>
-    <li class="footer">Generated on Fri Jul 5 2013 18:51:16 for Multiscale by
+    <li class="footer">Generated on Mon Jul 8 2013 16:10:37 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

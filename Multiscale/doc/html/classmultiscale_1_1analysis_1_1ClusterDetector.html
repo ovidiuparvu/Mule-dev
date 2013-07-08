@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1Cluster
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1ClusterDetector__inherit__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1ClusterDetector_inherit__map" alt="Inheritance graph"/></div>
 <map name="multiscale_1_1analysis_1_1ClusterDetector_inherit__map" id="multiscale_1_1analysis_1_1ClusterDetector_inherit__map">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html" title="Class for detecting clusters in 2D images obtained from simulations." alt="" coords="5,678,235,1058"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html" title="Class for detecting clusters in 2D images obtained from simulations." alt="" coords="5,713,235,1127"/></map>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for multiscale::analysis::ClusterDetector:</div>
@@ -133,6 +133,8 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1Cluster
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1ClusterDetector__coll__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1ClusterDetector_coll__map" alt="Collaboration graph"/></div>
+<map name="multiscale_1_1analysis_1_1ClusterDetector_coll__map" id="multiscale_1_1analysis_1_1ClusterDetector_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -207,6 +209,12 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a3d1d211ae726fdeff1d1633b3892f1d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a3d1d211ae726fdeff1d1633b3892f1d0">outputClustersAsCsvFile</a> (vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html">Cluster</a> &gt; &amp;clusters, ofstream &amp;fout)</td></tr>
 <tr class="memdesc:a3d1d211ae726fdeff1d1633b3892f1d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the information computed for the clusters in a csv file.  <a href="#a3d1d211ae726fdeff1d1633b3892f1d0">More...</a><br/></td></tr>
 <tr class="separator:a3d1d211ae726fdeff1d1633b3892f1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b1083467a9b7ac3e14ca24806728947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a8b1083467a9b7ac3e14ca24806728947">processPressedKeyRequest</a> (char &amp;pressedKey)</td></tr>
+<tr class="memdesc:a8b1083467a9b7ac3e14ca24806728947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process the request of the user by pressing the key.  <a href="#a8b1083467a9b7ac3e14ca24806728947">More...</a><br/></td></tr>
+<tr class="separator:a8b1083467a9b7ac3e14ca24806728947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71858c299b24b6e210ad5f8eac9d6065"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a71858c299b24b6e210ad5f8eac9d6065">processSaveRequest</a> ()=0</td></tr>
+<tr class="memdesc:a71858c299b24b6e210ad5f8eac9d6065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process the save request in case the lowercase "s" key was pressed.  <a href="#a71858c299b24b6e210ad5f8eac9d6065">More...</a><br/></td></tr>
+<tr class="separator:a71858c299b24b6e210ad5f8eac9d6065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19e76d92a93bb69cbe1c7cddeafe4d96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a19e76d92a93bb69cbe1c7cddeafe4d96">displayImage</a> (const Mat &amp;<a class="el" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a02887cd17526e25dc9e99086590df685">image</a>, const string &amp;windowName)</td></tr>
 <tr class="memdesc:a19e76d92a93bb69cbe1c7cddeafe4d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display an image in a particular window.  <a href="#a19e76d92a93bb69cbe1c7cddeafe4d96">More...</a><br/></td></tr>
 <tr class="separator:a19e76d92a93bb69cbe1c7cddeafe4d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,7 +242,7 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for detecting clusters in 2D images. </p>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00042">42</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00046">46</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af47af4e340532f030473ad8271e2c953"></a>
 <div class="memitem">
@@ -519,9 +527,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Convert the value of eps from integer to double. </p>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8cpp_source.html#l00187">187</a> of file <a class="el" href="ClusterDetector_8cpp_source.html">ClusterDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8cpp_source.html#l00195">195</a> of file <a class="el" href="ClusterDetector_8cpp_source.html">ClusterDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="ClusterDetector_8hpp_source.html#l00028">EPS_MAX</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00027">EPS_MIN</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00030">EPS_REAL_MAX</a>, and <a class="el" href="ClusterDetector_8hpp_source.html#l00029">EPS_REAL_MIN</a>.</p>
+<p>References <a class="el" href="ClusterDetector_8hpp_source.html#l00031">EPS_MAX</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00030">EPS_MIN</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00033">EPS_REAL_MAX</a>, and <a class="el" href="ClusterDetector_8hpp_source.html#l00032">EPS_REAL_MIN</a>.</p>
 
 </div>
 </div>
@@ -550,7 +558,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ClusterDetector_8cpp_source.html#l00050">50</a> of file <a class="el" href="ClusterDetector_8cpp_source.html">ClusterDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="ClusterDetector_8hpp_source.html#l00028">EPS_MAX</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00025">MIN_POINTS_MAX</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00021">TRACKBAR_EPS</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00022">TRACKBAR_MINPOINTS</a>, and <a class="el" href="ClusterDetector_8hpp_source.html#l00032">WIN_OUTPUT_IMAGE</a>.</p>
+<p>References <a class="el" href="ClusterDetector_8hpp_source.html#l00031">EPS_MAX</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00028">MIN_POINTS_MAX</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00024">TRACKBAR_EPS</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00025">TRACKBAR_MINPOINTS</a>, and <a class="el" href="ClusterDetector_8hpp_source.html#l00035">WIN_OUTPUT_IMAGE</a>.</p>
 
 </div>
 </div>
@@ -748,7 +756,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="ClusterDetector_8cpp_source.html#l00067">67</a> of file <a class="el" href="ClusterDetector_8cpp_source.html">ClusterDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="ClusterDetector_8hpp_source.html#l00034">KEY_ESC</a>.</p>
+<p>References <a class="el" href="ClusterDetector_8hpp_source.html#l00037">KEY_ESC</a>.</p>
 
 </div>
 </div>
@@ -862,9 +870,9 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8cpp_source.html#l00182">182</a> of file <a class="el" href="ClusterDetector_8cpp_source.html">ClusterDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8cpp_source.html#l00190">190</a> of file <a class="el" href="ClusterDetector_8cpp_source.html">ClusterDetector.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00059">multiscale::analysis::SimulationClusterDetector::outputClustersInDebugMode()</a>.</p>
+<p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00061">multiscale::analysis::SimulationClusterDetector::outputClustersInDebugMode()</a>.</p>
 
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -873,7 +881,7 @@ Protected Attributes</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1ClusterDetector_a19e76d92a93bb69cbe1c7cddeafe4d96_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1ClusterDetector_a19e76d92a93bb69cbe1c7cddeafe4d96_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1ClusterDetector_a19e76d92a93bb69cbe1c7cddeafe4d96_icgraph" id="classmultiscale_1_1analysis_1_1ClusterDetector_a19e76d92a93bb69cbe1c7cddeafe4d96_icgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a1e1853068712fa3eeec399d6e9a8f2bc" title="Output the information computed for the clusters visually in a separate window." alt="" coords="263,5,457,69"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a5d232391a0da923df439f378dc669f79" title="Output the information computed for the clusters visually in a separate window." alt="" coords="263,5,457,69"/></map>
 </div>
 </p>
 
@@ -1157,7 +1165,70 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a1e1853068712fa3eeec399d6e9a8f2bc">multiscale::analysis::SimulationClusterDetector</a>.</p>
+<p>Implemented in <a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a5d232391a0da923df439f378dc669f79">multiscale::analysis::SimulationClusterDetector</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8b1083467a9b7ac3e14ca24806728947"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClusterDetector::processPressedKeyRequest </td>
+          <td>(</td>
+          <td class="paramtype">char &amp;&#160;</td>
+          <td class="paramname"><em>pressedKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Process the request of the user by pressing the key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pressedKey</td><td>Key pressed by the user, if a key was pressed, or "-1", otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="ClusterDetector_8cpp_source.html#l00182">182</a> of file <a class="el" href="ClusterDetector_8cpp_source.html">ClusterDetector.cpp</a>.</p>
+
+<p>References <a class="el" href="ClusterDetector_8hpp_source.html#l00038">KEY_SAVE</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a71858c299b24b6e210ad5f8eac9d6065"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void multiscale::analysis::ClusterDetector::processSaveRequest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Process the save request in case the lowercase "s" key was pressed. </p>
+
+<p>Implemented in <a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#afeb17d0d9cf27eadfad79042951dfe43">multiscale::analysis::SimulationClusterDetector</a>.</p>
 
 </div>
 </div>
@@ -1181,7 +1252,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Average pile up degree of all clusters </p>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00051">51</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00055">55</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1204,7 +1275,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Index of clusteredness for all clusters </p>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00050">50</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00054">54</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1227,7 +1298,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Flag for indicating if debug mode is set </p>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00048">48</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00052">52</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1251,7 +1322,7 @@ Protected Attributes</h2></td></tr>
 <pre class="fragment">                        DBSCAN algorithm parameter for specifying the maximum radius
 </pre><p> of the neighbourhood </p>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00053">53</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00057">57</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1274,9 +1345,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Input image </p>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00046">46</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00050">50</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00051">multiscale::analysis::SimulationClusterDetector::computePileUpDegreeAtPosition()</a>, <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00021">multiscale::analysis::SimulationClusterDetector::initialiseThresholdedImage()</a>, and <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00059">multiscale::analysis::SimulationClusterDetector::outputClustersInDebugMode()</a>.</p>
+<p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00053">multiscale::analysis::SimulationClusterDetector::computePileUpDegreeAtPosition()</a>, <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00023">multiscale::analysis::SimulationClusterDetector::initialiseThresholdedImage()</a>, and <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00061">multiscale::analysis::SimulationClusterDetector::outputClustersInDebugMode()</a>.</p>
 
 </div>
 </div>
@@ -1300,7 +1371,7 @@ Protected Attributes</h2></td></tr>
 <pre class="fragment">                  DBSCAN algorithm parameter for specifying the minimum number
 </pre><p> of points in an eps-neighbourhood of that point </p>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00055">55</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00059">59</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1323,7 +1394,9 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Path of the output file </p>
 
-<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00047">47</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="ClusterDetector_8hpp_source.html#l00051">51</a> of file <a class="el" href="ClusterDetector_8hpp_source.html">ClusterDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00138">multiscale::analysis::SimulationClusterDetector::processSaveRequest()</a>.</p>
 
 </div>
 </div>
@@ -1337,7 +1410,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1ClusterDetector.html">ClusterDetector</a></li>
-    <li class="footer">Generated on Fri Jul 5 2013 18:51:16 for Multiscale by
+    <li class="footer">Generated on Mon Jul 8 2013 16:10:38 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -28,6 +28,7 @@ namespace multiscale {
             private:
 
                 Mat thresholdedImage;           /*!< Thresholded version of the image */
+                Mat outputImage;                /*!< Image for displaying the results */
 
                 unsigned int height;            /*!< Height of the grid used in the simulation */
                 unsigned int width;             /*!< Width of the grid used in the simulation */
@@ -76,7 +77,7 @@ namespace multiscale {
                  *
                  *  \param clusters Clusters of entities detected in the image
                  */
-                void outputClustersInDebugMode(vector<Cluster> &clusters);
+                void outputClustersInDebugMode(vector<Cluster> &clusters) override;
 
                 //! Display cluster on the image
                 /*!
@@ -117,6 +118,9 @@ namespace multiscale {
                  * \param image     The image on which to display the cluster related information
                  */
                 void outputClusterCircularShape(Cluster &cluster, Scalar colour, Mat &image);
+
+                //! Process the save request in case the lowercase "s" key was pressed
+                void processSaveRequest();
 
         };
 

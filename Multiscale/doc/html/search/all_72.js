@@ -58,6 +58,6 @@ var searchData=
   ['roi_5fwidth',['ROI_WIDTH',['../RectangularMatFactory_8hpp.html#a69091d35a8755f7ef1f88a5bf3411ee7',1,'RectangularMatFactory.hpp']]],
   ['rows',['rows',['../classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474',1,'multiscale::analysis::MatFactory']]],
   ['rowsiterator',['rowsIterator',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a19fa13140bc5d6b163222030b6dfe61e',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
-  ['run',['run',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aed71fe17e6d922819499ff31bc4a6cf4',1,'multiscale::analysis::DBSCAN']]],
-  ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a871b5ac801d93a753443b30e00d39896',1,'multiscale::analysis::DBSCAN']]]
+  ['run',['run',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a52f0eb2d04029c75a3c48a37efdac26b',1,'multiscale::analysis::DBSCAN']]],
+  ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82',1,'multiscale::analysis::DBSCAN']]]
 ];

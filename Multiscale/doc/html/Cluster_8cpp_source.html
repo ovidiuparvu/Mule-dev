@@ -350,11 +350,11 @@ $(document).ready(function(){initNavTree('Cluster_8cpp_source.html','');});
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="namespacemultiscale_1_1analysis.html#ad1ef6155ab2e954c1c33d3e2e6b53fbfa6df4f8bcba37302a9fa3d9887b2c3a13">Shape2D::Undefined</a>:</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="Cluster_8hpp.html#a1fdd779f7dc41df9ddcde20f1f1d2978">ERR_UNDEFINED_SHAPE</a>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="comment">// There are no entities in this cluster</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="Cluster_8hpp.html#a1fdd779f7dc41df9ddcde20f1f1d2978">ERR_UNDEFINED_SHAPE</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="Cluster_8hpp.html#aa0c5b6f492c45bf8acf3bc42dbac820a">STR_UNDEFINED</a>;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -362,7 +362,7 @@ $(document).ready(function(){initNavTree('Cluster_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="Cluster_8cpp.html">Cluster.cpp</a></li>
-    <li class="footer">Generated on Fri Jul 5 2013 18:51:16 for Multiscale by
+    <li class="footer">Generated on Mon Jul 8 2013 16:10:37 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

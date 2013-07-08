@@ -2,6 +2,7 @@ var searchData=
 [
   ['datapoint',['DataPoint',['../classmultiscale_1_1analysis_1_1DataPoint.html',1,'multiscale::analysis']]],
   ['datapoint_2ehpp',['DataPoint.hpp',['../DataPoint_8hpp.html',1,'']]],
+  ['datapoint_5fthickness',['DATAPOINT_THICKNESS',['../SimulationClusterDetector_8hpp.html#a1e6760f6e5d99b92f40e2d8d1458032d',1,'SimulationClusterDetector.hpp']]],
   ['datapoint_5fwidth',['DATAPOINT_WIDTH',['../SimulationClusterDetector_8hpp.html#a1bd547d2536e6176c55b7392937e6d72',1,'SimulationClusterDetector.hpp']]],
   ['dbscan',['DBSCAN',['../classmultiscale_1_1analysis_1_1DBSCAN.html',1,'multiscale::analysis']]],
   ['dbscan_2ecpp',['DBSCAN.cpp',['../DBSCAN_8cpp.html',1,'']]],
@@ -24,5 +25,5 @@ var searchData=
   ['distancefromorigin',['distanceFromOrigin',['../classmultiscale_1_1analysis_1_1Region.html#ad5f128003a97d9d41fd4cf1c01d9a709',1,'multiscale::analysis::Region']]],
   ['distancefrompointtoline',['distanceFromPointToLine',['../classmultiscale_1_1Geometry2D.html#a9974bf3050ce8038ef45c0a731d9d498',1,'multiscale::Geometry2D']]],
   ['distancematrix',['distanceMatrix',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aa54a9933d643b06a6a2624d6f76b700f',1,'multiscale::analysis::DBSCAN']]],
-  ['distanceto',['distanceTo',['../classmultiscale_1_1analysis_1_1DataPoint.html#a8dd5def96eab756085461e8f6a201dce',1,'multiscale::analysis::DataPoint::distanceTo()'],['../classmultiscale_1_1analysis_1_1Entity.html#ac14148e411030e959e36e8da0bd60736',1,'multiscale::analysis::Entity::distanceTo(shared_ptr&lt; DataPoint &gt; point)'],['../classmultiscale_1_1analysis_1_1Entity.html#a9c3eb0f38038fe3bd0b7680c62577a64',1,'multiscale::analysis::Entity::distanceTo(const Entity &amp;entity)']]]
+  ['distanceto',['distanceTo',['../classmultiscale_1_1analysis_1_1DataPoint.html#a8dd5def96eab756085461e8f6a201dce',1,'multiscale::analysis::DataPoint::distanceTo()'],['../classmultiscale_1_1analysis_1_1Entity.html#a39cb4bb856c295c82676085d976d58e8',1,'multiscale::analysis::Entity::distanceTo(shared_ptr&lt; DataPoint &gt; point) override'],['../classmultiscale_1_1analysis_1_1Entity.html#a9c3eb0f38038fe3bd0b7680c62577a64',1,'multiscale::analysis::Entity::distanceTo(const Entity &amp;entity)']]]
 ];

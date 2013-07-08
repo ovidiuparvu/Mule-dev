@@ -1,5 +1,5 @@
 <map id="multiscale::analysis::DBSCAN::addUnclassifiedNodesToSeedsList" name="multiscale::analysis::DBSCAN::addUnclassifiedNodesToSeedsList">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#ae9dc899c0ce2e5679e3c51ca9e54963c" title="Expand the cluster around the given core data point." alt="" coords="281,14,487,61"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a871b5ac801d93a753443b30e00d39896" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="536,14,704,61"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#aed71fe17e6d922819499ff31bc4a6cf4" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="753,14,889,61"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a400c4e9fb1d9e9bafa970b33912a5ce1" title="Expand the cluster around the given core data point." alt="" coords="281,14,487,61"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="536,14,704,61"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a52f0eb2d04029c75a3c48a37efdac26b" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="753,14,889,61"/>
 </map>

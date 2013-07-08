@@ -33,6 +33,7 @@ var searchData=
   ['str_5fcircle',['STR_CIRCLE',['../Cluster_8hpp.html#a59a44e46858e41be91426108858362de',1,'Cluster.hpp']]],
   ['str_5frectangle',['STR_RECTANGLE',['../Cluster_8hpp.html#a6118590055a4d065d89fb2572e82fb8b',1,'Cluster.hpp']]],
   ['str_5ftriangle',['STR_TRIANGLE',['../Cluster_8hpp.html#a328ddd3fc4c21f109a47b38b944b9453',1,'Cluster.hpp']]],
+  ['str_5fundefined',['STR_UNDEFINED',['../Cluster_8hpp.html#aa0c5b6f492c45bf8acf3bc42dbac820a',1,'Cluster.hpp']]],
   ['stringmanipulator',['StringManipulator',['../classmultiscale_1_1StringManipulator.html',1,'multiscale']]],
   ['stringmanipulator_2ecpp',['StringManipulator.cpp',['../StringManipulator_8cpp.html',1,'']]],
   ['stringmanipulator_2ehpp',['StringManipulator.hpp',['../StringManipulator_8hpp.html',1,'']]]
