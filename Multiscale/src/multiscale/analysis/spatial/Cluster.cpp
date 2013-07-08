@@ -41,7 +41,7 @@ Shape2D Cluster::getShape() {
     return shape;
 }
 
-vector<Point> Cluster::getMinAreaEnclosingTriangle() {
+vector<Point2f> Cluster::getMinAreaEnclosingTriangle() {
     updateMeasuresIfRequired();
 
     return minAreaEnclosingTriangle;
@@ -65,7 +65,7 @@ float Cluster::getMinAreaEnclosingCircleRadius() {
     return minAreaEnclosingCircleRadius;
 }
 
-Point Cluster::getCentre() {
+Point2f Cluster::getCentre() {
     updateMeasuresIfRequired();
 
     return centre;
@@ -73,6 +73,10 @@ Point Cluster::getCentre() {
 
 vector<Entity> Cluster::getEntities() const {
     return entities;
+}
+
+string Cluster::fieldNamesToString() {
+    return "Clusteredness degree,Pile up degree,Area,Shape,Centre (x-coord),Centre (y-coord)";
 }
 
 string Cluster::toString() {
@@ -103,8 +107,8 @@ void Cluster::initialise() {
     updateFlag = true;
 }
 
-vector<Point> Cluster::getEntitiesCentrePoints() {
-    vector<Point> centrePoints;
+vector<Point2f> Cluster::getEntitiesCentrePoints() {
+    vector<Point2f> centrePoints;
 
     for (const Entity& entity : entities) {
         centrePoints.push_back(entity.getCentre());
@@ -141,7 +145,8 @@ void Cluster::updateClusterednessDegree() {
             avgDistance += e1.distanceTo(e2);
         }
 
-        clusterednessDegree += avgDistance / (entities.size() - 1);
+        clusterednessDegree += (entities.size() == 1) ? 0
+                                                      : avgDistance / (entities.size() - 1);
     }
 
     clusterednessDegree /= (entities.size());
@@ -204,7 +209,7 @@ double Cluster::isTriangularProbability() {
 }
 
 double Cluster::isRectangularProbability() {
-    vector<Point> entitiesCentrePoints = getEntitiesCentrePoints();
+    vector<Point2f> entitiesCentrePoints = getEntitiesCentrePoints();
 
     minAreaEnclosingRect = minAreaRect(entitiesCentrePoints);
 
@@ -216,7 +221,7 @@ double Cluster::isRectangularProbability() {
 }
 
 double Cluster::isCircularProbability() {
-    vector<Point> entitiesCentrePoints = getEntitiesCentrePoints();
+    vector<Point2f> entitiesCentrePoints = getEntitiesCentrePoints();
 
     minEnclosingCircle(entitiesCentrePoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 

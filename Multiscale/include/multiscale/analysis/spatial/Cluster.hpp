@@ -31,30 +31,30 @@ namespace multiscale {
 
             private:
 
-                double clusterednessDegree;             /*!< Degree of clusteredness */
-                double pileUpDegree;                    /*!< Degree of pile up */
-                double area;                            /*!< Sum of the areas of all entities in the cluster */
+                double clusterednessDegree;                 /*!< Degree of clusteredness */
+                double pileUpDegree;                        /*!< Degree of pile up */
+                double area;                                /*!< Sum of the areas of all entities in the cluster */
 
-                double triangularProbability;           /*!< Probability that the shape of the cluster is triangular */
-                double rectangularProbability;          /*!< Probability that the shape of the cluster is rectangular */
-                double circularProbability;             /*!< Probability that the shape of the cluster is circular */
+                double triangularProbability;               /*!< Probability that the shape of the cluster is triangular */
+                double rectangularProbability;              /*!< Probability that the shape of the cluster is rectangular */
+                double circularProbability;                 /*!< Probability that the shape of the cluster is circular */
 
                 // TODO: Update
-                vector<Point> minAreaEnclosingTriangle; /*!< The minimum area enclosing triangle */
+                vector<Point2f> minAreaEnclosingTriangle;   /*!< The minimum area enclosing triangle */
 
-                RotatedRect minAreaEnclosingRect;       /*!< The minimum area enclosing rectangle */
+                RotatedRect minAreaEnclosingRect;           /*!< The minimum area enclosing rectangle */
 
-                Point2f minAreaEnclosingCircleCentre;   /*!< The minimum area enclosing circle centre point */
-                float minAreaEnclosingCircleRadius;     /*!< The minimum area enclosing circle radius */
+                Point2f minAreaEnclosingCircleCentre;       /*!< The minimum area enclosing circle centre point */
+                float minAreaEnclosingCircleRadius;         /*!< The minimum area enclosing circle radius */
 
-                Shape2D shape;                          /*!< Shape of the cluster */
-                Point centre;                           /*!< Point defining the centre of the cluster */
-                vector<Entity> entities;                /*!< Entities which belong to this cluster */
+                Shape2D shape;                              /*!< Shape of the cluster */
+                Point2f centre;                             /*!< Point defining the centre of the cluster */
+                vector<Entity> entities;                    /*!< Entities which belong to this cluster */
 
-                bool updateFlag;                        /*!< Flag indicating if the field values dependent on the
-                                                             collection of entities need to be updated. This flag is
-                                                             used for lazy evaluation purposes, such that new field
-                                                             values are computed only when required*/
+                bool updateFlag;                            /*!< Flag indicating if the field values dependent on the
+                                                                 collection of entities need to be updated. This flag is
+                                                                 used for lazy evaluation purposes, such that new field
+                                                                 values are computed only when required*/
 
             public:
 
@@ -77,7 +77,7 @@ namespace multiscale {
                 Shape2D getShape();
 
                 //! Get the minimum area enclosing triangle
-                vector<Point> getMinAreaEnclosingTriangle();
+                vector<Point2f> getMinAreaEnclosingTriangle();
 
                 //! Get the minimum area enclosing rectangle
                 RotatedRect getMinAreaEnclosingRect();
@@ -89,10 +89,13 @@ namespace multiscale {
                 float getMinAreaEnclosingCircleRadius();
 
                 //! Get the point defining the centre of the entity
-                Point getCentre();
+                Point2f getCentre();
 
                 //! Get the collection of underlying entities
                 vector<Entity> getEntities() const;
+
+                //! Get a string representation of all the field names printed in the "toString" method
+                static string fieldNamesToString();
 
                 //! Get a string representation of all the field values
                 string toString();
@@ -104,7 +107,7 @@ namespace multiscale {
                 void initialise();
 
                 //! Get the collection of entities' centres
-                vector<Point> getEntitiesCentrePoints();
+                vector<Point2f> getEntitiesCentrePoints();
 
                 //! Update the values of all measures if required
                 void updateMeasuresIfRequired();

@@ -28,11 +28,11 @@ namespace multiscale {
                 double pileUpDegree;    /*!< Degree of pile up (relevant only if entities can pile up onto each other) */
                 double area;            /*!< Area of the entity */
 
-                Point centre;           /*!< Point defining the centre of the entity */
+                Point2f centre;         /*!< Point defining the centre of the entity */
 
             public:
 
-                Entity(double pileUpDegree, double area, const Point &centre);
+                Entity(double pileUpDegree, double area, const Point2f &centre);
                 Entity(const Entity &entity);
                 ~Entity();
 
@@ -43,7 +43,7 @@ namespace multiscale {
                 double getArea() const;
 
                 //! Get the point defining the centre of the entity
-                Point getCentre() const;
+                Point2f getCentre() const;
 
                 //! Get a string representation of all the field values
                 string toString();
@@ -57,7 +57,7 @@ namespace multiscale {
             private:
 
                 //! Check if the provided degree of pile up, area and centre are valid
-                bool areValid(double pileUpDegree, double area, const Point &centre);
+                bool areValid(double pileUpDegree, double area, const Point2f &centre);
 
         };
 

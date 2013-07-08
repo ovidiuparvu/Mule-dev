@@ -25,7 +25,7 @@ ClusterDetector::~ClusterDetector() {
 }
 
 void ClusterDetector::detect() {
-    if (!isValidImage())
+    if (!isValidInputImage())
         throw ERR_INVALID_IMAGE;
 
     // Initialise the value of eps and minPoints
@@ -43,7 +43,7 @@ void ClusterDetector::initialiseClusteringValues() {
     minPoints = 2;
 }
 
-bool ClusterDetector::isValidImage() {
+bool ClusterDetector::isValidInputImage() {
     return ((image.type() == CV_8UC1) && (image.dims == 2) && (image.rows > 1) && (image.cols > 1));
 }
 
@@ -168,15 +168,17 @@ void ClusterDetector::outputClustersAsCsvFile(vector<Cluster> &clusters) {
 }
 
 void ClusterDetector::outputClustersAsCsvFile(vector<Cluster> &clusters, ofstream &fout) {
+    fout << Cluster::fieldNamesToString() << endl;
+
     for (Cluster &cluster : clusters) {
         fout << cluster.toString() << endl;
     }
 
+    // Add an empty line between the cluster data and the averaged data
     fout << endl;
 
-    fout << OUTPUT_CLUSTEREDNESS << clusterednessIndex
-         << OUTPUT_PILE_UP << avgPileUpDegree
-         << endl;
+    fout << OUTPUT_CLUSTEREDNESS << clusterednessIndex << endl
+         << OUTPUT_PILE_UP << avgPileUpDegree << endl;
 }
 
 void ClusterDetector::processPressedKeyRequest(char &pressedKey) {

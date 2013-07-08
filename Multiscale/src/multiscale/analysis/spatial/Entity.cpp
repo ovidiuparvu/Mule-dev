@@ -5,7 +5,7 @@
 using namespace multiscale::analysis;
 
 
-Entity::Entity(double pileUpDegree, double area, const Point &centre) {
+Entity::Entity(double pileUpDegree, double area, const Point2f &centre) {
     if (!areValid(pileUpDegree, area, centre))
         throw ERR_INPUT;
 
@@ -20,7 +20,7 @@ Entity::Entity(const Entity &entity) {
 
     pileUpDegree = entity.pileUpDegree;
     area = entity.area;
-    centre = Point(entity.centre.x, entity.centre.y);
+    centre = Point2f(entity.centre.x, entity.centre.y);
 }
 
 Entity::~Entity() {}
@@ -33,7 +33,7 @@ double Entity::getArea() const {
     return area;
 }
 
-Point Entity::getCentre() const {
+Point2f Entity::getCentre() const {
     return centre;
 }
 
@@ -53,7 +53,7 @@ double Entity::distanceTo(const Entity &entity) {
     return Geometry2D::distanceBtwPoints(centre, entity.centre);
 }
 
-bool Entity::areValid(double pileUpDegree, double area, const Point &centre) {
+bool Entity::areValid(double pileUpDegree, double area, const Point2f &centre) {
     return (
         (pileUpDegree > 0) &&
         (area > 0) &&

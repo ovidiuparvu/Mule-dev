@@ -12,8 +12,7 @@ CircularMatFactory::~CircularMatFactory() {}
 Mat CircularMatFactory::createFromViewerImage(const string &inputFile) {
     Mat image = imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
 
-    if (!image.data)
-        throw ERR_INPUT_OPEN;
+    isValidViewerImage(image);
 
     Mat croppedImage = image(
                             Rect(
@@ -40,4 +39,14 @@ Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int or
     circle(mask, Point(originX, originY), radius, Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX), CV_FILLED);
 
     return mask;
+}
+
+bool CircularMatFactory::isValidViewerImage(const Mat &image) {
+    if (!image.data)
+        throw ERR_INPUT_OPEN;
+
+    if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT))
+        throw ERR_IMG_RESOLUTION;
+
+    return true;
 }

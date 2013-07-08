@@ -27,14 +27,14 @@ namespace multiscale {
 
             private:
 
-                Mat thresholdedImage;           /*!< Thresholded version of the image */
-                Mat outputImage;                /*!< Image for displaying the results */
+                Mat thresholdedImage;     /*!< Thresholded version of the image */
+                Mat outputImage;          /*!< Image for displaying the results */
 
-                unsigned int height;            /*!< Height of the grid used in the simulation */
-                unsigned int width;             /*!< Width of the grid used in the simulation */
+                unsigned int height;      /*!< Height of the grid used in the simulation */
+                unsigned int width;       /*!< Width of the grid used in the simulation */
 
-                unsigned int entityHeight;      /*!< Height of an entity */
-                unsigned int entityWidth;       /*!< Width of an entity */
+                double entityHeight;      /*!< Height of an entity */
+                double entityWidth;       /*!< Width of an entity */
 
             public:
 

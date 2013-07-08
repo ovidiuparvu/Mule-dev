@@ -12,8 +12,8 @@ SimulationClusterDetector::SimulationClusterDetector(const Mat &inputImage, cons
     this->height = height;
     this->width = width;
 
-    this->entityHeight = inputImage.rows / height;
-    this->entityWidth = inputImage.cols / width;
+    this->entityHeight = ((double)inputImage.rows) / height;
+    this->entityWidth = ((double)inputImage.cols) / width;
 
     initialiseThresholdedImage();
 }
@@ -34,7 +34,7 @@ void SimulationClusterDetector::detectEntitiesInImage(vector<Entity> &entities) 
                 double xCentre = (j * entityWidth) + (entityWidth / 2);
                 double yCentre = (i * entityHeight) + (entityHeight / 2);
 
-                Point centre(xCentre, yCentre);
+                Point2f centre(xCentre, yCentre);
 
                 entities.push_back(Entity(pileUpDegree, area, centre));
             }
@@ -109,7 +109,7 @@ void SimulationClusterDetector::outputClusterShape(Cluster &cluster, Scalar colo
 }
 
 void SimulationClusterDetector::outputClusterTriangularShape(Cluster &cluster, Scalar colour, Mat &image) {
-    vector<Point> trianglePoints = cluster.getMinAreaEnclosingTriangle();
+    vector<Point2f> trianglePoints = cluster.getMinAreaEnclosingTriangle();
 
     assert(trianglePoints.size() == 3);
 
@@ -136,7 +136,9 @@ void SimulationClusterDetector::outputClusterCircularShape(Cluster &cluster, Sca
 }
 
 void SimulationClusterDetector::processSaveRequest() {
-    imwrite(outputFilepath + IMG_EXTENSION, outputImage);
+    if (outputImage.data) {
+        imwrite(outputFilepath + IMG_EXTENSION, outputImage);
 
-    cout << MSG_IMG_SAVED << endl;
+        cout << MSG_IMG_SAVED << endl;
+    }
 }

@@ -12,8 +12,7 @@ RectangularMatFactory::~RectangularMatFactory() {}
 Mat RectangularMatFactory::createFromViewerImage(const string &inputFile) {
     Mat image = imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
 
-    if (!image.data)
-        throw ERR_INPUT_OPEN;
+    isValidViewerImage(image);
 
     return image(Rect(ROI_START_X, ROI_START_Y, ROI_WIDTH, ROI_HEIGHT));
 }
@@ -33,4 +32,14 @@ unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
     }
 
     return data;
+}
+
+bool RectangularMatFactory::isValidViewerImage(const Mat &image) {
+    if (!image.data)
+        throw ERR_INPUT_OPEN;
+
+    if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT))
+        throw ERR_IMG_RESOLUTION;
+
+    return true;
 }

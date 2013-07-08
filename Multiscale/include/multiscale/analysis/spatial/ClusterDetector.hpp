@@ -83,7 +83,7 @@ namespace multiscale {
                  * number of rows and number of columns is greater than one
                  * and if the image is of type CV_8UC1
                  */
-                bool isValidImage();
+                bool isValidInputImage();
 
                 //! Create the trackbars
                 void createTrackbars();
