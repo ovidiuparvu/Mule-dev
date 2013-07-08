@@ -412,6 +412,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>INPUT_IMG_WIDTH</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularMatFactory_8hpp.html</Path>
+    <Anchor>ab6fdc1777569a818fa0731a0f9e3792a</Anchor>
+    <DeclaredIn>CircularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>INPUT_IMG_HEIGHT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularMatFactory_8hpp.html</Path>
+    <Anchor>ae8daf80f0cb4604411fbb1e851519ed9</Anchor>
+    <DeclaredIn>CircularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_CONC</Name>
       <APILanguage>c</APILanguage>
       <Type>macro</Type>
@@ -462,12 +482,42 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>INPUT_IMG_WIDTH</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularMatFactory_8hpp.html</Path>
+    <Anchor>ab6fdc1777569a818fa0731a0f9e3792a</Anchor>
+    <DeclaredIn>RectangularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>INPUT_IMG_HEIGHT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularMatFactory_8hpp.html</Path>
+    <Anchor>ae8daf80f0cb4604411fbb1e851519ed9</Anchor>
+    <DeclaredIn>RectangularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_INPUT_OPEN</Name>
       <APILanguage>c</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>MatFactory_8hpp.html</Path>
     <Anchor>a12d238c7a2da056fd33f129f4c35b9a2</Anchor>
+    <DeclaredIn>MatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_IMG_RESOLUTION</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MatFactory_8hpp.html</Path>
+    <Anchor>a6d61e97a27d7762722a792967233ff00</Anchor>
     <DeclaredIn>MatFactory.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3389,7 +3439,7 @@
       <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>a18b83e5060e319eca337189e0819d064</Anchor>
+    <Anchor>a2ba5c2738d32f71ccaacba4129b7bcfc</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3399,7 +3449,7 @@
       <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>a3f1027d3143c9a20516828d4b385e27b</Anchor>
+    <Anchor>a9212da88b787b8f9791f27d913b6d05d</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3427,13 +3477,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isValidImage</Name>
+      <Name>isValidInputImage</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ae0bd3b36341a602be89d2aa84b47e5b0</Anchor>
+    <Anchor>a5de60e18b67cdfe5266f90384e0bb90d</Anchor>
     <Abstract>Check if the image is valid.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3824,7 +3874,7 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a9432f23f7c776108ccad35b8640bd3c7</Anchor>
+    <Anchor>ab28150a739c35d66874c219fd38b462b</Anchor>
     <Abstract>Get the minimum area enclosing triangle.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
@@ -3872,7 +3922,7 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a8fdd4229c940bc76c28df9df1ca57ee5</Anchor>
+    <Anchor>a1e79750d74aebc8d260530d29786fb46</Anchor>
     <Abstract>Get the point defining the centre of the entity.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
@@ -3902,6 +3952,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>fieldNamesToString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::Cluster</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+    <Anchor>a06984724ab3999d2bee36ce355dfe6bb</Anchor>
+    <Abstract>Get a string representation of all the field names printed in the &amp;quot;toString&amp;quot; method.</Abstract>
+    <DeclaredIn>Cluster.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>initialise</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -3920,7 +3982,7 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>aa4efa0db1c554831363b7897d8b2f5a7</Anchor>
+    <Anchor>af24261b08126bc2d2f51144056c6d353</Anchor>
     <Abstract>Get the collection of entities&amp;#39; centres.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
@@ -4124,7 +4186,7 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a2a370edd065e8c6b78788afa3754fae2</Anchor>
+    <Anchor>a7678d48581202c3ecc3f1283a1730dfa</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4174,7 +4236,7 @@
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>ae7b73d6a3684c908ef0b1e01b7ab1760</Anchor>
+    <Anchor>a83112d8805ba9b3e1e363ab5c3956f3f</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4267,13 +4329,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isValidImage</Name>
+      <Name>isValidInputImage</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ae0bd3b36341a602be89d2aa84b47e5b0</Anchor>
+    <Anchor>a5de60e18b67cdfe5266f90384e0bb90d</Anchor>
     <Abstract>Check if the image is valid.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -4821,7 +4883,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>af0b3984eda0ae9e2e7d14277efd48954</Anchor>
+    <Anchor>a23de40320d358297c070994222f111c8</Anchor>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4878,7 +4940,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>a702f461a09f5c0c82dbfaa6dae48a284</Anchor>
+    <Anchor>ab1f9c4810a5f3d2b58fb6f813354821f</Anchor>
     <Abstract>Get the point defining the centre of the entity.</Abstract>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
@@ -4937,7 +4999,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>a424676e8bdda427a1ddd68db5063bbed</Anchor>
+    <Anchor>acf824f2eb3d63a901c9ebaad1ae04414</Anchor>
     <Abstract>Check if the provided degree of pile up, area and centre are valid.</Abstract>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
@@ -4969,7 +5031,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>a05e21544b3b34e9c6f3147b01f90d46c</Anchor>
+    <Anchor>ad226609174b21f71210161d29a16d4ef</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5012,7 +5074,7 @@
       <Scope>multiscale::analysis::CircularMatFactory</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1CircularMatFactory.html</Path>
-    <Anchor>a6a7cd26baaf42b86644cfdc8b94a9fd8</Anchor>
+    <Anchor>a8d5fccf946065b982bfa700b9e47b1f5</Anchor>
     <Abstract>Create a Mat object from the image file obtained from the CircularGeometryViewer.</Abstract>
     <DeclaredIn>CircularMatFactory.hpp</DeclaredIn>
   </Token>
@@ -5058,8 +5120,20 @@
       <Scope>multiscale::analysis::CircularMatFactory</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1CircularMatFactory.html</Path>
-    <Anchor>a334b0797f1ac91afebf7754eb9cb1a65</Anchor>
+    <Anchor>a8fe40d38b896f440e17b5514462d1e8a</Anchor>
     <Abstract>Process the concentrations from the input file.</Abstract>
+    <DeclaredIn>CircularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isValidViewerImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::CircularMatFactory</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1CircularMatFactory.html</Path>
+    <Anchor>a08e407b35a2d314c1aa17f21040ff23a</Anchor>
+    <Abstract>Check if the image generated by the viewer has the required resolution.</Abstract>
     <DeclaredIn>CircularMatFactory.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5169,7 +5243,7 @@
       <Scope>multiscale::analysis::RectangularMatFactory</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RectangularMatFactory.html</Path>
-    <Anchor>a04345ff6bcd6a8b474f75a76ea731634</Anchor>
+    <Anchor>a3f86c9bd73eb8d8a27f272b47e984871</Anchor>
     <Abstract>Create a Mat object from the image file obtained from the RectangularGeometryViewer.</Abstract>
     <DeclaredIn>RectangularMatFactory.hpp</DeclaredIn>
   </Token>
@@ -5215,8 +5289,20 @@
       <Scope>multiscale::analysis::RectangularMatFactory</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RectangularMatFactory.html</Path>
-    <Anchor>a82d24e96f1904577c693605ecc9675a5</Anchor>
+    <Anchor>a6cc84a4eadbab5046cb6eacba64f5ae4</Anchor>
     <Abstract>Process the concentrations from the input file.</Abstract>
+    <DeclaredIn>RectangularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isValidViewerImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RectangularMatFactory</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RectangularMatFactory.html</Path>
+    <Anchor>a398913bbfa8ca9d80cb630c29a37a135</Anchor>
+    <Abstract>Check if the image generated by the viewer has the required resolution.</Abstract>
     <DeclaredIn>RectangularMatFactory.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5364,6 +5450,18 @@
     <Path>classmultiscale_1_1analysis_1_1MatFactory.html</Path>
     <Anchor>a015bb6710f3a832786d7291108323696</Anchor>
     <Abstract>Convert concentration to intensity.</Abstract>
+    <DeclaredIn>MatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isValidViewerImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::MatFactory</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1MatFactory.html</Path>
+    <Anchor>ad6acdd120b128eb9fb502fca23a7de69</Anchor>
+    <Abstract>Check if the image generated by the viewer has the required resolution.</Abstract>
     <DeclaredIn>MatFactory.hpp</DeclaredIn>
   </Token>
   <Token>

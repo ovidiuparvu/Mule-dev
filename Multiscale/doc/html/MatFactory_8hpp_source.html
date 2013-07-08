@@ -116,56 +116,60 @@ $(document).ready(function(){initNavTree('MatFactory_8hpp_source.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">   10</a></span>&#160;<span class="preprocessor">#define ERR_INPUT_OPEN      &quot;The input file could not be opened.&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="MatFactory_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038">   11</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_IN_EXTRA_DATA   &quot;The input file contains more data than required.&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">namespace </span>analysis {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html">   19</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">   23</a></span>&#160;                <span class="keywordtype">int</span>     <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a>;           </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">   24</a></span>&#160;                <span class="keywordtype">int</span>     <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a>;           </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96">   25</a></span>&#160;                <span class="keywordtype">double</span>  <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96">simulationTime</a>; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keyword">virtual</span> ~<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                Mat create(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keyword">virtual</span> Mat createFromViewerImage(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) = 0;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">void</span> initInputFile(ifstream &amp;fin, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *processConcentrations(ifstream &amp;fin) = 0;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> convertToIntensity(<span class="keywordtype">double</span> concentration);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        };</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    };</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="MatFactory_8hpp.html#a6d61e97a27d7762722a792967233ff00">   11</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_IMG_RESOLUTION  &quot;The resolution of the input image is not the expected one.&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="MatFactory_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038">   12</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_IN_EXTRA_DATA   &quot;The input file contains more data than required.&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">namespace </span>analysis {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html">   20</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">   24</a></span>&#160;                <span class="keywordtype">int</span>     <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a>;           </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">   25</a></span>&#160;                <span class="keywordtype">int</span>     <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a>;           </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96">   26</a></span>&#160;                <span class="keywordtype">double</span>  <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96">simulationTime</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keyword">virtual</span> ~<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                Mat create(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keyword">virtual</span> Mat createFromViewerImage(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">void</span> initInputFile(ifstream &amp;fin, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *processConcentrations(ifstream &amp;fin) = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> convertToIntensity(<span class="keywordtype">double</span> concentration);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">bool</span> isValidViewerImage(<span class="keyword">const</span> Mat &amp;image) = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        };</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_617023d10e7618f3fc87fd3542a5b75d.html">analysis</a></li><li class="navelem"><a class="el" href="dir_525f610367b169c5221b707333271043.html">spatial</a></li><li class="navelem"><a class="el" href="MatFactory_8hpp.html">MatFactory.hpp</a></li>
-    <li class="footer">Generated on Mon Jul 8 2013 16:10:37 for Multiscale by
+    <li class="footer">Generated on Mon Jul 8 2013 17:36:01 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

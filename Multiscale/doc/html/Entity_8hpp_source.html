@@ -134,10 +134,10 @@ $(document).ready(function(){initNavTree('Entity_8hpp_source.html','');});
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">   28</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a17d0b2b6985fbefdef35f8cb0f5bd42b">pileUpDegree</a>;    </div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc">   29</a></span>&#160;                <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc">area</a>;            </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">   31</a></span>&#160;                Point <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c">centre</a>;           </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef">   31</a></span>&#160;                Point2f <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef">centre</a>;         </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)">Entity</a>(<span class="keywordtype">double</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keyword">const</span> Point &amp;centre);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)">Entity</a>(<span class="keywordtype">double</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keyword">const</span> Point2f &amp;centre);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)">Entity</a>(<span class="keyword">const</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)">Entity</a> &amp;entity);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)">Entity</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('Entity_8hpp_source.html','');});
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordtype">double</span> getArea() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                Point getCentre() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                Point2f getCentre() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordtype">string</span> toString();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('Entity_8hpp_source.html','');});
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">bool</span> areValid(<span class="keywordtype">double</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keyword">const</span> Point &amp;centre);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">bool</span> areValid(<span class="keywordtype">double</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keyword">const</span> Point2f &amp;centre);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        };</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
@@ -170,7 +170,7 @@ $(document).ready(function(){initNavTree('Entity_8hpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_617023d10e7618f3fc87fd3542a5b75d.html">analysis</a></li><li class="navelem"><a class="el" href="dir_525f610367b169c5221b707333271043.html">spatial</a></li><li class="navelem"><a class="el" href="Entity_8hpp.html">Entity.hpp</a></li>
-    <li class="footer">Generated on Mon Jul 8 2013 16:10:37 for Multiscale by
+    <li class="footer">Generated on Mon Jul 8 2013 17:36:01 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

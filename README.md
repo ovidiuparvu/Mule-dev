@@ -19,8 +19,8 @@ Project multiscale
 
 **Author:** Ovidiu Parvu                                                        
 **Created on:** 4th of February, 2013                                           
-**Modified on:** 6th of July, 2013                                          
-**Current version:** 0.1.0
+**Modified on:** 8th of July, 2013                                          
+**Current version:** 0.2.1
 
 ## 2. Requirements
    

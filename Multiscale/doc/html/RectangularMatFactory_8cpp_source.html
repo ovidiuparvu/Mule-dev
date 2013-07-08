@@ -117,38 +117,47 @@ $(document).ready(function(){initNavTree('RectangularMatFactory_8cpp_source.html
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3ebedd3691965c3d89c3ecdaa3e66d70">   10</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3ebedd3691965c3d89c3ecdaa3e66d70">RectangularMatFactory::~RectangularMatFactory</a>() {}</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a04345ff6bcd6a8b474f75a76ea731634">   12</a></span>&#160;Mat <a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a04345ff6bcd6a8b474f75a76ea731634" title="Create a Mat object from the image file obtained from the RectangularGeometryViewer.">RectangularMatFactory::createFromViewerImage</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) {</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3f86c9bd73eb8d8a27f272b47e984871">   12</a></span>&#160;Mat <a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3f86c9bd73eb8d8a27f272b47e984871" title="Create a Mat object from the image file obtained from the RectangularGeometryViewer.">RectangularMatFactory::createFromViewerImage</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    Mat image = imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (!image.data)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> image(Rect(<a class="code" href="CircularMatFactory_8hpp.html#a45b48336a4e1e5ee103e64d60ff70d8b">ROI_START_X</a>, <a class="code" href="CircularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1">ROI_START_Y</a>, <a class="code" href="RectangularMatFactory_8hpp.html#a69091d35a8755f7ef1f88a5bf3411ee7">ROI_WIDTH</a>, <a class="code" href="RectangularMatFactory_8hpp.html#a8dc6ce6371f00cb707b29521bd07fc51">ROI_HEIGHT</a>));</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a82d24e96f1904577c693605ecc9675a5">   21</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a82d24e96f1904577c693605ecc9675a5" title="Process the concentrations from the input file.">RectangularMatFactory::processConcentrations</a>(ifstream&amp; fin) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a>*<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a>];</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> nrOfConcentrations = <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a> * <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">double</span> concentration = 0;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrOfConcentrations; i++) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        fin &gt;&gt; concentration;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> ((concentration &lt; 0) || (concentration &gt; 1))</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="RectangularMatFactory_8hpp.html#a88bb4dcef0e2bea00bce86c02cf5f813">ERR_CONC</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        data[i] = <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a015bb6710f3a832786d7291108323696" title="Convert concentration to intensity.">convertToIntensity</a>(concentration);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> data;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a398913bbfa8ca9d80cb630c29a37a135" title="Check if the image generated by the viewer has the required resolution.">isValidViewerImage</a>(image);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> image(Rect(<a class="code" href="CircularMatFactory_8hpp.html#a45b48336a4e1e5ee103e64d60ff70d8b">ROI_START_X</a>, <a class="code" href="CircularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1">ROI_START_Y</a>, <a class="code" href="RectangularMatFactory_8hpp.html#a69091d35a8755f7ef1f88a5bf3411ee7">ROI_WIDTH</a>, <a class="code" href="RectangularMatFactory_8hpp.html#a8dc6ce6371f00cb707b29521bd07fc51">ROI_HEIGHT</a>));</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a6cc84a4eadbab5046cb6eacba64f5ae4">   20</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a6cc84a4eadbab5046cb6eacba64f5ae4" title="Process the concentrations from the input file.">RectangularMatFactory::processConcentrations</a>(ifstream&amp; fin) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = <span class="keyword">new</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>[<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a>*<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a>];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> nrOfConcentrations = <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a> * <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">double</span> concentration = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrOfConcentrations; i++) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        fin &gt;&gt; concentration;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> ((concentration &lt; 0) || (concentration &gt; 1))</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="RectangularMatFactory_8hpp.html#a88bb4dcef0e2bea00bce86c02cf5f813">ERR_CONC</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        data[i] = <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a015bb6710f3a832786d7291108323696" title="Convert concentration to intensity.">convertToIntensity</a>(concentration);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> data;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a398913bbfa8ca9d80cb630c29a37a135">   37</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a398913bbfa8ca9d80cb630c29a37a135" title="Check if the image generated by the viewer has the required resolution.">RectangularMatFactory::isValidViewerImage</a>(<span class="keyword">const</span> Mat &amp;image) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (!image.data)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> ((image.cols != <a class="code" href="CircularMatFactory_8hpp.html#ab6fdc1777569a818fa0731a0f9e3792a">INPUT_IMG_WIDTH</a>) || (image.rows != <a class="code" href="CircularMatFactory_8hpp.html#ae8daf80f0cb4604411fbb1e851519ed9">INPUT_IMG_HEIGHT</a>))</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="MatFactory_8hpp.html#a6d61e97a27d7762722a792967233ff00">ERR_IMG_RESOLUTION</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="dir_2ec31c6d420cd82ac240875edf88252f.html">factory</a></li><li class="navelem"><a class="el" href="RectangularMatFactory_8cpp.html">RectangularMatFactory.cpp</a></li>
-    <li class="footer">Generated on Mon Jul 8 2013 16:10:37 for Multiscale by
+    <li class="footer">Generated on Mon Jul 8 2013 17:36:01 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -1,0 +1,13 @@
+<map id="multiscale::analysis::Cluster::getMinAreaEnclosingTriangle" name="multiscale::analysis::Cluster::getMinAreaEnclosingTriangle">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a0d37cb656f212af09dd9339ffa322d55" title="Update the values of all measures if required." alt="" coords="256,144,440,208"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#aec76c5ef5523db79ee334a5cd0f1e1cb" title="Update the values of all measures." alt="" coords="488,153,664,199"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#a66d6f21c8de45bb5080264a4f87e34de" title="Update the value of the pile up degree." alt="" coords="713,5,913,51"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#a46997629f7d6888d1f6a9fc38ec42ac2" title="Update the value of the area." alt="" coords="740,74,887,121"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Cluster.html#ae4f509b83bc7b6bb5ea80a780c9aece6" title="Update the value of the clusteredness degree." alt="" coords="712,144,915,208"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1Cluster.html#ab164d2395be9692d0a20ded5a2422720" title="Update the shape of the cluster." alt="" coords="736,231,891,278"/>
+<area shape="rect" id="node24" href="$classmultiscale_1_1analysis_1_1Cluster.html#a259c6f45b89f780b39ba7b67d7d1af2d" title="Update the point defining the centre of the cluster." alt="" coords="720,301,907,347"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1Cluster.html#a246e92f897320761e16bf6e448c4d3d7" title="Get probability that the cluster has a triangular shape." alt="" coords="969,162,1177,209"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1Cluster.html#a457f4aa50dddfa82247c5d3a89eaa2a9" title="Get probability that the cluster has a rectangular shape." alt="" coords="963,231,1184,278"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1Cluster.html#aee4fe5c8ad1e8178b46eda9341290c8b" title="Get probability that the cluster has a circular shape." alt="" coords="976,301,1171,347"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1Cluster.html#af24261b08126bc2d2f51144056c6d353" title="Get the collection of entities&#39; centres." alt="" coords="1232,257,1413,321"/>
+</map>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['centre',['centre',['../classmultiscale_1_1analysis_1_1Cluster.html#ae7b73d6a3684c908ef0b1e01b7ab1760',1,'multiscale::analysis::Cluster::centre()'],['../classmultiscale_1_1analysis_1_1Entity.html#a05e21544b3b34e9c6f3147b01f90d46c',1,'multiscale::analysis::Entity::centre()']]],
+  ['centre',['centre',['../classmultiscale_1_1analysis_1_1Cluster.html#a83112d8805ba9b3e1e363ab5c3956f3f',1,'multiscale::analysis::Cluster::centre()'],['../classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef',1,'multiscale::analysis::Entity::centre()']]],
   ['circlesiterator',['circlesIterator',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ad4cf12c7f3951f0bb388939797cbcc0c',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['circularprobability',['circularProbability',['../classmultiscale_1_1analysis_1_1Cluster.html#a4c5ed70a54b9ab88e32e186bb98de864',1,'multiscale::analysis::Cluster']]],
   ['clusterednessdegree',['clusterednessDegree',['../classmultiscale_1_1analysis_1_1Cluster.html#a9e6a2613808e1a08b2d3dbfd3af8e23d',1,'multiscale::analysis::Cluster']]],

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['fieldnamestostring',['fieldNamesToString',['../classmultiscale_1_1analysis_1_1Region.html#af766fd7e5b908bd9cf8c3577271ee65b',1,'multiscale::analysis::Region']]],
+  ['fieldnamestostring',['fieldNamesToString',['../classmultiscale_1_1analysis_1_1Cluster.html#a06984724ab3999d2bee36ce355dfe6bb',1,'multiscale::analysis::Cluster::fieldNamesToString()'],['../classmultiscale_1_1analysis_1_1Region.html#af766fd7e5b908bd9cf8c3577271ee65b',1,'multiscale::analysis::Region::fieldNamesToString()']]],
   ['filenamefrompath',['filenameFromPath',['../classmultiscale_1_1StringManipulator.html#ab0354ab5ca48df4394695445fe105640',1,'multiscale::StringManipulator']]],
   ['findclosestcoredatapoint',['findClosestCoreDataPoint',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a7a1c95e78edf9e804a7809648e130bda',1,'multiscale::analysis::DBSCAN']]],
   ['findclusters',['findClusters',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a873ec1e214a0817c2958378093376e89',1,'multiscale::analysis::ClusterDetector']]],

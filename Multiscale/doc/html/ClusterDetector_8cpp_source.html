@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('ClusterDetector_8cpp_source.html','');
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a80e466ef4ac2c13cbd1ba9251c5e6767">   27</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::detect() {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (!isValidImage())</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (!isValidInputImage())</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="ClusterDetector_8hpp.html#a436f1d8a73f8ce98507b031eb65b84ac">ERR_INVALID_IMAGE</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// Initialise the value of eps and minPoints</span></div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('ClusterDetector_8cpp_source.html','');
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    minPoints = 2;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#ae0bd3b36341a602be89d2aa84b47e5b0">   46</a></span>&#160;<span class="keywordtype">bool</span> ClusterDetector::isValidImage() {</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a5de60e18b67cdfe5266f90384e0bb90d">   46</a></span>&#160;<span class="keywordtype">bool</span> ClusterDetector::isValidInputImage() {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> ((image.type() == CV_8UC1) &amp;&amp; (image.dims == 2) &amp;&amp; (image.rows &gt; 1) &amp;&amp; (image.cols &gt; 1));</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
@@ -276,40 +276,42 @@ $(document).ready(function(){initNavTree('ClusterDetector_8cpp_source.html','');
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
 <div class="line"><a name="l00170"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a3d1d211ae726fdeff1d1633b3892f1d0">  170</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::outputClustersAsCsvFile(vector&lt;Cluster&gt; &amp;clusters, ofstream &amp;fout) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html" title="Class for representing a cluster of entities in an image.">Cluster</a> &amp;cluster : clusters) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        fout &lt;&lt; cluster.toString() &lt;&lt; endl;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    fout &lt;&lt; endl;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    fout &lt;&lt; Cluster::fieldNamesToString() &lt;&lt; endl;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html" title="Class for representing a cluster of entities in an image.">Cluster</a> &amp;cluster : clusters) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        fout &lt;&lt; cluster.toString() &lt;&lt; endl;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    fout &lt;&lt; <a class="code" href="ClusterDetector_8hpp.html#a03d08fcd24072f600fedefea105192c5">OUTPUT_CLUSTEREDNESS</a> &lt;&lt; clusterednessIndex</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;         &lt;&lt; <a class="code" href="ClusterDetector_8hpp.html#a8835e4a55ef1753868cbad4d2a144779">OUTPUT_PILE_UP</a> &lt;&lt; avgPileUpDegree</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;         &lt;&lt; endl;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a8b1083467a9b7ac3e14ca24806728947">  182</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::processPressedKeyRequest(<span class="keywordtype">char</span> &amp;pressedKey) {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    pressedKey = waitKey(1);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (pressedKey == <a class="code" href="ClusterDetector_8hpp.html#a735bd78d12a58f1d9dbbf79d2b30e5df">KEY_SAVE</a>) {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        processSaveRequest();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a19e76d92a93bb69cbe1c7cddeafe4d96">  190</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::displayImage(<span class="keyword">const</span> Mat&amp; image, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;windowName) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    namedWindow( windowName, WINDOW_NORMAL );</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    imshow( windowName, image );</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
-<div class="line"><a name="l00195"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#afccb86bfb93df00fff8408faea7a2651">  195</a></span>&#160;<span class="keywordtype">double</span> ClusterDetector::convertEpsValue() {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">return</span> NumericRangeManipulator::convertFromRange&lt;int, double&gt;(<a class="code" href="ClusterDetector_8hpp.html#a1faf458dee5b0c5bb1b33b1c55db5976">EPS_MIN</a>, <a class="code" href="ClusterDetector_8hpp.html#aac9b63e21628e567cbafa966fb6a7ad0">EPS_MAX</a>, <a class="code" href="ClusterDetector_8hpp.html#af6f6eaf3b08254485de414e4b2eb4f30">EPS_REAL_MIN</a>, <a class="code" href="ClusterDetector_8hpp.html#a4e3e53c39cec5f193420cef7dbba2534">EPS_REAL_MAX</a>, eps);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// Add an empty line between the cluster data and the averaged data</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    fout &lt;&lt; endl;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    fout &lt;&lt; <a class="code" href="ClusterDetector_8hpp.html#a03d08fcd24072f600fedefea105192c5">OUTPUT_CLUSTEREDNESS</a> &lt;&lt; clusterednessIndex &lt;&lt; endl</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;         &lt;&lt; <a class="code" href="ClusterDetector_8hpp.html#a8835e4a55ef1753868cbad4d2a144779">OUTPUT_PILE_UP</a> &lt;&lt; avgPileUpDegree &lt;&lt; endl;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a8b1083467a9b7ac3e14ca24806728947">  184</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::processPressedKeyRequest(<span class="keywordtype">char</span> &amp;pressedKey) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    pressedKey = waitKey(1);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">if</span> (pressedKey == <a class="code" href="ClusterDetector_8hpp.html#a735bd78d12a58f1d9dbbf79d2b30e5df">KEY_SAVE</a>) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        processSaveRequest();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a19e76d92a93bb69cbe1c7cddeafe4d96">  192</a></span>&#160;<span class="keywordtype">void</span> ClusterDetector::displayImage(<span class="keyword">const</span> Mat&amp; image, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;windowName) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    namedWindow( windowName, WINDOW_NORMAL );</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    imshow( windowName, image );</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#afccb86bfb93df00fff8408faea7a2651">  197</a></span>&#160;<span class="keywordtype">double</span> ClusterDetector::convertEpsValue() {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">return</span> NumericRangeManipulator::convertFromRange&lt;int, double&gt;(<a class="code" href="ClusterDetector_8hpp.html#a1faf458dee5b0c5bb1b33b1c55db5976">EPS_MIN</a>, <a class="code" href="ClusterDetector_8hpp.html#aac9b63e21628e567cbafa966fb6a7ad0">EPS_MAX</a>, <a class="code" href="ClusterDetector_8hpp.html#af6f6eaf3b08254485de414e4b2eb4f30">EPS_REAL_MIN</a>, <a class="code" href="ClusterDetector_8hpp.html#a4e3e53c39cec5f193420cef7dbba2534">EPS_REAL_MAX</a>, eps);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="ClusterDetector_8cpp.html">ClusterDetector.cpp</a></li>
-    <li class="footer">Generated on Mon Jul 8 2013 16:10:37 for Multiscale by
+    <li class="footer">Generated on Mon Jul 8 2013 17:36:01 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
