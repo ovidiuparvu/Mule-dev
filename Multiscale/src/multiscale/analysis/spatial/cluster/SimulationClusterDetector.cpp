@@ -41,17 +41,17 @@ void SimulationClusterDetector::detectEntitiesInImage(vector<Entity> &entities) 
 }
 
 bool SimulationClusterDetector::isEntityAtPosition(int x, int y) {
-    Mat imageROI(thresholdedImage, Rect(x * entityWidth, y * entityHeight, entityWidth, entityHeight));
+    Rect mask(x * entityWidth, y * entityHeight, entityWidth, entityHeight);
 
-    Scalar positionMean = mean(thresholdedImage, imageROI);
+    Scalar positionMean = mean(thresholdedImage(mask));
 
     return (positionMean.val[0] > ENTITY_THRESH);
 }
 
 double SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int y) {
-    Mat imageROI(image, Rect(x * entityWidth, y * entityHeight, entityWidth, entityHeight));
+    Rect mask(x * entityWidth, y * entityHeight, entityWidth, entityHeight);
 
-    Scalar positionMean = mean(image, imageROI);
+    Scalar positionMean = mean(image(mask));
 
     return positionMean.val[0];
 }
@@ -62,11 +62,14 @@ void SimulationClusterDetector::outputClustersInDebugMode(vector<Cluster> &clust
 
     cvtColor(image, colouredImage, CV_GRAY2RGB);
 
-    for (Cluster &cluster : clusters) {
+    unsigned int nrOfClusters = clusters.size();
+
+    // Skipping the noise cluster which will be displayed as it already is in the original image
+    for (unsigned int i = 1; i < nrOfClusters; i++) {
         // Choose a random colour for the cluster
         Scalar colour = RGBColourGenerator::generate(randomNumberGenerator);
 
-        outputClusterInDebugMode(cluster, colour, colouredImage);
+        outputClusterInDebugMode(clusters[i], colour, colouredImage);
     }
 
     displayImage(colouredImage, WIN_OUTPUT_IMAGE);

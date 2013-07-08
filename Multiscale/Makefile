@@ -20,9 +20,11 @@ LIBS_OPENCV=/usr/local/lib/libopencv_calib3d.so /usr/local/lib/libopencv_contrib
 
 #########################################################################################
 # Default target
+#
+# List of all targets: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
 #########################################################################################
 
-all: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
+all: simulation_cluster_detection simulation_cluster_detection_debug dbscan_test_debug
 
 
 #########################################################################################
@@ -87,6 +89,12 @@ rect_mat_factory_test:
 
 circ_mat_factory_test:
 	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/factory/CircularMatFactory.cpp test/CircularMatFactoryTest.cpp -o bin/CircularMatFactoryTest $(LIBS_BOOST) $(LIBS_OPENCV) 
+
+dbscan_test:
+	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/DBSCAN.cpp test/dbscan/EuclideanDataPoint.hpp test/dbscan/DBSCANTest.cpp -o bin/DBSCANTest $(LIBS_BOOST) $(LIBS_OPENCV) 
+
+dbscan_test_debug:
+	g++ $(CFLAGS_DEBUG) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/DBSCAN.cpp test/dbscan/EuclideanDataPoint.hpp test/dbscan/DBSCANTest.cpp -o bin/DBSCANTest_d $(LIBS_BOOST) $(LIBS_OPENCV) 
 
 
 #########################################################################################

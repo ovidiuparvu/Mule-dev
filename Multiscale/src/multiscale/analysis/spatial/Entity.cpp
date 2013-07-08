@@ -20,7 +20,7 @@ Entity::Entity(const Entity &entity) {
 
     pileUpDegree = entity.pileUpDegree;
     area = entity.area;
-    centre = entity.centre;
+    centre = Point(entity.centre.x, entity.centre.y);
 }
 
 Entity::~Entity() {}
@@ -44,12 +44,9 @@ string Entity::toString() {
 }
 
 double Entity::distanceTo(shared_ptr<DataPoint> point) {
-    if (typeid(this) != typeid(point))
-        throw ERR_DISTANCE;
+    shared_ptr<Entity> entity = dynamic_pointer_cast<Entity>(point);
 
-    Entity entity = *(dynamic_pointer_cast<Entity>(point));
-
-    return distanceTo(entity);
+    return Geometry2D::distanceBtwPoints(centre, entity->centre);
 }
 
 double Entity::distanceTo(const Entity &entity) {

@@ -26,7 +26,7 @@ namespace multiscale {
                 static unsigned int minPoints;                  /*!< DBSCAN algorithm parameter for specifying the minimum number
                                                                      of points in an eps-neighbourhood of that point */
 
-                static int nrOfDataPoints;                      /*!< Number of data points in the data set */
+                static unsigned int nrOfDataPoints;             /*!< Number of data points in the data set */
 
                 static vector<vector<double>> distanceMatrix;   /*!< The matrix containing the distances between any two data points */
 
@@ -44,7 +44,7 @@ namespace multiscale {
                  *  \param eps              Maximum distance between two neighbours
                  *  \param minPoints        Minimum number of points in one cluster
                  */
-                static void run(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> clusterIndexes, int &nrOfClusters,
+                static void run(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> &clusterIndexes, int &nrOfClusters,
                                 double eps, int minPoints);
 
             private:
@@ -59,7 +59,7 @@ namespace multiscale {
                  *  \param clusterIndexes   Indexes to which cluster each data point belongs
                  *  \param nrOfClusters     Total number of clusters
                  */
-                static void runAlgorithm(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> clusterIndexes, int &nrOfClusters);
+                static void runAlgorithm(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> &clusterIndexes, int &nrOfClusters);
 
                 //! Construct the distance matrix between any two data points
                 /*!
@@ -70,12 +70,10 @@ namespace multiscale {
                 //! Expand the cluster around the given core data point
                 /*!
                  *  \param clusterIndexes       Indexes to which cluster each data point belongs
-                 *  \param nrOfClusters         Total number of clusters
                  *  \param coreDataPointIndex   Core data point index
                  *  \param clusterId            Id of the cluster to which the core data point belongs
                  */
-                static bool expandCoreCluster(vector<int> clusterIndexes, int &nrOfClusters, int coreDataPointIndex,
-                                              int clusterId);
+                static bool expandCoreCluster(vector<int> &clusterIndexes, int coreDataPointIndex, int clusterId);
 
                 //! Add all unclassified neighbour nodes to the seeds list
                 /*!
@@ -107,10 +105,12 @@ namespace multiscale {
 
                 //! Find the closest core data point from the given set of neighbours to the given border data point
                 /*!
-                 * \param neighbours Set of neighbours
-                 * \param borderDataPointIndex Index of the border data point
+                 * \param neighbours            Set of neighbours
+                 * \param borderDataPointIndex  Index of the border data point
+                 * \param clusterIndexes        Indexes to which cluster each data point belongs
                  */
-                static int findClosestCoreDataPoint(const vector<int> &neighbours, int borderDataPointIndex);
+                static int findClosestCoreDataPoint(const vector<int> &neighbours, int borderDataPointIndex,
+                                                    const vector<int> &clusterIndexes);
 
                 //! Allocate the distance matrix
                 static void allocateDistanceMatrix();

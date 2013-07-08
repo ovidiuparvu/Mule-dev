@@ -49,7 +49,7 @@ namespace multiscale {
                 string toString();
 
                 //! Get the distance between this entity and another one
-                double distanceTo(shared_ptr<DataPoint> point);
+                double distanceTo(shared_ptr<DataPoint> point) override;
 
                 //! Get the distance between this entity and another one
                 double distanceTo(const Entity &entity);
