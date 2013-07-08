@@ -152,7 +152,7 @@ void ClusterDetector::outputClusters(vector<Cluster> & clusters, bool debugMode)
     if (debugMode) {
         outputClustersInDebugMode(clusters);
     } else {
-        outputClustersAsCsvFile(clusters);
+        outputClustersInNormalMode(clusters);
     }
 }
 

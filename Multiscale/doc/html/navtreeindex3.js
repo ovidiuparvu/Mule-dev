@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"functions_func_0x6f.html":[1,3,1,11],
+"functions_func_0x70.html":[1,3,1,12],
+"functions_func_0x72.html":[1,3,1,13],
+"functions_func_0x73.html":[1,3,1,14],
 "functions_func_0x74.html":[1,3,1,15],
 "functions_func_0x75.html":[1,3,1,16],
 "functions_func_0x76.html":[1,3,1,17],
@@ -34,10 +38,10 @@ var NAVTREEINDEX3 =
 "namespacemembers.html":[0,3,0],
 "namespacemembers_enum.html":[0,3,1],
 "namespacemembers_eval.html":[0,3,2],
-"namespacemultiscale.html":[1,0,0],
 "namespacemultiscale.html":[0,2,0],
-"namespacemultiscale_1_1analysis.html":[1,0,0,0],
+"namespacemultiscale.html":[1,0,0],
 "namespacemultiscale_1_1analysis.html":[0,2,0,0],
+"namespacemultiscale_1_1analysis.html":[1,0,0,0],
 "namespacemultiscale_1_1video.html":[1,0,0,1],
 "namespacemultiscale_1_1video.html":[0,2,0,1],
 "namespaces.html":[0,2],

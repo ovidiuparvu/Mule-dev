@@ -184,23 +184,26 @@ namespace multiscale {
                  */
                 void outputClusters(vector<Cluster> &clusters, bool debugMode);
 
-                //! Output the information computed for the clusters visually in a separate window
-                /*! Output the information computed for the clusters visually in a separate window
-                 *
+                //! Output the information computed for the clusters when debug mode is selected
+                /*!
                  *  \param clusters Clusters of entities detected in the image
                  */
                 virtual void outputClustersInDebugMode(vector<Cluster> &clusters) = 0;
 
+                //! Output the information computed for the clusters when normal mode is selected
+                /*!
+                 *  \param clusters Clusters of entities detected in the image
+                 */
+                virtual void outputClustersInNormalMode(vector<Cluster> &clusters) = 0;
+
                 //! Output the information computed for the clusters in a csv file
-                /*! Output the information computed for the clusters in a csv file
-                 *
+                /*!
                  *  \param clusters Clusters of entities detected in the image
                  */
                 void outputClustersAsCsvFile(vector<Cluster> &clusters);
 
                 //! Output the information computed for the clusters in a csv file
-                /*! Output the information computed for the clusters in a csv file
-                 *
+                /*!
                  *  \param clusters Clusters of entities detected in the image
                  *  \param fout     Output file stream
                  */

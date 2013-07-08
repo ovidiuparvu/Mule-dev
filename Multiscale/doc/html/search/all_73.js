@@ -1,6 +1,7 @@
 var searchData=
 [
   ['saturation',['SATURATION',['../RGBColourGenerator_8hpp.html#a5ea44383e0ece01ce2b69111da09207f',1,'RGBColourGenerator.hpp']]],
+  ['saveresultsaspngimage',['saveResultsAsPNGImage',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a1e4b7806d99320dd67b53f56d2f71f17',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['sectorsiterator',['sectorsIterator',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['selectedconcentrationindex',['selectedConcentrationIndex',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a121d592659f9f5075c8c78aa46c2950c',1,'multiscale::video::PolarCsvToInputFilesConverter::selectedConcentrationIndex()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a5143d25a98a097107c2bed748b4d8df0',1,'multiscale::video::RectangularCsvToInputFilesConverter::selectedConcentrationIndex()']]],
   ['separator',['SEPARATOR',['../AnnularSector_8cpp.html#af68c3a5ad6ffce6c97fff154856a823d',1,'AnnularSector.cpp']]],
@@ -12,8 +13,8 @@ var searchData=
   ['shape2d',['Shape2D',['../namespacemultiscale_1_1analysis.html#ad1ef6155ab2e954c1c33d3e2e6b53fbf',1,'multiscale::analysis']]],
   ['shape2d_2ehpp',['Shape2D.hpp',['../Shape2D_8hpp.html',1,'']]],
   ['shapeasstring',['shapeAsString',['../classmultiscale_1_1analysis_1_1Cluster.html#ae66bd94c5270ea6d1df29a731d0990b3',1,'multiscale::analysis::Cluster']]],
-  ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html',1,'multiscale::analysis']]],
   ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aaf89be91572a4378d6cece5bba361627',1,'multiscale::analysis::SimulationClusterDetector']]],
+  ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html',1,'multiscale::analysis']]],
   ['simulationclusterdetector_2ecpp',['SimulationClusterDetector.cpp',['../SimulationClusterDetector_8cpp.html',1,'']]],
   ['simulationclusterdetector_2ehpp',['SimulationClusterDetector.hpp',['../SimulationClusterDetector_8hpp.html',1,'']]],
   ['simulationdetectclusters_2ecpp',['SimulationDetectClusters.cpp',['../SimulationDetectClusters_8cpp.html',1,'']]],
@@ -24,8 +25,8 @@ var searchData=
   ['splitlineinconcentrations',['splitLineInConcentrations',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#af2d31d32cdba42aeb5589b3faab315ad',1,'multiscale::video::PolarCsvToInputFilesConverter::splitLineInConcentrations()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ab297918325583ff85c8740fa9c5661f6',1,'multiscale::video::RectangularCsvToInputFilesConverter::splitLineInConcentrations(const string &amp;line, double &amp;simulationTime)'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a6cfe59bda4fbe1944199b6d27f8ee8b0',1,'multiscale::video::RectangularCsvToInputFilesConverter::splitLineInConcentrations(vector&lt; double &gt; &amp;concentrations, vector&lt; string &gt; &amp;tokens, unsigned int rowIndex)']]],
   ['splitotherpartsinconcentrations',['splitOtherPartsInConcentrations',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a84994d623303296509326707fa397f29',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['standard',['STANDARD',['../namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5aa048887eb0360a4b70dff5452133f42e',1,'multiscale']]],
-  ['standardnumberiterator',['StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html#a43b7b42ae0ed44a140cf4817cadf9166',1,'multiscale::StandardNumberIterator']]],
   ['standardnumberiterator',['StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html',1,'multiscale']]],
+  ['standardnumberiterator',['StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html#a43b7b42ae0ed44a140cf4817cadf9166',1,'multiscale::StandardNumberIterator']]],
   ['standardnumberiterator_2ecpp',['StandardNumberIterator.cpp',['../StandardNumberIterator_8cpp.html',1,'']]],
   ['standardnumberiterator_2ehpp',['StandardNumberIterator.hpp',['../StandardNumberIterator_8hpp.html',1,'']]],
   ['startingangle',['startingAngle',['../classmultiscale_1_1video_1_1AnnularSector.html#a437d3dc1b2fadace28bdc3d26a78c0b3',1,'multiscale::video::AnnularSector']]],

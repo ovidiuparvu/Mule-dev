@@ -3321,13 +3321,37 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputClusterInDebugMode</Name>
+      <Name>outputClustersInNormalMode</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>aaace678f25a976de72f03f4076bc0e0a</Anchor>
+    <Anchor>a37b382d39dd1ba737a69aad90a1e5ac6</Anchor>
+    <Abstract>Output the information computed for the clusters in a in a &amp;quot;.csv&amp;quot; and &amp;quot;.png&amp;quot; file.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClustersOnImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a0bdcd1fe80d8a6f82d899d3d8f86d005</Anchor>
+    <Abstract>Dsiaply clusters on image.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClusterOnImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>af2c2d6f5fe0b1e08039fa12ec3132475</Anchor>
     <Abstract>Display cluster on the image.</Abstract>
     <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -3389,6 +3413,18 @@
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
     <Anchor>afeb17d0d9cf27eadfad79042951dfe43</Anchor>
     <Abstract>Process the save request in case the lowercase &amp;quot;s&amp;quot; key was pressed.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveResultsAsPNGImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a1e4b7806d99320dd67b53f56d2f71f17</Anchor>
+    <Abstract>Store the results as a &amp;quot;.png&amp;quot; image on disk.</Abstract>
     <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4516,7 +4552,19 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>ad139564f58d5b2308dcf04eee304d0f2</Anchor>
-    <Abstract>Output the information computed for the clusters visually in a separate window.</Abstract>
+    <Abstract>Output the information computed for the clusters when debug mode is selected.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputClustersInNormalMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>ac5dba63bc1170dde54e84b73f06fe836</Anchor>
+    <Abstract>Output the information computed for the clusters when normal mode is selected.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>

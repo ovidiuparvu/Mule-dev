@@ -25,6 +25,7 @@ var classmultiscale_1_1analysis_1_1ClusterDetector =
     [ "outputClustersAsCsvFile", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a64d699b579ec010ebc495d9d7774d3d2", null ],
     [ "outputClustersAsCsvFile", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a3d1d211ae726fdeff1d1633b3892f1d0", null ],
     [ "outputClustersInDebugMode", "classmultiscale_1_1analysis_1_1ClusterDetector.html#ad139564f58d5b2308dcf04eee304d0f2", null ],
+    [ "outputClustersInNormalMode", "classmultiscale_1_1analysis_1_1ClusterDetector.html#ac5dba63bc1170dde54e84b73f06fe836", null ],
     [ "processPressedKeyRequest", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a8b1083467a9b7ac3e14ca24806728947", null ],
     [ "processSaveRequest", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a71858c299b24b6e210ad5f8eac9d6065", null ],
     [ "avgPileUpDegree", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a6f6cfa50cf21ac400d41d6c6f2112bc9", null ],

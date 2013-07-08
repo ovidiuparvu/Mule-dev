@@ -79,13 +79,25 @@ namespace multiscale {
                  */
                 void outputClustersInDebugMode(vector<Cluster> &clusters) override;
 
+                //! Output the information computed for the clusters in a in a ".csv" and ".png" file
+                /*!
+                 *  \param clusters Clusters of entities detected in the image
+                 */
+                void outputClustersInNormalMode(vector<Cluster> &clusters) override;
+
+                //! Dsiaply clusters on image
+                /*!
+                 *  \param clusters Clusters of entities detected in the image
+                 */
+                void outputClustersOnImage(vector<Cluster> &clusters);
+
                 //! Display cluster on the image
                 /*!
                  * \param cluster   Cluster
                  * \param colour    Colour associated to all entities in the cluster
                  * \param image     The image on which to display the cluster related information
                  */
-                void outputClusterInDebugMode(Cluster &cluster, Scalar colour, Mat &image);
+                void outputClusterOnImage(Cluster &cluster, Scalar colour, Mat &image);
 
                 //! Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image
                 /*!
@@ -121,6 +133,9 @@ namespace multiscale {
 
                 //! Process the save request in case the lowercase "s" key was pressed
                 void processSaveRequest();
+
+                //! Store the results as a ".png" image on disk
+                void saveResultsAsPNGImage();
 
         };
 
