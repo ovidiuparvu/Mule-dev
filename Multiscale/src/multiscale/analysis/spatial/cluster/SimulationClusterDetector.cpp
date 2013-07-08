@@ -29,8 +29,8 @@ void SimulationClusterDetector::detectEntitiesInImage(vector<Entity> &entities) 
                 double pileUpDegree = computePileUpDegreeAtPosition(j, i);
                 double area = entityHeight * entityWidth;
 
-                double xCentre = (j * width) + (width / 2);
-                double yCentre = (i * height) + (height / 2);
+                double xCentre = (j * entityWidth) + (entityWidth / 2);
+                double yCentre = (i * entityHeight) + (entityHeight / 2);
 
                 Point centre(xCentre, yCentre);
 
@@ -79,7 +79,7 @@ void SimulationClusterDetector::outputClusterInDebugMode(Cluster &cluster, Scala
     vector<Entity> entities = cluster.getEntities();
 
     for (const Entity &entity : entities) {
-        circle(image, entity.getCentre(), DATAPOINT_WIDTH, colour);
+        circle(image, entity.getCentre(), DATAPOINT_WIDTH, colour, DATAPOINT_THICKNESS);
     }
 
     outputClusterShape(cluster, colour, image);

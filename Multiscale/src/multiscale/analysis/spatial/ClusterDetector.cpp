@@ -51,8 +51,8 @@ void ClusterDetector::createTrackbars() {
     namedWindow( WIN_OUTPUT_IMAGE, WINDOW_NORMAL);
     setWindowProperty( WIN_OUTPUT_IMAGE, CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN );
 
-    createTrackbar(TRACKBAR_EPS, WIN_OUTPUT_IMAGE, &eps, MIN_POINTS_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_MINPOINTS, WIN_OUTPUT_IMAGE, &minPoints, EPS_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_MINPOINTS, WIN_OUTPUT_IMAGE, &minPoints, MIN_POINTS_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_EPS, WIN_OUTPUT_IMAGE, &eps, EPS_MAX, nullptr, nullptr);
 }
 void ClusterDetector::detectClusters() {
     vector<Cluster> clusters;
@@ -99,7 +99,7 @@ void ClusterDetector::detectAndAnalyseClusters(const vector<Entity> &entities, v
 
     detectClusters(entities, clusterIndexes, nrOfClusters);
     addEntitiesToClusters(entities, clusterIndexes, nrOfClusters, clusters);
-    // analyseClusters(clusters);
+    analyseClusters(clusters);
 }
 
 void ClusterDetector::detectClusters(const vector<Entity> &entities, vector<int> &clusterIndexes, int &nrOfClusters) {

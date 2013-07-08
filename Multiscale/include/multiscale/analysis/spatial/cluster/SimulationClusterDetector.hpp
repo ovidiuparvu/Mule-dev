@@ -14,7 +14,8 @@ using namespace cv;
 
 #define ENTITY_THRESH       200
 
-#define DATAPOINT_WIDTH     3
+#define DATAPOINT_WIDTH     10
+#define DATAPOINT_THICKNESS -1
 
 
 namespace multiscale {

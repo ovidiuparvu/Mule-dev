@@ -18,7 +18,7 @@ using namespace cv;
 
 #define OUTPUT_EXTENSION        ".out"
 
-#define TRACKBAR_EPS            "Eps"
+#define TRACKBAR_EPS            "Eps (Multiplied by 10)"
 #define TRACKBAR_MINPOINTS      "Minimum number of points"
 
 #define MIN_POINTS_MIN          0
