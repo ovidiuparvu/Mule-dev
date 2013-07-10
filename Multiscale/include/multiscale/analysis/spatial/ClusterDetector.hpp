@@ -28,9 +28,9 @@ using namespace cv;
 #define MIN_POINTS_MAX          100
 
 #define EPS_MIN                 0
-#define EPS_MAX                 100000
+#define EPS_MAX                 10000
 #define EPS_REAL_MIN            0
-#define EPS_REAL_MAX            10000
+#define EPS_REAL_MAX            1000
 
 #define WIN_OUTPUT_IMAGE        "Output image"
 

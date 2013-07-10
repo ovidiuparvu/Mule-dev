@@ -81,6 +81,9 @@ simulation_cluster_detection_debug:
 # Unit tests
 #########################################################################################
 
+geometry2d_test:
+	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp test/Geometry2DTest.cpp -o bin/Geometry2DTest $(LIBS_BOOST) $(LIBS_OPENCV) 
+
 line_circle_test:
 	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp test/LineCircleIntersectionTest.cpp -o bin/LineCircleIntersectionTest $(LIBS_BOOST) $(LIBS_OPENCV) 
 

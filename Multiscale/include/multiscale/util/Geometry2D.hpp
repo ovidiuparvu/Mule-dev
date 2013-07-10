@@ -25,7 +25,7 @@ namespace multiscale {
              */
             static double distanceBtwPoints(const Point &a, const Point &b);
 
-            //! Compute the distance from a point to a line specified by two points
+            //! Compute the distance from a point "a" to a line specified by two points "B" and "C"
             /*!
              * \param a Point from which the distance is measures
              * \param linePointB One of the points determining the line
@@ -155,6 +155,18 @@ namespace multiscale {
              * \param origin The origin
              */
             static unsigned int minimumDistancePointIndex(const vector<Point> &points, const Point &origin);
+
+            //! Compute the area of a triangle defined by three points
+            /*!
+             * The area is computed using the determinant method.
+             * An example is presented at http://demonstrations.wolfram.com/TheAreaOfATriangleUsingADeterminant/
+             * (Last access: 10.07.2013)
+             *
+             * \param a Point a
+             * \param b Point b
+             * \param c Point c
+             */
+            static double areaOfTriangle(const Point2f &a, const Point2f &b, const Point2f &c);
 
         private:
 

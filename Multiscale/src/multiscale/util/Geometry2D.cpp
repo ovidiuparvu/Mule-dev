@@ -204,6 +204,15 @@ unsigned int Geometry2D::minimumDistancePointIndex(const vector<Point> &contour,
     return minimumDistancePointIndex;
 }
 
+double Geometry2D::areaOfTriangle(const Point2f &a, const Point2f &b, const Point2f &c) {
+    double posTerm = (a.x * b.y) + (a.y * c.x) + (b.x * c.y);
+    double negTerm = (b.y * c.x) + (a.x * c.y) + (a.y * b.x);
+
+    double determinant = posTerm - negTerm;
+
+    return abs(determinant) / 2;
+}
+
 bool Geometry2D::isPointOnEdge(const Point &p, int nrOfRows, int nrOfCols) {
     return (
               ((p.x <= MATRIX_START_INDEX) && (p.y > MATRIX_START_INDEX) && (p.y < nrOfCols)) ||
