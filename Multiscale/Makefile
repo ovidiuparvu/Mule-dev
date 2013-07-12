@@ -24,7 +24,7 @@ LIBS_OPENCV=/usr/local/lib/libopencv_calib3d.so /usr/local/lib/libopencv_contrib
 # List of all targets: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
 #########################################################################################
 
-all: simulation_cluster_detection simulation_cluster_detection_debug
+all: simulation_cluster_detection simulation_cluster_detection_debug geometry2d_test_debug geometry2d_test
 
 
 #########################################################################################
@@ -82,7 +82,10 @@ simulation_cluster_detection_debug:
 #########################################################################################
 
 geometry2d_test:
-	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp test/Geometry2DTest.cpp -o bin/Geometry2DTest $(LIBS_BOOST) $(LIBS_OPENCV) 
+	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/util/MinimumAreaEnclosingTriangle.cpp src/multiscale/util/Numeric.cpp test/Geometry2DTest.cpp -o bin/Geometry2DTest $(LIBS_BOOST) $(LIBS_OPENCV) 
+
+geometry2d_test_debug:
+	g++ $(CFLAGS_DEBUG) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/util/MinimumAreaEnclosingTriangle.cpp src/multiscale/util/Numeric.cpp test/Geometry2DTest.cpp -o bin/Geometry2DTest_d $(LIBS_BOOST) $(LIBS_OPENCV) 
 
 line_circle_test:
 	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp test/LineCircleIntersectionTest.cpp -o bin/LineCircleIntersectionTest $(LIBS_BOOST) $(LIBS_OPENCV) 

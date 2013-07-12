@@ -4,13 +4,13 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "multiscale/analysis/spatial/Entity.hpp"
 #include "multiscale/analysis/spatial/Shape2D.hpp"
+#include "multiscale/util/Geometry2D.hpp"
 
 #include <vector>
 
 using namespace cv;
 using namespace std;
 
-#define PI                  3.141592
 
 #define STR_TRIANGLE        "triangle"
 #define STR_RECTANGLE       "rectangle"

@@ -1,9 +1,40 @@
 #include "multiscale/util/Geometry2D.hpp"
 
 #include <algorithm>
+#include <cmath>
 
 using namespace multiscale;
 
+
+double Geometry2D::angleOfLineWrtOxAxis(const Point &a, const Point &b) {
+    double slope = 0;
+
+    if (!slopeOfLine(a, b, slope)) {
+        return PI / 2;
+    } else {
+        if (slope > 0) {
+            return atan(slope);
+        } else if (slope < 0) {
+            return PI + atan(slope);
+        } else {
+            return (b.x > a.x) ? 0
+                               : PI;
+        }
+    }
+}
+
+bool Geometry2D::slopeOfLine(const Point &a, const Point &b, double &slope) {
+    double nominator = b.y - a.y;
+    double denominator = b.x - a.x;
+
+    if (denominator == 0) {
+        return false;
+    } else {
+        slope = nominator / denominator;
+
+        return true;
+    }
+}
 
 double Geometry2D::distanceBtwPoints(const Point &a, const Point &b) {
     double xDiff = a.x - b.x;
@@ -77,6 +108,12 @@ void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Po
     }
 }
 
+void Geometry2D::lineEquationDeterminedByPoints(const Point &p, const Point &q, double &a, double &b, double &c) {
+    a = q.y - p.y;
+    b = p.x - q.x;
+    c = ((-p.y) * b) - (p.x * a);
+}
+
 bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection) {
     int A1 = b1.y - a1.y;
     int B1 = a1.x - b1.x;
@@ -91,6 +128,19 @@ bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point 
     if (det != 0) {
         intersection.x = ((C1 * B2) - (C2 * B1)) / (det);
         intersection.y = ((C2 * A1) - (C1 * A2)) / (det);
+
+        return true;
+    }
+
+    return false;
+}
+
+bool Geometry2D::lineIntersection(double a1, double b1, double c1, double a2, double b2, double c2, Point &intersection) {
+    int det = (a1 * b2) - (a2 * b1);
+
+    if (det != 0) {
+        intersection.x = ((c1 * b2) - (c2 * b1)) / (det);
+        intersection.y = ((c2 * a1) - (c1 * a2)) / (det);
 
         return true;
     }
