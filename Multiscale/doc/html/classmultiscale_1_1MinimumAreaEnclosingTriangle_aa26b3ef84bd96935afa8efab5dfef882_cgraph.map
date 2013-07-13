@@ -1,0 +1,8 @@
+<map id="multiscale::MinimumAreaEnclosingTriangle::findGammaIntersectionPoints" name="multiscale::MinimumAreaEnclosingTriangle::findGammaIntersectionPoints">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2fb97bef9404c59d5a8ed1eff131b0ce" title="Compute the height of the point specified by the given index." alt="" coords="301,74,528,121"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2aa60ff7b5d82262bbc8498f05882802" title="Get the line equation parameters &quot;a&quot;, &quot;b&quot; and &quot;c&quot; for the line determined by points &quot;p&quot; and &quot;q&quot;..." alt="" coords="301,143,528,190"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="333,213,496,259"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a89173019a673e51d0985f45d067f30cb" title="Return the predecessor of the provided point index." alt="" coords="576,5,803,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Geometry2D.html#ae6c0f66accf4ecf31b0fd96437371626" title="Compute the distance from a point &quot;a&quot; to a line specified by two points &quot;B&quot; and &quot;C&quot;." alt="" coords="600,74,779,121"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1Geometry2D.html#a6d72740d7f1b2441b0829c0f0c6a6853" title="Get the values of &quot;a&quot;, &quot;b&quot; and &quot;c&quot; of the line equation ax + by + c = 0 knowing that point &quot;p&quot; and &quot;q..." alt="" coords="579,143,800,190"/>
+</map>

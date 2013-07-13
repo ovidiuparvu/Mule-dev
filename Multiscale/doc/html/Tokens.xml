@@ -2,16 +2,6 @@
 <Tokens version="1.0">
   <Token>
     <TokenIdentifier>
-      <Name>PI</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>Cluster_8hpp.html</Path>
-    <Anchor>a598a3330b3c21701223ee0ca14316eca</Anchor>
-    <DeclaredIn>Cluster.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>STR_TRIANGLE</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -882,6 +872,86 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>INTERSECTS_BELOW</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a33b2bf416e7a3eb9b86eb3cff45ba67a</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>INTERSECTS_ABOVE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a491d37fc7ce0c72d3763cc91495f87c2</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>INTERSECTS_CRITICAL</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a7f2b811fcec86dfda9bcf2d5e9096603</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>INTERSECTS_LIMIT</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a08b447dcb2172aa0fde5a6e29fcf006e</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_MIDPOINT_SIDE_B</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a908ada963db8d95f0f72c05a24e8e1e1</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_SIDE_B_GAMMA</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a3a386906c2cc4f2b7c3d52663ef9a184</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_VERTEX_C_ON_SIDE_B</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a35b2d19f0f8d88b29478a88ecff6e6d9</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_TRIANGLE_VERTICES</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a206e0581e606c88ca6d4aebad7e9d385</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>HUE_MIN</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -1677,7 +1747,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>RegionDetector_8cpp.html</Path>
-    <Anchor>a31cd0a7bc23ff3a928996d2890ce9a31</Anchor>
+    <Anchor>aaea54364ddf19e83617e33b0c36d4825</Anchor>
     <DeclaredIn>RegionDetector.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -2185,13 +2255,73 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>angleOfLineWrtOxAxis</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a5c91b7d536f0445afa9c68c73ffe4139</Anchor>
+    <Abstract>Get the angle of the line measured from the Ox axis in counterclockwise direction.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isAngleBetween</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a6555ae4c2762e25444bc0874e9bbc535</Anchor>
+    <Abstract>Check if angle1 lies between angles 2 and 3.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isOppositeAngleBetween</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>aa373f78afdba238ebe3bafaac6076aef</Anchor>
+    <Abstract>Check if the opposite of angle1, ((angle1 + 180) % 360), lies between angles 2 and 3...</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>oppositeAngle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a3bb85fa2797ba25765f0f57786cb33ef</Anchor>
+    <Abstract>Return the angle opposite to the given angle.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>slopeOfLine</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a1219ac10c3647d43c5af77dc5bc574a2</Anchor>
+    <Abstract>Compute the slope of the line defined by points &amp;quot;a&amp;quot; and &amp;quot;b&amp;quot;.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>distanceBtwPoints</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a702d65aaced6ff971809ea7a537fc70a</Anchor>
+    <Anchor>a911b35d7abde99988bb4b43f00d6be72</Anchor>
     <Abstract>Compute the distance between two points.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2203,8 +2333,8 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a9974bf3050ce8038ef45c0a731d9d498</Anchor>
-    <Abstract>Compute the distance from a point to a line specified by two points.</Abstract>
+    <Anchor>ae6c0f66accf4ecf31b0fd96437371626</Anchor>
+    <Abstract>Compute the distance from a point &amp;quot;a&amp;quot; to a line specified by two points &amp;quot;B&amp;quot; and &amp;quot;C&amp;quot;.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2215,7 +2345,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>aa6422ff6e704c3f64be2d4e7197d8dbd</Anchor>
+    <Anchor>a178c13bdb5cc3f26de7d5e9fd05781f5</Anchor>
     <Abstract>Get the point in the middle of the segment determined by points &amp;quot;a&amp;quot; and &amp;quot;b&amp;quot;.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2227,8 +2357,20 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a3da27e8cecb0a0d2733afa85d356a912</Anchor>
+    <Anchor>a9ed39465f735b1f216033d2081900ef3</Anchor>
     <Abstract>Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point...</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>lineEquationDeterminedByPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a6d72740d7f1b2441b0829c0f0c6a6853</Anchor>
+    <Abstract>Get the values of &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot; and &amp;quot;c&amp;quot; of the line equation ax + by + c = 0 knowing that point &amp;quot;p&amp;quot; and &amp;quot;q...</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2239,7 +2381,19 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>aa9d9b17a7e5098c8bde0cd9d3dc08dc2</Anchor>
+    <Anchor>aae24e97b32bdd8dab88c880d0d25ec86</Anchor>
+    <Abstract>Determine the intersection point of two lines, if this point exists.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>lineIntersection</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a51a867b90c8492ce4ce85c227788678b</Anchor>
     <Abstract>Determine the intersection point of two lines, if this point exists.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2251,7 +2405,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a9931c3d8089d658186a8c1ac78db5773</Anchor>
+    <Anchor>a886d8a1fc55be9f0240f83b82acd53e1</Anchor>
     <Abstract>Determine the intersection point of two line segments, if this point exists.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2263,7 +2417,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>acd757a54d9ffa99752fc1cf6b4b29cc5</Anchor>
+    <Anchor>ab04c08f83d066f0d936d516d015ea62c</Anchor>
     <Abstract>Determine if a line and a circle intersect and return the intersection points if they exist...</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2275,7 +2429,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a287f945dac65cbd213befdc50f183ef8</Anchor>
+    <Anchor>a92bd36cdda4cdacb4101c6db54474a6d</Anchor>
     <Abstract>Determine if a line segment and a circle intersect and return the intersection points if they exist...</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2287,7 +2441,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>ae350dc61448d3912bdaff41b40b8fb7e</Anchor>
+    <Anchor>ace72cd1329667fdb5bc3fc40b96694bd</Anchor>
     <Abstract>Compute the angle between three points.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2299,7 +2453,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a0ae1e3197b01d5f713796820303beee5</Anchor>
+    <Anchor>a9e5c6378463c0e685136d66bfac2a8c1</Anchor>
     <Abstract>Find the subset of points from the given set of points which lie on the edge.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2311,8 +2465,20 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a8ae0be0491a149417bb690d0676166c1</Anchor>
+    <Anchor>a702693b824ff0222a1eae2008b32fa22</Anchor>
     <Abstract>Get the index of the point which is the closest to the origin.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>areaOfTriangle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>abf0e96a63cf744cab74ab94398e28562</Anchor>
+    <Abstract>Compute the area of a triangle defined by three points.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2323,7 +2489,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a7613f5291b763c025deb3383488aa42a</Anchor>
+    <Anchor>a4a6aba3c69956a83af5d81f4d087c205</Anchor>
     <Abstract>Check if the given point is on the edge.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2359,7 +2525,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a2d90fd709cc439f2d0ff0518d1edb679</Anchor>
+    <Anchor>ae7299287a17f8cd47e8d84e19ddbe0e9</Anchor>
     <Abstract>Translate a point by the given values.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2371,7 +2537,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a92ed6754218717c2014c7eeedde305c9</Anchor>
+    <Anchor>a7a7526398a9675a05c609bb442fe02f0</Anchor>
     <Abstract>Inverse translate a point by the given values.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2383,7 +2549,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>addae5914497aec6e2c217364ce15b414</Anchor>
+    <Anchor>ae501398552bf50acfd23c04db8d65300</Anchor>
     <Abstract>Treat the case when the line and circle intersect in two points.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2395,7 +2561,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>af4baa01aa42d2517d70774fbe216239b</Anchor>
+    <Anchor>ad9a4555568f44ef912601d669ef94e03</Anchor>
     <Abstract>Treat the case when the line and circle intersect in one point.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2809,6 +2975,527 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>multiscale::MinimumAreaEnclosingTriangle</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Abstract>Class for computing the minimum area enclosing triangle for a given polygon.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>find</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a1fed629a9f290fe050c515aa2d0d799d</Anchor>
+    <Abstract>Find the minimum area enclosing triangle for the given polygon.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialise</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a5517774074e5cc22cafcdb523212eeb6</Anchor>
+    <Abstract>Initialisation function for the class.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>findMinimumAreaEnclosingTriangle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a2637b25290dd55db6c72dec9dc184103</Anchor>
+    <Abstract>Find the minimum area enclosing triangle for the given polygon.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>advanceBToRightChain</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a772ac3b9529eccbce7af2c72a0360d89</Anchor>
+    <Abstract>Advance b to the right chain.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>moveAIfLowAndBIfHigh</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a350b2e78503488433a0ae5a7a2a22f64</Anchor>
+    <Abstract>Move &amp;quot;a&amp;quot; if it is low and &amp;quot;b&amp;quot; if it is high.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>searchForBTangency</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a963feccd69c5ea86bbf4965d91ed32ed</Anchor>
+    <Abstract>Search for the tangency of side B.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isNotBTangency</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>ab8fcbbabc20d96ebaf6edeeaf0d38e63</Anchor>
+    <Abstract>Check if tangency for side B was not obtained.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>updateSidesCA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a8c906ab782ec5feb1767869a61d3620d</Anchor>
+    <Abstract>Update sides A and C.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>updateSidesBA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a20d737b8bb311c01d037062e98eb7efc</Anchor>
+    <Abstract>Update sides B and possibly A if tangency for side B was not obtained.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>updateSideB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a75d6c0769a2717ed7086b28be0db2440</Anchor>
+    <Abstract>Set side B if tangency for side B was obtained.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>updateTriangleVertices</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a0d5499a44c86edeb69d8303ae92ab8e9</Anchor>
+    <Abstract>Update the triangle vertices after all sides were set.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>updateMinimumAreaEnclosingTriangle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a13a71a75863ff3ccc9993e741086dbcf</Anchor>
+    <Abstract>Update the current minimum area enclosing triangle if the newly obtained one has a smaller area...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>middlePointOfSideB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>ab1afd0c3e7b8aef5f3c110e3fde525b3</Anchor>
+    <Abstract>Return the middle point of side B.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>intersectsBelow</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a9f68018fd829d176bb6de00c8e5d2291</Anchor>
+    <Abstract>Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon belo...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>intersectsAbove</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a4d0a39f0a938817b6b07985f6f85da9c</Anchor>
+    <Abstract>Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon abov...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>intersects</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a91f6db13e26c0b15735ee5eb975fc09f</Anchor>
+    <Abstract>Check if/where the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygo...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>intersectsAboveOrBelow</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a9bfe25a1a27190784fe106bb6d51e0de</Anchor>
+    <Abstract>If (gamma(x) x) intersects P between successorOrPredecessorIndex and pointIntex is it above/below...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>adjustAnglesIfReflex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>ab5c387b6a460cae90d718208a08c5d1b</Anchor>
+    <Abstract>Considering that the polygon is convex adjust the values of anglePredecessor/angleSuccessor such that...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isFlushAngleBetweenPredecessorAndSuccessor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>abaa5d01dc1a1b2693b4436f19dcb661a</Anchor>
+    <Abstract>Check if the angle of the flush edge or its opposite angle lie between the angle of the predecessor a...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isGammaAngleBetween</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a2f6d0472387e94586f8c5bc5cad604cb</Anchor>
+    <Abstract>Check if the angle of the line (gamma(p) p) or its opposite angle lie between angle1 and angle2...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isGammaAngleEqualTo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>aa50cf3fffb241c6e3af2c05c9d315321</Anchor>
+    <Abstract>Check if the angle of the line (gamma(p) p) or its opposite angle is equal to the given angle...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>height</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a2fb97bef9404c59d5a8ed1eff131b0ce</Anchor>
+    <Abstract>Compute the height of the point specified by the given index.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>height</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a0095334b480ad158991cf451a30c3674</Anchor>
+    <Abstract>Compute the height of the point.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gamma</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>aacc1dc3225d307ff882c6d5564e7831d</Anchor>
+    <Abstract>Find gamma for a given point &amp;quot;p&amp;quot; specified by its index.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>findVertexCOnSideB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>aa0e5813de41cf0415f687d6c6371699c</Anchor>
+    <Abstract>Find vertex C which lies on side B at a distance = 2 * height(a-1) from side C.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>findGammaIntersectionPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>aa26b3ef84bd96935afa8efab5dfef882</Anchor>
+    <Abstract>Find the intersection points to compute gamma(point)</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>lineEquationParameters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a2aa60ff7b5d82262bbc8498f05882802</Anchor>
+    <Abstract>Get the line equation parameters &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot; and &amp;quot;c&amp;quot; for the line determined by points &amp;quot;p&amp;quot; and &amp;quot;q&amp;quot;...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>advance</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a4cdd0f627c2fa44aa5b4760d04ee3c80</Anchor>
+    <Abstract>Advance the given index with one position.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>successor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a178b8229a0f7a18f7f0050f5c8d859d3</Anchor>
+    <Abstract>Return the succesor of the provided point index.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>predecessor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a89173019a673e51d0985f45d067f30cb</Anchor>
+    <Abstract>Return the predecessor of the provided point index.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>vertexA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a08e1e2f1a682598a8b336d63654f4628</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>vertexB</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>af54ab74d9af976d7308463a334ae1dda</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>vertexC</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a57010dcbfa3ff916815df80663f704bc</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sideAStartVertex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a29a7a1a4b8cf544dbd7ccb75f653587e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sideAEndVertex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>abab8794502794dcbfc4b9336734ecae8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sideBStartVertex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a01c5a1d51bf85edcd3b9498192b5c70e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sideBEndVertex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a4183750a67cc95d70695820376a52453</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sideCStartVertex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a9c227b89fcf6afe2f6fe0bb842c47518</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sideCEndVertex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a08dbbe5cf66a72a3f973dc0b34526f86</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>area</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a8631cd58e7083b9ed99a1ad173e2694d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>a</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a982681b52b0d6c14fa4a193165639469</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>b</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a88aa912aa1199f163d60b2a11c3948aa</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>c</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a8de6adbe07fa09cefefd31b84e7e6ef3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>nrOfPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>ae9024f754f845334dc9dd74ce8e104a9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>polygon</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>ae00ebcf0a1f6bb966d9735a4be44a2f3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::NumberIterator</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -2955,6 +3642,75 @@
     <Anchor>a21e658de178b6c957df5ea0482e6fbd6</Anchor>
     <Abstract>Reset the current number to its initial value.</Abstract>
     <DeclaredIn>NumberIterator.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::Numeric</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Abstract>Class for manipulating numbers (shorts, ints, floats, doubles etc.)</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>greaterOrEqual</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a13ae1e2b35654937bed4c19e776ccdb5</Anchor>
+    <Abstract>Check if the first number is greater than or equal to the second number.</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>lessOrEqual</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a7f21159a23c71c1d37e1c487e9ff815c</Anchor>
+    <Abstract>Check if the first number is less than or equal to the second number.</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>almostEqual</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a996dda9f7361be59b4614eace0b93f24</Anchor>
+    <Abstract>Check if the two numbers are equal (almost)</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>maximum</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a54d5578d5980315b7bade31a5655cd72</Anchor>
+    <Abstract>Return the maximum of the provided numbers.</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>epsilon</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>ac66cc2092ff149af068ac93aa3a6cc51</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5561,7 +6317,7 @@
       <Scope>multiscale::analysis::Region</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>aada5915b33d6a5cdf6af38846a6fc622</Anchor>
+    <Anchor>a59d1fca3039e2d8da000ae483a9ac469</Anchor>
     <DeclaredIn>Region.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5619,7 +6375,7 @@
       <Scope>multiscale::analysis::Region</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>ab2fc240206cad785e13ea8e2f56a289b</Anchor>
+    <Anchor>ac1012549744a63071070e47c39ce7450</Anchor>
     <Abstract>Get the polygon defining the region.</Abstract>
     <DeclaredIn>Region.hpp</DeclaredIn>
   </Token>
@@ -5685,7 +6441,7 @@
       <Scope>multiscale::analysis::Region</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>a40d1b47f30bb09c6a47521a968163b6d</Anchor>
+    <Anchor>a3bd26cd2aa2cc67b70dafd82f7f52d7d</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5896,7 +6652,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a19918b5cd0ec310ad6149c7345870b3f</Anchor>
+    <Anchor>a12b7d8305d247a1980c5290c29933372</Anchor>
     <Abstract>Find contours in image.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -5908,7 +6664,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a1416b365f921e02e5161d72b0b69f287</Anchor>
+    <Anchor>a60916d106131e87cde1287db681ce95c</Anchor>
     <Abstract>Create a new region from the given polygon.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -5920,7 +6676,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a2be058ae797d80787725ae2c246ba256</Anchor>
+    <Anchor>ae2e3d7e35d439d5f531ece928959f146</Anchor>
     <Abstract>Check if the region is valid.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -5932,7 +6688,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>ac016631bd35bf0dd2d7e941076ec09c8</Anchor>
+    <Anchor>ae2b88d6869840e94c698bd165da1bd52</Anchor>
     <Abstract>Compute the angle of the polygon.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -5944,7 +6700,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>afb2aa3926a1bdc868f990db65df1ed4c</Anchor>
+    <Anchor>a091e2ed76c012a63c9e055c2ca54a82e</Anchor>
     <Abstract>Compute the angle of the polygon.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -5956,7 +6712,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a53457e7405a2a4558fe659aa66931834</Anchor>
+    <Anchor>a199f572b37485d773e1e31a852fff282</Anchor>
     <Abstract>Get the centre of the minimum area bounding rectangle.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -5968,7 +6724,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a3b76437c936dc9055c3ae49846f4016a</Anchor>
+    <Anchor>a4e8b186a74c6ef9874ed3fe07ae2b2a1</Anchor>
     <Abstract>Find the points for determining the angle of the region.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -5980,7 +6736,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>af804b99efa2c9c5adb04c11a5dc5f589</Anchor>
+    <Anchor>a730799aab890a76d1f4925bf3cb83300</Anchor>
     <Abstract>Find good intersection points for computing the angle of the region.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6158,7 +6914,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a8d2a487b7a4168ba94caa3596efbf794</Anchor>
+    <Anchor>a61600cddfa641636cf7983b3c4161c88</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

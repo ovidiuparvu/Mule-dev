@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['gamma',['gamma',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aacc1dc3225d307ff882c6d5564e7831d',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['generate',['generate',['../classmultiscale_1_1RGBColourGenerator.html#ab96622fb17f93d1f92a3b8b9fd978725',1,'multiscale::RGBColourGenerator::generate(double concentrationMin, double concentrationMax, double concentration)'],['../classmultiscale_1_1RGBColourGenerator.html#a9eadd001d970bdb3c4237ab3a1b6683a',1,'multiscale::RGBColourGenerator::generate(RNG &amp;randomNumberGenerator)']]],
   ['generatebody',['generateBody',['../classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a5386b0f2c6286c709c3084c5101963c6',1,'multiscale::video::PolarGnuplotScriptGenerator::generateBody()'],['../classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#ae8464c4b7b05d86ea8bcbfa5a26f7374',1,'multiscale::video::RectangularGnuplotScriptGenerator::generateBody()']]],
   ['generatefooter',['generateFooter',['../classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#af760c3b80b2d8966d7fbea00b97e3785',1,'multiscale::video::PolarGnuplotScriptGenerator::generateFooter()'],['../classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a0b37e76bc9d825de0fd9d168f15a56be',1,'multiscale::video::RectangularGnuplotScriptGenerator::generateFooter()']]],
@@ -20,8 +21,9 @@ var searchData=
   ['getminareaenclosingrect',['getMinAreaEnclosingRect',['../classmultiscale_1_1analysis_1_1Cluster.html#a6417e3328622a848a7dedeebb5821750',1,'multiscale::analysis::Cluster']]],
   ['getminareaenclosingtriangle',['getMinAreaEnclosingTriangle',['../classmultiscale_1_1analysis_1_1Cluster.html#ab28150a739c35d66874c219fd38b462b',1,'multiscale::analysis::Cluster']]],
   ['getpileupdegree',['getPileUpDegree',['../classmultiscale_1_1analysis_1_1Cluster.html#acff6c7308641af041598bed55005f2bf',1,'multiscale::analysis::Cluster::getPileUpDegree()'],['../classmultiscale_1_1analysis_1_1Entity.html#a2b90f7783c4e3aa5836964bcc1cf0796',1,'multiscale::analysis::Entity::getPileUpDegree()']]],
-  ['getpolygon',['getPolygon',['../classmultiscale_1_1analysis_1_1Region.html#ab2fc240206cad785e13ea8e2f56a289b',1,'multiscale::analysis::Region']]],
+  ['getpolygon',['getPolygon',['../classmultiscale_1_1analysis_1_1Region.html#ac1012549744a63071070e47c39ce7450',1,'multiscale::analysis::Region']]],
   ['getshape',['getShape',['../classmultiscale_1_1analysis_1_1Cluster.html#ada6b14fcff697b3e7365070dd13513c7',1,'multiscale::analysis::Cluster']]],
   ['getstartingangle',['getStartingAngle',['../classmultiscale_1_1video_1_1AnnularSector.html#a85931ba16351fffc33b5a8fc714cb4b8',1,'multiscale::video::AnnularSector']]],
-  ['getstartingradius',['getStartingRadius',['../classmultiscale_1_1video_1_1AnnularSector.html#aef4f23e921eae6438889f0f1537bb3ef',1,'multiscale::video::AnnularSector']]]
+  ['getstartingradius',['getStartingRadius',['../classmultiscale_1_1video_1_1AnnularSector.html#aef4f23e921eae6438889f0f1537bb3ef',1,'multiscale::video::AnnularSector']]],
+  ['greaterorequal',['greaterOrEqual',['../classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5',1,'multiscale::Numeric']]]
 ];

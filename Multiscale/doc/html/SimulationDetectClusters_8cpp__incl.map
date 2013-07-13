@@ -1,10 +1,11 @@
 <map id="src/multiscale/analysis/spatial/SimulationDetectClusters.cpp" name="src/multiscale/analysis/spatial/SimulationDetectClusters.cpp">
-<area shape="rect" id="node3" href="$SimulationClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/cluster/Simulation\lClusterDetector.hpp" alt="" coords="543,101,713,165"/>
-<area shape="rect" id="node29" href="$RectangularMatFactory_8hpp.html" title="multiscale/analysis\l/spatial/factory/Rectangular\lMatFactory.hpp" alt="" coords="760,101,941,165"/>
-<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="388,214,572,261"/>
-<area shape="rect" id="node7" href="$Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="37,406,171,453"/>
-<area shape="rect" id="node17" href="$Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="192,310,325,357"/>
-<area shape="rect" id="node9" href="$DataPoint_8hpp.html" title="multiscale/analysis\l/spatial/DataPoint.hpp" alt="" coords="5,502,155,549"/>
-<area shape="rect" id="node21" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="296,406,443,453"/>
-<area shape="rect" id="node31" href="$MatFactory_8hpp.html" title="multiscale/analysis\l/spatial/MatFactory.hpp" alt="" coords="779,214,936,261"/>
+<area shape="rect" id="node3" href="$SimulationClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/cluster/Simulation\lClusterDetector.hpp" alt="" coords="400,101,571,165"/>
+<area shape="rect" id="node33" href="$RectangularMatFactory_8hpp.html" title="multiscale/analysis\l/spatial/factory/Rectangular\lMatFactory.hpp" alt="" coords="749,101,931,165"/>
+<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="316,214,500,261"/>
+<area shape="rect" id="node7" href="$Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="165,406,299,453"/>
+<area shape="rect" id="node17" href="$Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="341,310,475,357"/>
+<area shape="rect" id="node9" href="$DataPoint_8hpp.html" title="multiscale/analysis\l/spatial/DataPoint.hpp" alt="" coords="224,502,373,549"/>
+<area shape="rect" id="node21" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="517,406,664,453"/>
+<area shape="rect" id="node23" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="323,406,493,453"/>
+<area shape="rect" id="node35" href="$MatFactory_8hpp.html" title="multiscale/analysis\l/spatial/MatFactory.hpp" alt="" coords="840,214,997,261"/>
 </map>

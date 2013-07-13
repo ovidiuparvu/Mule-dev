@@ -70,7 +70,7 @@ namespace multiscale {
                 int regionAreaThresh;               /*!< Threshold for considering a region */
                 int thresholdValue;                 /*!< Value of the threshold for the threshold filter */
 
-                Point origin;           /*!< The point representing the origin */
+                Point2f origin;         /*!< The point representing the origin */
 
                 Mat image;              /*!< The original image */
 
@@ -174,7 +174,7 @@ namespace multiscale {
                 /*!
                  * \param image The image
                  */
-                vector<vector<Point> > findContoursInImage(const Mat &image);
+                vector<vector<Point2f> > findContoursInImage(const Mat &image);
 
                 //! Create a new region from the given polygon
                 /*! Process the polygon in order to get the required information and
@@ -182,14 +182,14 @@ namespace multiscale {
                  *
                  * \param polygon Polygon determining the region
                  */
-                Region createRegionFromPolygon(const vector<Point> &polygon);
+                Region createRegionFromPolygon(const vector<Point2f> &polygon);
 
                 //! Check if the region is valid
                 /*! Check if the area of the region > regionAreaThreshold
                  *
                  * \param polygon The polygon defining the region
                  */
-                bool isValidRegion(const vector<Point> &polygon);
+                bool isValidRegion(const vector<Point2f> &polygon);
 
                 //! Compute the angle of the polygon
                 /*! Compute the angle determined by the closest point to the origin and the points P1 and P2.
@@ -200,7 +200,7 @@ namespace multiscale {
                  *  \param polygon Polygon determining the region
                  *  \param closestPointIndex Index of the closest point to the origin from the set of points defining the polygon
                  */
-                double regionAngle(const vector<Point> &polygon, unsigned int closestPointIndex);
+                double regionAngle(const vector<Point2f> &polygon, unsigned int closestPointIndex);
 
                 //! Compute the angle of the polygon
                 /*! Compute the angle determined by the closest point to the origin and the points P1 and P2.
@@ -211,14 +211,14 @@ namespace multiscale {
                  *  \param polygonConvexHull Convex hull of polygon determining the region
                  *  \param closestPoint Closest point to the origin from the set of points defining the polygon
                  */
-                double regionAngle(const vector<Point> &polygonConvexHull, const Point &closestPoint);
+                double regionAngle(const vector<Point2f> &polygonConvexHull, const Point2f &closestPoint);
 
                 //! Get the centre of the minimum area bounding rectangle
                 /*!
                  * \param polygon The polygon
                  * \param centre The centre of the bounding rectangle
                  */
-                void minAreaRectCentre(const vector<Point> &polygon, Point &centre);
+                void minAreaRectCentre(const vector<Point2f> &polygon, Point2f &centre);
 
                 //! Find the points for determining the angle of the region
                 /*!
@@ -227,18 +227,18 @@ namespace multiscale {
                  *  \param closestPoint Closest point to the origin from the set of points defining the polygon
                  *  \param goodPointsForAngle The points which are relevant for computing the angle
                  */
-                void findGoodPointsForAngle(const vector<Point> &polygonConvexHull, const Point &boundingRectCentre,
-                                            const Point &closestPoint, vector<Point> &goodPointsForAngle);
+                void findGoodPointsForAngle(const vector<Point2f> &polygonConvexHull, const Point2f &boundingRectCentre,
+                                            const Point2f &closestPoint, vector<Point2f> &goodPointsForAngle);
 
                 //! Find good intersection points for computing the angle of the region
                 /*!
                  * \param polygonConvexHull The convex hull of the polygon
-                 * \param edgePointA Point A on the edge
-                 * \param edgePointB Point B on the edge
+                 * \param edgePointA Point2f A on the edge
+                 * \param edgePointB Point2f B on the edge
                  * \param goodPointsForAngle The "good" points for computing the angle
                  */
-                void findGoodIntersectionPoints(const vector<Point> &polygonConvexHull, const Point &edgePointA,
-                                                const Point &edgePointB, vector<Point> &goodPointsForAngle);
+                void findGoodIntersectionPoints(const vector<Point2f> &polygonConvexHull, const Point2f &edgePointA,
+                                                const Point2f &edgePointB, vector<Point2f> &goodPointsForAngle);
 
                 //! Output the regions
                 /*!

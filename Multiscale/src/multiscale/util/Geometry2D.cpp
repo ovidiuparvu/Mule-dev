@@ -6,24 +6,54 @@
 using namespace multiscale;
 
 
-double Geometry2D::angleOfLineWrtOxAxis(const Point &a, const Point &b) {
-    double slope = 0;
+double Geometry2D::angleOfLineWrtOxAxis(const Point2f &a, const Point2f &b) {
+    double y = b.y - a.y;
+    double x = b.x - a.x;
 
-    if (!slopeOfLine(a, b, slope)) {
-        return PI / 2;
+    double angle = (atan2(y, x) * 180 / PI);
+
+    return (angle < 0) ? (angle + 360)
+                       : angle;
+}
+
+bool Geometry2D::isAngleBetween(double angle1, double angle2, double angle3) {
+    if ((((int)(angle2 - angle3)) % 180) > 0) {
+        return ((angle3 < angle1) && (angle1 < angle2));
     } else {
-        if (slope > 0) {
-            return atan(slope);
-        } else if (slope < 0) {
-            return PI + atan(slope);
-        } else {
-            return (b.x > a.x) ? 0
-                               : PI;
-        }
+        return ((angle2 < angle1) && (angle1 < angle3));
     }
 }
 
-bool Geometry2D::slopeOfLine(const Point &a, const Point &b, double &slope) {
+bool Geometry2D::isOppositeAngleBetween(double angle1, double angle2, double angle3) {
+    double angle1Opposite = oppositeAngle(angle1);
+
+    return (isAngleBetween(angle1Opposite, angle2, angle3));
+}
+
+bool Geometry2D::isAngleBetweenNonReflex(double angle1, double angle2, double angle3) {
+    if (fabs(angle2 - angle3) > 180) {
+        if (angle2 > angle3) {
+            return ((angle2 < angle1) && (angle1 <= 360)) || ((0 <= angle1) && (angle1 < angle3));
+        } else {
+            return ((angle3 < angle1) && (angle1 <= 360)) || ((0 <= angle1) && (angle1 < angle2));
+        }
+    } else {
+        return isAngleBetween(angle1, angle2, angle3);
+    }
+}
+
+bool Geometry2D::isOppositeAngleBetweenNonReflex(double angle1, double angle2, double angle3) {
+    double angle1Opposite = oppositeAngle(angle1);
+
+    return (isAngleBetweenNonReflex(angle1Opposite, angle2, angle3));
+}
+
+double Geometry2D::oppositeAngle(double angle) {
+    return (angle > 180) ? (angle - 180)
+                         : (angle + 180);
+}
+
+bool Geometry2D::slopeOfLine(const Point2f &a, const Point2f &b, double &slope) {
     double nominator = b.y - a.y;
     double denominator = b.x - a.x;
 
@@ -36,14 +66,14 @@ bool Geometry2D::slopeOfLine(const Point &a, const Point &b, double &slope) {
     }
 }
 
-double Geometry2D::distanceBtwPoints(const Point &a, const Point &b) {
+double Geometry2D::distanceBtwPoints(const Point2f &a, const Point2f &b) {
     double xDiff = a.x - b.x;
     double yDiff = a.y - b.y;
 
     return sqrt((xDiff * xDiff) + (yDiff * yDiff));
 }
 
-double Geometry2D::distanceFromPointToLine(const Point &a, const Point &linePointB, const Point &linePointC) {
+double Geometry2D::distanceFromPointToLine(const Point2f &a, const Point2f &linePointB, const Point2f &linePointC) {
     double term1 = linePointC.x - linePointB.x;
     double term2 = linePointB.y - a.y;
     double term3 = linePointB.x - a.x;
@@ -55,15 +85,15 @@ double Geometry2D::distanceFromPointToLine(const Point &a, const Point &linePoin
     return (nominator / denominator);
 }
 
-Point Geometry2D::middlePoint(const Point &a, const Point &b) {
-    int middleX = (a.x + b.x) / 2;
-    int middleY = (a.y + b.y) / 2;
+Point2f Geometry2D::middlePoint(const Point2f &a, const Point2f &b) {
+    double middleX = (a.x + b.x) / 2;
+    double middleY = (a.y + b.y) / 2;
 
-    return Point(middleX, middleY);
+    return Point2f(middleX, middleY);
 }
 
-void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Point &b1, Point &a2 ,
-                                                       Point &b2, int nrOfRows, int nrOfCols) {
+void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const Point2f &a1, const Point2f &b1, Point2f &a2 ,
+                                                       Point2f &b2, int nrOfRows, int nrOfCols) {
     if ((a1.x == b1.x) && (a1.y == b1.y)) {
         a2 = a1;
         b2 = b1;
@@ -108,13 +138,13 @@ void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Po
     }
 }
 
-void Geometry2D::lineEquationDeterminedByPoints(const Point &p, const Point &q, double &a, double &b, double &c) {
+void Geometry2D::lineEquationDeterminedByPoints(const Point2f &p, const Point2f &q, double &a, double &b, double &c) {
     a = q.y - p.y;
     b = p.x - q.x;
     c = ((-p.y) * b) - (p.x * a);
 }
 
-bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection) {
+bool Geometry2D::lineIntersection(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2, Point2f &intersection) {
     int A1 = b1.y - a1.y;
     int B1 = a1.x - b1.x;
     int C1 = (a1.x * A1) + (a1.y * B1);
@@ -135,7 +165,7 @@ bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point 
     return false;
 }
 
-bool Geometry2D::lineIntersection(double a1, double b1, double c1, double a2, double b2, double c2, Point &intersection) {
+bool Geometry2D::lineIntersection(double a1, double b1, double c1, double a2, double b2, double c2, Point2f &intersection) {
     int det = (a1 * b2) - (a2 * b1);
 
     if (det != 0) {
@@ -148,7 +178,7 @@ bool Geometry2D::lineIntersection(double a1, double b1, double c1, double a2, do
     return false;
 }
 
-bool Geometry2D::lineSegmentIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection) {
+bool Geometry2D::lineSegmentIntersection(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2, Point2f &intersection) {
     if (lineIntersection(a1, b1, a2, b2, intersection)) {
         return (
                     isBetweenCoordinates<int, int>(intersection.x, a1.x, b1.x) &&
@@ -161,10 +191,10 @@ bool Geometry2D::lineSegmentIntersection(const Point &a1, const Point &b1, const
     return false;
 }
 
-bool Geometry2D::lineCircleIntersection(Point a, Point b, const Point &circleOrigin,
+bool Geometry2D::lineCircleIntersection(Point2f a, Point2f b, const Point2f &circleOrigin,
                                         double radius, vector<Point2f> &intersectionPoints) {
-    translate(a, Point(-circleOrigin.x, -circleOrigin.y));
-    translate(b, Point(-circleOrigin.x, -circleOrigin.y));
+    translate(a, Point2f(-circleOrigin.x, -circleOrigin.y));
+    translate(b, Point2f(-circleOrigin.x, -circleOrigin.y));
 
     double A = b.y - a.y;
     double B = a.x - b.x;
@@ -190,7 +220,7 @@ bool Geometry2D::lineCircleIntersection(Point a, Point b, const Point &circleOri
     return false;
 }
 
-bool Geometry2D::lineSegmentCircleIntersection(const Point &a, const Point &b, const Point &circleOrigin,
+bool Geometry2D::lineSegmentCircleIntersection(const Point2f &a, const Point2f &b, const Point2f &circleOrigin,
                                                       double radius, vector<Point2f> &intersectionPoints) {
     if (lineCircleIntersection(a, b, circleOrigin, radius, intersectionPoints)) {
         for (vector<Point2f>::iterator it = intersectionPoints.begin(); it != intersectionPoints.end(); ) {
@@ -209,7 +239,7 @@ bool Geometry2D::lineSegmentCircleIntersection(const Point &a, const Point &b, c
     return false;
 }
 
-double Geometry2D::angleBtwPoints(const Point &a, const Point &b, const Point &c) {
+double Geometry2D::angleBtwPoints(const Point2f &a, const Point2f &b, const Point2f &c) {
     Point2f ab(b.x - a.x, b.y - a.y);
     Point2f cb(b.x - c.x, b.y - c.y);
 
@@ -221,12 +251,12 @@ double Geometry2D::angleBtwPoints(const Point &a, const Point &b, const Point &c
     return abs(((alpha * 180) / PI));
 }
 
-vector<Point> Geometry2D::findPointsOnEdge(const vector<Point> &points,
+vector<Point2f> Geometry2D::findPointsOnEdge(const vector<Point2f> &points,
                                            unsigned int nrOfRows,
                                            unsigned int nrOfCols) {
-    vector<Point> pointsOnEdge;
+    vector<Point2f> pointsOnEdge;
 
-    for (Point p : points) {
+    for (Point2f p : points) {
         if (isPointOnEdge(p, nrOfRows, nrOfCols)) {
             pointsOnEdge.push_back(p);
         }
@@ -235,7 +265,7 @@ vector<Point> Geometry2D::findPointsOnEdge(const vector<Point> &points,
     return pointsOnEdge;
 }
 
-unsigned int Geometry2D::minimumDistancePointIndex(const vector<Point> &contour, const Point &origin) {
+unsigned int Geometry2D::minimumDistancePointIndex(const vector<Point2f> &contour, const Point2f &origin) {
     double minDistance = numeric_limits<int>::max();
     double distance = 0.0;
     int nrOfPoints = contour.size();
@@ -263,7 +293,20 @@ double Geometry2D::areaOfTriangle(const Point2f &a, const Point2f &b, const Poin
     return abs(determinant) / 2;
 }
 
-bool Geometry2D::isPointOnEdge(const Point &p, int nrOfRows, int nrOfCols) {
+bool Geometry2D::isPointOnLineSegment(const Point2f &point, const Point2f &lineSegmentStart,
+                                      const Point2f &lineSegmentEnd) {
+    double d1 = distanceBtwPoints(point, lineSegmentStart);
+    double d2 = distanceBtwPoints(point, lineSegmentEnd);
+    double lineSegmentLength = distanceBtwPoints(lineSegmentStart, lineSegmentEnd);
+
+    return (Numeric::almostEqual(d1 + d2, lineSegmentLength));
+}
+
+bool Geometry2D::areEqualPoints(const Point2f &point1, const Point2f &point2) {
+    return (Numeric::almostEqual(point1.x, point2.x) && Numeric::almostEqual(point1.y, point2.y));
+}
+
+bool Geometry2D::isPointOnEdge(const Point2f &p, int nrOfRows, int nrOfCols) {
     return (
               ((p.x <= MATRIX_START_INDEX) && (p.y > MATRIX_START_INDEX) && (p.y < nrOfCols)) ||
               ((p.x >= nrOfRows) && (p.y > MATRIX_START_INDEX) && (p.y < nrOfCols)) ||
@@ -282,17 +325,17 @@ int Geometry2D::sgn(int number) {
                         : 1;
 }
 
-void Geometry2D::translate(Point &point, const Point &translation) {
+void Geometry2D::translate(Point2f &point, const Point2f &translation) {
     point.x += translation.x;
     point.y += translation.y;
 }
 
-void Geometry2D::inverseTranslate(Point2f &point, const Point &translation) {
+void Geometry2D::inverseTranslate(Point2f &point, const Point2f &translation) {
     point.x -= translation.x;
     point.y -= translation.y;
 }
 
-void Geometry2D::lineCircleTwoIntersectionPoints(const Point &circleOrigin, double A, double B,
+void Geometry2D::lineCircleTwoIntersectionPoints(const Point2f &circleOrigin, double A, double B,
                                                  double C, double delta, vector<Point2f> &intersectionPoints) {
     double y1 = ((2 * B * C) + (sqrt(delta))) / (2 * ((A * A) + (B * B)));
     double y2 = ((2 * B * C) - (sqrt(delta))) / (2 * ((A * A) + (B * B)));
@@ -303,21 +346,21 @@ void Geometry2D::lineCircleTwoIntersectionPoints(const Point &circleOrigin, doub
     Point2f firstIntersectionPoint(x1, y1);
     Point2f secondIntersectionPoint(x2, y2);
 
-    inverseTranslate(firstIntersectionPoint, Point(-circleOrigin.x, -circleOrigin.y));
-    inverseTranslate(secondIntersectionPoint, Point(-circleOrigin.x, -circleOrigin.y));
+    inverseTranslate(firstIntersectionPoint, Point2f(-circleOrigin.x, -circleOrigin.y));
+    inverseTranslate(secondIntersectionPoint, Point2f(-circleOrigin.x, -circleOrigin.y));
 
     intersectionPoints.push_back(firstIntersectionPoint);
     intersectionPoints.push_back(secondIntersectionPoint);
 }
 
-void Geometry2D::lineCircleOneIntersectionPoint(const Point &circleOrigin, double A, double B,
+void Geometry2D::lineCircleOneIntersectionPoint(const Point2f &circleOrigin, double A, double B,
                                                 double C, double delta, vector<Point2f> &intersectionPoints) {
     double y = (B * C) / ((A * A) + (B * B));
     double x = (C - (B * y)) / (A);
 
     Point2f intersectionPoint(x, y);
 
-    inverseTranslate(intersectionPoint, Point(-circleOrigin.x, -circleOrigin.y));
+    inverseTranslate(intersectionPoint, Point2f(-circleOrigin.x, -circleOrigin.y));
 
     intersectionPoints.push_back(intersectionPoint);
 }

@@ -1,0 +1,4 @@
+<map id="multiscale::Geometry2D::isPointOnEdge" name="multiscale::Geometry2D::isPointOnEdge">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a9e5c6378463c0e685136d66bfac2a8c1" title="Find the subset of points from the given set of points which lie on the edge." alt="" coords="235,5,397,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a9ed39465f735b1f216033d2081900ef3" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="217,75,415,139"/>
+</map>

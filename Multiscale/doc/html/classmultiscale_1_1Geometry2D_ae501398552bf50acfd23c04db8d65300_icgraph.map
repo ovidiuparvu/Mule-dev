@@ -1,0 +1,4 @@
+<map id="multiscale::Geometry2D::lineCircleTwoIntersectionPoints" name="multiscale::Geometry2D::lineCircleTwoIntersectionPoints">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#ab04c08f83d066f0d936d516d015ea62c" title="Determine if a line and a circle intersect and return the intersection points if they exist..." alt="" coords="269,5,432,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a92bd36cdda4cdacb4101c6db54474a6d" title="Determine if a line segment and a circle intersect and return the intersection points if they exist..." alt="" coords="481,5,684,51"/>
+</map>

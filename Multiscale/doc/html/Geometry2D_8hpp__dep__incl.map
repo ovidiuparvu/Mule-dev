@@ -1,6 +1,14 @@
 <map id="include/multiscale/util/Geometry2D.hpp" name="include/multiscale/util/Geometry2D.hpp">
-<area shape="rect" id="node3" href="$Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="5,102,160,149"/>
-<area shape="rect" id="node5" href="$Entity_8cpp.html" title="src/multiscale/analysis\l/spatial/Entity.cpp" alt="" coords="184,102,339,149"/>
-<area shape="rect" id="node7" href="$RegionDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/RegionDetector.cpp" alt="" coords="363,102,547,149"/>
-<area shape="rect" id="node9" href="$Geometry2D_8cpp.html" title="src/multiscale/util\l/Geometry2D.cpp" alt="" coords="571,102,696,149"/>
+<area shape="rect" id="node3" href="$Cluster_8hpp.html" title="include/multiscale\l/analysis/spatial/Cluster.hpp" alt="" coords="385,110,572,157"/>
+<area shape="rect" id="node15" href="$Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="488,214,643,261"/>
+<area shape="rect" id="node17" href="$MinimumAreaEnclosingTriangle_8hpp.html" title="include/multiscale\l/util/MinimumAreaEnclosing\lTriangle.hpp" alt="" coords="647,101,831,165"/>
+<area shape="rect" id="node22" href="$Entity_8cpp.html" title="src/multiscale/analysis\l/spatial/Entity.cpp" alt="" coords="855,110,1009,157"/>
+<area shape="rect" id="node24" href="$RegionDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/RegionDetector.cpp" alt="" coords="1033,110,1217,157"/>
+<area shape="rect" id="node26" href="$Geometry2D_8cpp.html" title="src/multiscale/util\l/Geometry2D.cpp" alt="" coords="1241,110,1367,157"/>
+<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/ClusterDetector.hpp" alt="" coords="227,214,464,261"/>
+<area shape="rect" id="node7" href="$SimulationClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/cluster\l/SimulationClusterDetector.hpp" alt="" coords="136,309,339,373"/>
+<area shape="rect" id="node13" href="$ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="363,318,547,365"/>
+<area shape="rect" id="node9" href="$SimulationClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,421,219,485"/>
+<area shape="rect" id="node11" href="$SimulationDetectClusters_8cpp.html" title="src/multiscale/analysis\l/spatial/SimulationDetectClusters.cpp" alt="" coords="243,430,485,477"/>
+<area shape="rect" id="node19" href="$MinimumAreaEnclosingTriangle_8cpp.html" title="src/multiscale/util\l/MinimumAreaEnclosingTriangle.cpp" alt="" coords="667,214,901,261"/>
 </map>

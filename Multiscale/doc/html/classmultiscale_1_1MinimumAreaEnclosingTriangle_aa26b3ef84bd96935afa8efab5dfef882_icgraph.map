@@ -1,0 +1,11 @@
+<map id="multiscale::MinimumAreaEnclosingTriangle::findGammaIntersectionPoints" name="multiscale::MinimumAreaEnclosingTriangle::findGammaIntersectionPoints">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aa0e5813de41cf0415f687d6c6371699c" title="Find vertex C which lies on side B at a distance = 2 * height(a&#45;1) from side C." alt="" coords="301,39,528,86"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aacc1dc3225d307ff882c6d5564e7831d" title="Find gamma for a given point &quot;p&quot; specified by its index." alt="" coords="301,143,528,190"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a20d737b8bb311c01d037062e98eb7efc" title="Update sides B and possibly A if tangency for side B was not obtained." alt="" coords="576,5,803,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2637b25290dd55db6c72dec9dc184103" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="851,135,1085,199"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a1fed629a9f290fe050c515aa2d0d799d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1133,143,1360,190"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a350b2e78503488433a0ae5a7a2a22f64" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="576,74,803,121"/>
+<area shape="rect" id="node16" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a963feccd69c5ea86bbf4965d91ed32ed" title="Search for the tangency of side B." alt="" coords="576,143,803,190"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ab8fcbbabc20d96ebaf6edeeaf0d38e63" title="Check if tangency for side B was not obtained." alt="" coords="576,213,803,259"/>
+<area shape="rect" id="node22" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a75d6c0769a2717ed7086b28be0db2440" title="Set side B if tangency for side B was obtained." alt="" coords="576,282,803,329"/>
+</map>

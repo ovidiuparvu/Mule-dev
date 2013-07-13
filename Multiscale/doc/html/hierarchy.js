@@ -16,10 +16,12 @@ var hierarchy =
       [ "multiscale::analysis::CircularMatFactory", "classmultiscale_1_1analysis_1_1CircularMatFactory.html", null ],
       [ "multiscale::analysis::RectangularMatFactory", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html", null ]
     ] ],
+    [ "multiscale::MinimumAreaEnclosingTriangle", "classmultiscale_1_1MinimumAreaEnclosingTriangle.html", null ],
     [ "multiscale::NumberIterator", "classmultiscale_1_1NumberIterator.html", [
       [ "multiscale::LexicographicNumberIterator", "classmultiscale_1_1LexicographicNumberIterator.html", null ],
       [ "multiscale::StandardNumberIterator", "classmultiscale_1_1StandardNumberIterator.html", null ]
     ] ],
+    [ "multiscale::Numeric", "classmultiscale_1_1Numeric.html", null ],
     [ "multiscale::NumericRangeManipulator", "classmultiscale_1_1NumericRangeManipulator.html", null ],
     [ "multiscale::video::PolarCsvToInputFilesConverter", "classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html", null ],
     [ "multiscale::video::PolarGnuplotScriptGenerator", "classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html", null ],

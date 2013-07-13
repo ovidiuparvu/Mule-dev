@@ -1,0 +1,12 @@
+<map id="multiscale::MinimumAreaEnclosingTriangle::successor" name="multiscale::MinimumAreaEnclosingTriangle::successor">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a4cdd0f627c2fa44aa5b4760d04ee3c80" title="Advance the given index with one position." alt="" coords="555,74,781,121"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a772ac3b9529eccbce7af2c72a0360d89" title="Advance b to the right chain." alt="" coords="829,5,1056,51"/>
+<area shape="rect" id="node18" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a91f6db13e26c0b15735ee5eb975fc09f" title="Check if/where the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygo..." alt="" coords="280,143,507,190"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a350b2e78503488433a0ae5a7a2a22f64" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="829,74,1056,121"/>
+<area shape="rect" id="node14" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a963feccd69c5ea86bbf4965d91ed32ed" title="Search for the tangency of side B." alt="" coords="829,143,1056,190"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2637b25290dd55db6c72dec9dc184103" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1104,100,1339,164"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a1fed629a9f290fe050c515aa2d0d799d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1387,109,1613,155"/>
+<area shape="rect" id="node20" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a4d0a39f0a938817b6b07985f6f85da9c" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon abov..." alt="" coords="555,213,781,259"/>
+<area shape="rect" id="node25" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a9f68018fd829d176bb6de00c8e5d2291" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon belo..." alt="" coords="555,143,781,190"/>
+<area shape="rect" id="node22" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ab8fcbbabc20d96ebaf6edeeaf0d38e63" title="Check if tangency for side B was not obtained." alt="" coords="829,213,1056,259"/>
+</map>

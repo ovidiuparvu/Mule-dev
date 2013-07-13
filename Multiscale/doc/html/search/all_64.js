@@ -21,9 +21,9 @@ var searchData=
   ['dir_5fseparator',['DIR_SEPARATOR',['../StringManipulator_8hpp.html#a0920890c442b665b0c6609fa796e9047',1,'StringManipulator.hpp']]],
   ['display_5fline_5fthickness',['DISPLAY_LINE_THICKNESS',['../RegionDetector_8hpp.html#a19df04c3f86479da35968fed776d2142',1,'RegionDetector.hpp']]],
   ['displayimage',['displayImage',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a19e76d92a93bb69cbe1c7cddeafe4d96',1,'multiscale::analysis::ClusterDetector::displayImage()'],['../classmultiscale_1_1analysis_1_1RegionDetector.html#ae0771e1c55083bf874ffb0f8c57366e8',1,'multiscale::analysis::RegionDetector::displayImage()']]],
-  ['distancebtwpoints',['distanceBtwPoints',['../classmultiscale_1_1Geometry2D.html#a702d65aaced6ff971809ea7a537fc70a',1,'multiscale::Geometry2D']]],
+  ['distancebtwpoints',['distanceBtwPoints',['../classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72',1,'multiscale::Geometry2D']]],
   ['distancefromorigin',['distanceFromOrigin',['../classmultiscale_1_1analysis_1_1Region.html#ad5f128003a97d9d41fd4cf1c01d9a709',1,'multiscale::analysis::Region']]],
-  ['distancefrompointtoline',['distanceFromPointToLine',['../classmultiscale_1_1Geometry2D.html#a9974bf3050ce8038ef45c0a731d9d498',1,'multiscale::Geometry2D']]],
+  ['distancefrompointtoline',['distanceFromPointToLine',['../classmultiscale_1_1Geometry2D.html#ae6c0f66accf4ecf31b0fd96437371626',1,'multiscale::Geometry2D']]],
   ['distancematrix',['distanceMatrix',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aa54a9933d643b06a6a2624d6f76b700f',1,'multiscale::analysis::DBSCAN']]],
   ['distanceto',['distanceTo',['../classmultiscale_1_1analysis_1_1DataPoint.html#a8dd5def96eab756085461e8f6a201dce',1,'multiscale::analysis::DataPoint::distanceTo()'],['../classmultiscale_1_1analysis_1_1Entity.html#a39cb4bb856c295c82676085d976d58e8',1,'multiscale::analysis::Entity::distanceTo(shared_ptr&lt; DataPoint &gt; point) override'],['../classmultiscale_1_1analysis_1_1Entity.html#a9c3eb0f38038fe3bd0b7680c62577a64',1,'multiscale::analysis::Entity::distanceTo(const Entity &amp;entity)']]]
 ];

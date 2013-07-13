@@ -2,6 +2,7 @@ var searchData=
 [
   ['saturation',['SATURATION',['../RGBColourGenerator_8hpp.html#a5ea44383e0ece01ce2b69111da09207f',1,'RGBColourGenerator.hpp']]],
   ['saveresultsaspngimage',['saveResultsAsPNGImage',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a1e4b7806d99320dd67b53f56d2f71f17',1,'multiscale::analysis::SimulationClusterDetector']]],
+  ['searchforbtangency',['searchForBTangency',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a963feccd69c5ea86bbf4965d91ed32ed',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['sectorsiterator',['sectorsIterator',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['selectedconcentrationindex',['selectedConcentrationIndex',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a121d592659f9f5075c8c78aa46c2950c',1,'multiscale::video::PolarCsvToInputFilesConverter::selectedConcentrationIndex()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a5143d25a98a097107c2bed748b4d8df0',1,'multiscale::video::RectangularCsvToInputFilesConverter::selectedConcentrationIndex()']]],
   ['separator',['SEPARATOR',['../AnnularSector_8cpp.html#af68c3a5ad6ffce6c97fff154856a823d',1,'AnnularSector.cpp']]],
@@ -13,12 +14,19 @@ var searchData=
   ['shape2d',['Shape2D',['../namespacemultiscale_1_1analysis.html#ad1ef6155ab2e954c1c33d3e2e6b53fbf',1,'multiscale::analysis']]],
   ['shape2d_2ehpp',['Shape2D.hpp',['../Shape2D_8hpp.html',1,'']]],
   ['shapeasstring',['shapeAsString',['../classmultiscale_1_1analysis_1_1Cluster.html#ae66bd94c5270ea6d1df29a731d0990b3',1,'multiscale::analysis::Cluster']]],
-  ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aaf89be91572a4378d6cece5bba361627',1,'multiscale::analysis::SimulationClusterDetector']]],
+  ['sideaendvertex',['sideAEndVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#abab8794502794dcbfc4b9336734ecae8',1,'multiscale::MinimumAreaEnclosingTriangle']]],
+  ['sideastartvertex',['sideAStartVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a29a7a1a4b8cf544dbd7ccb75f653587e',1,'multiscale::MinimumAreaEnclosingTriangle']]],
+  ['sidebendvertex',['sideBEndVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a4183750a67cc95d70695820376a52453',1,'multiscale::MinimumAreaEnclosingTriangle']]],
+  ['sidebstartvertex',['sideBStartVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a01c5a1d51bf85edcd3b9498192b5c70e',1,'multiscale::MinimumAreaEnclosingTriangle']]],
+  ['sidecendvertex',['sideCEndVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a08dbbe5cf66a72a3f973dc0b34526f86',1,'multiscale::MinimumAreaEnclosingTriangle']]],
+  ['sidecstartvertex',['sideCStartVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a9c227b89fcf6afe2f6fe0bb842c47518',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html',1,'multiscale::analysis']]],
+  ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aaf89be91572a4378d6cece5bba361627',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['simulationclusterdetector_2ecpp',['SimulationClusterDetector.cpp',['../SimulationClusterDetector_8cpp.html',1,'']]],
   ['simulationclusterdetector_2ehpp',['SimulationClusterDetector.hpp',['../SimulationClusterDetector_8hpp.html',1,'']]],
   ['simulationdetectclusters_2ecpp',['SimulationDetectClusters.cpp',['../SimulationDetectClusters_8cpp.html',1,'']]],
   ['simulationtime',['simulationTime',['../classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96',1,'multiscale::analysis::MatFactory::simulationTime()'],['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda',1,'multiscale::video::CartesianToPolarConverter::simulationTime()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a6e66af60b82513b3186fdb32cad44597',1,'multiscale::video::CartesianToConcentrationsConverter::simulationTime()']]],
+  ['slopeofline',['slopeOfLine',['../classmultiscale_1_1Geometry2D.html#a1219ac10c3647d43c5af77dc5bc574a2',1,'multiscale::Geometry2D']]],
   ['smoothimage',['smoothImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a895f12ad46f2e0d1db45637a5935c2b5',1,'multiscale::analysis::RegionDetector']]],
   ['split',['split',['../classmultiscale_1_1StringManipulator.html#a899c72a05bbd8fb525f31bca3c1ec3c4',1,'multiscale::StringManipulator']]],
   ['splitfirstpartinconcentrations',['splitFirstPartInConcentrations',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a2ab8a181fa30c720d4ee87c188770bcc',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
@@ -37,5 +45,6 @@ var searchData=
   ['str_5fundefined',['STR_UNDEFINED',['../Cluster_8hpp.html#aa0c5b6f492c45bf8acf3bc42dbac820a',1,'Cluster.hpp']]],
   ['stringmanipulator',['StringManipulator',['../classmultiscale_1_1StringManipulator.html',1,'multiscale']]],
   ['stringmanipulator_2ecpp',['StringManipulator.cpp',['../StringManipulator_8cpp.html',1,'']]],
-  ['stringmanipulator_2ehpp',['StringManipulator.hpp',['../StringManipulator_8hpp.html',1,'']]]
+  ['stringmanipulator_2ehpp',['StringManipulator.hpp',['../StringManipulator_8hpp.html',1,'']]],
+  ['successor',['successor',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a178b8229a0f7a18f7f0050f5c8d859d3',1,'multiscale::MinimumAreaEnclosingTriangle']]]
 ];
