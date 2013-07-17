@@ -48,8 +48,6 @@ using namespace cv;
 
 #define KEY_ESC 27
 
-#define PI  3.141592
-
 #define ENCLOSING_RECT_VERTICES 4
 
 

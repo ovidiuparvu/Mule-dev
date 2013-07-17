@@ -288,6 +288,14 @@ namespace multiscale {
              */
             static bool areEqualPoints(const Point2f &point1, const Point2f &point2);
 
+            //! Check if the three points are collinear
+            /*!
+             * \param point1 Point 1
+             * \param point2 Point 2
+             * \param point3 Point 3
+             */
+            static bool areCollinear(const Point2f &point1, const Point2f &point2, const Point2f &point3);
+
         private:
 
             //! Check if the given point is on the edge

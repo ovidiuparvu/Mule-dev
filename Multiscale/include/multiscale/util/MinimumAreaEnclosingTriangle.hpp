@@ -218,15 +218,14 @@ namespace multiscale {
              * Considering that line (x y) is a line parallel to (c c-1) and that the distance between the lines is equal
              * to 2 * height(p), we can have two possible (x y) lines.
              *
-             * Therefore, we will compute two intersection points between the lines (x y) and (a a-1) and take the
-             * point which is closest to point polygon[a].
+             * Therefore, we will compute two intersection points between the lines (x y) and (a a-1) and return them
              *
              * See paper and formula for distance from point to a line for more details
              *
              * \param polygonPointIndex Index of the polygon point
              * \param gammaPoint        Point2f gamma(polygon[polygonPointIndex])
              */
-            static bool gamma(unsigned int polygonPointIndex, Point2f &gammaPoint);
+            static bool gamma(unsigned int polygonPointIndex, Point2f &gammaPoint1, Point2f &gammaPoint2);
 
             //! Find vertex C which lies on side B at a distance = 2 * height(a-1) from side C
             /*!

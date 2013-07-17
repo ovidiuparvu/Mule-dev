@@ -145,15 +145,15 @@ void Geometry2D::lineEquationDeterminedByPoints(const Point2f &p, const Point2f 
 }
 
 bool Geometry2D::lineIntersection(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2, Point2f &intersection) {
-    int A1 = b1.y - a1.y;
-    int B1 = a1.x - b1.x;
-    int C1 = (a1.x * A1) + (a1.y * B1);
+    double A1 = b1.y - a1.y;
+    double B1 = a1.x - b1.x;
+    double C1 = (a1.x * A1) + (a1.y * B1);
 
-    int A2 = b2.y - a2.y;
-    int B2 = a2.x - b2.x;
-    int C2 = (a2.x * A2) + (a2.y * B2);
+    double A2 = b2.y - a2.y;
+    double B2 = a2.x - b2.x;
+    double C2 = (a2.x * A2) + (a2.y * B2);
 
-    int det = (A1 * B2) - (A2 * B1);
+    double det = (A1 * B2) - (A2 * B1);
 
     if (det != 0) {
         intersection.x = ((C1 * B2) - (C2 * B1)) / (det);
@@ -166,7 +166,7 @@ bool Geometry2D::lineIntersection(const Point2f &a1, const Point2f &b1, const Po
 }
 
 bool Geometry2D::lineIntersection(double a1, double b1, double c1, double a2, double b2, double c2, Point2f &intersection) {
-    int det = (a1 * b2) - (a2 * b1);
+    double det = (a1 * b2) - (a2 * b1);
 
     if (det != 0) {
         intersection.x = ((c1 * b2) - (c2 * b1)) / (det);
@@ -181,10 +181,10 @@ bool Geometry2D::lineIntersection(double a1, double b1, double c1, double a2, do
 bool Geometry2D::lineSegmentIntersection(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2, Point2f &intersection) {
     if (lineIntersection(a1, b1, a2, b2, intersection)) {
         return (
-                    isBetweenCoordinates<int, int>(intersection.x, a1.x, b1.x) &&
-                    isBetweenCoordinates<int, int>(intersection.x, a2.x, b2.x) &&
-                    isBetweenCoordinates<int, int>(intersection.y, a1.y, b1.y) &&
-                    isBetweenCoordinates<int, int>(intersection.y, a2.y, b2.y)
+                    isBetweenCoordinates<double, double>(intersection.x, a1.x, b1.x) &&
+                    isBetweenCoordinates<double, double>(intersection.x, a2.x, b2.x) &&
+                    isBetweenCoordinates<double, double>(intersection.y, a1.y, b1.y) &&
+                    isBetweenCoordinates<double, double>(intersection.y, a2.y, b2.y)
                );
     }
 
@@ -224,8 +224,8 @@ bool Geometry2D::lineSegmentCircleIntersection(const Point2f &a, const Point2f &
                                                       double radius, vector<Point2f> &intersectionPoints) {
     if (lineCircleIntersection(a, b, circleOrigin, radius, intersectionPoints)) {
         for (vector<Point2f>::iterator it = intersectionPoints.begin(); it != intersectionPoints.end(); ) {
-            if (isBetweenCoordinates<float, int>((*it).x, a.x, b.x) &&
-                isBetweenCoordinates<float, int>((*it).y, a.y, b.y)
+            if (isBetweenCoordinates<float, double>((*it).x, a.x, b.x) &&
+                isBetweenCoordinates<float, double>((*it).y, a.y, b.y)
                ) {
                 ++it;
             } else {
@@ -304,6 +304,13 @@ bool Geometry2D::isPointOnLineSegment(const Point2f &point, const Point2f &lineS
 
 bool Geometry2D::areEqualPoints(const Point2f &point1, const Point2f &point2) {
     return (Numeric::almostEqual(point1.x, point2.x) && Numeric::almostEqual(point1.y, point2.y));
+}
+
+bool Geometry2D::areCollinear(const Point2f &point1, const Point2f &point2, const Point2f &point3) {
+    double determinant = (point1.x * point2.y) + (point3.x * point1.y) + (point2.x * point3.y) -
+                         (point3.x * point2.y) - (point1.x * point3.y) - (point2.x * point1.y);
+
+    return (Numeric::almostEqual(determinant, 0));
 }
 
 bool Geometry2D::isPointOnEdge(const Point2f &p, int nrOfRows, int nrOfCols) {
