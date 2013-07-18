@@ -1,0 +1,5 @@
+<map id="multiscale::Geometry2D::isPointOnLineSegment" name="multiscale::Geometry2D::isPointOnLineSegment">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="228,5,367,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="216,74,379,121"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="427,5,565,51"/>
+</map>

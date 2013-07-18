@@ -24,7 +24,7 @@ var searchData=
   ['getminareaenclosingrect',['getMinAreaEnclosingRect',['../classmultiscale_1_1analysis_1_1Cluster.html#a6417e3328622a848a7dedeebb5821750',1,'multiscale::analysis::Cluster']]],
   ['getminareaenclosingtriangle',['getMinAreaEnclosingTriangle',['../classmultiscale_1_1analysis_1_1Cluster.html#ab28150a739c35d66874c219fd38b462b',1,'multiscale::analysis::Cluster']]],
   ['getpileupdegree',['getPileUpDegree',['../classmultiscale_1_1analysis_1_1Cluster.html#acff6c7308641af041598bed55005f2bf',1,'multiscale::analysis::Cluster::getPileUpDegree()'],['../classmultiscale_1_1analysis_1_1Entity.html#a2b90f7783c4e3aa5836964bcc1cf0796',1,'multiscale::analysis::Entity::getPileUpDegree()']]],
-  ['getpolygon',['getPolygon',['../classmultiscale_1_1analysis_1_1Region.html#ac1012549744a63071070e47c39ce7450',1,'multiscale::analysis::Region']]],
+  ['getpolygon',['getPolygon',['../classmultiscale_1_1analysis_1_1Region.html#ab2fc240206cad785e13ea8e2f56a289b',1,'multiscale::analysis::Region']]],
   ['getshape',['getShape',['../classmultiscale_1_1analysis_1_1Cluster.html#ada6b14fcff697b3e7365070dd13513c7',1,'multiscale::analysis::Cluster']]],
   ['getstartingangle',['getStartingAngle',['../classmultiscale_1_1video_1_1AnnularSector.html#a85931ba16351fffc33b5a8fc714cb4b8',1,'multiscale::video::AnnularSector']]],
   ['getstartingradius',['getStartingRadius',['../classmultiscale_1_1video_1_1AnnularSector.html#aef4f23e921eae6438889f0f1537bb3ef',1,'multiscale::video::AnnularSector']]],

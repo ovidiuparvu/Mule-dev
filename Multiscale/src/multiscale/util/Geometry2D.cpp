@@ -92,8 +92,8 @@ Point2f Geometry2D::middlePoint(const Point2f &a, const Point2f &b) {
     return Point2f(middleX, middleY);
 }
 
-void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const Point2f &a1, const Point2f &b1, Point2f &a2 ,
-                                                       Point2f &b2, int nrOfRows, int nrOfCols) {
+void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Point &b1, Point &a2,
+                                                       Point &b2, int nrOfRows, int nrOfCols) {
     if ((a1.x == b1.x) && (a1.y == b1.y)) {
         a2 = a1;
         b2 = b1;
@@ -144,6 +144,27 @@ void Geometry2D::lineEquationDeterminedByPoints(const Point2f &p, const Point2f 
     c = ((-p.y) * b) - (p.x * a);
 }
 
+bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection) {
+    double A1 = b1.y - a1.y;
+    double B1 = a1.x - b1.x;
+    double C1 = (a1.x * A1) + (a1.y * B1);
+
+    double A2 = b2.y - a2.y;
+    double B2 = a2.x - b2.x;
+    double C2 = (a2.x * A2) + (a2.y * B2);
+
+    double det = (A1 * B2) - (A2 * B1);
+
+    if (det != 0) {
+        intersection.x = ((C1 * B2) - (C2 * B1)) / (det);
+        intersection.y = ((C2 * A1) - (C1 * A2)) / (det);
+
+        return true;
+    }
+
+    return false;
+}
+
 bool Geometry2D::lineIntersection(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2, Point2f &intersection) {
     double A1 = b1.y - a1.y;
     double B1 = a1.x - b1.x;
@@ -178,7 +199,7 @@ bool Geometry2D::lineIntersection(double a1, double b1, double c1, double a2, do
     return false;
 }
 
-bool Geometry2D::lineSegmentIntersection(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2, Point2f &intersection) {
+bool Geometry2D::lineSegmentIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection) {
     if (lineIntersection(a1, b1, a2, b2, intersection)) {
         return (
                     isBetweenCoordinates<double, double>(intersection.x, a1.x, b1.x) &&
@@ -265,7 +286,7 @@ vector<Point2f> Geometry2D::findPointsOnEdge(const vector<Point2f> &points,
     return pointsOnEdge;
 }
 
-unsigned int Geometry2D::minimumDistancePointIndex(const vector<Point2f> &contour, const Point2f &origin) {
+unsigned int Geometry2D::minimumDistancePointIndex(const vector<Point> &contour, const Point2f &origin) {
     double minDistance = numeric_limits<int>::max();
     double distance = 0.0;
     int nrOfPoints = contour.size();

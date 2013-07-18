@@ -1,8 +1,9 @@
 <map id="multiscale::Geometry2D::distanceBtwPoints" name="multiscale::Geometry2D::distanceBtwPoints">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Entity.html#a39cb4bb856c295c82676085d976d58e8" title="Get the distance between this entity and another one." alt="" coords="261,5,397,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aa0e5813de41cf0415f687d6c6371699c" title="Find vertex C which lies on side B at a distance = 2 * height(a&#45;1) from side C." alt="" coords="216,74,443,121"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aacc1dc3225d307ff882c6d5564e7831d" title="Find gamma for a given point &quot;p&quot; specified by its index." alt="" coords="216,143,443,190"/>
-<area shape="rect" id="node27" href="$classmultiscale_1_1Geometry2D.html#a702693b824ff0222a1eae2008b32fa22" title="Get the index of the point which is the closest to the origin." alt="" coords="231,213,428,259"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Entity.html#a39cb4bb856c295c82676085d976d58e8" title="Get the distance between this entity and another one." alt="" coords="261,39,397,86"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aa0e5813de41cf0415f687d6c6371699c" title="Find vertex C which lies on side B at a distance = 2 * height(a&#45;1) from side C." alt="" coords="216,109,443,155"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aacc1dc3225d307ff882c6d5564e7831d" title="Find gamma for a given point &quot;p&quot; specified by its index." alt="" coords="216,178,443,225"/>
+<area shape="rect" id="node27" href="$classmultiscale_1_1Geometry2D.html#a608548e8588d9efbcfec90d2bd92ea55" title="Check if one point lies between two other points." alt="" coords="248,247,411,294"/>
+<area shape="rect" id="node31" href="$classmultiscale_1_1Geometry2D.html#ae8e5e46c312835e27478ce00b11f8a7c" title="Get the index of the point which is the closest to the origin." alt="" coords="231,317,428,363"/>
 <area shape="rect" id="node7" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a20d737b8bb311c01d037062e98eb7efc" title="Update sides B and possibly A if tangency for side B was not obtained." alt="" coords="491,5,717,51"/>
 <area shape="rect" id="node9" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2637b25290dd55db6c72dec9dc184103" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="765,135,1000,199"/>
 <area shape="rect" id="node11" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a1fed629a9f290fe050c515aa2d0d799d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1048,143,1275,190"/>
@@ -10,4 +11,5 @@
 <area shape="rect" id="node18" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a963feccd69c5ea86bbf4965d91ed32ed" title="Search for the tangency of side B." alt="" coords="491,143,717,190"/>
 <area shape="rect" id="node21" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ab8fcbbabc20d96ebaf6edeeaf0d38e63" title="Check if tangency for side B was not obtained." alt="" coords="491,213,717,259"/>
 <area shape="rect" id="node24" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a75d6c0769a2717ed7086b28be0db2440" title="Set side B if tangency for side B was obtained." alt="" coords="491,282,717,329"/>
+<area shape="rect" id="node29" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a522b2228b01e7d5fa6f922ba5f5394a6" title="Check if the found minimal triangle is valid." alt="" coords="491,351,717,398"/>
 </map>

@@ -4,7 +4,7 @@
 using namespace multiscale::analysis;
 
 
-Region::Region(double area, double distanceFromOrigin, double angle, const vector<Point2f> &polygon) {
+Region::Region(double area, double distanceFromOrigin, double angle, const vector<Point> &polygon) {
     this->area = area;
     this->distanceFromOrigin = distanceFromOrigin;
     this->angle = angle;
@@ -28,7 +28,7 @@ double Region::getDistanceFromOrigin() const {
     return distanceFromOrigin;
 }
 
-const vector<Point2f>& Region::getPolygon() const {
+const vector<Point>& Region::getPolygon() const {
     return polygon;
 }
 

@@ -1,0 +1,5 @@
+<map id="multiscale::Geometry2D::isOppositeAngleBetweenNonReflex" name="multiscale::Geometry2D::isOppositeAngleBetweenNonReflex">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a907466755f2d460e95e2bace5b386768" title="Check if angle1 lies between non reflex angle determined by angles 2 and 3." alt="" coords="293,5,480,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Geometry2D.html#a3bb85fa2797ba25765f0f57786cb33ef" title="Return the angle opposite to the given angle." alt="" coords="305,74,468,121"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a6555ae4c2762e25444bc0874e9bbc535" title="Check if angle1 lies between angles 2 and 3." alt="" coords="528,5,691,51"/>
+</map>

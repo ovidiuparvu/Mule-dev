@@ -61,11 +61,11 @@ var searchData=
   ['converthsvtorgb',['convertHSVToRGB',['../classmultiscale_1_1RGBColourGenerator.html#af29401043271ed11f69cdd0ecf52649e',1,'multiscale::RGBColourGenerator']]],
   ['convertrgbtostring',['convertRGBToString',['../classmultiscale_1_1RGBColourGenerator.html#ab5600e0c10534f0d80511178c43ec507',1,'multiscale::RGBColourGenerator']]],
   ['converttointensity',['convertToIntensity',['../classmultiscale_1_1analysis_1_1MatFactory.html#a015bb6710f3a832786d7291108323696',1,'multiscale::analysis::MatFactory']]],
-  ['convertvertices',['convertVertices',['../RegionDetector_8cpp.html#aaea54364ddf19e83617e33b0c36d4825',1,'RegionDetector.cpp']]],
+  ['convertvertices',['convertVertices',['../RegionDetector_8cpp.html#a59bfc63874cda685db6e075580dc1c1b',1,'RegionDetector.cpp']]],
   ['create',['create',['../classmultiscale_1_1analysis_1_1MatFactory.html#a7800a989d808037fe96a9d5a692909b0',1,'multiscale::analysis::MatFactory']]],
   ['createcircularmask',['createCircularMask',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html#a94f2562c9045f2373b3e2736608de8c7',1,'multiscale::analysis::CircularMatFactory']]],
   ['createfromviewerimage',['createFromViewerImage',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html#a8d5fccf946065b982bfa700b9e47b1f5',1,'multiscale::analysis::CircularMatFactory::createFromViewerImage()'],['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3f86c9bd73eb8d8a27f272b47e984871',1,'multiscale::analysis::RectangularMatFactory::createFromViewerImage()'],['../classmultiscale_1_1analysis_1_1MatFactory.html#a719ca9ac925ee182c1d5df1b0b029394',1,'multiscale::analysis::MatFactory::createFromViewerImage()']]],
-  ['createregionfrompolygon',['createRegionFromPolygon',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a60916d106131e87cde1287db681ce95c',1,'multiscale::analysis::RegionDetector']]],
+  ['createregionfrompolygon',['createRegionFromPolygon',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287',1,'multiscale::analysis::RegionDetector']]],
   ['createtrackbars',['createTrackbars',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a7332c81689d61b800007785c4974ce7a',1,'multiscale::analysis::ClusterDetector::createTrackbars()'],['../classmultiscale_1_1analysis_1_1RegionDetector.html#a4ad46d6c01efbe5ef5fe83baaf1bf3e7',1,'multiscale::analysis::RegionDetector::createTrackbars()']]],
   ['currentnumber',['currentNumber',['../classmultiscale_1_1StandardNumberIterator.html#a1f40c321994d53f705331badd64542be',1,'multiscale::StandardNumberIterator']]],
   ['currentnumberdigits',['currentNumberDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#af42ebeea695a31c2da714332c520ae79',1,'multiscale::LexicographicNumberIterator']]]

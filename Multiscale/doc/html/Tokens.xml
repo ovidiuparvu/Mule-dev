@@ -832,16 +832,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>PI</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>RegionDetector_8hpp.html</Path>
-    <Anchor>a598a3330b3c21701223ee0ca14316eca</Anchor>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>ENCLOSING_RECT_VERTICES</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -853,7 +843,7 @@
   <Token>
     <TokenIdentifier>
       <Name>PI</Name>
-      <APILanguage>c</APILanguage>
+      <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
     </TokenIdentifier>
     <Path>Geometry2D_8hpp.html</Path>
@@ -1747,7 +1737,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>RegionDetector_8cpp.html</Path>
-    <Anchor>aaea54364ddf19e83617e33b0c36d4825</Anchor>
+    <Anchor>a59bfc63874cda685db6e075580dc1c1b</Anchor>
     <DeclaredIn>RegionDetector.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -2291,6 +2281,30 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>isAngleBetweenNonReflex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a907466755f2d460e95e2bace5b386768</Anchor>
+    <Abstract>Check if angle1 lies between non reflex angle determined by angles 2 and 3.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isOppositeAngleBetweenNonReflex</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a28d74085708bba7fa68fbea05d0d51ad</Anchor>
+    <Abstract>Check if the opposite of angle1, ((angle1 + 180) % 360), lies between non reflex angle determined by ...</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>oppositeAngle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
@@ -2357,7 +2371,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a9ed39465f735b1f216033d2081900ef3</Anchor>
+    <Anchor>a3da27e8cecb0a0d2733afa85d356a912</Anchor>
     <Abstract>Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point...</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2393,6 +2407,18 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>aa9d9b17a7e5098c8bde0cd9d3dc08dc2</Anchor>
+    <Abstract>Determine the intersection point of two lines, if this point exists.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>lineIntersection</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
     <Anchor>a51a867b90c8492ce4ce85c227788678b</Anchor>
     <Abstract>Determine the intersection point of two lines, if this point exists.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
@@ -2405,7 +2431,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a886d8a1fc55be9f0240f83b82acd53e1</Anchor>
+    <Anchor>a9931c3d8089d658186a8c1ac78db5773</Anchor>
     <Abstract>Determine the intersection point of two line segments, if this point exists.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2465,7 +2491,7 @@
       <Scope>multiscale::Geometry2D</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a702693b824ff0222a1eae2008b32fa22</Anchor>
+    <Anchor>ae8e5e46c312835e27478ce00b11f8a7c</Anchor>
     <Abstract>Get the index of the point which is the closest to the origin.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
@@ -2479,6 +2505,42 @@
     <Path>classmultiscale_1_1Geometry2D.html</Path>
     <Anchor>abf0e96a63cf744cab74ab94398e28562</Anchor>
     <Abstract>Compute the area of a triangle defined by three points.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isPointOnLineSegment</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a608548e8588d9efbcfec90d2bd92ea55</Anchor>
+    <Abstract>Check if one point lies between two other points.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>areEqualPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>aa2d3ac595072b9ab61879a44629d7969</Anchor>
+    <Abstract>Check if points point1 and point2 are equal or not.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>areCollinear</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>aa8b75808a35a471becae0ad99e708bdd</Anchor>
+    <Abstract>Check if the three points are collinear.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3112,8 +3174,20 @@
       <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
-    <Anchor>a0d5499a44c86edeb69d8303ae92ab8e9</Anchor>
-    <Abstract>Update the triangle vertices after all sides were set.</Abstract>
+    <Anchor>ade7452c987147a69c50f914df96d2c5b</Anchor>
+    <Abstract>Update the triangle vertices after all sides were set and return true if possible or false otherwise...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isValidMinimalTriangle</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a522b2228b01e7d5fa6f922ba5f5394a6</Anchor>
+    <Abstract>Check if the found minimal triangle is valid.</Abstract>
     <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3136,7 +3210,7 @@
       <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
-    <Anchor>ab1afd0c3e7b8aef5f3c110e3fde525b3</Anchor>
+    <Anchor>aedcbb3708672759e60a547d0a5eb0ddd</Anchor>
     <Abstract>Return the middle point of side B.</Abstract>
     <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
   </Token>
@@ -3186,18 +3260,6 @@
     <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
     <Anchor>a9bfe25a1a27190784fe106bb6d51e0de</Anchor>
     <Abstract>If (gamma(x) x) intersects P between successorOrPredecessorIndex and pointIntex is it above/below...</Abstract>
-    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>adjustAnglesIfReflex</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>clm</Type>
-      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
-    <Anchor>ab5c387b6a460cae90d718208a08c5d1b</Anchor>
-    <Abstract>Considering that the polygon is convex adjust the values of anglePredecessor/angleSuccessor such that...</Abstract>
     <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6317,7 +6379,7 @@
       <Scope>multiscale::analysis::Region</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>a59d1fca3039e2d8da000ae483a9ac469</Anchor>
+    <Anchor>aada5915b33d6a5cdf6af38846a6fc622</Anchor>
     <DeclaredIn>Region.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6375,7 +6437,7 @@
       <Scope>multiscale::analysis::Region</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>ac1012549744a63071070e47c39ce7450</Anchor>
+    <Anchor>ab2fc240206cad785e13ea8e2f56a289b</Anchor>
     <Abstract>Get the polygon defining the region.</Abstract>
     <DeclaredIn>Region.hpp</DeclaredIn>
   </Token>
@@ -6441,7 +6503,7 @@
       <Scope>multiscale::analysis::Region</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>a3bd26cd2aa2cc67b70dafd82f7f52d7d</Anchor>
+    <Anchor>a40d1b47f30bb09c6a47521a968163b6d</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6652,7 +6714,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a12b7d8305d247a1980c5290c29933372</Anchor>
+    <Anchor>a19918b5cd0ec310ad6149c7345870b3f</Anchor>
     <Abstract>Find contours in image.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6664,7 +6726,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a60916d106131e87cde1287db681ce95c</Anchor>
+    <Anchor>a1416b365f921e02e5161d72b0b69f287</Anchor>
     <Abstract>Create a new region from the given polygon.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6676,7 +6738,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>ae2e3d7e35d439d5f531ece928959f146</Anchor>
+    <Anchor>a2be058ae797d80787725ae2c246ba256</Anchor>
     <Abstract>Check if the region is valid.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6688,7 +6750,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>ae2b88d6869840e94c698bd165da1bd52</Anchor>
+    <Anchor>ac016631bd35bf0dd2d7e941076ec09c8</Anchor>
     <Abstract>Compute the angle of the polygon.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6700,7 +6762,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a091e2ed76c012a63c9e055c2ca54a82e</Anchor>
+    <Anchor>afb2aa3926a1bdc868f990db65df1ed4c</Anchor>
     <Abstract>Compute the angle of the polygon.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6712,7 +6774,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a199f572b37485d773e1e31a852fff282</Anchor>
+    <Anchor>a53457e7405a2a4558fe659aa66931834</Anchor>
     <Abstract>Get the centre of the minimum area bounding rectangle.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6724,7 +6786,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a4e8b186a74c6ef9874ed3fe07ae2b2a1</Anchor>
+    <Anchor>a3b76437c936dc9055c3ae49846f4016a</Anchor>
     <Abstract>Find the points for determining the angle of the region.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6736,7 +6798,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a730799aab890a76d1f4925bf3cb83300</Anchor>
+    <Anchor>af804b99efa2c9c5adb04c11a5dc5f589</Anchor>
     <Abstract>Find good intersection points for computing the angle of the region.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6914,7 +6976,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a61600cddfa641636cf7983b3c4161c88</Anchor>
+    <Anchor>a8d2a487b7a4168ba94caa3596efbf794</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

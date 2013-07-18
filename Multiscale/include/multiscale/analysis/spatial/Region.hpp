@@ -24,12 +24,12 @@ namespace multiscale {
                 double distanceFromOrigin;  /*!< Distance from the origin  */
                 double angle;               /*!< Angle of the region */
 
-                vector<Point2f> polygon;    /*!< Polygon defining the region */
+                vector<Point> polygon;    /*!< Polygon defining the region */
 
             public:
                 
                 Region(double area, double distanceFromOrigin,
-                       double angle, const vector<Point2f> &polygon);
+                       double angle, const vector<Point> &polygon);
                 ~Region();
 
                 //! Get the angle
@@ -42,7 +42,7 @@ namespace multiscale {
                 double getDistanceFromOrigin() const;
 
                 //! Get the polygon defining the region
-                const vector<Point2f>& getPolygon() const;
+                const vector<Point>& getPolygon() const;
 
                 //! Get a string representation of all the field names except polygon
                 static string fieldNamesToString();

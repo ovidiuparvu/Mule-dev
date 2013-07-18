@@ -813,7 +813,7 @@
                  <Node>
                   <Name>Region</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>a59d1fca3039e2d8da000ae483a9ac469</Anchor>
+                  <Anchor>aada5915b33d6a5cdf6af38846a6fc622</Anchor>
                  </Node>
                  <Node>
                   <Name>~Region</Name>
@@ -838,7 +838,7 @@
                  <Node>
                   <Name>getPolygon</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>ac1012549744a63071070e47c39ce7450</Anchor>
+                  <Anchor>ab2fc240206cad785e13ea8e2f56a289b</Anchor>
                  </Node>
                  <Node>
                   <Name>toString</Name>
@@ -863,7 +863,7 @@
                  <Node>
                   <Name>polygon</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>a3bd26cd2aa2cc67b70dafd82f7f52d7d</Anchor>
+                  <Anchor>a40d1b47f30bb09c6a47521a968163b6d</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -899,7 +899,7 @@
                  <Node>
                   <Name>createRegionFromPolygon</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a60916d106131e87cde1287db681ce95c</Anchor>
+                  <Anchor>a1416b365f921e02e5161d72b0b69f287</Anchor>
                  </Node>
                  <Node>
                   <Name>createTrackbars</Name>
@@ -934,17 +934,17 @@
                  <Node>
                   <Name>findContoursInImage</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a12b7d8305d247a1980c5290c29933372</Anchor>
+                  <Anchor>a19918b5cd0ec310ad6149c7345870b3f</Anchor>
                  </Node>
                  <Node>
                   <Name>findGoodIntersectionPoints</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a730799aab890a76d1f4925bf3cb83300</Anchor>
+                  <Anchor>af804b99efa2c9c5adb04c11a5dc5f589</Anchor>
                  </Node>
                  <Node>
                   <Name>findGoodPointsForAngle</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a4e8b186a74c6ef9874ed3fe07ae2b2a1</Anchor>
+                  <Anchor>a3b76437c936dc9055c3ae49846f4016a</Anchor>
                  </Node>
                  <Node>
                   <Name>findRegions</Name>
@@ -969,12 +969,12 @@
                  <Node>
                   <Name>isValidRegion</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>ae2e3d7e35d439d5f531ece928959f146</Anchor>
+                  <Anchor>a2be058ae797d80787725ae2c246ba256</Anchor>
                  </Node>
                  <Node>
                   <Name>minAreaRectCentre</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a199f572b37485d773e1e31a852fff282</Anchor>
+                  <Anchor>a53457e7405a2a4558fe659aa66931834</Anchor>
                  </Node>
                  <Node>
                   <Name>morphologicalClose</Name>
@@ -1014,12 +1014,12 @@
                  <Node>
                   <Name>regionAngle</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>ae2b88d6869840e94c698bd165da1bd52</Anchor>
+                  <Anchor>ac016631bd35bf0dd2d7e941076ec09c8</Anchor>
                  </Node>
                  <Node>
                   <Name>regionAngle</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a091e2ed76c012a63c9e055c2ca54a82e</Anchor>
+                  <Anchor>afb2aa3926a1bdc868f990db65df1ed4c</Anchor>
                  </Node>
                  <Node>
                   <Name>smoothImage</Name>
@@ -1069,7 +1069,7 @@
                  <Node>
                   <Name>origin</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a61600cddfa641636cf7983b3c4161c88</Anchor>
+                  <Anchor>a8d2a487b7a4168ba94caa3596efbf794</Anchor>
                  </Node>
                  <Node>
                   <Name>outputFilepath</Name>
@@ -3306,7 +3306,7 @@
                        <Node>
                         <Name>Region</Name>
                         <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>a59d1fca3039e2d8da000ae483a9ac469</Anchor>
+                        <Anchor>aada5915b33d6a5cdf6af38846a6fc622</Anchor>
                        </Node>
                        <Node>
                         <Name>~Region</Name>
@@ -3331,7 +3331,7 @@
                        <Node>
                         <Name>getPolygon</Name>
                         <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>ac1012549744a63071070e47c39ce7450</Anchor>
+                        <Anchor>ab2fc240206cad785e13ea8e2f56a289b</Anchor>
                        </Node>
                        <Node>
                         <Name>toString</Name>
@@ -3356,7 +3356,7 @@
                        <Node>
                         <Name>polygon</Name>
                         <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>a3bd26cd2aa2cc67b70dafd82f7f52d7d</Anchor>
+                        <Anchor>a40d1b47f30bb09c6a47521a968163b6d</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -3403,7 +3403,7 @@
                        <Node>
                         <Name>createRegionFromPolygon</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a60916d106131e87cde1287db681ce95c</Anchor>
+                        <Anchor>a1416b365f921e02e5161d72b0b69f287</Anchor>
                        </Node>
                        <Node>
                         <Name>createTrackbars</Name>
@@ -3438,17 +3438,17 @@
                        <Node>
                         <Name>findContoursInImage</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a12b7d8305d247a1980c5290c29933372</Anchor>
+                        <Anchor>a19918b5cd0ec310ad6149c7345870b3f</Anchor>
                        </Node>
                        <Node>
                         <Name>findGoodIntersectionPoints</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a730799aab890a76d1f4925bf3cb83300</Anchor>
+                        <Anchor>af804b99efa2c9c5adb04c11a5dc5f589</Anchor>
                        </Node>
                        <Node>
                         <Name>findGoodPointsForAngle</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a4e8b186a74c6ef9874ed3fe07ae2b2a1</Anchor>
+                        <Anchor>a3b76437c936dc9055c3ae49846f4016a</Anchor>
                        </Node>
                        <Node>
                         <Name>findRegions</Name>
@@ -3473,12 +3473,12 @@
                        <Node>
                         <Name>isValidRegion</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>ae2e3d7e35d439d5f531ece928959f146</Anchor>
+                        <Anchor>a2be058ae797d80787725ae2c246ba256</Anchor>
                        </Node>
                        <Node>
                         <Name>minAreaRectCentre</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a199f572b37485d773e1e31a852fff282</Anchor>
+                        <Anchor>a53457e7405a2a4558fe659aa66931834</Anchor>
                        </Node>
                        <Node>
                         <Name>morphologicalClose</Name>
@@ -3518,12 +3518,12 @@
                        <Node>
                         <Name>regionAngle</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>ae2b88d6869840e94c698bd165da1bd52</Anchor>
+                        <Anchor>ac016631bd35bf0dd2d7e941076ec09c8</Anchor>
                        </Node>
                        <Node>
                         <Name>regionAngle</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a091e2ed76c012a63c9e055c2ca54a82e</Anchor>
+                        <Anchor>afb2aa3926a1bdc868f990db65df1ed4c</Anchor>
                        </Node>
                        <Node>
                         <Name>smoothImage</Name>
@@ -3573,7 +3573,7 @@
                        <Node>
                         <Name>origin</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a61600cddfa641636cf7983b3c4161c88</Anchor>
+                        <Anchor>a8d2a487b7a4168ba94caa3596efbf794</Anchor>
                        </Node>
                        <Node>
                         <Name>outputFilepath</Name>
@@ -3681,11 +3681,6 @@
                       <Name>OUTPUT_EXTENSION</Name>
                       <Path>RegionDetector_8hpp.html</Path>
                       <Anchor>a6722eaa5c4c15a1ef661967d81135500</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>PI</Name>
-                      <Path>RegionDetector_8hpp.html</Path>
-                      <Anchor>a598a3330b3c21701223ee0ca14316eca</Anchor>
                      </Node>
                      <Node>
                       <Name>REGION_AREA_THRESH_MAX</Name>
@@ -5278,7 +5273,7 @@
                      <Node>
                       <Name>convertVertices</Name>
                       <Path>RegionDetector_8cpp.html</Path>
-                      <Anchor>aaea54364ddf19e83617e33b0c36d4825</Anchor>
+                      <Anchor>a59bfc63874cda685db6e075580dc1c1b</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>

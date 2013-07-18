@@ -19,7 +19,6 @@ var RegionDetector_8hpp =
     [ "KERNEL_MAX", "RegionDetector_8hpp.html#a0b0bfd77700b86e4860923b5eb902ceb", null ],
     [ "KEY_ESC", "RegionDetector_8hpp.html#a86b2b2d4eda22067d85d2287c118e2d8", null ],
     [ "OUTPUT_EXTENSION", "RegionDetector_8hpp.html#a6722eaa5c4c15a1ef661967d81135500", null ],
-    [ "PI", "RegionDetector_8hpp.html#a598a3330b3c21701223ee0ca14316eca", null ],
     [ "REGION_AREA_THRESH_MAX", "RegionDetector_8hpp.html#ad9b19b601c85b0ec4f89b2e8c9f9c985", null ],
     [ "THRESHOLD_MAX", "RegionDetector_8hpp.html#ab468cd6410e5d23829fc609c96431489", null ],
     [ "TRACKBAR_ALPHA", "RegionDetector_8hpp.html#a14b7e799d0e3e29cfe0e2e40d4b57474", null ],

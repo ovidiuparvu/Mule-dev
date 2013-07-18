@@ -1,8 +1,8 @@
 var searchData=
 [
   ['oppositeangle',['oppositeAngle',['../classmultiscale_1_1Geometry2D.html#a3bb85fa2797ba25765f0f57786cb33ef',1,'multiscale::Geometry2D']]],
-  ['origin',['origin',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a61600cddfa641636cf7983b3c4161c88',1,'multiscale::analysis::RegionDetector']]],
-  ['orthogonallinetoanotherlineedgepoints',['orthogonalLineToAnotherLineEdgePoints',['../classmultiscale_1_1Geometry2D.html#a9ed39465f735b1f216033d2081900ef3',1,'multiscale::Geometry2D']]],
+  ['origin',['origin',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a8d2a487b7a4168ba94caa3596efbf794',1,'multiscale::analysis::RegionDetector']]],
+  ['orthogonallinetoanotherlineedgepoints',['orthogonalLineToAnotherLineEdgePoints',['../classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912',1,'multiscale::Geometry2D']]],
   ['output_5fclusteredness',['OUTPUT_CLUSTEREDNESS',['../ClusterDetector_8hpp.html#a03d08fcd24072f600fedefea105192c5',1,'ClusterDetector.hpp']]],
   ['output_5fextension',['OUTPUT_EXTENSION',['../ClusterDetector_8hpp.html#a6722eaa5c4c15a1ef661967d81135500',1,'OUTPUT_EXTENSION():&#160;ClusterDetector.hpp'],['../RegionDetector_8hpp.html#a6722eaa5c4c15a1ef661967d81135500',1,'OUTPUT_EXTENSION():&#160;RegionDetector.hpp'],['../PolarCsvToInputFilesConverter_8hpp.html#a6722eaa5c4c15a1ef661967d81135500',1,'OUTPUT_EXTENSION():&#160;PolarCsvToInputFilesConverter.hpp'],['../RectangularCsvToInputFilesConverter_8hpp.html#a6722eaa5c4c15a1ef661967d81135500',1,'OUTPUT_EXTENSION():&#160;RectangularCsvToInputFilesConverter.hpp']]],
   ['output_5ffile_5fextension',['OUTPUT_FILE_EXTENSION',['../CartesianToPolarConverter_8hpp.html#aafd58e116a65aeb70ace2b91d42a22ae',1,'OUTPUT_FILE_EXTENSION():&#160;CartesianToPolarConverter.hpp'],['../CartesianToConcentrationsConverter_8hpp.html#aafd58e116a65aeb70ace2b91d42a22ae',1,'OUTPUT_FILE_EXTENSION():&#160;CartesianToConcentrationsConverter.hpp']]],

@@ -14,7 +14,7 @@ var searchData=
   ['updatesideb',['updateSideB',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a75d6c0769a2717ed7086b28be0db2440',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['updatesidesba',['updateSidesBA',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a20d737b8bb311c01d037062e98eb7efc',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['updatesidesca',['updateSidesCA',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a8c906ab782ec5feb1767869a61d3620d',1,'multiscale::MinimumAreaEnclosingTriangle']]],
-  ['updatetrianglevertices',['updateTriangleVertices',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a0d5499a44c86edeb69d8303ae92ab8e9',1,'multiscale::MinimumAreaEnclosingTriangle']]],
+  ['updatetrianglevertices',['updateTriangleVertices',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ade7452c987147a69c50f914df96d2c5b',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['upperbound',['upperBound',['../classmultiscale_1_1NumberIterator.html#a56a5558958778bbde64e249d67cba886',1,'multiscale::NumberIterator']]],
   ['upperbounddigits',['upperBoundDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#a909a054ae4d3e79e5daa3059a94000d0',1,'multiscale::LexicographicNumberIterator']]],
   ['use_5fcanny_5fl2',['USE_CANNY_L2',['../RegionDetector_8hpp.html#a379803797373615b9e8750e3a1c1b79e',1,'RegionDetector.hpp']]],

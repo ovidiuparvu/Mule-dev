@@ -113,8 +113,8 @@ namespace multiscale {
              * \param nrOfRows  Maximum number of rows in the considered matrix
              * \param nrOfCols  Maximum number of columns in the considered matrix
              */
-            static void orthogonalLineToAnotherLineEdgePoints(const Point2f &a1, const Point2f &b1, Point2f &a2,
-                                                              Point2f &b2, int nrOfRows, int nrOfCols);
+            static void orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Point &b1, Point &a2,
+                                                              Point &b2, int nrOfRows, int nrOfCols);
 
             //! Get the values of "a", "b" and "c" of the line equation ax + by + c = 0 knowing that point "p" and "q" are on the line
             /*!
@@ -160,6 +160,32 @@ namespace multiscale {
             /*! Two lines intersect if they are not parallel (Parallel lines intersect at
              * +/- infinity, but we do not consider this case here).
              *
+             * The lines are specified by a pair of points each. If they intersect, then
+             * the function returns true, else it returns false.
+             *
+             * Lines are specified in the following form:
+             *      A1x + B1x = C1
+             *      A2x + B2x = C2
+             *
+             * If det (= A1xB2 - A2xB1) == 0, then lines are parallel
+             *                                else they intersect
+             *
+             * If they intersect, then let us denote the intersection point with P(x, y) where:
+             *      x = (C1xB2 - C2xB1) / (det)
+             *      y = (C2xA1 - C1xA2) / (det)
+             *
+             * \param a1 First point for determining the first line
+             * \param b1 Second point for determining the first line
+             * \param a2 First point for determining the second line
+             * \param b2 Second point for determining the second line
+             * \param intersection The intersection point, if this point exists
+             */
+            static bool lineIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection);
+
+            //! Determine the intersection point of two lines, if this point exists
+            /*! Two lines intersect if they are not parallel (Parallel lines intersect at
+             * +/- infinity, but we do not consider this case here).
+             *
              * The lines are specified in the following form:
              *      A1x + B1x = C1
              *      A2x + B2x = C2
@@ -197,7 +223,7 @@ namespace multiscale {
              * \param b2            Second point for determining the second line
              * \param intersection  The intersection point, if this point exists
              */
-            static bool lineSegmentIntersection(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2, Point2f &intersection);
+            static bool lineSegmentIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection);
 
             //! Determine if a line and a circle intersect and return the intersection points if they exist
             /*!
@@ -258,7 +284,7 @@ namespace multiscale {
              * \param points The set of points
              * \param origin The origin
              */
-            static unsigned int minimumDistancePointIndex(const vector<Point2f> &points, const Point2f &origin);
+            static unsigned int minimumDistancePointIndex(const vector<Point> &points, const Point2f &origin);
 
             //! Compute the area of a triangle defined by three points
             /*!
@@ -276,7 +302,7 @@ namespace multiscale {
             /*!
              * \param point             Point lying possibly outside the line segment
              * \param lineSegmentStart  First point determining the line segment
-             * \param lineSegmentEdn    Second point determining the line segment
+             * \param lineSegmentEnd    Second point determining the line segment
              */
             static bool isPointOnLineSegment(const Point2f &point, const Point2f &lineSegmentStart,
                                              const Point2f &lineSegmentEnd);

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['oppositeangle',['oppositeAngle',['../classmultiscale_1_1Geometry2D.html#a3bb85fa2797ba25765f0f57786cb33ef',1,'multiscale::Geometry2D']]],
-  ['orthogonallinetoanotherlineedgepoints',['orthogonalLineToAnotherLineEdgePoints',['../classmultiscale_1_1Geometry2D.html#a9ed39465f735b1f216033d2081900ef3',1,'multiscale::Geometry2D']]],
+  ['orthogonallinetoanotherlineedgepoints',['orthogonalLineToAnotherLineEdgePoints',['../classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912',1,'multiscale::Geometry2D']]],
   ['outputclustercircularshape',['outputClusterCircularShape',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ab4e0ae4d5850be64ec2399d5c2c36828',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['outputclusteronimage',['outputClusterOnImage',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#af2c2d6f5fe0b1e08039fa12ec3132475',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['outputclusterrectangularshape',['outputClusterRectangularShape',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ab7bfa2a55991a5708abfea7fa362214c',1,'multiscale::analysis::SimulationClusterDetector']]],
