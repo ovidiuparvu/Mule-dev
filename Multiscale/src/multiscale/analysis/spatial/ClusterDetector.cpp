@@ -39,7 +39,7 @@ void ClusterDetector::initialise() {
 }
 
 void ClusterDetector::initialiseClusteringValues() {
-    eps = 650;
+    eps = 1200;
     minPoints = 2;
 }
 

@@ -12,6 +12,12 @@ then
     RESULT_FILE_NR_REGIONS=${outputFolder}/"results_number_regions";
     RESULT_FILE=${outputFolder}/"results";
 
+    # Start the timer for measuring the total execution time
+    startTime=$(date +%s.%N);
+
+    # Inform user of the next action
+    echo "Running the region detection procedure for each image...";
+
     # Run the region detection procedure for each image
 
     for imageFile in ${inputFolder}/*.png;
@@ -37,6 +43,16 @@ then
         
         tail -n+2 ${output} >> ${RESULT_FILE};
     done
+
+    # Print end message
+    echo "The region detection procedure(s) ended successfully.";
+
+    # End the timer for measuring the total execution time
+    endTime=$(date +%s.%N);
+    
+    # Print the total execution time
+    echo 
+    echo "Total execution time: " $(echo "${endTime} - ${startTime}" | bc) " seconds.";
 
 else
     echo "Please run the script with the parameters: <input_folder> <output_folder>.";
