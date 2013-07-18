@@ -84,9 +84,9 @@ void MinimumAreaEnclosingTriangle::advanceBToRightChain() {
 
 void MinimumAreaEnclosingTriangle::moveAIfLowAndBIfHigh() {
     while(height(b) > height(a)) {
-        Point2f gammaOfA1, gammaOfA2;
+        Point2f gammaOfA;
 
-        if ((gamma(a, gammaOfA1, gammaOfA2)) && (intersectsBelow(gammaOfA1, b)) && (intersectsBelow(gammaOfA2, b))) {
+        if ((gamma(a, gammaOfA)) && (intersectsBelow(gammaOfA, b))) {
             advance(b);
         } else {
             advance(a);
@@ -95,20 +95,19 @@ void MinimumAreaEnclosingTriangle::moveAIfLowAndBIfHigh() {
 }
 
 void MinimumAreaEnclosingTriangle::searchForBTangency() {
-    Point2f gammaOfB1, gammaOfB2;
+    Point2f gammaOfB;
 
-    while (((gamma(b, gammaOfB1, gammaOfB2)) && (intersectsBelow(gammaOfB1, b)) && (intersectsBelow(gammaOfB2, b))) &&
+    while (((gamma(b, gammaOfB)) && (intersectsBelow(gammaOfB, b))) &&
            (Numeric::greaterOrEqual(height(b), height(predecessor(a))))) {
         advance(b);
     }
 }
 
 bool MinimumAreaEnclosingTriangle::isNotBTangency() {
-    Point2f gammaOfB1, gammaOfB2;
+    Point2f gammaOfB;
 
-    if (gamma(b, gammaOfB1, gammaOfB2)) {
-        if (((intersectsAbove(gammaOfB1, b)) || (intersectsAbove(gammaOfB2, b))) ||
-            (height(b) < height(predecessor(a)))) {
+    if (gamma(b, gammaOfB)) {
+        if ((intersectsAbove(gammaOfB, b)) || (height(b) < height(predecessor(a)))) {
             return true;
         }
     }
@@ -134,22 +133,16 @@ void MinimumAreaEnclosingTriangle::updateSidesBA() {
 
     if ((middlePointOfSideB(sideBMiddlePoint)) & (height(sideBMiddlePoint) < height(predecessor(a)))) {
         sideAStartVertex = polygon[predecessor(a)];
+
+        cout << "Here";
+
         sideAEndVertex = findVertexCOnSideB();
     }
 }
 
 void MinimumAreaEnclosingTriangle::updateSideB() {
-    Point2f gammaOfB1, gammaOfB2;
-
-    if (!gamma(b, gammaOfB1, gammaOfB2))
+    if (!gamma(b, sideBStartVertex))
         throw ERR_SIDE_B_GAMMA;
-
-    // Set the start vertex for side B the point which together with b does not intersect P neither above nor below
-    if ((!intersectsAbove(gammaOfB1, b)) && (!intersectsBelow(gammaOfB1, b))) {
-        sideBStartVertex = gammaOfB1;
-    } else {
-        sideBStartVertex = gammaOfB2;
-    }
 
     sideBEndVertex = polygon[b];
 }
@@ -300,11 +293,23 @@ double MinimumAreaEnclosingTriangle::height(const Point2f &polygonPoint) {
     return Geometry2D::distanceFromPointToLine(polygonPoint, pointC, pointCPredecessor);
 }
 
-bool MinimumAreaEnclosingTriangle::gamma(unsigned int polygonPointIndex, Point2f &gammaPoint1, Point2f &gammaPoint2) {
+bool MinimumAreaEnclosingTriangle::gamma(unsigned int polygonPointIndex, Point2f &gammaPoint) {
+    Point2f intersectionPoint1, intersectionPoint2;
+
     // Get intersection points if they exist
     if (!findGammaIntersectionPoints(polygonPointIndex, polygon[a], polygon[predecessor(a)], polygon[c],
-                                     polygon[predecessor(c)], gammaPoint1, gammaPoint2)) {
+                                     polygon[predecessor(c)], intersectionPoint1, intersectionPoint2)) {
         return false;
+    }
+
+    // Select the point which is closer to polygon[a]
+    double distanceToIntersectionPoint1 = Geometry2D::distanceBtwPoints(intersectionPoint1, polygon[a]);
+    double distanceToIntersectionPoint2 = Geometry2D::distanceBtwPoints(intersectionPoint2, polygon[a]);
+
+    if (distanceToIntersectionPoint1 < distanceToIntersectionPoint2) {
+        gammaPoint = intersectionPoint1;
+    } else {
+        gammaPoint = intersectionPoint2;
     }
 
     return true;
