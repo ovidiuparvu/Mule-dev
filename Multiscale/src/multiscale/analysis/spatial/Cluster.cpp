@@ -76,7 +76,7 @@ vector<Entity> Cluster::getEntities() const {
 }
 
 string Cluster::fieldNamesToString() {
-    return "Clusteredness degree,Pile up degree,Area,Shape,Centre (x-coord),Centre (y-coord)";
+    return "Clusteredness degree,Pile up degree,Area,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
 }
 
 string Cluster::toString() {
@@ -84,6 +84,9 @@ string Cluster::toString() {
            StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
            shapeAsString() + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(triangularMeasure) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(rectangularMeasure) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(circularMeasure) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.y);
 }
@@ -93,9 +96,9 @@ void Cluster::initialise() {
     this->pileUpDegree = 0;
     this->area = 0;
 
-    this->triangularProbability = 0;
-    this->rectangularProbability = 0;
-    this->circularProbability = 0;
+    this->triangularMeasure = 0;
+    this->rectangularMeasure = 0;
+    this->circularMeasure = 0;
 
     this->minAreaEnclosingCircleRadius = 0;
 
@@ -173,18 +176,18 @@ void Cluster::updateArea() {
 }
 
 void Cluster::updateShape() {
-    triangularProbability = isTriangularProbability();
-    rectangularProbability = isRectangularProbability();
-    circularProbability = isCircularProbability();
+    triangularMeasure = isTriangularMeasure();
+    rectangularMeasure = isRectangularMeasure();
+    circularMeasure = isCircularMeasure();
 
-    if (triangularProbability < rectangularProbability) {
-        if (rectangularProbability > circularProbability) {
+    if (triangularMeasure < rectangularMeasure) {
+        if (rectangularMeasure > circularMeasure) {
             shape = Shape2D::Rectangle;
         } else {
             shape = Shape2D::Circle;
         }
     } else {
-        if (triangularProbability > circularProbability) {
+        if (triangularMeasure > circularMeasure) {
             shape = Shape2D::Triangle;
         } else {
             shape = Shape2D::Circle;
@@ -203,12 +206,12 @@ void Cluster::updateCentrePoint() {
     centre.y /= entities.size();
 }
 
-double Cluster::isTriangularProbability() {
+double Cluster::isTriangularMeasure() {
     // TODO: Unimplemented method
     return 1E-10;
 }
 
-double Cluster::isRectangularProbability() {
+double Cluster::isRectangularMeasure() {
     vector<Point2f> entitiesCentrePoints = getEntitiesCentrePoints();
 
     minAreaEnclosingRect = minAreaRect(entitiesCentrePoints);
@@ -220,7 +223,7 @@ double Cluster::isRectangularProbability() {
                            : (area / rectArea);
 }
 
-double Cluster::isCircularProbability() {
+double Cluster::isCircularMeasure() {
     vector<Point2f> entitiesCentrePoints = getEntitiesCentrePoints();
 
     minEnclosingCircle(entitiesCentrePoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);

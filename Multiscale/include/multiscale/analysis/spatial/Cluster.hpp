@@ -35,9 +35,9 @@ namespace multiscale {
                 double pileUpDegree;                        /*!< Degree of pile up */
                 double area;                                /*!< Sum of the areas of all entities in the cluster */
 
-                double triangularProbability;               /*!< Probability that the shape of the cluster is triangular */
-                double rectangularProbability;              /*!< Probability that the shape of the cluster is rectangular */
-                double circularProbability;                 /*!< Probability that the shape of the cluster is circular */
+                double triangularMeasure;                   /*!< Measure ([0, 1]) indicating that the shape of the cluster is triangular */
+                double rectangularMeasure;                  /*!< Measure ([0, 1]) indicating that the shape of the cluster is rectangular */
+                double circularMeasure;                     /*!< Measure ([0, 1]) indicating that the shape of the cluster is circular */
 
                 // TODO: Update
                 vector<Point2f> minAreaEnclosingTriangle;   /*!< The minimum area enclosing triangle */
@@ -131,13 +131,13 @@ namespace multiscale {
                 void updateCentrePoint();
 
                 //! Get probability that the cluster has a triangular shape
-                double isTriangularProbability();
+                double isTriangularMeasure();
 
                 //! Get probability that the cluster has a rectangular shape
-                double isRectangularProbability();
+                double isRectangularMeasure();
 
                 //! Get probability that the cluster has a circular shape
-                double isCircularProbability();
+                double isCircularMeasure();
 
                 //! Return the shape of the cluster as a string
                 string shapeAsString();
