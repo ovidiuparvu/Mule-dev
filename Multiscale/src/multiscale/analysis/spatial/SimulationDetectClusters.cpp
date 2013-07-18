@@ -33,7 +33,8 @@ po::variables_map initArgumentsConfig(po::options_description &usageDescription,
                                   ("height,e", po::value<unsigned int>(), "provide the height of the grid (number of rows)\n")
                                   ("width,w", po::value<unsigned int>(), "provide the width of the grid (number of columns)\n")
                                   ("input-file,i", po::value<string>(), "provide the path to the input file\n")
-                                  ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n");
+                                  ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
+                                  ("debug-mode,d", po::value<bool>()->implicit_value(false), "start the program in debug mode\n");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, usageDescription), vm);
@@ -53,7 +54,7 @@ void printWrongParameters() {
 }
 
 // Get the needed parameters
-bool areValidParameters(string &inputFilepath, string &outputFilename, unsigned int &height,
+bool areValidParameters(string &inputFilepath, string &outputFilename, bool &debugFlag, unsigned int &height,
                         unsigned int &width, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
@@ -74,6 +75,10 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, unsigned 
         height = vm["height"].as<unsigned int>();
         width = vm["width"].as<unsigned int>();
 
+        if (vm.count("debug-mode")) {
+            debugFlag = vm["debug-mode"].as<bool>();
+        }
+
         return true;
     }
 
@@ -85,14 +90,16 @@ int main(int argc, char** argv) {
     string inputFilePath;
     string outputFilepath;
 
+    bool debugFlag = false;
+
     unsigned int height;
     unsigned int width;
 
     try {
-        if (areValidParameters(inputFilePath, outputFilepath, height, width, argc, argv)) {
+        if (areValidParameters(inputFilePath, outputFilepath, debugFlag, height, width, argc, argv)) {
             Mat image = RectangularMatFactory().createFromViewerImage(inputFilePath);
 
-            SimulationClusterDetector detector(image, outputFilepath, height, width, true);
+            SimulationClusterDetector detector(image, outputFilepath, height, width, debugFlag);
 
             detector.detect();
         } else {

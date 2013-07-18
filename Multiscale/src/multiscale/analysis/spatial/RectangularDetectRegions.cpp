@@ -31,7 +31,8 @@ namespace po = boost::program_options;
 po::variables_map initArgumentsConfig(po::options_description &usageDescription, int argc, char** argv) {
     usageDescription.add_options()("help,h", "display help message\n")
                                   ("input-file,i", po::value<string>(), "provide the path to the input file\n")
-                                  ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n");
+                                  ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
+                                  ("debug-mode,d", po::value<bool>()->implicit_value(false), "start the program in debug mode\n");
 
     po::variables_map vm;
     po::store(po::parse_command_line(argc, argv, usageDescription), vm);
@@ -51,7 +52,7 @@ void printWrongParameters() {
 }
 
 // Get the needed parameters
-bool areValidParameters(string &inputFilepath, string &outputFilename, int argc, char** argv) {
+bool areValidParameters(string &inputFilepath, string &outputFilename, bool &debugFlag, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
@@ -68,6 +69,10 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, int argc,
         inputFilepath  = vm["input-file"].as<string>();
         outputFilename = vm["output-file"].as<string>();
 
+        if (vm.count("debug-mode")) {
+            debugFlag = vm["debug-mode"].as<bool>();
+        }
+
         return true;
     }
 
@@ -79,11 +84,13 @@ int main(int argc, char** argv) {
     string inputFilePath;
     string outputFilepath;
 
+    bool debugFlag = false;
+
     try {
-        if (areValidParameters(inputFilePath, outputFilepath, argc, argv)) {
+        if (areValidParameters(inputFilePath, outputFilepath, debugFlag, argc, argv)) {
             Mat image = RectangularMatFactory().createFromViewerImage(inputFilePath);
 
-            RegionDetector detector(image, outputFilepath, true);
+            RegionDetector detector(image, outputFilepath, debugFlag);
 
             detector.detect();
         } else {

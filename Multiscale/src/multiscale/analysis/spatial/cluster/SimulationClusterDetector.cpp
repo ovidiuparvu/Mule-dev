@@ -151,7 +151,5 @@ void SimulationClusterDetector::processSaveRequest() {
 void SimulationClusterDetector::saveResultsAsPNGImage() {
     if (outputImage.data) {
         imwrite(outputFilepath + IMG_EXTENSION, outputImage);
-
-        cout << MSG_IMG_SAVED << endl;
     }
 }
