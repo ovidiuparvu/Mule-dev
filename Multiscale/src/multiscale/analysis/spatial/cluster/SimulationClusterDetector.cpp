@@ -30,13 +30,10 @@ void SimulationClusterDetector::detectEntitiesInImage(vector<Entity> &entities) 
             if (isEntityAtPosition(j, i)) {
                 double pileUpDegree = computePileUpDegreeAtPosition(j, i);
                 double area = entityHeight * entityWidth;
+                Point2f centre = getEntityCentrePoint(j, i);
+                vector<Point2f> contourPoints = getEntityContourPoints(j, i);
 
-                double xCentre = (j * entityWidth) + (entityWidth / 2);
-                double yCentre = (i * entityHeight) + (entityHeight / 2);
-
-                Point2f centre(xCentre, yCentre);
-
-                entities.push_back(Entity(pileUpDegree, area, centre));
+                entities.push_back(Entity(pileUpDegree, area, centre, contourPoints));
             }
         }
     }
@@ -48,6 +45,25 @@ bool SimulationClusterDetector::isEntityAtPosition(int x, int y) {
     Scalar positionMean = mean(thresholdedImage(mask));
 
     return (positionMean.val[0] > ENTITY_THRESH);
+}
+
+Point2f SimulationClusterDetector::getEntityCentrePoint(int x, int y) {
+    double xCentre = (x * entityWidth) + (entityWidth / 2);
+    double yCentre = (y * entityHeight) + (entityHeight / 2);
+
+    return Point2f(xCentre, yCentre);
+}
+
+vector<Point2f> SimulationClusterDetector::getEntityContourPoints(int x, int y) {
+    vector<Point2f> contourPoints;
+
+    for (int i = x; i < (x + 2); i++) {
+        for (int j = y; j < (y + 2); j++) {
+            contourPoints.push_back(Point(i * entityWidth, j * entityHeight));
+        }
+    }
+
+    return contourPoints;
 }
 
 double SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int y) {

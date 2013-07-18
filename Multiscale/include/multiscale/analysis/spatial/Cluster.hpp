@@ -109,6 +109,9 @@ namespace multiscale {
                 //! Get the collection of entities' centres
                 vector<Point2f> getEntitiesCentrePoints();
 
+                //! Get the collection of entities' contour points
+                vector<Point2f> getEntitiesContourPoints();
+
                 //! Update the values of all measures if required
                 void updateMeasuresIfRequired();
 

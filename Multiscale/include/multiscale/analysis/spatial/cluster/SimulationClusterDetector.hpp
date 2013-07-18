@@ -65,6 +65,20 @@ namespace multiscale {
                  */
                 bool isEntityAtPosition(int x, int y);
 
+                //! Get the point representing the centre of the entity
+                /*!
+                 * \param x Ox coordinate
+                 * \param y Oy coordinate
+                 */
+                Point2f getEntityCentrePoint(int x, int y);
+
+                //! Get the points representing the contour of the entity
+                /*!
+                 * \param x Ox coordinate
+                 * \param y Oy coordinate
+                 */
+                vector<Point2f> getEntityContourPoints(int x, int y);
+
                 //! Compute the pile up degree at the given position
                 /*!
                  * \param x Coordinate for Ox axis

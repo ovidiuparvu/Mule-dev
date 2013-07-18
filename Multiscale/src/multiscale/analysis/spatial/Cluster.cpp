@@ -120,6 +120,18 @@ vector<Point2f> Cluster::getEntitiesCentrePoints() {
     return centrePoints;
 }
 
+vector<Point2f> Cluster::getEntitiesContourPoints() {
+    vector<Point2f> contourPoints;
+
+    for (const Entity& entity : entities) {
+        vector<Point2f> entityContourPoints = entity.getContourPoints();
+
+        contourPoints.insert(contourPoints.begin(), entityContourPoints.begin(), entityContourPoints.end());
+    }
+
+    return contourPoints;
+}
+
 void Cluster::updateMeasuresIfRequired() {
     if (updateFlag) {
         updateMeasures();
@@ -212,9 +224,9 @@ double Cluster::isTriangularMeasure() {
 }
 
 double Cluster::isRectangularMeasure() {
-    vector<Point2f> entitiesCentrePoints = getEntitiesCentrePoints();
+    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
 
-    minAreaEnclosingRect = minAreaRect(entitiesCentrePoints);
+    minAreaEnclosingRect = minAreaRect(entitiesContourPoints);
 
     // Compute the area of the minimum area enclosing rectangle
     double rectArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
@@ -224,9 +236,9 @@ double Cluster::isRectangularMeasure() {
 }
 
 double Cluster::isCircularMeasure() {
-    vector<Point2f> entitiesCentrePoints = getEntitiesCentrePoints();
+    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
 
-    minEnclosingCircle(entitiesCentrePoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
+    minEnclosingCircle(entitiesContourPoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
     // Compute the area of the minimum area enclosing circle
     double circleArea = PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;

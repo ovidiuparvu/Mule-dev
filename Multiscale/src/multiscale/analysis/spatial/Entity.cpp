@@ -5,22 +5,22 @@
 using namespace multiscale::analysis;
 
 
-Entity::Entity(double pileUpDegree, double area, const Point2f &centre) {
-    if (!areValid(pileUpDegree, area, centre))
-        throw ERR_INPUT;
+Entity::Entity(double pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
+    validateInputValues(pileUpDegree, area, centre, contourPoints);
 
     this->pileUpDegree = pileUpDegree;
     this->area = area;
     this->centre = centre;
+    this->contourPoints = contourPoints;
 }
 
 Entity::Entity(const Entity &entity) {
-    if (!areValid(entity.pileUpDegree, entity.area, entity.centre))
-        throw ERR_INPUT;
+    validateInputValues(entity.pileUpDegree, entity.area, entity.centre, entity.contourPoints);
 
     pileUpDegree = entity.pileUpDegree;
     area = entity.area;
     centre = Point2f(entity.centre.x, entity.centre.y);
+    contourPoints = entity.contourPoints;
 }
 
 Entity::~Entity() {}
@@ -35,6 +35,10 @@ double Entity::getArea() const {
 
 Point2f Entity::getCentre() const {
     return centre;
+}
+
+vector<Point2f> Entity::getContourPoints() const {
+    return contourPoints;
 }
 
 string Entity::toString() {
@@ -53,10 +57,21 @@ double Entity::distanceTo(const Entity &entity) {
     return Geometry2D::distanceBtwPoints(centre, entity.centre);
 }
 
-bool Entity::areValid(double pileUpDegree, double area, const Point2f &centre) {
+void Entity::validateInputValues(double pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
+    if (!areValid(pileUpDegree, area, centre, contourPoints))
+        throw ERR_INPUT;
+}
+
+bool Entity::areValid(double pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
+    for (const Point2f &point: contourPoints) {
+        if ((point.x < 0) || (point.y < 0)) {
+            return false;
+        }
+    }
+
     return (
         (pileUpDegree > 0) &&
         (area > 0) &&
-        ((centre.x > 0) && (centre.y >0))
+        ((centre.x > 0) && (centre.y > 0))
     );
 }
