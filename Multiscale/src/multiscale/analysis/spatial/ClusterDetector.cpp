@@ -39,7 +39,7 @@ void ClusterDetector::initialise() {
 }
 
 void ClusterDetector::initialiseClusteringValues() {
-    eps = 2000;
+    eps = 650;
     minPoints = 2;
 }
 
@@ -103,7 +103,7 @@ void ClusterDetector::detectAndAnalyseClusters(const vector<Entity> &entities, v
 }
 
 void ClusterDetector::detectClusters(const vector<Entity> &entities, vector<int> &clusterIndexes, int &nrOfClusters) {
-    DBSCAN::run(convertEntities(entities), clusterIndexes, nrOfClusters, convertEpsValue(), minPoints);
+    DBSCAN::run(convertEntities(entities), clusterIndexes, nrOfClusters, convertEpsValue(), getValidMinPointsValue());
 }
 
 vector<shared_ptr<DataPoint>> ClusterDetector::convertEntities(const vector<Entity> &entities) {
@@ -196,4 +196,9 @@ void ClusterDetector::displayImage(const Mat& image, const string &windowName) {
 
 double ClusterDetector::convertEpsValue() {
     return NumericRangeManipulator::convertFromRange<int, double>(EPS_MIN, EPS_MAX, EPS_REAL_MIN, EPS_REAL_MAX, eps);
+}
+
+int ClusterDetector::getValidMinPointsValue() {
+    return (minPoints > 0) ? minPoints
+                           : 1;
 }

@@ -227,6 +227,9 @@ namespace multiscale {
 
                 //! Convert the value of eps from integer to double
                 double convertEpsValue();
+
+                //! Return non-zero value for minPoints
+                int getValidMinPointsValue();
         };
 
     };
