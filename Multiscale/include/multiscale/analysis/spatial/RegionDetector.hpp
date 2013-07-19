@@ -44,7 +44,7 @@ using namespace cv;
 #define THRESHOLD_MAX           255
 #define INTENSITY_MAX           255
 
-#define DISPLAY_LINE_THICKNESS   10
+#define DISPLAY_LINE_THICKNESS  10
 
 #define KEY_ESC 27
 
