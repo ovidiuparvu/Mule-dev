@@ -15,16 +15,25 @@
 #include "multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp"
 #include "multiscale/analysis/spatial/factory/RectangularMatFactory.hpp"
 
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/xml_parser.hpp>
 #include <boost/program_options.hpp>
+
 #include <iostream>
 
 using namespace std;
 using namespace multiscale::analysis;
 
 namespace po = boost::program_options;
+namespace pt = boost::property_tree;
 
-#define ERR_CODE 1
-#define ERR_MSG  "An error occurred: "
+#define CONFIG_IN   "config/analysis/spatial/simulation_cluster_detector2.xml"
+
+#define LABEL_EPS           "detector.eps"
+#define LABEL_MINPOINTS     "detector.minPoints"
+
+#define ERR_CODE    1
+#define ERR_MSG     "An error occurred: "
 
 
 // Initialise the arguments configuration
@@ -85,6 +94,26 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, bool &deb
     return false;
 }
 
+// Load the values of the parameters from the config file
+void loadDetectorParameterValues(const SimulationClusterDetector &detector) {
+    pt::ptree propertyTree;
+
+    read_xml(CONFIG_IN, propertyTree);
+
+    cout << propertyTree.get<double>(LABEL_EPS) << endl;
+    cout << propertyTree.get<int>(LABEL_MINPOINTS) << endl;
+}
+
+// Save the values of the parameters to the config file
+void saveDetectorParameterValues(const SimulationClusterDetector &detector) {
+    pt::ptree propertyTree;
+
+    propertyTree.put<double>(LABEL_EPS, 22.1);
+    propertyTree.put<int>(LABEL_MINPOINTS, 14);
+
+    write_xml(CONFIG_IN, propertyTree);
+}
+
 // Main function
 int main(int argc, char** argv) {
     string inputFilePath;
@@ -101,8 +130,11 @@ int main(int argc, char** argv) {
 
             SimulationClusterDetector detector(height, width, debugFlag);
 
-            detector.detect(image);
-            detector.outputResults(outputFilepath);
+            // loadDetectorParameterValues(detector);
+            saveDetectorParameterValues(detector);
+
+            //detector.detect(image);
+            //detector.outputResults(outputFilepath);
         } else {
             printWrongParameters();
         }

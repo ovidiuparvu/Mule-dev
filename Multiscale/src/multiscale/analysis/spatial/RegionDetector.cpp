@@ -12,7 +12,15 @@ using namespace std;
 using namespace multiscale::analysis;
 
 
-RegionDetector::RegionDetector(bool debugMode) : Detector(debugMode) {}
+RegionDetector::RegionDetector(bool debugMode) : Detector(debugMode) {
+    alpha = 0;
+    beta = 0;
+    blurKernelSize = 0;
+    morphologicalCloseIterations = 0;
+    epsilon = 0;
+    regionAreaThresh = 0;
+    thresholdValue = 0;
+}
 
 RegionDetector::~RegionDetector() {}
 
@@ -20,7 +28,79 @@ vector<Region> const &RegionDetector::getRegions() {
     return regions;
 }
 
-void RegionDetector::initialiseDetectorSpecificValues() {
+void RegionDetector::setAlpha(int alpha) {
+    if (!detectorSpecificFieldsInitialised) {
+        detectorSpecificFieldsInitialised = true;
+
+        this->alpha = alpha;
+    }
+}
+
+void RegionDetector::setBeta(int beta) {
+    if (!detectorSpecificFieldsInitialised) {
+        detectorSpecificFieldsInitialised = true;
+
+        this->beta = beta;
+    }
+}
+
+void RegionDetector::setBlurKernelSize(int blurKernelSize) {
+    if (!detectorSpecificFieldsInitialised) {
+        detectorSpecificFieldsInitialised = true;
+
+        this->blurKernelSize = blurKernelSize;
+    }
+}
+
+void RegionDetector::setEpsilon(int epsilon) {
+    if (!detectorSpecificFieldsInitialised) {
+        detectorSpecificFieldsInitialised = true;
+
+        this->epsilon = epsilon;
+    }
+}
+
+void RegionDetector::setMorphologicalCloseIterations(int morphologicalCloseIterations) {
+    if (!detectorSpecificFieldsInitialised) {
+        detectorSpecificFieldsInitialised = true;
+
+        this->morphologicalCloseIterations = morphologicalCloseIterations;
+    }
+}
+
+void RegionDetector::setOriginXCoordinate(int originXCoordinate) {
+    if (!detectorSpecificFieldsInitialised) {
+        detectorSpecificFieldsInitialised = true;
+
+        this->origin.x = originXCoordinate;
+    }
+}
+
+void RegionDetector::setOriginYCoordinate(int originYCoordinate) {
+    if (!detectorSpecificFieldsInitialised) {
+        detectorSpecificFieldsInitialised = true;
+
+        this->origin.y = originYCoordinate;
+    }
+}
+
+void RegionDetector::setRegionAreaThresh(int regionAreaThresh) {
+    if (!detectorSpecificFieldsInitialised) {
+        detectorSpecificFieldsInitialised = true;
+
+        this->regionAreaThresh = regionAreaThresh;
+    }
+}
+
+void RegionDetector::setThresholdValue(int thresholdValue) {
+    if (!detectorSpecificFieldsInitialised) {
+        detectorSpecificFieldsInitialised = true;
+
+        this->thresholdValue = thresholdValue;
+    }
+}
+
+void RegionDetector::initialiseDetectorSpecificFields() {
     alpha = 750;
     beta = 0;
     blurKernelSize = 15;
@@ -30,7 +110,7 @@ void RegionDetector::initialiseDetectorSpecificValues() {
     thresholdValue = 100;
 }
 
-void RegionDetector::initialiseImageDependentValues() {
+void RegionDetector::initialiseImageDependentFields() {
     int originX = (image.rows + 1) / 2;
     int originY = (image.cols + 1) / 2;
 

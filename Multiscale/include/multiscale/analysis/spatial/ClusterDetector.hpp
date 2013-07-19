@@ -50,12 +50,25 @@ namespace multiscale {
                 ClusterDetector(bool debugMode = false);
                 virtual ~ClusterDetector();
 
+                //! Get a const reference to the vector of detected clusters
                 vector<Cluster> const &getClusters();
+
+                //! Set the value of the clustering algorithm parameter eps
+                /*!
+                 * \param eps Value of the clustering algorithm parameter eps
+                 */
+                void setEps(double eps);
+
+                //! Set the value of the clustering algorithm parameter MinPoints
+                /*!
+                 * \param minPoints Value of the clustering algorithm parameter MinPoints
+                 */
+                void setMinPoints(int minPoints);
 
             protected:
 
                 //! Initialise clustering values
-                void initialiseDetectorSpecificValues() override;
+                void initialiseDetectorSpecificFields() override;
 
                 //! Create the trackbars
                 void createDetectorSpecificTrackbars() override;

@@ -46,7 +46,7 @@ namespace multiscale {
             private:
 
                 //! Initialise the image dependent values
-                void initialiseImageDependentValues() override;
+                void initialiseImageDependentFields() override;
 
                 //! Initialise the thresholdedImage field
                 void initialiseThresholdedImage();

@@ -10,6 +10,7 @@ Detector::Detector(bool debugMode) {
     this->debugMode = debugMode;
 
     this->detectMethodCalled = false;
+    this->detectorSpecificFieldsInitialised = false;
 }
 
 Detector::~Detector() {
@@ -38,8 +39,16 @@ void Detector::outputResults(const string &outputFilepath) {
 }
 
 void Detector::initialise() {
-    initialiseImageDependentValues();
-    initialiseDetectorSpecificValues();
+    initialiseImageDependentFields();
+    initialiseDetectorSpecificFieldsIfNotSet();
+}
+
+void Detector::initialiseDetectorSpecificFieldsIfNotSet() {
+    if (!detectorSpecificFieldsInitialised) {
+        initialiseDetectorSpecificFields();
+
+        detectorSpecificFieldsInitialised = true;
+    }
 }
 
 bool Detector::isValidInputImage(const Mat &inputImage) {

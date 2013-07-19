@@ -36,7 +36,8 @@ namespace multiscale {
 
                 Mat outputImage;                /*!< Image for displaying the results */
 
-                bool detectMethodCalled;        /*!< Flag for indicating if the detect method was called */
+                bool detectMethodCalled;                /*!< Flag for indicating if the detect method was called */
+                bool detectorSpecificFieldsInitialised; /*!< Flag for indicating if the parameters were */
 
             public:
 
@@ -60,11 +61,14 @@ namespace multiscale {
                 //! Initialisation function for the class
                 void initialise();
 
+                //! Initialisation of the detector specific values in case they were not set
+                void initialiseDetectorSpecificFieldsIfNotSet();
+
                 //! Initialisation of the detector specific values
-                virtual void initialiseDetectorSpecificValues() = 0;
+                virtual void initialiseDetectorSpecificFields() = 0;
 
                 //! Initialisation of the image dependent values
-                virtual void initialiseImageDependentValues() = 0;
+                virtual void initialiseImageDependentFields() = 0;
 
                 //! Check if the image is valid
                 /*!

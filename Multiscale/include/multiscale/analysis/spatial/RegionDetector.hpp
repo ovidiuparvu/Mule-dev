@@ -68,15 +68,70 @@ namespace multiscale {
                 RegionDetector(bool debugMode = false);
                 ~RegionDetector();
 
+                //! Get a const reference to the vector of detected regions
                 vector<Region> const &getRegions();
+
+                //! Set the value of field alpha
+                /*!
+                 * \param alpha Value of alpha
+                 */
+                void setAlpha(int alpha);
+
+                //! Set the value of field beta
+                /*!
+                 * \param beta Value of beta
+                 */
+                void setBeta(int beta);
+
+                //! Set the value of field blurKernelSize
+                /*!
+                 * \param blurKernelSize Value of blurKernelSize
+                 */
+                void setBlurKernelSize(int blurKernelSize);
+
+                //! Set the value of field epsilon
+                /*!
+                 * \param epsilon Value of epsilon
+                 */
+                void setEpsilon(int epsilon);
+
+                //! Set the value of field morphologicalCloseIterations
+                /*!
+                 * \param morphologicalCloseIterations Value of morphologicalCloseIterations
+                 */
+                void setMorphologicalCloseIterations(int morphologicalCloseIterations);
+
+                //! Set the value of field originXCoordinate
+                /*!
+                 * \param originXCoordinate Value of originXCoordinate
+                 */
+                void setOriginXCoordinate(int originXCoordinate);
+
+                //! Set the value of field originYCoordinate
+                /*!
+                 * \param originYCoordinate Value of originYCoordinate
+                 */
+                void setOriginYCoordinate(int originYCoordinate);
+
+                //! Set the value of field regionAreaThresh
+                /*!
+                 * \param regionAreaThresh Value of regionAreaThresh
+                 */
+                void setRegionAreaThresh(int regionAreaThresh);
+
+                //! Set the value of field thresholdValue
+                /*!
+                 * \param thresholdValue Value of thresholdValue
+                 */
+                void setThresholdValue(int thresholdValue);
 
             private:
 
                 //! Initialise the vision members
-                void initialiseDetectorSpecificValues() override;
+                void initialiseDetectorSpecificFields() override;
 
                 //! Initialise the members dependent on the image
-                void initialiseImageDependentValues() override;
+                void initialiseImageDependentFields() override;
 
                 //! Create the trackbars
                 void createDetectorSpecificTrackbars() override;
