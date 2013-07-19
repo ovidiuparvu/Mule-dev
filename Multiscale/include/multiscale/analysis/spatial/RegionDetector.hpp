@@ -1,6 +1,7 @@
 #ifndef REGIONDETECTOR_HPP_
 #define REGIONDETECTOR_HPP_
 
+#include "multiscale/analysis/spatial/Detector.hpp"
 #include "multiscale/analysis/spatial/Region.hpp"
 
 #include "opencv2/imgproc/imgproc.hpp"
@@ -8,14 +9,6 @@
 
 using namespace std;
 using namespace cv;
-
-#define ERR_OUTPUT_FILE     "Unable to create output file."
-#define ERR_INVALID_IMAGE   "The input image is invalid."
-
-#define OUTPUT_EXTENSION    ".out"
-
-#define WIN_DEBUG_IMAGE     "Debug image"
-#define WIN_PROCESSED_IMAGE "Processed image"
 
 #define TRACKBAR_ALPHA              "Alpha"
 #define TRACKBAR_BETA               "Beta"
@@ -46,8 +39,6 @@ using namespace cv;
 
 #define DISPLAY_LINE_THICKNESS  10
 
-#define KEY_ESC 27
-
 #define ENCLOSING_RECT_VERTICES 4
 
 
@@ -56,7 +47,7 @@ namespace multiscale {
     namespace analysis {
 
         //! Class for detecting regions of high intensity in grayscale images
-        class RegionDetector {
+        class RegionDetector : public Detector {
 
             private:
 
@@ -68,56 +59,27 @@ namespace multiscale {
                 int regionAreaThresh;               /*!< Threshold for considering a region */
                 int thresholdValue;                 /*!< Value of the threshold for the threshold filter */
 
-                Point origin;           /*!< The point representing the origin */
+                Point origin;                       /*!< The point representing the origin */
 
-                Mat image;              /*!< The original image */
-
-                string outputFilepath;  /*!< Path of the output file */
-
-                bool isDebugMode;       /*!< Flag for determining the mode in which the detector runs */
+                vector<Region> regions;             /*!< Regions detected in the image */
 
             public:
 
-                RegionDetector(const Mat    &inputImage,
-                               const string &outputFilepath,
-                               bool debugMode = false);
+                RegionDetector(bool debugMode = false);
                 ~RegionDetector();
 
-                //! Detect the regions in the image and output the results
-                void detect();
+                vector<Region> const &getRegions();
 
             private:
 
                 //! Initialise the vision members
-                void initialiseVisionMembers();
+                void initialiseDetectorSpecificValues() override;
 
                 //! Initialise the members dependent on the image
-                void initialiseImageDependentMembers();
-
-                //! Check if the image is valid
-                /*!
-                 * Check if the number of dimensions = 2 and if the
-                 * number of rows and number of columns is greater than one
-                 */
-                bool isValidImage();
+                void initialiseImageDependentValues() override;
 
                 //! Create the trackbars
-                void createTrackbars();
-
-                //! Detect the regions in the provided image
-                void detectRegions();
-
-                //! Detect the regions in the provided image in debug mode
-                /*!
-                 * \param regions The regions from the image
-                 */
-                void detectRegionsInDebugMode(vector<Region> &regions);
-
-                //! Detect the regions in the provided image in normal mode
-                /*!
-                 * \param regions The regions from the image
-                 */
-                void detectRegionsInNormalMode(vector<Region>& regions);
+                void createDetectorSpecificTrackbars() override;
 
                 //! Process the given image
                 /*! Apply filters to the image, threshold it, find its contours,
@@ -129,7 +91,7 @@ namespace multiscale {
                  *
                  *  \param regions The regions from the image
                  */
-                void processImage(vector<Region> &regions);
+                void processImageAndDetect() override;
 
                 //! Change the contrast and brightness of the image
                 /*! Change the contrast and brightness of the image by the factors
@@ -238,47 +200,17 @@ namespace multiscale {
                 void findGoodIntersectionPoints(const vector<Point> &polygonConvexHull, const Point &edgePointA,
                                                 const Point &edgePointB, vector<Point> &goodPointsForAngle);
 
-                //! Output the regions
-                /*!
-                 * \param regions The regions
-                 * \param isDebugMode True, if in debug mode
-                 */
-                void outputRegions(const vector<Region> &regions, bool isDebugMode);
+                //! Clear the element present in the regions vector
+                void clearPreviousDetectionResults() override;
 
-                //! Output the regions as an XML file
+                //! Output the regions to a csv file
                 /*!
-                 * \param regions The regions
-                 */
-                void outputRegionsAsXMLFile(const vector<Region> &regions);
-
-                //! Output the regions as a csv file
-                /*!
-                 * \param regions The regions
-                 */
-                void outputRegionsAsCsvFile(const vector<Region> &regions);
-
-                //! Output the regions as a csv file
-                /*!
-                 * \param regions The regions
                  * \param fout Output file stream
                  */
-                void outputRegionsAsCsvFile(const vector<Region> &regions, ofstream &fout);
+                void outputResultsToCsvFile(ofstream &fout) override;
 
-                //! Output the regions in debug mode
-                /*! Overlay the regions with the original image and display them. Also provide
-                 * different trackbars/sliders to adjust the parameters
-                 *
-                 * \param image The image
-                 * \param regions The regions
-                 */
-                void outputRegionsInDebugMode(const Mat &image, const vector<Region> &regions);
-
-                //! Display an image in a particular window
-                /*!
-                 * \param image The image
-                 * \param windowName The name of the window
-                 */
-                void displayImage(const Mat &image, const string &windowName);
+                //! Output the results to the outputImage instance
+                void outputResultsToImage() override;
 
                 //! Convert alpha from the range [0, ALPHA_MAX] to [ALPHA_REAL_MIN, ALPHA_REAL_MAX]
                 /*!

@@ -1,8 +1,9 @@
 #ifndef CLUSTERDETECTOR_HPP_
 #define CLUSTERDETECTOR_HPP_
 
-#include "multiscale/analysis/spatial/Entity.hpp"
 #include "multiscale/analysis/spatial/Cluster.hpp"
+#include "multiscale/analysis/spatial/Detector.hpp"
+#include "multiscale/analysis/spatial/Entity.hpp"
 
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
@@ -10,16 +11,8 @@
 using namespace std;
 using namespace cv;
 
-#define ERR_OUTPUT_FILE         "Unable to create output file."
-#define ERR_INVALID_IMAGE       "The input image is invalid."
-
 #define OUTPUT_CLUSTEREDNESS    "Clusteredness index: "
 #define OUTPUT_PILE_UP          "Average pile up degree: "
-
-#define OUTPUT_EXTENSION        ".out"
-#define IMG_EXTENSION           ".png"
-
-#define MSG_IMG_SAVED           "The image was successfully saved to disk."
 
 #define TRACKBAR_EPS            "Eps (Multiplied by 10)"
 #define TRACKBAR_MINPOINTS      "Minimum number of points"
@@ -32,24 +25,15 @@ using namespace cv;
 #define EPS_REAL_MIN            0
 #define EPS_REAL_MAX            1000
 
-#define WIN_OUTPUT_IMAGE        "Output image"
-
-#define KEY_ESC     27
-#define KEY_SAVE    115
-
 
 namespace multiscale {
 
     namespace analysis {
 
         //! Class for detecting clusters in 2D images
-        class ClusterDetector {
+        class ClusterDetector : public Detector {
 
             protected:
-
-                Mat image;                      /*!< Input image */
-                string outputFilepath;          /*!< Path of the output file */
-                bool debugMode;                 /*!< Flag for indicating if debug mode is set */
 
                 double clusterednessIndex;      /*!< Index of clusteredness for all clusters */
                 double avgPileUpDegree;         /*!< Average pile up degree of all clusters */
@@ -59,55 +43,31 @@ namespace multiscale {
                 int minPoints;                  /*!< DBSCAN algorithm parameter for specifying the minimum number
                                                      of points in an eps-neighbourhood of that point */
 
+                vector<Cluster> clusters;       /*!< Clusters found in the image */
+
             public:
 
-                ClusterDetector(const Mat &inputImage,
-                                const string &outputFilepath,
-                                bool debugMode = false);
+                ClusterDetector(bool debugMode = false);
                 virtual ~ClusterDetector();
 
-                //! Detect the clusters in the image and output the results
-                void detect();
+                vector<Cluster> const &getClusters();
 
             protected:
 
-                //! Initialisation function for the class
-                void initialise();
-
                 //! Initialise clustering values
-                void initialiseClusteringValues();
-
-                //! Check if the image is valid
-                /*!
-                 * Check if the number of dimensions = 2,  if the
-                 * number of rows and number of columns is greater than one
-                 * and if the image is of type CV_8UC1
-                 */
-                bool isValidInputImage();
+                void initialiseDetectorSpecificValues() override;
 
                 //! Create the trackbars
-                void createTrackbars();
+                void createDetectorSpecificTrackbars() override;
 
-                //! Detect the clusters in the provided image
-                void detectClusters();
+                //! Clear the clusters from the previous detection
+                void clearPreviousDetectionResults() override;
 
-                //! Detect the clusters in the provided image in debug mode
+                //! Process the provided image and detect clusters in it
                 /*!
                  * \param clusters The clusters from the image
                  */
-                void detectClustersInDebugMode(vector<Cluster> &clusters);
-
-                //! Detect the clusters in the provided image in normal mode
-                /*!
-                 * \param clusters The clusters from the image
-                 */
-                void detectClustersInNormalMode(vector<Cluster>& clusters);
-
-                //! Find clusters in the provided image
-                /*!
-                 * \param clusters The clusters from the image
-                 */
-                void findClusters(vector<Cluster> &clusters);
+                void processImageAndDetect() override;
 
                 //! Detect the entities in the image
                 /*! Detect the entities in the image, compute their centre point and degree of pile up
@@ -176,54 +136,11 @@ namespace multiscale {
                  */
                 double computeAveragePileUpDegree(vector<Cluster> &clusters);
 
-                //! Output the information computed for the clusters
-                /*! Output the information computed for the clusters considering the state of the debug flag
-                 *
-                 *  \param clusters Clusters of entities detected in the image
-                 *  \param debugMode Flag for indicating if debug mode is set or not
-                 */
-                void outputClusters(vector<Cluster> &clusters, bool debugMode);
-
-                //! Output the information computed for the clusters when debug mode is selected
+                //! Output the information computed for the clusters to a csv file
                 /*!
-                 *  \param clusters Clusters of entities detected in the image
-                 */
-                virtual void outputClustersInDebugMode(vector<Cluster> &clusters) = 0;
-
-                //! Output the information computed for the clusters when normal mode is selected
-                /*!
-                 *  \param clusters Clusters of entities detected in the image
-                 */
-                virtual void outputClustersInNormalMode(vector<Cluster> &clusters) = 0;
-
-                //! Output the information computed for the clusters in a csv file
-                /*!
-                 *  \param clusters Clusters of entities detected in the image
-                 */
-                void outputClustersAsCsvFile(vector<Cluster> &clusters);
-
-                //! Output the information computed for the clusters in a csv file
-                /*!
-                 *  \param clusters Clusters of entities detected in the image
                  *  \param fout     Output file stream
                  */
-                void outputClustersAsCsvFile(vector<Cluster> &clusters, ofstream &fout);
-
-                //! Process the request of the user by pressing the key
-                /*!
-                 * \param pressedKey Key pressed by the user, if a key was pressed, or "-1", otherwise
-                 */
-                void processPressedKeyRequest(char &pressedKey);
-
-                //! Process the save request in case the lowercase "s" key was pressed
-                virtual void processSaveRequest() = 0;
-
-                //! Display an image in a particular window
-                /*!
-                 * \param image The image
-                 * \param windowName The name of the window
-                 */
-                void displayImage(const Mat &image, const string &windowName);
+                void outputResultsToCsvFile(ofstream &fout) override;
 
                 //! Convert the value of eps from integer to double
                 double convertEpsValue();

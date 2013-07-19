@@ -90,9 +90,10 @@ int main(int argc, char** argv) {
         if (areValidParameters(inputFilePath, outputFilepath, debugFlag, argc, argv)) {
             Mat image = RectangularMatFactory().createFromViewerImage(inputFilePath);
 
-            RegionDetector detector(image, outputFilepath, debugFlag);
+            RegionDetector detector(debugFlag);
 
-            detector.detect();
+            detector.detect(image);
+            detector.outputResults(outputFilepath);
         } else {
             printWrongParameters();
         }

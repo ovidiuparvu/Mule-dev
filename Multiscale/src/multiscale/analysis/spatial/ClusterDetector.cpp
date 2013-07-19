@@ -11,82 +11,32 @@ using namespace std;
 using namespace multiscale::analysis;
 
 
-ClusterDetector::ClusterDetector(const Mat &inputImage, const string &outputFilepath, bool debugMode) {
-    inputImage.copyTo(image);
+ClusterDetector::ClusterDetector(bool debugMode) : Detector(debugMode) {}
 
-    this->outputFilepath = outputFilepath;
-    this->debugMode = debugMode;
+ClusterDetector::~ClusterDetector() {}
 
-    initialise();
+vector<Cluster> const &ClusterDetector::getClusters() {
+    return clusters;
 }
 
-ClusterDetector::~ClusterDetector() {
-    image.release();
-}
+void ClusterDetector::initialiseDetectorSpecificValues() {
+    eps = 1200;
+    minPoints = 2;
 
-void ClusterDetector::detect() {
-    if (!isValidInputImage())
-        throw ERR_INVALID_IMAGE;
-
-    // Initialise the value of eps and minPoints
-    initialiseClusteringValues();
-    detectClusters();
-}
-
-void ClusterDetector::initialise() {
     clusterednessIndex = 0;
     avgPileUpDegree = 0;
 }
 
-void ClusterDetector::initialiseClusteringValues() {
-    eps = 1200;
-    minPoints = 2;
-}
-
-bool ClusterDetector::isValidInputImage() {
-    return ((image.type() == CV_8UC1) && (image.dims == 2) && (image.rows > 1) && (image.cols > 1));
-}
-
-void ClusterDetector::createTrackbars() {
-    namedWindow( WIN_OUTPUT_IMAGE, WINDOW_NORMAL);
-    setWindowProperty( WIN_OUTPUT_IMAGE, CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN );
-
+void ClusterDetector::createDetectorSpecificTrackbars() {
     createTrackbar(TRACKBAR_MINPOINTS, WIN_OUTPUT_IMAGE, &minPoints, MIN_POINTS_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_EPS, WIN_OUTPUT_IMAGE, &eps, EPS_MAX, nullptr, nullptr);
 }
-void ClusterDetector::detectClusters() {
-    vector<Cluster> clusters;
 
-    if (debugMode) {
-        detectClustersInDebugMode(clusters);
-    } else {
-        detectClustersInNormalMode(clusters);
-    }
+void ClusterDetector::clearPreviousDetectionResults() {
+    clusters.clear();
 }
 
-void ClusterDetector::detectClustersInDebugMode(vector<Cluster> &clusters) {
-    char pressedKey = -1;
-
-    createTrackbars();
-
-    while (pressedKey != KEY_ESC) {
-        clusters.clear();
-
-        findClusters(clusters);
-        outputClusters(clusters, debugMode);
-
-        processPressedKeyRequest(pressedKey);
-    }
-
-    outputClusters(clusters, !debugMode);
-}
-
-void ClusterDetector::detectClustersInNormalMode(vector<Cluster> &clusters) {
-    findClusters(clusters);
-    outputClusters(clusters, debugMode);
-}
-
-void ClusterDetector::findClusters(vector<Cluster> &clusters) {
+void ClusterDetector::processImageAndDetect() {
     vector<Entity> entities;
 
     detectEntitiesInImage(entities);
@@ -148,26 +98,7 @@ double ClusterDetector::computeAveragePileUpDegree(vector<Cluster> &clusters) {
                                   : (averagePileUpDegree / clusters.size());
 }
 
-void ClusterDetector::outputClusters(vector<Cluster> & clusters, bool debugMode) {
-    if (debugMode) {
-        outputClustersInDebugMode(clusters);
-    } else {
-        outputClustersInNormalMode(clusters);
-    }
-}
-
-void ClusterDetector::outputClustersAsCsvFile(vector<Cluster> &clusters) {
-    ofstream fout(outputFilepath + OUTPUT_EXTENSION, ios_base::trunc);
-
-    if (!fout.is_open())
-        throw ERR_OUTPUT_FILE;
-
-    outputClustersAsCsvFile(clusters, fout);
-
-    fout.close();
-}
-
-void ClusterDetector::outputClustersAsCsvFile(vector<Cluster> &clusters, ofstream &fout) {
+void ClusterDetector::outputResultsToCsvFile(ofstream &fout) {
     fout << Cluster::fieldNamesToString() << endl;
 
     for (Cluster &cluster : clusters) {
@@ -179,19 +110,6 @@ void ClusterDetector::outputClustersAsCsvFile(vector<Cluster> &clusters, ofstrea
 
     fout << OUTPUT_CLUSTEREDNESS << clusterednessIndex << endl
          << OUTPUT_PILE_UP << avgPileUpDegree << endl;
-}
-
-void ClusterDetector::processPressedKeyRequest(char &pressedKey) {
-    pressedKey = waitKey(1);
-
-    if (pressedKey == KEY_SAVE) {
-        processSaveRequest();
-    }
-}
-
-void ClusterDetector::displayImage(const Mat& image, const string &windowName) {
-    namedWindow( windowName, WINDOW_NORMAL );
-    imshow( windowName, image );
 }
 
 double ClusterDetector::convertEpsValue() {

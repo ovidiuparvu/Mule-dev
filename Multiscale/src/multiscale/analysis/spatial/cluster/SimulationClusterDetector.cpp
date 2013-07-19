@@ -6,19 +6,20 @@
 using namespace multiscale::analysis;
 
 
-SimulationClusterDetector::SimulationClusterDetector(const Mat &inputImage, const string &outputFilepath,
-                                                     unsigned int height, unsigned int width, bool debugMode)
-                                                    : ClusterDetector(inputImage, outputFilepath, debugMode) {
+SimulationClusterDetector::SimulationClusterDetector(unsigned int height, unsigned int width, bool debugMode)
+                                                    : ClusterDetector(debugMode) {
     this->height = height;
     this->width = width;
-
-    this->entityHeight = ((double)inputImage.rows) / height;
-    this->entityWidth = ((double)inputImage.cols) / width;
-
-    initialiseThresholdedImage();
 }
 
 SimulationClusterDetector::~SimulationClusterDetector() {}
+
+void SimulationClusterDetector::initialiseImageDependentValues() {
+    this->entityHeight = ((double)image.rows) / height;
+    this->entityWidth = ((double)image.cols) / width;
+
+    initialiseThresholdedImage();
+}
 
 void SimulationClusterDetector::initialiseThresholdedImage() {
     threshold(image, thresholdedImage, THRESHOLD, THRESHOLD_MAX, THRESH_BINARY);
@@ -74,18 +75,7 @@ double SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int y) {
     return positionMean.val[0];
 }
 
-void SimulationClusterDetector::outputClustersInDebugMode(vector<Cluster> &clusters) {
-    outputClustersOnImage(clusters);
-    displayImage(outputImage, WIN_OUTPUT_IMAGE);
-}
-
-void SimulationClusterDetector::outputClustersInNormalMode(vector<Cluster> &clusters) {
-    outputClustersAsCsvFile(clusters);
-    outputClustersOnImage(clusters);
-    saveResultsAsPNGImage();
-}
-
-void SimulationClusterDetector::outputClustersOnImage(vector<Cluster> &clusters) {
+void SimulationClusterDetector::outputResultsToImage() {
     RNG randomNumberGenerator;
 
     cvtColor(image, outputImage, CV_GRAY2RGB);
@@ -97,11 +87,11 @@ void SimulationClusterDetector::outputClustersOnImage(vector<Cluster> &clusters)
         // Choose a random colour for the cluster
         Scalar colour = RGBColourGenerator::generate(randomNumberGenerator);
 
-        outputClusterOnImage(clusters[i], colour, outputImage);
+        outputClusterToImage(clusters[i], colour, outputImage);
     }
 }
 
-void SimulationClusterDetector::outputClusterOnImage(Cluster &cluster, Scalar colour, Mat &image) {
+void SimulationClusterDetector::outputClusterToImage(Cluster &cluster, Scalar colour, Mat &image) {
     vector<Entity> entities = cluster.getEntities();
 
     for (const Entity &entity : entities) {
@@ -158,14 +148,4 @@ void SimulationClusterDetector::outputClusterCircularShape(Cluster &cluster, Sca
     float radius = cluster.getMinAreaEnclosingCircleRadius();
 
     circle(image, centre, radius, colour, DATAPOINT_WIDTH);
-}
-
-void SimulationClusterDetector::processSaveRequest() {
-    saveResultsAsPNGImage();
-}
-
-void SimulationClusterDetector::saveResultsAsPNGImage() {
-    if (outputImage.data) {
-        imwrite(outputFilepath + IMG_EXTENSION, outputImage);
-    }
 }

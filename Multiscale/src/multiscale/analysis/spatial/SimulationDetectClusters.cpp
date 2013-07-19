@@ -99,9 +99,10 @@ int main(int argc, char** argv) {
         if (areValidParameters(inputFilePath, outputFilepath, debugFlag, height, width, argc, argv)) {
             Mat image = RectangularMatFactory().createFromViewerImage(inputFilePath);
 
-            SimulationClusterDetector detector(image, outputFilepath, height, width, debugFlag);
+            SimulationClusterDetector detector(height, width, debugFlag);
 
-            detector.detect();
+            detector.detect(image);
+            detector.outputResults(outputFilepath);
         } else {
             printWrongParameters();
         }

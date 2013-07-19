@@ -28,7 +28,6 @@ namespace multiscale {
             private:
 
                 Mat thresholdedImage;     /*!< Thresholded version of the image */
-                Mat outputImage;          /*!< Image for displaying the results */
 
                 unsigned int height;      /*!< Height of the grid used in the simulation */
                 unsigned int width;       /*!< Width of the grid used in the simulation */
@@ -38,15 +37,16 @@ namespace multiscale {
 
             public:
 
-                SimulationClusterDetector(const Mat &inputImage,
-                                          const string &outputFilepath,
-                                          unsigned int height,
+                SimulationClusterDetector(unsigned int height,
                                           unsigned int width,
                                           bool debugMode = false
                                           );
                 ~SimulationClusterDetector();
 
             private:
+
+                //! Initialise the image dependent values
+                void initialiseImageDependentValues() override;
 
                 //! Initialise the thresholdedImage field
                 void initialiseThresholdedImage();
@@ -56,7 +56,7 @@ namespace multiscale {
                  *
                  *  \param entities Entities detected in the image
                  */
-                void detectEntitiesInImage(vector<Entity> &entities);
+                void detectEntitiesInImage(vector<Entity> &entities) override;
 
                 //! Check if there is an entity in the image at the given position
                 /*!
@@ -86,24 +86,11 @@ namespace multiscale {
                  */
                 double computePileUpDegreeAtPosition(int x, int y);
 
-                //! Output the information computed for the clusters visually in a separate window
-                /*! Output the information computed for the clusters visually in a separate window
-                 *
-                 *  \param clusters Clusters of entities detected in the image
-                 */
-                void outputClustersInDebugMode(vector<Cluster> &clusters) override;
-
-                //! Output the information computed for the clusters in a in a ".csv" and ".png" file
-                /*!
-                 *  \param clusters Clusters of entities detected in the image
-                 */
-                void outputClustersInNormalMode(vector<Cluster> &clusters) override;
-
                 //! Dsiaply clusters on image
                 /*!
                  *  \param clusters Clusters of entities detected in the image
                  */
-                void outputClustersOnImage(vector<Cluster> &clusters);
+                void outputResultsToImage() override;
 
                 //! Display cluster on the image
                 /*!
@@ -111,7 +98,7 @@ namespace multiscale {
                  * \param colour    Colour associated to all entities in the cluster
                  * \param image     The image on which to display the cluster related information
                  */
-                void outputClusterOnImage(Cluster &cluster, Scalar colour, Mat &image);
+                void outputClusterToImage(Cluster &cluster, Scalar colour, Mat &image);
 
                 //! Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image
                 /*!
@@ -144,12 +131,6 @@ namespace multiscale {
                  * \param image     The image on which to display the cluster related information
                  */
                 void outputClusterCircularShape(Cluster &cluster, Scalar colour, Mat &image);
-
-                //! Process the save request in case the lowercase "s" key was pressed
-                void processSaveRequest();
-
-                //! Store the results as a ".png" image on disk
-                void saveResultsAsPNGImage();
 
         };
 

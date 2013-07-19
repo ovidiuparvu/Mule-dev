@@ -12,29 +12,15 @@ using namespace std;
 using namespace multiscale::analysis;
 
 
-RegionDetector::RegionDetector(const Mat &inputImage, const string &outputFilepath, bool debugMode) {
-    inputImage.copyTo(image);
+RegionDetector::RegionDetector(bool debugMode) : Detector(debugMode) {}
 
-    this->outputFilepath = outputFilepath;
-    this->isDebugMode = debugMode;
+RegionDetector::~RegionDetector() {}
 
-    initialiseVisionMembers();
+vector<Region> const &RegionDetector::getRegions() {
+    return regions;
 }
 
-RegionDetector::~RegionDetector() {
-    image.release();
-}
-
-void RegionDetector::detect() {
-    if (!isValidImage())
-        throw ERR_INVALID_IMAGE;
-
-    // Initialise the origin
-    initialiseImageDependentMembers();
-    detectRegions();
-}
-
-void RegionDetector::initialiseVisionMembers() {
+void RegionDetector::initialiseDetectorSpecificValues() {
     alpha = 750;
     beta = 0;
     blurKernelSize = 15;
@@ -44,63 +30,24 @@ void RegionDetector::initialiseVisionMembers() {
     thresholdValue = 100;
 }
 
-void RegionDetector::initialiseImageDependentMembers() {
+void RegionDetector::initialiseImageDependentValues() {
     int originX = (image.rows + 1) / 2;
     int originY = (image.cols + 1) / 2;
 
     origin = Point(originX, originY);
 }
 
-bool RegionDetector::isValidImage() {
-    return ((image.dims == 2) && (image.rows > 1) && (image.cols > 1));
+void RegionDetector::createDetectorSpecificTrackbars() {
+    createTrackbar(TRACKBAR_ALPHA, WIN_OUTPUT_IMAGE, &alpha, ALPHA_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_BETA, WIN_OUTPUT_IMAGE, &beta, BETA_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_KERNEL, WIN_OUTPUT_IMAGE, &blurKernelSize, KERNEL_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_MORPH, WIN_OUTPUT_IMAGE, &morphologicalCloseIterations, ITER_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_EPSILON, WIN_OUTPUT_IMAGE, &epsilon, EPSILON_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_REGION_AREA_THRESH, WIN_OUTPUT_IMAGE, &regionAreaThresh, REGION_AREA_THRESH_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_THRESHOLD, WIN_OUTPUT_IMAGE, &thresholdValue, THRESHOLD_MAX, nullptr, nullptr);
 }
 
-void RegionDetector::createTrackbars() {
-    namedWindow( WIN_PROCESSED_IMAGE, WINDOW_NORMAL);
-    setWindowProperty( WIN_PROCESSED_IMAGE, CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN );
-
-    createTrackbar(TRACKBAR_ALPHA, WIN_PROCESSED_IMAGE, &alpha, ALPHA_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_BETA, WIN_PROCESSED_IMAGE, &beta, BETA_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_KERNEL, WIN_PROCESSED_IMAGE, &blurKernelSize, KERNEL_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_MORPH, WIN_PROCESSED_IMAGE, &morphologicalCloseIterations, ITER_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_EPSILON, WIN_PROCESSED_IMAGE, &epsilon, EPSILON_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_REGION_AREA_THRESH, WIN_PROCESSED_IMAGE, &regionAreaThresh, REGION_AREA_THRESH_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_THRESHOLD, WIN_PROCESSED_IMAGE, &thresholdValue, THRESHOLD_MAX, nullptr, nullptr);
-}
-
-void RegionDetector::detectRegions() {
-    vector<Region> regions;
-
-    if (isDebugMode) {
-        detectRegionsInDebugMode(regions);
-    } else {
-        detectRegionsInNormalMode(regions);
-    }
-}
-
-void RegionDetector::detectRegionsInDebugMode(vector<Region> &regions) {
-    char pressedKey = -1;
-
-    createTrackbars();
-
-    while (pressedKey != KEY_ESC) {
-        regions.clear();
-
-        processImage(regions);
-        outputRegions(regions, isDebugMode);
-
-        pressedKey = waitKey(1);
-    }
-
-    outputRegions(regions, !isDebugMode);
-}
-
-void RegionDetector::detectRegionsInNormalMode(vector<Region> &regions) {
-    processImage(regions);
-    outputRegions(regions, isDebugMode);
-}
-
-void RegionDetector::processImage(vector<Region> &regions) {
+void RegionDetector::processImageAndDetect() {
     Mat processedImage, thresholdedImage;
 
     changeContrastAndBrightness(processedImage);
@@ -230,30 +177,11 @@ void RegionDetector::findGoodIntersectionPoints(const vector<Point> &polygonConv
     }
 }
 
-void RegionDetector::outputRegions(const vector<Region> &regions, bool isDebugMode) {
-    if (isDebugMode) {
-        outputRegionsInDebugMode(image, regions);
-    } else {
-        outputRegionsAsCsvFile(regions);
-    }
+void RegionDetector::clearPreviousDetectionResults() {
+    regions.clear();
 }
 
-void RegionDetector::outputRegionsAsXMLFile(const vector<Region> &regions) {
-    // TODO: Unimplemented method
-}
-
-void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions) {
-    ofstream fout(outputFilepath + OUTPUT_EXTENSION, ios_base::trunc);
-
-    if (!fout.is_open())
-        throw ERR_OUTPUT_FILE;
-
-    outputRegionsAsCsvFile(regions, fout);
-
-    fout.close();
-}
-
-void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions, ofstream &fout) {
+void RegionDetector::outputResultsToCsvFile(ofstream &fout) {
     // Output header
     fout << Region::fieldNamesToString() << endl;
 
@@ -267,7 +195,7 @@ void RegionDetector::outputRegionsAsCsvFile(const vector<Region> &regions, ofstr
     }
 }
 
-void RegionDetector::outputRegionsInDebugMode(const Mat &image, const vector<Region> &regions) {
+void RegionDetector::outputResultsToImage() {
     // Two extra pixels required for each dimension, because the contour detection
     // algorithm ignores the first and last lines and columns of the image matrix. In order
     // to consider the entire input image we add blank first and last lines and columns
@@ -282,12 +210,7 @@ void RegionDetector::outputRegionsInDebugMode(const Mat &image, const vector<Reg
         polylines(outputImage, region.getPolygon(), true, Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
     }
 
-    displayImage(outputImage(Rect(1, 1, image.cols, image.rows)), WIN_PROCESSED_IMAGE);
-}
-
-void RegionDetector::displayImage(const Mat& image, const string &windowName) {
-    namedWindow( windowName, WINDOW_NORMAL );
-    imshow( windowName, image );
+    outputImage(Rect(1, 1, image.cols, image.rows)).copyTo(this->outputImage);
 }
 
 double RegionDetector::convertAlpha(int alpha) {

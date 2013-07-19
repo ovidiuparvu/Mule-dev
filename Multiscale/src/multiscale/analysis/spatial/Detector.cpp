@@ -9,10 +9,13 @@ using namespace std;
 Detector::Detector(bool debugMode) {
     this->debugMode = debugMode;
 
-    initialise();
+    this->detectMethodCalled = false;
 }
 
-Detector::~Detector() {}
+Detector::~Detector() {
+    image.release();
+    outputImage.release();
+}
 
 void Detector::detect(const Mat &inputImage) {
     if (!isValidInputImage(inputImage))
@@ -20,7 +23,7 @@ void Detector::detect(const Mat &inputImage) {
 
     inputImage.copyTo(image);
 
-    initialiseImageDependentValues();
+    initialise();
     detect();
 }
 
@@ -35,13 +38,12 @@ void Detector::outputResults(const string &outputFilepath) {
 }
 
 void Detector::initialise() {
-    this->detectMethodCalled = false;
-
+    initialiseImageDependentValues();
     initialiseDetectorSpecificValues();
 }
 
 bool Detector::isValidInputImage(const Mat &inputImage) {
-    return ((image.type() == CV_8UC1) && (image.dims == 2) && (image.rows > 1) && (image.cols > 1));
+    return ((inputImage.type() == CV_8UC1) && (inputImage.dims == 2) && (inputImage.rows > 1) && (inputImage.cols > 1));
 }
 
 void Detector::detect() {

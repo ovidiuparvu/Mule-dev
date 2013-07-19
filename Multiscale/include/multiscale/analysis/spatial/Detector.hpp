@@ -119,7 +119,7 @@ namespace multiscale {
                 void createTrackbarsWindow();
 
                 //! Create the trackbars specific to the used detector
-                virtual void createDetectorSpecificTrackbars();
+                virtual void createDetectorSpecificTrackbars() = 0;
 
                 //! Process the request of the user by pressing the key
                 /*!
