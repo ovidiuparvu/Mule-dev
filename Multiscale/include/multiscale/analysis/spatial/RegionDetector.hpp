@@ -68,6 +68,33 @@ namespace multiscale {
                 RegionDetector(bool debugMode = false);
                 ~RegionDetector();
 
+                //! Get the value of field alpha
+                int getAlpha();
+
+                //! Get the value of field beta
+                int getBeta();
+
+                //! Get the value of field blurKernelSize
+                int getBlurKernelSize();
+
+                //! Get the value of field epsilon
+                int getEpsilon();
+
+                //! Get the value of field morphologicalCloseIterations
+                int getMorphologicalCloseIterations();
+
+                //! Get the value of field originXCoordinate
+                int getOriginXCoordinate();
+
+                //! Get the value of field originYCoordinate
+                int getOriginYCoordinate();
+
+                //! Get the value of field regionAreaThresh
+                int getRegionAreaThresh();
+
+                //! Get the value of field thresholdValue
+                int getThresholdValue();
+
                 //! Get a const reference to the vector of detected regions
                 vector<Region> const &getRegions();
 

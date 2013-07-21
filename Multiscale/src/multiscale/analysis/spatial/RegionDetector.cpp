@@ -24,6 +24,42 @@ RegionDetector::RegionDetector(bool debugMode) : Detector(debugMode) {
 
 RegionDetector::~RegionDetector() {}
 
+int RegionDetector::getAlpha() {
+    return alpha;
+}
+
+int RegionDetector::getBeta() {
+    return beta;
+}
+
+int RegionDetector::getBlurKernelSize() {
+    return blurKernelSize;
+}
+
+int RegionDetector::getMorphologicalCloseIterations() {
+    return morphologicalCloseIterations;
+}
+
+int RegionDetector::getEpsilon() {
+    return epsilon;
+}
+
+int RegionDetector::getRegionAreaThresh() {
+    return regionAreaThresh;
+}
+
+int RegionDetector::getOriginXCoordinate() {
+    return origin.x;
+}
+
+int RegionDetector::getOriginYCoordinate() {
+    return origin.y;
+}
+
+int RegionDetector::getThresholdValue() {
+    return thresholdValue;
+}
+
 vector<Region> const &RegionDetector::getRegions() {
     return regions;
 }
@@ -31,73 +67,73 @@ vector<Region> const &RegionDetector::getRegions() {
 void RegionDetector::setAlpha(int alpha) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->alpha = alpha;
     }
+
+    this->alpha = alpha;
 }
 
 void RegionDetector::setBeta(int beta) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->beta = beta;
     }
+
+    this->beta = beta;
 }
 
 void RegionDetector::setBlurKernelSize(int blurKernelSize) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->blurKernelSize = blurKernelSize;
     }
+
+    this->blurKernelSize = blurKernelSize;
 }
 
 void RegionDetector::setEpsilon(int epsilon) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->epsilon = epsilon;
     }
+
+    this->epsilon = epsilon;
 }
 
 void RegionDetector::setMorphologicalCloseIterations(int morphologicalCloseIterations) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->morphologicalCloseIterations = morphologicalCloseIterations;
     }
+
+    this->morphologicalCloseIterations = morphologicalCloseIterations;
 }
 
 void RegionDetector::setOriginXCoordinate(int originXCoordinate) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->origin.x = originXCoordinate;
     }
+
+    this->origin.x = originXCoordinate;
 }
 
 void RegionDetector::setOriginYCoordinate(int originYCoordinate) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->origin.y = originYCoordinate;
     }
+
+    this->origin.y = originYCoordinate;
 }
 
 void RegionDetector::setRegionAreaThresh(int regionAreaThresh) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->regionAreaThresh = regionAreaThresh;
     }
+
+    this->regionAreaThresh = regionAreaThresh;
 }
 
 void RegionDetector::setThresholdValue(int thresholdValue) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->thresholdValue = thresholdValue;
     }
+
+    this->thresholdValue = thresholdValue;
 }
 
 void RegionDetector::initialiseDetectorSpecificFields() {

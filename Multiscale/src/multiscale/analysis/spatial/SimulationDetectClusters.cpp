@@ -27,7 +27,7 @@ using namespace multiscale::analysis;
 namespace po = boost::program_options;
 namespace pt = boost::property_tree;
 
-#define CONFIG_IN   "config/analysis/spatial/simulation_cluster_detector2.xml"
+#define CONFIG_FILE "config/analysis/spatial/simulation_cluster_detector.xml"
 
 #define LABEL_EPS           "detector.eps"
 #define LABEL_MINPOINTS     "detector.minPoints"
@@ -95,23 +95,25 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, bool &deb
 }
 
 // Load the values of the parameters from the config file
-void loadDetectorParameterValues(const SimulationClusterDetector &detector) {
+void loadDetectorParameterValues(SimulationClusterDetector &detector) {
     pt::ptree propertyTree;
 
-    read_xml(CONFIG_IN, propertyTree);
+    read_xml(CONFIG_FILE, propertyTree, pt::xml_parser::trim_whitespace);
 
-    cout << propertyTree.get<double>(LABEL_EPS) << endl;
-    cout << propertyTree.get<int>(LABEL_MINPOINTS) << endl;
+    detector.setEps(propertyTree.get<double>(LABEL_EPS));
+    detector.setMinPoints(propertyTree.get<int>(LABEL_MINPOINTS));
 }
 
 // Save the values of the parameters to the config file
-void saveDetectorParameterValues(const SimulationClusterDetector &detector) {
+void saveDetectorParameterValues(SimulationClusterDetector &detector) {
     pt::ptree propertyTree;
 
-    propertyTree.put<double>(LABEL_EPS, 22.1);
-    propertyTree.put<int>(LABEL_MINPOINTS, 14);
+    propertyTree.put<double>(LABEL_EPS, detector.getEps());
+    propertyTree.put<int>(LABEL_MINPOINTS, detector.getMinPoints());
 
-    write_xml(CONFIG_IN, propertyTree);
+    // Pretty writing of the property tree to the file
+    pt::xml_writer_settings<char> settings('\t', 1);
+    write_xml(CONFIG_FILE, propertyTree, std::locale(), settings);
 }
 
 // Main function
@@ -130,11 +132,12 @@ int main(int argc, char** argv) {
 
             SimulationClusterDetector detector(height, width, debugFlag);
 
-            // loadDetectorParameterValues(detector);
-            saveDetectorParameterValues(detector);
+            loadDetectorParameterValues(detector);
 
-            //detector.detect(image);
-            //detector.outputResults(outputFilepath);
+            detector.detect(image);
+            detector.outputResults(outputFilepath);
+
+            saveDetectorParameterValues(detector);
         } else {
             printWrongParameters();
         }

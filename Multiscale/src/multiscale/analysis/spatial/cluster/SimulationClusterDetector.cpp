@@ -10,6 +10,9 @@ SimulationClusterDetector::SimulationClusterDetector(unsigned int height, unsign
                                                     : ClusterDetector(debugMode) {
     this->height = height;
     this->width = width;
+
+    this->entityHeight = 0;
+    this->entityWidth = 0;
 }
 
 SimulationClusterDetector::~SimulationClusterDetector() {}

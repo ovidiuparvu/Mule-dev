@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <detector>
-    <eps>120</eps>
-    <minPoints>2</minPoints>
+	<eps>131</eps>
+	<minPoints>2</minPoints>
 </detector>

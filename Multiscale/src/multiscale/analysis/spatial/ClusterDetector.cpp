@@ -21,6 +21,14 @@ ClusterDetector::ClusterDetector(bool debugMode) : Detector(debugMode) {
 
 ClusterDetector::~ClusterDetector() {}
 
+double ClusterDetector::getEps() {
+    return convertEpsValue();
+}
+
+int ClusterDetector::getMinPoints() {
+    return minPoints;
+}
+
 vector<Cluster> const &ClusterDetector::getClusters() {
     return clusters;
 }
@@ -28,17 +36,17 @@ vector<Cluster> const &ClusterDetector::getClusters() {
 void ClusterDetector::setEps(double eps) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->eps = NumericRangeManipulator::convertFromRange<double, int>(EPS_REAL_MIN, EPS_REAL_MAX, EPS_MIN, EPS_MAX, eps);
     }
+
+    this->eps = NumericRangeManipulator::convertFromRange<double, int>(EPS_REAL_MIN, EPS_REAL_MAX, EPS_MIN, EPS_MAX, eps);
 }
 
 void ClusterDetector::setMinPoints(int minPoints) {
     if (!detectorSpecificFieldsInitialised) {
         detectorSpecificFieldsInitialised = true;
-
-        this->minPoints = minPoints;
     }
+
+    this->minPoints = minPoints;
 }
 
 void ClusterDetector::initialiseDetectorSpecificFields() {

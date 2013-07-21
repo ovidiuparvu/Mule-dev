@@ -50,6 +50,12 @@ namespace multiscale {
                 ClusterDetector(bool debugMode = false);
                 virtual ~ClusterDetector();
 
+                //! Get the value of the clustering algorithm parameter eps
+                double getEps();
+
+                //! Get the value of the clustering algorithm parameter MinPoints
+                int getMinPoints();
+
                 //! Get a const reference to the vector of detected clusters
                 vector<Cluster> const &getClusters();
 
