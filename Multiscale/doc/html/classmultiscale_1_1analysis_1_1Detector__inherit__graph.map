@@ -1,0 +1,5 @@
+<map id="multiscale::analysis::Detector" name="multiscale::analysis::Detector">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html" title="Class for detecting clusters in 2D images." alt="" coords="5,954,237,1507"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RegionDetector.html" title="Class for detecting regions of high intensity in grayscale images." alt="" coords="261,729,491,1733"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html" title="Class for detecting clusters in 2D images obtained from simulations." alt="" coords="7,1782,236,2231"/>
+</map>

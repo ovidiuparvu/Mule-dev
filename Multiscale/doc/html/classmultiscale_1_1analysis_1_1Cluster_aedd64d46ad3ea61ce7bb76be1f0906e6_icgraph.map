@@ -1,6 +1,4 @@
 <map id="multiscale::analysis::Cluster::getEntities" name="multiscale::analysis::Cluster::getEntities">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#af2c2d6f5fe0b1e08039fa12ec3132475" title="Display cluster on the image." alt="" coords="199,49,380,113"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a0bdcd1fe80d8a6f82d899d3d8f86d005" title="Dsiaply clusters on image." alt="" coords="431,49,612,113"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a5d232391a0da923df439f378dc669f79" title="Output the information computed for the clusters visually in a separate window." alt="" coords="664,5,859,69"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a37b382d39dd1ba737a69aad90a1e5ac6" title="Output the information computed for the clusters in a in a &quot;.csv&quot; and &quot;.png&quot; file." alt="" coords="661,93,861,157"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a0e29be5f9a15899f710f48aaf6c049f0" title="Display cluster on the image." alt="" coords="199,5,380,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a909e1e53836f1688ebe312c5f7fb70b5" title="Dsiaply clusters on image." alt="" coords="431,5,612,69"/>
 </map>

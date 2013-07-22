@@ -1,0 +1,9 @@
+<map id="loadDetectorParameterValues" name="loadDetectorParameterValues">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ada64f919fd5310987b950c052a3cf93a" title="Set the value of field alpha." alt="" coords="279,5,457,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a054b6327918fd9a6ff2de293dac1afc0" title="Set the value of field beta." alt="" coords="281,74,455,121"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a968d5ddbc060fa823e4c79c9dcfec300" title="Set the value of field blurKernelSize." alt="" coords="252,143,484,190"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a069ed208d5ff16e6caa0deb4ff21858b" title="Set the value of field epsilon." alt="" coords="273,213,463,259"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a5e096d2e4ff8dfe985869d6d0fcd74b8" title="Set the value of field morphologicalCloseIterations." alt="" coords="255,283,481,347"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a5cf10aea88e85198ce54df0e94e6d1a7" title="Set the value of field regionAreaThresh." alt="" coords="275,371,461,435"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a066e87a1f134194dabfc760d241b8ab2" title="Set the value of field thresholdValue." alt="" coords="267,459,469,523"/>
+</map>

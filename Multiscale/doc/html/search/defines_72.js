@@ -17,5 +17,6 @@ var searchData=
   ['roi_5fradius',['ROI_RADIUS',['../CircularMatFactory_8hpp.html#a8fa8f703e8021181eab7361c93d3ef10',1,'CircularMatFactory.hpp']]],
   ['roi_5fstart_5fx',['ROI_START_X',['../CircularMatFactory_8hpp.html#a45b48336a4e1e5ee103e64d60ff70d8b',1,'ROI_START_X():&#160;CircularMatFactory.hpp'],['../RectangularMatFactory_8hpp.html#a45b48336a4e1e5ee103e64d60ff70d8b',1,'ROI_START_X():&#160;RectangularMatFactory.hpp']]],
   ['roi_5fstart_5fy',['ROI_START_Y',['../CircularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1',1,'ROI_START_Y():&#160;CircularMatFactory.hpp'],['../RectangularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1',1,'ROI_START_Y():&#160;RectangularMatFactory.hpp']]],
-  ['roi_5fwidth',['ROI_WIDTH',['../RectangularMatFactory_8hpp.html#a69091d35a8755f7ef1f88a5bf3411ee7',1,'RectangularMatFactory.hpp']]]
+  ['roi_5fwidth',['ROI_WIDTH',['../RectangularMatFactory_8hpp.html#a69091d35a8755f7ef1f88a5bf3411ee7',1,'RectangularMatFactory.hpp']]],
+  ['root_5fcomment',['ROOT_COMMENT',['../CircularDetectRegions_8cpp.html#a36628b11fe91394a7bd208067f5b17eb',1,'ROOT_COMMENT():&#160;CircularDetectRegions.cpp'],['../RectangularDetectRegions_8cpp.html#a36628b11fe91394a7bd208067f5b17eb',1,'ROOT_COMMENT():&#160;RectangularDetectRegions.cpp'],['../SimulationDetectClusters_8cpp.html#a36628b11fe91394a7bd208067f5b17eb',1,'ROOT_COMMENT():&#160;SimulationDetectClusters.cpp']]]
 ];

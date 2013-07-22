@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['rectangularprobability',['rectangularProbability',['../classmultiscale_1_1analysis_1_1Cluster.html#ab182ffdf73e9b3a3925d8d3973125dc1',1,'multiscale::analysis::Cluster']]],
+  ['rectangularmeasure',['rectangularMeasure',['../classmultiscale_1_1analysis_1_1Cluster.html#a459889a2a2ecbc5bc11f9dd5342e121c',1,'multiscale::analysis::Cluster']]],
   ['red',['red',['../classmultiscale_1_1RGBColourGenerator.html#a8d44923812c8197b193c6fe4885e6028',1,'multiscale::RGBColourGenerator']]],
   ['regionareathresh',['regionAreaThresh',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a1f637073a3d946d000dceed01412f19a',1,'multiscale::analysis::RegionDetector']]],
+  ['regions',['regions',['../classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893',1,'multiscale::analysis::RegionDetector']]],
   ['rows',['rows',['../classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474',1,'multiscale::analysis::MatFactory']]],
   ['rowsiterator',['rowsIterator',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a19fa13140bc5d6b163222030b6dfe61e',1,'multiscale::video::RectangularCsvToInputFilesConverter']]]
 ];

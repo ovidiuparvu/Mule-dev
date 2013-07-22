@@ -111,6 +111,8 @@ $(document).ready(function(){initNavTree('SimulationDetectClusters_8cpp.html',''
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="SimulationClusterDetector_8hpp_source.html">multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="RectangularMatFactory_8hpp_source.html">multiscale/analysis/spatial/factory/RectangularMatFactory.hpp</a>&quot;</code><br/>
+<code>#include &lt;boost/property_tree/ptree.hpp&gt;</code><br/>
+<code>#include &lt;boost/property_tree/xml_parser.hpp&gt;</code><br/>
 <code>#include &lt;boost/program_options.hpp&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -120,13 +122,23 @@ $(document).ready(function(){initNavTree('SimulationDetectClusters_8cpp.html',''
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="SimulationDetectClusters_8cpp__incl.png" border="0" usemap="#src_2multiscale_2analysis_2spatial_2SimulationDetectClusters_8cpp" alt=""/></div>
 <map name="src_2multiscale_2analysis_2spatial_2SimulationDetectClusters_8cpp" id="src_2multiscale_2analysis_2spatial_2SimulationDetectClusters_8cpp">
-<area shape="rect" id="node3" href="SimulationClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/cluster/Simulation\lClusterDetector.hpp" alt="" coords="393,101,564,165"/><area shape="rect" id="node41" href="RectangularMatFactory_8hpp.html" title="multiscale/analysis\l/spatial/factory/Rectangular\lMatFactory.hpp" alt="" coords="779,101,960,165"/><area shape="rect" id="node5" href="ClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="291,214,475,261"/><area shape="rect" id="node7" href="Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="212,406,345,453"/><area shape="rect" id="node17" href="Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="316,310,449,357"/><area shape="rect" id="node9" href="DataPoint_8hpp.html" title="multiscale/analysis\l/spatial/DataPoint.hpp" alt="" coords="224,502,373,549"/><area shape="rect" id="node21" href="Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="420,406,567,453"/><area shape="rect" id="node23" href="Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="591,406,761,453"/><area shape="rect" id="node25" href="Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="528,511,707,540"/><area shape="rect" id="node43" href="MatFactory_8hpp.html" title="multiscale/analysis\l/spatial/MatFactory.hpp" alt="" coords="887,214,1044,261"/></map>
+<area shape="rect" id="node3" href="SimulationClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/cluster/Simulation\lClusterDetector.hpp" alt="" coords="473,101,644,165"/><area shape="rect" id="node47" href="RectangularMatFactory_8hpp.html" title="multiscale/analysis\l/spatial/factory/Rectangular\lMatFactory.hpp" alt="" coords="835,101,1016,165"/><area shape="rect" id="node5" href="ClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="383,214,567,261"/><area shape="rect" id="node7" href="Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="367,310,500,357"/><area shape="rect" id="node11" href="Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="36,406,169,453"/><area shape="rect" id="node36" href="Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="768,310,909,357"/><area shape="rect" id="node20" href="Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="396,406,543,453"/><area shape="rect" id="node22" href="Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="617,406,788,453"/><area shape="rect" id="node13" href="DataPoint_8hpp.html" title="multiscale/analysis\l/spatial/DataPoint.hpp" alt="" coords="5,502,155,549"/><area shape="rect" id="node24" href="Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="580,511,759,540"/><area shape="rect" id="node49" href="MatFactory_8hpp.html" title="multiscale/analysis\l/spatial/MatFactory.hpp" alt="" coords="868,214,1025,261"/></map>
 </div>
 </div>
 <p><a href="SimulationDetectClusters_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a42bf63540ee0039a3a23db1b5ec3202b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a42bf63540ee0039a3a23db1b5ec3202b">CONFIG_FILE</a>&#160;&#160;&#160;&quot;config/analysis/spatial/simulation_cluster_detector.xml&quot;</td></tr>
+<tr class="separator:a42bf63540ee0039a3a23db1b5ec3202b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eb40c1819d4a3f29b8a758da95f2d49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a5eb40c1819d4a3f29b8a758da95f2d49">LABEL_ROOT_COMMENT</a>&#160;&#160;&#160;&quot;&lt;xmlcomment&gt;&quot;</td></tr>
+<tr class="separator:a5eb40c1819d4a3f29b8a758da95f2d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ae598a3bc03fdea06da05a1f46db888"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a4ae598a3bc03fdea06da05a1f46db888">LABEL_EPS</a>&#160;&#160;&#160;&quot;detector.eps&quot;</td></tr>
+<tr class="separator:a4ae598a3bc03fdea06da05a1f46db888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9066d0364e527e549c5c6b00bfdfad2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#ab9066d0364e527e549c5c6b00bfdfad2">LABEL_MINPOINTS</a>&#160;&#160;&#160;&quot;detector.minPoints&quot;</td></tr>
+<tr class="separator:ab9066d0364e527e549c5c6b00bfdfad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36628b11fe91394a7bd208067f5b17eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a36628b11fe91394a7bd208067f5b17eb">ROOT_COMMENT</a>&#160;&#160;&#160;&quot;Warning! This xml file was automatically generated by a C++ program using the Boost PropertyTree library.&quot;</td></tr>
+<tr class="separator:a36628b11fe91394a7bd208067f5b17eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed46bc434b6a10f9663dbbe5fd15349f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:aed46bc434b6a10f9663dbbe5fd15349f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a18f09d3bb5a5f03a55546e38f8efd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a>&#160;&#160;&#160;&quot;An error occurred: &quot;</td></tr>
@@ -140,12 +152,36 @@ Functions</h2></td></tr>
 <tr class="separator:a49535fad6e4e5f21ee2eae91dff5a831"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a573a6d091545f311c155eb4f04c8a2cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">printWrongParameters</a> ()</td></tr>
 <tr class="separator:a573a6d091545f311c155eb4f04c8a2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24da6cc304f0f5bb05c2b0bf721c72d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a24da6cc304f0f5bb05c2b0bf721c72d3">areValidParameters</a> (string &amp;inputFilepath, string &amp;outputFilename, unsigned int &amp;height, unsigned int &amp;width, int argc, char **argv)</td></tr>
-<tr class="separator:a24da6cc304f0f5bb05c2b0bf721c72d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d292ef1d32be2d09b845ce1b135875"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#af1d292ef1d32be2d09b845ce1b135875">areValidParameters</a> (string &amp;inputFilepath, string &amp;outputFilename, bool &amp;debugFlag, unsigned int &amp;height, unsigned int &amp;width, int argc, char **argv)</td></tr>
+<tr class="separator:af1d292ef1d32be2d09b845ce1b135875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b2fe4e3a75a6cdca8ea050e37a9da13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a3b2fe4e3a75a6cdca8ea050e37a9da13">loadDetectorParameterValues</a> (<a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html">SimulationClusterDetector</a> &amp;detector)</td></tr>
+<tr class="separator:a3b2fe4e3a75a6cdca8ea050e37a9da13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54440a034c11e07c393765b057b2bf65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a54440a034c11e07c393765b057b2bf65">saveDetectorParameterValues</a> (<a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html">SimulationClusterDetector</a> &amp;detector)</td></tr>
+<tr class="separator:a54440a034c11e07c393765b057b2bf65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07b4a4cf6b2729884efe34b9947ad0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#ab07b4a4cf6b2729884efe34b9947ad0d">loadDetectorParameterValues</a> (<a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html">SimulationClusterDetector</a> &amp;detector, bool debugMode)</td></tr>
+<tr class="separator:ab07b4a4cf6b2729884efe34b9947ad0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f99fe837ee31d5b315c60eaffd6ea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a22f99fe837ee31d5b315c60eaffd6ea5">saveDetectorParameterValues</a> (<a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html">SimulationClusterDetector</a> &amp;detector, bool debugMode)</td></tr>
+<tr class="separator:a22f99fe837ee31d5b315c60eaffd6ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SimulationDetectClusters_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a42bf63540ee0039a3a23db1b5ec3202b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_FILE&#160;&#160;&#160;&quot;config/analysis/spatial/simulation_cluster_detector.xml&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00030">30</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00101">loadDetectorParameterValues()</a>, and <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00111">saveDetectorParameterValues()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aed46bc434b6a10f9663dbbe5fd15349f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -156,9 +192,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00026">26</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00038">38</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00084">main()</a>.</p>
+<p>Referenced by <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00137">main()</a>.</p>
 
 </div>
 </div>
@@ -172,14 +208,78 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00027">27</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00039">39</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00084">main()</a>, and <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00050">printWrongParameters()</a>.</p>
+<p>Referenced by <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00137">main()</a>, and <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00063">printWrongParameters()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4ae598a3bc03fdea06da05a1f46db888"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LABEL_EPS&#160;&#160;&#160;&quot;detector.eps&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00033">33</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00101">loadDetectorParameterValues()</a>, and <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00111">saveDetectorParameterValues()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9066d0364e527e549c5c6b00bfdfad2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LABEL_MINPOINTS&#160;&#160;&#160;&quot;detector.minPoints&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00034">34</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00101">loadDetectorParameterValues()</a>, and <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00111">saveDetectorParameterValues()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5eb40c1819d4a3f29b8a758da95f2d49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LABEL_ROOT_COMMENT&#160;&#160;&#160;&quot;&lt;xmlcomment&gt;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00032">32</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00111">saveDetectorParameterValues()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36628b11fe91394a7bd208067f5b17eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ROOT_COMMENT&#160;&#160;&#160;&quot;Warning! This xml file was automatically generated by a C++ program using the Boost PropertyTree library.&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00036">36</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00111">saveDetectorParameterValues()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a24da6cc304f0f5bb05c2b0bf721c72d3"></a>
+<a class="anchor" id="af1d292ef1d32be2d09b845ce1b135875"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -194,6 +294,12 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">string &amp;&#160;</td>
           <td class="paramname"><em>outputFilename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>debugFlag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -227,17 +333,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00056">56</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00069">69</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
 
-<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00031">initArgumentsConfig()</a>, and <a class="el" href="CircularDetectRegions_8cpp_source.html#l00043">printHelpInformation()</a>.</p>
+<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00048">initArgumentsConfig()</a>, and <a class="el" href="CircularDetectRegions_8cpp_source.html#l00061">printHelpInformation()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="SimulationDetectClusters_8cpp_a24da6cc304f0f5bb05c2b0bf721c72d3_cgraph.png" border="0" usemap="#SimulationDetectClusters_8cpp_a24da6cc304f0f5bb05c2b0bf721c72d3_cgraph" alt=""/></div>
-<map name="SimulationDetectClusters_8cpp_a24da6cc304f0f5bb05c2b0bf721c72d3_cgraph" id="SimulationDetectClusters_8cpp_a24da6cc304f0f5bb05c2b0bf721c72d3_cgraph">
+<div class="center"><img src="SimulationDetectClusters_8cpp_af1d292ef1d32be2d09b845ce1b135875_cgraph.png" border="0" usemap="#SimulationDetectClusters_8cpp_af1d292ef1d32be2d09b845ce1b135875_cgraph" alt=""/></div>
+<map name="SimulationDetectClusters_8cpp_af1d292ef1d32be2d09b845ce1b135875_cgraph" id="SimulationDetectClusters_8cpp_af1d292ef1d32be2d09b845ce1b135875_cgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="191,5,329,35"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="191,59,329,88"/></map>
 </div>
 </p>
@@ -274,7 +380,79 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00031">31</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00043">43</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b2fe4e3a75a6cdca8ea050e37a9da13"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loadDetectorParameterValues </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html">SimulationClusterDetector</a> &amp;&#160;</td>
+          <td class="paramname"><em>detector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00101">101</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+<p>References <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00030">CONFIG_FILE</a>, <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00033">LABEL_EPS</a>, <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00034">LABEL_MINPOINTS</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00036">multiscale::analysis::ClusterDetector::setEps()</a>, and <a class="el" href="ClusterDetector_8cpp_source.html#l00044">multiscale::analysis::ClusterDetector::setMinPoints()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="SimulationDetectClusters_8cpp_a3b2fe4e3a75a6cdca8ea050e37a9da13_cgraph.png" border="0" usemap="#SimulationDetectClusters_8cpp_a3b2fe4e3a75a6cdca8ea050e37a9da13_cgraph" alt=""/></div>
+<map name="SimulationDetectClusters_8cpp_a3b2fe4e3a75a6cdca8ea050e37a9da13_cgraph" id="SimulationDetectClusters_8cpp_a3b2fe4e3a75a6cdca8ea050e37a9da13_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a35eaa560c893a86c3149471f40c15979" title="Set the value of the clustering algorithm parameter eps." alt="" coords="269,5,440,51"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a190fd17d121e8c22c1ca6e4f5b7a213c" title="Set the value of the clustering algorithm parameter MinPoints." alt="" coords="252,74,457,121"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab07b4a4cf6b2729884efe34b9947ad0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loadDetectorParameterValues </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html">SimulationClusterDetector</a> &amp;&#160;</td>
+          <td class="paramname"><em>detector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>debugMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00125">125</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="SimulationDetectClusters_8cpp_ab07b4a4cf6b2729884efe34b9947ad0d_cgraph.png" border="0" usemap="#SimulationDetectClusters_8cpp_ab07b4a4cf6b2729884efe34b9947ad0d_cgraph" alt=""/></div>
+<map name="SimulationDetectClusters_8cpp_ab07b4a4cf6b2729884efe34b9947ad0d_cgraph" id="SimulationDetectClusters_8cpp_ab07b4a4cf6b2729884efe34b9947ad0d_cgraph">
+<area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="252,221,447,251"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ada64f919fd5310987b950c052a3cf93a" title="Set the value of field alpha." alt="" coords="524,5,703,51"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a054b6327918fd9a6ff2de293dac1afc0" title="Set the value of field beta." alt="" coords="527,74,700,121"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a968d5ddbc060fa823e4c79c9dcfec300" title="Set the value of field blurKernelSize." alt="" coords="497,143,729,190"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a069ed208d5ff16e6caa0deb4ff21858b" title="Set the value of field epsilon." alt="" coords="519,213,708,259"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5e096d2e4ff8dfe985869d6d0fcd74b8" title="Set the value of field morphologicalCloseIterations." alt="" coords="500,283,727,347"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5cf10aea88e85198ce54df0e94e6d1a7" title="Set the value of field regionAreaThresh." alt="" coords="520,371,707,435"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a066e87a1f134194dabfc760d241b8ab2" title="Set the value of field thresholdValue." alt="" coords="512,459,715,523"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -302,18 +480,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00084">84</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00137">137</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
 
-<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00054">areValidParameters()</a>, <a class="el" href="RectangularMatFactory_8cpp_source.html#l00012">multiscale::analysis::RectangularMatFactory::createFromViewerImage()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00027">multiscale::analysis::ClusterDetector::detect()</a>, <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00026">ERR_CODE</a>, <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00027">ERR_MSG</a>, and <a class="el" href="CircularDetectRegions_8cpp_source.html#l00048">printWrongParameters()</a>.</p>
+<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00072">areValidParameters()</a>, <a class="el" href="RectangularMatFactory_8cpp_source.html#l00012">multiscale::analysis::RectangularMatFactory::createFromViewerImage()</a>, <a class="el" href="Detector_8cpp_source.html#l00021">multiscale::analysis::Detector::detect()</a>, <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00038">ERR_CODE</a>, <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00039">ERR_MSG</a>, <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>, <a class="el" href="Detector_8cpp_source.html#l00031">multiscale::analysis::Detector::outputResults()</a>, <a class="el" href="CircularDetectRegions_8cpp_source.html#l00066">printWrongParameters()</a>, and <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="SimulationDetectClusters_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#SimulationDetectClusters_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="SimulationDetectClusters_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="SimulationDetectClusters_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a49c258f2a31008988e64d7d47274e3b8" title="areValidParameters" alt="" coords="123,59,259,88"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3f86c9bd73eb8d8a27f272b47e984871" title="Create a Mat object from the image file obtained from the RectangularGeometryViewer." alt="" coords="105,112,276,176"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a80e466ef4ac2c13cbd1ba9251c5e6767" title="Detect the clusters in the image and output the results." alt="" coords="108,199,273,246"/><area shape="rect" id="node15" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb" title="printWrongParameters" alt="" coords="115,269,267,299"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="340,5,479,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="340,59,479,88"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a398913bbfa8ca9d80cb630c29a37a135" title="Check if the image generated by the viewer has the required resolution." alt="" coords="327,112,492,176"/></map>
+<area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a88e0190bdcd41850844fa3d92a0083f4" title="areValidParameters" alt="" coords="136,59,272,88"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3f86c9bd73eb8d8a27f272b47e984871" title="Create a Mat object from the image file obtained from the RectangularGeometryViewer." alt="" coords="119,185,289,249"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1Detector.html#acfb9aaec94382e4a7bee6d9874d4bcef" title="Run the detection procedure on the given image." alt="" coords="136,311,272,358"/><area shape="rect" id="node15" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="107,381,301,411"/><area shape="rect" id="node31" href="classmultiscale_1_1analysis_1_1Detector.html#a122d92e3710571c136339747bf0568e8" title="Output the results to the given file." alt="" coords="120,434,288,481"/><area shape="rect" id="node33" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb" title="printWrongParameters" alt="" coords="128,504,280,533"/><area shape="rect" id="node35" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228" title="saveDetectorParameterValues" alt="" coords="104,923,304,952"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="400,5,539,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="400,59,539,88"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a398913bbfa8ca9d80cb630c29a37a135" title="Check if the image generated by the viewer has the required resolution." alt="" coords="387,112,552,176"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ada64f919fd5310987b950c052a3cf93a" title="Set the value of field alpha." alt="" coords="380,199,559,246"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a054b6327918fd9a6ff2de293dac1afc0" title="Set the value of field beta." alt="" coords="383,269,556,315"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a968d5ddbc060fa823e4c79c9dcfec300" title="Set the value of field blurKernelSize." alt="" coords="353,338,585,385"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a069ed208d5ff16e6caa0deb4ff21858b" title="Set the value of field epsilon." alt="" coords="375,407,564,454"/><area shape="rect" id="node25" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5e096d2e4ff8dfe985869d6d0fcd74b8" title="Set the value of field morphologicalCloseIterations." alt="" coords="356,477,583,541"/><area shape="rect" id="node27" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5cf10aea88e85198ce54df0e94e6d1a7" title="Set the value of field regionAreaThresh." alt="" coords="376,565,563,629"/><area shape="rect" id="node29" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a066e87a1f134194dabfc760d241b8ab2" title="Set the value of field thresholdValue." alt="" coords="368,653,571,717"/><area shape="rect" id="node37" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0cc3c3bfcd5e29b19a30acd0566a9d71" title="Get the value of field alpha." alt="" coords="380,741,559,787"/><area shape="rect" id="node39" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1b60390d9e55980ecf1da3616782a7e3" title="Get the value of field beta." alt="" coords="383,810,556,857"/><area shape="rect" id="node41" href="classmultiscale_1_1analysis_1_1RegionDetector.html#af0b30b57a664d7a5b1bb0ec6be5e8068" title="Get the value of field blurKernelSize." alt="" coords="353,879,585,926"/><area shape="rect" id="node43" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a730df92f22ef336a5e24ffdb9afa50c9" title="Get the value of field epsilon." alt="" coords="375,949,564,995"/><area shape="rect" id="node45" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6099482d13eaf15e3c199155ba0a8816" title="Get the value of field morphologicalCloseIterations." alt="" coords="356,1019,583,1083"/><area shape="rect" id="node47" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a376ab8398852d02f3f4f2f5ffa4ec34b" title="Get the value of field regionAreaThresh." alt="" coords="376,1107,563,1171"/><area shape="rect" id="node49" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa429084aca1e04ec288878822e33bf36" title="Get the value of field thresholdValue." alt="" coords="368,1195,571,1259"/></map>
 </div>
 </p>
 
@@ -343,7 +521,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00045">45</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00058">58</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
 
 </div>
 </div>
@@ -360,9 +538,81 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00050">50</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00063">63</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
 
-<p>References <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00027">ERR_MSG</a>.</p>
+<p>References <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00039">ERR_MSG</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a54440a034c11e07c393765b057b2bf65"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void saveDetectorParameterValues </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html">SimulationClusterDetector</a> &amp;&#160;</td>
+          <td class="paramname"><em>detector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00111">111</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+<p>References <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00030">CONFIG_FILE</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00024">multiscale::analysis::ClusterDetector::getEps()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00028">multiscale::analysis::ClusterDetector::getMinPoints()</a>, <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00033">LABEL_EPS</a>, <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00034">LABEL_MINPOINTS</a>, <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00032">LABEL_ROOT_COMMENT</a>, and <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00036">ROOT_COMMENT</a>.</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="SimulationDetectClusters_8cpp_a54440a034c11e07c393765b057b2bf65_cgraph.png" border="0" usemap="#SimulationDetectClusters_8cpp_a54440a034c11e07c393765b057b2bf65_cgraph" alt=""/></div>
+<map name="SimulationDetectClusters_8cpp_a54440a034c11e07c393765b057b2bf65_cgraph" id="SimulationDetectClusters_8cpp_a54440a034c11e07c393765b057b2bf65_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a5f1699b100e7203720cb7fd1ef73cea1" title="Get the value of the clustering algorithm parameter eps." alt="" coords="272,14,443,61"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#af979c73c154bd42ef73d3328e80889ef" title="Get the value of the clustering algorithm parameter MinPoints." alt="" coords="255,83,460,130"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#afccb86bfb93df00fff8408faea7a2651" title="Convert the value of eps from integer to double." alt="" coords="511,5,705,69"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a22f99fe837ee31d5b315c60eaffd6ea5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void saveDetectorParameterValues </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html">SimulationClusterDetector</a> &amp;&#160;</td>
+          <td class="paramname"><em>detector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>debugMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="SimulationDetectClusters_8cpp_source.html#l00130">130</a> of file <a class="el" href="SimulationDetectClusters_8cpp_source.html">SimulationDetectClusters.cpp</a>.</p>
+
+<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="SimulationDetectClusters_8cpp_a22f99fe837ee31d5b315c60eaffd6ea5_cgraph.png" border="0" usemap="#SimulationDetectClusters_8cpp_a22f99fe837ee31d5b315c60eaffd6ea5_cgraph" alt=""/></div>
+<map name="SimulationDetectClusters_8cpp_a22f99fe837ee31d5b315c60eaffd6ea5_cgraph" id="SimulationDetectClusters_8cpp_a22f99fe837ee31d5b315c60eaffd6ea5_cgraph">
+<area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228" title="saveDetectorParameterValues" alt="" coords="253,221,453,251"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0cc3c3bfcd5e29b19a30acd0566a9d71" title="Get the value of field alpha." alt="" coords="529,5,708,51"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1b60390d9e55980ecf1da3616782a7e3" title="Get the value of field beta." alt="" coords="532,74,705,121"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1RegionDetector.html#af0b30b57a664d7a5b1bb0ec6be5e8068" title="Get the value of field blurKernelSize." alt="" coords="503,143,735,190"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a730df92f22ef336a5e24ffdb9afa50c9" title="Get the value of field epsilon." alt="" coords="524,213,713,259"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6099482d13eaf15e3c199155ba0a8816" title="Get the value of field morphologicalCloseIterations." alt="" coords="505,283,732,347"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a376ab8398852d02f3f4f2f5ffa4ec34b" title="Get the value of field regionAreaThresh." alt="" coords="525,371,712,435"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa429084aca1e04ec288878822e33bf36" title="Get the value of field thresholdValue." alt="" coords="517,459,720,523"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -372,7 +622,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="SimulationDetectClusters_8cpp.html">SimulationDetectClusters.cpp</a></li>
-    <li class="footer">Generated on Thu Jul 18 2013 11:22:14 for Multiscale by
+    <li class="footer">Generated on Mon Jul 22 2013 18:20:41 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

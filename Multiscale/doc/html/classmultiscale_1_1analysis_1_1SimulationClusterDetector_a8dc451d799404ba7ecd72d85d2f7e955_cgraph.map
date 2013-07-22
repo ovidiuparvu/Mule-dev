@@ -10,10 +10,10 @@
 <area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1Cluster.html#ae4f509b83bc7b6bb5ea80a780c9aece6" title="Update the value of the clusteredness degree." alt="" coords="1237,144,1440,208"/>
 <area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1Cluster.html#ab164d2395be9692d0a20ded5a2422720" title="Update the shape of the cluster." alt="" coords="1261,231,1416,278"/>
 <area shape="rect" id="node26" href="$classmultiscale_1_1analysis_1_1Cluster.html#a259c6f45b89f780b39ba7b67d7d1af2d" title="Update the point defining the centre of the cluster." alt="" coords="1245,301,1432,347"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1Cluster.html#a246e92f897320761e16bf6e448c4d3d7" title="Get probability that the cluster has a triangular shape." alt="" coords="1495,162,1703,209"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1Cluster.html#a457f4aa50dddfa82247c5d3a89eaa2a9" title="Get probability that the cluster has a rectangular shape." alt="" coords="1488,231,1709,278"/>
-<area shape="rect" id="node23" href="$classmultiscale_1_1analysis_1_1Cluster.html#aee4fe5c8ad1e8178b46eda9341290c8b" title="Get probability that the cluster has a circular shape." alt="" coords="1501,301,1696,347"/>
-<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1Cluster.html#af24261b08126bc2d2f51144056c6d353" title="Get the collection of entities&#39; centres." alt="" coords="1757,257,1939,321"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1Cluster.html#a65d19463e3ad0a90046a4373d95258f1" title="Get probability that the cluster has a triangular shape." alt="" coords="1495,162,1692,209"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1Cluster.html#a45f7dd3add843412c16826fe70074338" title="Get probability that the cluster has a rectangular shape." alt="" coords="1488,231,1699,278"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1analysis_1_1Cluster.html#a4dc4b507aafd570a3828d8e34df228e3" title="Get probability that the cluster has a circular shape." alt="" coords="1501,301,1685,347"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20" title="Get the collection of entities&#39; contour points." alt="" coords="1748,257,1935,321"/>
 <area shape="rect" id="node30" href="$classmultiscale_1_1analysis_1_1Cluster.html#a4d93f85faf929336818248e1fd604fb6" title="Get the minimum area enclosing circle centre." alt="" coords="516,56,719,120"/>
 <area shape="rect" id="node33" href="$classmultiscale_1_1analysis_1_1Cluster.html#aecf5fa56fa21e3b22130242694be744f" title="Get the minimum area enclosing circle radius." alt="" coords="516,144,719,208"/>
 <area shape="rect" id="node38" href="$classmultiscale_1_1analysis_1_1Cluster.html#a6417e3328622a848a7dedeebb5821750" title="Get the minimum area enclosing rectangle." alt="" coords="503,231,732,278"/>

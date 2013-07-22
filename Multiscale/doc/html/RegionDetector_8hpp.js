@@ -12,13 +12,9 @@ var RegionDetector_8hpp =
     [ "DISPLAY_LINE_THICKNESS", "RegionDetector_8hpp.html#a19df04c3f86479da35968fed776d2142", null ],
     [ "ENCLOSING_RECT_VERTICES", "RegionDetector_8hpp.html#a5079a6aecf30e939ba1344b2e427cbec", null ],
     [ "EPSILON_MAX", "RegionDetector_8hpp.html#a98ec0e52f8069544e6ed952c7de1dba2", null ],
-    [ "ERR_INVALID_IMAGE", "RegionDetector_8hpp.html#a436f1d8a73f8ce98507b031eb65b84ac", null ],
-    [ "ERR_OUTPUT_FILE", "RegionDetector_8hpp.html#a802932639681d325fff007066f0df5c4", null ],
     [ "INTENSITY_MAX", "RegionDetector_8hpp.html#a8f47a4307f9eea88d06b5383da431917", null ],
     [ "ITER_MAX", "RegionDetector_8hpp.html#a82e33b17ccb9be80dc09a1f38b5330b2", null ],
     [ "KERNEL_MAX", "RegionDetector_8hpp.html#a0b0bfd77700b86e4860923b5eb902ceb", null ],
-    [ "KEY_ESC", "RegionDetector_8hpp.html#a86b2b2d4eda22067d85d2287c118e2d8", null ],
-    [ "OUTPUT_EXTENSION", "RegionDetector_8hpp.html#a6722eaa5c4c15a1ef661967d81135500", null ],
     [ "REGION_AREA_THRESH_MAX", "RegionDetector_8hpp.html#ad9b19b601c85b0ec4f89b2e8c9f9c985", null ],
     [ "THRESHOLD_MAX", "RegionDetector_8hpp.html#ab468cd6410e5d23829fc609c96431489", null ],
     [ "TRACKBAR_ALPHA", "RegionDetector_8hpp.html#a14b7e799d0e3e29cfe0e2e40d4b57474", null ],
@@ -29,7 +25,5 @@ var RegionDetector_8hpp =
     [ "TRACKBAR_MORPH", "RegionDetector_8hpp.html#a3d9d5b70f8e60cfaf583ca65d0244d74", null ],
     [ "TRACKBAR_REGION_AREA_THRESH", "RegionDetector_8hpp.html#a89f82c8c6d79b896d6157583c61d8d74", null ],
     [ "TRACKBAR_THRESHOLD", "RegionDetector_8hpp.html#ac19d7ea03e314da1a1e96a5355cfeb67", null ],
-    [ "USE_CANNY_L2", "RegionDetector_8hpp.html#a379803797373615b9e8750e3a1c1b79e", null ],
-    [ "WIN_DEBUG_IMAGE", "RegionDetector_8hpp.html#a015a4f94917bab512925d0eedbdb3173", null ],
-    [ "WIN_PROCESSED_IMAGE", "RegionDetector_8hpp.html#a4d278bdb73cd0968b67e2a06eb2b87cc", null ]
+    [ "USE_CANNY_L2", "RegionDetector_8hpp.html#a379803797373615b9e8750e3a1c1b79e", null ]
 ];

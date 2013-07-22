@@ -19,5 +19,5 @@ var searchData=
   ['transformtoannularsectors',['transformToAnnularSectors',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178',1,'multiscale::video::CartesianToPolarConverter']]],
   ['translate',['translate',['../classmultiscale_1_1Geometry2D.html#ae7299287a17f8cd47e8d84e19ddbe0e9',1,'multiscale::Geometry2D']]],
   ['triangle',['Triangle',['../namespacemultiscale_1_1analysis.html#ad1ef6155ab2e954c1c33d3e2e6b53fbfaa93f37adbed49c6062576ec26eb845f7',1,'multiscale::analysis']]],
-  ['triangularprobability',['triangularProbability',['../classmultiscale_1_1analysis_1_1Cluster.html#a9f86b7395d4e8fdd235641eff8ad7f94',1,'multiscale::analysis::Cluster']]]
+  ['triangularmeasure',['triangularMeasure',['../classmultiscale_1_1analysis_1_1Cluster.html#ac3416974b396971412c35752931e15e9',1,'multiscale::analysis::Cluster']]]
 ];

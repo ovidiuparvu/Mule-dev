@@ -6,6 +6,7 @@ var dir_eecdf75660cbdeda8cf07b528b48c623 =
     [ "Cluster.cpp", "Cluster_8cpp.html", null ],
     [ "ClusterDetector.cpp", "ClusterDetector_8cpp.html", null ],
     [ "DBSCAN.cpp", "DBSCAN_8cpp.html", null ],
+    [ "Detector.cpp", "Detector_8cpp.html", null ],
     [ "Entity.cpp", "Entity_8cpp.html", null ],
     [ "MatFactory.cpp", "MatFactory_8cpp.html", null ],
     [ "RectangularDetectRegions.cpp", "RectangularDetectRegions_8cpp.html", "RectangularDetectRegions_8cpp" ],

@@ -112,26 +112,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ERR_OUTPUT_FILE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>ClusterDetector_8hpp.html</Path>
-    <Anchor>a802932639681d325fff007066f0df5c4</Anchor>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ERR_INVALID_IMAGE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>ClusterDetector_8hpp.html</Path>
-    <Anchor>a436f1d8a73f8ce98507b031eb65b84ac</Anchor>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>OUTPUT_CLUSTEREDNESS</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -148,36 +128,6 @@
     </TokenIdentifier>
     <Path>ClusterDetector_8hpp.html</Path>
     <Anchor>a8835e4a55ef1753868cbad4d2a144779</Anchor>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>OUTPUT_EXTENSION</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>ClusterDetector_8hpp.html</Path>
-    <Anchor>a6722eaa5c4c15a1ef661967d81135500</Anchor>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>IMG_EXTENSION</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>ClusterDetector_8hpp.html</Path>
-    <Anchor>a127af9f502a7fe0c36a3dbbf4dc69198</Anchor>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MSG_IMG_SAVED</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>ClusterDetector_8hpp.html</Path>
-    <Anchor>a5983e46623488305fa51715528fb9678</Anchor>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -262,36 +212,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>WIN_OUTPUT_IMAGE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>ClusterDetector_8hpp.html</Path>
-    <Anchor>aee857f4a97612b0a45a3322ce1909688</Anchor>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>KEY_ESC</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>ClusterDetector_8hpp.html</Path>
-    <Anchor>a86b2b2d4eda22067d85d2287c118e2d8</Anchor>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>KEY_SAVE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>ClusterDetector_8hpp.html</Path>
-    <Anchor>a735bd78d12a58f1d9dbbf79d2b30e5df</Anchor>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>CLUSTERING_UNCLASSIFIED</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -319,6 +239,86 @@
     <Path>DBSCAN_8hpp.html</Path>
     <Anchor>af6172e9cfdcbb017dadc35b145629c29</Anchor>
     <DeclaredIn>DBSCAN.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_OUTPUT_WITHOUT_DETECT</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Detector_8hpp.html</Path>
+    <Anchor>a357d95b934e1bae4e0f44ae22f35681d</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_OUTPUT_FILE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Detector_8hpp.html</Path>
+    <Anchor>a802932639681d325fff007066f0df5c4</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_IMAGE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Detector_8hpp.html</Path>
+    <Anchor>a436f1d8a73f8ce98507b031eb65b84ac</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OUTPUT_EXTENSION</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Detector_8hpp.html</Path>
+    <Anchor>a6722eaa5c4c15a1ef661967d81135500</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IMG_EXTENSION</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Detector_8hpp.html</Path>
+    <Anchor>a127af9f502a7fe0c36a3dbbf4dc69198</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>WIN_OUTPUT_IMAGE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Detector_8hpp.html</Path>
+    <Anchor>aee857f4a97612b0a45a3322ce1909688</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>KEY_ESC</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Detector_8hpp.html</Path>
+    <Anchor>a86b2b2d4eda22067d85d2287c118e2d8</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>KEY_SAVE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>Detector_8hpp.html</Path>
+    <Anchor>a735bd78d12a58f1d9dbbf79d2b30e5df</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -529,56 +529,6 @@
     <Path>Region_8hpp.html</Path>
     <Anchor>ad80cfbe7456c7d029544e8bc2cec16c8</Anchor>
     <DeclaredIn>Region.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ERR_OUTPUT_FILE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>RegionDetector_8hpp.html</Path>
-    <Anchor>a802932639681d325fff007066f0df5c4</Anchor>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ERR_INVALID_IMAGE</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>RegionDetector_8hpp.html</Path>
-    <Anchor>a436f1d8a73f8ce98507b031eb65b84ac</Anchor>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>OUTPUT_EXTENSION</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>RegionDetector_8hpp.html</Path>
-    <Anchor>a6722eaa5c4c15a1ef661967d81135500</Anchor>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIN_DEBUG_IMAGE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>RegionDetector_8hpp.html</Path>
-    <Anchor>a015a4f94917bab512925d0eedbdb3173</Anchor>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>WIN_PROCESSED_IMAGE</Name>
-      <APILanguage>unknown</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>RegionDetector_8hpp.html</Path>
-    <Anchor>a4d278bdb73cd0968b67e2a06eb2b87cc</Anchor>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -818,16 +768,6 @@
     </TokenIdentifier>
     <Path>RegionDetector_8hpp.html</Path>
     <Anchor>a19df04c3f86479da35968fed776d2142</Anchor>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>KEY_ESC</Name>
-      <APILanguage>c</APILanguage>
-      <Type>macro</Type>
-    </TokenIdentifier>
-    <Path>RegionDetector_8hpp.html</Path>
-    <Anchor>a86b2b2d4eda22067d85d2287c118e2d8</Anchor>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -1492,6 +1432,136 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>OUTPUT_EXTENSION</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a6722eaa5c4c15a1ef661967d81135500</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OUTPUT_SEPARATOR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>ad80cfbe7456c7d029544e8bc2cec16c8</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OUTPUT_FILE_SEPARATOR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a7ecf45b75eecd7a51afcdda682ecdba7</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>INPUT_FILE_SEPARATOR</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a61a924c0facd0c49b03d7026b9709532</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_NR_ENTITIES</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a91ec6669a1e4dccfe8bada8699bcbf74</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_OX_COORDINATE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>afde660d1630e8c9fbe99c4c3b7d61951</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_OY_COORDINATE</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a0aa81f19efb7d540ce9db66730947a18</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_MAX_NR_ENTITIES</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a64ef1a6ffaa400930c614ba5542ebd8e</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_NR_COORDINATES</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>aec3e36a08840474c220394cf0ba8a122</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_NEG_SIM_TIME</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a3ad0d4f95970c66da7d75bf997714f6f</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INPUT_OPEN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a12d238c7a2da056fd33f129f4c35b9a2</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_VALUE_LINE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a906ca900a5eeb05be5912e8e5be2f780</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_INVALID_VALUE_TOKEN</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularEntityCsvToInputFilesConverter_8hpp.html</Path>
+    <Anchor>a650c4f7af5b2726fda5c1e222d481899</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>HEADER_IN</Name>
       <APILanguage>c</APILanguage>
       <Type>macro</Type>
@@ -1592,6 +1662,106 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CONFIG_FILE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a42bf63540ee0039a3a23db1b5ec3202b</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_ROOT_COMMENT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a5eb40c1819d4a3f29b8a758da95f2d49</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_ALPHA</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a3084b5612083a4972201f242efefea44</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_BETA</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>ad0718539311c64f732f8d0d00aebb557</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_BLUR_KERNEL_SIZE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a709660cf251e4924ee3ef0c8d1efdc2f</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_MORPHOLOGICAL_CLOSE_ITERATIONS</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a74fe2f45e363db2775ba0c033b4117bf</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_EPSILON</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a8480d7e7227a2a60bb22a24adfcf6965</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_REGION_AREA_THRESH</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a869bb9dcadc834817ba38d54c0d150a9</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_THRESHOLD_VALUE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a7a79e8e5ad74a81dbc8d76a219fbcc96</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ROOT_COMMENT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a36628b11fe91394a7bd208067f5b17eb</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_CODE</Name>
       <APILanguage>c</APILanguage>
       <Type>macro</Type>
@@ -1647,7 +1817,47 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>CircularDetectRegions_8cpp.html</Path>
-    <Anchor>a49c258f2a31008988e64d7d47274e3b8</Anchor>
+    <Anchor>a88e0190bdcd41850844fa3d92a0083f4</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>loadDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a0252b9797b85fbd6f2de246ac5e72a7d</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a0c6ea854096d0cb7031c2af1eeb58228</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>loadDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>a15e563619acad1937efd4db33dcf8e3a</Anchor>
+    <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>CircularDetectRegions_8cpp.html</Path>
+    <Anchor>aefff464518a8c8d6f9c9c5450a675d01</Anchor>
     <DeclaredIn>CircularDetectRegions.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -1662,6 +1872,106 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CONFIG_FILE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a42bf63540ee0039a3a23db1b5ec3202b</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_ROOT_COMMENT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a5eb40c1819d4a3f29b8a758da95f2d49</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_ALPHA</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a3084b5612083a4972201f242efefea44</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_BETA</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>ad0718539311c64f732f8d0d00aebb557</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_BLUR_KERNEL_SIZE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a709660cf251e4924ee3ef0c8d1efdc2f</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_MORPHOLOGICAL_CLOSE_ITERATIONS</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a74fe2f45e363db2775ba0c033b4117bf</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_EPSILON</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a8480d7e7227a2a60bb22a24adfcf6965</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_REGION_AREA_THRESH</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a869bb9dcadc834817ba38d54c0d150a9</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_THRESHOLD_VALUE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a7a79e8e5ad74a81dbc8d76a219fbcc96</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ROOT_COMMENT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a36628b11fe91394a7bd208067f5b17eb</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_CODE</Name>
       <APILanguage>c</APILanguage>
       <Type>macro</Type>
@@ -1717,7 +2027,47 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>RectangularDetectRegions_8cpp.html</Path>
-    <Anchor>a49c258f2a31008988e64d7d47274e3b8</Anchor>
+    <Anchor>a88e0190bdcd41850844fa3d92a0083f4</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>loadDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a0252b9797b85fbd6f2de246ac5e72a7d</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a0c6ea854096d0cb7031c2af1eeb58228</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>loadDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>a15e563619acad1937efd4db33dcf8e3a</Anchor>
+    <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularDetectRegions_8cpp.html</Path>
+    <Anchor>aefff464518a8c8d6f9c9c5450a675d01</Anchor>
     <DeclaredIn>RectangularDetectRegions.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -1742,6 +2092,56 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>CONFIG_FILE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a42bf63540ee0039a3a23db1b5ec3202b</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_ROOT_COMMENT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a5eb40c1819d4a3f29b8a758da95f2d49</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_EPS</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a4ae598a3bc03fdea06da05a1f46db888</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_MINPOINTS</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>ab9066d0364e527e549c5c6b00bfdfad2</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ROOT_COMMENT</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a36628b11fe91394a7bd208067f5b17eb</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_CODE</Name>
       <APILanguage>c</APILanguage>
       <Type>macro</Type>
@@ -1797,7 +2197,47 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>SimulationDetectClusters_8cpp.html</Path>
-    <Anchor>a24da6cc304f0f5bb05c2b0bf721c72d3</Anchor>
+    <Anchor>af1d292ef1d32be2d09b845ce1b135875</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>loadDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a3b2fe4e3a75a6cdca8ea050e37a9da13</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a54440a034c11e07c393765b057b2bf65</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>loadDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>ab07b4a4cf6b2729884efe34b9947ad0d</Anchor>
+    <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveDetectorParameterValues</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>SimulationDetectClusters_8cpp.html</Path>
+    <Anchor>a22f99fe837ee31d5b315c60eaffd6ea5</Anchor>
     <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -2189,6 +2629,86 @@
     <Path>RectangularMapCsvToInputFiles_8cpp.html</Path>
     <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
     <DeclaredIn>RectangularMapCsvToInputFiles.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_CODE</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularMapEntityCsvToInputFiles_8cpp.html</Path>
+    <Anchor>aed46bc434b6a10f9663dbbe5fd15349f</Anchor>
+    <DeclaredIn>RectangularMapEntityCsvToInputFiles.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_MSG</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularMapEntityCsvToInputFiles_8cpp.html</Path>
+    <Anchor>a7a18f09d3bb5a5f03a55546e38f8efd8</Anchor>
+    <DeclaredIn>RectangularMapEntityCsvToInputFiles.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initArgumentsConfig</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularMapEntityCsvToInputFiles_8cpp.html</Path>
+    <Anchor>a6dab5a70bdde13257ac586fd8b81b16e</Anchor>
+    <DeclaredIn>RectangularMapEntityCsvToInputFiles.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printHelpInformation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularMapEntityCsvToInputFiles_8cpp.html</Path>
+    <Anchor>a49535fad6e4e5f21ee2eae91dff5a831</Anchor>
+    <DeclaredIn>RectangularMapEntityCsvToInputFiles.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printWrongParameters</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularMapEntityCsvToInputFiles_8cpp.html</Path>
+    <Anchor>a573a6d091545f311c155eb4f04c8a2cb</Anchor>
+    <DeclaredIn>RectangularMapEntityCsvToInputFiles.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setNumberIteratorType</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularMapEntityCsvToInputFiles_8cpp.html</Path>
+    <Anchor>acd4e13a2a763444dac4b73b728fffcdc</Anchor>
+    <DeclaredIn>RectangularMapEntityCsvToInputFiles.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>areValidParameters</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularMapEntityCsvToInputFiles_8cpp.html</Path>
+    <Anchor>a30cff3e42ff60918cc6ee280c0a08e20</Anchor>
+    <DeclaredIn>RectangularMapEntityCsvToInputFiles.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularMapEntityCsvToInputFiles_8cpp.html</Path>
+    <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
+    <DeclaredIn>RectangularMapEntityCsvToInputFiles.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4029,7 +4549,7 @@
       <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>aaf89be91572a4378d6cece5bba361627</Anchor>
+    <Anchor>a2a8681ad436fa29188794ff587444e98</Anchor>
     <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4051,7 +4571,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>af47af4e340532f030473ad8271e2c953</Anchor>
+    <Anchor>a35f1d8404aadce0f14d16f6a0f3d2af8</Anchor>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4067,15 +4587,121 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>detect</Name>
+      <Name>getEps</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a80e466ef4ac2c13cbd1ba9251c5e6767</Anchor>
-    <Abstract>Detect the clusters in the image and output the results.</Abstract>
+    <Anchor>a5f1699b100e7203720cb7fd1ef73cea1</Anchor>
+    <Abstract>Get the value of the clustering algorithm parameter eps.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getMinPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>af979c73c154bd42ef73d3328e80889ef</Anchor>
+    <Abstract>Get the value of the clustering algorithm parameter MinPoints.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a0ed0e389d65161b7eef8f377efb20e5c</Anchor>
+    <Abstract>Get a const reference to the vector of detected clusters.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setEps</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a35eaa560c893a86c3149471f40c15979</Anchor>
+    <Abstract>Set the value of the clustering algorithm parameter eps.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setMinPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a190fd17d121e8c22c1ca6e4f5b7a213c</Anchor>
+    <Abstract>Set the value of the clustering algorithm parameter MinPoints.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Detector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae761f485926eead354aa361f1f57e167</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Detector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae16b7bf62f39cb287927d56ca17663d7</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>acfb9aaec94382e4a7bee6d9874d4bcef</Anchor>
+    <Abstract>Run the detection procedure on the given image.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResults</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a122d92e3710571c136339747bf0568e8</Anchor>
+    <Abstract>Output the results to the given file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseImageDependentFields</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>ace0c69bb809f52b8c48ab7564ea1d8e3</Anchor>
+    <Abstract>Initialise the image dependent values.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4097,7 +4723,7 @@
       <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>a1342c3ff6df5451c54d5c972f15d6ef0</Anchor>
+    <Anchor>af3c2206724a69794e12f34fe7fe5082b</Anchor>
     <Abstract>Detect the entities in the image.</Abstract>
     <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -4115,6 +4741,30 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>getEntityCentrePoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>a083c8ff51e483d86744961aca1ae3551</Anchor>
+    <Abstract>Get the point representing the centre of the entity.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getEntityContourPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
+    <Anchor>ae51328d7fe0e477dea162c7e99da45c2</Anchor>
+    <Abstract>Get the points representing the contour of the entity.</Abstract>
+    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>computePileUpDegreeAtPosition</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -4127,49 +4777,25 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputClustersInDebugMode</Name>
+      <Name>outputResultsToImage</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>a5d232391a0da923df439f378dc669f79</Anchor>
-    <Abstract>Output the information computed for the clusters visually in a separate window.</Abstract>
-    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputClustersInNormalMode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>a37b382d39dd1ba737a69aad90a1e5ac6</Anchor>
-    <Abstract>Output the information computed for the clusters in a in a &amp;quot;.csv&amp;quot; and &amp;quot;.png&amp;quot; file.</Abstract>
-    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputClustersOnImage</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>a0bdcd1fe80d8a6f82d899d3d8f86d005</Anchor>
+    <Anchor>a909e1e53836f1688ebe312c5f7fb70b5</Anchor>
     <Abstract>Dsiaply clusters on image.</Abstract>
     <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputClusterOnImage</Name>
+      <Name>outputClusterToImage</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>af2c2d6f5fe0b1e08039fa12ec3132475</Anchor>
+    <Anchor>a0e29be5f9a15899f710f48aaf6c049f0</Anchor>
     <Abstract>Display cluster on the image.</Abstract>
     <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -4223,30 +4849,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>processSaveRequest</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>afeb17d0d9cf27eadfad79042951dfe43</Anchor>
-    <Abstract>Process the save request in case the lowercase &amp;quot;s&amp;quot; key was pressed.</Abstract>
-    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>saveResultsAsPNGImage</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>a1e4b7806d99320dd67b53f56d2f71f17</Anchor>
-    <Abstract>Store the results as a &amp;quot;.png&amp;quot; image on disk.</Abstract>
-    <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>thresholdedImage</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -4254,16 +4856,6 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
     <Anchor>aca2aae9914ef643a543a834e61b1cccf</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputImage</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>a37a2409772f8011c5ab5c657c894104e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4307,98 +4899,50 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initialise</Name>
+      <Name>initialiseDetectorSpecificFields</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>aebd5a932b49dd420a9d2e73cd6afa7b4</Anchor>
-    <Abstract>Initialisation function for the class.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initialiseClusteringValues</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a1464d37d8bcf96cf0f8b5538143cb5a9</Anchor>
+    <Anchor>a67751dd6e21750019a20648b6ba3c8f2</Anchor>
     <Abstract>Initialise clustering values.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isValidInputImage</Name>
+      <Name>createDetectorSpecificTrackbars</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a5de60e18b67cdfe5266f90384e0bb90d</Anchor>
-    <Abstract>Check if the image is valid.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>createTrackbars</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a7332c81689d61b800007785c4974ce7a</Anchor>
+    <Anchor>a7877cc5364f576e6a9cd96a6cd528cfc</Anchor>
     <Abstract>Create the trackbars.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>detectClusters</Name>
+      <Name>clearPreviousDetectionResults</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a1c69ae8027124dbf0f36c7d859b159be</Anchor>
-    <Abstract>Detect the clusters in the provided image.</Abstract>
+    <Anchor>a5679e30f1ea35203963bf2baa8d7ed36</Anchor>
+    <Abstract>Clear the clusters from the previous detection.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>detectClustersInDebugMode</Name>
+      <Name>processImageAndDetect</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ac90824ef29684966a2459a36cd521f48</Anchor>
-    <Abstract>Detect the clusters in the provided image in debug mode.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>detectClustersInNormalMode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a582c28920bd87931948819ed0024e4b8</Anchor>
-    <Abstract>Detect the clusters in the provided image in normal mode.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>findClusters</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a873ec1e214a0817c2958378093376e89</Anchor>
-    <Abstract>Find clusters in the provided image.</Abstract>
+    <Anchor>a736847233c57cfa59abb953f70ef9209</Anchor>
+    <Abstract>Process the provided image and detect clusters in it.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4487,62 +5031,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputClusters</Name>
+      <Name>outputResultsToCsvFile</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a49cb6e763fec53dfa3dd769351c280ab</Anchor>
-    <Abstract>Output the information computed for the clusters.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputClustersAsCsvFile</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a64d699b579ec010ebc495d9d7774d3d2</Anchor>
-    <Abstract>Output the information computed for the clusters in a csv file.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputClustersAsCsvFile</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a3d1d211ae726fdeff1d1633b3892f1d0</Anchor>
-    <Abstract>Output the information computed for the clusters in a csv file.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>processPressedKeyRequest</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a8b1083467a9b7ac3e14ca24806728947</Anchor>
-    <Abstract>Process the request of the user by pressing the key.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>displayImage</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a19e76d92a93bb69cbe1c7cddeafe4d96</Anchor>
-    <Abstract>Display an image in a particular window.</Abstract>
+    <Anchor>a6137f44f74afcac0584b1ff3f49f0ab8</Anchor>
+    <Abstract>Output the information computed for the clusters to a csv file.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4559,33 +5055,15 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>image</Name>
+      <Name>getValidMinPointsValue</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a02887cd17526e25dc9e99086590df685</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputFilepath</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ae24077be8f3ddc4decf3d4304e41fec1</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>debugMode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a8efd24929d653df8a9d92723878394f0</Anchor>
+    <Anchor>ab1c2514fb8599f74bf010e81154a9bf7</Anchor>
+    <Abstract>Return non-zero value for minPoints.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4626,6 +5104,16 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>aa94df1adc462be5931ec25ba24122fe9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>clusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aa81a8649bc743389c2fc1919d47eb5b3</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4842,6 +5330,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>getEntitiesContourPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Cluster</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+    <Anchor>adbb1a108b2ae638fbba0450c7f7fee20</Anchor>
+    <Abstract>Get the collection of entities&amp;#39; contour points.</Abstract>
+    <DeclaredIn>Cluster.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>updateMeasuresIfRequired</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -4926,37 +5426,37 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isTriangularProbability</Name>
+      <Name>isTriangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a246e92f897320761e16bf6e448c4d3d7</Anchor>
+    <Anchor>a65d19463e3ad0a90046a4373d95258f1</Anchor>
     <Abstract>Get probability that the cluster has a triangular shape.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isRectangularProbability</Name>
+      <Name>isRectangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a457f4aa50dddfa82247c5d3a89eaa2a9</Anchor>
+    <Anchor>a45f7dd3add843412c16826fe70074338</Anchor>
     <Abstract>Get probability that the cluster has a rectangular shape.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isCircularProbability</Name>
+      <Name>isCircularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>aee4fe5c8ad1e8178b46eda9341290c8b</Anchor>
+    <Anchor>a4dc4b507aafd570a3828d8e34df228e3</Anchor>
     <Abstract>Get probability that the cluster has a circular shape.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
@@ -5004,33 +5504,33 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>triangularProbability</Name>
+      <Name>triangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a9f86b7395d4e8fdd235641eff8ad7f94</Anchor>
+    <Anchor>ac3416974b396971412c35752931e15e9</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>rectangularProbability</Name>
+      <Name>rectangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>ab182ffdf73e9b3a3925d8d3973125dc1</Anchor>
+    <Anchor>a459889a2a2ecbc5bc11f9dd5342e121c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>circularProbability</Name>
+      <Name>circularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a4c5ed70a54b9ab88e32e186bb98de864</Anchor>
+    <Anchor>a3e1f3d38f7994e3f2f61c4805cdade27</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5131,7 +5631,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>af47af4e340532f030473ad8271e2c953</Anchor>
+    <Anchor>a35f1d8404aadce0f14d16f6a0f3d2af8</Anchor>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5147,110 +5647,156 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>getEps</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a5f1699b100e7203720cb7fd1ef73cea1</Anchor>
+    <Abstract>Get the value of the clustering algorithm parameter eps.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getMinPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>af979c73c154bd42ef73d3328e80889ef</Anchor>
+    <Abstract>Get the value of the clustering algorithm parameter MinPoints.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a0ed0e389d65161b7eef8f377efb20e5c</Anchor>
+    <Abstract>Get a const reference to the vector of detected clusters.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setEps</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a35eaa560c893a86c3149471f40c15979</Anchor>
+    <Abstract>Set the value of the clustering algorithm parameter eps.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setMinPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a190fd17d121e8c22c1ca6e4f5b7a213c</Anchor>
+    <Abstract>Set the value of the clustering algorithm parameter MinPoints.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Detector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae761f485926eead354aa361f1f57e167</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Detector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae16b7bf62f39cb287927d56ca17663d7</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>detect</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
+      <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a80e466ef4ac2c13cbd1ba9251c5e6767</Anchor>
-    <Abstract>Detect the clusters in the image and output the results.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>acfb9aaec94382e4a7bee6d9874d4bcef</Anchor>
+    <Abstract>Run the detection procedure on the given image.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initialise</Name>
+      <Name>outputResults</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a122d92e3710571c136339747bf0568e8</Anchor>
+    <Abstract>Output the results to the given file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseDetectorSpecificFields</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>aebd5a932b49dd420a9d2e73cd6afa7b4</Anchor>
-    <Abstract>Initialisation function for the class.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initialiseClusteringValues</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a1464d37d8bcf96cf0f8b5538143cb5a9</Anchor>
+    <Anchor>a67751dd6e21750019a20648b6ba3c8f2</Anchor>
     <Abstract>Initialise clustering values.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isValidInputImage</Name>
+      <Name>createDetectorSpecificTrackbars</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a5de60e18b67cdfe5266f90384e0bb90d</Anchor>
-    <Abstract>Check if the image is valid.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>createTrackbars</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a7332c81689d61b800007785c4974ce7a</Anchor>
+    <Anchor>a7877cc5364f576e6a9cd96a6cd528cfc</Anchor>
     <Abstract>Create the trackbars.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>detectClusters</Name>
+      <Name>clearPreviousDetectionResults</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a1c69ae8027124dbf0f36c7d859b159be</Anchor>
-    <Abstract>Detect the clusters in the provided image.</Abstract>
+    <Anchor>a5679e30f1ea35203963bf2baa8d7ed36</Anchor>
+    <Abstract>Clear the clusters from the previous detection.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>detectClustersInDebugMode</Name>
+      <Name>processImageAndDetect</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ac90824ef29684966a2459a36cd521f48</Anchor>
-    <Abstract>Detect the clusters in the provided image in debug mode.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>detectClustersInNormalMode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a582c28920bd87931948819ed0024e4b8</Anchor>
-    <Abstract>Detect the clusters in the provided image in normal mode.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>findClusters</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a873ec1e214a0817c2958378093376e89</Anchor>
-    <Abstract>Find clusters in the provided image.</Abstract>
+    <Anchor>a736847233c57cfa59abb953f70ef9209</Anchor>
+    <Abstract>Process the provided image and detect clusters in it.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5351,98 +5897,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputClusters</Name>
+      <Name>outputResultsToCsvFile</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a49cb6e763fec53dfa3dd769351c280ab</Anchor>
-    <Abstract>Output the information computed for the clusters.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputClustersInDebugMode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ad139564f58d5b2308dcf04eee304d0f2</Anchor>
-    <Abstract>Output the information computed for the clusters when debug mode is selected.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputClustersInNormalMode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ac5dba63bc1170dde54e84b73f06fe836</Anchor>
-    <Abstract>Output the information computed for the clusters when normal mode is selected.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputClustersAsCsvFile</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a64d699b579ec010ebc495d9d7774d3d2</Anchor>
-    <Abstract>Output the information computed for the clusters in a csv file.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputClustersAsCsvFile</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a3d1d211ae726fdeff1d1633b3892f1d0</Anchor>
-    <Abstract>Output the information computed for the clusters in a csv file.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>processPressedKeyRequest</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a8b1083467a9b7ac3e14ca24806728947</Anchor>
-    <Abstract>Process the request of the user by pressing the key.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>processSaveRequest</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a71858c299b24b6e210ad5f8eac9d6065</Anchor>
-    <Abstract>Process the save request in case the lowercase &amp;quot;s&amp;quot; key was pressed.</Abstract>
-    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>displayImage</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a19e76d92a93bb69cbe1c7cddeafe4d96</Anchor>
-    <Abstract>Display an image in a particular window.</Abstract>
+    <Anchor>a6137f44f74afcac0584b1ff3f49f0ab8</Anchor>
+    <Abstract>Output the information computed for the clusters to a csv file.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5459,33 +5921,219 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>image</Name>
+      <Name>getValidMinPointsValue</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
+      <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a02887cd17526e25dc9e99086590df685</Anchor>
+    <Anchor>ab1c2514fb8599f74bf010e81154a9bf7</Anchor>
+    <Abstract>Return non-zero value for minPoints.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputFilepath</Name>
+      <Name>initialise</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ae24077be8f3ddc4decf3d4304e41fec1</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae9be577bb23f9472d8ca3e19519764f8</Anchor>
+    <Abstract>Initialisation function for the class.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>debugMode</Name>
+      <Name>initialiseDetectorSpecificFieldsIfNotSet</Name>
       <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a8efd24929d653df8a9d92723878394f0</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a9636effe77eabf614210dbb079c18bf0</Anchor>
+    <Abstract>Initialisation of the detector specific values in case they were not set.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseImageDependentFields</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aedbf44cbcfcf6e1834b245926d3d94fa</Anchor>
+    <Abstract>Initialisation of the image dependent values.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isValidInputImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ad0473d0ad9988c84ae88c9cf6adf19be</Anchor>
+    <Abstract>Check if the image is valid.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae0c0a72fef22d6521e82c18424a4dd04</Anchor>
+    <Abstract>Run the detection procedure.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectInDebugMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aa9173a243a85e2d9cf493a641fb610aa</Anchor>
+    <Abstract>Run the detection procedure when in debug mode.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectInReleaseMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a58665776f1a12659dae08d1a4a01050a</Anchor>
+    <Abstract>Run the detection procedure when in release mode (i.e. non-debug mode)</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>displayResultsInWindow</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>abb6d85e1a13e96b748ea286a070bdf18</Anchor>
+    <Abstract>Display the results in a window.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a2eb7c5f8faefb9b8f09f94f88f804d80</Anchor>
+    <Abstract>Output the results to file(s)</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a5d10b68605d5a1711527b4b896b3b2cc</Anchor>
+    <Abstract>Output the results to an image.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>storeOutputImageOnDisk</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aa15a7546c4f8f77fcf85632386a4c5d5</Anchor>
+    <Abstract>Store the image with the output results on disk.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a2055dc183dd3601d9979bc99a3222eb4</Anchor>
+    <Abstract>Output the results to a file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>createTrackbars</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a3d406aaa4dc8e9f8adbee3d7818cf1de</Anchor>
+    <Abstract>Create the trackbars which allow the user to change the values of the parameters.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>createTrackbarsWindow</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>afdf4c74184888dbd112d0f1cec3776cd</Anchor>
+    <Abstract>Create the window in which the trackbars are placed.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>processPressedKeyRequest</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a72265d36d3fa22aa3c141eb4001fe2fe</Anchor>
+    <Abstract>Process the request of the user by pressing the key.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>displayImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae68f8f87cc1e4e1cd22cee1e3604ef4b</Anchor>
+    <Abstract>Display an image in a particular window.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printOutputErrorMessage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a9150f3fc7945405da34761a4250b7c79</Anchor>
+    <Abstract>Print error message, because the detect method was not called before calling the output method...</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5526,6 +6174,76 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>aa94df1adc462be5931ec25ba24122fe9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>clusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aa81a8649bc743389c2fc1919d47eb5b3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>image</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a523830a6cfe409694ce8327c3c736fbd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputFilepath</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a1a83df16d8afd347c0e1c9ddc41c9bee</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>debugMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a4b42f796957efd6ee0b8cf7645494a65</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a144e080a3af03c9bf3d8a80315823c86</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectMethodCalled</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ad565f471d9d7db7692da588ff0d6be2f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectorSpecificFieldsInitialised</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a172b91067670a14a7707f24dc218f2af</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5732,6 +6450,386 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>multiscale::analysis::Detector</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Detector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae761f485926eead354aa361f1f57e167</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Detector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae16b7bf62f39cb287927d56ca17663d7</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>acfb9aaec94382e4a7bee6d9874d4bcef</Anchor>
+    <Abstract>Run the detection procedure on the given image.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResults</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a122d92e3710571c136339747bf0568e8</Anchor>
+    <Abstract>Output the results to the given file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialise</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae9be577bb23f9472d8ca3e19519764f8</Anchor>
+    <Abstract>Initialisation function for the class.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseDetectorSpecificFieldsIfNotSet</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a9636effe77eabf614210dbb079c18bf0</Anchor>
+    <Abstract>Initialisation of the detector specific values in case they were not set.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseDetectorSpecificFields</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a83aea2a1b70e54d08cf3b0514c780796</Anchor>
+    <Abstract>Initialisation of the detector specific values.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseImageDependentFields</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aedbf44cbcfcf6e1834b245926d3d94fa</Anchor>
+    <Abstract>Initialisation of the image dependent values.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isValidInputImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ad0473d0ad9988c84ae88c9cf6adf19be</Anchor>
+    <Abstract>Check if the image is valid.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae0c0a72fef22d6521e82c18424a4dd04</Anchor>
+    <Abstract>Run the detection procedure.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectInDebugMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aa9173a243a85e2d9cf493a641fb610aa</Anchor>
+    <Abstract>Run the detection procedure when in debug mode.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectInReleaseMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a58665776f1a12659dae08d1a4a01050a</Anchor>
+    <Abstract>Run the detection procedure when in release mode (i.e. non-debug mode)</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>displayResultsInWindow</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>abb6d85e1a13e96b748ea286a070bdf18</Anchor>
+    <Abstract>Display the results in a window.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a2eb7c5f8faefb9b8f09f94f88f804d80</Anchor>
+    <Abstract>Output the results to file(s)</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a5d10b68605d5a1711527b4b896b3b2cc</Anchor>
+    <Abstract>Output the results to an image.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>storeOutputImageOnDisk</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aa15a7546c4f8f77fcf85632386a4c5d5</Anchor>
+    <Abstract>Store the image with the output results on disk.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a2055dc183dd3601d9979bc99a3222eb4</Anchor>
+    <Abstract>Output the results to a file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>afc247b9c7ded2ffde3ba0cb2b1267490</Anchor>
+    <Abstract>Output the results to a file using the provided output file stream.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>processImageAndDetect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a7451855e415300f15765082f21588f13</Anchor>
+    <Abstract>Process the input image and detect objects/entities of interest.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>clearPreviousDetectionResults</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a3c2add35193ad09a0200003d0053da6b</Anchor>
+    <Abstract>Clear the results from the previous detection.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>createTrackbars</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a3d406aaa4dc8e9f8adbee3d7818cf1de</Anchor>
+    <Abstract>Create the trackbars which allow the user to change the values of the parameters.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>createTrackbarsWindow</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>afdf4c74184888dbd112d0f1cec3776cd</Anchor>
+    <Abstract>Create the window in which the trackbars are placed.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>createDetectorSpecificTrackbars</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a930ad07f5b8d9f21e6758341f71ae31a</Anchor>
+    <Abstract>Create the trackbars specific to the used detector.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>processPressedKeyRequest</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a72265d36d3fa22aa3c141eb4001fe2fe</Anchor>
+    <Abstract>Process the request of the user by pressing the key.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>displayImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae68f8f87cc1e4e1cd22cee1e3604ef4b</Anchor>
+    <Abstract>Display an image in a particular window.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printOutputErrorMessage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a9150f3fc7945405da34761a4250b7c79</Anchor>
+    <Abstract>Print error message, because the detect method was not called before calling the output method...</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>image</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a523830a6cfe409694ce8327c3c736fbd</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputFilepath</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a1a83df16d8afd347c0e1c9ddc41c9bee</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>debugMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a4b42f796957efd6ee0b8cf7645494a65</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a144e080a3af03c9bf3d8a80315823c86</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectMethodCalled</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ad565f471d9d7db7692da588ff0d6be2f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectorSpecificFieldsInitialised</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a172b91067670a14a7707f24dc218f2af</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::analysis::Entity</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -5749,7 +6847,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>a23de40320d358297c070994222f111c8</Anchor>
+    <Anchor>ad6060a0c40a726d7552fe3c0b9d2c1b7</Anchor>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5812,6 +6910,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>getContourPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Entity</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+    <Anchor>a8cc2809f7eb42747727b70049b7af3a3</Anchor>
+    <Abstract>Get the set of points defining the contour of the entity.</Abstract>
+    <DeclaredIn>Entity.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>toString</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -5859,14 +6969,25 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>validateInputValues</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Entity</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+    <Anchor>a32f5d649c19ed306f8d409041b15aeb2</Anchor>
+    <DeclaredIn>Entity.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>areValid</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>acf824f2eb3d63a901c9ebaad1ae04414</Anchor>
-    <Abstract>Check if the provided degree of pile up, area and centre are valid.</Abstract>
+    <Anchor>ac279c818f9a4e88c18428716c486038e</Anchor>
+    <Abstract>Check if the provided degree of pile up, area, centre and contour points are valid.</Abstract>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5898,6 +7019,16 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
     <Anchor>ad226609174b21f71210161d29a16d4ef</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>contourPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Entity</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
+    <Anchor>a0199b0a0e5b22809015ecbc23d17785e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6524,7 +7655,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>afd5caa29513e2fca9457ec58dc7afde4</Anchor>
+    <Anchor>aa6e891d8940358fe71e9a7e23f84452f</Anchor>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6540,109 +7671,323 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>detect</Name>
+      <Name>getAlpha</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>aad54fd30f7ccf8a28d1cb2f656b08bb3</Anchor>
-    <Abstract>Detect the regions in the image and output the results.</Abstract>
+    <Anchor>a0cc3c3bfcd5e29b19a30acd0566a9d71</Anchor>
+    <Abstract>Get the value of field alpha.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initialiseVisionMembers</Name>
+      <Name>getBeta</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a308b4293e4cd086664a9db2b18f81565</Anchor>
+    <Anchor>a1b60390d9e55980ecf1da3616782a7e3</Anchor>
+    <Abstract>Get the value of field beta.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getBlurKernelSize</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>af0b30b57a664d7a5b1bb0ec6be5e8068</Anchor>
+    <Abstract>Get the value of field blurKernelSize.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getEpsilon</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a730df92f22ef336a5e24ffdb9afa50c9</Anchor>
+    <Abstract>Get the value of field epsilon.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getMorphologicalCloseIterations</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a6099482d13eaf15e3c199155ba0a8816</Anchor>
+    <Abstract>Get the value of field morphologicalCloseIterations.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getOriginXCoordinate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>aea7192e8394c264e623be52c44f6a986</Anchor>
+    <Abstract>Get the value of field originXCoordinate.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getOriginYCoordinate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a332fc0877bbad43858acd175833ce4d6</Anchor>
+    <Abstract>Get the value of field originYCoordinate.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getRegionAreaThresh</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a376ab8398852d02f3f4f2f5ffa4ec34b</Anchor>
+    <Abstract>Get the value of field regionAreaThresh.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getThresholdValue</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>aa429084aca1e04ec288878822e33bf36</Anchor>
+    <Abstract>Get the value of field thresholdValue.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getRegions</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>ab24abc7d629de96a342fe4f056f7d48c</Anchor>
+    <Abstract>Get a const reference to the vector of detected regions.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setAlpha</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>ada64f919fd5310987b950c052a3cf93a</Anchor>
+    <Abstract>Set the value of field alpha.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setBeta</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a054b6327918fd9a6ff2de293dac1afc0</Anchor>
+    <Abstract>Set the value of field beta.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setBlurKernelSize</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a968d5ddbc060fa823e4c79c9dcfec300</Anchor>
+    <Abstract>Set the value of field blurKernelSize.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setEpsilon</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a069ed208d5ff16e6caa0deb4ff21858b</Anchor>
+    <Abstract>Set the value of field epsilon.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setMorphologicalCloseIterations</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a5e096d2e4ff8dfe985869d6d0fcd74b8</Anchor>
+    <Abstract>Set the value of field morphologicalCloseIterations.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setOriginXCoordinate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a9ace9f195f33aab9597f8a7c107c219d</Anchor>
+    <Abstract>Set the value of field originXCoordinate.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setOriginYCoordinate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a2e7fa31b11734cdd3f7fc7db55cedab8</Anchor>
+    <Abstract>Set the value of field originYCoordinate.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setRegionAreaThresh</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a5cf10aea88e85198ce54df0e94e6d1a7</Anchor>
+    <Abstract>Set the value of field regionAreaThresh.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setThresholdValue</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a066e87a1f134194dabfc760d241b8ab2</Anchor>
+    <Abstract>Set the value of field thresholdValue.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Detector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae761f485926eead354aa361f1f57e167</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~Detector</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae16b7bf62f39cb287927d56ca17663d7</Anchor>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>acfb9aaec94382e4a7bee6d9874d4bcef</Anchor>
+    <Abstract>Run the detection procedure on the given image.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResults</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a122d92e3710571c136339747bf0568e8</Anchor>
+    <Abstract>Output the results to the given file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseDetectorSpecificFields</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>aee6bb117ea0ef98b8e333ac33d17962c</Anchor>
     <Abstract>Initialise the vision members.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initialiseImageDependentMembers</Name>
+      <Name>initialiseImageDependentFields</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a33178fe370f8428bfcc670c4aa13b82b</Anchor>
+    <Anchor>a3c14a7cc6f0282cc031a4a40704d474e</Anchor>
     <Abstract>Initialise the members dependent on the image.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isValidImage</Name>
+      <Name>createDetectorSpecificTrackbars</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>ad8960adb47043397f83061d30df21aba</Anchor>
-    <Abstract>Check if the image is valid.</Abstract>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>createTrackbars</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a4ad46d6c01efbe5ef5fe83baaf1bf3e7</Anchor>
+    <Anchor>a904af350ef7e988bb10970cac7b9491a</Anchor>
     <Abstract>Create the trackbars.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>detectRegions</Name>
+      <Name>processImageAndDetect</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a4b6e465ce842476efc90a40f44b58670</Anchor>
-    <Abstract>Detect the regions in the provided image.</Abstract>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>detectRegionsInDebugMode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a3124d1e9474a5de838f554400c101d95</Anchor>
-    <Abstract>Detect the regions in the provided image in debug mode.</Abstract>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>detectRegionsInNormalMode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>aa1c4793be6e44be79234e1e75c9f49a8</Anchor>
-    <Abstract>Detect the regions in the provided image in normal mode.</Abstract>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>processImage</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a3e268079ef8417c18cce9eb311bfd2ba</Anchor>
+    <Anchor>ae47319444db34d72d4316f49f965b69d</Anchor>
     <Abstract>Process the given image.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -6804,74 +8149,38 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputRegions</Name>
+      <Name>clearPreviousDetectionResults</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a2ec07fa39302f0a70bdf49e8f6c65920</Anchor>
-    <Abstract>Output the regions.</Abstract>
+    <Anchor>a4a89f3a28cbb473acc32f22b49d09389</Anchor>
+    <Abstract>Clear the element present in the regions vector.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputRegionsAsXMLFile</Name>
+      <Name>outputResultsToCsvFile</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>afc5278b64f1ad6aec240fae28583fdb7</Anchor>
-    <Abstract>Output the regions as an XML file.</Abstract>
+    <Anchor>a9da92f7959fe324f24301c5bf780fbbd</Anchor>
+    <Abstract>Output the regions to a csv file.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputRegionsAsCsvFile</Name>
+      <Name>outputResultsToImage</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a033a6502fb5a05c6062b90dd8e263f35</Anchor>
-    <Abstract>Output the regions as a csv file.</Abstract>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputRegionsAsCsvFile</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>affdb1072c800e64daf68b2cf251bd8df</Anchor>
-    <Abstract>Output the regions as a csv file.</Abstract>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputRegionsInDebugMode</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a3e124863739ba90e068ea9630e55b50a</Anchor>
-    <Abstract>Output the regions in debug mode.</Abstract>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>displayImage</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>ae0771e1c55083bf874ffb0f8c57366e8</Anchor>
-    <Abstract>Display an image in a particular window.</Abstract>
+    <Anchor>a23a3ada51983d2a3041f403323e27d06</Anchor>
+    <Abstract>Output the results to the outputImage instance.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6980,33 +8289,253 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>image</Name>
+      <Name>regions</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a3a43869edd2842a84aa7dfc1d05968cc</Anchor>
+    <Anchor>aa6517ceb3a58295448d32e6e41499893</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialise</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae9be577bb23f9472d8ca3e19519764f8</Anchor>
+    <Abstract>Initialisation function for the class.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseDetectorSpecificFieldsIfNotSet</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a9636effe77eabf614210dbb079c18bf0</Anchor>
+    <Abstract>Initialisation of the detector specific values in case they were not set.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isValidInputImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ad0473d0ad9988c84ae88c9cf6adf19be</Anchor>
+    <Abstract>Check if the image is valid.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detect</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae0c0a72fef22d6521e82c18424a4dd04</Anchor>
+    <Abstract>Run the detection procedure.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectInDebugMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aa9173a243a85e2d9cf493a641fb610aa</Anchor>
+    <Abstract>Run the detection procedure when in debug mode.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectInReleaseMode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a58665776f1a12659dae08d1a4a01050a</Anchor>
+    <Abstract>Run the detection procedure when in release mode (i.e. non-debug mode)</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>displayResultsInWindow</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>abb6d85e1a13e96b748ea286a070bdf18</Anchor>
+    <Abstract>Display the results in a window.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a2eb7c5f8faefb9b8f09f94f88f804d80</Anchor>
+    <Abstract>Output the results to file(s)</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>storeOutputImageOnDisk</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aa15a7546c4f8f77fcf85632386a4c5d5</Anchor>
+    <Abstract>Store the image with the output results on disk.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a2055dc183dd3601d9979bc99a3222eb4</Anchor>
+    <Abstract>Output the results to a file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>createTrackbars</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a3d406aaa4dc8e9f8adbee3d7818cf1de</Anchor>
+    <Abstract>Create the trackbars which allow the user to change the values of the parameters.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>createTrackbarsWindow</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>afdf4c74184888dbd112d0f1cec3776cd</Anchor>
+    <Abstract>Create the window in which the trackbars are placed.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>processPressedKeyRequest</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a72265d36d3fa22aa3c141eb4001fe2fe</Anchor>
+    <Abstract>Process the request of the user by pressing the key.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>displayImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae68f8f87cc1e4e1cd22cee1e3604ef4b</Anchor>
+    <Abstract>Display an image in a particular window.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printOutputErrorMessage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a9150f3fc7945405da34761a4250b7c79</Anchor>
+    <Abstract>Print error message, because the detect method was not called before calling the output method...</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>image</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a523830a6cfe409694ce8327c3c736fbd</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>outputFilepath</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
+      <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a7437cca0c8a80d8f1a3de6fc309faeb3</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a1a83df16d8afd347c0e1c9ddc41c9bee</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>isDebugMode</Name>
+      <Name>debugMode</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
+      <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a5a79504c126724e3e01eb54be3a478ae</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a4b42f796957efd6ee0b8cf7645494a65</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a144e080a3af03c9bf3d8a80315823c86</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectMethodCalled</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ad565f471d9d7db7692da588ff0d6be2f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>detectorSpecificFieldsInitialised</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a172b91067670a14a7707f24dc218f2af</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8396,6 +9925,289 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html</Path>
     <Anchor>aeeee251d65b8c189a72d08f3c70a94be</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::video::RectangularEntityCsvToInputFilesConverter</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Abstract>Csv entity file to input file converter considering cartesian coordinates.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>RectangularEntityCsvToInputFilesConverter</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>aad6061faff7cfbe5c005faf460d77951</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~RectangularEntityCsvToInputFilesConverter</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>af3085f7d4f6836c0d5edf19f4a59bac7</Anchor>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>convert</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a7cf56e73e5b1c627bab05d4be3cdb405</Anchor>
+    <Abstract>Start the conversion.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initInputFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a8b941e496ad19065d2bd0a3a1b21c47d</Anchor>
+    <Abstract>Initialise the input file stream over the given input file.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initOutputFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a08a817f0907a22cf7588ca43efa82ea7</Anchor>
+    <Abstract>Initialise the output file with the given index and simulation time.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initIterators</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a423a02139612b26846f17d24b50e4740</Anchor>
+    <Abstract>Initialise the iterators considering the given number iterator type.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateMaxNrOfEntitiesPerPosition</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>ad5ab0bd1650a0e381cc155c0f97e2493</Anchor>
+    <Abstract>Check if the maximum number of entities per position is a non-zero natural number.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateInput</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a0726af8634c9553cd90921d00e4a9b91</Anchor>
+    <Abstract>Validate the input.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateInputLine</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a582115870468210176bedb1f69b244ac</Anchor>
+    <Abstract>Validate the provided line identified by a line number.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>processInputFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a10ba353be4f381a88d53b9433c3b7e1a</Anchor>
+    <Abstract>Process the input file.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>processLine</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>ade459298271cab474b2e9e7bdd583733</Anchor>
+    <Abstract>Process the provided line.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>splitLineInCoordinates</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a452c51fa3e5b1357f2f71aa401127087</Anchor>
+    <Abstract>Split the line in coordinates and return the grid of size height * width showing the position of the ...</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeSimulationTime</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a8a48052e9b1c1700d15b04f50bf65f2b</Anchor>
+    <Abstract>Compute the simulation time from the given token and check if it is valid.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeCoordinate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a3defc5af07ae2c1d383c66ab15964b1c</Anchor>
+    <Abstract>Compute the coordinate from the given string and check if it is valid.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateSimulationTime</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a8e331c649351b19275852c78688b9b6e</Anchor>
+    <Abstract>Check if the simulation time is valid.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateCoordinate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a650edb40b60f1d51645d0d3cc502d348</Anchor>
+    <Abstract>Check if the coordinate is valid.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateEntitiesGrid</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a1ad5a7d2ff08fdda7ff04571e229cf95</Anchor>
+    <Abstract>Check if the entities grid contains only values between zero and one.</Abstract>
+    <DeclaredIn>RectangularEntityCsvToInputFilesConverter.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>inputFilepath</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>adde5ccc0bde141f73917eba8029fe1f6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputFilepath</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a84ea5fc8e195a17eb929812f962cb851</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>height</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a68cb5dba20157ea4977c1069626cb0ab</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>width</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>ac4542ad4008e85ab4860146eed6e0200</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>nrOfEntities</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>aebbddb80b0b0e44e4ea8e111994a2f5d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>maxNrOfEntitiesPerPosition</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>adcea224ee3e6f8fbecca3754774afbac</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>entitiesIterator</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::video::RectangularEntityCsvToInputFilesConverter</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html</Path>
+    <Anchor>a128a6c07e713073f96405819b014249e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

@@ -87,9 +87,6 @@ namespace multiscale {
                 double computePileUpDegreeAtPosition(int x, int y);
 
                 //! Dsiaply clusters on image
-                /*!
-                 *  \param clusters Clusters of entities detected in the image
-                 */
                 void outputResultsToImage() override;
 
                 //! Display cluster on the image

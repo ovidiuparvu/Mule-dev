@@ -1,8 +1,11 @@
 <map id="include/multiscale/util/iterator/NumberIteratorType.hpp" name="include/multiscale/util/iterator/NumberIteratorType.hpp">
-<area shape="rect" id="node3" href="$PolarCsvToInputFilesConverter_8hpp.html" title="include/multiscale\l/video/circular/PolarCsvTo\lInputFilesConverter.hpp" alt="" coords="168,117,344,181"/>
+<area shape="rect" id="node3" href="$PolarCsvToInputFilesConverter_8hpp.html" title="include/multiscale\l/video/circular/PolarCsvTo\lInputFilesConverter.hpp" alt="" coords="231,117,407,181"/>
 <area shape="rect" id="node5" href="$PolarCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/circular/PolarCsvToInputFiles\lConverter.cpp" alt="" coords="5,229,203,293"/>
 <area shape="rect" id="node7" href="$PolarMapCsvToInputFiles_8cpp.html" title="src/multiscale/video\l/circular/PolarMapCsvToInput\lFiles.cpp" alt="" coords="227,229,421,293"/>
-<area shape="rect" id="node9" href="$RectangularCsvToInputFilesConverter_8hpp.html" title="include/multiscale\l/video/rectangular/Rectangular\lCsvToInputFilesConverter.hpp" alt="" coords="469,117,669,181"/>
+<area shape="rect" id="node9" href="$RectangularCsvToInputFilesConverter_8hpp.html" title="include/multiscale\l/video/rectangular/Rectangular\lCsvToInputFilesConverter.hpp" alt="" coords="532,117,732,181"/>
 <area shape="rect" id="node11" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularCsv\lToInputFilesConverter.cpp" alt="" coords="445,229,632,293"/>
 <area shape="rect" id="node13" href="$RectangularMapCsvToInputFiles_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularMap\lCsvToInputFiles.cpp" alt="" coords="656,229,845,293"/>
+<area shape="rect" id="node15" href="$RectangularEntityCsvToInputFilesConverter_8hpp.html" title="include/multiscale\l/video/rectangular/Rectangular\lEntityCsvToInputFilesConverter.hpp" alt="" coords="857,117,1092,181"/>
+<area shape="rect" id="node17" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularEntity\lCsvToInputFilesConverter.cpp" alt="" coords="869,229,1069,293"/>
+<area shape="rect" id="node19" href="$RectangularMapEntityCsvToInputFiles_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularMap\lEntityCsvToInputFiles.cpp" alt="" coords="1093,229,1283,293"/>
 </map>

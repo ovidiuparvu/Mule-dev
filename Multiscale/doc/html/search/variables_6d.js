@@ -1,6 +1,7 @@
 var searchData=
 [
   ['maximumconcentration',['maximumConcentration',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a89b7dce2825cd5c8c45a1e6f19770e5f',1,'multiscale::video::PolarCsvToInputFilesConverter::maximumConcentration()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#aeddcdf92c6f79bf41546fd417d0808b1',1,'multiscale::video::RectangularCsvToInputFilesConverter::maximumConcentration()']]],
+  ['maxnrofentitiesperposition',['maxNrOfEntitiesPerPosition',['../classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#adcea224ee3e6f8fbecca3754774afbac',1,'multiscale::video::RectangularEntityCsvToInputFilesConverter']]],
   ['minareaenclosingcirclecentre',['minAreaEnclosingCircleCentre',['../classmultiscale_1_1analysis_1_1Cluster.html#a47e672060b4025dcd07ebb9c5fd99f0c',1,'multiscale::analysis::Cluster']]],
   ['minareaenclosingcircleradius',['minAreaEnclosingCircleRadius',['../classmultiscale_1_1analysis_1_1Cluster.html#a070994481884a4c7f5aa4879ce7b0568',1,'multiscale::analysis::Cluster']]],
   ['minareaenclosingrect',['minAreaEnclosingRect',['../classmultiscale_1_1analysis_1_1Cluster.html#aeb032303a79c6bd43385fcaad9c50742',1,'multiscale::analysis::Cluster']]],

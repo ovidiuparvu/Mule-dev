@@ -170,8 +170,6 @@ namespace multiscale {
                  *  by the points from the contour which are on the edge and the closest point to
                  *  the origin. Return all the polygons together with the processed information
                  *  as a vector of regions.
-                 *
-                 *  \param regions The regions from the image
                  */
                 void processImageAndDetect() override;
 

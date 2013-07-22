@@ -7,5 +7,6 @@
 <area shape="rect" id="node13" href="$PolarCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/circular/PolarCsvToInputFiles\lConverter.cpp" alt="" coords="920,101,1117,165"/>
 <area shape="rect" id="node15" href="$PolarGnuplotScriptGenerator_8cpp.html" title="src/multiscale/video\l/circular/PolarGnuplotScript\lGenerator.cpp" alt="" coords="1141,101,1323,165"/>
 <area shape="rect" id="node17" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularCsv\lToInputFilesConverter.cpp" alt="" coords="1347,101,1533,165"/>
-<area shape="rect" id="node19" href="$RectangularGnuplotScriptGenerator_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularGnuplot\lScriptGenerator.cpp" alt="" coords="1557,101,1765,165"/>
+<area shape="rect" id="node19" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularEntity\lCsvToInputFilesConverter.cpp" alt="" coords="1557,101,1757,165"/>
+<area shape="rect" id="node21" href="$RectangularGnuplotScriptGenerator_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularGnuplot\lScriptGenerator.cpp" alt="" coords="1781,101,1989,165"/>
 </map>

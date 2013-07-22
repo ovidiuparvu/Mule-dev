@@ -2,4 +2,7 @@
 <area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a1c55a2e893f28de4a68129407c55d5f3" title="Assign the border nodes to the clusters to which the closest core objects belong." alt="" coords="273,5,481,69"/>
 <area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="531,14,699,61"/>
 <area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a52f0eb2d04029c75a3c48a37efdac26b" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="748,14,884,61"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a8c9c3ac0c3d8e924468a58f558984dda" title="Detect the clusters of entities in the image." alt="" coords="935,14,1148,61"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1197,5,1387,69"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1436,5,1647,69"/>
 </map>

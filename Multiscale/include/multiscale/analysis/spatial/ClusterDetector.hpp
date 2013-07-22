@@ -83,9 +83,6 @@ namespace multiscale {
                 void clearPreviousDetectionResults() override;
 
                 //! Process the provided image and detect clusters in it
-                /*!
-                 * \param clusters The clusters from the image
-                 */
                 void processImageAndDetect() override;
 
                 //! Detect the entities in the image

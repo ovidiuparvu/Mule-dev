@@ -4,7 +4,6 @@ var searchData=
   ['filenamefrompath',['filenameFromPath',['../classmultiscale_1_1StringManipulator.html#ab0354ab5ca48df4394695445fe105640',1,'multiscale::StringManipulator']]],
   ['find',['find',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a1fed629a9f290fe050c515aa2d0d799d',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['findclosestcoredatapoint',['findClosestCoreDataPoint',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a7a1c95e78edf9e804a7809648e130bda',1,'multiscale::analysis::DBSCAN']]],
-  ['findclusters',['findClusters',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a873ec1e214a0817c2958378093376e89',1,'multiscale::analysis::ClusterDetector']]],
   ['findcontoursinimage',['findContoursInImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f',1,'multiscale::analysis::RegionDetector']]],
   ['findgammaintersectionpoints',['findGammaIntersectionPoints',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aa26b3ef84bd96935afa8efab5dfef882',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['findgoodintersectionpoints',['findGoodIntersectionPoints',['../classmultiscale_1_1analysis_1_1RegionDetector.html#af804b99efa2c9c5adb04c11a5dc5f589',1,'multiscale::analysis::RegionDetector']]],

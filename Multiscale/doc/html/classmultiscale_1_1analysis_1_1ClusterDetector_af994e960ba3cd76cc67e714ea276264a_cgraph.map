@@ -1,0 +1,4 @@
+<map id="multiscale::analysis::ClusterDetector::analyseClusters" name="multiscale::analysis::ClusterDetector::analyseClusters">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a1efab8446c79feb8a9285d895bb64b05" title="Compute the average pile up degree for all entities in the image." alt="" coords="296,5,523,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#aaa7937daf9872614e09b23cb4f6e5aa8" title="Compute the clusteredness index for all the entities detected in the image." alt="" coords="277,93,541,157"/>
+</map>

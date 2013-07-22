@@ -21,10 +21,10 @@ LIBS_OPENCV=/usr/local/lib/libopencv_calib3d.so /usr/local/lib/libopencv_contrib
 #########################################################################################
 # Default target
 #
-# List of all targets: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
+# List of all targets: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rectmapentitycsv2input rectmapentitycsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
 #########################################################################################
 
-all: rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
+all: rectmapentitycsv2input rectmapentitycsv2input_debug
 
 
 #########################################################################################
@@ -57,6 +57,12 @@ rectmapcsv2input:
 
 rectmapcsv2input_debug:
 	$(CC) $(CFLAGS_DEBUG) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/video/rectangular/RectangularCsvToInputFilesConverter.cpp src/multiscale/util/iterator/LexicographicNumberIterator.cpp src/multiscale/video/rectangular/RectangularMapCsvToInputFiles.cpp src/multiscale/util/NumberIterator.cpp src/multiscale/util/iterator/StandardNumberIterator.cpp src/multiscale/util/StringManipulator.cpp -o bin/RectangularMapCsvToInputFiles_d $(LIBS_BOOST)
+
+rectmapentitycsv2input:
+	$(CC) $(CFLAGS_RELEASE) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/video/rectangular/RectangularEntityCsvToInputFilesConverter.cpp src/multiscale/util/iterator/LexicographicNumberIterator.cpp src/multiscale/video/rectangular/RectangularMapEntityCsvToInputFiles.cpp src/multiscale/util/NumberIterator.cpp src/multiscale/util/iterator/StandardNumberIterator.cpp src/multiscale/util/StringManipulator.cpp -o bin/RectangularMapEntityCsvToInputFiles $(LIBS_BOOST)
+
+rectmapentitycsv2input_debug:
+	$(CC) $(CFLAGS_DEBUG) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/video/rectangular/RectangularEntityCsvToInputFilesConverter.cpp src/multiscale/util/iterator/LexicographicNumberIterator.cpp src/multiscale/video/rectangular/RectangularMapEntityCsvToInputFiles.cpp src/multiscale/util/NumberIterator.cpp src/multiscale/util/iterator/StandardNumberIterator.cpp src/multiscale/util/StringManipulator.cpp -o bin/RectangularMapEntityCsvToInputFiles_d $(LIBS_BOOST)
 
 rect_region_detection:
 	$(CC) $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/analysis/spatial/Detector.cpp src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/util/Numeric.cpp src/multiscale/analysis/spatial/RectangularDetectRegions.cpp src/multiscale/analysis/spatial/factory/RectangularMatFactory.cpp src/multiscale/analysis/spatial/Region.cpp src/multiscale/analysis/spatial/RegionDetector.cpp -o bin/RectangularDetectRegions $(LIBS_BOOST) $(LIBS_OPENCV) 

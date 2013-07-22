@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('MapCartesianToScript_8cpp_source.html'
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// Get the needed parameters</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="MapCartesianToScript_8cpp.html#a49c258f2a31008988e64d7d47274e3b8">   60</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="CircularDetectRegions_8cpp.html#a49c258f2a31008988e64d7d47274e3b8">areValidParameters</a>(<span class="keywordtype">string</span> &amp;inputFilepath, <span class="keywordtype">string</span> &amp;outputFilename, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="MapCartesianToScript_8cpp.html#a49c258f2a31008988e64d7d47274e3b8">   60</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="CircularDetectRegions_8cpp.html#a88e0190bdcd41850844fa3d92a0083f4">areValidParameters</a>(<span class="keywordtype">string</span> &amp;inputFilepath, <span class="keywordtype">string</span> &amp;outputFilename, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    po::options_description usageDescription(<span class="stringliteral">&quot;Usage&quot;</span>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    po::variables_map vm = <a class="code" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">initArgumentsConfig</a>(usageDescription, argc, argv);</div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('MapCartesianToScript_8cpp_source.html'
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">string</span> outputFilepath;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="CircularDetectRegions_8cpp.html#a49c258f2a31008988e64d7d47274e3b8">areValidParameters</a>(inputFilePath, outputFilepath, argc, argv)) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="CircularDetectRegions_8cpp.html#a88e0190bdcd41850844fa3d92a0083f4">areValidParameters</a>(inputFilePath, outputFilepath, argc, argv)) {</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html" title="Scale the values of the rectangular geometry grid cells.">CartesianToConcentrationsConverter</a> converter(inputFilePath, outputFilepath);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            converter.<a class="code" href="classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a27de97c7e35097bd17453fd07f33a6f1" title="Start the conversion.">convert</a>();</div>
@@ -205,7 +205,7 @@ $(document).ready(function(){initNavTree('MapCartesianToScript_8cpp_source.html'
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_181e58fb894b6db2e2ebe48170ed182a.html">video</a></li><li class="navelem"><a class="el" href="dir_659b9e9df9619eed061809f04f769b63.html">rectangular</a></li><li class="navelem"><a class="el" href="MapCartesianToScript_8cpp.html">MapCartesianToScript.cpp</a></li>
-    <li class="footer">Generated on Thu Jul 18 2013 11:22:14 for Multiscale by
+    <li class="footer">Generated on Mon Jul 22 2013 18:20:41 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
