@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1MatFact
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1MatFactory__inherit__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1MatFactory_inherit__map" alt="Inheritance graph"/></div>
 <map name="multiscale_1_1analysis_1_1MatFactory_inherit__map" id="multiscale_1_1analysis_1_1MatFactory_inherit__map">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid." alt="" coords="5,312,189,501"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid." alt="" coords="213,321,400,493"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid." alt="" coords="5,347,203,571"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid." alt="" coords="227,355,424,562"/></map>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for multiscale::analysis::MatFactory:</div>
@@ -133,6 +133,8 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1MatFact
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1MatFactory__coll__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1MatFactory_coll__map" alt="Collaboration graph"/></div>
+<map name="multiscale_1_1analysis_1_1MatFactory_coll__map" id="multiscale_1_1analysis_1_1MatFactory_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -147,6 +149,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a719ca9ac925ee182c1d5df1b0b029394"><td class="memItemLeft" align="right" valign="top">virtual Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a719ca9ac925ee182c1d5df1b0b029394">createFromViewerImage</a> (const string &amp;inputFile)=0</td></tr>
 <tr class="memdesc:a719ca9ac925ee182c1d5df1b0b029394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Mat object from the image file obtained from Rectangular/CircularGeometryViewer.  <a href="#a719ca9ac925ee182c1d5df1b0b029394">More...</a><br/></td></tr>
 <tr class="separator:a719ca9ac925ee182c1d5df1b0b029394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a041b354357794476a2108e3f71deadc8"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html#a041b354357794476a2108e3f71deadc8">maxColourBarIntensityFromViewerImage</a> (const string &amp;inputFile)=0</td></tr>
+<tr class="memdesc:a041b354357794476a2108e3f71deadc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum grayscale intensity of the colour bar in the image.  <a href="#a041b354357794476a2108e3f71deadc8">More...</a><br/></td></tr>
+<tr class="separator:a041b354357794476a2108e3f71deadc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -253,7 +258,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="MatFactory_8cpp_source.html#l00039">39</a> of file <a class="el" href="MatFactory_8cpp_source.html">MatFactory.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RectangularMatFactory_8cpp_source.html#l00020">multiscale::analysis::RectangularMatFactory::processConcentrations()</a>.</p>
+<p>Referenced by <a class="el" href="RectangularMatFactory_8cpp_source.html#l00028">multiscale::analysis::RectangularMatFactory::processConcentrations()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -443,6 +448,40 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a041b354357794476a2108e3f71deadc8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double multiscale::analysis::MatFactory::maxColourBarIntensityFromViewerImage </td>
+          <td>(</td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>inputFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the maximum grayscale intensity of the colour bar in the image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputFile</td><td>The path to the image file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#aea41720f6adfb983bb94ea0a45789874">multiscale::analysis::CircularMatFactory</a>, and <a class="el" href="classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a9255b11748b4c48d76c769258d6b6ee0">multiscale::analysis::RectangularMatFactory</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0493c87d7b74619a95f14c0e31a3e178"></a>
 <div class="memitem">
 <div class="memproto">
@@ -507,7 +546,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="MatFactory_8hpp_source.html#l00025">25</a> of file <a class="el" href="MatFactory_8hpp_source.html">MatFactory.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="MatFactory_8cpp_source.html#l00012">create()</a>, <a class="el" href="MatFactory_8cpp_source.html#l00030">initInputFile()</a>, and <a class="el" href="RectangularMatFactory_8cpp_source.html#l00020">multiscale::analysis::RectangularMatFactory::processConcentrations()</a>.</p>
+<p>Referenced by <a class="el" href="MatFactory_8cpp_source.html#l00012">create()</a>, <a class="el" href="MatFactory_8cpp_source.html#l00030">initInputFile()</a>, and <a class="el" href="RectangularMatFactory_8cpp_source.html#l00028">multiscale::analysis::RectangularMatFactory::processConcentrations()</a>.</p>
 
 </div>
 </div>
@@ -532,7 +571,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="MatFactory_8hpp_source.html#l00024">24</a> of file <a class="el" href="MatFactory_8hpp_source.html">MatFactory.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="MatFactory_8cpp_source.html#l00012">create()</a>, <a class="el" href="MatFactory_8cpp_source.html#l00030">initInputFile()</a>, and <a class="el" href="RectangularMatFactory_8cpp_source.html#l00020">multiscale::analysis::RectangularMatFactory::processConcentrations()</a>.</p>
+<p>Referenced by <a class="el" href="MatFactory_8cpp_source.html#l00012">create()</a>, <a class="el" href="MatFactory_8cpp_source.html#l00030">initInputFile()</a>, and <a class="el" href="RectangularMatFactory_8cpp_source.html#l00028">multiscale::analysis::RectangularMatFactory::processConcentrations()</a>.</p>
 
 </div>
 </div>
@@ -571,7 +610,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1MatFactory.html">MatFactory</a></li>
-    <li class="footer">Generated on Mon Jul 22 2013 18:20:41 for Multiscale by
+    <li class="footer">Generated on Tue Jul 23 2013 17:35:43 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

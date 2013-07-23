@@ -34,7 +34,7 @@ var searchData=
   ['getmorphologicalcloseiterations',['getMorphologicalCloseIterations',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a6099482d13eaf15e3c199155ba0a8816',1,'multiscale::analysis::RegionDetector']]],
   ['getoriginxcoordinate',['getOriginXCoordinate',['../classmultiscale_1_1analysis_1_1RegionDetector.html#aea7192e8394c264e623be52c44f6a986',1,'multiscale::analysis::RegionDetector']]],
   ['getoriginycoordinate',['getOriginYCoordinate',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a332fc0877bbad43858acd175833ce4d6',1,'multiscale::analysis::RegionDetector']]],
-  ['getpileupdegree',['getPileUpDegree',['../classmultiscale_1_1analysis_1_1Cluster.html#acff6c7308641af041598bed55005f2bf',1,'multiscale::analysis::Cluster::getPileUpDegree()'],['../classmultiscale_1_1analysis_1_1Entity.html#a2b90f7783c4e3aa5836964bcc1cf0796',1,'multiscale::analysis::Entity::getPileUpDegree()']]],
+  ['getpileupdegree',['getPileUpDegree',['../classmultiscale_1_1analysis_1_1Cluster.html#acff6c7308641af041598bed55005f2bf',1,'multiscale::analysis::Cluster::getPileUpDegree()'],['../classmultiscale_1_1analysis_1_1Entity.html#a9984244109e4212e310b0418e894a8c1',1,'multiscale::analysis::Entity::getPileUpDegree()']]],
   ['getpolygon',['getPolygon',['../classmultiscale_1_1analysis_1_1Region.html#ab2fc240206cad785e13ea8e2f56a289b',1,'multiscale::analysis::Region']]],
   ['getregionareathresh',['getRegionAreaThresh',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a376ab8398852d02f3f4f2f5ffa4ec34b',1,'multiscale::analysis::RegionDetector']]],
   ['getregions',['getRegions',['../classmultiscale_1_1analysis_1_1RegionDetector.html#ab24abc7d629de96a342fe4f056f7d48c',1,'multiscale::analysis::RegionDetector']]],

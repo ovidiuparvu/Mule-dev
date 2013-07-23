@@ -8,6 +8,9 @@ set label "Simulation time: OUTPUT_SIM_TIME" at screen 0.4, screen 0.90 left
 # Set the environment for using colorbox
 set pm3d implicit at s
 
+# Set the palette to be used
+set palette gray
+
 # Colorbox options
 set style line 1234 linetype -1 linewidth 1
 set colorbox border 1234

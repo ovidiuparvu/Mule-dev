@@ -4,12 +4,13 @@
 MOVIE_FRAME_RATE=1;
 MOVIE_FLAGS="-same_quant -r ${MOVIE_FRAME_RATE}"
 
-if [ $# -eq 4 ];
+if [ $# -eq 5 ];
 then
     inputFolder=$1;
     outputFolder=$2;
     height=$3;
     width=$4;
+    maxPileup=$5;
 
     # Define the movie output path
     movieOutputFolder=${outputFolder}/movie;
@@ -30,7 +31,7 @@ then
     echo "Running the cluster detection procedure for each image...";
 
     # Run the cluster detection procedure for each image in parallel
-    ls ${inputFolder}/*.png | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${outputFolder}/{/.} --height=${height} --width=${width}
+    ls ${inputFolder}/*.png | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${outputFolder}/{/.} --height=${height} --width=${width} --max-pileup=${maxPileup}
 
     # Inform user of the next action
     echo "Generating the movie from the images...";
@@ -49,5 +50,5 @@ then
     echo "Total execution time: " $(echo "${endTime} - ${startTime}" | bc) " seconds.";
     
 else
-    echo "Please run the script with the parameters: <input_folder> <output_folder> <height_of_grid> <width_of_grid>.";
+    echo "Please run the script with the parameters: <input_folder> <output_folder> <height_of_grid> <width_of_grid> <max_pileup>.";
 fi

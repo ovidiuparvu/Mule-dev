@@ -11,12 +11,14 @@ using namespace std;
 using namespace multiscale::analysis;
 
 
-ClusterDetector::ClusterDetector(bool debugMode) : Detector(debugMode) {
+ClusterDetector::ClusterDetector(int maxPileupNumber, double maxPileupIntensity, bool debugMode) : Detector(debugMode) {
     this->eps = 0;
     this->minPoints = 0;
 
     this->avgPileUpDegree = 0;
     this->clusterednessIndex = 0;
+
+    this->entityPileupDegree = (maxPileupIntensity / maxPileupNumber);
 }
 
 ClusterDetector::~ClusterDetector() {}
@@ -86,11 +88,27 @@ void ClusterDetector::detectClusters(const vector<Entity> &entities, vector<int>
 vector<shared_ptr<DataPoint>> ClusterDetector::convertEntities(const vector<Entity> &entities) {
     vector<shared_ptr<DataPoint>> dataPoints;
 
+    convertNonPiledUpEntities(entities, dataPoints);
+    convertPiledUpEntities(entities, dataPoints);
+
+    return dataPoints;
+}
+
+void ClusterDetector::convertNonPiledUpEntities(const vector<Entity> &entities, vector<shared_ptr<DataPoint> > &dataPoints) {
     for (const Entity &entity : entities) {
         dataPoints.push_back(shared_ptr<DataPoint>(new Entity(entity)));
     }
+}
 
-    return dataPoints;
+void ClusterDetector::convertPiledUpEntities(const vector<Entity> &entities, vector<shared_ptr<DataPoint> > &dataPoints) {
+    for (const Entity &entity : entities) {
+        int nrOfPiledUpEntities = entity.getPileUpDegree();
+
+        // Consider only the above entities (at level 2+)
+        for (int i = 1; i < nrOfPiledUpEntities; i++) {
+            dataPoints.push_back(shared_ptr<DataPoint>(new Entity(entity)));
+        }
+    }
 }
 
 void ClusterDetector::addEntitiesToClusters(const vector<Entity> &entities, const vector<int> &clusterIndexes,

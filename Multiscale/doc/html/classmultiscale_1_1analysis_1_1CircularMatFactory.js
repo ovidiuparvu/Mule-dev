@@ -5,5 +5,6 @@ var classmultiscale_1_1analysis_1_1CircularMatFactory =
     [ "createCircularMask", "classmultiscale_1_1analysis_1_1CircularMatFactory.html#a94f2562c9045f2373b3e2736608de8c7", null ],
     [ "createFromViewerImage", "classmultiscale_1_1analysis_1_1CircularMatFactory.html#a8d5fccf946065b982bfa700b9e47b1f5", null ],
     [ "isValidViewerImage", "classmultiscale_1_1analysis_1_1CircularMatFactory.html#a08e407b35a2d314c1aa17f21040ff23a", null ],
+    [ "maxColourBarIntensityFromViewerImage", "classmultiscale_1_1analysis_1_1CircularMatFactory.html#aea41720f6adfb983bb94ea0a45789874", null ],
     [ "processConcentrations", "classmultiscale_1_1analysis_1_1CircularMatFactory.html#a8fe40d38b896f440e17b5514462d1e8a", null ]
 ];

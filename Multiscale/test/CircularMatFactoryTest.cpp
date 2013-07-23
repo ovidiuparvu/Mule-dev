@@ -18,6 +18,10 @@ int main() {
     namedWindow("Test", WINDOW_NORMAL);
     imshow("Test", image);
 
+    cout << "Maximum colour bar intensity: "
+         << factory.maxColourBarIntensityFromViewerImage("test/input/circular.png")
+         << endl;
+
     waitKey(0);
 
     return 0;

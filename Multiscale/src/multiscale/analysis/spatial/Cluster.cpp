@@ -76,12 +76,13 @@ vector<Entity> Cluster::getEntities() const {
 }
 
 string Cluster::fieldNamesToString() {
-    return "Clusteredness degree,Pile up degree,Area,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
+    return "Clusteredness degree,Pile up degree,Number of entities (ignoring pileup), Area,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
 }
 
 string Cluster::toString() {
     return StringManipulator::toString<double>(clusterednessDegree) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<unsigned int>(entities.size()) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
            shapeAsString() + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(triangularMeasure) + OUTPUT_SEPARATOR +
@@ -183,8 +184,6 @@ void Cluster::updateArea() {
     for (const Entity &entity : entities) {
         area += entity.getArea();
     }
-
-    area /= (entities.size());
 }
 
 void Cluster::updateShape() {

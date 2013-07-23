@@ -25,20 +25,20 @@ namespace multiscale {
 
             private:
 
-                double pileUpDegree;            /*!< Degree of pile up (relevant only if entities can pile up onto each other) */
-                double area;                    /*!< Area of the entity */
+                unsigned int    pileUpDegree;   /*!< Degree of pile up (relevant only if entities can pile up onto each other) */
+                double          area;           /*!< Area of the entity */
 
                 Point2f centre;                 /*!< Point defining the centre of the entity */
                 vector<Point2f> contourPoints;  /*!< Set of points defining the contour of the entity */
 
             public:
 
-                Entity(double pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints);
+                Entity(unsigned int pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints);
                 Entity(const Entity &entity);
                 ~Entity();
 
                 //! Get the degree of pile up
-                double getPileUpDegree() const;
+                unsigned int getPileUpDegree() const;
 
                 //! Get the area
                 double getArea() const;
@@ -69,7 +69,7 @@ namespace multiscale {
                  * \param centre        Centre of the entity
                  * \param contourPoints Points defining the contour of the entity
                  */
-                void validateInputValues(double pileUpDegree, double area, const Point2f &centre,
+                void validateInputValues(unsigned int pileUpDegree, double area, const Point2f &centre,
                                          const vector<Point2f> &contourPoints);
 
                 //! Check if the provided degree of pile up, area, centre and contour points are valid
@@ -79,7 +79,7 @@ namespace multiscale {
                 * \param centre        Centre of the entity
                 * \param contourPoints Points defining the contour of the entity
                 */
-                bool areValid(double pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints);
+                bool areValid(unsigned int pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints);
 
         };
 

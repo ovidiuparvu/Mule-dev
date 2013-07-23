@@ -6,8 +6,9 @@
 using namespace multiscale::analysis;
 
 
-SimulationClusterDetector::SimulationClusterDetector(unsigned int height, unsigned int width, bool debugMode)
-                                                    : ClusterDetector(debugMode) {
+SimulationClusterDetector::SimulationClusterDetector(unsigned int height, unsigned int width, int maxPileupNumber,
+                                                     double maxPileupIntensity, bool debugMode)
+                                                    : ClusterDetector(maxPileupNumber, maxPileupIntensity, debugMode) {
     this->height = height;
     this->width = width;
 
@@ -32,7 +33,7 @@ void SimulationClusterDetector::detectEntitiesInImage(vector<Entity> &entities) 
     for (unsigned int i = 0; i < height; i++) {
         for (unsigned int j = 0; j < width; j++) {
             if (isEntityAtPosition(j, i)) {
-                double pileUpDegree = computePileUpDegreeAtPosition(j, i);
+                unsigned int pileUpDegree = computePileUpDegreeAtPosition(j, i);
                 double area = entityHeight * entityWidth;
                 Point2f centre = getEntityCentrePoint(j, i);
                 vector<Point2f> contourPoints = getEntityContourPoints(j, i);
@@ -70,12 +71,13 @@ vector<Point2f> SimulationClusterDetector::getEntityContourPoints(int x, int y) 
     return contourPoints;
 }
 
-double SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int y) {
-    Rect mask(x * entityWidth, y * entityHeight, entityWidth, entityHeight);
+unsigned int SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int y) {
+    int xCoordinate = (x * entityWidth) + (entityWidth / 2);
+    int yCoordinate = (y * entityHeight) + (entityHeight / 2);
 
-    Scalar positionMean = mean(image(mask));
+    unsigned char intensityAtPosition = image.at<uchar>(Point(xCoordinate, yCoordinate));
 
-    return positionMean.val[0];
+    return round(intensityAtPosition / entityPileupDegree);
 }
 
 void SimulationClusterDetector::outputResultsToImage() {

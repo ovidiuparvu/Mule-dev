@@ -1,6 +1,6 @@
 var classmultiscale_1_1analysis_1_1ClusterDetector =
 [
-    [ "ClusterDetector", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a35f1d8404aadce0f14d16f6a0f3d2af8", null ],
+    [ "ClusterDetector", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a2b5da40fb5e977f5bbfe046feeb1b124", null ],
     [ "~ClusterDetector", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a18f5d5aab155a0a30137364749fb837c", null ],
     [ "addEntitiesToClusters", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aefc4d0736d8af4ab53f1e5e76440f447", null ],
     [ "analyseClusters", "classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a", null ],
@@ -9,6 +9,8 @@ var classmultiscale_1_1analysis_1_1ClusterDetector =
     [ "computeClusterednessIndex", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aaa7937daf9872614e09b23cb4f6e5aa8", null ],
     [ "convertEntities", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aa45fe0a4a548b4d44407ee7f346e66d3", null ],
     [ "convertEpsValue", "classmultiscale_1_1analysis_1_1ClusterDetector.html#afccb86bfb93df00fff8408faea7a2651", null ],
+    [ "convertNonPiledUpEntities", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a4b42b3de7411fe02c7871064497feef1", null ],
+    [ "convertPiledUpEntities", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a22ba21c341448af455111e718b058391", null ],
     [ "createDetectorSpecificTrackbars", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a7877cc5364f576e6a9cd96a6cd528cfc", null ],
     [ "detectAndAnalyseClusters", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b", null ],
     [ "detectClusters", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a8c9c3ac0c3d8e924468a58f558984dda", null ],
@@ -25,6 +27,7 @@ var classmultiscale_1_1analysis_1_1ClusterDetector =
     [ "avgPileUpDegree", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a6f6cfa50cf21ac400d41d6c6f2112bc9", null ],
     [ "clusterednessIndex", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a5e2bf77041bd0d5047dd16c4632c16b7", null ],
     [ "clusters", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aa81a8649bc743389c2fc1919d47eb5b3", null ],
+    [ "entityPileupDegree", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aaa93a4b3a5a3c4279aa434669093ac40", null ],
     [ "eps", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a61e876f87d62245eada8f56d587d39cd", null ],
     [ "minPoints", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aa94df1adc462be5931ec25ba24122fe9", null ]
 ];

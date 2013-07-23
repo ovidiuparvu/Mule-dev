@@ -46,6 +46,7 @@ po::variables_map initArgumentsConfig(po::options_description &usageDescription,
                                   ("width,w", po::value<unsigned int>(), "provide the width of the grid (number of columns)\n")
                                   ("input-file,i", po::value<string>(), "provide the path to the input file\n")
                                   ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
+                                  ("max-pileup,m", po::value<unsigned int>(), "provide the maximum number of entities which can occupy a grid position at the same time\n")
                                   ("debug-mode,d", po::value<bool>()->implicit_value(false), "start the program in debug mode\n");
 
     po::variables_map vm;
@@ -67,7 +68,7 @@ void printWrongParameters() {
 
 // Get the needed parameters
 bool areValidParameters(string &inputFilepath, string &outputFilename, bool &debugFlag, unsigned int &height,
-                        unsigned int &width, int argc, char** argv) {
+                        unsigned int &width, unsigned int &maxPileup, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
@@ -80,12 +81,14 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, bool &deb
     }
 
     // Check if the given parameters are correct
-    if ((vm.count("input-file")) && (vm.count("output-file")) && (vm.count("height")) && (vm.count("width"))) {
+    if ((vm.count("input-file")) && (vm.count("output-file")) && (vm.count("height")) && (vm.count("width")) && (vm.count("max-pileup"))) {
         inputFilepath  = vm["input-file"].as<string>();
         outputFilename = vm["output-file"].as<string>();
 
         height = vm["height"].as<unsigned int>();
         width = vm["width"].as<unsigned int>();
+
+        maxPileup = vm["max-pileup"].as<unsigned int>();
 
         if (vm.count("debug-mode")) {
             debugFlag = vm["debug-mode"].as<bool>();
@@ -138,16 +141,21 @@ int main(int argc, char** argv) {
     string inputFilePath;
     string outputFilepath;
 
+    unsigned int maxPileup;
+
     bool debugFlag = false;
 
     unsigned int height;
     unsigned int width;
 
     try {
-        if (areValidParameters(inputFilePath, outputFilepath, debugFlag, height, width, argc, argv)) {
-            Mat image = RectangularMatFactory().createFromViewerImage(inputFilePath);
+        if (areValidParameters(inputFilePath, outputFilepath, debugFlag, height, width, maxPileup, argc, argv)) {
+            RectangularMatFactory factory;
 
-            SimulationClusterDetector detector(height, width, debugFlag);
+            Mat image = factory.createFromViewerImage(inputFilePath);
+            double maxPileupIntensity = factory.maxColourBarIntensityFromViewerImage(inputFilePath);
+
+            SimulationClusterDetector detector(height, width, maxPileup, maxPileupIntensity, debugFlag);
 
             loadDetectorParameterValues(detector, debugFlag);
 

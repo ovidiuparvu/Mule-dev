@@ -32,7 +32,7 @@ var searchData=
   ['sidecendvertex',['sideCEndVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a08dbbe5cf66a72a3f973dc0b34526f86',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['sidecstartvertex',['sideCStartVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a9c227b89fcf6afe2f6fe0bb842c47518',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html',1,'multiscale::analysis']]],
-  ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a2a8681ad436fa29188794ff587444e98',1,'multiscale::analysis::SimulationClusterDetector']]],
+  ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a5ec24468129dfa9b6a7f38e11a78c69b',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['simulationclusterdetector_2ecpp',['SimulationClusterDetector.cpp',['../SimulationClusterDetector_8cpp.html',1,'']]],
   ['simulationclusterdetector_2ehpp',['SimulationClusterDetector.hpp',['../SimulationClusterDetector_8hpp.html',1,'']]],
   ['simulationdetectclusters_2ecpp',['SimulationDetectClusters.cpp',['../SimulationDetectClusters_8cpp.html',1,'']]],

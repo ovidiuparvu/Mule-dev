@@ -17,6 +17,14 @@ Mat RectangularMatFactory::createFromViewerImage(const string &inputFile) {
     return image(Rect(ROI_START_X, ROI_START_Y, ROI_WIDTH, ROI_HEIGHT));
 }
 
+double RectangularMatFactory::maxColourBarIntensityFromViewerImage(const string &inputFile) {
+    Mat image = imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
+
+    isValidViewerImage(image);
+
+    return (double)image.at<uchar>(Point(COLOURBAR_MAX_X, COLOURBAR_MAX_Y));
+}
+
 unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
     unsigned char *data = new unsigned char[rows*cols];
     int nrOfConcentrations = rows * cols;

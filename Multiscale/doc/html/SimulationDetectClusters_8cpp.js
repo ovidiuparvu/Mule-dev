@@ -7,7 +7,7 @@ var SimulationDetectClusters_8cpp =
     [ "LABEL_MINPOINTS", "SimulationDetectClusters_8cpp.html#ab9066d0364e527e549c5c6b00bfdfad2", null ],
     [ "LABEL_ROOT_COMMENT", "SimulationDetectClusters_8cpp.html#a5eb40c1819d4a3f29b8a758da95f2d49", null ],
     [ "ROOT_COMMENT", "SimulationDetectClusters_8cpp.html#a36628b11fe91394a7bd208067f5b17eb", null ],
-    [ "areValidParameters", "SimulationDetectClusters_8cpp.html#af1d292ef1d32be2d09b845ce1b135875", null ],
+    [ "areValidParameters", "SimulationDetectClusters_8cpp.html#aa56ee69482577dad35ebe8ff014ca517", null ],
     [ "initArgumentsConfig", "SimulationDetectClusters_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e", null ],
     [ "loadDetectorParameterValues", "SimulationDetectClusters_8cpp.html#a3b2fe4e3a75a6cdca8ea050e37a9da13", null ],
     [ "loadDetectorParameterValues", "SimulationDetectClusters_8cpp.html#ab07b4a4cf6b2729884efe34b9947ad0d", null ],

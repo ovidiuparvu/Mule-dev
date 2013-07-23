@@ -11,7 +11,6 @@
 using namespace cv;
 using namespace std;
 
-
 #define STR_TRIANGLE        "triangle"
 #define STR_RECTANGLE       "rectangle"
 #define STR_CIRCLE          "circle"

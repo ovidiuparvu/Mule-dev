@@ -50,6 +50,12 @@ namespace multiscale {
                  */
                 virtual Mat createFromViewerImage(const string &inputFile) = 0;
 
+                //! Get the maximum grayscale intensity of the colour bar in the image
+                /*!
+                 * \param inputFile The path to the image file
+                 */
+                virtual double maxColourBarIntensityFromViewerImage(const string &inputFile) = 0;
+
             protected:
 
                 //! Initialise the input file

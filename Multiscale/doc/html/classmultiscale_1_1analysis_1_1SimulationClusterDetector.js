@@ -1,8 +1,8 @@
 var classmultiscale_1_1analysis_1_1SimulationClusterDetector =
 [
-    [ "SimulationClusterDetector", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a2a8681ad436fa29188794ff587444e98", null ],
+    [ "SimulationClusterDetector", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a5ec24468129dfa9b6a7f38e11a78c69b", null ],
     [ "~SimulationClusterDetector", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a8df6b5abd6d2dd48e691bf999d35dd43", null ],
-    [ "computePileUpDegreeAtPosition", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ac6efeb562212300dfd7e08936027b2b6", null ],
+    [ "computePileUpDegreeAtPosition", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a2252829af367a55af95bee3cf814b87e", null ],
     [ "detectEntitiesInImage", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#af3c2206724a69794e12f34fe7fe5082b", null ],
     [ "getEntityCentrePoint", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a083c8ff51e483d86744961aca1ae3551", null ],
     [ "getEntityContourPoints", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ae51328d7fe0e477dea162c7e99da45c2", null ],

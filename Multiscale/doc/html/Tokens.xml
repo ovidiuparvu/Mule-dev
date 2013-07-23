@@ -422,6 +422,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>COLOURBAR_MAX_X</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularMatFactory_8hpp.html</Path>
+    <Anchor>a2c1bd6167e8959f46b9935db39accfbc</Anchor>
+    <DeclaredIn>CircularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>COLOURBAR_MAX_Y</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>CircularMatFactory_8hpp.html</Path>
+    <Anchor>a00e6262953121bdb5e213e17dc43ee95</Anchor>
+    <DeclaredIn>CircularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_CONC</Name>
       <APILanguage>c</APILanguage>
       <Type>macro</Type>
@@ -488,6 +508,26 @@
     </TokenIdentifier>
     <Path>RectangularMatFactory_8hpp.html</Path>
     <Anchor>ae8daf80f0cb4604411fbb1e851519ed9</Anchor>
+    <DeclaredIn>RectangularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>COLOURBAR_MAX_X</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularMatFactory_8hpp.html</Path>
+    <Anchor>a2c1bd6167e8959f46b9935db39accfbc</Anchor>
+    <DeclaredIn>RectangularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>COLOURBAR_MAX_Y</Name>
+      <APILanguage>c</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>RectangularMatFactory_8hpp.html</Path>
+    <Anchor>a00e6262953121bdb5e213e17dc43ee95</Anchor>
     <DeclaredIn>RectangularMatFactory.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2197,7 +2237,7 @@
       <Type>func</Type>
     </TokenIdentifier>
     <Path>SimulationDetectClusters_8cpp.html</Path>
-    <Anchor>af1d292ef1d32be2d09b845ce1b135875</Anchor>
+    <Anchor>aa56ee69482577dad35ebe8ff014ca517</Anchor>
     <DeclaredIn>SimulationDetectClusters.cpp</DeclaredIn>
   </Token>
   <Token>
@@ -4549,7 +4589,7 @@
       <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>a2a8681ad436fa29188794ff587444e98</Anchor>
+    <Anchor>a5ec24468129dfa9b6a7f38e11a78c69b</Anchor>
     <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4571,7 +4611,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a35f1d8404aadce0f14d16f6a0f3d2af8</Anchor>
+    <Anchor>a2b5da40fb5e977f5bbfe046feeb1b124</Anchor>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4771,7 +4811,7 @@
       <Scope>multiscale::analysis::SimulationClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-    <Anchor>ac6efeb562212300dfd7e08936027b2b6</Anchor>
+    <Anchor>a2252829af367a55af95bee3cf814b87e</Anchor>
     <Abstract>Compute the pile up degree at the given position.</Abstract>
     <DeclaredIn>SimulationClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -4978,6 +5018,30 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>aa45fe0a4a548b4d44407ee7f346e66d3</Anchor>
+    <Abstract>Convert the entities to the format required by the DBSCAN class.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>convertNonPiledUpEntities</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a4b42b3de7411fe02c7871064497feef1</Anchor>
+    <Abstract>Convert the non pile up entities to the format required by the DBSCAN class.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>convertPiledUpEntities</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a22ba21c341448af455111e718b058391</Anchor>
     <Abstract>Convert the entities to the required format by the DBSCAN class.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -5084,6 +5148,16 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>a6f6cfa50cf21ac400d41d6c6f2112bc9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>entityPileupDegree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aaa93a4b3a5a3c4279aa434669093ac40</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5631,7 +5705,7 @@
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a35f1d8404aadce0f14d16f6a0f3d2af8</Anchor>
+    <Anchor>a2b5da40fb5e977f5bbfe046feeb1b124</Anchor>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5844,6 +5918,30 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>aa45fe0a4a548b4d44407ee7f346e66d3</Anchor>
+    <Abstract>Convert the entities to the format required by the DBSCAN class.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>convertNonPiledUpEntities</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a4b42b3de7411fe02c7871064497feef1</Anchor>
+    <Abstract>Convert the non pile up entities to the format required by the DBSCAN class.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>convertPiledUpEntities</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a22ba21c341448af455111e718b058391</Anchor>
     <Abstract>Convert the entities to the required format by the DBSCAN class.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
@@ -6154,6 +6252,16 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>a6f6cfa50cf21ac400d41d6c6f2112bc9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>entityPileupDegree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>aaa93a4b3a5a3c4279aa434669093ac40</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6847,7 +6955,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>ad6060a0c40a726d7552fe3c0b9d2c1b7</Anchor>
+    <Anchor>a3f5297ec841b197242f8c20d97051bc1</Anchor>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6880,7 +6988,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>a2b90f7783c4e3aa5836964bcc1cf0796</Anchor>
+    <Anchor>a9984244109e4212e310b0418e894a8c1</Anchor>
     <Abstract>Get the degree of pile up.</Abstract>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
@@ -6975,7 +7083,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>a32f5d649c19ed306f8d409041b15aeb2</Anchor>
+    <Anchor>abd9a706945c0f4c82686adc5e33827f3</Anchor>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6986,7 +7094,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>ac279c818f9a4e88c18428716c486038e</Anchor>
+    <Anchor>a61d3e4defa5a2703ce0ccb3d457f6ba1</Anchor>
     <Abstract>Check if the provided degree of pile up, area, centre and contour points are valid.</Abstract>
     <DeclaredIn>Entity.hpp</DeclaredIn>
   </Token>
@@ -6998,7 +7106,7 @@
       <Scope>multiscale::analysis::Entity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-    <Anchor>a17d0b2b6985fbefdef35f8cb0f5bd42b</Anchor>
+    <Anchor>aae78866cef9fcb7bd2e858570f47d082</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -7073,6 +7181,18 @@
     <Path>classmultiscale_1_1analysis_1_1CircularMatFactory.html</Path>
     <Anchor>a8d5fccf946065b982bfa700b9e47b1f5</Anchor>
     <Abstract>Create a Mat object from the image file obtained from the CircularGeometryViewer.</Abstract>
+    <DeclaredIn>CircularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>maxColourBarIntensityFromViewerImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::CircularMatFactory</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1CircularMatFactory.html</Path>
+    <Anchor>aea41720f6adfb983bb94ea0a45789874</Anchor>
+    <Abstract>Get the maximum grayscale intensity of the colour bar in the image.</Abstract>
     <DeclaredIn>CircularMatFactory.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -7246,6 +7366,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>maxColourBarIntensityFromViewerImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RectangularMatFactory</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RectangularMatFactory.html</Path>
+    <Anchor>a9255b11748b4c48d76c769258d6b6ee0</Anchor>
+    <Abstract>Get the maximum grayscale intensity of the colour bar in the image.</Abstract>
+    <DeclaredIn>RectangularMatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>MatFactory</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -7411,6 +7543,18 @@
     <Path>classmultiscale_1_1analysis_1_1MatFactory.html</Path>
     <Anchor>a719ca9ac925ee182c1d5df1b0b029394</Anchor>
     <Abstract>Create a Mat object from the image file obtained from Rectangular/CircularGeometryViewer.</Abstract>
+    <DeclaredIn>MatFactory.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>maxColourBarIntensityFromViewerImage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::MatFactory</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1MatFactory.html</Path>
+    <Anchor>a041b354357794476a2108e3f71deadc8</Anchor>
+    <Abstract>Get the maximum grayscale intensity of the colour bar in the image.</Abstract>
     <DeclaredIn>MatFactory.hpp</DeclaredIn>
   </Token>
   <Token>

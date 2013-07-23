@@ -28,6 +28,14 @@ Mat CircularMatFactory::createFromViewerImage(const string &inputFile) {
     return circularImage;
 }
 
+double CircularMatFactory::maxColourBarIntensityFromViewerImage(const string &inputFile) {
+    Mat image = imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
+
+    isValidViewerImage(image);
+
+    return (double)image.at<uchar>(Point(COLOURBAR_MAX_X, COLOURBAR_MAX_Y));
+}
+
 unsigned char * CircularMatFactory::processConcentrations(ifstream& fin) {
     throw ERR_UNIMPLEMENTED_METHOD;
 }

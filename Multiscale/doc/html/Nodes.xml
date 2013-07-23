@@ -84,7 +84,7 @@
                  <Node>
                   <Name>SimulationClusterDetector</Name>
                   <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-                  <Anchor>a2a8681ad436fa29188794ff587444e98</Anchor>
+                  <Anchor>a5ec24468129dfa9b6a7f38e11a78c69b</Anchor>
                  </Node>
                  <Node>
                   <Name>~SimulationClusterDetector</Name>
@@ -94,7 +94,7 @@
                  <Node>
                   <Name>computePileUpDegreeAtPosition</Name>
                   <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-                  <Anchor>ac6efeb562212300dfd7e08936027b2b6</Anchor>
+                  <Anchor>a2252829af367a55af95bee3cf814b87e</Anchor>
                  </Node>
                  <Node>
                   <Name>detectEntitiesInImage</Name>
@@ -406,7 +406,7 @@
                  <Node>
                   <Name>ClusterDetector</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a35f1d8404aadce0f14d16f6a0f3d2af8</Anchor>
+                  <Anchor>a2b5da40fb5e977f5bbfe046feeb1b124</Anchor>
                  </Node>
                  <Node>
                   <Name>~ClusterDetector</Name>
@@ -447,6 +447,16 @@
                   <Name>convertEpsValue</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>afccb86bfb93df00fff8408faea7a2651</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>convertNonPiledUpEntities</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>a4b42b3de7411fe02c7871064497feef1</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>convertPiledUpEntities</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>a22ba21c341448af455111e718b058391</Anchor>
                  </Node>
                  <Node>
                   <Name>createDetectorSpecificTrackbars</Name>
@@ -527,6 +537,11 @@
                   <Name>clusters</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>aa81a8649bc743389c2fc1919d47eb5b3</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>entityPileupDegree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>aaa93a4b3a5a3c4279aa434669093ac40</Anchor>
                  </Node>
                  <Node>
                   <Name>eps</Name>
@@ -735,7 +750,7 @@
                  <Node>
                   <Name>Entity</Name>
                   <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                  <Anchor>ad6060a0c40a726d7552fe3c0b9d2c1b7</Anchor>
+                  <Anchor>a3f5297ec841b197242f8c20d97051bc1</Anchor>
                  </Node>
                  <Node>
                   <Name>Entity</Name>
@@ -750,7 +765,7 @@
                  <Node>
                   <Name>areValid</Name>
                   <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                  <Anchor>ac279c818f9a4e88c18428716c486038e</Anchor>
+                  <Anchor>a61d3e4defa5a2703ce0ccb3d457f6ba1</Anchor>
                  </Node>
                  <Node>
                   <Name>distanceTo</Name>
@@ -780,7 +795,7 @@
                  <Node>
                   <Name>getPileUpDegree</Name>
                   <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                  <Anchor>a2b90f7783c4e3aa5836964bcc1cf0796</Anchor>
+                  <Anchor>a9984244109e4212e310b0418e894a8c1</Anchor>
                  </Node>
                  <Node>
                   <Name>toString</Name>
@@ -790,7 +805,7 @@
                  <Node>
                   <Name>validateInputValues</Name>
                   <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                  <Anchor>a32f5d649c19ed306f8d409041b15aeb2</Anchor>
+                  <Anchor>abd9a706945c0f4c82686adc5e33827f3</Anchor>
                  </Node>
                  <Node>
                   <Name>area</Name>
@@ -810,7 +825,7 @@
                  <Node>
                   <Name>pileUpDegree</Name>
                   <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                  <Anchor>a17d0b2b6985fbefdef35f8cb0f5bd42b</Anchor>
+                  <Anchor>aae78866cef9fcb7bd2e858570f47d082</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -844,6 +859,11 @@
                   <Anchor>a08e407b35a2d314c1aa17f21040ff23a</Anchor>
                  </Node>
                  <Node>
+                  <Name>maxColourBarIntensityFromViewerImage</Name>
+                  <Path>classmultiscale_1_1analysis_1_1CircularMatFactory.html</Path>
+                  <Anchor>aea41720f6adfb983bb94ea0a45789874</Anchor>
+                 </Node>
+                 <Node>
                   <Name>processConcentrations</Name>
                   <Path>classmultiscale_1_1analysis_1_1CircularMatFactory.html</Path>
                   <Anchor>a8fe40d38b896f440e17b5514462d1e8a</Anchor>
@@ -873,6 +893,11 @@
                   <Name>isValidViewerImage</Name>
                   <Path>classmultiscale_1_1analysis_1_1RectangularMatFactory.html</Path>
                   <Anchor>a398913bbfa8ca9d80cb630c29a37a135</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>maxColourBarIntensityFromViewerImage</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RectangularMatFactory.html</Path>
+                  <Anchor>a9255b11748b4c48d76c769258d6b6ee0</Anchor>
                  </Node>
                  <Node>
                   <Name>processConcentrations</Name>
@@ -919,6 +944,11 @@
                   <Name>isValidViewerImage</Name>
                   <Path>classmultiscale_1_1analysis_1_1MatFactory.html</Path>
                   <Anchor>ad6acdd120b128eb9fb502fca23a7de69</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>maxColourBarIntensityFromViewerImage</Name>
+                  <Path>classmultiscale_1_1analysis_1_1MatFactory.html</Path>
+                  <Anchor>a041b354357794476a2108e3f71deadc8</Anchor>
                  </Node>
                  <Node>
                   <Name>processConcentrations</Name>
@@ -2572,7 +2602,7 @@
                          <Node>
                           <Name>SimulationClusterDetector</Name>
                           <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-                          <Anchor>a2a8681ad436fa29188794ff587444e98</Anchor>
+                          <Anchor>a5ec24468129dfa9b6a7f38e11a78c69b</Anchor>
                          </Node>
                          <Node>
                           <Name>~SimulationClusterDetector</Name>
@@ -2582,7 +2612,7 @@
                          <Node>
                           <Name>computePileUpDegreeAtPosition</Name>
                           <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-                          <Anchor>ac6efeb562212300dfd7e08936027b2b6</Anchor>
+                          <Anchor>a2252829af367a55af95bee3cf814b87e</Anchor>
                          </Node>
                          <Node>
                           <Name>detectEntitiesInImage</Name>
@@ -2738,11 +2768,26 @@
                           <Anchor>a08e407b35a2d314c1aa17f21040ff23a</Anchor>
                          </Node>
                          <Node>
+                          <Name>maxColourBarIntensityFromViewerImage</Name>
+                          <Path>classmultiscale_1_1analysis_1_1CircularMatFactory.html</Path>
+                          <Anchor>aea41720f6adfb983bb94ea0a45789874</Anchor>
+                         </Node>
+                         <Node>
                           <Name>processConcentrations</Name>
                           <Path>classmultiscale_1_1analysis_1_1CircularMatFactory.html</Path>
                           <Anchor>a8fe40d38b896f440e17b5514462d1e8a</Anchor>
                          </Node>
                         </Subnodes>
+                       </Node>
+                       <Node>
+                        <Name>COLOURBAR_MAX_X</Name>
+                        <Path>CircularMatFactory_8hpp.html</Path>
+                        <Anchor>a2c1bd6167e8959f46b9935db39accfbc</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>COLOURBAR_MAX_Y</Name>
+                        <Path>CircularMatFactory_8hpp.html</Path>
+                        <Anchor>a00e6262953121bdb5e213e17dc43ee95</Anchor>
                        </Node>
                        <Node>
                         <Name>ERR_UNIMPLEMENTED_METHOD</Name>
@@ -2810,11 +2855,26 @@
                           <Anchor>a398913bbfa8ca9d80cb630c29a37a135</Anchor>
                          </Node>
                          <Node>
+                          <Name>maxColourBarIntensityFromViewerImage</Name>
+                          <Path>classmultiscale_1_1analysis_1_1RectangularMatFactory.html</Path>
+                          <Anchor>a9255b11748b4c48d76c769258d6b6ee0</Anchor>
+                         </Node>
+                         <Node>
                           <Name>processConcentrations</Name>
                           <Path>classmultiscale_1_1analysis_1_1RectangularMatFactory.html</Path>
                           <Anchor>a6cc84a4eadbab5046cb6eacba64f5ae4</Anchor>
                          </Node>
                         </Subnodes>
+                       </Node>
+                       <Node>
+                        <Name>COLOURBAR_MAX_X</Name>
+                        <Path>RectangularMatFactory_8hpp.html</Path>
+                        <Anchor>a2c1bd6167e8959f46b9935db39accfbc</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>COLOURBAR_MAX_Y</Name>
+                        <Path>RectangularMatFactory_8hpp.html</Path>
+                        <Anchor>a00e6262953121bdb5e213e17dc43ee95</Anchor>
                        </Node>
                        <Node>
                         <Name>ERR_CONC</Name>
@@ -3118,7 +3178,7 @@
                        <Node>
                         <Name>ClusterDetector</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                        <Anchor>a35f1d8404aadce0f14d16f6a0f3d2af8</Anchor>
+                        <Anchor>a2b5da40fb5e977f5bbfe046feeb1b124</Anchor>
                        </Node>
                        <Node>
                         <Name>~ClusterDetector</Name>
@@ -3159,6 +3219,16 @@
                         <Name>convertEpsValue</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                         <Anchor>afccb86bfb93df00fff8408faea7a2651</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>convertNonPiledUpEntities</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>a4b42b3de7411fe02c7871064497feef1</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>convertPiledUpEntities</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>a22ba21c341448af455111e718b058391</Anchor>
                        </Node>
                        <Node>
                         <Name>createDetectorSpecificTrackbars</Name>
@@ -3239,6 +3309,11 @@
                         <Name>clusters</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                         <Anchor>aa81a8649bc743389c2fc1919d47eb5b3</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>entityPileupDegree</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>aaa93a4b3a5a3c4279aa434669093ac40</Anchor>
                        </Node>
                        <Node>
                         <Name>eps</Name>
@@ -3576,7 +3651,7 @@
                        <Node>
                         <Name>Entity</Name>
                         <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                        <Anchor>ad6060a0c40a726d7552fe3c0b9d2c1b7</Anchor>
+                        <Anchor>a3f5297ec841b197242f8c20d97051bc1</Anchor>
                        </Node>
                        <Node>
                         <Name>Entity</Name>
@@ -3591,7 +3666,7 @@
                        <Node>
                         <Name>areValid</Name>
                         <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                        <Anchor>ac279c818f9a4e88c18428716c486038e</Anchor>
+                        <Anchor>a61d3e4defa5a2703ce0ccb3d457f6ba1</Anchor>
                        </Node>
                        <Node>
                         <Name>distanceTo</Name>
@@ -3621,7 +3696,7 @@
                        <Node>
                         <Name>getPileUpDegree</Name>
                         <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                        <Anchor>a2b90f7783c4e3aa5836964bcc1cf0796</Anchor>
+                        <Anchor>a9984244109e4212e310b0418e894a8c1</Anchor>
                        </Node>
                        <Node>
                         <Name>toString</Name>
@@ -3631,7 +3706,7 @@
                        <Node>
                         <Name>validateInputValues</Name>
                         <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                        <Anchor>a32f5d649c19ed306f8d409041b15aeb2</Anchor>
+                        <Anchor>abd9a706945c0f4c82686adc5e33827f3</Anchor>
                        </Node>
                        <Node>
                         <Name>area</Name>
@@ -3651,7 +3726,7 @@
                        <Node>
                         <Name>pileUpDegree</Name>
                         <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
-                        <Anchor>a17d0b2b6985fbefdef35f8cb0f5bd42b</Anchor>
+                        <Anchor>aae78866cef9fcb7bd2e858570f47d082</Anchor>
                        </Node>
                       </Subnodes>
                      </Node>
@@ -3714,6 +3789,11 @@
                         <Name>isValidViewerImage</Name>
                         <Path>classmultiscale_1_1analysis_1_1MatFactory.html</Path>
                         <Anchor>ad6acdd120b128eb9fb502fca23a7de69</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>maxColourBarIntensityFromViewerImage</Name>
+                        <Path>classmultiscale_1_1analysis_1_1MatFactory.html</Path>
+                        <Anchor>a041b354357794476a2108e3f71deadc8</Anchor>
                        </Node>
                        <Node>
                         <Name>processConcentrations</Name>
@@ -6134,7 +6214,7 @@
                      <Node>
                       <Name>areValidParameters</Name>
                       <Path>SimulationDetectClusters_8cpp.html</Path>
-                      <Anchor>af1d292ef1d32be2d09b845ce1b135875</Anchor>
+                      <Anchor>aa56ee69482577dad35ebe8ff014ca517</Anchor>
                      </Node>
                      <Node>
                       <Name>initArgumentsConfig</Name>

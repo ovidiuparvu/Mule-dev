@@ -38,6 +38,9 @@ namespace multiscale {
                 double clusterednessIndex;      /*!< Index of clusteredness for all clusters */
                 double avgPileUpDegree;         /*!< Average pile up degree of all clusters */
 
+                double entityPileupDegree;      /*!< The pile up degree (intensity) of a grid position occupied by only
+                                                     one entity*/
+
                 int eps;                        /*!< DBSCAN algorithm parameter for specifying the maximum radius
                                                      of the neighbourhood */
                 int minPoints;                  /*!< DBSCAN algorithm parameter for specifying the minimum number
@@ -47,7 +50,12 @@ namespace multiscale {
 
             public:
 
-                ClusterDetector(bool debugMode = false);
+                /*!
+                 * \param debugMode             Flag indicating if detector should run in debug mode or not
+                 * \param maxPileupNumber       The maximum number of entities which can occupy a grid position at the same time
+                 * \param maxPileupIntensity    The grayscale intensity of a maximally piled up grid position
+                 */
+                ClusterDetector(int maxPileupNumber, double maxPileupIntensity, bool debugMode = false);
                 virtual ~ClusterDetector();
 
                 //! Get the value of the clustering algorithm parameter eps
@@ -110,11 +118,25 @@ namespace multiscale {
                  */
                 void detectClusters(const vector<Entity> &entities, vector<int> &clusterIndexes, int &nrOfClusters);
 
-                //! Convert the entities to the required format by the DBSCAN class
+                //! Convert the entities to the format required by the DBSCAN class
                 /*!
                  * \param entities Entities detected in the image
                  */
                 vector<shared_ptr<DataPoint>> convertEntities(const vector<Entity> &entities);
+
+                //! Convert the non pile up entities to the format required by the DBSCAN class
+                /*!
+                 * \param entities Entities detected in the image
+                 * \param dataPoints Collection of DataPoint instances required by the DBSCAN class
+                 */
+                void convertNonPiledUpEntities(const vector<Entity> &entities, vector<shared_ptr<DataPoint> > &dataPoints);
+
+                //! Convert the entities to the required format by the DBSCAN class
+                /*!
+                 * \param entities Entities detected in the image
+                 * \param dataPoints Collection of DataPoint instances required by the DBSCAN class
+                 */
+                void convertPiledUpEntities(const vector<Entity> &entities, vector<shared_ptr<DataPoint> > &dataPoints);
 
                 //! Add the entities to the clusters as indicated by the clusterIndexes parameter
                 /*! Add the entities to the clusters as indicated by the clusterIndexes parameter

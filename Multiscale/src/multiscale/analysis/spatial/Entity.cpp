@@ -5,7 +5,7 @@
 using namespace multiscale::analysis;
 
 
-Entity::Entity(double pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
+Entity::Entity(unsigned int pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
     validateInputValues(pileUpDegree, area, centre, contourPoints);
 
     this->pileUpDegree = pileUpDegree;
@@ -25,7 +25,7 @@ Entity::Entity(const Entity &entity) {
 
 Entity::~Entity() {}
 
-double Entity::getPileUpDegree() const {
+unsigned int Entity::getPileUpDegree() const {
     return pileUpDegree;
 }
 
@@ -42,7 +42,7 @@ vector<Point2f> Entity::getContourPoints() const {
 }
 
 string Entity::toString() {
-    return StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
+    return StringManipulator::toString<unsigned int>(pileUpDegree) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.y);
 }
@@ -57,12 +57,12 @@ double Entity::distanceTo(const Entity &entity) {
     return Geometry2D::distanceBtwPoints(centre, entity.centre);
 }
 
-void Entity::validateInputValues(double pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
+void Entity::validateInputValues(unsigned int pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
     if (!areValid(pileUpDegree, area, centre, contourPoints))
         throw ERR_INPUT;
 }
 
-bool Entity::areValid(double pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
+bool Entity::areValid(unsigned int pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
     for (const Point2f &point: contourPoints) {
         if ((point.x < 0) || (point.y < 0)) {
             return false;

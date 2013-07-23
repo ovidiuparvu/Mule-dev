@@ -37,8 +37,17 @@ namespace multiscale {
 
             public:
 
+                /*!
+                 * \param height                Height of the grid used in the simulation
+                 * \param width                 Width of the grid used in the simulation
+                 * \param debugMode             Flag indicating if detector should run in debug mode or not
+                 * \param maxPileupNumber       The maximum number of entities which can occupy a grid position at the same time
+                 * \param maxPileupIntensity    The grayscale intensity of a maximally piled up grid position
+                 */
                 SimulationClusterDetector(unsigned int height,
                                           unsigned int width,
+                                          int maxPileupNumber,
+                                          double maxPileupIntensity,
                                           bool debugMode = false
                                           );
                 ~SimulationClusterDetector();
@@ -84,7 +93,7 @@ namespace multiscale {
                  * \param x Coordinate for Ox axis
                  * \param y Coordinate for Oy axis
                  */
-                double computePileUpDegreeAtPosition(int x, int y);
+                unsigned int computePileUpDegreeAtPosition(int x, int y);
 
                 //! Dsiaply clusters on image
                 void outputResultsToImage() override;

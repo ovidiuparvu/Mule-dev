@@ -17,6 +17,9 @@ using namespace std;
 #define INPUT_IMG_WIDTH     2048
 #define INPUT_IMG_HEIGHT    1572
 
+#define COLOURBAR_MAX_X     1775
+#define COLOURBAR_MAX_Y     56
+
 
 namespace multiscale {
 
@@ -37,6 +40,12 @@ namespace multiscale {
                  *  \param inputFile The path to the image file
                  */
                 Mat createFromViewerImage(const string &inputFile) override;
+
+                //! Get the maximum grayscale intensity of the colour bar in the image
+                /*!
+                 * \param inputFile The path to the image file
+                 */
+                double maxColourBarIntensityFromViewerImage(const string &inputFile) override;
 
             protected:
 
