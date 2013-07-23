@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Defining the constants for the script
+MOVIE_FRAME_RATE=1;
+MOVIE_FLAGS="-same_quant -r ${MOVIE_FRAME_RATE}"
+
 if [ $# -eq 4 ];
 then
     inputFolder=$1;
@@ -7,8 +11,17 @@ then
     height=$3;
     width=$4;
 
-    # Create the output folder
+    # Define the movie output path
+    movieOutputFolder=${outputFolder}/movie;
+
+    # Define the basename of the images without numeric index at the end
+    imageName=`ls ${inputFolder}/*.png | head -n1`;
+    imageBasename=`basename ${imageName}`;
+    imageBasenameRoot=`echo ${imageBasename} | rev | cut -d'_' -f2- | rev`;
+    
+    # Create the output folders
     mkdir -p ${outputFolder}
+    mkdir -p ${movieOutputFolder}
 
     # Start the timer for measuring the total execution time
     startTime=$(date +%s.%N);
@@ -18,9 +31,15 @@ then
 
     # Run the cluster detection procedure for each image in parallel
     ls ${inputFolder}/*.png | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${outputFolder}/{/.} --height=${height} --width=${width}
+
+    # Inform user of the next action
+    echo "Generating the movie from the images...";
+    
+    # Generate the movie
+    avconv ${MOVIE_FLAGS} -f image2 -i ${outputFolder}/${imageBasenameRoot}_%d.png ${movieOutputFolder}/${imageBasenameRoot}.mp4
     
     # Print end message
-    echo "The cluster detection procedure(s) ended successfully.";
+    echo "The movie was generated successfully.";
 
     # End the timer for measuring the total execution time
     endTime=$(date +%s.%N);

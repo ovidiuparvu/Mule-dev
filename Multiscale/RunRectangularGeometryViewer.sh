@@ -22,6 +22,7 @@ IMG_FOLDER=${OUT_FOLDER}/img;
 #   4. The number of columns/width (D2)
 # OPTIONAL PARAMETERS:
 #   5. The index of the selected concentration when the number of concentrations for each position is greater than 1.
+#   6. Use log scaling or not
 if [ $# -lt 4 ] || [ $# -gt 6 ]; 
 then
     echo "Incorrect number of parameters provided."
