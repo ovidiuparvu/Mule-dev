@@ -38,7 +38,7 @@ po::variables_map initArgumentsConfig(po::options_description &usageDescription,
                                   ("width,w", po::value<unsigned int>(), "provide the width of the grid (number of columns)\n")
                                   ("nr-concentrations-position,p", po::value<unsigned int>()->default_value(1), "provide the number of concentrations for each position\n")
                                   ("selected-concentration-index,x", po::value<unsigned int>()->default_value(0), "provide the index of the concentration considered as numerator when the number of concentrations for each position is greater than 1\n")
-                                  ("use-log-scaling,s", po::value<bool>()->default_value(true), "use log scaling (1) for concentrations or not (0)\n")
+                                  ("use-log-scaling,s", po::value<bool>()->default_value(false), "use log scaling (1) for concentrations or not (0)\n")
                                   ("lexicographic-iterator,l", "use lexicographic number iterator for numbering the columns of the .csv file\n");
 
     po::variables_map vm;
@@ -142,7 +142,7 @@ int main(int argc, char** argv) {
 
     unsigned int selectedConcentrationIndex = 0;
 
-    bool useLogScaling = true;
+    bool useLogScaling = false;
 
     NumberIteratorType numberIteratorType = multiscale::STANDARD;
 

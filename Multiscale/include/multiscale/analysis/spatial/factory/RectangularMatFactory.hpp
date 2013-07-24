@@ -7,9 +7,9 @@ using namespace std;
 
 #define ERR_CONC    "All concentrations have to be between 0 and 1."
 
-#define ROI_START_X         320
+#define ROI_START_X         321
 #define ROI_START_Y         318
-#define ROI_WIDTH           1408
+#define ROI_WIDTH           1407
 #define ROI_HEIGHT          1358
 
 #define INPUT_IMG_WIDTH     2048
