@@ -20,6 +20,7 @@
 #include <boost/program_options.hpp>
 
 #include <iostream>
+#include <typeinfo>
 
 using namespace std;
 using namespace multiscale::analysis;

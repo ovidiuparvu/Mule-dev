@@ -157,9 +157,7 @@ namespace multiscale {
                 void analyseClusters(vector<Cluster> &clusters);
 
                 //! Compute the clusteredness index for all the entities detected in the image
-                /*! Compute the clusteredness index for all the entities detected in the image using X index
-                 *
-                 * TODO: Pick one of the indexes in the literature to compute the value of the clusteredness index
+                /*! Compute the clusteredness index for all the entities detected in the image using Silhouette cluster validity index
                  *
                  *  \param clusters Collection of clusters, each one with the updated measures
                  */

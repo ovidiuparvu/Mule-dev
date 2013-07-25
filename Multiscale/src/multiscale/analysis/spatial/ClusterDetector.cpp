@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/ClusterDetector.hpp"
 #include "multiscale/analysis/spatial/DBSCAN.hpp"
+#include "multiscale/analysis/spatial/Silhouette.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
 #include "multiscale/util/RGBColourGenerator.hpp"
 
@@ -128,8 +129,7 @@ void ClusterDetector::analyseClusters(vector<Cluster> &clusters) {
 }
 
 double ClusterDetector::computeClusterednessIndex(const vector<Cluster> &clusters) {
-    // TODO: Unimplemented method
-    return 1.5;
+    return Silhouette::computeOverallAverageMeasure(clusters);
 }
 
 double ClusterDetector::computeAveragePileUpDegree(vector<Cluster> &clusters) {
