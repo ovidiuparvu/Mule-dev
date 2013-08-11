@@ -10,7 +10,7 @@ using namespace multiscale;
 #define RADIUS                  1
 #define WIN_MIN_AREA_TRIANGLE   "Minimum area enclosing triangle"
 #define NR_RAND_POLYGONS        50
-#define MAX_POLYGON_POINTS      10
+#define MAX_POLYGON_POINTS      100
 #define POLYGON_POINT_X_MAX     50
 #define POLYGON_POINT_Y_MAX     50
 
@@ -138,19 +138,20 @@ void testMinimumAreaEnclosingTriangle() {
 //    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(2, 15), Point2f(2, 25), Point2f(5, 49), Point2f(24, 48), Point2f(48, 41), Point2f(49, 18), Point2f(49, 4), Point2f(47, 1), Point2f(10, 5)});
 //    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(0, 26), Point2f(4, 41), Point2f(6, 45), Point2f(14, 49), Point2f(32, 48), Point2f(38, 46), Point2f(49, 42), Point2f(49, 35), Point2f(45, 17), Point2f(41, 2), Point2f(38, 0), Point2f(8, 0), Point2f(2, 9)});
 //    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(7, 21), Point2f(10, 41), Point2f(38, 29), Point2f(22, 3)});
-
+//
 //    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(0, 28), Point2f(1, 40), Point2f(8, 46), Point2f(45, 48), Point2f(46, 26), Point2f(44, 0), Point2f(39, 0), Point2f(17, 1), Point2f(7, 8), Point2f(2, 22)});
-    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(8, 30), Point2f(8, 34), Point2f(47, 39), Point2f(44, 14), Point2f(16, 24)});
+//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(8, 30), Point2f(8, 34), Point2f(47, 39), Point2f(44, 14), Point2f(16, 24)});
 //    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(4, 47), Point2f(44, 43), Point2f(49, 31), Point2f(31, 23)});
+//
+//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(0, 19), Point2f(0, 26), Point2f(34, 46), Point2f(41, 32), Point2f(44, 14), Point2f(6, 13)});
+//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(0, 7), Point2f(0, 40), Point2f(21, 44), Point2f(27, 5)});
+//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(4, 17), Point2f(22, 49), Point2f(23, 24), Point2f(18, 3)});
+//
+//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(14, 1), Point2f(17, 28), Point2f(38, 35), Point2f(26, 1)});
+//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(8, 48), Point2f(35, 31), Point2f(39, 24), Point2f(21, 29), Point2f(11, 42)});
+//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(0, 26), Point2f(37, 30), Point2f(38, 19), Point2f(34, 11), Point2f(7, 8), Point2f(3, 12)});
 
-//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(7, 21), Point2f(10, 41), Point2f(38, 29), Point2f(22, 3)});
-//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(7, 21), Point2f(10, 41), Point2f(38, 29), Point2f(22, 3)});
-//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(7, 21), Point2f(10, 41), Point2f(38, 29), Point2f(22, 3)});
-//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(7, 21), Point2f(10, 41), Point2f(38, 29), Point2f(22, 3)});
-//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(7, 21), Point2f(10, 41), Point2f(38, 29), Point2f(22, 3)});
-//    testMinimumAreaEnclosingTriangle(vector<Point2f>{Point2f(7, 21), Point2f(10, 41), Point2f(38, 29), Point2f(22, 3)});
-
-//    testMinimumAreaEnclosingTriangleUsingRandomPolygons();
+    testMinimumAreaEnclosingTriangleUsingRandomPolygons();
 }
 
 // Test if an angle lies between two other angles

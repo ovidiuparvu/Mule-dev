@@ -3,7 +3,7 @@
 using namespace multiscale;
 
 
-double Numeric::epsilon = 1E-7;
+double Numeric::epsilon = 1E-5;
 
 
 bool Numeric::greaterOrEqual(double number1, double number2) {
