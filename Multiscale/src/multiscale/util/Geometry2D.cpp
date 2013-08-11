@@ -138,6 +138,18 @@ void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Po
     }
 }
 
+bool Geometry2D::areOnTheSameSideOfLine(const Point2f &p1, const Point2f &p2, const Point2f &a, const Point2f &b) {
+    double a1, b1, c1;
+
+    lineEquationDeterminedByPoints(a, b, a1, b1, c1);
+
+    double p1OnLine = (a1 * p1.x) + (b1 * p1.y) + c1;
+    double p2OnLine = (a1 * p2.x) + (b1 * p2.y) + c1;
+
+    return (Numeric::sign(p1OnLine) == Numeric::sign(p2OnLine));
+}
+
+
 void Geometry2D::lineEquationDeterminedByPoints(const Point2f &p, const Point2f &q, double &a, double &b, double &c) {
     a = q.y - p.y;
     b = p.x - q.x;
@@ -166,11 +178,12 @@ bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point 
 }
 
 bool Geometry2D::areIdenticalLines(double a1, double b1, double c1, double a2, double b2, double c2) {
-    double a1OverA2 = a1 / a2;
-    double b1OverB2 = b1 / b2;
-    double c1OverC2 = c1 / c2;
+    double a1B2 = a1 * b2;
+    double a2B1 = a2 * b1;
+    double b1C2 = b1 * c2;
+    double b2C1 = b2 * c1;
 
-    return ((Numeric::almostEqual(a1OverA2, b1OverB2)) && (Numeric::almostEqual(b1OverB2, c1OverC2)));
+    return ((Numeric::almostEqual(a1B2, a2B1)) && (Numeric::almostEqual(b1C2, b2C1)));
 }
 
 bool Geometry2D:: areIdenticalLines(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2) {

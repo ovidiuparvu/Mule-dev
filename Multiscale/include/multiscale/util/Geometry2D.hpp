@@ -116,6 +116,15 @@ namespace multiscale {
             static void orthogonalLineToAnotherLineEdgePoints(const Point &a1, const Point &b1, Point &a2,
                                                               Point &b2, int nrOfRows, int nrOfCols);
 
+            //! Check if p1 and p2 are on the same side of the line determined by points a and b
+            /*!
+             * \param p1    Point p1
+             * \param p2    Point p2
+             * \param a     First point for determining line
+             * \param b     Second point for determining line
+             */
+            static bool areOnTheSameSideOfLine(const Point2f &p1, const Point2f &p2, const Point2f &a, const Point2f &b);
+
             //! Get the values of "a", "b" and "c" of the line equation ax + by + c = 0 knowing that point "p" and "q" are on the line
             /*!
              * a = q.y - p.y

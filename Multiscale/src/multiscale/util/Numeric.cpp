@@ -21,3 +21,7 @@ bool Numeric::almostEqual(double number1, double number2) {
 double Numeric::maximum(double number1, double number2, double number3) {
     return max(max(number1, number2), number3);
 }
+
+int Numeric::sign(double number) {
+    return (number > 0) ? 1 : ((number < 0) ? -1 : 0);
+}

@@ -285,11 +285,8 @@ bool MinimumAreaEnclosingTriangle::gamma(unsigned int polygonPointIndex, Point2f
         return false;
     }
 
-    // Select the point which is closer to polygon[a]
-    double distanceToIntersectionPoint1 = Geometry2D::distanceBtwPoints(intersectionPoint1, polygon[a]);
-    double distanceToIntersectionPoint2 = Geometry2D::distanceBtwPoints(intersectionPoint2, polygon[a]);
-
-    if (distanceToIntersectionPoint1 < distanceToIntersectionPoint2) {
+    // Select the point which is on the same side of line C as the polygon
+    if (Geometry2D::areOnTheSameSideOfLine(intersectionPoint1, polygon[successor(c)], polygon[c], polygon[predecessor(c)])) {
         gammaPoint = intersectionPoint1;
     } else {
         gammaPoint = intersectionPoint2;
@@ -307,11 +304,8 @@ Point2f MinimumAreaEnclosingTriangle::findVertexCOnSideB() {
         throw ERR_VERTEX_C_ON_SIDE_B;
     }
 
-    // Select the point which is closer to polygon[b]
-    double distanceToIntersectionPoint1 = Geometry2D::distanceBtwPoints(intersectionPoint1, polygon[b]);
-    double distanceToIntersectionPoint2 = Geometry2D::distanceBtwPoints(intersectionPoint2, polygon[b]);
-
-    if (distanceToIntersectionPoint1 < distanceToIntersectionPoint2) {
+    // Select the point which is on the same side of line C as the polygon
+    if (Geometry2D::areOnTheSameSideOfLine(intersectionPoint1, polygon[successor(c)], polygon[c], polygon[predecessor(c)])) {
         return intersectionPoint1;
     } else {
         return intersectionPoint2;

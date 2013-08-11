@@ -38,6 +38,15 @@ namespace multiscale {
             //! Return the maximum of the provided numbers
             static double maximum(double number1, double number2, double number3);
 
+            //! Return the sign of the number
+            /*!
+             * The sign function returns:
+             *  -1, if number < 0
+             *  +1, if number > 0
+             *  0, otherwise
+             */
+            static int sign(double number);
+
     };
 
 };
