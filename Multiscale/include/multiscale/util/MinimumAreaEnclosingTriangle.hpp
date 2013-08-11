@@ -159,10 +159,10 @@ namespace multiscale {
 
             //! Check if/where the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon
             /*!
-             * \param gammaPoint        Gamma(p)
-             * \param polygonPointIndex Index of the polygon point which is considered when determining the line
+             * \param angleOfGammaAndPoint  Angle between gammaPoint and polygon[polygonPointIndex]
+             * \param polygonPointIndex     Index of the polygon point which is considered when determining the line
              */
-            static unsigned int intersects(const Point2f &gammaPoint, unsigned int polygonPointIndex);
+            static unsigned int intersects(double angleOfGammaAndPoint, unsigned int polygonPointIndex);
 
             //! If (gamma(x) x) intersects P between successorOrPredecessorIndex and pointIntex is it above/below?
             /*!

@@ -133,9 +133,6 @@ void MinimumAreaEnclosingTriangle::updateSidesBA() {
 
     if ((middlePointOfSideB(sideBMiddlePoint)) & (height(sideBMiddlePoint) < height(predecessor(a)))) {
         sideAStartVertex = polygon[predecessor(a)];
-
-        cout << "Here";
-
         sideAEndVertex = findVertexCOnSideB();
     }
 }
@@ -199,15 +196,18 @@ bool MinimumAreaEnclosingTriangle::middlePointOfSideB(Point2f &middlePoint) {
 }
 
 bool MinimumAreaEnclosingTriangle::intersectsBelow(const Point2f &gammaPoint, unsigned int polygonPointIndex) {
-   return (intersects(gammaPoint, polygonPointIndex) == INTERSECTS_BELOW);
+    double angleOfGammaAndPoint = Geometry2D::angleOfLineWrtOxAxis(polygon[polygonPointIndex], gammaPoint);
+
+    return (intersects(angleOfGammaAndPoint, polygonPointIndex) == INTERSECTS_BELOW);
 }
 
 bool MinimumAreaEnclosingTriangle::intersectsAbove(const Point2f &gammaPoint, unsigned int polygonPointIndex) {
-    return (intersects(gammaPoint, polygonPointIndex) == INTERSECTS_ABOVE);
+    double angleOfGammaAndPoint = Geometry2D::angleOfLineWrtOxAxis(gammaPoint, polygon[polygonPointIndex]);
+
+    return (intersects(angleOfGammaAndPoint, polygonPointIndex) == INTERSECTS_ABOVE);
 }
 
-unsigned int MinimumAreaEnclosingTriangle::intersects(const Point2f &gammaPoint, unsigned int polygonPointIndex) {
-    double angleOfGammaAndPoint = Geometry2D::angleOfLineWrtOxAxis(polygon[polygonPointIndex], gammaPoint);
+unsigned int MinimumAreaEnclosingTriangle::intersects(double angleOfGammaAndPoint, unsigned int polygonPointIndex) {
     double angleOfPointAndPredecessor = Geometry2D::angleOfLineWrtOxAxis(polygon[predecessor(polygonPointIndex)], polygon[polygonPointIndex]);
     double angleOfPointAndSuccessor = Geometry2D::angleOfLineWrtOxAxis(polygon[successor(polygonPointIndex)], polygon[polygonPointIndex]);
     double angleOfFlushEdge = Geometry2D::angleOfLineWrtOxAxis(polygon[predecessor(c)], polygon[c]);
@@ -221,7 +221,6 @@ unsigned int MinimumAreaEnclosingTriangle::intersects(const Point2f &gammaPoint,
             return intersectsAboveOrBelow(successor(polygonPointIndex), polygonPointIndex);
         }
     } else {
-
         if ((isGammaAngleBetween(angleOfGammaAndPoint, angleOfPointAndPredecessor, angleOfPointAndSuccessor)) ||
             ((isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfPointAndPredecessor)) && (!isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfFlushEdge))) ||
             ((isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfPointAndSuccessor)) && (!isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfFlushEdge)))) {
@@ -254,27 +253,11 @@ bool MinimumAreaEnclosingTriangle::isFlushAngleBetweenPredecessorAndSuccessor(do
 }
 
 bool MinimumAreaEnclosingTriangle::isGammaAngleBetween(double &gammaAngle, double angle1, double angle2) {
-    if (Geometry2D::isAngleBetweenNonReflex(gammaAngle, angle1, angle2)) {
-        return true;
-    } else if (Geometry2D::isOppositeAngleBetweenNonReflex(gammaAngle, angle1, angle2)) {
-        gammaAngle = Geometry2D::oppositeAngle(gammaAngle);
-
-        return true;
-    }
-
-    return false;
+    return (Geometry2D::isAngleBetweenNonReflex(gammaAngle, angle1, angle2));
 }
 
 bool MinimumAreaEnclosingTriangle::isGammaAngleEqualTo(double &gammaAngle, double angle) {
-    if (Numeric::almostEqual(gammaAngle, angle)) {
-        return true;
-    } else if (Numeric::almostEqual(Geometry2D::oppositeAngle(gammaAngle), angle)){
-        gammaAngle = Geometry2D::oppositeAngle(gammaAngle);
-
-        return true;
-    }
-
-    return false;
+    return (Numeric::almostEqual(gammaAngle, angle));
 }
 
 double MinimumAreaEnclosingTriangle::height(unsigned int polygonPointIndex) {
