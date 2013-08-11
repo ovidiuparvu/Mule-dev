@@ -8,6 +8,8 @@
 using namespace multiscale;
 
 
+unsigned int MinimumAreaEnclosingTriangle::validationFlag;
+
 Point2f MinimumAreaEnclosingTriangle::vertexA;
 Point2f MinimumAreaEnclosingTriangle::vertexB;
 Point2f MinimumAreaEnclosingTriangle::vertexC;
@@ -134,6 +136,10 @@ void MinimumAreaEnclosingTriangle::updateSidesBA() {
     if ((middlePointOfSideB(sideBMiddlePoint)) & (height(sideBMiddlePoint) < height(predecessor(a)))) {
         sideAStartVertex = polygon[predecessor(a)];
         sideAEndVertex = findVertexCOnSideB();
+
+        validationFlag = VALIDATION_SIDE_A_TANGENT;
+    } else {
+        validationFlag = VALIDATION_SIDES_FLUSH;
     }
 }
 
@@ -142,6 +148,8 @@ void MinimumAreaEnclosingTriangle::updateSideB() {
         throw ERR_SIDE_B_GAMMA;
 
     sideBEndVertex = polygon[b];
+
+    validationFlag = VALIDATION_SIDE_B_TANGENT;
 }
 
 bool MinimumAreaEnclosingTriangle::updateTriangleVertices() {
@@ -151,7 +159,7 @@ bool MinimumAreaEnclosingTriangle::updateTriangleVertices() {
         return false;
     }
 
-    return true;
+    return isValidMinimalTriangle();
 }
 
 bool MinimumAreaEnclosingTriangle::isValidMinimalTriangle() {
@@ -159,10 +167,14 @@ bool MinimumAreaEnclosingTriangle::isValidMinimalTriangle() {
     Point2f midpointSideB = Geometry2D::middlePoint(vertexA, vertexC);
     Point2f midpointSideC = Geometry2D::middlePoint(vertexA, vertexB);
 
-    bool sideAValid = ((Geometry2D::isPointOnLineSegment(midpointSideA, sideAStartVertex, sideAEndVertex)) ||
-                       (Geometry2D::areEqualPoints(midpointSideA, polygon[predecessor(a)])));
-    bool sideBValid = ((Geometry2D::isPointOnLineSegment(midpointSideB, sideBStartVertex, sideBEndVertex)) ||
-                       (Geometry2D::areEqualPoints(midpointSideB, polygon[b])));
+    bool sideAValid = (validationFlag == VALIDATION_SIDE_A_TANGENT)
+                        ? (Geometry2D::areEqualPoints(midpointSideA, polygon[predecessor(a)]))
+                        : (Geometry2D::isPointOnLineSegment(midpointSideA, sideAStartVertex, sideAEndVertex));
+
+    bool sideBValid = (validationFlag == VALIDATION_SIDE_B_TANGENT)
+                          ? (Geometry2D::areEqualPoints(midpointSideB, polygon[b]))
+                          : (Geometry2D::isPointOnLineSegment(midpointSideB, sideBStartVertex, sideBEndVertex));
+
     bool sideCValid = Geometry2D::isPointOnLineSegment(midpointSideC, sideCStartVertex, sideCEndVertex);
 
     return (sideAValid && sideBValid && sideCValid);

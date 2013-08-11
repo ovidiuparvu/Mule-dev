@@ -33,5 +33,9 @@ var hierarchy =
     [ "multiscale::video::RectangularGnuplotScriptGenerator", "classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html", null ],
     [ "multiscale::analysis::Region", "classmultiscale_1_1analysis_1_1Region.html", null ],
     [ "multiscale::RGBColourGenerator", "classmultiscale_1_1RGBColourGenerator.html", null ],
+    [ "runtime_error", null, [
+      [ "multiscale::EntityException", "classmultiscale_1_1EntityException.html", null ]
+    ] ],
+    [ "multiscale::analysis::Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ],
     [ "multiscale::StringManipulator", "classmultiscale_1_1StringManipulator.html", null ]
 ];

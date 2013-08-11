@@ -16,6 +16,10 @@ using namespace multiscale;
 #define ERR_VERTEX_C_ON_SIDE_B  "The position of the vertex C on side B could not be determined, because the considered lines do not intersect."
 #define ERR_TRIANGLE_VERTICES   "The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect."
 
+#define VALIDATION_SIDE_A_TANGENT   0
+#define VALIDATION_SIDE_B_TANGENT   1
+#define VALIDATION_SIDES_FLUSH      2
+
 
 namespace multiscale {
 
@@ -30,6 +34,12 @@ namespace multiscale {
     class MinimumAreaEnclosingTriangle {
 
         private:
+
+            static unsigned int validationFlag; /*!< Validation flag can take the following values:
+                                                         - VALIDATION_SIDE_A_TANGENT;
+                                                         - VALIDATION_SIDE_B_TANGENT;
+                                                         - VALIDATION_SIDES_FLUSH.
+                                                 */
 
             static Point2f vertexA;             /*!< Vertex A of the current considered enclosing triangle */
             static Point2f vertexB;             /*!< Vertex B of the current considered enclosing triangle */

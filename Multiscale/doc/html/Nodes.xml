@@ -1299,6 +1299,12 @@
                  </Node>
                 </Subnodes>
                </Node>
+               <Node>
+                <Name>Silhouette</Name>
+                <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
               </Subnodes>
              </Node>
              <Node>
@@ -2021,6 +2027,22 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>EntityException</Name>
+              <Path>classmultiscale_1_1EntityException.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>EntityException</Name>
+                <Path>classmultiscale_1_1EntityException.html</Path>
+                <Anchor>a129449cc13a9ff61d888ddb0538b96b4</Anchor>
+               </Node>
+               <Node>
+                <Name>EntityException</Name>
+                <Path>classmultiscale_1_1EntityException.html</Path>
+                <Anchor>a2895f178df118ac49d68d774a2502c32</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Geometry2D</Name>
               <Path>classmultiscale_1_1Geometry2D.html</Path>
               <Subnodes>
@@ -2372,6 +2394,20 @@
            <Node>
             <Name>multiscale::RGBColourGenerator</Name>
             <Path>classmultiscale_1_1RGBColourGenerator.html</Path>
+           </Node>
+           <Node>
+            <Name>runtime_error</Name>
+            <Path></Path>
+            <Subnodes>
+             <Node>
+              <Name>multiscale::EntityException</Name>
+              <Path>classmultiscale_1_1EntityException.html</Path>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiscale::analysis::Silhouette</Name>
+            <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
            </Node>
            <Node>
             <Name>multiscale::StringManipulator</Name>
@@ -4336,6 +4372,46 @@
                      </Node>
                     </Subnodes>
                    </Node>
+                   <Node>
+                    <Name>Silhouette.hpp</Name>
+                    <Path>Silhouette_8hpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>Silhouette</Name>
+                      <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>exception</Name>
+                <Path>dir_5fa0d1ce9e339fcf8311bd87dd595cdd.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>EntityException.hpp</Name>
+                  <Path>EntityException_8hpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>EntityException</Name>
+                    <Path>classmultiscale_1_1EntityException.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>EntityException</Name>
+                      <Path>classmultiscale_1_1EntityException.html</Path>
+                      <Anchor>a129449cc13a9ff61d888ddb0538b96b4</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>EntityException</Name>
+                      <Path>classmultiscale_1_1EntityException.html</Path>
+                      <Anchor>a2895f178df118ac49d68d774a2502c32</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
                   </Subnodes>
                  </Node>
                 </Subnodes>
@@ -4573,6 +4649,21 @@
                     <Name>INTERSECTS_LIMIT</Name>
                     <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
                     <Anchor>a08b447dcb2172aa0fde5a6e29fcf006e</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>VALIDATION_SIDE_A_TANGENT</Name>
+                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Anchor>a69b5cb9c0d33abff021f07cc6b2da9a4</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>VALIDATION_SIDE_B_TANGENT</Name>
+                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Anchor>ae84e6d9763cd18f5fe032173ce431428</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>VALIDATION_SIDES_FLUSH</Name>
+                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Anchor>a25734dfda829d51fa13c1cdfc8d4ab96</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -6171,6 +6262,10 @@
                       <Anchor>a59bfc63874cda685db6e075580dc1c1b</Anchor>
                      </Node>
                     </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>Silhouette.cpp</Name>
+                    <Path>Silhouette_8cpp.html</Path>
                    </Node>
                    <Node>
                     <Name>SimulationDetectClusters.cpp</Name>

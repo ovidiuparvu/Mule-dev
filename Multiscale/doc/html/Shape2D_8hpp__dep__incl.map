@@ -1,9 +1,11 @@
 <map id="include/multiscale/analysis/spatial/Shape2D.hpp" name="include/multiscale/analysis/spatial/Shape2D.hpp">
-<area shape="rect" id="node3" href="$Cluster_8hpp.html" title="include/multiscale\l/analysis/spatial/Cluster.hpp" alt="" coords="361,102,548,149"/>
-<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/ClusterDetector.hpp" alt="" coords="227,198,464,245"/>
-<area shape="rect" id="node15" href="$Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="488,198,643,245"/>
+<area shape="rect" id="node3" href="$Cluster_8hpp.html" title="include/multiscale\l/analysis/spatial/Cluster.hpp" alt="" coords="471,102,657,149"/>
+<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/ClusterDetector.hpp" alt="" coords="201,198,439,245"/>
+<area shape="rect" id="node15" href="$Silhouette_8hpp.html" title="include/multiscale\l/analysis/spatial/Silhouette.hpp" alt="" coords="463,198,665,245"/>
+<area shape="rect" id="node20" href="$Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="689,198,844,245"/>
 <area shape="rect" id="node7" href="$SimulationClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/cluster\l/SimulationClusterDetector.hpp" alt="" coords="136,293,339,357"/>
 <area shape="rect" id="node13" href="$ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="363,302,547,349"/>
 <area shape="rect" id="node9" href="$SimulationClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,405,219,469"/>
 <area shape="rect" id="node11" href="$SimulationDetectClusters_8cpp.html" title="src/multiscale/analysis\l/spatial/SimulationDetectClusters.cpp" alt="" coords="243,414,485,461"/>
+<area shape="rect" id="node18" href="$Silhouette_8cpp.html" title="src/multiscale/analysis\l/spatial/Silhouette.cpp" alt="" coords="571,302,725,349"/>
 </map>

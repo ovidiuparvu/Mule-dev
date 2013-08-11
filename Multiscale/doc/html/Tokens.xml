@@ -922,6 +922,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>VALIDATION_SIDE_A_TANGENT</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a69b5cb9c0d33abff021f07cc6b2da9a4</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>VALIDATION_SIDE_B_TANGENT</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>ae84e6d9763cd18f5fe032173ce431428</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>VALIDATION_SIDES_FLUSH</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+    <Anchor>a25734dfda829d51fa13c1cdfc8d4ab96</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>HUE_MIN</Name>
       <APILanguage>unknown</APILanguage>
       <Type>macro</Type>
@@ -2783,6 +2813,38 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>multiscale::EntityException</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::EntityException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1EntityException.html</Path>
+    <DeclaredIn>EntityException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EntityException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::EntityException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1EntityException.html</Path>
+    <Anchor>a129449cc13a9ff61d888ddb0538b96b4</Anchor>
+    <DeclaredIn>EntityException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EntityException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::EntityException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1EntityException.html</Path>
+    <Anchor>a2895f178df118ac49d68d774a2502c32</Anchor>
+    <DeclaredIn>EntityException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::Geometry2D</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -2937,6 +2999,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>areOnTheSameSideOfLine</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a828b7b579420ac06dabd7c4ba4d081ae</Anchor>
+    <Abstract>Check if p1 and p2 are on the same side of the line determined by points a and b.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>lineEquationDeterminedByPoints</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
@@ -2945,6 +3019,30 @@
     <Path>classmultiscale_1_1Geometry2D.html</Path>
     <Anchor>a6d72740d7f1b2441b0829c0f0c6a6853</Anchor>
     <Abstract>Get the values of &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot; and &amp;quot;c&amp;quot; of the line equation ax + by + c = 0 knowing that point &amp;quot;p&amp;quot; and &amp;quot;q...</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>areIdenticalLines</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>aaa19f84365e924bacfad4ea893875a42</Anchor>
+    <Abstract>Check if two lines are identical.</Abstract>
+    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>areIdenticalLines</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a718faf02b261c9ccbedf9d7b0e19ada1</Anchor>
+    <Abstract>Check if two lines are identical.</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3806,7 +3904,7 @@
       <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
-    <Anchor>a91f6db13e26c0b15735ee5eb975fc09f</Anchor>
+    <Anchor>a30883d4893c5775e1e59da3ecde12930</Anchor>
     <Abstract>Check if/where the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygo...</Abstract>
     <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
   </Token>
@@ -3920,6 +4018,30 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>areIdenticalLines</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>a9c19ca85851ea59de09d7d7be5ba4451</Anchor>
+    <Abstract>Check if the given lines are identical or not.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>areIntersectingLines</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>ae347bd4652c2cc09677ffa4aa509729d</Anchor>
+    <Abstract>Check if the given lines intersect or not. If the lines intersect find their intersection points...</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>lineEquationParameters</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
@@ -3965,6 +4087,16 @@
     <Anchor>a89173019a673e51d0985f45d067f30cb</Anchor>
     <Abstract>Return the predecessor of the provided point index.</Abstract>
     <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validationFlag</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+    <Anchor>abf0daf5b56e3050cbbe70f5d95402cc2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4322,6 +4454,18 @@
     <Path>classmultiscale_1_1Numeric.html</Path>
     <Anchor>a54d5578d5980315b7bade31a5655cd72</Anchor>
     <Abstract>Return the maximum of the provided numbers.</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sign</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a2b3058c5ad27aaaef338a29b96cdbced</Anchor>
+    <Abstract>Return the sign of the number.</Abstract>
     <DeclaredIn>Numeric.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -8680,6 +8824,88 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>a172b91067670a14a7707f24dc218f2af</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::analysis::Silhouette</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::analysis::Silhouette</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+    <DeclaredIn>Silhouette.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeOverallAverageMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::Silhouette</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+    <Anchor>a21fab3292947caed2dbab0da542ac24c</Anchor>
+    <Abstract>Compute the overall average silhouette measure for the given collection of clusters.</Abstract>
+    <DeclaredIn>Silhouette.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeAverageMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::Silhouette</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+    <Anchor>ac2d55f89072bf46c86b8004d6787a820</Anchor>
+    <Abstract>Compute the average silhouette measure for the given cluster.</Abstract>
+    <DeclaredIn>Silhouette.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::Silhouette</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+    <Anchor>a2b418915655903583944d9d2ee9d6db8</Anchor>
+    <Abstract>Compute the silhouette measure for the given entity.</Abstract>
+    <DeclaredIn>Silhouette.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeAverageDissimilarityWithinCluster</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::Silhouette</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+    <Anchor>a9cfc58c766daf74d57c0f109f2e77639</Anchor>
+    <Abstract>Compute the average dissimilarity within cluster to which the entity belongs.</Abstract>
+    <DeclaredIn>Silhouette.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeAverageDissimilarityToOtherClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::Silhouette</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+    <Anchor>a32876a9d476298d1835486a334eee44f</Anchor>
+    <Abstract>Compute the average dissimilarity of the entity to the other clusters (i.e. clusters which are differ...</Abstract>
+    <DeclaredIn>Silhouette.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeAverageDissimilarityBtwEntityAndCluster</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::Silhouette</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+    <Anchor>aac5c29405d0407da2f21ffac016bfd01</Anchor>
+    <Abstract>Compute the average dissimilarity between entity and cluster.</Abstract>
+    <DeclaredIn>Silhouette.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>

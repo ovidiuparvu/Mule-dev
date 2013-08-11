@@ -1,6 +1,8 @@
 var searchData=
 [
   ['shape2d_2ehpp',['Shape2D.hpp',['../Shape2D_8hpp.html',1,'']]],
+  ['silhouette_2ecpp',['Silhouette.cpp',['../Silhouette_8cpp.html',1,'']]],
+  ['silhouette_2ehpp',['Silhouette.hpp',['../Silhouette_8hpp.html',1,'']]],
   ['simulationclusterdetector_2ecpp',['SimulationClusterDetector.cpp',['../SimulationClusterDetector_8cpp.html',1,'']]],
   ['simulationclusterdetector_2ehpp',['SimulationClusterDetector.hpp',['../SimulationClusterDetector_8hpp.html',1,'']]],
   ['simulationdetectclusters_2ecpp',['SimulationDetectClusters.cpp',['../SimulationDetectClusters_8cpp.html',1,'']]],

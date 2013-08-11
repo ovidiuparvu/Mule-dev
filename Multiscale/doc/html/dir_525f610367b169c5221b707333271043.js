@@ -13,5 +13,8 @@ var dir_525f610367b169c5221b707333271043 =
     [ "MatFactory.hpp", "MatFactory_8hpp.html", "MatFactory_8hpp" ],
     [ "Region.hpp", "Region_8hpp.html", "Region_8hpp" ],
     [ "RegionDetector.hpp", "RegionDetector_8hpp.html", "RegionDetector_8hpp" ],
-    [ "Shape2D.hpp", "Shape2D_8hpp.html", "Shape2D_8hpp" ]
+    [ "Shape2D.hpp", "Shape2D_8hpp.html", "Shape2D_8hpp" ],
+    [ "Silhouette.hpp", "Silhouette_8hpp.html", [
+      [ "Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ]
+    ] ]
 ];

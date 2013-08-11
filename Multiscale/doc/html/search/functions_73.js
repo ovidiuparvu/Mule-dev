@@ -18,6 +18,7 @@ var searchData=
   ['setthresholdvalue',['setThresholdValue',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a066e87a1f134194dabfc760d241b8ab2',1,'multiscale::analysis::RegionDetector']]],
   ['sgn',['sgn',['../classmultiscale_1_1Geometry2D.html#a5561fa98c33d44757b65628a1b6fa35b',1,'multiscale::Geometry2D']]],
   ['shapeasstring',['shapeAsString',['../classmultiscale_1_1analysis_1_1Cluster.html#ae66bd94c5270ea6d1df29a731d0990b3',1,'multiscale::analysis::Cluster']]],
+  ['sign',['sign',['../classmultiscale_1_1Numeric.html#a2b3058c5ad27aaaef338a29b96cdbced',1,'multiscale::Numeric']]],
   ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a5ec24468129dfa9b6a7f38e11a78c69b',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['slopeofline',['slopeOfLine',['../classmultiscale_1_1Geometry2D.html#a1219ac10c3647d43c5af77dc5bc574a2',1,'multiscale::Geometry2D']]],
   ['smoothimage',['smoothImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a895f12ad46f2e0d1db45637a5935c2b5',1,'multiscale::analysis::RegionDetector']]],

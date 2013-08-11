@@ -12,5 +12,6 @@ var dir_eecdf75660cbdeda8cf07b528b48c623 =
     [ "RectangularDetectRegions.cpp", "RectangularDetectRegions_8cpp.html", "RectangularDetectRegions_8cpp" ],
     [ "Region.cpp", "Region_8cpp.html", null ],
     [ "RegionDetector.cpp", "RegionDetector_8cpp.html", "RegionDetector_8cpp" ],
+    [ "Silhouette.cpp", "Silhouette_8cpp.html", null ],
     [ "SimulationDetectClusters.cpp", "SimulationDetectClusters_8cpp.html", "SimulationDetectClusters_8cpp" ]
 ];

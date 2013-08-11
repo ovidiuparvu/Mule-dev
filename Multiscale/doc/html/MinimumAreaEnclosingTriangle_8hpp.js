@@ -8,5 +8,8 @@ var MinimumAreaEnclosingTriangle_8hpp =
     [ "INTERSECTS_ABOVE", "MinimumAreaEnclosingTriangle_8hpp.html#a491d37fc7ce0c72d3763cc91495f87c2", null ],
     [ "INTERSECTS_BELOW", "MinimumAreaEnclosingTriangle_8hpp.html#a33b2bf416e7a3eb9b86eb3cff45ba67a", null ],
     [ "INTERSECTS_CRITICAL", "MinimumAreaEnclosingTriangle_8hpp.html#a7f2b811fcec86dfda9bcf2d5e9096603", null ],
-    [ "INTERSECTS_LIMIT", "MinimumAreaEnclosingTriangle_8hpp.html#a08b447dcb2172aa0fde5a6e29fcf006e", null ]
+    [ "INTERSECTS_LIMIT", "MinimumAreaEnclosingTriangle_8hpp.html#a08b447dcb2172aa0fde5a6e29fcf006e", null ],
+    [ "VALIDATION_SIDE_A_TANGENT", "MinimumAreaEnclosingTriangle_8hpp.html#a69b5cb9c0d33abff021f07cc6b2da9a4", null ],
+    [ "VALIDATION_SIDE_B_TANGENT", "MinimumAreaEnclosingTriangle_8hpp.html#ae84e6d9763cd18f5fe032173ce431428", null ],
+    [ "VALIDATION_SIDES_FLUSH", "MinimumAreaEnclosingTriangle_8hpp.html#a25734dfda829d51fa13c1cdfc8d4ab96", null ]
 ];
