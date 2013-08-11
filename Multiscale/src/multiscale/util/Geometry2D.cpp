@@ -165,6 +165,30 @@ bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point 
     return false;
 }
 
+bool Geometry2D::areIdenticalLines(double a1, double b1, double c1, double a2, double b2, double c2) {
+    double a1OverA2 = a1 / a2;
+    double b1OverB2 = b1 / b2;
+    double c1OverC2 = c1 / c2;
+
+    return ((Numeric::almostEqual(a1OverA2, b1OverB2)) && (Numeric::almostEqual(b1OverB2, c1OverC2)));
+}
+
+bool Geometry2D:: areIdenticalLines(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2) {
+    double A1 = b1.y - a1.y;
+    double B1 = a1.x - b1.x;
+    double C1 = (a1.x * A1) + (a1.y * B1);
+
+    double A2 = b2.y - a2.y;
+    double B2 = a2.x - b2.x;
+    double C2 = (a2.x * A2) + (a2.y * B2);
+
+    double A1OverA2 = A1 / A2;
+    double B1OverB2 = B1 / B2;
+    double C1OverC2 = C1 / C2;
+
+    return ((Numeric::almostEqual(A1OverA2, B1OverB2)) && (Numeric::almostEqual(B1OverB2, C1OverC2)));
+}
+
 bool Geometry2D::lineIntersection(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2, Point2f &intersection) {
     double A1 = b1.y - a1.y;
     double B1 = a1.x - b1.x;
@@ -189,7 +213,7 @@ bool Geometry2D::lineIntersection(const Point2f &a1, const Point2f &b1, const Po
 bool Geometry2D::lineIntersection(double a1, double b1, double c1, double a2, double b2, double c2, Point2f &intersection) {
     double det = (a1 * b2) - (a2 * b1);
 
-    if (det != 0) {
+    if (!(Numeric::almostEqual(det, 0))) {
         intersection.x = ((c1 * b2) - (c2 * b1)) / (det);
         intersection.y = ((c2 * a1) - (c1 * a2)) / (det);
 

@@ -130,6 +130,43 @@ namespace multiscale {
              */
             static void lineEquationDeterminedByPoints(const Point2f &p, const Point2f &q, double &a, double &b, double &c);
 
+            //! Check if two lines are identical
+            /*!
+             * Lines are be specified in the following form:
+             *      A1x + B1x = C1
+             *      A2x + B2x = C2
+             *
+             * If (A1/A2) == (B1/B2) == (C1/C2), then the lines are identical
+             *                                   else they are not
+             *
+             * \param a1 A1
+             * \param b1 B1
+             * \param c1 C1
+             * \param a2 A2
+             * \param b2 B2
+             * \param c2 C2
+             */
+            static bool areIdenticalLines(double a1, double b1, double c1, double a2, double b2, double c2);
+
+            //! Check if two lines are identical
+            /*!
+             * The lines are specified by a pair of points each. If they are identical, then
+             * the function returns true, else it returns false.
+             *
+             * Lines can be specified in the following form:
+             *      A1x + B1x = C1
+             *      A2x + B2x = C2
+             *
+             * If (A1/A2) == (B1/B2) == (C1/C2), then the lines are identical
+             *                                   else they are not
+             *
+             * \param a1 First point for determining the first line
+             * \param b1 Second point for determining the first line
+             * \param a2 First point for determining the second line
+             * \param b2 Second point for determining the second line
+             */
+            static bool areIdenticalLines(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2);
+
             //! Determine the intersection point of two lines, if this point exists
             /*! Two lines intersect if they are not parallel (Parallel lines intersect at
              * +/- infinity, but we do not consider this case here).
@@ -137,7 +174,7 @@ namespace multiscale {
              * The lines are specified by a pair of points each. If they intersect, then
              * the function returns true, else it returns false.
              *
-             * Lines are specified in the following form:
+             * Lines can be specified in the following form:
              *      A1x + B1x = C1
              *      A2x + B2x = C2
              *
@@ -163,7 +200,7 @@ namespace multiscale {
              * The lines are specified by a pair of points each. If they intersect, then
              * the function returns true, else it returns false.
              *
-             * Lines are specified in the following form:
+             * Lines can be specified in the following form:
              *      A1x + B1x = C1
              *      A2x + B2x = C2
              *

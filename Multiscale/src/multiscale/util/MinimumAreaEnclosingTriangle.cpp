@@ -330,17 +330,37 @@ bool MinimumAreaEnclosingTriangle::findGammaIntersectionPoints(unsigned int poly
     double distanceFormulaDenominator = sqrt((side2Params[0] * side2Params[0]) + (side2Params[1] * side2Params[1]));
     double sideCExtraParam = 2 * polygonPointHeight * distanceFormulaDenominator;
 
-    // Get intersection points if they exist
-    if ((!Geometry2D::lineIntersection(side1Params[0], side1Params[1], -(side1Params[2]),
-                                       side2Params[0], side2Params[1], -(side2Params[2]) - sideCExtraParam,
-                                       intersectionPoint1)) ||
-        (!Geometry2D::lineIntersection(side1Params[0], side1Params[1], -(side1Params[2]),
-                                       side2Params[0], side2Params[1], -(side2Params[2]) + sideCExtraParam,
-                                       intersectionPoint2))) {
+    // Get intersection points if they exist or if lines are identical
+    if (areIdenticalLines(side1Params, side2Params, sideCExtraParam)) {
+        intersectionPoint1 = side1StartVertex;
+        intersectionPoint2 = side1EndVertex;
+    } else if (!areIntersectingLines(side1Params, side2Params, sideCExtraParam, intersectionPoint1, intersectionPoint2)) {
         return false;
     }
 
     return true;
+}
+
+bool MinimumAreaEnclosingTriangle::areIdenticalLines(const vector<double> &side1Params, const vector<double> &side2Params,
+                                                     double sideCExtraParam) {
+    return (
+        (Geometry2D::areIdenticalLines(side1Params[0], side1Params[1], -(side1Params[2]),
+                                       side2Params[0], side2Params[1], -(side2Params[2]) - sideCExtraParam)) ||
+        (Geometry2D::areIdenticalLines(side1Params[0], side1Params[1], -(side1Params[2]),
+                                       side2Params[0], side2Params[1], -(side2Params[2]) + sideCExtraParam))
+    );
+}
+
+bool MinimumAreaEnclosingTriangle::areIntersectingLines(const vector<double> &side1Params, const vector<double> &side2Params, double sideCExtraParam,
+                                                        Point2f &intersectionPoint1, Point2f &intersectionPoint2) {
+    return (
+        (Geometry2D::lineIntersection(side1Params[0], side1Params[1], -(side1Params[2]),
+                                      side2Params[0], side2Params[1], -(side2Params[2]) - sideCExtraParam,
+                                      intersectionPoint1)) &&
+        (Geometry2D::lineIntersection(side1Params[0], side1Params[1], -(side1Params[2]),
+                                      side2Params[0], side2Params[1], -(side2Params[2]) + sideCExtraParam,
+                                      intersectionPoint2))
+    );
 }
 
 vector<double> MinimumAreaEnclosingTriangle::lineEquationParameters(const Point2f &p, const Point2f &q) {

@@ -255,6 +255,35 @@ namespace multiscale {
                                                     const Point2f &side2EndVertex, Point2f &intersectionPoint1,
                                                     Point2f &intersectionPoint2);
 
+            //! Check if the given lines are identical or not
+            /*!
+             * The lines are specified as:
+             *      ax + by + c = 0
+             *  OR
+             *      ax + by + c (+/-) sideCExtraParam = 0
+             *
+             * \param side1Params       Vector containing the values of a, b and c for side 1
+             * \param side2Params       Vector containing the values of a, b and c for side 2
+             * \param sideCExtraParam   Extra parameter for the flush edge C
+             */
+            static bool areIdenticalLines(const vector<double> &side1Params, const vector<double> &side2Params, double sideCExtraParam);
+
+            //! Check if the given lines intersect or not. If the lines intersect find their intersection points.
+            /*!
+             * The lines are specified as:
+             *      ax + by + c = 0
+             *  OR
+             *      ax + by + c (+/-) sideCExtraParam = 0
+             *
+             * \param side1Params           Vector containing the values of a, b and c for side 1
+             * \param side2Params           Vector containing the values of a, b and c for side 2
+             * \param sideCExtraParam       Extra parameter for the flush edge C
+             * \param intersectionPoint1    The first intersection point, if it exists
+             * \param intersectionPoint2    The second intersection point, if it exists
+             */
+            static bool areIntersectingLines(const vector<double> &side1Params, const vector<double> &side2Params, double sideCExtraParam,
+                                             Point2f &intersectionPoint1, Point2f &intersectionPoint2);
+
             //! Get the line equation parameters "a", "b" and "c" for the line determined by points "p" and "q"
             /*!
              * The equation of the line is considered in the general form:
