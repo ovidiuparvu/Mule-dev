@@ -38,7 +38,6 @@ namespace multiscale {
                 double rectangularMeasure;                  /*!< Measure ([0, 1]) indicating that the shape of the cluster is rectangular */
                 double circularMeasure;                     /*!< Measure ([0, 1]) indicating that the shape of the cluster is circular */
 
-                // TODO: Update
                 vector<Point2f> minAreaEnclosingTriangle;   /*!< The minimum area enclosing triangle */
 
                 RotatedRect minAreaEnclosingRect;           /*!< The minimum area enclosing rectangle */

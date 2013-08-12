@@ -1,6 +1,7 @@
 <map id="multiscale::analysis::Cluster::getEntitiesContourPoints" name="multiscale::analysis::Cluster::getEntitiesContourPoints">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a4dc4b507aafd570a3828d8e34df228e3" title="Get probability that the cluster has a circular shape." alt="" coords="256,257,440,303"/>
-<area shape="rect" id="node45" href="$classmultiscale_1_1analysis_1_1Cluster.html#a45f7dd3add843412c16826fe70074338" title="Get probability that the cluster has a rectangular shape." alt="" coords="243,326,453,373"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a4dc4b507aafd570a3828d8e34df228e3" title="Get probability that the cluster has a circular shape." alt="" coords="256,222,440,269"/>
+<area shape="rect" id="node45" href="$classmultiscale_1_1analysis_1_1Cluster.html#a45f7dd3add843412c16826fe70074338" title="Get probability that the cluster has a rectangular shape." alt="" coords="243,291,453,338"/>
+<area shape="rect" id="node48" href="$classmultiscale_1_1analysis_1_1Cluster.html#a65d19463e3ad0a90046a4373d95258f1" title="Get probability that the cluster has a triangular shape." alt="" coords="249,361,447,407"/>
 <area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#ab164d2395be9692d0a20ded5a2422720" title="Update the shape of the cluster." alt="" coords="503,291,657,338"/>
 <area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#aec76c5ef5523db79ee334a5cd0f1e1cb" title="Update the values of all measures." alt="" coords="707,291,883,338"/>
 <area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#a0d37cb656f212af09dd9339ffa322d55" title="Update the values of all measures if required." alt="" coords="931,283,1115,347"/>

@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/Cluster.hpp"
 #include "multiscale/util/Geometry2D.hpp"
+#include "multiscale/util/MinimumAreaEnclosingTriangle.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
 using namespace multiscale::analysis;
@@ -76,7 +77,7 @@ vector<Entity> Cluster::getEntities() const {
 }
 
 string Cluster::fieldNamesToString() {
-    return "Clusteredness degree,Pile up degree,Number of entities (ignoring pileup), Area,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
+    return "Clusteredness degree,Pile up degree,Number of entities (ignoring pileup),Area,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
 }
 
 string Cluster::toString() {
@@ -218,8 +219,16 @@ void Cluster::updateCentrePoint() {
 }
 
 double Cluster::isTriangularMeasure() {
-    // TODO: Unimplemented method
-    return 1E-10;
+    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
+    vector<Point2f> contourConvexHull;
+    double triangleArea = 0;
+
+    convexHull(entitiesContourPoints, contourConvexHull, true, true);
+
+    MinimumAreaEnclosingTriangle::find(contourConvexHull, minAreaEnclosingTriangle, triangleArea);
+
+    return (triangleArea == 0) ? 0
+                               : (area / triangleArea);
 }
 
 double Cluster::isRectangularMeasure() {
@@ -228,10 +237,10 @@ double Cluster::isRectangularMeasure() {
     minAreaEnclosingRect = minAreaRect(entitiesContourPoints);
 
     // Compute the area of the minimum area enclosing rectangle
-    double rectArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
+    double rectangleArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
 
-    return (rectArea == 0) ? 0
-                           : (area / rectArea);
+    return (rectangleArea == 0) ? 0
+                                : (area / rectangleArea);
 }
 
 double Cluster::isCircularMeasure() {

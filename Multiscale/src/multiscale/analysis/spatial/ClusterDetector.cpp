@@ -139,8 +139,12 @@ double ClusterDetector::computeAveragePileUpDegree(vector<Cluster> &clusters) {
         averagePileUpDegree += cluster.getPileUpDegree();
     }
 
-    return (clusters.size() == 0) ? 0
-                                  : (averagePileUpDegree / clusters.size());
+    unsigned int nrOfClusters = (clusters[0].getEntities().size() == 0)
+                                    ? (clusters.size() - 1)
+                                    : clusters.size();
+
+    return (nrOfClusters == 0) ? 0
+                               : (averagePileUpDegree / nrOfClusters);
 }
 
 void ClusterDetector::outputResultsToCsvFile(ofstream &fout) {
