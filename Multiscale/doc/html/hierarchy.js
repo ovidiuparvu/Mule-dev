@@ -34,7 +34,8 @@ var hierarchy =
     [ "multiscale::analysis::Region", "classmultiscale_1_1analysis_1_1Region.html", null ],
     [ "multiscale::RGBColourGenerator", "classmultiscale_1_1RGBColourGenerator.html", null ],
     [ "runtime_error", null, [
-      [ "multiscale::EntityException", "classmultiscale_1_1EntityException.html", null ]
+      [ "multiscale::EntityException", "classmultiscale_1_1EntityException.html", null ],
+      [ "multiscale::MinimumAreaEnclosingTriangleException", "classmultiscale_1_1MinimumAreaEnclosingTriangleException.html", null ]
     ] ],
     [ "multiscale::analysis::Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ],
     [ "multiscale::StringManipulator", "classmultiscale_1_1StringManipulator.html", null ]

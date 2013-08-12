@@ -129,11 +129,11 @@ namespace multiscale {
              */
             static void updateSideB();
 
-            //! Update the triangle vertices after all sides were set and return true if possible or false otherwise
+            //! Update the triangle vertices after all sides were set and check if a local minimal triangle was found or not
             /*!
              * See paper for more details
              */
-            static bool updateTriangleVertices();
+            static bool isLocalMinimalTriangle();
 
             //! Check if the found minimal triangle is valid
             /*!

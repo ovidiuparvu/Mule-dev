@@ -2819,6 +2819,7 @@
       <Scope>multiscale::EntityException</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1EntityException.html</Path>
+    <Abstract>Exception class for the Entity instances.</Abstract>
     <DeclaredIn>EntityException.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2842,6 +2843,39 @@
     <Path>classmultiscale_1_1EntityException.html</Path>
     <Anchor>a2895f178df118ac49d68d774a2502c32</Anchor>
     <DeclaredIn>EntityException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::MinimumAreaEnclosingTriangleException</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+    <Abstract>Exception class for the minimum area enclosing triangle module.</Abstract>
+    <DeclaredIn>MinimumAreaEnclosingTriangleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MinimumAreaEnclosingTriangleException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+    <Anchor>ab3b5f7915eed59446a1bf15d8408ffaa</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MinimumAreaEnclosingTriangleException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MinimumAreaEnclosingTriangleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+    <Anchor>aa2d98ad9b3ef5599405d176b20affe55</Anchor>
+    <DeclaredIn>MinimumAreaEnclosingTriangleException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -3223,18 +3257,6 @@
     <Path>classmultiscale_1_1Geometry2D.html</Path>
     <Anchor>a3574944f4c4a7cb422bc01b92330d862</Anchor>
     <Abstract>Check if the coordinate c lies between c1 and c2.</Abstract>
-    <DeclaredIn>Geometry2D.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>sgn</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>clm</Type>
-      <Scope>multiscale::Geometry2D</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1Geometry2D.html</Path>
-    <Anchor>a5561fa98c33d44757b65628a1b6fa35b</Anchor>
-    <Abstract>Compute sgn(number)</Abstract>
     <DeclaredIn>Geometry2D.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -3826,14 +3848,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>updateTriangleVertices</Name>
+      <Name>isLocalMinimalTriangle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
       <Scope>multiscale::MinimumAreaEnclosingTriangle</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
-    <Anchor>ade7452c987147a69c50f914df96d2c5b</Anchor>
-    <Abstract>Update the triangle vertices after all sides were set and return true if possible or false otherwise...</Abstract>
+    <Anchor>a729ba761fd35e6074be19959331ba465</Anchor>
+    <Abstract>Update the triangle vertices after all sides were set and check if a local minimal triangle was found...</Abstract>
     <DeclaredIn>MinimumAreaEnclosingTriangle.hpp</DeclaredIn>
   </Token>
   <Token>

@@ -33,9 +33,9 @@ bool Geometry2D::isOppositeAngleBetween(double angle1, double angle2, double ang
 bool Geometry2D::isAngleBetweenNonReflex(double angle1, double angle2, double angle3) {
     if (fabs(angle2 - angle3) > 180) {
         if (angle2 > angle3) {
-            return ((angle2 < angle1) && (angle1 <= 360)) || ((0 <= angle1) && (angle1 < angle3));
+            return ((angle2 < angle1) && (Numeric::lessOrEqual(angle1, 360))) || ((Numeric::lessOrEqual(0, angle1)) && (angle1 < angle3));
         } else {
-            return ((angle3 < angle1) && (angle1 <= 360)) || ((0 <= angle1) && (angle1 < angle2));
+            return ((angle3 < angle1) && (Numeric::lessOrEqual(angle1, 360))) || ((Numeric::lessOrEqual(0, angle1)) && (angle1 < angle2));
         }
     } else {
         return isAngleBetween(angle1, angle2, angle3);
@@ -151,9 +151,41 @@ bool Geometry2D::areOnTheSameSideOfLine(const Point2f &p1, const Point2f &p2, co
 
 
 void Geometry2D::lineEquationDeterminedByPoints(const Point2f &p, const Point2f &q, double &a, double &b, double &c) {
+    assert(Geometry2D::areEqualPoints(p, q) == false);
+
     a = q.y - p.y;
     b = p.x - q.x;
     c = ((-p.y) * b) - (p.x * a);
+}
+
+bool Geometry2D::areIdenticalLines(double a1, double b1, double c1, double a2, double b2, double c2) {
+    double a1B2 = a1 * b2;
+    double a2B1 = a2 * b1;
+    double a1C2 = a1 * c2;
+    double a2C1 = a2 * c1;
+    double b1C2 = b1 * c2;
+    double b2C1 = b2 * c1;
+
+    return ((Numeric::almostEqual(a1B2, a2B1)) && (Numeric::almostEqual(b1C2, b2C1)) && (Numeric::almostEqual(a1C2, a2C1)));
+}
+
+bool Geometry2D:: areIdenticalLines(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2) {
+    double A1 = b1.y - a1.y;
+    double B1 = a1.x - b1.x;
+    double C1 = (a1.x * A1) + (a1.y * B1);
+
+    double A2 = b2.y - a2.y;
+    double B2 = a2.x - b2.x;
+    double C2 = (a2.x * A2) + (a2.y * B2);
+
+    double a1B2 = A1 * B2;
+    double a2B1 = A2 * B1;
+    double a1C2 = A1 * C2;
+    double a2C1 = A2 * C1;
+    double b1C2 = B1 * C2;
+    double b2C1 = B2 * C1;
+
+    return ((Numeric::almostEqual(a1B2, a2B1)) && (Numeric::almostEqual(b1C2, b2C1)) && (Numeric::almostEqual(a1C2, a2C1)));
 }
 
 bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point &a2, const Point &b2, Point &intersection) {
@@ -167,7 +199,7 @@ bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point 
 
     double det = (A1 * B2) - (A2 * B1);
 
-    if (det != 0) {
+    if (!Numeric::almostEqual(det, 0)) {
         intersection.x = ((C1 * B2) - (C2 * B1)) / (det);
         intersection.y = ((C2 * A1) - (C1 * A2)) / (det);
 
@@ -175,31 +207,6 @@ bool Geometry2D::lineIntersection(const Point &a1, const Point &b1, const Point 
     }
 
     return false;
-}
-
-bool Geometry2D::areIdenticalLines(double a1, double b1, double c1, double a2, double b2, double c2) {
-    double a1B2 = a1 * b2;
-    double a2B1 = a2 * b1;
-    double b1C2 = b1 * c2;
-    double b2C1 = b2 * c1;
-
-    return ((Numeric::almostEqual(a1B2, a2B1)) && (Numeric::almostEqual(b1C2, b2C1)));
-}
-
-bool Geometry2D:: areIdenticalLines(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2) {
-    double A1 = b1.y - a1.y;
-    double B1 = a1.x - b1.x;
-    double C1 = (a1.x * A1) + (a1.y * B1);
-
-    double A2 = b2.y - a2.y;
-    double B2 = a2.x - b2.x;
-    double C2 = (a2.x * A2) + (a2.y * B2);
-
-    double A1OverA2 = A1 / A2;
-    double B1OverB2 = B1 / B2;
-    double C1OverC2 = C1 / C2;
-
-    return ((Numeric::almostEqual(A1OverA2, B1OverB2)) && (Numeric::almostEqual(B1OverB2, C1OverC2)));
 }
 
 bool Geometry2D::lineIntersection(const Point2f &a1, const Point2f &b1, const Point2f &a2, const Point2f &b2, Point2f &intersection) {
@@ -213,7 +220,7 @@ bool Geometry2D::lineIntersection(const Point2f &a1, const Point2f &b1, const Po
 
     double det = (A1 * B2) - (A2 * B1);
 
-    if (det != 0) {
+    if (!Numeric::almostEqual(det, 0)) {
         intersection.x = ((C1 * B2) - (C2 * B1)) / (det);
         intersection.y = ((C2 * A1) - (C1 * A2)) / (det);
 
@@ -279,7 +286,7 @@ bool Geometry2D::lineCircleIntersection(Point2f a, Point2f b, const Point2f &cir
 }
 
 bool Geometry2D::lineSegmentCircleIntersection(const Point2f &a, const Point2f &b, const Point2f &circleOrigin,
-                                                      double radius, vector<Point2f> &intersectionPoints) {
+                                               double radius, vector<Point2f> &intersectionPoints) {
     if (lineCircleIntersection(a, b, circleOrigin, radius, intersectionPoints)) {
         for (vector<Point2f>::iterator it = intersectionPoints.begin(); it != intersectionPoints.end(); ) {
             if (isBetweenCoordinates<float, double>((*it).x, a.x, b.x) &&
@@ -310,8 +317,8 @@ double Geometry2D::angleBtwPoints(const Point2f &a, const Point2f &b, const Poin
 }
 
 vector<Point2f> Geometry2D::findPointsOnEdge(const vector<Point2f> &points,
-                                           unsigned int nrOfRows,
-                                           unsigned int nrOfCols) {
+                                             unsigned int nrOfRows,
+                                             unsigned int nrOfCols) {
     vector<Point2f> pointsOnEdge;
 
     for (Point2f p : points) {
@@ -383,11 +390,6 @@ bool Geometry2D::isPointOnEdge(const Point2f &p, int nrOfRows, int nrOfCols) {
 template <typename T, typename U>
 bool Geometry2D::isBetweenCoordinates(T c, U c1, U c2) {
     return ((std::min(c1, c2) <= c) && (c <= std::max(c1, c2)));
-}
-
-int Geometry2D::sgn(int number) {
-    return (number < 0) ? -1
-                        : 1;
 }
 
 void Geometry2D::translate(Point2f &point, const Point2f &translation) {

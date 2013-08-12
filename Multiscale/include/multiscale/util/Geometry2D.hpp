@@ -75,6 +75,8 @@ namespace multiscale {
 
             //! Compute the slope of the line defined by points "a" and "b"
             /*!
+             * Returns true if the slope of the line can be computed and false otherwise.
+             *
              * \param a Point2f a
              * \param b Point2f b
              * \param slope Slope of the line if it is different from (+/-)infinity
@@ -91,6 +93,14 @@ namespace multiscale {
 
             //! Compute the distance from a point "a" to a line specified by two points "B" and "C"
             /*!
+             * Formula used:
+             *
+             *     |(x_c - x_b) * (y_b - y_a) - (x_b - x_a) * (y_c - y_b)|
+             * d = -------------------------------------------------------
+             *            sqrt(((x_c - x_b)^2) + ((y_c - y_b)^2))
+             *
+             * Reference: http://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html
+             *
              * \param a             Point2f from which the distance is measures
              * \param linePointB    One of the points determining the line
              * \param linePointC    One of the points determining the line
@@ -392,12 +402,6 @@ namespace multiscale {
              */
             template <typename T, typename U>
             static bool isBetweenCoordinates(T c, U c1, U c2);
-
-            //! Compute sgn(number)
-            /*!
-             *\param number The number
-             */
-            static int sgn(int number);
 
             //! Translate a point by the given values
             /*!

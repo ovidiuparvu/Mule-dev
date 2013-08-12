@@ -2043,6 +2043,22 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>MinimumAreaEnclosingTriangleException</Name>
+              <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>MinimumAreaEnclosingTriangleException</Name>
+                <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+                <Anchor>ab3b5f7915eed59446a1bf15d8408ffaa</Anchor>
+               </Node>
+               <Node>
+                <Name>MinimumAreaEnclosingTriangleException</Name>
+                <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+                <Anchor>aa2d98ad9b3ef5599405d176b20affe55</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>Geometry2D</Name>
               <Path>classmultiscale_1_1Geometry2D.html</Path>
               <Subnodes>
@@ -2402,6 +2418,10 @@
              <Node>
               <Name>multiscale::EntityException</Name>
               <Path>classmultiscale_1_1EntityException.html</Path>
+             </Node>
+             <Node>
+              <Name>multiscale::MinimumAreaEnclosingTriangleException</Name>
+              <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -4409,6 +4429,28 @@
                       <Name>EntityException</Name>
                       <Path>classmultiscale_1_1EntityException.html</Path>
                       <Anchor>a2895f178df118ac49d68d774a2502c32</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>MinimumAreaEnclosingTriangleException.hpp</Name>
+                  <Path>MinimumAreaEnclosingTriangleException_8hpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>MinimumAreaEnclosingTriangleException</Name>
+                    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>MinimumAreaEnclosingTriangleException</Name>
+                      <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+                      <Anchor>ab3b5f7915eed59446a1bf15d8408ffaa</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>MinimumAreaEnclosingTriangleException</Name>
+                      <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+                      <Anchor>aa2d98ad9b3ef5599405d176b20affe55</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>

@@ -25,6 +25,7 @@ var searchData=
   ['isgammaanglebetween',['isGammaAngleBetween',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2f6d0472387e94586f8c5bc5cad604cb',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['isgammaangleequalto',['isGammaAngleEqualTo',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aa50cf3fffb241c6e3af2c05c9d315321',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['islargerthanupperbound',['isLargerThanUpperBound',['../classmultiscale_1_1LexicographicNumberIterator.html#a8fad6e84a483cee3bd52c926de73d15f',1,'multiscale::LexicographicNumberIterator']]],
+  ['islocalminimaltriangle',['isLocalMinimalTriangle',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a729ba761fd35e6074be19959331ba465',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['isnotbtangency',['isNotBTangency',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ab8fcbbabc20d96ebaf6edeeaf0d38e63',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['isoppositeanglebetween',['isOppositeAngleBetween',['../classmultiscale_1_1Geometry2D.html#aa373f78afdba238ebe3bafaac6076aef',1,'multiscale::Geometry2D']]],
   ['isoppositeanglebetweennonreflex',['isOppositeAngleBetweenNonReflex',['../classmultiscale_1_1Geometry2D.html#a28d74085708bba7fa68fbea05d0d51ad',1,'multiscale::Geometry2D']]],

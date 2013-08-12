@@ -155,6 +155,8 @@ var NAVTREEINDEX0 =
 "MatFactory_8hpp.html#a6d61e97a27d7762722a792967233ff00":[2,0,0,0,0,0,8,1],
 "MatFactory_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038":[2,0,0,0,0,0,8,2],
 "MatFactory_8hpp_source.html":[2,0,0,0,0,0,8],
+"MinimumAreaEnclosingTriangleException_8hpp.html":[2,0,0,0,1,1],
+"MinimumAreaEnclosingTriangleException_8hpp_source.html":[2,0,0,0,1,1],
 "MinimumAreaEnclosingTriangle_8cpp.html":[2,0,1,0,1,2],
 "MinimumAreaEnclosingTriangle_8cpp_source.html":[2,0,1,0,1,2],
 "MinimumAreaEnclosingTriangle_8hpp.html":[2,0,0,0,2,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "RectangularCsvToInputFilesConverter_8hpp.html#a6328562b85e8bcbb1f603131b4df6da8":[2,0,0,0,3,1,1,6],
 "RectangularCsvToInputFilesConverter_8hpp.html#a650c4f7af5b2726fda5c1e222d481899":[2,0,0,0,3,1,1,3],
 "RectangularCsvToInputFilesConverter_8hpp.html#a6722eaa5c4c15a1ef661967d81135500":[2,0,0,0,3,1,1,9],
-"RectangularCsvToInputFilesConverter_8hpp.html#a7e19750ee177931a4cc33778274b2727":[2,0,0,0,3,1,1,7],
-"RectangularCsvToInputFilesConverter_8hpp.html#a7ecf45b75eecd7a51afcdda682ecdba7":[2,0,0,0,3,1,1,10],
-"RectangularCsvToInputFilesConverter_8hpp.html#a906ca900a5eeb05be5912e8e5be2f780":[2,0,0,0,3,1,1,2]
+"RectangularCsvToInputFilesConverter_8hpp.html#a7e19750ee177931a4cc33778274b2727":[2,0,0,0,3,1,1,7]
 };

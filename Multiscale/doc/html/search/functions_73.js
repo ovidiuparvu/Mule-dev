@@ -16,7 +16,6 @@ var searchData=
   ['setregionareathresh',['setRegionAreaThresh',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a5cf10aea88e85198ce54df0e94e6d1a7',1,'multiscale::analysis::RegionDetector']]],
   ['setselectedconcentrationindex',['setSelectedConcentrationIndex',['../PolarMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88',1,'setSelectedConcentrationIndex(const po::variables_map &amp;vm, unsigned int &amp;selectedConcentrationIndex):&#160;PolarMapCsvToInputFiles.cpp'],['../RectangularMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88',1,'setSelectedConcentrationIndex(const po::variables_map &amp;vm, unsigned int &amp;selectedConcentrationIndex):&#160;RectangularMapCsvToInputFiles.cpp']]],
   ['setthresholdvalue',['setThresholdValue',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a066e87a1f134194dabfc760d241b8ab2',1,'multiscale::analysis::RegionDetector']]],
-  ['sgn',['sgn',['../classmultiscale_1_1Geometry2D.html#a5561fa98c33d44757b65628a1b6fa35b',1,'multiscale::Geometry2D']]],
   ['shapeasstring',['shapeAsString',['../classmultiscale_1_1analysis_1_1Cluster.html#ae66bd94c5270ea6d1df29a731d0990b3',1,'multiscale::analysis::Cluster']]],
   ['sign',['sign',['../classmultiscale_1_1Numeric.html#a2b3058c5ad27aaaef338a29b96cdbced',1,'multiscale::Numeric']]],
   ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a5ec24468129dfa9b6a7f38e11a78c69b',1,'multiscale::analysis::SimulationClusterDetector']]],

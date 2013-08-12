@@ -1,10 +1,12 @@
 <map id="multiscale::analysis::RegionDetector::regionAngle" name="multiscale::analysis::RegionDetector::regionAngle">
 <area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#ace72cd1329667fdb5bc3fc40b96694bd" title="Compute the angle between three points." alt="" coords="279,5,441,51"/>
 <area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a3b76437c936dc9055c3ae49846f4016a" title="Find the points for determining the angle of the region." alt="" coords="251,75,469,139"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a53457e7405a2a4558fe659aa66931834" title="Get the centre of the minimum area bounding rectangle." alt="" coords="257,163,463,227"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a53457e7405a2a4558fe659aa66931834" title="Get the centre of the minimum area bounding rectangle." alt="" coords="257,163,463,227"/>
 <area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#af804b99efa2c9c5adb04c11a5dc5f589" title="Find good intersection points for computing the angle of the region." alt="" coords="519,31,767,95"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="544,119,741,183"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="544,119,741,183"/>
 <area shape="rect" id="node9" href="$classmultiscale_1_1Geometry2D.html#a9931c3d8089d658186a8c1ac78db5773" title="Determine the intersection point of two line segments, if this point exists." alt="" coords="816,39,987,86"/>
 <area shape="rect" id="node11" href="$classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="1035,39,1197,86"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1Geometry2D.html#a4a6aba3c69956a83af5d81f4d087c205" title="Check if the given point is on the edge." alt="" coords="820,127,983,174"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="1245,39,1384,86"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1432,39,1571,86"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1Geometry2D.html#a4a6aba3c69956a83af5d81f4d087c205" title="Check if the given point is on the edge." alt="" coords="820,127,983,174"/>
 </map>

@@ -11,6 +11,5 @@ var searchData=
   ['updateshape',['updateShape',['../classmultiscale_1_1analysis_1_1Cluster.html#ab164d2395be9692d0a20ded5a2422720',1,'multiscale::analysis::Cluster']]],
   ['updatesideb',['updateSideB',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a75d6c0769a2717ed7086b28be0db2440',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['updatesidesba',['updateSidesBA',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a20d737b8bb311c01d037062e98eb7efc',1,'multiscale::MinimumAreaEnclosingTriangle']]],
-  ['updatesidesca',['updateSidesCA',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a8c906ab782ec5feb1767869a61d3620d',1,'multiscale::MinimumAreaEnclosingTriangle']]],
-  ['updatetrianglevertices',['updateTriangleVertices',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ade7452c987147a69c50f914df96d2c5b',1,'multiscale::MinimumAreaEnclosingTriangle']]]
+  ['updatesidesca',['updateSidesCA',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a8c906ab782ec5feb1767869a61d3620d',1,'multiscale::MinimumAreaEnclosingTriangle']]]
 ];

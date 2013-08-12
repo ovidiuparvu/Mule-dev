@@ -1,4 +1,6 @@
 <map id="multiscale::MinimumAreaEnclosingTriangle::middlePointOfSideB" name="multiscale::MinimumAreaEnclosingTriangle::middlePointOfSideB">
 <area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="280,5,443,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a178c13bdb5cc3f26de7d5e9fd05781f5" title="Get the point in the middle of the segment determined by points &quot;a&quot; and &quot;b&quot;." alt="" coords="280,74,443,121"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Geometry2D.html#a178c13bdb5cc3f26de7d5e9fd05781f5" title="Get the point in the middle of the segment determined by points &quot;a&quot; and &quot;b&quot;." alt="" coords="280,74,443,121"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="491,5,629,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="677,5,816,51"/>
 </map>

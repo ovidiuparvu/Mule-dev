@@ -1,4 +1,6 @@
 <map id="multiscale::analysis::RegionDetector::findGoodIntersectionPoints" name="multiscale::analysis::RegionDetector::findGoodIntersectionPoints">
 <area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a9931c3d8089d658186a8c1ac78db5773" title="Determine the intersection point of two line segments, if this point exists." alt="" coords="304,14,475,61"/>
 <area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="523,14,685,61"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="733,14,872,61"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="920,14,1059,61"/>
 </map>

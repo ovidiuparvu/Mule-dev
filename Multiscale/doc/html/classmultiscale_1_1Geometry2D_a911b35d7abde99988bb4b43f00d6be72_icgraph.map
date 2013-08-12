@@ -8,7 +8,7 @@
 <area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="769,227,967,274"/>
 <area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="1041,219,1252,283"/>
 <area shape="rect" id="node17" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a522b2228b01e7d5fa6f922ba5f5394a6" title="Check if the found minimal triangle is valid." alt="" coords="480,370,707,417"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ade7452c987147a69c50f914df96d2c5b" title="Update the triangle vertices after all sides were set and return true if possible or false otherwise..." alt="" coords="755,370,981,417"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a729ba761fd35e6074be19959331ba465" title="Update the triangle vertices after all sides were set and check if a local minimal triangle was found..." alt="" coords="755,370,981,417"/>
 <area shape="rect" id="node21" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2637b25290dd55db6c72dec9dc184103" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1029,361,1264,425"/>
 <area shape="rect" id="node23" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a1fed629a9f290fe050c515aa2d0d799d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1312,370,1539,417"/>
 </map>

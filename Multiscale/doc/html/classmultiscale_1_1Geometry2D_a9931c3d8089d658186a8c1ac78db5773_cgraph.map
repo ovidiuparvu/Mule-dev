@@ -1,3 +1,5 @@
 <map id="multiscale::Geometry2D::lineSegmentIntersection" name="multiscale::Geometry2D::lineSegmentIntersection">
 <area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="224,5,387,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="435,5,573,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="621,5,760,51"/>
 </map>

@@ -1,4 +1,7 @@
 <map id="multiscale::Geometry2D::areOnTheSameSideOfLine" name="multiscale::Geometry2D::areOnTheSameSideOfLine">
 <area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a6d72740d7f1b2441b0829c0f0c6a6853" title="Get the values of &quot;a&quot;, &quot;b&quot; and &quot;c&quot; of the line equation ax + by + c = 0 knowing that point &quot;p&quot; and &quot;q..." alt="" coords="240,5,461,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a2b3058c5ad27aaaef338a29b96cdbced" title="Return the sign of the number." alt="" coords="281,74,420,121"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a2b3058c5ad27aaaef338a29b96cdbced" title="Return the sign of the number." alt="" coords="281,74,420,121"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#aa2d3ac595072b9ab61879a44629d7969" title="Check if points point1 and point2 are equal or not." alt="" coords="509,5,672,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="720,5,859,51"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="907,5,1045,51"/>
 </map>

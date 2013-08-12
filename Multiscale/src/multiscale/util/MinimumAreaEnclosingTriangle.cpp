@@ -1,3 +1,4 @@
+#include "multiscale/exception/MinimumAreaEnclosingTriangleException.hpp"
 #include "multiscale/util/MinimumAreaEnclosingTriangle.hpp"
 #include "multiscale/util/Numeric.hpp"
 
@@ -72,7 +73,7 @@ void MinimumAreaEnclosingTriangle::findMinimumAreaEnclosingTriangle(vector<Point
             updateSideB();
         }
 
-        if (updateTriangleVertices()) {
+        if (isLocalMinimalTriangle()) {
             updateMinimumAreaEnclosingTriangle(minimumAreaEnclosingTriangle, area);
         }
     }
@@ -126,7 +127,7 @@ void MinimumAreaEnclosingTriangle::updateSidesCA() {
 }
 
 void MinimumAreaEnclosingTriangle::updateSidesBA() {
-    // Side B is flush with edge [b b-1]
+    // Side B is flush with edge [b, b-1]
     sideBStartVertex = polygon[predecessor(b)];
     sideBEndVertex = polygon[b];
 
@@ -145,14 +146,14 @@ void MinimumAreaEnclosingTriangle::updateSidesBA() {
 
 void MinimumAreaEnclosingTriangle::updateSideB() {
     if (!gamma(b, sideBStartVertex))
-        throw ERR_SIDE_B_GAMMA;
+        throw MinimumAreaEnclosingTriangleException(ERR_SIDE_B_GAMMA);
 
     sideBEndVertex = polygon[b];
 
     validationFlag = VALIDATION_SIDE_B_TANGENT;
 }
 
-bool MinimumAreaEnclosingTriangle::updateTriangleVertices() {
+bool MinimumAreaEnclosingTriangle::isLocalMinimalTriangle() {
     if ((!Geometry2D::lineIntersection(sideAStartVertex, sideAEndVertex, sideBStartVertex, sideBEndVertex, vertexC)) ||
         (!Geometry2D::lineIntersection(sideAStartVertex, sideAEndVertex, sideCStartVertex, sideCEndVertex, vertexB)) ||
         (!Geometry2D::lineIntersection(sideBStartVertex, sideBEndVertex, sideCStartVertex, sideCEndVertex, vertexA))) {
@@ -337,11 +338,11 @@ bool MinimumAreaEnclosingTriangle::findGammaIntersectionPoints(unsigned int poly
     double sideCExtraParam = 2 * polygonPointHeight * distanceFormulaDenominator;
 
     // Get intersection points if they exist or if lines are identical
-    if (areIdenticalLines(side1Params, side2Params, sideCExtraParam)) {
+    if (!areIntersectingLines(side1Params, side2Params, sideCExtraParam, intersectionPoint1, intersectionPoint2)) {
+        return false;
+    } else if (areIdenticalLines(side1Params, side2Params, sideCExtraParam)) {
         intersectionPoint1 = side1StartVertex;
         intersectionPoint2 = side1EndVertex;
-    } else if (!areIntersectingLines(side1Params, side2Params, sideCExtraParam, intersectionPoint1, intersectionPoint2)) {
-        return false;
     }
 
     return true;

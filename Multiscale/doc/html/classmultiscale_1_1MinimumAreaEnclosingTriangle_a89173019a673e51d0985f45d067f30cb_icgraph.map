@@ -17,5 +17,5 @@
 <area shape="rect" id="node34" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a9bfe25a1a27190784fe106bb6d51e0de" title="If (gamma(x) x) intersects P between successorOrPredecessorIndex and pointIntex is it above/below..." alt="" coords="565,507,792,553"/>
 <area shape="rect" id="node38" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a4d0a39f0a938817b6b07985f6f85da9c" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon abov..." alt="" coords="1125,368,1352,415"/>
 <area shape="rect" id="node41" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a9f68018fd829d176bb6de00c8e5d2291" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon belo..." alt="" coords="1125,557,1352,604"/>
-<area shape="rect" id="node53" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ade7452c987147a69c50f914df96d2c5b" title="Update the triangle vertices after all sides were set and return true if possible or false otherwise..." alt="" coords="565,728,792,775"/>
+<area shape="rect" id="node53" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a729ba761fd35e6074be19959331ba465" title="Update the triangle vertices after all sides were set and check if a local minimal triangle was found..." alt="" coords="565,728,792,775"/>
 </map>
