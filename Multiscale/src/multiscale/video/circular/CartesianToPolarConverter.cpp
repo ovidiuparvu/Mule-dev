@@ -1,3 +1,4 @@
+#include "multiscale/exception/CartesianToPolarConverterException.hpp"
 #include "multiscale/video/circular/CartesianToPolarConverter.hpp"
 #include "multiscale/video/circular/PolarGnuplotScriptGenerator.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
@@ -33,10 +34,12 @@ void CartesianToPolarConverter::convert(bool outputToScript) {
     }
 }
 
-void CartesianToPolarConverter::readInputData() throw (string) {
+void CartesianToPolarConverter::readInputData() {
     ifstream fin(inputFilepath, ios_base::in);
 
-    if (!fin.is_open()) throw ERR_INPUT_OPEN;
+    if (!fin.is_open()) {
+        throw CartesianToPolarConverterException(ERR_INPUT_OPEN);
+    }
 
     // Read the header line
     readHeaderLine(fin);
@@ -48,21 +51,23 @@ void CartesianToPolarConverter::readInputData() throw (string) {
     // after excluding the line feed character
     fin.get();
 
-    if (fin.peek() != EOF) throw string(ERR_IN_EXTRA_DATA);
+    if (fin.peek() != EOF) {
+        throw CartesianToPolarConverterException(ERR_IN_EXTRA_DATA);
+    }
 
     fin.close();
 }
 
-void CartesianToPolarConverter::readHeaderLine(ifstream &fin) throw (string) {
+void CartesianToPolarConverter::readHeaderLine(ifstream &fin) {
     fin >> nrOfConcentricCircles >> nrOfSectors >> simulationTime;
 
     // Validate the header line
-    if (nrOfConcentricCircles <= 0) throw string(ERR_NONPOS_DIMENSION);
-    if (nrOfSectors <= 0)           throw string(ERR_NONPOS_DIMENSION);
-    if (simulationTime < 0)         throw string(ERR_NEG_SIM_TIME);
+    if (nrOfConcentricCircles <= 0) throw CartesianToPolarConverterException(ERR_NONPOS_DIMENSION);
+    if (nrOfSectors <= 0)           throw CartesianToPolarConverterException(ERR_NONPOS_DIMENSION);
+    if (simulationTime < 0)         throw CartesianToPolarConverterException(ERR_NEG_SIM_TIME);
 }
 
-void CartesianToPolarConverter::readConcentrations(ifstream &fin) throw (string) {
+void CartesianToPolarConverter::readConcentrations(ifstream &fin) {
     int nrOfConcentrations = ((nrOfConcentricCircles - 1) * nrOfSectors) + 1;
 
     concentrations.resize(nrOfConcentrations);
@@ -74,7 +79,9 @@ void CartesianToPolarConverter::readConcentrations(ifstream &fin) throw (string)
     for (int i = 0; i < nrOfConcentrations; i++) {
         fin >> tmp;
 
-        if ((tmp < 0) || (tmp > 1)) throw string(ERR_CONC);
+        if ((tmp < 0) || (tmp > 1)) {
+            throw CartesianToPolarConverterException(ERR_CONC);
+        }
 
         concentrations[i] = tmp;
     }

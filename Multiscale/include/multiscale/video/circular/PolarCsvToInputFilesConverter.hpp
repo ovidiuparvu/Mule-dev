@@ -14,15 +14,16 @@
 
 #define RADIUS_MIN              1
 
-#define ERR_NEG_CONCENTRATION               "All concentrations must be non-negative.";
+#define ERR_NEG_CONCENTRATION               "All concentrations must be non-negative."
 #define ERR_SELECTED_CONCENTRATION_INDEX    "The selected concentration index (0-based indexing) should be smaller than the number of concentrations."
-#define ERR_NR_CONCENTRATIONS               "The number of concentrations in the input file does not match the values of the input parameters height and width.";
+#define ERR_NR_CONCENTRATIONS               "The number of concentrations in the input file does not match the values of the input parameters height and width."
 #define ERR_NEG_SIM_TIME                    "The simulation time must be non-negative."
 #define ERR_INPUT_OPEN                      "The input file could not be opened."
 #define ERR_INVALID_VALUE_LINE              "Invalid value on line: "
 #define ERR_INVALID_VALUE_TOKEN             ", value: "
 
 using namespace std;
+
 
 namespace multiscale {
 

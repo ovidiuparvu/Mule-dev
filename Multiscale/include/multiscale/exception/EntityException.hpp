@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 namespace multiscale {
 
     //! Exception class for the Entity instances

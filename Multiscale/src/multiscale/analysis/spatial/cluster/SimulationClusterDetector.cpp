@@ -1,4 +1,5 @@
 #include "multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp"
+#include "multiscale/exception/SimulationClusterDetectorException.hpp"
 #include "multiscale/util/RGBColourGenerator.hpp"
 
 #include <iostream>
@@ -123,7 +124,7 @@ void SimulationClusterDetector::outputClusterShape(Cluster &cluster, Scalar colo
         break;
 
     default:
-        throw ERR_UNDEFINED_SHAPE;
+        throw SimulationClusterDetectorException(ERR_UNDEFINED_SHAPE);
         break;
     }
 }

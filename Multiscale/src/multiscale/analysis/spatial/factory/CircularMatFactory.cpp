@@ -1,4 +1,5 @@
 #include "multiscale/analysis/spatial/factory/CircularMatFactory.hpp"
+#include "multiscale/exception/CircularMatFactoryException.hpp"
 
 #include "opencv2/highgui/highgui.hpp"
 
@@ -37,7 +38,7 @@ double CircularMatFactory::maxColourBarIntensityFromViewerImage(const string &in
 }
 
 unsigned char * CircularMatFactory::processConcentrations(ifstream& fin) {
-    throw ERR_UNIMPLEMENTED_METHOD;
+    throw CircularMatFactoryException(ERR_UNIMPLEMENTED_METHOD);
 }
 
 Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int originY,
@@ -51,10 +52,10 @@ Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int or
 
 bool CircularMatFactory::isValidViewerImage(const Mat &image) {
     if (!image.data)
-        throw ERR_INPUT_OPEN;
+        throw CircularMatFactoryException(ERR_INPUT_OPEN);
 
     if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT))
-        throw ERR_IMG_RESOLUTION;
+        throw CircularMatFactoryException(ERR_IMG_RESOLUTION);
 
     return true;
 }

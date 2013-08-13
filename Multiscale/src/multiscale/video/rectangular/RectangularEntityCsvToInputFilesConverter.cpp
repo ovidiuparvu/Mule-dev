@@ -1,3 +1,4 @@
+#include "multiscale/exception/RectangularEntityCsvToInputFilesConverterException.hpp"
 #include "multiscale/video/rectangular/RectangularEntityCsvToInputFilesConverter.hpp"
 #include "multiscale/util/iterator/NumberIteratorType.hpp"
 #include "multiscale/util/iterator/LexicographicNumberIterator.hpp"
@@ -53,8 +54,9 @@ void RectangularEntityCsvToInputFilesConverter::convert() {
 void RectangularEntityCsvToInputFilesConverter::initInputFile(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
-    if (!fin.is_open())
-        throw ERR_INPUT_OPEN;
+    if (!fin.is_open()) {
+        throw RectangularEntityCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+    }
 }
 
 void RectangularEntityCsvToInputFilesConverter::initOutputFile(ofstream &fout, unsigned int index, double &simulationTime) {
@@ -91,8 +93,9 @@ void RectangularEntityCsvToInputFilesConverter::initIterators(const NumberIterat
 }
 
 void RectangularEntityCsvToInputFilesConverter::validateMaxNrOfEntitiesPerPosition() {
-    if (maxNrOfEntitiesPerPosition == 0)
-        throw ERR_MAX_NR_ENTITIES;
+    if (maxNrOfEntitiesPerPosition == 0) {
+        throw RectangularEntityCsvToInputFilesConverterException(ERR_MAX_NR_ENTITIES);
+    }
 }
 
 void RectangularEntityCsvToInputFilesConverter::validateInput(ifstream &fin) {
@@ -101,7 +104,9 @@ void RectangularEntityCsvToInputFilesConverter::validateInput(ifstream &fin) {
 
     fin.open(inputFilepath, ios_base::in);
 
-    if (!fin.is_open()) throw ERR_INPUT_OPEN;
+    if (!fin.is_open()) {
+        throw RectangularEntityCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+    }
 
     while (!fin.eof()) {
         getline(fin, currentLine);
@@ -120,8 +125,9 @@ void RectangularEntityCsvToInputFilesConverter::validateInput(ifstream &fin) {
 void RectangularEntityCsvToInputFilesConverter::validateInputLine(const string &currentLine, unsigned int lineNumber) {
     vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
-    if (tokens.size() < ((nrOfEntities * 2) + 1))
-        throw ERR_NR_COORDINATES;
+    if (tokens.size() < ((nrOfEntities * 2) + 1)) {
+        throw RectangularEntityCsvToInputFilesConverterException(ERR_NR_COORDINATES);
+    }
 
     // Validate simulation time
     validateSimulationTime(tokens[0], lineNumber);
@@ -192,7 +198,9 @@ vector<double> RectangularEntityCsvToInputFilesConverter::splitLineInCoordinates
 inline double RectangularEntityCsvToInputFilesConverter::computeSimulationTime(const string &token) {
     double simulationTime = stod(token);
 
-    if (simulationTime < 0) throw ERR_NEG_SIM_TIME;
+    if (simulationTime < 0) {
+        throw RectangularEntityCsvToInputFilesConverterException(ERR_NEG_SIM_TIME);
+    }
 
     return simulationTime;
 }
@@ -201,9 +209,13 @@ inline unsigned int RectangularEntityCsvToInputFilesConverter::computeCoordinate
     unsigned int coordinate = stoi(token);
 
     if (isOxCoordinate) {
-        if (coordinate > width) throw ERR_INVALID_OX_COORDINATE;
+        if (coordinate > width) {
+            throw RectangularEntityCsvToInputFilesConverterException(ERR_INVALID_OX_COORDINATE);
+        }
     } else {
-        if (coordinate > height) throw ERR_INVALID_OY_COORDINATE;
+        if (coordinate > height) {
+            throw RectangularEntityCsvToInputFilesConverterException(ERR_INVALID_OY_COORDINATE);
+        }
     }
 
     return coordinate;
@@ -212,28 +224,33 @@ inline unsigned int RectangularEntityCsvToInputFilesConverter::computeCoordinate
 inline void RectangularEntityCsvToInputFilesConverter::validateSimulationTime(const string &token, unsigned int lineNumber) {
     double simulationTime = stod(token);
 
-    if (simulationTime < 0)
-        throw string(ERR_INVALID_VALUE_LINE)  +
-              StringManipulator::toString<unsigned int>(lineNumber) +
-              string(ERR_INVALID_VALUE_TOKEN) +
-              StringManipulator::toString<double>(simulationTime);
+    if (simulationTime < 0) {
+        throw RectangularEntityCsvToInputFilesConverterException(
+                string(ERR_INVALID_VALUE_LINE)  +
+                StringManipulator::toString<unsigned int>(lineNumber) +
+                string(ERR_INVALID_VALUE_TOKEN) +
+                StringManipulator::toString<double>(simulationTime)
+              );
+    }
 }
 
 inline void RectangularEntityCsvToInputFilesConverter::validateCoordinate(const string & token, unsigned int lineNumber, bool isOxCoordinate) {
     unsigned int coordinate = stoi(token);
 
     if (((isOxCoordinate) && (coordinate > width)) || ((!isOxCoordinate) && (coordinate > height))) {
-        throw string(ERR_INVALID_VALUE_LINE)  +
-              StringManipulator::toString<unsigned int>(lineNumber) +
-              string(ERR_INVALID_VALUE_TOKEN) +
-              StringManipulator::toString<unsigned int>(coordinate);
+        throw RectangularEntityCsvToInputFilesConverterException(
+                string(ERR_INVALID_VALUE_LINE)  +
+                StringManipulator::toString<unsigned int>(lineNumber) +
+                string(ERR_INVALID_VALUE_TOKEN) +
+                StringManipulator::toString<unsigned int>(coordinate)
+              );
     }
 }
 
 inline void RectangularEntityCsvToInputFilesConverter::validateEntitiesGrid(const vector<double> &entitiesGrid) {
     for (double gridPosition : entitiesGrid) {
         if ((gridPosition < 0) || (gridPosition > 1)) {
-            throw ERR_INVALID_NR_ENTITIES;
+            throw RectangularEntityCsvToInputFilesConverterException(ERR_INVALID_NR_ENTITIES);
         }
     }
 }

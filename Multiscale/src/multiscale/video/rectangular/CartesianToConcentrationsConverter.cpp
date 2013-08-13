@@ -1,3 +1,4 @@
+#include "multiscale/exception/CartesianToConcentrationsConverterException.hpp"
 #include "multiscale/video/rectangular/CartesianToConcentrationsConverter.hpp"
 #include "multiscale/video/rectangular/RectangularGnuplotScriptGenerator.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
@@ -27,10 +28,12 @@ void CartesianToConcentrationsConverter::convert() {
     outputResults();
 }
 
-void CartesianToConcentrationsConverter::readInputData() throw (string) {
+void CartesianToConcentrationsConverter::readInputData() {
     ifstream fin(inputFilepath, ios_base::in);
 
-    if (!fin.is_open()) throw ERR_INPUT_OPEN;
+    if (!fin.is_open()) {
+        throw CartesianToConcentrationsConverterException(ERR_INPUT_OPEN);
+    }
 
     // Read the header line
     readHeaderLine(fin);
@@ -42,21 +45,23 @@ void CartesianToConcentrationsConverter::readInputData() throw (string) {
     // after excluding the line feed character
     fin.get();
 
-    if (fin.peek() != EOF) throw string(ERR_IN_EXTRA_DATA);
+    if (fin.peek() != EOF) {
+        throw CartesianToConcentrationsConverterException(ERR_IN_EXTRA_DATA);
+    }
 
     fin.close();
 }
 
-void CartesianToConcentrationsConverter::readHeaderLine(ifstream &fin) throw (string) {
+void CartesianToConcentrationsConverter::readHeaderLine(ifstream &fin) {
     fin >> height >> width >> simulationTime;
 
     // Validate the header line
-    if (height <= 0) throw string(ERR_NONPOS_DIMENSION);
-    if (width <= 0)  throw string(ERR_NONPOS_DIMENSION);
-    if (simulationTime < 0) throw string(ERR_NEG_SIM_TIME);
+    if (height <= 0) throw CartesianToConcentrationsConverterException(ERR_NONPOS_DIMENSION);
+    if (width <= 0)  throw CartesianToConcentrationsConverterException(ERR_NONPOS_DIMENSION);
+    if (simulationTime < 0) throw CartesianToConcentrationsConverterException(ERR_NEG_SIM_TIME);
 }
 
-void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) throw (string) {
+void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) {
     int nrOfConcentrations = height * width;
 
     concentrations.resize(nrOfConcentrations);
@@ -68,7 +73,9 @@ void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) throw
     for (int i = 0; i < nrOfConcentrations; i++) {
         fin >> tmp;
 
-        if ((tmp < 0) || (tmp > 1)) throw string(ERR_CONC);
+        if ((tmp < 0) || (tmp > 1)) {
+            throw CartesianToConcentrationsConverterException(ERR_CONC);
+        }
 
         concentrations[i] = tmp;
     }

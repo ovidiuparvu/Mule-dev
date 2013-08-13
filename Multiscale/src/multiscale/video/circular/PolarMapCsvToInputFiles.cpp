@@ -113,17 +113,21 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, unsigned 
         nrOfConcentricCircles = vm["nr-concentric-circles"].as<unsigned int>();
         nrOfSectors           = vm["nr-sectors"].as<unsigned int>();
 
-        if (vm.count("use-log-scaling"))
+        if (vm.count("use-log-scaling")) {
             setLogScaling(vm, useLogScaling);
+        }
 
-        if (vm.count("selected-concentration-index"))
+        if (vm.count("selected-concentration-index")) {
             setSelectedConcentrationIndex(vm, selectedConcentrationIndex);
+        }
 
-        if (vm.count("lexicographic-iterator"))
+        if (vm.count("lexicographic-iterator")) {
             setNumberIteratorType(vm, numberIteratorType);
+        }
 
-        if (vm.count("nr-concentrations-position"))
+        if (vm.count("nr-concentrations-position")) {
             return isValidNrOfConcentrationsForPosition(vm, nrOfConcentrationsForPosition);
+        }
 
         return true;
     }

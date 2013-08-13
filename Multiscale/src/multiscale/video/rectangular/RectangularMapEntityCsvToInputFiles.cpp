@@ -90,8 +90,9 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, unsigned 
         nrOfEntities = vm["nr-entities"].as<unsigned int>();
         maxPileup = vm["max-pileup"].as<unsigned int>();
 
-        if (vm.count("lexicographic-iterator"))
+        if (vm.count("lexicographic-iterator")) {
             setNumberIteratorType(vm, numberIteratorType);
+        }
 
         return true;
     }

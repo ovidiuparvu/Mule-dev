@@ -1,3 +1,4 @@
+#include "multiscale/exception/RectangularCsvToInputFilesConverterException.hpp"
 #include "multiscale/video/rectangular/RectangularCsvToInputFilesConverter.hpp"
 #include "multiscale/util/iterator/NumberIteratorType.hpp"
 #include "multiscale/util/iterator/LexicographicNumberIterator.hpp"
@@ -60,7 +61,9 @@ void RectangularCsvToInputFilesConverter::convert() {
 void RectangularCsvToInputFilesConverter::initInputFile(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
-    if (!fin.is_open()) throw ERR_INPUT_OPEN;
+    if (!fin.is_open()) {
+        throw RectangularCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+    }
 }
 
 void RectangularCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin) {
@@ -69,7 +72,9 @@ void RectangularCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin
 
     fin.open(inputFilepath, ios_base::in);
 
-    if (!fin.is_open()) throw ERR_INPUT_OPEN;
+    if (!fin.is_open()) {
+        throw RectangularCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+    }
 
     while (!fin.eof()) {
         getline(fin, currentLine);
@@ -120,8 +125,9 @@ void RectangularCsvToInputFilesConverter::initIterators(const NumberIteratorType
 }
 
 void RectangularCsvToInputFilesConverter::validateSelectedConcentrationIndex() {
-    if (selectedConcentrationIndex >= nrOfConcentrationsForPosition)
-        throw ERR_SELECTED_CONCENTRATION_INDEX;
+    if (selectedConcentrationIndex >= nrOfConcentrationsForPosition) {
+        throw RectangularCsvToInputFilesConverterException(ERR_SELECTED_CONCENTRATION_INDEX);
+    }
 }
 
 void RectangularCsvToInputFilesConverter::validateInput(ifstream &fin) {
@@ -130,7 +136,9 @@ void RectangularCsvToInputFilesConverter::validateInput(ifstream &fin) {
 
     fin.open(inputFilepath, ios_base::in);
 
-    if (!fin.is_open()) throw ERR_INPUT_OPEN;
+    if (!fin.is_open()) {
+        throw RectangularCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+    }
 
     while (!fin.eof()) {
         getline(fin, currentLine);
@@ -149,16 +157,20 @@ void RectangularCsvToInputFilesConverter::validateInput(ifstream &fin) {
 void RectangularCsvToInputFilesConverter::validateInputLine(const string &currentLine, unsigned int lineNumber) {
     vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
-    if (tokens.size() < ((height * width * nrOfConcentrationsForPosition) + 1))
-        throw ERR_NR_CONCENTRATIONS;
+    if (tokens.size() < ((height * width * nrOfConcentrationsForPosition) + 1)) {
+        throw RectangularCsvToInputFilesConverterException(ERR_NR_CONCENTRATIONS);
+    }
 
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
         double value = stod(*it);
 
-        if (value < 0)
-            throw string(ERR_INVALID_VALUE_LINE)  +
-                  StringManipulator::toString<unsigned int>(lineNumber) +
-                  string(ERR_INVALID_VALUE_TOKEN) + (*it);
+        if (value < 0) {
+            throw RectangularCsvToInputFilesConverterException(
+                    string(ERR_INVALID_VALUE_LINE)  +
+                    StringManipulator::toString<unsigned int>(lineNumber) +
+                    string(ERR_INVALID_VALUE_TOKEN) + (*it)
+                  );
+        }
     }
 }
 
@@ -233,7 +245,9 @@ void RectangularCsvToInputFilesConverter::splitLineInConcentrations(vector<doubl
 inline double RectangularCsvToInputFilesConverter::computeSimulationTime(const string &token) {
     double simulationTime = stod(token);
 
-    if (simulationTime < 0) throw ERR_NEG_SIM_TIME;
+    if (simulationTime < 0) {
+        throw RectangularCsvToInputFilesConverterException(ERR_NEG_SIM_TIME);
+    }
 
     return simulationTime;
 }
@@ -258,9 +272,9 @@ inline double RectangularCsvToInputFilesConverter::computeNextPositionConcentrat
     }
 
     // Return normalised concentration
-    if (nrOfConcentrationsForPosition == 1)
+    if (nrOfConcentrationsForPosition == 1) {
         return computeNormalisedConcentration(totalConcentration);
-    else {
+    } else {
         return (totalConcentration != 0) ? (concentration/totalConcentration) : 0;
     }
 }

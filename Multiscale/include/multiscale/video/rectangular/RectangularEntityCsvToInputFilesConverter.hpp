@@ -12,11 +12,11 @@
 #define OUTPUT_FILE_SEPARATOR   "_"
 #define INPUT_FILE_SEPARATOR    ","
 
-#define ERR_INVALID_NR_ENTITIES     "The number of entities at the given position is invalid.";
-#define ERR_INVALID_OX_COORDINATE   "The value of the Ox coordinate is invalid.";
-#define ERR_INVALID_OY_COORDINATE   "The value of the Oy coordinate is invalid.";
-#define ERR_MAX_NR_ENTITIES         "The maximum number of entities per grid position is equal to zero.";
-#define ERR_NR_COORDINATES          "The number of coordinates in the input file does not match the values of the input parameters height, width and nrOfEntities.";
+#define ERR_INVALID_NR_ENTITIES     "The number of entities at the given position is invalid."
+#define ERR_INVALID_OX_COORDINATE   "The value of the Ox coordinate is invalid."
+#define ERR_INVALID_OY_COORDINATE   "The value of the Oy coordinate is invalid."
+#define ERR_MAX_NR_ENTITIES         "The maximum number of entities per grid position is equal to zero."
+#define ERR_NR_COORDINATES          "The number of coordinates in the input file does not match the values of the input parameters height, width and nrOfEntities."
 #define ERR_NEG_SIM_TIME            "The simulation time must be non-negative."
 #define ERR_INPUT_OPEN              "The input file could not be opened."
 #define ERR_INVALID_VALUE_LINE      "Invalid value on line: "

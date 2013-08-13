@@ -43,8 +43,7 @@ namespace multiscale {
                                            double simulationTime,
                                            unsigned long height,
                                            unsigned long width,
-                                           const string &outputFilepath)
-                                           throw (string);
+                                           const string &outputFilepath);
 
             private:
 

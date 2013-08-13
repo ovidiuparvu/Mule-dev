@@ -40,8 +40,7 @@ namespace multiscale {
                  */
                 static void generateScript(const vector<AnnularSector> &annularSectors,
                                            double simulationTime,
-                                           const string &outputFilepath)
-                                           throw (string);
+                                           const string &outputFilepath);
 
             private:
 

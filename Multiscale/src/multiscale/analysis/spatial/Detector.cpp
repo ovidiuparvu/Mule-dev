@@ -1,4 +1,5 @@
 #include "multiscale/analysis/spatial/Detector.hpp"
+#include "multiscale/exception/DetectorException.hpp"
 
 #include <iostream>
 
@@ -19,8 +20,9 @@ Detector::~Detector() {
 }
 
 void Detector::detect(const Mat &inputImage) {
-    if (!isValidInputImage(inputImage))
-        throw ERR_INVALID_IMAGE;
+    if (!isValidInputImage(inputImage)) {
+        throw DetectorException(ERR_INVALID_IMAGE);
+    }
 
     inputImage.copyTo(image);
 
@@ -106,8 +108,9 @@ void Detector::storeOutputImageOnDisk() {
 void Detector::outputResultsToCsvFile() {
     ofstream fout(outputFilepath + OUTPUT_EXTENSION, ios_base::trunc);
 
-    if (!fout.is_open())
-        throw ERR_OUTPUT_FILE;
+    if (!fout.is_open()) {
+        throw DetectorException(ERR_OUTPUT_FILE);
+    }
 
     outputResultsToCsvFile(fout);
 

@@ -199,8 +199,9 @@ void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
     vector<vector<Point> > contours = findContoursInImage(image);
 
     for (const vector<Point> &contour : contours) {
-        if (!isValidRegion(contour))
+        if (!isValidRegion(contour)) {
             continue;
+        }
 
         // Obtain the approximated polygon
         vector<Point> approxPolygon;

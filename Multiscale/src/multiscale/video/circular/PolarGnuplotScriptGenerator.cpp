@@ -13,8 +13,7 @@ using namespace std;
 
 void PolarGnuplotScriptGenerator::generateScript(const vector<AnnularSector> &annularSectors,
                                                  double simulationTime,
-                                                 const string &outputFilepath)
-                                                 throw (string) {
+                                                 const string &outputFilepath) {
     ofstream fout((outputFilepath + GNUPLOT_EXTENSION), std::ios_base::trunc);
 
     assert(fout.is_open());

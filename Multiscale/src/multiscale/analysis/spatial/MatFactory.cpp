@@ -1,4 +1,5 @@
 #include "multiscale/analysis/spatial/MatFactory.hpp"
+#include "multiscale/exception/MatFactoryException.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
 
 using namespace multiscale;
@@ -20,7 +21,9 @@ Mat MatFactory::create(const string &inputFile) {
     // after excluding the line feed character
     fin.get();
 
-    if (fin.peek() != EOF) throw string(ERR_IN_EXTRA_DATA);
+    if (fin.peek() != EOF) {
+        throw MatFactoryException(ERR_IN_EXTRA_DATA);
+    }
 
     fin.close();
 
@@ -30,8 +33,9 @@ Mat MatFactory::create(const string &inputFile) {
 void MatFactory::initInputFile(ifstream &fin, const string& inputFile) {
     fin.open(inputFile, ios_base::in);
 
-    if (!fin.is_open())
+    if (!fin.is_open()) {
         throw ERR_INPUT_OPEN;
+    }
 
     fin >> rows >> cols >> simulationTime;
 }

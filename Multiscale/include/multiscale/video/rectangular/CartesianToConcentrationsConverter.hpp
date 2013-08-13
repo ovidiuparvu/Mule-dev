@@ -47,7 +47,7 @@ namespace multiscale {
             private:
 
                 //! Read the input data
-                void readInputData() throw (string);
+                void readInputData();
 
                 //! Read the header line
                 /*!
@@ -56,13 +56,13 @@ namespace multiscale {
                  *
                  * \param fin Input file stream
                  */
-                void readHeaderLine(ifstream &fin) throw (string);
+                void readHeaderLine(ifstream &fin);
 
                 //! Read the concentrations
                 /*!
                  * \param fin Input file stream
                  */
-                void readConcentrations(ifstream &fin) throw (string);
+                void readConcentrations(ifstream &fin);
 
                 //! Output the results
                 void outputResults();

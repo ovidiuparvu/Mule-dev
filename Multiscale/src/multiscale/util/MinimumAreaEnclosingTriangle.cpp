@@ -145,8 +145,9 @@ void MinimumAreaEnclosingTriangle::updateSidesBA() {
 }
 
 void MinimumAreaEnclosingTriangle::updateSideB() {
-    if (!gamma(b, sideBStartVertex))
+    if (!gamma(b, sideBStartVertex)) {
         throw MinimumAreaEnclosingTriangleException(ERR_SIDE_B_GAMMA);
+    }
 
     sideBEndVertex = polygon[b];
 
@@ -314,7 +315,7 @@ Point2f MinimumAreaEnclosingTriangle::findVertexCOnSideB() {
     // Get intersection points if they exist
     if (!findGammaIntersectionPoints(predecessor(a), sideBStartVertex, sideBEndVertex, sideCStartVertex, sideCEndVertex,
                                      intersectionPoint1, intersectionPoint2)) {
-        throw ERR_VERTEX_C_ON_SIDE_B;
+        throw MinimumAreaEnclosingTriangleException(ERR_VERTEX_C_ON_SIDE_B);
     }
 
     // Select the point which is on the same side of line C as the polygon
