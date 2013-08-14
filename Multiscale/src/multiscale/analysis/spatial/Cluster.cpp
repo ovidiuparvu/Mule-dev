@@ -1,3 +1,4 @@
+#include "multiscale/analysis/spatial/CircularityMeasure.hpp"
 #include "multiscale/analysis/spatial/Cluster.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 #include "multiscale/util/MinimumAreaEnclosingTriangle.hpp"
@@ -248,11 +249,7 @@ double Cluster::isCircularMeasure() {
 
     minEnclosingCircle(entitiesContourPoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
-    // Compute the area of the minimum area enclosing circle
-    double circleArea = PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
-
-    return (circleArea == 0) ? 0
-                             : (area / circleArea);
+    return CircularityMeasure::compute(entitiesContourPoints);
 }
 
 string Cluster::shapeAsString() {
