@@ -6,20 +6,22 @@
 using namespace multiscale::analysis;
 
 
-Entity::Entity(unsigned int pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
-    validateInputValues(pileUpDegree, area, centre, contourPoints);
+Entity::Entity(unsigned int pileUpDegree, double area, double perimeter, const Point2f &centre, const vector<Point2f> &contourPoints) {
+    validateInputValues(pileUpDegree, area, perimeter, centre, contourPoints);
 
     this->pileUpDegree = pileUpDegree;
     this->area = area;
+    this->perimeter = perimeter;
     this->centre = centre;
     this->contourPoints = contourPoints;
 }
 
 Entity::Entity(const Entity &entity) {
-    validateInputValues(entity.pileUpDegree, entity.area, entity.centre, entity.contourPoints);
+    validateInputValues(entity.pileUpDegree, entity.area, entity.perimeter, entity.centre, entity.contourPoints);
 
     pileUpDegree = entity.pileUpDegree;
     area = entity.area;
+    perimeter = entity.perimeter;
     centre = Point2f(entity.centre.x, entity.centre.y);
     contourPoints = entity.contourPoints;
 }
@@ -32,6 +34,10 @@ unsigned int Entity::getPileUpDegree() const {
 
 double Entity::getArea() const {
     return area;
+}
+
+double Entity::getPerimeter() const {
+    return perimeter;
 }
 
 Point2f Entity::getCentre() const {
@@ -58,13 +64,14 @@ double Entity::distanceTo(const Entity &entity) {
     return Geometry2D::distanceBtwPoints(centre, entity.centre);
 }
 
-void Entity::validateInputValues(unsigned int pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
-    if (!areValid(pileUpDegree, area, centre, contourPoints)) {
+void Entity::validateInputValues(unsigned int pileUpDegree, double area, double perimeter, const Point2f &centre,
+                                 const vector<Point2f> &contourPoints) {
+    if (!areValid(pileUpDegree, area, perimeter, centre, contourPoints)) {
         throw EntityException(ERR_INPUT);
     }
 }
 
-bool Entity::areValid(unsigned int pileUpDegree, double area, const Point2f &centre, const vector<Point2f> &contourPoints) {
+bool Entity::areValid(unsigned int pileUpDegree, double area, double perimeter, const Point2f &centre, const vector<Point2f> &contourPoints) {
     for (const Point2f &point: contourPoints) {
         if ((point.x < 0) || (point.y < 0)) {
             return false;
@@ -74,6 +81,7 @@ bool Entity::areValid(unsigned int pileUpDegree, double area, const Point2f &cen
     return (
         (pileUpDegree > 0) &&
         (area > 0) &&
+        (perimeter > 0) &&
         ((centre.x > 0) && (centre.y > 0))
     );
 }

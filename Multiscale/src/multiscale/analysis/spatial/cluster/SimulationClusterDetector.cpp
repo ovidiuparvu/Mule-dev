@@ -36,10 +36,11 @@ void SimulationClusterDetector::detectEntitiesInImage(vector<Entity> &entities) 
             if (isEntityAtPosition(j, i)) {
                 unsigned int pileUpDegree = computePileUpDegreeAtPosition(j, i);
                 double area = entityHeight * entityWidth;
+                double perimeter = 2 * (entityHeight + entityWidth);
                 Point2f centre = getEntityCentrePoint(j, i);
                 vector<Point2f> contourPoints = getEntityContourPoints(j, i);
 
-                entities.push_back(Entity(pileUpDegree, area, centre, contourPoints));
+                entities.push_back(Entity(pileUpDegree, area, perimeter, centre, contourPoints));
             }
         }
     }

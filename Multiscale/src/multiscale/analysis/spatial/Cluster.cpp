@@ -37,6 +37,12 @@ double Cluster::getArea() {
     return area;
 }
 
+double Cluster::getPerimeter() {
+    updateMeasuresIfRequired();
+
+    return perimeter;
+}
+
 Shape2D Cluster::getShape() {
     updateMeasuresIfRequired();
 
@@ -78,7 +84,7 @@ vector<Entity> Cluster::getEntities() const {
 }
 
 string Cluster::fieldNamesToString() {
-    return "Clusteredness degree,Pile up degree,Number of entities (ignoring pileup),Area,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
+    return "Clusteredness degree,Pile up degree,Number of entities (ignoring pileup),Area,Perimeter,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
 }
 
 string Cluster::toString() {
@@ -86,6 +92,7 @@ string Cluster::toString() {
            StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
            StringManipulator::toString<unsigned int>(entities.size()) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(perimeter) + OUTPUT_SEPARATOR +
            shapeAsString() + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(triangularMeasure) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(rectangularMeasure) + OUTPUT_SEPARATOR +
@@ -98,6 +105,7 @@ void Cluster::initialise() {
     this->clusterednessDegree = 0;
     this->pileUpDegree = 0;
     this->area = 0;
+    this->perimeter = 0;
 
     this->triangularMeasure = 0;
     this->rectangularMeasure = 0;
@@ -135,6 +143,16 @@ vector<Point2f> Cluster::getEntitiesContourPoints() {
     return contourPoints;
 }
 
+vector<Point2f> Cluster::getEntitiesConvexHull() {
+    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
+
+    vector<Point2f> entitiesConvexHull;
+
+    convexHull(entitiesContourPoints, entitiesConvexHull, true, true);
+
+    return entitiesConvexHull;
+}
+
 void Cluster::updateMeasuresIfRequired() {
     if (updateFlag) {
         updateMeasures();
@@ -147,6 +165,7 @@ void Cluster::updateMeasures() {
     if (entities.size() > 0) {
         updatePileUpDegree();
         updateArea();
+        updatePerimeter();
         updateClusterednessDegree();
         updateShape();
         updateCentrePoint();
@@ -186,6 +205,12 @@ void Cluster::updateArea() {
     for (const Entity &entity : entities) {
         area += entity.getArea();
     }
+}
+
+void Cluster::updatePerimeter() {
+    vector<Point2f> entitiesConvexHull = getEntitiesConvexHull();
+
+    perimeter = arcLength(entitiesConvexHull, true);
 }
 
 void Cluster::updateShape() {

@@ -33,6 +33,7 @@ namespace multiscale {
                 double clusterednessDegree;                 /*!< Degree of clusteredness */
                 double pileUpDegree;                        /*!< Degree of pile up */
                 double area;                                /*!< Sum of the areas of all entities in the cluster */
+                double perimeter;                           /*!< Perimeter of convex hull enclosing all entities in the cluster */
 
                 double triangularMeasure;                   /*!< Measure ([0, 1]) indicating that the shape of the cluster is triangular */
                 double rectangularMeasure;                  /*!< Measure ([0, 1]) indicating that the shape of the cluster is rectangular */
@@ -70,6 +71,9 @@ namespace multiscale {
 
                 //! Get the area
                 double getArea();
+
+                //! Get the perimeter
+                double getPerimeter();
 
                 //! Get the shape best fitting the cluster of entities
                 Shape2D getShape();
@@ -110,6 +114,9 @@ namespace multiscale {
                 //! Get the collection of entities' contour points
                 vector<Point2f> getEntitiesContourPoints();
 
+                //! Get the convex hull enclosing the collection of entities' contour points
+                vector<Point2f> getEntitiesConvexHull();
+
                 //! Update the values of all measures if required
                 void updateMeasuresIfRequired();
 
@@ -125,6 +132,9 @@ namespace multiscale {
                 //! Update the value of the area
                 void updateArea();
 
+                //! Update the value of the perimeter
+                void updatePerimeter();
+
                 //! Update the shape of the cluster
                 void updateShape();
 
@@ -138,14 +148,6 @@ namespace multiscale {
                 double isRectangularMeasure();
 
                 //! Get probability that the cluster has a circular shape
-                /*!
-                 * The circularity measure is equal to the standard circularity measure described in the
-                 * following paper:
-                 *
-                 * Joviša Žunić, Kaoru Hirota, Paul L. Rosin, A Hu moment invariant as a shape circularity measure,
-                 * Pattern Recognition, Volume 43, Issue 1, January 2010, Pages 47-57, ISSN 0031-3203,
-                 * http://dx.doi.org/10.1016/j.patcog.2009.06.017.
-                 */
                 double isCircularMeasure();
 
                 //! Return the shape of the cluster as a string
