@@ -7,6 +7,7 @@ var searchData=
   ['detectindebugmode',['detectInDebugMode',['../classmultiscale_1_1analysis_1_1Detector.html#aa9173a243a85e2d9cf493a641fb610aa',1,'multiscale::analysis::Detector']]],
   ['detectinreleasemode',['detectInReleaseMode',['../classmultiscale_1_1analysis_1_1Detector.html#a58665776f1a12659dae08d1a4a01050a',1,'multiscale::analysis::Detector']]],
   ['detector',['Detector',['../classmultiscale_1_1analysis_1_1Detector.html#ae761f485926eead354aa361f1f57e167',1,'multiscale::analysis::Detector']]],
+  ['detectorexception',['DetectorException',['../classmultiscale_1_1DetectorException.html#a3fce3063f6ef981bc6ced04ff5a5ad2c',1,'multiscale::DetectorException::DetectorException(const string &amp;msg)'],['../classmultiscale_1_1DetectorException.html#abc8333a2e769e32b57e5eaec6a419c83',1,'multiscale::DetectorException::DetectorException(const char *msg)']]],
   ['digitstonumber',['digitsToNumber',['../classmultiscale_1_1LexicographicNumberIterator.html#a9bcb610b3b63b02ceed7d556960e57c3',1,'multiscale::LexicographicNumberIterator']]],
   ['displayimage',['displayImage',['../classmultiscale_1_1analysis_1_1Detector.html#ae68f8f87cc1e4e1cd22cee1e3604ef4b',1,'multiscale::analysis::Detector']]],
   ['displayresultsinwindow',['displayResultsInWindow',['../classmultiscale_1_1analysis_1_1Detector.html#abb6d85e1a13e96b748ea286a070bdf18',1,'multiscale::analysis::Detector']]],

@@ -2,7 +2,12 @@ var dir_525f610367b169c5221b707333271043 =
 [
     [ "cluster", "dir_e0c8afcfe04fc4bc06e8e3338ab9a9f9.html", "dir_e0c8afcfe04fc4bc06e8e3338ab9a9f9" ],
     [ "factory", "dir_dc58f59ab08c37a8d6db78fec5d299c9.html", "dir_dc58f59ab08c37a8d6db78fec5d299c9" ],
-    [ "Cluster.hpp", "Cluster_8hpp.html", "Cluster_8hpp" ],
+    [ "CircularityMeasure.hpp", "CircularityMeasure_8hpp.html", [
+      [ "CircularityMeasure", "classmultiscale_1_1analysis_1_1CircularityMeasure.html", null ]
+    ] ],
+    [ "Cluster.hpp", "Cluster_8hpp.html", [
+      [ "Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", "classmultiscale_1_1analysis_1_1Cluster" ]
+    ] ],
     [ "ClusterDetector.hpp", "ClusterDetector_8hpp.html", "ClusterDetector_8hpp" ],
     [ "DataPoint.hpp", "DataPoint_8hpp.html", [
       [ "DataPoint", "classmultiscale_1_1analysis_1_1DataPoint.html", "classmultiscale_1_1analysis_1_1DataPoint" ]
@@ -16,5 +21,6 @@ var dir_525f610367b169c5221b707333271043 =
     [ "Shape2D.hpp", "Shape2D_8hpp.html", "Shape2D_8hpp" ],
     [ "Silhouette.hpp", "Silhouette_8hpp.html", [
       [ "Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ]
-    ] ]
+    ] ],
+    [ "SpatialCollection2D.hpp", "SpatialCollection2D_8hpp.html", "SpatialCollection2D_8hpp" ]
 ];

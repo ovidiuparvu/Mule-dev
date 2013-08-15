@@ -32,6 +32,7 @@ var classmultiscale_1_1analysis_1_1RegionDetector =
     [ "processImageAndDetect", "classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d", null ],
     [ "regionAngle", "classmultiscale_1_1analysis_1_1RegionDetector.html#ac016631bd35bf0dd2d7e941076ec09c8", null ],
     [ "regionAngle", "classmultiscale_1_1analysis_1_1RegionDetector.html#afb2aa3926a1bdc868f990db65df1ed4c", null ],
+    [ "regionDensity", "classmultiscale_1_1analysis_1_1RegionDetector.html#a6beb6b2ecaccd60130bcf8dd808750b8", null ],
     [ "setAlpha", "classmultiscale_1_1analysis_1_1RegionDetector.html#ada64f919fd5310987b950c052a3cf93a", null ],
     [ "setBeta", "classmultiscale_1_1analysis_1_1RegionDetector.html#a054b6327918fd9a6ff2de293dac1afc0", null ],
     [ "setBlurKernelSize", "classmultiscale_1_1analysis_1_1RegionDetector.html#a968d5ddbc060fa823e4c79c9dcfec300", null ],

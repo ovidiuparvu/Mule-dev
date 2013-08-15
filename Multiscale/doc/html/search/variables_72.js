@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['rectangularmeasure',['rectangularMeasure',['../classmultiscale_1_1analysis_1_1Cluster.html#a459889a2a2ecbc5bc11f9dd5342e121c',1,'multiscale::analysis::Cluster']]],
+  ['rectangularmeasure',['rectangularMeasure',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aad7d79a7bd299d4d3c08a864cfcb77c3',1,'multiscale::analysis::SpatialCollection2D']]],
   ['red',['red',['../classmultiscale_1_1RGBColourGenerator.html#a8d44923812c8197b193c6fe4885e6028',1,'multiscale::RGBColourGenerator']]],
   ['regionareathresh',['regionAreaThresh',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a1f637073a3d946d000dceed01412f19a',1,'multiscale::analysis::RegionDetector']]],
   ['regions',['regions',['../classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893',1,'multiscale::analysis::RegionDetector']]],

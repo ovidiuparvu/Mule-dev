@@ -108,7 +108,7 @@ double Region::isCircularMeasure() {
     return CircularityMeasure::compute(polygon);
 }
 
-void Region::updateCentre() {
+void Region::updateCentrePoint() {
     RotatedRect minAreaEnclosingRect = minAreaRect(polygon);
 
     centre = minAreaEnclosingRect.center;

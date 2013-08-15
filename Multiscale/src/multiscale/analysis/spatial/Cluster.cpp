@@ -31,24 +31,6 @@ double Cluster::getPileUpDegree() {
     return pileUpDegree;
 }
 
-double Cluster::getArea() {
-    updateMeasuresIfRequired();
-
-    return area;
-}
-
-double Cluster::getPerimeter() {
-    updateMeasuresIfRequired();
-
-    return perimeter;
-}
-
-Shape2D Cluster::getShape() {
-    updateMeasuresIfRequired();
-
-    return shape;
-}
-
 vector<Point2f> Cluster::getMinAreaEnclosingTriangle() {
     updateMeasuresIfRequired();
 
@@ -73,12 +55,6 @@ float Cluster::getMinAreaEnclosingCircleRadius() {
     return minAreaEnclosingCircleRadius;
 }
 
-Point2f Cluster::getCentre() {
-    updateMeasuresIfRequired();
-
-    return centre;
-}
-
 vector<Entity> Cluster::getEntities() const {
     return entities;
 }
@@ -87,38 +63,14 @@ string Cluster::fieldNamesToString() {
     return "Clusteredness degree,Pile up degree,Number of entities (ignoring pileup),Area,Perimeter,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
 }
 
-string Cluster::toString() {
-    return StringManipulator::toString<double>(clusterednessDegree) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<unsigned int>(entities.size()) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(perimeter) + OUTPUT_SEPARATOR +
-           shapeAsString() + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(triangularMeasure) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(rectangularMeasure) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(circularMeasure) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(centre.y);
-}
-
 void Cluster::initialise() {
     this->clusterednessDegree = 0;
     this->pileUpDegree = 0;
-    this->area = 0;
-    this->perimeter = 0;
-
-    this->triangularMeasure = 0;
-    this->rectangularMeasure = 0;
-    this->circularMeasure = 0;
 
     this->minAreaEnclosingCircleRadius = 0;
 
-    this->shape = Shape2D::Undefined;
-
     minAreaEnclosingTriangle.clear();
     entities.clear();
-
-    updateFlag = true;
 }
 
 vector<Point2f> Cluster::getEntitiesCentrePoints() {
@@ -153,22 +105,10 @@ vector<Point2f> Cluster::getEntitiesConvexHull() {
     return entitiesConvexHull;
 }
 
-void Cluster::updateMeasuresIfRequired() {
-    if (updateFlag) {
-        updateMeasures();
-
-        updateFlag = false;
-    }
-}
-
-void Cluster::updateMeasures() {
+void Cluster::updateSpatialCollectionSpecificValues() {
     if (entities.size() > 0) {
         updatePileUpDegree();
-        updateArea();
-        updatePerimeter();
         updateClusterednessDegree();
-        updateShape();
-        updateCentrePoint();
     }
 }
 
@@ -211,26 +151,6 @@ void Cluster::updatePerimeter() {
     vector<Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
     perimeter = arcLength(entitiesConvexHull, true);
-}
-
-void Cluster::updateShape() {
-    triangularMeasure = isTriangularMeasure();
-    rectangularMeasure = isRectangularMeasure();
-    circularMeasure = isCircularMeasure();
-
-    if (triangularMeasure < rectangularMeasure) {
-        if (rectangularMeasure > circularMeasure) {
-            shape = Shape2D::Rectangle;
-        } else {
-            shape = Shape2D::Circle;
-        }
-    } else {
-        if (triangularMeasure > circularMeasure) {
-            shape = Shape2D::Triangle;
-        } else {
-            shape = Shape2D::Circle;
-        }
-    }
 }
 
 void Cluster::updateCentrePoint() {
@@ -277,24 +197,16 @@ double Cluster::isCircularMeasure() {
     return CircularityMeasure::compute(entitiesContourPoints);
 }
 
-string Cluster::shapeAsString() {
-    switch (shape) {
-        case Shape2D::Triangle:
-            return STR_TRIANGLE;
-            break;
-
-        case Shape2D::Rectangle:
-            return STR_RECTANGLE;
-            break;
-
-        case Shape2D::Circle:
-            return STR_CIRCLE;
-            break;
-
-        case Shape2D::Undefined:
-            // There are no entities in this cluster
-            break;
-    }
-
-    return STR_UNDEFINED;
+string Cluster::fieldValuesToString() {
+    return StringManipulator::toString<double>(clusterednessDegree) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<unsigned int>(entities.size()) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(perimeter) + OUTPUT_SEPARATOR +
+           shapeAsString() + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(triangularMeasure) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(rectangularMeasure) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(circularMeasure) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(centre.y);
 }

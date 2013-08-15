@@ -110,7 +110,8 @@ $(document).ready(function(){initNavTree('Region_8hpp.html','');});
 <div class="title">Region.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;opencv2/imgproc/imgproc.hpp&quot;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="SpatialCollection2D_8hpp_source.html">multiscale/analysis/spatial/SpatialCollection2D.hpp</a>&quot;</code><br/>
+<code>#include &quot;opencv2/imgproc/imgproc.hpp&quot;</code><br/>
 <code>#include &lt;vector&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for Region.hpp:</div>
@@ -118,6 +119,8 @@ $(document).ready(function(){initNavTree('Region_8hpp.html','');});
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="Region_8hpp__incl.png" border="0" usemap="#include_2multiscale_2analysis_2spatial_2Region_8hpp" alt=""/></div>
+<map name="include_2multiscale_2analysis_2spatial_2Region_8hpp" id="include_2multiscale_2analysis_2spatial_2Region_8hpp">
+<area shape="rect" id="node3" href="SpatialCollection2D_8hpp.html" title="multiscale/analysis\l/spatial/SpatialCollection2\lD.hpp" alt="" coords="63,101,236,165"/><area shape="rect" id="node5" href="Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="5,214,152,261"/></map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -146,21 +149,41 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ad80cfbe7456c7d029544e8bc2cec16c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Region_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a>&#160;&#160;&#160;&quot;,&quot;</td></tr>
-<tr class="separator:ad80cfbe7456c7d029544e8bc2cec16c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a25d1956ce8fde271c2606474e69827"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Region_8hpp.html#a2a25d1956ce8fde271c2606474e69827">CONTOUR_ORIENTED</a>&#160;&#160;&#160;false</td></tr>
+<tr class="separator:a2a25d1956ce8fde271c2606474e69827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34cbf8ee72b3a7a4b2df1ad13f5d3e90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Region_8hpp.html#a34cbf8ee72b3a7a4b2df1ad13f5d3e90">CONTOUR_CLOSED</a>&#160;&#160;&#160;true</td></tr>
+<tr class="separator:a34cbf8ee72b3a7a4b2df1ad13f5d3e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="ad80cfbe7456c7d029544e8bc2cec16c8"></a>
+<a class="anchor" id="a34cbf8ee72b3a7a4b2df1ad13f5d3e90"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define OUTPUT_SEPARATOR&#160;&#160;&#160;&quot;,&quot;</td>
+          <td class="memname">#define CONTOUR_CLOSED&#160;&#160;&#160;true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00011">11</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00014">14</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Region_8cpp_source.html#l00080">multiscale::analysis::Region::updatePerimeter()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2a25d1956ce8fde271c2606474e69827"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONTOUR_ORIENTED&#160;&#160;&#160;false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Region_8hpp_source.html#l00013">13</a> of file <a class="el" href="Region_8hpp_source.html">Region.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Region_8cpp_source.html#l00076">multiscale::analysis::Region::updateArea()</a>.</p>
 
 </div>
 </div>
@@ -170,7 +193,7 @@ Macros</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_617023d10e7618f3fc87fd3542a5b75d.html">analysis</a></li><li class="navelem"><a class="el" href="dir_525f610367b169c5221b707333271043.html">spatial</a></li><li class="navelem"><a class="el" href="Region_8hpp.html">Region.hpp</a></li>
-    <li class="footer">Generated on Mon Aug 12 2013 16:37:59 for Multiscale by
+    <li class="footer">Generated on Thu Aug 15 2013 18:29:30 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -52,7 +52,7 @@ void SpatialCollection2D::updateMeasures() {
     updateArea();
     updatePerimeter();
     updateShape();
-    updateCentre();
+    updateCentrePoint();
 }
 
 void SpatialCollection2D::updateShape() {

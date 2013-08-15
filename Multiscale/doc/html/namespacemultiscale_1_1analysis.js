@@ -1,5 +1,6 @@
 var namespacemultiscale_1_1analysis =
 [
+    [ "CircularityMeasure", "classmultiscale_1_1analysis_1_1CircularityMeasure.html", null ],
     [ "SimulationClusterDetector", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html", "classmultiscale_1_1analysis_1_1SimulationClusterDetector" ],
     [ "Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", "classmultiscale_1_1analysis_1_1Cluster" ],
     [ "ClusterDetector", "classmultiscale_1_1analysis_1_1ClusterDetector.html", "classmultiscale_1_1analysis_1_1ClusterDetector" ],
@@ -12,5 +13,6 @@ var namespacemultiscale_1_1analysis =
     [ "MatFactory", "classmultiscale_1_1analysis_1_1MatFactory.html", "classmultiscale_1_1analysis_1_1MatFactory" ],
     [ "Region", "classmultiscale_1_1analysis_1_1Region.html", "classmultiscale_1_1analysis_1_1Region" ],
     [ "RegionDetector", "classmultiscale_1_1analysis_1_1RegionDetector.html", "classmultiscale_1_1analysis_1_1RegionDetector" ],
-    [ "Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ]
+    [ "Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ],
+    [ "SpatialCollection2D", "classmultiscale_1_1analysis_1_1SpatialCollection2D.html", "classmultiscale_1_1analysis_1_1SpatialCollection2D" ]
 ];

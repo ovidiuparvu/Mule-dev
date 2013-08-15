@@ -15,6 +15,7 @@ var RegionDetector_8hpp =
     [ "INTENSITY_MAX", "RegionDetector_8hpp.html#a8f47a4307f9eea88d06b5383da431917", null ],
     [ "ITER_MAX", "RegionDetector_8hpp.html#a82e33b17ccb9be80dc09a1f38b5330b2", null ],
     [ "KERNEL_MAX", "RegionDetector_8hpp.html#a0b0bfd77700b86e4860923b5eb902ceb", null ],
+    [ "POLYGON_CLOSED", "RegionDetector_8hpp.html#af99a2cbd49b27920b9ada8cbb94f3941", null ],
     [ "REGION_AREA_THRESH_MAX", "RegionDetector_8hpp.html#ad9b19b601c85b0ec4f89b2e8c9f9c985", null ],
     [ "THRESHOLD_MAX", "RegionDetector_8hpp.html#ab468cd6410e5d23829fc609c96431489", null ],
     [ "TRACKBAR_ALPHA", "RegionDetector_8hpp.html#a14b7e799d0e3e29cfe0e2e40d4b57474", null ],

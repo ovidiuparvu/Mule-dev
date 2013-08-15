@@ -5,7 +5,7 @@ var searchData=
   ['thresholdedimage',['thresholdedImage',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aca2aae9914ef643a543a834e61b1cccf',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['thresholdimage',['thresholdImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a614cd80fac5d3df2a25c401bb221149c',1,'multiscale::analysis::RegionDetector']]],
   ['thresholdvalue',['thresholdValue',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a0f7469d124c0b906d199e00ea5713007',1,'multiscale::analysis::RegionDetector']]],
-  ['tostring',['toString',['../classmultiscale_1_1analysis_1_1Cluster.html#a54b955bf0c142a5c96c7a6803cc0c163',1,'multiscale::analysis::Cluster::toString()'],['../classmultiscale_1_1analysis_1_1Entity.html#aedae50d85d369b0e68fa6433d7e3fec6',1,'multiscale::analysis::Entity::toString()'],['../classmultiscale_1_1analysis_1_1Region.html#a43c2dc219bf8661a712b8c0c8b660711',1,'multiscale::analysis::Region::toString()'],['../classmultiscale_1_1StringManipulator.html#a91858c4faa5ee210a9b67e4885835368',1,'multiscale::StringManipulator::toString()'],['../classmultiscale_1_1video_1_1AnnularSector.html#ab277036c93f9dcabc08e13ca49c78e53',1,'multiscale::video::AnnularSector::toString()']]],
+  ['tostring',['toString',['../classmultiscale_1_1analysis_1_1Entity.html#aedae50d85d369b0e68fa6433d7e3fec6',1,'multiscale::analysis::Entity::toString()'],['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6ff771bb6022d9c991348f29227d10d9',1,'multiscale::analysis::SpatialCollection2D::toString()'],['../classmultiscale_1_1StringManipulator.html#a91858c4faa5ee210a9b67e4885835368',1,'multiscale::StringManipulator::toString()'],['../classmultiscale_1_1video_1_1AnnularSector.html#ab277036c93f9dcabc08e13ca49c78e53',1,'multiscale::video::AnnularSector::toString()']]],
   ['trackbar_5falpha',['TRACKBAR_ALPHA',['../RegionDetector_8hpp.html#a14b7e799d0e3e29cfe0e2e40d4b57474',1,'RegionDetector.hpp']]],
   ['trackbar_5fbeta',['TRACKBAR_BETA',['../RegionDetector_8hpp.html#a52062c043da065ed04cda0561043d1b5',1,'RegionDetector.hpp']]],
   ['trackbar_5fcanny',['TRACKBAR_CANNY',['../RegionDetector_8hpp.html#a057d75fb331a9d1658951a2f59fd7c6d',1,'RegionDetector.hpp']]],
@@ -19,5 +19,5 @@ var searchData=
   ['transformtoannularsectors',['transformToAnnularSectors',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178',1,'multiscale::video::CartesianToPolarConverter']]],
   ['translate',['translate',['../classmultiscale_1_1Geometry2D.html#ae7299287a17f8cd47e8d84e19ddbe0e9',1,'multiscale::Geometry2D']]],
   ['triangle',['Triangle',['../namespacemultiscale_1_1analysis.html#ad1ef6155ab2e954c1c33d3e2e6b53fbfaa93f37adbed49c6062576ec26eb845f7',1,'multiscale::analysis']]],
-  ['triangularmeasure',['triangularMeasure',['../classmultiscale_1_1analysis_1_1Cluster.html#ac3416974b396971412c35752931e15e9',1,'multiscale::analysis::Cluster']]]
+  ['triangularmeasure',['triangularMeasure',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a578070e91858e9e87de1e0f5771d6c3f',1,'multiscale::analysis::SpatialCollection2D']]]
 ];

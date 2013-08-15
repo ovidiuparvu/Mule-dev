@@ -106,138 +106,145 @@ $(document).ready(function(){initNavTree('CartesianToPolarConverter_8cpp_source.
 <div class="title">CartesianToPolarConverter.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="CartesianToPolarConverter_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CartesianToPolarConverter_8hpp.html">multiscale/video/circular/CartesianToPolarConverter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PolarGnuplotScriptGenerator_8hpp.html">multiscale/video/circular/PolarGnuplotScriptGenerator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NumericRangeManipulator_8hpp.html">multiscale/util/NumericRangeManipulator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>multiscale::video;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<a href="CartesianToPolarConverter_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CartesianToPolarConverterException_8hpp.html">multiscale/exception/CartesianToPolarConverterException.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CartesianToPolarConverter_8hpp.html">multiscale/video/circular/CartesianToPolarConverter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PolarGnuplotScriptGenerator_8hpp.html">multiscale/video/circular/PolarGnuplotScriptGenerator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NumericRangeManipulator_8hpp.html">multiscale/util/NumericRangeManipulator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>multiscale::video;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab1c91591a31c7a23421643260335bdcd">   14</a></span>&#160;<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab1c91591a31c7a23421643260335bdcd">CartesianToPolarConverter::CartesianToPolarConverter</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFilepath, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    this-&gt;inputFilepath.assign(inputFilepath);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    this-&gt;outputFilepath.assign(outputFilepath);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a> = 0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a> = 0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">simulationTime</a> = 0.0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7842464665976d381df75f03d7c71347">   23</a></span>&#160;<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7842464665976d381df75f03d7c71347">CartesianToPolarConverter::~CartesianToPolarConverter</a>() {}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aae3e7e842456da18741bccccdf084922">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aae3e7e842456da18741bccccdf084922" title="Start the conversion.">CartesianToPolarConverter::convert</a>(<span class="keywordtype">bool</span> outputToScript) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a37891007ade23e05047d33d0c9cb3e13" title="Read the input data.">readInputData</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178" title="Convert the concentrations to annular sectors.">transformToAnnularSectors</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (outputToScript) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e" title="Output the results as a gnuplot script.">outputResultsAsScript</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#adb3aeeb5f2994f8aa9dc03c8c8f270ad" title="Output the results as a plain file.">outputResultsAsFile</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a37891007ade23e05047d33d0c9cb3e13">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a37891007ade23e05047d33d0c9cb3e13" title="Read the input data.">CartesianToPolarConverter::readInputData</a>() throw (<span class="keywordtype">string</span>) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    ifstream fin(<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05">inputFilepath</a>, ios_base::in);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (!fin.is_open()) <span class="keywordflow">throw</span> <a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Read the header line</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a88d7c95fb76c9e139cb013c11a8dfae0" title="Read the header line.">readHeaderLine</a>(fin);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab1c91591a31c7a23421643260335bdcd">   15</a></span>&#160;<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab1c91591a31c7a23421643260335bdcd">CartesianToPolarConverter::CartesianToPolarConverter</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFilepath, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    this-&gt;inputFilepath.assign(inputFilepath);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    this-&gt;outputFilepath.assign(outputFilepath);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a> = 0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a> = 0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">simulationTime</a> = 0.0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7842464665976d381df75f03d7c71347">   24</a></span>&#160;<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7842464665976d381df75f03d7c71347">CartesianToPolarConverter::~CartesianToPolarConverter</a>() {}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aae3e7e842456da18741bccccdf084922">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aae3e7e842456da18741bccccdf084922" title="Start the conversion.">CartesianToPolarConverter::convert</a>(<span class="keywordtype">bool</span> outputToScript) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a37891007ade23e05047d33d0c9cb3e13" title="Read the input data.">readInputData</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178" title="Convert the concentrations to annular sectors.">transformToAnnularSectors</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (outputToScript) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e" title="Output the results as a gnuplot script.">outputResultsAsScript</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#adb3aeeb5f2994f8aa9dc03c8c8f270ad" title="Output the results as a plain file.">outputResultsAsFile</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a37891007ade23e05047d33d0c9cb3e13">   37</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a37891007ade23e05047d33d0c9cb3e13" title="Read the input data.">CartesianToPolarConverter::readInputData</a>() {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    ifstream fin(<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05">inputFilepath</a>, ios_base::in);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (!fin.is_open()) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1CartesianToPolarConverterException.html" title="Exception class for the CartesianToPolarConverter class.">CartesianToPolarConverterException</a>(<a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Read the concentrations</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140" title="Read the concentrations.">readConcentrations</a>(fin);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Read the header line</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a88d7c95fb76c9e139cb013c11a8dfae0" title="Read the header line.">readHeaderLine</a>(fin);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Check if the file contains additional unnecessary data</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// after excluding the line feed character</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    fin.get();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (fin.peek() != EOF) <span class="keywordflow">throw</span> <span class="keywordtype">string</span>(<a class="code" href="MatFactory_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038">ERR_IN_EXTRA_DATA</a>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    fin.close();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a88d7c95fb76c9e139cb013c11a8dfae0">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a88d7c95fb76c9e139cb013c11a8dfae0" title="Read the header line.">CartesianToPolarConverter::readHeaderLine</a>(ifstream &amp;fin) <span class="keywordflow">throw</span> (<span class="keywordtype">string</span>) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    fin &gt;&gt; nrOfConcentricCircles &gt;&gt; nrOfSectors &gt;&gt; simulationTime;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Validate the header line</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (nrOfConcentricCircles &lt;= 0) <span class="keywordflow">throw</span> string(<a class="code" href="CartesianToPolarConverter_8hpp.html#a1cf49e653837247035d3d9d1fbdb0dee">ERR_NONPOS_DIMENSION</a>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (nrOfSectors &lt;= 0)           <span class="keywordflow">throw</span> string(<a class="code" href="CartesianToPolarConverter_8hpp.html#a1cf49e653837247035d3d9d1fbdb0dee">ERR_NONPOS_DIMENSION</a>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (simulationTime &lt; 0)         <span class="keywordflow">throw</span> string(<a class="code" href="CartesianToPolarConverter_8hpp.html#a3ad0d4f95970c66da7d75bf997714f6f">ERR_NEG_SIM_TIME</a>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140" title="Read the concentrations.">CartesianToPolarConverter::readConcentrations</a>(ifstream &amp;fin) <span class="keywordflow">throw</span> (<span class="keywordtype">string</span>) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">int</span> nrOfConcentrations = ((nrOfConcentricCircles - 1) * nrOfSectors) + 1;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    concentrations.resize(nrOfConcentrations);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Read the concentrations</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140" title="Read the concentrations.">readConcentrations</a>(fin);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Check if the file contains additional unnecessary data</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// after excluding the line feed character</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    fin.get();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (fin.peek() != EOF) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1CartesianToPolarConverterException.html" title="Exception class for the CartesianToPolarConverter class.">CartesianToPolarConverterException</a>(<a class="code" href="MatFactory_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038">ERR_IN_EXTRA_DATA</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    fin.close();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a88d7c95fb76c9e139cb013c11a8dfae0">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a88d7c95fb76c9e139cb013c11a8dfae0" title="Read the header line.">CartesianToPolarConverter::readHeaderLine</a>(ifstream &amp;fin) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    fin &gt;&gt; <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a> &gt;&gt; <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a> &gt;&gt; <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">simulationTime</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Validate the header line</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a> &lt;= 0) <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1CartesianToPolarConverterException.html" title="Exception class for the CartesianToPolarConverter class.">CartesianToPolarConverterException</a>(<a class="code" href="CartesianToPolarConverter_8hpp.html#a1cf49e653837247035d3d9d1fbdb0dee">ERR_NONPOS_DIMENSION</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a> &lt;= 0)           <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1CartesianToPolarConverterException.html" title="Exception class for the CartesianToPolarConverter class.">CartesianToPolarConverterException</a>(<a class="code" href="CartesianToPolarConverter_8hpp.html#a1cf49e653837247035d3d9d1fbdb0dee">ERR_NONPOS_DIMENSION</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (simulationTime &lt; 0)         <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1CartesianToPolarConverterException.html" title="Exception class for the CartesianToPolarConverter class.">CartesianToPolarConverterException</a>(<a class="code" href="CartesianToPolarConverter_8hpp.html#a3ad0d4f95970c66da7d75bf997714f6f">ERR_NEG_SIM_TIME</a>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">double</span> tmp = 0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Read all the concentrations and verify if they are</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// non-negative</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrOfConcentrations; i++) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        fin &gt;&gt; tmp;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140" title="Read the concentrations.">CartesianToPolarConverter::readConcentrations</a>(ifstream &amp;fin) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> nrOfConcentrations = ((<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a> - 1) * <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>) + 1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">concentrations</a>.resize(nrOfConcentrations);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">double</span> tmp = 0;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> ((tmp &lt; 0) || (tmp &gt; 1)) <span class="keywordflow">throw</span> string(<a class="code" href="RectangularMatFactory_8hpp.html#a88bb4dcef0e2bea00bce86c02cf5f813">ERR_CONC</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        concentrations[i] = tmp;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178">   83</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178" title="Convert the concentrations to annular sectors.">CartesianToPolarConverter::transformToAnnularSectors</a>() {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span> nrOfConcentrations = ((<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a> - 1) * <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>) + 1;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Read all the concentrations and verify if they are</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// non-negative</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrOfConcentrations; i++) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        fin &gt;&gt; tmp;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> ((tmp &lt; 0) || (tmp &gt; 1)) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1CartesianToPolarConverterException.html" title="Exception class for the CartesianToPolarConverter class.">CartesianToPolarConverterException</a>(<a class="code" href="RectangularMatFactory_8hpp.html#a88bb4dcef0e2bea00bce86c02cf5f813">ERR_CONC</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.resize(nrOfConcentrations);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Tranform the cell of the grid to the annular sector corresponding</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// to the circle of radius 0</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.at(0)).initialise(0.0, <a class="code" href="CartesianToPolarConverter_8hpp.html#a6b9880fa336856728f874385983f7737">RADIUS_MIN</a>, 0.0, 360.0, <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">concentrations</a>.at(0));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Define the constants</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">double</span> angle     = 360.0 / <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span>    maxRadius = (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a> - 1);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Transform the rest of the grid to annular sectors</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; nrOfConcentrations; i++) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">int</span> row = (i - 1) / <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">int</span> col = (i - 1) % <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">double</span> startRadius = NumericRangeManipulator::convertFromRange&lt;int, double&gt;(0, maxRadius, <a class="code" href="CartesianToPolarConverter_8hpp.html#a6b9880fa336856728f874385983f7737">RADIUS_MIN</a>, <a class="code" href="CartesianToPolarConverter_8hpp.html#a3923a2502324557507dda8740810aca3">RADIUS_MAX</a>, row);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">double</span> endRadius   = NumericRangeManipulator::convertFromRange&lt;int, double&gt;(0, maxRadius, <a class="code" href="CartesianToPolarConverter_8hpp.html#a6b9880fa336856728f874385983f7737">RADIUS_MIN</a>, <a class="code" href="CartesianToPolarConverter_8hpp.html#a3923a2502324557507dda8740810aca3">RADIUS_MAX</a>, row + 1);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.at(i)).initialise(startRadius, endRadius, col * angle, (col + 1) * angle, <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">concentrations</a>.at(i));</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">concentrations</a>[i] = tmp;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178">   90</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178" title="Convert the concentrations to annular sectors.">CartesianToPolarConverter::transformToAnnularSectors</a>() {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> nrOfConcentrations = ((<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a> - 1) * <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>) + 1;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.resize(nrOfConcentrations);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Tranform the cell of the grid to the annular sector corresponding</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// to the circle of radius 0</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.at(0)).initialise(0.0, <a class="code" href="CartesianToPolarConverter_8hpp.html#a6b9880fa336856728f874385983f7737">RADIUS_MIN</a>, 0.0, 360.0, <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">concentrations</a>.at(0));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Define the constants</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">double</span> angle     = 360.0 / <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span>    maxRadius = (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238">nrOfConcentricCircles</a> - 1);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// Transform the rest of the grid to annular sectors</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; nrOfConcentrations; i++) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">int</span> row = (i - 1) / <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">int</span> col = (i - 1) % <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0">nrOfSectors</a>;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#adb3aeeb5f2994f8aa9dc03c8c8f270ad">  108</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#adb3aeeb5f2994f8aa9dc03c8c8f270ad" title="Output the results as a plain file.">CartesianToPolarConverter::outputResultsAsFile</a>() {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">int</span> nrOfAnnularSectors = <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.size();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">double</span> startRadius = NumericRangeManipulator::convertFromRange&lt;int, double&gt;(0, maxRadius, <a class="code" href="CartesianToPolarConverter_8hpp.html#a6b9880fa336856728f874385983f7737">RADIUS_MIN</a>, <a class="code" href="CartesianToPolarConverter_8hpp.html#a3923a2502324557507dda8740810aca3">RADIUS_MAX</a>, row);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">double</span> endRadius   = NumericRangeManipulator::convertFromRange&lt;int, double&gt;(0, maxRadius, <a class="code" href="CartesianToPolarConverter_8hpp.html#a6b9880fa336856728f874385983f7737">RADIUS_MIN</a>, <a class="code" href="CartesianToPolarConverter_8hpp.html#a3923a2502324557507dda8740810aca3">RADIUS_MAX</a>, row + 1);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    ofstream fout((<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">outputFilepath</a>.append(<a class="code" href="CartesianToPolarConverter_8hpp.html#aafd58e116a65aeb70ace2b91d42a22ae">OUTPUT_FILE_EXTENSION</a>)), ios_base::trunc);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    assert(fout.is_open());</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.at(i)).initialise(startRadius, endRadius, col * angle, (col + 1) * angle, <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3">concentrations</a>.at(i));</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Output the information of the annular sectors</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrOfAnnularSectors; i++) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        fout &lt;&lt; (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.at(i)).toString() &lt;&lt; endl;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#adb3aeeb5f2994f8aa9dc03c8c8f270ad">  115</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#adb3aeeb5f2994f8aa9dc03c8c8f270ad" title="Output the results as a plain file.">CartesianToPolarConverter::outputResultsAsFile</a>() {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">int</span> nrOfAnnularSectors = <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.size();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    ofstream fout((<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">outputFilepath</a>.append(<a class="code" href="CartesianToPolarConverter_8hpp.html#aafd58e116a65aeb70ace2b91d42a22ae">OUTPUT_FILE_EXTENSION</a>)), ios_base::trunc);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    fout.close();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e">  123</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e" title="Output the results as a gnuplot script.">CartesianToPolarConverter::outputResultsAsScript</a>() {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a9e60fa7dd9c47dc89cdce30a39175a6e" title="Generate the script.">PolarGnuplotScriptGenerator::generateScript</a>(<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>, <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">simulationTime</a>, <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">outputFilepath</a>);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    assert(fout.is_open());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Output the information of the annular sectors</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; nrOfAnnularSectors; i++) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        fout &lt;&lt; (<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>.at(i)).toString() &lt;&lt; endl;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    fout.close();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e">  130</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e" title="Output the results as a gnuplot script.">CartesianToPolarConverter::outputResultsAsScript</a>() {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a9e60fa7dd9c47dc89cdce30a39175a6e" title="Generate the script.">PolarGnuplotScriptGenerator::generateScript</a>(<a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac">annularSectors</a>, <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda">simulationTime</a>, <a class="code" href="classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65">outputFilepath</a>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_181e58fb894b6db2e2ebe48170ed182a.html">video</a></li><li class="navelem"><a class="el" href="dir_9ab520bd455cc605d2cf735513bae990.html">circular</a></li><li class="navelem"><a class="el" href="CartesianToPolarConverter_8cpp.html">CartesianToPolarConverter.cpp</a></li>
-    <li class="footer">Generated on Mon Aug 12 2013 16:37:59 for Multiscale by
+    <li class="footer">Generated on Thu Aug 15 2013 18:29:30 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

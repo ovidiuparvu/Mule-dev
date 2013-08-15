@@ -110,7 +110,7 @@ namespace multiscale {
                 double isCircularMeasure() override;
 
                 //! Update the centre of the region
-                void updateCentre() override;
+                void updateCentrePoint() override;
 
                 //! Get a string representation of all the field values except polygon
                 string fieldValuesToString() override;

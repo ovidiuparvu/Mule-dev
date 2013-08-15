@@ -4,6 +4,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "multiscale/analysis/spatial/Entity.hpp"
 #include "multiscale/analysis/spatial/Shape2D.hpp"
+#include "multiscale/analysis/spatial/SpatialCollection2D.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
 #include <vector>
@@ -11,33 +12,18 @@
 using namespace cv;
 using namespace std;
 
-#define STR_TRIANGLE        "triangle"
-#define STR_RECTANGLE       "rectangle"
-#define STR_CIRCLE          "circle"
-#define STR_UNDEFINED       "undefined"
-
-#define OUTPUT_SEPARATOR    ","
-
-#define ERR_UNDEFINED_SHAPE "The shape of the given cluster is undefined."
-
 
 namespace multiscale {
 
     namespace analysis {
 
         //! Class for representing a cluster of entities in an image
-        class Cluster {
+        class Cluster : public SpatialCollection2D {
 
             private:
 
                 double clusterednessDegree;                 /*!< Degree of clusteredness */
                 double pileUpDegree;                        /*!< Degree of pile up */
-                double area;                                /*!< Sum of the areas of all entities in the cluster */
-                double perimeter;                           /*!< Perimeter of convex hull enclosing all entities in the cluster */
-
-                double triangularMeasure;                   /*!< Measure ([0, 1]) indicating that the shape of the cluster is triangular */
-                double rectangularMeasure;                  /*!< Measure ([0, 1]) indicating that the shape of the cluster is rectangular */
-                double circularMeasure;                     /*!< Measure ([0, 1]) indicating that the shape of the cluster is circular */
 
                 vector<Point2f> minAreaEnclosingTriangle;   /*!< The minimum area enclosing triangle */
 
@@ -46,14 +32,7 @@ namespace multiscale {
                 Point2f minAreaEnclosingCircleCentre;       /*!< The minimum area enclosing circle centre point */
                 float minAreaEnclosingCircleRadius;         /*!< The minimum area enclosing circle radius */
 
-                Shape2D shape;                              /*!< Shape of the cluster */
-                Point2f centre;                             /*!< Point defining the centre of the cluster */
                 vector<Entity> entities;                    /*!< Entities which belong to this cluster */
-
-                bool updateFlag;                            /*!< Flag indicating if the field values dependent on the
-                                                                 collection of entities need to be updated. This flag is
-                                                                 used for lazy evaluation purposes, such that new field
-                                                                 values are computed only when required*/
 
             public:
 
@@ -69,15 +48,6 @@ namespace multiscale {
                 //! Get the degree of pile up
                 double getPileUpDegree();
 
-                //! Get the area
-                double getArea();
-
-                //! Get the perimeter
-                double getPerimeter();
-
-                //! Get the shape best fitting the cluster of entities
-                Shape2D getShape();
-
                 //! Get the minimum area enclosing triangle
                 vector<Point2f> getMinAreaEnclosingTriangle();
 
@@ -90,18 +60,11 @@ namespace multiscale {
                 //! Get the minimum area enclosing circle radius
                 float getMinAreaEnclosingCircleRadius();
 
-                //! Get the point defining the centre of the entity
-                Point2f getCentre();
-
                 //! Get the collection of underlying entities
                 vector<Entity> getEntities() const;
 
                 //! Get a string representation of all the field names printed in the "toString" method
                 static string fieldNamesToString();
-
-                //! Get a string representation of all the field values
-                string toString();
-
 
             private:
 
@@ -117,11 +80,8 @@ namespace multiscale {
                 //! Get the convex hull enclosing the collection of entities' contour points
                 vector<Point2f> getEntitiesConvexHull();
 
-                //! Update the values of all measures if required
-                void updateMeasuresIfRequired();
-
                 //! Update the values of all measures
-                void updateMeasures();
+                void updateSpatialCollectionSpecificValues() override;
 
                 //! Update the value of the clusteredness degree
                 void updateClusterednessDegree();
@@ -130,28 +90,25 @@ namespace multiscale {
                 void updatePileUpDegree();
 
                 //! Update the value of the area
-                void updateArea();
+                void updateArea() override;
 
                 //! Update the value of the perimeter
-                void updatePerimeter();
-
-                //! Update the shape of the cluster
-                void updateShape();
+                void updatePerimeter() override;
 
                 //! Update the point defining the centre of the cluster
                 void updateCentrePoint();
 
                 //! Get the measure that the cluster has a triangular shape
-                double isTriangularMeasure();
+                double isTriangularMeasure() override;
 
                 //! Get the measure that the cluster has a rectangular shape
-                double isRectangularMeasure();
+                double isRectangularMeasure() override;
 
                 //! Get the measure that the cluster has a circular shape
-                double isCircularMeasure();
+                double isCircularMeasure() override;
 
-                //! Return the shape of the cluster as a string
-                string shapeAsString();
+                //! Get a string representation of all the field values
+                string fieldValuesToString() override;
 
         };
 

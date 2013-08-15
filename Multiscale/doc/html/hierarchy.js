@@ -3,7 +3,7 @@ var hierarchy =
     [ "multiscale::video::AnnularSector", "classmultiscale_1_1video_1_1AnnularSector.html", null ],
     [ "multiscale::video::CartesianToConcentrationsConverter", "classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html", null ],
     [ "multiscale::video::CartesianToPolarConverter", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html", null ],
-    [ "multiscale::analysis::Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", null ],
+    [ "multiscale::analysis::CircularityMeasure", "classmultiscale_1_1analysis_1_1CircularityMeasure.html", null ],
     [ "multiscale::analysis::DataPoint", "classmultiscale_1_1analysis_1_1DataPoint.html", [
       [ "multiscale::analysis::Entity", "classmultiscale_1_1analysis_1_1Entity.html", null ]
     ] ],
@@ -31,12 +31,26 @@ var hierarchy =
     [ "multiscale::video::RectangularCsvToInputFilesConverter", "classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html", null ],
     [ "multiscale::video::RectangularEntityCsvToInputFilesConverter", "classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html", null ],
     [ "multiscale::video::RectangularGnuplotScriptGenerator", "classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html", null ],
-    [ "multiscale::analysis::Region", "classmultiscale_1_1analysis_1_1Region.html", null ],
     [ "multiscale::RGBColourGenerator", "classmultiscale_1_1RGBColourGenerator.html", null ],
     [ "runtime_error", null, [
+      [ "multiscale::CartesianToConcentrationsConverterException", "classmultiscale_1_1CartesianToConcentrationsConverterException.html", null ],
+      [ "multiscale::CartesianToPolarConverterException", "classmultiscale_1_1CartesianToPolarConverterException.html", null ],
+      [ "multiscale::CircularMatFactoryException", "classmultiscale_1_1CircularMatFactoryException.html", null ],
+      [ "multiscale::DetectorException", "classmultiscale_1_1DetectorException.html", null ],
       [ "multiscale::EntityException", "classmultiscale_1_1EntityException.html", null ],
-      [ "multiscale::MinimumAreaEnclosingTriangleException", "classmultiscale_1_1MinimumAreaEnclosingTriangleException.html", null ]
+      [ "multiscale::MatFactoryException", "classmultiscale_1_1MatFactoryException.html", null ],
+      [ "multiscale::MinimumAreaEnclosingTriangleException", "classmultiscale_1_1MinimumAreaEnclosingTriangleException.html", null ],
+      [ "multiscale::PolarCsvToInputFilesConverterException", "classmultiscale_1_1PolarCsvToInputFilesConverterException.html", null ],
+      [ "multiscale::RectangularCsvToInputFilesConverterException", "classmultiscale_1_1RectangularCsvToInputFilesConverterException.html", null ],
+      [ "multiscale::RectangularEntityCsvToInputFilesConverterException", "classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html", null ],
+      [ "multiscale::RectangularMatFactoryException", "classmultiscale_1_1RectangularMatFactoryException.html", null ],
+      [ "multiscale::RegionException", "classmultiscale_1_1RegionException.html", null ],
+      [ "multiscale::SimulationClusterDetectorException", "classmultiscale_1_1SimulationClusterDetectorException.html", null ]
     ] ],
     [ "multiscale::analysis::Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ],
+    [ "multiscale::analysis::SpatialCollection2D", "classmultiscale_1_1analysis_1_1SpatialCollection2D.html", [
+      [ "multiscale::analysis::Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", null ],
+      [ "multiscale::analysis::Region", "classmultiscale_1_1analysis_1_1Region.html", null ]
+    ] ],
     [ "multiscale::StringManipulator", "classmultiscale_1_1StringManipulator.html", null ]
 ];

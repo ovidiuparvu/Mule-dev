@@ -1,6 +1,6 @@
 <map id="multiscale::StringManipulator::split" name="multiscale::StringManipulator::split">
-<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#af2d31d32cdba42aeb5589b3faab315ad" title="Split the line in concentrations." alt="" coords="265,5,471,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ab297918325583ff85c8740fa9c5661f6" title="Split the line in concentrations." alt="" coords="251,93,485,157"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ab297918325583ff85c8740fa9c5661f6" title="Split the line in concentrations." alt="" coords="251,5,485,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#af2d31d32cdba42aeb5589b3faab315ad" title="Split the line in concentrations." alt="" coords="265,93,471,157"/>
 <area shape="rect" id="node7" href="$classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#a452c51fa3e5b1357f2f71aa401127087" title="Split the line in coordinates and return the grid of size height * width showing the position of the ..." alt="" coords="247,181,489,245"/>
 <area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#a582115870468210176bedb1f69b244ac" title="Validate the provided line identified by a line number." alt="" coords="261,269,475,333"/>
 <area shape="rect" id="node11" href="$classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a876c93163765bcae5d0b12047df99d58" title="Validate the provided line identified by a line number." alt="" coords="275,357,461,421"/>

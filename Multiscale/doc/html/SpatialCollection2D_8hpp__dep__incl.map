@@ -1,0 +1,18 @@
+<map id="include/multiscale/analysis/spatial/SpatialCollection2D.hpp" name="include/multiscale/analysis/spatial/SpatialCollection2D.hpp">
+<area shape="rect" id="node3" href="$Cluster_8hpp.html" title="include/multiscale\l/analysis/spatial/Cluster.hpp" alt="" coords="656,118,843,165"/>
+<area shape="rect" id="node22" href="$Region_8hpp.html" title="include/multiscale\l/analysis/spatial/Region.hpp" alt="" coords="1003,118,1189,165"/>
+<area shape="rect" id="node34" href="$SpatialCollection2D_8cpp.html" title="src/multiscale/analysis\l/spatial/SpatialCollection2D.cpp" alt="" coords="1213,118,1421,165"/>
+<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/ClusterDetector.hpp" alt="" coords="285,214,523,261"/>
+<area shape="rect" id="node15" href="$Silhouette_8hpp.html" title="include/multiscale\l/analysis/spatial/Silhouette.hpp" alt="" coords="547,214,749,261"/>
+<area shape="rect" id="node20" href="$Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="773,214,928,261"/>
+<area shape="rect" id="node7" href="$SimulationClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/cluster\l/SimulationClusterDetector.hpp" alt="" coords="136,309,339,373"/>
+<area shape="rect" id="node13" href="$ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="363,318,547,365"/>
+<area shape="rect" id="node9" href="$SimulationClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,421,219,485"/>
+<area shape="rect" id="node11" href="$SimulationDetectClusters_8cpp.html" title="src/multiscale/analysis\l/spatial/SimulationDetectClusters.cpp" alt="" coords="243,430,485,477"/>
+<area shape="rect" id="node18" href="$Silhouette_8cpp.html" title="src/multiscale/analysis\l/spatial/Silhouette.cpp" alt="" coords="571,318,725,365"/>
+<area shape="rect" id="node24" href="$RegionDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/RegionDetector.hpp" alt="" coords="979,214,1213,261"/>
+<area shape="rect" id="node32" href="$Region_8cpp.html" title="src/multiscale/analysis\l/spatial/Region.cpp" alt="" coords="1237,214,1392,261"/>
+<area shape="rect" id="node26" href="$CircularDetectRegions_8cpp.html" title="src/multiscale/analysis\l/spatial/CircularDetectRegions.cpp" alt="" coords="749,318,973,365"/>
+<area shape="rect" id="node28" href="$RectangularDetectRegions_8cpp.html" title="src/multiscale/analysis\l/spatial/RectangularDetectRegions.cpp" alt="" coords="997,318,1248,365"/>
+<area shape="rect" id="node30" href="$RegionDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/RegionDetector.cpp" alt="" coords="1272,318,1456,365"/>
+</map>

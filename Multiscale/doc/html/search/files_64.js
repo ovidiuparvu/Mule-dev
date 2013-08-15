@@ -4,5 +4,6 @@ var searchData=
   ['dbscan_2ecpp',['DBSCAN.cpp',['../DBSCAN_8cpp.html',1,'']]],
   ['dbscan_2ehpp',['DBSCAN.hpp',['../DBSCAN_8hpp.html',1,'']]],
   ['detector_2ecpp',['Detector.cpp',['../Detector_8cpp.html',1,'']]],
-  ['detector_2ehpp',['Detector.hpp',['../Detector_8hpp.html',1,'']]]
+  ['detector_2ehpp',['Detector.hpp',['../Detector_8hpp.html',1,'']]],
+  ['detectorexception_2ehpp',['DetectorException.hpp',['../DetectorException_8hpp.html',1,'']]]
 ];

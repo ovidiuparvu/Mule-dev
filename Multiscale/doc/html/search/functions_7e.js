@@ -19,5 +19,6 @@ var searchData=
   ['_7eregion',['~Region',['../classmultiscale_1_1analysis_1_1Region.html#a3c3670fff78f7511d156e3b2f0bc6266',1,'multiscale::analysis::Region']]],
   ['_7eregiondetector',['~RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a8e41bcae0698a746fee06e8fb9a63bd1',1,'multiscale::analysis::RegionDetector']]],
   ['_7esimulationclusterdetector',['~SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a8df6b5abd6d2dd48e691bf999d35dd43',1,'multiscale::analysis::SimulationClusterDetector']]],
+  ['_7espatialcollection2d',['~SpatialCollection2D',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#af70ae8f44636e7b2cf85705cffe44dfe',1,'multiscale::analysis::SpatialCollection2D']]],
   ['_7estandardnumberiterator',['~StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html#aa5b9da824bd014eebab86462f7d08219',1,'multiscale::StandardNumberIterator']]]
 ];

@@ -107,53 +107,57 @@ $(document).ready(function(){initNavTree('MatFactory_8cpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="MatFactory_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MatFactory_8hpp.html">multiscale/analysis/spatial/MatFactory.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NumericRangeManipulator_8hpp.html">multiscale/util/NumericRangeManipulator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>multiscale;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>analysis;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MatFactoryException_8hpp.html">multiscale/exception/MatFactoryException.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NumericRangeManipulator_8hpp.html">multiscale/util/NumericRangeManipulator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>multiscale;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>analysis;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a454ca2abfbeb664e75f5365ac00eacff">    8</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a454ca2abfbeb664e75f5365ac00eacff">MatFactory::MatFactory</a>() : rows(0), cols(0), simulationTime(0) {}</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#aa339532cb504caebcf9ece2c847f4847">   10</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#aa339532cb504caebcf9ece2c847f4847">MatFactory::~MatFactory</a>() {}</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7800a989d808037fe96a9d5a692909b0">   12</a></span>&#160;Mat <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7800a989d808037fe96a9d5a692909b0" title="Create a Mat object from the input file.">MatFactory::create</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    ifstream fin;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7b54550119d9a44708dad9c1c4eefc7e" title="Initialise the input file.">initInputFile</a>(fin, inputFile);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a0493c87d7b74619a95f14c0e31a3e178" title="Process concentrations from file.">processConcentrations</a>(fin);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// Check if the file contains additional unnecessary data</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// after excluding the line feed character</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    fin.get();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (fin.peek() != EOF) <span class="keywordflow">throw</span> <span class="keywordtype">string</span>(<a class="code" href="MatFactory_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038">ERR_IN_EXTRA_DATA</a>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    fin.close();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> Mat(<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a>, <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a>, CV_8UC1, data);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a454ca2abfbeb664e75f5365ac00eacff">    9</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a454ca2abfbeb664e75f5365ac00eacff">MatFactory::MatFactory</a>() : rows(0), cols(0), simulationTime(0) {}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#aa339532cb504caebcf9ece2c847f4847">   11</a></span>&#160;<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#aa339532cb504caebcf9ece2c847f4847">MatFactory::~MatFactory</a>() {}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7800a989d808037fe96a9d5a692909b0">   13</a></span>&#160;Mat <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7800a989d808037fe96a9d5a692909b0" title="Create a Mat object from the input file.">MatFactory::create</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ifstream fin;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7b54550119d9a44708dad9c1c4eefc7e" title="Initialise the input file.">initInputFile</a>(fin, inputFile);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *data = <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a0493c87d7b74619a95f14c0e31a3e178" title="Process concentrations from file.">processConcentrations</a>(fin);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Check if the file contains additional unnecessary data</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// after excluding the line feed character</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    fin.get();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (fin.peek() != EOF) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class.">MatFactoryException</a>(<a class="code" href="MatFactory_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038">ERR_IN_EXTRA_DATA</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    fin.close();</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7b54550119d9a44708dad9c1c4eefc7e">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7b54550119d9a44708dad9c1c4eefc7e" title="Initialise the input file.">MatFactory::initInputFile</a>(ifstream &amp;fin, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; inputFile) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    fin.open(inputFile, ios_base::in);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> Mat(<a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a>, <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a>, CV_8UC1, data);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (!fin.is_open())</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7b54550119d9a44708dad9c1c4eefc7e">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a7b54550119d9a44708dad9c1c4eefc7e" title="Initialise the input file.">MatFactory::initInputFile</a>(ifstream &amp;fin, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; inputFile) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    fin.open(inputFile, ios_base::in);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    fin &gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a> &gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a> &gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96">simulationTime</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a015bb6710f3a832786d7291108323696">   39</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a015bb6710f3a832786d7291108323696" title="Convert concentration to intensity.">MatFactory::convertToIntensity</a>(<span class="keywordtype">double</span> concentration) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> NumericRangeManipulator::convertFromRange&lt;double, unsigned char&gt;(0, 1, 0, 255, concentration);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (!fin.is_open()) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    fin &gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a> &gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a> &gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96">simulationTime</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a015bb6710f3a832786d7291108323696">   43</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a015bb6710f3a832786d7291108323696" title="Convert concentration to intensity.">MatFactory::convertToIntensity</a>(<span class="keywordtype">double</span> concentration) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> NumericRangeManipulator::convertFromRange&lt;double, unsigned char&gt;(0, 1, 0, 255, concentration);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="MatFactory_8cpp.html">MatFactory.cpp</a></li>
-    <li class="footer">Generated on Mon Aug 12 2013 16:37:59 for Multiscale by
+    <li class="footer">Generated on Thu Aug 15 2013 18:29:30 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

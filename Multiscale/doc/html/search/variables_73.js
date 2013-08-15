@@ -2,7 +2,7 @@ var searchData=
 [
   ['sectorsiterator',['sectorsIterator',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['selectedconcentrationindex',['selectedConcentrationIndex',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a121d592659f9f5075c8c78aa46c2950c',1,'multiscale::video::PolarCsvToInputFilesConverter::selectedConcentrationIndex()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a5143d25a98a097107c2bed748b4d8df0',1,'multiscale::video::RectangularCsvToInputFilesConverter::selectedConcentrationIndex()']]],
-  ['shape',['shape',['../classmultiscale_1_1analysis_1_1Cluster.html#a9508cf51c637bb1297d0d3bd4e5e7ed0',1,'multiscale::analysis::Cluster']]],
+  ['shape',['shape',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a4df95ecca90ce33332a69e0aefcf73d9',1,'multiscale::analysis::SpatialCollection2D']]],
   ['sideaendvertex',['sideAEndVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#abab8794502794dcbfc4b9336734ecae8',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['sideastartvertex',['sideAStartVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a29a7a1a4b8cf544dbd7ccb75f653587e',1,'multiscale::MinimumAreaEnclosingTriangle']]],
   ['sidebendvertex',['sideBEndVertex',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a4183750a67cc95d70695820376a52453',1,'multiscale::MinimumAreaEnclosingTriangle']]],

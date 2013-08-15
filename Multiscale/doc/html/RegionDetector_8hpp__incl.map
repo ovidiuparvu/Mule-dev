@@ -1,4 +1,6 @@
 <map id="include/multiscale/analysis/spatial/RegionDetector.hpp" name="include/multiscale/analysis/spatial/RegionDetector.hpp">
-<area shape="rect" id="node3" href="$Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="269,102,411,149"/>
-<area shape="rect" id="node11" href="$Region_8hpp.html" title="multiscale/analysis\l/spatial/Region.hpp" alt="" coords="61,102,195,149"/>
+<area shape="rect" id="node3" href="$Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="33,102,174,149"/>
+<area shape="rect" id="node11" href="$Region_8hpp.html" title="multiscale/analysis\l/spatial/Region.hpp" alt="" coords="416,102,549,149"/>
+<area shape="rect" id="node13" href="$SpatialCollection2D_8hpp.html" title="multiscale/analysis\l/spatial/SpatialCollection2\lD.hpp" alt="" coords="432,197,605,261"/>
+<area shape="rect" id="node15" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="465,310,612,357"/>
 </map>

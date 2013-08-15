@@ -86,7 +86,7 @@ namespace multiscale {
                 void updateShape();
 
                 //! Update the point defining the centre of the cluster
-                virtual void updateCentre() = 0;
+                virtual void updateCentrePoint() = 0;
 
                 //! Get the measure that the cluster has a triangular shape
                 virtual double isTriangularMeasure() = 0;
