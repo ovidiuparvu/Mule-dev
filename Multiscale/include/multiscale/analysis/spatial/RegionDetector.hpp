@@ -37,6 +37,8 @@ using namespace cv;
 #define THRESHOLD_MAX           255
 #define INTENSITY_MAX           255
 
+#define POLYGON_CLOSED          true
+
 #define DISPLAY_LINE_THICKNESS  10
 
 #define ENCLOSING_RECT_VERTICES 4
@@ -230,6 +232,15 @@ namespace multiscale {
                  * \param polygon The polygon defining the region
                  */
                 bool isValidRegion(const vector<Point> &polygon);
+
+                //! Compute the density of the area delimited by the given polygon
+                /*!
+                 * The density is equal to the average intensity of the pixels in the area
+                 * delimited by the given polygon divided by INTENSITY_MAX.
+                 *
+                 * \param polygon The given polygon
+                 */
+                double regionDensity(const vector<Point> &polygon);
 
                 //! Compute the angle of the polygon
                 /*! Compute the angle determined by the closest point to the origin and the points P1 and P2.

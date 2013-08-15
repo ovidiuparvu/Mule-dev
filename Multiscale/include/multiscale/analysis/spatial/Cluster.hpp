@@ -141,13 +141,13 @@ namespace multiscale {
                 //! Update the point defining the centre of the cluster
                 void updateCentrePoint();
 
-                //! Get probability that the cluster has a triangular shape
+                //! Get the measure that the cluster has a triangular shape
                 double isTriangularMeasure();
 
-                //! Get probability that the cluster has a rectangular shape
+                //! Get the measure that the cluster has a rectangular shape
                 double isRectangularMeasure();
 
-                //! Get probability that the cluster has a circular shape
+                //! Get the measure that the cluster has a circular shape
                 double isCircularMeasure();
 
                 //! Return the shape of the cluster as a string

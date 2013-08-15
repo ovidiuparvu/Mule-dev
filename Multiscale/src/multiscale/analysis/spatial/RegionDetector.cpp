@@ -231,17 +231,27 @@ vector<vector<Point> > RegionDetector::findContoursInImage(const Mat &image) {
 Region RegionDetector::createRegionFromPolygon(const vector<Point> &polygon) {
     unsigned int minDistancePointIndex = Geometry2D::minimumDistancePointIndex(polygon, origin);
 
-    double area = contourArea(polygon, CONTOUR_AREA_ORIENTED);
+    double density = regionDensity(polygon);
     double distance = Geometry2D::distanceBtwPoints(polygon[minDistancePointIndex], origin);
     double angle = regionAngle(polygon, minDistancePointIndex);
 
-    return Region(area, distance, angle, polygon);
+    return Region(density, distance, angle, polygon);
 }
 
 bool RegionDetector::isValidRegion(const vector<Point> &polygon) {
     double area = contourArea(polygon, CONTOUR_AREA_ORIENTED);
 
     return (area >= regionAreaThresh);
+}
+
+double RegionDetector::regionDensity(const vector<Point> &polygon) {
+    Mat mask(Mat::zeros(image.rows, image.cols, image.type()));
+
+    drawContours(mask, vector<vector<Point>>(1, polygon), -1, Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX), CV_FILLED);
+
+    double averageIntensity = (mean(image, mask))[0];
+
+    return (averageIntensity / static_cast<double>(INTENSITY_MAX));
 }
 
 double RegionDetector::regionAngle(const vector<Point> &polygon, unsigned int closestPointIndex) {
@@ -323,8 +333,8 @@ void RegionDetector::outputResultsToImage() {
 
     cvtColor(outputImage, outputImage, CV_GRAY2BGR);
 
-    for (const auto &region : regions) {
-        polylines(outputImage, region.getPolygon(), true, Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
+    for (Region &region : regions) {
+        polylines(outputImage, region.getPolygon(), POLYGON_CLOSED, Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
     }
 
     outputImage(Rect(1, 1, image.cols, image.rows)).copyTo(this->outputImage);
