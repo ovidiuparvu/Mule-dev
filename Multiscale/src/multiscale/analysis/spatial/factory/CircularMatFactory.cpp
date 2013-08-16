@@ -51,11 +51,13 @@ Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int or
 }
 
 bool CircularMatFactory::isValidViewerImage(const Mat &image) {
-    if (!image.data)
+    if (!image.data) {
         throw CircularMatFactoryException(ERR_INPUT_OPEN);
+    }
 
-    if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT))
+    if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT)) {
         throw CircularMatFactoryException(ERR_IMG_RESOLUTION);
+    }
 
     return true;
 }

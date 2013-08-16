@@ -69,6 +69,8 @@ void Cluster::initialise() {
 
     this->minAreaEnclosingCircleRadius = 0;
 
+    this->updateFlag = false;
+
     minAreaEnclosingTriangle.clear();
     entities.clear();
 }
@@ -97,19 +99,16 @@ vector<Point2f> Cluster::getEntitiesContourPoints() {
 
 vector<Point2f> Cluster::getEntitiesConvexHull() {
     vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
-
     vector<Point2f> entitiesConvexHull;
 
-    convexHull(entitiesContourPoints, entitiesConvexHull, true, true);
+    convexHull(entitiesContourPoints, entitiesConvexHull, true);
 
     return entitiesConvexHull;
 }
 
 void Cluster::updateSpatialCollectionSpecificValues() {
-    if (entities.size() > 0) {
-        updatePileUpDegree();
-        updateClusterednessDegree();
-    }
+    updatePileUpDegree();
+    updateClusterednessDegree();
 }
 
 void Cluster::updateClusterednessDegree() {
@@ -165,16 +164,13 @@ void Cluster::updateCentrePoint() {
 }
 
 double Cluster::isTriangularMeasure() {
-    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
-    vector<Point2f> contourConvexHull;
+    vector<Point2f> entitiesConvexHull = getEntitiesConvexHull();
     double triangleArea = 0;
 
-    convexHull(entitiesContourPoints, contourConvexHull, true, true);
+    MinimumAreaEnclosingTriangle::find(entitiesConvexHull, minAreaEnclosingTriangle, triangleArea);
 
-    MinimumAreaEnclosingTriangle::find(contourConvexHull, minAreaEnclosingTriangle, triangleArea);
-
-    return (triangleArea == 0) ? 0
-                               : (area / triangleArea);
+    return (Numeric::almostEqual(triangleArea, 0)) ? 0
+                                                   : (area / triangleArea);
 }
 
 double Cluster::isRectangularMeasure() {
@@ -185,8 +181,8 @@ double Cluster::isRectangularMeasure() {
     // Compute the area of the minimum area enclosing rectangle
     double rectangleArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
 
-    return (rectangleArea == 0) ? 0
-                                : (area / rectangleArea);
+    return (Numeric::almostEqual(rectangleArea, 0)) ? 0
+                                                    : (area / rectangleArea);
 }
 
 double Cluster::isCircularMeasure() {
@@ -194,7 +190,11 @@ double Cluster::isCircularMeasure() {
 
     minEnclosingCircle(entitiesContourPoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
-    return CircularityMeasure::compute(entitiesContourPoints);
+    // Compute the area of the minimum area enclosing circle
+    double circleArea = PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
+
+    return (Numeric::almostEqual(circleArea, 0)) ? 0
+                                                 : (area / circleArea);
 }
 
 string Cluster::fieldValuesToString() {

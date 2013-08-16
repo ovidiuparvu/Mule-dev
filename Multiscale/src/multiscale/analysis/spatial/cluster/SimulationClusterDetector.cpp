@@ -79,7 +79,7 @@ unsigned int SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int
 
     unsigned char intensityAtPosition = image.at<uchar>(Point(xCoordinate, yCoordinate));
 
-    return static_cast<unsigned int>(intensityAtPosition / entityPileupDegree);
+    return static_cast<unsigned int>(round(intensityAtPosition / entityPileupDegree));
 }
 
 void SimulationClusterDetector::outputResultsToImage() {

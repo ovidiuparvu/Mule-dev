@@ -90,8 +90,8 @@ double Region::isTriangularMeasure() {
 
     MinimumAreaEnclosingTriangle::find(convertPoints(contourConvexHull), minAreaEnclosingTriangle, triangleArea);
 
-    return (triangleArea == 0) ? 0
-                               : (area / triangleArea);
+    return (Numeric::almostEqual(triangleArea, 0)) ? 0
+                                                   : (area / triangleArea);
 }
 
 double Region::isRectangularMeasure() {
@@ -100,12 +100,21 @@ double Region::isRectangularMeasure() {
     // Compute the area of the minimum area enclosing rectangle
     double rectangleArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
 
-    return (rectangleArea == 0) ? 0
-                                : (area / rectangleArea);
+    return (Numeric::almostEqual(rectangleArea, 0)) ? 0
+                                                    : (area / rectangleArea);
 }
 
 double Region::isCircularMeasure() {
-    return CircularityMeasure::compute(polygon);
+    Point2f minAreaEnclosingCircleCentre;
+    float minAreaEnclosingCircleRadius;
+
+    minEnclosingCircle(polygon, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
+
+    // Compute the area of the minimum area enclosing circle
+    double circleArea = PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
+
+    return (Numeric::almostEqual(circleArea, 0)) ? 0
+                                                 : (area / circleArea);
 }
 
 void Region::updateCentrePoint() {

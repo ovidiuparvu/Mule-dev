@@ -82,6 +82,6 @@ bool Entity::areValid(unsigned int pileUpDegree, double area, double perimeter, 
         (pileUpDegree > 0) &&
         (area > 0) &&
         (perimeter > 0) &&
-        ((centre.x > 0) && (centre.y > 0))
+        ((Numeric::greaterOrEqual(centre.x, 0)) && (Numeric::greaterOrEqual(centre.y, 0)))
     );
 }

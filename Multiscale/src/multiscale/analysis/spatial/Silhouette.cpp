@@ -46,7 +46,7 @@ double Silhouette::computeMeasure(unsigned int entityIndex, unsigned int cluster
     double b = computeAverageDissimilarityToOtherClusters(entityIndex, clusterIndex, clusters);
 
     return ((a != 0) || (b != 0)) ? (b - a) / (max(a, b))
-                                  : 0;
+                                  : 1;
 }
 
 double Silhouette::computeAverageDissimilarityWithinCluster(unsigned int entityIndex, unsigned int clusterIndex, const vector<Cluster> &clusters) {
