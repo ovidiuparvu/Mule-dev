@@ -1,7 +1,7 @@
 <map id="multiscale::analysis::Cluster::getEntitiesContourPoints" name="multiscale::analysis::Cluster::getEntitiesContourPoints">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="243,5,453,51"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#a579730478055ae93d659f268375a492d" title="Get the measure that the cluster has a circular shape." alt="" coords="256,74,440,121"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#aca93cb46704a3e824151e99b7a53d20d" title="Get the measure that the cluster has a rectangular shape." alt="" coords="243,143,453,190"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="249,213,447,259"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed" title="Update the value of the perimeter." alt="" coords="503,5,676,51"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="243,39,453,86"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#a579730478055ae93d659f268375a492d" title="Get the measure that the cluster has a circular shape." alt="" coords="256,109,440,155"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Cluster.html#aca93cb46704a3e824151e99b7a53d20d" title="Get the measure that the cluster has a rectangular shape." alt="" coords="243,178,453,225"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed" title="Update the value of the perimeter." alt="" coords="513,5,687,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="501,74,699,121"/>
 </map>

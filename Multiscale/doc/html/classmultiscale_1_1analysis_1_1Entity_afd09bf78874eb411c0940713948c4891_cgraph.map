@@ -1,3 +1,6 @@
 <map id="multiscale::analysis::Entity::validateInputValues" name="multiscale::analysis::Entity::validateInputValues">
 <area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc" title="Check if the provided degree of pile up, area, centre and contour points are valid." alt="" coords="241,5,377,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="427,5,565,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="613,5,752,51"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="800,5,939,51"/>
 </map>
