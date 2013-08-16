@@ -18,15 +18,9 @@ then
     # Inform user of the next action
     echo "Running the region detection procedure for each image...";
 
-    # Run the region detection procedure for each image
-    for imageFile in ${inputFolder}/*.png;
-    do
-        imageFileBasename=`basename ${imageFile}`;
-        imageFilename=${imageFileBasename%.*};
-
-        ./bin/RectangularDetectRegions --input-file ${imageFile} --output-file ${outputFolder}/${imageFilename} --debug-mode "false"
-    done
-
+    # Run the cluster detection procedure for each image in parallel
+    ls ${inputFolder}/*.png | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${outputFolder}/{/.} --debug-mode="false"
+    
     # Empty files which will store final results
     echo "Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${regionsResultFile};
     echo "Number of regions" > ${nrOfRegionsResultFile};

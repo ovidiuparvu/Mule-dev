@@ -101,7 +101,7 @@ vector<Point2f> Cluster::getEntitiesConvexHull() {
     vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
     vector<Point2f> entitiesConvexHull;
 
-    convexHull(entitiesContourPoints, entitiesConvexHull, true);
+    convexHull(entitiesContourPoints, entitiesConvexHull, CONVEX_HULL_CLOCKWISE);
 
     return entitiesConvexHull;
 }
