@@ -36,19 +36,19 @@ vector<Point2f> MinimumAreaEnclosingTriangle::polygon;
 
 
 void MinimumAreaEnclosingTriangle::find(const vector<Point2f> &polygon, vector<Point2f> &minimumAreaEnclosingTriangle,
-                                        double &area) {
+                                        double &minimumAreaEnclosingTriangleArea) {
     // Check if the polygon is convex and is a k-gon with k > 3
     assert(isContourConvex(polygon) && (polygon.size() > 3));
 
     MinimumAreaEnclosingTriangle::polygon = polygon;
-    area = numeric_limits<double>::max();
+    minimumAreaEnclosingTriangleArea = numeric_limits<double>::max();
 
     // Clear all points previously stored in the vector
     minimumAreaEnclosingTriangle.clear();
 
     initialise();
 
-    findMinimumAreaEnclosingTriangle(minimumAreaEnclosingTriangle, area);
+    findMinimumAreaEnclosingTriangle(minimumAreaEnclosingTriangle, minimumAreaEnclosingTriangleArea);
 }
 
 void MinimumAreaEnclosingTriangle::initialise() {
@@ -59,7 +59,8 @@ void MinimumAreaEnclosingTriangle::initialise() {
     c = 0;
 }
 
-void MinimumAreaEnclosingTriangle::findMinimumAreaEnclosingTriangle(vector<Point2f> &minimumAreaEnclosingTriangle, double &area) {
+void MinimumAreaEnclosingTriangle::findMinimumAreaEnclosingTriangle(vector<Point2f> &minimumAreaEnclosingTriangle,
+                                                                    double &minimumAreaEnclosingTriangleArea) {
     for (c = 0; c < nrOfPoints; c++) {
         advanceBToRightChain();
         moveAIfLowAndBIfHigh();
@@ -74,7 +75,7 @@ void MinimumAreaEnclosingTriangle::findMinimumAreaEnclosingTriangle(vector<Point
         }
 
         if (isLocalMinimalTriangle()) {
-            updateMinimumAreaEnclosingTriangle(minimumAreaEnclosingTriangle, area);
+            updateMinimumAreaEnclosingTriangle(minimumAreaEnclosingTriangle, minimumAreaEnclosingTriangleArea);
         }
     }
 }

@@ -68,11 +68,12 @@ namespace multiscale {
 
             //! Find the minimum area enclosing triangle for the given polygon
             /*!
-             * \param polygon                       Polygon of points for which the minimum area enclosing triangle will be  found
-             * \param minimumAreaEnclosingTriangle  Minimum area triangle enclosing the given polygon
-             * \param area                          Area of the minimum area enclosing triangle
+             * \param polygon                           Polygon of points for which the minimum area enclosing triangle will be  found
+             * \param minimumAreaEnclosingTriangle      Minimum area triangle enclosing the given polygon
+             * \param minimumAreaEnclosingTriangleArea  Area of the minimum area enclosing triangle
              */
-            static void find(const vector<Point2f> &polygon, vector<Point2f> &minimumAreaEnclosingTriangle, double &area);
+            static void find(const vector<Point2f> &polygon, vector<Point2f> &minimumAreaEnclosingTriangle,
+                             double &minimumAreaEnclosingTriangleArea);
 
         private:
 
@@ -81,10 +82,11 @@ namespace multiscale {
 
             //! Find the minimum area enclosing triangle for the given polygon
             /*!
-             * \param minimumAreaEnclosingTriangle  Minimum area triangle enclosing the given polygon
-             * \param area                          Area of the minimum area enclosing triangle
+             * \param minimumAreaEnclosingTriangle      Minimum area triangle enclosing the given polygon
+             * \param minimumAreaEnclosingTriangleArea  Area of the minimum area enclosing triangle
              */
-            static void findMinimumAreaEnclosingTriangle(vector<Point2f> &minimumAreaEnclosingTriangle, double &area);
+            static void findMinimumAreaEnclosingTriangle(vector<Point2f> &minimumAreaEnclosingTriangle,
+                                                         double &minimumAreaEnclosingTriangleArea);
 
             //! Advance b to the right chain
             /*!
