@@ -110,10 +110,8 @@ void MinimumAreaEnclosingTriangle::searchForBTangency() {
 bool MinimumAreaEnclosingTriangle::isNotBTangency() {
     Point2f gammaOfB;
 
-    if (gamma(b, gammaOfB)) {
-        if ((intersectsAbove(gammaOfB, b)) || (height(b) < height(predecessor(a)))) {
-            return true;
-        }
+    if (((gamma(b, gammaOfB)) && (intersectsAbove(gammaOfB, b))) || (height(b) < height(predecessor(a)))) {
+        return true;
     }
 
     return false;
