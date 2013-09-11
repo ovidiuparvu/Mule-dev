@@ -31,7 +31,7 @@ bool Geometry2D::isOppositeAngleBetween(double angle1, double angle2, double ang
 }
 
 bool Geometry2D::isAngleBetweenNonReflex(double angle1, double angle2, double angle3) {
-    if (fabs(angle2 - angle3) > 180) {
+    if (abs(angle2 - angle3) > 180) {
         if (angle2 > angle3) {
             return ((angle2 < angle1) && (Numeric::lessOrEqual(angle1, 360))) || ((Numeric::lessOrEqual(0, angle1)) && (angle1 < angle3));
         } else {
