@@ -19,7 +19,7 @@ SimulationClusterDetector::SimulationClusterDetector(unsigned int height, unsign
 
 SimulationClusterDetector::~SimulationClusterDetector() {}
 
-void SimulationClusterDetector::initialiseImageDependentFields() {
+void SimulationClusterDetector::initialiseDetectorSpecificImageDependentFields() {
     this->entityHeight = ((double)image.rows) / height;
     this->entityWidth = ((double)image.cols) / width;
 

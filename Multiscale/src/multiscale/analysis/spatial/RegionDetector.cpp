@@ -146,12 +146,7 @@ void RegionDetector::initialiseDetectorSpecificFields() {
     thresholdValue = 100;
 }
 
-void RegionDetector::initialiseImageDependentFields() {
-    int originX = (image.rows + 1) / 2;
-    int originY = (image.cols + 1) / 2;
-
-    origin = Point(originX, originY);
-}
+void RegionDetector::initialiseDetectorSpecificImageDependentFields() {}
 
 void RegionDetector::createDetectorSpecificTrackbars() {
     createTrackbar(TRACKBAR_ALPHA, WIN_OUTPUT_IMAGE, &alpha, ALPHA_MAX, nullptr, nullptr);
@@ -235,7 +230,7 @@ Region RegionDetector::createRegionFromPolygon(const vector<Point> &polygon) {
     double density = regionDensity(polygon);
     double area = regionArea(polygon);
     double distance = Geometry2D::distanceBtwPoints(polygon[minDistancePointIndex], origin);
-    double angle = regionAngle(polygon, minDistancePointIndex);
+    double angle = polygonAngle(polygon, minDistancePointIndex);
 
     return Region(clusterednessDegree, density, area, distance, angle, polygon);
 }
@@ -266,56 +261,6 @@ double RegionDetector::regionDensity(const vector<Point> &polygon) {
     double averageIntensity = (mean(image, mask))[0];
 
     return (averageIntensity / static_cast<double>(INTENSITY_MAX));
-}
-
-double RegionDetector::regionAngle(const vector<Point> &polygon, unsigned int closestPointIndex) {
-    vector<Point> polygonConvexHull;
-
-    convexHull(polygon, polygonConvexHull);
-
-    return regionAngle(polygonConvexHull, polygon[closestPointIndex]);
-}
-
-double RegionDetector::regionAngle(const vector<Point> &polygonConvexHull, const Point &closestPoint) {
-    Point centre;
-    vector<Point> goodPointsForAngle;
-
-    minAreaRectCentre(polygonConvexHull, centre);
-    findGoodPointsForAngle(polygonConvexHull, centre, closestPoint, goodPointsForAngle);
-
-    return (goodPointsForAngle.size() == 2) ? Geometry2D::angleBtwPoints(goodPointsForAngle.at(0), closestPoint, goodPointsForAngle.at(1))
-                                            : 0;
-}
-
-void RegionDetector::minAreaRectCentre(const vector<Point> &polygon, Point &centre) {
-    RotatedRect enclosingRectangle = minAreaRect(polygon);
-
-    centre = enclosingRectangle.center;
-}
-
-void RegionDetector::findGoodPointsForAngle(const vector<Point> &polygonConvexHull,
-                                            const Point &boundingRectCentre,
-                                            const Point &closestPoint,
-                                            vector<Point> &goodPointsForAngle) {
-    Point firstEdgePoint, secondEdgePoint;
-
-    Geometry2D::orthogonalLineToAnotherLineEdgePoints(closestPoint, boundingRectCentre, firstEdgePoint,
-                                                      secondEdgePoint, image.rows, image.cols);
-
-    findGoodIntersectionPoints(polygonConvexHull, firstEdgePoint, secondEdgePoint, goodPointsForAngle);
-}
-
-void RegionDetector::findGoodIntersectionPoints(const vector<Point> &polygonConvexHull, const Point &edgePointA,
-                                                const Point &edgePointB, vector<Point> &goodPointsForAngle) {
-    Point intersection;
-    int nrOfPolygonPoints = polygonConvexHull.size();
-
-    for (int i = 0; i < nrOfPolygonPoints; i++) {
-        if (Geometry2D::lineSegmentIntersection(polygonConvexHull.at(i), polygonConvexHull.at((i+1) % nrOfPolygonPoints),
-                                                edgePointA, edgePointB, intersection)) {
-            goodPointsForAngle.push_back(intersection);
-        }
-    }
 }
 
 double RegionDetector::regionArea(const vector<Point> &polygon) {

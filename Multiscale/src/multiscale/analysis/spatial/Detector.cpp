@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/Detector.hpp"
 #include "multiscale/exception/DetectorException.hpp"
+#include "multiscale/util/Geometry2D.hpp"
 
 #include <iostream>
 
@@ -53,6 +54,18 @@ void Detector::initialiseDetectorSpecificFieldsIfNotSet() {
     }
 }
 
+void Detector::initialiseImageDependentFields() {
+    initialiseImageOrigin();
+    initialiseDetectorSpecificImageDependentFields();
+}
+
+void Detector::initialiseImageOrigin() {
+    int originX = (image.rows + 1) / 2;
+    int originY = (image.cols + 1) / 2;
+
+    origin = Point(originX, originY);
+}
+
 bool Detector::isValidInputImage(const Mat &inputImage) {
     return ((inputImage.type() == CV_8UC1) && (inputImage.dims == 2) && (inputImage.rows > 1) && (inputImage.cols > 1));
 }
@@ -85,6 +98,56 @@ void Detector::detectInDebugMode() {
 void Detector::detectInReleaseMode() {
     clearPreviousDetectionResults();
     processImageAndDetect();
+}
+
+double Detector::polygonAngle(const vector<Point> &polygon, unsigned int closestPointIndex) {
+    vector<Point> polygonConvexHull;
+
+    convexHull(polygon, polygonConvexHull);
+
+    return polygonAngle(polygonConvexHull, polygon[closestPointIndex]);
+}
+
+double Detector::polygonAngle(const vector<Point> &polygonConvexHull, const Point &closestPoint) {
+    Point centre;
+    vector<Point> goodPointsForAngle;
+
+    minAreaRectCentre(polygonConvexHull, centre);
+    findGoodPointsForAngle(polygonConvexHull, centre, closestPoint, goodPointsForAngle);
+
+    return (goodPointsForAngle.size() == 2) ? Geometry2D::angleBtwPoints(goodPointsForAngle.at(0), closestPoint, goodPointsForAngle.at(1))
+                                            : 0;
+}
+
+void Detector::minAreaRectCentre(const vector<Point> &polygon, Point &centre) {
+    RotatedRect enclosingRectangle = minAreaRect(polygon);
+
+    centre = enclosingRectangle.center;
+}
+
+void Detector::findGoodPointsForAngle(const vector<Point> &polygonConvexHull,
+                                            const Point &boundingRectCentre,
+                                            const Point &closestPoint,
+                                            vector<Point> &goodPointsForAngle) {
+    Point firstEdgePoint, secondEdgePoint;
+
+    Geometry2D::orthogonalLineToAnotherLineEdgePoints(closestPoint, boundingRectCentre, firstEdgePoint,
+                                                      secondEdgePoint, image.rows, image.cols);
+
+    findGoodIntersectionPoints(polygonConvexHull, firstEdgePoint, secondEdgePoint, goodPointsForAngle);
+}
+
+void Detector::findGoodIntersectionPoints(const vector<Point> &polygonConvexHull, const Point &edgePointA,
+                                                const Point &edgePointB, vector<Point> &goodPointsForAngle) {
+    Point intersection;
+    int nrOfPolygonPoints = polygonConvexHull.size();
+
+    for (int i = 0; i < nrOfPolygonPoints; i++) {
+        if (Geometry2D::lineSegmentIntersection(polygonConvexHull.at(i), polygonConvexHull.at((i+1) % nrOfPolygonPoints),
+                                                edgePointA, edgePointB, intersection)) {
+            goodPointsForAngle.push_back(intersection);
+        }
+    }
 }
 
 void Detector::displayResultsInWindow() {
