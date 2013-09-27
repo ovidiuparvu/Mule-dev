@@ -33,7 +33,8 @@ namespace multiscale {
 
             public:
                 
-                Region(double density, double distanceFromOrigin, double angleWrtOrigin, const vector<Point> &polygon);
+                Region(double clusterednessDegree, double density, double distanceFromOrigin,
+                       double angleWrtOrigin, const vector<Point> &polygon);
                 ~Region();
 
                 //! Get the density
@@ -56,6 +57,7 @@ namespace multiscale {
                 //! Validate the input values
                 /*!
                  * Validation rules:
+                 *  0 < clusterednessDegree
                  *  0 < density
                  *  0 < distanceFromOrigin
                  *  0 <= angleWrtOrigin <= 360
@@ -64,17 +66,19 @@ namespace multiscale {
                  *      0 <= p.x
                  *      0 <= p.y
                  *
+                 * \param clusterednessDegree   The clusteredness degree of the region
                  * \param density               The density of the region
                  * \param distanceFromOrigin    The distance from the origin
                  * \param angleWrtOrigin        The angle computed wrt to the origin
                  * \param polygon               The polygon
                  */
-                void validateInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
-                                         const vector<Point> &polygon);
+                void validateInputValues(double clusterednessDegree, double density, double distanceFromOrigin,
+                                         double angleWrtOrigin, const vector<Point> &polygon);
 
                 //! Check if the input values are valid or not
                 /*!
                  * Validation rules:
+                 *  0 < clusterednessDegree
                  *  0 < density
                  *  0 < distanceFromOrigin
                  *  0 <= angleWrtOrigin <= 360
@@ -83,13 +87,14 @@ namespace multiscale {
                  *      0 <= p.x
                  *      0 <= p.y
                  *
+                 * \param clusterednessDegree   The clusteredness degree of the region
                  * \param density               The density of the region
                  * \param distanceFromOrigin    The distance from the origin
                  * \param angleWrtOrigin        The angle computed wrt to the origin
                  * \param polygon               The polygon
                  */
-                bool areValidInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
-                                         const vector<Point> &polygon);
+                bool areValidInputValues(double clusterednessDegree, double density, double distanceFromOrigin,
+                                         double angleWrtOrigin, const vector<Point> &polygon);
 
                 //! Update the value of all class specific measures
                 void updateSpatialCollectionSpecificValues() override;

@@ -19,12 +19,6 @@ void Cluster::addEntity(const Entity &entity) {
     updateFlag = true;
 }
 
-double Cluster::getClusterednessDegree() {
-    updateMeasuresIfRequired();
-
-    return clusterednessDegree;
-}
-
 double Cluster::getPileUpDegree() {
     updateMeasuresIfRequired();
 
@@ -112,7 +106,7 @@ void Cluster::updateSpatialCollectionSpecificValues() {
 }
 
 void Cluster::updateClusterednessDegree() {
-    clusterednessDegree = 0;
+    double totalAvgDistance = 0;
 
     for (Entity &e1 : entities) {
         double avgDistance = 0;
@@ -121,11 +115,14 @@ void Cluster::updateClusterednessDegree() {
             avgDistance += e1.distanceTo(e2);
         }
 
-        clusterednessDegree += (entities.size() == 1) ? 0
-                                                      : avgDistance / (entities.size() - 1);
+        totalAvgDistance += (entities.size() == 1) ? 0
+                                                   : avgDistance / (entities.size() - 1);
     }
 
-    clusterednessDegree /= (entities.size());
+    totalAvgDistance /= (entities.size());
+
+    clusterednessDegree = (totalAvgDistance != 0) ? (1 / totalAvgDistance)
+                                                  : 1;
 }
 
 void Cluster::updatePileUpDegree() {

@@ -8,9 +8,11 @@
 using namespace multiscale::analysis;
 
 
-Region::Region(double density, double distanceFromOrigin, double angle, const vector<Point> &polygon) : SpatialCollection2D() {
-    validateInputValues(density, distanceFromOrigin, angle, polygon);
+Region::Region(double clusterednessDegree, double density, double distanceFromOrigin,
+               double angleWrtOrigin, const vector<Point> &polygon) : SpatialCollection2D() {
+    validateInputValues(clusterednessDegree, density, distanceFromOrigin, angle, polygon);
 
+    this->clusterednessDegree = clusterednessDegree;
     this->density = density;
     this->distanceFromOrigin = distanceFromOrigin;
     this->angle = angle;
@@ -45,18 +47,18 @@ const vector<Point>& Region::getPolygon() {
 }
 
 string Region::fieldNamesToString() {
-    return "Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
+    return "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
 }
 
-void Region::validateInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
-                                 const vector<Point> &polygon) {
-    if (!areValidInputValues(density, distanceFromOrigin, angleWrtOrigin, polygon)) {
+void Region::validateInputValues(double clusterednessDegree, double density, double distanceFromOrigin,
+                                 double angleWrtOrigin, const vector<Point> &polygon) {
+    if (!areValidInputValues(clusterednessDegree, density, distanceFromOrigin, angleWrtOrigin, polygon)) {
         throw RegionException(ERR_INPUT);
     }
 }
 
-bool Region::areValidInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
-                                 const vector<Point> &polygon) {
+bool Region::areValidInputValues(double clusterednessDegree, double density, double distanceFromOrigin,
+                                 double angleWrtOrigin, const vector<Point> &polygon) {
     for (const Point &point : polygon) {
         if ((point.x < 0) || (point.y < 0)) {
             return false;
@@ -64,6 +66,7 @@ bool Region::areValidInputValues(double density, double distanceFromOrigin, doub
     }
 
     return (
+        (clusterednessDegree > 0) &&
         (density > 0) &&
         (distanceFromOrigin > 0) &&
         (Numeric::lessOrEqual(0, angleWrtOrigin)) &&
@@ -124,7 +127,8 @@ void Region::updateCentrePoint() {
 }
 
 string Region::fieldValuesToString() {
-    return StringManipulator::toString<double>(density) + OUTPUT_SEPARATOR +
+    return StringManipulator::toString<double>(clusterednessDegree) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(density) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(perimeter) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(distanceFromOrigin) + OUTPUT_SEPARATOR +

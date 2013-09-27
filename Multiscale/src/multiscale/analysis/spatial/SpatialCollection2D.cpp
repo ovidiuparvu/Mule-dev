@@ -9,6 +9,12 @@ SpatialCollection2D::SpatialCollection2D() {
 
 SpatialCollection2D::~SpatialCollection2D() {}
 
+double SpatialCollection2D::getClusterednessDegree() {
+    updateMeasuresIfRequired();
+
+    return clusterednessDegree;
+}
+
 double SpatialCollection2D::getArea() {
     updateMeasuresIfRequired();
 

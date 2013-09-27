@@ -30,25 +30,30 @@ namespace multiscale {
 
             protected:
 
-                double area;                /*!< Area of the spatial collection */
-                double perimeter;           /*!< Perimeter of the spatial collection */
+                double clusterednessDegree;     /*!< Degree of clusteredness */
 
-                double triangularMeasure;   /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is triangular */
-                double rectangularMeasure;  /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is rectangular */
-                double circularMeasure;     /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is circular */
+                double area;                    /*!< Area of the spatial collection */
+                double perimeter;               /*!< Perimeter of the spatial collection */
 
-                Shape2D shape;              /*!< Shape of the spatial collection */
-                Point2f centre;             /*!< Point defining the centre of the spatial collection */
+                double triangularMeasure;       /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is triangular */
+                double rectangularMeasure;      /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is rectangular */
+                double circularMeasure;         /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is circular */
 
-                bool updateFlag;            /*!< Flag indicating if the field values dependent on the
-                                                 collection of entities need to be updated. This flag is
-                                                 used for lazy evaluation purposes, such that new field
-                                                 values are computed only when required*/
+                Shape2D shape;                  /*!< Shape of the spatial collection */
+                Point2f centre;                 /*!< Point defining the centre of the spatial collection */
+
+                bool updateFlag;                /*!< Flag indicating if the field values dependent on the
+                                                     collection of entities need to be updated. This flag is
+                                                     used for lazy evaluation purposes, such that new field
+                                                     values are computed only when required*/
 
             public:
 
                 SpatialCollection2D();
                 virtual ~SpatialCollection2D();
+
+                //! Get the clusteredness degree
+                double getClusterednessDegree();
 
                 //! Get the area
                 double getArea();

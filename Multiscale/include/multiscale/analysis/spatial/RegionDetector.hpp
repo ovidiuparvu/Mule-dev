@@ -35,6 +35,7 @@ using namespace cv;
 #define EPSILON_MAX             100
 #define REGION_AREA_THRESH_MAX  200000
 #define THRESHOLD_MAX           255
+#define THRESHOLD_CLUSTEREDNESS 1
 #define INTENSITY_MAX           255
 
 #define POLYGON_CLOSED          true
@@ -232,6 +233,17 @@ namespace multiscale {
                  * \param polygon The polygon defining the region
                  */
                 bool isValidRegion(const vector<Point> &polygon);
+
+                //! Compute the clusteredness degree of the region delimited by the given polygon
+                /*!
+                 * The density is equal to the average intensity of the pixels in the area
+                 * delimited by the given polygon divided by INTENSITY_MAX. The intensities
+                 * are considered from the thresholded image where the threshold value is 1
+                 * i.e. only the black patches are discarded.
+                 *
+                 * \param polygon The given polygon
+                 */
+                double regionClusterednessDegree(const vector<Point> &polygon);
 
                 //! Compute the density of the area delimited by the given polygon
                 /*!

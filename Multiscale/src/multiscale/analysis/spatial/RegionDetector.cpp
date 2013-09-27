@@ -231,17 +231,30 @@ vector<vector<Point> > RegionDetector::findContoursInImage(const Mat &image) {
 Region RegionDetector::createRegionFromPolygon(const vector<Point> &polygon) {
     unsigned int minDistancePointIndex = Geometry2D::minimumDistancePointIndex(polygon, origin);
 
+    double clusterednessDegree = regionClusterednessDegree(polygon);
     double density = regionDensity(polygon);
     double distance = Geometry2D::distanceBtwPoints(polygon[minDistancePointIndex], origin);
     double angle = regionAngle(polygon, minDistancePointIndex);
 
-    return Region(density, distance, angle, polygon);
+    return Region(clusterednessDegree, density, distance, angle, polygon);
 }
 
 bool RegionDetector::isValidRegion(const vector<Point> &polygon) {
     double area = contourArea(polygon, CONTOUR_AREA_ORIENTED);
 
     return (area >= regionAreaThresh);
+}
+
+double RegionDetector::regionClusterednessDegree(const vector<Point> &polygon) {
+    Mat mask(Mat::zeros(image.rows, image.cols, image.type()));
+    Mat thresholdedImage;
+
+    drawContours(mask, vector<vector<Point>>(1, polygon), -1, Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX), CV_FILLED);
+    threshold(image, thresholdedImage, THRESHOLD_CLUSTEREDNESS, THRESHOLD_MAX, THRESH_BINARY);
+
+    double averageIntensity = (mean(thresholdedImage, mask))[0];
+
+    return (averageIntensity / static_cast<double>(INTENSITY_MAX));
 }
 
 double RegionDetector::regionDensity(const vector<Point> &polygon) {

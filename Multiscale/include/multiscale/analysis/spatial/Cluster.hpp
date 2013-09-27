@@ -22,7 +22,6 @@ namespace multiscale {
 
             private:
 
-                double clusterednessDegree;                 /*!< Degree of clusteredness */
                 double pileUpDegree;                        /*!< Degree of pile up */
 
                 vector<Point2f> minAreaEnclosingTriangle;   /*!< The minimum area enclosing triangle */
@@ -41,9 +40,6 @@ namespace multiscale {
 
                 //! Add a new entity to the cluster
                 void addEntity(const Entity &entity);
-
-                //! Get the degree of clusteredness
-                double getClusterednessDegree();
 
                 //! Get the degree of pile up
                 double getPileUpDegree();
