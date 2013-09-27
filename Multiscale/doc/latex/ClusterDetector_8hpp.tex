@@ -1,0 +1,166 @@
+\hypertarget{ClusterDetector_8hpp}{\section{include/multiscale/analysis/spatial/\-Cluster\-Detector.hpp File Reference}
+\label{ClusterDetector_8hpp}\index{include/multiscale/analysis/spatial/\-Cluster\-Detector.\-hpp@{include/multiscale/analysis/spatial/\-Cluster\-Detector.\-hpp}}
+}
+{\ttfamily \#include \char`\"{}multiscale/analysis/spatial/\-Cluster.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multiscale/analysis/spatial/\-Detector.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multiscale/analysis/spatial/\-Entity.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/imgproc/imgproc.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/highgui/highgui.\-hpp\char`\"{}}\\*
+Include dependency graph for Cluster\-Detector.\-hpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClusterDetector_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ClusterDetector_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector}{multiscale\-::analysis\-::\-Cluster\-Detector}
+\begin{DoxyCompactList}\small\item\em Class for detecting clusters in 2\-D images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacemultiscale}{multiscale}
+\item 
+namespace \hyperlink{namespacemultiscale_1_1analysis}{multiscale\-::analysis}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_a03d08fcd24072f600fedefea105192c5}{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}~\char`\"{}Clusteredness index\-: \char`\"{}
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_a8835e4a55ef1753868cbad4d2a144779}{O\-U\-T\-P\-U\-T\-\_\-\-P\-I\-L\-E\-\_\-\-U\-P}~\char`\"{}Average pile up degree\-: \char`\"{}
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_acf14bbe82bf908bbaa3e307ba6f0c0e7}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}~\char`\"{}Eps (Multiplied by 10)\char`\"{}
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_a0854d3b9ea4cf7d6115dc5f7f079a458}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}~\char`\"{}Minimum number of points\char`\"{}
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_a44d4dbf032dec9fc3f1a2ba9c11afe2e}{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}~0
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_ac5e81e4fb4ebf2cc5efb012723d37fcd}{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}~100
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_a1faf458dee5b0c5bb1b33b1c55db5976}{E\-P\-S\-\_\-\-M\-I\-N}~0
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_aac9b63e21628e567cbafa966fb6a7ad0}{E\-P\-S\-\_\-\-M\-A\-X}~10000
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_af6f6eaf3b08254485de414e4b2eb4f30}{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}~0
+\item 
+\#define \hyperlink{ClusterDetector_8hpp_a4e3e53c39cec5f193420cef7dbba2534}{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}~1000
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ClusterDetector_8hpp_aac9b63e21628e567cbafa966fb6a7ad0}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!E\-P\-S\-\_\-\-M\-A\-X@{E\-P\-S\-\_\-\-M\-A\-X}}
+\index{E\-P\-S\-\_\-\-M\-A\-X@{E\-P\-S\-\_\-\-M\-A\-X}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{E\-P\-S\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-P\-S\-\_\-\-M\-A\-X~10000}}\label{ClusterDetector_8hpp_aac9b63e21628e567cbafa966fb6a7ad0}
+
+
+Definition at line 24 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::convert\-Eps\-Value(), multiscale\-::analysis\-::\-Cluster\-Detector\-::create\-Detector\-Specific\-Trackbars(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Eps().
+
+\hypertarget{ClusterDetector_8hpp_a1faf458dee5b0c5bb1b33b1c55db5976}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!E\-P\-S\-\_\-\-M\-I\-N@{E\-P\-S\-\_\-\-M\-I\-N}}
+\index{E\-P\-S\-\_\-\-M\-I\-N@{E\-P\-S\-\_\-\-M\-I\-N}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{E\-P\-S\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-P\-S\-\_\-\-M\-I\-N~0}}\label{ClusterDetector_8hpp_a1faf458dee5b0c5bb1b33b1c55db5976}
+
+
+Definition at line 23 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::convert\-Eps\-Value(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Eps().
+
+\hypertarget{ClusterDetector_8hpp_a4e3e53c39cec5f193420cef7dbba2534}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}}
+\index{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X~1000}}\label{ClusterDetector_8hpp_a4e3e53c39cec5f193420cef7dbba2534}
+
+
+Definition at line 26 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::convert\-Eps\-Value(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Eps().
+
+\hypertarget{ClusterDetector_8hpp_af6f6eaf3b08254485de414e4b2eb4f30}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}}
+\index{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N~0}}\label{ClusterDetector_8hpp_af6f6eaf3b08254485de414e4b2eb4f30}
+
+
+Definition at line 25 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::convert\-Eps\-Value(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Eps().
+
+\hypertarget{ClusterDetector_8hpp_ac5e81e4fb4ebf2cc5efb012723d37fcd}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X@{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}}
+\index{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X@{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X~100}}\label{ClusterDetector_8hpp_ac5e81e4fb4ebf2cc5efb012723d37fcd}
+
+
+Definition at line 21 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::create\-Detector\-Specific\-Trackbars().
+
+\hypertarget{ClusterDetector_8hpp_a44d4dbf032dec9fc3f1a2ba9c11afe2e}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N@{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}}
+\index{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N@{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N~0}}\label{ClusterDetector_8hpp_a44d4dbf032dec9fc3f1a2ba9c11afe2e}
+
+
+Definition at line 20 of file Cluster\-Detector.\-hpp.
+
+\hypertarget{ClusterDetector_8hpp_a03d08fcd24072f600fedefea105192c5}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S~\char`\"{}Clusteredness index\-: \char`\"{}}}\label{ClusterDetector_8hpp_a03d08fcd24072f600fedefea105192c5}
+
+
+Definition at line 14 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::output\-Results\-To\-Csv\-File().
+
+\hypertarget{ClusterDetector_8hpp_a8835e4a55ef1753868cbad4d2a144779}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!O\-U\-T\-P\-U\-T\-\_\-\-P\-I\-L\-E\-\_\-\-U\-P@{O\-U\-T\-P\-U\-T\-\_\-\-P\-I\-L\-E\-\_\-\-U\-P}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-P\-I\-L\-E\-\_\-\-U\-P@{O\-U\-T\-P\-U\-T\-\_\-\-P\-I\-L\-E\-\_\-\-U\-P}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-P\-I\-L\-E\-\_\-\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T\-P\-U\-T\-\_\-\-P\-I\-L\-E\-\_\-\-U\-P~\char`\"{}Average pile up degree\-: \char`\"{}}}\label{ClusterDetector_8hpp_a8835e4a55ef1753868cbad4d2a144779}
+
+
+Definition at line 15 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::output\-Results\-To\-Csv\-File().
+
+\hypertarget{ClusterDetector_8hpp_acf14bbe82bf908bbaa3e307ba6f0c0e7}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}}
+\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S~\char`\"{}Eps (Multiplied by 10)\char`\"{}}}\label{ClusterDetector_8hpp_acf14bbe82bf908bbaa3e307ba6f0c0e7}
+
+
+Definition at line 17 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::create\-Detector\-Specific\-Trackbars().
+
+\hypertarget{ClusterDetector_8hpp_a0854d3b9ea4cf7d6115dc5f7f079a458}{\index{Cluster\-Detector.\-hpp@{Cluster\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}}
+\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}!ClusterDetector.hpp@{Cluster\-Detector.\-hpp}}
+\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S~\char`\"{}Minimum number of points\char`\"{}}}\label{ClusterDetector_8hpp_a0854d3b9ea4cf7d6115dc5f7f079a458}
+
+
+Definition at line 18 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::create\-Detector\-Specific\-Trackbars().
+

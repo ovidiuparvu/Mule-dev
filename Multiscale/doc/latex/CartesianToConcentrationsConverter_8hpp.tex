@@ -1,0 +1,109 @@
+\hypertarget{CartesianToConcentrationsConverter_8hpp}{\section{include/multiscale/video/rectangular/\-Cartesian\-To\-Concentrations\-Converter.hpp File Reference}
+\label{CartesianToConcentrationsConverter_8hpp}\index{include/multiscale/video/rectangular/\-Cartesian\-To\-Concentrations\-Converter.\-hpp@{include/multiscale/video/rectangular/\-Cartesian\-To\-Concentrations\-Converter.\-hpp}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for Cartesian\-To\-Concentrations\-Converter.\-hpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{CartesianToConcentrationsConverter_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CartesianToConcentrationsConverter_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmultiscale_1_1video_1_1CartesianToConcentrationsConverter}{multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter}
+\begin{DoxyCompactList}\small\item\em Scale the values of the rectangular geometry grid cells. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacemultiscale}{multiscale}
+\item 
+namespace \hyperlink{namespacemultiscale_1_1video}{multiscale\-::video}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{CartesianToConcentrationsConverter_8hpp_a88bb4dcef0e2bea00bce86c02cf5f813}{E\-R\-R\-\_\-\-C\-O\-N\-C}~\char`\"{}All concentrations have to be between 0 and 1.\char`\"{}
+\item 
+\#define \hyperlink{CartesianToConcentrationsConverter_8hpp_a1cf49e653837247035d3d9d1fbdb0dee}{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N}~\char`\"{}The dimensions N and M must be positive.\char`\"{}
+\item 
+\#define \hyperlink{CartesianToConcentrationsConverter_8hpp_a3ad0d4f95970c66da7d75bf997714f6f}{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}~\char`\"{}The simulation time must be non-\/negative.\char`\"{}
+\item 
+\#define \hyperlink{CartesianToConcentrationsConverter_8hpp_a12d238c7a2da056fd33f129f4c35b9a2}{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}~\char`\"{}The input file could not be opened\char`\"{}
+\item 
+\#define \hyperlink{CartesianToConcentrationsConverter_8hpp_aed781f5aa5bf10bba7919f04cf50b038}{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}~\char`\"{}The input file contains more data than required.\char`\"{}
+\item 
+\#define \hyperlink{CartesianToConcentrationsConverter_8hpp_aafd58e116a65aeb70ace2b91d42a22ae}{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}~\char`\"{}.out\char`\"{}
+\item 
+\#define \hyperlink{CartesianToConcentrationsConverter_8hpp_a6b9880fa336856728f874385983f7737}{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N}~0.\-001
+\item 
+\#define \hyperlink{CartesianToConcentrationsConverter_8hpp_a3923a2502324557507dda8740810aca3}{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X}~0.\-3
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{CartesianToConcentrationsConverter_8hpp_a88bb4dcef0e2bea00bce86c02cf5f813}{\index{Cartesian\-To\-Concentrations\-Converter.\-hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}!E\-R\-R\-\_\-\-C\-O\-N\-C@{E\-R\-R\-\_\-\-C\-O\-N\-C}}
+\index{E\-R\-R\-\_\-\-C\-O\-N\-C@{E\-R\-R\-\_\-\-C\-O\-N\-C}!CartesianToConcentrationsConverter.hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-C\-O\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-C\-O\-N\-C~\char`\"{}All concentrations have to be between 0 and 1.\char`\"{}}}\label{CartesianToConcentrationsConverter_8hpp_a88bb4dcef0e2bea00bce86c02cf5f813}
+
+
+Definition at line 9 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+\hypertarget{CartesianToConcentrationsConverter_8hpp_aed781f5aa5bf10bba7919f04cf50b038}{\index{Cartesian\-To\-Concentrations\-Converter.\-hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}!E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A@{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}}
+\index{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A@{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}!CartesianToConcentrationsConverter.hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A~\char`\"{}The input file contains more data than required.\char`\"{}}}\label{CartesianToConcentrationsConverter_8hpp_aed781f5aa5bf10bba7919f04cf50b038}
+
+
+Definition at line 13 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+\hypertarget{CartesianToConcentrationsConverter_8hpp_a12d238c7a2da056fd33f129f4c35b9a2}{\index{Cartesian\-To\-Concentrations\-Converter.\-hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}!E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}}
+\index{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}!CartesianToConcentrationsConverter.hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N~\char`\"{}The input file could not be opened\char`\"{}}}\label{CartesianToConcentrationsConverter_8hpp_a12d238c7a2da056fd33f129f4c35b9a2}
+
+
+Definition at line 12 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+\hypertarget{CartesianToConcentrationsConverter_8hpp_a3ad0d4f95970c66da7d75bf997714f6f}{\index{Cartesian\-To\-Concentrations\-Converter.\-hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}!E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E@{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}}
+\index{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E@{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}!CartesianToConcentrationsConverter.hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E~\char`\"{}The simulation time must be non-\/negative.\char`\"{}}}\label{CartesianToConcentrationsConverter_8hpp_a3ad0d4f95970c66da7d75bf997714f6f}
+
+
+Definition at line 11 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+\hypertarget{CartesianToConcentrationsConverter_8hpp_a1cf49e653837247035d3d9d1fbdb0dee}{\index{Cartesian\-To\-Concentrations\-Converter.\-hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}!E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N@{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N}}
+\index{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N@{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N}!CartesianToConcentrationsConverter.hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N~\char`\"{}The dimensions N and M must be positive.\char`\"{}}}\label{CartesianToConcentrationsConverter_8hpp_a1cf49e653837247035d3d9d1fbdb0dee}
+
+
+Definition at line 10 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+\hypertarget{CartesianToConcentrationsConverter_8hpp_aafd58e116a65aeb70ace2b91d42a22ae}{\index{Cartesian\-To\-Concentrations\-Converter.\-hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}!O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}!CartesianToConcentrationsConverter.hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N~\char`\"{}.out\char`\"{}}}\label{CartesianToConcentrationsConverter_8hpp_aafd58e116a65aeb70ace2b91d42a22ae}
+
+
+Definition at line 15 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+\hypertarget{CartesianToConcentrationsConverter_8hpp_a3923a2502324557507dda8740810aca3}{\index{Cartesian\-To\-Concentrations\-Converter.\-hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}!R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X@{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X}}
+\index{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X@{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X}!CartesianToConcentrationsConverter.hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}}
+\subsubsection[{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X~0.\-3}}\label{CartesianToConcentrationsConverter_8hpp_a3923a2502324557507dda8740810aca3}
+
+
+Definition at line 18 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+
+\hypertarget{CartesianToConcentrationsConverter_8hpp_a6b9880fa336856728f874385983f7737}{\index{Cartesian\-To\-Concentrations\-Converter.\-hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}!R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N@{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N}}
+\index{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N@{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N}!CartesianToConcentrationsConverter.hpp@{Cartesian\-To\-Concentrations\-Converter.\-hpp}}
+\subsubsection[{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N~0.\-001}}\label{CartesianToConcentrationsConverter_8hpp_a6b9880fa336856728f874385983f7737}
+
+
+Definition at line 17 of file Cartesian\-To\-Concentrations\-Converter.\-hpp.
+

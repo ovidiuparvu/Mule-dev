@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('Region_8cpp_source.html','');});
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    convexHull(<a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a40d1b47f30bb09c6a47521a968163b6d">polygon</a>, contourConvexHull, <a class="code" href="SpatialCollection2D_8hpp.html#a780de1e4ebc14f8836d3c74bd4ecfee9">CONVEX_HULL_CLOCKWISE</a>);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a1fed629a9f290fe050c515aa2d0d799d" title="Find the minimum area enclosing triangle for the given polygon.">MinimumAreaEnclosingTriangle::find</a>(<a class="code" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad3d11af329d5efa9bddf40b4573ebb2c" title="Convert the collection of points from type Point to type Point2f.">convertPoints</a>(contourConvexHull), minAreaEnclosingTriangle, triangleArea);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2a116b0cb1b5b8306d2483bd5d55bd68" title="Find the minimum area enclosing triangle for the given polygon.">MinimumAreaEnclosingTriangle::find</a>(<a class="code" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad3d11af329d5efa9bddf40b4573ebb2c" title="Convert the collection of points from type Point to type Point2f.">convertPoints</a>(contourConvexHull), minAreaEnclosingTriangle, triangleArea);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)">Numeric::almostEqual</a>(triangleArea, 0)) ? 0</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                   : (<a class="code" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac570cc755e52aeb9deacf12d223a4a3a">area</a> / triangleArea);</div>
@@ -250,7 +250,7 @@ $(document).ready(function(){initNavTree('Region_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="Region_8cpp.html">Region.cpp</a></li>
-    <li class="footer">Generated on Fri Aug 16 2013 14:42:31 for Multiscale by
+    <li class="footer">Generated on Fri Sep 27 2013 12:07:40 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

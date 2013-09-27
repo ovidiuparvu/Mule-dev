@@ -1,0 +1,72 @@
+\hypertarget{namespacemultiscale_1_1analysis}{\section{multiscale\-:\-:analysis Namespace Reference}
+\label{namespacemultiscale_1_1analysis}\index{multiscale\-::analysis@{multiscale\-::analysis}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1CircularityMeasure}{Circularity\-Measure}
+\begin{DoxyCompactList}\small\item\em Class for computing the circularity measure for the given collection of points. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{Simulation\-Cluster\-Detector}
+\begin{DoxyCompactList}\small\item\em Class for detecting clusters in 2\-D images obtained from simulations. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster}
+\begin{DoxyCompactList}\small\item\em Class for representing a cluster of entities in an image. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector}{Cluster\-Detector}
+\begin{DoxyCompactList}\small\item\em Class for detecting clusters in 2\-D images. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point}
+\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N}
+\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1Detector}{Detector}
+\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1Entity}{Entity}
+\begin{DoxyCompactList}\small\item\em Class for representing an entity in an image (e.\-g. cell, organism etc.) \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1CircularMatFactory}{Circular\-Mat\-Factory}
+\begin{DoxyCompactList}\small\item\em Class for creating a Mat object considering a circular grid. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1RectangularMatFactory}{Rectangular\-Mat\-Factory}
+\begin{DoxyCompactList}\small\item\em Class for creating a Mat object considering a rectangular grid. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1MatFactory}{Mat\-Factory}
+\begin{DoxyCompactList}\small\item\em Class for creating a Mat object. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1Region}{Region}
+\begin{DoxyCompactList}\small\item\em Class for representing a region. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector}{Region\-Detector}
+\begin{DoxyCompactList}\small\item\em Class for detecting regions of high intensity in grayscale images. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1Silhouette}{Silhouette}
+\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D}{Spatial\-Collection2\-D}
+\begin{DoxyCompactList}\small\item\em Class for representing a collection of objects in 2\-D space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbf}{Shape2\-D} \{ \hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfaa93f37adbed49c6062576ec26eb845f7}{Triangle} = 1, 
+\hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfa79a965ce5faa97f66ce875245491fde4}{Rectangle} = 2, 
+\hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfabad5f35f59b929029fa140abb514a654}{Circle} = 3, 
+\hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfa6df4f8bcba37302a9fa3d9887b2c3a13}{Undefined} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration for determining the type of a 2\-D shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbf}{\index{multiscale\-::analysis@{multiscale\-::analysis}!Shape2\-D@{Shape2\-D}}
+\index{Shape2\-D@{Shape2\-D}!multiscale::analysis@{multiscale\-::analysis}}
+\subsubsection[{Shape2\-D}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf multiscale\-::analysis\-::\-Shape2\-D}}}\label{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbf}
+
+
+Enumeration for determining the type of a 2\-D shape. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Triangle@{Triangle}!multiscale\-::analysis@{multiscale\-::analysis}}\index{multiscale\-::analysis@{multiscale\-::analysis}!Triangle@{Triangle}}\item[{\em 
+\hypertarget{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfaa93f37adbed49c6062576ec26eb845f7}{Triangle}\label{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfaa93f37adbed49c6062576ec26eb845f7}
+}]Triangular 2\-D shape \index{Rectangle@{Rectangle}!multiscale\-::analysis@{multiscale\-::analysis}}\index{multiscale\-::analysis@{multiscale\-::analysis}!Rectangle@{Rectangle}}\item[{\em 
+\hypertarget{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfa79a965ce5faa97f66ce875245491fde4}{Rectangle}\label{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfa79a965ce5faa97f66ce875245491fde4}
+}]Rectangular 2\-D shape \index{Circle@{Circle}!multiscale\-::analysis@{multiscale\-::analysis}}\index{multiscale\-::analysis@{multiscale\-::analysis}!Circle@{Circle}}\item[{\em 
+\hypertarget{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfabad5f35f59b929029fa140abb514a654}{Circle}\label{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfabad5f35f59b929029fa140abb514a654}
+}]Circular 2\-D shape \index{Undefined@{Undefined}!multiscale\-::analysis@{multiscale\-::analysis}}\index{multiscale\-::analysis@{multiscale\-::analysis}!Undefined@{Undefined}}\item[{\em 
+\hypertarget{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfa6df4f8bcba37302a9fa3d9887b2c3a13}{Undefined}\label{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbfa6df4f8bcba37302a9fa3d9887b2c3a13}
+}]Undefined 2\-D shape \end{description}
+\end{Desc}
+
+
+Definition at line 10 of file Shape2\-D.\-hpp.
+

@@ -1,0 +1,165 @@
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp}{\section{include/multiscale/util/\-Minimum\-Area\-Enclosing\-Triangle.hpp File Reference}
+\label{MinimumAreaEnclosingTriangle_8hpp}\index{include/multiscale/util/\-Minimum\-Area\-Enclosing\-Triangle.\-hpp@{include/multiscale/util/\-Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+}
+{\ttfamily \#include \char`\"{}multiscale/util/\-Geometry2\-D.\-hpp\char`\"{}}\\*
+Include dependency graph for Minimum\-Area\-Enclosing\-Triangle.\-hpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinimumAreaEnclosingTriangle_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinimumAreaEnclosingTriangle_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle}{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}
+\begin{DoxyCompactList}\small\item\em Class for computing the minimum area enclosing triangle for a given polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacemultiscale}{multiscale}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a33b2bf416e7a3eb9b86eb3cff45ba67a}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}~1
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a491d37fc7ce0c72d3763cc91495f87c2}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}~2
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a7f2b811fcec86dfda9bcf2d5e9096603}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}~3
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a08b447dcb2172aa0fde5a6e29fcf006e}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}~4
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a908ada963db8d95f0f72c05a24e8e1e1}{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}~\char`\"{}The position of the middle point of side B could not be determined.\char`\"{}
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a3a386906c2cc4f2b7c3d52663ef9a184}{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}~\char`\"{}The position of side B could not be determined, because gamma(b) could not be computed.\char`\"{}
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a35b2d19f0f8d88b29478a88ecff6e6d9}{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}~\char`\"{}The position of the vertex C on side B could not be determined, because the considered lines do not intersect.\char`\"{}
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a206e0581e606c88ca6d4aebad7e9d385}{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}~\char`\"{}The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect.\char`\"{}
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a69b5cb9c0d33abff021f07cc6b2da9a4}{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}~0
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_ae84e6d9763cd18f5fe032173ce431428}{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}~1
+\item 
+\#define \hyperlink{MinimumAreaEnclosingTriangle_8hpp_a25734dfda829d51fa13c1cdfc8d4ab96}{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}~2
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a908ada963db8d95f0f72c05a24e8e1e1}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}}
+\index{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B~\char`\"{}The position of the middle point of side B could not be determined.\char`\"{}}}\label{MinimumAreaEnclosingTriangle_8hpp_a908ada963db8d95f0f72c05a24e8e1e1}
+
+
+Definition at line 14 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a3a386906c2cc4f2b7c3d52663ef9a184}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A@{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}}
+\index{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A@{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A~\char`\"{}The position of side B could not be determined, because gamma(b) could not be computed.\char`\"{}}}\label{MinimumAreaEnclosingTriangle_8hpp_a3a386906c2cc4f2b7c3d52663ef9a184}
+
+
+Definition at line 15 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::update\-Side\-B().
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a206e0581e606c88ca6d4aebad7e9d385}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S@{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}}
+\index{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S@{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S~\char`\"{}The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect.\char`\"{}}}\label{MinimumAreaEnclosingTriangle_8hpp_a206e0581e606c88ca6d4aebad7e9d385}
+
+
+Definition at line 17 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a35b2d19f0f8d88b29478a88ecff6e6d9}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}}
+\index{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B~\char`\"{}The position of the vertex C on side B could not be determined, because the considered lines do not intersect.\char`\"{}}}\label{MinimumAreaEnclosingTriangle_8hpp_a35b2d19f0f8d88b29478a88ecff6e6d9}
+
+
+Definition at line 16 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::find\-Vertex\-C\-On\-Side\-B().
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a491d37fc7ce0c72d3763cc91495f87c2}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}}
+\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E~2}}\label{MinimumAreaEnclosingTriangle_8hpp_a491d37fc7ce0c72d3763cc91495f87c2}
+
+
+Definition at line 10 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::intersects\-Above(), and multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::intersects\-Above\-Or\-Below().
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a33b2bf416e7a3eb9b86eb3cff45ba67a}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}}
+\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W~1}}\label{MinimumAreaEnclosingTriangle_8hpp_a33b2bf416e7a3eb9b86eb3cff45ba67a}
+
+
+Definition at line 9 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::intersects(), multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::intersects\-Above\-Or\-Below(), and multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::intersects\-Below().
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a7f2b811fcec86dfda9bcf2d5e9096603}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}}
+\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L~3}}\label{MinimumAreaEnclosingTriangle_8hpp_a7f2b811fcec86dfda9bcf2d5e9096603}
+
+
+Definition at line 11 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::intersects().
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a08b447dcb2172aa0fde5a6e29fcf006e}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}}
+\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T~4}}\label{MinimumAreaEnclosingTriangle_8hpp_a08b447dcb2172aa0fde5a6e29fcf006e}
+
+
+Definition at line 12 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a69b5cb9c0d33abff021f07cc6b2da9a4}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}}
+\index{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T~0}}\label{MinimumAreaEnclosingTriangle_8hpp_a69b5cb9c0d33abff021f07cc6b2da9a4}
+
+
+Definition at line 19 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::is\-Valid\-Minimal\-Triangle(), and multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::update\-Sides\-B\-A().
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_ae84e6d9763cd18f5fe032173ce431428}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}}
+\index{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T~1}}\label{MinimumAreaEnclosingTriangle_8hpp_ae84e6d9763cd18f5fe032173ce431428}
+
+
+Definition at line 20 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::is\-Valid\-Minimal\-Triangle(), and multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::update\-Side\-B().
+
+\hypertarget{MinimumAreaEnclosingTriangle_8hpp_a25734dfda829d51fa13c1cdfc8d4ab96}{\index{Minimum\-Area\-Enclosing\-Triangle.\-hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}!V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}}
+\index{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}!MinimumAreaEnclosingTriangle.hpp@{Minimum\-Area\-Enclosing\-Triangle.\-hpp}}
+\subsubsection[{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H~2}}\label{MinimumAreaEnclosingTriangle_8hpp_a25734dfda829d51fa13c1cdfc8d4ab96}
+
+
+Definition at line 21 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::update\-Sides\-B\-A().
+

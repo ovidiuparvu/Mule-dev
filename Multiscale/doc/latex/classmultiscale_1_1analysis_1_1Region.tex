@@ -1,0 +1,686 @@
+\hypertarget{classmultiscale_1_1analysis_1_1Region}{\section{multiscale\-:\-:analysis\-:\-:Region Class Reference}
+\label{classmultiscale_1_1analysis_1_1Region}\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}}
+}
+
+
+Class for representing a region.  
+
+
+
+
+{\ttfamily \#include $<$Region.\-hpp$>$}
+
+
+
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Region\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmultiscale_1_1analysis_1_1Region__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Region\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmultiscale_1_1analysis_1_1Region__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmultiscale_1_1analysis_1_1Region_ab7565e833258b316d6bdd1801adea9e6}{Region} (double \hyperlink{classmultiscale_1_1analysis_1_1Region_af4eb62fddbe850271dfe15bb240b13bb}{density}, double \hyperlink{classmultiscale_1_1analysis_1_1Region_ad5f128003a97d9d41fd4cf1c01d9a709}{distance\-From\-Origin}, double angle\-Wrt\-Origin, const vector$<$ Point $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1Region_a40d1b47f30bb09c6a47521a968163b6d}{polygon})
+\item 
+\hyperlink{classmultiscale_1_1analysis_1_1Region_a3c3670fff78f7511d156e3b2f0bc6266}{$\sim$\-Region} ()
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Region_abe2e6188ff7b749dc2f77169cb75bb95}{get\-Density} ()
+\begin{DoxyCompactList}\small\item\em Get the density. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Region_ade9c8b7c4095638e53fe06827b545a3a}{get\-Distance\-From\-Origin} ()
+\begin{DoxyCompactList}\small\item\em Get the distance from the origin. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Region_a00abf56a8cb095f1ab0184f392efd008}{get\-Angle} ()
+\begin{DoxyCompactList}\small\item\em Get the angle. \end{DoxyCompactList}\item 
+const vector$<$ Point $>$ \& \hyperlink{classmultiscale_1_1analysis_1_1Region_a60e366526dfda2852871c29b70010fb7}{get\-Polygon} ()
+\begin{DoxyCompactList}\small\item\em Get the polygon defining the region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \hyperlink{classmultiscale_1_1analysis_1_1Region_af766fd7e5b908bd9cf8c3577271ee65b}{field\-Names\-To\-String} ()
+\begin{DoxyCompactList}\small\item\em Get a string representation of all the field names except polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Region_ac1cb568b9eafad173e9f508a5bf61ad2}{validate\-Input\-Values} (double \hyperlink{classmultiscale_1_1analysis_1_1Region_af4eb62fddbe850271dfe15bb240b13bb}{density}, double \hyperlink{classmultiscale_1_1analysis_1_1Region_ad5f128003a97d9d41fd4cf1c01d9a709}{distance\-From\-Origin}, double angle\-Wrt\-Origin, const vector$<$ Point $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1Region_a40d1b47f30bb09c6a47521a968163b6d}{polygon})
+\begin{DoxyCompactList}\small\item\em Validate the input values. \end{DoxyCompactList}\item 
+bool \hyperlink{classmultiscale_1_1analysis_1_1Region_abfad3aff33ecc506ba100074eae3f083}{are\-Valid\-Input\-Values} (double \hyperlink{classmultiscale_1_1analysis_1_1Region_af4eb62fddbe850271dfe15bb240b13bb}{density}, double \hyperlink{classmultiscale_1_1analysis_1_1Region_ad5f128003a97d9d41fd4cf1c01d9a709}{distance\-From\-Origin}, double angle\-Wrt\-Origin, const vector$<$ Point $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1Region_a40d1b47f30bb09c6a47521a968163b6d}{polygon})
+\begin{DoxyCompactList}\small\item\em Check if the input values are valid or not. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Region_ac382fb7a5625d7ef573a311b8de8f248}{update\-Spatial\-Collection\-Specific\-Values} () override
+\begin{DoxyCompactList}\small\item\em Update the value of all class specific measures. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Region_a88adaf10fae7c554581498f86f1863fa}{update\-Area} () override
+\begin{DoxyCompactList}\small\item\em Update the area. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Region_a58a4a22cb77fc6963592ec156458f310}{update\-Perimeter} () override
+\begin{DoxyCompactList}\small\item\em Update the perimeter. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Region_acb88d149b42eee5225e7197a225d31c3}{is\-Triangular\-Measure} () override
+\begin{DoxyCompactList}\small\item\em Get the measure that the cluster has a triangular shape. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Region_a2310c3e3c6f1dea310e14e46d466a204}{is\-Rectangular\-Measure} () override
+\begin{DoxyCompactList}\small\item\em Get the measure that the cluster has a rectangular shape. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Region_aa59dcbe337f4db849d66cb3902617ccd}{is\-Circular\-Measure} () override
+\begin{DoxyCompactList}\small\item\em Get the measure that the cluster has a circular shape. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Region_a3753b8789a73c1e3b5d189aa710aec86}{update\-Centre\-Point} () override
+\begin{DoxyCompactList}\small\item\em Update the centre of the region. \end{DoxyCompactList}\item 
+string \hyperlink{classmultiscale_1_1analysis_1_1Region_a4fa8cfecf2fc3708c66022655a055dc6}{field\-Values\-To\-String} () override
+\begin{DoxyCompactList}\small\item\em Get a string representation of all the field values except polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Region_af4eb62fddbe850271dfe15bb240b13bb}{density}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Region_ad5f128003a97d9d41fd4cf1c01d9a709}{distance\-From\-Origin}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Region_a86c960769a9e8bc1a29dc00c1d43f20a}{angle}
+\item 
+vector$<$ Point $>$ \hyperlink{classmultiscale_1_1analysis_1_1Region_a40d1b47f30bb09c6a47521a968163b6d}{polygon}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class for representing a region. 
+
+Definition at line 22 of file Region.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1Region_ab7565e833258b316d6bdd1801adea9e6}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!Region@{Region}}
+\index{Region@{Region}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{Region}]{\setlength{\rightskip}{0pt plus 5cm}Region\-::\-Region (
+\begin{DoxyParamCaption}
+\item[{double}]{density, }
+\item[{double}]{distance\-From\-Origin, }
+\item[{double}]{angle\-Wrt\-Origin, }
+\item[{const vector$<$ Point $>$ \&}]{polygon}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1Region_ab7565e833258b316d6bdd1801adea9e6}
+
+
+Definition at line 11 of file Region.\-cpp.
+
+
+
+References angle, density, distance\-From\-Origin, polygon, and validate\-Input\-Values().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_ab7565e833258b316d6bdd1801adea9e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a3c3670fff78f7511d156e3b2f0bc6266}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!$\sim$\-Region@{$\sim$\-Region}}
+\index{$\sim$\-Region@{$\sim$\-Region}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{$\sim$\-Region}]{\setlength{\rightskip}{0pt plus 5cm}Region\-::$\sim$\-Region (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1Region_a3c3670fff78f7511d156e3b2f0bc6266}
+
+
+Definition at line 21 of file Region.\-cpp.
+
+
+
+References polygon.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1Region_abfad3aff33ecc506ba100074eae3f083}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!are\-Valid\-Input\-Values@{are\-Valid\-Input\-Values}}
+\index{are\-Valid\-Input\-Values@{are\-Valid\-Input\-Values}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{are\-Valid\-Input\-Values}]{\setlength{\rightskip}{0pt plus 5cm}bool Region\-::are\-Valid\-Input\-Values (
+\begin{DoxyParamCaption}
+\item[{double}]{density, }
+\item[{double}]{distance\-From\-Origin, }
+\item[{double}]{angle\-Wrt\-Origin, }
+\item[{const vector$<$ Point $>$ \&}]{polygon}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Region_abfad3aff33ecc506ba100074eae3f083}
+
+
+Check if the input values are valid or not. 
+
+Validation rules\-: 0 $<$ density 0 $<$ distance\-From\-Origin 0 $<$= angle\-Wrt\-Origin $<$= 360
+
+For each polygon point p\-: 0 $<$= p.\-x 0 $<$= p.\-y
+
+
+\begin{DoxyParams}{Parameters}
+{\em density} & The density of the region \\
+\hline
+{\em distance\-From\-Origin} & The distance from the origin \\
+\hline
+{\em angle\-Wrt\-Origin} & The angle computed wrt to the origin \\
+\hline
+{\em polygon} & The polygon \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file Region.\-cpp.
+
+
+
+References multiscale\-::\-Numeric\-::less\-Or\-Equal().
+
+
+
+Referenced by validate\-Input\-Values().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_abfad3aff33ecc506ba100074eae3f083_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_abfad3aff33ecc506ba100074eae3f083_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_af766fd7e5b908bd9cf8c3577271ee65b}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!field\-Names\-To\-String@{field\-Names\-To\-String}}
+\index{field\-Names\-To\-String@{field\-Names\-To\-String}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{field\-Names\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Region\-::field\-Names\-To\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1Region_af766fd7e5b908bd9cf8c3577271ee65b}
+
+
+Get a string representation of all the field names except polygon. 
+
+
+
+Definition at line 47 of file Region.\-cpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::output\-Results\-To\-Csv\-File().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_af766fd7e5b908bd9cf8c3577271ee65b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a4fa8cfecf2fc3708c66022655a055dc6}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!field\-Values\-To\-String@{field\-Values\-To\-String}}
+\index{field\-Values\-To\-String@{field\-Values\-To\-String}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{field\-Values\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Region\-::field\-Values\-To\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Region_a4fa8cfecf2fc3708c66022655a055dc6}
+
+
+Get a string representation of all the field values except polygon. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1b70b9e25f8b82ac2195f75f89280800}{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}.
+
+
+
+Definition at line 126 of file Region.\-cpp.
+
+
+
+References angle, multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::area, multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::centre, multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::circular\-Measure, density, distance\-From\-Origin, O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R, multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::perimeter, multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::rectangular\-Measure, multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::shape\-As\-String(), and multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::triangular\-Measure.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_a4fa8cfecf2fc3708c66022655a055dc6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a00abf56a8cb095f1ab0184f392efd008}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!get\-Angle@{get\-Angle}}
+\index{get\-Angle@{get\-Angle}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{get\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}double Region\-::get\-Angle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1Region_a00abf56a8cb095f1ab0184f392efd008}
+
+
+Get the angle. 
+
+
+
+Definition at line 37 of file Region.\-cpp.
+
+
+
+References angle, and multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_a00abf56a8cb095f1ab0184f392efd008_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_abe2e6188ff7b749dc2f77169cb75bb95}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!get\-Density@{get\-Density}}
+\index{get\-Density@{get\-Density}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{get\-Density}]{\setlength{\rightskip}{0pt plus 5cm}double Region\-::get\-Density (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1Region_abe2e6188ff7b749dc2f77169cb75bb95}
+
+
+Get the density. 
+
+
+
+Definition at line 25 of file Region.\-cpp.
+
+
+
+References density, and multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_abe2e6188ff7b749dc2f77169cb75bb95_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_ade9c8b7c4095638e53fe06827b545a3a}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!get\-Distance\-From\-Origin@{get\-Distance\-From\-Origin}}
+\index{get\-Distance\-From\-Origin@{get\-Distance\-From\-Origin}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{get\-Distance\-From\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}double Region\-::get\-Distance\-From\-Origin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1Region_ade9c8b7c4095638e53fe06827b545a3a}
+
+
+Get the distance from the origin. 
+
+
+
+Definition at line 31 of file Region.\-cpp.
+
+
+
+References distance\-From\-Origin, and multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_ade9c8b7c4095638e53fe06827b545a3a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a60e366526dfda2852871c29b70010fb7}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!get\-Polygon@{get\-Polygon}}
+\index{get\-Polygon@{get\-Polygon}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{get\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$ Point $>$ \& Region\-::get\-Polygon (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1Region_a60e366526dfda2852871c29b70010fb7}
+
+
+Get the polygon defining the region. 
+
+
+
+Definition at line 43 of file Region.\-cpp.
+
+
+
+References polygon.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_aa59dcbe337f4db849d66cb3902617ccd}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!is\-Circular\-Measure@{is\-Circular\-Measure}}
+\index{is\-Circular\-Measure@{is\-Circular\-Measure}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{is\-Circular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double Region\-::is\-Circular\-Measure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Region_aa59dcbe337f4db849d66cb3902617ccd}
+
+
+Get the measure that the cluster has a circular shape. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a5d9967a9c531f3abe0236fbef1b0faba}{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}.
+
+
+
+Definition at line 107 of file Region.\-cpp.
+
+
+
+References multiscale\-::\-Numeric\-::almost\-Equal(), multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::area, P\-I, and polygon.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_aa59dcbe337f4db849d66cb3902617ccd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a2310c3e3c6f1dea310e14e46d466a204}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!is\-Rectangular\-Measure@{is\-Rectangular\-Measure}}
+\index{is\-Rectangular\-Measure@{is\-Rectangular\-Measure}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{is\-Rectangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double Region\-::is\-Rectangular\-Measure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Region_a2310c3e3c6f1dea310e14e46d466a204}
+
+
+Get the measure that the cluster has a rectangular shape. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1acb28a7aafd1f75c23a94dbc988b038}{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}.
+
+
+
+Definition at line 97 of file Region.\-cpp.
+
+
+
+References multiscale\-::\-Numeric\-::almost\-Equal(), multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::area, and polygon.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_a2310c3e3c6f1dea310e14e46d466a204_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_acb88d149b42eee5225e7197a225d31c3}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!is\-Triangular\-Measure@{is\-Triangular\-Measure}}
+\index{is\-Triangular\-Measure@{is\-Triangular\-Measure}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{is\-Triangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double Region\-::is\-Triangular\-Measure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Region_acb88d149b42eee5225e7197a225d31c3}
+
+
+Get the measure that the cluster has a triangular shape. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_acce0e9ddd2d92e3ba843c3015352cab5}{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}.
+
+
+
+Definition at line 84 of file Region.\-cpp.
+
+
+
+References multiscale\-::\-Numeric\-::almost\-Equal(), multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::area, multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::convert\-Points(), C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E, multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle\-::find(), and polygon.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_acb88d149b42eee5225e7197a225d31c3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a88adaf10fae7c554581498f86f1863fa}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!update\-Area@{update\-Area}}
+\index{update\-Area@{update\-Area}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{update\-Area}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-::update\-Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Region_a88adaf10fae7c554581498f86f1863fa}
+
+
+Update the area. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a160aae10901ef5198db1b03bdef68065}{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}.
+
+
+
+Definition at line 76 of file Region.\-cpp.
+
+
+
+References multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::area, C\-O\-N\-T\-O\-U\-R\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D, and polygon.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a3753b8789a73c1e3b5d189aa710aec86}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!update\-Centre\-Point@{update\-Centre\-Point}}
+\index{update\-Centre\-Point@{update\-Centre\-Point}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{update\-Centre\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-::update\-Centre\-Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Region_a3753b8789a73c1e3b5d189aa710aec86}
+
+
+Update the centre of the region. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_aab860163169deb76a7e853df32902ab1}{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}.
+
+
+
+Definition at line 120 of file Region.\-cpp.
+
+
+
+References multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::centre, and polygon.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a58a4a22cb77fc6963592ec156458f310}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!update\-Perimeter@{update\-Perimeter}}
+\index{update\-Perimeter@{update\-Perimeter}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{update\-Perimeter}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-::update\-Perimeter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Region_a58a4a22cb77fc6963592ec156458f310}
+
+
+Update the perimeter. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6751a928c631fe725a2e7c5226e3720b}{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}.
+
+
+
+Definition at line 80 of file Region.\-cpp.
+
+
+
+References C\-O\-N\-T\-O\-U\-R\-\_\-\-C\-L\-O\-S\-E\-D, multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::perimeter, and polygon.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_ac382fb7a5625d7ef573a311b8de8f248}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!update\-Spatial\-Collection\-Specific\-Values@{update\-Spatial\-Collection\-Specific\-Values}}
+\index{update\-Spatial\-Collection\-Specific\-Values@{update\-Spatial\-Collection\-Specific\-Values}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{update\-Spatial\-Collection\-Specific\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-::update\-Spatial\-Collection\-Specific\-Values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Region_ac382fb7a5625d7ef573a311b8de8f248}
+
+
+Update the value of all class specific measures. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad94bce09032b184ebfd5b5006217c683}{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}.
+
+
+
+Definition at line 74 of file Region.\-cpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_ac1cb568b9eafad173e9f508a5bf61ad2}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!validate\-Input\-Values@{validate\-Input\-Values}}
+\index{validate\-Input\-Values@{validate\-Input\-Values}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{validate\-Input\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-::validate\-Input\-Values (
+\begin{DoxyParamCaption}
+\item[{double}]{density, }
+\item[{double}]{distance\-From\-Origin, }
+\item[{double}]{angle\-Wrt\-Origin, }
+\item[{const vector$<$ Point $>$ \&}]{polygon}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Region_ac1cb568b9eafad173e9f508a5bf61ad2}
+
+
+Validate the input values. 
+
+Validation rules\-: 0 $<$ density 0 $<$ distance\-From\-Origin 0 $<$= angle\-Wrt\-Origin $<$= 360
+
+For each polygon point p\-: 0 $<$= p.\-x 0 $<$= p.\-y
+
+
+\begin{DoxyParams}{Parameters}
+{\em density} & The density of the region \\
+\hline
+{\em distance\-From\-Origin} & The distance from the origin \\
+\hline
+{\em angle\-Wrt\-Origin} & The angle computed wrt to the origin \\
+\hline
+{\em polygon} & The polygon \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file Region.\-cpp.
+
+
+
+References are\-Valid\-Input\-Values(), and E\-R\-R\-\_\-\-I\-N\-P\-U\-T.
+
+
+
+Referenced by Region().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_ac1cb568b9eafad173e9f508a5bf61ad2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Region_ac1cb568b9eafad173e9f508a5bf61ad2_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a86c960769a9e8bc1a29dc00c1d43f20a}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!angle@{angle}}
+\index{angle@{angle}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Region\-::angle\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Region_a86c960769a9e8bc1a29dc00c1d43f20a}
+Angle of the region wrt the origin 
+
+Definition at line 30 of file Region.\-hpp.
+
+
+
+Referenced by field\-Values\-To\-String(), get\-Angle(), and Region().
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_af4eb62fddbe850271dfe15bb240b13bb}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!density@{density}}
+\index{density@{density}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{density}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Region\-::density\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Region_af4eb62fddbe850271dfe15bb240b13bb}
+\begin{DoxyVerb}             The average intensity of the pixels in the region
+\end{DoxyVerb}
+ normalised to the interval \mbox{[}0, 1\mbox{]} 
+
+Definition at line 26 of file Region.\-hpp.
+
+
+
+Referenced by field\-Values\-To\-String(), get\-Density(), and Region().
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_ad5f128003a97d9d41fd4cf1c01d9a709}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!distance\-From\-Origin@{distance\-From\-Origin}}
+\index{distance\-From\-Origin@{distance\-From\-Origin}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{distance\-From\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Region\-::distance\-From\-Origin\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Region_ad5f128003a97d9d41fd4cf1c01d9a709}
+Distance from the origin 
+
+Definition at line 29 of file Region.\-hpp.
+
+
+
+Referenced by field\-Values\-To\-String(), get\-Distance\-From\-Origin(), and Region().
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a40d1b47f30bb09c6a47521a968163b6d}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!polygon@{polygon}}
+\index{polygon@{polygon}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{polygon}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$Point$>$ multiscale\-::analysis\-::\-Region\-::polygon\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Region_a40d1b47f30bb09c6a47521a968163b6d}
+Polygon defining the region 
+
+Definition at line 32 of file Region.\-hpp.
+
+
+
+Referenced by get\-Polygon(), is\-Circular\-Measure(), is\-Rectangular\-Measure(), is\-Triangular\-Measure(), Region(), update\-Area(), update\-Centre\-Point(), update\-Perimeter(), and $\sim$\-Region().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/multiscale/analysis/spatial/\hyperlink{Region_8hpp}{Region.\-hpp}\item 
+src/multiscale/analysis/spatial/\hyperlink{Region_8cpp}{Region.\-cpp}\end{DoxyCompactItemize}

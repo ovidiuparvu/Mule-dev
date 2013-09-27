@@ -1,0 +1,1931 @@
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle}{\section{multiscale\-:\-:Minimum\-Area\-Enclosing\-Triangle Class Reference}
+\label{classmultiscale_1_1MinimumAreaEnclosingTriangle}\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+}
+
+
+Class for computing the minimum area enclosing triangle for a given polygon.  
+
+
+
+
+{\ttfamily \#include $<$Minimum\-Area\-Enclosing\-Triangle.\-hpp$>$}
+
+
+
+Collaboration diagram for multiscale\-:\-:Minimum\-Area\-Enclosing\-Triangle\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2a116b0cb1b5b8306d2483bd5d55bd68}{find} (const vector$<$ Point2f $>$ \&\hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae00ebcf0a1f6bb966d9735a4be44a2f3}{polygon}, vector$<$ Point2f $>$ \&minimum\-Area\-Enclosing\-Triangle, double \&minimum\-Area\-Enclosing\-Triangle\-Area)
+\begin{DoxyCompactList}\small\item\em Find the minimum area enclosing triangle for the given polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a5517774074e5cc22cafcdb523212eeb6}{initialise} ()
+\begin{DoxyCompactList}\small\item\em Initialisation function for the class. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a18f69d582395376b335641e046ecc53d}{find\-Minimum\-Area\-Enclosing\-Triangle} (vector$<$ Point2f $>$ \&minimum\-Area\-Enclosing\-Triangle, double \&minimum\-Area\-Enclosing\-Triangle\-Area)
+\begin{DoxyCompactList}\small\item\em Find the minimum area enclosing triangle for the given polygon. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a772ac3b9529eccbce7af2c72a0360d89}{advance\-B\-To\-Right\-Chain} ()
+\begin{DoxyCompactList}\small\item\em Advance b to the right chain. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a350b2e78503488433a0ae5a7a2a22f64}{move\-A\-If\-Low\-And\-B\-If\-High} ()
+\begin{DoxyCompactList}\small\item\em Move \char`\"{}a\char`\"{} if it is low and \char`\"{}b\char`\"{} if it is high. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a963feccd69c5ea86bbf4965d91ed32ed}{search\-For\-B\-Tangency} ()
+\begin{DoxyCompactList}\small\item\em Search for the tangency of side B. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_ab8fcbbabc20d96ebaf6edeeaf0d38e63}{is\-Not\-B\-Tangency} ()
+\begin{DoxyCompactList}\small\item\em Check if tangency for side B was not obtained. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8c906ab782ec5feb1767869a61d3620d}{update\-Sides\-C\-A} ()
+\begin{DoxyCompactList}\small\item\em Update sides A and C. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a20d737b8bb311c01d037062e98eb7efc}{update\-Sides\-B\-A} ()
+\begin{DoxyCompactList}\small\item\em Update sides B and possibly A if tangency for side B was not obtained. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a75d6c0769a2717ed7086b28be0db2440}{update\-Side\-B} ()
+\begin{DoxyCompactList}\small\item\em Set side B if tangency for side B was obtained. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a729ba761fd35e6074be19959331ba465}{is\-Local\-Minimal\-Triangle} ()
+\begin{DoxyCompactList}\small\item\em Update the triangle vertices after all sides were set and check if a local minimal triangle was found or not. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a522b2228b01e7d5fa6f922ba5f5394a6}{is\-Valid\-Minimal\-Triangle} ()
+\begin{DoxyCompactList}\small\item\em Check if the found minimal triangle is valid. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a13a71a75863ff3ccc9993e741086dbcf}{update\-Minimum\-Area\-Enclosing\-Triangle} (vector$<$ Point2f $>$ \&minimum\-Area\-Enclosing\-Triangle, double \&minimum\-Area\-Enclosing\-Triangle\-Area)
+\begin{DoxyCompactList}\small\item\em Update the current minimum area enclosing triangle if the newly obtained one has a smaller area. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_aedcbb3708672759e60a547d0a5eb0ddd}{middle\-Point\-Of\-Side\-B} (Point2f \&middle\-Point\-Of\-Side\-B)
+\begin{DoxyCompactList}\small\item\em Return the middle point of side B. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9f68018fd829d176bb6de00c8e5d2291}{intersects\-Below} (const Point2f \&gamma\-Point, unsigned int polygon\-Point\-Index)
+\begin{DoxyCompactList}\small\item\em Check if the line determined by gamma\-Point and polygon\mbox{[}polygon\-Point\-Index\mbox{]} intersects the polygon below the point polygon\mbox{[}polygon\-Point\-Index\mbox{]}. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4d0a39f0a938817b6b07985f6f85da9c}{intersects\-Above} (const Point2f \&gamma\-Point, unsigned int polygon\-Point\-Index)
+\begin{DoxyCompactList}\small\item\em Check if the line determined by gamma\-Point and polygon\mbox{[}polygon\-Point\-Index\mbox{]} intersects the polygon above the point polygon\mbox{[}polygon\-Point\-Index\mbox{]}. \end{DoxyCompactList}\item 
+static unsigned int \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a30883d4893c5775e1e59da3ecde12930}{intersects} (double angle\-Of\-Gamma\-And\-Point, unsigned int polygon\-Point\-Index)
+\begin{DoxyCompactList}\small\item\em Check if/where the line determined by gamma\-Point and polygon\mbox{[}polygon\-Point\-Index\mbox{]} intersects the polygon. \end{DoxyCompactList}\item 
+static unsigned int \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9bfe25a1a27190784fe106bb6d51e0de}{intersects\-Above\-Or\-Below} (unsigned int successor\-Or\-Predecessor\-Index, unsigned int point\-Index)
+\begin{DoxyCompactList}\small\item\em If (gamma(x) x) intersects P between successor\-Or\-Predecessor\-Index and point\-Intex is it above/below? \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_abaa5d01dc1a1b2693b4436f19dcb661a}{is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor} (double \&angle\-Flush\-Edge, double angle\-Predecessor, double angle\-Successor)
+\begin{DoxyCompactList}\small\item\em Check if the angle of the flush edge or its opposite angle lie between the angle of the predecessor and successor. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2f6d0472387e94586f8c5bc5cad604cb}{is\-Gamma\-Angle\-Between} (double \&gamma\-Angle, double angle1, double angle2)
+\begin{DoxyCompactList}\small\item\em Check if the angle of the line (gamma(p) p) or its opposite angle lie between angle1 and angle2. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa50cf3fffb241c6e3af2c05c9d315321}{is\-Gamma\-Angle\-Equal\-To} (double \&gamma\-Angle, double angle)
+\begin{DoxyCompactList}\small\item\em Check if the angle of the line (gamma(p) p) or its opposite angle is equal to the given angle. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2fb97bef9404c59d5a8ed1eff131b0ce}{height} (unsigned int polygon\-Point\-Index)
+\begin{DoxyCompactList}\small\item\em Compute the height of the point specified by the given index. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a0095334b480ad158991cf451a30c3674}{height} (const Point2f \&polygon\-Point)
+\begin{DoxyCompactList}\small\item\em Compute the height of the point. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_aacc1dc3225d307ff882c6d5564e7831d}{gamma} (unsigned int polygon\-Point\-Index, Point2f \&gamma\-Point)
+\begin{DoxyCompactList}\small\item\em Find gamma for a given point \char`\"{}p\char`\"{} specified by its index. \end{DoxyCompactList}\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa0e5813de41cf0415f687d6c6371699c}{find\-Vertex\-C\-On\-Side\-B} ()
+\begin{DoxyCompactList}\small\item\em Find vertex C which lies on side B at a distance = 2 $\ast$ height(a-\/1) from side C. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa26b3ef84bd96935afa8efab5dfef882}{find\-Gamma\-Intersection\-Points} (unsigned int polygon\-Point\-Index, const Point2f \&side1\-Start\-Vertex, const Point2f \&side1\-End\-Vertex, const Point2f \&side2\-Start\-Vertex, const Point2f \&side2\-End\-Vertex, Point2f \&intersection\-Point1, Point2f \&intersection\-Point2)
+\begin{DoxyCompactList}\small\item\em Find the intersection points to compute gamma(point) \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9c19ca85851ea59de09d7d7be5ba4451}{are\-Identical\-Lines} (const vector$<$ double $>$ \&side1\-Params, const vector$<$ double $>$ \&side2\-Params, double side\-C\-Extra\-Param)
+\begin{DoxyCompactList}\small\item\em Check if the given lines are identical or not. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae347bd4652c2cc09677ffa4aa509729d}{are\-Intersecting\-Lines} (const vector$<$ double $>$ \&side1\-Params, const vector$<$ double $>$ \&side2\-Params, double side\-C\-Extra\-Param, Point2f \&intersection\-Point1, Point2f \&intersection\-Point2)
+\begin{DoxyCompactList}\small\item\em Check if the given lines intersect or not. If the lines intersect find their intersection points. \end{DoxyCompactList}\item 
+static vector$<$ double $>$ \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2aa60ff7b5d82262bbc8498f05882802}{line\-Equation\-Parameters} (const Point2f \&p, const Point2f \&q)
+\begin{DoxyCompactList}\small\item\em Get the line equation parameters \char`\"{}a\char`\"{}, \char`\"{}b\char`\"{} and \char`\"{}c\char`\"{} for the line determined by points \char`\"{}p\char`\"{} and \char`\"{}q\char`\"{}. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4cdd0f627c2fa44aa5b4760d04ee3c80}{advance} (unsigned int \&index)
+\begin{DoxyCompactList}\small\item\em Advance the given index with one position. \end{DoxyCompactList}\item 
+static unsigned int \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a178b8229a0f7a18f7f0050f5c8d859d3}{successor} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Return the succesor of the provided point index. \end{DoxyCompactList}\item 
+static unsigned int \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a89173019a673e51d0985f45d067f30cb}{predecessor} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Return the predecessor of the provided point index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_abf0daf5b56e3050cbbe70f5d95402cc2}{validation\-Flag}
+\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a08e1e2f1a682598a8b336d63654f4628}{vertex\-A}
+\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_af54ab74d9af976d7308463a334ae1dda}{vertex\-B}
+\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a57010dcbfa3ff916815df80663f704bc}{vertex\-C}
+\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a29a7a1a4b8cf544dbd7ccb75f653587e}{side\-A\-Start\-Vertex}
+\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_abab8794502794dcbfc4b9336734ecae8}{side\-A\-End\-Vertex}
+\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a01c5a1d51bf85edcd3b9498192b5c70e}{side\-B\-Start\-Vertex}
+\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4183750a67cc95d70695820376a52453}{side\-B\-End\-Vertex}
+\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9c227b89fcf6afe2f6fe0bb842c47518}{side\-C\-Start\-Vertex}
+\item 
+static Point2f \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a08dbbe5cf66a72a3f973dc0b34526f86}{side\-C\-End\-Vertex}
+\item 
+static double \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8631cd58e7083b9ed99a1ad173e2694d}{area}
+\item 
+static unsigned int \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a982681b52b0d6c14fa4a193165639469}{a}
+\item 
+static unsigned int \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a88aa912aa1199f163d60b2a11c3948aa}{b}
+\item 
+static unsigned int \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8de6adbe07fa09cefefd31b84e7e6ef3}{c}
+\item 
+static unsigned int \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae9024f754f845334dc9dd74ce8e104a9}{nr\-Of\-Points}
+\item 
+static vector$<$ Point2f $>$ \hyperlink{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae00ebcf0a1f6bb966d9735a4be44a2f3}{polygon}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for computing the minimum area enclosing triangle for a given polygon. 
+
+This implementation has a linear complexity (theta(n)) with respect to the number of points defining the polygon and is based on the algorithm described in the following paper\-:
+
+J. O’\-Rourke, A. Aggarwal, S. Maddila, and M. Baldwin, ‘\-An optimal algorithm for finding minimal enclosing triangles’, Journal of Algorithms, vol. 7, no. 2, pp. 258–269, Jun. 1986. 
+
+Definition at line 34 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4cdd0f627c2fa44aa5b4760d04ee3c80}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!advance@{advance}}
+\index{advance@{advance}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{advance}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::advance (
+\begin{DoxyParamCaption}
+\item[{unsigned int \&}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4cdd0f627c2fa44aa5b4760d04ee3c80}
+
+
+Advance the given index with one position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 386 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References successor().
+
+
+
+Referenced by advance\-B\-To\-Right\-Chain(), move\-A\-If\-Low\-And\-B\-If\-High(), and search\-For\-B\-Tangency().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4cdd0f627c2fa44aa5b4760d04ee3c80_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4cdd0f627c2fa44aa5b4760d04ee3c80_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a772ac3b9529eccbce7af2c72a0360d89}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!advance\-B\-To\-Right\-Chain@{advance\-B\-To\-Right\-Chain}}
+\index{advance\-B\-To\-Right\-Chain@{advance\-B\-To\-Right\-Chain}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{advance\-B\-To\-Right\-Chain}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::advance\-B\-To\-Right\-Chain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a772ac3b9529eccbce7af2c72a0360d89}
+
+
+Advance b to the right chain. 
+
+See paper for more details 
+
+Definition at line 83 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References advance(), b, multiscale\-::\-Numeric\-::greater\-Or\-Equal(), height(), and successor().
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a772ac3b9529eccbce7af2c72a0360d89_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a772ac3b9529eccbce7af2c72a0360d89_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9c19ca85851ea59de09d7d7be5ba4451}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!are\-Identical\-Lines@{are\-Identical\-Lines}}
+\index{are\-Identical\-Lines@{are\-Identical\-Lines}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{are\-Identical\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::are\-Identical\-Lines (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ double $>$ \&}]{side1\-Params, }
+\item[{const vector$<$ double $>$ \&}]{side2\-Params, }
+\item[{double}]{side\-C\-Extra\-Param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9c19ca85851ea59de09d7d7be5ba4451}
+
+
+Check if the given lines are identical or not. 
+
+The lines are specified as\-: ax + by + c = 0 O\-R ax + by + c (+/-\/) side\-C\-Extra\-Param = 0
+
+
+\begin{DoxyParams}{Parameters}
+{\em side1\-Params} & Vector containing the values of a, b and c for side 1 \\
+\hline
+{\em side2\-Params} & Vector containing the values of a, b and c for side 2 \\
+\hline
+{\em side\-C\-Extra\-Param} & Extra parameter for the flush edge C \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 351 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::are\-Identical\-Lines().
+
+
+
+Referenced by find\-Gamma\-Intersection\-Points().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9c19ca85851ea59de09d7d7be5ba4451_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9c19ca85851ea59de09d7d7be5ba4451_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae347bd4652c2cc09677ffa4aa509729d}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!are\-Intersecting\-Lines@{are\-Intersecting\-Lines}}
+\index{are\-Intersecting\-Lines@{are\-Intersecting\-Lines}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{are\-Intersecting\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::are\-Intersecting\-Lines (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ double $>$ \&}]{side1\-Params, }
+\item[{const vector$<$ double $>$ \&}]{side2\-Params, }
+\item[{double}]{side\-C\-Extra\-Param, }
+\item[{Point2f \&}]{intersection\-Point1, }
+\item[{Point2f \&}]{intersection\-Point2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae347bd4652c2cc09677ffa4aa509729d}
+
+
+Check if the given lines intersect or not. If the lines intersect find their intersection points. 
+
+The lines are specified as\-: ax + by + c = 0 O\-R ax + by + c (+/-\/) side\-C\-Extra\-Param = 0
+
+
+\begin{DoxyParams}{Parameters}
+{\em side1\-Params} & Vector containing the values of a, b and c for side 1 \\
+\hline
+{\em side2\-Params} & Vector containing the values of a, b and c for side 2 \\
+\hline
+{\em side\-C\-Extra\-Param} & Extra parameter for the flush edge C \\
+\hline
+{\em intersection\-Point1} & The first intersection point, if it exists \\
+\hline
+{\em intersection\-Point2} & The second intersection point, if it exists \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 361 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::line\-Intersection().
+
+
+
+Referenced by find\-Gamma\-Intersection\-Points().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae347bd4652c2cc09677ffa4aa509729d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae347bd4652c2cc09677ffa4aa509729d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2a116b0cb1b5b8306d2483bd5d55bd68}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!find@{find}}
+\index{find@{find}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::find (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point2f $>$ \&}]{polygon, }
+\item[{vector$<$ Point2f $>$ \&}]{minimum\-Area\-Enclosing\-Triangle, }
+\item[{double \&}]{minimum\-Area\-Enclosing\-Triangle\-Area}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2a116b0cb1b5b8306d2483bd5d55bd68}
+
+
+Find the minimum area enclosing triangle for the given polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon} & Polygon of points for which the minimum area enclosing triangle will be found \\
+\hline
+{\em minimum\-Area\-Enclosing\-Triangle} & Minimum area triangle enclosing the given polygon \\
+\hline
+{\em minimum\-Area\-Enclosing\-Triangle\-Area} & Area of the minimum area enclosing triangle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References find\-Minimum\-Area\-Enclosing\-Triangle(), initialise(), and polygon.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::is\-Triangular\-Measure(), and multiscale\-::analysis\-::\-Region\-::is\-Triangular\-Measure().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2a116b0cb1b5b8306d2483bd5d55bd68_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2a116b0cb1b5b8306d2483bd5d55bd68_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa26b3ef84bd96935afa8efab5dfef882}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!find\-Gamma\-Intersection\-Points@{find\-Gamma\-Intersection\-Points}}
+\index{find\-Gamma\-Intersection\-Points@{find\-Gamma\-Intersection\-Points}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{find\-Gamma\-Intersection\-Points}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::find\-Gamma\-Intersection\-Points (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{polygon\-Point\-Index, }
+\item[{const Point2f \&}]{side1\-Start\-Vertex, }
+\item[{const Point2f \&}]{side1\-End\-Vertex, }
+\item[{const Point2f \&}]{side2\-Start\-Vertex, }
+\item[{const Point2f \&}]{side2\-End\-Vertex, }
+\item[{Point2f \&}]{intersection\-Point1, }
+\item[{Point2f \&}]{intersection\-Point2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa26b3ef84bd96935afa8efab5dfef882}
+
+
+Find the intersection points to compute gamma(point) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon\-Point\-Index} & Index of the polygon point for which the distance is known \\
+\hline
+{\em side1\-Start\-Vertex} & Start vertex for side 1 \\
+\hline
+{\em side1\-End\-Vertex} & End vertex for side 1 \\
+\hline
+{\em side2\-Start\-Vertex} & Start vertex for side 2 \\
+\hline
+{\em side2\-End\-Vertex} & End vertex for side 2 \\
+\hline
+{\em intersection\-Point1} & First intersection point between one pair of lines \\
+\hline
+{\em intersection\-Point2} & Second intersection point between another pair of lines \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 328 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References are\-Identical\-Lines(), are\-Intersecting\-Lines(), height(), and line\-Equation\-Parameters().
+
+
+
+Referenced by find\-Vertex\-C\-On\-Side\-B(), and gamma().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa26b3ef84bd96935afa8efab5dfef882_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa26b3ef84bd96935afa8efab5dfef882_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a18f69d582395376b335641e046ecc53d}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!find\-Minimum\-Area\-Enclosing\-Triangle@{find\-Minimum\-Area\-Enclosing\-Triangle}}
+\index{find\-Minimum\-Area\-Enclosing\-Triangle@{find\-Minimum\-Area\-Enclosing\-Triangle}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{find\-Minimum\-Area\-Enclosing\-Triangle}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::find\-Minimum\-Area\-Enclosing\-Triangle (
+\begin{DoxyParamCaption}
+\item[{vector$<$ Point2f $>$ \&}]{minimum\-Area\-Enclosing\-Triangle, }
+\item[{double \&}]{minimum\-Area\-Enclosing\-Triangle\-Area}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a18f69d582395376b335641e046ecc53d}
+
+
+Find the minimum area enclosing triangle for the given polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minimum\-Area\-Enclosing\-Triangle} & Minimum area triangle enclosing the given polygon \\
+\hline
+{\em minimum\-Area\-Enclosing\-Triangle\-Area} & Area of the minimum area enclosing triangle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References advance\-B\-To\-Right\-Chain(), c, is\-Local\-Minimal\-Triangle(), is\-Not\-B\-Tangency(), move\-A\-If\-Low\-And\-B\-If\-High(), nr\-Of\-Points, search\-For\-B\-Tangency(), update\-Minimum\-Area\-Enclosing\-Triangle(), update\-Side\-B(), update\-Sides\-B\-A(), and update\-Sides\-C\-A().
+
+
+
+Referenced by find().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a18f69d582395376b335641e046ecc53d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a18f69d582395376b335641e046ecc53d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa0e5813de41cf0415f687d6c6371699c}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!find\-Vertex\-C\-On\-Side\-B@{find\-Vertex\-C\-On\-Side\-B}}
+\index{find\-Vertex\-C\-On\-Side\-B@{find\-Vertex\-C\-On\-Side\-B}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{find\-Vertex\-C\-On\-Side\-B}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::find\-Vertex\-C\-On\-Side\-B (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa0e5813de41cf0415f687d6c6371699c}
+
+
+Find vertex C which lies on side B at a distance = 2 $\ast$ height(a-\/1) from side C. 
+
+Considering that line (x y) is a line parallel to (c c-\/1) and that the distance between the lines is equal to 2 $\ast$ height(a-\/1), we can have two possible (x y) lines.
+
+Therefore, we will compute two intersection points between the lines (x y) and (b b-\/1) and take the point which is closest to point polygon\mbox{[}b\mbox{]}.
+
+See paper and formula for distance from point to a line for more details 
+
+Definition at line 311 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, multiscale\-::\-Geometry2\-D\-::are\-On\-The\-Same\-Side\-Of\-Line(), c, E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B, find\-Gamma\-Intersection\-Points(), polygon, predecessor(), side\-B\-End\-Vertex, side\-B\-Start\-Vertex, side\-C\-End\-Vertex, side\-C\-Start\-Vertex, and successor().
+
+
+
+Referenced by update\-Sides\-B\-A().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa0e5813de41cf0415f687d6c6371699c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa0e5813de41cf0415f687d6c6371699c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_aacc1dc3225d307ff882c6d5564e7831d}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!gamma@{gamma}}
+\index{gamma@{gamma}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{gamma}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::gamma (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{polygon\-Point\-Index, }
+\item[{Point2f \&}]{gamma\-Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_aacc1dc3225d307ff882c6d5564e7831d}
+
+
+Find gamma for a given point \char`\"{}p\char`\"{} specified by its index. 
+
+The function returns true if gamma exists i.\-e. if lines (a a-\/1) and (x y) intersect and false otherwise. In case the two lines intersect in point intersection\-Point, gamma is computed.
+
+Considering that line (x y) is a line parallel to (c c-\/1) and that the distance between the lines is equal to 2 $\ast$ height(p), we can have two possible (x y) lines.
+
+Therefore, we will compute two intersection points between the lines (x y) and (a a-\/1) and take the point which is closest to point polygon\mbox{[}a\mbox{]}.
+
+See paper and formula for distance from point to a line for more details
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon\-Point\-Index} & Index of the polygon point \\
+\hline
+{\em gamma\-Point} & Point2f gamma(polygon\mbox{[}polygon\-Point\-Index\mbox{]}) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 292 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, multiscale\-::\-Geometry2\-D\-::are\-On\-The\-Same\-Side\-Of\-Line(), c, find\-Gamma\-Intersection\-Points(), polygon, predecessor(), and successor().
+
+
+
+Referenced by is\-Not\-B\-Tangency(), move\-A\-If\-Low\-And\-B\-If\-High(), search\-For\-B\-Tangency(), and update\-Side\-B().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aacc1dc3225d307ff882c6d5564e7831d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aacc1dc3225d307ff882c6d5564e7831d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2fb97bef9404c59d5a8ed1eff131b0ce}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!height@{height}}
+\index{height@{height}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}double Minimum\-Area\-Enclosing\-Triangle\-::height (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{polygon\-Point\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2fb97bef9404c59d5a8ed1eff131b0ce}
+
+
+Compute the height of the point specified by the given index. 
+
+See paper for more details
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon\-Point\-Index} & Index of the polygon point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 276 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References c, multiscale\-::\-Geometry2\-D\-::distance\-From\-Point\-To\-Line(), polygon, and predecessor().
+
+
+
+Referenced by advance\-B\-To\-Right\-Chain(), find\-Gamma\-Intersection\-Points(), intersects\-Above\-Or\-Below(), is\-Not\-B\-Tangency(), move\-A\-If\-Low\-And\-B\-If\-High(), search\-For\-B\-Tangency(), and update\-Sides\-B\-A().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2fb97bef9404c59d5a8ed1eff131b0ce_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2fb97bef9404c59d5a8ed1eff131b0ce_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a0095334b480ad158991cf451a30c3674}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!height@{height}}
+\index{height@{height}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}double Minimum\-Area\-Enclosing\-Triangle\-::height (
+\begin{DoxyParamCaption}
+\item[{const Point2f \&}]{polygon\-Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a0095334b480ad158991cf451a30c3674}
+
+
+Compute the height of the point. 
+
+See paper for more details
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon\-Point} & Polygon point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 285 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References c, multiscale\-::\-Geometry2\-D\-::distance\-From\-Point\-To\-Line(), polygon, and predecessor().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a0095334b480ad158991cf451a30c3674_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a5517774074e5cc22cafcdb523212eeb6}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!initialise@{initialise}}
+\index{initialise@{initialise}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{initialise}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::initialise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a5517774074e5cc22cafcdb523212eeb6}
+
+
+Initialisation function for the class. 
+
+
+
+Definition at line 54 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, b, c, nr\-Of\-Points, and polygon.
+
+
+
+Referenced by find().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a5517774074e5cc22cafcdb523212eeb6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a30883d4893c5775e1e59da3ecde12930}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!intersects@{intersects}}
+\index{intersects@{intersects}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{intersects}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Minimum\-Area\-Enclosing\-Triangle\-::intersects (
+\begin{DoxyParamCaption}
+\item[{double}]{angle\-Of\-Gamma\-And\-Point, }
+\item[{unsigned int}]{polygon\-Point\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a30883d4893c5775e1e59da3ecde12930}
+
+
+Check if/where the line determined by gamma\-Point and polygon\mbox{[}polygon\-Point\-Index\mbox{]} intersects the polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\-Of\-Gamma\-And\-Point} & Angle between gamma\-Point and polygon\mbox{[}polygon\-Point\-Index\mbox{]} \\
+\hline
+{\em polygon\-Point\-Index} & Index of the polygon point which is considered when determining the line \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 223 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References multiscale\-::\-Numeric\-::almost\-Equal(), multiscale\-::\-Geometry2\-D\-::angle\-Of\-Line\-Wrt\-Ox\-Axis(), c, I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W, I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L, intersects\-Above\-Or\-Below(), is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor(), is\-Gamma\-Angle\-Between(), is\-Gamma\-Angle\-Equal\-To(), polygon, predecessor(), and successor().
+
+
+
+Referenced by intersects\-Above(), and intersects\-Below().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a30883d4893c5775e1e59da3ecde12930_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a30883d4893c5775e1e59da3ecde12930_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4d0a39f0a938817b6b07985f6f85da9c}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!intersects\-Above@{intersects\-Above}}
+\index{intersects\-Above@{intersects\-Above}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{intersects\-Above}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::intersects\-Above (
+\begin{DoxyParamCaption}
+\item[{const Point2f \&}]{gamma\-Point, }
+\item[{unsigned int}]{polygon\-Point\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4d0a39f0a938817b6b07985f6f85da9c}
+
+
+Check if the line determined by gamma\-Point and polygon\mbox{[}polygon\-Point\-Index\mbox{]} intersects the polygon above the point polygon\mbox{[}polygon\-Point\-Index\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gamma\-Point} & Gamma(p) \\
+\hline
+{\em polygon\-Point\-Index} & Index of the polygon point which is considered when determining the line \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 217 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::angle\-Of\-Line\-Wrt\-Ox\-Axis(), intersects(), I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E, and polygon.
+
+
+
+Referenced by is\-Not\-B\-Tangency().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4d0a39f0a938817b6b07985f6f85da9c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4d0a39f0a938817b6b07985f6f85da9c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9bfe25a1a27190784fe106bb6d51e0de}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!intersects\-Above\-Or\-Below@{intersects\-Above\-Or\-Below}}
+\index{intersects\-Above\-Or\-Below@{intersects\-Above\-Or\-Below}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{intersects\-Above\-Or\-Below}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Minimum\-Area\-Enclosing\-Triangle\-::intersects\-Above\-Or\-Below (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{successor\-Or\-Predecessor\-Index, }
+\item[{unsigned int}]{point\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9bfe25a1a27190784fe106bb6d51e0de}
+
+
+If (gamma(x) x) intersects P between successor\-Or\-Predecessor\-Index and point\-Intex is it above/below? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em successor\-Or\-Predecessor\-Index} & Index of the successor or predecessor \\
+\hline
+{\em point\-Index} & Index of the point x in the polygon \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 247 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References height(), I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E, and I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W.
+
+
+
+Referenced by intersects().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9bfe25a1a27190784fe106bb6d51e0de_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9bfe25a1a27190784fe106bb6d51e0de_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9f68018fd829d176bb6de00c8e5d2291}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!intersects\-Below@{intersects\-Below}}
+\index{intersects\-Below@{intersects\-Below}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{intersects\-Below}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::intersects\-Below (
+\begin{DoxyParamCaption}
+\item[{const Point2f \&}]{gamma\-Point, }
+\item[{unsigned int}]{polygon\-Point\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9f68018fd829d176bb6de00c8e5d2291}
+
+
+Check if the line determined by gamma\-Point and polygon\mbox{[}polygon\-Point\-Index\mbox{]} intersects the polygon below the point polygon\mbox{[}polygon\-Point\-Index\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gamma\-Point} & Gamma(p) \\
+\hline
+{\em polygon\-Point\-Index} & Index of the polygon point which is considered when determining the line \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 211 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::angle\-Of\-Line\-Wrt\-Ox\-Axis(), intersects(), I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W, and polygon.
+
+
+
+Referenced by move\-A\-If\-Low\-And\-B\-If\-High(), and search\-For\-B\-Tangency().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9f68018fd829d176bb6de00c8e5d2291_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9f68018fd829d176bb6de00c8e5d2291_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_abaa5d01dc1a1b2693b4436f19dcb661a}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor@{is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor}}
+\index{is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor@{is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor (
+\begin{DoxyParamCaption}
+\item[{double \&}]{angle\-Flush\-Edge, }
+\item[{double}]{angle\-Predecessor, }
+\item[{double}]{angle\-Successor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_abaa5d01dc1a1b2693b4436f19dcb661a}
+
+
+Check if the angle of the flush edge or its opposite angle lie between the angle of the predecessor and successor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\-Flush\-Edge} & Angle of the flush edge \\
+\hline
+{\em angle\-Predecessor} & Angle of the predecessor \\
+\hline
+{\em angle\-Successor} & Angle of the successor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 255 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::is\-Angle\-Between\-Non\-Reflex(), multiscale\-::\-Geometry2\-D\-::is\-Opposite\-Angle\-Between\-Non\-Reflex(), and multiscale\-::\-Geometry2\-D\-::opposite\-Angle().
+
+
+
+Referenced by intersects().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_abaa5d01dc1a1b2693b4436f19dcb661a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_abaa5d01dc1a1b2693b4436f19dcb661a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2f6d0472387e94586f8c5bc5cad604cb}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!is\-Gamma\-Angle\-Between@{is\-Gamma\-Angle\-Between}}
+\index{is\-Gamma\-Angle\-Between@{is\-Gamma\-Angle\-Between}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{is\-Gamma\-Angle\-Between}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::is\-Gamma\-Angle\-Between (
+\begin{DoxyParamCaption}
+\item[{double \&}]{gamma\-Angle, }
+\item[{double}]{angle1, }
+\item[{double}]{angle2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2f6d0472387e94586f8c5bc5cad604cb}
+
+
+Check if the angle of the line (gamma(p) p) or its opposite angle lie between angle1 and angle2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gamma\-Angle} & Angle of the line (gamma(p) p) \\
+\hline
+{\em angle1} & One of the boundary angles \\
+\hline
+{\em angle2} & Another boundary angle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 268 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::is\-Angle\-Between\-Non\-Reflex().
+
+
+
+Referenced by intersects().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2f6d0472387e94586f8c5bc5cad604cb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2f6d0472387e94586f8c5bc5cad604cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa50cf3fffb241c6e3af2c05c9d315321}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!is\-Gamma\-Angle\-Equal\-To@{is\-Gamma\-Angle\-Equal\-To}}
+\index{is\-Gamma\-Angle\-Equal\-To@{is\-Gamma\-Angle\-Equal\-To}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{is\-Gamma\-Angle\-Equal\-To}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::is\-Gamma\-Angle\-Equal\-To (
+\begin{DoxyParamCaption}
+\item[{double \&}]{gamma\-Angle, }
+\item[{double}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa50cf3fffb241c6e3af2c05c9d315321}
+
+
+Check if the angle of the line (gamma(p) p) or its opposite angle is equal to the given angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gamma\-Angle} & Angle of the line (gamma(p) p) \\
+\hline
+{\em angle} & Angle to compare against \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 272 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References multiscale\-::\-Numeric\-::almost\-Equal().
+
+
+
+Referenced by intersects().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa50cf3fffb241c6e3af2c05c9d315321_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aa50cf3fffb241c6e3af2c05c9d315321_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a729ba761fd35e6074be19959331ba465}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!is\-Local\-Minimal\-Triangle@{is\-Local\-Minimal\-Triangle}}
+\index{is\-Local\-Minimal\-Triangle@{is\-Local\-Minimal\-Triangle}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{is\-Local\-Minimal\-Triangle}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::is\-Local\-Minimal\-Triangle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a729ba761fd35e6074be19959331ba465}
+
+
+Update the triangle vertices after all sides were set and check if a local minimal triangle was found or not. 
+
+See paper for more details 
+
+Definition at line 156 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References is\-Valid\-Minimal\-Triangle(), multiscale\-::\-Geometry2\-D\-::line\-Intersection(), side\-A\-End\-Vertex, side\-A\-Start\-Vertex, side\-B\-End\-Vertex, side\-B\-Start\-Vertex, side\-C\-End\-Vertex, side\-C\-Start\-Vertex, vertex\-A, vertex\-B, and vertex\-C.
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a729ba761fd35e6074be19959331ba465_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a729ba761fd35e6074be19959331ba465_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_ab8fcbbabc20d96ebaf6edeeaf0d38e63}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!is\-Not\-B\-Tangency@{is\-Not\-B\-Tangency}}
+\index{is\-Not\-B\-Tangency@{is\-Not\-B\-Tangency}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{is\-Not\-B\-Tangency}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::is\-Not\-B\-Tangency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_ab8fcbbabc20d96ebaf6edeeaf0d38e63}
+
+
+Check if tangency for side B was not obtained. 
+
+See paper for more details 
+
+Definition at line 110 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, b, gamma(), height(), intersects\-Above(), and predecessor().
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_ab8fcbbabc20d96ebaf6edeeaf0d38e63_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_ab8fcbbabc20d96ebaf6edeeaf0d38e63_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a522b2228b01e7d5fa6f922ba5f5394a6}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!is\-Valid\-Minimal\-Triangle@{is\-Valid\-Minimal\-Triangle}}
+\index{is\-Valid\-Minimal\-Triangle@{is\-Valid\-Minimal\-Triangle}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{is\-Valid\-Minimal\-Triangle}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::is\-Valid\-Minimal\-Triangle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a522b2228b01e7d5fa6f922ba5f5394a6}
+
+
+Check if the found minimal triangle is valid. 
+
+This means that all midpoints of the triangle should touch the polygon
+
+See paper for more details 
+
+Definition at line 166 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, multiscale\-::\-Geometry2\-D\-::are\-Equal\-Points(), b, multiscale\-::\-Geometry2\-D\-::is\-Point\-On\-Line\-Segment(), multiscale\-::\-Geometry2\-D\-::middle\-Point(), polygon, predecessor(), side\-A\-End\-Vertex, side\-A\-Start\-Vertex, side\-B\-End\-Vertex, side\-B\-Start\-Vertex, side\-C\-End\-Vertex, side\-C\-Start\-Vertex, V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T, V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T, validation\-Flag, vertex\-A, vertex\-B, and vertex\-C.
+
+
+
+Referenced by is\-Local\-Minimal\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a522b2228b01e7d5fa6f922ba5f5394a6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a522b2228b01e7d5fa6f922ba5f5394a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2aa60ff7b5d82262bbc8498f05882802}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!line\-Equation\-Parameters@{line\-Equation\-Parameters}}
+\index{line\-Equation\-Parameters@{line\-Equation\-Parameters}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{line\-Equation\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ Minimum\-Area\-Enclosing\-Triangle\-::line\-Equation\-Parameters (
+\begin{DoxyParamCaption}
+\item[{const Point2f \&}]{p, }
+\item[{const Point2f \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2aa60ff7b5d82262bbc8498f05882802}
+
+
+Get the line equation parameters \char`\"{}a\char`\"{}, \char`\"{}b\char`\"{} and \char`\"{}c\char`\"{} for the line determined by points \char`\"{}p\char`\"{} and \char`\"{}q\char`\"{}. 
+
+The equation of the line is considered in the general form\-: ax + by + c = 0
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & One point for defining the equation of the line \\
+\hline
+{\em q} & Second point for defining the equation of the line \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 373 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, b, c, and multiscale\-::\-Geometry2\-D\-::line\-Equation\-Determined\-By\-Points().
+
+
+
+Referenced by find\-Gamma\-Intersection\-Points().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2aa60ff7b5d82262bbc8498f05882802_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a2aa60ff7b5d82262bbc8498f05882802_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_aedcbb3708672759e60a547d0a5eb0ddd}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!middle\-Point\-Of\-Side\-B@{middle\-Point\-Of\-Side\-B}}
+\index{middle\-Point\-Of\-Side\-B@{middle\-Point\-Of\-Side\-B}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{middle\-Point\-Of\-Side\-B}]{\setlength{\rightskip}{0pt plus 5cm}bool Minimum\-Area\-Enclosing\-Triangle\-::middle\-Point\-Of\-Side\-B (
+\begin{DoxyParamCaption}
+\item[{Point2f \&}]{middle\-Point\-Of\-Side\-B}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_aedcbb3708672759e60a547d0a5eb0ddd}
+
+
+Return the middle point of side B. 
+
+
+
+Definition at line 198 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::line\-Intersection(), multiscale\-::\-Geometry2\-D\-::middle\-Point(), side\-A\-End\-Vertex, side\-A\-Start\-Vertex, side\-B\-End\-Vertex, side\-B\-Start\-Vertex, side\-C\-End\-Vertex, side\-C\-Start\-Vertex, vertex\-A, and vertex\-C.
+
+
+
+Referenced by update\-Sides\-B\-A().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aedcbb3708672759e60a547d0a5eb0ddd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_aedcbb3708672759e60a547d0a5eb0ddd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a350b2e78503488433a0ae5a7a2a22f64}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!move\-A\-If\-Low\-And\-B\-If\-High@{move\-A\-If\-Low\-And\-B\-If\-High}}
+\index{move\-A\-If\-Low\-And\-B\-If\-High@{move\-A\-If\-Low\-And\-B\-If\-High}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{move\-A\-If\-Low\-And\-B\-If\-High}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::move\-A\-If\-Low\-And\-B\-If\-High (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a350b2e78503488433a0ae5a7a2a22f64}
+
+
+Move \char`\"{}a\char`\"{} if it is low and \char`\"{}b\char`\"{} if it is high. 
+
+See paper for more details 
+
+Definition at line 89 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, advance(), b, gamma(), height(), and intersects\-Below().
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a350b2e78503488433a0ae5a7a2a22f64_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a350b2e78503488433a0ae5a7a2a22f64_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a89173019a673e51d0985f45d067f30cb}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!predecessor@{predecessor}}
+\index{predecessor@{predecessor}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{predecessor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Minimum\-Area\-Enclosing\-Triangle\-::predecessor (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a89173019a673e51d0985f45d067f30cb}
+
+
+Return the predecessor of the provided point index. 
+
+The predecessor of the first polygon point is the last polygon point (circular referencing)
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 394 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References nr\-Of\-Points.
+
+
+
+Referenced by find\-Vertex\-C\-On\-Side\-B(), gamma(), height(), intersects(), is\-Not\-B\-Tangency(), is\-Valid\-Minimal\-Triangle(), search\-For\-B\-Tangency(), update\-Sides\-B\-A(), and update\-Sides\-C\-A().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a89173019a673e51d0985f45d067f30cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a963feccd69c5ea86bbf4965d91ed32ed}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!search\-For\-B\-Tangency@{search\-For\-B\-Tangency}}
+\index{search\-For\-B\-Tangency@{search\-For\-B\-Tangency}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{search\-For\-B\-Tangency}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::search\-For\-B\-Tangency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a963feccd69c5ea86bbf4965d91ed32ed}
+
+
+Search for the tangency of side B. 
+
+See paper for more details 
+
+Definition at line 101 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, advance(), b, gamma(), multiscale\-::\-Numeric\-::greater\-Or\-Equal(), height(), intersects\-Below(), and predecessor().
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a963feccd69c5ea86bbf4965d91ed32ed_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a963feccd69c5ea86bbf4965d91ed32ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a178b8229a0f7a18f7f0050f5c8d859d3}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!successor@{successor}}
+\index{successor@{successor}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{successor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Minimum\-Area\-Enclosing\-Triangle\-::successor (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a178b8229a0f7a18f7f0050f5c8d859d3}
+
+
+Return the succesor of the provided point index. 
+
+The succesor of the last polygon point is the first polygon point (circular referencing)
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 390 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References nr\-Of\-Points.
+
+
+
+Referenced by advance(), advance\-B\-To\-Right\-Chain(), find\-Vertex\-C\-On\-Side\-B(), gamma(), and intersects().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a178b8229a0f7a18f7f0050f5c8d859d3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a13a71a75863ff3ccc9993e741086dbcf}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!update\-Minimum\-Area\-Enclosing\-Triangle@{update\-Minimum\-Area\-Enclosing\-Triangle}}
+\index{update\-Minimum\-Area\-Enclosing\-Triangle@{update\-Minimum\-Area\-Enclosing\-Triangle}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{update\-Minimum\-Area\-Enclosing\-Triangle}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::update\-Minimum\-Area\-Enclosing\-Triangle (
+\begin{DoxyParamCaption}
+\item[{vector$<$ Point2f $>$ \&}]{minimum\-Area\-Enclosing\-Triangle, }
+\item[{double \&}]{minimum\-Area\-Enclosing\-Triangle\-Area}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a13a71a75863ff3ccc9993e741086dbcf}
+
+
+Update the current minimum area enclosing triangle if the newly obtained one has a smaller area. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em minimum\-Area\-Enclosing\-Triangle} & Minimum area triangle enclosing the given polygon \\
+\hline
+{\em minimum\-Area\-Enclosing\-Triangle\-Area} & Area of the minimum area triangle enclosing the given polygon \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 184 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References area, multiscale\-::\-Geometry2\-D\-::area\-Of\-Triangle(), vertex\-A, vertex\-B, and vertex\-C.
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a13a71a75863ff3ccc9993e741086dbcf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a13a71a75863ff3ccc9993e741086dbcf_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a75d6c0769a2717ed7086b28be0db2440}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!update\-Side\-B@{update\-Side\-B}}
+\index{update\-Side\-B@{update\-Side\-B}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{update\-Side\-B}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::update\-Side\-B (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a75d6c0769a2717ed7086b28be0db2440}
+
+
+Set side B if tangency for side B was obtained. 
+
+See paper for more details 
+
+Definition at line 146 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References b, E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A, gamma(), polygon, side\-B\-End\-Vertex, side\-B\-Start\-Vertex, V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T, and validation\-Flag.
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a75d6c0769a2717ed7086b28be0db2440_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a75d6c0769a2717ed7086b28be0db2440_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a20d737b8bb311c01d037062e98eb7efc}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!update\-Sides\-B\-A@{update\-Sides\-B\-A}}
+\index{update\-Sides\-B\-A@{update\-Sides\-B\-A}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{update\-Sides\-B\-A}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::update\-Sides\-B\-A (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a20d737b8bb311c01d037062e98eb7efc}
+
+
+Update sides B and possibly A if tangency for side B was not obtained. 
+
+See paper for more details 
+
+Definition at line 128 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, b, find\-Vertex\-C\-On\-Side\-B(), height(), middle\-Point\-Of\-Side\-B(), polygon, predecessor(), side\-A\-End\-Vertex, side\-A\-Start\-Vertex, side\-B\-End\-Vertex, side\-B\-Start\-Vertex, V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T, V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H, and validation\-Flag.
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a20d737b8bb311c01d037062e98eb7efc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a20d737b8bb311c01d037062e98eb7efc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8c906ab782ec5feb1767869a61d3620d}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!update\-Sides\-C\-A@{update\-Sides\-C\-A}}
+\index{update\-Sides\-C\-A@{update\-Sides\-C\-A}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{update\-Sides\-C\-A}]{\setlength{\rightskip}{0pt plus 5cm}void Minimum\-Area\-Enclosing\-Triangle\-::update\-Sides\-C\-A (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8c906ab782ec5feb1767869a61d3620d}
+
+
+Update sides A and C. 
+
+Side C will have as start and end vertices the polygon points \char`\"{}c\char`\"{} and \char`\"{}c-\/1\char`\"{} Side A will have as start and end vertices the polygon points \char`\"{}a\char`\"{} and \char`\"{}a-\/1\char`\"{} 
+
+Definition at line 120 of file Minimum\-Area\-Enclosing\-Triangle.\-cpp.
+
+
+
+References a, c, polygon, predecessor(), side\-A\-End\-Vertex, side\-A\-Start\-Vertex, side\-C\-End\-Vertex, and side\-C\-Start\-Vertex.
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8c906ab782ec5feb1767869a61d3620d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8c906ab782ec5feb1767869a61d3620d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a982681b52b0d6c14fa4a193165639469}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!a@{a}}
+\index{a@{a}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Minimum\-Area\-Enclosing\-Triangle\-::a\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a982681b52b0d6c14fa4a193165639469}
+Index of point \char`\"{}a\char`\"{}; see paper for more details 
+
+Definition at line 59 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by find\-Vertex\-C\-On\-Side\-B(), gamma(), initialise(), is\-Not\-B\-Tangency(), is\-Valid\-Minimal\-Triangle(), line\-Equation\-Parameters(), move\-A\-If\-Low\-And\-B\-If\-High(), search\-For\-B\-Tangency(), update\-Sides\-B\-A(), and update\-Sides\-C\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8631cd58e7083b9ed99a1ad173e2694d}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!area@{area}}
+\index{area@{area}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{area}]{\setlength{\rightskip}{0pt plus 5cm}double Minimum\-Area\-Enclosing\-Triangle\-::area\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8631cd58e7083b9ed99a1ad173e2694d}
+Area of the current considered enclosing triangle 
+
+Definition at line 57 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by update\-Minimum\-Area\-Enclosing\-Triangle().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a88aa912aa1199f163d60b2a11c3948aa}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!b@{b}}
+\index{b@{b}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Minimum\-Area\-Enclosing\-Triangle\-::b\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a88aa912aa1199f163d60b2a11c3948aa}
+Index of point \char`\"{}b\char`\"{}; see paper for more details 
+
+Definition at line 60 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by advance\-B\-To\-Right\-Chain(), initialise(), is\-Not\-B\-Tangency(), is\-Valid\-Minimal\-Triangle(), line\-Equation\-Parameters(), move\-A\-If\-Low\-And\-B\-If\-High(), search\-For\-B\-Tangency(), update\-Side\-B(), and update\-Sides\-B\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8de6adbe07fa09cefefd31b84e7e6ef3}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!c@{c}}
+\index{c@{c}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{c}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Minimum\-Area\-Enclosing\-Triangle\-::c\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a8de6adbe07fa09cefefd31b84e7e6ef3}
+Index of point \char`\"{}c\char`\"{}; see paper for more details 
+
+Definition at line 61 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle(), find\-Vertex\-C\-On\-Side\-B(), gamma(), height(), initialise(), intersects(), line\-Equation\-Parameters(), and update\-Sides\-C\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae9024f754f845334dc9dd74ce8e104a9}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!nr\-Of\-Points@{nr\-Of\-Points}}
+\index{nr\-Of\-Points@{nr\-Of\-Points}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{nr\-Of\-Points}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Minimum\-Area\-Enclosing\-Triangle\-::nr\-Of\-Points\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae9024f754f845334dc9dd74ce8e104a9}
+Number of points defining the polygon 
+
+Definition at line 63 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by find\-Minimum\-Area\-Enclosing\-Triangle(), initialise(), predecessor(), and successor().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae00ebcf0a1f6bb966d9735a4be44a2f3}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!polygon@{polygon}}
+\index{polygon@{polygon}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{polygon}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Point2f $>$ Minimum\-Area\-Enclosing\-Triangle\-::polygon\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_ae00ebcf0a1f6bb966d9735a4be44a2f3}
+Polygon for which the minimum area enclosing triangle is computed 
+
+Definition at line 65 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by find(), find\-Vertex\-C\-On\-Side\-B(), gamma(), height(), initialise(), intersects(), intersects\-Above(), intersects\-Below(), is\-Valid\-Minimal\-Triangle(), update\-Side\-B(), update\-Sides\-B\-A(), and update\-Sides\-C\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_abab8794502794dcbfc4b9336734ecae8}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!side\-A\-End\-Vertex@{side\-A\-End\-Vertex}}
+\index{side\-A\-End\-Vertex@{side\-A\-End\-Vertex}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{side\-A\-End\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::side\-A\-End\-Vertex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_abab8794502794dcbfc4b9336734ecae8}
+Ending vertex for side A of triangle 
+
+Definition at line 49 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), middle\-Point\-Of\-Side\-B(), update\-Sides\-B\-A(), and update\-Sides\-C\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a29a7a1a4b8cf544dbd7ccb75f653587e}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!side\-A\-Start\-Vertex@{side\-A\-Start\-Vertex}}
+\index{side\-A\-Start\-Vertex@{side\-A\-Start\-Vertex}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{side\-A\-Start\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::side\-A\-Start\-Vertex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a29a7a1a4b8cf544dbd7ccb75f653587e}
+Starting vertex for side A of triangle 
+
+Definition at line 48 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), middle\-Point\-Of\-Side\-B(), update\-Sides\-B\-A(), and update\-Sides\-C\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4183750a67cc95d70695820376a52453}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!side\-B\-End\-Vertex@{side\-B\-End\-Vertex}}
+\index{side\-B\-End\-Vertex@{side\-B\-End\-Vertex}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{side\-B\-End\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::side\-B\-End\-Vertex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a4183750a67cc95d70695820376a52453}
+Ending vertex for side B of triangle 
+
+Definition at line 52 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by find\-Vertex\-C\-On\-Side\-B(), is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), middle\-Point\-Of\-Side\-B(), update\-Side\-B(), and update\-Sides\-B\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a01c5a1d51bf85edcd3b9498192b5c70e}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!side\-B\-Start\-Vertex@{side\-B\-Start\-Vertex}}
+\index{side\-B\-Start\-Vertex@{side\-B\-Start\-Vertex}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{side\-B\-Start\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::side\-B\-Start\-Vertex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a01c5a1d51bf85edcd3b9498192b5c70e}
+Starting vertex for side B of triangle 
+
+Definition at line 51 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by find\-Vertex\-C\-On\-Side\-B(), is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), middle\-Point\-Of\-Side\-B(), update\-Side\-B(), and update\-Sides\-B\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a08dbbe5cf66a72a3f973dc0b34526f86}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!side\-C\-End\-Vertex@{side\-C\-End\-Vertex}}
+\index{side\-C\-End\-Vertex@{side\-C\-End\-Vertex}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{side\-C\-End\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::side\-C\-End\-Vertex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a08dbbe5cf66a72a3f973dc0b34526f86}
+Ending vertex for side C of triangle 
+
+Definition at line 55 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by find\-Vertex\-C\-On\-Side\-B(), is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), middle\-Point\-Of\-Side\-B(), and update\-Sides\-C\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9c227b89fcf6afe2f6fe0bb842c47518}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!side\-C\-Start\-Vertex@{side\-C\-Start\-Vertex}}
+\index{side\-C\-Start\-Vertex@{side\-C\-Start\-Vertex}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{side\-C\-Start\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::side\-C\-Start\-Vertex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a9c227b89fcf6afe2f6fe0bb842c47518}
+Starting vertex for side C of triangle 
+
+Definition at line 54 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by find\-Vertex\-C\-On\-Side\-B(), is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), middle\-Point\-Of\-Side\-B(), and update\-Sides\-C\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_abf0daf5b56e3050cbbe70f5d95402cc2}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!validation\-Flag@{validation\-Flag}}
+\index{validation\-Flag@{validation\-Flag}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{validation\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Minimum\-Area\-Enclosing\-Triangle\-::validation\-Flag\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_abf0daf5b56e3050cbbe70f5d95402cc2}
+Validation flag can take the following values\-:
+\begin{DoxyItemize}
+\item V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T;
+\item V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T;
+\item V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H. 
+\end{DoxyItemize}
+
+Definition at line 38 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by is\-Valid\-Minimal\-Triangle(), update\-Side\-B(), and update\-Sides\-B\-A().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a08e1e2f1a682598a8b336d63654f4628}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!vertex\-A@{vertex\-A}}
+\index{vertex\-A@{vertex\-A}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{vertex\-A}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::vertex\-A\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a08e1e2f1a682598a8b336d63654f4628}
+Vertex A of the current considered enclosing triangle 
+
+Definition at line 44 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), middle\-Point\-Of\-Side\-B(), and update\-Minimum\-Area\-Enclosing\-Triangle().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_af54ab74d9af976d7308463a334ae1dda}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!vertex\-B@{vertex\-B}}
+\index{vertex\-B@{vertex\-B}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{vertex\-B}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::vertex\-B\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_af54ab74d9af976d7308463a334ae1dda}
+Vertex B of the current considered enclosing triangle 
+
+Definition at line 45 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), and update\-Minimum\-Area\-Enclosing\-Triangle().
+
+\hypertarget{classmultiscale_1_1MinimumAreaEnclosingTriangle_a57010dcbfa3ff916815df80663f704bc}{\index{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}!vertex\-C@{vertex\-C}}
+\index{vertex\-C@{vertex\-C}!multiscale::MinimumAreaEnclosingTriangle@{multiscale\-::\-Minimum\-Area\-Enclosing\-Triangle}}
+\subsubsection[{vertex\-C}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Minimum\-Area\-Enclosing\-Triangle\-::vertex\-C\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinimumAreaEnclosingTriangle_a57010dcbfa3ff916815df80663f704bc}
+Vertex C of the current considered enclosing triangle 
+
+Definition at line 46 of file Minimum\-Area\-Enclosing\-Triangle.\-hpp.
+
+
+
+Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), middle\-Point\-Of\-Side\-B(), and update\-Minimum\-Area\-Enclosing\-Triangle().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/multiscale/util/\hyperlink{MinimumAreaEnclosingTriangle_8hpp}{Minimum\-Area\-Enclosing\-Triangle.\-hpp}\item 
+src/multiscale/util/\hyperlink{MinimumAreaEnclosingTriangle_8cpp}{Minimum\-Area\-Enclosing\-Triangle.\-cpp}\end{DoxyCompactItemize}

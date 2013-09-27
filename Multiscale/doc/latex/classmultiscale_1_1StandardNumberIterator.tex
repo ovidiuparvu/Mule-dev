@@ -1,0 +1,227 @@
+\hypertarget{classmultiscale_1_1StandardNumberIterator}{\section{multiscale\-:\-:Standard\-Number\-Iterator Class Reference}
+\label{classmultiscale_1_1StandardNumberIterator}\index{multiscale\-::\-Standard\-Number\-Iterator@{multiscale\-::\-Standard\-Number\-Iterator}}
+}
+
+
+Iterator class starting at 1 and iterating over all natural numbers until the provided upper bound is reached.  
+
+
+
+
+{\ttfamily \#include $<$Standard\-Number\-Iterator.\-hpp$>$}
+
+
+
+Inheritance diagram for multiscale\-:\-:Standard\-Number\-Iterator\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classmultiscale_1_1StandardNumberIterator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for multiscale\-:\-:Standard\-Number\-Iterator\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classmultiscale_1_1StandardNumberIterator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmultiscale_1_1StandardNumberIterator_a43b7b42ae0ed44a140cf4817cadf9166}{Standard\-Number\-Iterator} (unsigned int \hyperlink{classmultiscale_1_1NumberIterator_a56a5558958778bbde64e249d67cba886}{upper\-Bound})
+\item 
+\hyperlink{classmultiscale_1_1StandardNumberIterator_aa5b9da824bd014eebab86462f7d08219}{$\sim$\-Standard\-Number\-Iterator} ()
+\item 
+unsigned int \hyperlink{classmultiscale_1_1StandardNumberIterator_a9071fcd0f94b3520a76ed22faed97353}{number} ()
+\begin{DoxyCompactList}\small\item\em Get the number pointed by the iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmultiscale_1_1StandardNumberIterator_a90d4512fe2d15f9bc5a78396d0092c6a}{initialise} ()
+\begin{DoxyCompactList}\small\item\em Initialise the value of the current number. \end{DoxyCompactList}\item 
+bool \hyperlink{classmultiscale_1_1StandardNumberIterator_af840d952fae019b7e894a4a238c7d4d8}{has\-Next\-Initialised} ()
+\begin{DoxyCompactList}\small\item\em Check if there is a next number when in initialised state. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1StandardNumberIterator_a678d43170a27106e1d8c5475b7088d9e}{reset\-Current\-Number} ()
+\begin{DoxyCompactList}\small\item\em Reset the current number to the initial value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classmultiscale_1_1StandardNumberIterator_a1f40c321994d53f705331badd64542be}{current\-Number}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Iterator class starting at 1 and iterating over all natural numbers until the provided upper bound is reached. 
+
+Definition at line 10 of file Standard\-Number\-Iterator.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1StandardNumberIterator_a43b7b42ae0ed44a140cf4817cadf9166}{\index{multiscale\-::\-Standard\-Number\-Iterator@{multiscale\-::\-Standard\-Number\-Iterator}!Standard\-Number\-Iterator@{Standard\-Number\-Iterator}}
+\index{Standard\-Number\-Iterator@{Standard\-Number\-Iterator}!multiscale::StandardNumberIterator@{multiscale\-::\-Standard\-Number\-Iterator}}
+\subsubsection[{Standard\-Number\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}Standard\-Number\-Iterator\-::\-Standard\-Number\-Iterator (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{upper\-Bound}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1StandardNumberIterator_a43b7b42ae0ed44a140cf4817cadf9166}
+
+
+Definition at line 6 of file Standard\-Number\-Iterator.\-cpp.
+
+
+
+References initialise(), and multiscale\-::\-Number\-Iterator\-::reset().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1StandardNumberIterator_a43b7b42ae0ed44a140cf4817cadf9166_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1StandardNumberIterator_aa5b9da824bd014eebab86462f7d08219}{\index{multiscale\-::\-Standard\-Number\-Iterator@{multiscale\-::\-Standard\-Number\-Iterator}!$\sim$\-Standard\-Number\-Iterator@{$\sim$\-Standard\-Number\-Iterator}}
+\index{$\sim$\-Standard\-Number\-Iterator@{$\sim$\-Standard\-Number\-Iterator}!multiscale::StandardNumberIterator@{multiscale\-::\-Standard\-Number\-Iterator}}
+\subsubsection[{$\sim$\-Standard\-Number\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}Standard\-Number\-Iterator\-::$\sim$\-Standard\-Number\-Iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1StandardNumberIterator_aa5b9da824bd014eebab86462f7d08219}
+
+
+Definition at line 11 of file Standard\-Number\-Iterator.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1StandardNumberIterator_af840d952fae019b7e894a4a238c7d4d8}{\index{multiscale\-::\-Standard\-Number\-Iterator@{multiscale\-::\-Standard\-Number\-Iterator}!has\-Next\-Initialised@{has\-Next\-Initialised}}
+\index{has\-Next\-Initialised@{has\-Next\-Initialised}!multiscale::StandardNumberIterator@{multiscale\-::\-Standard\-Number\-Iterator}}
+\subsubsection[{has\-Next\-Initialised}]{\setlength{\rightskip}{0pt plus 5cm}bool Standard\-Number\-Iterator\-::has\-Next\-Initialised (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1StandardNumberIterator_af840d952fae019b7e894a4a238c7d4d8}
+
+
+Check if there is a next number when in initialised state. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1NumberIterator_a3c84ccdf0e279e67861b3cce34a26588}{multiscale\-::\-Number\-Iterator}.
+
+
+
+Definition at line 19 of file Standard\-Number\-Iterator.\-cpp.
+
+
+
+References current\-Number, and multiscale\-::\-Number\-Iterator\-::upper\-Bound.
+
+\hypertarget{classmultiscale_1_1StandardNumberIterator_a90d4512fe2d15f9bc5a78396d0092c6a}{\index{multiscale\-::\-Standard\-Number\-Iterator@{multiscale\-::\-Standard\-Number\-Iterator}!initialise@{initialise}}
+\index{initialise@{initialise}!multiscale::StandardNumberIterator@{multiscale\-::\-Standard\-Number\-Iterator}}
+\subsubsection[{initialise}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\-Number\-Iterator\-::initialise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1StandardNumberIterator_a90d4512fe2d15f9bc5a78396d0092c6a}
+
+
+Initialise the value of the current number. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1NumberIterator_a0bfeef7c3f120a5ae8d49d89b4529d6e}{multiscale\-::\-Number\-Iterator}.
+
+
+
+Definition at line 17 of file Standard\-Number\-Iterator.\-cpp.
+
+
+
+Referenced by Standard\-Number\-Iterator().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1StandardNumberIterator_a90d4512fe2d15f9bc5a78396d0092c6a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1StandardNumberIterator_a9071fcd0f94b3520a76ed22faed97353}{\index{multiscale\-::\-Standard\-Number\-Iterator@{multiscale\-::\-Standard\-Number\-Iterator}!number@{number}}
+\index{number@{number}!multiscale::StandardNumberIterator@{multiscale\-::\-Standard\-Number\-Iterator}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Standard\-Number\-Iterator\-::number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmultiscale_1_1StandardNumberIterator_a9071fcd0f94b3520a76ed22faed97353}
+
+
+Get the number pointed by the iterator. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1NumberIterator_a967fc14523f8726d5d6352d4ed6439ca}{multiscale\-::\-Number\-Iterator}.
+
+
+
+Definition at line 13 of file Standard\-Number\-Iterator.\-cpp.
+
+
+
+References current\-Number.
+
+\hypertarget{classmultiscale_1_1StandardNumberIterator_a678d43170a27106e1d8c5475b7088d9e}{\index{multiscale\-::\-Standard\-Number\-Iterator@{multiscale\-::\-Standard\-Number\-Iterator}!reset\-Current\-Number@{reset\-Current\-Number}}
+\index{reset\-Current\-Number@{reset\-Current\-Number}!multiscale::StandardNumberIterator@{multiscale\-::\-Standard\-Number\-Iterator}}
+\subsubsection[{reset\-Current\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void Standard\-Number\-Iterator\-::reset\-Current\-Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1StandardNumberIterator_a678d43170a27106e1d8c5475b7088d9e}
+
+
+Reset the current number to the initial value. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1NumberIterator_a21e658de178b6c957df5ea0482e6fbd6}{multiscale\-::\-Number\-Iterator}.
+
+
+
+Definition at line 29 of file Standard\-Number\-Iterator.\-cpp.
+
+
+
+References current\-Number.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1StandardNumberIterator_a1f40c321994d53f705331badd64542be}{\index{multiscale\-::\-Standard\-Number\-Iterator@{multiscale\-::\-Standard\-Number\-Iterator}!current\-Number@{current\-Number}}
+\index{current\-Number@{current\-Number}!multiscale::StandardNumberIterator@{multiscale\-::\-Standard\-Number\-Iterator}}
+\subsubsection[{current\-Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::\-Standard\-Number\-Iterator\-::current\-Number\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1StandardNumberIterator_a1f40c321994d53f705331badd64542be}
+The current number 
+
+Definition at line 14 of file Standard\-Number\-Iterator.\-hpp.
+
+
+
+Referenced by has\-Next\-Initialised(), number(), and reset\-Current\-Number().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/multiscale/util/iterator/\hyperlink{StandardNumberIterator_8hpp}{Standard\-Number\-Iterator.\-hpp}\item 
+src/multiscale/util/iterator/\hyperlink{StandardNumberIterator_8cpp}{Standard\-Number\-Iterator.\-cpp}\end{DoxyCompactItemize}

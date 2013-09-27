@@ -1,0 +1,892 @@
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D}{\section{multiscale\-:\-:analysis\-:\-:Spatial\-Collection2\-D Class Reference}
+\label{classmultiscale_1_1analysis_1_1SpatialCollection2D}\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+}
+
+
+Class for representing a collection of objects in 2\-D space.  
+
+
+
+
+{\ttfamily \#include $<$Spatial\-Collection2\-D.\-hpp$>$}
+
+
+
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Spatial\-Collection2\-D\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Spatial\-Collection2\-D\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a3fa52a3930e498d763930a0c6a23a03c}{Spatial\-Collection2\-D} ()
+\item 
+virtual \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_af70ae8f44636e7b2cf85705cffe44dfe}{$\sim$\-Spatial\-Collection2\-D} ()
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a192a2f1ee9e3af90a40c8c7c47618965}{get\-Area} ()
+\begin{DoxyCompactList}\small\item\em Get the area. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a736028971bede12a98dbb72d5b0f1354}{get\-Perimeter} ()
+\begin{DoxyCompactList}\small\item\em Get the perimeter. \end{DoxyCompactList}\item 
+\hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbf}{Shape2\-D} \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7144355774b561b660adfca759316037}{get\-Shape} ()
+\begin{DoxyCompactList}\small\item\em Get the shape best fitting the spatial collection. \end{DoxyCompactList}\item 
+Point2f \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac8b879dca765e47b9e0ef86d440e28e6}{get\-Centre} ()
+\begin{DoxyCompactList}\small\item\em Get the point defining the centre of the entity. \end{DoxyCompactList}\item 
+string \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6ff771bb6022d9c991348f29227d10d9}{to\-String} ()
+\begin{DoxyCompactList}\small\item\em Get the string representation of all field values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a731de1009ba24b4fda5003c9cec5196c}{update\-Measures\-If\-Required} ()
+\begin{DoxyCompactList}\small\item\em Update the values of all measures if required. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a8e5a2af581895142da9b50eeeabeb7be}{update\-Measures} ()
+\begin{DoxyCompactList}\small\item\em Update the values of all measures. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad94bce09032b184ebfd5b5006217c683}{update\-Spatial\-Collection\-Specific\-Values} ()=0
+\begin{DoxyCompactList}\small\item\em Update the values of all measures specific to the derived classes. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a160aae10901ef5198db1b03bdef68065}{update\-Area} ()=0
+\begin{DoxyCompactList}\small\item\em Update the value of the area. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6751a928c631fe725a2e7c5226e3720b}{update\-Perimeter} ()=0
+\begin{DoxyCompactList}\small\item\em Update the value of the perimeter. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ab26bc346c1b0b0d17104c7d5cfb170bb}{update\-Shape} ()
+\begin{DoxyCompactList}\small\item\em Update the shape of the cluster. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_aab860163169deb76a7e853df32902ab1}{update\-Centre\-Point} ()=0
+\begin{DoxyCompactList}\small\item\em Update the point defining the centre of the cluster. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_acce0e9ddd2d92e3ba843c3015352cab5}{is\-Triangular\-Measure} ()=0
+\begin{DoxyCompactList}\small\item\em Get the measure that the cluster has a triangular shape. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1acb28a7aafd1f75c23a94dbc988b038}{is\-Rectangular\-Measure} ()=0
+\begin{DoxyCompactList}\small\item\em Get the measure that the cluster has a rectangular shape. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a5d9967a9c531f3abe0236fbef1b0faba}{is\-Circular\-Measure} ()=0
+\begin{DoxyCompactList}\small\item\em Get the measure that the cluster has a circular shape. \end{DoxyCompactList}\item 
+string \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac18243f267c777ab26bb836097a78c74}{shape\-As\-String} ()
+\begin{DoxyCompactList}\small\item\em Return the shape of the cluster as a string. \end{DoxyCompactList}\item 
+virtual string \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1b70b9e25f8b82ac2195f75f89280800}{field\-Values\-To\-String} ()=0
+\begin{DoxyCompactList}\small\item\em Return the values of the fields as a string. \end{DoxyCompactList}\item 
+vector$<$ Point2f $>$ \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad3d11af329d5efa9bddf40b4573ebb2c}{convert\-Points} (const vector$<$ Point $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Convert the collection of points from type Point to type Point2f. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac570cc755e52aeb9deacf12d223a4a3a}{area}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae8045702b66fd813cfff49fa86b02e68}{perimeter}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a578070e91858e9e87de1e0f5771d6c3f}{triangular\-Measure}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_aad7d79a7bd299d4d3c08a864cfcb77c3}{rectangular\-Measure}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a4c58c82dd3d67d670b554bfaeb2b19ba}{circular\-Measure}
+\item 
+\hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbf}{Shape2\-D} \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a4df95ecca90ce33332a69e0aefcf73d9}{shape}
+\item 
+Point2f \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_afe9ef6b70ff53161cb02749444ae372c}{centre}
+\item 
+bool \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6d942f2856adc673e9d361596744b37f}{update\-Flag}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae128b71f769a10ff5bc7452e2ec9d555}{initialise} ()
+\begin{DoxyCompactList}\small\item\em Initialisation function for the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for representing a collection of objects in 2\-D space. 
+
+Definition at line 29 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a3fa52a3930e498d763930a0c6a23a03c}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!Spatial\-Collection2\-D@{Spatial\-Collection2\-D}}
+\index{Spatial\-Collection2\-D@{Spatial\-Collection2\-D}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{Spatial\-Collection2\-D}]{\setlength{\rightskip}{0pt plus 5cm}Spatial\-Collection2\-D\-::\-Spatial\-Collection2\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a3fa52a3930e498d763930a0c6a23a03c}
+
+
+Definition at line 6 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References initialise().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a3fa52a3930e498d763930a0c6a23a03c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_af70ae8f44636e7b2cf85705cffe44dfe}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!$\sim$\-Spatial\-Collection2\-D@{$\sim$\-Spatial\-Collection2\-D}}
+\index{$\sim$\-Spatial\-Collection2\-D@{$\sim$\-Spatial\-Collection2\-D}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{$\sim$\-Spatial\-Collection2\-D}]{\setlength{\rightskip}{0pt plus 5cm}Spatial\-Collection2\-D\-::$\sim$\-Spatial\-Collection2\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_af70ae8f44636e7b2cf85705cffe44dfe}
+
+
+Definition at line 10 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad3d11af329d5efa9bddf40b4573ebb2c}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!convert\-Points@{convert\-Points}}
+\index{convert\-Points@{convert\-Points}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{convert\-Points}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Point2f $>$ Spatial\-Collection2\-D\-::convert\-Points (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point $>$ \&}]{points}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad3d11af329d5efa9bddf40b4573ebb2c}
+
+
+Convert the collection of points from type Point to type Point2f. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & Collection of points \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Region\-::is\-Triangular\-Measure().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad3d11af329d5efa9bddf40b4573ebb2c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1b70b9e25f8b82ac2195f75f89280800}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!field\-Values\-To\-String@{field\-Values\-To\-String}}
+\index{field\-Values\-To\-String@{field\-Values\-To\-String}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{field\-Values\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}virtual string multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::field\-Values\-To\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1b70b9e25f8b82ac2195f75f89280800}
+
+
+Return the values of the fields as a string. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a4fa8cfecf2fc3708c66022655a055dc6}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by to\-String().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1b70b9e25f8b82ac2195f75f89280800_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a192a2f1ee9e3af90a40c8c7c47618965}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!get\-Area@{get\-Area}}
+\index{get\-Area@{get\-Area}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{get\-Area}]{\setlength{\rightskip}{0pt plus 5cm}double Spatial\-Collection2\-D\-::get\-Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a192a2f1ee9e3af90a40c8c7c47618965}
+
+
+Get the area. 
+
+
+
+Definition at line 12 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References area, and update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a192a2f1ee9e3af90a40c8c7c47618965_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac8b879dca765e47b9e0ef86d440e28e6}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!get\-Centre@{get\-Centre}}
+\index{get\-Centre@{get\-Centre}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{get\-Centre}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Spatial\-Collection2\-D\-::get\-Centre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac8b879dca765e47b9e0ef86d440e28e6}
+
+
+Get the point defining the centre of the entity. 
+
+
+
+Definition at line 30 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References centre, and update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac8b879dca765e47b9e0ef86d440e28e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a736028971bede12a98dbb72d5b0f1354}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!get\-Perimeter@{get\-Perimeter}}
+\index{get\-Perimeter@{get\-Perimeter}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{get\-Perimeter}]{\setlength{\rightskip}{0pt plus 5cm}double Spatial\-Collection2\-D\-::get\-Perimeter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a736028971bede12a98dbb72d5b0f1354}
+
+
+Get the perimeter. 
+
+
+
+Definition at line 18 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References perimeter, and update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a736028971bede12a98dbb72d5b0f1354_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7144355774b561b660adfca759316037}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!get\-Shape@{get\-Shape}}
+\index{get\-Shape@{get\-Shape}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{get\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shape2\-D} Spatial\-Collection2\-D\-::get\-Shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7144355774b561b660adfca759316037}
+
+
+Get the shape best fitting the spatial collection. 
+
+
+
+Definition at line 24 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References shape, and update\-Measures\-If\-Required().
+
+
+
+Referenced by multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::output\-Cluster\-Shape().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7144355774b561b660adfca759316037_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7144355774b561b660adfca759316037_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae128b71f769a10ff5bc7452e2ec9d555}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!initialise@{initialise}}
+\index{initialise@{initialise}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{initialise}]{\setlength{\rightskip}{0pt plus 5cm}void Spatial\-Collection2\-D\-::initialise (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae128b71f769a10ff5bc7452e2ec9d555}
+
+
+Initialisation function for the class. 
+
+
+
+Definition at line 110 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References area, circular\-Measure, perimeter, rectangular\-Measure, shape, triangular\-Measure, multiscale\-::analysis\-::\-Undefined, and update\-Flag.
+
+
+
+Referenced by Spatial\-Collection2\-D().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae128b71f769a10ff5bc7452e2ec9d555_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a5d9967a9c531f3abe0236fbef1b0faba}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!is\-Circular\-Measure@{is\-Circular\-Measure}}
+\index{is\-Circular\-Measure@{is\-Circular\-Measure}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{is\-Circular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}virtual double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::is\-Circular\-Measure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a5d9967a9c531f3abe0236fbef1b0faba}
+
+
+Get the measure that the cluster has a circular shape. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_aa59dcbe337f4db849d66cb3902617ccd}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a579730478055ae93d659f268375a492d}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by update\-Shape().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a5d9967a9c531f3abe0236fbef1b0faba_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1acb28a7aafd1f75c23a94dbc988b038}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!is\-Rectangular\-Measure@{is\-Rectangular\-Measure}}
+\index{is\-Rectangular\-Measure@{is\-Rectangular\-Measure}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{is\-Rectangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}virtual double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::is\-Rectangular\-Measure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1acb28a7aafd1f75c23a94dbc988b038}
+
+
+Get the measure that the cluster has a rectangular shape. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a2310c3e3c6f1dea310e14e46d466a204}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_aca93cb46704a3e824151e99b7a53d20d}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by update\-Shape().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1acb28a7aafd1f75c23a94dbc988b038_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_acce0e9ddd2d92e3ba843c3015352cab5}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!is\-Triangular\-Measure@{is\-Triangular\-Measure}}
+\index{is\-Triangular\-Measure@{is\-Triangular\-Measure}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{is\-Triangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}virtual double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::is\-Triangular\-Measure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_acce0e9ddd2d92e3ba843c3015352cab5}
+
+
+Get the measure that the cluster has a triangular shape. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_acb88d149b42eee5225e7197a225d31c3}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a28efcf050af76acb01619b36505b662e}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by update\-Shape().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_acce0e9ddd2d92e3ba843c3015352cab5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac18243f267c777ab26bb836097a78c74}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!shape\-As\-String@{shape\-As\-String}}
+\index{shape\-As\-String@{shape\-As\-String}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{shape\-As\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Spatial\-Collection2\-D\-::shape\-As\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac18243f267c777ab26bb836097a78c74}
+
+
+Return the shape of the cluster as a string. 
+
+
+
+Definition at line 78 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References multiscale\-::analysis\-::\-Circle, multiscale\-::analysis\-::\-Rectangle, shape, S\-T\-R\-\_\-\-C\-I\-R\-C\-L\-E, S\-T\-R\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E, S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E, S\-T\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D, multiscale\-::analysis\-::\-Triangle, and multiscale\-::analysis\-::\-Undefined.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), and multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac18243f267c777ab26bb836097a78c74_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6ff771bb6022d9c991348f29227d10d9}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Spatial\-Collection2\-D\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6ff771bb6022d9c991348f29227d10d9}
+
+
+Get the string representation of all field values. 
+
+
+
+Definition at line 36 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References field\-Values\-To\-String(), and update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6ff771bb6022d9c991348f29227d10d9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a160aae10901ef5198db1b03bdef68065}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Area@{update\-Area}}
+\index{update\-Area@{update\-Area}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{update\-Area}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a160aae10901ef5198db1b03bdef68065}
+
+
+Update the value of the area. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a88adaf10fae7c554581498f86f1863fa}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a3128a3b20c28619ccdd6a25208b8c83e}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by update\-Measures().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a160aae10901ef5198db1b03bdef68065_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_aab860163169deb76a7e853df32902ab1}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Centre\-Point@{update\-Centre\-Point}}
+\index{update\-Centre\-Point@{update\-Centre\-Point}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{update\-Centre\-Point}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Centre\-Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_aab860163169deb76a7e853df32902ab1}
+
+
+Update the point defining the centre of the cluster. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a3753b8789a73c1e3b5d189aa710aec86}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a259c6f45b89f780b39ba7b67d7d1af2d}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by update\-Measures().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_aab860163169deb76a7e853df32902ab1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a8e5a2af581895142da9b50eeeabeb7be}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Measures@{update\-Measures}}
+\index{update\-Measures@{update\-Measures}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{update\-Measures}]{\setlength{\rightskip}{0pt plus 5cm}void Spatial\-Collection2\-D\-::update\-Measures (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a8e5a2af581895142da9b50eeeabeb7be}
+
+
+Update the values of all measures. 
+
+
+
+Definition at line 51 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References update\-Area(), update\-Centre\-Point(), update\-Perimeter(), and update\-Shape().
+
+
+
+Referenced by update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a8e5a2af581895142da9b50eeeabeb7be_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a8e5a2af581895142da9b50eeeabeb7be_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a731de1009ba24b4fda5003c9cec5196c}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Measures\-If\-Required@{update\-Measures\-If\-Required}}
+\index{update\-Measures\-If\-Required@{update\-Measures\-If\-Required}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{update\-Measures\-If\-Required}]{\setlength{\rightskip}{0pt plus 5cm}void Spatial\-Collection2\-D\-::update\-Measures\-If\-Required (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a731de1009ba24b4fda5003c9cec5196c}
+
+
+Update the values of all measures if required. 
+
+
+
+Definition at line 42 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References update\-Flag, update\-Measures(), and update\-Spatial\-Collection\-Specific\-Values().
+
+
+
+Referenced by multiscale\-::analysis\-::\-Region\-::get\-Angle(), get\-Area(), get\-Centre(), multiscale\-::analysis\-::\-Cluster\-::get\-Clusteredness\-Degree(), multiscale\-::analysis\-::\-Region\-::get\-Density(), multiscale\-::analysis\-::\-Region\-::get\-Distance\-From\-Origin(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Centre(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Radius(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Rect(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Triangle(), get\-Perimeter(), multiscale\-::analysis\-::\-Cluster\-::get\-Pile\-Up\-Degree(), get\-Shape(), and to\-String().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a731de1009ba24b4fda5003c9cec5196c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a731de1009ba24b4fda5003c9cec5196c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6751a928c631fe725a2e7c5226e3720b}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Perimeter@{update\-Perimeter}}
+\index{update\-Perimeter@{update\-Perimeter}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{update\-Perimeter}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Perimeter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6751a928c631fe725a2e7c5226e3720b}
+
+
+Update the value of the perimeter. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a58a4a22cb77fc6963592ec156458f310}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_aadc520e4459f1ea6e22afd7c02d5f2ed}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by update\-Measures().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6751a928c631fe725a2e7c5226e3720b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ab26bc346c1b0b0d17104c7d5cfb170bb}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Shape@{update\-Shape}}
+\index{update\-Shape@{update\-Shape}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{update\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void Spatial\-Collection2\-D\-::update\-Shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ab26bc346c1b0b0d17104c7d5cfb170bb}
+
+
+Update the shape of the cluster. 
+
+
+
+Definition at line 58 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References multiscale\-::analysis\-::\-Circle, circular\-Measure, is\-Circular\-Measure(), is\-Rectangular\-Measure(), is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Rectangle, rectangular\-Measure, shape, multiscale\-::analysis\-::\-Triangle, and triangular\-Measure.
+
+
+
+Referenced by update\-Measures().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_ab26bc346c1b0b0d17104c7d5cfb170bb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_ab26bc346c1b0b0d17104c7d5cfb170bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad94bce09032b184ebfd5b5006217c683}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Spatial\-Collection\-Specific\-Values@{update\-Spatial\-Collection\-Specific\-Values}}
+\index{update\-Spatial\-Collection\-Specific\-Values@{update\-Spatial\-Collection\-Specific\-Values}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{update\-Spatial\-Collection\-Specific\-Values}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Spatial\-Collection\-Specific\-Values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad94bce09032b184ebfd5b5006217c683}
+
+
+Update the values of all measures specific to the derived classes. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_ac382fb7a5625d7ef573a311b8de8f248}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_aee8272e740fe640a6bf5260746d34080}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by update\-Measures\-If\-Required().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad94bce09032b184ebfd5b5006217c683_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac570cc755e52aeb9deacf12d223a4a3a}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!area@{area}}
+\index{area@{area}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{area}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::area\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac570cc755e52aeb9deacf12d223a4a3a}
+Area of the spatial collection 
+
+Definition at line 33 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), get\-Area(), initialise(), multiscale\-::analysis\-::\-Cluster\-::is\-Circular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Circular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::update\-Area(), and multiscale\-::analysis\-::\-Region\-::update\-Area().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_afe9ef6b70ff53161cb02749444ae372c}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!centre@{centre}}
+\index{centre@{centre}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{centre}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::centre\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_afe9ef6b70ff53161cb02749444ae372c}
+Point defining the centre of the spatial collection 
+
+Definition at line 41 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), get\-Centre(), multiscale\-::analysis\-::\-Cluster\-::update\-Centre\-Point(), and multiscale\-::analysis\-::\-Region\-::update\-Centre\-Point().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a4c58c82dd3d67d670b554bfaeb2b19ba}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!circular\-Measure@{circular\-Measure}}
+\index{circular\-Measure@{circular\-Measure}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{circular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::circular\-Measure\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a4c58c82dd3d67d670b554bfaeb2b19ba}
+Measure (\mbox{[}0, 1\mbox{]}) indicating that the shape of the spatial collection is circular 
+
+Definition at line 38 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), initialise(), and update\-Shape().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae8045702b66fd813cfff49fa86b02e68}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!perimeter@{perimeter}}
+\index{perimeter@{perimeter}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{perimeter}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::perimeter\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae8045702b66fd813cfff49fa86b02e68}
+Perimeter of the spatial collection 
+
+Definition at line 34 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), get\-Perimeter(), initialise(), multiscale\-::analysis\-::\-Cluster\-::update\-Perimeter(), and multiscale\-::analysis\-::\-Region\-::update\-Perimeter().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_aad7d79a7bd299d4d3c08a864cfcb77c3}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!rectangular\-Measure@{rectangular\-Measure}}
+\index{rectangular\-Measure@{rectangular\-Measure}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{rectangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::rectangular\-Measure\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_aad7d79a7bd299d4d3c08a864cfcb77c3}
+Measure (\mbox{[}0, 1\mbox{]}) indicating that the shape of the spatial collection is rectangular 
+
+Definition at line 37 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), initialise(), and update\-Shape().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a4df95ecca90ce33332a69e0aefcf73d9}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!shape@{shape}}
+\index{shape@{shape}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shape2\-D} multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::shape\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a4df95ecca90ce33332a69e0aefcf73d9}
+Shape of the spatial collection 
+
+Definition at line 40 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by get\-Shape(), initialise(), shape\-As\-String(), and update\-Shape().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a578070e91858e9e87de1e0f5771d6c3f}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!triangular\-Measure@{triangular\-Measure}}
+\index{triangular\-Measure@{triangular\-Measure}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{triangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::triangular\-Measure\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a578070e91858e9e87de1e0f5771d6c3f}
+Measure (\mbox{[}0, 1\mbox{]}) indicating that the shape of the spatial collection is triangular 
+
+Definition at line 36 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), initialise(), and update\-Shape().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6d942f2856adc673e9d361596744b37f}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Flag@{update\-Flag}}
+\index{update\-Flag@{update\-Flag}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{update\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}bool multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Flag\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6d942f2856adc673e9d361596744b37f}
+\begin{DoxyVerb}            Flag indicating if the field values dependent on the
+\end{DoxyVerb}
+ collection of entities need to be updated. This flag is used for lazy evaluation purposes, such that new field values are computed only when required 
+
+Definition at line 43 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::add\-Entity(), multiscale\-::analysis\-::\-Cluster\-::initialise(), initialise(), and update\-Measures\-If\-Required().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/multiscale/analysis/spatial/\hyperlink{SpatialCollection2D_8hpp}{Spatial\-Collection2\-D.\-hpp}\item 
+src/multiscale/analysis/spatial/\hyperlink{SpatialCollection2D_8cpp}{Spatial\-Collection2\-D.\-cpp}\end{DoxyCompactItemize}

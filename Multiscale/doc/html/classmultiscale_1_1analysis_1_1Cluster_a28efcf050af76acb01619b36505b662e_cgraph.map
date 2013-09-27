@@ -1,9 +1,9 @@
 <map id="multiscale::analysis::Cluster::isTriangularMeasure" name="multiscale::analysis::Cluster::isTriangularMeasure">
 <area shape="rect" id="node3" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="2819,573,2957,620"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a1fed629a9f290fe050c515aa2d0d799d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="251,683,477,729"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2a116b0cb1b5b8306d2483bd5d55bd68" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="251,683,477,729"/>
 <area shape="rect" id="node151" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="259,756,469,803"/>
 <area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="3005,573,3144,620"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2637b25290dd55db6c72dec9dc184103" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="525,634,760,698"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a18f69d582395376b335641e046ecc53d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="525,634,760,698"/>
 <area shape="rect" id="node149" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a5517774074e5cc22cafcdb523212eeb6" title="Initialisation function for the class." alt="" coords="529,721,756,768"/>
 <area shape="rect" id="node11" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a772ac3b9529eccbce7af2c72a0360d89" title="Advance b to the right chain." alt="" coords="821,1097,1048,1144"/>
 <area shape="rect" id="node27" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a729ba761fd35e6074be19959331ba465" title="Update the triangle vertices after all sides were set and check if a local minimal triangle was found..." alt="" coords="1683,144,1909,191"/>

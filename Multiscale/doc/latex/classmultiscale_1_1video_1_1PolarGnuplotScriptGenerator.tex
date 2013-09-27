@@ -1,0 +1,324 @@
+\hypertarget{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator}{\section{multiscale\-:\-:video\-:\-:Polar\-Gnuplot\-Script\-Generator Class Reference}
+\label{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator}\index{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}}
+}
+
+
+Gnuplot script generator from the provided annular sectors.  
+
+
+
+
+{\ttfamily \#include $<$Polar\-Gnuplot\-Script\-Generator.\-hpp$>$}
+
+
+
+Collaboration diagram for multiscale\-:\-:video\-:\-:Polar\-Gnuplot\-Script\-Generator\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a9e60fa7dd9c47dc89cdce30a39175a6e}{generate\-Script} (const vector$<$ \hyperlink{classmultiscale_1_1video_1_1AnnularSector}{Annular\-Sector} $>$ \&annular\-Sectors, double simulation\-Time, const string \&output\-Filepath)
+\begin{DoxyCompactList}\small\item\em Generate the script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_abad924831da9046dc757a7508f47ce55}{generate\-Header} (ofstream \&fout, const string \&output\-Filepath, double simulation\-Time)
+\begin{DoxyCompactList}\small\item\em Generate the header of the script. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a5386b0f2c6286c709c3084c5101963c6}{generate\-Body} (const vector$<$ \hyperlink{classmultiscale_1_1video_1_1AnnularSector}{Annular\-Sector} $>$ \&annular\-Sectors, ofstream \&fout)
+\begin{DoxyCompactList}\small\item\em Generate the body/content of the script. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_af760c3b80b2d8966d7fbea00b97e3785}{generate\-Footer} (ofstream \&fout)
+\begin{DoxyCompactList}\small\item\em Generate the footer of the script. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a9d10aa501cb749ef09a5c3019406ddc1}{output\-Header} (ifstream \&fin, const string \&output\-Filename, double simulation\-Time, ofstream \&fout)
+\begin{DoxyCompactList}\small\item\em Output the header of the script. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a5ccc1caca243f48e7cb7bc1083bd07a3}{output\-Content} (const vector$<$ \hyperlink{classmultiscale_1_1video_1_1AnnularSector}{Annular\-Sector} $>$ \&annular\-Sectors, const string \&content\-Template, ofstream \&fout)
+\begin{DoxyCompactList}\small\item\em Output the content of the script. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_ad572033c31036eb4b3fd041eaf70ec5f}{output\-Footer} (ifstream \&fin, ofstream \&fout)
+\begin{DoxyCompactList}\small\item\em Output the footer of the script. \end{DoxyCompactList}\item 
+static string \hyperlink{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a539bef80a3f6313a0df4c72107075e35}{read\-Content\-Template} (ifstream \&fin)
+\begin{DoxyCompactList}\small\item\em Read content template. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gnuplot script generator from the provided annular sectors. 
+
+Definition at line 31 of file Polar\-Gnuplot\-Script\-Generator.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a5386b0f2c6286c709c3084c5101963c6}{\index{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}!generate\-Body@{generate\-Body}}
+\index{generate\-Body@{generate\-Body}!multiscale::video::PolarGnuplotScriptGenerator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}}
+\subsubsection[{generate\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Polar\-Gnuplot\-Script\-Generator\-::generate\-Body (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Annular\-Sector} $>$ \&}]{annular\-Sectors, }
+\item[{ofstream \&}]{fout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a5386b0f2c6286c709c3084c5101963c6}
+
+
+Generate the body/content of the script. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em annular\-Sectors} & Annular sectors \\
+\hline
+{\em fout} & Output file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file Polar\-Gnuplot\-Script\-Generator.\-cpp.
+
+
+
+References C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N.
+
+\hypertarget{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_af760c3b80b2d8966d7fbea00b97e3785}{\index{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}!generate\-Footer@{generate\-Footer}}
+\index{generate\-Footer@{generate\-Footer}!multiscale::video::PolarGnuplotScriptGenerator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}}
+\subsubsection[{generate\-Footer}]{\setlength{\rightskip}{0pt plus 5cm}void Polar\-Gnuplot\-Script\-Generator\-::generate\-Footer (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{fout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_af760c3b80b2d8966d7fbea00b97e3785}
+
+
+Generate the footer of the script. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fout} & Output file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file Polar\-Gnuplot\-Script\-Generator.\-cpp.
+
+
+
+References F\-O\-O\-T\-E\-R\-\_\-\-I\-N.
+
+\hypertarget{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_abad924831da9046dc757a7508f47ce55}{\index{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}!generate\-Header@{generate\-Header}}
+\index{generate\-Header@{generate\-Header}!multiscale::video::PolarGnuplotScriptGenerator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}}
+\subsubsection[{generate\-Header}]{\setlength{\rightskip}{0pt plus 5cm}void Polar\-Gnuplot\-Script\-Generator\-::generate\-Header (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{fout, }
+\item[{const string \&}]{output\-Filepath, }
+\item[{double}]{simulation\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_abad924831da9046dc757a7508f47ce55}
+
+
+Generate the header of the script. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fout} & Output file stream \\
+\hline
+{\em output\-Filepath} & Path to the output file \\
+\hline
+{\em simulation\-Time} & Simulation time \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Polar\-Gnuplot\-Script\-Generator.\-cpp.
+
+
+
+References multiscale\-::\-String\-Manipulator\-::filename\-From\-Path(), and H\-E\-A\-D\-E\-R\-\_\-\-I\-N.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_abad924831da9046dc757a7508f47ce55_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a9e60fa7dd9c47dc89cdce30a39175a6e}{\index{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}!generate\-Script@{generate\-Script}}
+\index{generate\-Script@{generate\-Script}!multiscale::video::PolarGnuplotScriptGenerator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}}
+\subsubsection[{generate\-Script}]{\setlength{\rightskip}{0pt plus 5cm}void Polar\-Gnuplot\-Script\-Generator\-::generate\-Script (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Annular\-Sector} $>$ \&}]{annular\-Sectors, }
+\item[{double}]{simulation\-Time, }
+\item[{const string \&}]{output\-Filepath}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a9e60fa7dd9c47dc89cdce30a39175a6e}
+
+
+Generate the script. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em annular\-Sectors} & Annular sectors \\
+\hline
+{\em simulation\-Time} & Simulation time \\
+\hline
+{\em output\-Filepath} & Path of the output file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Polar\-Gnuplot\-Script\-Generator.\-cpp.
+
+
+
+References G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N.
+
+
+
+Referenced by multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::output\-Results\-As\-Script().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a9e60fa7dd9c47dc89cdce30a39175a6e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a5ccc1caca243f48e7cb7bc1083bd07a3}{\index{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}!output\-Content@{output\-Content}}
+\index{output\-Content@{output\-Content}!multiscale::video::PolarGnuplotScriptGenerator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}}
+\subsubsection[{output\-Content}]{\setlength{\rightskip}{0pt plus 5cm}void Polar\-Gnuplot\-Script\-Generator\-::output\-Content (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Annular\-Sector} $>$ \&}]{annular\-Sectors, }
+\item[{const string \&}]{content\-Template, }
+\item[{ofstream \&}]{fout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a5ccc1caca243f48e7cb7bc1083bd07a3}
+
+
+Output the content of the script. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em annular\-Sectors} & Annular sectors \\
+\hline
+{\em content\-Template} & Template used for generating output for each annular sector \\
+\hline
+{\em fout} & Output file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file Polar\-Gnuplot\-Script\-Generator.\-cpp.
+
+
+
+References multiscale\-::\-String\-Manipulator\-::replace(), R\-E\-P\-L\-A\-C\-E\-\_\-\-C\-O\-N\-T\-E\-N\-T\-\_\-\-C\-O\-N\-C\-E\-N\-T\-R\-A\-T\-I\-O\-N, R\-E\-P\-L\-A\-C\-E\-\_\-\-C\-O\-N\-T\-E\-N\-T\-\_\-\-E\-N\-D\-\_\-\-A\-N\-G\-L\-E, R\-E\-P\-L\-A\-C\-E\-\_\-\-C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N\-D\-E\-X, R\-E\-P\-L\-A\-C\-E\-\_\-\-C\-O\-N\-T\-E\-N\-T\-\_\-\-R\-A\-D\-I\-U\-S, and R\-E\-P\-L\-A\-C\-E\-\_\-\-C\-O\-N\-T\-E\-N\-T\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-N\-G\-L\-E.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a5ccc1caca243f48e7cb7bc1083bd07a3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_ad572033c31036eb4b3fd041eaf70ec5f}{\index{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}!output\-Footer@{output\-Footer}}
+\index{output\-Footer@{output\-Footer}!multiscale::video::PolarGnuplotScriptGenerator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}}
+\subsubsection[{output\-Footer}]{\setlength{\rightskip}{0pt plus 5cm}void Polar\-Gnuplot\-Script\-Generator\-::output\-Footer (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin, }
+\item[{ofstream \&}]{fout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_ad572033c31036eb4b3fd041eaf70ec5f}
+
+
+Output the footer of the script. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fin} & Input file stream \\
+\hline
+{\em fout} & Output file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 93 of file Polar\-Gnuplot\-Script\-Generator.\-cpp.
+
+\hypertarget{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a9d10aa501cb749ef09a5c3019406ddc1}{\index{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}!output\-Header@{output\-Header}}
+\index{output\-Header@{output\-Header}!multiscale::video::PolarGnuplotScriptGenerator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}}
+\subsubsection[{output\-Header}]{\setlength{\rightskip}{0pt plus 5cm}void Polar\-Gnuplot\-Script\-Generator\-::output\-Header (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin, }
+\item[{const string \&}]{output\-Filename, }
+\item[{double}]{simulation\-Time, }
+\item[{ofstream \&}]{fout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a9d10aa501cb749ef09a5c3019406ddc1}
+
+
+Output the header of the script. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fin} & Input file stream \\
+\hline
+{\em output\-Filename} & Name of the output file \\
+\hline
+{\em simulation\-Time} & Simulation time \\
+\hline
+{\em fout} & Output file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file Polar\-Gnuplot\-Script\-Generator.\-cpp.
+
+
+
+References multiscale\-::\-String\-Manipulator\-::replace(), R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E, and R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a9d10aa501cb749ef09a5c3019406ddc1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a539bef80a3f6313a0df4c72107075e35}{\index{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}!read\-Content\-Template@{read\-Content\-Template}}
+\index{read\-Content\-Template@{read\-Content\-Template}!multiscale::video::PolarGnuplotScriptGenerator@{multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator}}
+\subsubsection[{read\-Content\-Template}]{\setlength{\rightskip}{0pt plus 5cm}string Polar\-Gnuplot\-Script\-Generator\-::read\-Content\-Template (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator_a539bef80a3f6313a0df4c72107075e35}
+
+
+Read content template. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fin} & Input file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file Polar\-Gnuplot\-Script\-Generator.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+include/multiscale/video/circular/\hyperlink{PolarGnuplotScriptGenerator_8hpp}{Polar\-Gnuplot\-Script\-Generator.\-hpp}\item 
+src/multiscale/video/circular/\hyperlink{PolarGnuplotScriptGenerator_8cpp}{Polar\-Gnuplot\-Script\-Generator.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,157 @@
+\hypertarget{MapCartesianToScript_8cpp}{\section{src/multiscale/video/rectangular/\-Map\-Cartesian\-To\-Script.cpp File Reference}
+\label{MapCartesianToScript_8cpp}\index{src/multiscale/video/rectangular/\-Map\-Cartesian\-To\-Script.\-cpp@{src/multiscale/video/rectangular/\-Map\-Cartesian\-To\-Script.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}multiscale/video/rectangular/\-Cartesian\-To\-Concentrations\-Converter.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$boost/program\-\_\-options.\-hpp$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+Include dependency graph for Map\-Cartesian\-To\-Script.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MapCartesianToScript_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{MapCartesianToScript_8cpp_aed46bc434b6a10f9663dbbe5fd15349f}{E\-R\-R\-\_\-\-C\-O\-D\-E}~1
+\item 
+\#define \hyperlink{MapCartesianToScript_8cpp_a7a18f09d3bb5a5f03a55546e38f8efd8}{E\-R\-R\-\_\-\-M\-S\-G}~\char`\"{}An error occurred\-: \char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+po\-::variables\-\_\-map \hyperlink{MapCartesianToScript_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}{init\-Arguments\-Config} (po\-::options\-\_\-description \&usage\-Description, int argc, char $\ast$$\ast$argv)
+\item 
+void \hyperlink{MapCartesianToScript_8cpp_a49535fad6e4e5f21ee2eae91dff5a831}{print\-Help\-Information} (const po\-::variables\-\_\-map \&vm, const po\-::options\-\_\-description \&usage\-Description)
+\item 
+void \hyperlink{MapCartesianToScript_8cpp_a573a6d091545f311c155eb4f04c8a2cb}{print\-Wrong\-Parameters} ()
+\item 
+bool \hyperlink{MapCartesianToScript_8cpp_a49c258f2a31008988e64d7d47274e3b8}{are\-Valid\-Parameters} (string \&input\-Filepath, string \&output\-Filename, int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{MapCartesianToScript_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{MapCartesianToScript_8cpp_aed46bc434b6a10f9663dbbe5fd15349f}{\index{Map\-Cartesian\-To\-Script.\-cpp@{Map\-Cartesian\-To\-Script.\-cpp}!E\-R\-R\-\_\-\-C\-O\-D\-E@{E\-R\-R\-\_\-\-C\-O\-D\-E}}
+\index{E\-R\-R\-\_\-\-C\-O\-D\-E@{E\-R\-R\-\_\-\-C\-O\-D\-E}!MapCartesianToScript.cpp@{Map\-Cartesian\-To\-Script.\-cpp}}
+\subsubsection[{E\-R\-R\-\_\-\-C\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-C\-O\-D\-E~1}}\label{MapCartesianToScript_8cpp_aed46bc434b6a10f9663dbbe5fd15349f}
+
+
+Definition at line 32 of file Map\-Cartesian\-To\-Script.\-cpp.
+
+
+
+Referenced by main().
+
+\hypertarget{MapCartesianToScript_8cpp_a7a18f09d3bb5a5f03a55546e38f8efd8}{\index{Map\-Cartesian\-To\-Script.\-cpp@{Map\-Cartesian\-To\-Script.\-cpp}!E\-R\-R\-\_\-\-M\-S\-G@{E\-R\-R\-\_\-\-M\-S\-G}}
+\index{E\-R\-R\-\_\-\-M\-S\-G@{E\-R\-R\-\_\-\-M\-S\-G}!MapCartesianToScript.cpp@{Map\-Cartesian\-To\-Script.\-cpp}}
+\subsubsection[{E\-R\-R\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-M\-S\-G~\char`\"{}An error occurred\-: \char`\"{}}}\label{MapCartesianToScript_8cpp_a7a18f09d3bb5a5f03a55546e38f8efd8}
+
+
+Definition at line 33 of file Map\-Cartesian\-To\-Script.\-cpp.
+
+
+
+Referenced by main(), and print\-Wrong\-Parameters().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{MapCartesianToScript_8cpp_a49c258f2a31008988e64d7d47274e3b8}{\index{Map\-Cartesian\-To\-Script.\-cpp@{Map\-Cartesian\-To\-Script.\-cpp}!are\-Valid\-Parameters@{are\-Valid\-Parameters}}
+\index{are\-Valid\-Parameters@{are\-Valid\-Parameters}!MapCartesianToScript.cpp@{Map\-Cartesian\-To\-Script.\-cpp}}
+\subsubsection[{are\-Valid\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}bool are\-Valid\-Parameters (
+\begin{DoxyParamCaption}
+\item[{string \&}]{input\-Filepath, }
+\item[{string \&}]{output\-Filename, }
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{MapCartesianToScript_8cpp_a49c258f2a31008988e64d7d47274e3b8}
+
+
+Definition at line 60 of file Map\-Cartesian\-To\-Script.\-cpp.
+
+
+
+References init\-Arguments\-Config(), and print\-Help\-Information().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{MapCartesianToScript_8cpp_a49c258f2a31008988e64d7d47274e3b8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MapCartesianToScript_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}{\index{Map\-Cartesian\-To\-Script.\-cpp@{Map\-Cartesian\-To\-Script.\-cpp}!init\-Arguments\-Config@{init\-Arguments\-Config}}
+\index{init\-Arguments\-Config@{init\-Arguments\-Config}!MapCartesianToScript.cpp@{Map\-Cartesian\-To\-Script.\-cpp}}
+\subsubsection[{init\-Arguments\-Config}]{\setlength{\rightskip}{0pt plus 5cm}po\-::variables\-\_\-map init\-Arguments\-Config (
+\begin{DoxyParamCaption}
+\item[{po\-::options\-\_\-description \&}]{usage\-Description, }
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{MapCartesianToScript_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}
+
+
+Definition at line 37 of file Map\-Cartesian\-To\-Script.\-cpp.
+
+\hypertarget{MapCartesianToScript_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{Map\-Cartesian\-To\-Script.\-cpp@{Map\-Cartesian\-To\-Script.\-cpp}!main@{main}}
+\index{main@{main}!MapCartesianToScript.cpp@{Map\-Cartesian\-To\-Script.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{MapCartesianToScript_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 84 of file Map\-Cartesian\-To\-Script.\-cpp.
+
+
+
+References are\-Valid\-Parameters(), multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter\-::convert(), E\-R\-R\-\_\-\-C\-O\-D\-E, E\-R\-R\-\_\-\-M\-S\-G, and print\-Wrong\-Parameters().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MapCartesianToScript_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MapCartesianToScript_8cpp_a49535fad6e4e5f21ee2eae91dff5a831}{\index{Map\-Cartesian\-To\-Script.\-cpp@{Map\-Cartesian\-To\-Script.\-cpp}!print\-Help\-Information@{print\-Help\-Information}}
+\index{print\-Help\-Information@{print\-Help\-Information}!MapCartesianToScript.cpp@{Map\-Cartesian\-To\-Script.\-cpp}}
+\subsubsection[{print\-Help\-Information}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Help\-Information (
+\begin{DoxyParamCaption}
+\item[{const po\-::variables\-\_\-map \&}]{vm, }
+\item[{const po\-::options\-\_\-description \&}]{usage\-Description}
+\end{DoxyParamCaption}
+)}}\label{MapCartesianToScript_8cpp_a49535fad6e4e5f21ee2eae91dff5a831}
+
+
+Definition at line 49 of file Map\-Cartesian\-To\-Script.\-cpp.
+
+\hypertarget{MapCartesianToScript_8cpp_a573a6d091545f311c155eb4f04c8a2cb}{\index{Map\-Cartesian\-To\-Script.\-cpp@{Map\-Cartesian\-To\-Script.\-cpp}!print\-Wrong\-Parameters@{print\-Wrong\-Parameters}}
+\index{print\-Wrong\-Parameters@{print\-Wrong\-Parameters}!MapCartesianToScript.cpp@{Map\-Cartesian\-To\-Script.\-cpp}}
+\subsubsection[{print\-Wrong\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Wrong\-Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{MapCartesianToScript_8cpp_a573a6d091545f311c155eb4f04c8a2cb}
+
+
+Definition at line 54 of file Map\-Cartesian\-To\-Script.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-M\-S\-G.
+

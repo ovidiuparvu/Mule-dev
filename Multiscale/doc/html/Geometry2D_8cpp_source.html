@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('Geometry2D_8cpp_source.html','');});
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classmultiscale_1_1Geometry2D.html#a907466755f2d460e95e2bace5b386768">   33</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1Geometry2D.html#a907466755f2d460e95e2bace5b386768" title="Check if angle1 lies between non reflex angle determined by angles 2 and 3.">Geometry2D::isAngleBetweenNonReflex</a>(<span class="keywordtype">double</span> angle1, <span class="keywordtype">double</span> angle2, <span class="keywordtype">double</span> angle3) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (fabs(angle2 - angle3) &gt; 180) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">if</span> (abs(angle2 - angle3) &gt; 180) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (angle2 &gt; angle3) {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">return</span> ((angle2 &lt; angle1) &amp;&amp; (<a class="code" href="classmultiscale_1_1Numeric.html#a7f21159a23c71c1d37e1c487e9ff815c" title="Check if the first number is less than or equal to the second number.">Numeric::lessOrEqual</a>(angle1, 360))) || ((<a class="code" href="classmultiscale_1_1Numeric.html#a7f21159a23c71c1d37e1c487e9ff815c" title="Check if the first number is less than or equal to the second number.">Numeric::lessOrEqual</a>(0, angle1)) &amp;&amp; (angle1 &lt; angle3));</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        } <span class="keywordflow">else</span> {</div>
@@ -545,7 +545,7 @@ $(document).ready(function(){initNavTree('Geometry2D_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_5d87c4b258ac4c6646792553258f31bd.html">util</a></li><li class="navelem"><a class="el" href="Geometry2D_8cpp.html">Geometry2D.cpp</a></li>
-    <li class="footer">Generated on Fri Aug 16 2013 14:42:31 for Multiscale by
+    <li class="footer">Generated on Fri Sep 27 2013 12:07:40 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

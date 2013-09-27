@@ -14,6 +14,7 @@ namespace multiscale {
 
     namespace analysis {
 
+        //! Class for computing the circularity measure for the given collection of points
         class CircularityMeasure {
 
             public:

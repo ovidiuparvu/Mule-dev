@@ -1,0 +1,138 @@
+\hypertarget{Detector_8hpp}{\section{include/multiscale/analysis/spatial/\-Detector.hpp File Reference}
+\label{Detector_8hpp}\index{include/multiscale/analysis/spatial/\-Detector.\-hpp@{include/multiscale/analysis/spatial/\-Detector.\-hpp}}
+}
+{\ttfamily \#include \char`\"{}opencv2/imgproc/imgproc.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/highgui/highgui.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+Include dependency graph for Detector.\-hpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Detector_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Detector_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1Detector}{multiscale\-::analysis\-::\-Detector}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacemultiscale}{multiscale}
+\item 
+namespace \hyperlink{namespacemultiscale_1_1analysis}{multiscale\-::analysis}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Detector_8hpp_a357d95b934e1bae4e0f44ae22f35681d}{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T}~\char`\"{}Unable to output results if the detect method was not called previously.\char`\"{}
+\item 
+\#define \hyperlink{Detector_8hpp_a802932639681d325fff007066f0df5c4}{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E}~\char`\"{}Unable to create output file.\char`\"{}
+\item 
+\#define \hyperlink{Detector_8hpp_a436f1d8a73f8ce98507b031eb65b84ac}{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E}~\char`\"{}The input image is invalid.\char`\"{}
+\item 
+\#define \hyperlink{Detector_8hpp_a6722eaa5c4c15a1ef661967d81135500}{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}~\char`\"{}.out\char`\"{}
+\item 
+\#define \hyperlink{Detector_8hpp_a127af9f502a7fe0c36a3dbbf4dc69198}{I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}~\char`\"{}.png\char`\"{}
+\item 
+\#define \hyperlink{Detector_8hpp_aee857f4a97612b0a45a3322ce1909688}{W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E}~\char`\"{}Output image\char`\"{}
+\item 
+\#define \hyperlink{Detector_8hpp_a86b2b2d4eda22067d85d2287c118e2d8}{K\-E\-Y\-\_\-\-E\-S\-C}~27
+\item 
+\#define \hyperlink{Detector_8hpp_a735bd78d12a58f1d9dbbf79d2b30e5df}{K\-E\-Y\-\_\-\-S\-A\-V\-E}~115
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{Detector_8hpp_a436f1d8a73f8ce98507b031eb65b84ac}{\index{Detector.\-hpp@{Detector.\-hpp}!E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E@{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E}}
+\index{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E@{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E}!Detector.hpp@{Detector.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E~\char`\"{}The input image is invalid.\char`\"{}}}\label{Detector_8hpp_a436f1d8a73f8ce98507b031eb65b84ac}
+
+
+Definition at line 14 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Detector\-::detect().
+
+\hypertarget{Detector_8hpp_a802932639681d325fff007066f0df5c4}{\index{Detector.\-hpp@{Detector.\-hpp}!E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E@{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E}}
+\index{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E@{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E}!Detector.hpp@{Detector.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E~\char`\"{}Unable to create output file.\char`\"{}}}\label{Detector_8hpp_a802932639681d325fff007066f0df5c4}
+
+
+Definition at line 13 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Detector\-::output\-Results\-To\-Csv\-File().
+
+\hypertarget{Detector_8hpp_a357d95b934e1bae4e0f44ae22f35681d}{\index{Detector.\-hpp@{Detector.\-hpp}!E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T@{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T}}
+\index{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T@{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T}!Detector.hpp@{Detector.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T~\char`\"{}Unable to output results if the detect method was not called previously.\char`\"{}}}\label{Detector_8hpp_a357d95b934e1bae4e0f44ae22f35681d}
+
+
+Definition at line 12 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Detector\-::print\-Output\-Error\-Message().
+
+\hypertarget{Detector_8hpp_a127af9f502a7fe0c36a3dbbf4dc69198}{\index{Detector.\-hpp@{Detector.\-hpp}!I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}}
+\index{I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}!Detector.hpp@{Detector.\-hpp}}
+\subsubsection[{I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N~\char`\"{}.png\char`\"{}}}\label{Detector_8hpp_a127af9f502a7fe0c36a3dbbf4dc69198}
+
+
+Definition at line 17 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Detector\-::store\-Output\-Image\-On\-Disk().
+
+\hypertarget{Detector_8hpp_a86b2b2d4eda22067d85d2287c118e2d8}{\index{Detector.\-hpp@{Detector.\-hpp}!K\-E\-Y\-\_\-\-E\-S\-C@{K\-E\-Y\-\_\-\-E\-S\-C}}
+\index{K\-E\-Y\-\_\-\-E\-S\-C@{K\-E\-Y\-\_\-\-E\-S\-C}!Detector.hpp@{Detector.\-hpp}}
+\subsubsection[{K\-E\-Y\-\_\-\-E\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-Y\-\_\-\-E\-S\-C~27}}\label{Detector_8hpp_a86b2b2d4eda22067d85d2287c118e2d8}
+
+
+Definition at line 21 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Detector\-::detect\-In\-Debug\-Mode().
+
+\hypertarget{Detector_8hpp_a735bd78d12a58f1d9dbbf79d2b30e5df}{\index{Detector.\-hpp@{Detector.\-hpp}!K\-E\-Y\-\_\-\-S\-A\-V\-E@{K\-E\-Y\-\_\-\-S\-A\-V\-E}}
+\index{K\-E\-Y\-\_\-\-S\-A\-V\-E@{K\-E\-Y\-\_\-\-S\-A\-V\-E}!Detector.hpp@{Detector.\-hpp}}
+\subsubsection[{K\-E\-Y\-\_\-\-S\-A\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-Y\-\_\-\-S\-A\-V\-E~115}}\label{Detector_8hpp_a735bd78d12a58f1d9dbbf79d2b30e5df}
+
+
+Definition at line 22 of file Detector.\-hpp.
+
+\hypertarget{Detector_8hpp_a6722eaa5c4c15a1ef661967d81135500}{\index{Detector.\-hpp@{Detector.\-hpp}!O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}!Detector.hpp@{Detector.\-hpp}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N~\char`\"{}.out\char`\"{}}}\label{Detector_8hpp_a6722eaa5c4c15a1ef661967d81135500}
+
+
+Definition at line 16 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::video\-::\-Rectangular\-Entity\-Csv\-To\-Input\-Files\-Converter\-::init\-Output\-File(), multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::init\-Output\-File(), multiscale\-::video\-::\-Polar\-Csv\-To\-Input\-Files\-Converter\-::init\-Output\-File(), and multiscale\-::analysis\-::\-Detector\-::output\-Results\-To\-Csv\-File().
+
+\hypertarget{Detector_8hpp_aee857f4a97612b0a45a3322ce1909688}{\index{Detector.\-hpp@{Detector.\-hpp}!W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E@{W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E}}
+\index{W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E@{W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E}!Detector.hpp@{Detector.\-hpp}}
+\subsubsection[{W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E~\char`\"{}Output image\char`\"{}}}\label{Detector_8hpp_aee857f4a97612b0a45a3322ce1909688}
+
+
+Definition at line 19 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::create\-Detector\-Specific\-Trackbars(), multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars(), multiscale\-::analysis\-::\-Detector\-::create\-Trackbars\-Window(), and multiscale\-::analysis\-::\-Detector\-::display\-Results\-In\-Window().
+

@@ -1,0 +1,73 @@
+\hypertarget{Entity_8hpp}{\section{include/multiscale/analysis/spatial/\-Entity.hpp File Reference}
+\label{Entity_8hpp}\index{include/multiscale/analysis/spatial/\-Entity.\-hpp@{include/multiscale/analysis/spatial/\-Entity.\-hpp}}
+}
+{\ttfamily \#include \char`\"{}multiscale/analysis/spatial/\-Data\-Point.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}opencv2/imgproc/imgproc.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for Entity.\-hpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Entity_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Entity_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmultiscale_1_1analysis_1_1Entity}{multiscale\-::analysis\-::\-Entity}
+\begin{DoxyCompactList}\small\item\em Class for representing an entity in an image (e.\-g. cell, organism etc.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacemultiscale}{multiscale}
+\item 
+namespace \hyperlink{namespacemultiscale_1_1analysis}{multiscale\-::analysis}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{Entity_8hpp_a617a89dc9ced4a63643f98263cde3e91}{E\-R\-R\-\_\-\-I\-N\-P\-U\-T}~\char`\"{}Invalid input parameters were provided to the constructor.\char`\"{}
+\item 
+\#define \hyperlink{Entity_8hpp_a71f387ccbb38cba9aaf69812abc6c505}{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}~\char`\"{}The distance to an object of a different type cannot be computed.\char`\"{}
+\item 
+\#define \hyperlink{Entity_8hpp_ad80cfbe7456c7d029544e8bc2cec16c8}{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}~\char`\"{},\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{Entity_8hpp_a71f387ccbb38cba9aaf69812abc6c505}{\index{Entity.\-hpp@{Entity.\-hpp}!E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}}
+\index{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}!Entity.hpp@{Entity.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E~\char`\"{}The distance to an object of a different type cannot be computed.\char`\"{}}}\label{Entity_8hpp_a71f387ccbb38cba9aaf69812abc6c505}
+
+
+Definition at line 14 of file Entity.\-hpp.
+
+\hypertarget{Entity_8hpp_a617a89dc9ced4a63643f98263cde3e91}{\index{Entity.\-hpp@{Entity.\-hpp}!E\-R\-R\-\_\-\-I\-N\-P\-U\-T@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T}}
+\index{E\-R\-R\-\_\-\-I\-N\-P\-U\-T@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T}!Entity.hpp@{Entity.\-hpp}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-N\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-I\-N\-P\-U\-T~\char`\"{}Invalid input parameters were provided to the constructor.\char`\"{}}}\label{Entity_8hpp_a617a89dc9ced4a63643f98263cde3e91}
+
+
+Definition at line 13 of file Entity.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Region\-::validate\-Input\-Values(), and multiscale\-::analysis\-::\-Entity\-::validate\-Input\-Values().
+
+\hypertarget{Entity_8hpp_ad80cfbe7456c7d029544e8bc2cec16c8}{\index{Entity.\-hpp@{Entity.\-hpp}!O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}!Entity.hpp@{Entity.\-hpp}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R~\char`\"{},\char`\"{}}}\label{Entity_8hpp_ad80cfbe7456c7d029544e8bc2cec16c8}
+
+
+Definition at line 16 of file Entity.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), multiscale\-::video\-::\-Rectangular\-Entity\-Csv\-To\-Input\-Files\-Converter\-::init\-Output\-File(), multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::init\-Output\-File(), multiscale\-::video\-::\-Polar\-Csv\-To\-Input\-Files\-Converter\-::init\-Output\-File(), multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator\-::output\-Content(), multiscale\-::video\-::\-Rectangular\-Entity\-Csv\-To\-Input\-Files\-Converter\-::process\-Line(), multiscale\-::video\-::\-Rectangular\-Csv\-To\-Input\-Files\-Converter\-::process\-Line(), multiscale\-::video\-::\-Polar\-Csv\-To\-Input\-Files\-Converter\-::process\-Line(), and multiscale\-::analysis\-::\-Entity\-::to\-String().
+

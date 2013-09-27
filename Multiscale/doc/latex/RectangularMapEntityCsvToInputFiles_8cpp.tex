@@ -1,0 +1,181 @@
+\hypertarget{RectangularMapEntityCsvToInputFiles_8cpp}{\section{src/multiscale/video/rectangular/\-Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.cpp File Reference}
+\label{RectangularMapEntityCsvToInputFiles_8cpp}\index{src/multiscale/video/rectangular/\-Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp@{src/multiscale/video/rectangular/\-Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}multiscale/video/rectangular/\-Rectangular\-Entity\-Csv\-To\-Input\-Files\-Converter.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multiscale/util/iterator/\-Number\-Iterator\-Type.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$boost/program\-\_\-options.\-hpp$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+Include dependency graph for Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{RectangularMapEntityCsvToInputFiles_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{RectangularMapEntityCsvToInputFiles_8cpp_aed46bc434b6a10f9663dbbe5fd15349f}{E\-R\-R\-\_\-\-C\-O\-D\-E}~1
+\item 
+\#define \hyperlink{RectangularMapEntityCsvToInputFiles_8cpp_a7a18f09d3bb5a5f03a55546e38f8efd8}{E\-R\-R\-\_\-\-M\-S\-G}~\char`\"{}An error occurred\-: \char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+po\-::variables\-\_\-map \hyperlink{RectangularMapEntityCsvToInputFiles_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}{init\-Arguments\-Config} (po\-::options\-\_\-description \&usage\-Description, int argc, char $\ast$$\ast$argv)
+\item 
+void \hyperlink{RectangularMapEntityCsvToInputFiles_8cpp_a49535fad6e4e5f21ee2eae91dff5a831}{print\-Help\-Information} (const po\-::variables\-\_\-map \&vm, const po\-::options\-\_\-description \&usage\-Description)
+\item 
+void \hyperlink{RectangularMapEntityCsvToInputFiles_8cpp_a573a6d091545f311c155eb4f04c8a2cb}{print\-Wrong\-Parameters} ()
+\item 
+void \hyperlink{RectangularMapEntityCsvToInputFiles_8cpp_acd4e13a2a763444dac4b73b728fffcdc}{set\-Number\-Iterator\-Type} (const po\-::variables\-\_\-map \&vm, \hyperlink{namespacemultiscale_a6ef911f4d48a4bf5e657c237ec169ff5}{Number\-Iterator\-Type} \&number\-Iterator\-Type)
+\item 
+bool \hyperlink{RectangularMapEntityCsvToInputFiles_8cpp_a30cff3e42ff60918cc6ee280c0a08e20}{are\-Valid\-Parameters} (string \&input\-Filepath, string \&output\-Filename, unsigned int \&height, unsigned int \&width, unsigned int \&nr\-Of\-Entities, unsigned int \&max\-Pileup, \hyperlink{namespacemultiscale_a6ef911f4d48a4bf5e657c237ec169ff5}{Number\-Iterator\-Type} \&number\-Iterator\-Type, int argc, char $\ast$$\ast$argv)
+\item 
+int \hyperlink{RectangularMapEntityCsvToInputFiles_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{RectangularMapEntityCsvToInputFiles_8cpp_aed46bc434b6a10f9663dbbe5fd15349f}{\index{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}!E\-R\-R\-\_\-\-C\-O\-D\-E@{E\-R\-R\-\_\-\-C\-O\-D\-E}}
+\index{E\-R\-R\-\_\-\-C\-O\-D\-E@{E\-R\-R\-\_\-\-C\-O\-D\-E}!RectangularMapEntityCsvToInputFiles.cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}}
+\subsubsection[{E\-R\-R\-\_\-\-C\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-C\-O\-D\-E~1}}\label{RectangularMapEntityCsvToInputFiles_8cpp_aed46bc434b6a10f9663dbbe5fd15349f}
+
+
+Definition at line 28 of file Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp.
+
+
+
+Referenced by main().
+
+\hypertarget{RectangularMapEntityCsvToInputFiles_8cpp_a7a18f09d3bb5a5f03a55546e38f8efd8}{\index{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}!E\-R\-R\-\_\-\-M\-S\-G@{E\-R\-R\-\_\-\-M\-S\-G}}
+\index{E\-R\-R\-\_\-\-M\-S\-G@{E\-R\-R\-\_\-\-M\-S\-G}!RectangularMapEntityCsvToInputFiles.cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}}
+\subsubsection[{E\-R\-R\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-M\-S\-G~\char`\"{}An error occurred\-: \char`\"{}}}\label{RectangularMapEntityCsvToInputFiles_8cpp_a7a18f09d3bb5a5f03a55546e38f8efd8}
+
+
+Definition at line 29 of file Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp.
+
+
+
+Referenced by main(), and print\-Wrong\-Parameters().
+
+
+
+\subsection{Function Documentation}
+\hypertarget{RectangularMapEntityCsvToInputFiles_8cpp_a30cff3e42ff60918cc6ee280c0a08e20}{\index{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}!are\-Valid\-Parameters@{are\-Valid\-Parameters}}
+\index{are\-Valid\-Parameters@{are\-Valid\-Parameters}!RectangularMapEntityCsvToInputFiles.cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}}
+\subsubsection[{are\-Valid\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}bool are\-Valid\-Parameters (
+\begin{DoxyParamCaption}
+\item[{string \&}]{input\-Filepath, }
+\item[{string \&}]{output\-Filename, }
+\item[{unsigned int \&}]{height, }
+\item[{unsigned int \&}]{width, }
+\item[{unsigned int \&}]{nr\-Of\-Entities, }
+\item[{unsigned int \&}]{max\-Pileup, }
+\item[{{\bf Number\-Iterator\-Type} \&}]{number\-Iterator\-Type, }
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{RectangularMapEntityCsvToInputFiles_8cpp_a30cff3e42ff60918cc6ee280c0a08e20}
+
+
+Definition at line 66 of file Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp.
+
+
+
+References init\-Arguments\-Config(), print\-Help\-Information(), and set\-Number\-Iterator\-Type().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{RectangularMapEntityCsvToInputFiles_8cpp_a30cff3e42ff60918cc6ee280c0a08e20_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{RectangularMapEntityCsvToInputFiles_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}{\index{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}!init\-Arguments\-Config@{init\-Arguments\-Config}}
+\index{init\-Arguments\-Config@{init\-Arguments\-Config}!RectangularMapEntityCsvToInputFiles.cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}}
+\subsubsection[{init\-Arguments\-Config}]{\setlength{\rightskip}{0pt plus 5cm}po\-::variables\-\_\-map init\-Arguments\-Config (
+\begin{DoxyParamCaption}
+\item[{po\-::options\-\_\-description \&}]{usage\-Description, }
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{RectangularMapEntityCsvToInputFiles_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}
+
+
+Definition at line 33 of file Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp.
+
+\hypertarget{RectangularMapEntityCsvToInputFiles_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}!main@{main}}
+\index{main@{main}!RectangularMapEntityCsvToInputFiles.cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{RectangularMapEntityCsvToInputFiles_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 104 of file Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp.
+
+
+
+References are\-Valid\-Parameters(), multiscale\-::video\-::\-Rectangular\-Entity\-Csv\-To\-Input\-Files\-Converter\-::convert(), E\-R\-R\-\_\-\-C\-O\-D\-E, E\-R\-R\-\_\-\-M\-S\-G, print\-Wrong\-Parameters(), and multiscale\-::\-S\-T\-A\-N\-D\-A\-R\-D.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{RectangularMapEntityCsvToInputFiles_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{RectangularMapEntityCsvToInputFiles_8cpp_a49535fad6e4e5f21ee2eae91dff5a831}{\index{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}!print\-Help\-Information@{print\-Help\-Information}}
+\index{print\-Help\-Information@{print\-Help\-Information}!RectangularMapEntityCsvToInputFiles.cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}}
+\subsubsection[{print\-Help\-Information}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Help\-Information (
+\begin{DoxyParamCaption}
+\item[{const po\-::variables\-\_\-map \&}]{vm, }
+\item[{const po\-::options\-\_\-description \&}]{usage\-Description}
+\end{DoxyParamCaption}
+)}}\label{RectangularMapEntityCsvToInputFiles_8cpp_a49535fad6e4e5f21ee2eae91dff5a831}
+
+
+Definition at line 50 of file Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp.
+
+\hypertarget{RectangularMapEntityCsvToInputFiles_8cpp_a573a6d091545f311c155eb4f04c8a2cb}{\index{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}!print\-Wrong\-Parameters@{print\-Wrong\-Parameters}}
+\index{print\-Wrong\-Parameters@{print\-Wrong\-Parameters}!RectangularMapEntityCsvToInputFiles.cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}}
+\subsubsection[{print\-Wrong\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Wrong\-Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{RectangularMapEntityCsvToInputFiles_8cpp_a573a6d091545f311c155eb4f04c8a2cb}
+
+
+Definition at line 55 of file Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-M\-S\-G.
+
+\hypertarget{RectangularMapEntityCsvToInputFiles_8cpp_acd4e13a2a763444dac4b73b728fffcdc}{\index{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}!set\-Number\-Iterator\-Type@{set\-Number\-Iterator\-Type}}
+\index{set\-Number\-Iterator\-Type@{set\-Number\-Iterator\-Type}!RectangularMapEntityCsvToInputFiles.cpp@{Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp}}
+\subsubsection[{set\-Number\-Iterator\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void set\-Number\-Iterator\-Type (
+\begin{DoxyParamCaption}
+\item[{const po\-::variables\-\_\-map \&}]{vm, }
+\item[{{\bf Number\-Iterator\-Type} \&}]{number\-Iterator\-Type}
+\end{DoxyParamCaption}
+)}}\label{RectangularMapEntityCsvToInputFiles_8cpp_acd4e13a2a763444dac4b73b728fffcdc}
+
+
+Definition at line 61 of file Rectangular\-Map\-Entity\-Csv\-To\-Input\-Files.\-cpp.
+
+
+
+References multiscale\-::\-L\-E\-X\-I\-C\-O\-G\-R\-A\-P\-H\-I\-C.
+

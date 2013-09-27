@@ -275,7 +275,7 @@ $(document).ready(function(){initNavTree('Cluster_8cpp_source.html','');});
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    vector&lt;Point2f&gt; entitiesConvexHull = <a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points.">getEntitiesConvexHull</a>();</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">double</span> triangleArea = 0;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a1fed629a9f290fe050c515aa2d0d799d" title="Find the minimum area enclosing triangle for the given polygon.">MinimumAreaEnclosingTriangle::find</a>(entitiesConvexHull, <a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html#a7678d48581202c3ecc3f1283a1730dfa">minAreaEnclosingTriangle</a>, triangleArea);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2a116b0cb1b5b8306d2483bd5d55bd68" title="Find the minimum area enclosing triangle for the given polygon.">MinimumAreaEnclosingTriangle::find</a>(entitiesConvexHull, <a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html#a7678d48581202c3ecc3f1283a1730dfa">minAreaEnclosingTriangle</a>, triangleArea);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)">Numeric::almostEqual</a>(triangleArea, 0)) ? 0</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                                   : (<a class="code" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac570cc755e52aeb9deacf12d223a4a3a">area</a> / triangleArea);</div>
@@ -324,7 +324,7 @@ $(document).ready(function(){initNavTree('Cluster_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="Cluster_8cpp.html">Cluster.cpp</a></li>
-    <li class="footer">Generated on Fri Aug 16 2013 14:42:31 for Multiscale by
+    <li class="footer">Generated on Fri Sep 27 2013 12:07:39 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
