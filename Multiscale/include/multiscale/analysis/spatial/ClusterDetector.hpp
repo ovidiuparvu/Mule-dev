@@ -150,11 +150,35 @@ namespace multiscale {
                                            vector<Cluster> &clusters);
 
                 //! Analyse the clusters
-                /*! Analyse the clusters and compute the average clusteredness and pile up degree
+                /*! Analyse the clusters and compute the angle and distance from the centre,
+                 *  average clusteredness degree and pile up degree
                  *
                  *  \param clusters Collection of clusters, each one with the updated measures
                  */
                 void analyseClusters(vector<Cluster> &clusters);
+
+                //! Analyse the clusters and compute the origin dependent values
+                /*! The values which depend on the origin point are the distance of the
+                 * cluster from the centre and the angle
+                 *
+                 *  \param clusters Collection of clusters, each one with the updated measures
+                 */
+                void analyseClustersOriginDependentValues(vector<Cluster> &clusters);
+
+                //! Update the cluster and compute the origin dependent values considering the convex hull
+                /*! The values which depend on the origin point are the distance of the
+                 * cluster from the centre and the angle
+                 *
+                 *  \param cluster              Cluster
+                 *  \param clusterConvexHull    Convex hull of the cluster
+                 */
+                void updateClusterOriginDependentValues(Cluster &cluster, const vector<Point> &clusterConvexHull);
+
+                //! Return the convex hull of the given cluster
+                /*!
+                 * \param cluster The given cluster
+                 */
+                vector<Point> getClusterConvexHull(Cluster &cluster);
 
                 //! Compute the clusteredness index for all the entities detected in the image
                 /*! Compute the clusteredness index for all the entities detected in the image using Silhouette cluster validity index

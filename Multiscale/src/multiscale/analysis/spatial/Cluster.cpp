@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/CircularityMeasure.hpp"
 #include "multiscale/analysis/spatial/Cluster.hpp"
+#include "multiscale/exception/ClusterException.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 #include "multiscale/util/MinimumAreaEnclosingTriangle.hpp"
 #include "multiscale/util/StringManipulator.hpp"
@@ -53,13 +54,34 @@ vector<Entity> Cluster::getEntities() const {
     return entities;
 }
 
+vector<Point2f> Cluster::getEntitiesConvexHull() {
+    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
+    vector<Point2f> entitiesConvexHull;
+
+    if (entities.size() > 0) {
+        convexHull(entitiesContourPoints, entitiesConvexHull, CONVEX_HULL_CLOCKWISE);
+    }
+
+    return entitiesConvexHull;
+}
+
+void Cluster::setOriginDependentMembers(double distanceFromOrigin, double angleWrtOrigin) {
+    validateOriginDependentValues(distanceFromOrigin, angleWrtOrigin);
+
+    this->distanceFromOrigin = distanceFromOrigin;
+    this->angle = angleWrtOrigin;
+}
+
 string Cluster::fieldNamesToString() {
-    return "Clusteredness degree,Pile up degree,Number of entities (ignoring pileup),Area,Perimeter,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
+    return "Clusteredness degree,Pile up degree,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
 }
 
 void Cluster::initialise() {
     this->clusterednessDegree = 0;
     this->pileUpDegree = 0;
+
+    this->distanceFromOrigin = 0;
+    this->angle = 0;
 
     this->minAreaEnclosingCircleRadius = 0;
 
@@ -89,15 +111,6 @@ vector<Point2f> Cluster::getEntitiesContourPoints() {
     }
 
     return contourPoints;
-}
-
-vector<Point2f> Cluster::getEntitiesConvexHull() {
-    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
-    vector<Point2f> entitiesConvexHull;
-
-    convexHull(entitiesContourPoints, entitiesConvexHull, CONVEX_HULL_CLOCKWISE);
-
-    return entitiesConvexHull;
 }
 
 void Cluster::updateSpatialCollectionSpecificValues() {
@@ -196,13 +209,27 @@ double Cluster::isCircularMeasure() {
 string Cluster::fieldValuesToString() {
     return StringManipulator::toString<double>(clusterednessDegree) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<unsigned int>(entities.size()) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(perimeter) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(distanceFromOrigin) + OUTPUT_SEPARATOR +
+           StringManipulator::toString<double>(angle) + OUTPUT_SEPARATOR +
            shapeAsString() + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(triangularMeasure) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(rectangularMeasure) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(circularMeasure) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.y);
+}
+
+void Cluster::validateOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin) {
+    if (!areValidOriginDependentValues(distanceFromOrigin, angleWrtOrigin)) {
+        throw ClusterException(ERR_ORIGIN_DEPENDENT_VALUES);
+    }
+}
+
+bool Cluster::areValidOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin) {
+    return (
+      (distanceFromOrigin >= 0) &&
+      (angleWrtOrigin >= 0)
+    );
 }

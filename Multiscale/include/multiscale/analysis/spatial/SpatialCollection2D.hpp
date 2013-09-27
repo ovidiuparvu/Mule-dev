@@ -35,6 +35,9 @@ namespace multiscale {
                 double area;                    /*!< Area of the spatial collection */
                 double perimeter;               /*!< Perimeter of the spatial collection */
 
+                double distanceFromOrigin;      /*!< Distance from the origin  */
+                double angle;                   /*!< Angle of the region wrt the origin */
+
                 double triangularMeasure;       /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is triangular */
                 double rectangularMeasure;      /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is rectangular */
                 double circularMeasure;         /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is circular */
@@ -60,6 +63,12 @@ namespace multiscale {
 
                 //! Get the perimeter
                 double getPerimeter();
+
+                //! Get the distance from the origin
+                double getDistanceFromOrigin();
+
+                //! Get the angle
+                double getAngle();
 
                 //! Get the shape best fitting the spatial collection
                 Shape2D getShape();

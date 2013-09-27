@@ -27,6 +27,18 @@ double SpatialCollection2D::getPerimeter() {
     return perimeter;
 }
 
+double SpatialCollection2D::getDistanceFromOrigin() {
+    updateMeasuresIfRequired();
+
+    return distanceFromOrigin;
+}
+
+double SpatialCollection2D::getAngle() {
+    updateMeasuresIfRequired();
+
+    return angle;
+}
+
 Shape2D SpatialCollection2D::getShape() {
     updateMeasuresIfRequired();
 

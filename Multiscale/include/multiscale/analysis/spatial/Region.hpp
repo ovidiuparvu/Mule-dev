@@ -26,9 +26,6 @@ namespace multiscale {
                 double density;             /*!< The average intensity of the pixels in the region
                                                  normalised to the interval [0, 1] */
 
-                double distanceFromOrigin;  /*!< Distance from the origin  */
-                double angle;               /*!< Angle of the region wrt the origin */
-
                 vector<Point> polygon;      /*!< Polygon defining the region */
 
             public:
@@ -39,12 +36,6 @@ namespace multiscale {
 
                 //! Get the density
                 double getDensity();
-
-                //! Get the distance from the origin
-                double getDistanceFromOrigin();
-
-                //! Get the angle
-                double getAngle();
 
                 //! Get the polygon defining the region
                 const vector<Point>& getPolygon();

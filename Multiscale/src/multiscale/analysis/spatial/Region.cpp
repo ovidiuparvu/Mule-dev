@@ -31,18 +31,6 @@ double Region::getDensity() {
     return density;
 }
 
-double Region::getDistanceFromOrigin() {
-    updateMeasuresIfRequired();
-
-    return distanceFromOrigin;
-}
-
-double Region::getAngle() {
-    updateMeasuresIfRequired();
-
-    return angle;
-}
-
 const vector<Point>& Region::getPolygon() {
     return polygon;
 }

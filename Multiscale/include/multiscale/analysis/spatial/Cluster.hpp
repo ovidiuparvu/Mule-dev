@@ -12,6 +12,8 @@
 using namespace cv;
 using namespace std;
 
+#define ERR_ORIGIN_DEPENDENT_VALUES "The origin dependent values are invalid (i.e. negative)."
+
 
 namespace multiscale {
 
@@ -59,6 +61,16 @@ namespace multiscale {
                 //! Get the collection of underlying entities
                 vector<Entity> getEntities() const;
 
+                //! Get the convex hull enclosing the collection of entities' contour points
+                vector<Point2f> getEntitiesConvexHull();
+
+                //! Set the values of the origin dependent members
+                /*!
+                 * \param distanceFromOrigin Distance from the origin
+                 * \param angleWrtOrigin     Angle with respect to the origin
+                 */
+                void setOriginDependentMembers(double distanceFromOrigin, double angleWrtOrigin);
+
                 //! Get a string representation of all the field names printed in the "toString" method
                 static string fieldNamesToString();
 
@@ -73,8 +85,6 @@ namespace multiscale {
                 //! Get the collection of entities' contour points
                 vector<Point2f> getEntitiesContourPoints();
 
-                //! Get the convex hull enclosing the collection of entities' contour points
-                vector<Point2f> getEntitiesConvexHull();
 
                 //! Update the values of all measures
                 void updateSpatialCollectionSpecificValues() override;
@@ -105,6 +115,20 @@ namespace multiscale {
 
                 //! Get a string representation of all the field values
                 string fieldValuesToString() override;
+
+                //! Validate the origin dependent values (i.e. non-negative)
+                /*!
+                 * \param distanceFromOrigin Distance from the origin
+                 * \param angleWrtOrigin     Angle with respect to the origin
+                 */
+                void validateOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin);
+
+                //! Check if the origin dependent values are valid (i.e. non-negative)
+                /*!
+                 * \param distanceFromOrigin Distance from the origin
+                 * \param angleWrtOrigin     Angle with respect to the origin
+                 */
+                bool areValidOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin);
 
         };
 
