@@ -92,7 +92,7 @@ namespace multiscale {
                 void updatePerimeter() override;
 
                 //! Update the point defining the centre of the cluster
-                void updateCentrePoint();
+                void updateCentrePoint() override;
 
                 //! Get the measure that the cluster has a triangular shape
                 double isTriangularMeasure() override;

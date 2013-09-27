@@ -8,12 +8,13 @@
 using namespace multiscale::analysis;
 
 
-Region::Region(double clusterednessDegree, double density, double distanceFromOrigin,
+Region::Region(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                double angleWrtOrigin, const vector<Point> &polygon) : SpatialCollection2D() {
-    validateInputValues(clusterednessDegree, density, distanceFromOrigin, angle, polygon);
+    validateInputValues(clusterednessDegree, density, area, distanceFromOrigin, angle, polygon);
 
     this->clusterednessDegree = clusterednessDegree;
     this->density = density;
+    this->area = area;
     this->distanceFromOrigin = distanceFromOrigin;
     this->angle = angle;
 
@@ -50,14 +51,14 @@ string Region::fieldNamesToString() {
     return "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
 }
 
-void Region::validateInputValues(double clusterednessDegree, double density, double distanceFromOrigin,
+void Region::validateInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                                  double angleWrtOrigin, const vector<Point> &polygon) {
-    if (!areValidInputValues(clusterednessDegree, density, distanceFromOrigin, angleWrtOrigin, polygon)) {
+    if (!areValidInputValues(clusterednessDegree, density, area, distanceFromOrigin, angleWrtOrigin, polygon)) {
         throw RegionException(ERR_INPUT);
     }
 }
 
-bool Region::areValidInputValues(double clusterednessDegree, double density, double distanceFromOrigin,
+bool Region::areValidInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                                  double angleWrtOrigin, const vector<Point> &polygon) {
     for (const Point &point : polygon) {
         if ((point.x < 0) || (point.y < 0)) {
@@ -68,6 +69,7 @@ bool Region::areValidInputValues(double clusterednessDegree, double density, dou
     return (
         (clusterednessDegree > 0) &&
         (density > 0) &&
+        (area > 0) &&
         (distanceFromOrigin > 0) &&
         (Numeric::lessOrEqual(0, angleWrtOrigin)) &&
         (Numeric::lessOrEqual(angleWrtOrigin, 360))
@@ -76,9 +78,7 @@ bool Region::areValidInputValues(double clusterednessDegree, double density, dou
 
 void Region::updateSpatialCollectionSpecificValues() {}
 
-void Region::updateArea() {
-    area = contourArea(polygon, CONTOUR_ORIENTED);
-}
+void Region::updateArea() {}
 
 void Region::updatePerimeter() {
     perimeter = arcLength(polygon, CONTOUR_CLOSED);

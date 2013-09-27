@@ -35,7 +35,7 @@ using namespace cv;
 #define EPSILON_MAX             100
 #define REGION_AREA_THRESH_MAX  200000
 #define THRESHOLD_MAX           255
-#define THRESHOLD_CLUSTEREDNESS 1
+#define THRESHOLD_CLUSTEREDNESS 0
 #define INTENSITY_MAX           255
 
 #define POLYGON_CLOSED          true
@@ -303,6 +303,18 @@ namespace multiscale {
                  */
                 void findGoodIntersectionPoints(const vector<Point> &polygonConvexHull, const Point &edgePointA,
                                                 const Point &edgePointB, vector<Point> &goodPointsForAngle);
+
+                //! Compute the area of the given polygon considering holes
+                /*!
+                 * \param polygon The given polygon
+                 */
+                double regionArea(const vector<Point> &polygon);
+
+                //! Compute the area of the white holes in the given matrix
+                /*!
+                 * \param matrix The given matrix
+                 */
+                double regionHolesArea(const Mat &matrix);
 
                 //! Clear the element present in the regions vector
                 void clearPreviousDetectionResults() override;

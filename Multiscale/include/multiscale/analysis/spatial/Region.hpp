@@ -33,7 +33,7 @@ namespace multiscale {
 
             public:
                 
-                Region(double clusterednessDegree, double density, double distanceFromOrigin,
+                Region(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                        double angleWrtOrigin, const vector<Point> &polygon);
                 ~Region();
 
@@ -68,11 +68,12 @@ namespace multiscale {
                  *
                  * \param clusterednessDegree   The clusteredness degree of the region
                  * \param density               The density of the region
+                 * \param area                  The area of the region considering holes
                  * \param distanceFromOrigin    The distance from the origin
                  * \param angleWrtOrigin        The angle computed wrt to the origin
                  * \param polygon               The polygon
                  */
-                void validateInputValues(double clusterednessDegree, double density, double distanceFromOrigin,
+                void validateInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                                          double angleWrtOrigin, const vector<Point> &polygon);
 
                 //! Check if the input values are valid or not
@@ -89,11 +90,12 @@ namespace multiscale {
                  *
                  * \param clusterednessDegree   The clusteredness degree of the region
                  * \param density               The density of the region
+                 * \param area                  The area of the region considering holes
                  * \param distanceFromOrigin    The distance from the origin
                  * \param angleWrtOrigin        The angle computed wrt to the origin
                  * \param polygon               The polygon
                  */
-                bool areValidInputValues(double clusterednessDegree, double density, double distanceFromOrigin,
+                bool areValidInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                                          double angleWrtOrigin, const vector<Point> &polygon);
 
                 //! Update the value of all class specific measures

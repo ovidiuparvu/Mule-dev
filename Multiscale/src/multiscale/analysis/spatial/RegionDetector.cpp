@@ -233,10 +233,11 @@ Region RegionDetector::createRegionFromPolygon(const vector<Point> &polygon) {
 
     double clusterednessDegree = regionClusterednessDegree(polygon);
     double density = regionDensity(polygon);
+    double area = regionArea(polygon);
     double distance = Geometry2D::distanceBtwPoints(polygon[minDistancePointIndex], origin);
     double angle = regionAngle(polygon, minDistancePointIndex);
 
-    return Region(clusterednessDegree, density, distance, angle, polygon);
+    return Region(clusterednessDegree, density, area, distance, angle, polygon);
 }
 
 bool RegionDetector::isValidRegion(const vector<Point> &polygon) {
@@ -315,6 +316,28 @@ void RegionDetector::findGoodIntersectionPoints(const vector<Point> &polygonConv
             goodPointsForAngle.push_back(intersection);
         }
     }
+}
+
+double RegionDetector::regionArea(const vector<Point> &polygon) {
+    Mat mask(Mat::zeros(image.rows, image.cols, image.type()));
+    Mat thresholdedImage, regionHoles;
+
+    drawContours(mask, vector<vector<Point>>(1, polygon), -1, Scalar(INTENSITY_MAX), CV_FILLED);
+    threshold(image, thresholdedImage, THRESHOLD_CLUSTEREDNESS, THRESHOLD_MAX, THRESH_BINARY);
+    bitwise_not(thresholdedImage, regionHoles, mask);
+
+    return (contourArea(polygon, CONTOUR_AREA_ORIENTED) - regionHolesArea(regionHoles));
+}
+
+double RegionDetector::regionHolesArea(const Mat &matrix) {
+    vector<vector<Point> > contours = findContoursInImage(matrix);
+    double area = 0;
+
+    for (const vector<Point> &contour : contours) {
+        area += contourArea(contour, CONTOUR_AREA_ORIENTED);
+    }
+
+    return area;
 }
 
 void RegionDetector::clearPreviousDetectionResults() {
