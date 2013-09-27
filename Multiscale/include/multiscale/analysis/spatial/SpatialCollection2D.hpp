@@ -81,6 +81,9 @@ namespace multiscale {
                 //! Update the values of all measures specific to the derived classes
                 virtual void updateSpatialCollectionSpecificValues() = 0;
 
+                //! Update the value of the clusteredness degree
+                virtual void updateClusterednessDegree() = 0;
+
                 //! Update the value of the area
                 virtual void updateArea() = 0;
 

@@ -102,7 +102,6 @@ vector<Point2f> Cluster::getEntitiesConvexHull() {
 
 void Cluster::updateSpatialCollectionSpecificValues() {
     updatePileUpDegree();
-    updateClusterednessDegree();
 }
 
 void Cluster::updateClusterednessDegree() {

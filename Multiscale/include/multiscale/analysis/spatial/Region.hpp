@@ -101,6 +101,9 @@ namespace multiscale {
                 //! Update the value of all class specific measures
                 void updateSpatialCollectionSpecificValues() override;
 
+                //! Update the value of the clusteredness degree
+                void updateClusterednessDegree() override;
+
                 //! Update the area
                 void updateArea() override;
 

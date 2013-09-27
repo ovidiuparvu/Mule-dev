@@ -80,7 +80,7 @@ namespace multiscale {
                 void updateSpatialCollectionSpecificValues() override;
 
                 //! Update the value of the clusteredness degree
-                void updateClusterednessDegree();
+                void updateClusterednessDegree() override;
 
                 //! Update the value of the pile up degree
                 void updatePileUpDegree();

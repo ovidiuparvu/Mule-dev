@@ -78,6 +78,8 @@ bool Region::areValidInputValues(double clusterednessDegree, double density, dou
 
 void Region::updateSpatialCollectionSpecificValues() {}
 
+void Region::updateClusterednessDegree() {}
+
 void Region::updateArea() {}
 
 void Region::updatePerimeter() {

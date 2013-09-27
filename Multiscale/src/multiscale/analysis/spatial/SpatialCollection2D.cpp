@@ -55,6 +55,7 @@ void SpatialCollection2D::updateMeasuresIfRequired() {
 }
 
 void SpatialCollection2D::updateMeasures() {
+    updateClusterednessDegree();
     updateArea();
     updatePerimeter();
     updateShape();
