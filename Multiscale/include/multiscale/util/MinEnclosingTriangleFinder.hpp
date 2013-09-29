@@ -1,5 +1,5 @@
-#ifndef MINIMUMAREAENCLOSINGTRIANGLE_HPP
-#define MINIMUMAREAENCLOSINGTRIANGLE_HPP
+#ifndef MINENCLOSINGTRIANGLEFINDER_HPP
+#define MINENCLOSINGTRIANGLEFINDER_HPP
 
 #include "multiscale/util/Geometry2D.hpp"
 
@@ -31,111 +31,114 @@ namespace multiscale {
      * J. O’Rourke, A. Aggarwal, S. Maddila, and M. Baldwin, ‘An optimal algorithm for finding minimal
      * enclosing triangles’, Journal of Algorithms, vol. 7, no. 2, pp. 258–269, Jun. 1986.
      */
-    class MinimumAreaEnclosingTriangle {
+    class MinEnclosingTriangleFinder {
 
         private:
 
-            static unsigned int validationFlag; /*!< Validation flag can take the following values:
-                                                         - VALIDATION_SIDE_A_TANGENT;
-                                                         - VALIDATION_SIDE_B_TANGENT;
-                                                         - VALIDATION_SIDES_FLUSH.
-                                                 */
+            unsigned int validationFlag; /*!< Validation flag can take the following values:
+                                                  - VALIDATION_SIDE_A_TANGENT;
+                                                  - VALIDATION_SIDE_B_TANGENT;
+                                                  - VALIDATION_SIDES_FLUSH.
+                                         */
 
-            static Point2f vertexA;             /*!< Vertex A of the current considered enclosing triangle */
-            static Point2f vertexB;             /*!< Vertex B of the current considered enclosing triangle */
-            static Point2f vertexC;             /*!< Vertex C of the current considered enclosing triangle */
+            Point2f vertexA;             /*!< Vertex A of the current considered enclosing triangle */
+            Point2f vertexB;             /*!< Vertex B of the current considered enclosing triangle */
+            Point2f vertexC;             /*!< Vertex C of the current considered enclosing triangle */
 
-            static Point2f sideAStartVertex;    /*!< Starting vertex for side A of triangle */
-            static Point2f sideAEndVertex;      /*!< Ending vertex for side A of triangle */
+            Point2f sideAStartVertex;    /*!< Starting vertex for side A of triangle */
+            Point2f sideAEndVertex;      /*!< Ending vertex for side A of triangle */
 
-            static Point2f sideBStartVertex;    /*!< Starting vertex for side B of triangle */
-            static Point2f sideBEndVertex;      /*!< Ending vertex for side B of triangle */
+            Point2f sideBStartVertex;    /*!< Starting vertex for side B of triangle */
+            Point2f sideBEndVertex;      /*!< Ending vertex for side B of triangle */
 
-            static Point2f sideCStartVertex;    /*!< Starting vertex for side C of triangle */
-            static Point2f sideCEndVertex;      /*!< Ending vertex for side C of triangle */
+            Point2f sideCStartVertex;    /*!< Starting vertex for side C of triangle */
+            Point2f sideCEndVertex;      /*!< Ending vertex for side C of triangle */
 
-            static double area;                 /*!< Area of the current considered enclosing triangle */
+            double area;                 /*!< Area of the current considered enclosing triangle */
 
-            static unsigned int a;              /*!< Index of point "a"; see paper for more details */
-            static unsigned int b;              /*!< Index of point "b"; see paper for more details */
-            static unsigned int c;              /*!< Index of point "c"; see paper for more details */
+            unsigned int a;              /*!< Index of point "a"; see paper for more details */
+            unsigned int b;              /*!< Index of point "b"; see paper for more details */
+            unsigned int c;              /*!< Index of point "c"; see paper for more details */
 
-            static unsigned int nrOfPoints;     /*!< Number of points defining the polygon */
+            unsigned int nrOfPoints;     /*!< Number of points defining the polygon */
 
-            static vector<Point2f> polygon;     /*!< Polygon for which the minimum area enclosing triangle is computed */
+            vector<Point2f> polygon;     /*!< Polygon for which the minimum area enclosing triangle is computed */
 
         public:
+
+            MinEnclosingTriangleFinder();
+            ~MinEnclosingTriangleFinder();
 
             //! Find the minimum area enclosing triangle for the given polygon
             /*!
              * \param polygon                           Polygon of points for which the minimum area enclosing triangle will be  found
-             * \param minimumAreaEnclosingTriangle      Minimum area triangle enclosing the given polygon
-             * \param minimumAreaEnclosingTriangleArea  Area of the minimum area enclosing triangle
+             * \param MinEnclosingTriangleFinder      Minimum area triangle enclosing the given polygon
+             * \param MinEnclosingTriangleFinderArea  Area of the minimum area enclosing triangle
              */
-            static void find(const vector<Point2f> &polygon, vector<Point2f> &minimumAreaEnclosingTriangle,
-                             double &minimumAreaEnclosingTriangleArea);
+            void find(const vector<Point2f> &polygon, vector<Point2f> &MinEnclosingTriangleFinder,
+                      double &MinEnclosingTriangleFinderArea);
 
         private:
 
             //! Initialisation function for the class
-            static void initialise();
+            void initialise();
 
             //! Find the minimum area enclosing triangle for the given polygon
             /*!
-             * \param minimumAreaEnclosingTriangle      Minimum area triangle enclosing the given polygon
-             * \param minimumAreaEnclosingTriangleArea  Area of the minimum area enclosing triangle
+             * \param MinEnclosingTriangleFinder      Minimum area triangle enclosing the given polygon
+             * \param MinEnclosingTriangleFinderArea  Area of the minimum area enclosing triangle
              */
-            static void findMinimumAreaEnclosingTriangle(vector<Point2f> &minimumAreaEnclosingTriangle,
-                                                         double &minimumAreaEnclosingTriangleArea);
+            void findMinEnclosingTriangleFinder(vector<Point2f> &MinEnclosingTriangleFinder,
+                                                  double &MinEnclosingTriangleFinderArea);
 
             //! Advance b to the right chain
             /*!
              * See paper for more details
              */
-            static void advanceBToRightChain();
+            void advanceBToRightChain();
 
             //! Move "a" if it is low and "b" if it is high
             /*!
              * See paper for more details
              */
-            static void moveAIfLowAndBIfHigh();
+            void moveAIfLowAndBIfHigh();
 
             //! Search for the tangency of side B
             /*!
              * See paper for more details
              */
-            static void searchForBTangency();
+            void searchForBTangency();
 
             //! Check if tangency for side B was not obtained
             /*!
              * See paper for more details
              */
-            static bool isNotBTangency();
+            bool isNotBTangency();
 
             //! Update sides A and C
             /*!
              * Side C will have as start and end vertices the polygon points "c" and "c-1"
              * Side A will have as start and end vertices the polygon points "a" and "a-1"
              */
-            static void updateSidesCA();
+            void updateSidesCA();
 
             //! Update sides B and possibly A if tangency for side B was not obtained
             /*!
              * See paper for more details
              */
-            static void updateSidesBA();
+            void updateSidesBA();
 
             //! Set side B if tangency for side B was obtained
             /*!
              * See paper for more details
              */
-            static void updateSideB();
+            void updateSideB();
 
             //! Update the triangle vertices after all sides were set and check if a local minimal triangle was found or not
             /*!
              * See paper for more details
              */
-            static bool isLocalMinimalTriangle();
+            bool isLocalMinimalTriangle();
 
             //! Check if the found minimal triangle is valid
             /*!
@@ -143,45 +146,45 @@ namespace multiscale {
              *
              * See paper for more details
              */
-            static bool isValidMinimalTriangle();
+            bool isValidMinimalTriangle();
 
             //! Update the current minimum area enclosing triangle if the newly obtained one has a smaller area
             /*!
-             * \param minimumAreaEnclosingTriangle      Minimum area triangle enclosing the given polygon
-             * \param minimumAreaEnclosingTriangleArea  Area of the minimum area triangle enclosing the given polygon
+             * \param MinEnclosingTriangleFinder      Minimum area triangle enclosing the given polygon
+             * \param MinEnclosingTriangleFinderArea  Area of the minimum area triangle enclosing the given polygon
              */
-            static void updateMinimumAreaEnclosingTriangle(vector<Point2f> &minimumAreaEnclosingTriangle, double &minimumAreaEnclosingTriangleArea);
+            void updateMinEnclosingTriangleFinder(vector<Point2f> &MinEnclosingTriangleFinder, double &MinEnclosingTriangleFinderArea);
 
             //! Return the middle point of side B
-            static bool middlePointOfSideB(Point2f& middlePointOfSideB);
+            bool middlePointOfSideB(Point2f& middlePointOfSideB);
 
             //! Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon below the point polygon[polygonPointIndex]
             /*!
              * \param gammaPoint Gamma(p)
              * \param polygonPointIndex Index of the polygon point which is considered when determining the line
              */
-            static bool intersectsBelow(const Point2f &gammaPoint, unsigned int polygonPointIndex);
+            bool intersectsBelow(const Point2f &gammaPoint, unsigned int polygonPointIndex);
 
             //! Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon above the point polygon[polygonPointIndex]
             /*!
              * \param gammaPoint        Gamma(p)
              * \param polygonPointIndex Index of the polygon point which is considered when determining the line
              */
-            static bool intersectsAbove(const Point2f &gammaPoint, unsigned int polygonPointIndex);
+            bool intersectsAbove(const Point2f &gammaPoint, unsigned int polygonPointIndex);
 
             //! Check if/where the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon
             /*!
              * \param angleOfGammaAndPoint  Angle between gammaPoint and polygon[polygonPointIndex]
              * \param polygonPointIndex     Index of the polygon point which is considered when determining the line
              */
-            static unsigned int intersects(double angleOfGammaAndPoint, unsigned int polygonPointIndex);
+            unsigned int intersects(double angleOfGammaAndPoint, unsigned int polygonPointIndex);
 
             //! If (gamma(x) x) intersects P between successorOrPredecessorIndex and pointIntex is it above/below?
             /*!
              * \param successorOrPredecessorIndex Index of the successor or predecessor
              * \param pointIndex                  Index of the point x in the polygon
              */
-            static unsigned int intersectsAboveOrBelow(unsigned int successorOrPredecessorIndex, unsigned int pointIndex);
+            unsigned int intersectsAboveOrBelow(unsigned int successorOrPredecessorIndex, unsigned int pointIndex);
 
             //! Check if the angle of the flush edge or its opposite angle lie between the angle of the predecessor and successor
             /*!
@@ -189,7 +192,7 @@ namespace multiscale {
              * \param anglePredecessor  Angle of the predecessor
              * \param angleSuccessor    Angle of the successor
              */
-            static bool isFlushAngleBetweenPredecessorAndSuccessor(double &angleFlushEdge, double anglePredecessor, double angleSuccessor);
+            bool isFlushAngleBetweenPredecessorAndSuccessor(double &angleFlushEdge, double anglePredecessor, double angleSuccessor);
 
             //! Check if the angle of the line (gamma(p) p) or its opposite angle lie between angle1 and angle2
             /*!
@@ -197,14 +200,14 @@ namespace multiscale {
              * \param angle1        One of the boundary angles
              * \param angle2        Another boundary angle
              */
-            static bool isGammaAngleBetween(double &gammaAngle, double angle1, double angle2);
+            bool isGammaAngleBetween(double &gammaAngle, double angle1, double angle2);
 
             //! Check if the angle of the line (gamma(p) p) or its opposite angle is equal to the given angle
             /*!
              * \param gammaAngle    Angle of the line (gamma(p) p)
              * \param angle         Angle to compare against
              */
-            static bool isGammaAngleEqualTo(double &gammaAngle, double angle);
+            bool isGammaAngleEqualTo(double &gammaAngle, double angle);
 
             //! Compute the height of the point specified by the given index
             /*!
@@ -212,7 +215,7 @@ namespace multiscale {
              *
              * \param polygonPointIndex Index of the polygon point
              */
-            static double height(unsigned int polygonPointIndex);
+            double height(unsigned int polygonPointIndex);
 
             //! Compute the height of the point
             /*!
@@ -220,7 +223,7 @@ namespace multiscale {
              *
              * \param polygonPoint Polygon point
              */
-            static double height(const Point2f &polygonPoint);
+            double height(const Point2f &polygonPoint);
 
             //! Find gamma for a given point "p" specified by its index
             /*!
@@ -238,7 +241,7 @@ namespace multiscale {
              * \param polygonPointIndex Index of the polygon point
              * \param gammaPoint        Point2f gamma(polygon[polygonPointIndex])
              */
-            static bool gamma(unsigned int polygonPointIndex, Point2f &gammaPoint);
+            bool gamma(unsigned int polygonPointIndex, Point2f &gammaPoint);
 
             //! Find vertex C which lies on side B at a distance = 2 * height(a-1) from side C
             /*!
@@ -250,7 +253,7 @@ namespace multiscale {
              *
              * See paper and formula for distance from point to a line for more details
              */
-            static Point2f findVertexCOnSideB();
+            Point2f findVertexCOnSideB();
 
             //! Find the intersection points to compute gamma(point)
             /*!
@@ -262,10 +265,10 @@ namespace multiscale {
              * \param intersectionPoint1    First intersection point between one pair of lines
              * \param intersectionPoint2    Second intersection point between another pair of lines
              */
-            static bool findGammaIntersectionPoints(unsigned int polygonPointIndex, const Point2f &side1StartVertex,
-                                                    const Point2f &side1EndVertex, const Point2f &side2StartVertex,
-                                                    const Point2f &side2EndVertex, Point2f &intersectionPoint1,
-                                                    Point2f &intersectionPoint2);
+            bool findGammaIntersectionPoints(unsigned int polygonPointIndex, const Point2f &side1StartVertex,
+                                             const Point2f &side1EndVertex, const Point2f &side2StartVertex,
+                                             const Point2f &side2EndVertex, Point2f &intersectionPoint1,
+                                             Point2f &intersectionPoint2);
 
             //! Check if the given lines are identical or not
             /*!
@@ -278,7 +281,7 @@ namespace multiscale {
              * \param side2Params       Vector containing the values of a, b and c for side 2
              * \param sideCExtraParam   Extra parameter for the flush edge C
              */
-            static bool areIdenticalLines(const vector<double> &side1Params, const vector<double> &side2Params, double sideCExtraParam);
+            bool areIdenticalLines(const vector<double> &side1Params, const vector<double> &side2Params, double sideCExtraParam);
 
             //! Check if the given lines intersect or not. If the lines intersect find their intersection points.
             /*!
@@ -293,8 +296,8 @@ namespace multiscale {
              * \param intersectionPoint1    The first intersection point, if it exists
              * \param intersectionPoint2    The second intersection point, if it exists
              */
-            static bool areIntersectingLines(const vector<double> &side1Params, const vector<double> &side2Params, double sideCExtraParam,
-                                             Point2f &intersectionPoint1, Point2f &intersectionPoint2);
+            bool areIntersectingLines(const vector<double> &side1Params, const vector<double> &side2Params, double sideCExtraParam,
+                                      Point2f &intersectionPoint1, Point2f &intersectionPoint2);
 
             //! Get the line equation parameters "a", "b" and "c" for the line determined by points "p" and "q"
             /*!
@@ -304,13 +307,13 @@ namespace multiscale {
              * \param p One point for defining the equation of the line
              * \param q Second point for defining the equation of the line
              */
-            static vector<double> lineEquationParameters(const Point2f& p, const Point2f &q);
+            vector<double> lineEquationParameters(const Point2f& p, const Point2f &q);
 
             //! Advance the given index with one position
             /*!
              * \param index Index of the point
              */
-            static void advance(unsigned int &index);
+            void advance(unsigned int &index);
 
             //! Return the succesor of the provided point index
             /*!
@@ -319,7 +322,7 @@ namespace multiscale {
              *
              * \param index Index of the point
              */
-            static unsigned int successor(unsigned int index);
+            unsigned int successor(unsigned int index);
 
             //! Return the predecessor of the provided point index
             /*!
@@ -328,7 +331,7 @@ namespace multiscale {
              *
              * \param index Index of the point
              */
-            static unsigned int predecessor(unsigned int index);
+            unsigned int predecessor(unsigned int index);
 
     };
 

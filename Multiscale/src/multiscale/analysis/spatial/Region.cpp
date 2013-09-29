@@ -1,7 +1,7 @@
 #include "multiscale/analysis/spatial/CircularityMeasure.hpp"
 #include "multiscale/analysis/spatial/Region.hpp"
 #include "multiscale/exception/RegionException.hpp"
-#include "multiscale/util/MinimumAreaEnclosingTriangle.hpp"
+#include "multiscale/util/MinEnclosingTriangleFinder.hpp"
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
@@ -81,7 +81,7 @@ double Region::isTriangularMeasure() {
 
     convexHull(polygon, contourConvexHull, CONVEX_HULL_CLOCKWISE);
 
-    MinimumAreaEnclosingTriangle::find(convertPoints(contourConvexHull), minAreaEnclosingTriangle, triangleArea);
+    MinEnclosingTriangleFinder().find(convertPoints(contourConvexHull), minAreaEnclosingTriangle, triangleArea);
 
     return (Numeric::almostEqual(triangleArea, 0)) ? 0
                                                    : (area / triangleArea);

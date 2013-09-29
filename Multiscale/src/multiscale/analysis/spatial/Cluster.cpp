@@ -2,7 +2,7 @@
 #include "multiscale/analysis/spatial/Cluster.hpp"
 #include "multiscale/exception/ClusterException.hpp"
 #include "multiscale/util/Geometry2D.hpp"
-#include "multiscale/util/MinimumAreaEnclosingTriangle.hpp"
+#include "multiscale/util/MinEnclosingTriangleFinder.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
 using namespace multiscale::analysis;
@@ -176,7 +176,7 @@ double Cluster::isTriangularMeasure() {
     vector<Point2f> entitiesConvexHull = getEntitiesConvexHull();
     double triangleArea = 0;
 
-    MinimumAreaEnclosingTriangle::find(entitiesConvexHull, minAreaEnclosingTriangle, triangleArea);
+    MinEnclosingTriangleFinder().find(entitiesConvexHull, minAreaEnclosingTriangle, triangleArea);
 
     return (Numeric::almostEqual(triangleArea, 0)) ? 0
                                                    : (area / triangleArea);
