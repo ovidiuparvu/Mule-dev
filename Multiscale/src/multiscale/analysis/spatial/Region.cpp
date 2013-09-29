@@ -77,11 +77,10 @@ void Region::updatePerimeter() {
 double Region::isTriangularMeasure() {
     vector<Point2f> minAreaEnclosingTriangle;
     vector<Point> contourConvexHull;
-    double triangleArea = 0;
 
     convexHull(polygon, contourConvexHull, CONVEX_HULL_CLOCKWISE);
 
-    MinEnclosingTriangleFinder().find(convertPoints(contourConvexHull), minAreaEnclosingTriangle, triangleArea);
+    double triangleArea = MinEnclosingTriangleFinder().find(convertPoints(contourConvexHull), minAreaEnclosingTriangle);
 
     return (Numeric::almostEqual(triangleArea, 0)) ? 0
                                                    : (area / triangleArea);

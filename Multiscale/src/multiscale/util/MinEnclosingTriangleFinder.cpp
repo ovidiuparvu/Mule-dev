@@ -13,23 +13,54 @@ MinEnclosingTriangleFinder::MinEnclosingTriangleFinder() {}
 
 MinEnclosingTriangleFinder::~MinEnclosingTriangleFinder() {}
 
-void MinEnclosingTriangleFinder::find(const vector<Point2f> &polygon, vector<Point2f> &MinEnclosingTriangleFinder,
-                                      double &MinEnclosingTriangleFinderArea) {
-    // Check if the polygon is convex and is a k-gon with k > 3
-    assert(isContourConvex(polygon) && (polygon.size() > 3));
+double MinEnclosingTriangleFinder::find(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle) {
+    assert(points.size() > 0);
 
-    this->polygon = polygon;
-    MinEnclosingTriangleFinderArea = numeric_limits<double>::max();
+    initialise(points, minEnclosingTriangle);
 
-    // Clear all points previously stored in the vector
-    MinEnclosingTriangleFinder.clear();
-
-    initialise();
-
-    findMinEnclosingTriangleFinder(MinEnclosingTriangleFinder, MinEnclosingTriangleFinderArea);
+    if (polygon.size() > 3) {
+        return findMinEnclosingTriangle(polygon, minEnclosingTriangle);
+    } else {
+        return returnMinEnclosingTriangle(polygon, minEnclosingTriangle);
+    }
 }
 
-void MinEnclosingTriangleFinder::initialise() {
+void MinEnclosingTriangleFinder::initialise(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle) {
+    // Clear all points previously stored in the vector
+    minEnclosingTriangle.clear();
+
+    initialiseConvexPolygon(points);
+}
+
+void MinEnclosingTriangleFinder::initialiseConvexPolygon(const vector<Point2f> &points) {
+    polygon.clear();
+
+    convexHull(points, polygon, CONVEX_HULL_CLOCKWISE);
+}
+
+double MinEnclosingTriangleFinder::findMinEnclosingTriangle(const vector<Point2f> &polygon,
+                                                            vector<Point2f> &minEnclosingTriangle) {
+    double minEnclosingTriangleArea = numeric_limits<double>::max();
+
+    initialiseAlgorithmVariables();
+
+    findMinEnclosingTriangle(minEnclosingTriangle, minEnclosingTriangleArea);
+
+    return minEnclosingTriangleArea;
+}
+
+double MinEnclosingTriangleFinder::returnMinEnclosingTriangle(const vector<Point2f> &polygon,
+                                                              vector<Point2f> &minEnclosingTriangle) {
+    int nrOfPolygonPoints = polygon.size();
+
+    for (int i = 0; i < 3; i++) {
+        minEnclosingTriangle.push_back(polygon[i % nrOfPolygonPoints]);
+    }
+
+    return Geometry2D::areaOfTriangle(minEnclosingTriangle[0], minEnclosingTriangle[1], minEnclosingTriangle[2]);
+}
+
+void MinEnclosingTriangleFinder::initialiseAlgorithmVariables() {
     nrOfPoints = polygon.size();
 
     a = 1;
@@ -37,8 +68,8 @@ void MinEnclosingTriangleFinder::initialise() {
     c = 0;
 }
 
-void MinEnclosingTriangleFinder::findMinEnclosingTriangleFinder(vector<Point2f> &MinEnclosingTriangleFinder,
-                                                                  double &MinEnclosingTriangleFinderArea) {
+void MinEnclosingTriangleFinder::findMinEnclosingTriangle(vector<Point2f> &minEnclosingTriangle,
+                                                          double &minEnclosingTriangleArea) {
     for (c = 0; c < nrOfPoints; c++) {
         advanceBToRightChain();
         moveAIfLowAndBIfHigh();
@@ -53,7 +84,7 @@ void MinEnclosingTriangleFinder::findMinEnclosingTriangleFinder(vector<Point2f> 
         }
 
         if (isLocalMinimalTriangle()) {
-            updateMinEnclosingTriangleFinder(MinEnclosingTriangleFinder, MinEnclosingTriangleFinderArea);
+            updateMinEnclosingTriangle(minEnclosingTriangle, minEnclosingTriangleArea);
         }
     }
 }
@@ -159,17 +190,17 @@ bool MinEnclosingTriangleFinder::isValidMinimalTriangle() {
     return (sideAValid && sideBValid && sideCValid);
 }
 
-void MinEnclosingTriangleFinder::updateMinEnclosingTriangleFinder(vector<Point2f> &MinEnclosingTriangleFinder, double &MinEnclosingTriangleFinderArea) {
+void MinEnclosingTriangleFinder::updateMinEnclosingTriangle(vector<Point2f> &minEnclosingTriangle, double &minEnclosingTriangleArea) {
     area = Geometry2D::areaOfTriangle(vertexA, vertexB, vertexC);
 
-    if (area < MinEnclosingTriangleFinderArea) {
-        MinEnclosingTriangleFinder.clear();
+    if (area < minEnclosingTriangleArea) {
+        minEnclosingTriangle.clear();
 
-        MinEnclosingTriangleFinder.push_back(vertexA);
-        MinEnclosingTriangleFinder.push_back(vertexB);
-        MinEnclosingTriangleFinder.push_back(vertexC);
+        minEnclosingTriangle.push_back(vertexA);
+        minEnclosingTriangle.push_back(vertexB);
+        minEnclosingTriangle.push_back(vertexC);
 
-        MinEnclosingTriangleFinderArea = area;
+        minEnclosingTriangleArea = area;
     }
 }
 

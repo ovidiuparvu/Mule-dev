@@ -6,6 +6,8 @@
 using namespace cv;
 using namespace multiscale;
 
+#define CONVEX_HULL_CLOCKWISE   true
+
 #define INTERSECTS_BELOW        1
 #define INTERSECTS_ABOVE        2
 #define INTERSECTS_CRITICAL     3
@@ -26,7 +28,7 @@ namespace multiscale {
     //! Class for computing the minimum area enclosing triangle for a given polygon
     /*!
      * This implementation has a linear complexity (theta(n)) with respect to the number of points
-     * defining the polygon and is based on the algorithm described in the following paper:
+     * defining the convex polygon and is based on the algorithm described in the following paper:
      *
      * J. O’Rourke, A. Aggarwal, S. Maddila, and M. Baldwin, ‘An optimal algorithm for finding minimal
      * enclosing triangles’, Journal of Algorithms, vol. 7, no. 2, pp. 258–269, Jun. 1986.
@@ -69,27 +71,55 @@ namespace multiscale {
             MinEnclosingTriangleFinder();
             ~MinEnclosingTriangleFinder();
 
-            //! Find the minimum area enclosing triangle for the given polygon
+            //! Find the minimum area enclosing triangle for the given 2D point set
             /*!
-             * \param polygon                           Polygon of points for which the minimum area enclosing triangle will be  found
-             * \param MinEnclosingTriangleFinder      Minimum area triangle enclosing the given polygon
-             * \param MinEnclosingTriangleFinderArea  Area of the minimum area enclosing triangle
+             * Precondition: Number of points in the set is at least 1.
+             *
+             * \param points                        Set of points
+             * \param minEnclosingTriangle          Minimum area triangle enclosing the given polygon
              */
-            void find(const vector<Point2f> &polygon, vector<Point2f> &MinEnclosingTriangleFinder,
-                      double &MinEnclosingTriangleFinderArea);
+            double find(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle);
 
         private:
 
             //! Initialisation function for the class
-            void initialise();
+            /*!
+             * Initialise the polygon and other class' fields.
+             *
+             * \param points                Set of points
+             * \param minEnclosingTriangle  Minimum area triangle enclosing the given polygon
+             */
+            void initialise(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle);
+
+            //! Initialise polygon as the convex hull of the given set of points
+            /*!
+             * \param points Set of points
+             */
+            void initialiseConvexPolygon(const vector<Point2f> &points);
 
             //! Find the minimum area enclosing triangle for the given polygon
             /*!
-             * \param MinEnclosingTriangleFinder      Minimum area triangle enclosing the given polygon
-             * \param MinEnclosingTriangleFinderArea  Area of the minimum area enclosing triangle
+             * \param polygon                       Polygon of points for which the minimum area enclosing triangle will be  found
+             * \param minEnclosingTriangle          Minimum area triangle enclosing the given polygon
              */
-            void findMinEnclosingTriangleFinder(vector<Point2f> &MinEnclosingTriangleFinder,
-                                                  double &MinEnclosingTriangleFinderArea);
+            double findMinEnclosingTriangle(const vector<Point2f> &polygon, vector<Point2f> &minEnclosingTriangle);
+
+            //! Return the minimum area enclosing triangle in case the given polygon has at most three points
+            /*!
+             * \param polygon                       Polygon of points for which the minimum area enclosing triangle will be  found
+             * \param minEnclosingTriangle          Minimum area triangle enclosing the given polygon
+             */
+            double returnMinEnclosingTriangle(const vector<Point2f> &polygon, vector<Point2f> &minEnclosingTriangle);
+
+            //! Initialisation of the algorithm variables
+            void initialiseAlgorithmVariables();
+
+            //! Find the minimum area enclosing triangle for the given polygon
+            /*!
+             * \param minEnclosingTriangle      Minimum area triangle enclosing the given polygon
+             * \param minEnclosingTriangleArea  Area of the minimum area enclosing triangle
+             */
+            void findMinEnclosingTriangle(vector<Point2f> &minEnclosingTriangle, double &minEnclosingTriangleArea);
 
             //! Advance b to the right chain
             /*!
@@ -150,10 +180,10 @@ namespace multiscale {
 
             //! Update the current minimum area enclosing triangle if the newly obtained one has a smaller area
             /*!
-             * \param MinEnclosingTriangleFinder      Minimum area triangle enclosing the given polygon
-             * \param MinEnclosingTriangleFinderArea  Area of the minimum area triangle enclosing the given polygon
+             * \param minEnclosingTriangle      Minimum area triangle enclosing the given polygon
+             * \param minEnclosingTriangleArea  Area of the minimum area triangle enclosing the given polygon
              */
-            void updateMinEnclosingTriangleFinder(vector<Point2f> &MinEnclosingTriangleFinder, double &MinEnclosingTriangleFinderArea);
+            void updateMinEnclosingTriangle(vector<Point2f> &minEnclosingTriangle, double &minEnclosingTriangleArea);
 
             //! Return the middle point of side B
             bool middlePointOfSideB(Point2f& middlePointOfSideB);

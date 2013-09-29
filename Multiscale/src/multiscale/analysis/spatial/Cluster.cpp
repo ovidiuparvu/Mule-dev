@@ -174,9 +174,8 @@ void Cluster::updateCentrePoint() {
 
 double Cluster::isTriangularMeasure() {
     vector<Point2f> entitiesConvexHull = getEntitiesConvexHull();
-    double triangleArea = 0;
 
-    MinEnclosingTriangleFinder().find(entitiesConvexHull, minAreaEnclosingTriangle, triangleArea);
+    double triangleArea = MinEnclosingTriangleFinder().find(entitiesConvexHull, minAreaEnclosingTriangle);
 
     return (Numeric::almostEqual(triangleArea, 0)) ? 0
                                                    : (area / triangleArea);
