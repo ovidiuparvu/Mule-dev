@@ -7,7 +7,7 @@ using namespace std;
 using namespace cv;
 using namespace multiscale;
 
-#define KEY_ESC                 27
+#define KEY_ESC 27
 
 #define RADIUS                  1
 #define LINE_THICKNESS          50
@@ -16,6 +16,8 @@ using namespace multiscale;
 #define MAX_POLYGON_POINTS      100
 #define POLYGON_POINT_X_MAX     500
 #define POLYGON_POINT_Y_MAX     500
+
+#define POINT_IN_TRIANGLE_THRESH 1E-4
 
 
 // Compute the area of a triangle specified by three points
@@ -105,19 +107,73 @@ void outputMinEnclosingTriangleFinderResults(const vector<Point2f> &minEnclosing
     imshow(WIN_MIN_AREA_TRIANGLE, flippedImage);
 }
 
-// Check if the minimum enclosing triangle encloses all points
-bool isValidTriangle(const vector<Point2f> &points, const vector<Point2f> &triangle) {
+// Check if all the points are enclosed by the minimal enclosing triangle
+bool arePointsEnclosed(const vector<Point2f> &points, const vector<Point2f> &triangle) {
     double distance = 0;
 
     for (const Point2f &point : points) {
         distance = pointPolygonTest(triangle, point, true);
 
-        if (distance < -(1E-4)) {
+        if (distance < -(POINT_IN_TRIANGLE_THRESH)) {
             return false;
         }
     }
 
     return true;
+}
+
+// Check if all the triangle sides' middle points touch the convex hull of the given set of points
+bool isTriangleTouchingPolygon(const vector<Point2f> &convexPolygon, const vector<Point2f> &triangle) {
+    int nrOfPolygonPoints = convexPolygon.size();
+
+    for (int i = 0; i < 3; i++) {
+        bool isTouching = false;
+        Point2f middlePoint = Geometry2D::middlePoint(triangle[i], triangle[(i + 1) % 3]);
+
+        for (int j = 0; j < nrOfPolygonPoints; j++) {
+            if (Geometry2D::isPointOnLineSegment(middlePoint, convexPolygon[j],
+                                                 convexPolygon[(j + 1) % nrOfPolygonPoints])) {
+                isTouching = true;
+            }
+        }
+
+        if (!isTouching) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// Check if at least one side of the triangle is flush with an edge of the polygon
+bool isOneEdgeFlush(const vector<Point2f> &convexPolygon, const vector<Point2f> &triangle) {
+    int nrOfPolygonPoints = convexPolygon.size();
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < nrOfPolygonPoints; j++) {
+            if ((Geometry2D::isPointOnLineSegment(convexPolygon[j], triangle[i],
+                                                  triangle[(i + 1) % 3])) &&
+                (Geometry2D::isPointOnLineSegment(convexPolygon[(j + 1) % nrOfPolygonPoints], triangle[i],
+                                                  triangle[(i + 1) % 3]))) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+// Check if the minimum enclosing triangle encloses all points
+bool isValidTriangle(const vector<Point2f> &points, const vector<Point2f> &triangle) {
+    vector<Point2f> convexPolygon;
+
+    convexHull(points, convexPolygon, true);
+
+    return (
+        (arePointsEnclosed(points, triangle)) &&
+        (isTriangleTouchingPolygon(convexPolygon, triangle)) &&
+        (isOneEdgeFlush(convexPolygon, triangle))
+    );
 }
 
 // Test the minimum area enclosing triangle algorithm
@@ -159,6 +215,11 @@ void testMinEnclosingTriangleFinderUsingRandomPolygons() {
 
 // Test the minimum area enclosing triangle algorithm
 void testMinEnclosingTriangleFinder() {
+    // testMinEnclosingTriangleFinder(vector<Point2f>{Point2f(-1, 0), Point2f(3, -6), Point2f(-7, -5)});
+    // testMinEnclosingTriangleFinder(vector<Point2f>{Point2f(3, -6), Point2f(-7, -5)});
+    // testMinEnclosingTriangleFinder(vector<Point2f>{Point2f(-7, -5)});
+    // testMinEnclosingTriangleFinder(vector<Point2f>{});
+
     testMinEnclosingTriangleFinderUsingRandomPolygons();
 }
 
