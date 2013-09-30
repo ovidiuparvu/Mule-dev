@@ -13,6 +13,9 @@ using namespace multiscale::analysis;
 
 
 RegionDetector::RegionDetector(bool debugMode) : Detector(debugMode) {
+    avgDensity = 0;
+    avgClusterednessDegree = 0;
+
     alpha = 0;
     beta = 0;
     blurKernelSize = 0;
@@ -166,6 +169,8 @@ void RegionDetector::processImageAndDetect() {
     smoothImage(processedImage);
     thresholdImage(processedImage, thresholdedImage);
     findRegions(thresholdedImage, regions);
+
+    computeAverageMeasures(regions);
 }
 
 void RegionDetector::changeContrastAndBrightness(Mat &processedImage) {
@@ -206,6 +211,19 @@ void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
         // Process and store information about the region
         regions.push_back(createRegionFromPolygon(approxPolygon));
     }
+}
+
+void RegionDetector::computeAverageMeasures(vector<Region> &regions) {
+    avgClusterednessDegree = 0;
+    avgDensity = 0;
+
+    for (Region &region : regions) {
+        avgClusterednessDegree += region.getClusterednessDegree();
+        avgDensity += region.getDensity();
+    }
+
+    avgClusterednessDegree /= regions.size();
+    avgDensity /= regions.size();
 }
 
 vector<vector<Point> > RegionDetector::findContoursInImage(const Mat &image) {
@@ -294,13 +312,24 @@ void RegionDetector::outputResultsToCsvFile(ofstream &fout) {
     fout << Region::fieldNamesToString() << endl;
 
     if (!regions.empty()) {
-        Region firstRegion = regions.front();
+        outputRegionsToCsvFile(fout);
 
-        // Output content
-        for (auto region : regions) {
-            fout << region.toString() << endl;
-        }
+        // Add an empty line between the region data and the averaged data
+        fout << endl;
+
+        outputAveragedMeasuresToCsvFile(fout);
     }
+}
+
+void RegionDetector::outputRegionsToCsvFile(ofstream &fout) {
+    for (auto region : regions) {
+        fout << region.toString() << endl;
+    }
+}
+
+void RegionDetector::outputAveragedMeasuresToCsvFile(ofstream &fout) {
+    fout << OUTPUT_CLUSTEREDNESS << avgClusterednessDegree << endl
+         << OUTPUT_DENSITY << avgDensity << endl;
 }
 
 void RegionDetector::outputResultsToImage() {

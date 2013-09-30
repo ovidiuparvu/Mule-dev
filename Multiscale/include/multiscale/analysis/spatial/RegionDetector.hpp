@@ -10,6 +10,9 @@
 using namespace std;
 using namespace cv;
 
+#define OUTPUT_CLUSTEREDNESS        "Average clusteredness degree: "
+#define OUTPUT_DENSITY              "Average density: "
+
 #define TRACKBAR_ALPHA              "Alpha"
 #define TRACKBAR_BETA               "Beta"
 #define TRACKBAR_KERNEL             "Gaussian blur kernel size"
@@ -53,6 +56,9 @@ namespace multiscale {
         class RegionDetector : public Detector {
 
             private:
+
+                double avgClusterednessDegree;      /*!< Average degree of clusteredness of all regions */
+                double avgDensity;                  /*!< Average density of all regions */
 
                 int alpha;                          /*!< Alpha for brightness and contrast adjustments */
                 int beta;                           /*!< Beta for brightness and contrast adjustments */
@@ -209,7 +215,13 @@ namespace multiscale {
                  * \param image The image
                  * \param regions The regions in the image
                  */
-                void findRegions(const Mat &image, vector<Region>& regions);
+                void findRegions(const Mat &image, vector<Region> &regions);
+
+                //! Compute the average clusteredness degree and average density
+                /*!
+                 * \param regions The regions in the image
+                 */
+                void computeAverageMeasures(vector<Region> &regions);
 
                 //! Find contours in image
                 /*!
@@ -267,11 +279,23 @@ namespace multiscale {
                 //! Clear the element present in the regions vector
                 void clearPreviousDetectionResults() override;
 
-                //! Output the regions to a csv file
+                //! Output the regions and averaged measures to a csv file
                 /*!
                  * \param fout Output file stream
                  */
                 void outputResultsToCsvFile(ofstream &fout) override;
+
+                //! Output the regions to a csv file
+                /*!
+                 * \param fout Output file stream
+                 */
+                void outputRegionsToCsvFile(ofstream &fout);
+
+                //! Output the averaged measures to a csv file
+                /*!
+                 * \param fout Output file stream
+                 */
+                void outputAveragedMeasuresToCsvFile(ofstream &fout);
 
                 //! Output the results to the outputImage instance
                 void outputResultsToImage() override;
