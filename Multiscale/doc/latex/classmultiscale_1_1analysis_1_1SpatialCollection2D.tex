@@ -12,7 +12,8 @@ Class for representing a collection of objects in 2\-D space.
 
 
 
-Inheritance diagram for multiscale\-:\-:analysis\-:\-:Spatial\-Collection2\-D\-:\nopagebreak
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Spatial\-Collection2\-D\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,11 +22,12 @@ Inheritance diagram for multiscale\-:\-:analysis\-:\-:Spatial\-Collection2\-D\-:
 \end{figure}
 
 
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:Spatial\-Collection2\-D\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Spatial\-Collection2\-D\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D__coll__graph}
+\includegraphics[height=550pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -35,10 +37,16 @@ Collaboration diagram for multiscale\-:\-:analysis\-:\-:Spatial\-Collection2\-D\
 \item 
 virtual \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_af70ae8f44636e7b2cf85705cffe44dfe}{$\sim$\-Spatial\-Collection2\-D} ()
 \item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a85ae2bf2457ca5dfc14a43dc492a2dda}{get\-Clusteredness\-Degree} ()
+\begin{DoxyCompactList}\small\item\em Get the clusteredness degree. \end{DoxyCompactList}\item 
 double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a192a2f1ee9e3af90a40c8c7c47618965}{get\-Area} ()
 \begin{DoxyCompactList}\small\item\em Get the area. \end{DoxyCompactList}\item 
 double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a736028971bede12a98dbb72d5b0f1354}{get\-Perimeter} ()
 \begin{DoxyCompactList}\small\item\em Get the perimeter. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_aeef9f086af281569cf8f83dc2e1a0014}{get\-Distance\-From\-Origin} ()
+\begin{DoxyCompactList}\small\item\em Get the distance from the origin. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6bac1eb1ff6d06cdb0fd8036849b4f50}{get\-Angle} ()
+\begin{DoxyCompactList}\small\item\em Get the angle. \end{DoxyCompactList}\item 
 \hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbf}{Shape2\-D} \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7144355774b561b660adfca759316037}{get\-Shape} ()
 \begin{DoxyCompactList}\small\item\em Get the shape best fitting the spatial collection. \end{DoxyCompactList}\item 
 Point2f \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac8b879dca765e47b9e0ef86d440e28e6}{get\-Centre} ()
@@ -54,6 +62,8 @@ void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a8e5a2af58189
 \begin{DoxyCompactList}\small\item\em Update the values of all measures. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ad94bce09032b184ebfd5b5006217c683}{update\-Spatial\-Collection\-Specific\-Values} ()=0
 \begin{DoxyCompactList}\small\item\em Update the values of all measures specific to the derived classes. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7deb494a09ce1f44b1b7e8ac5255cd0b}{update\-Clusteredness\-Degree} ()=0
+\begin{DoxyCompactList}\small\item\em Update the value of the clusteredness degree. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a160aae10901ef5198db1b03bdef68065}{update\-Area} ()=0
 \begin{DoxyCompactList}\small\item\em Update the value of the area. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6751a928c631fe725a2e7c5226e3720b}{update\-Perimeter} ()=0
@@ -77,9 +87,15 @@ vector$<$ Point2f $>$ \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollectio
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_acd11d0bbeb60a1168bd2c2fbbc6fe965}{clusteredness\-Degree}
+\item 
 double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac570cc755e52aeb9deacf12d223a4a3a}{area}
 \item 
 double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae8045702b66fd813cfff49fa86b02e68}{perimeter}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac2a5d3f8c2cb878c710d821c536b8a4f}{distance\-From\-Origin}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_ab452753ab21ee26732afb77a6478b3ce}{angle}
 \item 
 double \hyperlink{classmultiscale_1_1analysis_1_1SpatialCollection2D_a578070e91858e9e87de1e0f5771d6c3f}{triangular\-Measure}
 \item 
@@ -166,7 +182,7 @@ Convert the collection of points from type Point to type Point2f.
 \end{DoxyParams}
 
 
-Definition at line 100 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 119 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -196,7 +212,7 @@ Return the values of the fields as a string.
 
 
 
-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a4fa8cfecf2fc3708c66022655a055dc6}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad}{multiscale\-::analysis\-::\-Cluster}.
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad}{multiscale\-::analysis\-::\-Cluster}, and \hyperlink{classmultiscale_1_1analysis_1_1Region_a4fa8cfecf2fc3708c66022655a055dc6}{multiscale\-::analysis\-::\-Region}.
 
 
 
@@ -209,6 +225,37 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=336pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a1b70b9e25f8b82ac2195f75f89280800_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6bac1eb1ff6d06cdb0fd8036849b4f50}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!get\-Angle@{get\-Angle}}
+\index{get\-Angle@{get\-Angle}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{get\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}double Spatial\-Collection2\-D\-::get\-Angle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6bac1eb1ff6d06cdb0fd8036849b4f50}
+
+
+Get the angle. 
+
+
+
+Definition at line 36 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References angle, and update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6bac1eb1ff6d06cdb0fd8036849b4f50_cgraph}
 \end{center}
 \end{figure}
 
@@ -226,7 +273,7 @@ Get the area.
 
 
 
-Definition at line 12 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 18 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -234,7 +281,8 @@ References area, and update\-Measures\-If\-Required().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -256,7 +304,7 @@ Get the point defining the centre of the entity.
 
 
 
-Definition at line 30 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 48 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -264,11 +312,74 @@ References centre, and update\-Measures\-If\-Required().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac8b879dca765e47b9e0ef86d440e28e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a85ae2bf2457ca5dfc14a43dc492a2dda}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!get\-Clusteredness\-Degree@{get\-Clusteredness\-Degree}}
+\index{get\-Clusteredness\-Degree@{get\-Clusteredness\-Degree}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{get\-Clusteredness\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}double Spatial\-Collection2\-D\-::get\-Clusteredness\-Degree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a85ae2bf2457ca5dfc14a43dc492a2dda}
+
+
+Get the clusteredness degree. 
+
+
+
+Definition at line 12 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References clusteredness\-Degree, and update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a85ae2bf2457ca5dfc14a43dc492a2dda_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_aeef9f086af281569cf8f83dc2e1a0014}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!get\-Distance\-From\-Origin@{get\-Distance\-From\-Origin}}
+\index{get\-Distance\-From\-Origin@{get\-Distance\-From\-Origin}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{get\-Distance\-From\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}double Spatial\-Collection2\-D\-::get\-Distance\-From\-Origin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_aeef9f086af281569cf8f83dc2e1a0014}
+
+
+Get the distance from the origin. 
+
+
+
+Definition at line 30 of file Spatial\-Collection2\-D.\-cpp.
+
+
+
+References distance\-From\-Origin, and update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_aeef9f086af281569cf8f83dc2e1a0014_cgraph}
 \end{center}
 \end{figure}
 
@@ -286,7 +397,7 @@ Get the perimeter.
 
 
 
-Definition at line 18 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 24 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -294,7 +405,8 @@ References perimeter, and update\-Measures\-If\-Required().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -316,7 +428,7 @@ Get the shape best fitting the spatial collection.
 
 
 
-Definition at line 24 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 42 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -328,7 +440,8 @@ Referenced by multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::outpu
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -361,7 +474,7 @@ Initialisation function for the class.
 
 
 
-Definition at line 110 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 129 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -395,7 +508,7 @@ Get the measure that the cluster has a circular shape.
 
 
 
-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_aa59dcbe337f4db849d66cb3902617ccd}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a579730478055ae93d659f268375a492d}{multiscale\-::analysis\-::\-Cluster}.
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a579730478055ae93d659f268375a492d}{multiscale\-::analysis\-::\-Cluster}, and \hyperlink{classmultiscale_1_1analysis_1_1Region_aa59dcbe337f4db849d66cb3902617ccd}{multiscale\-::analysis\-::\-Region}.
 
 
 
@@ -403,7 +516,8 @@ Referenced by update\-Shape().
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -425,7 +539,7 @@ Get the measure that the cluster has a rectangular shape.
 
 
 
-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a2310c3e3c6f1dea310e14e46d466a204}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_aca93cb46704a3e824151e99b7a53d20d}{multiscale\-::analysis\-::\-Cluster}.
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Cluster_aca93cb46704a3e824151e99b7a53d20d}{multiscale\-::analysis\-::\-Cluster}, and \hyperlink{classmultiscale_1_1analysis_1_1Region_a2310c3e3c6f1dea310e14e46d466a204}{multiscale\-::analysis\-::\-Region}.
 
 
 
@@ -433,7 +547,8 @@ Referenced by update\-Shape().
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -455,7 +570,7 @@ Get the measure that the cluster has a triangular shape.
 
 
 
-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_acb88d149b42eee5225e7197a225d31c3}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a28efcf050af76acb01619b36505b662e}{multiscale\-::analysis\-::\-Cluster}.
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a28efcf050af76acb01619b36505b662e}{multiscale\-::analysis\-::\-Cluster}, and \hyperlink{classmultiscale_1_1analysis_1_1Region_acb88d149b42eee5225e7197a225d31c3}{multiscale\-::analysis\-::\-Region}.
 
 
 
@@ -463,7 +578,8 @@ Referenced by update\-Shape().
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -485,7 +601,7 @@ Return the shape of the cluster as a string.
 
 
 
-Definition at line 78 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 97 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -519,7 +635,7 @@ Get the string representation of all field values.
 
 
 
-Definition at line 36 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 54 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -527,7 +643,8 @@ References field\-Values\-To\-String(), and update\-Measures\-If\-Required().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -549,7 +666,7 @@ Update the value of the area.
 
 
 
-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a88adaf10fae7c554581498f86f1863fa}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a3128a3b20c28619ccdd6a25208b8c83e}{multiscale\-::analysis\-::\-Cluster}.
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a3128a3b20c28619ccdd6a25208b8c83e}{multiscale\-::analysis\-::\-Cluster}, and \hyperlink{classmultiscale_1_1analysis_1_1Region_a88adaf10fae7c554581498f86f1863fa}{multiscale\-::analysis\-::\-Region}.
 
 
 
@@ -557,7 +674,8 @@ Referenced by update\-Measures().
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -579,7 +697,7 @@ Update the point defining the centre of the cluster.
 
 
 
-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a3753b8789a73c1e3b5d189aa710aec86}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a259c6f45b89f780b39ba7b67d7d1af2d}{multiscale\-::analysis\-::\-Cluster}.
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a3753b8789a73c1e3b5d189aa710aec86}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a1991d68cc9e76dab54c134df6beb59cb}{multiscale\-::analysis\-::\-Cluster}.
 
 
 
@@ -587,11 +705,43 @@ Referenced by update\-Measures().
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_aab860163169deb76a7e853df32902ab1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7deb494a09ce1f44b1b7e8ac5255cd0b}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Clusteredness\-Degree@{update\-Clusteredness\-Degree}}
+\index{update\-Clusteredness\-Degree@{update\-Clusteredness\-Degree}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{update\-Clusteredness\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Clusteredness\-Degree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7deb494a09ce1f44b1b7e8ac5255cd0b}
+
+
+Update the value of the clusteredness degree. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a35c88944e2704571214b6e28dd657350}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a2279d1567eec7c0b1e29cae26cfb4d73}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by update\-Measures().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialCollection2D_a7deb494a09ce1f44b1b7e8ac5255cd0b_icgraph}
 \end{center}
 \end{figure}
 
@@ -609,11 +759,11 @@ Update the values of all measures.
 
 
 
-Definition at line 51 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 69 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
-References update\-Area(), update\-Centre\-Point(), update\-Perimeter(), and update\-Shape().
+References update\-Area(), update\-Centre\-Point(), update\-Clusteredness\-Degree(), update\-Perimeter(), and update\-Shape().
 
 
 
@@ -621,7 +771,8 @@ Referenced by update\-Measures\-If\-Required().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -632,7 +783,8 @@ Here is the call graph for this function\-:\nopagebreak
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -654,7 +806,7 @@ Update the values of all measures if required.
 
 
 
-Definition at line 42 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 60 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -662,11 +814,12 @@ References update\-Flag, update\-Measures(), and update\-Spatial\-Collection\-Sp
 
 
 
-Referenced by multiscale\-::analysis\-::\-Region\-::get\-Angle(), get\-Area(), get\-Centre(), multiscale\-::analysis\-::\-Cluster\-::get\-Clusteredness\-Degree(), multiscale\-::analysis\-::\-Region\-::get\-Density(), multiscale\-::analysis\-::\-Region\-::get\-Distance\-From\-Origin(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Centre(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Radius(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Rect(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Triangle(), get\-Perimeter(), multiscale\-::analysis\-::\-Cluster\-::get\-Pile\-Up\-Degree(), get\-Shape(), and to\-String().
+Referenced by get\-Angle(), get\-Area(), get\-Centre(), get\-Clusteredness\-Degree(), multiscale\-::analysis\-::\-Region\-::get\-Density(), get\-Distance\-From\-Origin(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Centre(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Radius(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Rect(), multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Triangle(), get\-Perimeter(), multiscale\-::analysis\-::\-Cluster\-::get\-Pile\-Up\-Degree(), get\-Shape(), and to\-String().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -677,7 +830,8 @@ Here is the call graph for this function\-:\nopagebreak
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -699,7 +853,7 @@ Update the value of the perimeter.
 
 
 
-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a58a4a22cb77fc6963592ec156458f310}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_aadc520e4459f1ea6e22afd7c02d5f2ed}{multiscale\-::analysis\-::\-Cluster}.
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Cluster_aadc520e4459f1ea6e22afd7c02d5f2ed}{multiscale\-::analysis\-::\-Cluster}, and \hyperlink{classmultiscale_1_1analysis_1_1Region_a58a4a22cb77fc6963592ec156458f310}{multiscale\-::analysis\-::\-Region}.
 
 
 
@@ -707,7 +861,8 @@ Referenced by update\-Measures().
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -729,7 +884,7 @@ Update the shape of the cluster.
 
 
 
-Definition at line 58 of file Spatial\-Collection2\-D.\-cpp.
+Definition at line 77 of file Spatial\-Collection2\-D.\-cpp.
 
 
 
@@ -752,7 +907,8 @@ Here is the call graph for this function\-:\nopagebreak
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -782,7 +938,8 @@ Referenced by update\-Measures\-If\-Required().
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -794,23 +951,34 @@ Here is the caller graph for this function\-:\nopagebreak
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ab452753ab21ee26732afb77a6478b3ce}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!angle@{angle}}
+\index{angle@{angle}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::angle\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ab452753ab21ee26732afb77a6478b3ce}
+Angle of the region wrt the origin 
+
+Definition at line 39 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), get\-Angle(), multiscale\-::analysis\-::\-Cluster\-::initialise(), multiscale\-::analysis\-::\-Region\-::\-Region(), and multiscale\-::analysis\-::\-Cluster\-::set\-Origin\-Dependent\-Members().
+
 \hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac570cc755e52aeb9deacf12d223a4a3a}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!area@{area}}
 \index{area@{area}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
 \subsubsection[{area}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::area\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac570cc755e52aeb9deacf12d223a4a3a}
 Area of the spatial collection 
 
-Definition at line 33 of file Spatial\-Collection2\-D.\-hpp.
+Definition at line 35 of file Spatial\-Collection2\-D.\-hpp.
 
 
 
-Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), get\-Area(), initialise(), multiscale\-::analysis\-::\-Cluster\-::is\-Circular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Circular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::update\-Area(), and multiscale\-::analysis\-::\-Region\-::update\-Area().
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), get\-Area(), initialise(), multiscale\-::analysis\-::\-Region\-::is\-Circular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Circular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Region\-::\-Region(), and multiscale\-::analysis\-::\-Cluster\-::update\-Area().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_afe9ef6b70ff53161cb02749444ae372c}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!centre@{centre}}
 \index{centre@{centre}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
 \subsubsection[{centre}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::centre\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_afe9ef6b70ff53161cb02749444ae372c}
 Point defining the centre of the spatial collection 
 
-Definition at line 41 of file Spatial\-Collection2\-D.\-hpp.
+Definition at line 46 of file Spatial\-Collection2\-D.\-hpp.
 
 
 
@@ -821,18 +989,40 @@ Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String()
 \subsubsection[{circular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::circular\-Measure\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a4c58c82dd3d67d670b554bfaeb2b19ba}
 Measure (\mbox{[}0, 1\mbox{]}) indicating that the shape of the spatial collection is circular 
 
-Definition at line 38 of file Spatial\-Collection2\-D.\-hpp.
+Definition at line 43 of file Spatial\-Collection2\-D.\-hpp.
 
 
 
 Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), initialise(), and update\-Shape().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_acd11d0bbeb60a1168bd2c2fbbc6fe965}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!clusteredness\-Degree@{clusteredness\-Degree}}
+\index{clusteredness\-Degree@{clusteredness\-Degree}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{clusteredness\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::clusteredness\-Degree\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_acd11d0bbeb60a1168bd2c2fbbc6fe965}
+Degree of clusteredness 
+
+Definition at line 33 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), get\-Clusteredness\-Degree(), multiscale\-::analysis\-::\-Cluster\-::initialise(), multiscale\-::analysis\-::\-Region\-::\-Region(), and multiscale\-::analysis\-::\-Cluster\-::update\-Clusteredness\-Degree().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac2a5d3f8c2cb878c710d821c536b8a4f}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!distance\-From\-Origin@{distance\-From\-Origin}}
+\index{distance\-From\-Origin@{distance\-From\-Origin}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
+\subsubsection[{distance\-From\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::distance\-From\-Origin\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ac2a5d3f8c2cb878c710d821c536b8a4f}
+Distance from the origin 
+
+Definition at line 38 of file Spatial\-Collection2\-D.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String(), multiscale\-::analysis\-::\-Region\-::field\-Values\-To\-String(), get\-Distance\-From\-Origin(), multiscale\-::analysis\-::\-Cluster\-::initialise(), multiscale\-::analysis\-::\-Region\-::\-Region(), and multiscale\-::analysis\-::\-Cluster\-::set\-Origin\-Dependent\-Members().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae8045702b66fd813cfff49fa86b02e68}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!perimeter@{perimeter}}
 \index{perimeter@{perimeter}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
 \subsubsection[{perimeter}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::perimeter\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_ae8045702b66fd813cfff49fa86b02e68}
 Perimeter of the spatial collection 
 
-Definition at line 34 of file Spatial\-Collection2\-D.\-hpp.
+Definition at line 36 of file Spatial\-Collection2\-D.\-hpp.
 
 
 
@@ -843,7 +1033,7 @@ Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String()
 \subsubsection[{rectangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::rectangular\-Measure\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_aad7d79a7bd299d4d3c08a864cfcb77c3}
 Measure (\mbox{[}0, 1\mbox{]}) indicating that the shape of the spatial collection is rectangular 
 
-Definition at line 37 of file Spatial\-Collection2\-D.\-hpp.
+Definition at line 42 of file Spatial\-Collection2\-D.\-hpp.
 
 
 
@@ -854,7 +1044,7 @@ Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String()
 \subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shape2\-D} multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::shape\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a4df95ecca90ce33332a69e0aefcf73d9}
 Shape of the spatial collection 
 
-Definition at line 40 of file Spatial\-Collection2\-D.\-hpp.
+Definition at line 45 of file Spatial\-Collection2\-D.\-hpp.
 
 
 
@@ -865,7 +1055,7 @@ Referenced by get\-Shape(), initialise(), shape\-As\-String(), and update\-Shape
 \subsubsection[{triangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::triangular\-Measure\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a578070e91858e9e87de1e0f5771d6c3f}
 Measure (\mbox{[}0, 1\mbox{]}) indicating that the shape of the spatial collection is triangular 
 
-Definition at line 36 of file Spatial\-Collection2\-D.\-hpp.
+Definition at line 41 of file Spatial\-Collection2\-D.\-hpp.
 
 
 
@@ -874,11 +1064,11 @@ Referenced by multiscale\-::analysis\-::\-Cluster\-::field\-Values\-To\-String()
 \hypertarget{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6d942f2856adc673e9d361596744b37f}{\index{multiscale\-::analysis\-::\-Spatial\-Collection2\-D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}!update\-Flag@{update\-Flag}}
 \index{update\-Flag@{update\-Flag}!multiscale::analysis::SpatialCollection2D@{multiscale\-::analysis\-::\-Spatial\-Collection2\-D}}
 \subsubsection[{update\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}bool multiscale\-::analysis\-::\-Spatial\-Collection2\-D\-::update\-Flag\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialCollection2D_a6d942f2856adc673e9d361596744b37f}
-\begin{DoxyVerb}            Flag indicating if the field values dependent on the
+\begin{DoxyVerb}                Flag indicating if the field values dependent on the
 \end{DoxyVerb}
  collection of entities need to be updated. This flag is used for lazy evaluation purposes, such that new field values are computed only when required 
 
-Definition at line 43 of file Spatial\-Collection2\-D.\-hpp.
+Definition at line 48 of file Spatial\-Collection2\-D.\-hpp.
 
 
 

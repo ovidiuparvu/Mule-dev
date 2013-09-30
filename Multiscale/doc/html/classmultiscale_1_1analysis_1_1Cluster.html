@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1Cluster
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster__inherit__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1Cluster_inherit__map" alt="Inheritance graph"/></div>
 <map name="multiscale_1_1analysis_1_1Cluster_inherit__map" id="multiscale_1_1analysis_1_1Cluster_inherit__map">
-<area shape="rect" id="node2" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html" title="Class for representing a collection of objects in 2D space." alt="" coords="5,6,221,594"/></map>
+<area shape="rect" id="node2" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html" title="Class for representing a collection of objects in 2D space." alt="" coords="8,5,224,715"/></map>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for multiscale::analysis::Cluster:</div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1Cluster
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster__coll__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1Cluster_coll__map" alt="Collaboration graph"/></div>
 <map name="multiscale_1_1analysis_1_1Cluster_coll__map" id="multiscale_1_1analysis_1_1Cluster_coll__map">
-<area shape="rect" id="node2" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html" title="Class for representing a collection of objects in 2D space." alt="" coords="5,6,221,594"/></map>
+<area shape="rect" id="node2" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html" title="Class for representing a collection of objects in 2D space." alt="" coords="8,5,224,715"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -147,9 +147,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2bc85629ab2bd6d01c6d2df3d79ba497"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a2bc85629ab2bd6d01c6d2df3d79ba497">addEntity</a> (const <a class="el" href="classmultiscale_1_1analysis_1_1Entity.html">Entity</a> &amp;entity)</td></tr>
 <tr class="memdesc:a2bc85629ab2bd6d01c6d2df3d79ba497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new entity to the cluster.  <a href="#a2bc85629ab2bd6d01c6d2df3d79ba497">More...</a><br/></td></tr>
 <tr class="separator:a2bc85629ab2bd6d01c6d2df3d79ba497"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac93832bbbb478747825538e53646c166"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#ac93832bbbb478747825538e53646c166">getClusterednessDegree</a> ()</td></tr>
-<tr class="memdesc:ac93832bbbb478747825538e53646c166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the degree of clusteredness.  <a href="#ac93832bbbb478747825538e53646c166">More...</a><br/></td></tr>
-<tr class="separator:ac93832bbbb478747825538e53646c166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acff6c7308641af041598bed55005f2bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#acff6c7308641af041598bed55005f2bf">getPileUpDegree</a> ()</td></tr>
 <tr class="memdesc:acff6c7308641af041598bed55005f2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the degree of pile up.  <a href="#acff6c7308641af041598bed55005f2bf">More...</a><br/></td></tr>
 <tr class="separator:acff6c7308641af041598bed55005f2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,17 +165,32 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aedd64d46ad3ea61ce7bb76be1f0906e6"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#aedd64d46ad3ea61ce7bb76be1f0906e6">getEntities</a> () const </td></tr>
 <tr class="memdesc:aedd64d46ad3ea61ce7bb76be1f0906e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the collection of underlying entities.  <a href="#aedd64d46ad3ea61ce7bb76be1f0906e6">More...</a><br/></td></tr>
 <tr class="separator:aedd64d46ad3ea61ce7bb76be1f0906e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f43161c58d9e4a97f3a33807397b255"><td class="memItemLeft" align="right" valign="top">vector&lt; Point2f &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255">getEntitiesConvexHull</a> ()</td></tr>
+<tr class="memdesc:a9f43161c58d9e4a97f3a33807397b255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the convex hull enclosing the collection of entities' contour points.  <a href="#a9f43161c58d9e4a97f3a33807397b255">More...</a><br/></td></tr>
+<tr class="separator:a9f43161c58d9e4a97f3a33807397b255"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84033ee8d583d9195abbf42d5d420915"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915">setOriginDependentMembers</a> (double <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac2a5d3f8c2cb878c710d821c536b8a4f">distanceFromOrigin</a>, double angleWrtOrigin)</td></tr>
+<tr class="memdesc:a84033ee8d583d9195abbf42d5d420915"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the values of the origin dependent members.  <a href="#a84033ee8d583d9195abbf42d5d420915">More...</a><br/></td></tr>
+<tr class="separator:a84033ee8d583d9195abbf42d5d420915"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html">multiscale::analysis::SpatialCollection2D</a></td></tr>
 <tr class="memitem:a3fa52a3930e498d763930a0c6a23a03c inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a3fa52a3930e498d763930a0c6a23a03c">SpatialCollection2D</a> ()</td></tr>
 <tr class="separator:a3fa52a3930e498d763930a0c6a23a03c inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af70ae8f44636e7b2cf85705cffe44dfe inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#af70ae8f44636e7b2cf85705cffe44dfe">~SpatialCollection2D</a> ()</td></tr>
 <tr class="separator:af70ae8f44636e7b2cf85705cffe44dfe inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ae2bf2457ca5dfc14a43dc492a2dda inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a85ae2bf2457ca5dfc14a43dc492a2dda">getClusterednessDegree</a> ()</td></tr>
+<tr class="memdesc:a85ae2bf2457ca5dfc14a43dc492a2dda inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the clusteredness degree.  <a href="#a85ae2bf2457ca5dfc14a43dc492a2dda">More...</a><br/></td></tr>
+<tr class="separator:a85ae2bf2457ca5dfc14a43dc492a2dda inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a192a2f1ee9e3af90a40c8c7c47618965 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a192a2f1ee9e3af90a40c8c7c47618965">getArea</a> ()</td></tr>
 <tr class="memdesc:a192a2f1ee9e3af90a40c8c7c47618965 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the area.  <a href="#a192a2f1ee9e3af90a40c8c7c47618965">More...</a><br/></td></tr>
 <tr class="separator:a192a2f1ee9e3af90a40c8c7c47618965 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a736028971bede12a98dbb72d5b0f1354 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a736028971bede12a98dbb72d5b0f1354">getPerimeter</a> ()</td></tr>
 <tr class="memdesc:a736028971bede12a98dbb72d5b0f1354 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the perimeter.  <a href="#a736028971bede12a98dbb72d5b0f1354">More...</a><br/></td></tr>
 <tr class="separator:a736028971bede12a98dbb72d5b0f1354 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef9f086af281569cf8f83dc2e1a0014 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aeef9f086af281569cf8f83dc2e1a0014">getDistanceFromOrigin</a> ()</td></tr>
+<tr class="memdesc:aeef9f086af281569cf8f83dc2e1a0014 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the distance from the origin.  <a href="#aeef9f086af281569cf8f83dc2e1a0014">More...</a><br/></td></tr>
+<tr class="separator:aeef9f086af281569cf8f83dc2e1a0014 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bac1eb1ff6d06cdb0fd8036849b4f50 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6bac1eb1ff6d06cdb0fd8036849b4f50">getAngle</a> ()</td></tr>
+<tr class="memdesc:a6bac1eb1ff6d06cdb0fd8036849b4f50 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the angle.  <a href="#a6bac1eb1ff6d06cdb0fd8036849b4f50">More...</a><br/></td></tr>
+<tr class="separator:a6bac1eb1ff6d06cdb0fd8036849b4f50 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7144355774b561b660adfca759316037 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemultiscale_1_1analysis.html#ad1ef6155ab2e954c1c33d3e2e6b53fbf">Shape2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a7144355774b561b660adfca759316037">getShape</a> ()</td></tr>
 <tr class="memdesc:a7144355774b561b660adfca759316037 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shape best fitting the spatial collection.  <a href="#a7144355774b561b660adfca759316037">More...</a><br/></td></tr>
 <tr class="separator:a7144355774b561b660adfca759316037 inherit pub_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,15 +218,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:adbb1a108b2ae638fbba0450c7f7fee20"><td class="memItemLeft" align="right" valign="top">vector&lt; Point2f &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20">getEntitiesContourPoints</a> ()</td></tr>
 <tr class="memdesc:adbb1a108b2ae638fbba0450c7f7fee20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the collection of entities' contour points.  <a href="#adbb1a108b2ae638fbba0450c7f7fee20">More...</a><br/></td></tr>
 <tr class="separator:adbb1a108b2ae638fbba0450c7f7fee20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f43161c58d9e4a97f3a33807397b255"><td class="memItemLeft" align="right" valign="top">vector&lt; Point2f &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255">getEntitiesConvexHull</a> ()</td></tr>
-<tr class="memdesc:a9f43161c58d9e4a97f3a33807397b255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the convex hull enclosing the collection of entities' contour points.  <a href="#a9f43161c58d9e4a97f3a33807397b255">More...</a><br/></td></tr>
-<tr class="separator:a9f43161c58d9e4a97f3a33807397b255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee8272e740fe640a6bf5260746d34080"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#aee8272e740fe640a6bf5260746d34080">updateSpatialCollectionSpecificValues</a> () override</td></tr>
 <tr class="memdesc:aee8272e740fe640a6bf5260746d34080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the values of all measures.  <a href="#aee8272e740fe640a6bf5260746d34080">More...</a><br/></td></tr>
 <tr class="separator:aee8272e740fe640a6bf5260746d34080"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4f509b83bc7b6bb5ea80a780c9aece6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#ae4f509b83bc7b6bb5ea80a780c9aece6">updateClusterednessDegree</a> ()</td></tr>
-<tr class="memdesc:ae4f509b83bc7b6bb5ea80a780c9aece6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the clusteredness degree.  <a href="#ae4f509b83bc7b6bb5ea80a780c9aece6">More...</a><br/></td></tr>
-<tr class="separator:ae4f509b83bc7b6bb5ea80a780c9aece6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2279d1567eec7c0b1e29cae26cfb4d73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a2279d1567eec7c0b1e29cae26cfb4d73">updateClusterednessDegree</a> () override</td></tr>
+<tr class="memdesc:a2279d1567eec7c0b1e29cae26cfb4d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the clusteredness degree.  <a href="#a2279d1567eec7c0b1e29cae26cfb4d73">More...</a><br/></td></tr>
+<tr class="separator:a2279d1567eec7c0b1e29cae26cfb4d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66d6f21c8de45bb5080264a4f87e34de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a66d6f21c8de45bb5080264a4f87e34de">updatePileUpDegree</a> ()</td></tr>
 <tr class="memdesc:a66d6f21c8de45bb5080264a4f87e34de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the pile up degree.  <a href="#a66d6f21c8de45bb5080264a4f87e34de">More...</a><br/></td></tr>
 <tr class="separator:a66d6f21c8de45bb5080264a4f87e34de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,9 +233,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aadc520e4459f1ea6e22afd7c02d5f2ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed">updatePerimeter</a> () override</td></tr>
 <tr class="memdesc:aadc520e4459f1ea6e22afd7c02d5f2ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the value of the perimeter.  <a href="#aadc520e4459f1ea6e22afd7c02d5f2ed">More...</a><br/></td></tr>
 <tr class="separator:aadc520e4459f1ea6e22afd7c02d5f2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a259c6f45b89f780b39ba7b67d7d1af2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a259c6f45b89f780b39ba7b67d7d1af2d">updateCentrePoint</a> ()</td></tr>
-<tr class="memdesc:a259c6f45b89f780b39ba7b67d7d1af2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the point defining the centre of the cluster.  <a href="#a259c6f45b89f780b39ba7b67d7d1af2d">More...</a><br/></td></tr>
-<tr class="separator:a259c6f45b89f780b39ba7b67d7d1af2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1991d68cc9e76dab54c134df6beb59cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a1991d68cc9e76dab54c134df6beb59cb">updateCentrePoint</a> () override</td></tr>
+<tr class="memdesc:a1991d68cc9e76dab54c134df6beb59cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the point defining the centre of the cluster.  <a href="#a1991d68cc9e76dab54c134df6beb59cb">More...</a><br/></td></tr>
+<tr class="separator:a1991d68cc9e76dab54c134df6beb59cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28efcf050af76acb01619b36505b662e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e">isTriangularMeasure</a> () override</td></tr>
 <tr class="memdesc:a28efcf050af76acb01619b36505b662e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the measure that the cluster has a triangular shape.  <a href="#a28efcf050af76acb01619b36505b662e">More...</a><br/></td></tr>
 <tr class="separator:a28efcf050af76acb01619b36505b662e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,11 +248,15 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ac231dc426e9e2f1767660192de859aad"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#ac231dc426e9e2f1767660192de859aad">fieldValuesToString</a> () override</td></tr>
 <tr class="memdesc:ac231dc426e9e2f1767660192de859aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string representation of all the field values.  <a href="#ac231dc426e9e2f1767660192de859aad">More...</a><br/></td></tr>
 <tr class="separator:ac231dc426e9e2f1767660192de859aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b9c11e63bfdbfc837a35f68c5c40dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd">validateOriginDependentValues</a> (double <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac2a5d3f8c2cb878c710d821c536b8a4f">distanceFromOrigin</a>, double angleWrtOrigin)</td></tr>
+<tr class="memdesc:a26b9c11e63bfdbfc837a35f68c5c40dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate the origin dependent values (i.e. non-negative)  <a href="#a26b9c11e63bfdbfc837a35f68c5c40dd">More...</a><br/></td></tr>
+<tr class="separator:a26b9c11e63bfdbfc837a35f68c5c40dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e8593354fabd5c1ca18b6a2b19096e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e">areValidOriginDependentValues</a> (double <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac2a5d3f8c2cb878c710d821c536b8a4f">distanceFromOrigin</a>, double angleWrtOrigin)</td></tr>
+<tr class="memdesc:a05e8593354fabd5c1ca18b6a2b19096e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the origin dependent values are valid (i.e. non-negative)  <a href="#a05e8593354fabd5c1ca18b6a2b19096e">More...</a><br/></td></tr>
+<tr class="separator:a05e8593354fabd5c1ca18b6a2b19096e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a9e6a2613808e1a08b2d3dbfd3af8e23d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a9e6a2613808e1a08b2d3dbfd3af8e23d">clusterednessDegree</a></td></tr>
-<tr class="separator:a9e6a2613808e1a08b2d3dbfd3af8e23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7e6a3501bc6e94c19b448f502d6ecec"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#ab7e6a3501bc6e94c19b448f502d6ecec">pileUpDegree</a></td></tr>
 <tr class="separator:ab7e6a3501bc6e94c19b448f502d6ecec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7678d48581202c3ecc3f1283a1730dfa"><td class="memItemLeft" align="right" valign="top">vector&lt; Point2f &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html#a7678d48581202c3ecc3f1283a1730dfa">minAreaEnclosingTriangle</a></td></tr>
@@ -276,10 +289,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:ad3d11af329d5efa9bddf40b4573ebb2c inherit pro_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the collection of points from type Point to type Point2f.  <a href="#ad3d11af329d5efa9bddf40b4573ebb2c">More...</a><br/></td></tr>
 <tr class="separator:ad3d11af329d5efa9bddf40b4573ebb2c inherit pro_methods_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html">multiscale::analysis::SpatialCollection2D</a></td></tr>
+<tr class="memitem:acd11d0bbeb60a1168bd2c2fbbc6fe965 inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acd11d0bbeb60a1168bd2c2fbbc6fe965">clusterednessDegree</a></td></tr>
+<tr class="separator:acd11d0bbeb60a1168bd2c2fbbc6fe965 inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac570cc755e52aeb9deacf12d223a4a3a inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac570cc755e52aeb9deacf12d223a4a3a">area</a></td></tr>
 <tr class="separator:ac570cc755e52aeb9deacf12d223a4a3a inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8045702b66fd813cfff49fa86b02e68 inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ae8045702b66fd813cfff49fa86b02e68">perimeter</a></td></tr>
 <tr class="separator:ae8045702b66fd813cfff49fa86b02e68 inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2a5d3f8c2cb878c710d821c536b8a4f inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac2a5d3f8c2cb878c710d821c536b8a4f">distanceFromOrigin</a></td></tr>
+<tr class="separator:ac2a5d3f8c2cb878c710d821c536b8a4f inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab452753ab21ee26732afb77a6478b3ce inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab452753ab21ee26732afb77a6478b3ce">angle</a></td></tr>
+<tr class="separator:ab452753ab21ee26732afb77a6478b3ce inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a578070e91858e9e87de1e0f5771d6c3f inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a578070e91858e9e87de1e0f5771d6c3f">triangularMeasure</a></td></tr>
 <tr class="separator:a578070e91858e9e87de1e0f5771d6c3f inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad7d79a7bd299d4d3c08a864cfcb77c3 inherit pro_attribs_classmultiscale_1_1analysis_1_1SpatialCollection2D"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aad7d79a7bd299d4d3c08a864cfcb77c3">rectangularMeasure</a></td></tr>
@@ -296,7 +315,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for representing a cluster of entities in an image. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00021">21</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00023">23</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aee7feb1d599d4c8fda6c3ee83e86ba81"></a>
 <div class="memitem">
@@ -311,9 +330,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00010">10</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00011">11</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8cpp_source.html#l00066">initialise()</a>.</p>
+<p>References <a class="el" href="Cluster_8cpp_source.html#l00079">initialise()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -341,7 +360,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00014">14</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00015">15</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
 </div>
 </div>
@@ -362,9 +381,67 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Add a new entity to the cluster. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00016">16</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00017">17</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>, and <a class="el" href="SpatialCollection2D_8hpp_source.html#l00043">multiscale::analysis::SpatialCollection2D::updateFlag</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>, and <a class="el" href="SpatialCollection2D_8hpp_source.html#l00048">multiscale::analysis::SpatialCollection2D::updateFlag</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05e8593354fabd5c1ca18b6a2b19096e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Cluster::areValidOriginDependentValues </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>distanceFromOrigin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angleWrtOrigin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the origin dependent values are valid (i.e. non-negative) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">distanceFromOrigin</td><td>Distance from the origin </td></tr>
+    <tr><td class="paramname">angleWrtOrigin</td><td>Angle with respect to the origin </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00229">229</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00223">validateOriginDependentValues()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a05e8593354fabd5c1ca18b6a2b19096e_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a05e8593354fabd5c1ca18b6a2b19096e_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1Cluster_a05e8593354fabd5c1ca18b6a2b19096e_icgraph" id="classmultiscale_1_1analysis_1_1Cluster_a05e8593354fabd5c1ca18b6a2b19096e_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non&#45;negative)" alt="" coords="279,5,500,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915" title="Set the values of the origin dependent members." alt="" coords="549,5,744,69"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="792,5,1003,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="1051,5,1275,69"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="1323,14,1547,61"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1595,5,1784,69"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1833,5,2044,69"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -391,15 +468,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get a string representation of all the field names printed in the "toString" method. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00062">62</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00075">75</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00150">multiscale::analysis::ClusterDetector::outputResultsToCsvFile()</a>.</p>
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00177">multiscale::analysis::ClusterDetector::outputResultsToCsvFile()</a>.</p>
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a06984724ab3999d2bee36ce355dfe6bb_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a06984724ab3999d2bee36ce355dfe6bb_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_a06984724ab3999d2bee36ce355dfe6bb_icgraph" id="classmultiscale_1_1analysis_1_1Cluster_a06984724ab3999d2bee36ce355dfe6bb_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a6137f44f74afcac0584b1ff3f49f0ab8" title="Output the information computed for the clusters to a csv file." alt="" coords="248,5,459,69"/></map>
@@ -433,50 +510,18 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1b70b9e25f8b82ac2195f75f89280800">multiscale::analysis::SpatialCollection2D</a>.</p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00200">200</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00208">208</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00033">multiscale::analysis::SpatialCollection2D::area</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00041">multiscale::analysis::SpatialCollection2D::centre</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00038">multiscale::analysis::SpatialCollection2D::circularMeasure</a>, <a class="el" href="Cluster_8hpp_source.html#l00025">clusterednessDegree</a>, <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>, <a class="el" href="Entity_8hpp_source.html#l00016">OUTPUT_SEPARATOR</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00034">multiscale::analysis::SpatialCollection2D::perimeter</a>, <a class="el" href="Cluster_8hpp_source.html#l00026">pileUpDegree</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00037">multiscale::analysis::SpatialCollection2D::rectangularMeasure</a>, <a class="el" href="SpatialCollection2D_8cpp_source.html#l00078">multiscale::analysis::SpatialCollection2D::shapeAsString()</a>, and <a class="el" href="SpatialCollection2D_8hpp_source.html#l00036">multiscale::analysis::SpatialCollection2D::triangularMeasure</a>.</p>
-
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad_cgraph" alt=""/></div>
-<map name="classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac18243f267c777ab26bb836097a78c74" title="Return the shape of the cluster as a string." alt="" coords="249,5,393,69"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ac93832bbbb478747825538e53646c166"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Cluster::getClusterednessDegree </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the degree of clusteredness. </p>
-
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00022">22</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
-
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00025">clusterednessDegree</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00042">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
+<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00039">multiscale::analysis::SpatialCollection2D::angle</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00035">multiscale::analysis::SpatialCollection2D::area</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00046">multiscale::analysis::SpatialCollection2D::centre</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00043">multiscale::analysis::SpatialCollection2D::circularMeasure</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00033">multiscale::analysis::SpatialCollection2D::clusterednessDegree</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00038">multiscale::analysis::SpatialCollection2D::distanceFromOrigin</a>, <a class="el" href="Entity_8hpp_source.html#l00016">OUTPUT_SEPARATOR</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00036">multiscale::analysis::SpatialCollection2D::perimeter</a>, <a class="el" href="Cluster_8hpp_source.html#l00027">pileUpDegree</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00042">multiscale::analysis::SpatialCollection2D::rectangularMeasure</a>, <a class="el" href="SpatialCollection2D_8cpp_source.html#l00097">multiscale::analysis::SpatialCollection2D::shapeAsString()</a>, and <a class="el" href="SpatialCollection2D_8hpp_source.html#l00041">multiscale::analysis::SpatialCollection2D::triangularMeasure</a>.</p>
 
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_ac93832bbbb478747825538e53646c166_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_ac93832bbbb478747825538e53646c166_cgraph" alt=""/></div>
-<map name="classmultiscale_1_1analysis_1_1Cluster_ac93832bbbb478747825538e53646c166_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_ac93832bbbb478747825538e53646c166_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="237,185,424,249"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="508,137,652,201"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="473,225,687,306"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="737,5,881,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="737,93,881,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="737,181,881,245"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="737,269,881,333"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="937,93,1084,157"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="931,181,1091,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="939,269,1083,333"/></map>
+<div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_ac231dc426e9e2f1767660192de859aad_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac18243f267c777ab26bb836097a78c74" title="Return the shape of the cluster as a string." alt="" coords="249,5,393,69"/></map>
 </div>
 </p>
 
@@ -497,9 +542,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the collection of underlying entities. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00058">58</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00053">53</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>.</p>
 
 <p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00101">multiscale::analysis::SimulationClusterDetector::outputClusterToImage()</a>.</p>
 
@@ -539,9 +584,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the collection of entities' centres. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00078">78</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00094">94</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>.</p>
 
 </div>
 </div>
@@ -568,11 +613,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the collection of entities' contour points. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00088">88</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00104">104</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00100">getEntitiesConvexHull()</a>, <a class="el" href="Cluster_8cpp_source.html#l00188">isCircularMeasure()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00176">isRectangularMeasure()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00057">getEntitiesConvexHull()</a>, <a class="el" href="Cluster_8cpp_source.html#l00196">isCircularMeasure()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00184">isRectangularMeasure()</a>.</p>
 
 <p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -581,7 +626,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_adbb1a108b2ae638fbba0450c7f7fee20_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_adbb1a108b2ae638fbba0450c7f7fee20_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_adbb1a108b2ae638fbba0450c7f7fee20_icgraph" id="classmultiscale_1_1analysis_1_1Cluster_adbb1a108b2ae638fbba0450c7f7fee20_icgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="243,39,453,86"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1Cluster.html#a579730478055ae93d659f268375a492d" title="Get the measure that the cluster has a circular shape." alt="" coords="256,109,440,155"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1Cluster.html#aca93cb46704a3e824151e99b7a53d20d" title="Get the measure that the cluster has a rectangular shape." alt="" coords="243,178,453,225"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed" title="Update the value of the perimeter." alt="" coords="513,5,687,51"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="501,74,699,121"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="243,74,453,121"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1Cluster.html#a579730478055ae93d659f268375a492d" title="Get the measure that the cluster has a circular shape." alt="" coords="256,143,440,190"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1Cluster.html#aca93cb46704a3e824151e99b7a53d20d" title="Get the measure that the cluster has a rectangular shape." alt="" coords="243,213,453,259"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed" title="Update the value of the perimeter." alt="" coords="513,5,687,51"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="501,74,699,121"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a4a071efa7d7812c1db9ee577b7893902" title="Return the convex hull of the given cluster." alt="" coords="505,144,695,208"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="747,144,971,208"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="1019,153,1243,199"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1291,144,1480,208"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1529,144,1740,208"/></map>
 </div>
 </p>
 
@@ -590,9 +635,6 @@ Additional Inherited Members</h2></td></tr>
 <a class="anchor" id="a9f43161c58d9e4a97f3a33807397b255"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">vector&lt; Point2f &gt; Cluster::getEntitiesConvexHull </td>
@@ -601,20 +643,15 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Get the convex hull enclosing the collection of entities' contour points. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00100">100</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00057">57</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00021">CONVEX_HULL_CLOCKWISE</a>, and <a class="el" href="Cluster_8cpp_source.html#l00088">getEntitiesContourPoints()</a>.</p>
+<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00021">CONVEX_HULL_CLOCKWISE</a>, <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>, and <a class="el" href="Cluster_8cpp_source.html#l00104">getEntitiesContourPoints()</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00166">isTriangularMeasure()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00149">updatePerimeter()</a>.</p>
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00148">multiscale::analysis::ClusterDetector::getClusterConvexHull()</a>, <a class="el" href="Cluster_8cpp_source.html#l00175">isTriangularMeasure()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00158">updatePerimeter()</a>.</p>
 
 <p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -634,7 +671,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a9f43161c58d9e4a97f3a33807397b255_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a9f43161c58d9e4a97f3a33807397b255_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_a9f43161c58d9e4a97f3a33807397b255_icgraph" id="classmultiscale_1_1analysis_1_1Cluster_a9f43161c58d9e4a97f3a33807397b255_icgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="264,5,461,51"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed" title="Update the value of the perimeter." alt="" coords="276,74,449,121"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a4a071efa7d7812c1db9ee577b7893902" title="Return the convex hull of the given cluster." alt="" coords="268,5,457,69"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="264,93,461,139"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed" title="Update the value of the perimeter." alt="" coords="276,162,449,209"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="509,5,733,69"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="781,14,1005,61"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1053,5,1243,69"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1292,5,1503,69"/></map>
 </div>
 </p>
 
@@ -655,9 +692,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the minimum area enclosing circle centre. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00046">46</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00041">41</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00032">minAreaEnclosingCircleCentre</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00042">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00033">minAreaEnclosingCircleCentre</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00060">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
 
 <p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00153">multiscale::analysis::SimulationClusterDetector::outputClusterCircularShape()</a>.</p>
 
@@ -668,7 +705,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a4d93f85faf929336818248e1fd604fb6_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a4d93f85faf929336818248e1fd604fb6_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_a4d93f85faf929336818248e1fd604fb6_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_a4d93f85faf929336818248e1fd604fb6_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="256,185,443,249"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="527,137,671,201"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="492,225,705,306"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="756,5,900,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="756,93,900,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="756,181,900,245"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="756,269,900,333"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="956,93,1103,157"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="949,181,1109,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="957,269,1101,333"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="256,229,443,293"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="527,181,671,245"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="492,269,705,350"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a7deb494a09ce1f44b1b7e8ac5255cd0b" title="Update the value of the clusteredness degree." alt="" coords="755,5,949,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="780,93,924,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="780,181,924,245"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="780,269,924,333"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="780,357,924,421"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="1004,181,1151,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="997,269,1157,333"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="1005,357,1149,421"/></map>
 </div>
 </p>
 
@@ -700,9 +737,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the minimum area enclosing circle radius. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00052">52</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00047">47</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00033">minAreaEnclosingCircleRadius</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00042">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00034">minAreaEnclosingCircleRadius</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00060">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
 
 <p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00153">multiscale::analysis::SimulationClusterDetector::outputClusterCircularShape()</a>.</p>
 
@@ -713,7 +750,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_aecf5fa56fa21e3b22130242694be744f_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_aecf5fa56fa21e3b22130242694be744f_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_aecf5fa56fa21e3b22130242694be744f_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_aecf5fa56fa21e3b22130242694be744f_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="256,185,443,249"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="527,137,671,201"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="492,225,705,306"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="756,5,900,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="756,93,900,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="756,181,900,245"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="756,269,900,333"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="956,93,1103,157"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="949,181,1109,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="957,269,1101,333"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="256,229,443,293"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="527,181,671,245"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="492,269,705,350"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a7deb494a09ce1f44b1b7e8ac5255cd0b" title="Update the value of the clusteredness degree." alt="" coords="755,5,949,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="780,93,924,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="780,181,924,245"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="780,269,924,333"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="780,357,924,421"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="1004,181,1151,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="997,269,1157,333"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="1005,357,1149,421"/></map>
 </div>
 </p>
 
@@ -745,9 +782,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the minimum area enclosing rectangle. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00040">40</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00035">35</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00030">minAreaEnclosingRect</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00042">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00031">minAreaEnclosingRect</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00060">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
 
 <p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00143">multiscale::analysis::SimulationClusterDetector::outputClusterRectangularShape()</a>.</p>
 
@@ -758,7 +795,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a6417e3328622a848a7dedeebb5821750_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a6417e3328622a848a7dedeebb5821750_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_a6417e3328622a848a7dedeebb5821750_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_a6417e3328622a848a7dedeebb5821750_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="285,185,472,249"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="556,137,700,201"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="521,225,735,306"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="785,5,929,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="785,93,929,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="785,181,929,245"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="785,269,929,333"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="985,93,1132,157"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="979,181,1139,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="987,269,1131,333"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="285,229,472,293"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="556,181,700,245"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="521,269,735,350"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a7deb494a09ce1f44b1b7e8ac5255cd0b" title="Update the value of the clusteredness degree." alt="" coords="784,5,979,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="809,93,953,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="809,181,953,245"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="809,269,953,333"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="809,357,953,421"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="1033,181,1180,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="1027,269,1187,333"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="1035,357,1179,421"/></map>
 </div>
 </p>
 
@@ -790,9 +827,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the minimum area enclosing triangle. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00034">34</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00029">29</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00028">minAreaEnclosingTriangle</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00042">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00029">minAreaEnclosingTriangle</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00060">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
 
 <p>Referenced by <a class="el" href="SimulationClusterDetector_8cpp_source.html#l00133">multiscale::analysis::SimulationClusterDetector::outputClusterTriangularShape()</a>.</p>
 
@@ -803,7 +840,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_ab28150a739c35d66874c219fd38b462b_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_ab28150a739c35d66874c219fd38b462b_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_ab28150a739c35d66874c219fd38b462b_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_ab28150a739c35d66874c219fd38b462b_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="256,185,443,249"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="527,137,671,201"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="492,225,705,306"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="756,5,900,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="756,93,900,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="756,181,900,245"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="756,269,900,333"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="956,93,1103,157"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="949,181,1109,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="957,269,1101,333"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="256,229,443,293"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="527,181,671,245"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="492,269,705,350"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a7deb494a09ce1f44b1b7e8ac5255cd0b" title="Update the value of the clusteredness degree." alt="" coords="755,5,949,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="780,93,924,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="780,181,924,245"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="780,269,924,333"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="780,357,924,421"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="1004,181,1151,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="997,269,1157,333"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="1005,357,1149,421"/></map>
 </div>
 </p>
 
@@ -835,9 +872,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the degree of pile up. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00028">28</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00023">23</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00026">pileUpDegree</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00042">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00027">pileUpDegree</a>, and <a class="el" href="SpatialCollection2D_8cpp_source.html#l00060">multiscale::analysis::SpatialCollection2D::updateMeasuresIfRequired()</a>.</p>
 
 <p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -846,7 +883,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_acff6c7308641af041598bed55005f2bf_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_acff6c7308641af041598bed55005f2bf_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_acff6c7308641af041598bed55005f2bf_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_acff6c7308641af041598bed55005f2bf_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="232,185,419,249"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="503,137,647,201"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="468,225,681,306"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="732,5,876,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="732,93,876,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="732,181,876,245"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="732,269,876,333"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="932,93,1079,157"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="925,181,1085,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="933,269,1077,333"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="232,229,419,293"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="503,181,647,245"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="468,269,681,350"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a7deb494a09ce1f44b1b7e8ac5255cd0b" title="Update the value of the clusteredness degree." alt="" coords="731,5,925,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="756,93,900,157"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="756,181,900,245"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="756,269,900,333"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="756,357,900,421"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="980,181,1127,245"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="973,269,1133,333"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="981,357,1125,421"/></map>
 </div>
 </p>
 
@@ -875,11 +912,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Initialisation function for the class. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00066">66</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00079">79</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00025">clusterednessDegree</a>, <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>, <a class="el" href="Cluster_8hpp_source.html#l00033">minAreaEnclosingCircleRadius</a>, <a class="el" href="Cluster_8hpp_source.html#l00028">minAreaEnclosingTriangle</a>, <a class="el" href="Cluster_8hpp_source.html#l00026">pileUpDegree</a>, and <a class="el" href="SpatialCollection2D_8hpp_source.html#l00043">multiscale::analysis::SpatialCollection2D::updateFlag</a>.</p>
+<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00039">multiscale::analysis::SpatialCollection2D::angle</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00033">multiscale::analysis::SpatialCollection2D::clusterednessDegree</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00038">multiscale::analysis::SpatialCollection2D::distanceFromOrigin</a>, <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>, <a class="el" href="Cluster_8hpp_source.html#l00034">minAreaEnclosingCircleRadius</a>, <a class="el" href="Cluster_8hpp_source.html#l00029">minAreaEnclosingTriangle</a>, <a class="el" href="Cluster_8hpp_source.html#l00027">pileUpDegree</a>, and <a class="el" href="SpatialCollection2D_8hpp_source.html#l00048">multiscale::analysis::SpatialCollection2D::updateFlag</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00010">Cluster()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00011">Cluster()</a>.</p>
 
 <p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -919,9 +956,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba">multiscale::analysis::SpatialCollection2D</a>.</p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00188">188</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00196">196</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8cpp_source.html#l00017">multiscale::Numeric::almostEqual()</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00033">multiscale::analysis::SpatialCollection2D::area</a>, <a class="el" href="Cluster_8cpp_source.html#l00088">getEntitiesContourPoints()</a>, <a class="el" href="Cluster_8hpp_source.html#l00032">minAreaEnclosingCircleCentre</a>, <a class="el" href="Cluster_8hpp_source.html#l00033">minAreaEnclosingCircleRadius</a>, and <a class="el" href="Geometry2D_8hpp_source.html#l00012">PI</a>.</p>
+<p>References <a class="el" href="Numeric_8cpp_source.html#l00017">multiscale::Numeric::almostEqual()</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00035">multiscale::analysis::SpatialCollection2D::area</a>, <a class="el" href="Cluster_8cpp_source.html#l00104">getEntitiesContourPoints()</a>, <a class="el" href="Cluster_8hpp_source.html#l00033">minAreaEnclosingCircleCentre</a>, <a class="el" href="Cluster_8hpp_source.html#l00034">minAreaEnclosingCircleRadius</a>, and <a class="el" href="Geometry2D_8hpp_source.html#l00012">PI</a>.</p>
 
 <p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -961,9 +998,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038">multiscale::analysis::SpatialCollection2D</a>.</p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00176">176</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00184">184</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8cpp_source.html#l00017">multiscale::Numeric::almostEqual()</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00033">multiscale::analysis::SpatialCollection2D::area</a>, <a class="el" href="Cluster_8cpp_source.html#l00088">getEntitiesContourPoints()</a>, and <a class="el" href="Cluster_8hpp_source.html#l00030">minAreaEnclosingRect</a>.</p>
+<p>References <a class="el" href="Numeric_8cpp_source.html#l00017">multiscale::Numeric::almostEqual()</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00035">multiscale::analysis::SpatialCollection2D::area</a>, <a class="el" href="Cluster_8cpp_source.html#l00104">getEntitiesContourPoints()</a>, and <a class="el" href="Cluster_8hpp_source.html#l00031">minAreaEnclosingRect</a>.</p>
 
 <p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1003,9 +1040,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5">multiscale::analysis::SpatialCollection2D</a>.</p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00166">166</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00175">175</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8cpp_source.html#l00017">multiscale::Numeric::almostEqual()</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00033">multiscale::analysis::SpatialCollection2D::area</a>, <a class="el" href="MinimumAreaEnclosingTriangle_8cpp_source.html#l00038">multiscale::MinimumAreaEnclosingTriangle::find()</a>, <a class="el" href="Cluster_8cpp_source.html#l00100">getEntitiesConvexHull()</a>, and <a class="el" href="Cluster_8hpp_source.html#l00028">minAreaEnclosingTriangle</a>.</p>
+<p>References <a class="el" href="Numeric_8cpp_source.html#l00017">multiscale::Numeric::almostEqual()</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00035">multiscale::analysis::SpatialCollection2D::area</a>, <a class="el" href="MinEnclosingTriangleFinder_8cpp_source.html#l00016">multiscale::MinEnclosingTriangleFinder::find()</a>, <a class="el" href="Cluster_8cpp_source.html#l00057">getEntitiesConvexHull()</a>, and <a class="el" href="Cluster_8hpp_source.html#l00029">minAreaEnclosingTriangle</a>.</p>
 
 <p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1014,7 +1051,70 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a28efcf050af76acb01619b36505b662e_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a28efcf050af76acb01619b36505b662e_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_a28efcf050af76acb01619b36505b662e_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_a28efcf050af76acb01619b36505b662e_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="2819,573,2957,620"/><area shape="rect" id="node7" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2a116b0cb1b5b8306d2483bd5d55bd68" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="251,683,477,729"/><area shape="rect" id="node151" href="classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="259,756,469,803"/><area shape="rect" id="node5" href="classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="3005,573,3144,620"/><area shape="rect" id="node9" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a18f69d582395376b335641e046ecc53d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="525,634,760,698"/><area shape="rect" id="node149" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a5517774074e5cc22cafcdb523212eeb6" title="Initialisation function for the class." alt="" coords="529,721,756,768"/><area shape="rect" id="node11" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a772ac3b9529eccbce7af2c72a0360d89" title="Advance b to the right chain." alt="" coords="821,1097,1048,1144"/><area shape="rect" id="node27" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a729ba761fd35e6074be19959331ba465" title="Update the triangle vertices after all sides were set and check if a local minimal triangle was found..." alt="" coords="1683,144,1909,191"/><area shape="rect" id="node45" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ab8fcbbabc20d96ebaf6edeeaf0d38e63" title="Check if tangency for side B was not obtained." alt="" coords="821,765,1048,812"/><area shape="rect" id="node108" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a350b2e78503488433a0ae5a7a2a22f64" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="821,959,1048,1005"/><area shape="rect" id="node117" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a963feccd69c5ea86bbf4965d91ed32ed" title="Search for the tangency of side B." alt="" coords="821,1028,1048,1075"/><area shape="rect" id="node125" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a13a71a75863ff3ccc9993e741086dbcf" title="Update the current minimum area enclosing triangle if the newly obtained one has a smaller area..." alt="" coords="809,535,1060,599"/><area shape="rect" id="node129" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a75d6c0769a2717ed7086b28be0db2440" title="Set side B if tangency for side B was obtained." alt="" coords="821,673,1048,720"/><area shape="rect" id="node132" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a20d737b8bb311c01d037062e98eb7efc" title="Update sides B and possibly A if tangency for side B was not obtained." alt="" coords="1109,475,1336,521"/><area shape="rect" id="node146" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a8c906ab782ec5feb1767869a61d3620d" title="Update sides A and C." alt="" coords="1384,656,1611,703"/><area shape="rect" id="node13" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a4cdd0f627c2fa44aa5b4760d04ee3c80" title="Advance the given index with one position." alt="" coords="1109,1028,1336,1075"/><area shape="rect" id="node15" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a178b8229a0f7a18f7f0050f5c8d859d3" title="Return the succesor of the provided point index." alt="" coords="1683,997,1909,1044"/><area shape="rect" id="node17" href="classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="1153,1509,1292,1556"/><area shape="rect" id="node20" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2fb97bef9404c59d5a8ed1eff131b0ce" title="Compute the height of the point specified by the given index." alt="" coords="1988,1168,2215,1215"/><area shape="rect" id="node22" href="classmultiscale_1_1Geometry2D.html#ae6c0f66accf4ecf31b0fd96437371626" title="Compute the distance from a point &quot;a&quot; to a line specified by two points &quot;B&quot; and &quot;C&quot;." alt="" coords="2293,1168,2472,1215"/><area shape="rect" id="node24" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a89173019a673e51d0985f45d067f30cb" title="Return the predecessor of the provided point index." alt="" coords="2269,735,2496,781"/><area shape="rect" id="node29" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a522b2228b01e7d5fa6f922ba5f5394a6" title="Check if the found minimal triangle is valid." alt="" coords="1988,75,2215,121"/><area shape="rect" id="node42" href="classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="2301,293,2464,340"/><area shape="rect" id="node31" href="classmultiscale_1_1Geometry2D.html#aa2d3ac595072b9ab61879a44629d7969" title="Check if points point1 and point2 are equal or not." alt="" coords="2576,423,2739,469"/><area shape="rect" id="node34" href="classmultiscale_1_1Geometry2D.html#a608548e8588d9efbcfec90d2bd92ea55" title="Check if one point lies between two other points." alt="" coords="2301,75,2464,121"/><area shape="rect" id="node39" href="classmultiscale_1_1Geometry2D.html#a178c13bdb5cc3f26de7d5e9fd05781f5" title="Get the point in the middle of the segment determined by points &quot;a&quot; and &quot;b&quot;." alt="" coords="2301,195,2464,241"/><area shape="rect" id="node37" href="classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="2576,75,2739,121"/><area shape="rect" id="node47" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aacc1dc3225d307ff882c6d5564e7831d" title="Find gamma for a given point &quot;p&quot; specified by its index." alt="" coords="1384,725,1611,772"/><area shape="rect" id="node73" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a4d0a39f0a938817b6b07985f6f85da9c" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon abov..." alt="" coords="1109,1148,1336,1195"/><area shape="rect" id="node49" href="classmultiscale_1_1Geometry2D.html#a828b7b579420ac06dabd7c4ba4d081ae" title="Check if p1 and p2 are on the same side of the line determined by points a and b." alt="" coords="1704,425,1888,472"/><area shape="rect" id="node56" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aa26b3ef84bd96935afa8efab5dfef882" title="Find the intersection points to compute gamma(point)" alt="" coords="1672,555,1920,601"/><area shape="rect" id="node51" href="classmultiscale_1_1Geometry2D.html#a6d72740d7f1b2441b0829c0f0c6a6853" title="Get the values of &quot;a&quot;, &quot;b&quot; and &quot;c&quot; of the line equation ax + by + c = 0 knowing that point &quot;p&quot; and &quot;q..." alt="" coords="2272,423,2493,469"/><area shape="rect" id="node54" href="classmultiscale_1_1Numeric.html#a2b3058c5ad27aaaef338a29b96cdbced" title="Return the sign of the number." alt="" coords="2032,365,2171,412"/><area shape="rect" id="node58" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a9c19ca85851ea59de09d7d7be5ba4451" title="Check if the given lines are identical or not." alt="" coords="1988,573,2215,620"/><area shape="rect" id="node63" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#ae347bd4652c2cc09677ffa4aa509729d" title="Check if the given lines intersect or not. If the lines intersect find their intersection points..." alt="" coords="1988,435,2215,481"/><area shape="rect" id="node67" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2aa60ff7b5d82262bbc8498f05882802" title="Get the line equation parameters &quot;a&quot;, &quot;b&quot; and &quot;c&quot; for the line determined by points &quot;p&quot; and &quot;q&quot;..." alt="" coords="1988,504,2215,551"/><area shape="rect" id="node60" href="classmultiscale_1_1Geometry2D.html#aaa19f84365e924bacfad4ea893875a42" title="Check if two lines are identical." alt="" coords="2576,573,2739,620"/><area shape="rect" id="node75" href="classmultiscale_1_1Geometry2D.html#a5c91b7d536f0445afa9c68c73ffe4139" title="Get the angle of the line measured from the Ox axis in counterclockwise direction." alt="" coords="1715,1288,1877,1335"/><area shape="rect" id="node77" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a30883d4893c5775e1e59da3ecde12930" title="Check if/where the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygo..." alt="" coords="1384,1172,1611,1219"/><area shape="rect" id="node81" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a9bfe25a1a27190784fe106bb6d51e0de" title="If (gamma(x) x) intersects P between successorOrPredecessorIndex and pointIntex is it above/below..." alt="" coords="1683,1168,1909,1215"/><area shape="rect" id="node84" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#abaa5d01dc1a1b2693b4436f19dcb661a" title="Check if the angle of the flush edge or its opposite angle lie between the angle of the predecessor a..." alt="" coords="1659,1510,1933,1574"/><area shape="rect" id="node99" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2f6d0472387e94586f8c5bc5cad604cb" title="Check if the angle of the line (gamma(p) p) or its opposite angle lie between angle1 and angle2..." alt="" coords="1988,1263,2215,1309"/><area shape="rect" id="node102" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aa50cf3fffb241c6e3af2c05c9d315321" title="Check if the angle of the line (gamma(p) p) or its opposite angle is equal to the given angle..." alt="" coords="2544,875,2771,921"/><area shape="rect" id="node86" href="classmultiscale_1_1Geometry2D.html#a907466755f2d460e95e2bace5b386768" title="Check if angle1 lies between non reflex angle determined by angles 2 and 3." alt="" coords="2289,1317,2476,1364"/><area shape="rect" id="node93" href="classmultiscale_1_1Geometry2D.html#a28d74085708bba7fa68fbea05d0d51ad" title="Check if the opposite of angle1, ((angle1 + 180) % 360), lies between non reflex angle determined by ..." alt="" coords="1983,1459,2220,1505"/><area shape="rect" id="node96" href="classmultiscale_1_1Geometry2D.html#a3bb85fa2797ba25765f0f57786cb33ef" title="Return the angle opposite to the given angle." alt="" coords="2301,1488,2464,1535"/><area shape="rect" id="node88" href="classmultiscale_1_1Geometry2D.html#a6555ae4c2762e25444bc0874e9bbc535" title="Check if angle1 lies between angles 2 and 3." alt="" coords="2576,1317,2739,1364"/><area shape="rect" id="node90" href="classmultiscale_1_1Numeric.html#a7f21159a23c71c1d37e1c487e9ff815c" title="Check if the first number is less than or equal to the second number." alt="" coords="2588,1096,2727,1143"/><area shape="rect" id="node113" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a9f68018fd829d176bb6de00c8e5d2291" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon belo..." alt="" coords="1109,1217,1336,1264"/><area shape="rect" id="node127" href="classmultiscale_1_1Geometry2D.html#abf0e96a63cf744cab74ab94398e28562" title="Compute the area of a triangle defined by three points." alt="" coords="1141,544,1304,591"/><area shape="rect" id="node134" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aa0e5813de41cf0415f687d6c6371699c" title="Find vertex C which lies on side B at a distance = 2 * height(a&#45;1) from side C." alt="" coords="1384,536,1611,583"/><area shape="rect" id="node141" href="classmultiscale_1_1MinimumAreaEnclosingTriangle.html#aedcbb3708672759e60a547d0a5eb0ddd" title="Return the middle point of side B." alt="" coords="1988,144,2215,191"/><area shape="rect" id="node153" href="classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20" title="Get the collection of entities&#39; contour points." alt="" coords="549,791,736,855"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="287,49,425,95"/><area shape="rect" id="node7" href="classmultiscale_1_1MinEnclosingTriangleFinder.html#afe74965c39261feb7152f5556c0281cd" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="273,162,439,209"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="251,279,461,326"/><area shape="rect" id="node5" href="classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="552,5,691,51"/><area shape="rect" id="node9" href="classmultiscale_1_1MinEnclosingTriangleFinder.html#a0b55638741cd5ff84d583df33d594a69" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="516,75,727,139"/><area shape="rect" id="node13" href="classmultiscale_1_1MinEnclosingTriangleFinder.html#a6fa2b447626f765d0b9600cabdc810ae" title="Initialisation function for the class." alt="" coords="539,162,704,209"/><area shape="rect" id="node17" href="classmultiscale_1_1MinEnclosingTriangleFinder.html#af6e49a1ef5a0d4dbe3e25c2f92d69dc3" title="Return the minimum area enclosing triangle in case the given polygon has at most three points..." alt="" coords="511,232,732,296"/><area shape="rect" id="node11" href="classmultiscale_1_1MinEnclosingTriangleFinder.html#ab41a0d36789e6dfb720325ce494b21f6" title="Initialisation of the algorithm variables." alt="" coords="783,65,996,129"/><area shape="rect" id="node15" href="classmultiscale_1_1MinEnclosingTriangleFinder.html#afe8fe342d7ec338ccc0874cce91f2a58" title="Initialise polygon as the convex hull of the given set of points." alt="" coords="788,153,991,217"/><area shape="rect" id="node19" href="classmultiscale_1_1Geometry2D.html#abf0e96a63cf744cab74ab94398e28562" title="Compute the area of a triangle defined by three points." alt="" coords="808,241,971,287"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20" title="Get the collection of entities&#39; contour points." alt="" coords="528,320,715,384"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a84033ee8d583d9195abbf42d5d420915"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Cluster::setOriginDependentMembers </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>distanceFromOrigin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angleWrtOrigin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the values of the origin dependent members. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">distanceFromOrigin</td><td>Distance from the origin </td></tr>
+    <tr><td class="paramname">angleWrtOrigin</td><td>Angle with respect to the origin </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00068">68</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+
+<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00039">multiscale::analysis::SpatialCollection2D::angle</a>, <a class="el" href="SpatialCollection2D_8hpp_source.html#l00038">multiscale::analysis::SpatialCollection2D::distanceFromOrigin</a>, and <a class="el" href="Cluster_8cpp_source.html#l00223">validateOriginDependentValues()</a>.</p>
+
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00139">multiscale::analysis::ClusterDetector::updateClusterOriginDependentValues()</a>.</p>
+
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a84033ee8d583d9195abbf42d5d420915_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a84033ee8d583d9195abbf42d5d420915_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1Cluster_a84033ee8d583d9195abbf42d5d420915_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_a84033ee8d583d9195abbf42d5d420915_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non&#45;negative)" alt="" coords="249,5,471,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e" title="Check if the origin dependent values are valid (i.e. non&#45;negative)" alt="" coords="520,5,744,69"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a84033ee8d583d9195abbf42d5d420915_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a84033ee8d583d9195abbf42d5d420915_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1Cluster_a84033ee8d583d9195abbf42d5d420915_icgraph" id="classmultiscale_1_1analysis_1_1Cluster_a84033ee8d583d9195abbf42d5d420915_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="248,5,459,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="507,5,731,69"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="779,14,1003,61"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1051,5,1240,69"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1289,5,1500,69"/></map>
 </div>
 </p>
 
@@ -1045,13 +1145,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065">multiscale::analysis::SpatialCollection2D</a>.</p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00141">141</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00150">150</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00033">multiscale::analysis::SpatialCollection2D::area</a>, and <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>.</p>
+<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00035">multiscale::analysis::SpatialCollection2D::area</a>, and <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a259c6f45b89f780b39ba7b67d7d1af2d"></a>
+<a class="anchor" id="a1991d68cc9e76dab54c134df6beb59cb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1067,7 +1167,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1076,13 +1176,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1">multiscale::analysis::SpatialCollection2D</a>.</p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00155">155</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00164">164</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00041">multiscale::analysis::SpatialCollection2D::centre</a>, and <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>.</p>
+<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00046">multiscale::analysis::SpatialCollection2D::centre</a>, and <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae4f509b83bc7b6bb5ea80a780c9aece6"></a>
+<a class="anchor" id="a2279d1567eec7c0b1e29cae26cfb4d73"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1098,29 +1198,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Update the value of the clusteredness degree. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00114">114</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a7deb494a09ce1f44b1b7e8ac5255cd0b">multiscale::analysis::SpatialCollection2D</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00025">clusterednessDegree</a>, and <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00120">120</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00109">updateSpatialCollectionSpecificValues()</a>.</p>
-
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_ae4f509b83bc7b6bb5ea80a780c9aece6_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_ae4f509b83bc7b6bb5ea80a780c9aece6_icgraph" alt=""/></div>
-<map name="classmultiscale_1_1analysis_1_1Cluster_ae4f509b83bc7b6bb5ea80a780c9aece6_icgraph" id="classmultiscale_1_1analysis_1_1Cluster_ae4f509b83bc7b6bb5ea80a780c9aece6_icgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#aee8272e740fe640a6bf5260746d34080" title="Update the values of all measures." alt="" coords="257,5,473,69"/></map>
-</div>
-</p>
+<p>References <a class="el" href="SpatialCollection2D_8hpp_source.html#l00033">multiscale::analysis::SpatialCollection2D::clusterednessDegree</a>, and <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>.</p>
 
 </div>
 </div>
@@ -1149,15 +1238,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b">multiscale::analysis::SpatialCollection2D</a>.</p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00149">149</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00158">158</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8cpp_source.html#l00100">getEntitiesConvexHull()</a>, and <a class="el" href="SpatialCollection2D_8hpp_source.html#l00034">multiscale::analysis::SpatialCollection2D::perimeter</a>.</p>
+<p>References <a class="el" href="Cluster_8cpp_source.html#l00057">getEntitiesConvexHull()</a>, and <a class="el" href="SpatialCollection2D_8hpp_source.html#l00036">multiscale::analysis::SpatialCollection2D::perimeter</a>.</p>
 
-<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_aadc520e4459f1ea6e22afd7c02d5f2ed_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_aadc520e4459f1ea6e22afd7c02d5f2ed_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_aadc520e4459f1ea6e22afd7c02d5f2ed_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_aadc520e4459f1ea6e22afd7c02d5f2ed_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="229,14,440,61"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20" title="Get the collection of entities&#39; contour points." alt="" coords="489,5,676,69"/></map>
@@ -1189,17 +1278,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Update the value of the pile up degree. </p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00131">131</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00140">140</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8hpp_source.html#l00035">entities</a>, and <a class="el" href="Cluster_8hpp_source.html#l00026">pileUpDegree</a>.</p>
+<p>References <a class="el" href="Cluster_8hpp_source.html#l00036">entities</a>, and <a class="el" href="Cluster_8hpp_source.html#l00027">pileUpDegree</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00109">updateSpatialCollectionSpecificValues()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00116">updateSpatialCollectionSpecificValues()</a>.</p>
 
-<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a66d6f21c8de45bb5080264a4f87e34de_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a66d6f21c8de45bb5080264a4f87e34de_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_a66d6f21c8de45bb5080264a4f87e34de_icgraph" id="classmultiscale_1_1analysis_1_1Cluster_a66d6f21c8de45bb5080264a4f87e34de_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#aee8272e740fe640a6bf5260746d34080" title="Update the values of all measures." alt="" coords="255,5,471,69"/></map>
@@ -1233,25 +1322,24 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683">multiscale::analysis::SpatialCollection2D</a>.</p>
 
-<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00109">109</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00116">116</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
 
-<p>References <a class="el" href="Cluster_8cpp_source.html#l00114">updateClusterednessDegree()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00131">updatePileUpDegree()</a>.</p>
+<p>References <a class="el" href="Cluster_8cpp_source.html#l00140">updatePileUpDegree()</a>.</p>
 
-<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_aee8272e740fe640a6bf5260746d34080_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_aee8272e740fe640a6bf5260746d34080_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Cluster_aee8272e740fe640a6bf5260746d34080_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_aee8272e740fe640a6bf5260746d34080_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#ae4f509b83bc7b6bb5ea80a780c9aece6" title="Update the value of the clusteredness degree." alt="" coords="272,5,475,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1Cluster.html#a66d6f21c8de45bb5080264a4f87e34de" title="Update the value of the pile up degree." alt="" coords="273,93,473,139"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#a66d6f21c8de45bb5080264a4f87e34de" title="Update the value of the pile up degree." alt="" coords="272,14,472,61"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a9e6a2613808e1a08b2d3dbfd3af8e23d"></a>
+<a class="anchor" id="a26b9c11e63bfdbfc837a35f68c5c40dd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1259,7 +1347,21 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double multiscale::analysis::Cluster::clusterednessDegree</td>
+          <td class="memname">void Cluster::validateOriginDependentValues </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>distanceFromOrigin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angleWrtOrigin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -1268,14 +1370,47 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Degree of clusteredness </p>
 
-<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00025">25</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
+<p>Validate the origin dependent values (i.e. non-negative) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">distanceFromOrigin</td><td>Distance from the origin </td></tr>
+    <tr><td class="paramname">angleWrtOrigin</td><td>Angle with respect to the origin </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00200">fieldValuesToString()</a>, <a class="el" href="Cluster_8cpp_source.html#l00022">getClusterednessDegree()</a>, <a class="el" href="Cluster_8cpp_source.html#l00066">initialise()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00114">updateClusterednessDegree()</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8cpp_source.html#l00223">223</a> of file <a class="el" href="Cluster_8cpp_source.html">Cluster.cpp</a>.</p>
+
+<p>References <a class="el" href="Cluster_8cpp_source.html#l00229">areValidOriginDependentValues()</a>, and <a class="el" href="Cluster_8hpp_source.html#l00015">ERR_ORIGIN_DEPENDENT_VALUES</a>.</p>
+
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00068">setOriginDependentMembers()</a>.</p>
+
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a26b9c11e63bfdbfc837a35f68c5c40dd_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a26b9c11e63bfdbfc837a35f68c5c40dd_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1Cluster_a26b9c11e63bfdbfc837a35f68c5c40dd_cgraph" id="classmultiscale_1_1analysis_1_1Cluster_a26b9c11e63bfdbfc837a35f68c5c40dd_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e" title="Check if the origin dependent values are valid (i.e. non&#45;negative)" alt="" coords="277,5,501,69"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1Cluster_a26b9c11e63bfdbfc837a35f68c5c40dd_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Cluster_a26b9c11e63bfdbfc837a35f68c5c40dd_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1Cluster_a26b9c11e63bfdbfc837a35f68c5c40dd_icgraph" id="classmultiscale_1_1analysis_1_1Cluster_a26b9c11e63bfdbfc837a35f68c5c40dd_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915" title="Set the values of the origin dependent members." alt="" coords="277,5,472,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="520,5,731,69"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="779,5,1003,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="1051,14,1275,61"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1323,5,1512,69"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1561,5,1772,69"/></map>
+</div>
+</p>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="a820298479651328fb79d92a65f7923d6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1295,9 +1430,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Entities which belong to this cluster </p>
 
-<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00035">35</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00036">36</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00016">addEntity()</a>, <a class="el" href="Cluster_8cpp_source.html#l00200">fieldValuesToString()</a>, <a class="el" href="Cluster_8cpp_source.html#l00058">getEntities()</a>, <a class="el" href="Cluster_8cpp_source.html#l00078">getEntitiesCentrePoints()</a>, <a class="el" href="Cluster_8cpp_source.html#l00088">getEntitiesContourPoints()</a>, <a class="el" href="Cluster_8cpp_source.html#l00066">initialise()</a>, <a class="el" href="Cluster_8cpp_source.html#l00141">updateArea()</a>, <a class="el" href="Cluster_8cpp_source.html#l00155">updateCentrePoint()</a>, <a class="el" href="Cluster_8cpp_source.html#l00114">updateClusterednessDegree()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00131">updatePileUpDegree()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00017">addEntity()</a>, <a class="el" href="Cluster_8cpp_source.html#l00053">getEntities()</a>, <a class="el" href="Cluster_8cpp_source.html#l00094">getEntitiesCentrePoints()</a>, <a class="el" href="Cluster_8cpp_source.html#l00104">getEntitiesContourPoints()</a>, <a class="el" href="Cluster_8cpp_source.html#l00057">getEntitiesConvexHull()</a>, <a class="el" href="Cluster_8cpp_source.html#l00079">initialise()</a>, <a class="el" href="Cluster_8cpp_source.html#l00150">updateArea()</a>, <a class="el" href="Cluster_8cpp_source.html#l00164">updateCentrePoint()</a>, <a class="el" href="Cluster_8cpp_source.html#l00120">updateClusterednessDegree()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00140">updatePileUpDegree()</a>.</p>
 
 </div>
 </div>
@@ -1320,9 +1455,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The minimum area enclosing circle centre point </p>
 
-<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00032">32</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00033">33</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00046">getMinAreaEnclosingCircleCentre()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00188">isCircularMeasure()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00041">getMinAreaEnclosingCircleCentre()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00196">isCircularMeasure()</a>.</p>
 
 </div>
 </div>
@@ -1345,9 +1480,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The minimum area enclosing circle radius </p>
 
-<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00033">33</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00034">34</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00052">getMinAreaEnclosingCircleRadius()</a>, <a class="el" href="Cluster_8cpp_source.html#l00066">initialise()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00188">isCircularMeasure()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00047">getMinAreaEnclosingCircleRadius()</a>, <a class="el" href="Cluster_8cpp_source.html#l00079">initialise()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00196">isCircularMeasure()</a>.</p>
 
 </div>
 </div>
@@ -1370,9 +1505,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The minimum area enclosing rectangle </p>
 
-<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00030">30</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00031">31</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00040">getMinAreaEnclosingRect()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00176">isRectangularMeasure()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00035">getMinAreaEnclosingRect()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00184">isRectangularMeasure()</a>.</p>
 
 </div>
 </div>
@@ -1395,9 +1530,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The minimum area enclosing triangle </p>
 
-<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00028">28</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00029">29</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00034">getMinAreaEnclosingTriangle()</a>, <a class="el" href="Cluster_8cpp_source.html#l00066">initialise()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00166">isTriangularMeasure()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00029">getMinAreaEnclosingTriangle()</a>, <a class="el" href="Cluster_8cpp_source.html#l00079">initialise()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00175">isTriangularMeasure()</a>.</p>
 
 </div>
 </div>
@@ -1420,9 +1555,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Degree of pile up </p>
 
-<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00026">26</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Cluster_8hpp_source.html#l00027">27</a> of file <a class="el" href="Cluster_8hpp_source.html">Cluster.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00200">fieldValuesToString()</a>, <a class="el" href="Cluster_8cpp_source.html#l00028">getPileUpDegree()</a>, <a class="el" href="Cluster_8cpp_source.html#l00066">initialise()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00131">updatePileUpDegree()</a>.</p>
+<p>Referenced by <a class="el" href="Cluster_8cpp_source.html#l00208">fieldValuesToString()</a>, <a class="el" href="Cluster_8cpp_source.html#l00023">getPileUpDegree()</a>, <a class="el" href="Cluster_8cpp_source.html#l00079">initialise()</a>, and <a class="el" href="Cluster_8cpp_source.html#l00140">updatePileUpDegree()</a>.</p>
 
 </div>
 </div>
@@ -1436,7 +1571,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1Cluster.html">Cluster</a></li>
-    <li class="footer">Generated on Fri Sep 27 2013 12:07:40 for Multiscale by
+    <li class="footer">Generated on Mon Sep 30 2013 18:33:56 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

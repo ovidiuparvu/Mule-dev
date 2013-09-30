@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['origin',['origin',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a8d2a487b7a4168ba94caa3596efbf794',1,'multiscale::analysis::RegionDetector']]],
+  ['origin',['origin',['../classmultiscale_1_1analysis_1_1Detector.html#a002237e2ad684975a7c8b1e12dd7d780',1,'multiscale::analysis::Detector']]],
   ['outputfilepath',['outputFilepath',['../classmultiscale_1_1analysis_1_1Detector.html#a1a83df16d8afd347c0e1c9ddc41c9bee',1,'multiscale::analysis::Detector::outputFilepath()'],['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65',1,'multiscale::video::CartesianToPolarConverter::outputFilepath()'],['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a1033d31c9bfc7ccad08337c7b0fa6e6e',1,'multiscale::video::PolarCsvToInputFilesConverter::outputFilepath()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9215448e33876a581b206a89b6651fd0',1,'multiscale::video::CartesianToConcentrationsConverter::outputFilepath()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a2bb6a802fac9b0928bc53a8c71a1c33c',1,'multiscale::video::RectangularCsvToInputFilesConverter::outputFilepath()'],['../classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#a84ea5fc8e195a17eb929812f962cb851',1,'multiscale::video::RectangularEntityCsvToInputFilesConverter::outputFilepath()']]],
   ['outputimage',['outputImage',['../classmultiscale_1_1analysis_1_1Detector.html#a144e080a3af03c9bf3d8a80315823c86',1,'multiscale::analysis::Detector']]]
 ];

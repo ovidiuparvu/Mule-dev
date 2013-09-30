@@ -19,7 +19,7 @@ var hierarchy =
       [ "multiscale::analysis::CircularMatFactory", "classmultiscale_1_1analysis_1_1CircularMatFactory.html", null ],
       [ "multiscale::analysis::RectangularMatFactory", "classmultiscale_1_1analysis_1_1RectangularMatFactory.html", null ]
     ] ],
-    [ "multiscale::MinimumAreaEnclosingTriangle", "classmultiscale_1_1MinimumAreaEnclosingTriangle.html", null ],
+    [ "multiscale::MinEnclosingTriangleFinder", "classmultiscale_1_1MinEnclosingTriangleFinder.html", null ],
     [ "multiscale::NumberIterator", "classmultiscale_1_1NumberIterator.html", [
       [ "multiscale::LexicographicNumberIterator", "classmultiscale_1_1LexicographicNumberIterator.html", null ],
       [ "multiscale::StandardNumberIterator", "classmultiscale_1_1StandardNumberIterator.html", null ]
@@ -36,10 +36,11 @@ var hierarchy =
       [ "multiscale::CartesianToConcentrationsConverterException", "classmultiscale_1_1CartesianToConcentrationsConverterException.html", null ],
       [ "multiscale::CartesianToPolarConverterException", "classmultiscale_1_1CartesianToPolarConverterException.html", null ],
       [ "multiscale::CircularMatFactoryException", "classmultiscale_1_1CircularMatFactoryException.html", null ],
+      [ "multiscale::ClusterException", "classmultiscale_1_1ClusterException.html", null ],
       [ "multiscale::DetectorException", "classmultiscale_1_1DetectorException.html", null ],
       [ "multiscale::EntityException", "classmultiscale_1_1EntityException.html", null ],
       [ "multiscale::MatFactoryException", "classmultiscale_1_1MatFactoryException.html", null ],
-      [ "multiscale::MinimumAreaEnclosingTriangleException", "classmultiscale_1_1MinimumAreaEnclosingTriangleException.html", null ],
+      [ "multiscale::MinEnclosingTriangleFinderException", "classmultiscale_1_1MinEnclosingTriangleFinderException.html", null ],
       [ "multiscale::PolarCsvToInputFilesConverterException", "classmultiscale_1_1PolarCsvToInputFilesConverterException.html", null ],
       [ "multiscale::RectangularCsvToInputFilesConverterException", "classmultiscale_1_1RectangularCsvToInputFilesConverterException.html", null ],
       [ "multiscale::RectangularEntityCsvToInputFilesConverterException", "classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html", null ],

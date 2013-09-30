@@ -12,7 +12,8 @@ Class for detecting clusters in 2\-D images.
 
 
 
-Inheritance diagram for multiscale\-:\-:analysis\-:\-:Cluster\-Detector\-:\nopagebreak
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Cluster\-Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,7 +22,8 @@ Inheritance diagram for multiscale\-:\-:analysis\-:\-:Cluster\-Detector\-:\nopag
 \end{figure}
 
 
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:Cluster\-Detector\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Cluster\-Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -72,6 +74,12 @@ void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aefc4d0736d8af4ab
 \begin{DoxyCompactList}\small\item\em Add the entities to the clusters as indicated by the cluster\-Indexes parameter. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_af994e960ba3cd76cc67e714ea276264a}{analyse\-Clusters} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
 \begin{DoxyCompactList}\small\item\em Analyse the clusters. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5}{analyse\-Clusters\-Origin\-Dependent\-Values} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
+\begin{DoxyCompactList}\small\item\em Analyse the clusters and compute the origin dependent values. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc}{update\-Cluster\-Origin\-Dependent\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \&cluster, const vector$<$ Point $>$ \&cluster\-Convex\-Hull)
+\begin{DoxyCompactList}\small\item\em Update the cluster and compute the origin dependent values considering the convex hull. \end{DoxyCompactList}\item 
+vector$<$ Point $>$ \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902}{get\-Cluster\-Convex\-Hull} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \&cluster)
+\begin{DoxyCompactList}\small\item\em Return the convex hull of the given cluster. \end{DoxyCompactList}\item 
 double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aaa7937daf9872614e09b23cb4f6e5aa8}{compute\-Clusteredness\-Index} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
 \begin{DoxyCompactList}\small\item\em Compute the clusteredness index for all the entities detected in the image. \end{DoxyCompactList}\item 
 double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a1efab8446c79feb8a9285d895bb64b05}{compute\-Average\-Pile\-Up\-Degree} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
@@ -176,7 +184,7 @@ Add the entities to the clusters as indicated by the cluster\-Indexes parameter
 \end{DoxyParams}
 
 
-Definition at line 115 of file Cluster\-Detector.\-cpp.
+Definition at line 111 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -204,7 +212,7 @@ Here is the caller graph for this function\-:\nopagebreak
 
 Analyse the clusters. 
 
-Analyse the clusters and compute the average clusteredness and pile up degree
+Analyse the clusters and compute the angle and distance from the centre, average clusteredness degree and pile up degree
 
 
 \begin{DoxyParams}{Parameters}
@@ -213,11 +221,11 @@ Analyse the clusters and compute the average clusteredness and pile up degree
 \end{DoxyParams}
 
 
-Definition at line 126 of file Cluster\-Detector.\-cpp.
+Definition at line 122 of file Cluster\-Detector.\-cpp.
 
 
 
-References avg\-Pile\-Up\-Degree, clusteredness\-Index, compute\-Average\-Pile\-Up\-Degree(), and compute\-Clusteredness\-Index().
+References analyse\-Clusters\-Origin\-Dependent\-Values(), avg\-Pile\-Up\-Degree, clusteredness\-Index, compute\-Average\-Pile\-Up\-Degree(), and compute\-Clusteredness\-Index().
 
 
 
@@ -225,7 +233,8 @@ Referenced by detect\-And\-Analyse\-Clusters().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -241,6 +250,60 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_af994e960ba3cd76cc67e714ea276264a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!analyse\-Clusters\-Origin\-Dependent\-Values@{analyse\-Clusters\-Origin\-Dependent\-Values}}
+\index{analyse\-Clusters\-Origin\-Dependent\-Values@{analyse\-Clusters\-Origin\-Dependent\-Values}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{analyse\-Clusters\-Origin\-Dependent\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::analyse\-Clusters\-Origin\-Dependent\-Values (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Cluster} $>$ \&}]{clusters}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5}
+
+
+Analyse the clusters and compute the origin dependent values. 
+
+The values which depend on the origin point are the distance of the cluster from the centre and the angle
+
+
+\begin{DoxyParams}{Parameters}
+{\em clusters} & Collection of clusters, each one with the updated measures \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 129 of file Cluster\-Detector.\-cpp.
+
+
+
+References get\-Cluster\-Convex\-Hull(), and update\-Cluster\-Origin\-Dependent\-Values().
+
+
+
+Referenced by analyse\-Clusters().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5_icgraph}
 \end{center}
 \end{figure}
 
@@ -262,7 +325,7 @@ Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a3c2add35193ad09a0
 
 
 
-Definition at line 65 of file Cluster\-Detector.\-cpp.
+Definition at line 61 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -288,7 +351,7 @@ Compute the average pile up degree for all entities in the image as the sum of t
 \end{DoxyParams}
 
 
-Definition at line 135 of file Cluster\-Detector.\-cpp.
+Definition at line 162 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -325,7 +388,7 @@ Compute the clusteredness index for all the entities detected in the image using
 \end{DoxyParams}
 
 
-Definition at line 131 of file Cluster\-Detector.\-cpp.
+Definition at line 158 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -375,7 +438,7 @@ Convert the entities to the format required by the \hyperlink{classmultiscale_1_
 \end{DoxyParams}
 
 
-Definition at line 89 of file Cluster\-Detector.\-cpp.
+Definition at line 85 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -420,7 +483,7 @@ Convert the value of eps from integer to double.
 
 
 
-Definition at line 164 of file Cluster\-Detector.\-cpp.
+Definition at line 191 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -462,7 +525,7 @@ Convert the non pile up entities to the format required by the \hyperlink{classm
 \end{DoxyParams}
 
 
-Definition at line 98 of file Cluster\-Detector.\-cpp.
+Definition at line 94 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -500,7 +563,7 @@ Convert the entities to the required format by the \hyperlink{classmultiscale_1_
 \end{DoxyParams}
 
 
-Definition at line 104 of file Cluster\-Detector.\-cpp.
+Definition at line 100 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -534,7 +597,7 @@ Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a930ad07f5b8d9f21e
 
 
 
-Definition at line 60 of file Cluster\-Detector.\-cpp.
+Definition at line 56 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -563,7 +626,7 @@ Detect and analyse the clusters of entities in the image
 \end{DoxyParams}
 
 
-Definition at line 76 of file Cluster\-Detector.\-cpp.
+Definition at line 72 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -575,7 +638,8 @@ Referenced by process\-Image\-And\-Detect().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -621,7 +685,7 @@ Detect the clusters of entities in the image using Density Based scan (D\-Bscan)
 \end{DoxyParams}
 
 
-Definition at line 85 of file Cluster\-Detector.\-cpp.
+Definition at line 81 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -686,6 +750,58 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_a115f47c1f0855886ef5ca48acc111843_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!get\-Cluster\-Convex\-Hull@{get\-Cluster\-Convex\-Hull}}
+\index{get\-Cluster\-Convex\-Hull@{get\-Cluster\-Convex\-Hull}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{get\-Cluster\-Convex\-Hull}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Point $>$ Cluster\-Detector\-::get\-Cluster\-Convex\-Hull (
+\begin{DoxyParamCaption}
+\item[{{\bf Cluster} \&}]{cluster}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902}
+
+
+Return the convex hull of the given cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster} & The given cluster \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 148 of file Cluster\-Detector.\-cpp.
+
+
+
+References multiscale\-::analysis\-::\-Cluster\-::get\-Entities\-Convex\-Hull().
+
+
+
+Referenced by analyse\-Clusters\-Origin\-Dependent\-Values().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902_icgraph}
 \end{center}
 \end{figure}
 
@@ -801,7 +917,7 @@ Return non-\/zero value for min\-Points.
 
 
 
-Definition at line 168 of file Cluster\-Detector.\-cpp.
+Definition at line 195 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -839,7 +955,7 @@ Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a83aea2a1b70e54d08
 
 
 
-Definition at line 55 of file Cluster\-Detector.\-cpp.
+Definition at line 51 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -867,7 +983,7 @@ Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_afc247b9c7ded2ffde
 
 
 
-Definition at line 150 of file Cluster\-Detector.\-cpp.
+Definition at line 177 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -901,7 +1017,7 @@ Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a7451855e415300f15
 
 
 
-Definition at line 69 of file Cluster\-Detector.\-cpp.
+Definition at line 65 of file Cluster\-Detector.\-cpp.
 
 
 
@@ -909,7 +1025,8 @@ References clusters, detect\-And\-Analyse\-Clusters(), and detect\-Entities\-In\
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -940,11 +1057,23 @@ Definition at line 39 of file Cluster\-Detector.\-cpp.
 
 
 
-References multiscale\-::analysis\-::\-Detector\-::detector\-Specific\-Fields\-Initialised, eps, E\-P\-S\-\_\-\-M\-A\-X, E\-P\-S\-\_\-\-M\-I\-N, E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X, and E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N.
+References eps, E\-P\-S\-\_\-\-M\-A\-X, E\-P\-S\-\_\-\-M\-I\-N, E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X, E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N, and multiscale\-::analysis\-::\-Detector\-::set\-Detector\-Specific\-Fields\-Initialisation\-Flag().
 
 
 
 Referenced by load\-Detector\-Parameter\-Values().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_a35eaa560c893a86c3149471f40c15979_cgraph}
+\end{center}
+\end{figure}
+
 
 
 
@@ -975,15 +1104,27 @@ Set the value of the clustering algorithm parameter Min\-Points.
 \end{DoxyParams}
 
 
-Definition at line 47 of file Cluster\-Detector.\-cpp.
+Definition at line 45 of file Cluster\-Detector.\-cpp.
 
 
 
-References multiscale\-::analysis\-::\-Detector\-::detector\-Specific\-Fields\-Initialised, and min\-Points.
+References min\-Points, and multiscale\-::analysis\-::\-Detector\-::set\-Detector\-Specific\-Fields\-Initialisation\-Flag().
 
 
 
 Referenced by load\-Detector\-Parameter\-Values().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_a190fd17d121e8c22c1ca6e4f5b7a213c_cgraph}
+\end{center}
+\end{figure}
+
 
 
 
@@ -992,6 +1133,63 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_a190fd17d121e8c22c1ca6e4f5b7a213c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!update\-Cluster\-Origin\-Dependent\-Values@{update\-Cluster\-Origin\-Dependent\-Values}}
+\index{update\-Cluster\-Origin\-Dependent\-Values@{update\-Cluster\-Origin\-Dependent\-Values}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{update\-Cluster\-Origin\-Dependent\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values (
+\begin{DoxyParamCaption}
+\item[{{\bf Cluster} \&}]{cluster, }
+\item[{const vector$<$ Point $>$ \&}]{cluster\-Convex\-Hull}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc}
+
+
+Update the cluster and compute the origin dependent values considering the convex hull. 
+
+The values which depend on the origin point are the distance of the cluster from the centre and the angle
+
+
+\begin{DoxyParams}{Parameters}
+{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \\
+\hline
+{\em cluster\-Convex\-Hull} & Convex hull of the cluster \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 139 of file Cluster\-Detector.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::distance\-Btw\-Points(), multiscale\-::\-Geometry2\-D\-::minimum\-Distance\-Point\-Index(), multiscale\-::analysis\-::\-Detector\-::origin, multiscale\-::analysis\-::\-Detector\-::polygon\-Angle(), and multiscale\-::analysis\-::\-Cluster\-::set\-Origin\-Dependent\-Members().
+
+
+
+Referenced by analyse\-Clusters\-Origin\-Dependent\-Values().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc_icgraph}
 \end{center}
 \end{figure}
 

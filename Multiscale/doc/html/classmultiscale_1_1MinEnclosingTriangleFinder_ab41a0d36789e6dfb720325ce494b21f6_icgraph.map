@@ -1,0 +1,6 @@
+<map id="multiscale::MinEnclosingTriangleFinder::initialiseAlgorithmVariables" name="multiscale::MinEnclosingTriangleFinder::initialiseAlgorithmVariables">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a0b55638741cd5ff84d583df33d594a69" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="269,31,480,95"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe74965c39261feb7152f5556c0281cd" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="529,39,695,86"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Region.html#acb88d149b42eee5225e7197a225d31c3" title="Get the measure that the cluster has a triangular shape." alt="" coords="745,5,940,51"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="744,74,941,121"/>
+</map>

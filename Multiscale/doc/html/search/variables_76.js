@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['validationflag',['validationFlag',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#abf0daf5b56e3050cbbe70f5d95402cc2',1,'multiscale::MinimumAreaEnclosingTriangle']]],
-  ['vertexa',['vertexA',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a08e1e2f1a682598a8b336d63654f4628',1,'multiscale::MinimumAreaEnclosingTriangle']]],
-  ['vertexb',['vertexB',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#af54ab74d9af976d7308463a334ae1dda',1,'multiscale::MinimumAreaEnclosingTriangle']]],
-  ['vertexc',['vertexC',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a57010dcbfa3ff916815df80663f704bc',1,'multiscale::MinimumAreaEnclosingTriangle']]]
+  ['validationflag',['validationFlag',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a19f9149638eddeec22b775eef632c6ef',1,'multiscale::MinEnclosingTriangleFinder']]],
+  ['vertexa',['vertexA',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#adb758ed8b7e8758436d9f1bb381e017e',1,'multiscale::MinEnclosingTriangleFinder']]],
+  ['vertexb',['vertexB',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a18e5ea5e0b341b3d02c4a75887f44c9c',1,'multiscale::MinEnclosingTriangleFinder']]],
+  ['vertexc',['vertexC',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a0fc6887251f73b19714f39888534cdaa',1,'multiscale::MinEnclosingTriangleFinder']]]
 ];

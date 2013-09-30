@@ -1,6 +1,7 @@
 var searchData=
 [
   ['threshold',['THRESHOLD',['../SimulationClusterDetector_8hpp.html#a4679d8ea8690999a6c6c7c0cb245c879',1,'SimulationClusterDetector.hpp']]],
+  ['threshold_5fclusteredness',['THRESHOLD_CLUSTEREDNESS',['../RegionDetector_8hpp.html#ab9c3e085e7ed8e965b8bfbfa49fcfe6a',1,'RegionDetector.hpp']]],
   ['threshold_5fmax',['THRESHOLD_MAX',['../SimulationClusterDetector_8hpp.html#ab468cd6410e5d23829fc609c96431489',1,'THRESHOLD_MAX():&#160;SimulationClusterDetector.hpp'],['../RegionDetector_8hpp.html#ab468cd6410e5d23829fc609c96431489',1,'THRESHOLD_MAX():&#160;RegionDetector.hpp']]],
   ['thresholdedimage',['thresholdedImage',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aca2aae9914ef643a543a834e61b1cccf',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['thresholdimage',['thresholdImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a614cd80fac5d3df2a25c401bb221149c',1,'multiscale::analysis::RegionDetector']]],

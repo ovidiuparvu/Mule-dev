@@ -118,9 +118,9 @@
                   <Anchor>ae51328d7fe0e477dea162c7e99da45c2</Anchor>
                  </Node>
                  <Node>
-                  <Name>initialiseImageDependentFields</Name>
+                  <Name>initialiseDetectorSpecificImageDependentFields</Name>
                   <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-                  <Anchor>ace0c69bb809f52b8c48ab7564ea1d8e3</Anchor>
+                  <Anchor>a1f5127621294426b6406985dccb292cd</Anchor>
                  </Node>
                  <Node>
                   <Name>initialiseThresholdedImage</Name>
@@ -209,14 +209,14 @@
                   <Anchor>a2bc85629ab2bd6d01c6d2df3d79ba497</Anchor>
                  </Node>
                  <Node>
+                  <Name>areValidOriginDependentValues</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                  <Anchor>a05e8593354fabd5c1ca18b6a2b19096e</Anchor>
+                 </Node>
+                 <Node>
                   <Name>fieldValuesToString</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                   <Anchor>ac231dc426e9e2f1767660192de859aad</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>getClusterednessDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>ac93832bbbb478747825538e53646c166</Anchor>
                  </Node>
                  <Node>
                   <Name>getEntities</Name>
@@ -284,6 +284,11 @@
                   <Anchor>a28efcf050af76acb01619b36505b662e</Anchor>
                  </Node>
                  <Node>
+                  <Name>setOriginDependentMembers</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                  <Anchor>a84033ee8d583d9195abbf42d5d420915</Anchor>
+                 </Node>
+                 <Node>
                   <Name>updateArea</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                   <Anchor>a3128a3b20c28619ccdd6a25208b8c83e</Anchor>
@@ -291,12 +296,12 @@
                  <Node>
                   <Name>updateCentrePoint</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>a259c6f45b89f780b39ba7b67d7d1af2d</Anchor>
+                  <Anchor>a1991d68cc9e76dab54c134df6beb59cb</Anchor>
                  </Node>
                  <Node>
                   <Name>updateClusterednessDegree</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>ae4f509b83bc7b6bb5ea80a780c9aece6</Anchor>
+                  <Anchor>a2279d1567eec7c0b1e29cae26cfb4d73</Anchor>
                  </Node>
                  <Node>
                   <Name>updatePerimeter</Name>
@@ -314,9 +319,9 @@
                   <Anchor>aee8272e740fe640a6bf5260746d34080</Anchor>
                  </Node>
                  <Node>
-                  <Name>clusterednessDegree</Name>
+                  <Name>validateOriginDependentValues</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>a9e6a2613808e1a08b2d3dbfd3af8e23d</Anchor>
+                  <Anchor>a26b9c11e63bfdbfc837a35f68c5c40dd</Anchor>
                  </Node>
                  <Node>
                   <Name>entities</Name>
@@ -375,6 +380,11 @@
                   <Anchor>af994e960ba3cd76cc67e714ea276264a</Anchor>
                  </Node>
                  <Node>
+                  <Name>analyseClustersOriginDependentValues</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>affff27bd4559d1272913ff1bceb229b5</Anchor>
+                 </Node>
+                 <Node>
                   <Name>clearPreviousDetectionResults</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>a5679e30f1ea35203963bf2baa8d7ed36</Anchor>
@@ -430,6 +440,11 @@
                   <Anchor>a115f47c1f0855886ef5ca48acc111843</Anchor>
                  </Node>
                  <Node>
+                  <Name>getClusterConvexHull</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>a4a071efa7d7812c1db9ee577b7893902</Anchor>
+                 </Node>
+                 <Node>
                   <Name>getClusters</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>a0ed0e389d65161b7eef8f377efb20e5c</Anchor>
@@ -473,6 +488,11 @@
                   <Name>setMinPoints</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>a190fd17d121e8c22c1ca6e4f5b7a213c</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>updateClusterOriginDependentValues</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>ac7e008a7674205095f94b91c8d7cdccc</Anchor>
                  </Node>
                  <Node>
                   <Name>avgPileUpDegree</Name>
@@ -593,6 +613,16 @@
                   <Anchor>abb6d85e1a13e96b748ea286a070bdf18</Anchor>
                  </Node>
                  <Node>
+                  <Name>findGoodIntersectionPoints</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a2d8fe1a58bc6c792a45ffca988f2afe7</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>findGoodPointsForAngle</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a9785ec165eb57a95243c5bcf679bc49b</Anchor>
+                 </Node>
+                 <Node>
                   <Name>initialise</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>ae9be577bb23f9472d8ca3e19519764f8</Anchor>
@@ -608,14 +638,29 @@
                   <Anchor>a9636effe77eabf614210dbb079c18bf0</Anchor>
                  </Node>
                  <Node>
+                  <Name>initialiseDetectorSpecificImageDependentFields</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>ab511a3cbe1766a33cb24f61c6fff7253</Anchor>
+                 </Node>
+                 <Node>
                   <Name>initialiseImageDependentFields</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
-                  <Anchor>aedbf44cbcfcf6e1834b245926d3d94fa</Anchor>
+                  <Anchor>aa99821e2690a7776a598b3a5c1cd3d5d</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>initialiseImageOrigin</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a0d5677f992e9d9272eb70c08b86e9338</Anchor>
                  </Node>
                  <Node>
                   <Name>isValidInputImage</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>ad0473d0ad9988c84ae88c9cf6adf19be</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>minAreaRectCentre</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>aeef6f9f7e29c79362df3469a0a5caafe</Anchor>
                  </Node>
                  <Node>
                   <Name>outputResults</Name>
@@ -643,6 +688,16 @@
                   <Anchor>a5d10b68605d5a1711527b4b896b3b2cc</Anchor>
                  </Node>
                  <Node>
+                  <Name>polygonAngle</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>ada30f980ed5ce2f975bb827c393b8cd0</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>polygonAngle</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a80dd82a52bdc63bee7f94d4c8403a785</Anchor>
+                 </Node>
+                 <Node>
                   <Name>printOutputErrorMessage</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>a9150f3fc7945405da34761a4250b7c79</Anchor>
@@ -656,6 +711,11 @@
                   <Name>processPressedKeyRequest</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>a72265d36d3fa22aa3c141eb4001fe2fe</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>setDetectorSpecificFieldsInitialisationFlag</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a610c16fdecd543f15575f0effb08ff00</Anchor>
                  </Node>
                  <Node>
                   <Name>storeOutputImageOnDisk</Name>
@@ -681,6 +741,11 @@
                   <Name>image</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>a523830a6cfe409694ce8327c3c736fbd</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>origin</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a002237e2ad684975a7c8b1e12dd7d780</Anchor>
                  </Node>
                  <Node>
                   <Name>outputFilepath</Name>
@@ -940,7 +1005,7 @@
                  <Node>
                   <Name>Region</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>ab7565e833258b316d6bdd1801adea9e6</Anchor>
+                  <Anchor>a4f4d296d1a4cbeb10690da7af5ba91d2</Anchor>
                  </Node>
                  <Node>
                   <Name>~Region</Name>
@@ -950,7 +1015,7 @@
                  <Node>
                   <Name>areValidInputValues</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>abfad3aff33ecc506ba100074eae3f083</Anchor>
+                  <Anchor>a6319de4734b11039dbb90dfdd3e30e31</Anchor>
                  </Node>
                  <Node>
                   <Name>fieldValuesToString</Name>
@@ -958,19 +1023,9 @@
                   <Anchor>a4fa8cfecf2fc3708c66022655a055dc6</Anchor>
                  </Node>
                  <Node>
-                  <Name>getAngle</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>a00abf56a8cb095f1ab0184f392efd008</Anchor>
-                 </Node>
-                 <Node>
                   <Name>getDensity</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                   <Anchor>abe2e6188ff7b749dc2f77169cb75bb95</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>getDistanceFromOrigin</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>ade9c8b7c4095638e53fe06827b545a3a</Anchor>
                  </Node>
                  <Node>
                   <Name>getPolygon</Name>
@@ -1003,6 +1058,11 @@
                   <Anchor>a3753b8789a73c1e3b5d189aa710aec86</Anchor>
                  </Node>
                  <Node>
+                  <Name>updateClusterednessDegree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
+                  <Anchor>a35c88944e2704571214b6e28dd657350</Anchor>
+                 </Node>
+                 <Node>
                   <Name>updatePerimeter</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                   <Anchor>a58a4a22cb77fc6963592ec156458f310</Anchor>
@@ -1015,22 +1075,12 @@
                  <Node>
                   <Name>validateInputValues</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>ac1cb568b9eafad173e9f508a5bf61ad2</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>angle</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>a86c960769a9e8bc1a29dc00c1d43f20a</Anchor>
+                  <Anchor>a517b46fd89696f44086aafb1a9526995</Anchor>
                  </Node>
                  <Node>
                   <Name>density</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                   <Anchor>af4eb62fddbe850271dfe15bb240b13bb</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>distanceFromOrigin</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>ad5f128003a97d9d41fd4cf1c01d9a709</Anchor>
                  </Node>
                  <Node>
                   <Name>polygon</Name>
@@ -1064,6 +1114,11 @@
                   <Anchor>a4a89f3a28cbb473acc32f22b49d09389</Anchor>
                  </Node>
                  <Node>
+                  <Name>computeAverageMeasures</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                  <Anchor>aee096ec729a12b62fd0c61f74601aad1</Anchor>
+                 </Node>
+                 <Node>
                   <Name>convertAlpha</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>a3de7a4d365c182917b74117a22075ec4</Anchor>
@@ -1087,16 +1142,6 @@
                   <Name>findContoursInImage</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>a19918b5cd0ec310ad6149c7345870b3f</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>findGoodIntersectionPoints</Name>
-                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>af804b99efa2c9c5adb04c11a5dc5f589</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>findGoodPointsForAngle</Name>
-                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a3b76437c936dc9055c3ae49846f4016a</Anchor>
                  </Node>
                  <Node>
                   <Name>findRegions</Name>
@@ -1159,9 +1204,9 @@
                   <Anchor>aee6bb117ea0ef98b8e333ac33d17962c</Anchor>
                  </Node>
                  <Node>
-                  <Name>initialiseImageDependentFields</Name>
+                  <Name>initialiseDetectorSpecificImageDependentFields</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a3c14a7cc6f0282cc031a4a40704d474e</Anchor>
+                  <Anchor>afc8382c3838e476b0c7a5a9794ed42e5</Anchor>
                  </Node>
                  <Node>
                   <Name>isValidRegion</Name>
@@ -1169,14 +1214,19 @@
                   <Anchor>a2be058ae797d80787725ae2c246ba256</Anchor>
                  </Node>
                  <Node>
-                  <Name>minAreaRectCentre</Name>
-                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a53457e7405a2a4558fe659aa66931834</Anchor>
-                 </Node>
-                 <Node>
                   <Name>morphologicalClose</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>adcb8ab3ced63de9168734f0b24072705</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputAveragedMeasuresToCsvFile</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                  <Anchor>ac060acf205b878f79b67093f178f265f</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputRegionsToCsvFile</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                  <Anchor>a9289ea9b1ceb3bd21317170d72a889e4</Anchor>
                  </Node>
                  <Node>
                   <Name>outputResultsToCsvFile</Name>
@@ -1194,19 +1244,24 @@
                   <Anchor>ae47319444db34d72d4316f49f965b69d</Anchor>
                  </Node>
                  <Node>
-                  <Name>regionAngle</Name>
+                  <Name>regionArea</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>ac016631bd35bf0dd2d7e941076ec09c8</Anchor>
+                  <Anchor>a938fa8d165c87dc69e962883942072d2</Anchor>
                  </Node>
                  <Node>
-                  <Name>regionAngle</Name>
+                  <Name>regionClusterednessDegree</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>afb2aa3926a1bdc868f990db65df1ed4c</Anchor>
+                  <Anchor>a89995b72e578951ea7ddf43c5c25e14a</Anchor>
                  </Node>
                  <Node>
                   <Name>regionDensity</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>a6beb6b2ecaccd60130bcf8dd808750b8</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>regionHolesArea</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                  <Anchor>ab110a0a67852484c700ff035089fce18</Anchor>
                  </Node>
                  <Node>
                   <Name>setAlpha</Name>
@@ -1269,6 +1324,16 @@
                   <Anchor>ab768a3bbfff9835b441a889ab2cb05a6</Anchor>
                  </Node>
                  <Node>
+                  <Name>avgClusterednessDegree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                  <Anchor>ad2614f07ff1dfa25af6f7eaa10fe8ea8</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>avgDensity</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                  <Anchor>a96d0cab2a5cd61b3820c87581fed9548</Anchor>
+                 </Node>
+                 <Node>
                   <Name>beta</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>a23c831170c2264dd7e59067a1a7d3c8e</Anchor>
@@ -1287,11 +1352,6 @@
                   <Name>morphologicalCloseIterations</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>a700a2f299d7c56fbd1fdbec68092f23a</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>origin</Name>
-                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a8d2a487b7a4168ba94caa3596efbf794</Anchor>
                  </Node>
                  <Node>
                   <Name>regionAreaThresh</Name>
@@ -1341,6 +1401,11 @@
                   <Anchor>a1b70b9e25f8b82ac2195f75f89280800</Anchor>
                  </Node>
                  <Node>
+                  <Name>getAngle</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                  <Anchor>a6bac1eb1ff6d06cdb0fd8036849b4f50</Anchor>
+                 </Node>
+                 <Node>
                   <Name>getArea</Name>
                   <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                   <Anchor>a192a2f1ee9e3af90a40c8c7c47618965</Anchor>
@@ -1349,6 +1414,16 @@
                   <Name>getCentre</Name>
                   <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                   <Anchor>ac8b879dca765e47b9e0ef86d440e28e6</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getClusterednessDegree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                  <Anchor>a85ae2bf2457ca5dfc14a43dc492a2dda</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getDistanceFromOrigin</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                  <Anchor>aeef9f086af281569cf8f83dc2e1a0014</Anchor>
                  </Node>
                  <Node>
                   <Name>getPerimeter</Name>
@@ -1401,6 +1476,11 @@
                   <Anchor>aab860163169deb76a7e853df32902ab1</Anchor>
                  </Node>
                  <Node>
+                  <Name>updateClusterednessDegree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                  <Anchor>a7deb494a09ce1f44b1b7e8ac5255cd0b</Anchor>
+                 </Node>
+                 <Node>
                   <Name>updateMeasures</Name>
                   <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                   <Anchor>a8e5a2af581895142da9b50eeeabeb7be</Anchor>
@@ -1426,6 +1506,11 @@
                   <Anchor>ad94bce09032b184ebfd5b5006217c683</Anchor>
                  </Node>
                  <Node>
+                  <Name>angle</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                  <Anchor>ab452753ab21ee26732afb77a6478b3ce</Anchor>
+                 </Node>
+                 <Node>
                   <Name>area</Name>
                   <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                   <Anchor>ac570cc755e52aeb9deacf12d223a4a3a</Anchor>
@@ -1439,6 +1524,16 @@
                   <Name>circularMeasure</Name>
                   <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                   <Anchor>a4c58c82dd3d67d670b554bfaeb2b19ba</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>clusterednessDegree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                  <Anchor>acd11d0bbeb60a1168bd2c2fbbc6fe965</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>distanceFromOrigin</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                  <Anchor>ac2a5d3f8c2cb878c710d821c536b8a4f</Anchor>
                  </Node>
                  <Node>
                   <Name>perimeter</Name>
@@ -2237,6 +2332,22 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>ClusterException</Name>
+              <Path>classmultiscale_1_1ClusterException.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>ClusterException</Name>
+                <Path>classmultiscale_1_1ClusterException.html</Path>
+                <Anchor>a76dceba60d12ab5837ab61b4976479e8</Anchor>
+               </Node>
+               <Node>
+                <Name>ClusterException</Name>
+                <Path>classmultiscale_1_1ClusterException.html</Path>
+                <Anchor>a7569d1748e999eb6ec111d69d5291466</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
               <Name>DetectorException</Name>
               <Path>classmultiscale_1_1DetectorException.html</Path>
               <Subnodes>
@@ -2285,18 +2396,18 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>MinimumAreaEnclosingTriangleException</Name>
-              <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+              <Name>MinEnclosingTriangleFinderException</Name>
+              <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
               <Subnodes>
                <Node>
-                <Name>MinimumAreaEnclosingTriangleException</Name>
-                <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
-                <Anchor>ab3b5f7915eed59446a1bf15d8408ffaa</Anchor>
+                <Name>MinEnclosingTriangleFinderException</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
+                <Anchor>a4a83fc394b2c31092e51cb4d43f45d5e</Anchor>
                </Node>
                <Node>
-                <Name>MinimumAreaEnclosingTriangleException</Name>
-                <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
-                <Anchor>aa2d98ad9b3ef5599405d176b20affe55</Anchor>
+                <Name>MinEnclosingTriangleFinderException</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
+                <Anchor>a21a9dd80a171daa204b58b33fd5fbd5e</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -2520,9 +2631,279 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>MinimumAreaEnclosingTriangle</Name>
-              <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+              <Name>MinEnclosingTriangleFinder</Name>
+              <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
               <Subnodes>
+               <Node>
+                <Name>MinEnclosingTriangleFinder</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a9bac0668e32bcab3f35ddc81fea40940</Anchor>
+               </Node>
+               <Node>
+                <Name>~MinEnclosingTriangleFinder</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a356eccb6cce71d00144007df0bee1e5e</Anchor>
+               </Node>
+               <Node>
+                <Name>advance</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>af52c24da93e4660f043dbb0f92594a19</Anchor>
+               </Node>
+               <Node>
+                <Name>advanceBToRightChain</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a55faab1deabea3b838490a4a3b62cafc</Anchor>
+               </Node>
+               <Node>
+                <Name>areIdenticalLines</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a65a15d407aeab7f9b81fe527c9a53e81</Anchor>
+               </Node>
+               <Node>
+                <Name>areIntersectingLines</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a890d17359c3cdf30b6c20b08cd12b6c9</Anchor>
+               </Node>
+               <Node>
+                <Name>find</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>afe74965c39261feb7152f5556c0281cd</Anchor>
+               </Node>
+               <Node>
+                <Name>findGammaIntersectionPoints</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a9eedc43ea3190d8ee6343879dc100edb</Anchor>
+               </Node>
+               <Node>
+                <Name>findMinEnclosingTriangle</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a0b55638741cd5ff84d583df33d594a69</Anchor>
+               </Node>
+               <Node>
+                <Name>findMinEnclosingTriangle</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>afe968e24fdc374841baa8fe21a6d8270</Anchor>
+               </Node>
+               <Node>
+                <Name>findVertexCOnSideB</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>ab0b488d2d67f2d22077777eebc292c1a</Anchor>
+               </Node>
+               <Node>
+                <Name>gamma</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a800413be1e1567d986a92fac4a6b937e</Anchor>
+               </Node>
+               <Node>
+                <Name>height</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a4fd0fdc0ccc472a2d15c8d001f65d0f9</Anchor>
+               </Node>
+               <Node>
+                <Name>height</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a9507a3196dd16613bf828d04f196b9db</Anchor>
+               </Node>
+               <Node>
+                <Name>initialise</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a6fa2b447626f765d0b9600cabdc810ae</Anchor>
+               </Node>
+               <Node>
+                <Name>initialiseAlgorithmVariables</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>ab41a0d36789e6dfb720325ce494b21f6</Anchor>
+               </Node>
+               <Node>
+                <Name>initialiseConvexPolygon</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>afe8fe342d7ec338ccc0874cce91f2a58</Anchor>
+               </Node>
+               <Node>
+                <Name>intersects</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a586e3fde222d1464eb57a3e20ceb136c</Anchor>
+               </Node>
+               <Node>
+                <Name>intersectsAbove</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>aba0848fcc9021b379fd5f02a6708912d</Anchor>
+               </Node>
+               <Node>
+                <Name>intersectsAboveOrBelow</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a622303a315704ffb0e262ec66f2a07fb</Anchor>
+               </Node>
+               <Node>
+                <Name>intersectsBelow</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a0abe1c7d5ef5a43f8ea1b404db0066e0</Anchor>
+               </Node>
+               <Node>
+                <Name>isFlushAngleBetweenPredecessorAndSuccessor</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a067f421f84dfd1803c241efc85dbc0bb</Anchor>
+               </Node>
+               <Node>
+                <Name>isGammaAngleBetween</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a98d91069c4e7fae9f68f0af8be5e5487</Anchor>
+               </Node>
+               <Node>
+                <Name>isGammaAngleEqualTo</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a3690d470807b2d5d893988370099f283</Anchor>
+               </Node>
+               <Node>
+                <Name>isLocalMinimalTriangle</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a97747be924fe1d8efaf6cad9d635419b</Anchor>
+               </Node>
+               <Node>
+                <Name>isNotBTangency</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a9f071f42dbaff51c8975da1b77c1188e</Anchor>
+               </Node>
+               <Node>
+                <Name>isValidMinimalTriangle</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a4f9c533c8d5de8b95c38b71f50a5e00c</Anchor>
+               </Node>
+               <Node>
+                <Name>lineEquationParameters</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>ab2aa08fbf3d17d25f55eb21cd2524975</Anchor>
+               </Node>
+               <Node>
+                <Name>middlePointOfSideB</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a664bee3e51e007b97fa21a92830f9066</Anchor>
+               </Node>
+               <Node>
+                <Name>moveAIfLowAndBIfHigh</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a88ca299e33ef6104513bd153501d5530</Anchor>
+               </Node>
+               <Node>
+                <Name>predecessor</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>aa5ec6fafd63c6d99d095dfc58c47cd4e</Anchor>
+               </Node>
+               <Node>
+                <Name>returnMinEnclosingTriangle</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>af6e49a1ef5a0d4dbe3e25c2f92d69dc3</Anchor>
+               </Node>
+               <Node>
+                <Name>searchForBTangency</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a7064b538e01622880b6a044e84d3ad0e</Anchor>
+               </Node>
+               <Node>
+                <Name>successor</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a075472a453bfcb0eedd06a4a185241fc</Anchor>
+               </Node>
+               <Node>
+                <Name>updateMinEnclosingTriangle</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a8608cacc403c71d7ac9bc017d7b14e0c</Anchor>
+               </Node>
+               <Node>
+                <Name>updateSideB</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>ab25b3b5dbe05cb06e83a49cd28b3116f</Anchor>
+               </Node>
+               <Node>
+                <Name>updateSidesBA</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a12f1835531784519d618b86e889af06d</Anchor>
+               </Node>
+               <Node>
+                <Name>updateSidesCA</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a0f4a9131f5118fa0afc33344bdf67f16</Anchor>
+               </Node>
+               <Node>
+                <Name>a</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>acb13371219bdd9b7c57131f1535e4c89</Anchor>
+               </Node>
+               <Node>
+                <Name>area</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a64ea18728dc70fd6235961c12802123a</Anchor>
+               </Node>
+               <Node>
+                <Name>b</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a71355f44126b38a4fb55c0c92ab64816</Anchor>
+               </Node>
+               <Node>
+                <Name>c</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a758f39b2d0cf35337f28d8ed871c2c0b</Anchor>
+               </Node>
+               <Node>
+                <Name>nrOfPoints</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a92409868a6731f5e41878085f3ac0f73</Anchor>
+               </Node>
+               <Node>
+                <Name>polygon</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>add5aecf2c138345091d55076bdc253a4</Anchor>
+               </Node>
+               <Node>
+                <Name>sideAEndVertex</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a132a1e2eed61d579e6038089fe08d150</Anchor>
+               </Node>
+               <Node>
+                <Name>sideAStartVertex</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a2e9e3f20e0c0d8bcf34e8ce903aabb42</Anchor>
+               </Node>
+               <Node>
+                <Name>sideBEndVertex</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a8e3929795823c49572ff65a4f04462c6</Anchor>
+               </Node>
+               <Node>
+                <Name>sideBStartVertex</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a5f6c0f9361e4aab168f068f08b700742</Anchor>
+               </Node>
+               <Node>
+                <Name>sideCEndVertex</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a3f0f5bbef4e89caed8d153f1fc2eccea</Anchor>
+               </Node>
+               <Node>
+                <Name>sideCStartVertex</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a877d0c34c4803643699d8fd176c24d4e</Anchor>
+               </Node>
+               <Node>
+                <Name>validationFlag</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a19f9149638eddeec22b775eef632c6ef</Anchor>
+               </Node>
+               <Node>
+                <Name>vertexA</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>adb758ed8b7e8758436d9f1bb381e017e</Anchor>
+               </Node>
+               <Node>
+                <Name>vertexB</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a18e5ea5e0b341b3d02c4a75887f44c9c</Anchor>
+               </Node>
+               <Node>
+                <Name>vertexC</Name>
+                <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                <Anchor>a0fc6887251f73b19714f39888534cdaa</Anchor>
+               </Node>
               </Subnodes>
              </Node>
              <Node>
@@ -2696,8 +3077,8 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>multiscale::MinimumAreaEnclosingTriangle</Name>
-            <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+            <Name>multiscale::MinEnclosingTriangleFinder</Name>
+            <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
            </Node>
            <Node>
             <Name>multiscale::NumberIterator</Name>
@@ -2762,6 +3143,10 @@
               <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
              </Node>
              <Node>
+              <Name>multiscale::ClusterException</Name>
+              <Path>classmultiscale_1_1ClusterException.html</Path>
+             </Node>
+             <Node>
               <Name>multiscale::DetectorException</Name>
               <Path>classmultiscale_1_1DetectorException.html</Path>
              </Node>
@@ -2774,8 +3159,8 @@
               <Path>classmultiscale_1_1MatFactoryException.html</Path>
              </Node>
              <Node>
-              <Name>multiscale::MinimumAreaEnclosingTriangleException</Name>
-              <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+              <Name>multiscale::MinEnclosingTriangleFinderException</Name>
+              <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
              </Node>
              <Node>
               <Name>multiscale::PolarCsvToInputFilesConverterException</Name>
@@ -3078,9 +3463,9 @@
                           <Anchor>ae51328d7fe0e477dea162c7e99da45c2</Anchor>
                          </Node>
                          <Node>
-                          <Name>initialiseImageDependentFields</Name>
+                          <Name>initialiseDetectorSpecificImageDependentFields</Name>
                           <Path>classmultiscale_1_1analysis_1_1SimulationClusterDetector.html</Path>
-                          <Anchor>ace0c69bb809f52b8c48ab7564ea1d8e3</Anchor>
+                          <Anchor>a1f5127621294426b6406985dccb292cd</Anchor>
                          </Node>
                          <Node>
                           <Name>initialiseThresholdedImage</Name>
@@ -3399,14 +3784,14 @@
                         <Anchor>a2bc85629ab2bd6d01c6d2df3d79ba497</Anchor>
                        </Node>
                        <Node>
+                        <Name>areValidOriginDependentValues</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                        <Anchor>a05e8593354fabd5c1ca18b6a2b19096e</Anchor>
+                       </Node>
+                       <Node>
                         <Name>fieldValuesToString</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                         <Anchor>ac231dc426e9e2f1767660192de859aad</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>getClusterednessDegree</Name>
-                        <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                        <Anchor>ac93832bbbb478747825538e53646c166</Anchor>
                        </Node>
                        <Node>
                         <Name>getEntities</Name>
@@ -3474,6 +3859,11 @@
                         <Anchor>a28efcf050af76acb01619b36505b662e</Anchor>
                        </Node>
                        <Node>
+                        <Name>setOriginDependentMembers</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                        <Anchor>a84033ee8d583d9195abbf42d5d420915</Anchor>
+                       </Node>
+                       <Node>
                         <Name>updateArea</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                         <Anchor>a3128a3b20c28619ccdd6a25208b8c83e</Anchor>
@@ -3481,12 +3871,12 @@
                        <Node>
                         <Name>updateCentrePoint</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                        <Anchor>a259c6f45b89f780b39ba7b67d7d1af2d</Anchor>
+                        <Anchor>a1991d68cc9e76dab54c134df6beb59cb</Anchor>
                        </Node>
                        <Node>
                         <Name>updateClusterednessDegree</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                        <Anchor>ae4f509b83bc7b6bb5ea80a780c9aece6</Anchor>
+                        <Anchor>a2279d1567eec7c0b1e29cae26cfb4d73</Anchor>
                        </Node>
                        <Node>
                         <Name>updatePerimeter</Name>
@@ -3504,9 +3894,9 @@
                         <Anchor>aee8272e740fe640a6bf5260746d34080</Anchor>
                        </Node>
                        <Node>
-                        <Name>clusterednessDegree</Name>
+                        <Name>validateOriginDependentValues</Name>
                         <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                        <Anchor>a9e6a2613808e1a08b2d3dbfd3af8e23d</Anchor>
+                        <Anchor>a26b9c11e63bfdbfc837a35f68c5c40dd</Anchor>
                        </Node>
                        <Node>
                         <Name>entities</Name>
@@ -3540,6 +3930,11 @@
                        </Node>
                       </Subnodes>
                      </Node>
+                     <Node>
+                      <Name>ERR_ORIGIN_DEPENDENT_VALUES</Name>
+                      <Path>Cluster_8hpp.html</Path>
+                      <Anchor>a0632e42a3a45a95b4b34b8775a78f208</Anchor>
+                     </Node>
                     </Subnodes>
                    </Node>
                    <Node>
@@ -3569,6 +3964,11 @@
                         <Name>analyseClusters</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                         <Anchor>af994e960ba3cd76cc67e714ea276264a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>analyseClustersOriginDependentValues</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>affff27bd4559d1272913ff1bceb229b5</Anchor>
                        </Node>
                        <Node>
                         <Name>clearPreviousDetectionResults</Name>
@@ -3626,6 +4026,11 @@
                         <Anchor>a115f47c1f0855886ef5ca48acc111843</Anchor>
                        </Node>
                        <Node>
+                        <Name>getClusterConvexHull</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>a4a071efa7d7812c1db9ee577b7893902</Anchor>
+                       </Node>
+                       <Node>
                         <Name>getClusters</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                         <Anchor>a0ed0e389d65161b7eef8f377efb20e5c</Anchor>
@@ -3669,6 +4074,11 @@
                         <Name>setMinPoints</Name>
                         <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                         <Anchor>a190fd17d121e8c22c1ca6e4f5b7a213c</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>updateClusterOriginDependentValues</Name>
+                        <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                        <Anchor>ac7e008a7674205095f94b91c8d7cdccc</Anchor>
                        </Node>
                        <Node>
                         <Name>avgPileUpDegree</Name>
@@ -3872,6 +4282,16 @@
                         <Anchor>abb6d85e1a13e96b748ea286a070bdf18</Anchor>
                        </Node>
                        <Node>
+                        <Name>findGoodIntersectionPoints</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                        <Anchor>a2d8fe1a58bc6c792a45ffca988f2afe7</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>findGoodPointsForAngle</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                        <Anchor>a9785ec165eb57a95243c5bcf679bc49b</Anchor>
+                       </Node>
+                       <Node>
                         <Name>initialise</Name>
                         <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                         <Anchor>ae9be577bb23f9472d8ca3e19519764f8</Anchor>
@@ -3887,14 +4307,29 @@
                         <Anchor>a9636effe77eabf614210dbb079c18bf0</Anchor>
                        </Node>
                        <Node>
+                        <Name>initialiseDetectorSpecificImageDependentFields</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                        <Anchor>ab511a3cbe1766a33cb24f61c6fff7253</Anchor>
+                       </Node>
+                       <Node>
                         <Name>initialiseImageDependentFields</Name>
                         <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
-                        <Anchor>aedbf44cbcfcf6e1834b245926d3d94fa</Anchor>
+                        <Anchor>aa99821e2690a7776a598b3a5c1cd3d5d</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>initialiseImageOrigin</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                        <Anchor>a0d5677f992e9d9272eb70c08b86e9338</Anchor>
                        </Node>
                        <Node>
                         <Name>isValidInputImage</Name>
                         <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                         <Anchor>ad0473d0ad9988c84ae88c9cf6adf19be</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>minAreaRectCentre</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                        <Anchor>aeef6f9f7e29c79362df3469a0a5caafe</Anchor>
                        </Node>
                        <Node>
                         <Name>outputResults</Name>
@@ -3922,6 +4357,16 @@
                         <Anchor>a5d10b68605d5a1711527b4b896b3b2cc</Anchor>
                        </Node>
                        <Node>
+                        <Name>polygonAngle</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                        <Anchor>ada30f980ed5ce2f975bb827c393b8cd0</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>polygonAngle</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                        <Anchor>a80dd82a52bdc63bee7f94d4c8403a785</Anchor>
+                       </Node>
+                       <Node>
                         <Name>printOutputErrorMessage</Name>
                         <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                         <Anchor>a9150f3fc7945405da34761a4250b7c79</Anchor>
@@ -3935,6 +4380,11 @@
                         <Name>processPressedKeyRequest</Name>
                         <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                         <Anchor>a72265d36d3fa22aa3c141eb4001fe2fe</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>setDetectorSpecificFieldsInitialisationFlag</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                        <Anchor>a610c16fdecd543f15575f0effb08ff00</Anchor>
                        </Node>
                        <Node>
                         <Name>storeOutputImageOnDisk</Name>
@@ -3960,6 +4410,11 @@
                         <Name>image</Name>
                         <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                         <Anchor>a523830a6cfe409694ce8327c3c736fbd</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>origin</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                        <Anchor>a002237e2ad684975a7c8b1e12dd7d780</Anchor>
                        </Node>
                        <Node>
                         <Name>outputFilepath</Name>
@@ -4230,7 +4685,7 @@
                        <Node>
                         <Name>Region</Name>
                         <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>ab7565e833258b316d6bdd1801adea9e6</Anchor>
+                        <Anchor>a4f4d296d1a4cbeb10690da7af5ba91d2</Anchor>
                        </Node>
                        <Node>
                         <Name>~Region</Name>
@@ -4240,7 +4695,7 @@
                        <Node>
                         <Name>areValidInputValues</Name>
                         <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>abfad3aff33ecc506ba100074eae3f083</Anchor>
+                        <Anchor>a6319de4734b11039dbb90dfdd3e30e31</Anchor>
                        </Node>
                        <Node>
                         <Name>fieldValuesToString</Name>
@@ -4248,19 +4703,9 @@
                         <Anchor>a4fa8cfecf2fc3708c66022655a055dc6</Anchor>
                        </Node>
                        <Node>
-                        <Name>getAngle</Name>
-                        <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>a00abf56a8cb095f1ab0184f392efd008</Anchor>
-                       </Node>
-                       <Node>
                         <Name>getDensity</Name>
                         <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                         <Anchor>abe2e6188ff7b749dc2f77169cb75bb95</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>getDistanceFromOrigin</Name>
-                        <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>ade9c8b7c4095638e53fe06827b545a3a</Anchor>
                        </Node>
                        <Node>
                         <Name>getPolygon</Name>
@@ -4293,6 +4738,11 @@
                         <Anchor>a3753b8789a73c1e3b5d189aa710aec86</Anchor>
                        </Node>
                        <Node>
+                        <Name>updateClusterednessDegree</Name>
+                        <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
+                        <Anchor>a35c88944e2704571214b6e28dd657350</Anchor>
+                       </Node>
+                       <Node>
                         <Name>updatePerimeter</Name>
                         <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                         <Anchor>a58a4a22cb77fc6963592ec156458f310</Anchor>
@@ -4305,22 +4755,12 @@
                        <Node>
                         <Name>validateInputValues</Name>
                         <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>ac1cb568b9eafad173e9f508a5bf61ad2</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>angle</Name>
-                        <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>a86c960769a9e8bc1a29dc00c1d43f20a</Anchor>
+                        <Anchor>a517b46fd89696f44086aafb1a9526995</Anchor>
                        </Node>
                        <Node>
                         <Name>density</Name>
                         <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                         <Anchor>af4eb62fddbe850271dfe15bb240b13bb</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>distanceFromOrigin</Name>
-                        <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                        <Anchor>ad5f128003a97d9d41fd4cf1c01d9a709</Anchor>
                        </Node>
                        <Node>
                         <Name>polygon</Name>
@@ -4370,6 +4810,11 @@
                         <Anchor>a4a89f3a28cbb473acc32f22b49d09389</Anchor>
                        </Node>
                        <Node>
+                        <Name>computeAverageMeasures</Name>
+                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                        <Anchor>aee096ec729a12b62fd0c61f74601aad1</Anchor>
+                       </Node>
+                       <Node>
                         <Name>convertAlpha</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                         <Anchor>a3de7a4d365c182917b74117a22075ec4</Anchor>
@@ -4393,16 +4838,6 @@
                         <Name>findContoursInImage</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                         <Anchor>a19918b5cd0ec310ad6149c7345870b3f</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>findGoodIntersectionPoints</Name>
-                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>af804b99efa2c9c5adb04c11a5dc5f589</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>findGoodPointsForAngle</Name>
-                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a3b76437c936dc9055c3ae49846f4016a</Anchor>
                        </Node>
                        <Node>
                         <Name>findRegions</Name>
@@ -4465,9 +4900,9 @@
                         <Anchor>aee6bb117ea0ef98b8e333ac33d17962c</Anchor>
                        </Node>
                        <Node>
-                        <Name>initialiseImageDependentFields</Name>
+                        <Name>initialiseDetectorSpecificImageDependentFields</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a3c14a7cc6f0282cc031a4a40704d474e</Anchor>
+                        <Anchor>afc8382c3838e476b0c7a5a9794ed42e5</Anchor>
                        </Node>
                        <Node>
                         <Name>isValidRegion</Name>
@@ -4475,14 +4910,19 @@
                         <Anchor>a2be058ae797d80787725ae2c246ba256</Anchor>
                        </Node>
                        <Node>
-                        <Name>minAreaRectCentre</Name>
-                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a53457e7405a2a4558fe659aa66931834</Anchor>
-                       </Node>
-                       <Node>
                         <Name>morphologicalClose</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                         <Anchor>adcb8ab3ced63de9168734f0b24072705</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>outputAveragedMeasuresToCsvFile</Name>
+                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                        <Anchor>ac060acf205b878f79b67093f178f265f</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>outputRegionsToCsvFile</Name>
+                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                        <Anchor>a9289ea9b1ceb3bd21317170d72a889e4</Anchor>
                        </Node>
                        <Node>
                         <Name>outputResultsToCsvFile</Name>
@@ -4500,19 +4940,24 @@
                         <Anchor>ae47319444db34d72d4316f49f965b69d</Anchor>
                        </Node>
                        <Node>
-                        <Name>regionAngle</Name>
+                        <Name>regionArea</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>ac016631bd35bf0dd2d7e941076ec09c8</Anchor>
+                        <Anchor>a938fa8d165c87dc69e962883942072d2</Anchor>
                        </Node>
                        <Node>
-                        <Name>regionAngle</Name>
+                        <Name>regionClusterednessDegree</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>afb2aa3926a1bdc868f990db65df1ed4c</Anchor>
+                        <Anchor>a89995b72e578951ea7ddf43c5c25e14a</Anchor>
                        </Node>
                        <Node>
                         <Name>regionDensity</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                         <Anchor>a6beb6b2ecaccd60130bcf8dd808750b8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>regionHolesArea</Name>
+                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                        <Anchor>ab110a0a67852484c700ff035089fce18</Anchor>
                        </Node>
                        <Node>
                         <Name>setAlpha</Name>
@@ -4575,6 +5020,16 @@
                         <Anchor>ab768a3bbfff9835b441a889ab2cb05a6</Anchor>
                        </Node>
                        <Node>
+                        <Name>avgClusterednessDegree</Name>
+                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                        <Anchor>ad2614f07ff1dfa25af6f7eaa10fe8ea8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>avgDensity</Name>
+                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                        <Anchor>a96d0cab2a5cd61b3820c87581fed9548</Anchor>
+                       </Node>
+                       <Node>
                         <Name>beta</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                         <Anchor>a23c831170c2264dd7e59067a1a7d3c8e</Anchor>
@@ -4593,11 +5048,6 @@
                         <Name>morphologicalCloseIterations</Name>
                         <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                         <Anchor>a700a2f299d7c56fbd1fdbec68092f23a</Anchor>
-                       </Node>
-                       <Node>
-                        <Name>origin</Name>
-                        <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                        <Anchor>a8d2a487b7a4168ba94caa3596efbf794</Anchor>
                        </Node>
                        <Node>
                         <Name>regionAreaThresh</Name>
@@ -4677,14 +5127,24 @@
                       <Anchor>a8f47a4307f9eea88d06b5383da431917</Anchor>
                      </Node>
                      <Node>
-                      <Name>ITER_MAX</Name>
-                      <Path>RegionDetector_8hpp.html</Path>
-                      <Anchor>a82e33b17ccb9be80dc09a1f38b5330b2</Anchor>
-                     </Node>
-                     <Node>
                       <Name>KERNEL_MAX</Name>
                       <Path>RegionDetector_8hpp.html</Path>
                       <Anchor>a0b0bfd77700b86e4860923b5eb902ceb</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>MORPH_ITER_MAX</Name>
+                      <Path>RegionDetector_8hpp.html</Path>
+                      <Anchor>a18fb885f360856823b73a2fe092bbe80</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>OUTPUT_CLUSTEREDNESS</Name>
+                      <Path>RegionDetector_8hpp.html</Path>
+                      <Anchor>a03d08fcd24072f600fedefea105192c5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>OUTPUT_DENSITY</Name>
+                      <Path>RegionDetector_8hpp.html</Path>
+                      <Anchor>a9502811d7bba38588cad6220717ba25a</Anchor>
                      </Node>
                      <Node>
                       <Name>POLYGON_CLOSED</Name>
@@ -4695,6 +5155,11 @@
                       <Name>REGION_AREA_THRESH_MAX</Name>
                       <Path>RegionDetector_8hpp.html</Path>
                       <Anchor>ad9b19b601c85b0ec4f89b2e8c9f9c985</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>THRESHOLD_CLUSTEREDNESS</Name>
+                      <Path>RegionDetector_8hpp.html</Path>
+                      <Anchor>ab9c3e085e7ed8e965b8bfbfa49fcfe6a</Anchor>
                      </Node>
                      <Node>
                       <Name>THRESHOLD_MAX</Name>
@@ -4822,6 +5287,11 @@
                         <Anchor>a1b70b9e25f8b82ac2195f75f89280800</Anchor>
                        </Node>
                        <Node>
+                        <Name>getAngle</Name>
+                        <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                        <Anchor>a6bac1eb1ff6d06cdb0fd8036849b4f50</Anchor>
+                       </Node>
+                       <Node>
                         <Name>getArea</Name>
                         <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                         <Anchor>a192a2f1ee9e3af90a40c8c7c47618965</Anchor>
@@ -4830,6 +5300,16 @@
                         <Name>getCentre</Name>
                         <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                         <Anchor>ac8b879dca765e47b9e0ef86d440e28e6</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>getClusterednessDegree</Name>
+                        <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                        <Anchor>a85ae2bf2457ca5dfc14a43dc492a2dda</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>getDistanceFromOrigin</Name>
+                        <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                        <Anchor>aeef9f086af281569cf8f83dc2e1a0014</Anchor>
                        </Node>
                        <Node>
                         <Name>getPerimeter</Name>
@@ -4882,6 +5362,11 @@
                         <Anchor>aab860163169deb76a7e853df32902ab1</Anchor>
                        </Node>
                        <Node>
+                        <Name>updateClusterednessDegree</Name>
+                        <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                        <Anchor>a7deb494a09ce1f44b1b7e8ac5255cd0b</Anchor>
+                       </Node>
+                       <Node>
                         <Name>updateMeasures</Name>
                         <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                         <Anchor>a8e5a2af581895142da9b50eeeabeb7be</Anchor>
@@ -4907,6 +5392,11 @@
                         <Anchor>ad94bce09032b184ebfd5b5006217c683</Anchor>
                        </Node>
                        <Node>
+                        <Name>angle</Name>
+                        <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                        <Anchor>ab452753ab21ee26732afb77a6478b3ce</Anchor>
+                       </Node>
+                       <Node>
                         <Name>area</Name>
                         <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                         <Anchor>ac570cc755e52aeb9deacf12d223a4a3a</Anchor>
@@ -4920,6 +5410,16 @@
                         <Name>circularMeasure</Name>
                         <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
                         <Anchor>a4c58c82dd3d67d670b554bfaeb2b19ba</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>clusterednessDegree</Name>
+                        <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                        <Anchor>acd11d0bbeb60a1168bd2c2fbbc6fe965</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>distanceFromOrigin</Name>
+                        <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                        <Anchor>ac2a5d3f8c2cb878c710d821c536b8a4f</Anchor>
                        </Node>
                        <Node>
                         <Name>perimeter</Name>
@@ -5065,6 +5565,28 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>ClusterException.hpp</Name>
+                  <Path>ClusterException_8hpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>ClusterException</Name>
+                    <Path>classmultiscale_1_1ClusterException.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>ClusterException</Name>
+                      <Path>classmultiscale_1_1ClusterException.html</Path>
+                      <Anchor>a76dceba60d12ab5837ab61b4976479e8</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>ClusterException</Name>
+                      <Path>classmultiscale_1_1ClusterException.html</Path>
+                      <Anchor>a7569d1748e999eb6ec111d69d5291466</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>DetectorException.hpp</Name>
                   <Path>DetectorException_8hpp.html</Path>
                   <Subnodes>
@@ -5131,22 +5653,22 @@
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>MinimumAreaEnclosingTriangleException.hpp</Name>
-                  <Path>MinimumAreaEnclosingTriangleException_8hpp.html</Path>
+                  <Name>MinEnclosingTriangleFinderException.hpp</Name>
+                  <Path>MinEnclosingTriangleFinderException_8hpp.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>MinimumAreaEnclosingTriangleException</Name>
-                    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
+                    <Name>MinEnclosingTriangleFinderException</Name>
+                    <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>MinimumAreaEnclosingTriangleException</Name>
-                      <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
-                      <Anchor>ab3b5f7915eed59446a1bf15d8408ffaa</Anchor>
+                      <Name>MinEnclosingTriangleFinderException</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
+                      <Anchor>a4a83fc394b2c31092e51cb4d43f45d5e</Anchor>
                      </Node>
                      <Node>
-                      <Name>MinimumAreaEnclosingTriangleException</Name>
-                      <Path>classmultiscale_1_1MinimumAreaEnclosingTriangleException.html</Path>
-                      <Anchor>aa2d98ad9b3ef5599405d176b20affe55</Anchor>
+                      <Name>MinEnclosingTriangleFinderException</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
+                      <Anchor>a21a9dd80a171daa204b58b33fd5fbd5e</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -5471,68 +5993,343 @@
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>MinimumAreaEnclosingTriangle.hpp</Name>
-                  <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                  <Name>MinEnclosingTriangleFinder.hpp</Name>
+                  <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>MinimumAreaEnclosingTriangle</Name>
-                    <Path>classmultiscale_1_1MinimumAreaEnclosingTriangle.html</Path>
+                    <Name>MinEnclosingTriangleFinder</Name>
+                    <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
                     <Subnodes>
+                     <Node>
+                      <Name>MinEnclosingTriangleFinder</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a9bac0668e32bcab3f35ddc81fea40940</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>~MinEnclosingTriangleFinder</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a356eccb6cce71d00144007df0bee1e5e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>advance</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>af52c24da93e4660f043dbb0f92594a19</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>advanceBToRightChain</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a55faab1deabea3b838490a4a3b62cafc</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>areIdenticalLines</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a65a15d407aeab7f9b81fe527c9a53e81</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>areIntersectingLines</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a890d17359c3cdf30b6c20b08cd12b6c9</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>find</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>afe74965c39261feb7152f5556c0281cd</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>findGammaIntersectionPoints</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a9eedc43ea3190d8ee6343879dc100edb</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>findMinEnclosingTriangle</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a0b55638741cd5ff84d583df33d594a69</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>findMinEnclosingTriangle</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>afe968e24fdc374841baa8fe21a6d8270</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>findVertexCOnSideB</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>ab0b488d2d67f2d22077777eebc292c1a</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>gamma</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a800413be1e1567d986a92fac4a6b937e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>height</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a4fd0fdc0ccc472a2d15c8d001f65d0f9</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>height</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a9507a3196dd16613bf828d04f196b9db</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>initialise</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a6fa2b447626f765d0b9600cabdc810ae</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>initialiseAlgorithmVariables</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>ab41a0d36789e6dfb720325ce494b21f6</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>initialiseConvexPolygon</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>afe8fe342d7ec338ccc0874cce91f2a58</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>intersects</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a586e3fde222d1464eb57a3e20ceb136c</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>intersectsAbove</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>aba0848fcc9021b379fd5f02a6708912d</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>intersectsAboveOrBelow</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a622303a315704ffb0e262ec66f2a07fb</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>intersectsBelow</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a0abe1c7d5ef5a43f8ea1b404db0066e0</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>isFlushAngleBetweenPredecessorAndSuccessor</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a067f421f84dfd1803c241efc85dbc0bb</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>isGammaAngleBetween</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a98d91069c4e7fae9f68f0af8be5e5487</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>isGammaAngleEqualTo</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a3690d470807b2d5d893988370099f283</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>isLocalMinimalTriangle</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a97747be924fe1d8efaf6cad9d635419b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>isNotBTangency</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a9f071f42dbaff51c8975da1b77c1188e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>isValidMinimalTriangle</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a4f9c533c8d5de8b95c38b71f50a5e00c</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>lineEquationParameters</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>ab2aa08fbf3d17d25f55eb21cd2524975</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>middlePointOfSideB</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a664bee3e51e007b97fa21a92830f9066</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>moveAIfLowAndBIfHigh</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a88ca299e33ef6104513bd153501d5530</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>predecessor</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>aa5ec6fafd63c6d99d095dfc58c47cd4e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>returnMinEnclosingTriangle</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>af6e49a1ef5a0d4dbe3e25c2f92d69dc3</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>searchForBTangency</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a7064b538e01622880b6a044e84d3ad0e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>successor</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a075472a453bfcb0eedd06a4a185241fc</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>updateMinEnclosingTriangle</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a8608cacc403c71d7ac9bc017d7b14e0c</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>updateSideB</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>ab25b3b5dbe05cb06e83a49cd28b3116f</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>updateSidesBA</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a12f1835531784519d618b86e889af06d</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>updateSidesCA</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a0f4a9131f5118fa0afc33344bdf67f16</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>a</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>acb13371219bdd9b7c57131f1535e4c89</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>area</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a64ea18728dc70fd6235961c12802123a</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>b</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a71355f44126b38a4fb55c0c92ab64816</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>c</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a758f39b2d0cf35337f28d8ed871c2c0b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>nrOfPoints</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a92409868a6731f5e41878085f3ac0f73</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>polygon</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>add5aecf2c138345091d55076bdc253a4</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>sideAEndVertex</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a132a1e2eed61d579e6038089fe08d150</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>sideAStartVertex</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a2e9e3f20e0c0d8bcf34e8ce903aabb42</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>sideBEndVertex</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a8e3929795823c49572ff65a4f04462c6</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>sideBStartVertex</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a5f6c0f9361e4aab168f068f08b700742</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>sideCEndVertex</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a3f0f5bbef4e89caed8d153f1fc2eccea</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>sideCStartVertex</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a877d0c34c4803643699d8fd176c24d4e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>validationFlag</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a19f9149638eddeec22b775eef632c6ef</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>vertexA</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>adb758ed8b7e8758436d9f1bb381e017e</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>vertexB</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a18e5ea5e0b341b3d02c4a75887f44c9c</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>vertexC</Name>
+                      <Path>classmultiscale_1_1MinEnclosingTriangleFinder.html</Path>
+                      <Anchor>a0fc6887251f73b19714f39888534cdaa</Anchor>
+                     </Node>
                     </Subnodes>
                    </Node>
                    <Node>
+                    <Name>CONVEX_HULL_CLOCKWISE</Name>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
+                    <Anchor>a780de1e4ebc14f8836d3c74bd4ecfee9</Anchor>
+                   </Node>
+                   <Node>
                     <Name>ERR_MIDPOINT_SIDE_B</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a908ada963db8d95f0f72c05a24e8e1e1</Anchor>
                    </Node>
                    <Node>
                     <Name>ERR_SIDE_B_GAMMA</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a3a386906c2cc4f2b7c3d52663ef9a184</Anchor>
                    </Node>
                    <Node>
                     <Name>ERR_TRIANGLE_VERTICES</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a206e0581e606c88ca6d4aebad7e9d385</Anchor>
                    </Node>
                    <Node>
                     <Name>ERR_VERTEX_C_ON_SIDE_B</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a35b2d19f0f8d88b29478a88ecff6e6d9</Anchor>
                    </Node>
                    <Node>
                     <Name>INTERSECTS_ABOVE</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a491d37fc7ce0c72d3763cc91495f87c2</Anchor>
                    </Node>
                    <Node>
                     <Name>INTERSECTS_BELOW</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a33b2bf416e7a3eb9b86eb3cff45ba67a</Anchor>
                    </Node>
                    <Node>
                     <Name>INTERSECTS_CRITICAL</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a7f2b811fcec86dfda9bcf2d5e9096603</Anchor>
                    </Node>
                    <Node>
                     <Name>INTERSECTS_LIMIT</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a08b447dcb2172aa0fde5a6e29fcf006e</Anchor>
                    </Node>
                    <Node>
                     <Name>VALIDATION_SIDE_A_TANGENT</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a69b5cb9c0d33abff021f07cc6b2da9a4</Anchor>
                    </Node>
                    <Node>
                     <Name>VALIDATION_SIDE_B_TANGENT</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>ae84e6d9763cd18f5fe032173ce431428</Anchor>
                    </Node>
                    <Node>
                     <Name>VALIDATION_SIDES_FLUSH</Name>
-                    <Path>MinimumAreaEnclosingTriangle_8hpp.html</Path>
+                    <Path>MinEnclosingTriangleFinder_8hpp.html</Path>
                     <Anchor>a25734dfda829d51fa13c1cdfc8d4ab96</Anchor>
                    </Node>
                   </Subnodes>
@@ -7258,8 +8055,8 @@
                   <Path>Geometry2D_8cpp.html</Path>
                  </Node>
                  <Node>
-                  <Name>MinimumAreaEnclosingTriangle.cpp</Name>
-                  <Path>MinimumAreaEnclosingTriangle_8cpp.html</Path>
+                  <Name>MinEnclosingTriangleFinder.cpp</Name>
+                  <Path>MinEnclosingTriangleFinder_8cpp.html</Path>
                  </Node>
                  <Node>
                   <Name>NumberIterator.cpp</Name>

@@ -1,0 +1,6 @@
+<map id="multiscale::MinEnclosingTriangleFinder::advance" name="multiscale::MinEnclosingTriangleFinder::advance">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a55faab1deabea3b838490a4a3b62cafc" title="Advance b to the right chain." alt="" coords="221,5,472,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a88ca299e33ef6104513bd153501d5530" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="243,75,451,139"/>
+<area shape="rect" id="node10" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="229,162,464,209"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="520,75,731,139"/>
+</map>

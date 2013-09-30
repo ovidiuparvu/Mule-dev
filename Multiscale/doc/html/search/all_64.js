@@ -30,7 +30,7 @@ var searchData=
   ['displayimage',['displayImage',['../classmultiscale_1_1analysis_1_1Detector.html#ae68f8f87cc1e4e1cd22cee1e3604ef4b',1,'multiscale::analysis::Detector']]],
   ['displayresultsinwindow',['displayResultsInWindow',['../classmultiscale_1_1analysis_1_1Detector.html#abb6d85e1a13e96b748ea286a070bdf18',1,'multiscale::analysis::Detector']]],
   ['distancebtwpoints',['distanceBtwPoints',['../classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72',1,'multiscale::Geometry2D']]],
-  ['distancefromorigin',['distanceFromOrigin',['../classmultiscale_1_1analysis_1_1Region.html#ad5f128003a97d9d41fd4cf1c01d9a709',1,'multiscale::analysis::Region']]],
+  ['distancefromorigin',['distanceFromOrigin',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac2a5d3f8c2cb878c710d821c536b8a4f',1,'multiscale::analysis::SpatialCollection2D']]],
   ['distancefrompointtoline',['distanceFromPointToLine',['../classmultiscale_1_1Geometry2D.html#ae6c0f66accf4ecf31b0fd96437371626',1,'multiscale::Geometry2D']]],
   ['distancematrix',['distanceMatrix',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aa54a9933d643b06a6a2624d6f76b700f',1,'multiscale::analysis::DBSCAN']]],
   ['distanceto',['distanceTo',['../classmultiscale_1_1analysis_1_1DataPoint.html#a8dd5def96eab756085461e8f6a201dce',1,'multiscale::analysis::DataPoint::distanceTo()'],['../classmultiscale_1_1analysis_1_1Entity.html#a39cb4bb856c295c82676085d976d58e8',1,'multiscale::analysis::Entity::distanceTo(shared_ptr&lt; DataPoint &gt; point) override'],['../classmultiscale_1_1analysis_1_1Entity.html#a9c3eb0f38038fe3bd0b7680c62577a64',1,'multiscale::analysis::Entity::distanceTo(const Entity &amp;entity)']]]

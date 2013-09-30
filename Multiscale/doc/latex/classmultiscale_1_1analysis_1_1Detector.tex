@@ -7,7 +7,8 @@
 
 
 
-Inheritance diagram for multiscale\-:\-:analysis\-:\-:Detector\-:\nopagebreak
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,7 +17,8 @@ Inheritance diagram for multiscale\-:\-:analysis\-:\-:Detector\-:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:Detector\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,10 +43,16 @@ void \hyperlink{classmultiscale_1_1analysis_1_1Detector_ae9be577bb23f9472d8ca3e1
 \begin{DoxyCompactList}\small\item\em Initialisation function for the class. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a9636effe77eabf614210dbb079c18bf0}{initialise\-Detector\-Specific\-Fields\-If\-Not\-Set} ()
 \begin{DoxyCompactList}\small\item\em Initialisation of the detector specific values in case they were not set. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a610c16fdecd543f15575f0effb08ff00}{set\-Detector\-Specific\-Fields\-Initialisation\-Flag} (bool flag=true)
+\begin{DoxyCompactList}\small\item\em Set the detector specific fields initialisation flag to true. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a83aea2a1b70e54d08cf3b0514c780796}{initialise\-Detector\-Specific\-Fields} ()=0
 \begin{DoxyCompactList}\small\item\em Initialisation of the detector specific values. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classmultiscale_1_1analysis_1_1Detector_aedbf44cbcfcf6e1834b245926d3d94fa}{initialise\-Image\-Dependent\-Fields} ()=0
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_aa99821e2690a7776a598b3a5c1cd3d5d}{initialise\-Image\-Dependent\-Fields} ()
 \begin{DoxyCompactList}\small\item\em Initialisation of the image dependent values. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmultiscale_1_1analysis_1_1Detector_ab511a3cbe1766a33cb24f61c6fff7253}{initialise\-Detector\-Specific\-Image\-Dependent\-Fields} ()=0
+\begin{DoxyCompactList}\small\item\em Initialisation of the detector specific image dependent values. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a0d5677f992e9d9272eb70c08b86e9338}{initialise\-Image\-Origin} ()
+\item 
 bool \hyperlink{classmultiscale_1_1analysis_1_1Detector_ad0473d0ad9988c84ae88c9cf6adf19be}{is\-Valid\-Input\-Image} (const Mat \&input\-Image)
 \begin{DoxyCompactList}\small\item\em Check if the image is valid. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1Detector_ae0c0a72fef22d6521e82c18424a4dd04}{detect} ()
@@ -53,6 +61,16 @@ void \hyperlink{classmultiscale_1_1analysis_1_1Detector_aa9173a243a85e2d9cf493a6
 \begin{DoxyCompactList}\small\item\em Run the detection procedure when in debug mode. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a58665776f1a12659dae08d1a4a01050a}{detect\-In\-Release\-Mode} ()
 \begin{DoxyCompactList}\small\item\em Run the detection procedure when in release mode (i.\-e. non-\/debug mode) \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Detector_ada30f980ed5ce2f975bb827c393b8cd0}{polygon\-Angle} (const vector$<$ Point $>$ \&polygon, unsigned int closest\-Point\-Index)
+\begin{DoxyCompactList}\small\item\em Compute the angle of the polygon. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Detector_a80dd82a52bdc63bee7f94d4c8403a785}{polygon\-Angle} (const vector$<$ Point $>$ \&polygon\-Convex\-Hull, const Point \&closest\-Point)
+\begin{DoxyCompactList}\small\item\em Compute the angle of the polygon. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_aeef6f9f7e29c79362df3469a0a5caafe}{min\-Area\-Rect\-Centre} (const vector$<$ Point $>$ \&polygon, Point \&centre)
+\begin{DoxyCompactList}\small\item\em Get the centre of the minimum area bounding rectangle. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a9785ec165eb57a95243c5bcf679bc49b}{find\-Good\-Points\-For\-Angle} (const vector$<$ Point $>$ \&polygon\-Convex\-Hull, const Point \&bounding\-Rect\-Centre, const Point \&closest\-Point, vector$<$ Point $>$ \&good\-Points\-For\-Angle)
+\begin{DoxyCompactList}\small\item\em Find the points for determining the angle of the polygon. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a2d8fe1a58bc6c792a45ffca988f2afe7}{find\-Good\-Intersection\-Points} (const vector$<$ Point $>$ \&polygon\-Convex\-Hull, const Point \&edge\-Point\-A, const Point \&edge\-Point\-B, vector$<$ Point $>$ \&good\-Points\-For\-Angle)
+\begin{DoxyCompactList}\small\item\em Find good intersection points for computing the angle of the polygon. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1Detector_abb6d85e1a13e96b748ea286a070bdf18}{display\-Results\-In\-Window} ()
 \begin{DoxyCompactList}\small\item\em Display the results in a window. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a2eb7c5f8faefb9b8f09f94f88f804d80}{output\-Results\-To\-File} ()
@@ -95,6 +113,8 @@ Mat \hyperlink{classmultiscale_1_1analysis_1_1Detector_a144e080a3af03c9bf3d8a803
 bool \hyperlink{classmultiscale_1_1analysis_1_1Detector_ad565f471d9d7db7692da588ff0d6be2f}{detect\-Method\-Called}
 \item 
 bool \hyperlink{classmultiscale_1_1analysis_1_1Detector_a172b91067670a14a7707f24dc218f2af}{detector\-Specific\-Fields\-Initialised}
+\item 
+Point \hyperlink{classmultiscale_1_1analysis_1_1Detector_a002237e2ad684975a7c8b1e12dd7d780}{origin}
 \end{DoxyCompactItemize}
 
 
@@ -115,7 +135,7 @@ Definition at line 29 of file Detector.\-hpp.
 )}}\label{classmultiscale_1_1analysis_1_1Detector_ae761f485926eead354aa361f1f57e167}
 
 
-Definition at line 10 of file Detector.\-cpp.
+Definition at line 11 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_ae16b7bf62f39cb287927d56ca17663d7}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!$\sim$\-Detector@{$\sim$\-Detector}}
 \index{$\sim$\-Detector@{$\sim$\-Detector}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -126,7 +146,7 @@ Definition at line 10 of file Detector.\-cpp.
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Detector_ae16b7bf62f39cb287927d56ca17663d7}
 
 
-Definition at line 17 of file Detector.\-cpp.
+Definition at line 18 of file Detector.\-cpp.
 
 
 
@@ -174,7 +194,7 @@ Create the trackbars which allow the user to change the values of the parameters
 
 
 
-Definition at line 120 of file Detector.\-cpp.
+Definition at line 189 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_afdf4c74184888dbd112d0f1cec3776cd}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!create\-Trackbars\-Window@{create\-Trackbars\-Window}}
 \index{create\-Trackbars\-Window@{create\-Trackbars\-Window}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -189,7 +209,7 @@ Create the window in which the trackbars are placed.
 
 
 
-Definition at line 125 of file Detector.\-cpp.
+Definition at line 194 of file Detector.\-cpp.
 
 
 
@@ -213,7 +233,7 @@ Run the detection procedure on the given image.
 \end{DoxyParams}
 
 
-Definition at line 22 of file Detector.\-cpp.
+Definition at line 23 of file Detector.\-cpp.
 
 
 
@@ -247,7 +267,7 @@ Run the detection procedure.
 
 
 
-Definition at line 60 of file Detector.\-cpp.
+Definition at line 79 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_aa9173a243a85e2d9cf493a641fb610aa}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!detect\-In\-Debug\-Mode@{detect\-In\-Debug\-Mode}}
 \index{detect\-In\-Debug\-Mode@{detect\-In\-Debug\-Mode}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -262,7 +282,7 @@ Run the detection procedure when in debug mode.
 
 
 
-Definition at line 70 of file Detector.\-cpp.
+Definition at line 89 of file Detector.\-cpp.
 
 
 
@@ -281,7 +301,7 @@ Run the detection procedure when in release mode (i.\-e. non-\/debug mode)
 
 
 
-Definition at line 85 of file Detector.\-cpp.
+Definition at line 104 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_ae68f8f87cc1e4e1cd22cee1e3604ef4b}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!display\-Image@{display\-Image}}
 \index{display\-Image@{display\-Image}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -304,7 +324,7 @@ Display an image in a particular window.
 \end{DoxyParams}
 
 
-Definition at line 136 of file Detector.\-cpp.
+Definition at line 205 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_abb6d85e1a13e96b748ea286a070bdf18}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!display\-Results\-In\-Window@{display\-Results\-In\-Window}}
 \index{display\-Results\-In\-Window@{display\-Results\-In\-Window}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -319,11 +339,101 @@ Display the results in a window.
 
 
 
-Definition at line 90 of file Detector.\-cpp.
+Definition at line 159 of file Detector.\-cpp.
 
 
 
 References W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a2d8fe1a58bc6c792a45ffca988f2afe7}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!find\-Good\-Intersection\-Points@{find\-Good\-Intersection\-Points}}
+\index{find\-Good\-Intersection\-Points@{find\-Good\-Intersection\-Points}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{find\-Good\-Intersection\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::find\-Good\-Intersection\-Points (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point $>$ \&}]{polygon\-Convex\-Hull, }
+\item[{const Point \&}]{edge\-Point\-A, }
+\item[{const Point \&}]{edge\-Point\-B, }
+\item[{vector$<$ Point $>$ \&}]{good\-Points\-For\-Angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a2d8fe1a58bc6c792a45ffca988f2afe7}
+
+
+Find good intersection points for computing the angle of the polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon\-Convex\-Hull} & The convex hull of the polygon \\
+\hline
+{\em edge\-Point\-A} & Point A on the edge \\
+\hline
+{\em edge\-Point\-B} & Point B on the edge \\
+\hline
+{\em good\-Points\-For\-Angle} & The \char`\"{}good\char`\"{} points for computing the angle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 146 of file Detector.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::line\-Segment\-Intersection().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Detector_a2d8fe1a58bc6c792a45ffca988f2afe7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a9785ec165eb57a95243c5bcf679bc49b}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!find\-Good\-Points\-For\-Angle@{find\-Good\-Points\-For\-Angle}}
+\index{find\-Good\-Points\-For\-Angle@{find\-Good\-Points\-For\-Angle}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{find\-Good\-Points\-For\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::find\-Good\-Points\-For\-Angle (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point $>$ \&}]{polygon\-Convex\-Hull, }
+\item[{const Point \&}]{bounding\-Rect\-Centre, }
+\item[{const Point \&}]{closest\-Point, }
+\item[{vector$<$ Point $>$ \&}]{good\-Points\-For\-Angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a9785ec165eb57a95243c5bcf679bc49b}
+
+
+Find the points for determining the angle of the polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon\-Convex\-Hull} & Convex hull of polygon \\
+\hline
+{\em bounding\-Rect\-Centre} & Centre of the rotated rectangle enclosing the polygon convex hull \\
+\hline
+{\em closest\-Point} & Closest point to the origin from the set of points defining the polygon \\
+\hline
+{\em good\-Points\-For\-Angle} & The points which are relevant for computing the angle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file Detector.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::orthogonal\-Line\-To\-Another\-Line\-Edge\-Points().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Detector_a9785ec165eb57a95243c5bcf679bc49b_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_ae9be577bb23f9472d8ca3e19519764f8}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!initialise@{initialise}}
 \index{initialise@{initialise}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -338,7 +448,7 @@ Initialisation function for the class.
 
 
 
-Definition at line 43 of file Detector.\-cpp.
+Definition at line 44 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a83aea2a1b70e54d08cf3b0514c780796}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!initialise\-Detector\-Specific\-Fields@{initialise\-Detector\-Specific\-Fields}}
 \index{initialise\-Detector\-Specific\-Fields@{initialise\-Detector\-Specific\-Fields}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -368,22 +478,48 @@ Initialisation of the detector specific values in case they were not set.
 
 
 
-Definition at line 48 of file Detector.\-cpp.
+Definition at line 49 of file Detector.\-cpp.
 
-\hypertarget{classmultiscale_1_1analysis_1_1Detector_aedbf44cbcfcf6e1834b245926d3d94fa}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!initialise\-Image\-Dependent\-Fields@{initialise\-Image\-Dependent\-Fields}}
-\index{initialise\-Image\-Dependent\-Fields@{initialise\-Image\-Dependent\-Fields}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
-\subsubsection[{initialise\-Image\-Dependent\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Detector\-::initialise\-Image\-Dependent\-Fields (
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_ab511a3cbe1766a33cb24f61c6fff7253}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!initialise\-Detector\-Specific\-Image\-Dependent\-Fields@{initialise\-Detector\-Specific\-Image\-Dependent\-Fields}}
+\index{initialise\-Detector\-Specific\-Image\-Dependent\-Fields@{initialise\-Detector\-Specific\-Image\-Dependent\-Fields}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{initialise\-Detector\-Specific\-Image\-Dependent\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Detector\-::initialise\-Detector\-Specific\-Image\-Dependent\-Fields (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1Detector_aedbf44cbcfcf6e1834b245926d3d94fa}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1Detector_ab511a3cbe1766a33cb24f61c6fff7253}
+
+
+Initialisation of the detector specific image dependent values. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_afc8382c3838e476b0c7a5a9794ed42e5}{multiscale\-::analysis\-::\-Region\-Detector}, and \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a1f5127621294426b6406985dccb292cd}{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_aa99821e2690a7776a598b3a5c1cd3d5d}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!initialise\-Image\-Dependent\-Fields@{initialise\-Image\-Dependent\-Fields}}
+\index{initialise\-Image\-Dependent\-Fields@{initialise\-Image\-Dependent\-Fields}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{initialise\-Image\-Dependent\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::initialise\-Image\-Dependent\-Fields (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_aa99821e2690a7776a598b3a5c1cd3d5d}
 
 
 Initialisation of the image dependent values. 
 
 
 
-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a3c14a7cc6f0282cc031a4a40704d474e}{multiscale\-::analysis\-::\-Region\-Detector}, and \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ace0c69bb809f52b8c48ab7564ea1d8e3}{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}.
+Definition at line 63 of file Detector.\-cpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a0d5677f992e9d9272eb70c08b86e9338}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!initialise\-Image\-Origin@{initialise\-Image\-Origin}}
+\index{initialise\-Image\-Origin@{initialise\-Image\-Origin}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{initialise\-Image\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::initialise\-Image\-Origin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a0d5677f992e9d9272eb70c08b86e9338}
+
+
+Definition at line 68 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_ad0473d0ad9988c84ae88c9cf6adf19be}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!is\-Valid\-Input\-Image@{is\-Valid\-Input\-Image}}
 \index{is\-Valid\-Input\-Image@{is\-Valid\-Input\-Image}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -405,7 +541,30 @@ Check if the number of dimensions = 2, if the number of rows and number of colum
 \end{DoxyParams}
 
 
-Definition at line 56 of file Detector.\-cpp.
+Definition at line 75 of file Detector.\-cpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_aeef6f9f7e29c79362df3469a0a5caafe}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!min\-Area\-Rect\-Centre@{min\-Area\-Rect\-Centre}}
+\index{min\-Area\-Rect\-Centre@{min\-Area\-Rect\-Centre}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{min\-Area\-Rect\-Centre}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::min\-Area\-Rect\-Centre (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point $>$ \&}]{polygon, }
+\item[{Point \&}]{centre}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_aeef6f9f7e29c79362df3469a0a5caafe}
+
+
+Get the centre of the minimum area bounding rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon} & The polygon \\
+\hline
+{\em centre} & The centre of the bounding rectangle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 128 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a122d92e3710571c136339747bf0568e8}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Results@{output\-Results}}
 \index{output\-Results@{output\-Results}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -425,7 +584,7 @@ Output the results to the given file.
 \end{DoxyParams}
 
 
-Definition at line 33 of file Detector.\-cpp.
+Definition at line 34 of file Detector.\-cpp.
 
 
 
@@ -455,7 +614,7 @@ Output the results to a file.
 
 
 
-Definition at line 108 of file Detector.\-cpp.
+Definition at line 177 of file Detector.\-cpp.
 
 
 
@@ -494,7 +653,7 @@ Output the results to file(s)
 
 
 
-Definition at line 95 of file Detector.\-cpp.
+Definition at line 164 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a5d10b68605d5a1711527b4b896b3b2cc}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Results\-To\-Image@{output\-Results\-To\-Image}}
 \index{output\-Results\-To\-Image@{output\-Results\-To\-Image}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -511,6 +670,92 @@ Output the results to an image.
 
 Implemented in \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a23a3ada51983d2a3041f403323e27d06}{multiscale\-::analysis\-::\-Region\-Detector}, and \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a909e1e53836f1688ebe312c5f7fb70b5}{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}.
 
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_ada30f980ed5ce2f975bb827c393b8cd0}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!polygon\-Angle@{polygon\-Angle}}
+\index{polygon\-Angle@{polygon\-Angle}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{polygon\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}double Detector\-::polygon\-Angle (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point $>$ \&}]{polygon, }
+\item[{unsigned int}]{closest\-Point\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_ada30f980ed5ce2f975bb827c393b8cd0}
+
+
+Compute the angle of the polygon. 
+
+Compute the angle determined by the closest point to the origin and the points P1 and P2. These points are obtained from the intersection of the polygon with the line which is orthogonal to the line A\-B where\-:
+\begin{DoxyItemize}
+\item Point A is the polygon point closest to the origin;
+\item Point B is the centre point of the bounding rotated rectangle.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon} & Given polygon \\
+\hline
+{\em closest\-Point\-Index} & Index of the closest point to the origin from the set of points defining the polygon \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file Detector.\-cpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Region\-From\-Polygon(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Detector_ada30f980ed5ce2f975bb827c393b8cd0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a80dd82a52bdc63bee7f94d4c8403a785}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!polygon\-Angle@{polygon\-Angle}}
+\index{polygon\-Angle@{polygon\-Angle}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{polygon\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}double Detector\-::polygon\-Angle (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point $>$ \&}]{polygon\-Convex\-Hull, }
+\item[{const Point \&}]{closest\-Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a80dd82a52bdc63bee7f94d4c8403a785}
+
+
+Compute the angle of the polygon. 
+
+Compute the angle determined by the closest point to the origin and the points P1 and P2. These points are obtained from the intersection of the convex hull with the line A\-B, determined by points A and B. Points A and B are the middle points of the sides of the rotated rectangle enclosing the polygon that are orthogonal to the line which is the nearest to the closest\-Point.
+
+
+\begin{DoxyParams}{Parameters}
+{\em polygon\-Convex\-Hull} & Convex hull of polygon \\
+\hline
+{\em closest\-Point} & Closest point to the origin from the set of points defining the polygon \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file Detector.\-cpp.
+
+
+
+References multiscale\-::\-Geometry2\-D\-::angle\-Btw\-Points().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Detector_a80dd82a52bdc63bee7f94d4c8403a785_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a9150f3fc7945405da34761a4250b7c79}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!print\-Output\-Error\-Message@{print\-Output\-Error\-Message}}
 \index{print\-Output\-Error\-Message@{print\-Output\-Error\-Message}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{print\-Output\-Error\-Message}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::print\-Output\-Error\-Message (
@@ -524,7 +769,7 @@ Print error message, because the detect method was not called before calling the
 
 
 
-Definition at line 141 of file Detector.\-cpp.
+Definition at line 210 of file Detector.\-cpp.
 
 
 
@@ -563,7 +808,38 @@ Process the request of the user by pressing the key.
 \end{DoxyParams}
 
 
-Definition at line 130 of file Detector.\-cpp.
+Definition at line 199 of file Detector.\-cpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a610c16fdecd543f15575f0effb08ff00}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!set\-Detector\-Specific\-Fields\-Initialisation\-Flag@{set\-Detector\-Specific\-Fields\-Initialisation\-Flag}}
+\index{set\-Detector\-Specific\-Fields\-Initialisation\-Flag@{set\-Detector\-Specific\-Fields\-Initialisation\-Flag}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{set\-Detector\-Specific\-Fields\-Initialisation\-Flag}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::set\-Detector\-Specific\-Fields\-Initialisation\-Flag (
+\begin{DoxyParamCaption}
+\item[{bool}]{flag = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a610c16fdecd543f15575f0effb08ff00}
+
+
+Set the detector specific fields initialisation flag to true. 
+
+
+
+Definition at line 57 of file Detector.\-cpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::set\-Alpha(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Beta(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Blur\-Kernel\-Size(), multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Eps(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Epsilon(), multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Min\-Points(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Morphological\-Close\-Iterations(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Origin\-X\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Origin\-Y\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Region\-Area\-Thresh(), and multiscale\-::analysis\-::\-Region\-Detector\-::set\-Threshold\-Value().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Detector_a610c16fdecd543f15575f0effb08ff00_icgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_aa15a7546c4f8f77fcf85632386a4c5d5}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!store\-Output\-Image\-On\-Disk@{store\-Output\-Image\-On\-Disk}}
 \index{store\-Output\-Image\-On\-Disk@{store\-Output\-Image\-On\-Disk}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -578,7 +854,7 @@ Store the image with the output results on disk.
 
 
 
-Definition at line 102 of file Detector.\-cpp.
+Definition at line 171 of file Detector.\-cpp.
 
 
 
@@ -608,10 +884,6 @@ Flag for indicating if the parameters were
 
 Definition at line 40 of file Detector.\-hpp.
 
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::set\-Alpha(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Beta(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Blur\-Kernel\-Size(), multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Eps(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Epsilon(), multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Min\-Points(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Morphological\-Close\-Iterations(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Origin\-X\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Origin\-Y\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Region\-Area\-Thresh(), and multiscale\-::analysis\-::\-Region\-Detector\-::set\-Threshold\-Value().
-
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!image@{image}}
 \index{image@{image}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Mat multiscale\-::analysis\-::\-Detector\-::image\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}
@@ -621,7 +893,18 @@ Definition at line 33 of file Detector.\-hpp.
 
 
 
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::change\-Contrast\-And\-Brightness(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::compute\-Pile\-Up\-Degree\-At\-Position(), multiscale\-::analysis\-::\-Region\-Detector\-::find\-Good\-Points\-For\-Angle(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::initialise\-Image\-Dependent\-Fields(), multiscale\-::analysis\-::\-Region\-Detector\-::initialise\-Image\-Dependent\-Fields(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::initialise\-Thresholded\-Image(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::output\-Results\-To\-Image(), multiscale\-::analysis\-::\-Region\-Detector\-::output\-Results\-To\-Image(), and multiscale\-::analysis\-::\-Region\-Detector\-::region\-Density().
+Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::change\-Contrast\-And\-Brightness(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::compute\-Pile\-Up\-Degree\-At\-Position(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::initialise\-Detector\-Specific\-Image\-Dependent\-Fields(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::initialise\-Thresholded\-Image(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::output\-Results\-To\-Image(), multiscale\-::analysis\-::\-Region\-Detector\-::output\-Results\-To\-Image(), multiscale\-::analysis\-::\-Region\-Detector\-::region\-Area(), multiscale\-::analysis\-::\-Region\-Detector\-::region\-Clusteredness\-Degree(), and multiscale\-::analysis\-::\-Region\-Detector\-::region\-Density().
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a002237e2ad684975a7c8b1e12dd7d780}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!origin@{origin}}
+\index{origin@{origin}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{origin}]{\setlength{\rightskip}{0pt plus 5cm}Point multiscale\-::analysis\-::\-Detector\-::origin\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a002237e2ad684975a7c8b1e12dd7d780}
+The point representing the origin 
+
+Definition at line 42 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Region\-From\-Polygon(), multiscale\-::analysis\-::\-Region\-Detector\-::get\-Origin\-X\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::get\-Origin\-Y\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Origin\-X\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Origin\-Y\-Coordinate(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values().
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a1a83df16d8afd347c0e1c9ddc41c9bee}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Filepath@{output\-Filepath}}
 \index{output\-Filepath@{output\-Filepath}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}

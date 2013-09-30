@@ -1,7 +1,8 @@
 <map id="multiscale::Geometry2D::areaOfTriangle" name="multiscale::Geometry2D::areaOfTriangle">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a13a71a75863ff3ccc9993e741086dbcf" title="Update the current minimum area enclosing triangle if the newly obtained one has a smaller area..." alt="" coords="217,31,468,95"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a18f69d582395376b335641e046ecc53d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="517,31,752,95"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2a116b0cb1b5b8306d2483bd5d55bd68" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="800,39,1027,86"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="1075,5,1272,51"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Region.html#acb88d149b42eee5225e7197a225d31c3" title="Get the measure that the cluster has a triangular shape." alt="" coords="1076,74,1271,121"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#af6e49a1ef5a0d4dbe3e25c2f92d69dc3" title="Return the minimum area enclosing triangle in case the given polygon has at most three points..." alt="" coords="220,31,441,95"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a8608cacc403c71d7ac9bc017d7b14e0c" title="Update the current minimum area enclosing triangle if the newly obtained one has a smaller area..." alt="" coords="216,119,445,183"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe74965c39261feb7152f5556c0281cd" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="516,39,681,86"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="752,5,949,51"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Region.html#acb88d149b42eee5225e7197a225d31c3" title="Get the measure that the cluster has a triangular shape." alt="" coords="753,74,948,121"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="493,119,704,183"/>
 </map>

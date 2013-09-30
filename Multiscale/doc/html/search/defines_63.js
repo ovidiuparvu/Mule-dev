@@ -11,5 +11,5 @@ var searchData=
   ['contour_5farea_5foriented',['CONTOUR_AREA_ORIENTED',['../RegionDetector_8hpp.html#a184024ccbc2a88f3d6748c1d7a265477',1,'RegionDetector.hpp']]],
   ['contour_5fclosed',['CONTOUR_CLOSED',['../Region_8hpp.html#a34cbf8ee72b3a7a4b2df1ad13f5d3e90',1,'Region.hpp']]],
   ['contour_5foriented',['CONTOUR_ORIENTED',['../Region_8hpp.html#a2a25d1956ce8fde271c2606474e69827',1,'Region.hpp']]],
-  ['convex_5fhull_5fclockwise',['CONVEX_HULL_CLOCKWISE',['../SpatialCollection2D_8hpp.html#a780de1e4ebc14f8836d3c74bd4ecfee9',1,'SpatialCollection2D.hpp']]]
+  ['convex_5fhull_5fclockwise',['CONVEX_HULL_CLOCKWISE',['../SpatialCollection2D_8hpp.html#a780de1e4ebc14f8836d3c74bd4ecfee9',1,'CONVEX_HULL_CLOCKWISE():&#160;SpatialCollection2D.hpp'],['../MinEnclosingTriangleFinder_8hpp.html#a780de1e4ebc14f8836d3c74bd4ecfee9',1,'CONVEX_HULL_CLOCKWISE():&#160;MinEnclosingTriangleFinder.hpp']]]
 ];

@@ -15,5 +15,6 @@ var searchData=
   ['cluster_2ecpp',['Cluster.cpp',['../Cluster_8cpp.html',1,'']]],
   ['cluster_2ehpp',['Cluster.hpp',['../Cluster_8hpp.html',1,'']]],
   ['clusterdetector_2ecpp',['ClusterDetector.cpp',['../ClusterDetector_8cpp.html',1,'']]],
-  ['clusterdetector_2ehpp',['ClusterDetector.hpp',['../ClusterDetector_8hpp.html',1,'']]]
+  ['clusterdetector_2ehpp',['ClusterDetector.hpp',['../ClusterDetector_8hpp.html',1,'']]],
+  ['clusterexception_2ehpp',['ClusterException.hpp',['../ClusterException_8hpp.html',1,'']]]
 ];

@@ -2,7 +2,7 @@ var dir_ff09e8904545ab63e1f07803423f5513 =
 [
     [ "iterator", "dir_824d8e29ca983f29029521cf8fbfb15d.html", "dir_824d8e29ca983f29029521cf8fbfb15d" ],
     [ "Geometry2D.hpp", "Geometry2D_8hpp.html", "Geometry2D_8hpp" ],
-    [ "MinimumAreaEnclosingTriangle.hpp", "MinimumAreaEnclosingTriangle_8hpp.html", "MinimumAreaEnclosingTriangle_8hpp" ],
+    [ "MinEnclosingTriangleFinder.hpp", "MinEnclosingTriangleFinder_8hpp.html", "MinEnclosingTriangleFinder_8hpp" ],
     [ "NumberIterator.hpp", "NumberIterator_8hpp.html", [
       [ "NumberIterator", "classmultiscale_1_1NumberIterator.html", "classmultiscale_1_1NumberIterator" ]
     ] ],

@@ -1,8 +1,5 @@
 <map id="multiscale::Geometry2D::isPointOnLineSegment" name="multiscale::Geometry2D::isPointOnLineSegment">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a522b2228b01e7d5fa6f922ba5f5394a6" title="Check if the found minimal triangle is valid." alt="" coords="216,39,443,86"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a729ba761fd35e6074be19959331ba465" title="Update the triangle vertices after all sides were set and check if a local minimal triangle was found..." alt="" coords="491,39,717,86"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a18f69d582395376b335641e046ecc53d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="765,31,1000,95"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2a116b0cb1b5b8306d2483bd5d55bd68" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1048,39,1275,86"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="1323,5,1520,51"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1Region.html#acb88d149b42eee5225e7197a225d31c3" title="Get the measure that the cluster has a triangular shape." alt="" coords="1324,74,1519,121"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a4f9c533c8d5de8b95c38b71f50a5e00c" title="Check if the found minimal triangle is valid." alt="" coords="217,5,412,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a97747be924fe1d8efaf6cad9d635419b" title="Update the triangle vertices after all sides were set and check if a local minimal triangle was found..." alt="" coords="463,5,660,69"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="709,5,920,69"/>
 </map>

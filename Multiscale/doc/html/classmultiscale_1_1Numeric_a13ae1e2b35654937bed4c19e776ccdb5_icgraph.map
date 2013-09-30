@@ -1,11 +1,8 @@
 <map id="multiscale::Numeric::greaterOrEqual" name="multiscale::Numeric::greaterOrEqual">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a772ac3b9529eccbce7af2c72a0360d89" title="Advance b to the right chain." alt="" coords="192,9,419,55"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc" title="Check if the provided degree of pile up, area, centre and contour points are valid." alt="" coords="237,147,373,194"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a963feccd69c5ea86bbf4965d91ed32ed" title="Search for the tangency of side B." alt="" coords="192,78,419,125"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a18f69d582395376b335641e046ecc53d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="467,31,701,95"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2a116b0cb1b5b8306d2483bd5d55bd68" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="749,39,976,86"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="1024,5,1221,51"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Region.html#acb88d149b42eee5225e7197a225d31c3" title="Get the measure that the cluster has a triangular shape." alt="" coords="1025,74,1220,121"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891" title="multiscale::analysis\l::Entity::validateInputValues" alt="" coords="491,147,677,194"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1Entity.html#ab6e9d348e41c7670d52ca2615cdee023" title="multiscale::analysis\l::Entity::Entity" alt="" coords="795,147,931,194"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a55faab1deabea3b838490a4a3b62cafc" title="Advance b to the right chain." alt="" coords="192,5,443,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc" title="Check if the provided degree of pile up, area, centre and contour points are valid." alt="" coords="249,143,385,190"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="200,74,435,121"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="491,27,701,91"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891" title="multiscale::analysis\l::Entity::validateInputValues" alt="" coords="503,143,689,190"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Entity.html#ab6e9d348e41c7670d52ca2615cdee023" title="multiscale::analysis\l::Entity::Entity" alt="" coords="751,143,887,190"/>
 </map>

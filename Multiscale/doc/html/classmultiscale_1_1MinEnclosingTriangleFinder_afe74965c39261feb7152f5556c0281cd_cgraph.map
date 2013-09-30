@@ -1,0 +1,8 @@
+<map id="multiscale::MinEnclosingTriangleFinder::find" name="multiscale::MinEnclosingTriangleFinder::find">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a0b55638741cd5ff84d583df33d594a69" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="228,11,439,75"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a6fa2b447626f765d0b9600cabdc810ae" title="Initialisation function for the class." alt="" coords="251,102,416,149"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#af6e49a1ef5a0d4dbe3e25c2f92d69dc3" title="Return the minimum area enclosing triangle in case the given polygon has at most three points..." alt="" coords="223,172,444,236"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab41a0d36789e6dfb720325ce494b21f6" title="Initialisation of the algorithm variables." alt="" coords="495,5,708,69"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe8fe342d7ec338ccc0874cce91f2a58" title="Initialise polygon as the convex hull of the given set of points." alt="" coords="500,93,703,157"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1Geometry2D.html#abf0e96a63cf744cab74ab94398e28562" title="Compute the area of a triangle defined by three points." alt="" coords="520,181,683,227"/>
+</map>

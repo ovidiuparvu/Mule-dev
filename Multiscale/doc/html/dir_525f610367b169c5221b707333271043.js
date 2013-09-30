@@ -5,9 +5,7 @@ var dir_525f610367b169c5221b707333271043 =
     [ "CircularityMeasure.hpp", "CircularityMeasure_8hpp.html", [
       [ "CircularityMeasure", "classmultiscale_1_1analysis_1_1CircularityMeasure.html", null ]
     ] ],
-    [ "Cluster.hpp", "Cluster_8hpp.html", [
-      [ "Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", "classmultiscale_1_1analysis_1_1Cluster" ]
-    ] ],
+    [ "Cluster.hpp", "Cluster_8hpp.html", "Cluster_8hpp" ],
     [ "ClusterDetector.hpp", "ClusterDetector_8hpp.html", "ClusterDetector_8hpp" ],
     [ "DataPoint.hpp", "DataPoint_8hpp.html", [
       [ "DataPoint", "classmultiscale_1_1analysis_1_1DataPoint.html", "classmultiscale_1_1analysis_1_1DataPoint" ]

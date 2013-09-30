@@ -6,7 +6,7 @@ var classmultiscale_1_1analysis_1_1SimulationClusterDetector =
     [ "detectEntitiesInImage", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#af3c2206724a69794e12f34fe7fe5082b", null ],
     [ "getEntityCentrePoint", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a083c8ff51e483d86744961aca1ae3551", null ],
     [ "getEntityContourPoints", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ae51328d7fe0e477dea162c7e99da45c2", null ],
-    [ "initialiseImageDependentFields", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ace0c69bb809f52b8c48ab7564ea1d8e3", null ],
+    [ "initialiseDetectorSpecificImageDependentFields", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a1f5127621294426b6406985dccb292cd", null ],
     [ "initialiseThresholdedImage", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ae36c793acaa548cc3ce74f72621d8bd7", null ],
     [ "isEntityAtPosition", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a886031cb8d576c4cf380c1105eeee4d2", null ],
     [ "outputClusterCircularShape", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ab4e0ae4d5850be64ec2399d5c2c36828", null ],

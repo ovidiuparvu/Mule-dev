@@ -8,5 +8,6 @@ var searchData=
   ['circularmatfactory',['CircularMatFactory',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html',1,'multiscale::analysis']]],
   ['circularmatfactoryexception',['CircularMatFactoryException',['../classmultiscale_1_1CircularMatFactoryException.html',1,'multiscale']]],
   ['cluster',['Cluster',['../classmultiscale_1_1analysis_1_1Cluster.html',1,'multiscale::analysis']]],
-  ['clusterdetector',['ClusterDetector',['../classmultiscale_1_1analysis_1_1ClusterDetector.html',1,'multiscale::analysis']]]
+  ['clusterdetector',['ClusterDetector',['../classmultiscale_1_1analysis_1_1ClusterDetector.html',1,'multiscale::analysis']]],
+  ['clusterexception',['ClusterException',['../classmultiscale_1_1ClusterException.html',1,'multiscale']]]
 ];

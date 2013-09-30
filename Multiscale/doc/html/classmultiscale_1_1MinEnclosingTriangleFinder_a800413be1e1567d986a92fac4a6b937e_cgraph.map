@@ -1,0 +1,18 @@
+<map id="multiscale::MinEnclosingTriangleFinder::gamma" name="multiscale::MinEnclosingTriangleFinder::gamma">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a828b7b579420ac06dabd7c4ba4d081ae" title="Check if p1 and p2 are on the same side of the line determined by points a and b." alt="" coords="253,35,437,81"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9eedc43ea3190d8ee6343879dc100edb" title="Find the intersection points to compute gamma(point)" alt="" coords="223,234,468,298"/>
+<area shape="rect" id="node29" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#aa5ec6fafd63c6d99d095dfc58c47cd4e" title="Return the predecessor of the provided point index." alt="" coords="815,372,996,419"/>
+<area shape="rect" id="node37" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a075472a453bfcb0eedd06a4a185241fc" title="Return the succesor of the provided point index." alt="" coords="260,432,431,479"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a6d72740d7f1b2441b0829c0f0c6a6853" title="Get the values of &quot;a&quot;, &quot;b&quot; and &quot;c&quot; of the line equation ax + by + c = 0 knowing that point &quot;p&quot; and &quot;q..." alt="" coords="795,109,1016,156"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1Numeric.html#a2b3058c5ad27aaaef338a29b96cdbced" title="Return the sign of the number." alt="" coords="563,35,701,81"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Geometry2D.html#aa2d3ac595072b9ab61879a44629d7969" title="Check if points point1 and point2 are equal or not." alt="" coords="1064,109,1227,156"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="1275,179,1413,225"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1461,179,1600,225"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a65a15d407aeab7f9b81fe527c9a53e81" title="Check if the given lines are identical or not." alt="" coords="800,183,1011,229"/>
+<area shape="rect" id="node22" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a890d17359c3cdf30b6c20b08cd12b6c9" title="Check if the given lines intersect or not. If the lines intersect find their intersection points..." alt="" coords="517,243,747,289"/>
+<area shape="rect" id="node27" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a4fd0fdc0ccc472a2d15c8d001f65d0f9" title="Compute the height of the point specified by the given index." alt="" coords="549,312,715,359"/>
+<area shape="rect" id="node33" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab2aa08fbf3d17d25f55eb21cd2524975" title="Get the line equation parameters &quot;a&quot;, &quot;b&quot; and &quot;c&quot; for the line determined by points &quot;p&quot; and &quot;q&quot;..." alt="" coords="541,105,723,169"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1Geometry2D.html#aaa19f84365e924bacfad4ea893875a42" title="Check if two lines are identical." alt="" coords="1064,179,1227,225"/>
+<area shape="rect" id="node24" href="$classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="1064,248,1227,295"/>
+<area shape="rect" id="node31" href="$classmultiscale_1_1Geometry2D.html#ae6c0f66accf4ecf31b0fd96437371626" title="Compute the distance from a point &quot;a&quot; to a line specified by two points &quot;B&quot; and &quot;C&quot;." alt="" coords="816,303,995,349"/>
+</map>

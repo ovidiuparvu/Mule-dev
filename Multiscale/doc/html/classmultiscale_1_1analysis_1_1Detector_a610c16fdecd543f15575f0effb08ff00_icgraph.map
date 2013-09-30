@@ -1,0 +1,17 @@
+<map id="multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag" name="multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ada64f919fd5310987b950c052a3cf93a" title="Set the value of field alpha." alt="" coords="284,338,463,385"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a054b6327918fd9a6ff2de293dac1afc0" title="Set the value of field beta." alt="" coords="287,407,460,454"/>
+<area shape="rect" id="node14" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a968d5ddbc060fa823e4c79c9dcfec300" title="Set the value of field blurKernelSize." alt="" coords="257,477,489,523"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a35eaa560c893a86c3149471f40c15979" title="Set the value of the clustering algorithm parameter eps." alt="" coords="288,791,459,838"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a069ed208d5ff16e6caa0deb4ff21858b" title="Set the value of field epsilon." alt="" coords="279,5,468,51"/>
+<area shape="rect" id="node24" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a190fd17d121e8c22c1ca6e4f5b7a213c" title="Set the value of the clustering algorithm parameter MinPoints." alt="" coords="271,722,476,769"/>
+<area shape="rect" id="node27" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a5e096d2e4ff8dfe985869d6d0fcd74b8" title="Set the value of field morphologicalCloseIterations." alt="" coords="260,75,487,139"/>
+<area shape="rect" id="node30" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a9ace9f195f33aab9597f8a7c107c219d" title="Set the value of field originXCoordinate." alt="" coords="283,547,464,611"/>
+<area shape="rect" id="node32" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a2e7fa31b11734cdd3f7fc7db55cedab8" title="Set the value of field originYCoordinate." alt="" coords="283,635,464,699"/>
+<area shape="rect" id="node34" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a5cf10aea88e85198ce54df0e94e6d1a7" title="Set the value of field regionAreaThresh." alt="" coords="280,163,467,227"/>
+<area shape="rect" id="node37" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a066e87a1f134194dabfc760d241b8ab2" title="Set the value of field thresholdValue." alt="" coords="272,251,475,315"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="540,268,735,297"/>
+<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="785,241,980,271"/>
+<area shape="rect" id="node9" href="$CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="857,295,908,324"/>
+<area shape="rect" id="node19" href="$SimulationDetectClusters_8cpp.html#a3b2fe4e3a75a6cdca8ea050e37a9da13" title="loadDetectorParameterValues" alt="" coords="540,765,735,795"/>
+</map>

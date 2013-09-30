@@ -1,9 +1,12 @@
 <map id="multiscale::analysis::RegionDetector::findRegions" name="multiscale::analysis::RegionDetector::findRegions">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="256,60,461,124"/>
-<area shape="rect" id="node14" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f" title="Find contours in image." alt="" coords="257,148,460,212"/>
-<area shape="rect" id="node16" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a2be058ae797d80787725ae2c246ba256" title="Check if the region is valid." alt="" coords="255,235,463,282"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="771,5,933,51"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Geometry2D.html#ae8e5e46c312835e27478ce00b11f8a7c" title="Get the index of the point which is the closest to the origin." alt="" coords="519,34,716,81"/>
-<area shape="rect" id="node10" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ac016631bd35bf0dd2d7e941076ec09c8" title="Compute the angle of the polygon." alt="" coords="519,103,716,150"/>
-<area shape="rect" id="node12" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a6beb6b2ecaccd60130bcf8dd808750b8" title="Compute the density of the area delimited by the given polygon." alt="" coords="513,173,721,219"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="256,179,461,243"/>
+<area shape="rect" id="node16" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f" title="Find contours in image." alt="" coords="1083,327,1285,391"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a2be058ae797d80787725ae2c246ba256" title="Check if the region is valid." alt="" coords="255,465,463,512"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="840,20,1003,66"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Geometry2D.html#ae8e5e46c312835e27478ce00b11f8a7c" title="Get the index of the point which is the closest to the origin." alt="" coords="537,49,735,96"/>
+<area shape="rect" id="node10" href="$classmultiscale_1_1analysis_1_1Detector.html#ada30f980ed5ce2f975bb827c393b8cd0" title="Compute the angle of the polygon." alt="" coords="553,118,719,165"/>
+<area shape="rect" id="node12" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a938fa8d165c87dc69e962883942072d2" title="Compute the area of the given polygon considering holes." alt="" coords="541,188,731,234"/>
+<area shape="rect" id="node18" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a89995b72e578951ea7ddf43c5c25e14a" title="Compute the clusteredness degree of the region delimited by the given polygon." alt="" coords="512,258,760,322"/>
+<area shape="rect" id="node20" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a6beb6b2ecaccd60130bcf8dd808750b8" title="Compute the density of the area delimited by the given polygon." alt="" coords="532,345,740,392"/>
+<area shape="rect" id="node14" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18" title="Compute the area of the white holes in the given matrix." alt="" coords="809,266,1033,313"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="loadDetectorParameterValues" name="loadDetectorParameterValues">
 <area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a35eaa560c893a86c3149471f40c15979" title="Set the value of the clustering algorithm parameter eps." alt="" coords="269,5,440,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a190fd17d121e8c22c1ca6e4f5b7a213c" title="Set the value of the clustering algorithm parameter MinPoints." alt="" coords="252,74,457,121"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a190fd17d121e8c22c1ca6e4f5b7a213c" title="Set the value of the clustering algorithm parameter MinPoints." alt="" coords="252,74,457,121"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="507,31,709,95"/>
 </map>

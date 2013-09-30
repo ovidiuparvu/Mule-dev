@@ -9,6 +9,9 @@ var dir_5fa0d1ce9e339fcf8311bd87dd595cdd =
     [ "CircularMatFactoryException.hpp", "CircularMatFactoryException_8hpp.html", [
       [ "CircularMatFactoryException", "classmultiscale_1_1CircularMatFactoryException.html", "classmultiscale_1_1CircularMatFactoryException" ]
     ] ],
+    [ "ClusterException.hpp", "ClusterException_8hpp.html", [
+      [ "ClusterException", "classmultiscale_1_1ClusterException.html", "classmultiscale_1_1ClusterException" ]
+    ] ],
     [ "DetectorException.hpp", "DetectorException_8hpp.html", [
       [ "DetectorException", "classmultiscale_1_1DetectorException.html", "classmultiscale_1_1DetectorException" ]
     ] ],
@@ -18,8 +21,8 @@ var dir_5fa0d1ce9e339fcf8311bd87dd595cdd =
     [ "MatFactoryException.hpp", "MatFactoryException_8hpp.html", [
       [ "MatFactoryException", "classmultiscale_1_1MatFactoryException.html", "classmultiscale_1_1MatFactoryException" ]
     ] ],
-    [ "MinimumAreaEnclosingTriangleException.hpp", "MinimumAreaEnclosingTriangleException_8hpp.html", [
-      [ "MinimumAreaEnclosingTriangleException", "classmultiscale_1_1MinimumAreaEnclosingTriangleException.html", "classmultiscale_1_1MinimumAreaEnclosingTriangleException" ]
+    [ "MinEnclosingTriangleFinderException.hpp", "MinEnclosingTriangleFinderException_8hpp.html", [
+      [ "MinEnclosingTriangleFinderException", "classmultiscale_1_1MinEnclosingTriangleFinderException.html", "classmultiscale_1_1MinEnclosingTriangleFinderException" ]
     ] ],
     [ "PolarCsvToInputFilesConverterException.hpp", "PolarCsvToInputFilesConverterException_8hpp.html", [
       [ "PolarCsvToInputFilesConverterException", "classmultiscale_1_1PolarCsvToInputFilesConverterException.html", "classmultiscale_1_1PolarCsvToInputFilesConverterException" ]

@@ -1,12 +1,13 @@
 <map id="multiscale::analysis::Cluster::getMinAreaEnclosingRect" name="multiscale::analysis::Cluster::getMinAreaEnclosingRect">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="285,185,472,249"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="556,137,700,201"/>
-<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="521,225,735,306"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="785,5,929,69"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="785,93,929,157"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="785,181,929,245"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="785,269,929,333"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="985,93,1132,157"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="979,181,1139,245"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="987,269,1131,333"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a731de1009ba24b4fda5003c9cec5196c" title="Update the values of all measures if required." alt="" coords="285,229,472,293"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a8e5a2af581895142da9b50eeeabeb7be" title="Update the values of all measures." alt="" coords="556,181,700,245"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad94bce09032b184ebfd5b5006217c683" title="Update the values of all measures specific to the derived classes." alt="" coords="521,269,735,350"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a7deb494a09ce1f44b1b7e8ac5255cd0b" title="Update the value of the clusteredness degree." alt="" coords="784,5,979,69"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a160aae10901ef5198db1b03bdef68065" title="Update the value of the area." alt="" coords="809,93,953,157"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a6751a928c631fe725a2e7c5226e3720b" title="Update the value of the perimeter." alt="" coords="809,181,953,245"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ab26bc346c1b0b0d17104c7d5cfb170bb" title="Update the shape of the cluster." alt="" coords="809,269,953,333"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aab860163169deb76a7e853df32902ab1" title="Update the point defining the centre of the cluster." alt="" coords="809,357,953,421"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acce0e9ddd2d92e3ba843c3015352cab5" title="Get the measure that the cluster has a triangular shape." alt="" coords="1033,181,1180,245"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a1acb28a7aafd1f75c23a94dbc988b038" title="Get the measure that the cluster has a rectangular shape." alt="" coords="1027,269,1187,333"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a5d9967a9c531f3abe0236fbef1b0faba" title="Get the measure that the cluster has a circular shape." alt="" coords="1035,357,1179,421"/>
 </map>

@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['c',['c',['../classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a8de6adbe07fa09cefefd31b84e7e6ef3',1,'multiscale::MinimumAreaEnclosingTriangle']]],
+  ['c',['c',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a758f39b2d0cf35337f28d8ed871c2c0b',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['centre',['centre',['../classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef',1,'multiscale::analysis::Entity::centre()'],['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#afe9ef6b70ff53161cb02749444ae372c',1,'multiscale::analysis::SpatialCollection2D::centre()']]],
   ['circlesiterator',['circlesIterator',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ad4cf12c7f3951f0bb388939797cbcc0c',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['circularmeasure',['circularMeasure',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a4c58c82dd3d67d670b554bfaeb2b19ba',1,'multiscale::analysis::SpatialCollection2D']]],
-  ['clusterednessdegree',['clusterednessDegree',['../classmultiscale_1_1analysis_1_1Cluster.html#a9e6a2613808e1a08b2d3dbfd3af8e23d',1,'multiscale::analysis::Cluster']]],
+  ['clusterednessdegree',['clusterednessDegree',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acd11d0bbeb60a1168bd2c2fbbc6fe965',1,'multiscale::analysis::SpatialCollection2D']]],
   ['clusterednessindex',['clusterednessIndex',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a5e2bf77041bd0d5047dd16c4632c16b7',1,'multiscale::analysis::ClusterDetector']]],
   ['clusters',['clusters',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#aa81a8649bc743389c2fc1919d47eb5b3',1,'multiscale::analysis::ClusterDetector']]],
   ['cols',['cols',['../classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c',1,'multiscale::analysis::MatFactory']]],
