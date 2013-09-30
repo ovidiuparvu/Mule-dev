@@ -10,13 +10,13 @@ using namespace multiscale::analysis;
 
 Region::Region(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                double angleWrtOrigin, const vector<Point> &polygon) : SpatialCollection2D() {
-    validateInputValues(clusterednessDegree, density, area, distanceFromOrigin, angle, polygon);
+    validateInputValues(clusterednessDegree, density, area, distanceFromOrigin, angleWrtOrigin, polygon);
 
     this->clusterednessDegree = clusterednessDegree;
     this->density = density;
     this->area = area;
     this->distanceFromOrigin = distanceFromOrigin;
-    this->angle = angle;
+    this->angle = angleWrtOrigin;
 
     this->polygon = polygon;
 }

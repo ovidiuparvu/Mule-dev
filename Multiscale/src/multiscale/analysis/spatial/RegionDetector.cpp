@@ -68,73 +68,55 @@ vector<Region> const &RegionDetector::getRegions() {
 }
 
 void RegionDetector::setAlpha(int alpha) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->alpha = alpha;
 }
 
 void RegionDetector::setBeta(int beta) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->beta = beta;
 }
 
 void RegionDetector::setBlurKernelSize(int blurKernelSize) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->blurKernelSize = blurKernelSize;
 }
 
 void RegionDetector::setEpsilon(int epsilon) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->epsilon = epsilon;
 }
 
 void RegionDetector::setMorphologicalCloseIterations(int morphologicalCloseIterations) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->morphologicalCloseIterations = morphologicalCloseIterations;
 }
 
 void RegionDetector::setOriginXCoordinate(int originXCoordinate) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->origin.x = originXCoordinate;
 }
 
 void RegionDetector::setOriginYCoordinate(int originYCoordinate) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->origin.y = originYCoordinate;
 }
 
 void RegionDetector::setRegionAreaThresh(int regionAreaThresh) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->regionAreaThresh = regionAreaThresh;
 }
 
 void RegionDetector::setThresholdValue(int thresholdValue) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->thresholdValue = thresholdValue;
 }
@@ -155,7 +137,7 @@ void RegionDetector::createDetectorSpecificTrackbars() {
     createTrackbar(TRACKBAR_ALPHA, WIN_OUTPUT_IMAGE, &alpha, ALPHA_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_BETA, WIN_OUTPUT_IMAGE, &beta, BETA_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_KERNEL, WIN_OUTPUT_IMAGE, &blurKernelSize, KERNEL_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_MORPH, WIN_OUTPUT_IMAGE, &morphologicalCloseIterations, ITER_MAX, nullptr, nullptr);
+    createTrackbar(TRACKBAR_MORPH, WIN_OUTPUT_IMAGE, &morphologicalCloseIterations, MORPH_ITER_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_EPSILON, WIN_OUTPUT_IMAGE, &epsilon, EPSILON_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_REGION_AREA_THRESH, WIN_OUTPUT_IMAGE, &regionAreaThresh, REGION_AREA_THRESH_MAX, nullptr, nullptr);
     createTrackbar(TRACKBAR_THRESHOLD, WIN_OUTPUT_IMAGE, &thresholdValue, THRESHOLD_MAX, nullptr, nullptr);
@@ -274,7 +256,7 @@ double RegionDetector::regionClusterednessDegree(const vector<Point> &polygon) {
 double RegionDetector::regionDensity(const vector<Point> &polygon) {
     Mat mask(Mat::zeros(image.rows, image.cols, image.type()));
 
-    drawContours(mask, vector<vector<Point>>(1, polygon), -1, Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX), CV_FILLED);
+    drawContours(mask, vector<vector<Point>>(1, polygon), -1, Scalar(INTENSITY_MAX), CV_FILLED);
 
     double averageIntensity = (mean(image, mask))[0];
 

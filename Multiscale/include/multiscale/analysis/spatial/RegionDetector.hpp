@@ -33,7 +33,7 @@ using namespace cv;
 #define ALPHA_MAX               1000
 #define BETA_MAX                200
 #define KERNEL_MAX              2000
-#define ITER_MAX                100
+#define MORPH_ITER_MAX          100
 #define CANNY_THRESH_MAX        100
 #define EPSILON_MAX             100
 #define REGION_AREA_THRESH_MAX  200000

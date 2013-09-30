@@ -54,6 +54,12 @@ void Detector::initialiseDetectorSpecificFieldsIfNotSet() {
     }
 }
 
+void Detector::setDetectorSpecificFieldsInitialisationFlag(bool flag) {
+    if (detectorSpecificFieldsInitialised != flag) {
+        detectorSpecificFieldsInitialised = flag;
+    }
+}
+
 void Detector::initialiseImageDependentFields() {
     initialiseImageOrigin();
     initialiseDetectorSpecificImageDependentFields();

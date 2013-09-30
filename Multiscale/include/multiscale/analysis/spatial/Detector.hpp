@@ -66,6 +66,9 @@ namespace multiscale {
                 //! Initialisation of the detector specific values in case they were not set
                 void initialiseDetectorSpecificFieldsIfNotSet();
 
+                //! Set the detector specific fields initialisation flag to true
+                void setDetectorSpecificFieldsInitialisationFlag(bool flag = true);
+
                 //! Initialisation of the detector specific values
                 virtual void initialiseDetectorSpecificFields() = 0;
 

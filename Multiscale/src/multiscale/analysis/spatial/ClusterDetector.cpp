@@ -37,17 +37,13 @@ vector<Cluster> const &ClusterDetector::getClusters() {
 }
 
 void ClusterDetector::setEps(double eps) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->eps = NumericRangeManipulator::convertFromRange<double, int>(EPS_REAL_MIN, EPS_REAL_MAX, EPS_MIN, EPS_MAX, eps);
 }
 
 void ClusterDetector::setMinPoints(int minPoints) {
-    if (!detectorSpecificFieldsInitialised) {
-        detectorSpecificFieldsInitialised = true;
-    }
+    setDetectorSpecificFieldsInitialisationFlag();
 
     this->minPoints = minPoints;
 }
