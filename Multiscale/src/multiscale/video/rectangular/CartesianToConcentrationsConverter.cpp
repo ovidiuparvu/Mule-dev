@@ -32,7 +32,7 @@ void CartesianToConcentrationsConverter::readInputData() {
     ifstream fin(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        throw CartesianToConcentrationsConverterException(ERR_INPUT_OPEN);
+        MS_throw(CartesianToConcentrationsConverterException, ERR_INPUT_OPEN);
     }
 
     // Read the header line
@@ -46,7 +46,7 @@ void CartesianToConcentrationsConverter::readInputData() {
     fin.get();
 
     if (fin.peek() != EOF) {
-        throw CartesianToConcentrationsConverterException(ERR_IN_EXTRA_DATA);
+        MS_throw(CartesianToConcentrationsConverterException, ERR_IN_EXTRA_DATA);
     }
 
     fin.close();
@@ -56,9 +56,9 @@ void CartesianToConcentrationsConverter::readHeaderLine(ifstream &fin) {
     fin >> height >> width >> simulationTime;
 
     // Validate the header line
-    if (height <= 0) throw CartesianToConcentrationsConverterException(ERR_NONPOS_DIMENSION);
-    if (width <= 0)  throw CartesianToConcentrationsConverterException(ERR_NONPOS_DIMENSION);
-    if (simulationTime < 0) throw CartesianToConcentrationsConverterException(ERR_NEG_SIM_TIME);
+    if (height <= 0) MS_throw(CartesianToConcentrationsConverterException, ERR_NONPOS_DIMENSION);
+    if (width <= 0)  MS_throw(CartesianToConcentrationsConverterException, ERR_NONPOS_DIMENSION);
+    if (simulationTime < 0) MS_throw(CartesianToConcentrationsConverterException, ERR_NEG_SIM_TIME);
 }
 
 void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) {
@@ -74,7 +74,7 @@ void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) {
         fin >> tmp;
 
         if ((tmp < 0) || (tmp > 1)) {
-            throw CartesianToConcentrationsConverterException(ERR_CONC);
+            MS_throw(CartesianToConcentrationsConverterException, ERR_CONC);
         }
 
         concentrations[i] = tmp;

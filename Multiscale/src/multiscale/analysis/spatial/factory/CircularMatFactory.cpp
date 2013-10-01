@@ -38,7 +38,7 @@ double CircularMatFactory::maxColourBarIntensityFromViewerImage(const string &in
 }
 
 unsigned char * CircularMatFactory::processConcentrations(ifstream& fin) {
-    throw CircularMatFactoryException(ERR_UNIMPLEMENTED_METHOD);
+    MS_throw(CircularMatFactoryException, ERR_UNIMPLEMENTED_METHOD);
 }
 
 Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int originY,
@@ -52,12 +52,28 @@ Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int or
 
 bool CircularMatFactory::isValidViewerImage(const Mat &image) {
     if (!image.data) {
-        throw CircularMatFactoryException(ERR_INPUT_OPEN);
+        MS_throw(CircularMatFactoryException, ERR_INPUT_OPEN);
     }
 
     if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT)) {
-        throw CircularMatFactoryException(ERR_IMG_RESOLUTION);
+        MS_throw(CircularMatFactoryException, ERR_IMG_RESOLUTION);
     }
 
     return true;
 }
+
+
+// Constants
+const string CircularMatFactory::ERR_UNIMPLEMENTED_METHOD = "The method you called is not implemented.";
+
+const int CircularMatFactory::INTENSITY_MAX     = 255;
+
+const int CircularMatFactory::ROI_START_X       = 1024;
+const int CircularMatFactory::ROI_START_Y       = 786;
+const int CircularMatFactory::ROI_RADIUS        = 615;
+
+const int CircularMatFactory::INPUT_IMG_WIDTH   = 2048;
+const int CircularMatFactory::INPUT_IMG_HEIGHT  = 1572;
+
+const int CircularMatFactory::COLOURBAR_MAX_X   = 1775;
+const int CircularMatFactory::COLOURBAR_MAX_Y   = 56;

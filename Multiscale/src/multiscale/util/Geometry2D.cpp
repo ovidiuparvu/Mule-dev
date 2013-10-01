@@ -431,3 +431,8 @@ void Geometry2D::lineCircleOneIntersectionPoint(const Point2f &circleOrigin, dou
 
     intersectionPoints.push_back(intersectionPoint);
 }
+
+
+// Constants
+const double Geometry2D::PI = 3.14159265358979323846264338327950288419716939937510;
+const int Geometry2D::MATRIX_START_INDEX = 1;

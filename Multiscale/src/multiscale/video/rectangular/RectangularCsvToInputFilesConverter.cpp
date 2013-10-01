@@ -62,7 +62,7 @@ void RectangularCsvToInputFilesConverter::initInputFile(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        throw RectangularCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+        MS_throw(RectangularCsvToInputFilesConverterException, ERR_INPUT_OPEN);
     }
 }
 
@@ -73,7 +73,7 @@ void RectangularCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        throw RectangularCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+        MS_throw(RectangularCsvToInputFilesConverterException, ERR_INPUT_OPEN);
     }
 
     while (!fin.eof()) {
@@ -126,7 +126,7 @@ void RectangularCsvToInputFilesConverter::initIterators(const NumberIteratorType
 
 void RectangularCsvToInputFilesConverter::validateSelectedConcentrationIndex() {
     if (selectedConcentrationIndex >= nrOfConcentrationsForPosition) {
-        throw RectangularCsvToInputFilesConverterException(ERR_SELECTED_CONCENTRATION_INDEX);
+        MS_throw(RectangularCsvToInputFilesConverterException, ERR_SELECTED_CONCENTRATION_INDEX);
     }
 }
 
@@ -137,7 +137,7 @@ void RectangularCsvToInputFilesConverter::validateInput(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        throw RectangularCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+        MS_throw(RectangularCsvToInputFilesConverterException, ERR_INPUT_OPEN);
     }
 
     while (!fin.eof()) {
@@ -158,18 +158,18 @@ void RectangularCsvToInputFilesConverter::validateInputLine(const string &curren
     vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
     if (tokens.size() < ((height * width * nrOfConcentrationsForPosition) + 1)) {
-        throw RectangularCsvToInputFilesConverterException(ERR_NR_CONCENTRATIONS);
+        MS_throw(RectangularCsvToInputFilesConverterException, ERR_NR_CONCENTRATIONS);
     }
 
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
         double value = stod(*it);
 
         if (value < 0) {
-            throw RectangularCsvToInputFilesConverterException(
-                    string(ERR_INVALID_VALUE_LINE)  +
-                    StringManipulator::toString<unsigned int>(lineNumber) +
-                    string(ERR_INVALID_VALUE_TOKEN) + (*it)
-                  );
+            MS_throw(RectangularCsvToInputFilesConverterException,
+                     string(ERR_INVALID_VALUE_LINE)  +
+                     StringManipulator::toString<unsigned int>(lineNumber) +
+                     string(ERR_INVALID_VALUE_TOKEN) + (*it)
+            );
         }
     }
 }
@@ -246,7 +246,7 @@ inline double RectangularCsvToInputFilesConverter::computeSimulationTime(const s
     double simulationTime = stod(token);
 
     if (simulationTime < 0) {
-        throw RectangularCsvToInputFilesConverterException(ERR_NEG_SIM_TIME);
+        MS_throw(RectangularCsvToInputFilesConverterException, ERR_NEG_SIM_TIME);
     }
 
     return simulationTime;

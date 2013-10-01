@@ -67,7 +67,7 @@ double Entity::distanceTo(const Entity &entity) {
 void Entity::validateInputValues(unsigned int pileUpDegree, double area, double perimeter, const Point2f &centre,
                                  const vector<Point2f> &contourPoints) {
     if (!areValid(pileUpDegree, area, perimeter, centre, contourPoints)) {
-        throw EntityException(ERR_INPUT);
+        MS_throw(EntityException, ERR_INPUT);
     }
 }
 
@@ -85,3 +85,10 @@ bool Entity::areValid(unsigned int pileUpDegree, double area, double perimeter, 
         ((Numeric::greaterOrEqual(centre.x, 0)) && (Numeric::greaterOrEqual(centre.y, 0)))
     );
 }
+
+
+// Constants
+const string Entity::ERR_INPUT           = "Invalid input parameters were provided to the constructor.";
+const string Entity::ERR_DISTANCE        = "The distance to an object of a different type cannot be computed.";
+
+const string Entity::OUTPUT_SEPARATOR    = ",";

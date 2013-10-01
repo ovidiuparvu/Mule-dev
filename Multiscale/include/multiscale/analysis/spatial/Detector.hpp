@@ -9,18 +9,6 @@
 using namespace cv;
 using namespace std;
 
-#define ERR_OUTPUT_WITHOUT_DETECT   "Unable to output results if the detect method was not called previously."
-#define ERR_OUTPUT_FILE             "Unable to create output file."
-#define ERR_INVALID_IMAGE           "The input image is invalid."
-
-#define OUTPUT_EXTENSION    ".out"
-#define IMG_EXTENSION       ".png"
-
-#define WIN_OUTPUT_IMAGE    "Output image"
-
-#define KEY_ESC     27
-#define KEY_SAVE    115
-
 
 namespace multiscale {
 
@@ -202,6 +190,21 @@ namespace multiscale {
 
                 //! Print error message, because the detect method was not called before calling the output method
                 void printOutputErrorMessage();
+
+            protected:
+
+                // Constants
+                static const string ERR_OUTPUT_WITHOUT_DETECT;
+                static const string ERR_OUTPUT_FILE;
+                static const string ERR_INVALID_IMAGE;
+
+                static const string OUTPUT_EXTENSION;
+                static const string IMG_EXTENSION;
+
+                static const string WIN_OUTPUT_IMAGE;
+
+                static const int KEY_ESC;
+                static const int KEY_SAVE;
 
         };
 

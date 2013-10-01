@@ -7,17 +7,17 @@ using namespace std;
 using namespace cv;
 using namespace multiscale;
 
-#define KEY_ESC 27
+const int KEY_ESC = 27;
 
-#define RADIUS                  1
-#define LINE_THICKNESS          50
-#define WIN_MIN_AREA_TRIANGLE   "Minimum area enclosing triangle"
-#define NR_RAND_POLYGONS        50
-#define MAX_POLYGON_POINTS      100
-#define POLYGON_POINT_X_MAX     500
-#define POLYGON_POINT_Y_MAX     500
+const int RADIUS                    = 1;
+const int LINE_THICKNESS            = 50;
+const string WIN_MIN_AREA_TRIANGLE  = "Minimum area enclosing triangle";
+const int NR_RAND_POLYGONS          = 50;
+const int MAX_POLYGON_POINTS        = 100;
+const int POLYGON_POINT_X_MAX       = 500;
+const int POLYGON_POINT_Y_MAX       = 500;
 
-#define POINT_IN_TRIANGLE_THRESH 1E-4
+const double POINT_IN_TRIANGLE_THRESH = 1E-4;
 
 
 // Compute the area of a triangle specified by three points

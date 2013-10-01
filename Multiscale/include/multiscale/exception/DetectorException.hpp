@@ -1,7 +1,8 @@
-#ifndef DETECTOREXCEPTION_HPP_
-#define DETECTOREXCEPTION_HPP_
+#ifndef DETECTOREXCEPTION_HPP
+#define DETECTOREXCEPTION_HPP
 
-#include <stdexcept>
+#include "multiscale/exception/MultiscaleException.hpp" 
+
 #include <string>
 
 using namespace std;
@@ -10,12 +11,14 @@ using namespace std;
 namespace multiscale {
 
     //! Exception class for the Detector class
-    class DetectorException : public runtime_error {
+    class DetectorException : public MultiscaleException {
 
         public:
 
-            DetectorException(const string &msg) : runtime_error(msg) {}
-            DetectorException(const char *msg) : runtime_error(msg) {}
+            DetectorException(const string &file, int line, const string &msg)
+                              : MultiscaleException(file, line, msg) {}
+            DetectorException(const string &file, int line, const char *msg)
+                              : MultiscaleException(file, line, msg) {}
 
     };
 

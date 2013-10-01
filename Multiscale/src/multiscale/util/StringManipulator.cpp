@@ -35,3 +35,7 @@ vector<string> StringManipulator::split(const string &initialString, const strin
 
     return boost::split(tokens, initialStringCopy, boost::is_any_of(delimiter));
 }
+
+
+// Constants
+const char StringManipulator::DIR_SEPARATOR = '/';

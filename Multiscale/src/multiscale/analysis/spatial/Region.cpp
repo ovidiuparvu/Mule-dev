@@ -42,7 +42,7 @@ string Region::fieldNamesToString() {
 void Region::validateInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                                  double angleWrtOrigin, const vector<Point> &polygon) {
     if (!areValidInputValues(clusterednessDegree, density, area, distanceFromOrigin, angleWrtOrigin, polygon)) {
-        throw RegionException(ERR_INPUT);
+        MS_throw(RegionException, ERR_INPUT);
     }
 }
 
@@ -103,7 +103,7 @@ double Region::isCircularMeasure() {
     minEnclosingCircle(polygon, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
     // Compute the area of the minimum area enclosing circle
-    double circleArea = PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
+    double circleArea = Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
 
     return (Numeric::almostEqual(circleArea, 0)) ? 0
                                                  : (area / circleArea);
@@ -116,16 +116,25 @@ void Region::updateCentrePoint() {
 }
 
 string Region::fieldValuesToString() {
-    return StringManipulator::toString<double>(clusterednessDegree) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(density) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(perimeter) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(distanceFromOrigin) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(angle) + OUTPUT_SEPARATOR +
-           shapeAsString() + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(triangularMeasure) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(rectangularMeasure) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(circularMeasure) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(centre.y);
+    stringstream strStream;
+
+    strStream << clusterednessDegree << OUTPUT_SEPARATOR
+              << density << OUTPUT_SEPARATOR
+              << area << OUTPUT_SEPARATOR
+              << perimeter << OUTPUT_SEPARATOR
+              << distanceFromOrigin << OUTPUT_SEPARATOR
+              << angle << OUTPUT_SEPARATOR
+              << shapeAsString() << OUTPUT_SEPARATOR
+              << triangularMeasure << OUTPUT_SEPARATOR
+              << rectangularMeasure << OUTPUT_SEPARATOR
+              << circularMeasure << OUTPUT_SEPARATOR
+              << centre.x << OUTPUT_SEPARATOR
+              << centre.y;
+
+    return strStream.str();
 }
+
+
+// Constants
+const bool Region::CONTOUR_ORIENTED = false;
+const bool Region::CONTOUR_CLOSED   = true;

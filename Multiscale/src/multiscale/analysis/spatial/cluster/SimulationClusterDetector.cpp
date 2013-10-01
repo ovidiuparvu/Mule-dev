@@ -92,7 +92,7 @@ void SimulationClusterDetector::outputResultsToImage() {
     // Skipping the noise cluster which will be displayed as it already is in the original image
     for (unsigned int i = 1; i < nrOfClusters; i++) {
         // Choose a random colour for the cluster
-        Scalar colour = RGBColourGenerator::generate(randomNumberGenerator);
+        Scalar colour = RGBColourGenerator().generate(randomNumberGenerator);
 
         outputClusterToImage(clusters[i], colour, outputImage);
     }
@@ -125,7 +125,7 @@ void SimulationClusterDetector::outputClusterShape(Cluster &cluster, Scalar colo
         break;
 
     default:
-        throw SimulationClusterDetectorException(ERR_UNDEFINED_SHAPE);
+        MS_throw(SimulationClusterDetectorException, Cluster::ERR_UNDEFINED_SHAPE);
         break;
     }
 }
@@ -156,3 +156,13 @@ void SimulationClusterDetector::outputClusterCircularShape(Cluster &cluster, Sca
 
     circle(image, centre, radius, colour, DATAPOINT_WIDTH);
 }
+
+
+// Constants
+const int SimulationClusterDetector::THRESHOLD           = 1;
+const int SimulationClusterDetector::THRESHOLD_MAX       = 255;
+
+const int SimulationClusterDetector::ENTITY_THRESH       = 200;
+
+const int SimulationClusterDetector::DATAPOINT_WIDTH     = 10;
+const int SimulationClusterDetector::DATAPOINT_THICKNESS = -1;

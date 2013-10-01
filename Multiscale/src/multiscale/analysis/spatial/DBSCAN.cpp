@@ -6,16 +6,16 @@
 using namespace multiscale::analysis;
 
 
-double DBSCAN::eps = 0;
-unsigned int DBSCAN::minPoints = 0;
-unsigned int DBSCAN::nrOfDataPoints = 0;
-vector<vector<double>> DBSCAN::distanceMatrix(0);
+DBSCAN::DBSCAN() {}
 
+DBSCAN::~DBSCAN() {
+    distanceMatrix.clear();
+}
 
 void DBSCAN::run(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> &clusterIndexes, int &nrOfClusters, double eps,
                  int minPoints) {
-    DBSCAN::eps = eps;
-    DBSCAN::minPoints = minPoints;
+    this->eps = eps;
+    this->minPoints = minPoints;
 
     nrOfDataPoints = dataPoints.size();
 
@@ -152,3 +152,9 @@ void DBSCAN::allocateDistanceMatrix() {
         distanceMatrix.push_back(vector<double>(nrOfDataPoints, 0));
     }
 }
+
+
+// Constants
+const int DBSCAN::CLUSTERING_UNCLASSIFIED = -2;
+const int DBSCAN::CLUSTERING_BORDER       = -1;
+const int DBSCAN::CLUSTERING_NOISE        = 0;

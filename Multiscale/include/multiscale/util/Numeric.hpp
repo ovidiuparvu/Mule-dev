@@ -1,5 +1,5 @@
-#ifndef NUMERIC_HPP_
-#define NUMERIC_HPP_
+#ifndef NUMERIC_HPP
+#define NUMERIC_HPP
 
 #include <algorithm>
 #include <cmath>

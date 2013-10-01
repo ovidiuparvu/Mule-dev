@@ -1,5 +1,5 @@
-#ifndef POLARGNUPLOTSCRIPTGENERATOR_HPP_
-#define POLARGNUPLOTSCRIPTGENERATOR_HPP_
+#ifndef POLARGNUPLOTSCRIPTGENERATOR_HPP
+#define POLARGNUPLOTSCRIPTGENERATOR_HPP
 
 #include "multiscale/video/circular/AnnularSector.hpp"
 
@@ -7,20 +7,20 @@
 
 using namespace std;
 
-#define HEADER_IN       "config/video/circular/header.in"
-#define CONTENT_IN      "config/video/circular/content.in"
-#define FOOTER_IN       "config/video/circular/footer.in"
+const string HEADER_IN       = "config/video/circular/header.in";
+const string CONTENT_IN      = "config/video/circular/content.in";
+const string FOOTER_IN       = "config/video/circular/footer.in";
 
-#define REPLACE_HEADER_FILENAME         "OUTPUT_FILENAME"
-#define REPLACE_HEADER_SIM_TIME         "OUTPUT_SIM_TIME"
+const string REPLACE_HEADER_FILENAME         = "OUTPUT_FILENAME";
+const string REPLACE_HEADER_SIM_TIME         = "OUTPUT_SIM_TIME";
 
-#define REPLACE_CONTENT_INDEX           "OBJ_INDEX"
-#define REPLACE_CONTENT_RADIUS          "OBJ_END_RADIUS"
-#define REPLACE_CONTENT_START_ANGLE     "OBJ_START_ANGLE"
-#define REPLACE_CONTENT_END_ANGLE       "OBJ_END_ANGLE"
-#define REPLACE_CONTENT_CONCENTRATION   "OBJ_CONCENTRATION"
+const string REPLACE_CONTENT_INDEX           = "OBJ_INDEX";
+const string REPLACE_CONTENT_RADIUS          = "OBJ_END_RADIUS";
+const string REPLACE_CONTENT_START_ANGLE     = "OBJ_START_ANGLE";
+const string REPLACE_CONTENT_END_ANGLE       = "OBJ_END_ANGLE";
+const string REPLACE_CONTENT_CONCENTRATION   = "OBJ_CONCENTRATION";
 
-#define GNUPLOT_EXTENSION               ".plt"
+const string GNUPLOT_EXTENSION  = ".plt";
 
 
 namespace multiscale {

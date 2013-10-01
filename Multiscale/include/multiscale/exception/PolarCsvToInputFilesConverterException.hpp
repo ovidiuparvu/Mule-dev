@@ -1,7 +1,8 @@
-#ifndef POLARCSVTOINPUTFILESCONVERTEREXCEPTION_HPP_
-#define POLARCSVTOINPUTFILESCONVERTEREXCEPTION_HPP_
+#ifndef POLARCSVTOINPUTFILESCONVERTEREXCEPTION_HPP
+#define POLARCSVTOINPUTFILESCONVERTEREXCEPTION_HPP
 
-#include <stdexcept>
+#include "multiscale/exception/MultiscaleException.hpp" 
+
 #include <string>
 
 using namespace std;
@@ -10,12 +11,14 @@ using namespace std;
 namespace multiscale {
 
     //! Exception class for the PolarCsvToInputFilesConverter class
-    class PolarCsvToInputFilesConverterException : public runtime_error {
+    class PolarCsvToInputFilesConverterException : public MultiscaleException {
 
         public:
 
-            PolarCsvToInputFilesConverterException(const string &msg) : runtime_error(msg) {}
-            PolarCsvToInputFilesConverterException(const char *msg) : runtime_error(msg) {}
+            PolarCsvToInputFilesConverterException(const string &file, int line, const string &msg)
+                                                   : MultiscaleException(file, line, msg) {}
+            PolarCsvToInputFilesConverterException(const string &file, int line, const char *msg)
+                                                   : MultiscaleException(file, line, msg) {}
 
     };
 

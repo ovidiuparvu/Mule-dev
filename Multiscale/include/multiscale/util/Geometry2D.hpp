@@ -1,5 +1,5 @@
-#ifndef GEOMETRY2D_HPP_
-#define GEOMETRY2D_HPP_
+#ifndef GEOMETRY2D_HPP
+#define GEOMETRY2D_HPP
 
 #include "multiscale/util/Numeric.hpp"
 
@@ -8,9 +8,6 @@
 
 using namespace cv;
 using namespace std;
-
-#define PI                  3.14159265358979323846264338327950288419716939937510
-#define MATRIX_START_INDEX  1
 
 
 namespace multiscale {
@@ -440,6 +437,12 @@ namespace multiscale {
              */
             static void lineCircleOneIntersectionPoint(const Point2f &circleOrigin, double A, double B,
                                                        double C, double delta, vector<Point2f> &intersectionPoints);
+
+        public:
+
+            // Constants
+            static const double PI;
+            static const int MATRIX_START_INDEX;
 
     };
 

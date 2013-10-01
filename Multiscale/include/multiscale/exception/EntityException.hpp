@@ -1,7 +1,8 @@
 #ifndef ENTITYEXCEPTION_HPP
 #define ENTITYEXCEPTION_HPP
 
-#include <stdexcept>
+#include "multiscale/exception/MultiscaleException.hpp" 
+
 #include <string>
 
 using namespace std;
@@ -10,12 +11,14 @@ using namespace std;
 namespace multiscale {
 
     //! Exception class for the Entity instances
-    class EntityException : public runtime_error {
+    class EntityException : public MultiscaleException {
 
         public:
 
-            EntityException(const string &msg) : runtime_error(msg) {}
-            EntityException(const char *msg) : runtime_error(msg) {}
+            EntityException(const string &file, int line, const string &msg)
+                            : MultiscaleException(file, line, msg) {}
+            EntityException(const string &file, int line, const char *msg)
+                            : MultiscaleException(file, line, msg) {}
 
     };
 

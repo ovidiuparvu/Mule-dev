@@ -1,24 +1,10 @@
-#ifndef CIRCULARMATFACTORY_HPP_
-#define CIRCULARMATFACTORY_HPP_
+#ifndef CIRCULARMATFACTORY_HPP
+#define CIRCULARMATFACTORY_HPP
 
 #include "multiscale/analysis/spatial/MatFactory.hpp"
 
 using namespace cv;
 using namespace std;
-
-#define ERR_UNIMPLEMENTED_METHOD    "The method you called is not implemented."
-
-#define INTENSITY_MAX       255
-
-#define ROI_START_X         1024
-#define ROI_START_Y         786
-#define ROI_RADIUS          615
-
-#define INPUT_IMG_WIDTH     2048
-#define INPUT_IMG_HEIGHT    1572
-
-#define COLOURBAR_MAX_X     1775
-#define COLOURBAR_MAX_Y     56
 
 
 namespace multiscale {
@@ -78,6 +64,23 @@ namespace multiscale {
                  */
                 Mat createCircularMask(unsigned int originX, unsigned int originY,
                                        unsigned int radius, const Mat &image);
+
+            private:
+
+                // Constants
+                static const string ERR_UNIMPLEMENTED_METHOD;
+
+                static const int INTENSITY_MAX;
+
+                static const int ROI_START_X;
+                static const int ROI_START_Y;
+                static const int ROI_RADIUS;
+
+                static const int INPUT_IMG_WIDTH;
+                static const int INPUT_IMG_HEIGHT;
+
+                static const int COLOURBAR_MAX_X;
+                static const int COLOURBAR_MAX_Y;
 
         };
 

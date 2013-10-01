@@ -35,7 +35,7 @@ unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
         fin >> concentration;
 
         if ((concentration < 0) || (concentration > 1))
-            throw RectangularMatFactoryException(ERR_CONC);
+            MS_throw(RectangularMatFactoryException, ERR_CONC);
 
         data[i] = convertToIntensity(concentration);
     }
@@ -45,10 +45,25 @@ unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
 
 bool RectangularMatFactory::isValidViewerImage(const Mat &image) {
     if (!image.data)
-        throw RectangularMatFactoryException(ERR_INPUT_OPEN);
+        MS_throw(RectangularMatFactoryException, ERR_INPUT_OPEN);
 
     if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT))
-        throw RectangularMatFactoryException(ERR_IMG_RESOLUTION);
+        MS_throw(RectangularMatFactoryException, ERR_IMG_RESOLUTION);
 
     return true;
 }
+
+
+// Constants
+const string RectangularMatFactory::ERR_CONC   = "All concentrations have to be between 0 and 1.";
+
+const int RectangularMatFactory::ROI_START_X       = 321;
+const int RectangularMatFactory::ROI_START_Y       = 318;
+const int RectangularMatFactory::ROI_WIDTH         = 1407;
+const int RectangularMatFactory::ROI_HEIGHT        = 1358;
+
+const int RectangularMatFactory::INPUT_IMG_WIDTH   = 2048;
+const int RectangularMatFactory::INPUT_IMG_HEIGHT  = 2048;
+
+const int RectangularMatFactory::COLOURBAR_MAX_X   = 1799;
+const int RectangularMatFactory::COLOURBAR_MAX_Y   = 320;

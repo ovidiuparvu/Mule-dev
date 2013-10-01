@@ -19,18 +19,18 @@
  * Date modified: 07.02.2013
  */
 
+#include "multiscale/core/Multiscale.hpp"
 #include "multiscale/video/rectangular/CartesianToConcentrationsConverter.hpp"
+#include "multiscale/exception/ExceptionHandler.hpp"
 
 #include <boost/program_options.hpp>
 #include <iostream>
 
 using namespace std;
+using namespace multiscale;
 using namespace multiscale::video;
 
 namespace po = boost::program_options;
-
-#define ERR_CODE 1
-#define ERR_MSG  "An error occurred: "
 
 
 // Initialise the arguments configuration
@@ -93,16 +93,8 @@ int main(int argc, char** argv) {
         } else {
             printWrongParameters();
         }
-    } catch(const string &e) {
-        cerr << ERR_MSG << e << endl;
-
-        return ERR_CODE;
-    } catch(const char* e) {
-        cerr << ERR_MSG << e << endl;
-
-        return ERR_CODE;
-    } catch(exception &e) {
-        cerr << ERR_MSG << e.what() << endl;
+    } catch(const exception &e) {
+        ExceptionHandler::printErrorMessage(e);
 
         return ERR_CODE;
     } catch(...) {

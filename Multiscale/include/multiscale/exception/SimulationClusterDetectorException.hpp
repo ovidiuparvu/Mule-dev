@@ -1,7 +1,8 @@
-#ifndef SIMULATIONCLUSTERDETECTOREXCEPTION_HPP_
-#define SIMULATIONCLUSTERDETECTOREXCEPTION_HPP_
+#ifndef SIMULATIONCLUSTERDETECTOREXCEPTION_HPP
+#define SIMULATIONCLUSTERDETECTOREXCEPTION_HPP
 
-#include <stdexcept>
+#include "multiscale/exception/MultiscaleException.hpp" 
+
 #include <string>
 
 using namespace std;
@@ -10,12 +11,14 @@ using namespace std;
 namespace multiscale {
 
     //! Exception class for the SimulationClusterDetector instances
-    class SimulationClusterDetectorException : public runtime_error {
+    class SimulationClusterDetectorException : public MultiscaleException {
 
         public:
 
-            SimulationClusterDetectorException(const string &msg) : runtime_error(msg) {}
-            SimulationClusterDetectorException(const char *msg) : runtime_error(msg) {}
+            SimulationClusterDetectorException(const string &file, int line, const string &msg)
+                                               : MultiscaleException(file, line, msg) {}
+            SimulationClusterDetectorException(const string &file, int line, const char *msg)
+                                               : MultiscaleException(file, line, msg) {}
 
     };
 

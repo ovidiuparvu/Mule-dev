@@ -12,8 +12,6 @@
 using namespace cv;
 using namespace std;
 
-#define ERR_ORIGIN_DEPENDENT_VALUES "The origin dependent values are invalid (i.e. negative)."
-
 
 namespace multiscale {
 
@@ -129,6 +127,12 @@ namespace multiscale {
                  * \param angleWrtOrigin     Angle with respect to the origin
                  */
                 bool areValidOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin);
+
+            public:
+
+                // Constants
+                static const string ERR_UNDEFINED_SHAPE;
+                static const string ERR_ORIGIN_DEPENDENT_VALUES;
 
         };
 

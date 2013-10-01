@@ -1,7 +1,8 @@
-#ifndef CARTESIANTOPOLARCONVERTEREXCEPTION_HPP_
-#define CARTESIANTOPOLARCONVERTEREXCEPTION_HPP_
+#ifndef CARTESIANTOPOLARCONVERTEREXCEPTION_HPP
+#define CARTESIANTOPOLARCONVERTEREXCEPTION_HPP
 
-#include <stdexcept>
+#include "multiscale/exception/MultiscaleException.hpp" 
+
 #include <string>
 
 using namespace std;
@@ -10,12 +11,14 @@ using namespace std;
 namespace multiscale {
 
     //! Exception class for the CartesianToPolarConverter class
-    class CartesianToPolarConverterException : public runtime_error {
+    class CartesianToPolarConverterException : public MultiscaleException {
 
         public:
 
-            CartesianToPolarConverterException(const string &msg) : runtime_error(msg) {}
-            CartesianToPolarConverterException(const char *msg) : runtime_error(msg) {}
+            CartesianToPolarConverterException(const string &file, int line, const string &msg)
+                                               : MultiscaleException(file, line, msg) {}
+            CartesianToPolarConverterException(const string &file, int line, const char *msg)
+                                               : MultiscaleException(file, line, msg) {}
 
     };
 

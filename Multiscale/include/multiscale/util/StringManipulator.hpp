@@ -1,13 +1,12 @@
-#ifndef STRINGMANIPULATOR_HPP_
-#define STRINGMANIPULATOR_HPP_
+#ifndef STRINGMANIPULATOR_HPP
+#define STRINGMANIPULATOR_HPP
 
 #include <string>
 #include <vector>
 #include <sstream>
 
-#define DIR_SEPARATOR '/'
-
 using namespace std;
+
 
 namespace multiscale {
 
@@ -51,6 +50,11 @@ namespace multiscale {
 
                 return stringStream.str();
             }
+
+        public:
+
+            // Constants
+            static const char DIR_SEPARATOR;
 
     };
 

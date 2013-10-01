@@ -1,5 +1,5 @@
-#ifndef REGION_HPP_
-#define REGION_HPP_
+#ifndef REGION_HPP
+#define REGION_HPP
 
 #include "multiscale/analysis/spatial/SpatialCollection2D.hpp"
 
@@ -9,9 +9,6 @@
 
 using namespace cv;
 using namespace std;
-
-#define CONTOUR_ORIENTED    false
-#define CONTOUR_CLOSED      true
 
 
 namespace multiscale {
@@ -115,6 +112,12 @@ namespace multiscale {
 
                 //! Get a string representation of all the field values except polygon
                 string fieldValuesToString() override;
+
+            private:
+
+                // Constants
+                static const bool CONTOUR_ORIENTED;
+                static const bool CONTOUR_CLOSED;
 
         };
 

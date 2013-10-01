@@ -10,42 +10,42 @@
 using namespace multiscale::analysis;
 using namespace std;
 
-#define WIN_ORIGINAL_IMAGE  "Original image"
-#define WIN_PROCESSED_IMAGE "Processed image"
-#define WIN_EDGES_IN_IMAGE  "Edges in image"
-#define WIN_CONTOURS        "Contours"
-#define WIN_POLYGONS        "Polygons"
+const string WIN_ORIGINAL_IMAGE  = "Original image";
+const string WIN_PROCESSED_IMAGE = "Processed image";
+const string WIN_EDGES_IN_IMAGE  = "Edges in image";
+const string WIN_CONTOURS        = "Contours";
+const string WIN_POLYGONS        = "Polygons";
 
-#define TRACKBAR_ALPHA              "Alpha"
-#define TRACKBAR_BETA               "Beta"
-#define TRACKBAR_KERNEL             "Gaussian blur kernel size"
-#define TRACKBAR_MORPH              "Morphological open, number of iterations"
-#define TRACKBAR_CANNY              "Canny lower threshold"
-#define TRACKBAR_EPSILON            "Epsilon"
-#define TRACKBAR_SECTOR_AREA_THRESH "Sector area threshold"
-#define TRACKBAR_THRESHOLD          "Threshold value"
+const string TRACKBAR_ALPHA              = "Alpha";
+const string TRACKBAR_BETA               = "Beta";
+const string TRACKBAR_KERNEL             = "Gaussian blur kernel size";
+const string TRACKBAR_MORPH              = "Morphological open, number of iterations";
+const string TRACKBAR_CANNY              = "Canny lower threshold";
+const string TRACKBAR_EPSILON            = "Epsilon";
+const string TRACKBAR_SECTOR_AREA_THRESH = "Sector area threshold";
+const string TRACKBAR_THRESHOLD          = "Threshold value";
 
-#define USE_CANNY_L2            true
-#define CONTOUR_AREA_ORIENTED   false
+const bool USE_CANNY_L2           = true;
+const bool CONTOUR_AREA_ORIENTED  = false;
 
-#define ALPHA_REAL_MIN          1.0
-#define ALPHA_REAL_MAX          3.0
-#define BETA_REAL_MIN           -100
-#define BETA_REAL_MAX           100
+const double ALPHA_REAL_MIN       = 1.0;
+const double ALPHA_REAL_MAX       = 3.0;
+const int BETA_REAL_MIN           = -100;
+const int BETA_REAL_MAX           = 100;
 
-#define ALPHA_MAX               1000
-#define BETA_MAX                200
-#define KERNEL_MAX              100
-#define ITER_MAX                100
-#define CANNY_THRESH_MAX        100
-#define EPSILON_MAX             100
-#define SECTOR_AREA_THRESH_MAX  500
-#define THRESHOLD_MAX           255
+const int ALPHA_MAX               = 1000;
+const int BETA_MAX                = 200;
+const int KERNEL_MAX              = 100;
+const int ITER_MAX                = 100;
+const int CANNY_THRESH_MAX        = 100;
+const int EPSILON_MAX             = 100;
+const int SECTOR_AREA_THRESH_MAX  = 500;
+const int THRESHOLD_MAX           = 255;
 
-#define KEY_ESC 27
-#define IMAGE_MIN_INDEX 1
+const int KEY_ESC           = 27;
+const int IMAGE_MIN_INDEX   = 1;
 
-#define PI  3.141592
+const double PI = 3.141592;
 
 // Global variables
 
@@ -61,6 +61,7 @@ int sectorAreaThresh                = 140;
 int thresholdValue                  = 50;
 
 Point origin(30, 30);
+
 // Display the image
 
 void displayImage(const Mat &image, const string &windowName) {

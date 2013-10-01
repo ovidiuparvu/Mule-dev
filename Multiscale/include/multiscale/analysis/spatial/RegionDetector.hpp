@@ -1,5 +1,5 @@
-#ifndef REGIONDETECTOR_HPP_
-#define REGIONDETECTOR_HPP_
+#ifndef REGIONDETECTOR_HPP
+#define REGIONDETECTOR_HPP
 
 #include "multiscale/analysis/spatial/Detector.hpp"
 #include "multiscale/analysis/spatial/Region.hpp"
@@ -10,42 +10,7 @@
 using namespace std;
 using namespace cv;
 
-#define OUTPUT_CLUSTEREDNESS        "Average clusteredness degree: "
-#define OUTPUT_DENSITY              "Average density: "
-
-#define TRACKBAR_ALPHA              "Alpha"
-#define TRACKBAR_BETA               "Beta"
-#define TRACKBAR_KERNEL             "Gaussian blur kernel size"
-#define TRACKBAR_MORPH              "Morphological open, number of iterations"
-#define TRACKBAR_CANNY              "Canny lower threshold"
-#define TRACKBAR_EPSILON            "Epsilon"
-#define TRACKBAR_REGION_AREA_THRESH "Region area threshold"
-#define TRACKBAR_THRESHOLD          "Threshold value"
-
-#define USE_CANNY_L2            true
-#define CONTOUR_AREA_ORIENTED   false
-
-#define ALPHA_REAL_MIN          1.0
-#define ALPHA_REAL_MAX          3.0
-#define BETA_REAL_MIN           -100
-#define BETA_REAL_MAX           100
-
-#define ALPHA_MAX               1000
-#define BETA_MAX                200
-#define KERNEL_MAX              2000
-#define MORPH_ITER_MAX          100
-#define CANNY_THRESH_MAX        100
-#define EPSILON_MAX             100
-#define REGION_AREA_THRESH_MAX  200000
-#define THRESHOLD_MAX           255
-#define THRESHOLD_CLUSTEREDNESS 0
-#define INTENSITY_MAX           255
-
-#define POLYGON_CLOSED          true
-
-#define DISPLAY_LINE_THICKNESS  10
-
-#define ENCLOSING_RECT_VERTICES 4
+const int ENCLOSING_RECT_VERTICES = 4;
 
 
 namespace multiscale {
@@ -311,6 +276,45 @@ namespace multiscale {
                  * \param beta Beta
                  */
                 int convertBeta(int beta);
+
+            private:
+
+                // Constants
+                static const string OUTPUT_CLUSTEREDNESS;
+                static const string OUTPUT_DENSITY;
+
+                static const string TRACKBAR_ALPHA;
+                static const string TRACKBAR_BETA;
+                static const string TRACKBAR_KERNEL;
+                static const string TRACKBAR_MORPH;
+                static const string TRACKBAR_CANNY;
+                static const string TRACKBAR_EPSILON;
+                static const string TRACKBAR_REGION_AREA_THRESH;
+                static const string TRACKBAR_THRESHOLD;
+
+                static const bool USE_CANNY_L2;
+                static const bool CONTOUR_AREA_ORIENTED;
+
+                static const double ALPHA_REAL_MIN;
+                static const double ALPHA_REAL_MAX;
+
+                static const int BETA_REAL_MIN;
+                static const int BETA_REAL_MAX;
+
+                static const int ALPHA_MAX;
+                static const int BETA_MAX;
+                static const int KERNEL_MAX;
+                static const int MORPH_ITER_MAX;
+                static const int CANNY_THRESH_MAX;
+                static const int EPSILON_MAX;
+                static const int REGION_AREA_THRESH_MAX;
+                static const int THRESHOLD_MAX;
+                static const int THRESHOLD_CLUSTEREDNESS;
+                static const int INTENSITY_MAX;
+
+                static const bool POLYGON_CLOSED;
+
+                static const int DISPLAY_LINE_THICKNESS;
 
         };
 

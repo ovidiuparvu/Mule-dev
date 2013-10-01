@@ -1,7 +1,8 @@
 #ifndef REGIONEXCEPTION_HPP
 #define REGIONEXCEPTION_HPP
 
-#include <stdexcept>
+#include "multiscale/exception/MultiscaleException.hpp" 
+
 #include <string>
 
 using namespace std;
@@ -10,12 +11,14 @@ using namespace std;
 namespace multiscale {
 
     //! Exception class for the Region instances
-    class RegionException : public runtime_error {
+    class RegionException : public MultiscaleException {
 
         public:
 
-            RegionException(const string &msg) : runtime_error(msg) {}
-            RegionException(const char *msg) : runtime_error(msg) {}
+            RegionException(const string &file, int line, const string &msg)
+                            : MultiscaleException(file, line, msg) {}
+            RegionException(const string &file, int line, const char *msg)
+                            : MultiscaleException(file, line, msg) {}
 
     };
 

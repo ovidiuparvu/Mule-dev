@@ -1,5 +1,5 @@
-#ifndef NUMBERITERATOR_HPP_
-#define NUMBERITERATOR_HPP_
+#ifndef NUMBERITERATOR_HPP
+#define NUMBERITERATOR_HPP
 
 namespace multiscale {
 

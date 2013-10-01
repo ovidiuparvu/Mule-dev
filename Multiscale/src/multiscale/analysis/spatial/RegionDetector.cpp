@@ -347,3 +347,41 @@ void convertVertices(const Point *src, vector<Point> &dst) {
       dst.push_back(src[i]);
     }
 }
+
+
+// Constants
+const string RegionDetector::OUTPUT_CLUSTEREDNESS        = "Average clusteredness degree: ";
+const string RegionDetector::OUTPUT_DENSITY              = "Average density: ";
+
+const string RegionDetector::TRACKBAR_ALPHA              = "Alpha";
+const string RegionDetector::TRACKBAR_BETA               = "Beta";
+const string RegionDetector::TRACKBAR_KERNEL             = "Gaussian blur kernel size";
+const string RegionDetector::TRACKBAR_MORPH              = "Morphological open, number of iterations";
+const string RegionDetector::TRACKBAR_CANNY              = "Canny lower threshold";
+const string RegionDetector::TRACKBAR_EPSILON            = "Epsilon";
+const string RegionDetector::TRACKBAR_REGION_AREA_THRESH = "Region area threshold";
+const string RegionDetector::TRACKBAR_THRESHOLD          = "Threshold value";
+
+const bool RegionDetector::USE_CANNY_L2             = true;
+const bool RegionDetector::CONTOUR_AREA_ORIENTED    = false;
+
+const double RegionDetector::ALPHA_REAL_MIN = 1.0;
+const double RegionDetector::ALPHA_REAL_MAX = 3.0;
+
+const int RegionDetector::BETA_REAL_MIN     = -100;
+const int RegionDetector::BETA_REAL_MAX     = 100;
+
+const int RegionDetector::ALPHA_MAX               = 1000;
+const int RegionDetector::BETA_MAX                = 200;
+const int RegionDetector::KERNEL_MAX              = 2000;
+const int RegionDetector::MORPH_ITER_MAX          = 100;
+const int RegionDetector::CANNY_THRESH_MAX        = 100;
+const int RegionDetector::EPSILON_MAX             = 100;
+const int RegionDetector::REGION_AREA_THRESH_MAX  = 200000;
+const int RegionDetector::THRESHOLD_MAX           = 255;
+const int RegionDetector::THRESHOLD_CLUSTEREDNESS = 0;
+const int RegionDetector::INTENSITY_MAX           = 255;
+
+const bool RegionDetector::POLYGON_CLOSED         = true;
+
+const int RegionDetector::DISPLAY_LINE_THICKNESS  = 10;

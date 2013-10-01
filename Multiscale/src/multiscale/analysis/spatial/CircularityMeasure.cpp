@@ -14,7 +14,7 @@ double CircularityMeasure::compute(const vector<Point2f> &points) {
     Moments contourMoments = moments(enclosingPolygon);
 
     double nominator = (contourMoments.m00 * contourMoments.m00);
-    double denominator = (2 * PI * (contourMoments.mu20 + contourMoments.mu02));
+    double denominator = (2 * Geometry2D::PI * (contourMoments.mu20 + contourMoments.mu02));
 
     return (denominator != 0) ? nominator / denominator
                               : 0;
@@ -30,7 +30,7 @@ double CircularityMeasure::compute(const vector<Point> &points) {
     Moments contourMoments = moments(enclosingPolygon);
 
     double nominator = (contourMoments.m00 * contourMoments.m00);
-    double denominator = (2 * PI * (contourMoments.mu20 + contourMoments.mu02));
+    double denominator = (2 * Geometry2D::PI * (contourMoments.mu20 + contourMoments.mu02));
 
     return (denominator != 0) ? nominator / denominator
                               : 0;

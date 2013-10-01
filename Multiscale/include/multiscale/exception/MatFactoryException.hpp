@@ -1,7 +1,8 @@
-#ifndef MATFACTORYEXCEPTION_HPP_
-#define MATFACTORYEXCEPTION_HPP_
+#ifndef MATFACTORYEXCEPTION_HPP
+#define MATFACTORYEXCEPTION_HPP
 
-#include <stdexcept>
+#include "multiscale/exception/MultiscaleException.hpp" 
+
 #include <string>
 
 using namespace std;
@@ -10,12 +11,14 @@ using namespace std;
 namespace multiscale {
 
     //! Exception class for the MatFactory class
-    class MatFactoryException : public runtime_error {
+    class MatFactoryException : public MultiscaleException {
 
         public:
 
-            MatFactoryException(const string &msg) : runtime_error(msg) {}
-            MatFactoryException(const char *msg) : runtime_error(msg) {}
+            MatFactoryException(const string &file, int line, const string &msg)
+                                : MultiscaleException(file, line, msg) {}
+            MatFactoryException(const string &file, int line, const char *msg)
+                                : MultiscaleException(file, line, msg) {}
 
     };
 

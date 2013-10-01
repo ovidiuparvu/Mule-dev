@@ -1,25 +1,25 @@
-#ifndef RECTANGULARGNUPLOTSCRIPTGENERATOR_HPP_
-#define RECTANGULARGNUPLOTSCRIPTGENERATOR_HPP_
+#ifndef RECTANGULARGNUPLOTSCRIPTGENERATOR_HPP
+#define RECTANGULARGNUPLOTSCRIPTGENERATOR_HPP
 
 #include <vector>
 #include <string>
 
 using namespace std;
 
-#define HEADER_IN       "config/video/rectangular/header.in"
-#define CONTENT_IN      "config/video/rectangular/content.in"
-#define FOOTER_IN       "config/video/rectangular/footer.in"
+const string HEADER_IN       = "config/video/rectangular/header.in";
+const string CONTENT_IN      = "config/video/rectangular/content.in";
+const string FOOTER_IN       = "config/video/rectangular/footer.in";
 
-#define REPLACE_HEADER_FILENAME         "OUTPUT_FILENAME"
-#define REPLACE_HEADER_HEIGHT           "OUTPUT_DIMENSION1"
-#define REPLACE_HEADER_WIDTH            "OUTPUT_DIMENSION2"
-#define REPLACE_HEADER_SIM_TIME         "OUTPUT_SIM_TIME"
+const string REPLACE_HEADER_FILENAME    = "OUTPUT_FILENAME";
+const string REPLACE_HEADER_HEIGHT      = "OUTPUT_DIMENSION1";
+const string REPLACE_HEADER_WIDTH       = "OUTPUT_DIMENSION2";
+const string REPLACE_HEADER_SIM_TIME    = "OUTPUT_SIM_TIME";
 
-#define REPLACE_DIMENSION_EXTRA         0.5
+const double REPLACE_DIMENSION_EXTRA = 0.5;
 
-#define OUTPUT_SEPARATOR                " "
+const string OUTPUT_SEPARATOR    = " ";
 
-#define GNUPLOT_EXTENSION               ".plt"
+const string GNUPLOT_EXTENSION   = ".plt";
 
 
 namespace multiscale {

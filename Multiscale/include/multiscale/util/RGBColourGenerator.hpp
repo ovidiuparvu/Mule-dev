@@ -1,5 +1,5 @@
-#ifndef RGBCOLOURGENERATOR_HPP_
-#define RGBCOLOURGENERATOR_HPP_
+#ifndef RGBCOLOURGENERATOR_HPP
+#define RGBCOLOURGENERATOR_HPP
 
 #include <string>
 #include "opencv2/imgproc/imgproc.hpp"
@@ -7,11 +7,6 @@
 
 using namespace cv;
 using namespace std;
-
-#define HUE_MIN     0
-#define HUE_MAX     120
-#define SATURATION  1
-#define VALUE       1
 
 
 namespace multiscale {
@@ -26,9 +21,9 @@ namespace multiscale {
 
         private:
 
-            static double red;      /*!< The amount of red */
-            static double green;    /*!< The amount of green */
-            static double blue;     /*!< The amount of blue */
+            double red;      /*!< The amount of red */
+            double green;    /*!< The amount of green */
+            double blue;     /*!< The amount of blue */
 
         public:
 
@@ -40,16 +35,16 @@ namespace multiscale {
              *  \param concentrationMax The maximum of the range of values a concentration can take
              *  \param concentration    The concentration
              */
-            static string generate(double concentrationMin,
-                                   double concentrationMax,
-                                   double concentration);
+            string generate(double concentrationMin,
+                            double concentrationMax,
+                            double concentration);
 
             //! Generate a random RGB colour
             /*! Generate a random RGB colour using the given random number generator
              *
              * \param randomNumberGenerator Random number generator
              */
-            static Scalar generate(RNG &randomNumberGenerator);
+            Scalar generate(RNG &randomNumberGenerator);
 
         private:
 
@@ -59,7 +54,7 @@ namespace multiscale {
              *  \param saturation Saturation
              *  \param value Value
              */
-            static string convertHSVToRGB(double hue, double saturation, double value);
+            string convertHSVToRGB(double hue, double saturation, double value);
 
             //! Compute RGB values from HSV specific values
             /*!
@@ -68,10 +63,18 @@ namespace multiscale {
              * \param chroma Chroma
              * \param m m
              */
-            static void computeRGBValues(int huePrime, double X, double chroma, double m);
+            void computeRGBValues(int huePrime, double X, double chroma, double m);
 
             //! Convert the RGB colour to a string
-            static string convertRGBToString();
+            string convertRGBToString();
+
+        public:
+
+            // Constants
+            static const int HUE_MIN;
+            static const int HUE_MAX;
+            static const int SATURATION;
+            static const int VALUE;
 
     };
 

@@ -199,30 +199,34 @@ double Cluster::isCircularMeasure() {
     minEnclosingCircle(entitiesContourPoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
     // Compute the area of the minimum area enclosing circle
-    double circleArea = PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
+    double circleArea = Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
 
     return (Numeric::almostEqual(circleArea, 0)) ? 0
                                                  : (area / circleArea);
 }
 
 string Cluster::fieldValuesToString() {
-    return StringManipulator::toString<double>(clusterednessDegree) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(area) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(perimeter) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(distanceFromOrigin) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(angle) + OUTPUT_SEPARATOR +
-           shapeAsString() + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(triangularMeasure) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(rectangularMeasure) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(circularMeasure) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(centre.y);
+    stringstream strStream;
+
+    strStream << clusterednessDegree << OUTPUT_SEPARATOR
+              << pileUpDegree << OUTPUT_SEPARATOR
+              << area << OUTPUT_SEPARATOR
+              << perimeter << OUTPUT_SEPARATOR
+              << distanceFromOrigin << OUTPUT_SEPARATOR
+              << angle << OUTPUT_SEPARATOR
+              << shapeAsString() << OUTPUT_SEPARATOR
+              << triangularMeasure << OUTPUT_SEPARATOR
+              << rectangularMeasure << OUTPUT_SEPARATOR
+              << circularMeasure << OUTPUT_SEPARATOR
+              << centre.x << OUTPUT_SEPARATOR
+              << centre.y;
+
+    return strStream.str();
 }
 
 void Cluster::validateOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin) {
     if (!areValidOriginDependentValues(distanceFromOrigin, angleWrtOrigin)) {
-        throw ClusterException(ERR_ORIGIN_DEPENDENT_VALUES);
+        MS_throw(ClusterException, ERR_ORIGIN_DEPENDENT_VALUES);
     }
 }
 
@@ -232,3 +236,8 @@ bool Cluster::areValidOriginDependentValues(double distanceFromOrigin, double an
       (angleWrtOrigin >= 0)
     );
 }
+
+
+// Constants
+const string Cluster::ERR_UNDEFINED_SHAPE         = "The shape of the given cluster is undefined.";
+const string Cluster::ERR_ORIGIN_DEPENDENT_VALUES = "The origin dependent values are invalid (i.e. negative).";

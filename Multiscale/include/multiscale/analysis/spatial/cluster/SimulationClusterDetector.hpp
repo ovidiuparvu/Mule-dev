@@ -1,5 +1,5 @@
-#ifndef SIMULATIONCLUSTERDETECTOR_HPP_
-#define SIMULATIONCLUSTERDETECTOR_HPP_
+#ifndef SIMULATIONCLUSTERDETECTOR_HPP
+#define SIMULATIONCLUSTERDETECTOR_HPP
 
 #include "multiscale/analysis/spatial/ClusterDetector.hpp"
 
@@ -8,14 +8,6 @@
 
 using namespace std;
 using namespace cv;
-
-#define THRESHOLD           1
-#define THRESHOLD_MAX       255
-
-#define ENTITY_THRESH       200
-
-#define DATAPOINT_WIDTH     10
-#define DATAPOINT_THICKNESS -1
 
 
 namespace multiscale {
@@ -137,6 +129,17 @@ namespace multiscale {
                  * \param image     The image on which to display the cluster related information
                  */
                 void outputClusterCircularShape(Cluster &cluster, Scalar colour, Mat &image);
+
+            private:
+
+                // Constants
+                static const int THRESHOLD;
+                static const int THRESHOLD_MAX;
+
+                static const int ENTITY_THRESH;
+
+                static const int DATAPOINT_WIDTH;
+                static const int DATAPOINT_THICKNESS;
 
         };
 

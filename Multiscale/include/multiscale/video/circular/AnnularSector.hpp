@@ -1,5 +1,5 @@
-#ifndef ANNULARSECTOR_HPP_
-#define ANNULARSECTOR_HPP_
+#ifndef ANNULARSECTOR_HPP
+#define ANNULARSECTOR_HPP
 
 #include <string>
 

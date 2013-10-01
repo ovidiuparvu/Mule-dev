@@ -1,5 +1,5 @@
-#ifndef CLUSTERDETECTOR_HPP_
-#define CLUSTERDETECTOR_HPP_
+#ifndef CLUSTERDETECTOR_HPP
+#define CLUSTERDETECTOR_HPP
 
 #include "multiscale/analysis/spatial/Cluster.hpp"
 #include "multiscale/analysis/spatial/Detector.hpp"
@@ -10,20 +10,6 @@
 
 using namespace std;
 using namespace cv;
-
-#define OUTPUT_CLUSTEREDNESS    "Clusteredness index: "
-#define OUTPUT_PILE_UP          "Average pile up degree: "
-
-#define TRACKBAR_EPS            "Eps (Multiplied by 10)"
-#define TRACKBAR_MINPOINTS      "Minimum number of points"
-
-#define MIN_POINTS_MIN          0
-#define MIN_POINTS_MAX          100
-
-#define EPS_MIN                 0
-#define EPS_MAX                 10000
-#define EPS_REAL_MIN            0
-#define EPS_REAL_MAX            1000
 
 
 namespace multiscale {
@@ -207,6 +193,24 @@ namespace multiscale {
 
                 //! Return non-zero value for minPoints
                 int getValidMinPointsValue();
+
+            private:
+
+                // Constants
+                static const string OUTPUT_CLUSTEREDNESS;
+                static const string OUTPUT_PILE_UP;
+
+                static const string TRACKBAR_EPS;
+                static const string TRACKBAR_MINPOINTS;
+
+                static const int MIN_POINTS_MIN;
+                static const int MIN_POINTS_MAX;
+
+                static const int EPS_MIN;
+                static const int EPS_MAX;
+                static const int EPS_REAL_MIN;
+                static const int EPS_REAL_MAX;
+
         };
 
     };

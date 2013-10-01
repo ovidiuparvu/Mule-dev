@@ -1,7 +1,8 @@
-#ifndef RECTANGULARCSVTOINPUTFILESCONVERTEREXCEPTION_HPP_
-#define RECTANGULARCSVTOINPUTFILESCONVERTEREXCEPTION_HPP_
+#ifndef RECTANGULARCSVTOINPUTFILESCONVERTEREXCEPTION_HPP
+#define RECTANGULARCSVTOINPUTFILESCONVERTEREXCEPTION_HPP
 
-#include <stdexcept>
+#include "multiscale/exception/MultiscaleException.hpp" 
+
 #include <string>
 
 using namespace std;
@@ -10,12 +11,14 @@ using namespace std;
 namespace multiscale {
 
     //! Exception class for the RectangularCsvToInputFilesConverter class
-    class RectangularCsvToInputFilesConverterException : public runtime_error {
+    class RectangularCsvToInputFilesConverterException : public MultiscaleException {
 
         public:
 
-            RectangularCsvToInputFilesConverterException(const string &msg) : runtime_error(msg) {}
-            RectangularCsvToInputFilesConverterException(const char *msg) : runtime_error(msg) {}
+            RectangularCsvToInputFilesConverterException(const string &file, int line, const string &msg)
+                                                         : MultiscaleException(file, line, msg) {}
+            RectangularCsvToInputFilesConverterException(const string &file, int line, const char *msg)
+                                                         : MultiscaleException(file, line, msg) {}
 
     };
 

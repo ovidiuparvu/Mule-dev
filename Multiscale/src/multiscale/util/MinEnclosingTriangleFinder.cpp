@@ -154,7 +154,7 @@ void MinEnclosingTriangleFinder::updateSidesBA() {
 
 void MinEnclosingTriangleFinder::updateSideB() {
     if (!gamma(b, sideBStartVertex)) {
-        throw MinEnclosingTriangleFinderException(ERR_SIDE_B_GAMMA);
+        MS_throw(MinEnclosingTriangleFinderException, ERR_SIDE_B_GAMMA);
     }
 
     sideBEndVertex = polygon[b];
@@ -323,7 +323,7 @@ Point2f MinEnclosingTriangleFinder::findVertexCOnSideB() {
     // Get intersection points if they exist
     if (!findGammaIntersectionPoints(predecessor(a), sideBStartVertex, sideBEndVertex, sideCStartVertex, sideCEndVertex,
                                      intersectionPoint1, intersectionPoint2)) {
-        throw MinEnclosingTriangleFinderException(ERR_VERTEX_C_ON_SIDE_B);
+        MS_throw(MinEnclosingTriangleFinderException, ERR_VERTEX_C_ON_SIDE_B);
     }
 
     // Select the point which is on the same side of line C as the polygon
@@ -404,3 +404,21 @@ unsigned int MinEnclosingTriangleFinder::predecessor(unsigned int index) {
     return (index == 0) ? (nrOfPoints - 1)
                         : (index - 1);
 }
+
+
+// Constants
+const bool MinEnclosingTriangleFinder::CONVEX_HULL_CLOCKWISE = true;
+
+const int MinEnclosingTriangleFinder::INTERSECTS_BELOW      = 1;
+const int MinEnclosingTriangleFinder::INTERSECTS_ABOVE      = 2;
+const int MinEnclosingTriangleFinder::INTERSECTS_CRITICAL   = 3;
+const int MinEnclosingTriangleFinder::INTERSECTS_LIMIT      = 4;
+
+const string MinEnclosingTriangleFinder::ERR_MIDPOINT_SIDE_B     = "The position of the middle point of side B could not be determined.";
+const string MinEnclosingTriangleFinder::ERR_SIDE_B_GAMMA        = "The position of side B could not be determined, because gamma(b) could not be computed.";
+const string MinEnclosingTriangleFinder::ERR_VERTEX_C_ON_SIDE_B  = "The position of the vertex C on side B could not be determined, because the considered lines do not intersect.";
+const string MinEnclosingTriangleFinder::ERR_TRIANGLE_VERTICES   = "The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect.";
+
+const int MinEnclosingTriangleFinder::VALIDATION_SIDE_A_TANGENT   = 0;
+const int MinEnclosingTriangleFinder::VALIDATION_SIDE_B_TANGENT   = 1;
+const int MinEnclosingTriangleFinder::VALIDATION_SIDES_FLUSH      = 2;

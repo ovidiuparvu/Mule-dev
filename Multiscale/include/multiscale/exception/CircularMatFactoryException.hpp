@@ -1,7 +1,8 @@
-#ifndef CIRCULARMATFACTORYEXCEPTION_HPP_
-#define CIRCULARMATFACTORYEXCEPTION_HPP_
+#ifndef CIRCULARMATFACTORYEXCEPTION_HPP
+#define CIRCULARMATFACTORYEXCEPTION_HPP
 
-#include <stdexcept>
+#include "multiscale/exception/MultiscaleException.hpp" 
+
 #include <string>
 
 using namespace std;
@@ -10,12 +11,14 @@ using namespace std;
 namespace multiscale {
 
     //! Exception class for the CircularMatFactory instances
-    class CircularMatFactoryException : public runtime_error {
+    class CircularMatFactoryException : public MultiscaleException {
 
         public:
 
-            CircularMatFactoryException(const string &msg) : runtime_error(msg) {}
-            CircularMatFactoryException(const char *msg) : runtime_error(msg) {}
+            CircularMatFactoryException(const string &file, int line, const string &msg)
+                                        : MultiscaleException(file, line, msg) {}
+            CircularMatFactoryException(const string &file, int line, const char *msg)
+                                        : MultiscaleException(file, line, msg) {}
 
     };
 

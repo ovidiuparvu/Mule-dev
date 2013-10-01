@@ -1,5 +1,5 @@
-#ifndef SPATIALCOLLECTION2D_HPP_
-#define SPATIALCOLLECTION2D_HPP_
+#ifndef SPATIALCOLLECTION2D_HPP
+#define SPATIALCOLLECTION2D_HPP
 
 #include "multiscale/analysis/spatial/Shape2D.hpp"
 
@@ -7,18 +7,6 @@
 
 using namespace cv;
 using namespace std;
-
-#define STR_TRIANGLE            "triangle"
-#define STR_RECTANGLE           "rectangle"
-#define STR_CIRCLE              "circle"
-#define STR_UNDEFINED           "undefined"
-
-#define OUTPUT_SEPARATOR        ","
-
-#define ERR_INPUT               "Invalid input parameters were provided to the constructor."
-#define ERR_UNDEFINED_SHAPE     "The shape of the given cluster is undefined."
-
-#define CONVEX_HULL_CLOCKWISE   true
 
 
 namespace multiscale {
@@ -130,6 +118,20 @@ namespace multiscale {
 
                 //! Initialisation function for the class
                 void initialise();
+
+            protected:
+
+                // Constants
+                static const string STR_TRIANGLE;
+                static const string STR_RECTANGLE;
+                static const string STR_CIRCLE;
+                static const string STR_UNDEFINED;
+
+                static const string OUTPUT_SEPARATOR;
+
+                static const string ERR_INPUT;
+
+                static const bool CONVEX_HULL_CLOCKWISE;
 
         };
 

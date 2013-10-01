@@ -1,5 +1,5 @@
-#ifndef CARTESIANTOPOLARCONVERTER_HPP_
-#define CARTESIANTOPOLARCONVERTER_HPP_
+#ifndef CARTESIANTOPOLARCONVERTER_HPP
+#define CARTESIANTOPOLARCONVERTER_HPP
 
 #include "multiscale/video/circular/AnnularSector.hpp"
 
@@ -8,16 +8,16 @@
 
 using namespace std;
 
-#define ERR_CONC                "All concentrations have to be between 0 and 1."
-#define ERR_NONPOS_DIMENSION    "The dimensions N and M must be positive."
-#define ERR_NEG_SIM_TIME        "The simulation time must be non-negative."
-#define ERR_INPUT_OPEN          "The input file could not be opened"
-#define ERR_IN_EXTRA_DATA       "The input file contains more data than required."
+const string ERR_CONC                = "All concentrations have to be between 0 and 1.";
+const string ERR_NONPOS_DIMENSION    = "The dimensions N and M must be positive.";
+const string ERR_NEG_SIM_TIME        = "The simulation time must be non-negative.";
+const string ERR_INPUT_OPEN          = "The input file could not be opened";
+const string ERR_IN_EXTRA_DATA       = "The input file contains more data than required.";
 
-#define OUTPUT_FILE_EXTENSION   ".out"
+const string OUTPUT_FILE_EXTENSION   = ".out";
 
-#define RADIUS_MIN              0.001
-#define RADIUS_MAX              0.3
+const double RADIUS_MIN  = 0.001;
+const double RADIUS_MAX  = 0.3;
 
 
 namespace multiscale {

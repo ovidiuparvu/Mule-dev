@@ -63,7 +63,7 @@ void PolarCsvToInputFilesConverter::initInputFile(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        throw PolarCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+        MS_throw(PolarCsvToInputFilesConverterException, ERR_INPUT_OPEN);
     }
 }
 
@@ -74,7 +74,7 @@ void PolarCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        throw PolarCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+        MS_throw(PolarCsvToInputFilesConverterException, ERR_INPUT_OPEN);
     }
 
     while (!fin.eof()) {
@@ -127,7 +127,7 @@ void PolarCsvToInputFilesConverter::initIterators(const NumberIteratorType &numb
 
 void PolarCsvToInputFilesConverter::validateSelectedConcentrationIndex() {
     if (selectedConcentrationIndex >= nrOfConcentrationsForPosition) {
-        throw PolarCsvToInputFilesConverterException(ERR_SELECTED_CONCENTRATION_INDEX);
+        MS_throw(PolarCsvToInputFilesConverterException, ERR_SELECTED_CONCENTRATION_INDEX);
     }
 }
 
@@ -138,7 +138,7 @@ void PolarCsvToInputFilesConverter::validateInput(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        throw PolarCsvToInputFilesConverterException(ERR_INPUT_OPEN);
+        MS_throw(PolarCsvToInputFilesConverterException, ERR_INPUT_OPEN);
     }
 
     while (!fin.eof()) {
@@ -159,18 +159,18 @@ void PolarCsvToInputFilesConverter::validateInputLine(const string &currentLine,
     vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
     if (tokens.size() < (((nrOfConcentricCircles - 1) * nrOfSectors + 1) * nrOfConcentrationsForPosition)) {
-        throw PolarCsvToInputFilesConverterException(ERR_NR_CONCENTRATIONS);
+        MS_throw(PolarCsvToInputFilesConverterException, ERR_NR_CONCENTRATIONS);
     }
 
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
         double value = stod(*it);
 
         if (value < 0) {
-            throw PolarCsvToInputFilesConverterException(
-                    string(ERR_INVALID_VALUE_LINE)  +
-                    StringManipulator::toString<unsigned int>(lineNumber) +
-                    string(ERR_INVALID_VALUE_TOKEN) + (*it)
-                  );
+            MS_throw(PolarCsvToInputFilesConverterException,
+                     string(ERR_INVALID_VALUE_LINE)  +
+                     StringManipulator::toString<unsigned int>(lineNumber) +
+                     string(ERR_INVALID_VALUE_TOKEN) + (*it)
+            );
         }
     }
 }
@@ -268,7 +268,7 @@ inline double PolarCsvToInputFilesConverter::computeSimulationTime(const string 
     double simulationTime = stod(token);
 
     if (simulationTime < 0) {
-        throw PolarCsvToInputFilesConverterException(ERR_NEG_SIM_TIME);
+        MS_throw(PolarCsvToInputFilesConverterException, ERR_NEG_SIM_TIME);
     }
 
     return simulationTime;

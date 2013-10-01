@@ -22,7 +22,7 @@ Detector::~Detector() {
 
 void Detector::detect(const Mat &inputImage) {
     if (!isValidInputImage(inputImage)) {
-        throw DetectorException(ERR_INVALID_IMAGE);
+        MS_throw(DetectorException, ERR_INVALID_IMAGE);
     }
 
     inputImage.copyTo(image);
@@ -178,7 +178,7 @@ void Detector::outputResultsToCsvFile() {
     ofstream fout(outputFilepath + OUTPUT_EXTENSION, ios_base::trunc);
 
     if (!fout.is_open()) {
-        throw DetectorException(ERR_OUTPUT_FILE);
+        MS_throw(DetectorException, ERR_OUTPUT_FILE);
     }
 
     outputResultsToCsvFile(fout);
@@ -210,3 +210,17 @@ void Detector::displayImage(const Mat &image, const string &windowName) {
 void Detector::printOutputErrorMessage() {
     cout << ERR_OUTPUT_WITHOUT_DETECT << endl;
 }
+
+
+// Constants
+const string Detector::ERR_OUTPUT_WITHOUT_DETECT  = "Unable to output results if the detect method was not called previously.";
+const string Detector::ERR_OUTPUT_FILE            = "Unable to create output file.";
+const string Detector::ERR_INVALID_IMAGE          = "The input image is invalid.";
+
+const string Detector::OUTPUT_EXTENSION    = ".out";
+const string Detector::IMG_EXTENSION       = ".png";
+
+const string Detector::WIN_OUTPUT_IMAGE    = "Output image";
+
+const int Detector::KEY_ESC     = 27;
+const int Detector::KEY_SAVE    = 115;

@@ -70,7 +70,7 @@ void ClusterDetector::processImageAndDetect() {
 }
 
 void ClusterDetector::detectAndAnalyseClusters(const vector<Entity> &entities, vector<Cluster> &clusters) {
-    vector<int> clusterIndexes(entities.size(), CLUSTERING_UNCLASSIFIED);
+    vector<int> clusterIndexes(entities.size(), DBSCAN::CLUSTERING_UNCLASSIFIED);
     int nrOfClusters;
 
     detectClusters(entities, clusterIndexes, nrOfClusters);
@@ -79,7 +79,7 @@ void ClusterDetector::detectAndAnalyseClusters(const vector<Entity> &entities, v
 }
 
 void ClusterDetector::detectClusters(const vector<Entity> &entities, vector<int> &clusterIndexes, int &nrOfClusters) {
-    DBSCAN::run(convertEntities(entities), clusterIndexes, nrOfClusters, convertEpsValue(), getValidMinPointsValue());
+    DBSCAN().run(convertEntities(entities), clusterIndexes, nrOfClusters, convertEpsValue(), getValidMinPointsValue());
 }
 
 vector<shared_ptr<DataPoint>> ClusterDetector::convertEntities(const vector<Entity> &entities) {
@@ -196,3 +196,19 @@ int ClusterDetector::getValidMinPointsValue() {
     return (minPoints > 0) ? minPoints
                            : 1;
 }
+
+
+// Constants
+const string ClusterDetector::OUTPUT_CLUSTEREDNESS   = "Clusteredness index: ";
+const string ClusterDetector::OUTPUT_PILE_UP         = "Average pile up degree: ";
+
+const string ClusterDetector::TRACKBAR_EPS           = "Eps (Multiplied by 10)";
+const string ClusterDetector::TRACKBAR_MINPOINTS     = "Minimum number of points";
+
+const int ClusterDetector::MIN_POINTS_MIN    = 0;
+const int ClusterDetector::MIN_POINTS_MAX    = 100;
+
+const int ClusterDetector::EPS_MIN           = 0;
+const int ClusterDetector::EPS_MAX           = 10000;
+const int ClusterDetector::EPS_REAL_MIN      = 0;
+const int ClusterDetector::EPS_REAL_MAX      = 1000;

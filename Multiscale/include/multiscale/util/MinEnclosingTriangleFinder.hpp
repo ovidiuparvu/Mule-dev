@@ -6,22 +6,6 @@
 using namespace cv;
 using namespace multiscale;
 
-#define CONVEX_HULL_CLOCKWISE   true
-
-#define INTERSECTS_BELOW        1
-#define INTERSECTS_ABOVE        2
-#define INTERSECTS_CRITICAL     3
-#define INTERSECTS_LIMIT        4
-
-#define ERR_MIDPOINT_SIDE_B     "The position of the middle point of side B could not be determined."
-#define ERR_SIDE_B_GAMMA        "The position of side B could not be determined, because gamma(b) could not be computed."
-#define ERR_VERTEX_C_ON_SIDE_B  "The position of the vertex C on side B could not be determined, because the considered lines do not intersect."
-#define ERR_TRIANGLE_VERTICES   "The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect."
-
-#define VALIDATION_SIDE_A_TANGENT   0
-#define VALIDATION_SIDE_B_TANGENT   1
-#define VALIDATION_SIDES_FLUSH      2
-
 
 namespace multiscale {
 
@@ -362,6 +346,25 @@ namespace multiscale {
              * \param index Index of the point
              */
             unsigned int predecessor(unsigned int index);
+
+        private:
+
+            // Constants
+            static const bool CONVEX_HULL_CLOCKWISE;
+
+            static const int INTERSECTS_BELOW;
+            static const int INTERSECTS_ABOVE;
+            static const int INTERSECTS_CRITICAL;
+            static const int INTERSECTS_LIMIT;
+
+            static const string ERR_MIDPOINT_SIDE_B;
+            static const string ERR_SIDE_B_GAMMA;
+            static const string ERR_VERTEX_C_ON_SIDE_B;
+            static const string ERR_TRIANGLE_VERTICES;
+
+            static const int VALIDATION_SIDE_A_TANGENT;
+            static const int VALIDATION_SIDE_B_TANGENT;
+            static const int VALIDATION_SIDES_FLUSH;
 
     };
 

@@ -10,11 +10,6 @@
 using namespace cv;
 using namespace std;
 
-#define ERR_INPUT           "Invalid input parameters were provided to the constructor."
-#define ERR_DISTANCE        "The distance to an object of a different type cannot be computed."
-
-#define OUTPUT_SEPARATOR    ","
-
 
 namespace multiscale {
 
@@ -86,6 +81,14 @@ namespace multiscale {
                 * \param contourPoints  Points defining the contour of the entity
                 */
                 bool areValid(unsigned int pileUpDegree, double area, double perimeter, const Point2f &centre, const vector<Point2f> &contourPoints);
+
+            private:
+
+                // Constants
+                static const string ERR_INPUT;
+                static const string ERR_DISTANCE;
+
+                static const string OUTPUT_SEPARATOR;
 
         };
 

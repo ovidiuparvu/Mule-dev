@@ -1,5 +1,5 @@
-#ifndef STANDARDNUMBERITERATOR_HPP_
-#define STANDARDNUMBERITERATOR_HPP_
+#ifndef STANDARDNUMBERITERATOR_HPP
+#define STANDARDNUMBERITERATOR_HPP
 
 #include "multiscale/util/NumberIterator.hpp"
 

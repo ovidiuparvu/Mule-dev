@@ -38,7 +38,7 @@ void CartesianToPolarConverter::readInputData() {
     ifstream fin(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        throw CartesianToPolarConverterException(ERR_INPUT_OPEN);
+        MS_throw(CartesianToPolarConverterException, ERR_INPUT_OPEN);
     }
 
     // Read the header line
@@ -52,7 +52,7 @@ void CartesianToPolarConverter::readInputData() {
     fin.get();
 
     if (fin.peek() != EOF) {
-        throw CartesianToPolarConverterException(ERR_IN_EXTRA_DATA);
+        MS_throw(CartesianToPolarConverterException, ERR_IN_EXTRA_DATA);
     }
 
     fin.close();
@@ -62,9 +62,9 @@ void CartesianToPolarConverter::readHeaderLine(ifstream &fin) {
     fin >> nrOfConcentricCircles >> nrOfSectors >> simulationTime;
 
     // Validate the header line
-    if (nrOfConcentricCircles <= 0) throw CartesianToPolarConverterException(ERR_NONPOS_DIMENSION);
-    if (nrOfSectors <= 0)           throw CartesianToPolarConverterException(ERR_NONPOS_DIMENSION);
-    if (simulationTime < 0)         throw CartesianToPolarConverterException(ERR_NEG_SIM_TIME);
+    if (nrOfConcentricCircles <= 0) MS_throw(CartesianToPolarConverterException, ERR_NONPOS_DIMENSION);
+    if (nrOfSectors <= 0)           MS_throw(CartesianToPolarConverterException, ERR_NONPOS_DIMENSION);
+    if (simulationTime < 0)         MS_throw(CartesianToPolarConverterException, ERR_NEG_SIM_TIME);
 }
 
 void CartesianToPolarConverter::readConcentrations(ifstream &fin) {
@@ -80,7 +80,7 @@ void CartesianToPolarConverter::readConcentrations(ifstream &fin) {
         fin >> tmp;
 
         if ((tmp < 0) || (tmp > 1)) {
-            throw CartesianToPolarConverterException(ERR_CONC);
+            MS_throw(CartesianToPolarConverterException, ERR_CONC);
         }
 
         concentrations[i] = tmp;

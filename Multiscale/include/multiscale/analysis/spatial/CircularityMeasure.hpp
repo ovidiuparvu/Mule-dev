@@ -1,5 +1,5 @@
-#ifndef CIRCULARITYMEASURE_HPP_
-#define CIRCULARITYMEASURE_HPP_
+#ifndef CIRCULARITYMEASURE_HPP
+#define CIRCULARITYMEASURE_HPP
 
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"

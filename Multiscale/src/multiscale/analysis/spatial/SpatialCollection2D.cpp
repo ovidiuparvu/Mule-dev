@@ -138,3 +138,16 @@ void SpatialCollection2D::initialise() {
 
     updateFlag = true;
 }
+
+
+// Constants
+const string SpatialCollection2D::STR_TRIANGLE            = "triangle";
+const string SpatialCollection2D::STR_RECTANGLE           = "rectangle";
+const string SpatialCollection2D::STR_CIRCLE              = "circle";
+const string SpatialCollection2D::STR_UNDEFINED           = "undefined";
+
+const string SpatialCollection2D::OUTPUT_SEPARATOR        = ",";
+
+const string SpatialCollection2D::ERR_INPUT               = "Invalid input parameters were provided to the constructor.";
+
+const bool SpatialCollection2D::CONVEX_HULL_CLOCKWISE     = true;

@@ -9,11 +9,6 @@ using namespace std;
 using namespace multiscale;
 
 
-double RGBColourGenerator::red = 0;
-double RGBColourGenerator::green = 0;
-double RGBColourGenerator::blue = 0;
-
-
 string RGBColourGenerator::generate(double concentrationMin, double concentrationMax, double concentration) {
     concentration = (concentration - concentrationMin)/(concentrationMax - concentrationMin);
 
@@ -99,3 +94,10 @@ string RGBColourGenerator::convertRGBToString() {
 
     return stringStream.str();
 }
+
+
+// Constants
+const int RGBColourGenerator::HUE_MIN     = 0;
+const int RGBColourGenerator::HUE_MAX     = 120;
+const int RGBColourGenerator::SATURATION  = 1;
+const int RGBColourGenerator::VALUE       = 1;

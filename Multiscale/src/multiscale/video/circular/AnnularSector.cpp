@@ -3,7 +3,7 @@
 
 #include <sstream>
 
-#define SEPARATOR " "
+const string SEPARATOR = " ";
 
 using namespace multiscale::video;
 
