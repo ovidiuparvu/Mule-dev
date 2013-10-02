@@ -6,21 +6,6 @@
 
 using namespace std;
 
-const string HEADER_IN       = "config/video/rectangular/header.in";
-const string CONTENT_IN      = "config/video/rectangular/content.in";
-const string FOOTER_IN       = "config/video/rectangular/footer.in";
-
-const string REPLACE_HEADER_FILENAME    = "OUTPUT_FILENAME";
-const string REPLACE_HEADER_HEIGHT      = "OUTPUT_DIMENSION1";
-const string REPLACE_HEADER_WIDTH       = "OUTPUT_DIMENSION2";
-const string REPLACE_HEADER_SIM_TIME    = "OUTPUT_SIM_TIME";
-
-const double REPLACE_DIMENSION_EXTRA = 0.5;
-
-const string OUTPUT_SEPARATOR    = " ";
-
-const string GNUPLOT_EXTENSION   = ".plt";
-
 
 namespace multiscale {
 
@@ -111,6 +96,25 @@ namespace multiscale {
                  * \param fout Output file stream
                  */
                 static void outputFooter(ifstream &fin, ofstream &fout);
+
+            private:
+
+                // Constants
+                static const string HEADER_IN;
+                static const string CONTENT_IN;
+                static const string FOOTER_IN;
+
+                static const string REPLACE_HEADER_FILENAME;
+                static const string REPLACE_HEADER_HEIGHT;
+                static const string REPLACE_HEADER_WIDTH;
+                static const string REPLACE_HEADER_SIM_TIME;
+
+                static const double REPLACE_DIMENSION_EXTRA;
+
+                static const string OUTPUT_SEPARATOR;
+
+                static const string GNUPLOT_EXTENSION;
+
 
         };
 

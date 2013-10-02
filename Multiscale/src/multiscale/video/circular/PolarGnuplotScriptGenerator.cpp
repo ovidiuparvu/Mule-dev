@@ -110,3 +110,20 @@ string PolarGnuplotScriptGenerator::readContentTemplate(ifstream &fin) {
 
     return stringStream.str();
 }
+
+
+// Constants
+const string PolarGnuplotScriptGenerator::HEADER_IN       = "config/video/circular/header.in";
+const string PolarGnuplotScriptGenerator::CONTENT_IN      = "config/video/circular/content.in";
+const string PolarGnuplotScriptGenerator::FOOTER_IN       = "config/video/circular/footer.in";
+
+const string PolarGnuplotScriptGenerator::REPLACE_HEADER_FILENAME         = "OUTPUT_FILENAME";
+const string PolarGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME         = "OUTPUT_SIM_TIME";
+
+const string PolarGnuplotScriptGenerator::REPLACE_CONTENT_INDEX           = "OBJ_INDEX";
+const string PolarGnuplotScriptGenerator::REPLACE_CONTENT_RADIUS          = "OBJ_END_RADIUS";
+const string PolarGnuplotScriptGenerator::REPLACE_CONTENT_START_ANGLE     = "OBJ_START_ANGLE";
+const string PolarGnuplotScriptGenerator::REPLACE_CONTENT_END_ANGLE       = "OBJ_END_ANGLE";
+const string PolarGnuplotScriptGenerator::REPLACE_CONTENT_CONCENTRATION   = "OBJ_CONCENTRATION";
+
+const string PolarGnuplotScriptGenerator::GNUPLOT_EXTENSION  = ".plt";

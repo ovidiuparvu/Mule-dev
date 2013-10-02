@@ -7,21 +7,6 @@
 
 using namespace std;
 
-const string HEADER_IN       = "config/video/circular/header.in";
-const string CONTENT_IN      = "config/video/circular/content.in";
-const string FOOTER_IN       = "config/video/circular/footer.in";
-
-const string REPLACE_HEADER_FILENAME         = "OUTPUT_FILENAME";
-const string REPLACE_HEADER_SIM_TIME         = "OUTPUT_SIM_TIME";
-
-const string REPLACE_CONTENT_INDEX           = "OBJ_INDEX";
-const string REPLACE_CONTENT_RADIUS          = "OBJ_END_RADIUS";
-const string REPLACE_CONTENT_START_ANGLE     = "OBJ_START_ANGLE";
-const string REPLACE_CONTENT_END_ANGLE       = "OBJ_END_ANGLE";
-const string REPLACE_CONTENT_CONCENTRATION   = "OBJ_CONCENTRATION";
-
-const string GNUPLOT_EXTENSION  = ".plt";
-
 
 namespace multiscale {
 
@@ -99,6 +84,24 @@ namespace multiscale {
                  * \param fin Input file stream
                  */
                 static string readContentTemplate(ifstream &fin);
+
+            private:
+
+                // Constants
+                static const string HEADER_IN;
+                static const string CONTENT_IN;
+                static const string FOOTER_IN;
+
+                static const string REPLACE_HEADER_FILENAME;
+                static const string REPLACE_HEADER_SIM_TIME;
+
+                static const string REPLACE_CONTENT_INDEX;
+                static const string REPLACE_CONTENT_RADIUS;
+                static const string REPLACE_CONTENT_START_ANGLE;
+                static const string REPLACE_CONTENT_END_ANGLE;
+                static const string REPLACE_CONTENT_CONCENTRATION;
+
+                static const string GNUPLOT_EXTENSION;
 
         };
 

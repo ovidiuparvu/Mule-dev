@@ -9,21 +9,6 @@
 
 using namespace std;
 
-const string OUTPUT_EXTENSION        = ".in";
-const string OUTPUT_SEPARATOR        = " ";
-const string OUTPUT_FILE_SEPARATOR   = "_";
-const string INPUT_FILE_SEPARATOR    = ",";
-
-const string ERR_INVALID_NR_ENTITIES     = "The number of entities at the given position is invalid.";
-const string ERR_INVALID_OX_COORDINATE   = "The value of the Ox coordinate is invalid.";
-const string ERR_INVALID_OY_COORDINATE   = "The value of the Oy coordinate is invalid.";
-const string ERR_MAX_NR_ENTITIES         = "The maximum number of entities per grid position is equal to zero.";
-const string ERR_NR_COORDINATES          = "The number of coordinates in the input file does not match the values of the input parameters height, width and nrOfEntities.";
-const string ERR_NEG_SIM_TIME            = "The simulation time must be non-negative.";
-const string ERR_INPUT_OPEN              = "The input file could not be opened.";
-const string ERR_INVALID_VALUE_LINE      = "Invalid value on line: ";
-const string ERR_INVALID_VALUE_TOKEN     = ", value: ";
-
 
 namespace multiscale {
 
@@ -155,6 +140,25 @@ namespace multiscale {
                  * \param entitiesGrid The grid of entities
                  */
                 void validateEntitiesGrid(const vector<double> &entitiesGrid);
+
+            private:
+
+                // Constants
+                static const string OUTPUT_EXTENSION;
+                static const string OUTPUT_SEPARATOR;
+                static const string OUTPUT_FILE_SEPARATOR;
+                static const string INPUT_FILE_SEPARATOR;
+
+                static const string ERR_INVALID_NR_ENTITIES;
+                static const string ERR_INVALID_OX_COORDINATE;
+                static const string ERR_INVALID_OY_COORDINATE;
+                static const string ERR_MAX_NR_ENTITIES;
+                static const string ERR_NR_COORDINATES;
+                static const string ERR_NEG_SIM_TIME;
+                static const string ERR_INPUT_OPEN;
+                static const string ERR_INVALID_VALUE_LINE;
+                static const string ERR_INVALID_VALUE_TOKEN;
+
 
         };
 

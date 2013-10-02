@@ -348,3 +348,20 @@ void PolarCsvToInputFilesConverter::updateMaximumConcentration(const string &cur
         }
     }
 }
+
+
+// Constants
+const int PolarCsvToInputFilesConverter::RADIUS_MIN  = 1;
+
+const string PolarCsvToInputFilesConverter::OUTPUT_EXTENSION        = ".in";
+const string PolarCsvToInputFilesConverter::OUTPUT_SEPARATOR        = " ";
+const string PolarCsvToInputFilesConverter::OUTPUT_FILE_SEPARATOR   = "_";
+const string PolarCsvToInputFilesConverter::INPUT_FILE_SEPARATOR    = ",";
+
+const string PolarCsvToInputFilesConverter::ERR_NEG_CONCENTRATION               = "All concentrations must be non-negative.";
+const string PolarCsvToInputFilesConverter::ERR_SELECTED_CONCENTRATION_INDEX    = "The selected concentration index (0-based indexing) should be smaller than the number of concentrations.";
+const string PolarCsvToInputFilesConverter::ERR_NR_CONCENTRATIONS               = "The number of concentrations in the input file does not match the values of the input parameters height and width.";
+const string PolarCsvToInputFilesConverter::ERR_NEG_SIM_TIME                    = "The simulation time must be non-negative.";
+const string PolarCsvToInputFilesConverter::ERR_INPUT_OPEN                      = "The input file could not be opened.";
+const string PolarCsvToInputFilesConverter::ERR_INVALID_VALUE_LINE              = "Invalid value on line: ";
+const string PolarCsvToInputFilesConverter::ERR_INVALID_VALUE_TOKEN             = ", value: ";

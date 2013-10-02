@@ -100,3 +100,20 @@ void RectangularGnuplotScriptGenerator::outputFooter(ifstream &fin, ofstream &fo
 
     fout.flush();
 }
+
+
+// Constants
+const string RectangularGnuplotScriptGenerator::HEADER_IN       = "config/video/rectangular/header.in";
+const string RectangularGnuplotScriptGenerator::CONTENT_IN      = "config/video/rectangular/content.in";
+const string RectangularGnuplotScriptGenerator::FOOTER_IN       = "config/video/rectangular/footer.in";
+
+const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_FILENAME    = "OUTPUT_FILENAME";
+const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_HEIGHT      = "OUTPUT_DIMENSION1";
+const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_WIDTH       = "OUTPUT_DIMENSION2";
+const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME    = "OUTPUT_SIM_TIME";
+
+const double RectangularGnuplotScriptGenerator::REPLACE_DIMENSION_EXTRA = 0.5;
+
+const string RectangularGnuplotScriptGenerator::OUTPUT_SEPARATOR    = " ";
+
+const string RectangularGnuplotScriptGenerator::GNUPLOT_EXTENSION   = ".plt";

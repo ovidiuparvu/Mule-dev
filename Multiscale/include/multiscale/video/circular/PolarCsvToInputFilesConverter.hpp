@@ -9,21 +9,6 @@
 
 using namespace std;
 
-const int RADIUS_MIN  = 1;
-
-const string OUTPUT_EXTENSION        = ".in";
-const string OUTPUT_SEPARATOR        = " ";
-const string OUTPUT_FILE_SEPARATOR   = "_";
-const string INPUT_FILE_SEPARATOR    = ",";
-
-const string ERR_NEG_CONCENTRATION               = "All concentrations must be non-negative.";
-const string ERR_SELECTED_CONCENTRATION_INDEX    = "The selected concentration index (0-based indexing) should be smaller than the number of concentrations.";
-const string ERR_NR_CONCENTRATIONS               = "The number of concentrations in the input file does not match the values of the input parameters height and width.";
-const string ERR_NEG_SIM_TIME                    = "The simulation time must be non-negative.";
-const string ERR_INPUT_OPEN                      = "The input file could not be opened.";
-const string ERR_INVALID_VALUE_LINE              = "Invalid value on line: ";
-const string ERR_INVALID_VALUE_TOKEN             = ", value: ";
-
 
 namespace multiscale {
 
@@ -215,6 +200,24 @@ namespace multiscale {
                  * \param maximumConcentration The maximum concentration
                  */
                 void updateMaximumConcentration(const string &line, double &maximumConcentration);
+
+            private:
+
+                // Constants
+                static const int RADIUS_MIN;
+
+                static const string OUTPUT_EXTENSION;
+                static const string OUTPUT_SEPARATOR;
+                static const string OUTPUT_FILE_SEPARATOR;
+                static const string INPUT_FILE_SEPARATOR;
+
+                static const string ERR_NEG_CONCENTRATION;
+                static const string ERR_SELECTED_CONCENTRATION_INDEX;
+                static const string ERR_NR_CONCENTRATIONS;
+                static const string ERR_NEG_SIM_TIME;
+                static const string ERR_INPUT_OPEN;
+                static const string ERR_INVALID_VALUE_LINE;
+                static const string ERR_INVALID_VALUE_TOKEN;
 
         };
 

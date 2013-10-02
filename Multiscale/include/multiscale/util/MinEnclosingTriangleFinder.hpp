@@ -352,19 +352,19 @@ namespace multiscale {
             // Constants
             static const bool CONVEX_HULL_CLOCKWISE;
 
-            static const int INTERSECTS_BELOW;
-            static const int INTERSECTS_ABOVE;
-            static const int INTERSECTS_CRITICAL;
-            static const int INTERSECTS_LIMIT;
+            static const unsigned int INTERSECTS_BELOW;
+            static const unsigned int INTERSECTS_ABOVE;
+            static const unsigned int INTERSECTS_CRITICAL;
+            static const unsigned int INTERSECTS_LIMIT;
 
             static const string ERR_MIDPOINT_SIDE_B;
             static const string ERR_SIDE_B_GAMMA;
             static const string ERR_VERTEX_C_ON_SIDE_B;
             static const string ERR_TRIANGLE_VERTICES;
 
-            static const int VALIDATION_SIDE_A_TANGENT;
-            static const int VALIDATION_SIDE_B_TANGENT;
-            static const int VALIDATION_SIDES_FLUSH;
+            static const unsigned int VALIDATION_SIDE_A_TANGENT;
+            static const unsigned int VALIDATION_SIDE_B_TANGENT;
+            static const unsigned int VALIDATION_SIDES_FLUSH;
 
     };
 

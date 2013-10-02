@@ -254,3 +254,20 @@ inline void RectangularEntityCsvToInputFilesConverter::validateEntitiesGrid(cons
         }
     }
 }
+
+
+// Constants
+const string RectangularEntityCsvToInputFilesConverter::OUTPUT_EXTENSION        = ".in";
+const string RectangularEntityCsvToInputFilesConverter::OUTPUT_SEPARATOR        = " ";
+const string RectangularEntityCsvToInputFilesConverter::OUTPUT_FILE_SEPARATOR   = "_";
+const string RectangularEntityCsvToInputFilesConverter::INPUT_FILE_SEPARATOR    = ",";
+
+const string RectangularEntityCsvToInputFilesConverter::ERR_INVALID_NR_ENTITIES     = "The number of entities at the given position is invalid.";
+const string RectangularEntityCsvToInputFilesConverter::ERR_INVALID_OX_COORDINATE   = "The value of the Ox coordinate is invalid.";
+const string RectangularEntityCsvToInputFilesConverter::ERR_INVALID_OY_COORDINATE   = "The value of the Oy coordinate is invalid.";
+const string RectangularEntityCsvToInputFilesConverter::ERR_MAX_NR_ENTITIES         = "The maximum number of entities per grid position is equal to zero.";
+const string RectangularEntityCsvToInputFilesConverter::ERR_NR_COORDINATES          = "The number of coordinates in the input file does not match the values of the input parameters height, width and nrOfEntities.";
+const string RectangularEntityCsvToInputFilesConverter::ERR_NEG_SIM_TIME            = "The simulation time must be non-negative.";
+const string RectangularEntityCsvToInputFilesConverter::ERR_INPUT_OPEN              = "The input file could not be opened.";
+const string RectangularEntityCsvToInputFilesConverter::ERR_INVALID_VALUE_LINE      = "Invalid value on line: ";
+const string RectangularEntityCsvToInputFilesConverter::ERR_INVALID_VALUE_TOKEN     = ", value: ";

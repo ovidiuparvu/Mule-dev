@@ -84,3 +84,16 @@ void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) {
 void CartesianToConcentrationsConverter::outputResults() {
     RectangularGnuplotScriptGenerator::generateScript(concentrations, simulationTime, height, width, outputFilepath);
 }
+
+
+// Constants
+const string CartesianToConcentrationsConverter::ERR_CONC                = "All concentrations have to be between 0 and 1.";
+const string CartesianToConcentrationsConverter::ERR_NONPOS_DIMENSION    = "The dimensions N and M must be positive.";
+const string CartesianToConcentrationsConverter::ERR_NEG_SIM_TIME        = "The simulation time must be non-negative.";
+const string CartesianToConcentrationsConverter::ERR_INPUT_OPEN          = "The input file could not be opened";
+const string CartesianToConcentrationsConverter::ERR_IN_EXTRA_DATA       = "The input file contains more data than required.";
+
+const string CartesianToConcentrationsConverter::OUTPUT_FILE_EXTENSION   = ".out";
+
+const double CartesianToConcentrationsConverter::RADIUS_MIN  = 0.001;
+const double CartesianToConcentrationsConverter::RADIUS_MAX  = 0.3;

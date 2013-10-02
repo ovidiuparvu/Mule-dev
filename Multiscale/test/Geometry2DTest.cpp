@@ -7,11 +7,12 @@ using namespace std;
 using namespace cv;
 using namespace multiscale;
 
+const string WIN_MIN_AREA_TRIANGLE  = "Minimum area enclosing triangle";
+
 const int KEY_ESC = 27;
 
 const int RADIUS                    = 1;
 const int LINE_THICKNESS            = 50;
-const string WIN_MIN_AREA_TRIANGLE  = "Minimum area enclosing triangle";
 const int NR_RAND_POLYGONS          = 50;
 const int MAX_POLYGON_POINTS        = 100;
 const int POLYGON_POINT_X_MAX       = 500;

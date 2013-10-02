@@ -21,10 +21,11 @@ LIBS_OPENCV=/usr/local/lib/libopencv_calib3d.so /usr/local/lib/libopencv_contrib
 #########################################################################################
 # Default target
 #
-# List of all targets: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rectmapentitycsv2input rectmapentitycsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
+# List of main targets: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rectmapentitycsv2input rectmapentitycsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
+# List of test targets: geometry2d_test geometry2d_test_debug line_circle_test rect_mat_factory_test circ_mat_factory_test dbscan_test dbscan_test_debug
 #########################################################################################
 
-all: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rectmapentitycsv2input rectmapentitycsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
+all: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rectmapentitycsv2input rectmapentitycsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug geometry2d_test geometry2d_test_debug line_circle_test rect_mat_factory_test circ_mat_factory_test dbscan_test dbscan_test_debug
 
 
 #########################################################################################
@@ -94,19 +95,19 @@ geometry2d_test_debug:
 	g++ $(CFLAGS_DEBUG) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/util/MinEnclosingTriangleFinder.cpp src/multiscale/util/Numeric.cpp test/Geometry2DTest.cpp -o bin/Geometry2DTest_d $(LIBS_BOOST) $(LIBS_OPENCV) 
 
 line_circle_test:
-	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp test/LineCircleIntersectionTest.cpp -o bin/LineCircleIntersectionTest $(LIBS_BOOST) $(LIBS_OPENCV) 
+	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp test/LineCircleIntersectionTest.cpp src/multiscale/util/Numeric.cpp -o bin/LineCircleIntersectionTest $(LIBS_BOOST) $(LIBS_OPENCV) 
 
 rect_mat_factory_test:
-	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/factory/RectangularMatFactory.cpp test/RectangularMatFactoryTest.cpp -o bin/RectangularMatFactoryTest $(LIBS_BOOST) $(LIBS_OPENCV) 
+	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/util/Numeric.cpp src/multiscale/analysis/spatial/factory/RectangularMatFactory.cpp test/RectangularMatFactoryTest.cpp -o bin/RectangularMatFactoryTest $(LIBS_BOOST) $(LIBS_OPENCV) 
 
 circ_mat_factory_test:
-	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/analysis/spatial/factory/CircularMatFactory.cpp test/CircularMatFactoryTest.cpp -o bin/CircularMatFactoryTest $(LIBS_BOOST) $(LIBS_OPENCV) 
+	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/MatFactory.cpp src/multiscale/util/Numeric.cpp src/multiscale/analysis/spatial/factory/CircularMatFactory.cpp test/CircularMatFactoryTest.cpp -o bin/CircularMatFactoryTest $(LIBS_BOOST) $(LIBS_OPENCV) 
 
 dbscan_test:
-	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/DBSCAN.cpp test/dbscan/EuclideanDataPoint.hpp test/dbscan/DBSCANTest.cpp -o bin/DBSCANTest $(LIBS_BOOST) $(LIBS_OPENCV) 
+	g++ $(CFLAGS_RELEASE) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/util/Numeric.cpp src/multiscale/analysis/spatial/DBSCAN.cpp test/dbscan/EuclideanDataPoint.hpp test/dbscan/DBSCANTest.cpp -o bin/DBSCANTest $(LIBS_BOOST) $(LIBS_OPENCV) 
 
 dbscan_test_debug:
-	g++ $(CFLAGS_DEBUG) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/analysis/spatial/DBSCAN.cpp test/dbscan/EuclideanDataPoint.hpp test/dbscan/DBSCANTest.cpp -o bin/DBSCANTest_d $(LIBS_BOOST) $(LIBS_OPENCV) 
+	g++ $(CFLAGS_DEBUG) $(INCLUDES_OPENCV) $(INCLUDES_BOOST) $(INCLUDES_PROJECT) src/multiscale/util/Geometry2D.cpp src/multiscale/util/Numeric.cpp src/multiscale/analysis/spatial/DBSCAN.cpp test/dbscan/EuclideanDataPoint.hpp test/dbscan/DBSCANTest.cpp -o bin/DBSCANTest_d $(LIBS_BOOST) $(LIBS_OPENCV) 
 
 
 #########################################################################################

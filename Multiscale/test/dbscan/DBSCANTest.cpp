@@ -35,7 +35,7 @@ void runTest(vector<EuclideanDataPoint> &points, double eps, int minPoints) {
     vector<int> clusterIndexes;
     int nrOfClusters;
 
-    DBSCAN::run(convertPoints(points), clusterIndexes, nrOfClusters, eps, minPoints);
+    DBSCAN().run(convertPoints(points), clusterIndexes, nrOfClusters, eps, minPoints);
 
     printResults(clusterIndexes);
 }

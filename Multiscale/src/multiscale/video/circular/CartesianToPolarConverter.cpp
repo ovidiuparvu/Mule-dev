@@ -130,3 +130,15 @@ void CartesianToPolarConverter::outputResultsAsFile() {
 void CartesianToPolarConverter::outputResultsAsScript() {
     PolarGnuplotScriptGenerator::generateScript(annularSectors, simulationTime, outputFilepath);
 }
+
+// Constants
+const string CartesianToPolarConverter::ERR_CONC                = "All concentrations have to be between 0 and 1.";
+const string CartesianToPolarConverter::ERR_NONPOS_DIMENSION    = "The dimensions N and M must be positive.";
+const string CartesianToPolarConverter::ERR_NEG_SIM_TIME        = "The simulation time must be non-negative.";
+const string CartesianToPolarConverter::ERR_INPUT_OPEN          = "The input file could not be opened";
+const string CartesianToPolarConverter::ERR_IN_EXTRA_DATA       = "The input file contains more data than required.";
+
+const string CartesianToPolarConverter::OUTPUT_FILE_EXTENSION   = ".out";
+
+const double CartesianToPolarConverter::RADIUS_MIN  = 0.001;
+const double CartesianToPolarConverter::RADIUS_MAX  = 0.3;

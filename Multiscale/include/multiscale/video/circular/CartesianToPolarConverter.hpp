@@ -8,17 +8,6 @@
 
 using namespace std;
 
-const string ERR_CONC                = "All concentrations have to be between 0 and 1.";
-const string ERR_NONPOS_DIMENSION    = "The dimensions N and M must be positive.";
-const string ERR_NEG_SIM_TIME        = "The simulation time must be non-negative.";
-const string ERR_INPUT_OPEN          = "The input file could not be opened";
-const string ERR_IN_EXTRA_DATA       = "The input file contains more data than required.";
-
-const string OUTPUT_FILE_EXTENSION   = ".out";
-
-const double RADIUS_MIN  = 0.001;
-const double RADIUS_MAX  = 0.3;
-
 
 namespace multiscale {
 
@@ -78,6 +67,20 @@ namespace multiscale {
 
                 //! Output the results as a gnuplot script
                 void outputResultsAsScript();
+
+            private:
+
+                // Constants
+                static const string ERR_CONC;
+                static const string ERR_NONPOS_DIMENSION;
+                static const string ERR_NEG_SIM_TIME;
+                static const string ERR_INPUT_OPEN;
+                static const string ERR_IN_EXTRA_DATA;
+
+                static const string OUTPUT_FILE_EXTENSION;
+
+                static const double RADIUS_MIN;
+                static const double RADIUS_MAX;
 
         };
 

@@ -39,6 +39,9 @@ double CircularMatFactory::maxColourBarIntensityFromViewerImage(const string &in
 
 unsigned char * CircularMatFactory::processConcentrations(ifstream& fin) {
     MS_throw(CircularMatFactoryException, ERR_UNIMPLEMENTED_METHOD);
+
+    // Statement not executed but added to overcome warning message
+    throw CircularMatFactoryException(__FILE__, __LINE__, ERR_UNIMPLEMENTED_METHOD);
 }
 
 Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int originY,
