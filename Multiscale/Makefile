@@ -19,14 +19,14 @@ LIBS_OPENCV=/usr/local/lib/libopencv_calib3d.so /usr/local/lib/libopencv_contrib
 
 
 #########################################################################################
-# Default target
-#
-# List of main targets: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rectmapentitycsv2input rectmapentitycsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
-# List of test targets: geometry2d_test geometry2d_test_debug line_circle_test rect_mat_factory_test circ_mat_factory_test dbscan_test dbscan_test_debug
+# Default target and main target structures
 #########################################################################################
 
-all: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rectmapentitycsv2input rectmapentitycsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug geometry2d_test geometry2d_test_debug line_circle_test rect_mat_factory_test circ_mat_factory_test dbscan_test dbscan_test_debug
+all: main test
 
+main: mapcart2pol mapcart2pol_debug mapcart2conc mapcart2conc_debug polmapcsv2input polmapcsv2input_debug rectmapcsv2input rectmapcsv2input_debug rectmapentitycsv2input rectmapentitycsv2input_debug rect_region_detection rect_region_detection_debug circ_region_detection circ_region_detection_debug simulation_cluster_detection simulation_cluster_detection_debug
+
+test: geometry2d_test geometry2d_test_debug line_circle_test rect_mat_factory_test circ_mat_factory_test dbscan_test dbscan_test_debug
 
 #########################################################################################
 # Targets
