@@ -1,12 +1,5 @@
 var SimulationDetectClusters_8cpp =
 [
-    [ "CONFIG_FILE", "SimulationDetectClusters_8cpp.html#a42bf63540ee0039a3a23db1b5ec3202b", null ],
-    [ "ERR_CODE", "SimulationDetectClusters_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f", null ],
-    [ "ERR_MSG", "SimulationDetectClusters_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8", null ],
-    [ "LABEL_EPS", "SimulationDetectClusters_8cpp.html#a4ae598a3bc03fdea06da05a1f46db888", null ],
-    [ "LABEL_MINPOINTS", "SimulationDetectClusters_8cpp.html#ab9066d0364e527e549c5c6b00bfdfad2", null ],
-    [ "LABEL_ROOT_COMMENT", "SimulationDetectClusters_8cpp.html#a5eb40c1819d4a3f29b8a758da95f2d49", null ],
-    [ "ROOT_COMMENT", "SimulationDetectClusters_8cpp.html#a36628b11fe91394a7bd208067f5b17eb", null ],
     [ "areValidParameters", "SimulationDetectClusters_8cpp.html#aa56ee69482577dad35ebe8ff014ca517", null ],
     [ "initArgumentsConfig", "SimulationDetectClusters_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e", null ],
     [ "loadDetectorParameterValues", "SimulationDetectClusters_8cpp.html#a3b2fe4e3a75a6cdca8ea050e37a9da13", null ],
@@ -15,5 +8,10 @@ var SimulationDetectClusters_8cpp =
     [ "printHelpInformation", "SimulationDetectClusters_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831", null ],
     [ "printWrongParameters", "SimulationDetectClusters_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb", null ],
     [ "saveDetectorParameterValues", "SimulationDetectClusters_8cpp.html#a54440a034c11e07c393765b057b2bf65", null ],
-    [ "saveDetectorParameterValues", "SimulationDetectClusters_8cpp.html#a22f99fe837ee31d5b315c60eaffd6ea5", null ]
+    [ "saveDetectorParameterValues", "SimulationDetectClusters_8cpp.html#a22f99fe837ee31d5b315c60eaffd6ea5", null ],
+    [ "CONFIG_FILE", "SimulationDetectClusters_8cpp.html#a656a257c36273fa57ae244c25bf23ed8", null ],
+    [ "LABEL_EPS", "SimulationDetectClusters_8cpp.html#a0be1706eb30a11850372529d7bee8f99", null ],
+    [ "LABEL_MINPOINTS", "SimulationDetectClusters_8cpp.html#a59b1737ccf1b2a1e6b9c68a619633e69", null ],
+    [ "LABEL_ROOT_COMMENT", "SimulationDetectClusters_8cpp.html#a410d625b5c5f905e5b97870673ac236c", null ],
+    [ "ROOT_COMMENT", "SimulationDetectClusters_8cpp.html#a5f7b50b65b0c3f69fb34244c882a07cb", null ]
 ];

@@ -1,5 +1,5 @@
 var classmultiscale_1_1CartesianToPolarConverterException =
 [
-    [ "CartesianToPolarConverterException", "classmultiscale_1_1CartesianToPolarConverterException.html#a45f642fecefc7e3b184731767c595916", null ],
-    [ "CartesianToPolarConverterException", "classmultiscale_1_1CartesianToPolarConverterException.html#a06b8284c08f7074583d78428bd3ff2d7", null ]
+    [ "CartesianToPolarConverterException", "classmultiscale_1_1CartesianToPolarConverterException.html#a70f2259e58ab16d64d88e8728fd67f26", null ],
+    [ "CartesianToPolarConverterException", "classmultiscale_1_1CartesianToPolarConverterException.html#a9d77f79a95ff2557a6cd5060021c70c2", null ]
 ];

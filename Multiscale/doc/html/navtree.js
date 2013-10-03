@@ -7,6 +7,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ],
         [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
@@ -18,15 +19,16 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", "functions_vars" ]
       ] ]
     ] ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
-        [ "All", "globals.html", "globals_dup" ],
+        [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Macros", "globals_defs.html", "globals_defs" ]
+        [ "Variables", "globals_vars.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -35,10 +37,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "AnnularSector_8cpp.html",
-"RGBColourGenerator_8hpp.html#a5ea44383e0ece01ce2b69111da09207f",
-"classmultiscale_1_1LexicographicNumberIterator.html#ac2754a1a57005183e2c9040719c97448",
-"classmultiscale_1_1analysis_1_1MatFactory.html#a041b354357794476a2108e3f71deadc8",
-"classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a6cfe59bda4fbe1944199b6d27f8ee8b0"
+"SimulationClusterDetector_8hpp_source.html",
+"classmultiscale_1_1analysis_1_1ClusterDetector.html#aa94df1adc462be5931ec25ba24122fe9",
+"classmultiscale_1_1video_1_1AnnularSector.html#a7f6a1e7618c9e2a10e35efb5740395b1",
+"namespacemultiscale.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

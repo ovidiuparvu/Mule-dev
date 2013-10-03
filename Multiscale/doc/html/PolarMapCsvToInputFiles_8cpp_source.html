@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/video/circular/PolarMapCsvToInputFiles.cpp Source File</title>
+<title>Multiscale: modules/video/circular/src/PolarMapCsvToInputFiles.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,183 +107,174 @@ $(document).ready(function(){initNavTree('PolarMapCsvToInputFiles_8cpp_source.ht
 </div><!--header-->
 <div class="contents">
 <a href="PolarMapCsvToInputFiles_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PolarCsvToInputFilesConverter_8hpp.html">multiscale/video/circular/PolarCsvToInputFilesConverter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NumberIteratorType_8hpp.html">multiscale/util/iterator/NumberIteratorType.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;boost/program_options.hpp&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using namespace </span>multiscale;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using namespace </span>multiscale::video;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>po = boost::program_options;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Multiscale_8hpp.html">multiscale/core/Multiscale.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PolarCsvToInputFilesConverter_8hpp.html">multiscale/video/circular/PolarCsvToInputFilesConverter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NumberIteratorType_8hpp.html">multiscale/util/iterator/NumberIteratorType.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ExceptionHandler_8hpp.html">multiscale/exception/ExceptionHandler.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;boost/program_options.hpp&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span>multiscale;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using namespace </span>multiscale::video;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">   28</a></span>&#160;<span class="preprocessor">#define ERR_CODE 1</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">   29</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_MSG  &quot;An error occurred: &quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// Initialise the arguments configuration</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">   33</a></span>&#160;po::variables_map <a class="code" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">initArgumentsConfig</a>(po::options_description &amp;usageDescription, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    usageDescription.add_options()(<span class="stringliteral">&quot;help,h&quot;</span>, <span class="stringliteral">&quot;display help message\n&quot;</span>)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                  (<span class="stringliteral">&quot;input-file,i&quot;</span>, po::value&lt;string&gt;(), <span class="stringliteral">&quot;provide the path to the input file\n&quot;</span>)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                  (<span class="stringliteral">&quot;output-file,o&quot;</span>, po::value&lt;string&gt;(), <span class="stringliteral">&quot;provide the path of the output file (without extension)\n&quot;</span>)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                  (<span class="stringliteral">&quot;nr-concentric-circles,c&quot;</span>, po::value&lt;unsigned int&gt;(), <span class="stringliteral">&quot;provide the number of concentric circles\n&quot;</span>)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                  (<span class="stringliteral">&quot;nr-sectors,s&quot;</span>, po::value&lt;unsigned int&gt;(), <span class="stringliteral">&quot;provide the number of sectors\n&quot;</span>)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                  (<span class="stringliteral">&quot;nr-concentrations-position,p&quot;</span>, po::value&lt;unsigned int&gt;()-&gt;default_value(1), <span class="stringliteral">&quot;provide the number of concentrations for each position\n&quot;</span>)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                  (<span class="stringliteral">&quot;selected-concentration-index,x&quot;</span>, po::value&lt;unsigned int&gt;()-&gt;default_value(0), <span class="stringliteral">&quot;provide the index of the concentration considered as numerator when the number of concentrations for each position is greater than 1\n&quot;</span>)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                  (<span class="stringliteral">&quot;use-log-scaling,a&quot;</span>, po::value&lt;bool&gt;()-&gt;default_value(<span class="keyword">false</span>), <span class="stringliteral">&quot;use log scaling (1) for concentrations or not (0)\n&quot;</span>)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                  (<span class="stringliteral">&quot;lexicographic-iterator,l&quot;</span>, <span class="stringliteral">&quot;use lexicographic number iterator for numbering the columns of the .csv file\n&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    po::variables_map vm;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    po::store(po::parse_command_line(argc, argv, usageDescription), vm);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    po::notify(vm);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> vm;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Print help message if needed</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831">printHelpInformation</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <span class="keyword">const</span> po::options_description &amp;usageDescription) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    cout &lt;&lt; usageDescription &lt;&lt; endl;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// Print error message if wrong parameters are provided</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">   56</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">printWrongParameters</a>() {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    cout &lt;&lt; <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; <span class="stringliteral">&quot;Wrong input arguments provided.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Run the program with the argument \&quot;--help\&quot; for more information.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// Set the number iterator type to lexicographic if requested</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#acd4e13a2a763444dac4b73b728fffcdc">   62</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#acd4e13a2a763444dac4b73b728fffcdc">setNumberIteratorType</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5" title="The type of the number iterator.">NumberIteratorType</a> &amp;numberIteratorType) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    numberIteratorType = <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5a2cba3a0174cc5c1d555ee13dcf6cda15">multiscale::LEXICOGRAPHIC</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// Set the selected concentration index</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88">setSelectedConcentrationIndex</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;selectedConcentrationIndex) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    selectedConcentrationIndex = vm[<span class="stringliteral">&quot;selected-concentration-index&quot;</span>].as&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// Set the log scaling flag</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2">setLogScaling</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <span class="keywordtype">bool</span> &amp;useLogScaling) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    useLogScaling = vm[<span class="stringliteral">&quot;use-log-scaling&quot;</span>].as&lt;<span class="keywordtype">bool</span>&gt;();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// Check if the number of concentrations for one position is valid</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322">   77</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322">isValidNrOfConcentrationsForPosition</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;nrOfConcentrationsForPosition) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    nrOfConcentrationsForPosition = vm[<span class="stringliteral">&quot;nr-concentrations-position&quot;</span>].as&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (nrOfConcentrationsForPosition == 0) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        cout &lt;&lt; <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;             &lt;&lt; <span class="stringliteral">&quot;Parameter nr-concentrations-position must be greater than 0.&quot;</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;             &lt;&lt; endl;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">// Get the needed parameters</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a7b05f506b09a7d630740ccdf4329e4e0">   92</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="CircularDetectRegions_8cpp.html#a88e0190bdcd41850844fa3d92a0083f4">areValidParameters</a>(<span class="keywordtype">string</span> &amp;inputFilepath, <span class="keywordtype">string</span> &amp;outputFilename, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;nrOfConcentricCircles,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;nrOfSectors, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;nrOfConcentrationsForPosition,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;selectedConcentrationIndex, <span class="keywordtype">bool</span> &amp;useLogScaling,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                   <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5" title="The type of the number iterator.">NumberIteratorType</a> &amp;numberIteratorType, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    po::options_description usageDescription(<span class="stringliteral">&quot;Usage&quot;</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    po::variables_map vm = <a class="code" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">initArgumentsConfig</a>(usageDescription, argc, argv);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Check if the user wants to print help information</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;help&quot;</span>)) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831">printHelpInformation</a>(vm, usageDescription);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Check if the given parameters are correct</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> ((vm.count(<span class="stringliteral">&quot;input-file&quot;</span>)) &amp;&amp; (vm.count(<span class="stringliteral">&quot;output-file&quot;</span>)) &amp;&amp;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        (vm.count(<span class="stringliteral">&quot;nr-concentric-circles&quot;</span>)) &amp;&amp; (vm.count(<span class="stringliteral">&quot;nr-sectors&quot;</span>))) {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        inputFilepath  = vm[<span class="stringliteral">&quot;input-file&quot;</span>].as&lt;<span class="keywordtype">string</span>&gt;();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        outputFilename = vm[<span class="stringliteral">&quot;output-file&quot;</span>].as&lt;<span class="keywordtype">string</span>&gt;();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        nrOfConcentricCircles = vm[<span class="stringliteral">&quot;nr-concentric-circles&quot;</span>].as&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        nrOfSectors           = vm[<span class="stringliteral">&quot;nr-sectors&quot;</span>].as&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;use-log-scaling&quot;</span>)) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2">setLogScaling</a>(vm, useLogScaling);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;selected-concentration-index&quot;</span>)) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88">setSelectedConcentrationIndex</a>(vm, selectedConcentrationIndex);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;lexicographic-iterator&quot;</span>)) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#acd4e13a2a763444dac4b73b728fffcdc">setNumberIteratorType</a>(vm, numberIteratorType);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;nr-concentrations-position&quot;</span>)) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322">isValidNrOfConcentrationsForPosition</a>(vm, nrOfConcentrationsForPosition);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">// Main function</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  139</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">string</span> inputFilePath;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">string</span> outputFilepath;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfConcentricCircles;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfSectors;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfConcentrationsForPosition;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> selectedConcentrationIndex = 0;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">bool</span> useLogScaling = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5" title="The type of the number iterator.">NumberIteratorType</a> numberIteratorType = <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5aa048887eb0360a4b70dff5452133f42e">multiscale::STANDARD</a>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="CircularDetectRegions_8cpp.html#a88e0190bdcd41850844fa3d92a0083f4">areValidParameters</a>(inputFilePath, outputFilepath, nrOfConcentricCircles,</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                               nrOfSectors, nrOfConcentrationsForPosition, selectedConcentrationIndex,</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                               useLogScaling, numberIteratorType, argc, argv)) {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html" title="Csv file to input file converter considering polar coordinates.">PolarCsvToInputFilesConverter</a> converter(inputFilePath, outputFilepath,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                                    nrOfConcentricCircles, nrOfSectors,</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                                    nrOfConcentrationsForPosition,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                                    selectedConcentrationIndex,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                                    useLogScaling,</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                                    numberIteratorType);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            converter.<a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a818c188569ad54cb0cfbbaa2bd32356c" title="Start the conversion.">convert</a>();</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">printWrongParameters</a>();</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;e) {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        cerr &lt;&lt; <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; e &lt;&lt; endl;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>* e) {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        cerr &lt;&lt; <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; e &lt;&lt; endl;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>po = boost::program_options;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Initialise the arguments configuration</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">   32</a></span>&#160;po::variables_map <a class="code" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">initArgumentsConfig</a>(po::options_description &amp;usageDescription, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    usageDescription.add_options()(<span class="stringliteral">&quot;help,h&quot;</span>, <span class="stringliteral">&quot;display help message\n&quot;</span>)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                  (<span class="stringliteral">&quot;input-file,i&quot;</span>, po::value&lt;string&gt;(), <span class="stringliteral">&quot;provide the path to the input file\n&quot;</span>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                  (<span class="stringliteral">&quot;output-file,o&quot;</span>, po::value&lt;string&gt;(), <span class="stringliteral">&quot;provide the path of the output file (without extension)\n&quot;</span>)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                  (<span class="stringliteral">&quot;nr-concentric-circles,c&quot;</span>, po::value&lt;unsigned int&gt;(), <span class="stringliteral">&quot;provide the number of concentric circles\n&quot;</span>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                  (<span class="stringliteral">&quot;nr-sectors,s&quot;</span>, po::value&lt;unsigned int&gt;(), <span class="stringliteral">&quot;provide the number of sectors\n&quot;</span>)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                  (<span class="stringliteral">&quot;nr-concentrations-position,p&quot;</span>, po::value&lt;unsigned int&gt;()-&gt;default_value(1), <span class="stringliteral">&quot;provide the number of concentrations for each position\n&quot;</span>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                  (<span class="stringliteral">&quot;selected-concentration-index,x&quot;</span>, po::value&lt;unsigned int&gt;()-&gt;default_value(0), <span class="stringliteral">&quot;provide the index of the concentration considered as numerator when the number of concentrations for each position is greater than 1\n&quot;</span>)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                  (<span class="stringliteral">&quot;use-log-scaling,a&quot;</span>, po::value&lt;bool&gt;()-&gt;default_value(<span class="keyword">false</span>), <span class="stringliteral">&quot;use log scaling (1) for concentrations or not (0)\n&quot;</span>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                  (<span class="stringliteral">&quot;lexicographic-iterator,l&quot;</span>, <span class="stringliteral">&quot;use lexicographic number iterator for numbering the columns of the .csv file\n&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    po::variables_map vm;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    po::store(po::parse_command_line(argc, argv, usageDescription), vm);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    po::notify(vm);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> vm;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Print help message if needed</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831">printHelpInformation</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <span class="keyword">const</span> po::options_description &amp;usageDescription) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    cout &lt;&lt; usageDescription &lt;&lt; endl;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// Print error message if wrong parameters are provided</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">printWrongParameters</a>() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    cout &lt;&lt; <a class="code" href="namespacemultiscale.html#a06490e4e11ef359aa0260f96579ce584">ERR_MSG</a> &lt;&lt; <span class="stringliteral">&quot;Wrong input arguments provided.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Run the program with the argument \&quot;--help\&quot; for more information.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// Set the number iterator type to lexicographic if requested</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#acd4e13a2a763444dac4b73b728fffcdc">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#acd4e13a2a763444dac4b73b728fffcdc">setNumberIteratorType</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5" title="The type of the number iterator.">NumberIteratorType</a> &amp;numberIteratorType) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    numberIteratorType = <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5a2cba3a0174cc5c1d555ee13dcf6cda15">multiscale::LEXICOGRAPHIC</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// Set the selected concentration index</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88">   66</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88">setSelectedConcentrationIndex</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;selectedConcentrationIndex) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    selectedConcentrationIndex = vm[<span class="stringliteral">&quot;selected-concentration-index&quot;</span>].as&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// Set the log scaling flag</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2">setLogScaling</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <span class="keywordtype">bool</span> &amp;useLogScaling) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    useLogScaling = vm[<span class="stringliteral">&quot;use-log-scaling&quot;</span>].as&lt;<span class="keywordtype">bool</span>&gt;();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// Check if the number of concentrations for one position is valid</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322">   76</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322">isValidNrOfConcentrationsForPosition</a>(<span class="keyword">const</span> po::variables_map &amp;vm, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;nrOfConcentrationsForPosition) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    nrOfConcentrationsForPosition = vm[<span class="stringliteral">&quot;nr-concentrations-position&quot;</span>].as&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (nrOfConcentrationsForPosition == 0) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        cout &lt;&lt; <a class="code" href="namespacemultiscale.html#a06490e4e11ef359aa0260f96579ce584">ERR_MSG</a></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;             &lt;&lt; <span class="stringliteral">&quot;Parameter nr-concentrations-position must be greater than 0.&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;             &lt;&lt; endl;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// Get the needed parameters</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a7b05f506b09a7d630740ccdf4329e4e0">   91</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="CircularDetectRegions_8cpp.html#a88e0190bdcd41850844fa3d92a0083f4">areValidParameters</a>(<span class="keywordtype">string</span> &amp;inputFilepath, <span class="keywordtype">string</span> &amp;outputFilename, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;nrOfConcentricCircles,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;nrOfSectors, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;nrOfConcentrationsForPosition,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> &amp;selectedConcentrationIndex, <span class="keywordtype">bool</span> &amp;useLogScaling,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                   <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5" title="The type of the number iterator.">NumberIteratorType</a> &amp;numberIteratorType, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    po::options_description usageDescription(<span class="stringliteral">&quot;Usage&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    po::variables_map vm = <a class="code" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">initArgumentsConfig</a>(usageDescription, argc, argv);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Check if the user wants to print help information</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;help&quot;</span>)) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831">printHelpInformation</a>(vm, usageDescription);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// Check if the given parameters are correct</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">if</span> ((vm.count(<span class="stringliteral">&quot;input-file&quot;</span>)) &amp;&amp; (vm.count(<span class="stringliteral">&quot;output-file&quot;</span>)) &amp;&amp;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        (vm.count(<span class="stringliteral">&quot;nr-concentric-circles&quot;</span>)) &amp;&amp; (vm.count(<span class="stringliteral">&quot;nr-sectors&quot;</span>))) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        inputFilepath  = vm[<span class="stringliteral">&quot;input-file&quot;</span>].as&lt;<span class="keywordtype">string</span>&gt;();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        outputFilename = vm[<span class="stringliteral">&quot;output-file&quot;</span>].as&lt;<span class="keywordtype">string</span>&gt;();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        nrOfConcentricCircles = vm[<span class="stringliteral">&quot;nr-concentric-circles&quot;</span>].as&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        nrOfSectors           = vm[<span class="stringliteral">&quot;nr-sectors&quot;</span>].as&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;use-log-scaling&quot;</span>)) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2">setLogScaling</a>(vm, useLogScaling);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;selected-concentration-index&quot;</span>)) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88">setSelectedConcentrationIndex</a>(vm, selectedConcentrationIndex);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;lexicographic-iterator&quot;</span>)) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#acd4e13a2a763444dac4b73b728fffcdc">setNumberIteratorType</a>(vm, numberIteratorType);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (vm.count(<span class="stringliteral">&quot;nr-concentrations-position&quot;</span>)) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322">isValidNrOfConcentrationsForPosition</a>(vm, nrOfConcentrationsForPosition);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">// Main function</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  138</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">string</span> inputFilePath;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordtype">string</span> outputFilepath;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfConcentricCircles;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfSectors;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrOfConcentrationsForPosition;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> selectedConcentrationIndex = 0;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">bool</span> useLogScaling = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5" title="The type of the number iterator.">NumberIteratorType</a> numberIteratorType = <a class="code" href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5aa048887eb0360a4b70dff5452133f42e">multiscale::STANDARD</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="CircularDetectRegions_8cpp.html#a88e0190bdcd41850844fa3d92a0083f4">areValidParameters</a>(inputFilePath, outputFilepath, nrOfConcentricCircles,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                               nrOfSectors, nrOfConcentrationsForPosition, selectedConcentrationIndex,</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                               useLogScaling, numberIteratorType, argc, argv)) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html" title="Csv file to input file converter considering polar coordinates.">PolarCsvToInputFilesConverter</a> converter(inputFilePath, outputFilepath,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                                    nrOfConcentricCircles, nrOfSectors,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                                    nrOfConcentrationsForPosition,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                                    selectedConcentrationIndex,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                                    useLogScaling,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                                    numberIteratorType);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            converter.<a class="code" href="classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a818c188569ad54cb0cfbbaa2bd32356c" title="Start the conversion.">convert</a>();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">printWrongParameters</a>();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> exception &amp;e) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        ExceptionHandler::printErrorMessage(e);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemultiscale.html#a4ee40795105048ee371efeeb7962ecf6">ERR_CODE</a>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    } <span class="keywordflow">catch</span>(...) {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Exception of unknown type!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    } <span class="keywordflow">catch</span>(exception &amp;e) {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        cerr &lt;&lt; <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; e.what() &lt;&lt; endl;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="PolarMapCsvToInputFiles_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    } <span class="keywordflow">catch</span>(...) {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Exception of unknown type!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_181e58fb894b6db2e2ebe48170ed182a.html">video</a></li><li class="navelem"><a class="el" href="dir_9ab520bd455cc605d2cf735513bae990.html">circular</a></li><li class="navelem"><a class="el" href="PolarMapCsvToInputFiles_8cpp.html">PolarMapCsvToInputFiles.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_fc26e3a6d4f7a64083c4d29e0277dd16.html">video</a></li><li class="navelem"><a class="el" href="dir_07ce0d4bac9f634ed9a99a16be82ce11.html">circular</a></li><li class="navelem"><a class="el" href="dir_110a185220ab5db810316bd4de12f664.html">src</a></li><li class="navelem"><a class="el" href="PolarMapCsvToInputFiles_8cpp.html">PolarMapCsvToInputFiles.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

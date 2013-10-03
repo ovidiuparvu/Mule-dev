@@ -23,10 +23,14 @@ class \hyperlink{classmultiscale_1_1DetectorException}{Detector\-Exception}
 \begin{DoxyCompactList}\small\item\em Exception class for the Detector class. \end{DoxyCompactList}\item 
 class \hyperlink{classmultiscale_1_1EntityException}{Entity\-Exception}
 \begin{DoxyCompactList}\small\item\em Exception class for the Entity instances. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1ExceptionHandler}{Exception\-Handler}
+\begin{DoxyCompactList}\small\item\em Exception handler class. \end{DoxyCompactList}\item 
 class \hyperlink{classmultiscale_1_1MatFactoryException}{Mat\-Factory\-Exception}
 \begin{DoxyCompactList}\small\item\em Exception class for the Mat\-Factory class. \end{DoxyCompactList}\item 
 class \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinderException}{Min\-Enclosing\-Triangle\-Finder\-Exception}
 \begin{DoxyCompactList}\small\item\em Exception class for the minimum area enclosing triangle module. \end{DoxyCompactList}\item 
+class \hyperlink{classmultiscale_1_1MultiscaleException}{Multiscale\-Exception}
+\begin{DoxyCompactList}\small\item\em Parent exception class for the project. \end{DoxyCompactList}\item 
 class \hyperlink{classmultiscale_1_1PolarCsvToInputFilesConverterException}{Polar\-Csv\-To\-Input\-Files\-Converter\-Exception}
 \begin{DoxyCompactList}\small\item\em Exception class for the Polar\-Csv\-To\-Input\-Files\-Converter class. \end{DoxyCompactList}\item 
 class \hyperlink{classmultiscale_1_1RectangularCsvToInputFilesConverterException}{Rectangular\-Csv\-To\-Input\-Files\-Converter\-Exception}
@@ -64,6 +68,13 @@ enum \hyperlink{namespacemultiscale_a6ef911f4d48a4bf5e657c237ec169ff5}{Number\-I
 \hyperlink{namespacemultiscale_a6ef911f4d48a4bf5e657c237ec169ff5a2cba3a0174cc5c1d555ee13dcf6cda15}{L\-E\-X\-I\-C\-O\-G\-R\-A\-P\-H\-I\-C} = 2
  \}
 \begin{DoxyCompactList}\small\item\em The type of the number iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{namespacemultiscale_a4ee40795105048ee371efeeb7962ecf6}{E\-R\-R\-\_\-\-C\-O\-D\-E} = 1
+\item 
+const std\-::string \hyperlink{namespacemultiscale_a06490e4e11ef359aa0260f96579ce584}{E\-R\-R\-\_\-\-M\-S\-G} = \char`\"{}An error occurred\-: \char`\"{}
+\end{DoxyCompactItemize}
 
 
 \subsection{Enumeration Type Documentation}
@@ -86,4 +97,29 @@ The type of the number iterator.
 
 
 Definition at line 7 of file Number\-Iterator\-Type.\-hpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespacemultiscale_a4ee40795105048ee371efeeb7962ecf6}{\index{multiscale@{multiscale}!E\-R\-R\-\_\-\-C\-O\-D\-E@{E\-R\-R\-\_\-\-C\-O\-D\-E}}
+\index{E\-R\-R\-\_\-\-C\-O\-D\-E@{E\-R\-R\-\_\-\-C\-O\-D\-E}!multiscale@{multiscale}}
+\subsubsection[{E\-R\-R\-\_\-\-C\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int multiscale\-::\-E\-R\-R\-\_\-\-C\-O\-D\-E = 1}}\label{namespacemultiscale_a4ee40795105048ee371efeeb7962ecf6}
+
+
+Definition at line 11 of file Multiscale.\-hpp.
+
+
+
+Referenced by main().
+
+\hypertarget{namespacemultiscale_a06490e4e11ef359aa0260f96579ce584}{\index{multiscale@{multiscale}!E\-R\-R\-\_\-\-M\-S\-G@{E\-R\-R\-\_\-\-M\-S\-G}}
+\index{E\-R\-R\-\_\-\-M\-S\-G@{E\-R\-R\-\_\-\-M\-S\-G}!multiscale@{multiscale}}
+\subsubsection[{E\-R\-R\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string multiscale\-::\-E\-R\-R\-\_\-\-M\-S\-G = \char`\"{}An error occurred\-: \char`\"{}}}\label{namespacemultiscale_a06490e4e11ef359aa0260f96579ce584}
+
+
+Definition at line 12 of file Multiscale.\-hpp.
+
+
+
+Referenced by is\-Valid\-Nr\-Of\-Concentrations\-For\-Position(), is\-Valid\-Output\-Type(), multiscale\-::\-Exception\-Handler\-::print\-Error\-Message(), and print\-Wrong\-Parameters().
 

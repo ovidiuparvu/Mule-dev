@@ -50,7 +50,7 @@ var searchData=
   ['getstartingradius',['getStartingRadius',['../classmultiscale_1_1video_1_1AnnularSector.html#aef4f23e921eae6438889f0f1537bb3ef',1,'multiscale::video::AnnularSector']]],
   ['getthresholdvalue',['getThresholdValue',['../classmultiscale_1_1analysis_1_1RegionDetector.html#aa429084aca1e04ec288878822e33bf36',1,'multiscale::analysis::RegionDetector']]],
   ['getvalidminpointsvalue',['getValidMinPointsValue',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#ab1c2514fb8599f74bf010e81154a9bf7',1,'multiscale::analysis::ClusterDetector']]],
-  ['gnuplot_5fextension',['GNUPLOT_EXTENSION',['../PolarGnuplotScriptGenerator_8hpp.html#a85e11e2c1d735f878817c23fc52da09a',1,'GNUPLOT_EXTENSION():&#160;PolarGnuplotScriptGenerator.hpp'],['../RectangularGnuplotScriptGenerator_8hpp.html#a85e11e2c1d735f878817c23fc52da09a',1,'GNUPLOT_EXTENSION():&#160;RectangularGnuplotScriptGenerator.hpp']]],
+  ['gnuplot_5fextension',['GNUPLOT_EXTENSION',['../classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#ab7c725911d4456addf22db345b622057',1,'multiscale::video::PolarGnuplotScriptGenerator::GNUPLOT_EXTENSION()'],['../classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#afa1626f7904b3006ac768f770c799283',1,'multiscale::video::RectangularGnuplotScriptGenerator::GNUPLOT_EXTENSION()']]],
   ['greaterorequal',['greaterOrEqual',['../classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5',1,'multiscale::Numeric']]],
-  ['green',['green',['../classmultiscale_1_1RGBColourGenerator.html#a283cedc2943a44f002567f93f32e321b',1,'multiscale::RGBColourGenerator']]]
+  ['green',['green',['../classmultiscale_1_1RGBColourGenerator.html#ae8d94d24b109954be1da2a04c8ec9af7',1,'multiscale::RGBColourGenerator']]]
 ];

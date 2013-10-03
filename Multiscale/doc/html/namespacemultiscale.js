@@ -8,8 +8,10 @@ var namespacemultiscale =
     [ "ClusterException", "classmultiscale_1_1ClusterException.html", "classmultiscale_1_1ClusterException" ],
     [ "DetectorException", "classmultiscale_1_1DetectorException.html", "classmultiscale_1_1DetectorException" ],
     [ "EntityException", "classmultiscale_1_1EntityException.html", "classmultiscale_1_1EntityException" ],
+    [ "ExceptionHandler", "classmultiscale_1_1ExceptionHandler.html", null ],
     [ "MatFactoryException", "classmultiscale_1_1MatFactoryException.html", "classmultiscale_1_1MatFactoryException" ],
     [ "MinEnclosingTriangleFinderException", "classmultiscale_1_1MinEnclosingTriangleFinderException.html", "classmultiscale_1_1MinEnclosingTriangleFinderException" ],
+    [ "MultiscaleException", "classmultiscale_1_1MultiscaleException.html", "classmultiscale_1_1MultiscaleException" ],
     [ "PolarCsvToInputFilesConverterException", "classmultiscale_1_1PolarCsvToInputFilesConverterException.html", "classmultiscale_1_1PolarCsvToInputFilesConverterException" ],
     [ "RectangularCsvToInputFilesConverterException", "classmultiscale_1_1RectangularCsvToInputFilesConverterException.html", "classmultiscale_1_1RectangularCsvToInputFilesConverterException" ],
     [ "RectangularEntityCsvToInputFilesConverterException", "classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html", "classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException" ],
@@ -23,6 +25,6 @@ var namespacemultiscale =
     [ "NumberIterator", "classmultiscale_1_1NumberIterator.html", "classmultiscale_1_1NumberIterator" ],
     [ "Numeric", "classmultiscale_1_1Numeric.html", null ],
     [ "NumericRangeManipulator", "classmultiscale_1_1NumericRangeManipulator.html", null ],
-    [ "RGBColourGenerator", "classmultiscale_1_1RGBColourGenerator.html", null ],
+    [ "RGBColourGenerator", "classmultiscale_1_1RGBColourGenerator.html", "classmultiscale_1_1RGBColourGenerator" ],
     [ "StringManipulator", "classmultiscale_1_1StringManipulator.html", null ]
 ];

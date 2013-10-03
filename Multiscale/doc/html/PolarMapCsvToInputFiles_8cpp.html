@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/video/circular/PolarMapCsvToInputFiles.cpp File Reference</title>
+<title>Multiscale: modules/video/circular/src/PolarMapCsvToInputFiles.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,14 +103,15 @@ $(document).ready(function(){initNavTree('PolarMapCsvToInputFiles_8cpp.html','')
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">PolarMapCsvToInputFiles.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="PolarCsvToInputFilesConverter_8hpp_source.html">multiscale/video/circular/PolarCsvToInputFilesConverter.hpp</a>&quot;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="Multiscale_8hpp_source.html">multiscale/core/Multiscale.hpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="PolarCsvToInputFilesConverter_8hpp_source.html">multiscale/video/circular/PolarCsvToInputFilesConverter.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="NumberIteratorType_8hpp_source.html">multiscale/util/iterator/NumberIteratorType.hpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="ExceptionHandler_8hpp_source.html">multiscale/exception/ExceptionHandler.hpp</a>&quot;</code><br/>
 <code>#include &lt;boost/program_options.hpp&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -118,20 +119,13 @@ $(document).ready(function(){initNavTree('PolarMapCsvToInputFiles_8cpp.html','')
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="PolarMapCsvToInputFiles_8cpp__incl.png" border="0" usemap="#src_2multiscale_2video_2circular_2PolarMapCsvToInputFiles_8cpp" alt=""/></div>
-<map name="src_2multiscale_2video_2circular_2PolarMapCsvToInputFiles_8cpp" id="src_2multiscale_2video_2circular_2PolarMapCsvToInputFiles_8cpp">
-<area shape="rect" id="node3" href="PolarCsvToInputFilesConverter_8hpp.html" title="multiscale/video/circular\l/PolarCsvToInputFilesConverter.hpp" alt="" coords="187,118,421,165"/><area shape="rect" id="node7" href="NumberIteratorType_8hpp.html" title="multiscale/util/iterator\l/NumberIteratorType.hpp" alt="" coords="5,214,171,261"/><area shape="rect" id="node5" href="NumberIterator_8hpp.html" title="multiscale/util/NumberIterator.hpp" alt="" coords="195,223,413,252"/></map>
+<div class="center"><img src="PolarMapCsvToInputFiles_8cpp__incl.png" border="0" usemap="#modules_2video_2circular_2src_2PolarMapCsvToInputFiles_8cpp" alt=""/></div>
+<map name="modules_2video_2circular_2src_2PolarMapCsvToInputFiles_8cpp" id="modules_2video_2circular_2src_2PolarMapCsvToInputFiles_8cpp">
+<area shape="rect" id="node3" href="Multiscale_8hpp.html" title="multiscale/core/Multiscale.hpp" alt="" coords="464,111,661,140"/><area shape="rect" id="node7" href="PolarCsvToInputFilesConverter_8hpp.html" title="multiscale/video/circular\l/PolarCsvToInputFilesConverter.hpp" alt="" coords="155,102,389,149"/><area shape="rect" id="node11" href="NumberIteratorType_8hpp.html" title="multiscale/util/iterator\l/NumberIteratorType.hpp" alt="" coords="340,198,505,245"/><area shape="rect" id="node17" href="ExceptionHandler_8hpp.html" title="multiscale/exception\l/ExceptionHandler.hpp" alt="" coords="685,102,840,149"/><area shape="rect" id="node9" href="NumberIterator_8hpp.html" title="multiscale/util/NumberIterator.hpp" alt="" coords="5,207,224,236"/></map>
 </div>
 </div>
 <p><a href="PolarMapCsvToInputFiles_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:aed46bc434b6a10f9663dbbe5fd15349f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PolarMapCsvToInputFiles_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:aed46bc434b6a10f9663dbbe5fd15349f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a18f09d3bb5a5f03a55546e38f8efd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PolarMapCsvToInputFiles_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a>&#160;&#160;&#160;&quot;An error occurred: &quot;</td></tr>
-<tr class="separator:a7a18f09d3bb5a5f03a55546e38f8efd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6dab5a70bdde13257ac586fd8b81b16e"><td class="memItemLeft" align="right" valign="top">po::variables_map&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PolarMapCsvToInputFiles_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">initArgumentsConfig</a> (po::options_description &amp;usageDescription, int argc, char **argv)</td></tr>
@@ -153,39 +147,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="PolarMapCsvToInputFiles_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="aed46bc434b6a10f9663dbbe5fd15349f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_CODE&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00028">28</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00139">main()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a7a18f09d3bb5a5f03a55546e38f8efd8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ERR_MSG&#160;&#160;&#160;&quot;An error occurred: &quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00029">29</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
-
-<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00077">isValidNrOfConcentrationsForPosition()</a>, <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00139">main()</a>, and <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00056">printWrongParameters()</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a7b05f506b09a7d630740ccdf4329e4e0"></a>
 <div class="memitem">
@@ -259,9 +220,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00092">92</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00091">91</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
 
-<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00048">initArgumentsConfig()</a>, <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00077">isValidNrOfConcentrationsForPosition()</a>, <a class="el" href="CircularDetectRegions_8cpp_source.html#l00061">printHelpInformation()</a>, <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00072">setLogScaling()</a>, <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00062">setNumberIteratorType()</a>, and <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00067">setSelectedConcentrationIndex()</a>.</p>
+<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00048">initArgumentsConfig()</a>, <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00076">isValidNrOfConcentrationsForPosition()</a>, <a class="el" href="CircularDetectRegions_8cpp_source.html#l00061">printHelpInformation()</a>, <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00071">setLogScaling()</a>, <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00061">setNumberIteratorType()</a>, and <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00066">setSelectedConcentrationIndex()</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -306,7 +267,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00033">33</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00032">32</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
 
 </div>
 </div>
@@ -334,11 +295,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00077">77</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00076">76</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
 
-<p>References <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00029">ERR_MSG</a>.</p>
+<p>References <a class="el" href="Multiscale_8hpp_source.html#l00012">multiscale::ERR_MSG</a>.</p>
 
-<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00092">areValidParameters()</a>.</p>
+<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00091">areValidParameters()</a>.</p>
 
 <p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -377,9 +338,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00139">139</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00138">138</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
 
-<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00072">areValidParameters()</a>, <a class="el" href="PolarCsvToInputFilesConverter_8cpp_source.html#l00049">multiscale::video::PolarCsvToInputFilesConverter::convert()</a>, <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00028">ERR_CODE</a>, <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00029">ERR_MSG</a>, <a class="el" href="CircularDetectRegions_8cpp_source.html#l00066">printWrongParameters()</a>, and <a class="el" href="NumberIteratorType_8hpp_source.html#l00008">multiscale::STANDARD</a>.</p>
+<p>References <a class="el" href="CircularDetectRegions_8cpp_source.html#l00072">areValidParameters()</a>, <a class="el" href="PolarCsvToInputFilesConverter_8cpp_source.html#l00049">multiscale::video::PolarCsvToInputFilesConverter::convert()</a>, <a class="el" href="Multiscale_8hpp_source.html#l00011">multiscale::ERR_CODE</a>, <a class="el" href="CircularDetectRegions_8cpp_source.html#l00066">printWrongParameters()</a>, and <a class="el" href="NumberIteratorType_8hpp_source.html#l00008">multiscale::STANDARD</a>.</p>
 
 <p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -418,7 +379,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00051">51</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00050">50</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
 
 </div>
 </div>
@@ -435,9 +396,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00056">56</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00055">55</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
 
-<p>References <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00029">ERR_MSG</a>.</p>
+<p>References <a class="el" href="Multiscale_8hpp_source.html#l00012">multiscale::ERR_MSG</a>.</p>
 
 </div>
 </div>
@@ -465,9 +426,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00072">72</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00071">71</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00092">areValidParameters()</a>.</p>
+<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00091">areValidParameters()</a>.</p>
 
 <p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -506,11 +467,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00062">62</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00061">61</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
 
 <p>References <a class="el" href="NumberIteratorType_8hpp_source.html#l00009">multiscale::LEXICOGRAPHIC</a>.</p>
 
-<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00092">areValidParameters()</a>.</p>
+<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00091">areValidParameters()</a>.</p>
 
 <p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -549,9 +510,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00067">67</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
+<p>Definition at line <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00066">66</a> of file <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html">PolarMapCsvToInputFiles.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00092">areValidParameters()</a>.</p>
+<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00091">areValidParameters()</a>.</p>
 
 <p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -571,8 +532,8 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_181e58fb894b6db2e2ebe48170ed182a.html">video</a></li><li class="navelem"><a class="el" href="dir_9ab520bd455cc605d2cf735513bae990.html">circular</a></li><li class="navelem"><a class="el" href="PolarMapCsvToInputFiles_8cpp.html">PolarMapCsvToInputFiles.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_fc26e3a6d4f7a64083c4d29e0277dd16.html">video</a></li><li class="navelem"><a class="el" href="dir_07ce0d4bac9f634ed9a99a16be82ce11.html">circular</a></li><li class="navelem"><a class="el" href="dir_110a185220ab5db810316bd4de12f664.html">src</a></li><li class="navelem"><a class="el" href="PolarMapCsvToInputFiles_8cpp.html">PolarMapCsvToInputFiles.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:53 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

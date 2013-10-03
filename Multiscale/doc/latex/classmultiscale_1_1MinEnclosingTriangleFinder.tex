@@ -12,7 +12,8 @@ Class for computing the minimum area enclosing triangle for a given polygon.
 
 
 
-Collaboration diagram for multiscale\-:\-:Min\-Enclosing\-Triangle\-Finder\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:Min\-Enclosing\-Triangle\-Finder\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -136,6 +137,33 @@ unsigned int \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a92409868a
 \item 
 vector$<$ Point2f $>$ \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_add5aecf2c138345091d55076bdc253a4}{polygon}
 \end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const bool \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a951b35e4f359e61301deb0840abea51a}{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E} = true
+\item 
+static const unsigned int \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_ab3251c940d6ca18e9339d1d168390ab6}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W} = 1
+\item 
+static const unsigned int \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_ab44440be62a75f528ccc11753ce66b52}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E} = 2
+\item 
+static const unsigned int \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a55ae42aad114fcd3d1b17ae181e3cdfb}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L} = 3
+\item 
+static const unsigned int \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a2d3db503338bc7b70a2e7122eb5b13e3}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T} = 4
+\item 
+static const string \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a39758a67f9d66d46f128f23fa7027d68}{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B} = \char`\"{}The position of the middle point of side B could not be determined.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a84e5ff8e5fec501f3d3b9ac6ee2416ee}{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A} = \char`\"{}The position of side B could not be determined, because \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a800413be1e1567d986a92fac4a6b937e}{gamma}(\hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a71355f44126b38a4fb55c0c92ab64816}{b}) could not be computed.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a8e551d77bc36b7696ea969823f5720d1}{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B} = \char`\"{}The position of the vertex C on side B could not be determined, because the considered lines do not intersect.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_aefe21c593b616438f9fa3591625322aa}{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S} = \char`\"{}The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect.\char`\"{}
+\item 
+static const unsigned int \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a811859188bd18d46ee6906ad4d958b3a}{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T} = 0
+\item 
+static const unsigned int \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a672ce1fc349c975d0eec1e897e8a985d}{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T} = 1
+\item 
+static const unsigned int \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder_a600e164d85dad81a0e0bfa6f89796033}{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H} = 2
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -145,7 +173,7 @@ This implementation has a linear complexity (theta(n)) with respect to the numbe
 
 J. O’\-Rourke, A. Aggarwal, S. Maddila, and M. Baldwin, ‘\-An optimal algorithm for finding minimal enclosing triangles’, Journal of Algorithms, vol. 7, no. 2, pp. 258–269, Jun. 1986. 
 
-Definition at line 36 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 20 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -161,6 +189,10 @@ Definition at line 36 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 Definition at line 12 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
+
+
+References a, area, b, c, nr\-Of\-Points, and validation\-Flag.
+
 \hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a356eccb6cce71d00144007df0bee1e5e}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!$\sim$\-Min\-Enclosing\-Triangle\-Finder@{$\sim$\-Min\-Enclosing\-Triangle\-Finder}}
 \index{$\sim$\-Min\-Enclosing\-Triangle\-Finder@{$\sim$\-Min\-Enclosing\-Triangle\-Finder}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
 \subsubsection[{$\sim$\-Min\-Enclosing\-Triangle\-Finder}]{\setlength{\rightskip}{0pt plus 5cm}Min\-Enclosing\-Triangle\-Finder\-::$\sim$\-Min\-Enclosing\-Triangle\-Finder (
@@ -170,7 +202,7 @@ Definition at line 12 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 )}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a356eccb6cce71d00144007df0bee1e5e}
 
 
-Definition at line 14 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 24 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -193,7 +225,7 @@ Advance the given index with one position.
 \end{DoxyParams}
 
 
-Definition at line 395 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 405 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -238,7 +270,7 @@ Advance b to the right chain.
 
 See paper for more details 
 
-Definition at line 92 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 102 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -296,7 +328,7 @@ The lines are specified as\-: ax + by + c = 0 O\-R ax + by + c (+/-\/) side\-C\-
 \end{DoxyParams}
 
 
-Definition at line 360 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 370 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -360,7 +392,7 @@ The lines are specified as\-: ax + by + c = 0 O\-R ax + by + c (+/-\/) side\-C\-
 \end{DoxyParams}
 
 
-Definition at line 370 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 380 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -415,7 +447,7 @@ Precondition\-: Number of points in the set is at least 1.
 \end{DoxyParams}
 
 
-Definition at line 16 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 26 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -483,7 +515,7 @@ Find the intersection points to compute gamma(point)
 \end{DoxyParams}
 
 
-Definition at line 337 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 347 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -536,7 +568,7 @@ Find the minimum area enclosing triangle for the given polygon.
 \end{DoxyParams}
 
 
-Definition at line 41 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 51 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -589,7 +621,7 @@ Find the minimum area enclosing triangle for the given polygon.
 \end{DoxyParams}
 
 
-Definition at line 71 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 81 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -623,11 +655,11 @@ Therefore, we will compute two intersection points between the lines (x y) and (
 
 See paper and formula for distance from point to a line for more details 
 
-Definition at line 320 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 330 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
-References a, multiscale\-::\-Geometry2\-D\-::are\-On\-The\-Same\-Side\-Of\-Line(), c, E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B, find\-Gamma\-Intersection\-Points(), polygon, predecessor(), side\-B\-End\-Vertex, side\-B\-Start\-Vertex, side\-C\-End\-Vertex, side\-C\-Start\-Vertex, and successor().
+References a, multiscale\-::\-Geometry2\-D\-::are\-On\-The\-Same\-Side\-Of\-Line(), c, E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B, find\-Gamma\-Intersection\-Points(), M\-S\-\_\-throw, polygon, predecessor(), side\-B\-End\-Vertex, side\-B\-Start\-Vertex, side\-C\-End\-Vertex, side\-C\-Start\-Vertex, and successor().
 
 
 
@@ -684,7 +716,7 @@ See paper and formula for distance from point to a line for more details
 \end{DoxyParams}
 
 
-Definition at line 301 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 311 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -736,7 +768,7 @@ See paper for more details
 \end{DoxyParams}
 
 
-Definition at line 285 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 295 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -788,7 +820,7 @@ See paper for more details
 \end{DoxyParams}
 
 
-Definition at line 294 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 304 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -828,7 +860,7 @@ Initialise the polygon and other class' fields.
 \end{DoxyParams}
 
 
-Definition at line 28 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 38 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -873,7 +905,7 @@ Initialisation of the algorithm variables.
 
 
 
-Definition at line 63 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 73 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -912,7 +944,7 @@ Initialise polygon as the convex hull of the given set of points.
 \end{DoxyParams}
 
 
-Definition at line 35 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 45 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -954,7 +986,7 @@ Check if/where the line determined by gamma\-Point and polygon\mbox{[}polygon\-P
 \end{DoxyParams}
 
 
-Definition at line 232 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 242 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1007,7 +1039,7 @@ Check if the line determined by gamma\-Point and polygon\mbox{[}polygon\-Point\-
 \end{DoxyParams}
 
 
-Definition at line 226 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 236 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1060,7 +1092,7 @@ If (gamma(x) x) intersects P between successor\-Or\-Predecessor\-Index and point
 \end{DoxyParams}
 
 
-Definition at line 256 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 266 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1113,7 +1145,7 @@ Check if the line determined by gamma\-Point and polygon\mbox{[}polygon\-Point\-
 \end{DoxyParams}
 
 
-Definition at line 220 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 230 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1169,7 +1201,7 @@ Check if the angle of the flush edge or its opposite angle lie between the angle
 \end{DoxyParams}
 
 
-Definition at line 264 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 274 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1225,7 +1257,7 @@ Check if the angle of the line (gamma(p) p) or its opposite angle lie between an
 \end{DoxyParams}
 
 
-Definition at line 277 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 287 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1278,7 +1310,7 @@ Check if the angle of the line (gamma(p) p) or its opposite angle is equal to th
 \end{DoxyParams}
 
 
-Definition at line 281 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 291 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1323,7 +1355,7 @@ Update the triangle vertices after all sides were set and check if a local minim
 
 See paper for more details 
 
-Definition at line 165 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 175 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1368,7 +1400,7 @@ Check if tangency for side B was not obtained.
 
 See paper for more details 
 
-Definition at line 119 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 129 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1415,7 +1447,7 @@ This means that all midpoints of the triangle should touch the polygon
 
 See paper for more details 
 
-Definition at line 175 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 185 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1470,7 +1502,7 @@ The equation of the line is considered in the general form\-: ax + by + c = 0
 \end{DoxyParams}
 
 
-Definition at line 382 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 392 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1515,7 +1547,7 @@ Return the middle point of side B.
 
 
 
-Definition at line 207 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 217 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1560,7 +1592,7 @@ Move \char`\"{}a\char`\"{} if it is low and \char`\"{}b\char`\"{} if it is high.
 
 See paper for more details 
 
-Definition at line 98 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 108 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1612,7 +1644,7 @@ The predecessor of the first polygon point is the last polygon point (circular r
 \end{DoxyParams}
 
 
-Definition at line 403 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 413 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1654,7 +1686,7 @@ Return the minimum area enclosing triangle in case the given polygon has at most
 \end{DoxyParams}
 
 
-Definition at line 52 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 62 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1699,7 +1731,7 @@ Search for the tangency of side B.
 
 See paper for more details 
 
-Definition at line 110 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 120 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1751,7 +1783,7 @@ The succesor of the last polygon point is the first polygon point (circular refe
 \end{DoxyParams}
 
 
-Definition at line 399 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 409 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1793,7 +1825,7 @@ Update the current minimum area enclosing triangle if the newly obtained one has
 \end{DoxyParams}
 
 
-Definition at line 193 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 203 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1838,11 +1870,11 @@ Set side B if tangency for side B was obtained.
 
 See paper for more details 
 
-Definition at line 155 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 165 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
-References b, E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A, gamma(), polygon, side\-B\-End\-Vertex, side\-B\-Start\-Vertex, V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T, and validation\-Flag.
+References b, E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A, gamma(), M\-S\-\_\-throw, polygon, side\-B\-End\-Vertex, side\-B\-Start\-Vertex, V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T, and validation\-Flag.
 
 
 
@@ -1883,7 +1915,7 @@ Update sides B and possibly A if tangency for side B was not obtained.
 
 See paper for more details 
 
-Definition at line 137 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 147 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1928,7 +1960,7 @@ Update sides A and C.
 
 Side C will have as start and end vertices the polygon points \char`\"{}c\char`\"{} and \char`\"{}c-\/1\char`\"{} Side A will have as start and end vertices the polygon points \char`\"{}a\char`\"{} and \char`\"{}a-\/1\char`\"{} 
 
-Definition at line 129 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
+Definition at line 139 of file Min\-Enclosing\-Triangle\-Finder.\-cpp.
 
 
 
@@ -1968,62 +2000,149 @@ Here is the caller graph for this function\-:\nopagebreak
 \subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::a\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_acb13371219bdd9b7c57131f1535e4c89}
 Index of point \char`\"{}a\char`\"{}; see paper for more details 
 
-Definition at line 61 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 45 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
-Referenced by find\-Vertex\-C\-On\-Side\-B(), gamma(), initialise\-Algorithm\-Variables(), is\-Not\-B\-Tangency(), is\-Valid\-Minimal\-Triangle(), line\-Equation\-Parameters(), move\-A\-If\-Low\-And\-B\-If\-High(), search\-For\-B\-Tangency(), update\-Sides\-B\-A(), and update\-Sides\-C\-A().
+Referenced by find\-Vertex\-C\-On\-Side\-B(), gamma(), initialise\-Algorithm\-Variables(), is\-Not\-B\-Tangency(), is\-Valid\-Minimal\-Triangle(), line\-Equation\-Parameters(), Min\-Enclosing\-Triangle\-Finder(), move\-A\-If\-Low\-And\-B\-If\-High(), search\-For\-B\-Tangency(), update\-Sides\-B\-A(), and update\-Sides\-C\-A().
 
 \hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a64ea18728dc70fd6235961c12802123a}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!area@{area}}
 \index{area@{area}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
 \subsubsection[{area}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::area\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a64ea18728dc70fd6235961c12802123a}
 Area of the current considered enclosing triangle 
 
-Definition at line 59 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 43 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
-Referenced by update\-Min\-Enclosing\-Triangle().
+Referenced by Min\-Enclosing\-Triangle\-Finder(), and update\-Min\-Enclosing\-Triangle().
 
 \hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a71355f44126b38a4fb55c0c92ab64816}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!b@{b}}
 \index{b@{b}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
 \subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::b\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a71355f44126b38a4fb55c0c92ab64816}
 Index of point \char`\"{}b\char`\"{}; see paper for more details 
 
-Definition at line 62 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 46 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
-Referenced by advance\-B\-To\-Right\-Chain(), initialise\-Algorithm\-Variables(), is\-Not\-B\-Tangency(), is\-Valid\-Minimal\-Triangle(), line\-Equation\-Parameters(), move\-A\-If\-Low\-And\-B\-If\-High(), search\-For\-B\-Tangency(), update\-Side\-B(), and update\-Sides\-B\-A().
+Referenced by advance\-B\-To\-Right\-Chain(), initialise\-Algorithm\-Variables(), is\-Not\-B\-Tangency(), is\-Valid\-Minimal\-Triangle(), line\-Equation\-Parameters(), Min\-Enclosing\-Triangle\-Finder(), move\-A\-If\-Low\-And\-B\-If\-High(), search\-For\-B\-Tangency(), update\-Side\-B(), and update\-Sides\-B\-A().
 
 \hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a758f39b2d0cf35337f28d8ed871c2c0b}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!c@{c}}
 \index{c@{c}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
 \subsubsection[{c}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::c\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a758f39b2d0cf35337f28d8ed871c2c0b}
 Index of point \char`\"{}c\char`\"{}; see paper for more details 
 
-Definition at line 63 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 47 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
-Referenced by find\-Min\-Enclosing\-Triangle(), find\-Vertex\-C\-On\-Side\-B(), gamma(), height(), initialise\-Algorithm\-Variables(), intersects(), line\-Equation\-Parameters(), and update\-Sides\-C\-A().
+Referenced by find\-Min\-Enclosing\-Triangle(), find\-Vertex\-C\-On\-Side\-B(), gamma(), height(), initialise\-Algorithm\-Variables(), intersects(), line\-Equation\-Parameters(), Min\-Enclosing\-Triangle\-Finder(), and update\-Sides\-C\-A().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a951b35e4f359e61301deb0840abea51a}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E@{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E}}
+\index{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E@{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}const bool Min\-Enclosing\-Triangle\-Finder\-::\-C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a951b35e4f359e61301deb0840abea51a}
+
+
+Definition at line 353 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+
+
+Referenced by initialise\-Convex\-Polygon().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a39758a67f9d66d46f128f23fa7027d68}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}}
+\index{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}]{\setlength{\rightskip}{0pt plus 5cm}const string Min\-Enclosing\-Triangle\-Finder\-::\-E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B = \char`\"{}The position of the middle point of side B could not be determined.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a39758a67f9d66d46f128f23fa7027d68}
+
+
+Definition at line 360 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a84e5ff8e5fec501f3d3b9ac6ee2416ee}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A@{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}}
+\index{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A@{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}]{\setlength{\rightskip}{0pt plus 5cm}const string Min\-Enclosing\-Triangle\-Finder\-::\-E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A = \char`\"{}The position of side B could not be determined, because {\bf gamma}({\bf b}) could not be computed.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a84e5ff8e5fec501f3d3b9ac6ee2416ee}
+
+
+Definition at line 361 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+
+
+Referenced by update\-Side\-B().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_aefe21c593b616438f9fa3591625322aa}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S@{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}}
+\index{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S@{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string Min\-Enclosing\-Triangle\-Finder\-::\-E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S = \char`\"{}The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_aefe21c593b616438f9fa3591625322aa}
+
+
+Definition at line 363 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a8e551d77bc36b7696ea969823f5720d1}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}}
+\index{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}]{\setlength{\rightskip}{0pt plus 5cm}const string Min\-Enclosing\-Triangle\-Finder\-::\-E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B = \char`\"{}The position of the vertex C on side B could not be determined, because the considered lines do not intersect.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a8e551d77bc36b7696ea969823f5720d1}
+
+
+Definition at line 362 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+
+
+Referenced by find\-Vertex\-C\-On\-Side\-B().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_ab44440be62a75f528ccc11753ce66b52}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}}
+\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Min\-Enclosing\-Triangle\-Finder\-::\-I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_ab44440be62a75f528ccc11753ce66b52}
+
+
+Definition at line 356 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+
+
+Referenced by intersects\-Above(), and intersects\-Above\-Or\-Below().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_ab3251c940d6ca18e9339d1d168390ab6}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}}
+\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Min\-Enclosing\-Triangle\-Finder\-::\-I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_ab3251c940d6ca18e9339d1d168390ab6}
+
+
+Definition at line 355 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+
+
+Referenced by intersects(), intersects\-Above\-Or\-Below(), and intersects\-Below().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a55ae42aad114fcd3d1b17ae181e3cdfb}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}}
+\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Min\-Enclosing\-Triangle\-Finder\-::\-I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L = 3\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a55ae42aad114fcd3d1b17ae181e3cdfb}
+
+
+Definition at line 357 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+
+
+Referenced by intersects().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a2d3db503338bc7b70a2e7122eb5b13e3}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}}
+\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Min\-Enclosing\-Triangle\-Finder\-::\-I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a2d3db503338bc7b70a2e7122eb5b13e3}
+
+
+Definition at line 358 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 \hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a92409868a6731f5e41878085f3ac0f73}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!nr\-Of\-Points@{nr\-Of\-Points}}
 \index{nr\-Of\-Points@{nr\-Of\-Points}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
 \subsubsection[{nr\-Of\-Points}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::nr\-Of\-Points\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a92409868a6731f5e41878085f3ac0f73}
 Number of points defining the polygon 
 
-Definition at line 65 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 49 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
-Referenced by find\-Min\-Enclosing\-Triangle(), initialise\-Algorithm\-Variables(), predecessor(), and successor().
+Referenced by find\-Min\-Enclosing\-Triangle(), initialise\-Algorithm\-Variables(), Min\-Enclosing\-Triangle\-Finder(), predecessor(), and successor().
 
 \hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_add5aecf2c138345091d55076bdc253a4}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!polygon@{polygon}}
 \index{polygon@{polygon}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
 \subsubsection[{polygon}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$Point2f$>$ multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::polygon\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_add5aecf2c138345091d55076bdc253a4}
 Polygon for which the minimum area enclosing triangle is computed 
 
-Definition at line 67 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 51 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -2034,7 +2153,7 @@ Referenced by find(), find\-Vertex\-C\-On\-Side\-B(), gamma(), height(), initial
 \subsubsection[{side\-A\-End\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::side\-A\-End\-Vertex\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a132a1e2eed61d579e6038089fe08d150}
 Ending vertex for side A of triangle 
 
-Definition at line 51 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 35 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -2045,7 +2164,7 @@ Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), mi
 \subsubsection[{side\-A\-Start\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::side\-A\-Start\-Vertex\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a2e9e3f20e0c0d8bcf34e8ce903aabb42}
 Starting vertex for side A of triangle 
 
-Definition at line 50 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 34 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -2056,7 +2175,7 @@ Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), mi
 \subsubsection[{side\-B\-End\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::side\-B\-End\-Vertex\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a8e3929795823c49572ff65a4f04462c6}
 Ending vertex for side B of triangle 
 
-Definition at line 54 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 38 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -2067,7 +2186,7 @@ Referenced by find\-Vertex\-C\-On\-Side\-B(), is\-Local\-Minimal\-Triangle(), is
 \subsubsection[{side\-B\-Start\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::side\-B\-Start\-Vertex\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a5f6c0f9361e4aab168f068f08b700742}
 Starting vertex for side B of triangle 
 
-Definition at line 53 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 37 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -2078,7 +2197,7 @@ Referenced by find\-Vertex\-C\-On\-Side\-B(), is\-Local\-Minimal\-Triangle(), is
 \subsubsection[{side\-C\-End\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::side\-C\-End\-Vertex\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a3f0f5bbef4e89caed8d153f1fc2eccea}
 Ending vertex for side C of triangle 
 
-Definition at line 57 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 41 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -2089,11 +2208,44 @@ Referenced by find\-Vertex\-C\-On\-Side\-B(), is\-Local\-Minimal\-Triangle(), is
 \subsubsection[{side\-C\-Start\-Vertex}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::side\-C\-Start\-Vertex\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a877d0c34c4803643699d8fd176c24d4e}
 Starting vertex for side C of triangle 
 
-Definition at line 56 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 40 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
 Referenced by find\-Vertex\-C\-On\-Side\-B(), is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), middle\-Point\-Of\-Side\-B(), and update\-Sides\-C\-A().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a811859188bd18d46ee6906ad4d958b3a}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}}
+\index{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Min\-Enclosing\-Triangle\-Finder\-::\-V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a811859188bd18d46ee6906ad4d958b3a}
+
+
+Definition at line 365 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+
+
+Referenced by is\-Valid\-Minimal\-Triangle(), and update\-Sides\-B\-A().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a672ce1fc349c975d0eec1e897e8a985d}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}}
+\index{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Min\-Enclosing\-Triangle\-Finder\-::\-V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a672ce1fc349c975d0eec1e897e8a985d}
+
+
+Definition at line 366 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+
+
+Referenced by is\-Valid\-Minimal\-Triangle(), and update\-Side\-B().
+
+\hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a600e164d85dad81a0e0bfa6f89796033}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}}
+\index{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
+\subsubsection[{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int Min\-Enclosing\-Triangle\-Finder\-::\-V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a600e164d85dad81a0e0bfa6f89796033}
+
+
+Definition at line 367 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+
+
+
+Referenced by update\-Sides\-B\-A().
 
 \hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_a19f9149638eddeec22b775eef632c6ef}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!validation\-Flag@{validation\-Flag}}
 \index{validation\-Flag@{validation\-Flag}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
@@ -2105,18 +2257,18 @@ Validation flag can take the following values\-:
 \item V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H. 
 \end{DoxyItemize}
 
-Definition at line 40 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 24 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
-Referenced by is\-Valid\-Minimal\-Triangle(), update\-Side\-B(), and update\-Sides\-B\-A().
+Referenced by is\-Valid\-Minimal\-Triangle(), Min\-Enclosing\-Triangle\-Finder(), update\-Side\-B(), and update\-Sides\-B\-A().
 
 \hypertarget{classmultiscale_1_1MinEnclosingTriangleFinder_adb758ed8b7e8758436d9f1bb381e017e}{\index{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}!vertex\-A@{vertex\-A}}
 \index{vertex\-A@{vertex\-A}!multiscale::MinEnclosingTriangleFinder@{multiscale\-::\-Min\-Enclosing\-Triangle\-Finder}}
 \subsubsection[{vertex\-A}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::vertex\-A\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_adb758ed8b7e8758436d9f1bb381e017e}
 Vertex A of the current considered enclosing triangle 
 
-Definition at line 46 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 30 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -2127,7 +2279,7 @@ Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), mi
 \subsubsection[{vertex\-B}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::vertex\-B\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a18e5ea5e0b341b3d02c4a75887f44c9c}
 Vertex B of the current considered enclosing triangle 
 
-Definition at line 47 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 31 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -2138,7 +2290,7 @@ Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), an
 \subsubsection[{vertex\-C}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::vertex\-C\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1MinEnclosingTriangleFinder_a0fc6887251f73b19714f39888534cdaa}
 Vertex C of the current considered enclosing triangle 
 
-Definition at line 48 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
+Definition at line 32 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
 
 
 
@@ -2148,5 +2300,5 @@ Referenced by is\-Local\-Minimal\-Triangle(), is\-Valid\-Minimal\-Triangle(), mi
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-include/multiscale/util/\hyperlink{MinEnclosingTriangleFinder_8hpp}{Min\-Enclosing\-Triangle\-Finder.\-hpp}\item 
-src/multiscale/util/\hyperlink{MinEnclosingTriangleFinder_8cpp}{Min\-Enclosing\-Triangle\-Finder.\-cpp}\end{DoxyCompactItemize}
+modules/util/include/multiscale/util/\hyperlink{MinEnclosingTriangleFinder_8hpp}{Min\-Enclosing\-Triangle\-Finder.\-hpp}\item 
+modules/util/src/\hyperlink{MinEnclosingTriangleFinder_8cpp}{Min\-Enclosing\-Triangle\-Finder.\-cpp}\end{DoxyCompactItemize}

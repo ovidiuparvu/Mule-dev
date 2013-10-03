@@ -1,23 +1,19 @@
-\hypertarget{MapCartesianToPolarScript_8cpp}{\section{src/multiscale/video/circular/\-Map\-Cartesian\-To\-Polar\-Script.cpp File Reference}
-\label{MapCartesianToPolarScript_8cpp}\index{src/multiscale/video/circular/\-Map\-Cartesian\-To\-Polar\-Script.\-cpp@{src/multiscale/video/circular/\-Map\-Cartesian\-To\-Polar\-Script.\-cpp}}
+\hypertarget{MapCartesianToPolarScript_8cpp}{\section{modules/video/circular/src/\-Map\-Cartesian\-To\-Polar\-Script.cpp File Reference}
+\label{MapCartesianToPolarScript_8cpp}\index{modules/video/circular/src/\-Map\-Cartesian\-To\-Polar\-Script.\-cpp@{modules/video/circular/src/\-Map\-Cartesian\-To\-Polar\-Script.\-cpp}}
 }
+{\ttfamily \#include \char`\"{}multiscale/core/\-Multiscale.\-hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}multiscale/video/circular/\-Cartesian\-To\-Polar\-Converter.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multiscale/exception/\-Exception\-Handler.\-hpp\char`\"{}}\\*
 {\ttfamily \#include $<$boost/program\-\_\-options.\-hpp$>$}\\*
 {\ttfamily \#include $<$iostream$>$}\\*
-Include dependency graph for Map\-Cartesian\-To\-Polar\-Script.\-cpp\-:\nopagebreak
+Include dependency graph for Map\-Cartesian\-To\-Polar\-Script.\-cpp\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{MapCartesianToPolarScript_8cpp__incl}
 \end{center}
 \end{figure}
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{MapCartesianToPolarScript_8cpp_aed46bc434b6a10f9663dbbe5fd15349f}{E\-R\-R\-\_\-\-C\-O\-D\-E}~1
-\item 
-\#define \hyperlink{MapCartesianToPolarScript_8cpp_a7a18f09d3bb5a5f03a55546e38f8efd8}{E\-R\-R\-\_\-\-M\-S\-G}~\char`\"{}An error occurred\-: \char`\"{}
-\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,31 +29,6 @@ bool \hyperlink{MapCartesianToPolarScript_8cpp_a9a12fbda3c38c990d0ba2df173b00a23
 \item 
 int \hyperlink{MapCartesianToPolarScript_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
 \end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\hypertarget{MapCartesianToPolarScript_8cpp_aed46bc434b6a10f9663dbbe5fd15349f}{\index{Map\-Cartesian\-To\-Polar\-Script.\-cpp@{Map\-Cartesian\-To\-Polar\-Script.\-cpp}!E\-R\-R\-\_\-\-C\-O\-D\-E@{E\-R\-R\-\_\-\-C\-O\-D\-E}}
-\index{E\-R\-R\-\_\-\-C\-O\-D\-E@{E\-R\-R\-\_\-\-C\-O\-D\-E}!MapCartesianToPolarScript.cpp@{Map\-Cartesian\-To\-Polar\-Script.\-cpp}}
-\subsubsection[{E\-R\-R\-\_\-\-C\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-C\-O\-D\-E~1}}\label{MapCartesianToPolarScript_8cpp_aed46bc434b6a10f9663dbbe5fd15349f}
-
-
-Definition at line 47 of file Map\-Cartesian\-To\-Polar\-Script.\-cpp.
-
-
-
-Referenced by main().
-
-\hypertarget{MapCartesianToPolarScript_8cpp_a7a18f09d3bb5a5f03a55546e38f8efd8}{\index{Map\-Cartesian\-To\-Polar\-Script.\-cpp@{Map\-Cartesian\-To\-Polar\-Script.\-cpp}!E\-R\-R\-\_\-\-M\-S\-G@{E\-R\-R\-\_\-\-M\-S\-G}}
-\index{E\-R\-R\-\_\-\-M\-S\-G@{E\-R\-R\-\_\-\-M\-S\-G}!MapCartesianToPolarScript.cpp@{Map\-Cartesian\-To\-Polar\-Script.\-cpp}}
-\subsubsection[{E\-R\-R\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-M\-S\-G~\char`\"{}An error occurred\-: \char`\"{}}}\label{MapCartesianToPolarScript_8cpp_a7a18f09d3bb5a5f03a55546e38f8efd8}
-
-
-Definition at line 48 of file Map\-Cartesian\-To\-Polar\-Script.\-cpp.
-
-
-
-Referenced by is\-Valid\-Output\-Type(), main(), and print\-Wrong\-Parameters().
-
 
 
 \subsection{Function Documentation}
@@ -118,7 +89,7 @@ Definition at line 79 of file Map\-Cartesian\-To\-Polar\-Script.\-cpp.
 
 
 
-References E\-R\-R\-\_\-\-M\-S\-G.
+References multiscale\-::\-E\-R\-R\-\_\-\-M\-S\-G.
 
 
 
@@ -149,7 +120,7 @@ Definition at line 126 of file Map\-Cartesian\-To\-Polar\-Script.\-cpp.
 
 
 
-References are\-Valid\-Parameters(), multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::convert(), E\-R\-R\-\_\-\-C\-O\-D\-E, E\-R\-R\-\_\-\-M\-S\-G, and print\-Wrong\-Parameters().
+References are\-Valid\-Parameters(), multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::convert(), multiscale\-::\-E\-R\-R\-\_\-\-C\-O\-D\-E, and print\-Wrong\-Parameters().
 
 
 
@@ -187,5 +158,5 @@ Definition at line 73 of file Map\-Cartesian\-To\-Polar\-Script.\-cpp.
 
 
 
-References E\-R\-R\-\_\-\-M\-S\-G.
+References multiscale\-::\-E\-R\-R\-\_\-\-M\-S\-G.
 

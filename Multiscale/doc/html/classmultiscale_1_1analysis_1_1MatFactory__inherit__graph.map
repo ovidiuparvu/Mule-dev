@@ -1,4 +1,4 @@
 <map id="multiscale::analysis::MatFactory" name="multiscale::analysis::MatFactory">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid." alt="" coords="5,347,203,571"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid." alt="" coords="227,355,424,562"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid." alt="" coords="5,400,253,763"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid." alt="" coords="277,409,475,754"/>
 </map>

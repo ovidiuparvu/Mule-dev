@@ -1,18 +1,20 @@
-\hypertarget{RegionDetector_8hpp}{\section{include/multiscale/analysis/spatial/\-Region\-Detector.hpp File Reference}
-\label{RegionDetector_8hpp}\index{include/multiscale/analysis/spatial/\-Region\-Detector.\-hpp@{include/multiscale/analysis/spatial/\-Region\-Detector.\-hpp}}
+\hypertarget{RegionDetector_8hpp}{\section{modules/analysis/spatial/include/multiscale/analysis/spatial/\-Region\-Detector.hpp File Reference}
+\label{RegionDetector_8hpp}\index{modules/analysis/spatial/include/multiscale/analysis/spatial/\-Region\-Detector.\-hpp@{modules/analysis/spatial/include/multiscale/analysis/spatial/\-Region\-Detector.\-hpp}}
 }
 {\ttfamily \#include \char`\"{}multiscale/analysis/spatial/\-Detector.\-hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}multiscale/analysis/spatial/\-Region.\-hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}opencv2/imgproc/imgproc.\-hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}opencv2/highgui/highgui.\-hpp\char`\"{}}\\*
-Include dependency graph for Region\-Detector.\-hpp\-:\nopagebreak
+Include dependency graph for Region\-Detector.\-hpp\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{RegionDetector_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\-:\nopagebreak
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -31,362 +33,22 @@ namespace \hyperlink{namespacemultiscale}{multiscale}
 \item 
 namespace \hyperlink{namespacemultiscale_1_1analysis}{multiscale\-::analysis}
 \end{DoxyCompactItemize}
-\subsection*{Macros}
+\subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{RegionDetector_8hpp_a03d08fcd24072f600fedefea105192c5}{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}~\char`\"{}Average clusteredness degree\-: \char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a9502811d7bba38588cad6220717ba25a}{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y}~\char`\"{}Average density\-: \char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a14b7e799d0e3e29cfe0e2e40d4b57474}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-A\-L\-P\-H\-A}~\char`\"{}Alpha\char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a52062c043da065ed04cda0561043d1b5}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-B\-E\-T\-A}~\char`\"{}Beta\char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_af43a33c470dc555abb7823d1785eeb42}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-K\-E\-R\-N\-E\-L}~\char`\"{}Gaussian blur kernel size\char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a3d9d5b70f8e60cfaf583ca65d0244d74}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-O\-R\-P\-H}~\char`\"{}Morphological open, number of iterations\char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a057d75fb331a9d1658951a2f59fd7c6d}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-C\-A\-N\-N\-Y}~\char`\"{}Canny lower threshold\char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a5b270c1a9c220cb7d495ecd14590ad2f}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N}~\char`\"{}Epsilon\char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a89f82c8c6d79b896d6157583c61d8d74}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H}~\char`\"{}Region area threshold\char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_ac19d7ea03e314da1a1e96a5355cfeb67}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}~\char`\"{}Threshold value\char`\"{}
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a379803797373615b9e8750e3a1c1b79e}{U\-S\-E\-\_\-\-C\-A\-N\-N\-Y\-\_\-\-L2}~true
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a184024ccbc2a88f3d6748c1d7a265477}{C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D}~false
-\item 
-\#define \hyperlink{RegionDetector_8hpp_afb63188ee949aaf32583a37b01b8fe39}{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}~1.\-0
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a7b1faa699d49c4aa13a7b5b20c2b50b9}{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}~3.\-0
-\item 
-\#define \hyperlink{RegionDetector_8hpp_af80faafc6dc69d8b17a6ddfecc604c7b}{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}~-\/100
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a2507e3d91395b6e2c96dfcd1e2bb7df5}{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}~100
-\item 
-\#define \hyperlink{RegionDetector_8hpp_ad89cd130c64cf199461b25ce74f5d6c7}{A\-L\-P\-H\-A\-\_\-\-M\-A\-X}~1000
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a5805c5a1c961dd86013b9d2a33988b98}{B\-E\-T\-A\-\_\-\-M\-A\-X}~200
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a0b0bfd77700b86e4860923b5eb902ceb}{K\-E\-R\-N\-E\-L\-\_\-\-M\-A\-X}~2000
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a18fb885f360856823b73a2fe092bbe80}{M\-O\-R\-P\-H\-\_\-\-I\-T\-E\-R\-\_\-\-M\-A\-X}~100
-\item 
-\#define \hyperlink{RegionDetector_8hpp_aa34eb5b9041c17d6bcfbe595f2afbe45}{C\-A\-N\-N\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}~100
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a98ec0e52f8069544e6ed952c7de1dba2}{E\-P\-S\-I\-L\-O\-N\-\_\-\-M\-A\-X}~100
-\item 
-\#define \hyperlink{RegionDetector_8hpp_ad9b19b601c85b0ec4f89b2e8c9f9c985}{R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}~200000
-\item 
-\#define \hyperlink{RegionDetector_8hpp_ab468cd6410e5d23829fc609c96431489}{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}~255
-\item 
-\#define \hyperlink{RegionDetector_8hpp_ab9c3e085e7ed8e965b8bfbfa49fcfe6a}{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}~0
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a8f47a4307f9eea88d06b5383da431917}{I\-N\-T\-E\-N\-S\-I\-T\-Y\-\_\-\-M\-A\-X}~255
-\item 
-\#define \hyperlink{RegionDetector_8hpp_af99a2cbd49b27920b9ada8cbb94f3941}{P\-O\-L\-Y\-G\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D}~true
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a19df04c3f86479da35968fed776d2142}{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}~10
-\item 
-\#define \hyperlink{RegionDetector_8hpp_a5079a6aecf30e939ba1344b2e427cbec}{E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}~4
+const int \hyperlink{RegionDetector_8hpp_a3b9b2d597a3c76a1b1f9c2505971b8a4}{E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S} = 4
 \end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\hypertarget{RegionDetector_8hpp_ad89cd130c64cf199461b25ce74f5d6c7}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!A\-L\-P\-H\-A\-\_\-\-M\-A\-X@{A\-L\-P\-H\-A\-\_\-\-M\-A\-X}}
-\index{A\-L\-P\-H\-A\-\_\-\-M\-A\-X@{A\-L\-P\-H\-A\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{A\-L\-P\-H\-A\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-L\-P\-H\-A\-\_\-\-M\-A\-X~1000}}\label{RegionDetector_8hpp_ad89cd130c64cf199461b25ce74f5d6c7}
-
-
-Definition at line 33 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::convert\-Alpha(), and multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a7b1faa699d49c4aa13a7b5b20c2b50b9}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}}
-\index{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X~3.\-0}}\label{RegionDetector_8hpp_a7b1faa699d49c4aa13a7b5b20c2b50b9}
-
-
-Definition at line 29 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::convert\-Alpha().
-
-\hypertarget{RegionDetector_8hpp_afb63188ee949aaf32583a37b01b8fe39}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}}
-\index{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N~1.\-0}}\label{RegionDetector_8hpp_afb63188ee949aaf32583a37b01b8fe39}
-
-
-Definition at line 28 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::convert\-Alpha().
-
-\hypertarget{RegionDetector_8hpp_a5805c5a1c961dd86013b9d2a33988b98}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!B\-E\-T\-A\-\_\-\-M\-A\-X@{B\-E\-T\-A\-\_\-\-M\-A\-X}}
-\index{B\-E\-T\-A\-\_\-\-M\-A\-X@{B\-E\-T\-A\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{B\-E\-T\-A\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-E\-T\-A\-\_\-\-M\-A\-X~200}}\label{RegionDetector_8hpp_a5805c5a1c961dd86013b9d2a33988b98}
-
-
-Definition at line 34 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::convert\-Beta(), and multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a2507e3d91395b6e2c96dfcd1e2bb7df5}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}}
-\index{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X~100}}\label{RegionDetector_8hpp_a2507e3d91395b6e2c96dfcd1e2bb7df5}
-
-
-Definition at line 31 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::convert\-Beta().
-
-\hypertarget{RegionDetector_8hpp_af80faafc6dc69d8b17a6ddfecc604c7b}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}}
-\index{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N~-\/100}}\label{RegionDetector_8hpp_af80faafc6dc69d8b17a6ddfecc604c7b}
-
-
-Definition at line 30 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::convert\-Beta().
-
-\hypertarget{RegionDetector_8hpp_aa34eb5b9041c17d6bcfbe595f2afbe45}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!C\-A\-N\-N\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X@{C\-A\-N\-N\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}}
-\index{C\-A\-N\-N\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X@{C\-A\-N\-N\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{C\-A\-N\-N\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-A\-N\-N\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X~100}}\label{RegionDetector_8hpp_aa34eb5b9041c17d6bcfbe595f2afbe45}
-
-
-Definition at line 37 of file Region\-Detector.\-hpp.
-
-\hypertarget{RegionDetector_8hpp_a184024ccbc2a88f3d6748c1d7a265477}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D@{C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D}}
-\index{C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D@{C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D~false}}\label{RegionDetector_8hpp_a184024ccbc2a88f3d6748c1d7a265477}
-
-
-Definition at line 26 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::is\-Valid\-Region(), multiscale\-::analysis\-::\-Region\-Detector\-::region\-Area(), and multiscale\-::analysis\-::\-Region\-Detector\-::region\-Holes\-Area().
-
-\hypertarget{RegionDetector_8hpp_a19df04c3f86479da35968fed776d2142}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S@{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}}
-\index{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S@{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S~10}}\label{RegionDetector_8hpp_a19df04c3f86479da35968fed776d2142}
-
-
-Definition at line 46 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::output\-Results\-To\-Image().
-
-\hypertarget{RegionDetector_8hpp_a5079a6aecf30e939ba1344b2e427cbec}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S@{E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}}
+\subsection{Variable Documentation}
+\hypertarget{RegionDetector_8hpp_a3b9b2d597a3c76a1b1f9c2505971b8a4}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S@{E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}}
 \index{E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S@{E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S~4}}\label{RegionDetector_8hpp_a5079a6aecf30e939ba1344b2e427cbec}
-
-
-Definition at line 48 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by convert\-Vertices().
-
-\hypertarget{RegionDetector_8hpp_a98ec0e52f8069544e6ed952c7de1dba2}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!E\-P\-S\-I\-L\-O\-N\-\_\-\-M\-A\-X@{E\-P\-S\-I\-L\-O\-N\-\_\-\-M\-A\-X}}
-\index{E\-P\-S\-I\-L\-O\-N\-\_\-\-M\-A\-X@{E\-P\-S\-I\-L\-O\-N\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{E\-P\-S\-I\-L\-O\-N\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-P\-S\-I\-L\-O\-N\-\_\-\-M\-A\-X~100}}\label{RegionDetector_8hpp_a98ec0e52f8069544e6ed952c7de1dba2}
-
-
-Definition at line 38 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a8f47a4307f9eea88d06b5383da431917}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!I\-N\-T\-E\-N\-S\-I\-T\-Y\-\_\-\-M\-A\-X@{I\-N\-T\-E\-N\-S\-I\-T\-Y\-\_\-\-M\-A\-X}}
-\index{I\-N\-T\-E\-N\-S\-I\-T\-Y\-\_\-\-M\-A\-X@{I\-N\-T\-E\-N\-S\-I\-T\-Y\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{I\-N\-T\-E\-N\-S\-I\-T\-Y\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-N\-S\-I\-T\-Y\-\_\-\-M\-A\-X~255}}\label{RegionDetector_8hpp_a8f47a4307f9eea88d06b5383da431917}
-
-
-Definition at line 42 of file Region\-Detector.\-hpp.
-
-\hypertarget{RegionDetector_8hpp_a0b0bfd77700b86e4860923b5eb902ceb}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!K\-E\-R\-N\-E\-L\-\_\-\-M\-A\-X@{K\-E\-R\-N\-E\-L\-\_\-\-M\-A\-X}}
-\index{K\-E\-R\-N\-E\-L\-\_\-\-M\-A\-X@{K\-E\-R\-N\-E\-L\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{K\-E\-R\-N\-E\-L\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define K\-E\-R\-N\-E\-L\-\_\-\-M\-A\-X~2000}}\label{RegionDetector_8hpp_a0b0bfd77700b86e4860923b5eb902ceb}
-
-
-Definition at line 35 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a18fb885f360856823b73a2fe092bbe80}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!M\-O\-R\-P\-H\-\_\-\-I\-T\-E\-R\-\_\-\-M\-A\-X@{M\-O\-R\-P\-H\-\_\-\-I\-T\-E\-R\-\_\-\-M\-A\-X}}
-\index{M\-O\-R\-P\-H\-\_\-\-I\-T\-E\-R\-\_\-\-M\-A\-X@{M\-O\-R\-P\-H\-\_\-\-I\-T\-E\-R\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{M\-O\-R\-P\-H\-\_\-\-I\-T\-E\-R\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-O\-R\-P\-H\-\_\-\-I\-T\-E\-R\-\_\-\-M\-A\-X~100}}\label{RegionDetector_8hpp_a18fb885f360856823b73a2fe092bbe80}
-
-
-Definition at line 36 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a03d08fcd24072f600fedefea105192c5}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}}
-\index{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S~\char`\"{}Average clusteredness degree\-: \char`\"{}}}\label{RegionDetector_8hpp_a03d08fcd24072f600fedefea105192c5}
+\subsubsection[{E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int E\-N\-C\-L\-O\-S\-I\-N\-G\-\_\-\-R\-E\-C\-T\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S = 4}}\label{RegionDetector_8hpp_a3b9b2d597a3c76a1b1f9c2505971b8a4}
 
 
 Definition at line 13 of file Region\-Detector.\-hpp.
 
-\hypertarget{RegionDetector_8hpp_a9502811d7bba38588cad6220717ba25a}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y@{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y}}
-\index{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y@{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y~\char`\"{}Average density\-: \char`\"{}}}\label{RegionDetector_8hpp_a9502811d7bba38588cad6220717ba25a}
 
 
-Definition at line 14 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::output\-Averaged\-Measures\-To\-Csv\-File().
-
-\hypertarget{RegionDetector_8hpp_af99a2cbd49b27920b9ada8cbb94f3941}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!P\-O\-L\-Y\-G\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D@{P\-O\-L\-Y\-G\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D}}
-\index{P\-O\-L\-Y\-G\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D@{P\-O\-L\-Y\-G\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{P\-O\-L\-Y\-G\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-O\-L\-Y\-G\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D~true}}\label{RegionDetector_8hpp_af99a2cbd49b27920b9ada8cbb94f3941}
-
-
-Definition at line 44 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::output\-Results\-To\-Image().
-
-\hypertarget{RegionDetector_8hpp_ad9b19b601c85b0ec4f89b2e8c9f9c985}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X@{R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}}
-\index{R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X@{R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X~200000}}\label{RegionDetector_8hpp_ad9b19b601c85b0ec4f89b2e8c9f9c985}
-
-
-Definition at line 39 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_ab9c3e085e7ed8e965b8bfbfa49fcfe6a}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}}
-\index{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S~0}}\label{RegionDetector_8hpp_ab9c3e085e7ed8e965b8bfbfa49fcfe6a}
-
-
-Definition at line 41 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::region\-Area(), and multiscale\-::analysis\-::\-Region\-Detector\-::region\-Clusteredness\-Degree().
-
-\hypertarget{RegionDetector_8hpp_ab468cd6410e5d23829fc609c96431489}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X@{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}}
-\index{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X@{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X~255}}\label{RegionDetector_8hpp_ab468cd6410e5d23829fc609c96431489}
-
-
-Definition at line 40 of file Region\-Detector.\-hpp.
-
-\hypertarget{RegionDetector_8hpp_a14b7e799d0e3e29cfe0e2e40d4b57474}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-A\-L\-P\-H\-A@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-A\-L\-P\-H\-A}}
-\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-A\-L\-P\-H\-A@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-A\-L\-P\-H\-A}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-A\-L\-P\-H\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-A\-L\-P\-H\-A~\char`\"{}Alpha\char`\"{}}}\label{RegionDetector_8hpp_a14b7e799d0e3e29cfe0e2e40d4b57474}
-
-
-Definition at line 16 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a52062c043da065ed04cda0561043d1b5}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-B\-E\-T\-A@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-B\-E\-T\-A}}
-\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-B\-E\-T\-A@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-B\-E\-T\-A}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-B\-E\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-B\-E\-T\-A~\char`\"{}Beta\char`\"{}}}\label{RegionDetector_8hpp_a52062c043da065ed04cda0561043d1b5}
-
-
-Definition at line 17 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a057d75fb331a9d1658951a2f59fd7c6d}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-C\-A\-N\-N\-Y@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-C\-A\-N\-N\-Y}}
-\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-C\-A\-N\-N\-Y@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-C\-A\-N\-N\-Y}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-C\-A\-N\-N\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-C\-A\-N\-N\-Y~\char`\"{}Canny lower threshold\char`\"{}}}\label{RegionDetector_8hpp_a057d75fb331a9d1658951a2f59fd7c6d}
-
-
-Definition at line 20 of file Region\-Detector.\-hpp.
-
-\hypertarget{RegionDetector_8hpp_a5b270c1a9c220cb7d495ecd14590ad2f}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N}}
-\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N~\char`\"{}Epsilon\char`\"{}}}\label{RegionDetector_8hpp_a5b270c1a9c220cb7d495ecd14590ad2f}
-
-
-Definition at line 21 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_af43a33c470dc555abb7823d1785eeb42}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-K\-E\-R\-N\-E\-L@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-K\-E\-R\-N\-E\-L}}
-\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-K\-E\-R\-N\-E\-L@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-K\-E\-R\-N\-E\-L}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-K\-E\-R\-N\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-K\-E\-R\-N\-E\-L~\char`\"{}Gaussian blur kernel size\char`\"{}}}\label{RegionDetector_8hpp_af43a33c470dc555abb7823d1785eeb42}
-
-
-Definition at line 18 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a3d9d5b70f8e60cfaf583ca65d0244d74}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-O\-R\-P\-H@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-O\-R\-P\-H}}
-\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-O\-R\-P\-H@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-O\-R\-P\-H}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-O\-R\-P\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-O\-R\-P\-H~\char`\"{}Morphological open, number of iterations\char`\"{}}}\label{RegionDetector_8hpp_a3d9d5b70f8e60cfaf583ca65d0244d74}
-
-
-Definition at line 19 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a89f82c8c6d79b896d6157583c61d8d74}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H}}
-\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H~\char`\"{}Region area threshold\char`\"{}}}\label{RegionDetector_8hpp_a89f82c8c6d79b896d6157583c61d8d74}
-
-
-Definition at line 22 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_ac19d7ea03e314da1a1e96a5355cfeb67}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}}
-\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D~\char`\"{}Threshold value\char`\"{}}}\label{RegionDetector_8hpp_ac19d7ea03e314da1a1e96a5355cfeb67}
-
-
-Definition at line 23 of file Region\-Detector.\-hpp.
-
-
-
-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
-
-\hypertarget{RegionDetector_8hpp_a379803797373615b9e8750e3a1c1b79e}{\index{Region\-Detector.\-hpp@{Region\-Detector.\-hpp}!U\-S\-E\-\_\-\-C\-A\-N\-N\-Y\-\_\-\-L2@{U\-S\-E\-\_\-\-C\-A\-N\-N\-Y\-\_\-\-L2}}
-\index{U\-S\-E\-\_\-\-C\-A\-N\-N\-Y\-\_\-\-L2@{U\-S\-E\-\_\-\-C\-A\-N\-N\-Y\-\_\-\-L2}!RegionDetector.hpp@{Region\-Detector.\-hpp}}
-\subsubsection[{U\-S\-E\-\_\-\-C\-A\-N\-N\-Y\-\_\-\-L2}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-S\-E\-\_\-\-C\-A\-N\-N\-Y\-\_\-\-L2~true}}\label{RegionDetector_8hpp_a379803797373615b9e8750e3a1c1b79e}
-
-
-Definition at line 25 of file Region\-Detector.\-hpp.
+Referenced by convert\-Vertices().
 

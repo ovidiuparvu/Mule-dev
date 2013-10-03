@@ -1,5 +1,17 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classmultiscale_1_1NumberIterator.html" title="Abstract class representing a number iterator." alt="" coords="5,48,181,77"/>
-<area shape="rect" id="node3" href="$classmultiscale_1_1LexicographicNumberIterator.html" title="Iterator class starting at 1 and ending at the provided upper bound considering that each number is f..." alt="" coords="239,5,407,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1StandardNumberIterator.html" title="Iterator class starting at 1 and iterating over all natural numbers until the provided upper bound is..." alt="" coords="229,74,416,121"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project." alt="" coords="153,404,359,433"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1CartesianToConcentrationsConverterException.html" title="Exception class for the CartesianToConcentrationsConverter class." alt="" coords="408,5,656,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1CartesianToPolarConverterException.html" title="Exception class for the CartesianToPolarConverter class." alt="" coords="437,74,627,121"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1CircularMatFactoryException.html" title="Exception class for the CircularMatFactory instances." alt="" coords="432,143,632,190"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1ClusterException.html" title="Exception class for the Cluster instances." alt="" coords="437,213,627,243"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1DetectorException.html" title="Exception class for the Detector class." alt="" coords="433,267,631,296"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1EntityException.html" title="Exception class for the Entity instances." alt="" coords="441,320,623,349"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class." alt="" coords="425,373,639,403"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1MinEnclosingTriangleFinderException.html" title="Exception class for the minimum area enclosing triangle module." alt="" coords="449,426,615,473"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1PolarCsvToInputFilesConverterException.html" title="Exception class for the PolarCsvToInputFilesConverter class." alt="" coords="439,495,625,542"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class." alt="" coords="428,565,636,611"/>
+<area shape="rect" id="node25" href="$classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html" title="Exception class for the RectangularEntityCsvToInputFilesConverter class." alt="" coords="416,634,648,681"/>
+<area shape="rect" id="node27" href="$classmultiscale_1_1RectangularMatFactoryException.html" title="Exception class for the RectangularMatFactory instances." alt="" coords="441,703,623,750"/>
+<area shape="rect" id="node29" href="$classmultiscale_1_1RegionException.html" title="Exception class for the Region instances." alt="" coords="439,773,625,803"/>
+<area shape="rect" id="node31" href="$classmultiscale_1_1SimulationClusterDetectorException.html" title="Exception class for the SimulationClusterDetector instances." alt="" coords="436,826,628,873"/>
 </map>

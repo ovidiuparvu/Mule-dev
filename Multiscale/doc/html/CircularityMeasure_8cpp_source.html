@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/analysis/spatial/CircularityMeasure.cpp Source File</title>
+<title>Multiscale: modules/analysis/spatial/src/CircularityMeasure.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('CircularityMeasure_8cpp_source.html','
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Moments contourMoments = moments(enclosingPolygon);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">double</span> nominator = (contourMoments.m00 * contourMoments.m00);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">double</span> denominator = (2 * <a class="code" href="Geometry2D_8hpp.html#a598a3330b3c21701223ee0ca14316eca">PI</a> * (contourMoments.mu20 + contourMoments.mu02));</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">double</span> denominator = (2 * <a class="code" href="classmultiscale_1_1Geometry2D.html#a7039b8bbe89283e22744c0631d597660">Geometry2D::PI</a> * (contourMoments.mu20 + contourMoments.mu02));</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> (denominator != 0) ? nominator / denominator</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                              : 0;</div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('CircularityMeasure_8cpp_source.html','
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Moments contourMoments = moments(enclosingPolygon);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">double</span> nominator = (contourMoments.m00 * contourMoments.m00);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">double</span> denominator = (2 * <a class="code" href="Geometry2D_8hpp.html#a598a3330b3c21701223ee0ca14316eca">PI</a> * (contourMoments.mu20 + contourMoments.mu02));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">double</span> denominator = (2 * <a class="code" href="classmultiscale_1_1Geometry2D.html#a7039b8bbe89283e22744c0631d597660">Geometry2D::PI</a> * (contourMoments.mu20 + contourMoments.mu02));</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> (denominator != 0) ? nominator / denominator</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                              : 0;</div>
@@ -148,8 +148,8 @@ $(document).ready(function(){initNavTree('CircularityMeasure_8cpp_source.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="CircularityMeasure_8cpp.html">CircularityMeasure.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_f0033717cfd9395379e47f6b9f751443.html">src</a></li><li class="navelem"><a class="el" href="CircularityMeasure_8cpp.html">CircularityMeasure.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

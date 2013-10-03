@@ -1,6 +1,6 @@
-<map id="include/multiscale/util/iterator/LexicographicNumberIterator.hpp" name="include/multiscale/util/iterator/LexicographicNumberIterator.hpp">
-<area shape="rect" id="node3" href="$LexicographicNumberIterator_8cpp.html" title="src/multiscale/util\l/iterator/LexicographicNumber\lIterator.cpp" alt="" coords="5,117,200,181"/>
-<area shape="rect" id="node5" href="$PolarCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/circular/PolarCsvToInputFiles\lConverter.cpp" alt="" coords="224,117,421,181"/>
-<area shape="rect" id="node7" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularCsv\lToInputFilesConverter.cpp" alt="" coords="445,117,632,181"/>
-<area shape="rect" id="node9" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularEntity\lCsvToInputFilesConverter.cpp" alt="" coords="656,117,856,181"/>
+<map id="modules/util/include/multiscale/util/iterator/LexicographicNumberIterator.hpp" name="modules/util/include/multiscale/util/iterator/LexicographicNumberIterator.hpp">
+<area shape="rect" id="node3" href="$LexicographicNumberIterator_8cpp.html" title="modules/util/src/iterator\l/LexicographicNumberIterator.cpp" alt="" coords="5,126,224,173"/>
+<area shape="rect" id="node5" href="$PolarCsvToInputFilesConverter_8cpp.html" title="modules/video/circular\l/src/PolarCsvToInputFilesConverter.cpp" alt="" coords="248,126,504,173"/>
+<area shape="rect" id="node7" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularCsvToInputFiles\lConverter.cpp" alt="" coords="528,117,741,181"/>
+<area shape="rect" id="node9" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularEntityCsvToInput\lFilesConverter.cpp" alt="" coords="765,117,984,181"/>
 </map>

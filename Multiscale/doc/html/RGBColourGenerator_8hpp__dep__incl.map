@@ -1,5 +1,5 @@
-<map id="include/multiscale/util/RGBColourGenerator.hpp" name="include/multiscale/util/RGBColourGenerator.hpp">
-<area shape="rect" id="node3" href="$SimulationClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,101,219,165"/>
-<area shape="rect" id="node5" href="$ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="243,110,427,157"/>
-<area shape="rect" id="node7" href="$RGBColourGenerator_8cpp.html" title="src/multiscale/util\l/RGBColourGenerator.cpp" alt="" coords="451,110,624,157"/>
+<map id="modules/util/include/multiscale/util/RGBColourGenerator.hpp" name="modules/util/include/multiscale/util/RGBColourGenerator.hpp">
+<area shape="rect" id="node3" href="$SimulationClusterDetector_8cpp.html" title="modules/analysis/spatial\l/src/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,101,200,165"/>
+<area shape="rect" id="node5" href="$ClusterDetector_8cpp.html" title="modules/analysis/spatial\l/src/ClusterDetector.cpp" alt="" coords="224,110,389,157"/>
+<area shape="rect" id="node7" href="$RGBColourGenerator_8cpp.html" title="modules/util/src/RGBColour\lGenerator.cpp" alt="" coords="413,110,597,157"/>
 </map>

@@ -1,12 +1,12 @@
-<map id="include/multiscale/analysis/spatial/Entity.hpp" name="include/multiscale/analysis/spatial/Entity.hpp">
-<area shape="rect" id="node3" href="$Cluster_8hpp.html" title="include/multiscale\l/analysis/spatial/Cluster.hpp" alt="" coords="441,102,628,149"/>
-<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/ClusterDetector.hpp" alt="" coords="201,198,439,245"/>
-<area shape="rect" id="node23" href="$Entity_8cpp.html" title="src/multiscale/analysis\l/spatial/Entity.cpp" alt="" coords="652,102,807,149"/>
-<area shape="rect" id="node15" href="$Silhouette_8hpp.html" title="include/multiscale\l/analysis/spatial/Silhouette.hpp" alt="" coords="463,198,665,245"/>
-<area shape="rect" id="node20" href="$Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="689,198,844,245"/>
-<area shape="rect" id="node7" href="$SimulationClusterDetector_8hpp.html" title="include/multiscale\l/analysis/spatial/cluster\l/SimulationClusterDetector.hpp" alt="" coords="136,293,339,357"/>
-<area shape="rect" id="node13" href="$ClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/ClusterDetector.cpp" alt="" coords="363,302,547,349"/>
-<area shape="rect" id="node9" href="$SimulationClusterDetector_8cpp.html" title="src/multiscale/analysis\l/spatial/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,405,219,469"/>
-<area shape="rect" id="node11" href="$SimulationDetectClusters_8cpp.html" title="src/multiscale/analysis\l/spatial/SimulationDetectClusters.cpp" alt="" coords="243,414,485,461"/>
-<area shape="rect" id="node18" href="$Silhouette_8cpp.html" title="src/multiscale/analysis\l/spatial/Silhouette.cpp" alt="" coords="571,302,725,349"/>
+<map id="modules/analysis/spatial/include/multiscale/analysis/spatial/Entity.hpp" name="modules/analysis/spatial/include/multiscale/analysis/spatial/Entity.hpp">
+<area shape="rect" id="node3" href="$Cluster_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="453,117,635,181"/>
+<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="265,229,449,293"/>
+<area shape="rect" id="node23" href="$Entity_8cpp.html" title="modules/analysis/spatial\l/src/Entity.cpp" alt="" coords="659,126,824,173"/>
+<area shape="rect" id="node15" href="$Silhouette_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/Silhouette.hpp" alt="" coords="473,229,655,293"/>
+<area shape="rect" id="node20" href="$Cluster_8cpp.html" title="modules/analysis/spatial\l/src/Cluster.cpp" alt="" coords="679,238,844,285"/>
+<area shape="rect" id="node7" href="$SimulationClusterDetector_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/cluster/SimulationClusterDetector.hpp" alt="" coords="75,341,363,405"/>
+<area shape="rect" id="node13" href="$ClusterDetector_8cpp.html" title="modules/analysis/spatial\l/src/ClusterDetector.cpp" alt="" coords="387,350,552,397"/>
+<area shape="rect" id="node9" href="$SimulationClusterDetector_8cpp.html" title="modules/analysis/spatial\l/src/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,453,200,517"/>
+<area shape="rect" id="node11" href="$SimulationDetectClusters_8cpp.html" title="modules/analysis/spatial\l/src/SimulationDetectClusters.cpp" alt="" coords="224,462,445,509"/>
+<area shape="rect" id="node18" href="$Silhouette_8cpp.html" title="modules/analysis/spatial\l/src/Silhouette.cpp" alt="" coords="576,350,741,397"/>
 </map>

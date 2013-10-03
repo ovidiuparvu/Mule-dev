@@ -12,20 +12,22 @@ Class for representing an entity in an image (e.\-g. cell, organism etc.)
 
 
 
-Inheritance diagram for multiscale\-:\-:analysis\-:\-:Entity\-:\nopagebreak
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Entity\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=194pt]{classmultiscale_1_1analysis_1_1Entity__inherit__graph}
+\includegraphics[width=210pt]{classmultiscale_1_1analysis_1_1Entity__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:Entity\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Entity\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=194pt]{classmultiscale_1_1analysis_1_1Entity__coll__graph}
+\includegraphics[width=210pt]{classmultiscale_1_1analysis_1_1Entity__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -73,12 +75,21 @@ Point2f \hyperlink{classmultiscale_1_1analysis_1_1Entity_ad226609174b21f71210161
 \item 
 vector$<$ Point2f $>$ \hyperlink{classmultiscale_1_1analysis_1_1Entity_a0199b0a0e5b22809015ecbc23d17785e}{contour\-Points}
 \end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Entity_a52a27753c0da593552f585f540f003ff}{E\-R\-R\-\_\-\-I\-N\-P\-U\-T} = \char`\"{}Invalid input parameters were provided to the constructor.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Entity_a0904a1ab1e3f71e0702ace23b665cf0e}{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E} = \char`\"{}The distance to an object of a different type cannot be computed.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Entity_afe861959b8b22bec466e8118a09ccb54}{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R} = \char`\"{},\char`\"{}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Class for representing an entity in an image (e.\-g. cell, organism etc.) 
 
-Definition at line 24 of file Entity.\-hpp.
+Definition at line 19 of file Entity.\-hpp.
 
 
 
@@ -423,7 +434,7 @@ Definition at line 67 of file Entity.\-cpp.
 
 
 
-References are\-Valid(), and E\-R\-R\-\_\-\-I\-N\-P\-U\-T.
+References are\-Valid(), E\-R\-R\-\_\-\-I\-N\-P\-U\-T, and M\-S\-\_\-throw.
 
 
 
@@ -459,7 +470,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \subsubsection[{area}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Entity\-::area\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Entity_a7fad3c67bb46cc0f4ce1fb17ef3e66cc}
 Area of the entity 
 
-Definition at line 29 of file Entity.\-hpp.
+Definition at line 24 of file Entity.\-hpp.
 
 
 
@@ -470,7 +481,7 @@ Referenced by Entity(), and get\-Area().
 \subsubsection[{centre}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::analysis\-::\-Entity\-::centre\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Entity_ad226609174b21f71210161d29a16d4ef}
 Point defining the centre of the entity 
 
-Definition at line 32 of file Entity.\-hpp.
+Definition at line 27 of file Entity.\-hpp.
 
 
 
@@ -481,18 +492,47 @@ Referenced by distance\-To(), Entity(), get\-Centre(), and to\-String().
 \subsubsection[{contour\-Points}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$Point2f$>$ multiscale\-::analysis\-::\-Entity\-::contour\-Points\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Entity_a0199b0a0e5b22809015ecbc23d17785e}
 Set of points defining the contour of the entity 
 
-Definition at line 33 of file Entity.\-hpp.
+Definition at line 28 of file Entity.\-hpp.
 
 
 
 Referenced by Entity(), and get\-Contour\-Points().
+
+\hypertarget{classmultiscale_1_1analysis_1_1Entity_a0904a1ab1e3f71e0702ace23b665cf0e}{\index{multiscale\-::analysis\-::\-Entity@{multiscale\-::analysis\-::\-Entity}!E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}}
+\index{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}!multiscale::analysis::Entity@{multiscale\-::analysis\-::\-Entity}}
+\subsubsection[{E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Entity\-::\-E\-R\-R\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E = \char`\"{}The distance to an object of a different type cannot be computed.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Entity_a0904a1ab1e3f71e0702ace23b665cf0e}
+
+
+Definition at line 89 of file Entity.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Entity_a52a27753c0da593552f585f540f003ff}{\index{multiscale\-::analysis\-::\-Entity@{multiscale\-::analysis\-::\-Entity}!E\-R\-R\-\_\-\-I\-N\-P\-U\-T@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T}}
+\index{E\-R\-R\-\_\-\-I\-N\-P\-U\-T@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T}!multiscale::analysis::Entity@{multiscale\-::analysis\-::\-Entity}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-N\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string Entity\-::\-E\-R\-R\-\_\-\-I\-N\-P\-U\-T = \char`\"{}Invalid input parameters were provided to the constructor.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Entity_a52a27753c0da593552f585f540f003ff}
+
+
+Definition at line 88 of file Entity.\-hpp.
+
+
+
+Referenced by validate\-Input\-Values().
+
+\hypertarget{classmultiscale_1_1analysis_1_1Entity_afe861959b8b22bec466e8118a09ccb54}{\index{multiscale\-::analysis\-::\-Entity@{multiscale\-::analysis\-::\-Entity}!O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}!multiscale::analysis::Entity@{multiscale\-::analysis\-::\-Entity}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}const string Entity\-::\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R = \char`\"{},\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Entity_afe861959b8b22bec466e8118a09ccb54}
+
+
+Definition at line 91 of file Entity.\-hpp.
+
+
+
+Referenced by to\-String().
 
 \hypertarget{classmultiscale_1_1analysis_1_1Entity_ac7bcdb1cb5eb4369ca8e44d3dbda44a3}{\index{multiscale\-::analysis\-::\-Entity@{multiscale\-::analysis\-::\-Entity}!perimeter@{perimeter}}
 \index{perimeter@{perimeter}!multiscale::analysis::Entity@{multiscale\-::analysis\-::\-Entity}}
 \subsubsection[{perimeter}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Entity\-::perimeter\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Entity_ac7bcdb1cb5eb4369ca8e44d3dbda44a3}
 Perimeter of the entity 
 
-Definition at line 30 of file Entity.\-hpp.
+Definition at line 25 of file Entity.\-hpp.
 
 
 
@@ -503,7 +543,7 @@ Referenced by Entity(), and get\-Perimeter().
 \subsubsection[{pile\-Up\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::analysis\-::\-Entity\-::pile\-Up\-Degree\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Entity_aae78866cef9fcb7bd2e858570f47d082}
 Degree of pile up (relevant only if entities can pile up onto each other) 
 
-Definition at line 28 of file Entity.\-hpp.
+Definition at line 23 of file Entity.\-hpp.
 
 
 
@@ -513,5 +553,5 @@ Referenced by Entity(), get\-Pile\-Up\-Degree(), and to\-String().
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-include/multiscale/analysis/spatial/\hyperlink{Entity_8hpp}{Entity.\-hpp}\item 
-src/multiscale/analysis/spatial/\hyperlink{Entity_8cpp}{Entity.\-cpp}\end{DoxyCompactItemize}
+modules/analysis/spatial/include/multiscale/analysis/spatial/\hyperlink{Entity_8hpp}{Entity.\-hpp}\item 
+modules/analysis/spatial/src/\hyperlink{Entity_8cpp}{Entity.\-cpp}\end{DoxyCompactItemize}

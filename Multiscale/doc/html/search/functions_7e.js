@@ -7,6 +7,7 @@ var searchData=
   ['_7ecluster',['~Cluster',['../classmultiscale_1_1analysis_1_1Cluster.html#a4bddfc88ac859610acab15dd12851b58',1,'multiscale::analysis::Cluster']]],
   ['_7eclusterdetector',['~ClusterDetector',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a18f5d5aab155a0a30137364749fb837c',1,'multiscale::analysis::ClusterDetector']]],
   ['_7edatapoint',['~DataPoint',['../classmultiscale_1_1analysis_1_1DataPoint.html#ab7a7d2baf190376980cd3c2e130a9905',1,'multiscale::analysis::DataPoint']]],
+  ['_7edbscan',['~DBSCAN',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a4deb359da661ba495d18a75f43a0b89c',1,'multiscale::analysis::DBSCAN']]],
   ['_7edetector',['~Detector',['../classmultiscale_1_1analysis_1_1Detector.html#ae16b7bf62f39cb287927d56ca17663d7',1,'multiscale::analysis::Detector']]],
   ['_7eentity',['~Entity',['../classmultiscale_1_1analysis_1_1Entity.html#adf6d3f7cb1b2ba029b6b048a395cc8ae',1,'multiscale::analysis::Entity']]],
   ['_7elexicographicnumberiterator',['~LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#affe04d9733b7d0984a5ab3957cb0096a',1,'multiscale::LexicographicNumberIterator']]],

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/analysis/spatial/MatFactory.cpp Source File</title>
+<title>Multiscale: modules/analysis/spatial/src/MatFactory.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('MatFactory_8cpp_source.html','');});
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    fin.get();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (fin.peek() != EOF) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class.">MatFactoryException</a>(<a class="code" href="MatFactory_8hpp.html#aed781f5aa5bf10bba7919f04cf50b038">ERR_IN_EXTRA_DATA</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class.">MatFactoryException</a>, <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a09459b632d5b01f184ce0f56245f5905">ERR_IN_EXTRA_DATA</a>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    fin.close();</div>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('MatFactory_8cpp_source.html','');});
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    fin.open(inputFile, ios_base::in);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (!fin.is_open()) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class.">MatFactoryException</a>, <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a06de250e466b41fcca4fa61a52a575fc">ERR_INPUT_OPEN</a>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    fin &gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474">rows</a> &gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c">cols</a> &gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96">simulationTime</a>;</div>
@@ -151,13 +151,19 @@ $(document).ready(function(){initNavTree('MatFactory_8cpp_source.html','');});
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a015bb6710f3a832786d7291108323696">   43</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a015bb6710f3a832786d7291108323696" title="Convert concentration to intensity.">MatFactory::convertToIntensity</a>(<span class="keywordtype">double</span> concentration) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> NumericRangeManipulator::convertFromRange&lt;double, unsigned char&gt;(0, 1, 0, 255, concentration);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// Constants</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a06de250e466b41fcca4fa61a52a575fc">MatFactory::ERR_INPUT_OPEN</a>      = <span class="stringliteral">&quot;The input file could not be opened.&quot;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#ab5e9403dc7f8465189d444f909d473e7">MatFactory::ERR_IMG_RESOLUTION</a>  = <span class="stringliteral">&quot;The resolution of the input image is not the expected one.&quot;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html#a09459b632d5b01f184ce0f56245f5905">MatFactory::ERR_IN_EXTRA_DATA</a>   = <span class="stringliteral">&quot;The input file contains more data than required.&quot;</span>;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="MatFactory_8cpp.html">MatFactory.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_f0033717cfd9395379e47f6b9f751443.html">src</a></li><li class="navelem"><a class="el" href="MatFactory_8cpp.html">MatFactory.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -1,7 +1,3 @@
-# Backup of the results
-
-/backup
-
 # Output of the modules
 
 /out
@@ -17,3 +13,8 @@
 # Input files for unit tests
 
 /test/input
+
+# Eclipse configuration files
+/.cproject
+/.project
+/.settings

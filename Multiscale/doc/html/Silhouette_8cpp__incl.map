@@ -1,4 +1,4 @@
-<map id="src/multiscale/analysis/spatial/Silhouette.cpp" name="src/multiscale/analysis/spatial/Silhouette.cpp">
+<map id="modules/analysis/spatial/src/Silhouette.cpp" name="modules/analysis/spatial/src/Silhouette.cpp">
 <area shape="rect" id="node3" href="$Silhouette_8hpp.html" title="multiscale/analysis\l/spatial/Silhouette.hpp" alt="" coords="527,102,676,149"/>
 <area shape="rect" id="node24" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="659,302,829,349"/>
 <area shape="rect" id="node5" href="$Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="365,198,499,245"/>

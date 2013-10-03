@@ -1,4 +1,4 @@
-<map id="include/multiscale/video/circular/PolarCsvToInputFilesConverter.hpp" name="include/multiscale/video/circular/PolarCsvToInputFilesConverter.hpp">
-<area shape="rect" id="node3" href="$PolarCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/circular/PolarCsvToInputFiles\lConverter.cpp" alt="" coords="5,117,203,181"/>
-<area shape="rect" id="node5" href="$PolarMapCsvToInputFiles_8cpp.html" title="src/multiscale/video\l/circular/PolarMapCsvToInput\lFiles.cpp" alt="" coords="227,117,421,181"/>
+<map id="modules/video/circular/include/multiscale/video/circular/PolarCsvToInputFilesConverter.hpp" name="modules/video/circular/include/multiscale/video/circular/PolarCsvToInputFilesConverter.hpp">
+<area shape="rect" id="node3" href="$PolarCsvToInputFilesConverter_8cpp.html" title="modules/video/circular\l/src/PolarCsvToInputFilesConverter.cpp" alt="" coords="5,118,261,165"/>
+<area shape="rect" id="node5" href="$PolarMapCsvToInputFiles_8cpp.html" title="modules/video/circular\l/src/PolarMapCsvToInputFiles.cpp" alt="" coords="285,118,509,165"/>
 </map>

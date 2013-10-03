@@ -106,36 +106,39 @@ $(document).ready(function(){initNavTree('MatFactoryException_8hpp_source.html',
 <div class="title">MatFactoryException.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="MatFactoryException_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MATFACTORYEXCEPTION_HPP_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MATFACTORYEXCEPTION_HPP_</span></div>
+<a href="MatFactoryException_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MATFACTORYEXCEPTION_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define MATFACTORYEXCEPTION_HPP</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MultiscaleException_8hpp.html">multiscale/exception/MultiscaleException.hpp</a>&quot;</span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="classmultiscale_1_1MatFactoryException.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class.">MatFactoryException</a> : <span class="keyword">public</span> runtime_error {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classmultiscale_1_1MatFactoryException.html#a668307687f99d33c849bc06ef98d057c">   17</a></span>&#160;            <a class="code" href="classmultiscale_1_1MatFactoryException.html#a668307687f99d33c849bc06ef98d057c">MatFactoryException</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;msg) : runtime_error(msg) {}</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classmultiscale_1_1MatFactoryException.html#aa893fcceb0dada739aae3e13e40931d2">   18</a></span>&#160;            <a class="code" href="classmultiscale_1_1MatFactoryException.html#aa893fcceb0dada739aae3e13e40931d2">MatFactoryException</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *msg) : runtime_error(msg) {}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="classmultiscale_1_1MatFactoryException.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class.">MatFactoryException</a> : <span class="keyword">public</span> <a class="code" href="classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project.">MultiscaleException</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classmultiscale_1_1MatFactoryException.html#ac22ebdceb46a147d167419cd5c8bdad3">   18</a></span>&#160;            <a class="code" href="classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class.">MatFactoryException</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;file, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;msg)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                : <a class="code" href="classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project.">MultiscaleException</a>(file, line, msg) {}</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classmultiscale_1_1MatFactoryException.html#af164ffc6645f2584c5ecfd16980b1cc5">   20</a></span>&#160;            <a class="code" href="classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class.">MatFactoryException</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;file, <span class="keywordtype">int</span> line, <span class="keyword">const</span> <span class="keywordtype">char</span> *msg)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                : <a class="code" href="classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project.">MultiscaleException</a>(file, line, msg) {}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_5fa0d1ce9e339fcf8311bd87dd595cdd.html">exception</a></li><li class="navelem"><a class="el" href="MatFactoryException_8hpp.html">MatFactoryException.hpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_07b7735ad769450fde85202afcf57bff.html">include</a></li><li class="navelem"><a class="el" href="dir_4bdf3bb50f7b5caaad50847a19d18d72.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_59a9ee17779f0e36b74968f6f40a9af9.html">exception</a></li><li class="navelem"><a class="el" href="MatFactoryException_8hpp.html">MatFactoryException.hpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

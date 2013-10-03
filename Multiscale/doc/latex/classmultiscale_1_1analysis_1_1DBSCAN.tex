@@ -7,56 +7,99 @@
 
 
 
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:D\-B\-S\-C\-A\-N\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:D\-B\-S\-C\-A\-N\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=262pt]{classmultiscale_1_1analysis_1_1DBSCAN__coll__graph}
 \end{center}
 \end{figure}
-\subsection*{Static Public Member Functions}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a52f0eb2d04029c75a3c48a37efdac26b}{run} (const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} $>$$>$ \&data\-Points, vector$<$ int $>$ \&cluster\-Indexes, int \&nr\-Of\-Clusters, double \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_ac19e3e98b0db882c5676088a34197ec7}{eps}, int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a285a04240518d17e99565d78e9b78ff0}{min\-Points})
+\hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_abcfe88a7c0a94730a128e4682d8f27ca}{D\-B\-S\-C\-A\-N} ()
+\item 
+\hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a4deb359da661ba495d18a75f43a0b89c}{$\sim$\-D\-B\-S\-C\-A\-N} ()
+\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a52f0eb2d04029c75a3c48a37efdac26b}{run} (const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} $>$$>$ \&data\-Points, vector$<$ int $>$ \&cluster\-Indexes, int \&nr\-Of\-Clusters, double \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a8d68cd84561cbb06bd138f8edf340b9f}{eps}, int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a7bafd4070ac44e236fcc7f06d92b6572}{min\-Points})
 \begin{DoxyCompactList}\small\item\em Run the improved \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} algorithm on the provided set of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Member Functions}
+\subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_aceb5dd9fe24a24cbf09ddc9082dc1f82}{run\-Algorithm} (const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} $>$$>$ \&data\-Points, vector$<$ int $>$ \&cluster\-Indexes, int \&nr\-Of\-Clusters)
+static const int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a6f60961639281a807b63650faf01511b}{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D} = -\/2
+\item 
+static const int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a28f37ffc029ccd1d121cbc4467851ce2}{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-B\-O\-R\-D\-E\-R} = -\/1
+\item 
+static const int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a480b43a01f8652787a4b0f61b00ee3cf}{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-N\-O\-I\-S\-E} = 0
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_aceb5dd9fe24a24cbf09ddc9082dc1f82}{run\-Algorithm} (const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} $>$$>$ \&data\-Points, vector$<$ int $>$ \&cluster\-Indexes, int \&nr\-Of\-Clusters)
 \begin{DoxyCompactList}\small\item\em Run the improved \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} algorithm on the provided set of points. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a4770eddfc02c41deb114e5d42affd93a}{construct\-Distance\-Matrix} (const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} $>$$>$ \&data\-Points)
+void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a4770eddfc02c41deb114e5d42affd93a}{construct\-Distance\-Matrix} (const vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} $>$$>$ \&data\-Points)
 \begin{DoxyCompactList}\small\item\em Construct the distance matrix between any two data points. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a400c4e9fb1d9e9bafa970b33912a5ce1}{expand\-Core\-Cluster} (vector$<$ int $>$ \&cluster\-Indexes, int core\-Data\-Point\-Index, int cluster\-Id)
+bool \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a400c4e9fb1d9e9bafa970b33912a5ce1}{expand\-Core\-Cluster} (vector$<$ int $>$ \&cluster\-Indexes, int core\-Data\-Point\-Index, int cluster\-Id)
 \begin{DoxyCompactList}\small\item\em Expand the cluster around the given core data point. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a6ead683810b4f04a48cd0a4d0f5f7a6b}{add\-Unclassified\-Nodes\-To\-Seeds\-List} (const vector$<$ int $>$ \&neighbours, const vector$<$ int $>$ \&cluster\-Indexes, vector$<$ int $>$ \&seeds)
+void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a6ead683810b4f04a48cd0a4d0f5f7a6b}{add\-Unclassified\-Nodes\-To\-Seeds\-List} (const vector$<$ int $>$ \&neighbours, const vector$<$ int $>$ \&cluster\-Indexes, vector$<$ int $>$ \&seeds)
 \begin{DoxyCompactList}\small\item\em Add all unclassified neighbour nodes to the seeds list. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a5b0d19aab403005cac7fbe0851f5a969}{label\-Unclassified\-And\-Noise\-As\-Border} (const vector$<$ int $>$ \&neighbours, vector$<$ int $>$ \&cluster\-Indexes)
+void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a5b0d19aab403005cac7fbe0851f5a969}{label\-Unclassified\-And\-Noise\-As\-Border} (const vector$<$ int $>$ \&neighbours, vector$<$ int $>$ \&cluster\-Indexes)
 \begin{DoxyCompactList}\small\item\em Label all unclassified and noise neighbour nodes as border nodes. \end{DoxyCompactList}\item 
-static vector$<$ int $>$ \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a2524149cf55398e2038aaa389b56bfec}{retrieve\-Neighbours} (int data\-Point\-Index)
+vector$<$ int $>$ \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a2524149cf55398e2038aaa389b56bfec}{retrieve\-Neighbours} (int data\-Point\-Index)
 \begin{DoxyCompactList}\small\item\em Retrieve the list of neighbour indexes which are at a distance $<$ eps far from the given data point. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a1c55a2e893f28de4a68129407c55d5f3}{assign\-Border\-Nodes\-To\-Clusters} (vector$<$ int $>$ \&cluster\-Indexes)
+void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a1c55a2e893f28de4a68129407c55d5f3}{assign\-Border\-Nodes\-To\-Clusters} (vector$<$ int $>$ \&cluster\-Indexes)
 \begin{DoxyCompactList}\small\item\em Assign the border nodes to the clusters to which the closest core objects belong. \end{DoxyCompactList}\item 
-static int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a7a1c95e78edf9e804a7809648e130bda}{find\-Closest\-Core\-Data\-Point} (const vector$<$ int $>$ \&neighbours, int border\-Data\-Point\-Index, const vector$<$ int $>$ \&cluster\-Indexes)
+int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a7a1c95e78edf9e804a7809648e130bda}{find\-Closest\-Core\-Data\-Point} (const vector$<$ int $>$ \&neighbours, int border\-Data\-Point\-Index, const vector$<$ int $>$ \&cluster\-Indexes)
 \begin{DoxyCompactList}\small\item\em Find the closest core data point from the given set of neighbours to the given border data point. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_af50079a4d370fb35b13b0a1557a454f0}{allocate\-Distance\-Matrix} ()
+void \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_af50079a4d370fb35b13b0a1557a454f0}{allocate\-Distance\-Matrix} ()
 \begin{DoxyCompactList}\small\item\em Allocate the distance matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
+\subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static double \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_ac19e3e98b0db882c5676088a34197ec7}{eps} = 0
+double \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a8d68cd84561cbb06bd138f8edf340b9f}{eps}
 \item 
-static unsigned int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a285a04240518d17e99565d78e9b78ff0}{min\-Points} = 0
+unsigned int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a7bafd4070ac44e236fcc7f06d92b6572}{min\-Points}
 \item 
-static unsigned int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_aa0cb098abae4aa07e8488a5d2a72a4f4}{nr\-Of\-Data\-Points} = 0
+unsigned int \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_af81a42ca24493494b3d20e27c76be016}{nr\-Of\-Data\-Points}
 \item 
-static vector$<$ vector$<$ double $>$ $>$ \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_aa54a9933d643b06a6a2624d6f76b700f}{distance\-Matrix}
+vector$<$ vector$<$ double $>$ $>$ \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN_a863a8b90ff30d401795264a246a09147}{distance\-Matrix}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 20 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 16 of file D\-B\-S\-C\-A\-N.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_abcfe88a7c0a94730a128e4682d8f27ca}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!D\-B\-S\-C\-A\-N@{D\-B\-S\-C\-A\-N}}
+\index{D\-B\-S\-C\-A\-N@{D\-B\-S\-C\-A\-N}!multiscale::analysis::DBSCAN@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}}
+\subsubsection[{D\-B\-S\-C\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}D\-B\-S\-C\-A\-N\-::\-D\-B\-S\-C\-A\-N (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1DBSCAN_abcfe88a7c0a94730a128e4682d8f27ca}
+
+
+Definition at line 9 of file D\-B\-S\-C\-A\-N.\-cpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_a4deb359da661ba495d18a75f43a0b89c}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!$\sim$\-D\-B\-S\-C\-A\-N@{$\sim$\-D\-B\-S\-C\-A\-N}}
+\index{$\sim$\-D\-B\-S\-C\-A\-N@{$\sim$\-D\-B\-S\-C\-A\-N}!multiscale::analysis::DBSCAN@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}}
+\subsubsection[{$\sim$\-D\-B\-S\-C\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}D\-B\-S\-C\-A\-N\-::$\sim$\-D\-B\-S\-C\-A\-N (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a4deb359da661ba495d18a75f43a0b89c}
+
+
+Definition at line 11 of file D\-B\-S\-C\-A\-N.\-cpp.
+
+
+
+References distance\-Matrix.
 
 
 
@@ -69,7 +112,7 @@ Definition at line 20 of file D\-B\-S\-C\-A\-N.\-hpp.
 \item[{const vector$<$ int $>$ \&}]{cluster\-Indexes, }
 \item[{vector$<$ int $>$ \&}]{seeds}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a6ead683810b4f04a48cd0a4d0f5f7a6b}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a6ead683810b4f04a48cd0a4d0f5f7a6b}
 
 
 Add all unclassified neighbour nodes to the seeds list. 
@@ -112,7 +155,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_af50079a4d370fb35b13b0a1557a454f0}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_af50079a4d370fb35b13b0a1557a454f0}
 
 
 Allocate the distance matrix. 
@@ -146,7 +189,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{DoxyParamCaption}
 \item[{vector$<$ int $>$ \&}]{cluster\-Indexes}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a1c55a2e893f28de4a68129407c55d5f3}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a1c55a2e893f28de4a68129407c55d5f3}
 
 
 Assign the border nodes to the clusters to which the closest core objects belong. 
@@ -196,7 +239,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{DoxyParamCaption}
 \item[{const vector$<$ shared\-\_\-ptr$<$ {\bf Data\-Point} $>$$>$ \&}]{data\-Points}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a4770eddfc02c41deb114e5d42affd93a}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a4770eddfc02c41deb114e5d42affd93a}
 
 
 Construct the distance matrix between any two data points. 
@@ -248,7 +291,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{int}]{core\-Data\-Point\-Index, }
 \item[{int}]{cluster\-Id}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a400c4e9fb1d9e9bafa970b33912a5ce1}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a400c4e9fb1d9e9bafa970b33912a5ce1}
 
 
 Expand the cluster around the given core data point. 
@@ -304,7 +347,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{int}]{border\-Data\-Point\-Index, }
 \item[{const vector$<$ int $>$ \&}]{cluster\-Indexes}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a7a1c95e78edf9e804a7809648e130bda}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a7a1c95e78edf9e804a7809648e130bda}
 
 
 Find the closest core data point from the given set of neighbours to the given border data point. 
@@ -348,7 +391,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{const vector$<$ int $>$ \&}]{neighbours, }
 \item[{vector$<$ int $>$ \&}]{cluster\-Indexes}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a5b0d19aab403005cac7fbe0851f5a969}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a5b0d19aab403005cac7fbe0851f5a969}
 
 
 Label all unclassified and noise neighbour nodes as border nodes. 
@@ -389,7 +432,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{DoxyParamCaption}
 \item[{int}]{data\-Point\-Index}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a2524149cf55398e2038aaa389b56bfec}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a2524149cf55398e2038aaa389b56bfec}
 
 
 Retrieve the list of neighbour indexes which are at a distance $<$ eps far from the given data point. 
@@ -432,7 +475,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{double}]{eps, }
 \item[{int}]{min\-Points}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a52f0eb2d04029c75a3c48a37efdac26b}
+)}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a52f0eb2d04029c75a3c48a37efdac26b}
 
 
 Run the improved \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} algorithm on the provided set of points. 
@@ -496,7 +539,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \item[{vector$<$ int $>$ \&}]{cluster\-Indexes, }
 \item[{int \&}]{nr\-Of\-Clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_aceb5dd9fe24a24cbf09ddc9082dc1f82}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_aceb5dd9fe24a24cbf09ddc9082dc1f82}
 
 
 Run the improved \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} algorithm on the provided set of points. 
@@ -551,49 +594,82 @@ Here is the caller graph for this function\-:\nopagebreak
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_aa54a9933d643b06a6a2624d6f76b700f}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!distance\-Matrix@{distance\-Matrix}}
+\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_a28f37ffc029ccd1d121cbc4467851ce2}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-B\-O\-R\-D\-E\-R@{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-B\-O\-R\-D\-E\-R}}
+\index{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-B\-O\-R\-D\-E\-R@{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-B\-O\-R\-D\-E\-R}!multiscale::analysis::DBSCAN@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}}
+\subsubsection[{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-B\-O\-R\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const int D\-B\-S\-C\-A\-N\-::\-C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-B\-O\-R\-D\-E\-R = -\/1\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a28f37ffc029ccd1d121cbc4467851ce2}
+
+
+Definition at line 121 of file D\-B\-S\-C\-A\-N.\-hpp.
+
+
+
+Referenced by assign\-Border\-Nodes\-To\-Clusters(), and label\-Unclassified\-And\-Noise\-As\-Border().
+
+\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_a480b43a01f8652787a4b0f61b00ee3cf}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-N\-O\-I\-S\-E@{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-N\-O\-I\-S\-E}}
+\index{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-N\-O\-I\-S\-E@{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-N\-O\-I\-S\-E}!multiscale::analysis::DBSCAN@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}}
+\subsubsection[{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-N\-O\-I\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int D\-B\-S\-C\-A\-N\-::\-C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-N\-O\-I\-S\-E = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a480b43a01f8652787a4b0f61b00ee3cf}
+
+
+Definition at line 122 of file D\-B\-S\-C\-A\-N.\-hpp.
+
+
+
+Referenced by expand\-Core\-Cluster(), and label\-Unclassified\-And\-Noise\-As\-Border().
+
+\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_a6f60961639281a807b63650faf01511b}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D@{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D}}
+\index{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D@{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D}!multiscale::analysis::DBSCAN@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}}
+\subsubsection[{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const int D\-B\-S\-C\-A\-N\-::\-C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D = -\/2\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a6f60961639281a807b63650faf01511b}
+
+
+Definition at line 120 of file D\-B\-S\-C\-A\-N.\-hpp.
+
+
+
+Referenced by add\-Unclassified\-Nodes\-To\-Seeds\-List(), multiscale\-::analysis\-::\-Cluster\-Detector\-::detect\-And\-Analyse\-Clusters(), label\-Unclassified\-And\-Noise\-As\-Border(), and run\-Algorithm().
+
+\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_a863a8b90ff30d401795264a246a09147}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!distance\-Matrix@{distance\-Matrix}}
 \index{distance\-Matrix@{distance\-Matrix}!multiscale::analysis::DBSCAN@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}}
-\subsubsection[{distance\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ vector$<$ double $>$ $>$ D\-B\-S\-C\-A\-N\-::distance\-Matrix\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_aa54a9933d643b06a6a2624d6f76b700f}
+\subsubsection[{distance\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$double$>$ $>$ multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::distance\-Matrix\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a863a8b90ff30d401795264a246a09147}
 The matrix containing the distances between any two data points 
 
-Definition at line 31 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 27 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
-Referenced by allocate\-Distance\-Matrix(), construct\-Distance\-Matrix(), find\-Closest\-Core\-Data\-Point(), and retrieve\-Neighbours().
+Referenced by allocate\-Distance\-Matrix(), construct\-Distance\-Matrix(), find\-Closest\-Core\-Data\-Point(), retrieve\-Neighbours(), and $\sim$\-D\-B\-S\-C\-A\-N().
 
-\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_ac19e3e98b0db882c5676088a34197ec7}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!eps@{eps}}
+\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_a8d68cd84561cbb06bd138f8edf340b9f}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!eps@{eps}}
 \index{eps@{eps}!multiscale::analysis::DBSCAN@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}}
-\subsubsection[{eps}]{\setlength{\rightskip}{0pt plus 5cm}double D\-B\-S\-C\-A\-N\-::eps = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_ac19e3e98b0db882c5676088a34197ec7}
+\subsubsection[{eps}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::eps\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a8d68cd84561cbb06bd138f8edf340b9f}
 \begin{DoxyVerb}                              DBSCAN algorithm parameter for specifying the maximum radius
 \end{DoxyVerb}
  of the neighbourhood 
 
-Definition at line 24 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 20 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
 Referenced by retrieve\-Neighbours(), and run().
 
-\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_a285a04240518d17e99565d78e9b78ff0}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!min\-Points@{min\-Points}}
+\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_a7bafd4070ac44e236fcc7f06d92b6572}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!min\-Points@{min\-Points}}
 \index{min\-Points@{min\-Points}!multiscale::analysis::DBSCAN@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}}
-\subsubsection[{min\-Points}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int D\-B\-S\-C\-A\-N\-::min\-Points = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a285a04240518d17e99565d78e9b78ff0}
+\subsubsection[{min\-Points}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::min\-Points\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a7bafd4070ac44e236fcc7f06d92b6572}
 \begin{DoxyVerb}                  DBSCAN algorithm parameter for specifying the minimum number
 \end{DoxyVerb}
  of points in an eps-\/neighbourhood of that point 
 
-Definition at line 26 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 22 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
 Referenced by expand\-Core\-Cluster(), and run().
 
-\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_aa0cb098abae4aa07e8488a5d2a72a4f4}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!nr\-Of\-Data\-Points@{nr\-Of\-Data\-Points}}
+\hypertarget{classmultiscale_1_1analysis_1_1DBSCAN_af81a42ca24493494b3d20e27c76be016}{\index{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}!nr\-Of\-Data\-Points@{nr\-Of\-Data\-Points}}
 \index{nr\-Of\-Data\-Points@{nr\-Of\-Data\-Points}!multiscale::analysis::DBSCAN@{multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N}}
-\subsubsection[{nr\-Of\-Data\-Points}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int D\-B\-S\-C\-A\-N\-::nr\-Of\-Data\-Points = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_aa0cb098abae4aa07e8488a5d2a72a4f4}
+\subsubsection[{nr\-Of\-Data\-Points}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::nr\-Of\-Data\-Points\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_af81a42ca24493494b3d20e27c76be016}
 Number of data points in the data set 
 
-Definition at line 29 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 25 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
@@ -603,5 +679,5 @@ Referenced by allocate\-Distance\-Matrix(), assign\-Border\-Nodes\-To\-Clusters(
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-include/multiscale/analysis/spatial/\hyperlink{DBSCAN_8hpp}{D\-B\-S\-C\-A\-N.\-hpp}\item 
-src/multiscale/analysis/spatial/\hyperlink{DBSCAN_8cpp}{D\-B\-S\-C\-A\-N.\-cpp}\end{DoxyCompactItemize}
+modules/analysis/spatial/include/multiscale/analysis/spatial/\hyperlink{DBSCAN_8hpp}{D\-B\-S\-C\-A\-N.\-hpp}\item 
+modules/analysis/spatial/src/\hyperlink{DBSCAN_8cpp}{D\-B\-S\-C\-A\-N.\-cpp}\end{DoxyCompactItemize}

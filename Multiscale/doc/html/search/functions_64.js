@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['dbscan',['DBSCAN',['../classmultiscale_1_1analysis_1_1DBSCAN.html#abcfe88a7c0a94730a128e4682d8f27ca',1,'multiscale::analysis::DBSCAN']]],
   ['detect',['detect',['../classmultiscale_1_1analysis_1_1Detector.html#acfb9aaec94382e4a7bee6d9874d4bcef',1,'multiscale::analysis::Detector::detect(const Mat &amp;inputImage)'],['../classmultiscale_1_1analysis_1_1Detector.html#ae0c0a72fef22d6521e82c18424a4dd04',1,'multiscale::analysis::Detector::detect()']]],
   ['detectandanalyseclusters',['detectAndAnalyseClusters',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b',1,'multiscale::analysis::ClusterDetector']]],
   ['detectclusters',['detectClusters',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a8c9c3ac0c3d8e924468a58f558984dda',1,'multiscale::analysis::ClusterDetector']]],
@@ -7,7 +8,7 @@ var searchData=
   ['detectindebugmode',['detectInDebugMode',['../classmultiscale_1_1analysis_1_1Detector.html#aa9173a243a85e2d9cf493a641fb610aa',1,'multiscale::analysis::Detector']]],
   ['detectinreleasemode',['detectInReleaseMode',['../classmultiscale_1_1analysis_1_1Detector.html#a58665776f1a12659dae08d1a4a01050a',1,'multiscale::analysis::Detector']]],
   ['detector',['Detector',['../classmultiscale_1_1analysis_1_1Detector.html#ae761f485926eead354aa361f1f57e167',1,'multiscale::analysis::Detector']]],
-  ['detectorexception',['DetectorException',['../classmultiscale_1_1DetectorException.html#a3fce3063f6ef981bc6ced04ff5a5ad2c',1,'multiscale::DetectorException::DetectorException(const string &amp;msg)'],['../classmultiscale_1_1DetectorException.html#abc8333a2e769e32b57e5eaec6a419c83',1,'multiscale::DetectorException::DetectorException(const char *msg)']]],
+  ['detectorexception',['DetectorException',['../classmultiscale_1_1DetectorException.html#a7b997e90b2f84d96a94879f9ba61bf36',1,'multiscale::DetectorException::DetectorException(const string &amp;file, int line, const string &amp;msg)'],['../classmultiscale_1_1DetectorException.html#a5f2b9b78c64aa3362faaf472ccb97cc7',1,'multiscale::DetectorException::DetectorException(const string &amp;file, int line, const char *msg)']]],
   ['digitstonumber',['digitsToNumber',['../classmultiscale_1_1LexicographicNumberIterator.html#a9bcb610b3b63b02ceed7d556960e57c3',1,'multiscale::LexicographicNumberIterator']]],
   ['displayimage',['displayImage',['../classmultiscale_1_1analysis_1_1Detector.html#ae68f8f87cc1e4e1cd22cee1e3604ef4b',1,'multiscale::analysis::Detector']]],
   ['displayresultsinwindow',['displayResultsInWindow',['../classmultiscale_1_1analysis_1_1Detector.html#abb6d85e1a13e96b748ea286a070bdf18',1,'multiscale::analysis::Detector']]],

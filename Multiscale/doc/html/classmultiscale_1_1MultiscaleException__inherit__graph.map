@@ -1,0 +1,16 @@
+<map id="multiscale::MultiscaleException" name="multiscale::MultiscaleException">
+<area shape="rect" id="node5" href="$classmultiscale_1_1CartesianToConcentrationsConverterException.html" title="Exception class for the CartesianToConcentrationsConverter class." alt="" coords="5,325,253,480"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1CartesianToPolarConverterException.html" title="Exception class for the CartesianToPolarConverter class." alt="" coords="277,325,469,480"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1CircularMatFactoryException.html" title="Exception class for the CircularMatFactory instances." alt="" coords="493,343,704,463"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1ClusterException.html" title="Exception class for the Cluster instances." alt="" coords="728,351,917,454"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1DetectorException.html" title="Exception class for the Detector class." alt="" coords="941,351,1139,454"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1EntityException.html" title="Exception class for the Entity instances." alt="" coords="1163,351,1344,454"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1MatFactoryException.html" title="Exception class for the MatFactory class." alt="" coords="1368,351,1581,454"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1MinEnclosingTriangleFinderException.html" title="Exception class for the minimum area enclosing triangle module." alt="" coords="1605,325,1800,480"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1PolarCsvToInputFilesConverterException.html" title="Exception class for the PolarCsvToInputFilesConverter class." alt="" coords="1824,325,2040,480"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class." alt="" coords="2064,325,2272,480"/>
+<area shape="rect" id="node25" href="$classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html" title="Exception class for the RectangularEntityCsvToInputFilesConverter class." alt="" coords="2296,325,2528,480"/>
+<area shape="rect" id="node27" href="$classmultiscale_1_1RectangularMatFactoryException.html" title="Exception class for the RectangularMatFactory instances." alt="" coords="2552,343,2787,463"/>
+<area shape="rect" id="node29" href="$classmultiscale_1_1RegionException.html" title="Exception class for the Region instances." alt="" coords="2811,351,2997,454"/>
+<area shape="rect" id="node31" href="$classmultiscale_1_1SimulationClusterDetectorException.html" title="Exception class for the SimulationClusterDetector instances." alt="" coords="3021,325,3213,480"/>
+</map>

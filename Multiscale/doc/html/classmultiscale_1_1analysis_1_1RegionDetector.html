@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1RegionD
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classmultiscale_1_1analysis_1_1RegionDetector-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">multiscale::analysis::RegionDetector Class Reference</div>  </div>
@@ -125,7 +126,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1RegionD
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector__inherit__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1RegionDetector_inherit__map" alt="Inheritance graph"/></div>
 <map name="multiscale_1_1analysis_1_1RegionDetector_inherit__map" id="multiscale_1_1analysis_1_1RegionDetector_inherit__map">
-<area shape="rect" id="node2" href="classmultiscale_1_1analysis_1_1Detector.html" title="{multiscale::analysis\l::Detector\n|# image\l# outputFilepath\l# debugMode\l# outputImage\l# detectMethodCalled\l# detectorSpecificFieldsInitialised\l# origin\l|+ Detector()\l+ ~Detector()\l+ detect()\l+ outputResults()\l# initialise()\l# initialiseDetectorSpecific\lFieldsIfNotSet()\l# setDetectorSpecificFields\lInitialisationFlag()\l# initialiseDetectorSpecific\lFields()\l# initialiseImageDependent\lFields()\l# initialiseDetectorSpecific\lImageDependentFields()\l# initialiseImageOrigin()\l# isValidInputImage()\l# detect()\l# detectInDebugMode()\l# detectInReleaseMode()\l# polygonAngle()\l# polygonAngle()\l# minAreaRectCentre()\l# findGoodPointsForAngle()\l# findGoodIntersectionPoints()\l# displayResultsInWindow()\l# outputResultsToFile()\l# outputResultsToImage()\l# storeOutputImageOnDisk()\l# outputResultsToCsvFile()\l# outputResultsToCsvFile()\l# processImageAndDetect()\l# clearPreviousDetectionResults()\l# createTrackbars()\l# createTrackbarsWindow()\l# createDetectorSpecificTrackbars()\l# processPressedKeyRequest()\l# displayImage()\l# printOutputErrorMessage()\l}" alt="" coords="5,6,237,871"/></map>
+<area shape="rect" id="node2" href="classmultiscale_1_1analysis_1_1Detector.html" title="{multiscale::analysis\l::Detector\n|# image\l# outputFilepath\l# debugMode\l# outputImage\l# detectMethodCalled\l# detectorSpecificFieldsInitialised\l# origin\l# ERR_OUTPUT_WITHOUT\l_DETECT\l# ERR_OUTPUT_FILE\l# ERR_INVALID_IMAGE\l# OUTPUT_EXTENSION\l# IMG_EXTENSION\l# WIN_OUTPUT_IMAGE\l# KEY_ESC\l# KEY_SAVE\l|+ Detector()\l+ ~Detector()\l+ detect()\l+ outputResults()\l# initialise()\l# initialiseDetectorSpecific\lFieldsIfNotSet()\l# setDetectorSpecificFields\lInitialisationFlag()\l# initialiseDetectorSpecific\lFields()\l# initialiseImageDependent\lFields()\l# initialiseDetectorSpecific\lImageDependentFields()\l# initialiseImageOrigin()\l# isValidInputImage()\l# detect()\l# detectInDebugMode()\l# detectInReleaseMode()\l# polygonAngle()\l# polygonAngle()\l# minAreaRectCentre()\l# findGoodPointsForAngle()\l# findGoodIntersectionPoints()\l# displayResultsInWindow()\l# outputResultsToFile()\l# outputResultsToImage()\l# storeOutputImageOnDisk()\l# outputResultsToCsvFile()\l# outputResultsToCsvFile()\l# processImageAndDetect()\l# clearPreviousDetectionResults()\l# createTrackbars()\l# createTrackbarsWindow()\l# createDetectorSpecificTrackbars()\l# processPressedKeyRequest()\l# displayImage()\l# printOutputErrorMessage()\l}" alt="" coords="8,5,240,1027"/></map>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for multiscale::analysis::RegionDetector:</div>
@@ -134,7 +135,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1RegionD
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector__coll__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1RegionDetector_coll__map" alt="Collaboration graph"/></div>
 <map name="multiscale_1_1analysis_1_1RegionDetector_coll__map" id="multiscale_1_1analysis_1_1RegionDetector_coll__map">
-<area shape="rect" id="node2" href="classmultiscale_1_1analysis_1_1Detector.html" title="{multiscale::analysis\l::Detector\n|# image\l# outputFilepath\l# debugMode\l# outputImage\l# detectMethodCalled\l# detectorSpecificFieldsInitialised\l# origin\l|+ Detector()\l+ ~Detector()\l+ detect()\l+ outputResults()\l# initialise()\l# initialiseDetectorSpecific\lFieldsIfNotSet()\l# setDetectorSpecificFields\lInitialisationFlag()\l# initialiseDetectorSpecific\lFields()\l# initialiseImageDependent\lFields()\l# initialiseDetectorSpecific\lImageDependentFields()\l# initialiseImageOrigin()\l# isValidInputImage()\l# detect()\l# detectInDebugMode()\l# detectInReleaseMode()\l# polygonAngle()\l# polygonAngle()\l# minAreaRectCentre()\l# findGoodPointsForAngle()\l# findGoodIntersectionPoints()\l# displayResultsInWindow()\l# outputResultsToFile()\l# outputResultsToImage()\l# storeOutputImageOnDisk()\l# outputResultsToCsvFile()\l# outputResultsToCsvFile()\l# processImageAndDetect()\l# clearPreviousDetectionResults()\l# createTrackbars()\l# createTrackbarsWindow()\l# createDetectorSpecificTrackbars()\l# processPressedKeyRequest()\l# displayImage()\l# printOutputErrorMessage()\l}" alt="" coords="5,6,237,871"/></map>
+<area shape="rect" id="node2" href="classmultiscale_1_1analysis_1_1Detector.html" title="{multiscale::analysis\l::Detector\n|# image\l# outputFilepath\l# debugMode\l# outputImage\l# detectMethodCalled\l# detectorSpecificFieldsInitialised\l# origin\l# ERR_OUTPUT_WITHOUT\l_DETECT\l# ERR_OUTPUT_FILE\l# ERR_INVALID_IMAGE\l# OUTPUT_EXTENSION\l# IMG_EXTENSION\l# WIN_OUTPUT_IMAGE\l# KEY_ESC\l# KEY_SAVE\l|+ Detector()\l+ ~Detector()\l+ detect()\l+ outputResults()\l# initialise()\l# initialiseDetectorSpecific\lFieldsIfNotSet()\l# setDetectorSpecificFields\lInitialisationFlag()\l# initialiseDetectorSpecific\lFields()\l# initialiseImageDependent\lFields()\l# initialiseDetectorSpecific\lImageDependentFields()\l# initialiseImageOrigin()\l# isValidInputImage()\l# detect()\l# detectInDebugMode()\l# detectInReleaseMode()\l# polygonAngle()\l# polygonAngle()\l# minAreaRectCentre()\l# findGoodPointsForAngle()\l# findGoodIntersectionPoints()\l# displayResultsInWindow()\l# outputResultsToFile()\l# outputResultsToImage()\l# storeOutputImageOnDisk()\l# outputResultsToCsvFile()\l# outputResultsToCsvFile()\l# processImageAndDetect()\l# clearPreviousDetectionResults()\l# createTrackbars()\l# createTrackbarsWindow()\l# createDetectorSpecificTrackbars()\l# processPressedKeyRequest()\l# displayImage()\l# printOutputErrorMessage()\l}" alt="" coords="8,5,240,1027"/></map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -310,6 +311,65 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:aa6517ceb3a58295448d32e6e41499893"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">regions</a></td></tr>
 <tr class="separator:aa6517ceb3a58295448d32e6e41499893"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a7eeefa86e8c94ee7c89b3e17fb94d931"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7eeefa86e8c94ee7c89b3e17fb94d931">OUTPUT_CLUSTEREDNESS</a> = &quot;Average clusteredness degree: &quot;</td></tr>
+<tr class="separator:a7eeefa86e8c94ee7c89b3e17fb94d931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad432faee394557fc48ff6baaceddf1cb"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad432faee394557fc48ff6baaceddf1cb">OUTPUT_DENSITY</a> = &quot;Average density: &quot;</td></tr>
+<tr class="separator:ad432faee394557fc48ff6baaceddf1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5513e029d4d4cf249aa40364489f7a85"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5513e029d4d4cf249aa40364489f7a85">TRACKBAR_ALPHA</a> = &quot;Alpha&quot;</td></tr>
+<tr class="separator:a5513e029d4d4cf249aa40364489f7a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d7878ed55bf12a87637896a1f44e37"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79d7878ed55bf12a87637896a1f44e37">TRACKBAR_BETA</a> = &quot;Beta&quot;</td></tr>
+<tr class="separator:a79d7878ed55bf12a87637896a1f44e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79b72da59c92b368fb7894fe1f424e00"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79b72da59c92b368fb7894fe1f424e00">TRACKBAR_KERNEL</a> = &quot;Gaussian blur kernel size&quot;</td></tr>
+<tr class="separator:a79b72da59c92b368fb7894fe1f424e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0358affd40f13327b10447b7fe938338"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0358affd40f13327b10447b7fe938338">TRACKBAR_MORPH</a> = &quot;Morphological open, number of iterations&quot;</td></tr>
+<tr class="separator:a0358affd40f13327b10447b7fe938338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1c5cde2b7d42ddce44b7f8208f07cc"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8c1c5cde2b7d42ddce44b7f8208f07cc">TRACKBAR_CANNY</a> = &quot;Canny lower threshold&quot;</td></tr>
+<tr class="separator:a8c1c5cde2b7d42ddce44b7f8208f07cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f0755a58457592ac027b42576bd312"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa3f0755a58457592ac027b42576bd312">TRACKBAR_EPSILON</a> = &quot;Epsilon&quot;</td></tr>
+<tr class="separator:aa3f0755a58457592ac027b42576bd312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a2711f5cabb3af04a969fe38e1ef473"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a2711f5cabb3af04a969fe38e1ef473">TRACKBAR_REGION_AREA_THRESH</a> = &quot;Region area threshold&quot;</td></tr>
+<tr class="separator:a6a2711f5cabb3af04a969fe38e1ef473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7548c716410a4cb88cb41498de6b509c"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7548c716410a4cb88cb41498de6b509c">TRACKBAR_THRESHOLD</a> = &quot;Threshold value&quot;</td></tr>
+<tr class="separator:a7548c716410a4cb88cb41498de6b509c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a8c4f7b9a6bc40ec6de940f53943772"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a8c4f7b9a6bc40ec6de940f53943772">USE_CANNY_L2</a> = true</td></tr>
+<tr class="separator:a6a8c4f7b9a6bc40ec6de940f53943772"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1fdebf0daaae6f2bb1fe4770479116f"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab1fdebf0daaae6f2bb1fe4770479116f">CONTOUR_AREA_ORIENTED</a> = false</td></tr>
+<tr class="separator:ab1fdebf0daaae6f2bb1fe4770479116f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a11aa86a5250ca6197589c4ccb770f6"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a4a11aa86a5250ca6197589c4ccb770f6">ALPHA_REAL_MIN</a> = 1.0</td></tr>
+<tr class="separator:a4a11aa86a5250ca6197589c4ccb770f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc853d2cfef9e4fafbf86715b48495e0"><td class="memItemLeft" align="right" valign="top">static const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#abc853d2cfef9e4fafbf86715b48495e0">ALPHA_REAL_MAX</a> = 3.0</td></tr>
+<tr class="separator:abc853d2cfef9e4fafbf86715b48495e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d07b8a993b50bcf050e4c206ac126c"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a87d07b8a993b50bcf050e4c206ac126c">BETA_REAL_MIN</a> = -100</td></tr>
+<tr class="separator:a87d07b8a993b50bcf050e4c206ac126c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e9e6c3ea18fe9a3dbf7a1a02652985"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19e9e6c3ea18fe9a3dbf7a1a02652985">BETA_REAL_MAX</a> = 100</td></tr>
+<tr class="separator:a19e9e6c3ea18fe9a3dbf7a1a02652985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca1e136dc9d768f1e11cd6f770d950f"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7ca1e136dc9d768f1e11cd6f770d950f">ALPHA_MAX</a> = 1000</td></tr>
+<tr class="separator:a7ca1e136dc9d768f1e11cd6f770d950f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c6485f637cae5abee0303b41df1480"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad2c6485f637cae5abee0303b41df1480">BETA_MAX</a> = 200</td></tr>
+<tr class="separator:ad2c6485f637cae5abee0303b41df1480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa988e3458f774c489e03e3f8bd0db1ed"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa988e3458f774c489e03e3f8bd0db1ed">KERNEL_MAX</a> = 2000</td></tr>
+<tr class="separator:aa988e3458f774c489e03e3f8bd0db1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeaa40a86b09bad2530bf179cbb4e602"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#adeaa40a86b09bad2530bf179cbb4e602">MORPH_ITER_MAX</a> = 100</td></tr>
+<tr class="separator:adeaa40a86b09bad2530bf179cbb4e602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6590f4617a6b3d34c6032f8febd7beb"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad6590f4617a6b3d34c6032f8febd7beb">CANNY_THRESH_MAX</a> = 100</td></tr>
+<tr class="separator:ad6590f4617a6b3d34c6032f8febd7beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724d57c0db65696f2ddab415deb1138d"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a724d57c0db65696f2ddab415deb1138d">EPSILON_MAX</a> = 100</td></tr>
+<tr class="separator:a724d57c0db65696f2ddab415deb1138d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a301bd841d376448aff4a0c4d0a1485"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8a301bd841d376448aff4a0c4d0a1485">REGION_AREA_THRESH_MAX</a> = 200000</td></tr>
+<tr class="separator:a8a301bd841d376448aff4a0c4d0a1485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53c6e2b067a8b8c82484cbca34cc3d57"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a53c6e2b067a8b8c82484cbca34cc3d57">THRESHOLD_MAX</a> = 255</td></tr>
+<tr class="separator:a53c6e2b067a8b8c82484cbca34cc3d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52778f49510e1e500b2dc48857724e20"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a52778f49510e1e500b2dc48857724e20">THRESHOLD_CLUSTEREDNESS</a> = 0</td></tr>
+<tr class="separator:a52778f49510e1e500b2dc48857724e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b682d43cd686a8bdfce91b0cbbf5245"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3b682d43cd686a8bdfce91b0cbbf5245">INTENSITY_MAX</a> = 255</td></tr>
+<tr class="separator:a3b682d43cd686a8bdfce91b0cbbf5245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b3de2646beaac60d03527f1775614be"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1b3de2646beaac60d03527f1775614be">POLYGON_CLOSED</a> = true</td></tr>
+<tr class="separator:a1b3de2646beaac60d03527f1775614be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee6fbc641e8a6a85b1d877f9b4c6c6c3"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee6fbc641e8a6a85b1d877f9b4c6c6c3">DISPLAY_LINE_THICKNESS</a> = 10</td></tr>
+<tr class="separator:aee6fbc641e8a6a85b1d877f9b4c6c6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classmultiscale_1_1analysis_1_1Detector"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classmultiscale_1_1analysis_1_1Detector')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classmultiscale_1_1analysis_1_1Detector.html">multiscale::analysis::Detector</a></td></tr>
@@ -396,11 +456,28 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a172b91067670a14a7707f24dc218f2af inherit pro_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a002237e2ad684975a7c8b1e12dd7d780 inherit pro_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memItemLeft" align="right" valign="top">Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a002237e2ad684975a7c8b1e12dd7d780">origin</a></td></tr>
 <tr class="separator:a002237e2ad684975a7c8b1e12dd7d780 inherit pro_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classmultiscale_1_1analysis_1_1Detector')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classmultiscale_1_1analysis_1_1Detector.html">multiscale::analysis::Detector</a></td></tr>
+<tr class="memitem:a5837f0e4ffef6410774ff9bcda72238b inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a5837f0e4ffef6410774ff9bcda72238b">ERR_OUTPUT_WITHOUT_DETECT</a> = &quot;Unable to output results if the <a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#acfb9aaec94382e4a7bee6d9874d4bcef">detect</a> method was not called previously.&quot;</td></tr>
+<tr class="separator:a5837f0e4ffef6410774ff9bcda72238b inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab6b3a68e93cad9a93885e52f1c2ce04 inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#aab6b3a68e93cad9a93885e52f1c2ce04">ERR_OUTPUT_FILE</a> = &quot;Unable to create output file.&quot;</td></tr>
+<tr class="separator:aab6b3a68e93cad9a93885e52f1c2ce04 inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5dc8982745f567379e0eccd416c6820 inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#aa5dc8982745f567379e0eccd416c6820">ERR_INVALID_IMAGE</a> = &quot;The input <a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a523830a6cfe409694ce8327c3c736fbd">image</a> is invalid.&quot;</td></tr>
+<tr class="separator:aa5dc8982745f567379e0eccd416c6820 inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3030def7fe61741fcc8f5c8b50f40e57 inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a3030def7fe61741fcc8f5c8b50f40e57">OUTPUT_EXTENSION</a> = &quot;.out&quot;</td></tr>
+<tr class="separator:a3030def7fe61741fcc8f5c8b50f40e57 inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc73b4fb215305ffd7f3d6df8807cc5e inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#acc73b4fb215305ffd7f3d6df8807cc5e">IMG_EXTENSION</a> = &quot;.png&quot;</td></tr>
+<tr class="separator:acc73b4fb215305ffd7f3d6df8807cc5e inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a883b5de8d273a2bfab31e45bc285c78d inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a883b5de8d273a2bfab31e45bc285c78d">WIN_OUTPUT_IMAGE</a> = &quot;Output <a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a523830a6cfe409694ce8327c3c736fbd">image</a>&quot;</td></tr>
+<tr class="separator:a883b5de8d273a2bfab31e45bc285c78d inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d1f2fd9eae1b166ac097668889c02aa inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a0d1f2fd9eae1b166ac097668889c02aa">KEY_ESC</a> = 27</td></tr>
+<tr class="separator:a0d1f2fd9eae1b166ac097668889c02aa inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9acc60392e3eb0f0a9c3019c63301ae inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#aa9acc60392e3eb0f0a9c3019c63301ae">KEY_SAVE</a> = 115</td></tr>
+<tr class="separator:aa9acc60392e3eb0f0a9c3019c63301ae inherit pro_static_attribs_classmultiscale_1_1analysis_1_1Detector"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for detecting regions of high intensity in grayscale images. </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00056">56</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00021">21</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa6e891d8940358fe71e9a7e23f84452f"></a>
 <div class="memitem">
@@ -418,7 +495,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00015">15</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00063">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00060">avgClusterednessDegree</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00061">avgDensity</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00064">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00065">blurKernelSize</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00067">epsilon</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00066">morphologicalCloseIterations</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00068">regionAreaThresh</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00069">thresholdValue</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00025">avgClusterednessDegree</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00026">avgDensity</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00030">blurKernelSize</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00031">morphologicalCloseIterations</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>.</p>
 
 </div>
 </div>
@@ -473,7 +550,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00158">158</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00063">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00064">beta</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>, and <a class="el" href="Detector_8hpp_source.html#l00033">multiscale::analysis::Detector::image</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>, and <a class="el" href="Detector_8hpp_source.html#l00021">multiscale::analysis::Detector::image</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
@@ -528,7 +605,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00288">288</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00071">regions</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
 
 </div>
 </div>
@@ -564,7 +641,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00198">198</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00060">avgClusterednessDegree</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00061">avgDensity</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00025">avgClusterednessDegree</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00026">avgDensity</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
@@ -613,7 +690,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00335">335</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00063">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00033">ALPHA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00029">ALPHA_REAL_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00028">ALPHA_REAL_MIN</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00304">ALPHA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00299">ALPHA_REAL_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00298">ALPHA_REAL_MIN</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>.</p>
 
@@ -662,7 +739,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00339">339</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00064">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00034">BETA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00031">BETA_REAL_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00030">BETA_REAL_MIN</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00305">BETA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00302">BETA_REAL_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00301">BETA_REAL_MIN</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>.</p>
 
@@ -706,7 +783,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00136">136</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00063">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00033">ALPHA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00064">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00034">BETA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00065">blurKernelSize</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00067">epsilon</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00038">EPSILON_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00035">KERNEL_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00036">MORPH_ITER_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00066">morphologicalCloseIterations</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00039">REGION_AREA_THRESH_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00068">regionAreaThresh</a>, <a class="el" href="SimulationClusterDetector_8hpp_source.html#l00013">THRESHOLD_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00069">thresholdValue</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00016">TRACKBAR_ALPHA</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00017">TRACKBAR_BETA</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00021">TRACKBAR_EPSILON</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00018">TRACKBAR_KERNEL</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00019">TRACKBAR_MORPH</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00022">TRACKBAR_REGION_AREA_THRESH</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00023">TRACKBAR_THRESHOLD</a>, and <a class="el" href="Detector_8hpp_source.html#l00019">WIN_OUTPUT_IMAGE</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00304">ALPHA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00305">BETA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00030">blurKernelSize</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00309">EPSILON_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00306">KERNEL_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00307">MORPH_ITER_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00031">morphologicalCloseIterations</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00310">REGION_AREA_THRESH_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00311">THRESHOLD_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00286">TRACKBAR_ALPHA</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00287">TRACKBAR_BETA</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00291">TRACKBAR_EPSILON</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00288">TRACKBAR_KERNEL</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00289">TRACKBAR_MORPH</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00292">TRACKBAR_REGION_AREA_THRESH</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00293">TRACKBAR_THRESHOLD</a>, and <a class="el" href="Detector_8hpp_source.html#l00204">multiscale::analysis::Detector::WIN_OUTPUT_IMAGE</a>.</p>
 
 </div>
 </div>
@@ -743,7 +820,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00226">226</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00069">multiscale::Geometry2D::distanceBtwPoints()</a>, <a class="el" href="Geometry2D_8cpp_source.html#l00333">multiscale::Geometry2D::minimumDistancePointIndex()</a>, <a class="el" href="Detector_8hpp_source.html#l00042">multiscale::analysis::Detector::origin</a>, <a class="el" href="Detector_8cpp_source.html#l00109">multiscale::analysis::Detector::polygonAngle()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00244">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00256">regionDensity()</a>.</p>
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00069">multiscale::Geometry2D::distanceBtwPoints()</a>, <a class="el" href="Geometry2D_8cpp_source.html#l00333">multiscale::Geometry2D::minimumDistancePointIndex()</a>, <a class="el" href="Detector_8hpp_source.html#l00030">multiscale::analysis::Detector::origin</a>, <a class="el" href="Detector_8cpp_source.html#l00107">multiscale::analysis::Detector::polygonAngle()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00244">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00256">regionDensity()</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>.</p>
 
@@ -862,7 +939,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00180">180</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8cpp_source.html#l00226">createRegionFromPolygon()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00067">epsilon</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00211">findContoursInImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00238">isValidRegion()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8cpp_source.html#l00226">createRegionFromPolygon()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00211">findContoursInImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00238">isValidRegion()</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
@@ -907,7 +984,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00030">30</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00063">alpha</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
@@ -941,7 +1018,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00034">34</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00064">beta</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
@@ -975,7 +1052,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00038">38</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00065">blurKernelSize</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00030">blurKernelSize</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
@@ -1009,7 +1086,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00046">46</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00067">epsilon</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
@@ -1043,7 +1120,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00042">42</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00066">morphologicalCloseIterations</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00031">morphologicalCloseIterations</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
@@ -1077,7 +1154,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00054">54</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Detector_8hpp_source.html#l00042">multiscale::analysis::Detector::origin</a>.</p>
+<p>References <a class="el" href="Detector_8hpp_source.html#l00030">multiscale::analysis::Detector::origin</a>.</p>
 
 </div>
 </div>
@@ -1098,7 +1175,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00058">58</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Detector_8hpp_source.html#l00042">multiscale::analysis::Detector::origin</a>.</p>
+<p>References <a class="el" href="Detector_8hpp_source.html#l00030">multiscale::analysis::Detector::origin</a>.</p>
 
 </div>
 </div>
@@ -1119,7 +1196,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00050">50</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00068">regionAreaThresh</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
@@ -1153,7 +1230,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00066">66</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00071">regions</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
 
 </div>
 </div>
@@ -1174,7 +1251,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00062">62</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00069">thresholdValue</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
@@ -1218,7 +1295,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00124">124</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00063">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00064">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00065">blurKernelSize</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00067">epsilon</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00066">morphologicalCloseIterations</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00068">regionAreaThresh</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00069">thresholdValue</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00030">blurKernelSize</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00031">morphologicalCloseIterations</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>.</p>
 
 </div>
 </div>
@@ -1284,7 +1361,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00238">238</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00026">CONTOUR_AREA_ORIENTED</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00068">regionAreaThresh</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00296">CONTOUR_AREA_ORIENTED</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>.</p>
 
@@ -1333,7 +1410,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00170">170</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00066">morphologicalCloseIterations</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00031">morphologicalCloseIterations</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
@@ -1382,7 +1459,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00312">312</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00060">avgClusterednessDegree</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00061">avgDensity</a>, <a class="el" href="ClusterDetector_8hpp_source.html#l00014">OUTPUT_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00014">OUTPUT_DENSITY</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00025">avgClusterednessDegree</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00026">avgDensity</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00283">OUTPUT_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00284">OUTPUT_DENSITY</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00292">outputResultsToCsvFile()</a>.</p>
 
@@ -1431,7 +1508,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00306">306</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00071">regions</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00292">outputResultsToCsvFile()</a>.</p>
 
@@ -1482,7 +1559,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00292">292</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Region_8cpp_source.html#l00038">multiscale::analysis::Region::fieldNamesToString()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00306">outputRegionsToCsvFile()</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00071">regions</a>.</p>
+<p>References <a class="el" href="Region_8cpp_source.html#l00038">multiscale::analysis::Region::fieldNamesToString()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00306">outputRegionsToCsvFile()</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
 
 <p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1524,7 +1601,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00317">317</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00046">DISPLAY_LINE_THICKNESS</a>, <a class="el" href="Detector_8hpp_source.html#l00033">multiscale::analysis::Detector::image</a>, <a class="el" href="CircularMatFactory_8hpp_source.html#l00011">INTENSITY_MAX</a>, <a class="el" href="Detector_8hpp_source.html#l00037">multiscale::analysis::Detector::outputImage</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00044">POLYGON_CLOSED</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00071">regions</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00317">DISPLAY_LINE_THICKNESS</a>, <a class="el" href="Detector_8hpp_source.html#l00021">multiscale::analysis::Detector::image</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00313">INTENSITY_MAX</a>, <a class="el" href="Detector_8hpp_source.html#l00025">multiscale::analysis::Detector::outputImage</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00315">POLYGON_CLOSED</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
 
 </div>
 </div>
@@ -1556,7 +1633,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00146">146</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00198">computeAverageMeasures()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00170">morphologicalClose()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00071">regions</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00162">smoothImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00176">thresholdImage()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00198">computeAverageMeasures()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00170">morphologicalClose()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00162">smoothImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00176">thresholdImage()</a>.</p>
 
 <p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -1603,7 +1680,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00266">266</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00026">CONTOUR_AREA_ORIENTED</a>, <a class="el" href="Detector_8hpp_source.html#l00033">multiscale::analysis::Detector::image</a>, <a class="el" href="CircularMatFactory_8hpp_source.html#l00011">INTENSITY_MAX</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00277">regionHolesArea()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00041">THRESHOLD_CLUSTEREDNESS</a>, and <a class="el" href="SimulationClusterDetector_8hpp_source.html#l00013">THRESHOLD_MAX</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00296">CONTOUR_AREA_ORIENTED</a>, <a class="el" href="Detector_8hpp_source.html#l00021">multiscale::analysis::Detector::image</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00313">INTENSITY_MAX</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00277">regionHolesArea()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00312">THRESHOLD_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00311">THRESHOLD_MAX</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00226">createRegionFromPolygon()</a>.</p>
 
@@ -1664,7 +1741,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00244">244</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Detector_8hpp_source.html#l00033">multiscale::analysis::Detector::image</a>, <a class="el" href="CircularMatFactory_8hpp_source.html#l00011">INTENSITY_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00041">THRESHOLD_CLUSTEREDNESS</a>, and <a class="el" href="SimulationClusterDetector_8hpp_source.html#l00013">THRESHOLD_MAX</a>.</p>
+<p>References <a class="el" href="Detector_8hpp_source.html#l00021">multiscale::analysis::Detector::image</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00313">INTENSITY_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00312">THRESHOLD_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00311">THRESHOLD_MAX</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00226">createRegionFromPolygon()</a>.</p>
 
@@ -1714,7 +1791,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00256">256</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Detector_8hpp_source.html#l00033">multiscale::analysis::Detector::image</a>, and <a class="el" href="CircularMatFactory_8hpp_source.html#l00011">INTENSITY_MAX</a>.</p>
+<p>References <a class="el" href="Detector_8hpp_source.html#l00021">multiscale::analysis::Detector::image</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00313">INTENSITY_MAX</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00226">createRegionFromPolygon()</a>.</p>
 
@@ -1763,7 +1840,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00277">277</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00026">CONTOUR_AREA_ORIENTED</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00211">findContoursInImage()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00296">CONTOUR_AREA_ORIENTED</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00211">findContoursInImage()</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>.</p>
 
@@ -1815,7 +1892,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00070">70</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00063">alpha</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
@@ -1867,7 +1944,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00076">76</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00064">beta</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
@@ -1919,7 +1996,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00082">82</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00065">blurKernelSize</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00030">blurKernelSize</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
@@ -1971,7 +2048,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00088">88</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00067">epsilon</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
@@ -2023,7 +2100,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00094">94</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00066">morphologicalCloseIterations</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00031">morphologicalCloseIterations</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
@@ -2075,7 +2152,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00100">100</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Detector_8hpp_source.html#l00042">multiscale::analysis::Detector::origin</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
+<p>References <a class="el" href="Detector_8hpp_source.html#l00030">multiscale::analysis::Detector::origin</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
 <p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-41-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -2114,7 +2191,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00106">106</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Detector_8hpp_source.html#l00042">multiscale::analysis::Detector::origin</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
+<p>References <a class="el" href="Detector_8hpp_source.html#l00030">multiscale::analysis::Detector::origin</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
 <p><div id="dynsection-42" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-42-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
@@ -2153,7 +2230,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00112">112</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00068">regionAreaThresh</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
@@ -2205,7 +2282,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00118">118</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00069">thresholdValue</a>.</p>
+<p>References <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>.</p>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
@@ -2266,7 +2343,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00162">162</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00065">blurKernelSize</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00030">blurKernelSize</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
@@ -2326,7 +2403,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00176">176</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="SimulationClusterDetector_8hpp_source.html#l00013">THRESHOLD_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00069">thresholdValue</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00311">THRESHOLD_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
@@ -2363,9 +2440,81 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Alpha for brightness and contrast adjustments </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00063">63</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00028">28</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00030">getAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00070">setAlpha()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7ca1e136dc9d768f1e11cd6f770d950f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::ALPHA_MAX = 1000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00304">304</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abc853d2cfef9e4fafbf86715b48495e0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double RegionDetector::ALPHA_REAL_MAX = 3.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00299">299</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4a11aa86a5250ca6197589c4ccb770f6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double RegionDetector::ALPHA_REAL_MIN = 1.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00298">298</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>.</p>
 
 </div>
 </div>
@@ -2388,7 +2537,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Average degree of clusteredness of all regions </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00060">60</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00025">25</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00198">computeAverageMeasures()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>.</p>
 
@@ -2413,7 +2562,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Average density of all regions </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00061">61</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00026">26</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00198">computeAverageMeasures()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>.</p>
 
@@ -2438,9 +2587,81 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Beta for brightness and contrast adjustments </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00064">64</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00029">29</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00034">getBeta()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00076">setBeta()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad2c6485f637cae5abee0303b41df1480"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::BETA_MAX = 200</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00305">305</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19e9e6c3ea18fe9a3dbf7a1a02652985"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::BETA_REAL_MAX = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00302">302</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87d07b8a993b50bcf050e4c206ac126c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::BETA_REAL_MIN = -100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00301">301</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>.</p>
 
 </div>
 </div>
@@ -2463,9 +2684,79 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Kernel size for Gaussian blur </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00065">65</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00030">30</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00038">getBlurKernelSize()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00082">setBlurKernelSize()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00162">smoothImage()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6590f4617a6b3d34c6032f8febd7beb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::CANNY_THRESH_MAX = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00308">308</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab1fdebf0daaae6f2bb1fe4770479116f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool RegionDetector::CONTOUR_AREA_ORIENTED = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00296">296</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00238">isValidRegion()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00277">regionHolesArea()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aee6fbc641e8a6a85b1d877f9b4c6c6c3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::DISPLAY_LINE_THICKNESS = 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00317">317</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00317">outputResultsToImage()</a>.</p>
 
 </div>
 </div>
@@ -2488,9 +2779,105 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Epsilon for polygon approximation </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00067">67</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00032">32</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00046">getEpsilon()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00088">setEpsilon()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a724d57c0db65696f2ddab415deb1138d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::EPSILON_MAX = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00309">309</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b682d43cd686a8bdfce91b0cbbf5245"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::INTENSITY_MAX = 255</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00313">313</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00317">outputResultsToImage()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00244">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00256">regionDensity()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa988e3458f774c489e03e3f8bd0db1ed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::KERNEL_MAX = 2000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00306">306</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adeaa40a86b09bad2530bf179cbb4e602"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::MORPH_ITER_MAX = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00307">307</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
 </div>
 </div>
@@ -2513,9 +2900,105 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Number of iterations for morphological close operator </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00066">66</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00031">31</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00042">getMorphologicalCloseIterations()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00170">morphologicalClose()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00094">setMorphologicalCloseIterations()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7eeefa86e8c94ee7c89b3e17fb94d931"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::OUTPUT_CLUSTEREDNESS = &quot;Average clusteredness degree: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00283">283</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad432faee394557fc48ff6baaceddf1cb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::OUTPUT_DENSITY = &quot;Average density: &quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00284">284</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1b3de2646beaac60d03527f1775614be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool RegionDetector::POLYGON_CLOSED = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00315">315</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00317">outputResultsToImage()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a301bd841d376448aff4a0c4d0a1485"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::REGION_AREA_THRESH_MAX = 200000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00310">310</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
 </div>
 </div>
@@ -2538,7 +3021,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Threshold for considering a region </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00068">68</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00033">33</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00050">getRegionAreaThresh()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00238">isValidRegion()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00112">setRegionAreaThresh()</a>.</p>
 
@@ -2563,9 +3046,57 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Regions detected in the image </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00071">71</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00036">36</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00288">clearPreviousDetectionResults()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00066">getRegions()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00306">outputRegionsToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00292">outputResultsToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00317">outputResultsToImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a52778f49510e1e500b2dc48857724e20"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::THRESHOLD_CLUSTEREDNESS = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00312">312</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00244">regionClusterednessDegree()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a53c6e2b067a8b8c82484cbca34cc3d57"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RegionDetector::THRESHOLD_MAX = 255</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00311">311</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00244">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00176">thresholdImage()</a>.</p>
 
 </div>
 </div>
@@ -2588,15 +3119,227 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Value of the threshold for the threshold filter </p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00069">69</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00034">34</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00062">getThresholdValue()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00118">setThresholdValue()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00176">thresholdImage()</a>.</p>
 
 </div>
 </div>
+<a class="anchor" id="a5513e029d4d4cf249aa40364489f7a85"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::TRACKBAR_ALPHA = &quot;Alpha&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00286">286</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79d7878ed55bf12a87637896a1f44e37"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::TRACKBAR_BETA = &quot;Beta&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00287">287</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c1c5cde2b7d42ddce44b7f8208f07cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::TRACKBAR_CANNY = &quot;Canny lower threshold&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00290">290</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa3f0755a58457592ac027b42576bd312"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::TRACKBAR_EPSILON = &quot;Epsilon&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00291">291</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79b72da59c92b368fb7894fe1f424e00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::TRACKBAR_KERNEL = &quot;Gaussian blur kernel size&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00288">288</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0358affd40f13327b10447b7fe938338"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::TRACKBAR_MORPH = &quot;Morphological open, number of iterations&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00289">289</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a2711f5cabb3af04a969fe38e1ef473"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::TRACKBAR_REGION_AREA_THRESH = &quot;Region area threshold&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00292">292</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7548c716410a4cb88cb41498de6b509c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string RegionDetector::TRACKBAR_THRESHOLD = &quot;Threshold value&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00293">293</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6a8c4f7b9a6bc40ec6de940f53943772"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool RegionDetector::USE_CANNY_L2 = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00295">295</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/multiscale/analysis/spatial/<a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a></li>
-<li>src/multiscale/analysis/spatial/<a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a></li>
+<li>modules/analysis/spatial/include/multiscale/analysis/spatial/<a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a></li>
+<li>modules/analysis/spatial/src/<a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -2604,7 +3347,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html">RegionDetector</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:46 for Multiscale by
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:57 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

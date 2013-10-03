@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/video/circular/AnnularSector.cpp Source File</title>
+<title>Multiscale: modules/video/circular/src/AnnularSector.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -111,8 +111,8 @@ $(document).ready(function(){initNavTree('AnnularSector_8cpp_source.html','');})
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="AnnularSector_8cpp.html#af68c3a5ad6ffce6c97fff154856a823d">    6</a></span>&#160;<span class="preprocessor">#define SEPARATOR &quot; &quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="AnnularSector_8cpp.html#aedac235f997173e1cb22712e4433a9d7">    6</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="AnnularSector_8cpp.html#aedac235f997173e1cb22712e4433a9d7">SEPARATOR</a> = <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>multiscale::video;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
@@ -159,13 +159,13 @@ $(document).ready(function(){initNavTree('AnnularSector_8cpp_source.html','');})
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">string</span> annularSectorDescription = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    annularSectorDescription += StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a4c0094d8993edb40b15580fa58a8a393">startingRadius</a>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    annularSectorDescription += <a class="code" href="AnnularSector_8cpp.html#af68c3a5ad6ffce6c97fff154856a823d">SEPARATOR</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    annularSectorDescription += <a class="code" href="AnnularSector_8cpp.html#aedac235f997173e1cb22712e4433a9d7">SEPARATOR</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    annularSectorDescription += StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#aa45c5399240707d0b3fc02ee86b97c79">endingRadius</a>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    annularSectorDescription += <a class="code" href="AnnularSector_8cpp.html#af68c3a5ad6ffce6c97fff154856a823d">SEPARATOR</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    annularSectorDescription += <a class="code" href="AnnularSector_8cpp.html#aedac235f997173e1cb22712e4433a9d7">SEPARATOR</a>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    annularSectorDescription += StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a437d3dc1b2fadace28bdc3d26a78c0b3">startingAngle</a>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    annularSectorDescription += <a class="code" href="AnnularSector_8cpp.html#af68c3a5ad6ffce6c97fff154856a823d">SEPARATOR</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    annularSectorDescription += <a class="code" href="AnnularSector_8cpp.html#aedac235f997173e1cb22712e4433a9d7">SEPARATOR</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    annularSectorDescription += StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a0aebd11072dbefe42196d6bda2e4318d">endingAngle</a>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    annularSectorDescription += <a class="code" href="AnnularSector_8cpp.html#af68c3a5ad6ffce6c97fff154856a823d">SEPARATOR</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    annularSectorDescription += <a class="code" href="AnnularSector_8cpp.html#aedac235f997173e1cb22712e4433a9d7">SEPARATOR</a>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    annularSectorDescription += StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1video_1_1AnnularSector.html#a7f6a1e7618c9e2a10e35efb5740395b1">concentration</a>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> annularSectorDescription;</div>
@@ -175,8 +175,8 @@ $(document).ready(function(){initNavTree('AnnularSector_8cpp_source.html','');})
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_181e58fb894b6db2e2ebe48170ed182a.html">video</a></li><li class="navelem"><a class="el" href="dir_9ab520bd455cc605d2cf735513bae990.html">circular</a></li><li class="navelem"><a class="el" href="AnnularSector_8cpp.html">AnnularSector.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_fc26e3a6d4f7a64083c4d29e0277dd16.html">video</a></li><li class="navelem"><a class="el" href="dir_07ce0d4bac9f634ed9a99a16be82ce11.html">circular</a></li><li class="navelem"><a class="el" href="dir_110a185220ab5db810316bd4de12f664.html">src</a></li><li class="navelem"><a class="el" href="AnnularSector_8cpp.html">AnnularSector.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

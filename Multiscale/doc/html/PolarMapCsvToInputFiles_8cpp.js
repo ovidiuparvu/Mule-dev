@@ -1,7 +1,5 @@
 var PolarMapCsvToInputFiles_8cpp =
 [
-    [ "ERR_CODE", "PolarMapCsvToInputFiles_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f", null ],
-    [ "ERR_MSG", "PolarMapCsvToInputFiles_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8", null ],
     [ "areValidParameters", "PolarMapCsvToInputFiles_8cpp.html#a7b05f506b09a7d630740ccdf4329e4e0", null ],
     [ "initArgumentsConfig", "PolarMapCsvToInputFiles_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e", null ],
     [ "isValidNrOfConcentrationsForPosition", "PolarMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322", null ],

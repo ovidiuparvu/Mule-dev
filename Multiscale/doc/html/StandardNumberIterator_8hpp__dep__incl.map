@@ -1,6 +1,6 @@
-<map id="include/multiscale/util/iterator/StandardNumberIterator.hpp" name="include/multiscale/util/iterator/StandardNumberIterator.hpp">
-<area shape="rect" id="node3" href="$StandardNumberIterator_8cpp.html" title="src/multiscale/util\l/iterator/StandardNumberIterator.cpp" alt="" coords="5,126,240,173"/>
-<area shape="rect" id="node5" href="$PolarCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/circular/PolarCsvToInputFiles\lConverter.cpp" alt="" coords="264,117,461,181"/>
-<area shape="rect" id="node7" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularCsv\lToInputFilesConverter.cpp" alt="" coords="485,117,672,181"/>
-<area shape="rect" id="node9" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="src/multiscale/video\l/rectangular/RectangularEntity\lCsvToInputFilesConverter.cpp" alt="" coords="696,117,896,181"/>
+<map id="modules/util/include/multiscale/util/iterator/StandardNumberIterator.hpp" name="modules/util/include/multiscale/util/iterator/StandardNumberIterator.hpp">
+<area shape="rect" id="node3" href="$StandardNumberIterator_8cpp.html" title="modules/util/src/iterator\l/StandardNumberIterator.cpp" alt="" coords="5,126,195,173"/>
+<area shape="rect" id="node5" href="$PolarCsvToInputFilesConverter_8cpp.html" title="modules/video/circular\l/src/PolarCsvToInputFilesConverter.cpp" alt="" coords="219,126,475,173"/>
+<area shape="rect" id="node7" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularCsvToInputFiles\lConverter.cpp" alt="" coords="499,117,712,181"/>
+<area shape="rect" id="node9" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularEntityCsvToInput\lFilesConverter.cpp" alt="" coords="736,117,955,181"/>
 </map>

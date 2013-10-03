@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/video/rectangular/RectangularGnuplotScriptGenerator.cpp Source File</title>
+<title>Multiscale: modules/video/rectangular/src/RectangularGnuplotScriptGenerator.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('RectangularGnuplotScriptGenerator_8cpp
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                                                       <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> height,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                       <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> width,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                       <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ofstream fout((outputFilepath + <a class="code" href="PolarGnuplotScriptGenerator_8hpp.html#a85e11e2c1d735f878817c23fc52da09a">GNUPLOT_EXTENSION</a>), std::ios_base::trunc);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ofstream fout((outputFilepath + GNUPLOT_EXTENSION), std::ios_base::trunc);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    assert(fout.is_open());</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('RectangularGnuplotScriptGenerator_8cpp
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#abe3a62a21428183cdaf91c405c59264f">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#abe3a62a21428183cdaf91c405c59264f" title="Generate the header of the script.">RectangularGnuplotScriptGenerator::generateHeader</a>(ofstream &amp;fout, <span class="keyword">const</span> <span class="keywordtype">string</span> &amp;outputFilepath,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                       <span class="keywordtype">double</span> simulationTime, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> height,</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                       <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> width) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ifstream fin(<a class="code" href="PolarGnuplotScriptGenerator_8hpp.html#a60cb0b7dc497ae010252d4fe9794c583">HEADER_IN</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ifstream fin(HEADER_IN);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    assert(fin.is_open());</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('RectangularGnuplotScriptGenerator_8cpp
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#ae8464c4b7b05d86ea8bcbfa5a26f7374">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#ae8464c4b7b05d86ea8bcbfa5a26f7374" title="Generate the body/content of the script.">RectangularGnuplotScriptGenerator::generateBody</a>(<span class="keyword">const</span> vector&lt;double&gt; &amp;concentrations, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> height,</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                                     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> width, ofstream &amp;fout) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ifstream fin(<a class="code" href="PolarGnuplotScriptGenerator_8hpp.html#a24ff1788e402c9b442516547abbc9cc1">CONTENT_IN</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ifstream fin(CONTENT_IN);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    assert(fin.is_open());</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('RectangularGnuplotScriptGenerator_8cpp
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a0b37e76bc9d825de0fd9d168f15a56be">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a0b37e76bc9d825de0fd9d168f15a56be" title="Generate the footer of the script.">RectangularGnuplotScriptGenerator::generateFooter</a>(ofstream &amp;fout) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    ifstream fin(<a class="code" href="PolarGnuplotScriptGenerator_8hpp.html#a659b095a04ee66db6555c930dd5eb1ee">FOOTER_IN</a>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    ifstream fin(FOOTER_IN);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    assert(fin.is_open());</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
@@ -175,10 +175,10 @@ $(document).ready(function(){initNavTree('RectangularGnuplotScriptGenerator_8cpp
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">string</span> line;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">while</span> (getline(fin, line)) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        line = <a class="code" href="classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b" title="Replace a substring of the given string with another string.">StringManipulator::replace</a>(line, <a class="code" href="PolarGnuplotScriptGenerator_8hpp.html#a62f869eb7f2cb72d3239c9dda88a618a">REPLACE_HEADER_FILENAME</a>, outputFilename);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        line = <a class="code" href="classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b" title="Replace a substring of the given string with another string.">StringManipulator::replace</a>(line, <a class="code" href="RectangularGnuplotScriptGenerator_8hpp.html#acc1d8b3e09f307e97f90278bdf28849d">REPLACE_HEADER_HEIGHT</a>, StringManipulator::toString&lt;double&gt;(height - <a class="code" href="RectangularGnuplotScriptGenerator_8hpp.html#a6136c60fb008e5bb20923acd161552cf">REPLACE_DIMENSION_EXTRA</a>));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        line = <a class="code" href="classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b" title="Replace a substring of the given string with another string.">StringManipulator::replace</a>(line, <a class="code" href="RectangularGnuplotScriptGenerator_8hpp.html#aad25c2d9aee80f359bd01bccaca636b9">REPLACE_HEADER_WIDTH</a>, StringManipulator::toString&lt;double&gt;(width - <a class="code" href="RectangularGnuplotScriptGenerator_8hpp.html#a6136c60fb008e5bb20923acd161552cf">REPLACE_DIMENSION_EXTRA</a>));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        line = <a class="code" href="classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b" title="Replace a substring of the given string with another string.">StringManipulator::replace</a>(line, <a class="code" href="PolarGnuplotScriptGenerator_8hpp.html#a346d2dc87a2a3cfa966ff3e780779f86">REPLACE_HEADER_SIM_TIME</a>, StringManipulator::toString&lt;double&gt;(simulationTime));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        line = <a class="code" href="classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b" title="Replace a substring of the given string with another string.">StringManipulator::replace</a>(line, REPLACE_HEADER_FILENAME, outputFilename);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        line = <a class="code" href="classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b" title="Replace a substring of the given string with another string.">StringManipulator::replace</a>(line, REPLACE_HEADER_HEIGHT, StringManipulator::toString&lt;double&gt;(height - REPLACE_DIMENSION_EXTRA));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        line = <a class="code" href="classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b" title="Replace a substring of the given string with another string.">StringManipulator::replace</a>(line, REPLACE_HEADER_WIDTH, StringManipulator::toString&lt;double&gt;(width - REPLACE_DIMENSION_EXTRA));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        line = <a class="code" href="classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b" title="Replace a substring of the given string with another string.">StringManipulator::replace</a>(line, REPLACE_HEADER_SIM_TIME, StringManipulator::toString&lt;double&gt;(simulationTime));</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        fout &lt;&lt; line &lt;&lt; endl;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('RectangularGnuplotScriptGenerator_8cpp
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> width, ofstream &amp;fout) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; height; i++) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = 0; j &lt; (width - 1); j++) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            fout &lt;&lt; concentrations[(i * width) + j] &lt;&lt; <a class="code" href="Entity_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            fout &lt;&lt; concentrations[(i * width) + j] &lt;&lt; OUTPUT_SEPARATOR;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        fout &lt;&lt; concentrations[(i * width) + width - 1] &lt;&lt; endl;</div>
@@ -208,13 +208,30 @@ $(document).ready(function(){initNavTree('RectangularGnuplotScriptGenerator_8cpp
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    fout.flush();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">// Constants</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#afeced106138e618bb292826093205023">RectangularGnuplotScriptGenerator::HEADER_IN</a>       = <span class="stringliteral">&quot;config/video/rectangular/header.in&quot;</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#abbd954ff4d68e2a6ef9a7a81f615892c">RectangularGnuplotScriptGenerator::CONTENT_IN</a>      = <span class="stringliteral">&quot;config/video/rectangular/content.in&quot;</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a5bff725c865bc3a426351644cee34229">RectangularGnuplotScriptGenerator::FOOTER_IN</a>       = <span class="stringliteral">&quot;config/video/rectangular/footer.in&quot;</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#aba834d6608c58a4ea91d73947f2cfe0a">RectangularGnuplotScriptGenerator::REPLACE_HEADER_FILENAME</a>    = <span class="stringliteral">&quot;OUTPUT_FILENAME&quot;</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a7c6bb61b310d321618f22d15f686fd44">RectangularGnuplotScriptGenerator::REPLACE_HEADER_HEIGHT</a>      = <span class="stringliteral">&quot;OUTPUT_DIMENSION1&quot;</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a2b9a87b266a126d6cdd6d6ee1d707b87">RectangularGnuplotScriptGenerator::REPLACE_HEADER_WIDTH</a>       = <span class="stringliteral">&quot;OUTPUT_DIMENSION2&quot;</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a9eaa6120a15c5055eb6fbe5b1113d806">RectangularGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME</a>    = <span class="stringliteral">&quot;OUTPUT_SIM_TIME&quot;</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a90ca6d5bab28ed98c6adf71cb848676e">RectangularGnuplotScriptGenerator::REPLACE_DIMENSION_EXTRA</a> = 0.5;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a8e42e0b2f41ffd1115f6123d45195ed0">RectangularGnuplotScriptGenerator::OUTPUT_SEPARATOR</a>    = <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#afa1626f7904b3006ac768f770c799283">RectangularGnuplotScriptGenerator::GNUPLOT_EXTENSION</a>   = <span class="stringliteral">&quot;.plt&quot;</span>;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_181e58fb894b6db2e2ebe48170ed182a.html">video</a></li><li class="navelem"><a class="el" href="dir_659b9e9df9619eed061809f04f769b63.html">rectangular</a></li><li class="navelem"><a class="el" href="RectangularGnuplotScriptGenerator_8cpp.html">RectangularGnuplotScriptGenerator.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_fc26e3a6d4f7a64083c4d29e0277dd16.html">video</a></li><li class="navelem"><a class="el" href="dir_fb0669734c64edfd22e63e8de30b2476.html">rectangular</a></li><li class="navelem"><a class="el" href="dir_31eb8512872d6494295532753d992cef.html">src</a></li><li class="navelem"><a class="el" href="RectangularGnuplotScriptGenerator_8cpp.html">RectangularGnuplotScriptGenerator.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

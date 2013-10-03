@@ -13,5 +13,5 @@ var searchData=
   ['findpointsonedge',['findPointsOnEdge',['../classmultiscale_1_1Geometry2D.html#a9e5c6378463c0e685136d66bfac2a8c1',1,'multiscale::Geometry2D']]],
   ['findregions',['findRegions',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e',1,'multiscale::analysis::RegionDetector']]],
   ['findvertexconsideb',['findVertexCOnSideB',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#ab0b488d2d67f2d22077777eebc292c1a',1,'multiscale::MinEnclosingTriangleFinder']]],
-  ['footer_5fin',['FOOTER_IN',['../PolarGnuplotScriptGenerator_8hpp.html#a659b095a04ee66db6555c930dd5eb1ee',1,'FOOTER_IN():&#160;PolarGnuplotScriptGenerator.hpp'],['../RectangularGnuplotScriptGenerator_8hpp.html#a659b095a04ee66db6555c930dd5eb1ee',1,'FOOTER_IN():&#160;RectangularGnuplotScriptGenerator.hpp']]]
+  ['footer_5fin',['FOOTER_IN',['../classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#aae225d7380fd7815efa1aed69087e6b0',1,'multiscale::video::PolarGnuplotScriptGenerator::FOOTER_IN()'],['../classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a5bff725c865bc3a426351644cee34229',1,'multiscale::video::RectangularGnuplotScriptGenerator::FOOTER_IN()']]]
 ];

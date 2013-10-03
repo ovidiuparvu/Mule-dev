@@ -1,7 +1,5 @@
 var RectangularMapCsvToInputFiles_8cpp =
 [
-    [ "ERR_CODE", "RectangularMapCsvToInputFiles_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f", null ],
-    [ "ERR_MSG", "RectangularMapCsvToInputFiles_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8", null ],
     [ "areValidParameters", "RectangularMapCsvToInputFiles_8cpp.html#afe62d94ef4859e9e650632801be1763d", null ],
     [ "initArgumentsConfig", "RectangularMapCsvToInputFiles_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e", null ],
     [ "isValidNrOfConcentrationsForPosition", "RectangularMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322", null ],

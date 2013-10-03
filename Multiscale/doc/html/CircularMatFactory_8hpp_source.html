@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: include/multiscale/analysis/spatial/factory/CircularMatFactory.hpp Source File</title>
+<title>Multiscale: modules/analysis/spatial/include/multiscale/analysis/spatial/factory/CircularMatFactory.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -106,74 +106,77 @@ $(document).ready(function(){initNavTree('CircularMatFactory_8hpp_source.html','
 <div class="title">CircularMatFactory.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="CircularMatFactory_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CIRCULARMATFACTORY_HPP_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CIRCULARMATFACTORY_HPP_</span></div>
+<a href="CircularMatFactory_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CIRCULARMATFACTORY_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CIRCULARMATFACTORY_HPP</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MatFactory_8hpp.html">multiscale/analysis/spatial/MatFactory.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>cv;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="CircularMatFactory_8hpp.html#a9f274071cceaab487364e0e4259db786">    9</a></span>&#160;<span class="preprocessor">#define ERR_UNIMPLEMENTED_METHOD    &quot;The method you called is not implemented.&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="CircularMatFactory_8hpp.html#a8f47a4307f9eea88d06b5383da431917">   11</a></span>&#160;<span class="preprocessor">#define INTENSITY_MAX       255</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="CircularMatFactory_8hpp.html#a45b48336a4e1e5ee103e64d60ff70d8b">   13</a></span>&#160;<span class="preprocessor">#define ROI_START_X         1024</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="CircularMatFactory_8hpp.html#ae7c1925b76a57c3c24640495721065d1">   14</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ROI_START_Y         786</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="CircularMatFactory_8hpp.html#a8fa8f703e8021181eab7361c93d3ef10">   15</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ROI_RADIUS          615</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="CircularMatFactory_8hpp.html#ab6fdc1777569a818fa0731a0f9e3792a">   17</a></span>&#160;<span class="preprocessor">#define INPUT_IMG_WIDTH     2048</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="CircularMatFactory_8hpp.html#ae8daf80f0cb4604411fbb1e851519ed9">   18</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INPUT_IMG_HEIGHT    1572</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="CircularMatFactory_8hpp.html#a2c1bd6167e8959f46b9935db39accfbc">   20</a></span>&#160;<span class="preprocessor">#define COLOURBAR_MAX_X     1775</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="CircularMatFactory_8hpp.html#a00e6262953121bdb5e213e17dc43ee95">   21</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define COLOURBAR_MAX_Y     56</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">namespace </span>analysis {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html">   15</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid.">CircularMatFactory</a> : <span class="keyword">public</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid.">CircularMatFactory</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid.">CircularMatFactory</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">namespace </span>analysis {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html">   29</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid.">CircularMatFactory</a> : <span class="keyword">public</span> <a class="code" href="classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object.">MatFactory</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid.">CircularMatFactory</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid.">CircularMatFactory</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                Mat createFromViewerImage(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordtype">double</span> maxColourBarIntensityFromViewerImage(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                Mat createFromViewerImage(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *processConcentrations(ifstream&amp; fin) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordtype">double</span> maxColourBarIntensityFromViewerImage(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;inputFile) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">bool</span> isValidViewerImage(<span class="keyword">const</span> Mat &amp;image) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *processConcentrations(ifstream&amp; fin) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordtype">bool</span> isValidViewerImage(<span class="keyword">const</span> Mat &amp;image) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                Mat createCircularMask(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> originX, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> originY,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                       <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> radius, <span class="keyword">const</span> Mat &amp;image);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                Mat createCircularMask(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> originX, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> originY,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                       <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> radius, <span class="keyword">const</span> Mat &amp;image);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a7f4120aa31ff324ddb5c90e14cfeeb6d">   71</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a7f4120aa31ff324ddb5c90e14cfeeb6d">ERR_UNIMPLEMENTED_METHOD</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a37f5cabf6d03d157cf96fb745e1da0ca">   73</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a37f5cabf6d03d157cf96fb745e1da0ca">INTENSITY_MAX</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a0e2da07df4736b0ec21567721ae94af5">   75</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a0e2da07df4736b0ec21567721ae94af5">ROI_START_X</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a94368fde6348afd7074491c2cf333910">   76</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a94368fde6348afd7074491c2cf333910">ROI_START_Y</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#af26e9372a9bfb4428e9bdef952afedff">   77</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#af26e9372a9bfb4428e9bdef952afedff">ROI_RADIUS</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a1c85fef366f2b3674a0c58394e441908">   79</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a1c85fef366f2b3674a0c58394e441908">INPUT_IMG_WIDTH</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#afdc7e6c3051b6767fa9e1a38257f1aa2">   80</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#afdc7e6c3051b6767fa9e1a38257f1aa2">INPUT_IMG_HEIGHT</a>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        };</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    };</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a57e022b6cb2066b59e6f1988986ce6ad">   82</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a57e022b6cb2066b59e6f1988986ce6ad">COLOURBAR_MAX_X</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a288197056f07989be0503e08a2745bed">   83</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1CircularMatFactory.html#a288197056f07989be0503e08a2745bed">COLOURBAR_MAX_Y</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        };</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_7b9db7c2b41001ca254481ac0f65af63.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_617023d10e7618f3fc87fd3542a5b75d.html">analysis</a></li><li class="navelem"><a class="el" href="dir_525f610367b169c5221b707333271043.html">spatial</a></li><li class="navelem"><a class="el" href="dir_dc58f59ab08c37a8d6db78fec5d299c9.html">factory</a></li><li class="navelem"><a class="el" href="CircularMatFactory_8hpp.html">CircularMatFactory.hpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_e7d242e1da06815f3d3da2caccd0f5a1.html">include</a></li><li class="navelem"><a class="el" href="dir_caa6a397db17f058e2c817cb5faf17c2.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_acebd083e3f2954c6fa33291786797ea.html">analysis</a></li><li class="navelem"><a class="el" href="dir_f241995066f1baa02936d91c53de1c28.html">spatial</a></li><li class="navelem"><a class="el" href="dir_b9522168586fa45519efec6fef54ed85.html">factory</a></li><li class="navelem"><a class="el" href="CircularMatFactory_8hpp.html">CircularMatFactory.hpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

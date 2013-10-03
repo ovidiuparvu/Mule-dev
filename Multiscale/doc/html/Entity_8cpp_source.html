@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/analysis/spatial/Entity.cpp Source File</title>
+<title>Multiscale: modules/analysis/spatial/src/Entity.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -157,8 +157,8 @@ $(document).ready(function(){initNavTree('Entity_8cpp_source.html','');});
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#aedae50d85d369b0e68fa6433d7e3fec6">   51</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#aedae50d85d369b0e68fa6433d7e3fec6" title="Get a string representation of all the field values.">Entity::toString</a>() {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> StringManipulator::toString&lt;unsigned int&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#aae78866cef9fcb7bd2e858570f47d082">pileUpDegree</a>) + <a class="code" href="Entity_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a> +</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;           StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef">centre</a>.x) + <a class="code" href="Entity_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a> +</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> StringManipulator::toString&lt;unsigned int&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#aae78866cef9fcb7bd2e858570f47d082">pileUpDegree</a>) + <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#afe861959b8b22bec466e8118a09ccb54">OUTPUT_SEPARATOR</a> +</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;           StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef">centre</a>.x) + <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#afe861959b8b22bec466e8118a09ccb54">OUTPUT_SEPARATOR</a> +</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;           StringManipulator::toString&lt;double&gt;(<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef">centre</a>.y);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('Entity_8cpp_source.html','');});
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891">Entity::validateInputValues</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keywordtype">double</span> perimeter, <span class="keyword">const</span> Point2f &amp;centre,</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                 <span class="keyword">const</span> vector&lt;Point2f&gt; &amp;contourPoints) {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc" title="Check if the provided degree of pile up, area, centre and contour points are valid.">areValid</a>(pileUpDegree, area, perimeter, centre, contourPoints)) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1EntityException.html" title="Exception class for the Entity instances.">EntityException</a>(<a class="code" href="Entity_8hpp.html#a617a89dc9ced4a63643f98263cde3e91">ERR_INPUT</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1EntityException.html" title="Exception class for the Entity instances.">EntityException</a>, <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a52a27753c0da593552f585f540f003ff">ERR_INPUT</a>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
@@ -193,13 +193,20 @@ $(document).ready(function(){initNavTree('Entity_8cpp_source.html','');});
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        ((<a class="code" href="classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number.">Numeric::greaterOrEqual</a>(centre.x, 0)) &amp;&amp; (<a class="code" href="classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number.">Numeric::greaterOrEqual</a>(centre.y, 0)))</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    );</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// Constants</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a52a27753c0da593552f585f540f003ff">Entity::ERR_INPUT</a>           = <span class="stringliteral">&quot;Invalid input parameters were provided to the constructor.&quot;</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a0904a1ab1e3f71e0702ace23b665cf0e">Entity::ERR_DISTANCE</a>        = <span class="stringliteral">&quot;The distance to an object of a different type cannot be computed.&quot;</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#afe861959b8b22bec466e8118a09ccb54">Entity::OUTPUT_SEPARATOR</a>    = <span class="stringliteral">&quot;,&quot;</span>;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="Entity_8cpp.html">Entity.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_f0033717cfd9395379e47f6b9f751443.html">src</a></li><li class="navelem"><a class="el" href="Entity_8cpp.html">Entity.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

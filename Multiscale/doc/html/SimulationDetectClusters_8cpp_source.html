@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/analysis/spatial/SimulationDetectClusters.cpp Source File</title>
+<title>Multiscale: modules/analysis/spatial/src/SimulationDetectClusters.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,33 +107,33 @@ $(document).ready(function(){initNavTree('SimulationDetectClusters_8cpp_source.h
 </div><!--header-->
 <div class="contents">
 <a href="SimulationDetectClusters_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SimulationClusterDetector_8hpp.html">multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RectangularMatFactory_8hpp.html">multiscale/analysis/spatial/factory/RectangularMatFactory.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;boost/property_tree/ptree.hpp&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;boost/property_tree/xml_parser.hpp&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;boost/program_options.hpp&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using namespace </span>multiscale::analysis;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>po = boost::program_options;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>pt = boost::property_tree;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Multiscale_8hpp.html">multiscale/core/Multiscale.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SimulationClusterDetector_8hpp.html">multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RectangularMatFactory_8hpp.html">multiscale/analysis/spatial/factory/RectangularMatFactory.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ExceptionHandler_8hpp.html">multiscale/exception/ExceptionHandler.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;boost/property_tree/ptree.hpp&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;boost/property_tree/xml_parser.hpp&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;boost/program_options.hpp&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using namespace </span>multiscale;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using namespace </span>multiscale::analysis;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a42bf63540ee0039a3a23db1b5ec3202b">   31</a></span>&#160;<span class="preprocessor">#define CONFIG_FILE &quot;config/analysis/spatial/simulation_cluster_detector.xml&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a5eb40c1819d4a3f29b8a758da95f2d49">   33</a></span>&#160;<span class="preprocessor">#define LABEL_ROOT_COMMENT      &quot;&lt;xmlcomment&gt;&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a4ae598a3bc03fdea06da05a1f46db888">   34</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LABEL_EPS               &quot;detector.eps&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#ab9066d0364e527e549c5c6b00bfdfad2">   35</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define LABEL_MINPOINTS         &quot;detector.minPoints&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a36628b11fe91394a7bd208067f5b17eb">   37</a></span>&#160;<span class="preprocessor">#define ROOT_COMMENT            &quot;Warning! This xml file was automatically generated by a C++ program using the Boost PropertyTree library.&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">   39</a></span>&#160;<span class="preprocessor">#define ERR_CODE    1</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">   40</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_MSG     &quot;An error occurred: &quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>po = boost::program_options;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>pt = boost::property_tree;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a656a257c36273fa57ae244c25bf23ed8">   34</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="CircularDetectRegions_8cpp.html#a656a257c36273fa57ae244c25bf23ed8">CONFIG_FILE</a> = <span class="stringliteral">&quot;config/analysis/spatial/simulation_cluster_detector.xml&quot;</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a410d625b5c5f905e5b97870673ac236c">   36</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="CircularDetectRegions_8cpp.html#a410d625b5c5f905e5b97870673ac236c">LABEL_ROOT_COMMENT</a>      = <span class="stringliteral">&quot;&lt;xmlcomment&gt;&quot;</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a0be1706eb30a11850372529d7bee8f99">   37</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="SimulationDetectClusters_8cpp.html#a0be1706eb30a11850372529d7bee8f99">LABEL_EPS</a>               = <span class="stringliteral">&quot;detector.eps&quot;</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a59b1737ccf1b2a1e6b9c68a619633e69">   38</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="SimulationDetectClusters_8cpp.html#a59b1737ccf1b2a1e6b9c68a619633e69">LABEL_MINPOINTS</a>         = <span class="stringliteral">&quot;detector.minPoints&quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a5f7b50b65b0c3f69fb34244c882a07cb">   40</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="CircularDetectRegions_8cpp.html#a5f7b50b65b0c3f69fb34244c882a07cb">ROOT_COMMENT</a>            = <span class="stringliteral">&quot;Warning! This xml file was automatically generated by a C++ program using the Boost PropertyTree library.&quot;</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// Initialise the arguments configuration</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">   44</a></span>&#160;po::variables_map <a class="code" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">initArgumentsConfig</a>(po::options_description &amp;usageDescription, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('SimulationDetectClusters_8cpp_source.h
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// Print error message if wrong parameters are provided</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">printWrongParameters</a>() {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    cout &lt;&lt; <a class="code" href="SimulationDetectClusters_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; <span class="stringliteral">&quot;Wrong input arguments provided.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    cout &lt;&lt; <a class="code" href="namespacemultiscale.html#a06490e4e11ef359aa0260f96579ce584">ERR_MSG</a> &lt;&lt; <span class="stringliteral">&quot;Wrong input arguments provided.&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Run the program with the argument \&quot;--help\&quot; for more information.&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
@@ -200,24 +200,24 @@ $(document).ready(function(){initNavTree('SimulationDetectClusters_8cpp_source.h
 <div class="line"><a name="l00105"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a3b2fe4e3a75a6cdca8ea050e37a9da13">  105</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d">loadDetectorParameterValues</a>(<a class="code" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html" title="Class for detecting clusters in 2D images obtained from simulations.">SimulationClusterDetector</a> &amp;detector) {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    pt::ptree propertyTree;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    read_xml(<a class="code" href="SimulationDetectClusters_8cpp.html#a42bf63540ee0039a3a23db1b5ec3202b">CONFIG_FILE</a>, propertyTree, pt::xml_parser::trim_whitespace);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    read_xml(<a class="code" href="CircularDetectRegions_8cpp.html#a656a257c36273fa57ae244c25bf23ed8">CONFIG_FILE</a>, propertyTree, pt::xml_parser::trim_whitespace);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    detector.<a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a35eaa560c893a86c3149471f40c15979" title="Set the value of the clustering algorithm parameter eps.">setEps</a>(propertyTree.get&lt;<span class="keywordtype">double</span>&gt;(<a class="code" href="SimulationDetectClusters_8cpp.html#a4ae598a3bc03fdea06da05a1f46db888">LABEL_EPS</a>));</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    detector.<a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a190fd17d121e8c22c1ca6e4f5b7a213c" title="Set the value of the clustering algorithm parameter MinPoints.">setMinPoints</a>(propertyTree.get&lt;<span class="keywordtype">int</span>&gt;(<a class="code" href="SimulationDetectClusters_8cpp.html#ab9066d0364e527e549c5c6b00bfdfad2">LABEL_MINPOINTS</a>));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    detector.<a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a35eaa560c893a86c3149471f40c15979" title="Set the value of the clustering algorithm parameter eps.">setEps</a>(propertyTree.get&lt;<span class="keywordtype">double</span>&gt;(<a class="code" href="SimulationDetectClusters_8cpp.html#a0be1706eb30a11850372529d7bee8f99">LABEL_EPS</a>));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    detector.<a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a190fd17d121e8c22c1ca6e4f5b7a213c" title="Set the value of the clustering algorithm parameter MinPoints.">setMinPoints</a>(propertyTree.get&lt;<span class="keywordtype">int</span>&gt;(<a class="code" href="SimulationDetectClusters_8cpp.html#a59b1737ccf1b2a1e6b9c68a619633e69">LABEL_MINPOINTS</a>));</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">// Save the values of the parameters to the config file</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="SimulationDetectClusters_8cpp.html#a54440a034c11e07c393765b057b2bf65">  115</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228">saveDetectorParameterValues</a>(<a class="code" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html" title="Class for detecting clusters in 2D images obtained from simulations.">SimulationClusterDetector</a> &amp;detector) {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    pt::ptree propertyTree;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    propertyTree.put&lt;<span class="keywordtype">string</span>&gt;(<a class="code" href="SimulationDetectClusters_8cpp.html#a5eb40c1819d4a3f29b8a758da95f2d49">LABEL_ROOT_COMMENT</a>, <a class="code" href="SimulationDetectClusters_8cpp.html#a36628b11fe91394a7bd208067f5b17eb">ROOT_COMMENT</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    propertyTree.put&lt;<span class="keywordtype">string</span>&gt;(<a class="code" href="CircularDetectRegions_8cpp.html#a410d625b5c5f905e5b97870673ac236c">LABEL_ROOT_COMMENT</a>, <a class="code" href="CircularDetectRegions_8cpp.html#a5f7b50b65b0c3f69fb34244c882a07cb">ROOT_COMMENT</a>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    propertyTree.put&lt;<span class="keywordtype">double</span>&gt;(<a class="code" href="SimulationDetectClusters_8cpp.html#a4ae598a3bc03fdea06da05a1f46db888">LABEL_EPS</a>, detector.<a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a5f1699b100e7203720cb7fd1ef73cea1" title="Get the value of the clustering algorithm parameter eps.">getEps</a>());</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    propertyTree.put&lt;<span class="keywordtype">int</span>&gt;(<a class="code" href="SimulationDetectClusters_8cpp.html#ab9066d0364e527e549c5c6b00bfdfad2">LABEL_MINPOINTS</a>, detector.<a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#af979c73c154bd42ef73d3328e80889ef" title="Get the value of the clustering algorithm parameter MinPoints.">getMinPoints</a>());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    propertyTree.put&lt;<span class="keywordtype">double</span>&gt;(<a class="code" href="SimulationDetectClusters_8cpp.html#a0be1706eb30a11850372529d7bee8f99">LABEL_EPS</a>, detector.<a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a5f1699b100e7203720cb7fd1ef73cea1" title="Get the value of the clustering algorithm parameter eps.">getEps</a>());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    propertyTree.put&lt;<span class="keywordtype">int</span>&gt;(<a class="code" href="SimulationDetectClusters_8cpp.html#a59b1737ccf1b2a1e6b9c68a619633e69">LABEL_MINPOINTS</a>, detector.<a class="code" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#af979c73c154bd42ef73d3328e80889ef" title="Get the value of the clustering algorithm parameter MinPoints.">getMinPoints</a>());</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// Pretty writing of the property tree to the file</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    pt::xml_writer_settings&lt;char&gt; settings(<span class="charliteral">&#39;\t&#39;</span>, 1);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    write_xml(<a class="code" href="SimulationDetectClusters_8cpp.html#a42bf63540ee0039a3a23db1b5ec3202b">CONFIG_FILE</a>, propertyTree, std::locale(), settings);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    write_xml(<a class="code" href="CircularDetectRegions_8cpp.html#a656a257c36273fa57ae244c25bf23ed8">CONFIG_FILE</a>, propertyTree, std::locale(), settings);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">// Load the values of the parameters from the config file if in debug mode</span></div>
@@ -262,31 +262,23 @@ $(document).ready(function(){initNavTree('SimulationDetectClusters_8cpp_source.h
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">printWrongParameters</a>();</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;e) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        cerr &lt;&lt; <a class="code" href="SimulationDetectClusters_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; e &lt;&lt; endl;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> exception &amp;e) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        ExceptionHandler::printErrorMessage(e);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="SimulationDetectClusters_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>* e) {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        cerr &lt;&lt; <a class="code" href="SimulationDetectClusters_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; e &lt;&lt; endl;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="SimulationDetectClusters_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    } <span class="keywordflow">catch</span>(exception &amp;e) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        cerr &lt;&lt; <a class="code" href="SimulationDetectClusters_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; e.what() &lt;&lt; endl;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="SimulationDetectClusters_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    } <span class="keywordflow">catch</span>(...) {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Exception of unknown type!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemultiscale.html#a4ee40795105048ee371efeeb7962ecf6">ERR_CODE</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    } <span class="keywordflow">catch</span>(...) {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Exception of unknown type!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_913e38079923c90ef6d889a551bd9042.html">analysis</a></li><li class="navelem"><a class="el" href="dir_eecdf75660cbdeda8cf07b528b48c623.html">spatial</a></li><li class="navelem"><a class="el" href="SimulationDetectClusters_8cpp.html">SimulationDetectClusters.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_f0033717cfd9395379e47f6b9f751443.html">src</a></li><li class="navelem"><a class="el" href="SimulationDetectClusters_8cpp.html">SimulationDetectClusters.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

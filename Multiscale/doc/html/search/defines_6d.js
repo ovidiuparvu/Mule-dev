@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['matrix_5fstart_5findex',['MATRIX_START_INDEX',['../Geometry2D_8hpp.html#a7758589e42ccb014f07e996928fb2c9f',1,'Geometry2D.hpp']]],
-  ['min_5fpoints_5fmax',['MIN_POINTS_MAX',['../ClusterDetector_8hpp.html#ac5e81e4fb4ebf2cc5efb012723d37fcd',1,'ClusterDetector.hpp']]],
-  ['min_5fpoints_5fmin',['MIN_POINTS_MIN',['../ClusterDetector_8hpp.html#a44d4dbf032dec9fc3f1a2ba9c11afe2e',1,'ClusterDetector.hpp']]],
-  ['morph_5fiter_5fmax',['MORPH_ITER_MAX',['../RegionDetector_8hpp.html#a18fb885f360856823b73a2fe092bbe80',1,'RegionDetector.hpp']]]
+  ['ms_5fthrow',['MS_throw',['../MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4',1,'MultiscaleException.hpp']]]
 ];

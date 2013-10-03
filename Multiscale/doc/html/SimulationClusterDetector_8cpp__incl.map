@@ -1,14 +1,16 @@
-<map id="src/multiscale/analysis/spatial/cluster/SimulationClusterDetector.cpp" name="src/multiscale/analysis/spatial/cluster/SimulationClusterDetector.cpp">
-<area shape="rect" id="node3" href="$SimulationClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/cluster/Simulation\lClusterDetector.hpp" alt="" coords="769,117,940,181"/>
-<area shape="rect" id="node51" href="$SimulationClusterDetectorException_8hpp.html" title="multiscale/exception\l/SimulationClusterDetectorException.hpp" alt="" coords="971,126,1232,173"/>
-<area shape="rect" id="node57" href="$RGBColourGenerator_8hpp.html" title="multiscale/util/RGBColour\lGenerator.hpp" alt="" coords="1256,126,1429,173"/>
-<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="548,230,732,277"/>
-<area shape="rect" id="node7" href="$Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="316,326,449,373"/>
-<area shape="rect" id="node11" href="$Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="37,430,171,477"/>
-<area shape="rect" id="node40" href="$Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="891,430,1032,477"/>
-<area shape="rect" id="node20" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="269,534,416,581"/>
-<area shape="rect" id="node22" href="$SpatialCollection2D_8hpp.html" title="multiscale/analysis\l/spatial/SpatialCollection2\lD.hpp" alt="" coords="296,421,469,485"/>
-<area shape="rect" id="node26" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="595,430,765,477"/>
+<map id="modules/analysis/spatial/src/cluster/SimulationClusterDetector.cpp" name="modules/analysis/spatial/src/cluster/SimulationClusterDetector.cpp">
+<area shape="rect" id="node3" href="$SimulationClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/cluster/Simulation\lClusterDetector.hpp" alt="" coords="787,117,957,181"/>
+<area shape="rect" id="node51" href="$SimulationClusterDetectorException_8hpp.html" title="multiscale/exception\l/SimulationClusterDetectorException.hpp" alt="" coords="1388,230,1649,277"/>
+<area shape="rect" id="node68" href="$RGBColourGenerator_8hpp.html" title="multiscale/util/RGBColour\lGenerator.hpp" alt="" coords="1100,430,1273,477"/>
+<area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="684,230,868,277"/>
+<area shape="rect" id="node7" href="$Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="309,326,443,373"/>
+<area shape="rect" id="node11" href="$Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="31,430,164,477"/>
+<area shape="rect" id="node40" href="$Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="833,430,975,477"/>
+<area shape="rect" id="node20" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="267,534,413,581"/>
+<area shape="rect" id="node22" href="$SpatialCollection2D_8hpp.html" title="multiscale/analysis\l/spatial/SpatialCollection2\lD.hpp" alt="" coords="289,421,463,485"/>
+<area shape="rect" id="node26" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="639,430,809,477"/>
 <area shape="rect" id="node13" href="$DataPoint_8hpp.html" title="multiscale/analysis\l/spatial/DataPoint.hpp" alt="" coords="5,534,155,581"/>
-<area shape="rect" id="node28" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="665,543,844,572"/>
+<area shape="rect" id="node28" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="668,543,847,572"/>
+<area shape="rect" id="node53" href="$MultiscaleException_8hpp.html" title="multiscale/exception\l/MultiscaleException.hpp" alt="" coords="1435,326,1603,373"/>
+<area shape="rect" id="node55" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="1489,439,1721,468"/>
 </map>

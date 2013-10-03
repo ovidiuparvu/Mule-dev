@@ -1,9 +1,10 @@
-<map id="src/multiscale/video/circular/PolarCsvToInputFilesConverter.cpp" name="src/multiscale/video/circular/PolarCsvToInputFilesConverter.cpp">
-<area shape="rect" id="node3" href="$PolarCsvToInputFilesConverterException_8hpp.html" title="multiscale/exception\l/PolarCsvToInputFilesConverter\lException.hpp" alt="" coords="5,117,213,181"/>
-<area shape="rect" id="node9" href="$PolarCsvToInputFilesConverter_8hpp.html" title="multiscale/video/circular\l/PolarCsvToInputFilesConverter.hpp" alt="" coords="339,126,573,173"/>
-<area shape="rect" id="node13" href="$NumberIteratorType_8hpp.html" title="multiscale/util/iterator\l/NumberIteratorType.hpp" alt="" coords="337,230,503,277"/>
-<area shape="rect" id="node19" href="$LexicographicNumberIterator_8hpp.html" title="multiscale/util/iterator\l/LexicographicNumberIterator.hpp" alt="" coords="811,126,1029,173"/>
-<area shape="rect" id="node23" href="$StandardNumberIterator_8hpp.html" title="multiscale/util/iterator\l/StandardNumberIterator.hpp" alt="" coords="597,126,787,173"/>
-<area shape="rect" id="node26" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="1053,135,1285,164"/>
-<area shape="rect" id="node11" href="$NumberIterator_8hpp.html" title="multiscale/util/NumberIterator.hpp" alt="" coords="583,239,801,268"/>
+<map id="modules/video/circular/src/PolarCsvToInputFilesConverter.cpp" name="modules/video/circular/src/PolarCsvToInputFilesConverter.cpp">
+<area shape="rect" id="node3" href="$PolarCsvToInputFilesConverterException_8hpp.html" title="multiscale/exception\l/PolarCsvToInputFilesConverter\lException.hpp" alt="" coords="42,101,250,165"/>
+<area shape="rect" id="node7" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="325,309,557,339"/>
+<area shape="rect" id="node21" href="$PolarCsvToInputFilesConverter_8hpp.html" title="multiscale/video/circular\l/PolarCsvToInputFilesConverter.hpp" alt="" coords="440,110,674,157"/>
+<area shape="rect" id="node25" href="$NumberIteratorType_8hpp.html" title="multiscale/util/iterator\l/NumberIteratorType.hpp" alt="" coords="390,214,556,261"/>
+<area shape="rect" id="node30" href="$LexicographicNumberIterator_8hpp.html" title="multiscale/util/iterator\l/LexicographicNumberIterator.hpp" alt="" coords="912,110,1130,157"/>
+<area shape="rect" id="node34" href="$StandardNumberIterator_8hpp.html" title="multiscale/util/iterator\l/StandardNumberIterator.hpp" alt="" coords="698,110,888,157"/>
+<area shape="rect" id="node5" href="$MultiscaleException_8hpp.html" title="multiscale/exception\l/MultiscaleException.hpp" alt="" coords="82,214,250,261"/>
+<area shape="rect" id="node23" href="$NumberIterator_8hpp.html" title="multiscale/util/NumberIterator.hpp" alt="" coords="684,223,902,252"/>
 </map>

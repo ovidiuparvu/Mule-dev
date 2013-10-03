@@ -5,7 +5,7 @@ var namespacemultiscale_1_1analysis =
     [ "Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", "classmultiscale_1_1analysis_1_1Cluster" ],
     [ "ClusterDetector", "classmultiscale_1_1analysis_1_1ClusterDetector.html", "classmultiscale_1_1analysis_1_1ClusterDetector" ],
     [ "DataPoint", "classmultiscale_1_1analysis_1_1DataPoint.html", "classmultiscale_1_1analysis_1_1DataPoint" ],
-    [ "DBSCAN", "classmultiscale_1_1analysis_1_1DBSCAN.html", null ],
+    [ "DBSCAN", "classmultiscale_1_1analysis_1_1DBSCAN.html", "classmultiscale_1_1analysis_1_1DBSCAN" ],
     [ "Detector", "classmultiscale_1_1analysis_1_1Detector.html", "classmultiscale_1_1analysis_1_1Detector" ],
     [ "Entity", "classmultiscale_1_1analysis_1_1Entity.html", "classmultiscale_1_1analysis_1_1Entity" ],
     [ "CircularMatFactory", "classmultiscale_1_1analysis_1_1CircularMatFactory.html", "classmultiscale_1_1analysis_1_1CircularMatFactory" ],

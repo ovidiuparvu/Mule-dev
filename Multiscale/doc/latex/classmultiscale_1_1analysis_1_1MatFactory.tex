@@ -12,7 +12,8 @@ Class for creating a Mat object.
 
 
 
-Inheritance diagram for multiscale\-:\-:analysis\-:\-:Mat\-Factory\-:\nopagebreak
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Mat\-Factory\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,7 +22,8 @@ Inheritance diagram for multiscale\-:\-:analysis\-:\-:Mat\-Factory\-:\nopagebrea
 \end{figure}
 
 
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:Mat\-Factory\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Mat\-Factory\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -61,12 +63,21 @@ int \hyperlink{classmultiscale_1_1analysis_1_1MatFactory_a9514356fe5226eaa31a4e6
 \item 
 double \hyperlink{classmultiscale_1_1analysis_1_1MatFactory_a99caa620805ac50375699236d83fbd96}{simulation\-Time}
 \end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1MatFactory_a06de250e466b41fcca4fa61a52a575fc}{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N} = \char`\"{}The input file could not be opened.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1MatFactory_ab5e9403dc7f8465189d444f909d473e7}{E\-R\-R\-\_\-\-I\-M\-G\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N} = \char`\"{}The resolution of the input image is not the expected one.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1MatFactory_a09459b632d5b01f184ce0f56245f5905}{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A} = \char`\"{}The input file contains more data than required.\char`\"{}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Class for creating a Mat object. 
 
-Definition at line 20 of file Mat\-Factory.\-hpp.
+Definition at line 16 of file Mat\-Factory.\-hpp.
 
 
 
@@ -163,7 +174,7 @@ Definition at line 13 of file Mat\-Factory.\-cpp.
 
 
 
-References cols, E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A, init\-Input\-File(), process\-Concentrations(), and rows.
+References cols, E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A, init\-Input\-File(), M\-S\-\_\-throw, process\-Concentrations(), and rows.
 
 
 
@@ -225,7 +236,7 @@ Definition at line 33 of file Mat\-Factory.\-cpp.
 
 
 
-References cols, E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N, rows, and simulation\-Time.
+References cols, E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N, M\-S\-\_\-throw, rows, and simulation\-Time.
 
 
 
@@ -320,18 +331,51 @@ Here is the caller graph for this function\-:\nopagebreak
 \subsubsection[{cols}]{\setlength{\rightskip}{0pt plus 5cm}int multiscale\-::analysis\-::\-Mat\-Factory\-::cols\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1MatFactory_a9514356fe5226eaa31a4e61ca62a027c}
 Number of columns in the Mat object 
 
-Definition at line 25 of file Mat\-Factory.\-hpp.
+Definition at line 21 of file Mat\-Factory.\-hpp.
 
 
 
 Referenced by create(), init\-Input\-File(), and multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory\-::process\-Concentrations().
+
+\hypertarget{classmultiscale_1_1analysis_1_1MatFactory_ab5e9403dc7f8465189d444f909d473e7}{\index{multiscale\-::analysis\-::\-Mat\-Factory@{multiscale\-::analysis\-::\-Mat\-Factory}!E\-R\-R\-\_\-\-I\-M\-G\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N@{E\-R\-R\-\_\-\-I\-M\-G\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}}
+\index{E\-R\-R\-\_\-\-I\-M\-G\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N@{E\-R\-R\-\_\-\-I\-M\-G\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}!multiscale::analysis::MatFactory@{multiscale\-::analysis\-::\-Mat\-Factory}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-M\-G\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Mat\-Factory\-::\-E\-R\-R\-\_\-\-I\-M\-G\-\_\-\-R\-E\-S\-O\-L\-U\-T\-I\-O\-N = \char`\"{}The resolution of the input image is not the expected one.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1MatFactory_ab5e9403dc7f8465189d444f909d473e7}
+
+
+Definition at line 91 of file Mat\-Factory.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Circular\-Mat\-Factory\-::is\-Valid\-Viewer\-Image(), and multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory\-::is\-Valid\-Viewer\-Image().
+
+\hypertarget{classmultiscale_1_1analysis_1_1MatFactory_a09459b632d5b01f184ce0f56245f5905}{\index{multiscale\-::analysis\-::\-Mat\-Factory@{multiscale\-::analysis\-::\-Mat\-Factory}!E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A@{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}}
+\index{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A@{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}!multiscale::analysis::MatFactory@{multiscale\-::analysis\-::\-Mat\-Factory}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}const string Mat\-Factory\-::\-E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A = \char`\"{}The input file contains more data than required.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1MatFactory_a09459b632d5b01f184ce0f56245f5905}
+
+
+Definition at line 92 of file Mat\-Factory.\-hpp.
+
+
+
+Referenced by create().
+
+\hypertarget{classmultiscale_1_1analysis_1_1MatFactory_a06de250e466b41fcca4fa61a52a575fc}{\index{multiscale\-::analysis\-::\-Mat\-Factory@{multiscale\-::analysis\-::\-Mat\-Factory}!E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}}
+\index{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}!multiscale::analysis::MatFactory@{multiscale\-::analysis\-::\-Mat\-Factory}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Mat\-Factory\-::\-E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N = \char`\"{}The input file could not be opened.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1MatFactory_a06de250e466b41fcca4fa61a52a575fc}
+
+
+Definition at line 90 of file Mat\-Factory.\-hpp.
+
+
+
+Referenced by init\-Input\-File(), multiscale\-::analysis\-::\-Circular\-Mat\-Factory\-::is\-Valid\-Viewer\-Image(), and multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory\-::is\-Valid\-Viewer\-Image().
 
 \hypertarget{classmultiscale_1_1analysis_1_1MatFactory_a35672fb0c992f662018ee7c146794474}{\index{multiscale\-::analysis\-::\-Mat\-Factory@{multiscale\-::analysis\-::\-Mat\-Factory}!rows@{rows}}
 \index{rows@{rows}!multiscale::analysis::MatFactory@{multiscale\-::analysis\-::\-Mat\-Factory}}
 \subsubsection[{rows}]{\setlength{\rightskip}{0pt plus 5cm}int multiscale\-::analysis\-::\-Mat\-Factory\-::rows\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1MatFactory_a35672fb0c992f662018ee7c146794474}
 Number of rows in the Mat object 
 
-Definition at line 24 of file Mat\-Factory.\-hpp.
+Definition at line 20 of file Mat\-Factory.\-hpp.
 
 
 
@@ -342,7 +386,7 @@ Referenced by create(), init\-Input\-File(), and multiscale\-::analysis\-::\-Rec
 \subsubsection[{simulation\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Mat\-Factory\-::simulation\-Time\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1MatFactory_a99caa620805ac50375699236d83fbd96}
 Simulation time read from the input file 
 
-Definition at line 26 of file Mat\-Factory.\-hpp.
+Definition at line 22 of file Mat\-Factory.\-hpp.
 
 
 
@@ -352,5 +396,5 @@ Referenced by init\-Input\-File().
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-include/multiscale/analysis/spatial/\hyperlink{MatFactory_8hpp}{Mat\-Factory.\-hpp}\item 
-src/multiscale/analysis/spatial/\hyperlink{MatFactory_8cpp}{Mat\-Factory.\-cpp}\end{DoxyCompactItemize}
+modules/analysis/spatial/include/multiscale/analysis/spatial/\hyperlink{MatFactory_8hpp}{Mat\-Factory.\-hpp}\item 
+modules/analysis/spatial/src/\hyperlink{MatFactory_8cpp}{Mat\-Factory.\-cpp}\end{DoxyCompactItemize}

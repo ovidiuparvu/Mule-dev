@@ -105,9 +105,10 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1DBSCAN.
 
 <div class="header">
   <div class="summary">
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
-<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classmultiscale_1_1analysis_1_1DBSCAN-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">multiscale::analysis::DBSCAN Class Reference</div>  </div>
@@ -121,59 +122,111 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1DBSCAN.
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1DBSCAN__coll__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1DBSCAN_coll__map" alt="Collaboration graph"/></div>
+<map name="multiscale_1_1analysis_1_1DBSCAN_coll__map" id="multiscale_1_1analysis_1_1DBSCAN_coll__map">
+</map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a52f0eb2d04029c75a3c48a37efdac26b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a52f0eb2d04029c75a3c48a37efdac26b">run</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classmultiscale_1_1analysis_1_1DataPoint.html">DataPoint</a> &gt;&gt; &amp;dataPoints, vector&lt; int &gt; &amp;clusterIndexes, int &amp;nrOfClusters, double <a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#ac19e3e98b0db882c5676088a34197ec7">eps</a>, int <a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a285a04240518d17e99565d78e9b78ff0">minPoints</a>)</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:abcfe88a7c0a94730a128e4682d8f27ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#abcfe88a7c0a94730a128e4682d8f27ca">DBSCAN</a> ()</td></tr>
+<tr class="separator:abcfe88a7c0a94730a128e4682d8f27ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4deb359da661ba495d18a75f43a0b89c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a4deb359da661ba495d18a75f43a0b89c">~DBSCAN</a> ()</td></tr>
+<tr class="separator:a4deb359da661ba495d18a75f43a0b89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f0eb2d04029c75a3c48a37efdac26b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a52f0eb2d04029c75a3c48a37efdac26b">run</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classmultiscale_1_1analysis_1_1DataPoint.html">DataPoint</a> &gt;&gt; &amp;dataPoints, vector&lt; int &gt; &amp;clusterIndexes, int &amp;nrOfClusters, double <a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a8d68cd84561cbb06bd138f8edf340b9f">eps</a>, int <a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a7bafd4070ac44e236fcc7f06d92b6572">minPoints</a>)</td></tr>
 <tr class="memdesc:a52f0eb2d04029c75a3c48a37efdac26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the improved <a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html">DBSCAN</a> algorithm on the provided set of points.  <a href="#a52f0eb2d04029c75a3c48a37efdac26b">More...</a><br/></td></tr>
 <tr class="separator:a52f0eb2d04029c75a3c48a37efdac26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
-Static Private Member Functions</h2></td></tr>
-<tr class="memitem:aceb5dd9fe24a24cbf09ddc9082dc1f82"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82">runAlgorithm</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classmultiscale_1_1analysis_1_1DataPoint.html">DataPoint</a> &gt;&gt; &amp;dataPoints, vector&lt; int &gt; &amp;clusterIndexes, int &amp;nrOfClusters)</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a6f60961639281a807b63650faf01511b"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a6f60961639281a807b63650faf01511b">CLUSTERING_UNCLASSIFIED</a> = -2</td></tr>
+<tr class="separator:a6f60961639281a807b63650faf01511b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f37ffc029ccd1d121cbc4467851ce2"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a28f37ffc029ccd1d121cbc4467851ce2">CLUSTERING_BORDER</a> = -1</td></tr>
+<tr class="separator:a28f37ffc029ccd1d121cbc4467851ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a480b43a01f8652787a4b0f61b00ee3cf"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a480b43a01f8652787a4b0f61b00ee3cf">CLUSTERING_NOISE</a> = 0</td></tr>
+<tr class="separator:a480b43a01f8652787a4b0f61b00ee3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aceb5dd9fe24a24cbf09ddc9082dc1f82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82">runAlgorithm</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classmultiscale_1_1analysis_1_1DataPoint.html">DataPoint</a> &gt;&gt; &amp;dataPoints, vector&lt; int &gt; &amp;clusterIndexes, int &amp;nrOfClusters)</td></tr>
 <tr class="memdesc:aceb5dd9fe24a24cbf09ddc9082dc1f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the improved <a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html">DBSCAN</a> algorithm on the provided set of points.  <a href="#aceb5dd9fe24a24cbf09ddc9082dc1f82">More...</a><br/></td></tr>
 <tr class="separator:aceb5dd9fe24a24cbf09ddc9082dc1f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4770eddfc02c41deb114e5d42affd93a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a4770eddfc02c41deb114e5d42affd93a">constructDistanceMatrix</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classmultiscale_1_1analysis_1_1DataPoint.html">DataPoint</a> &gt;&gt; &amp;dataPoints)</td></tr>
+<tr class="memitem:a4770eddfc02c41deb114e5d42affd93a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a4770eddfc02c41deb114e5d42affd93a">constructDistanceMatrix</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classmultiscale_1_1analysis_1_1DataPoint.html">DataPoint</a> &gt;&gt; &amp;dataPoints)</td></tr>
 <tr class="memdesc:a4770eddfc02c41deb114e5d42affd93a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the distance matrix between any two data points.  <a href="#a4770eddfc02c41deb114e5d42affd93a">More...</a><br/></td></tr>
 <tr class="separator:a4770eddfc02c41deb114e5d42affd93a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a400c4e9fb1d9e9bafa970b33912a5ce1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a400c4e9fb1d9e9bafa970b33912a5ce1">expandCoreCluster</a> (vector&lt; int &gt; &amp;clusterIndexes, int coreDataPointIndex, int clusterId)</td></tr>
+<tr class="memitem:a400c4e9fb1d9e9bafa970b33912a5ce1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a400c4e9fb1d9e9bafa970b33912a5ce1">expandCoreCluster</a> (vector&lt; int &gt; &amp;clusterIndexes, int coreDataPointIndex, int clusterId)</td></tr>
 <tr class="memdesc:a400c4e9fb1d9e9bafa970b33912a5ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expand the cluster around the given core data point.  <a href="#a400c4e9fb1d9e9bafa970b33912a5ce1">More...</a><br/></td></tr>
 <tr class="separator:a400c4e9fb1d9e9bafa970b33912a5ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ead683810b4f04a48cd0a4d0f5f7a6b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a6ead683810b4f04a48cd0a4d0f5f7a6b">addUnclassifiedNodesToSeedsList</a> (const vector&lt; int &gt; &amp;neighbours, const vector&lt; int &gt; &amp;clusterIndexes, vector&lt; int &gt; &amp;seeds)</td></tr>
+<tr class="memitem:a6ead683810b4f04a48cd0a4d0f5f7a6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a6ead683810b4f04a48cd0a4d0f5f7a6b">addUnclassifiedNodesToSeedsList</a> (const vector&lt; int &gt; &amp;neighbours, const vector&lt; int &gt; &amp;clusterIndexes, vector&lt; int &gt; &amp;seeds)</td></tr>
 <tr class="memdesc:a6ead683810b4f04a48cd0a4d0f5f7a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add all unclassified neighbour nodes to the seeds list.  <a href="#a6ead683810b4f04a48cd0a4d0f5f7a6b">More...</a><br/></td></tr>
 <tr class="separator:a6ead683810b4f04a48cd0a4d0f5f7a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b0d19aab403005cac7fbe0851f5a969"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a5b0d19aab403005cac7fbe0851f5a969">labelUnclassifiedAndNoiseAsBorder</a> (const vector&lt; int &gt; &amp;neighbours, vector&lt; int &gt; &amp;clusterIndexes)</td></tr>
+<tr class="memitem:a5b0d19aab403005cac7fbe0851f5a969"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a5b0d19aab403005cac7fbe0851f5a969">labelUnclassifiedAndNoiseAsBorder</a> (const vector&lt; int &gt; &amp;neighbours, vector&lt; int &gt; &amp;clusterIndexes)</td></tr>
 <tr class="memdesc:a5b0d19aab403005cac7fbe0851f5a969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Label all unclassified and noise neighbour nodes as border nodes.  <a href="#a5b0d19aab403005cac7fbe0851f5a969">More...</a><br/></td></tr>
 <tr class="separator:a5b0d19aab403005cac7fbe0851f5a969"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2524149cf55398e2038aaa389b56bfec"><td class="memItemLeft" align="right" valign="top">static vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a2524149cf55398e2038aaa389b56bfec">retrieveNeighbours</a> (int dataPointIndex)</td></tr>
+<tr class="memitem:a2524149cf55398e2038aaa389b56bfec"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a2524149cf55398e2038aaa389b56bfec">retrieveNeighbours</a> (int dataPointIndex)</td></tr>
 <tr class="memdesc:a2524149cf55398e2038aaa389b56bfec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the list of neighbour indexes which are at a distance &lt; eps far from the given data point.  <a href="#a2524149cf55398e2038aaa389b56bfec">More...</a><br/></td></tr>
 <tr class="separator:a2524149cf55398e2038aaa389b56bfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c55a2e893f28de4a68129407c55d5f3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a1c55a2e893f28de4a68129407c55d5f3">assignBorderNodesToClusters</a> (vector&lt; int &gt; &amp;clusterIndexes)</td></tr>
+<tr class="memitem:a1c55a2e893f28de4a68129407c55d5f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a1c55a2e893f28de4a68129407c55d5f3">assignBorderNodesToClusters</a> (vector&lt; int &gt; &amp;clusterIndexes)</td></tr>
 <tr class="memdesc:a1c55a2e893f28de4a68129407c55d5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assign the border nodes to the clusters to which the closest core objects belong.  <a href="#a1c55a2e893f28de4a68129407c55d5f3">More...</a><br/></td></tr>
 <tr class="separator:a1c55a2e893f28de4a68129407c55d5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a1c95e78edf9e804a7809648e130bda"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a7a1c95e78edf9e804a7809648e130bda">findClosestCoreDataPoint</a> (const vector&lt; int &gt; &amp;neighbours, int borderDataPointIndex, const vector&lt; int &gt; &amp;clusterIndexes)</td></tr>
+<tr class="memitem:a7a1c95e78edf9e804a7809648e130bda"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a7a1c95e78edf9e804a7809648e130bda">findClosestCoreDataPoint</a> (const vector&lt; int &gt; &amp;neighbours, int borderDataPointIndex, const vector&lt; int &gt; &amp;clusterIndexes)</td></tr>
 <tr class="memdesc:a7a1c95e78edf9e804a7809648e130bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the closest core data point from the given set of neighbours to the given border data point.  <a href="#a7a1c95e78edf9e804a7809648e130bda">More...</a><br/></td></tr>
 <tr class="separator:a7a1c95e78edf9e804a7809648e130bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af50079a4d370fb35b13b0a1557a454f0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#af50079a4d370fb35b13b0a1557a454f0">allocateDistanceMatrix</a> ()</td></tr>
+<tr class="memitem:af50079a4d370fb35b13b0a1557a454f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#af50079a4d370fb35b13b0a1557a454f0">allocateDistanceMatrix</a> ()</td></tr>
 <tr class="memdesc:af50079a4d370fb35b13b0a1557a454f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate the distance matrix.  <a href="#af50079a4d370fb35b13b0a1557a454f0">More...</a><br/></td></tr>
 <tr class="separator:af50079a4d370fb35b13b0a1557a454f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
-Static Private Attributes</h2></td></tr>
-<tr class="memitem:ac19e3e98b0db882c5676088a34197ec7"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#ac19e3e98b0db882c5676088a34197ec7">eps</a> = 0</td></tr>
-<tr class="separator:ac19e3e98b0db882c5676088a34197ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a285a04240518d17e99565d78e9b78ff0"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a285a04240518d17e99565d78e9b78ff0">minPoints</a> = 0</td></tr>
-<tr class="separator:a285a04240518d17e99565d78e9b78ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0cb098abae4aa07e8488a5d2a72a4f4"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#aa0cb098abae4aa07e8488a5d2a72a4f4">nrOfDataPoints</a> = 0</td></tr>
-<tr class="separator:aa0cb098abae4aa07e8488a5d2a72a4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa54a9933d643b06a6a2624d6f76b700f"><td class="memItemLeft" align="right" valign="top">static vector&lt; vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#aa54a9933d643b06a6a2624d6f76b700f">distanceMatrix</a></td></tr>
-<tr class="separator:aa54a9933d643b06a6a2624d6f76b700f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8d68cd84561cbb06bd138f8edf340b9f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a8d68cd84561cbb06bd138f8edf340b9f">eps</a></td></tr>
+<tr class="separator:a8d68cd84561cbb06bd138f8edf340b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bafd4070ac44e236fcc7f06d92b6572"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a7bafd4070ac44e236fcc7f06d92b6572">minPoints</a></td></tr>
+<tr class="separator:a7bafd4070ac44e236fcc7f06d92b6572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81a42ca24493494b3d20e27c76be016"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#af81a42ca24493494b3d20e27c76be016">nrOfDataPoints</a></td></tr>
+<tr class="separator:af81a42ca24493494b3d20e27c76be016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863a8b90ff30d401795264a246a09147"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a863a8b90ff30d401795264a246a09147">distanceMatrix</a></td></tr>
+<tr class="separator:a863a8b90ff30d401795264a246a09147"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00020">20</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00016">16</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="abcfe88a7c0a94730a128e4682d8f27ca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DBSCAN::DBSCAN </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00009">9</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4deb359da661ba495d18a75f43a0b89c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DBSCAN::~DBSCAN </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00011">11</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
+
+<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00027">distanceMatrix</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a6ead683810b4f04a48cd0a4d0f5f7a6b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -207,7 +260,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -224,7 +277,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00085">85</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00011">CLUSTERING_UNCLASSIFIED</a>.</p>
+<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00120">CLUSTERING_UNCLASSIFIED</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00057">expandCoreCluster()</a>.</p>
 
@@ -257,7 +310,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -266,7 +319,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00148">148</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00031">distanceMatrix</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00029">nrOfDataPoints</a>.</p>
+<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00027">distanceMatrix</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00025">nrOfDataPoints</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00044">constructDistanceMatrix()</a>.</p>
 
@@ -300,7 +353,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -315,7 +368,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00117">117</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00012">CLUSTERING_BORDER</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00128">findClosestCoreDataPoint()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00029">nrOfDataPoints</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00103">retrieveNeighbours()</a>.</p>
+<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00121">CLUSTERING_BORDER</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00128">findClosestCoreDataPoint()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00025">nrOfDataPoints</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00103">retrieveNeighbours()</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00026">runAlgorithm()</a>.</p>
 
@@ -360,7 +413,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -375,7 +428,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00044">44</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8cpp_source.html#l00148">allocateDistanceMatrix()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00031">distanceMatrix</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00029">nrOfDataPoints</a>.</p>
+<p>References <a class="el" href="DBSCAN_8cpp_source.html#l00148">allocateDistanceMatrix()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00027">distanceMatrix</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00025">nrOfDataPoints</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00015">run()</a>.</p>
 
@@ -436,7 +489,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -453,7 +506,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00057">57</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8cpp_source.html#l00085">addUnclassifiedNodesToSeedsList()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00013">CLUSTERING_NOISE</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00094">labelUnclassifiedAndNoiseAsBorder()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00026">minPoints</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00103">retrieveNeighbours()</a>.</p>
+<p>References <a class="el" href="DBSCAN_8cpp_source.html#l00085">addUnclassifiedNodesToSeedsList()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00122">CLUSTERING_NOISE</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00094">labelUnclassifiedAndNoiseAsBorder()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00022">minPoints</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00103">retrieveNeighbours()</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00026">runAlgorithm()</a>.</p>
 
@@ -514,7 +567,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -531,7 +584,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00128">128</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00031">distanceMatrix</a>.</p>
+<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00027">distanceMatrix</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00117">assignBorderNodesToClusters()</a>.</p>
 
@@ -575,7 +628,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -591,7 +644,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00094">94</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00012">CLUSTERING_BORDER</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00013">CLUSTERING_NOISE</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00011">CLUSTERING_UNCLASSIFIED</a>.</p>
+<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00121">CLUSTERING_BORDER</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00122">CLUSTERING_NOISE</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00120">CLUSTERING_UNCLASSIFIED</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00057">expandCoreCluster()</a>.</p>
 
@@ -625,7 +678,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -640,7 +693,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00103">103</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00031">distanceMatrix</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00024">eps</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00029">nrOfDataPoints</a>.</p>
+<p>References <a class="el" href="DBSCAN_8hpp_source.html#l00027">distanceMatrix</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00020">eps</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00025">nrOfDataPoints</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00117">assignBorderNodesToClusters()</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00057">expandCoreCluster()</a>.</p>
 
@@ -660,9 +713,6 @@ Static Private Attributes</h2></td></tr>
 <a class="anchor" id="a52f0eb2d04029c75a3c48a37efdac26b"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void DBSCAN::run </td>
@@ -700,11 +750,6 @@ Static Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Run the improved <a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html">DBSCAN</a> algorithm on the provided set of points. </p>
@@ -723,7 +768,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00015">15</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8cpp_source.html#l00044">constructDistanceMatrix()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00024">eps</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00026">minPoints</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00029">nrOfDataPoints</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00026">runAlgorithm()</a>.</p>
+<p>References <a class="el" href="DBSCAN_8cpp_source.html#l00044">constructDistanceMatrix()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00020">eps</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00022">minPoints</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00025">nrOfDataPoints</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00026">runAlgorithm()</a>.</p>
 
 <p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00081">multiscale::analysis::ClusterDetector::detectClusters()</a>.</p>
 
@@ -784,7 +829,7 @@ Static Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -803,7 +848,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="DBSCAN_8cpp_source.html#l00026">26</a> of file <a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a>.</p>
 
-<p>References <a class="el" href="DBSCAN_8cpp_source.html#l00117">assignBorderNodesToClusters()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00011">CLUSTERING_UNCLASSIFIED</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00057">expandCoreCluster()</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00029">nrOfDataPoints</a>.</p>
+<p>References <a class="el" href="DBSCAN_8cpp_source.html#l00117">assignBorderNodesToClusters()</a>, <a class="el" href="DBSCAN_8hpp_source.html#l00120">CLUSTERING_UNCLASSIFIED</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00057">expandCoreCluster()</a>, and <a class="el" href="DBSCAN_8hpp_source.html#l00025">nrOfDataPoints</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00015">run()</a>.</p>
 
@@ -832,7 +877,7 @@ Static Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="aa54a9933d643b06a6a2624d6f76b700f"></a>
+<a class="anchor" id="a28f37ffc029ccd1d121cbc4467851ce2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -840,24 +885,96 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; vector&lt; double &gt; &gt; DBSCAN::distanceMatrix</td>
+          <td class="memname">const int DBSCAN::CLUSTERING_BORDER = -1</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00121">121</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00117">assignBorderNodesToClusters()</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00094">labelUnclassifiedAndNoiseAsBorder()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a480b43a01f8652787a4b0f61b00ee3cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int DBSCAN::CLUSTERING_NOISE = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00122">122</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00057">expandCoreCluster()</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00094">labelUnclassifiedAndNoiseAsBorder()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f60961639281a807b63650faf01511b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int DBSCAN::CLUSTERING_UNCLASSIFIED = -2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00120">120</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00085">addUnclassifiedNodesToSeedsList()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00072">multiscale::analysis::ClusterDetector::detectAndAnalyseClusters()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00094">labelUnclassifiedAndNoiseAsBorder()</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00026">runAlgorithm()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a863a8b90ff30d401795264a246a09147"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;vector&lt;double&gt; &gt; multiscale::analysis::DBSCAN::distanceMatrix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>The matrix containing the distances between any two data points </p>
 
-<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00031">31</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
+<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00027">27</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00148">allocateDistanceMatrix()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00044">constructDistanceMatrix()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00128">findClosestCoreDataPoint()</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00103">retrieveNeighbours()</a>.</p>
+<p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00148">allocateDistanceMatrix()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00044">constructDistanceMatrix()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00128">findClosestCoreDataPoint()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00103">retrieveNeighbours()</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00011">~DBSCAN()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac19e3e98b0db882c5676088a34197ec7"></a>
+<a class="anchor" id="a8d68cd84561cbb06bd138f8edf340b9f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -865,25 +982,25 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double DBSCAN::eps = 0</td>
+          <td class="memname">double multiscale::analysis::DBSCAN::eps</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <pre class="fragment">                              DBSCAN algorithm parameter for specifying the maximum radius
 </pre><p> of the neighbourhood </p>
 
-<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00024">24</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
+<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00020">20</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00103">retrieveNeighbours()</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00015">run()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a285a04240518d17e99565d78e9b78ff0"></a>
+<a class="anchor" id="a7bafd4070ac44e236fcc7f06d92b6572"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -891,25 +1008,25 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int DBSCAN::minPoints = 0</td>
+          <td class="memname">unsigned int multiscale::analysis::DBSCAN::minPoints</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <pre class="fragment">                  DBSCAN algorithm parameter for specifying the minimum number
 </pre><p> of points in an eps-neighbourhood of that point </p>
 
-<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00026">26</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
+<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00022">22</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00057">expandCoreCluster()</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00015">run()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa0cb098abae4aa07e8488a5d2a72a4f4"></a>
+<a class="anchor" id="af81a42ca24493494b3d20e27c76be016"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -917,26 +1034,26 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int DBSCAN::nrOfDataPoints = 0</td>
+          <td class="memname">unsigned int multiscale::analysis::DBSCAN::nrOfDataPoints</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Number of data points in the data set </p>
 
-<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00029">29</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
+<p>Definition at line <a class="el" href="DBSCAN_8hpp_source.html#l00025">25</a> of file <a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="DBSCAN_8cpp_source.html#l00148">allocateDistanceMatrix()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00117">assignBorderNodesToClusters()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00044">constructDistanceMatrix()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00103">retrieveNeighbours()</a>, <a class="el" href="DBSCAN_8cpp_source.html#l00015">run()</a>, and <a class="el" href="DBSCAN_8cpp_source.html#l00026">runAlgorithm()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>include/multiscale/analysis/spatial/<a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a></li>
-<li>src/multiscale/analysis/spatial/<a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a></li>
+<li>modules/analysis/spatial/include/multiscale/analysis/spatial/<a class="el" href="DBSCAN_8hpp_source.html">DBSCAN.hpp</a></li>
+<li>modules/analysis/spatial/src/<a class="el" href="DBSCAN_8cpp_source.html">DBSCAN.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -944,7 +1061,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1DBSCAN.html">DBSCAN</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:46 for Multiscale by
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:56 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -1,5 +1,5 @@
-<map id="include/multiscale/analysis/spatial/CircularityMeasure.hpp" name="include/multiscale/analysis/spatial/CircularityMeasure.hpp">
-<area shape="rect" id="node3" href="$CircularityMeasure_8cpp.html" title="src/multiscale/analysis\l/spatial/CircularityMeasure.cpp" alt="" coords="5,118,208,165"/>
-<area shape="rect" id="node5" href="$Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="232,118,387,165"/>
-<area shape="rect" id="node7" href="$Region_8cpp.html" title="src/multiscale/analysis\l/spatial/Region.cpp" alt="" coords="411,118,565,165"/>
+<map id="modules/analysis/spatial/include/multiscale/analysis/spatial/CircularityMeasure.hpp" name="modules/analysis/spatial/include/multiscale/analysis/spatial/CircularityMeasure.hpp">
+<area shape="rect" id="node3" href="$CircularityMeasure_8cpp.html" title="modules/analysis/spatial\l/src/CircularityMeasure.cpp" alt="" coords="5,118,187,165"/>
+<area shape="rect" id="node5" href="$Cluster_8cpp.html" title="modules/analysis/spatial\l/src/Cluster.cpp" alt="" coords="211,118,376,165"/>
+<area shape="rect" id="node7" href="$Region_8cpp.html" title="modules/analysis/spatial\l/src/Region.cpp" alt="" coords="400,118,565,165"/>
 </map>

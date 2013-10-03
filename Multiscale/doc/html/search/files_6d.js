@@ -8,5 +8,7 @@ var searchData=
   ['matfactoryexception_2ehpp',['MatFactoryException.hpp',['../MatFactoryException_8hpp.html',1,'']]],
   ['minenclosingtrianglefinder_2ecpp',['MinEnclosingTriangleFinder.cpp',['../MinEnclosingTriangleFinder_8cpp.html',1,'']]],
   ['minenclosingtrianglefinder_2ehpp',['MinEnclosingTriangleFinder.hpp',['../MinEnclosingTriangleFinder_8hpp.html',1,'']]],
-  ['minenclosingtrianglefinderexception_2ehpp',['MinEnclosingTriangleFinderException.hpp',['../MinEnclosingTriangleFinderException_8hpp.html',1,'']]]
+  ['minenclosingtrianglefinderexception_2ehpp',['MinEnclosingTriangleFinderException.hpp',['../MinEnclosingTriangleFinderException_8hpp.html',1,'']]],
+  ['multiscale_2ehpp',['Multiscale.hpp',['../Multiscale_8hpp.html',1,'']]],
+  ['multiscaleexception_2ehpp',['MultiscaleException.hpp',['../MultiscaleException_8hpp.html',1,'']]]
 ];

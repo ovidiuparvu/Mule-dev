@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/video/rectangular/MapCartesianToScript.cpp Source File</title>
+<title>Multiscale: modules/video/rectangular/src/MapCartesianToScript.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,19 +107,19 @@ $(document).ready(function(){initNavTree('MapCartesianToScript_8cpp_source.html'
 </div><!--header-->
 <div class="contents">
 <a href="MapCartesianToScript_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CartesianToConcentrationsConverter_8hpp.html">multiscale/video/rectangular/CartesianToConcentrationsConverter.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;boost/program_options.hpp&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">using namespace </span>multiscale::video;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>po = boost::program_options;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="MapCartesianToScript_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">   32</a></span>&#160;<span class="preprocessor">#define ERR_CODE 1</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="MapCartesianToScript_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">   33</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define ERR_MSG  &quot;An error occurred: &quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Multiscale_8hpp.html">multiscale/core/Multiscale.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CartesianToConcentrationsConverter_8hpp.html">multiscale/video/rectangular/CartesianToConcentrationsConverter.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ExceptionHandler_8hpp.html">multiscale/exception/ExceptionHandler.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;boost/program_options.hpp&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">using namespace </span>multiscale;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using namespace </span>multiscale::video;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>po = boost::program_options;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Initialise the arguments configuration</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="code" href="MapCartesianToScript_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">   37</a></span>&#160;po::variables_map <a class="code" href="CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e">initArgumentsConfig</a>(po::options_description &amp;usageDescription, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('MapCartesianToScript_8cpp_source.html'
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// Print error message if wrong parameters are provided</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="MapCartesianToScript_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">printWrongParameters</a>() {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    cout &lt;&lt; <a class="code" href="MapCartesianToScript_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; <span class="stringliteral">&quot;Wrong input arguments provided.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    cout &lt;&lt; <a class="code" href="namespacemultiscale.html#a06490e4e11ef359aa0260f96579ce584">ERR_MSG</a> &lt;&lt; <span class="stringliteral">&quot;Wrong input arguments provided.&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Run the program with the argument \&quot;--help\&quot; for more information.&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
@@ -181,31 +181,23 @@ $(document).ready(function(){initNavTree('MapCartesianToScript_8cpp_source.html'
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb">printWrongParameters</a>();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;e) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        cerr &lt;&lt; <a class="code" href="MapCartesianToScript_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; e &lt;&lt; endl;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> exception &amp;e) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        ExceptionHandler::printErrorMessage(e);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="MapCartesianToScript_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    } <span class="keywordflow">catch</span>(<span class="keyword">const</span> <span class="keywordtype">char</span>* e) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        cerr &lt;&lt; <a class="code" href="MapCartesianToScript_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; e &lt;&lt; endl;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="MapCartesianToScript_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    } <span class="keywordflow">catch</span>(exception &amp;e) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        cerr &lt;&lt; <a class="code" href="MapCartesianToScript_8cpp.html#a7a18f09d3bb5a5f03a55546e38f8efd8">ERR_MSG</a> &lt;&lt; e.what() &lt;&lt; endl;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="MapCartesianToScript_8cpp.html#aed46bc434b6a10f9663dbbe5fd15349f">ERR_CODE</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    } <span class="keywordflow">catch</span>(...) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Exception of unknown type!&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemultiscale.html#a4ee40795105048ee371efeeb7962ecf6">ERR_CODE</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    } <span class="keywordflow">catch</span>(...) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;Exception of unknown type!&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_181e58fb894b6db2e2ebe48170ed182a.html">video</a></li><li class="navelem"><a class="el" href="dir_659b9e9df9619eed061809f04f769b63.html">rectangular</a></li><li class="navelem"><a class="el" href="MapCartesianToScript_8cpp.html">MapCartesianToScript.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_fc26e3a6d4f7a64083c4d29e0277dd16.html">video</a></li><li class="navelem"><a class="el" href="dir_fb0669734c64edfd22e63e8de30b2476.html">rectangular</a></li><li class="navelem"><a class="el" href="dir_31eb8512872d6494295532753d992cef.html">src</a></li><li class="navelem"><a class="el" href="MapCartesianToScript_8cpp.html">MapCartesianToScript.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

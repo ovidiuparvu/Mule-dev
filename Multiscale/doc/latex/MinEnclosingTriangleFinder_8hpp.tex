@@ -1,15 +1,17 @@
-\hypertarget{MinEnclosingTriangleFinder_8hpp}{\section{include/multiscale/util/\-Min\-Enclosing\-Triangle\-Finder.hpp File Reference}
-\label{MinEnclosingTriangleFinder_8hpp}\index{include/multiscale/util/\-Min\-Enclosing\-Triangle\-Finder.\-hpp@{include/multiscale/util/\-Min\-Enclosing\-Triangle\-Finder.\-hpp}}
+\hypertarget{MinEnclosingTriangleFinder_8hpp}{\section{modules/util/include/multiscale/util/\-Min\-Enclosing\-Triangle\-Finder.hpp File Reference}
+\label{MinEnclosingTriangleFinder_8hpp}\index{modules/util/include/multiscale/util/\-Min\-Enclosing\-Triangle\-Finder.\-hpp@{modules/util/include/multiscale/util/\-Min\-Enclosing\-Triangle\-Finder.\-hpp}}
 }
 {\ttfamily \#include \char`\"{}multiscale/util/\-Geometry2\-D.\-hpp\char`\"{}}\\*
-Include dependency graph for Min\-Enclosing\-Triangle\-Finder.\-hpp\-:\nopagebreak
+Include dependency graph for Min\-Enclosing\-Triangle\-Finder.\-hpp\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{MinEnclosingTriangleFinder_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\-:\nopagebreak
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,149 +28,3 @@ class \hyperlink{classmultiscale_1_1MinEnclosingTriangleFinder}{multiscale\-::\-
 \item 
 namespace \hyperlink{namespacemultiscale}{multiscale}
 \end{DoxyCompactItemize}
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a780de1e4ebc14f8836d3c74bd4ecfee9}{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E}~true
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a33b2bf416e7a3eb9b86eb3cff45ba67a}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}~1
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a491d37fc7ce0c72d3763cc91495f87c2}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}~2
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a7f2b811fcec86dfda9bcf2d5e9096603}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}~3
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a08b447dcb2172aa0fde5a6e29fcf006e}{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}~4
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a908ada963db8d95f0f72c05a24e8e1e1}{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}~\char`\"{}The position of the middle point of side B could not be determined.\char`\"{}
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a3a386906c2cc4f2b7c3d52663ef9a184}{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}~\char`\"{}The position of side B could not be determined, because gamma(b) could not be computed.\char`\"{}
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a35b2d19f0f8d88b29478a88ecff6e6d9}{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}~\char`\"{}The position of the vertex C on side B could not be determined, because the considered lines do not intersect.\char`\"{}
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a206e0581e606c88ca6d4aebad7e9d385}{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}~\char`\"{}The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect.\char`\"{}
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a69b5cb9c0d33abff021f07cc6b2da9a4}{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}~0
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_ae84e6d9763cd18f5fe032173ce431428}{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}~1
-\item 
-\#define \hyperlink{MinEnclosingTriangleFinder_8hpp_a25734dfda829d51fa13c1cdfc8d4ab96}{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}~2
-\end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a780de1e4ebc14f8836d3c74bd4ecfee9}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E@{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E}}
-\index{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E@{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E~true}}\label{MinEnclosingTriangleFinder_8hpp_a780de1e4ebc14f8836d3c74bd4ecfee9}
-
-
-Definition at line 9 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a908ada963db8d95f0f72c05a24e8e1e1}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}}
-\index{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-M\-I\-D\-P\-O\-I\-N\-T\-\_\-\-S\-I\-D\-E\-\_\-\-B~\char`\"{}The position of the middle point of side B could not be determined.\char`\"{}}}\label{MinEnclosingTriangleFinder_8hpp_a908ada963db8d95f0f72c05a24e8e1e1}
-
-
-Definition at line 16 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a3a386906c2cc4f2b7c3d52663ef9a184}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A@{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}}
-\index{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A@{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-G\-A\-M\-M\-A~\char`\"{}The position of side B could not be determined, because gamma(b) could not be computed.\char`\"{}}}\label{MinEnclosingTriangleFinder_8hpp_a3a386906c2cc4f2b7c3d52663ef9a184}
-
-
-Definition at line 17 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-
-
-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::update\-Side\-B().
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a206e0581e606c88ca6d4aebad7e9d385}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S@{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}}
-\index{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S@{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-V\-E\-R\-T\-I\-C\-E\-S~\char`\"{}The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect.\char`\"{}}}\label{MinEnclosingTriangleFinder_8hpp_a206e0581e606c88ca6d4aebad7e9d385}
-
-
-Definition at line 19 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a35b2d19f0f8d88b29478a88ecff6e6d9}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}}
-\index{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B@{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-R\-R\-\_\-\-V\-E\-R\-T\-E\-X\-\_\-\-C\-\_\-\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B~\char`\"{}The position of the vertex C on side B could not be determined, because the considered lines do not intersect.\char`\"{}}}\label{MinEnclosingTriangleFinder_8hpp_a35b2d19f0f8d88b29478a88ecff6e6d9}
-
-
-Definition at line 18 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-
-
-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::find\-Vertex\-C\-On\-Side\-B().
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a491d37fc7ce0c72d3763cc91495f87c2}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}}
-\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-A\-B\-O\-V\-E~2}}\label{MinEnclosingTriangleFinder_8hpp_a491d37fc7ce0c72d3763cc91495f87c2}
-
-
-Definition at line 12 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-
-
-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects\-Above(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects\-Above\-Or\-Below().
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a33b2bf416e7a3eb9b86eb3cff45ba67a}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}}
-\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-B\-E\-L\-O\-W~1}}\label{MinEnclosingTriangleFinder_8hpp_a33b2bf416e7a3eb9b86eb3cff45ba67a}
-
-
-Definition at line 11 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-
-
-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects\-Above\-Or\-Below(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects\-Below().
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a7f2b811fcec86dfda9bcf2d5e9096603}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}}
-\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L~3}}\label{MinEnclosingTriangleFinder_8hpp_a7f2b811fcec86dfda9bcf2d5e9096603}
-
-
-Definition at line 13 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-
-
-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects().
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a08b447dcb2172aa0fde5a6e29fcf006e}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}}
-\index{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T@{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-T\-E\-R\-S\-E\-C\-T\-S\-\_\-\-L\-I\-M\-I\-T~4}}\label{MinEnclosingTriangleFinder_8hpp_a08b447dcb2172aa0fde5a6e29fcf006e}
-
-
-Definition at line 14 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a69b5cb9c0d33abff021f07cc6b2da9a4}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}}
-\index{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-A\-\_\-\-T\-A\-N\-G\-E\-N\-T~0}}\label{MinEnclosingTriangleFinder_8hpp_a69b5cb9c0d33abff021f07cc6b2da9a4}
-
-
-Definition at line 21 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-
-
-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Valid\-Minimal\-Triangle(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::update\-Sides\-B\-A().
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_ae84e6d9763cd18f5fe032173ce431428}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}}
-\index{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-\_\-\-B\-\_\-\-T\-A\-N\-G\-E\-N\-T~1}}\label{MinEnclosingTriangleFinder_8hpp_ae84e6d9763cd18f5fe032173ce431428}
-
-
-Definition at line 22 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-
-
-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Valid\-Minimal\-Triangle(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::update\-Side\-B().
-
-\hypertarget{MinEnclosingTriangleFinder_8hpp_a25734dfda829d51fa13c1cdfc8d4ab96}{\index{Min\-Enclosing\-Triangle\-Finder.\-hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}!V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}}
-\index{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H@{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}!MinEnclosingTriangleFinder.hpp@{Min\-Enclosing\-Triangle\-Finder.\-hpp}}
-\subsubsection[{V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-A\-L\-I\-D\-A\-T\-I\-O\-N\-\_\-\-S\-I\-D\-E\-S\-\_\-\-F\-L\-U\-S\-H~2}}\label{MinEnclosingTriangleFinder_8hpp_a25734dfda829d51fa13c1cdfc8d4ab96}
-
-
-Definition at line 23 of file Min\-Enclosing\-Triangle\-Finder.\-hpp.
-
-
-
-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::update\-Sides\-B\-A().
-

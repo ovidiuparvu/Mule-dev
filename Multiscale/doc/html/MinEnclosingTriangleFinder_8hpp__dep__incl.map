@@ -1,5 +1,5 @@
-<map id="include/multiscale/util/MinEnclosingTriangleFinder.hpp" name="include/multiscale/util/MinEnclosingTriangleFinder.hpp">
-<area shape="rect" id="node3" href="$Cluster_8cpp.html" title="src/multiscale/analysis\l/spatial/Cluster.cpp" alt="" coords="5,118,160,165"/>
-<area shape="rect" id="node5" href="$Region_8cpp.html" title="src/multiscale/analysis\l/spatial/Region.cpp" alt="" coords="184,118,339,165"/>
-<area shape="rect" id="node7" href="$MinEnclosingTriangleFinder_8cpp.html" title="src/multiscale/util\l/MinEnclosingTriangleFinder.cpp" alt="" coords="363,118,573,165"/>
+<map id="modules/util/include/multiscale/util/MinEnclosingTriangleFinder.hpp" name="modules/util/include/multiscale/util/MinEnclosingTriangleFinder.hpp">
+<area shape="rect" id="node3" href="$Cluster_8cpp.html" title="modules/analysis/spatial\l/src/Cluster.cpp" alt="" coords="5,118,171,165"/>
+<area shape="rect" id="node5" href="$Region_8cpp.html" title="modules/analysis/spatial\l/src/Region.cpp" alt="" coords="195,118,360,165"/>
+<area shape="rect" id="node7" href="$MinEnclosingTriangleFinder_8cpp.html" title="modules/util/src/MinEnclosing\lTriangleFinder.cpp" alt="" coords="384,118,579,165"/>
 </map>

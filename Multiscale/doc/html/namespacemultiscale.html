@@ -105,7 +105,8 @@ $(document).ready(function(){initNavTree('namespacemultiscale.html','');});
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">multiscale Namespace Reference</div>  </div>
 </div><!--header-->
@@ -138,11 +139,17 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1EntityException.html">EntityException</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception class for the Entity instances.  <a href="classmultiscale_1_1EntityException.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1ExceptionHandler.html">ExceptionHandler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception handler class.  <a href="classmultiscale_1_1ExceptionHandler.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1MatFactoryException.html">MatFactoryException</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception class for the MatFactory class.  <a href="classmultiscale_1_1MatFactoryException.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1MinEnclosingTriangleFinderException.html">MinEnclosingTriangleFinderException</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception class for the minimum area enclosing triangle module.  <a href="classmultiscale_1_1MinEnclosingTriangleFinderException.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1MultiscaleException.html">MultiscaleException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parent exception class for the project.  <a href="classmultiscale_1_1MultiscaleException.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1PolarCsvToInputFilesConverterException.html">PolarCsvToInputFilesConverterException</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception class for the PolarCsvToInputFilesConverter class.  <a href="classmultiscale_1_1PolarCsvToInputFilesConverterException.html#details">More...</a><br/></td></tr>
@@ -197,6 +204,13 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a6ef911f4d48a4bf5e657c237ec169ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the number iterator.  <a href="namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5">More...</a><br/></td></tr>
 <tr class="separator:a6ef911f4d48a4bf5e657c237ec169ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a4ee40795105048ee371efeeb7962ecf6"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemultiscale.html#a4ee40795105048ee371efeeb7962ecf6">ERR_CODE</a> = 1</td></tr>
+<tr class="separator:a4ee40795105048ee371efeeb7962ecf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06490e4e11ef359aa0260f96579ce584"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemultiscale.html#a06490e4e11ef359aa0260f96579ce584">ERR_MSG</a> = &quot;An error occurred: &quot;</td></tr>
+<tr class="separator:a06490e4e11ef359aa0260f96579ce584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a class="anchor" id="a6ef911f4d48a4bf5e657c237ec169ff5"></a>
@@ -223,13 +237,46 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a class="anchor" id="a4ee40795105048ee371efeeb7962ecf6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int multiscale::ERR_CODE = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Multiscale_8hpp_source.html#l00011">11</a> of file <a class="el" href="Multiscale_8hpp_source.html">Multiscale.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00146">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a06490e4e11ef359aa0260f96579ce584"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string multiscale::ERR_MSG = &quot;An error occurred: &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Multiscale_8hpp_source.html#l00012">12</a> of file <a class="el" href="Multiscale_8hpp_source.html">Multiscale.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="PolarMapCsvToInputFiles_8cpp_source.html#l00076">isValidNrOfConcentrationsForPosition()</a>, <a class="el" href="MapCartesianToPolarScript_8cpp_source.html#l00079">isValidOutputType()</a>, <a class="el" href="ExceptionHandler_8hpp_source.html#l00022">multiscale::ExceptionHandler::printErrorMessage()</a>, and <a class="el" href="CircularDetectRegions_8cpp_source.html#l00066">printWrongParameters()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:53 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

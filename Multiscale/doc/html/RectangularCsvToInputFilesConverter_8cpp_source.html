@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>Multiscale: src/multiscale/video/rectangular/RectangularCsvToInputFilesConverter.cpp Source File</title>
+<title>Multiscale: modules/video/rectangular/src/RectangularCsvToInputFilesConverter.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -170,7 +170,7 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    fin.open(inputFilepath, ios_base::in);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (!fin.is_open()) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>(<a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>, ERR_INPUT_OPEN);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    fin.open(inputFilepath, ios_base::in);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (!fin.is_open()) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>(<a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>, ERR_INPUT_OPEN);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">while</span> (!fin.eof()) {</div>
@@ -201,17 +201,17 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a570257a89fa37733ba66624ede2e4377">   93</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a570257a89fa37733ba66624ede2e4377" title="Initialise the output file with the given index and simulation time.">RectangularCsvToInputFilesConverter::initOutputFile</a>(ofstream &amp;fout, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index, <span class="keywordtype">double</span> &amp;simulationTime) {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    fout.open(</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                (</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    (outputFilepath + <a class="code" href="PolarCsvToInputFilesConverter_8hpp.html#a7ecf45b75eecd7a51afcdda682ecdba7">OUTPUT_FILE_SEPARATOR</a>) +</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    (outputFilepath + OUTPUT_FILE_SEPARATOR) +</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <a class="code" href="classmultiscale_1_1StringManipulator.html#a91858c4faa5ee210a9b67e4885835368" title="Convert the variable to a string.">StringManipulator::toString</a>(index) +</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    <a class="code" href="Detector_8hpp.html#a6722eaa5c4c15a1ef661967d81135500">OUTPUT_EXTENSION</a></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    OUTPUT_EXTENSION</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                ),</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                ios_base::trunc</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            );</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    assert(fout.is_open());</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    fout &lt;&lt; height &lt;&lt; <a class="code" href="Entity_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;         &lt;&lt; width  &lt;&lt; <a class="code" href="Entity_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    fout &lt;&lt; height &lt;&lt; OUTPUT_SEPARATOR</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;         &lt;&lt; width  &lt;&lt; OUTPUT_SEPARATOR</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;         &lt;&lt; simulationTime &lt;&lt; endl;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
@@ -234,7 +234,7 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a63a0a390336863c05e0d2df296a0f324">  127</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a63a0a390336863c05e0d2df296a0f324" title="Validate the selected concentration index in case of more than one concentration for each position...">RectangularCsvToInputFilesConverter::validateSelectedConcentrationIndex</a>() {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (selectedConcentrationIndex &gt;= nrOfConcentrationsForPosition) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>(<a class="code" href="PolarCsvToInputFilesConverter_8hpp.html#a7e19750ee177931a4cc33778274b2727">ERR_SELECTED_CONCENTRATION_INDEX</a>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>, ERR_SELECTED_CONCENTRATION_INDEX);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
@@ -245,7 +245,7 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    fin.open(inputFilepath, ios_base::in);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">if</span> (!fin.is_open()) {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>(<a class="code" href="MatFactory_8hpp.html#a12d238c7a2da056fd33f129f4c35b9a2">ERR_INPUT_OPEN</a>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>, ERR_INPUT_OPEN);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">while</span> (!fin.eof()) {</div>
@@ -263,21 +263,21 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
 <div class="line"><a name="l00157"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a876c93163765bcae5d0b12047df99d58">  157</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a876c93163765bcae5d0b12047df99d58" title="Validate the provided line identified by a line number.">RectangularCsvToInputFilesConverter::validateInputLine</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;currentLine, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> lineNumber) {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    vector&lt;string&gt; tokens = <a class="code" href="classmultiscale_1_1StringManipulator.html#a899c72a05bbd8fb525f31bca3c1ec3c4" title="Split the given string into a vector of strings considering the given delimiter.">StringManipulator::split</a>(currentLine, <a class="code" href="PolarCsvToInputFilesConverter_8hpp.html#a61a924c0facd0c49b03d7026b9709532">INPUT_FILE_SEPARATOR</a>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    vector&lt;string&gt; tokens = <a class="code" href="classmultiscale_1_1StringManipulator.html#a899c72a05bbd8fb525f31bca3c1ec3c4" title="Split the given string into a vector of strings considering the given delimiter.">StringManipulator::split</a>(currentLine, INPUT_FILE_SEPARATOR);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> (tokens.size() &lt; ((height * width * nrOfConcentrationsForPosition) + 1)) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>(<a class="code" href="PolarCsvToInputFilesConverter_8hpp.html#a6328562b85e8bcbb1f603131b4df6da8">ERR_NR_CONCENTRATIONS</a>);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>, ERR_NR_CONCENTRATIONS);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">for</span> (vector&lt;string&gt;::iterator it = tokens.begin(); it != tokens.end(); it++) {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordtype">double</span> value = stod(*it);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span> (value &lt; 0) {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>(</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    <span class="keywordtype">string</span>(<a class="code" href="PolarCsvToInputFilesConverter_8hpp.html#a906ca900a5eeb05be5912e8e5be2f780">ERR_INVALID_VALUE_LINE</a>)  +</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                    StringManipulator::toString&lt;unsigned int&gt;(lineNumber) +</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    <span class="keywordtype">string</span>(<a class="code" href="PolarCsvToInputFilesConverter_8hpp.html#a650c4f7af5b2726fda5c1e222d481899">ERR_INVALID_VALUE_TOKEN</a>) + (*it)</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                  );</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                     <span class="keywordtype">string</span>(ERR_INVALID_VALUE_LINE)  +</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                     StringManipulator::toString&lt;unsigned int&gt;(lineNumber) +</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                     <span class="keywordtype">string</span>(ERR_INVALID_VALUE_TOKEN) + (*it)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            );</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
@@ -307,7 +307,7 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; height; i++) {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = 0; j &lt; (width - 1); j++) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            fout &lt;&lt; concentrations[(i * width) + j] &lt;&lt; <a class="code" href="Entity_8hpp.html#ad80cfbe7456c7d029544e8bc2cec16c8">OUTPUT_SEPARATOR</a>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            fout &lt;&lt; concentrations[(i * width) + j] &lt;&lt; OUTPUT_SEPARATOR;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        fout &lt;&lt; concentrations[(i * width) + width - 1] &lt;&lt; endl;</div>
@@ -317,7 +317,7 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00209"></a><span class="lineno"><a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ab297918325583ff85c8740fa9c5661f6">  209</a></span>&#160;vector&lt;double&gt; <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ab297918325583ff85c8740fa9c5661f6" title="Split the line in concentrations.">RectangularCsvToInputFilesConverter::splitLineInConcentrations</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;line, <span class="keywordtype">double</span> &amp;simulationTime) {</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    vector&lt;double&gt; concentrations(height * width);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    vector&lt;string&gt; tokens = <a class="code" href="classmultiscale_1_1StringManipulator.html#a899c72a05bbd8fb525f31bca3c1ec3c4" title="Split the given string into a vector of strings considering the given delimiter.">StringManipulator::split</a>(line, <a class="code" href="PolarCsvToInputFilesConverter_8hpp.html#a61a924c0facd0c49b03d7026b9709532">INPUT_FILE_SEPARATOR</a>);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    vector&lt;string&gt; tokens = <a class="code" href="classmultiscale_1_1StringManipulator.html#a899c72a05bbd8fb525f31bca3c1ec3c4" title="Split the given string into a vector of strings considering the given delimiter.">StringManipulator::split</a>(line, INPUT_FILE_SEPARATOR);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    simulationTime = computeSimulationTime(tokens[0]);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    concentrationsIndex = 1;</div>
@@ -354,7 +354,7 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">double</span> simulationTime = stod(token);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (simulationTime &lt; 0) {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>(<a class="code" href="CartesianToPolarConverter_8hpp.html#a3ad0d4f95970c66da7d75bf997714f6f">ERR_NEG_SIM_TIME</a>);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1RectangularCsvToInputFilesConverterException.html" title="Exception class for the RectangularCsvToInputFilesConverter class.">RectangularCsvToInputFilesConverterException</a>, ERR_NEG_SIM_TIME);</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">return</span> simulationTime;</div>
@@ -424,13 +424,28 @@ $(document).ready(function(){initNavTree('RectangularCsvToInputFilesConverter_8c
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        }</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="comment">// Constants</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a4a4df22dde1d303c2be63f6f12dd7a8d">RectangularCsvToInputFilesConverter::OUTPUT_EXTENSION</a>        = <span class="stringliteral">&quot;.in&quot;</span>;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a8bc759087441c9d9ec210d30e193cf8a">RectangularCsvToInputFilesConverter::OUTPUT_SEPARATOR</a>        = <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a814eefb31383af30a2f79f7518dc9bf8">RectangularCsvToInputFilesConverter::OUTPUT_FILE_SEPARATOR</a>   = <span class="stringliteral">&quot;_&quot;</span>;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a5477635fa0cd7b53fe2bb3a7ae28d2e5">RectangularCsvToInputFilesConverter::INPUT_FILE_SEPARATOR</a>    = <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#aec1bb7ad451ff5403d03d5519215efa5">RectangularCsvToInputFilesConverter::ERR_NEG_CONCENTRATION</a>               = <span class="stringliteral">&quot;All concentrations must be non-negative.&quot;</span>;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#af69a7fbe0f633ee22a691089345216c3">RectangularCsvToInputFilesConverter::ERR_SELECTED_CONCENTRATION_INDEX</a>    = <span class="stringliteral">&quot;The selected concentration index (0-based indexing) should be smaller than the number of concentrations.&quot;</span>;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a537517f861e68fc2df30dcb13c3b9a5d">RectangularCsvToInputFilesConverter::ERR_NR_CONCENTRATIONS</a>               = <span class="stringliteral">&quot;The number of concentrations in the input file does not match the values of the input parameters height and width.&quot;</span>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ae1971c14899e0fdd7523271de0268924">RectangularCsvToInputFilesConverter::ERR_NEG_SIM_TIME</a>                    = <span class="stringliteral">&quot;The simulation time must be non-negative.&quot;</span>;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a5d23713c8025b1a50cfce86ae9e1a414">RectangularCsvToInputFilesConverter::ERR_INPUT_OPEN</a>                      = <span class="stringliteral">&quot;The input file could not be opened.&quot;</span>;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a74375bb73bfbad130b8cf9020ae5b0e6">RectangularCsvToInputFilesConverter::ERR_INVALID_VALUE_LINE</a>              = <span class="stringliteral">&quot;Invalid value on line: &quot;</span>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#af32101eebb5b7f8d6773e30516728415">RectangularCsvToInputFilesConverter::ERR_INVALID_VALUE_TOKEN</a>             = <span class="stringliteral">&quot;, value: &quot;</span>;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_93287aa57a2806f5f547b73a619823dd.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_181e58fb894b6db2e2ebe48170ed182a.html">video</a></li><li class="navelem"><a class="el" href="dir_659b9e9df9619eed061809f04f769b63.html">rectangular</a></li><li class="navelem"><a class="el" href="RectangularCsvToInputFilesConverter_8cpp.html">RectangularCsvToInputFilesConverter.cpp</a></li>
-    <li class="footer">Generated on Mon Sep 30 2013 18:51:45 for Multiscale by
+    <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_fc26e3a6d4f7a64083c4d29e0277dd16.html">video</a></li><li class="navelem"><a class="el" href="dir_fb0669734c64edfd22e63e8de30b2476.html">rectangular</a></li><li class="navelem"><a class="el" href="dir_31eb8512872d6494295532753d992cef.html">src</a></li><li class="navelem"><a class="el" href="RectangularCsvToInputFilesConverter_8cpp.html">RectangularCsvToInputFilesConverter.cpp</a></li>
+    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

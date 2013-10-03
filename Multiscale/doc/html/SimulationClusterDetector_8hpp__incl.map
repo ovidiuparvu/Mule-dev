@@ -1,4 +1,4 @@
-<map id="include/multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp" name="include/multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp">
+<map id="modules/analysis/spatial/include/multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp" name="modules/analysis/spatial/include/multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp">
 <area shape="rect" id="node3" href="$ClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="599,118,783,165"/>
 <area shape="rect" id="node5" href="$Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="320,214,453,261"/>
 <area shape="rect" id="node9" href="$Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="41,318,175,365"/>
