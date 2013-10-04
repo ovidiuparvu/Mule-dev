@@ -10,6 +10,7 @@ namespace multiscale {
 
     namespace analysis {
 
+        //! Class for computing the "Silhouette" clustering index
         class Silhouette {
 
             public:

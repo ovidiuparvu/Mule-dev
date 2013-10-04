@@ -6719,6 +6719,7 @@
       <Scope>multiscale::analysis::DataPoint</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+    <Abstract>Class for representing a data point.</Abstract>
     <DeclaredIn>DataPoint.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6752,6 +6753,7 @@
       <Scope>multiscale::analysis::DBSCAN</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1DBSCAN.html</Path>
+    <Abstract>Class which implements an improved version of the DBSCAN algorithm.</Abstract>
     <DeclaredIn>DBSCAN.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6974,6 +6976,7 @@
       <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Abstract>Abstract class for detecting entities of interest in images.</Abstract>
     <DeclaredIn>Detector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -10559,6 +10562,7 @@
       <Scope>multiscale::analysis::Silhouette</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
+    <Abstract>Class for computing the &amp;quot;Silhouette&amp;quot; clustering index.</Abstract>
     <DeclaredIn>Silhouette.hpp</DeclaredIn>
   </Token>
   <Token>

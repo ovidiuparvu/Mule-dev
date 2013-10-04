@@ -14,6 +14,7 @@ namespace multiscale {
 
     namespace analysis {
 
+        //! Abstract class for detecting entities of interest in images
         class Detector {
 
             protected:

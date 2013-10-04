@@ -13,6 +13,7 @@ namespace multiscale {
 
     namespace analysis {
 
+        //! Class which implements an improved version of the DBSCAN algorithm
         class DBSCAN {
 
             private:

@@ -5,12 +5,12 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.base.177525991" moduleId="org.eclipse.cdt.core.settings" name="Default">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -34,6 +34,11 @@
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1535479841" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1854045267" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<option id="gnu.c.compiler.option.include.paths.418036633" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1121049176" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1232559569" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
@@ -46,6 +51,9 @@
 							<tool id="cdt.managedbuild.tool.gnu.assembler.base.289381335" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
 								<option id="gnu.both.asm.option.include.paths.387378581" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.442940871" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -59,12 +67,12 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.base.177525991.605998117" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -72,7 +80,7 @@
 					<folderInfo id="cdt.managedbuild.toolchain.gnu.base.177525991.605998117." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.base.630260279" name="cdt.managedbuild.toolchain.gnu.base" superClass="cdt.managedbuild.toolchain.gnu.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.487697632" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
-							<builder arguments="-C ${ProjDirPath}/Build VERBOSE=1 -j" command="make" id="cdt.managedbuild.target.gnu.builder.base.404688380" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<builder arguments="-C ${ProjDirPath}/build/Debug VERBOSE=1" command="make" id="cdt.managedbuild.target.gnu.builder.base.404688380" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.307943433" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.465528164" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
 								<option id="gnu.cpp.compiler.option.include.paths.1975741928" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
@@ -80,10 +88,19 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/include}&quot;"/>
 									<listOptionValue builtIn="false" value="/usr/local/include/opencv"/>
 									<listOptionValue builtIn="false" value="/usr/local/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/analysis/spatial/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.578784206" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.326261238" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<option id="gnu.c.compiler.option.include.paths.1041179005" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.294175095" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.2062576104" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
@@ -96,6 +113,9 @@
 							<tool id="cdt.managedbuild.tool.gnu.assembler.base.791483764" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
 								<option id="gnu.both.asm.option.include.paths.1047348769" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.804280407" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -109,12 +129,12 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.toolchain.gnu.base.177525991.808093667" moduleId="org.eclipse.cdt.core.settings" name="Release">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -122,7 +142,7 @@
 					<folderInfo id="cdt.managedbuild.toolchain.gnu.base.177525991.808093667." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.base.1336296950" name="cdt.managedbuild.toolchain.gnu.base" superClass="cdt.managedbuild.toolchain.gnu.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.1805302437" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
-							<builder arguments="-C ${ProjDirPath}/Build VERBOSE=1 -j" command="make" id="cdt.managedbuild.target.gnu.builder.base.187077408" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<builder arguments="-C ${ProjDirPath}/build/Release VERBOSE=1" command="make" id="cdt.managedbuild.target.gnu.builder.base.187077408" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1536269867" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.1371263180" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
 								<option id="gnu.cpp.compiler.option.include.paths.1100361153" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
@@ -130,10 +150,19 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/include}&quot;"/>
 									<listOptionValue builtIn="false" value="/usr/local/include/opencv"/>
 									<listOptionValue builtIn="false" value="/usr/local/include"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/analysis/spatial/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1187873500" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1192493149" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<option id="gnu.c.compiler.option.include.paths.284839927" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1898901073" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1918608030" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
@@ -146,6 +175,9 @@
 							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1654577669" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
 								<option id="gnu.both.asm.option.include.paths.452842092" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2070858362" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -167,21 +199,54 @@
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/Multiscale"/>
 		</configuration>
+		<configuration configurationName="Release"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1012630026;cdt.managedbuild.toolchain.gnu.base.1012630026.2145134136;cdt.managedbuild.tool.gnu.cpp.compiler.base.709935023;cdt.managedbuild.tool.gnu.cpp.compiler.input.406037813">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991.808093667;cdt.managedbuild.toolchain.gnu.base.177525991.808093667.;cdt.managedbuild.tool.gnu.cpp.compiler.base.1371263180;cdt.managedbuild.tool.gnu.cpp.compiler.input.1187873500">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1012630026;cdt.managedbuild.toolchain.gnu.base.1012630026.2145134136;cdt.managedbuild.tool.gnu.c.compiler.base.1732746535;cdt.managedbuild.tool.gnu.c.compiler.input.232602459">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991.808093667;cdt.managedbuild.toolchain.gnu.base.177525991.808093667.;cdt.managedbuild.tool.gnu.c.compiler.base.1192493149;cdt.managedbuild.tool.gnu.c.compiler.input.1898901073">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991;cdt.managedbuild.toolchain.gnu.base.177525991.1971843937;cdt.managedbuild.tool.gnu.cpp.compiler.base.1939144500;cdt.managedbuild.tool.gnu.cpp.compiler.input.1535479841">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991.605998117;cdt.managedbuild.toolchain.gnu.base.177525991.605998117.;cdt.managedbuild.tool.gnu.c.compiler.base.326261238;cdt.managedbuild.tool.gnu.c.compiler.input.294175095">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991.605998117;cdt.managedbuild.toolchain.gnu.base.177525991.605998117.;cdt.managedbuild.tool.gnu.cpp.compiler.base.465528164;cdt.managedbuild.tool.gnu.cpp.compiler.input.578784206">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991;cdt.managedbuild.toolchain.gnu.base.177525991.1971843937;cdt.managedbuild.tool.gnu.c.compiler.base.1854045267;cdt.managedbuild.tool.gnu.c.compiler.input.1121049176">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1012630026;cdt.managedbuild.toolchain.gnu.base.1012630026.2145134136;cdt.managedbuild.tool.gnu.cpp.compiler.base.709935023;cdt.managedbuild.tool.gnu.cpp.compiler.input.406037813">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.177525991;cdt.managedbuild.toolchain.gnu.base.177525991.1971843937;cdt.managedbuild.tool.gnu.cpp.compiler.base.1939144500;cdt.managedbuild.tool.gnu.cpp.compiler.input.1535479841">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.toolchain.gnu.base.1012630026;cdt.managedbuild.toolchain.gnu.base.1012630026.2145134136;cdt.managedbuild.tool.gnu.c.compiler.base.1732746535;cdt.managedbuild.tool.gnu.c.compiler.input.232602459">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets>
+			<target name="Run CMake - Debug" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>cmake</buildCommand>
+				<buildArguments>-E chdir build/Debug cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug ../../</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="Run CMake - Release" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>cmake</buildCommand>
+				<buildArguments>-E chdir build/Release cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release ../../</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+		</buildTargets>
 	</storageModule>
 </cproject>

@@ -121,75 +121,75 @@ $(document).ready(function(){initNavTree('DBSCAN_8hpp_source.html','');});
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">namespace </span>analysis {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html">   16</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html">DBSCAN</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a8d68cd84561cbb06bd138f8edf340b9f">   20</a></span>&#160;                <span class="keywordtype">double</span> eps;                              </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a7bafd4070ac44e236fcc7f06d92b6572">   22</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> minPoints;                  </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#af81a42ca24493494b3d20e27c76be016">   25</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#af81a42ca24493494b3d20e27c76be016">nrOfDataPoints</a>;             </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a863a8b90ff30d401795264a246a09147">   27</a></span>&#160;                vector&lt;vector&lt;double&gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a863a8b90ff30d401795264a246a09147">distanceMatrix</a>;   </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html">DBSCAN</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html">DBSCAN</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordtype">void</span> run(<span class="keyword">const</span> vector&lt;shared_ptr&lt;DataPoint&gt;&gt; &amp;dataPoints, vector&lt;int&gt; &amp;clusterIndexes, <span class="keywordtype">int</span> &amp;nrOfClusters,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                         <span class="keywordtype">double</span> eps, <span class="keywordtype">int</span> minPoints);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">void</span> runAlgorithm(<span class="keyword">const</span> vector&lt;shared_ptr&lt;DataPoint&gt;&gt; &amp;dataPoints, vector&lt;int&gt; &amp;clusterIndexes, <span class="keywordtype">int</span> &amp;nrOfClusters);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">void</span> constructDistanceMatrix(<span class="keyword">const</span> vector&lt;shared_ptr&lt;DataPoint&gt;&gt; &amp;dataPoints);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordtype">bool</span> expandCoreCluster(vector&lt;int&gt; &amp;clusterIndexes, <span class="keywordtype">int</span> coreDataPointIndex, <span class="keywordtype">int</span> clusterId);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordtype">void</span> addUnclassifiedNodesToSeedsList(<span class="keyword">const</span> vector&lt;int&gt; &amp;neighbours, <span class="keyword">const</span> vector&lt;int&gt; &amp;clusterIndexes,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                     vector&lt;int&gt; &amp;seeds);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordtype">void</span> labelUnclassifiedAndNoiseAsBorder(<span class="keyword">const</span> vector&lt;int&gt; &amp;neighbours, vector&lt;int&gt; &amp;clusterIndexes);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                vector&lt;int&gt; retrieveNeighbours(<span class="keywordtype">int</span> dataPointIndex);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordtype">void</span> assignBorderNodesToClusters(vector&lt;int&gt; &amp;clusterIndexes);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordtype">int</span> findClosestCoreDataPoint(<span class="keyword">const</span> vector&lt;int&gt; &amp;neighbours, <span class="keywordtype">int</span> borderDataPointIndex,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                             <span class="keyword">const</span> vector&lt;int&gt; &amp;clusterIndexes);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keywordtype">void</span> allocateDistanceMatrix();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="comment">// Constants</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a6f60961639281a807b63650faf01511b">  120</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a6f60961639281a807b63650faf01511b">CLUSTERING_UNCLASSIFIED</a>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a28f37ffc029ccd1d121cbc4467851ce2">  121</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a28f37ffc029ccd1d121cbc4467851ce2">CLUSTERING_BORDER</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a480b43a01f8652787a4b0f61b00ee3cf">  122</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a480b43a01f8652787a4b0f61b00ee3cf">CLUSTERING_NOISE</a>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html">   17</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html" title="Class which implements an improved version of the DBSCAN algorithm.">DBSCAN</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a8d68cd84561cbb06bd138f8edf340b9f">   21</a></span>&#160;                <span class="keywordtype">double</span> eps;                              </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a7bafd4070ac44e236fcc7f06d92b6572">   23</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> minPoints;                  </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#af81a42ca24493494b3d20e27c76be016">   26</a></span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#af81a42ca24493494b3d20e27c76be016">nrOfDataPoints</a>;             </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a863a8b90ff30d401795264a246a09147">   28</a></span>&#160;                vector&lt;vector&lt;double&gt;&gt; <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a863a8b90ff30d401795264a246a09147">distanceMatrix</a>;   </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html" title="Class which implements an improved version of the DBSCAN algorithm.">DBSCAN</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html" title="Class which implements an improved version of the DBSCAN algorithm.">DBSCAN</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordtype">void</span> run(<span class="keyword">const</span> vector&lt;shared_ptr&lt;DataPoint&gt;&gt; &amp;dataPoints, vector&lt;int&gt; &amp;clusterIndexes, <span class="keywordtype">int</span> &amp;nrOfClusters,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                         <span class="keywordtype">double</span> eps, <span class="keywordtype">int</span> minPoints);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">void</span> runAlgorithm(<span class="keyword">const</span> vector&lt;shared_ptr&lt;DataPoint&gt;&gt; &amp;dataPoints, vector&lt;int&gt; &amp;clusterIndexes, <span class="keywordtype">int</span> &amp;nrOfClusters);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordtype">void</span> constructDistanceMatrix(<span class="keyword">const</span> vector&lt;shared_ptr&lt;DataPoint&gt;&gt; &amp;dataPoints);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordtype">bool</span> expandCoreCluster(vector&lt;int&gt; &amp;clusterIndexes, <span class="keywordtype">int</span> coreDataPointIndex, <span class="keywordtype">int</span> clusterId);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordtype">void</span> addUnclassifiedNodesToSeedsList(<span class="keyword">const</span> vector&lt;int&gt; &amp;neighbours, <span class="keyword">const</span> vector&lt;int&gt; &amp;clusterIndexes,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                     vector&lt;int&gt; &amp;seeds);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordtype">void</span> labelUnclassifiedAndNoiseAsBorder(<span class="keyword">const</span> vector&lt;int&gt; &amp;neighbours, vector&lt;int&gt; &amp;clusterIndexes);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                vector&lt;int&gt; retrieveNeighbours(<span class="keywordtype">int</span> dataPointIndex);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordtype">void</span> assignBorderNodesToClusters(vector&lt;int&gt; &amp;clusterIndexes);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordtype">int</span> findClosestCoreDataPoint(<span class="keyword">const</span> vector&lt;int&gt; &amp;neighbours, <span class="keywordtype">int</span> borderDataPointIndex,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                             <span class="keyword">const</span> vector&lt;int&gt; &amp;clusterIndexes);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordtype">void</span> allocateDistanceMatrix();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a6f60961639281a807b63650faf01511b">  121</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a6f60961639281a807b63650faf01511b">CLUSTERING_UNCLASSIFIED</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a28f37ffc029ccd1d121cbc4467851ce2">  122</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a28f37ffc029ccd1d121cbc4467851ce2">CLUSTERING_BORDER</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a480b43a01f8652787a4b0f61b00ee3cf">  123</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1DBSCAN.html#a480b43a01f8652787a4b0f61b00ee3cf">CLUSTERING_NOISE</a>;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        };</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    };</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        };</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    };</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;};</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_e7d242e1da06815f3d3da2caccd0f5a1.html">include</a></li><li class="navelem"><a class="el" href="dir_caa6a397db17f058e2c817cb5faf17c2.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_acebd083e3f2954c6fa33291786797ea.html">analysis</a></li><li class="navelem"><a class="el" href="dir_f241995066f1baa02936d91c53de1c28.html">spatial</a></li><li class="navelem"><a class="el" href="DBSCAN_8hpp.html">DBSCAN.hpp</a></li>
-    <li class="footer">Generated on Thu Oct 3 2013 18:00:51 for Multiscale by
+    <li class="footer">Generated on Fri Oct 4 2013 10:31:24 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

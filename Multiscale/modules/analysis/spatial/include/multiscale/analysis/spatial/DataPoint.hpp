@@ -9,6 +9,7 @@ namespace multiscale {
 
     namespace analysis {
 
+        //! Class for representing a data point
         class DataPoint {
 
             public:

@@ -1,3 +1,7 @@
+# Build tree
+
+/build
+
 # Output of the modules
 
 /out

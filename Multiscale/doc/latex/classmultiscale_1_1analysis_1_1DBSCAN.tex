@@ -3,12 +3,16 @@
 }
 
 
+Class which implements an improved version of the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} algorithm.  
+
+
+
+
 {\ttfamily \#include $<$D\-B\-S\-C\-A\-N.\-hpp$>$}
 
 
 
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:D\-B\-S\-C\-A\-N\-:
-\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:D\-B\-S\-C\-A\-N\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -68,9 +72,9 @@ vector$<$ vector$<$ double $>$ $>$ \hyperlink{classmultiscale_1_1analysis_1_1DBS
 
 
 \subsection{Detailed Description}
+Class which implements an improved version of the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} algorithm. 
 
-
-Definition at line 16 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 17 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
@@ -599,7 +603,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \subsubsection[{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-B\-O\-R\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const int D\-B\-S\-C\-A\-N\-::\-C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-B\-O\-R\-D\-E\-R = -\/1\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a28f37ffc029ccd1d121cbc4467851ce2}
 
 
-Definition at line 121 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 122 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
@@ -610,7 +614,7 @@ Referenced by assign\-Border\-Nodes\-To\-Clusters(), and label\-Unclassified\-An
 \subsubsection[{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-N\-O\-I\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int D\-B\-S\-C\-A\-N\-::\-C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-N\-O\-I\-S\-E = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a480b43a01f8652787a4b0f61b00ee3cf}
 
 
-Definition at line 122 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 123 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
@@ -621,7 +625,7 @@ Referenced by expand\-Core\-Cluster(), and label\-Unclassified\-And\-Noise\-As\-
 \subsubsection[{C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const int D\-B\-S\-C\-A\-N\-::\-C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D = -\/2\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a6f60961639281a807b63650faf01511b}
 
 
-Definition at line 120 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 121 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
@@ -632,7 +636,7 @@ Referenced by add\-Unclassified\-Nodes\-To\-Seeds\-List(), multiscale\-::analysi
 \subsubsection[{distance\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$double$>$ $>$ multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::distance\-Matrix\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_a863a8b90ff30d401795264a246a09147}
 The matrix containing the distances between any two data points 
 
-Definition at line 27 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 28 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
@@ -645,7 +649,7 @@ Referenced by allocate\-Distance\-Matrix(), construct\-Distance\-Matrix(), find\
 \end{DoxyVerb}
  of the neighbourhood 
 
-Definition at line 20 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 21 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
@@ -658,7 +662,7 @@ Referenced by retrieve\-Neighbours(), and run().
 \end{DoxyVerb}
  of points in an eps-\/neighbourhood of that point 
 
-Definition at line 22 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 23 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
@@ -669,7 +673,7 @@ Referenced by expand\-Core\-Cluster(), and run().
 \subsubsection[{nr\-Of\-Data\-Points}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::nr\-Of\-Data\-Points\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1DBSCAN_af81a42ca24493494b3d20e27c76be016}
 Number of data points in the data set 
 
-Definition at line 25 of file D\-B\-S\-C\-A\-N.\-hpp.
+Definition at line 26 of file D\-B\-S\-C\-A\-N.\-hpp.
 
 
 
