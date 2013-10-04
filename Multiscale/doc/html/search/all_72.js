@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['radius',['RADIUS',['../MinEnclosingTriangleFinderSample_8cpp.html#aeb44a1c2c685ed2800552e1434b43bb2',1,'MinEnclosingTriangleFinderSample.cpp']]],
   ['radius_5fmax',['RADIUS_MAX',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a79bb03defe0d68884ce5d4f1b0a7d60c',1,'multiscale::video::CartesianToPolarConverter::RADIUS_MAX()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a2e14aa1021a91a2f1df2bd4904a2ca2f',1,'multiscale::video::CartesianToConcentrationsConverter::RADIUS_MAX()']]],
   ['radius_5fmin',['RADIUS_MIN',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a59c18c22603ad65bf26533dd2aafd04e',1,'multiscale::video::CartesianToPolarConverter::RADIUS_MIN()'],['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aeb8eeef6a83cd99ebfc47053a1ec99a7',1,'multiscale::video::PolarCsvToInputFilesConverter::RADIUS_MIN()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a6c96a5325ecd3d99649f9cccff2f06a2',1,'multiscale::video::CartesianToConcentrationsConverter::RADIUS_MIN()']]],
   ['readconcentrations',['readConcentrations',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140',1,'multiscale::video::CartesianToPolarConverter::readConcentrations()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9134409b814fafe62c896c6b473bc574',1,'multiscale::video::CartesianToConcentrationsConverter::readConcentrations()']]],
@@ -82,5 +83,8 @@ var searchData=
   ['rows',['rows',['../classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474',1,'multiscale::analysis::MatFactory']]],
   ['rowsiterator',['rowsIterator',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a19fa13140bc5d6b163222030b6dfe61e',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
   ['run',['run',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a52f0eb2d04029c75a3c48a37efdac26b',1,'multiscale::analysis::DBSCAN']]],
-  ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82',1,'multiscale::analysis::DBSCAN']]]
+  ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82',1,'multiscale::analysis::DBSCAN']]],
+  ['runminenclosingtrianglefinder',['runMinEnclosingTriangleFinder',['../MinEnclosingTriangleFinderSample_8cpp.html#aef6ea89ecb324851b646e1e9a8f50aff',1,'runMinEnclosingTriangleFinder(const vector&lt; Point2f &gt; &amp;points):&#160;MinEnclosingTriangleFinderSample.cpp'],['../MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972',1,'runMinEnclosingTriangleFinder():&#160;MinEnclosingTriangleFinderSample.cpp']]],
+  ['runminenclosingtrianglefinderusingrandompolygons',['runMinEnclosingTriangleFinderUsingRandomPolygons',['../MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a',1,'MinEnclosingTriangleFinderSample.cpp']]],
+  ['runtest',['RunTest',['../classmultiscaletest_1_1MultiscaleTest.html#a3b3c62b74e1fd1eb0633f9b720659ce3',1,'multiscaletest::MultiscaleTest::RunTest()'],['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a9a0c1dfbe0e0b2451b1c4076967f47d9',1,'multiscaletest::MinEnclosingTriangleFinderTest::RunTest()']]]
 ];

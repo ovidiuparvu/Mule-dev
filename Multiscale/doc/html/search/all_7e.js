@@ -13,6 +13,8 @@ var searchData=
   ['_7elexicographicnumberiterator',['~LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#affe04d9733b7d0984a5ab3957cb0096a',1,'multiscale::LexicographicNumberIterator']]],
   ['_7ematfactory',['~MatFactory',['../classmultiscale_1_1analysis_1_1MatFactory.html#aa339532cb504caebcf9ece2c847f4847',1,'multiscale::analysis::MatFactory']]],
   ['_7eminenclosingtrianglefinder',['~MinEnclosingTriangleFinder',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a356eccb6cce71d00144007df0bee1e5e',1,'multiscale::MinEnclosingTriangleFinder']]],
+  ['_7eminenclosingtrianglefindertest',['~MinEnclosingTriangleFinderTest',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a08084468ad154583a03421f73554342f',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
+  ['_7emultiscaletest',['~MultiscaleTest',['../classmultiscaletest_1_1MultiscaleTest.html#a27aa0fd218670e2265edad84b2fb1f8f',1,'multiscaletest::MultiscaleTest']]],
   ['_7enumberiterator',['~NumberIterator',['../classmultiscale_1_1NumberIterator.html#aae2ce809339ed853f49619ad69596229',1,'multiscale::NumberIterator']]],
   ['_7epolarcsvtoinputfilesconverter',['~PolarCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#afdd156ae24d5d6194b113dd661110ed5',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['_7erectangularcsvtoinputfilesconverter',['~RectangularCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ad45bb79ad6c37954376d4f9904872870',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],

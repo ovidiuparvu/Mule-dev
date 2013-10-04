@@ -1,8 +1,13 @@
 var searchData=
 [
   ['matrix_5fstart_5findex',['MATRIX_START_INDEX',['../classmultiscale_1_1Geometry2D.html#ade1d55d3ef110b73d42a3e4c4360ba17',1,'multiscale::Geometry2D']]],
+  ['max_5fnr_5fexecutions',['MAX_NR_EXECUTIONS',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a061721ac8458f238f964b3f63088df8a',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
+  ['max_5fnr_5fpoints',['MAX_NR_POINTS',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a6ecea50f805e256dc9bda62599840db3',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
+  ['max_5fpolygon_5fpoints',['MAX_POLYGON_POINTS',['../MinEnclosingTriangleFinderSample_8cpp.html#a3fb9ea13a83facbb7917419c6c0e3419',1,'MinEnclosingTriangleFinderSample.cpp']]],
   ['maximumconcentration',['maximumConcentration',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a89b7dce2825cd5c8c45a1e6f19770e5f',1,'multiscale::video::PolarCsvToInputFilesConverter::maximumConcentration()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#aeddcdf92c6f79bf41546fd417d0808b1',1,'multiscale::video::RectangularCsvToInputFilesConverter::maximumConcentration()']]],
   ['maxnrofentitiesperposition',['maxNrOfEntitiesPerPosition',['../classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#adcea224ee3e6f8fbecca3754774afbac',1,'multiscale::video::RectangularEntityCsvToInputFilesConverter']]],
+  ['min_5fnr_5fexecutions',['MIN_NR_EXECUTIONS',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#aca194910ab0cbc44fc6f9258853caa69',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
+  ['min_5fnr_5fpoints',['MIN_NR_POINTS',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a03001ee4e2aedfa3da86ea99acc8e55e',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
   ['min_5fpoints_5fmax',['MIN_POINTS_MAX',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#aabb41b5c6e865ee33cbb27568cae5a2d',1,'multiscale::analysis::ClusterDetector']]],
   ['min_5fpoints_5fmin',['MIN_POINTS_MIN',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#aa0219df3977a845e46be090e6c3f90ad',1,'multiscale::analysis::ClusterDetector']]],
   ['minareaenclosingcirclecentre',['minAreaEnclosingCircleCentre',['../classmultiscale_1_1analysis_1_1Cluster.html#a47e672060b4025dcd07ebb9c5fd99f0c',1,'multiscale::analysis::Cluster']]],

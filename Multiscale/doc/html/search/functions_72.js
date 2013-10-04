@@ -24,5 +24,8 @@ var searchData=
   ['returnminenclosingtriangle',['returnMinEnclosingTriangle',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#af6e49a1ef5a0d4dbe3e25c2f92d69dc3',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['reversedigits',['reverseDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#a4c0a17e03a12256584d9ed3ae19a78c9',1,'multiscale::LexicographicNumberIterator']]],
   ['run',['run',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a52f0eb2d04029c75a3c48a37efdac26b',1,'multiscale::analysis::DBSCAN']]],
-  ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82',1,'multiscale::analysis::DBSCAN']]]
+  ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82',1,'multiscale::analysis::DBSCAN']]],
+  ['runminenclosingtrianglefinder',['runMinEnclosingTriangleFinder',['../MinEnclosingTriangleFinderSample_8cpp.html#aef6ea89ecb324851b646e1e9a8f50aff',1,'runMinEnclosingTriangleFinder(const vector&lt; Point2f &gt; &amp;points):&#160;MinEnclosingTriangleFinderSample.cpp'],['../MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972',1,'runMinEnclosingTriangleFinder():&#160;MinEnclosingTriangleFinderSample.cpp']]],
+  ['runminenclosingtrianglefinderusingrandompolygons',['runMinEnclosingTriangleFinderUsingRandomPolygons',['../MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a',1,'MinEnclosingTriangleFinderSample.cpp']]],
+  ['runtest',['RunTest',['../classmultiscaletest_1_1MultiscaleTest.html#a3b3c62b74e1fd1eb0633f9b720659ce3',1,'multiscaletest::MultiscaleTest::RunTest()'],['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a9a0c1dfbe0e0b2451b1c4076967f47d9',1,'multiscaletest::MinEnclosingTriangleFinderTest::RunTest()']]]
 ];

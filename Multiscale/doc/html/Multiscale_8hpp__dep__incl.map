@@ -1,10 +1,12 @@
 <map id="include/multiscale/core/Multiscale.hpp" name="include/multiscale/core/Multiscale.hpp">
-<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="5,110,211,157"/>
-<area shape="rect" id="node5" href="$RectangularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/RectangularDetectRegions.cpp" alt="" coords="235,110,464,157"/>
-<area shape="rect" id="node7" href="$SimulationDetectClusters_8cpp.html" title="modules/analysis/spatial\l/src/SimulationDetectClusters.cpp" alt="" coords="488,110,709,157"/>
-<area shape="rect" id="node9" href="$MapCartesianToPolarScript_8cpp.html" title="modules/video/circular\l/src/MapCartesianToPolarScript.cpp" alt="" coords="733,110,965,157"/>
-<area shape="rect" id="node11" href="$PolarMapCsvToInputFiles_8cpp.html" title="modules/video/circular\l/src/PolarMapCsvToInputFiles.cpp" alt="" coords="989,110,1213,157"/>
-<area shape="rect" id="node13" href="$MapCartesianToScript_8cpp.html" title="modules/video/rectangular\l/src/MapCartesianToScript.cpp" alt="" coords="1237,110,1440,157"/>
-<area shape="rect" id="node15" href="$RectangularMapCsvToInputFiles_8cpp.html" title="modules/video/rectangular\l/src/RectangularMapCsvToInputFiles.cpp" alt="" coords="1464,110,1728,157"/>
-<area shape="rect" id="node17" href="$RectangularMapEntityCsvToInputFiles_8cpp.html" title="modules/video/rectangular\l/src/RectangularMapEntityCsvTo\lInputFiles.cpp" alt="" coords="1752,101,1968,165"/>
+<area shape="rect" id="node3" href="$ExceptionHandler_8hpp.html" title="include/multiscale\l/exception/ExceptionHandler.hpp" alt="" coords="976,102,1189,149"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="5,206,211,253"/>
+<area shape="rect" id="node7" href="$RectangularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/RectangularDetectRegions.cpp" alt="" coords="235,206,464,253"/>
+<area shape="rect" id="node9" href="$SimulationDetectClusters_8cpp.html" title="modules/analysis/spatial\l/src/SimulationDetectClusters.cpp" alt="" coords="488,206,709,253"/>
+<area shape="rect" id="node13" href="$MapCartesianToPolarScript_8cpp.html" title="modules/video/circular\l/src/MapCartesianToPolarScript.cpp" alt="" coords="733,206,965,253"/>
+<area shape="rect" id="node15" href="$PolarMapCsvToInputFiles_8cpp.html" title="modules/video/circular\l/src/PolarMapCsvToInputFiles.cpp" alt="" coords="1200,206,1424,253"/>
+<area shape="rect" id="node17" href="$MapCartesianToScript_8cpp.html" title="modules/video/rectangular\l/src/MapCartesianToScript.cpp" alt="" coords="1448,206,1651,253"/>
+<area shape="rect" id="node19" href="$RectangularMapCsvToInputFiles_8cpp.html" title="modules/video/rectangular\l/src/RectangularMapCsvToInputFiles.cpp" alt="" coords="1675,206,1939,253"/>
+<area shape="rect" id="node21" href="$RectangularMapEntityCsvToInputFiles_8cpp.html" title="modules/video/rectangular\l/src/RectangularMapEntityCsvTo\lInputFiles.cpp" alt="" coords="1963,197,2179,261"/>
+<area shape="rect" id="node11" href="$MinEnclosingTriangleFinderSample_8cpp.html" title="modules/util/sample\l/MinEnclosingTriangleFinder\lSample.cpp" alt="" coords="989,197,1176,261"/>
 </map>

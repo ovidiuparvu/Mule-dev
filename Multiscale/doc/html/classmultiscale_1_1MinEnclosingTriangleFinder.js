@@ -10,6 +10,7 @@ var classmultiscale_1_1MinEnclosingTriangleFinder =
     [ "findGammaIntersectionPoints", "classmultiscale_1_1MinEnclosingTriangleFinder.html#a9eedc43ea3190d8ee6343879dc100edb", null ],
     [ "findMinEnclosingTriangle", "classmultiscale_1_1MinEnclosingTriangleFinder.html#a0b55638741cd5ff84d583df33d594a69", null ],
     [ "findMinEnclosingTriangle", "classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270", null ],
+    [ "findMinTriangle", "classmultiscale_1_1MinEnclosingTriangleFinder.html#a1540deb145740cb2e73c7c76a9dd244f", null ],
     [ "findVertexCOnSideB", "classmultiscale_1_1MinEnclosingTriangleFinder.html#ab0b488d2d67f2d22077777eebc292c1a", null ],
     [ "gamma", "classmultiscale_1_1MinEnclosingTriangleFinder.html#a800413be1e1567d986a92fac4a6b937e", null ],
     [ "height", "classmultiscale_1_1MinEnclosingTriangleFinder.html#a4fd0fdc0ccc472a2d15c8d001f65d0f9", null ],

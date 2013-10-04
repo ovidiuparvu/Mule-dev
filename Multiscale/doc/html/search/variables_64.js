@@ -9,5 +9,6 @@ var searchData=
   ['dir_5fseparator',['DIR_SEPARATOR',['../classmultiscale_1_1StringManipulator.html#a3c975968005d8db010415d240b02b5db',1,'multiscale::StringManipulator']]],
   ['display_5fline_5fthickness',['DISPLAY_LINE_THICKNESS',['../classmultiscale_1_1analysis_1_1RegionDetector.html#aee6fbc641e8a6a85b1d877f9b4c6c6c3',1,'multiscale::analysis::RegionDetector']]],
   ['distancefromorigin',['distanceFromOrigin',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ac2a5d3f8c2cb878c710d821c536b8a4f',1,'multiscale::analysis::SpatialCollection2D']]],
-  ['distancematrix',['distanceMatrix',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a863a8b90ff30d401795264a246a09147',1,'multiscale::analysis::DBSCAN']]]
+  ['distancematrix',['distanceMatrix',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a863a8b90ff30d401795264a246a09147',1,'multiscale::analysis::DBSCAN']]],
+  ['double_5fcomp_5ferror',['DOUBLE_COMP_ERROR',['../Geometry2DTest_8cpp.html#ac012264b6dbcdc17067434049ce72e8b',1,'Geometry2DTest.cpp']]]
 ];

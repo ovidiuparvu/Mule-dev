@@ -67,6 +67,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles/progress.marks
@@ -97,6 +107,32 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f extern/gtest-1.7.0/CMakeFiles/gtest.dir/build.make extern/gtest-1.7.0/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/build.make extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 #=============================================================================
 # Target rules for targets named CircularDetectRegions
@@ -136,6 +172,45 @@ SimulationDetectClusters: cmake_check_build_system
 SimulationDetectClusters/fast:
 	$(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build
 .PHONY : SimulationDetectClusters/fast
+
+#=============================================================================
+# Target rules for targets named Geometry2DTest
+
+# Build rule for target.
+Geometry2DTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Geometry2DTest
+.PHONY : Geometry2DTest
+
+# fast build rule for target.
+Geometry2DTest/fast:
+	$(MAKE) -f modules/util/CMakeFiles/Geometry2DTest.dir/build.make modules/util/CMakeFiles/Geometry2DTest.dir/build
+.PHONY : Geometry2DTest/fast
+
+#=============================================================================
+# Target rules for targets named MinEnclosingTriangleFinderSample
+
+# Build rule for target.
+MinEnclosingTriangleFinderSample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MinEnclosingTriangleFinderSample
+.PHONY : MinEnclosingTriangleFinderSample
+
+# fast build rule for target.
+MinEnclosingTriangleFinderSample/fast:
+	$(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build
+.PHONY : MinEnclosingTriangleFinderSample/fast
+
+#=============================================================================
+# Target rules for targets named MinEnclosingTriangleFinderTest
+
+# Build rule for target.
+MinEnclosingTriangleFinderTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MinEnclosingTriangleFinderTest
+.PHONY : MinEnclosingTriangleFinderTest
+
+# fast build rule for target.
+MinEnclosingTriangleFinderTest/fast:
+	$(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build
+.PHONY : MinEnclosingTriangleFinderTest/fast
 
 #=============================================================================
 # Target rules for targets named util
@@ -223,9 +298,15 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... CircularDetectRegions"
 	@echo "... RectangularDetectRegions"
 	@echo "... SimulationDetectClusters"
+	@echo "... Geometry2DTest"
+	@echo "... MinEnclosingTriangleFinderSample"
+	@echo "... MinEnclosingTriangleFinderTest"
 	@echo "... util"
 	@echo "... MapCartesianToPolarScript"
 	@echo "... PolarMapCsvToInputFiles"

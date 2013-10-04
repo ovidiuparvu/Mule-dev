@@ -66,6 +66,13 @@ namespace multiscale {
 
         private:
 
+            //! Find the minimum area enclosing triangle for the given 2D point set
+            /*!
+             * \param points                        Set of points
+             * \param minEnclosingTriangle          Minimum area triangle enclosing the given polygon
+             */
+            double findMinTriangle(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle);
+
             //! Initialisation function for the class
             /*!
              * Initialise the polygon and other class' fields.
@@ -357,6 +364,7 @@ namespace multiscale {
             static const unsigned int INTERSECTS_CRITICAL;
             static const unsigned int INTERSECTS_LIMIT;
 
+            static const string ERR_NR_POINTS;
             static const string ERR_MIDPOINT_SIDE_B;
             static const string ERR_SIDE_B_GAMMA;
             static const string ERR_VERTEX_C_ON_SIDE_B;

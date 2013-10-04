@@ -1,0 +1,16 @@
+<map id="runMinEnclosingTriangleFinder" name="runMinEnclosingTriangleFinder">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe74965c39261feb7152f5556c0281cd" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="263,126,428,173"/>
+<area shape="rect" id="node19" href="$MinEnclosingTriangleFinderSample_8cpp.html#aedf4a19a455ffa4eaa382766cd1d29f0" title="isValidTriangle" alt="" coords="292,223,399,252"/>
+<area shape="rect" id="node27" href="$MinEnclosingTriangleFinderSample_8cpp.html#a2d0d2b34e6f06ccf477a26d7dca4919e" title="outputMinEnclosingTriangle\lFinderResults" alt="" coords="255,298,436,345"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a1540deb145740cb2e73c7c76a9dd244f" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="485,99,685,146"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a6fa2b447626f765d0b9600cabdc810ae" title="Initialisation function for the class." alt="" coords="763,17,928,63"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a0b55638741cd5ff84d583df33d594a69" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="740,91,951,155"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#af6e49a1ef5a0d4dbe3e25c2f92d69dc3" title="Return the minimum area enclosing triangle in case the given polygon has at most three points..." alt="" coords="735,179,956,243"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe8fe342d7ec338ccc0874cce91f2a58" title="Initialise polygon as the convex hull of the given set of points." alt="" coords="1012,5,1215,69"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab41a0d36789e6dfb720325ce494b21f6" title="Initialisation of the algorithm variables." alt="" coords="1007,93,1220,157"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1Geometry2D.html#abf0e96a63cf744cab74ab94398e28562" title="Compute the area of a triangle defined by three points." alt="" coords="1032,187,1195,234"/>
+<area shape="rect" id="node21" href="$MinEnclosingTriangleFinderSample_8cpp.html#a034dc3c50ee9138b7ca750f1ca3a0180" title="arePointsEnclosed" alt="" coords="520,169,651,199"/>
+<area shape="rect" id="node23" href="$MinEnclosingTriangleFinderSample_8cpp.html#a38124a4460f065f32d4a8da82b64f4ef" title="isOneEdgeFlush" alt="" coords="527,223,644,252"/>
+<area shape="rect" id="node25" href="$MinEnclosingTriangleFinderSample_8cpp.html#a3301420b8efa834eb9f6d9c66cef1f87" title="isTriangleTouchingPolygon" alt="" coords="496,276,675,305"/>
+<area shape="rect" id="node29" href="$MinEnclosingTriangleFinderSample_8cpp.html#a125feb62daf5c197b1574e4cf25a2534" title="printPolygon" alt="" coords="539,329,632,359"/>
+</map>

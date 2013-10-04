@@ -6,28 +6,10 @@
 project(multiscale)
 
 # Minimum version number
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
 
-
-#------------------------------------------------------------
-# Compilation details
-#------------------------------------------------------------
-
-# Compiler flags
-if(CMAKE_COMPILER_IS_GNUCXX)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmessage-length=0")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
-endif()
-
-
-#------------------------------------------------------------
-# Output path for binaries and libraries
-#------------------------------------------------------------
-
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+# Enable testing
+enable_testing()
 
 
 #------------------------------------------------------------
@@ -48,6 +30,8 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
  
 # Incluse user defined CMake modules
 include(AddDebugPostfix)
+include(AddSample)
+include(AddUnitTest)
 include(MacroOutOfSourceBuild)
  
 # Check if an "out of source" build folder was chosen
@@ -55,11 +39,15 @@ macro_ensure_out_of_source_build("${PROJECT_NAME} requires an out of source buil
 
 
 #------------------------------------------------------------
-# Add the include directories
+# Compilation details
 #------------------------------------------------------------
 
-# Project include
-include_directories(${PROJECT_SOURCE_DIR}/include)
+# Compiler flags
+if(CMAKE_COMPILER_IS_GNUCXX)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmessage-length=0")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+endif()
 
 
 #------------------------------------------------------------
@@ -90,7 +78,28 @@ endif()
 
 
 #------------------------------------------------------------
+# Add the include directories
+#------------------------------------------------------------
+
+# Project include
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+# Google Test framework include
+include_directories(${PROJECT_SOURCE_DIR}/extern/gtest-1.7.0/include)
+
+
+#------------------------------------------------------------
+# Output path for binaries and libraries
+#------------------------------------------------------------
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
+
+
+#------------------------------------------------------------
 # Add subdirectories
 #------------------------------------------------------------
  
+add_subdirectory(extern)
 add_subdirectory(modules)

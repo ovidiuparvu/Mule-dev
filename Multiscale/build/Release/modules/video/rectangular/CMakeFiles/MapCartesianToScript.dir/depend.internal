@@ -6,10 +6,13 @@ modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/src/CartesianToCon
  ../../include/multiscale/exception/MultiscaleException.hpp
  ../../modules/util/include/multiscale/util/NumericRangeManipulator.hpp
  ../../modules/util/include/multiscale/util/StringManipulator.hpp
+ ../../modules/video/rectangular/include/multiscale/video/rectangular/CartesianToConcentrationsConverter.hpp
+ ../../modules/video/rectangular/include/multiscale/video/rectangular/RectangularGnuplotScriptGenerator.hpp
  /home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/rectangular/src/CartesianToConcentrationsConverter.cpp
 modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/src/MapCartesianToScript.cpp.o
  ../../include/multiscale/core/Multiscale.hpp
  ../../include/multiscale/exception/ExceptionHandler.hpp
+ ../../modules/video/rectangular/include/multiscale/video/rectangular/CartesianToConcentrationsConverter.hpp
  /home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/rectangular/src/MapCartesianToScript.cpp
  /usr/local/boost_1_52_0/boost/any.hpp
  /usr/local/boost_1_52_0/boost/array.hpp
@@ -589,4 +592,5 @@ modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/src/MapCartesianTo
  /usr/local/boost_1_52_0/boost/version.hpp
 modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/src/RectangularGnuplotScriptGenerator.cpp.o
  ../../modules/util/include/multiscale/util/StringManipulator.hpp
+ ../../modules/video/rectangular/include/multiscale/video/rectangular/RectangularGnuplotScriptGenerator.hpp
  /home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/rectangular/src/RectangularGnuplotScriptGenerator.cpp

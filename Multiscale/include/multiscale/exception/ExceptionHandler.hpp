@@ -1,6 +1,8 @@
 #ifndef EXCEPTIONHANDLER_HPP
 #define EXCEPTIONHANDLER_HPP
 
+#include "multiscale/core/Multiscale.hpp"
+
 #include <iostream>
 #include <string>
 

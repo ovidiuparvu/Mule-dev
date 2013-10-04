@@ -24,8 +24,17 @@ MinEnclosingTriangleFinder::MinEnclosingTriangleFinder() {
 MinEnclosingTriangleFinder::~MinEnclosingTriangleFinder() {}
 
 double MinEnclosingTriangleFinder::find(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle) {
-    assert(points.size() > 0);
+    if (points.size() == 0) {
+        MS_throw(MinEnclosingTriangleFinderException, ERR_NR_POINTS);
 
+        // Added to overcome warning messages
+        throw MinEnclosingTriangleFinderException(__FILE__, __LINE__, ERR_NR_POINTS);
+    } else {
+        return findMinTriangle(points, minEnclosingTriangle);
+    }
+}
+
+double MinEnclosingTriangleFinder::findMinTriangle(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle) {
     initialise(points, minEnclosingTriangle);
 
     if (polygon.size() > 3) {
@@ -424,6 +433,7 @@ const unsigned int MinEnclosingTriangleFinder::INTERSECTS_ABOVE      = 2;
 const unsigned int MinEnclosingTriangleFinder::INTERSECTS_CRITICAL   = 3;
 const unsigned int MinEnclosingTriangleFinder::INTERSECTS_LIMIT      = 4;
 
+const string MinEnclosingTriangleFinder::ERR_NR_POINTS           = "The number of 2D points in the input vector should be greater than 0.";
 const string MinEnclosingTriangleFinder::ERR_MIDPOINT_SIDE_B     = "The position of the middle point of side B could not be determined.";
 const string MinEnclosingTriangleFinder::ERR_SIDE_B_GAMMA        = "The position of side B could not be determined, because gamma(b) could not be computed.";
 const string MinEnclosingTriangleFinder::ERR_VERTEX_C_ON_SIDE_B  = "The position of the vertex C on side B could not be determined, because the considered lines do not intersect.";

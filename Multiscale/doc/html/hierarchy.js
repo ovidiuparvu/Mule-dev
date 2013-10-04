@@ -56,5 +56,10 @@ var hierarchy =
       [ "multiscale::analysis::Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", null ],
       [ "multiscale::analysis::Region", "classmultiscale_1_1analysis_1_1Region.html", null ]
     ] ],
-    [ "multiscale::StringManipulator", "classmultiscale_1_1StringManipulator.html", null ]
+    [ "multiscale::StringManipulator", "classmultiscale_1_1StringManipulator.html", null ],
+    [ "Test", null, [
+      [ "multiscaletest::MultiscaleTest", "classmultiscaletest_1_1MultiscaleTest.html", [
+        [ "multiscaletest::MinEnclosingTriangleFinderTest", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html", null ]
+      ] ]
+    ] ]
 ];

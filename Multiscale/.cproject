@@ -30,14 +30,16 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/analysis/spatial/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1535479841" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1854045267" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
-								<option id="gnu.c.compiler.option.include.paths.418036633" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.c.compiler.option.include.paths.418036633" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1121049176" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -54,6 +56,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.442940871" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -92,14 +95,16 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.578784206" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.326261238" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
-								<option id="gnu.c.compiler.option.include.paths.1041179005" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.c.compiler.option.include.paths.1041179005" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.294175095" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -116,6 +121,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.804280407" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -142,7 +148,7 @@
 					<folderInfo id="cdt.managedbuild.toolchain.gnu.base.177525991.808093667." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.base.1336296950" name="cdt.managedbuild.toolchain.gnu.base" superClass="cdt.managedbuild.toolchain.gnu.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.1805302437" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
-							<builder arguments="-C ${ProjDirPath}/build/Release VERBOSE=1" command="make" id="cdt.managedbuild.target.gnu.builder.base.187077408" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<builder arguments="-C ${ProjDirPath}/build/Release" command="make" id="cdt.managedbuild.target.gnu.builder.base.187077408" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1536269867" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.1371263180" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
 								<option id="gnu.cpp.compiler.option.include.paths.1100361153" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
@@ -154,14 +160,16 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1187873500" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1192493149" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
-								<option id="gnu.c.compiler.option.include.paths.284839927" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.c.compiler.option.include.paths.284839927" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1898901073" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -178,6 +186,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2070858362" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>

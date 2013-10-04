@@ -67,6 +67,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release/CMakeFiles /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release/modules/util/CMakeFiles/progress.marks
@@ -99,6 +109,48 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+modules/util/CMakeFiles/Geometry2DTest.dir/rule:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/Geometry2DTest.dir/rule
+.PHONY : modules/util/CMakeFiles/Geometry2DTest.dir/rule
+
+# Convenience name for target.
+Geometry2DTest: modules/util/CMakeFiles/Geometry2DTest.dir/rule
+.PHONY : Geometry2DTest
+
+# fast build rule for target.
+Geometry2DTest/fast:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/Geometry2DTest.dir/build.make modules/util/CMakeFiles/Geometry2DTest.dir/build
+.PHONY : Geometry2DTest/fast
+
+# Convenience name for target.
+modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/rule:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/rule
+.PHONY : modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/rule
+
+# Convenience name for target.
+MinEnclosingTriangleFinderSample: modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/rule
+.PHONY : MinEnclosingTriangleFinderSample
+
+# fast build rule for target.
+MinEnclosingTriangleFinderSample/fast:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build
+.PHONY : MinEnclosingTriangleFinderSample/fast
+
+# Convenience name for target.
+modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/rule:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/rule
+.PHONY : modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/rule
+
+# Convenience name for target.
+MinEnclosingTriangleFinderTest: modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/rule
+.PHONY : MinEnclosingTriangleFinderTest
+
+# fast build rule for target.
+MinEnclosingTriangleFinderTest/fast:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build
+.PHONY : MinEnclosingTriangleFinderTest/fast
+
+# Convenience name for target.
 modules/util/CMakeFiles/util.dir/rule:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/util.dir/rule
 .PHONY : modules/util/CMakeFiles/util.dir/rule
@@ -111,6 +163,30 @@ util: modules/util/CMakeFiles/util.dir/rule
 util/fast:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/util.dir/build.make modules/util/CMakeFiles/util.dir/build
 .PHONY : util/fast
+
+sample/MinEnclosingTriangleFinderSample.o: sample/MinEnclosingTriangleFinderSample.cpp.o
+.PHONY : sample/MinEnclosingTriangleFinderSample.o
+
+# target to build an object file
+sample/MinEnclosingTriangleFinderSample.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/sample/MinEnclosingTriangleFinderSample.cpp.o
+.PHONY : sample/MinEnclosingTriangleFinderSample.cpp.o
+
+sample/MinEnclosingTriangleFinderSample.i: sample/MinEnclosingTriangleFinderSample.cpp.i
+.PHONY : sample/MinEnclosingTriangleFinderSample.i
+
+# target to preprocess a source file
+sample/MinEnclosingTriangleFinderSample.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/sample/MinEnclosingTriangleFinderSample.cpp.i
+.PHONY : sample/MinEnclosingTriangleFinderSample.cpp.i
+
+sample/MinEnclosingTriangleFinderSample.s: sample/MinEnclosingTriangleFinderSample.cpp.s
+.PHONY : sample/MinEnclosingTriangleFinderSample.s
+
+# target to generate assembly for a file
+sample/MinEnclosingTriangleFinderSample.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/sample/MinEnclosingTriangleFinderSample.cpp.s
+.PHONY : sample/MinEnclosingTriangleFinderSample.cpp.s
 
 src/Geometry2D.o: src/Geometry2D.cpp.o
 .PHONY : src/Geometry2D.o
@@ -304,15 +380,70 @@ src/iterator/StandardNumberIterator.cpp.s:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/util.dir/build.make modules/util/CMakeFiles/util.dir/src/iterator/StandardNumberIterator.cpp.s
 .PHONY : src/iterator/StandardNumberIterator.cpp.s
 
+test/Geometry2DTest.o: test/Geometry2DTest.cpp.o
+.PHONY : test/Geometry2DTest.o
+
+# target to build an object file
+test/Geometry2DTest.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/Geometry2DTest.dir/build.make modules/util/CMakeFiles/Geometry2DTest.dir/test/Geometry2DTest.cpp.o
+.PHONY : test/Geometry2DTest.cpp.o
+
+test/Geometry2DTest.i: test/Geometry2DTest.cpp.i
+.PHONY : test/Geometry2DTest.i
+
+# target to preprocess a source file
+test/Geometry2DTest.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/Geometry2DTest.dir/build.make modules/util/CMakeFiles/Geometry2DTest.dir/test/Geometry2DTest.cpp.i
+.PHONY : test/Geometry2DTest.cpp.i
+
+test/Geometry2DTest.s: test/Geometry2DTest.cpp.s
+.PHONY : test/Geometry2DTest.s
+
+# target to generate assembly for a file
+test/Geometry2DTest.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/Geometry2DTest.dir/build.make modules/util/CMakeFiles/Geometry2DTest.dir/test/Geometry2DTest.cpp.s
+.PHONY : test/Geometry2DTest.cpp.s
+
+test/MinEnclosingTriangleFinderTest.o: test/MinEnclosingTriangleFinderTest.cpp.o
+.PHONY : test/MinEnclosingTriangleFinderTest.o
+
+# target to build an object file
+test/MinEnclosingTriangleFinderTest.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/test/MinEnclosingTriangleFinderTest.cpp.o
+.PHONY : test/MinEnclosingTriangleFinderTest.cpp.o
+
+test/MinEnclosingTriangleFinderTest.i: test/MinEnclosingTriangleFinderTest.cpp.i
+.PHONY : test/MinEnclosingTriangleFinderTest.i
+
+# target to preprocess a source file
+test/MinEnclosingTriangleFinderTest.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/test/MinEnclosingTriangleFinderTest.cpp.i
+.PHONY : test/MinEnclosingTriangleFinderTest.cpp.i
+
+test/MinEnclosingTriangleFinderTest.s: test/MinEnclosingTriangleFinderTest.cpp.s
+.PHONY : test/MinEnclosingTriangleFinderTest.s
+
+# target to generate assembly for a file
+test/MinEnclosingTriangleFinderTest.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/test/MinEnclosingTriangleFinderTest.cpp.s
+.PHONY : test/MinEnclosingTriangleFinderTest.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... Geometry2DTest"
+	@echo "... MinEnclosingTriangleFinderSample"
+	@echo "... MinEnclosingTriangleFinderTest"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... util"
+	@echo "... sample/MinEnclosingTriangleFinderSample.o"
+	@echo "... sample/MinEnclosingTriangleFinderSample.i"
+	@echo "... sample/MinEnclosingTriangleFinderSample.s"
 	@echo "... src/Geometry2D.o"
 	@echo "... src/Geometry2D.i"
 	@echo "... src/Geometry2D.s"
@@ -337,6 +468,12 @@ help:
 	@echo "... src/iterator/StandardNumberIterator.o"
 	@echo "... src/iterator/StandardNumberIterator.i"
 	@echo "... src/iterator/StandardNumberIterator.s"
+	@echo "... test/Geometry2DTest.o"
+	@echo "... test/Geometry2DTest.i"
+	@echo "... test/Geometry2DTest.s"
+	@echo "... test/MinEnclosingTriangleFinderTest.o"
+	@echo "... test/MinEnclosingTriangleFinderTest.i"
+	@echo "... test/MinEnclosingTriangleFinderTest.s"
 .PHONY : help
 
 

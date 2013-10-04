@@ -25,6 +25,7 @@ var searchData=
   ['contour_5foriented',['CONTOUR_ORIENTED',['../classmultiscale_1_1analysis_1_1Region.html#a875a0f14dacf6904cabfa1f31020e6e2',1,'multiscale::analysis::Region']]],
   ['contourpoints',['contourPoints',['../classmultiscale_1_1analysis_1_1Entity.html#a0199b0a0e5b22809015ecbc23d17785e',1,'multiscale::analysis::Entity']]],
   ['convex_5fhull_5fclockwise',['CONVEX_HULL_CLOCKWISE',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aa379350e6bee0f58f380152048aa4c21',1,'multiscale::analysis::SpatialCollection2D::CONVEX_HULL_CLOCKWISE()'],['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a951b35e4f359e61301deb0840abea51a',1,'multiscale::MinEnclosingTriangleFinder::CONVEX_HULL_CLOCKWISE()']]],
+  ['convexhull',['convexHull',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a309e2484e202fab797520fc15517d95d',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
   ['currentnumber',['currentNumber',['../classmultiscale_1_1StandardNumberIterator.html#a1f40c321994d53f705331badd64542be',1,'multiscale::StandardNumberIterator']]],
   ['currentnumberdigits',['currentNumberDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#af42ebeea695a31c2da714332c520ae79',1,'multiscale::LexicographicNumberIterator']]]
 ];

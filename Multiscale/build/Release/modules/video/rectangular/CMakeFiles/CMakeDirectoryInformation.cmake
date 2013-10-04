@@ -10,10 +10,11 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
-  "../../include"
   "/usr/local/boost_1_52_0"
   "/usr/local/include/opencv"
   "/usr/local/include"
+  "../../include"
+  "../../extern/gtest-1.7.0/include"
   "../../modules/util/include"
   "../../modules/video/rectangular/include"
   )

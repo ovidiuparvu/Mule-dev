@@ -2,11 +2,12 @@
 <area shape="rect" id="node3" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="265,5,404,51"/>
 <area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ad3d11af329d5efa9bddf40b4573ebb2c" title="Convert the collection of points from type Point to type Point2f." alt="" coords="263,75,407,139"/>
 <area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe74965c39261feb7152f5556c0281cd" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="252,162,417,209"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="509,5,648,51"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a0b55638741cd5ff84d583df33d594a69" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="473,75,684,139"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a6fa2b447626f765d0b9600cabdc810ae" title="Initialisation function for the class." alt="" coords="496,162,661,209"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#af6e49a1ef5a0d4dbe3e25c2f92d69dc3" title="Return the minimum area enclosing triangle in case the given polygon has at most three points..." alt="" coords="468,232,689,296"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab41a0d36789e6dfb720325ce494b21f6" title="Initialisation of the algorithm variables." alt="" coords="740,65,953,129"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe8fe342d7ec338ccc0874cce91f2a58" title="Initialise polygon as the convex hull of the given set of points." alt="" coords="745,153,948,217"/>
-<area shape="rect" id="node21" href="$classmultiscale_1_1Geometry2D.html#abf0e96a63cf744cab74ab94398e28562" title="Compute the area of a triangle defined by three points." alt="" coords="765,241,928,287"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="497,5,636,51"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a1540deb145740cb2e73c7c76a9dd244f" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="467,162,667,209"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a0b55638741cd5ff84d583df33d594a69" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="721,71,932,135"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a6fa2b447626f765d0b9600cabdc810ae" title="Initialisation function for the class." alt="" coords="744,162,909,209"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#af6e49a1ef5a0d4dbe3e25c2f92d69dc3" title="Return the minimum area enclosing triangle in case the given polygon has at most three points..." alt="" coords="716,232,937,296"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab41a0d36789e6dfb720325ce494b21f6" title="Initialisation of the algorithm variables." alt="" coords="988,65,1201,129"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe8fe342d7ec338ccc0874cce91f2a58" title="Initialise polygon as the convex hull of the given set of points." alt="" coords="993,153,1196,217"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1Geometry2D.html#abf0e96a63cf744cab74ab94398e28562" title="Compute the area of a triangle defined by three points." alt="" coords="1013,241,1176,287"/>
 </map>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['radius',['RADIUS',['../MinEnclosingTriangleFinderSample_8cpp.html#aeb44a1c2c685ed2800552e1434b43bb2',1,'MinEnclosingTriangleFinderSample.cpp']]],
   ['radius_5fmax',['RADIUS_MAX',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a79bb03defe0d68884ce5d4f1b0a7d60c',1,'multiscale::video::CartesianToPolarConverter::RADIUS_MAX()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a2e14aa1021a91a2f1df2bd4904a2ca2f',1,'multiscale::video::CartesianToConcentrationsConverter::RADIUS_MAX()']]],
   ['radius_5fmin',['RADIUS_MIN',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a59c18c22603ad65bf26533dd2aafd04e',1,'multiscale::video::CartesianToPolarConverter::RADIUS_MIN()'],['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aeb8eeef6a83cd99ebfc47053a1ec99a7',1,'multiscale::video::PolarCsvToInputFilesConverter::RADIUS_MIN()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a6c96a5325ecd3d99649f9cccff2f06a2',1,'multiscale::video::CartesianToConcentrationsConverter::RADIUS_MIN()']]],
   ['rectangularmeasure',['rectangularMeasure',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aad7d79a7bd299d4d3c08a864cfcb77c3',1,'multiscale::analysis::SpatialCollection2D']]],
