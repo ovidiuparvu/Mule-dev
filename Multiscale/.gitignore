@@ -1,6 +1,7 @@
 # Build tree
 
-/build/*
+/build/Debug
+/build/Release
 
 # Output of the modules
 
