@@ -44,7 +44,7 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/ovidiu/Repositories/git/multiscale/Multiscale
@@ -91,7 +91,7 @@ extern/gtest-1.7.0/preinstall:
 extern/gtest-1.7.0/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f extern/gtest-1.7.0/CMakeFiles/gtest.dir/build.make extern/gtest-1.7.0/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f extern/gtest-1.7.0/CMakeFiles/gtest.dir/build.make extern/gtest-1.7.0/CMakeFiles/gtest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  45
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  58
 	@echo "Built target gtest"
 .PHONY : extern/gtest-1.7.0/CMakeFiles/gtest.dir/all
 
@@ -126,7 +126,7 @@ clean: extern/gtest-1.7.0/CMakeFiles/gtest.dir/clean
 extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest.dir/all
 	$(MAKE) -f extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/build.make extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/build.make extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  46
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  59
 	@echo "Built target gtest_main"
 .PHONY : extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/all
 
@@ -195,13 +195,21 @@ modules/analysis/preinstall: modules/analysis/spatial/preinstall
 
 # Convenience name for "all" pass in the directory.
 modules/analysis/spatial/all: modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/all
+modules/analysis/spatial/all: modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/all
+modules/analysis/spatial/all: modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/all
+modules/analysis/spatial/all: modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/all
 modules/analysis/spatial/all: modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/all
+modules/analysis/spatial/all: modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/all
 modules/analysis/spatial/all: modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/all
 .PHONY : modules/analysis/spatial/all
 
 # Convenience name for "clean" pass in the directory.
 modules/analysis/spatial/clean: modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/clean
+modules/analysis/spatial/clean: modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/clean
+modules/analysis/spatial/clean: modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/clean
+modules/analysis/spatial/clean: modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/clean
 modules/analysis/spatial/clean: modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/clean
+modules/analysis/spatial/clean: modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/clean
 modules/analysis/spatial/clean: modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/clean
 .PHONY : modules/analysis/spatial/clean
 
@@ -245,13 +253,124 @@ clean: modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir
+
+# All Build rule for target.
+modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest.dir/all
+modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/all
+modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/all: modules/util/CMakeFiles/util.dir/all
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/depend
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  9 10 11 12
+	@echo "Built target CircularMatFactorySample"
+.PHONY : modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/all
+
+# Include target in all.
+all: modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 0
+.PHONY : modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/rule
+
+# Convenience name for target.
+CircularMatFactorySample: modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/rule
+.PHONY : CircularMatFactorySample
+
+# clean rule for target.
+modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/clean:
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/clean
+.PHONY : modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/clean
+
+# clean rule for target.
+clean: modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target modules/analysis/spatial/CMakeFiles/DBSCANTest.dir
+
+# All Build rule for target.
+modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest.dir/all
+modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/all
+modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/all: modules/util/CMakeFiles/util.dir/all
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/depend
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  13 14
+	@echo "Built target DBSCANTest"
+.PHONY : modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/all
+
+# Include target in all.
+all: modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 12
+	$(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 0
+.PHONY : modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/rule
+
+# Convenience name for target.
+DBSCANTest: modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/rule
+.PHONY : DBSCANTest
+
+# clean rule for target.
+modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/clean:
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/clean
+.PHONY : modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/clean
+
+# clean rule for target.
+clean: modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir
+
+# All Build rule for target.
+modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest.dir/all
+modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/all
+modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/all: modules/util/CMakeFiles/util.dir/all
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build.make modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/depend
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build.make modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  16
+	@echo "Built target LexicographicIteratorSample"
+.PHONY : modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/all
+
+# Include target in all.
+all: modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 0
+.PHONY : modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/rule
+
+# Convenience name for target.
+LexicographicIteratorSample: modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/rule
+.PHONY : LexicographicIteratorSample
+
+# clean rule for target.
+modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/clean:
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build.make modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/clean
+.PHONY : modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/clean
+
+# clean rule for target.
+clean: modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir
 
 # All Build rule for target.
 modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/depend
 	$(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  21 22 23 24 25 26 27 28
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  30 31 32 33 34 35 36 37
 	@echo "Built target RectangularDetectRegions"
 .PHONY : modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/all
 
@@ -280,13 +399,50 @@ clean: modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir
+
+# All Build rule for target.
+modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest.dir/all
+modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/all
+modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/all: modules/util/CMakeFiles/util.dir/all
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/depend
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  42 43 44 45
+	@echo "Built target RectangularMatFactorySample"
+.PHONY : modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/all
+
+# Include target in all.
+all: modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 0
+.PHONY : modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/rule
+
+# Convenience name for target.
+RectangularMatFactorySample: modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/rule
+.PHONY : RectangularMatFactorySample
+
+# clean rule for target.
+modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/clean:
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/clean
+.PHONY : modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/clean
+
+# clean rule for target.
+clean: modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir
 
 # All Build rule for target.
 modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/depend
 	$(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  33 34 35 36 37 38 39 40 41 42 43 44
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  46 47 48 49 50 51 52 53 54 55 56 57
 	@echo "Built target SimulationDetectClusters"
 .PHONY : modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/all
 
@@ -319,15 +475,19 @@ clean: modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/clean
 
 # Convenience name for "all" pass in the directory.
 modules/util/all: modules/util/CMakeFiles/Geometry2DTest.dir/all
+modules/util/all: modules/util/CMakeFiles/LineCircleIntersectionSample.dir/all
 modules/util/all: modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/all
 modules/util/all: modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/all
+modules/util/all: modules/util/CMakeFiles/RGBColourGeneratorSample.dir/all
 modules/util/all: modules/util/CMakeFiles/util.dir/all
 .PHONY : modules/util/all
 
 # Convenience name for "clean" pass in the directory.
 modules/util/clean: modules/util/CMakeFiles/Geometry2DTest.dir/clean
+modules/util/clean: modules/util/CMakeFiles/LineCircleIntersectionSample.dir/clean
 modules/util/clean: modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/clean
 modules/util/clean: modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/clean
+modules/util/clean: modules/util/CMakeFiles/RGBColourGeneratorSample.dir/clean
 modules/util/clean: modules/util/CMakeFiles/util.dir/clean
 .PHONY : modules/util/clean
 
@@ -344,7 +504,7 @@ modules/util/CMakeFiles/Geometry2DTest.dir/all: extern/gtest-1.7.0/CMakeFiles/gt
 modules/util/CMakeFiles/Geometry2DTest.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/util/CMakeFiles/Geometry2DTest.dir/build.make modules/util/CMakeFiles/Geometry2DTest.dir/depend
 	$(MAKE) -f modules/util/CMakeFiles/Geometry2DTest.dir/build.make modules/util/CMakeFiles/Geometry2DTest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  15
 	@echo "Built target Geometry2DTest"
 .PHONY : modules/util/CMakeFiles/Geometry2DTest.dir/all
 
@@ -373,6 +533,43 @@ clean: modules/util/CMakeFiles/Geometry2DTest.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target modules/util/CMakeFiles/LineCircleIntersectionSample.dir
+
+# All Build rule for target.
+modules/util/CMakeFiles/LineCircleIntersectionSample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest.dir/all
+modules/util/CMakeFiles/LineCircleIntersectionSample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/all
+modules/util/CMakeFiles/LineCircleIntersectionSample.dir/all: modules/util/CMakeFiles/util.dir/all
+	$(MAKE) -f modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build.make modules/util/CMakeFiles/LineCircleIntersectionSample.dir/depend
+	$(MAKE) -f modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build.make modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  17
+	@echo "Built target LineCircleIntersectionSample"
+.PHONY : modules/util/CMakeFiles/LineCircleIntersectionSample.dir/all
+
+# Include target in all.
+all: modules/util/CMakeFiles/LineCircleIntersectionSample.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+modules/util/CMakeFiles/LineCircleIntersectionSample.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/LineCircleIntersectionSample.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 0
+.PHONY : modules/util/CMakeFiles/LineCircleIntersectionSample.dir/rule
+
+# Convenience name for target.
+LineCircleIntersectionSample: modules/util/CMakeFiles/LineCircleIntersectionSample.dir/rule
+.PHONY : LineCircleIntersectionSample
+
+# clean rule for target.
+modules/util/CMakeFiles/LineCircleIntersectionSample.dir/clean:
+	$(MAKE) -f modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build.make modules/util/CMakeFiles/LineCircleIntersectionSample.dir/clean
+.PHONY : modules/util/CMakeFiles/LineCircleIntersectionSample.dir/clean
+
+# clean rule for target.
+clean: modules/util/CMakeFiles/LineCircleIntersectionSample.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir
 
 # All Build rule for target.
@@ -381,7 +578,7 @@ modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/all: extern/gtest-1
 modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/depend
 	$(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  17
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  25
 	@echo "Built target MinEnclosingTriangleFinderSample"
 .PHONY : modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/all
 
@@ -418,7 +615,7 @@ modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/all: extern/gtest-1.7
 modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/depend
 	$(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  18
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  26
 	@echo "Built target MinEnclosingTriangleFinderTest"
 .PHONY : modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/all
 
@@ -447,13 +644,50 @@ clean: modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target modules/util/CMakeFiles/RGBColourGeneratorSample.dir
+
+# All Build rule for target.
+modules/util/CMakeFiles/RGBColourGeneratorSample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest.dir/all
+modules/util/CMakeFiles/RGBColourGeneratorSample.dir/all: extern/gtest-1.7.0/CMakeFiles/gtest_main.dir/all
+modules/util/CMakeFiles/RGBColourGeneratorSample.dir/all: modules/util/CMakeFiles/util.dir/all
+	$(MAKE) -f modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build.make modules/util/CMakeFiles/RGBColourGeneratorSample.dir/depend
+	$(MAKE) -f modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build.make modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  29
+	@echo "Built target RGBColourGeneratorSample"
+.PHONY : modules/util/CMakeFiles/RGBColourGeneratorSample.dir/all
+
+# Include target in all.
+all: modules/util/CMakeFiles/RGBColourGeneratorSample.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+modules/util/CMakeFiles/RGBColourGeneratorSample.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/RGBColourGeneratorSample.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles 0
+.PHONY : modules/util/CMakeFiles/RGBColourGeneratorSample.dir/rule
+
+# Convenience name for target.
+RGBColourGeneratorSample: modules/util/CMakeFiles/RGBColourGeneratorSample.dir/rule
+.PHONY : RGBColourGeneratorSample
+
+# clean rule for target.
+modules/util/CMakeFiles/RGBColourGeneratorSample.dir/clean:
+	$(MAKE) -f modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build.make modules/util/CMakeFiles/RGBColourGeneratorSample.dir/clean
+.PHONY : modules/util/CMakeFiles/RGBColourGeneratorSample.dir/clean
+
+# clean rule for target.
+clean: modules/util/CMakeFiles/RGBColourGeneratorSample.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target modules/util/CMakeFiles/util.dir
 
 # All Build rule for target.
 modules/util/CMakeFiles/util.dir/all:
 	$(MAKE) -f modules/util/CMakeFiles/util.dir/build.make modules/util/CMakeFiles/util.dir/depend
 	$(MAKE) -f modules/util/CMakeFiles/util.dir/build.make modules/util/CMakeFiles/util.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  47 48 49 50 51 52 53 54
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  60 61 62 63 64 65 66 67
 	@echo "Built target util"
 .PHONY : modules/util/CMakeFiles/util.dir/all
 
@@ -523,7 +757,7 @@ modules/video/circular/preinstall:
 modules/video/circular/CMakeFiles/MapCartesianToPolarScript.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/video/circular/CMakeFiles/MapCartesianToPolarScript.dir/build.make modules/video/circular/CMakeFiles/MapCartesianToPolarScript.dir/depend
 	$(MAKE) -f modules/video/circular/CMakeFiles/MapCartesianToPolarScript.dir/build.make modules/video/circular/CMakeFiles/MapCartesianToPolarScript.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  10 11 12 13
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  18 19 20 21
 	@echo "Built target MapCartesianToPolarScript"
 .PHONY : modules/video/circular/CMakeFiles/MapCartesianToPolarScript.dir/all
 
@@ -558,7 +792,7 @@ clean: modules/video/circular/CMakeFiles/MapCartesianToPolarScript.dir/clean
 modules/video/circular/CMakeFiles/PolarMapCsvToInputFiles.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/video/circular/CMakeFiles/PolarMapCsvToInputFiles.dir/build.make modules/video/circular/CMakeFiles/PolarMapCsvToInputFiles.dir/depend
 	$(MAKE) -f modules/video/circular/CMakeFiles/PolarMapCsvToInputFiles.dir/build.make modules/video/circular/CMakeFiles/PolarMapCsvToInputFiles.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  19 20
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  27 28
 	@echo "Built target PolarMapCsvToInputFiles"
 .PHONY : modules/video/circular/CMakeFiles/PolarMapCsvToInputFiles.dir/all
 
@@ -612,7 +846,7 @@ modules/video/rectangular/preinstall:
 modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/build.make modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/depend
 	$(MAKE) -f modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/build.make modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  14 15 16
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  22 23 24
 	@echo "Built target MapCartesianToScript"
 .PHONY : modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/all
 
@@ -647,7 +881,7 @@ clean: modules/video/rectangular/CMakeFiles/MapCartesianToScript.dir/clean
 modules/video/rectangular/CMakeFiles/RectangularMapCsvToInputFiles.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/video/rectangular/CMakeFiles/RectangularMapCsvToInputFiles.dir/build.make modules/video/rectangular/CMakeFiles/RectangularMapCsvToInputFiles.dir/depend
 	$(MAKE) -f modules/video/rectangular/CMakeFiles/RectangularMapCsvToInputFiles.dir/build.make modules/video/rectangular/CMakeFiles/RectangularMapCsvToInputFiles.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  29 30
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  38 39
 	@echo "Built target RectangularMapCsvToInputFiles"
 .PHONY : modules/video/rectangular/CMakeFiles/RectangularMapCsvToInputFiles.dir/all
 
@@ -682,7 +916,7 @@ clean: modules/video/rectangular/CMakeFiles/RectangularMapCsvToInputFiles.dir/cl
 modules/video/rectangular/CMakeFiles/RectangularMapEntityCsvToInputFiles.dir/all: modules/util/CMakeFiles/util.dir/all
 	$(MAKE) -f modules/video/rectangular/CMakeFiles/RectangularMapEntityCsvToInputFiles.dir/build.make modules/video/rectangular/CMakeFiles/RectangularMapEntityCsvToInputFiles.dir/depend
 	$(MAKE) -f modules/video/rectangular/CMakeFiles/RectangularMapEntityCsvToInputFiles.dir/build.make modules/video/rectangular/CMakeFiles/RectangularMapEntityCsvToInputFiles.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  31 32
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug/CMakeFiles  40 41
 	@echo "Built target RectangularMapEntityCsvToInputFiles"
 .PHONY : modules/video/rectangular/CMakeFiles/RectangularMapEntityCsvToInputFiles.dir/all
 

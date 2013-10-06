@@ -1,13 +1,36 @@
+#include "multiscale/analysis/spatial/DataPoint.hpp"
 #include "multiscale/analysis/spatial/DBSCAN.hpp"
-#include "EuclideanDataPoint.hpp"
+#include "multiscale/util/Geometry2D.hpp"
 
 #include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
 using namespace cv;
+using namespace multiscale;
 using namespace multiscale::analysis;
 using namespace std;
+
+
+// Class for definig a Euclidean data point
+class EuclideanDataPoint : public DataPoint {
+
+    private:
+        double x;
+        double y;
+
+    public:
+        EuclideanDataPoint(double x, double y) : x(x), y(y) {}
+        EuclideanDataPoint(const EuclideanDataPoint &point) : x(point.x), y(point.y) {}
+        ~EuclideanDataPoint() {};
+
+        double distanceTo(shared_ptr<DataPoint> point) override {
+            shared_ptr<EuclideanDataPoint> ePoint = dynamic_pointer_cast<EuclideanDataPoint>(point);
+
+            return Geometry2D::distanceBtwPoints(Point(x, y), Point(ePoint->x, ePoint->y));
+        }
+
+};
 
 
 // Convert vector of points to vector of shared_ptr of points

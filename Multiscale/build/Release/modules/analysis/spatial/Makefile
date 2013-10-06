@@ -36,7 +36,7 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/ovidiu/Repositories/git/multiscale/Multiscale
@@ -50,7 +50,7 @@ CMAKE_BINARY_DIR = /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Rel
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -123,6 +123,48 @@ CircularDetectRegions/fast:
 .PHONY : CircularDetectRegions/fast
 
 # Convenience name for target.
+modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/rule:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/rule
+.PHONY : modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/rule
+
+# Convenience name for target.
+CircularMatFactorySample: modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/rule
+.PHONY : CircularMatFactorySample
+
+# fast build rule for target.
+CircularMatFactorySample/fast:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build
+.PHONY : CircularMatFactorySample/fast
+
+# Convenience name for target.
+modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/rule:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/rule
+.PHONY : modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/rule
+
+# Convenience name for target.
+DBSCANTest: modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/rule
+.PHONY : DBSCANTest
+
+# fast build rule for target.
+DBSCANTest/fast:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build
+.PHONY : DBSCANTest/fast
+
+# Convenience name for target.
+modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/rule:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/rule
+.PHONY : modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/rule
+
+# Convenience name for target.
+LexicographicIteratorSample: modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/rule
+.PHONY : LexicographicIteratorSample
+
+# fast build rule for target.
+LexicographicIteratorSample/fast:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build.make modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build
+.PHONY : LexicographicIteratorSample/fast
+
+# Convenience name for target.
 modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/rule:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/rule
 .PHONY : modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/rule
@@ -137,6 +179,20 @@ RectangularDetectRegions/fast:
 .PHONY : RectangularDetectRegions/fast
 
 # Convenience name for target.
+modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/rule:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/rule
+.PHONY : modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/rule
+
+# Convenience name for target.
+RectangularMatFactorySample: modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/rule
+.PHONY : RectangularMatFactorySample
+
+# fast build rule for target.
+RectangularMatFactorySample/fast:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build
+.PHONY : RectangularMatFactorySample/fast
+
+# Convenience name for target.
 modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/rule:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f CMakeFiles/Makefile2 modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/rule
 .PHONY : modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/rule
@@ -149,6 +205,78 @@ SimulationDetectClusters: modules/analysis/spatial/CMakeFiles/SimulationDetectCl
 SimulationDetectClusters/fast:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build
 .PHONY : SimulationDetectClusters/fast
+
+sample/CircularMatFactorySample.o: sample/CircularMatFactorySample.cpp.o
+.PHONY : sample/CircularMatFactorySample.o
+
+# target to build an object file
+sample/CircularMatFactorySample.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/sample/CircularMatFactorySample.cpp.o
+.PHONY : sample/CircularMatFactorySample.cpp.o
+
+sample/CircularMatFactorySample.i: sample/CircularMatFactorySample.cpp.i
+.PHONY : sample/CircularMatFactorySample.i
+
+# target to preprocess a source file
+sample/CircularMatFactorySample.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/sample/CircularMatFactorySample.cpp.i
+.PHONY : sample/CircularMatFactorySample.cpp.i
+
+sample/CircularMatFactorySample.s: sample/CircularMatFactorySample.cpp.s
+.PHONY : sample/CircularMatFactorySample.s
+
+# target to generate assembly for a file
+sample/CircularMatFactorySample.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/sample/CircularMatFactorySample.cpp.s
+.PHONY : sample/CircularMatFactorySample.cpp.s
+
+sample/LexicographicIteratorSample.o: sample/LexicographicIteratorSample.cpp.o
+.PHONY : sample/LexicographicIteratorSample.o
+
+# target to build an object file
+sample/LexicographicIteratorSample.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build.make modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/sample/LexicographicIteratorSample.cpp.o
+.PHONY : sample/LexicographicIteratorSample.cpp.o
+
+sample/LexicographicIteratorSample.i: sample/LexicographicIteratorSample.cpp.i
+.PHONY : sample/LexicographicIteratorSample.i
+
+# target to preprocess a source file
+sample/LexicographicIteratorSample.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build.make modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/sample/LexicographicIteratorSample.cpp.i
+.PHONY : sample/LexicographicIteratorSample.cpp.i
+
+sample/LexicographicIteratorSample.s: sample/LexicographicIteratorSample.cpp.s
+.PHONY : sample/LexicographicIteratorSample.s
+
+# target to generate assembly for a file
+sample/LexicographicIteratorSample.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build.make modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/sample/LexicographicIteratorSample.cpp.s
+.PHONY : sample/LexicographicIteratorSample.cpp.s
+
+sample/RectangularMatFactorySample.o: sample/RectangularMatFactorySample.cpp.o
+.PHONY : sample/RectangularMatFactorySample.o
+
+# target to build an object file
+sample/RectangularMatFactorySample.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/sample/RectangularMatFactorySample.cpp.o
+.PHONY : sample/RectangularMatFactorySample.cpp.o
+
+sample/RectangularMatFactorySample.i: sample/RectangularMatFactorySample.cpp.i
+.PHONY : sample/RectangularMatFactorySample.i
+
+# target to preprocess a source file
+sample/RectangularMatFactorySample.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/sample/RectangularMatFactorySample.cpp.i
+.PHONY : sample/RectangularMatFactorySample.cpp.i
+
+sample/RectangularMatFactorySample.s: sample/RectangularMatFactorySample.cpp.s
+.PHONY : sample/RectangularMatFactorySample.s
+
+# target to generate assembly for a file
+sample/RectangularMatFactorySample.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/sample/RectangularMatFactorySample.cpp.s
+.PHONY : sample/RectangularMatFactorySample.cpp.s
 
 src/CircularDetectRegions.o: src/CircularDetectRegions.cpp.o
 .PHONY : src/CircularDetectRegions.o
@@ -257,6 +385,9 @@ src/DBSCAN.o: src/DBSCAN.cpp.o
 
 # target to build an object file
 src/DBSCAN.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/src/DBSCAN.cpp.o
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/src/DBSCAN.cpp.o
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/src/DBSCAN.cpp.o
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/src/DBSCAN.cpp.o
 .PHONY : src/DBSCAN.cpp.o
 
@@ -265,6 +396,9 @@ src/DBSCAN.i: src/DBSCAN.cpp.i
 
 # target to preprocess a source file
 src/DBSCAN.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/src/DBSCAN.cpp.i
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/src/DBSCAN.cpp.i
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/src/DBSCAN.cpp.i
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/src/DBSCAN.cpp.i
 .PHONY : src/DBSCAN.cpp.i
 
@@ -273,6 +407,9 @@ src/DBSCAN.s: src/DBSCAN.cpp.s
 
 # target to generate assembly for a file
 src/DBSCAN.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/src/DBSCAN.cpp.s
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/src/DBSCAN.cpp.s
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/src/DBSCAN.cpp.s
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/src/DBSCAN.cpp.s
 .PHONY : src/DBSCAN.cpp.s
 
@@ -336,7 +473,9 @@ src/MatFactory.o: src/MatFactory.cpp.o
 # target to build an object file
 src/MatFactory.cpp.o:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/src/MatFactory.cpp.o
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/src/MatFactory.cpp.o
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/src/MatFactory.cpp.o
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/src/MatFactory.cpp.o
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/src/MatFactory.cpp.o
 .PHONY : src/MatFactory.cpp.o
 
@@ -346,7 +485,9 @@ src/MatFactory.i: src/MatFactory.cpp.i
 # target to preprocess a source file
 src/MatFactory.cpp.i:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/src/MatFactory.cpp.i
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/src/MatFactory.cpp.i
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/src/MatFactory.cpp.i
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/src/MatFactory.cpp.i
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/src/MatFactory.cpp.i
 .PHONY : src/MatFactory.cpp.i
 
@@ -356,7 +497,9 @@ src/MatFactory.s: src/MatFactory.cpp.s
 # target to generate assembly for a file
 src/MatFactory.cpp.s:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/src/MatFactory.cpp.s
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/src/MatFactory.cpp.s
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/src/MatFactory.cpp.s
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/src/MatFactory.cpp.s
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/src/MatFactory.cpp.s
 .PHONY : src/MatFactory.cpp.s
 
@@ -546,6 +689,7 @@ src/factory/CircularMatFactory.o: src/factory/CircularMatFactory.cpp.o
 # target to build an object file
 src/factory/CircularMatFactory.cpp.o:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/src/factory/CircularMatFactory.cpp.o
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/src/factory/CircularMatFactory.cpp.o
 .PHONY : src/factory/CircularMatFactory.cpp.o
 
 src/factory/CircularMatFactory.i: src/factory/CircularMatFactory.cpp.i
@@ -554,6 +698,7 @@ src/factory/CircularMatFactory.i: src/factory/CircularMatFactory.cpp.i
 # target to preprocess a source file
 src/factory/CircularMatFactory.cpp.i:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/src/factory/CircularMatFactory.cpp.i
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/src/factory/CircularMatFactory.cpp.i
 .PHONY : src/factory/CircularMatFactory.cpp.i
 
 src/factory/CircularMatFactory.s: src/factory/CircularMatFactory.cpp.s
@@ -562,6 +707,7 @@ src/factory/CircularMatFactory.s: src/factory/CircularMatFactory.cpp.s
 # target to generate assembly for a file
 src/factory/CircularMatFactory.cpp.s:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/CircularDetectRegions.dir/src/factory/CircularMatFactory.cpp.s
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/src/factory/CircularMatFactory.cpp.s
 .PHONY : src/factory/CircularMatFactory.cpp.s
 
 src/factory/RectangularMatFactory.o: src/factory/RectangularMatFactory.cpp.o
@@ -570,6 +716,7 @@ src/factory/RectangularMatFactory.o: src/factory/RectangularMatFactory.cpp.o
 # target to build an object file
 src/factory/RectangularMatFactory.cpp.o:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/src/factory/RectangularMatFactory.cpp.o
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/src/factory/RectangularMatFactory.cpp.o
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/src/factory/RectangularMatFactory.cpp.o
 .PHONY : src/factory/RectangularMatFactory.cpp.o
 
@@ -579,6 +726,7 @@ src/factory/RectangularMatFactory.i: src/factory/RectangularMatFactory.cpp.i
 # target to preprocess a source file
 src/factory/RectangularMatFactory.cpp.i:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/src/factory/RectangularMatFactory.cpp.i
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/src/factory/RectangularMatFactory.cpp.i
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/src/factory/RectangularMatFactory.cpp.i
 .PHONY : src/factory/RectangularMatFactory.cpp.i
 
@@ -588,8 +736,33 @@ src/factory/RectangularMatFactory.s: src/factory/RectangularMatFactory.cpp.s
 # target to generate assembly for a file
 src/factory/RectangularMatFactory.cpp.s:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/src/factory/RectangularMatFactory.cpp.s
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/src/factory/RectangularMatFactory.cpp.s
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/build.make modules/analysis/spatial/CMakeFiles/SimulationDetectClusters.dir/src/factory/RectangularMatFactory.cpp.s
 .PHONY : src/factory/RectangularMatFactory.cpp.s
+
+test/DBSCANTest.o: test/DBSCANTest.cpp.o
+.PHONY : test/DBSCANTest.o
+
+# target to build an object file
+test/DBSCANTest.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/test/DBSCANTest.cpp.o
+.PHONY : test/DBSCANTest.cpp.o
+
+test/DBSCANTest.i: test/DBSCANTest.cpp.i
+.PHONY : test/DBSCANTest.i
+
+# target to preprocess a source file
+test/DBSCANTest.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/test/DBSCANTest.cpp.i
+.PHONY : test/DBSCANTest.cpp.i
+
+test/DBSCANTest.s: test/DBSCANTest.cpp.s
+.PHONY : test/DBSCANTest.s
+
+# target to generate assembly for a file
+test/DBSCANTest.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Release && $(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/test/DBSCANTest.cpp.s
+.PHONY : test/DBSCANTest.cpp.s
 
 # Help Target
 help:
@@ -598,11 +771,24 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... CircularDetectRegions"
+	@echo "... CircularMatFactorySample"
+	@echo "... DBSCANTest"
+	@echo "... LexicographicIteratorSample"
 	@echo "... RectangularDetectRegions"
+	@echo "... RectangularMatFactorySample"
 	@echo "... SimulationDetectClusters"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... sample/CircularMatFactorySample.o"
+	@echo "... sample/CircularMatFactorySample.i"
+	@echo "... sample/CircularMatFactorySample.s"
+	@echo "... sample/LexicographicIteratorSample.o"
+	@echo "... sample/LexicographicIteratorSample.i"
+	@echo "... sample/LexicographicIteratorSample.s"
+	@echo "... sample/RectangularMatFactorySample.o"
+	@echo "... sample/RectangularMatFactorySample.i"
+	@echo "... sample/RectangularMatFactorySample.s"
 	@echo "... src/CircularDetectRegions.o"
 	@echo "... src/CircularDetectRegions.i"
 	@echo "... src/CircularDetectRegions.s"
@@ -654,6 +840,9 @@ help:
 	@echo "... src/factory/RectangularMatFactory.o"
 	@echo "... src/factory/RectangularMatFactory.i"
 	@echo "... src/factory/RectangularMatFactory.s"
+	@echo "... test/DBSCANTest.o"
+	@echo "... test/DBSCANTest.i"
+	@echo "... test/DBSCANTest.s"
 .PHONY : help
 
 

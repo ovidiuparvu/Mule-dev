@@ -113,9 +113,9 @@ string PolarGnuplotScriptGenerator::readContentTemplate(ifstream &fin) {
 
 
 // Constants
-const string PolarGnuplotScriptGenerator::HEADER_IN       = "config/video/circular/header.in";
-const string PolarGnuplotScriptGenerator::CONTENT_IN      = "config/video/circular/content.in";
-const string PolarGnuplotScriptGenerator::FOOTER_IN       = "config/video/circular/footer.in";
+const string PolarGnuplotScriptGenerator::HEADER_IN       = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/circular/header.in";
+const string PolarGnuplotScriptGenerator::CONTENT_IN      = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/circular/content.in";
+const string PolarGnuplotScriptGenerator::FOOTER_IN       = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/circular/footer.in";
 
 const string PolarGnuplotScriptGenerator::REPLACE_HEADER_FILENAME         = "OUTPUT_FILENAME";
 const string PolarGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME         = "OUTPUT_SIM_TIME";

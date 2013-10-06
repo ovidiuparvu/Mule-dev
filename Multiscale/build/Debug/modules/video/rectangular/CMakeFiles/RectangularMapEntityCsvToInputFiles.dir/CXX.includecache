@@ -11,6 +11,8 @@ string
 -
 
 ../../include/multiscale/exception/ExceptionHandler.hpp
+multiscale/core/Multiscale.hpp
+../../include/multiscale/exception/multiscale/core/Multiscale.hpp
 iostream
 -
 string

@@ -13,13 +13,13 @@ using namespace std;
 int main() {
     CircularMatFactory factory;
 
-    Mat image = factory.createFromViewerImage("test/input/circular.png");
+    Mat image = factory.createFromViewerImage("/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/circular.png");
 
     namedWindow("Test", WINDOW_NORMAL);
     imshow("Test", image);
 
     cout << "Maximum colour bar intensity: "
-         << factory.maxColourBarIntensityFromViewerImage("test/input/circular.png")
+         << factory.maxColourBarIntensityFromViewerImage("/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/circular.png")
          << endl;
 
     waitKey(0);

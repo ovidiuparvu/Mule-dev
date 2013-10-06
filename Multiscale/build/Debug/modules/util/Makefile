@@ -36,7 +36,7 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/ovidiu/Repositories/git/multiscale/Multiscale
@@ -50,7 +50,7 @@ CMAKE_BINARY_DIR = /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Deb
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -123,6 +123,20 @@ Geometry2DTest/fast:
 .PHONY : Geometry2DTest/fast
 
 # Convenience name for target.
+modules/util/CMakeFiles/LineCircleIntersectionSample.dir/rule:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/LineCircleIntersectionSample.dir/rule
+.PHONY : modules/util/CMakeFiles/LineCircleIntersectionSample.dir/rule
+
+# Convenience name for target.
+LineCircleIntersectionSample: modules/util/CMakeFiles/LineCircleIntersectionSample.dir/rule
+.PHONY : LineCircleIntersectionSample
+
+# fast build rule for target.
+LineCircleIntersectionSample/fast:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build.make modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build
+.PHONY : LineCircleIntersectionSample/fast
+
+# Convenience name for target.
 modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/rule:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/rule
 .PHONY : modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/rule
@@ -151,6 +165,20 @@ MinEnclosingTriangleFinderTest/fast:
 .PHONY : MinEnclosingTriangleFinderTest/fast
 
 # Convenience name for target.
+modules/util/CMakeFiles/RGBColourGeneratorSample.dir/rule:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/RGBColourGeneratorSample.dir/rule
+.PHONY : modules/util/CMakeFiles/RGBColourGeneratorSample.dir/rule
+
+# Convenience name for target.
+RGBColourGeneratorSample: modules/util/CMakeFiles/RGBColourGeneratorSample.dir/rule
+.PHONY : RGBColourGeneratorSample
+
+# fast build rule for target.
+RGBColourGeneratorSample/fast:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build.make modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build
+.PHONY : RGBColourGeneratorSample/fast
+
+# Convenience name for target.
 modules/util/CMakeFiles/util.dir/rule:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f CMakeFiles/Makefile2 modules/util/CMakeFiles/util.dir/rule
 .PHONY : modules/util/CMakeFiles/util.dir/rule
@@ -163,6 +191,30 @@ util: modules/util/CMakeFiles/util.dir/rule
 util/fast:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/util.dir/build.make modules/util/CMakeFiles/util.dir/build
 .PHONY : util/fast
+
+sample/LineCircleIntersectionSample.o: sample/LineCircleIntersectionSample.cpp.o
+.PHONY : sample/LineCircleIntersectionSample.o
+
+# target to build an object file
+sample/LineCircleIntersectionSample.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build.make modules/util/CMakeFiles/LineCircleIntersectionSample.dir/sample/LineCircleIntersectionSample.cpp.o
+.PHONY : sample/LineCircleIntersectionSample.cpp.o
+
+sample/LineCircleIntersectionSample.i: sample/LineCircleIntersectionSample.cpp.i
+.PHONY : sample/LineCircleIntersectionSample.i
+
+# target to preprocess a source file
+sample/LineCircleIntersectionSample.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build.make modules/util/CMakeFiles/LineCircleIntersectionSample.dir/sample/LineCircleIntersectionSample.cpp.i
+.PHONY : sample/LineCircleIntersectionSample.cpp.i
+
+sample/LineCircleIntersectionSample.s: sample/LineCircleIntersectionSample.cpp.s
+.PHONY : sample/LineCircleIntersectionSample.s
+
+# target to generate assembly for a file
+sample/LineCircleIntersectionSample.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build.make modules/util/CMakeFiles/LineCircleIntersectionSample.dir/sample/LineCircleIntersectionSample.cpp.s
+.PHONY : sample/LineCircleIntersectionSample.cpp.s
 
 sample/MinEnclosingTriangleFinderSample.o: sample/MinEnclosingTriangleFinderSample.cpp.o
 .PHONY : sample/MinEnclosingTriangleFinderSample.o
@@ -187,6 +239,30 @@ sample/MinEnclosingTriangleFinderSample.s: sample/MinEnclosingTriangleFinderSamp
 sample/MinEnclosingTriangleFinderSample.cpp.s:
 	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderSample.dir/sample/MinEnclosingTriangleFinderSample.cpp.s
 .PHONY : sample/MinEnclosingTriangleFinderSample.cpp.s
+
+sample/RGBColourGeneratorSample.o: sample/RGBColourGeneratorSample.cpp.o
+.PHONY : sample/RGBColourGeneratorSample.o
+
+# target to build an object file
+sample/RGBColourGeneratorSample.cpp.o:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build.make modules/util/CMakeFiles/RGBColourGeneratorSample.dir/sample/RGBColourGeneratorSample.cpp.o
+.PHONY : sample/RGBColourGeneratorSample.cpp.o
+
+sample/RGBColourGeneratorSample.i: sample/RGBColourGeneratorSample.cpp.i
+.PHONY : sample/RGBColourGeneratorSample.i
+
+# target to preprocess a source file
+sample/RGBColourGeneratorSample.cpp.i:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build.make modules/util/CMakeFiles/RGBColourGeneratorSample.dir/sample/RGBColourGeneratorSample.cpp.i
+.PHONY : sample/RGBColourGeneratorSample.cpp.i
+
+sample/RGBColourGeneratorSample.s: sample/RGBColourGeneratorSample.cpp.s
+.PHONY : sample/RGBColourGeneratorSample.s
+
+# target to generate assembly for a file
+sample/RGBColourGeneratorSample.cpp.s:
+	cd /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Debug && $(MAKE) -f modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build.make modules/util/CMakeFiles/RGBColourGeneratorSample.dir/sample/RGBColourGeneratorSample.cpp.s
+.PHONY : sample/RGBColourGeneratorSample.cpp.s
 
 src/Geometry2D.o: src/Geometry2D.cpp.o
 .PHONY : src/Geometry2D.o
@@ -435,15 +511,23 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... Geometry2DTest"
+	@echo "... LineCircleIntersectionSample"
 	@echo "... MinEnclosingTriangleFinderSample"
 	@echo "... MinEnclosingTriangleFinderTest"
+	@echo "... RGBColourGeneratorSample"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... util"
+	@echo "... sample/LineCircleIntersectionSample.o"
+	@echo "... sample/LineCircleIntersectionSample.i"
+	@echo "... sample/LineCircleIntersectionSample.s"
 	@echo "... sample/MinEnclosingTriangleFinderSample.o"
 	@echo "... sample/MinEnclosingTriangleFinderSample.i"
 	@echo "... sample/MinEnclosingTriangleFinderSample.s"
+	@echo "... sample/RGBColourGeneratorSample.o"
+	@echo "... sample/RGBColourGeneratorSample.i"
+	@echo "... sample/RGBColourGeneratorSample.s"
 	@echo "... src/Geometry2D.o"
 	@echo "... src/Geometry2D.i"
 	@echo "... src/Geometry2D.s"

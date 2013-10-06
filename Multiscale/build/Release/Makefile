@@ -36,7 +36,7 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/ovidiu/Repositories/git/multiscale/Multiscale
@@ -50,7 +50,7 @@ CMAKE_BINARY_DIR = /home/ovidiu/Repositories/git/multiscale/Multiscale/build/Rel
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -148,6 +148,45 @@ CircularDetectRegions/fast:
 .PHONY : CircularDetectRegions/fast
 
 #=============================================================================
+# Target rules for targets named CircularMatFactorySample
+
+# Build rule for target.
+CircularMatFactorySample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CircularMatFactorySample
+.PHONY : CircularMatFactorySample
+
+# fast build rule for target.
+CircularMatFactorySample/fast:
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/CircularMatFactorySample.dir/build
+.PHONY : CircularMatFactorySample/fast
+
+#=============================================================================
+# Target rules for targets named DBSCANTest
+
+# Build rule for target.
+DBSCANTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DBSCANTest
+.PHONY : DBSCANTest
+
+# fast build rule for target.
+DBSCANTest/fast:
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build.make modules/analysis/spatial/CMakeFiles/DBSCANTest.dir/build
+.PHONY : DBSCANTest/fast
+
+#=============================================================================
+# Target rules for targets named LexicographicIteratorSample
+
+# Build rule for target.
+LexicographicIteratorSample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 LexicographicIteratorSample
+.PHONY : LexicographicIteratorSample
+
+# fast build rule for target.
+LexicographicIteratorSample/fast:
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build.make modules/analysis/spatial/CMakeFiles/LexicographicIteratorSample.dir/build
+.PHONY : LexicographicIteratorSample/fast
+
+#=============================================================================
 # Target rules for targets named RectangularDetectRegions
 
 # Build rule for target.
@@ -159,6 +198,19 @@ RectangularDetectRegions: cmake_check_build_system
 RectangularDetectRegions/fast:
 	$(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularDetectRegions.dir/build
 .PHONY : RectangularDetectRegions/fast
+
+#=============================================================================
+# Target rules for targets named RectangularMatFactorySample
+
+# Build rule for target.
+RectangularMatFactorySample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RectangularMatFactorySample
+.PHONY : RectangularMatFactorySample
+
+# fast build rule for target.
+RectangularMatFactorySample/fast:
+	$(MAKE) -f modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build.make modules/analysis/spatial/CMakeFiles/RectangularMatFactorySample.dir/build
+.PHONY : RectangularMatFactorySample/fast
 
 #=============================================================================
 # Target rules for targets named SimulationDetectClusters
@@ -187,6 +239,19 @@ Geometry2DTest/fast:
 .PHONY : Geometry2DTest/fast
 
 #=============================================================================
+# Target rules for targets named LineCircleIntersectionSample
+
+# Build rule for target.
+LineCircleIntersectionSample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 LineCircleIntersectionSample
+.PHONY : LineCircleIntersectionSample
+
+# fast build rule for target.
+LineCircleIntersectionSample/fast:
+	$(MAKE) -f modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build.make modules/util/CMakeFiles/LineCircleIntersectionSample.dir/build
+.PHONY : LineCircleIntersectionSample/fast
+
+#=============================================================================
 # Target rules for targets named MinEnclosingTriangleFinderSample
 
 # Build rule for target.
@@ -211,6 +276,19 @@ MinEnclosingTriangleFinderTest: cmake_check_build_system
 MinEnclosingTriangleFinderTest/fast:
 	$(MAKE) -f modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build.make modules/util/CMakeFiles/MinEnclosingTriangleFinderTest.dir/build
 .PHONY : MinEnclosingTriangleFinderTest/fast
+
+#=============================================================================
+# Target rules for targets named RGBColourGeneratorSample
+
+# Build rule for target.
+RGBColourGeneratorSample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RGBColourGeneratorSample
+.PHONY : RGBColourGeneratorSample
+
+# fast build rule for target.
+RGBColourGeneratorSample/fast:
+	$(MAKE) -f modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build.make modules/util/CMakeFiles/RGBColourGeneratorSample.dir/build
+.PHONY : RGBColourGeneratorSample/fast
 
 #=============================================================================
 # Target rules for targets named util
@@ -302,11 +380,17 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... CircularDetectRegions"
+	@echo "... CircularMatFactorySample"
+	@echo "... DBSCANTest"
+	@echo "... LexicographicIteratorSample"
 	@echo "... RectangularDetectRegions"
+	@echo "... RectangularMatFactorySample"
 	@echo "... SimulationDetectClusters"
 	@echo "... Geometry2DTest"
+	@echo "... LineCircleIntersectionSample"
 	@echo "... MinEnclosingTriangleFinderSample"
 	@echo "... MinEnclosingTriangleFinderTest"
+	@echo "... RGBColourGeneratorSample"
 	@echo "... util"
 	@echo "... MapCartesianToPolarScript"
 	@echo "... PolarMapCsvToInputFiles"

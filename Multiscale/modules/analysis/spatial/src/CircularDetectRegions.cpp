@@ -30,7 +30,7 @@ using namespace multiscale::analysis;
 namespace po = boost::program_options;
 namespace pt = boost::property_tree;
 
-const string CONFIG_FILE = "config/analysis/spatial/circular_region_detector.xml";
+const string CONFIG_FILE = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/analysis/spatial/circular_region_detector.xml";
 
 const string LABEL_ROOT_COMMENT                      = "<xmlcomment>";
 const string LABEL_ALPHA                             = "detector.alpha";
