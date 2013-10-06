@@ -54,6 +54,7 @@ var searchData=
   ['err_5fundefined_5fshape',['ERR_UNDEFINED_SHAPE',['../classmultiscale_1_1analysis_1_1Cluster.html#a546b8e93e3f1ef51a9932f8599639070',1,'multiscale::analysis::Cluster']]],
   ['err_5funimplemented_5fmethod',['ERR_UNIMPLEMENTED_METHOD',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html#a7f4120aa31ff324ddb5c90e14cfeeb6d',1,'multiscale::analysis::CircularMatFactory']]],
   ['err_5fvertex_5fc_5fon_5fside_5fb',['ERR_VERTEX_C_ON_SIDE_B',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a8e551d77bc36b7696ea969823f5720d1',1,'multiscale::MinEnclosingTriangleFinder']]],
+  ['euclideandatapoint',['EuclideanDataPoint',['../classEuclideanDataPoint.html',1,'EuclideanDataPoint'],['../classEuclideanDataPoint.html#acda27e957f18603d1b790d037ab5b74a',1,'EuclideanDataPoint::EuclideanDataPoint(double x, double y)'],['../classEuclideanDataPoint.html#a8037034faddfd74eb85f7879bb8e7e06',1,'EuclideanDataPoint::EuclideanDataPoint(const EuclideanDataPoint &amp;point)']]],
   ['exceptionhandler',['ExceptionHandler',['../classmultiscale_1_1ExceptionHandler.html',1,'multiscale']]],
   ['exceptionhandler_2ehpp',['ExceptionHandler.hpp',['../ExceptionHandler_8hpp.html',1,'']]],
   ['expandcorecluster',['expandCoreCluster',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a400c4e9fb1d9e9bafa970b33912a5ce1',1,'multiscale::analysis::DBSCAN']]],

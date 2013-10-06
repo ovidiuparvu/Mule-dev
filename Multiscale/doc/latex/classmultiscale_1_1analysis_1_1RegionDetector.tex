@@ -12,7 +12,8 @@ Class for detecting regions of high intensity in grayscale images.
 
 
 
-Inheritance diagram for multiscale\-:\-:analysis\-:\-:Region\-Detector\-:\nopagebreak
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Region\-Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,7 +22,8 @@ Inheritance diagram for multiscale\-:\-:analysis\-:\-:Region\-Detector\-:\nopage
 \end{figure}
 
 
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:Region\-Detector\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Region\-Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -96,6 +98,10 @@ void \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a886ec5ee1cd2fd816
 \begin{DoxyCompactList}\small\item\em Find the regions in the image. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1}{compute\-Average\-Measures} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Region}{Region} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_aa6517ceb3a58295448d32e6e41499893}{regions})
 \begin{DoxyCompactList}\small\item\em Compute the average clusteredness degree and average density. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16}{compute\-Average\-Clusteredness\-Degree} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Region}{Region} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_aa6517ceb3a58295448d32e6e41499893}{regions})
+\begin{DoxyCompactList}\small\item\em Compute the average clusteredness degree. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a3f1171daf4a952d12d573ab9d0838490}{compute\-Average\-Density} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Region}{Region} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_aa6517ceb3a58295448d32e6e41499893}{regions})
+\begin{DoxyCompactList}\small\item\em Compute the average density. \end{DoxyCompactList}\item 
 vector$<$ vector$<$ Point $>$ $>$ \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a19918b5cd0ec310ad6149c7345870b3f}{find\-Contours\-In\-Image} (const Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
 \begin{DoxyCompactList}\small\item\em Find contours in image. \end{DoxyCompactList}\item 
 \hyperlink{classmultiscale_1_1analysis_1_1Region}{Region} \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a1416b365f921e02e5161d72b0b69f287}{create\-Region\-From\-Polygon} (const vector$<$ Point $>$ \&polygon)
@@ -315,11 +321,103 @@ Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a3c2add35193ad09a0
 
 
 
-Definition at line 288 of file Region\-Detector.\-cpp.
+Definition at line 318 of file Region\-Detector.\-cpp.
 
 
 
 References regions.
+
+\hypertarget{classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16}{\index{multiscale\-::analysis\-::\-Region\-Detector@{multiscale\-::analysis\-::\-Region\-Detector}!compute\-Average\-Clusteredness\-Degree@{compute\-Average\-Clusteredness\-Degree}}
+\index{compute\-Average\-Clusteredness\-Degree@{compute\-Average\-Clusteredness\-Degree}!multiscale::analysis::RegionDetector@{multiscale\-::analysis\-::\-Region\-Detector}}
+\subsubsection[{compute\-Average\-Clusteredness\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-Detector\-::compute\-Average\-Clusteredness\-Degree (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Region} $>$ \&}]{regions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16}
+
+
+Compute the average clusteredness degree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em regions} & The regions in the image \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 203 of file Region\-Detector.\-cpp.
+
+
+
+References avg\-Clusteredness\-Degree, and multiscale\-::\-Geometry2\-D\-::distance\-Btw\-Points().
+
+
+
+Referenced by compute\-Average\-Measures().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1RegionDetector_a3f1171daf4a952d12d573ab9d0838490}{\index{multiscale\-::analysis\-::\-Region\-Detector@{multiscale\-::analysis\-::\-Region\-Detector}!compute\-Average\-Density@{compute\-Average\-Density}}
+\index{compute\-Average\-Density@{compute\-Average\-Density}!multiscale::analysis::RegionDetector@{multiscale\-::analysis\-::\-Region\-Detector}}
+\subsubsection[{compute\-Average\-Density}]{\setlength{\rightskip}{0pt plus 5cm}void Region\-Detector\-::compute\-Average\-Density (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Region} $>$ \&}]{regions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a3f1171daf4a952d12d573ab9d0838490}
+
+
+Compute the average density. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em regions} & The regions in the image \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 230 of file Region\-Detector.\-cpp.
+
+
+
+References avg\-Density.
+
+
+
+Referenced by compute\-Average\-Measures().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1RegionDetector_a3f1171daf4a952d12d573ab9d0838490_icgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1}{\index{multiscale\-::analysis\-::\-Region\-Detector@{multiscale\-::analysis\-::\-Region\-Detector}!compute\-Average\-Measures@{compute\-Average\-Measures}}
 \index{compute\-Average\-Measures@{compute\-Average\-Measures}!multiscale::analysis::RegionDetector@{multiscale\-::analysis\-::\-Region\-Detector}}
@@ -343,11 +441,23 @@ Definition at line 198 of file Region\-Detector.\-cpp.
 
 
 
-References avg\-Clusteredness\-Degree, and avg\-Density.
+References compute\-Average\-Clusteredness\-Degree(), and compute\-Average\-Density().
 
 
 
 Referenced by process\-Image\-And\-Detect().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1_cgraph}
+\end{center}
+\end{figure}
+
 
 
 
@@ -378,7 +488,7 @@ Convert alpha from the range \mbox{[}0, A\-L\-P\-H\-A\-\_\-\-M\-A\-X\mbox{]} to 
 \end{DoxyParams}
 
 
-Definition at line 335 of file Region\-Detector.\-cpp.
+Definition at line 365 of file Region\-Detector.\-cpp.
 
 
 
@@ -417,7 +527,7 @@ Convert beta from the range \mbox{[}0, B\-E\-T\-A\-\_\-\-M\-A\-X\mbox{]} to \mbo
 \end{DoxyParams}
 
 
-Definition at line 339 of file Region\-Detector.\-cpp.
+Definition at line 369 of file Region\-Detector.\-cpp.
 
 
 
@@ -481,7 +591,7 @@ Process the polygon in order to get the required information and create a region
 \end{DoxyParams}
 
 
-Definition at line 226 of file Region\-Detector.\-cpp.
+Definition at line 256 of file Region\-Detector.\-cpp.
 
 
 
@@ -531,7 +641,7 @@ Find contours in image.
 \end{DoxyParams}
 
 
-Definition at line 211 of file Region\-Detector.\-cpp.
+Definition at line 241 of file Region\-Detector.\-cpp.
 
 
 
@@ -960,7 +1070,7 @@ Check if the area of the region $>$ region\-Area\-Threshold
 \end{DoxyParams}
 
 
-Definition at line 238 of file Region\-Detector.\-cpp.
+Definition at line 268 of file Region\-Detector.\-cpp.
 
 
 
@@ -1038,7 +1148,7 @@ Output the averaged measures to a csv file.
 \end{DoxyParams}
 
 
-Definition at line 312 of file Region\-Detector.\-cpp.
+Definition at line 342 of file Region\-Detector.\-cpp.
 
 
 
@@ -1077,7 +1187,7 @@ Output the regions to a csv file.
 \end{DoxyParams}
 
 
-Definition at line 306 of file Region\-Detector.\-cpp.
+Definition at line 336 of file Region\-Detector.\-cpp.
 
 
 
@@ -1120,7 +1230,7 @@ Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_afc247b9c7ded2ffde
 
 
 
-Definition at line 292 of file Region\-Detector.\-cpp.
+Definition at line 322 of file Region\-Detector.\-cpp.
 
 
 
@@ -1154,7 +1264,7 @@ Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a5d10b68605d5a1711
 
 
 
-Definition at line 317 of file Region\-Detector.\-cpp.
+Definition at line 347 of file Region\-Detector.\-cpp.
 
 
 
@@ -1185,7 +1295,8 @@ References change\-Contrast\-And\-Brightness(), compute\-Average\-Measures(), fi
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1212,7 +1323,7 @@ Compute the area of the given polygon considering holes.
 \end{DoxyParams}
 
 
-Definition at line 266 of file Region\-Detector.\-cpp.
+Definition at line 296 of file Region\-Detector.\-cpp.
 
 
 
@@ -1264,7 +1375,7 @@ The density is equal to the average intensity of the pixels in the area delimite
 \end{DoxyParams}
 
 
-Definition at line 244 of file Region\-Detector.\-cpp.
+Definition at line 274 of file Region\-Detector.\-cpp.
 
 
 
@@ -1305,7 +1416,7 @@ The density is equal to the average intensity of the pixels in the area delimite
 \end{DoxyParams}
 
 
-Definition at line 256 of file Region\-Detector.\-cpp.
+Definition at line 286 of file Region\-Detector.\-cpp.
 
 
 
@@ -1344,7 +1455,7 @@ Compute the area of the white holes in the given matrix.
 \end{DoxyParams}
 
 
-Definition at line 277 of file Region\-Detector.\-cpp.
+Definition at line 307 of file Region\-Detector.\-cpp.
 
 
 
@@ -1898,7 +2009,7 @@ Referenced by change\-Contrast\-And\-Brightness(), convert\-Alpha(), create\-Det
 \subsubsection[{A\-L\-P\-H\-A\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-A\-L\-P\-H\-A\-\_\-\-M\-A\-X = 1000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a7ca1e136dc9d768f1e11cd6f770d950f}
 
 
-Definition at line 304 of file Region\-Detector.\-hpp.
+Definition at line 316 of file Region\-Detector.\-hpp.
 
 
 
@@ -1909,7 +2020,7 @@ Referenced by convert\-Alpha(), and create\-Detector\-Specific\-Trackbars().
 \subsubsection[{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const double Region\-Detector\-::\-A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X = 3.\-0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_abc853d2cfef9e4fafbf86715b48495e0}
 
 
-Definition at line 299 of file Region\-Detector.\-hpp.
+Definition at line 311 of file Region\-Detector.\-hpp.
 
 
 
@@ -1920,7 +2031,7 @@ Referenced by convert\-Alpha().
 \subsubsection[{A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const double Region\-Detector\-::\-A\-L\-P\-H\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N = 1.\-0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a4a11aa86a5250ca6197589c4ccb770f6}
 
 
-Definition at line 298 of file Region\-Detector.\-hpp.
+Definition at line 310 of file Region\-Detector.\-hpp.
 
 
 
@@ -1935,7 +2046,7 @@ Definition at line 25 of file Region\-Detector.\-hpp.
 
 
 
-Referenced by compute\-Average\-Measures(), output\-Averaged\-Measures\-To\-Csv\-File(), and Region\-Detector().
+Referenced by compute\-Average\-Clusteredness\-Degree(), output\-Averaged\-Measures\-To\-Csv\-File(), and Region\-Detector().
 
 \hypertarget{classmultiscale_1_1analysis_1_1RegionDetector_a96d0cab2a5cd61b3820c87581fed9548}{\index{multiscale\-::analysis\-::\-Region\-Detector@{multiscale\-::analysis\-::\-Region\-Detector}!avg\-Density@{avg\-Density}}
 \index{avg\-Density@{avg\-Density}!multiscale::analysis::RegionDetector@{multiscale\-::analysis\-::\-Region\-Detector}}
@@ -1946,7 +2057,7 @@ Definition at line 26 of file Region\-Detector.\-hpp.
 
 
 
-Referenced by compute\-Average\-Measures(), output\-Averaged\-Measures\-To\-Csv\-File(), and Region\-Detector().
+Referenced by compute\-Average\-Density(), output\-Averaged\-Measures\-To\-Csv\-File(), and Region\-Detector().
 
 \hypertarget{classmultiscale_1_1analysis_1_1RegionDetector_a23c831170c2264dd7e59067a1a7d3c8e}{\index{multiscale\-::analysis\-::\-Region\-Detector@{multiscale\-::analysis\-::\-Region\-Detector}!beta@{beta}}
 \index{beta@{beta}!multiscale::analysis::RegionDetector@{multiscale\-::analysis\-::\-Region\-Detector}}
@@ -1964,7 +2075,7 @@ Referenced by change\-Contrast\-And\-Brightness(), convert\-Beta(), create\-Dete
 \subsubsection[{B\-E\-T\-A\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-B\-E\-T\-A\-\_\-\-M\-A\-X = 200\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_ad2c6485f637cae5abee0303b41df1480}
 
 
-Definition at line 305 of file Region\-Detector.\-hpp.
+Definition at line 317 of file Region\-Detector.\-hpp.
 
 
 
@@ -1975,7 +2086,7 @@ Referenced by convert\-Beta(), and create\-Detector\-Specific\-Trackbars().
 \subsubsection[{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a19e9e6c3ea18fe9a3dbf7a1a02652985}
 
 
-Definition at line 302 of file Region\-Detector.\-hpp.
+Definition at line 314 of file Region\-Detector.\-hpp.
 
 
 
@@ -1986,7 +2097,7 @@ Referenced by convert\-Beta().
 \subsubsection[{B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-B\-E\-T\-A\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N = -\/100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a87d07b8a993b50bcf050e4c206ac126c}
 
 
-Definition at line 301 of file Region\-Detector.\-hpp.
+Definition at line 313 of file Region\-Detector.\-hpp.
 
 
 
@@ -2008,14 +2119,14 @@ Referenced by create\-Detector\-Specific\-Trackbars(), get\-Blur\-Kernel\-Size()
 \subsubsection[{C\-A\-N\-N\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-C\-A\-N\-N\-Y\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_ad6590f4617a6b3d34c6032f8febd7beb}
 
 
-Definition at line 308 of file Region\-Detector.\-hpp.
+Definition at line 320 of file Region\-Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1RegionDetector_ab1fdebf0daaae6f2bb1fe4770479116f}{\index{multiscale\-::analysis\-::\-Region\-Detector@{multiscale\-::analysis\-::\-Region\-Detector}!C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D@{C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D}}
 \index{C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D@{C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D}!multiscale::analysis::RegionDetector@{multiscale\-::analysis\-::\-Region\-Detector}}
 \subsubsection[{C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const bool Region\-Detector\-::\-C\-O\-N\-T\-O\-U\-R\-\_\-\-A\-R\-E\-A\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_ab1fdebf0daaae6f2bb1fe4770479116f}
 
 
-Definition at line 296 of file Region\-Detector.\-hpp.
+Definition at line 308 of file Region\-Detector.\-hpp.
 
 
 
@@ -2026,7 +2137,7 @@ Referenced by is\-Valid\-Region(), region\-Area(), and region\-Holes\-Area().
 \subsubsection[{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_aee6fbc641e8a6a85b1d877f9b4c6c6c3}
 
 
-Definition at line 317 of file Region\-Detector.\-hpp.
+Definition at line 329 of file Region\-Detector.\-hpp.
 
 
 
@@ -2048,7 +2159,7 @@ Referenced by create\-Detector\-Specific\-Trackbars(), find\-Regions(), get\-Eps
 \subsubsection[{E\-P\-S\-I\-L\-O\-N\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-E\-P\-S\-I\-L\-O\-N\-\_\-\-M\-A\-X = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a724d57c0db65696f2ddab415deb1138d}
 
 
-Definition at line 309 of file Region\-Detector.\-hpp.
+Definition at line 321 of file Region\-Detector.\-hpp.
 
 
 
@@ -2059,7 +2170,7 @@ Referenced by create\-Detector\-Specific\-Trackbars().
 \subsubsection[{I\-N\-T\-E\-N\-S\-I\-T\-Y\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-I\-N\-T\-E\-N\-S\-I\-T\-Y\-\_\-\-M\-A\-X = 255\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a3b682d43cd686a8bdfce91b0cbbf5245}
 
 
-Definition at line 313 of file Region\-Detector.\-hpp.
+Definition at line 325 of file Region\-Detector.\-hpp.
 
 
 
@@ -2070,7 +2181,7 @@ Referenced by output\-Results\-To\-Image(), region\-Area(), region\-Clusterednes
 \subsubsection[{K\-E\-R\-N\-E\-L\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-K\-E\-R\-N\-E\-L\-\_\-\-M\-A\-X = 2000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_aa988e3458f774c489e03e3f8bd0db1ed}
 
 
-Definition at line 306 of file Region\-Detector.\-hpp.
+Definition at line 318 of file Region\-Detector.\-hpp.
 
 
 
@@ -2081,7 +2192,7 @@ Referenced by create\-Detector\-Specific\-Trackbars().
 \subsubsection[{M\-O\-R\-P\-H\-\_\-\-I\-T\-E\-R\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-M\-O\-R\-P\-H\-\_\-\-I\-T\-E\-R\-\_\-\-M\-A\-X = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_adeaa40a86b09bad2530bf179cbb4e602}
 
 
-Definition at line 307 of file Region\-Detector.\-hpp.
+Definition at line 319 of file Region\-Detector.\-hpp.
 
 
 
@@ -2103,7 +2214,7 @@ Referenced by create\-Detector\-Specific\-Trackbars(), get\-Morphological\-Close
 \subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S = \char`\"{}Average clusteredness degree\-: \char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a7eeefa86e8c94ee7c89b3e17fb94d931}
 
 
-Definition at line 283 of file Region\-Detector.\-hpp.
+Definition at line 295 of file Region\-Detector.\-hpp.
 
 
 
@@ -2114,7 +2225,7 @@ Referenced by output\-Averaged\-Measures\-To\-Csv\-File().
 \subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y = \char`\"{}Average density\-: \char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_ad432faee394557fc48ff6baaceddf1cb}
 
 
-Definition at line 284 of file Region\-Detector.\-hpp.
+Definition at line 296 of file Region\-Detector.\-hpp.
 
 
 
@@ -2125,7 +2236,7 @@ Referenced by output\-Averaged\-Measures\-To\-Csv\-File().
 \subsubsection[{P\-O\-L\-Y\-G\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const bool Region\-Detector\-::\-P\-O\-L\-Y\-G\-O\-N\-\_\-\-C\-L\-O\-S\-E\-D = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a1b3de2646beaac60d03527f1775614be}
 
 
-Definition at line 315 of file Region\-Detector.\-hpp.
+Definition at line 327 of file Region\-Detector.\-hpp.
 
 
 
@@ -2136,7 +2247,7 @@ Referenced by output\-Results\-To\-Image().
 \subsubsection[{R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H\-\_\-\-M\-A\-X = 200000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a8a301bd841d376448aff4a0c4d0a1485}
 
 
-Definition at line 310 of file Region\-Detector.\-hpp.
+Definition at line 322 of file Region\-Detector.\-hpp.
 
 
 
@@ -2169,7 +2280,7 @@ Referenced by clear\-Previous\-Detection\-Results(), get\-Regions(), output\-Reg
 \subsubsection[{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a52778f49510e1e500b2dc48857724e20}
 
 
-Definition at line 312 of file Region\-Detector.\-hpp.
+Definition at line 324 of file Region\-Detector.\-hpp.
 
 
 
@@ -2180,7 +2291,7 @@ Referenced by region\-Area(), and region\-Clusteredness\-Degree().
 \subsubsection[{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Region\-Detector\-::\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X = 255\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a53c6e2b067a8b8c82484cbca34cc3d57}
 
 
-Definition at line 311 of file Region\-Detector.\-hpp.
+Definition at line 323 of file Region\-Detector.\-hpp.
 
 
 
@@ -2202,7 +2313,7 @@ Referenced by create\-Detector\-Specific\-Trackbars(), get\-Threshold\-Value(), 
 \subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-A\-L\-P\-H\-A}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-A\-L\-P\-H\-A = \char`\"{}Alpha\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a5513e029d4d4cf249aa40364489f7a85}
 
 
-Definition at line 286 of file Region\-Detector.\-hpp.
+Definition at line 298 of file Region\-Detector.\-hpp.
 
 
 
@@ -2213,7 +2324,7 @@ Referenced by create\-Detector\-Specific\-Trackbars().
 \subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-B\-E\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-B\-E\-T\-A = \char`\"{}Beta\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a79d7878ed55bf12a87637896a1f44e37}
 
 
-Definition at line 287 of file Region\-Detector.\-hpp.
+Definition at line 299 of file Region\-Detector.\-hpp.
 
 
 
@@ -2224,14 +2335,14 @@ Referenced by create\-Detector\-Specific\-Trackbars().
 \subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-C\-A\-N\-N\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-C\-A\-N\-N\-Y = \char`\"{}Canny lower threshold\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a8c1c5cde2b7d42ddce44b7f8208f07cc}
 
 
-Definition at line 290 of file Region\-Detector.\-hpp.
+Definition at line 302 of file Region\-Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1RegionDetector_aa3f0755a58457592ac027b42576bd312}{\index{multiscale\-::analysis\-::\-Region\-Detector@{multiscale\-::analysis\-::\-Region\-Detector}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N}}
 \index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N}!multiscale::analysis::RegionDetector@{multiscale\-::analysis\-::\-Region\-Detector}}
 \subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S\-I\-L\-O\-N = \char`\"{}Epsilon\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_aa3f0755a58457592ac027b42576bd312}
 
 
-Definition at line 291 of file Region\-Detector.\-hpp.
+Definition at line 303 of file Region\-Detector.\-hpp.
 
 
 
@@ -2242,7 +2353,7 @@ Referenced by create\-Detector\-Specific\-Trackbars().
 \subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-K\-E\-R\-N\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-K\-E\-R\-N\-E\-L = \char`\"{}Gaussian blur kernel size\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a79b72da59c92b368fb7894fe1f424e00}
 
 
-Definition at line 288 of file Region\-Detector.\-hpp.
+Definition at line 300 of file Region\-Detector.\-hpp.
 
 
 
@@ -2253,7 +2364,7 @@ Referenced by create\-Detector\-Specific\-Trackbars().
 \subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-O\-R\-P\-H}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-O\-R\-P\-H = \char`\"{}Morphological open, number of iterations\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a0358affd40f13327b10447b7fe938338}
 
 
-Definition at line 289 of file Region\-Detector.\-hpp.
+Definition at line 301 of file Region\-Detector.\-hpp.
 
 
 
@@ -2264,7 +2375,7 @@ Referenced by create\-Detector\-Specific\-Trackbars().
 \subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-R\-E\-G\-I\-O\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-H\-R\-E\-S\-H = \char`\"{}Region area threshold\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a6a2711f5cabb3af04a969fe38e1ef473}
 
 
-Definition at line 292 of file Region\-Detector.\-hpp.
+Definition at line 304 of file Region\-Detector.\-hpp.
 
 
 
@@ -2275,7 +2386,7 @@ Referenced by create\-Detector\-Specific\-Trackbars().
 \subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}const string Region\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D = \char`\"{}Threshold value\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a7548c716410a4cb88cb41498de6b509c}
 
 
-Definition at line 293 of file Region\-Detector.\-hpp.
+Definition at line 305 of file Region\-Detector.\-hpp.
 
 
 
@@ -2286,7 +2397,7 @@ Referenced by create\-Detector\-Specific\-Trackbars().
 \subsubsection[{U\-S\-E\-\_\-\-C\-A\-N\-N\-Y\-\_\-\-L2}]{\setlength{\rightskip}{0pt plus 5cm}const bool Region\-Detector\-::\-U\-S\-E\-\_\-\-C\-A\-N\-N\-Y\-\_\-\-L2 = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1RegionDetector_a6a8c4f7b9a6bc40ec6de940f53943772}
 
 
-Definition at line 295 of file Region\-Detector.\-hpp.
+Definition at line 307 of file Region\-Detector.\-hpp.
 
 
 

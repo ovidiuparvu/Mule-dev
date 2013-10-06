@@ -35,6 +35,7 @@ var searchData=
   ['rectangularmatfactoryexception',['RectangularMatFactoryException',['../classmultiscale_1_1RectangularMatFactoryException.html#a08ba7e88c5b1af7df82e4c376287bedf',1,'multiscale::RectangularMatFactoryException::RectangularMatFactoryException(const string &amp;file, int line, const string &amp;msg)'],['../classmultiscale_1_1RectangularMatFactoryException.html#aca0beb9e5c613533ddafff4118ddf2d0',1,'multiscale::RectangularMatFactoryException::RectangularMatFactoryException(const string &amp;file, int line, const char *msg)']]],
   ['rectangularmatfactoryexception',['RectangularMatFactoryException',['../classmultiscale_1_1RectangularMatFactoryException.html',1,'multiscale']]],
   ['rectangularmatfactoryexception_2ehpp',['RectangularMatFactoryException.hpp',['../RectangularMatFactoryException_8hpp.html',1,'']]],
+  ['rectangularmatfactorysample_2ecpp',['RectangularMatFactorySample.cpp',['../RectangularMatFactorySample_8cpp.html',1,'']]],
   ['rectangularmeasure',['rectangularMeasure',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aad7d79a7bd299d4d3c08a864cfcb77c3',1,'multiscale::analysis::SpatialCollection2D']]],
   ['red',['red',['../classmultiscale_1_1RGBColourGenerator.html#a11da8c4a9ca59ea8c20177cbb5b57ceb',1,'multiscale::RGBColourGenerator']]],
   ['region',['Region',['../classmultiscale_1_1analysis_1_1Region.html',1,'multiscale::analysis']]],
@@ -46,8 +47,8 @@ var searchData=
   ['regionareathresh',['regionAreaThresh',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a1f637073a3d946d000dceed01412f19a',1,'multiscale::analysis::RegionDetector']]],
   ['regionclusterednessdegree',['regionClusterednessDegree',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a89995b72e578951ea7ddf43c5c25e14a',1,'multiscale::analysis::RegionDetector']]],
   ['regiondensity',['regionDensity',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a6beb6b2ecaccd60130bcf8dd808750b8',1,'multiscale::analysis::RegionDetector']]],
-  ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html',1,'multiscale::analysis']]],
   ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html#aa6e891d8940358fe71e9a7e23f84452f',1,'multiscale::analysis::RegionDetector']]],
+  ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html',1,'multiscale::analysis']]],
   ['regiondetector_2ecpp',['RegionDetector.cpp',['../RegionDetector_8cpp.html',1,'']]],
   ['regiondetector_2ehpp',['RegionDetector.hpp',['../RegionDetector_8hpp.html',1,'']]],
   ['regionexception',['RegionException',['../classmultiscale_1_1RegionException.html',1,'multiscale']]],
@@ -74,6 +75,7 @@ var searchData=
   ['rgbcolourgenerator',['RGBColourGenerator',['../classmultiscale_1_1RGBColourGenerator.html',1,'multiscale']]],
   ['rgbcolourgenerator_2ecpp',['RGBColourGenerator.cpp',['../RGBColourGenerator_8cpp.html',1,'']]],
   ['rgbcolourgenerator_2ehpp',['RGBColourGenerator.hpp',['../RGBColourGenerator_8hpp.html',1,'']]],
+  ['rgbcolourgeneratorsample_2ecpp',['RGBColourGeneratorSample.cpp',['../RGBColourGeneratorSample_8cpp.html',1,'']]],
   ['roi_5fheight',['ROI_HEIGHT',['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a66855a873613668d15773b85efea9829',1,'multiscale::analysis::RectangularMatFactory']]],
   ['roi_5fradius',['ROI_RADIUS',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html#af26e9372a9bfb4428e9bdef952afedff',1,'multiscale::analysis::CircularMatFactory']]],
   ['roi_5fstart_5fx',['ROI_START_X',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html#a0e2da07df4736b0ec21567721ae94af5',1,'multiscale::analysis::CircularMatFactory::ROI_START_X()'],['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a90e622e964218af93ca0d024dc3faa41',1,'multiscale::analysis::RectangularMatFactory::ROI_START_X()']]],
@@ -86,5 +88,11 @@ var searchData=
   ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82',1,'multiscale::analysis::DBSCAN']]],
   ['runminenclosingtrianglefinder',['runMinEnclosingTriangleFinder',['../MinEnclosingTriangleFinderSample_8cpp.html#aef6ea89ecb324851b646e1e9a8f50aff',1,'runMinEnclosingTriangleFinder(const vector&lt; Point2f &gt; &amp;points):&#160;MinEnclosingTriangleFinderSample.cpp'],['../MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972',1,'runMinEnclosingTriangleFinder():&#160;MinEnclosingTriangleFinderSample.cpp']]],
   ['runminenclosingtrianglefinderusingrandompolygons',['runMinEnclosingTriangleFinderUsingRandomPolygons',['../MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a',1,'MinEnclosingTriangleFinderSample.cpp']]],
-  ['runtest',['RunTest',['../classmultiscaletest_1_1MultiscaleTest.html#a3b3c62b74e1fd1eb0633f9b720659ce3',1,'multiscaletest::MultiscaleTest::RunTest()'],['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a9a0c1dfbe0e0b2451b1c4076967f47d9',1,'multiscaletest::MinEnclosingTriangleFinderTest::RunTest()']]]
+  ['runtest',['RunTest',['../classmultiscaletest_1_1MultiscaleTest.html#a3b3c62b74e1fd1eb0633f9b720659ce3',1,'multiscaletest::MultiscaleTest::RunTest()'],['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a9a0c1dfbe0e0b2451b1c4076967f47d9',1,'multiscaletest::MinEnclosingTriangleFinderTest::RunTest()'],['../DBSCANTest_8cpp.html#acf823a8eb337447e18e45e66f3761936',1,'runTest():&#160;DBSCANTest.cpp']]],
+  ['runtest1',['runTest1',['../DBSCANTest_8cpp.html#a2fa58df822fc8a2d764556bdab3209c8',1,'DBSCANTest.cpp']]],
+  ['runtest2',['runTest2',['../DBSCANTest_8cpp.html#ae615f1012effd6b85d0dc0ce4a39cc8b',1,'DBSCANTest.cpp']]],
+  ['runtest3',['runTest3',['../DBSCANTest_8cpp.html#ae5504b5d71abda7a6a7f898e7eea0281',1,'DBSCANTest.cpp']]],
+  ['runtest4',['runTest4',['../DBSCANTest_8cpp.html#afaf917600a40a856cfdabdd688d53eab',1,'DBSCANTest.cpp']]],
+  ['runtest5',['runTest5',['../DBSCANTest_8cpp.html#aa8b585accca301a85255cdcc344985b8',1,'DBSCANTest.cpp']]],
+  ['runtests',['runTests',['../DBSCANTest_8cpp.html#a5dcb537699bebb9e9db36ab19c5aacf7',1,'DBSCANTest.cpp']]]
 ];

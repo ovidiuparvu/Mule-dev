@@ -245,6 +245,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:aee096ec729a12b62fd0c61f74601aad1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1">computeAverageMeasures</a> (vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;<a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">regions</a>)</td></tr>
 <tr class="memdesc:aee096ec729a12b62fd0c61f74601aad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the average clusteredness degree and average density.  <a href="#aee096ec729a12b62fd0c61f74601aad1">More...</a><br/></td></tr>
 <tr class="separator:aee096ec729a12b62fd0c61f74601aad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ad71a8af2beb1a02573d0c125af4e16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5ad71a8af2beb1a02573d0c125af4e16">computeAverageClusterednessDegree</a> (vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;<a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">regions</a>)</td></tr>
+<tr class="memdesc:a5ad71a8af2beb1a02573d0c125af4e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the average clusteredness degree.  <a href="#a5ad71a8af2beb1a02573d0c125af4e16">More...</a><br/></td></tr>
+<tr class="separator:a5ad71a8af2beb1a02573d0c125af4e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1171daf4a952d12d573ab9d0838490"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3f1171daf4a952d12d573ab9d0838490">computeAverageDensity</a> (vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;<a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">regions</a>)</td></tr>
+<tr class="memdesc:a3f1171daf4a952d12d573ab9d0838490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the average density.  <a href="#a3f1171daf4a952d12d573ab9d0838490">More...</a><br/></td></tr>
+<tr class="separator:a3f1171daf4a952d12d573ab9d0838490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19918b5cd0ec310ad6149c7345870b3f"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; Point &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f">findContoursInImage</a> (const Mat &amp;<a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a523830a6cfe409694ce8327c3c736fbd">image</a>)</td></tr>
 <tr class="memdesc:a19918b5cd0ec310ad6149c7345870b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find contours in image.  <a href="#a19918b5cd0ec310ad6149c7345870b3f">More...</a><br/></td></tr>
 <tr class="separator:a19918b5cd0ec310ad6149c7345870b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -550,7 +556,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00158">158</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>, and <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00365">convertAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00369">convertBeta()</a>, and <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
@@ -603,9 +609,118 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a3c2add35193ad09a0200003d0053da6b">multiscale::analysis::Detector</a>.</p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00288">288</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00318">318</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
 <p>References <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5ad71a8af2beb1a02573d0c125af4e16"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RegionDetector::computeAverageClusterednessDegree </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>regions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the average clusteredness degree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">regions</td><td>The regions in the image </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00203">203</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00025">avgClusterednessDegree</a>, and <a class="el" href="Geometry2D_8cpp_source.html#l00069">multiscale::Geometry2D::distanceBtwPoints()</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00198">computeAverageMeasures()</a>.</p>
+
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="280,14,443,61"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a5ad71a8af2beb1a02573d0c125af4e16_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1" title="Compute the average clusteredness degree and average density." alt="" coords="280,5,507,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="555,5,765,69"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f1171daf4a952d12d573ab9d0838490"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RegionDetector::computeAverageDensity </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>regions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compute the average density. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">regions</td><td>The regions in the image </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00230">230</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00026">avgDensity</a>.</p>
+
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00198">computeAverageMeasures()</a>.</p>
+
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a3f1171daf4a952d12d573ab9d0838490_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a3f1171daf4a952d12d573ab9d0838490_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1RegionDetector_a3f1171daf4a952d12d573ab9d0838490_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a3f1171daf4a952d12d573ab9d0838490_icgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1" title="Compute the average clusteredness degree and average density." alt="" coords="280,5,507,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="555,5,765,69"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -641,15 +756,26 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00198">198</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00025">avgClusterednessDegree</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00026">avgDensity</a>.</p>
+<p>References <a class="el" href="RegionDetector_8cpp_source.html#l00203">computeAverageClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00230">computeAverageDensity()</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5ad71a8af2beb1a02573d0c125af4e16" title="Compute the average clusteredness degree." alt="" coords="280,5,507,69"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3f1171daf4a952d12d573ab9d0838490" title="Compute the average density." alt="" coords="280,93,507,157"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="555,14,717,61"/></map>
+</div>
+</p>
+
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_aee096ec729a12b62fd0c61f74601aad1_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="280,5,491,69"/></map>
@@ -688,17 +814,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00335">335</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00365">365</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00304">ALPHA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00299">ALPHA_REAL_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00298">ALPHA_REAL_MIN</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00316">ALPHA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00311">ALPHA_REAL_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00310">ALPHA_REAL_MIN</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>.</p>
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a3de7a4d365c182917b74117a22075ec4_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a3de7a4d365c182917b74117a22075ec4_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a3de7a4d365c182917b74117a22075ec4_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a3de7a4d365c182917b74117a22075ec4_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a92260dc64fb1de8f72df3a7bd44e171d" title="Change the contrast and brightness of the image." alt="" coords="259,5,480,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="528,5,739,69"/></map>
@@ -737,17 +863,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00339">339</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00369">369</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00305">BETA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00302">BETA_REAL_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00301">BETA_REAL_MIN</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00317">BETA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00314">BETA_REAL_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00313">BETA_REAL_MIN</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>.</p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a60083ca10a42c25d67e371506cbf5620_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a60083ca10a42c25d67e371506cbf5620_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a60083ca10a42c25d67e371506cbf5620_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a60083ca10a42c25d67e371506cbf5620_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a92260dc64fb1de8f72df3a7bd44e171d" title="Change the contrast and brightness of the image." alt="" coords="253,5,475,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="523,5,733,69"/></map>
@@ -783,7 +909,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00136">136</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00304">ALPHA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00305">BETA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00030">blurKernelSize</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00309">EPSILON_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00306">KERNEL_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00307">MORPH_ITER_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00031">morphologicalCloseIterations</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00310">REGION_AREA_THRESH_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00311">THRESHOLD_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00286">TRACKBAR_ALPHA</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00287">TRACKBAR_BETA</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00291">TRACKBAR_EPSILON</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00288">TRACKBAR_KERNEL</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00289">TRACKBAR_MORPH</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00292">TRACKBAR_REGION_AREA_THRESH</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00293">TRACKBAR_THRESHOLD</a>, and <a class="el" href="Detector_8hpp_source.html#l00205">multiscale::analysis::Detector::WIN_OUTPUT_IMAGE</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00028">alpha</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00316">ALPHA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00029">beta</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00317">BETA_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00030">blurKernelSize</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00321">EPSILON_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00318">KERNEL_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00319">MORPH_ITER_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00031">morphologicalCloseIterations</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00322">REGION_AREA_THRESH_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00323">THRESHOLD_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00298">TRACKBAR_ALPHA</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00299">TRACKBAR_BETA</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00303">TRACKBAR_EPSILON</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00300">TRACKBAR_KERNEL</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00301">TRACKBAR_MORPH</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00304">TRACKBAR_REGION_AREA_THRESH</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00305">TRACKBAR_THRESHOLD</a>, and <a class="el" href="Detector_8hpp_source.html#l00205">multiscale::analysis::Detector::WIN_OUTPUT_IMAGE</a>.</p>
 
 </div>
 </div>
@@ -818,28 +944,28 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00226">226</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00256">256</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00069">multiscale::Geometry2D::distanceBtwPoints()</a>, <a class="el" href="Geometry2D_8cpp_source.html#l00333">multiscale::Geometry2D::minimumDistancePointIndex()</a>, <a class="el" href="Detector_8hpp_source.html#l00031">multiscale::analysis::Detector::origin</a>, <a class="el" href="Detector_8cpp_source.html#l00107">multiscale::analysis::Detector::polygonAngle()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00244">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00256">regionDensity()</a>.</p>
+<p>References <a class="el" href="Geometry2D_8cpp_source.html#l00069">multiscale::Geometry2D::distanceBtwPoints()</a>, <a class="el" href="Geometry2D_8cpp_source.html#l00333">multiscale::Geometry2D::minimumDistancePointIndex()</a>, <a class="el" href="Detector_8hpp_source.html#l00031">multiscale::analysis::Detector::origin</a>, <a class="el" href="Detector_8cpp_source.html#l00107">multiscale::analysis::Detector::polygonAngle()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00296">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00274">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00286">regionDensity()</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>.</p>
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a1416b365f921e02e5161d72b0b69f287_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a1416b365f921e02e5161d72b0b69f287_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a1416b365f921e02e5161d72b0b69f287_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a1416b365f921e02e5161d72b0b69f287_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="589,16,752,62"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#ae8e5e46c312835e27478ce00b11f8a7c" title="Get the index of the point which is the closest to the origin." alt="" coords="287,45,484,92"/><area shape="rect" id="node8" href="classmultiscale_1_1analysis_1_1Detector.html#ada30f980ed5ce2f975bb827c393b8cd0" title="Compute the angle of the polygon." alt="" coords="303,114,468,161"/><area shape="rect" id="node10" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a938fa8d165c87dc69e962883942072d2" title="Compute the area of the given polygon considering holes." alt="" coords="291,184,480,230"/><area shape="rect" id="node16" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a89995b72e578951ea7ddf43c5c25e14a" title="Compute the clusteredness degree of the region delimited by the given polygon." alt="" coords="261,254,509,318"/><area shape="rect" id="node18" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6beb6b2ecaccd60130bcf8dd808750b8" title="Compute the density of the area delimited by the given polygon." alt="" coords="281,341,489,388"/><area shape="rect" id="node12" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18" title="Compute the area of the white holes in the given matrix." alt="" coords="559,184,783,230"/><area shape="rect" id="node14" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f" title="Find contours in image." alt="" coords="832,175,1035,239"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a1416b365f921e02e5161d72b0b69f287_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a1416b365f921e02e5161d72b0b69f287_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a1416b365f921e02e5161d72b0b69f287_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a1416b365f921e02e5161d72b0b69f287_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="263,14,460,61"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="509,5,720,69"/></map>
@@ -878,15 +1004,15 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00211">211</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00241">241</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00277">regionHolesArea()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00307">regionHolesArea()</a>.</p>
 
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a19918b5cd0ec310ad6149c7345870b3f_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a19918b5cd0ec310ad6149c7345870b3f_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a19918b5cd0ec310ad6149c7345870b3f_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a19918b5cd0ec310ad6149c7345870b3f_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="1028,17,1225,63"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18" title="Compute the area of the white holes in the given matrix." alt="" coords="257,46,481,93"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="1275,8,1485,72"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a938fa8d165c87dc69e962883942072d2" title="Compute the area of the given polygon considering holes." alt="" coords="532,49,721,95"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="772,43,977,107"/></map>
@@ -939,26 +1065,26 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00180">180</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8cpp_source.html#l00226">createRegionFromPolygon()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00211">findContoursInImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00238">isValidRegion()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8cpp_source.html#l00256">createRegionFromPolygon()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00032">epsilon</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00241">findContoursInImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00268">isValidRegion()</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a886ec5ee1cd2fd816c1cfd4e2ea6778e_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a886ec5ee1cd2fd816c1cfd4e2ea6778e_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a886ec5ee1cd2fd816c1cfd4e2ea6778e_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a886ec5ee1cd2fd816c1cfd4e2ea6778e_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="256,179,461,243"/><area shape="rect" id="node16" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f" title="Find contours in image." alt="" coords="1083,327,1285,391"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a2be058ae797d80787725ae2c246ba256" title="Check if the region is valid." alt="" coords="255,465,463,512"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="840,20,1003,66"/><area shape="rect" id="node7" href="classmultiscale_1_1Geometry2D.html#ae8e5e46c312835e27478ce00b11f8a7c" title="Get the index of the point which is the closest to the origin." alt="" coords="537,49,735,96"/><area shape="rect" id="node10" href="classmultiscale_1_1analysis_1_1Detector.html#ada30f980ed5ce2f975bb827c393b8cd0" title="Compute the angle of the polygon." alt="" coords="553,118,719,165"/><area shape="rect" id="node12" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a938fa8d165c87dc69e962883942072d2" title="Compute the area of the given polygon considering holes." alt="" coords="541,188,731,234"/><area shape="rect" id="node18" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a89995b72e578951ea7ddf43c5c25e14a" title="Compute the clusteredness degree of the region delimited by the given polygon." alt="" coords="512,258,760,322"/><area shape="rect" id="node20" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6beb6b2ecaccd60130bcf8dd808750b8" title="Compute the density of the area delimited by the given polygon." alt="" coords="532,345,740,392"/><area shape="rect" id="node14" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18" title="Compute the area of the white holes in the given matrix." alt="" coords="809,266,1033,313"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a886ec5ee1cd2fd816c1cfd4e2ea6778e_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a886ec5ee1cd2fd816c1cfd4e2ea6778e_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a886ec5ee1cd2fd816c1cfd4e2ea6778e_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a886ec5ee1cd2fd816c1cfd4e2ea6778e_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="253,5,464,69"/></map>
@@ -988,11 +1114,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a0cc3c3bfcd5e29b19a30acd0566a9d71_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a0cc3c3bfcd5e29b19a30acd0566a9d71_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a0cc3c3bfcd5e29b19a30acd0566a9d71_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a0cc3c3bfcd5e29b19a30acd0566a9d71_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228" title="saveDetectorParameterValues" alt="" coords="235,32,435,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="557,5,608,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#aefff464518a8c8d6f9c9c5450a675d01" title="saveDetectorParameterValues" alt="" coords="483,59,683,88"/></map>
@@ -1022,11 +1148,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a1b60390d9e55980ecf1da3616782a7e3_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a1b60390d9e55980ecf1da3616782a7e3_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a1b60390d9e55980ecf1da3616782a7e3_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a1b60390d9e55980ecf1da3616782a7e3_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228" title="saveDetectorParameterValues" alt="" coords="229,32,429,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="552,5,603,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#aefff464518a8c8d6f9c9c5450a675d01" title="saveDetectorParameterValues" alt="" coords="477,59,677,88"/></map>
@@ -1056,11 +1182,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_af0b30b57a664d7a5b1bb0ec6be5e8068_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_af0b30b57a664d7a5b1bb0ec6be5e8068_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_af0b30b57a664d7a5b1bb0ec6be5e8068_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_af0b30b57a664d7a5b1bb0ec6be5e8068_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228" title="saveDetectorParameterValues" alt="" coords="288,32,488,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="611,5,661,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#aefff464518a8c8d6f9c9c5450a675d01" title="saveDetectorParameterValues" alt="" coords="536,59,736,88"/></map>
@@ -1090,11 +1216,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a730df92f22ef336a5e24ffdb9afa50c9_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a730df92f22ef336a5e24ffdb9afa50c9_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a730df92f22ef336a5e24ffdb9afa50c9_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a730df92f22ef336a5e24ffdb9afa50c9_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228" title="saveDetectorParameterValues" alt="" coords="245,32,445,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="568,5,619,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#aefff464518a8c8d6f9c9c5450a675d01" title="saveDetectorParameterValues" alt="" coords="493,59,693,88"/></map>
@@ -1124,11 +1250,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a6099482d13eaf15e3c199155ba0a8816_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a6099482d13eaf15e3c199155ba0a8816_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a6099482d13eaf15e3c199155ba0a8816_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a6099482d13eaf15e3c199155ba0a8816_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228" title="saveDetectorParameterValues" alt="" coords="280,32,480,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="603,5,653,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#aefff464518a8c8d6f9c9c5450a675d01" title="saveDetectorParameterValues" alt="" coords="528,59,728,88"/></map>
@@ -1200,11 +1326,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a376ab8398852d02f3f4f2f5ffa4ec34b_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a376ab8398852d02f3f4f2f5ffa4ec34b_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a376ab8398852d02f3f4f2f5ffa4ec34b_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a376ab8398852d02f3f4f2f5ffa4ec34b_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228" title="saveDetectorParameterValues" alt="" coords="243,32,443,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="565,5,616,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#aefff464518a8c8d6f9c9c5450a675d01" title="saveDetectorParameterValues" alt="" coords="491,59,691,88"/></map>
@@ -1255,11 +1381,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00115">saveDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_aa429084aca1e04ec288878822e33bf36_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_aa429084aca1e04ec288878822e33bf36_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_aa429084aca1e04ec288878822e33bf36_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_aa429084aca1e04ec288878822e33bf36_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0c6ea854096d0cb7031c2af1eeb58228" title="saveDetectorParameterValues" alt="" coords="259,32,459,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="581,5,632,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#aefff464518a8c8d6f9c9c5450a675d01" title="saveDetectorParameterValues" alt="" coords="507,59,707,88"/></map>
@@ -1359,17 +1485,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00238">238</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00268">268</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00296">CONTOUR_AREA_ORIENTED</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00308">CONTOUR_AREA_ORIENTED</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00033">regionAreaThresh</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>.</p>
 
-<p><div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a2be058ae797d80787725ae2c246ba256_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a2be058ae797d80787725ae2c246ba256_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a2be058ae797d80787725ae2c246ba256_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a2be058ae797d80787725ae2c246ba256_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="265,14,463,61"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="512,5,723,69"/></map>
@@ -1414,11 +1540,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
-<p><div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_adcb8ab3ced63de9168734f0b24072705_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_adcb8ab3ced63de9168734f0b24072705_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_adcb8ab3ced63de9168734f0b24072705_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_adcb8ab3ced63de9168734f0b24072705_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="264,5,475,69"/></map>
@@ -1457,17 +1583,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00312">312</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00342">342</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00025">avgClusterednessDegree</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00026">avgDensity</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00283">OUTPUT_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00284">OUTPUT_DENSITY</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00025">avgClusterednessDegree</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00026">avgDensity</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00295">OUTPUT_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00296">OUTPUT_DENSITY</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00292">outputResultsToCsvFile()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00322">outputResultsToCsvFile()</a>.</p>
 
-<p><div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_ac060acf205b878f79b67093f178f265f_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_ac060acf205b878f79b67093f178f265f_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_ac060acf205b878f79b67093f178f265f_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_ac060acf205b878f79b67093f178f265f_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a9da92f7959fe324f24301c5bf780fbbd" title="Output the regions and averaged measures to a csv file." alt="" coords="275,5,485,69"/></map>
@@ -1506,17 +1632,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00306">306</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00336">336</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
 <p>References <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00292">outputResultsToCsvFile()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00322">outputResultsToCsvFile()</a>.</p>
 
-<p><div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div id="dynsection-26-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a9289ea9b1ceb3bd21317170d72a889e4_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a9289ea9b1ceb3bd21317170d72a889e4_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a9289ea9b1ceb3bd21317170d72a889e4_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a9289ea9b1ceb3bd21317170d72a889e4_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a9da92f7959fe324f24301c5bf780fbbd" title="Output the regions and averaged measures to a csv file." alt="" coords="267,5,477,69"/></map>
@@ -1557,15 +1683,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#afc247b9c7ded2ffde3ba0cb2b1267490">multiscale::analysis::Detector</a>.</p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00292">292</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00322">322</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Region_8cpp_source.html#l00038">multiscale::analysis::Region::fieldNamesToString()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00306">outputRegionsToCsvFile()</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
+<p>References <a class="el" href="Region_8cpp_source.html#l00038">multiscale::analysis::Region::fieldNamesToString()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00342">outputAveragedMeasuresToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00336">outputRegionsToCsvFile()</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
 
-<p><div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a9da92f7959fe324f24301c5bf780fbbd_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a9da92f7959fe324f24301c5bf780fbbd_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a9da92f7959fe324f24301c5bf780fbbd_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a9da92f7959fe324f24301c5bf780fbbd_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Region.html#af766fd7e5b908bd9cf8c3577271ee65b" title="Get a string representation of all the field names except polygon." alt="" coords="277,5,472,51"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ac060acf205b878f79b67093f178f265f" title="Output the averaged measures to a csv file." alt="" coords="265,75,484,139"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a9289ea9b1ceb3bd21317170d72a889e4" title="Output the regions to a csv file." alt="" coords="268,163,481,227"/></map>
@@ -1599,9 +1725,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a5d10b68605d5a1711527b4b896b3b2cc">multiscale::analysis::Detector</a>.</p>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00317">317</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00347">347</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00317">DISPLAY_LINE_THICKNESS</a>, <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00313">INTENSITY_MAX</a>, <a class="el" href="Detector_8hpp_source.html#l00026">multiscale::analysis::Detector::outputImage</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00315">POLYGON_CLOSED</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00329">DISPLAY_LINE_THICKNESS</a>, <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00325">INTENSITY_MAX</a>, <a class="el" href="Detector_8hpp_source.html#l00026">multiscale::analysis::Detector::outputImage</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00327">POLYGON_CLOSED</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>.</p>
 
 </div>
 </div>
@@ -1635,14 +1761,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p>References <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00198">computeAverageMeasures()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00180">findRegions()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00170">morphologicalClose()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00036">regions</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00162">smoothImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00176">thresholdImage()</a>.</p>
 
-<p><div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_ae47319444db34d72d4316f49f965b69d_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_ae47319444db34d72d4316f49f965b69d_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_ae47319444db34d72d4316f49f965b69d_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_ae47319444db34d72d4316f49f965b69d_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a92260dc64fb1de8f72df3a7bd44e171d" title="Change the contrast and brightness of the image." alt="" coords="267,156,488,220"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1" title="Compute the average clusteredness degree and average density." alt="" coords="264,288,491,352"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="279,375,476,422"/><area shape="rect" id="node35" href="classmultiscale_1_1analysis_1_1RegionDetector.html#adcb8ab3ced63de9168734f0b24072705" title="Apply the morphological close operator on the image." alt="" coords="273,445,481,509"/><area shape="rect" id="node37" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a895f12ad46f2e0d1db45637a5935c2b5" title="Smooth out differences in the image." alt="" coords="273,532,481,579"/><area shape="rect" id="node39" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a614cd80fac5d3df2a25c401bb221149c" title="Apply the threshold filter on the image." alt="" coords="287,602,468,666"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3de7a4d365c182917b74117a22075ec4" title="Convert alpha from the range [0, ALPHA_MAX] to [ALPHA_REAL_MIN, ALPHA_REAL_MAX]." alt="" coords="541,95,747,142"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a60083ca10a42c25d67e371506cbf5620" title="Convert beta from the range [0, BETA_MAX] to [BETA_REAL_MIN, BETA_REAL_MAX]." alt="" coords="545,164,743,211"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="541,234,747,298"/><area shape="rect" id="node26" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f" title="Find contours in image." alt="" coords="1368,342,1571,406"/><area shape="rect" id="node33" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a2be058ae797d80787725ae2c246ba256" title="Check if the region is valid." alt="" coords="540,480,748,527"/><area shape="rect" id="node15" href="classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="1125,35,1288,82"/><area shape="rect" id="node17" href="classmultiscale_1_1Geometry2D.html#ae8e5e46c312835e27478ce00b11f8a7c" title="Get the index of the point which is the closest to the origin." alt="" coords="823,64,1020,111"/><area shape="rect" id="node20" href="classmultiscale_1_1analysis_1_1Detector.html#ada30f980ed5ce2f975bb827c393b8cd0" title="Compute the angle of the polygon." alt="" coords="839,134,1004,180"/><area shape="rect" id="node22" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a938fa8d165c87dc69e962883942072d2" title="Compute the area of the given polygon considering holes." alt="" coords="827,203,1016,250"/><area shape="rect" id="node28" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a89995b72e578951ea7ddf43c5c25e14a" title="Compute the clusteredness degree of the region delimited by the given polygon." alt="" coords="797,273,1045,337"/><area shape="rect" id="node30" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6beb6b2ecaccd60130bcf8dd808750b8" title="Compute the density of the area delimited by the given polygon." alt="" coords="817,360,1025,407"/><area shape="rect" id="node24" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18" title="Compute the area of the white holes in the given matrix." alt="" coords="1095,282,1319,328"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a92260dc64fb1de8f72df3a7bd44e171d" title="Change the contrast and brightness of the image." alt="" coords="267,65,488,129"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1" title="Compute the average clusteredness degree and average density." alt="" coords="264,195,491,259"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="279,291,476,338"/><area shape="rect" id="node40" href="classmultiscale_1_1analysis_1_1RegionDetector.html#adcb8ab3ced63de9168734f0b24072705" title="Apply the morphological close operator on the image." alt="" coords="273,361,481,425"/><area shape="rect" id="node42" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a895f12ad46f2e0d1db45637a5935c2b5" title="Smooth out differences in the image." alt="" coords="273,449,481,495"/><area shape="rect" id="node44" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a614cd80fac5d3df2a25c401bb221149c" title="Apply the threshold filter on the image." alt="" coords="287,519,468,583"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3de7a4d365c182917b74117a22075ec4" title="Convert alpha from the range [0, ALPHA_MAX] to [ALPHA_REAL_MIN, ALPHA_REAL_MAX]." alt="" coords="549,5,755,51"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a60083ca10a42c25d67e371506cbf5620" title="Convert beta from the range [0, BETA_MAX] to [BETA_REAL_MIN, BETA_REAL_MAX]." alt="" coords="553,74,751,121"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5ad71a8af2beb1a02573d0c125af4e16" title="Compute the average clusteredness degree." alt="" coords="824,15,1051,79"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3f1171daf4a952d12d573ab9d0838490" title="Compute the average density." alt="" coords="539,195,765,259"/><area shape="rect" id="node13" href="classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="1141,93,1304,139"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="549,283,755,347"/><area shape="rect" id="node31" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f" title="Find contours in image." alt="" coords="1384,431,1587,495"/><area shape="rect" id="node38" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a2be058ae797d80787725ae2c246ba256" title="Check if the region is valid." alt="" coords="548,569,756,615"/><area shape="rect" id="node22" href="classmultiscale_1_1Geometry2D.html#ae8e5e46c312835e27478ce00b11f8a7c" title="Get the index of the point which is the closest to the origin." alt="" coords="839,153,1036,199"/><area shape="rect" id="node25" href="classmultiscale_1_1analysis_1_1Detector.html#ada30f980ed5ce2f975bb827c393b8cd0" title="Compute the angle of the polygon." alt="" coords="855,222,1020,269"/><area shape="rect" id="node27" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a938fa8d165c87dc69e962883942072d2" title="Compute the area of the given polygon considering holes." alt="" coords="843,291,1032,338"/><area shape="rect" id="node33" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a89995b72e578951ea7ddf43c5c25e14a" title="Compute the clusteredness degree of the region delimited by the given polygon." alt="" coords="813,361,1061,425"/><area shape="rect" id="node35" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6beb6b2ecaccd60130bcf8dd808750b8" title="Compute the density of the area delimited by the given polygon." alt="" coords="833,449,1041,495"/><area shape="rect" id="node29" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18" title="Compute the area of the white holes in the given matrix." alt="" coords="1111,370,1335,417"/></map>
 </div>
 </p>
 
@@ -1678,28 +1804,28 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00266">266</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00296">296</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00296">CONTOUR_AREA_ORIENTED</a>, <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00313">INTENSITY_MAX</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00277">regionHolesArea()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00312">THRESHOLD_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00311">THRESHOLD_MAX</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00308">CONTOUR_AREA_ORIENTED</a>, <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00325">INTENSITY_MAX</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00307">regionHolesArea()</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00324">THRESHOLD_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00323">THRESHOLD_MAX</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00226">createRegionFromPolygon()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00256">createRegionFromPolygon()</a>.</p>
 
-<p><div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a938fa8d165c87dc69e962883942072d2_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a938fa8d165c87dc69e962883942072d2_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a938fa8d165c87dc69e962883942072d2_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a938fa8d165c87dc69e962883942072d2_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18" title="Compute the area of the white holes in the given matrix." alt="" coords="247,14,471,61"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f" title="Find contours in image." alt="" coords="520,5,723,69"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a938fa8d165c87dc69e962883942072d2_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a938fa8d165c87dc69e962883942072d2_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a938fa8d165c87dc69e962883942072d2_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a938fa8d165c87dc69e962883942072d2_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="247,5,452,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="503,14,700,61"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="749,5,960,69"/></map>
@@ -1739,17 +1865,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00244">244</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00274">274</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00313">INTENSITY_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00312">THRESHOLD_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00311">THRESHOLD_MAX</a>.</p>
+<p>References <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00325">INTENSITY_MAX</a>, <a class="el" href="RegionDetector_8hpp_source.html#l00324">THRESHOLD_CLUSTEREDNESS</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00323">THRESHOLD_MAX</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00226">createRegionFromPolygon()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00256">createRegionFromPolygon()</a>.</p>
 
-<p><div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a89995b72e578951ea7ddf43c5c25e14a_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a89995b72e578951ea7ddf43c5c25e14a_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a89995b72e578951ea7ddf43c5c25e14a_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a89995b72e578951ea7ddf43c5c25e14a_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="303,5,508,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="559,14,756,61"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="805,5,1016,69"/></map>
@@ -1789,17 +1915,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00256">256</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00286">286</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00313">INTENSITY_MAX</a>.</p>
+<p>References <a class="el" href="Detector_8hpp_source.html#l00022">multiscale::analysis::Detector::image</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00325">INTENSITY_MAX</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00226">createRegionFromPolygon()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00256">createRegionFromPolygon()</a>.</p>
 
-<p><div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-32-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a6beb6b2ecaccd60130bcf8dd808750b8_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a6beb6b2ecaccd60130bcf8dd808750b8_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a6beb6b2ecaccd60130bcf8dd808750b8_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a6beb6b2ecaccd60130bcf8dd808750b8_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="265,5,471,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="521,14,719,61"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="768,5,979,69"/></map>
@@ -1838,28 +1964,28 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00277">277</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00307">307</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00296">CONTOUR_AREA_ORIENTED</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00211">findContoursInImage()</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00308">CONTOUR_AREA_ORIENTED</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00241">findContoursInImage()</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00296">regionArea()</a>.</p>
 
-<p><div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-29-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_ab110a0a67852484c700ff035089fce18_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_ab110a0a67852484c700ff035089fce18_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_ab110a0a67852484c700ff035089fce18_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_ab110a0a67852484c700ff035089fce18_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f" title="Find contours in image." alt="" coords="280,5,483,69"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_ab110a0a67852484c700ff035089fce18_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_ab110a0a67852484c700ff035089fce18_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_ab110a0a67852484c700ff035089fce18_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_ab110a0a67852484c700ff035089fce18_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a938fa8d165c87dc69e962883942072d2" title="Compute the area of the given polygon considering holes." alt="" coords="281,14,471,61"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="521,5,727,69"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="777,14,975,61"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="1024,5,1235,69"/></map>
@@ -1896,22 +2022,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_ada64f919fd5310987b950c052a3cf93a_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_ada64f919fd5310987b950c052a3cf93a_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_ada64f919fd5310987b950c052a3cf93a_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_ada64f919fd5310987b950c052a3cf93a_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="235,5,437,69"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-32-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-36-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-32-content" class="dyncontent" style="display:none;">
+<div id="dynsection-36-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_ada64f919fd5310987b950c052a3cf93a_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_ada64f919fd5310987b950c052a3cf93a_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_ada64f919fd5310987b950c052a3cf93a_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_ada64f919fd5310987b950c052a3cf93a_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="236,32,431,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="481,5,676,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="553,59,604,88"/></map>
@@ -1948,22 +2074,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-33-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-37-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div id="dynsection-37-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a054b6327918fd9a6ff2de293dac1afc0_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a054b6327918fd9a6ff2de293dac1afc0_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a054b6327918fd9a6ff2de293dac1afc0_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a054b6327918fd9a6ff2de293dac1afc0_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="229,5,432,69"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-34-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-38-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div id="dynsection-38-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a054b6327918fd9a6ff2de293dac1afc0_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a054b6327918fd9a6ff2de293dac1afc0_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a054b6327918fd9a6ff2de293dac1afc0_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a054b6327918fd9a6ff2de293dac1afc0_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="231,32,425,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="476,5,671,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="548,59,599,88"/></map>
@@ -2000,22 +2126,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-35-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-39-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div id="dynsection-39-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a968d5ddbc060fa823e4c79c9dcfec300_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a968d5ddbc060fa823e4c79c9dcfec300_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a968d5ddbc060fa823e4c79c9dcfec300_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a968d5ddbc060fa823e4c79c9dcfec300_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="288,5,491,69"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-36-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-40-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-36-content" class="dyncontent" style="display:none;">
+<div id="dynsection-40-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a968d5ddbc060fa823e4c79c9dcfec300_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a968d5ddbc060fa823e4c79c9dcfec300_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a968d5ddbc060fa823e4c79c9dcfec300_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a968d5ddbc060fa823e4c79c9dcfec300_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="289,32,484,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="535,5,729,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="607,59,657,88"/></map>
@@ -2052,22 +2178,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-37-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-37-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-41-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-37-content" class="dyncontent" style="display:none;">
+<div id="dynsection-41-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a069ed208d5ff16e6caa0deb4ff21858b_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a069ed208d5ff16e6caa0deb4ff21858b_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a069ed208d5ff16e6caa0deb4ff21858b_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a069ed208d5ff16e6caa0deb4ff21858b_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="245,5,448,69"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-38" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-38-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-42" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-42-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-38-content" class="dyncontent" style="display:none;">
+<div id="dynsection-42-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a069ed208d5ff16e6caa0deb4ff21858b_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a069ed208d5ff16e6caa0deb4ff21858b_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a069ed208d5ff16e6caa0deb4ff21858b_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a069ed208d5ff16e6caa0deb4ff21858b_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="247,32,441,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="492,5,687,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="564,59,615,88"/></map>
@@ -2104,22 +2230,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-39" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-39-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-43" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-43-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-39-content" class="dyncontent" style="display:none;">
+<div id="dynsection-43-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a5e096d2e4ff8dfe985869d6d0fcd74b8_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a5e096d2e4ff8dfe985869d6d0fcd74b8_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a5e096d2e4ff8dfe985869d6d0fcd74b8_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a5e096d2e4ff8dfe985869d6d0fcd74b8_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="280,5,483,69"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-40" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-40-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-44" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-44-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-40-content" class="dyncontent" style="display:none;">
+<div id="dynsection-44-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a5e096d2e4ff8dfe985869d6d0fcd74b8_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a5e096d2e4ff8dfe985869d6d0fcd74b8_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a5e096d2e4ff8dfe985869d6d0fcd74b8_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a5e096d2e4ff8dfe985869d6d0fcd74b8_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="281,32,476,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="527,5,721,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="599,59,649,88"/></map>
@@ -2154,11 +2280,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>References <a class="el" href="Detector_8hpp_source.html#l00031">multiscale::analysis::Detector::origin</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
-<p><div id="dynsection-41" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-41-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-45-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-45-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-41-content" class="dyncontent" style="display:none;">
+<div id="dynsection-45-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a9ace9f195f33aab9597f8a7c107c219d_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a9ace9f195f33aab9597f8a7c107c219d_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a9ace9f195f33aab9597f8a7c107c219d_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a9ace9f195f33aab9597f8a7c107c219d_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="235,5,437,69"/></map>
@@ -2193,11 +2319,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>References <a class="el" href="Detector_8hpp_source.html#l00031">multiscale::analysis::Detector::origin</a>, and <a class="el" href="Detector_8cpp_source.html#l00057">multiscale::analysis::Detector::setDetectorSpecificFieldsInitialisationFlag()</a>.</p>
 
-<p><div id="dynsection-42" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-42-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-46" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-46-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-46-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-42-content" class="dyncontent" style="display:none;">
+<div id="dynsection-46-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a2e7fa31b11734cdd3f7fc7db55cedab8_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a2e7fa31b11734cdd3f7fc7db55cedab8_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a2e7fa31b11734cdd3f7fc7db55cedab8_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a2e7fa31b11734cdd3f7fc7db55cedab8_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="235,5,437,69"/></map>
@@ -2234,22 +2360,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-43" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-43-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-47-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-47-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-43-content" class="dyncontent" style="display:none;">
+<div id="dynsection-47-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a5cf10aea88e85198ce54df0e94e6d1a7_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a5cf10aea88e85198ce54df0e94e6d1a7_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a5cf10aea88e85198ce54df0e94e6d1a7_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a5cf10aea88e85198ce54df0e94e6d1a7_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="243,5,445,69"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-44" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-44-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-44-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-48-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-44-content" class="dyncontent" style="display:none;">
+<div id="dynsection-48-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a5cf10aea88e85198ce54df0e94e6d1a7_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a5cf10aea88e85198ce54df0e94e6d1a7_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a5cf10aea88e85198ce54df0e94e6d1a7_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a5cf10aea88e85198ce54df0e94e6d1a7_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="244,32,439,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="489,5,684,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="561,59,612,88"/></map>
@@ -2286,22 +2412,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00100">loadDetectorParameterValues()</a>.</p>
 
-<p><div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-45-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-45-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-49" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-49-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-49-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-45-content" class="dyncontent" style="display:none;">
+<div id="dynsection-49-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a066e87a1f134194dabfc760d241b8ab2_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a066e87a1f134194dabfc760d241b8ab2_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a066e87a1f134194dabfc760d241b8ab2_cgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a066e87a1f134194dabfc760d241b8ab2_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00" title="Set the detector specific fields initialisation flag to true." alt="" coords="259,5,461,69"/></map>
 </div>
 </p>
 
-<p><div id="dynsection-46" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-46-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-46-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-50" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-50-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-50-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-46-content" class="dyncontent" style="display:none;">
+<div id="dynsection-50-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a066e87a1f134194dabfc760d241b8ab2_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a066e87a1f134194dabfc760d241b8ab2_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a066e87a1f134194dabfc760d241b8ab2_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a066e87a1f134194dabfc760d241b8ab2_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="260,32,455,61"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="505,5,700,35"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="577,59,628,88"/></map>
@@ -2347,11 +2473,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
-<p><div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-47-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-47-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-51" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-51-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-51-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-47-content" class="dyncontent" style="display:none;">
+<div id="dynsection-51-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a895f12ad46f2e0d1db45637a5935c2b5_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a895f12ad46f2e0d1db45637a5935c2b5_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a895f12ad46f2e0d1db45637a5935c2b5_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a895f12ad46f2e0d1db45637a5935c2b5_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="261,5,472,69"/></map>
@@ -2403,15 +2529,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8cpp_source.html#l00176">176</a> of file <a class="el" href="RegionDetector_8cpp_source.html">RegionDetector.cpp</a>.</p>
 
-<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00311">THRESHOLD_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>.</p>
+<p>References <a class="el" href="RegionDetector_8hpp_source.html#l00323">THRESHOLD_MAX</a>, and <a class="el" href="RegionDetector_8hpp_source.html#l00034">thresholdValue</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
-<p><div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-48-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-52" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-52-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-52-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-48-content" class="dyncontent" style="display:none;">
+<div id="dynsection-52-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a614cd80fac5d3df2a25c401bb221149c_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a614cd80fac5d3df2a25c401bb221149c_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1RegionDetector_a614cd80fac5d3df2a25c401bb221149c_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a614cd80fac5d3df2a25c401bb221149c_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="237,5,448,69"/></map>
@@ -2442,7 +2568,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00028">28</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00030">getAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00070">setAlpha()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00365">convertAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00030">getAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00070">setAlpha()</a>.</p>
 
 </div>
 </div>
@@ -2464,9 +2590,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00304">304</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00316">316</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00365">convertAlpha()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
 </div>
 </div>
@@ -2488,9 +2614,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00299">299</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00311">311</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00365">convertAlpha()</a>.</p>
 
 </div>
 </div>
@@ -2512,9 +2638,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00298">298</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00310">310</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00335">convertAlpha()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00365">convertAlpha()</a>.</p>
 
 </div>
 </div>
@@ -2539,7 +2665,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00025">25</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00198">computeAverageMeasures()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00203">computeAverageClusterednessDegree()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00342">outputAveragedMeasuresToCsvFile()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>.</p>
 
 </div>
 </div>
@@ -2564,7 +2690,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00026">26</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00198">computeAverageMeasures()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00230">computeAverageDensity()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00342">outputAveragedMeasuresToCsvFile()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>.</p>
 
 </div>
 </div>
@@ -2589,7 +2715,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00029">29</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00034">getBeta()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00076">setBeta()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00158">changeContrastAndBrightness()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00369">convertBeta()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00034">getBeta()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00076">setBeta()</a>.</p>
 
 </div>
 </div>
@@ -2611,9 +2737,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00305">305</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00317">317</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00369">convertBeta()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
 </div>
 </div>
@@ -2635,9 +2761,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00302">302</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00314">314</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00369">convertBeta()</a>.</p>
 
 </div>
 </div>
@@ -2659,9 +2785,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00301">301</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00313">313</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00339">convertBeta()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00369">convertBeta()</a>.</p>
 
 </div>
 </div>
@@ -2708,7 +2834,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00308">308</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00320">320</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2730,9 +2856,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00296">296</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00308">308</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00238">isValidRegion()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00277">regionHolesArea()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00268">isValidRegion()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00296">regionArea()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00307">regionHolesArea()</a>.</p>
 
 </div>
 </div>
@@ -2754,9 +2880,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00317">317</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00329">329</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00317">outputResultsToImage()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00347">outputResultsToImage()</a>.</p>
 
 </div>
 </div>
@@ -2803,7 +2929,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00309">309</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00321">321</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -2827,9 +2953,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00313">313</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00325">325</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00317">outputResultsToImage()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00244">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00256">regionDensity()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00347">outputResultsToImage()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00296">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00274">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00286">regionDensity()</a>.</p>
 
 </div>
 </div>
@@ -2851,7 +2977,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00306">306</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00318">318</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -2875,7 +3001,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00307">307</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00319">319</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -2924,9 +3050,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00283">283</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00295">295</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00342">outputAveragedMeasuresToCsvFile()</a>.</p>
 
 </div>
 </div>
@@ -2948,9 +3074,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00284">284</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00296">296</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00312">outputAveragedMeasuresToCsvFile()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00342">outputAveragedMeasuresToCsvFile()</a>.</p>
 
 </div>
 </div>
@@ -2972,9 +3098,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00315">315</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00327">327</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00317">outputResultsToImage()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00347">outputResultsToImage()</a>.</p>
 
 </div>
 </div>
@@ -2996,7 +3122,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00310">310</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00322">322</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -3023,7 +3149,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00033">33</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00050">getRegionAreaThresh()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00238">isValidRegion()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00112">setRegionAreaThresh()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00050">getRegionAreaThresh()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00124">initialiseDetectorSpecificFields()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00268">isValidRegion()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00015">RegionDetector()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00112">setRegionAreaThresh()</a>.</p>
 
 </div>
 </div>
@@ -3048,7 +3174,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00036">36</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00288">clearPreviousDetectionResults()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00066">getRegions()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00306">outputRegionsToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00292">outputResultsToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00317">outputResultsToImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00318">clearPreviousDetectionResults()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00066">getRegions()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00336">outputRegionsToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00322">outputResultsToCsvFile()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00347">outputResultsToImage()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00146">processImageAndDetect()</a>.</p>
 
 </div>
 </div>
@@ -3070,9 +3196,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00312">312</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00324">324</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00244">regionClusterednessDegree()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00296">regionArea()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00274">regionClusterednessDegree()</a>.</p>
 
 </div>
 </div>
@@ -3094,9 +3220,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00311">311</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00323">323</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00266">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00244">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00176">thresholdImage()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00296">regionArea()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00274">regionClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00176">thresholdImage()</a>.</p>
 
 </div>
 </div>
@@ -3143,7 +3269,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00286">286</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00298">298</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -3167,7 +3293,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00287">287</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00299">299</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -3191,7 +3317,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00290">290</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00302">302</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -3213,7 +3339,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00291">291</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00303">303</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -3237,7 +3363,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00288">288</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00300">300</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -3261,7 +3387,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00289">289</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00301">301</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -3285,7 +3411,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00292">292</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00304">304</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -3309,7 +3435,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00293">293</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00305">305</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00136">createDetectorSpecificTrackbars()</a>.</p>
 
@@ -3333,7 +3459,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00295">295</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="RegionDetector_8hpp_source.html#l00307">307</a> of file <a class="el" href="RegionDetector_8hpp_source.html">RegionDetector.hpp</a>.</p>
 
 </div>
 </div>
@@ -3347,7 +3473,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html">RegionDetector</a></li>
-    <li class="footer">Generated on Fri Oct 4 2013 18:31:07 for Multiscale by
+    <li class="footer">Generated on Sun Oct 6 2013 14:42:18 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

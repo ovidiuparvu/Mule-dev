@@ -6,17 +6,19 @@
 <area shape="rect" id="node25" href="$Detector_8cpp.html" title="modules/analysis/spatial\l/src/Detector.cpp" alt="" coords="1341,110,1507,157"/>
 <area shape="rect" id="node27" href="$Entity_8cpp.html" title="modules/analysis/spatial\l/src/Entity.cpp" alt="" coords="1531,110,1696,157"/>
 <area shape="rect" id="node29" href="$RegionDetector_8cpp.html" title="modules/analysis/spatial\l/src/RegionDetector.cpp" alt="" coords="1720,110,1885,157"/>
-<area shape="rect" id="node32" href="$MinEnclosingTriangleFinder_8hpp.html" title="modules/util/include\l/multiscale/util/MinEnclosing\lTriangleFinder.hpp" alt="" coords="875,101,1061,165"/>
-<area shape="rect" id="node37" href="$MinEnclosingTriangleFinderSample_8cpp.html" title="modules/util/sample\l/MinEnclosingTriangleFinder\lSample.cpp" alt="" coords="1517,213,1704,277"/>
-<area shape="rect" id="node44" href="$Geometry2D_8cpp.html" title="modules/util/src/Geometry2\lD.cpp" alt="" coords="1909,110,2091,157"/>
-<area shape="rect" id="node46" href="$Geometry2DTest_8cpp.html" title="modules/util/test/Geometry2\lDTest.cpp" alt="" coords="2115,110,2301,157"/>
+<area shape="rect" id="node32" href="$DBSCANTest_8cpp.html" title="modules/analysis/spatial\l/test/DBSCANTest.cpp" alt="" coords="1909,110,2075,157"/>
+<area shape="rect" id="node34" href="$MinEnclosingTriangleFinder_8hpp.html" title="modules/util/include\l/multiscale/util/MinEnclosing\lTriangleFinder.hpp" alt="" coords="875,101,1061,165"/>
+<area shape="rect" id="node39" href="$MinEnclosingTriangleFinderSample_8cpp.html" title="modules/util/sample\l/MinEnclosingTriangleFinder\lSample.cpp" alt="" coords="1517,213,1704,277"/>
+<area shape="rect" id="node45" href="$LineCircleIntersectionSample_8cpp.html" title="modules/util/sample\l/LineCircleIntersectionSample.cpp" alt="" coords="2099,110,2320,157"/>
+<area shape="rect" id="node48" href="$Geometry2D_8cpp.html" title="modules/util/src/Geometry2\lD.cpp" alt="" coords="2344,110,2525,157"/>
+<area shape="rect" id="node50" href="$Geometry2DTest_8cpp.html" title="modules/util/test/Geometry2\lDTest.cpp" alt="" coords="2549,110,2736,157"/>
 <area shape="rect" id="node5" href="$ClusterDetector_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="232,213,416,277"/>
 <area shape="rect" id="node15" href="$Silhouette_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/Silhouette.hpp" alt="" coords="440,213,621,277"/>
 <area shape="rect" id="node7" href="$SimulationClusterDetector_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/cluster/SimulationClusterDetector.hpp" alt="" coords="75,325,363,389"/>
 <area shape="rect" id="node13" href="$ClusterDetector_8cpp.html" title="modules/analysis/spatial\l/src/ClusterDetector.cpp" alt="" coords="387,334,552,381"/>
 <area shape="rect" id="node9" href="$SimulationClusterDetector_8cpp.html" title="modules/analysis/spatial\l/src/cluster/SimulationCluster\lDetector.cpp" alt="" coords="5,437,200,501"/>
 <area shape="rect" id="node11" href="$SimulationDetectClusters_8cpp.html" title="modules/analysis/spatial\l/src/SimulationDetectClusters.cpp" alt="" coords="224,446,445,493"/>
-<area shape="rect" id="node35" href="$Region_8cpp.html" title="modules/analysis/spatial\l/src/Region.cpp" alt="" coords="885,222,1051,269"/>
-<area shape="rect" id="node39" href="$MinEnclosingTriangleFinder_8cpp.html" title="modules/util/src/MinEnclosing\lTriangleFinder.cpp" alt="" coords="1075,222,1269,269"/>
-<area shape="rect" id="node41" href="$MinEnclosingTriangleFinderTest_8cpp.html" title="modules/util/test/MinEnclosing\lTriangleFinderTest.cpp" alt="" coords="1293,222,1493,269"/>
+<area shape="rect" id="node37" href="$Region_8cpp.html" title="modules/analysis/spatial\l/src/Region.cpp" alt="" coords="885,222,1051,269"/>
+<area shape="rect" id="node41" href="$MinEnclosingTriangleFinder_8cpp.html" title="modules/util/src/MinEnclosing\lTriangleFinder.cpp" alt="" coords="1075,222,1269,269"/>
+<area shape="rect" id="node43" href="$MinEnclosingTriangleFinderTest_8cpp.html" title="modules/util/test/MinEnclosing\lTriangleFinderTest.cpp" alt="" coords="1293,222,1493,269"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="multiscale::analysis::RegionDetector::computeAverageMeasures" name="multiscale::analysis::RegionDetector::computeAverageMeasures">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a5ad71a8af2beb1a02573d0c125af4e16" title="Compute the average clusteredness degree." alt="" coords="280,5,507,69"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a3f1171daf4a952d12d573ab9d0838490" title="Compute the average density." alt="" coords="280,93,507,157"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="555,14,717,61"/>
+</map>

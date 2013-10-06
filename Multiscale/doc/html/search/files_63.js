@@ -12,6 +12,7 @@ var searchData=
   ['circularmatfactory_2ecpp',['CircularMatFactory.cpp',['../CircularMatFactory_8cpp.html',1,'']]],
   ['circularmatfactory_2ehpp',['CircularMatFactory.hpp',['../CircularMatFactory_8hpp.html',1,'']]],
   ['circularmatfactoryexception_2ehpp',['CircularMatFactoryException.hpp',['../CircularMatFactoryException_8hpp.html',1,'']]],
+  ['circularmatfactorysample_2ecpp',['CircularMatFactorySample.cpp',['../CircularMatFactorySample_8cpp.html',1,'']]],
   ['cluster_2ecpp',['Cluster.cpp',['../Cluster_8cpp.html',1,'']]],
   ['cluster_2ehpp',['Cluster.hpp',['../Cluster_8hpp.html',1,'']]],
   ['clusterdetector_2ecpp',['ClusterDetector.cpp',['../ClusterDetector_8cpp.html',1,'']]],

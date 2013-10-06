@@ -4,6 +4,8 @@ var classmultiscale_1_1analysis_1_1RegionDetector =
     [ "~RegionDetector", "classmultiscale_1_1analysis_1_1RegionDetector.html#a8e41bcae0698a746fee06e8fb9a63bd1", null ],
     [ "changeContrastAndBrightness", "classmultiscale_1_1analysis_1_1RegionDetector.html#a92260dc64fb1de8f72df3a7bd44e171d", null ],
     [ "clearPreviousDetectionResults", "classmultiscale_1_1analysis_1_1RegionDetector.html#a4a89f3a28cbb473acc32f22b49d09389", null ],
+    [ "computeAverageClusterednessDegree", "classmultiscale_1_1analysis_1_1RegionDetector.html#a5ad71a8af2beb1a02573d0c125af4e16", null ],
+    [ "computeAverageDensity", "classmultiscale_1_1analysis_1_1RegionDetector.html#a3f1171daf4a952d12d573ab9d0838490", null ],
     [ "computeAverageMeasures", "classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1", null ],
     [ "convertAlpha", "classmultiscale_1_1analysis_1_1RegionDetector.html#a3de7a4d365c182917b74117a22075ec4", null ],
     [ "convertBeta", "classmultiscale_1_1analysis_1_1RegionDetector.html#a60083ca10a42c25d67e371506cbf5620", null ],

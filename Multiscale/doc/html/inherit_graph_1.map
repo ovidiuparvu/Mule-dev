@@ -1,4 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classmultiscale_1_1analysis_1_1DataPoint.html" title="Class for representing a data point." alt="" coords="7,5,143,51"/>
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)" alt="" coords="193,5,329,51"/>
+<area shape="rect" id="node1" href="$classmultiscale_1_1analysis_1_1DataPoint.html" title="Class for representing a data point." alt="" coords="7,27,143,74"/>
+<area shape="rect" id="node3" href="$classEuclideanDataPoint.html" title="EuclideanDataPoint" alt="" coords="193,5,329,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)" alt="" coords="193,58,329,105"/>
 </map>

@@ -1,11 +1,13 @@
 <map id="modules/analysis/spatial/include/multiscale/analysis/spatial/MatFactory.hpp" name="modules/analysis/spatial/include/multiscale/analysis/spatial/MatFactory.hpp">
-<area shape="rect" id="node3" href="$CircularMatFactory_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/factory/CircularMatFactory.hpp" alt="" coords="224,117,472,181"/>
-<area shape="rect" id="node9" href="$RectangularMatFactory_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/factory/RectangularMatFactory.hpp" alt="" coords="865,117,1137,181"/>
-<area shape="rect" id="node15" href="$RegionDetector_8cpp.html" title="modules/analysis/spatial\l/src/RegionDetector.cpp" alt="" coords="1261,230,1427,277"/>
-<area shape="rect" id="node19" href="$MatFactory_8cpp.html" title="modules/analysis/spatial\l/src/MatFactory.cpp" alt="" coords="1212,126,1377,173"/>
-<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="5,230,211,277"/>
-<area shape="rect" id="node7" href="$CircularMatFactory_8cpp.html" title="modules/analysis/spatial\l/src/factory/CircularMatFactory.cpp" alt="" coords="235,230,461,277"/>
-<area shape="rect" id="node11" href="$RectangularMatFactory_8cpp.html" title="modules/analysis/spatial\l/src/factory/RectangularMatFactory.cpp" alt="" coords="485,230,739,277"/>
-<area shape="rect" id="node13" href="$RectangularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/RectangularDetectRegions.cpp" alt="" coords="763,230,992,277"/>
-<area shape="rect" id="node17" href="$SimulationDetectClusters_8cpp.html" title="modules/analysis/spatial\l/src/SimulationDetectClusters.cpp" alt="" coords="1016,230,1237,277"/>
+<area shape="rect" id="node3" href="$CircularMatFactory_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/factory/CircularMatFactory.hpp" alt="" coords="379,117,627,181"/>
+<area shape="rect" id="node11" href="$RectangularMatFactory_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/factory/RectangularMatFactory.hpp" alt="" coords="1317,117,1589,181"/>
+<area shape="rect" id="node19" href="$RegionDetector_8cpp.html" title="modules/analysis/spatial\l/src/RegionDetector.cpp" alt="" coords="1837,230,2003,277"/>
+<area shape="rect" id="node23" href="$MatFactory_8cpp.html" title="modules/analysis/spatial\l/src/MatFactory.cpp" alt="" coords="1664,126,1829,173"/>
+<area shape="rect" id="node5" href="$CircularMatFactorySample_8cpp.html" title="modules/analysis/spatial\l/sample/CircularMatFactorySample.cpp" alt="" coords="5,230,256,277"/>
+<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="280,230,485,277"/>
+<area shape="rect" id="node9" href="$CircularMatFactory_8cpp.html" title="modules/analysis/spatial\l/src/factory/CircularMatFactory.cpp" alt="" coords="509,230,736,277"/>
+<area shape="rect" id="node13" href="$RectangularMatFactorySample_8cpp.html" title="modules/analysis/spatial\l/sample/RectangularMatFactorySample.cpp" alt="" coords="760,230,1037,277"/>
+<area shape="rect" id="node15" href="$RectangularMatFactory_8cpp.html" title="modules/analysis/spatial\l/src/factory/RectangularMatFactory.cpp" alt="" coords="1061,230,1315,277"/>
+<area shape="rect" id="node17" href="$RectangularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/RectangularDetectRegions.cpp" alt="" coords="1339,230,1568,277"/>
+<area shape="rect" id="node21" href="$SimulationDetectClusters_8cpp.html" title="modules/analysis/spatial\l/src/SimulationDetectClusters.cpp" alt="" coords="1592,230,1813,277"/>
 </map>

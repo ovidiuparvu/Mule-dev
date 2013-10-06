@@ -1202,6 +1202,16 @@
                   <Anchor>a4a89f3a28cbb473acc32f22b49d09389</Anchor>
                  </Node>
                  <Node>
+                  <Name>computeAverageClusterednessDegree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                  <Anchor>a5ad71a8af2beb1a02573d0c125af4e16</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>computeAverageDensity</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                  <Anchor>a3f1171daf4a952d12d573ab9d0838490</Anchor>
+                 </Node>
+                 <Node>
                   <Name>computeAverageMeasures</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>aee096ec729a12b62fd0c61f74601aad1</Anchor>
@@ -3331,6 +3341,42 @@
              </Node>
             </Subnodes>
            </Node>
+           <Node>
+            <Name>EuclideanDataPoint</Name>
+            <Path>classEuclideanDataPoint.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>EuclideanDataPoint</Name>
+              <Path>classEuclideanDataPoint.html</Path>
+              <Anchor>acda27e957f18603d1b790d037ab5b74a</Anchor>
+             </Node>
+             <Node>
+              <Name>EuclideanDataPoint</Name>
+              <Path>classEuclideanDataPoint.html</Path>
+              <Anchor>a8037034faddfd74eb85f7879bb8e7e06</Anchor>
+             </Node>
+             <Node>
+              <Name>~EuclideanDataPoint</Name>
+              <Path>classEuclideanDataPoint.html</Path>
+              <Anchor>a8ee5a1033aba4baa58692f0ae896fbf8</Anchor>
+             </Node>
+             <Node>
+              <Name>distanceTo</Name>
+              <Path>classEuclideanDataPoint.html</Path>
+              <Anchor>a86ac3981ea67375c7854e9d84446f8e5</Anchor>
+             </Node>
+             <Node>
+              <Name>x</Name>
+              <Path>classEuclideanDataPoint.html</Path>
+              <Anchor>a7d3a3555621c6fd195f2f0543e04eaf6</Anchor>
+             </Node>
+             <Node>
+              <Name>y</Name>
+              <Path>classEuclideanDataPoint.html</Path>
+              <Anchor>a108d29336be8bf0bd1aa53c40df3bd68</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
           </Subnodes>
          </Node>
          <Node>
@@ -3361,6 +3407,10 @@
             <Name>multiscale::analysis::DataPoint</Name>
             <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
             <Subnodes>
+             <Node>
+              <Name>EuclideanDataPoint</Name>
+              <Path>classEuclideanDataPoint.html</Path>
+             </Node>
              <Node>
               <Name>multiscale::analysis::Entity</Name>
               <Path>classmultiscale_1_1analysis_1_1Entity.html</Path>
@@ -3664,6 +3714,14 @@
               <Path>functions_0x77.html</Path>
              </Node>
              <Node>
+              <Name>x</Name>
+              <Path>functions_0x78.html</Path>
+             </Node>
+             <Node>
+              <Name>y</Name>
+              <Path>functions_0x79.html</Path>
+             </Node>
+             <Node>
               <Name>~</Name>
               <Path>functions_0x7e.html</Path>
              </Node>
@@ -3838,6 +3896,14 @@
              <Node>
               <Name>w</Name>
               <Path>functions_vars_0x77.html</Path>
+             </Node>
+             <Node>
+              <Name>x</Name>
+              <Path>functions_vars_0x78.html</Path>
+             </Node>
+             <Node>
+              <Name>y</Name>
+              <Path>functions_vars_0x79.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -5530,6 +5596,16 @@
                               <Anchor>a4a89f3a28cbb473acc32f22b49d09389</Anchor>
                              </Node>
                              <Node>
+                              <Name>computeAverageClusterednessDegree</Name>
+                              <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                              <Anchor>a5ad71a8af2beb1a02573d0c125af4e16</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>computeAverageDensity</Name>
+                              <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                              <Anchor>a3f1171daf4a952d12d573ab9d0838490</Anchor>
+                             </Node>
+                             <Node>
                               <Name>computeAverageMeasures</Name>
                               <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                               <Anchor>aee096ec729a12b62fd0c61f74601aad1</Anchor>
@@ -6039,6 +6115,45 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>sample</Name>
+                  <Path>dir_b66b23f1e51739325a7852ea1348c9f9.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>CircularMatFactorySample.cpp</Name>
+                    <Path>CircularMatFactorySample_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>CircularMatFactorySample_8cpp.html</Path>
+                      <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>LexicographicIteratorSample.cpp</Name>
+                    <Path>LexicographicIteratorSample_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>LexicographicIteratorSample_8cpp.html</Path>
+                      <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>RectangularMatFactorySample.cpp</Name>
+                    <Path>RectangularMatFactorySample_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>RectangularMatFactorySample_8cpp.html</Path>
+                      <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>src</Name>
                   <Path>dir_f0033717cfd9395379e47f6b9f751443.html</Path>
                   <Subnodes>
@@ -6394,6 +6509,104 @@
                    <Node>
                     <Name>SpatialCollection2D.cpp</Name>
                     <Path>SpatialCollection2D_8cpp.html</Path>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>test</Name>
+                  <Path>dir_a1f0bc0df36963610234af284c17484b.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>DBSCANTest.cpp</Name>
+                    <Path>DBSCANTest_8cpp.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>EuclideanDataPoint</Name>
+                      <Path>classEuclideanDataPoint.html</Path>
+                      <Subnodes>
+                       <Node>
+                        <Name>EuclideanDataPoint</Name>
+                        <Path>classEuclideanDataPoint.html</Path>
+                        <Anchor>acda27e957f18603d1b790d037ab5b74a</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>EuclideanDataPoint</Name>
+                        <Path>classEuclideanDataPoint.html</Path>
+                        <Anchor>a8037034faddfd74eb85f7879bb8e7e06</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>~EuclideanDataPoint</Name>
+                        <Path>classEuclideanDataPoint.html</Path>
+                        <Anchor>a8ee5a1033aba4baa58692f0ae896fbf8</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>distanceTo</Name>
+                        <Path>classEuclideanDataPoint.html</Path>
+                        <Anchor>a86ac3981ea67375c7854e9d84446f8e5</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>x</Name>
+                        <Path>classEuclideanDataPoint.html</Path>
+                        <Anchor>a7d3a3555621c6fd195f2f0543e04eaf6</Anchor>
+                       </Node>
+                       <Node>
+                        <Name>y</Name>
+                        <Path>classEuclideanDataPoint.html</Path>
+                        <Anchor>a108d29336be8bf0bd1aa53c40df3bd68</Anchor>
+                       </Node>
+                      </Subnodes>
+                     </Node>
+                     <Node>
+                      <Name>convertPoints</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>ac89548852d32515b26757d1751887d70</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>main</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>printResults</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>ac4df2486415fcf7158d6f720dfaee3f5</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>runTest</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>acf823a8eb337447e18e45e66f3761936</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>runTest1</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>a2fa58df822fc8a2d764556bdab3209c8</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>runTest2</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>ae615f1012effd6b85d0dc0ce4a39cc8b</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>runTest3</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>ae5504b5d71abda7a6a7f898e7eea0281</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>runTest4</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>afaf917600a40a856cfdabdd688d53eab</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>runTest5</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>aa8b585accca301a85255cdcc344985b8</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>runTests</Name>
+                      <Path>DBSCANTest_8cpp.html</Path>
+                      <Anchor>a5dcb537699bebb9e9db36ab19c5aacf7</Anchor>
+                     </Node>
+                    </Subnodes>
                    </Node>
                   </Subnodes>
                  </Node>
@@ -7045,6 +7258,22 @@
                 <Path>dir_e1bbca4db05aaf215cff9f951a2ba58e.html</Path>
                 <Subnodes>
                  <Node>
+                  <Name>LineCircleIntersectionSample.cpp</Name>
+                  <Path>LineCircleIntersectionSample_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>main</Name>
+                    <Path>LineCircleIntersectionSample_8cpp.html</Path>
+                    <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+                   </Node>
+                   <Node>
+                    <Name>printPoints</Name>
+                    <Path>LineCircleIntersectionSample_8cpp.html</Path>
+                    <Anchor>ab2318b8c86e76c84337d30231a915cdd</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>MinEnclosingTriangleFinderSample.cpp</Name>
                   <Path>MinEnclosingTriangleFinderSample_8cpp.html</Path>
                   <Subnodes>
@@ -7147,6 +7376,17 @@
                     <Name>WIN_MIN_AREA_TRIANGLE</Name>
                     <Path>MinEnclosingTriangleFinderSample_8cpp.html</Path>
                     <Anchor>a519bf48877dce88abe417e1701ca178b</Anchor>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>RGBColourGeneratorSample.cpp</Name>
+                  <Path>RGBColourGeneratorSample_8cpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>main</Name>
+                    <Path>RGBColourGeneratorSample_8cpp.html</Path>
+                    <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>

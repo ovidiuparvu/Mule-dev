@@ -1,5 +1,6 @@
 <map id="multiscale::LexicographicNumberIterator::number" name="multiscale::LexicographicNumberIterator::number">
 <area shape="rect" id="node3" href="$classmultiscale_1_1LexicographicNumberIterator.html#a9bcb610b3b63b02ceed7d556960e57c3" title="Convert the vector of digits to the number they represent." alt="" coords="225,5,433,51"/>
+<area shape="rect" id="node10" href="$LexicographicIteratorSample_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="304,75,355,104"/>
 <area shape="rect" id="node6" href="$classmultiscale_1_1LexicographicNumberIterator.html#a063dc7e6097724e96ed36bab4d20871b" title="Pad the current number with zeros." alt="" coords="484,5,681,51"/>
 <area shape="rect" id="node8" href="$classmultiscale_1_1LexicographicNumberIterator.html#ac2754a1a57005183e2c9040719c97448" title="Check if there is a next number when in initialised state." alt="" coords="731,5,952,51"/>
 </map>

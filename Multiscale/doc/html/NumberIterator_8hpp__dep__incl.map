@@ -1,16 +1,17 @@
 <map id="modules/util/include/multiscale/util/NumberIterator.hpp" name="modules/util/include/multiscale/util/NumberIterator.hpp">
-<area shape="rect" id="node3" href="$LexicographicNumberIterator_8hpp.html" title="modules/util/include\l/multiscale/util/iterator\l/LexicographicNumberIterator.hpp" alt="" coords="495,111,713,175"/>
-<area shape="rect" id="node13" href="$StandardNumberIterator_8hpp.html" title="modules/util/include\l/multiscale/util/iterator\l/StandardNumberIterator.hpp" alt="" coords="737,111,927,175"/>
-<area shape="rect" id="node20" href="$NumberIterator_8cpp.html" title="modules/util/src/NumberIterator.cpp" alt="" coords="1756,128,1985,157"/>
-<area shape="rect" id="node22" href="$PolarCsvToInputFilesConverter_8hpp.html" title="modules/video/circular\l/include/multiscale/video\l/circular/PolarCsvToInputFilesConverter.hpp" alt="" coords="951,111,1231,175"/>
-<area shape="rect" id="node27" href="$RectangularCsvToInputFilesConverter_8hpp.html" title="modules/video/rectangular\l/include/multiscale/video\l/rectangular/RectangularCsvToInput\lFilesConverter.hpp" alt="" coords="1255,102,1487,183"/>
-<area shape="rect" id="node32" href="$RectangularEntityCsvToInputFilesConverter_8hpp.html" title="modules/video/rectangular\l/include/multiscale/video\l/rectangular/RectangularEntityCsv\lToInputFilesConverter.hpp" alt="" coords="1511,102,1732,183"/>
-<area shape="rect" id="node5" href="$LexicographicNumberIterator_8cpp.html" title="modules/util/src/iterator\l/LexicographicNumberIterator.cpp" alt="" coords="5,241,224,287"/>
-<area shape="rect" id="node7" href="$PolarCsvToInputFilesConverter_8cpp.html" title="modules/video/circular\l/src/PolarCsvToInputFilesConverter.cpp" alt="" coords="461,241,717,287"/>
-<area shape="rect" id="node9" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularCsvToInputFiles\lConverter.cpp" alt="" coords="741,232,955,296"/>
-<area shape="rect" id="node11" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularEntityCsvToInput\lFilesConverter.cpp" alt="" coords="979,232,1197,296"/>
-<area shape="rect" id="node15" href="$StandardNumberIterator_8cpp.html" title="modules/util/src/iterator\l/StandardNumberIterator.cpp" alt="" coords="248,241,437,287"/>
-<area shape="rect" id="node25" href="$PolarMapCsvToInputFiles_8cpp.html" title="modules/video/circular\l/src/PolarMapCsvToInputFiles.cpp" alt="" coords="1221,241,1445,287"/>
-<area shape="rect" id="node30" href="$RectangularMapCsvToInputFiles_8cpp.html" title="modules/video/rectangular\l/src/RectangularMapCsvToInputFiles.cpp" alt="" coords="1469,241,1733,287"/>
-<area shape="rect" id="node35" href="$RectangularMapEntityCsvToInputFiles_8cpp.html" title="modules/video/rectangular\l/src/RectangularMapEntityCsvTo\lInputFiles.cpp" alt="" coords="1757,232,1973,296"/>
+<area shape="rect" id="node3" href="$LexicographicNumberIterator_8hpp.html" title="modules/util/include\l/multiscale/util/iterator\l/LexicographicNumberIterator.hpp" alt="" coords="567,111,785,175"/>
+<area shape="rect" id="node15" href="$StandardNumberIterator_8hpp.html" title="modules/util/include\l/multiscale/util/iterator\l/StandardNumberIterator.hpp" alt="" coords="825,111,1015,175"/>
+<area shape="rect" id="node22" href="$NumberIterator_8cpp.html" title="modules/util/src/NumberIterator.cpp" alt="" coords="1844,128,2073,157"/>
+<area shape="rect" id="node24" href="$PolarCsvToInputFilesConverter_8hpp.html" title="modules/video/circular\l/include/multiscale/video\l/circular/PolarCsvToInputFilesConverter.hpp" alt="" coords="1039,111,1319,175"/>
+<area shape="rect" id="node29" href="$RectangularCsvToInputFilesConverter_8hpp.html" title="modules/video/rectangular\l/include/multiscale/video\l/rectangular/RectangularCsvToInput\lFilesConverter.hpp" alt="" coords="1343,102,1575,183"/>
+<area shape="rect" id="node34" href="$RectangularEntityCsvToInputFilesConverter_8hpp.html" title="modules/video/rectangular\l/include/multiscale/video\l/rectangular/RectangularEntityCsv\lToInputFilesConverter.hpp" alt="" coords="1599,102,1820,183"/>
+<area shape="rect" id="node5" href="$LexicographicIteratorSample_8cpp.html" title="modules/analysis/spatial\l/sample/LexicographicIteratorSample.cpp" alt="" coords="248,241,509,287"/>
+<area shape="rect" id="node7" href="$LexicographicNumberIterator_8cpp.html" title="modules/util/src/iterator\l/LexicographicNumberIterator.cpp" alt="" coords="5,241,224,287"/>
+<area shape="rect" id="node9" href="$PolarCsvToInputFilesConverter_8cpp.html" title="modules/video/circular\l/src/PolarCsvToInputFilesConverter.cpp" alt="" coords="533,241,789,287"/>
+<area shape="rect" id="node11" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularCsvToInputFiles\lConverter.cpp" alt="" coords="813,232,1027,296"/>
+<area shape="rect" id="node13" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularEntityCsvToInput\lFilesConverter.cpp" alt="" coords="1051,232,1269,296"/>
+<area shape="rect" id="node17" href="$StandardNumberIterator_8cpp.html" title="modules/util/src/iterator\l/StandardNumberIterator.cpp" alt="" coords="1293,241,1483,287"/>
+<area shape="rect" id="node27" href="$PolarMapCsvToInputFiles_8cpp.html" title="modules/video/circular\l/src/PolarMapCsvToInputFiles.cpp" alt="" coords="1507,241,1731,287"/>
+<area shape="rect" id="node32" href="$RectangularMapCsvToInputFiles_8cpp.html" title="modules/video/rectangular\l/src/RectangularMapCsvToInputFiles.cpp" alt="" coords="1755,241,2019,287"/>
+<area shape="rect" id="node37" href="$RectangularMapEntityCsvToInputFiles_8cpp.html" title="modules/video/rectangular\l/src/RectangularMapEntityCsvTo\lInputFiles.cpp" alt="" coords="2043,232,2259,296"/>
 </map>

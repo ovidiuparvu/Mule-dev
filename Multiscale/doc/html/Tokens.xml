@@ -44,6 +44,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>CircularMatFactorySample_8cpp.html</Path>
+    <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+    <DeclaredIn>CircularMatFactorySample.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>LexicographicIteratorSample_8cpp.html</Path>
+    <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+    <DeclaredIn>LexicographicIteratorSample.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RectangularMatFactorySample_8cpp.html</Path>
+    <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+    <DeclaredIn>RectangularMatFactorySample.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>initArgumentsConfig</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -574,6 +604,126 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>convertPoints</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>ac89548852d32515b26757d1751887d70</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printResults</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>ac4df2486415fcf7158d6f720dfaee3f5</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>runTest</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>acf823a8eb337447e18e45e66f3761936</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>runTest1</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>a2fa58df822fc8a2d764556bdab3209c8</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>runTest2</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>ae615f1012effd6b85d0dc0ce4a39cc8b</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>runTest3</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>ae5504b5d71abda7a6a7f898e7eea0281</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>runTest4</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>afaf917600a40a856cfdabdd688d53eab</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>runTest5</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>aa8b585accca301a85255cdcc344985b8</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>runTests</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>a5dcb537699bebb9e9db36ab19c5aacf7</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>DBSCANTest_8cpp.html</Path>
+    <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printPoints</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>LineCircleIntersectionSample_8cpp.html</Path>
+    <Anchor>ab2318b8c86e76c84337d30231a915cdd</Anchor>
+    <DeclaredIn>LineCircleIntersectionSample.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>LineCircleIntersectionSample_8cpp.html</Path>
+    <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+    <DeclaredIn>LineCircleIntersectionSample.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>generateRandomSetOf2DPoints</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
@@ -771,6 +921,16 @@
     <Path>MinEnclosingTriangleFinderSample_8cpp.html</Path>
     <Anchor>a63eaa2a2bab85c80e50d7eab65b2280a</Anchor>
     <DeclaredIn>MinEnclosingTriangleFinderSample.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>RGBColourGeneratorSample_8cpp.html</Path>
+    <Anchor>ae66f6b31b5ad750f1fe042a706a4e3d4</Anchor>
+    <DeclaredIn>RGBColourGeneratorSample.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1221,6 +1381,91 @@
     <Path>RectangularMapEntityCsvToInputFiles_8cpp.html</Path>
     <Anchor>a3c04138a5bfe5d72780bb7e82a18e627</Anchor>
     <DeclaredIn>RectangularMapEntityCsvToInputFiles.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EuclideanDataPoint</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>EuclideanDataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classEuclideanDataPoint.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EuclideanDataPoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>EuclideanDataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classEuclideanDataPoint.html</Path>
+    <Anchor>acda27e957f18603d1b790d037ab5b74a</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>EuclideanDataPoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>EuclideanDataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classEuclideanDataPoint.html</Path>
+    <Anchor>a8037034faddfd74eb85f7879bb8e7e06</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~EuclideanDataPoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>EuclideanDataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classEuclideanDataPoint.html</Path>
+    <Anchor>a8ee5a1033aba4baa58692f0ae896fbf8</Anchor>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>distanceTo</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>EuclideanDataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classEuclideanDataPoint.html</Path>
+    <Anchor>a86ac3981ea67375c7854e9d84446f8e5</Anchor>
+    <Abstract>Compute the distance between this data point and another one.</Abstract>
+    <DeclaredIn>DBSCANTest.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>~DataPoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::DataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1DataPoint.html</Path>
+    <Anchor>ab7a7d2baf190376980cd3c2e130a9905</Anchor>
+    <DeclaredIn>DataPoint.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>x</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>EuclideanDataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classEuclideanDataPoint.html</Path>
+    <Anchor>a7d3a3555621c6fd195f2f0543e04eaf6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>y</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>EuclideanDataPoint</Scope>
+    </TokenIdentifier>
+    <Path>classEuclideanDataPoint.html</Path>
+    <Anchor>a108d29336be8bf0bd1aa53c40df3bd68</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -9891,6 +10136,30 @@
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
     <Anchor>aee096ec729a12b62fd0c61f74601aad1</Anchor>
     <Abstract>Compute the average clusteredness degree and average density.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeAverageClusterednessDegree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a5ad71a8af2beb1a02573d0c125af4e16</Anchor>
+    <Abstract>Compute the average clusteredness degree.</Abstract>
+    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeAverageDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::RegionDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+    <Anchor>a3f1171daf4a952d12d573ab9d0838490</Anchor>
+    <Abstract>Compute the average density.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>

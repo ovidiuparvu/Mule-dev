@@ -14,11 +14,13 @@ var searchData=
   ['rectangularmatfactory_2ecpp',['RectangularMatFactory.cpp',['../RectangularMatFactory_8cpp.html',1,'']]],
   ['rectangularmatfactory_2ehpp',['RectangularMatFactory.hpp',['../RectangularMatFactory_8hpp.html',1,'']]],
   ['rectangularmatfactoryexception_2ehpp',['RectangularMatFactoryException.hpp',['../RectangularMatFactoryException_8hpp.html',1,'']]],
+  ['rectangularmatfactorysample_2ecpp',['RectangularMatFactorySample.cpp',['../RectangularMatFactorySample_8cpp.html',1,'']]],
   ['region_2ecpp',['Region.cpp',['../Region_8cpp.html',1,'']]],
   ['region_2ehpp',['Region.hpp',['../Region_8hpp.html',1,'']]],
   ['regiondetector_2ecpp',['RegionDetector.cpp',['../RegionDetector_8cpp.html',1,'']]],
   ['regiondetector_2ehpp',['RegionDetector.hpp',['../RegionDetector_8hpp.html',1,'']]],
   ['regionexception_2ehpp',['RegionException.hpp',['../RegionException_8hpp.html',1,'']]],
   ['rgbcolourgenerator_2ecpp',['RGBColourGenerator.cpp',['../RGBColourGenerator_8cpp.html',1,'']]],
-  ['rgbcolourgenerator_2ehpp',['RGBColourGenerator.hpp',['../RGBColourGenerator_8hpp.html',1,'']]]
+  ['rgbcolourgenerator_2ehpp',['RGBColourGenerator.hpp',['../RGBColourGenerator_8hpp.html',1,'']]],
+  ['rgbcolourgeneratorsample_2ecpp',['RGBColourGeneratorSample.cpp',['../RGBColourGeneratorSample_8cpp.html',1,'']]]
 ];

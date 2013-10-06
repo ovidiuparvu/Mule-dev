@@ -1,8 +1,16 @@
 <map id="multiscale::analysis::DBSCAN::addUnclassifiedNodesToSeedsList" name="multiscale::analysis::DBSCAN::addUnclassifiedNodesToSeedsList">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a400c4e9fb1d9e9bafa970b33912a5ce1" title="Expand the cluster around the given core data point." alt="" coords="281,14,487,61"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="536,14,704,61"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a52f0eb2d04029c75a3c48a37efdac26b" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="753,14,889,61"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a8c9c3ac0c3d8e924468a58f558984dda" title="Detect the clusters of entities in the image." alt="" coords="940,14,1153,61"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a400c4e9fb1d9e9bafa970b33912a5ce1" title="Expand the cluster around the given core data point." alt="" coords="281,106,487,153"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="536,106,704,153"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a52f0eb2d04029c75a3c48a37efdac26b" title="Run the improved DBSCAN algorithm on the provided set of points." alt="" coords="753,106,889,153"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a8c9c3ac0c3d8e924468a58f558984dda" title="Detect the clusters of entities in the image." alt="" coords="940,46,1153,93"/>
+<area shape="rect" id="node15" href="$DBSCANTest_8cpp.html#acf823a8eb337447e18e45e66f3761936" title="runTest" alt="" coords="1013,173,1080,203"/>
 <area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1203,5,1392,69"/>
 <area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1441,5,1652,69"/>
+<area shape="rect" id="node17" href="$DBSCANTest_8cpp.html#a2fa58df822fc8a2d764556bdab3209c8" title="runTest1" alt="" coords="1261,93,1333,123"/>
+<area shape="rect" id="node23" href="$DBSCANTest_8cpp.html#ae615f1012effd6b85d0dc0ce4a39cc8b" title="runTest2" alt="" coords="1261,147,1333,176"/>
+<area shape="rect" id="node26" href="$DBSCANTest_8cpp.html#ae5504b5d71abda7a6a7f898e7eea0281" title="runTest3" alt="" coords="1261,200,1333,229"/>
+<area shape="rect" id="node29" href="$DBSCANTest_8cpp.html#afaf917600a40a856cfdabdd688d53eab" title="runTest4" alt="" coords="1261,253,1333,283"/>
+<area shape="rect" id="node32" href="$DBSCANTest_8cpp.html#aa8b585accca301a85255cdcc344985b8" title="runTest5" alt="" coords="1261,307,1333,336"/>
+<area shape="rect" id="node19" href="$DBSCANTest_8cpp.html#a5dcb537699bebb9e9db36ab19c5aacf7" title="runTests" alt="" coords="1511,200,1583,229"/>
+<area shape="rect" id="node21" href="$DBSCANTest_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1701,200,1752,229"/>
 </map>

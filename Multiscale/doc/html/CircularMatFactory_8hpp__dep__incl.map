@@ -1,4 +1,5 @@
 <map id="modules/analysis/spatial/include/multiscale/analysis/spatial/factory/CircularMatFactory.hpp" name="modules/analysis/spatial/include/multiscale/analysis/spatial/factory/CircularMatFactory.hpp">
-<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="5,118,211,165"/>
-<area shape="rect" id="node5" href="$CircularMatFactory_8cpp.html" title="modules/analysis/spatial\l/src/factory/CircularMatFactory.cpp" alt="" coords="235,118,461,165"/>
+<area shape="rect" id="node3" href="$CircularMatFactorySample_8cpp.html" title="modules/analysis/spatial\l/sample/CircularMatFactorySample.cpp" alt="" coords="5,118,256,165"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="280,118,485,165"/>
+<area shape="rect" id="node7" href="$CircularMatFactory_8cpp.html" title="modules/analysis/spatial\l/src/factory/CircularMatFactory.cpp" alt="" coords="509,118,736,165"/>
 </map>

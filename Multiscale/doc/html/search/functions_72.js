@@ -27,5 +27,11 @@ var searchData=
   ['runalgorithm',['runAlgorithm',['../classmultiscale_1_1analysis_1_1DBSCAN.html#aceb5dd9fe24a24cbf09ddc9082dc1f82',1,'multiscale::analysis::DBSCAN']]],
   ['runminenclosingtrianglefinder',['runMinEnclosingTriangleFinder',['../MinEnclosingTriangleFinderSample_8cpp.html#aef6ea89ecb324851b646e1e9a8f50aff',1,'runMinEnclosingTriangleFinder(const vector&lt; Point2f &gt; &amp;points):&#160;MinEnclosingTriangleFinderSample.cpp'],['../MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972',1,'runMinEnclosingTriangleFinder():&#160;MinEnclosingTriangleFinderSample.cpp']]],
   ['runminenclosingtrianglefinderusingrandompolygons',['runMinEnclosingTriangleFinderUsingRandomPolygons',['../MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a',1,'MinEnclosingTriangleFinderSample.cpp']]],
-  ['runtest',['RunTest',['../classmultiscaletest_1_1MultiscaleTest.html#a3b3c62b74e1fd1eb0633f9b720659ce3',1,'multiscaletest::MultiscaleTest::RunTest()'],['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a9a0c1dfbe0e0b2451b1c4076967f47d9',1,'multiscaletest::MinEnclosingTriangleFinderTest::RunTest()']]]
+  ['runtest',['RunTest',['../classmultiscaletest_1_1MultiscaleTest.html#a3b3c62b74e1fd1eb0633f9b720659ce3',1,'multiscaletest::MultiscaleTest::RunTest()'],['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a9a0c1dfbe0e0b2451b1c4076967f47d9',1,'multiscaletest::MinEnclosingTriangleFinderTest::RunTest()'],['../DBSCANTest_8cpp.html#acf823a8eb337447e18e45e66f3761936',1,'runTest():&#160;DBSCANTest.cpp']]],
+  ['runtest1',['runTest1',['../DBSCANTest_8cpp.html#a2fa58df822fc8a2d764556bdab3209c8',1,'DBSCANTest.cpp']]],
+  ['runtest2',['runTest2',['../DBSCANTest_8cpp.html#ae615f1012effd6b85d0dc0ce4a39cc8b',1,'DBSCANTest.cpp']]],
+  ['runtest3',['runTest3',['../DBSCANTest_8cpp.html#ae5504b5d71abda7a6a7f898e7eea0281',1,'DBSCANTest.cpp']]],
+  ['runtest4',['runTest4',['../DBSCANTest_8cpp.html#afaf917600a40a856cfdabdd688d53eab',1,'DBSCANTest.cpp']]],
+  ['runtest5',['runTest5',['../DBSCANTest_8cpp.html#aa8b585accca301a85255cdcc344985b8',1,'DBSCANTest.cpp']]],
+  ['runtests',['runTests',['../DBSCANTest_8cpp.html#a5dcb537699bebb9e9db36ab19c5aacf7',1,'DBSCANTest.cpp']]]
 ];

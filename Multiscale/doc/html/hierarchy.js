@@ -5,6 +5,7 @@ var hierarchy =
     [ "multiscale::video::CartesianToPolarConverter", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html", null ],
     [ "multiscale::analysis::CircularityMeasure", "classmultiscale_1_1analysis_1_1CircularityMeasure.html", null ],
     [ "multiscale::analysis::DataPoint", "classmultiscale_1_1analysis_1_1DataPoint.html", [
+      [ "EuclideanDataPoint", "classEuclideanDataPoint.html", null ],
       [ "multiscale::analysis::Entity", "classmultiscale_1_1analysis_1_1Entity.html", null ]
     ] ],
     [ "multiscale::analysis::DBSCAN", "classmultiscale_1_1analysis_1_1DBSCAN.html", null ],

@@ -10,6 +10,7 @@ var searchData=
   ['_7edbscan',['~DBSCAN',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a4deb359da661ba495d18a75f43a0b89c',1,'multiscale::analysis::DBSCAN']]],
   ['_7edetector',['~Detector',['../classmultiscale_1_1analysis_1_1Detector.html#ae16b7bf62f39cb287927d56ca17663d7',1,'multiscale::analysis::Detector']]],
   ['_7eentity',['~Entity',['../classmultiscale_1_1analysis_1_1Entity.html#adf6d3f7cb1b2ba029b6b048a395cc8ae',1,'multiscale::analysis::Entity']]],
+  ['_7eeuclideandatapoint',['~EuclideanDataPoint',['../classEuclideanDataPoint.html#a8ee5a1033aba4baa58692f0ae896fbf8',1,'EuclideanDataPoint']]],
   ['_7elexicographicnumberiterator',['~LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#affe04d9733b7d0984a5ab3957cb0096a',1,'multiscale::LexicographicNumberIterator']]],
   ['_7ematfactory',['~MatFactory',['../classmultiscale_1_1analysis_1_1MatFactory.html#aa339532cb504caebcf9ece2c847f4847',1,'multiscale::analysis::MatFactory']]],
   ['_7eminenclosingtrianglefinder',['~MinEnclosingTriangleFinder',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a356eccb6cce71d00144007df0bee1e5e',1,'multiscale::MinEnclosingTriangleFinder']]],
