@@ -196,16 +196,46 @@ void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
 }
 
 void RegionDetector::computeAverageMeasures(vector<Region> &regions) {
+    computeAverageClusterednessDegree(regions);
+    computeAverageDensity(regions);
+}
+
+void RegionDetector::computeAverageClusterednessDegree(vector<Region> &regions) {
     avgClusterednessDegree = 0;
+
+    for (Region &region: regions) {
+        Point2f centroid = region.getCentre();
+        double distance = 0;
+
+        for (Region &otherRegion: regions) {
+            Point2f otherCentroid = otherRegion.getCentre();
+
+            distance += Geometry2D::distanceBtwPoints(centroid, otherCentroid);
+        }
+
+        avgClusterednessDegree += (regions.size() > 1) ? (distance / (regions.size() - 1))
+                                                       : 0;
+    }
+
+    // Take the average of the average distances between clusters
+    avgClusterednessDegree = (regions.size() != 0) ? avgClusterednessDegree / (regions.size())
+                                                   : 0;
+
+    // Invert the value such that it is between 0 and 1. Since we are working with pixels
+    // the minimum distance between two distinct pixels is 1.
+    avgClusterednessDegree = (avgClusterednessDegree > 1) ? (1 / avgClusterednessDegree)
+                                                          : 1;
+}
+
+void RegionDetector::computeAverageDensity(vector<Region> &regions) {
     avgDensity = 0;
 
     for (Region &region : regions) {
-        avgClusterednessDegree += region.getClusterednessDegree();
         avgDensity += region.getDensity();
     }
 
-    avgClusterednessDegree /= regions.size();
-    avgDensity /= regions.size();
+    avgDensity = (regions.size() != 0) ? (avgDensity / regions.size())
+                                       : 0;
 }
 
 vector<vector<Point> > RegionDetector::findContoursInImage(const Mat &image) {

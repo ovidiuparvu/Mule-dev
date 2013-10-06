@@ -188,6 +188,18 @@ namespace multiscale {
                  */
                 void computeAverageMeasures(vector<Region> &regions);
 
+                //! Compute the average clusteredness degree
+                /*!
+                 * \param regions The regions in the image
+                 */
+                void computeAverageClusterednessDegree(vector<Region> &regions);
+
+                //! Compute the average density
+                /*!
+                 * \param regions The regions in the image
+                 */
+                void computeAverageDensity(vector<Region> &regions);
+
                 //! Find contours in image
                 /*!
                  * \param image The image

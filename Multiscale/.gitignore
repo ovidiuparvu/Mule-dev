@@ -5,11 +5,11 @@
 
 # Output of the modules
 
-/out/*
+/out
 
 # Results for the CMSB 2013 paper
 
-/results/*
+/results
 
 # Results from the simulation
 
@@ -17,4 +17,4 @@
 
 # Input files for unit tests
 
-/test/input
+/data/test
