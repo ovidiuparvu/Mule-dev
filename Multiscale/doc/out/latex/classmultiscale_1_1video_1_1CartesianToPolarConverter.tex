@@ -1,0 +1,594 @@
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter}{\section{multiscale\-:\-:video\-:\-:Cartesian\-To\-Polar\-Converter Class Reference}
+\label{classmultiscale_1_1video_1_1CartesianToPolarConverter}\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+}
+
+
+Converter from the rectangular geometry grid cells to annular sectors.  
+
+
+
+
+{\ttfamily \#include $<$Cartesian\-To\-Polar\-Converter.\-hpp$>$}
+
+
+
+Collaboration diagram for multiscale\-:\-:video\-:\-:Cartesian\-To\-Polar\-Converter\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_ab1c91591a31c7a23421643260335bdcd}{Cartesian\-To\-Polar\-Converter} (const string \&\hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_aa15eca9e8d3da0eb8ff1b6583e392f05}{input\-Filepath}, const string \&\hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a024d95ab3b9de6ed6fd1d951c5575e65}{output\-Filepath})
+\item 
+\hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7842464665976d381df75f03d7c71347}{$\sim$\-Cartesian\-To\-Polar\-Converter} ()
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_aae3e7e842456da18741bccccdf084922}{convert} (bool output\-To\-Script)
+\begin{DoxyCompactList}\small\item\em Start the conversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a37891007ade23e05047d33d0c9cb3e13}{read\-Input\-Data} ()
+\begin{DoxyCompactList}\small\item\em Read the input data. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a88d7c95fb76c9e139cb013c11a8dfae0}{read\-Header\-Line} (ifstream \&fin)
+\begin{DoxyCompactList}\small\item\em Read the header line. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7335cccc7e3c14203b00357ec6a2c140}{read\-Concentrations} (ifstream \&fin)
+\begin{DoxyCompactList}\small\item\em Read the concentrations. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a0c3f499725a058d2a3251209d8c16178}{transform\-To\-Annular\-Sectors} ()
+\begin{DoxyCompactList}\small\item\em Convert the concentrations to annular sectors. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_adb3aeeb5f2994f8aa9dc03c8c8f270ad}{output\-Results\-As\-File} ()
+\begin{DoxyCompactList}\small\item\em Output the results as a plain file. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a680e357efb54b1193715259cb339516e}{output\-Results\-As\-Script} ()
+\begin{DoxyCompactList}\small\item\em Output the results as a gnuplot script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{classmultiscale_1_1video_1_1AnnularSector}{Annular\-Sector} $>$ \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a3f8004ac5f8bae93c7a5e09bc37ba0ac}{annular\-Sectors}
+\item 
+vector$<$ double $>$ \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7356e201623f518132d75b7bc48407d3}{concentrations}
+\item 
+unsigned long \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_ab7c8564deaa38c57a251ba9592903238}{nr\-Of\-Concentric\-Circles}
+\item 
+unsigned long \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a62a2f5abe655f440e7c41fe834f828d0}{nr\-Of\-Sectors}
+\item 
+double \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a78003dc9053d89f56c03408f7f8fedda}{simulation\-Time}
+\item 
+string \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_aa15eca9e8d3da0eb8ff1b6583e392f05}{input\-Filepath}
+\item 
+string \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a024d95ab3b9de6ed6fd1d951c5575e65}{output\-Filepath}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const string \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a2657e7972c2d3f7cc4c0011ccd8423e4}{E\-R\-R\-\_\-\-C\-O\-N\-C} = \char`\"{}All \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7356e201623f518132d75b7bc48407d3}{concentrations} have to be between 0 and 1.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_ab3a2114f4dd2615abba3305609f1b616}{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N} = \char`\"{}The dimensions N and M must be positive.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a0a3ab913d167193883dc96aed6cc8290}{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E} = \char`\"{}The simulation time must be non-\/negative.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a298f7aba7ec17e486484fa2e52ebc109}{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N} = \char`\"{}The input file could not be opened\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a27c4664c63c53cc5351bbb3233bdfce1}{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A} = \char`\"{}The input file contains more data than required.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a3dcad19e1da427627d783a3053174372}{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N} = \char`\"{}.out\char`\"{}
+\item 
+static const double \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a59c18c22603ad65bf26533dd2aafd04e}{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N} = 0.\-001
+\item 
+static const double \hyperlink{classmultiscale_1_1video_1_1CartesianToPolarConverter_a79bb03defe0d68884ce5d4f1b0a7d60c}{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X} = 0.\-3
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Converter from the rectangular geometry grid cells to annular sectors. 
+
+Definition at line 17 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_ab1c91591a31c7a23421643260335bdcd}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!Cartesian\-To\-Polar\-Converter@{Cartesian\-To\-Polar\-Converter}}
+\index{Cartesian\-To\-Polar\-Converter@{Cartesian\-To\-Polar\-Converter}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{Cartesian\-To\-Polar\-Converter}]{\setlength{\rightskip}{0pt plus 5cm}Cartesian\-To\-Polar\-Converter\-::\-Cartesian\-To\-Polar\-Converter (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{input\-Filepath, }
+\item[{const string \&}]{output\-Filepath}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_ab1c91591a31c7a23421643260335bdcd}
+
+
+Definition at line 15 of file Cartesian\-To\-Polar\-Converter.\-cpp.
+
+
+
+References nr\-Of\-Concentric\-Circles, nr\-Of\-Sectors, and simulation\-Time.
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7842464665976d381df75f03d7c71347}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!$\sim$\-Cartesian\-To\-Polar\-Converter@{$\sim$\-Cartesian\-To\-Polar\-Converter}}
+\index{$\sim$\-Cartesian\-To\-Polar\-Converter@{$\sim$\-Cartesian\-To\-Polar\-Converter}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{$\sim$\-Cartesian\-To\-Polar\-Converter}]{\setlength{\rightskip}{0pt plus 5cm}Cartesian\-To\-Polar\-Converter\-::$\sim$\-Cartesian\-To\-Polar\-Converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7842464665976d381df75f03d7c71347}
+
+
+Definition at line 24 of file Cartesian\-To\-Polar\-Converter.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_aae3e7e842456da18741bccccdf084922}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!convert@{convert}}
+\index{convert@{convert}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Polar\-Converter\-::convert (
+\begin{DoxyParamCaption}
+\item[{bool}]{output\-To\-Script}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_aae3e7e842456da18741bccccdf084922}
+
+
+Start the conversion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\-To\-Script} & Output to script or to plain file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file Cartesian\-To\-Polar\-Converter.\-cpp.
+
+
+
+References output\-Results\-As\-File(), output\-Results\-As\-Script(), read\-Input\-Data(), and transform\-To\-Annular\-Sectors().
+
+
+
+Referenced by main().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_aae3e7e842456da18741bccccdf084922_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_aae3e7e842456da18741bccccdf084922_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_adb3aeeb5f2994f8aa9dc03c8c8f270ad}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!output\-Results\-As\-File@{output\-Results\-As\-File}}
+\index{output\-Results\-As\-File@{output\-Results\-As\-File}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{output\-Results\-As\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Polar\-Converter\-::output\-Results\-As\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_adb3aeeb5f2994f8aa9dc03c8c8f270ad}
+
+
+Output the results as a plain file. 
+
+
+
+Definition at line 115 of file Cartesian\-To\-Polar\-Converter.\-cpp.
+
+
+
+References annular\-Sectors, O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N, and output\-Filepath.
+
+
+
+Referenced by convert().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_adb3aeeb5f2994f8aa9dc03c8c8f270ad_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a680e357efb54b1193715259cb339516e}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!output\-Results\-As\-Script@{output\-Results\-As\-Script}}
+\index{output\-Results\-As\-Script@{output\-Results\-As\-Script}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{output\-Results\-As\-Script}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Polar\-Converter\-::output\-Results\-As\-Script (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a680e357efb54b1193715259cb339516e}
+
+
+Output the results as a gnuplot script. 
+
+
+
+Definition at line 130 of file Cartesian\-To\-Polar\-Converter.\-cpp.
+
+
+
+References annular\-Sectors, multiscale\-::video\-::\-Polar\-Gnuplot\-Script\-Generator\-::generate\-Script(), output\-Filepath, and simulation\-Time.
+
+
+
+Referenced by convert().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_a680e357efb54b1193715259cb339516e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_a680e357efb54b1193715259cb339516e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7335cccc7e3c14203b00357ec6a2c140}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!read\-Concentrations@{read\-Concentrations}}
+\index{read\-Concentrations@{read\-Concentrations}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{read\-Concentrations}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Polar\-Converter\-::read\-Concentrations (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7335cccc7e3c14203b00357ec6a2c140}
+
+
+Read the concentrations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fin} & Input file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file Cartesian\-To\-Polar\-Converter.\-cpp.
+
+
+
+References concentrations, E\-R\-R\-\_\-\-C\-O\-N\-C, M\-S\-\_\-throw, nr\-Of\-Concentric\-Circles, and nr\-Of\-Sectors.
+
+
+
+Referenced by read\-Input\-Data().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7335cccc7e3c14203b00357ec6a2c140_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a88d7c95fb76c9e139cb013c11a8dfae0}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!read\-Header\-Line@{read\-Header\-Line}}
+\index{read\-Header\-Line@{read\-Header\-Line}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{read\-Header\-Line}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Polar\-Converter\-::read\-Header\-Line (
+\begin{DoxyParamCaption}
+\item[{ifstream \&}]{fin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a88d7c95fb76c9e139cb013c11a8dfae0}
+
+
+Read the header line. 
+
+The header line contains values for number of concentric circles, number of sectors and simulation time
+
+
+\begin{DoxyParams}{Parameters}
+{\em fin} & Input file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file Cartesian\-To\-Polar\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E, E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N, M\-S\-\_\-throw, nr\-Of\-Concentric\-Circles, nr\-Of\-Sectors, and simulation\-Time.
+
+
+
+Referenced by read\-Input\-Data().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_a88d7c95fb76c9e139cb013c11a8dfae0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a37891007ade23e05047d33d0c9cb3e13}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!read\-Input\-Data@{read\-Input\-Data}}
+\index{read\-Input\-Data@{read\-Input\-Data}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{read\-Input\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Polar\-Converter\-::read\-Input\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a37891007ade23e05047d33d0c9cb3e13}
+
+
+Read the input data. 
+
+
+
+Definition at line 37 of file Cartesian\-To\-Polar\-Converter.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A, E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N, input\-Filepath, M\-S\-\_\-throw, read\-Concentrations(), and read\-Header\-Line().
+
+
+
+Referenced by convert().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_a37891007ade23e05047d33d0c9cb3e13_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_a37891007ade23e05047d33d0c9cb3e13_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a0c3f499725a058d2a3251209d8c16178}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!transform\-To\-Annular\-Sectors@{transform\-To\-Annular\-Sectors}}
+\index{transform\-To\-Annular\-Sectors@{transform\-To\-Annular\-Sectors}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{transform\-To\-Annular\-Sectors}]{\setlength{\rightskip}{0pt plus 5cm}void Cartesian\-To\-Polar\-Converter\-::transform\-To\-Annular\-Sectors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a0c3f499725a058d2a3251209d8c16178}
+
+
+Convert the concentrations to annular sectors. 
+
+
+
+Definition at line 90 of file Cartesian\-To\-Polar\-Converter.\-cpp.
+
+
+
+References annular\-Sectors, concentrations, nr\-Of\-Concentric\-Circles, nr\-Of\-Sectors, R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X, and R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N.
+
+
+
+Referenced by convert().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1video_1_1CartesianToPolarConverter_a0c3f499725a058d2a3251209d8c16178_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a3f8004ac5f8bae93c7a5e09bc37ba0ac}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!annular\-Sectors@{annular\-Sectors}}
+\index{annular\-Sectors@{annular\-Sectors}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{annular\-Sectors}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Annular\-Sector}$>$ multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::annular\-Sectors\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a3f8004ac5f8bae93c7a5e09bc37ba0ac}
+Resulting annular sectors 
+
+Definition at line 21 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by output\-Results\-As\-File(), output\-Results\-As\-Script(), and transform\-To\-Annular\-Sectors().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7356e201623f518132d75b7bc48407d3}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!concentrations@{concentrations}}
+\index{concentrations@{concentrations}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{concentrations}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$double$>$ multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::concentrations\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a7356e201623f518132d75b7bc48407d3}
+Concentrations received as input 
+
+Definition at line 22 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by read\-Concentrations(), and transform\-To\-Annular\-Sectors().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a2657e7972c2d3f7cc4c0011ccd8423e4}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!E\-R\-R\-\_\-\-C\-O\-N\-C@{E\-R\-R\-\_\-\-C\-O\-N\-C}}
+\index{E\-R\-R\-\_\-\-C\-O\-N\-C@{E\-R\-R\-\_\-\-C\-O\-N\-C}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{E\-R\-R\-\_\-\-C\-O\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}const string Cartesian\-To\-Polar\-Converter\-::\-E\-R\-R\-\_\-\-C\-O\-N\-C = \char`\"{}All {\bf concentrations} have to be between 0 and 1.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a2657e7972c2d3f7cc4c0011ccd8423e4}
+
+
+Definition at line 74 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by read\-Concentrations().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a27c4664c63c53cc5351bbb3233bdfce1}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A@{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}}
+\index{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A@{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}const string Cartesian\-To\-Polar\-Converter\-::\-E\-R\-R\-\_\-\-I\-N\-\_\-\-E\-X\-T\-R\-A\-\_\-\-D\-A\-T\-A = \char`\"{}The input file contains more data than required.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a27c4664c63c53cc5351bbb3233bdfce1}
+
+
+Definition at line 78 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by read\-Input\-Data().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a298f7aba7ec17e486484fa2e52ebc109}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}}
+\index{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N@{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Cartesian\-To\-Polar\-Converter\-::\-E\-R\-R\-\_\-\-I\-N\-P\-U\-T\-\_\-\-O\-P\-E\-N = \char`\"{}The input file could not be opened\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a298f7aba7ec17e486484fa2e52ebc109}
+
+
+Definition at line 77 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by read\-Input\-Data().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a0a3ab913d167193883dc96aed6cc8290}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E@{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}}
+\index{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E@{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Cartesian\-To\-Polar\-Converter\-::\-E\-R\-R\-\_\-\-N\-E\-G\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E = \char`\"{}The simulation time must be non-\/negative.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a0a3ab913d167193883dc96aed6cc8290}
+
+
+Definition at line 76 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by read\-Header\-Line().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_ab3a2114f4dd2615abba3305609f1b616}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N@{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N}}
+\index{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N@{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Cartesian\-To\-Polar\-Converter\-::\-E\-R\-R\-\_\-\-N\-O\-N\-P\-O\-S\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N = \char`\"{}The dimensions N and M must be positive.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_ab3a2114f4dd2615abba3305609f1b616}
+
+
+Definition at line 75 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by read\-Header\-Line().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_aa15eca9e8d3da0eb8ff1b6583e392f05}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!input\-Filepath@{input\-Filepath}}
+\index{input\-Filepath@{input\-Filepath}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{input\-Filepath}]{\setlength{\rightskip}{0pt plus 5cm}string multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::input\-Filepath\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_aa15eca9e8d3da0eb8ff1b6583e392f05}
+Path to the input file 
+
+Definition at line 28 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by read\-Input\-Data().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_ab7c8564deaa38c57a251ba9592903238}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!nr\-Of\-Concentric\-Circles@{nr\-Of\-Concentric\-Circles}}
+\index{nr\-Of\-Concentric\-Circles@{nr\-Of\-Concentric\-Circles}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{nr\-Of\-Concentric\-Circles}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::nr\-Of\-Concentric\-Circles\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_ab7c8564deaa38c57a251ba9592903238}
+Number of concentric circles 
+
+Definition at line 24 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by Cartesian\-To\-Polar\-Converter(), read\-Concentrations(), read\-Header\-Line(), and transform\-To\-Annular\-Sectors().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a62a2f5abe655f440e7c41fe834f828d0}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!nr\-Of\-Sectors@{nr\-Of\-Sectors}}
+\index{nr\-Of\-Sectors@{nr\-Of\-Sectors}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{nr\-Of\-Sectors}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::nr\-Of\-Sectors\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a62a2f5abe655f440e7c41fe834f828d0}
+Number of sectors 
+
+Definition at line 25 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by Cartesian\-To\-Polar\-Converter(), read\-Concentrations(), read\-Header\-Line(), and transform\-To\-Annular\-Sectors().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a3dcad19e1da427627d783a3053174372}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Cartesian\-To\-Polar\-Converter\-::\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N = \char`\"{}.out\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a3dcad19e1da427627d783a3053174372}
+
+
+Definition at line 80 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by output\-Results\-As\-File().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a024d95ab3b9de6ed6fd1d951c5575e65}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!output\-Filepath@{output\-Filepath}}
+\index{output\-Filepath@{output\-Filepath}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{output\-Filepath}]{\setlength{\rightskip}{0pt plus 5cm}string multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::output\-Filepath\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a024d95ab3b9de6ed6fd1d951c5575e65}
+Path to the output file 
+
+Definition at line 29 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by output\-Results\-As\-File(), and output\-Results\-As\-Script().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a79bb03defe0d68884ce5d4f1b0a7d60c}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X@{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X}}
+\index{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X@{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const double Cartesian\-To\-Polar\-Converter\-::\-R\-A\-D\-I\-U\-S\-\_\-\-M\-A\-X = 0.\-3\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a79bb03defe0d68884ce5d4f1b0a7d60c}
+
+
+Definition at line 83 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by transform\-To\-Annular\-Sectors().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a59c18c22603ad65bf26533dd2aafd04e}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N@{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N}}
+\index{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N@{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const double Cartesian\-To\-Polar\-Converter\-::\-R\-A\-D\-I\-U\-S\-\_\-\-M\-I\-N = 0.\-001\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a59c18c22603ad65bf26533dd2aafd04e}
+
+
+Definition at line 82 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by transform\-To\-Annular\-Sectors().
+
+\hypertarget{classmultiscale_1_1video_1_1CartesianToPolarConverter_a78003dc9053d89f56c03408f7f8fedda}{\index{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}!simulation\-Time@{simulation\-Time}}
+\index{simulation\-Time@{simulation\-Time}!multiscale::video::CartesianToPolarConverter@{multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter}}
+\subsubsection[{simulation\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::video\-::\-Cartesian\-To\-Polar\-Converter\-::simulation\-Time\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1CartesianToPolarConverter_a78003dc9053d89f56c03408f7f8fedda}
+Simulation time corresponding to the input data 
+
+Definition at line 26 of file Cartesian\-To\-Polar\-Converter.\-hpp.
+
+
+
+Referenced by Cartesian\-To\-Polar\-Converter(), output\-Results\-As\-Script(), and read\-Header\-Line().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/video/circular/include/multiscale/video/circular/\hyperlink{CartesianToPolarConverter_8hpp}{Cartesian\-To\-Polar\-Converter.\-hpp}\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/video/circular/src/\hyperlink{CartesianToPolarConverter_8cpp}{Cartesian\-To\-Polar\-Converter.\-cpp}\end{DoxyCompactItemize}

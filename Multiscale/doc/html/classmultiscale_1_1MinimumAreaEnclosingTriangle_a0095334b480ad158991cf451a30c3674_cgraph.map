@@ -1,4 +1,0 @@
-<map id="multiscale::MinimumAreaEnclosingTriangle::height" name="multiscale::MinimumAreaEnclosingTriangle::height">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#ae6c0f66accf4ecf31b0fd96437371626" title="Compute the distance from a point &quot;a&quot; to a line specified by two points &quot;B&quot; and &quot;C&quot;." alt="" coords="304,5,483,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a89173019a673e51d0985f45d067f30cb" title="Return the predecessor of the provided point index." alt="" coords="280,74,507,121"/>
-</map>

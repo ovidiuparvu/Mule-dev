@@ -1,7 +1,0 @@
-<map id="modules/util/include/multiscale/util/iterator/LexicographicNumberIterator.hpp" name="modules/util/include/multiscale/util/iterator/LexicographicNumberIterator.hpp">
-<area shape="rect" id="node3" href="$LexicographicIteratorSample_8cpp.html" title="modules/analysis/spatial\l/sample/LexicographicIteratorSample.cpp" alt="" coords="5,126,267,173"/>
-<area shape="rect" id="node5" href="$LexicographicNumberIterator_8cpp.html" title="modules/util/src/iterator\l/LexicographicNumberIterator.cpp" alt="" coords="291,126,509,173"/>
-<area shape="rect" id="node7" href="$PolarCsvToInputFilesConverter_8cpp.html" title="modules/video/circular\l/src/PolarCsvToInputFilesConverter.cpp" alt="" coords="533,126,789,173"/>
-<area shape="rect" id="node9" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularCsvToInputFiles\lConverter.cpp" alt="" coords="813,117,1027,181"/>
-<area shape="rect" id="node11" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="modules/video/rectangular\l/src/RectangularEntityCsvToInput\lFilesConverter.cpp" alt="" coords="1051,117,1269,181"/>
-</map>

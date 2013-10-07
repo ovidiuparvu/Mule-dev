@@ -1,9 +1,0 @@
-<map id="multiscale::analysis::RegionDetector::findGoodPointsForAngle" name="multiscale::analysis::RegionDetector::findGoodPointsForAngle">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#af804b99efa2c9c5adb04c11a5dc5f589" title="Find good intersection points for computing the angle of the region." alt="" coords="273,5,521,69"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="299,93,496,157"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a9931c3d8089d658186a8c1ac78db5773" title="Determine the intersection point of two line segments, if this point exists." alt="" coords="571,14,741,61"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="789,14,952,61"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="1000,14,1139,61"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1187,14,1325,61"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1Geometry2D.html#a4a6aba3c69956a83af5d81f4d087c205" title="Check if the given point is on the edge." alt="" coords="575,102,737,149"/>
-</map>

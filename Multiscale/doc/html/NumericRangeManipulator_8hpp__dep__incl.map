@@ -1,7 +1,0 @@
-<map id="modules/util/include/multiscale/util/NumericRangeManipulator.hpp" name="modules/util/include/multiscale/util/NumericRangeManipulator.hpp">
-<area shape="rect" id="node3" href="$ClusterDetector_8cpp.html" title="modules/analysis/spatial\l/src/ClusterDetector.cpp" alt="" coords="5,126,171,173"/>
-<area shape="rect" id="node5" href="$MatFactory_8cpp.html" title="modules/analysis/spatial\l/src/MatFactory.cpp" alt="" coords="195,126,360,173"/>
-<area shape="rect" id="node7" href="$RegionDetector_8cpp.html" title="modules/analysis/spatial\l/src/RegionDetector.cpp" alt="" coords="384,126,549,173"/>
-<area shape="rect" id="node9" href="$CartesianToPolarConverter_8cpp.html" title="modules/video/circular\l/src/CartesianToPolarConverter.cpp" alt="" coords="573,126,803,173"/>
-<area shape="rect" id="node11" href="$CartesianToConcentrationsConverter_8cpp.html" title="modules/video/rectangular\l/src/CartesianToConcentrations\lConverter.cpp" alt="" coords="827,117,1032,181"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="multiscale::Geometry2D::distanceBtwPoints" name="multiscale::Geometry2D::distanceBtwPoints">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Entity.html#a39cb4bb856c295c82676085d976d58e8" title="Get the distance between this entity and another one." alt="" coords="247,5,383,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a8ae0be0491a149417bb690d0676166c1" title="Get the index of the point which is the closest to the origin." alt="" coords="216,74,413,121"/>
-</map>

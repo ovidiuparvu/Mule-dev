@@ -1,4 +1,0 @@
-<map id="multiscale::analysis::SimulationClusterDetector::saveResultsAsPNGImage" name="multiscale::analysis::SimulationClusterDetector::saveResultsAsPNGImage">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a37b382d39dd1ba737a69aad90a1e5ac6" title="Output the information computed for the clusters in a in a &quot;.csv&quot; and &quot;.png&quot; file." alt="" coords="237,5,437,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#afeb17d0d9cf27eadfad79042951dfe43" title="Process the save request in case the lowercase &quot;s&quot; key was pressed." alt="" coords="247,93,428,157"/>
-</map>

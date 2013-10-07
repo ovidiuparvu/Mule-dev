@@ -1,0 +1,12 @@
+<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/core/Multiscale.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/core/Multiscale.hpp">
+<area shape="rect" id="node3" href="$ExceptionHandler_8hpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/include/multiscale/exception\l/ExceptionHandler.hpp" alt="" coords="1008,118,1197,199"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="5,257,211,338"/>
+<area shape="rect" id="node7" href="$RectangularDetectRegions_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/RectangularDetectRegions.cpp" alt="" coords="235,257,464,338"/>
+<area shape="rect" id="node9" href="$SimulationDetectClusters_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/SimulationDetectClusters.cpp" alt="" coords="488,257,709,338"/>
+<area shape="rect" id="node13" href="$MapCartesianToPolarScript_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/circular/src\l/MapCartesianToPolarScript.cpp" alt="" coords="733,257,944,338"/>
+<area shape="rect" id="node15" href="$PolarMapCsvToInputFiles_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/circular/src\l/PolarMapCsvToInputFiles.cpp" alt="" coords="1261,257,1464,338"/>
+<area shape="rect" id="node17" href="$MapCartesianToScript_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/rectangular\l/src/MapCartesianToScript.cpp" alt="" coords="1488,257,1691,338"/>
+<area shape="rect" id="node19" href="$RectangularMapCsvToInputFiles_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/rectangular\l/src/RectangularMapCsvToInputFiles.cpp" alt="" coords="1715,257,1979,338"/>
+<area shape="rect" id="node21" href="$RectangularMapEntityCsvToInputFiles_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/rectangular\l/src/RectangularMapEntityCsvToInput\lFiles.cpp" alt="" coords="2003,248,2248,347"/>
+<area shape="rect" id="node11" href="$MinEnclosingTriangleFinderSample_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/util/sample/MinEnclosingTriangle\lFinderSample.cpp" alt="" coords="968,257,1237,338"/>
+</map>

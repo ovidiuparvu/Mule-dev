@@ -1,8 +1,0 @@
-<map id="multiscale::analysis::DBSCAN::runAlgorithm" name="multiscale::analysis::DBSCAN::runAlgorithm">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a1c55a2e893f28de4a68129407c55d5f3" title="Assign the border nodes to the clusters to which the closest core objects belong." alt="" coords="223,84,431,148"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#aebb905108f1ff012f880fe01a1653f48" title="Expand the cluster around the given core data point." alt="" coords="224,171,429,218"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a988f4484bcf65ea0444b0e1f0a4bce7f" title="Find the closest core data point from the given set of neighbours to the given border data point..." alt="" coords="485,5,701,69"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a2524149cf55398e2038aaa389b56bfec" title="Retrieve the list of neighbour indexes which are at a distance &lt; eps far from the given data point..." alt="" coords="492,93,695,139"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a6ead683810b4f04a48cd0a4d0f5f7a6b" title="Add all unclassified neighbour nodes to the seeds list." alt="" coords="480,163,707,227"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a5b0d19aab403005cac7fbe0851f5a969" title="Label all unclassified and noise neighbour nodes as border nodes." alt="" coords="496,251,691,315"/>
-</map>

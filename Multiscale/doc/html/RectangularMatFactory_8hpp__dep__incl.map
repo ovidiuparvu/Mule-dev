@@ -1,7 +1,0 @@
-<map id="modules/analysis/spatial/include/multiscale/analysis/spatial/factory/RectangularMatFactory.hpp" name="modules/analysis/spatial/include/multiscale/analysis/spatial/factory/RectangularMatFactory.hpp">
-<area shape="rect" id="node3" href="$RectangularMatFactorySample_8cpp.html" title="modules/analysis/spatial\l/sample/RectangularMatFactorySample.cpp" alt="" coords="5,118,283,165"/>
-<area shape="rect" id="node5" href="$RectangularMatFactory_8cpp.html" title="modules/analysis/spatial\l/src/factory/RectangularMatFactory.cpp" alt="" coords="307,118,560,165"/>
-<area shape="rect" id="node7" href="$RectangularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/RectangularDetectRegions.cpp" alt="" coords="584,118,813,165"/>
-<area shape="rect" id="node9" href="$RegionDetector_8cpp.html" title="modules/analysis/spatial\l/src/RegionDetector.cpp" alt="" coords="837,118,1003,165"/>
-<area shape="rect" id="node11" href="$SimulationDetectClusters_8cpp.html" title="modules/analysis/spatial\l/src/SimulationDetectClusters.cpp" alt="" coords="1027,118,1248,165"/>
-</map>

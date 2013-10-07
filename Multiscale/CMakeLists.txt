@@ -32,6 +32,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 include(AddDebugPostfix)
 include(AddSample)
 include(AddUnitTest)
+include(IncrementDoxygenBuildNumber)
 include(MacroOutOfSourceBuild)
  
 # Check if an "out of source" build folder was chosen
@@ -75,6 +76,17 @@ if(OpenCV_FOUND)
 
     message(STATUS "OpenCV library was successfully found.")
 endif()
+
+
+#------------------------------------------------------------
+# Documentation configuration
+#------------------------------------------------------------
+
+IncrementDoxygenBuildNumber(
+    "Release" 
+    ${PROJECT_SOURCE_DIR}/doc/Multiscale.doxyfile.in 
+    ${PROJECT_SOURCE_DIR}/doc/Multiscale.doxyfile
+)
 
 
 #------------------------------------------------------------

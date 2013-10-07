@@ -1,9 +1,0 @@
-<map id="multiscale::MinimumAreaEnclosingTriangle::advance" name="multiscale::MinimumAreaEnclosingTriangle::advance">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a772ac3b9529eccbce7af2c72a0360d89" title="Advance b to the right chain." alt="" coords="280,5,507,51"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a350b2e78503488433a0ae5a7a2a22f64" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="280,74,507,121"/>
-<area shape="rect" id="node16" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a963feccd69c5ea86bbf4965d91ed32ed" title="Search for the tangency of side B." alt="" coords="280,143,507,190"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a18f69d582395376b335641e046ecc53d" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="555,65,789,129"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1MinimumAreaEnclosingTriangle.html#a2a116b0cb1b5b8306d2483bd5d55bd68" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="837,74,1064,121"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="1112,39,1309,86"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Region.html#acb88d149b42eee5225e7197a225d31c3" title="Get the measure that the cluster has a triangular shape." alt="" coords="1113,109,1308,155"/>
-</map>

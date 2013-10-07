@@ -1,0 +1,537 @@
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp}{\section{/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/sample/\-Min\-Enclosing\-Triangle\-Finder\-Sample.cpp File Reference}
+\label{MinEnclosingTriangleFinderSample_8cpp}\index{/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/sample/\-Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/sample/\-Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+}
+{\ttfamily \#include \char`\"{}multiscale/exception/\-Exception\-Handler.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multiscale/util/\-Geometry2\-D.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multiscale/util/\-Min\-Enclosing\-Triangle\-Finder.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+Include dependency graph for Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ Point2f $>$ \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a5d00a06554ce2c5a132d3dffc263e8b1}{generate\-Random\-Set\-Of2\-D\-Points} (int nr\-Of\-Points)
+\item 
+void \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a125feb62daf5c197b1574e4cf25a2534}{print\-Polygon} (const vector$<$ Point2f $>$ \&points)
+\item 
+void \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a2d0d2b34e6f06ccf477a26d7dca4919e}{output\-Min\-Enclosing\-Triangle\-Finder\-Results} (const vector$<$ Point2f $>$ \&min\-Enclosing\-Triangle, const vector$<$ Point2f $>$ \&points)
+\item 
+bool \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a034dc3c50ee9138b7ca750f1ca3a0180}{are\-Points\-Enclosed} (const vector$<$ Point2f $>$ \&points, const vector$<$ Point2f $>$ \&triangle)
+\item 
+bool \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a3301420b8efa834eb9f6d9c66cef1f87}{is\-Triangle\-Touching\-Polygon} (const vector$<$ Point2f $>$ \&convex\-Polygon, const vector$<$ Point2f $>$ \&triangle)
+\item 
+bool \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a38124a4460f065f32d4a8da82b64f4ef}{is\-One\-Edge\-Flush} (const vector$<$ Point2f $>$ \&convex\-Polygon, const vector$<$ Point2f $>$ \&triangle)
+\item 
+bool \hyperlink{MinEnclosingTriangleFinderSample_8cpp_aedf4a19a455ffa4eaa382766cd1d29f0}{is\-Valid\-Triangle} (const vector$<$ Point2f $>$ \&points, const vector$<$ Point2f $>$ \&triangle)
+\item 
+void \hyperlink{MinEnclosingTriangleFinderSample_8cpp_aef6ea89ecb324851b646e1e9a8f50aff}{run\-Min\-Enclosing\-Triangle\-Finder} (const vector$<$ Point2f $>$ \&points)
+\item 
+void \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a6d765cc21caf0cbe2e95f43feb90305a}{run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons} ()
+\item 
+void \hyperlink{MinEnclosingTriangleFinderSample_8cpp_afe2b408db704907729503ff139bd5972}{run\-Min\-Enclosing\-Triangle\-Finder} ()
+\item 
+int \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const string \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a519bf48877dce88abe417e1701ca178b}{W\-I\-N\-\_\-\-M\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E} = \char`\"{}Minimum area enclosing triangle\char`\"{}
+\item 
+const int \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a3ee3cca79cf96001aeeacb9cad0e2d45}{K\-E\-Y\-\_\-\-E\-S\-C} = 27
+\item 
+const int \hyperlink{MinEnclosingTriangleFinderSample_8cpp_aeb44a1c2c685ed2800552e1434b43bb2}{R\-A\-D\-I\-U\-S} = 1
+\item 
+const int \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a1f84ea7f565d42ff589ced8a4b4ccb2b}{L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S} = 50
+\item 
+const int \hyperlink{MinEnclosingTriangleFinderSample_8cpp_abd8a8a71a203104d961bc82d8f39be5f}{N\-R\-\_\-\-R\-A\-N\-D\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-S} = 50
+\item 
+const int \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a3fb9ea13a83facbb7917419c6c0e3419}{M\-A\-X\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-S} = 100
+\item 
+const int \hyperlink{MinEnclosingTriangleFinderSample_8cpp_ad9dc34f75b2cd1011753940ab8fe6c7b}{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-X\-\_\-\-M\-A\-X} = 500
+\item 
+const int \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a3814979c768f6a0a6ea15bd1f3135133}{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-Y\-\_\-\-M\-A\-X} = 500
+\item 
+const double \hyperlink{MinEnclosingTriangleFinderSample_8cpp_a63eaa2a2bab85c80e50d7eab65b2280a}{P\-O\-I\-N\-T\-\_\-\-I\-N\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H} = 1\-E-\/4
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a034dc3c50ee9138b7ca750f1ca3a0180}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!are\-Points\-Enclosed@{are\-Points\-Enclosed}}
+\index{are\-Points\-Enclosed@{are\-Points\-Enclosed}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{are\-Points\-Enclosed}]{\setlength{\rightskip}{0pt plus 5cm}bool are\-Points\-Enclosed (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point2f $>$ \&}]{points, }
+\item[{const vector$<$ Point2f $>$ \&}]{triangle}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_a034dc3c50ee9138b7ca750f1ca3a0180}
+
+
+Definition at line 78 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+References P\-O\-I\-N\-T\-\_\-\-I\-N\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H.
+
+
+
+Referenced by is\-Valid\-Triangle().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_a034dc3c50ee9138b7ca750f1ca3a0180_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a5d00a06554ce2c5a132d3dffc263e8b1}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!generate\-Random\-Set\-Of2\-D\-Points@{generate\-Random\-Set\-Of2\-D\-Points}}
+\index{generate\-Random\-Set\-Of2\-D\-Points@{generate\-Random\-Set\-Of2\-D\-Points}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{generate\-Random\-Set\-Of2\-D\-Points}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$Point2f$>$ generate\-Random\-Set\-Of2\-D\-Points (
+\begin{DoxyParamCaption}
+\item[{int}]{nr\-Of\-Points}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_a5d00a06554ce2c5a132d3dffc263e8b1}
+
+
+Definition at line 26 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+References P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-X\-\_\-\-M\-A\-X, and P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-Y\-\_\-\-M\-A\-X.
+
+
+
+Referenced by run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_a5d00a06554ce2c5a132d3dffc263e8b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a38124a4460f065f32d4a8da82b64f4ef}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!is\-One\-Edge\-Flush@{is\-One\-Edge\-Flush}}
+\index{is\-One\-Edge\-Flush@{is\-One\-Edge\-Flush}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{is\-One\-Edge\-Flush}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-One\-Edge\-Flush (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point2f $>$ \&}]{convex\-Polygon, }
+\item[{const vector$<$ Point2f $>$ \&}]{triangle}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_a38124a4460f065f32d4a8da82b64f4ef}
+
+
+Definition at line 116 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by is\-Valid\-Triangle().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_a38124a4460f065f32d4a8da82b64f4ef_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a3301420b8efa834eb9f6d9c66cef1f87}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!is\-Triangle\-Touching\-Polygon@{is\-Triangle\-Touching\-Polygon}}
+\index{is\-Triangle\-Touching\-Polygon@{is\-Triangle\-Touching\-Polygon}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{is\-Triangle\-Touching\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Triangle\-Touching\-Polygon (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point2f $>$ \&}]{convex\-Polygon, }
+\item[{const vector$<$ Point2f $>$ \&}]{triangle}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_a3301420b8efa834eb9f6d9c66cef1f87}
+
+
+Definition at line 93 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by is\-Valid\-Triangle().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_a3301420b8efa834eb9f6d9c66cef1f87_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_aedf4a19a455ffa4eaa382766cd1d29f0}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!is\-Valid\-Triangle@{is\-Valid\-Triangle}}
+\index{is\-Valid\-Triangle@{is\-Valid\-Triangle}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{is\-Valid\-Triangle}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Valid\-Triangle (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point2f $>$ \&}]{points, }
+\item[{const vector$<$ Point2f $>$ \&}]{triangle}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_aedf4a19a455ffa4eaa382766cd1d29f0}
+
+
+Definition at line 134 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+References are\-Points\-Enclosed(), is\-One\-Edge\-Flush(), and is\-Triangle\-Touching\-Polygon().
+
+
+
+Referenced by run\-Min\-Enclosing\-Triangle\-Finder().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{MinEnclosingTriangleFinderSample_8cpp_aedf4a19a455ffa4eaa382766cd1d29f0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_aedf4a19a455ffa4eaa382766cd1d29f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!main@{main}}
+\index{main@{main}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 189 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+References run\-Min\-Enclosing\-Triangle\-Finder().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a2d0d2b34e6f06ccf477a26d7dca4919e}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!output\-Min\-Enclosing\-Triangle\-Finder\-Results@{output\-Min\-Enclosing\-Triangle\-Finder\-Results}}
+\index{output\-Min\-Enclosing\-Triangle\-Finder\-Results@{output\-Min\-Enclosing\-Triangle\-Finder\-Results}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{output\-Min\-Enclosing\-Triangle\-Finder\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void output\-Min\-Enclosing\-Triangle\-Finder\-Results (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point2f $>$ \&}]{min\-Enclosing\-Triangle, }
+\item[{const vector$<$ Point2f $>$ \&}]{points}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_a2d0d2b34e6f06ccf477a26d7dca4919e}
+
+
+Definition at line 54 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+References L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S, P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-X\-\_\-\-M\-A\-X, P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-Y\-\_\-\-M\-A\-X, print\-Polygon(), R\-A\-D\-I\-U\-S, and W\-I\-N\-\_\-\-M\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E.
+
+
+
+Referenced by run\-Min\-Enclosing\-Triangle\-Finder().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{MinEnclosingTriangleFinderSample_8cpp_a2d0d2b34e6f06ccf477a26d7dca4919e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_a2d0d2b34e6f06ccf477a26d7dca4919e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a125feb62daf5c197b1574e4cf25a2534}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!print\-Polygon@{print\-Polygon}}
+\index{print\-Polygon@{print\-Polygon}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{print\-Polygon}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Polygon (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point2f $>$ \&}]{points}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_a125feb62daf5c197b1574e4cf25a2534}
+
+
+Definition at line 38 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by output\-Min\-Enclosing\-Triangle\-Finder\-Results().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_a125feb62daf5c197b1574e4cf25a2534_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_aef6ea89ecb324851b646e1e9a8f50aff}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!run\-Min\-Enclosing\-Triangle\-Finder@{run\-Min\-Enclosing\-Triangle\-Finder}}
+\index{run\-Min\-Enclosing\-Triangle\-Finder@{run\-Min\-Enclosing\-Triangle\-Finder}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{run\-Min\-Enclosing\-Triangle\-Finder}]{\setlength{\rightskip}{0pt plus 5cm}void run\-Min\-Enclosing\-Triangle\-Finder (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point2f $>$ \&}]{points}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_aef6ea89ecb324851b646e1e9a8f50aff}
+
+
+Definition at line 147 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+References multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::find(), is\-Valid\-Triangle(), and output\-Min\-Enclosing\-Triangle\-Finder\-Results().
+
+
+
+Referenced by main(), and run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_aef6ea89ecb324851b646e1e9a8f50aff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_aef6ea89ecb324851b646e1e9a8f50aff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_afe2b408db704907729503ff139bd5972}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!run\-Min\-Enclosing\-Triangle\-Finder@{run\-Min\-Enclosing\-Triangle\-Finder}}
+\index{run\-Min\-Enclosing\-Triangle\-Finder@{run\-Min\-Enclosing\-Triangle\-Finder}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{run\-Min\-Enclosing\-Triangle\-Finder}]{\setlength{\rightskip}{0pt plus 5cm}void run\-Min\-Enclosing\-Triangle\-Finder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_afe2b408db704907729503ff139bd5972}
+
+
+Definition at line 184 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+References run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_afe2b408db704907729503ff139bd5972_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a6d765cc21caf0cbe2e95f43feb90305a}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons@{run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons}}
+\index{run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons@{run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons}]{\setlength{\rightskip}{0pt plus 5cm}void run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{MinEnclosingTriangleFinderSample_8cpp_a6d765cc21caf0cbe2e95f43feb90305a}
+
+
+Definition at line 163 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+References generate\-Random\-Set\-Of2\-D\-Points(), K\-E\-Y\-\_\-\-E\-S\-C, M\-A\-X\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-S, and run\-Min\-Enclosing\-Triangle\-Finder().
+
+
+
+Referenced by run\-Min\-Enclosing\-Triangle\-Finder().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_a6d765cc21caf0cbe2e95f43feb90305a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MinEnclosingTriangleFinderSample_8cpp_a6d765cc21caf0cbe2e95f43feb90305a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a3ee3cca79cf96001aeeacb9cad0e2d45}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!K\-E\-Y\-\_\-\-E\-S\-C@{K\-E\-Y\-\_\-\-E\-S\-C}}
+\index{K\-E\-Y\-\_\-\-E\-S\-C@{K\-E\-Y\-\_\-\-E\-S\-C}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{K\-E\-Y\-\_\-\-E\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}const int K\-E\-Y\-\_\-\-E\-S\-C = 27}}\label{MinEnclosingTriangleFinderSample_8cpp_a3ee3cca79cf96001aeeacb9cad0e2d45}
+
+
+Definition at line 13 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Detector\-::detect\-In\-Debug\-Mode(), and run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons().
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a1f84ea7f565d42ff589ced8a4b4ccb2b}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S@{L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}}
+\index{L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S@{L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int L\-I\-N\-E\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S = 50}}\label{MinEnclosingTriangleFinderSample_8cpp_a1f84ea7f565d42ff589ced8a4b4ccb2b}
+
+
+Definition at line 16 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by output\-Min\-Enclosing\-Triangle\-Finder\-Results().
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a3fb9ea13a83facbb7917419c6c0e3419}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!M\-A\-X\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-S@{M\-A\-X\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-S}}
+\index{M\-A\-X\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-S@{M\-A\-X\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-S}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{M\-A\-X\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int M\-A\-X\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-S = 100}}\label{MinEnclosingTriangleFinderSample_8cpp_a3fb9ea13a83facbb7917419c6c0e3419}
+
+
+Definition at line 18 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by run\-Min\-Enclosing\-Triangle\-Finder\-Using\-Random\-Polygons().
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_abd8a8a71a203104d961bc82d8f39be5f}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!N\-R\-\_\-\-R\-A\-N\-D\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-S@{N\-R\-\_\-\-R\-A\-N\-D\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-S}}
+\index{N\-R\-\_\-\-R\-A\-N\-D\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-S@{N\-R\-\_\-\-R\-A\-N\-D\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-S}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{N\-R\-\_\-\-R\-A\-N\-D\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int N\-R\-\_\-\-R\-A\-N\-D\-\_\-\-P\-O\-L\-Y\-G\-O\-N\-S = 50}}\label{MinEnclosingTriangleFinderSample_8cpp_abd8a8a71a203104d961bc82d8f39be5f}
+
+
+Definition at line 17 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a63eaa2a2bab85c80e50d7eab65b2280a}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!P\-O\-I\-N\-T\-\_\-\-I\-N\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H@{P\-O\-I\-N\-T\-\_\-\-I\-N\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H}}
+\index{P\-O\-I\-N\-T\-\_\-\-I\-N\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H@{P\-O\-I\-N\-T\-\_\-\-I\-N\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{P\-O\-I\-N\-T\-\_\-\-I\-N\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}const double P\-O\-I\-N\-T\-\_\-\-I\-N\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-T\-H\-R\-E\-S\-H = 1\-E-\/4}}\label{MinEnclosingTriangleFinderSample_8cpp_a63eaa2a2bab85c80e50d7eab65b2280a}
+
+
+Definition at line 22 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by are\-Points\-Enclosed(), and multiscaletest\-::\-Min\-Enclosing\-Triangle\-Finder\-Test\-::\-Are\-Points\-Enclosed().
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_ad9dc34f75b2cd1011753940ab8fe6c7b}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-X\-\_\-\-M\-A\-X@{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-X\-\_\-\-M\-A\-X}}
+\index{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-X\-\_\-\-M\-A\-X@{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-X\-\_\-\-M\-A\-X}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-X\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-X\-\_\-\-M\-A\-X = 500}}\label{MinEnclosingTriangleFinderSample_8cpp_ad9dc34f75b2cd1011753940ab8fe6c7b}
+
+
+Definition at line 19 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by generate\-Random\-Set\-Of2\-D\-Points(), and output\-Min\-Enclosing\-Triangle\-Finder\-Results().
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a3814979c768f6a0a6ea15bd1f3135133}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-Y\-\_\-\-M\-A\-X@{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-Y\-\_\-\-M\-A\-X}}
+\index{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-Y\-\_\-\-M\-A\-X@{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-Y\-\_\-\-M\-A\-X}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-Y\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int P\-O\-L\-Y\-G\-O\-N\-\_\-\-P\-O\-I\-N\-T\-\_\-\-Y\-\_\-\-M\-A\-X = 500}}\label{MinEnclosingTriangleFinderSample_8cpp_a3814979c768f6a0a6ea15bd1f3135133}
+
+
+Definition at line 20 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by generate\-Random\-Set\-Of2\-D\-Points(), and output\-Min\-Enclosing\-Triangle\-Finder\-Results().
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_aeb44a1c2c685ed2800552e1434b43bb2}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!R\-A\-D\-I\-U\-S@{R\-A\-D\-I\-U\-S}}
+\index{R\-A\-D\-I\-U\-S@{R\-A\-D\-I\-U\-S}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{R\-A\-D\-I\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int R\-A\-D\-I\-U\-S = 1}}\label{MinEnclosingTriangleFinderSample_8cpp_aeb44a1c2c685ed2800552e1434b43bb2}
+
+
+Definition at line 15 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by output\-Min\-Enclosing\-Triangle\-Finder\-Results().
+
+\hypertarget{MinEnclosingTriangleFinderSample_8cpp_a519bf48877dce88abe417e1701ca178b}{\index{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}!W\-I\-N\-\_\-\-M\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E@{W\-I\-N\-\_\-\-M\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E}}
+\index{W\-I\-N\-\_\-\-M\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E@{W\-I\-N\-\_\-\-M\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E}!MinEnclosingTriangleFinderSample.cpp@{Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp}}
+\subsubsection[{W\-I\-N\-\_\-\-M\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string W\-I\-N\-\_\-\-M\-I\-N\-\_\-\-A\-R\-E\-A\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E = \char`\"{}Minimum area enclosing triangle\char`\"{}}}\label{MinEnclosingTriangleFinderSample_8cpp_a519bf48877dce88abe417e1701ca178b}
+
+
+Definition at line 11 of file Min\-Enclosing\-Triangle\-Finder\-Sample.\-cpp.
+
+
+
+Referenced by output\-Min\-Enclosing\-Triangle\-Finder\-Results().
+

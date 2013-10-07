@@ -1,7 +1,0 @@
-<map id="modules/analysis/spatial/include/multiscale/analysis/spatial/Region.hpp" name="modules/analysis/spatial/include/multiscale/analysis/spatial/Region.hpp">
-<area shape="rect" id="node3" href="$RegionDetector_8hpp.html" title="modules/analysis/spatial\l/include/multiscale/analysis\l/spatial/RegionDetector.hpp" alt="" coords="257,117,441,181"/>
-<area shape="rect" id="node11" href="$Region_8cpp.html" title="modules/analysis/spatial\l/src/Region.cpp" alt="" coords="465,126,631,173"/>
-<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="5,230,211,277"/>
-<area shape="rect" id="node7" href="$RectangularDetectRegions_8cpp.html" title="modules/analysis/spatial\l/src/RectangularDetectRegions.cpp" alt="" coords="235,230,464,277"/>
-<area shape="rect" id="node9" href="$RegionDetector_8cpp.html" title="modules/analysis/spatial\l/src/RegionDetector.cpp" alt="" coords="488,230,653,277"/>
-</map>

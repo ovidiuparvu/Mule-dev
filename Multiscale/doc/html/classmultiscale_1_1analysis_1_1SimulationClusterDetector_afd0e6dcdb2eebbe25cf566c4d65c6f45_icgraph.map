@@ -1,5 +1,0 @@
-<map id="multiscale::analysis::SimulationClusterDetector::outputClusterRectangularShape" name="multiscale::analysis::SimulationClusterDetector::outputClusterRectangularShape">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a7f62b494ec805eae5d79145b53b8d0c8" title="Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image..." alt="" coords="271,5,452,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a0994cff5b69772702fbf571a333d7a4c" title="Display cluster on the image." alt="" coords="501,5,691,69"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a18b70fcb4000fb6bceaee5bdc10f8a78" title="Output the information computed for the clusters visually in a separate window." alt="" coords="740,5,935,69"/>
-</map>
