@@ -1,4 +1,5 @@
-#include "multiscale/exception/RectangularEntityCsvToInputFilesConverterException.hpp"
+#include "multiscale/exception/FileOpenException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/video/rectangular/RectangularEntityCsvToInputFilesConverter.hpp"
 #include "multiscale/util/iterator/NumberIteratorType.hpp"
 #include "multiscale/util/iterator/LexicographicNumberIterator.hpp"
@@ -55,7 +56,7 @@ void RectangularEntityCsvToInputFilesConverter::initInputFile(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        MS_throw(RectangularEntityCsvToInputFilesConverterException, ERR_INPUT_OPEN);
+        MS_throw(FileOpenException, ERR_INPUT_OPEN);
     }
 }
 
@@ -94,7 +95,7 @@ void RectangularEntityCsvToInputFilesConverter::initIterators(const NumberIterat
 
 void RectangularEntityCsvToInputFilesConverter::validateMaxNrOfEntitiesPerPosition() {
     if (maxNrOfEntitiesPerPosition == 0) {
-        MS_throw(RectangularEntityCsvToInputFilesConverterException, ERR_MAX_NR_ENTITIES);
+        MS_throw(InvalidInputException, ERR_MAX_NR_ENTITIES);
     }
 }
 
@@ -105,7 +106,7 @@ void RectangularEntityCsvToInputFilesConverter::validateInput(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        MS_throw(RectangularEntityCsvToInputFilesConverterException, ERR_INPUT_OPEN);
+        MS_throw(FileOpenException, ERR_INPUT_OPEN);
     }
 
     while (!fin.eof()) {
@@ -126,7 +127,7 @@ void RectangularEntityCsvToInputFilesConverter::validateInputLine(const string &
     vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
     if (tokens.size() < ((nrOfEntities * 2) + 1)) {
-        MS_throw(RectangularEntityCsvToInputFilesConverterException, ERR_NR_COORDINATES);
+        MS_throw(InvalidInputException, ERR_NR_COORDINATES);
     }
 
     // Validate simulation time
@@ -199,7 +200,7 @@ inline double RectangularEntityCsvToInputFilesConverter::computeSimulationTime(c
     double simulationTime = stod(token);
 
     if (simulationTime < 0) {
-        MS_throw(RectangularEntityCsvToInputFilesConverterException, ERR_NEG_SIM_TIME);
+        MS_throw(InvalidInputException, ERR_NEG_SIM_TIME);
     }
 
     return simulationTime;
@@ -210,11 +211,11 @@ inline unsigned int RectangularEntityCsvToInputFilesConverter::computeCoordinate
 
     if (isOxCoordinate) {
         if (coordinate > width) {
-            MS_throw(RectangularEntityCsvToInputFilesConverterException, ERR_INVALID_OX_COORDINATE);
+            MS_throw(InvalidInputException, ERR_INVALID_OX_COORDINATE);
         }
     } else {
         if (coordinate > height) {
-            MS_throw(RectangularEntityCsvToInputFilesConverterException, ERR_INVALID_OY_COORDINATE);
+            MS_throw(InvalidInputException, ERR_INVALID_OY_COORDINATE);
         }
     }
 
@@ -225,7 +226,7 @@ inline void RectangularEntityCsvToInputFilesConverter::validateSimulationTime(co
     double simulationTime = stod(token);
 
     if (simulationTime < 0) {
-        MS_throw(RectangularEntityCsvToInputFilesConverterException,
+        MS_throw(InvalidInputException,
                  string(ERR_INVALID_VALUE_LINE)  +
                  StringManipulator::toString<unsigned int>(lineNumber) +
                  string(ERR_INVALID_VALUE_TOKEN) +
@@ -238,7 +239,7 @@ inline void RectangularEntityCsvToInputFilesConverter::validateCoordinate(const 
     unsigned int coordinate = stoi(token);
 
     if (((isOxCoordinate) && (coordinate > width)) || ((!isOxCoordinate) && (coordinate > height))) {
-        MS_throw(RectangularEntityCsvToInputFilesConverterException,
+        MS_throw(InvalidInputException,
                  string(ERR_INVALID_VALUE_LINE)  +
                  StringManipulator::toString<unsigned int>(lineNumber) +
                  string(ERR_INVALID_VALUE_TOKEN) +
@@ -250,7 +251,7 @@ inline void RectangularEntityCsvToInputFilesConverter::validateCoordinate(const 
 inline void RectangularEntityCsvToInputFilesConverter::validateEntitiesGrid(const vector<double> &entitiesGrid) {
     for (double gridPosition : entitiesGrid) {
         if ((gridPosition < 0) || (gridPosition > 1)) {
-            MS_throw(RectangularEntityCsvToInputFilesConverterException, ERR_INVALID_NR_ENTITIES);
+            MS_throw(InvalidInputException, ERR_INVALID_NR_ENTITIES);
         }
     }
 }

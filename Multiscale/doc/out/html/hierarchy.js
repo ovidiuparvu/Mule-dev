@@ -36,20 +36,14 @@ var hierarchy =
     [ "multiscale::RGBColourGenerator", "classmultiscale_1_1RGBColourGenerator.html", null ],
     [ "runtime_error", null, [
       [ "multiscale::MultiscaleException", "classmultiscale_1_1MultiscaleException.html", [
-        [ "multiscale::CartesianToConcentrationsConverterException", "classmultiscale_1_1CartesianToConcentrationsConverterException.html", null ],
-        [ "multiscale::CartesianToPolarConverterException", "classmultiscale_1_1CartesianToPolarConverterException.html", null ],
-        [ "multiscale::CircularMatFactoryException", "classmultiscale_1_1CircularMatFactoryException.html", null ],
-        [ "multiscale::ClusterException", "classmultiscale_1_1ClusterException.html", null ],
-        [ "multiscale::DetectorException", "classmultiscale_1_1DetectorException.html", null ],
-        [ "multiscale::EntityException", "classmultiscale_1_1EntityException.html", null ],
-        [ "multiscale::MatFactoryException", "classmultiscale_1_1MatFactoryException.html", null ],
-        [ "multiscale::MinEnclosingTriangleFinderException", "classmultiscale_1_1MinEnclosingTriangleFinderException.html", null ],
-        [ "multiscale::PolarCsvToInputFilesConverterException", "classmultiscale_1_1PolarCsvToInputFilesConverterException.html", null ],
-        [ "multiscale::RectangularCsvToInputFilesConverterException", "classmultiscale_1_1RectangularCsvToInputFilesConverterException.html", null ],
-        [ "multiscale::RectangularEntityCsvToInputFilesConverterException", "classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html", null ],
-        [ "multiscale::RectangularMatFactoryException", "classmultiscale_1_1RectangularMatFactoryException.html", null ],
-        [ "multiscale::RegionException", "classmultiscale_1_1RegionException.html", null ],
-        [ "multiscale::SimulationClusterDetectorException", "classmultiscale_1_1SimulationClusterDetectorException.html", null ]
+        [ "multiscale::AlgorithmException", "classmultiscale_1_1AlgorithmException.html", [
+          [ "multiscale::UnexpectedBehaviourException", "classmultiscale_1_1UnexpectedBehaviourException.html", null ],
+          [ "multiscale::UnimplementedMethodException", "classmultiscale_1_1UnimplementedMethodException.html", null ]
+        ] ],
+        [ "multiscale::IOException", "classmultiscale_1_1IOException.html", [
+          [ "multiscale::FileOpenException", "classmultiscale_1_1FileOpenException.html", null ],
+          [ "multiscale::InvalidInputException", "classmultiscale_1_1InvalidInputException.html", null ]
+        ] ]
       ] ]
     ] ],
     [ "multiscale::analysis::Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ],

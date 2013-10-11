@@ -1,49 +1,25 @@
 var dir_59a9ee17779f0e36b74968f6f40a9af9 =
 [
-    [ "CartesianToConcentrationsConverterException.hpp", "CartesianToConcentrationsConverterException_8hpp.html", [
-      [ "CartesianToConcentrationsConverterException", "classmultiscale_1_1CartesianToConcentrationsConverterException.html", "classmultiscale_1_1CartesianToConcentrationsConverterException" ]
-    ] ],
-    [ "CartesianToPolarConverterException.hpp", "CartesianToPolarConverterException_8hpp.html", [
-      [ "CartesianToPolarConverterException", "classmultiscale_1_1CartesianToPolarConverterException.html", "classmultiscale_1_1CartesianToPolarConverterException" ]
-    ] ],
-    [ "CircularMatFactoryException.hpp", "CircularMatFactoryException_8hpp.html", [
-      [ "CircularMatFactoryException", "classmultiscale_1_1CircularMatFactoryException.html", "classmultiscale_1_1CircularMatFactoryException" ]
-    ] ],
-    [ "ClusterException.hpp", "ClusterException_8hpp.html", [
-      [ "ClusterException", "classmultiscale_1_1ClusterException.html", "classmultiscale_1_1ClusterException" ]
-    ] ],
-    [ "DetectorException.hpp", "DetectorException_8hpp.html", [
-      [ "DetectorException", "classmultiscale_1_1DetectorException.html", "classmultiscale_1_1DetectorException" ]
-    ] ],
-    [ "EntityException.hpp", "EntityException_8hpp.html", [
-      [ "EntityException", "classmultiscale_1_1EntityException.html", "classmultiscale_1_1EntityException" ]
+    [ "AlgorithmException.hpp", "AlgorithmException_8hpp.html", [
+      [ "AlgorithmException", "classmultiscale_1_1AlgorithmException.html", "classmultiscale_1_1AlgorithmException" ]
     ] ],
     [ "ExceptionHandler.hpp", "ExceptionHandler_8hpp.html", [
       [ "ExceptionHandler", "classmultiscale_1_1ExceptionHandler.html", null ]
     ] ],
-    [ "MatFactoryException.hpp", "MatFactoryException_8hpp.html", [
-      [ "MatFactoryException", "classmultiscale_1_1MatFactoryException.html", "classmultiscale_1_1MatFactoryException" ]
+    [ "FileOpenException.hpp", "FileOpenException_8hpp.html", [
+      [ "FileOpenException", "classmultiscale_1_1FileOpenException.html", "classmultiscale_1_1FileOpenException" ]
     ] ],
-    [ "MinEnclosingTriangleFinderException.hpp", "MinEnclosingTriangleFinderException_8hpp.html", [
-      [ "MinEnclosingTriangleFinderException", "classmultiscale_1_1MinEnclosingTriangleFinderException.html", "classmultiscale_1_1MinEnclosingTriangleFinderException" ]
+    [ "InvalidInputException.hpp", "InvalidInputException_8hpp.html", [
+      [ "InvalidInputException", "classmultiscale_1_1InvalidInputException.html", "classmultiscale_1_1InvalidInputException" ]
+    ] ],
+    [ "IOException.hpp", "IOException_8hpp.html", [
+      [ "IOException", "classmultiscale_1_1IOException.html", "classmultiscale_1_1IOException" ]
     ] ],
     [ "MultiscaleException.hpp", "MultiscaleException_8hpp.html", "MultiscaleException_8hpp" ],
-    [ "PolarCsvToInputFilesConverterException.hpp", "PolarCsvToInputFilesConverterException_8hpp.html", [
-      [ "PolarCsvToInputFilesConverterException", "classmultiscale_1_1PolarCsvToInputFilesConverterException.html", "classmultiscale_1_1PolarCsvToInputFilesConverterException" ]
+    [ "UnexpectedBehaviourException.hpp", "UnexpectedBehaviourException_8hpp.html", [
+      [ "UnexpectedBehaviourException", "classmultiscale_1_1UnexpectedBehaviourException.html", "classmultiscale_1_1UnexpectedBehaviourException" ]
     ] ],
-    [ "RectangularCsvToInputFilesConverterException.hpp", "RectangularCsvToInputFilesConverterException_8hpp.html", [
-      [ "RectangularCsvToInputFilesConverterException", "classmultiscale_1_1RectangularCsvToInputFilesConverterException.html", "classmultiscale_1_1RectangularCsvToInputFilesConverterException" ]
-    ] ],
-    [ "RectangularEntityCsvToInputFilesConverterException.hpp", "RectangularEntityCsvToInputFilesConverterException_8hpp.html", [
-      [ "RectangularEntityCsvToInputFilesConverterException", "classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html", "classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException" ]
-    ] ],
-    [ "RectangularMatFactoryException.hpp", "RectangularMatFactoryException_8hpp.html", [
-      [ "RectangularMatFactoryException", "classmultiscale_1_1RectangularMatFactoryException.html", "classmultiscale_1_1RectangularMatFactoryException" ]
-    ] ],
-    [ "RegionException.hpp", "RegionException_8hpp.html", [
-      [ "RegionException", "classmultiscale_1_1RegionException.html", "classmultiscale_1_1RegionException" ]
-    ] ],
-    [ "SimulationClusterDetectorException.hpp", "SimulationClusterDetectorException_8hpp.html", [
-      [ "SimulationClusterDetectorException", "classmultiscale_1_1SimulationClusterDetectorException.html", "classmultiscale_1_1SimulationClusterDetectorException" ]
+    [ "UnimplementedMethodException.hpp", "UnimplementedMethodException_8hpp.html", [
+      [ "UnimplementedMethodException", "classmultiscale_1_1UnimplementedMethodException.html", "classmultiscale_1_1UnimplementedMethodException" ]
     ] ]
 ];

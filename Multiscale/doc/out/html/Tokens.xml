@@ -1522,371 +1522,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>multiscale::CartesianToConcentrationsConverterException</Name>
+      <Name>multiscale::AlgorithmException</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>multiscale::CartesianToConcentrationsConverterException</Scope>
+      <Scope>multiscale::AlgorithmException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
-    <Abstract>Exception class for the CartesianToConcentrationsConverter class.</Abstract>
-    <DeclaredIn>CartesianToConcentrationsConverterException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1AlgorithmException.html</Path>
+    <Abstract>Class for representing algorithm exceptions.</Abstract>
+    <DeclaredIn>AlgorithmException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>CartesianToConcentrationsConverterException</Name>
+      <Name>AlgorithmException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::CartesianToConcentrationsConverterException</Scope>
+      <Scope>multiscale::AlgorithmException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
-    <Anchor>a1c307db0f880fb689b2f777e1d0bee89</Anchor>
-    <DeclaredIn>CartesianToConcentrationsConverterException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1AlgorithmException.html</Path>
+    <Anchor>a82b64c1819436f13d85f1749c6f0a9a4</Anchor>
+    <DeclaredIn>AlgorithmException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>CartesianToConcentrationsConverterException</Name>
+      <Name>AlgorithmException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::CartesianToConcentrationsConverterException</Scope>
+      <Scope>multiscale::AlgorithmException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
-    <Anchor>a8d14e1f35af551c85fecc398f34cd125</Anchor>
-    <DeclaredIn>CartesianToConcentrationsConverterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>what</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
-    <Abstract>Returns an explanatory string.</Abstract>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::CartesianToPolarConverterException</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::CartesianToPolarConverterException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-    <Abstract>Exception class for the CartesianToPolarConverter class.</Abstract>
-    <DeclaredIn>CartesianToPolarConverterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CartesianToPolarConverterException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::CartesianToPolarConverterException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-    <Anchor>a70f2259e58ab16d64d88e8728fd67f26</Anchor>
-    <DeclaredIn>CartesianToPolarConverterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CartesianToPolarConverterException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::CartesianToPolarConverterException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-    <Anchor>a9d77f79a95ff2557a6cd5060021c70c2</Anchor>
-    <DeclaredIn>CartesianToPolarConverterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>what</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
-    <Abstract>Returns an explanatory string.</Abstract>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::CircularMatFactoryException</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::CircularMatFactoryException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-    <Abstract>Exception class for the CircularMatFactory instances.</Abstract>
-    <DeclaredIn>CircularMatFactoryException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CircularMatFactoryException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::CircularMatFactoryException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-    <Anchor>af9876b3e4dc7681bf52e03ac5375957a</Anchor>
-    <DeclaredIn>CircularMatFactoryException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>CircularMatFactoryException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::CircularMatFactoryException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-    <Anchor>a213e2ed3c46f995f9fa20e5ac73cfdf3</Anchor>
-    <DeclaredIn>CircularMatFactoryException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>what</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
-    <Abstract>Returns an explanatory string.</Abstract>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::ClusterException</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::ClusterException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1ClusterException.html</Path>
-    <Abstract>Exception class for the Cluster instances.</Abstract>
-    <DeclaredIn>ClusterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ClusterException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::ClusterException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1ClusterException.html</Path>
-    <Anchor>a6acb6fc94c9bf4b78a0a3609a931d5d0</Anchor>
-    <DeclaredIn>ClusterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ClusterException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::ClusterException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1ClusterException.html</Path>
-    <Anchor>ab02aae52b2ace112ce68dadc06cfc1b8</Anchor>
-    <DeclaredIn>ClusterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>what</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
-    <Abstract>Returns an explanatory string.</Abstract>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::DetectorException</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::DetectorException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1DetectorException.html</Path>
-    <Abstract>Exception class for the Detector class.</Abstract>
-    <DeclaredIn>DetectorException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DetectorException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::DetectorException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1DetectorException.html</Path>
-    <Anchor>a7b997e90b2f84d96a94879f9ba61bf36</Anchor>
-    <DeclaredIn>DetectorException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>DetectorException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::DetectorException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1DetectorException.html</Path>
-    <Anchor>a5f2b9b78c64aa3362faaf472ccb97cc7</Anchor>
-    <DeclaredIn>DetectorException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>what</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
-    <Abstract>Returns an explanatory string.</Abstract>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::EntityException</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::EntityException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1EntityException.html</Path>
-    <Abstract>Exception class for the Entity instances.</Abstract>
-    <DeclaredIn>EntityException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>EntityException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::EntityException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1EntityException.html</Path>
-    <Anchor>a8e0ef42ea6ab6ac863f64f8859a5002a</Anchor>
-    <DeclaredIn>EntityException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>EntityException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::EntityException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1EntityException.html</Path>
-    <Anchor>a62f57c4bcc93e31adbd5ca1bb40d4b0d</Anchor>
-    <DeclaredIn>EntityException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1AlgorithmException.html</Path>
+    <Anchor>a8e93ad9821b69a6b4ac459f76b3a82ee</Anchor>
+    <DeclaredIn>AlgorithmException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1947,36 +1612,58 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>multiscale::MatFactoryException</Name>
+      <Name>multiscale::FileOpenException</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>multiscale::MatFactoryException</Scope>
+      <Scope>multiscale::FileOpenException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1MatFactoryException.html</Path>
-    <Abstract>Exception class for the MatFactory class.</Abstract>
-    <DeclaredIn>MatFactoryException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1FileOpenException.html</Path>
+    <Abstract>Class for representing exceptions when opening a file.</Abstract>
+    <DeclaredIn>FileOpenException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MatFactoryException</Name>
+      <Name>FileOpenException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::MatFactoryException</Scope>
+      <Scope>multiscale::FileOpenException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1MatFactoryException.html</Path>
-    <Anchor>ac22ebdceb46a147d167419cd5c8bdad3</Anchor>
-    <DeclaredIn>MatFactoryException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1FileOpenException.html</Path>
+    <Anchor>ae574327fb5ac6e396d8c37263f8a2815</Anchor>
+    <DeclaredIn>FileOpenException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MatFactoryException</Name>
+      <Name>FileOpenException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::MatFactoryException</Scope>
+      <Scope>multiscale::FileOpenException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1MatFactoryException.html</Path>
-    <Anchor>af164ffc6645f2584c5ecfd16980b1cc5</Anchor>
-    <DeclaredIn>MatFactoryException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1FileOpenException.html</Path>
+    <Anchor>adddaf8af54fd3bdeb5f63d5a6736fd45</Anchor>
+    <DeclaredIn>FileOpenException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IOException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::IOException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1IOException.html</Path>
+    <Anchor>a081bb2e4c214a18cbace0d93e1b60488</Anchor>
+    <DeclaredIn>IOException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IOException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::IOException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1IOException.html</Path>
+    <Anchor>a2ccacf8690ac56b07af15da7fa7bb93a</Anchor>
+    <DeclaredIn>IOException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2014,36 +1701,125 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>multiscale::MinEnclosingTriangleFinderException</Name>
+      <Name>multiscale::InvalidInputException</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>multiscale::MinEnclosingTriangleFinderException</Scope>
+      <Scope>multiscale::InvalidInputException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
-    <Abstract>Exception class for the minimum area enclosing triangle module.</Abstract>
-    <DeclaredIn>MinEnclosingTriangleFinderException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1InvalidInputException.html</Path>
+    <Abstract>Class for representing invalid input exceptions.</Abstract>
+    <DeclaredIn>InvalidInputException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MinEnclosingTriangleFinderException</Name>
+      <Name>InvalidInputException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::MinEnclosingTriangleFinderException</Scope>
+      <Scope>multiscale::InvalidInputException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
-    <Anchor>a5e557314d6e619be66b5c348890e27ff</Anchor>
-    <DeclaredIn>MinEnclosingTriangleFinderException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1InvalidInputException.html</Path>
+    <Anchor>aea7260856bd45bd4443d7626de243b72</Anchor>
+    <DeclaredIn>InvalidInputException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MinEnclosingTriangleFinderException</Name>
+      <Name>InvalidInputException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::MinEnclosingTriangleFinderException</Scope>
+      <Scope>multiscale::InvalidInputException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
-    <Anchor>a7ff2a8391032f1204050c784f2a61849</Anchor>
-    <DeclaredIn>MinEnclosingTriangleFinderException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1InvalidInputException.html</Path>
+    <Anchor>af12fa935cdc2aacbba5ea8cda0ef8df1</Anchor>
+    <DeclaredIn>InvalidInputException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IOException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::IOException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1IOException.html</Path>
+    <Anchor>a081bb2e4c214a18cbace0d93e1b60488</Anchor>
+    <DeclaredIn>IOException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IOException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::IOException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1IOException.html</Path>
+    <Anchor>a2ccacf8690ac56b07af15da7fa7bb93a</Anchor>
+    <DeclaredIn>IOException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MultiscaleException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiscaleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiscaleException.html</Path>
+    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
+    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>MultiscaleException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiscaleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiscaleException.html</Path>
+    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
+    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>what</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiscaleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiscaleException.html</Path>
+    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
+    <Abstract>Returns an explanatory string.</Abstract>
+    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::IOException</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::IOException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1IOException.html</Path>
+    <Abstract>Class for representing input and output exceptions.</Abstract>
+    <DeclaredIn>IOException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IOException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::IOException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1IOException.html</Path>
+    <Anchor>a081bb2e4c214a18cbace0d93e1b60488</Anchor>
+    <DeclaredIn>IOException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>IOException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::IOException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1IOException.html</Path>
+    <Anchor>a2ccacf8690ac56b07af15da7fa7bb93a</Anchor>
+    <DeclaredIn>IOException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2148,36 +1924,58 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>multiscale::PolarCsvToInputFilesConverterException</Name>
+      <Name>multiscale::UnexpectedBehaviourException</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>multiscale::PolarCsvToInputFilesConverterException</Scope>
+      <Scope>multiscale::UnexpectedBehaviourException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
-    <Abstract>Exception class for the PolarCsvToInputFilesConverter class.</Abstract>
-    <DeclaredIn>PolarCsvToInputFilesConverterException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
+    <Abstract>Class for representing unexpected behaviour exceptions.</Abstract>
+    <DeclaredIn>UnexpectedBehaviourException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>PolarCsvToInputFilesConverterException</Name>
+      <Name>UnexpectedBehaviourException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::PolarCsvToInputFilesConverterException</Scope>
+      <Scope>multiscale::UnexpectedBehaviourException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
-    <Anchor>aad248ad53256f6a79ac3de1fedeab8f5</Anchor>
-    <DeclaredIn>PolarCsvToInputFilesConverterException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
+    <Anchor>a99903f4c6c5f1746cb15f0ccf2c1233b</Anchor>
+    <DeclaredIn>UnexpectedBehaviourException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>PolarCsvToInputFilesConverterException</Name>
+      <Name>UnexpectedBehaviourException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::PolarCsvToInputFilesConverterException</Scope>
+      <Scope>multiscale::UnexpectedBehaviourException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
-    <Anchor>a0c87ad44e5f7c60491bcb533d03c8677</Anchor>
-    <DeclaredIn>PolarCsvToInputFilesConverterException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
+    <Anchor>adc0d1294e28ffd3eed251a60832d43bc</Anchor>
+    <DeclaredIn>UnexpectedBehaviourException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>AlgorithmException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::AlgorithmException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1AlgorithmException.html</Path>
+    <Anchor>a82b64c1819436f13d85f1749c6f0a9a4</Anchor>
+    <DeclaredIn>AlgorithmException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>AlgorithmException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::AlgorithmException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1AlgorithmException.html</Path>
+    <Anchor>a8e93ad9821b69a6b4ac459f76b3a82ee</Anchor>
+    <DeclaredIn>AlgorithmException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2215,304 +2013,58 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>multiscale::RectangularCsvToInputFilesConverterException</Name>
+      <Name>multiscale::UnimplementedMethodException</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>multiscale::RectangularCsvToInputFilesConverterException</Scope>
+      <Scope>multiscale::UnimplementedMethodException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
-    <Abstract>Exception class for the RectangularCsvToInputFilesConverter class.</Abstract>
-    <DeclaredIn>RectangularCsvToInputFilesConverterException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
+    <Abstract>Class for representing unimplemented method exceptions.</Abstract>
+    <DeclaredIn>UnimplementedMethodException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>RectangularCsvToInputFilesConverterException</Name>
+      <Name>UnimplementedMethodException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::RectangularCsvToInputFilesConverterException</Scope>
+      <Scope>multiscale::UnimplementedMethodException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
-    <Anchor>aceecb7819828a8c5855ec4ae33ea8000</Anchor>
-    <DeclaredIn>RectangularCsvToInputFilesConverterException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
+    <Anchor>af3e41ba96ee1376dece07e2f875cbc11</Anchor>
+    <DeclaredIn>UnimplementedMethodException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>RectangularCsvToInputFilesConverterException</Name>
+      <Name>UnimplementedMethodException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::RectangularCsvToInputFilesConverterException</Scope>
+      <Scope>multiscale::UnimplementedMethodException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
-    <Anchor>ada0b0ebc1c28661e6c90a37c6d8c3302</Anchor>
-    <DeclaredIn>RectangularCsvToInputFilesConverterException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
+    <Anchor>aff17b782e719904081a27badd18740b2</Anchor>
+    <DeclaredIn>UnimplementedMethodException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MultiscaleException</Name>
+      <Name>AlgorithmException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
+      <Scope>multiscale::AlgorithmException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1AlgorithmException.html</Path>
+    <Anchor>a82b64c1819436f13d85f1749c6f0a9a4</Anchor>
+    <DeclaredIn>AlgorithmException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>MultiscaleException</Name>
+      <Name>AlgorithmException</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
+      <Scope>multiscale::AlgorithmException</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>what</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
-    <Abstract>Returns an explanatory string.</Abstract>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::RectangularEntityCsvToInputFilesConverterException</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::RectangularEntityCsvToInputFilesConverterException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-    <Abstract>Exception class for the RectangularEntityCsvToInputFilesConverter class.</Abstract>
-    <DeclaredIn>RectangularEntityCsvToInputFilesConverterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RectangularEntityCsvToInputFilesConverterException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::RectangularEntityCsvToInputFilesConverterException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-    <Anchor>a03b6262f19a9816ea13a0ac02994af2b</Anchor>
-    <DeclaredIn>RectangularEntityCsvToInputFilesConverterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RectangularEntityCsvToInputFilesConverterException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::RectangularEntityCsvToInputFilesConverterException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-    <Anchor>ae62f1ace18cd2ab99c9633978b94b438</Anchor>
-    <DeclaredIn>RectangularEntityCsvToInputFilesConverterException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>what</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
-    <Abstract>Returns an explanatory string.</Abstract>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::RectangularMatFactoryException</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::RectangularMatFactoryException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-    <Abstract>Exception class for the RectangularMatFactory instances.</Abstract>
-    <DeclaredIn>RectangularMatFactoryException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RectangularMatFactoryException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::RectangularMatFactoryException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-    <Anchor>a08ba7e88c5b1af7df82e4c376287bedf</Anchor>
-    <DeclaredIn>RectangularMatFactoryException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RectangularMatFactoryException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::RectangularMatFactoryException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-    <Anchor>aca0beb9e5c613533ddafff4118ddf2d0</Anchor>
-    <DeclaredIn>RectangularMatFactoryException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>what</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
-    <Abstract>Returns an explanatory string.</Abstract>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::RegionException</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::RegionException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1RegionException.html</Path>
-    <Abstract>Exception class for the Region instances.</Abstract>
-    <DeclaredIn>RegionException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RegionException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::RegionException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1RegionException.html</Path>
-    <Anchor>a10febb34060369b6d579cd8ce1958133</Anchor>
-    <DeclaredIn>RegionException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>RegionException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::RegionException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1RegionException.html</Path>
-    <Anchor>a2be955d2fe444a4a4f2567d7a6599a9b</Anchor>
-    <DeclaredIn>RegionException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a6eb7d129f239cc1c4f497b1bbaf94fa5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>MultiscaleException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a3c0023538ce22fcd663b98a39b12d5a5</Anchor>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>what</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::MultiscaleException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1MultiscaleException.html</Path>
-    <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
-    <Abstract>Returns an explanatory string.</Abstract>
-    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::SimulationClusterDetectorException</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::SimulationClusterDetectorException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
-    <Abstract>Exception class for the SimulationClusterDetector instances.</Abstract>
-    <DeclaredIn>SimulationClusterDetectorException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SimulationClusterDetectorException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::SimulationClusterDetectorException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
-    <Anchor>ae0d5aea7a78e36a895473e6114eae158</Anchor>
-    <DeclaredIn>SimulationClusterDetectorException.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SimulationClusterDetectorException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::SimulationClusterDetectorException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
-    <Anchor>afe51ca741acdf668b7334d885123878c</Anchor>
-    <DeclaredIn>SimulationClusterDetectorException.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1AlgorithmException.html</Path>
+    <Anchor>a8e93ad9821b69a6b4ac459f76b3a82ee</Anchor>
+    <DeclaredIn>AlgorithmException.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>

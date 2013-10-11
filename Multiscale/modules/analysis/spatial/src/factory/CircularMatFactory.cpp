@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/factory/CircularMatFactory.hpp"
-#include "multiscale/exception/CircularMatFactoryException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/exception/UnimplementedMethodException.hpp"
 
 #include "opencv2/highgui/highgui.hpp"
 
@@ -38,10 +39,10 @@ double CircularMatFactory::maxColourBarIntensityFromViewerImage(const string &in
 }
 
 unsigned char * CircularMatFactory::processConcentrations(ifstream& fin) {
-    MS_throw(CircularMatFactoryException, ERR_UNIMPLEMENTED_METHOD);
+    MS_throw(UnimplementedMethodException, ERR_UNIMPLEMENTED_METHOD);
 
     // Statement not executed but added to overcome warning message
-    throw CircularMatFactoryException(__FILE__, __LINE__, ERR_UNIMPLEMENTED_METHOD);
+    throw UnimplementedMethodException(__FILE__, __LINE__, ERR_UNIMPLEMENTED_METHOD);
 }
 
 Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int originY,
@@ -55,11 +56,11 @@ Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int or
 
 bool CircularMatFactory::isValidViewerImage(const Mat &image) {
     if (!image.data) {
-        MS_throw(CircularMatFactoryException, ERR_INPUT_OPEN);
+        MS_throw(InvalidInputException, ERR_INPUT_OPEN);
     }
 
     if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT)) {
-        MS_throw(CircularMatFactoryException, ERR_IMG_RESOLUTION);
+        MS_throw(InvalidInputException, ERR_IMG_RESOLUTION);
     }
 
     return true;

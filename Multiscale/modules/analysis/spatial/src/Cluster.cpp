@@ -1,6 +1,6 @@
 #include "multiscale/analysis/spatial/CircularityMeasure.hpp"
 #include "multiscale/analysis/spatial/Cluster.hpp"
-#include "multiscale/exception/ClusterException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 #include "multiscale/util/MinEnclosingTriangleFinder.hpp"
 #include "multiscale/util/StringManipulator.hpp"
@@ -226,7 +226,7 @@ string Cluster::fieldValuesToString() {
 
 void Cluster::validateOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin) {
     if (!areValidOriginDependentValues(distanceFromOrigin, angleWrtOrigin)) {
-        MS_throw(ClusterException, ERR_ORIGIN_DEPENDENT_VALUES);
+        MS_throw(InvalidInputException, ERR_ORIGIN_DEPENDENT_VALUES);
     }
 }
 

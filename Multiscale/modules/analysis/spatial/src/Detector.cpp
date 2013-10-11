@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/Detector.hpp"
-#include "multiscale/exception/DetectorException.hpp"
+#include "multiscale/exception/FileOpenException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
 #include <iostream>
@@ -22,7 +23,7 @@ Detector::~Detector() {
 
 void Detector::detect(const Mat &inputImage) {
     if (!isValidInputImage(inputImage)) {
-        MS_throw(DetectorException, ERR_INVALID_IMAGE);
+        MS_throw(InvalidInputException, ERR_INVALID_IMAGE);
     }
 
     inputImage.copyTo(image);
@@ -176,7 +177,7 @@ void Detector::outputResultsToCsvFile() {
     ofstream fout(outputFilepath + OUTPUT_EXTENSION, ios_base::trunc);
 
     if (!fout.is_open()) {
-        MS_throw(DetectorException, ERR_OUTPUT_FILE);
+        MS_throw(FileOpenException, ERR_OUTPUT_FILE);
     }
 
     outputResultsToCsvFile(fout);

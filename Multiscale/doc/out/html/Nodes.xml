@@ -2382,98 +2382,18 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>CartesianToConcentrationsConverterException</Name>
-              <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
+              <Name>AlgorithmException</Name>
+              <Path>classmultiscale_1_1AlgorithmException.html</Path>
               <Subnodes>
                <Node>
-                <Name>CartesianToConcentrationsConverterException</Name>
-                <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
-                <Anchor>a1c307db0f880fb689b2f777e1d0bee89</Anchor>
+                <Name>AlgorithmException</Name>
+                <Path>classmultiscale_1_1AlgorithmException.html</Path>
+                <Anchor>a82b64c1819436f13d85f1749c6f0a9a4</Anchor>
                </Node>
                <Node>
-                <Name>CartesianToConcentrationsConverterException</Name>
-                <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
-                <Anchor>a8d14e1f35af551c85fecc398f34cd125</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>CartesianToPolarConverterException</Name>
-              <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>CartesianToPolarConverterException</Name>
-                <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-                <Anchor>a70f2259e58ab16d64d88e8728fd67f26</Anchor>
-               </Node>
-               <Node>
-                <Name>CartesianToPolarConverterException</Name>
-                <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-                <Anchor>a9d77f79a95ff2557a6cd5060021c70c2</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>CircularMatFactoryException</Name>
-              <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>CircularMatFactoryException</Name>
-                <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-                <Anchor>af9876b3e4dc7681bf52e03ac5375957a</Anchor>
-               </Node>
-               <Node>
-                <Name>CircularMatFactoryException</Name>
-                <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-                <Anchor>a213e2ed3c46f995f9fa20e5ac73cfdf3</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>ClusterException</Name>
-              <Path>classmultiscale_1_1ClusterException.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>ClusterException</Name>
-                <Path>classmultiscale_1_1ClusterException.html</Path>
-                <Anchor>a6acb6fc94c9bf4b78a0a3609a931d5d0</Anchor>
-               </Node>
-               <Node>
-                <Name>ClusterException</Name>
-                <Path>classmultiscale_1_1ClusterException.html</Path>
-                <Anchor>ab02aae52b2ace112ce68dadc06cfc1b8</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>DetectorException</Name>
-              <Path>classmultiscale_1_1DetectorException.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>DetectorException</Name>
-                <Path>classmultiscale_1_1DetectorException.html</Path>
-                <Anchor>a7b997e90b2f84d96a94879f9ba61bf36</Anchor>
-               </Node>
-               <Node>
-                <Name>DetectorException</Name>
-                <Path>classmultiscale_1_1DetectorException.html</Path>
-                <Anchor>a5f2b9b78c64aa3362faaf472ccb97cc7</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>EntityException</Name>
-              <Path>classmultiscale_1_1EntityException.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>EntityException</Name>
-                <Path>classmultiscale_1_1EntityException.html</Path>
-                <Anchor>a8e0ef42ea6ab6ac863f64f8859a5002a</Anchor>
-               </Node>
-               <Node>
-                <Name>EntityException</Name>
-                <Path>classmultiscale_1_1EntityException.html</Path>
-                <Anchor>a62f57c4bcc93e31adbd5ca1bb40d4b0d</Anchor>
+                <Name>AlgorithmException</Name>
+                <Path>classmultiscale_1_1AlgorithmException.html</Path>
+                <Anchor>a8e93ad9821b69a6b4ac459f76b3a82ee</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -2484,34 +2404,50 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>MatFactoryException</Name>
-              <Path>classmultiscale_1_1MatFactoryException.html</Path>
+              <Name>FileOpenException</Name>
+              <Path>classmultiscale_1_1FileOpenException.html</Path>
               <Subnodes>
                <Node>
-                <Name>MatFactoryException</Name>
-                <Path>classmultiscale_1_1MatFactoryException.html</Path>
-                <Anchor>ac22ebdceb46a147d167419cd5c8bdad3</Anchor>
+                <Name>FileOpenException</Name>
+                <Path>classmultiscale_1_1FileOpenException.html</Path>
+                <Anchor>ae574327fb5ac6e396d8c37263f8a2815</Anchor>
                </Node>
                <Node>
-                <Name>MatFactoryException</Name>
-                <Path>classmultiscale_1_1MatFactoryException.html</Path>
-                <Anchor>af164ffc6645f2584c5ecfd16980b1cc5</Anchor>
+                <Name>FileOpenException</Name>
+                <Path>classmultiscale_1_1FileOpenException.html</Path>
+                <Anchor>adddaf8af54fd3bdeb5f63d5a6736fd45</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
-              <Name>MinEnclosingTriangleFinderException</Name>
-              <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
+              <Name>InvalidInputException</Name>
+              <Path>classmultiscale_1_1InvalidInputException.html</Path>
               <Subnodes>
                <Node>
-                <Name>MinEnclosingTriangleFinderException</Name>
-                <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
-                <Anchor>a5e557314d6e619be66b5c348890e27ff</Anchor>
+                <Name>InvalidInputException</Name>
+                <Path>classmultiscale_1_1InvalidInputException.html</Path>
+                <Anchor>aea7260856bd45bd4443d7626de243b72</Anchor>
                </Node>
                <Node>
-                <Name>MinEnclosingTriangleFinderException</Name>
-                <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
-                <Anchor>a7ff2a8391032f1204050c784f2a61849</Anchor>
+                <Name>InvalidInputException</Name>
+                <Path>classmultiscale_1_1InvalidInputException.html</Path>
+                <Anchor>af12fa935cdc2aacbba5ea8cda0ef8df1</Anchor>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>IOException</Name>
+              <Path>classmultiscale_1_1IOException.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>IOException</Name>
+                <Path>classmultiscale_1_1IOException.html</Path>
+                <Anchor>a081bb2e4c214a18cbace0d93e1b60488</Anchor>
+               </Node>
+               <Node>
+                <Name>IOException</Name>
+                <Path>classmultiscale_1_1IOException.html</Path>
+                <Anchor>a2ccacf8690ac56b07af15da7fa7bb93a</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -2547,98 +2483,34 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>PolarCsvToInputFilesConverterException</Name>
-              <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
+              <Name>UnexpectedBehaviourException</Name>
+              <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
               <Subnodes>
                <Node>
-                <Name>PolarCsvToInputFilesConverterException</Name>
-                <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
-                <Anchor>aad248ad53256f6a79ac3de1fedeab8f5</Anchor>
+                <Name>UnexpectedBehaviourException</Name>
+                <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
+                <Anchor>a99903f4c6c5f1746cb15f0ccf2c1233b</Anchor>
                </Node>
                <Node>
-                <Name>PolarCsvToInputFilesConverterException</Name>
-                <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
-                <Anchor>a0c87ad44e5f7c60491bcb533d03c8677</Anchor>
+                <Name>UnexpectedBehaviourException</Name>
+                <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
+                <Anchor>adc0d1294e28ffd3eed251a60832d43bc</Anchor>
                </Node>
               </Subnodes>
              </Node>
              <Node>
-              <Name>RectangularCsvToInputFilesConverterException</Name>
-              <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
+              <Name>UnimplementedMethodException</Name>
+              <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
               <Subnodes>
                <Node>
-                <Name>RectangularCsvToInputFilesConverterException</Name>
-                <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
-                <Anchor>aceecb7819828a8c5855ec4ae33ea8000</Anchor>
+                <Name>UnimplementedMethodException</Name>
+                <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
+                <Anchor>af3e41ba96ee1376dece07e2f875cbc11</Anchor>
                </Node>
                <Node>
-                <Name>RectangularCsvToInputFilesConverterException</Name>
-                <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
-                <Anchor>ada0b0ebc1c28661e6c90a37c6d8c3302</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>RectangularEntityCsvToInputFilesConverterException</Name>
-              <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>RectangularEntityCsvToInputFilesConverterException</Name>
-                <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-                <Anchor>a03b6262f19a9816ea13a0ac02994af2b</Anchor>
-               </Node>
-               <Node>
-                <Name>RectangularEntityCsvToInputFilesConverterException</Name>
-                <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-                <Anchor>ae62f1ace18cd2ab99c9633978b94b438</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>RectangularMatFactoryException</Name>
-              <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>RectangularMatFactoryException</Name>
-                <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-                <Anchor>a08ba7e88c5b1af7df82e4c376287bedf</Anchor>
-               </Node>
-               <Node>
-                <Name>RectangularMatFactoryException</Name>
-                <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-                <Anchor>aca0beb9e5c613533ddafff4118ddf2d0</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>RegionException</Name>
-              <Path>classmultiscale_1_1RegionException.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>RegionException</Name>
-                <Path>classmultiscale_1_1RegionException.html</Path>
-                <Anchor>a10febb34060369b6d579cd8ce1958133</Anchor>
-               </Node>
-               <Node>
-                <Name>RegionException</Name>
-                <Path>classmultiscale_1_1RegionException.html</Path>
-                <Anchor>a2be955d2fe444a4a4f2567d7a6599a9b</Anchor>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>SimulationClusterDetectorException</Name>
-              <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>SimulationClusterDetectorException</Name>
-                <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
-                <Anchor>ae0d5aea7a78e36a895473e6114eae158</Anchor>
-               </Node>
-               <Node>
-                <Name>SimulationClusterDetectorException</Name>
-                <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
-                <Anchor>afe51ca741acdf668b7334d885123878c</Anchor>
+                <Name>UnimplementedMethodException</Name>
+                <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
+                <Anchor>aff17b782e719904081a27badd18740b2</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -3522,60 +3394,32 @@
               <Path>classmultiscale_1_1MultiscaleException.html</Path>
               <Subnodes>
                <Node>
-                <Name>multiscale::CartesianToConcentrationsConverterException</Name>
-                <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
+                <Name>multiscale::AlgorithmException</Name>
+                <Path>classmultiscale_1_1AlgorithmException.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>multiscale::UnexpectedBehaviourException</Name>
+                  <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
+                 </Node>
+                 <Node>
+                  <Name>multiscale::UnimplementedMethodException</Name>
+                  <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
+                 </Node>
+                </Subnodes>
                </Node>
                <Node>
-                <Name>multiscale::CartesianToPolarConverterException</Name>
-                <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::CircularMatFactoryException</Name>
-                <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::ClusterException</Name>
-                <Path>classmultiscale_1_1ClusterException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::DetectorException</Name>
-                <Path>classmultiscale_1_1DetectorException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::EntityException</Name>
-                <Path>classmultiscale_1_1EntityException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::MatFactoryException</Name>
-                <Path>classmultiscale_1_1MatFactoryException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::MinEnclosingTriangleFinderException</Name>
-                <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::PolarCsvToInputFilesConverterException</Name>
-                <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::RectangularCsvToInputFilesConverterException</Name>
-                <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::RectangularEntityCsvToInputFilesConverterException</Name>
-                <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::RectangularMatFactoryException</Name>
-                <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::RegionException</Name>
-                <Path>classmultiscale_1_1RegionException.html</Path>
-               </Node>
-               <Node>
-                <Name>multiscale::SimulationClusterDetectorException</Name>
-                <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
+                <Name>multiscale::IOException</Name>
+                <Path>classmultiscale_1_1IOException.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>multiscale::FileOpenException</Name>
+                  <Path>classmultiscale_1_1FileOpenException.html</Path>
+                 </Node>
+                 <Node>
+                  <Name>multiscale::InvalidInputException</Name>
+                  <Path>classmultiscale_1_1InvalidInputException.html</Path>
+                 </Node>
+                </Subnodes>
                </Node>
               </Subnodes>
              </Node>
@@ -3996,132 +3840,22 @@
                 <Path>dir_59a9ee17779f0e36b74968f6f40a9af9.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>CartesianToConcentrationsConverterException.hpp</Name>
-                  <Path>CartesianToConcentrationsConverterException_8hpp.html</Path>
+                  <Name>AlgorithmException.hpp</Name>
+                  <Path>AlgorithmException_8hpp.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>CartesianToConcentrationsConverterException</Name>
-                    <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
+                    <Name>AlgorithmException</Name>
+                    <Path>classmultiscale_1_1AlgorithmException.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>CartesianToConcentrationsConverterException</Name>
-                      <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
-                      <Anchor>a1c307db0f880fb689b2f777e1d0bee89</Anchor>
+                      <Name>AlgorithmException</Name>
+                      <Path>classmultiscale_1_1AlgorithmException.html</Path>
+                      <Anchor>a82b64c1819436f13d85f1749c6f0a9a4</Anchor>
                      </Node>
                      <Node>
-                      <Name>CartesianToConcentrationsConverterException</Name>
-                      <Path>classmultiscale_1_1CartesianToConcentrationsConverterException.html</Path>
-                      <Anchor>a8d14e1f35af551c85fecc398f34cd125</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>CartesianToPolarConverterException.hpp</Name>
-                  <Path>CartesianToPolarConverterException_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>CartesianToPolarConverterException</Name>
-                    <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>CartesianToPolarConverterException</Name>
-                      <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-                      <Anchor>a70f2259e58ab16d64d88e8728fd67f26</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>CartesianToPolarConverterException</Name>
-                      <Path>classmultiscale_1_1CartesianToPolarConverterException.html</Path>
-                      <Anchor>a9d77f79a95ff2557a6cd5060021c70c2</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>CircularMatFactoryException.hpp</Name>
-                  <Path>CircularMatFactoryException_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>CircularMatFactoryException</Name>
-                    <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>CircularMatFactoryException</Name>
-                      <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-                      <Anchor>af9876b3e4dc7681bf52e03ac5375957a</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>CircularMatFactoryException</Name>
-                      <Path>classmultiscale_1_1CircularMatFactoryException.html</Path>
-                      <Anchor>a213e2ed3c46f995f9fa20e5ac73cfdf3</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>ClusterException.hpp</Name>
-                  <Path>ClusterException_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>ClusterException</Name>
-                    <Path>classmultiscale_1_1ClusterException.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>ClusterException</Name>
-                      <Path>classmultiscale_1_1ClusterException.html</Path>
-                      <Anchor>a6acb6fc94c9bf4b78a0a3609a931d5d0</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>ClusterException</Name>
-                      <Path>classmultiscale_1_1ClusterException.html</Path>
-                      <Anchor>ab02aae52b2ace112ce68dadc06cfc1b8</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>DetectorException.hpp</Name>
-                  <Path>DetectorException_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>DetectorException</Name>
-                    <Path>classmultiscale_1_1DetectorException.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>DetectorException</Name>
-                      <Path>classmultiscale_1_1DetectorException.html</Path>
-                      <Anchor>a7b997e90b2f84d96a94879f9ba61bf36</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>DetectorException</Name>
-                      <Path>classmultiscale_1_1DetectorException.html</Path>
-                      <Anchor>a5f2b9b78c64aa3362faaf472ccb97cc7</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>EntityException.hpp</Name>
-                  <Path>EntityException_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>EntityException</Name>
-                    <Path>classmultiscale_1_1EntityException.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>EntityException</Name>
-                      <Path>classmultiscale_1_1EntityException.html</Path>
-                      <Anchor>a8e0ef42ea6ab6ac863f64f8859a5002a</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>EntityException</Name>
-                      <Path>classmultiscale_1_1EntityException.html</Path>
-                      <Anchor>a62f57c4bcc93e31adbd5ca1bb40d4b0d</Anchor>
+                      <Name>AlgorithmException</Name>
+                      <Path>classmultiscale_1_1AlgorithmException.html</Path>
+                      <Anchor>a8e93ad9821b69a6b4ac459f76b3a82ee</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -4140,44 +3874,66 @@
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>MatFactoryException.hpp</Name>
-                  <Path>MatFactoryException_8hpp.html</Path>
+                  <Name>FileOpenException.hpp</Name>
+                  <Path>FileOpenException_8hpp.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>MatFactoryException</Name>
-                    <Path>classmultiscale_1_1MatFactoryException.html</Path>
+                    <Name>FileOpenException</Name>
+                    <Path>classmultiscale_1_1FileOpenException.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>MatFactoryException</Name>
-                      <Path>classmultiscale_1_1MatFactoryException.html</Path>
-                      <Anchor>ac22ebdceb46a147d167419cd5c8bdad3</Anchor>
+                      <Name>FileOpenException</Name>
+                      <Path>classmultiscale_1_1FileOpenException.html</Path>
+                      <Anchor>ae574327fb5ac6e396d8c37263f8a2815</Anchor>
                      </Node>
                      <Node>
-                      <Name>MatFactoryException</Name>
-                      <Path>classmultiscale_1_1MatFactoryException.html</Path>
-                      <Anchor>af164ffc6645f2584c5ecfd16980b1cc5</Anchor>
+                      <Name>FileOpenException</Name>
+                      <Path>classmultiscale_1_1FileOpenException.html</Path>
+                      <Anchor>adddaf8af54fd3bdeb5f63d5a6736fd45</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>MinEnclosingTriangleFinderException.hpp</Name>
-                  <Path>MinEnclosingTriangleFinderException_8hpp.html</Path>
+                  <Name>InvalidInputException.hpp</Name>
+                  <Path>InvalidInputException_8hpp.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>MinEnclosingTriangleFinderException</Name>
-                    <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
+                    <Name>InvalidInputException</Name>
+                    <Path>classmultiscale_1_1InvalidInputException.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>MinEnclosingTriangleFinderException</Name>
-                      <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
-                      <Anchor>a5e557314d6e619be66b5c348890e27ff</Anchor>
+                      <Name>InvalidInputException</Name>
+                      <Path>classmultiscale_1_1InvalidInputException.html</Path>
+                      <Anchor>aea7260856bd45bd4443d7626de243b72</Anchor>
                      </Node>
                      <Node>
-                      <Name>MinEnclosingTriangleFinderException</Name>
-                      <Path>classmultiscale_1_1MinEnclosingTriangleFinderException.html</Path>
-                      <Anchor>a7ff2a8391032f1204050c784f2a61849</Anchor>
+                      <Name>InvalidInputException</Name>
+                      <Path>classmultiscale_1_1InvalidInputException.html</Path>
+                      <Anchor>af12fa935cdc2aacbba5ea8cda0ef8df1</Anchor>
+                     </Node>
+                    </Subnodes>
+                   </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>IOException.hpp</Name>
+                  <Path>IOException_8hpp.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>IOException</Name>
+                    <Path>classmultiscale_1_1IOException.html</Path>
+                    <Subnodes>
+                     <Node>
+                      <Name>IOException</Name>
+                      <Path>classmultiscale_1_1IOException.html</Path>
+                      <Anchor>a081bb2e4c214a18cbace0d93e1b60488</Anchor>
+                     </Node>
+                     <Node>
+                      <Name>IOException</Name>
+                      <Path>classmultiscale_1_1IOException.html</Path>
+                      <Anchor>a2ccacf8690ac56b07af15da7fa7bb93a</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
@@ -4226,132 +3982,44 @@
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>PolarCsvToInputFilesConverterException.hpp</Name>
-                  <Path>PolarCsvToInputFilesConverterException_8hpp.html</Path>
+                  <Name>UnexpectedBehaviourException.hpp</Name>
+                  <Path>UnexpectedBehaviourException_8hpp.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>PolarCsvToInputFilesConverterException</Name>
-                    <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
+                    <Name>UnexpectedBehaviourException</Name>
+                    <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>PolarCsvToInputFilesConverterException</Name>
-                      <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
-                      <Anchor>aad248ad53256f6a79ac3de1fedeab8f5</Anchor>
+                      <Name>UnexpectedBehaviourException</Name>
+                      <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
+                      <Anchor>a99903f4c6c5f1746cb15f0ccf2c1233b</Anchor>
                      </Node>
                      <Node>
-                      <Name>PolarCsvToInputFilesConverterException</Name>
-                      <Path>classmultiscale_1_1PolarCsvToInputFilesConverterException.html</Path>
-                      <Anchor>a0c87ad44e5f7c60491bcb533d03c8677</Anchor>
+                      <Name>UnexpectedBehaviourException</Name>
+                      <Path>classmultiscale_1_1UnexpectedBehaviourException.html</Path>
+                      <Anchor>adc0d1294e28ffd3eed251a60832d43bc</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>RectangularCsvToInputFilesConverterException.hpp</Name>
-                  <Path>RectangularCsvToInputFilesConverterException_8hpp.html</Path>
+                  <Name>UnimplementedMethodException.hpp</Name>
+                  <Path>UnimplementedMethodException_8hpp.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>RectangularCsvToInputFilesConverterException</Name>
-                    <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
+                    <Name>UnimplementedMethodException</Name>
+                    <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
                     <Subnodes>
                      <Node>
-                      <Name>RectangularCsvToInputFilesConverterException</Name>
-                      <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
-                      <Anchor>aceecb7819828a8c5855ec4ae33ea8000</Anchor>
+                      <Name>UnimplementedMethodException</Name>
+                      <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
+                      <Anchor>af3e41ba96ee1376dece07e2f875cbc11</Anchor>
                      </Node>
                      <Node>
-                      <Name>RectangularCsvToInputFilesConverterException</Name>
-                      <Path>classmultiscale_1_1RectangularCsvToInputFilesConverterException.html</Path>
-                      <Anchor>ada0b0ebc1c28661e6c90a37c6d8c3302</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>RectangularEntityCsvToInputFilesConverterException.hpp</Name>
-                  <Path>RectangularEntityCsvToInputFilesConverterException_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>RectangularEntityCsvToInputFilesConverterException</Name>
-                    <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>RectangularEntityCsvToInputFilesConverterException</Name>
-                      <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-                      <Anchor>a03b6262f19a9816ea13a0ac02994af2b</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>RectangularEntityCsvToInputFilesConverterException</Name>
-                      <Path>classmultiscale_1_1RectangularEntityCsvToInputFilesConverterException.html</Path>
-                      <Anchor>ae62f1ace18cd2ab99c9633978b94b438</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>RectangularMatFactoryException.hpp</Name>
-                  <Path>RectangularMatFactoryException_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>RectangularMatFactoryException</Name>
-                    <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>RectangularMatFactoryException</Name>
-                      <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-                      <Anchor>a08ba7e88c5b1af7df82e4c376287bedf</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>RectangularMatFactoryException</Name>
-                      <Path>classmultiscale_1_1RectangularMatFactoryException.html</Path>
-                      <Anchor>aca0beb9e5c613533ddafff4118ddf2d0</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>RegionException.hpp</Name>
-                  <Path>RegionException_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>RegionException</Name>
-                    <Path>classmultiscale_1_1RegionException.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>RegionException</Name>
-                      <Path>classmultiscale_1_1RegionException.html</Path>
-                      <Anchor>a10febb34060369b6d579cd8ce1958133</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>RegionException</Name>
-                      <Path>classmultiscale_1_1RegionException.html</Path>
-                      <Anchor>a2be955d2fe444a4a4f2567d7a6599a9b</Anchor>
-                     </Node>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>SimulationClusterDetectorException.hpp</Name>
-                  <Path>SimulationClusterDetectorException_8hpp.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>SimulationClusterDetectorException</Name>
-                    <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>SimulationClusterDetectorException</Name>
-                      <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
-                      <Anchor>ae0d5aea7a78e36a895473e6114eae158</Anchor>
-                     </Node>
-                     <Node>
-                      <Name>SimulationClusterDetectorException</Name>
-                      <Path>classmultiscale_1_1SimulationClusterDetectorException.html</Path>
-                      <Anchor>afe51ca741acdf668b7334d885123878c</Anchor>
+                      <Name>UnimplementedMethodException</Name>
+                      <Path>classmultiscale_1_1UnimplementedMethodException.html</Path>
+                      <Anchor>aff17b782e719904081a27badd18740b2</Anchor>
                      </Node>
                     </Subnodes>
                    </Node>

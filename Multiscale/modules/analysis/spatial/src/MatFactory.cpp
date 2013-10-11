@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/MatFactory.hpp"
-#include "multiscale/exception/MatFactoryException.hpp"
+#include "multiscale/exception/FileOpenException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
 
 using namespace multiscale;
@@ -22,7 +23,7 @@ Mat MatFactory::create(const string &inputFile) {
     fin.get();
 
     if (fin.peek() != EOF) {
-        MS_throw(MatFactoryException, ERR_IN_EXTRA_DATA);
+        MS_throw(InvalidInputException, ERR_IN_EXTRA_DATA);
     }
 
     fin.close();
@@ -34,7 +35,7 @@ void MatFactory::initInputFile(ifstream &fin, const string& inputFile) {
     fin.open(inputFile, ios_base::in);
 
     if (!fin.is_open()) {
-        MS_throw(MatFactoryException, ERR_INPUT_OPEN);
+        MS_throw(FileOpenException, ERR_INPUT_OPEN);
     }
 
     fin >> rows >> cols >> simulationTime;

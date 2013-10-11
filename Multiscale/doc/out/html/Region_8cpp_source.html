@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('Region_8cpp_source.html','');});
 <div class="contents">
 <a href="Region_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CircularityMeasure_8hpp.html">multiscale/analysis/spatial/CircularityMeasure.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Region_8hpp.html">multiscale/analysis/spatial/Region.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RegionException_8hpp.html">multiscale/exception/RegionException.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="InvalidInputException_8hpp.html">multiscale/exception/InvalidInputException.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MinEnclosingTriangleFinder_8hpp.html">multiscale/util/MinEnclosingTriangleFinder.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Numeric_8hpp.html">multiscale/util/Numeric.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="StringManipulator_8hpp.html">multiscale/util/StringManipulator.hpp</a>&quot;</span></div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('Region_8cpp_source.html','');});
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a517b46fd89696f44086aafb1a9526995">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a517b46fd89696f44086aafb1a9526995" title="Validate the input values.">Region::validateInputValues</a>(<span class="keywordtype">double</span> clusterednessDegree, <span class="keywordtype">double</span> density, <span class="keywordtype">double</span> area, <span class="keywordtype">double</span> distanceFromOrigin,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                 <span class="keywordtype">double</span> angleWrtOrigin, <span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classmultiscale_1_1analysis_1_1Region.html#a6319de4734b11039dbb90dfdd3e30e31" title="Check if the input values are valid or not.">areValidInputValues</a>(clusterednessDegree, density, area, distanceFromOrigin, angleWrtOrigin, polygon)) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1RegionException.html" title="Exception class for the Region instances.">RegionException</a>, <a class="code" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ae6688ddf08e23397e0798e4280d7f1ab">ERR_INPUT</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1InvalidInputException.html" title="Class for representing invalid input exceptions.">InvalidInputException</a>, <a class="code" href="classmultiscale_1_1analysis_1_1SpatialCollection2D.html#ae6688ddf08e23397e0798e4280d7f1ab">ERR_INPUT</a>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
@@ -252,7 +252,7 @@ $(document).ready(function(){initNavTree('Region_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_f0033717cfd9395379e47f6b9f751443.html">src</a></li><li class="navelem"><a class="el" href="Region_8cpp.html">Region.cpp</a></li>
-    <li class="footer">Generated on Mon Oct 7 2013 12:32:05 for Multiscale by
+    <li class="footer">Generated on Fri Oct 11 2013 18:27:54 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

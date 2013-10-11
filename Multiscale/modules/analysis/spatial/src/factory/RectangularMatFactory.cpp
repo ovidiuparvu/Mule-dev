@@ -1,5 +1,5 @@
 #include "multiscale/analysis/spatial/factory/RectangularMatFactory.hpp"
-#include "multiscale/exception/RectangularMatFactoryException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
 
 #include "opencv2/highgui/highgui.hpp"
 
@@ -34,8 +34,9 @@ unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
     for (int i = 0; i < nrOfConcentrations; i++) {
         fin >> concentration;
 
-        if ((concentration < 0) || (concentration > 1))
-            MS_throw(RectangularMatFactoryException, ERR_CONC);
+        if ((concentration < 0) || (concentration > 1)) {
+            MS_throw(InvalidInputException, ERR_CONC);
+        }
 
         data[i] = convertToIntensity(concentration);
     }
@@ -44,11 +45,13 @@ unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
 }
 
 bool RectangularMatFactory::isValidViewerImage(const Mat &image) {
-    if (!image.data)
-        MS_throw(RectangularMatFactoryException, ERR_INPUT_OPEN);
+    if (!image.data) {
+        MS_throw(InvalidInputException, ERR_INPUT_OPEN);
+    }
 
-    if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT))
-        MS_throw(RectangularMatFactoryException, ERR_IMG_RESOLUTION);
+    if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT)) {
+        MS_throw(InvalidInputException, ERR_IMG_RESOLUTION);
+    }
 
     return true;
 }

@@ -1,4 +1,5 @@
-#include "multiscale/exception/MinEnclosingTriangleFinderException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/exception/UnexpectedBehaviourException.hpp"
 #include "multiscale/util/MinEnclosingTriangleFinder.hpp"
 #include "multiscale/util/Numeric.hpp"
 
@@ -25,10 +26,10 @@ MinEnclosingTriangleFinder::~MinEnclosingTriangleFinder() {}
 
 double MinEnclosingTriangleFinder::find(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle) {
     if (points.size() == 0) {
-        MS_throw(MinEnclosingTriangleFinderException, ERR_NR_POINTS);
+        MS_throw(InvalidInputException, ERR_NR_POINTS);
 
         // Added to overcome warning messages
-        throw MinEnclosingTriangleFinderException(__FILE__, __LINE__, ERR_NR_POINTS);
+        throw InvalidInputException(__FILE__, __LINE__, ERR_NR_POINTS);
     } else {
         return findMinTriangle(points, minEnclosingTriangle);
     }
@@ -173,7 +174,7 @@ void MinEnclosingTriangleFinder::updateSidesBA() {
 
 void MinEnclosingTriangleFinder::updateSideB() {
     if (!gamma(b, sideBStartVertex)) {
-        MS_throw(MinEnclosingTriangleFinderException, ERR_SIDE_B_GAMMA);
+        MS_throw(UnexpectedBehaviourException, ERR_SIDE_B_GAMMA);
     }
 
     sideBEndVertex = polygon[b];
@@ -342,7 +343,7 @@ Point2f MinEnclosingTriangleFinder::findVertexCOnSideB() {
     // Get intersection points if they exist
     if (!findGammaIntersectionPoints(predecessor(a), sideBStartVertex, sideBEndVertex, sideCStartVertex, sideCEndVertex,
                                      intersectionPoint1, intersectionPoint2)) {
-        MS_throw(MinEnclosingTriangleFinderException, ERR_VERTEX_C_ON_SIDE_B);
+        MS_throw(UnexpectedBehaviourException, ERR_VERTEX_C_ON_SIDE_B);
     }
 
     // Select the point which is on the same side of line C as the polygon

@@ -1,5 +1,5 @@
 #include "multiscale/analysis/spatial/Entity.hpp"
-#include "multiscale/exception/EntityException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
@@ -67,7 +67,7 @@ double Entity::distanceTo(const Entity &entity) {
 void Entity::validateInputValues(unsigned int pileUpDegree, double area, double perimeter, const Point2f &centre,
                                  const vector<Point2f> &contourPoints) {
     if (!areValid(pileUpDegree, area, perimeter, centre, contourPoints)) {
-        MS_throw(EntityException, ERR_INPUT);
+        MS_throw(InvalidInputException, ERR_INPUT);
     }
 }
 

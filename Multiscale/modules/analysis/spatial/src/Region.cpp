@@ -1,6 +1,6 @@
 #include "multiscale/analysis/spatial/CircularityMeasure.hpp"
 #include "multiscale/analysis/spatial/Region.hpp"
-#include "multiscale/exception/RegionException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/MinEnclosingTriangleFinder.hpp"
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
@@ -42,7 +42,7 @@ string Region::fieldNamesToString() {
 void Region::validateInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                                  double angleWrtOrigin, const vector<Point> &polygon) {
     if (!areValidInputValues(clusterednessDegree, density, area, distanceFromOrigin, angleWrtOrigin, polygon)) {
-        MS_throw(RegionException, ERR_INPUT);
+        MS_throw(InvalidInputException, ERR_INPUT);
     }
 }
 

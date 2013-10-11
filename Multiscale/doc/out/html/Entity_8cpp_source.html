@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('Entity_8cpp_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="Entity_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Entity_8hpp.html">multiscale/analysis/spatial/Entity.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="EntityException_8hpp.html">multiscale/exception/EntityException.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="InvalidInputException_8hpp.html">multiscale/exception/InvalidInputException.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="StringManipulator_8hpp.html">multiscale/util/StringManipulator.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Geometry2D_8hpp.html">multiscale/util/Geometry2D.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('Entity_8cpp_source.html','');});
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891">Entity::validateInputValues</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pileUpDegree, <span class="keywordtype">double</span> area, <span class="keywordtype">double</span> perimeter, <span class="keyword">const</span> Point2f &amp;centre,</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                 <span class="keyword">const</span> vector&lt;Point2f&gt; &amp;contourPoints) {</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc" title="Check if the provided degree of pile up, area, centre and contour points are valid.">areValid</a>(pileUpDegree, area, perimeter, centre, contourPoints)) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1EntityException.html" title="Exception class for the Entity instances.">EntityException</a>, <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a52a27753c0da593552f585f540f003ff">ERR_INPUT</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1InvalidInputException.html" title="Class for representing invalid input exceptions.">InvalidInputException</a>, <a class="code" href="classmultiscale_1_1analysis_1_1Entity.html#a52a27753c0da593552f585f540f003ff">ERR_INPUT</a>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('Entity_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_f0033717cfd9395379e47f6b9f751443.html">src</a></li><li class="navelem"><a class="el" href="Entity_8cpp.html">Entity.cpp</a></li>
-    <li class="footer">Generated on Mon Oct 7 2013 12:32:05 for Multiscale by
+    <li class="footer">Generated on Fri Oct 11 2013 18:27:54 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

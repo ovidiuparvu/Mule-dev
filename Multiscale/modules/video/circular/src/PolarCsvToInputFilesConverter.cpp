@@ -1,4 +1,5 @@
-#include "multiscale/exception/PolarCsvToInputFilesConverterException.hpp"
+#include "multiscale/exception/FileOpenException.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/video/circular/PolarCsvToInputFilesConverter.hpp"
 #include "multiscale/util/iterator/NumberIteratorType.hpp"
 #include "multiscale/util/iterator/LexicographicNumberIterator.hpp"
@@ -63,7 +64,7 @@ void PolarCsvToInputFilesConverter::initInputFile(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        MS_throw(PolarCsvToInputFilesConverterException, ERR_INPUT_OPEN);
+        MS_throw(FileOpenException, ERR_INPUT_OPEN);
     }
 }
 
@@ -74,7 +75,7 @@ void PolarCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        MS_throw(PolarCsvToInputFilesConverterException, ERR_INPUT_OPEN);
+        MS_throw(FileOpenException, ERR_INPUT_OPEN);
     }
 
     while (!fin.eof()) {
@@ -127,7 +128,7 @@ void PolarCsvToInputFilesConverter::initIterators(const NumberIteratorType &numb
 
 void PolarCsvToInputFilesConverter::validateSelectedConcentrationIndex() {
     if (selectedConcentrationIndex >= nrOfConcentrationsForPosition) {
-        MS_throw(PolarCsvToInputFilesConverterException, ERR_SELECTED_CONCENTRATION_INDEX);
+        MS_throw(InvalidInputException, ERR_SELECTED_CONCENTRATION_INDEX);
     }
 }
 
@@ -138,7 +139,7 @@ void PolarCsvToInputFilesConverter::validateInput(ifstream &fin) {
     fin.open(inputFilepath, ios_base::in);
 
     if (!fin.is_open()) {
-        MS_throw(PolarCsvToInputFilesConverterException, ERR_INPUT_OPEN);
+        MS_throw(FileOpenException, ERR_INPUT_OPEN);
     }
 
     while (!fin.eof()) {
@@ -159,14 +160,14 @@ void PolarCsvToInputFilesConverter::validateInputLine(const string &currentLine,
     vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
     if (tokens.size() < (((nrOfConcentricCircles - 1) * nrOfSectors + 1) * nrOfConcentrationsForPosition)) {
-        MS_throw(PolarCsvToInputFilesConverterException, ERR_NR_CONCENTRATIONS);
+        MS_throw(InvalidInputException, ERR_NR_CONCENTRATIONS);
     }
 
     for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
         double value = stod(*it);
 
         if (value < 0) {
-            MS_throw(PolarCsvToInputFilesConverterException,
+            MS_throw(InvalidInputException,
                      string(ERR_INVALID_VALUE_LINE)  +
                      StringManipulator::toString<unsigned int>(lineNumber) +
                      string(ERR_INVALID_VALUE_TOKEN) + (*it)
@@ -268,7 +269,7 @@ inline double PolarCsvToInputFilesConverter::computeSimulationTime(const string 
     double simulationTime = stod(token);
 
     if (simulationTime < 0) {
-        MS_throw(PolarCsvToInputFilesConverterException, ERR_NEG_SIM_TIME);
+        MS_throw(InvalidInputException, ERR_NEG_SIM_TIME);
     }
 
     return simulationTime;

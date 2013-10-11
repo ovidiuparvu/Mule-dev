@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('Cluster_8cpp_source.html','');});
 <div class="contents">
 <a href="Cluster_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CircularityMeasure_8hpp.html">multiscale/analysis/spatial/CircularityMeasure.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Cluster_8hpp.html">multiscale/analysis/spatial/Cluster.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ClusterException_8hpp.html">multiscale/exception/ClusterException.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="InvalidInputException_8hpp.html">multiscale/exception/InvalidInputException.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Geometry2D_8hpp.html">multiscale/util/Geometry2D.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MinEnclosingTriangleFinder_8hpp.html">multiscale/util/MinEnclosingTriangleFinder.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="StringManipulator_8hpp.html">multiscale/util/StringManipulator.hpp</a>&quot;</span></div>
@@ -334,7 +334,7 @@ $(document).ready(function(){initNavTree('Cluster_8cpp_source.html','');});
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
 <div class="line"><a name="l00227"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd">  227</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non-negative)">Cluster::validateOriginDependentValues</a>(<span class="keywordtype">double</span> distanceFromOrigin, <span class="keywordtype">double</span> angleWrtOrigin) {</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e" title="Check if the origin dependent values are valid (i.e. non-negative)">areValidOriginDependentValues</a>(distanceFromOrigin, angleWrtOrigin)) {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1ClusterException.html" title="Exception class for the Cluster instances.">ClusterException</a>, <a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html#a0fa38fcc3f00730409400578829cddd8">ERR_ORIGIN_DEPENDENT_VALUES</a>);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">MS_throw</a>(<a class="code" href="classmultiscale_1_1InvalidInputException.html" title="Class for representing invalid input exceptions.">InvalidInputException</a>, <a class="code" href="classmultiscale_1_1analysis_1_1Cluster.html#a0fa38fcc3f00730409400578829cddd8">ERR_ORIGIN_DEPENDENT_VALUES</a>);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    }</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
@@ -355,7 +355,7 @@ $(document).ready(function(){initNavTree('Cluster_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_f0033717cfd9395379e47f6b9f751443.html">src</a></li><li class="navelem"><a class="el" href="Cluster_8cpp.html">Cluster.cpp</a></li>
-    <li class="footer">Generated on Mon Oct 7 2013 12:32:05 for Multiscale by
+    <li class="footer">Generated on Fri Oct 11 2013 18:27:54 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
