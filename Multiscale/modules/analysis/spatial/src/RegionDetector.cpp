@@ -223,8 +223,10 @@ void RegionDetector::computeAverageClusterednessDegree(vector<Region> &regions) 
 
     // Invert the value such that it is between 0 and 1. Since we are working with pixels
     // the minimum distance between two distinct pixels is 1.
-    avgClusterednessDegree = (avgClusterednessDegree > 1) ? (1 / avgClusterednessDegree)
-                                                          : 1;
+    if (avgClusterednessDegree != 0) {
+        avgClusterednessDegree = (avgClusterednessDegree > 1) ? (1 / avgClusterednessDegree)
+                                                              : 1;
+    }
 }
 
 void RegionDetector::computeAverageDensity(vector<Region> &regions) {
@@ -323,14 +325,12 @@ void RegionDetector::outputResultsToCsvFile(ofstream &fout) {
     // Output header
     fout << Region::fieldNamesToString() << endl;
 
-    if (!regions.empty()) {
-        outputRegionsToCsvFile(fout);
+    outputRegionsToCsvFile(fout);
 
-        // Add an empty line between the region data and the averaged data
-        fout << endl;
+    // Add an empty line between the region data and the averaged data
+    fout << endl;
 
-        outputAveragedMeasuresToCsvFile(fout);
-    }
+    outputAveragedMeasuresToCsvFile(fout);
 }
 
 void RegionDetector::outputRegionsToCsvFile(ofstream &fout) {
