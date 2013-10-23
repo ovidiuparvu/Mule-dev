@@ -88,9 +88,41 @@ void MinEnclosingTriangleFinder::initialiseAlgorithmVariables() {
     c = 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------
+// Main algorithm implementation for the minimum enclosing area triangle problem
+//------------------------------------------------------------------------------
+
 void MinEnclosingTriangleFinder::findMinEnclosingTriangle(vector<Point2f> &minEnclosingTriangle,
                                                           double &minEnclosingTriangleArea) {
     for (c = 0; c < nrOfPoints; c++) {
+        // Function introduced just for visualisation purposes
+        showProgress();
+
         advanceBToRightChain();
         moveAIfLowAndBIfHigh();
         searchForBTangency();
@@ -109,10 +141,31 @@ void MinEnclosingTriangleFinder::findMinEnclosingTriangle(vector<Point2f> &minEn
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void MinEnclosingTriangleFinder::advanceBToRightChain() {
     while (Numeric::greaterOrEqual(height(successor(b)), height(b))) {
         advance(b);
     }
+
+    // Function introduced just for visualisation purposes
+    showProgress();
 }
 
 void MinEnclosingTriangleFinder::moveAIfLowAndBIfHigh() {
@@ -124,6 +177,9 @@ void MinEnclosingTriangleFinder::moveAIfLowAndBIfHigh() {
         } else {
             advance(a);
         }
+
+        // Function introduced just for visualisation purposes
+        showProgress(true, false, false, gammaOfA.x, gammaOfA.y);
     }
 }
 
@@ -133,6 +189,9 @@ void MinEnclosingTriangleFinder::searchForBTangency() {
     while (((gamma(b, gammaOfB)) && (intersectsBelow(gammaOfB, b))) &&
            (Numeric::greaterOrEqual(height(b), height(predecessor(a))))) {
         advance(b);
+
+        // Function introduced just for visualisation purposes
+        showProgress(false, true, false, gammaOfB.x, gammaOfB.y);
     }
 }
 
@@ -188,6 +247,9 @@ bool MinEnclosingTriangleFinder::isLocalMinimalTriangle() {
         (!Geometry2D::lineIntersection(sideBStartVertex, sideBEndVertex, sideCStartVertex, sideCEndVertex, vertexA))) {
         return false;
     }
+
+    // Function introduced just for visualisation purposes
+    showProgress(false, false, true, 0, 0);
 
     return isValidMinimalTriangle();
 }
@@ -423,6 +485,85 @@ unsigned int MinEnclosingTriangleFinder::successor(unsigned int index) {
 unsigned int MinEnclosingTriangleFinder::predecessor(unsigned int index) {
     return (index == 0) ? (nrOfPoints - 1)
                         : (index - 1);
+}
+
+void MinEnclosingTriangleFinder::showProgress(bool isGammaOfA, bool isGammaOfB, bool isTriangle, double x, double y) {
+    const int OFFSET = 10;
+
+    Mat progressImage(Size(1600, 1600), CV_32FC4);
+    Mat flippedImage(Size(1600, 1600), CV_32FC4);
+
+    progressImage = Scalar(255, 255, 255, 255);
+
+    // Display the polygon
+    for (unsigned int i = 0; i < polygon.size(); i++) {
+        line(progressImage, polygon[i], polygon[(i + 1) % polygon.size()], Scalar(0, 0, 0), 30);
+    }
+
+    // Write the coordinates for gamma of a
+    if (isGammaOfA) {
+        line(progressImage, Point2f(x, y), polygon[a], Scalar(128, 128, 0), 30);
+        circle(progressImage, Point2f(x, y), 1, Scalar(128, 128, 0), 60);
+    }
+
+    // Write the coordinates for gamma of b
+    if (isGammaOfB) {
+        line(progressImage, Point2f(x, y), polygon[b], Scalar(0, 128, 128), 30);
+        circle(progressImage, Point2f(x, y), 1, Scalar(0, 128, 128), 60);
+    }
+
+    // Draw points a, b, c
+    circle(progressImage, polygon[a], 1, Scalar(0, 0, 255), 60);
+    circle(progressImage, polygon[b], 1, Scalar(0, 255, 0), 60);
+    circle(progressImage, polygon[c], 1, Scalar(255, 0, 0), 60);
+
+    // Draw the triangle and write the positions of A, B, C
+    if (isTriangle) {
+        line(progressImage, vertexA, vertexB, Scalar(128, 0, 128), 30, 8);
+        line(progressImage, vertexB, vertexC, Scalar(128, 0, 128), 30, 8);
+        line(progressImage, vertexC, vertexA, Scalar(128, 0, 128), 30, 8);
+    }
+
+    // Flip the image
+    flip(progressImage, flippedImage, 0);
+
+    // Write the coordinates for gamma of a
+    if (isGammaOfA) {
+        circle(flippedImage, Point(30, 1532), 1, Scalar(255, 255, 0), 30);
+
+        putText(flippedImage, "  Gamma(a) = P(" + StringManipulator::toString<double>(x) + ", " + StringManipulator::toString<double>(y) + ")", Point(20, 1550), FONT_HERSHEY_PLAIN, 4, Scalar::all(0), 3, 9);
+    }
+
+    // Write the coordinates for gamma of b
+    if (isGammaOfB) {
+        circle(flippedImage, Point(30, 1532), 1, Scalar(0, 255, 255), 30);
+
+        putText(flippedImage, "  Gamma(b) = P(" + StringManipulator::toString<double>(x) + ", " + StringManipulator::toString<double>(y) + ")", Point(20, 1550), FONT_HERSHEY_PLAIN, 4, Scalar::all(0), 3, 9);
+    }
+
+    // Draw the triangle and write the positions of A, B, C
+    if (isTriangle) {
+        putText(flippedImage, "Triangle vertices: ", Point(850, 1370), FONT_HERSHEY_PLAIN, 4, Scalar::all(0), 3, 9);
+        putText(flippedImage, "A(" + StringManipulator::toString<float>(vertexA.x) + ", " + StringManipulator::toString<float>(vertexA.y) + ")", Point(850, 1450), FONT_HERSHEY_PLAIN, 4, Scalar::all(0), 3, 9);
+        putText(flippedImage, "B(" + StringManipulator::toString<float>(vertexB.x) + ", " + StringManipulator::toString<float>(vertexB.y) + ")", Point(850, 1500), FONT_HERSHEY_PLAIN, 4, Scalar::all(0), 3, 9);
+        putText(flippedImage, "C(" + StringManipulator::toString<float>(vertexC.x) + ", " + StringManipulator::toString<float>(vertexC.y) + ")", Point(850, 1550), FONT_HERSHEY_PLAIN, 4, Scalar::all(0), 3, 9);
+    }
+
+    // Write the values of the indices a, b, c
+    putText(flippedImage, "  a = " + StringManipulator::toString<unsigned int>(a), Point(20, OFFSET + 120), FONT_HERSHEY_PLAIN, 4, Scalar::all(0), 3, 9);
+    putText(flippedImage, "  b = " + StringManipulator::toString<unsigned int>(b), Point(20, OFFSET + 170), FONT_HERSHEY_PLAIN, 4, Scalar::all(0), 3, 9);
+    putText(flippedImage, "  c = " + StringManipulator::toString<unsigned int>(c), Point(20, OFFSET + 220), FONT_HERSHEY_PLAIN, 4, Scalar::all(0), 3, 9);
+
+    // Place colours indicating positions of points
+    circle(flippedImage, Point(30, OFFSET + 102), 1, Scalar(0, 0, 255), 30);
+    circle(flippedImage, Point(30, OFFSET + 152), 1, Scalar(0, 255, 0), 30);
+    circle(flippedImage, Point(30, OFFSET + 202), 1, Scalar(255, 0, 0), 30);
+
+    namedWindow("Execution progress", WINDOW_NORMAL);
+    setWindowProperty( "Execution progress", CV_WND_PROP_FULLSCREEN, CV_WINDOW_FULLSCREEN );
+    imshow("Execution progress", flippedImage);
+
+    waitKey(2000);
 }
 
 

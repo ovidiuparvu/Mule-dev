@@ -354,6 +354,9 @@ namespace multiscale {
              */
             unsigned int predecessor(unsigned int index);
 
+            //! Display an image showing the progress
+            void showProgress(bool isGammaOfA = false, bool isGammaOfB = false, bool isTriangle = false, double x = 0, double y = 0);
+
         private:
 
             // Constants

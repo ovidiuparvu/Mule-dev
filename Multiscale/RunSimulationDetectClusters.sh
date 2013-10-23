@@ -40,7 +40,7 @@ then
     ls ${inputFolder}/*.png | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${outputFolder}/{/.} --height=${height} --width=${width} --max-pileup=${maxPileup}
 
     # Empty files which will store final results
-    echo "Clusteredness degree,Pile up degree,Number of entities (ignoring pileup),Area,Perimeter,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${clustersOutputFile};
+    echo "Clusteredness degree,Pile up degree,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${clustersOutputFile};
     echo "Number of clusters" > ${nrOfClustersOutputFile};
     echo "Clusteredness" > ${clusterednessOutputFile};
     echo "Pile up" > ${pileupOutputFile};

@@ -188,7 +188,10 @@ void runMinEnclosingTriangleFinder() {
 // Main function
 int main(int argc, char** argv) {
     try {
-        runMinEnclosingTriangleFinder();
+        // runMinEnclosingTriangleFinder();
+        vector<Point2f> points{Point2f(300, 700), Point2f(400, 480), Point2f(800, 1100), Point2f(643, 200), Point2f(1202, 1005)};
+
+        runMinEnclosingTriangleFinder(points);
     } catch (const std::exception &ex) {
         ExceptionHandler::printErrorMessage(ex);
     }
