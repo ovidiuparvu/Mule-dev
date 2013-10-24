@@ -114,7 +114,7 @@ void MinEnclosingTriangleFinder::initialiseAlgorithmVariables() {
 
 
 //------------------------------------------------------------------------------
-// Main algorithm implementation for the minimum enclosing area triangle problem
+// Minimum enclosing triangle algorithm implementation
 //------------------------------------------------------------------------------
 
 void MinEnclosingTriangleFinder::findMinEnclosingTriangle(vector<Point2f> &minEnclosingTriangle,
@@ -162,10 +162,10 @@ void MinEnclosingTriangleFinder::findMinEnclosingTriangle(vector<Point2f> &minEn
 void MinEnclosingTriangleFinder::advanceBToRightChain() {
     while (Numeric::greaterOrEqual(height(successor(b)), height(b))) {
         advance(b);
-    }
 
-    // Function introduced just for visualisation purposes
-    showProgress();
+        // Function introduced just for visualisation purposes
+        showProgress();
+    }
 }
 
 void MinEnclosingTriangleFinder::moveAIfLowAndBIfHigh() {
@@ -173,8 +173,14 @@ void MinEnclosingTriangleFinder::moveAIfLowAndBIfHigh() {
         Point2f gammaOfA;
 
         if ((gamma(a, gammaOfA)) && (intersectsBelow(gammaOfA, b))) {
+            // Function introduced just for visualisation purposes
+            showProgress(true, false, false, gammaOfA.x, gammaOfA.y);
+
             advance(b);
         } else {
+            // Function introduced just for visualisation purposes
+            showProgress(true, false, false, gammaOfA.x, gammaOfA.y);
+
             advance(a);
         }
 
@@ -188,6 +194,9 @@ void MinEnclosingTriangleFinder::searchForBTangency() {
 
     while (((gamma(b, gammaOfB)) && (intersectsBelow(gammaOfB, b))) &&
            (Numeric::greaterOrEqual(height(b), height(predecessor(a))))) {
+        // Function introduced just for visualisation purposes
+        showProgress(false, true, false, gammaOfB.x, gammaOfB.y);
+
         advance(b);
 
         // Function introduced just for visualisation purposes
