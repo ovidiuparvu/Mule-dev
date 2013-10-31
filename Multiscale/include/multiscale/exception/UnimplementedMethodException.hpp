@@ -16,9 +16,14 @@ namespace multiscale {
         public:
 
             UnimplementedMethodException(const string &file, int line, const string &msg)
-                                         : AlgorithmException(file, line, msg) {}
+                                         : AlgorithmException(file, line, msg) {
+                constructExplanatoryString<const string &>(file, line, msg);
+            }
+
             UnimplementedMethodException(const string &file, int line, const char *msg)
-                                         : AlgorithmException(file, line, msg) {}
+                                         : AlgorithmException(file, line, msg) {
+                constructExplanatoryString<const char *>(file, line, msg);
+            }
 
     };
 

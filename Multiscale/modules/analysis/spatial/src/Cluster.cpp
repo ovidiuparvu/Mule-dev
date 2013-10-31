@@ -232,8 +232,8 @@ void Cluster::validateOriginDependentValues(double distanceFromOrigin, double an
 
 bool Cluster::areValidOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin) {
     return (
-      (distanceFromOrigin >= 0) &&
-      (angleWrtOrigin >= 0)
+      (Numeric::greaterOrEqual(distanceFromOrigin, 0)) &&
+      (Numeric::greaterOrEqual(angleWrtOrigin, 0))
     );
 }
 

@@ -96,12 +96,18 @@ namespace multiscaletest {
     };
 
     MinEnclosingTriangleFinderTest::MinEnclosingTriangleFinderTest() {
+        area = 0;
+
         points.clear();
+        convexHull.clear();
         triangle.clear();
     }
 
     MinEnclosingTriangleFinderTest::~MinEnclosingTriangleFinderTest() {
+        area = 0;
+
         points.clear();
+        convexHull.clear();
         triangle.clear();
     }
 

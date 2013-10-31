@@ -16,9 +16,14 @@ namespace multiscale {
         public:
 
             FileOpenException(const string &file, int line, const string &msg)
-                              : IOException(file, line, msg) {}
+                              : IOException(file, line, msg) {
+                constructExplanatoryString<const string &>(file, line, msg);
+            }
+
             FileOpenException(const string &file, int line, const char *msg)
-                              : IOException(file, line, msg) {}
+                              : IOException(file, line, msg) {
+                constructExplanatoryString<const char *>(file, line, msg);
+            }
 
     };
 

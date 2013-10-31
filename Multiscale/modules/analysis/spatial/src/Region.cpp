@@ -58,7 +58,7 @@ bool Region::areValidInputValues(double clusterednessDegree, double density, dou
         (clusterednessDegree > 0) &&
         (density > 0) &&
         (area > 0) &&
-        (distanceFromOrigin > 0) &&
+        (Numeric::greaterOrEqual(distanceFromOrigin, 0)) &&
         (Numeric::lessOrEqual(0, angleWrtOrigin)) &&
         (Numeric::lessOrEqual(angleWrtOrigin, 360))
     );

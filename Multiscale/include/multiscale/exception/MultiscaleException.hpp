@@ -19,26 +19,21 @@ namespace multiscale {
 
         private:
 
-            string explanatoryString;
+            string explanatoryString;   /*!< User friendly exception message */
 
         public:
 
-            // Constructor
-            explicit MultiscaleException(const string &file, int line, const string &msg) : runtime_error(msg) {
-                constructExplanatoryString<const string &>(file, line, msg);
-            }
-
-            // Constructor
-            explicit MultiscaleException(const string &file, int line, const char *msg) : runtime_error(msg) {
-                constructExplanatoryString<const char *>(file, line, msg);
-            }
+            explicit MultiscaleException(const string &file, int line, const string &msg)
+                                        : runtime_error(msg) {}
+            explicit MultiscaleException(const string &file, int line, const char *msg)
+                                        : runtime_error(msg) {}
 
             //! Returns an explanatory string
             const char* what() const noexcept {
                 return explanatoryString.c_str();
             }
 
-        private:
+        protected:
 
             //! Construct the explanatory string
             /*!
