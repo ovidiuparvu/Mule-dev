@@ -37,7 +37,7 @@ then
     ls ${inputFolder}/*.png | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${outputFolder}/{/.} --debug-mode="false"
 
     # Empty files which will store final results
-    echo "Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${regionsOutputFile};
+    echo "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${regionsOutputFile};
     echo "Number of regions" > ${nrOfRegionsOutputFile};
     echo "Clusteredness" > ${clusterednessOutputFile};
     echo "Pile up" > ${pileupOutputFile};
