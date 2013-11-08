@@ -238,7 +238,8 @@ inline void RectangularEntityCsvToInputFilesConverter::validateSimulationTime(co
 inline void RectangularEntityCsvToInputFilesConverter::validateCoordinate(const string & token, unsigned int lineNumber, bool isOxCoordinate) {
     unsigned int coordinate = stoi(token);
 
-    if (((isOxCoordinate) && (coordinate > width)) || ((!isOxCoordinate) && (coordinate > height))) {
+    if (((isOxCoordinate) && ((coordinate > width) || (coordinate == 0))) ||
+        ((!isOxCoordinate) && ((coordinate > height) || (coordinate == 0)))) {
         MS_throw(InvalidInputException,
                  string(ERR_INVALID_VALUE_LINE)  +
                  StringManipulator::toString<unsigned int>(lineNumber) +
