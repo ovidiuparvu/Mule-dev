@@ -33,7 +33,7 @@ then
     # Inform user of the next action
     echo "Running the region detection procedure for each image...";
 
-    # Run the cluster detection procedure for each image in parallel
+    # Run the region detection procedure for each image in parallel
     ls ${inputFolder}/*.png | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${outputFolder}/{/.} --debug-mode="false"
 
     # Empty files which will store final results
@@ -42,7 +42,7 @@ then
     echo "Clusteredness" > ${clusterednessOutputFile};
     echo "Pile up" > ${pileupOutputFile};
 
-    # Write the clusters, number of clusters, overall clusteredness and overall pileup in separate files
+    # Write the regions, number of regions, overall clusteredness and overall pileup in separate files
     for output in `ls -1v ${outputFolder}/*.out`;
     do
         cat ${output} | head -n-3 | tail -n+2 >> ${regionsOutputFile};

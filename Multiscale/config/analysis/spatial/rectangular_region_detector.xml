@@ -3,9 +3,9 @@
 <detector>
 	<alpha>917</alpha>
 	<beta>5</beta>
-	<blurKernelSize>15</blurKernelSize>
-	<morphologicalCloseIterations>1</morphologicalCloseIterations>
-	<epsilon>1</epsilon>
-	<regionAreaThresh>32074</regionAreaThresh>
-	<thresholdValue>104</thresholdValue>
+	<blurKernelSize>11</blurKernelSize>
+	<morphologicalCloseIterations>2</morphologicalCloseIterations>
+	<epsilon>3</epsilon>
+	<regionAreaThresh>22304</regionAreaThresh>
+	<thresholdValue>125</thresholdValue>
 </detector>
