@@ -19,10 +19,6 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 # CircularDetectRegions
 
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/CircularDetectRegions.cpp.in ${CMAKE_CURRENT_SOURCE_DIR}/src/CircularDetectRegions.cpp
-)
-
 set(CIRCULAR_DETECT_REGIONS_SRC
     src/CircularityMeasure.cpp
     src/Detector.cpp
@@ -45,10 +41,6 @@ target_link_libraries(CircularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
 
 
 # CircularMatFactorySample
-
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/sample/CircularMatFactorySample.cpp.in ${CMAKE_CURRENT_SOURCE_DIR}/sample/CircularMatFactorySample.cpp
-)
 
 set(CIRCULAR_MAT_FACTORY_SAMPLE_SRC
     sample/CircularMatFactorySample.cpp
@@ -98,10 +90,6 @@ target_link_libraries(LexicographicIteratorSample gtest gtest_main)
 
 # RectangularDetectRegions
 
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularDetectRegions.cpp.in ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularDetectRegions.cpp
-)
-
 set(RECTANGULAR_DETECT_REGIONS_SRC
     src/CircularityMeasure.cpp
     src/Detector.cpp
@@ -125,10 +113,6 @@ target_link_libraries(RectangularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
 
 # RectangularMatFactorySample
 
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/sample/RectangularMatFactorySample.cpp.in ${CMAKE_CURRENT_SOURCE_DIR}/sample/RectangularMatFactorySample.cpp
-)
-
 set(RECTANGULAR_MAT_FACTORY_SAMPLE_SRC
     sample/RectangularMatFactorySample.cpp
     
@@ -146,10 +130,6 @@ target_link_libraries(RectangularMatFactorySample gtest gtest_main)
 
 
 # SimulationDetectClusters
-
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/SimulationDetectClusters.cpp.in ${CMAKE_CURRENT_SOURCE_DIR}/src/SimulationDetectClusters.cpp
-)
 
 set(SIMULATION_DETECT_CLUSTERS_SRC
     src/CircularityMeasure.cpp

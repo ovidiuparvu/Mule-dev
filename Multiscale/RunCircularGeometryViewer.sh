@@ -23,12 +23,13 @@ IMG_FOLDER=${OUT_FOLDER}/img;
 # OPTIONAL PARAMETERS:
 #   5. The index of the selected concentration when the number of concentrations for each position is greater than 1.
 #   6. Use log scaling or not
-if [ $# -lt 4 ] || [ $# -gt 6 ]; 
+#   7. Use lexicographic iterator or not
+if [ $# -lt 4 ] || [ $# -gt 7 ]; 
 then
     echo "Incorrect number of parameters provided."
     echo
     echo "Usage:";
-    echo "    CircularGeometryViewer <path_to_csv_file> <nr_concentrations_for_each_position> <nr_concentric_circles> <nr_sectors> [<selected-concentration-index>] [<use-log-scaling>]";
+    echo "    CircularGeometryViewer <path_to_csv_file> <nr_concentrations_for_each_position> <nr_concentric_circles> <nr_sectors> [<selected-concentration-index>] [<use-log-scaling>] [<use-lexicographic-iterator>]";
     
     exit 1;
 fi
@@ -57,6 +58,12 @@ then
     fi
 
     useLogScaling=`echo "--use-log-scaling" $6`;
+fi
+
+# If the lexicographic operator option is provided, then take it into account
+if [ $# -eq 7 ];
+then
+    useLexicographicIterator=`echo "--lexicographic-iterator"`;
 fi
 
 # Get the parameters in separate variables
@@ -97,7 +104,7 @@ echo "Generating the input files from the .csv file...";
 
 # Run the program for converting the ".csv" file to "Number of time points" input files
 # for the MapCartesianToPolarScript program
-bin/PolarMapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --nr-concentric-circles $nrOfConcentricCircles --nr-sectors $nrOfSectors --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}" ${selectedConcentrationIndex} ${useLogScaling};
+bin/PolarMapCsvToInputFiles --input-file "${INPUT_FOLDER}/${folderName}/${csvFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForPosition} --nr-concentric-circles $nrOfConcentricCircles --nr-sectors $nrOfSectors --output-file "${INPUT_FOLDER}/${folderName}/${csvFilename}" ${selectedConcentrationIndex} ${useLogScaling} ${useLexicographicIterator};
 
 # Inform user of the next action
 echo "Generating in parallel the gnuplot script for each of the input files...";
