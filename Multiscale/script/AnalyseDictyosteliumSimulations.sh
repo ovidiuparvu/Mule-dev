@@ -25,7 +25,7 @@ HOME_FOLDER=`pwd`;
 R_FOLDER="${HOME_FOLDER}/R";
 
 DATE=`date +"%F-%T"`;
-OUT_FOLDER="${HOME_FOLDER}/results/${simulationGridHeight}x${simulationGridWidth}/${DATE}";
+OUT_FOLDER="${HOME_FOLDER}/results/${simulationGridHeight}x${simulationGridWidth}_${nrOfDictyosteliumCells}/${DATE}";
 
 OUT_ANALYSIS_FOLDER="${OUT_FOLDER}/analysis";
 OUT_VISUALISATION_FOLDER="${OUT_FOLDER}/visualisation";
