@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!-- User-defined simple types -->
+
+	<xs:simpleType name="RealBtwZeroAndOneType">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="64" />
+			<xs:fractionDigits value="32" />
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="ShapeMeasureType">
+		<xs:restriction base="RealBtwZeroAndOneType" />
+	</xs:simpleType>
+	
+	<xs:simpleType name="ShapeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="triangular" />
+			<xs:enumeration value="rectangular" />
+			<xs:enumeration value="circular" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AngleDegreesType">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="64" />
+			<xs:fractionDigits value="32" />
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="360" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="RealNonNegativeType">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="64" />
+			<xs:fractionDigits value="32" />
+			<xs:minInclusive value="0" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- User-defined complex types -->
+	
+	<xs:complexType name="CentroidType">
+		<xs:sequence>
+			<xs:element name="x" type="RealNonNegativeType" />
+			<xs:element name="y" type="RealNonNegativeType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SpatialEntityType">
+		<xs:sequence>
+			<xs:element name="clusteredness" type="RealNonNegativeType" />
+			<xs:element name="density" type="RealNonNegativeType" />
+			<xs:element name="area" type="RealNonNegativeType" />
+			<xs:element name="perimeter" type="RealNonNegativeType" />
+			<xs:element name="distanceFromOrigin" type="RealNonNegativeType" />
+			<xs:element name="angleDegrees" type="AngleDegreesType" />
+			<xs:element name="shape" type="ShapeType" />
+			<xs:element name="triangleMeasure" type="ShapeMeasureType" />
+			<xs:element name="rectangleMeasure" type="ShapeMeasureType" />
+			<xs:element name="circleMeasure" type="ShapeMeasureType" />
+			<xs:element name="centroid" type="CentroidType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="TimepointType">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="spatialEntity" type="SpatialEntityType" />
+		</xs:sequence>
+		<xs:attribute name="value" type="RealNonNegativeType" />
+	</xs:complexType>
+	
+	<!-- Elements -->
+	
+	<xs:element maxOccurs="unbounded" name="timepoint" type="TimepointType" />
+</xs:schema>
