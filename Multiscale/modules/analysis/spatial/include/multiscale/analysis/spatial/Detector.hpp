@@ -4,6 +4,9 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/xml_parser.hpp>
+
 #include <fstream>
 
 using namespace cv;
@@ -152,14 +155,23 @@ namespace multiscale {
                 //! Store the image with the output results on disk
                 void storeOutputImageOnDisk();
 
-                //! Output the results to a file
+                //! Output the results to a csv file
                 void outputResultsToCsvFile();
+
+                //! Output the results to an xml file
+                void outputResultsToXMLFile();
 
                 //! Output the results to a file using the provided output file stream
                 /*!
                  * \param fout Output file stream
                  */
                 virtual void outputResultsToCsvFile(ofstream &fout) = 0;
+
+                //! Output the results to an xml file using the provided output file path
+                /*!
+                 * \param filepath Output file path
+                 */
+                virtual void outputResultsToXMLFile(const string &filepath) = 0;
 
                 //! Process the input image and detect objects/entities of interest
                 virtual void processImageAndDetect() = 0;
@@ -199,13 +211,31 @@ namespace multiscale {
                 static const string ERR_OUTPUT_FILE;
                 static const string ERR_INVALID_IMAGE;
 
-                static const string OUTPUT_EXTENSION;
+                static const string CSV_EXTENSION;
                 static const string IMG_EXTENSION;
+                static const string XML_EXTENSION;
 
                 static const string WIN_OUTPUT_IMAGE;
 
                 static const int KEY_ESC;
                 static const int KEY_SAVE;
+
+                static const string LABEL_COMMENT;
+                static const string LABEL_COMMENT_CONTENTS;
+
+                static const string LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY;
+                static const string LABEL_SPATIAL_ENTITY_CLUSTEREDNESS;
+                static const string LABEL_SPATIAL_ENTITY_DENSITY;
+                static const string LABEL_SPATIAL_ENTITY_AREA;
+                static const string LABEL_SPATIAL_ENTITY_PERIMETER;
+                static const string LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN;
+                static const string LABEL_SPATIAL_ENTITY_ANGLE_DEGREES;
+                static const string LABEL_SPATIAL_ENTITY_SHAPE;
+                static const string LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE;
+                static const string LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE;
+                static const string LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE;
+                static const string LABEL_SPATIAL_ENTITY_CENTROID_X;
+                static const string LABEL_SPATIAL_ENTITY_CENTROID_Y;
 
         };
 

@@ -61,6 +61,18 @@ namespace multiscale {
                 //! Get the shape best fitting the spatial collection
                 Shape2D getShape();
 
+                //! Get the shape best fitting the spatial collection as a string
+                string getShapeAsString();
+
+                //! Get the measure indicating how much the shape of the contour resembles a triangle
+                double getTriangularMeasure();
+
+                //! Get the measure indicating how much the shape of the contour resembles a rectangle
+                double getRectangularMeasure();
+
+                //! Get the measure indicating how much the shape of the contour resembles a circle
+                double getCircularMeasure();
+
                 //! Get the point defining the centre of the entity
                 Point2f getCentre();
 

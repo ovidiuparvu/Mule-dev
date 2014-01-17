@@ -344,6 +344,47 @@ void RegionDetector::outputAveragedMeasuresToCsvFile(ofstream &fout) {
          << OUTPUT_DENSITY << avgDensity << endl;
 }
 
+void RegionDetector::outputResultsToXMLFile(const string &filepath) {
+    pt::ptree propertyTree;
+
+    propertyTree.put<string>(LABEL_COMMENT, LABEL_COMMENT_CONTENTS);
+
+    addRegionsToPropertyTree(propertyTree);
+
+    // Pretty writing of the property tree to the file
+    pt::xml_writer_settings<char> settings('\t', 1);
+
+    write_xml(filepath, propertyTree, std::locale(), settings);
+}
+
+void RegionDetector::addRegionsToPropertyTree(pt::ptree &propertyTree) {
+    // Convert regions to property trees and add them to propertyTree
+    for (Region &region: regions) {
+        pt::ptree regionPropertyTree = constructPropertyTree(region);
+
+        propertyTree.add_child(LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY, regionPropertyTree);
+    }
+}
+
+pt::ptree RegionDetector::constructPropertyTree(Region &region) {
+    pt::ptree propertyTree;
+
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_CLUSTEREDNESS, region.getClusterednessDegree());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_DENSITY, region.getDensity());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_AREA, region.getArea());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PERIMETER, region.getPerimeter());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN, region.getDistanceFromOrigin());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_ANGLE_DEGREES, region.getAngle());
+    propertyTree.put<std::string>(LABEL_SPATIAL_ENTITY_SHAPE, region.getShapeAsString());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE, region.getTriangularMeasure());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE, region.getRectangularMeasure());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE, region.getCircularMeasure());
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_X, region.getCentre().x);
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_Y, region.getCentre().y);
+
+    return propertyTree;
+}
+
 void RegionDetector::outputResultsToImage() {
     // Two extra pixels required for each dimension, because the contour detection
     // algorithm ignores the first and last lines and columns of the image matrix. In order

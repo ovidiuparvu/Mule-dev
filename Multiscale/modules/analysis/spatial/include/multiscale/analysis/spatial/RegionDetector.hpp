@@ -7,6 +7,8 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
+namespace pt = boost::property_tree;
+
 using namespace std;
 using namespace cv;
 
@@ -273,6 +275,24 @@ namespace multiscale {
                  * \param fout Output file stream
                  */
                 void outputAveragedMeasuresToCsvFile(ofstream &fout);
+
+                //! Output the regions and averaged measures to an xml file
+                /*!
+                 * \param filepath Output file path
+                 */
+                void outputResultsToXMLFile(const string &filepath) override;
+
+                //! Add the regions to the property tree
+                /*!
+                 * \param propertyTree The property tree
+                 */
+                void addRegionsToPropertyTree(pt::ptree &propertyTree);
+
+                //! Construct the property tree corresponding to the given region
+                /*!
+                 * \param region The region to be converted
+                 */
+                pt::ptree constructPropertyTree(Region &region);
 
                 //! Output the results to the outputImage instance
                 void outputResultsToImage() override;

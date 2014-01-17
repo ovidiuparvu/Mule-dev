@@ -8,6 +8,8 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
+namespace pt = boost::property_tree;
+
 using namespace std;
 using namespace cv;
 
@@ -187,6 +189,30 @@ namespace multiscale {
                  *  \param fout     Output file stream
                  */
                 void outputResultsToCsvFile(ofstream &fout) override;
+
+                //! Output the clusters and averaged measures to an xml file
+                /*!
+                 * \param filepath Output file path
+                 */
+                void outputResultsToXMLFile(const string &filepath) override;
+
+                //! Add the clusters to the property tree
+                /*!
+                 * \param propertyTree The property tree
+                 */
+                void addClustersToPropertyTree(pt::ptree &propertyTree);
+
+                //! Construct the property tree corresponding to the given cluster
+                /*!
+                 * \param cluster The cluster to be converted
+                 */
+                pt::ptree constructPropertyTree(Cluster &cluster);
+
+                //! Check if the provided cluster is non-empty
+                /*!
+                 * \param cluster Cluster to be checked
+                 */
+                bool isNonEmptyCluster(Cluster &cluster);
 
                 //! Convert the value of eps from integer to double
                 double convertEpsValue();

@@ -45,6 +45,22 @@ Shape2D SpatialCollection2D::getShape() {
     return shape;
 }
 
+string SpatialCollection2D::getShapeAsString() {
+    return shapeAsString();
+}
+
+double SpatialCollection2D::getTriangularMeasure() {
+    return triangularMeasure;
+}
+
+double SpatialCollection2D::getRectangularMeasure() {
+    return rectangularMeasure;
+}
+
+double SpatialCollection2D::getCircularMeasure() {
+    return circularMeasure;
+}
+
 Point2f SpatialCollection2D::getCentre() {
     updateMeasuresIfRequired();
 
@@ -141,9 +157,9 @@ void SpatialCollection2D::initialise() {
 
 
 // Constants
-const string SpatialCollection2D::STR_TRIANGLE            = "triangle";
-const string SpatialCollection2D::STR_RECTANGLE           = "rectangle";
-const string SpatialCollection2D::STR_CIRCLE              = "circle";
+const string SpatialCollection2D::STR_TRIANGLE            = "triangular";
+const string SpatialCollection2D::STR_RECTANGLE           = "rectangular";
+const string SpatialCollection2D::STR_CIRCLE              = "circular";
 const string SpatialCollection2D::STR_UNDEFINED           = "undefined";
 
 const string SpatialCollection2D::OUTPUT_SEPARATOR        = ",";

@@ -178,7 +178,9 @@ void ClusterDetector::outputResultsToCsvFile(ofstream &fout) {
     fout << Cluster::fieldNamesToString() << endl;
 
     for (Cluster &cluster : clusters) {
-        fout << cluster.toString() << endl;
+        if (isNonEmptyCluster(cluster)) {
+            fout << cluster.toString() << endl;
+        }
     }
 
     // Add an empty line between the cluster data and the averaged data
@@ -186,6 +188,53 @@ void ClusterDetector::outputResultsToCsvFile(ofstream &fout) {
 
     fout << OUTPUT_CLUSTEREDNESS << clusterednessIndex << endl
          << OUTPUT_PILE_UP << avgPileUpDegree << endl;
+}
+
+void ClusterDetector::outputResultsToXMLFile(const string &filepath) {
+    pt::ptree propertyTree;
+
+    propertyTree.put<string>(LABEL_COMMENT, LABEL_COMMENT_CONTENTS);
+
+    addClustersToPropertyTree(propertyTree);
+
+    // Pretty writing of the property tree to the file
+    pt::xml_writer_settings<char> settings('\t', 1);
+
+    write_xml(filepath, propertyTree, std::locale(), settings);
+}
+
+void ClusterDetector::addClustersToPropertyTree(pt::ptree &propertyTree) {
+    // Convert regions to property trees and add them to propertyTree
+    for (Cluster &cluster: clusters) {
+        if (isNonEmptyCluster(cluster)) {
+            pt::ptree clusterPropertyTree = constructPropertyTree(cluster);
+
+            propertyTree.add_child(LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY, clusterPropertyTree);
+        }
+    }
+}
+
+pt::ptree ClusterDetector::constructPropertyTree(Cluster &cluster) {
+    pt::ptree propertyTree;
+
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_CLUSTEREDNESS, cluster.getClusterednessDegree());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_DENSITY, cluster.getPileUpDegree());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_AREA, cluster.getArea());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PERIMETER, cluster.getPerimeter());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN, cluster.getDistanceFromOrigin());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_ANGLE_DEGREES, cluster.getAngle());
+    propertyTree.put<std::string>(LABEL_SPATIAL_ENTITY_SHAPE, cluster.getShapeAsString());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE, cluster.getTriangularMeasure());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE, cluster.getRectangularMeasure());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE, cluster.getCircularMeasure());
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_X, cluster.getCentre().x);
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_Y, cluster.getCentre().y);
+
+    return propertyTree;
+}
+
+bool ClusterDetector::isNonEmptyCluster(Cluster &cluster) {
+    return ((cluster.getArea() > 0) && (cluster.getPerimeter() > 0));
 }
 
 double ClusterDetector::convertEpsValue() {
