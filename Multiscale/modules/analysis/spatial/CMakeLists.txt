@@ -26,7 +26,7 @@ set(CIRCULAR_DETECT_REGIONS_SRC
     src/CircularDetectRegions.cpp 
     src/Region.cpp
     src/RegionDetector.cpp
-    src/SpatialCollection2D.cpp
+    src/SpatialEntityPseudo3D.cpp
     
     src/factory/CircularMatFactory.cpp 
 )
@@ -97,7 +97,7 @@ set(RECTANGULAR_DETECT_REGIONS_SRC
     src/RectangularDetectRegions.cpp 
     src/Region.cpp
     src/RegionDetector.cpp
-    src/SpatialCollection2D.cpp
+    src/SpatialEntityPseudo3D.cpp
     
     src/factory/RectangularMatFactory.cpp 
 )
@@ -142,7 +142,7 @@ set(SIMULATION_DETECT_CLUSTERS_SRC
     src/Silhouette.cpp
     src/cluster/SimulationClusterDetector.cpp
     src/SimulationDetectClusters.cpp
-    src/SpatialCollection2D.cpp
+    src/SpatialEntityPseudo3D.cpp
     
     src/factory/RectangularMatFactory.cpp 
 )

@@ -9,7 +9,7 @@ using namespace multiscale::analysis;
 
 
 Region::Region(double clusterednessDegree, double density, double area, double distanceFromOrigin,
-               double angleWrtOrigin, const vector<Point> &polygon) : SpatialCollection2D() {
+               double angleWrtOrigin, const vector<Point> &polygon) : SpatialEntityPseudo3D() {
     validateInputValues(clusterednessDegree, density, area, distanceFromOrigin, angleWrtOrigin, polygon);
 
     this->clusterednessDegree = clusterednessDegree;

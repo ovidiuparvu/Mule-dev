@@ -1,5 +1,5 @@
-#ifndef SPATIALCOLLECTION2D_HPP
-#define SPATIALCOLLECTION2D_HPP
+#ifndef SpatialEntityPseudo3D_HPP
+#define SpatialEntityPseudo3D_HPP
 
 #include "multiscale/analysis/spatial/Shape2D.hpp"
 
@@ -13,8 +13,8 @@ namespace multiscale {
 
     namespace analysis {
 
-        //! Class for representing a collection of objects in 2D space
-        class SpatialCollection2D {
+        //! Class for representing a pseudo-3D (explicit 2D + implicit height) object
+        class SpatialEntityPseudo3D {
 
             protected:
 
@@ -40,8 +40,8 @@ namespace multiscale {
 
             public:
 
-                SpatialCollection2D();
-                virtual ~SpatialCollection2D();
+                SpatialEntityPseudo3D();
+                virtual ~SpatialEntityPseudo3D();
 
                 //! Get the clusteredness degree
                 double getClusterednessDegree();

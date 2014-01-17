@@ -1,7 +1,7 @@
 #ifndef REGION_HPP
 #define REGION_HPP
 
-#include "multiscale/analysis/spatial/SpatialCollection2D.hpp"
+#include "multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp"
 
 #include "opencv2/imgproc/imgproc.hpp"
 
@@ -16,7 +16,7 @@ namespace multiscale {
     namespace analysis {
 
         //! Class for representing a region
-        class Region : public SpatialCollection2D {
+        class Region : public SpatialEntityPseudo3D {
 
             private:
 

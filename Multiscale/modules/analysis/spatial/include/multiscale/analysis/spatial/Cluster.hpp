@@ -4,7 +4,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "multiscale/analysis/spatial/Entity.hpp"
 #include "multiscale/analysis/spatial/Shape2D.hpp"
-#include "multiscale/analysis/spatial/SpatialCollection2D.hpp"
+#include "multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
 #include <vector>
@@ -18,7 +18,7 @@ namespace multiscale {
     namespace analysis {
 
         //! Class for representing a cluster of entities in an image
-        class Cluster : public SpatialCollection2D {
+        class Cluster : public SpatialEntityPseudo3D {
 
             private:
 

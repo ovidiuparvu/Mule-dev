@@ -1,79 +1,79 @@
-#include "multiscale/analysis/spatial/SpatialCollection2D.hpp"
+#include "multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp"
 
 using namespace multiscale::analysis;
 
 
-SpatialCollection2D::SpatialCollection2D() {
+SpatialEntityPseudo3D::SpatialEntityPseudo3D() {
     initialise();
 }
 
-SpatialCollection2D::~SpatialCollection2D() {}
+SpatialEntityPseudo3D::~SpatialEntityPseudo3D() {}
 
-double SpatialCollection2D::getClusterednessDegree() {
+double SpatialEntityPseudo3D::getClusterednessDegree() {
     updateMeasuresIfRequired();
 
     return clusterednessDegree;
 }
 
-double SpatialCollection2D::getArea() {
+double SpatialEntityPseudo3D::getArea() {
     updateMeasuresIfRequired();
 
     return area;
 }
 
-double SpatialCollection2D::getPerimeter() {
+double SpatialEntityPseudo3D::getPerimeter() {
     updateMeasuresIfRequired();
 
     return perimeter;
 }
 
-double SpatialCollection2D::getDistanceFromOrigin() {
+double SpatialEntityPseudo3D::getDistanceFromOrigin() {
     updateMeasuresIfRequired();
 
     return distanceFromOrigin;
 }
 
-double SpatialCollection2D::getAngle() {
+double SpatialEntityPseudo3D::getAngle() {
     updateMeasuresIfRequired();
 
     return angle;
 }
 
-Shape2D SpatialCollection2D::getShape() {
+Shape2D SpatialEntityPseudo3D::getShape() {
     updateMeasuresIfRequired();
 
     return shape;
 }
 
-string SpatialCollection2D::getShapeAsString() {
+string SpatialEntityPseudo3D::getShapeAsString() {
     return shapeAsString();
 }
 
-double SpatialCollection2D::getTriangularMeasure() {
+double SpatialEntityPseudo3D::getTriangularMeasure() {
     return triangularMeasure;
 }
 
-double SpatialCollection2D::getRectangularMeasure() {
+double SpatialEntityPseudo3D::getRectangularMeasure() {
     return rectangularMeasure;
 }
 
-double SpatialCollection2D::getCircularMeasure() {
+double SpatialEntityPseudo3D::getCircularMeasure() {
     return circularMeasure;
 }
 
-Point2f SpatialCollection2D::getCentre() {
+Point2f SpatialEntityPseudo3D::getCentre() {
     updateMeasuresIfRequired();
 
     return centre;
 }
 
-string SpatialCollection2D::toString() {
+string SpatialEntityPseudo3D::toString() {
     updateMeasuresIfRequired();
 
     return fieldValuesToString();
 }
 
-void SpatialCollection2D::updateMeasuresIfRequired() {
+void SpatialEntityPseudo3D::updateMeasuresIfRequired() {
     if (updateFlag) {
         updateMeasures();
         updateSpatialCollectionSpecificValues();
@@ -82,7 +82,7 @@ void SpatialCollection2D::updateMeasuresIfRequired() {
     }
 }
 
-void SpatialCollection2D::updateMeasures() {
+void SpatialEntityPseudo3D::updateMeasures() {
     updateClusterednessDegree();
     updateArea();
     updatePerimeter();
@@ -90,7 +90,7 @@ void SpatialCollection2D::updateMeasures() {
     updateCentrePoint();
 }
 
-void SpatialCollection2D::updateShape() {
+void SpatialEntityPseudo3D::updateShape() {
     triangularMeasure = isTriangularMeasure();
     rectangularMeasure = isRectangularMeasure();
     circularMeasure = isCircularMeasure();
@@ -110,7 +110,7 @@ void SpatialCollection2D::updateShape() {
     }
 }
 
-string SpatialCollection2D::shapeAsString() {
+string SpatialEntityPseudo3D::shapeAsString() {
     switch (shape) {
         case Shape2D::Triangle:
             return STR_TRIANGLE;
@@ -132,7 +132,7 @@ string SpatialCollection2D::shapeAsString() {
     return STR_UNDEFINED;
 }
 
-vector<Point2f> SpatialCollection2D::convertPoints(const vector<Point> &points) {
+vector<Point2f> SpatialEntityPseudo3D::convertPoints(const vector<Point> &points) {
     vector<Point2f> convertedPoints;
 
     for (const Point &point : points) {
@@ -142,7 +142,7 @@ vector<Point2f> SpatialCollection2D::convertPoints(const vector<Point> &points) 
     return convertedPoints;
 }
 
-void SpatialCollection2D::initialise() {
+void SpatialEntityPseudo3D::initialise() {
     area = 0;
     perimeter = 0;
 
@@ -157,13 +157,13 @@ void SpatialCollection2D::initialise() {
 
 
 // Constants
-const string SpatialCollection2D::STR_TRIANGLE            = "triangular";
-const string SpatialCollection2D::STR_RECTANGLE           = "rectangular";
-const string SpatialCollection2D::STR_CIRCLE              = "circular";
-const string SpatialCollection2D::STR_UNDEFINED           = "undefined";
+const string SpatialEntityPseudo3D::STR_TRIANGLE            = "triangular";
+const string SpatialEntityPseudo3D::STR_RECTANGLE           = "rectangular";
+const string SpatialEntityPseudo3D::STR_CIRCLE              = "circular";
+const string SpatialEntityPseudo3D::STR_UNDEFINED           = "undefined";
 
-const string SpatialCollection2D::OUTPUT_SEPARATOR        = ",";
+const string SpatialEntityPseudo3D::OUTPUT_SEPARATOR        = ",";
 
-const string SpatialCollection2D::ERR_INPUT               = "Invalid input parameters were provided to the constructor.";
+const string SpatialEntityPseudo3D::ERR_INPUT               = "Invalid input parameters were provided to the constructor.";
 
-const bool SpatialCollection2D::CONVEX_HULL_CLOCKWISE     = true;
+const bool SpatialEntityPseudo3D::CONVEX_HULL_CLOCKWISE     = true;
