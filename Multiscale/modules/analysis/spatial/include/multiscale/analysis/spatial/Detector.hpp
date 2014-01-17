@@ -224,18 +224,19 @@ namespace multiscale {
                 static const string LABEL_COMMENT_CONTENTS;
 
                 static const string LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY;
-                static const string LABEL_SPATIAL_ENTITY_CLUSTEREDNESS;
-                static const string LABEL_SPATIAL_ENTITY_DENSITY;
-                static const string LABEL_SPATIAL_ENTITY_AREA;
-                static const string LABEL_SPATIAL_ENTITY_PERIMETER;
-                static const string LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN;
-                static const string LABEL_SPATIAL_ENTITY_ANGLE_DEGREES;
-                static const string LABEL_SPATIAL_ENTITY_SHAPE;
-                static const string LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE;
-                static const string LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE;
-                static const string LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE;
-                static const string LABEL_SPATIAL_ENTITY_CENTROID_X;
-                static const string LABEL_SPATIAL_ENTITY_CENTROID_Y;
+
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X;
+                static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y;
 
         };
 

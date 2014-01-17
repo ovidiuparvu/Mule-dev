@@ -51,7 +51,7 @@
 		</xs:sequence>
 	</xs:complexType>
 	
-	<xs:complexType name="SpatialEntityType">
+	<xs:complexType name="Pseudo3DSpatialEntityType">
 		<xs:sequence>
 			<xs:element name="clusteredness" type="RealNonNegativeType" />
 			<xs:element name="density" type="RealNonNegativeType" />
@@ -64,6 +64,12 @@
 			<xs:element name="rectangleMeasure" type="ShapeMeasureType" />
 			<xs:element name="circleMeasure" type="ShapeMeasureType" />
 			<xs:element name="centroid" type="CentroidType" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SpatialEntityType">
+		<xs:sequence>
+			<xs:element name="pseudo3D" type="Pseudo3DSpatialEntityType" />
 		</xs:sequence>
 	</xs:complexType>
 	

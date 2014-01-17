@@ -369,18 +369,18 @@ void RegionDetector::addRegionsToPropertyTree(pt::ptree &propertyTree) {
 pt::ptree RegionDetector::constructPropertyTree(Region &region) {
     pt::ptree propertyTree;
 
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_CLUSTEREDNESS, region.getClusterednessDegree());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_DENSITY, region.getDensity());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_AREA, region.getArea());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PERIMETER, region.getPerimeter());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN, region.getDistanceFromOrigin());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_ANGLE_DEGREES, region.getAngle());
-    propertyTree.put<std::string>(LABEL_SPATIAL_ENTITY_SHAPE, region.getShapeAsString());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE, region.getTriangularMeasure());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE, region.getRectangularMeasure());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE, region.getCircularMeasure());
-    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_X, region.getCentre().x);
-    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_Y, region.getCentre().y);
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS, region.getClusterednessDegree());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY, region.getDensity());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA, region.getArea());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER, region.getPerimeter());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN, region.getDistanceFromOrigin());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES, region.getAngle());
+    propertyTree.put<string>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE, region.getShapeAsString());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE, region.getTriangularMeasure());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE, region.getRectangularMeasure());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE, region.getCircularMeasure());
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X, region.getCentre().x);
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y, region.getCentre().y);
 
     return propertyTree;
 }
