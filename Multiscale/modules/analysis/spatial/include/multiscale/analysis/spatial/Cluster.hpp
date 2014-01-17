@@ -22,8 +22,6 @@ namespace multiscale {
 
             private:
 
-                double pileUpDegree;                        /*!< Degree of pile up */
-
                 vector<Point2f> minAreaEnclosingTriangle;   /*!< The minimum area enclosing triangle */
 
                 RotatedRect minAreaEnclosingRect;           /*!< The minimum area enclosing rectangle */
@@ -40,9 +38,6 @@ namespace multiscale {
 
                 //! Add a new entity to the cluster
                 void addEntity(const Entity &entity);
-
-                //! Get the degree of pile up
-                double getPileUpDegree();
 
                 //! Get the minimum area enclosing triangle
                 vector<Point2f> getMinAreaEnclosingTriangle();
@@ -69,9 +64,6 @@ namespace multiscale {
                  */
                 void setOriginDependentMembers(double distanceFromOrigin, double angleWrtOrigin);
 
-                //! Get a string representation of all the field names printed in the "toString" method
-                static string fieldNamesToString();
-
             private:
 
                 //! Initialisation function for the class
@@ -83,15 +75,11 @@ namespace multiscale {
                 //! Get the collection of entities' contour points
                 vector<Point2f> getEntitiesContourPoints();
 
-
-                //! Update the values of all measures
-                void updateSpatialCollectionSpecificValues() override;
-
                 //! Update the value of the clusteredness degree
                 void updateClusterednessDegree() override;
 
                 //! Update the value of the pile up degree
-                void updatePileUpDegree();
+                void updateDensity() override;
 
                 //! Update the value of the area
                 void updateArea() override;
@@ -110,9 +98,6 @@ namespace multiscale {
 
                 //! Get the measure that the cluster has a circular shape
                 double isCircularMeasure() override;
-
-                //! Get a string representation of all the field values
-                string fieldValuesToString() override;
 
                 //! Validate the origin dependent values (i.e. non-negative)
                 /*!

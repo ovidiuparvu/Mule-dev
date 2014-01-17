@@ -20,9 +20,6 @@ namespace multiscale {
 
             private:
 
-                double density;             /*!< The average intensity of the pixels in the region
-                                                 normalised to the interval [0, 1] */
-
                 vector<Point> polygon;      /*!< Polygon defining the region */
 
             public:
@@ -31,14 +28,8 @@ namespace multiscale {
                        double angleWrtOrigin, const vector<Point> &polygon);
                 ~Region();
 
-                //! Get the density
-                double getDensity();
-
                 //! Get the polygon defining the region
                 const vector<Point>& getPolygon();
-
-                //! Get a string representation of all the field names except polygon
-                static string fieldNamesToString();
 
             private:
 
@@ -86,11 +77,11 @@ namespace multiscale {
                 bool areValidInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
                                          double angleWrtOrigin, const vector<Point> &polygon);
 
-                //! Update the value of all class specific measures
-                void updateSpatialCollectionSpecificValues() override;
-
                 //! Update the value of the clusteredness degree
                 void updateClusterednessDegree() override;
+
+                //! Update the value of the density
+                void updateDensity() override;
 
                 //! Update the area
                 void updateArea() override;
@@ -109,9 +100,6 @@ namespace multiscale {
 
                 //! Update the centre of the region
                 void updateCentrePoint() override;
-
-                //! Get a string representation of all the field values except polygon
-                string fieldValuesToString() override;
 
             private:
 

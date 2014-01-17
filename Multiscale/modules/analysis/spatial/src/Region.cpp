@@ -25,18 +25,8 @@ Region::~Region() {
     polygon.clear();
 }
 
-double Region::getDensity() {
-    updateMeasuresIfRequired();
-
-    return density;
-}
-
 const vector<Point>& Region::getPolygon() {
     return polygon;
-}
-
-string Region::fieldNamesToString() {
-    return "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
 }
 
 void Region::validateInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
@@ -64,9 +54,9 @@ bool Region::areValidInputValues(double clusterednessDegree, double density, dou
     );
 }
 
-void Region::updateSpatialCollectionSpecificValues() {}
-
 void Region::updateClusterednessDegree() {}
+
+void Region::updateDensity() {}
 
 void Region::updateArea() {}
 
@@ -113,25 +103,6 @@ void Region::updateCentrePoint() {
     RotatedRect minAreaEnclosingRect = minAreaRect(polygon);
 
     centre = minAreaEnclosingRect.center;
-}
-
-string Region::fieldValuesToString() {
-    stringstream strStream;
-
-    strStream << clusterednessDegree << OUTPUT_SEPARATOR
-              << density << OUTPUT_SEPARATOR
-              << area << OUTPUT_SEPARATOR
-              << perimeter << OUTPUT_SEPARATOR
-              << distanceFromOrigin << OUTPUT_SEPARATOR
-              << angle << OUTPUT_SEPARATOR
-              << shapeAsString() << OUTPUT_SEPARATOR
-              << triangularMeasure << OUTPUT_SEPARATOR
-              << rectangularMeasure << OUTPUT_SEPARATOR
-              << circularMeasure << OUTPUT_SEPARATOR
-              << centre.x << OUTPUT_SEPARATOR
-              << centre.y;
-
-    return strStream.str();
 }
 
 

@@ -19,6 +19,12 @@ namespace multiscale {
             protected:
 
                 double clusterednessDegree;     /*!< Degree of clusteredness */
+                double density;                 /*!< For regions:
+                                                     The average intensity of the pixels in the region
+                                                     normalised to the interval [0, 1]
+
+                                                     For clusters:
+                                                     Degree of pile up */
 
                 double area;                    /*!< Area of the spatial collection */
                 double perimeter;               /*!< Perimeter of the spatial collection */
@@ -45,6 +51,9 @@ namespace multiscale {
 
                 //! Get the clusteredness degree
                 double getClusterednessDegree();
+
+                //! Get the density
+                double getDensity();
 
                 //! Get the area
                 double getArea();
@@ -76,6 +85,9 @@ namespace multiscale {
                 //! Get the point defining the centre of the entity
                 Point2f getCentre();
 
+                //! Get a string representation of all the field names printed in the "toString" method
+                static string fieldNamesToString();
+
                 //! Get the string representation of all field values
                 string toString();
 
@@ -87,11 +99,11 @@ namespace multiscale {
                 //! Update the values of all measures
                 void updateMeasures();
 
-                //! Update the values of all measures specific to the derived classes
-                virtual void updateSpatialCollectionSpecificValues() = 0;
-
                 //! Update the value of the clusteredness degree
                 virtual void updateClusterednessDegree() = 0;
+
+                //! Update the value of the density
+                virtual void updateDensity() = 0;
 
                 //! Update the value of the area
                 virtual void updateArea() = 0;
@@ -118,7 +130,7 @@ namespace multiscale {
                 string shapeAsString();
 
                 //! Return the values of the fields as a string
-                virtual string fieldValuesToString() = 0;
+                string fieldValuesToString();
 
                 //! Convert the collection of points from type Point to type Point2f
                 /*!

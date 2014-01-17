@@ -163,7 +163,7 @@ double ClusterDetector::computeAveragePileUpDegree(vector<Cluster> &clusters) {
     double averagePileUpDegree = 0;
 
     for (Cluster &cluster : clusters) {
-        averagePileUpDegree += cluster.getPileUpDegree();
+        averagePileUpDegree += cluster.getDensity();
     }
 
     unsigned int nrOfClusters = (clusters[0].getEntities().size() == 0)
@@ -218,7 +218,7 @@ pt::ptree ClusterDetector::constructPropertyTree(Cluster &cluster) {
     pt::ptree propertyTree;
 
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS, cluster.getClusterednessDegree());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY, cluster.getPileUpDegree());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY, cluster.getDensity());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA, cluster.getArea());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER, cluster.getPerimeter());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN, cluster.getDistanceFromOrigin());

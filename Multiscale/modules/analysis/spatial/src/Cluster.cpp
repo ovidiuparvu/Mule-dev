@@ -20,12 +20,6 @@ void Cluster::addEntity(const Entity &entity) {
     updateFlag = true;
 }
 
-double Cluster::getPileUpDegree() {
-    updateMeasuresIfRequired();
-
-    return pileUpDegree;
-}
-
 vector<Point2f> Cluster::getMinAreaEnclosingTriangle() {
     updateMeasuresIfRequired();
 
@@ -72,13 +66,9 @@ void Cluster::setOriginDependentMembers(double distanceFromOrigin, double angleW
     this->angle = angleWrtOrigin;
 }
 
-string Cluster::fieldNamesToString() {
-    return "Clusteredness degree,Pile up degree,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
-}
-
 void Cluster::initialise() {
     this->clusterednessDegree = 0;
-    this->pileUpDegree = 0;
+    this->density = 0;
 
     this->distanceFromOrigin = 0;
     this->angle = 0;
@@ -113,10 +103,6 @@ vector<Point2f> Cluster::getEntitiesContourPoints() {
     return contourPoints;
 }
 
-void Cluster::updateSpatialCollectionSpecificValues() {
-    updatePileUpDegree();
-}
-
 void Cluster::updateClusterednessDegree() {
     double totalAvgDistance = 0;
 
@@ -137,14 +123,14 @@ void Cluster::updateClusterednessDegree() {
                                                   : 1;
 }
 
-void Cluster::updatePileUpDegree() {
-    pileUpDegree = 0;
+void Cluster::updateDensity() {
+    density = 0;
 
     for (const Entity &entity : entities) {
-        pileUpDegree += entity.getPileUpDegree();
+        density += entity.getPileUpDegree();
     }
 
-    pileUpDegree /= (entities.size());
+    density /= (entities.size());
 }
 
 void Cluster::updateArea() {
@@ -203,25 +189,6 @@ double Cluster::isCircularMeasure() {
 
     return (Numeric::almostEqual(circleArea, 0)) ? 0
                                                  : (area / circleArea);
-}
-
-string Cluster::fieldValuesToString() {
-    stringstream strStream;
-
-    strStream << clusterednessDegree << OUTPUT_SEPARATOR
-              << pileUpDegree << OUTPUT_SEPARATOR
-              << area << OUTPUT_SEPARATOR
-              << perimeter << OUTPUT_SEPARATOR
-              << distanceFromOrigin << OUTPUT_SEPARATOR
-              << angle << OUTPUT_SEPARATOR
-              << shapeAsString() << OUTPUT_SEPARATOR
-              << triangularMeasure << OUTPUT_SEPARATOR
-              << rectangularMeasure << OUTPUT_SEPARATOR
-              << circularMeasure << OUTPUT_SEPARATOR
-              << centre.x << OUTPUT_SEPARATOR
-              << centre.y;
-
-    return strStream.str();
 }
 
 void Cluster::validateOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin) {
