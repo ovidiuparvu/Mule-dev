@@ -191,6 +191,10 @@ double Cluster::isCircularMeasure() {
                                                  : (area / circleArea);
 }
 
+SpatialEntityPseudo3DType Cluster::type() {
+    return SpatialEntityPseudo3DType::Cluster;
+}
+
 void Cluster::validateOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin) {
     if (!areValidOriginDependentValues(distanceFromOrigin, angleWrtOrigin)) {
         MS_throw(InvalidInputException, ERR_ORIGIN_DEPENDENT_VALUES);

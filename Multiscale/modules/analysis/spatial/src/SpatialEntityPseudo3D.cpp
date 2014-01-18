@@ -1,4 +1,5 @@
 #include "multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp"
+#include "multiscale/exception/UnexpectedBehaviourException.hpp"
 
 using namespace multiscale::analysis;
 
@@ -81,6 +82,27 @@ string SpatialEntityPseudo3D::toString() {
     updateMeasuresIfRequired();
 
     return fieldValuesToString();
+}
+
+string SpatialEntityPseudo3D::typeAsString() {
+    SpatialEntityPseudo3DType spatialEntityType = type();
+
+    switch (spatialEntityType) {
+    case SpatialEntityPseudo3DType::Region:
+        return STR_REGION;
+        break;
+
+    case SpatialEntityPseudo3DType::Cluster:
+        return STR_CLUSTER;
+        break;
+
+    default:
+        MS_throw(UnexpectedBehaviourException, ERR_UNDEFINED_TYPE);
+        break;
+    }
+
+    // Statement not executed but added to overcome warning message
+    return STR_UNDEFINED;
 }
 
 void SpatialEntityPseudo3D::updateMeasuresIfRequired() {
@@ -186,13 +208,17 @@ void SpatialEntityPseudo3D::initialise() {
 
 
 // Constants
-const string SpatialEntityPseudo3D::STR_TRIANGLE            = "triangular";
-const string SpatialEntityPseudo3D::STR_RECTANGLE           = "rectangular";
-const string SpatialEntityPseudo3D::STR_CIRCLE              = "circular";
-const string SpatialEntityPseudo3D::STR_UNDEFINED           = "undefined";
+const string SpatialEntityPseudo3D::STR_REGION  = "region";
+const string SpatialEntityPseudo3D::STR_CLUSTER = "cluster";
 
-const string SpatialEntityPseudo3D::OUTPUT_SEPARATOR        = ",";
+const string SpatialEntityPseudo3D::STR_TRIANGLE    = "triangular";
+const string SpatialEntityPseudo3D::STR_RECTANGLE   = "rectangular";
+const string SpatialEntityPseudo3D::STR_CIRCLE      = "circular";
+const string SpatialEntityPseudo3D::STR_UNDEFINED   = "undefined";
 
-const string SpatialEntityPseudo3D::ERR_INPUT               = "Invalid input parameters were provided to the constructor.";
+const string SpatialEntityPseudo3D::OUTPUT_SEPARATOR    = ",";
 
-const bool SpatialEntityPseudo3D::CONVEX_HULL_CLOCKWISE     = true;
+const string SpatialEntityPseudo3D::ERR_INPUT           = "Invalid input parameters were provided to the constructor.";
+const string SpatialEntityPseudo3D::ERR_UNDEFINED_TYPE  = "Pseudo 3D spatial entity of undefined type encountered.";
+
+const bool SpatialEntityPseudo3D::CONVEX_HULL_CLOCKWISE = true;

@@ -105,6 +105,10 @@ void Region::updateCentrePoint() {
     centre = minAreaEnclosingRect.center;
 }
 
+SpatialEntityPseudo3DType Region::type() {
+    return SpatialEntityPseudo3DType::Region;
+}
+
 
 // Constants
 const bool Region::CONTOUR_ORIENTED = false;

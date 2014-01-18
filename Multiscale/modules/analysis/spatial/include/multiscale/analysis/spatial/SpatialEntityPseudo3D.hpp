@@ -2,6 +2,7 @@
 #define SpatialEntityPseudo3D_HPP
 
 #include "multiscale/analysis/spatial/Shape2D.hpp"
+#include "multiscale/analysis/spatial/SpatialEntityPseudo3DType.hpp"
 
 #include "opencv2/imgproc/imgproc.hpp"
 
@@ -91,6 +92,9 @@ namespace multiscale {
                 //! Get the string representation of all field values
                 string toString();
 
+                //! Return the type of the pseudo 3D spatial entity as a string
+                string typeAsString();
+
             protected:
 
                 //! Update the values of all measures if required
@@ -132,6 +136,9 @@ namespace multiscale {
                 //! Return the values of the fields as a string
                 string fieldValuesToString();
 
+                //! Return the type of the pseudo 3D spatial entity
+                virtual SpatialEntityPseudo3DType type() = 0;
+
                 //! Convert the collection of points from type Point to type Point2f
                 /*!
                  * \param points Collection of points
@@ -146,6 +153,9 @@ namespace multiscale {
             protected:
 
                 // Constants
+                static const string STR_REGION;
+                static const string STR_CLUSTER;
+
                 static const string STR_TRIANGLE;
                 static const string STR_RECTANGLE;
                 static const string STR_CIRCLE;
@@ -154,6 +164,7 @@ namespace multiscale {
                 static const string OUTPUT_SEPARATOR;
 
                 static const string ERR_INPUT;
+                static const string ERR_UNDEFINED_TYPE;
 
                 static const bool CONVEX_HULL_CLOCKWISE;
 

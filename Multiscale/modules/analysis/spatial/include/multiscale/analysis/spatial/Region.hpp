@@ -101,6 +101,9 @@ namespace multiscale {
                 //! Update the centre of the region
                 void updateCentrePoint() override;
 
+                //! Return the type of the pseudo 3D spatial entity
+                SpatialEntityPseudo3DType type() override;
+
             private:
 
                 // Constants

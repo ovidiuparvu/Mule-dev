@@ -99,6 +99,9 @@ namespace multiscale {
                 //! Get the measure that the cluster has a circular shape
                 double isCircularMeasure() override;
 
+                //! Return the type of the pseudo 3D spatial entity
+                SpatialEntityPseudo3DType type() override;
+
                 //! Validate the origin dependent values (i.e. non-negative)
                 /*!
                  * \param distanceFromOrigin Distance from the origin

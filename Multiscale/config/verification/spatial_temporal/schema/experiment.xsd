@@ -42,6 +42,13 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
+	<xs:simpleType name="TypeOfPseudo3DSpatialEntityType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="region" />
+			<xs:enumeration value="cluster" />
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<!-- User-defined complex types -->
 	
 	<xs:complexType name="CentroidType">
@@ -65,6 +72,7 @@
 			<xs:element name="circleMeasure" type="ShapeMeasureType" />
 			<xs:element name="centroid" type="CentroidType" />
 		</xs:sequence>
+		<xs:attribute name="type" type="TypeOfPseudo3DSpatialEntityType" use="required" />
 	</xs:complexType>
 	
 	<xs:complexType name="SpatialEntityType">
@@ -76,13 +84,15 @@
 	<xs:complexType name="TimepointType">
 		<xs:sequence>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="spatialEntity" type="SpatialEntityType" />
+			<xs:element name="avgClusteredness" type="RealNonNegativeType" />
+			<xs:element name="avgDensity" type="RealNonNegativeType" />
 		</xs:sequence>
 		<xs:attribute name="value" type="RealNonNegativeType" />
 	</xs:complexType>
 	
 	<xs:complexType name="ExperimentType">
 		<xs:sequence>
-			<xs:element maxOccurs="unbounded" name="timepoint" type="TimepointType" />
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="timepoint" type="TimepointType" />
 		</xs:sequence>
 	</xs:complexType>
 	
