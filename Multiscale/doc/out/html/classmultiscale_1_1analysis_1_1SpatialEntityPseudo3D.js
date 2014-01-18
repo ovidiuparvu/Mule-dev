@@ -22,6 +22,8 @@ var classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D =
     [ "isTriangularMeasure", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ac0e5bce32290f2595293bd7386e04de1", null ],
     [ "shapeAsString", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a347c52b3cfad183a608ddbd018d8e409", null ],
     [ "toString", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#abea1af0695f6f1a977b0caa3428fc433", null ],
+    [ "type", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ac0d4656a44cc724c2cc7d34d8b15dbd8", null ],
+    [ "typeAsString", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ae8b5c03174d91efc64509dec1a01e69c", null ],
     [ "updateArea", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aa8c1cd3248c8926edbb1b47006ded902", null ],
     [ "updateCentrePoint", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a8e81fdb72e8510d8f77ce8b518a74843", null ],
     [ "updateClusterednessDegree", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a750ba1b5e457d9d6504fc8320a76e002", null ],

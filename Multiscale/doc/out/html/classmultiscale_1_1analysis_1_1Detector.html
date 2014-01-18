@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('classmultiscale_1_1analysis_1_1Detecto
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Detector__inherit__graph.png" border="0" usemap="#multiscale_1_1analysis_1_1Detector_inherit__map" alt="Inheritance graph"/></div>
 <map name="multiscale_1_1analysis_1_1Detector_inherit__map" id="multiscale_1_1analysis_1_1Detector_inherit__map">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1ClusterDetector.html" title="Class for detecting clusters in 2D images." alt="" coords="5,2185,237,3015"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html" title="Class for detecting regions of high intensity in grayscale images." alt="" coords="261,1838,499,3362"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html" title="Class for detecting clusters in 2D images obtained from simulations." alt="" coords="7,3411,236,3947"/></map>
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1ClusterDetector.html" title="Class for detecting clusters in 2D images." alt="" coords="5,2351,237,3164"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html" title="Class for detecting regions of high intensity in grayscale images." alt="" coords="261,1995,499,3519"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SimulationClusterDetector.html" title="Class for detecting clusters in 2D images obtained from simulations." alt="" coords="7,3568,236,4104"/></map>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for multiscale::analysis::Detector:</div>
@@ -233,9 +233,18 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a11bf4fa46f51ac033b635d19e92998ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a11bf4fa46f51ac033b635d19e92998ae">addSpatialEntitiesToPropertyTree</a> (pt::ptree &amp;propertyTree)</td></tr>
 <tr class="memdesc:a11bf4fa46f51ac033b635d19e92998ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the pseudo 3D spatial entities to the property tree.  <a href="#a11bf4fa46f51ac033b635d19e92998ae">More...</a><br/></td></tr>
 <tr class="separator:a11bf4fa46f51ac033b635d19e92998ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfa8c84d6cb13bf6d423b1db490668d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a9cfa8c84d6cb13bf6d423b1db490668d">addAverageMeasuresToPropertyTree</a> (pt::ptree &amp;propertyTree)</td></tr>
+<tr class="memdesc:a9cfa8c84d6cb13bf6d423b1db490668d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the average clusteredness and average density to the property tree.  <a href="#a9cfa8c84d6cb13bf6d423b1db490668d">More...</a><br/></td></tr>
+<tr class="separator:a9cfa8c84d6cb13bf6d423b1db490668d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af11495dceabe108397805a770fb9c7b4"><td class="memItemLeft" align="right" valign="top">pt::ptree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#af11495dceabe108397805a770fb9c7b4">constructPropertyTree</a> (<a class="el" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html">SpatialEntityPseudo3D</a> &amp;spatialEntity)</td></tr>
 <tr class="memdesc:af11495dceabe108397805a770fb9c7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the property tree corresponding to the given pseudo 3D spatial entity.  <a href="#af11495dceabe108397805a770fb9c7b4">More...</a><br/></td></tr>
 <tr class="separator:af11495dceabe108397805a770fb9c7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e3077d43c329e409db504bf3981c3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#ac0e3077d43c329e409db504bf3981c3c">addSpatialEntityPropertiesToTree</a> (<a class="el" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html">SpatialEntityPseudo3D</a> &amp;spatialEntity, pt::ptree &amp;propertyTree)</td></tr>
+<tr class="memdesc:ac0e3077d43c329e409db504bf3981c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the properties of the spatial entity to the property tree.  <a href="#ac0e3077d43c329e409db504bf3981c3c">More...</a><br/></td></tr>
+<tr class="separator:ac0e3077d43c329e409db504bf3981c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae166867e5af40637dbde9ac0da6dac9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#ae166867e5af40637dbde9ac0da6dac9a">addSpatialEntityTypeToPropertyTree</a> (<a class="el" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html">SpatialEntityPseudo3D</a> &amp;spatialEntity, pt::ptree &amp;propertyTree)</td></tr>
+<tr class="memdesc:ae166867e5af40637dbde9ac0da6dac9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the type of the spatial entity to the property tree.  <a href="#ae166867e5af40637dbde9ac0da6dac9a">More...</a><br/></td></tr>
+<tr class="separator:ae166867e5af40637dbde9ac0da6dac9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a684a7071aca4173e3dc968d8635bd92a"><td class="memItemLeft" align="right" valign="top">virtual vector&lt; shared_ptr<br class="typebreak"/>
 &lt; <a class="el" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html">SpatialEntityPseudo3D</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a684a7071aca4173e3dc968d8635bd92a">getCollectionOfSpatialEntityPseudo3D</a> ()=0</td></tr>
 <tr class="memdesc:a684a7071aca4173e3dc968d8635bd92a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the collection of pseudo 3D entities detected in the image.  <a href="#a684a7071aca4173e3dc968d8635bd92a">More...</a><br/></td></tr>
@@ -310,36 +319,46 @@ Static Protected Attributes</h2></td></tr>
 <tr class="separator:a0d1f2fd9eae1b166ac097668889c02aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9acc60392e3eb0f0a9c3019c63301ae"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#aa9acc60392e3eb0f0a9c3019c63301ae">KEY_SAVE</a> = 115</td></tr>
 <tr class="separator:aa9acc60392e3eb0f0a9c3019c63301ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa82a238495f03f285893ea3345437224"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#aa82a238495f03f285893ea3345437224">LABEL_ATTRIBUTE</a> = &quot;&lt;xmlattr&gt;&quot;</td></tr>
+<tr class="separator:aa82a238495f03f285893ea3345437224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a561d5a58b94e4ccce28726c98f6ca71e"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a561d5a58b94e4ccce28726c98f6ca71e">LABEL_COMMENT</a> = &quot;&lt;xmlcomment&gt;&quot;</td></tr>
 <tr class="separator:a561d5a58b94e4ccce28726c98f6ca71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf6527cf12c5267d28210a0a60ce43cf"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#adf6527cf12c5267d28210a0a60ce43cf">LABEL_COMMENT_CONTENTS</a> = &quot;Warning! This xml file was automatically generated by a C++ program using the Boost PropertyTree library.&quot;</td></tr>
 <tr class="separator:adf6527cf12c5267d28210a0a60ce43cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c760d7a38adaa29648e55c630f7e170"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a6c760d7a38adaa29648e55c630f7e170">LABEL_EXPERIMENT_TIMEPOINT_AVG_CLUSTEREDNESS</a> = &quot;experiment.timepoint.avgClusteredness&quot;</td></tr>
+<tr class="separator:a6c760d7a38adaa29648e55c630f7e170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b3f6ced9dd62bea93678fb6893524a"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a58b3f6ced9dd62bea93678fb6893524a">LABEL_EXPERIMENT_TIMEPOINT_AVG_DENSITY</a> = &quot;experiment.timepoint.avgDensity&quot;</td></tr>
+<tr class="separator:a58b3f6ced9dd62bea93678fb6893524a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cade9693bb6ce63be30adebd318fd21"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a8cade9693bb6ce63be30adebd318fd21">LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY</a> = &quot;experiment.timepoint.spatialEntity&quot;</td></tr>
 <tr class="separator:a8cade9693bb6ce63be30adebd318fd21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac731a3a55f704a5b3ba203a3488c78d"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#aac731a3a55f704a5b3ba203a3488c78d">LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS</a> = &quot;pseudo3D.clusteredness&quot;</td></tr>
-<tr class="separator:aac731a3a55f704a5b3ba203a3488c78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a314632feed799f84c8db021cb28df3d8"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a314632feed799f84c8db021cb28df3d8">LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY</a> = &quot;pseudo3D.density&quot;</td></tr>
-<tr class="separator:a314632feed799f84c8db021cb28df3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a984c332f78fb9340673841a6b8171ca8"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a984c332f78fb9340673841a6b8171ca8">LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA</a> = &quot;pseudo3D.area&quot;</td></tr>
-<tr class="separator:a984c332f78fb9340673841a6b8171ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19ac6de22cbdfafbcfa25f0221b2937b"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a19ac6de22cbdfafbcfa25f0221b2937b">LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER</a> = &quot;pseudo3D.perimeter&quot;</td></tr>
-<tr class="separator:a19ac6de22cbdfafbcfa25f0221b2937b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56f7eb418502cbb93307e6f7f17d05be"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a56f7eb418502cbb93307e6f7f17d05be">LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN</a> = &quot;pseudo3D.distanceFromOrigin&quot;</td></tr>
-<tr class="separator:a56f7eb418502cbb93307e6f7f17d05be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28dedee0c192d3be211cb13d4b89dffa"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a28dedee0c192d3be211cb13d4b89dffa">LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES</a> = &quot;pseudo3D.angleDegrees&quot;</td></tr>
-<tr class="separator:a28dedee0c192d3be211cb13d4b89dffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77f57852e8d5c0df7c3d1bf98044c7af"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a77f57852e8d5c0df7c3d1bf98044c7af">LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE</a> = &quot;pseudo3D.shape&quot;</td></tr>
-<tr class="separator:a77f57852e8d5c0df7c3d1bf98044c7af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5feb118badcb1d403a6f417b714c66f"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#ae5feb118badcb1d403a6f417b714c66f">LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE</a> = &quot;pseudo3D.triangleMeasure&quot;</td></tr>
-<tr class="separator:ae5feb118badcb1d403a6f417b714c66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f99a2eba7afe01476e7830dcd955f00"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a8f99a2eba7afe01476e7830dcd955f00">LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE</a> = &quot;pseudo3D.rectangleMeasure&quot;</td></tr>
-<tr class="separator:a8f99a2eba7afe01476e7830dcd955f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b0e3add734e789ef8b5993a155799e4"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a1b0e3add734e789ef8b5993a155799e4">LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE</a> = &quot;pseudo3D.circleMeasure&quot;</td></tr>
-<tr class="separator:a1b0e3add734e789ef8b5993a155799e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec49c4524588c30df34ff377d70bff65"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#aec49c4524588c30df34ff377d70bff65">LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X</a> = &quot;pseudo3D.centroid.x&quot;</td></tr>
-<tr class="separator:aec49c4524588c30df34ff377d70bff65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb22e70184ac8fe022345962d2fe7934"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#afb22e70184ac8fe022345962d2fe7934">LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y</a> = &quot;pseudo3D.centroid.y&quot;</td></tr>
-<tr class="separator:afb22e70184ac8fe022345962d2fe7934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc891454d41c2ede5e4b3155798045c4"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#afc891454d41c2ede5e4b3155798045c4">LABEL_SPATIAL_ENTITY_PSEUDO_3D</a> = &quot;pseudo3D&quot;</td></tr>
+<tr class="separator:afc891454d41c2ede5e4b3155798045c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac93f1fd6bdc7250b890480c7d5acf5b0"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#ac93f1fd6bdc7250b890480c7d5acf5b0">LABEL_SPATIAL_ENTITY_TYPE</a> = &quot;type&quot;</td></tr>
+<tr class="separator:ac93f1fd6bdc7250b890480c7d5acf5b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae62b15a836592fd35057cf037730d8"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#adae62b15a836592fd35057cf037730d8">LABEL_SPATIAL_ENTITY_CLUSTEREDNESS</a> = &quot;clusteredness&quot;</td></tr>
+<tr class="separator:adae62b15a836592fd35057cf037730d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f91117dab09a9356422d839aba811f"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#ab4f91117dab09a9356422d839aba811f">LABEL_SPATIAL_ENTITY_DENSITY</a> = &quot;density&quot;</td></tr>
+<tr class="separator:ab4f91117dab09a9356422d839aba811f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a163a0858c9d71d9ddac78f814d48bee6"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a163a0858c9d71d9ddac78f814d48bee6">LABEL_SPATIAL_ENTITY_AREA</a> = &quot;area&quot;</td></tr>
+<tr class="separator:a163a0858c9d71d9ddac78f814d48bee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc07a468da3a48acbb858c6a8de7dec2"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#adc07a468da3a48acbb858c6a8de7dec2">LABEL_SPATIAL_ENTITY_PERIMETER</a> = &quot;perimeter&quot;</td></tr>
+<tr class="separator:adc07a468da3a48acbb858c6a8de7dec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a41d2e2ccdbf3c760823d51ce9b0fe"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a58a41d2e2ccdbf3c760823d51ce9b0fe">LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN</a> = &quot;distanceFromOrigin&quot;</td></tr>
+<tr class="separator:a58a41d2e2ccdbf3c760823d51ce9b0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb6f0a78406631f55d4a1b11197652e"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a5cb6f0a78406631f55d4a1b11197652e">LABEL_SPATIAL_ENTITY_ANGLE_DEGREES</a> = &quot;angleDegrees&quot;</td></tr>
+<tr class="separator:a5cb6f0a78406631f55d4a1b11197652e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae824ff121054358172ebf21aab8a8b46"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#ae824ff121054358172ebf21aab8a8b46">LABEL_SPATIAL_ENTITY_SHAPE</a> = &quot;shape&quot;</td></tr>
+<tr class="separator:ae824ff121054358172ebf21aab8a8b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7776a488915b9d47f678d87161c0478f"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a7776a488915b9d47f678d87161c0478f">LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE</a> = &quot;triangleMeasure&quot;</td></tr>
+<tr class="separator:a7776a488915b9d47f678d87161c0478f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2040a9a63a40fa4c4ff31af9a574b5"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#acb2040a9a63a40fa4c4ff31af9a574b5">LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE</a> = &quot;rectangleMeasure&quot;</td></tr>
+<tr class="separator:acb2040a9a63a40fa4c4ff31af9a574b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a648197e1a6962d86b2c56a6ae366038a"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a648197e1a6962d86b2c56a6ae366038a">LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE</a> = &quot;circleMeasure&quot;</td></tr>
+<tr class="separator:a648197e1a6962d86b2c56a6ae366038a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76896a7d2a68a194ed5b4a8fecb85b6c"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a76896a7d2a68a194ed5b4a8fecb85b6c">LABEL_SPATIAL_ENTITY_CENTROID_X</a> = &quot;centroid.x&quot;</td></tr>
+<tr class="separator:a76896a7d2a68a194ed5b4a8fecb85b6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aff1d4b3d73d4569d21865b8f29d1c2"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html#a9aff1d4b3d73d4569d21865b8f29d1c2">LABEL_SPATIAL_ENTITY_CENTROID_Y</a> = &quot;centroid.y&quot;</td></tr>
+<tr class="separator:a9aff1d4b3d73d4569d21865b8f29d1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class for detecting entities of interest in images. </p>
@@ -390,6 +409,40 @@ Static Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a9cfa8c84d6cb13bf6d423b1db490668d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Detector::addAverageMeasuresToPropertyTree </td>
+          <td>(</td>
+          <td class="paramtype">pt::ptree &amp;&#160;</td>
+          <td class="paramname"><em>propertyTree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add the average clusteredness and average density to the property tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyTree</td><td>The property tree </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00242">242</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a11bf4fa46f51ac033b635d19e92998ae"></a>
 <div class="memitem">
 <div class="memproto">
@@ -420,7 +473,123 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00231">231</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00232">232</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0e3077d43c329e409db504bf3981c3c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Detector::addSpatialEntityPropertiesToTree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html">SpatialEntityPseudo3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>spatialEntity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pt::ptree &amp;&#160;</td>
+          <td class="paramname"><em>propertyTree</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add the properties of the spatial entity to the property tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spatialEntity</td><td>Spatial entity </td></tr>
+    <tr><td class="paramname">propertyTree</td><td>Property tree </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00259">259</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+
+<p>References <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00043">multiscale::analysis::SpatialEntityPseudo3D::getAngle()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00025">multiscale::analysis::SpatialEntityPseudo3D::getArea()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00071">multiscale::analysis::SpatialEntityPseudo3D::getCentre()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00067">multiscale::analysis::SpatialEntityPseudo3D::getCircularMeasure()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00013">multiscale::analysis::SpatialEntityPseudo3D::getClusterednessDegree()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00019">multiscale::analysis::SpatialEntityPseudo3D::getDensity()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00037">multiscale::analysis::SpatialEntityPseudo3D::getDistanceFromOrigin()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00031">multiscale::analysis::SpatialEntityPseudo3D::getPerimeter()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00063">multiscale::analysis::SpatialEntityPseudo3D::getRectangularMeasure()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00055">multiscale::analysis::SpatialEntityPseudo3D::getShapeAsString()</a>, and <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00059">multiscale::analysis::SpatialEntityPseudo3D::getTriangularMeasure()</a>.</p>
+
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_ac0e3077d43c329e409db504bf3981c3c_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_ac0e3077d43c329e409db504bf3981c3c_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1Detector_ac0e3077d43c329e409db504bf3981c3c_cgraph" id="classmultiscale_1_1analysis_1_1Detector_ac0e3077d43c329e409db504bf3981c3c_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a9f3394cfe46d66ae9c13d805ad460cb5" title="Get the angle." alt="" coords="243,5,408,69"/><area shape="rect" id="node27" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ae85647e35a4cbb3ed193d039cf0395a9" title="Get the area." alt="" coords="243,93,408,157"/><area shape="rect" id="node30" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a4976534b2cdf55541701a7d5ea4ac0c5" title="Get the point defining the centre of the entity." alt="" coords="243,181,408,245"/><area shape="rect" id="node33" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a71759aa55f43ac2a6cc52b738f3b2c42" title="Get the measure indicating how much the shape of the contour resembles a circle." alt="" coords="243,269,408,333"/><area shape="rect" id="node35" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a532020267c8ffd4375e2d204debf8454" title="Get the clusteredness degree." alt="" coords="239,357,412,421"/><area shape="rect" id="node38" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a98a29584b604d113db53e7009fd3cb79" title="Get the density." alt="" coords="243,445,408,509"/><area shape="rect" id="node41" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a26530af3d05b0257386ce02498a5a84b" title="Get the distance from the origin." alt="" coords="243,533,408,597"/><area shape="rect" id="node44" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a455bf65abb87bd8b65d0cbe2234e4491" title="Get the perimeter." alt="" coords="243,621,408,685"/><area shape="rect" id="node47" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a924e390a408a91abf394f29bec33d945" title="Get the measure indicating how much the shape of the contour resembles a rectangle." alt="" coords="241,709,409,773"/><area shape="rect" id="node49" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aaf8b45d68041be0f293eaf1bf40c76d3" title="Get the shape best fitting the spatial collection as a string." alt="" coords="243,797,408,861"/><area shape="rect" id="node53" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a9c7af7e1fc6a829c184c85baeaf1ebc2" title="Get the measure indicating how much the shape of the contour resembles a triangle." alt="" coords="243,885,408,949"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a151cd8c0fdfbc98cfd0adc99b9943369" title="Update the values of all measures if required." alt="" coords="461,357,648,421"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a24ad8b8b5768be1f917a1fb893df8c6c" title="Update the values of all measures." alt="" coords="696,357,861,421"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a750ba1b5e457d9d6504fc8320a76e002" title="Update the value of the clusteredness degree." alt="" coords="909,137,1104,201"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a28fa63c1101f3f5ba7a0001099ee3159" title="Update the value of the density." alt="" coords="924,225,1089,289"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aa8c1cd3248c8926edbb1b47006ded902" title="Update the value of the area." alt="" coords="924,313,1089,377"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#acb00990b4b812367b7ae8f16028b8c32" title="Update the value of the perimeter." alt="" coords="924,401,1089,465"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad50d0866df26b63dc86853a9ab0c545d" title="Update the shape of the cluster." alt="" coords="924,489,1089,553"/><area shape="rect" id="node25" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a8e81fdb72e8510d8f77ce8b518a74843" title="Update the point defining the centre of the cluster." alt="" coords="924,577,1089,641"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ac0e5bce32290f2595293bd7386e04de1" title="Get the measure that the cluster has a triangular shape." alt="" coords="1152,401,1317,465"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad2984ec212e74437f3c7f3fc18ad555c" title="Get the measure that the cluster has a rectangular shape." alt="" coords="1152,489,1317,553"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a31066d1038679f8e9080719380403cad" title="Get the measure that the cluster has a circular shape." alt="" coords="1152,577,1317,641"/><area shape="rect" id="node51" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a347c52b3cfad183a608ddbd018d8e409" title="Return the shape of the cluster as a string." alt="" coords="472,797,637,861"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae166867e5af40637dbde9ac0da6dac9a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Detector::addSpatialEntityTypeToPropertyTree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html">SpatialEntityPseudo3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>spatialEntity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">pt::ptree &amp;&#160;</td>
+          <td class="paramname"><em>propertyTree</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add the type of the spatial entity to the property tree. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spatialEntity</td><td>Spatial entity </td></tr>
+    <tr><td class="paramname">propertyTree</td><td>Property tree </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00274">274</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+
+<p>References <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00087">multiscale::analysis::SpatialEntityPseudo3D::typeAsString()</a>.</p>
+
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_ae166867e5af40637dbde9ac0da6dac9a_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_ae166867e5af40637dbde9ac0da6dac9a_cgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1Detector_ae166867e5af40637dbde9ac0da6dac9a_cgraph" id="classmultiscale_1_1analysis_1_1Detector_ae166867e5af40637dbde9ac0da6dac9a_cgraph">
+<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ae8b5c03174d91efc64509dec1a01e69c" title="Return the type of the pseudo 3D spatial entity as a string." alt="" coords="237,5,403,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ac0d4656a44cc724c2cc7d34d8b15dbd8" title="Return the type of the pseudo 3D spatial entity." alt="" coords="452,14,649,61"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -481,20 +650,7 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00241">241</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
-
-<p>References <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00042">multiscale::analysis::SpatialEntityPseudo3D::getAngle()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00024">multiscale::analysis::SpatialEntityPseudo3D::getArea()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00070">multiscale::analysis::SpatialEntityPseudo3D::getCentre()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00066">multiscale::analysis::SpatialEntityPseudo3D::getCircularMeasure()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00012">multiscale::analysis::SpatialEntityPseudo3D::getClusterednessDegree()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00018">multiscale::analysis::SpatialEntityPseudo3D::getDensity()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00036">multiscale::analysis::SpatialEntityPseudo3D::getDistanceFromOrigin()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00030">multiscale::analysis::SpatialEntityPseudo3D::getPerimeter()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00062">multiscale::analysis::SpatialEntityPseudo3D::getRectangularMeasure()</a>, <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00054">multiscale::analysis::SpatialEntityPseudo3D::getShapeAsString()</a>, and <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00058">multiscale::analysis::SpatialEntityPseudo3D::getTriangularMeasure()</a>.</p>
-
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_af11495dceabe108397805a770fb9c7b4_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_af11495dceabe108397805a770fb9c7b4_cgraph" alt=""/></div>
-<map name="classmultiscale_1_1analysis_1_1Detector_af11495dceabe108397805a770fb9c7b4_cgraph" id="classmultiscale_1_1analysis_1_1Detector_af11495dceabe108397805a770fb9c7b4_cgraph">
-<area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a9f3394cfe46d66ae9c13d805ad460cb5" title="Get the angle." alt="" coords="277,5,443,69"/><area shape="rect" id="node27" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ae85647e35a4cbb3ed193d039cf0395a9" title="Get the area." alt="" coords="277,93,443,157"/><area shape="rect" id="node30" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a4976534b2cdf55541701a7d5ea4ac0c5" title="Get the point defining the centre of the entity." alt="" coords="277,181,443,245"/><area shape="rect" id="node33" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a71759aa55f43ac2a6cc52b738f3b2c42" title="Get the measure indicating how much the shape of the contour resembles a circle." alt="" coords="277,269,443,333"/><area shape="rect" id="node35" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a532020267c8ffd4375e2d204debf8454" title="Get the clusteredness degree." alt="" coords="273,357,447,421"/><area shape="rect" id="node38" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a98a29584b604d113db53e7009fd3cb79" title="Get the density." alt="" coords="277,445,443,509"/><area shape="rect" id="node41" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a26530af3d05b0257386ce02498a5a84b" title="Get the distance from the origin." alt="" coords="277,533,443,597"/><area shape="rect" id="node44" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a455bf65abb87bd8b65d0cbe2234e4491" title="Get the perimeter." alt="" coords="277,621,443,685"/><area shape="rect" id="node47" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a924e390a408a91abf394f29bec33d945" title="Get the measure indicating how much the shape of the contour resembles a rectangle." alt="" coords="276,709,444,773"/><area shape="rect" id="node49" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aaf8b45d68041be0f293eaf1bf40c76d3" title="Get the shape best fitting the spatial collection as a string." alt="" coords="277,797,443,861"/><area shape="rect" id="node53" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a9c7af7e1fc6a829c184c85baeaf1ebc2" title="Get the measure indicating how much the shape of the contour resembles a triangle." alt="" coords="277,885,443,949"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a151cd8c0fdfbc98cfd0adc99b9943369" title="Update the values of all measures if required." alt="" coords="496,357,683,421"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a24ad8b8b5768be1f917a1fb893df8c6c" title="Update the values of all measures." alt="" coords="731,357,896,421"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a750ba1b5e457d9d6504fc8320a76e002" title="Update the value of the clusteredness degree." alt="" coords="944,137,1139,201"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a28fa63c1101f3f5ba7a0001099ee3159" title="Update the value of the density." alt="" coords="959,225,1124,289"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aa8c1cd3248c8926edbb1b47006ded902" title="Update the value of the area." alt="" coords="959,313,1124,377"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#acb00990b4b812367b7ae8f16028b8c32" title="Update the value of the perimeter." alt="" coords="959,401,1124,465"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad50d0866df26b63dc86853a9ab0c545d" title="Update the shape of the cluster." alt="" coords="959,489,1124,553"/><area shape="rect" id="node25" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a8e81fdb72e8510d8f77ce8b518a74843" title="Update the point defining the centre of the cluster." alt="" coords="959,577,1124,641"/><area shape="rect" id="node19" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ac0e5bce32290f2595293bd7386e04de1" title="Get the measure that the cluster has a triangular shape." alt="" coords="1187,401,1352,465"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad2984ec212e74437f3c7f3fc18ad555c" title="Get the measure that the cluster has a rectangular shape." alt="" coords="1187,489,1352,553"/><area shape="rect" id="node23" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a31066d1038679f8e9080719380403cad" title="Get the measure that the cluster has a circular shape." alt="" coords="1187,577,1352,641"/><area shape="rect" id="node51" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a347c52b3cfad183a608ddbd018d8e409" title="Return the shape of the cluster as a string." alt="" coords="507,797,672,861"/></map>
-</div>
-</p>
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00247">247</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
 
 </div>
 </div>
@@ -548,7 +704,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Create the trackbars which allow the user to change the values of the parameters. </p>
 
-<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00260">260</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00282">282</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
 
 </div>
 </div>
@@ -575,7 +731,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Create the window in which the trackbars are placed. </p>
 
-<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00265">265</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00287">287</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
 
 </div>
 </div>
@@ -607,11 +763,11 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00146">main()</a>.</p>
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_acfb9aaec94382e4a7bee6d9874d4bcef_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_acfb9aaec94382e4a7bee6d9874d4bcef_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Detector_acfb9aaec94382e4a7bee6d9874d4bcef_icgraph" id="classmultiscale_1_1analysis_1_1Detector_acfb9aaec94382e4a7bee6d9874d4bcef_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="192,13,243,43"/></map>
@@ -744,7 +900,7 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00276">276</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00298">298</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
 
 </div>
 </div>
@@ -834,11 +990,11 @@ Static Protected Attributes</h2></td></tr>
 
 <p>References <a class="el" href="Geometry2D_8cpp_source.html#l00246">multiscale::Geometry2D::lineSegmentIntersection()</a>.</p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_a2d8fe1a58bc6c792a45ffca988f2afe7_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_a2d8fe1a58bc6c792a45ffca988f2afe7_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Detector_a2d8fe1a58bc6c792a45ffca988f2afe7_cgraph" id="classmultiscale_1_1analysis_1_1Detector_a2d8fe1a58bc6c792a45ffca988f2afe7_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a9931c3d8089d658186a8c1ac78db5773" title="Determine the intersection point of two line segments, if this point exists." alt="" coords="261,14,432,61"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="480,14,643,61"/><area shape="rect" id="node7" href="classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="691,14,829,61"/><area shape="rect" id="node9" href="classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="877,14,1016,61"/></map>
@@ -906,11 +1062,11 @@ Static Protected Attributes</h2></td></tr>
 
 <p>References <a class="el" href="Geometry2D_8cpp_source.html#l00095">multiscale::Geometry2D::orthogonalLineToAnotherLineEdgePoints()</a>.</p>
 
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_a9785ec165eb57a95243c5bcf679bc49b_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_a9785ec165eb57a95243c5bcf679bc49b_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Detector_a9785ec165eb57a95243c5bcf679bc49b_cgraph" id="classmultiscale_1_1analysis_1_1Detector_a9785ec165eb57a95243c5bcf679bc49b_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="252,5,449,69"/><area shape="rect" id="node5" href="classmultiscale_1_1Geometry2D.html#a4a6aba3c69956a83af5d81f4d087c205" title="Check if the given point is on the edge." alt="" coords="499,14,661,61"/></map>
@@ -1246,11 +1402,11 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Referenced by <a class="el" href="CircularDetectRegions_8cpp_source.html#l00146">main()</a>.</p>
 
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_a122d92e3710571c136339747bf0568e8_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_a122d92e3710571c136339747bf0568e8_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Detector_a122d92e3710571c136339747bf0568e8_icgraph" id="classmultiscale_1_1analysis_1_1Detector_a122d92e3710571c136339747bf0568e8_icgraph">
 <area shape="rect" id="node3" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="224,13,275,43"/></map>
@@ -1320,13 +1476,13 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00189">189</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
 
-<p>References <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00076">multiscale::analysis::SpatialEntityPseudo3D::fieldNamesToString()</a>.</p>
+<p>References <a class="el" href="SpatialEntityPseudo3D_8cpp_source.html#l00077">multiscale::analysis::SpatialEntityPseudo3D::fieldNamesToString()</a>.</p>
 
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_a8f77ceb1535be09ef149aedcd6b1a84e_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_a8f77ceb1535be09ef149aedcd6b1a84e_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Detector_a8f77ceb1535be09ef149aedcd6b1a84e_cgraph" id="classmultiscale_1_1analysis_1_1Detector_a8f77ceb1535be09ef149aedcd6b1a84e_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a3c24e3f06c999002f18e1ddd8be3f927" title="Get a string representation of all the field names printed in the &quot;toString&quot; method." alt="" coords="237,5,403,69"/></map>
@@ -1532,13 +1688,13 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00108">108</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00258">multiscale::analysis::RegionDetector::createRegionFromPolygon()</a>, and <a class="el" href="ClusterDetector_8cpp_source.html#l00139">multiscale::analysis::ClusterDetector::updateClusterOriginDependentValues()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00258">multiscale::analysis::RegionDetector::createRegionFromPolygon()</a>, and <a class="el" href="ClusterDetector_8cpp_source.html#l00142">multiscale::analysis::ClusterDetector::updateClusterOriginDependentValues()</a>.</p>
 
-<p><div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_ada30f980ed5ce2f975bb827c393b8cd0_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_ada30f980ed5ce2f975bb827c393b8cd0_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Detector_ada30f980ed5ce2f975bb827c393b8cd0_icgraph" id="classmultiscale_1_1analysis_1_1Detector_ada30f980ed5ce2f975bb827c393b8cd0_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="224,5,429,69"/><area shape="rect" id="node9" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="221,93,432,157"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="493,14,691,61"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="759,5,969,69"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="480,93,704,157"/><area shape="rect" id="node13" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="752,102,976,149"/><area shape="rect" id="node15" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1024,93,1213,157"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1263,93,1473,157"/></map>
@@ -1593,11 +1749,11 @@ Static Protected Attributes</h2></td></tr>
 
 <p>References <a class="el" href="Geometry2D_8cpp_source.html#l00307">multiscale::Geometry2D::angleBtwPoints()</a>.</p>
 
-<p><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_a80dd82a52bdc63bee7f94d4c8403a785_cgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_a80dd82a52bdc63bee7f94d4c8403a785_cgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Detector_a80dd82a52bdc63bee7f94d4c8403a785_cgraph" id="classmultiscale_1_1analysis_1_1Detector_a80dd82a52bdc63bee7f94d4c8403a785_cgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1Geometry2D.html#ace72cd1329667fdb5bc3fc40b96694bd" title="Compute the angle between three points." alt="" coords="221,5,384,51"/></map>
@@ -1629,7 +1785,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Print error message, because the detect method was not called before calling the output method. </p>
 
-<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00281">281</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00303">303</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
 
 </div>
 </div>
@@ -1690,7 +1846,7 @@ Static Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00270">270</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8cpp_source.html#l00292">292</a> of file <a class="el" href="Detector_8cpp_source.html">Detector.cpp</a>.</p>
 
 </div>
 </div>
@@ -1722,11 +1878,11 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00070">multiscale::analysis::RegionDetector::setAlpha()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00076">multiscale::analysis::RegionDetector::setBeta()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00082">multiscale::analysis::RegionDetector::setBlurKernelSize()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00039">multiscale::analysis::ClusterDetector::setEps()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00088">multiscale::analysis::RegionDetector::setEpsilon()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00045">multiscale::analysis::ClusterDetector::setMinPoints()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00094">multiscale::analysis::RegionDetector::setMorphologicalCloseIterations()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00100">multiscale::analysis::RegionDetector::setOriginXCoordinate()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00106">multiscale::analysis::RegionDetector::setOriginYCoordinate()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00112">multiscale::analysis::RegionDetector::setRegionAreaThresh()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00118">multiscale::analysis::RegionDetector::setThresholdValue()</a>.</p>
 
-<p><div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="classmultiscale_1_1analysis_1_1Detector_a610c16fdecd543f15575f0effb08ff00_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1Detector_a610c16fdecd543f15575f0effb08ff00_icgraph" alt=""/></div>
 <map name="classmultiscale_1_1analysis_1_1Detector_a610c16fdecd543f15575f0effb08ff00_icgraph" id="classmultiscale_1_1analysis_1_1Detector_a610c16fdecd543f15575f0effb08ff00_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ada64f919fd5310987b950c052a3cf93a" title="Set the value of field alpha." alt="" coords="284,338,463,385"/><area shape="rect" id="node11" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a054b6327918fd9a6ff2de293dac1afc0" title="Set the value of field beta." alt="" coords="287,407,460,454"/><area shape="rect" id="node14" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a968d5ddbc060fa823e4c79c9dcfec300" title="Set the value of field blurKernelSize." alt="" coords="257,477,489,523"/><area shape="rect" id="node17" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a35eaa560c893a86c3149471f40c15979" title="Set the value of the clustering algorithm parameter eps." alt="" coords="288,791,459,838"/><area shape="rect" id="node21" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a069ed208d5ff16e6caa0deb4ff21858b" title="Set the value of field epsilon." alt="" coords="279,5,468,51"/><area shape="rect" id="node24" href="classmultiscale_1_1analysis_1_1ClusterDetector.html#a190fd17d121e8c22c1ca6e4f5b7a213c" title="Set the value of the clustering algorithm parameter MinPoints." alt="" coords="271,722,476,769"/><area shape="rect" id="node27" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5e096d2e4ff8dfe985869d6d0fcd74b8" title="Set the value of field morphologicalCloseIterations." alt="" coords="260,75,487,139"/><area shape="rect" id="node30" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a9ace9f195f33aab9597f8a7c107c219d" title="Set the value of field originXCoordinate." alt="" coords="283,547,464,611"/><area shape="rect" id="node32" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a2e7fa31b11734cdd3f7fc7db55cedab8" title="Set the value of field originYCoordinate." alt="" coords="283,635,464,699"/><area shape="rect" id="node34" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5cf10aea88e85198ce54df0e94e6d1a7" title="Set the value of field regionAreaThresh." alt="" coords="280,163,467,227"/><area shape="rect" id="node37" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a066e87a1f134194dabfc760d241b8ab2" title="Set the value of field thresholdValue." alt="" coords="272,251,475,315"/><area shape="rect" id="node5" href="CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="540,268,735,297"/><area shape="rect" id="node7" href="CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="785,241,980,271"/><area shape="rect" id="node9" href="CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="857,295,908,324"/><area shape="rect" id="node19" href="SimulationDetectClusters_8cpp.html#a3b2fe4e3a75a6cdca8ea050e37a9da13" title="loadDetectorParameterValues" alt="" coords="540,765,735,795"/></map>
@@ -1786,7 +1942,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00029">29</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00122">multiscale::analysis::ClusterDetector::analyseClusters()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00015">multiscale::analysis::ClusterDetector::ClusterDetector()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00203">multiscale::analysis::RegionDetector::computeAverageClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">multiscale::analysis::RegionDetector::RegionDetector()</a>.</p>
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00125">multiscale::analysis::ClusterDetector::analyseClusters()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00015">multiscale::analysis::ClusterDetector::ClusterDetector()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00203">multiscale::analysis::RegionDetector::computeAverageClusterednessDegree()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">multiscale::analysis::RegionDetector::RegionDetector()</a>.</p>
 
 </div>
 </div>
@@ -1813,7 +1969,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00034">34</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00122">multiscale::analysis::ClusterDetector::analyseClusters()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00015">multiscale::analysis::ClusterDetector::ClusterDetector()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00232">multiscale::analysis::RegionDetector::computeAverageDensity()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">multiscale::analysis::RegionDetector::RegionDetector()</a>.</p>
+<p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00125">multiscale::analysis::ClusterDetector::analyseClusters()</a>, <a class="el" href="ClusterDetector_8cpp_source.html#l00015">multiscale::analysis::ClusterDetector::ClusterDetector()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00232">multiscale::analysis::RegionDetector::computeAverageDensity()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00015">multiscale::analysis::RegionDetector::RegionDetector()</a>.</p>
 
 </div>
 </div>
@@ -1835,7 +1991,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00259">259</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00279">279</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1926,7 +2082,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00257">257</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00277">277</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1948,7 +2104,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00256">256</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00276">276</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -1970,7 +2126,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00255">255</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00275">275</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2017,7 +2173,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00260">260</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00280">280</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2039,7 +2195,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00265">265</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00285">285</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2061,7 +2217,29 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00266">266</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00286">286</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa82a238495f03f285893ea3345437224"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string Detector::LABEL_ATTRIBUTE = &quot;&lt;xmlattr&gt;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00288">288</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2083,7 +2261,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00268">268</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00289">289</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2105,7 +2283,51 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00269">269</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00291">291</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c760d7a38adaa29648e55c630f7e170"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string Detector::LABEL_EXPERIMENT_TIMEPOINT_AVG_CLUSTEREDNESS = &quot;experiment.timepoint.avgClusteredness&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00293">293</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a58b3f6ced9dd62bea93678fb6893524a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string Detector::LABEL_EXPERIMENT_TIMEPOINT_AVG_DENSITY = &quot;experiment.timepoint.avgDensity&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00294">294</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2127,11 +2349,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00271">271</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00295">295</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a28dedee0c192d3be211cb13d4b89dffa"></a>
+<a class="anchor" id="a5cb6f0a78406631f55d4a1b11197652e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2139,7 +2361,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES = &quot;pseudo3D.angleDegrees&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_ANGLE_DEGREES = &quot;angleDegrees&quot;</td>
         </tr>
       </table>
   </td>
@@ -2149,11 +2371,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00278">278</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00305">305</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a984c332f78fb9340673841a6b8171ca8"></a>
+<a class="anchor" id="a163a0858c9d71d9ddac78f814d48bee6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2161,7 +2383,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA = &quot;pseudo3D.area&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_AREA = &quot;area&quot;</td>
         </tr>
       </table>
   </td>
@@ -2171,11 +2393,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00275">275</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00302">302</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aec49c4524588c30df34ff377d70bff65"></a>
+<a class="anchor" id="a76896a7d2a68a194ed5b4a8fecb85b6c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2183,7 +2405,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X = &quot;pseudo3D.centroid.x&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_CENTROID_X = &quot;centroid.x&quot;</td>
         </tr>
       </table>
   </td>
@@ -2193,11 +2415,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00283">283</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00310">310</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="afb22e70184ac8fe022345962d2fe7934"></a>
+<a class="anchor" id="a9aff1d4b3d73d4569d21865b8f29d1c2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2205,7 +2427,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y = &quot;pseudo3D.centroid.y&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_CENTROID_Y = &quot;centroid.y&quot;</td>
         </tr>
       </table>
   </td>
@@ -2215,11 +2437,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00284">284</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00311">311</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1b0e3add734e789ef8b5993a155799e4"></a>
+<a class="anchor" id="a648197e1a6962d86b2c56a6ae366038a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2227,7 +2449,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE = &quot;pseudo3D.circleMeasure&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE = &quot;circleMeasure&quot;</td>
         </tr>
       </table>
   </td>
@@ -2237,11 +2459,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00282">282</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00309">309</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aac731a3a55f704a5b3ba203a3488c78d"></a>
+<a class="anchor" id="adae62b15a836592fd35057cf037730d8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2249,7 +2471,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS = &quot;pseudo3D.clusteredness&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_CLUSTEREDNESS = &quot;clusteredness&quot;</td>
         </tr>
       </table>
   </td>
@@ -2259,11 +2481,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00273">273</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00300">300</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a314632feed799f84c8db021cb28df3d8"></a>
+<a class="anchor" id="ab4f91117dab09a9356422d839aba811f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2271,7 +2493,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY = &quot;pseudo3D.density&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_DENSITY = &quot;density&quot;</td>
         </tr>
       </table>
   </td>
@@ -2281,11 +2503,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00274">274</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00301">301</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a56f7eb418502cbb93307e6f7f17d05be"></a>
+<a class="anchor" id="a58a41d2e2ccdbf3c760823d51ce9b0fe"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2293,7 +2515,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN = &quot;pseudo3D.distanceFromOrigin&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN = &quot;distanceFromOrigin&quot;</td>
         </tr>
       </table>
   </td>
@@ -2303,11 +2525,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00277">277</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00304">304</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a19ac6de22cbdfafbcfa25f0221b2937b"></a>
+<a class="anchor" id="adc07a468da3a48acbb858c6a8de7dec2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2315,7 +2537,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER = &quot;pseudo3D.perimeter&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PERIMETER = &quot;perimeter&quot;</td>
         </tr>
       </table>
   </td>
@@ -2325,11 +2547,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00276">276</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00303">303</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a8f99a2eba7afe01476e7830dcd955f00"></a>
+<a class="anchor" id="afc891454d41c2ede5e4b3155798045c4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2337,7 +2559,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE = &quot;pseudo3D.rectangleMeasure&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D = &quot;pseudo3D&quot;</td>
         </tr>
       </table>
   </td>
@@ -2347,11 +2569,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00281">281</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00297">297</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a77f57852e8d5c0df7c3d1bf98044c7af"></a>
+<a class="anchor" id="acb2040a9a63a40fa4c4ff31af9a574b5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2359,7 +2581,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE = &quot;pseudo3D.shape&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE = &quot;rectangleMeasure&quot;</td>
         </tr>
       </table>
   </td>
@@ -2369,11 +2591,11 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00279">279</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00308">308</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae5feb118badcb1d403a6f417b714c66f"></a>
+<a class="anchor" id="ae824ff121054358172ebf21aab8a8b46"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2381,7 +2603,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE = &quot;pseudo3D.triangleMeasure&quot;</td>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_SHAPE = &quot;shape&quot;</td>
         </tr>
       </table>
   </td>
@@ -2391,7 +2613,51 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00280">280</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00306">306</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7776a488915b9d47f678d87161c0478f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE = &quot;triangleMeasure&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00307">307</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac93f1fd6bdc7250b890480c7d5acf5b0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string Detector::LABEL_SPATIAL_ENTITY_TYPE = &quot;type&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00299">299</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2416,7 +2682,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00049">49</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00258">multiscale::analysis::RegionDetector::createRegionFromPolygon()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00054">multiscale::analysis::RegionDetector::getOriginXCoordinate()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00058">multiscale::analysis::RegionDetector::getOriginYCoordinate()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00100">multiscale::analysis::RegionDetector::setOriginXCoordinate()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00106">multiscale::analysis::RegionDetector::setOriginYCoordinate()</a>, and <a class="el" href="ClusterDetector_8cpp_source.html#l00139">multiscale::analysis::ClusterDetector::updateClusterOriginDependentValues()</a>.</p>
+<p>Referenced by <a class="el" href="RegionDetector_8cpp_source.html#l00258">multiscale::analysis::RegionDetector::createRegionFromPolygon()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00054">multiscale::analysis::RegionDetector::getOriginXCoordinate()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00058">multiscale::analysis::RegionDetector::getOriginYCoordinate()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00100">multiscale::analysis::RegionDetector::setOriginXCoordinate()</a>, <a class="el" href="RegionDetector_8cpp_source.html#l00106">multiscale::analysis::RegionDetector::setOriginYCoordinate()</a>, and <a class="el" href="ClusterDetector_8cpp_source.html#l00142">multiscale::analysis::ClusterDetector::updateClusterOriginDependentValues()</a>.</p>
 
 </div>
 </div>
@@ -2438,7 +2704,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00252">252</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00272">272</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2460,7 +2726,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00253">253</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00273">273</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2530,7 +2796,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00263">263</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00283">283</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="ClusterDetector_8cpp_source.html#l00056">multiscale::analysis::ClusterDetector::createDetectorSpecificTrackbars()</a>, and <a class="el" href="RegionDetector_8cpp_source.html#l00136">multiscale::analysis::RegionDetector::createDetectorSpecificTrackbars()</a>.</p>
 
@@ -2554,7 +2820,7 @@ Static Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00261">261</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Detector_8hpp_source.html#l00281">281</a> of file <a class="el" href="Detector_8hpp_source.html">Detector.hpp</a>.</p>
 
 </div>
 </div>
@@ -2568,7 +2834,7 @@ Static Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1Detector.html">Detector</a></li>
-    <li class="footer">Generated on Sat Jan 18 2014 13:15:08 for Multiscale by
+    <li class="footer">Generated on Sat Jan 18 2014 15:31:21 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

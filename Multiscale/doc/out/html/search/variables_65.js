@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['enclosing_5frect_5fvertices',['ENCLOSING_RECT_VERTICES',['../RegionDetector_8hpp.html#a3b9b2d597a3c76a1b1f9c2505971b8a4',1,'RegionDetector.hpp']]],
   ['endingangle',['endingAngle',['../classmultiscale_1_1video_1_1AnnularSector.html#a0aebd11072dbefe42196d6bda2e4318d',1,'multiscale::video::AnnularSector']]],
   ['endingradius',['endingRadius',['../classmultiscale_1_1video_1_1AnnularSector.html#aa45c5399240707d0b3fc02ee86b97c79',1,'multiscale::video::AnnularSector']]],
   ['entities',['entities',['../classmultiscale_1_1analysis_1_1Cluster.html#a820298479651328fb79d92a65f7923d6',1,'multiscale::analysis::Cluster']]],
@@ -45,6 +44,7 @@ var searchData=
   ['err_5fside_5fb_5fgamma',['ERR_SIDE_B_GAMMA',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a84e5ff8e5fec501f3d3b9ac6ee2416ee',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['err_5ftriangle_5fvertices',['ERR_TRIANGLE_VERTICES',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#aefe21c593b616438f9fa3591625322aa',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['err_5fundefined_5fshape',['ERR_UNDEFINED_SHAPE',['../classmultiscale_1_1analysis_1_1Cluster.html#a546b8e93e3f1ef51a9932f8599639070',1,'multiscale::analysis::Cluster']]],
+  ['err_5fundefined_5ftype',['ERR_UNDEFINED_TYPE',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad16aacdb05ba1922124c6b6c76077d32',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['err_5funimplemented_5fmethod',['ERR_UNIMPLEMENTED_METHOD',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html#a7f4120aa31ff324ddb5c90e14cfeeb6d',1,'multiscale::analysis::CircularMatFactory']]],
   ['err_5fvertex_5fc_5fon_5fside_5fb',['ERR_VERTEX_C_ON_SIDE_B',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a8e551d77bc36b7696ea969823f5720d1',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['explanatorystring',['explanatoryString',['../classmultiscale_1_1MultiscaleException.html#acf3042077605955cbb36a4472ed80233',1,'multiscale::MultiscaleException']]]

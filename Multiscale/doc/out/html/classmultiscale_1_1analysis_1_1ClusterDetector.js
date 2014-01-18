@@ -23,7 +23,6 @@ var classmultiscale_1_1analysis_1_1ClusterDetector =
     [ "getMinPoints", "classmultiscale_1_1analysis_1_1ClusterDetector.html#af979c73c154bd42ef73d3328e80889ef", null ],
     [ "getValidMinPointsValue", "classmultiscale_1_1analysis_1_1ClusterDetector.html#ab1c2514fb8599f74bf010e81154a9bf7", null ],
     [ "initialiseDetectorSpecificFields", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a67751dd6e21750019a20648b6ba3c8f2", null ],
-    [ "isNonEmptyCluster", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a3322e1cf4177d40c55c1ad25b27abdc6", null ],
     [ "processImageAndDetect", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209", null ],
     [ "setEps", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a35eaa560c893a86c3149471f40c15979", null ],
     [ "setMinPoints", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a190fd17d121e8c22c1ca6e4f5b7a213c", null ],

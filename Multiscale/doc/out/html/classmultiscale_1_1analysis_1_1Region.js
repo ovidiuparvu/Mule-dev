@@ -7,6 +7,7 @@ var classmultiscale_1_1analysis_1_1Region =
     [ "isCircularMeasure", "classmultiscale_1_1analysis_1_1Region.html#aa59dcbe337f4db849d66cb3902617ccd", null ],
     [ "isRectangularMeasure", "classmultiscale_1_1analysis_1_1Region.html#a2310c3e3c6f1dea310e14e46d466a204", null ],
     [ "isTriangularMeasure", "classmultiscale_1_1analysis_1_1Region.html#acb88d149b42eee5225e7197a225d31c3", null ],
+    [ "type", "classmultiscale_1_1analysis_1_1Region.html#a7cac0117120ae96e40f5c7eec8266922", null ],
     [ "updateArea", "classmultiscale_1_1analysis_1_1Region.html#a88adaf10fae7c554581498f86f1863fa", null ],
     [ "updateCentrePoint", "classmultiscale_1_1analysis_1_1Region.html#a3753b8789a73c1e3b5d189aa710aec86", null ],
     [ "updateClusterednessDegree", "classmultiscale_1_1analysis_1_1Region.html#a35c88944e2704571214b6e28dd657350", null ],

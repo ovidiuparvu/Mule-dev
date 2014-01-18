@@ -48,7 +48,6 @@ var searchData=
   ['isinitialised',['isInitialised',['../classmultiscale_1_1NumberIterator.html#ae3d929444e14677de0b616a059380f3f',1,'multiscale::NumberIterator']]],
   ['islargerthanupperbound',['isLargerThanUpperBound',['../classmultiscale_1_1LexicographicNumberIterator.html#a8fad6e84a483cee3bd52c926de73d15f',1,'multiscale::LexicographicNumberIterator']]],
   ['islocalminimaltriangle',['isLocalMinimalTriangle',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a97747be924fe1d8efaf6cad9d635419b',1,'multiscale::MinEnclosingTriangleFinder']]],
-  ['isnonemptycluster',['isNonEmptyCluster',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a3322e1cf4177d40c55c1ad25b27abdc6',1,'multiscale::analysis::ClusterDetector']]],
   ['isnotbtangency',['isNotBTangency',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a9f071f42dbaff51c8975da1b77c1188e',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['isoneedgeflush',['IsOneEdgeFlush',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a3a9be9bf036777162a594ccc77cb6114',1,'multiscaletest::MinEnclosingTriangleFinderTest::IsOneEdgeFlush()'],['../MinEnclosingTriangleFinderSample_8cpp.html#a38124a4460f065f32d4a8da82b64f4ef',1,'isOneEdgeFlush():&#160;MinEnclosingTriangleFinderSample.cpp']]],
   ['isoppositeanglebetween',['isOppositeAngleBetween',['../classmultiscale_1_1Geometry2D.html#aa373f78afdba238ebe3bafaac6076aef',1,'multiscale::Geometry2D']]],

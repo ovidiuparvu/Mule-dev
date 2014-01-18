@@ -12,7 +12,7 @@ var dir_f0033717cfd9395379e47f6b9f751443 =
     [ "MatFactory.cpp", "MatFactory_8cpp.html", null ],
     [ "RectangularDetectRegions.cpp", "RectangularDetectRegions_8cpp.html", "RectangularDetectRegions_8cpp" ],
     [ "Region.cpp", "Region_8cpp.html", null ],
-    [ "RegionDetector.cpp", "RegionDetector_8cpp.html", "RegionDetector_8cpp" ],
+    [ "RegionDetector.cpp", "RegionDetector_8cpp.html", null ],
     [ "Silhouette.cpp", "Silhouette_8cpp.html", null ],
     [ "SimulationDetectClusters.cpp", "SimulationDetectClusters_8cpp.html", "SimulationDetectClusters_8cpp" ],
     [ "SpatialEntityPseudo3D.cpp", "SpatialEntityPseudo3D_8cpp.html", null ]

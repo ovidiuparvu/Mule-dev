@@ -8,6 +8,7 @@ var searchData=
   ['simulationdetectclusters_2ecpp',['SimulationDetectClusters.cpp',['../SimulationDetectClusters_8cpp.html',1,'']]],
   ['spatialentitypseudo3d_2ecpp',['SpatialEntityPseudo3D.cpp',['../SpatialEntityPseudo3D_8cpp.html',1,'']]],
   ['spatialentitypseudo3d_2ehpp',['SpatialEntityPseudo3D.hpp',['../SpatialEntityPseudo3D_8hpp.html',1,'']]],
+  ['spatialentitypseudo3dtype_2ehpp',['SpatialEntityPseudo3DType.hpp',['../SpatialEntityPseudo3DType_8hpp.html',1,'']]],
   ['standardnumberiterator_2ecpp',['StandardNumberIterator.cpp',['../StandardNumberIterator_8cpp.html',1,'']]],
   ['standardnumberiterator_2ehpp',['StandardNumberIterator.hpp',['../StandardNumberIterator_8hpp.html',1,'']]],
   ['stringmanipulator_2ecpp',['StringManipulator.cpp',['../StringManipulator_8cpp.html',1,'']]],

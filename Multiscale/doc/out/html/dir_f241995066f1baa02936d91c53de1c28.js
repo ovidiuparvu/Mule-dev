@@ -29,12 +29,15 @@ var dir_f241995066f1baa02936d91c53de1c28 =
     [ "Region.hpp", "Region_8hpp.html", [
       [ "Region", "classmultiscale_1_1analysis_1_1Region.html", "classmultiscale_1_1analysis_1_1Region" ]
     ] ],
-    [ "RegionDetector.hpp", "RegionDetector_8hpp.html", "RegionDetector_8hpp" ],
+    [ "RegionDetector.hpp", "RegionDetector_8hpp.html", [
+      [ "RegionDetector", "classmultiscale_1_1analysis_1_1RegionDetector.html", "classmultiscale_1_1analysis_1_1RegionDetector" ]
+    ] ],
     [ "Shape2D.hpp", "Shape2D_8hpp.html", "Shape2D_8hpp" ],
     [ "Silhouette.hpp", "Silhouette_8hpp.html", [
       [ "Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ]
     ] ],
     [ "SpatialEntityPseudo3D.hpp", "SpatialEntityPseudo3D_8hpp.html", [
       [ "SpatialEntityPseudo3D", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D" ]
-    ] ]
+    ] ],
+    [ "SpatialEntityPseudo3DType.hpp", "SpatialEntityPseudo3DType_8hpp.html", "SpatialEntityPseudo3DType_8hpp" ]
 ];

@@ -49,7 +49,7 @@ double \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a26530af3
 \begin{DoxyCompactList}\small\item\em Get the distance from the origin. \end{DoxyCompactList}\item 
 double \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a9f3394cfe46d66ae9c13d805ad460cb5}{get\-Angle} ()
 \begin{DoxyCompactList}\small\item\em Get the angle. \end{DoxyCompactList}\item 
-\hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbf}{Shape2\-D} \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_af67de0727472a72bad311e71db8a1115}{get\-Shape} ()
+\hyperlink{namespacemultiscale_1_1analysis_ad895735ef4c40ec7f58424c33cba1b88}{Shape2\-D} \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_af67de0727472a72bad311e71db8a1115}{get\-Shape} ()
 \begin{DoxyCompactList}\small\item\em Get the shape best fitting the spatial collection. \end{DoxyCompactList}\item 
 string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aaf8b45d68041be0f293eaf1bf40c76d3}{get\-Shape\-As\-String} ()
 \begin{DoxyCompactList}\small\item\em Get the shape best fitting the spatial collection as a string. \end{DoxyCompactList}\item 
@@ -62,7 +62,9 @@ double \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a71759aa5
 Point2f \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a4976534b2cdf55541701a7d5ea4ac0c5}{get\-Centre} ()
 \begin{DoxyCompactList}\small\item\em Get the point defining the centre of the entity. \end{DoxyCompactList}\item 
 string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_abea1af0695f6f1a977b0caa3428fc433}{to\-String} ()
-\begin{DoxyCompactList}\small\item\em Get the string representation of all field values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the string representation of all field values. \end{DoxyCompactList}\item 
+string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ae8b5c03174d91efc64509dec1a01e69c}{type\-As\-String} ()
+\begin{DoxyCompactList}\small\item\em Return the type of the pseudo 3\-D spatial entity as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -97,6 +99,8 @@ string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a347c52b3
 \begin{DoxyCompactList}\small\item\em Return the shape of the cluster as a string. \end{DoxyCompactList}\item 
 string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a232a5e4991e59dfc685107982fcaf0ce}{field\-Values\-To\-String} ()
 \begin{DoxyCompactList}\small\item\em Return the values of the fields as a string. \end{DoxyCompactList}\item 
+virtual \hyperlink{namespacemultiscale_1_1analysis_a6db9cbf10615e77e300c3e4cb1c56660}{Spatial\-Entity\-Pseudo3\-D\-Type} \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ac0d4656a44cc724c2cc7d34d8b15dbd8}{type} ()=0
+\begin{DoxyCompactList}\small\item\em Return the type of the pseudo 3\-D spatial entity. \end{DoxyCompactList}\item 
 vector$<$ Point2f $>$ \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a2175fefa47f158b22872af80010543b1}{convert\-Points} (const vector$<$ Point $>$ \&points)
 \begin{DoxyCompactList}\small\item\em Convert the collection of points from type Point to type Point2f. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
@@ -120,7 +124,7 @@ double \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aabb799c3
 \item 
 double \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aa4ac170fb21e9697358d47ba6ea7a267}{circular\-Measure}
 \item 
-\hyperlink{namespacemultiscale_1_1analysis_ad1ef6155ab2e954c1c33d3e2e6b53fbf}{Shape2\-D} \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_abad3acd3d7067e8e86e168e692cb2c2e}{shape}
+\hyperlink{namespacemultiscale_1_1analysis_ad895735ef4c40ec7f58424c33cba1b88}{Shape2\-D} \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_abad3acd3d7067e8e86e168e692cb2c2e}{shape}
 \item 
 Point2f \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a647c25f9544d5537938bbadefc436634}{centre}
 \item 
@@ -128,6 +132,10 @@ bool \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a2fc7e2c00f
 \end{DoxyCompactItemize}
 \subsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a30d78540776d80a96e8cfe16645cf50a}{S\-T\-R\-\_\-\-R\-E\-G\-I\-O\-N} = \char`\"{}region\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aa7104d49e4b42c312a942c4795353f10}{S\-T\-R\-\_\-\-C\-L\-U\-S\-T\-E\-R} = \char`\"{}cluster\char`\"{}
 \item 
 static const string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a8ad67f0073da808ad1badedf2e613ed3}{S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E} = \char`\"{}triangular\char`\"{}
 \item 
@@ -141,6 +149,8 @@ static const string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseud
 \item 
 static const string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a5882e2e18343ccee821f1bd6b9c23724}{E\-R\-R\-\_\-\-I\-N\-P\-U\-T} = \char`\"{}Invalid input parameters were provided to the constructor.\char`\"{}
 \item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ad16aacdb05ba1922124c6b6c76077d32}{E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-T\-Y\-P\-E} = \char`\"{}Pseudo 3\-D spatial entity of undefined type encountered.\char`\"{}
+\item 
 static const bool \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ad92f43d2b14c77def3f7a70b54810dd2}{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E} = true
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
@@ -153,7 +163,7 @@ void \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a097edef313
 \subsection{Detailed Description}
 Class for representing a pseudo-\/3\-D (explicit 2\-D + implicit height) object. 
 
-Definition at line 17 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 18 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -167,7 +177,7 @@ Definition at line 17 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 )}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aa391fae1e086502392a2c89dcea27022}
 
 
-Definition at line 6 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 7 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -175,8 +185,7 @@ References initialise().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -194,7 +203,7 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a5d44f1cc668d9ef8b1bb5ba573a08c93}
 
 
-Definition at line 10 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 11 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -217,7 +226,7 @@ Convert the collection of points from type Point to type Point2f.
 \end{DoxyParams}
 
 
-Definition at line 164 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 186 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -225,8 +234,7 @@ Referenced by multiscale\-::analysis\-::\-Region\-::is\-Triangular\-Measure().
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -248,7 +256,7 @@ Get a string representation of all the field names printed in the \char`\"{}to\-
 
 
 
-Definition at line 76 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 77 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -256,8 +264,7 @@ Referenced by multiscale\-::analysis\-::\-Detector\-::output\-Results\-To\-Csv\-
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -279,7 +286,7 @@ Return the values of the fields as a string.
 
 
 
-Definition at line 145 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 167 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -291,8 +298,7 @@ Referenced by to\-String().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -303,8 +309,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -326,7 +331,7 @@ Get the angle.
 
 
 
-Definition at line 42 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 43 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -334,12 +339,11 @@ References angle, and update\-Measures\-If\-Required().
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -373,7 +377,7 @@ Get the area.
 
 
 
-Definition at line 24 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 25 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -381,12 +385,11 @@ References area, and update\-Measures\-If\-Required().
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::is\-Non\-Empty\-Cluster().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -420,7 +423,7 @@ Get the point defining the centre of the entity.
 
 
 
-Definition at line 70 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 71 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -428,12 +431,11 @@ References centre, and update\-Measures\-If\-Required().
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -467,7 +469,7 @@ Get the measure indicating how much the shape of the contour resembles a circle.
 
 
 
-Definition at line 66 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 67 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -475,7 +477,7 @@ References circular\-Measure.
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
@@ -502,7 +504,7 @@ Get the clusteredness degree.
 
 
 
-Definition at line 12 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 13 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -510,12 +512,11 @@ References clusteredness\-Degree, and update\-Measures\-If\-Required().
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -549,7 +550,7 @@ Get the density.
 
 
 
-Definition at line 18 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 19 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -557,12 +558,11 @@ References density, and update\-Measures\-If\-Required().
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -596,7 +596,7 @@ Get the distance from the origin.
 
 
 
-Definition at line 36 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 37 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -604,12 +604,11 @@ References distance\-From\-Origin, and update\-Measures\-If\-Required().
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -643,7 +642,7 @@ Get the perimeter.
 
 
 
-Definition at line 30 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 31 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -651,12 +650,11 @@ References perimeter, and update\-Measures\-If\-Required().
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::is\-Non\-Empty\-Cluster().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -690,7 +688,7 @@ Get the measure indicating how much the shape of the contour resembles a rectang
 
 
 
-Definition at line 62 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 63 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -698,7 +696,7 @@ References rectangular\-Measure.
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
@@ -725,7 +723,7 @@ Get the shape best fitting the spatial collection.
 
 
 
-Definition at line 48 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 49 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -737,8 +735,7 @@ Referenced by multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::outpu
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -749,8 +746,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -772,7 +768,7 @@ Get the shape best fitting the spatial collection as a string.
 
 
 
-Definition at line 54 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 55 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -780,12 +776,11 @@ References shape\-As\-String().
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -819,7 +814,7 @@ Get the measure indicating how much the shape of the contour resembles a triangl
 
 
 
-Definition at line 58 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 59 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -827,7 +822,7 @@ References triangular\-Measure.
 
 
 
-Referenced by multiscale\-::analysis\-::\-Detector\-::construct\-Property\-Tree().
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Properties\-To\-Tree().
 
 
 
@@ -854,11 +849,11 @@ Initialisation function for the class.
 
 
 
-Definition at line 174 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 196 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
-References area, circular\-Measure, perimeter, rectangular\-Measure, shape, triangular\-Measure, multiscale\-::analysis\-::\-Undefined, and update\-Flag.
+References area, circular\-Measure, perimeter, rectangular\-Measure, shape, triangular\-Measure, and update\-Flag.
 
 
 
@@ -866,8 +861,7 @@ Referenced by Spatial\-Entity\-Pseudo3\-D().
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -982,11 +976,11 @@ Return the shape of the cluster as a string.
 
 
 
-Definition at line 123 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 145 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
-References multiscale\-::analysis\-::\-Circle, multiscale\-::analysis\-::\-Rectangle, shape, S\-T\-R\-\_\-\-C\-I\-R\-C\-L\-E, S\-T\-R\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E, S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E, S\-T\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D, multiscale\-::analysis\-::\-Triangle, and multiscale\-::analysis\-::\-Undefined.
+References shape, S\-T\-R\-\_\-\-C\-I\-R\-C\-L\-E, S\-T\-R\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E, S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E, and S\-T\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D.
 
 
 
@@ -1017,11 +1011,76 @@ Get the string representation of all field values.
 
 
 
-Definition at line 80 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 81 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
 References field\-Values\-To\-String(), and update\-Measures\-If\-Required().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_abea1af0695f6f1a977b0caa3428fc433_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ac0d4656a44cc724c2cc7d34d8b15dbd8}{\index{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}!type@{type}}
+\index{type@{type}!multiscale::analysis::SpatialEntityPseudo3D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Spatial\-Entity\-Pseudo3\-D\-Type} multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ac0d4656a44cc724c2cc7d34d8b15dbd8}
+
+
+Return the type of the pseudo 3\-D spatial entity. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1Region_a7cac0117120ae96e40f5c7eec8266922}{multiscale\-::analysis\-::\-Region}, and \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a0a4531d371662e9c4149c10aa115fb49}{multiscale\-::analysis\-::\-Cluster}.
+
+
+
+Referenced by type\-As\-String().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ac0d4656a44cc724c2cc7d34d8b15dbd8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ae8b5c03174d91efc64509dec1a01e69c}{\index{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}!type\-As\-String@{type\-As\-String}}
+\index{type\-As\-String@{type\-As\-String}!multiscale::analysis::SpatialEntityPseudo3D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}}
+\subsubsection[{type\-As\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Spatial\-Entity\-Pseudo3\-D\-::type\-As\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ae8b5c03174d91efc64509dec1a01e69c}
+
+
+Return the type of the pseudo 3\-D spatial entity as a string. 
+
+
+
+Definition at line 87 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+
+
+
+References E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-T\-Y\-P\-E, M\-S\-\_\-throw, S\-T\-R\-\_\-\-C\-L\-U\-S\-T\-E\-R, S\-T\-R\-\_\-\-R\-E\-G\-I\-O\-N, S\-T\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D, and type().
+
+
+
+Referenced by multiscale\-::analysis\-::\-Detector\-::add\-Spatial\-Entity\-Type\-To\-Property\-Tree().
 
 
 
@@ -1030,7 +1089,19 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_abea1af0695f6f1a977b0caa3428fc433_cgraph}
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ae8b5c03174d91efc64509dec1a01e69c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ae8b5c03174d91efc64509dec1a01e69c_icgraph}
 \end{center}
 \end{figure}
 
@@ -1172,7 +1243,7 @@ Update the values of all measures.
 
 
 
-Definition at line 94 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 116 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -1184,8 +1255,7 @@ Referenced by update\-Measures\-If\-Required().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1219,7 +1289,7 @@ Update the values of all measures if required.
 
 
 
-Definition at line 86 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 108 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
@@ -1231,8 +1301,7 @@ Referenced by get\-Angle(), get\-Area(), get\-Centre(), get\-Clusteredness\-Degr
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1297,11 +1366,11 @@ Update the shape of the cluster.
 
 
 
-Definition at line 103 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
+Definition at line 125 of file Spatial\-Entity\-Pseudo3\-D.\-cpp.
 
 
 
-References multiscale\-::analysis\-::\-Circle, circular\-Measure, is\-Circular\-Measure(), is\-Rectangular\-Measure(), is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Rectangle, rectangular\-Measure, shape, multiscale\-::analysis\-::\-Triangle, and triangular\-Measure.
+References circular\-Measure, is\-Circular\-Measure(), is\-Rectangular\-Measure(), is\-Triangular\-Measure(), rectangular\-Measure, shape, and triangular\-Measure.
 
 
 
@@ -1309,8 +1378,7 @@ Referenced by update\-Measures().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1339,7 +1407,7 @@ Here is the caller graph for this function\-:
 \subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::angle\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aa077aab864e659f93522863cc10824bb}
 Angle of the region wrt the origin 
 
-Definition at line 33 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 34 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1350,7 +1418,7 @@ Referenced by field\-Values\-To\-String(), get\-Angle(), multiscale\-::analysis\
 \subsubsection[{area}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::area\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a1621d5b3ece663bf4c5501940e860292}
 Area of the spatial collection 
 
-Definition at line 29 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 30 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1361,7 +1429,7 @@ Referenced by field\-Values\-To\-String(), get\-Area(), initialise(), multiscale
 \subsubsection[{centre}]{\setlength{\rightskip}{0pt plus 5cm}Point2f multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::centre\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a647c25f9544d5537938bbadefc436634}
 Point defining the centre of the spatial collection 
 
-Definition at line 40 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 41 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1372,7 +1440,7 @@ Referenced by field\-Values\-To\-String(), get\-Centre(), multiscale\-::analysis
 \subsubsection[{circular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::circular\-Measure\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aa4ac170fb21e9697358d47ba6ea7a267}
 Measure (\mbox{[}0, 1\mbox{]}) indicating that the shape of the spatial collection is circular 
 
-Definition at line 37 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 38 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1383,7 +1451,7 @@ Referenced by field\-Values\-To\-String(), get\-Circular\-Measure(), initialise(
 \subsubsection[{clusteredness\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::clusteredness\-Degree\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a22a84312e7c497cc5fbc4d8b41d8fd45}
 Degree of clusteredness 
 
-Definition at line 21 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 22 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1394,7 +1462,7 @@ Referenced by field\-Values\-To\-String(), get\-Clusteredness\-Degree(), multisc
 \subsubsection[{C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}const bool Spatial\-Entity\-Pseudo3\-D\-::\-C\-O\-N\-V\-E\-X\-\_\-\-H\-U\-L\-L\-\_\-\-C\-L\-O\-C\-K\-W\-I\-S\-E = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ad92f43d2b14c77def3f7a70b54810dd2}
 
 
-Definition at line 158 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 169 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1409,7 +1477,7 @@ Referenced by multiscale\-::analysis\-::\-Cluster\-::get\-Entities\-Convex\-Hull
 
 For clusters\-: Degree of pile up 
 
-Definition at line 22 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 23 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1420,7 +1488,7 @@ Referenced by field\-Values\-To\-String(), get\-Density(), multiscale\-::analysi
 \subsubsection[{distance\-From\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::distance\-From\-Origin\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a056f67b90ed41c0e6dc4df31b71ad906}
 Distance from the origin 
 
-Definition at line 32 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 33 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1431,18 +1499,29 @@ Referenced by field\-Values\-To\-String(), get\-Distance\-From\-Origin(), multis
 \subsubsection[{E\-R\-R\-\_\-\-I\-N\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string Spatial\-Entity\-Pseudo3\-D\-::\-E\-R\-R\-\_\-\-I\-N\-P\-U\-T = \char`\"{}Invalid input parameters were provided to the constructor.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a5882e2e18343ccee821f1bd6b9c23724}
 
 
-Definition at line 156 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 166 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
 Referenced by multiscale\-::analysis\-::\-Region\-::validate\-Input\-Values().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ad16aacdb05ba1922124c6b6c76077d32}{\index{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}!E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-T\-Y\-P\-E@{E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-T\-Y\-P\-E}}
+\index{E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-T\-Y\-P\-E@{E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-T\-Y\-P\-E}!multiscale::analysis::SpatialEntityPseudo3D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}}
+\subsubsection[{E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Spatial\-Entity\-Pseudo3\-D\-::\-E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-T\-Y\-P\-E = \char`\"{}Pseudo 3\-D spatial entity of undefined type encountered.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ad16aacdb05ba1922124c6b6c76077d32}
+
+
+Definition at line 167 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+
+
+
+Referenced by type\-As\-String().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a4ee08be9b4119b90f0a996704d179635}{\index{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}!O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}}
 \index{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}!multiscale::analysis::SpatialEntityPseudo3D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}}
 \subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}const string Spatial\-Entity\-Pseudo3\-D\-::\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R = \char`\"{},\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a4ee08be9b4119b90f0a996704d179635}
 
 
-Definition at line 154 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 164 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1453,7 +1532,7 @@ Referenced by field\-Values\-To\-String().
 \subsubsection[{perimeter}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::perimeter\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aee84039be272f902a2d871f61da47360}
 Perimeter of the spatial collection 
 
-Definition at line 30 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 31 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1464,7 +1543,7 @@ Referenced by field\-Values\-To\-String(), get\-Perimeter(), initialise(), multi
 \subsubsection[{rectangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::rectangular\-Measure\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aabb799c34513ed1d3008d807cdbdea29}
 Measure (\mbox{[}0, 1\mbox{]}) indicating that the shape of the spatial collection is rectangular 
 
-Definition at line 36 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 37 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1475,7 +1554,7 @@ Referenced by field\-Values\-To\-String(), get\-Rectangular\-Measure(), initiali
 \subsubsection[{shape}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shape2\-D} multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::shape\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_abad3acd3d7067e8e86e168e692cb2c2e}
 Shape of the spatial collection 
 
-Definition at line 39 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 40 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1486,29 +1565,51 @@ Referenced by get\-Shape(), initialise(), shape\-As\-String(), and update\-Shape
 \subsubsection[{S\-T\-R\-\_\-\-C\-I\-R\-C\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Spatial\-Entity\-Pseudo3\-D\-::\-S\-T\-R\-\_\-\-C\-I\-R\-C\-L\-E = \char`\"{}circular\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a561e862c97a4717eb5b4977c55d05d90}
 
 
-Definition at line 151 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 161 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
 Referenced by shape\-As\-String().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aa7104d49e4b42c312a942c4795353f10}{\index{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}!S\-T\-R\-\_\-\-C\-L\-U\-S\-T\-E\-R@{S\-T\-R\-\_\-\-C\-L\-U\-S\-T\-E\-R}}
+\index{S\-T\-R\-\_\-\-C\-L\-U\-S\-T\-E\-R@{S\-T\-R\-\_\-\-C\-L\-U\-S\-T\-E\-R}!multiscale::analysis::SpatialEntityPseudo3D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}}
+\subsubsection[{S\-T\-R\-\_\-\-C\-L\-U\-S\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const string Spatial\-Entity\-Pseudo3\-D\-::\-S\-T\-R\-\_\-\-C\-L\-U\-S\-T\-E\-R = \char`\"{}cluster\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_aa7104d49e4b42c312a942c4795353f10}
+
+
+Definition at line 157 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+
+
+
+Referenced by type\-As\-String().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a9b80a7c37a8c82fed02a1e23b1173843}{\index{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}!S\-T\-R\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E@{S\-T\-R\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E}}
 \index{S\-T\-R\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E@{S\-T\-R\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E}!multiscale::analysis::SpatialEntityPseudo3D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}}
 \subsubsection[{S\-T\-R\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Spatial\-Entity\-Pseudo3\-D\-::\-S\-T\-R\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E = \char`\"{}rectangular\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a9b80a7c37a8c82fed02a1e23b1173843}
 
 
-Definition at line 150 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 160 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
 Referenced by shape\-As\-String().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a30d78540776d80a96e8cfe16645cf50a}{\index{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}!S\-T\-R\-\_\-\-R\-E\-G\-I\-O\-N@{S\-T\-R\-\_\-\-R\-E\-G\-I\-O\-N}}
+\index{S\-T\-R\-\_\-\-R\-E\-G\-I\-O\-N@{S\-T\-R\-\_\-\-R\-E\-G\-I\-O\-N}!multiscale::analysis::SpatialEntityPseudo3D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}}
+\subsubsection[{S\-T\-R\-\_\-\-R\-E\-G\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Spatial\-Entity\-Pseudo3\-D\-::\-S\-T\-R\-\_\-\-R\-E\-G\-I\-O\-N = \char`\"{}region\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a30d78540776d80a96e8cfe16645cf50a}
+
+
+Definition at line 156 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+
+
+
+Referenced by type\-As\-String().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a8ad67f0073da808ad1badedf2e613ed3}{\index{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}!S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E@{S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E}}
 \index{S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E@{S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E}!multiscale::analysis::SpatialEntityPseudo3D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}}
 \subsubsection[{S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Spatial\-Entity\-Pseudo3\-D\-::\-S\-T\-R\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E = \char`\"{}triangular\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a8ad67f0073da808ad1badedf2e613ed3}
 
 
-Definition at line 149 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 159 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1519,18 +1620,18 @@ Referenced by shape\-As\-String().
 \subsubsection[{S\-T\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const string Spatial\-Entity\-Pseudo3\-D\-::\-S\-T\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D = \char`\"{}undefined\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ae4e33ad9bcad430b929b601c5571a6fd}
 
 
-Definition at line 152 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 162 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
-Referenced by shape\-As\-String().
+Referenced by shape\-As\-String(), and type\-As\-String().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a7e8a7c888b5ab5a204f6d4ffa283709c}{\index{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}!triangular\-Measure@{triangular\-Measure}}
 \index{triangular\-Measure@{triangular\-Measure}!multiscale::analysis::SpatialEntityPseudo3D@{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}}
 \subsubsection[{triangular\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::triangular\-Measure\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a7e8a7c888b5ab5a204f6d4ffa283709c}
 Measure (\mbox{[}0, 1\mbox{]}) indicating that the shape of the spatial collection is triangular 
 
-Definition at line 35 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 36 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 
@@ -1543,7 +1644,7 @@ Referenced by field\-Values\-To\-String(), get\-Triangular\-Measure(), initialis
 \end{DoxyVerb}
  collection of entities need to be updated. This flag is used for lazy evaluation purposes, such that new field values are computed only when required 
 
-Definition at line 42 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
+Definition at line 43 of file Spatial\-Entity\-Pseudo3\-D.\-hpp.
 
 
 

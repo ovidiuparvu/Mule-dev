@@ -61,7 +61,9 @@ double \hyperlink{classmultiscale_1_1analysis_1_1Region_a2310c3e3c6f1dea310e14e4
 double \hyperlink{classmultiscale_1_1analysis_1_1Region_aa59dcbe337f4db849d66cb3902617ccd}{is\-Circular\-Measure} () override
 \begin{DoxyCompactList}\small\item\em Get the measure that the cluster has a circular shape. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1Region_a3753b8789a73c1e3b5d189aa710aec86}{update\-Centre\-Point} () override
-\begin{DoxyCompactList}\small\item\em Update the centre of the region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Update the centre of the region. \end{DoxyCompactList}\item 
+\hyperlink{namespacemultiscale_1_1analysis_a6db9cbf10615e77e300c3e4cb1c56660}{Spatial\-Entity\-Pseudo3\-D\-Type} \hyperlink{classmultiscale_1_1analysis_1_1Region_a7cac0117120ae96e40f5c7eec8266922}{type} () override
+\begin{DoxyCompactList}\small\item\em Return the type of the pseudo 3\-D spatial entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -107,8 +109,7 @@ References multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::angle, mul
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -184,8 +185,7 @@ Referenced by validate\-Input\-Values().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -317,8 +317,7 @@ References multiscale\-::\-Numeric\-::almost\-Equal(), multiscale\-::analysis\-:
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -326,6 +325,25 @@ Here is the call graph for this function\-:
 \end{center}
 \end{figure}
 
+
+\hypertarget{classmultiscale_1_1analysis_1_1Region_a7cac0117120ae96e40f5c7eec8266922}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!type@{type}}
+\index{type@{type}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Spatial\-Entity\-Pseudo3\-D\-Type} Region\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Region_a7cac0117120ae96e40f5c7eec8266922}
+
+
+Return the type of the pseudo 3\-D spatial entity. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ac0d4656a44cc724c2cc7d34d8b15dbd8}{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}.
+
+
+
+Definition at line 108 of file Region.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Region_a88adaf10fae7c554581498f86f1863fa}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!update\-Area@{update\-Area}}
 \index{update\-Area@{update\-Area}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}
@@ -479,8 +497,7 @@ Referenced by Region().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -508,7 +525,7 @@ Here is the caller graph for this function\-:\nopagebreak
 \subsubsection[{C\-O\-N\-T\-O\-U\-R\-\_\-\-C\-L\-O\-S\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const bool Region\-::\-C\-O\-N\-T\-O\-U\-R\-\_\-\-C\-L\-O\-S\-E\-D = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Region_a52c0c66ccfe38dc19379abaeba529f19}
 
 
-Definition at line 108 of file Region.\-hpp.
+Definition at line 111 of file Region.\-hpp.
 
 
 
@@ -519,7 +536,7 @@ Referenced by update\-Perimeter().
 \subsubsection[{C\-O\-N\-T\-O\-U\-R\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}const bool Region\-::\-C\-O\-N\-T\-O\-U\-R\-\_\-\-O\-R\-I\-E\-N\-T\-E\-D = false\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Region_a875a0f14dacf6904cabfa1f31020e6e2}
 
 
-Definition at line 107 of file Region.\-hpp.
+Definition at line 110 of file Region.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Region_a40d1b47f30bb09c6a47521a968163b6d}{\index{multiscale\-::analysis\-::\-Region@{multiscale\-::analysis\-::\-Region}!polygon@{polygon}}
 \index{polygon@{polygon}!multiscale::analysis::Region@{multiscale\-::analysis\-::\-Region}}

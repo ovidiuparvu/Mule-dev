@@ -15,7 +15,9 @@ var searchData=
   ['startingangle',['startingAngle',['../classmultiscale_1_1video_1_1AnnularSector.html#a437d3dc1b2fadace28bdc3d26a78c0b3',1,'multiscale::video::AnnularSector']]],
   ['startingradius',['startingRadius',['../classmultiscale_1_1video_1_1AnnularSector.html#a4c0094d8993edb40b15580fa58a8a393',1,'multiscale::video::AnnularSector']]],
   ['str_5fcircle',['STR_CIRCLE',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a561e862c97a4717eb5b4977c55d05d90',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
+  ['str_5fcluster',['STR_CLUSTER',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aa7104d49e4b42c312a942c4795353f10',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['str_5frectangle',['STR_RECTANGLE',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a9b80a7c37a8c82fed02a1e23b1173843',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
+  ['str_5fregion',['STR_REGION',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a30d78540776d80a96e8cfe16645cf50a',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['str_5ftriangle',['STR_TRIANGLE',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a8ad67f0073da808ad1badedf2e613ed3',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['str_5fundefined',['STR_UNDEFINED',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ae4e33ad9bcad430b929b601c5571a6fd',1,'multiscale::analysis::SpatialEntityPseudo3D']]]
 ];

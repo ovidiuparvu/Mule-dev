@@ -118,195 +118,193 @@ $(document).ready(function(){initNavTree('RegionDetector_8hpp_source.html','');}
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>cv;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="RegionDetector_8hpp.html#a3b9b2d597a3c76a1b1f9c2505971b8a4">   13</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="RegionDetector_8hpp.html#a3b9b2d597a3c76a1b1f9c2505971b8a4">ENCLOSING_RECT_VERTICES</a> = 4;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>multiscale {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">namespace </span>analysis {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">namespace </span>analysis {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html">   21</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html" title="Class for detecting regions of high intensity in grayscale images.">RegionDetector</a> : <span class="keyword">public</span> <a class="code" href="classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images.">Detector</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html">   19</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html" title="Class for detecting regions of high intensity in grayscale images.">RegionDetector</a> : <span class="keyword">public</span> <a class="code" href="classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images.">Detector</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab768a3bbfff9835b441a889ab2cb05a6">   25</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab768a3bbfff9835b441a889ab2cb05a6">alpha</a>;                          </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a23c831170c2264dd7e59067a1a7d3c8e">   26</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a23c831170c2264dd7e59067a1a7d3c8e">beta</a>;                           </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aae6ee0ec7f0a610dd8a906c1eb181bc7">   27</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aae6ee0ec7f0a610dd8a906c1eb181bc7">blurKernelSize</a>;                 </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a700a2f299d7c56fbd1fdbec68092f23a">   28</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a700a2f299d7c56fbd1fdbec68092f23a">morphologicalCloseIterations</a>;   </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#acf21910fadd7c6ef2810743a78a0aeb9">   29</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#acf21910fadd7c6ef2810743a78a0aeb9">epsilon</a>;                        </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1f637073a3d946d000dceed01412f19a">   30</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1f637073a3d946d000dceed01412f19a">regionAreaThresh</a>;               </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0f7469d124c0b906d199e00ea5713007">   31</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0f7469d124c0b906d199e00ea5713007">thresholdValue</a>;                 </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">   33</a></span>&#160;                vector&lt;Region&gt; <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">regions</a>;             </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html" title="Class for detecting regions of high intensity in grayscale images.">RegionDetector</a>(<span class="keywordtype">bool</span> debugMode = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html" title="Class for detecting regions of high intensity in grayscale images.">RegionDetector</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordtype">int</span> getAlpha();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordtype">int</span> getBeta();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordtype">int</span> getBlurKernelSize();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">int</span> getEpsilon();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordtype">int</span> getMorphologicalCloseIterations();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordtype">int</span> getOriginXCoordinate();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordtype">int</span> getOriginYCoordinate();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">int</span> getRegionAreaThresh();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">int</span> getThresholdValue();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                vector&lt;Region&gt; <span class="keyword">const</span> &amp;getRegions();</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab768a3bbfff9835b441a889ab2cb05a6">   23</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab768a3bbfff9835b441a889ab2cb05a6">alpha</a>;                          </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a23c831170c2264dd7e59067a1a7d3c8e">   24</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a23c831170c2264dd7e59067a1a7d3c8e">beta</a>;                           </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aae6ee0ec7f0a610dd8a906c1eb181bc7">   25</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aae6ee0ec7f0a610dd8a906c1eb181bc7">blurKernelSize</a>;                 </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a700a2f299d7c56fbd1fdbec68092f23a">   26</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a700a2f299d7c56fbd1fdbec68092f23a">morphologicalCloseIterations</a>;   </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#acf21910fadd7c6ef2810743a78a0aeb9">   27</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#acf21910fadd7c6ef2810743a78a0aeb9">epsilon</a>;                        </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1f637073a3d946d000dceed01412f19a">   28</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1f637073a3d946d000dceed01412f19a">regionAreaThresh</a>;               </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0f7469d124c0b906d199e00ea5713007">   29</a></span>&#160;                <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0f7469d124c0b906d199e00ea5713007">thresholdValue</a>;                 </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">   31</a></span>&#160;                vector&lt;Region&gt; <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">regions</a>;             </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html" title="Class for detecting regions of high intensity in grayscale images.">RegionDetector</a>(<span class="keywordtype">bool</span> debugMode = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                ~<a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html" title="Class for detecting regions of high intensity in grayscale images.">RegionDetector</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordtype">int</span> getAlpha();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordtype">int</span> getBeta();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordtype">int</span> getBlurKernelSize();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordtype">int</span> getEpsilon();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordtype">int</span> getMorphologicalCloseIterations();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordtype">int</span> getOriginXCoordinate();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">int</span> getOriginYCoordinate();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">int</span> getRegionAreaThresh();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordtype">int</span> getThresholdValue();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                vector&lt;Region&gt; <span class="keyword">const</span> &amp;getRegions();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordtype">void</span> setAlpha(<span class="keywordtype">int</span> alpha);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordtype">void</span> setAlpha(<span class="keywordtype">int</span> alpha);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordtype">void</span> setBeta(<span class="keywordtype">int</span> beta);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordtype">void</span> setBeta(<span class="keywordtype">int</span> beta);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordtype">void</span> setBlurKernelSize(<span class="keywordtype">int</span> blurKernelSize);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordtype">void</span> setBlurKernelSize(<span class="keywordtype">int</span> blurKernelSize);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordtype">void</span> setEpsilon(<span class="keywordtype">int</span> epsilon);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordtype">void</span> setEpsilon(<span class="keywordtype">int</span> epsilon);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordtype">void</span> setMorphologicalCloseIterations(<span class="keywordtype">int</span> morphologicalCloseIterations);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordtype">void</span> setMorphologicalCloseIterations(<span class="keywordtype">int</span> morphologicalCloseIterations);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordtype">void</span> setOriginXCoordinate(<span class="keywordtype">int</span> originXCoordinate);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <span class="keywordtype">void</span> setOriginXCoordinate(<span class="keywordtype">int</span> originXCoordinate);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keywordtype">void</span> setOriginYCoordinate(<span class="keywordtype">int</span> originYCoordinate);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordtype">void</span> setOriginYCoordinate(<span class="keywordtype">int</span> originYCoordinate);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordtype">void</span> setRegionAreaThresh(<span class="keywordtype">int</span> regionAreaThresh);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordtype">void</span> setRegionAreaThresh(<span class="keywordtype">int</span> regionAreaThresh);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keywordtype">void</span> setThresholdValue(<span class="keywordtype">int</span> thresholdValue);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordtype">void</span> setThresholdValue(<span class="keywordtype">int</span> thresholdValue);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordtype">void</span> initialiseDetectorSpecificFields() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordtype">void</span> initialiseDetectorSpecificImageDependentFields() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordtype">void</span> createDetectorSpecificTrackbars() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordtype">void</span> initialiseDetectorSpecificFields() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordtype">void</span> initialiseDetectorSpecificImageDependentFields() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordtype">void</span> createDetectorSpecificTrackbars() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <span class="keywordtype">void</span> processImageAndDetect() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <span class="keywordtype">void</span> processImageAndDetect() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keywordtype">void</span> changeContrastAndBrightness(Mat &amp;processedImage);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordtype">void</span> changeContrastAndBrightness(Mat &amp;processedImage);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="keywordtype">void</span> smoothImage(Mat &amp;image);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keywordtype">void</span> smoothImage(Mat &amp;image);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordtype">void</span> morphologicalClose(Mat &amp;image);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keywordtype">void</span> morphologicalClose(Mat &amp;image);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="keywordtype">void</span> thresholdImage(<span class="keyword">const</span> Mat &amp;image, Mat &amp;thresholdedImage);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <span class="keywordtype">void</span> thresholdImage(<span class="keyword">const</span> Mat &amp;image, Mat &amp;thresholdedImage);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                <span class="keywordtype">void</span> findRegions(<span class="keyword">const</span> Mat &amp;image, vector&lt;Region&gt; &amp;regions);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordtype">void</span> findRegions(<span class="keyword">const</span> Mat &amp;image, vector&lt;Region&gt; &amp;regions);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                <span class="keywordtype">void</span> computeAverageMeasures(vector&lt;Region&gt; &amp;regions);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="keywordtype">void</span> computeAverageMeasures(vector&lt;Region&gt; &amp;regions);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordtype">void</span> computeAverageClusterednessDegree(vector&lt;Region&gt; &amp;regions);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordtype">void</span> computeAverageClusterednessDegree(vector&lt;Region&gt; &amp;regions);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="keywordtype">void</span> computeAverageDensity(vector&lt;Region&gt; &amp;regions);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="keywordtype">void</span> computeAverageDensity(vector&lt;Region&gt; &amp;regions);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                vector&lt;vector&lt;Point&gt; &gt; findContoursInImage(<span class="keyword">const</span> Mat &amp;image);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                vector&lt;vector&lt;Point&gt; &gt; findContoursInImage(<span class="keyword">const</span> Mat &amp;image);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region.">Region</a> createRegionFromPolygon(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                <a class="code" href="classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region.">Region</a> createRegionFromPolygon(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keywordtype">bool</span> isValidRegion(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                <span class="keywordtype">bool</span> isValidRegion(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="keywordtype">double</span> regionClusterednessDegree(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="keywordtype">double</span> regionClusterednessDegree(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="keywordtype">double</span> regionDensity(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordtype">double</span> regionDensity(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keywordtype">double</span> regionArea(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="keywordtype">double</span> regionArea(<span class="keyword">const</span> vector&lt;Point&gt; &amp;polygon);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                <span class="keywordtype">double</span> regionHolesArea(<span class="keyword">const</span> Mat &amp;matrix);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <span class="keywordtype">void</span> clearPreviousDetectionResults() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                vector&lt;shared_ptr&lt;SpatialEntityPseudo3D&gt;&gt; getCollectionOfSpatialEntityPseudo3D() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                <span class="keywordtype">void</span> outputResultsToImage() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <span class="keywordtype">double</span> regionHolesArea(<span class="keyword">const</span> Mat &amp;matrix);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <span class="keywordtype">void</span> clearPreviousDetectionResults() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                vector&lt;shared_ptr&lt;SpatialEntityPseudo3D&gt;&gt; getCollectionOfSpatialEntityPseudo3D() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keywordtype">void</span> outputResultsToImage() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordtype">double</span> convertAlpha(<span class="keywordtype">int</span> alpha);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <span class="keywordtype">double</span> convertAlpha(<span class="keywordtype">int</span> alpha);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keywordtype">int</span> convertBeta(<span class="keywordtype">int</span> beta);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <span class="keywordtype">int</span> convertBeta(<span class="keywordtype">int</span> beta);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                <span class="comment">// Constants</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5513e029d4d4cf249aa40364489f7a85">  277</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5513e029d4d4cf249aa40364489f7a85">TRACKBAR_ALPHA</a>;</div>
-<div class="line"><a name="l00278"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79d7878ed55bf12a87637896a1f44e37">  278</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79d7878ed55bf12a87637896a1f44e37">TRACKBAR_BETA</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79b72da59c92b368fb7894fe1f424e00">  279</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79b72da59c92b368fb7894fe1f424e00">TRACKBAR_KERNEL</a>;</div>
-<div class="line"><a name="l00280"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0358affd40f13327b10447b7fe938338">  280</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0358affd40f13327b10447b7fe938338">TRACKBAR_MORPH</a>;</div>
-<div class="line"><a name="l00281"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8c1c5cde2b7d42ddce44b7f8208f07cc">  281</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8c1c5cde2b7d42ddce44b7f8208f07cc">TRACKBAR_CANNY</a>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa3f0755a58457592ac027b42576bd312">  282</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa3f0755a58457592ac027b42576bd312">TRACKBAR_EPSILON</a>;</div>
-<div class="line"><a name="l00283"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a2711f5cabb3af04a969fe38e1ef473">  283</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a2711f5cabb3af04a969fe38e1ef473">TRACKBAR_REGION_AREA_THRESH</a>;</div>
-<div class="line"><a name="l00284"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7548c716410a4cb88cb41498de6b509c">  284</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7548c716410a4cb88cb41498de6b509c">TRACKBAR_THRESHOLD</a>;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
-<div class="line"><a name="l00286"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a8c4f7b9a6bc40ec6de940f53943772">  286</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a8c4f7b9a6bc40ec6de940f53943772">USE_CANNY_L2</a>;</div>
-<div class="line"><a name="l00287"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab1fdebf0daaae6f2bb1fe4770479116f">  287</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab1fdebf0daaae6f2bb1fe4770479116f">CONTOUR_AREA_ORIENTED</a>;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
-<div class="line"><a name="l00289"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a4a11aa86a5250ca6197589c4ccb770f6">  289</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a4a11aa86a5250ca6197589c4ccb770f6">ALPHA_REAL_MIN</a>;</div>
-<div class="line"><a name="l00290"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#abc853d2cfef9e4fafbf86715b48495e0">  290</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#abc853d2cfef9e4fafbf86715b48495e0">ALPHA_REAL_MAX</a>;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
-<div class="line"><a name="l00292"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a87d07b8a993b50bcf050e4c206ac126c">  292</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a87d07b8a993b50bcf050e4c206ac126c">BETA_REAL_MIN</a>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19e9e6c3ea18fe9a3dbf7a1a02652985">  293</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19e9e6c3ea18fe9a3dbf7a1a02652985">BETA_REAL_MAX</a>;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;</div>
-<div class="line"><a name="l00295"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7ca1e136dc9d768f1e11cd6f770d950f">  295</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7ca1e136dc9d768f1e11cd6f770d950f">ALPHA_MAX</a>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad2c6485f637cae5abee0303b41df1480">  296</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad2c6485f637cae5abee0303b41df1480">BETA_MAX</a>;</div>
-<div class="line"><a name="l00297"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa988e3458f774c489e03e3f8bd0db1ed">  297</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa988e3458f774c489e03e3f8bd0db1ed">KERNEL_MAX</a>;</div>
-<div class="line"><a name="l00298"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#adeaa40a86b09bad2530bf179cbb4e602">  298</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#adeaa40a86b09bad2530bf179cbb4e602">MORPH_ITER_MAX</a>;</div>
-<div class="line"><a name="l00299"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad6590f4617a6b3d34c6032f8febd7beb">  299</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad6590f4617a6b3d34c6032f8febd7beb">CANNY_THRESH_MAX</a>;</div>
-<div class="line"><a name="l00300"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a724d57c0db65696f2ddab415deb1138d">  300</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a724d57c0db65696f2ddab415deb1138d">EPSILON_MAX</a>;</div>
-<div class="line"><a name="l00301"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8a301bd841d376448aff4a0c4d0a1485">  301</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8a301bd841d376448aff4a0c4d0a1485">REGION_AREA_THRESH_MAX</a>;</div>
-<div class="line"><a name="l00302"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a53c6e2b067a8b8c82484cbca34cc3d57">  302</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a53c6e2b067a8b8c82484cbca34cc3d57">THRESHOLD_MAX</a>;</div>
-<div class="line"><a name="l00303"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a52778f49510e1e500b2dc48857724e20">  303</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a52778f49510e1e500b2dc48857724e20">THRESHOLD_CLUSTEREDNESS</a>;</div>
-<div class="line"><a name="l00304"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3b682d43cd686a8bdfce91b0cbbf5245">  304</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3b682d43cd686a8bdfce91b0cbbf5245">INTENSITY_MAX</a>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <span class="comment">// Constants</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5513e029d4d4cf249aa40364489f7a85">  275</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5513e029d4d4cf249aa40364489f7a85">TRACKBAR_ALPHA</a>;</div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79d7878ed55bf12a87637896a1f44e37">  276</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79d7878ed55bf12a87637896a1f44e37">TRACKBAR_BETA</a>;</div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79b72da59c92b368fb7894fe1f424e00">  277</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a79b72da59c92b368fb7894fe1f424e00">TRACKBAR_KERNEL</a>;</div>
+<div class="line"><a name="l00278"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0358affd40f13327b10447b7fe938338">  278</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a0358affd40f13327b10447b7fe938338">TRACKBAR_MORPH</a>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8c1c5cde2b7d42ddce44b7f8208f07cc">  279</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8c1c5cde2b7d42ddce44b7f8208f07cc">TRACKBAR_CANNY</a>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa3f0755a58457592ac027b42576bd312">  280</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa3f0755a58457592ac027b42576bd312">TRACKBAR_EPSILON</a>;</div>
+<div class="line"><a name="l00281"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a2711f5cabb3af04a969fe38e1ef473">  281</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a2711f5cabb3af04a969fe38e1ef473">TRACKBAR_REGION_AREA_THRESH</a>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7548c716410a4cb88cb41498de6b509c">  282</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7548c716410a4cb88cb41498de6b509c">TRACKBAR_THRESHOLD</a>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a8c4f7b9a6bc40ec6de940f53943772">  284</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a6a8c4f7b9a6bc40ec6de940f53943772">USE_CANNY_L2</a>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab1fdebf0daaae6f2bb1fe4770479116f">  285</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ab1fdebf0daaae6f2bb1fe4770479116f">CONTOUR_AREA_ORIENTED</a>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
+<div class="line"><a name="l00287"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a4a11aa86a5250ca6197589c4ccb770f6">  287</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a4a11aa86a5250ca6197589c4ccb770f6">ALPHA_REAL_MIN</a>;</div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#abc853d2cfef9e4fafbf86715b48495e0">  288</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#abc853d2cfef9e4fafbf86715b48495e0">ALPHA_REAL_MAX</a>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a87d07b8a993b50bcf050e4c206ac126c">  290</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a87d07b8a993b50bcf050e4c206ac126c">BETA_REAL_MIN</a>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19e9e6c3ea18fe9a3dbf7a1a02652985">  291</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a19e9e6c3ea18fe9a3dbf7a1a02652985">BETA_REAL_MAX</a>;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;</div>
+<div class="line"><a name="l00293"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7ca1e136dc9d768f1e11cd6f770d950f">  293</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a7ca1e136dc9d768f1e11cd6f770d950f">ALPHA_MAX</a>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad2c6485f637cae5abee0303b41df1480">  294</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad2c6485f637cae5abee0303b41df1480">BETA_MAX</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa988e3458f774c489e03e3f8bd0db1ed">  295</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa988e3458f774c489e03e3f8bd0db1ed">KERNEL_MAX</a>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#adeaa40a86b09bad2530bf179cbb4e602">  296</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#adeaa40a86b09bad2530bf179cbb4e602">MORPH_ITER_MAX</a>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad6590f4617a6b3d34c6032f8febd7beb">  297</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ad6590f4617a6b3d34c6032f8febd7beb">CANNY_THRESH_MAX</a>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a724d57c0db65696f2ddab415deb1138d">  298</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a724d57c0db65696f2ddab415deb1138d">EPSILON_MAX</a>;</div>
+<div class="line"><a name="l00299"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8a301bd841d376448aff4a0c4d0a1485">  299</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a8a301bd841d376448aff4a0c4d0a1485">REGION_AREA_THRESH_MAX</a>;</div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a53c6e2b067a8b8c82484cbca34cc3d57">  300</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a53c6e2b067a8b8c82484cbca34cc3d57">THRESHOLD_MAX</a>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a52778f49510e1e500b2dc48857724e20">  301</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a52778f49510e1e500b2dc48857724e20">THRESHOLD_CLUSTEREDNESS</a>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3b682d43cd686a8bdfce91b0cbbf5245">  302</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3b682d43cd686a8bdfce91b0cbbf5245">INTENSITY_MAX</a>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1b3de2646beaac60d03527f1775614be">  304</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1b3de2646beaac60d03527f1775614be">POLYGON_CLOSED</a>;</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
-<div class="line"><a name="l00306"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1b3de2646beaac60d03527f1775614be">  306</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a1b3de2646beaac60d03527f1775614be">POLYGON_CLOSED</a>;</div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee6fbc641e8a6a85b1d877f9b4c6c6c3">  306</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee6fbc641e8a6a85b1d877f9b4c6c6c3">DISPLAY_LINE_THICKNESS</a>;</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
-<div class="line"><a name="l00308"></a><span class="lineno"><a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee6fbc641e8a6a85b1d877f9b4c6c6c3">  308</a></span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee6fbc641e8a6a85b1d877f9b4c6c6c3">DISPLAY_LINE_THICKNESS</a>;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        };</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        };</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    };</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    };</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;};</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;};</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_babffec9fdd01be3ee695763fc69156a.html">modules</a></li><li class="navelem"><a class="el" href="dir_eb29c2b7524a869924c71559ebefb3fd.html">analysis</a></li><li class="navelem"><a class="el" href="dir_e2a46e2b7c13ce21337665746065cc85.html">spatial</a></li><li class="navelem"><a class="el" href="dir_e7d242e1da06815f3d3da2caccd0f5a1.html">include</a></li><li class="navelem"><a class="el" href="dir_caa6a397db17f058e2c817cb5faf17c2.html">multiscale</a></li><li class="navelem"><a class="el" href="dir_acebd083e3f2954c6fa33291786797ea.html">analysis</a></li><li class="navelem"><a class="el" href="dir_f241995066f1baa02936d91c53de1c28.html">spatial</a></li><li class="navelem"><a class="el" href="RegionDetector_8hpp.html">RegionDetector.hpp</a></li>
-    <li class="footer">Generated on Sat Jan 18 2014 13:15:04 for Multiscale by
+    <li class="footer">Generated on Sat Jan 18 2014 15:31:17 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

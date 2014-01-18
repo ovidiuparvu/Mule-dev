@@ -85,6 +85,8 @@ double \hyperlink{classmultiscale_1_1analysis_1_1Cluster_aca93cb46704a3e824151e9
 \begin{DoxyCompactList}\small\item\em Get the measure that the cluster has a rectangular shape. \end{DoxyCompactList}\item 
 double \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a579730478055ae93d659f268375a492d}{is\-Circular\-Measure} () override
 \begin{DoxyCompactList}\small\item\em Get the measure that the cluster has a circular shape. \end{DoxyCompactList}\item 
+\hyperlink{namespacemultiscale_1_1analysis_a6db9cbf10615e77e300c3e4cb1c56660}{Spatial\-Entity\-Pseudo3\-D\-Type} \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a0a4531d371662e9c4149c10aa115fb49}{type} () override
+\begin{DoxyCompactList}\small\item\em Return the type of the pseudo 3\-D spatial entity. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a26b9c11e63bfdbfc837a35f68c5c40dd}{validate\-Origin\-Dependent\-Values} (double \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a056f67b90ed41c0e6dc4df31b71ad906}{distance\-From\-Origin}, double angle\-Wrt\-Origin)
 \begin{DoxyCompactList}\small\item\em Validate the origin dependent values (i.\-e. non-\/negative) \end{DoxyCompactList}\item 
 bool \hyperlink{classmultiscale_1_1analysis_1_1Cluster_a05e8593354fabd5c1ca18b6a2b19096e}{are\-Valid\-Origin\-Dependent\-Values} (double \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_a056f67b90ed41c0e6dc4df31b71ad906}{distance\-From\-Origin}, double angle\-Wrt\-Origin)
@@ -193,7 +195,7 @@ Check if the origin dependent values are valid (i.\-e. non-\/negative)
 \end{DoxyParams}
 
 
-Definition at line 200 of file Cluster.\-cpp.
+Definition at line 204 of file Cluster.\-cpp.
 
 
 
@@ -205,8 +207,7 @@ Referenced by validate\-Origin\-Dependent\-Values().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -383,8 +384,7 @@ Referenced by multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::outpu
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -429,8 +429,7 @@ Referenced by multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::outpu
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -475,8 +474,7 @@ Referenced by multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::outpu
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -521,8 +519,7 @@ Referenced by multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::outpu
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -711,8 +708,7 @@ Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::update\-Cluster\-
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -731,6 +727,25 @@ Here is the caller graph for this function\-:\nopagebreak
 \end{center}
 \end{figure}
 
+
+\hypertarget{classmultiscale_1_1analysis_1_1Cluster_a0a4531d371662e9c4149c10aa115fb49}{\index{multiscale\-::analysis\-::\-Cluster@{multiscale\-::analysis\-::\-Cluster}!type@{type}}
+\index{type@{type}!multiscale::analysis::Cluster@{multiscale\-::analysis\-::\-Cluster}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Spatial\-Entity\-Pseudo3\-D\-Type} Cluster\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1Cluster_a0a4531d371662e9c4149c10aa115fb49}
+
+
+Return the type of the pseudo 3\-D spatial entity. 
+
+
+
+Implements \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D_ac0d4656a44cc724c2cc7d34d8b15dbd8}{multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D}.
+
+
+
+Definition at line 194 of file Cluster.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Cluster_a3128a3b20c28619ccdd6a25208b8c83e}{\index{multiscale\-::analysis\-::\-Cluster@{multiscale\-::analysis\-::\-Cluster}!update\-Area@{update\-Area}}
 \index{update\-Area@{update\-Area}!multiscale::analysis::Cluster@{multiscale\-::analysis\-::\-Cluster}}
@@ -879,7 +894,7 @@ Validate the origin dependent values (i.\-e. non-\/negative)
 \end{DoxyParams}
 
 
-Definition at line 194 of file Cluster.\-cpp.
+Definition at line 198 of file Cluster.\-cpp.
 
 
 
@@ -891,8 +906,7 @@ Referenced by set\-Origin\-Dependent\-Members().
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -931,7 +945,7 @@ Referenced by add\-Entity(), get\-Entities(), get\-Entities\-Centre\-Points(), g
 \subsubsection[{E\-R\-R\-\_\-\-O\-R\-I\-G\-I\-N\-\_\-\-D\-E\-P\-E\-N\-D\-E\-N\-T\-\_\-\-V\-A\-L\-U\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string Cluster\-::\-E\-R\-R\-\_\-\-O\-R\-I\-G\-I\-N\-\_\-\-D\-E\-P\-E\-N\-D\-E\-N\-T\-\_\-\-V\-A\-L\-U\-E\-S = \char`\"{}The origin dependent values are invalid (i.\-e. negative).\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1Cluster_a0fa38fcc3f00730409400578829cddd8}
 
 
-Definition at line 120 of file Cluster.\-hpp.
+Definition at line 123 of file Cluster.\-hpp.
 
 
 
@@ -942,7 +956,7 @@ Referenced by validate\-Origin\-Dependent\-Values().
 \subsubsection[{E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-S\-H\-A\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Cluster\-::\-E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-S\-H\-A\-P\-E = \char`\"{}The {\bf shape} of the given cluster is undefined.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1Cluster_a546b8e93e3f1ef51a9932f8599639070}
 
 
-Definition at line 119 of file Cluster.\-hpp.
+Definition at line 122 of file Cluster.\-hpp.
 
 
 

@@ -17,6 +17,7 @@ var classmultiscale_1_1analysis_1_1Cluster =
     [ "isRectangularMeasure", "classmultiscale_1_1analysis_1_1Cluster.html#aca93cb46704a3e824151e99b7a53d20d", null ],
     [ "isTriangularMeasure", "classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e", null ],
     [ "setOriginDependentMembers", "classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915", null ],
+    [ "type", "classmultiscale_1_1analysis_1_1Cluster.html#a0a4531d371662e9c4149c10aa115fb49", null ],
     [ "updateArea", "classmultiscale_1_1analysis_1_1Cluster.html#a3128a3b20c28619ccdd6a25208b8c83e", null ],
     [ "updateCentrePoint", "classmultiscale_1_1analysis_1_1Cluster.html#a1991d68cc9e76dab54c134df6beb59cb", null ],
     [ "updateClusterednessDegree", "classmultiscale_1_1analysis_1_1Cluster.html#a2279d1567eec7c0b1e29cae26cfb4d73", null ],

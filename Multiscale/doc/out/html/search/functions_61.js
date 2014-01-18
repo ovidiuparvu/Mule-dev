@@ -1,8 +1,11 @@
 var searchData=
 [
+  ['addaveragemeasurestopropertytree',['addAverageMeasuresToPropertyTree',['../classmultiscale_1_1analysis_1_1Detector.html#a9cfa8c84d6cb13bf6d423b1db490668d',1,'multiscale::analysis::Detector']]],
   ['addentitiestoclusters',['addEntitiesToClusters',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#aefc4d0736d8af4ab53f1e5e76440f447',1,'multiscale::analysis::ClusterDetector']]],
   ['addentity',['addEntity',['../classmultiscale_1_1analysis_1_1Cluster.html#a2bc85629ab2bd6d01c6d2df3d79ba497',1,'multiscale::analysis::Cluster']]],
   ['addspatialentitiestopropertytree',['addSpatialEntitiesToPropertyTree',['../classmultiscale_1_1analysis_1_1Detector.html#a11bf4fa46f51ac033b635d19e92998ae',1,'multiscale::analysis::Detector']]],
+  ['addspatialentitypropertiestotree',['addSpatialEntityPropertiesToTree',['../classmultiscale_1_1analysis_1_1Detector.html#ac0e3077d43c329e409db504bf3981c3c',1,'multiscale::analysis::Detector']]],
+  ['addspatialentitytypetopropertytree',['addSpatialEntityTypeToPropertyTree',['../classmultiscale_1_1analysis_1_1Detector.html#ae166867e5af40637dbde9ac0da6dac9a',1,'multiscale::analysis::Detector']]],
   ['addunclassifiednodestoseedslist',['addUnclassifiedNodesToSeedsList',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a6ead683810b4f04a48cd0a4d0f5f7a6b',1,'multiscale::analysis::DBSCAN']]],
   ['advance',['advance',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#af52c24da93e4660f043dbb0f92594a19',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['advancebtorightchain',['advanceBToRightChain',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a55faab1deabea3b838490a4a3b62cafc',1,'multiscale::MinEnclosingTriangleFinder']]],

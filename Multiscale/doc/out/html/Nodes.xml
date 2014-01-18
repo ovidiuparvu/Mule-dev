@@ -287,6 +287,11 @@
                   <Anchor>a84033ee8d583d9195abbf42d5d420915</Anchor>
                  </Node>
                  <Node>
+                  <Name>type</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                  <Anchor>a0a4531d371662e9c4149c10aa115fb49</Anchor>
+                 </Node>
+                 <Node>
                   <Name>updateArea</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                   <Anchor>a3128a3b20c28619ccdd6a25208b8c83e</Anchor>
@@ -463,11 +468,6 @@
                   <Anchor>a67751dd6e21750019a20648b6ba3c8f2</Anchor>
                  </Node>
                  <Node>
-                  <Name>isNonEmptyCluster</Name>
-                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a3322e1cf4177d40c55c1ad25b27abdc6</Anchor>
-                 </Node>
-                 <Node>
                   <Name>processImageAndDetect</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>a736847233c57cfa59abb953f70ef9209</Anchor>
@@ -626,9 +626,24 @@
                   <Anchor>ae16b7bf62f39cb287927d56ca17663d7</Anchor>
                  </Node>
                  <Node>
+                  <Name>addAverageMeasuresToPropertyTree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a9cfa8c84d6cb13bf6d423b1db490668d</Anchor>
+                 </Node>
+                 <Node>
                   <Name>addSpatialEntitiesToPropertyTree</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>a11bf4fa46f51ac033b635d19e92998ae</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>addSpatialEntityPropertiesToTree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>ac0e3077d43c329e409db504bf3981c3c</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>addSpatialEntityTypeToPropertyTree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>ae166867e5af40637dbde9ac0da6dac9a</Anchor>
                  </Node>
                  <Node>
                   <Name>clearPreviousDetectionResults</Name>
@@ -1146,6 +1161,11 @@
                   <Anchor>acb88d149b42eee5225e7197a225d31c3</Anchor>
                  </Node>
                  <Node>
+                  <Name>type</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
+                  <Anchor>a7cac0117120ae96e40f5c7eec8266922</Anchor>
+                 </Node>
+                 <Node>
                   <Name>updateArea</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                   <Anchor>a88adaf10fae7c554581498f86f1863fa</Anchor>
@@ -1572,6 +1592,16 @@
                   <Name>toString</Name>
                   <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
                   <Anchor>abea1af0695f6f1a977b0caa3428fc433</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>type</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>ac0d4656a44cc724c2cc7d34d8b15dbd8</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>typeAsString</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>ae8b5c03174d91efc64509dec1a01e69c</Anchor>
                  </Node>
                  <Node>
                   <Name>updateArea</Name>
@@ -4397,6 +4427,11 @@
                               <Anchor>a84033ee8d583d9195abbf42d5d420915</Anchor>
                              </Node>
                              <Node>
+                              <Name>type</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                              <Anchor>a0a4531d371662e9c4149c10aa115fb49</Anchor>
+                             </Node>
+                             <Node>
                               <Name>updateArea</Name>
                               <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                               <Anchor>a3128a3b20c28619ccdd6a25208b8c83e</Anchor>
@@ -4579,11 +4614,6 @@
                               <Anchor>a67751dd6e21750019a20648b6ba3c8f2</Anchor>
                              </Node>
                              <Node>
-                              <Name>isNonEmptyCluster</Name>
-                              <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                              <Anchor>a3322e1cf4177d40c55c1ad25b27abdc6</Anchor>
-                             </Node>
-                             <Node>
                               <Name>processImageAndDetect</Name>
                               <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                               <Anchor>a736847233c57cfa59abb953f70ef9209</Anchor>
@@ -4760,9 +4790,24 @@
                               <Anchor>ae16b7bf62f39cb287927d56ca17663d7</Anchor>
                              </Node>
                              <Node>
+                              <Name>addAverageMeasuresToPropertyTree</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>a9cfa8c84d6cb13bf6d423b1db490668d</Anchor>
+                             </Node>
+                             <Node>
                               <Name>addSpatialEntitiesToPropertyTree</Name>
                               <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                               <Anchor>a11bf4fa46f51ac033b635d19e92998ae</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>addSpatialEntityPropertiesToTree</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>ac0e3077d43c329e409db504bf3981c3c</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>addSpatialEntityTypeToPropertyTree</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>ae166867e5af40637dbde9ac0da6dac9a</Anchor>
                              </Node>
                              <Node>
                               <Name>clearPreviousDetectionResults</Name>
@@ -5221,6 +5266,11 @@
                               <Anchor>acb88d149b42eee5225e7197a225d31c3</Anchor>
                              </Node>
                              <Node>
+                              <Name>type</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
+                              <Anchor>a7cac0117120ae96e40f5c7eec8266922</Anchor>
+                             </Node>
+                             <Node>
                               <Name>updateArea</Name>
                               <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                               <Anchor>a88adaf10fae7c554581498f86f1863fa</Anchor>
@@ -5534,11 +5584,6 @@
                              </Node>
                             </Subnodes>
                            </Node>
-                           <Node>
-                            <Name>ENCLOSING_RECT_VERTICES</Name>
-                            <Path>RegionDetector_8hpp.html</Path>
-                            <Anchor>a3b9b2d597a3c76a1b1f9c2505971b8a4</Anchor>
-                           </Node>
                           </Subnodes>
                          </Node>
                          <Node>
@@ -5548,27 +5593,27 @@
                            <Node>
                             <Name>Shape2D</Name>
                             <Path>Shape2D_8hpp.html</Path>
-                            <Anchor>ad1ef6155ab2e954c1c33d3e2e6b53fbf</Anchor>
+                            <Anchor>ad895735ef4c40ec7f58424c33cba1b88</Anchor>
                             <Subnodes>
                              <Node>
                               <Name>Triangle</Name>
                               <Path>Shape2D_8hpp.html</Path>
-                              <Anchor>ad1ef6155ab2e954c1c33d3e2e6b53fbfaa93f37adbed49c6062576ec26eb845f7</Anchor>
+                              <Anchor>ad895735ef4c40ec7f58424c33cba1b88a5e5500cb2b82eb72d550de644bd1b64b</Anchor>
                              </Node>
                              <Node>
                               <Name>Rectangle</Name>
                               <Path>Shape2D_8hpp.html</Path>
-                              <Anchor>ad1ef6155ab2e954c1c33d3e2e6b53fbfa79a965ce5faa97f66ce875245491fde4</Anchor>
+                              <Anchor>ad895735ef4c40ec7f58424c33cba1b88ace9291906a4c3b042650b70d7f3b152e</Anchor>
                              </Node>
                              <Node>
                               <Name>Circle</Name>
                               <Path>Shape2D_8hpp.html</Path>
-                              <Anchor>ad1ef6155ab2e954c1c33d3e2e6b53fbfabad5f35f59b929029fa140abb514a654</Anchor>
+                              <Anchor>ad895735ef4c40ec7f58424c33cba1b88a30954d90085f6eaaf5817917fc5fecb3</Anchor>
                              </Node>
                              <Node>
                               <Name>Undefined</Name>
                               <Path>Shape2D_8hpp.html</Path>
-                              <Anchor>ad1ef6155ab2e954c1c33d3e2e6b53fbfa6df4f8bcba37302a9fa3d9887b2c3a13</Anchor>
+                              <Anchor>ad895735ef4c40ec7f58424c33cba1b88aec0fc0100c4fc1ce4eea230c3dc10360</Anchor>
                              </Node>
                             </Subnodes>
                            </Node>
@@ -5705,6 +5750,16 @@
                               <Anchor>abea1af0695f6f1a977b0caa3428fc433</Anchor>
                              </Node>
                              <Node>
+                              <Name>type</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>ac0d4656a44cc724c2cc7d34d8b15dbd8</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>typeAsString</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>ae8b5c03174d91efc64509dec1a01e69c</Anchor>
+                             </Node>
+                             <Node>
                               <Name>updateArea</Name>
                               <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
                               <Anchor>aa8c1cd3248c8926edbb1b47006ded902</Anchor>
@@ -5803,6 +5858,29 @@
                               <Name>updateFlag</Name>
                               <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
                               <Anchor>a2fc7e2c00fcd725cb247b27c69726c8b</Anchor>
+                             </Node>
+                            </Subnodes>
+                           </Node>
+                          </Subnodes>
+                         </Node>
+                         <Node>
+                          <Name>SpatialEntityPseudo3DType.hpp</Name>
+                          <Path>SpatialEntityPseudo3DType_8hpp.html</Path>
+                          <Subnodes>
+                           <Node>
+                            <Name>SpatialEntityPseudo3DType</Name>
+                            <Path>SpatialEntityPseudo3DType_8hpp.html</Path>
+                            <Anchor>a6db9cbf10615e77e300c3e4cb1c56660</Anchor>
+                            <Subnodes>
+                             <Node>
+                              <Name>Cluster</Name>
+                              <Path>SpatialEntityPseudo3DType_8hpp.html</Path>
+                              <Anchor>a6db9cbf10615e77e300c3e4cb1c56660a249694a485fc5d3289c38986b4f8e887</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>Region</Name>
+                              <Path>SpatialEntityPseudo3DType_8hpp.html</Path>
+                              <Anchor>a6db9cbf10615e77e300c3e4cb1c56660af447ac856e7e72435904956e3b15f433</Anchor>
                              </Node>
                             </Subnodes>
                            </Node>
@@ -6120,13 +6198,6 @@
                    <Node>
                     <Name>RegionDetector.cpp</Name>
                     <Path>RegionDetector_8cpp.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>convertVertices</Name>
-                      <Path>RegionDetector_8cpp.html</Path>
-                      <Anchor>a59bfc63874cda685db6e075580dc1c1b</Anchor>
-                     </Node>
-                    </Subnodes>
                    </Node>
                    <Node>
                     <Name>Silhouette.cpp</Name>

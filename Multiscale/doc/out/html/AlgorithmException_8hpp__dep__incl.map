@@ -1,7 +1,8 @@
 <map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/exception/AlgorithmException.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/exception/AlgorithmException.hpp">
-<area shape="rect" id="node3" href="$UnexpectedBehaviourException_8hpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/include/multiscale/exception\l/UnexpectedBehaviourException.hpp" alt="" coords="300,137,537,218"/>
-<area shape="rect" id="node9" href="$UnimplementedMethodException_8hpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/include/multiscale/exception\l/UnimplementedMethodException.hpp" alt="" coords="561,137,804,218"/>
+<area shape="rect" id="node3" href="$UnexpectedBehaviourException_8hpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/include/multiscale/exception\l/UnexpectedBehaviourException.hpp" alt="" coords="345,137,583,218"/>
+<area shape="rect" id="node11" href="$UnimplementedMethodException_8hpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/include/multiscale/exception\l/UnimplementedMethodException.hpp" alt="" coords="729,137,972,218"/>
 <area shape="rect" id="node5" href="$SimulationClusterDetector_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/cluster/SimulationClusterDetector.cpp" alt="" coords="5,267,275,349"/>
-<area shape="rect" id="node7" href="$MinEnclosingTriangleFinder_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/util/src/MinEnclosingTriangle\lFinder.cpp" alt="" coords="299,267,544,349"/>
-<area shape="rect" id="node11" href="$CircularMatFactory_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/factory/CircularMatFactory.cpp" alt="" coords="569,267,796,349"/>
+<area shape="rect" id="node7" href="$SpatialEntityPseudo3D_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/SpatialEntityPseudo3D.cpp" alt="" coords="299,267,507,349"/>
+<area shape="rect" id="node9" href="$MinEnclosingTriangleFinder_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/util/src/MinEnclosingTriangle\lFinder.cpp" alt="" coords="531,267,776,349"/>
+<area shape="rect" id="node13" href="$CircularMatFactory_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/factory/CircularMatFactory.cpp" alt="" coords="800,267,1027,349"/>
 </map>

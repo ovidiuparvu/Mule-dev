@@ -2,7 +2,10 @@ var classmultiscale_1_1analysis_1_1Detector =
 [
     [ "Detector", "classmultiscale_1_1analysis_1_1Detector.html#ae761f485926eead354aa361f1f57e167", null ],
     [ "~Detector", "classmultiscale_1_1analysis_1_1Detector.html#ae16b7bf62f39cb287927d56ca17663d7", null ],
+    [ "addAverageMeasuresToPropertyTree", "classmultiscale_1_1analysis_1_1Detector.html#a9cfa8c84d6cb13bf6d423b1db490668d", null ],
     [ "addSpatialEntitiesToPropertyTree", "classmultiscale_1_1analysis_1_1Detector.html#a11bf4fa46f51ac033b635d19e92998ae", null ],
+    [ "addSpatialEntityPropertiesToTree", "classmultiscale_1_1analysis_1_1Detector.html#ac0e3077d43c329e409db504bf3981c3c", null ],
+    [ "addSpatialEntityTypeToPropertyTree", "classmultiscale_1_1analysis_1_1Detector.html#ae166867e5af40637dbde9ac0da6dac9a", null ],
     [ "clearPreviousDetectionResults", "classmultiscale_1_1analysis_1_1Detector.html#a3c2add35193ad09a0200003d0053da6b", null ],
     [ "constructPropertyTree", "classmultiscale_1_1analysis_1_1Detector.html#af11495dceabe108397805a770fb9c7b4", null ],
     [ "createDetectorSpecificTrackbars", "classmultiscale_1_1analysis_1_1Detector.html#a930ad07f5b8d9f21e6758341f71ae31a", null ],
