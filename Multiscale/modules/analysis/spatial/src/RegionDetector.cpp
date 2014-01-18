@@ -357,14 +357,6 @@ int RegionDetector::convertBeta(int beta) {
     return NumericRangeManipulator::convertFromRange<int, int>(0, BETA_MAX, BETA_REAL_MIN, BETA_REAL_MAX, beta);
 }
 
-void convertVertices(const Point *src, vector<Point> &dst) {
-    dst.clear();
-
-    for (int i = 0; i < ENCLOSING_RECT_VERTICES; i++) {
-      dst.push_back(src[i]);
-    }
-}
-
 
 // Constants
 const string RegionDetector::TRACKBAR_ALPHA              = "Alpha";

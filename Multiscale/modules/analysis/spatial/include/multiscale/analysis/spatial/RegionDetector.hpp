@@ -10,8 +10,6 @@
 using namespace std;
 using namespace cv;
 
-const int ENCLOSING_RECT_VERTICES = 4;
-
 
 namespace multiscale {
 
