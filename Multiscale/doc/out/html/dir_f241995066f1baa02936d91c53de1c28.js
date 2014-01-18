@@ -34,7 +34,7 @@ var dir_f241995066f1baa02936d91c53de1c28 =
     [ "Silhouette.hpp", "Silhouette_8hpp.html", [
       [ "Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ]
     ] ],
-    [ "SpatialCollection2D.hpp", "SpatialCollection2D_8hpp.html", [
-      [ "SpatialCollection2D", "classmultiscale_1_1analysis_1_1SpatialCollection2D.html", "classmultiscale_1_1analysis_1_1SpatialCollection2D" ]
+    [ "SpatialEntityPseudo3D.hpp", "SpatialEntityPseudo3D_8hpp.html", [
+      [ "SpatialEntityPseudo3D", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D" ]
     ] ]
 ];

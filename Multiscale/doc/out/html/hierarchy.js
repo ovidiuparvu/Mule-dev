@@ -47,7 +47,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "multiscale::analysis::Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ],
-    [ "multiscale::analysis::SpatialCollection2D", "classmultiscale_1_1analysis_1_1SpatialCollection2D.html", [
+    [ "multiscale::analysis::SpatialEntityPseudo3D", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html", [
       [ "multiscale::analysis::Cluster", "classmultiscale_1_1analysis_1_1Cluster.html", null ],
       [ "multiscale::analysis::Region", "classmultiscale_1_1analysis_1_1Region.html", null ]
     ] ],

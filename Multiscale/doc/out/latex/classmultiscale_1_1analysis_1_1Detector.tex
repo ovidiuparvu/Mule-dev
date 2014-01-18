@@ -12,7 +12,8 @@ Abstract class for detecting entities of interest in images.
 
 
 
-Inheritance diagram for multiscale\-:\-:analysis\-:\-:Detector\-:\nopagebreak
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,7 +22,8 @@ Inheritance diagram for multiscale\-:\-:analysis\-:\-:Detector\-:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:Detector\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -83,9 +85,24 @@ virtual void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a5d10b68605d5a17
 void \hyperlink{classmultiscale_1_1analysis_1_1Detector_aa15a7546c4f8f77fcf85632386a4c5d5}{store\-Output\-Image\-On\-Disk} ()
 \begin{DoxyCompactList}\small\item\em Store the image with the output results on disk. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a2055dc183dd3601d9979bc99a3222eb4}{output\-Results\-To\-Csv\-File} ()
-\begin{DoxyCompactList}\small\item\em Output the results to a file. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classmultiscale_1_1analysis_1_1Detector_afc247b9c7ded2ffde3ba0cb2b1267490}{output\-Results\-To\-Csv\-File} (ofstream \&fout)=0
+\begin{DoxyCompactList}\small\item\em Output the results to a csv file. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a8f77ceb1535be09ef149aedcd6b1a84e}{output\-Results\-To\-Csv\-File} (ofstream \&fout)
 \begin{DoxyCompactList}\small\item\em Output the results to a file using the provided output file stream. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a64d541cd53a16dc5f204413820c6b0ef}{output\-Spatial\-Entities\-To\-Csv\-File} (ofstream \&fout)
+\begin{DoxyCompactList}\small\item\em Output the pseudo 3\-D spatial entities to a csv file. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a3f4f3192d392f26e324ef9760820d904}{output\-Averaged\-Measures\-To\-Csv\-File} (ofstream \&fout)
+\begin{DoxyCompactList}\small\item\em Output the averaged measures to a csv file. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a574c1c58c9e0bab3d224e5b0a77e410a}{output\-Results\-To\-X\-M\-L\-File} ()
+\begin{DoxyCompactList}\small\item\em Output the results to an xml file. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a9f5690049f55799ac7a2741e97de679e}{output\-Results\-To\-X\-M\-L\-File} (const string \&filepath)
+\begin{DoxyCompactList}\small\item\em Output the clusters and averaged measures to an xml file. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a11bf4fa46f51ac033b635d19e92998ae}{add\-Spatial\-Entities\-To\-Property\-Tree} (pt\-::ptree \&property\-Tree)
+\begin{DoxyCompactList}\small\item\em Add the pseudo 3\-D spatial entities to the property tree. \end{DoxyCompactList}\item 
+pt\-::ptree \hyperlink{classmultiscale_1_1analysis_1_1Detector_af11495dceabe108397805a770fb9c7b4}{construct\-Property\-Tree} (\hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D}{Spatial\-Entity\-Pseudo3\-D} \&spatial\-Entity)
+\begin{DoxyCompactList}\small\item\em Construct the property tree corresponding to the given pseudo 3\-D spatial entity. \end{DoxyCompactList}\item 
+virtual vector$<$ shared\-\_\-ptr\\*
+$<$ \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D}{Spatial\-Entity\-Pseudo3\-D} $>$ $>$ \hyperlink{classmultiscale_1_1analysis_1_1Detector_a684a7071aca4173e3dc968d8635bd92a}{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D} ()=0
+\begin{DoxyCompactList}\small\item\em Get the collection of pseudo 3\-D entities detected in the image. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a7451855e415300f15765082f21588f13}{process\-Image\-And\-Detect} ()=0
 \begin{DoxyCompactList}\small\item\em Process the input image and detect objects/entities of interest. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a3c2add35193ad09a0200003d0053da6b}{clear\-Previous\-Detection\-Results} ()=0
@@ -105,6 +122,10 @@ void \hyperlink{classmultiscale_1_1analysis_1_1Detector_a9150f3fc7945405da34761a
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Detector_a6d06607ae468a56e48f8daba0a00df5b}{avg\-Clusteredness\-Degree}
+\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1Detector_a411629d4cf34809127662d625ba057c0}{avg\-Density}
+\item 
 Mat \hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image}
 \item 
 string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a1a83df16d8afd347c0e1c9ddc41c9bee}{output\-Filepath}
@@ -122,28 +143,64 @@ Point \hyperlink{classmultiscale_1_1analysis_1_1Detector_a002237e2ad684975a7c8b1
 \subsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a8793daa563094fdcd7447930a4fc0974}{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S} = \char`\"{}Average clusteredness degree\-: \char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a920029d6b618aa2daaccfb824c5878b8}{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y} = \char`\"{}Average density\-: \char`\"{}
+\item 
 static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a5837f0e4ffef6410774ff9bcda72238b}{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T} = \char`\"{}Unable to output results if the \hyperlink{classmultiscale_1_1analysis_1_1Detector_acfb9aaec94382e4a7bee6d9874d4bcef}{detect} method was not called previously.\char`\"{}
 \item 
 static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_aab6b3a68e93cad9a93885e52f1c2ce04}{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E} = \char`\"{}Unable to create output file.\char`\"{}
 \item 
 static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_aa5dc8982745f567379e0eccd416c6820}{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E} = \char`\"{}The input \hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image} is invalid.\char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a3030def7fe61741fcc8f5c8b50f40e57}{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N} = \char`\"{}.out\char`\"{}
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a5458417daa8430ea8ebbe1c25cb26f41}{C\-S\-V\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N} = \char`\"{}.out\char`\"{}
 \item 
 static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_acc73b4fb215305ffd7f3d6df8807cc5e}{I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N} = \char`\"{}.png\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a89d56e81155e57f3dcaeef293e89efc2}{X\-M\-L\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N} = \char`\"{}.xml\char`\"{}
 \item 
 static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a883b5de8d273a2bfab31e45bc285c78d}{W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E} = \char`\"{}Output \hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image}\char`\"{}
 \item 
 static const int \hyperlink{classmultiscale_1_1analysis_1_1Detector_a0d1f2fd9eae1b166ac097668889c02aa}{K\-E\-Y\-\_\-\-E\-S\-C} = 27
 \item 
 static const int \hyperlink{classmultiscale_1_1analysis_1_1Detector_aa9acc60392e3eb0f0a9c3019c63301ae}{K\-E\-Y\-\_\-\-S\-A\-V\-E} = 115
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a561d5a58b94e4ccce28726c98f6ca71e}{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T} = \char`\"{}$<$xmlcomment$>$\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_adf6527cf12c5267d28210a0a60ce43cf}{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T\-\_\-\-C\-O\-N\-T\-E\-N\-T\-S} = \char`\"{}Warning! This xml file was automatically generated by a C++ program using the Boost Property\-Tree library.\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a8cade9693bb6ce63be30adebd318fd21}{L\-A\-B\-E\-L\-\_\-\-E\-X\-P\-E\-R\-I\-M\-E\-N\-T\-\_\-\-T\-I\-M\-E\-P\-O\-I\-N\-T\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y} = \char`\"{}experiment.\-timepoint.\-spatial\-Entity\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_aac731a3a55f704a5b3ba203a3488c78d}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S} = \char`\"{}pseudo3\-D.\-clusteredness\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a314632feed799f84c8db021cb28df3d8}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-E\-N\-S\-I\-T\-Y} = \char`\"{}pseudo3\-D.\-density\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a984c332f78fb9340673841a6b8171ca8}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-R\-E\-A} = \char`\"{}pseudo3\-D.\-area\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a19ac6de22cbdfafbcfa25f0221b2937b}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-P\-E\-R\-I\-M\-E\-T\-E\-R} = \char`\"{}pseudo3\-D.\-perimeter\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a56f7eb418502cbb93307e6f7f17d05be}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-O\-R\-I\-G\-I\-N} = \char`\"{}pseudo3\-D.\-distance\-From\-Origin\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a28dedee0c192d3be211cb13d4b89dffa}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-N\-G\-L\-E\-\_\-\-D\-E\-G\-R\-E\-E\-S} = \char`\"{}pseudo3\-D.\-angle\-Degrees\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a77f57852e8d5c0df7c3d1bf98044c7af}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-S\-H\-A\-P\-E} = \char`\"{}pseudo3\-D.\-shape\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_ae5feb118badcb1d403a6f417b714c66f}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E} = \char`\"{}pseudo3\-D.\-triangle\-Measure\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a8f99a2eba7afe01476e7830dcd955f00}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E} = \char`\"{}pseudo3\-D.\-rectangle\-Measure\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_a1b0e3add734e789ef8b5993a155799e4}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-I\-R\-C\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E} = \char`\"{}pseudo3\-D.\-circle\-Measure\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_aec49c4524588c30df34ff377d70bff65}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-X} = \char`\"{}pseudo3\-D.\-centroid.\-x\char`\"{}
+\item 
+static const string \hyperlink{classmultiscale_1_1analysis_1_1Detector_afb22e70184ac8fe022345962d2fe7934}{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-Y} = \char`\"{}pseudo3\-D.\-centroid.\-y\char`\"{}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Abstract class for detecting entities of interest in images. 
 
-Definition at line 18 of file Detector.\-hpp.
+Definition at line 25 of file Detector.\-hpp.
 
 
 
@@ -173,6 +230,26 @@ Definition at line 19 of file Detector.\-cpp.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a11bf4fa46f51ac033b635d19e92998ae}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!add\-Spatial\-Entities\-To\-Property\-Tree@{add\-Spatial\-Entities\-To\-Property\-Tree}}
+\index{add\-Spatial\-Entities\-To\-Property\-Tree@{add\-Spatial\-Entities\-To\-Property\-Tree}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{add\-Spatial\-Entities\-To\-Property\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::add\-Spatial\-Entities\-To\-Property\-Tree (
+\begin{DoxyParamCaption}
+\item[{pt\-::ptree \&}]{property\-Tree}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a11bf4fa46f51ac033b635d19e92998ae}
+
+
+Add the pseudo 3\-D spatial entities to the property tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property\-Tree} & The property tree \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 231 of file Detector.\-cpp.
+
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a3c2add35193ad09a0200003d0053da6b}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!clear\-Previous\-Detection\-Results@{clear\-Previous\-Detection\-Results}}
 \index{clear\-Previous\-Detection\-Results@{clear\-Previous\-Detection\-Results}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{clear\-Previous\-Detection\-Results}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Detector\-::clear\-Previous\-Detection\-Results (
@@ -187,6 +264,42 @@ Clear the results from the previous detection.
 
 
 Implemented in \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a4a89f3a28cbb473acc32f22b49d09389}{multiscale\-::analysis\-::\-Region\-Detector}, and \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a5679e30f1ea35203963bf2baa8d7ed36}{multiscale\-::analysis\-::\-Cluster\-Detector}.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_af11495dceabe108397805a770fb9c7b4}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!construct\-Property\-Tree@{construct\-Property\-Tree}}
+\index{construct\-Property\-Tree@{construct\-Property\-Tree}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{construct\-Property\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}pt\-::ptree Detector\-::construct\-Property\-Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf Spatial\-Entity\-Pseudo3\-D} \&}]{spatial\-Entity}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_af11495dceabe108397805a770fb9c7b4}
+
+
+Construct the property tree corresponding to the given pseudo 3\-D spatial entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spatial\-Entity} & The spatial entity to be converted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 241 of file Detector.\-cpp.
+
+
+
+References multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Angle(), multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Area(), multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Centre(), multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Circular\-Measure(), multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Clusteredness\-Degree(), multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Density(), multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Distance\-From\-Origin(), multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Perimeter(), multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Shape\-As\-String(), and multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Triangular\-Measure().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Detector_af11495dceabe108397805a770fb9c7b4_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a930ad07f5b8d9f21e6758341f71ae31a}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!create\-Detector\-Specific\-Trackbars@{create\-Detector\-Specific\-Trackbars}}
 \index{create\-Detector\-Specific\-Trackbars@{create\-Detector\-Specific\-Trackbars}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -216,7 +329,7 @@ Create the trackbars which allow the user to change the values of the parameters
 
 
 
-Definition at line 188 of file Detector.\-cpp.
+Definition at line 260 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_afdf4c74184888dbd112d0f1cec3776cd}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!create\-Trackbars\-Window@{create\-Trackbars\-Window}}
 \index{create\-Trackbars\-Window@{create\-Trackbars\-Window}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -231,7 +344,7 @@ Create the window in which the trackbars are placed.
 
 
 
-Definition at line 193 of file Detector.\-cpp.
+Definition at line 265 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_acfb9aaec94382e4a7bee6d9874d4bcef}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!detect@{detect}}
 \index{detect@{detect}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -342,7 +455,7 @@ Display an image in a particular window.
 \end{DoxyParams}
 
 
-Definition at line 204 of file Detector.\-cpp.
+Definition at line 276 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_abb6d85e1a13e96b748ea286a070bdf18}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!display\-Results\-In\-Window@{display\-Results\-In\-Window}}
 \index{display\-Results\-In\-Window@{display\-Results\-In\-Window}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -446,6 +559,21 @@ Here is the call graph for this function\-:\nopagebreak
 \end{center}
 \end{figure}
 
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a684a7071aca4173e3dc968d8635bd92a}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D@{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D}}
+\index{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D@{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D}]{\setlength{\rightskip}{0pt plus 5cm}virtual vector$<$shared\-\_\-ptr$<${\bf Spatial\-Entity\-Pseudo3\-D}$>$ $>$ multiscale\-::analysis\-::\-Detector\-::get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1Detector_a684a7071aca4173e3dc968d8635bd92a}
+
+
+Get the collection of pseudo 3\-D entities detected in the image. 
+
+
+
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a729a0433d9b929624960ae86e7cc1f23}{multiscale\-::analysis\-::\-Region\-Detector}, and \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a6bf0ac91b81cdcf46fe8e50f6dd4c9a8}{multiscale\-::analysis\-::\-Cluster\-Detector}.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_ae9be577bb23f9472d8ca3e19519764f8}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!initialise@{initialise}}
 \index{initialise@{initialise}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -578,6 +706,26 @@ Get the centre of the minimum area bounding rectangle.
 
 Definition at line 127 of file Detector.\-cpp.
 
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a3f4f3192d392f26e324ef9760820d904}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Averaged\-Measures\-To\-Csv\-File@{output\-Averaged\-Measures\-To\-Csv\-File}}
+\index{output\-Averaged\-Measures\-To\-Csv\-File@{output\-Averaged\-Measures\-To\-Csv\-File}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{output\-Averaged\-Measures\-To\-Csv\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::output\-Averaged\-Measures\-To\-Csv\-File (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{fout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a3f4f3192d392f26e324ef9760820d904}
+
+
+Output the averaged measures to a csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fout} & Output file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 209 of file Detector.\-cpp.
+
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a122d92e3710571c136339747bf0568e8}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Results@{output\-Results}}
 \index{output\-Results@{output\-Results}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{output\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::output\-Results (
@@ -622,23 +770,23 @@ Here is the caller graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a2055dc183dd3601d9979bc99a3222eb4}
 
 
-Output the results to a file. 
+Output the results to a csv file. 
 
 
 
-Definition at line 176 of file Detector.\-cpp.
+Definition at line 177 of file Detector.\-cpp.
 
 
 
 References M\-S\-\_\-throw.
 
-\hypertarget{classmultiscale_1_1analysis_1_1Detector_afc247b9c7ded2ffde3ba0cb2b1267490}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Results\-To\-Csv\-File@{output\-Results\-To\-Csv\-File}}
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a8f77ceb1535be09ef149aedcd6b1a84e}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Results\-To\-Csv\-File@{output\-Results\-To\-Csv\-File}}
 \index{output\-Results\-To\-Csv\-File@{output\-Results\-To\-Csv\-File}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
-\subsubsection[{output\-Results\-To\-Csv\-File}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Detector\-::output\-Results\-To\-Csv\-File (
+\subsubsection[{output\-Results\-To\-Csv\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::output\-Results\-To\-Csv\-File (
 \begin{DoxyParamCaption}
 \item[{ofstream \&}]{fout}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1Detector_afc247b9c7ded2ffde3ba0cb2b1267490}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a8f77ceb1535be09ef149aedcd6b1a84e}
 
 
 Output the results to a file using the provided output file stream. 
@@ -650,7 +798,23 @@ Output the results to a file using the provided output file stream.
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a9da92f7959fe324f24301c5bf780fbbd}{multiscale\-::analysis\-::\-Region\-Detector}, and \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a6137f44f74afcac0584b1ff3f49f0ab8}{multiscale\-::analysis\-::\-Cluster\-Detector}.
+Definition at line 189 of file Detector.\-cpp.
+
+
+
+References multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::field\-Names\-To\-String().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmultiscale_1_1analysis_1_1Detector_a8f77ceb1535be09ef149aedcd6b1a84e_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a2eb7c5f8faefb9b8f09f94f88f804d80}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Results\-To\-File@{output\-Results\-To\-File}}
 \index{output\-Results\-To\-File@{output\-Results\-To\-File}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -681,6 +845,61 @@ Output the results to an image.
 
 
 Implemented in \hyperlink{classmultiscale_1_1analysis_1_1RegionDetector_a23a3ada51983d2a3041f403323e27d06}{multiscale\-::analysis\-::\-Region\-Detector}, and \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a909e1e53836f1688ebe312c5f7fb70b5}{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a574c1c58c9e0bab3d224e5b0a77e410a}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Results\-To\-X\-M\-L\-File@{output\-Results\-To\-X\-M\-L\-File}}
+\index{output\-Results\-To\-X\-M\-L\-File@{output\-Results\-To\-X\-M\-L\-File}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{output\-Results\-To\-X\-M\-L\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::output\-Results\-To\-X\-M\-L\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a574c1c58c9e0bab3d224e5b0a77e410a}
+
+
+Output the results to an xml file. 
+
+
+
+Definition at line 214 of file Detector.\-cpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a9f5690049f55799ac7a2741e97de679e}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Results\-To\-X\-M\-L\-File@{output\-Results\-To\-X\-M\-L\-File}}
+\index{output\-Results\-To\-X\-M\-L\-File@{output\-Results\-To\-X\-M\-L\-File}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{output\-Results\-To\-X\-M\-L\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::output\-Results\-To\-X\-M\-L\-File (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{filepath}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a9f5690049f55799ac7a2741e97de679e}
+
+
+Output the clusters and averaged measures to an xml file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Output file path \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 218 of file Detector.\-cpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a64d541cd53a16dc5f204413820c6b0ef}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Spatial\-Entities\-To\-Csv\-File@{output\-Spatial\-Entities\-To\-Csv\-File}}
+\index{output\-Spatial\-Entities\-To\-Csv\-File@{output\-Spatial\-Entities\-To\-Csv\-File}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{output\-Spatial\-Entities\-To\-Csv\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Detector\-::output\-Spatial\-Entities\-To\-Csv\-File (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{fout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a64d541cd53a16dc5f204413820c6b0ef}
+
+
+Output the pseudo 3\-D spatial entities to a csv file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fout} & Output file stream \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 201 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_ada30f980ed5ce2f975bb827c393b8cd0}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!polygon\-Angle@{polygon\-Angle}}
 \index{polygon\-Angle@{polygon\-Angle}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -779,7 +998,7 @@ Print error message, because the detect method was not called before calling the
 
 
 
-Definition at line 209 of file Detector.\-cpp.
+Definition at line 281 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a7451855e415300f15765082f21588f13}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!process\-Image\-And\-Detect@{process\-Image\-And\-Detect}}
 \index{process\-Image\-And\-Detect@{process\-Image\-And\-Detect}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -814,7 +1033,7 @@ Process the request of the user by pressing the key.
 \end{DoxyParams}
 
 
-Definition at line 198 of file Detector.\-cpp.
+Definition at line 270 of file Detector.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a610c16fdecd543f15575f0effb08ff00}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!set\-Detector\-Specific\-Fields\-Initialisation\-Flag@{set\-Detector\-Specific\-Fields\-Initialisation\-Flag}}
 \index{set\-Detector\-Specific\-Fields\-Initialisation\-Flag@{set\-Detector\-Specific\-Fields\-Initialisation\-Flag}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
@@ -859,59 +1078,96 @@ Store the image with the output results on disk.
 
 
 
-Definition at line 170 of file Detector.\-cpp.
+Definition at line 171 of file Detector.\-cpp.
 
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a6d06607ae468a56e48f8daba0a00df5b}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!avg\-Clusteredness\-Degree@{avg\-Clusteredness\-Degree}}
+\index{avg\-Clusteredness\-Degree@{avg\-Clusteredness\-Degree}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{avg\-Clusteredness\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Detector\-::avg\-Clusteredness\-Degree\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a6d06607ae468a56e48f8daba0a00df5b}
+\begin{DoxyVerb}      For regions:
+\end{DoxyVerb}
+ Average degree of clusteredness of all regions
+
+For clusters\-: Index of clusteredness for all clusters 
+
+Definition at line 29 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::analyse\-Clusters(), multiscale\-::analysis\-::\-Cluster\-Detector\-::\-Cluster\-Detector(), multiscale\-::analysis\-::\-Region\-Detector\-::compute\-Average\-Clusteredness\-Degree(), and multiscale\-::analysis\-::\-Region\-Detector\-::\-Region\-Detector().
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a411629d4cf34809127662d625ba057c0}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!avg\-Density@{avg\-Density}}
+\index{avg\-Density@{avg\-Density}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{avg\-Density}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Detector\-::avg\-Density\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a411629d4cf34809127662d625ba057c0}
+\begin{DoxyVerb}                  For regions:
+\end{DoxyVerb}
+ Average density of all regions
+
+For clusters\-: Average pile up degree of all clusters 
+
+Definition at line 34 of file Detector.\-hpp.
+
+
+
+Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::analyse\-Clusters(), multiscale\-::analysis\-::\-Cluster\-Detector\-::\-Cluster\-Detector(), multiscale\-::analysis\-::\-Region\-Detector\-::compute\-Average\-Density(), and multiscale\-::analysis\-::\-Region\-Detector\-::\-Region\-Detector().
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a5458417daa8430ea8ebbe1c25cb26f41}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!C\-S\-V\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{C\-S\-V\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}}
+\index{C\-S\-V\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{C\-S\-V\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{C\-S\-V\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-C\-S\-V\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N = \char`\"{}.out\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a5458417daa8430ea8ebbe1c25cb26f41}
+
+
+Definition at line 259 of file Detector.\-hpp.
+
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a4b42f796957efd6ee0b8cf7645494a65}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!debug\-Mode@{debug\-Mode}}
 \index{debug\-Mode@{debug\-Mode}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{debug\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool multiscale\-::analysis\-::\-Detector\-::debug\-Mode\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a4b42f796957efd6ee0b8cf7645494a65}
 Flag for indicating if debug mode is set 
 
-Definition at line 24 of file Detector.\-hpp.
+Definition at line 42 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_ad565f471d9d7db7692da588ff0d6be2f}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!detect\-Method\-Called@{detect\-Method\-Called}}
 \index{detect\-Method\-Called@{detect\-Method\-Called}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{detect\-Method\-Called}]{\setlength{\rightskip}{0pt plus 5cm}bool multiscale\-::analysis\-::\-Detector\-::detect\-Method\-Called\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_ad565f471d9d7db7692da588ff0d6be2f}
 Flag for indicating if the detect method was called 
 
-Definition at line 28 of file Detector.\-hpp.
+Definition at line 46 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a172b91067670a14a7707f24dc218f2af}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!detector\-Specific\-Fields\-Initialised@{detector\-Specific\-Fields\-Initialised}}
 \index{detector\-Specific\-Fields\-Initialised@{detector\-Specific\-Fields\-Initialised}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{detector\-Specific\-Fields\-Initialised}]{\setlength{\rightskip}{0pt plus 5cm}bool multiscale\-::analysis\-::\-Detector\-::detector\-Specific\-Fields\-Initialised\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a172b91067670a14a7707f24dc218f2af}
 Flag for indicating if the parameters were 
 
-Definition at line 29 of file Detector.\-hpp.
+Definition at line 47 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_aa5dc8982745f567379e0eccd416c6820}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E@{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E}}
 \index{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E@{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-I\-M\-A\-G\-E = \char`\"{}The input {\bf image} is invalid.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_aa5dc8982745f567379e0eccd416c6820}
 
 
-Definition at line 200 of file Detector.\-hpp.
+Definition at line 257 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_aab6b3a68e93cad9a93885e52f1c2ce04}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E@{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E}}
 \index{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E@{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E = \char`\"{}Unable to create output file.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_aab6b3a68e93cad9a93885e52f1c2ce04}
 
 
-Definition at line 199 of file Detector.\-hpp.
+Definition at line 256 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a5837f0e4ffef6410774ff9bcda72238b}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T@{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T}}
 \index{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T@{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-E\-R\-R\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-T\-H\-O\-U\-T\-\_\-\-D\-E\-T\-E\-C\-T = \char`\"{}Unable to output results if the {\bf detect} method was not called previously.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a5837f0e4ffef6410774ff9bcda72238b}
 
 
-Definition at line 198 of file Detector.\-hpp.
+Definition at line 255 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!image@{image}}
 \index{image@{image}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{image}]{\setlength{\rightskip}{0pt plus 5cm}Mat multiscale\-::analysis\-::\-Detector\-::image\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}
 Input image 
 
-Definition at line 22 of file Detector.\-hpp.
+Definition at line 40 of file Detector.\-hpp.
 
 
 
@@ -922,53 +1178,165 @@ Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::change\-Contrast\-
 \subsubsection[{I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-I\-M\-G\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N = \char`\"{}.png\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_acc73b4fb215305ffd7f3d6df8807cc5e}
 
 
-Definition at line 203 of file Detector.\-hpp.
+Definition at line 260 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a0d1f2fd9eae1b166ac097668889c02aa}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!K\-E\-Y\-\_\-\-E\-S\-C@{K\-E\-Y\-\_\-\-E\-S\-C}}
 \index{K\-E\-Y\-\_\-\-E\-S\-C@{K\-E\-Y\-\_\-\-E\-S\-C}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{K\-E\-Y\-\_\-\-E\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}const int Detector\-::\-K\-E\-Y\-\_\-\-E\-S\-C = 27\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a0d1f2fd9eae1b166ac097668889c02aa}
 
 
-Definition at line 207 of file Detector.\-hpp.
+Definition at line 265 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_aa9acc60392e3eb0f0a9c3019c63301ae}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!K\-E\-Y\-\_\-\-S\-A\-V\-E@{K\-E\-Y\-\_\-\-S\-A\-V\-E}}
 \index{K\-E\-Y\-\_\-\-S\-A\-V\-E@{K\-E\-Y\-\_\-\-S\-A\-V\-E}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{K\-E\-Y\-\_\-\-S\-A\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int Detector\-::\-K\-E\-Y\-\_\-\-S\-A\-V\-E = 115\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_aa9acc60392e3eb0f0a9c3019c63301ae}
 
 
-Definition at line 208 of file Detector.\-hpp.
+Definition at line 266 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a561d5a58b94e4ccce28726c98f6ca71e}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T@{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T}}
+\index{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T@{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T = \char`\"{}$<$xmlcomment$>$\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a561d5a58b94e4ccce28726c98f6ca71e}
+
+
+Definition at line 268 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_adf6527cf12c5267d28210a0a60ce43cf}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T\-\_\-\-C\-O\-N\-T\-E\-N\-T\-S@{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T\-\_\-\-C\-O\-N\-T\-E\-N\-T\-S}}
+\index{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T\-\_\-\-C\-O\-N\-T\-E\-N\-T\-S@{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T\-\_\-\-C\-O\-N\-T\-E\-N\-T\-S}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T\-\_\-\-C\-O\-N\-T\-E\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-C\-O\-M\-M\-E\-N\-T\-\_\-\-C\-O\-N\-T\-E\-N\-T\-S = \char`\"{}Warning! This xml file was automatically generated by a C++ program using the Boost Property\-Tree library.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_adf6527cf12c5267d28210a0a60ce43cf}
+
+
+Definition at line 269 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a8cade9693bb6ce63be30adebd318fd21}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-E\-X\-P\-E\-R\-I\-M\-E\-N\-T\-\_\-\-T\-I\-M\-E\-P\-O\-I\-N\-T\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y@{L\-A\-B\-E\-L\-\_\-\-E\-X\-P\-E\-R\-I\-M\-E\-N\-T\-\_\-\-T\-I\-M\-E\-P\-O\-I\-N\-T\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y}}
+\index{L\-A\-B\-E\-L\-\_\-\-E\-X\-P\-E\-R\-I\-M\-E\-N\-T\-\_\-\-T\-I\-M\-E\-P\-O\-I\-N\-T\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y@{L\-A\-B\-E\-L\-\_\-\-E\-X\-P\-E\-R\-I\-M\-E\-N\-T\-\_\-\-T\-I\-M\-E\-P\-O\-I\-N\-T\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-E\-X\-P\-E\-R\-I\-M\-E\-N\-T\-\_\-\-T\-I\-M\-E\-P\-O\-I\-N\-T\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-E\-X\-P\-E\-R\-I\-M\-E\-N\-T\-\_\-\-T\-I\-M\-E\-P\-O\-I\-N\-T\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y = \char`\"{}experiment.\-timepoint.\-spatial\-Entity\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a8cade9693bb6ce63be30adebd318fd21}
+
+
+Definition at line 271 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a28dedee0c192d3be211cb13d4b89dffa}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-N\-G\-L\-E\-\_\-\-D\-E\-G\-R\-E\-E\-S@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-N\-G\-L\-E\-\_\-\-D\-E\-G\-R\-E\-E\-S}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-N\-G\-L\-E\-\_\-\-D\-E\-G\-R\-E\-E\-S@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-N\-G\-L\-E\-\_\-\-D\-E\-G\-R\-E\-E\-S}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-N\-G\-L\-E\-\_\-\-D\-E\-G\-R\-E\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-N\-G\-L\-E\-\_\-\-D\-E\-G\-R\-E\-E\-S = \char`\"{}pseudo3\-D.\-angle\-Degrees\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a28dedee0c192d3be211cb13d4b89dffa}
+
+
+Definition at line 278 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a984c332f78fb9340673841a6b8171ca8}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-R\-E\-A@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-R\-E\-A}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-R\-E\-A@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-R\-E\-A}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-R\-E\-A}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-A\-R\-E\-A = \char`\"{}pseudo3\-D.\-area\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a984c332f78fb9340673841a6b8171ca8}
+
+
+Definition at line 275 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_aec49c4524588c30df34ff377d70bff65}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-X@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-X}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-X@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-X}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-X}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-X = \char`\"{}pseudo3\-D.\-centroid.\-x\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_aec49c4524588c30df34ff377d70bff65}
+
+
+Definition at line 283 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_afb22e70184ac8fe022345962d2fe7934}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-Y@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-Y}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-Y@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-Y}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-E\-N\-T\-R\-O\-I\-D\-\_\-\-Y = \char`\"{}pseudo3\-D.\-centroid.\-y\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_afb22e70184ac8fe022345962d2fe7934}
+
+
+Definition at line 284 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a1b0e3add734e789ef8b5993a155799e4}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-I\-R\-C\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-I\-R\-C\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-I\-R\-C\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-I\-R\-C\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-I\-R\-C\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-I\-R\-C\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E = \char`\"{}pseudo3\-D.\-circle\-Measure\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a1b0e3add734e789ef8b5993a155799e4}
+
+
+Definition at line 282 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_aac731a3a55f704a5b3ba203a3488c78d}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S = \char`\"{}pseudo3\-D.\-clusteredness\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_aac731a3a55f704a5b3ba203a3488c78d}
+
+
+Definition at line 273 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a314632feed799f84c8db021cb28df3d8}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-E\-N\-S\-I\-T\-Y@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-E\-N\-S\-I\-T\-Y}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-E\-N\-S\-I\-T\-Y@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-E\-N\-S\-I\-T\-Y}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-E\-N\-S\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-E\-N\-S\-I\-T\-Y = \char`\"{}pseudo3\-D.\-density\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a314632feed799f84c8db021cb28df3d8}
+
+
+Definition at line 274 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a56f7eb418502cbb93307e6f7f17d05be}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-O\-R\-I\-G\-I\-N@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-O\-R\-I\-G\-I\-N}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-O\-R\-I\-G\-I\-N@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-O\-R\-I\-G\-I\-N}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-O\-R\-I\-G\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E\-\_\-\-F\-R\-O\-M\-\_\-\-O\-R\-I\-G\-I\-N = \char`\"{}pseudo3\-D.\-distance\-From\-Origin\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a56f7eb418502cbb93307e6f7f17d05be}
+
+
+Definition at line 277 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a19ac6de22cbdfafbcfa25f0221b2937b}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-P\-E\-R\-I\-M\-E\-T\-E\-R@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-P\-E\-R\-I\-M\-E\-T\-E\-R}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-P\-E\-R\-I\-M\-E\-T\-E\-R@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-P\-E\-R\-I\-M\-E\-T\-E\-R}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-P\-E\-R\-I\-M\-E\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-P\-E\-R\-I\-M\-E\-T\-E\-R = \char`\"{}pseudo3\-D.\-perimeter\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a19ac6de22cbdfafbcfa25f0221b2937b}
+
+
+Definition at line 276 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a8f99a2eba7afe01476e7830dcd955f00}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-R\-E\-C\-T\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E = \char`\"{}pseudo3\-D.\-rectangle\-Measure\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a8f99a2eba7afe01476e7830dcd955f00}
+
+
+Definition at line 281 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a77f57852e8d5c0df7c3d1bf98044c7af}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-S\-H\-A\-P\-E@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-S\-H\-A\-P\-E}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-S\-H\-A\-P\-E@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-S\-H\-A\-P\-E}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-S\-H\-A\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-S\-H\-A\-P\-E = \char`\"{}pseudo3\-D.\-shape\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a77f57852e8d5c0df7c3d1bf98044c7af}
+
+
+Definition at line 279 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_ae5feb118badcb1d403a6f417b714c66f}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E}}
+\index{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E@{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-L\-A\-B\-E\-L\-\_\-\-S\-P\-A\-T\-I\-A\-L\-\_\-\-E\-N\-T\-I\-T\-Y\-\_\-\-P\-S\-E\-U\-D\-O\-\_\-3\-D\-\_\-\-T\-R\-I\-A\-N\-G\-L\-E\-\_\-\-M\-E\-A\-S\-U\-R\-E = \char`\"{}pseudo3\-D.\-triangle\-Measure\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_ae5feb118badcb1d403a6f417b714c66f}
+
+
+Definition at line 280 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a002237e2ad684975a7c8b1e12dd7d780}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!origin@{origin}}
 \index{origin@{origin}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{origin}]{\setlength{\rightskip}{0pt plus 5cm}Point multiscale\-::analysis\-::\-Detector\-::origin\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a002237e2ad684975a7c8b1e12dd7d780}
 The point representing the origin 
 
-Definition at line 31 of file Detector.\-hpp.
+Definition at line 49 of file Detector.\-hpp.
 
 
 
 Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Region\-From\-Polygon(), multiscale\-::analysis\-::\-Region\-Detector\-::get\-Origin\-X\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::get\-Origin\-Y\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Origin\-X\-Coordinate(), multiscale\-::analysis\-::\-Region\-Detector\-::set\-Origin\-Y\-Coordinate(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values().
 
-\hypertarget{classmultiscale_1_1analysis_1_1Detector_a3030def7fe61741fcc8f5c8b50f40e57}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}}
-\index{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
-\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-O\-U\-T\-P\-U\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N = \char`\"{}.out\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a3030def7fe61741fcc8f5c8b50f40e57}
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a8793daa563094fdcd7447930a4fc0974}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S@{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-O\-U\-T\-P\-U\-T\-\_\-\-C\-L\-U\-S\-T\-E\-R\-E\-D\-N\-E\-S\-S = \char`\"{}Average clusteredness degree\-: \char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a8793daa563094fdcd7447930a4fc0974}
 
 
-Definition at line 202 of file Detector.\-hpp.
+Definition at line 252 of file Detector.\-hpp.
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a920029d6b618aa2daaccfb824c5878b8}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y@{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y@{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-O\-U\-T\-P\-U\-T\-\_\-\-D\-E\-N\-S\-I\-T\-Y = \char`\"{}Average density\-: \char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a920029d6b618aa2daaccfb824c5878b8}
+
+
+Definition at line 253 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a1a83df16d8afd347c0e1c9ddc41c9bee}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Filepath@{output\-Filepath}}
 \index{output\-Filepath@{output\-Filepath}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{output\-Filepath}]{\setlength{\rightskip}{0pt plus 5cm}string multiscale\-::analysis\-::\-Detector\-::output\-Filepath\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a1a83df16d8afd347c0e1c9ddc41c9bee}
 Path of the output file 
 
-Definition at line 23 of file Detector.\-hpp.
+Definition at line 41 of file Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Detector_a144e080a3af03c9bf3d8a80315823c86}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!output\-Image@{output\-Image}}
 \index{output\-Image@{output\-Image}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
 \subsubsection[{output\-Image}]{\setlength{\rightskip}{0pt plus 5cm}Mat multiscale\-::analysis\-::\-Detector\-::output\-Image\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a144e080a3af03c9bf3d8a80315823c86}
 Image for displaying the results 
 
-Definition at line 26 of file Detector.\-hpp.
+Definition at line 44 of file Detector.\-hpp.
 
 
 
@@ -979,11 +1347,18 @@ Referenced by multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::outpu
 \subsubsection[{W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E = \char`\"{}Output {\bf image}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a883b5de8d273a2bfab31e45bc285c78d}
 
 
-Definition at line 205 of file Detector.\-hpp.
+Definition at line 263 of file Detector.\-hpp.
 
 
 
 Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::create\-Detector\-Specific\-Trackbars(), and multiscale\-::analysis\-::\-Region\-Detector\-::create\-Detector\-Specific\-Trackbars().
+
+\hypertarget{classmultiscale_1_1analysis_1_1Detector_a89d56e81155e57f3dcaeef293e89efc2}{\index{multiscale\-::analysis\-::\-Detector@{multiscale\-::analysis\-::\-Detector}!X\-M\-L\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{X\-M\-L\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}}
+\index{X\-M\-L\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{X\-M\-L\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}!multiscale::analysis::Detector@{multiscale\-::analysis\-::\-Detector}}
+\subsubsection[{X\-M\-L\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Detector\-::\-X\-M\-L\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N = \char`\"{}.xml\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1Detector_a89d56e81155e57f3dcaeef293e89efc2}
+
+
+Definition at line 261 of file Detector.\-hpp.
 
 
 

@@ -1,6 +1,6 @@
 <map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/RegionDetector.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/RegionDetector.hpp">
-<area shape="rect" id="node3" href="$Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="33,153,174,199"/>
-<area shape="rect" id="node11" href="$Region_8hpp.html" title="multiscale/analysis\l/spatial/Region.hpp" alt="" coords="416,153,549,199"/>
-<area shape="rect" id="node13" href="$SpatialCollection2D_8hpp.html" title="multiscale/analysis\l/spatial/SpatialCollection2\lD.hpp" alt="" coords="432,248,605,312"/>
-<area shape="rect" id="node15" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="465,361,612,407"/>
+<area shape="rect" id="node3" href="$Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="529,153,670,199"/>
+<area shape="rect" id="node20" href="$Region_8hpp.html" title="multiscale/analysis\l/spatial/Region.hpp" alt="" coords="116,153,249,199"/>
+<area shape="rect" id="node5" href="$SpatialEntityPseudo3D_8hpp.html" title="multiscale/analysis\l/spatial/SpatialEntityPseudo3\lD.hpp" alt="" coords="160,248,352,312"/>
+<area shape="rect" id="node7" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="244,361,390,407"/>
 </map>

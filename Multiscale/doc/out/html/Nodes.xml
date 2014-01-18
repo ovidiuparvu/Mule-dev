@@ -222,11 +222,6 @@
                   <Anchor>a05e8593354fabd5c1ca18b6a2b19096e</Anchor>
                  </Node>
                  <Node>
-                  <Name>fieldValuesToString</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>ac231dc426e9e2f1767660192de859aad</Anchor>
-                 </Node>
-                 <Node>
                   <Name>getEntities</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                   <Anchor>aedd64d46ad3ea61ce7bb76be1f0906e6</Anchor>
@@ -265,11 +260,6 @@
                   <Name>getMinAreaEnclosingTriangle</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                   <Anchor>ab28150a739c35d66874c219fd38b462b</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>getPileUpDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>acff6c7308641af041598bed55005f2bf</Anchor>
                  </Node>
                  <Node>
                   <Name>initialise</Name>
@@ -312,19 +302,14 @@
                   <Anchor>a2279d1567eec7c0b1e29cae26cfb4d73</Anchor>
                  </Node>
                  <Node>
+                  <Name>updateDensity</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                  <Anchor>ac0300d9d05b0eb3aecd5724a14c2da41</Anchor>
+                 </Node>
+                 <Node>
                   <Name>updatePerimeter</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                   <Anchor>aadc520e4459f1ea6e22afd7c02d5f2ed</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>updatePileUpDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>a66d6f21c8de45bb5080264a4f87e34de</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>updateSpatialCollectionSpecificValues</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>aee8272e740fe640a6bf5260746d34080</Anchor>
                  </Node>
                  <Node>
                   <Name>validateOriginDependentValues</Name>
@@ -355,11 +340,6 @@
                   <Name>minAreaEnclosingTriangle</Name>
                   <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                   <Anchor>a7678d48581202c3ecc3f1283a1730dfa</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>pileUpDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                  <Anchor>ab7e6a3501bc6e94c19b448f502d6ecec</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -458,6 +438,11 @@
                   <Anchor>a0ed0e389d65161b7eef8f377efb20e5c</Anchor>
                  </Node>
                  <Node>
+                  <Name>getCollectionOfSpatialEntityPseudo3D</Name>
+                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                  <Anchor>a6bf0ac91b81cdcf46fe8e50f6dd4c9a8</Anchor>
+                 </Node>
+                 <Node>
                   <Name>getEps</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>a5f1699b100e7203720cb7fd1ef73cea1</Anchor>
@@ -478,9 +463,9 @@
                   <Anchor>a67751dd6e21750019a20648b6ba3c8f2</Anchor>
                  </Node>
                  <Node>
-                  <Name>outputResultsToCsvFile</Name>
+                  <Name>isNonEmptyCluster</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a6137f44f74afcac0584b1ff3f49f0ab8</Anchor>
+                  <Anchor>a3322e1cf4177d40c55c1ad25b27abdc6</Anchor>
                  </Node>
                  <Node>
                   <Name>processImageAndDetect</Name>
@@ -501,16 +486,6 @@
                   <Name>updateClusterOriginDependentValues</Name>
                   <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                   <Anchor>ac7e008a7674205095f94b91c8d7cdccc</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>avgPileUpDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a6f6cfa50cf21ac400d41d6c6f2112bc9</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>clusterednessIndex</Name>
-                  <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                  <Anchor>a5e2bf77041bd0d5047dd16c4632c16b7</Anchor>
                  </Node>
                  <Node>
                   <Name>clusters</Name>
@@ -651,9 +626,19 @@
                   <Anchor>ae16b7bf62f39cb287927d56ca17663d7</Anchor>
                  </Node>
                  <Node>
+                  <Name>addSpatialEntitiesToPropertyTree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a11bf4fa46f51ac033b635d19e92998ae</Anchor>
+                 </Node>
+                 <Node>
                   <Name>clearPreviousDetectionResults</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>a3c2add35193ad09a0200003d0053da6b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>constructPropertyTree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>af11495dceabe108397805a770fb9c7b4</Anchor>
                  </Node>
                  <Node>
                   <Name>createDetectorSpecificTrackbars</Name>
@@ -711,6 +696,11 @@
                   <Anchor>a9785ec165eb57a95243c5bcf679bc49b</Anchor>
                  </Node>
                  <Node>
+                  <Name>getCollectionOfSpatialEntityPseudo3D</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a684a7071aca4173e3dc968d8635bd92a</Anchor>
+                 </Node>
+                 <Node>
                   <Name>initialise</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>ae9be577bb23f9472d8ca3e19519764f8</Anchor>
@@ -751,6 +741,11 @@
                   <Anchor>aeef6f9f7e29c79362df3469a0a5caafe</Anchor>
                  </Node>
                  <Node>
+                  <Name>outputAveragedMeasuresToCsvFile</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a3f4f3192d392f26e324ef9760820d904</Anchor>
+                 </Node>
+                 <Node>
                   <Name>outputResults</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>a122d92e3710571c136339747bf0568e8</Anchor>
@@ -763,7 +758,7 @@
                  <Node>
                   <Name>outputResultsToCsvFile</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
-                  <Anchor>afc247b9c7ded2ffde3ba0cb2b1267490</Anchor>
+                  <Anchor>a8f77ceb1535be09ef149aedcd6b1a84e</Anchor>
                  </Node>
                  <Node>
                   <Name>outputResultsToFile</Name>
@@ -774,6 +769,21 @@
                   <Name>outputResultsToImage</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>a5d10b68605d5a1711527b4b896b3b2cc</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputResultsToXMLFile</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a574c1c58c9e0bab3d224e5b0a77e410a</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputResultsToXMLFile</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a9f5690049f55799ac7a2741e97de679e</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>outputSpatialEntitiesToCsvFile</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a64d541cd53a16dc5f204413820c6b0ef</Anchor>
                  </Node>
                  <Node>
                   <Name>polygonAngle</Name>
@@ -809,6 +819,16 @@
                   <Name>storeOutputImageOnDisk</Name>
                   <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                   <Anchor>aa15a7546c4f8f77fcf85632386a4c5d5</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>avgClusterednessDegree</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a6d06607ae468a56e48f8daba0a00df5b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>avgDensity</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                  <Anchor>a411629d4cf34809127662d625ba057c0</Anchor>
                  </Node>
                  <Node>
                   <Name>debugMode</Name>
@@ -1106,16 +1126,6 @@
                   <Anchor>a6319de4734b11039dbb90dfdd3e30e31</Anchor>
                  </Node>
                  <Node>
-                  <Name>fieldValuesToString</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>a4fa8cfecf2fc3708c66022655a055dc6</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>getDensity</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>abe2e6188ff7b749dc2f77169cb75bb95</Anchor>
-                 </Node>
-                 <Node>
                   <Name>getPolygon</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                   <Anchor>a60e366526dfda2852871c29b70010fb7</Anchor>
@@ -1151,24 +1161,19 @@
                   <Anchor>a35c88944e2704571214b6e28dd657350</Anchor>
                  </Node>
                  <Node>
+                  <Name>updateDensity</Name>
+                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
+                  <Anchor>a995bd4ac0452715ec75bdb8c6ae51914</Anchor>
+                 </Node>
+                 <Node>
                   <Name>updatePerimeter</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                   <Anchor>a58a4a22cb77fc6963592ec156458f310</Anchor>
                  </Node>
                  <Node>
-                  <Name>updateSpatialCollectionSpecificValues</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>ac382fb7a5625d7ef573a311b8de8f248</Anchor>
-                 </Node>
-                 <Node>
                   <Name>validateInputValues</Name>
                   <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                   <Anchor>a517b46fd89696f44086aafb1a9526995</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>density</Name>
-                  <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                  <Anchor>af4eb62fddbe850271dfe15bb240b13bb</Anchor>
                  </Node>
                  <Node>
                   <Name>polygon</Name>
@@ -1262,6 +1267,11 @@
                   <Anchor>af0b30b57a664d7a5b1bb0ec6be5e8068</Anchor>
                  </Node>
                  <Node>
+                  <Name>getCollectionOfSpatialEntityPseudo3D</Name>
+                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                  <Anchor>a729a0433d9b929624960ae86e7cc1f23</Anchor>
+                 </Node>
+                 <Node>
                   <Name>getEpsilon</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>a730df92f22ef336a5e24ffdb9afa50c9</Anchor>
@@ -1315,21 +1325,6 @@
                   <Name>morphologicalClose</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>adcb8ab3ced63de9168734f0b24072705</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>outputAveragedMeasuresToCsvFile</Name>
-                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>ac060acf205b878f79b67093f178f265f</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>outputRegionsToCsvFile</Name>
-                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a9289ea9b1ceb3bd21317170d72a889e4</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>outputResultsToCsvFile</Name>
-                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a9da92f7959fe324f24301c5bf780fbbd</Anchor>
                  </Node>
                  <Node>
                   <Name>outputResultsToImage</Name>
@@ -1422,16 +1417,6 @@
                   <Anchor>ab768a3bbfff9835b441a889ab2cb05a6</Anchor>
                  </Node>
                  <Node>
-                  <Name>avgClusterednessDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>ad2614f07ff1dfa25af6f7eaa10fe8ea8</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>avgDensity</Name>
-                  <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                  <Anchor>a96d0cab2a5cd61b3820c87581fed9548</Anchor>
-                 </Node>
-                 <Node>
                   <Name>beta</Name>
                   <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                   <Anchor>a23c831170c2264dd7e59067a1a7d3c8e</Anchor>
@@ -1475,188 +1460,218 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>SpatialCollection2D</Name>
-                <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                <Name>SpatialEntityPseudo3D</Name>
+                <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>SpatialCollection2D</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a3fa52a3930e498d763930a0c6a23a03c</Anchor>
+                  <Name>SpatialEntityPseudo3D</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>aa391fae1e086502392a2c89dcea27022</Anchor>
                  </Node>
                  <Node>
-                  <Name>~SpatialCollection2D</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>af70ae8f44636e7b2cf85705cffe44dfe</Anchor>
+                  <Name>~SpatialEntityPseudo3D</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a5d44f1cc668d9ef8b1bb5ba573a08c93</Anchor>
                  </Node>
                  <Node>
                   <Name>convertPoints</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ad3d11af329d5efa9bddf40b4573ebb2c</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a2175fefa47f158b22872af80010543b1</Anchor>
                  </Node>
                  <Node>
                   <Name>fieldValuesToString</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a1b70b9e25f8b82ac2195f75f89280800</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a232a5e4991e59dfc685107982fcaf0ce</Anchor>
                  </Node>
                  <Node>
                   <Name>getAngle</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a6bac1eb1ff6d06cdb0fd8036849b4f50</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a9f3394cfe46d66ae9c13d805ad460cb5</Anchor>
                  </Node>
                  <Node>
                   <Name>getArea</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a192a2f1ee9e3af90a40c8c7c47618965</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>ae85647e35a4cbb3ed193d039cf0395a9</Anchor>
                  </Node>
                  <Node>
                   <Name>getCentre</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ac8b879dca765e47b9e0ef86d440e28e6</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a4976534b2cdf55541701a7d5ea4ac0c5</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getCircularMeasure</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a71759aa55f43ac2a6cc52b738f3b2c42</Anchor>
                  </Node>
                  <Node>
                   <Name>getClusterednessDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a85ae2bf2457ca5dfc14a43dc492a2dda</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a532020267c8ffd4375e2d204debf8454</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getDensity</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a98a29584b604d113db53e7009fd3cb79</Anchor>
                  </Node>
                  <Node>
                   <Name>getDistanceFromOrigin</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>aeef9f086af281569cf8f83dc2e1a0014</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a26530af3d05b0257386ce02498a5a84b</Anchor>
                  </Node>
                  <Node>
                   <Name>getPerimeter</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a736028971bede12a98dbb72d5b0f1354</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a455bf65abb87bd8b65d0cbe2234e4491</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getRectangularMeasure</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a924e390a408a91abf394f29bec33d945</Anchor>
                  </Node>
                  <Node>
                   <Name>getShape</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a7144355774b561b660adfca759316037</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>af67de0727472a72bad311e71db8a1115</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getShapeAsString</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>aaf8b45d68041be0f293eaf1bf40c76d3</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>getTriangularMeasure</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a9c7af7e1fc6a829c184c85baeaf1ebc2</Anchor>
                  </Node>
                  <Node>
                   <Name>initialise</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ae128b71f769a10ff5bc7452e2ec9d555</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a097edef313aee62069e36a13c8781d07</Anchor>
                  </Node>
                  <Node>
                   <Name>isCircularMeasure</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a5d9967a9c531f3abe0236fbef1b0faba</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a31066d1038679f8e9080719380403cad</Anchor>
                  </Node>
                  <Node>
                   <Name>isRectangularMeasure</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a1acb28a7aafd1f75c23a94dbc988b038</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>ad2984ec212e74437f3c7f3fc18ad555c</Anchor>
                  </Node>
                  <Node>
                   <Name>isTriangularMeasure</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>acce0e9ddd2d92e3ba843c3015352cab5</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>ac0e5bce32290f2595293bd7386e04de1</Anchor>
                  </Node>
                  <Node>
                   <Name>shapeAsString</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ac18243f267c777ab26bb836097a78c74</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a347c52b3cfad183a608ddbd018d8e409</Anchor>
                  </Node>
                  <Node>
                   <Name>toString</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a6ff771bb6022d9c991348f29227d10d9</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>abea1af0695f6f1a977b0caa3428fc433</Anchor>
                  </Node>
                  <Node>
                   <Name>updateArea</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a160aae10901ef5198db1b03bdef68065</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>aa8c1cd3248c8926edbb1b47006ded902</Anchor>
                  </Node>
                  <Node>
                   <Name>updateCentrePoint</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>aab860163169deb76a7e853df32902ab1</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a8e81fdb72e8510d8f77ce8b518a74843</Anchor>
                  </Node>
                  <Node>
                   <Name>updateClusterednessDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a7deb494a09ce1f44b1b7e8ac5255cd0b</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a750ba1b5e457d9d6504fc8320a76e002</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>updateDensity</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a28fa63c1101f3f5ba7a0001099ee3159</Anchor>
                  </Node>
                  <Node>
                   <Name>updateMeasures</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a8e5a2af581895142da9b50eeeabeb7be</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a24ad8b8b5768be1f917a1fb893df8c6c</Anchor>
                  </Node>
                  <Node>
                   <Name>updateMeasuresIfRequired</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a731de1009ba24b4fda5003c9cec5196c</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a151cd8c0fdfbc98cfd0adc99b9943369</Anchor>
                  </Node>
                  <Node>
                   <Name>updatePerimeter</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a6751a928c631fe725a2e7c5226e3720b</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>acb00990b4b812367b7ae8f16028b8c32</Anchor>
                  </Node>
                  <Node>
                   <Name>updateShape</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ab26bc346c1b0b0d17104c7d5cfb170bb</Anchor>
-                 </Node>
-                 <Node>
-                  <Name>updateSpatialCollectionSpecificValues</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ad94bce09032b184ebfd5b5006217c683</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>ad50d0866df26b63dc86853a9ab0c545d</Anchor>
                  </Node>
                  <Node>
                   <Name>angle</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ab452753ab21ee26732afb77a6478b3ce</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>aa077aab864e659f93522863cc10824bb</Anchor>
                  </Node>
                  <Node>
                   <Name>area</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ac570cc755e52aeb9deacf12d223a4a3a</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a1621d5b3ece663bf4c5501940e860292</Anchor>
                  </Node>
                  <Node>
                   <Name>centre</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>afe9ef6b70ff53161cb02749444ae372c</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a647c25f9544d5537938bbadefc436634</Anchor>
                  </Node>
                  <Node>
                   <Name>circularMeasure</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a4c58c82dd3d67d670b554bfaeb2b19ba</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>aa4ac170fb21e9697358d47ba6ea7a267</Anchor>
                  </Node>
                  <Node>
                   <Name>clusterednessDegree</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>acd11d0bbeb60a1168bd2c2fbbc6fe965</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a22a84312e7c497cc5fbc4d8b41d8fd45</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>density</Name>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>aedf807816f8c2f7cd961acfe0042fc56</Anchor>
                  </Node>
                  <Node>
                   <Name>distanceFromOrigin</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ac2a5d3f8c2cb878c710d821c536b8a4f</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a056f67b90ed41c0e6dc4df31b71ad906</Anchor>
                  </Node>
                  <Node>
                   <Name>perimeter</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>ae8045702b66fd813cfff49fa86b02e68</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>aee84039be272f902a2d871f61da47360</Anchor>
                  </Node>
                  <Node>
                   <Name>rectangularMeasure</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>aad7d79a7bd299d4d3c08a864cfcb77c3</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>aabb799c34513ed1d3008d807cdbdea29</Anchor>
                  </Node>
                  <Node>
                   <Name>shape</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a4df95ecca90ce33332a69e0aefcf73d9</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>abad3acd3d7067e8e86e168e692cb2c2e</Anchor>
                  </Node>
                  <Node>
                   <Name>triangularMeasure</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a578070e91858e9e87de1e0f5771d6c3f</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a7e8a7c888b5ab5a204f6d4ffa283709c</Anchor>
                  </Node>
                  <Node>
                   <Name>updateFlag</Name>
-                  <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                  <Anchor>a6d942f2856adc673e9d361596744b37f</Anchor>
+                  <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                  <Anchor>a2fc7e2c00fcd725cb247b27c69726c8b</Anchor>
                  </Node>
                 </Subnodes>
                </Node>
@@ -3430,8 +3445,8 @@
             <Path>classmultiscale_1_1analysis_1_1Silhouette.html</Path>
            </Node>
            <Node>
-            <Name>multiscale::analysis::SpatialCollection2D</Name>
-            <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+            <Name>multiscale::analysis::SpatialEntityPseudo3D</Name>
+            <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
             <Subnodes>
              <Node>
               <Name>multiscale::analysis::Cluster</Name>
@@ -3700,6 +3715,10 @@
              <Node>
               <Name>k</Name>
               <Path>functions_vars_0x6b.html</Path>
+             </Node>
+             <Node>
+              <Name>l</Name>
+              <Path>functions_vars_0x6c.html</Path>
              </Node>
              <Node>
               <Name>m</Name>
@@ -4313,11 +4332,6 @@
                               <Anchor>a05e8593354fabd5c1ca18b6a2b19096e</Anchor>
                              </Node>
                              <Node>
-                              <Name>fieldValuesToString</Name>
-                              <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                              <Anchor>ac231dc426e9e2f1767660192de859aad</Anchor>
-                             </Node>
-                             <Node>
                               <Name>getEntities</Name>
                               <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                               <Anchor>aedd64d46ad3ea61ce7bb76be1f0906e6</Anchor>
@@ -4356,11 +4370,6 @@
                               <Name>getMinAreaEnclosingTriangle</Name>
                               <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                               <Anchor>ab28150a739c35d66874c219fd38b462b</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>getPileUpDegree</Name>
-                              <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                              <Anchor>acff6c7308641af041598bed55005f2bf</Anchor>
                              </Node>
                              <Node>
                               <Name>initialise</Name>
@@ -4403,19 +4412,14 @@
                               <Anchor>a2279d1567eec7c0b1e29cae26cfb4d73</Anchor>
                              </Node>
                              <Node>
+                              <Name>updateDensity</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
+                              <Anchor>ac0300d9d05b0eb3aecd5724a14c2da41</Anchor>
+                             </Node>
+                             <Node>
                               <Name>updatePerimeter</Name>
                               <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                               <Anchor>aadc520e4459f1ea6e22afd7c02d5f2ed</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>updatePileUpDegree</Name>
-                              <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                              <Anchor>a66d6f21c8de45bb5080264a4f87e34de</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>updateSpatialCollectionSpecificValues</Name>
-                              <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                              <Anchor>aee8272e740fe640a6bf5260746d34080</Anchor>
                              </Node>
                              <Node>
                               <Name>validateOriginDependentValues</Name>
@@ -4446,11 +4450,6 @@
                               <Name>minAreaEnclosingTriangle</Name>
                               <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
                               <Anchor>a7678d48581202c3ecc3f1283a1730dfa</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>pileUpDegree</Name>
-                              <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-                              <Anchor>ab7e6a3501bc6e94c19b448f502d6ecec</Anchor>
                              </Node>
                             </Subnodes>
                            </Node>
@@ -4555,6 +4554,11 @@
                               <Anchor>a0ed0e389d65161b7eef8f377efb20e5c</Anchor>
                              </Node>
                              <Node>
+                              <Name>getCollectionOfSpatialEntityPseudo3D</Name>
+                              <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+                              <Anchor>a6bf0ac91b81cdcf46fe8e50f6dd4c9a8</Anchor>
+                             </Node>
+                             <Node>
                               <Name>getEps</Name>
                               <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                               <Anchor>a5f1699b100e7203720cb7fd1ef73cea1</Anchor>
@@ -4575,9 +4579,9 @@
                               <Anchor>a67751dd6e21750019a20648b6ba3c8f2</Anchor>
                              </Node>
                              <Node>
-                              <Name>outputResultsToCsvFile</Name>
+                              <Name>isNonEmptyCluster</Name>
                               <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                              <Anchor>a6137f44f74afcac0584b1ff3f49f0ab8</Anchor>
+                              <Anchor>a3322e1cf4177d40c55c1ad25b27abdc6</Anchor>
                              </Node>
                              <Node>
                               <Name>processImageAndDetect</Name>
@@ -4598,16 +4602,6 @@
                               <Name>updateClusterOriginDependentValues</Name>
                               <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
                               <Anchor>ac7e008a7674205095f94b91c8d7cdccc</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>avgPileUpDegree</Name>
-                              <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                              <Anchor>a6f6cfa50cf21ac400d41d6c6f2112bc9</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>clusterednessIndex</Name>
-                              <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-                              <Anchor>a5e2bf77041bd0d5047dd16c4632c16b7</Anchor>
                              </Node>
                              <Node>
                               <Name>clusters</Name>
@@ -4766,9 +4760,19 @@
                               <Anchor>ae16b7bf62f39cb287927d56ca17663d7</Anchor>
                              </Node>
                              <Node>
+                              <Name>addSpatialEntitiesToPropertyTree</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>a11bf4fa46f51ac033b635d19e92998ae</Anchor>
+                             </Node>
+                             <Node>
                               <Name>clearPreviousDetectionResults</Name>
                               <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                               <Anchor>a3c2add35193ad09a0200003d0053da6b</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>constructPropertyTree</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>af11495dceabe108397805a770fb9c7b4</Anchor>
                              </Node>
                              <Node>
                               <Name>createDetectorSpecificTrackbars</Name>
@@ -4826,6 +4830,11 @@
                               <Anchor>a9785ec165eb57a95243c5bcf679bc49b</Anchor>
                              </Node>
                              <Node>
+                              <Name>getCollectionOfSpatialEntityPseudo3D</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>a684a7071aca4173e3dc968d8635bd92a</Anchor>
+                             </Node>
+                             <Node>
                               <Name>initialise</Name>
                               <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                               <Anchor>ae9be577bb23f9472d8ca3e19519764f8</Anchor>
@@ -4866,6 +4875,11 @@
                               <Anchor>aeef6f9f7e29c79362df3469a0a5caafe</Anchor>
                              </Node>
                              <Node>
+                              <Name>outputAveragedMeasuresToCsvFile</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>a3f4f3192d392f26e324ef9760820d904</Anchor>
+                             </Node>
+                             <Node>
                               <Name>outputResults</Name>
                               <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                               <Anchor>a122d92e3710571c136339747bf0568e8</Anchor>
@@ -4878,7 +4892,7 @@
                              <Node>
                               <Name>outputResultsToCsvFile</Name>
                               <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
-                              <Anchor>afc247b9c7ded2ffde3ba0cb2b1267490</Anchor>
+                              <Anchor>a8f77ceb1535be09ef149aedcd6b1a84e</Anchor>
                              </Node>
                              <Node>
                               <Name>outputResultsToFile</Name>
@@ -4889,6 +4903,21 @@
                               <Name>outputResultsToImage</Name>
                               <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                               <Anchor>a5d10b68605d5a1711527b4b896b3b2cc</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>outputResultsToXMLFile</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>a574c1c58c9e0bab3d224e5b0a77e410a</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>outputResultsToXMLFile</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>a9f5690049f55799ac7a2741e97de679e</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>outputSpatialEntitiesToCsvFile</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>a64d541cd53a16dc5f204413820c6b0ef</Anchor>
                              </Node>
                              <Node>
                               <Name>polygonAngle</Name>
@@ -4924,6 +4953,16 @@
                               <Name>storeOutputImageOnDisk</Name>
                               <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
                               <Anchor>aa15a7546c4f8f77fcf85632386a4c5d5</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>avgClusterednessDegree</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>a6d06607ae468a56e48f8daba0a00df5b</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>avgDensity</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+                              <Anchor>a411629d4cf34809127662d625ba057c0</Anchor>
                              </Node>
                              <Node>
                               <Name>debugMode</Name>
@@ -5162,16 +5201,6 @@
                               <Anchor>a6319de4734b11039dbb90dfdd3e30e31</Anchor>
                              </Node>
                              <Node>
-                              <Name>fieldValuesToString</Name>
-                              <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                              <Anchor>a4fa8cfecf2fc3708c66022655a055dc6</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>getDensity</Name>
-                              <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                              <Anchor>abe2e6188ff7b749dc2f77169cb75bb95</Anchor>
-                             </Node>
-                             <Node>
                               <Name>getPolygon</Name>
                               <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                               <Anchor>a60e366526dfda2852871c29b70010fb7</Anchor>
@@ -5207,24 +5236,19 @@
                               <Anchor>a35c88944e2704571214b6e28dd657350</Anchor>
                              </Node>
                              <Node>
+                              <Name>updateDensity</Name>
+                              <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
+                              <Anchor>a995bd4ac0452715ec75bdb8c6ae51914</Anchor>
+                             </Node>
+                             <Node>
                               <Name>updatePerimeter</Name>
                               <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                               <Anchor>a58a4a22cb77fc6963592ec156458f310</Anchor>
                              </Node>
                              <Node>
-                              <Name>updateSpatialCollectionSpecificValues</Name>
-                              <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                              <Anchor>ac382fb7a5625d7ef573a311b8de8f248</Anchor>
-                             </Node>
-                             <Node>
                               <Name>validateInputValues</Name>
                               <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
                               <Anchor>a517b46fd89696f44086aafb1a9526995</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>density</Name>
-                              <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-                              <Anchor>af4eb62fddbe850271dfe15bb240b13bb</Anchor>
                              </Node>
                              <Node>
                               <Name>polygon</Name>
@@ -5324,6 +5348,11 @@
                               <Anchor>af0b30b57a664d7a5b1bb0ec6be5e8068</Anchor>
                              </Node>
                              <Node>
+                              <Name>getCollectionOfSpatialEntityPseudo3D</Name>
+                              <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
+                              <Anchor>a729a0433d9b929624960ae86e7cc1f23</Anchor>
+                             </Node>
+                             <Node>
                               <Name>getEpsilon</Name>
                               <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                               <Anchor>a730df92f22ef336a5e24ffdb9afa50c9</Anchor>
@@ -5377,21 +5406,6 @@
                               <Name>morphologicalClose</Name>
                               <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                               <Anchor>adcb8ab3ced63de9168734f0b24072705</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>outputAveragedMeasuresToCsvFile</Name>
-                              <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                              <Anchor>ac060acf205b878f79b67093f178f265f</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>outputRegionsToCsvFile</Name>
-                              <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                              <Anchor>a9289ea9b1ceb3bd21317170d72a889e4</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>outputResultsToCsvFile</Name>
-                              <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                              <Anchor>a9da92f7959fe324f24301c5bf780fbbd</Anchor>
                              </Node>
                              <Node>
                               <Name>outputResultsToImage</Name>
@@ -5484,16 +5498,6 @@
                               <Anchor>ab768a3bbfff9835b441a889ab2cb05a6</Anchor>
                              </Node>
                              <Node>
-                              <Name>avgClusterednessDegree</Name>
-                              <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                              <Anchor>ad2614f07ff1dfa25af6f7eaa10fe8ea8</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>avgDensity</Name>
-                              <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-                              <Anchor>a96d0cab2a5cd61b3820c87581fed9548</Anchor>
-                             </Node>
-                             <Node>
                               <Name>beta</Name>
                               <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
                               <Anchor>a23c831170c2264dd7e59067a1a7d3c8e</Anchor>
@@ -5583,192 +5587,222 @@
                           </Subnodes>
                          </Node>
                          <Node>
-                          <Name>SpatialCollection2D.hpp</Name>
-                          <Path>SpatialCollection2D_8hpp.html</Path>
+                          <Name>SpatialEntityPseudo3D.hpp</Name>
+                          <Path>SpatialEntityPseudo3D_8hpp.html</Path>
                           <Subnodes>
                            <Node>
-                            <Name>SpatialCollection2D</Name>
-                            <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
+                            <Name>SpatialEntityPseudo3D</Name>
+                            <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
                             <Subnodes>
                              <Node>
-                              <Name>SpatialCollection2D</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a3fa52a3930e498d763930a0c6a23a03c</Anchor>
+                              <Name>SpatialEntityPseudo3D</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>aa391fae1e086502392a2c89dcea27022</Anchor>
                              </Node>
                              <Node>
-                              <Name>~SpatialCollection2D</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>af70ae8f44636e7b2cf85705cffe44dfe</Anchor>
+                              <Name>~SpatialEntityPseudo3D</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a5d44f1cc668d9ef8b1bb5ba573a08c93</Anchor>
                              </Node>
                              <Node>
                               <Name>convertPoints</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ad3d11af329d5efa9bddf40b4573ebb2c</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a2175fefa47f158b22872af80010543b1</Anchor>
                              </Node>
                              <Node>
                               <Name>fieldValuesToString</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a1b70b9e25f8b82ac2195f75f89280800</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a232a5e4991e59dfc685107982fcaf0ce</Anchor>
                              </Node>
                              <Node>
                               <Name>getAngle</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a6bac1eb1ff6d06cdb0fd8036849b4f50</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a9f3394cfe46d66ae9c13d805ad460cb5</Anchor>
                              </Node>
                              <Node>
                               <Name>getArea</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a192a2f1ee9e3af90a40c8c7c47618965</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>ae85647e35a4cbb3ed193d039cf0395a9</Anchor>
                              </Node>
                              <Node>
                               <Name>getCentre</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ac8b879dca765e47b9e0ef86d440e28e6</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a4976534b2cdf55541701a7d5ea4ac0c5</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>getCircularMeasure</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a71759aa55f43ac2a6cc52b738f3b2c42</Anchor>
                              </Node>
                              <Node>
                               <Name>getClusterednessDegree</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a85ae2bf2457ca5dfc14a43dc492a2dda</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a532020267c8ffd4375e2d204debf8454</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>getDensity</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a98a29584b604d113db53e7009fd3cb79</Anchor>
                              </Node>
                              <Node>
                               <Name>getDistanceFromOrigin</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>aeef9f086af281569cf8f83dc2e1a0014</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a26530af3d05b0257386ce02498a5a84b</Anchor>
                              </Node>
                              <Node>
                               <Name>getPerimeter</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a736028971bede12a98dbb72d5b0f1354</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a455bf65abb87bd8b65d0cbe2234e4491</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>getRectangularMeasure</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a924e390a408a91abf394f29bec33d945</Anchor>
                              </Node>
                              <Node>
                               <Name>getShape</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a7144355774b561b660adfca759316037</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>af67de0727472a72bad311e71db8a1115</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>getShapeAsString</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>aaf8b45d68041be0f293eaf1bf40c76d3</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>getTriangularMeasure</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a9c7af7e1fc6a829c184c85baeaf1ebc2</Anchor>
                              </Node>
                              <Node>
                               <Name>initialise</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ae128b71f769a10ff5bc7452e2ec9d555</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a097edef313aee62069e36a13c8781d07</Anchor>
                              </Node>
                              <Node>
                               <Name>isCircularMeasure</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a5d9967a9c531f3abe0236fbef1b0faba</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a31066d1038679f8e9080719380403cad</Anchor>
                              </Node>
                              <Node>
                               <Name>isRectangularMeasure</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a1acb28a7aafd1f75c23a94dbc988b038</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>ad2984ec212e74437f3c7f3fc18ad555c</Anchor>
                              </Node>
                              <Node>
                               <Name>isTriangularMeasure</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>acce0e9ddd2d92e3ba843c3015352cab5</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>ac0e5bce32290f2595293bd7386e04de1</Anchor>
                              </Node>
                              <Node>
                               <Name>shapeAsString</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ac18243f267c777ab26bb836097a78c74</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a347c52b3cfad183a608ddbd018d8e409</Anchor>
                              </Node>
                              <Node>
                               <Name>toString</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a6ff771bb6022d9c991348f29227d10d9</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>abea1af0695f6f1a977b0caa3428fc433</Anchor>
                              </Node>
                              <Node>
                               <Name>updateArea</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a160aae10901ef5198db1b03bdef68065</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>aa8c1cd3248c8926edbb1b47006ded902</Anchor>
                              </Node>
                              <Node>
                               <Name>updateCentrePoint</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>aab860163169deb76a7e853df32902ab1</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a8e81fdb72e8510d8f77ce8b518a74843</Anchor>
                              </Node>
                              <Node>
                               <Name>updateClusterednessDegree</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a7deb494a09ce1f44b1b7e8ac5255cd0b</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a750ba1b5e457d9d6504fc8320a76e002</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>updateDensity</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a28fa63c1101f3f5ba7a0001099ee3159</Anchor>
                              </Node>
                              <Node>
                               <Name>updateMeasures</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a8e5a2af581895142da9b50eeeabeb7be</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a24ad8b8b5768be1f917a1fb893df8c6c</Anchor>
                              </Node>
                              <Node>
                               <Name>updateMeasuresIfRequired</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a731de1009ba24b4fda5003c9cec5196c</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a151cd8c0fdfbc98cfd0adc99b9943369</Anchor>
                              </Node>
                              <Node>
                               <Name>updatePerimeter</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a6751a928c631fe725a2e7c5226e3720b</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>acb00990b4b812367b7ae8f16028b8c32</Anchor>
                              </Node>
                              <Node>
                               <Name>updateShape</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ab26bc346c1b0b0d17104c7d5cfb170bb</Anchor>
-                             </Node>
-                             <Node>
-                              <Name>updateSpatialCollectionSpecificValues</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ad94bce09032b184ebfd5b5006217c683</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>ad50d0866df26b63dc86853a9ab0c545d</Anchor>
                              </Node>
                              <Node>
                               <Name>angle</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ab452753ab21ee26732afb77a6478b3ce</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>aa077aab864e659f93522863cc10824bb</Anchor>
                              </Node>
                              <Node>
                               <Name>area</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ac570cc755e52aeb9deacf12d223a4a3a</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a1621d5b3ece663bf4c5501940e860292</Anchor>
                              </Node>
                              <Node>
                               <Name>centre</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>afe9ef6b70ff53161cb02749444ae372c</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a647c25f9544d5537938bbadefc436634</Anchor>
                              </Node>
                              <Node>
                               <Name>circularMeasure</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a4c58c82dd3d67d670b554bfaeb2b19ba</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>aa4ac170fb21e9697358d47ba6ea7a267</Anchor>
                              </Node>
                              <Node>
                               <Name>clusterednessDegree</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>acd11d0bbeb60a1168bd2c2fbbc6fe965</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a22a84312e7c497cc5fbc4d8b41d8fd45</Anchor>
+                             </Node>
+                             <Node>
+                              <Name>density</Name>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>aedf807816f8c2f7cd961acfe0042fc56</Anchor>
                              </Node>
                              <Node>
                               <Name>distanceFromOrigin</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ac2a5d3f8c2cb878c710d821c536b8a4f</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a056f67b90ed41c0e6dc4df31b71ad906</Anchor>
                              </Node>
                              <Node>
                               <Name>perimeter</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>ae8045702b66fd813cfff49fa86b02e68</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>aee84039be272f902a2d871f61da47360</Anchor>
                              </Node>
                              <Node>
                               <Name>rectangularMeasure</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>aad7d79a7bd299d4d3c08a864cfcb77c3</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>aabb799c34513ed1d3008d807cdbdea29</Anchor>
                              </Node>
                              <Node>
                               <Name>shape</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a4df95ecca90ce33332a69e0aefcf73d9</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>abad3acd3d7067e8e86e168e692cb2c2e</Anchor>
                              </Node>
                              <Node>
                               <Name>triangularMeasure</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a578070e91858e9e87de1e0f5771d6c3f</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a7e8a7c888b5ab5a204f6d4ffa283709c</Anchor>
                              </Node>
                              <Node>
                               <Name>updateFlag</Name>
-                              <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-                              <Anchor>a6d942f2856adc673e9d361596744b37f</Anchor>
+                              <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+                              <Anchor>a2fc7e2c00fcd725cb247b27c69726c8b</Anchor>
                              </Node>
                             </Subnodes>
                            </Node>
@@ -6175,8 +6209,8 @@
                     </Subnodes>
                    </Node>
                    <Node>
-                    <Name>SpatialCollection2D.cpp</Name>
-                    <Path>SpatialCollection2D_8cpp.html</Path>
+                    <Name>SpatialEntityPseudo3D.cpp</Name>
+                    <Path>SpatialEntityPseudo3D_8cpp.html</Path>
                    </Node>
                   </Subnodes>
                  </Node>

@@ -1,0 +1,5 @@
+<map id="multiscale::analysis::SpatialEntityPseudo3D::getPerimeter" name="multiscale::analysis::SpatialEntityPseudo3D::getPerimeter">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Detector.html#af11495dceabe108397805a770fb9c7b4" title="Construct the property tree corresponding to the given pseudo 3D spatial entity." alt="" coords="220,5,436,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a3322e1cf4177d40c55c1ad25b27abdc6" title="Check if the provided cluster is non&#45;empty." alt="" coords="227,75,429,139"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a6bf0ac91b81cdcf46fe8e50f6dd4c9a8" title="Get the collection of clusters detected in the image." alt="" coords="487,75,692,139"/>
+</map>

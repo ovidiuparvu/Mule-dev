@@ -15,5 +15,5 @@ var dir_f0033717cfd9395379e47f6b9f751443 =
     [ "RegionDetector.cpp", "RegionDetector_8cpp.html", "RegionDetector_8cpp" ],
     [ "Silhouette.cpp", "Silhouette_8cpp.html", null ],
     [ "SimulationDetectClusters.cpp", "SimulationDetectClusters_8cpp.html", "SimulationDetectClusters_8cpp" ],
-    [ "SpatialCollection2D.cpp", "SpatialCollection2D_8cpp.html", null ]
+    [ "SpatialEntityPseudo3D.cpp", "SpatialEntityPseudo3D_8cpp.html", null ]
 ];

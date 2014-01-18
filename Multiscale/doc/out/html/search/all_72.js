@@ -27,7 +27,7 @@ var searchData=
   ['rectangularmatfactory_2ecpp',['RectangularMatFactory.cpp',['../RectangularMatFactory_8cpp.html',1,'']]],
   ['rectangularmatfactory_2ehpp',['RectangularMatFactory.hpp',['../RectangularMatFactory_8hpp.html',1,'']]],
   ['rectangularmatfactorysample_2ecpp',['RectangularMatFactorySample.cpp',['../RectangularMatFactorySample_8cpp.html',1,'']]],
-  ['rectangularmeasure',['rectangularMeasure',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aad7d79a7bd299d4d3c08a864cfcb77c3',1,'multiscale::analysis::SpatialCollection2D']]],
+  ['rectangularmeasure',['rectangularMeasure',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aabb799c34513ed1d3008d807cdbdea29',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['red',['red',['../classmultiscale_1_1RGBColourGenerator.html#a11da8c4a9ca59ea8c20177cbb5b57ceb',1,'multiscale::RGBColourGenerator']]],
   ['region',['Region',['../classmultiscale_1_1analysis_1_1Region.html#a4f4d296d1a4cbeb10690da7af5ba91d2',1,'multiscale::analysis::Region']]],
   ['region',['Region',['../classmultiscale_1_1analysis_1_1Region.html',1,'multiscale::analysis']]],

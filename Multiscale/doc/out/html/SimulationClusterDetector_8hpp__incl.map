@@ -1,11 +1,11 @@
 <map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp">
-<area shape="rect" id="node3" href="$ClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="599,153,783,199"/>
-<area shape="rect" id="node5" href="$Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="320,249,453,295"/>
-<area shape="rect" id="node9" href="$Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="41,353,175,399"/>
-<area shape="rect" id="node38" href="$Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="895,353,1036,399"/>
-<area shape="rect" id="node18" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="261,457,408,503"/>
-<area shape="rect" id="node20" href="$SpatialCollection2D_8hpp.html" title="multiscale/analysis\l/spatial/SpatialCollection2\lD.hpp" alt="" coords="300,344,473,408"/>
-<area shape="rect" id="node24" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="649,353,820,399"/>
+<area shape="rect" id="node3" href="$ClusterDetector_8hpp.html" title="multiscale/analysis\l/spatial/ClusterDetector.hpp" alt="" coords="613,153,797,199"/>
+<area shape="rect" id="node5" href="$Cluster_8hpp.html" title="multiscale/analysis\l/spatial/Cluster.hpp" alt="" coords="243,249,376,295"/>
+<area shape="rect" id="node9" href="$Entity_8hpp.html" title="multiscale/analysis\l/spatial/Entity.hpp" alt="" coords="37,353,171,399"/>
+<area shape="rect" id="node38" href="$Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="872,249,1013,295"/>
+<area shape="rect" id="node18" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="285,457,432,503"/>
+<area shape="rect" id="node20" href="$SpatialEntityPseudo3D_8hpp.html" title="multiscale/analysis\l/spatial/SpatialEntityPseudo3\lD.hpp" alt="" coords="347,344,539,408"/>
+<area shape="rect" id="node24" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="715,353,885,399"/>
 <area shape="rect" id="node11" href="$DataPoint_8hpp.html" title="multiscale/analysis\l/spatial/DataPoint.hpp" alt="" coords="5,457,155,503"/>
-<area shape="rect" id="node26" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="651,465,829,495"/>
+<area shape="rect" id="node26" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="711,465,889,495"/>
 </map>

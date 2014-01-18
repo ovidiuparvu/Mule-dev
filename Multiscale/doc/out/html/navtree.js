@@ -38,9 +38,9 @@ var NAVTREEINDEX =
 [
 "AlgorithmException_8hpp.html",
 "RectangularMapCsvToInputFiles_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb",
-"classmultiscale_1_1analysis_1_1Cluster.html#aca93cb46704a3e824151e99b7a53d20d",
-"classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a578070e91858e9e87de1e0f5771d6c3f",
-"functions_0x68.html"
+"classmultiscale_1_1analysis_1_1Cluster.html#aeb032303a79c6bd43385fcaad9c50742",
+"classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a2fc7e2c00fcd725cb247b27c69726c8b",
+"functions_0x65.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

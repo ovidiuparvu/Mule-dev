@@ -4,7 +4,6 @@ var classmultiscale_1_1analysis_1_1Cluster =
     [ "~Cluster", "classmultiscale_1_1analysis_1_1Cluster.html#a4bddfc88ac859610acab15dd12851b58", null ],
     [ "addEntity", "classmultiscale_1_1analysis_1_1Cluster.html#a2bc85629ab2bd6d01c6d2df3d79ba497", null ],
     [ "areValidOriginDependentValues", "classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e", null ],
-    [ "fieldValuesToString", "classmultiscale_1_1analysis_1_1Cluster.html#ac231dc426e9e2f1767660192de859aad", null ],
     [ "getEntities", "classmultiscale_1_1analysis_1_1Cluster.html#aedd64d46ad3ea61ce7bb76be1f0906e6", null ],
     [ "getEntitiesCentrePoints", "classmultiscale_1_1analysis_1_1Cluster.html#af24261b08126bc2d2f51144056c6d353", null ],
     [ "getEntitiesContourPoints", "classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20", null ],
@@ -13,7 +12,6 @@ var classmultiscale_1_1analysis_1_1Cluster =
     [ "getMinAreaEnclosingCircleRadius", "classmultiscale_1_1analysis_1_1Cluster.html#aecf5fa56fa21e3b22130242694be744f", null ],
     [ "getMinAreaEnclosingRect", "classmultiscale_1_1analysis_1_1Cluster.html#a6417e3328622a848a7dedeebb5821750", null ],
     [ "getMinAreaEnclosingTriangle", "classmultiscale_1_1analysis_1_1Cluster.html#ab28150a739c35d66874c219fd38b462b", null ],
-    [ "getPileUpDegree", "classmultiscale_1_1analysis_1_1Cluster.html#acff6c7308641af041598bed55005f2bf", null ],
     [ "initialise", "classmultiscale_1_1analysis_1_1Cluster.html#a3af6980def4fbfea38ccd86620f127f8", null ],
     [ "isCircularMeasure", "classmultiscale_1_1analysis_1_1Cluster.html#a579730478055ae93d659f268375a492d", null ],
     [ "isRectangularMeasure", "classmultiscale_1_1analysis_1_1Cluster.html#aca93cb46704a3e824151e99b7a53d20d", null ],
@@ -22,14 +20,12 @@ var classmultiscale_1_1analysis_1_1Cluster =
     [ "updateArea", "classmultiscale_1_1analysis_1_1Cluster.html#a3128a3b20c28619ccdd6a25208b8c83e", null ],
     [ "updateCentrePoint", "classmultiscale_1_1analysis_1_1Cluster.html#a1991d68cc9e76dab54c134df6beb59cb", null ],
     [ "updateClusterednessDegree", "classmultiscale_1_1analysis_1_1Cluster.html#a2279d1567eec7c0b1e29cae26cfb4d73", null ],
+    [ "updateDensity", "classmultiscale_1_1analysis_1_1Cluster.html#ac0300d9d05b0eb3aecd5724a14c2da41", null ],
     [ "updatePerimeter", "classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed", null ],
-    [ "updatePileUpDegree", "classmultiscale_1_1analysis_1_1Cluster.html#a66d6f21c8de45bb5080264a4f87e34de", null ],
-    [ "updateSpatialCollectionSpecificValues", "classmultiscale_1_1analysis_1_1Cluster.html#aee8272e740fe640a6bf5260746d34080", null ],
     [ "validateOriginDependentValues", "classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd", null ],
     [ "entities", "classmultiscale_1_1analysis_1_1Cluster.html#a820298479651328fb79d92a65f7923d6", null ],
     [ "minAreaEnclosingCircleCentre", "classmultiscale_1_1analysis_1_1Cluster.html#a47e672060b4025dcd07ebb9c5fd99f0c", null ],
     [ "minAreaEnclosingCircleRadius", "classmultiscale_1_1analysis_1_1Cluster.html#a070994481884a4c7f5aa4879ce7b0568", null ],
     [ "minAreaEnclosingRect", "classmultiscale_1_1analysis_1_1Cluster.html#aeb032303a79c6bd43385fcaad9c50742", null ],
-    [ "minAreaEnclosingTriangle", "classmultiscale_1_1analysis_1_1Cluster.html#a7678d48581202c3ecc3f1283a1730dfa", null ],
-    [ "pileUpDegree", "classmultiscale_1_1analysis_1_1Cluster.html#ab7e6a3501bc6e94c19b448f502d6ecec", null ]
+    [ "minAreaEnclosingTriangle", "classmultiscale_1_1analysis_1_1Cluster.html#a7678d48581202c3ecc3f1283a1730dfa", null ]
 ];

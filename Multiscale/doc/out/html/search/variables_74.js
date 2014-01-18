@@ -16,5 +16,5 @@ var searchData=
   ['trackbar_5fregion_5farea_5fthresh',['TRACKBAR_REGION_AREA_THRESH',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a6a2711f5cabb3af04a969fe38e1ef473',1,'multiscale::analysis::RegionDetector']]],
   ['trackbar_5fthreshold',['TRACKBAR_THRESHOLD',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a7548c716410a4cb88cb41498de6b509c',1,'multiscale::analysis::RegionDetector']]],
   ['triangle',['triangle',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a02aa9bcd10630d27293e656233e3f64e',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
-  ['triangularmeasure',['triangularMeasure',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a578070e91858e9e87de1e0f5771d6c3f',1,'multiscale::analysis::SpatialCollection2D']]]
+  ['triangularmeasure',['triangularMeasure',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a7e8a7c888b5ab5a204f6d4ffa283709c',1,'multiscale::analysis::SpatialEntityPseudo3D']]]
 ];

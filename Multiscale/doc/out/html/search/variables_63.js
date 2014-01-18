@@ -2,11 +2,10 @@ var searchData=
 [
   ['c',['c',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a758f39b2d0cf35337f28d8ed871c2c0b',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['canny_5fthresh_5fmax',['CANNY_THRESH_MAX',['../classmultiscale_1_1analysis_1_1RegionDetector.html#ad6590f4617a6b3d34c6032f8febd7beb',1,'multiscale::analysis::RegionDetector']]],
-  ['centre',['centre',['../classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef',1,'multiscale::analysis::Entity::centre()'],['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#afe9ef6b70ff53161cb02749444ae372c',1,'multiscale::analysis::SpatialCollection2D::centre()']]],
+  ['centre',['centre',['../classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef',1,'multiscale::analysis::Entity::centre()'],['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a647c25f9544d5537938bbadefc436634',1,'multiscale::analysis::SpatialEntityPseudo3D::centre()']]],
   ['circlesiterator',['circlesIterator',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#ad4cf12c7f3951f0bb388939797cbcc0c',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
-  ['circularmeasure',['circularMeasure',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#a4c58c82dd3d67d670b554bfaeb2b19ba',1,'multiscale::analysis::SpatialCollection2D']]],
-  ['clusterednessdegree',['clusterednessDegree',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#acd11d0bbeb60a1168bd2c2fbbc6fe965',1,'multiscale::analysis::SpatialCollection2D']]],
-  ['clusterednessindex',['clusterednessIndex',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a5e2bf77041bd0d5047dd16c4632c16b7',1,'multiscale::analysis::ClusterDetector']]],
+  ['circularmeasure',['circularMeasure',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aa4ac170fb21e9697358d47ba6ea7a267',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
+  ['clusterednessdegree',['clusterednessDegree',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a22a84312e7c497cc5fbc4d8b41d8fd45',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['clustering_5fborder',['CLUSTERING_BORDER',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a28f37ffc029ccd1d121cbc4467851ce2',1,'multiscale::analysis::DBSCAN']]],
   ['clustering_5fnoise',['CLUSTERING_NOISE',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a480b43a01f8652787a4b0f61b00ee3cf',1,'multiscale::analysis::DBSCAN']]],
   ['clustering_5funclassified',['CLUSTERING_UNCLASSIFIED',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a6f60961639281a807b63650faf01511b',1,'multiscale::analysis::DBSCAN']]],
@@ -24,8 +23,9 @@ var searchData=
   ['contour_5fclosed',['CONTOUR_CLOSED',['../classmultiscale_1_1analysis_1_1Region.html#a52c0c66ccfe38dc19379abaeba529f19',1,'multiscale::analysis::Region']]],
   ['contour_5foriented',['CONTOUR_ORIENTED',['../classmultiscale_1_1analysis_1_1Region.html#a875a0f14dacf6904cabfa1f31020e6e2',1,'multiscale::analysis::Region']]],
   ['contourpoints',['contourPoints',['../classmultiscale_1_1analysis_1_1Entity.html#a0199b0a0e5b22809015ecbc23d17785e',1,'multiscale::analysis::Entity']]],
-  ['convex_5fhull_5fclockwise',['CONVEX_HULL_CLOCKWISE',['../classmultiscale_1_1analysis_1_1SpatialCollection2D.html#aa379350e6bee0f58f380152048aa4c21',1,'multiscale::analysis::SpatialCollection2D::CONVEX_HULL_CLOCKWISE()'],['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a951b35e4f359e61301deb0840abea51a',1,'multiscale::MinEnclosingTriangleFinder::CONVEX_HULL_CLOCKWISE()']]],
+  ['convex_5fhull_5fclockwise',['CONVEX_HULL_CLOCKWISE',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad92f43d2b14c77def3f7a70b54810dd2',1,'multiscale::analysis::SpatialEntityPseudo3D::CONVEX_HULL_CLOCKWISE()'],['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a951b35e4f359e61301deb0840abea51a',1,'multiscale::MinEnclosingTriangleFinder::CONVEX_HULL_CLOCKWISE()']]],
   ['convexhull',['convexHull',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a309e2484e202fab797520fc15517d95d',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
+  ['csv_5fextension',['CSV_EXTENSION',['../classmultiscale_1_1analysis_1_1Detector.html#a5458417daa8430ea8ebbe1c25cb26f41',1,'multiscale::analysis::Detector']]],
   ['currentnumber',['currentNumber',['../classmultiscale_1_1StandardNumberIterator.html#a1f40c321994d53f705331badd64542be',1,'multiscale::StandardNumberIterator']]],
   ['currentnumberdigits',['currentNumberDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#af42ebeea695a31c2da714332c520ae79',1,'multiscale::LexicographicNumberIterator']]]
 ];

@@ -1589,6 +1589,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>constructExplanatoryString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiscaleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiscaleException.html</Path>
+    <Anchor>a294b01073c3974e69114bec9f5f87c0a</Anchor>
+    <Abstract>Construct the explanatory string.</Abstract>
+    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::ExceptionHandler</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -1701,6 +1713,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>constructExplanatoryString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiscaleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiscaleException.html</Path>
+    <Anchor>a294b01073c3974e69114bec9f5f87c0a</Anchor>
+    <Abstract>Construct the explanatory string.</Abstract>
+    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::InvalidInputException</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -1790,6 +1814,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>constructExplanatoryString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiscaleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiscaleException.html</Path>
+    <Anchor>a294b01073c3974e69114bec9f5f87c0a</Anchor>
+    <Abstract>Construct the explanatory string.</Abstract>
+    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::IOException</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -1853,6 +1889,18 @@
     <Path>classmultiscale_1_1MultiscaleException.html</Path>
     <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
     <Abstract>Returns an explanatory string.</Abstract>
+    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>constructExplanatoryString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiscaleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiscaleException.html</Path>
+    <Anchor>a294b01073c3974e69114bec9f5f87c0a</Anchor>
+    <Abstract>Construct the explanatory string.</Abstract>
     <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -2013,6 +2061,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>constructExplanatoryString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiscaleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiscaleException.html</Path>
+    <Anchor>a294b01073c3974e69114bec9f5f87c0a</Anchor>
+    <Abstract>Construct the explanatory string.</Abstract>
+    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::UnimplementedMethodException</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -2098,6 +2158,18 @@
     <Path>classmultiscale_1_1MultiscaleException.html</Path>
     <Anchor>a71909cca9e9a37254846ad73eb3827d9</Anchor>
     <Abstract>Returns an explanatory string.</Abstract>
+    <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>constructExplanatoryString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiscaleException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiscaleException.html</Path>
+    <Anchor>a294b01073c3974e69114bec9f5f87c0a</Anchor>
+    <Abstract>Construct the explanatory string.</Abstract>
     <DeclaredIn>MultiscaleException.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4887,14 +4959,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputResultsToCsvFile</Name>
+      <Name>getCollectionOfSpatialEntityPseudo3D</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a6137f44f74afcac0584b1ff3f49f0ab8</Anchor>
-    <Abstract>Output the information computed for the clusters to a csv file.</Abstract>
+    <Anchor>a6bf0ac91b81cdcf46fe8e50f6dd4c9a8</Anchor>
+    <Abstract>Get the collection of clusters detected in the image.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isNonEmptyCluster</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a3322e1cf4177d40c55c1ad25b27abdc6</Anchor>
+    <Abstract>Check if the provided cluster is non-empty.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -4920,26 +5004,6 @@
     <Anchor>ab1c2514fb8599f74bf010e81154a9bf7</Anchor>
     <Abstract>Return non-zero value for minPoints.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>clusterednessIndex</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a5e2bf77041bd0d5047dd16c4632c16b7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>avgPileUpDegree</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a6f6cfa50cf21ac400d41d6c6f2112bc9</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -4983,6 +5047,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>OUTPUT_CLUSTEREDNESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8793daa563094fdcd7447930a4fc0974</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OUTPUT_DENSITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a920029d6b618aa2daaccfb824c5878b8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_OUTPUT_WITHOUT_DETECT</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -5013,13 +5097,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>OUTPUT_EXTENSION</Name>
+      <Name>CSV_EXTENSION</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
-    <Anchor>a3030def7fe61741fcc8f5c8b50f40e57</Anchor>
+    <Anchor>a5458417daa8430ea8ebbe1c25cb26f41</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5030,6 +5114,16 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>acc73b4fb215305ffd7f3d6df8807cc5e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>XML_EXTENSION</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a89d56e81155e57f3dcaeef293e89efc2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5060,6 +5154,156 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>aa9acc60392e3eb0f0a9c3019c63301ae</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_COMMENT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a561d5a58b94e4ccce28726c98f6ca71e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_COMMENT_CONTENTS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>adf6527cf12c5267d28210a0a60ce43cf</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8cade9693bb6ce63be30adebd318fd21</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aac731a3a55f704a5b3ba203a3488c78d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a314632feed799f84c8db021cb28df3d8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a984c332f78fb9340673841a6b8171ca8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a19ac6de22cbdfafbcfa25f0221b2937b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a56f7eb418502cbb93307e6f7f17d05be</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a28dedee0c192d3be211cb13d4b89dffa</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a77f57852e8d5c0df7c3d1bf98044c7af</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae5feb118badcb1d403a6f417b714c66f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8f99a2eba7afe01476e7830dcd955f00</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a1b0e3add734e789ef8b5993a155799e4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aec49c4524588c30df34ff377d70bff65</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>afb22e70184ac8fe022345962d2fe7934</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5104,18 +5348,6 @@
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
     <Anchor>a2bc85629ab2bd6d01c6d2df3d79ba497</Anchor>
     <Abstract>Add a new entity to the cluster.</Abstract>
-    <DeclaredIn>Cluster.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>getPileUpDegree</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::Cluster</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>acff6c7308641af041598bed55005f2bf</Anchor>
-    <Abstract>Get the degree of pile up.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -5204,133 +5436,181 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SpatialCollection2D</Name>
+      <Name>SpatialEntityPseudo3D</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a3fa52a3930e498d763930a0c6a23a03c</Anchor>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa391fae1e086502392a2c89dcea27022</Anchor>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~SpatialCollection2D</Name>
+      <Name>~SpatialEntityPseudo3D</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>af70ae8f44636e7b2cf85705cffe44dfe</Anchor>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a5d44f1cc668d9ef8b1bb5ba573a08c93</Anchor>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getClusterednessDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a85ae2bf2457ca5dfc14a43dc492a2dda</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a532020267c8ffd4375e2d204debf8454</Anchor>
     <Abstract>Get the clusteredness degree.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a98a29584b604d113db53e7009fd3cb79</Anchor>
+    <Abstract>Get the density.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getArea</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a192a2f1ee9e3af90a40c8c7c47618965</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ae85647e35a4cbb3ed193d039cf0395a9</Anchor>
     <Abstract>Get the area.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getPerimeter</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a736028971bede12a98dbb72d5b0f1354</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a455bf65abb87bd8b65d0cbe2234e4491</Anchor>
     <Abstract>Get the perimeter.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getDistanceFromOrigin</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aeef9f086af281569cf8f83dc2e1a0014</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a26530af3d05b0257386ce02498a5a84b</Anchor>
     <Abstract>Get the distance from the origin.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getAngle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6bac1eb1ff6d06cdb0fd8036849b4f50</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a9f3394cfe46d66ae9c13d805ad460cb5</Anchor>
     <Abstract>Get the angle.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getShape</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a7144355774b561b660adfca759316037</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>af67de0727472a72bad311e71db8a1115</Anchor>
     <Abstract>Get the shape best fitting the spatial collection.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getShapeAsString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aaf8b45d68041be0f293eaf1bf40c76d3</Anchor>
+    <Abstract>Get the shape best fitting the spatial collection as a string.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getTriangularMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a9c7af7e1fc6a829c184c85baeaf1ebc2</Anchor>
+    <Abstract>Get the measure indicating how much the shape of the contour resembles a triangle.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getRectangularMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a924e390a408a91abf394f29bec33d945</Anchor>
+    <Abstract>Get the measure indicating how much the shape of the contour resembles a rectangle.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getCircularMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a71759aa55f43ac2a6cc52b738f3b2c42</Anchor>
+    <Abstract>Get the measure indicating how much the shape of the contour resembles a circle.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getCentre</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac8b879dca765e47b9e0ef86d440e28e6</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a4976534b2cdf55541701a7d5ea4ac0c5</Anchor>
     <Abstract>Get the point defining the centre of the entity.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>toString</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6ff771bb6022d9c991348f29227d10d9</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>abea1af0695f6f1a977b0caa3428fc433</Anchor>
     <Abstract>Get the string representation of all field values.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>fieldNamesToString</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>clm</Type>
-      <Scope>multiscale::analysis::Cluster</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a06984724ab3999d2bee36ce355dfe6bb</Anchor>
-    <Abstract>Get a string representation of all the field names printed in the &amp;quot;toString&amp;quot; method.</Abstract>
-    <DeclaredIn>Cluster.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5390,18 +5670,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>updateSpatialCollectionSpecificValues</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::Cluster</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>aee8272e740fe640a6bf5260746d34080</Anchor>
-    <Abstract>Update the values of all measures.</Abstract>
-    <DeclaredIn>Cluster.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>updateClusterednessDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -5414,13 +5682,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>updatePileUpDegree</Name>
+      <Name>updateDensity</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::Cluster</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>a66d6f21c8de45bb5080264a4f87e34de</Anchor>
+    <Anchor>ac0300d9d05b0eb3aecd5724a14c2da41</Anchor>
     <Abstract>Update the value of the pile up degree.</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
   </Token>
@@ -5498,18 +5766,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>fieldValuesToString</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::Cluster</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>ac231dc426e9e2f1767660192de859aad</Anchor>
-    <Abstract>Get a string representation of all the field values.</Abstract>
-    <DeclaredIn>Cluster.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>validateOriginDependentValues</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -5531,16 +5787,6 @@
     <Anchor>a05e8593354fabd5c1ca18b6a2b19096e</Anchor>
     <Abstract>Check if the origin dependent values are valid (i.e. non-negative)</Abstract>
     <DeclaredIn>Cluster.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>pileUpDegree</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::Cluster</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Cluster.html</Path>
-    <Anchor>ab7e6a3501bc6e94c19b448f502d6ecec</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -5594,243 +5840,277 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>fieldNamesToString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a3c24e3f06c999002f18e1ddd8be3f927</Anchor>
+    <Abstract>Get a string representation of all the field names printed in the &amp;quot;toString&amp;quot; method.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>updateMeasuresIfRequired</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a731de1009ba24b4fda5003c9cec5196c</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a151cd8c0fdfbc98cfd0adc99b9943369</Anchor>
     <Abstract>Update the values of all measures if required.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateMeasures</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a8e5a2af581895142da9b50eeeabeb7be</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a24ad8b8b5768be1f917a1fb893df8c6c</Anchor>
     <Abstract>Update the values of all measures.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateShape</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ab26bc346c1b0b0d17104c7d5cfb170bb</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ad50d0866df26b63dc86853a9ab0c545d</Anchor>
     <Abstract>Update the shape of the cluster.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>shapeAsString</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac18243f267c777ab26bb836097a78c74</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a347c52b3cfad183a608ddbd018d8e409</Anchor>
     <Abstract>Return the shape of the cluster as a string.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fieldValuesToString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a232a5e4991e59dfc685107982fcaf0ce</Anchor>
+    <Abstract>Return the values of the fields as a string.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>convertPoints</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ad3d11af329d5efa9bddf40b4573ebb2c</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a2175fefa47f158b22872af80010543b1</Anchor>
     <Abstract>Convert the collection of points from type Point to type Point2f.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>clusterednessDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>acd11d0bbeb60a1168bd2c2fbbc6fe965</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a22a84312e7c497cc5fbc4d8b41d8fd45</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>density</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aedf807816f8c2f7cd961acfe0042fc56</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>area</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac570cc755e52aeb9deacf12d223a4a3a</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a1621d5b3ece663bf4c5501940e860292</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>perimeter</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae8045702b66fd813cfff49fa86b02e68</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aee84039be272f902a2d871f61da47360</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>distanceFromOrigin</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac2a5d3f8c2cb878c710d821c536b8a4f</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a056f67b90ed41c0e6dc4df31b71ad906</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>angle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ab452753ab21ee26732afb77a6478b3ce</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa077aab864e659f93522863cc10824bb</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>triangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a578070e91858e9e87de1e0f5771d6c3f</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a7e8a7c888b5ab5a204f6d4ffa283709c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>rectangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aad7d79a7bd299d4d3c08a864cfcb77c3</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aabb799c34513ed1d3008d807cdbdea29</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>circularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a4c58c82dd3d67d670b554bfaeb2b19ba</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa4ac170fb21e9697358d47ba6ea7a267</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>shape</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a4df95ecca90ce33332a69e0aefcf73d9</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>abad3acd3d7067e8e86e168e692cb2c2e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>centre</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>afe9ef6b70ff53161cb02749444ae372c</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a647c25f9544d5537938bbadefc436634</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateFlag</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6d942f2856adc673e9d361596744b37f</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a2fc7e2c00fcd725cb247b27c69726c8b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_TRIANGLE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae666d6dc811ea20b7ce3cf2a66476fc1</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a8ad67f0073da808ad1badedf2e613ed3</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_RECTANGLE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ad98d817f86185eb9c7f0d061b9c40cce</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a9b80a7c37a8c82fed02a1e23b1173843</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_CIRCLE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>acf997f52cf871815e519a460336e3631</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a561e862c97a4717eb5b4977c55d05d90</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_UNDEFINED</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>afce51890a0eebb60c5622a39485c2d2a</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ae4e33ad9bcad430b929b601c5571a6fd</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>OUTPUT_SEPARATOR</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a489bef8926aecc45acb7f54d8802def1</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a4ee08be9b4119b90f0a996704d179635</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>ERR_INPUT</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae6688ddf08e23397e0798e4280d7f1ab</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a5882e2e18343ccee821f1bd6b9c23724</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>CONVEX_HULL_CLOCKWISE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aa379350e6bee0f58f380152048aa4c21</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ad92f43d2b14c77def3f7a70b54810dd2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6177,14 +6457,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputResultsToCsvFile</Name>
+      <Name>getCollectionOfSpatialEntityPseudo3D</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::ClusterDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a6137f44f74afcac0584b1ff3f49f0ab8</Anchor>
-    <Abstract>Output the information computed for the clusters to a csv file.</Abstract>
+    <Anchor>a6bf0ac91b81cdcf46fe8e50f6dd4c9a8</Anchor>
+    <Abstract>Get the collection of clusters detected in the image.</Abstract>
+    <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isNonEmptyCluster</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::ClusterDetector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
+    <Anchor>a3322e1cf4177d40c55c1ad25b27abdc6</Anchor>
+    <Abstract>Check if the provided cluster is non-empty.</Abstract>
     <DeclaredIn>ClusterDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6447,7 +6739,91 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>a2055dc183dd3601d9979bc99a3222eb4</Anchor>
-    <Abstract>Output the results to a file.</Abstract>
+    <Abstract>Output the results to a csv file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8f77ceb1535be09ef149aedcd6b1a84e</Anchor>
+    <Abstract>Output the results to a file using the provided output file stream.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputSpatialEntitiesToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a64d541cd53a16dc5f204413820c6b0ef</Anchor>
+    <Abstract>Output the pseudo 3D spatial entities to a csv file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputAveragedMeasuresToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a3f4f3192d392f26e324ef9760820d904</Anchor>
+    <Abstract>Output the averaged measures to a csv file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToXMLFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a574c1c58c9e0bab3d224e5b0a77e410a</Anchor>
+    <Abstract>Output the results to an xml file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToXMLFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a9f5690049f55799ac7a2741e97de679e</Anchor>
+    <Abstract>Output the clusters and averaged measures to an xml file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>addSpatialEntitiesToPropertyTree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a11bf4fa46f51ac033b635d19e92998ae</Anchor>
+    <Abstract>Add the pseudo 3D spatial entities to the property tree.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>constructPropertyTree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>af11495dceabe108397805a770fb9c7b4</Anchor>
+    <Abstract>Construct the property tree corresponding to the given pseudo 3D spatial entity.</Abstract>
     <DeclaredIn>Detector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -6512,26 +6888,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>clusterednessIndex</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a5e2bf77041bd0d5047dd16c4632c16b7</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>avgPileUpDegree</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a6f6cfa50cf21ac400d41d6c6f2112bc9</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>entityPileupDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -6569,6 +6925,26 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
     <Anchor>aa81a8649bc743389c2fc1919d47eb5b3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avgClusterednessDegree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a6d06607ae468a56e48f8daba0a00df5b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avgDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a411629d4cf34809127662d625ba057c0</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6639,26 +7015,6 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>a002237e2ad684975a7c8b1e12dd7d780</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>OUTPUT_CLUSTEREDNESS</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>a4fa4c068778bee7160af42020fd25ef0</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>OUTPUT_PILE_UP</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::ClusterDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1ClusterDetector.html</Path>
-    <Anchor>ac695ff11d0e6dd550874cadf507fc11c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6742,6 +7098,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>OUTPUT_CLUSTEREDNESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8793daa563094fdcd7447930a4fc0974</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OUTPUT_DENSITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a920029d6b618aa2daaccfb824c5878b8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_OUTPUT_WITHOUT_DETECT</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -6772,13 +7148,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>OUTPUT_EXTENSION</Name>
+      <Name>CSV_EXTENSION</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
-    <Anchor>a3030def7fe61741fcc8f5c8b50f40e57</Anchor>
+    <Anchor>a5458417daa8430ea8ebbe1c25cb26f41</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6789,6 +7165,16 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>acc73b4fb215305ffd7f3d6df8807cc5e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>XML_EXTENSION</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a89d56e81155e57f3dcaeef293e89efc2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6819,6 +7205,156 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>aa9acc60392e3eb0f0a9c3019c63301ae</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_COMMENT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a561d5a58b94e4ccce28726c98f6ca71e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_COMMENT_CONTENTS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>adf6527cf12c5267d28210a0a60ce43cf</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8cade9693bb6ce63be30adebd318fd21</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aac731a3a55f704a5b3ba203a3488c78d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a314632feed799f84c8db021cb28df3d8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a984c332f78fb9340673841a6b8171ca8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a19ac6de22cbdfafbcfa25f0221b2937b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a56f7eb418502cbb93307e6f7f17d05be</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a28dedee0c192d3be211cb13d4b89dffa</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a77f57852e8d5c0df7c3d1bf98044c7af</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae5feb118badcb1d403a6f417b714c66f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8f99a2eba7afe01476e7830dcd955f00</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a1b0e3add734e789ef8b5993a155799e4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aec49c4524588c30df34ff377d70bff65</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>afb22e70184ac8fe022345962d2fe7934</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -7382,7 +7918,7 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>a2055dc183dd3601d9979bc99a3222eb4</Anchor>
-    <Abstract>Output the results to a file.</Abstract>
+    <Abstract>Output the results to a csv file.</Abstract>
     <DeclaredIn>Detector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -7393,8 +7929,92 @@
       <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
-    <Anchor>afc247b9c7ded2ffde3ba0cb2b1267490</Anchor>
+    <Anchor>a8f77ceb1535be09ef149aedcd6b1a84e</Anchor>
     <Abstract>Output the results to a file using the provided output file stream.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputSpatialEntitiesToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a64d541cd53a16dc5f204413820c6b0ef</Anchor>
+    <Abstract>Output the pseudo 3D spatial entities to a csv file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputAveragedMeasuresToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a3f4f3192d392f26e324ef9760820d904</Anchor>
+    <Abstract>Output the averaged measures to a csv file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToXMLFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a574c1c58c9e0bab3d224e5b0a77e410a</Anchor>
+    <Abstract>Output the results to an xml file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToXMLFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a9f5690049f55799ac7a2741e97de679e</Anchor>
+    <Abstract>Output the clusters and averaged measures to an xml file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>addSpatialEntitiesToPropertyTree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a11bf4fa46f51ac033b635d19e92998ae</Anchor>
+    <Abstract>Add the pseudo 3D spatial entities to the property tree.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>constructPropertyTree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>af11495dceabe108397805a770fb9c7b4</Anchor>
+    <Abstract>Construct the property tree corresponding to the given pseudo 3D spatial entity.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getCollectionOfSpatialEntityPseudo3D</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a684a7071aca4173e3dc968d8635bd92a</Anchor>
+    <Abstract>Get the collection of pseudo 3D entities detected in the image.</Abstract>
     <DeclaredIn>Detector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -7495,6 +8115,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>avgClusterednessDegree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a6d06607ae468a56e48f8daba0a00df5b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avgDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a411629d4cf34809127662d625ba057c0</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>image</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -7565,6 +8205,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>OUTPUT_CLUSTEREDNESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8793daa563094fdcd7447930a4fc0974</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OUTPUT_DENSITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a920029d6b618aa2daaccfb824c5878b8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_OUTPUT_WITHOUT_DETECT</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -7595,13 +8255,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>OUTPUT_EXTENSION</Name>
+      <Name>CSV_EXTENSION</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
-    <Anchor>a3030def7fe61741fcc8f5c8b50f40e57</Anchor>
+    <Anchor>a5458417daa8430ea8ebbe1c25cb26f41</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -7612,6 +8272,16 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>acc73b4fb215305ffd7f3d6df8807cc5e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>XML_EXTENSION</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a89d56e81155e57f3dcaeef293e89efc2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -7642,6 +8312,156 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>aa9acc60392e3eb0f0a9c3019c63301ae</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_COMMENT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a561d5a58b94e4ccce28726c98f6ca71e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_COMMENT_CONTENTS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>adf6527cf12c5267d28210a0a60ce43cf</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8cade9693bb6ce63be30adebd318fd21</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aac731a3a55f704a5b3ba203a3488c78d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a314632feed799f84c8db021cb28df3d8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a984c332f78fb9340673841a6b8171ca8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a19ac6de22cbdfafbcfa25f0221b2937b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a56f7eb418502cbb93307e6f7f17d05be</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a28dedee0c192d3be211cb13d4b89dffa</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a77f57852e8d5c0df7c3d1bf98044c7af</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae5feb118badcb1d403a6f417b714c66f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8f99a2eba7afe01476e7830dcd955f00</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a1b0e3add734e789ef8b5993a155799e4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aec49c4524588c30df34ff377d70bff65</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>afb22e70184ac8fe022345962d2fe7934</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8699,18 +9519,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>getDensity</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::Region</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>abe2e6188ff7b749dc2f77169cb75bb95</Anchor>
-    <Abstract>Get the density.</Abstract>
-    <DeclaredIn>Region.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>getPolygon</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -8723,133 +9531,181 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SpatialCollection2D</Name>
+      <Name>SpatialEntityPseudo3D</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a3fa52a3930e498d763930a0c6a23a03c</Anchor>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa391fae1e086502392a2c89dcea27022</Anchor>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~SpatialCollection2D</Name>
+      <Name>~SpatialEntityPseudo3D</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>af70ae8f44636e7b2cf85705cffe44dfe</Anchor>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a5d44f1cc668d9ef8b1bb5ba573a08c93</Anchor>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getClusterednessDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a85ae2bf2457ca5dfc14a43dc492a2dda</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a532020267c8ffd4375e2d204debf8454</Anchor>
     <Abstract>Get the clusteredness degree.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a98a29584b604d113db53e7009fd3cb79</Anchor>
+    <Abstract>Get the density.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getArea</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a192a2f1ee9e3af90a40c8c7c47618965</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ae85647e35a4cbb3ed193d039cf0395a9</Anchor>
     <Abstract>Get the area.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getPerimeter</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a736028971bede12a98dbb72d5b0f1354</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a455bf65abb87bd8b65d0cbe2234e4491</Anchor>
     <Abstract>Get the perimeter.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getDistanceFromOrigin</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aeef9f086af281569cf8f83dc2e1a0014</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a26530af3d05b0257386ce02498a5a84b</Anchor>
     <Abstract>Get the distance from the origin.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getAngle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6bac1eb1ff6d06cdb0fd8036849b4f50</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a9f3394cfe46d66ae9c13d805ad460cb5</Anchor>
     <Abstract>Get the angle.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getShape</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a7144355774b561b660adfca759316037</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>af67de0727472a72bad311e71db8a1115</Anchor>
     <Abstract>Get the shape best fitting the spatial collection.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getShapeAsString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aaf8b45d68041be0f293eaf1bf40c76d3</Anchor>
+    <Abstract>Get the shape best fitting the spatial collection as a string.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getTriangularMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a9c7af7e1fc6a829c184c85baeaf1ebc2</Anchor>
+    <Abstract>Get the measure indicating how much the shape of the contour resembles a triangle.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getRectangularMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a924e390a408a91abf394f29bec33d945</Anchor>
+    <Abstract>Get the measure indicating how much the shape of the contour resembles a rectangle.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getCircularMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a71759aa55f43ac2a6cc52b738f3b2c42</Anchor>
+    <Abstract>Get the measure indicating how much the shape of the contour resembles a circle.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getCentre</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac8b879dca765e47b9e0ef86d440e28e6</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a4976534b2cdf55541701a7d5ea4ac0c5</Anchor>
     <Abstract>Get the point defining the centre of the entity.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>toString</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6ff771bb6022d9c991348f29227d10d9</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>abea1af0695f6f1a977b0caa3428fc433</Anchor>
     <Abstract>Get the string representation of all field values.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>fieldNamesToString</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>clm</Type>
-      <Scope>multiscale::analysis::Region</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>af766fd7e5b908bd9cf8c3577271ee65b</Anchor>
-    <Abstract>Get a string representation of all the field names except polygon.</Abstract>
-    <DeclaredIn>Region.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -8877,18 +9733,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>updateSpatialCollectionSpecificValues</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::Region</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>ac382fb7a5625d7ef573a311b8de8f248</Anchor>
-    <Abstract>Update the value of all class specific measures.</Abstract>
-    <DeclaredIn>Region.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>updateClusterednessDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -8897,6 +9741,18 @@
     <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
     <Anchor>a35c88944e2704571214b6e28dd657350</Anchor>
     <Abstract>Update the value of the clusteredness degree.</Abstract>
+    <DeclaredIn>Region.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>updateDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Region</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
+    <Anchor>a995bd4ac0452715ec75bdb8c6ae51914</Anchor>
+    <Abstract>Update the value of the density.</Abstract>
     <DeclaredIn>Region.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -8973,28 +9829,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>fieldValuesToString</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::Region</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>a4fa8cfecf2fc3708c66022655a055dc6</Anchor>
-    <Abstract>Get a string representation of all the field values except polygon.</Abstract>
-    <DeclaredIn>Region.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>density</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::Region</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
-    <Anchor>af4eb62fddbe850271dfe15bb240b13bb</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>polygon</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -9025,243 +9859,277 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>fieldNamesToString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a3c24e3f06c999002f18e1ddd8be3f927</Anchor>
+    <Abstract>Get a string representation of all the field names printed in the &amp;quot;toString&amp;quot; method.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>updateMeasuresIfRequired</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a731de1009ba24b4fda5003c9cec5196c</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a151cd8c0fdfbc98cfd0adc99b9943369</Anchor>
     <Abstract>Update the values of all measures if required.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateMeasures</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a8e5a2af581895142da9b50eeeabeb7be</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a24ad8b8b5768be1f917a1fb893df8c6c</Anchor>
     <Abstract>Update the values of all measures.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateShape</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ab26bc346c1b0b0d17104c7d5cfb170bb</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ad50d0866df26b63dc86853a9ab0c545d</Anchor>
     <Abstract>Update the shape of the cluster.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>shapeAsString</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac18243f267c777ab26bb836097a78c74</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a347c52b3cfad183a608ddbd018d8e409</Anchor>
     <Abstract>Return the shape of the cluster as a string.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fieldValuesToString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a232a5e4991e59dfc685107982fcaf0ce</Anchor>
+    <Abstract>Return the values of the fields as a string.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>convertPoints</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ad3d11af329d5efa9bddf40b4573ebb2c</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a2175fefa47f158b22872af80010543b1</Anchor>
     <Abstract>Convert the collection of points from type Point to type Point2f.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>clusterednessDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>acd11d0bbeb60a1168bd2c2fbbc6fe965</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a22a84312e7c497cc5fbc4d8b41d8fd45</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>density</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aedf807816f8c2f7cd961acfe0042fc56</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>area</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac570cc755e52aeb9deacf12d223a4a3a</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a1621d5b3ece663bf4c5501940e860292</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>perimeter</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae8045702b66fd813cfff49fa86b02e68</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aee84039be272f902a2d871f61da47360</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>distanceFromOrigin</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac2a5d3f8c2cb878c710d821c536b8a4f</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a056f67b90ed41c0e6dc4df31b71ad906</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>angle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ab452753ab21ee26732afb77a6478b3ce</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa077aab864e659f93522863cc10824bb</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>triangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a578070e91858e9e87de1e0f5771d6c3f</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a7e8a7c888b5ab5a204f6d4ffa283709c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>rectangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aad7d79a7bd299d4d3c08a864cfcb77c3</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aabb799c34513ed1d3008d807cdbdea29</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>circularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a4c58c82dd3d67d670b554bfaeb2b19ba</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa4ac170fb21e9697358d47ba6ea7a267</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>shape</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a4df95ecca90ce33332a69e0aefcf73d9</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>abad3acd3d7067e8e86e168e692cb2c2e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>centre</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>afe9ef6b70ff53161cb02749444ae372c</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a647c25f9544d5537938bbadefc436634</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateFlag</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6d942f2856adc673e9d361596744b37f</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a2fc7e2c00fcd725cb247b27c69726c8b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_TRIANGLE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae666d6dc811ea20b7ce3cf2a66476fc1</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a8ad67f0073da808ad1badedf2e613ed3</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_RECTANGLE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ad98d817f86185eb9c7f0d061b9c40cce</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a9b80a7c37a8c82fed02a1e23b1173843</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_CIRCLE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>acf997f52cf871815e519a460336e3631</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a561e862c97a4717eb5b4977c55d05d90</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_UNDEFINED</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>afce51890a0eebb60c5622a39485c2d2a</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ae4e33ad9bcad430b929b601c5571a6fd</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>OUTPUT_SEPARATOR</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a489bef8926aecc45acb7f54d8802def1</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a4ee08be9b4119b90f0a996704d179635</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>ERR_INPUT</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae6688ddf08e23397e0798e4280d7f1ab</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a5882e2e18343ccee821f1bd6b9c23724</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>CONVEX_HULL_CLOCKWISE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aa379350e6bee0f58f380152048aa4c21</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ad92f43d2b14c77def3f7a70b54810dd2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -9812,38 +10680,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>outputResultsToCsvFile</Name>
+      <Name>getCollectionOfSpatialEntityPseudo3D</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a9da92f7959fe324f24301c5bf780fbbd</Anchor>
-    <Abstract>Output the regions and averaged measures to a csv file.</Abstract>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputRegionsToCsvFile</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a9289ea9b1ceb3bd21317170d72a889e4</Anchor>
-    <Abstract>Output the regions to a csv file.</Abstract>
-    <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>outputAveragedMeasuresToCsvFile</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>ac060acf205b878f79b67093f178f265f</Anchor>
-    <Abstract>Output the averaged measures to a csv file.</Abstract>
+    <Anchor>a729a0433d9b929624960ae86e7cc1f23</Anchor>
+    <Abstract>Get the collection of clusters detected in the image.</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -9881,26 +10725,6 @@
     <Anchor>a60083ca10a42c25d67e371506cbf5620</Anchor>
     <Abstract>Convert beta from the range [0, BETA_MAX] to [BETA_REAL_MIN, BETA_REAL_MAX].</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>avgClusterednessDegree</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>ad2614f07ff1dfa25af6f7eaa10fe8ea8</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>avgDensity</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a96d0cab2a5cd61b3820c87581fed9548</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -9981,26 +10805,6 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
     <Anchor>aa6517ceb3a58295448d32e6e41499893</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>OUTPUT_CLUSTEREDNESS</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>a7eeefa86e8c94ee7c89b3e17fb94d931</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>OUTPUT_DENSITY</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>data</Type>
-      <Scope>multiscale::analysis::RegionDetector</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>ad432faee394557fc48ff6baaceddf1cb</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -10474,7 +11278,91 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>a2055dc183dd3601d9979bc99a3222eb4</Anchor>
-    <Abstract>Output the results to a file.</Abstract>
+    <Abstract>Output the results to a csv file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8f77ceb1535be09ef149aedcd6b1a84e</Anchor>
+    <Abstract>Output the results to a file using the provided output file stream.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputSpatialEntitiesToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a64d541cd53a16dc5f204413820c6b0ef</Anchor>
+    <Abstract>Output the pseudo 3D spatial entities to a csv file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputAveragedMeasuresToCsvFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a3f4f3192d392f26e324ef9760820d904</Anchor>
+    <Abstract>Output the averaged measures to a csv file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToXMLFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a574c1c58c9e0bab3d224e5b0a77e410a</Anchor>
+    <Abstract>Output the results to an xml file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>outputResultsToXMLFile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a9f5690049f55799ac7a2741e97de679e</Anchor>
+    <Abstract>Output the clusters and averaged measures to an xml file.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>addSpatialEntitiesToPropertyTree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a11bf4fa46f51ac033b635d19e92998ae</Anchor>
+    <Abstract>Add the pseudo 3D spatial entities to the property tree.</Abstract>
+    <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>constructPropertyTree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>af11495dceabe108397805a770fb9c7b4</Anchor>
+    <Abstract>Construct the property tree corresponding to the given pseudo 3D spatial entity.</Abstract>
     <DeclaredIn>Detector.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -10536,6 +11424,26 @@
     <Anchor>a9150f3fc7945405da34761a4250b7c79</Anchor>
     <Abstract>Print error message, because the detect method was not called before calling the output method...</Abstract>
     <DeclaredIn>Detector.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avgClusterednessDegree</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a6d06607ae468a56e48f8daba0a00df5b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avgDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a411629d4cf34809127662d625ba057c0</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -10609,6 +11517,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>OUTPUT_CLUSTEREDNESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8793daa563094fdcd7447930a4fc0974</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>OUTPUT_DENSITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a920029d6b618aa2daaccfb824c5878b8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>ERR_OUTPUT_WITHOUT_DETECT</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -10639,13 +11567,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>OUTPUT_EXTENSION</Name>
+      <Name>CSV_EXTENSION</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::analysis::Detector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
-    <Anchor>a3030def7fe61741fcc8f5c8b50f40e57</Anchor>
+    <Anchor>a5458417daa8430ea8ebbe1c25cb26f41</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -10656,6 +11584,16 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>acc73b4fb215305ffd7f3d6df8807cc5e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>XML_EXTENSION</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a89d56e81155e57f3dcaeef293e89efc2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -10686,6 +11624,156 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
     <Anchor>aa9acc60392e3eb0f0a9c3019c63301ae</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_COMMENT</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a561d5a58b94e4ccce28726c98f6ca71e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_COMMENT_CONTENTS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>adf6527cf12c5267d28210a0a60ce43cf</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8cade9693bb6ce63be30adebd318fd21</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aac731a3a55f704a5b3ba203a3488c78d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a314632feed799f84c8db021cb28df3d8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a984c332f78fb9340673841a6b8171ca8</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a19ac6de22cbdfafbcfa25f0221b2937b</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a56f7eb418502cbb93307e6f7f17d05be</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a28dedee0c192d3be211cb13d4b89dffa</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a77f57852e8d5c0df7c3d1bf98044c7af</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>ae5feb118badcb1d403a6f417b714c66f</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a8f99a2eba7afe01476e7830dcd955f00</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>a1b0e3add734e789ef8b5993a155799e4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>aec49c4524588c30df34ff377d70bff65</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::Detector</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1Detector.html</Path>
+    <Anchor>afb22e70184ac8fe022345962d2fe7934</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -10772,492 +11860,574 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>multiscale::analysis::SpatialCollection2D</Name>
+      <Name>multiscale::analysis::SpatialEntityPseudo3D</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Abstract>Class for representing a collection of objects in 2D space.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Abstract>Class for representing a pseudo-3D (explicit 2D + implicit height) object.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SpatialCollection2D</Name>
+      <Name>SpatialEntityPseudo3D</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a3fa52a3930e498d763930a0c6a23a03c</Anchor>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa391fae1e086502392a2c89dcea27022</Anchor>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>~SpatialCollection2D</Name>
+      <Name>~SpatialEntityPseudo3D</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>af70ae8f44636e7b2cf85705cffe44dfe</Anchor>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a5d44f1cc668d9ef8b1bb5ba573a08c93</Anchor>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getClusterednessDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a85ae2bf2457ca5dfc14a43dc492a2dda</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a532020267c8ffd4375e2d204debf8454</Anchor>
     <Abstract>Get the clusteredness degree.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a98a29584b604d113db53e7009fd3cb79</Anchor>
+    <Abstract>Get the density.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getArea</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a192a2f1ee9e3af90a40c8c7c47618965</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ae85647e35a4cbb3ed193d039cf0395a9</Anchor>
     <Abstract>Get the area.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getPerimeter</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a736028971bede12a98dbb72d5b0f1354</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a455bf65abb87bd8b65d0cbe2234e4491</Anchor>
     <Abstract>Get the perimeter.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getDistanceFromOrigin</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aeef9f086af281569cf8f83dc2e1a0014</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a26530af3d05b0257386ce02498a5a84b</Anchor>
     <Abstract>Get the distance from the origin.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getAngle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6bac1eb1ff6d06cdb0fd8036849b4f50</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a9f3394cfe46d66ae9c13d805ad460cb5</Anchor>
     <Abstract>Get the angle.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getShape</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a7144355774b561b660adfca759316037</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>af67de0727472a72bad311e71db8a1115</Anchor>
     <Abstract>Get the shape best fitting the spatial collection.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getShapeAsString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aaf8b45d68041be0f293eaf1bf40c76d3</Anchor>
+    <Abstract>Get the shape best fitting the spatial collection as a string.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getTriangularMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a9c7af7e1fc6a829c184c85baeaf1ebc2</Anchor>
+    <Abstract>Get the measure indicating how much the shape of the contour resembles a triangle.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getRectangularMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a924e390a408a91abf394f29bec33d945</Anchor>
+    <Abstract>Get the measure indicating how much the shape of the contour resembles a rectangle.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getCircularMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a71759aa55f43ac2a6cc52b738f3b2c42</Anchor>
+    <Abstract>Get the measure indicating how much the shape of the contour resembles a circle.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>getCentre</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac8b879dca765e47b9e0ef86d440e28e6</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a4976534b2cdf55541701a7d5ea4ac0c5</Anchor>
     <Abstract>Get the point defining the centre of the entity.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>toString</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6ff771bb6022d9c991348f29227d10d9</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>abea1af0695f6f1a977b0caa3428fc433</Anchor>
     <Abstract>Get the string representation of all field values.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>fieldNamesToString</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a3c24e3f06c999002f18e1ddd8be3f927</Anchor>
+    <Abstract>Get a string representation of all the field names printed in the &amp;quot;toString&amp;quot; method.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateMeasuresIfRequired</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a731de1009ba24b4fda5003c9cec5196c</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a151cd8c0fdfbc98cfd0adc99b9943369</Anchor>
     <Abstract>Update the values of all measures if required.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateMeasures</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a8e5a2af581895142da9b50eeeabeb7be</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a24ad8b8b5768be1f917a1fb893df8c6c</Anchor>
     <Abstract>Update the values of all measures.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>updateSpatialCollectionSpecificValues</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ad94bce09032b184ebfd5b5006217c683</Anchor>
-    <Abstract>Update the values of all measures specific to the derived classes.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateClusterednessDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a7deb494a09ce1f44b1b7e8ac5255cd0b</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a750ba1b5e457d9d6504fc8320a76e002</Anchor>
     <Abstract>Update the value of the clusteredness degree.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>updateDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a28fa63c1101f3f5ba7a0001099ee3159</Anchor>
+    <Abstract>Update the value of the density.</Abstract>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateArea</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a160aae10901ef5198db1b03bdef68065</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa8c1cd3248c8926edbb1b47006ded902</Anchor>
     <Abstract>Update the value of the area.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updatePerimeter</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6751a928c631fe725a2e7c5226e3720b</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>acb00990b4b812367b7ae8f16028b8c32</Anchor>
     <Abstract>Update the value of the perimeter.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateShape</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ab26bc346c1b0b0d17104c7d5cfb170bb</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ad50d0866df26b63dc86853a9ab0c545d</Anchor>
     <Abstract>Update the shape of the cluster.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateCentrePoint</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aab860163169deb76a7e853df32902ab1</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a8e81fdb72e8510d8f77ce8b518a74843</Anchor>
     <Abstract>Update the point defining the centre of the cluster.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>isTriangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>acce0e9ddd2d92e3ba843c3015352cab5</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ac0e5bce32290f2595293bd7386e04de1</Anchor>
     <Abstract>Get the measure that the cluster has a triangular shape.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>isRectangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a1acb28a7aafd1f75c23a94dbc988b038</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ad2984ec212e74437f3c7f3fc18ad555c</Anchor>
     <Abstract>Get the measure that the cluster has a rectangular shape.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>isCircularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a5d9967a9c531f3abe0236fbef1b0faba</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a31066d1038679f8e9080719380403cad</Anchor>
     <Abstract>Get the measure that the cluster has a circular shape.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>shapeAsString</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac18243f267c777ab26bb836097a78c74</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a347c52b3cfad183a608ddbd018d8e409</Anchor>
     <Abstract>Return the shape of the cluster as a string.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>fieldValuesToString</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a1b70b9e25f8b82ac2195f75f89280800</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a232a5e4991e59dfc685107982fcaf0ce</Anchor>
     <Abstract>Return the values of the fields as a string.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>convertPoints</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ad3d11af329d5efa9bddf40b4573ebb2c</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a2175fefa47f158b22872af80010543b1</Anchor>
     <Abstract>Convert the collection of points from type Point to type Point2f.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>clusterednessDegree</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>acd11d0bbeb60a1168bd2c2fbbc6fe965</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a22a84312e7c497cc5fbc4d8b41d8fd45</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>density</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aedf807816f8c2f7cd961acfe0042fc56</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>area</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac570cc755e52aeb9deacf12d223a4a3a</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a1621d5b3ece663bf4c5501940e860292</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>perimeter</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae8045702b66fd813cfff49fa86b02e68</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aee84039be272f902a2d871f61da47360</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>distanceFromOrigin</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ac2a5d3f8c2cb878c710d821c536b8a4f</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a056f67b90ed41c0e6dc4df31b71ad906</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>angle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ab452753ab21ee26732afb77a6478b3ce</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa077aab864e659f93522863cc10824bb</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>triangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a578070e91858e9e87de1e0f5771d6c3f</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a7e8a7c888b5ab5a204f6d4ffa283709c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>rectangularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aad7d79a7bd299d4d3c08a864cfcb77c3</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aabb799c34513ed1d3008d807cdbdea29</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>circularMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a4c58c82dd3d67d670b554bfaeb2b19ba</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>aa4ac170fb21e9697358d47ba6ea7a267</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>shape</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a4df95ecca90ce33332a69e0aefcf73d9</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>abad3acd3d7067e8e86e168e692cb2c2e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>centre</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>afe9ef6b70ff53161cb02749444ae372c</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a647c25f9544d5537938bbadefc436634</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>updateFlag</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a6d942f2856adc673e9d361596744b37f</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a2fc7e2c00fcd725cb247b27c69726c8b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_TRIANGLE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae666d6dc811ea20b7ce3cf2a66476fc1</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a8ad67f0073da808ad1badedf2e613ed3</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_RECTANGLE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ad98d817f86185eb9c7f0d061b9c40cce</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a9b80a7c37a8c82fed02a1e23b1173843</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_CIRCLE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>acf997f52cf871815e519a460336e3631</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a561e862c97a4717eb5b4977c55d05d90</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>STR_UNDEFINED</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>afce51890a0eebb60c5622a39485c2d2a</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ae4e33ad9bcad430b929b601c5571a6fd</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>OUTPUT_SEPARATOR</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>a489bef8926aecc45acb7f54d8802def1</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a4ee08be9b4119b90f0a996704d179635</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>ERR_INPUT</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae6688ddf08e23397e0798e4280d7f1ab</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a5882e2e18343ccee821f1bd6b9c23724</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>CONVEX_HULL_CLOCKWISE</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>aa379350e6bee0f58f380152048aa4c21</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>ad92f43d2b14c77def3f7a70b54810dd2</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>initialise</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
-      <Scope>multiscale::analysis::SpatialCollection2D</Scope>
+      <Scope>multiscale::analysis::SpatialEntityPseudo3D</Scope>
     </TokenIdentifier>
-    <Path>classmultiscale_1_1analysis_1_1SpatialCollection2D.html</Path>
-    <Anchor>ae128b71f769a10ff5bc7452e2ec9d555</Anchor>
+    <Path>classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html</Path>
+    <Anchor>a097edef313aee62069e36a13c8781d07</Anchor>
     <Abstract>Initialisation function for the class.</Abstract>
-    <DeclaredIn>SpatialCollection2D.hpp</DeclaredIn>
+    <DeclaredIn>SpatialEntityPseudo3D.hpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>

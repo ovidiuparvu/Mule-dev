@@ -14,5 +14,5 @@ var namespacemultiscale_1_1analysis =
     [ "Region", "classmultiscale_1_1analysis_1_1Region.html", "classmultiscale_1_1analysis_1_1Region" ],
     [ "RegionDetector", "classmultiscale_1_1analysis_1_1RegionDetector.html", "classmultiscale_1_1analysis_1_1RegionDetector" ],
     [ "Silhouette", "classmultiscale_1_1analysis_1_1Silhouette.html", null ],
-    [ "SpatialCollection2D", "classmultiscale_1_1analysis_1_1SpatialCollection2D.html", "classmultiscale_1_1analysis_1_1SpatialCollection2D" ]
+    [ "SpatialEntityPseudo3D", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html", "classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D" ]
 ];
