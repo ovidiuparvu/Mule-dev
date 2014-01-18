@@ -16,8 +16,8 @@ ClusterDetector::ClusterDetector(int maxPileupNumber, double maxPileupIntensity,
     this->eps = 0;
     this->minPoints = 0;
 
-    this->avgPileUpDegree = 0;
-    this->clusterednessIndex = 0;
+    this->avgDensity = 0;
+    this->avgClusterednessDegree = 0;
 
     this->entityPileupDegree = (maxPileupIntensity / maxPileupNumber);
 }
@@ -122,8 +122,8 @@ void ClusterDetector::addEntitiesToClusters(const vector<Entity> &entities, cons
 void ClusterDetector::analyseClusters(vector<Cluster> &clusters) {
     analyseClustersOriginDependentValues(clusters);
 
-    clusterednessIndex = computeClusterednessIndex(clusters);
-    avgPileUpDegree = computeAveragePileUpDegree(clusters);
+    avgClusterednessDegree = computeClusterednessIndex(clusters);
+    avgDensity = computeAveragePileUpDegree(clusters);
 }
 
 void ClusterDetector::analyseClustersOriginDependentValues(vector<Cluster> &clusters) {
@@ -174,63 +174,16 @@ double ClusterDetector::computeAveragePileUpDegree(vector<Cluster> &clusters) {
                                : (averagePileUpDegree / nrOfClusters);
 }
 
-void ClusterDetector::outputResultsToCsvFile(ofstream &fout) {
-    fout << Cluster::fieldNamesToString() << endl;
+vector<shared_ptr<SpatialEntityPseudo3D>> ClusterDetector::getCollectionOfSpatialEntityPseudo3D() {
+    vector<shared_ptr<SpatialEntityPseudo3D>> convertedClusters;
 
     for (Cluster &cluster : clusters) {
         if (isNonEmptyCluster(cluster)) {
-            fout << cluster.toString() << endl;
+            convertedClusters.push_back(shared_ptr<SpatialEntityPseudo3D>(new Cluster(cluster)));
         }
     }
 
-    // Add an empty line between the cluster data and the averaged data
-    fout << endl;
-
-    fout << OUTPUT_CLUSTEREDNESS << clusterednessIndex << endl
-         << OUTPUT_PILE_UP << avgPileUpDegree << endl;
-}
-
-void ClusterDetector::outputResultsToXMLFile(const string &filepath) {
-    pt::ptree propertyTree;
-
-    propertyTree.put<string>(LABEL_COMMENT, LABEL_COMMENT_CONTENTS);
-
-    addClustersToPropertyTree(propertyTree);
-
-    // Pretty writing of the property tree to the file
-    pt::xml_writer_settings<char> settings('\t', 1);
-
-    write_xml(filepath, propertyTree, std::locale(), settings);
-}
-
-void ClusterDetector::addClustersToPropertyTree(pt::ptree &propertyTree) {
-    // Convert regions to property trees and add them to propertyTree
-    for (Cluster &cluster: clusters) {
-        if (isNonEmptyCluster(cluster)) {
-            pt::ptree clusterPropertyTree = constructPropertyTree(cluster);
-
-            propertyTree.add_child(LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY, clusterPropertyTree);
-        }
-    }
-}
-
-pt::ptree ClusterDetector::constructPropertyTree(Cluster &cluster) {
-    pt::ptree propertyTree;
-
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS, cluster.getClusterednessDegree());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY, cluster.getDensity());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA, cluster.getArea());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER, cluster.getPerimeter());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN, cluster.getDistanceFromOrigin());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES, cluster.getAngle());
-    propertyTree.put<string>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE, cluster.getShapeAsString());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE, cluster.getTriangularMeasure());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE, cluster.getRectangularMeasure());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE, cluster.getCircularMeasure());
-    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X, cluster.getCentre().x);
-    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y, cluster.getCentre().y);
-
-    return propertyTree;
+    return convertedClusters;
 }
 
 bool ClusterDetector::isNonEmptyCluster(Cluster &cluster) {
@@ -248,9 +201,6 @@ int ClusterDetector::getValidMinPointsValue() {
 
 
 // Constants
-const string ClusterDetector::OUTPUT_CLUSTEREDNESS   = "Clusteredness index: ";
-const string ClusterDetector::OUTPUT_PILE_UP         = "Average pile up degree: ";
-
 const string ClusterDetector::TRACKBAR_EPS           = "Eps (Multiplied by 10)";
 const string ClusterDetector::TRACKBAR_MINPOINTS     = "Minimum number of points";
 

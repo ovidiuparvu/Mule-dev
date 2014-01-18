@@ -186,8 +186,75 @@ void Detector::outputResultsToCsvFile() {
     fout.close();
 }
 
+void Detector::outputResultsToCsvFile(ofstream &fout) {
+    // Output header
+    fout << SpatialEntityPseudo3D::fieldNamesToString() << endl;
+
+    outputSpatialEntitiesToCsvFile(fout);
+
+    // Add an empty line between the pseudo 3D spatial entities data and the averaged data
+    fout << endl;
+
+    outputAveragedMeasuresToCsvFile(fout);
+}
+
+void Detector::outputSpatialEntitiesToCsvFile(ofstream &fout) {
+    vector<shared_ptr<SpatialEntityPseudo3D>> spatialEntities = getCollectionOfSpatialEntityPseudo3D();
+
+    for (shared_ptr<SpatialEntityPseudo3D> &spatialEntityPointer : spatialEntities) {
+        fout << spatialEntityPointer->toString() << endl;
+    }
+}
+
+void Detector::outputAveragedMeasuresToCsvFile(ofstream &fout) {
+    fout << OUTPUT_CLUSTEREDNESS << avgClusterednessDegree << endl
+         << OUTPUT_DENSITY << avgDensity << endl;
+}
+
 void Detector::outputResultsToXMLFile() {
     outputResultsToXMLFile(outputFilepath + XML_EXTENSION);
+}
+
+void Detector::outputResultsToXMLFile(const string &filepath) {
+    pt::ptree propertyTree;
+
+    propertyTree.put<string>(LABEL_COMMENT, LABEL_COMMENT_CONTENTS);
+
+    addSpatialEntitiesToPropertyTree(propertyTree);
+
+    // Pretty writing of the property tree to the file
+    pt::xml_writer_settings<char> settings('\t', 1);
+
+    write_xml(filepath, propertyTree, std::locale(), settings);
+}
+
+void Detector::addSpatialEntitiesToPropertyTree(pt::ptree &propertyTree) {
+    vector<shared_ptr<SpatialEntityPseudo3D>> spatialEntities = getCollectionOfSpatialEntityPseudo3D();
+
+    for (shared_ptr<SpatialEntityPseudo3D> &spatialEntityPointer : spatialEntities) {
+        pt::ptree spatialEntityPropertyTree = constructPropertyTree(*spatialEntityPointer);
+
+        propertyTree.add_child(LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY, spatialEntityPropertyTree);
+    }
+}
+
+pt::ptree Detector::constructPropertyTree(SpatialEntityPseudo3D &spatialEntity) {
+    pt::ptree propertyTree;
+
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS, spatialEntity.getClusterednessDegree());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY, spatialEntity.getDensity());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA, spatialEntity.getArea());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER, spatialEntity.getPerimeter());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN, spatialEntity.getDistanceFromOrigin());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES, spatialEntity.getAngle());
+    propertyTree.put<string>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE, spatialEntity.getShapeAsString());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE, spatialEntity.getTriangularMeasure());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE, spatialEntity.getRectangularMeasure());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE, spatialEntity.getCircularMeasure());
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X, spatialEntity.getCentre().x);
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y, spatialEntity.getCentre().y);
+
+    return propertyTree;
 }
 
 void Detector::createTrackbars() {
@@ -217,6 +284,9 @@ void Detector::printOutputErrorMessage() {
 
 
 // Constants
+const string Detector::OUTPUT_CLUSTEREDNESS   = "Average clusteredness degree: ";
+const string Detector::OUTPUT_DENSITY         = "Average density: ";
+
 const string Detector::ERR_OUTPUT_WITHOUT_DETECT  = "Unable to output results if the detect method was not called previously.";
 const string Detector::ERR_OUTPUT_FILE            = "Unable to create output file.";
 const string Detector::ERR_INVALID_IMAGE          = "The input image is invalid.";

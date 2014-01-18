@@ -321,68 +321,14 @@ void RegionDetector::clearPreviousDetectionResults() {
     regions.clear();
 }
 
-void RegionDetector::outputResultsToCsvFile(ofstream &fout) {
-    // Output header
-    fout << Region::fieldNamesToString() << endl;
+vector<shared_ptr<SpatialEntityPseudo3D>> RegionDetector::getCollectionOfSpatialEntityPseudo3D() {
+    vector<shared_ptr<SpatialEntityPseudo3D>> convertedRegions;
 
-    outputRegionsToCsvFile(fout);
-
-    // Add an empty line between the region data and the averaged data
-    fout << endl;
-
-    outputAveragedMeasuresToCsvFile(fout);
-}
-
-void RegionDetector::outputRegionsToCsvFile(ofstream &fout) {
-    for (auto region : regions) {
-        fout << region.toString() << endl;
+    for (Region &region : regions) {
+        convertedRegions.push_back(shared_ptr<SpatialEntityPseudo3D>(new Region(region)));
     }
-}
 
-void RegionDetector::outputAveragedMeasuresToCsvFile(ofstream &fout) {
-    fout << OUTPUT_CLUSTEREDNESS << avgClusterednessDegree << endl
-         << OUTPUT_DENSITY << avgDensity << endl;
-}
-
-void RegionDetector::outputResultsToXMLFile(const string &filepath) {
-    pt::ptree propertyTree;
-
-    propertyTree.put<string>(LABEL_COMMENT, LABEL_COMMENT_CONTENTS);
-
-    addRegionsToPropertyTree(propertyTree);
-
-    // Pretty writing of the property tree to the file
-    pt::xml_writer_settings<char> settings('\t', 1);
-
-    write_xml(filepath, propertyTree, std::locale(), settings);
-}
-
-void RegionDetector::addRegionsToPropertyTree(pt::ptree &propertyTree) {
-    // Convert regions to property trees and add them to propertyTree
-    for (Region &region: regions) {
-        pt::ptree regionPropertyTree = constructPropertyTree(region);
-
-        propertyTree.add_child(LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY, regionPropertyTree);
-    }
-}
-
-pt::ptree RegionDetector::constructPropertyTree(Region &region) {
-    pt::ptree propertyTree;
-
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CLUSTEREDNESS, region.getClusterednessDegree());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DENSITY, region.getDensity());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_AREA, region.getArea());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_PERIMETER, region.getPerimeter());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_DISTANCE_FROM_ORIGIN, region.getDistanceFromOrigin());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_ANGLE_DEGREES, region.getAngle());
-    propertyTree.put<string>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_SHAPE, region.getShapeAsString());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_TRIANGLE_MEASURE, region.getTriangularMeasure());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_RECTANGLE_MEASURE, region.getRectangularMeasure());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CIRCLE_MEASURE, region.getCircularMeasure());
-    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_X, region.getCentre().x);
-    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_PSEUDO_3D_CENTROID_Y, region.getCentre().y);
-
-    return propertyTree;
+    return convertedRegions;
 }
 
 void RegionDetector::outputResultsToImage() {
@@ -421,9 +367,6 @@ void convertVertices(const Point *src, vector<Point> &dst) {
 
 
 // Constants
-const string RegionDetector::OUTPUT_CLUSTEREDNESS        = "Average clusteredness degree: ";
-const string RegionDetector::OUTPUT_DENSITY              = "Average density: ";
-
 const string RegionDetector::TRACKBAR_ALPHA              = "Alpha";
 const string RegionDetector::TRACKBAR_BETA               = "Beta";
 const string RegionDetector::TRACKBAR_KERNEL             = "Gaussian blur kernel size";

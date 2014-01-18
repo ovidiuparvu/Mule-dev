@@ -7,8 +7,6 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
-namespace pt = boost::property_tree;
-
 using namespace std;
 using namespace cv;
 
@@ -23,9 +21,6 @@ namespace multiscale {
         class RegionDetector : public Detector {
 
             private:
-
-                double avgClusterednessDegree;      /*!< Average degree of clusteredness of all regions */
-                double avgDensity;                  /*!< Average density of all regions */
 
                 int alpha;                          /*!< Alpha for brightness and contrast adjustments */
                 int beta;                           /*!< Beta for brightness and contrast adjustments */
@@ -258,41 +253,8 @@ namespace multiscale {
                 //! Clear the element present in the regions vector
                 void clearPreviousDetectionResults() override;
 
-                //! Output the regions and averaged measures to a csv file
-                /*!
-                 * \param fout Output file stream
-                 */
-                void outputResultsToCsvFile(ofstream &fout) override;
-
-                //! Output the regions to a csv file
-                /*!
-                 * \param fout Output file stream
-                 */
-                void outputRegionsToCsvFile(ofstream &fout);
-
-                //! Output the averaged measures to a csv file
-                /*!
-                 * \param fout Output file stream
-                 */
-                void outputAveragedMeasuresToCsvFile(ofstream &fout);
-
-                //! Output the regions and averaged measures to an xml file
-                /*!
-                 * \param filepath Output file path
-                 */
-                void outputResultsToXMLFile(const string &filepath) override;
-
-                //! Add the regions to the property tree
-                /*!
-                 * \param propertyTree The property tree
-                 */
-                void addRegionsToPropertyTree(pt::ptree &propertyTree);
-
-                //! Construct the property tree corresponding to the given region
-                /*!
-                 * \param region The region to be converted
-                 */
-                pt::ptree constructPropertyTree(Region &region);
+                //! Get the collection of clusters detected in the image
+                vector<shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() override;
 
                 //! Output the results to the outputImage instance
                 void outputResultsToImage() override;
@@ -312,9 +274,6 @@ namespace multiscale {
             private:
 
                 // Constants
-                static const string OUTPUT_CLUSTEREDNESS;
-                static const string OUTPUT_DENSITY;
-
                 static const string TRACKBAR_ALPHA;
                 static const string TRACKBAR_BETA;
                 static const string TRACKBAR_KERNEL;

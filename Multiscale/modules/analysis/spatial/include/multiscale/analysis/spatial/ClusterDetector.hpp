@@ -8,8 +8,6 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
-namespace pt = boost::property_tree;
-
 using namespace std;
 using namespace cv;
 
@@ -22,9 +20,6 @@ namespace multiscale {
         class ClusterDetector : public Detector {
 
             protected:
-
-                double clusterednessIndex;      /*!< Index of clusteredness for all clusters */
-                double avgPileUpDegree;         /*!< Average pile up degree of all clusters */
 
                 double entityPileupDegree;      /*!< The pile up degree (intensity) of a grid position occupied by only
                                                      one entity*/
@@ -184,29 +179,8 @@ namespace multiscale {
                  */
                 double computeAveragePileUpDegree(vector<Cluster> &clusters);
 
-                //! Output the information computed for the clusters to a csv file
-                /*!
-                 *  \param fout     Output file stream
-                 */
-                void outputResultsToCsvFile(ofstream &fout) override;
-
-                //! Output the clusters and averaged measures to an xml file
-                /*!
-                 * \param filepath Output file path
-                 */
-                void outputResultsToXMLFile(const string &filepath) override;
-
-                //! Add the clusters to the property tree
-                /*!
-                 * \param propertyTree The property tree
-                 */
-                void addClustersToPropertyTree(pt::ptree &propertyTree);
-
-                //! Construct the property tree corresponding to the given cluster
-                /*!
-                 * \param cluster The cluster to be converted
-                 */
-                pt::ptree constructPropertyTree(Cluster &cluster);
+                //! Get the collection of clusters detected in the image
+                vector<shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() override;
 
                 //! Check if the provided cluster is non-empty
                 /*!
@@ -223,9 +197,6 @@ namespace multiscale {
             private:
 
                 // Constants
-                static const string OUTPUT_CLUSTEREDNESS;
-                static const string OUTPUT_PILE_UP;
-
                 static const string TRACKBAR_EPS;
                 static const string TRACKBAR_MINPOINTS;
 

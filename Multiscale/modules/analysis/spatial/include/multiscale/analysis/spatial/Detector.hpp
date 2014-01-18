@@ -1,6 +1,8 @@
 #ifndef DETECTOR_HPP
 #define DETECTOR_HPP
 
+#include "multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp"
+
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
@@ -8,6 +10,8 @@
 #include <boost/property_tree/xml_parser.hpp>
 
 #include <fstream>
+
+namespace pt = boost::property_tree;
 
 using namespace cv;
 using namespace std;
@@ -21,6 +25,17 @@ namespace multiscale {
         class Detector {
 
             protected:
+
+                double avgClusterednessDegree;      /*!< For regions:
+                                                         Average degree of clusteredness of all regions
+
+                                                         For clusters:
+                                                         Index of clusteredness for all clusters */
+                double avgDensity;                  /*!< For regions:
+                                                         Average density of all regions
+
+                                                         For clusters:
+                                                         Average pile up degree of all clusters */
 
                 Mat image;                      /*!< Input image */
                 string outputFilepath;          /*!< Path of the output file */
@@ -158,20 +173,47 @@ namespace multiscale {
                 //! Output the results to a csv file
                 void outputResultsToCsvFile();
 
-                //! Output the results to an xml file
-                void outputResultsToXMLFile();
-
                 //! Output the results to a file using the provided output file stream
                 /*!
                  * \param fout Output file stream
                  */
-                virtual void outputResultsToCsvFile(ofstream &fout) = 0;
+                void outputResultsToCsvFile(ofstream &fout);
 
-                //! Output the results to an xml file using the provided output file path
+                //! Output the pseudo 3D spatial entities to a csv file
+                /*!
+                 * \param fout Output file stream
+                 */
+                void outputSpatialEntitiesToCsvFile(ofstream &fout);
+
+                //! Output the averaged measures to a csv file
+                /*!
+                 * \param fout Output file stream
+                 */
+                void outputAveragedMeasuresToCsvFile(ofstream &fout);
+
+                //! Output the results to an xml file
+                void outputResultsToXMLFile();
+
+                //! Output the clusters and averaged measures to an xml file
                 /*!
                  * \param filepath Output file path
                  */
-                virtual void outputResultsToXMLFile(const string &filepath) = 0;
+                void outputResultsToXMLFile(const string &filepath);
+
+                //! Add the pseudo 3D spatial entities to the property tree
+                /*!
+                 * \param propertyTree The property tree
+                 */
+                void addSpatialEntitiesToPropertyTree(pt::ptree &propertyTree);
+
+                //! Construct the property tree corresponding to the given pseudo 3D spatial entity
+                /*!
+                 * \param spatialEntity The spatial entity to be converted
+                 */
+                pt::ptree constructPropertyTree(SpatialEntityPseudo3D &spatialEntity);
+
+                //! Get the collection of pseudo 3D entities detected in the image
+                virtual vector<shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() = 0;
 
                 //! Process the input image and detect objects/entities of interest
                 virtual void processImageAndDetect() = 0;
@@ -207,6 +249,9 @@ namespace multiscale {
             protected:
 
                 // Constants
+                static const string OUTPUT_CLUSTEREDNESS;
+                static const string OUTPUT_DENSITY;
+
                 static const string ERR_OUTPUT_WITHOUT_DETECT;
                 static const string ERR_OUTPUT_FILE;
                 static const string ERR_INVALID_IMAGE;
