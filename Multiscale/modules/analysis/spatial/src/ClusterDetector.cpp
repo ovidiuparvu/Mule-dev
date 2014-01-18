@@ -110,12 +110,15 @@ void ClusterDetector::convertPiledUpEntities(const vector<Entity> &entities, vec
 
 void ClusterDetector::addEntitiesToClusters(const vector<Entity> &entities, const vector<int> &clusterIndexes,
                                             int nrOfClusters, vector<Cluster> &clusters) {
-    int nrOfEntities = entities.size();
+    if (nrOfClusters > 0) {
+        int nrOfEntities = entities.size();
 
-    clusters.resize(nrOfClusters);
+        // The "noise" cluster will be ignored
+        clusters.resize(nrOfClusters - 1);
 
-    for (int i = 0; i < nrOfEntities; i++) {
-        clusters[clusterIndexes[i]].addEntity(entities[i]);
+        for (int i = 0; i < nrOfEntities; i++) {
+            clusters[clusterIndexes[i] - 1].addEntity(entities[i]);
+        }
     }
 }
 
@@ -178,16 +181,10 @@ vector<shared_ptr<SpatialEntityPseudo3D>> ClusterDetector::getCollectionOfSpatia
     vector<shared_ptr<SpatialEntityPseudo3D>> convertedClusters;
 
     for (Cluster &cluster : clusters) {
-        if (isNonEmptyCluster(cluster)) {
-            convertedClusters.push_back(shared_ptr<SpatialEntityPseudo3D>(new Cluster(cluster)));
-        }
+        convertedClusters.push_back(shared_ptr<SpatialEntityPseudo3D>(new Cluster(cluster)));
     }
 
     return convertedClusters;
-}
-
-bool ClusterDetector::isNonEmptyCluster(Cluster &cluster) {
-    return ((cluster.getArea() > 0) && (cluster.getPerimeter() > 0));
 }
 
 double ClusterDetector::convertEpsValue() {

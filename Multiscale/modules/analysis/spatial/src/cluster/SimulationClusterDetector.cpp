@@ -89,8 +89,7 @@ void SimulationClusterDetector::outputResultsToImage() {
 
     unsigned int nrOfClusters = clusters.size();
 
-    // Skipping the noise cluster which will be displayed as it already is in the original image
-    for (unsigned int i = 1; i < nrOfClusters; i++) {
+    for (unsigned int i = 0; i < nrOfClusters; i++) {
         // Choose a random colour for the cluster
         Scalar colour = RGBColourGenerator().generate(randomNumberGenerator);
 

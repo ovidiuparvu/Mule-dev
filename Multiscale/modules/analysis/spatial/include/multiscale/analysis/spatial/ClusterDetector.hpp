@@ -86,6 +86,8 @@ namespace multiscale {
                 //! Detect and analyse the clusters of entities in the image
                 /*! Detect and analyse the clusters of entities in the image
                  *
+                 *  Remark: The "noise" cluster will be ignored.
+                 *
                  *  \param entities     Entities detected in the image
                  *  \param clusters     Clusters of entities detected in the image
                  */
@@ -181,12 +183,6 @@ namespace multiscale {
 
                 //! Get the collection of clusters detected in the image
                 vector<shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() override;
-
-                //! Check if the provided cluster is non-empty
-                /*!
-                 * \param cluster Cluster to be checked
-                 */
-                bool isNonEmptyCluster(Cluster &cluster);
 
                 //! Convert the value of eps from integer to double
                 double convertEpsValue();
