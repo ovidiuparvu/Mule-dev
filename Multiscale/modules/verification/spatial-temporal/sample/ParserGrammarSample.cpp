@@ -1,5 +1,6 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/verification/spatial-temporal/Car.hpp"
 #include "multiscale/verification/spatial-temporal/Parser.hpp"
 
 #include <iostream>
@@ -12,7 +13,7 @@ using namespace std;
 //  Main program
 int main(int argc, char **argv) {
     string test;
-    string result;
+    Car result;
 
     cin >> test;
 
@@ -20,6 +21,8 @@ int main(int argc, char **argv) {
 
     try {
         parser.parse(result);
+
+        cout << "[" << result.getSeats() << ", " << result.getSpeed() << "]" << endl;
     } catch(const exception &e) {
         ExceptionHandler::printErrorMessage(e);
 

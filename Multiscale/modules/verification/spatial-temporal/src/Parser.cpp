@@ -14,7 +14,7 @@ Parser::Parser(const string &logicalQuery) {
 
 Parser::~Parser() {}
 
-bool Parser::parse(string &parseResult) {
+bool Parser::parse(Car &parseResult) {
     bool isSuccessfulParse = false;
 
     try {
@@ -34,7 +34,7 @@ void Parser::initialise() {
     this->logicalQueryEnd = logicalQuery.end();
 }
 
-bool Parser::parseLogicalQuery(string &parseResult) {
+bool Parser::parseLogicalQuery(Car &parseResult) {
     bool isSuccesfulParse = phrase_parse(logicalQueryIterator, logicalQueryEnd, grammar, ascii::space, parseResult);
 
     if ((isSuccesfulParse) && (!isStringParsedCompletely())) {

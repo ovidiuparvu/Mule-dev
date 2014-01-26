@@ -27,8 +27,4 @@ set(PARSER_GRAMMAR_SAMPLE_SRC
 )
 
 add_executable(ParserGrammarSample ${PARSER_GRAMMAR_SAMPLE_SRC})
-
-AddDebugPostfix(ParserGrammarSample)
-
-# target_link_libraries(ParserGrammarSample util)
-# target_link_libraries(ParserGrammarSample ${Boost_PROGRAM_OPTIONS_LIBRARY})
+AddSample(ParserGrammarSample)
