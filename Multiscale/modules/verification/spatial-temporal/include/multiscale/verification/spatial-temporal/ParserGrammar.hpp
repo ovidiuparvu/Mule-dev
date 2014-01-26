@@ -1,5 +1,7 @@
-#ifndef PROBABILISTICBOUNDEDLINEARSPATIALTEMPORALLOGICPARSER_HPP
-#define PROBABILISTICBOUNDEDLINEARSPATIALTEMPORALLOGICPARSER_HPP
+#ifndef PARSERGRAMMAR_HPP
+#define PARSERGRAMMAR_HPP
+
+#include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -16,7 +18,6 @@
 #include <string>
 #include <vector>
 
-namespace fusion = boost::fusion;
 namespace phoenix = boost::phoenix;
 
 using namespace boost::spirit;
@@ -26,42 +27,66 @@ namespace multiscale {
 
     namespace verification {
 
+        //! Structure for defining the error handler
+        struct ErrorHandler {
+            //! Structure for specifying the type of the result
+            template <typename, typename, typename>
+            struct result { typedef void type; };
+
+            //! Overloaded operator
+            /*!
+             * \param expectedToken The expected token
+             * \param errorPosition Iterator pointing to the error position
+             * \param last          Iterator pointing to the end of the query
+             */
+            template<typename Iterator>
+            void operator()(qi::info const &expectedToken, Iterator errorPosition, Iterator last) const {
+                string errorString          = string(errorPosition, last);
+                string expectedTokenString  = getExpectedTokenAsString(expectedToken);
+
+                throw ParserGrammarUnexpectedTokenException(expectedTokenString, errorString);
+            }
+
+            //! Convert the expected token to a string
+            /*! Convert the expected token to a string and remove enclosing quotes
+             *
+             * \param expectedToken The expected token (not a string)
+             */
+            string getExpectedTokenAsString(qi::info const &expectedToken) const {
+                stringstream strStream;
+
+                strStream << expectedToken;
+
+                string expectedTokenString  = strStream.str();
+
+                // Remove the enclosing quotes
+                return expectedTokenString.substr(1, (expectedTokenString.length() - 2));
+            }
+
+        };
+
+        // Create a lazy error handler function
+        phoenix::function<ErrorHandler> const handleError = ErrorHandler();
+
+
+        //! The grammar for parsing (P)BLSTL spatial-temporal logical queries
         template <typename Iterator>
-        class ParserGrammar : public qi::grammar<Iterator, std::string(), ascii::space_type> {
+        class ParserGrammar : public qi::grammar<Iterator, string(), ascii::space_type> {
 
             private:
 
-                qi::rule<Iterator, std::string(), ascii::space_type> start;
+                qi::rule<Iterator, string(), ascii::space_type> start; /*!< The starting element for the parser */
 
             public:
 
                 ParserGrammar() : ParserGrammar::base_type(start) {
-                    using ascii::char_;
-                    using ascii::string;
-                    using namespace labels;
-
-                    using phoenix::construct;
-                    using phoenix::val;
-
                     start
-                        %=  lexeme[+(char_ - "1")]
+                        %=  lexeme[+(ascii::char_ - "1")]
                             > lit("1")
                             > lit("2");
 
                     // Error handling routine
-                    qi::on_error<qi::fail>
-                    (
-                        start
-                      , std::cout
-                            << val("An error occurred! Expecting ")
-                            << _4                               // what failed?
-                            << val(" before: \"")
-                            << construct<std::string>(_3, _2)   // iterators to error-pos, end
-                            << val(" (column ")
-                            << val(construct<std::string>(_1, _2))
-                            << val(")\"")
-                            << std::endl
-                    );
+                    qi::on_error<qi::fail>(start, multiscale::verification::handleError(_4, _3, _2));
                 }
 
         };

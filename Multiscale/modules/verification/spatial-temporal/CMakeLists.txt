@@ -17,15 +17,18 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 #------------------------------------------------------------
 
 
-# ParserGrammar 
+# ParserGrammarSample
 
-set(PARSER_GRAMMAR_SRC
-    src/ParserGrammar.cpp 
+set(PARSER_GRAMMAR_SAMPLE_SRC
+    src/Parser.cpp
+    src/ParserGrammarExceptionHandler.cpp
+     
+    sample/ParserGrammarSample.cpp 
 )
 
-add_executable(ParserGrammar ${PARSER_GRAMMAR_SRC})
+add_executable(ParserGrammarSample ${PARSER_GRAMMAR_SAMPLE_SRC})
 
-AddDebugPostfix(ParserGrammar)
+AddDebugPostfix(ParserGrammarSample)
 
-# target_link_libraries(ParserGrammar util)
-# target_link_libraries(ParserGrammar ${Boost_PROGRAM_OPTIONS_LIBRARY})
+# target_link_libraries(ParserGrammarSample util)
+# target_link_libraries(ParserGrammarSample ${Boost_PROGRAM_OPTIONS_LIBRARY})
