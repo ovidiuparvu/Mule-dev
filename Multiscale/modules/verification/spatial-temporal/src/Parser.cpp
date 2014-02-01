@@ -1,5 +1,5 @@
 #include "multiscale/verification/spatial-temporal/Parser.hpp"
-#include "multiscale/verification/spatial-temporal/ParserGrammarExceptionHandler.hpp"
+#include "multiscale/verification/spatial-temporal/exception/ParserGrammarExceptionHandler.hpp"
 
 using namespace boost::spirit;
 using namespace multiscale::verification;
@@ -14,7 +14,7 @@ Parser::Parser(const string &logicalQuery) {
 
 Parser::~Parser() {}
 
-bool Parser::parse(Car &parseResult) {
+bool Parser::parse(string &parseResult) {
     bool isSuccessfulParse = false;
 
     try {
@@ -34,7 +34,7 @@ void Parser::initialise() {
     this->logicalQueryEnd = logicalQuery.end();
 }
 
-bool Parser::parseLogicalQuery(Car &parseResult) {
+bool Parser::parseLogicalQuery(string &parseResult) {
     bool isSuccesfulParse = phrase_parse(logicalQueryIterator, logicalQueryEnd, grammar, ascii::space, parseResult);
 
     if ((isSuccesfulParse) && (!isStringParsedCompletely())) {

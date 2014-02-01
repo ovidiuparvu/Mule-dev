@@ -1,0 +1,28 @@
+#ifndef TERNARYSUBSETMEASUREATTRIBUTE_HPP
+#define TERNARYSUBSETMEASUREATTRIBUTE_HPP
+
+#include <string>
+
+using namespace std;
+
+
+namespace multiscale {
+
+	namespace verification {
+
+		//! Structure for representing a ternary subset measure attribute
+		struct TernarySubsetMeasureAttribute {
+			string name;
+		};
+
+	};
+
+};
+
+
+BOOST_FUSION_ADAPT_STRUCT(
+    multiscale::verification::TernarySubsetMeasureAttribute,
+    (string, name)
+)
+
+#endif

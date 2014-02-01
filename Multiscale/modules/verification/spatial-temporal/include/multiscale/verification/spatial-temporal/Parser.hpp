@@ -1,7 +1,6 @@
 #ifndef PARSER_HPP
 #define PARSER_HPP
 
-#include "multiscale/verification/spatial-temporal/Car.hpp"
 #include "multiscale/verification/spatial-temporal/ParserGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarExtraInputException.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
@@ -37,7 +36,7 @@ namespace multiscale {
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */
-                bool parse(Car &parseResult);
+                bool parse(string &parseResult);
 
             private:
 
@@ -48,7 +47,7 @@ namespace multiscale {
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */
-                bool parseLogicalQuery(Car &parseResult);
+                bool parseLogicalQuery(string &parseResult);
 
                 //! Check if the string was parsed completely
                 bool isStringParsedCompletely();

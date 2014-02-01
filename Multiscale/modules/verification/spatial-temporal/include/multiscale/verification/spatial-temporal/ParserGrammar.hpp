@@ -1,7 +1,6 @@
 #ifndef PARSERGRAMMAR_HPP
 #define PARSERGRAMMAR_HPP
 
-#include "multiscale/verification/spatial-temporal/Car.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
 
 #include <boost/config/warning_disable.hpp>
@@ -69,18 +68,18 @@ namespace multiscale {
 
         //! The grammar for parsing (P)BLSTL spatial-temporal logical queries
         template <typename Iterator>
-        class ParserGrammar : public qi::grammar<Iterator, Car(), ascii::space_type> {
+        class ParserGrammar : public qi::grammar<Iterator, string(), ascii::space_type> {
 
             private:
 
-                qi::rule<Iterator, Car(), ascii::space_type> start;   /*!< The starting element for the parser */
+                qi::rule<Iterator, string(), ascii::space_type> start;   /*!< The starting element for the parser */
 
             public:
 
                 ParserGrammar() : ParserGrammar::base_type(start) {
                     start
                         =   lit("{")
-                            >> (qi::double_ >> "," >> qi::int_)           [_val = phoenix::construct<Car>(_1, _2)]
+                            >> qi::double_ >> "," >> qi::int_
                             >> lit("}");
 
                     // Error handling routine
