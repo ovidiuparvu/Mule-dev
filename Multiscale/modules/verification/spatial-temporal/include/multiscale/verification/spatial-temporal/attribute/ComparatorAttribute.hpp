@@ -11,7 +11,7 @@ namespace multiscale {
 	namespace verification {
 
 		//! Structure for representing a comparator attribute
-		struct Comparator {
+		struct ComparatorAttribute {
 			string comparator;
 		};
 
@@ -21,7 +21,7 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::Comparator,
+    multiscale::verification::ComparatorAttribute,
     (string, comparator)
 )
 

@@ -20,6 +20,7 @@
 #include <boost/spirit/include/phoenix_object.hpp>
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/fusion/include/io.hpp>
+#include <boost/variant.hpp>
 
 #include <iostream>
 #include <string>
@@ -29,6 +30,8 @@ namespace phoenix = boost::phoenix;
 namespace qi = boost::spirit::qi;
 namespace ascii = boost::spirit::ascii;
 
+#define BOOST_SPIRIT_DEBUG
+
 
 namespace client
 {
@@ -36,22 +39,21 @@ namespace client
     //  Our employee struct
     ///////////////////////////////////////////////////////////////////////////
     //[tutorial_employee_struct
+	typedef boost::variant<
+		double,
+		int
+	> key_information;
+
     struct name {
         std::string surname;
         std::string forename;
-
-        name() : surname(""), forename("") {};
-        name(const std::string &surname, const std::string &forename) : surname(surname), forename(forename) {}
     };
 
     struct employee
     {
         int age;
         client::name name;
-        double salary;
-
-        employee() : age(0), name(), salary(0) {};
-        employee(int age, const client::name &name, double salary) : age(age), name(name), salary(salary) {}
+        key_information info;
     };
     //]
 }
@@ -71,7 +73,7 @@ BOOST_FUSION_ADAPT_STRUCT(
     client::employee,
     (int, age)
     (client::name, name)
-    (double, salary)
+    (client::key_information, info)
 )
 //]
 
@@ -96,18 +98,33 @@ namespace client
 
             nameRule = quoted_string >> "," >> quoted_string;
 
+            infoRule = double_ | int_;
+
             start =
                 lit("employee")
                 >> '{'
                 >> (int_ >> ','
                 >>  nameRule >> ','
-                >>  double_)            [qi::_val = phoenix::construct<employee>(qi::_1, name("John", "Doe"), qi::_3)]
+                >>  infoRule)
                 >>  '}'
                 ;
+
+            BOOST_SPIRIT_DEBUG_NODES(
+				(quoted_string)
+				(nameRule)
+				(infoRule)
+				(start)
+			);
+
+            debug(start);
+            debug(infoRule);
+            debug(nameRule);
+            debug(quoted_string);
         }
 
         qi::rule<Iterator, std::string(), ascii::space_type> quoted_string;
         qi::rule<Iterator, client::name(), ascii::space_type> nameRule;
+        qi::rule<Iterator, client::key_information(), ascii::space_type> infoRule;
         qi::rule<Iterator, client::employee(), ascii::space_type> start;
     };
     //]
@@ -125,7 +142,7 @@ main()
 
     std::cout
         << "Give me an employee of the form :"
-        << "employee{age, \"surname\", \"forename\", salary } \n";
+        << "employee{age, \"surname\", \"forename\", (salary OR years of experience) } \n";
     std::cout << "Type [q or Q] to quit\n\n";
 
     using boost::spirit::ascii::space;
@@ -145,7 +162,7 @@ main()
         bool r = phrase_parse(iter, end, g, space, emp);
 
         std::cout  << emp.age << ", " << emp.name.forename << ","
-                   << emp.name.surname << "," << emp.salary << std::endl;
+                   << emp.name.surname << "," << emp.info << std::endl;
 
         if (r && iter == end)
         {
