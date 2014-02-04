@@ -5,6 +5,9 @@
 
 using namespace multiscale::verification;
 
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
+
 
 namespace multiscale {
 

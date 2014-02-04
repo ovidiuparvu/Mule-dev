@@ -3,6 +3,9 @@
 
 #include <string>
 
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
+
 using namespace std;
 
 

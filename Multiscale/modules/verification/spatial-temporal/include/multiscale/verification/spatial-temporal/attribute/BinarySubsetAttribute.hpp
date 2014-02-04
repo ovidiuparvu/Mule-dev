@@ -1,9 +1,14 @@
 #ifndef BINARYSUBSETATTRIBUTE_HPP
 #define BINARYSUBSETATTRIBUTE_HPP
 
-#include <string>
+#include "multiscale/verification/spatial-temporal/attribute/BinarySubsetMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SubsetAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 
-using namespace std;
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
+
+using namespace multiscale::verification;
 
 
 namespace multiscale {
@@ -12,7 +17,9 @@ namespace multiscale {
 
 		//! Structure for representing a binary subset attribute
 		struct BinarySubsetAttribute {
-			// TODO: Add fields
+			BinarySubsetMeasureAttribute 	binarySubsetMeasure;
+			SubsetAttribute					subset;
+			SpatialMeasureAttribute			spatialMeasure;
 		};
 
 	};
@@ -22,6 +29,9 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::BinarySubsetAttribute,
+    (multiscale::verification::BinarySubsetMeasureAttribute, binarySubsetMeasure)
+    (multiscale::verification::SubsetAttribute, subset)
+    (multiscale::verification::SpatialMeasureAttribute, spatialMeasure)
 )
 
 #endif

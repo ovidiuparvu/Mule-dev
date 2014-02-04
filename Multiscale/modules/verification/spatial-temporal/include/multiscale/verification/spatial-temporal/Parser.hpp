@@ -1,6 +1,7 @@
 #ifndef PARSER_HPP
 #define PARSER_HPP
 
+#include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/ParserGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarExtraInputException.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
@@ -8,6 +9,7 @@
 #include <string>
 
 using namespace std;
+using namespace multiscale::verification;
 
 
 namespace multiscale {
@@ -36,7 +38,7 @@ namespace multiscale {
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */
-                bool parse(string &parseResult);
+                bool parse(NumericStateVariableAttribute &parseResult);
 
             private:
 
@@ -47,7 +49,7 @@ namespace multiscale {
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */
-                bool parseLogicalQuery(string &parseResult);
+                bool parseLogicalQuery(NumericStateVariableAttribute &parseResult);
 
                 //! Check if the string was parsed completely
                 bool isStringParsedCompletely();

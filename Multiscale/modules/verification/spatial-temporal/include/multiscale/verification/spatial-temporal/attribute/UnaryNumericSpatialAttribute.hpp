@@ -1,8 +1,13 @@
 #ifndef UNARYNUMERICSPATIALATTRIBUTE_HPP
 #define UNARYNUMERICSPATIALATTRIBUTE_HPP
 
-// TODO: Add missing imports
-#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/UnaryNumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialAttribute.hpp"
+
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
+
+using namespace multiscale::verification;
 
 
 namespace multiscale {
@@ -11,7 +16,8 @@ namespace multiscale {
 
 		//! Structure for representing a unary numeric spatial attribute
 		struct UnaryNumericSpatialAttribute {
-			// TODO: Add missing fields
+			UnaryNumericMeasureAttribute 	unaryNumericMeasure;
+			NumericSpatialAttribute			numericSpatialMeasure;
 		};
 
 	};
@@ -21,6 +27,8 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UnaryNumericSpatialAttribute,
+    (multiscale::verification::UnaryNumericMeasureAttribute, unaryNumericMeasure)
+    (multiscale::verification::NumericSpatialAttribute, numericSpatialMeasure)
 )
 
 #endif

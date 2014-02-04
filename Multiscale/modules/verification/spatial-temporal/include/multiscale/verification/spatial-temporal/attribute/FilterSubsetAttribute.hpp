@@ -1,9 +1,13 @@
 #ifndef FILTERSUBSETATTRIBUTE_HPP
 #define FILTERSUBSETATTRIBUTE_HPP
 
-#include <string>
+#include "multiscale/verification/spatial-temporal/attribute/SubsetSpecificAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ConstraintAttribute.hpp"
 
-using namespace std;
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
+
+using namespace multiscale::verification;
 
 
 namespace multiscale {
@@ -12,7 +16,8 @@ namespace multiscale {
 
 		//! Structure for representing a filter subset attribute
 		struct FilterSubsetAttribute {
-			// TODO: Add fields
+			SubsetSpecificAttribute subsetSpecific;
+			ConstraintAttribute		constraint;
 		};
 
 	};
@@ -22,6 +27,8 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::FilterSubsetAttribute,
+    (multiscale::verification::SubsetSpecificAttribute, subsetSpecific)
+    (multiscale::verification::ConstraintAttribute, constraint)
 )
 
 #endif

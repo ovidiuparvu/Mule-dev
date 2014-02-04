@@ -1,9 +1,12 @@
 #ifndef NOTCONSTRAINTATTRIBUTE_HPP
 #define NOTCONSTRAINTATTRIBUTE_HPP
 
-#include <string>
+#include "multiscale/verification/spatial-temporal/attribute/ConstraintAttribute.hpp"
 
-using namespace std;
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
+
+using namespace multiscale::verification;
 
 
 namespace multiscale {
@@ -12,7 +15,7 @@ namespace multiscale {
 
 		//! Structure for representing a "not" constraint attribute
 		struct NotConstraintAttribute {
-			// TODO: Add fields
+			ConstraintAttribute constraint;
 		};
 
 	};
@@ -22,6 +25,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NotConstraintAttribute,
+    (multiscale::verification::ConstraintAttribute, constraint)
 )
 
 #endif

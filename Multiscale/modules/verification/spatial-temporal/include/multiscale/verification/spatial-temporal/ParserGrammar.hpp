@@ -1,7 +1,9 @@
 #ifndef PARSERGRAMMAR_HPP
 #define PARSERGRAMMAR_HPP
 
+#include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
+#include "multiscale/verification/spatial-temporal/handler/ErrorHandler.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -24,69 +26,27 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Structure for defining the error handler
-        struct ErrorHandler {
-            //! Structure for specifying the type of the result
-            template <typename, typename, typename>
-            struct result { typedef void type; };
+        //! The grammar for parsing (P)BLSTL spatial-temporal logical queries
+        template <typename Iterator>
+        class ParserGrammar : public qi::grammar<Iterator, NumericStateVariableAttribute(), ascii::space_type> {
 
-            //! Overloaded operator
-            /*!
-             * \param expectedToken The expected token
-             * \param errorPosition Iterator pointing to the error position
-             * \param last          Iterator pointing to the end of the query
-             */
-            template<typename Iterator>
-            void operator()(qi::info const &expectedToken, Iterator errorPosition, Iterator last) const {
-                string errorString          = string(errorPosition, last);
-                string expectedTokenString  = getExpectedTokenAsString(expectedToken);
+            private:
 
-                throw ParserGrammarUnexpectedTokenException(expectedTokenString, errorString);
-            }
+                qi::rule<Iterator, LogicPropertyAttribute(), ascii::space_type>
+                	logicalPropertyRule;		/*!< The rule for parsing a logical property*/
+                qi::rule<Iterator, NumericStateVariableAttribute(), ascii::space_type>
+                	numericStateVariableRule;	/*!< The rule for parsing a numeric state variable */
+                qi::rule<Iterator, StateVariableAttribute(), ascii::space_type>
+                	stateVariableRule;			/*!< The rule for parsing a state variable */
 
-            //! Convert the expected token to a string
-            /*! Convert the expected token to a string and remove enclosing quotes
-             *
-             * \param expectedToken The expected token (not a string)
-             */
-            string getExpectedTokenAsString(qi::info const &expectedToken) const {
-                stringstream strStream;
+            public:
 
-                strStream << expectedToken;
-
-                string expectedTokenString  = strStream.str();
-
-                // Remove the enclosing quotes
-                return expectedTokenString.substr(1, (expectedTokenString.length() - 2));
-            }
+                ParserGrammar();
 
         };
 
         // Create a lazy error handler function
-        phoenix::function<ErrorHandler> const handleError = ErrorHandler();
-
-
-        //! The grammar for parsing (P)BLSTL spatial-temporal logical queries
-        template <typename Iterator>
-        class ParserGrammar : public qi::grammar<Iterator, string(), ascii::space_type> {
-
-            private:
-
-                qi::rule<Iterator, string(), ascii::space_type> start;   /*!< The starting element for the parser */
-
-            public:
-
-                ParserGrammar() : ParserGrammar::base_type(start) {
-                    start
-                        =   lit("{")
-                            >> qi::double_ >> "," >> qi::int_
-                            >> lit("}");
-
-                    // Error handling routine
-                    qi::on_error<qi::fail>(start, multiscale::verification::handleError(_4, _3, _2));
-                }
-
-        };
+		phoenix::function<ErrorHandler> const handleError = ErrorHandler();
 
     };
 

@@ -1,6 +1,8 @@
 #ifndef SUBSETSPECIFICATTRIBUTE_HPP
 #define SUBSETSPECIFICATTRIBUTE_HPP
 
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
 #include <string>
 
 using namespace std;

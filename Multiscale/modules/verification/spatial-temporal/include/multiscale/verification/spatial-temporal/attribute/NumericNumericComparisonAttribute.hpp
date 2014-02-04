@@ -5,6 +5,8 @@
 #include "multiscale/verification/spatial-temporal/attribute/NumericAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericStateVariableAttribute.hpp"
 
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
 
 using namespace multiscale::verification;
 

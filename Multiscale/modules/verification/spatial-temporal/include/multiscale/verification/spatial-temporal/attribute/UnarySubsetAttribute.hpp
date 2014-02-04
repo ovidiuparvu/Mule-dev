@@ -1,9 +1,13 @@
 #ifndef UNARYSUBSETATTRIBUTE_HPP
 #define UNARYSUBSETATTRIBUTE_HPP
 
-#include <string>
+#include "multiscale/verification/spatial-temporal/attribute/UnarySubsetMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SubsetAttribute.hpp"
 
-using namespace std;
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/fusion/include/io.hpp>
+
+using namespace multiscale::verification;
 
 
 namespace multiscale {
@@ -12,7 +16,8 @@ namespace multiscale {
 
 		//! Structure for representing a unary subset attribute
 		struct UnarySubsetAttribute {
-			// TODO: Add fields
+			UnarySubsetMeasureAttribute unarySubsetMeasure;
+			SubsetAttribute				subset;
 		};
 
 	};
@@ -22,6 +27,8 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UnarySubsetAttribute,
+    (multiscale::verification::UnarySubsetMeasureAttribute, unarySubsetMeasure)
+    (multiscale::verification::SubsetAttribute, subset)
 )
 
 #endif
