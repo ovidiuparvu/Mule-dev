@@ -1,5 +1,6 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/Parser.hpp"
 
 #include <iostream>
@@ -12,7 +13,7 @@ using namespace std;
 //  Main program
 int main(int argc, char **argv) {
     string test;
-    string result;
+    NumericStateVariableAttribute result;
 
     cin >> test;
 

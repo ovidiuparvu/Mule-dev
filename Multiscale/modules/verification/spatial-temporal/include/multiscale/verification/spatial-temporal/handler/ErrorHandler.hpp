@@ -4,8 +4,9 @@
 #include <boost/spirit/include/qi.hpp>
 #include <string>
 
+namespace qi = boost::spirit::qi;
+
 using namespace std;
-using namespace boost::spirit;
 
 
 namespace multiscale {
