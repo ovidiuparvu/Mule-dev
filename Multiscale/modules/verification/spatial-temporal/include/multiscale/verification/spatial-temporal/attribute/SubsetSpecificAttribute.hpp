@@ -5,8 +5,6 @@
 #include <boost/fusion/include/io.hpp>
 #include <string>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -14,7 +12,7 @@ namespace multiscale {
 
 		//! Structure for representing a subset specific attribute
 		struct SubsetSpecificAttribute {
-			string name;
+			std::string name;
 		};
 
 	};
@@ -24,7 +22,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::SubsetSpecificAttribute,
-    (string, name)
+    (std::string, name)
 )
 
 #endif

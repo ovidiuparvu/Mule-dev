@@ -13,14 +13,31 @@ using namespace std;
 //  Main program
 int main(int argc, char **argv) {
     string test;
-    NumericStateVariableAttribute result;
+    SubsetAttribute result;
 
-    cin >> test;
+    cout << "/////////////////////////////////////////////////////////\n\n";
+	cout << "\t\tA logical query parser...\n\n";
+	cout << "/////////////////////////////////////////////////////////\n\n";
+
+	cout
+		<< "Give me a logical query of the form :" << endl
+		<< "\t{subset} OR {filteredSubset}" << endl
+		<< endl;
+
+	getline(cin, test);
 
     Parser parser(test);
 
     try {
-        parser.parse(result);
+        if (parser.parse(result)) {
+			cout << "-----------------------------------------------------" << endl;
+			cout << " Parsing succeeded!" << endl;
+			cout << "-----------------------------------------------------" << endl;
+        } else {
+        	cout << "-----------------------------------------------------" << endl;
+			cout << " Parsing failed!" << endl;
+			cout << "-----------------------------------------------------" << endl;
+        }
     } catch(const exception &e) {
         ExceptionHandler::printErrorMessage(e);
 

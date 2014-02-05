@@ -17,6 +17,24 @@ void ParserGrammarExceptionHandler::handleUnexpectedTokenException(const string 
     MS_throw(InvalidInputException, errorMessage);
 }
 
+void ParserGrammarExceptionHandler::handleUnparseableInputException(const string &initialString, const string &errorString) {
+    stringstream strStream;
+
+    unsigned correctlyParsedStringLength = initialString.length() - errorString.length();
+    string correctlyParsedString = initialString.substr(0, correctlyParsedStringLength);
+
+    strStream   << getIntroductoryErrorMessage()
+                << "Please rewrite the unparseable part \""
+                << errorString
+                << "\" of the query. "
+                << "You can find the unparseable input emphasised by \">>>\" and \"<<<\" below (column "
+                << (correctlyParsedString.length() + 1)
+                << "): " << endl
+                << correctlyParsedString + ">>>" + errorString + "<<<";
+
+    MS_throw(InvalidInputException, strStream.str());
+}
+
 void ParserGrammarExceptionHandler::handleExtraInputException(const string &initialString, const string &extraInput) {
     stringstream strStream;
 
@@ -28,11 +46,10 @@ void ParserGrammarExceptionHandler::handleExtraInputException(const string &init
                 << extraInput
                 << "\" following the syntactically correct query \""
                 << correctlyParsedString << "\". "
-                << "You can find the extra input emphasized by \">>>\" and \"<<<\" below (column "
+                << "You can find the extra input emphasised by \">>>\" and \"<<<\" below (column "
                 << (correctlyParsedString.length() + 1)
                 << "): " << endl
                 << correctlyParsedString + ">>>" + extraInput + "<<<";
-
 
     MS_throw(InvalidInputException, strStream.str());
 }
@@ -51,11 +68,11 @@ string ParserGrammarExceptionHandler::handleUnexpectedTokenInString(const string
                 << "instead of the expected token \""
                 << expectedToken
                 << "\". "
-                << "You can find the error starting position emphasized by \">>>\" and \"<<<\" below (column "
+                << "You can find the error starting position emphasised by \">>>\" and \"<<<\" below (column "
                 << (errorPositionIndex + 1)
                 << "):" << endl
                 << initialString.substr(0, errorPositionIndex) + ">>>" +
-                initialString.at(errorPositionIndex) + "<<<" + errorString;
+                initialString.at(errorPositionIndex) + "<<<" + errorString.substr(1);
 
     return strStream.str();
 }

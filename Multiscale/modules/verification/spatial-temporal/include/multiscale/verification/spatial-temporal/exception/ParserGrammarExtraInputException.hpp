@@ -4,7 +4,6 @@
 #include <string>
 
 using namespace multiscale;
-using namespace std;
 
 
 namespace multiscale {
@@ -16,17 +15,17 @@ namespace multiscale {
 
             private:
 
-                string errorString;    /*!< The substring from the original string starting with
-                                                 the index of the error token*/
+                std::string errorString;    /*!< The substring from the original std::string starting with
+											the index of the error token*/
 
             public:
 
-                ParserGrammarExtraInputException(const string &errorString) {
+                ParserGrammarExtraInputException(const std::string &errorString) {
                     this->errorString = errorString;
                 }
 
-                //! Get the error string
-                string getErrorString() const {
+                //! Get the error std::string
+                std::string getErrorString() const {
                     return errorString;
                 }
 

@@ -17,6 +17,21 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 #------------------------------------------------------------
 
 
+# ParserTest
+
+set(PARSER_TEST_SRC
+    test/ParserTest.cpp
+    
+    src/Parser.cpp
+    src/exception/ParserGrammarExceptionHandler.cpp
+)
+
+add_executable(ParserTest ${PARSER_TEST_SRC})
+AddUnitTest(ParserTest)
+
+target_link_libraries(ParserTest gtest gtest_main)
+
+
 # ParserGrammarSample
 
 set(PARSER_GRAMMAR_SAMPLE_SRC
@@ -28,6 +43,7 @@ set(PARSER_GRAMMAR_SAMPLE_SRC
 
 add_executable(ParserGrammarSample ${PARSER_GRAMMAR_SAMPLE_SRC})
 AddSample(ParserGrammarSample)
+
 
 # EmployeeSample
 

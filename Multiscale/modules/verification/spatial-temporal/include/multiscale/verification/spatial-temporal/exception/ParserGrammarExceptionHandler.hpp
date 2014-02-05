@@ -27,6 +27,13 @@ namespace multiscale {
                 static void handleUnexpectedTokenException(const string &initialString, const string &errorString,
                                                            const string &expectedToken);
 
+                //! Handle the exception when wrong input is provided
+				/*!
+				 * \param initialString The initial string
+				 * \param extraInput    Error string
+				 */
+				static void handleUnparseableInputException(const string &initialString, const string &errorString);
+
                 //! Handle the exception when extra input is provided
                 /*!
                  * \param initialString The initial string
