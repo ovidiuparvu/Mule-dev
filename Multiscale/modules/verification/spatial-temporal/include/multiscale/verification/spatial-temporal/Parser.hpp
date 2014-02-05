@@ -35,7 +35,7 @@ namespace multiscale {
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */
-                bool parse(SubsetAttribute &parseResult);
+                bool parse(ConstraintAttribute &parseResult);
 
             private:
 
@@ -46,7 +46,7 @@ namespace multiscale {
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */
-                bool parseLogicalQuery(SubsetAttribute &parseResult);
+                bool parseLogicalQuery(ConstraintAttribute &parseResult);
 
                 //! Check if an error case was encountered
                 /*!

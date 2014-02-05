@@ -1,0 +1,31 @@
+#ifndef NIL_HPP
+#define NIL_HPP
+
+#include <fstream>
+
+
+namespace multiscale {
+
+	namespace verification {
+
+		//! A class used to avoid run-time errors when defining a variant type.
+		/*!
+		 * When defining a variable of variant "V" type the default constructor of the
+		 * first type within "V" is called. In order to avoid run-time errors this type
+		 * needs to be different from the boost::recursive_wrapper<T> type. In variants
+		 * where all types are boost::recursive_wrapper<T_i> the Nil type can be added
+		 * before them in order to avoid the potential run-time errors.
+		 */
+		class Nil {};
+
+		// Define the output stream operator
+		inline std::ostream& operator<<(std::ostream& out, Nil) {
+			out << "nil";
+
+			return out;
+		}
+	};
+
+};
+
+#endif

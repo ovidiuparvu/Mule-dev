@@ -7,31 +7,33 @@ using namespace multiscale::verification;
 
 // Tests
 TEST(Parser, UnparseableInput) {
-	SubsetAttribute parseResult;
-	Parser parser("_XOXO_");
+	ConstraintAttribute parseResult;
+	Parser parser(")_VVV_");
 
     EXPECT_THROW(parser.parse(parseResult), multiscale::InvalidInputException);
 }
 
 TEST(Parser, UnexpectedToken) {
-	SubsetAttribute parseResult;
-	Parser parser("filter(regions, ~A(()");
+	ConstraintAttribute parseResult;
+	Parser parser("A V V");
 
     EXPECT_THROW(parser.parse(parseResult), multiscale::InvalidInputException);
 }
 
 TEST(Parser, ExtraInput) {
-	SubsetAttribute parseResult;
-	Parser parser("regionsTT");
+	ConstraintAttribute parseResult;
+	Parser parser("A V B(");
 
     EXPECT_THROW(parser.parse(parseResult), multiscale::InvalidInputException);
 }
 
 TEST(Parser, ParseableInput) {
-	SubsetAttribute parseResult;
-	Parser parser("filter(regions, A V ~B)");
+	ConstraintAttribute parseResult;
+	Parser parser("A V ~B");
+	Parser parser2("(A V ~B)");
 
     EXPECT_TRUE(parser.parse(parseResult));
+    EXPECT_TRUE(parser2.parse(parseResult));
 }
 
 // Main method

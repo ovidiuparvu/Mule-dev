@@ -16,11 +16,11 @@ Parser::Parser(const std::string &logicalQuery) {
 
 Parser::~Parser() {}
 
-bool Parser::parse(SubsetAttribute &parseResult) {
+bool Parser::parse(ConstraintAttribute &parseResult) {
     bool isSuccessfulParse = false;
 
     try {
-        parseLogicalQuery(parseResult);
+    	isSuccessfulParse = parseLogicalQuery(parseResult);
     } catch(const ParserGrammarUnexpectedTokenException &e) {
         ParserGrammarExceptionHandler::handleUnexpectedTokenException(std::string(logicalQueryIterator, logicalQueryEnd),
                                                                       e.getErrorString(), e.getExpectedToken());
@@ -38,7 +38,7 @@ void Parser::initialise() {
     this->logicalQueryEnd = logicalQuery.end();
 }
 
-bool Parser::parseLogicalQuery(SubsetAttribute &parseResult) {
+bool Parser::parseLogicalQuery(ConstraintAttribute &parseResult) {
     bool isSuccesfulParse = phrase_parse(logicalQueryIterator, logicalQueryEnd, grammar, ascii::space, parseResult);
 
     checkIfErrorCase(isSuccesfulParse);

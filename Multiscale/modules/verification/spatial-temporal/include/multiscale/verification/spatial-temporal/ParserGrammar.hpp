@@ -34,64 +34,32 @@ namespace multiscale {
 
         //! The grammar for parsing (P)BLSTL spatial-temporal logical queries
         template <typename Iterator>
-        class ParserGrammar : public qi::grammar<Iterator, SubsetAttribute(), ascii::space_type> {
+        class ParserGrammar : public qi::grammar<Iterator, ConstraintAttribute(), ascii::space_type> {
 
             private:
 
-                //qi::rule<Iterator, LogicPropertyAttribute(), ascii::space_type> logicalPropertyRule;		/*!< The rule for parsing a logical property*/
-
-                qi::rule<Iterator, SubsetAttribute(), ascii::space_type> 				subsetRule;					/*!< The rule for parsing a subset */
-                qi::rule<Iterator, FilterSubsetAttribute(), ascii::space_type> 			filterSubsetRule;			/*!< The rule for parsing a subset filter */
-                qi::rule<Iterator, SubsetSpecificAttribute(), ascii::space_type> 		subsetSpecificRule;			/*!< The rule for parsing a specific subset */
-                qi::rule<Iterator, std::string(), ascii::space_type> 					subsetSpecificNameRule;		/*!< The rule for parsing a specific subset name */
                 qi::rule<Iterator, ConstraintAttribute(), ascii::space_type> 			constraintRule;				/*!< The rule for parsing a constraint */
+                qi::rule<Iterator, UnaryConstraintAttribute(), ascii::space_type> 		unaryConstraintRule;		/*!< The rule for parsing a unary constraint */
                 qi::rule<Iterator, NotConstraintAttribute(), ascii::space_type> 		notConstraintRule;			/*!< The rule for parsing a "not" constraint */
-                qi::rule<Iterator, OrConstraintAttribute(), ascii::space_type> 			orConstraintRule;			/*!< The rule for parsing an "or" constraint */
                 qi::rule<Iterator, NumericStateVariableAttribute(), ascii::space_type> 	numericStateVariableRule;	/*!< The rule for parsing a numeric state variable */
                 qi::rule<Iterator, StateVariableAttribute(), ascii::space_type> 		stateVariableRule;			/*!< The rule for parsing a state variable */
                 qi::rule<Iterator, std::string(), ascii::space_type> 					stringRule; 				/*!< The rule for parsing a string without escaping white space */
 
             public:
 
-                ParserGrammar() : ParserGrammar::base_type(subsetRule) {
+                ParserGrammar() : ParserGrammar::base_type(constraintRule) {
                 	// Rules definitions
 
-                	subsetRule
-                		=	subsetSpecificRule
-                		|	filterSubsetRule;
-
-                	filterSubsetRule
-                		=	qi::lit("filter")
-                			> '('
-                			> subsetSpecificRule
-                			> ','
-                			> constraintRule
-                			> ')';
-
-                	subsetSpecificRule
-                		=	subsetSpecificNameRule;
-
-                	subsetSpecificNameRule
-                		=	ascii::string("clusters")
-                		|	ascii::string("regions");
-
                 	constraintRule
-                		=	notConstraintRule
-                		|	orConstraintRule
-                			>> &qi::lit("V")
-                		|	numericStateVariableRule
-                		|	'('
-                			> constraintRule
-                			> ')';
+                		=	unaryConstraintRule >> *( 'V' > unaryConstraintRule)
+                		|	'(' > constraintRule > ')';
+
+                	unaryConstraintRule
+						=	notConstraintRule
+						|	numericStateVariableRule;
 
                 	notConstraintRule
-                		=	"~"
-                			> constraintRule;
-
-                	orConstraintRule
-                		=	constraintRule
-                			>	"V"
-                			>	constraintRule;
+                		=	'~' > constraintRule;
 
                 	numericStateVariableRule
                 		=   stateVariableRule;
@@ -103,34 +71,25 @@ namespace multiscale {
                 		=	+(qi::char_("a-zA-UW-Z_"));
 
                 	// Assign a name to the rules
-					subsetRule.name("subsetRule");
-					filterSubsetRule.name("filterSubsetRule");
-					subsetSpecificRule.name("subsetSpecificRule");
-					subsetSpecificNameRule.name("subsetSpecificNameRule");
 					constraintRule.name("constraintRule");
+					unaryConstraintRule.name("unaryConstraintRule");
 					notConstraintRule.name("notConstraintRule");
-					orConstraintRule.name("orConstraintRule");
 					numericStateVariableRule.name("numericStateVariableRule");
 					stateVariableRule.name("stateVariableRule");
 					stringRule.name("stringRule");
 
 					// Debugging and reporting support
-					debug(subsetRule);
-					debug(filterSubsetRule);
-					debug(subsetSpecificRule);
-					debug(subsetSpecificNameRule);
 					debug(constraintRule);
+					debug(unaryConstraintRule);
 					debug(notConstraintRule);
-					debug(orConstraintRule);
 					debug(numericStateVariableRule);
 					debug(stateVariableRule);
 					debug(stringRule);
 
                 	// Error handling routines
-                	qi::on_error<qi::fail>(filterSubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(constraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(orConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 }
 
         };
