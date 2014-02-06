@@ -10,9 +10,13 @@ namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a state variable attribute
-		struct StateVariableAttribute {
-			std::string name;
+		//! Class for representing a state variable attribute
+		class StateVariableAttribute {
+
+			public:
+
+				std::string name;
+
 		};
 
 	};

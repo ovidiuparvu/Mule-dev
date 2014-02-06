@@ -6,6 +6,7 @@
  */
 
 
+//#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
 //#include "multiscale/verification/spatial-temporal/attribute/AndAttribute.hpp"
 //#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericMeasureAttribute.hpp"
 //#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericNumericAttribute.hpp"
@@ -24,6 +25,7 @@
 //#include "multiscale/verification/spatial-temporal/attribute/NextAttribute.hpp"
 //#include "multiscale/verification/spatial-temporal/attribute/NextNAttribute.hpp"
 //#include "multiscale/verification/spatial-temporal/attribute/NotAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/NotConstraintAttribute.hpp"
 //#include "multiscale/verification/spatial-temporal/attribute/NumericAttribute.hpp"
 //#include "multiscale/verification/spatial-temporal/attribute/NumericNumericComparisonAttribute.hpp"
 //#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialAttribute.hpp"
