@@ -31,7 +31,8 @@ int main(int argc, char **argv) {
     try {
         if (parser.parse(result)) {
 			cout << "-----------------------------------------------------" << endl;
-			cout << " Parsing succeeded!" << endl;
+			cout << " Parsing succeeded and the AST evaluates to "
+	             << (result.evaluate() ? "true" : "false") << "!" << endl;
 			cout << "-----------------------------------------------------" << endl;
         } else {
         	cout << "-----------------------------------------------------" << endl;

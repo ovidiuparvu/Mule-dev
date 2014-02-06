@@ -51,7 +51,7 @@ namespace multiscale {
                 	// Rules definitions
 
                 	constraintRule
-                		=	unaryConstraintRule >> *( 'V' > unaryConstraintRule)
+                		=	unaryConstraintRule >> *('V' > constraintRule)
                 		|	'(' > constraintRule > ')';
 
                 	unaryConstraintRule

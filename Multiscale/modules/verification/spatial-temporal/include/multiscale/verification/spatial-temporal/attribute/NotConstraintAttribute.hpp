@@ -2,7 +2,10 @@
 #define NOTCONSTRAINTATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/AttributeVisitor.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ConstraintAttributeType.hpp"
+
+#include <boost/fusion/include/adapt_struct.hpp>
 
 
 namespace multiscale {
@@ -10,12 +13,16 @@ namespace multiscale {
 	namespace verification {
 
 		//! Class for representing a "not" constraint attribute
-		class NotConstraintAttribute {
+		class NotConstraintAttribute : public Attribute {
 
 			public:
 
 				multiscale::verification::ConstraintAttributeType constraint;	/*!< The constraint which will be negated */
 
+				//! Evaluate the constraint
+				bool evaluate() const override {
+					return !(boost::apply_visitor(AttributeVisitor(), constraint));
+				}
 		};
 
 	};

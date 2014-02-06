@@ -11,7 +11,7 @@ namespace multiscale {
 
 				virtual ~Attribute() {};
 
-				virtual bool evaluate() = 0;
+				virtual bool evaluate() const = 0;
 
 		};
 
