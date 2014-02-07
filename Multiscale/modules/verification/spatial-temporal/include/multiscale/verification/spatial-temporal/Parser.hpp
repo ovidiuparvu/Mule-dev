@@ -31,6 +31,9 @@ namespace multiscale {
                 Parser(const std::string &logicalQuery);
                 ~Parser();
 
+                //! Set the value of the logical query
+                void setLogicalQuery(const std::string &logicalQuery);
+
                 //! Parse the logical query
                 /*!
                  * \param parseResult The result of the parsing procedure

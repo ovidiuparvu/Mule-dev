@@ -2,7 +2,6 @@
 #define UNARYCONSTRAINTATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/AttributeVisitor.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericStateVariableAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -15,12 +14,13 @@ namespace multiscale {
 
 		// Forward declarations
 		class NotConstraintAttribute;
-
+		class ConstraintAttribute;
 
 		//! Variant for a unary constraint attribute
 		typedef boost::variant<
 			NumericStateVariableAttribute,
-			boost::recursive_wrapper<NotConstraintAttribute>
+			boost::recursive_wrapper<NotConstraintAttribute>,
+			boost::recursive_wrapper<ConstraintAttribute>
 		> UnaryConstraintAttributeType;
 
 
@@ -33,7 +33,7 @@ namespace multiscale {
 
 				//! Evaluate the constraint
 				bool evaluate() const override {
-					return boost::apply_visitor(AttributeVisitor(), unaryConstraint);
+					return evaluateUnaryExpression(unaryConstraint);
 				}
 
 		};

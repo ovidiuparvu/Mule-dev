@@ -14,10 +14,7 @@
 #include <boost/spirit/include/phoenix_object.hpp>
 #include <boost/spirit/include/qi_and_predicate.hpp>
 
-#include <iostream>
-#include <fstream>
 #include <string>
-#include <vector>
 
 
 namespace multiscale {
@@ -39,6 +36,11 @@ namespace multiscale {
             private:
 
                 qi::rule<Iterator, ConstraintAttribute(), ascii::space_type> 			constraintRule;				/*!< The rule for parsing a constraint */
+                qi::rule<Iterator, ConstraintAttribute(), ascii::space_type> 			binaryConstraintRule;		/*!< The rule for parsing a binary constraint */
+                qi::rule<Iterator, OrConstraintAttribute(), ascii::space_type> 			orConstraintRule;			/*!< The rule for parsing an "or" constraint */
+                qi::rule<Iterator, AndConstraintAttribute(), ascii::space_type>			andConstraintRule;			/*!< The rule for parsing an "and" constraint */
+                qi::rule<Iterator, ImplicationConstraintAttribute(), ascii::space_type>	implicationConstraintRule;	/*!< The rule for parsing an "implication" constraint */
+                qi::rule<Iterator, EquivalenceConstraintAttribute(), ascii::space_type>	equivalenceConstraintRule;	/*!< The rule for parsing an "equivalence" constraint */
                 qi::rule<Iterator, UnaryConstraintAttribute(), ascii::space_type> 		unaryConstraintRule;		/*!< The rule for parsing a unary constraint */
                 qi::rule<Iterator, NotConstraintAttribute(), ascii::space_type> 		notConstraintRule;			/*!< The rule for parsing a "not" constraint */
                 qi::rule<Iterator, NumericStateVariableAttribute(), ascii::space_type> 	numericStateVariableRule;	/*!< The rule for parsing a numeric state variable */
@@ -51,12 +53,30 @@ namespace multiscale {
                 	// Rules definitions
 
                 	constraintRule
-                		=	unaryConstraintRule >> *('V' > constraintRule)
-                		|	'(' > constraintRule > ')';
+                		=	unaryConstraintRule >> binaryConstraintRule;
+
+                	binaryConstraintRule
+                		=	orConstraintRule
+                		|	andConstraintRule
+                		|	implicationConstraintRule
+                		|	equivalenceConstraintRule;
+
+                	orConstraintRule
+                		=	*('V' > constraintRule);
+
+                	andConstraintRule
+                		=	*('^' > constraintRule);
+
+                	implicationConstraintRule
+                		=	*("=>" > constraintRule);
+
+                	equivalenceConstraintRule
+                		=	*("<=>" > constraintRule);
 
                 	unaryConstraintRule
 						=	notConstraintRule
-						|	numericStateVariableRule;
+						|	numericStateVariableRule
+						| 	('(' > constraintRule > ')');
 
                 	notConstraintRule
                 		=	'~' > constraintRule;
@@ -72,6 +92,10 @@ namespace multiscale {
 
                 	// Assign a name to the rules
 					constraintRule.name("constraintRule");
+					orConstraintRule.name("orConstraintRule");
+					andConstraintRule.name("andConstraintRule");
+					implicationConstraintRule.name("implicationConstraintRule");
+					equivalenceConstraintRule.name("equivalenceConstraintRule");
 					unaryConstraintRule.name("unaryConstraintRule");
 					notConstraintRule.name("notConstraintRule");
 					numericStateVariableRule.name("numericStateVariableRule");
@@ -80,6 +104,10 @@ namespace multiscale {
 
 					// Debugging and reporting support
 					debug(constraintRule);
+					debug(orConstraintRule);
+					debug(andConstraintRule);
+					debug(implicationConstraintRule);
+					debug(equivalenceConstraintRule);
 					debug(unaryConstraintRule);
 					debug(notConstraintRule);
 					debug(numericStateVariableRule);
@@ -87,7 +115,10 @@ namespace multiscale {
 					debug(stringRule);
 
                 	// Error handling routines
-                	qi::on_error<qi::fail>(constraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(orConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(andConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(implicationConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(equivalenceConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 }

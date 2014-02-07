@@ -4,6 +4,9 @@
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnparseableInputException.hpp"
 
+// TODO: Remove
+#include <iostream>
+
 using namespace boost::spirit;
 using namespace multiscale::verification;
 
@@ -15,6 +18,12 @@ Parser::Parser(const std::string &logicalQuery) {
 }
 
 Parser::~Parser() {}
+
+void Parser::setLogicalQuery(const std::string &logicalQuery) {
+	this->logicalQuery = logicalQuery;
+
+	initialise();
+}
 
 bool Parser::parse(ConstraintAttribute &parseResult) {
     bool isSuccessfulParse = false;

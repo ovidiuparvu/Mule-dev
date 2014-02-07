@@ -51,5 +51,9 @@
 
 // Include forward declared types
 #include "multiscale/verification/spatial-temporal/attribute/NotConstraintAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/OrConstraintAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/AndConstraintAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ImplicationConstraintAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/EquivalenceConstraintAttribute.hpp"
 
 #endif

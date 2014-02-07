@@ -2,11 +2,9 @@
 #define NUMERICSTATEVARIABLEATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/AttributeVisitor.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/StateVariableAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
 
 
 namespace multiscale {

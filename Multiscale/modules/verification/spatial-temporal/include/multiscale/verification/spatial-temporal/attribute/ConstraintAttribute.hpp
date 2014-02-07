@@ -2,13 +2,9 @@
 #define CONSTRAINTATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/AttributeVisitor.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ConstraintAttributeType.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/variant.hpp>
-
-#include <list>
 
 
 namespace multiscale {
@@ -20,34 +16,11 @@ namespace multiscale {
 
 			public:
 
-				ConstraintAttributeType				firstConstraint;
-				std::list<ConstraintAttributeType> 	nextConstraints;
+				ConstraintAttributeType	constraint;		/*!< The constraint */
 
 				//! Evaluate the constraint
 				bool evaluate() const override {
-					bool evaluationResult = evaluateFirstConstraint();
-
-					if (!evaluationResult) {
-						evaluationResult = evaluateNextConstraints();
-					}
-
-					return evaluationResult;
-				}
-
-				//! Evaluate the first constraint
-				bool evaluateFirstConstraint() const {
-					return boost::apply_visitor(AttributeVisitor(), firstConstraint);
-				}
-
-				//! Evaluate the next constraints
-				bool evaluateNextConstraints() const {
-					for (const auto &nextConstraint : nextConstraints) {
-						if (boost::apply_visitor(AttributeVisitor(), nextConstraint)) {
-							return true;
-						}
-					}
-
-					return false;
+					return evaluateUnaryExpression(constraint);
 				}
 
 		};
@@ -59,8 +32,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::ConstraintAttribute,
-    (multiscale::verification::ConstraintAttributeType, firstConstraint)
-    (std::list<multiscale::verification::ConstraintAttributeType>, nextConstraints)
+    (multiscale::verification::ConstraintAttributeType, constraint)
 )
 
 #endif

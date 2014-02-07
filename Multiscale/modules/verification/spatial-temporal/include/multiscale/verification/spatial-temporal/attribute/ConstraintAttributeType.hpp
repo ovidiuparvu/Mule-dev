@@ -14,6 +14,10 @@ namespace multiscale {
 
 		// Forward declaration of classes
 		class ConstraintAttribute;
+		class OrConstraintAttribute;
+		class AndConstraintAttribute;
+		class ImplicationConstraintAttribute;
+		class EquivalenceConstraintAttribute;
 		class UnaryConstraintAttribute;
 
 
@@ -21,6 +25,10 @@ namespace multiscale {
 		typedef boost::variant<
 			Nil,
 			boost::recursive_wrapper<ConstraintAttribute>,
+			boost::recursive_wrapper<OrConstraintAttribute>,
+			boost::recursive_wrapper<AndConstraintAttribute>,
+			boost::recursive_wrapper<ImplicationConstraintAttribute>,
+			boost::recursive_wrapper<EquivalenceConstraintAttribute>,
 			boost::recursive_wrapper<UnaryConstraintAttribute>
 		> ConstraintAttributeType;
 
