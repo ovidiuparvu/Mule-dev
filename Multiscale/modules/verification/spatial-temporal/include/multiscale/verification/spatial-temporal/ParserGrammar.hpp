@@ -36,7 +36,7 @@ namespace multiscale {
             private:
 
                 qi::rule<Iterator, ConstraintAttribute(), ascii::space_type> 			constraintRule;				/*!< The rule for parsing a constraint */
-                qi::rule<Iterator, ConstraintAttribute(), ascii::space_type> 			binaryConstraintRule;		/*!< The rule for parsing a binary constraint */
+                qi::rule<Iterator, std::list<ConstraintAttribute>(), ascii::space_type>	binaryConstraintRule;		/*!< The rule for parsing a binary constraint */
                 qi::rule<Iterator, OrConstraintAttribute(), ascii::space_type> 			orConstraintRule;			/*!< The rule for parsing an "or" constraint */
                 qi::rule<Iterator, AndConstraintAttribute(), ascii::space_type>			andConstraintRule;			/*!< The rule for parsing an "and" constraint */
                 qi::rule<Iterator, ImplicationConstraintAttribute(), ascii::space_type>	implicationConstraintRule;	/*!< The rule for parsing an "implication" constraint */

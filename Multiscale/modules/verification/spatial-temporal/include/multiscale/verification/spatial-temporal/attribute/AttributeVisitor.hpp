@@ -13,8 +13,8 @@ namespace multiscale {
 			public:
 
 				template <typename T>
-				bool operator() (const T &attribute) const {
-					return attribute.evaluate();
+				bool operator() (const T &attribute, bool truthValue = true) const {
+					return attribute.evaluate(truthValue);
 				}
 
 		};

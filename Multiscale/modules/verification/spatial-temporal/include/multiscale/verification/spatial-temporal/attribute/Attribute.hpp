@@ -17,8 +17,8 @@ namespace multiscale {
 
 				virtual ~Attribute() {};
 
-				//! Evaluate the attribute
-				virtual bool evaluate() const = 0;
+				//! Evaluate the attribute considering the given truth value
+				virtual bool evaluate(bool truthValue) const = 0;
 
 				//! Evaluate a unary expression
 				template <typename T>
@@ -33,6 +33,12 @@ namespace multiscale {
 					bool evaluationResult = evaluateFirstExpression(firstExpression);
 
 					return evaluateNextExpressions(evaluationResult, nextExpressions, evaluator);
+				}
+
+				//! Evaluate a n-ary expression considering the given truth value
+				template <typename T, typename U>
+				bool evaluateNaryExpression(bool firstExpressionTruthValue, const std::list<T> &nextExpressions) const {
+					return evaluateNextExpressions(firstExpressionTruthValue, nextExpressions);
 				}
 
 			private:
@@ -52,6 +58,16 @@ namespace multiscale {
 					for (const auto &nextExpression : nextExpressions) {
 						nextExpressionEvaluation = boost::apply_visitor(AttributeVisitor(), nextExpression);
 						evaluationResult = evaluator(evaluationResult, nextExpressionEvaluation);
+					}
+
+					return evaluationResult;
+				}
+
+				//! Evaluate the next expressions
+				template <typename T, typename U>
+				bool evaluateNextExpressions(bool evaluationResult, const std::list<T> &nextExpressions) const {
+					for (const auto &nextExpression : nextExpressions) {
+						evaluationResult = boost::apply_visitor(AttributeVisitor(), nextExpression, evaluationResult);
 					}
 
 					return evaluationResult;
