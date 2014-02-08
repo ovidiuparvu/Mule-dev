@@ -158,7 +158,7 @@ namespace multiscaletest {
     bool ParserTest::TestCorrectEnclosingParentheses() {
     	std::vector<std::string> inputStrings = std::vector<std::string>(
     												{"(A)", "(A V B)", "((A ^ B) V (C ^ D))",
-    												 "((((A))) V (B))", "((A)) => ((B))"});
+    												 "((((A))) V (B))", "((A)) ^ ((B))"});
 
     	for (const auto &input : inputStrings) {
     		parser.setLogicalQuery(input);
@@ -173,7 +173,7 @@ namespace multiscaletest {
     bool ParserTest::TestIncorrectEnclosingParentheses() {
 		std::vector<std::string> inputStrings = std::vector<std::string>(
 													{"((A)", ")A V B(", "((A ^ B) V (C ^ D)))",
-													 "((((A())) V (B))", "((A))) => ((B)(())"});
+													 "((((A())) V (B))", "((A))) ^ ((B)(())"});
 
 		for (const auto &input : inputStrings) {
 			parser.setLogicalQuery(input);
@@ -244,15 +244,15 @@ TEST_F(ParserTest, Operators) {
 	EXPECT_TRUE(TestBinaryOperators());
 }
 
-//TEST_F(ParserTest, EnclosingParentheses) {
-//	EXPECT_TRUE(TestCorrectEnclosingParentheses());
-//	EXPECT_THROW(TestIncorrectEnclosingParentheses(), multiscale::InvalidInputException);
-//}
-//
-//TEST_F(ParserTest, OperatorsCombinations) {
-//	EXPECT_TRUE(TestCorrectOperatorsCombinations());
-//	EXPECT_THROW(TestIncorrectOperatorsCombinations(), multiscale::InvalidInputException);
-//}
+TEST_F(ParserTest, EnclosingParentheses) {
+	EXPECT_TRUE(TestCorrectEnclosingParentheses());
+	EXPECT_THROW(TestIncorrectEnclosingParentheses(), multiscale::InvalidInputException);
+}
+
+TEST_F(ParserTest, OperatorsCombinations) {
+	EXPECT_TRUE(TestCorrectOperatorsCombinations());
+	EXPECT_THROW(TestIncorrectOperatorsCombinations(), multiscale::InvalidInputException);
+}
 
 
 // Main method

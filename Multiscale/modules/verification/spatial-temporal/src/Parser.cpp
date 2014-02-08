@@ -4,9 +4,6 @@
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnparseableInputException.hpp"
 
-// TODO: Remove
-#include <iostream>
-
 using namespace boost::spirit;
 using namespace multiscale::verification;
 
