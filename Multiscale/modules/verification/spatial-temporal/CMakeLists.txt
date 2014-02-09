@@ -17,6 +17,26 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 #------------------------------------------------------------
 
 
+# ParserEvaluationTest
+
+set(PARSER_EVALUATION_TEST_SRC
+    src/Parser.cpp
+    src/evaluation/AndEvaluator.cpp
+    src/evaluation/EquivalenceEvaluator.cpp
+    src/evaluation/ImplicationEvaluator.cpp
+    src/evaluation/OrEvaluator.cpp
+    src/evaluation/NotEvaluator.cpp
+    src/exception/ParserGrammarExceptionHandler.cpp
+    
+    test/ParserEvaluationTest.cpp
+)
+
+add_executable(ParserEvaluationTest ${PARSER_EVALUATION_TEST_SRC})
+AddUnitTest(ParserEvaluationTest)
+
+target_link_libraries(ParserEvaluationTest gtest gtest_main)
+
+
 # ParserTest
 
 set(PARSER_TEST_SRC

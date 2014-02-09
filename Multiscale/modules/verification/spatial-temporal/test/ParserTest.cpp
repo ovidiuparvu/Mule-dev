@@ -11,7 +11,7 @@ using namespace multiscale::verification;
 
 namespace multiscaletest {
 
-    //! Class for testing the minimum enclosing triangle algorithm
+    //! Class for testing the parser
     class ParserTest : public MultiscaleTest {
 
     	protected:
