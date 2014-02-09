@@ -1,7 +1,7 @@
 #ifndef NIL_HPP
 #define NIL_HPP
 
-//#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
 
 #include <fstream>
 
@@ -18,17 +18,14 @@ namespace multiscale {
 		 * where all types are boost::recursive_wrapper<T_i> the Nil type can be added
 		 * before them in order to avoid the potential run-time errors.
 		 */
-		class Nil {
-//		class Nil : public Attribute {
+		class Nil : public Attribute {
 
-//			public:
+			public:
 
 				//! Evaluate the constraint
-//				bool evaluate() const override {
-//					return true;
-//				}
-
-            friend std::ostream& operator<<(std::ostream& stdout, const Nil &nil);
+				bool evaluate() const override {
+					return true;
+				}
 
 		};
 

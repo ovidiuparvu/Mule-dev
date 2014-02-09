@@ -1,7 +1,7 @@
 #ifndef NUMERICSTATEVARIABLEATTRIBUTE_HPP
 #define NUMERICSTATEVARIABLEATTRIBUTE_HPP
 
-//#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/StateVariableAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -12,17 +12,16 @@ namespace multiscale {
 	namespace verification {
 
 		//! Class for representing a numeric state variable attribute
-		class NumericStateVariableAttribute {
-//		class NumericStateVariableAttribute : public Attribute {
+		class NumericStateVariableAttribute : public Attribute {
 
 			public:
 
 				StateVariableAttribute name;
 
-				//! Evaluate the constraint
-//				bool evaluate() const override {
-//					return name.evaluate();
-//				}
+                //! Evaluate the state variable attribute
+                bool evaluate() const override {
+                    return name.evaluate();
+                }
 
 		};
 

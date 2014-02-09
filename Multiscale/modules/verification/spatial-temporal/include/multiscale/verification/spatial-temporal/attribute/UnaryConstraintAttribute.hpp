@@ -1,7 +1,7 @@
 #ifndef UNARYCONSTRAINTATTRIBUTE_HPP
 #define UNARYCONSTRAINTATTRIBUTE_HPP
 
-//#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericStateVariableAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -25,17 +25,16 @@ namespace multiscale {
 
 
 		//! Class for representing a "unary" constraint attribute
-		class UnaryConstraintAttribute {
-//		class UnaryConstraintAttribute : public Attribute {
+		class UnaryConstraintAttribute : public Attribute {
 
 			public:
 
-				UnaryConstraintAttributeType unaryConstraint;		/*!< The unary constraint */
+				UnaryConstraintAttributeType unaryConstraint;   /*!< The unary constraint */
 
 				//! Evaluate the constraint
-//				bool evaluate() const override {
-//					return evaluateUnaryExpression(unaryConstraint);
-//				}
+				bool evaluate() const override {
+					return evaluateUnaryExpression(unaryConstraint);
+				}
 
 		};
 

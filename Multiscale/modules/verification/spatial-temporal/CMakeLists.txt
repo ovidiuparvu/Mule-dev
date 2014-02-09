@@ -25,6 +25,7 @@ set(PARSER_TEST_SRC
     src/evaluation/EquivalenceEvaluator.cpp
     src/evaluation/ImplicationEvaluator.cpp
     src/evaluation/OrEvaluator.cpp
+    src/evaluation/NotEvaluator.cpp
     src/exception/ParserGrammarExceptionHandler.cpp
     
     test/ParserTest.cpp
@@ -45,6 +46,7 @@ set(PARSER_GRAMMAR_SAMPLE_SRC
     src/evaluation/EquivalenceEvaluator.cpp
     src/evaluation/ImplicationEvaluator.cpp
     src/evaluation/OrEvaluator.cpp
+    src/evaluation/NotEvaluator.cpp
     src/exception/ParserGrammarExceptionHandler.cpp
      
     sample/ParserGrammarSample.cpp 

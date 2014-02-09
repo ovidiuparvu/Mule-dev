@@ -1,12 +1,12 @@
 #ifndef CONSTRAINTATTRIBUTE_HPP
 #define CONSTRAINTATTRIBUTE_HPP
 
-//#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnaryConstraintAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <list>
+#include <vector>
 
 namespace multiscale {
 
@@ -34,20 +34,17 @@ namespace multiscale {
 
 
 		//! Class for representing a constraint attribute
-		class ConstraintAttribute {
-//		class ConstraintAttribute : public Attribute {
+		class ConstraintAttribute : public Attribute {
 
 			public:
 
-				ConstraintAttributeType 	        firstConstraint;		/*!< The first constraint */
-				std::list<ConstraintAttributeType>	nextConstraints;		/*!< The next constraints */
+				ConstraintAttributeType 	            firstConstraint;    /*!< The first constraint */
+				std::vector<ConstraintAttributeType>	nextConstraints;    /*!< The next constraints */
 
 				//! Evaluate the constraint
-//				bool evaluate(bool truthValue) const override {
-//					bool firstEvaluationResult = evaluateUnaryExpression(firstConstraint);
-//
-//					return evaluateNaryNextExpressions(firstEvaluationResult, nextConstraints);
-//				}
+				bool evaluate() const override {
+					return evaluateNaryExpression(firstConstraint, nextConstraints);
+				}
 
 		};
 
@@ -59,7 +56,7 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::ConstraintAttribute,
     (multiscale::verification::ConstraintAttributeType, firstConstraint)
-    (std::list<multiscale::verification::ConstraintAttributeType>, nextConstraints)
+    (std::vector<multiscale::verification::ConstraintAttributeType>, nextConstraints)
 )
 
 #endif

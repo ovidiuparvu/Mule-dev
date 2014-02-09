@@ -8,6 +8,7 @@ namespace multiscale {
 
 	namespace verification {
 
+	    //! Class for representing the evaluation of an "equivalence" logical expression
 		class EquivalenceEvaluator : public BooleanEvaluator {
 
 		public:

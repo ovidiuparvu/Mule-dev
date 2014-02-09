@@ -5,6 +5,7 @@ namespace multiscale {
 
 	namespace verification {
 
+	    //! Class for representing the evaluation of a boolean logical expression
 		class BooleanEvaluator {
 
 			public:

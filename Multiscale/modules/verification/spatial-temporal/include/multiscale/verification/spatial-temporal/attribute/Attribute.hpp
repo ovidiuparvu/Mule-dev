@@ -4,54 +4,85 @@
 #include "multiscale/verification/spatial-temporal/attribute/AttributeVisitor.hpp"
 
 #include <boost/variant.hpp>
-#include <list>
+#include <vector>
 
 
 namespace multiscale {
 
 	namespace verification {
 
+	    //! Class used to represent an attribute
 		class Attribute {
 
 			public:
 
 				virtual ~Attribute() {};
 
-				//! Evaluate the attribute considering the given truth value
-				virtual bool evaluate(bool truthValue) const = 0;
+                //! Evaluate the attribute
+                virtual bool evaluate() const = 0;
+
+                //! Evaluate the attribute considering the given truth value
+                /*!
+                 * \param truthValue The given truth value
+                 */
+                virtual bool evaluateConsideringTruthValue(const bool &truthValue) const {
+                    return evaluate();
+                }
 
 				//! Evaluate a unary expression
+				/*!
+				 * \param The unary expression
+				 */
 				template <typename T>
 				bool evaluateUnaryExpression(const T &unaryExpression) const {
-					return boost::apply_visitor(AttributeVisitor(), unaryExpression);
+					return evaluateExpression(unaryExpression);
 				}
 
-				//! Evaluate a n-ary expression
+				//! Evaluate an n-ary expression considering the given evaluation functor
+				/*!
+				 * \param firstExpression   The first expression
+				 * \param nextExpressions   The vector of next expressions
+				 * \param evaluator         The functor used to evaluate two expressions
+				 */
 				template <typename T, typename U, typename V>
-				bool evaluateNaryExpression(const T &firstExpression, const std::list<U> &nextExpressions,
+				bool evaluateNaryExpression(const T &firstExpression, const std::vector<U> &nextExpressions,
 											const V &evaluator) const {
-					bool evaluationResult = evaluateFirstExpression(firstExpression);
+					bool evaluationResult = evaluateExpression(firstExpression);
 
 					return evaluateNextExpressions(evaluationResult, nextExpressions, evaluator);
 				}
 
-				//! Evaluate a n-ary expression considering the given truth value
+				//! Evaluate an n-ary expression
+				/*!
+				 * \param firstExpression   The first expression
+				 * \param nextExpression    The vector of next expressions
+				 */
 				template <typename T, typename U>
-				bool evaluateNaryExpression(bool firstExpressionTruthValue, const std::list<T> &nextExpressions) const {
+				bool evaluateNaryExpression(const T &firstExpression, const std::vector<U> &nextExpressions) const {
+				    AttributeTruthValue firstExpressionTruthValue = evaluateExpression(firstExpression);
+
 					return evaluateNextExpressions(firstExpressionTruthValue, nextExpressions);
 				}
 
 			private:
 
-				//! Evaluate the first expression
+				//! Evaluate the given expression
+				/*!
+				 * \param expression The expression
+				 */
 				template <typename T>
-				bool evaluateFirstExpression(const T &firstExpression) const {
-					return boost::apply_visitor(AttributeVisitor(), firstExpression);
+				bool evaluateExpression(const T &expression) const {
+					return boost::apply_visitor(AttributeVisitor(), expression);
 				}
 
-				//! Evaluate the next expressions
+				//! Evaluate the next expressions considering the given evaluation functor and evaluation result
+                /*!
+                 * \param evaluationResult  The evaluation result
+                 * \param nextExpressions   The vector of next expressions
+                 * \param evaluator         The functor used to evaluate two expressions
+                 */
 				template <typename T, typename U>
-				bool evaluateNextExpressions(bool evaluationResult, const std::list<T> &nextExpressions,
+				bool evaluateNextExpressions(bool evaluationResult, const std::vector<T> &nextExpressions,
 											 const U &evaluator) const {
 					bool nextExpressionEvaluation = false;
 
@@ -64,13 +95,13 @@ namespace multiscale {
 				}
 
 				//! Evaluate the next expressions
-				template <typename T, typename U>
-				bool evaluateNextExpressions(bool evaluationResult, const std::list<T> &nextExpressions) const {
+				template <typename T>
+				bool evaluateNextExpressions(AttributeTruthValue evaluationResult, const std::vector<T> &nextExpressions) const {
 					for (const auto &nextExpression : nextExpressions) {
 						evaluationResult = boost::apply_visitor(AttributeVisitor(), nextExpression, evaluationResult);
 					}
 
-					return evaluationResult;
+					return boost::get<bool>(evaluationResult);
 				}
 
 		};

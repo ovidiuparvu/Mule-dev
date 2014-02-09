@@ -32,8 +32,7 @@ int main(int argc, char **argv) {
         if (parser.parse(result)) {
 			cout << "-----------------------------------------------------" << endl;
 			cout << " Parsing succeeded"
-			     // TODO: Remove comment
-			     // << " and the AST evaluates to " << (result.evaluate() ? "true" : "false")
+			     << " and the AST evaluates to " << (result.evaluate() ? "true" : "false")
 			     << "!" << endl;
 			cout << "-----------------------------------------------------" << endl;
         } else {
