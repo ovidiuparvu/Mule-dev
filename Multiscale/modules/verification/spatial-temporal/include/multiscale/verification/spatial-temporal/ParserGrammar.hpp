@@ -2,7 +2,6 @@
 #define PARSERGRAMMAR_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
 #include "multiscale/verification/spatial-temporal/handler/ErrorHandler.hpp"
 
 #include <boost/config/warning_disable.hpp>

@@ -1,6 +1,8 @@
 #ifndef ERRORHANDLER_HPP
 #define ERRORHANDLER_HPP
 
+#include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
+
 #include <boost/spirit/include/qi.hpp>
 #include <string>
 
