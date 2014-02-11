@@ -29,7 +29,7 @@ namespace multiscale {
                                         : runtime_error(msg) {}
 
             //! Returns an explanatory string
-            const char* what() const noexcept {
+            const char* what() const noexcept override {
                 return explanatoryString.c_str();
             }
 

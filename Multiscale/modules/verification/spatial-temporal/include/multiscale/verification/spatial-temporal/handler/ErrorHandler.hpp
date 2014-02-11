@@ -15,39 +15,44 @@ namespace multiscale {
 
 		//! Structure for defining the error handler
 		struct ErrorHandler {
-			//! Structure for specifying the type of the result
-			template <typename, typename, typename>
-			struct result { typedef void type; };
 
-			//! Overloaded operator
-			/*!
-			 * \param expectedToken The expected token
-			 * \param errorPosition Iterator pointing to the error position
-			 * \param last          Iterator pointing to the end of the query
-			 */
-			template<typename Iterator>
-			void operator()(qi::info const &expectedToken, Iterator errorPosition, Iterator last) const {
-				string errorString          = string(errorPosition, last);
-				string expectedTokenString  = getExpectedTokenAsString(expectedToken);
+			public:
 
-				throw ParserGrammarUnexpectedTokenException(expectedTokenString, errorString);
-			}
+				//! Structure for specifying the type of the result
+				template <typename, typename, typename>
+				struct result { typedef void type; };
 
-			//! Convert the expected token to a string
-			/*! Convert the expected token to a string and remove enclosing quotes
-			 *
-			 * \param expectedToken The expected token (not a string)
-			 */
-			string getExpectedTokenAsString(qi::info const &expectedToken) const {
-				stringstream strStream;
+				//! Overloaded operator
+				/*!
+				 * \param expectedToken The expected token
+				 * \param errorPosition Iterator pointing to the error position
+				 * \param last          Iterator pointing to the end of the query
+				 */
+				template<typename Iterator>
+				void operator()(qi::info const &expectedToken, Iterator errorPosition, Iterator last) const {
+					string errorString          = string(errorPosition, last);
+					string expectedTokenString  = getExpectedTokenAsString(expectedToken);
 
-				strStream << expectedToken;
+					throw ParserGrammarUnexpectedTokenException(expectedTokenString, errorString);
+				}
 
-				string expectedTokenString  = strStream.str();
+			private:
 
-				// Remove the enclosing quotes
-				return expectedTokenString.substr(1, (expectedTokenString.length() - 2));
-			}
+				//! Convert the expected token to a string
+				/*! Convert the expected token to a string and remove enclosing quotes
+				 *
+				 * \param expectedToken The expected token (not a string)
+				 */
+				string getExpectedTokenAsString(qi::info const &expectedToken) const {
+					stringstream strStream;
+
+					strStream << expectedToken;
+
+					string expectedTokenString  = strStream.str();
+
+					// Remove the enclosing quotes
+					return expectedTokenString.substr(1, (expectedTokenString.length() - 2));
+				}
 
 		};
 
