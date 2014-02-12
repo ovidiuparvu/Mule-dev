@@ -51,6 +51,13 @@
 	
 	<!-- User-defined complex types -->
 	
+	<xs:complexType name="NumericStateVariableType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="value" type="xs:decimal" />
+		</xs:sequence>
+	</xs:complexType>
+	
 	<xs:complexType name="CentroidType">
 		<xs:sequence>
 			<xs:element name="x" type="RealNonNegativeType" />
@@ -86,6 +93,7 @@
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="spatialEntity" type="SpatialEntityType" />
 			<xs:element name="avgClusteredness" type="RealNonNegativeType" />
 			<xs:element name="avgDensity" type="RealNonNegativeType" />
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="numericStateVariable" type="NumericStateVariableType" />
 		</xs:sequence>
 		<xs:attribute name="value" type="RealNonNegativeType" />
 	</xs:complexType>
