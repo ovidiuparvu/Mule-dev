@@ -21,11 +21,6 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 set(PARSER_EVALUATION_TEST_SRC
     src/Parser.cpp
-    src/evaluation/AndEvaluator.cpp
-    src/evaluation/EquivalenceEvaluator.cpp
-    src/evaluation/ImplicationEvaluator.cpp
-    src/evaluation/OrEvaluator.cpp
-    src/evaluation/NotEvaluator.cpp
     src/exception/ParserGrammarExceptionHandler.cpp
     
     test/ParserEvaluationTest.cpp
@@ -41,11 +36,6 @@ target_link_libraries(ParserEvaluationTest gtest gtest_main)
 
 set(PARSER_TEST_SRC
     src/Parser.cpp
-    src/evaluation/AndEvaluator.cpp
-    src/evaluation/EquivalenceEvaluator.cpp
-    src/evaluation/ImplicationEvaluator.cpp
-    src/evaluation/OrEvaluator.cpp
-    src/evaluation/NotEvaluator.cpp
     src/exception/ParserGrammarExceptionHandler.cpp
     
     test/ParserTest.cpp
@@ -62,11 +52,7 @@ target_link_libraries(ParserTest gtest gtest_main)
 set(PARSER_GRAMMAR_SAMPLE_SRC
     src/Parser.cpp
     src/Parser.cpp
-    src/evaluation/AndEvaluator.cpp
-    src/evaluation/EquivalenceEvaluator.cpp
-    src/evaluation/ImplicationEvaluator.cpp
-    src/evaluation/OrEvaluator.cpp
-    src/evaluation/NotEvaluator.cpp
+
     src/exception/ParserGrammarExceptionHandler.cpp
      
     sample/ParserGrammarSample.cpp 

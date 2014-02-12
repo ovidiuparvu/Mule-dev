@@ -3,7 +3,6 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ConstraintAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/evaluation/ImplicationEvaluator.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 
@@ -31,7 +30,7 @@ namespace multiscale {
             bool evaluateConsideringTruthValue(const bool &truthValue) const override{
                 bool constraintEvaluation = evaluateUnaryExpression(constraint);
 
-                return ImplicationEvaluator()(truthValue, constraintEvaluation);
+                return ((!truthValue) || (constraintEvaluation));
             }
 
 		};
