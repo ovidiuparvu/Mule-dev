@@ -2,19 +2,30 @@
 #define BINARYNUMERICMEASUREATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-#include <string>
-
-using namespace std;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a binary numeric measure attribute
-		struct BinaryNumericMeasureAttribute {
-			string name;
+		//! Enumeration for representing a binary numeric measure type
+		enum class BinaryNumericMeasureType : int {
+			Div = 1,	/*!< Division */
+			Log = 2,	/*!< Logarithm */
+			Minus = 3,	/*!< Subtraction */
+			Mod = 4,	/*!< Remainder of division */
+			Plus = 5,	/*!< Addition */
+			Power = 6,	/*!< Raise to power */
+			Times = 7	/*!< Multiplication */
+		};
+
+		//! Class for representing a binary numeric measure attribute
+		class BinaryNumericMeasureAttribute {
+
+			public:
+
+				BinaryNumericMeasureType binaryNumericMeasure;	/*!< The binary numeric measure */
+
 		};
 
 	};
@@ -24,7 +35,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::BinaryNumericMeasureAttribute,
-    (string, name)
+    (multiscale::verification::BinaryNumericMeasureType, binaryNumericMeasure)
 )
 
 #endif

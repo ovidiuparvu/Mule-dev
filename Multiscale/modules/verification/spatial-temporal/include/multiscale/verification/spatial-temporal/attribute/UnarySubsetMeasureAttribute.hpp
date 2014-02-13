@@ -2,17 +2,26 @@
 #define UNARYSUBSETMEASUREATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-#include <string>
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a unary subset measure attribute
-		struct UnarySubsetMeasureAttribute {
-			std::string name;
+		//! Enumeration for representing a unary subset measure type
+		enum class UnarySubsetMeasureType : int {
+			Count = 1,			/*!< Number of spatial entities */
+			Clusteredness = 2,	/*!< The overall clusteredness of the entities */
+			Density = 3			/*!< The overall density of the entities */
+		};
+
+		//! Class for representing a unary subset measure attribute
+		class UnarySubsetMeasureAttribute {
+
+			public:
+
+				UnarySubsetMeasureType unarySubsetMeasure;	/*!< The unary subset measure */
+
 		};
 
 	};
@@ -22,7 +31,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UnarySubsetMeasureAttribute,
-    (std::string, name)
+    (multiscale::verification::UnarySubsetMeasureType, unarySubsetMeasure)
 )
 
 #endif

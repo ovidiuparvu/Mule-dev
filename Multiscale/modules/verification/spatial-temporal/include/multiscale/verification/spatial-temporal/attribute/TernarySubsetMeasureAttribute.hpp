@@ -2,19 +2,25 @@
 #define TERNARYSUBSETMEASUREATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-#include <string>
-
-using namespace std;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a ternary subset measure attribute
-		struct TernarySubsetMeasureAttribute {
-			string name;
+		//! Enumeration for representing a ternary subset measure type
+		enum class TernarySubsetMeasureType : int {
+			Percentile = 1,		/*!< The percentile */
+			Quartile = 2		/*!< The quartile */
+		};
+
+		//! Class for representing a ternary subset measure attribute
+		class TernarySubsetMeasureAttribute {
+
+			public:
+
+				TernarySubsetMeasureType ternarySubsetMeasure;	/*!< The ternary subset measure */
+
 		};
 
 	};
@@ -24,7 +30,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::TernarySubsetMeasureAttribute,
-    (string, name)
+    (multiscale::verification::TernarySubsetMeasureType, ternarySubsetMeasure)
 )
 
 #endif

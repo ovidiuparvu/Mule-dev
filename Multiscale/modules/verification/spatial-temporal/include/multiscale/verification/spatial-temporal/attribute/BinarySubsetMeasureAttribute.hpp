@@ -1,21 +1,37 @@
 #ifndef BINARYSUBSETMEASUREATTRIBUTE_HPP
 #define BINARYSUBSETMEASUREATTRIBUTE_HPP
 
-#include <string>
-
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-
-using namespace std;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a binary subset measure attribute
-		struct BinarySubsetMeasureAttribute {
-			string name;
+		//! Enumeration for representing a binary subset measure type
+		enum class BinarySubsetMeasureType : int {
+			Avg = 1,		/*!< The average (arithmetic mean) */
+			Geomean = 2,	/*!< The geometric mean */
+			Harmean = 3,	/*!< The harmonic mean */
+			Kurt = 4,		/*!< The kurtosis */
+			Max = 5,		/*!< The maximum */
+			Median = 6,		/*!< The median */
+			Min = 7,		/*!< The minimum */
+			Mode = 8, 		/*!< The mode */
+			Product = 9,	/*!< The product */
+			Skew = 10,		/*!< The skew */
+			Stdev = 11,		/*!< The standard deviation */
+			Sum = 12,		/*!< The sum */
+			Var = 13		/*!< The variance */
+		};
+
+		//! Class for representing a binary subset measure attribute
+		class BinarySubsetMeasureAttribute {
+
+			public:
+
+				BinarySubsetMeasureType binarySubsetMeasure;	/*!< The binary subset measure */
+
 		};
 
 	};
@@ -25,7 +41,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::BinarySubsetMeasureAttribute,
-    (string, name)
+    (multiscale::verification::BinarySubsetMeasureType, binarySubsetMeasure)
 )
 
 #endif
