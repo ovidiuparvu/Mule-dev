@@ -18,7 +18,7 @@ namespace multiscale {
 			public:
 
 				SpatialMeasureAttribute spatialMeasure;   	/*!< The spatial measure */
-				Comparator				comparator;			/*!< The comparator */
+				ComparatorAttribute		comparator;			/*!< The comparator */
 
 				// TODO: Review the type of this field - it may need to be a variant instead
 				NumericMeasureAttribute	numericMeasure;		/*!< The numeric measure */

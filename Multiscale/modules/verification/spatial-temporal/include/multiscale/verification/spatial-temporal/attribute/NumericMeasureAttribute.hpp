@@ -3,8 +3,8 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/NumericSpatialAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericStateVariableAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/UnaryNumericNumericAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericNumericAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/UnaryNumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/fusion/include/io.hpp>
@@ -20,8 +20,8 @@ namespace multiscale {
 			multiscale::verification::NumericSpatialAttribute,
 			double,
 			multiscale::verification::NumericStateVariableAttribute,
-			multiscale::verification::UnaryNumericNumericAttribute,
-			multiscale::verification::BinaryNumericNumericAttribute
+			multiscale::verification::UnaryNumericMeasureAttribute,
+			multiscale::verification::BinaryNumericMeasureAttribute
 		> numericAttribute_;
 
 		//! Class for representing a numeric measure attribute

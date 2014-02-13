@@ -2,7 +2,7 @@
 #define DIFFERENCEATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/fusion/include/io.hpp>
@@ -16,9 +16,9 @@ namespace multiscale {
 
 		//! Structure for representing a difference attribute
 		struct DifferenceAttribute {
-			NumericAttribute		lhsNumericMeasure;
+			NumericMeasureAttribute		lhsNumericMeasure;
 			ComparatorAttribute		comparator;
-			NumericAttribute		rhsNumericMeasure;
+			NumericMeasureAttribute		rhsNumericMeasure;
 		};
 
 	};
@@ -28,9 +28,9 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::DifferenceAttribute,
-    (NumericAttribute, lhsNumericMeasure)
+    (NumericMeasureAttribute, lhsNumericMeasure)
 	(ComparatorAttribute, comparator)
-	(NumericAttribute, rhsNumericMeasure)
+	(NumericMeasureAttribute, rhsNumericMeasure)
 )
 
 #endif

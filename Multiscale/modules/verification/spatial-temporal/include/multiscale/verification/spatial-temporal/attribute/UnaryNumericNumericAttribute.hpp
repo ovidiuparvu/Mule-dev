@@ -2,7 +2,7 @@
 #define UNARYNUMERICNUMERICATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericMeasureAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/fusion/include/io.hpp>
@@ -15,9 +15,9 @@ namespace multiscale {
 	namespace verification {
 
 		//! Structure for representing a unary numeric numeric measure attribute
-		struct UnaryNumericNumericAttribute {
+		struct UnaryNumericNumericMeasureAttribute {
 			UnaryNumericMeasureAttribute 	unaryNumericMeasure;
-			NumericAttribute				numericMeasure;
+			NumericMeasureAttribute			numericMeasure;
 		};
 
 	};
@@ -26,9 +26,9 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::UnaryNumericNumericAttribute,
+    multiscale::verification::UnaryNumericNumericMeasureAttribute,
     (multiscale::verification::UnaryNumericMeasureAttribute, unaryNumericMeasure)
-    (multiscale::verification::NumericAttribute, numericMeasure)
+    (multiscale::verification::NumericMeasureAttribute, numericMeasure)
 )
 
 #endif

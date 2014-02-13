@@ -1,7 +1,7 @@
 #ifndef BINARYNUMERICNUMERICATTRIBUTE_HPP
 #define BINARYNUMERICNUMERICATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/NumericAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -15,10 +15,10 @@ namespace multiscale {
 	namespace verification {
 
 		//! Structure for representing a binary numeric numeric measure attribute
-		struct BinaryNumericNumericAttribute {
+		struct BinaryNumericNumericMeasureAttribute {
 			BinaryNumericMeasureAttribute 	binaryNumericMeasure;
-			NumericAttribute			firstNumericMeasure;
-			NumericAttribute				secondNumericMeasure;
+			NumericMeasureAttribute			firstNumericMeasure;
+			NumericMeasureAttribute			secondNumericMeasure;
 		};
 
 	};
@@ -27,10 +27,10 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::BinaryNumericNumericAttribute,
+    multiscale::verification::BinaryNumericNumericMeasureAttribute,
     (multiscale::verification::BinaryNumericMeasureAttribute, binaryNumericMeasure)
-    (multiscale::verification::NumericAttribute, firstNumericMeasure)
-    (multiscale::verification::NumericAttribute, secondNumericMeasure)
+    (multiscale::verification::NumericMeasureAttribute, firstNumericMeasure)
+    (multiscale::verification::NumericMeasureAttribute, secondNumericMeasure)
 )
 
 #endif

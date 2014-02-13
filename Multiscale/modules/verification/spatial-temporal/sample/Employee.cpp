@@ -15,6 +15,7 @@
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
+#include <boost/spirit/include/qi_symbols.hpp>
 #include <boost/spirit/include/phoenix_core.hpp>
 #include <boost/spirit/include/phoenix_operator.hpp>
 #include <boost/spirit/include/phoenix_object.hpp>
@@ -55,6 +56,16 @@ namespace client
         client::name name;
         key_information info;
     };
+
+    struct NameType : qi::symbols<char, std::string> {
+
+    	NameType() {
+    		add
+    			("\"John\"", std::string("Doe"))
+    		;
+    	}
+
+    } NameTypeParser;
     //]
 }
 
@@ -96,7 +107,7 @@ namespace client
 
             quoted_string = lexeme['"' >> +(char_ - '"') >> '"'];
 
-            nameRule = quoted_string >> "," >> quoted_string;
+            nameRule = quoted_string >> "," >> NameTypeParser;
 
             infoRule = double_ | int_;
 

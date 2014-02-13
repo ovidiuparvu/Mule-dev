@@ -143,7 +143,7 @@ namespace multiscale {
 				;
 			}
 
-		}
+		} BinarySubsetMeasureTypeParser;
 
 		//! Symbol table and parser for the unary subset measure type
 		struct UnarySubsetMeasureType_ : qi::symbols<char, multiscale::verification::UnarySubsetMeasureType> {

@@ -3,7 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/fusion/include/io.hpp>
@@ -19,7 +19,7 @@ namespace multiscale {
 		struct SpatialNumericComparisonAttribute {
 			SpatialMeasureAttribute spatialMeasure;
 			ComparatorAttribute		comparator;
-			NumericAttribute		numericMeasure;
+			NumericMeasureAttribute		numericMeasure;
 		};
 
 	};
@@ -31,7 +31,7 @@ BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::SpatialNumericComparisonAttribute,
     (multiscale::verification::SpatialMeasureAttribute, spatialMeasure)
     (multiscale::verification::ComparatorAttribute, comparator)
-    (multiscale::verification::NumericAttribute, numericMeasure)
+    (multiscale::verification::NumericMeasureAttribute, numericMeasure)
 )
 
 #endif

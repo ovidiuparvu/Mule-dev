@@ -3,7 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericSpatialAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/fusion/include/io.hpp>
@@ -19,7 +19,7 @@ namespace multiscale {
 		struct BinaryNumericSpatialAttribute {
 			BinaryNumericMeasureAttribute 	binaryNumericMeasure;
 			NumericSpatialAttribute			numericSpatialMeasure;
-			NumericAttribute				numericMeasure;
+			NumericMeasureAttribute			numericMeasure;
 		};
 
 	};
@@ -31,7 +31,7 @@ BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::BinaryNumericMeasureAttribute,
     (multiscale::verification::BinaryNumericMeasureAttribute, binaryNumericMeasure)
     (multiscale::verification::NumericSpatialAttribute, numericSpatialMeasure)
-    (multiscale::verification::NumericAttribute, numericMeasure)
+    (multiscale::verification::NumericMeasureAttribute, numericMeasure)
 )
 
 #endif
