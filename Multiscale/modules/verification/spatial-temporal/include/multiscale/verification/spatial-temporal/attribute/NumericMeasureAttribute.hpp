@@ -1,5 +1,5 @@
-#ifndef NUMERICATTRIBUTE_HPP
-#define NUMERICATTRIBUTE_HPP
+#ifndef NUMERICMEASUREATTRIBUTE_HPP
+#define NUMERICMEASUREATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/NumericSpatialAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericStateVariableAttribute.hpp"
@@ -24,9 +24,13 @@ namespace multiscale {
 			multiscale::verification::BinaryNumericNumericAttribute
 		> numericAttribute_;
 
-		//! Structure for representing a numeric attribute
-		struct NumericAttribute {
-			numericAttribute_ numericMeasure;
+		//! Class for representing a numeric measure attribute
+		class NumericMeasureAttribute {
+
+			public:
+
+				numericAttribute_ numericMeasure;
+
 		};
 
 	};
@@ -35,7 +39,7 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::NumericAttribute,
+    multiscale::verification::NumericMeasureAttribute,
     (numericAttribute_, numericMeasure)
 )
 

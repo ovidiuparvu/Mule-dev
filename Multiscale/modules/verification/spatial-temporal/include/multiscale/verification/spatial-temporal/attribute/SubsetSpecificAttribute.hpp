@@ -2,17 +2,25 @@
 #define SUBSETSPECIFICATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-#include <string>
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a subset specific attribute
-		struct SubsetSpecificAttribute {
-			std::string name;
+		//! Enumeration for representing a specific subset type
+		enum class SubsetSpecificType : int {
+			Clusters = 1,
+			Regions = 2
+		};
+
+		//! Class for representing a subset specific attribute
+		class SubsetSpecificAttribute {
+
+			public:
+
+				SubsetSpecificType subsetSpecific;	/*!< The specific subset which should be considered */
+
 		};
 
 	};
@@ -22,7 +30,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::SubsetSpecificAttribute,
-    (std::string, name)
+    (multiscale::verification::SubsetSpecificType, subsetSpecific)
 )
 
 #endif

@@ -1,14 +1,11 @@
 #ifndef SUBSETATTRIBUTE_HPP
 #define SUBSETATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/SubsetSpecificAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/FilterSubsetAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
 #include <boost/variant.hpp>
-
-using namespace multiscale::verification;
 
 
 namespace multiscale {
@@ -17,13 +14,19 @@ namespace multiscale {
 
 		//! Variant for a subset attribute
 		typedef boost::variant<
+			Nil,
 			multiscale::verification::SubsetSpecificAttribute,
 			multiscale::verification::FilterSubsetAttribute
-		> subsetAttribute_;
+		> SubsetAttributeType;
 
-		//! Structure for representing a subset attribute
-		struct SubsetAttribute {
-			multiscale::verification::subsetAttribute_ subset;
+
+		//! Class for representing a subset attribute
+		class SubsetAttribute {
+
+			public:
+
+				SubsetAttributeType subset;
+
 		};
 
 	};
@@ -33,7 +36,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::SubsetAttribute,
-    (multiscale::verification::subsetAttribute_, subset)
+    (multiscale::verification::SubsetAttributeType, subset)
 )
 
 #endif

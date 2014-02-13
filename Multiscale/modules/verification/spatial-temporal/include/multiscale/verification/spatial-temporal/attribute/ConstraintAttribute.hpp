@@ -1,12 +1,12 @@
 #ifndef CONSTRAINTATTRIBUTE_HPP
 #define CONSTRAINTATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/UnaryConstraintAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/PrimaryConstraintAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <vector>
+
 
 namespace multiscale {
 
@@ -18,7 +18,7 @@ namespace multiscale {
         class AndConstraintAttribute;
         class ImplicationConstraintAttribute;
         class EquivalenceConstraintAttribute;
-        class UnaryConstraintAttribute;
+        class PrimaryConstraintAttribute;
 
 
         //! Variant for a constraint attribute type
@@ -34,17 +34,12 @@ namespace multiscale {
 
 
 		//! Class for representing a constraint attribute
-		class ConstraintAttribute : public Attribute {
+		class ConstraintAttribute {
 
 			public:
 
 				ConstraintAttributeType 	            firstConstraint;    /*!< The first constraint */
 				std::vector<ConstraintAttributeType>	nextConstraints;    /*!< The next constraints */
-
-				//! Evaluate the constraint
-				bool evaluate() const override {
-					return evaluateNaryExpression(firstConstraint, nextConstraints);
-				}
 
 		};
 

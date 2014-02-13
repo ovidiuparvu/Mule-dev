@@ -1,21 +1,27 @@
 #ifndef COMPARATORATTRIBUTE_HPP
 #define COMPARATORATTRIBUTE_HPP
 
-#include <string>
-
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-
-using namespace std;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a comparator attribute
-		struct ComparatorAttribute {
-			string comparator;
+		//! Enumeration for representing a comparator type
+		enum class ComparatorType : int {
+			GreaterThanOrEqual = 1,		/*!< Greater than or equal*/
+			LessThanOrEqual = 2,		/*!< Less than or equal */
+			Equal = 3					/*!< Equal */
+		};
+
+		//! Class for representing a comparator attribute
+		class ComparatorAttribute {
+
+			public:
+
+				ComparatorType comparator;	/*!< The comparator */
+
 		};
 
 	};
@@ -25,7 +31,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::ComparatorAttribute,
-    (string, comparator)
+    (multiscale::verification::ComparatorType, comparator)
 )
 
 #endif

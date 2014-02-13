@@ -3,6 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/handler/ErrorHandler.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -86,7 +87,7 @@ namespace multiscale {
                 		=	stringRule;
 
                 	stringRule
-                		=	+(qi::char_("a-zA-UW-Z_"));
+                		=	+(qi::char_() - qi::char_("[]"));
 
                 	// Assign a name to the rules
 					constraintRule.name("constraintRule");
