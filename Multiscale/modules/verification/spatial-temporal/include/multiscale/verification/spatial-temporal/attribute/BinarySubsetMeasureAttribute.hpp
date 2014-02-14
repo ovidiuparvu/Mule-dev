@@ -2,6 +2,7 @@
 #define BINARYSUBSETMEASUREATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
+#include <fstream>
 
 
 namespace multiscale {
@@ -24,6 +25,14 @@ namespace multiscale {
 			Sum = 12,		/*!< The sum */
 			Var = 13		/*!< The variance */
 		};
+
+		//! Overload the output stream operator for the enumeration
+		/*!
+		 * \param out						Output stream
+		 * \param binarySubsetMeasureType	The binary subset measure type to be printed out
+		 */
+		std::ostream& operator<<(std::ostream& out, const BinarySubsetMeasureType &binarySubsetMeasureType);
+
 
 		//! Class for representing a binary subset measure attribute
 		class BinarySubsetMeasureAttribute {

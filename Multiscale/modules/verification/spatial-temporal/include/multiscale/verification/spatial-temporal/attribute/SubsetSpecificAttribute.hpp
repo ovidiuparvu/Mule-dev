@@ -2,6 +2,7 @@
 #define SUBSETSPECIFICATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
+#include <fstream>
 
 
 namespace multiscale {
@@ -13,6 +14,14 @@ namespace multiscale {
 			Clusters = 1,
 			Regions = 2
 		};
+
+		//! Overload the output stream operator for the enumeration
+		/*!
+		 * \param out					Output stream
+		 * \param subsetSpecificType	The specific subset type to be printed out
+		 */
+		std::ostream& operator<<(std::ostream& out, const SubsetSpecificType &subsetSpecificType);
+
 
 		//! Class for representing a subset specific attribute
 		class SubsetSpecificAttribute {

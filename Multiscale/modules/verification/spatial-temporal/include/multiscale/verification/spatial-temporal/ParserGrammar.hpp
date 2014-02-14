@@ -40,7 +40,7 @@ namespace multiscale {
                 qi::rule<Iterator, AndConstraintAttribute(), ascii::space_type>			andConstraintRule;			/*!< The rule for parsing an "and" constraint */
                 qi::rule<Iterator, ImplicationConstraintAttribute(), ascii::space_type>	implicationConstraintRule;	/*!< The rule for parsing an "implication" constraint */
                 qi::rule<Iterator, EquivalenceConstraintAttribute(), ascii::space_type>	equivalenceConstraintRule;	/*!< The rule for parsing an "equivalence" constraint */
-                qi::rule<Iterator, UnaryConstraintAttribute(), ascii::space_type> 		unaryConstraintRule;		/*!< The rule for parsing a unary constraint */
+                qi::rule<Iterator, PrimaryConstraintAttribute(), ascii::space_type> 	primaryConstraintRule;		/*!< The rule for parsing a primary constraint */
                 qi::rule<Iterator, NotConstraintAttribute(), ascii::space_type> 		notConstraintRule;			/*!< The rule for parsing a "not" constraint */
                 qi::rule<Iterator, NumericStateVariableAttribute(), ascii::space_type> 	numericStateVariableRule;	/*!< The rule for parsing a numeric state variable */
                 qi::rule<Iterator, StateVariableAttribute(), ascii::space_type> 		stateVariableRule;			/*!< The rule for parsing a state variable */
@@ -52,7 +52,7 @@ namespace multiscale {
                 	// Rules definitions
 
                 	constraintRule
-                		=	unaryConstraintRule
+                		=	primaryConstraintRule
                 		    >>  *(
                 		            (orConstraintRule)
                 		        |   (andConstraintRule)
@@ -72,9 +72,10 @@ namespace multiscale {
                 	equivalenceConstraintRule
                 		=	("<=>" > constraintRule);
 
-                	unaryConstraintRule
+                	primaryConstraintRule
 						=	notConstraintRule
-						|	numericStateVariableRule
+						// TODO: Update
+//						|	numericStateVariableRule
 						| 	('(' > constraintRule > ')');
 
                 	notConstraintRule
@@ -87,7 +88,7 @@ namespace multiscale {
                 		=	stringRule;
 
                 	stringRule
-                		=	+(qi::char_() - qi::char_("[]"));
+                		=	+(qi::char_ - qi::char_("[]"));
 
                 	// Assign a name to the rules
 					constraintRule.name("constraintRule");
@@ -95,7 +96,7 @@ namespace multiscale {
 					andConstraintRule.name("andConstraintRule");
 					implicationConstraintRule.name("implicationConstraintRule");
 					equivalenceConstraintRule.name("equivalenceConstraintRule");
-					unaryConstraintRule.name("unaryConstraintRule");
+					primaryConstraintRule.name("primaryConstraintRule");
 					notConstraintRule.name("notConstraintRule");
 					numericStateVariableRule.name("numericStateVariableRule");
 					stateVariableRule.name("stateVariableRule");
@@ -107,7 +108,7 @@ namespace multiscale {
 					debug(andConstraintRule);
 					debug(implicationConstraintRule);
 					debug(equivalenceConstraintRule);
-					debug(unaryConstraintRule);
+					debug(primaryConstraintRule);
 					debug(notConstraintRule);
 					debug(numericStateVariableRule);
 					debug(stateVariableRule);
@@ -118,7 +119,7 @@ namespace multiscale {
                 	qi::on_error<qi::fail>(andConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(implicationConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(equivalenceConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(primaryConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 }
 

@@ -2,6 +2,7 @@
 #define SPATIALMEASUREATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
+#include <fstream>
 
 
 namespace multiscale {
@@ -22,6 +23,14 @@ namespace multiscale {
 			CentroidX = 10,			/*!< The x coordinate of the centroid of the spatial entity */
 			CentroidY = 11			/*!< The y coordinate of the centroid of the spatial entity */
 		};
+
+		//! Overload the output stream operator for the enumeration
+		/*!
+		 * \param out					Output stream
+		 * \param spatialMeasureType	The spatial measure type to be printed out
+		 */
+		std::ostream& operator<<(std::ostream& out, const SpatialMeasureType &spatialMeasureType);
+
 
 		//! Class for representing a spatial measure attribute
 		class SpatialMeasureAttribute {

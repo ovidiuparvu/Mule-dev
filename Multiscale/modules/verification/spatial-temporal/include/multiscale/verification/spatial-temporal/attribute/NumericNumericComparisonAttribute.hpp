@@ -6,20 +6,21 @@
 #include "multiscale/verification/spatial-temporal/attribute/NumericStateVariableAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-
-using namespace multiscale::verification;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a numeric numeric comparison attribute
-		struct NumericNumericComparisonAttribute {
-			NumericStateVariableAttribute 	numericStateVariable;
-			ComparatorAttribute				comparator;
-			NumericMeasureAttribute				numericMeasure;
+		//! Class for representing a numeric numeric comparison attribute
+		class NumericNumericComparisonAttribute {
+
+			public:
+
+				NumericStateVariableAttribute 	numericStateVariable;	/*!< The numeric state variable preceding the comparator */
+				ComparatorAttribute				comparator;				/*!< The comparator */
+				NumericMeasureAttributeType		numericMeasure;			/*!< The numeric measure following the comparator */
+
 		};
 
 	};
@@ -29,9 +30,9 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NumericNumericComparisonAttribute,
-    (NumericStateVariableAttribute, numericStateVariable)
-	(ComparatorAttribute, comparator)
-	(NumericMeasureAttribute, numericMeasure)
+    (multiscale::verification::NumericStateVariableAttribute, numericStateVariable)
+	(multiscale::verification::ComparatorAttribute, comparator)
+	(multiscale::verification::NumericMeasureAttributeType, numericMeasure)
 )
 
 #endif

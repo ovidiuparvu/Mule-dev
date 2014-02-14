@@ -29,7 +29,7 @@ namespace multiscale {
             boost::recursive_wrapper<AndConstraintAttribute>,
             boost::recursive_wrapper<ImplicationConstraintAttribute>,
             boost::recursive_wrapper<EquivalenceConstraintAttribute>,
-            boost::recursive_wrapper<UnaryConstraintAttribute>
+            boost::recursive_wrapper<PrimaryConstraintAttribute>
         > ConstraintAttributeType;
 
 

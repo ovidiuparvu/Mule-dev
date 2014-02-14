@@ -17,7 +17,7 @@ namespace multiscale {
 			public:
 
 				SubsetSpecificAttribute subsetSpecific;	/*!< The specific subset to consider */
-				ConstraintAttribute		constraint;		/*!< The constraint */
+				ConstraintAttributeType	constraint;		/*!< The constraint */
 
 		};
 
@@ -29,7 +29,7 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::FilterSubsetAttribute,
     (multiscale::verification::SubsetSpecificAttribute, subsetSpecific)
-    (multiscale::verification::ConstraintAttribute, constraint)
+    (multiscale::verification::ConstraintAttributeType, constraint)
 )
 
 #endif

@@ -6,22 +6,23 @@
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-
-using namespace multiscale::verification;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a quaternary subset attribute
-		struct QuaternarySubsetAttribute {
-			QuaternarySubsetMeasureAttribute 	quaternarySubsetMeasure;
-			SubsetAttribute						firstSubset;
-			SpatialMeasureAttribute				firstSpatialMeasure;
-			SubsetAttribute						secondSubset;
-			SpatialMeasureAttribute				secondSpatialMeasure;
+		//! Class for representing a quaternary subset attribute
+		class QuaternarySubsetAttribute {
+
+			public:
+
+				QuaternarySubsetMeasureAttribute 	quaternarySubsetMeasure;	/*!< The quaternary subset measure */
+				SubsetAttributeType					firstSubset;				/*!< The first considered subset */
+				SpatialMeasureAttribute				firstSpatialMeasure;		/*!< The first considered spatial measure */
+				SubsetAttributeType					secondSubset;				/*!< The second considered subset */
+				SpatialMeasureAttribute				secondSpatialMeasure;		/*!< The second considered spatial measure */
+
 		};
 
 	};
@@ -32,9 +33,9 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::QuaternarySubsetAttribute,
     (multiscale::verification::QuaternarySubsetMeasureAttribute, quaternarySubsetMeasure)
-    (multiscale::verification::SubsetAttribute, firstSubset)
+    (multiscale::verification::SubsetAttributeType, firstSubset)
     (multiscale::verification::SpatialMeasureAttribute, firstSpatialMeasure)
-    (multiscale::verification::SubsetAttribute, secondSubset)
+    (multiscale::verification::SubsetAttributeType, secondSubset)
     (multiscale::verification::SpatialMeasureAttribute, secondSpatialMeasure)
 )
 

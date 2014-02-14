@@ -2,6 +2,7 @@
 #define TERNARYSUBSETMEASUREATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
+#include <fstream>
 
 
 namespace multiscale {
@@ -13,6 +14,14 @@ namespace multiscale {
 			Percentile = 1,		/*!< The percentile */
 			Quartile = 2		/*!< The quartile */
 		};
+
+		//! Overload the output stream operator for the enumeration
+		/*!
+		 * \param out						Output stream
+		 * \param ternarySubsetMeasureType	The ternary subset measure type to be printed out
+		 */
+		std::ostream& operator<<(std::ostream& out, const TernarySubsetMeasureType &ternarySubsetMeasureType);
+
 
 		//! Class for representing a ternary subset measure attribute
 		class TernarySubsetMeasureAttribute {

@@ -2,24 +2,25 @@
 #define BINARYNUMERICSPATIALATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericMeasureAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-
-using namespace multiscale::verification;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a binary numeric spatial attribute
-		struct BinaryNumericSpatialAttribute {
-			BinaryNumericMeasureAttribute 	binaryNumericMeasure;
-			NumericSpatialAttribute			numericSpatialMeasure;
-			NumericMeasureAttribute			numericMeasure;
+		//! Class for representing a binary numeric spatial attribute
+		class BinaryNumericSpatialAttribute {
+
+			public:
+
+				BinaryNumericMeasureAttribute 	binaryNumericMeasure;		/*!< The binary numeric measure */
+				NumericSpatialAttributeType		numericSpatialMeasure;		/*!< The numeric spatial measure */
+				NumericMeasureAttributeType		numericMeasure;				/*!< The numeric measure */
+
 		};
 
 	};
@@ -28,10 +29,10 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::BinaryNumericMeasureAttribute,
+    multiscale::verification::BinaryNumericSpatialAttribute,
     (multiscale::verification::BinaryNumericMeasureAttribute, binaryNumericMeasure)
-    (multiscale::verification::NumericSpatialAttribute, numericSpatialMeasure)
-    (multiscale::verification::NumericMeasureAttribute, numericMeasure)
+    (multiscale::verification::NumericSpatialAttributeType, numericSpatialMeasure)
+    (multiscale::verification::NumericMeasureAttributeType, numericMeasure)
 )
 
 #endif

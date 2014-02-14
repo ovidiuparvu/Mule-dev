@@ -5,20 +5,21 @@
 #include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-
-using namespace multiscale::verification;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a difference attribute
-		struct DifferenceAttribute {
-			NumericMeasureAttribute		lhsNumericMeasure;
-			ComparatorAttribute		comparator;
-			NumericMeasureAttribute		rhsNumericMeasure;
+		//! Class for representing a difference attribute
+		class DifferenceAttribute {
+
+			public:
+
+				NumericMeasureAttributeType	lhsNumericMeasure;	/*!< The left hand side numeric measure */
+				ComparatorAttribute			comparator;			/*!< The comparator */
+				NumericMeasureAttributeType	rhsNumericMeasure;	/*!< The right hand side numeric measure */
+
 		};
 
 	};
@@ -28,9 +29,9 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::DifferenceAttribute,
-    (NumericMeasureAttribute, lhsNumericMeasure)
-	(ComparatorAttribute, comparator)
-	(NumericMeasureAttribute, rhsNumericMeasure)
+    (multiscale::verification::NumericMeasureAttributeType, lhsNumericMeasure)
+	(multiscale::verification::ComparatorAttribute, comparator)
+	(multiscale::verification::NumericMeasureAttributeType, rhsNumericMeasure)
 )
 
 #endif

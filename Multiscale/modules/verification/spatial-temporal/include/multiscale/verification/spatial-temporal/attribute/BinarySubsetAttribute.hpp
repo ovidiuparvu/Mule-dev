@@ -6,20 +6,21 @@
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-
-using namespace multiscale::verification;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a binary subset attribute
-		struct BinarySubsetAttribute {
-			BinarySubsetMeasureAttribute 	binarySubsetMeasure;
-			SubsetAttribute					subset;
-			SpatialMeasureAttribute			spatialMeasure;
+		//! Class for representing a binary subset attribute
+		class BinarySubsetAttribute {
+
+			public:
+
+				BinarySubsetMeasureAttribute 	binarySubsetMeasure;	/*!< The binary subset measure */
+				SubsetAttributeType				subset;					/*!< The considered subset */
+				SpatialMeasureAttribute			spatialMeasure;			/*!< The considered spatial measure */
+
 		};
 
 	};
@@ -30,7 +31,7 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::BinarySubsetAttribute,
     (multiscale::verification::BinarySubsetMeasureAttribute, binarySubsetMeasure)
-    (multiscale::verification::SubsetAttribute, subset)
+    (multiscale::verification::SubsetAttributeType, subset)
     (multiscale::verification::SpatialMeasureAttribute, spatialMeasure)
 )
 

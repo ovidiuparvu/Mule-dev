@@ -5,19 +5,20 @@
 #include "multiscale/verification/spatial-temporal/attribute/SubsetAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-
-using namespace multiscale::verification;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a unary subset attribute
-		struct UnarySubsetAttribute {
-			UnarySubsetMeasureAttribute unarySubsetMeasure;
-			SubsetAttribute				subset;
+		//! Class for representing a unary subset attribute
+		class UnarySubsetAttribute {
+
+			public:
+
+				UnarySubsetMeasureAttribute unarySubsetMeasure;		/*!< The unary subset measure */
+				SubsetAttributeType			subset;					/*!< The considered subset */
+
 		};
 
 	};
@@ -28,7 +29,7 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UnarySubsetAttribute,
     (multiscale::verification::UnarySubsetMeasureAttribute, unarySubsetMeasure)
-    (multiscale::verification::SubsetAttribute, subset)
+    (multiscale::verification::SubsetAttributeType, subset)
 )
 
 #endif

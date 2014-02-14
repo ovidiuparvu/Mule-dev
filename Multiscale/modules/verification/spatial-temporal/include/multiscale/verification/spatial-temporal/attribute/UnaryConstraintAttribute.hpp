@@ -17,11 +17,9 @@ namespace multiscale {
 
 			public:
 
-				SpatialMeasureAttribute spatialMeasure;   	/*!< The spatial measure */
-				ComparatorAttribute		comparator;			/*!< The comparator */
-
-				// TODO: Review the type of this field - it may need to be a variant instead
-				NumericMeasureAttribute	numericMeasure;		/*!< The numeric measure */
+				SpatialMeasureAttribute 	spatialMeasure;	/*!< The spatial measure */
+				ComparatorAttribute			comparator;		/*!< The comparator */
+				NumericMeasureAttributeType	numericMeasure;	/*!< The numeric measure */
 
 		};
 
@@ -33,8 +31,8 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UnaryConstraintAttribute,
     (multiscale::verification::SpatialMeasureAttribute, spatialMeasure)
-    (multiscale::verification::Comparator, comparator)
-    (multiscale::verification::NumericMeasureAttribute, numericMeasure)
+    (multiscale::verification::ComparatorAttribute, comparator)
+    (multiscale::verification::NumericMeasureAttributeType, numericMeasure)
 )
 
 #endif

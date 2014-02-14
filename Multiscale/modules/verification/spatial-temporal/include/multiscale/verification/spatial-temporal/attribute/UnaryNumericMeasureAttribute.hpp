@@ -2,6 +2,7 @@
 #define UNARYNUMERICMEASURE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
+#include <fstream>
 
 
 namespace multiscale {
@@ -18,6 +19,14 @@ namespace multiscale {
 			Sqrt = 6,	/*!< Square root */
 			Trunc = 7	/*!< Truncation */
 		};
+
+		//! Overload the output stream operator for the enumeration
+		/*!
+		 * \param out						Output stream
+		 * \param unaryNumericMeasureType	The unary numeric measure type to be printed out
+		 */
+		std::ostream& operator<<(std::ostream& out, const UnaryNumericMeasureType &unaryNumericMeasureType);
+
 
 		//! Class for representing a unary numeric measure attribute
 		class UnaryNumericMeasureAttribute {

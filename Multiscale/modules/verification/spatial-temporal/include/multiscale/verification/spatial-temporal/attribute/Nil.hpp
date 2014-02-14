@@ -1,6 +1,7 @@
 #ifndef NIL_HPP
 #define NIL_HPP
 
+#include <boost/fusion/include/adapt_struct.hpp>
 #include <fstream>
 
 
@@ -18,13 +19,14 @@ namespace multiscale {
 		 */
 		class Nil {};
 
-		// Define the output stream operator
-		inline std::ostream& operator<<(std::ostream& out, const Nil &nil) {
-			return out;
-		}
-
 	};
 
 };
+
+
+BOOST_FUSION_ADAPT_STRUCT (
+	multiscale::verification::Nil,
+	/**/
+);
 
 #endif

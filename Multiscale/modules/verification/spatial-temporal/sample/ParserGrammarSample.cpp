@@ -20,8 +20,8 @@ int main(int argc, char **argv) {
 	cout << "/////////////////////////////////////////////////////////\n\n";
 
 	cout
-		<< "Give me a logical query of the form :" << endl
-		<< "\t{subset} OR {filteredSubset}" << endl
+		<< "Please enter a logical query of the form :" << endl
+		<< "\t{constraint}" << endl
 		<< endl;
 
 	getline(cin, test);
@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
         if (parser.parse(result)) {
 			cout << "-----------------------------------------------------" << endl;
 			cout << " Parsing succeeded"
-			     << " and the AST evaluates to " << (result.evaluate() ? "true" : "false")
+//			     << " and the AST evaluates to " << (result.evaluate() ? "true" : "false")
 			     << "!" << endl;
 			cout << "-----------------------------------------------------" << endl;
         } else {

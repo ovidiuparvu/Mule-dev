@@ -6,21 +6,22 @@
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
-
-using namespace multiscale::verification;
 
 
 namespace multiscale {
 
 	namespace verification {
 
-		//! Structure for representing a ternary subset attribute
-		struct TernarySubsetAttribute {
-			TernarySubsetMeasureAttribute 	ternarySubsetMeasure;
-			SubsetAttribute					subset;
-			SpatialMeasureAttribute			spatialMeasure;
-			double							realNumber;
+		//! Class for representing a ternary subset attribute
+		class TernarySubsetAttribute {
+
+			public:
+
+				TernarySubsetMeasureAttribute 	ternarySubsetMeasure;	/*!< The ternary subset measure */
+				SubsetAttributeType				subset;					/*!< The considered subset */
+				SpatialMeasureAttribute			spatialMeasure;			/*!< The considered spatial measure */
+				double							parameter;				/*!< The considered parameter */
+
 		};
 
 	};
@@ -31,9 +32,9 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::TernarySubsetAttribute,
     (multiscale::verification::TernarySubsetMeasureAttribute, ternarySubsetMeasure)
-    (multiscale::verification::SubsetAttribute, subset)
+    (multiscale::verification::SubsetAttributeType, subset)
     (multiscale::verification::SpatialMeasureAttribute, spatialMeasure)
-    (double, realNumber)
+    (double, parameter)
 )
 
 #endif

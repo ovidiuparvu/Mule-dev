@@ -5,16 +5,19 @@
 #include "multiscale/verification/spatial-temporal/attribute/BinarySubsetAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/TernarySubsetAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/QuaternarySubsetAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/UnaryNumericSpatialAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericSpatialAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
+#include <boost/variant.hpp>
 
 
 namespace multiscale {
 
 	namespace verification {
+
+		// Forward declaration of classes
+		class BinaryNumericSpatialAttribute;
+		class UnaryNumericSpatialAttribute;
+
 
 		//! Variant for a numeric spatial attribute
 		typedef boost::variant<
@@ -22,13 +25,18 @@ namespace multiscale {
 			multiscale::verification::BinarySubsetAttribute,
 			multiscale::verification::TernarySubsetAttribute,
 			multiscale::verification::QuaternarySubsetAttribute,
-			multiscale::verification::UnaryNumericSpatialAttribute,
-			multiscale::verification::BinaryNumericSpatialAttribute
-		> numericSpatialAttribute_;
+			boost::recursive_wrapper<multiscale::verification::UnaryNumericSpatialAttribute>,
+			boost::recursive_wrapper<multiscale::verification::BinaryNumericSpatialAttribute>
+		> NumericSpatialAttributeType;
 
-		//! Structure for representing a numeric spatial attribute
-		struct NumericSpatialAttribute {
-			numericSpatialAttribute_ numericSpatialMeasure;
+
+		//! Class for representing a numeric spatial attribute
+		class NumericSpatialAttribute {
+
+			public:
+
+				NumericSpatialAttributeType numericSpatialMeasure;	/*!< The numeric spatial measure */
+
 		};
 
 	};
@@ -38,7 +46,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NumericSpatialAttribute,
-    (multiscale::verification::numericSpatialAttribute_, numericSpatialMeasure)
+    (multiscale::verification::NumericSpatialAttributeType, numericSpatialMeasure)
 )
 
 #endif

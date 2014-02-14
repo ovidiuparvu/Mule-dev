@@ -19,9 +19,9 @@ namespace multiscale {
 	namespace verification {
 
 		//! Symbol table and parser for the comparator type
-		struct ComparatorType_ : qi::symbols<char, multiscale::verification::ComparatorType> {
+		struct ComparatorTypeParser : qi::symbols<char, multiscale::verification::ComparatorType> {
 
-			ComparatorType_() {
+			ComparatorTypeParser() {
 				add
 					(">="	, ComparatorType::GreaterThanOrEqual)
 					("<="	, ComparatorType::LessThanOrEqual)
@@ -29,12 +29,12 @@ namespace multiscale {
 				;
 			}
 
-		} ComparatorTypeParser;
+		};
 
 		//! Symbol table and parser for the spatial measure type
-		struct SpatialMeasureType_ : qi::symbols<char, multiscale::verification::SpatialMeasureType> {
+		struct SpatialMeasureTypeParser : qi::symbols<char, multiscale::verification::SpatialMeasureType> {
 
-			SpatialMeasureType_() {
+			SpatialMeasureTypeParser() {
 				add
 					("clusteredness"		, SpatialMeasureType::Clusteredness)
 					("density"				, SpatialMeasureType::Density)
@@ -50,25 +50,25 @@ namespace multiscale {
 				;
 			}
 
-		} SpatialMeasureTypeParser;
+		};
 
 		//! Symbol table and parser for a specific subset type
-		struct SubsetSpecificType_ : qi::symbols<char, multiscale::verification::SubsetSpecificType> {
+		struct SubsetSpecificTypeParser : qi::symbols<char, multiscale::verification::SubsetSpecificType> {
 
-			SubsetSpecificType_() {
+			SubsetSpecificTypeParser() {
 				add
 					("clusters"	, SubsetSpecificType::Clusters)
 					("regions"	, SubsetSpecificType::Regions)
 				;
 			}
 
-		} SubsetSpecificTypeParser;
+		};
 
 
 		//! Symbol table and parser for the binary numeric measure type
-		struct BinaryNumericMeasureType_ : qi::symbols<char, multiscale::verification::BinaryNumericMeasureType> {
+		struct BinaryNumericMeasureTypeParser : qi::symbols<char, multiscale::verification::BinaryNumericMeasureType> {
 
-			BinaryNumericMeasureType_() {
+			BinaryNumericMeasureTypeParser() {
 				add
 					("div"		, BinaryNumericMeasureType::Div)
 					("log"		, BinaryNumericMeasureType::Log)
@@ -80,12 +80,12 @@ namespace multiscale {
 				;
 			}
 
-		} BinaryNumericMeasureTypeParser;
+		};
 
 		//! Symbol table and parser for the unary numeric measure type
-		struct UnaryNumericMeasureType_ : qi::symbols<char, multiscale::verification::UnaryNumericMeasureType> {
+		struct UnaryNumericMeasureTypeParser : qi::symbols<char, multiscale::verification::UnaryNumericMeasureType> {
 
-			UnaryNumericMeasureType_() {
+			UnaryNumericMeasureTypeParser() {
 				add
 					("abs"		, UnaryNumericMeasureType::Abs)
 					("ceil"		, UnaryNumericMeasureType::Ceil)
@@ -97,35 +97,35 @@ namespace multiscale {
 				;
 			}
 
-		} UnaryNumericMeasureTypeParser;
+		};
 
 		//! Symbol table and parser for the quaternary subset measure type
-		struct QuaternarySubsetMeasureType_ : qi::symbols<char, multiscale::verification::QuaternarySubsetMeasureType> {
+		struct QuaternarySubsetMeasureTypeParser : qi::symbols<char, multiscale::verification::QuaternarySubsetMeasureType> {
 
-			QuaternarySubsetMeasureType_() {
+			QuaternarySubsetMeasureTypeParser() {
 				add
 					("covar"	, QuaternarySubsetMeasureType::Covar)
 				;
 			}
 
-		} QuaternarySubsetMeasureTypeParser;
+		};
 
 		//! Symbol table and parser for the ternary subset measure type
-		struct TernarySubsetMeasureType_ : qi::symbols<char, multiscale::verification::TernarySubsetMeasureType> {
+		struct TernarySubsetMeasureTypeParser : qi::symbols<char, multiscale::verification::TernarySubsetMeasureType> {
 
-			TernarySubsetMeasureType_() {
+			TernarySubsetMeasureTypeParser() {
 				add
 					("percentile"	, TernarySubsetMeasureType::Percentile)
 					("quartile"		, TernarySubsetMeasureType::Quartile)
 				;
 			}
 
-		} TernarySubsetMeasureTypeParser;
+		};
 
 		//! Symbol table and parser for the binary subset measure type
-		struct BinarySubsetMeasureType_ : qi::symbols<char, multiscale::verification::BinarySubsetMeasureType> {
+		struct BinarySubsetMeasureTypeParser : qi::symbols<char, multiscale::verification::BinarySubsetMeasureType> {
 
-			BinarySubsetMeasureType_() {
+			BinarySubsetMeasureTypeParser() {
 				add
 					("avg"		, BinarySubsetMeasureType::Avg)
 					("geomean"	, BinarySubsetMeasureType::Geomean)
@@ -143,12 +143,12 @@ namespace multiscale {
 				;
 			}
 
-		} BinarySubsetMeasureTypeParser;
+		};
 
 		//! Symbol table and parser for the unary subset measure type
-		struct UnarySubsetMeasureType_ : qi::symbols<char, multiscale::verification::UnarySubsetMeasureType> {
+		struct UnarySubsetMeasureTypeParser : qi::symbols<char, multiscale::verification::UnarySubsetMeasureType> {
 
-			UnarySubsetMeasureType_() {
+			UnarySubsetMeasureTypeParser() {
 				add
 					("count"			, UnarySubsetMeasureType::Count)
 					("clusteredness"	, UnarySubsetMeasureType::Clusteredness)
@@ -156,7 +156,7 @@ namespace multiscale {
 				;
 			}
 
-		} UnarySubsetMeasureTypeParser;
+		};
 
 	};
 

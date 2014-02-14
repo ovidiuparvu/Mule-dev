@@ -1,50 +1,43 @@
 #ifndef LOGICPROPERTYATTRIBUTE_HPP
 #define LOGICPROPERTYATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/DifferenceAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialNumericComparisonAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericNumericComparisonAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NotAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/OrAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/AndAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/ImplicationAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/EquivalenceAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/UntilAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/FutureAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/GloballyAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NextAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NextNAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/fusion/include/io.hpp>
 #include <boost/variant.hpp>
+#include <vector>
 
 
 namespace multiscale {
 
 	namespace verification {
 
+		// Forward declaration of classes
+		class AndLogicPropertyAttribute;
+		class EquivalenceLogicPropertyAttribute;
+		class ImplicationLogicPropertyAttribute;
+		class OrLogicPropertyAttribute;
+		class PrimaryLogicPropertyAttribute;
+		class UntilLogicPropertyAttribute;
+
+
 		//! Variant for the logic property attribute
 		typedef boost::variant<
-			multiscale::verification::DifferenceAttribute,
-			multiscale::verification::NumericSpatialNumericComparisonAttribute,
-			multiscale::verification::NumericNumericComparisonAttribute,
-			multiscale::verification::NotAttribute,
-			multiscale::verification::OrAttribute,
-			multiscale::verification::AndAttribute,
-			multiscale::verification::ImplicationAttribute,
-			multiscale::verification::EquivalenceAttribute,
-			multiscale::verification::UntilAttribute,
-			multiscale::verification::FutureAttribute,
-			multiscale::verification::GloballyAttribute,
-			multiscale::verification::NextAttribute,
-			multiscale::verification::NextNAttribute,
-			boost::recursive_wrapper<multiscale::verification::LogicPropertyAttribute>
-		> logicPropertyAttribute_;
+			Nil,
+			boost::recursive_wrapper<OrLogicPropertyAttribute>,
+			boost::recursive_wrapper<AndLogicPropertyAttribute>,
+			boost::recursive_wrapper<ImplicationLogicPropertyAttribute>,
+			boost::recursive_wrapper<EquivalenceLogicPropertyAttribute>,
+			boost::recursive_wrapper<UntilLogicPropertyAttribute>,
+			boost::recursive_wrapper<PrimaryLogicPropertyAttribute>
+		> LogicPropertyAttributeType;
 
-		//! Structure for representing a logic property attribute
-		struct LogicPropertyAttribute {
-			logicPropertyAttribute_ logicProperty;
+
+		//! Class for representing a logic property attribute
+		class LogicPropertyAttribute {
+
+			LogicPropertyAttributeType 				firstLogicProperty;		/*!< The first logic property */
+			std::vector<LogicPropertyAttributeType>	nextLogicProperties; 	/*!< The next logic properties */
 		};
 
 	};
@@ -54,7 +47,8 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::LogicPropertyAttribute,
-    (multiscale::verification::logicPropertyAttribute_, logicProperty)
+    (multiscale::verification::LogicPropertyAttributeType, firstLogicProperty)
+    (std::vector<multiscale::verification::LogicPropertyAttributeType>, nextLogicProperties)
 )
 
 #endif
