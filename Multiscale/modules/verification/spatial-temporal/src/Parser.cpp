@@ -22,7 +22,7 @@ void Parser::setLogicalQuery(const std::string &logicalQuery) {
 	initialise();
 }
 
-bool Parser::parse(ConstraintAttribute &parseResult) {
+bool Parser::parse(ProbabilisticLogicPropertyAttribute &parseResult) {
     bool isSuccessfulParse = false;
 
     try {
@@ -44,7 +44,7 @@ void Parser::initialise() {
     this->logicalQueryEnd = logicalQuery.end();
 }
 
-bool Parser::parseLogicalQuery(ConstraintAttribute &parseResult) {
+bool Parser::parseLogicalQuery(ProbabilisticLogicPropertyAttribute &parseResult) {
     bool isSuccesfulParse = phrase_parse(logicalQueryIterator, logicalQueryEnd, grammar, ascii::space, parseResult);
 
     checkIfErrorCase(isSuccesfulParse);

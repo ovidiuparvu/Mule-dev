@@ -38,7 +38,7 @@ namespace multiscale {
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */
-                bool parse(ConstraintAttribute &parseResult);
+                bool parse(ProbabilisticLogicPropertyAttribute &parseResult);
 
             private:
 
@@ -49,7 +49,7 @@ namespace multiscale {
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */
-                bool parseLogicalQuery(ConstraintAttribute &parseResult);
+                bool parseLogicalQuery(ProbabilisticLogicPropertyAttribute &parseResult);
 
                 //! Check if an error case was encountered
                 /*!

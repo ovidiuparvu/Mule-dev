@@ -36,8 +36,11 @@ namespace multiscale {
 		//! Class for representing a logic property attribute
 		class LogicPropertyAttribute {
 
-			LogicPropertyAttributeType 				firstLogicProperty;		/*!< The first logic property */
-			std::vector<LogicPropertyAttributeType>	nextLogicProperties; 	/*!< The next logic properties */
+			public:
+
+				LogicPropertyAttributeType 				firstLogicProperty;		/*!< The first logic property */
+				std::vector<LogicPropertyAttributeType>	nextLogicProperties; 	/*!< The next logic properties */
+
 		};
 
 	};

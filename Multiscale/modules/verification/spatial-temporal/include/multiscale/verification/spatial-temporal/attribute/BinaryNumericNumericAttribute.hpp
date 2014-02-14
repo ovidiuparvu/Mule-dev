@@ -12,7 +12,7 @@ namespace multiscale {
 	namespace verification {
 
 		//! Class for representing a binary numeric numeric measure attribute
-		class BinaryNumericNumericMeasureAttribute {
+		class BinaryNumericNumericAttribute {
 
 			public:
 
@@ -28,7 +28,7 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::BinaryNumericNumericMeasureAttribute,
+    multiscale::verification::BinaryNumericNumericAttribute,
     (multiscale::verification::BinaryNumericMeasureAttribute, binaryNumericMeasure)
     (multiscale::verification::NumericMeasureAttributeType, firstNumericMeasure)
     (multiscale::verification::NumericMeasureAttributeType, secondNumericMeasure)

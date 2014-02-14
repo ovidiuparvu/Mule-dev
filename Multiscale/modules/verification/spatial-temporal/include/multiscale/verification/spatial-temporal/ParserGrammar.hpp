@@ -101,6 +101,213 @@ namespace multiscale {
                 ParserGrammar() : ParserGrammar::base_type(probabilisticLogicPropertyRule) {
                 	// Rules definitions
 
+                	probabilisticLogicPropertyRule
+                		=	'P'
+                			> comparatorRule
+                			> qi::double_
+                			> '['
+                			> logicPropertyRule
+                			> ']';
+
+                	logicPropertyRule
+                		=	primaryLogicPropertyRule
+                			>> *(
+                				andLogicPropertyRule
+                			|	orLogicPropertyRule
+                			|	implicationLogicPropertyRule
+                			| 	equivalenceLogicPropertyRule
+                			| 	untilLogicPropertyRule
+                			);
+
+                	primaryLogicPropertyRule
+                		=	differenceRule
+                		|	numericSpatialNumericComparisonRule
+                		|	numericNumericComparisonRule
+                		|	notLogicPropertyRule
+                		|	futureLogicPropertyRule
+                		|	globalLogicPropertyRule
+                		|	(
+                				'X'
+                				> (nextLogicPropertyRule | nextKLogicPropertyRule)
+                			)
+                		|	('(' > logicPropertyRule > ')');
+
+                	differenceRule
+                		=	qi::char_("d")
+							> '('
+							> numericMeasureRule
+							> ','
+							> qi::char_(")")
+							> comparatorRule
+							> numericMeasureRule;
+
+                	numericSpatialNumericComparisonRule
+                		=	numericSpatialRule
+                			> comparatorRule
+                			> numericMeasureRule;
+
+                	numericNumericComparisonRule
+                		=	numericStateVariableRule
+                			> comparatorRule
+                			> numericMeasureRule;
+
+                	notLogicPropertyRule
+						=	('~' > logicPropertyRule);
+
+                	futureLogicPropertyRule
+                		=	qi::char_('F')
+							> '['
+							> qi::ulong_
+							> ','
+							> qi::ulong_
+							> ']'
+							> logicPropertyRule;
+
+                	globalLogicPropertyRule
+                		=	qi::char_('G')
+							> '['
+							> qi::ulong_
+							> ','
+							> qi::ulong_
+							> ']'
+							> logicPropertyRule;
+
+                	nextLogicPropertyRule
+						=	logicPropertyRule;
+
+                	nextKLogicPropertyRule
+						=	'['
+							> qi::ulong_
+							> ']'
+							> logicPropertyRule;
+
+                	andLogicPropertyRule
+						=	('^' > logicPropertyRule);
+
+                	orLogicPropertyRule
+						=	('V' > logicPropertyRule);
+
+                	implicationLogicPropertyRule
+						=	("=>" > logicPropertyRule);
+
+                	equivalenceLogicPropertyRule
+                		=	("<=>" > logicPropertyRule);
+
+                	untilLogicPropertyRule
+                		=	qi::char_('U')
+							> '['
+							> qi::ulong_
+							> ','
+							> qi::ulong_
+							> ']'
+							> logicPropertyRule;
+
+                	numericMeasureRule
+                		=	numericSpatialRule
+                		|	qi::double_
+                		|	numericStateVariableRule
+                		|	unaryNumericNumericRule
+                		|	binaryNumericNumericRule;
+
+                	unaryNumericNumericRule
+                		=	unaryNumericMeasureRule
+							> '('
+							> numericMeasureRule
+							> ')';
+
+                	binaryNumericNumericRule
+                		=	binaryNumericMeasureRule
+							> '('
+							> numericMeasureRule
+							> ','
+							> numericMeasureRule
+							> ')';
+
+                	unarySubsetRule
+                		=	unarySubsetMeasureRule
+							> '('
+							> subsetRule
+							> ')';
+
+                	binarySubsetRule
+                		=	binarySubsetMeasureRule
+							> '('
+							> subsetRule
+							> ','
+							> spatialMeasureRule
+							> ')';
+
+                	ternarySubsetRule
+                		=	ternarySubsetMeasureRule
+							> '('
+							> subsetRule
+							> ','
+							> spatialMeasureRule
+							> ','
+							> qi::double_
+							> ')';
+
+                	quaternarySubsetRule
+                		=	quaternarySubsetMeasureRule
+							> '('
+							> subsetRule
+							> ','
+							> spatialMeasureRule
+							> ','
+							> subsetRule
+							> ','
+							> spatialMeasureRule
+							> ')';
+
+                	unaryNumericSpatialRule
+                		=	unaryNumericMeasureRule
+							> '('
+							> numericSpatialRule
+							> ')';
+
+                	binaryNumericSpatialRule
+                		=	binaryNumericMeasureRule
+							> '('
+							> numericSpatialRule
+							> ','
+							> numericMeasureRule
+							> ')';
+
+                	unarySubsetMeasureRule
+                		=	UnarySubsetMeasureTypeParser();
+
+                	binarySubsetMeasureRule
+                		=	BinarySubsetMeasureTypeParser();
+
+                	ternarySubsetMeasureRule
+                		=	TernarySubsetMeasureTypeParser();
+
+                	quaternarySubsetMeasureRule
+                		=	QuaternarySubsetMeasureTypeParser();
+
+                	unaryNumericMeasureRule
+                		= 	UnaryNumericMeasureTypeParser();
+
+                	binaryNumericMeasureRule
+                		=	BinaryNumericMeasureTypeParser();
+
+                	subsetRule
+                		=	subsetSpecificRule
+                		|	filterSubsetRule;
+
+                	filterSubsetRule
+                		=	(
+                				qi::lit("filter")
+                				> '('
+                				> subsetSpecificRule
+                				> ','
+                				> constraintRule
+                				> ')'
+                			);
+
+                	subsetSpecificRule
+                		=	SubsetSpecificTypeParser();
+
                 	constraintRule
                 		=	primaryConstraintRule
                 		    >>  *(
@@ -110,11 +317,24 @@ namespace multiscale {
                 		        |   (equivalenceConstraintRule)
                                 );
 
-                	orConstraintRule
-                		=	('V' > constraintRule);
+                	primaryConstraintRule
+						=	notConstraintRule
+						|	unaryConstraintRule
+						| 	('(' > constraintRule > ')');
+
+                	notConstraintRule
+                		=	('~' > constraintRule);
+
+                	unaryConstraintRule
+                		=	spatialMeasureRule
+                			> comparatorRule
+                			> numericMeasureRule;
 
                 	andConstraintRule
                 		=	('^' > constraintRule);
+
+                	orConstraintRule
+                		=	('V' > constraintRule);
 
                 	implicationConstraintRule
                 		=	("=>" > constraintRule);
@@ -122,55 +342,152 @@ namespace multiscale {
                 	equivalenceConstraintRule
                 		=	("<=>" > constraintRule);
 
-                	primaryConstraintRule
-						=	notConstraintRule
-						// TODO: Update
-//						|	numericStateVariableRule
-						| 	('(' > constraintRule > ')');
+                	spatialMeasureRule
+                		=	SpatialMeasureTypeParser();
 
-                	notConstraintRule
-                		=	('~' > constraintRule);
+                	comparatorRule
+                		=	ComparatorTypeParser();
 
                 	numericStateVariableRule
                 		=   stateVariableRule;
 
                 	stateVariableRule
-                		=	stringRule;
+                		=	('[' > stateVariableNameRule > ']');
 
                 	stateVariableNameRule
                 		=	+(qi::char_ - "[]");
 
                 	// Assign a name to the rules
+                	probabilisticLogicPropertyRule.name("probabilisticLogicPropertyRule");
+                	logicPropertyRule.name("logicPropertyRule");
+                	primaryLogicPropertyRule.name("primaryLogicPropertyRule");
+                	differenceRule.name("differenceRule");
+                	numericSpatialNumericComparisonRule.name("numericSpatialNumericComparisonRule");
+                	numericNumericComparisonRule.name("numericNumericComparisonRule");
+                	notLogicPropertyRule.name("notLogicPropertyRule");
+                	futureLogicPropertyRule.name("futureLogicPropertyRule");
+                	globalLogicPropertyRule.name("globalLogicPropertyRule");
+                	nextLogicPropertyRule.name("nextLogicPropertyRule");
+                	nextKLogicPropertyRule.name("nextKLogicPropertyRule");
+                	andLogicPropertyRule.name("andLogicPropertyRule");
+                	orLogicPropertyRule.name("orLogicPropertyRule");
+                	implicationLogicPropertyRule.name("implicationLogicPropertyRule");
+                	equivalenceLogicPropertyRule.name("equivalenceLogicPropertyRule");
+                	untilLogicPropertyRule.name("untilLogicPropertyRule");
+                	numericMeasureRule.name("numericMeasureRule");
+                	unaryNumericNumericRule.name("unaryNumericNumericRule");
+                	binaryNumericNumericRule.name("binaryNumericNumericRule");
+                	unarySubsetRule.name("unarySubsetRule");
+                	binarySubsetRule.name("binarySubsetRule");
+                	ternarySubsetRule.name("ternarySubsetRule");
+                	quaternarySubsetRule.name("quaternarySubsetRule");
+                	unaryNumericSpatialRule.name("unaryNumericSpatialRule");
+                	binaryNumericSpatialRule.name("binaryNumericSpatialRule");
+                	unarySubsetMeasureRule.name("unarySubsetMeasureRule");
+                	binarySubsetMeasureRule.name("binarySubsetMeasureRule");
+                	ternarySubsetMeasureRule.name("ternarySubsetMeasureRule");
+                	quaternarySubsetMeasureRule.name("quaternarySubsetMeasureRule");
+                	unaryNumericMeasureRule.name("unaryNumericMeasureRule");
+                	binaryNumericMeasureRule.name("binaryNumericMeasureRule");
+                	subsetRule.name("subsetRule");
+					filterSubsetRule.name("filterSubsetRule");
+					subsetSpecificRule.name("subsetSpecificRule");
 					constraintRule.name("constraintRule");
-					orConstraintRule.name("orConstraintRule");
-					andConstraintRule.name("andConstraintRule");
-					implicationConstraintRule.name("implicationConstraintRule");
-					equivalenceConstraintRule.name("equivalenceConstraintRule");
 					primaryConstraintRule.name("primaryConstraintRule");
 					notConstraintRule.name("notConstraintRule");
+					unaryConstraintRule.name("unaryConstraintRule");
+					andConstraintRule.name("andConstraintRule");
+					orConstraintRule.name("orConstraintRule");
+					implicationConstraintRule.name("implicationConstraintRule");
+					equivalenceConstraintRule.name("equivalenceConstraintRule");
+					spatialMeasureRule.name("spatialMeasureRule");
+					comparatorRule.name("comparatorRule");
 					numericStateVariableRule.name("numericStateVariableRule");
 					stateVariableRule.name("stateVariableRule");
 					stateVariableNameRule.name("stateVariableNameRule");
 
 					// Debugging and reporting support
+					debug(probabilisticLogicPropertyRule);
+					debug(logicPropertyRule);
+					debug(primaryLogicPropertyRule);
+					debug(differenceRule);
+					debug(numericSpatialNumericComparisonRule);
+					debug(numericNumericComparisonRule);
+					debug(notLogicPropertyRule);
+					debug(futureLogicPropertyRule);
+					debug(globalLogicPropertyRule);
+					debug(nextLogicPropertyRule);
+					debug(nextKLogicPropertyRule);
+					debug(andLogicPropertyRule);
+					debug(orLogicPropertyRule);
+					debug(implicationLogicPropertyRule);
+					debug(equivalenceLogicPropertyRule);
+					debug(untilLogicPropertyRule);
+					debug(numericMeasureRule);
+					debug(unaryNumericNumericRule);
+					debug(binaryNumericNumericRule);
+					debug(unarySubsetRule);
+					debug(binarySubsetRule);
+					debug(ternarySubsetRule);
+					debug(quaternarySubsetRule);
+					debug(unaryNumericSpatialRule);
+					debug(binaryNumericSpatialRule);
+					debug(unarySubsetMeasureRule);
+					debug(binarySubsetMeasureRule);
+					debug(ternarySubsetMeasureRule);
+					debug(quaternarySubsetMeasureRule);
+					debug(unaryNumericMeasureRule);
+					debug(binaryNumericMeasureRule);
+					debug(subsetRule);
+					debug(filterSubsetRule);
+					debug(subsetSpecificRule);
 					debug(constraintRule);
-					debug(orConstraintRule);
-					debug(andConstraintRule);
-					debug(implicationConstraintRule);
-					debug(equivalenceConstraintRule);
 					debug(primaryConstraintRule);
 					debug(notConstraintRule);
+					debug(unaryConstraintRule);
+					debug(andConstraintRule);
+					debug(orConstraintRule);
+					debug(implicationConstraintRule);
+					debug(equivalenceConstraintRule);
+					debug(spatialMeasureRule);
+					debug(comparatorRule);
 					debug(numericStateVariableRule);
 					debug(stateVariableRule);
 					debug(stateVariableNameRule);
 
                 	// Error handling routines
-                	qi::on_error<qi::fail>(orConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(andConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(implicationConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(equivalenceConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(probabilisticLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(primaryLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(differenceRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(numericSpatialNumericComparisonRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(numericNumericComparisonRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(notLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(futureLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(globalLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(nextLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(nextKLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(andLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(orLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(implicationLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(equivalenceLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(untilLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(unaryNumericNumericRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(binaryNumericNumericRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(unarySubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(binarySubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(ternarySubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(quaternarySubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(unaryNumericSpatialRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(binaryNumericSpatialRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(filterSubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(primaryConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(andConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(orConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(implicationConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(equivalenceConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(stateVariableNameRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
                 }
 
         };

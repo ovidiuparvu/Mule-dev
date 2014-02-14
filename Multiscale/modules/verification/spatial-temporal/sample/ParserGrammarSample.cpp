@@ -13,7 +13,7 @@ using namespace std;
 //  Main program
 int main(int argc, char **argv) {
     string test;
-    ConstraintAttribute result;
+    ProbabilisticLogicPropertyAttribute result;
 
     cout << "/////////////////////////////////////////////////////////\n\n";
 	cout << "\t\tA logical query parser...\n\n";
