@@ -23,6 +23,7 @@
 #include <boost/fusion/include/io.hpp>
 #include <boost/variant.hpp>
 
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <complex>
@@ -40,15 +41,38 @@ namespace client
     //  Our employee struct
     ///////////////////////////////////////////////////////////////////////////
     //[tutorial_employee_struct
+
 	typedef boost::variant<
 		double,
 		int
 	> key_information;
 
+	enum class NameType : int {
+        John = 1,
+        Doe = 2
+    };
+
     struct name {
         std::string surname;
-        std::string forename;
+        NameType forename;
     };
+
+    inline std::ostream& operator<<(std::ostream &out, const NameType &nameType) {
+        switch (nameType) {
+            case NameType::John:
+                out << "John";
+                break;
+
+            case NameType::Doe:
+                out << "Doe";
+                break;
+
+            default:
+                out << "undefined";
+        }
+
+        return out;
+    }
 
     struct employee
     {
@@ -57,15 +81,16 @@ namespace client
         key_information info;
     };
 
-    struct NameType : qi::symbols<char, std::string> {
+    struct NameTypeParser : qi::symbols<char, client::NameType> {
 
-    	NameType() {
+        NameTypeParser() {
     		add
-    			("\"John\"", std::string("Doe"))
+    			("\"John\"", NameType::John)
+    			("\"Doe\"", NameType::Doe)
     		;
     	}
 
-    } NameTypeParser;
+    };
     //]
 }
 
@@ -73,11 +98,10 @@ namespace client
 // to make it a first-class fusion citizen. This has to
 // be in global scope.
 
-//[tutorial_employee_adapt_struct
 BOOST_FUSION_ADAPT_STRUCT(
     client::name,
     (std::string, surname)
-    (std::string, forename)
+    (client::NameType, forename)
 )
 
 BOOST_FUSION_ADAPT_STRUCT(
@@ -107,7 +131,7 @@ namespace client
 
             quoted_string = lexeme['"' >> +(char_ - '"') >> '"'];
 
-            nameRule = quoted_string >> "," >> NameTypeParser;
+            nameRule = quoted_string >> "," >> nameTypeParser;
 
             infoRule = double_ | int_;
 
@@ -132,6 +156,8 @@ namespace client
             debug(nameRule);
             debug(quoted_string);
         }
+
+        NameTypeParser nameTypeParser;
 
         qi::rule<Iterator, std::string(), ascii::space_type> quoted_string;
         qi::rule<Iterator, client::name(), ascii::space_type> nameRule;

@@ -36,6 +36,8 @@ namespace multiscale {
 
             private:
 
+                // Rules
+
                 qi::rule<Iterator, ProbabilisticLogicPropertyAttribute(), ascii::space_type>		probabilisticLogicPropertyRule;			/*!< The rule for parsing a probabilistic logic property */
                 qi::rule<Iterator, LogicPropertyAttribute(), ascii::space_type>						logicPropertyRule;						/*!< The rule for parsing a logic property */
                 qi::rule<Iterator, PrimaryLogicPropertyAttribute(), ascii::space_type>				primaryLogicPropertyRule;				/*!< The rule for parsing a primary logic property */
@@ -95,6 +97,22 @@ namespace multiscale {
                 qi::rule<Iterator, NumericStateVariableAttribute(), ascii::space_type> 				numericStateVariableRule;				/*!< The rule for parsing a numeric state variable */
                 qi::rule<Iterator, StateVariableAttribute(), ascii::space_type> 					stateVariableRule;						/*!< The rule for parsing a state variable */
                 qi::rule<Iterator, std::string(), ascii::space_type> 								stateVariableNameRule; 					/*!< The rule for parsing the name of a state variable without escaping white space */
+
+                // Enumeration parsers
+
+                UnarySubsetMeasureTypeParser        unarySubsetMeasureTypeParser;       /*!< The unary subset measure type parser */
+                BinarySubsetMeasureTypeParser       binarySubsetMeasureTypeParser;      /*!< The binary subset measure type parser */
+                TernarySubsetMeasureTypeParser      ternarySubsetMeasureTypeParser;     /*!< The ternary subset measure type parser */
+                QuaternarySubsetMeasureTypeParser   quaternarySubsetMeasureTypeParser;  /*!< The quaternary subset measure type parser */
+
+                UnaryNumericMeasureTypeParser       unaryNumericMeasureTypeParser;      /*!< The unary numeric measure type parser */
+                BinaryNumericMeasureTypeParser      binaryNumericMeasureTypeParser;     /*!< The binary numeric measure type parser */
+
+                SubsetSpecificTypeParser            subsetSpecificTypeParser;           /*!< The subset specific type parser */
+
+                SpatialMeasureTypeParser            spatialMeasureTypeParser;           /*!< The spatial measure type parser */
+
+                ComparatorTypeParser                comparatorTypeParser;               /*!< The comparator type parser */
 
             public:
 
@@ -248,6 +266,14 @@ namespace multiscale {
                                 > ')'
                 		    );
 
+                	numericSpatialRule
+                	    =   unarySubsetRule
+                	    |   binarySubsetRule
+                	    |   ternarySubsetRule
+                	    |   quaternarySubsetRule
+                	    |   unaryNumericSpatialRule
+                	    |   binaryNumericSpatialRule;
+
                 	unarySubsetRule
                 		=	(
                 		        unarySubsetMeasureRule
@@ -311,22 +337,22 @@ namespace multiscale {
                 		    );
 
                 	unarySubsetMeasureRule
-                		=	UnarySubsetMeasureTypeParser();
+                		=	unarySubsetMeasureTypeParser;
 
                 	binarySubsetMeasureRule
-                		=	BinarySubsetMeasureTypeParser();
+                		=	binarySubsetMeasureTypeParser;
 
                 	ternarySubsetMeasureRule
-                		=	TernarySubsetMeasureTypeParser();
+                		=	ternarySubsetMeasureTypeParser;
 
                 	quaternarySubsetMeasureRule
-                		=	QuaternarySubsetMeasureTypeParser();
+                		=	quaternarySubsetMeasureTypeParser;
 
                 	unaryNumericMeasureRule
-                		= 	UnaryNumericMeasureTypeParser();
+                		= 	unaryNumericMeasureTypeParser;
 
                 	binaryNumericMeasureRule
-                		=	BinaryNumericMeasureTypeParser();
+                		=	binaryNumericMeasureTypeParser;
 
                 	subsetRule
                 		=	subsetSpecificRule
@@ -343,7 +369,7 @@ namespace multiscale {
                 			);
 
                 	subsetSpecificRule
-                		=	SubsetSpecificTypeParser();
+                		=	subsetSpecificTypeParser;
 
                 	constraintRule
                 		=	primaryConstraintRule
@@ -380,10 +406,10 @@ namespace multiscale {
                 		=	("<=>" > constraintRule);
 
                 	spatialMeasureRule
-                		=	SpatialMeasureTypeParser();
+                		=	spatialMeasureTypeParser;
 
                 	comparatorRule
-                		=	ComparatorTypeParser();
+                		=	comparatorTypeParser;
 
                 	numericStateVariableRule
                 		=   stateVariableRule;
