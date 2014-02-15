@@ -1,6 +1,5 @@
 var DBSCANTest_8cpp =
 [
-    [ "EuclideanDataPoint", "classEuclideanDataPoint.html", "classEuclideanDataPoint" ],
     [ "convertPoints", "DBSCANTest_8cpp.html#ac89548852d32515b26757d1751887d70", null ],
     [ "main", "DBSCANTest_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4", null ],
     [ "printResults", "DBSCANTest_8cpp.html#ac4df2486415fcf7158d6f720dfaee3f5", null ],

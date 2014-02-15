@@ -1,3 +1,5 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classmultiscale_1_1Geometry2D.html" title="Two&#45;dimensional geometric operations." alt="" coords="5,5,168,35"/>
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$classmultiscale_1_1analysis_1_1MatFactory.html" title="Class for creating a Mat object." alt="" coords="5,32,216,61"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1CircularMatFactory.html" title="Class for creating a Mat object considering a circular grid." alt="" coords="277,5,533,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RectangularMatFactory.html" title="Class for creating a Mat object considering a rectangular grid." alt="" coords="265,59,545,88"/>
 </map>

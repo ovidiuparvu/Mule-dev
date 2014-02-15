@@ -6,5 +6,6 @@ var searchData=
   ['rectangularmatfactory',['RectangularMatFactory',['../classmultiscale_1_1analysis_1_1RectangularMatFactory.html',1,'multiscale::analysis']]],
   ['region',['Region',['../classmultiscale_1_1analysis_1_1Region.html',1,'multiscale::analysis']]],
   ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html',1,'multiscale::analysis']]],
+  ['result',['result',['../structmultiscale_1_1verification_1_1ErrorHandler_1_1result.html',1,'multiscale::verification::ErrorHandler']]],
   ['rgbcolourgenerator',['RGBColourGenerator',['../classmultiscale_1_1RGBColourGenerator.html',1,'multiscale']]]
 ];

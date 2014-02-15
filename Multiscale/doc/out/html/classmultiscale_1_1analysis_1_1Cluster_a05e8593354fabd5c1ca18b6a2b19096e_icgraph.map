@@ -1,9 +1,9 @@
-<map id="multiscale::analysis::Cluster::areValidOriginDependentValues" name="multiscale::analysis::Cluster::areValidOriginDependentValues">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non&#45;negative)" alt="" coords="279,5,500,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915" title="Set the values of the origin dependent members." alt="" coords="549,5,744,69"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="792,5,1003,69"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="1051,5,1275,69"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="1323,14,1547,61"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1595,5,1784,69"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1833,5,2044,69"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non&#45;negative)" alt="" coords="433,5,809,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915" title="Set the values of the origin dependent members." alt="" coords="860,5,1223,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="1273,5,1735,35"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="1785,5,2260,35"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="2309,5,2648,35"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="2696,5,3096,35"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="3144,5,3533,35"/>
 </map>

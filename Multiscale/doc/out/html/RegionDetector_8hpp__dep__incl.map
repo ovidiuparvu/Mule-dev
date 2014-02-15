@@ -1,5 +1,5 @@
-<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/RegionDetector.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/RegionDetector.hpp">
-<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="5,153,211,234"/>
-<area shape="rect" id="node5" href="$RectangularDetectRegions_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/RectangularDetectRegions.cpp" alt="" coords="235,153,464,234"/>
-<area shape="rect" id="node7" href="$RegionDetector_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/RegionDetector.cpp" alt="" coords="488,153,661,234"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/CircularDetectRegions.cpp" alt="" coords="5,83,651,112"/>
+<area shape="rect" id="node5" href="$RectangularDetectRegions_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/RectangularDetectRegions.cpp" alt="" coords="675,83,1347,112"/>
+<area shape="rect" id="node7" href="$RegionDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/RegionDetector.cpp" alt="" coords="1371,83,1976,112"/>
 </map>

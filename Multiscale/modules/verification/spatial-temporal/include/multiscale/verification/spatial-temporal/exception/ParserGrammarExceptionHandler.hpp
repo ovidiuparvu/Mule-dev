@@ -30,7 +30,7 @@ namespace multiscale {
                 //! Handle the exception when wrong input is provided
 				/*!
 				 * \param initialString The initial string
-				 * \param extraInput    Error string
+				 * \param errorString   Error string
 				 */
 				static void handleUnparseableInputException(const string &initialString, const string &errorString);
 

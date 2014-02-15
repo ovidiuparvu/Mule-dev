@@ -31,7 +31,7 @@ namespace multiscale {
 
 				//! Evaluate a unary expression
 				/*!
-				 * \param The unary expression
+				 * \param unaryExpression   The unary expression
 				 */
 				template <typename T>
 				bool evaluateUnaryExpression(const T &unaryExpression) const {
@@ -55,7 +55,7 @@ namespace multiscale {
 				//! Evaluate an n-ary expression
 				/*!
 				 * \param firstExpression   The first expression
-				 * \param nextExpression    The vector of next expressions
+				 * \param nextExpressions   The vector of next expressions
 				 */
 				template <typename T, typename U>
 				bool evaluateNaryExpression(const T &firstExpression, const std::vector<U> &nextExpressions) const {

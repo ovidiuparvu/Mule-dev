@@ -1,5 +1,10 @@
 var searchData=
 [
+  ['ternarysubsetmeasure',['ternarySubsetMeasure',['../classmultiscale_1_1verification_1_1TernarySubsetAttribute.html#add8611859f40bbc4864fa1f9e075a7b6',1,'multiscale::verification::TernarySubsetAttribute::ternarySubsetMeasure()'],['../classmultiscale_1_1verification_1_1TernarySubsetMeasureAttribute.html#a85be31b2949749eb97b86fe7f50fea19',1,'multiscale::verification::TernarySubsetMeasureAttribute::ternarySubsetMeasure()']]],
+  ['ternarysubsetmeasurerule',['ternarySubsetMeasureRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a0d477f9439a220f37dc44d4bda404d65',1,'multiscale::verification::ParserGrammar']]],
+  ['ternarysubsetmeasuretypeparser',['ternarySubsetMeasureTypeParser',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a33ba782c7616ec399806bbc624b3c1d7',1,'multiscale::verification::ParserGrammar']]],
+  ['ternarysubsetrule',['ternarySubsetRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a51c0abb357d5de82a8186cbd154d3ca1',1,'multiscale::verification::ParserGrammar']]],
+  ['testresult',['testResult',['../classmultiscaletest_1_1ParserTest.html#a986e9fd14c76fbb66f8c63e0b86a3806',1,'multiscaletest::ParserTest']]],
   ['threshold',['THRESHOLD',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a460525b4359afb52b4bde2ebd600122c',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['threshold_5fclusteredness',['THRESHOLD_CLUSTEREDNESS',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a52778f49510e1e500b2dc48857724e20',1,'multiscale::analysis::RegionDetector']]],
   ['threshold_5fmax',['THRESHOLD_MAX',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a32b52c0ce7f8a1c8da872aa1cf754317',1,'multiscale::analysis::SimulationClusterDetector::THRESHOLD_MAX()'],['../classmultiscale_1_1analysis_1_1RegionDetector.html#a53c6e2b067a8b8c82484cbca34cc3d57',1,'multiscale::analysis::RegionDetector::THRESHOLD_MAX()']]],

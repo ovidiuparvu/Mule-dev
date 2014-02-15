@@ -1,6 +1,7 @@
 var searchData=
 [
   ['_7eannularsector',['~AnnularSector',['../classmultiscale_1_1video_1_1AnnularSector.html#a2ced14f6af200e6e4c1c5f3e189bde4b',1,'multiscale::video::AnnularSector']]],
+  ['_7eattribute',['~Attribute',['../classmultiscale_1_1verification_1_1Attribute.html#addf43507a6e7ccd140d7635f07ea363b',1,'multiscale::verification::Attribute']]],
   ['_7ecartesiantoconcentrationsconverter',['~CartesianToConcentrationsConverter',['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a4250cb00af6f3c254c0577479ae25553',1,'multiscale::video::CartesianToConcentrationsConverter']]],
   ['_7ecartesiantopolarconverter',['~CartesianToPolarConverter',['../classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7842464665976d381df75f03d7c71347',1,'multiscale::video::CartesianToPolarConverter']]],
   ['_7ecircularmatfactory',['~CircularMatFactory',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html#aaf49d7ad7e1955709929d180686e99d8',1,'multiscale::analysis::CircularMatFactory']]],
@@ -17,6 +18,8 @@ var searchData=
   ['_7eminenclosingtrianglefindertest',['~MinEnclosingTriangleFinderTest',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a08084468ad154583a03421f73554342f',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
   ['_7emultiscaletest',['~MultiscaleTest',['../classmultiscaletest_1_1MultiscaleTest.html#a27aa0fd218670e2265edad84b2fb1f8f',1,'multiscaletest::MultiscaleTest']]],
   ['_7enumberiterator',['~NumberIterator',['../classmultiscale_1_1NumberIterator.html#aae2ce809339ed853f49619ad69596229',1,'multiscale::NumberIterator']]],
+  ['_7eparser',['~Parser',['../classmultiscale_1_1verification_1_1Parser.html#a3e658b5917a93a3ef648050d060e3a93',1,'multiscale::verification::Parser']]],
+  ['_7eparsertest',['~ParserTest',['../classmultiscaletest_1_1ParserTest.html#a64512643a5e6780f817f80d4688909d1',1,'multiscaletest::ParserTest']]],
   ['_7epolarcsvtoinputfilesconverter',['~PolarCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#afdd156ae24d5d6194b113dd661110ed5',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['_7erectangularcsvtoinputfilesconverter',['~RectangularCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ad45bb79ad6c37954376d4f9904872870',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
   ['_7erectangularentitycsvtoinputfilesconverter',['~RectangularEntityCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#af3085f7d4f6836c0d5edf19f4a59bac7',1,'multiscale::video::RectangularEntityCsvToInputFilesConverter']]],

@@ -1,6 +1,6 @@
-<map id="multiscale::LexicographicNumberIterator::hasNextInitialised" name="multiscale::LexicographicNumberIterator::hasNextInitialised">
-<area shape="rect" id="node3" href="$classmultiscale_1_1LexicographicNumberIterator.html#a8fad6e84a483cee3bd52c926de73d15f" title="Check if the current number with the provided last digit is greater than the upper bound..." alt="" coords="275,5,539,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1LexicographicNumberIterator.html#a063dc7e6097724e96ed36bab4d20871b" title="Pad the current number with zeros." alt="" coords="308,74,505,121"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1LexicographicNumberIterator.html#a9bcb610b3b63b02ceed7d556960e57c3" title="Convert the vector of digits to the number they represent." alt="" coords="588,74,796,121"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1LexicographicNumberIterator.html#a282d970d0d1a33d2736bbdf104c18336" title="Get the number pointed by the iterator." alt="" coords="847,74,1015,121"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1LexicographicNumberIterator.html#a8fad6e84a483cee3bd52c926de73d15f" title="Check if the current number with the provided last digit is greater than the upper bound..." alt="" coords="421,5,832,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1LexicographicNumberIterator.html#a063dc7e6097724e96ed36bab4d20871b" title="Pad the current number with zeros." alt="" coords="455,59,799,88"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1LexicographicNumberIterator.html#a9bcb610b3b63b02ceed7d556960e57c3" title="Convert the vector of digits to the number they represent." alt="" coords="881,59,1236,88"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1LexicographicNumberIterator.html#a282d970d0d1a33d2736bbdf104c18336" title="Get the number pointed by the iterator." alt="" coords="1285,59,1592,88"/>
 </map>

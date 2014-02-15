@@ -1,5 +1,5 @@
-<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/exception/UnexpectedBehaviourException.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/exception/UnexpectedBehaviourException.hpp">
-<area shape="rect" id="node3" href="$SimulationClusterDetector_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/cluster/SimulationClusterDetector.cpp" alt="" coords="5,137,275,218"/>
-<area shape="rect" id="node5" href="$SpatialEntityPseudo3D_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/SpatialEntityPseudo3D.cpp" alt="" coords="299,137,507,218"/>
-<area shape="rect" id="node7" href="$MinEnclosingTriangleFinder_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/util/src/MinEnclosingTriangle\lFinder.cpp" alt="" coords="531,137,776,218"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$SimulationClusterDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/cluster/SimulationClusterDetector.cpp" alt="" coords="5,83,715,112"/>
+<area shape="rect" id="node5" href="$SpatialEntityPseudo3D_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/SpatialEntityPseudo3D.cpp" alt="" coords="739,83,1389,112"/>
+<area shape="rect" id="node7" href="$MinEnclosingTriangleFinder_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/src/MinEnclosingTriangleFinder.cpp" alt="" coords="1413,83,2016,112"/>
 </map>

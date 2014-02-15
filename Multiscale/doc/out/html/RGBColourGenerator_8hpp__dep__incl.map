@@ -1,6 +1,6 @@
-<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/RGBColourGenerator.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/RGBColourGenerator.hpp">
-<area shape="rect" id="node3" href="$SimulationClusterDetector_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/cluster/SimulationClusterDetector.cpp" alt="" coords="5,137,275,218"/>
-<area shape="rect" id="node5" href="$ClusterDetector_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/ClusterDetector.cpp" alt="" coords="299,137,472,218"/>
-<area shape="rect" id="node7" href="$RGBColourGeneratorSample_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/util/sample/RGBColourGenerator\lSample.cpp" alt="" coords="496,137,765,218"/>
-<area shape="rect" id="node9" href="$RGBColourGenerator_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/util/src/RGBColourGenerator.cpp" alt="" coords="789,145,1059,209"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$SimulationClusterDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/cluster/SimulationClusterDetector.cpp" alt="" coords="5,83,715,112"/>
+<area shape="rect" id="node5" href="$ClusterDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/ClusterDetector.cpp" alt="" coords="739,83,1344,112"/>
+<area shape="rect" id="node7" href="$RGBColourGeneratorSample_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/sample/RGBColourGeneratorSample.cpp" alt="" coords="1368,83,2003,112"/>
+<area shape="rect" id="node9" href="$RGBColourGenerator_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/src/RGBColourGenerator.cpp" alt="" coords="2027,83,2592,112"/>
 </map>

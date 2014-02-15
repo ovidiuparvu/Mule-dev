@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
 
 	cout
 		<< "Please enter a logical query of the form :" << endl
-		<< "\t{constraint}" << endl
+		<< "\t{probabilistic logic spatial temporal query}" << endl
 		<< endl;
 
 	getline(cin, test);

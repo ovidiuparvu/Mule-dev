@@ -30,5 +30,13 @@ var classmultiscale_1_1analysis_1_1ClusterDetector =
     [ "clusters", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aa81a8649bc743389c2fc1919d47eb5b3", null ],
     [ "entityPileupDegree", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aaa93a4b3a5a3c4279aa434669093ac40", null ],
     [ "eps", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a61e876f87d62245eada8f56d587d39cd", null ],
-    [ "minPoints", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aa94df1adc462be5931ec25ba24122fe9", null ]
+    [ "EPS_MAX", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a76d0b4ecd2793d478317cc1bc856e06f", null ],
+    [ "EPS_MIN", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a6c3517e03d1fd2c6b4d6cd0d81eb8684", null ],
+    [ "EPS_REAL_MAX", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a3e60b9e068a8addf9dd27382c74e6d62", null ],
+    [ "EPS_REAL_MIN", "classmultiscale_1_1analysis_1_1ClusterDetector.html#ad9542bde7e3bf36d501a0b203dc61e09", null ],
+    [ "MIN_POINTS_MAX", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aabb41b5c6e865ee33cbb27568cae5a2d", null ],
+    [ "MIN_POINTS_MIN", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aa0219df3977a845e46be090e6c3f90ad", null ],
+    [ "minPoints", "classmultiscale_1_1analysis_1_1ClusterDetector.html#aa94df1adc462be5931ec25ba24122fe9", null ],
+    [ "TRACKBAR_EPS", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a656f64f88c73c25824e5a4416a742aaf", null ],
+    [ "TRACKBAR_MINPOINTS", "classmultiscale_1_1analysis_1_1ClusterDetector.html#a7f0fbbf3de8479b106893c4a8161bdaf", null ]
 ];

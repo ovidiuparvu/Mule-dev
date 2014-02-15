@@ -1,7 +1,7 @@
-<map id="main" name="main">
-<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a88e0190bdcd41850844fa3d92a0083f4" title="areValidParameters" alt="" coords="133,32,269,61"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#a7cf56e73e5b1c627bab05d4be3cdb405" title="Start the conversion." alt="" coords="104,85,299,149"/>
-<area shape="rect" id="node11" href="$CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb" title="printWrongParameters" alt="" coords="125,173,277,203"/>
-<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="348,5,487,35"/>
-<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="348,59,487,88"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a88e0190bdcd41850844fa3d92a0083f4" title="areValidParameters" alt="" coords="255,32,391,61"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#a7cf56e73e5b1c627bab05d4be3cdb405" title="Start the conversion." alt="" coords="105,85,540,115"/>
+<area shape="rect" id="node11" href="$CircularDetectRegions_8cpp.html#a573a6d091545f311c155eb4f04c8a2cb" title="printWrongParameters" alt="" coords="247,139,399,168"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="591,5,729,35"/>
+<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="591,59,729,88"/>
 </map>

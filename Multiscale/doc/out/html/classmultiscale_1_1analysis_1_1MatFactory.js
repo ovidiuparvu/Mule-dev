@@ -10,6 +10,9 @@ var classmultiscale_1_1analysis_1_1MatFactory =
     [ "maxColourBarIntensityFromViewerImage", "classmultiscale_1_1analysis_1_1MatFactory.html#a041b354357794476a2108e3f71deadc8", null ],
     [ "processConcentrations", "classmultiscale_1_1analysis_1_1MatFactory.html#a0493c87d7b74619a95f14c0e31a3e178", null ],
     [ "cols", "classmultiscale_1_1analysis_1_1MatFactory.html#a9514356fe5226eaa31a4e61ca62a027c", null ],
+    [ "ERR_IMG_RESOLUTION", "classmultiscale_1_1analysis_1_1MatFactory.html#ab5e9403dc7f8465189d444f909d473e7", null ],
+    [ "ERR_IN_EXTRA_DATA", "classmultiscale_1_1analysis_1_1MatFactory.html#a09459b632d5b01f184ce0f56245f5905", null ],
+    [ "ERR_INPUT_OPEN", "classmultiscale_1_1analysis_1_1MatFactory.html#a06de250e466b41fcca4fa61a52a575fc", null ],
     [ "rows", "classmultiscale_1_1analysis_1_1MatFactory.html#a35672fb0c992f662018ee7c146794474", null ],
     [ "simulationTime", "classmultiscale_1_1analysis_1_1MatFactory.html#a99caa620805ac50375699236d83fbd96", null ]
 ];

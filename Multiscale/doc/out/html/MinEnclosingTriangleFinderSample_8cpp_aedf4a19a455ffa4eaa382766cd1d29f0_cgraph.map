@@ -1,4 +1,4 @@
-<map id="isValidTriangle" name="isValidTriangle">
+<map id="G" name="G">
 <area shape="rect" id="node3" href="$MinEnclosingTriangleFinderSample_8cpp.html#a034dc3c50ee9138b7ca750f1ca3a0180" title="arePointsEnclosed" alt="" coords="184,5,315,35"/>
 <area shape="rect" id="node5" href="$MinEnclosingTriangleFinderSample_8cpp.html#a38124a4460f065f32d4a8da82b64f4ef" title="isOneEdgeFlush" alt="" coords="191,59,308,88"/>
 <area shape="rect" id="node7" href="$MinEnclosingTriangleFinderSample_8cpp.html#a3301420b8efa834eb9f6d9c66cef1f87" title="isTriangleTouchingPolygon" alt="" coords="160,112,339,141"/>

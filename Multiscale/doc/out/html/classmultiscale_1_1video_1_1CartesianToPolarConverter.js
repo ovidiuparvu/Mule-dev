@@ -11,9 +11,17 @@ var classmultiscale_1_1video_1_1CartesianToPolarConverter =
     [ "transformToAnnularSectors", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178", null ],
     [ "annularSectors", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3f8004ac5f8bae93c7a5e09bc37ba0ac", null ],
     [ "concentrations", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7356e201623f518132d75b7bc48407d3", null ],
+    [ "ERR_CONC", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a2657e7972c2d3f7cc4c0011ccd8423e4", null ],
+    [ "ERR_IN_EXTRA_DATA", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a27c4664c63c53cc5351bbb3233bdfce1", null ],
+    [ "ERR_INPUT_OPEN", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a298f7aba7ec17e486484fa2e52ebc109", null ],
+    [ "ERR_NEG_SIM_TIME", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0a3ab913d167193883dc96aed6cc8290", null ],
+    [ "ERR_NONPOS_DIMENSION", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab3a2114f4dd2615abba3305609f1b616", null ],
     [ "inputFilepath", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aa15eca9e8d3da0eb8ff1b6583e392f05", null ],
     [ "nrOfConcentricCircles", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#ab7c8564deaa38c57a251ba9592903238", null ],
     [ "nrOfSectors", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a62a2f5abe655f440e7c41fe834f828d0", null ],
+    [ "OUTPUT_FILE_EXTENSION", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a3dcad19e1da427627d783a3053174372", null ],
     [ "outputFilepath", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a024d95ab3b9de6ed6fd1d951c5575e65", null ],
+    [ "RADIUS_MAX", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a79bb03defe0d68884ce5d4f1b0a7d60c", null ],
+    [ "RADIUS_MIN", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a59c18c22603ad65bf26533dd2aafd04e", null ],
     [ "simulationTime", "classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a78003dc9053d89f56c03408f7f8fedda", null ]
 ];

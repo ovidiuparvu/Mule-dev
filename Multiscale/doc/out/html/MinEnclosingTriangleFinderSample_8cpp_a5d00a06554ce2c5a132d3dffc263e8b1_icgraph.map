@@ -1,4 +1,4 @@
-<map id="generateRandomSetOf2DPoints" name="generateRandomSetOf2DPoints">
-<area shape="rect" id="node3" href="$MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a" title="runMinEnclosingTriangleFinder\lUsingRandomPolygons" alt="" coords="264,5,464,51"/>
-<area shape="rect" id="node5" href="$MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972" title="runMinEnclosingTriangleFinder" alt="" coords="512,13,712,43"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a" title="runMinEnclosingTriangleFinderUsingRandomPolygons" alt="" coords="265,5,601,35"/>
+<area shape="rect" id="node5" href="$MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972" title="runMinEnclosingTriangleFinder" alt="" coords="651,5,851,35"/>
 </map>

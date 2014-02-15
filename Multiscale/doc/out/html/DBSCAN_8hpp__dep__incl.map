@@ -1,5 +1,5 @@
-<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/DBSCAN.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/DBSCAN.hpp">
-<area shape="rect" id="node3" href="$ClusterDetector_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/ClusterDetector.cpp" alt="" coords="5,153,179,234"/>
-<area shape="rect" id="node5" href="$DBSCAN_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/DBSCAN.cpp" alt="" coords="203,153,376,234"/>
-<area shape="rect" id="node7" href="$DBSCANTest_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/test/DBSCANTest.cpp" alt="" coords="400,153,573,234"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$ClusterDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/ClusterDetector.cpp" alt="" coords="5,83,611,112"/>
+<area shape="rect" id="node5" href="$DBSCAN_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/DBSCAN.cpp" alt="" coords="635,83,1205,112"/>
+<area shape="rect" id="node7" href="$DBSCANTest_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/test/DBSCANTest.cpp" alt="" coords="1229,83,1832,112"/>
 </map>

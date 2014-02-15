@@ -1,4 +1,4 @@
-<map id="multiscale::analysis::SimulationClusterDetector" name="multiscale::analysis::SimulationClusterDetector">
-<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html" title="Class for detecting clusters in 2D images." alt="" coords="17,1995,249,2808"/>
-<area shape="rect" id="node4" href="$classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images." alt="" coords="5,6,261,1946"/>
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html" title="Class for detecting clusters in 2D images." alt="" coords="45,712,283,1283"/>
+<area shape="rect" id="node4" href="$classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images." alt="" coords="5,6,323,663"/>
 </map>

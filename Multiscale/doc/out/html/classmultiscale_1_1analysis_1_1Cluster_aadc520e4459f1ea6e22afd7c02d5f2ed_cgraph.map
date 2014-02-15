@@ -1,4 +1,4 @@
-<map id="multiscale::analysis::Cluster::updatePerimeter" name="multiscale::analysis::Cluster::updatePerimeter">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="229,14,440,61"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20" title="Get the collection of entities&#39; contour points." alt="" coords="489,5,676,69"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="344,5,669,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20" title="Get the collection of entities&#39; contour points." alt="" coords="719,5,1057,35"/>
 </map>

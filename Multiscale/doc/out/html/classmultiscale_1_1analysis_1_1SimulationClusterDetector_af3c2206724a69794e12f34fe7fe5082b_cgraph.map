@@ -1,6 +1,6 @@
-<map id="multiscale::analysis::SimulationClusterDetector::detectEntitiesInImage" name="multiscale::analysis::SimulationClusterDetector::detectEntitiesInImage">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a2252829af367a55af95bee3cf814b87e" title="Compute the pile up degree at the given position." alt="" coords="237,5,459,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a083c8ff51e483d86744961aca1ae3551" title="Get the point representing the centre of the entity." alt="" coords="257,93,439,157"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ae51328d7fe0e477dea162c7e99da45c2" title="Get the points representing the contour of the entity." alt="" coords="257,181,439,245"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a886031cb8d576c4cf380c1105eeee4d2" title="Check if there is an entity in the image at the given position." alt="" coords="257,269,439,333"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a2252829af367a55af95bee3cf814b87e" title="Compute the pile up degree at the given position." alt="" coords="489,5,985,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a083c8ff51e483d86744961aca1ae3551" title="Get the point representing the centre of the entity." alt="" coords="524,59,951,88"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ae51328d7fe0e477dea162c7e99da45c2" title="Get the points representing the contour of the entity." alt="" coords="517,112,957,141"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a886031cb8d576c4cf380c1105eeee4d2" title="Check if there is an entity in the image at the given position." alt="" coords="532,165,943,195"/>
 </map>

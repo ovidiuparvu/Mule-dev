@@ -7,5 +7,9 @@ var classmultiscale_1_1RGBColourGenerator =
     [ "generate", "classmultiscale_1_1RGBColourGenerator.html#a9eadd001d970bdb3c4237ab3a1b6683a", null ],
     [ "blue", "classmultiscale_1_1RGBColourGenerator.html#a5b48dae9174a794eb70c779c05d87c3f", null ],
     [ "green", "classmultiscale_1_1RGBColourGenerator.html#ae8d94d24b109954be1da2a04c8ec9af7", null ],
-    [ "red", "classmultiscale_1_1RGBColourGenerator.html#a11da8c4a9ca59ea8c20177cbb5b57ceb", null ]
+    [ "HUE_MAX", "classmultiscale_1_1RGBColourGenerator.html#a282d986019f3c02b46c122badf806cd0", null ],
+    [ "HUE_MIN", "classmultiscale_1_1RGBColourGenerator.html#ae31c47c9fccf50b3688728126040bc23", null ],
+    [ "red", "classmultiscale_1_1RGBColourGenerator.html#a11da8c4a9ca59ea8c20177cbb5b57ceb", null ],
+    [ "SATURATION", "classmultiscale_1_1RGBColourGenerator.html#a9442495dac9306e4172a27cba12788cc", null ],
+    [ "VALUE", "classmultiscale_1_1RGBColourGenerator.html#a859abef56e015354d032c46680132850", null ]
 ];

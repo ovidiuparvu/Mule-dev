@@ -8,6 +8,7 @@ var searchData=
   ['setdetectorspecificfieldsinitialisationflag',['setDetectorSpecificFieldsInitialisationFlag',['../classmultiscale_1_1analysis_1_1Detector.html#a610c16fdecd543f15575f0effb08ff00',1,'multiscale::analysis::Detector']]],
   ['seteps',['setEps',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a35eaa560c893a86c3149471f40c15979',1,'multiscale::analysis::ClusterDetector']]],
   ['setepsilon',['setEpsilon',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a069ed208d5ff16e6caa0deb4ff21858b',1,'multiscale::analysis::RegionDetector']]],
+  ['setlogicalquery',['setLogicalQuery',['../classmultiscale_1_1verification_1_1Parser.html#a6a314191cdc4f52101101dbb416b37dc',1,'multiscale::verification::Parser']]],
   ['setlogscaling',['setLogScaling',['../PolarMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2',1,'setLogScaling(const po::variables_map &amp;vm, bool &amp;useLogScaling):&#160;PolarMapCsvToInputFiles.cpp'],['../RectangularMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2',1,'setLogScaling(const po::variables_map &amp;vm, bool &amp;useLogScaling):&#160;RectangularMapCsvToInputFiles.cpp']]],
   ['setminpoints',['setMinPoints',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a190fd17d121e8c22c1ca6e4f5b7a213c',1,'multiscale::analysis::ClusterDetector']]],
   ['setmorphologicalcloseiterations',['setMorphologicalCloseIterations',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a5e096d2e4ff8dfe985869d6d0fcd74b8',1,'multiscale::analysis::RegionDetector']]],
@@ -25,6 +26,7 @@ var searchData=
   ['slopeofline',['slopeOfLine',['../classmultiscale_1_1Geometry2D.html#a1219ac10c3647d43c5af77dc5bc574a2',1,'multiscale::Geometry2D']]],
   ['smoothimage',['smoothImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a895f12ad46f2e0d1db45637a5935c2b5',1,'multiscale::analysis::RegionDetector']]],
   ['spatialentitypseudo3d',['SpatialEntityPseudo3D',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aa391fae1e086502392a2c89dcea27022',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
+  ['spatialmeasuretypeparser',['SpatialMeasureTypeParser',['../structmultiscale_1_1verification_1_1SpatialMeasureTypeParser.html#ae0dea3f21896898bf11c65899bebdebb',1,'multiscale::verification::SpatialMeasureTypeParser']]],
   ['split',['split',['../classmultiscale_1_1StringManipulator.html#a899c72a05bbd8fb525f31bca3c1ec3c4',1,'multiscale::StringManipulator']]],
   ['splitfirstpartinconcentrations',['splitFirstPartInConcentrations',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a2ab8a181fa30c720d4ee87c188770bcc',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['splitlineinconcentrations',['splitLineInConcentrations',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#af2d31d32cdba42aeb5589b3faab315ad',1,'multiscale::video::PolarCsvToInputFilesConverter::splitLineInConcentrations()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ab297918325583ff85c8740fa9c5661f6',1,'multiscale::video::RectangularCsvToInputFilesConverter::splitLineInConcentrations(const string &amp;line, double &amp;simulationTime)'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a6cfe59bda4fbe1944199b6d27f8ee8b0',1,'multiscale::video::RectangularCsvToInputFilesConverter::splitLineInConcentrations(vector&lt; double &gt; &amp;concentrations, vector&lt; string &gt; &amp;tokens, unsigned int rowIndex)']]],
@@ -32,5 +34,6 @@ var searchData=
   ['splitotherpartsinconcentrations',['splitOtherPartsInConcentrations',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a84994d623303296509326707fa397f29',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['standardnumberiterator',['StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html#a43b7b42ae0ed44a140cf4817cadf9166',1,'multiscale::StandardNumberIterator']]],
   ['storeoutputimageondisk',['storeOutputImageOnDisk',['../classmultiscale_1_1analysis_1_1Detector.html#aa15a7546c4f8f77fcf85632386a4c5d5',1,'multiscale::analysis::Detector']]],
+  ['subsetspecifictypeparser',['SubsetSpecificTypeParser',['../structmultiscale_1_1verification_1_1SubsetSpecificTypeParser.html#a3f9a1025ed5c0b45e74225abc31c202d',1,'multiscale::verification::SubsetSpecificTypeParser']]],
   ['successor',['successor',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a075472a453bfcb0eedd06a4a185241fc',1,'multiscale::MinEnclosingTriangleFinder']]]
 ];

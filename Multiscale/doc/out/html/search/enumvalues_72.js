@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['rectangle',['Rectangle',['../namespacemultiscale_1_1analysis.html#ad895735ef4c40ec7f58424c33cba1b88ace9291906a4c3b042650b70d7f3b152e',1,'multiscale::analysis']]],
-  ['region',['Region',['../namespacemultiscale_1_1analysis.html#a6db9cbf10615e77e300c3e4cb1c56660af447ac856e7e72435904956e3b15f433',1,'multiscale::analysis']]]
+  ['rectangle',['Rectangle',['../namespacemultiscale_1_1analysis.html#ad1ef6155ab2e954c1c33d3e2e6b53fbfa79a965ce5faa97f66ce875245491fde4',1,'multiscale::analysis']]],
+  ['rectanglemeasure',['RectangleMeasure',['../namespacemultiscale_1_1verification.html#a178e3a506c03d062e0e9e75f3a93e5c4a3e1914e022836b7a7f3400a6a1088a30',1,'multiscale::verification']]],
+  ['region',['Region',['../namespacemultiscale_1_1analysis.html#a8f337e7ea9c75ff3ff2b3fe76fe7b5b6a848cee53256419aaece3cba09652ddf4',1,'multiscale::analysis']]],
+  ['regions',['Regions',['../namespacemultiscale_1_1verification.html#a197834c7d1b181c0bc46dd99566fdb46a1092cb7e7be4caec9b114aa61e1d9e7d',1,'multiscale::verification']]],
+  ['round',['Round',['../namespacemultiscale_1_1verification.html#a07f8d769f57250f38ba54a9b228b7ceda9d68bde0492281f8d3c5f0792e2dbb4a',1,'multiscale::verification']]]
 ];

@@ -1,5 +1,5 @@
-<map id="multiscale::video::PolarGnuplotScriptGenerator::generateScript" name="multiscale::video::PolarGnuplotScriptGenerator::generateScript">
-<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e" title="Output the results as a gnuplot script." alt="" coords="244,5,423,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aae3e7e842456da18741bccccdf084922" title="Start the conversion." alt="" coords="473,5,652,69"/>
-<area shape="rect" id="node7" href="$MapCartesianToPolarScript_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="701,23,752,52"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e" title="Output the results as a gnuplot script." alt="" coords="441,5,865,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#aae3e7e842456da18741bccccdf084922" title="Start the conversion." alt="" coords="916,5,1252,35"/>
+<area shape="rect" id="node7" href="$MapCartesianToPolarScript_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1301,5,1352,35"/>
 </map>

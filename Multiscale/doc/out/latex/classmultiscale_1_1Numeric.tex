@@ -1,99 +1,90 @@
-\hypertarget{classmultiscale_1_1Numeric}{\section{multiscale\-:\-:Numeric Class Reference}
+\hypertarget{classmultiscale_1_1Numeric}{\section{multiscale\-:\-:\-Numeric \-Class \-Reference}
 \label{classmultiscale_1_1Numeric}\index{multiscale\-::\-Numeric@{multiscale\-::\-Numeric}}
 }
 
 
-Class for manipulating numbers (shorts, ints, floats, doubles etc.)  
+\-Class for manipulating numbers (shorts, ints, floats, doubles etc.)  
 
 
 
 
-{\ttfamily \#include $<$Numeric.\-hpp$>$}
+{\ttfamily \#include $<$\-Numeric.\-hpp$>$}
 
-
-
-Collaboration diagram for multiscale\-:\-:Numeric\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=184pt]{classmultiscale_1_1Numeric__coll__graph}
-\end{center}
-\end{figure}
-\subsection*{Static Public Member Functions}
+\subsection*{\-Static \-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
 static bool \hyperlink{classmultiscale_1_1Numeric_a13ae1e2b35654937bed4c19e776ccdb5}{greater\-Or\-Equal} (double number1, double number2)
-\begin{DoxyCompactList}\small\item\em Check if the first number is greater than or equal to the second number. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Check if the first number is greater than or equal to the second number. \end{DoxyCompactList}\item 
 static bool \hyperlink{classmultiscale_1_1Numeric_a7f21159a23c71c1d37e1c487e9ff815c}{less\-Or\-Equal} (double number1, double number2)
-\begin{DoxyCompactList}\small\item\em Check if the first number is less than or equal to the second number. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Check if the first number is less than or equal to the second number. \end{DoxyCompactList}\item 
 static bool \hyperlink{classmultiscale_1_1Numeric_a996dda9f7361be59b4614eace0b93f24}{almost\-Equal} (double number1, double number2)
-\begin{DoxyCompactList}\small\item\em Check if the two numbers are equal (almost) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Check if the two numbers are equal (almost) \end{DoxyCompactList}\item 
 static double \hyperlink{classmultiscale_1_1Numeric_a54d5578d5980315b7bade31a5655cd72}{maximum} (double number1, double number2, double number3)
-\begin{DoxyCompactList}\small\item\em Return the maximum of the provided numbers. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Return the maximum of the provided numbers. \end{DoxyCompactList}\item 
 static int \hyperlink{classmultiscale_1_1Numeric_a2b3058c5ad27aaaef338a29b96cdbced}{sign} (double number)
-\begin{DoxyCompactList}\small\item\em Return the sign of the number. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Attributes}
+\begin{DoxyCompactList}\small\item\em \-Return the sign of the number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Private \-Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static double \hyperlink{classmultiscale_1_1Numeric_ac66cc2092ff149af068ac93aa3a6cc51}{epsilon} = 1\-E-\/5
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Class for manipulating numbers (shorts, ints, floats, doubles etc.) 
+\subsection{\-Detailed \-Description}
+\-Class for manipulating numbers (shorts, ints, floats, doubles etc.) 
 
-Definition at line 14 of file Numeric.\-hpp.
+\-Definition at line 14 of file \-Numeric.\-hpp.
 
 
 
-\subsection{Member Function Documentation}
+\subsection{\-Member \-Function \-Documentation}
 \hypertarget{classmultiscale_1_1Numeric_a996dda9f7361be59b4614eace0b93f24}{\index{multiscale\-::\-Numeric@{multiscale\-::\-Numeric}!almost\-Equal@{almost\-Equal}}
 \index{almost\-Equal@{almost\-Equal}!multiscale::Numeric@{multiscale\-::\-Numeric}}
-\subsubsection[{almost\-Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool Numeric\-::almost\-Equal (
+\subsubsection[{almost\-Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Numeric\-::almost\-Equal} (
 \begin{DoxyParamCaption}
 \item[{double}]{number1, }
 \item[{double}]{number2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Numeric_a996dda9f7361be59b4614eace0b93f24}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Numeric_a996dda9f7361be59b4614eace0b93f24}
 
 
-Check if the two numbers are equal (almost) 
+\-Check if the two numbers are equal (almost) 
 
-The expression for determining if two real numbers are equal is\-: if (Abs(x -\/ y) $<$= E\-P\-S\-I\-L\-O\-N $\ast$ Max(1.\-0f, Abs(x), Abs(y))).
+\-The expression for determining if two real numbers are equal is\-: if (\-Abs(x -\/ y) $<$= \-E\-P\-S\-I\-L\-O\-N $\ast$ \-Max(1.\-0f, \-Abs(x), \-Abs(y))).
 
 
-\begin{DoxyParams}{Parameters}
-{\em number1} & First number \\
+\begin{DoxyParams}{\-Parameters}
+{\em number1} & \-First number \\
 \hline
-{\em number2} & Second number \\
+{\em number2} & \-Second number \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 17 of file Numeric.\-cpp.
+\-Definition at line 17 of file \-Numeric.\-cpp.
 
 
 
-References epsilon, and maximum().
+\-References epsilon, and maximum().
 
 
 
-Referenced by multiscale\-::\-Geometry2\-D\-::are\-Collinear(), multiscale\-::\-Geometry2\-D\-::are\-Equal\-Points(), multiscale\-::\-Geometry2\-D\-::are\-Identical\-Lines(), greater\-Or\-Equal(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects(), multiscale\-::analysis\-::\-Region\-::is\-Circular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Circular\-Measure(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Gamma\-Angle\-Equal\-To(), multiscale\-::\-Geometry2\-D\-::is\-Point\-On\-Line\-Segment(), multiscale\-::analysis\-::\-Region\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Triangular\-Measure(), less\-Or\-Equal(), and multiscale\-::\-Geometry2\-D\-::line\-Intersection().
+\-Referenced by multiscale\-::\-Geometry2\-D\-::are\-Collinear(), multiscale\-::\-Geometry2\-D\-::are\-Equal\-Points(), multiscale\-::\-Geometry2\-D\-::are\-Identical\-Lines(), greater\-Or\-Equal(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects(), multiscale\-::analysis\-::\-Region\-::is\-Circular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Circular\-Measure(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Gamma\-Angle\-Equal\-To(), multiscale\-::\-Geometry2\-D\-::is\-Point\-On\-Line\-Segment(), multiscale\-::analysis\-::\-Region\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Rectangular\-Measure(), multiscale\-::analysis\-::\-Region\-::is\-Triangular\-Measure(), multiscale\-::analysis\-::\-Cluster\-::is\-Triangular\-Measure(), less\-Or\-Equal(), and multiscale\-::\-Geometry2\-D\-::line\-Intersection().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+\-Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=324pt]{classmultiscale_1_1Numeric_a996dda9f7361be59b4614eace0b93f24_cgraph}
+\includegraphics[width=350pt]{classmultiscale_1_1Numeric_a996dda9f7361be59b4614eace0b93f24_cgraph}
 \end{center}
 \end{figure}
 
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+\-Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -104,31 +95,31 @@ Here is the caller graph for this function\-:\nopagebreak
 
 \hypertarget{classmultiscale_1_1Numeric_a13ae1e2b35654937bed4c19e776ccdb5}{\index{multiscale\-::\-Numeric@{multiscale\-::\-Numeric}!greater\-Or\-Equal@{greater\-Or\-Equal}}
 \index{greater\-Or\-Equal@{greater\-Or\-Equal}!multiscale::Numeric@{multiscale\-::\-Numeric}}
-\subsubsection[{greater\-Or\-Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool Numeric\-::greater\-Or\-Equal (
+\subsubsection[{greater\-Or\-Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Numeric\-::greater\-Or\-Equal} (
 \begin{DoxyParamCaption}
 \item[{double}]{number1, }
 \item[{double}]{number2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Numeric_a13ae1e2b35654937bed4c19e776ccdb5}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Numeric_a13ae1e2b35654937bed4c19e776ccdb5}
 
 
-Check if the first number is greater than or equal to the second number. 
-
-
-
-Definition at line 9 of file Numeric.\-cpp.
+\-Check if the first number is greater than or equal to the second number. 
 
 
 
-References almost\-Equal().
+\-Definition at line 9 of file \-Numeric.\-cpp.
 
 
 
-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::advance\-B\-To\-Right\-Chain(), multiscale\-::analysis\-::\-Entity\-::are\-Valid(), multiscale\-::analysis\-::\-Region\-::are\-Valid\-Input\-Values(), multiscale\-::analysis\-::\-Cluster\-::are\-Valid\-Origin\-Dependent\-Values(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::search\-For\-B\-Tangency().
+\-References almost\-Equal().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::advance\-B\-To\-Right\-Chain(), multiscale\-::analysis\-::\-Entity\-::are\-Valid(), multiscale\-::analysis\-::\-Region\-::are\-Valid\-Input\-Values(), multiscale\-::analysis\-::\-Cluster\-::are\-Valid\-Origin\-Dependent\-Values(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::search\-For\-B\-Tangency().
+
+
+
+\-Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -139,7 +130,7 @@ Here is the call graph for this function\-:\nopagebreak
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+\-Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -150,31 +141,31 @@ Here is the caller graph for this function\-:\nopagebreak
 
 \hypertarget{classmultiscale_1_1Numeric_a7f21159a23c71c1d37e1c487e9ff815c}{\index{multiscale\-::\-Numeric@{multiscale\-::\-Numeric}!less\-Or\-Equal@{less\-Or\-Equal}}
 \index{less\-Or\-Equal@{less\-Or\-Equal}!multiscale::Numeric@{multiscale\-::\-Numeric}}
-\subsubsection[{less\-Or\-Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool Numeric\-::less\-Or\-Equal (
+\subsubsection[{less\-Or\-Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Numeric\-::less\-Or\-Equal} (
 \begin{DoxyParamCaption}
 \item[{double}]{number1, }
 \item[{double}]{number2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Numeric_a7f21159a23c71c1d37e1c487e9ff815c}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Numeric_a7f21159a23c71c1d37e1c487e9ff815c}
 
 
-Check if the first number is less than or equal to the second number. 
-
-
-
-Definition at line 13 of file Numeric.\-cpp.
+\-Check if the first number is less than or equal to the second number. 
 
 
 
-References almost\-Equal().
+\-Definition at line 13 of file \-Numeric.\-cpp.
 
 
 
-Referenced by multiscale\-::analysis\-::\-Region\-::are\-Valid\-Input\-Values(), and multiscale\-::\-Geometry2\-D\-::is\-Angle\-Between\-Non\-Reflex().
+\-References almost\-Equal().
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+\-Referenced by multiscale\-::analysis\-::\-Region\-::are\-Valid\-Input\-Values(), and multiscale\-::\-Geometry2\-D\-::is\-Angle\-Between\-Non\-Reflex().
+
+
+
+\-Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -185,7 +176,7 @@ Here is the call graph for this function\-:\nopagebreak
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+\-Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -196,28 +187,28 @@ Here is the caller graph for this function\-:\nopagebreak
 
 \hypertarget{classmultiscale_1_1Numeric_a54d5578d5980315b7bade31a5655cd72}{\index{multiscale\-::\-Numeric@{multiscale\-::\-Numeric}!maximum@{maximum}}
 \index{maximum@{maximum}!multiscale::Numeric@{multiscale\-::\-Numeric}}
-\subsubsection[{maximum}]{\setlength{\rightskip}{0pt plus 5cm}double Numeric\-::maximum (
+\subsubsection[{maximum}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Numeric\-::maximum} (
 \begin{DoxyParamCaption}
 \item[{double}]{number1, }
 \item[{double}]{number2, }
 \item[{double}]{number3}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Numeric_a54d5578d5980315b7bade31a5655cd72}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Numeric_a54d5578d5980315b7bade31a5655cd72}
 
 
-Return the maximum of the provided numbers. 
-
-
-
-Definition at line 21 of file Numeric.\-cpp.
+\-Return the maximum of the provided numbers. 
 
 
 
-Referenced by almost\-Equal().
+\-Definition at line 21 of file \-Numeric.\-cpp.
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+\-Referenced by almost\-Equal().
+
+
+
+\-Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -228,26 +219,26 @@ Here is the caller graph for this function\-:\nopagebreak
 
 \hypertarget{classmultiscale_1_1Numeric_a2b3058c5ad27aaaef338a29b96cdbced}{\index{multiscale\-::\-Numeric@{multiscale\-::\-Numeric}!sign@{sign}}
 \index{sign@{sign}!multiscale::Numeric@{multiscale\-::\-Numeric}}
-\subsubsection[{sign}]{\setlength{\rightskip}{0pt plus 5cm}int Numeric\-::sign (
+\subsubsection[{sign}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Numeric\-::sign} (
 \begin{DoxyParamCaption}
 \item[{double}]{number}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Numeric_a2b3058c5ad27aaaef338a29b96cdbced}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Numeric_a2b3058c5ad27aaaef338a29b96cdbced}
 
 
-Return the sign of the number. 
+\-Return the sign of the number. 
 
-The sign function returns\-: -\/1, if number $<$ 0 +1, if number $>$ 0 0, otherwise 
+\-The sign function returns\-: -\/1, if number $<$ 0 +1, if number $>$ 0 0, otherwise 
 
-Definition at line 25 of file Numeric.\-cpp.
-
-
-
-Referenced by multiscale\-::\-Geometry2\-D\-::are\-On\-The\-Same\-Side\-Of\-Line().
+\-Definition at line 25 of file \-Numeric.\-cpp.
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+\-Referenced by multiscale\-::\-Geometry2\-D\-::are\-On\-The\-Same\-Side\-Of\-Line().
+
+
+
+\-Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -258,21 +249,21 @@ Here is the caller graph for this function\-:\nopagebreak
 
 
 
-\subsection{Member Data Documentation}
+\subsection{\-Member \-Data \-Documentation}
 \hypertarget{classmultiscale_1_1Numeric_ac66cc2092ff149af068ac93aa3a6cc51}{\index{multiscale\-::\-Numeric@{multiscale\-::\-Numeric}!epsilon@{epsilon}}
 \index{epsilon@{epsilon}!multiscale::Numeric@{multiscale\-::\-Numeric}}
-\subsubsection[{epsilon}]{\setlength{\rightskip}{0pt plus 5cm}double Numeric\-::epsilon = 1\-E-\/5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1Numeric_ac66cc2092ff149af068ac93aa3a6cc51}
-Value of epsilon used to compare two real numbers 
+\subsubsection[{epsilon}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Numeric\-::epsilon} = 1\-E-\/5\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_ac66cc2092ff149af068ac93aa3a6cc51}
+\-Value of epsilon used to compare two real numbers 
 
-Definition at line 18 of file Numeric.\-hpp.
-
-
-
-Referenced by almost\-Equal().
+\-Definition at line 18 of file \-Numeric.\-hpp.
 
 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\-Referenced by almost\-Equal().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/include/multiscale/util/\hyperlink{Numeric_8hpp}{Numeric.\-hpp}\item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/src/\hyperlink{Numeric_8cpp}{Numeric.\-cpp}\end{DoxyCompactItemize}
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/include/multiscale/util/\hyperlink{Numeric_8hpp}{\-Numeric.\-hpp}\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/src/\hyperlink{Numeric_8cpp}{\-Numeric.\-cpp}\end{DoxyCompactItemize}
