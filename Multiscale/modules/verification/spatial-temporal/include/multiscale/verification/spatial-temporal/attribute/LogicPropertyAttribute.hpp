@@ -13,10 +13,11 @@ namespace multiscale {
 	namespace verification {
 
 		// Forward declaration of classes
-		class AndLogicPropertyAttribute;
+	    class LogicPropertyAttribute;
+	    class OrLogicPropertyAttribute;
+	    class AndLogicPropertyAttribute;
 		class EquivalenceLogicPropertyAttribute;
 		class ImplicationLogicPropertyAttribute;
-		class OrLogicPropertyAttribute;
 		class PrimaryLogicPropertyAttribute;
 		class UntilLogicPropertyAttribute;
 
@@ -24,6 +25,7 @@ namespace multiscale {
 		//! Variant for the logic property attribute
 		typedef boost::variant<
 			Nil,
+            boost::recursive_wrapper<LogicPropertyAttribute>,
 			boost::recursive_wrapper<OrLogicPropertyAttribute>,
 			boost::recursive_wrapper<AndLogicPropertyAttribute>,
 			boost::recursive_wrapper<ImplicationLogicPropertyAttribute>,

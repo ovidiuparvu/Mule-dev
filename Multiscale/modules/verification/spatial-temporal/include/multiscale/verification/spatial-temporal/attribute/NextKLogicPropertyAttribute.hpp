@@ -27,6 +27,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NextKLogicPropertyAttribute,
+    (unsigned long, nrOfTimepointsAhead)
     (multiscale::verification::LogicPropertyAttributeType, logicProperty)
 )
 

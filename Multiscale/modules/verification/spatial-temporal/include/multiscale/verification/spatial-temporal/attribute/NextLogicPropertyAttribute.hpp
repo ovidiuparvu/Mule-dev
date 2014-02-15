@@ -15,7 +15,7 @@ namespace multiscale {
 
 			public:
 
-				LogicPropertyAttributeType logicProperty;	/*!< The logic property attribute following the "next* operator */
+				LogicPropertyAttributeType logicProperty;	/*!< The logic property attribute following the "next" operator */
 
 		};
 

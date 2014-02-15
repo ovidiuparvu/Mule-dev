@@ -88,7 +88,7 @@ namespace multiscale {
                 qi::rule<Iterator, ImplicationConstraintAttribute(), ascii::space_type>				implicationConstraintRule;				/*!< The rule for parsing an "implication" constraint */
                 qi::rule<Iterator, EquivalenceConstraintAttribute(), ascii::space_type>				equivalenceConstraintRule;				/*!< The rule for parsing an "equivalence" constraint */
 
-                qi::rule<Iterator, ComparatorAttribute(), ascii::space_type> 						spatialMeasureRule;						/*!< The rule for parsing a spatial measure */
+                qi::rule<Iterator, SpatialMeasureAttribute(), ascii::space_type> 						spatialMeasureRule;						/*!< The rule for parsing a spatial measure */
 
                 qi::rule<Iterator, ComparatorAttribute(), ascii::space_type> 						comparatorRule;							/*!< The rule for parsing a comparator */
 
@@ -103,11 +103,13 @@ namespace multiscale {
 
                 	probabilisticLogicPropertyRule
                 		=	'P'
-                			> comparatorRule
-                			> qi::double_
-                			> '['
-                			> logicPropertyRule
-                			> ']';
+                			> (
+                                comparatorRule
+                			    > qi::double_
+                			    > '['
+                			    > logicPropertyRule
+                			    > ']'
+                	        );
 
                 	logicPropertyRule
                 		=	primaryLogicPropertyRule
@@ -133,53 +135,68 @@ namespace multiscale {
                 		|	('(' > logicPropertyRule > ')');
 
                 	differenceRule
-                		=	qi::char_("d")
-							> '('
-							> numericMeasureRule
-							> ','
-							> qi::char_(")")
-							> comparatorRule
-							> numericMeasureRule;
+                		=	(
+                		        qi::lit("d")
+                                > '('
+                                > numericMeasureRule
+                                > ')'
+                                > comparatorRule
+                                > numericMeasureRule
+                            );
 
                 	numericSpatialNumericComparisonRule
-                		=	numericSpatialRule
-                			> comparatorRule
-                			> numericMeasureRule;
+                		=	(
+                		        numericSpatialRule
+                			    > comparatorRule
+                			    > numericMeasureRule
+                			);
 
                 	numericNumericComparisonRule
-                		=	numericStateVariableRule
-                			> comparatorRule
-                			> numericMeasureRule;
+                		=	(
+                		        numericStateVariableRule
+                			    > comparatorRule
+                			    > numericMeasureRule
+                			);
 
                 	notLogicPropertyRule
 						=	('~' > logicPropertyRule);
 
                 	futureLogicPropertyRule
-                		=	qi::char_('F')
-							> '['
-							> qi::ulong_
-							> ','
-							> qi::ulong_
-							> ']'
-							> logicPropertyRule;
+                		=	(
+                		        qi::lit('F')
+							    > '['
+							    > qi::ulong_
+							    > ','
+							    > (
+                                    qi::ulong_
+                                    > ']'
+                                    > logicPropertyRule
+							    )
+							);
 
                 	globalLogicPropertyRule
-                		=	qi::char_('G')
-							> '['
-							> qi::ulong_
-							> ','
-							> qi::ulong_
-							> ']'
-							> logicPropertyRule;
+                		=	(
+                		        qi::lit('G')
+							    > '['
+                                > qi::ulong_
+                                > ','
+                	            > (
+                                    qi::ulong_
+                                    > ']'
+                                    > logicPropertyRule
+                                )
+                		    );
 
                 	nextLogicPropertyRule
 						=	logicPropertyRule;
 
                 	nextKLogicPropertyRule
-						=	'['
-							> qi::ulong_
-							> ']'
-							> logicPropertyRule;
+						=	(
+						        '['
+                                > qi::ulong_
+                                > ']'
+                                > logicPropertyRule
+                            );
 
                 	andLogicPropertyRule
 						=	('^' > logicPropertyRule);
@@ -194,13 +211,17 @@ namespace multiscale {
                 		=	("<=>" > logicPropertyRule);
 
                 	untilLogicPropertyRule
-                		=	qi::char_('U')
-							> '['
-							> qi::ulong_
-							> ','
-							> qi::ulong_
-							> ']'
-							> logicPropertyRule;
+                		=	(
+                		        qi::lit('U')
+                                > '['
+                                > qi::ulong_
+                                > ','
+                	            > (
+                                    qi::ulong_
+                                    > ']'
+                                    > logicPropertyRule
+                                )
+                            );
 
                 	numericMeasureRule
                 		=	numericSpatialRule
@@ -210,68 +231,84 @@ namespace multiscale {
                 		|	binaryNumericNumericRule;
 
                 	unaryNumericNumericRule
-                		=	unaryNumericMeasureRule
-							> '('
-							> numericMeasureRule
-							> ')';
+                		=	(
+                		        unaryNumericMeasureRule
+                                > '('
+                                > numericMeasureRule
+                                > ')'
+                		    );
 
                 	binaryNumericNumericRule
-                		=	binaryNumericMeasureRule
-							> '('
-							> numericMeasureRule
-							> ','
-							> numericMeasureRule
-							> ')';
+                		=	(
+                		        binaryNumericMeasureRule
+                                > '('
+                                > numericMeasureRule
+                                > ','
+                                > numericMeasureRule
+                                > ')'
+                		    );
 
                 	unarySubsetRule
-                		=	unarySubsetMeasureRule
-							> '('
-							> subsetRule
-							> ')';
+                		=	(
+                		        unarySubsetMeasureRule
+                                > '('
+                                > subsetRule
+                                > ')'
+                		    );
 
                 	binarySubsetRule
-                		=	binarySubsetMeasureRule
-							> '('
-							> subsetRule
-							> ','
-							> spatialMeasureRule
-							> ')';
+                		=	(
+                		        binarySubsetMeasureRule
+                                > '('
+                                > subsetRule
+                                > ','
+                                > spatialMeasureRule
+                                > ')'
+                		    );
 
                 	ternarySubsetRule
-                		=	ternarySubsetMeasureRule
-							> '('
-							> subsetRule
-							> ','
-							> spatialMeasureRule
-							> ','
-							> qi::double_
-							> ')';
+                		=	(
+                		        ternarySubsetMeasureRule
+                                > '('
+                                > subsetRule
+                                > ','
+                                > spatialMeasureRule
+                                > ','
+                                > qi::double_
+                                > ')'
+                		    );
 
                 	quaternarySubsetRule
-                		=	quaternarySubsetMeasureRule
-							> '('
-							> subsetRule
-							> ','
-							> spatialMeasureRule
-							> ','
-							> subsetRule
-							> ','
-							> spatialMeasureRule
-							> ')';
+                		=	(
+                		        quaternarySubsetMeasureRule
+                                > '('
+                                > subsetRule
+                                > ','
+                                > spatialMeasureRule
+                                > ','
+                                > subsetRule
+                                > ','
+                                > spatialMeasureRule
+                                > ')'
+                		    );
 
                 	unaryNumericSpatialRule
-                		=	unaryNumericMeasureRule
-							> '('
-							> numericSpatialRule
-							> ')';
+                		=	(
+                                unaryNumericMeasureRule
+                                > '('
+                                > numericSpatialRule
+                                > ')'
+                		    );
 
                 	binaryNumericSpatialRule
-                		=	binaryNumericMeasureRule
-							> '('
-							> numericSpatialRule
-							> ','
-							> numericMeasureRule
-							> ')';
+                		=	(
+                		        binaryNumericMeasureRule
+                                > '('
+                                > numericSpatialRule
+                                > ','
+                                > numericMeasureRule
+                                > ')'
+                		    );
 
                 	unarySubsetMeasureRule
                 		=	UnarySubsetMeasureTypeParser();

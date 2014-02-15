@@ -12,9 +12,10 @@ namespace multiscale {
 	namespace verification {
 
 		// Forward declaration of classes
-		class BinaryNumericMeasureAttribute;
+		class BinaryNumericNumericAttribute;
+		class NumericMeasureAttribute;
 		class NumericSpatialAttribute;
-		class UnaryNumericMeasureAttribute;
+		class UnaryNumericNumericAttribute;
 
 
 		//! Variant for the numeric measure attribute
@@ -22,8 +23,9 @@ namespace multiscale {
 			double,
 			multiscale::verification::NumericStateVariableAttribute,
 			boost::recursive_wrapper<multiscale::verification::NumericSpatialAttribute>,
-			boost::recursive_wrapper<multiscale::verification::UnaryNumericMeasureAttribute>,
-			boost::recursive_wrapper<multiscale::verification::BinaryNumericMeasureAttribute>
+			boost::recursive_wrapper<multiscale::verification::UnaryNumericNumericAttribute>,
+			boost::recursive_wrapper<multiscale::verification::BinaryNumericNumericAttribute>,
+			boost::recursive_wrapper<multiscale::verification::NumericMeasureAttribute>
 		> NumericMeasureAttributeType;
 
 
