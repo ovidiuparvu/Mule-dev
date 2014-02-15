@@ -48,8 +48,8 @@ namespace client
 	> key_information;
 
 	enum class NameType : int {
-        John = 1,
-        Doe = 2
+        John    = 1,
+        Doe     = 2
     };
 
     struct name {

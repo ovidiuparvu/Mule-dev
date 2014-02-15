@@ -11,8 +11,8 @@ namespace multiscale {
 
 		//! Enumeration for representing a specific subset type
 		enum class SubsetSpecificType : int {
-			Clusters = 1,
-			Regions = 2
+			Clusters    = 1,    /*!< Clusters */
+			Regions     = 2     /*!< Regions */
 		};
 
 		//! Overload the output stream operator for the enumeration

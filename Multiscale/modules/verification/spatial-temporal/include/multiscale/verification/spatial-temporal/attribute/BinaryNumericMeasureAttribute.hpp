@@ -11,13 +11,13 @@ namespace multiscale {
 
 		//! Enumeration for representing a binary numeric measure type
 		enum class BinaryNumericMeasureType : int {
-			Div = 1,	/*!< Division */
-			Log = 2,	/*!< Logarithm */
-			Minus = 3,	/*!< Subtraction */
-			Mod = 4,	/*!< Remainder of division */
-			Plus = 5,	/*!< Addition */
-			Power = 6,	/*!< Raise to power */
-			Times = 7	/*!< Multiplication */
+			Div     = 1,	/*!< Division */
+			Log     = 2,	/*!< Logarithm */
+			Minus   = 3,	/*!< Subtraction */
+			Mod     = 4,	/*!< Remainder of division */
+			Plus    = 5,	/*!< Addition */
+			Power   = 6,	/*!< Raise to power */
+			Times   = 7	    /*!< Multiplication */
 		};
 
 		//! Overload the output stream operator for the enumeration

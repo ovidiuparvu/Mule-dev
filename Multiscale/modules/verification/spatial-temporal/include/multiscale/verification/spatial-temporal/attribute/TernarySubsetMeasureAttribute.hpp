@@ -11,8 +11,8 @@ namespace multiscale {
 
 		//! Enumeration for representing a ternary subset measure type
 		enum class TernarySubsetMeasureType : int {
-			Percentile = 1,		/*!< The percentile */
-			Quartile = 2		/*!< The quartile */
+			Percentile  = 1,    /*!< The percentile */
+			Quartile    = 2		/*!< The quartile */
 		};
 
 		//! Overload the output stream operator for the enumeration

@@ -9,7 +9,7 @@ namespace multiscale {
         //! Enumeration for determining the type of a pseudo 3D entity
         enum class SpatialEntityPseudo3DType : int {
             Cluster = 1,    /*!< Cluster */
-            Region = 2      /*!< Region */
+            Region  = 2     /*!< Region */
         };
 
     };
