@@ -1,8 +1,6 @@
 #ifndef STATEVARIABLEATTRIBUTE_HPP
 #define STATEVARIABLEATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/Attribute.hpp"
-
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <string>
 
@@ -12,16 +10,11 @@ namespace multiscale {
 	namespace verification {
 
 		//! Class for representing a state variable attribute
-		class StateVariableAttribute : public Attribute {
+		class StateVariableAttribute {
 
 			public:
 
-				std::string name;
-
-                //! Evaluate the string
-                bool evaluate() const override {
-                    return (name.compare("T") == 0);
-                }
+				std::string name;   /*!< Name of the state variable */
 
 		};
 
