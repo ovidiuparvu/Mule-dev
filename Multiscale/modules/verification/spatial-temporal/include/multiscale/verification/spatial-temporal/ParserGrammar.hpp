@@ -133,7 +133,8 @@ namespace multiscale {
                 	        );
 
                 	probabilityRule
-                		=	qi::double_	[qi::_pass = (qi::_1 >= 0) && (qi::_1 <=1)];
+                		=	qi::eps
+                			> qi::double_	[qi::_pass = (qi::_1 >= 0) && (qi::_1 <= 1)];
 
                 	logicPropertyRule
                 		=	primaryLogicPropertyRule
@@ -421,10 +422,10 @@ namespace multiscale {
                 		=   stateVariableRule;
 
                 	stateVariableRule
-                		=	('[' > stateVariableNameRule > ']');
+                		=	('{' > stateVariableNameRule > '}');
 
                 	stateVariableNameRule
-                		=	+(qi::char_ - "[]");
+                		=	+(qi::char_ - qi::char_("{}"));
 
                 	// Assign a name to the rules
                 	probabilisticLogicPropertyRule.name("probabilisticLogicPropertyRule");
