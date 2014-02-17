@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 
-using namespace multiscaletest;
 using namespace multiscale::verification;
 
 

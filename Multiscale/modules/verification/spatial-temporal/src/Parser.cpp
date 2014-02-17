@@ -1,6 +1,7 @@
 #include "multiscale/verification/spatial-temporal/Parser.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarExceptionHandler.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarExtraInputException.hpp"
+#include "multiscale/verification/spatial-temporal/exception/ParserGrammarProbabilityException.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnparseableInputException.hpp"
 
@@ -30,6 +31,9 @@ bool Parser::parse(ProbabilisticLogicPropertyAttribute &parseResult) {
     } catch(const ParserGrammarUnexpectedTokenException &e) {
         ParserGrammarExceptionHandler::handleUnexpectedTokenException(std::string(logicalQueryIterator, logicalQueryEnd),
                                                                       e.getErrorString(), e.getExpectedToken());
+    } catch(const ParserGrammarProbabilityException &e) {
+		ParserGrammarExceptionHandler::handleProbabilityException(std::string(logicalQueryIterator, logicalQueryEnd),
+                												  e.getErrorString(), e.getExpectedToken());
     } catch(const ParserGrammarExtraInputException &e) {
         ParserGrammarExceptionHandler::handleExtraInputException(logicalQuery, e.getErrorString());
     } catch(const ParserGrammarUnparseableInputException &e) {

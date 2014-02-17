@@ -16,9 +16,9 @@ namespace multiscaletest {
 
     	protected:
 
-    		Parser				parser;			/*!< The tested parser */
-    		ConstraintAttribute parseResult;	/*!< The result of the parsing process */
-    		bool				testResult;		/*!< The result from the latest test */
+    		Parser								parser;			/*!< The tested parser */
+    		ProbabilisticLogicPropertyAttribute parseResult;	/*!< The result of the parsing process */
+    		bool								testResult;		/*!< The result from the latest test */
 
 		public:
 

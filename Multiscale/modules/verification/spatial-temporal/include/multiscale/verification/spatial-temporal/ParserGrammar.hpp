@@ -2,7 +2,8 @@
 #define PARSERGRAMMAR_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/handler/ErrorHandler.hpp"
+#include "multiscale/verification/spatial-temporal/handler/ProbabilityErrorHandler.hpp"
+#include "multiscale/verification/spatial-temporal/handler/UnexpectedTokenErrorHandler.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
 
 #include <boost/config/warning_disable.hpp>
@@ -27,7 +28,8 @@ namespace multiscale {
 		namespace ascii = boost::spirit::ascii;
 
 		// Create a lazy error handler function
-		phoenix::function<ErrorHandler> const handleError = ErrorHandler();
+		phoenix::function<UnexpectedTokenErrorHandler> const	handleUnexpectedTokenError 	= UnexpectedTokenErrorHandler();
+		phoenix::function<ProbabilityErrorHandler> const 		handleProbabilityError 		= ProbabilityErrorHandler();
 
 
         //! The grammar for parsing (P)BLSTL spatial-temporal logical queries
@@ -39,6 +41,7 @@ namespace multiscale {
                 // Rules
 
                 qi::rule<Iterator, ProbabilisticLogicPropertyAttribute(), ascii::space_type>		probabilisticLogicPropertyRule;			/*!< The rule for parsing a probabilistic logic property */
+                qi::rule<Iterator, double(), ascii::space_type>										probabilityRule;						/*!< The rule for parsing a probability */
                 qi::rule<Iterator, LogicPropertyAttribute(), ascii::space_type>						logicPropertyRule;						/*!< The rule for parsing a logic property */
                 qi::rule<Iterator, PrimaryLogicPropertyAttribute(), ascii::space_type>				primaryLogicPropertyRule;				/*!< The rule for parsing a primary logic property */
 
@@ -123,11 +126,14 @@ namespace multiscale {
                 		=	'P'
                 			> (
                                 comparatorRule
-                			    > qi::double_
+                			    > probabilityRule
                 			    > '['
                 			    > logicPropertyRule
                 			    > ']'
                 	        );
+
+                	probabilityRule
+                		=	qi::double_	[qi::_pass = (qi::_1 >= 0) && (qi::_1 <=1)];
 
                 	logicPropertyRule
                 		=	primaryLogicPropertyRule
@@ -422,6 +428,7 @@ namespace multiscale {
 
                 	// Assign a name to the rules
                 	probabilisticLogicPropertyRule.name("probabilisticLogicPropertyRule");
+                	probabilityRule.name("probabilityRule");
                 	logicPropertyRule.name("logicPropertyRule");
                 	primaryLogicPropertyRule.name("primaryLogicPropertyRule");
                 	differenceRule.name("differenceRule");
@@ -471,6 +478,7 @@ namespace multiscale {
 
 					// Debugging and reporting support
 					debug(probabilisticLogicPropertyRule);
+					debug(probabilityRule);
 					debug(logicPropertyRule);
 					debug(primaryLogicPropertyRule);
 					debug(differenceRule);
@@ -519,38 +527,39 @@ namespace multiscale {
 					debug(stateVariableNameRule);
 
                 	// Error handling routines
-                	qi::on_error<qi::fail>(probabilisticLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(primaryLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(differenceRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(numericSpatialNumericComparisonRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(numericNumericComparisonRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(notLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(futureLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(globalLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(nextLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(nextKLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(andLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(orLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(implicationLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(equivalenceLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(untilLogicPropertyRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(unaryNumericNumericRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(binaryNumericNumericRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(unarySubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(binarySubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(ternarySubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(quaternarySubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(unaryNumericSpatialRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(binaryNumericSpatialRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(filterSubsetRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(primaryConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-					qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(andConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(orConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(implicationConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(equivalenceConstraintRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(stateVariableNameRule, multiscale::verification::handleError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(probabilisticLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(probabilityRule, multiscale::verification::handleProbabilityError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(primaryLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(differenceRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(numericSpatialNumericComparisonRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(numericNumericComparisonRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(notLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(futureLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(globalLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(nextLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(nextKLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(andLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(orLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(implicationLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(equivalenceLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(untilLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(unaryNumericNumericRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(binaryNumericNumericRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(unarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(binarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(ternarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(quaternarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(unaryNumericSpatialRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(binaryNumericSpatialRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(filterSubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(primaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(andConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(orConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(implicationConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(equivalenceConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(stateVariableNameRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 }
 
         };

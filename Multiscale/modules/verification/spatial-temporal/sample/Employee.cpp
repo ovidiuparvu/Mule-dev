@@ -14,6 +14,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include <boost/config/warning_disable.hpp>
+#include <boost/spirit/home/support/attributes.hpp>
 #include <boost/spirit/include/qi.hpp>
 #include <boost/spirit/include/qi_symbols.hpp>
 #include <boost/spirit/include/phoenix_core.hpp>
@@ -131,6 +132,8 @@ namespace client
 
             quoted_string = lexeme['"' >> +(char_ - '"') >> '"'];
 
+            ageRule %= qi::int_ [qi::_pass = (qi::_1 >= 23) && (qi::_1 <= 50)];
+
             nameRule = quoted_string >> "," >> nameTypeParser;
 
             infoRule = double_ | int_;
@@ -138,9 +141,9 @@ namespace client
             start =
                 lit("employee")
                 >> '{'
-                >> (int_ >> ','
-                >>  nameRule >> ','
-                >>  infoRule)
+                > 	(ageRule > ','
+                >  	nameRule > ','
+                >  	infoRule)
                 >>  '}'
                 ;
 
@@ -148,18 +151,21 @@ namespace client
 				(quoted_string)
 				(nameRule)
 				(infoRule)
+				(ageRule)
 				(start)
 			);
 
             debug(start);
             debug(infoRule);
             debug(nameRule);
+            debug(ageRule);
             debug(quoted_string);
         }
 
         NameTypeParser nameTypeParser;
 
         qi::rule<Iterator, std::string(), ascii::space_type> quoted_string;
+        qi::rule<Iterator, int(), ascii::space_type> ageRule;
         qi::rule<Iterator, client::name(), ascii::space_type> nameRule;
         qi::rule<Iterator, client::key_information(), ascii::space_type> infoRule;
         qi::rule<Iterator, client::employee(), ascii::space_type> start;

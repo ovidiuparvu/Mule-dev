@@ -3,8 +3,6 @@
 
 #include <string>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -15,25 +13,25 @@ namespace multiscale {
 
             private:
 
-                string expectedToken;   /*!< The token which was expected and was not found during parsing */
-                string errorString;     /*!< The substring from the original string starting with
+				std::string expectedToken;   /*!< The token which was expected and was not found during parsing */
+				std::string errorString;     /*!< The substring from the original string starting with
                                              the index of the error token*/
 
             public:
 
-                ParserGrammarUnexpectedTokenException(const string &expectedToken,
-                                                      const string &errorString) {
+                ParserGrammarUnexpectedTokenException(const std::string &expectedToken,
+                                                      const std::string &errorString) {
                     this->expectedToken = expectedToken;
                     this->errorString = errorString;
                 }
 
                 //! Get the error string
-                string getErrorString() const {
+                std::string getErrorString() const {
                     return errorString;
                 }
 
                 //! Get the expected token
-                string getExpectedToken() const {
+                std::string getExpectedToken() const {
                     return expectedToken;
                 }
 
