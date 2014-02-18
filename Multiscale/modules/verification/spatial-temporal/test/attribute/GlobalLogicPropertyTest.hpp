@@ -9,6 +9,22 @@ using namespace multiscaletest::verification;
 
 // GlobalLogicProperty
 
+TEST(GlobalLogicProperty, WrongInputMissingStartTimepoint) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [G [3] ({A} >= 4)]"), InvalidInputException);
+}
+
+TEST(GlobalLogicProperty, WrongInputMissingEndTimepoint) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [G [3] ({A} >= 4)]"), InvalidInputException);
+}
+
+TEST(GlobalLogicProperty, WrongInputMissingTimepoints) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [G [] ({A} >= 4)]"), InvalidInputException);
+}
+
+TEST(GlobalLogicProperty, WrongInputMissingTimepointsAndBrackets) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [G ({A} >= 4)]"), InvalidInputException);
+}
+
 TEST(GlobalLogicProperty, WrongInputBeforeStartParanthesis) {
 	EXPECT_THROW(parseInputString("P >= 0.3 [G ({A} >= 4) [2, 3] ({A} >= 4)]"), InvalidInputException);
 }

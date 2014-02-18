@@ -9,6 +9,10 @@ using namespace multiscaletest::verification;
 
 // UnaryNumericNumeric
 
+TEST(UnaryNumericNumeric, IncorrectInputMissingParameter) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [{A} <= abs()]"), InvalidInputException);
+}
+
 TEST(UnaryNumericNumeric, IncorrectInputBeforeStartBracket) {
 	EXPECT_THROW(parseInputString("P >= 0.3 [{A} <= abs 2(3)]"), InvalidInputException);
 }

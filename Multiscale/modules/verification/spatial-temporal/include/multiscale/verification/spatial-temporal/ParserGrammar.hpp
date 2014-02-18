@@ -145,9 +145,9 @@ namespace multiscale {
                 			);
 
                 	primaryLogicPropertyRule
-                		=	differenceRule
-                		|	numericSpatialNumericComparisonRule
+                		=	numericSpatialNumericComparisonRule
                 		|	numericNumericComparisonRule
+                		|	differenceRule
                 		|	notLogicPropertyRule
                 		|	futureLogicPropertyRule
                 		|	globalLogicPropertyRule
@@ -455,53 +455,53 @@ namespace multiscale {
 					stateVariableNameRule.name("stateVariableNameRule");
 
 					// Debugging and reporting support
-					debug(probabilisticLogicPropertyRule);
-					debug(probabilityRule);
-					debug(logicPropertyRule);
-					debug(primaryLogicPropertyRule);
-					debug(differenceRule);
-					debug(numericSpatialNumericComparisonRule);
-					debug(numericNumericComparisonRule);
-					debug(notLogicPropertyRule);
-					debug(futureLogicPropertyRule);
-					debug(globalLogicPropertyRule);
-					debug(nextLogicPropertyRule);
-					debug(nextKLogicPropertyRule);
-					debug(andLogicPropertyRule);
-					debug(orLogicPropertyRule);
-					debug(implicationLogicPropertyRule);
-					debug(equivalenceLogicPropertyRule);
-					debug(untilLogicPropertyRule);
-					debug(numericMeasureRule);
-					debug(unaryNumericNumericRule);
-					debug(binaryNumericNumericRule);
-					debug(unarySubsetRule);
-					debug(binarySubsetRule);
-					debug(ternarySubsetRule);
-					debug(quaternarySubsetRule);
-					debug(numericSpatialRule);
-					debug(unarySubsetMeasureRule);
-					debug(binarySubsetMeasureRule);
-					debug(ternarySubsetMeasureRule);
-					debug(quaternarySubsetMeasureRule);
-					debug(unaryNumericMeasureRule);
-					debug(binaryNumericMeasureRule);
-					debug(subsetRule);
-					debug(filterSubsetRule);
-					debug(subsetSpecificRule);
-					debug(constraintRule);
-					debug(primaryConstraintRule);
-					debug(notConstraintRule);
-					debug(unaryConstraintRule);
-					debug(andConstraintRule);
-					debug(orConstraintRule);
-					debug(implicationConstraintRule);
-					debug(equivalenceConstraintRule);
-					debug(spatialMeasureRule);
-					debug(comparatorRule);
-					debug(numericStateVariableRule);
-					debug(stateVariableRule);
-					debug(stateVariableNameRule);
+//					debug(probabilisticLogicPropertyRule);
+//					debug(probabilityRule);
+//					debug(logicPropertyRule);
+//					debug(primaryLogicPropertyRule);
+//					debug(differenceRule);
+//					debug(numericSpatialNumericComparisonRule);
+//					debug(numericNumericComparisonRule);
+//					debug(notLogicPropertyRule);
+//					debug(futureLogicPropertyRule);
+//					debug(globalLogicPropertyRule);
+//					debug(nextLogicPropertyRule);
+//					debug(nextKLogicPropertyRule);
+//					debug(andLogicPropertyRule);
+//					debug(orLogicPropertyRule);
+//					debug(implicationLogicPropertyRule);
+//					debug(equivalenceLogicPropertyRule);
+//					debug(untilLogicPropertyRule);
+//					debug(numericMeasureRule);
+//					debug(unaryNumericNumericRule);
+//					debug(binaryNumericNumericRule);
+//					debug(unarySubsetRule);
+//					debug(binarySubsetRule);
+//					debug(ternarySubsetRule);
+//					debug(quaternarySubsetRule);
+//					debug(numericSpatialRule);
+//					debug(unarySubsetMeasureRule);
+//					debug(binarySubsetMeasureRule);
+//					debug(ternarySubsetMeasureRule);
+//					debug(quaternarySubsetMeasureRule);
+//					debug(unaryNumericMeasureRule);
+//					debug(binaryNumericMeasureRule);
+//					debug(subsetRule);
+//					debug(filterSubsetRule);
+//					debug(subsetSpecificRule);
+//					debug(constraintRule);
+//					debug(primaryConstraintRule);
+//					debug(notConstraintRule);
+//					debug(unaryConstraintRule);
+//					debug(andConstraintRule);
+//					debug(orConstraintRule);
+//					debug(implicationConstraintRule);
+//					debug(equivalenceConstraintRule);
+//					debug(spatialMeasureRule);
+//					debug(comparatorRule);
+//					debug(numericStateVariableRule);
+//					debug(stateVariableRule);
+//					debug(stateVariableNameRule);
 
                 	// Error handling routines
                 	qi::on_error<qi::fail>(probabilisticLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));

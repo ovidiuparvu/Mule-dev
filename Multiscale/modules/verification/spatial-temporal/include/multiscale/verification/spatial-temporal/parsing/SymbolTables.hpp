@@ -70,13 +70,13 @@ namespace multiscale {
 
 			BinaryNumericMeasureTypeParser() {
 				add
+					("add"		, BinaryNumericMeasureType::Add)
 					("div"		, BinaryNumericMeasureType::Div)
 					("log"		, BinaryNumericMeasureType::Log)
-					("minus"	, BinaryNumericMeasureType::Minus)
 					("mod"		, BinaryNumericMeasureType::Mod)
-					("plus"		, BinaryNumericMeasureType::Plus)
+					("multiply"	, BinaryNumericMeasureType::Multiply)
 					("power"	, BinaryNumericMeasureType::Power)
-					("times"	, BinaryNumericMeasureType::Times)
+					("subtract"	, BinaryNumericMeasureType::Subtract)
 				;
 			}
 

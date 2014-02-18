@@ -9,6 +9,10 @@ using namespace multiscaletest::verification;
 
 // NextKLogicProperty
 
+TEST(NextKLogicProperty, IncorrectInputMissingTimepoint) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [X [] ({A} >= 4)]"), InvalidInputException);
+}
+
 TEST(NextKLogicProperty, IncorrectInputAfterNextSymbol) {
 	EXPECT_THROW(parseInputString("P >= 0.3 [X 2 [B] ({A} >= 4)]"), InvalidInputException);
 }

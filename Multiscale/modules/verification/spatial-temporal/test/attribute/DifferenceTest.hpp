@@ -9,6 +9,14 @@ using namespace multiscaletest::verification;
 
 // Difference
 
+TEST(Difference, IncorrectInputMissingDifferenceNumericMeasure) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [d() >= 4]"), InvalidInputException);
+}
+
+TEST(Difference, IncorrectInputMissingDifferenceNumericMeasureAndBrackets) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [d >= 4]"), InvalidInputException);
+}
+
 TEST(Difference, IncorrectDifferenceSymbol) {
 	EXPECT_THROW(parseInputString("P >= 0.3 [df(4) >= 4]"), InvalidInputException);
 }

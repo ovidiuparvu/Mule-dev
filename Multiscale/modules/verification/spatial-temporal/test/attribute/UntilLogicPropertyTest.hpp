@@ -9,6 +9,22 @@ using namespace multiscaletest::verification;
 
 // UntilLogicProperty
 
+TEST(UntilLogicProperty, IncorrectInputMissingStartTimepoint) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [3] (count(regions) >= 4)]"), InvalidInputException);
+}
+
+TEST(UntilLogicProperty, IncorrectInputMissingEndTimepoint) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2] (count(regions) >= 4)]"), InvalidInputException);
+}
+
+TEST(UntilLogicProperty, IncorrectInputMissingTimepoints) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [] (count(regions) >= 4)]"), InvalidInputException);
+}
+
+TEST(UntilLogicProperty, IncorrectInputMissingTimepointsAndBrackets) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U (count(regions) >= 4)]"), InvalidInputException);
+}
+
 TEST(UntilLogicProperty, UntilOperatorAsUnaryBefore) {
 	EXPECT_THROW(parseInputString("P >= 0.3 [U [2, 3] (count(regions) >= 4)]"), InvalidInputException);
 }

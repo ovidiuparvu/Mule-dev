@@ -9,6 +9,22 @@ using namespace multiscaletest::verification;
 
 // FutureLogicProperty
 
+TEST(FutureLogicProperty, WrongInputMissingStartTimepoint) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [F [3] ({A} >= 4)]"), InvalidInputException);
+}
+
+TEST(FutureLogicProperty, WrongInputMissingEndTimepoint) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [F [3] ({A} >= 4)]"), InvalidInputException);
+}
+
+TEST(FutureLogicProperty, WrongInputMissingTimepoints) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [F [] ({A} >= 4)]"), InvalidInputException);
+}
+
+TEST(FutureLogicProperty, WrongInputMissingTimepointsAndBrackets) {
+	EXPECT_THROW(parseInputString("P >= 0.3 [F ({A} >= 4)]"), InvalidInputException);
+}
+
 TEST(FutureLogicProperty, WrongInputBeforeStartParanthesis) {
 	EXPECT_THROW(parseInputString("P >= 0.3 [F ({A} >= 4) [2, 3] ({A} >= 4)]"), InvalidInputException);
 }
