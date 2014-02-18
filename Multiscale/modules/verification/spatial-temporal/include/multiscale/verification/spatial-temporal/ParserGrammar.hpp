@@ -133,7 +133,7 @@ namespace multiscale {
                 	        );
 
                 	probabilityRule
-                		=	qi::eps
+                		%=	qi::eps
                 			> qi::double_	[qi::_pass = (qi::_1 >= 0) && (qi::_1 <= 1)];
 
                 	logicPropertyRule
@@ -448,6 +448,7 @@ namespace multiscale {
                 	numericMeasureRule.name("numericMeasureRule");
                 	unaryNumericNumericRule.name("unaryNumericNumericRule");
                 	binaryNumericNumericRule.name("binaryNumericNumericRule");
+                	numericSpatialRule.name("numericSpatialRule");
                 	unarySubsetRule.name("unarySubsetRule");
                 	binarySubsetRule.name("binarySubsetRule");
                 	ternarySubsetRule.name("ternarySubsetRule");
@@ -504,6 +505,7 @@ namespace multiscale {
 					debug(quaternarySubsetRule);
 					debug(unaryNumericSpatialRule);
 					debug(binaryNumericSpatialRule);
+					debug(numericSpatialRule);
 					debug(unarySubsetMeasureRule);
 					debug(binarySubsetMeasureRule);
 					debug(ternarySubsetMeasureRule);

@@ -204,8 +204,8 @@ main()
         std::string::const_iterator end = str.end();
         bool r = phrase_parse(iter, end, g, space, emp);
 
-        std::cout  << emp.age << ", " << emp.name.forename << ","
-                   << emp.name.surname << "," << emp.info << std::endl;
+        std::cout  << emp.age << ", " << emp.name.forename << ", "
+                   << emp.name.surname << ", " << emp.info << std::endl;
 
         if (r && iter == end)
         {
