@@ -32,9 +32,6 @@
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericNumericAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericNumericAttribute.hpp"
 
-#include "multiscale/verification/spatial-temporal/attribute/UnaryNumericSpatialAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericSpatialAttribute.hpp"
-
 #include "multiscale/verification/spatial-temporal/attribute/NotConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/OrConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/AndConstraintAttribute.hpp"

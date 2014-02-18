@@ -3,7 +3,7 @@
 
 // Include test function
 
-#include "parsing/ParseInputString.hpp"
+#include "parsing/InputStringParser.hpp"
 
 using namespace multiscale;
 using namespace multiscaletest::verification;
@@ -37,25 +37,25 @@ TEST(Input, IncorrectFInput) {
 
 // Include additional test cases
 
-//#include "attribute/AndLogicPropertyTest.hpp"
-//#include "attribute/BinaryNumericNumericTest.hpp"
-//#include "attribute/DifferenceTest.hpp"
-//#include "attribute/EquivalenceLogicPropertyTest.hpp"
-//#include "attribute/FutureLogicPropertyTest.hpp"
-//#include "attribute/GlobalLogicPropertyTest.hpp"
-//#include "attribute/ImplicationLogicPropertyTest.hpp"
-//#include "attribute/LogicPropertyParenthesesTest.hpp"
-//#include "attribute/LogicPropertyTest.hpp"
-//#include "attribute/NextKLogicPropertyTest.hpp"
-//#include "attribute/NextLogicPropertyTest.hpp"
-//#include "attribute/NotLogicPropertyTest.hpp"
-//#include "attribute/NumericMeasureTest.hpp"
-//#include "attribute/NumericNumericComparisonTest.hpp"
-//#include "attribute/NumericSpatialNumericComparisonTest.hpp"
-//#include "attribute/NumericStateVariableTest.hpp"
-//#include "attribute/OrLogicPropertyTest.hpp"
-//#include "attribute/ProbabilisticLogicPropertyTest.hpp"
+#include "attribute/AndLogicPropertyTest.hpp"
+#include "attribute/BinaryNumericNumericTest.hpp"
+#include "attribute/DifferenceTest.hpp"
+#include "attribute/EquivalenceLogicPropertyTest.hpp"
+#include "attribute/FutureLogicPropertyTest.hpp"
+#include "attribute/GlobalLogicPropertyTest.hpp"
+#include "attribute/ImplicationLogicPropertyTest.hpp"
+#include "attribute/LogicPropertyParenthesesTest.hpp"
+#include "attribute/LogicPropertyTest.hpp"
+#include "attribute/NextKLogicPropertyTest.hpp"
+#include "attribute/NextLogicPropertyTest.hpp"
+#include "attribute/NotLogicPropertyTest.hpp"
+#include "attribute/NumericMeasureTest.hpp"
+#include "attribute/NumericNumericComparisonTest.hpp"
+#include "attribute/NumericSpatialNumericComparisonTest.hpp"
+#include "attribute/NumericStateVariableTest.hpp"
+#include "attribute/OrLogicPropertyTest.hpp"
+#include "attribute/ProbabilisticLogicPropertyTest.hpp"
 #include "attribute/UnaryNumericNumericTest.hpp"
-//#include "attribute/UntilLogicPropertyTest.hpp"
+#include "attribute/UntilLogicPropertyTest.hpp"
 
 #endif

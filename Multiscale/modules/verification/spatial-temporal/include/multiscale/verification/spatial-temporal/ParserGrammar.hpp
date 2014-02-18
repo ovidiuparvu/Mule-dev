@@ -69,8 +69,6 @@ namespace multiscale {
                 qi::rule<Iterator, BinarySubsetAttribute(), ascii::space_type>						binarySubsetRule;						/*!< The rule for parsing a binary subset */
                 qi::rule<Iterator, TernarySubsetAttribute(), ascii::space_type>						ternarySubsetRule;						/*!< The rule for parsing a ternary subset */
                 qi::rule<Iterator, QuaternarySubsetAttribute(), ascii::space_type>					quaternarySubsetRule;					/*!< The rule for parsing a quaternary subset */
-                qi::rule<Iterator, UnaryNumericSpatialAttribute(), ascii::space_type>				unaryNumericSpatialRule;				/*!< The rule for parsing a unary numeric spatial attribute */
-                qi::rule<Iterator, BinaryNumericSpatialAttribute(), ascii::space_type>				binaryNumericSpatialRule;				/*!< The rule for parsing a binary numeric spatial attribute */
 
                 qi::rule<Iterator, UnarySubsetMeasureAttribute(), ascii::space_type>				unarySubsetMeasureRule;					/*!< The rule for parsing a unary subset measure */
                 qi::rule<Iterator, BinarySubsetMeasureAttribute(), ascii::space_type>				binarySubsetMeasureRule;				/*!< The rule for parsing a binary subset measure */
@@ -277,9 +275,7 @@ namespace multiscale {
                 	    =   unarySubsetRule
                 	    |   binarySubsetRule
                 	    |   ternarySubsetRule
-                	    |   quaternarySubsetRule
-                	    |   unaryNumericSpatialRule
-                	    |   binaryNumericSpatialRule;
+                	    |   quaternarySubsetRule;
 
                 	unarySubsetRule
                 		=	(
@@ -322,24 +318,6 @@ namespace multiscale {
                                 > subsetRule
                                 > ','
                                 > spatialMeasureRule
-                                > ')'
-                		    );
-
-                	unaryNumericSpatialRule
-                		=	(
-                                unaryNumericMeasureRule
-                                > '('
-                                > numericSpatialRule
-                                > ')'
-                		    );
-
-                	binaryNumericSpatialRule
-                		=	(
-                		        binaryNumericMeasureRule
-                                > '('
-                                > numericSpatialRule
-                                > ','
-                                > numericMeasureRule
                                 > ')'
                 		    );
 
@@ -453,8 +431,6 @@ namespace multiscale {
                 	binarySubsetRule.name("binarySubsetRule");
                 	ternarySubsetRule.name("ternarySubsetRule");
                 	quaternarySubsetRule.name("quaternarySubsetRule");
-                	unaryNumericSpatialRule.name("unaryNumericSpatialRule");
-                	binaryNumericSpatialRule.name("binaryNumericSpatialRule");
                 	unarySubsetMeasureRule.name("unarySubsetMeasureRule");
                 	binarySubsetMeasureRule.name("binarySubsetMeasureRule");
                 	ternarySubsetMeasureRule.name("ternarySubsetMeasureRule");
@@ -503,8 +479,6 @@ namespace multiscale {
 					debug(binarySubsetRule);
 					debug(ternarySubsetRule);
 					debug(quaternarySubsetRule);
-					debug(unaryNumericSpatialRule);
-					debug(binaryNumericSpatialRule);
 					debug(numericSpatialRule);
 					debug(unarySubsetMeasureRule);
 					debug(binarySubsetMeasureRule);
@@ -552,8 +526,6 @@ namespace multiscale {
                 	qi::on_error<qi::fail>(binarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(ternarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(quaternarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(unaryNumericSpatialRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(binaryNumericSpatialRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(filterSubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(primaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));

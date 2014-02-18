@@ -15,9 +15,7 @@ namespace multiscale {
 	namespace verification {
 
 		// Forward declaration of classes
-		class BinaryNumericSpatialAttribute;
 		class NumericSpatialAttribute;
-		class UnaryNumericSpatialAttribute;
 
 
 		//! Variant for a numeric spatial attribute
@@ -26,8 +24,6 @@ namespace multiscale {
 			BinarySubsetAttribute,
 			TernarySubsetAttribute,
 			QuaternarySubsetAttribute,
-			boost::recursive_wrapper<UnaryNumericSpatialAttribute>,
-			boost::recursive_wrapper<BinaryNumericSpatialAttribute>,
 			boost::recursive_wrapper<NumericSpatialAttribute>
 		> NumericSpatialAttributeType;
 

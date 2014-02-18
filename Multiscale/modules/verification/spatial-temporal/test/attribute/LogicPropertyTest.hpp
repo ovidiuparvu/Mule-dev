@@ -1,7 +1,7 @@
 #ifndef LOGICPROPERTYTEST_HPP
 #define LOGICPROPERTYTEST_HPP
 
-#include "parsing/ParseInputString.hpp"
+#include "parsing/InputStringParser.hpp"
 
 using namespace multiscale;
 using namespace multiscaletest::verification;

@@ -1,5 +1,5 @@
-#ifndef PARSEINPUTSTRING_HPP
-#define PARSEINPUTSTRING_HPP
+#ifndef INPUTSTRINGPARSER_HPP
+#define INPUTSTRINGPARSER_HPP
 
 #include "multiscale/core/MultiscaleTest.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"

@@ -1,7 +1,7 @@
 #ifndef NUMERICNUMERICCOMPARISONTEST_HPP
 #define NUMERICNUMERICCOMPARISONTEST_HPP
 
-#include "parsing/ParseInputString.hpp"
+#include "parsing/InputStringParser.hpp"
 
 using namespace multiscale;
 using namespace multiscaletest::verification;

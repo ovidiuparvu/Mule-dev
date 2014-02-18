@@ -1,7 +1,7 @@
 #ifndef UNARYNUMERICNUMERICTEST_HPP
 #define UNARYNUMERICNUMERICTEST_HPP
 
-#include "parsing/ParseInputString.hpp"
+#include "parsing/InputStringParser.hpp"
 
 using namespace multiscale;
 using namespace multiscaletest::verification;
