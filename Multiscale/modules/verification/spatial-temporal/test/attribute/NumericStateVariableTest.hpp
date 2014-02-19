@@ -37,8 +37,16 @@ TEST(NumericStateVariable, TripleCurlyBraces) {
 	EXPECT_THROW(parseInputString("P >= 0.3 [{{{A}}} <= 3]"), InvalidInputException);
 }
 
-TEST(NumericStateVariable, Correct) {
+TEST(NumericStateVariable, Correct1) {
 	EXPECT_TRUE(parseInputString("P >= 0.3 [{A} <= 3]"));
+}
+
+TEST(NumericStateVariable, Correct2) {
+	EXPECT_TRUE(parseInputString("P >= 0.3 [{a2#0f-} <= 3]"));
+}
+
+TEST(NumericStateVariable, Correct3) {
+	EXPECT_TRUE(parseInputString("P >= 0.3 [{`1234567890-=~!@#$%^&*()_+qwertyuiop[]asdfghjkl;'\\<zxcvbnm,./QWERTYUIOPASDFGHJKL:\"|>ZXCVBNM<>?} <= 3]"));
 }
 
 #endif
