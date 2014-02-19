@@ -2,7 +2,7 @@
 #define PARSER_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/ParserGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/ParserGrammar.hpp"
 
 #include <string>
 

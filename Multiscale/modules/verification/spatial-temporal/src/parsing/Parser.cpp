@@ -1,4 +1,4 @@
-#include "multiscale/verification/spatial-temporal/Parser.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarExceptionHandler.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarExtraInputException.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarProbabilityException.hpp"

@@ -21,7 +21,7 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 # ParserEvaluationTest
 
 #set(PARSER_EVALUATION_TEST_SRC
-#    src/Parser.cpp
+#    src/parsing/Parser.cpp
 #    src/exception/ParserGrammarExceptionHandler.cpp
 #    
 #    test/ParserEvaluationTest.cpp
@@ -36,7 +36,7 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 # ParserTest
 
 set(PARSER_TEST_SRC
-    src/Parser.cpp
+    src/parsing/Parser.cpp
     
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
@@ -63,7 +63,7 @@ target_link_libraries(ParserTest gtest gtest_main)
 # ParserGrammarSample
 
 set(PARSER_GRAMMAR_SAMPLE_SRC
-    src/Parser.cpp
+    src/parsing/Parser.cpp
     
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp

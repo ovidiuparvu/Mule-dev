@@ -3,7 +3,7 @@
 
 #include "multiscale/core/MultiscaleTest.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
-#include "multiscale/verification/spatial-temporal/Parser.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <string>
 
