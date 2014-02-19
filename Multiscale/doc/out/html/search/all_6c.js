@@ -32,11 +32,12 @@ var searchData=
   ['label_5fthreshold_5fvalue',['LABEL_THRESHOLD_VALUE',['../CircularDetectRegions_8cpp.html#a448d0509cf2e805517d6ccf3239c86f7',1,'LABEL_THRESHOLD_VALUE():&#160;CircularDetectRegions.cpp'],['../RectangularDetectRegions_8cpp.html#a448d0509cf2e805517d6ccf3239c86f7',1,'LABEL_THRESHOLD_VALUE():&#160;RectangularDetectRegions.cpp']]],
   ['labelunclassifiedandnoiseasborder',['labelUnclassifiedAndNoiseAsBorder',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a5b0d19aab403005cac7fbe0851f5a969',1,'multiscale::analysis::DBSCAN']]],
   ['lessorequal',['lessOrEqual',['../classmultiscale_1_1Numeric.html#a7f21159a23c71c1d37e1c487e9ff815c',1,'multiscale::Numeric']]],
-  ['lessthanorequal',['LessThanOrEqual',['../namespacemultiscale_1_1verification.html#af018721840ca6de5f1725ed82e000d25a52e99cb1cd38a84d73aae4d3c9c0d37b',1,'multiscale::verification']]],
+  ['lessthan',['LessThan',['../namespacemultiscale_1_1verification.html#a4926b4527bb717db0a0280f06a3e483fac6d9d7bb9939f62f01c80f8b1251501c',1,'multiscale::verification']]],
+  ['lessthanorequal',['LessThanOrEqual',['../namespacemultiscale_1_1verification.html#a4926b4527bb717db0a0280f06a3e483fa4ab671acbbaacb0db7d8477cfe4f4e0b',1,'multiscale::verification']]],
   ['lexicographic',['LEXICOGRAPHIC',['../namespacemultiscale.html#a6ef911f4d48a4bf5e657c237ec169ff5a2cba3a0174cc5c1d555ee13dcf6cda15',1,'multiscale']]],
   ['lexicographiciteratorsample_2ecpp',['LexicographicIteratorSample.cpp',['../LexicographicIteratorSample_8cpp.html',1,'']]],
-  ['lexicographicnumberiterator',['LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html',1,'multiscale']]],
   ['lexicographicnumberiterator',['LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html#a02a95a6f7876b84909e08555730ff08a',1,'multiscale::LexicographicNumberIterator']]],
+  ['lexicographicnumberiterator',['LexicographicNumberIterator',['../classmultiscale_1_1LexicographicNumberIterator.html',1,'multiscale']]],
   ['lexicographicnumberiterator_2ecpp',['LexicographicNumberIterator.cpp',['../LexicographicNumberIterator_8cpp.html',1,'']]],
   ['lexicographicnumberiterator_2ehpp',['LexicographicNumberIterator.hpp',['../LexicographicNumberIterator_8hpp.html',1,'']]],
   ['lhsnumericmeasure',['lhsNumericMeasure',['../classmultiscale_1_1verification_1_1DifferenceAttribute.html#a1ca4a6241c64ca1992d91ccefabc7d21',1,'multiscale::verification::DifferenceAttribute']]],
@@ -51,7 +52,7 @@ var searchData=
   ['linesegmentcircleintersection',['lineSegmentCircleIntersection',['../classmultiscale_1_1Geometry2D.html#a92bd36cdda4cdacb4101c6db54474a6d',1,'multiscale::Geometry2D']]],
   ['linesegmentintersection',['lineSegmentIntersection',['../classmultiscale_1_1Geometry2D.html#a9931c3d8089d658186a8c1ac78db5773',1,'multiscale::Geometry2D']]],
   ['loaddetectorparametervalues',['loadDetectorParameterValues',['../CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d',1,'loadDetectorParameterValues(RegionDetector &amp;detector):&#160;CircularDetectRegions.cpp'],['../CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a',1,'loadDetectorParameterValues(RegionDetector &amp;detector, bool debugMode):&#160;CircularDetectRegions.cpp'],['../RectangularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d',1,'loadDetectorParameterValues(RegionDetector &amp;detector):&#160;RectangularDetectRegions.cpp'],['../RectangularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a',1,'loadDetectorParameterValues(RegionDetector &amp;detector, bool debugMode):&#160;RectangularDetectRegions.cpp'],['../SimulationDetectClusters_8cpp.html#a3b2fe4e3a75a6cdca8ea050e37a9da13',1,'loadDetectorParameterValues(SimulationClusterDetector &amp;detector):&#160;SimulationDetectClusters.cpp'],['../SimulationDetectClusters_8cpp.html#ab07b4a4cf6b2729884efe34b9947ad0d',1,'loadDetectorParameterValues(SimulationClusterDetector &amp;detector, bool debugMode):&#160;SimulationDetectClusters.cpp']]],
-  ['log',['Log',['../namespacemultiscale_1_1verification.html#ae974a58490c8369aa7c10d597f61421ea27eee879dfd1eb36c86be91e9f6adffc',1,'multiscale::verification']]],
+  ['log',['Log',['../namespacemultiscale_1_1verification.html#abdf9fde4e6f20f3f122484c57575dc96ace0be71e33226e4c1db2bcea5959f16b',1,'multiscale::verification']]],
   ['logicalquery',['logicalQuery',['../classmultiscale_1_1verification_1_1Parser.html#ab70253482326377ebb047480087783bd',1,'multiscale::verification::Parser']]],
   ['logicalqueryend',['logicalQueryEnd',['../classmultiscale_1_1verification_1_1Parser.html#a856da78aa1f08d52e8abd64c6ebf6217',1,'multiscale::verification::Parser']]],
   ['logicalqueryiterator',['logicalQueryIterator',['../classmultiscale_1_1verification_1_1Parser.html#a8a61109a20fb0348b143376a7bdef72c',1,'multiscale::verification::Parser']]],
@@ -59,5 +60,7 @@ var searchData=
   ['logicpropertyattribute',['LogicPropertyAttribute',['../classmultiscale_1_1verification_1_1LogicPropertyAttribute.html',1,'multiscale::verification']]],
   ['logicpropertyattribute_2ehpp',['LogicPropertyAttribute.hpp',['../LogicPropertyAttribute_8hpp.html',1,'']]],
   ['logicpropertyattributetype',['LogicPropertyAttributeType',['../namespacemultiscale_1_1verification.html#a5e2a8cfecf1bd450c9247e4eb4a3de67',1,'multiscale::verification']]],
-  ['logicpropertyrule',['logicPropertyRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#ab6a73e5b4eb63a9e599519de293e0c8d',1,'multiscale::verification::ParserGrammar']]]
+  ['logicpropertyparenthesestest_2ehpp',['LogicPropertyParenthesesTest.hpp',['../LogicPropertyParenthesesTest_8hpp.html',1,'']]],
+  ['logicpropertyrule',['logicPropertyRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#ab6a73e5b4eb63a9e599519de293e0c8d',1,'multiscale::verification::ParserGrammar']]],
+  ['logicpropertytest_2ehpp',['LogicPropertyTest.hpp',['../LogicPropertyTest_8hpp.html',1,'']]]
 ];

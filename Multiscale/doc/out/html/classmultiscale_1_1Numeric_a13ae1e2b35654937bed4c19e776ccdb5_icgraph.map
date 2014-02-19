@@ -1,20 +1,19 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a55faab1deabea3b838490a4a3b62cafc" title="Advance b to the right chain." alt="" coords="288,5,683,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc" title="Check if the provided degree of pile up, area, centre and contour points are valid." alt="" coords="368,112,603,141"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1Region.html#a6319de4734b11039dbb90dfdd3e30e31" title="Check if the input values are valid or not." alt="" coords="331,165,640,195"/>
-<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e" title="Check if the origin dependent values are valid (i.e. non&#45;negative)" alt="" coords="296,219,675,248"/>
-<area shape="rect" id="node37" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="295,59,676,88"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="731,32,1133,61"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891" title="multiscale::analysis::Entity::validateInputValues" alt="" coords="781,112,1083,141"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Entity.html#ab6e9d348e41c7670d52ca2615cdee023" title="multiscale::analysis::Entity::Entity" alt="" coords="1253,112,1475,141"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1Region.html#a517b46fd89696f44086aafb1a9526995" title="Validate the input values." alt="" coords="779,165,1085,195"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1Region.html#a4f4d296d1a4cbeb10690da7af5ba91d2" title="multiscale::analysis::Region::Region" alt="" coords="1247,165,1481,195"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1Region.html#a7cac0117120ae96e40f5c7eec8266922" title="Return the type of the pseudo 3D spatial entity." alt="" coords="1717,165,1936,195"/>
-<area shape="rect" id="node23" href="$classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non&#45;negative)" alt="" coords="744,219,1120,248"/>
-<area shape="rect" id="node25" href="$classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915" title="Set the values of the origin dependent members." alt="" coords="1183,219,1545,248"/>
-<area shape="rect" id="node27" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="1596,219,2057,248"/>
-<area shape="rect" id="node29" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="2108,219,2583,248"/>
-<area shape="rect" id="node31" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="2632,219,2971,248"/>
-<area shape="rect" id="node33" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="3019,219,3419,248"/>
-<area shape="rect" id="node35" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="3467,219,3856,248"/>
+<map id="multiscale::Numeric::greaterOrEqual" name="multiscale::Numeric::greaterOrEqual">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a55faab1deabea3b838490a4a3b62cafc" title="Advance b to the right chain." alt="" coords="192,5,443,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc" title="Check if the provided degree of pile up, area, centre and contour points are valid." alt="" coords="249,143,385,190"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1Region.html#a6319de4734b11039dbb90dfdd3e30e31" title="Check if the input values are valid or not." alt="" coords="220,213,415,259"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e" title="Check if the origin dependent values are valid (i.e. non&#45;negative)" alt="" coords="205,283,429,347"/>
+<area shape="rect" id="node35" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="200,74,435,121"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="497,27,708,91"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891" title="multiscale::analysis\l::Entity::validateInputValues" alt="" coords="509,143,696,190"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Entity.html#ab6e9d348e41c7670d52ca2615cdee023" title="multiscale::analysis\l::Entity::Entity" alt="" coords="792,143,928,190"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1Region.html#a517b46fd89696f44086aafb1a9526995" title="Validate the input values." alt="" coords="507,213,699,259"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1Region.html#a4f4d296d1a4cbeb10690da7af5ba91d2" title="multiscale::analysis\l::Region::Region" alt="" coords="792,213,928,259"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non&#45;negative)" alt="" coords="492,283,713,347"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915" title="Set the values of the origin dependent members." alt="" coords="763,283,957,347"/>
+<area shape="rect" id="node25" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="1005,283,1216,347"/>
+<area shape="rect" id="node27" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="1264,283,1488,347"/>
+<area shape="rect" id="node29" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="1536,291,1760,338"/>
+<area shape="rect" id="node31" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1808,283,1997,347"/>
+<area shape="rect" id="node33" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="2047,283,2257,347"/>
 </map>

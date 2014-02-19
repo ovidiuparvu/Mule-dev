@@ -1,7 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a346e054266585ae6922d159b8d5fb804" title="Output the results." alt="" coords="449,5,881,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a94094cdeaf0f48164911188709dc0e2f" title="Read the input data." alt="" coords="448,59,883,88"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a8a2e69a85d54df5bacd2e18d27993c14" title="Generate the script." alt="" coords="951,5,1377,35"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a2e9967ae6fb2efc39ed377aca2fa222c" title="Read the header line." alt="" coords="943,59,1385,88"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9134409b814fafe62c896c6b473bc574" title="Read the concentrations." alt="" coords="932,112,1396,141"/>
+<map id="multiscale::video::CartesianToConcentrationsConverter::convert" name="multiscale::video::CartesianToConcentrationsConverter::convert">
+<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a346e054266585ae6922d159b8d5fb804" title="Output the results." alt="" coords="295,5,532,69"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a94094cdeaf0f48164911188709dc0e2f" title="Read the input data." alt="" coords="295,93,532,157"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a8a2e69a85d54df5bacd2e18d27993c14" title="Generate the script." alt="" coords="588,5,815,69"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a2e9967ae6fb2efc39ed377aca2fa222c" title="Read the header line." alt="" coords="583,93,820,157"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a9134409b814fafe62c896c6b473bc574" title="Read the concentrations." alt="" coords="583,181,820,245"/>
 </map>

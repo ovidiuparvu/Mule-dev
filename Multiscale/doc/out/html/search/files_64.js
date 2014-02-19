@@ -6,5 +6,6 @@ var searchData=
   ['dbscantest_2ecpp',['DBSCANTest.cpp',['../DBSCANTest_8cpp.html',1,'']]],
   ['detector_2ecpp',['Detector.cpp',['../Detector_8cpp.html',1,'']]],
   ['detector_2ehpp',['Detector.hpp',['../Detector_8hpp.html',1,'']]],
-  ['differenceattribute_2ehpp',['DifferenceAttribute.hpp',['../DifferenceAttribute_8hpp.html',1,'']]]
+  ['differenceattribute_2ehpp',['DifferenceAttribute.hpp',['../DifferenceAttribute_8hpp.html',1,'']]],
+  ['differencetest_2ehpp',['DifferenceTest.hpp',['../DifferenceTest_8hpp.html',1,'']]]
 ];

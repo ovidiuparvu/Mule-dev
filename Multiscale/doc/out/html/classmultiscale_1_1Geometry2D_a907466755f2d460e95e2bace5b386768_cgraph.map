@@ -1,6 +1,6 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a6555ae4c2762e25444bc0874e9bbc535" title="Check if angle1 lies between angles 2 and 3." alt="" coords="383,5,647,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a7f21159a23c71c1d37e1c487e9ff815c" title="Check if the first number is less than or equal to the second number." alt="" coords="407,59,623,88"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="696,59,915,88"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="963,59,1165,88"/>
+<map id="multiscale::Geometry2D::isAngleBetweenNonReflex" name="multiscale::Geometry2D::isAngleBetweenNonReflex">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a6555ae4c2762e25444bc0874e9bbc535" title="Check if angle1 lies between angles 2 and 3." alt="" coords="240,5,403,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a7f21159a23c71c1d37e1c487e9ff815c" title="Check if the first number is less than or equal to the second number." alt="" coords="252,74,391,121"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="451,74,589,121"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="637,74,776,121"/>
 </map>

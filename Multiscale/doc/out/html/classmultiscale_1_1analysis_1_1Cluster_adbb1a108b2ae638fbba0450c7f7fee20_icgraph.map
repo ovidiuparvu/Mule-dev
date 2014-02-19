@@ -1,12 +1,12 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="395,59,720,88"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1Cluster.html#a579730478055ae93d659f268375a492d" title="Get the measure that the cluster has a circular shape." alt="" coords="408,112,707,141"/>
-<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1Cluster.html#aca93cb46704a3e824151e99b7a53d20d" title="Get the measure that the cluster has a rectangular shape." alt="" coords="395,165,720,195"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed" title="Update the value of the perimeter." alt="" coords="809,5,1100,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="799,59,1111,88"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a4a071efa7d7812c1db9ee577b7893902" title="Return the convex hull of the given cluster." alt="" coords="768,112,1141,141"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="1191,112,1665,141"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="1715,112,2053,141"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="2101,112,2501,141"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="2549,112,2939,141"/>
+<map id="multiscale::analysis::Cluster::getEntitiesContourPoints" name="multiscale::analysis::Cluster::getEntitiesContourPoints">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="243,74,453,121"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1Cluster.html#a579730478055ae93d659f268375a492d" title="Get the measure that the cluster has a circular shape." alt="" coords="256,143,440,190"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1Cluster.html#aca93cb46704a3e824151e99b7a53d20d" title="Get the measure that the cluster has a rectangular shape." alt="" coords="243,213,453,259"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed" title="Update the value of the perimeter." alt="" coords="513,5,687,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="501,74,699,121"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a4a071efa7d7812c1db9ee577b7893902" title="Return the convex hull of the given cluster." alt="" coords="505,144,695,208"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="747,144,971,208"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="1019,153,1243,199"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1291,144,1480,208"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1529,144,1740,208"/>
 </map>

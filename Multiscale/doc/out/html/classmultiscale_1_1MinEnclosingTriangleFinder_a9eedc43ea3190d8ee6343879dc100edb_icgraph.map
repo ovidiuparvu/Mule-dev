@@ -1,10 +1,10 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab0b488d2d67f2d22077777eebc292c1a" title="Find vertex C which lies on side B at a distance = 2 * height(a&#45;1) from side C." alt="" coords="483,32,861,61"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a800413be1e1567d986a92fac4a6b937e" title="Find gamma for a given point &quot;p&quot; specified by its index." alt="" coords="523,112,821,141"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a12f1835531784519d618b86e889af06d" title="Update sides B and possibly A if tangency for side B was not obtained." alt="" coords="935,5,1281,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1355,112,1757,141"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a88ca299e33ef6104513bd153501d5530" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="909,59,1307,88"/>
-<area shape="rect" id="node14" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="917,112,1299,141"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9f071f42dbaff51c8975da1b77c1188e" title="Check if tangency for side B was not obtained." alt="" coords="931,165,1285,195"/>
-<area shape="rect" id="node20" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab25b3b5dbe05cb06e83a49cd28b3116f" title="Set side B if tangency for side B was obtained." alt="" coords="943,219,1273,248"/>
+<map id="multiscale::MinEnclosingTriangleFinder::findGammaIntersectionPoints" name="multiscale::MinEnclosingTriangleFinder::findGammaIntersectionPoints">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab0b488d2d67f2d22077777eebc292c1a" title="Find vertex C which lies on side B at a distance = 2 * height(a&#45;1) from side C." alt="" coords="303,49,535,95"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a800413be1e1567d986a92fac4a6b937e" title="Find gamma for a given point &quot;p&quot; specified by its index." alt="" coords="336,162,501,209"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a12f1835531784519d618b86e889af06d" title="Update sides B and possibly A if tangency for side B was not obtained." alt="" coords="601,5,804,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="869,153,1080,217"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a88ca299e33ef6104513bd153501d5530" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="599,75,807,139"/>
+<area shape="rect" id="node14" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="585,162,820,209"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9f071f42dbaff51c8975da1b77c1188e" title="Check if tangency for side B was not obtained." alt="" coords="599,231,807,278"/>
+<area shape="rect" id="node20" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab25b3b5dbe05cb06e83a49cd28b3116f" title="Set side B if tangency for side B was obtained." alt="" coords="609,301,796,347"/>
 </map>

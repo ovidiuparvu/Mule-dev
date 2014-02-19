@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#aaa19f84365e924bacfad4ea893875a42" title="Check if two lines are identical." alt="" coords="408,5,677,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="725,5,944,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="992,5,1195,35"/>
+<map id="multiscale::MinEnclosingTriangleFinder::areIdenticalLines" name="multiscale::MinEnclosingTriangleFinder::areIdenticalLines">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#aaa19f84365e924bacfad4ea893875a42" title="Check if two lines are identical." alt="" coords="264,5,427,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="475,5,613,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="661,5,800,51"/>
 </map>

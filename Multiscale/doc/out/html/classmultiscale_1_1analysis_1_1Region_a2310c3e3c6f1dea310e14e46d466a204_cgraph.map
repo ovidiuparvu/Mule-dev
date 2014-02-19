@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="379,5,597,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="645,5,848,35"/>
+<map id="multiscale::analysis::Region::isRectangularMeasure" name="multiscale::analysis::Region::isRectangularMeasure">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="264,5,403,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="451,5,589,51"/>
 </map>

@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$CircularMatFactorySample_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/sample/CircularMatFactorySample.cpp" alt="" coords="5,83,699,112"/>
-<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/CircularDetectRegions.cpp" alt="" coords="723,83,1368,112"/>
-<area shape="rect" id="node7" href="$CircularMatFactory_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/factory/CircularMatFactory.cpp" alt="" coords="1392,83,2061,112"/>
+<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/factory/CircularMatFactory.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/factory/CircularMatFactory.hpp">
+<area shape="rect" id="node3" href="$CircularMatFactorySample_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/sample/CircularMatFactorySample.cpp" alt="" coords="5,153,256,234"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/CircularDetectRegions.cpp" alt="" coords="280,153,485,234"/>
+<area shape="rect" id="node7" href="$CircularMatFactory_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/factory/CircularMatFactory.cpp" alt="" coords="509,153,736,234"/>
 </map>

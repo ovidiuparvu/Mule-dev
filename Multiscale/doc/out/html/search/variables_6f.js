@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['operators',['OPERATORS',['../classmultiscaletest_1_1ParserTest.html#af96339d7045ee05a33c25c0ce12dd197',1,'multiscaletest::ParserTest']]],
   ['orconstraintrule',['orConstraintRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a1ede512eaa111fdb7b95509e3c66b9ae',1,'multiscale::verification::ParserGrammar']]],
   ['origin',['origin',['../classmultiscale_1_1analysis_1_1Detector.html#a002237e2ad684975a7c8b1e12dd7d780',1,'multiscale::analysis::Detector']]],
   ['orlogicpropertyrule',['orLogicPropertyRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a2efe1021b546ba7552eeb423db78da1b',1,'multiscale::verification::ParserGrammar']]],

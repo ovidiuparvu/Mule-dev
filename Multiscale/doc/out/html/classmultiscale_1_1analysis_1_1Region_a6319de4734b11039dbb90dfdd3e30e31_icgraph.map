@@ -1,5 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Region.html#a517b46fd89696f44086aafb1a9526995" title="Validate the input values." alt="" coords="367,5,673,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Region.html#a4f4d296d1a4cbeb10690da7af5ba91d2" title="multiscale::analysis::Region::Region" alt="" coords="723,5,957,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Region.html#a7cac0117120ae96e40f5c7eec8266922" title="Return the type of the pseudo 3D spatial entity." alt="" coords="1005,5,1224,35"/>
+<map id="multiscale::analysis::Region::areValidInputValues" name="multiscale::analysis::Region::areValidInputValues">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Region.html#a517b46fd89696f44086aafb1a9526995" title="Validate the input values." alt="" coords="249,5,441,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Region.html#a4f4d296d1a4cbeb10690da7af5ba91d2" title="multiscale::analysis\l::Region::Region" alt="" coords="492,5,628,51"/>
 </map>

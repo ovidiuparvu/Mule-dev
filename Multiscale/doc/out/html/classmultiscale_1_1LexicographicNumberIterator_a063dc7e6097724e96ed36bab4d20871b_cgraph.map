@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1LexicographicNumberIterator.html#a9bcb610b3b63b02ceed7d556960e57c3" title="Convert the vector of digits to the number they represent." alt="" coords="401,5,756,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1LexicographicNumberIterator.html#a282d970d0d1a33d2736bbdf104c18336" title="Get the number pointed by the iterator." alt="" coords="805,5,1112,35"/>
+<map id="multiscale::LexicographicNumberIterator::padWithZeros" name="multiscale::LexicographicNumberIterator::padWithZeros">
+<area shape="rect" id="node3" href="$classmultiscale_1_1LexicographicNumberIterator.html#a9bcb610b3b63b02ceed7d556960e57c3" title="Convert the vector of digits to the number they represent." alt="" coords="255,5,463,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1LexicographicNumberIterator.html#a282d970d0d1a33d2736bbdf104c18336" title="Get the number pointed by the iterator." alt="" coords="513,5,681,51"/>
 </map>

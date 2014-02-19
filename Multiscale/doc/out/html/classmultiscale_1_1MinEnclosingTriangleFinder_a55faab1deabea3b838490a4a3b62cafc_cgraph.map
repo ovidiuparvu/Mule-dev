@@ -1,10 +1,10 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#af52c24da93e4660f043dbb0f92594a19" title="Advance the given index with one position." alt="" coords="448,5,755,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a075472a453bfcb0eedd06a4a185241fc" title="Return the succesor of the provided point index." alt="" coords="808,31,1125,60"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="485,109,717,139"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a4fd0fdc0ccc472a2d15c8d001f65d0f9" title="Compute the height of the point specified by the given index." alt="" coords="456,163,747,192"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="857,109,1076,139"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1179,109,1381,139"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#aa5ec6fafd63c6d99d095dfc58c47cd4e" title="Return the predecessor of the provided point index." alt="" coords="803,163,1131,192"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1Geometry2D.html#ae6c0f66accf4ecf31b0fd96437371626" title="Compute the distance from a point &quot;a&quot; to a line specified by two points &quot;B&quot; and &quot;C&quot;." alt="" coords="808,216,1125,245"/>
+<map id="multiscale::MinEnclosingTriangleFinder::advanceBToRightChain" name="multiscale::MinEnclosingTriangleFinder::advanceBToRightChain">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#af52c24da93e4660f043dbb0f92594a19" title="Advance the given index with one position." alt="" coords="305,5,471,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a075472a453bfcb0eedd06a4a185241fc" title="Return the succesor of the provided point index." alt="" coords="527,30,697,77"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="319,125,457,171"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a4fd0fdc0ccc472a2d15c8d001f65d0f9" title="Compute the height of the point specified by the given index." alt="" coords="305,194,471,241"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="543,125,681,171"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="752,125,891,171"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#aa5ec6fafd63c6d99d095dfc58c47cd4e" title="Return the predecessor of the provided point index." alt="" coords="521,194,703,241"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1Geometry2D.html#ae6c0f66accf4ecf31b0fd96437371626" title="Compute the distance from a point &quot;a&quot; to a line specified by two points &quot;B&quot; and &quot;C&quot;." alt="" coords="523,263,701,310"/>
 </map>

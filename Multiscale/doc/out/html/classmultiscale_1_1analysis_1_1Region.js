@@ -14,7 +14,5 @@ var classmultiscale_1_1analysis_1_1Region =
     [ "updateDensity", "classmultiscale_1_1analysis_1_1Region.html#a995bd4ac0452715ec75bdb8c6ae51914", null ],
     [ "updatePerimeter", "classmultiscale_1_1analysis_1_1Region.html#a58a4a22cb77fc6963592ec156458f310", null ],
     [ "validateInputValues", "classmultiscale_1_1analysis_1_1Region.html#a517b46fd89696f44086aafb1a9526995", null ],
-    [ "CONTOUR_CLOSED", "classmultiscale_1_1analysis_1_1Region.html#a52c0c66ccfe38dc19379abaeba529f19", null ],
-    [ "CONTOUR_ORIENTED", "classmultiscale_1_1analysis_1_1Region.html#a875a0f14dacf6904cabfa1f31020e6e2", null ],
     [ "polygon", "classmultiscale_1_1analysis_1_1Region.html#a40d1b47f30bb09c6a47521a968163b6d", null ]
 ];

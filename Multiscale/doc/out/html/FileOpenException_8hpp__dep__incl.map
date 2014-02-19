@@ -1,9 +1,9 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$Detector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/Detector.cpp" alt="" coords="5,83,571,112"/>
-<area shape="rect" id="node5" href="$MatFactory_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/MatFactory.cpp" alt="" coords="595,83,1176,112"/>
-<area shape="rect" id="node7" href="$CartesianToPolarConverter_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/circular/src/CartesianToPolarConverter.cpp" alt="" coords="1200,83,1859,112"/>
-<area shape="rect" id="node9" href="$PolarCsvToInputFilesConverter_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/circular/src/PolarCsvToInputFilesConverter.cpp" alt="" coords="1883,83,2568,112"/>
-<area shape="rect" id="node11" href="$CartesianToConcentrationsConverter_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/rectangular/src/CartesianToConcentrationsConverter.cpp" alt="" coords="2592,83,3331,112"/>
-<area shape="rect" id="node13" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/rectangular/src/RectangularCsvToInputFilesConverter.cpp" alt="" coords="3355,83,4101,112"/>
-<area shape="rect" id="node15" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/rectangular/src/RectangularEntityCsvToInputFilesConverter.cpp" alt="" coords="4125,83,4907,112"/>
+<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/exception/FileOpenException.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/exception/FileOpenException.hpp">
+<area shape="rect" id="node3" href="$Detector_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/Detector.cpp" alt="" coords="5,145,179,226"/>
+<area shape="rect" id="node5" href="$MatFactory_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/analysis/spatial\l/src/MatFactory.cpp" alt="" coords="203,145,376,226"/>
+<area shape="rect" id="node7" href="$CartesianToPolarConverter_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/circular/src\l/CartesianToPolarConverter.cpp" alt="" coords="400,145,608,226"/>
+<area shape="rect" id="node9" href="$PolarCsvToInputFilesConverter_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/circular/src\l/PolarCsvToInputFilesConverter.cpp" alt="" coords="632,145,867,226"/>
+<area shape="rect" id="node11" href="$CartesianToConcentrationsConverter_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/rectangular\l/src/CartesianToConcentrationsConverter.cpp" alt="" coords="891,145,1179,226"/>
+<area shape="rect" id="node13" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/rectangular\l/src/RectangularCsvToInputFilesConverter.cpp" alt="" coords="1203,145,1499,226"/>
+<area shape="rect" id="node15" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="/home/ovidiu/Repositories\l/git/multiscale/Multiscale\l/modules/video/rectangular\l/src/RectangularEntityCsvToInputFiles\lConverter.cpp" alt="" coords="1523,136,1771,235"/>
 </map>

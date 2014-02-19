@@ -1,18 +1,19 @@
-\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{\section{multiscale\-:\-:analysis\-:\-:\-Simulation\-Cluster\-Detector \-Class \-Reference}
+\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{\section{multiscale\-:\-:analysis\-:\-:Simulation\-Cluster\-Detector Class Reference}
 \label{classmultiscale_1_1analysis_1_1SimulationClusterDetector}\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
 }
 
 
-\-Class for detecting clusters in 2\-D images obtained from simulations.  
+Class for detecting clusters in 2\-D images obtained from simulations.  
 
 
 
 
-{\ttfamily \#include $<$\-Simulation\-Cluster\-Detector.\-hpp$>$}
+{\ttfamily \#include $<$Simulation\-Cluster\-Detector.\-hpp$>$}
 
 
 
-\-Inheritance diagram for multiscale\-:\-:analysis\-:\-:\-Simulation\-Cluster\-Detector\-:\nopagebreak
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Simulation\-Cluster\-Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,53 +22,54 @@
 \end{figure}
 
 
-\-Collaboration diagram for multiscale\-:\-:analysis\-:\-:\-Simulation\-Cluster\-Detector\-:\nopagebreak
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Simulation\-Cluster\-Detector\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=550pt]{classmultiscale_1_1analysis_1_1SimulationClusterDetector__coll__graph}
 \end{center}
 \end{figure}
-\subsection*{\-Public \-Member \-Functions}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a5ec24468129dfa9b6a7f38e11a78c69b}{\-Simulation\-Cluster\-Detector} (unsigned int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9d0a0fe5d9ea0f2516d07bf44b1da257}{height}, unsigned int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a4c66a82aa1749dce31c767bc4008d904}{width}, int max\-Pileup\-Number, double max\-Pileup\-Intensity, bool \hyperlink{classmultiscale_1_1analysis_1_1Detector_a4b42f796957efd6ee0b8cf7645494a65}{debug\-Mode}=false)
+\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a5ec24468129dfa9b6a7f38e11a78c69b}{Simulation\-Cluster\-Detector} (unsigned int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9d0a0fe5d9ea0f2516d07bf44b1da257}{height}, unsigned int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a4c66a82aa1749dce31c767bc4008d904}{width}, int max\-Pileup\-Number, double max\-Pileup\-Intensity, bool \hyperlink{classmultiscale_1_1analysis_1_1Detector_a4b42f796957efd6ee0b8cf7645494a65}{debug\-Mode}=false)
 \item 
 \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a8df6b5abd6d2dd48e691bf999d35dd43}{$\sim$\-Simulation\-Cluster\-Detector} ()
 \end{DoxyCompactItemize}
-\subsection*{\-Private \-Member \-Functions}
+\subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a1f5127621294426b6406985dccb292cd}{initialise\-Detector\-Specific\-Image\-Dependent\-Fields} () override
-\begin{DoxyCompactList}\small\item\em \-Initialise the image dependent values. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialise the image dependent values. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ae36c793acaa548cc3ce74f72621d8bd7}{initialise\-Thresholded\-Image} ()
-\begin{DoxyCompactList}\small\item\em \-Initialise the thresholded\-Image field. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_af3c2206724a69794e12f34fe7fe5082b}{detect\-Entities\-In\-Image} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{\-Entity} $>$ \&entities) override
-\begin{DoxyCompactList}\small\item\em \-Detect the entities in the image. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialise the thresholded\-Image field. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_af3c2206724a69794e12f34fe7fe5082b}{detect\-Entities\-In\-Image} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{Entity} $>$ \&entities) override
+\begin{DoxyCompactList}\small\item\em Detect the entities in the image. \end{DoxyCompactList}\item 
 bool \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a886031cb8d576c4cf380c1105eeee4d2}{is\-Entity\-At\-Position} (int x, int y)
-\begin{DoxyCompactList}\small\item\em \-Check if there is an entity in the image at the given position. \end{DoxyCompactList}\item 
-\-Point2f \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a083c8ff51e483d86744961aca1ae3551}{get\-Entity\-Centre\-Point} (int x, int y)
-\begin{DoxyCompactList}\small\item\em \-Get the point representing the centre of the entity. \end{DoxyCompactList}\item 
-vector$<$ \-Point2f $>$ \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ae51328d7fe0e477dea162c7e99da45c2}{get\-Entity\-Contour\-Points} (int x, int y)
-\begin{DoxyCompactList}\small\item\em \-Get the points representing the contour of the entity. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Check if there is an entity in the image at the given position. \end{DoxyCompactList}\item 
+Point2f \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a083c8ff51e483d86744961aca1ae3551}{get\-Entity\-Centre\-Point} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Get the point representing the centre of the entity. \end{DoxyCompactList}\item 
+vector$<$ Point2f $>$ \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ae51328d7fe0e477dea162c7e99da45c2}{get\-Entity\-Contour\-Points} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Get the points representing the contour of the entity. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a2252829af367a55af95bee3cf814b87e}{compute\-Pile\-Up\-Degree\-At\-Position} (int x, int y)
-\begin{DoxyCompactList}\small\item\em \-Compute the pile up degree at the given position. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compute the pile up degree at the given position. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a909e1e53836f1688ebe312c5f7fb70b5}{output\-Results\-To\-Image} () override
-\begin{DoxyCompactList}\small\item\em \-Dsiaply clusters on image. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a0e29be5f9a15899f710f48aaf6c049f0}{output\-Cluster\-To\-Image} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \&cluster, \-Scalar colour, \-Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
-\begin{DoxyCompactList}\small\item\em \-Display cluster on the image. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a8dc451d799404ba7ecd72d85d2f7e955}{output\-Cluster\-Shape} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \&cluster, \-Scalar colour, \-Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
-\begin{DoxyCompactList}\small\item\em \-Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9894288a54c8e3fdeff3917d81e2ad9b}{output\-Cluster\-Triangular\-Shape} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \&cluster, \-Scalar colour, \-Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
-\begin{DoxyCompactList}\small\item\em \-Draw the best matching triangular shape of the cluster on the image. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab7bfa2a55991a5708abfea7fa362214c}{output\-Cluster\-Rectangular\-Shape} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \&cluster, \-Scalar colour, \-Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
-\begin{DoxyCompactList}\small\item\em \-Draw the best matching rectangular shape of the cluster on the image. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab4e0ae4d5850be64ec2399d5c2c36828}{output\-Cluster\-Circular\-Shape} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \&cluster, \-Scalar colour, \-Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
-\begin{DoxyCompactList}\small\item\em \-Draw the best matching circular shape of the cluster on the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactList}\small\item\em Dsiaply clusters on image. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a0e29be5f9a15899f710f48aaf6c049f0}{output\-Cluster\-To\-Image} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \&cluster, Scalar colour, Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
+\begin{DoxyCompactList}\small\item\em Display cluster on the image. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a8dc451d799404ba7ecd72d85d2f7e955}{output\-Cluster\-Shape} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \&cluster, Scalar colour, Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
+\begin{DoxyCompactList}\small\item\em Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9894288a54c8e3fdeff3917d81e2ad9b}{output\-Cluster\-Triangular\-Shape} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \&cluster, Scalar colour, Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
+\begin{DoxyCompactList}\small\item\em Draw the best matching triangular shape of the cluster on the image. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab7bfa2a55991a5708abfea7fa362214c}{output\-Cluster\-Rectangular\-Shape} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \&cluster, Scalar colour, Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
+\begin{DoxyCompactList}\small\item\em Draw the best matching rectangular shape of the cluster on the image. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab4e0ae4d5850be64ec2399d5c2c36828}{output\-Cluster\-Circular\-Shape} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \&cluster, Scalar colour, Mat \&\hyperlink{classmultiscale_1_1analysis_1_1Detector_a523830a6cfe409694ce8327c3c736fbd}{image})
+\begin{DoxyCompactList}\small\item\em Draw the best matching circular shape of the cluster on the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\-Mat \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_aca2aae9914ef643a543a834e61b1cccf}{thresholded\-Image}
+Mat \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_aca2aae9914ef643a543a834e61b1cccf}{thresholded\-Image}
 \item 
 unsigned int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9d0a0fe5d9ea0f2516d07bf44b1da257}{height}
 \item 
@@ -77,32 +79,33 @@ double \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a2ba5
 \item 
 double \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9212da88b787b8f9791f27d913b6d05d}{entity\-Width}
 \end{DoxyCompactItemize}
-\subsection*{\-Static \-Private \-Attributes}
+\subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a460525b4359afb52b4bde2ebd600122c}{\-T\-H\-R\-E\-S\-H\-O\-L\-D} = 1
+static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a460525b4359afb52b4bde2ebd600122c}{T\-H\-R\-E\-S\-H\-O\-L\-D} = 1
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a32b52c0ce7f8a1c8da872aa1cf754317}{\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X} = 255
+static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a32b52c0ce7f8a1c8da872aa1cf754317}{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X} = 255
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ad161524f0da7d2414e616fff59f02118}{\-E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H} = 200
+static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ad161524f0da7d2414e616fff59f02118}{E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H} = 200
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a16d99d22863feed83960e6b9efe407a2}{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H} = 10
+static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a16d99d22863feed83960e6b9efe407a2}{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H} = 10
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a530922a3fad1e612062d17d07e2dc763}{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S} = -\/1
+static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a530922a3fad1e612062d17d07e2dc763}{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S} = -\/1
 \end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
-\subsection{\-Detailed \-Description}
-\-Class for detecting clusters in 2\-D images obtained from simulations. 
+\subsection{Detailed Description}
+Class for detecting clusters in 2\-D images obtained from simulations. 
 
-\-Definition at line 18 of file \-Simulation\-Cluster\-Detector.\-hpp.
+Definition at line 18 of file Simulation\-Cluster\-Detector.\-hpp.
 
 
 
-\subsection{\-Constructor \& \-Destructor \-Documentation}
-\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a5ec24468129dfa9b6a7f38e11a78c69b}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!\-Simulation\-Cluster\-Detector@{\-Simulation\-Cluster\-Detector}}
-\index{\-Simulation\-Cluster\-Detector@{\-Simulation\-Cluster\-Detector}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{\-Simulation\-Cluster\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Simulation\-Cluster\-Detector\-::\-Simulation\-Cluster\-Detector} (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a5ec24468129dfa9b6a7f38e11a78c69b}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!Simulation\-Cluster\-Detector@{Simulation\-Cluster\-Detector}}
+\index{Simulation\-Cluster\-Detector@{Simulation\-Cluster\-Detector}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
+\subsubsection[{Simulation\-Cluster\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\-Cluster\-Detector\-::\-Simulation\-Cluster\-Detector (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{height, }
 \item[{unsigned int}]{width, }
@@ -112,74 +115,75 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a5ec24468129dfa9b6a7f38e11a78c69b}
 
-\begin{DoxyParams}{\-Parameters}
-{\em height} & \-Height of the grid used in the simulation \\
+\begin{DoxyParams}{Parameters}
+{\em height} & Height of the grid used in the simulation \\
 \hline
-{\em width} & \-Width of the grid used in the simulation \\
+{\em width} & Width of the grid used in the simulation \\
 \hline
-{\em debug\-Mode} & \-Flag indicating if detector should run in debug mode or not \\
+{\em debug\-Mode} & Flag indicating if detector should run in debug mode or not \\
 \hline
-{\em max\-Pileup\-Number} & \-The maximum number of entities which can occupy a grid position at the same time \\
+{\em max\-Pileup\-Number} & The maximum number of entities which can occupy a grid position at the same time \\
 \hline
-{\em max\-Pileup\-Intensity} & \-The grayscale intensity of a maximally piled up grid position \\
+{\em max\-Pileup\-Intensity} & The grayscale intensity of a maximally piled up grid position \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 10 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 10 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References entity\-Height, entity\-Width, height, and width.
+References entity\-Height, entity\-Width, height, and width.
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a8df6b5abd6d2dd48e691bf999d35dd43}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!$\sim$\-Simulation\-Cluster\-Detector@{$\sim$\-Simulation\-Cluster\-Detector}}
 \index{$\sim$\-Simulation\-Cluster\-Detector@{$\sim$\-Simulation\-Cluster\-Detector}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{$\sim$\-Simulation\-Cluster\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Simulation\-Cluster\-Detector\-::$\sim$\-Simulation\-Cluster\-Detector} (
+\subsubsection[{$\sim$\-Simulation\-Cluster\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}Simulation\-Cluster\-Detector\-::$\sim$\-Simulation\-Cluster\-Detector (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a8df6b5abd6d2dd48e691bf999d35dd43}
 
 
-\-Definition at line 20 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 20 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\subsection{\-Member \-Function \-Documentation}
+\subsection{Member Function Documentation}
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a2252829af367a55af95bee3cf814b87e}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!compute\-Pile\-Up\-Degree\-At\-Position@{compute\-Pile\-Up\-Degree\-At\-Position}}
 \index{compute\-Pile\-Up\-Degree\-At\-Position@{compute\-Pile\-Up\-Degree\-At\-Position}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{compute\-Pile\-Up\-Degree\-At\-Position}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-Simulation\-Cluster\-Detector\-::compute\-Pile\-Up\-Degree\-At\-Position} (
+\subsubsection[{compute\-Pile\-Up\-Degree\-At\-Position}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Simulation\-Cluster\-Detector\-::compute\-Pile\-Up\-Degree\-At\-Position (
 \begin{DoxyParamCaption}
 \item[{int}]{x, }
 \item[{int}]{y}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a2252829af367a55af95bee3cf814b87e}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a2252829af367a55af95bee3cf814b87e}
 
 
-\-Compute the pile up degree at the given position. 
+Compute the pile up degree at the given position. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em x} & \-Coordinate for \-Ox axis \\
+\begin{DoxyParams}{Parameters}
+{\em x} & Coordinate for Ox axis \\
 \hline
-{\em y} & \-Coordinate for \-Oy axis \\
+{\em y} & Coordinate for Oy axis \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 76 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 76 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References entity\-Height, multiscale\-::analysis\-::\-Cluster\-Detector\-::entity\-Pileup\-Degree, entity\-Width, and multiscale\-::analysis\-::\-Detector\-::image.
+References entity\-Height, multiscale\-::analysis\-::\-Cluster\-Detector\-::entity\-Pileup\-Degree, entity\-Width, and multiscale\-::analysis\-::\-Detector\-::image.
 
 
 
-\-Referenced by detect\-Entities\-In\-Image().
+Referenced by detect\-Entities\-In\-Image().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -190,37 +194,38 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_af3c2206724a69794e12f34fe7fe5082b}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!detect\-Entities\-In\-Image@{detect\-Entities\-In\-Image}}
 \index{detect\-Entities\-In\-Image@{detect\-Entities\-In\-Image}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{detect\-Entities\-In\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulation\-Cluster\-Detector\-::detect\-Entities\-In\-Image} (
+\subsubsection[{detect\-Entities\-In\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-Cluster\-Detector\-::detect\-Entities\-In\-Image (
 \begin{DoxyParamCaption}
-\item[{vector$<$ {\bf \-Entity} $>$ \&}]{entities}
+\item[{vector$<$ {\bf Entity} $>$ \&}]{entities}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}override, private, virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_af3c2206724a69794e12f34fe7fe5082b}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_af3c2206724a69794e12f34fe7fe5082b}
 
 
-\-Detect the entities in the image. 
+Detect the entities in the image. 
 
-\-Detect the entities in the image, compute their centre point and degree of pile up
+Detect the entities in the image, compute their centre point and degree of pile up
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em entities} & \-Entities detected in the image \\
+\begin{DoxyParams}{Parameters}
+{\em entities} & Entities detected in the image \\
 \hline
 \end{DoxyParams}
 
 
-\-Implements \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a115f47c1f0855886ef5ca48acc111843}{multiscale\-::analysis\-::\-Cluster\-Detector}.
+Implements \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a115f47c1f0855886ef5ca48acc111843}{multiscale\-::analysis\-::\-Cluster\-Detector}.
 
 
 
-\-Definition at line 33 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 33 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References compute\-Pile\-Up\-Degree\-At\-Position(), entity\-Height, entity\-Width, get\-Entity\-Centre\-Point(), get\-Entity\-Contour\-Points(), height, is\-Entity\-At\-Position(), and width.
+References compute\-Pile\-Up\-Degree\-At\-Position(), entity\-Height, entity\-Width, get\-Entity\-Centre\-Point(), get\-Entity\-Contour\-Points(), height, is\-Entity\-At\-Position(), and width.
 
 
 
-\-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -231,38 +236,39 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a083c8ff51e483d86744961aca1ae3551}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!get\-Entity\-Centre\-Point@{get\-Entity\-Centre\-Point}}
 \index{get\-Entity\-Centre\-Point@{get\-Entity\-Centre\-Point}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{get\-Entity\-Centre\-Point}]{\setlength{\rightskip}{0pt plus 5cm}\-Point2f {\bf \-Simulation\-Cluster\-Detector\-::get\-Entity\-Centre\-Point} (
+\subsubsection[{get\-Entity\-Centre\-Point}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Simulation\-Cluster\-Detector\-::get\-Entity\-Centre\-Point (
 \begin{DoxyParamCaption}
 \item[{int}]{x, }
 \item[{int}]{y}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a083c8ff51e483d86744961aca1ae3551}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a083c8ff51e483d86744961aca1ae3551}
 
 
-\-Get the point representing the centre of the entity. 
+Get the point representing the centre of the entity. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em x} & \-Ox coordinate \\
+\begin{DoxyParams}{Parameters}
+{\em x} & Ox coordinate \\
 \hline
-{\em y} & \-Oy coordinate \\
+{\em y} & Oy coordinate \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 57 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 57 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References entity\-Height, and entity\-Width.
+References entity\-Height, and entity\-Width.
 
 
 
-\-Referenced by detect\-Entities\-In\-Image().
+Referenced by detect\-Entities\-In\-Image().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -273,38 +279,39 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ae51328d7fe0e477dea162c7e99da45c2}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!get\-Entity\-Contour\-Points@{get\-Entity\-Contour\-Points}}
 \index{get\-Entity\-Contour\-Points@{get\-Entity\-Contour\-Points}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{get\-Entity\-Contour\-Points}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \-Point2f $>$ {\bf \-Simulation\-Cluster\-Detector\-::get\-Entity\-Contour\-Points} (
+\subsubsection[{get\-Entity\-Contour\-Points}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Point2f $>$ Simulation\-Cluster\-Detector\-::get\-Entity\-Contour\-Points (
 \begin{DoxyParamCaption}
 \item[{int}]{x, }
 \item[{int}]{y}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ae51328d7fe0e477dea162c7e99da45c2}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ae51328d7fe0e477dea162c7e99da45c2}
 
 
-\-Get the points representing the contour of the entity. 
+Get the points representing the contour of the entity. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em x} & \-Ox coordinate \\
+\begin{DoxyParams}{Parameters}
+{\em x} & Ox coordinate \\
 \hline
-{\em y} & \-Oy coordinate \\
+{\em y} & Oy coordinate \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 64 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 64 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References entity\-Height, and entity\-Width.
+References entity\-Height, and entity\-Width.
 
 
 
-\-Referenced by detect\-Entities\-In\-Image().
+Referenced by detect\-Entities\-In\-Image().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -315,30 +322,31 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a1f5127621294426b6406985dccb292cd}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!initialise\-Detector\-Specific\-Image\-Dependent\-Fields@{initialise\-Detector\-Specific\-Image\-Dependent\-Fields}}
 \index{initialise\-Detector\-Specific\-Image\-Dependent\-Fields@{initialise\-Detector\-Specific\-Image\-Dependent\-Fields}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{initialise\-Detector\-Specific\-Image\-Dependent\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulation\-Cluster\-Detector\-::initialise\-Detector\-Specific\-Image\-Dependent\-Fields} (
+\subsubsection[{initialise\-Detector\-Specific\-Image\-Dependent\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-Cluster\-Detector\-::initialise\-Detector\-Specific\-Image\-Dependent\-Fields (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}override, private, virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a1f5127621294426b6406985dccb292cd}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a1f5127621294426b6406985dccb292cd}
 
 
-\-Initialise the image dependent values. 
-
-
-
-\-Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_ab511a3cbe1766a33cb24f61c6fff7253}{multiscale\-::analysis\-::\-Detector}.
+Initialise the image dependent values. 
 
 
 
-\-Definition at line 22 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_ab511a3cbe1766a33cb24f61c6fff7253}{multiscale\-::analysis\-::\-Detector}.
 
 
 
-\-References entity\-Height, entity\-Width, height, multiscale\-::analysis\-::\-Detector\-::image, initialise\-Thresholded\-Image(), and width.
+Definition at line 22 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-Here is the call graph for this function\-:\nopagebreak
+References entity\-Height, entity\-Width, height, multiscale\-::analysis\-::\-Detector\-::image, initialise\-Thresholded\-Image(), and width.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -349,30 +357,31 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ae36c793acaa548cc3ce74f72621d8bd7}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!initialise\-Thresholded\-Image@{initialise\-Thresholded\-Image}}
 \index{initialise\-Thresholded\-Image@{initialise\-Thresholded\-Image}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{initialise\-Thresholded\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulation\-Cluster\-Detector\-::initialise\-Thresholded\-Image} (
+\subsubsection[{initialise\-Thresholded\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-Cluster\-Detector\-::initialise\-Thresholded\-Image (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ae36c793acaa548cc3ce74f72621d8bd7}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ae36c793acaa548cc3ce74f72621d8bd7}
 
 
-\-Initialise the thresholded\-Image field. 
-
-
-
-\-Definition at line 29 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Initialise the thresholded\-Image field. 
 
 
 
-\-References multiscale\-::analysis\-::\-Detector\-::image, \-T\-H\-R\-E\-S\-H\-O\-L\-D, \-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X, and thresholded\-Image.
+Definition at line 29 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-Referenced by initialise\-Detector\-Specific\-Image\-Dependent\-Fields().
+References multiscale\-::analysis\-::\-Detector\-::image, T\-H\-R\-E\-S\-H\-O\-L\-D, T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X, and thresholded\-Image.
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Referenced by initialise\-Detector\-Specific\-Image\-Dependent\-Fields().
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -383,38 +392,39 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a886031cb8d576c4cf380c1105eeee4d2}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!is\-Entity\-At\-Position@{is\-Entity\-At\-Position}}
 \index{is\-Entity\-At\-Position@{is\-Entity\-At\-Position}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{is\-Entity\-At\-Position}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Simulation\-Cluster\-Detector\-::is\-Entity\-At\-Position} (
+\subsubsection[{is\-Entity\-At\-Position}]{\setlength{\rightskip}{0pt plus 5cm}bool Simulation\-Cluster\-Detector\-::is\-Entity\-At\-Position (
 \begin{DoxyParamCaption}
 \item[{int}]{x, }
 \item[{int}]{y}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a886031cb8d576c4cf380c1105eeee4d2}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a886031cb8d576c4cf380c1105eeee4d2}
 
 
-\-Check if there is an entity in the image at the given position. 
+Check if there is an entity in the image at the given position. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em x} & \-Coordinate for \-Ox axis \\
+\begin{DoxyParams}{Parameters}
+{\em x} & Coordinate for Ox axis \\
 \hline
-{\em y} & \-Coordinate for \-Oy axis \\
+{\em y} & Coordinate for Oy axis \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 49 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 49 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References \-E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H, entity\-Height, entity\-Width, and thresholded\-Image.
+References E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H, entity\-Height, entity\-Width, and thresholded\-Image.
 
 
 
-\-Referenced by detect\-Entities\-In\-Image().
+Referenced by detect\-Entities\-In\-Image().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -425,41 +435,42 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab4e0ae4d5850be64ec2399d5c2c36828}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!output\-Cluster\-Circular\-Shape@{output\-Cluster\-Circular\-Shape}}
 \index{output\-Cluster\-Circular\-Shape@{output\-Cluster\-Circular\-Shape}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{output\-Cluster\-Circular\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulation\-Cluster\-Detector\-::output\-Cluster\-Circular\-Shape} (
+\subsubsection[{output\-Cluster\-Circular\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-Cluster\-Detector\-::output\-Cluster\-Circular\-Shape (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Cluster} \&}]{cluster, }
-\item[{\-Scalar}]{colour, }
-\item[{\-Mat \&}]{image}
+\item[{{\bf Cluster} \&}]{cluster, }
+\item[{Scalar}]{colour, }
+\item[{Mat \&}]{image}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab4e0ae4d5850be64ec2399d5c2c36828}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab4e0ae4d5850be64ec2399d5c2c36828}
 
 
-\-Draw the best matching circular shape of the cluster on the image. 
+Draw the best matching circular shape of the cluster on the image. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \\
+\begin{DoxyParams}{Parameters}
+{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \\
 \hline
-{\em colour} & \-Colour associated to all entities in the cluster \\
+{\em colour} & Colour associated to all entities in the cluster \\
 \hline
-{\em image} & \-The image on which to display the cluster related information \\
+{\em image} & The image on which to display the cluster related information \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 152 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 152 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References \-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H, multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Centre(), and multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Radius().
+References D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H, multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Centre(), and multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Circle\-Radius().
 
 
 
-\-Referenced by output\-Cluster\-Shape().
+Referenced by output\-Cluster\-Shape().
 
 
 
-\-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -470,7 +481,8 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -481,41 +493,42 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab7bfa2a55991a5708abfea7fa362214c}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!output\-Cluster\-Rectangular\-Shape@{output\-Cluster\-Rectangular\-Shape}}
 \index{output\-Cluster\-Rectangular\-Shape@{output\-Cluster\-Rectangular\-Shape}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{output\-Cluster\-Rectangular\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulation\-Cluster\-Detector\-::output\-Cluster\-Rectangular\-Shape} (
+\subsubsection[{output\-Cluster\-Rectangular\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-Cluster\-Detector\-::output\-Cluster\-Rectangular\-Shape (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Cluster} \&}]{cluster, }
-\item[{\-Scalar}]{colour, }
-\item[{\-Mat \&}]{image}
+\item[{{\bf Cluster} \&}]{cluster, }
+\item[{Scalar}]{colour, }
+\item[{Mat \&}]{image}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab7bfa2a55991a5708abfea7fa362214c}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ab7bfa2a55991a5708abfea7fa362214c}
 
 
-\-Draw the best matching rectangular shape of the cluster on the image. 
+Draw the best matching rectangular shape of the cluster on the image. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \\
+\begin{DoxyParams}{Parameters}
+{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \\
 \hline
-{\em colour} & \-Colour associated to all entities in the cluster \\
+{\em colour} & Colour associated to all entities in the cluster \\
 \hline
-{\em image} & \-The image on which to display the cluster related information \\
+{\em image} & The image on which to display the cluster related information \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 142 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 142 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References \-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H, and multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Rect().
+References D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H, and multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Rect().
 
 
 
-\-Referenced by output\-Cluster\-Shape().
+Referenced by output\-Cluster\-Shape().
 
 
 
-\-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -526,7 +539,8 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -537,41 +551,42 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a8dc451d799404ba7ecd72d85d2f7e955}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!output\-Cluster\-Shape@{output\-Cluster\-Shape}}
 \index{output\-Cluster\-Shape@{output\-Cluster\-Shape}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{output\-Cluster\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulation\-Cluster\-Detector\-::output\-Cluster\-Shape} (
+\subsubsection[{output\-Cluster\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-Cluster\-Detector\-::output\-Cluster\-Shape (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Cluster} \&}]{cluster, }
-\item[{\-Scalar}]{colour, }
-\item[{\-Mat \&}]{image}
+\item[{{\bf Cluster} \&}]{cluster, }
+\item[{Scalar}]{colour, }
+\item[{Mat \&}]{image}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a8dc451d799404ba7ecd72d85d2f7e955}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a8dc451d799404ba7ecd72d85d2f7e955}
 
 
-\-Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image. 
+Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \\
+\begin{DoxyParams}{Parameters}
+{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \\
 \hline
-{\em colour} & \-Colour associated to all entities in the cluster \\
+{\em colour} & Colour associated to all entities in the cluster \\
 \hline
-{\em image} & \-The image on which to display the cluster related information \\
+{\em image} & The image on which to display the cluster related information \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 110 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 110 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References multiscale\-::analysis\-::\-Circle, multiscale\-::analysis\-::\-Cluster\-::\-E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-S\-H\-A\-P\-E, multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Shape(), \-M\-S\-\_\-throw, output\-Cluster\-Circular\-Shape(), output\-Cluster\-Rectangular\-Shape(), output\-Cluster\-Triangular\-Shape(), multiscale\-::analysis\-::\-Rectangle, and multiscale\-::analysis\-::\-Triangle.
+References multiscale\-::analysis\-::\-Cluster\-::\-E\-R\-R\-\_\-\-U\-N\-D\-E\-F\-I\-N\-E\-D\-\_\-\-S\-H\-A\-P\-E, multiscale\-::analysis\-::\-Spatial\-Entity\-Pseudo3\-D\-::get\-Shape(), M\-S\-\_\-throw, output\-Cluster\-Circular\-Shape(), output\-Cluster\-Rectangular\-Shape(), and output\-Cluster\-Triangular\-Shape().
 
 
 
-\-Referenced by output\-Cluster\-To\-Image().
+Referenced by output\-Cluster\-To\-Image().
 
 
 
-\-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -582,7 +597,8 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -593,41 +609,42 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a0e29be5f9a15899f710f48aaf6c049f0}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!output\-Cluster\-To\-Image@{output\-Cluster\-To\-Image}}
 \index{output\-Cluster\-To\-Image@{output\-Cluster\-To\-Image}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{output\-Cluster\-To\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulation\-Cluster\-Detector\-::output\-Cluster\-To\-Image} (
+\subsubsection[{output\-Cluster\-To\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-Cluster\-Detector\-::output\-Cluster\-To\-Image (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Cluster} \&}]{cluster, }
-\item[{\-Scalar}]{colour, }
-\item[{\-Mat \&}]{image}
+\item[{{\bf Cluster} \&}]{cluster, }
+\item[{Scalar}]{colour, }
+\item[{Mat \&}]{image}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a0e29be5f9a15899f710f48aaf6c049f0}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a0e29be5f9a15899f710f48aaf6c049f0}
 
 
-\-Display cluster on the image. 
+Display cluster on the image. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \\
+\begin{DoxyParams}{Parameters}
+{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \\
 \hline
-{\em colour} & \-Colour associated to all entities in the cluster \\
+{\em colour} & Colour associated to all entities in the cluster \\
 \hline
-{\em image} & \-The image on which to display the cluster related information \\
+{\em image} & The image on which to display the cluster related information \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 100 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 100 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References \-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S, \-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H, multiscale\-::analysis\-::\-Cluster\-::get\-Entities(), and output\-Cluster\-Shape().
+References D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S, D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H, multiscale\-::analysis\-::\-Cluster\-::get\-Entities(), and output\-Cluster\-Shape().
 
 
 
-\-Referenced by output\-Results\-To\-Image().
+Referenced by output\-Results\-To\-Image().
 
 
 
-\-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -638,7 +655,8 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -649,41 +667,42 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9894288a54c8e3fdeff3917d81e2ad9b}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!output\-Cluster\-Triangular\-Shape@{output\-Cluster\-Triangular\-Shape}}
 \index{output\-Cluster\-Triangular\-Shape@{output\-Cluster\-Triangular\-Shape}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{output\-Cluster\-Triangular\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulation\-Cluster\-Detector\-::output\-Cluster\-Triangular\-Shape} (
+\subsubsection[{output\-Cluster\-Triangular\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-Cluster\-Detector\-::output\-Cluster\-Triangular\-Shape (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Cluster} \&}]{cluster, }
-\item[{\-Scalar}]{colour, }
-\item[{\-Mat \&}]{image}
+\item[{{\bf Cluster} \&}]{cluster, }
+\item[{Scalar}]{colour, }
+\item[{Mat \&}]{image}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9894288a54c8e3fdeff3917d81e2ad9b}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9894288a54c8e3fdeff3917d81e2ad9b}
 
 
-\-Draw the best matching triangular shape of the cluster on the image. 
+Draw the best matching triangular shape of the cluster on the image. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \\
+\begin{DoxyParams}{Parameters}
+{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \\
 \hline
-{\em colour} & \-Colour associated to all entities in the cluster \\
+{\em colour} & Colour associated to all entities in the cluster \\
 \hline
-{\em image} & \-The image on which to display the cluster related information \\
+{\em image} & The image on which to display the cluster related information \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 132 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Definition at line 132 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-References \-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H, and multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Triangle().
+References D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H, and multiscale\-::analysis\-::\-Cluster\-::get\-Min\-Area\-Enclosing\-Triangle().
 
 
 
-\-Referenced by output\-Cluster\-Shape().
+Referenced by output\-Cluster\-Shape().
 
 
 
-\-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -694,7 +713,8 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -705,30 +725,31 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a909e1e53836f1688ebe312c5f7fb70b5}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!output\-Results\-To\-Image@{output\-Results\-To\-Image}}
 \index{output\-Results\-To\-Image@{output\-Results\-To\-Image}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{output\-Results\-To\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Simulation\-Cluster\-Detector\-::output\-Results\-To\-Image} (
+\subsubsection[{output\-Results\-To\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Simulation\-Cluster\-Detector\-::output\-Results\-To\-Image (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}override, private, virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a909e1e53836f1688ebe312c5f7fb70b5}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a909e1e53836f1688ebe312c5f7fb70b5}
 
 
-\-Dsiaply clusters on image. 
-
-
-
-\-Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a5d10b68605d5a1711527b4b896b3b2cc}{multiscale\-::analysis\-::\-Detector}.
+Dsiaply clusters on image. 
 
 
 
-\-Definition at line 85 of file \-Simulation\-Cluster\-Detector.\-cpp.
+Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a5d10b68605d5a1711527b4b896b3b2cc}{multiscale\-::analysis\-::\-Detector}.
 
 
 
-\-References multiscale\-::analysis\-::\-Cluster\-Detector\-::clusters, multiscale\-::\-R\-G\-B\-Colour\-Generator\-::generate(), multiscale\-::analysis\-::\-Detector\-::image, output\-Cluster\-To\-Image(), and multiscale\-::analysis\-::\-Detector\-::output\-Image.
+Definition at line 85 of file Simulation\-Cluster\-Detector.\-cpp.
 
 
 
-\-Here is the call graph for this function\-:\nopagebreak
+References multiscale\-::analysis\-::\-Cluster\-Detector\-::clusters, multiscale\-::\-R\-G\-B\-Colour\-Generator\-::generate(), multiscale\-::analysis\-::\-Detector\-::image, output\-Cluster\-To\-Image(), and multiscale\-::analysis\-::\-Detector\-::output\-Image.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -739,120 +760,120 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDete
 
 
 
-\subsection{\-Member \-Data \-Documentation}
-\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a530922a3fad1e612062d17d07e2dc763}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S@{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}}
-\index{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S@{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Simulation\-Cluster\-Detector\-::\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S} = -\/1\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a530922a3fad1e612062d17d07e2dc763}
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a530922a3fad1e612062d17d07e2dc763}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S@{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}}
+\index{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S@{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
+\subsubsection[{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}const int Simulation\-Cluster\-Detector\-::\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-T\-H\-I\-C\-K\-N\-E\-S\-S = -\/1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a530922a3fad1e612062d17d07e2dc763}
 
 
-\-Definition at line 142 of file \-Simulation\-Cluster\-Detector.\-hpp.
-
-
-
-\-Referenced by output\-Cluster\-To\-Image().
-
-\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a16d99d22863feed83960e6b9efe407a2}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H@{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H}}
-\index{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H@{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Simulation\-Cluster\-Detector\-::\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H} = 10\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a16d99d22863feed83960e6b9efe407a2}
-
-
-\-Definition at line 141 of file \-Simulation\-Cluster\-Detector.\-hpp.
+Definition at line 142 of file Simulation\-Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by output\-Cluster\-Circular\-Shape(), output\-Cluster\-Rectangular\-Shape(), output\-Cluster\-To\-Image(), and output\-Cluster\-Triangular\-Shape().
+Referenced by output\-Cluster\-To\-Image().
 
-\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ad161524f0da7d2414e616fff59f02118}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!\-E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H@{\-E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H}}
-\index{\-E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H@{\-E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{\-E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Simulation\-Cluster\-Detector\-::\-E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H} = 200\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ad161524f0da7d2414e616fff59f02118}
-
-
-\-Definition at line 139 of file \-Simulation\-Cluster\-Detector.\-hpp.
+\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a16d99d22863feed83960e6b9efe407a2}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H@{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H}}
+\index{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H@{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
+\subsubsection[{D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int Simulation\-Cluster\-Detector\-::\-D\-A\-T\-A\-P\-O\-I\-N\-T\-\_\-\-W\-I\-D\-T\-H = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a16d99d22863feed83960e6b9efe407a2}
 
 
+Definition at line 141 of file Simulation\-Cluster\-Detector.\-hpp.
 
-\-Referenced by is\-Entity\-At\-Position().
+
+
+Referenced by output\-Cluster\-Circular\-Shape(), output\-Cluster\-Rectangular\-Shape(), output\-Cluster\-To\-Image(), and output\-Cluster\-Triangular\-Shape().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ad161524f0da7d2414e616fff59f02118}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H@{E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H}}
+\index{E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H@{E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
+\subsubsection[{E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}const int Simulation\-Cluster\-Detector\-::\-E\-N\-T\-I\-T\-Y\-\_\-\-T\-H\-R\-E\-S\-H = 200\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_ad161524f0da7d2414e616fff59f02118}
+
+
+Definition at line 139 of file Simulation\-Cluster\-Detector.\-hpp.
+
+
+
+Referenced by is\-Entity\-At\-Position().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a2ba5c2738d32f71ccaacba4129b7bcfc}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!entity\-Height@{entity\-Height}}
 \index{entity\-Height@{entity\-Height}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{entity\-Height}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::entity\-Height}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a2ba5c2738d32f71ccaacba4129b7bcfc}
-\-Height of an entity 
+\subsubsection[{entity\-Height}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::entity\-Height\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a2ba5c2738d32f71ccaacba4129b7bcfc}
+Height of an entity 
 
-\-Definition at line 27 of file \-Simulation\-Cluster\-Detector.\-hpp.
+Definition at line 27 of file Simulation\-Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by compute\-Pile\-Up\-Degree\-At\-Position(), detect\-Entities\-In\-Image(), get\-Entity\-Centre\-Point(), get\-Entity\-Contour\-Points(), initialise\-Detector\-Specific\-Image\-Dependent\-Fields(), is\-Entity\-At\-Position(), and \-Simulation\-Cluster\-Detector().
+Referenced by compute\-Pile\-Up\-Degree\-At\-Position(), detect\-Entities\-In\-Image(), get\-Entity\-Centre\-Point(), get\-Entity\-Contour\-Points(), initialise\-Detector\-Specific\-Image\-Dependent\-Fields(), is\-Entity\-At\-Position(), and Simulation\-Cluster\-Detector().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9212da88b787b8f9791f27d913b6d05d}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!entity\-Width@{entity\-Width}}
 \index{entity\-Width@{entity\-Width}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{entity\-Width}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::entity\-Width}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9212da88b787b8f9791f27d913b6d05d}
-\-Width of an entity 
+\subsubsection[{entity\-Width}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::entity\-Width\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9212da88b787b8f9791f27d913b6d05d}
+Width of an entity 
 
-\-Definition at line 28 of file \-Simulation\-Cluster\-Detector.\-hpp.
+Definition at line 28 of file Simulation\-Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by compute\-Pile\-Up\-Degree\-At\-Position(), detect\-Entities\-In\-Image(), get\-Entity\-Centre\-Point(), get\-Entity\-Contour\-Points(), initialise\-Detector\-Specific\-Image\-Dependent\-Fields(), is\-Entity\-At\-Position(), and \-Simulation\-Cluster\-Detector().
+Referenced by compute\-Pile\-Up\-Degree\-At\-Position(), detect\-Entities\-In\-Image(), get\-Entity\-Centre\-Point(), get\-Entity\-Contour\-Points(), initialise\-Detector\-Specific\-Image\-Dependent\-Fields(), is\-Entity\-At\-Position(), and Simulation\-Cluster\-Detector().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9d0a0fe5d9ea0f2516d07bf44b1da257}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!height@{height}}
 \index{height@{height}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::height}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9d0a0fe5d9ea0f2516d07bf44b1da257}
-\-Height of the grid used in the simulation 
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::height\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a9d0a0fe5d9ea0f2516d07bf44b1da257}
+Height of the grid used in the simulation 
 
-\-Definition at line 24 of file \-Simulation\-Cluster\-Detector.\-hpp.
-
-
-
-\-Referenced by detect\-Entities\-In\-Image(), initialise\-Detector\-Specific\-Image\-Dependent\-Fields(), and \-Simulation\-Cluster\-Detector().
-
-\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a460525b4359afb52b4bde2ebd600122c}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!\-T\-H\-R\-E\-S\-H\-O\-L\-D@{\-T\-H\-R\-E\-S\-H\-O\-L\-D}}
-\index{\-T\-H\-R\-E\-S\-H\-O\-L\-D@{\-T\-H\-R\-E\-S\-H\-O\-L\-D}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{\-T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Simulation\-Cluster\-Detector\-::\-T\-H\-R\-E\-S\-H\-O\-L\-D} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a460525b4359afb52b4bde2ebd600122c}
-
-
-\-Definition at line 136 of file \-Simulation\-Cluster\-Detector.\-hpp.
+Definition at line 24 of file Simulation\-Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by initialise\-Thresholded\-Image().
+Referenced by detect\-Entities\-In\-Image(), initialise\-Detector\-Specific\-Image\-Dependent\-Fields(), and Simulation\-Cluster\-Detector().
 
-\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a32b52c0ce7f8a1c8da872aa1cf754317}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X@{\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}}
-\index{\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X@{\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Simulation\-Cluster\-Detector\-::\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X} = 255\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a32b52c0ce7f8a1c8da872aa1cf754317}
-
-
-\-Definition at line 137 of file \-Simulation\-Cluster\-Detector.\-hpp.
+\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a460525b4359afb52b4bde2ebd600122c}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!T\-H\-R\-E\-S\-H\-O\-L\-D@{T\-H\-R\-E\-S\-H\-O\-L\-D}}
+\index{T\-H\-R\-E\-S\-H\-O\-L\-D@{T\-H\-R\-E\-S\-H\-O\-L\-D}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
+\subsubsection[{T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}const int Simulation\-Cluster\-Detector\-::\-T\-H\-R\-E\-S\-H\-O\-L\-D = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a460525b4359afb52b4bde2ebd600122c}
 
 
+Definition at line 136 of file Simulation\-Cluster\-Detector.\-hpp.
 
-\-Referenced by initialise\-Thresholded\-Image().
+
+
+Referenced by initialise\-Thresholded\-Image().
+
+\hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a32b52c0ce7f8a1c8da872aa1cf754317}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X@{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}}
+\index{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X@{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
+\subsubsection[{T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Simulation\-Cluster\-Detector\-::\-T\-H\-R\-E\-S\-H\-O\-L\-D\-\_\-\-M\-A\-X = 255\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a32b52c0ce7f8a1c8da872aa1cf754317}
+
+
+Definition at line 137 of file Simulation\-Cluster\-Detector.\-hpp.
+
+
+
+Referenced by initialise\-Thresholded\-Image().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_aca2aae9914ef643a543a834e61b1cccf}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!thresholded\-Image@{thresholded\-Image}}
 \index{thresholded\-Image@{thresholded\-Image}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{thresholded\-Image}]{\setlength{\rightskip}{0pt plus 5cm}\-Mat {\bf multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::thresholded\-Image}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_aca2aae9914ef643a543a834e61b1cccf}
-\-Thresholded version of the image 
+\subsubsection[{thresholded\-Image}]{\setlength{\rightskip}{0pt plus 5cm}Mat multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::thresholded\-Image\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_aca2aae9914ef643a543a834e61b1cccf}
+Thresholded version of the image 
 
-\-Definition at line 22 of file \-Simulation\-Cluster\-Detector.\-hpp.
+Definition at line 22 of file Simulation\-Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by initialise\-Thresholded\-Image(), and is\-Entity\-At\-Position().
+Referenced by initialise\-Thresholded\-Image(), and is\-Entity\-At\-Position().
 
 \hypertarget{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a4c66a82aa1749dce31c767bc4008d904}{\index{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}!width@{width}}
 \index{width@{width}!multiscale::analysis::SimulationClusterDetector@{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}}
-\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::width}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a4c66a82aa1749dce31c767bc4008d904}
-\-Width of the grid used in the simulation 
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::width\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1SimulationClusterDetector_a4c66a82aa1749dce31c767bc4008d904}
+Width of the grid used in the simulation 
 
-\-Definition at line 25 of file \-Simulation\-Cluster\-Detector.\-hpp.
-
-
-
-\-Referenced by detect\-Entities\-In\-Image(), initialise\-Detector\-Specific\-Image\-Dependent\-Fields(), and \-Simulation\-Cluster\-Detector().
+Definition at line 25 of file Simulation\-Cluster\-Detector.\-hpp.
 
 
 
-\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+Referenced by detect\-Entities\-In\-Image(), initialise\-Detector\-Specific\-Image\-Dependent\-Fields(), and Simulation\-Cluster\-Detector().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/cluster/\hyperlink{SimulationClusterDetector_8hpp}{\-Simulation\-Cluster\-Detector.\-hpp}\item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/cluster/\hyperlink{SimulationClusterDetector_8cpp}{\-Simulation\-Cluster\-Detector.\-cpp}\end{DoxyCompactItemize}
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/cluster/\hyperlink{SimulationClusterDetector_8hpp}{Simulation\-Cluster\-Detector.\-hpp}\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/cluster/\hyperlink{SimulationClusterDetector_8cpp}{Simulation\-Cluster\-Detector.\-cpp}\end{DoxyCompactItemize}

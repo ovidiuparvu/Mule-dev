@@ -118,422 +118,739 @@ namespace multiscale {
             public:
 
                 ParserGrammar() : ParserGrammar::base_type(probabilisticLogicPropertyRule) {
-                	// Rules definitions
+                	initialise();
+                }
 
-                	probabilisticLogicPropertyRule
-                		=	'P'
-                			> (
-                                comparatorRule
-                			    > probabilityRule
-                			    > '['
-                			    > logicPropertyRule
-                			    > ']'
-                	        );
+            private:
 
-                	probabilityRule
-                		%=	qi::eps
-                			> qi::double_	[qi::_pass = (qi::_1 >= 0) && (qi::_1 <= 1)];
+                //! Initialisation function
+                void initialise() {
+                	initialiseGrammar();
+                	initialiseDebugSupport();
+					initialiseErrorHandlingSupport();
+                }
 
-                	logicPropertyRule
-                		=	primaryLogicPropertyRule
-                			>> *(
-                				andLogicPropertyRule
-                			|	orLogicPropertyRule
-                			|	implicationLogicPropertyRule
-                			| 	equivalenceLogicPropertyRule
-                			| 	untilLogicPropertyRule
-                			);
+                //! Initialise the grammar
+                void initialiseGrammar() {
+                	initialiseLogicPropertiesRules();
+					initialiseNumericMeasureRule();
+					initialiseNumericSpatialMeasureRule();
+					initialiseNumericSpatialSubsetMeasureRule();
+					initialiseNaryNumericMeasureRule();
+					initialiseSubsetRule();
+					initialiseConstraintsRules();
+					initialiseSpatialMeasureRule();
+					initialiseComparatorRule();
+					initialiseNumericStateVariableRule();
+                }
 
-                	primaryLogicPropertyRule
-                		=	numericSpatialNumericComparisonRule
-                		|	numericNumericComparisonRule
-                		|	differenceRule
-                		|	notLogicPropertyRule
-                		|	futureLogicPropertyRule
-                		|	globalLogicPropertyRule
-                		|	(
-                				'X'
-                				> (nextLogicPropertyRule | nextKLogicPropertyRule)
-                			)
-                		|	('(' > logicPropertyRule > ')');
+                //! Initialise the logic properties rules
+                void initialiseLogicPropertiesRules() {
+                	initialiseProbabilisticLogicPropertyRule();
+					initialiseLogicPropertyRule();
+					initialisePrimaryLogicPropertyRule();
+					initialiseComposedLogicPropertyRule();
+                }
 
-                	differenceRule
-                		=	(
-                		        qi::lit("d")
-                                > '('
-                                > numericMeasureRule
-                                > ')'
-                                > comparatorRule
-                                > numericMeasureRule
-                            );
+                //! Initialise the constraints rules
+                void initialiseConstraintsRules() {
+                	initialiseConstraintRule();
+					initialisePrimaryConstraintRule();
+					initialiseComposedConstraintRule();
+                }
 
-                	numericSpatialNumericComparisonRule
-                		=	(
-                		        numericSpatialRule
-                			    > comparatorRule
-                			    > numericMeasureRule
-                			);
+                //! Initialise the probabilistic logic property rule
+            	void initialiseProbabilisticLogicPropertyRule() {
+            		probabilisticLogicPropertyRule
+            			=	'P'
+            				> (comparatorRule
+            				> probabilityRule
+            				> '['
+            				> logicPropertyRule
+            				> ']');
 
-                	numericNumericComparisonRule
-                		=	(
-                		        numericStateVariableRule
-                			    > comparatorRule
-                			    > numericMeasureRule
-                			);
+            		probabilityRule
+            			%= 	qi::eps
+            				> qi::double_ [qi::_pass = (qi::_1 >= 0) && (qi::_1 <= 1)];
+            	}
 
-                	notLogicPropertyRule
-						=	('~' > logicPropertyRule);
+            	//! Initialise the logic property rule
+            	void initialiseLogicPropertyRule() {
+            		logicPropertyRule
+            			=	primaryLogicPropertyRule
+            				>>	*(
+            						andLogicPropertyRule
+								| 	orLogicPropertyRule
+								| 	implicationLogicPropertyRule
+								| 	equivalenceLogicPropertyRule
+								| 	untilLogicPropertyRule
+								);
+            	}
 
-                	futureLogicPropertyRule
-                		=	(
-                		        qi::lit('F')
-							    > '['
-							    > qi::ulong_
-							    > ','
-							    > (
-                                    qi::ulong_
-                                    > ']'
-                                    > logicPropertyRule
-							    )
-							);
+            	//! Initialise the primary logic property rule
+            	void initialisePrimaryLogicPropertyRule() {
+            		primaryLogicPropertyRule
+            			= 	numericSpatialNumericComparisonRule
+            			| 	numericNumericComparisonRule
+            			| 	differenceRule
+            			| 	notLogicPropertyRule
+            			| 	futureLogicPropertyRule
+            			| 	globalLogicPropertyRule
+            			| 	('X' > (nextLogicPropertyRule | nextKLogicPropertyRule))
+            			| 	('(' > logicPropertyRule > ')');
 
-                	globalLogicPropertyRule
-                		=	(
-                		        qi::lit('G')
-							    > '['
-                                > qi::ulong_
-                                > ','
-                	            > (
-                                    qi::ulong_
-                                    > ']'
-                                    > logicPropertyRule
-                                )
-                		    );
+            		differenceRule
+            			= 	(
+            					qi::lit("d")
+            					> '('
+            					> numericMeasureRule
+            					> ')'
+            					> comparatorRule
+            					> numericMeasureRule
+            				);
 
-                	nextLogicPropertyRule
-						=	logicPropertyRule;
+            		numericSpatialNumericComparisonRule
+            			= 	(
+            					numericSpatialRule
+            					> comparatorRule
+            					> numericMeasureRule
+            				);
 
-                	nextKLogicPropertyRule
-						=	(
-						        '['
-                                > qi::ulong_
-                                > ']'
-                                > logicPropertyRule
-                            );
+            		numericNumericComparisonRule
+            			= 	(
+            					numericStateVariableRule
+            					> comparatorRule
+            					> numericMeasureRule
+            				);
 
-                	andLogicPropertyRule
-						=	('^' > logicPropertyRule);
+            		notLogicPropertyRule
+            			= 	('~' > logicPropertyRule);
 
-                	orLogicPropertyRule
-						=	('V' > logicPropertyRule);
+            		futureLogicPropertyRule
+            			= 	(
+            					qi::lit('F')
+            					> '['
+            					> qi::ulong_
+            					> ','
+            					> (
+            						qi::ulong_
+            						> ']'
+            						> logicPropertyRule
+            					)
+            				);
 
-                	implicationLogicPropertyRule
-						=	("=>" > logicPropertyRule);
+            		globalLogicPropertyRule
+            			= 	(
+            					qi::lit('G')
+								> '['
+								> qi::ulong_
+								> ','
+								> (
+									qi::ulong_
+									> ']'
+									> logicPropertyRule
+								)
+            				);
 
-                	equivalenceLogicPropertyRule
-                		=	("<=>" > logicPropertyRule);
+            		nextLogicPropertyRule
+            			= 	logicPropertyRule;
 
-                	untilLogicPropertyRule
-                		=	(
-                		        qi::lit('U')
-                                > '['
-                                > qi::ulong_
-                                > ','
-                	            > (
-                                    qi::ulong_
-                                    > ']'
-                                    > logicPropertyRule
-                                )
-                            );
+            		nextKLogicPropertyRule
+            			= 	(
+            					'['
+            					> qi::ulong_
+            					> ']'
+            					> logicPropertyRule
+            				);
+            	}
 
-                	numericMeasureRule
-                		=	numericSpatialRule
-                		|	qi::double_
-                		|	numericStateVariableRule
-                		|	unaryNumericNumericRule
-                		|	binaryNumericNumericRule;
+            	//! Initialise the composed logic property rule
+            	void initialiseComposedLogicPropertyRule() {
+            		andLogicPropertyRule
+            			= 	('^' > logicPropertyRule);
 
-                	unaryNumericNumericRule
-                		=	(
-                		        unaryNumericMeasureRule
-                                > '('
-                                > numericMeasureRule
-                                > ')'
-                		    );
+            		orLogicPropertyRule
+            			= 	('V' > logicPropertyRule);
 
-                	binaryNumericNumericRule
-                		=	(
-                		        binaryNumericMeasureRule
-                                > '('
-                                > numericMeasureRule
-                                > ','
-                                > numericMeasureRule
-                                > ')'
-                		    );
+            		implicationLogicPropertyRule
+            			= 	("=>" > logicPropertyRule);
 
-                	numericSpatialRule
-                	    =   unarySubsetRule
-                	    |   binarySubsetRule
-                	    |   ternarySubsetRule
-                	    |   quaternarySubsetRule;
+            		equivalenceLogicPropertyRule
+            			= 	("<=>" > logicPropertyRule);
 
-                	unarySubsetRule
-                		=	(
-                		        unarySubsetMeasureRule
-                                > '('
-                                > subsetRule
-                                > ')'
-                		    );
+            		untilLogicPropertyRule
+            			= 	(
+            					qi::lit('U')
+            					> '['
+            					> qi::ulong_
+            					> ','
+            					> (
+            						qi::ulong_
+            						> ']'
+            						> logicPropertyRule
+            					)
+            				);
+            	}
 
-                	binarySubsetRule
-                		=	(
-                		        binarySubsetMeasureRule
-                                > '('
-                                > subsetRule
-                                > ','
-                                > spatialMeasureRule
-                                > ')'
-                		    );
+            	//! Initialise the numeric measure rule
+            	void initialiseNumericMeasureRule() {
+            		numericMeasureRule
+            			= 	numericSpatialRule
+            			| 	qi::double_
+            			| 	numericStateVariableRule
+            			| 	unaryNumericNumericRule
+            			| 	binaryNumericNumericRule;
 
-                	ternarySubsetRule
-                		=	(
-                		        ternarySubsetMeasureRule
-                                > '('
-                                > subsetRule
-                                > ','
-                                > spatialMeasureRule
-                                > ','
-                                > qi::double_
-                                > ')'
-                		    );
+            		unaryNumericNumericRule
+            			= 	(
+            					unaryNumericMeasureRule
+            					> '('
+            					> numericMeasureRule
+            					> ')'
+            				);
 
-                	quaternarySubsetRule
-                		=	(
-                		        quaternarySubsetMeasureRule
-                                > '('
-                                > subsetRule
-                                > ','
-                                > spatialMeasureRule
-                                > ','
-                                > subsetRule
-                                > ','
-                                > spatialMeasureRule
-                                > ')'
-                		    );
+            		binaryNumericNumericRule
+            			= 	(
+            					binaryNumericMeasureRule
+            					> '('
+            					> numericMeasureRule
+            					> ','
+            					> numericMeasureRule
+            					> ')'
+            				);
+            	}
 
-                	unarySubsetMeasureRule
-                		=	unarySubsetMeasureTypeParser;
+            	//! Initialise the numeric spatial measure rule
+            	void initialiseNumericSpatialMeasureRule() {
+            		numericSpatialRule
+            			= 	unarySubsetRule
+            			| 	binarySubsetRule
+            			| 	ternarySubsetRule
+            			| 	quaternarySubsetRule;
 
-                	binarySubsetMeasureRule
-                		=	binarySubsetMeasureTypeParser;
+            		unarySubsetRule
+            			= 	(
+            					unarySubsetMeasureRule
+            					> '('
+            					> subsetRule
+            					> ')'
+            				);
 
-                	ternarySubsetMeasureRule
-                		=	ternarySubsetMeasureTypeParser;
+            		binarySubsetRule
+            			= 	(
+            					binarySubsetMeasureRule
+            					> '('
+            					> subsetRule
+            					> ','
+            					> spatialMeasureRule
+            					> ')'
+            				);
 
-                	quaternarySubsetMeasureRule
-                		=	quaternarySubsetMeasureTypeParser;
+            		ternarySubsetRule
+            			= 	(
+            					ternarySubsetMeasureRule
+            					> '('
+            					> subsetRule
+            					> ','
+            					> spatialMeasureRule
+            					> ','
+            					> qi::double_
+            					> ')'
+            				);
 
-                	unaryNumericMeasureRule
-                		= 	unaryNumericMeasureTypeParser;
+            		quaternarySubsetRule
+            			= 	(
+            					quaternarySubsetMeasureRule
+            					> '('
+            					> subsetRule
+            					> ','
+            					> spatialMeasureRule
+            					> ','
+            					> subsetRule
+            					> ','
+            					> spatialMeasureRule
+            					> ')'
+            				);
+            	}
 
-                	binaryNumericMeasureRule
-                		=	binaryNumericMeasureTypeParser;
+            	//! Initialise the numeric spatial subset measure rule
+            	void initialiseNumericSpatialSubsetMeasureRule() {
+            		unarySubsetMeasureRule
+            			= 	unarySubsetMeasureTypeParser;
 
-                	subsetRule
-                		=	subsetSpecificRule
-                		|	filterSubsetRule;
+            		binarySubsetMeasureRule
+            			= 	binarySubsetMeasureTypeParser;
 
-                	filterSubsetRule
-                		=	(
-                				qi::lit("filter")
-                				> '('
-                				> subsetSpecificRule
-                				> ','
-                				> constraintRule
-                				> ')'
-                			);
+            		ternarySubsetMeasureRule
+            			= 	ternarySubsetMeasureTypeParser;
 
-                	subsetSpecificRule
-                		=	subsetSpecificTypeParser;
+            		quaternarySubsetMeasureRule
+            			= 	quaternarySubsetMeasureTypeParser;
+            	}
 
-                	constraintRule
-                		=	primaryConstraintRule
-                		    >>  *(
-                		            (orConstraintRule)
-                		        |   (andConstraintRule)
-                		        |   (implicationConstraintRule)
-                		        |   (equivalenceConstraintRule)
-                                );
+            	//! Initialise the n-ary numeric measure rule
+            	void initialiseNaryNumericMeasureRule() {
+            		unaryNumericMeasureRule
+            			= 	unaryNumericMeasureTypeParser;
 
-                	primaryConstraintRule
-						=	notConstraintRule
-						|	unaryConstraintRule
-						| 	('(' > constraintRule > ')');
+            		binaryNumericMeasureRule
+            			= 	binaryNumericMeasureTypeParser;
+            	}
 
-                	notConstraintRule
-                		=	('~' > constraintRule);
+            	//! Initialise the subset rule
+            	void initialiseSubsetRule() {
+            		subsetRule
+            			= 	subsetSpecificRule
+            			| 	filterSubsetRule;
 
-                	unaryConstraintRule
-                		=	spatialMeasureRule
-                			> comparatorRule
-                			> numericMeasureRule;
+            		filterSubsetRule
+            			= 	(
+            					qi::lit("filter")
+            					> '('
+            					> subsetSpecificRule
+            					> ','
+            					> constraintRule
+            					> ')'
+            				);
 
-                	andConstraintRule
-                		=	('^' > constraintRule);
+            		subsetSpecificRule
+            			= 	subsetSpecificTypeParser;
+            	}
 
-                	orConstraintRule
-                		=	('V' > constraintRule);
+            	//! Initialise the constraint rule
+            	void initialiseConstraintRule() {
+            		constraintRule
+            			= 	primaryConstraintRule
+            				>> *(
+            						(orConstraintRule)
+            					| 	(andConstraintRule)
+            					| 	(implicationConstraintRule)
+            					| 	(equivalenceConstraintRule)
+            				);
+            	}
 
-                	implicationConstraintRule
-                		=	("=>" > constraintRule);
+            	//! Initialise the primary constraint rule
+            	void initialisePrimaryConstraintRule() {
+            		primaryConstraintRule
+            			= 	notConstraintRule
+            			| 	unaryConstraintRule
+            			| 	('(' > constraintRule > ')');
 
-                	equivalenceConstraintRule
-                		=	("<=>" > constraintRule);
+            		notConstraintRule
+            			= 	('~' > constraintRule);
 
-                	spatialMeasureRule
-                		=	spatialMeasureTypeParser;
+            		unaryConstraintRule
+            			= 	spatialMeasureRule
+            				> comparatorRule
+            				> numericMeasureRule;
+            	}
 
-                	comparatorRule
-                		=	comparatorTypeParser;
+            	//! Initialise the composed constraint rule
+            	void initialiseComposedConstraintRule() {
+            		andConstraintRule
+            			= 	('^' > constraintRule);
 
-                	numericStateVariableRule
-                		=   stateVariableRule;
+            		orConstraintRule
+            			= 	('V' > constraintRule);
 
-                	stateVariableRule
-                		=	('{' > stateVariableNameRule > '}');
+            		implicationConstraintRule
+            			= 	("=>" > constraintRule);
 
-                	stateVariableNameRule
-                		=	+(qi::char_ - qi::char_("{}"));
+            		equivalenceConstraintRule
+            			= 	("<=>" > constraintRule);
+            	}
 
-                	// Assign a name to the rules
-                	probabilisticLogicPropertyRule.name("probabilisticLogicPropertyRule");
-                	probabilityRule.name("probabilityRule");
-                	logicPropertyRule.name("logicPropertyRule");
-                	primaryLogicPropertyRule.name("primaryLogicPropertyRule");
-                	differenceRule.name("differenceRule");
-                	numericSpatialNumericComparisonRule.name("numericSpatialNumericComparisonRule");
-                	numericNumericComparisonRule.name("numericNumericComparisonRule");
-                	notLogicPropertyRule.name("notLogicPropertyRule");
-                	futureLogicPropertyRule.name("futureLogicPropertyRule");
-                	globalLogicPropertyRule.name("globalLogicPropertyRule");
-                	nextLogicPropertyRule.name("nextLogicPropertyRule");
-                	nextKLogicPropertyRule.name("nextKLogicPropertyRule");
-                	andLogicPropertyRule.name("andLogicPropertyRule");
-                	orLogicPropertyRule.name("orLogicPropertyRule");
-                	implicationLogicPropertyRule.name("implicationLogicPropertyRule");
-                	equivalenceLogicPropertyRule.name("equivalenceLogicPropertyRule");
-                	untilLogicPropertyRule.name("untilLogicPropertyRule");
-                	numericMeasureRule.name("numericMeasureRule");
-                	unaryNumericNumericRule.name("unaryNumericNumericRule");
-                	binaryNumericNumericRule.name("binaryNumericNumericRule");
-                	numericSpatialRule.name("numericSpatialRule");
-                	unarySubsetRule.name("unarySubsetRule");
-                	binarySubsetRule.name("binarySubsetRule");
-                	ternarySubsetRule.name("ternarySubsetRule");
-                	quaternarySubsetRule.name("quaternarySubsetRule");
-                	unarySubsetMeasureRule.name("unarySubsetMeasureRule");
-                	binarySubsetMeasureRule.name("binarySubsetMeasureRule");
-                	ternarySubsetMeasureRule.name("ternarySubsetMeasureRule");
-                	quaternarySubsetMeasureRule.name("quaternarySubsetMeasureRule");
-                	unaryNumericMeasureRule.name("unaryNumericMeasureRule");
-                	binaryNumericMeasureRule.name("binaryNumericMeasureRule");
-                	subsetRule.name("subsetRule");
-					filterSubsetRule.name("filterSubsetRule");
-					subsetSpecificRule.name("subsetSpecificRule");
-					constraintRule.name("constraintRule");
-					primaryConstraintRule.name("primaryConstraintRule");
-					notConstraintRule.name("notConstraintRule");
-					unaryConstraintRule.name("unaryConstraintRule");
-					andConstraintRule.name("andConstraintRule");
-					orConstraintRule.name("orConstraintRule");
-					implicationConstraintRule.name("implicationConstraintRule");
-					equivalenceConstraintRule.name("equivalenceConstraintRule");
-					spatialMeasureRule.name("spatialMeasureRule");
-					comparatorRule.name("comparatorRule");
-					numericStateVariableRule.name("numericStateVariableRule");
-					stateVariableRule.name("stateVariableRule");
-					stateVariableNameRule.name("stateVariableNameRule");
+            	//! Initialise the spatial measure rule
+            	void initialiseSpatialMeasureRule() {
+            		spatialMeasureRule
+            			= 	spatialMeasureTypeParser;
+            	}
 
-					// Debugging and reporting support
-//					debug(probabilisticLogicPropertyRule);
-//					debug(probabilityRule);
-//					debug(logicPropertyRule);
-//					debug(primaryLogicPropertyRule);
-//					debug(differenceRule);
-//					debug(numericSpatialNumericComparisonRule);
-//					debug(numericNumericComparisonRule);
-//					debug(notLogicPropertyRule);
-//					debug(futureLogicPropertyRule);
-//					debug(globalLogicPropertyRule);
-//					debug(nextLogicPropertyRule);
-//					debug(nextKLogicPropertyRule);
-//					debug(andLogicPropertyRule);
-//					debug(orLogicPropertyRule);
-//					debug(implicationLogicPropertyRule);
-//					debug(equivalenceLogicPropertyRule);
-//					debug(untilLogicPropertyRule);
-//					debug(numericMeasureRule);
-//					debug(unaryNumericNumericRule);
-//					debug(binaryNumericNumericRule);
-//					debug(unarySubsetRule);
-//					debug(binarySubsetRule);
-//					debug(ternarySubsetRule);
-//					debug(quaternarySubsetRule);
-//					debug(numericSpatialRule);
-//					debug(unarySubsetMeasureRule);
-//					debug(binarySubsetMeasureRule);
-//					debug(ternarySubsetMeasureRule);
-//					debug(quaternarySubsetMeasureRule);
-//					debug(unaryNumericMeasureRule);
-//					debug(binaryNumericMeasureRule);
-//					debug(subsetRule);
-//					debug(filterSubsetRule);
-//					debug(subsetSpecificRule);
-//					debug(constraintRule);
-//					debug(primaryConstraintRule);
-//					debug(notConstraintRule);
-//					debug(unaryConstraintRule);
-//					debug(andConstraintRule);
-//					debug(orConstraintRule);
-//					debug(implicationConstraintRule);
-//					debug(equivalenceConstraintRule);
-//					debug(spatialMeasureRule);
-//					debug(comparatorRule);
-//					debug(numericStateVariableRule);
-//					debug(stateVariableRule);
-//					debug(stateVariableNameRule);
+            	//! Initialise the comparator rule
+            	void initialiseComparatorRule() {
+            		comparatorRule
+            			= 	comparatorTypeParser;
+            	}
 
-                	// Error handling routines
+            	//! Initialise the numeric state variable rule
+            	void initialiseNumericStateVariableRule() {
+            		numericStateVariableRule
+            			= 	stateVariableRule;
+
+            		stateVariableRule
+            			= 	('{' > stateVariableNameRule > '}');
+
+            		stateVariableNameRule
+            			= 	+(qi::char_ - qi::char_("{}"));
+            	}
+
+                //! Initialise debug support
+                void initialiseDebugSupport() {
+                	assignNamesToRules();
+
+                	// TODO: Uncomment this function call in case of debugging
+					// initialiseRulesDebugging();
+                }
+
+                //! Assign names to the rules
+                void assignNamesToRules() {
+                	assignNamesToLogicPropertiesRules();
+					assignNamesToNumericMeasureRules();
+					assignNamesToNumericSpatialMeasureRules();
+					assignNamesToNumericSpatialSubsetMeasureRules();
+					assignNamesToNaryNumericMeasureRules();
+					assignNamesToSubsetRules();
+					assignNamesToConstraintsRules();
+					assignNamesToSpatialMeasureRules();
+					assignNamesToComparatorRules();
+					assignNamesToNumericStateVariableRules();
+                }
+
+                //! Assign names to logic properties rules
+                void assignNamesToLogicPropertiesRules() {
+                	assignNamesToProbabilisticLogicPropertyRules();
+					assignNamesToLogicPropertyRules();
+					assignNamesToPrimaryLogicPropertyRules();
+					assignNamesToComposedLogicPropertyRules();
+                }
+
+                //! Assign names to constraints rules
+                void assignNamesToConstraintsRules() {
+					assignNamesToConstraintRules();
+					assignNamesToPrimaryConstraintRules();
+					assignNamesToComposedConstraintRules();
+                }
+
+                //! Assign names to the probabilistic logic property rules
+            	void assignNamesToProbabilisticLogicPropertyRules() {
+            		probabilisticLogicPropertyRule	.name("probabilisticLogicPropertyRules");
+            		probabilityRule					.name("probabilityRules");
+            	}
+
+            	//! Assign names to the logic property rules
+            	void assignNamesToLogicPropertyRules() {
+            		logicPropertyRule.name("logicPropertyRules");
+            	}
+
+            	//! Assign names to the primary logic property rules
+            	void assignNamesToPrimaryLogicPropertyRules() {
+            		primaryLogicPropertyRule			.name("primaryLogicPropertyRules");
+            		differenceRule						.name("differenceRules");
+            		numericSpatialNumericComparisonRule	.name("numericSpatialNumericComparisonRules");
+            		numericNumericComparisonRule		.name("numericNumericComparisonRules");
+            		notLogicPropertyRule				.name("notLogicPropertyRules");
+            		futureLogicPropertyRule				.name("futureLogicPropertyRules");
+            		globalLogicPropertyRule				.name("globalLogicPropertyRules");
+            		nextLogicPropertyRule				.name("nextLogicPropertyRules");
+            		nextKLogicPropertyRule				.name("nextKLogicPropertyRules");
+            	}
+
+            	//! Assign names to the composed logic property rules
+            	void assignNamesToComposedLogicPropertyRules() {
+            		andLogicPropertyRule			.name("andLogicPropertyRules");
+            		orLogicPropertyRule				.name("orLogicPropertyRules");
+            		implicationLogicPropertyRule	.name("implicationLogicPropertyRules");
+            		equivalenceLogicPropertyRule	.name("equivalenceLogicPropertyRules");
+            		untilLogicPropertyRule			.name("untilLogicPropertyRules");
+            	}
+
+            	//! Assign names to the numeric measure rules
+            	void assignNamesToNumericMeasureRules() {
+            		numericMeasureRule			.name("numericMeasureRules");
+            		unaryNumericNumericRule		.name("unaryNumericNumericRules");
+            		binaryNumericNumericRule	.name("binaryNumericNumericRules");
+            	}
+
+            	//! Assign names to the numeric spatial measure rules
+            	void assignNamesToNumericSpatialMeasureRules() {
+            		numericSpatialRule		.name("numericSpatialRules");
+            		unarySubsetRule			.name("unarySubsetRules");
+            		binarySubsetRule		.name("binarySubsetRules");
+            		ternarySubsetRule		.name("ternarySubsetRules");
+            		quaternarySubsetRule	.name("quaternarySubsetRules");
+            	}
+
+            	//! Assign names to the numeric spatial subset measure rules
+            	void assignNamesToNumericSpatialSubsetMeasureRules() {
+            		unarySubsetMeasureRule		.name("unarySubsetMeasureRules");
+            		binarySubsetMeasureRule		.name("binarySubsetMeasureRules");
+            		ternarySubsetMeasureRule	.name("ternarySubsetMeasureRules");
+            		quaternarySubsetMeasureRule	.name("quaternarySubsetMeasureRules");
+            	}
+
+            	//! Assign names to the nary numeric measure rules
+            	void assignNamesToNaryNumericMeasureRules() {
+            		unaryNumericMeasureRule		.name("unaryNumericMeasureRules");
+            		binaryNumericMeasureRule	.name("binaryNumericMeasureRules");
+            	}
+
+            	//! Assign names to the subset rules
+            	void assignNamesToSubsetRules() {
+            		subsetRule			.name("subsetRules");
+            		filterSubsetRule	.name("filterSubsetRules");
+            		subsetSpecificRule	.name("subsetSpecificRules");
+            	}
+
+            	//! Assign names to the constraint rules
+            	void assignNamesToConstraintRules() {
+            		constraintRule.name("constraintRules");
+            	}
+
+            	//! Assign names to the primary constraint rules
+            	void assignNamesToPrimaryConstraintRules() {
+            		primaryConstraintRule	.name("primaryConstraintRules");
+            		notConstraintRule		.name("notConstraintRules");
+            		unaryConstraintRule		.name("unaryConstraintRules");
+            	}
+
+            	//! Assign names to the composed constraint rules
+            	void assignNamesToComposedConstraintRules() {
+            		andConstraintRule			.name("andConstraintRules");
+            		orConstraintRule			.name("orConstraintRules");
+            		implicationConstraintRule	.name("implicationConstraintRules");
+            		equivalenceConstraintRule	.name("equivalenceConstraintRules");
+            	}
+
+            	//! Assign names to the spatial measure rules
+            	void assignNamesToSpatialMeasureRules() {
+            		spatialMeasureRule.name("spatialMeasureRules");
+            	}
+
+            	//! Assign names to the comparator rules
+            	void assignNamesToComparatorRules() {
+            		comparatorRule.name("comparatorRules");
+            	}
+
+            	//! Assign names to the numeric state variable rules
+            	void assignNamesToNumericStateVariableRules() {
+            		numericStateVariableRule.name("numericStateVariableRules");
+            		stateVariableRule		.name("stateVariableRules");
+            		stateVariableNameRule	.name("stateVariableNameRules");
+            	}
+
+                //! Initialise the debugging of rules
+                void initialiseRulesDebugging() {
+                	initialiseLogicPropertiesRulesDebugging();
+                	initialiseNumericMeasureRuleDebugging();
+                	initialiseNumericSpatialMeasureRuleDebugging();
+					initialiseSpatialSubsetMeasureRuleDebugging();
+					initialiseNaryNumericMeasureRuleDebugging();
+					initialiseSubsetRuleDebugging();
+					initialiseConstraintsRulesDebugging();
+					initialiseSpatialMeasureRuleDebugging();
+					initialiseComparatorRuleDebugging();
+					initialiseNumericStateVariableRuleDebugging();
+                }
+
+                //! Initialise the debugging of the logic properties rules
+                void initialiseLogicPropertiesRulesDebugging() {
+                	initialiseProbabilisticLogicPropertyRuleDebugging();
+                	initialiseLogicPropertyRuleDebugging();
+                	initialisePrimaryLogicPropertyRuleDebugging();
+                	initialiseComposedLogicPropertyRuleDebugging();
+                }
+
+                //! initialise the debugging of the constraints rules
+                void initialiseConstraintsRulesDebugging() {
+					initialiseConstraintRuleDebugging();
+					initialisePrimaryConstraintRuleDebugging();
+					initialiseComposedConstraintRuleDebugging();
+                }
+
+                //! Initialise debugging for the probabilistic logic property rule
+                void initialiseProbabilisticLogicPropertyRuleDebugging() {
+                	debug(probabilisticLogicPropertyRule);
+                	debug(probabilityRule);
+                }
+
+                //! Initialise debugging for the logic property rule
+                void initialiseLogicPropertyRuleDebugging() {
+                	debug(logicPropertyRule);
+                }
+
+                //! Initialise debugging for the primary logic property rule
+                void initialisePrimaryLogicPropertyRuleDebugging() {
+                	debug(primaryLogicPropertyRule);
+                	debug(differenceRule);
+                	debug(numericSpatialNumericComparisonRule);
+                	debug(numericNumericComparisonRule);
+                	debug(notLogicPropertyRule);
+                	debug(futureLogicPropertyRule);
+                	debug(globalLogicPropertyRule);
+                	debug(nextLogicPropertyRule);
+                	debug(nextKLogicPropertyRule);
+                }
+
+                //! Initialise debugging for the composed logic property rule
+                void initialiseComposedLogicPropertyRuleDebugging() {
+                	debug(andLogicPropertyRule);
+                	debug(orLogicPropertyRule);
+                	debug(implicationLogicPropertyRule);
+                	debug(equivalenceLogicPropertyRule);
+                	debug(untilLogicPropertyRule);
+                }
+
+                //! Initialise debugging for the numeric measure rule
+            	void initialiseNumericMeasureRuleDebugging() {
+            		debug(numericMeasureRule);
+            		debug(unaryNumericNumericRule);
+            		debug(binaryNumericNumericRule);
+            	}
+
+            	//! Initialise debugging for the numeric spatial measure rule
+            	void initialiseNumericSpatialMeasureRuleDebugging() {
+            		debug(numericSpatialRule);
+            		debug(unarySubsetRule);
+            		debug(binarySubsetRule);
+            		debug(ternarySubsetRule);
+            		debug(quaternarySubsetRule);
+            	}
+
+            	//! Initialise debugging for the spatial subset measure rule
+            	void initialiseSpatialSubsetMeasureRuleDebugging() {
+            		debug(unarySubsetMeasureRule);
+            		debug(binarySubsetMeasureRule);
+            		debug(ternarySubsetMeasureRule);
+            		debug(quaternarySubsetMeasureRule);
+            	}
+
+            	//! Initialise debugging for the n-ary numeric measure rule
+            	void initialiseNaryNumericMeasureRuleDebugging() {
+            		debug(unaryNumericMeasureRule);
+            		debug(binaryNumericMeasureRule);
+            	}
+
+            	//! Initialise debugging for the subset rule
+            	void initialiseSubsetRuleDebugging() {
+            		debug(subsetRule);
+            		debug(filterSubsetRule);
+            		debug(subsetSpecificRule);
+            	}
+
+            	//! Initialise debugging for the constraint rule
+            	void initialiseConstraintRuleDebugging() {
+            		debug(constraintRule);
+            	}
+
+            	//! Initialise debugging for the primary constraint rule
+            	void initialisePrimaryConstraintRuleDebugging() {
+            		debug(primaryConstraintRule);
+            		debug(notConstraintRule);
+            		debug(unaryConstraintRule);
+            	}
+
+            	//! Initialise debugging for the composed constraint rule
+            	void initialiseComposedConstraintRuleDebugging() {
+            		debug(andConstraintRule);
+            		debug(orConstraintRule);
+            		debug(implicationConstraintRule);
+            		debug(equivalenceConstraintRule);
+            	}
+
+            	//! Initialise debugging for the spatial measure rule
+            	void initialiseSpatialMeasureRuleDebugging() {
+            		debug(spatialMeasureRule);
+            	}
+
+            	//! Initialise debugging for the comparator rule
+            	void initialiseComparatorRuleDebugging() {
+            		debug(comparatorRule);
+            	}
+
+            	//! Initialise debugging for the state variable rule
+            	void initialiseNumericStateVariableRuleDebugging() {
+            		debug(numericStateVariableRule);
+            		debug(stateVariableRule);
+            		debug(stateVariableNameRule);
+            	}
+
+                //! Initialise the error handling routines
+                void initialiseErrorHandlingSupport() {
+                	initialiseLogicPropertiesErrorHandlingSupport();
+                	initialiseNumericMeasureErrorHandlingSupport();
+                	initialiseNumericSpatialMeasureErrorHandlingSupport();
+                	initialiseSubsetErrorHandlingSupport();
+                	initialiseConstraintsErrorHandlingSupport();
+                	initialiseStateVariableErrorHandlingSupport();
+                }
+
+                //! Initialise the logic properties error handling support
+                void initialiseLogicPropertiesErrorHandlingSupport() {
+                	initialiseProbabilisticLogicPropertyErrorHandlingSupport();
+                	initialisePrimaryLogicPropertyErrorHandlingSupport();
+                	initialiseComposedLogicPropertyErrorHandlingSupport();
+                }
+
+                //! Initialise the constraints error handling support
+                void initialiseConstraintsErrorHandlingSupport() {
+                	initialisePrimaryConstraintErrorHandlingSupport();
+                	initialiseComposedConstraintErrorHandlingSupport();
+                }
+
+                //! Initialise the probabilistic logic property error handling support
+                void initialiseProbabilisticLogicPropertyErrorHandlingSupport() {
                 	qi::on_error<qi::fail>(probabilisticLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(probabilityRule, multiscale::verification::handleProbabilityError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(probabilityRule, multiscale::verification::handleProbabilityError(qi::_4, qi::_3, qi::_2));
+                }
+
+                //! Initialise the primary logic property error handling support
+                void initialisePrimaryLogicPropertyErrorHandlingSupport() {
                 	qi::on_error<qi::fail>(primaryLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(differenceRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(numericSpatialNumericComparisonRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(numericNumericComparisonRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(notLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(futureLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(globalLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(nextLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(nextKLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(differenceRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(numericSpatialNumericComparisonRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(numericNumericComparisonRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(notLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(futureLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(globalLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(nextLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(nextKLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                }
+
+                //! Initialise the compose logic property error handling support
+                void initialiseComposedLogicPropertyErrorHandlingSupport() {
                 	qi::on_error<qi::fail>(andLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(orLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(implicationLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(equivalenceLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                	qi::on_error<qi::fail>(untilLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(orLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(implicationLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(equivalenceLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+					qi::on_error<qi::fail>(untilLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                }
+
+                //! Initialise the numeric measure error handling support
+                void initialiseNumericMeasureErrorHandlingSupport() {
                 	qi::on_error<qi::fail>(unaryNumericNumericRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(binaryNumericNumericRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                }
+
+                //! Initialise the numeric spatial measure error handling support
+                void initialiseNumericSpatialMeasureErrorHandlingSupport() {
                 	qi::on_error<qi::fail>(unarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(binarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(ternarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(quaternarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                }
+
+                //! Initialise the subset error handling support
+                void initialiseSubsetErrorHandlingSupport() {
                 	qi::on_error<qi::fail>(filterSubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                }
+
+                //! Initialise the primary constraint error handling support
+                void initialisePrimaryConstraintErrorHandlingSupport() {
                 	qi::on_error<qi::fail>(primaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-					qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                	qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                }
+
+                //! Initialise the composed constraint error handling support
+                void initialiseComposedConstraintErrorHandlingSupport() {
                 	qi::on_error<qi::fail>(andConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(orConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(implicationConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 	qi::on_error<qi::fail>(equivalenceConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                }
+
+                //! Initialise the state variable error handling support
+                void initialiseStateVariableErrorHandlingSupport() {
                 	qi::on_error<qi::fail>(stateVariableNameRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 }
 

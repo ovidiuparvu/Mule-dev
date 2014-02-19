@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1MatFactory.html#a7b54550119d9a44708dad9c1c4eefc7e" title="Initialise the input file." alt="" coords="344,5,629,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1MatFactory.html#a0493c87d7b74619a95f14c0e31a3e178" title="Process concentrations from file." alt="" coords="311,59,663,88"/>
+<map id="multiscale::analysis::MatFactory::create" name="multiscale::analysis::MatFactory::create">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1MatFactory.html#a7b54550119d9a44708dad9c1c4eefc7e" title="Initialise the input file." alt="" coords="229,5,400,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1MatFactory.html#a0493c87d7b74619a95f14c0e31a3e178" title="Process concentrations from file." alt="" coords="196,74,433,121"/>
 </map>

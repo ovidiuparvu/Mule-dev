@@ -1,4 +1,4 @@
-<map id="G" name="G">
+<map id="areValidParameters" name="areValidParameters">
 <area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="191,5,329,35"/>
 <area shape="rect" id="node5" href="$MapCartesianToPolarScript_8cpp.html#a49f88aca0e3c94280667d965606e7f21" title="isValidOutputType" alt="" coords="196,59,324,88"/>
 <area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="191,112,329,141"/>

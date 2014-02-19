@@ -22,6 +22,8 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 #set(PARSER_EVALUATION_TEST_SRC
 #    src/parsing/Parser.cpp
+#    src/parsing/ParserGrammar.cpp
+#
 #    src/exception/ParserGrammarExceptionHandler.cpp
 #    
 #    test/ParserEvaluationTest.cpp

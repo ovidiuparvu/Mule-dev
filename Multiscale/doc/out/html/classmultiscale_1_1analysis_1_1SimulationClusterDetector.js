@@ -15,14 +15,9 @@ var classmultiscale_1_1analysis_1_1SimulationClusterDetector =
     [ "outputClusterToImage", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a0e29be5f9a15899f710f48aaf6c049f0", null ],
     [ "outputClusterTriangularShape", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a9894288a54c8e3fdeff3917d81e2ad9b", null ],
     [ "outputResultsToImage", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a909e1e53836f1688ebe312c5f7fb70b5", null ],
-    [ "DATAPOINT_THICKNESS", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a530922a3fad1e612062d17d07e2dc763", null ],
-    [ "DATAPOINT_WIDTH", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a16d99d22863feed83960e6b9efe407a2", null ],
-    [ "ENTITY_THRESH", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ad161524f0da7d2414e616fff59f02118", null ],
     [ "entityHeight", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a2ba5c2738d32f71ccaacba4129b7bcfc", null ],
     [ "entityWidth", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a9212da88b787b8f9791f27d913b6d05d", null ],
     [ "height", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a9d0a0fe5d9ea0f2516d07bf44b1da257", null ],
-    [ "THRESHOLD", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a460525b4359afb52b4bde2ebd600122c", null ],
-    [ "THRESHOLD_MAX", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a32b52c0ce7f8a1c8da872aa1cf754317", null ],
     [ "thresholdedImage", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aca2aae9914ef643a543a834e61b1cccf", null ],
     [ "width", "classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a4c66a82aa1749dce31c767bc4008d904", null ]
 ];

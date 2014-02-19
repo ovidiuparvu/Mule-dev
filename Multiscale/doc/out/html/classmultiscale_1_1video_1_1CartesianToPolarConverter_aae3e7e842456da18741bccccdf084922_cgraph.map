@@ -1,9 +1,9 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#adb3aeeb5f2994f8aa9dc03c8c8f270ad" title="Output the results as a plain file." alt="" coords="413,5,824,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e" title="Output the results as a gnuplot script." alt="" coords="407,59,831,88"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a37891007ade23e05047d33d0c9cb3e13" title="Read the input data." alt="" coords="431,112,807,141"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178" title="Convert the concentrations to annular sectors." alt="" coords="392,165,845,195"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a9e60fa7dd9c47dc89cdce30a39175a6e" title="Generate the script." alt="" coords="904,59,1291,88"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a88d7c95fb76c9e139cb013c11a8dfae0" title="Read the header line." alt="" coords="905,112,1289,141"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140" title="Read the concentrations." alt="" coords="895,165,1300,195"/>
+<map id="multiscale::video::CartesianToPolarConverter::convert" name="multiscale::video::CartesianToPolarConverter::convert">
+<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#adb3aeeb5f2994f8aa9dc03c8c8f270ad" title="Output the results as a plain file." alt="" coords="240,5,419,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a680e357efb54b1193715259cb339516e" title="Output the results as a gnuplot script." alt="" coords="240,93,419,157"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a37891007ade23e05047d33d0c9cb3e13" title="Read the input data." alt="" coords="240,181,419,245"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a0c3f499725a058d2a3251209d8c16178" title="Convert the concentrations to annular sectors." alt="" coords="235,269,424,333"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a9e60fa7dd9c47dc89cdce30a39175a6e" title="Generate the script." alt="" coords="473,93,660,157"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a88d7c95fb76c9e139cb013c11a8dfae0" title="Read the header line." alt="" coords="477,181,656,245"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1video_1_1CartesianToPolarConverter.html#a7335cccc7e3c14203b00357ec6a2c140" title="Read the concentrations." alt="" coords="477,269,656,333"/>
 </map>

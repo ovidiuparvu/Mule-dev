@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a92260dc64fb1de8f72df3a7bd44e171d" title="Change the contrast and brightness of the image." alt="" coords="373,5,795,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="844,5,1231,35"/>
+<map id="multiscale::analysis::RegionDetector::convertAlpha" name="multiscale::analysis::RegionDetector::convertAlpha">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a92260dc64fb1de8f72df3a7bd44e171d" title="Change the contrast and brightness of the image." alt="" coords="259,5,480,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="528,5,739,69"/>
 </map>

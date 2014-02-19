@@ -25,8 +25,6 @@ var classmultiscale_1_1analysis_1_1Cluster =
     [ "updatePerimeter", "classmultiscale_1_1analysis_1_1Cluster.html#aadc520e4459f1ea6e22afd7c02d5f2ed", null ],
     [ "validateOriginDependentValues", "classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd", null ],
     [ "entities", "classmultiscale_1_1analysis_1_1Cluster.html#a820298479651328fb79d92a65f7923d6", null ],
-    [ "ERR_ORIGIN_DEPENDENT_VALUES", "classmultiscale_1_1analysis_1_1Cluster.html#a0fa38fcc3f00730409400578829cddd8", null ],
-    [ "ERR_UNDEFINED_SHAPE", "classmultiscale_1_1analysis_1_1Cluster.html#a546b8e93e3f1ef51a9932f8599639070", null ],
     [ "minAreaEnclosingCircleCentre", "classmultiscale_1_1analysis_1_1Cluster.html#a47e672060b4025dcd07ebb9c5fd99f0c", null ],
     [ "minAreaEnclosingCircleRadius", "classmultiscale_1_1analysis_1_1Cluster.html#a070994481884a4c7f5aa4879ce7b0568", null ],
     [ "minAreaEnclosingRect", "classmultiscale_1_1analysis_1_1Cluster.html#aeb032303a79c6bd43385fcaad9c50742", null ],

@@ -1,8 +1,8 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1AlgorithmException.html" title="Class for representing algorithm exceptions." alt="" coords="343,193,545,295"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1IOException.html" title="Class for representing input and output exceptions." alt="" coords="627,193,787,295"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1UnexpectedBehaviourException.html" title="Class for representing unexpected behaviour exceptions." alt="" coords="5,345,280,447"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1UnimplementedMethodException.html" title="Class for representing unimplemented method exceptions." alt="" coords="304,345,584,447"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1FileOpenException.html" title="Class for representing exceptions when opening a file." alt="" coords="608,345,805,447"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1InvalidInputException.html" title="Class for representing invalid input exceptions." alt="" coords="829,345,1043,447"/>
+<map id="multiscale::MultiscaleException" name="multiscale::MultiscaleException">
+<area shape="rect" id="node5" href="$classmultiscale_1_1AlgorithmException.html" title="Class for representing algorithm exceptions." alt="" coords="272,326,475,429"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1IOException.html" title="Class for representing input and output exceptions." alt="" coords="533,326,693,429"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1UnexpectedBehaviourException.html" title="Class for representing unexpected behaviour exceptions." alt="" coords="5,477,232,597"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1UnimplementedMethodException.html" title="Class for representing unimplemented method exceptions." alt="" coords="256,477,491,597"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1FileOpenException.html" title="Class for representing exceptions when opening a file." alt="" coords="515,486,712,589"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1InvalidInputException.html" title="Class for representing invalid input exceptions." alt="" coords="736,477,901,597"/>
 </map>

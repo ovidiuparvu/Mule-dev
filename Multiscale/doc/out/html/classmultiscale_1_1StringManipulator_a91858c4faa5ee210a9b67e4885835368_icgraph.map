@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#a08a817f0907a22cf7588ca43efa82ea7" title="Initialise the output file with the given index and simulation time." alt="" coords="297,5,767,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a03d74df6e7a0b18c5099eb39f3e4fc7c" title="Initialise the output file with the given index and simulation time." alt="" coords="335,59,729,88"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a570257a89fa37733ba66624ede2e4377" title="Initialise the output file with the given index and simulation time." alt="" coords="315,112,749,141"/>
+<map id="multiscale::StringManipulator::toString" name="multiscale::StringManipulator::toString">
+<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#a08a817f0907a22cf7588ca43efa82ea7" title="Initialise the output file with the given index and simulation time." alt="" coords="251,5,445,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a03d74df6e7a0b18c5099eb39f3e4fc7c" title="Initialise the output file with the given index and simulation time." alt="" coords="245,93,451,157"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a570257a89fa37733ba66624ede2e4377" title="Initialise the output file with the given index and simulation time." alt="" coords="255,181,441,245"/>
 </map>

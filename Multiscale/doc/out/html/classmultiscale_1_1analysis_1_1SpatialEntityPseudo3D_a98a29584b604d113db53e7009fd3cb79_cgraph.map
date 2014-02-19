@@ -1,13 +1,13 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a151cd8c0fdfbc98cfd0adc99b9943369" title="Update the values of all measures if required." alt="" coords="407,139,849,168"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a24ad8b8b5768be1f917a1fb893df8c6c" title="Update the values of all measures." alt="" coords="899,139,1283,168"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a750ba1b5e457d9d6504fc8320a76e002" title="Update the value of the clusteredness degree." alt="" coords="1331,5,1784,35"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a28fa63c1101f3f5ba7a0001099ee3159" title="Update the value of the density." alt="" coords="1372,59,1743,88"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aa8c1cd3248c8926edbb1b47006ded902" title="Update the value of the area." alt="" coords="1380,112,1735,141"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#acb00990b4b812367b7ae8f16028b8c32" title="Update the value of the perimeter." alt="" coords="1367,165,1748,195"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad50d0866df26b63dc86853a9ab0c545d" title="Update the shape of the cluster." alt="" coords="1376,219,1739,248"/>
-<area shape="rect" id="node23" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a8e81fdb72e8510d8f77ce8b518a74843" title="Update the point defining the centre of the cluster." alt="" coords="1360,272,1755,301"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ac0e5bce32290f2595293bd7386e04de1" title="Get the measure that the cluster has a triangular shape." alt="" coords="1839,165,2244,195"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad2984ec212e74437f3c7f3fc18ad555c" title="Get the measure that the cluster has a rectangular shape." alt="" coords="1832,219,2251,248"/>
-<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a31066d1038679f8e9080719380403cad" title="Get the measure that the cluster has a circular shape." alt="" coords="1845,272,2237,301"/>
+<map id="multiscale::analysis::SpatialEntityPseudo3D::getDensity" name="multiscale::analysis::SpatialEntityPseudo3D::getDensity">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a151cd8c0fdfbc98cfd0adc99b9943369" title="Update the values of all measures if required." alt="" coords="219,225,405,289"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a24ad8b8b5768be1f917a1fb893df8c6c" title="Update the values of all measures." alt="" coords="453,225,619,289"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a750ba1b5e457d9d6504fc8320a76e002" title="Update the value of the clusteredness degree." alt="" coords="667,5,861,69"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a28fa63c1101f3f5ba7a0001099ee3159" title="Update the value of the density." alt="" coords="681,93,847,157"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aa8c1cd3248c8926edbb1b47006ded902" title="Update the value of the area." alt="" coords="681,181,847,245"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#acb00990b4b812367b7ae8f16028b8c32" title="Update the value of the perimeter." alt="" coords="681,269,847,333"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad50d0866df26b63dc86853a9ab0c545d" title="Update the shape of the cluster." alt="" coords="681,357,847,421"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a8e81fdb72e8510d8f77ce8b518a74843" title="Update the point defining the centre of the cluster." alt="" coords="681,445,847,509"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ac0e5bce32290f2595293bd7386e04de1" title="Get the measure that the cluster has a triangular shape." alt="" coords="909,269,1075,333"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad2984ec212e74437f3c7f3fc18ad555c" title="Get the measure that the cluster has a rectangular shape." alt="" coords="909,357,1075,421"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a31066d1038679f8e9080719380403cad" title="Get the measure that the cluster has a circular shape." alt="" coords="909,445,1075,509"/>
 </map>

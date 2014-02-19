@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1LexicographicNumberIterator.html#a700e18593ba0cc764d4e517993bd3fdc" title="Convert the number to a vector of digits." alt="" coords="396,5,751,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1LexicographicNumberIterator.html#a943745c4723ed8c3c18df9f92bf94d2c" title="Initialise the vectors of digits." alt="" coords="801,5,1111,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1LexicographicNumberIterator.html#a02a95a6f7876b84909e08555730ff08a" title="multiscale::LexicographicNumberIterator::LexicographicNumberIterator" alt="" coords="1161,5,1591,35"/>
+<map id="multiscale::LexicographicNumberIterator::reverseDigits" name="multiscale::LexicographicNumberIterator::reverseDigits">
+<area shape="rect" id="node3" href="$classmultiscale_1_1LexicographicNumberIterator.html#a700e18593ba0cc764d4e517993bd3fdc" title="Convert the number to a vector of digits." alt="" coords="249,14,457,61"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1LexicographicNumberIterator.html#a943745c4723ed8c3c18df9f92bf94d2c" title="Initialise the vectors of digits." alt="" coords="508,14,676,61"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1LexicographicNumberIterator.html#a02a95a6f7876b84909e08555730ff08a" title="multiscale::Lexicographic\lNumberIterator::LexicographicNumber\lIterator" alt="" coords="725,5,968,69"/>
 </map>

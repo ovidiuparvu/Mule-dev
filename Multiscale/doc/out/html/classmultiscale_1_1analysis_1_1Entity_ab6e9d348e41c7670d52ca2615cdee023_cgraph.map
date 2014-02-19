@@ -1,7 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891" title="multiscale::analysis::Entity::validateInputValues" alt="" coords="275,5,576,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc" title="Check if the provided degree of pile up, area, centre and contour points are valid." alt="" coords="624,5,859,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="908,5,1140,35"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="1189,5,1408,35"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1456,5,1659,35"/>
+<map id="multiscale::analysis::Entity::Entity" name="multiscale::analysis::Entity::Entity">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Entity.html#afd09bf78874eb411c0940713948c4891" title="multiscale::analysis\l::Entity::validateInputValues" alt="" coords="192,5,379,51"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc" title="Check if the provided degree of pile up, area, centre and contour points are valid." alt="" coords="428,5,564,51"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="613,5,752,51"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="800,5,939,51"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="987,5,1125,51"/>
 </map>

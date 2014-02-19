@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a31066d1038679f8e9080719380403cad" title="Get the measure that the cluster has a circular shape." alt="" coords="432,5,824,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad2984ec212e74437f3c7f3fc18ad555c" title="Get the measure that the cluster has a rectangular shape." alt="" coords="419,59,837,88"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ac0e5bce32290f2595293bd7386e04de1" title="Get the measure that the cluster has a triangular shape." alt="" coords="425,112,831,141"/>
+<map id="multiscale::analysis::SpatialEntityPseudo3D::updateShape" name="multiscale::analysis::SpatialEntityPseudo3D::updateShape">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a31066d1038679f8e9080719380403cad" title="Get the measure that the cluster has a circular shape." alt="" coords="219,5,384,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad2984ec212e74437f3c7f3fc18ad555c" title="Get the measure that the cluster has a rectangular shape." alt="" coords="219,93,384,157"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ac0e5bce32290f2595293bd7386e04de1" title="Get the measure that the cluster has a triangular shape." alt="" coords="219,181,384,245"/>
 </map>

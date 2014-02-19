@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a7a1c95e78edf9e804a7809648e130bda" title="Find the closest core data point from the given set of neighbours to the given border data point..." alt="" coords="443,5,805,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a2524149cf55398e2038aaa389b56bfec" title="Retrieve the list of neighbour indexes which are at a distance &lt; eps far from the given data point..." alt="" coords="465,59,783,88"/>
+<map id="multiscale::analysis::DBSCAN::assignBorderNodesToClusters" name="multiscale::analysis::DBSCAN::assignBorderNodesToClusters">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a7a1c95e78edf9e804a7809648e130bda" title="Find the closest core data point from the given set of neighbours to the given border data point..." alt="" coords="265,5,481,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a2524149cf55398e2038aaa389b56bfec" title="Retrieve the list of neighbour indexes which are at a distance &lt; eps far from the given data point..." alt="" coords="272,93,475,139"/>
 </map>
