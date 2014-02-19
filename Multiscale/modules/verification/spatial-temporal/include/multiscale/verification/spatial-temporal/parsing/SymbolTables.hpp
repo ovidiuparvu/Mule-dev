@@ -23,7 +23,9 @@ namespace multiscale {
 
 			ComparatorTypeParser() {
 				add
+					(">"	, ComparatorType::GreaterThan)
 					(">="	, ComparatorType::GreaterThanOrEqual)
+					("<"	, ComparatorType::LessThan)
 					("<="	, ComparatorType::LessThanOrEqual)
 					("="	, ComparatorType::Equal)
 				;

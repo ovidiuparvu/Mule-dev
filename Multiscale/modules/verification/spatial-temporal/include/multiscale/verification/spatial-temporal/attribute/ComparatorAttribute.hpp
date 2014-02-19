@@ -11,9 +11,11 @@ namespace multiscale {
 
 		//! Enumeration for representing a comparator type
 		enum class ComparatorType : int {
-			GreaterThanOrEqual  = 1,		/*!< Greater than or equal*/
-			LessThanOrEqual     = 2,		/*!< Less than or equal */
-			Equal               = 3			/*!< Equal */
+			GreaterThan  		= 1,		/*!< Greater than */
+			GreaterThanOrEqual  = 2,		/*!< Greater than or equal */
+			LessThan			= 3,		/*!< Less than */
+			LessThanOrEqual     = 4,		/*!< Less than or equal */
+			Equal               = 5			/*!< Equal */
 		};
 
 		//! Overload the output stream operator for the enumeration
