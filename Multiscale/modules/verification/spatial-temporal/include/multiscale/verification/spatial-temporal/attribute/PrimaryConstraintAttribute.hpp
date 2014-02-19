@@ -10,33 +10,33 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		// Forward declarations
-		class ConstraintAttribute;
-		class NotConstraintAttribute;
-		class UnaryConstraintAttribute;
-
-
-		//! Variant for a unary constraint attribute
-		typedef boost::variant<
-			Nil,
-			boost::recursive_wrapper<ConstraintAttribute>,
-			boost::recursive_wrapper<NotConstraintAttribute>,
-			boost::recursive_wrapper<UnaryConstraintAttribute>
-		> PrimaryConstraintAttributeType;
+        // Forward declarations
+        class ConstraintAttribute;
+        class NotConstraintAttribute;
+        class UnaryConstraintAttribute;
 
 
-		//! Class for representing a primary constraint attribute
-		class PrimaryConstraintAttribute {
+        //! Variant for a unary constraint attribute
+        typedef boost::variant<
+            Nil,
+            boost::recursive_wrapper<ConstraintAttribute>,
+            boost::recursive_wrapper<NotConstraintAttribute>,
+            boost::recursive_wrapper<UnaryConstraintAttribute>
+        > PrimaryConstraintAttributeType;
 
-			public:
 
-				PrimaryConstraintAttributeType primaryConstraint;   /*!< The primary constraint */
+        //! Class for representing a primary constraint attribute
+        class PrimaryConstraintAttribute {
 
-		};
+            public:
 
-	};
+                PrimaryConstraintAttributeType primaryConstraint;   /*!< The primary constraint */
+
+        };
+
+    };
 
 };
 

@@ -9,19 +9,19 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a unary numeric numeric measure attribute
-		class UnaryNumericNumericAttribute {
+        //! Class for representing a unary numeric numeric measure attribute
+        class UnaryNumericNumericAttribute {
 
-			public:
+            public:
 
-				UnaryNumericMeasureAttribute 	unaryNumericMeasure;	/*!< The unary numeric measure */
-				NumericMeasureAttributeType		numericMeasure;			/*!< The considered numeric measure */
+                UnaryNumericMeasureAttribute    unaryNumericMeasure;    /*!< The unary numeric measure */
+                NumericMeasureAttributeType     numericMeasure;         /*!< The considered numeric measure */
 
-		};
+        };
 
-	};
+    };
 
 };
 

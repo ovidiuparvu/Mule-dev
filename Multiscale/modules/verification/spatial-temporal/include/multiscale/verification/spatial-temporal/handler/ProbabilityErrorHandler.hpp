@@ -13,52 +13,52 @@ using namespace std;
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Structure for defining the error handler for invalid probability errors
-		struct ProbabilityErrorHandler {
+        //! Structure for defining the error handler for invalid probability errors
+        struct ProbabilityErrorHandler {
 
-			public:
+            public:
 
-				//! Structure for specifying the type of the result
-				template <typename, typename, typename>
-				struct result { typedef void type; };
+                //! Structure for specifying the type of the result
+                template <typename, typename, typename>
+                struct result { typedef void type; };
 
-				//! Overloaded operator
-				/*!
-				 * \param expectedToken The expected token
-				 * \param errorPosition Iterator pointing to the error position
-				 * \param last          Iterator pointing to the end of the query
-				 */
-				template<typename Iterator>
-				void operator()(qi::info const &expectedToken, Iterator errorPosition, Iterator last) const {
-					string errorString          = string(errorPosition, last);
-					string expectedTokenString  = getExpectedTokenAsString(expectedToken);
+                //! Overloaded operator
+                /*!
+                 * \param expectedToken The expected token
+                 * \param errorPosition Iterator pointing to the error position
+                 * \param last          Iterator pointing to the end of the query
+                 */
+                template<typename Iterator>
+                void operator()(qi::info const &expectedToken, Iterator errorPosition, Iterator last) const {
+                    string errorString          = string(errorPosition, last);
+                    string expectedTokenString  = getExpectedTokenAsString(expectedToken);
 
-					throw ParserGrammarProbabilityException(expectedTokenString, errorString);
-				}
+                    throw ParserGrammarProbabilityException(expectedTokenString, errorString);
+                }
 
-			private:
+            private:
 
-				//! Convert the expected token to a string
-				/*! Convert the expected token to a string and remove enclosing quotes
-				 *
-				 * \param expectedToken The expected token (not a string)
-				 */
-				string getExpectedTokenAsString(qi::info const &expectedToken) const {
-					stringstream strStream;
+                //! Convert the expected token to a string
+                /*! Convert the expected token to a string and remove enclosing quotes
+                 *
+                 * \param expectedToken The expected token (not a string)
+                 */
+                string getExpectedTokenAsString(qi::info const &expectedToken) const {
+                    stringstream strStream;
 
-					strStream << expectedToken;
+                    strStream << expectedToken;
 
-					string expectedTokenString  = strStream.str();
+                    string expectedTokenString  = strStream.str();
 
-					// Remove the enclosing quotes
-					return expectedTokenString.substr(1, (expectedTokenString.length() - 2));
-				}
+                    // Remove the enclosing quotes
+                    return expectedTokenString.substr(1, (expectedTokenString.length() - 2));
+                }
 
-		};
+        };
 
-	};
+    };
 
 };
 

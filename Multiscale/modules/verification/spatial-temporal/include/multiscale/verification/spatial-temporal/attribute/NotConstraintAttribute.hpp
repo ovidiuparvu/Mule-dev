@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a "not" constraint attribute
-		class NotConstraintAttribute {
+        //! Class for representing a "not" constraint attribute
+        class NotConstraintAttribute {
 
-			public:
+            public:
 
-				ConstraintAttributeType constraint;	/*!< The constraint which will be negated */
+                ConstraintAttributeType constraint;    /*!< The constraint which will be negated */
 
-		};
+        };
 
-	};
+    };
 
 };
 

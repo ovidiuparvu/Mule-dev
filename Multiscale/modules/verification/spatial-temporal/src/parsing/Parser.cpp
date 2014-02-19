@@ -18,27 +18,27 @@ Parser::Parser(const std::string &logicalQuery) {
 Parser::~Parser() {}
 
 void Parser::setLogicalQuery(const std::string &logicalQuery) {
-	this->logicalQuery = logicalQuery;
+    this->logicalQuery = logicalQuery;
 
-	initialise();
+    initialise();
 }
 
 bool Parser::parse(ProbabilisticLogicPropertyAttribute &parseResult) {
     bool isSuccessfulParse = false;
 
     try {
-    	isSuccessfulParse = parseLogicalQuery(parseResult);
+        isSuccessfulParse = parseLogicalQuery(parseResult);
     } catch(const ParserGrammarUnexpectedTokenException &e) {
         ParserGrammarExceptionHandler::handleUnexpectedTokenException(std::string(logicalQueryIterator, logicalQueryEnd),
                                                                       e.getErrorString(), e.getExpectedToken());
     } catch(const ParserGrammarProbabilityException &e) {
-		ParserGrammarExceptionHandler::handleProbabilityException(std::string(logicalQueryIterator, logicalQueryEnd),
-                												  e.getErrorString(), e.getExpectedToken());
+        ParserGrammarExceptionHandler::handleProbabilityException(std::string(logicalQueryIterator, logicalQueryEnd),
+                                                                  e.getErrorString(), e.getExpectedToken());
     } catch(const ParserGrammarExtraInputException &e) {
         ParserGrammarExceptionHandler::handleExtraInputException(logicalQuery, e.getErrorString());
     } catch(const ParserGrammarUnparseableInputException &e) {
-		ParserGrammarExceptionHandler::handleUnparseableInputException(logicalQuery, e.getErrorString());
-	}
+        ParserGrammarExceptionHandler::handleUnparseableInputException(logicalQuery, e.getErrorString());
+    }
 
     return isSuccessfulParse;
 }
@@ -57,13 +57,13 @@ bool Parser::parseLogicalQuery(ProbabilisticLogicPropertyAttribute &parseResult)
 }
 
 void Parser::checkIfErrorCase(bool isSuccessfulParse) {
-	if (isSuccessfulParse) {
-		if (!isStringParsedCompletely()) {
-			throw ParserGrammarExtraInputException(std::string(logicalQueryIterator, logicalQueryEnd));
-		}
-	} else {
-		throw ParserGrammarUnparseableInputException(std::string(logicalQueryIterator, logicalQueryEnd));
-	}
+    if (isSuccessfulParse) {
+        if (!isStringParsedCompletely()) {
+            throw ParserGrammarExtraInputException(std::string(logicalQueryIterator, logicalQueryEnd));
+        }
+    } else {
+        throw ParserGrammarUnparseableInputException(std::string(logicalQueryIterator, logicalQueryEnd));
+    }
 }
 
 bool Parser::isStringParsedCompletely() {

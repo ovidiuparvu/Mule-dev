@@ -10,20 +10,20 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a binary subset attribute
-		class BinarySubsetAttribute {
+        //! Class for representing a binary subset attribute
+        class BinarySubsetAttribute {
 
-			public:
+            public:
 
-				BinarySubsetMeasureAttribute 	binarySubsetMeasure;	/*!< The binary subset measure */
-				SubsetAttributeType				subset;					/*!< The considered subset */
-				SpatialMeasureAttribute			spatialMeasure;			/*!< The considered spatial measure */
+                BinarySubsetMeasureAttribute    binarySubsetMeasure;    /*!< The binary subset measure */
+                SubsetAttributeType             subset;                 /*!< The considered subset */
+                SpatialMeasureAttribute         spatialMeasure;         /*!< The considered spatial measure */
 
-		};
+        };
 
-	};
+    };
 
 };
 

@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing an "equivalence" logic property attribute
-		class EquivalenceLogicPropertyAttribute {
+        //! Class for representing an "equivalence" logic property attribute
+        class EquivalenceLogicPropertyAttribute {
 
-			public:
+            public:
 
-				LogicPropertyAttributeType logicProperty;	/*!< The logical property following the "equivalence" operator */
+                LogicPropertyAttributeType logicProperty;   /*!< The logical property following the "equivalence" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

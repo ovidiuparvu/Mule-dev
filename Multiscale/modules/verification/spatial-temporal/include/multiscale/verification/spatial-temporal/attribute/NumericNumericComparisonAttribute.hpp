@@ -10,20 +10,20 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a numeric numeric comparison attribute
-		class NumericNumericComparisonAttribute {
+        //! Class for representing a numeric numeric comparison attribute
+        class NumericNumericComparisonAttribute {
 
-			public:
+            public:
 
-				NumericStateVariableAttribute 	numericStateVariable;	/*!< The numeric state variable preceding the comparator */
-				ComparatorAttribute				comparator;				/*!< The comparator */
-				NumericMeasureAttributeType		numericMeasure;			/*!< The numeric measure following the comparator */
+                NumericStateVariableAttribute   numericStateVariable;   /*!< The numeric state variable preceding the comparator */
+                ComparatorAttribute             comparator;             /*!< The comparator */
+                NumericMeasureAttributeType     numericMeasure;         /*!< The numeric measure following the comparator */
 
-		};
+        };
 
-	};
+    };
 
 };
 
@@ -31,8 +31,8 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NumericNumericComparisonAttribute,
     (multiscale::verification::NumericStateVariableAttribute, numericStateVariable)
-	(multiscale::verification::ComparatorAttribute, comparator)
-	(multiscale::verification::NumericMeasureAttributeType, numericMeasure)
+    (multiscale::verification::ComparatorAttribute, comparator)
+    (multiscale::verification::NumericMeasureAttributeType, numericMeasure)
 )
 
 #endif

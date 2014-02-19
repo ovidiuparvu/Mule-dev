@@ -28,20 +28,20 @@ namespace multiscale {
                                                            const string &expectedToken);
 
                 //! Handle the exception when an invalid probability was encountered
-				/*!
-				 * \param initialString     The initial string
-				 * \param errorString       A substring of the initial string which starts from the error position
-				 * \param expectedToken     The token which should replace the error token
-				 */
-				static void handleProbabilityException(const string &initialString, const string &errorString,
-													   const string &expectedToken);
+                /*!
+                 * \param initialString     The initial string
+                 * \param errorString       A substring of the initial string which starts from the error position
+                 * \param expectedToken     The token which should replace the error token
+                 */
+                static void handleProbabilityException(const string &initialString, const string &errorString,
+                                                       const string &expectedToken);
 
                 //! Handle the exception when wrong input is provided
-				/*!
-				 * \param initialString The initial string
-				 * \param errorString   Error string
-				 */
-				static void handleUnparseableInputException(const string &initialString, const string &errorString);
+                /*!
+                 * \param initialString The initial string
+                 * \param errorString   Error string
+                 */
+                static void handleUnparseableInputException(const string &initialString, const string &errorString);
 
                 //! Handle the exception when extra input is provided
                 /*!

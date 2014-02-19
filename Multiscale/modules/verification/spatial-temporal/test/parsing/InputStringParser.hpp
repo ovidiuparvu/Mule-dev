@@ -18,20 +18,20 @@ using namespace multiscale::verification;
 
 namespace multiscaletest {
 
-	namespace verification {
+    namespace verification {
 
-		//! Parse the input string and return the result of the parsing
-		/*!
-		 * \param inputString The input string
-		 */
-		bool parseInputString(const std::string &inputString) {
-			ProbabilisticLogicPropertyAttribute parseResult;
-			Parser parser(inputString);
+        //! Parse the input string and return the result of the parsing
+        /*!
+         * \param inputString The input string
+         */
+        bool parseInputString(const std::string &inputString) {
+            ProbabilisticLogicPropertyAttribute parseResult;
+            Parser parser(inputString);
 
-			return parser.parse(parseResult);
-		}
+            return parser.parse(parseResult);
+        }
 
-	};
+    };
 
 };
 

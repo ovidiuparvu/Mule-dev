@@ -7,18 +7,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a state variable attribute
-		class StateVariableAttribute {
+        //! Class for representing a state variable attribute
+        class StateVariableAttribute {
 
-			public:
+            public:
 
-				std::string name;   /*!< Name of the state variable */
+                std::string name;   /*!< Name of the state variable */
 
-		};
+        };
 
-	};
+    };
 
 };
 

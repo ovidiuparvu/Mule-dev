@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a numeric state variable attribute
-		class NumericStateVariableAttribute {
+        //! Class for representing a numeric state variable attribute
+        class NumericStateVariableAttribute {
 
-			public:
+            public:
 
-				StateVariableAttribute stateVariable;	/*!< The state variable */
+                StateVariableAttribute stateVariable;    /*!< The state variable */
 
-		};
+        };
 
-	};
+    };
 
 };
 

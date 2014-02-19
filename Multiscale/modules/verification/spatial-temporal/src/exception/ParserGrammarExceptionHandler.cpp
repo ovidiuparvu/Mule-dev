@@ -18,23 +18,23 @@ void ParserGrammarExceptionHandler::handleUnexpectedTokenException(const string 
 }
 
 void ParserGrammarExceptionHandler::handleProbabilityException(const string &initialString,
-															   const string &errorString,
-															   const string &expectedToken) {
-	stringstream strStream;
+                                                               const string &errorString,
+                                                               const string &expectedToken) {
+    stringstream strStream;
 
-	unsigned errorPositionIndex = initialString.length() - errorString.length();
+    unsigned errorPositionIndex = initialString.length() - errorString.length();
 
-	strStream   << getIntroductoryErrorMessage()
-				<< "Please change the value of the following invalid probability \""
-				<< initialString.substr(errorPositionIndex, expectedToken.length())
-				<< "\" such that it is in the interval [0, 1]. "
-				<< "You can find the error starting position emphasised by \">>>\" and \"<<<\" below (column "
-				<< (errorPositionIndex + 1)
-				<< "):" << endl
-				<< initialString.substr(0, errorPositionIndex) + ">>>" +
-				initialString.at(errorPositionIndex) + "<<<" + errorString.substr(1);
+    strStream   << getIntroductoryErrorMessage()
+                << "Please change the value of the following invalid probability \""
+                << initialString.substr(errorPositionIndex, expectedToken.length())
+                << "\" such that it is in the interval [0, 1]. "
+                << "You can find the error starting position emphasised by \">>>\" and \"<<<\" below (column "
+                << (errorPositionIndex + 1)
+                << "):" << endl
+                << initialString.substr(0, errorPositionIndex) + ">>>" +
+                initialString.at(errorPositionIndex) + "<<<" + errorString.substr(1);
 
-	MS_throw(InvalidInputException, strStream.str());
+    MS_throw(InvalidInputException, strStream.str());
 }
 
 void ParserGrammarExceptionHandler::handleUnparseableInputException(const string &initialString, const string &errorString) {

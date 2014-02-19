@@ -21,10 +21,10 @@ bool evaluateParsingResult(const std::string &inputString) {
 
 // Tests
 TEST(ParserEvaluationTest, AndOperator) {
-	EXPECT_TRUE(evaluateParsingResult("T ^ T"));
-	EXPECT_FALSE(evaluateParsingResult("T ^ F"));
-	EXPECT_FALSE(evaluateParsingResult("F ^ T"));
-	EXPECT_FALSE(evaluateParsingResult("F ^ F"));
+    EXPECT_TRUE(evaluateParsingResult("T ^ T"));
+    EXPECT_FALSE(evaluateParsingResult("T ^ F"));
+    EXPECT_FALSE(evaluateParsingResult("F ^ T"));
+    EXPECT_FALSE(evaluateParsingResult("F ^ F"));
 }
 
 TEST(ParserEvaluationTest, OrOperator) {

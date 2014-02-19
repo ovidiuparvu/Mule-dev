@@ -8,19 +8,19 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a "next K" logic property attribute
-		class NextKLogicPropertyAttribute {
+        //! Class for representing a "next K" logic property attribute
+        class NextKLogicPropertyAttribute {
 
-			public:
+            public:
 
-				unsigned long			   nrOfTimepointsAhead;	/*!< The number of timepoints ahead "K" */
-				LogicPropertyAttributeType logicProperty;		/*!< The logic property following the "next" operator */
+                unsigned long               nrOfTimepointsAhead;    /*!< The number of timepoints ahead "K" */
+                LogicPropertyAttributeType  logicProperty;          /*!< The logic property following the "next" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

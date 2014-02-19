@@ -6,7 +6,7 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
         //! Variant for representing the attribute truth value
         typedef boost::variant<
@@ -14,15 +14,15 @@ namespace multiscale {
         > AttributeTruthValue;
 
 
-	    //! Class used to evaluate attributes
-		class AttributeVisitor : public boost::static_visitor<bool> {
+        //! Class used to evaluate attributes
+        class AttributeVisitor : public boost::static_visitor<bool> {
 
-			public:
+            public:
 
-		        //! Overloading the operator ()
-		        /*!
-		         * \param attribute The attribute
-		         */
+                //! Overloading the operator ()
+                /*!
+                 * \param attribute The attribute
+                 */
                 template <typename T>
                 bool operator() (const T &attribute) const {
                     return attribute.evaluate();
@@ -33,14 +33,14 @@ namespace multiscale {
                  * \param attribute     The attribute
                  * \param truthValue    Truth value considered when evaluating the attribute
                  */
-				template <typename T, typename U>
-				bool operator() (const T &attribute, const U &truthValue) const {
-					return attribute.evaluateConsideringTruthValue(truthValue);
-				}
+                template <typename T, typename U>
+                bool operator() (const T &attribute, const U &truthValue) const {
+                    return attribute.evaluateConsideringTruthValue(truthValue);
+                }
 
-		};
+        };
 
-	};
+    };
 
 };
 

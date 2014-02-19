@@ -8,29 +8,29 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing an "until" logic property attribute
-		class UntilLogicPropertyAttribute {
+        //! Class for representing an "until" logic property attribute
+        class UntilLogicPropertyAttribute {
 
-			public:
+            public:
 
-				unsigned long				startTimepoint;	/*!< The considered start timepoint */
-				unsigned long				endTimepoint;	/*!< The considered end timepoint */
-				LogicPropertyAttributeType 	logicProperty;	/*!< The logic property following the "until" operator */
+                unsigned long               startTimepoint; /*!< The considered start timepoint */
+                unsigned long               endTimepoint;   /*!< The considered end timepoint */
+                LogicPropertyAttributeType  logicProperty;  /*!< The logic property following the "until" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UntilLogicPropertyAttribute,
-	(unsigned long, startTimepoint)
-	(unsigned long, endTimepoint)
-	(multiscale::verification::LogicPropertyAttributeType, logicProperty)
+    (unsigned long, startTimepoint)
+    (unsigned long, endTimepoint)
+    (multiscale::verification::LogicPropertyAttributeType, logicProperty)
 )
 
 #endif

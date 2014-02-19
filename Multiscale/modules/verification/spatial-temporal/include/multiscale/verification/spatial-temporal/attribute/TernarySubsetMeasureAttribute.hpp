@@ -7,32 +7,32 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Enumeration for representing a ternary subset measure type
-		enum class TernarySubsetMeasureType : int {
-			Percentile  = 1,    /*!< The percentile */
-			Quartile    = 2		/*!< The quartile */
-		};
+        //! Enumeration for representing a ternary subset measure type
+        enum class TernarySubsetMeasureType : int {
+            Percentile  = 1,    /*!< The percentile */
+            Quartile    = 2     /*!< The quartile */
+        };
 
-		//! Overload the output stream operator for the enumeration
-		/*!
-		 * \param out						Output stream
-		 * \param ternarySubsetMeasureType	The ternary subset measure type to be printed out
-		 */
-		std::ostream& operator<<(std::ostream& out, const TernarySubsetMeasureType &ternarySubsetMeasureType);
+        //! Overload the output stream operator for the enumeration
+        /*!
+         * \param out                       Output stream
+         * \param ternarySubsetMeasureType  The ternary subset measure type to be printed out
+         */
+        std::ostream& operator<<(std::ostream& out, const TernarySubsetMeasureType &ternarySubsetMeasureType);
 
 
-		//! Class for representing a ternary subset measure attribute
-		class TernarySubsetMeasureAttribute {
+        //! Class for representing a ternary subset measure attribute
+        class TernarySubsetMeasureAttribute {
 
-			public:
+            public:
 
-				TernarySubsetMeasureType ternarySubsetMeasure;	/*!< The ternary subset measure */
+                TernarySubsetMeasureType ternarySubsetMeasure;    /*!< The ternary subset measure */
 
-		};
+        };
 
-	};
+    };
 
 };
 

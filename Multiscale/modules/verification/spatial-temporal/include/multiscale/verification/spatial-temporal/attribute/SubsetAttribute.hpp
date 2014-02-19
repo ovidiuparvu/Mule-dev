@@ -10,31 +10,31 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-	    // Forward declaration of classes
-	    class SubsetAttribute;
-
-
-		//! Variant for a subset attribute
-		typedef boost::variant<
-			Nil,
-			multiscale::verification::SubsetSpecificAttribute,
-			multiscale::verification::FilterSubsetAttribute,
-			boost::recursive_wrapper<multiscale::verification::SubsetAttribute>
-		> SubsetAttributeType;
+        // Forward declaration of classes
+        class SubsetAttribute;
 
 
-		//! Class for representing a subset attribute
-		class SubsetAttribute {
+        //! Variant for a subset attribute
+        typedef boost::variant<
+            Nil,
+            multiscale::verification::SubsetSpecificAttribute,
+            multiscale::verification::FilterSubsetAttribute,
+            boost::recursive_wrapper<multiscale::verification::SubsetAttribute>
+        > SubsetAttributeType;
 
-			public:
 
-				SubsetAttributeType subset; /*!< The subset */
+        //! Class for representing a subset attribute
+        class SubsetAttribute {
 
-		};
+            public:
 
-	};
+                SubsetAttributeType subset; /*!< The subset */
+
+        };
+
+    };
 
 };
 

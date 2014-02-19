@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing an "implication" constraint attribute
-		class ImplicationConstraintAttribute {
+        //! Class for representing an "implication" constraint attribute
+        class ImplicationConstraintAttribute {
 
-		public:
+            public:
 
-            ConstraintAttributeType constraint; /*!< The constraint following the "implication" operator */
+                ConstraintAttributeType constraint; /*!< The constraint following the "implication" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

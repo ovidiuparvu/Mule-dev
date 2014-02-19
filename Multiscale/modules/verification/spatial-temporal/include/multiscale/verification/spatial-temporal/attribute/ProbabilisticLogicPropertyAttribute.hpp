@@ -9,36 +9,36 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a probabilistic logic property attribute
-		class ProbabilisticLogicPropertyAttribute {
+        //! Class for representing a probabilistic logic property attribute
+        class ProbabilisticLogicPropertyAttribute {
 
-			public:
+            public:
 
-				ComparatorAttribute 		comparator;		/*!< The comparator */
-				double						probability;	/*!< The probability */
-				LogicPropertyAttributeType	logicProperty;	/*!< The logic property */
+                ComparatorAttribute         comparator;     /*!< The comparator */
+                double                      probability;    /*!< The probability */
+                LogicPropertyAttributeType  logicProperty;  /*!< The logic property */
 
 
-				//! Get the type of the comparator
-				ComparatorType getComparator();
+                //! Get the type of the comparator
+                ComparatorType getComparator();
 
-				//! Get the probability
-				double getProbability();
+                //! Get the probability
+                double getProbability();
 
-		};
+        };
 
-	};
+    };
 
 };
 
 
 BOOST_FUSION_ADAPT_STRUCT (
-	multiscale::verification::ProbabilisticLogicPropertyAttribute,
-	(multiscale::verification::ComparatorAttribute, comparator)
-	(double, probability)
-	(multiscale::verification::LogicPropertyAttributeType, logicProperty)
+    multiscale::verification::ProbabilisticLogicPropertyAttribute,
+    (multiscale::verification::ComparatorAttribute, comparator)
+    (double, probability)
+    (multiscale::verification::LogicPropertyAttributeType, logicProperty)
 );
 
 #endif

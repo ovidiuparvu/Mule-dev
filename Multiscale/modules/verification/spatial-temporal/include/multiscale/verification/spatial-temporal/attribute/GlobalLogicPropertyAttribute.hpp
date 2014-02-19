@@ -8,20 +8,20 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a "globally" logic property attribute
-		class GlobalLogicPropertyAttribute {
+        //! Class for representing a "globally" logic property attribute
+        class GlobalLogicPropertyAttribute {
 
-			public:
+            public:
 
-				unsigned long				startTimepoint;	/*!< The considered start timepoint */
-				unsigned long				endTimepoint;	/*!< The considered end timepoint */
-				LogicPropertyAttributeType 	logicProperty;	/*!< The logic property following the "globally" operator */
+                unsigned long               startTimepoint; /*!< The considered start timepoint */
+                unsigned long               endTimepoint;   /*!< The considered end timepoint */
+                LogicPropertyAttributeType  logicProperty;  /*!< The logic property following the "globally" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 
@@ -29,8 +29,8 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::GlobalLogicPropertyAttribute,
     (unsigned long, startTimepoint)
-	(unsigned long, endTimepoint)
-	(multiscale::verification::LogicPropertyAttributeType, logicProperty)
+    (unsigned long, endTimepoint)
+    (multiscale::verification::LogicPropertyAttributeType, logicProperty)
 )
 
 #endif

@@ -10,22 +10,22 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a quaternary subset attribute
-		class QuaternarySubsetAttribute {
+        //! Class for representing a quaternary subset attribute
+        class QuaternarySubsetAttribute {
 
-			public:
+            public:
 
-				QuaternarySubsetMeasureAttribute 	quaternarySubsetMeasure;	/*!< The quaternary subset measure */
-				SubsetAttributeType					firstSubset;				/*!< The first considered subset */
-				SpatialMeasureAttribute				firstSpatialMeasure;		/*!< The first considered spatial measure */
-				SubsetAttributeType					secondSubset;				/*!< The second considered subset */
-				SpatialMeasureAttribute				secondSpatialMeasure;		/*!< The second considered spatial measure */
+                QuaternarySubsetMeasureAttribute    quaternarySubsetMeasure;    /*!< The quaternary subset measure */
+                SubsetAttributeType                 firstSubset;                /*!< The first considered subset */
+                SpatialMeasureAttribute             firstSpatialMeasure;        /*!< The first considered spatial measure */
+                SubsetAttributeType                 secondSubset;               /*!< The second considered subset */
+                SpatialMeasureAttribute             secondSpatialMeasure;       /*!< The second considered spatial measure */
 
-		};
+        };
 
-	};
+    };
 
 };
 

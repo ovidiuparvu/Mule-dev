@@ -10,20 +10,20 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a "unary" constraint attribute
-		class UnaryConstraintAttribute {
+        //! Class for representing a "unary" constraint attribute
+        class UnaryConstraintAttribute {
 
-			public:
+            public:
 
-				SpatialMeasureAttribute 	spatialMeasure;	/*!< The spatial measure */
-				ComparatorAttribute			comparator;		/*!< The comparator */
-				NumericMeasureAttributeType	numericMeasure;	/*!< The numeric measure */
+                SpatialMeasureAttribute     spatialMeasure;    /*!< The spatial measure */
+                ComparatorAttribute         comparator;        /*!< The comparator */
+                NumericMeasureAttributeType numericMeasure;    /*!< The numeric measure */
 
-		};
+        };
 
-	};
+    };
 
 };
 

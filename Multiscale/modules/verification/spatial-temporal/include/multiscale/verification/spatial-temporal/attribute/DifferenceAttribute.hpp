@@ -9,20 +9,20 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a difference attribute
-		class DifferenceAttribute {
+        //! Class for representing a difference attribute
+        class DifferenceAttribute {
 
-			public:
+            public:
 
-				NumericMeasureAttributeType	lhsNumericMeasure;	/*!< The left hand side numeric measure */
-				ComparatorAttribute			comparator;			/*!< The comparator */
-				NumericMeasureAttributeType	rhsNumericMeasure;	/*!< The right hand side numeric measure */
+                NumericMeasureAttributeType    lhsNumericMeasure;    /*!< The left hand side numeric measure */
+                ComparatorAttribute            comparator;           /*!< The comparator */
+                NumericMeasureAttributeType    rhsNumericMeasure;    /*!< The right hand side numeric measure */
 
-		};
+        };
 
-	};
+    };
 
 };
 
@@ -30,8 +30,8 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::DifferenceAttribute,
     (multiscale::verification::NumericMeasureAttributeType, lhsNumericMeasure)
-	(multiscale::verification::ComparatorAttribute, comparator)
-	(multiscale::verification::NumericMeasureAttributeType, rhsNumericMeasure)
+    (multiscale::verification::ComparatorAttribute, comparator)
+    (multiscale::verification::NumericMeasureAttributeType, rhsNumericMeasure)
 )
 
 #endif

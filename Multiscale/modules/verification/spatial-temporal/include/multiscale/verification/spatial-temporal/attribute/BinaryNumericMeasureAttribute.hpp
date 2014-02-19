@@ -7,37 +7,37 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Enumeration for representing a binary numeric measure type
-		enum class BinaryNumericMeasureType : int {
-			Add    		= 1,	/*!< Addition */
-			Div     	= 2,	/*!< Division */
-			Log     	= 3,	/*!< Logarithm */
-			Mod     	= 4,	/*!< Remainder of division */
-			Multiply   	= 5,	/*!< Multiplication */
-			Power   	= 6,	/*!< Raise to power */
-			Subtract	= 7		/*!< Subtraction */
-		};
+        //! Enumeration for representing a binary numeric measure type
+        enum class BinaryNumericMeasureType : int {
+            Add         = 1,    /*!< Addition */
+            Div         = 2,    /*!< Division */
+            Log         = 3,    /*!< Logarithm */
+            Mod         = 4,    /*!< Remainder of division */
+            Multiply    = 5,    /*!< Multiplication */
+            Power       = 6,    /*!< Raise to power */
+            Subtract    = 7     /*!< Subtraction */
+        };
 
-		//! Overload the output stream operator for the enumeration
-		/*!
-		 * \param out						Output stream
-		 * \param binaryNumericMeasureType	The binary numeric measure type to be printed out
-		 */
-		std::ostream& operator<<(std::ostream& out, const BinaryNumericMeasureType &binaryNumericMeasureType);
+        //! Overload the output stream operator for the enumeration
+        /*!
+         * \param out                       Output stream
+         * \param binaryNumericMeasureType  The binary numeric measure type to be printed out
+         */
+        std::ostream& operator<<(std::ostream& out, const BinaryNumericMeasureType &binaryNumericMeasureType);
 
 
-		//! Class for representing a binary numeric measure attribute
-		class BinaryNumericMeasureAttribute {
+        //! Class for representing a binary numeric measure attribute
+        class BinaryNumericMeasureAttribute {
 
-			public:
+            public:
 
-				BinaryNumericMeasureType binaryNumericMeasure;	/*!< The binary numeric measure */
+                BinaryNumericMeasureType binaryNumericMeasure;  /*!< The binary numeric measure */
 
-		};
+        };
 
-	};
+    };
 
 };
 

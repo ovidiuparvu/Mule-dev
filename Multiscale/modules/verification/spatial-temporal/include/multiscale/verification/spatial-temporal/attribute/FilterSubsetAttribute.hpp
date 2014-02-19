@@ -9,19 +9,19 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a filter subset attribute
-		class FilterSubsetAttribute {
+        //! Class for representing a filter subset attribute
+        class FilterSubsetAttribute {
 
-			public:
+            public:
 
-				SubsetSpecificAttribute subsetSpecific;	/*!< The specific subset to consider */
-				ConstraintAttributeType	constraint;		/*!< The constraint */
+                SubsetSpecificAttribute     subsetSpecific;    /*!< The specific subset to consider */
+                ConstraintAttributeType     constraint;        /*!< The constraint */
 
-		};
+        };
 
-	};
+    };
 
 };
 

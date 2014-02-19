@@ -19,19 +19,19 @@ using namespace multiscaletest::verification;
 // Incorrect input
 
 TEST(Input, IncorrectTrueInput) {
-	EXPECT_THROW(parseInputString("true"), InvalidInputException);
+    EXPECT_THROW(parseInputString("true"), InvalidInputException);
 }
 
 TEST(Input, IncorrectTInput) {
-	EXPECT_THROW(parseInputString("T"), InvalidInputException);
+    EXPECT_THROW(parseInputString("T"), InvalidInputException);
 }
 
 TEST(Input, IncorrectFalseInput) {
-	EXPECT_THROW(parseInputString("false"), InvalidInputException);
+    EXPECT_THROW(parseInputString("false"), InvalidInputException);
 }
 
 TEST(Input, IncorrectFInput) {
-	EXPECT_THROW(parseInputString("F"), InvalidInputException);
+    EXPECT_THROW(parseInputString("F"), InvalidInputException);
 }
 
 

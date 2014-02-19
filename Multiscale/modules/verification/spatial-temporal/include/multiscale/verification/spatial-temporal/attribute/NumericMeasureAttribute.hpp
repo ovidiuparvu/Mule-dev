@@ -9,36 +9,36 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		// Forward declaration of classes
-		class BinaryNumericNumericAttribute;
-		class NumericMeasureAttribute;
-		class NumericSpatialAttribute;
-		class UnaryNumericNumericAttribute;
-
-
-		//! Variant for the numeric measure attribute
-		typedef boost::variant<
-			double,
-			multiscale::verification::NumericStateVariableAttribute,
-			boost::recursive_wrapper<multiscale::verification::NumericSpatialAttribute>,
-			boost::recursive_wrapper<multiscale::verification::UnaryNumericNumericAttribute>,
-			boost::recursive_wrapper<multiscale::verification::BinaryNumericNumericAttribute>,
-			boost::recursive_wrapper<multiscale::verification::NumericMeasureAttribute>
-		> NumericMeasureAttributeType;
+        // Forward declaration of classes
+        class BinaryNumericNumericAttribute;
+        class NumericMeasureAttribute;
+        class NumericSpatialAttribute;
+        class UnaryNumericNumericAttribute;
 
 
-		//! Class for representing a numeric measure attribute
-		class NumericMeasureAttribute {
+        //! Variant for the numeric measure attribute
+        typedef boost::variant<
+            double,
+            multiscale::verification::NumericStateVariableAttribute,
+            boost::recursive_wrapper<multiscale::verification::NumericSpatialAttribute>,
+            boost::recursive_wrapper<multiscale::verification::UnaryNumericNumericAttribute>,
+            boost::recursive_wrapper<multiscale::verification::BinaryNumericNumericAttribute>,
+            boost::recursive_wrapper<multiscale::verification::NumericMeasureAttribute>
+        > NumericMeasureAttributeType;
 
-			public:
 
-				NumericMeasureAttributeType numericMeasure;		/*!< The numeric measure */
+        //! Class for representing a numeric measure attribute
+        class NumericMeasureAttribute {
 
-		};
+            public:
 
-	};
+                NumericMeasureAttributeType numericMeasure; /*!< The numeric measure */
+
+        };
+
+    };
 
 };
 

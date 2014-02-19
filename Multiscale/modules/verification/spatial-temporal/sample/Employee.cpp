@@ -43,12 +43,12 @@ namespace client
     ///////////////////////////////////////////////////////////////////////////
     //[tutorial_employee_struct
 
-	typedef boost::variant<
-		double,
-		int
-	> key_information;
+    typedef boost::variant<
+        double,
+        int
+    > key_information;
 
-	enum class NameType : int {
+    enum class NameType : int {
         John    = 1,
         Doe     = 2
     };
@@ -85,11 +85,11 @@ namespace client
     struct NameTypeParser : qi::symbols<char, client::NameType> {
 
         NameTypeParser() {
-    		add
-    			("\"John\"", NameType::John)
-    			("\"Doe\"", NameType::Doe)
-    		;
-    	}
+            add
+                ("\"John\"", NameType::John)
+                ("\"Doe\"", NameType::Doe)
+            ;
+        }
 
     };
     //]
@@ -141,19 +141,19 @@ namespace client
             start =
                 lit("employee")
                 >> '{'
-                > 	(ageRule > ','
-                >  	nameRule > ','
-                >  	infoRule)
+                >     (ageRule > ','
+                >      nameRule > ','
+                >      infoRule)
                 >>  '}'
                 ;
 
             BOOST_SPIRIT_DEBUG_NODES(
-				(quoted_string)
-				(nameRule)
-				(infoRule)
-				(ageRule)
-				(start)
-			);
+                (quoted_string)
+                (nameRule)
+                (infoRule)
+                (ageRule)
+                (start)
+            );
 
             debug(start);
             debug(infoRule);

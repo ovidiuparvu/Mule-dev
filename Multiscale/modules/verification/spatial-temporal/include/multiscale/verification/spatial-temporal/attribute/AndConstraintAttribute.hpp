@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing an "and" constraint attribute
-		class AndConstraintAttribute {
+        //! Class for representing an "and" constraint attribute
+        class AndConstraintAttribute {
 
-		public:
+        public:
 
-            ConstraintAttributeType constraint;	/*!< The constraint following the "and" operator */
+            ConstraintAttributeType constraint; /*!< The constraint following the "and" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

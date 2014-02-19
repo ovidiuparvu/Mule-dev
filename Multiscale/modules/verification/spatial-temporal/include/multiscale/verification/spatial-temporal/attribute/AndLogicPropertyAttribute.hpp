@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing an "and" logic property attribute
-		class AndLogicPropertyAttribute {
+        //! Class for representing an "and" logic property attribute
+        class AndLogicPropertyAttribute {
 
-			public:
+            public:
 
-				LogicPropertyAttributeType logicProperty;	/*!< The logical property following the "and" operator */
+                LogicPropertyAttributeType logicProperty;   /*!< The logical property following the "and" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

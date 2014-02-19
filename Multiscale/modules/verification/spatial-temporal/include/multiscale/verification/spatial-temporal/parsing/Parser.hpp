@@ -22,7 +22,7 @@ namespace multiscale {
 
                 std::string::const_iterator logicalQueryIterator;    /*!< Iterator of the logical query */
                 std::string::const_iterator logicalQueryEnd;         /*!< Iterator pointing at the end of the
-                                                                     	  logical query */
+                                                                          logical query */
 
                 ParserGrammar<std::string::const_iterator> grammar;  /*!< The grammar used for parsing logical queries */
 
@@ -53,7 +53,7 @@ namespace multiscale {
 
                 //! Check if an error case was encountered
                 /*!
-                 * \param isSuccessfulParse	The parse was successful or not
+                 * \param isSuccessfulParse    The parse was successful or not
                  */
                 void checkIfErrorCase(bool isSuccessfulParse);
 

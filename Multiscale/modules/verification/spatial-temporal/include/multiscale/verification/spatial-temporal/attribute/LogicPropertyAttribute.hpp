@@ -10,42 +10,42 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		// Forward declaration of classes
-	    class LogicPropertyAttribute;
-	    class OrLogicPropertyAttribute;
-	    class AndLogicPropertyAttribute;
-		class EquivalenceLogicPropertyAttribute;
-		class ImplicationLogicPropertyAttribute;
-		class PrimaryLogicPropertyAttribute;
-		class UntilLogicPropertyAttribute;
+        // Forward declaration of classes
+        class LogicPropertyAttribute;
+        class OrLogicPropertyAttribute;
+        class AndLogicPropertyAttribute;
+        class EquivalenceLogicPropertyAttribute;
+        class ImplicationLogicPropertyAttribute;
+        class PrimaryLogicPropertyAttribute;
+        class UntilLogicPropertyAttribute;
 
 
-		//! Variant for the logic property attribute
-		typedef boost::variant<
-			Nil,
+        //! Variant for the logic property attribute
+        typedef boost::variant<
+            Nil,
             boost::recursive_wrapper<LogicPropertyAttribute>,
-			boost::recursive_wrapper<OrLogicPropertyAttribute>,
-			boost::recursive_wrapper<AndLogicPropertyAttribute>,
-			boost::recursive_wrapper<ImplicationLogicPropertyAttribute>,
-			boost::recursive_wrapper<EquivalenceLogicPropertyAttribute>,
-			boost::recursive_wrapper<UntilLogicPropertyAttribute>,
-			boost::recursive_wrapper<PrimaryLogicPropertyAttribute>
-		> LogicPropertyAttributeType;
+            boost::recursive_wrapper<OrLogicPropertyAttribute>,
+            boost::recursive_wrapper<AndLogicPropertyAttribute>,
+            boost::recursive_wrapper<ImplicationLogicPropertyAttribute>,
+            boost::recursive_wrapper<EquivalenceLogicPropertyAttribute>,
+            boost::recursive_wrapper<UntilLogicPropertyAttribute>,
+            boost::recursive_wrapper<PrimaryLogicPropertyAttribute>
+        > LogicPropertyAttributeType;
 
 
-		//! Class for representing a logic property attribute
-		class LogicPropertyAttribute {
+        //! Class for representing a logic property attribute
+        class LogicPropertyAttribute {
 
-			public:
+            public:
 
-				LogicPropertyAttributeType 				firstLogicProperty;		/*!< The first logic property */
-				std::vector<LogicPropertyAttributeType>	nextLogicProperties; 	/*!< The next logic properties */
+                LogicPropertyAttributeType                 firstLogicProperty;      /*!< The first logic property */
+                std::vector<LogicPropertyAttributeType>    nextLogicProperties;     /*!< The next logic properties */
 
-		};
+        };
 
-	};
+    };
 
 };
 

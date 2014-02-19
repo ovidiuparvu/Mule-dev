@@ -13,16 +13,16 @@ using namespace multiscale::verification;
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Structure for representing a spatial numeric comparison attribute
-		struct SpatialNumericComparisonAttribute {
-			SpatialMeasureAttribute spatialMeasure;
-			ComparatorAttribute		comparator;
-			NumericMeasureAttribute		numericMeasure;
-		};
+        //! Structure for representing a spatial numeric comparison attribute
+        struct SpatialNumericComparisonAttribute {
+            SpatialMeasureAttribute spatialMeasure;
+            ComparatorAttribute     comparator;
+            NumericMeasureAttribute numericMeasure;
+        };
 
-	};
+    };
 
 };
 

@@ -7,32 +7,32 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Enumeration for representing a specific subset type
-		enum class SubsetSpecificType : int {
-			Clusters    = 1,    /*!< Clusters */
-			Regions     = 2     /*!< Regions */
-		};
+        //! Enumeration for representing a specific subset type
+        enum class SubsetSpecificType : int {
+            Clusters    = 1,    /*!< Clusters */
+            Regions     = 2     /*!< Regions */
+        };
 
-		//! Overload the output stream operator for the enumeration
-		/*!
-		 * \param out					Output stream
-		 * \param subsetSpecificType	The specific subset type to be printed out
-		 */
-		std::ostream& operator<<(std::ostream& out, const SubsetSpecificType &subsetSpecificType);
+        //! Overload the output stream operator for the enumeration
+        /*!
+         * \param out                   Output stream
+         * \param subsetSpecificType    The specific subset type to be printed out
+         */
+        std::ostream& operator<<(std::ostream& out, const SubsetSpecificType &subsetSpecificType);
 
 
-		//! Class for representing a subset specific attribute
-		class SubsetSpecificAttribute {
+        //! Class for representing a subset specific attribute
+        class SubsetSpecificAttribute {
 
-			public:
+            public:
 
-				SubsetSpecificType subsetSpecific;	/*!< The specific subset which should be considered */
+                SubsetSpecificType subsetSpecific;    /*!< The specific subset which should be considered */
 
-		};
+        };
 
-	};
+    };
 
 };
 

@@ -9,20 +9,20 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a binary numeric numeric measure attribute
-		class BinaryNumericNumericAttribute {
+        //! Class for representing a binary numeric numeric measure attribute
+        class BinaryNumericNumericAttribute {
 
-			public:
+            public:
 
-				BinaryNumericMeasureAttribute 	binaryNumericMeasure;	/*!< The binary numeric measure */
-				NumericMeasureAttributeType		firstNumericMeasure;	/*!< The first numeric measure */
-				NumericMeasureAttributeType		secondNumericMeasure;	/*!< The second numeric measure */
+                BinaryNumericMeasureAttribute   binaryNumericMeasure;   /*!< The binary numeric measure */
+                NumericMeasureAttributeType     firstNumericMeasure;    /*!< The first numeric measure */
+                NumericMeasureAttributeType     secondNumericMeasure;   /*!< The second numeric measure */
 
-		};
+        };
 
-	};
+    };
 
 };
 

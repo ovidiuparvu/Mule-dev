@@ -10,21 +10,21 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a ternary subset attribute
-		class TernarySubsetAttribute {
+        //! Class for representing a ternary subset attribute
+        class TernarySubsetAttribute {
 
-			public:
+            public:
 
-				TernarySubsetMeasureAttribute 	ternarySubsetMeasure;	/*!< The ternary subset measure */
-				SubsetAttributeType				subset;					/*!< The considered subset */
-				SpatialMeasureAttribute			spatialMeasure;			/*!< The considered spatial measure */
-				double							parameter;				/*!< The considered parameter */
+                TernarySubsetMeasureAttribute   ternarySubsetMeasure;   /*!< The ternary subset measure */
+                SubsetAttributeType             subset;                 /*!< The considered subset */
+                SpatialMeasureAttribute         spatialMeasure;         /*!< The considered spatial measure */
+                double                          parameter;              /*!< The considered parameter */
 
-		};
+        };
 
-	};
+    };
 
 };
 

@@ -9,19 +9,19 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a unary subset attribute
-		class UnarySubsetAttribute {
+        //! Class for representing a unary subset attribute
+        class UnarySubsetAttribute {
 
-			public:
+            public:
 
-				UnarySubsetMeasureAttribute unarySubsetMeasure;		/*!< The unary subset measure */
-				SubsetAttributeType			subset;					/*!< The considered subset */
+                UnarySubsetMeasureAttribute unarySubsetMeasure; /*!< The unary subset measure */
+                SubsetAttributeType         subset;             /*!< The considered subset */
 
-		};
+        };
 
-	};
+    };
 
 };
 

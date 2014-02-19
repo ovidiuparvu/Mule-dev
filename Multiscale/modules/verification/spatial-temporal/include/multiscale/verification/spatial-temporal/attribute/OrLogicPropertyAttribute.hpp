@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing an "or" logic property attribute
-		class OrLogicPropertyAttribute {
+        //! Class for representing an "or" logic property attribute
+        class OrLogicPropertyAttribute {
 
-			public:
+            public:
 
-				LogicPropertyAttributeType logicProperty;	/*!< The logical property following the "or" operator */
+                LogicPropertyAttributeType logicProperty;    /*!< The logical property following the "or" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

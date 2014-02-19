@@ -13,9 +13,9 @@ namespace multiscale {
 
             private:
 
-				std::string expectedToken;   /*!< The token which was expected and was not found during parsing */
-				std::string errorString;     /*!< The substring from the original string starting with
-                                             the index of the error token*/
+                std::string expectedToken;   /*!< The token which was expected and was not found during parsing */
+                std::string errorString;     /*!< The substring from the original string starting with
+                                                  the index of the error token*/
 
             public:
 

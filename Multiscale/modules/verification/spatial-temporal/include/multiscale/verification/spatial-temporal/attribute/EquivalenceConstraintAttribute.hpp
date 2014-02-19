@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing an "equivalence" constraint attribute
-		class EquivalenceConstraintAttribute {
+        //! Class for representing an "equivalence" constraint attribute
+        class EquivalenceConstraintAttribute {
 
-		public:
+            public:
 
-			ConstraintAttributeType constraint; /*!< The constraint following the "equivalence" operator */
+                ConstraintAttributeType constraint; /*!< The constraint following the "equivalence" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

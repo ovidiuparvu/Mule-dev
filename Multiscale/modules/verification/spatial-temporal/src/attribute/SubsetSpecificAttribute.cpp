@@ -5,18 +5,18 @@ using namespace multiscale::verification;
 
 //! Overload the output stream operator for the enumeration
 std::ostream& multiscale::verification::operator<<(std::ostream& out, const SubsetSpecificType &subsetSpecificType) {
-	switch (subsetSpecificType) {
-		case SubsetSpecificType::Clusters:
-			out << "clusters";
-			break;
+    switch (subsetSpecificType) {
+        case SubsetSpecificType::Clusters:
+            out << "clusters";
+            break;
 
-		case SubsetSpecificType::Regions:
-			out << "regions";
-			break;
+        case SubsetSpecificType::Regions:
+            out << "regions";
+            break;
 
-		default:
-			out << "undefined";
-	}
+        default:
+            out << "undefined";
+    }
 
-	return out;
+    return out;
 }

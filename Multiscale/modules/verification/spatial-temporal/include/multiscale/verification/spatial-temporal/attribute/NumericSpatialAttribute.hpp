@@ -12,32 +12,32 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		// Forward declaration of classes
-		class NumericSpatialAttribute;
-
-
-		//! Variant for a numeric spatial attribute
-		typedef boost::variant<
-			UnarySubsetAttribute,
-			BinarySubsetAttribute,
-			TernarySubsetAttribute,
-			QuaternarySubsetAttribute,
-			boost::recursive_wrapper<NumericSpatialAttribute>
-		> NumericSpatialAttributeType;
+        // Forward declaration of classes
+        class NumericSpatialAttribute;
 
 
-		//! Class for representing a numeric spatial attribute
-		class NumericSpatialAttribute {
+        //! Variant for a numeric spatial attribute
+        typedef boost::variant<
+            UnarySubsetAttribute,
+            BinarySubsetAttribute,
+            TernarySubsetAttribute,
+            QuaternarySubsetAttribute,
+            boost::recursive_wrapper<NumericSpatialAttribute>
+        > NumericSpatialAttributeType;
 
-			public:
 
-				NumericSpatialAttributeType numericSpatialMeasure;	/*!< The numeric spatial measure */
+        //! Class for representing a numeric spatial attribute
+        class NumericSpatialAttribute {
 
-		};
+            public:
 
-	};
+                NumericSpatialAttributeType numericSpatialMeasure;  /*!< The numeric spatial measure */
+
+        };
+
+    };
 
 };
 

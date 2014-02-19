@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing an "or" constraint attribute
-		class OrConstraintAttribute {
+        //! Class for representing an "or" constraint attribute
+        class OrConstraintAttribute {
 
-		public:
+            public:
 
-			ConstraintAttributeType constraint;	/*!< The constraint following the "or" operator */
+                ConstraintAttributeType constraint;    /*!< The constraint following the "or" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

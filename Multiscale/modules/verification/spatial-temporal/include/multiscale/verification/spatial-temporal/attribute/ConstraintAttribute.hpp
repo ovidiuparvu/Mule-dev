@@ -10,7 +10,7 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
         // Forward declaration of classes
         class ConstraintAttribute;
@@ -33,17 +33,17 @@ namespace multiscale {
         > ConstraintAttributeType;
 
 
-		//! Class for representing a constraint attribute
-		class ConstraintAttribute {
+        //! Class for representing a constraint attribute
+        class ConstraintAttribute {
 
-			public:
+            public:
 
-				ConstraintAttributeType 	            firstConstraint;    /*!< The first constraint */
-				std::vector<ConstraintAttributeType>	nextConstraints;    /*!< The next constraints */
+                ConstraintAttributeType                 firstConstraint;    /*!< The first constraint */
+                std::vector<ConstraintAttributeType>    nextConstraints;    /*!< The next constraints */
 
-		};
+        };
 
-	};
+    };
 
 };
 

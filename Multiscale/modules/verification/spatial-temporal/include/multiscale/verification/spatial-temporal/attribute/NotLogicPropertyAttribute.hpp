@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a "not" logic property attribute
-		class NotLogicPropertyAttribute {
+        //! Class for representing a "not" logic property attribute
+        class NotLogicPropertyAttribute {
 
-			public:
+            public:
 
-				LogicPropertyAttributeType logicProperty;	/*!< The logic property following the "not" operator */
+                LogicPropertyAttributeType logicProperty;    /*!< The logic property following the "not" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

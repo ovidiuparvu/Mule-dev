@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing an "implication" logic property attribute
-		class ImplicationLogicPropertyAttribute {
+        //! Class for representing an "implication" logic property attribute
+        class ImplicationLogicPropertyAttribute {
 
-			public:
+            public:
 
-				LogicPropertyAttributeType logicProperty;	/*!< The logical property following the "implication" operator */
+                LogicPropertyAttributeType logicProperty;   /*!< The logical property following the "implication" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 

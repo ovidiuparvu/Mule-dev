@@ -7,31 +7,31 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Enumeration for representing a quaternary subset measure type
-		enum class QuaternarySubsetMeasureType : int {
-			Covar = 1	/*!< Covariance */
-		};
+        //! Enumeration for representing a quaternary subset measure type
+        enum class QuaternarySubsetMeasureType : int {
+            Covar = 1    /*!< Covariance */
+        };
 
-		//! Overload the output stream operator for the enumeration
-		/*!
-		 * \param out							Output stream
-		 * \param quaternarySubsetMeasureType	The quaternary subset measure type to be printed out
-		 */
-		std::ostream& operator<<(std::ostream& out, const QuaternarySubsetMeasureType &quaternarySubsetMeasureType);
+        //! Overload the output stream operator for the enumeration
+        /*!
+         * \param out                            Output stream
+         * \param quaternarySubsetMeasureType    The quaternary subset measure type to be printed out
+         */
+        std::ostream& operator<<(std::ostream& out, const QuaternarySubsetMeasureType &quaternarySubsetMeasureType);
 
 
-		//! Class for representing a quaternary subset measure attribute
-		class QuaternarySubsetMeasureAttribute {
+        //! Class for representing a quaternary subset measure attribute
+        class QuaternarySubsetMeasureAttribute {
 
-			public:
+            public:
 
-				QuaternarySubsetMeasureType quaternarySubsetMeasure;	/*!< The quaternary subset measure */
+                QuaternarySubsetMeasureType quaternarySubsetMeasure;    /*!< The quaternary subset measure */
 
-		};
+        };
 
-	};
+    };
 
 };
 

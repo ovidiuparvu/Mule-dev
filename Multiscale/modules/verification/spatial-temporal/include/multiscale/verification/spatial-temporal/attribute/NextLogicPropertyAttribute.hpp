@@ -8,18 +8,18 @@
 
 namespace multiscale {
 
-	namespace verification {
+    namespace verification {
 
-		//! Class for representing a "next" logic property attribute
-		class NextLogicPropertyAttribute {
+        //! Class for representing a "next" logic property attribute
+        class NextLogicPropertyAttribute {
 
-			public:
+            public:
 
-				LogicPropertyAttributeType logicProperty;	/*!< The logic property attribute following the "next" operator */
+                LogicPropertyAttributeType logicProperty;   /*!< The logic property attribute following the "next" operator */
 
-		};
+        };
 
-	};
+    };
 
 };
 
