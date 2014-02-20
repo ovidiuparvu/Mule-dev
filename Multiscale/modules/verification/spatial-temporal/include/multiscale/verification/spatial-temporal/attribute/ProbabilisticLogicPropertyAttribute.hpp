@@ -1,5 +1,5 @@
-#ifndef PROBABILISTICLOGICPROPERTYATTRIBUTE_HPP_
-#define PROBABILISTICLOGICPROPERTYATTRIBUTE_HPP_
+#ifndef PROBABILISTICLOGICPROPERTYATTRIBUTE_HPP
+#define PROBABILISTICLOGICPROPERTYATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/LogicPropertyAttribute.hpp"

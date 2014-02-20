@@ -15,8 +15,8 @@ namespace multiscale {
             Density             = 2,    /*!< The density of the spatial entity */
             Area                = 3,    /*!< The area of the spatial entity */
             Perimeter           = 4,    /*!< The perimeter of the spatial entity */
-            DistanceFromOrigin  = 5,    /*!< The distance of the spatial entity from the origin (centre of the image) */
-            Angle               = 6,    /*!< The angle determined by the spatial entity wrt the origin (centre of the image) */
+            DistanceFromOrigin  = 5,    /*!< The distance of the spatial entity from the origin (centre of the discretised space) */
+            Angle               = 6,    /*!< The angle determined by the spatial entity wrt the origin (centre of the discretised space) */
             TriangleMeasure     = 7,    /*!< The measure indicating how triangular is the shape of the spatial entity */
             RectangleMeasure    = 8,    /*!< The measure indicating how rectangular is the shape of the spatial entity */
             CircleMeasure       = 9,    /*!< The measure indicating how circular is the shape of the spatial entity */
@@ -37,7 +37,7 @@ namespace multiscale {
 
             public:
 
-                SpatialMeasureType spatialMeasure;    /*!< The spatial measure*/
+                SpatialMeasureType spatialMeasure;    /*!< The spatial measure */
 
         };
 

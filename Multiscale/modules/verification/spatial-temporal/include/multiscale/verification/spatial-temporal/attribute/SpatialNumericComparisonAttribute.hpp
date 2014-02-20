@@ -15,11 +15,15 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Structure for representing a spatial numeric comparison attribute
-        struct SpatialNumericComparisonAttribute {
-            SpatialMeasureAttribute spatialMeasure;
-            ComparatorAttribute     comparator;
-            NumericMeasureAttribute numericMeasure;
+        //! Class for representing a spatial numeric comparison attribute
+        class SpatialNumericComparisonAttribute {
+
+            public:
+
+                SpatialMeasureAttribute spatialMeasure; /*!< The spatial measure */
+                ComparatorAttribute     comparator;     /*!< The comparator */
+                NumericMeasureAttribute numericMeasure; /*!< The numeric measure */
+
         };
 
     };

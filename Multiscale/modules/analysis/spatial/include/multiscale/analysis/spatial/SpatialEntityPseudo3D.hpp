@@ -43,7 +43,7 @@ namespace multiscale {
                 bool updateFlag;                /*!< Flag indicating if the field values dependent on the
                                                      collection of entities need to be updated. This flag is
                                                      used for lazy evaluation purposes, such that new field
-                                                     values are computed only when required*/
+                                                     values are computed only when required */
 
             public:
 

@@ -51,8 +51,8 @@ namespace multiscale {
                 qi::rule<Iterator, NotLogicPropertyAttribute(), ascii::space_type>                  notLogicPropertyRule;                   /*!< The rule for parsing a "not" logic property */
                 qi::rule<Iterator, FutureLogicPropertyAttribute(), ascii::space_type>               futureLogicPropertyRule;                /*!< The rule for parsing a "future" logic property */
                 qi::rule<Iterator, GlobalLogicPropertyAttribute(), ascii::space_type>               globalLogicPropertyRule;                /*!< The rule for parsing a "global" logic property */
-                qi::rule<Iterator, NextLogicPropertyAttribute(), ascii::space_type>                 nextLogicPropertyRule;                  /*!< The rule for parsing an "next" logic property */
-                qi::rule<Iterator, NextKLogicPropertyAttribute(), ascii::space_type>                nextKLogicPropertyRule;                 /*!< The rule for parsing an "next K" logic property */
+                qi::rule<Iterator, NextLogicPropertyAttribute(), ascii::space_type>                 nextLogicPropertyRule;                  /*!< The rule for parsing a "next" logic property */
+                qi::rule<Iterator, NextKLogicPropertyAttribute(), ascii::space_type>                nextKLogicPropertyRule;                 /*!< The rule for parsing a "next K" logic property */
 
                 qi::rule<Iterator, AndLogicPropertyAttribute(), ascii::space_type>                  andLogicPropertyRule;                   /*!< The rule for parsing an "and" logic property */
                 qi::rule<Iterator, OrLogicPropertyAttribute(), ascii::space_type>                   orLogicPropertyRule;                    /*!< The rule for parsing an "or" logic property */
@@ -164,7 +164,7 @@ namespace multiscale {
                 //! Initialise the probabilistic logic property rule
                 void initialiseProbabilisticLogicPropertyRule() {
                     probabilisticLogicPropertyRule
-                        =    'P'
+                        =   'P'
                             > (comparatorRule
                             > probabilityRule
                             > '['
@@ -172,37 +172,37 @@ namespace multiscale {
                             > ']');
 
                     probabilityRule
-                        %=     qi::eps
+                        %=  qi::eps
                             > qi::double_ [qi::_pass = (qi::_1 >= 0) && (qi::_1 <= 1)];
                 }
 
                 //! Initialise the logic property rule
                 void initialiseLogicPropertyRule() {
                     logicPropertyRule
-                        =    primaryLogicPropertyRule
-                            >>    *(
+                        =   primaryLogicPropertyRule
+                            >>  *(
                                     andLogicPropertyRule
-                                |     orLogicPropertyRule
-                                |     implicationLogicPropertyRule
-                                |     equivalenceLogicPropertyRule
-                                |     untilLogicPropertyRule
+                                |   orLogicPropertyRule
+                                |   implicationLogicPropertyRule
+                                |   equivalenceLogicPropertyRule
+                                |   untilLogicPropertyRule
                                 );
                 }
 
                 //! Initialise the primary logic property rule
                 void initialisePrimaryLogicPropertyRule() {
                     primaryLogicPropertyRule
-                        =     numericSpatialNumericComparisonRule
-                        |     numericNumericComparisonRule
-                        |     differenceRule
-                        |     notLogicPropertyRule
-                        |     futureLogicPropertyRule
-                        |     globalLogicPropertyRule
-                        |     ('X' > (nextLogicPropertyRule | nextKLogicPropertyRule))
-                        |     ('(' > logicPropertyRule > ')');
+                        =   numericSpatialNumericComparisonRule
+                        |   numericNumericComparisonRule
+                        |   differenceRule
+                        |   notLogicPropertyRule
+                        |   futureLogicPropertyRule
+                        |   globalLogicPropertyRule
+                        |   ('X' > (nextLogicPropertyRule | nextKLogicPropertyRule))
+                        |   ('(' > logicPropertyRule > ')');
 
                     differenceRule
-                        =     (
+                        =   (
                                 qi::lit("d")
                                 > '('
                                 > numericMeasureRule
@@ -212,24 +212,24 @@ namespace multiscale {
                             );
 
                     numericSpatialNumericComparisonRule
-                        =     (
+                        =   (
                                 numericSpatialRule
                                 > comparatorRule
                                 > numericMeasureRule
                             );
 
                     numericNumericComparisonRule
-                        =     (
+                        =   (
                                 numericStateVariableRule
                                 > comparatorRule
                                 > numericMeasureRule
                             );
 
                     notLogicPropertyRule
-                        =     ('~' > logicPropertyRule);
+                        =   ('~' > logicPropertyRule);
 
                     futureLogicPropertyRule
-                        =     (
+                        =   (
                                 qi::lit('F')
                                 > '['
                                 > qi::ulong_
@@ -242,7 +242,7 @@ namespace multiscale {
                             );
 
                     globalLogicPropertyRule
-                        =     (
+                        =   (
                                 qi::lit('G')
                                 > '['
                                 > qi::ulong_
@@ -255,10 +255,10 @@ namespace multiscale {
                             );
 
                     nextLogicPropertyRule
-                        =     logicPropertyRule;
+                        =   logicPropertyRule;
 
                     nextKLogicPropertyRule
-                        =     (
+                        =   (
                                 '['
                                 > qi::ulong_
                                 > ']'
@@ -269,19 +269,19 @@ namespace multiscale {
                 //! Initialise the composed logic property rule
                 void initialiseComposedLogicPropertyRule() {
                     andLogicPropertyRule
-                        =     ('^' > logicPropertyRule);
+                        =   ('^' > logicPropertyRule);
 
                     orLogicPropertyRule
-                        =     ('V' > logicPropertyRule);
+                        =   ('V' > logicPropertyRule);
 
                     implicationLogicPropertyRule
-                        =     ("=>" > logicPropertyRule);
+                        =   ("=>" > logicPropertyRule);
 
                     equivalenceLogicPropertyRule
-                        =     ("<=>" > logicPropertyRule);
+                        =   ("<=>" > logicPropertyRule);
 
                     untilLogicPropertyRule
-                        =     (
+                        =   (
                                 qi::lit('U')
                                 > '['
                                 > qi::ulong_
@@ -297,14 +297,14 @@ namespace multiscale {
                 //! Initialise the numeric measure rule
                 void initialiseNumericMeasureRule() {
                     numericMeasureRule
-                        =     numericSpatialRule
-                        |     qi::double_
-                        |     numericStateVariableRule
-                        |     unaryNumericNumericRule
-                        |     binaryNumericNumericRule;
+                        =   numericSpatialRule
+                        |   qi::double_
+                        |   numericStateVariableRule
+                        |   unaryNumericNumericRule
+                        |   binaryNumericNumericRule;
 
                     unaryNumericNumericRule
-                        =     (
+                        =   (
                                 unaryNumericMeasureRule
                                 > '('
                                 > numericMeasureRule
@@ -312,7 +312,7 @@ namespace multiscale {
                             );
 
                     binaryNumericNumericRule
-                        =     (
+                        =   (
                                 binaryNumericMeasureRule
                                 > '('
                                 > numericMeasureRule
@@ -325,13 +325,13 @@ namespace multiscale {
                 //! Initialise the numeric spatial measure rule
                 void initialiseNumericSpatialMeasureRule() {
                     numericSpatialRule
-                        =     unarySubsetRule
-                        |     binarySubsetRule
-                        |     ternarySubsetRule
-                        |     quaternarySubsetRule;
+                        =   unarySubsetRule
+                        |   binarySubsetRule
+                        |   ternarySubsetRule
+                        |   quaternarySubsetRule;
 
                     unarySubsetRule
-                        =     (
+                        =   (
                                 unarySubsetMeasureRule
                                 > '('
                                 > subsetRule
@@ -339,7 +339,7 @@ namespace multiscale {
                             );
 
                     binarySubsetRule
-                        =     (
+                        =   (
                                 binarySubsetMeasureRule
                                 > '('
                                 > subsetRule
@@ -349,7 +349,7 @@ namespace multiscale {
                             );
 
                     ternarySubsetRule
-                        =     (
+                        =   (
                                 ternarySubsetMeasureRule
                                 > '('
                                 > subsetRule
@@ -361,7 +361,7 @@ namespace multiscale {
                             );
 
                     quaternarySubsetRule
-                        =     (
+                        =   (
                                 quaternarySubsetMeasureRule
                                 > '('
                                 > subsetRule
@@ -378,35 +378,35 @@ namespace multiscale {
                 //! Initialise the numeric spatial subset measure rule
                 void initialiseNumericSpatialSubsetMeasureRule() {
                     unarySubsetMeasureRule
-                        =     unarySubsetMeasureTypeParser;
+                        =   unarySubsetMeasureTypeParser;
 
                     binarySubsetMeasureRule
-                        =     binarySubsetMeasureTypeParser;
+                        =   binarySubsetMeasureTypeParser;
 
                     ternarySubsetMeasureRule
-                        =     ternarySubsetMeasureTypeParser;
+                        =   ternarySubsetMeasureTypeParser;
 
                     quaternarySubsetMeasureRule
-                        =     quaternarySubsetMeasureTypeParser;
+                        =   quaternarySubsetMeasureTypeParser;
                 }
 
                 //! Initialise the n-ary numeric measure rule
                 void initialiseNaryNumericMeasureRule() {
                     unaryNumericMeasureRule
-                        =     unaryNumericMeasureTypeParser;
+                        =   unaryNumericMeasureTypeParser;
 
                     binaryNumericMeasureRule
-                        =     binaryNumericMeasureTypeParser;
+                        =   binaryNumericMeasureTypeParser;
                 }
 
                 //! Initialise the subset rule
                 void initialiseSubsetRule() {
                     subsetRule
-                        =     subsetSpecificRule
-                        |     filterSubsetRule;
+                        =   subsetSpecificRule
+                        |   filterSubsetRule;
 
                     filterSubsetRule
-                        =     (
+                        =   (
                                 qi::lit("filter")
                                 > '('
                                 > subsetSpecificRule
@@ -416,33 +416,33 @@ namespace multiscale {
                             );
 
                     subsetSpecificRule
-                        =     subsetSpecificTypeParser;
+                        =   subsetSpecificTypeParser;
                 }
 
                 //! Initialise the constraint rule
                 void initialiseConstraintRule() {
                     constraintRule
-                        =     primaryConstraintRule
+                        =   primaryConstraintRule
                             >> *(
                                     (orConstraintRule)
-                                |     (andConstraintRule)
-                                |     (implicationConstraintRule)
-                                |     (equivalenceConstraintRule)
+                                |   (andConstraintRule)
+                                |   (implicationConstraintRule)
+                                |   (equivalenceConstraintRule)
                             );
                 }
 
                 //! Initialise the primary constraint rule
                 void initialisePrimaryConstraintRule() {
                     primaryConstraintRule
-                        =     notConstraintRule
-                        |     unaryConstraintRule
-                        |     ('(' > constraintRule > ')');
+                        =   notConstraintRule
+                        |   unaryConstraintRule
+                        |   ('(' > constraintRule > ')');
 
                     notConstraintRule
-                        =     ('~' > constraintRule);
+                        =   ('~' > constraintRule);
 
                     unaryConstraintRule
-                        =     spatialMeasureRule
+                        =   spatialMeasureRule
                             > comparatorRule
                             > numericMeasureRule;
                 }
@@ -450,40 +450,40 @@ namespace multiscale {
                 //! Initialise the composed constraint rule
                 void initialiseComposedConstraintRule() {
                     andConstraintRule
-                        =     ('^' > constraintRule);
+                        =   ('^' > constraintRule);
 
                     orConstraintRule
-                        =     ('V' > constraintRule);
+                        =   ('V' > constraintRule);
 
                     implicationConstraintRule
-                        =     ("=>" > constraintRule);
+                        =   ("=>" > constraintRule);
 
                     equivalenceConstraintRule
-                        =     ("<=>" > constraintRule);
+                        =   ("<=>" > constraintRule);
                 }
 
                 //! Initialise the spatial measure rule
                 void initialiseSpatialMeasureRule() {
                     spatialMeasureRule
-                        =     spatialMeasureTypeParser;
+                        =   spatialMeasureTypeParser;
                 }
 
                 //! Initialise the comparator rule
                 void initialiseComparatorRule() {
                     comparatorRule
-                        =     comparatorTypeParser;
+                        =   comparatorTypeParser;
                 }
 
                 //! Initialise the numeric state variable rule
                 void initialiseNumericStateVariableRule() {
                     numericStateVariableRule
-                        =     stateVariableRule;
+                        =   stateVariableRule;
 
                     stateVariableRule
-                        =     ('{' > stateVariableNameRule > '}');
+                        =   ('{' > stateVariableNameRule > '}');
 
                     stateVariableNameRule
-                        =     +(qi::char_ - qi::char_("{}"));
+                        =   +(qi::char_ - qi::char_("{}"));
                 }
 
                 //! Initialise debug support
@@ -525,109 +525,109 @@ namespace multiscale {
 
                 //! Assign names to the probabilistic logic property rules
                 void assignNamesToProbabilisticLogicPropertyRules() {
-                    probabilisticLogicPropertyRule  .name("probabilisticLogicPropertyRules");
-                    probabilityRule                 .name("probabilityRules");
+                    probabilisticLogicPropertyRule  .name("probabilisticLogicPropertyRule");
+                    probabilityRule                 .name("probabilityRule");
                 }
 
                 //! Assign names to the logic property rules
                 void assignNamesToLogicPropertyRules() {
-                    logicPropertyRule.name("logicPropertyRules");
+                    logicPropertyRule.name("logicPropertyRule");
                 }
 
                 //! Assign names to the primary logic property rules
                 void assignNamesToPrimaryLogicPropertyRules() {
-                    primaryLogicPropertyRule            .name("primaryLogicPropertyRules");
-                    differenceRule                      .name("differenceRules");
-                    numericSpatialNumericComparisonRule .name("numericSpatialNumericComparisonRules");
-                    numericNumericComparisonRule        .name("numericNumericComparisonRules");
-                    notLogicPropertyRule                .name("notLogicPropertyRules");
-                    futureLogicPropertyRule             .name("futureLogicPropertyRules");
-                    globalLogicPropertyRule             .name("globalLogicPropertyRules");
-                    nextLogicPropertyRule               .name("nextLogicPropertyRules");
-                    nextKLogicPropertyRule              .name("nextKLogicPropertyRules");
+                    primaryLogicPropertyRule            .name("primaryLogicPropertyRule");
+                    differenceRule                      .name("differenceRule");
+                    numericSpatialNumericComparisonRule .name("numericSpatialNumericComparisonRule");
+                    numericNumericComparisonRule        .name("numericNumericComparisonRule");
+                    notLogicPropertyRule                .name("notLogicPropertyRule");
+                    futureLogicPropertyRule             .name("futureLogicPropertyRule");
+                    globalLogicPropertyRule             .name("globalLogicPropertyRule");
+                    nextLogicPropertyRule               .name("nextLogicPropertyRule");
+                    nextKLogicPropertyRule              .name("nextKLogicPropertyRule");
                 }
 
                 //! Assign names to the composed logic property rules
                 void assignNamesToComposedLogicPropertyRules() {
-                    andLogicPropertyRule            .name("andLogicPropertyRules");
-                    orLogicPropertyRule             .name("orLogicPropertyRules");
-                    implicationLogicPropertyRule    .name("implicationLogicPropertyRules");
-                    equivalenceLogicPropertyRule    .name("equivalenceLogicPropertyRules");
-                    untilLogicPropertyRule          .name("untilLogicPropertyRules");
+                    andLogicPropertyRule            .name("andLogicPropertyRule");
+                    orLogicPropertyRule             .name("orLogicPropertyRule");
+                    implicationLogicPropertyRule    .name("implicationLogicPropertyRule");
+                    equivalenceLogicPropertyRule    .name("equivalenceLogicPropertyRule");
+                    untilLogicPropertyRule          .name("untilLogicPropertyRule");
                 }
 
                 //! Assign names to the numeric measure rules
                 void assignNamesToNumericMeasureRules() {
-                    numericMeasureRule          .name("numericMeasureRules");
-                    unaryNumericNumericRule     .name("unaryNumericNumericRules");
-                    binaryNumericNumericRule    .name("binaryNumericNumericRules");
+                    numericMeasureRule          .name("numericMeasureRule");
+                    unaryNumericNumericRule     .name("unaryNumericNumericRule");
+                    binaryNumericNumericRule    .name("binaryNumericNumericRule");
                 }
 
                 //! Assign names to the numeric spatial measure rules
                 void assignNamesToNumericSpatialMeasureRules() {
-                    numericSpatialRule      .name("numericSpatialRules");
-                    unarySubsetRule         .name("unarySubsetRules");
-                    binarySubsetRule        .name("binarySubsetRules");
-                    ternarySubsetRule       .name("ternarySubsetRules");
-                    quaternarySubsetRule    .name("quaternarySubsetRules");
+                    numericSpatialRule      .name("numericSpatialRule");
+                    unarySubsetRule         .name("unarySubsetRule");
+                    binarySubsetRule        .name("binarySubsetRule");
+                    ternarySubsetRule       .name("ternarySubsetRule");
+                    quaternarySubsetRule    .name("quaternarySubsetRule");
                 }
 
                 //! Assign names to the numeric spatial subset measure rules
                 void assignNamesToNumericSpatialSubsetMeasureRules() {
-                    unarySubsetMeasureRule      .name("unarySubsetMeasureRules");
-                    binarySubsetMeasureRule     .name("binarySubsetMeasureRules");
-                    ternarySubsetMeasureRule    .name("ternarySubsetMeasureRules");
-                    quaternarySubsetMeasureRule .name("quaternarySubsetMeasureRules");
+                    unarySubsetMeasureRule      .name("unarySubsetMeasureRule");
+                    binarySubsetMeasureRule     .name("binarySubsetMeasureRule");
+                    ternarySubsetMeasureRule    .name("ternarySubsetMeasureRule");
+                    quaternarySubsetMeasureRule .name("quaternarySubsetMeasureRule");
                 }
 
                 //! Assign names to the nary numeric measure rules
                 void assignNamesToNaryNumericMeasureRules() {
-                    unaryNumericMeasureRule     .name("unaryNumericMeasureRules");
-                    binaryNumericMeasureRule    .name("binaryNumericMeasureRules");
+                    unaryNumericMeasureRule     .name("unaryNumericMeasureRule");
+                    binaryNumericMeasureRule    .name("binaryNumericMeasureRule");
                 }
 
                 //! Assign names to the subset rules
                 void assignNamesToSubsetRules() {
-                    subsetRule          .name("subsetRules");
-                    filterSubsetRule    .name("filterSubsetRules");
-                    subsetSpecificRule  .name("subsetSpecificRules");
+                    subsetRule          .name("subsetRule");
+                    filterSubsetRule    .name("filterSubsetRule");
+                    subsetSpecificRule  .name("subsetSpecificRule");
                 }
 
                 //! Assign names to the constraint rules
                 void assignNamesToConstraintRules() {
-                    constraintRule.name("constraintRules");
+                    constraintRule.name("constraintRule");
                 }
 
                 //! Assign names to the primary constraint rules
                 void assignNamesToPrimaryConstraintRules() {
-                    primaryConstraintRule   .name("primaryConstraintRules");
-                    notConstraintRule       .name("notConstraintRules");
-                    unaryConstraintRule     .name("unaryConstraintRules");
+                    primaryConstraintRule   .name("primaryConstraintRule");
+                    notConstraintRule       .name("notConstraintRule");
+                    unaryConstraintRule     .name("unaryConstraintRule");
                 }
 
                 //! Assign names to the composed constraint rules
                 void assignNamesToComposedConstraintRules() {
-                    andConstraintRule           .name("andConstraintRules");
-                    orConstraintRule            .name("orConstraintRules");
-                    implicationConstraintRule   .name("implicationConstraintRules");
-                    equivalenceConstraintRule   .name("equivalenceConstraintRules");
+                    andConstraintRule           .name("andConstraintRule");
+                    orConstraintRule            .name("orConstraintRule");
+                    implicationConstraintRule   .name("implicationConstraintRule");
+                    equivalenceConstraintRule   .name("equivalenceConstraintRule");
                 }
 
                 //! Assign names to the spatial measure rules
                 void assignNamesToSpatialMeasureRules() {
-                    spatialMeasureRule.name("spatialMeasureRules");
+                    spatialMeasureRule.name("spatialMeasureRule");
                 }
 
                 //! Assign names to the comparator rules
                 void assignNamesToComparatorRules() {
-                    comparatorRule.name("comparatorRules");
+                    comparatorRule.name("comparatorRule");
                 }
 
                 //! Assign names to the numeric state variable rules
                 void assignNamesToNumericStateVariableRules() {
-                    numericStateVariableRule    .name("numericStateVariableRules");
-                    stateVariableRule           .name("stateVariableRules");
-                    stateVariableNameRule       .name("stateVariableNameRules");
+                    numericStateVariableRule    .name("numericStateVariableRule");
+                    stateVariableRule           .name("stateVariableRule");
+                    stateVariableNameRule       .name("stateVariableNameRule");
                 }
 
                 //! Initialise the debugging of rules
@@ -652,7 +652,7 @@ namespace multiscale {
                     initialiseComposedLogicPropertyRuleDebugging();
                 }
 
-                //! initialise the debugging of the constraints rules
+                //! Initialise the debugging of the constraints rules
                 void initialiseConstraintsRulesDebugging() {
                     initialiseConstraintRuleDebugging();
                     initialisePrimaryConstraintRuleDebugging();
