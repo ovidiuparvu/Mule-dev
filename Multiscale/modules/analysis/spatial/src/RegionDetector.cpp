@@ -143,6 +143,10 @@ void RegionDetector::createDetectorSpecificTrackbars() {
     createTrackbar(TRACKBAR_THRESHOLD, WIN_OUTPUT_IMAGE, &thresholdValue, THRESHOLD_MAX, nullptr, nullptr);
 }
 
+string RegionDetector::getDetectorTypeAsString() {
+    return DETECTOR_TYPE;
+}
+
 void RegionDetector::processImageAndDetect() {
     Mat processedImage, thresholdedImage;
 
@@ -359,6 +363,8 @@ int RegionDetector::convertBeta(int beta) {
 
 
 // Constants
+const string RegionDetector::DETECTOR_TYPE  = "Regions";
+
 const string RegionDetector::TRACKBAR_ALPHA              = "Alpha";
 const string RegionDetector::TRACKBAR_BETA               = "Beta";
 const string RegionDetector::TRACKBAR_KERNEL             = "Gaussian blur kernel size";

@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp"
 #include "multiscale/exception/UnexpectedBehaviourException.hpp"
+#include "multiscale/util/Numeric.hpp"
 
 using namespace multiscale::analysis;
 
@@ -139,6 +140,16 @@ void SpatialEntityPseudo3D::updateShape() {
         } else {
             shape = Shape2D::Circle;
         }
+    }
+}
+
+double SpatialEntityPseudo3D::normalisedShapeMeasure(double shapeArea) {
+    if (Numeric::almostEqual(shapeArea, 0)) {
+        return 0;
+    } else if (Numeric::almostEqual(shapeArea, 1)) {
+        return 1;
+    } else {
+        return (area / shapeArea);
     }
 }
 

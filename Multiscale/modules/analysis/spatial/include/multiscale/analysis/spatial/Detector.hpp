@@ -98,6 +98,9 @@ namespace multiscale {
                  */
                 bool isValidInputImage(const Mat& inputImage);
 
+                //! Get the type of the employed detector as a string
+                virtual string getDetectorTypeAsString() = 0;
+
                 //! Run the detection procedure
                 void detect();
 
@@ -212,6 +215,15 @@ namespace multiscale {
                  */
                 void addAverageMeasuresToPropertyTree(pt::ptree &propertyTree);
 
+                //! Add a numeric state variable to the property tree
+                /*!
+                 * \param propertyTree  The property tree
+                 * \param name          The name of the numeric state variable
+                 * \param value         The value of the numeric state variable
+                 */
+                void addNumericStateVariableToPropertyTree(pt::ptree &propertyTree,
+                                                           const string &name, double value);
+
                 //! Construct the property tree corresponding to the given pseudo 3D spatial entity
                 /*!
                  * \param spatialEntity The spatial entity to be converted
@@ -290,9 +302,11 @@ namespace multiscale {
 
                 static const string LABEL_COMMENT_CONTENTS;
 
-                static const string LABEL_EXPERIMENT_TIMEPOINT_AVG_CLUSTEREDNESS;
-                static const string LABEL_EXPERIMENT_TIMEPOINT_AVG_DENSITY;
+                static const string LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE;
                 static const string LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY;
+
+                static const string LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_NAME;
+                static const string LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_VALUE;
 
                 static const string LABEL_SPATIAL_ENTITY_PSEUDO_3D;
 
@@ -309,6 +323,9 @@ namespace multiscale {
                 static const string LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE;
                 static const string LABEL_SPATIAL_ENTITY_CENTROID_X;
                 static const string LABEL_SPATIAL_ENTITY_CENTROID_Y;
+
+                static const string LABEL_AVG_CLUSTEREDNESS;
+                static const string LABEL_AVG_DENSITY;
 
         };
 

@@ -130,6 +130,9 @@ namespace multiscale {
                 //! Create the trackbars
                 void createDetectorSpecificTrackbars() override;
 
+                //! Get the type of the detector as a string
+                string getDetectorTypeAsString() override;
+
                 //! Process the given image
                 /*! Apply filters to the image, threshold it, find its contours,
                  *  approximate the polygons from these contours. Afterwards, process the polygons
@@ -272,6 +275,8 @@ namespace multiscale {
             private:
 
                 // Constants
+                static const string DETECTOR_TYPE;
+
                 static const string TRACKBAR_ALPHA;
                 static const string TRACKBAR_BETA;
                 static const string TRACKBAR_KERNEL;

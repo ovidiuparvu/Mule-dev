@@ -163,8 +163,7 @@ double Cluster::isTriangularMeasure() {
 
     double triangleArea = MinEnclosingTriangleFinder().find(entitiesConvexHull, minAreaEnclosingTriangle);
 
-    return (Numeric::almostEqual(triangleArea, 0)) ? 0
-                                                   : (area / triangleArea);
+    return normalisedShapeMeasure(triangleArea);
 }
 
 double Cluster::isRectangularMeasure() {
@@ -175,8 +174,7 @@ double Cluster::isRectangularMeasure() {
     // Compute the area of the minimum area enclosing rectangle
     double rectangleArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
 
-    return (Numeric::almostEqual(rectangleArea, 0)) ? 0
-                                                    : (area / rectangleArea);
+    return normalisedShapeMeasure(rectangleArea);
 }
 
 double Cluster::isCircularMeasure() {
@@ -187,8 +185,7 @@ double Cluster::isCircularMeasure() {
     // Compute the area of the minimum area enclosing circle
     double circleArea = Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
 
-    return (Numeric::almostEqual(circleArea, 0)) ? 0
-                                                 : (area / circleArea);
+    return normalisedShapeMeasure(circleArea);
 }
 
 SpatialEntityPseudo3DType Cluster::type() {

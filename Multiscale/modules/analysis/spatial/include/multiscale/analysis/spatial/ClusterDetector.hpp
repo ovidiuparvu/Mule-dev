@@ -73,6 +73,9 @@ namespace multiscale {
                 //! Clear the clusters from the previous detection
                 void clearPreviousDetectionResults() override;
 
+                //! Get the type of the detector as a string
+                string getDetectorTypeAsString() override;
+
                 //! Process the provided image and detect clusters in it
                 void processImageAndDetect() override;
 
@@ -193,6 +196,8 @@ namespace multiscale {
             private:
 
                 // Constants
+                static const string DETECTOR_TYPE;
+
                 static const string TRACKBAR_EPS;
                 static const string TRACKBAR_MINPOINTS;
 

@@ -130,6 +130,12 @@ namespace multiscale {
                 //! Get the measure that the cluster has a circular shape
                 virtual double isCircularMeasure() = 0;
 
+                //! Get the normalised shape measure ([0, 1]) that the cluster has a particular shape
+                /*!
+                 * \param shapeArea The area of the considered shape
+                 */
+                double normalisedShapeMeasure(double shapeArea);
+
                 //! Return the shape of the cluster as a string
                 string shapeAsString();
 

@@ -62,6 +62,10 @@ void ClusterDetector::clearPreviousDetectionResults() {
     clusters.clear();
 }
 
+string ClusterDetector::getDetectorTypeAsString() {
+    return DETECTOR_TYPE;
+}
+
 void ClusterDetector::processImageAndDetect() {
     vector<Entity> entities;
 
@@ -198,6 +202,8 @@ int ClusterDetector::getValidMinPointsValue() {
 
 
 // Constants
+const string ClusterDetector::DETECTOR_TYPE = "Clusters";
+
 const string ClusterDetector::TRACKBAR_EPS           = "Eps (Multiplied by 10)";
 const string ClusterDetector::TRACKBAR_MINPOINTS     = "Minimum number of points";
 
