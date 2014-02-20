@@ -91,8 +91,6 @@
 	<xs:complexType name="TimepointType">
 		<xs:sequence>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="spatialEntity" type="SpatialEntityType" />
-			<xs:element name="avgClusteredness" type="RealNonNegativeType" />
-			<xs:element name="avgDensity" type="RealNonNegativeType" />
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="numericStateVariable" type="NumericStateVariableType" />
 		</xs:sequence>
 		<xs:attribute name="value" type="RealNonNegativeType" />
