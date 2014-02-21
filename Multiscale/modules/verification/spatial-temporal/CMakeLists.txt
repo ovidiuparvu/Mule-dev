@@ -51,6 +51,11 @@ set(PARSER_TEST_SRC
     src/attribute/UnaryNumericMeasureAttribute.cpp
     src/attribute/UnarySubsetMeasureAttribute.cpp
     
+    src/model/AbstractSyntaxTree.cpp
+    src/model/SpatialEntity.cpp
+    src/model/SpatialTemporalTrace.cpp
+    src/model/TimePoint.cpp
+    
     src/exception/ParserGrammarExceptionHandler.cpp
     
     test/ParserTest.cpp
@@ -59,6 +64,7 @@ set(PARSER_TEST_SRC
 add_executable(ParserTest ${PARSER_TEST_SRC})
 AddUnitTest(ParserTest)
 
+target_link_libraries(ParserTest util)
 target_link_libraries(ParserTest gtest gtest_main)
 
 
@@ -79,12 +85,19 @@ set(PARSER_GRAMMAR_SAMPLE_SRC
     src/attribute/UnarySubsetMeasureAttribute.cpp
 
     src/exception/ParserGrammarExceptionHandler.cpp
+    
+    src/model/AbstractSyntaxTree.cpp
+    src/model/SpatialEntity.cpp
+    src/model/SpatialTemporalTrace.cpp
+    src/model/TimePoint.cpp
      
     sample/ParserGrammarSample.cpp 
 )
 
 add_executable(ParserGrammarSample ${PARSER_GRAMMAR_SAMPLE_SRC})
 AddSample(ParserGrammarSample)
+
+target_link_libraries(ParserGrammarSample util)
 
 
 # EmployeeSample
