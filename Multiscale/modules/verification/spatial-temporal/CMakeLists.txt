@@ -43,6 +43,7 @@ set(PARSER_TEST_SRC
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
+    src/attribute/LogicPropertyAttribute.cpp
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
     src/attribute/SpatialMeasureAttribute.cpp
@@ -76,6 +77,7 @@ set(PARSER_GRAMMAR_SAMPLE_SRC
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
+    src/attribute/LogicPropertyAttribute.cpp
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
     src/attribute/SpatialMeasureAttribute.cpp

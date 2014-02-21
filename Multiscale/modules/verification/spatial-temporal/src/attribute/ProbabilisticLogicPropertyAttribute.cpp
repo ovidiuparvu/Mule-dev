@@ -10,3 +10,7 @@ ComparatorType ProbabilisticLogicPropertyAttribute::getComparator() {
 double ProbabilisticLogicPropertyAttribute::getProbability() {
     return probability;
 }
+
+bool ProbabilisticLogicPropertyAttribute::evaluate(const SpatialTemporalTrace &trace) {
+    return true;
+}

@@ -1,10 +1,9 @@
 #ifndef LOGICPROPERTYATTRIBUTE_HPP
 #define LOGICPROPERTYATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/LogicPropertyEvaluator.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/variant.hpp>
 #include <vector>
 
 
@@ -12,36 +11,24 @@ namespace multiscale {
 
     namespace verification {
 
-        // Forward declaration of classes
-        class LogicPropertyAttribute;
-        class OrLogicPropertyAttribute;
-        class AndLogicPropertyAttribute;
-        class EquivalenceLogicPropertyAttribute;
-        class ImplicationLogicPropertyAttribute;
-        class PrimaryLogicPropertyAttribute;
-        class UntilLogicPropertyAttribute;
-
-
-        //! Variant for the logic property attribute
-        typedef boost::variant<
-            Nil,
-            boost::recursive_wrapper<LogicPropertyAttribute>,
-            boost::recursive_wrapper<OrLogicPropertyAttribute>,
-            boost::recursive_wrapper<AndLogicPropertyAttribute>,
-            boost::recursive_wrapper<ImplicationLogicPropertyAttribute>,
-            boost::recursive_wrapper<EquivalenceLogicPropertyAttribute>,
-            boost::recursive_wrapper<UntilLogicPropertyAttribute>,
-            boost::recursive_wrapper<PrimaryLogicPropertyAttribute>
-        > LogicPropertyAttributeType;
-
-
         //! Class for representing a logic property attribute
+//        class LogicPropertyAttribute : public LogicPropertyEvaluator {
         class LogicPropertyAttribute {
 
             public:
 
                 LogicPropertyAttributeType                 firstLogicProperty;      /*!< The first logic property */
                 std::vector<LogicPropertyAttributeType>    nextLogicProperties;     /*!< The next logic properties */
+
+
+            public:
+
+                //! Evaluate the truth value of the logic property considering the given spatial temporal trace
+                /*!
+                 * \param trace             The spatial temporal trace
+                 * \param lhsLogicProperty  The left hand side logic property
+                 */
+//                bool evaluate(const SpatialTemporalTrace &trace, const LogicPropertyAttributeType &lhsLogicProperty) override;
 
         };
 

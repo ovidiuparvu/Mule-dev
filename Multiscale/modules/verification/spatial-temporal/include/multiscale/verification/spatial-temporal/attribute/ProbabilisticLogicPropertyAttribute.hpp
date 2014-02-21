@@ -20,12 +20,19 @@ namespace multiscale {
                 double                      probability;    /*!< The probability */
                 LogicPropertyAttributeType  logicProperty;  /*!< The logic property */
 
+            public:
 
                 //! Get the type of the comparator
                 ComparatorType getComparator();
 
                 //! Get the probability
                 double getProbability();
+
+                //! Evaluate the truth value of the logic property considering the given spatial temporal trace
+                /*!
+                 * \param trace The spatial temporal trace
+                 */
+                bool evaluate(const SpatialTemporalTrace &trace);
 
         };
 

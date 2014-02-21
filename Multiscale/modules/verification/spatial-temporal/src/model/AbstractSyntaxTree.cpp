@@ -1,3 +1,4 @@
+#include "multiscale/exception/UnexpectedBehaviourException.hpp"
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
 
 using namespace multiscale::verification;
@@ -24,12 +25,12 @@ double AbstractSyntaxTree::getProbability() {
 
 bool AbstractSyntaxTree::evaluate(const SpatialTemporalTrace &spatialTemporalTrace) {
     if (!isInitialised) {
-
+        MS_throw(UnexpectedBehaviourException, ERR_ABSTRACT_SYNTAX_TREE_NOT_INITIALISED);
     }
-    // TODO: Replace the below line with return abstractSyntaxTree.evaluate(spatialTemporalTrace);
-    return true;
+
+    return probabilisticLogicProperty.evaluate(spatialTemporalTrace);
 }
 
 
 // Constants
-const std::string ERR_ABSTRACT_SYNTAX_TREE_NOT_INITIALISED = "The abstract syntax tree was not initialised before evaluation. Call the method initialiseTree(...) before calling the method evaluate(...).";
+const std::string AbstractSyntaxTree::ERR_ABSTRACT_SYNTAX_TREE_NOT_INITIALISED = "The abstract syntax tree was not initialised before evaluation. Call the method initialiseTree(...) before calling the method evaluate(...).";
