@@ -23,7 +23,7 @@ void Parser::setLogicalQuery(const std::string &logicalQuery) {
     initialise();
 }
 
-bool Parser::parse(ProbabilisticLogicPropertyAttribute &parseResult) {
+bool Parser::parse(AbstractSyntaxTree &parseResult) {
     bool isSuccessfulParse = false;
 
     try {
@@ -46,6 +46,16 @@ bool Parser::parse(ProbabilisticLogicPropertyAttribute &parseResult) {
 void Parser::initialise() {
     this->logicalQueryIterator = logicalQuery.begin();
     this->logicalQueryEnd = logicalQuery.end();
+}
+
+bool Parser::parseLogicalQuery(AbstractSyntaxTree &parseResult) {
+    ProbabilisticLogicPropertyAttribute probabilisticLogicProperty;
+
+    bool isSuccesfulParse = parseLogicalQuery(probabilisticLogicProperty);
+
+    parseResult.initialiseTree(probabilisticLogicProperty);
+
+    return isSuccesfulParse;
 }
 
 bool Parser::parseLogicalQuery(ProbabilisticLogicPropertyAttribute &parseResult) {

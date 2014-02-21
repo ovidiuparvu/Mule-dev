@@ -39,14 +39,20 @@ namespace multiscale {
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */
-                bool parse(ProbabilisticLogicPropertyAttribute &parseResult);
+                bool parse(AbstractSyntaxTree &parseResult);
 
             private:
 
                 //! Initialisation function
                 void initialise();
 
-                //! Parse the logical query
+                //! Parse the logical query and wrap the ProbabilisticLogicProperty into an AbstractSyntaxTree instance
+                /*!
+                 * \param parseResult The result of the parsing procedure
+                 */
+                bool parseLogicalQuery(AbstractSyntaxTree &parseResult);
+
+                //! Parse the logical query and construct the abstract syntax tree
                 /*!
                  * \param parseResult The result of the parsing procedure
                  */

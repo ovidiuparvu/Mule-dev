@@ -14,12 +14,19 @@ namespace multiscale {
 
             private:
 
+                bool                                isInitialised;              /*!< Flag for indicating if the abstract syntax tree was initialised */
                 ProbabilisticLogicPropertyAttribute probabilisticLogicProperty; /*!< The abstract syntax tree represented using a probabilistic logic property attribute */
 
             public:
 
-                AbstractSyntaxTree(ProbabilisticLogicPropertyAttribute &probabilisticLogicPropertyAttribute);
+                AbstractSyntaxTree();
                 ~AbstractSyntaxTree();
+
+                //! Initialise the abstract syntax tree using the given probabilistic logic property attribute
+                /*!
+                 * \param probabilisticLogicPropertyAttribute   The probabilistic logic property attribute
+                 */
+                void initialiseTree(const ProbabilisticLogicPropertyAttribute &probabilisticLogicPropertyAttribute);
 
                 //! Get the type of the comparator used in the probabilistic logical query
                 ComparatorType getComparator();
@@ -32,6 +39,11 @@ namespace multiscale {
                  * \param spatialTemporalTrace  The given spatial temporal trace
                  */
                 bool evaluate(const SpatialTemporalTrace &spatialTemporalTrace);
+
+            private:
+
+                // Constants
+                static const std::string ERR_ABSTRACT_SYNTAX_TREE_NOT_INITIALISED;
 
         };
 

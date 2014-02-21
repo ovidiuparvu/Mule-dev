@@ -13,7 +13,7 @@ using namespace std;
 //  Main program
 int main(int argc, char **argv) {
     string test;
-    ProbabilisticLogicPropertyAttribute result;
+    AbstractSyntaxTree result;
 
     cout << "/////////////////////////////////////////////////////////\n\n";
     cout << "\tA multidimensional logical query parser...\n\n";

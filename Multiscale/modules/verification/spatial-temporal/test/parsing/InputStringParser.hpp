@@ -25,7 +25,7 @@ namespace multiscaletest {
          * \param inputString The input string
          */
         bool parseInputString(const std::string &inputString) {
-            ProbabilisticLogicPropertyAttribute parseResult;
+            AbstractSyntaxTree parseResult;
             Parser parser(inputString);
 
             return parser.parse(parseResult);
