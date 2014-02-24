@@ -1,39 +1,32 @@
 #ifndef NUMERICSPATIALATTRIBUTE_HPP
 #define NUMERICSPATIALATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/UnarySubsetAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/BinarySubsetAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/TernarySubsetAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/QuaternarySubsetAttribute.hpp"
+
+#include "multiscale/verification/spatial-temporal/attribute/NumericEvaluator.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
-#include <boost/variant.hpp>
 
 
 namespace multiscale {
 
     namespace verification {
 
-        // Forward declaration of classes
-        class NumericSpatialAttribute;
-
-
-        //! Variant for a numeric spatial attribute
-        typedef boost::variant<
-            UnarySubsetAttribute,
-            BinarySubsetAttribute,
-            TernarySubsetAttribute,
-            QuaternarySubsetAttribute,
-            boost::recursive_wrapper<NumericSpatialAttribute>
-        > NumericSpatialAttributeType;
-
-
         //! Class for representing a numeric spatial attribute
-        class NumericSpatialAttribute {
+        class NumericSpatialAttribute : public NumericEvaluator {
 
             public:
 
                 NumericSpatialAttributeType numericSpatialMeasure;  /*!< The numeric spatial measure */
+
+            public:
+
+                //! Evaluate the truth value of a numeric measure considering the given time point
+                /*!
+                 * \param timePoint  The given timepoint
+                 */
+                double evaluate(const TimePoint &timePoint) const override {
+                    return 0.0;
+                }
 
         };
 

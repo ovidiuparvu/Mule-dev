@@ -46,7 +46,8 @@ namespace multiscale {
                  * \param trace             The spatial temporal trace
                  * \param lhsLogicProperty  The left hand side logic property
                  */
-                virtual bool evaluate(const SpatialTemporalTrace &trace, const LogicPropertyAttributeType &lhsLogicProperty) = 0;
+                virtual bool evaluate(const SpatialTemporalTrace &trace,
+                                      const LogicPropertyAttributeType &lhsLogicProperty) const = 0;
 
         };
 

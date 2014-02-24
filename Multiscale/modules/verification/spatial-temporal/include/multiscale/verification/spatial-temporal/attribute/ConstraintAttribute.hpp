@@ -2,7 +2,6 @@
 #define CONSTRAINTATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/PrimaryConstraintAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <vector>

@@ -50,43 +50,43 @@ TEST(UntilLogicProperty, AdditionalOperatorAfterUntilOperator) {
 }
 
 TEST(UntilLogicProperty, WrongInputBeforeStartParenthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U ({A} >= 4) [A, 3] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U ({A} >= 4) [A, 3] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, WrongInputAfterStartParenthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [ ({A} >= 4) 2, 3] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [ ({A} >= 4) 2, 3] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, MissingTimepointsComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [ ({A} >= 4) 2, 3] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2 3] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, StartTimepointInvalid) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [A, 3] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [A, 3] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, StartTimepointRealNumber) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1.0, 3] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1.0, 3] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, EndTimepointInvalid) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, A] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, A] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, EndTimepointRealNumber) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3.0] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3.0] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, TimepointsInvalid) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [A, B] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [A, B] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, TimepointsRealNumber) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1.0, 3.0] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1.0, 3.0] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, WrongInputBeforeEndParenthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3 ({A} >= 4) ] V (count(regions) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3 ({A} >= 4) ] (count(regions) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, WrongInputAfterEndParenthesis) {

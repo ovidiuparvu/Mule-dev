@@ -12,14 +12,12 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing a logic property attribute
-//        class LogicPropertyAttribute : public LogicPropertyEvaluator {
-        class LogicPropertyAttribute {
+        class LogicPropertyAttribute : public LogicPropertyEvaluator {
 
             public:
 
                 LogicPropertyAttributeType                 firstLogicProperty;      /*!< The first logic property */
                 std::vector<LogicPropertyAttributeType>    nextLogicProperties;     /*!< The next logic properties */
-
 
             public:
 
@@ -28,7 +26,10 @@ namespace multiscale {
                  * \param trace             The spatial temporal trace
                  * \param lhsLogicProperty  The left hand side logic property
                  */
-//                bool evaluate(const SpatialTemporalTrace &trace, const LogicPropertyAttributeType &lhsLogicProperty) override;
+                bool evaluate(const SpatialTemporalTrace &trace,
+                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
+                    return true;
+                }
 
         };
 

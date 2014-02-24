@@ -18,7 +18,7 @@ TEST(NotLogicProperty, OperatorAfterLogicPropertyAndExtraLogicProperty) {
 }
 
 TEST(NotLogicProperty, OperatorBeforeLogicPropertyAndExtraLogicProperty) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [~ ({A} 4 >=) ({B} 4 >=)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [~ ({A} >= 4) ({B} >= 4)]"), InvalidInputException);
 }
 
 TEST(NotLogicProperty, Correct) {

@@ -14,7 +14,7 @@ TEST(FutureLogicProperty, WrongInputMissingStartTimepoint) {
 }
 
 TEST(FutureLogicProperty, WrongInputMissingEndTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [3] ({A} >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [2] ({A} >= 4)]"), InvalidInputException);
 }
 
 TEST(FutureLogicProperty, WrongInputMissingTimepoints) {
@@ -46,7 +46,7 @@ TEST(FutureLogicProperty, InvalidEndTimepoint) {
 }
 
 TEST(FutureLogicProperty, InvalidTimepoints) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [2, 3.8] ({A} >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [2.0, 3.8] ({A} >= 4)]"), InvalidInputException);
 }
 
 TEST(FutureLogicProperty, WrongInputBeforeEndParanthesis) {

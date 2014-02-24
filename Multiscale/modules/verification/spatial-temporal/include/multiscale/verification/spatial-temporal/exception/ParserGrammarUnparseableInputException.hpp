@@ -24,7 +24,7 @@ namespace multiscale {
                     this->errorString = errorString;
                 }
 
-                //! Get the error std::string
+                //! Get the error string
                 std::string getErrorString() const {
                     return errorString;
                 }

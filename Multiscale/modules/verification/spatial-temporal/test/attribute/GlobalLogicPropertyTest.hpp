@@ -14,7 +14,7 @@ TEST(GlobalLogicProperty, WrongInputMissingStartTimepoint) {
 }
 
 TEST(GlobalLogicProperty, WrongInputMissingEndTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [G [3] ({A} >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [G [2] ({A} >= 4)]"), InvalidInputException);
 }
 
 TEST(GlobalLogicProperty, WrongInputMissingTimepoints) {
@@ -46,7 +46,7 @@ TEST(GlobalLogicProperty, InvalidEndTimepoint) {
 }
 
 TEST(GlobalLogicProperty, InvalidTimepoints) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [G [2, 3.8] ({A} >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [G [2.0, 3.8] ({A} >= 4)]"), InvalidInputException);
 }
 
 TEST(GlobalLogicProperty, WrongInputBeforeEndParanthesis) {

@@ -9,7 +9,6 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
 
-
 // Include forward declared types
 
 #include "multiscale/verification/spatial-temporal/attribute/PrimaryLogicPropertyAttribute.hpp"
@@ -32,6 +31,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericNumericAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericNumericAttribute.hpp"
 
+#include "multiscale/verification/spatial-temporal/attribute/PrimaryConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NotConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/OrConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/AndConstraintAttribute.hpp"
