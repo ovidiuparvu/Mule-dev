@@ -15,6 +15,7 @@ namespace multiscale {
             Regions     = 2     /*!< Regions */
         };
 
+
         //! Overload the output stream operator for the enumeration
         /*!
          * \param out                   Output stream
@@ -29,6 +30,11 @@ namespace multiscale {
             public:
 
                 SubsetSpecificType subsetSpecific;    /*!< The specific subset which should be considered */
+
+            public:
+
+                //! Return the specific subset type
+                SubsetSpecificType evaluate() const;
 
         };
 

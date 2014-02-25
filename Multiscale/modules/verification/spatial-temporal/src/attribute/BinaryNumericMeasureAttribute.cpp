@@ -3,6 +3,10 @@
 using namespace multiscale::verification;
 
 
+BinaryNumericMeasureType BinaryNumericMeasureAttribute::evaluate() const {
+    return binaryNumericMeasure;
+}
+
 //! Overload the output stream operator for the enumeration
 std::ostream& multiscale::verification::operator<<(std::ostream& out, const BinaryNumericMeasureType &binaryNumericMeasureType) {
     switch (binaryNumericMeasureType) {

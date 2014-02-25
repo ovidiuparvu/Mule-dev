@@ -3,6 +3,10 @@
 using namespace multiscale::verification;
 
 
+SubsetSpecificType SubsetSpecificAttribute::evaluate() const {
+    return subsetSpecific;
+}
+
 //! Overload the output stream operator for the enumeration
 std::ostream& multiscale::verification::operator<<(std::ostream& out, const SubsetSpecificType &subsetSpecificType) {
     switch (subsetSpecificType) {

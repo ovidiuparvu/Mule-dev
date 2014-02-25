@@ -46,6 +46,7 @@ set(PARSER_TEST_SRC
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
     src/attribute/SpatialMeasureAttribute.cpp
+    src/attribute/StateVariableAttribute.cpp
     src/attribute/SubsetSpecificAttribute.cpp
     src/attribute/TernarySubsetMeasureAttribute.cpp
     src/attribute/UnaryNumericMeasureAttribute.cpp
@@ -79,6 +80,7 @@ set(PARSER_GRAMMAR_SAMPLE_SRC
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
     src/attribute/SpatialMeasureAttribute.cpp
+    src/attribute/StateVariableAttribute.cpp
     src/attribute/SubsetSpecificAttribute.cpp
     src/attribute/TernarySubsetMeasureAttribute.cpp
     src/attribute/UnaryNumericMeasureAttribute.cpp

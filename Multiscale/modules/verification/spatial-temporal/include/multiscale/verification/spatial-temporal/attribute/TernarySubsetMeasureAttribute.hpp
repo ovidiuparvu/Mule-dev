@@ -15,6 +15,7 @@ namespace multiscale {
             Quartile    = 2     /*!< The quartile */
         };
 
+
         //! Overload the output stream operator for the enumeration
         /*!
          * \param out                       Output stream
@@ -29,6 +30,11 @@ namespace multiscale {
             public:
 
                 TernarySubsetMeasureType ternarySubsetMeasure;    /*!< The ternary subset measure */
+
+            public:
+
+                //! Return the ternary subset measure type
+                TernarySubsetMeasureType evaluate() const;
 
         };
 

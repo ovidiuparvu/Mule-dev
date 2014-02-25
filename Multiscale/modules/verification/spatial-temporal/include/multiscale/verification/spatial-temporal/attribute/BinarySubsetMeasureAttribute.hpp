@@ -26,6 +26,7 @@ namespace multiscale {
             Var     = 13    /*!< The variance */
         };
 
+
         //! Overload the output stream operator for the enumeration
         /*!
          * \param out                        Output stream
@@ -40,6 +41,11 @@ namespace multiscale {
             public:
 
                 BinarySubsetMeasureType binarySubsetMeasure;    /*!< The binary subset measure */
+
+            public:
+
+                //! Return the binary subset measure type
+                BinarySubsetMeasureType evaluate() const;
 
         };
 

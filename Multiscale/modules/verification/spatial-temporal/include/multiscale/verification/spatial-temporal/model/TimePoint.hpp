@@ -79,7 +79,7 @@ namespace multiscale {
                 /*!
                  * \param name The name of the numeric state variable
                  */
-                double getNumericStateVariable(const std::string &name);
+                double getNumericStateVariable(const std::string &name) const;
 
                 //! Remove the cluster from the given position
                 /*!
@@ -99,10 +99,17 @@ namespace multiscale {
                  */
                 void setConsideredSpatialEntityType(const ConsideredSpatialEntityType &consideredSpatialEntityType);
 
+                //! Construct the error message
+                /*!
+                 * \param errorString   The error string which will be enclosed by the error prefix and suffix
+                 */
+                std::string constructErrorMessage(const std::string &errorString) const;
+
             private:
 
                 // Constants
-                static const std::string ERR_GET_NUMERIC_STATE_VARIABLE;
+                static const std::string ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX;
+                static const std::string ERR_GET_NUMERIC_STATE_VARIABLE_SUFFIX;
 
         };
 

@@ -18,6 +18,7 @@ namespace multiscale {
             Equal               = 5         /*!< Equal */
         };
 
+
         //! Overload the output stream operator for the enumeration
         /*!
          * \param out                Output stream
@@ -32,6 +33,11 @@ namespace multiscale {
             public:
 
                 ComparatorType comparator;  /*!< The comparator */
+
+            public:
+
+                //! Return the comparator type
+                ComparatorType evaluate() const;
 
         };
 

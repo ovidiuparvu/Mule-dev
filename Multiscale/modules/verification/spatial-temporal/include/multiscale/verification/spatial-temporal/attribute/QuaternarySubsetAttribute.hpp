@@ -1,6 +1,7 @@
 #ifndef QUATERNARYSUBSETATTRIBUTE_HPP
 #define QUATERNARYSUBSETATTRIBUTE_HPP
 
+#include "multiscale/verification/spatial-temporal/attribute/NumericEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/QuaternarySubsetMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SubsetAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
@@ -13,7 +14,7 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing a quaternary subset attribute
-        class QuaternarySubsetAttribute {
+        class QuaternarySubsetAttribute : public NumericEvaluator {
 
             public:
 
@@ -22,6 +23,16 @@ namespace multiscale {
                 SpatialMeasureAttribute             firstSpatialMeasure;        /*!< The first considered spatial measure */
                 SubsetAttributeType                 secondSubset;               /*!< The second considered subset */
                 SpatialMeasureAttribute             secondSpatialMeasure;       /*!< The second considered spatial measure */
+
+            public:
+
+                //! Evaluate the truth value of a numeric measure considering the given time point
+                /*!
+                 * \param timePoint  The given timepoint
+                 */
+                double evaluate(const TimePoint &timePoint) const override {
+                    return 0.0;
+                }
 
         };
 

@@ -20,6 +20,7 @@ namespace multiscale {
             Subtract    = 7     /*!< Subtraction */
         };
 
+
         //! Overload the output stream operator for the enumeration
         /*!
          * \param out                       Output stream
@@ -34,6 +35,11 @@ namespace multiscale {
             public:
 
                 BinaryNumericMeasureType binaryNumericMeasure;  /*!< The binary numeric measure */
+
+            public:
+
+                //! Return the binary numeric measure type
+                BinaryNumericMeasureType evaluate() const;
 
         };
 

@@ -24,6 +24,7 @@ namespace multiscale {
             CentroidY           = 11    /*!< The y coordinate of the centroid of the spatial entity */
         };
 
+
         //! Overload the output stream operator for the enumeration
         /*!
          * \param out                   Output stream
@@ -39,6 +40,10 @@ namespace multiscale {
 
                 SpatialMeasureType spatialMeasure;    /*!< The spatial measure */
 
+            public:
+
+                //! Return the spatial measure type
+                SpatialMeasureType evaluate() const;
         };
 
     };

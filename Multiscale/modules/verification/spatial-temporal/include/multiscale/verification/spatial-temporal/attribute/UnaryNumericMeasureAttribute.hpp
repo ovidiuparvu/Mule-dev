@@ -20,6 +20,7 @@ namespace multiscale {
             Trunc   = 7     /*!< Truncation */
         };
 
+
         //! Overload the output stream operator for the enumeration
         /*!
          * \param out                        Output stream
@@ -34,6 +35,11 @@ namespace multiscale {
             public:
 
                 UnaryNumericMeasureType unaryNumericMeasure;    /*!< The unary numeric measure */
+
+            public:
+
+                //! Return the unary numeric measure type
+                UnaryNumericMeasureType evaluate() const;
 
         };
 

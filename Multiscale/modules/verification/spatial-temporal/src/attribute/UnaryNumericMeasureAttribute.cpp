@@ -3,6 +3,10 @@
 using namespace multiscale::verification;
 
 
+UnaryNumericMeasureType UnaryNumericMeasureAttribute::evaluate() const {
+    return unaryNumericMeasure;
+}
+
 //! Overload the output stream operator for the enumeration
 std::ostream& multiscale::verification::operator<<(std::ostream& out, const UnaryNumericMeasureType &unaryNumericMeasureType) {
     switch (unaryNumericMeasureType) {

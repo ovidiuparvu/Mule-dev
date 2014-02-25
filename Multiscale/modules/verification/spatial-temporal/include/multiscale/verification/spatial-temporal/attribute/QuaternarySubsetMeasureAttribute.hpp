@@ -14,6 +14,7 @@ namespace multiscale {
             Covar = 1    /*!< Covariance */
         };
 
+
         //! Overload the output stream operator for the enumeration
         /*!
          * \param out                            Output stream
@@ -28,6 +29,11 @@ namespace multiscale {
             public:
 
                 QuaternarySubsetMeasureType quaternarySubsetMeasure;    /*!< The quaternary subset measure */
+
+            public:
+
+                //! Return the quaternary subset measure type
+                QuaternarySubsetMeasureType evaluate() const;
 
         };
 

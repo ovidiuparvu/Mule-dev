@@ -16,6 +16,7 @@ namespace multiscale {
             Density         = 3     /*!< The overall density of the entities */
         };
 
+
         //! Overload the output stream operator for the enumeration
         /*!
          * \param out                        Output stream
@@ -30,6 +31,11 @@ namespace multiscale {
             public:
 
                 UnarySubsetMeasureType unarySubsetMeasure;    /*!< The unary subset measure */
+
+            public:
+
+                //! Return the unary subset measure type
+                UnarySubsetMeasureType evaluate() const;
 
         };
 
