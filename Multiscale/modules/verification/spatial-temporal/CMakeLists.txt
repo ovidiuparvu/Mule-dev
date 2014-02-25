@@ -20,19 +20,36 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 # ParserEvaluationTest
 
-#set(PARSER_EVALUATION_TEST_SRC
-#    src/parsing/Parser.cpp
-#    src/parsing/ParserGrammar.cpp
-#
-#    src/exception/ParserGrammarExceptionHandler.cpp
-#    
-#    test/ParserEvaluationTest.cpp
-#)
-#
-#add_executable(ParserEvaluationTest ${PARSER_EVALUATION_TEST_SRC})
-#AddUnitTest(ParserEvaluationTest)
-#
-#target_link_libraries(ParserEvaluationTest gtest gtest_main)
+set(PARSER_EVALUATION_TEST_SRC
+    src/parsing/Parser.cpp
+
+    src/attribute/BinaryNumericMeasureAttribute.cpp
+    src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ComparatorAttribute.cpp
+    src/attribute/ProbabilisticLogicPropertyAttribute.cpp
+    src/attribute/QuaternarySubsetMeasureAttribute.cpp
+    src/attribute/SpatialMeasureAttribute.cpp
+    src/attribute/StateVariableAttribute.cpp
+    src/attribute/SubsetSpecificAttribute.cpp
+    src/attribute/TernarySubsetMeasureAttribute.cpp
+    src/attribute/UnaryNumericMeasureAttribute.cpp
+    src/attribute/UnarySubsetMeasureAttribute.cpp
+    
+    src/exception/ParserGrammarExceptionHandler.cpp
+    
+    src/model/AbstractSyntaxTree.cpp
+    src/model/SpatialEntity.cpp
+    src/model/SpatialTemporalTrace.cpp
+    src/model/TimePoint.cpp
+    
+    test/ParserEvaluationTest.cpp
+)
+
+add_executable(ParserEvaluationTest ${PARSER_EVALUATION_TEST_SRC})
+AddUnitTest(ParserEvaluationTest)
+
+target_link_libraries(ParserEvaluationTest util)
+target_link_libraries(ParserEvaluationTest gtest gtest_main)
 
 
 # ParserTest

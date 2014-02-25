@@ -1,6 +1,10 @@
 #ifndef ATTRIBUTEVISITOR_HPP
 #define ATTRIBUTEVISITOR_HPP
 
+/*
+ *  TODO: Remove this file
+ */
+
 #include <boost/variant.hpp>
 
 

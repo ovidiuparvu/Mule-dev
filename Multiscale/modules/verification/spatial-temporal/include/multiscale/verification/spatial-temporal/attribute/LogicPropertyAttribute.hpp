@@ -23,8 +23,7 @@ namespace multiscale {
 
                 //! Evaluate the truth value of the logic property considering the given spatial temporal trace
                 /*!
-                 * \param trace             The spatial temporal trace
-                 * \param lhsLogicProperty  The left hand side logic property
+                 * \param trace The spatial temporal trace
                  */
                 bool evaluate(const SpatialTemporalTrace &trace,
                               const LogicPropertyAttributeType &lhsLogicProperty) const override {

@@ -2,7 +2,6 @@
 #define CONSTRAINTATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/ConstraintEvaluator.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <vector>
@@ -13,6 +12,7 @@ namespace multiscale {
     namespace verification {
 
         // Forward declaration of classes
+        class Nil;
         class ConstraintAttribute;
         class OrConstraintAttribute;
         class AndConstraintAttribute;
@@ -23,7 +23,7 @@ namespace multiscale {
 
         //! Variant for a constraint attribute type
         typedef boost::variant<
-            Nil,
+            boost::recursive_wrapper<Nil>,
             boost::recursive_wrapper<ConstraintAttribute>,
             boost::recursive_wrapper<OrConstraintAttribute>,
             boost::recursive_wrapper<AndConstraintAttribute>,

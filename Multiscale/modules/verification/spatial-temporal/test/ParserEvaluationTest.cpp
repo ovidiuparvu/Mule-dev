@@ -9,54 +9,18 @@ using namespace multiscale::verification;
 
 
 // Test function
-bool evaluateParsingResult(const std::string &inputString) {
-    ProbabilisticLogicPropertyAttribute parseResult;
+bool evaluateParsingResult(const std::string &inputString, const SpatialTemporalTrace &trace) {
+    AbstractSyntaxTree parseResult;
     Parser parser(inputString);
 
     parser.parse(parseResult);
 
-//    return parseResult.evaluate();
-    return true;
+    return parseResult.evaluate(trace);
 }
 
 // Tests
-TEST(ParserEvaluationTest, AndOperator) {
-    EXPECT_TRUE(evaluateParsingResult("T ^ T"));
-    EXPECT_FALSE(evaluateParsingResult("T ^ F"));
-    EXPECT_FALSE(evaluateParsingResult("F ^ T"));
-    EXPECT_FALSE(evaluateParsingResult("F ^ F"));
-}
-
-TEST(ParserEvaluationTest, OrOperator) {
-    EXPECT_TRUE(evaluateParsingResult("T V T"));
-    EXPECT_TRUE(evaluateParsingResult("T V F"));
-    EXPECT_TRUE(evaluateParsingResult("F V T"));
-    EXPECT_FALSE(evaluateParsingResult("F V F"));
-}
-
-TEST(ParserEvaluationTest, ImplicationOperator) {
-    EXPECT_TRUE(evaluateParsingResult("T => T"));
-    EXPECT_FALSE(evaluateParsingResult("T => F"));
-    EXPECT_TRUE(evaluateParsingResult("F => T"));
-    EXPECT_TRUE(evaluateParsingResult("F => F"));
-}
-
-TEST(ParserEvaluationTest, EquivalenceOperator) {
-    EXPECT_TRUE(evaluateParsingResult("T <=> T"));
-    EXPECT_FALSE(evaluateParsingResult("T <=> F"));
-    EXPECT_FALSE(evaluateParsingResult("F <=> T"));
-    EXPECT_TRUE(evaluateParsingResult("F <=> F"));
-}
-
-TEST(ParserEvaluationTest, NotOperator) {
-    EXPECT_TRUE(evaluateParsingResult("~F"));
-    EXPECT_FALSE(evaluateParsingResult("~T"));
-}
-
-TEST(ParserEvaluationTest, CombinedOperators) {
-    EXPECT_TRUE(evaluateParsingResult("~F ^ T"));
-    EXPECT_TRUE(evaluateParsingResult("(~T) => (T ^ (F V F))"));
-    EXPECT_FALSE(evaluateParsingResult("(~T ^ ~F) <=> (T ^ (F => T) ^ (F <=> F))"));
+TEST(ParserEvaluationTest, Correct) {
+    EXPECT_FALSE(evaluateParsingResult("P > 0.9 [count(regions) > 2]", SpatialTemporalTrace()));
 }
 
 

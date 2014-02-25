@@ -1,6 +1,10 @@
 #ifndef ATTRIBUTE_HPP
 #define ATTRIBUTE_HPP
 
+/*
+ *  TODO: Remove this file
+ */
+
 #include "multiscale/verification/spatial-temporal/attribute/AttributeVisitor.hpp"
 
 #include <boost/variant.hpp>
