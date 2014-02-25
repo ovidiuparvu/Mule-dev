@@ -1,9 +1,6 @@
 #ifndef NIL_HPP
 #define NIL_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/LogicPropertyEvaluator.hpp"
-#include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
-
 #include <boost/fusion/include/adapt_struct.hpp>
 
 
@@ -19,33 +16,7 @@ namespace multiscale {
          * where all types are boost::recursive_wrapper<T_i> the Nil type can be added
          * before them in order to avoid the potential run-time errors.
          */
-        class Nil {
-
-            public:
-
-                //! Evaluate the truth value of a logic property considering the spatial temporal trace
-                /*!
-                 * This method will always return true because the Nil class is used only to avoid run-time errors.
-                 *
-                 * \param trace The spatial temporal trace
-                 */
-                bool evaluate(const SpatialTemporalTrace &trace) const {
-                    return true;
-                }
-
-                //! Evaluate the truth value of a logic property considering the spatial temporal trace and logic property
-                /*!
-                 * This method will always return true because the Nil class is used only to avoid run-time errors.
-                 *
-                 * \param trace             The spatial temporal trace
-                 * \param lhsLogicProperty  The left hand side logic property
-                 */
-                bool evaluate(const SpatialTemporalTrace &trace,
-                              const LogicPropertyAttributeType &lhsLogicProperty) const {
-                    return true;
-                }
-
-        };
+        class Nil {};
 
     };
 

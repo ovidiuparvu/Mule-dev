@@ -18,9 +18,12 @@ namespace multiscale {
 
             public:
 
-                ComparatorAttribute         comparator;     /*!< The comparator */
-                double                      probability;    /*!< The probability */
-                LogicPropertyAttributeType  logicProperty;  /*!< The logic property */
+                ComparatorAttribute         comparator;             /*!< The comparator */
+                double                      probability;            /*!< The probability */
+                LogicPropertyAttributeType  logicProperty;          /*!< The logic property */
+
+                LogicPropertyAttributeType  evaluationLogicProperty; /*!< The logic property used only for
+                                                                          evaluation purposes */
 
             public:
 
@@ -35,8 +38,7 @@ namespace multiscale {
                  * \param trace The spatial temporal trace
                  */
                 bool evaluate(const SpatialTemporalTrace &trace) {
-//                    return boost::apply_visitor(LogicPropertyVisitor(trace), logicProperty);
-                    return true;
+                    return boost::apply_visitor(LogicPropertyVisitor(trace), logicProperty, evaluationLogicProperty);
                 }
 
         };

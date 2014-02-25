@@ -38,7 +38,8 @@ namespace multiscale {
 
 
         //! Class for representing a primary logic property attribute
-        class PrimaryLogicPropertyAttribute : public LogicPropertyEvaluator {
+        class PrimaryLogicPropertyAttribute {
+//        class PrimaryLogicPropertyAttribute : public LogicPropertyEvaluator {
 
             public:
 
@@ -51,10 +52,10 @@ namespace multiscale {
                  * \param trace             The spatial temporal trace
                  * \param lhsLogicProperty  The left hand side logic property
                  */
-                bool evaluate(const SpatialTemporalTrace &trace,
-                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
-                    return true;
-                }
+//                bool evaluate(const SpatialTemporalTrace &trace,
+//                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
+//                    return true;
+//                }
 
         };
 

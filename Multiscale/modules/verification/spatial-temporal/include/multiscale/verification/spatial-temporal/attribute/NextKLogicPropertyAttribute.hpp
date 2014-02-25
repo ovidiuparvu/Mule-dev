@@ -11,7 +11,8 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing a "next K" logic property attribute
-        class NextKLogicPropertyAttribute : public LogicPropertyEvaluator {
+        class NextKLogicPropertyAttribute {
+//        class NextKLogicPropertyAttribute : public LogicPropertyEvaluator {
 
             public:
 
@@ -25,10 +26,10 @@ namespace multiscale {
                  * \param trace             The spatial temporal trace
                  * \param lhsLogicProperty  The left hand side logic property
                  */
-                bool evaluate(const SpatialTemporalTrace &trace,
-                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
-                    return true;
-                }
+//                bool evaluate(const SpatialTemporalTrace &trace,
+//                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
+//                    return true;
+//                }
 
         };
 

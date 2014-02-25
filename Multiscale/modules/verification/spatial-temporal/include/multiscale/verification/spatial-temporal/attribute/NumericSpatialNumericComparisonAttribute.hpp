@@ -14,7 +14,8 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing a numeric spatial numeric comparison attribute
-        class NumericSpatialNumericComparisonAttribute : public LogicPropertyEvaluator {
+        class NumericSpatialNumericComparisonAttribute {
+//        class NumericSpatialNumericComparisonAttribute : public LogicPropertyEvaluator {
 
             public:
 
@@ -29,10 +30,10 @@ namespace multiscale {
                  * \param trace             The spatial temporal trace
                  * \param lhsLogicProperty  The left hand side logic property
                  */
-                bool evaluate(const SpatialTemporalTrace &trace,
-                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
-                    return true;
-                }
+//                bool evaluate(const SpatialTemporalTrace &trace,
+//                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
+//                    return true;
+//                }
 
         };
 

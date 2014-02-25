@@ -1,6 +1,7 @@
 #ifndef LOGICPROPERTYEVALUATOR_HPP
 #define LOGICPROPERTYEVALUATOR_HPP
 
+#include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 
 #include <boost/variant.hpp>
@@ -11,7 +12,6 @@ namespace multiscale {
     namespace verification {
 
         // Forward declaration of classes
-        class Nil;
         class LogicPropertyAttribute;
         class OrLogicPropertyAttribute;
         class AndLogicPropertyAttribute;
@@ -23,7 +23,7 @@ namespace multiscale {
 
         //! Variant for the logic property attribute
         typedef boost::variant<
-            boost::recursive_wrapper<Nil>,
+            Nil,
             boost::recursive_wrapper<LogicPropertyAttribute>,
             boost::recursive_wrapper<OrLogicPropertyAttribute>,
             boost::recursive_wrapper<AndLogicPropertyAttribute>,
@@ -34,29 +34,21 @@ namespace multiscale {
         > LogicPropertyAttributeType;
 
 
-        //! Abstract class used for evaluating logic properties
+        //! Class used for evaluating logic properties
+        template <typename T>
         class LogicPropertyEvaluator {
 
             public:
 
                 virtual ~LogicPropertyEvaluator() {};
 
-                //! Evaluate the truth value of a logic property considering the spatial temporal trace
-                /*!
-                 * \param trace The spatial temporal trace
-                 */
-                virtual bool evaluate(const SpatialTemporalTrace &trace) const {
-                    return true;
-                }
-
                 //! Evaluate the truth value of a logic property considering the spatial temporal trace and logic property
                 /*!
                  * \param trace             The spatial temporal trace
                  * \param lhsLogicProperty  The left hand side logic property
                  */
-                virtual bool evaluate(const SpatialTemporalTrace &trace,
-                                      const LogicPropertyAttributeType &lhsLogicProperty) const {
-                    return evaluate(trace);
+                virtual bool evaluate(const SpatialTemporalTrace &trace, const T &lhsLogicProperty) const {
+                    return true;
                 }
 
         };

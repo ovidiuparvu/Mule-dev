@@ -11,7 +11,8 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing an "and" logic property attribute
-        class AndLogicPropertyAttribute : public LogicPropertyEvaluator {
+        class AndLogicPropertyAttribute {
+//        class AndLogicPropertyAttribute : public LogicPropertyEvaluator {
 
             public:
 
@@ -24,10 +25,10 @@ namespace multiscale {
                  * \param trace             The spatial temporal trace
                  * \param lhsLogicProperty  The left hand side logic property
                  */
-                bool evaluate(const SpatialTemporalTrace &trace,
-                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
-                    return true;
-                }
+//                bool evaluate(const SpatialTemporalTrace &trace,
+//                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
+//                    return true;
+//                }
 
         };
 

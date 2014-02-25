@@ -11,7 +11,8 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing an "or" logic property attribute
-        class OrLogicPropertyAttribute : public LogicPropertyEvaluator {
+        class OrLogicPropertyAttribute {
+//        class OrLogicPropertyAttribute : public LogicPropertyEvaluator {
 
             public:
 
@@ -19,13 +20,13 @@ namespace multiscale {
 
             public:
 
-                //! Evaluate the truth value of the logic property considering the given spatial temporal trace
+                //! Evaluate the truth value of the logic property considering the given spatial temporal trace and logic property
                 /*!
                  * \param trace             The spatial temporal trace
                  * \param lhsLogicProperty  The left hand side logic property
                  */
-                bool evaluate(const SpatialTemporalTrace &trace,
-                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
+                template <typename T>
+                bool evaluate(const SpatialTemporalTrace &trace, const T &lhsLogicProperty) const {
                     return true;
                 }
 

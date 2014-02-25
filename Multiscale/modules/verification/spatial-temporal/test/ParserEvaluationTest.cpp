@@ -9,7 +9,7 @@ using namespace multiscale::verification;
 
 
 // Test function
-bool evaluateParsingResult(const std::string &inputString, const SpatialTemporalTrace &trace) {
+bool evaluateLogicPropertyConsideringTrace(const std::string &inputString, const SpatialTemporalTrace &trace) {
     AbstractSyntaxTree parseResult;
     Parser parser(inputString);
 
@@ -20,7 +20,7 @@ bool evaluateParsingResult(const std::string &inputString, const SpatialTemporal
 
 // Tests
 TEST(ParserEvaluationTest, Correct) {
-    EXPECT_FALSE(evaluateParsingResult("P > 0.9 [count(regions) > 2]", SpatialTemporalTrace()));
+    EXPECT_TRUE(evaluateLogicPropertyConsideringTrace("P > 0.9 [count(regions) > 2]", SpatialTemporalTrace()));
 }
 
 

@@ -11,8 +11,6 @@
 
 // Include forward declared types
 
-#include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
-
 #include "multiscale/verification/spatial-temporal/attribute/PrimaryLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/DifferenceAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericNumericComparisonAttribute.hpp"
