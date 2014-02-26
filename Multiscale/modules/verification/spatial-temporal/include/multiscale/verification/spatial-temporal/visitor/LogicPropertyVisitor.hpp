@@ -119,103 +119,99 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    std::cout << "PrimaryLogicPropertyAttribute" << std::endl;
+                    return evaluate(logicProperty.primaryLogicProperty, trace);
+                }
+
+                //! Overloading the "()" operator for the DifferenceAttribute alternative
+                /*!
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool operator() (const DifferenceAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                    return true;
+                }
+
+                //! Overloading the "()" operator for the NumericSpatialNumericComparisonAttribute alternative
+                /*!
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool operator() (const NumericSpatialNumericComparisonAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                    std::cout << "NumericSpatialNumericComparisonAttribute" << std::endl;
 
                     return true;
                 }
 
-                //! Overloading the "()" operator for the EquivalenceLogicPropertyAttribute alternative
+                //! Overloading the "()" operator for the NumericNumericComparisonAttribute alternative
                 /*!
-                 * \param logicProperty     The logic property
-                 * \param lhsLogicProperty  The left hand side logic property
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    std::cout << "PrimaryLogicPropertyAttribute" << std::endl;
+                bool operator() (const NumericNumericComparisonAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                    std::cout << "NumericNumericComparisonAttribute" << std::endl;
 
                     return true;
                 }
 
-                //! Overloading the "()" operator for the EquivalenceLogicPropertyAttribute alternative
+                //! Overloading the "()" operator for the NotLogicPropertyAttribute alternative
                 /*!
-                 * \param logicProperty     The logic property
-                 * \param lhsLogicProperty  The left hand side logic property
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    std::cout << "PrimaryLogicPropertyAttribute" << std::endl;
+                bool operator() (const NotLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                    std::cout << "NotLogicPropertyAttribute" << std::endl;
 
                     return true;
                 }
 
-                //! Overloading the "()" operator for the EquivalenceLogicPropertyAttribute alternative
+                //! Overloading the "()" operator for the FutureLogicPropertyAttribute alternative
                 /*!
-                 * \param logicProperty     The logic property
-                 * \param lhsLogicProperty  The left hand side logic property
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    std::cout << "PrimaryLogicPropertyAttribute" << std::endl;
+                bool operator() (const FutureLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                    std::cout << "FutureLogicPropertyAttribute" << std::endl;
 
                     return true;
                 }
 
-                //! Overloading the "()" operator for the EquivalenceLogicPropertyAttribute alternative
+                //! Overloading the "()" operator for the GlobalLogicPropertyAttribute alternative
                 /*!
-                 * \param logicProperty     The logic property
-                 * \param lhsLogicProperty  The left hand side logic property
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    std::cout << "PrimaryLogicPropertyAttribute" << std::endl;
+                bool operator() (const GlobalLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                    std::cout << "GlobalLogicPropertyAttribute" << std::endl;
 
                     return true;
                 }
 
-                //! Overloading the "()" operator for the EquivalenceLogicPropertyAttribute alternative
+                //! Overloading the "()" operator for the NextLogicPropertyAttribute alternative
                 /*!
-                 * \param logicProperty     The logic property
-                 * \param lhsLogicProperty  The left hand side logic property
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    std::cout << "PrimaryLogicPropertyAttribute" << std::endl;
+                bool operator() (const NextLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                    std::cout << "NextLogicPropertyAttribute" << std::endl;
 
                     return true;
                 }
 
-                //! Overloading the "()" operator for the EquivalenceLogicPropertyAttribute alternative
+                //! Overloading the "()" operator for the NextKLogicPropertyAttribute alternative
                 /*!
-                 * \param logicProperty     The logic property
-                 * \param lhsLogicProperty  The left hand side logic property
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    std::cout << "PrimaryLogicPropertyAttribute" << std::endl;
-
-                    return true;
-                }
-
-                //! Overloading the "()" operator for the EquivalenceLogicPropertyAttribute alternative
-                /*!
-                 * \param logicProperty     The logic property
-                 * \param lhsLogicProperty  The left hand side logic property
-                 */
-                template <typename T>
-                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    std::cout << "PrimaryLogicPropertyAttribute" << std::endl;
-
-                    return true;
-                }
-
-                //! Overloading the "()" operator for the EquivalenceLogicPropertyAttribute alternative
-                /*!
-                 * \param logicProperty     The logic property
-                 * \param lhsLogicProperty  The left hand side logic property
-                 */
-                template <typename T>
-                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    std::cout << "PrimaryLogicPropertyAttribute" << std::endl;
+                bool operator() (const NextKLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                    std::cout << "NextKLogicPropertyAttribute" << std::endl;
 
                     return true;
                 }
