@@ -3,6 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/LogicPropertyAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/LogicPropertyVisitor.hpp"
 
 #include "boost/fusion/include/adapt_struct.hpp"
@@ -18,12 +19,12 @@ namespace multiscale {
 
             public:
 
-                ComparatorAttribute         comparator;             /*!< The comparator */
-                double                      probability;            /*!< The probability */
-                LogicPropertyAttributeType  logicProperty;          /*!< The logic property */
+                ComparatorAttribute         comparator;                 /*!< The comparator */
+                double                      probability;                /*!< The probability */
+                LogicPropertyAttributeType  logicProperty;              /*!< The logic property */
 
-                LogicPropertyAttributeType  evaluationLogicProperty; /*!< The logic property used only for
-                                                                          evaluation purposes */
+                LogicPropertyAttributeType  evaluationLogicProperty;    /*!< The logic property used only for
+                                                                             evaluation purposes */
 
             public:
 

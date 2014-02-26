@@ -5,10 +5,6 @@
  * File for including (in)directly all the synthesized attribute types
  */
 
-// Include types
-
-#include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
-
 // Include forward declared types
 
 #include "multiscale/verification/spatial-temporal/attribute/PrimaryLogicPropertyAttribute.hpp"

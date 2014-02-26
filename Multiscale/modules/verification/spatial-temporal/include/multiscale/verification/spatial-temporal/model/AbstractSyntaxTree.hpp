@@ -1,7 +1,7 @@
 #ifndef ABSTRACTSYNTAXTREE_HPP
 #define ABSTRACTSYNTAXTREE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 
 

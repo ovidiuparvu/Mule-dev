@@ -2,12 +2,11 @@
 #define PRIMARYLOGICPROPERTYATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/DifferenceAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/LogicPropertyEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericNumericComparisonAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericSpatialNumericComparisonAttribute.hpp"
 
-#include "boost/fusion/include/adapt_struct.hpp"
-#include "boost/variant.hpp"
+#include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/variant.hpp>
 
 
 namespace multiscale {
@@ -39,23 +38,10 @@ namespace multiscale {
 
         //! Class for representing a primary logic property attribute
         class PrimaryLogicPropertyAttribute {
-//        class PrimaryLogicPropertyAttribute : public LogicPropertyEvaluator {
 
             public:
 
                 PrimaryLogicPropertyAttributeType primaryLogicProperty;    /*!< The primary logic property */
-
-            public:
-
-                //! Evaluate the truth value of the logic property considering the given spatial temporal trace
-                /*!
-                 * \param trace             The spatial temporal trace
-                 * \param lhsLogicProperty  The left hand side logic property
-                 */
-//                bool evaluate(const SpatialTemporalTrace &trace,
-//                              const LogicPropertyAttributeType &lhsLogicProperty) const override {
-//                    return true;
-//                }
 
         };
 

@@ -1,7 +1,7 @@
 #ifndef PARSERGRAMMAR_HPP
 #define PARSERGRAMMAR_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/handler/ProbabilityErrorHandler.hpp"
 #include "multiscale/verification/spatial-temporal/handler/UnexpectedTokenErrorHandler.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"

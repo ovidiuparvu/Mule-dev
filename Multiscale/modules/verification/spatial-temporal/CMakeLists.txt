@@ -88,7 +88,7 @@ target_link_libraries(ParserTest gtest gtest_main)
 
 # ParserGrammarSample
 
-set(PARSER_GRAMMAR_SAMPLE_SRC
+set(PARSER_SAMPLE_SRC
     src/parsing/Parser.cpp
     
     src/attribute/BinaryNumericMeasureAttribute.cpp
@@ -110,13 +110,13 @@ set(PARSER_GRAMMAR_SAMPLE_SRC
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
      
-    sample/ParserGrammarSample.cpp 
+    sample/ParserSample.cpp 
 )
 
-add_executable(ParserGrammarSample ${PARSER_GRAMMAR_SAMPLE_SRC})
-AddSample(ParserGrammarSample)
+add_executable(ParserSample ${PARSER_SAMPLE_SRC})
+AddSample(ParserSample)
 
-target_link_libraries(ParserGrammarSample util)
+target_link_libraries(ParserSample util)
 
 
 # EmployeeSample
