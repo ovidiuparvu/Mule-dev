@@ -1,4 +1,4 @@
-#include "multiscale/exception/UnexpectedBehaviourException.hpp"
+#include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 #include "multiscale/verification/spatial-temporal/model/TimePoint.hpp"
 
 using namespace multiscale;
@@ -44,7 +44,8 @@ double TimePoint::getNumericStateVariable(const std::string &name) const {
     std::map<std::string, double>::const_iterator it = numericStateVariables.find(name);
 
     if (it == numericStateVariables.end()) {
-        MS_throw(UnexpectedBehaviourException, constructErrorMessage(name));
+        MS_throw_detailed(SpatialTemporalException, ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX,
+                          name, ERR_GET_NUMERIC_STATE_VARIABLE_SUFFIX);
     }
 
     return it->second;
@@ -62,9 +63,6 @@ void TimePoint::setConsideredSpatialEntityType(const ConsideredSpatialEntityType
     this->consideredSpatialEntityType = consideredSpatialEntityType;
 }
 
-std::string TimePoint::constructErrorMessage(const std::string &errorString) const {
-    return (ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX + errorString + ERR_GET_NUMERIC_STATE_VARIABLE_SUFFIX);
-}
 
 // Constants
 const std::string TimePoint::ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX = "The numeric state variable identified by the given name (";

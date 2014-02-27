@@ -119,24 +119,23 @@ void SpatialEntity::setCentroidY(double centroidY) {
 
 void SpatialEntity::validateRealNonNegativeValue(double value) {
     if (Numeric::lessOrEqual(value, 0)) {
-        MS_throw(InvalidInputException, constructErrorMessage(ERR_REAL_NON_NEGATIVE_VALUE, value));
+        MS_throw_detailed(SpatialTemporalException, ERR_REAL_NON_NEGATIVE_VALUE,
+                          StringManipulator::toString<double>(value), ERR_SUFFIX);
     }
 }
 
 void SpatialEntity::validateAngleDegreesValue(double value) {
     if ((Numeric::lessOrEqual(value, 0)) || (Numeric::greaterOrEqual(value, 360))) {
-        MS_throw(InvalidInputException, constructErrorMessage(ERR_ANGLE_VALUE, value));
+        MS_throw_detailed(SpatialTemporalException, ERR_ANGLE_VALUE,
+                          StringManipulator::toString<double>(value), ERR_SUFFIX);
     }
 }
 
 void SpatialEntity::validateRealValueBtwZeroAndOne(double value) {
     if ((Numeric::lessOrEqual(value, 0)) || (Numeric::greaterOrEqual(value, 1))) {
-        MS_throw(InvalidInputException, constructErrorMessage(ERR_REAL_BTW_ZERO_AND_ONE, value));
+        MS_throw_detailed(SpatialTemporalException, ERR_REAL_BTW_ZERO_AND_ONE,
+                          StringManipulator::toString<double>(value), ERR_SUFFIX);
     }
-}
-
-std::string SpatialEntity::constructErrorMessage(const string &errorMessage, double errorValue) {
-    return (errorMessage + StringManipulator::toString<double>(errorValue) + ERR_SUFFIX);
 }
 
 

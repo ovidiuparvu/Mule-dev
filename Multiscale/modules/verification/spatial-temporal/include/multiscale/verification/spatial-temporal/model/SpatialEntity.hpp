@@ -1,7 +1,7 @@
 #ifndef SPATIALENTITY_HPP
 #define SPATIALENTITY_HPP
 
-#include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 
 #include <string>
 
@@ -151,12 +151,6 @@ namespace multiscale {
                  */
                 void validateRealValueBtwZeroAndOne(double value);
 
-                //! Construct the error message from the given string and value
-                /*!
-                 * \param errorMeassge  The error message
-                 * \param errorValue    The error value
-                 */
-                std::string constructErrorMessage(const std::string &errorMessage, double errorValue);
 
                 // Constants
                 static const std::string ERR_SUFFIX;

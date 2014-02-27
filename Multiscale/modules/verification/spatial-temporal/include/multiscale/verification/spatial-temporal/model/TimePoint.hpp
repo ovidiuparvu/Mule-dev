@@ -99,12 +99,6 @@ namespace multiscale {
                  */
                 void setConsideredSpatialEntityType(const ConsideredSpatialEntityType &consideredSpatialEntityType);
 
-                //! Construct the error message
-                /*!
-                 * \param errorString   The error string which will be enclosed by the error prefix and suffix
-                 */
-                std::string constructErrorMessage(const std::string &errorString) const;
-
             private:
 
                 // Constants

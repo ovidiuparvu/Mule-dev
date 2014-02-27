@@ -11,7 +11,14 @@ namespace multiscale {
 
     namespace verification {
 
+        //! Class for representing a spatial temporal trace
         class SpatialTemporalTrace {
+
+            // Forward declaration of Iterator class
+            class Iterator;
+
+            // Friend classes
+            friend class SpatialTemporalTrace::Iterator;
 
             private:
 
@@ -39,17 +46,40 @@ namespace multiscale {
 
                 //! Get the subtrace starting at the timepoint identified by the given index
                 /*!
-                 * \param startIndex The starting position of the subtrace in the initial trace
+                 * \param startIndex    The starting position of the subtrace in the initial trace
                  */
-                SpatialTemporalTrace subTrace(unsigned int startIndex);
+                SpatialTemporalTrace::Iterator subTrace(unsigned int startIndex);
+
+                //! Get the subtrace starting and ending at the timepoints identified by the given indices
+                /*!
+                 * \param startIndex    The starting position of the subtrace in the initial trace
+                 * \param endIndex      The end position of the subtrace in the initial trace
+                 */
+                SpatialTemporalTrace::Iterator subTrace(unsigned int startIndex, unsigned endIndex);
 
             private:
 
                 //! Get the subtrace starting at the timepoint identified by the given index
                 /*!
-                 * \param startIndex The starting position of the subtrace in the initial trace
+                 * \param startIndex    The starting position of the subtrace in the initial trace
                  */
-                SpatialTemporalTrace getSubTrace(unsigned int startIndex);
+                SpatialTemporalTrace::Iterator getSubTrace(unsigned int startIndex);
+
+                //! Get the subtrace starting and ending at the timepoints identified by the given indices
+                /*!
+                 * \param startIndex    The starting position of the subtrace in the initial trace
+                 * \param endIndex      The end position of the subtrace in the initial trace
+                 */
+                SpatialTemporalTrace::Iterator getSubTrace(unsigned int startIndex, unsigned int endIndex);
+
+                //! Check if the provided index pair is valid
+                /*! Check if the provided indices are smaller than the size of the timepoints vector and
+                 *  the second timepoint is greater than the start timepoint
+                 *
+                 * \param startIndex    The start index
+                 * \param endIndex      The end index
+                 */
+                void validateIndices(unsigned int startIndex, unsigned int endIndex);
 
                 //! Check if the provided index is smaller than the size of the timepoints vector
                 /*!
@@ -57,8 +87,49 @@ namespace multiscale {
                  */
                 void validateIndex(unsigned int index);
 
+
                 // Constants
-                static const std::string ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS;
+                static const std::string ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START;
+                static const std::string ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END;
+
+                static const std::string ERR_TIMEPOINT_END_START;
+                static const std::string ERR_TIMEPOINT_END_MIDDLE;
+                static const std::string ERR_TIMEPOINT_END_END;
+
+                static const std::string ERR_ITERATOR_NEXT;
+
+        };
+
+        //! Class for representing an iterator on a spatial temporal trace
+        class SpatialTemporalTrace::Iterator {
+
+            private:
+
+                SpatialTemporalTrace    trace;                  /*!< The spatial temporal trace */
+
+                unsigned int            currentTimePointIndex;  /*!< The index of  the current timepoint */
+
+                unsigned int            startTimePointIndex;    /*!< The index of the start timepoint */
+                unsigned int            endTimePointIndex;      /*!< The index of the end timepoint */
+
+            public:
+
+                //! Constructor with parameters
+                /*!
+                 * \param startTimePoint    The start timepoint
+                 * \param endTimePoint      The end timepoint
+                 */
+                Iterator(const SpatialTemporalTrace &trace, unsigned int startTimePoint, unsigned int endTimePoint);
+                ~Iterator();
+
+                //! Return the next timepoint if it exists
+                TimePoint& next();
+
+                //! Check if there is a next timepoint
+                bool hasNext();
+
+                //! Reset currentTimePoint to its initial position (startTimePoint)
+                void reset();
 
         };
 

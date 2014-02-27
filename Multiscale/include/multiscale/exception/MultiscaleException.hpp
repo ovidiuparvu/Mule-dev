@@ -9,7 +9,8 @@
 
 using namespace std;
 
-#define MS_throw(ex, msg) (throw ex(__FILE__, __LINE__, msg))
+#define MS_throw(ex, msg)                               (throw ex(__FILE__, __LINE__, msg))
+#define MS_throw_detailed(ex, startMsg, msg, endMsg)    (throw ex(__FILE__, __LINE__, startMsg, msg, endMsg))
 
 
 namespace multiscale {
