@@ -51,7 +51,7 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const LogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    bool firstLogicPropertyTruthValue = evaluate(logicProperty.firstLogicProperty);
+                    bool firstLogicPropertyTruthValue = evaluate(logicProperty.firstLogicProperty, trace);
 
                     return evaluateNextLogicProperties(logicProperty, firstLogicPropertyTruthValue);
                 }
@@ -63,7 +63,7 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const OrLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty);
+                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
 
                     return (precedingTruthValue || logicPropertyTruthValue);
                 }
@@ -75,7 +75,7 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const AndLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty);
+                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
 
                     return (precedingTruthValue && logicPropertyTruthValue);
                 }
@@ -87,7 +87,7 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const ImplicationLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty);
+                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
 
                     return ((!precedingTruthValue) || logicPropertyTruthValue);
                 }
@@ -99,7 +99,7 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const EquivalenceLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty);
+                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
 
                     return (((!precedingTruthValue) || logicPropertyTruthValue) &&
                             ((!logicPropertyTruthValue) || precedingTruthValue));
@@ -119,7 +119,7 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    return evaluate(logicProperty.primaryLogicProperty);
+                    return evaluate(logicProperty.primaryLogicProperty, trace);
                 }
 
                 //! Overloading the "()" operator for the DifferenceAttribute alternative
@@ -168,7 +168,7 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const NotLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    bool logicPropertyTruthValue = evaluate(primaryLogicProperty.logicProperty);
+                    bool logicPropertyTruthValue = evaluate(primaryLogicProperty.logicProperty, trace);
 
                     return (!logicPropertyTruthValue);
                 }
@@ -180,10 +180,18 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const FutureLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    // TODO: Implement
-                    std::cout << "FutureLogicPropertyAttribute" << std::endl;
+                    unsigned long futurePropertyStart   = primaryLogicProperty.startTimepoint;
+                    unsigned long futurePropertyEnd     = primaryLogicProperty.endTimepoint;
 
-                    return true;
+                    for (unsigned long i = futurePropertyStart; i <= futurePropertyEnd; i++) {
+//                        SpatialTemporalTrace subTrace = trace.subTrace(futurePropertyStart, futurePropertyEnd);
+//
+//                        if (evaluate(primaryLogicProperty.logicProperty, subTrace)) {
+//                            return true;
+//                        }
+                    }
+
+                    return false;
                 }
 
                 //! Overloading the "()" operator for the GlobalLogicPropertyAttribute alternative
@@ -227,24 +235,12 @@ namespace multiscale {
 
             private:
 
-                //! Evaluate the truth value of a logic property considering the spatial temporal trace and logic property
-                /*!
-                 * \param trace             The spatial temporal trace
-                 * \param lhsLogicProperty  The left hand side logic property
-                 */
-//                bool evaluate(const SpatialTemporalTrace &trace) {
-//                    bool firstLogicPropertyTruthValue = evaluateFirstLogicProperty(trace);
-//                    evaluationLogicProperty = firstLogicProperty;
-//
-//                    return evaluateNextLogicProperties(firstLogicPropertyTruthValue, trace);
-//                }
-
                 //! Evaluate the logic property considering the given spatial temporal trace
                 /*!
                  * \param logicProperty The logic property
                  * \param trace         The given spatial temporal trace
                  */
-                bool evaluate(const LogicPropertyAttributeType &logicProperty) const {
+                bool evaluate(const LogicPropertyAttributeType &logicProperty, const SpatialTemporalTrace &trace) const {
                     return boost::apply_visitor(LogicPropertyVisitor(trace), logicProperty, evaluationLogicProperty);
                 }
 
@@ -253,7 +249,7 @@ namespace multiscale {
                  * \param logicProperty The logic property
                  * \param trace         The given spatial temporal trace
                  */
-                bool evaluate(const PrimaryLogicPropertyAttributeType &logicProperty) const {
+                bool evaluate(const PrimaryLogicPropertyAttributeType &logicProperty, const SpatialTemporalTrace &trace) const {
                     return boost::apply_visitor(LogicPropertyVisitor(trace), logicProperty, evaluationLogicProperty);
                 }
 
@@ -288,9 +284,6 @@ namespace multiscale {
                 }
 
         };
-
-
-        //! Class used to evaluate primary logic properties
 
     };
 

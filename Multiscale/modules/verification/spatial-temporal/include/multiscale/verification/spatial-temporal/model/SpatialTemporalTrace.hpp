@@ -43,7 +43,7 @@ namespace multiscale {
                 TimePoint &getTimePoint(unsigned int index);
 
                 //! Get the length of the spatial temporal trace (i.e. number of timepoints)
-                unsigned int length();
+                unsigned int length() const;
 
                 //! Get the subtrace starting at the timepoint identified by the given index
                 /*!
@@ -57,6 +57,13 @@ namespace multiscale {
                  * \param endIndex      The end position of the subtrace in the initial trace
                  */
                 SpatialTemporalTrace::Iterator subTrace(unsigned int startIndex, unsigned endIndex);
+
+                //! Get the subtrace starting and ending at the timepoints identified by the given values
+                /*!
+                 * \param startValue    The starting value of the subtrace in the initial trace
+                 * \param endValue      The end value of the subtrace in the initial trace
+                 */
+                SpatialTemporalTrace subTrace(unsigned long startValue, unsigned long endValue);
 
             private:
 
@@ -95,6 +102,34 @@ namespace multiscale {
                  */
                 SpatialTemporalTrace::Iterator getSubTrace(unsigned int startIndex, unsigned int endIndex);
 
+                //! Get the subtrace starting and ending with the given values
+                /*!
+                 * \param subTrace      The resulting subtrace
+                 * \param startValue    The starting timepoint value of the subtrace
+                 * \param endValue      The end timepoint value of the subtrace
+                 */
+                void getSubTrace(SpatialTemporalTrace &subTrace, unsigned long startValue, unsigned long endValue);
+
+                //! Add the timepoints starting and ending with the given indices to the subtrace
+                /*!
+                 * \param subTrace      The resulting subtrace
+                 * \param startValue    The starting timepoint index
+                 * \param endValue      The end timepoint index
+                 */
+                void addTimePointsToSubTrace(SpatialTemporalTrace &subTrace, int startIndex, int endIndex);
+
+                //! Get the index of the first timepoint which has a value greater than or equal to the given value
+                /*!
+                 * \param value     The given value
+                 */
+                int indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value);
+
+                //! Get the index of the last timepoint which has a value less than or equal to the given value
+                /*!
+                 * \param value     The given value
+                 */
+                int indexOfLastTimePointLessOrEqualToValue(unsigned long value);
+
                 //! Check if the provided index pair is valid
                 /*! Check if the provided indices are smaller than the size of the timepoints vector and
                  *  the second timepoint is greater than the start timepoint
@@ -104,11 +139,26 @@ namespace multiscale {
                  */
                 void validateIndices(unsigned int startIndex, unsigned int endIndex);
 
+                //! Check if the provided value pair is valid
+                /*! Check if the provided timepoint values are smaller than the maximum timepoint value and
+                 *  the end timepoint value is greater than the start timepoint value
+                 *
+                 * \param startValue    The start value
+                 * \param endValue      The end value
+                 */
+                void validateValues(unsigned long startValue, unsigned long endValue);
+
                 //! Check if the provided index is smaller than the size of the timepoints vector
                 /*!
                  * \param index The provided index
                  */
                 void validateIndex(unsigned int index);
+
+                //! Check if the provided value is smaller than or equal to the maximum timepoint value
+                /*!
+                 * \param value The provided value
+                 */
+                void validateValue(unsigned long value);
 
 
                 // Constants
@@ -124,6 +174,8 @@ namespace multiscale {
                 static const std::string ERR_TIMEPOINT_VALUE_INVALID_END;
 
                 static const std::string ERR_ITERATOR_NEXT;
+
+                static const int TIMEPOINT_INDEX_NOT_FOUND;
 
         };
 
