@@ -24,11 +24,6 @@ namespace multiscale {
 
             public:
 
-                //! Constructor with parameters for the class
-                /*!
-                 * \param trace                 The spatial temporal trace
-                 * \param previousTruthValue    The truth value of the preceding logic property
-                 */
                 LogicPropertyVisitor(const SpatialTemporalTrace &trace, bool precedingTruthValue = true) {
                     this->trace = trace;
                     this->precedingTruthValue = precedingTruthValue;

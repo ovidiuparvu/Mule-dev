@@ -1,7 +1,6 @@
 #ifndef BINARYSUBSETATTRIBUTE_HPP
 #define BINARYSUBSETATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/NumericEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/BinarySubsetMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SubsetAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
@@ -14,23 +13,13 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing a binary subset attribute
-        class BinarySubsetAttribute : public NumericEvaluator {
+        class BinarySubsetAttribute {
 
             public:
 
                 BinarySubsetMeasureAttribute    binarySubsetMeasure;    /*!< The binary subset measure */
                 SubsetAttributeType             subset;                 /*!< The considered subset */
                 SpatialMeasureAttribute         spatialMeasure;         /*!< The considered spatial measure */
-
-            public:
-
-                //! Evaluate the truth value of a numeric measure considering the given time point
-                /*!
-                 * \param timePoint  The given timepoint
-                 */
-                double evaluate(const TimePoint &timePoint) const override {
-                    return 0.0;
-                }
 
         };
 
