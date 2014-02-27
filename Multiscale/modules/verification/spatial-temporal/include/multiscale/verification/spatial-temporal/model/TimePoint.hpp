@@ -4,6 +4,7 @@
 #include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
 #include "multiscale/verification/spatial-temporal/model/Region.hpp"
 
+#include <limits>
 #include <list>
 #include <map>
 #include <string>
@@ -37,8 +38,17 @@ namespace multiscale {
 
             public:
 
-                TimePoint(double value = -1);
+                TimePoint(double value = std::numeric_limits<double>::min());
                 ~TimePoint();
+
+                //! Get the value of the timepoint
+                double getValue() const;
+
+                //! Set the value of the timepoint
+                /*!
+                 * \param value The value of the timepoint
+                 */
+                void setValue(double value);
 
                 //! Add a cluster to the list of clusters
                 /*!

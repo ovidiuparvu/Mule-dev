@@ -42,7 +42,7 @@ namespace multiscale {
             /*!
              * \param variable Variable
              */
-            template <class T>
+            template <typename T>
             static string toString(T variable) {
                 ostringstream stringStream;
 

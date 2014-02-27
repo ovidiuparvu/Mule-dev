@@ -22,7 +22,8 @@ namespace multiscale {
 
             private:
 
-                std::vector<TimePoint> timePoints;  /*!< The array of time points */
+                std::vector<TimePoint> timePoints;          /*!< The array of time points */
+                double                 lastTimePointValue;  /*!< The value of the last added timepoint */
 
             public:
 
@@ -33,7 +34,7 @@ namespace multiscale {
                 /*!
                  * \param timePoint Time point added to the array
                  */
-                void addTimePoint(const TimePoint &timePoint);
+                void addTimePoint(TimePoint &timePoint);
 
                 //! Get the time point at the given index in the array
                 /*!
@@ -58,6 +59,28 @@ namespace multiscale {
                 SpatialTemporalTrace::Iterator subTrace(unsigned int startIndex, unsigned endIndex);
 
             private:
+
+                //! Update the last timepoint value
+                /*!
+                 * \param timePoint The last added timepoint
+                 */
+                void updateLastTimePointValue(TimePoint &timePoint);
+
+                //! Update the last timepoint value considering the given timepoint value
+                /*!
+                 * \param timePoint         The last added timepoint
+                 * \param timePointValue    The value of the current timepoint
+                 */
+                void updateLastTimePointValue(TimePoint &timePoint, double timePointValue);
+
+                //! Check if the provided time point value is greater than the last time point value
+                /*! The timepoint is considered to be uninitialised if the value is less than 0.
+                 *  Otherwise if the timepoint value is less or equal to the lastTimePointValue
+                 *  then an exception is thrown
+                 *
+                 * \param timePointValue    The value of the timepoint
+                 */
+                void validateTimePointValue(double timePointValue);
 
                 //! Get the subtrace starting at the timepoint identified by the given index
                 /*!
@@ -95,6 +118,10 @@ namespace multiscale {
                 static const std::string ERR_TIMEPOINT_END_START;
                 static const std::string ERR_TIMEPOINT_END_MIDDLE;
                 static const std::string ERR_TIMEPOINT_END_END;
+
+                static const std::string ERR_TIMEPOINT_VALUE_INVALID_START;
+                static const std::string ERR_TIMEPOINT_VALUE_INVALID_MIDDLE;
+                static const std::string ERR_TIMEPOINT_VALUE_INVALID_END;
 
                 static const std::string ERR_ITERATOR_NEXT;
 

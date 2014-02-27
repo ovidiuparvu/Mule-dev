@@ -1,3 +1,4 @@
+#include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
@@ -5,13 +6,17 @@
 using namespace multiscale::verification;
 
 
-SpatialTemporalTrace::SpatialTemporalTrace() {}
+SpatialTemporalTrace::SpatialTemporalTrace() {
+    lastTimePointValue = -1;
+}
 
 SpatialTemporalTrace::~SpatialTemporalTrace() {
     timePoints.clear();
 }
 
-void SpatialTemporalTrace::addTimePoint(const TimePoint &timePoint) {
+void SpatialTemporalTrace::addTimePoint(TimePoint &timePoint) {
+    updateLastTimePointValue(timePoint);
+
     timePoints.push_back(timePoint);
 }
 
@@ -35,6 +40,34 @@ SpatialTemporalTrace::Iterator SpatialTemporalTrace::subTrace(unsigned int start
     validateIndex(startIndex);
 
     return getSubTrace(startIndex, endIndex);
+}
+
+void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint) {
+    double timePointValue = timePoint.getValue();
+
+    validateTimePointValue(timePointValue);
+    updateLastTimePointValue(timePoint, timePointValue);
+}
+
+void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint, double timePointValue) {
+    if (Numeric::almostEqual(timePointValue, -1)) {
+        timePoint.setValue(++lastTimePointValue);
+    } else {
+        lastTimePointValue = timePointValue;
+    }
+}
+
+void SpatialTemporalTrace::validateTimePointValue(double timePointValue) {
+    if (Numeric::greaterOrEqual(timePointValue, 0)) {
+        if (Numeric::lessOrEqual(timePointValue, lastTimePointValue)) {
+            MS_throw_detailed(SpatialTemporalException,
+                              ERR_TIMEPOINT_VALUE_INVALID_START,
+                              StringManipulator::toString<double>(timePointValue) +
+                              ERR_TIMEPOINT_VALUE_INVALID_MIDDLE +
+                              StringManipulator::toString<double>(lastTimePointValue),
+                              ERR_TIMEPOINT_VALUE_INVALID_END);
+        }
+    }
 }
 
 SpatialTemporalTrace::Iterator SpatialTemporalTrace::getSubTrace(unsigned int startIndex) {
@@ -73,6 +106,10 @@ const std::string SpatialTemporalTrace::ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END   
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_END_START     = "The provided end timepoint index (";
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_END_MIDDLE    = ") should be greater or equal to the start timepoint index (";
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_END_END       = ").";
+
+const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_INVALID_START   = "The current timepoint value (";
+const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_INVALID_MIDDLE  = ") should be greater than the previously added timepoint value (";
+const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_INVALID_END     = ").";
 
 const std::string SpatialTemporalTrace::ERR_ITERATOR_NEXT           = "There is no next timepoint which the iterator can"
                                                                       " return. Please use the hasNext() method before"

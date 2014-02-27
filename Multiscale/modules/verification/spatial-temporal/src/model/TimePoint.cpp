@@ -16,6 +16,14 @@ TimePoint::~TimePoint() {
     numericStateVariables.clear();
 }
 
+double TimePoint::getValue() const {
+    return value;
+}
+
+void TimePoint::setValue(double value) {
+    this->value = value;
+}
+
 void TimePoint::addCluster(const Cluster &cluster) {
     this->clusters.push_back(cluster);
 }
