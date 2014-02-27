@@ -184,11 +184,11 @@ namespace multiscale {
                     unsigned long futurePropertyEnd     = primaryLogicProperty.endTimepoint;
 
                     for (unsigned long i = futurePropertyStart; i <= futurePropertyEnd; i++) {
-//                        SpatialTemporalTrace subTrace = trace.subTrace(futurePropertyStart, futurePropertyEnd);
-//
-//                        if (evaluate(primaryLogicProperty.logicProperty, subTrace)) {
-//                            return true;
-//                        }
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, futurePropertyStart, futurePropertyEnd);
+
+                        if (evaluate(primaryLogicProperty.logicProperty, subTrace)) {
+                            return true;
+                        }
                     }
 
                     return false;

@@ -10,6 +10,11 @@ SpatialTemporalTrace::SpatialTemporalTrace() {
     lastTimePointValue = -1;
 }
 
+SpatialTemporalTrace::SpatialTemporalTrace(const SpatialTemporalTrace &trace) {
+    this->timePoints            = trace.timePoints;
+    this->lastTimePointValue    = trace.lastTimePointValue;
+}
+
 SpatialTemporalTrace::~SpatialTemporalTrace() {
     timePoints.clear();
 }
@@ -30,16 +35,13 @@ unsigned int SpatialTemporalTrace::length() const {
     return timePoints.size();
 }
 
-SpatialTemporalTrace::Iterator SpatialTemporalTrace::subTrace(unsigned int startIndex) {
-    validateIndex(startIndex);
+SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned long startValue) {
+    SpatialTemporalTrace subTrace;
 
-    return getSubTrace(startIndex);
-}
+    validateValue(startValue);
+    getSubTrace(subTrace, startValue, timePoints[timePoints.size() - 1].getValue());
 
-SpatialTemporalTrace::Iterator SpatialTemporalTrace::subTrace(unsigned int startIndex, unsigned int endIndex) {
-    validateIndices(startIndex, endIndex);
-
-    return getSubTrace(startIndex, endIndex);
+    return subTrace;
 }
 
 SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned long startValue, unsigned long endValue) {
@@ -49,6 +51,13 @@ SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned long startValue, un
     getSubTrace(subTrace, startValue, endValue);
 
     return subTrace;
+}
+
+SpatialTemporalTrace SpatialTemporalTrace::subTrace(const SpatialTemporalTrace &trace, unsigned long startValue,
+                                                    unsigned long endValue) {
+    SpatialTemporalTrace traceCopy(trace);
+
+    return traceCopy.subTrace(startValue, endValue);
 }
 
 void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint) {
@@ -79,19 +88,11 @@ void SpatialTemporalTrace::validateTimePointValue(double timePointValue) {
     }
 }
 
-SpatialTemporalTrace::Iterator SpatialTemporalTrace::getSubTrace(unsigned int startIndex) {
-    return SpatialTemporalTrace::Iterator(*this, startIndex, timePoints.size() - 1);
-}
-
-SpatialTemporalTrace::Iterator SpatialTemporalTrace::getSubTrace(unsigned int startIndex, unsigned int endIndex) {
-    return SpatialTemporalTrace::Iterator(*this, startIndex, endIndex);
-}
-
 int SpatialTemporalTrace::indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value) {
     unsigned int nrOfTimePoints = timePoints.size();
     double currentValue = -1;
 
-    for (int i = 0; i < nrOfTimePoints; i++) {
+    for (unsigned int i = 0; i < nrOfTimePoints; i++) {
         currentValue = timePoints[i].getValue();
 
         if (Numeric::greaterOrEqual(currentValue, value)) {
@@ -135,19 +136,6 @@ void SpatialTemporalTrace::getSubTrace(SpatialTemporalTrace &subTrace, unsigned 
 void SpatialTemporalTrace::addTimePointsToSubTrace(SpatialTemporalTrace &subTrace, int startIndex, int endIndex) {
     for (int i = startIndex; i <= endIndex; i++) {
         subTrace.addTimePoint(timePoints[i]);
-    }
-}
-
-void SpatialTemporalTrace::validateIndices(unsigned int startIndex, unsigned int endIndex) {
-    validateIndex(startIndex);
-    validateIndex(endIndex);
-
-    if (endIndex < startIndex) {
-        MS_throw_detailed(SpatialTemporalException, ERR_TIMEPOINT_END_START,
-                          StringManipulator::toString<unsigned int>(endIndex) +
-                          ERR_TIMEPOINT_END_MIDDLE +
-                          StringManipulator::toString<unsigned int>(startIndex),
-                          ERR_TIMEPOINT_END_END);
     }
 }
 
@@ -197,40 +185,3 @@ const std::string SpatialTemporalTrace::ERR_ITERATOR_NEXT           = "There is 
                                                                       " before calling the next() method.";
 
 const int SpatialTemporalTrace::TIMEPOINT_INDEX_NOT_FOUND = -1;
-
-
-/////////////////////////////////////////////////////////////////////////////////////////
-//
-//
-//  Inner class "Iterator"
-//
-//
-/////////////////////////////////////////////////////////////////////////////////////////
-
-SpatialTemporalTrace::Iterator::Iterator(const SpatialTemporalTrace &trace, unsigned int startIndex,
-                                         unsigned int endIndex) {
-    this->trace = trace;
-
-    this->startTimePointIndex = startIndex;
-    this->endTimePointIndex = endIndex;
-
-    reset();
-}
-
-SpatialTemporalTrace::Iterator::~Iterator() {}
-
-TimePoint &SpatialTemporalTrace::Iterator::next() {
-    if (!hasNext()) {
-        MS_throw(SpatialTemporalException, ERR_ITERATOR_NEXT);
-    }
-
-    return trace.timePoints[currentTimePointIndex++];
-}
-
-bool SpatialTemporalTrace::Iterator::hasNext() {
-    return (currentTimePointIndex <= endTimePointIndex);
-}
-
-void SpatialTemporalTrace::Iterator::reset() {
-    currentTimePointIndex = startTimePointIndex;
-}
