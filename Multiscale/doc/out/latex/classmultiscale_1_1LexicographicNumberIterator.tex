@@ -1,99 +1,98 @@
-\hypertarget{classmultiscale_1_1LexicographicNumberIterator}{\section{multiscale\-:\-:Lexicographic\-Number\-Iterator Class Reference}
+\hypertarget{classmultiscale_1_1LexicographicNumberIterator}{\section{multiscale\-:\-:\-Lexicographic\-Number\-Iterator \-Class \-Reference}
 \label{classmultiscale_1_1LexicographicNumberIterator}\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
 }
 
 
-Iterator class starting at 1 and ending at the provided upper bound considering that each number is followed by an \char`\"{}\-\_\-\char`\"{}.  
+\-Iterator class starting at 1 and ending at the provided upper bound considering that each number is followed by an \char`\"{}\-\_\-\char`\"{}.  
 
 
 
 
-{\ttfamily \#include $<$Lexicographic\-Number\-Iterator.\-hpp$>$}
+{\ttfamily \#include $<$\-Lexicographic\-Number\-Iterator.\-hpp$>$}
 
 
 
-Inheritance diagram for multiscale\-:\-:Lexicographic\-Number\-Iterator\-:
+\-Inheritance diagram for multiscale\-:\-:\-Lexicographic\-Number\-Iterator\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{classmultiscale_1_1LexicographicNumberIterator__inherit__graph}
+\includegraphics[width=272pt]{classmultiscale_1_1LexicographicNumberIterator__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for multiscale\-:\-:Lexicographic\-Number\-Iterator\-:
+\-Collaboration diagram for multiscale\-:\-:\-Lexicographic\-Number\-Iterator\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{classmultiscale_1_1LexicographicNumberIterator__coll__graph}
+\includegraphics[width=272pt]{classmultiscale_1_1LexicographicNumberIterator__coll__graph}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classmultiscale_1_1LexicographicNumberIterator_a02a95a6f7876b84909e08555730ff08a}{Lexicographic\-Number\-Iterator} (unsigned int \hyperlink{classmultiscale_1_1NumberIterator_a56a5558958778bbde64e249d67cba886}{upper\-Bound})
+\hyperlink{classmultiscale_1_1LexicographicNumberIterator_a02a95a6f7876b84909e08555730ff08a}{\-Lexicographic\-Number\-Iterator} (unsigned int \hyperlink{classmultiscale_1_1NumberIterator_a56a5558958778bbde64e249d67cba886}{upper\-Bound})
 \item 
 \hyperlink{classmultiscale_1_1LexicographicNumberIterator_affe04d9733b7d0984a5ab3957cb0096a}{$\sim$\-Lexicographic\-Number\-Iterator} ()
 \item 
 unsigned int \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a282d970d0d1a33d2736bbdf104c18336}{number} ()
-\begin{DoxyCompactList}\small\item\em Get the number pointed by the iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\begin{DoxyCompactList}\small\item\em \-Get the number pointed by the iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a943745c4723ed8c3c18df9f92bf94d2c}{initialise} ()
-\begin{DoxyCompactList}\small\item\em Initialise the vectors of digits. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Initialise the vectors of digits. \end{DoxyCompactList}\item 
 bool \hyperlink{classmultiscale_1_1LexicographicNumberIterator_ac2754a1a57005183e2c9040719c97448}{has\-Next\-Initialised} ()
-\begin{DoxyCompactList}\small\item\em Check if there is a next number when in initialised state. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Check if there is a next number when in initialised state. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a18311f68a49156a415c817a947abcd7d}{reset\-Current\-Number} ()
-\begin{DoxyCompactList}\small\item\em Reset the digits of the current number to the initial value. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Reset the digits of the current number to the initial value. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a700e18593ba0cc764d4e517993bd3fdc}{number\-To\-Digits} (unsigned int \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a282d970d0d1a33d2736bbdf104c18336}{number}, vector$<$ unsigned char $>$ \&digits)
-\begin{DoxyCompactList}\small\item\em Convert the number to a vector of digits. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Convert the number to a vector of digits. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a4c0a17e03a12256584d9ed3ae19a78c9}{reverse\-Digits} (vector$<$ unsigned char $>$ \&digits)
-\begin{DoxyCompactList}\small\item\em Reverse the order of the digits. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Reverse the order of the digits. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a9bcb610b3b63b02ceed7d556960e57c3}{digits\-To\-Number} (vector$<$ unsigned char $>$ \&digits)
-\begin{DoxyCompactList}\small\item\em Convert the vector of digits to the number they represent. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Convert the vector of digits to the number they represent. \end{DoxyCompactList}\item 
 bool \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a8fad6e84a483cee3bd52c926de73d15f}{is\-Larger\-Than\-Upper\-Bound} (unsigned char last\-Digit)
-\begin{DoxyCompactList}\small\item\em Check if the current number with the provided last digit is greater than the upper bound. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Check if the current number with the provided last digit is greater than the upper bound. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a063dc7e6097724e96ed36bab4d20871b}{pad\-With\-Zeros} ()
-\begin{DoxyCompactList}\small\item\em Pad the current number with zeros. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\begin{DoxyCompactList}\small\item\em \-Pad the current number with zeros. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
 \begin{DoxyCompactItemize}
 \item 
 vector$<$ unsigned char $>$ \hyperlink{classmultiscale_1_1LexicographicNumberIterator_a909a054ae4d3e79e5daa3059a94000d0}{upper\-Bound\-Digits}
 \item 
 vector$<$ unsigned char $>$ \hyperlink{classmultiscale_1_1LexicographicNumberIterator_af42ebeea695a31c2da714332c520ae79}{current\-Number\-Digits}
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
 
 
-\subsection{Detailed Description}
-Iterator class starting at 1 and ending at the provided upper bound considering that each number is followed by an \char`\"{}\-\_\-\char`\"{}. 
+\subsection{\-Detailed \-Description}
+\-Iterator class starting at 1 and ending at the provided upper bound considering that each number is followed by an \char`\"{}\-\_\-\char`\"{}. 
 
-Definition at line 14 of file Lexicographic\-Number\-Iterator.\-hpp.
+\-Definition at line 14 of file \-Lexicographic\-Number\-Iterator.\-hpp.
 
 
 
-\subsection{Constructor \& Destructor Documentation}
-\hypertarget{classmultiscale_1_1LexicographicNumberIterator_a02a95a6f7876b84909e08555730ff08a}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!Lexicographic\-Number\-Iterator@{Lexicographic\-Number\-Iterator}}
-\index{Lexicographic\-Number\-Iterator@{Lexicographic\-Number\-Iterator}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{Lexicographic\-Number\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}Lexicographic\-Number\-Iterator\-::\-Lexicographic\-Number\-Iterator (
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classmultiscale_1_1LexicographicNumberIterator_a02a95a6f7876b84909e08555730ff08a}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!\-Lexicographic\-Number\-Iterator@{\-Lexicographic\-Number\-Iterator}}
+\index{\-Lexicographic\-Number\-Iterator@{\-Lexicographic\-Number\-Iterator}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
+\subsubsection[{\-Lexicographic\-Number\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Lexicographic\-Number\-Iterator\-::\-Lexicographic\-Number\-Iterator} (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{upper\-Bound}
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1LexicographicNumberIterator_a02a95a6f7876b84909e08555730ff08a}
 
 
-Definition at line 6 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Definition at line 6 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-References initialise(), and multiscale\-::\-Number\-Iterator\-::reset().
+\-References initialise(), and multiscale\-::\-Number\-Iterator\-::reset().
 
 
 
-Here is the call graph for this function\-:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -105,53 +104,53 @@ Here is the call graph for this function\-:
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_affe04d9733b7d0984a5ab3957cb0096a}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!$\sim$\-Lexicographic\-Number\-Iterator@{$\sim$\-Lexicographic\-Number\-Iterator}}
 \index{$\sim$\-Lexicographic\-Number\-Iterator@{$\sim$\-Lexicographic\-Number\-Iterator}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{$\sim$\-Lexicographic\-Number\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}Lexicographic\-Number\-Iterator\-::$\sim$\-Lexicographic\-Number\-Iterator (
+\subsubsection[{$\sim$\-Lexicographic\-Number\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Lexicographic\-Number\-Iterator\-::$\sim$\-Lexicographic\-Number\-Iterator} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1LexicographicNumberIterator_affe04d9733b7d0984a5ab3957cb0096a}
 
 
-Definition at line 11 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Definition at line 11 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-References current\-Number\-Digits, and upper\-Bound\-Digits.
+\-References current\-Number\-Digits, and upper\-Bound\-Digits.
 
 
 
-\subsection{Member Function Documentation}
+\subsection{\-Member \-Function \-Documentation}
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_a9bcb610b3b63b02ceed7d556960e57c3}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!digits\-To\-Number@{digits\-To\-Number}}
 \index{digits\-To\-Number@{digits\-To\-Number}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{digits\-To\-Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lexicographic\-Number\-Iterator\-::digits\-To\-Number (
+\subsubsection[{digits\-To\-Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-Lexicographic\-Number\-Iterator\-::digits\-To\-Number} (
 \begin{DoxyParamCaption}
 \item[{vector$<$ unsigned char $>$ \&}]{digits}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1LexicographicNumberIterator_a9bcb610b3b63b02ceed7d556960e57c3}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_a9bcb610b3b63b02ceed7d556960e57c3}
 
 
-Convert the vector of digits to the number they represent. 
+\-Convert the vector of digits to the number they represent. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em digits} & The digits \\
+\begin{DoxyParams}{\-Parameters}
+{\em digits} & \-The digits \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 74 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Definition at line 74 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-References number().
+\-References number().
 
 
 
-Referenced by number(), and pad\-With\-Zeros().
+\-Referenced by number(), and pad\-With\-Zeros().
 
 
 
-Here is the call graph for this function\-:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -163,7 +162,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -175,30 +174,30 @@ Here is the caller graph for this function\-:
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_ac2754a1a57005183e2c9040719c97448}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!has\-Next\-Initialised@{has\-Next\-Initialised}}
 \index{has\-Next\-Initialised@{has\-Next\-Initialised}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{has\-Next\-Initialised}]{\setlength{\rightskip}{0pt plus 5cm}bool Lexicographic\-Number\-Iterator\-::has\-Next\-Initialised (
+\subsubsection[{has\-Next\-Initialised}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Lexicographic\-Number\-Iterator\-::has\-Next\-Initialised} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1LexicographicNumberIterator_ac2754a1a57005183e2c9040719c97448}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_ac2754a1a57005183e2c9040719c97448}
 
 
-Check if there is a next number when in initialised state. 
-
-
-
-Implements \hyperlink{classmultiscale_1_1NumberIterator_a3c84ccdf0e279e67861b3cce34a26588}{multiscale\-::\-Number\-Iterator}.
+\-Check if there is a next number when in initialised state. 
 
 
 
-Definition at line 26 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Implements \hyperlink{classmultiscale_1_1NumberIterator_a3c84ccdf0e279e67861b3cce34a26588}{multiscale\-::\-Number\-Iterator}.
 
 
 
-References current\-Number\-Digits, is\-Larger\-Than\-Upper\-Bound(), and pad\-With\-Zeros().
+\-Definition at line 26 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-Here is the call graph for this function\-:
+\-References current\-Number\-Digits, is\-Larger\-Than\-Upper\-Bound(), and pad\-With\-Zeros().
+
+
+
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -210,34 +209,34 @@ Here is the call graph for this function\-:
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_a943745c4723ed8c3c18df9f92bf94d2c}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!initialise@{initialise}}
 \index{initialise@{initialise}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{initialise}]{\setlength{\rightskip}{0pt plus 5cm}void Lexicographic\-Number\-Iterator\-::initialise (
+\subsubsection[{initialise}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Lexicographic\-Number\-Iterator\-::initialise} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1LexicographicNumberIterator_a943745c4723ed8c3c18df9f92bf94d2c}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_a943745c4723ed8c3c18df9f92bf94d2c}
 
 
-Initialise the vectors of digits. 
-
-
-
-Implements \hyperlink{classmultiscale_1_1NumberIterator_a0bfeef7c3f120a5ae8d49d89b4529d6e}{multiscale\-::\-Number\-Iterator}.
+\-Initialise the vectors of digits. 
 
 
 
-Definition at line 20 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Implements \hyperlink{classmultiscale_1_1NumberIterator_a0bfeef7c3f120a5ae8d49d89b4529d6e}{multiscale\-::\-Number\-Iterator}.
 
 
 
-References current\-Number\-Digits, number\-To\-Digits(), multiscale\-::\-Number\-Iterator\-::upper\-Bound, and upper\-Bound\-Digits.
+\-Definition at line 20 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-Referenced by Lexicographic\-Number\-Iterator().
+\-References current\-Number\-Digits, number\-To\-Digits(), multiscale\-::\-Number\-Iterator\-::upper\-Bound, and upper\-Bound\-Digits.
 
 
 
-Here is the call graph for this function\-:
+\-Referenced by \-Lexicographic\-Number\-Iterator().
+
+
+
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -249,7 +248,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -261,37 +260,37 @@ Here is the caller graph for this function\-:
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_a8fad6e84a483cee3bd52c926de73d15f}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!is\-Larger\-Than\-Upper\-Bound@{is\-Larger\-Than\-Upper\-Bound}}
 \index{is\-Larger\-Than\-Upper\-Bound@{is\-Larger\-Than\-Upper\-Bound}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{is\-Larger\-Than\-Upper\-Bound}]{\setlength{\rightskip}{0pt plus 5cm}bool Lexicographic\-Number\-Iterator\-::is\-Larger\-Than\-Upper\-Bound (
+\subsubsection[{is\-Larger\-Than\-Upper\-Bound}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Lexicographic\-Number\-Iterator\-::is\-Larger\-Than\-Upper\-Bound} (
 \begin{DoxyParamCaption}
 \item[{unsigned char}]{last\-Digit}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1LexicographicNumberIterator_a8fad6e84a483cee3bd52c926de73d15f}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_a8fad6e84a483cee3bd52c926de73d15f}
 
 
-Check if the current number with the provided last digit is greater than the upper bound. 
+\-Check if the current number with the provided last digit is greater than the upper bound. 
 
-Check if the current number is greater than the upper bound when replacing the last digit of the current number with the provided digit
+\-Check if the current number is greater than the upper bound when replacing the last digit of the current number with the provided digit
 
 
-\begin{DoxyParams}{Parameters}
-{\em last\-Digit} & The last digit \\
+\begin{DoxyParams}{\-Parameters}
+{\em last\-Digit} & \-The last digit \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 86 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Definition at line 86 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-References current\-Number\-Digits, and upper\-Bound\-Digits.
+\-References current\-Number\-Digits, and upper\-Bound\-Digits.
 
 
 
-Referenced by has\-Next\-Initialised().
+\-Referenced by has\-Next\-Initialised().
 
 
 
-Here is the caller graph for this function\-:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -303,34 +302,34 @@ Here is the caller graph for this function\-:
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_a282d970d0d1a33d2736bbdf104c18336}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!number@{number}}
 \index{number@{number}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Lexicographic\-Number\-Iterator\-::number (
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-Lexicographic\-Number\-Iterator\-::number} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmultiscale_1_1LexicographicNumberIterator_a282d970d0d1a33d2736bbdf104c18336}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_a282d970d0d1a33d2736bbdf104c18336}
 
 
-Get the number pointed by the iterator. 
-
-
-
-Implements \hyperlink{classmultiscale_1_1NumberIterator_a967fc14523f8726d5d6352d4ed6439ca}{multiscale\-::\-Number\-Iterator}.
+\-Get the number pointed by the iterator. 
 
 
 
-Definition at line 16 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Implements \hyperlink{classmultiscale_1_1NumberIterator_a967fc14523f8726d5d6352d4ed6439ca}{multiscale\-::\-Number\-Iterator}.
 
 
 
-References current\-Number\-Digits, and digits\-To\-Number().
+\-Definition at line 16 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-Referenced by digits\-To\-Number(), and main().
+\-References current\-Number\-Digits, and digits\-To\-Number().
 
 
 
-Here is the call graph for this function\-:
+\-Referenced by digits\-To\-Number(), and main().
+
+
+
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -342,7 +341,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -354,38 +353,38 @@ Here is the caller graph for this function\-:
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_a700e18593ba0cc764d4e517993bd3fdc}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!number\-To\-Digits@{number\-To\-Digits}}
 \index{number\-To\-Digits@{number\-To\-Digits}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{number\-To\-Digits}]{\setlength{\rightskip}{0pt plus 5cm}void Lexicographic\-Number\-Iterator\-::number\-To\-Digits (
+\subsubsection[{number\-To\-Digits}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Lexicographic\-Number\-Iterator\-::number\-To\-Digits} (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{number, }
 \item[{vector$<$ unsigned char $>$ \&}]{digits}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1LexicographicNumberIterator_a700e18593ba0cc764d4e517993bd3fdc}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_a700e18593ba0cc764d4e517993bd3fdc}
 
 
-Convert the number to a vector of digits. 
+\-Convert the number to a vector of digits. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em number} & The number \\
+\begin{DoxyParams}{\-Parameters}
+{\em number} & \-The number \\
 \hline
-{\em digits} & The digits of the number \\
+{\em digits} & \-The digits of the number \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 53 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Definition at line 53 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-References reverse\-Digits().
+\-References reverse\-Digits().
 
 
 
-Referenced by initialise().
+\-Referenced by initialise().
 
 
 
-Here is the call graph for this function\-:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -397,7 +396,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -409,30 +408,30 @@ Here is the caller graph for this function\-:
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_a063dc7e6097724e96ed36bab4d20871b}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!pad\-With\-Zeros@{pad\-With\-Zeros}}
 \index{pad\-With\-Zeros@{pad\-With\-Zeros}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{pad\-With\-Zeros}]{\setlength{\rightskip}{0pt plus 5cm}void Lexicographic\-Number\-Iterator\-::pad\-With\-Zeros (
+\subsubsection[{pad\-With\-Zeros}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Lexicographic\-Number\-Iterator\-::pad\-With\-Zeros} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1LexicographicNumberIterator_a063dc7e6097724e96ed36bab4d20871b}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_a063dc7e6097724e96ed36bab4d20871b}
 
 
-Pad the current number with zeros. 
+\-Pad the current number with zeros. 
 
-Pad the current number with the maximum number of zeros such that it does not to become larger than the upper bound 
+\-Pad the current number with the maximum number of zeros such that it does not to become larger than the upper bound 
 
-Definition at line 107 of file Lexicographic\-Number\-Iterator.\-cpp.
-
-
-
-References current\-Number\-Digits, digits\-To\-Number(), multiscale\-::\-Number\-Iterator\-::upper\-Bound, and upper\-Bound\-Digits.
+\-Definition at line 107 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-Referenced by has\-Next\-Initialised().
+\-References current\-Number\-Digits, digits\-To\-Number(), multiscale\-::\-Number\-Iterator\-::upper\-Bound, and upper\-Bound\-Digits.
 
 
 
-Here is the call graph for this function\-:
+\-Referenced by has\-Next\-Initialised().
+
+
+
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -444,7 +443,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -456,56 +455,56 @@ Here is the caller graph for this function\-:
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_a18311f68a49156a415c817a947abcd7d}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!reset\-Current\-Number@{reset\-Current\-Number}}
 \index{reset\-Current\-Number@{reset\-Current\-Number}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{reset\-Current\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void Lexicographic\-Number\-Iterator\-::reset\-Current\-Number (
+\subsubsection[{reset\-Current\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Lexicographic\-Number\-Iterator\-::reset\-Current\-Number} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1LexicographicNumberIterator_a18311f68a49156a415c817a947abcd7d}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_a18311f68a49156a415c817a947abcd7d}
 
 
-Reset the digits of the current number to the initial value. 
-
-
-
-Implements \hyperlink{classmultiscale_1_1NumberIterator_a21e658de178b6c957df5ea0482e6fbd6}{multiscale\-::\-Number\-Iterator}.
+\-Reset the digits of the current number to the initial value. 
 
 
 
-Definition at line 42 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Implements \hyperlink{classmultiscale_1_1NumberIterator_a21e658de178b6c957df5ea0482e6fbd6}{multiscale\-::\-Number\-Iterator}.
 
 
 
-References current\-Number\-Digits, and upper\-Bound\-Digits.
+\-Definition at line 42 of file \-Lexicographic\-Number\-Iterator.\-cpp.
+
+
+
+\-References current\-Number\-Digits, and upper\-Bound\-Digits.
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_a4c0a17e03a12256584d9ed3ae19a78c9}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!reverse\-Digits@{reverse\-Digits}}
 \index{reverse\-Digits@{reverse\-Digits}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{reverse\-Digits}]{\setlength{\rightskip}{0pt plus 5cm}void Lexicographic\-Number\-Iterator\-::reverse\-Digits (
+\subsubsection[{reverse\-Digits}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Lexicographic\-Number\-Iterator\-::reverse\-Digits} (
 \begin{DoxyParamCaption}
 \item[{vector$<$ unsigned char $>$ \&}]{digits}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1LexicographicNumberIterator_a4c0a17e03a12256584d9ed3ae19a78c9}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_a4c0a17e03a12256584d9ed3ae19a78c9}
 
 
-Reverse the order of the digits. 
+\-Reverse the order of the digits. 
 
-Reverse the order of the digits such that the first one is swapped with the last one, the second one is swapped with the last but one and so on.
+\-Reverse the order of the digits such that the first one is swapped with the last one, the second one is swapped with the last but one and so on.
 
 
-\begin{DoxyParams}{Parameters}
-{\em digits} & The digits \\
+\begin{DoxyParams}{\-Parameters}
+{\em digits} & \-The digits \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 63 of file Lexicographic\-Number\-Iterator.\-cpp.
+\-Definition at line 63 of file \-Lexicographic\-Number\-Iterator.\-cpp.
 
 
 
-Referenced by number\-To\-Digits().
+\-Referenced by number\-To\-Digits().
 
 
 
-Here is the caller graph for this function\-:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -517,32 +516,32 @@ Here is the caller graph for this function\-:
 
 
 
-\subsection{Member Data Documentation}
+\subsection{\-Member \-Data \-Documentation}
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_af42ebeea695a31c2da714332c520ae79}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!current\-Number\-Digits@{current\-Number\-Digits}}
 \index{current\-Number\-Digits@{current\-Number\-Digits}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{current\-Number\-Digits}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$unsigned char$>$ multiscale\-::\-Lexicographic\-Number\-Iterator\-::current\-Number\-Digits\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1LexicographicNumberIterator_af42ebeea695a31c2da714332c520ae79}
-The digits of the number to which the iterator points 
+\subsubsection[{current\-Number\-Digits}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$unsigned char$>$ {\bf multiscale\-::\-Lexicographic\-Number\-Iterator\-::current\-Number\-Digits}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_af42ebeea695a31c2da714332c520ae79}
+\-The digits of the number to which the iterator points 
 
-Definition at line 19 of file Lexicographic\-Number\-Iterator.\-hpp.
+\-Definition at line 19 of file \-Lexicographic\-Number\-Iterator.\-hpp.
 
 
 
-Referenced by has\-Next\-Initialised(), initialise(), is\-Larger\-Than\-Upper\-Bound(), number(), pad\-With\-Zeros(), reset\-Current\-Number(), and $\sim$\-Lexicographic\-Number\-Iterator().
+\-Referenced by has\-Next\-Initialised(), initialise(), is\-Larger\-Than\-Upper\-Bound(), number(), pad\-With\-Zeros(), reset\-Current\-Number(), and $\sim$\-Lexicographic\-Number\-Iterator().
 
 \hypertarget{classmultiscale_1_1LexicographicNumberIterator_a909a054ae4d3e79e5daa3059a94000d0}{\index{multiscale\-::\-Lexicographic\-Number\-Iterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}!upper\-Bound\-Digits@{upper\-Bound\-Digits}}
 \index{upper\-Bound\-Digits@{upper\-Bound\-Digits}!multiscale::LexicographicNumberIterator@{multiscale\-::\-Lexicographic\-Number\-Iterator}}
-\subsubsection[{upper\-Bound\-Digits}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$unsigned char$>$ multiscale\-::\-Lexicographic\-Number\-Iterator\-::upper\-Bound\-Digits\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1LexicographicNumberIterator_a909a054ae4d3e79e5daa3059a94000d0}
-The digits of the upper bound 
+\subsubsection[{upper\-Bound\-Digits}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$unsigned char$>$ {\bf multiscale\-::\-Lexicographic\-Number\-Iterator\-::upper\-Bound\-Digits}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1LexicographicNumberIterator_a909a054ae4d3e79e5daa3059a94000d0}
+\-The digits of the upper bound 
 
-Definition at line 18 of file Lexicographic\-Number\-Iterator.\-hpp.
-
-
-
-Referenced by initialise(), is\-Larger\-Than\-Upper\-Bound(), pad\-With\-Zeros(), reset\-Current\-Number(), and $\sim$\-Lexicographic\-Number\-Iterator().
+\-Definition at line 18 of file \-Lexicographic\-Number\-Iterator.\-hpp.
 
 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\-Referenced by initialise(), is\-Larger\-Than\-Upper\-Bound(), pad\-With\-Zeros(), reset\-Current\-Number(), and $\sim$\-Lexicographic\-Number\-Iterator().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/include/multiscale/util/iterator/\hyperlink{LexicographicNumberIterator_8hpp}{Lexicographic\-Number\-Iterator.\-hpp}\item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/src/iterator/\hyperlink{LexicographicNumberIterator_8cpp}{Lexicographic\-Number\-Iterator.\-cpp}\end{DoxyCompactItemize}
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/include/multiscale/util/iterator/\hyperlink{LexicographicNumberIterator_8hpp}{\-Lexicographic\-Number\-Iterator.\-hpp}\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/src/iterator/\hyperlink{LexicographicNumberIterator_8cpp}{\-Lexicographic\-Number\-Iterator.\-cpp}\end{DoxyCompactItemize}

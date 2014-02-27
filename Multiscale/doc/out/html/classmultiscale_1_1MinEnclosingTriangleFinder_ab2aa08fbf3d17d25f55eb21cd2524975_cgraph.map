@@ -1,6 +1,6 @@
-<map id="multiscale::MinEnclosingTriangleFinder::lineEquationParameters" name="multiscale::MinEnclosingTriangleFinder::lineEquationParameters">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a6d72740d7f1b2441b0829c0f0c6a6853" title="Get the values of &quot;a&quot;, &quot;b&quot; and &quot;c&quot; of the line equation ax + by + c = 0 knowing that point &quot;p&quot; and &quot;q..." alt="" coords="237,14,459,61"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#aa2d3ac595072b9ab61879a44629d7969" title="Check if points point1 and point2 are equal or not." alt="" coords="507,14,669,61"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="717,14,856,61"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="904,14,1043,61"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a6d72740d7f1b2441b0829c0f0c6a6853" title="Get the values of &quot;a&quot;, &quot;b&quot; and &quot;c&quot; of the line equation ax + by + c = 0 knowing that point &quot;p&quot; and &quot;q..." alt="" coords="448,5,811,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#aa2d3ac595072b9ab61879a44629d7969" title="Check if points point1 and point2 are equal or not." alt="" coords="859,5,1117,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="1165,5,1384,35"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1432,5,1635,35"/>
 </map>

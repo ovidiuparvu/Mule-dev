@@ -1,4 +1,4 @@
-<map id="multiscale::analysis::Detector::findGoodPointsForAngle" name="multiscale::analysis::Detector::findGoodPointsForAngle">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="252,5,449,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a4a6aba3c69956a83af5d81f4d087c205" title="Check if the given point is on the edge." alt="" coords="499,14,661,61"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="399,5,804,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a4a6aba3c69956a83af5d81f4d087c205" title="Check if the given point is on the edge." alt="" coords="853,5,1112,35"/>
 </map>

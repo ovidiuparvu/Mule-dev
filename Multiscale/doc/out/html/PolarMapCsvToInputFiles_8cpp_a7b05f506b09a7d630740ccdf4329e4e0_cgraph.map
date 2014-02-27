@@ -1,8 +1,8 @@
-<map id="areValidParameters" name="areValidParameters">
-<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="209,5,348,35"/>
-<area shape="rect" id="node5" href="$PolarMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322" title="isValidNrOfConcentrations\lForPosition" alt="" coords="191,58,367,105"/>
-<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="209,128,348,157"/>
-<area shape="rect" id="node9" href="$PolarMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2" title="setLogScaling" alt="" coords="227,181,331,211"/>
-<area shape="rect" id="node11" href="$PolarMapCsvToInputFiles_8cpp.html#acd4e13a2a763444dac4b73b728fffcdc" title="setNumberIteratorType" alt="" coords="201,235,356,264"/>
-<area shape="rect" id="node13" href="$PolarMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88" title="setSelectedConcentration\lIndex" alt="" coords="193,287,364,334"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a6dab5a70bdde13257ac586fd8b81b16e" title="initArgumentsConfig" alt="" coords="241,5,380,35"/>
+<area shape="rect" id="node5" href="$PolarMapCsvToInputFiles_8cpp.html#a32aacf3fbcf4e28853f1a786a8a7b322" title="isValidNrOfConcentrationsForPosition" alt="" coords="189,59,432,88"/>
+<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a49535fad6e4e5f21ee2eae91dff5a831" title="printHelpInformation" alt="" coords="241,112,380,141"/>
+<area shape="rect" id="node9" href="$PolarMapCsvToInputFiles_8cpp.html#a6ad79614664c5a5ae80eed522c1e0ec2" title="setLogScaling" alt="" coords="259,165,363,195"/>
+<area shape="rect" id="node11" href="$PolarMapCsvToInputFiles_8cpp.html#acd4e13a2a763444dac4b73b728fffcdc" title="setNumberIteratorType" alt="" coords="233,219,388,248"/>
+<area shape="rect" id="node13" href="$PolarMapCsvToInputFiles_8cpp.html#a1dad3f4702d65683642d85324d312b88" title="setSelectedConcentrationIndex" alt="" coords="209,272,412,301"/>
 </map>

@@ -1,9 +1,9 @@
-<map id="multiscale::MinEnclosingTriangleFinder::isFlushAngleBetweenPredecessorAndSuccessor" name="multiscale::MinEnclosingTriangleFinder::isFlushAngleBetweenPredecessorAndSuccessor">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a907466755f2d460e95e2bace5b386768" title="Check if angle1 lies between non reflex angle determined by angles 2 and 3." alt="" coords="573,39,760,86"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1Geometry2D.html#a28d74085708bba7fa68fbea05d0d51ad" title="Check if the opposite of angle1, ((angle1 + 180) % 360), lies between non reflex angle determined by ..." alt="" coords="287,86,524,133"/>
-<area shape="rect" id="node16" href="$classmultiscale_1_1Geometry2D.html#a3bb85fa2797ba25765f0f57786cb33ef" title="Return the angle opposite to the given angle." alt="" coords="585,121,748,167"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a6555ae4c2762e25444bc0874e9bbc535" title="Check if angle1 lies between angles 2 and 3." alt="" coords="808,5,971,51"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a7f21159a23c71c1d37e1c487e9ff815c" title="Check if the first number is less than or equal to the second number." alt="" coords="820,74,959,121"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="1019,74,1157,121"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1205,74,1344,121"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a907466755f2d460e95e2bace5b386768" title="Check if angle1 lies between non reflex angle determined by angles 2 and 3." alt="" coords="1023,32,1348,61"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1Geometry2D.html#a28d74085708bba7fa68fbea05d0d51ad" title="Check if the opposite of angle1, ((angle1 + 180) % 360), lies between non reflex angle determined by ..." alt="" coords="595,71,973,100"/>
+<area shape="rect" id="node16" href="$classmultiscale_1_1Geometry2D.html#a3bb85fa2797ba25765f0f57786cb33ef" title="Return the angle opposite to the given angle." alt="" coords="1059,97,1312,127"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a6555ae4c2762e25444bc0874e9bbc535" title="Check if angle1 lies between angles 2 and 3." alt="" coords="1399,5,1663,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a7f21159a23c71c1d37e1c487e9ff815c" title="Check if the first number is less than or equal to the second number." alt="" coords="1423,59,1639,88"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="1712,59,1931,88"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1979,59,2181,88"/>
 </map>

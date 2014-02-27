@@ -17,7 +17,7 @@ namespace multiscale {
             private:
 
                 std::vector<TimePoint> timePoints;          /*!< The array of time points */
-                double                 lastTimePointValue;  /*!< The value of the last added timepoint */
+                unsigned long          lastTimePointValue;  /*!< The value of the last added timepoint */
 
             public:
 
@@ -40,11 +40,11 @@ namespace multiscale {
                 //! Get the length of the spatial temporal trace (i.e. number of timepoints)
                 unsigned int length() const;
 
-                //! Get the subtrace containing timepoints with the value greater than the given value
+                //! Get the subtrace containing timepoints with the index greater than the given index
                 /*!
-                 * \param startValue    The starting value of the subtrace
+                 * \param startIndex    The starting index of the subtrace
                  */
-                SpatialTemporalTrace subTrace(unsigned long startValue);
+                SpatialTemporalTrace subTrace(unsigned int startIndex);
 
                 //! Get the subtrace containing timepoints with values between the given values
                 /*!
@@ -53,9 +53,17 @@ namespace multiscale {
                  */
                 SpatialTemporalTrace subTrace(unsigned long startValue, unsigned long endValue);
 
+                //! Get the subtrace containing timepoints with the index greater than the given index
+                /*!
+                 * \param trace         The spatial temporal trace
+                 * \param startValue    The starting value of the subtrace
+                 * \param endValue      The end value of the subtrace
+                 */
+                static SpatialTemporalTrace subTrace(const SpatialTemporalTrace &trace, unsigned int startIndex);
+
                 //! Get the subtrace containing timepoints with values between the given values
                 /*!
-                 * \param trace
+                 * \param trace         The spatial temporal trace
                  * \param startValue    The starting value of the subtrace
                  * \param endValue      The end value of the subtrace
                  */
@@ -75,16 +83,17 @@ namespace multiscale {
                  * \param timePoint         The last added timepoint
                  * \param timePointValue    The value of the current timepoint
                  */
-                void updateLastTimePointValue(TimePoint &timePoint, double timePointValue);
+                void updateLastTimePointValue(TimePoint &timePoint, unsigned long timePointValue);
 
                 //! Check if the provided time point value is greater than the last time point value
-                /*! The timepoint is considered to be uninitialised if the value is less than 0.
+                /*! The timepoint is considered to be uninitialised if the value is equal to the
+                 *  maximum value which can be represented as an unsigned long.
                  *  Otherwise if the timepoint value is less or equal to the lastTimePointValue
-                 *  then an exception is thrown
+                 *  then an exception is thrown.
                  *
                  * \param timePointValue    The value of the timepoint
                  */
-                void validateTimePointValue(double timePointValue);
+                void validateTimePointValue(unsigned long timePointValue);
 
                 //! Get the subtrace starting and ending with the given values
                 /*!

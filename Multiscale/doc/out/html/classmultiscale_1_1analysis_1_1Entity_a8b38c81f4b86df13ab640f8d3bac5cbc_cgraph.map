@@ -1,5 +1,5 @@
-<map id="multiscale::analysis::Entity::areValid" name="multiscale::analysis::Entity::areValid">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="192,5,331,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="379,5,517,51"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="565,5,704,51"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="289,5,521,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="571,5,789,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="837,5,1040,35"/>
 </map>

@@ -108,8 +108,18 @@ namespace multiscale {
                 //! Overloading the operator ()
                 template <typename T>
                 bool operator() (const UntilLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    // TODO: Implement
-                    return true;
+                    unsigned long startTime = logicProperty.startTimepoint;
+                    unsigned long endTime   = logicProperty.endTimepoint;
+
+                    for (unsigned long i = startTime; i <= endTime; i++) {
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, i, endTime);
+
+                        if (evaluate(logicProperty.logicProperty, subTrace)) {
+                            return evaluatePrecedingLogicProperties(i, startTime, endTime, lhsLogicProperty);
+                        }
+                    }
+
+                    return false;
                 }
 
                 //! Overloading the "()" operator for the PrimaryLogicPropertyAttribute alternative
@@ -180,11 +190,11 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const FutureLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    unsigned long futurePropertyStart   = primaryLogicProperty.startTimepoint;
-                    unsigned long futurePropertyEnd     = primaryLogicProperty.endTimepoint;
+                    unsigned long startTime = primaryLogicProperty.startTimepoint;
+                    unsigned long endTime   = primaryLogicProperty.endTimepoint;
 
-                    for (unsigned long i = futurePropertyStart; i <= futurePropertyEnd; i++) {
-                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, futurePropertyStart, futurePropertyEnd);
+                    for (unsigned long i = startTime; i <= endTime; i++) {
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, startTime, endTime);
 
                         if (evaluate(primaryLogicProperty.logicProperty, subTrace)) {
                             return true;
@@ -201,8 +211,16 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const GlobalLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    // TODO: Implement
-                    std::cout << "GlobalLogicPropertyAttribute" << std::endl;
+                    unsigned long startTime = primaryLogicProperty.startTimepoint;
+                    unsigned long endTime   = primaryLogicProperty.endTimepoint;
+
+                    for (unsigned long i = startTime; i <= endTime; i++) {
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, startTime, endTime);
+
+                        if (!evaluate(primaryLogicProperty.logicProperty, subTrace)) {
+                            return false;
+                        }
+                    }
 
                     return true;
                 }
@@ -214,10 +232,9 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const NextLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    // TODO: Implement
-                    std::cout << "NextLogicPropertyAttribute" << std::endl;
+                    SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, 1);
 
-                    return true;
+                    return evaluate(primaryLogicProperty.logicProperty, subTrace);
                 }
 
                 //! Overloading the "()" operator for the NextKLogicPropertyAttribute alternative
@@ -227,10 +244,9 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const NextKLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    // TODO: Implement
-                    std::cout << "NextKLogicPropertyAttribute" << std::endl;
+                    SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, primaryLogicProperty.nrOfTimepointsAhead);
 
-                    return true;
+                    return evaluate(primaryLogicProperty.logicProperty, subTrace);
                 }
 
             private:
@@ -278,9 +294,33 @@ namespace multiscale {
                 }
 
                 //! Construct a new logic property attribute using the evaluation logic properties
+                /*!
+                 * \param logicProperty             The logic property containing the currently evaluated logic subproperty
+                 * \param evaluationLogicProperties The logic properties preceding the currently evaluated logic subproperty
+                 */
                 LogicPropertyAttribute constructEvaluationLogicProperty(const LogicPropertyAttribute &logicProperty,
                                                                         const std::vector<LogicPropertyAttributeType> evaluationLogicProperties) const {
                     return LogicPropertyAttribute(logicProperty.firstLogicProperty, evaluationLogicProperties);
+                }
+
+                //! Evaluate the preceding logic properties
+                /*!
+                 * \param stopIndex                 All indices before this index are used as subtrace start index
+                 * \param startTime                 The considered start time value
+                 * \param endTime                   The considered end time value
+                 * \param precedingLogicProperties  The preceding logic properties
+                 */
+                bool evaluatePrecedingLogicProperties(unsigned long stopIndex, unsigned long startTime, unsigned long endTime,
+                                                     const LogicPropertyAttributeType &precedingLogicProperties) const {
+                    for (unsigned long j = startTime; j < stopIndex; j++) {
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, j, endTime);
+
+                        if (!evaluate(precedingLogicProperties, subTrace)) {
+                            return false;
+                        }
+                    }
+
+                    return true;
                 }
 
         };

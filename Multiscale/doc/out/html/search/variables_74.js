@@ -9,6 +9,9 @@ var searchData=
   ['threshold_5fmax',['THRESHOLD_MAX',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a32b52c0ce7f8a1c8da872aa1cf754317',1,'multiscale::analysis::SimulationClusterDetector::THRESHOLD_MAX()'],['../classmultiscale_1_1analysis_1_1RegionDetector.html#a53c6e2b067a8b8c82484cbca34cc3d57',1,'multiscale::analysis::RegionDetector::THRESHOLD_MAX()']]],
   ['thresholdedimage',['thresholdedImage',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#aca2aae9914ef643a543a834e61b1cccf',1,'multiscale::analysis::SimulationClusterDetector']]],
   ['thresholdvalue',['thresholdValue',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a0f7469d124c0b906d199e00ea5713007',1,'multiscale::analysis::RegionDetector']]],
+  ['timepoint_5findex_5fnot_5ffound',['TIMEPOINT_INDEX_NOT_FOUND',['../classmultiscale_1_1verification_1_1SpatialTemporalTrace.html#a0808032b10988235b2ad0ed134174efc',1,'multiscale::verification::SpatialTemporalTrace']]],
+  ['timepoints',['timePoints',['../classmultiscale_1_1verification_1_1SpatialTemporalTrace.html#aae1fde4e632512cf6a59453d798a2598',1,'multiscale::verification::SpatialTemporalTrace']]],
+  ['trace',['trace',['../classmultiscale_1_1verification_1_1LogicPropertyVisitor.html#a2bb689adb521179026348a7319c3a4db',1,'multiscale::verification::LogicPropertyVisitor']]],
   ['trackbar_5falpha',['TRACKBAR_ALPHA',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a5513e029d4d4cf249aa40364489f7a85',1,'multiscale::analysis::RegionDetector']]],
   ['trackbar_5fbeta',['TRACKBAR_BETA',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a79d7878ed55bf12a87637896a1f44e37',1,'multiscale::analysis::RegionDetector']]],
   ['trackbar_5fcanny',['TRACKBAR_CANNY',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a8c1c5cde2b7d42ddce44b7f8208f07cc',1,'multiscale::analysis::RegionDetector']]],
@@ -20,5 +23,6 @@ var searchData=
   ['trackbar_5fregion_5farea_5fthresh',['TRACKBAR_REGION_AREA_THRESH',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a6a2711f5cabb3af04a969fe38e1ef473',1,'multiscale::analysis::RegionDetector']]],
   ['trackbar_5fthreshold',['TRACKBAR_THRESHOLD',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a7548c716410a4cb88cb41498de6b509c',1,'multiscale::analysis::RegionDetector']]],
   ['triangle',['triangle',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a02aa9bcd10630d27293e656233e3f64e',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
+  ['trianglemeasure',['triangleMeasure',['../classmultiscale_1_1verification_1_1SpatialEntity.html#a340c3b1a8d1a224cf8149e30e93efe4b',1,'multiscale::verification::SpatialEntity']]],
   ['triangularmeasure',['triangularMeasure',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a7e8a7c888b5ab5a204f6d4ffa283709c',1,'multiscale::analysis::SpatialEntityPseudo3D']]]
 ];

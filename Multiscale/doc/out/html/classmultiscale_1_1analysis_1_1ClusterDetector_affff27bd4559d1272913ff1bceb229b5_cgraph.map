@@ -1,15 +1,15 @@
-<map id="multiscale::analysis::ClusterDetector::analyseClustersOriginDependentValues" name="multiscale::analysis::ClusterDetector::analyseClustersOriginDependentValues">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a4a071efa7d7812c1db9ee577b7893902" title="Return the convex hull of the given cluster." alt="" coords="288,27,477,91"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="277,135,488,199"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="536,14,747,61"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20" title="Get the collection of entities&#39; contour points." alt="" coords="813,5,1000,69"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1Geometry2D.html#ae8e5e46c312835e27478ce00b11f8a7c" title="Get the index of the point which is the closest to the origin." alt="" coords="543,83,740,130"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="825,118,988,165"/>
-<area shape="rect" id="node16" href="$classmultiscale_1_1analysis_1_1Detector.html#ada30f980ed5ce2f975bb827c393b8cd0" title="Compute the angle of the polygon." alt="" coords="559,203,724,250"/>
-<area shape="rect" id="node18" href="$classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915" title="Set the values of the origin dependent members." alt="" coords="544,273,739,337"/>
-<area shape="rect" id="node20" href="$classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non&#45;negative)" alt="" coords="796,273,1017,337"/>
-<area shape="rect" id="node22" href="$classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e" title="Check if the origin dependent values are valid (i.e. non&#45;negative)" alt="" coords="1067,273,1291,337"/>
-<area shape="rect" id="node24" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="1339,282,1477,329"/>
-<area shape="rect" id="node26" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="1525,282,1664,329"/>
-<area shape="rect" id="node28" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1712,282,1851,329"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a4a071efa7d7812c1db9ee577b7893902" title="Return the convex hull of the given cluster." alt="" coords="576,32,949,61"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="532,111,993,140"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#a9f43161c58d9e4a97f3a33807397b255" title="Get the convex hull enclosing the collection of entities&#39; contour points." alt="" coords="1063,5,1388,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20" title="Get the collection of entities&#39; contour points." alt="" coords="1476,5,1815,35"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1Geometry2D.html#ae8e5e46c312835e27478ce00b11f8a7c" title="Get the index of the point which is the closest to the origin." alt="" coords="1056,59,1395,88"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72" title="Compute the distance between two points." alt="" coords="1505,85,1785,115"/>
+<area shape="rect" id="node16" href="$classmultiscale_1_1analysis_1_1Detector.html#ada30f980ed5ce2f975bb827c393b8cd0" title="Compute the angle of the polygon." alt="" coords="1085,163,1365,192"/>
+<area shape="rect" id="node18" href="$classmultiscale_1_1analysis_1_1Cluster.html#a84033ee8d583d9195abbf42d5d420915" title="Set the values of the origin dependent members." alt="" coords="1044,216,1407,245"/>
+<area shape="rect" id="node20" href="$classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non&#45;negative)" alt="" coords="1457,216,1833,245"/>
+<area shape="rect" id="node22" href="$classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e" title="Check if the origin dependent values are valid (i.e. non&#45;negative)" alt="" coords="1883,216,2261,245"/>
+<area shape="rect" id="node24" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="2311,216,2543,245"/>
+<area shape="rect" id="node26" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="2592,216,2811,245"/>
+<area shape="rect" id="node28" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="2859,216,3061,245"/>
 </map>

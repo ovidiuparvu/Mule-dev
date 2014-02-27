@@ -5,7 +5,7 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-TimePoint::TimePoint(double value) {
+TimePoint::TimePoint(unsigned long value) {
     this->value = value;
     this->consideredSpatialEntityType = ConsideredSpatialEntityType::All;
 }
@@ -16,11 +16,11 @@ TimePoint::~TimePoint() {
     numericStateVariables.clear();
 }
 
-double TimePoint::getValue() const {
+unsigned long TimePoint::getValue() const {
     return value;
 }
 
-void TimePoint::setValue(double value) {
+void TimePoint::setValue(unsigned long value) {
     this->value = value;
 }
 

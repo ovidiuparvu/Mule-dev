@@ -1,5 +1,5 @@
-<map id="saveDetectorParameterValues" name="saveDetectorParameterValues">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a5f1699b100e7203720cb7fd1ef73cea1" title="Get the value of the clustering algorithm parameter eps." alt="" coords="272,14,443,61"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af979c73c154bd42ef73d3328e80889ef" title="Get the value of the clustering algorithm parameter MinPoints." alt="" coords="255,83,460,130"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#afccb86bfb93df00fff8408faea7a2651" title="Convert the value of eps from integer to double." alt="" coords="511,5,705,69"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a5f1699b100e7203720cb7fd1ef73cea1" title="Get the value of the clustering algorithm parameter eps." alt="" coords="272,5,557,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af979c73c154bd42ef73d3328e80889ef" title="Get the value of the clustering algorithm parameter MinPoints." alt="" coords="255,59,575,88"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#afccb86bfb93df00fff8408faea7a2651" title="Convert the value of eps from integer to double." alt="" coords="624,5,968,35"/>
 </map>

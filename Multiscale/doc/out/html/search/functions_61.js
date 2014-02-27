@@ -1,11 +1,18 @@
 var searchData=
 [
+  ['abstractsyntaxtree',['AbstractSyntaxTree',['../classmultiscale_1_1verification_1_1AbstractSyntaxTree.html#aaa773a72ffb1cc50d5baca48a0c0f261',1,'multiscale::verification::AbstractSyntaxTree']]],
   ['addaveragemeasurestopropertytree',['addAverageMeasuresToPropertyTree',['../classmultiscale_1_1analysis_1_1Detector.html#a9cfa8c84d6cb13bf6d423b1db490668d',1,'multiscale::analysis::Detector']]],
+  ['addcluster',['addCluster',['../classmultiscale_1_1verification_1_1TimePoint.html#aa4a36b755cfa0f7a2045b712d16f6fb8',1,'multiscale::verification::TimePoint']]],
   ['addentitiestoclusters',['addEntitiesToClusters',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#aefc4d0736d8af4ab53f1e5e76440f447',1,'multiscale::analysis::ClusterDetector']]],
   ['addentity',['addEntity',['../classmultiscale_1_1analysis_1_1Cluster.html#a2bc85629ab2bd6d01c6d2df3d79ba497',1,'multiscale::analysis::Cluster']]],
+  ['addnumericstatevariable',['addNumericStateVariable',['../classmultiscale_1_1verification_1_1TimePoint.html#a8a239464ca6844602acb53ac6c68b07d',1,'multiscale::verification::TimePoint']]],
+  ['addnumericstatevariabletopropertytree',['addNumericStateVariableToPropertyTree',['../classmultiscale_1_1analysis_1_1Detector.html#aceaf8e69b2ce5d4d24a5c6e4debb296d',1,'multiscale::analysis::Detector']]],
+  ['addregion',['addRegion',['../classmultiscale_1_1verification_1_1TimePoint.html#a26f9b5e08ba38494298db1200c029aff',1,'multiscale::verification::TimePoint']]],
   ['addspatialentitiestopropertytree',['addSpatialEntitiesToPropertyTree',['../classmultiscale_1_1analysis_1_1Detector.html#a11bf4fa46f51ac033b635d19e92998ae',1,'multiscale::analysis::Detector']]],
   ['addspatialentitypropertiestotree',['addSpatialEntityPropertiesToTree',['../classmultiscale_1_1analysis_1_1Detector.html#ac0e3077d43c329e409db504bf3981c3c',1,'multiscale::analysis::Detector']]],
   ['addspatialentitytypetopropertytree',['addSpatialEntityTypeToPropertyTree',['../classmultiscale_1_1analysis_1_1Detector.html#ae166867e5af40637dbde9ac0da6dac9a',1,'multiscale::analysis::Detector']]],
+  ['addtimepoint',['addTimePoint',['../classmultiscale_1_1verification_1_1SpatialTemporalTrace.html#a4166a8b7f4b250d8d66b82204273f714',1,'multiscale::verification::SpatialTemporalTrace']]],
+  ['addtimepointstosubtrace',['addTimePointsToSubTrace',['../classmultiscale_1_1verification_1_1SpatialTemporalTrace.html#a777c549d3c2889dffb1db125362b038f',1,'multiscale::verification::SpatialTemporalTrace']]],
   ['addunclassifiednodestoseedslist',['addUnclassifiedNodesToSeedsList',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a6ead683810b4f04a48cd0a4d0f5f7a6b',1,'multiscale::analysis::DBSCAN']]],
   ['advance',['advance',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#af52c24da93e4660f043dbb0f92594a19',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['advancebtorightchain',['advanceBToRightChain',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a55faab1deabea3b838490a4a3b62cafc',1,'multiscale::MinEnclosingTriangleFinder']]],

@@ -27,7 +27,7 @@ namespace multiscale {
 
             private:
 
-                double value;   /*!< The value of the timepoint within a simulation/experiment */
+                unsigned long value;   /*!< The value of the timepoint within a simulation/experiment */
 
                 std::list<Cluster>  clusters;     /*!< The list of clusters */
                 std::list<Region>   regions;      /*!< The list of regions */
@@ -38,17 +38,17 @@ namespace multiscale {
 
             public:
 
-                TimePoint(double value = std::numeric_limits<double>::min());
+                TimePoint(unsigned long value = std::numeric_limits<unsigned long>::max());
                 ~TimePoint();
 
                 //! Get the value of the timepoint
-                double getValue() const;
+                unsigned long getValue() const;
 
                 //! Set the value of the timepoint
                 /*!
                  * \param value The value of the timepoint
                  */
-                void setValue(double value);
+                void setValue(unsigned long value);
 
                 //! Add a cluster to the list of clusters
                 /*!

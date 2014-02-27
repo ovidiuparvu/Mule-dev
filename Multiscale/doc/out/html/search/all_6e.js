@@ -2,7 +2,7 @@ var searchData=
 [
   ['name',['name',['../structclient_1_1name.html',1,'client']]],
   ['name',['name',['../classmultiscale_1_1verification_1_1StateVariableAttribute.html#a16899511c6d9c4ffadad57e0ed1fe350',1,'multiscale::verification::StateVariableAttribute::name()'],['../structclient_1_1employee.html#ac313e15ff1051385afa5251a29ea568a',1,'client::employee::name()']]],
-  ['nametype',['NameType',['../namespaceclient.html#a042774552f770d9c0032f0c7b27f2c1a',1,'client']]],
+  ['nametype',['NameType',['../namespaceclient.html#a41eabdd96d3456e549881559e237a9ef',1,'client']]],
   ['nametypeparser',['NameTypeParser',['../structclient_1_1NameTypeParser.html',1,'client']]],
   ['nametypeparser',['NameTypeParser',['../structclient_1_1NameTypeParser.html#ab3f356df8829b46ca2669e8d493fb2cd',1,'client::NameTypeParser']]],
   ['nextconstraints',['nextConstraints',['../classmultiscale_1_1verification_1_1ConstraintAttribute.html#a7356c7c12aabb7243fd3d4dd65189a79',1,'multiscale::verification::ConstraintAttribute']]],
@@ -17,6 +17,7 @@ var searchData=
   ['nextlogicpropertytest_2ehpp',['NextLogicPropertyTest.hpp',['../NextLogicPropertyTest_8hpp.html',1,'']]],
   ['nil',['Nil',['../classmultiscale_1_1verification_1_1Nil.html',1,'multiscale::verification']]],
   ['nil_2ehpp',['Nil.hpp',['../Nil_8hpp.html',1,'']]],
+  ['normalisedshapemeasure',['normalisedShapeMeasure',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aaceb2d7941931c472a947925df1e0988',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['notconstraintattribute',['NotConstraintAttribute',['../classmultiscale_1_1verification_1_1NotConstraintAttribute.html',1,'multiscale::verification']]],
   ['notconstraintattribute_2ehpp',['NotConstraintAttribute.hpp',['../NotConstraintAttribute_8hpp.html',1,'']]],
   ['notconstraintrule',['notConstraintRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a037180b789000ceac777e3867dd2f842',1,'multiscale::verification::ParserGrammar']]],
@@ -44,7 +45,9 @@ var searchData=
   ['numeric',['Numeric',['../classmultiscale_1_1Numeric.html',1,'multiscale']]],
   ['numeric_2ecpp',['Numeric.cpp',['../Numeric_8cpp.html',1,'']]],
   ['numeric_2ehpp',['Numeric.hpp',['../Numeric_8hpp.html',1,'']]],
-  ['numericmeasure',['numericMeasure',['../classmultiscale_1_1verification_1_1NumericMeasureAttribute.html#aa396a84fa8c654f653b1772b2c426d1a',1,'multiscale::verification::NumericMeasureAttribute::numericMeasure()'],['../classmultiscale_1_1verification_1_1NumericNumericComparisonAttribute.html#ae7b9696c847b4d02fbe01be9db1ffde3',1,'multiscale::verification::NumericNumericComparisonAttribute::numericMeasure()'],['../classmultiscale_1_1verification_1_1NumericSpatialNumericComparisonAttribute.html#ac232cf17edcccc5057d4f068413c9123',1,'multiscale::verification::NumericSpatialNumericComparisonAttribute::numericMeasure()'],['../structmultiscale_1_1verification_1_1SpatialNumericComparisonAttribute.html#ae612e3e65f8ee13787231ab65b55e188',1,'multiscale::verification::SpatialNumericComparisonAttribute::numericMeasure()'],['../classmultiscale_1_1verification_1_1UnaryConstraintAttribute.html#ac1069e09ff370c26a42a11eae0633459',1,'multiscale::verification::UnaryConstraintAttribute::numericMeasure()'],['../classmultiscale_1_1verification_1_1UnaryNumericNumericAttribute.html#ab674f1136927e8d621628098d4569b08',1,'multiscale::verification::UnaryNumericNumericAttribute::numericMeasure()']]],
+  ['numericevaluator',['NumericEvaluator',['../classmultiscale_1_1verification_1_1NumericEvaluator.html',1,'multiscale::verification']]],
+  ['numericevaluator_2ehpp',['NumericEvaluator.hpp',['../NumericEvaluator_8hpp.html',1,'']]],
+  ['numericmeasure',['numericMeasure',['../classmultiscale_1_1verification_1_1NumericMeasureAttribute.html#aa396a84fa8c654f653b1772b2c426d1a',1,'multiscale::verification::NumericMeasureAttribute::numericMeasure()'],['../classmultiscale_1_1verification_1_1NumericNumericComparisonAttribute.html#ae7b9696c847b4d02fbe01be9db1ffde3',1,'multiscale::verification::NumericNumericComparisonAttribute::numericMeasure()'],['../classmultiscale_1_1verification_1_1NumericSpatialNumericComparisonAttribute.html#ac232cf17edcccc5057d4f068413c9123',1,'multiscale::verification::NumericSpatialNumericComparisonAttribute::numericMeasure()'],['../classmultiscale_1_1verification_1_1SpatialNumericComparisonAttribute.html#ae612e3e65f8ee13787231ab65b55e188',1,'multiscale::verification::SpatialNumericComparisonAttribute::numericMeasure()'],['../classmultiscale_1_1verification_1_1UnaryConstraintAttribute.html#ac1069e09ff370c26a42a11eae0633459',1,'multiscale::verification::UnaryConstraintAttribute::numericMeasure()'],['../classmultiscale_1_1verification_1_1UnaryNumericNumericAttribute.html#ab674f1136927e8d621628098d4569b08',1,'multiscale::verification::UnaryNumericNumericAttribute::numericMeasure()']]],
   ['numericmeasureattribute',['NumericMeasureAttribute',['../classmultiscale_1_1verification_1_1NumericMeasureAttribute.html',1,'multiscale::verification']]],
   ['numericmeasureattribute_2ehpp',['NumericMeasureAttribute.hpp',['../NumericMeasureAttribute_8hpp.html',1,'']]],
   ['numericmeasureattributetype',['NumericMeasureAttributeType',['../namespacemultiscale_1_1verification.html#a7a0d73fcd860f6db9e5b191b7d121393',1,'multiscale::verification']]],
@@ -70,5 +73,6 @@ var searchData=
   ['numericstatevariableattribute',['NumericStateVariableAttribute',['../classmultiscale_1_1verification_1_1NumericStateVariableAttribute.html',1,'multiscale::verification']]],
   ['numericstatevariableattribute_2ehpp',['NumericStateVariableAttribute.hpp',['../NumericStateVariableAttribute_8hpp.html',1,'']]],
   ['numericstatevariablerule',['numericStateVariableRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a9d9f835d6634627790722d6bcfdc725d',1,'multiscale::verification::ParserGrammar']]],
+  ['numericstatevariables',['numericStateVariables',['../classmultiscale_1_1verification_1_1TimePoint.html#a0f327968db18057fdfba91d1460893d5',1,'multiscale::verification::TimePoint']]],
   ['numericstatevariabletest_2ehpp',['NumericStateVariableTest.hpp',['../NumericStateVariableTest_8hpp.html',1,'']]]
 ];

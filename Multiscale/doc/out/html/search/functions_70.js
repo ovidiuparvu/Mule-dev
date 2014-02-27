@@ -1,9 +1,9 @@
 var searchData=
 [
   ['padwithzeros',['padWithZeros',['../classmultiscale_1_1LexicographicNumberIterator.html#a063dc7e6097724e96ed36bab4d20871b',1,'multiscale::LexicographicNumberIterator']]],
-  ['parse',['parse',['../classmultiscale_1_1verification_1_1Parser.html#a189d13731eaf50a9719b539d581fe17d',1,'multiscale::verification::Parser']]],
+  ['parse',['parse',['../classmultiscale_1_1verification_1_1Parser.html#a72f82de365256bc67091ec323a256b7a',1,'multiscale::verification::Parser']]],
   ['parseinputstring',['parseInputString',['../namespacemultiscaletest_1_1verification.html#a68a23ba0d48807727b1310c1d077b223',1,'multiscaletest::verification']]],
-  ['parselogicalquery',['parseLogicalQuery',['../classmultiscale_1_1verification_1_1Parser.html#a8147d9a090edaf5cb8db33f192b977ab',1,'multiscale::verification::Parser']]],
+  ['parselogicalquery',['parseLogicalQuery',['../classmultiscale_1_1verification_1_1Parser.html#aa9f6578be1eba00ab84c28bdc4c5afc2',1,'multiscale::verification::Parser::parseLogicalQuery(AbstractSyntaxTree &amp;parseResult)'],['../classmultiscale_1_1verification_1_1Parser.html#a8147d9a090edaf5cb8db33f192b977ab',1,'multiscale::verification::Parser::parseLogicalQuery(ProbabilisticLogicPropertyAttribute &amp;parseResult)']]],
   ['parser',['Parser',['../classmultiscale_1_1verification_1_1Parser.html#a261633be3bc90902b32053569afbef4b',1,'multiscale::verification::Parser']]],
   ['parsergrammar',['ParserGrammar',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a33d5353d5f7e378cd70635bf8daaa8d8',1,'multiscale::verification::ParserGrammar']]],
   ['parsergrammarextrainputexception',['ParserGrammarExtraInputException',['../classmultiscale_1_1verification_1_1ParserGrammarExtraInputException.html#a4a9afb5e4ef37ce76fbd5baed26f7013',1,'multiscale::verification::ParserGrammarExtraInputException']]],

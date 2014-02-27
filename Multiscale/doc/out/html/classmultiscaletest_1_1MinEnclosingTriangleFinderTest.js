@@ -21,6 +21,11 @@ var classmultiscaletest_1_1MinEnclosingTriangleFinderTest =
     [ "ValidateTestResults", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#ab5dd9317ad241d04c8338602c09036fe", null ],
     [ "area", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a80c049e5307e5f316ad0b73964ea90bf", null ],
     [ "convexHull", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a309e2484e202fab797520fc15517d95d", null ],
+    [ "MAX_NR_EXECUTIONS", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a061721ac8458f238f964b3f63088df8a", null ],
+    [ "MAX_NR_POINTS", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a6ecea50f805e256dc9bda62599840db3", null ],
+    [ "MIN_NR_EXECUTIONS", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#aca194910ab0cbc44fc6f9258853caa69", null ],
+    [ "MIN_NR_POINTS", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a03001ee4e2aedfa3da86ea99acc8e55e", null ],
+    [ "POINT_IN_TRIANGLE_THRESH", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a2193dc179eeea5624b8e9a8b1964c78e", null ],
     [ "points", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#ace108c67a933a0d79c05b304a9683764", null ],
     [ "triangle", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a02aa9bcd10630d27293e656233e3f64e", null ]
 ];

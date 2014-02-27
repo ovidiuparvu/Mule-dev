@@ -9,6 +9,7 @@ var searchData=
   ['notlogicpropertyattribute',['NotLogicPropertyAttribute',['../classmultiscale_1_1verification_1_1NotLogicPropertyAttribute.html',1,'multiscale::verification']]],
   ['numberiterator',['NumberIterator',['../classmultiscale_1_1NumberIterator.html',1,'multiscale']]],
   ['numeric',['Numeric',['../classmultiscale_1_1Numeric.html',1,'multiscale']]],
+  ['numericevaluator',['NumericEvaluator',['../classmultiscale_1_1verification_1_1NumericEvaluator.html',1,'multiscale::verification']]],
   ['numericmeasureattribute',['NumericMeasureAttribute',['../classmultiscale_1_1verification_1_1NumericMeasureAttribute.html',1,'multiscale::verification']]],
   ['numericnumericcomparisonattribute',['NumericNumericComparisonAttribute',['../classmultiscale_1_1verification_1_1NumericNumericComparisonAttribute.html',1,'multiscale::verification']]],
   ['numericrangemanipulator',['NumericRangeManipulator',['../classmultiscale_1_1NumericRangeManipulator.html',1,'multiscale']]],

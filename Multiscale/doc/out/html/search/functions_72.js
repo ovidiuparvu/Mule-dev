@@ -13,6 +13,8 @@ var searchData=
   ['regiondensity',['regionDensity',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a6beb6b2ecaccd60130bcf8dd808750b8',1,'multiscale::analysis::RegionDetector']]],
   ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html#aa6e891d8940358fe71e9a7e23f84452f',1,'multiscale::analysis::RegionDetector']]],
   ['regionholesarea',['regionHolesArea',['../classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18',1,'multiscale::analysis::RegionDetector']]],
+  ['removecluster',['removeCluster',['../classmultiscale_1_1verification_1_1TimePoint.html#ad18fa3ff9ac32c8b8074e82b062c63c4',1,'multiscale::verification::TimePoint']]],
+  ['removeregion',['removeRegion',['../classmultiscale_1_1verification_1_1TimePoint.html#a510388835736e66058ea4ca80c5e2366',1,'multiscale::verification::TimePoint']]],
   ['replace',['replace',['../classmultiscale_1_1StringManipulator.html#afe65f4f4cdf70976df2a8749b9e2fc7b',1,'multiscale::StringManipulator']]],
   ['reset',['reset',['../classmultiscale_1_1NumberIterator.html#a9e22075eb67dd5ebf4b03a4a67734a36',1,'multiscale::NumberIterator']]],
   ['resetcurrentnumber',['resetCurrentNumber',['../classmultiscale_1_1LexicographicNumberIterator.html#a18311f68a49156a415c817a947abcd7d',1,'multiscale::LexicographicNumberIterator::resetCurrentNumber()'],['../classmultiscale_1_1StandardNumberIterator.html#a678d43170a27106e1d8c5475b7088d9e',1,'multiscale::StandardNumberIterator::resetCurrentNumber()'],['../classmultiscale_1_1NumberIterator.html#a21e658de178b6c957df5ea0482e6fbd6',1,'multiscale::NumberIterator::resetCurrentNumber()']]],
@@ -29,5 +31,6 @@ var searchData=
   ['runtest3',['runTest3',['../DBSCANTest_8cpp.html#ae5504b5d71abda7a6a7f898e7eea0281',1,'DBSCANTest.cpp']]],
   ['runtest4',['runTest4',['../DBSCANTest_8cpp.html#afaf917600a40a856cfdabdd688d53eab',1,'DBSCANTest.cpp']]],
   ['runtest5',['runTest5',['../DBSCANTest_8cpp.html#aa8b585accca301a85255cdcc344985b8',1,'DBSCANTest.cpp']]],
-  ['runtests',['runTests',['../DBSCANTest_8cpp.html#a5dcb537699bebb9e9db36ab19c5aacf7',1,'DBSCANTest.cpp']]]
+  ['runtests',['runTests',['../DBSCANTest_8cpp.html#a5dcb537699bebb9e9db36ab19c5aacf7',1,'DBSCANTest.cpp']]],
+  ['runtimeexception',['RuntimeException',['../classmultiscale_1_1RuntimeException.html#a98d721091306d8935d90c4cf997e741d',1,'multiscale::RuntimeException::RuntimeException(const string &amp;file, int line, const string &amp;msg)'],['../classmultiscale_1_1RuntimeException.html#a53ec3e9b469045fb4971bb89e32166e2',1,'multiscale::RuntimeException::RuntimeException(const string &amp;file, int line, const char *msg)']]]
 ];

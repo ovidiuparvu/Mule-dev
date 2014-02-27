@@ -1,5 +1,5 @@
-<map id="runMinEnclosingTriangleFinder" name="runMinEnclosingTriangleFinder">
-<area shape="rect" id="node3" href="$MinEnclosingTriangleFinderSample_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="328,5,379,35"/>
-<area shape="rect" id="node5" href="$MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a" title="runMinEnclosingTriangleFinder\lUsingRandomPolygons" alt="" coords="253,58,453,105"/>
-<area shape="rect" id="node7" href="$MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972" title="runMinEnclosingTriangleFinder" alt="" coords="501,67,701,96"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$MinEnclosingTriangleFinderSample_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="397,5,448,35"/>
+<area shape="rect" id="node5" href="$MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a" title="runMinEnclosingTriangleFinderUsingRandomPolygons" alt="" coords="255,59,591,88"/>
+<area shape="rect" id="node7" href="$MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972" title="runMinEnclosingTriangleFinder" alt="" coords="640,59,840,88"/>
 </map>

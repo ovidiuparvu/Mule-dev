@@ -14,5 +14,5 @@ var searchData=
   ['intersects_5fbelow',['INTERSECTS_BELOW',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#ab3251c940d6ca18e9339d1d168390ab6',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['intersects_5fcritical',['INTERSECTS_CRITICAL',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a55ae42aad114fcd3d1b17ae181e3cdfb',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['intersects_5flimit',['INTERSECTS_LIMIT',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a2d3db503338bc7b70a2e7122eb5b13e3',1,'multiscale::MinEnclosingTriangleFinder']]],
-  ['isinitialised',['isInitialised',['../classmultiscale_1_1NumberIterator.html#ae3d929444e14677de0b616a059380f3f',1,'multiscale::NumberIterator']]]
+  ['isinitialised',['isInitialised',['../classmultiscale_1_1NumberIterator.html#ae3d929444e14677de0b616a059380f3f',1,'multiscale::NumberIterator::isInitialised()'],['../classmultiscale_1_1verification_1_1AbstractSyntaxTree.html#ada0836b5f461cd9e26f58eeec25956fe',1,'multiscale::verification::AbstractSyntaxTree::isInitialised()']]]
 ];

@@ -1,4 +1,4 @@
-<map id="multiscale::MinEnclosingTriangleFinder::findVertexCOnSideB" name="multiscale::MinEnclosingTriangleFinder::findVertexCOnSideB">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a12f1835531784519d618b86e889af06d" title="Update sides B and possibly A if tangency for side B was not obtained." alt="" coords="288,14,491,61"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="539,5,749,69"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a12f1835531784519d618b86e889af06d" title="Update sides B and possibly A if tangency for side B was not obtained." alt="" coords="432,5,779,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="827,5,1229,35"/>
 </map>

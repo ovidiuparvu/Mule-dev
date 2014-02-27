@@ -1,4 +1,4 @@
-<map id="multiscale::analysis::ClusterDetector::convertEntities" name="multiscale::analysis::ClusterDetector::convertEntities">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a4b42b3de7411fe02c7871064497feef1" title="Convert the non pile up entities to the format required by the DBSCAN class." alt="" coords="275,5,472,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a22ba21c341448af455111e718b058391" title="Convert the entities to the required format by the DBSCAN class." alt="" coords="272,93,475,157"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a4b42b3de7411fe02c7871064497feef1" title="Convert the non pile up entities to the format required by the DBSCAN class." alt="" coords="387,5,789,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a22ba21c341448af455111e718b058391" title="Convert the entities to the required format by the DBSCAN class." alt="" coords="399,59,777,88"/>
 </map>

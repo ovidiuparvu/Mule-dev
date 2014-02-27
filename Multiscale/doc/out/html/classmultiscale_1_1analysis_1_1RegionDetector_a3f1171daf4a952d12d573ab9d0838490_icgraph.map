@@ -1,4 +1,4 @@
-<map id="multiscale::analysis::RegionDetector::computeAverageDensity" name="multiscale::analysis::RegionDetector::computeAverageDensity">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1" title="Compute the average clusteredness degree and average density." alt="" coords="280,5,507,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="555,5,765,69"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1" title="Compute the average clusteredness degree and average density." alt="" coords="441,5,839,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="889,5,1276,35"/>
 </map>

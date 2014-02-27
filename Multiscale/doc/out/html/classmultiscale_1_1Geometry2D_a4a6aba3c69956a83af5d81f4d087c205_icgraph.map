@@ -1,5 +1,5 @@
-<map id="multiscale::Geometry2D::isPointOnEdge" name="multiscale::Geometry2D::isPointOnEdge">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a9e5c6378463c0e685136d66bfac2a8c1" title="Find the subset of points from the given set of points which lie on the edge." alt="" coords="235,5,397,51"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="217,75,415,139"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Detector.html#a9785ec165eb57a95243c5bcf679bc49b" title="Find the points for determining the angle of the polygon." alt="" coords="465,75,660,139"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#a9e5c6378463c0e685136d66bfac2a8c1" title="Find the subset of points from the given set of points which lie on the edge." alt="" coords="379,5,653,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a3da27e8cecb0a0d2733afa85d356a912" title="Find the points which are on the edge and on the line orthogonal to the line defined by 2 given point..." alt="" coords="313,59,719,88"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Detector.html#a9785ec165eb57a95243c5bcf679bc49b" title="Find the points for determining the angle of the polygon." alt="" coords="768,59,1112,88"/>
 </map>

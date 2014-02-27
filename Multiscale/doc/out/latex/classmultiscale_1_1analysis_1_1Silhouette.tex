@@ -1,89 +1,79 @@
-\hypertarget{classmultiscale_1_1analysis_1_1Silhouette}{\section{multiscale\-:\-:analysis\-:\-:Silhouette Class Reference}
+\hypertarget{classmultiscale_1_1analysis_1_1Silhouette}{\section{multiscale\-:\-:analysis\-:\-:\-Silhouette \-Class \-Reference}
 \label{classmultiscale_1_1analysis_1_1Silhouette}\index{multiscale\-::analysis\-::\-Silhouette@{multiscale\-::analysis\-::\-Silhouette}}
 }
 
 
-Class for computing the \char`\"{}\-Silhouette\char`\"{} clustering index.  
+\-Class for computing the \char`\"{}\-Silhouette\char`\"{} clustering index.  
 
 
 
 
-{\ttfamily \#include $<$Silhouette.\-hpp$>$}
+{\ttfamily \#include $<$\-Silhouette.\-hpp$>$}
 
-
-
-Collaboration diagram for multiscale\-:\-:analysis\-:\-:Silhouette\-:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=252pt]{classmultiscale_1_1analysis_1_1Silhouette__coll__graph}
-\end{center}
-\end{figure}
-\subsection*{Static Public Member Functions}
+\subsection*{\-Static \-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_a21fab3292947caed2dbab0da542ac24c}{compute\-Overall\-Average\-Measure} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&clusters)
-\begin{DoxyCompactList}\small\item\em Compute the overall average silhouette measure for the given collection of clusters. \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_ac2d55f89072bf46c86b8004d6787a820}{compute\-Average\-Measure} (unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&clusters)
-\begin{DoxyCompactList}\small\item\em Compute the average silhouette measure for the given cluster. \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_a2b418915655903583944d9d2ee9d6db8}{compute\-Measure} (unsigned int entity\-Index, unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&clusters)
-\begin{DoxyCompactList}\small\item\em Compute the silhouette measure for the given entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Private Member Functions}
+static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_a21fab3292947caed2dbab0da542ac24c}{compute\-Overall\-Average\-Measure} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&clusters)
+\begin{DoxyCompactList}\small\item\em \-Compute the overall average silhouette measure for the given collection of clusters. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_ac2d55f89072bf46c86b8004d6787a820}{compute\-Average\-Measure} (unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&clusters)
+\begin{DoxyCompactList}\small\item\em \-Compute the average silhouette measure for the given cluster. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_a2b418915655903583944d9d2ee9d6db8}{compute\-Measure} (unsigned int entity\-Index, unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&clusters)
+\begin{DoxyCompactList}\small\item\em \-Compute the silhouette measure for the given entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Private \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
-static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_a9cfc58c766daf74d57c0f109f2e77639}{compute\-Average\-Dissimilarity\-Within\-Cluster} (unsigned int entity\-Index, unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&clusters)
-\begin{DoxyCompactList}\small\item\em Compute the average dissimilarity within cluster to which the entity belongs. \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_a32876a9d476298d1835486a334eee44f}{compute\-Average\-Dissimilarity\-To\-Other\-Clusters} (unsigned int entity\-Index, unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&clusters)
-\begin{DoxyCompactList}\small\item\em Compute the average dissimilarity of the entity to the other clusters (i.\-e. clusters which are different from the cluster to which the entity belongs) \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_aac5c29405d0407da2f21ffac016bfd01}{compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster} (unsigned int entity\-Index, unsigned int entity\-Cluster\-Index, unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&clusters)
-\begin{DoxyCompactList}\small\item\em Compute the average dissimilarity between entity and cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_a9cfc58c766daf74d57c0f109f2e77639}{compute\-Average\-Dissimilarity\-Within\-Cluster} (unsigned int entity\-Index, unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&clusters)
+\begin{DoxyCompactList}\small\item\em \-Compute the average dissimilarity within cluster to which the entity belongs. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_a32876a9d476298d1835486a334eee44f}{compute\-Average\-Dissimilarity\-To\-Other\-Clusters} (unsigned int entity\-Index, unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&clusters)
+\begin{DoxyCompactList}\small\item\em \-Compute the average dissimilarity of the entity to the other clusters (i.\-e. clusters which are different from the cluster to which the entity belongs) \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1analysis_1_1Silhouette_aac5c29405d0407da2f21ffac016bfd01}{compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster} (unsigned int entity\-Index, unsigned int entity\-Cluster\-Index, unsigned int cluster\-Index, const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&clusters)
+\begin{DoxyCompactList}\small\item\em \-Compute the average dissimilarity between entity and cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Class for computing the \char`\"{}\-Silhouette\char`\"{} clustering index. 
+\subsection{\-Detailed \-Description}
+\-Class for computing the \char`\"{}\-Silhouette\char`\"{} clustering index. 
 
-Definition at line 14 of file Silhouette.\-hpp.
+\-Definition at line 14 of file \-Silhouette.\-hpp.
 
 
 
-\subsection{Member Function Documentation}
+\subsection{\-Member \-Function \-Documentation}
 \hypertarget{classmultiscale_1_1analysis_1_1Silhouette_aac5c29405d0407da2f21ffac016bfd01}{\index{multiscale\-::analysis\-::\-Silhouette@{multiscale\-::analysis\-::\-Silhouette}!compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster@{compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster}}
 \index{compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster@{compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster}!multiscale::analysis::Silhouette@{multiscale\-::analysis\-::\-Silhouette}}
-\subsubsection[{compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}double Silhouette\-::compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster (
+\subsubsection[{compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Silhouette\-::compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster} (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{entity\-Index, }
 \item[{unsigned int}]{entity\-Cluster\-Index, }
 \item[{unsigned int}]{cluster\-Index, }
-\item[{const vector$<$ {\bf Cluster} $>$ \&}]{clusters}
+\item[{const vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Silhouette_aac5c29405d0407da2f21ffac016bfd01}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1Silhouette_aac5c29405d0407da2f21ffac016bfd01}
 
 
-Compute the average dissimilarity between entity and cluster. 
+\-Compute the average dissimilarity between entity and cluster. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em entity\-Index} & The index of the entity in the cluster for which the distance is computed \\
+\begin{DoxyParams}{\-Parameters}
+{\em entity\-Index} & \-The index of the entity in the cluster for which the distance is computed \\
 \hline
-{\em entity\-Cluster\-Index} & The index of the cluster to which the entity belongs \\
+{\em entity\-Cluster\-Index} & \-The index of the cluster to which the entity belongs \\
 \hline
-{\em cluster\-Index} & The index of the cluster to which the average distance is computed \\
+{\em cluster\-Index} & \-The index of the cluster to which the average distance is computed \\
 \hline
-{\em clusters} & Collection of all clusters \\
+{\em clusters} & \-Collection of all clusters \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 84 of file Silhouette.\-cpp.
+\-Definition at line 84 of file \-Silhouette.\-cpp.
 
 
 
-References multiscale\-::\-Geometry2\-D\-::distance\-Btw\-Points().
+\-References multiscale\-::\-Geometry2\-D\-::distance\-Btw\-Points().
 
 
 
-Here is the call graph for this function\-:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -95,63 +85,63 @@ Here is the call graph for this function\-:
 
 \hypertarget{classmultiscale_1_1analysis_1_1Silhouette_a32876a9d476298d1835486a334eee44f}{\index{multiscale\-::analysis\-::\-Silhouette@{multiscale\-::analysis\-::\-Silhouette}!compute\-Average\-Dissimilarity\-To\-Other\-Clusters@{compute\-Average\-Dissimilarity\-To\-Other\-Clusters}}
 \index{compute\-Average\-Dissimilarity\-To\-Other\-Clusters@{compute\-Average\-Dissimilarity\-To\-Other\-Clusters}!multiscale::analysis::Silhouette@{multiscale\-::analysis\-::\-Silhouette}}
-\subsubsection[{compute\-Average\-Dissimilarity\-To\-Other\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}double Silhouette\-::compute\-Average\-Dissimilarity\-To\-Other\-Clusters (
+\subsubsection[{compute\-Average\-Dissimilarity\-To\-Other\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Silhouette\-::compute\-Average\-Dissimilarity\-To\-Other\-Clusters} (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{entity\-Index, }
 \item[{unsigned int}]{cluster\-Index, }
-\item[{const vector$<$ {\bf Cluster} $>$ \&}]{clusters}
+\item[{const vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Silhouette_a32876a9d476298d1835486a334eee44f}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1Silhouette_a32876a9d476298d1835486a334eee44f}
 
 
-Compute the average dissimilarity of the entity to the other clusters (i.\-e. clusters which are different from the cluster to which the entity belongs) 
+\-Compute the average dissimilarity of the entity to the other clusters (i.\-e. clusters which are different from the cluster to which the entity belongs) 
 
 
-\begin{DoxyParams}{Parameters}
-{\em entity\-Index} & The index of the entity in the cluster for which the silhouette measure is computed \\
+\begin{DoxyParams}{\-Parameters}
+{\em entity\-Index} & \-The index of the entity in the cluster for which the silhouette measure is computed \\
 \hline
-{\em cluster\-Index} & The index of the cluster to which the entity belongs \\
+{\em cluster\-Index} & \-The index of the cluster to which the entity belongs \\
 \hline
-{\em clusters} & Collection of all clusters \\
+{\em clusters} & \-Collection of all clusters \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 66 of file Silhouette.\-cpp.
+\-Definition at line 66 of file \-Silhouette.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Silhouette_a9cfc58c766daf74d57c0f109f2e77639}{\index{multiscale\-::analysis\-::\-Silhouette@{multiscale\-::analysis\-::\-Silhouette}!compute\-Average\-Dissimilarity\-Within\-Cluster@{compute\-Average\-Dissimilarity\-Within\-Cluster}}
 \index{compute\-Average\-Dissimilarity\-Within\-Cluster@{compute\-Average\-Dissimilarity\-Within\-Cluster}!multiscale::analysis::Silhouette@{multiscale\-::analysis\-::\-Silhouette}}
-\subsubsection[{compute\-Average\-Dissimilarity\-Within\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}double Silhouette\-::compute\-Average\-Dissimilarity\-Within\-Cluster (
+\subsubsection[{compute\-Average\-Dissimilarity\-Within\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Silhouette\-::compute\-Average\-Dissimilarity\-Within\-Cluster} (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{entity\-Index, }
 \item[{unsigned int}]{cluster\-Index, }
-\item[{const vector$<$ {\bf Cluster} $>$ \&}]{clusters}
+\item[{const vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1Silhouette_a9cfc58c766daf74d57c0f109f2e77639}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1Silhouette_a9cfc58c766daf74d57c0f109f2e77639}
 
 
-Compute the average dissimilarity within cluster to which the entity belongs. 
+\-Compute the average dissimilarity within cluster to which the entity belongs. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em entity\-Index} & The index of the entity in the cluster for which the silhouette measure is computed \\
+\begin{DoxyParams}{\-Parameters}
+{\em entity\-Index} & \-The index of the entity in the cluster for which the silhouette measure is computed \\
 \hline
-{\em cluster\-Index} & The index of the cluster to which the entity belongs \\
+{\em cluster\-Index} & \-The index of the cluster to which the entity belongs \\
 \hline
-{\em clusters} & Collection of all clusters \\
+{\em clusters} & \-Collection of all clusters \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 52 of file Silhouette.\-cpp.
+\-Definition at line 52 of file \-Silhouette.\-cpp.
 
 
 
-References multiscale\-::\-Geometry2\-D\-::distance\-Btw\-Points().
+\-References multiscale\-::\-Geometry2\-D\-::distance\-Btw\-Points().
 
 
 
-Here is the call graph for this function\-:
+\-Here is the call graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -163,80 +153,80 @@ Here is the call graph for this function\-:
 
 \hypertarget{classmultiscale_1_1analysis_1_1Silhouette_ac2d55f89072bf46c86b8004d6787a820}{\index{multiscale\-::analysis\-::\-Silhouette@{multiscale\-::analysis\-::\-Silhouette}!compute\-Average\-Measure@{compute\-Average\-Measure}}
 \index{compute\-Average\-Measure@{compute\-Average\-Measure}!multiscale::analysis::Silhouette@{multiscale\-::analysis\-::\-Silhouette}}
-\subsubsection[{compute\-Average\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double Silhouette\-::compute\-Average\-Measure (
+\subsubsection[{compute\-Average\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Silhouette\-::compute\-Average\-Measure} (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{cluster\-Index, }
-\item[{const vector$<$ {\bf Cluster} $>$ \&}]{clusters}
+\item[{const vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1Silhouette_ac2d55f89072bf46c86b8004d6787a820}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1Silhouette_ac2d55f89072bf46c86b8004d6787a820}
 
 
-Compute the average silhouette measure for the given cluster. 
+\-Compute the average silhouette measure for the given cluster. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em cluster\-Index} & The index of the cluster for which the average silhouette measure is computed \\
+\begin{DoxyParams}{\-Parameters}
+{\em cluster\-Index} & \-The index of the cluster for which the average silhouette measure is computed \\
 \hline
-{\em clusters} & Collection of all clusters \\
+{\em clusters} & \-Collection of all clusters \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 26 of file Silhouette.\-cpp.
+\-Definition at line 26 of file \-Silhouette.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Silhouette_a2b418915655903583944d9d2ee9d6db8}{\index{multiscale\-::analysis\-::\-Silhouette@{multiscale\-::analysis\-::\-Silhouette}!compute\-Measure@{compute\-Measure}}
 \index{compute\-Measure@{compute\-Measure}!multiscale::analysis::Silhouette@{multiscale\-::analysis\-::\-Silhouette}}
-\subsubsection[{compute\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double Silhouette\-::compute\-Measure (
+\subsubsection[{compute\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Silhouette\-::compute\-Measure} (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{entity\-Index, }
 \item[{unsigned int}]{cluster\-Index, }
-\item[{const vector$<$ {\bf Cluster} $>$ \&}]{clusters}
+\item[{const vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1Silhouette_a2b418915655903583944d9d2ee9d6db8}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1Silhouette_a2b418915655903583944d9d2ee9d6db8}
 
 
-Compute the silhouette measure for the given entity. 
+\-Compute the silhouette measure for the given entity. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em entity\-Index} & The index of the entity in the cluster for which the silhouette measure is computed \\
+\begin{DoxyParams}{\-Parameters}
+{\em entity\-Index} & \-The index of the entity in the cluster for which the silhouette measure is computed \\
 \hline
-{\em cluster\-Index} & The index of the cluster to which the entity belongs \\
+{\em cluster\-Index} & \-The index of the cluster to which the entity belongs \\
 \hline
-{\em clusters} & Collection of all clusters \\
+{\em clusters} & \-Collection of all clusters \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 42 of file Silhouette.\-cpp.
+\-Definition at line 42 of file \-Silhouette.\-cpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1Silhouette_a21fab3292947caed2dbab0da542ac24c}{\index{multiscale\-::analysis\-::\-Silhouette@{multiscale\-::analysis\-::\-Silhouette}!compute\-Overall\-Average\-Measure@{compute\-Overall\-Average\-Measure}}
 \index{compute\-Overall\-Average\-Measure@{compute\-Overall\-Average\-Measure}!multiscale::analysis::Silhouette@{multiscale\-::analysis\-::\-Silhouette}}
-\subsubsection[{compute\-Overall\-Average\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double Silhouette\-::compute\-Overall\-Average\-Measure (
+\subsubsection[{compute\-Overall\-Average\-Measure}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Silhouette\-::compute\-Overall\-Average\-Measure} (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ {\bf Cluster} $>$ \&}]{clusters}
+\item[{const vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1analysis_1_1Silhouette_a21fab3292947caed2dbab0da542ac24c}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1Silhouette_a21fab3292947caed2dbab0da542ac24c}
 
 
-Compute the overall average silhouette measure for the given collection of clusters. 
+\-Compute the overall average silhouette measure for the given collection of clusters. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em clusters} & Collection of all clusters \\
+\begin{DoxyParams}{\-Parameters}
+{\em clusters} & \-Collection of all clusters \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 11 of file Silhouette.\-cpp.
+\-Definition at line 11 of file \-Silhouette.\-cpp.
 
 
 
-Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::compute\-Clusteredness\-Index().
+\-Referenced by multiscale\-::analysis\-::\-Cluster\-Detector\-::compute\-Clusteredness\-Index().
 
 
 
-Here is the caller graph for this function\-:
+\-Here is the caller graph for this function\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -248,7 +238,7 @@ Here is the caller graph for this function\-:
 
 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/\hyperlink{Silhouette_8hpp}{Silhouette.\-hpp}\item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/\hyperlink{Silhouette_8cpp}{Silhouette.\-cpp}\end{DoxyCompactItemize}
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/\hyperlink{Silhouette_8hpp}{\-Silhouette.\-hpp}\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/\hyperlink{Silhouette_8cpp}{\-Silhouette.\-cpp}\end{DoxyCompactItemize}

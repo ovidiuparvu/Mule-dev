@@ -1,5 +1,5 @@
-<map id="multiscale::analysis::DBSCAN::expandCoreCluster" name="multiscale::analysis::DBSCAN::expandCoreCluster">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a6ead683810b4f04a48cd0a4d0f5f7a6b" title="Add all unclassified neighbour nodes to the seeds list." alt="" coords="261,5,488,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a5b0d19aab403005cac7fbe0851f5a969" title="Label all unclassified and noise neighbour nodes as border nodes." alt="" coords="277,93,472,157"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a2524149cf55398e2038aaa389b56bfec" title="Retrieve the list of neighbour indexes which are at a distance &lt; eps far from the given data point..." alt="" coords="273,181,476,227"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a6ead683810b4f04a48cd0a4d0f5f7a6b" title="Add all unclassified neighbour nodes to the seeds list." alt="" coords="380,5,793,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a5b0d19aab403005cac7fbe0851f5a969" title="Label all unclassified and noise neighbour nodes as border nodes." alt="" coords="377,59,796,88"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1DBSCAN.html#a2524149cf55398e2038aaa389b56bfec" title="Retrieve the list of neighbour indexes which are at a distance &lt; eps far from the given data point..." alt="" coords="428,112,745,141"/>
 </map>

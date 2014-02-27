@@ -1,7 +1,7 @@
 var searchData=
 [
   ['parameter',['parameter',['../classmultiscale_1_1verification_1_1TernarySubsetAttribute.html#a3edcc860e299951613209ac49e662186',1,'multiscale::verification::TernarySubsetAttribute']]],
-  ['perimeter',['perimeter',['../classmultiscale_1_1analysis_1_1Entity.html#ac7bcdb1cb5eb4369ca8e44d3dbda44a3',1,'multiscale::analysis::Entity::perimeter()'],['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aee84039be272f902a2d871f61da47360',1,'multiscale::analysis::SpatialEntityPseudo3D::perimeter()']]],
+  ['perimeter',['perimeter',['../classmultiscale_1_1analysis_1_1Entity.html#ac7bcdb1cb5eb4369ca8e44d3dbda44a3',1,'multiscale::analysis::Entity::perimeter()'],['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aee84039be272f902a2d871f61da47360',1,'multiscale::analysis::SpatialEntityPseudo3D::perimeter()'],['../classmultiscale_1_1verification_1_1SpatialEntity.html#a2fe16904f440612d744fd9038ee38d72',1,'multiscale::verification::SpatialEntity::perimeter()']]],
   ['pi',['PI',['../classmultiscale_1_1Geometry2D.html#a7039b8bbe89283e22744c0631d597660',1,'multiscale::Geometry2D']]],
   ['pileupdegree',['pileUpDegree',['../classmultiscale_1_1analysis_1_1Entity.html#aae78866cef9fcb7bd2e858570f47d082',1,'multiscale::analysis::Entity']]],
   ['point_5fin_5ftriangle_5fthresh',['POINT_IN_TRIANGLE_THRESH',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a2193dc179eeea5624b8e9a8b1964c78e',1,'multiscaletest::MinEnclosingTriangleFinderTest::POINT_IN_TRIANGLE_THRESH()'],['../MinEnclosingTriangleFinderSample_8cpp.html#a63eaa2a2bab85c80e50d7eab65b2280a',1,'POINT_IN_TRIANGLE_THRESH():&#160;MinEnclosingTriangleFinderSample.cpp']]],
@@ -10,10 +10,12 @@ var searchData=
   ['polygon_5fclosed',['POLYGON_CLOSED',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a1b3de2646beaac60d03527f1775614be',1,'multiscale::analysis::RegionDetector']]],
   ['polygon_5fpoint_5fx_5fmax',['POLYGON_POINT_X_MAX',['../MinEnclosingTriangleFinderSample_8cpp.html#ad9dc34f75b2cd1011753940ab8fe6c7b',1,'MinEnclosingTriangleFinderSample.cpp']]],
   ['polygon_5fpoint_5fy_5fmax',['POLYGON_POINT_Y_MAX',['../MinEnclosingTriangleFinderSample_8cpp.html#a3814979c768f6a0a6ea15bd1f3135133',1,'MinEnclosingTriangleFinderSample.cpp']]],
+  ['precedingtruthvalue',['precedingTruthValue',['../classmultiscale_1_1verification_1_1LogicPropertyVisitor.html#a38cfd5e59abdda9ebdd9b225ba670ccf',1,'multiscale::verification::LogicPropertyVisitor']]],
   ['primaryconstraint',['primaryConstraint',['../classmultiscale_1_1verification_1_1PrimaryConstraintAttribute.html#a2a834e9ecf0bde9c10f71a4b01ded811',1,'multiscale::verification::PrimaryConstraintAttribute']]],
   ['primaryconstraintrule',['primaryConstraintRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a111b64d28da9004e950bad96c5474b51',1,'multiscale::verification::ParserGrammar']]],
   ['primarylogicproperty',['primaryLogicProperty',['../classmultiscale_1_1verification_1_1PrimaryLogicPropertyAttribute.html#a81402802b4da2508aae9d10ecc0d5fff',1,'multiscale::verification::PrimaryLogicPropertyAttribute']]],
   ['primarylogicpropertyrule',['primaryLogicPropertyRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a5eb5783c56159b336cb7ce67c0d19cd5',1,'multiscale::verification::ParserGrammar']]],
+  ['probabilisticlogicproperty',['probabilisticLogicProperty',['../classmultiscale_1_1verification_1_1AbstractSyntaxTree.html#ab668f735397d9377b7d9022c861ed40f',1,'multiscale::verification::AbstractSyntaxTree']]],
   ['probabilisticlogicpropertyrule',['probabilisticLogicPropertyRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#adc72cd9129556f26d01295f48c9a8a3f',1,'multiscale::verification::ParserGrammar']]],
   ['probability',['probability',['../classmultiscale_1_1verification_1_1ProbabilisticLogicPropertyAttribute.html#aedfd52514285ef3f1f54b30d0ef0cfb9',1,'multiscale::verification::ProbabilisticLogicPropertyAttribute']]],
   ['probabilityrule',['probabilityRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a5c48db2ef6743fcdc3b76fd70d729a32',1,'multiscale::verification::ParserGrammar']]]

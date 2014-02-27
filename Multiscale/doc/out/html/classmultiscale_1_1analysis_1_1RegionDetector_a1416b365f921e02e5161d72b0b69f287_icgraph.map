@@ -1,4 +1,4 @@
-<map id="multiscale::analysis::RegionDetector::createRegionFromPolygon" name="multiscale::analysis::RegionDetector::createRegionFromPolygon">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="263,14,460,61"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="509,5,720,69"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="455,5,767,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="817,5,1204,35"/>
 </map>

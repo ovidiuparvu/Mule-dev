@@ -1,8 +1,8 @@
-<map id="multiscale::MinEnclosingTriangleFinder::intersects" name="multiscale::MinEnclosingTriangleFinder::intersects">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#aba0848fcc9021b379fd5f02a6708912d" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon abov..." alt="" coords="225,10,431,57"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a0abe1c7d5ef5a43f8ea1b404db0066e0" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon belo..." alt="" coords="225,83,431,130"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9f071f42dbaff51c8975da1b77c1188e" title="Check if tangency for side B was not obtained." alt="" coords="495,5,703,51"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="765,75,976,139"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a88ca299e33ef6104513bd153501d5530" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="495,75,703,139"/>
-<area shape="rect" id="node14" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="481,162,716,209"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#aba0848fcc9021b379fd5f02a6708912d" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon abov..." alt="" coords="369,5,719,35"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a0abe1c7d5ef5a43f8ea1b404db0066e0" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon belo..." alt="" coords="369,59,719,88"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9f071f42dbaff51c8975da1b77c1188e" title="Check if tangency for side B was not obtained." alt="" coords="789,5,1144,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1213,59,1616,88"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a88ca299e33ef6104513bd153501d5530" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="768,59,1165,88"/>
+<area shape="rect" id="node14" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="776,112,1157,141"/>
 </map>

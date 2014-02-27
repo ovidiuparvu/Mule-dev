@@ -7,7 +7,7 @@ using namespace multiscale::verification;
 
 
 SpatialTemporalTrace::SpatialTemporalTrace() {
-    lastTimePointValue = -1;
+    lastTimePointValue = 0;
 }
 
 SpatialTemporalTrace::SpatialTemporalTrace(const SpatialTemporalTrace &trace) {
@@ -35,11 +35,11 @@ unsigned int SpatialTemporalTrace::length() const {
     return timePoints.size();
 }
 
-SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned long startValue) {
+SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned int startIndex) {
     SpatialTemporalTrace subTrace;
 
-    validateValue(startValue);
-    getSubTrace(subTrace, startValue, timePoints[timePoints.size() - 1].getValue());
+    validateIndex(startIndex);
+    addTimePointsToSubTrace(subTrace, startIndex, timePoints.size() - 1);
 
     return subTrace;
 }
@@ -51,6 +51,12 @@ SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned long startValue, un
     getSubTrace(subTrace, startValue, endValue);
 
     return subTrace;
+}
+
+SpatialTemporalTrace SpatialTemporalTrace::subTrace(const SpatialTemporalTrace &trace, unsigned int startIndex) {
+    SpatialTemporalTrace traceCopy(trace);
+
+    return traceCopy.subTrace(startIndex);
 }
 
 SpatialTemporalTrace SpatialTemporalTrace::subTrace(const SpatialTemporalTrace &trace, unsigned long startValue,
@@ -67,35 +73,33 @@ void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint) {
     updateLastTimePointValue(timePoint, timePointValue);
 }
 
-void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint, double timePointValue) {
-    if (Numeric::almostEqual(timePointValue, -1)) {
+void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint, unsigned long timePointValue) {
+    if (timePointValue == numeric_limits<unsigned long>::max()) {
         timePoint.setValue(++lastTimePointValue);
     } else {
         lastTimePointValue = timePointValue;
     }
 }
 
-void SpatialTemporalTrace::validateTimePointValue(double timePointValue) {
-    if (Numeric::greaterOrEqual(timePointValue, 0)) {
-        if (Numeric::lessOrEqual(timePointValue, lastTimePointValue)) {
-            MS_throw_detailed(SpatialTemporalException,
-                              ERR_TIMEPOINT_VALUE_INVALID_START,
-                              StringManipulator::toString<double>(timePointValue) +
-                              ERR_TIMEPOINT_VALUE_INVALID_MIDDLE +
-                              StringManipulator::toString<double>(lastTimePointValue),
-                              ERR_TIMEPOINT_VALUE_INVALID_END);
-        }
+void SpatialTemporalTrace::validateTimePointValue(unsigned long timePointValue) {
+    if (timePointValue <= lastTimePointValue) {
+        MS_throw_detailed(SpatialTemporalException,
+                          ERR_TIMEPOINT_VALUE_INVALID_START,
+                          StringManipulator::toString<unsigned long>(timePointValue) +
+                          ERR_TIMEPOINT_VALUE_INVALID_MIDDLE +
+                          StringManipulator::toString<unsigned long>(lastTimePointValue),
+                          ERR_TIMEPOINT_VALUE_INVALID_END);
     }
 }
 
 int SpatialTemporalTrace::indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value) {
     unsigned int nrOfTimePoints = timePoints.size();
-    double currentValue = -1;
+    unsigned long currentValue = -1;
 
     for (unsigned int i = 0; i < nrOfTimePoints; i++) {
         currentValue = timePoints[i].getValue();
 
-        if (Numeric::greaterOrEqual(currentValue, value)) {
+        if (currentValue >= value) {
             return i;
         }
     }
@@ -105,12 +109,12 @@ int SpatialTemporalTrace::indexOfFirstTimePointGreaterOrEqualToValue(unsigned lo
 
 int SpatialTemporalTrace::indexOfLastTimePointLessOrEqualToValue(unsigned long value) {
     unsigned int nrOfTimePoints = timePoints.size();
-    double currentValue = -1;
+    unsigned long currentValue = -1;
 
     for (int i = (nrOfTimePoints - 1); i >= 0; i--) {
         currentValue = timePoints[i].getValue();
 
-        if (Numeric::lessOrEqual(currentValue, value)) {
+        if (currentValue <= value) {
             return i;
         }
     }
@@ -179,9 +183,9 @@ const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_INVALID_START   = "T
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_INVALID_MIDDLE  = ") should be greater than the previously added timepoint value (";
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_INVALID_END     = ").";
 
-const std::string SpatialTemporalTrace::ERR_ITERATOR_NEXT           = "There is no next timepoint which the iterator can"
-                                                                      " return. Please use the hasNext() method before"
-                                                                      " to ensure there are further timepoints available"
-                                                                      " before calling the next() method.";
+const std::string SpatialTemporalTrace::ERR_ITERATOR_NEXT   = "There is no next timepoint which the iterator can"
+                                                              " return. Please use the hasNext() method before"
+                                                              " to ensure there are further timepoints available"
+                                                              " before calling the next() method.";
 
 const int SpatialTemporalTrace::TIMEPOINT_INDEX_NOT_FOUND = -1;

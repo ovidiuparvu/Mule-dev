@@ -16,6 +16,9 @@ var classmultiscale_1_1analysis_1_1Entity =
     [ "area", "classmultiscale_1_1analysis_1_1Entity.html#a7fad3c67bb46cc0f4ce1fb17ef3e66cc", null ],
     [ "centre", "classmultiscale_1_1analysis_1_1Entity.html#ad226609174b21f71210161d29a16d4ef", null ],
     [ "contourPoints", "classmultiscale_1_1analysis_1_1Entity.html#a0199b0a0e5b22809015ecbc23d17785e", null ],
+    [ "ERR_DISTANCE", "classmultiscale_1_1analysis_1_1Entity.html#a0904a1ab1e3f71e0702ace23b665cf0e", null ],
+    [ "ERR_INPUT", "classmultiscale_1_1analysis_1_1Entity.html#a52a27753c0da593552f585f540f003ff", null ],
+    [ "OUTPUT_SEPARATOR", "classmultiscale_1_1analysis_1_1Entity.html#afe861959b8b22bec466e8118a09ccb54", null ],
     [ "perimeter", "classmultiscale_1_1analysis_1_1Entity.html#ac7bcdb1cb5eb4369ca8e44d3dbda44a3", null ],
     [ "pileUpDegree", "classmultiscale_1_1analysis_1_1Entity.html#aae78866cef9fcb7bd2e858570f47d082", null ]
 ];

@@ -1,6 +1,6 @@
-<map id="multiscale::analysis::SpatialEntityPseudo3D::shapeAsString" name="multiscale::analysis::SpatialEntityPseudo3D::shapeAsString">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a232a5e4991e59dfc685107982fcaf0ce" title="Return the values of the fields as a string." alt="" coords="219,5,384,69"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aaf8b45d68041be0f293eaf1bf40c76d3" title="Get the shape best fitting the spatial collection as a string." alt="" coords="219,93,384,157"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#abea1af0695f6f1a977b0caa3428fc433" title="Get the string representation of all field values." alt="" coords="441,5,607,69"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Detector.html#ac0e3077d43c329e409db504bf3981c3c" title="Add the properties of the spatial entity to the property tree." alt="" coords="433,93,615,157"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a232a5e4991e59dfc685107982fcaf0ce" title="Return the values of the fields as a string." alt="" coords="428,5,828,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aaf8b45d68041be0f293eaf1bf40c76d3" title="Get the shape best fitting the spatial collection as a string." alt="" coords="432,59,824,88"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#abea1af0695f6f1a977b0caa3428fc433" title="Get the string representation of all field values." alt="" coords="911,5,1244,35"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Detector.html#ac0e3077d43c329e409db504bf3981c3c" title="Add the properties of the spatial entity to the property tree." alt="" coords="879,59,1276,88"/>
 </map>
