@@ -34,7 +34,7 @@ namespace multiscale {
 
             public:
 
-                BinaryNumericMeasureType binaryNumericMeasure;  /*!< The binary numeric measure */
+                BinaryNumericMeasureType binaryNumericMeasureType;  /*!< The binary numeric measure type */
 
             public:
 
@@ -50,7 +50,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::BinaryNumericMeasureAttribute,
-    (multiscale::verification::BinaryNumericMeasureType, binaryNumericMeasure)
+    (multiscale::verification::BinaryNumericMeasureType, binaryNumericMeasureType)
 )
 
 #endif

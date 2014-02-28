@@ -32,7 +32,7 @@ namespace multiscale {
 
             public:
 
-                ComparatorType comparator;  /*!< The comparator */
+                ComparatorType comparatorType;  /*!< The comparator type */
 
             public:
 
@@ -48,7 +48,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::ComparatorAttribute,
-    (multiscale::verification::ComparatorType, comparator)
+    (multiscale::verification::ComparatorType, comparatorType)
 )
 
 #endif

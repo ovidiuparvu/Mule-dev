@@ -2,6 +2,8 @@
 #define LOGICPROPERTYVISITOR_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/LogicPropertyAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/NumericVisitor.hpp"
+
 
 #include <boost/variant.hpp>
 #include <iostream> // TODO: Remove
@@ -134,8 +136,17 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const DifferenceAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    // TODO: Implement
-                    return false;
+                    if (trace.length() > 1) {
+                        double lhsNumericMeasureOne = evaluateNumericMeasure(primaryLogicProperty.lhsNumericMeasure, trace, 1);
+                        double lhsNumericMeasureTwo = evaluateNumericMeasure(primaryLogicProperty.lhsNumericMeasure, trace, 0);
+                        double rhsNumericMeasure    = evaluateNumericMeasure(primaryLogicProperty.rhsNumericMeasure, trace, 0);
+
+                        return ComparatorEvaluator::compare(lhsNumericMeasureOne - lhsNumericMeasureTwo,
+                                                            primaryLogicProperty.comparator.comparatorType,
+                                                            rhsNumericMeasure);
+                    }
+
+                    return true;
                 }
 
                 //! Overloading the "()" operator for the NumericSpatialNumericComparisonAttribute alternative
@@ -146,10 +157,12 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const NumericSpatialNumericComparisonAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    // TODO: Implement
-                    std::cout << "NumericSpatialNumericComparisonAttribute" << std::endl;
+                    double lhsNumericMeasure = evaluateNumericMeasure(primaryLogicProperty.numericMeasure, trace);
+                    double rhsNumericMeasure = evaluateNumericSpatialMeasure(primaryLogicProperty.numericSpatialMeasure, trace);
 
-                    return true;
+                    return ComparatorEvaluator::compare(lhsNumericMeasure,
+                                                        primaryLogicProperty.comparator.comparatorType,
+                                                        rhsNumericMeasure);
                 }
 
                 //! Overloading the "()" operator for the NumericNumericComparisonAttribute alternative
@@ -160,10 +173,12 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const NumericNumericComparisonAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    // TODO: Implement
-                    std::cout << "NumericNumericComparisonAttribute" << std::endl;
+                    double numericStateVariable = evaluateNumericMeasure(primaryLogicProperty.numericStateVariable, trace);
+                    double numericMeasure       = evaluateNumericMeasure(primaryLogicProperty.numericMeasure, trace);
 
-                    return true;
+                    return ComparatorEvaluator::compare(numericStateVariable,
+                                                        primaryLogicProperty.comparator.comparatorType,
+                                                        numericMeasure);
                 }
 
                 //! Overloading the "()" operator for the NotLogicPropertyAttribute alternative
@@ -316,6 +331,34 @@ namespace multiscale {
                     }
 
                     return true;
+                }
+
+                //! Evaluate the numeric measure considering the given spatial temporal trace
+                /*!
+                 * \param numericMeasure    The given numeric measure
+                 * \param trace             The given spatial temporal trace
+                 * \param timePointIndex    The index of the considered timepoint from the trace
+                 */
+                double evaluateNumericMeasure(const NumericMeasureAttributeType &numericMeasure, const SpatialTemporalTrace &trace,
+                                              unsigned int timePointIndex = 0) const {
+                    SpatialTemporalTrace nonConstTrace = SpatialTemporalTrace(trace);
+                    TimePoint timePoint = nonConstTrace.getTimePoint(timePointIndex);
+
+                    return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
+                }
+
+                //! Evaluate the numeric spatial measure considering the given spatial temporal trace
+                /*!
+                 * \param numericMeasure    The given numeric measure
+                 * \param trace             The given spatial temporal trace
+                 * \param timePointIndex    The index of the considered timepoint from the trace
+                 */
+                double evaluateNumericSpatialMeasure(const NumericSpatialAttributeType &numericSpatialMeasure, const SpatialTemporalTrace &trace,
+                                                     unsigned int timePointIndex = 0) const {
+                    SpatialTemporalTrace nonConstTrace = SpatialTemporalTrace(trace);
+                    TimePoint timePoint = nonConstTrace.getTimePoint(timePointIndex);
+
+                    return boost::apply_visitor(NumericVisitor(timePoint), numericSpatialMeasure);
                 }
 
         };

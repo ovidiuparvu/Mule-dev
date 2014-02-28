@@ -16,7 +16,7 @@ namespace multiscale {
     namespace verification {
 
         // Forward declaration of classes
-        class NumericSpatialAtribute;
+        class NumericSpatialAttribute;
 
 
         //! Variant for a numeric spatial attribute

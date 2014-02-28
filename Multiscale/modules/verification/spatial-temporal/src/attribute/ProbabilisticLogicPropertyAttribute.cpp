@@ -4,7 +4,7 @@ using namespace multiscale::verification;
 
 
 ComparatorType ProbabilisticLogicPropertyAttribute::getComparator() {
-    return comparator.comparator;
+    return comparator.comparatorType;
 }
 
 double ProbabilisticLogicPropertyAttribute::getProbability() {

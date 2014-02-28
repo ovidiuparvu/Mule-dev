@@ -3,10 +3,6 @@
 using namespace multiscale::verification;
 
 
-ComparatorType ComparatorAttribute::evaluate() const {
-    return comparator;
-}
-
 //! Overload the output stream operator for the enumeration
 std::ostream& multiscale::verification::operator<<(std::ostream& out, const ComparatorType &comparatorType) {
     switch (comparatorType) {
