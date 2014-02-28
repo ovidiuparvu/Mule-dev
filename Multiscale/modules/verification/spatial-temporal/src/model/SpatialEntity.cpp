@@ -117,6 +117,22 @@ void SpatialEntity::setCentroidY(double centroidY) {
     this->centroidY = centroidY;
 }
 
+bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
+    return (
+        (this->clusteredness         <   rhsSpatialEntity.clusteredness) ||
+        (this->density               <   rhsSpatialEntity.density) ||
+        (this->area                  <   rhsSpatialEntity.area) ||
+        (this->perimeter             <   rhsSpatialEntity.perimeter) ||
+        (this->distanceFromOrigin    <   rhsSpatialEntity.distanceFromOrigin) ||
+        (this->angleDegrees          <   rhsSpatialEntity.angleDegrees) ||
+        (this->triangleMeasure       <   rhsSpatialEntity.triangleMeasure) ||
+        (this->rectangleMeasure      <   rhsSpatialEntity.rectangleMeasure) ||
+        (this->circleMeasure         <   rhsSpatialEntity.circleMeasure) ||
+        (this->centroidX             <   rhsSpatialEntity.centroidX) ||
+        (this->centroidY             <   rhsSpatialEntity.centroidY)
+    );
+}
+
 void SpatialEntity::validateRealNonNegativeValue(double value) {
     if (Numeric::lessOrEqual(value, 0)) {
         MS_throw_detailed(SpatialTemporalException, ERR_REAL_NON_NEGATIVE_VALUE,

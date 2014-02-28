@@ -1,7 +1,6 @@
 #ifndef PRIMARYCONSTRAINTATTRIBUTE_HPP
 #define PRIMARYCONSTRAINTATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/ConstraintEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnaryConstraintAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -27,23 +26,11 @@ namespace multiscale {
 
 
         //! Class for representing a primary constraint attribute
-        class PrimaryConstraintAttribute : public ConstraintEvaluator {
+        class PrimaryConstraintAttribute {
 
             public:
 
                 PrimaryConstraintAttributeType primaryConstraint;   /*!< The primary constraint */
-
-            public:
-
-                //! Filter the set of spatial entities for a timepoint considering the given constraint(s)
-                /*!
-                 * \param initialTimePoint      The initial timepoint
-                 * \param constraintTimePoint   The result of applying constraints to the initial timepoint
-                 */
-                TimePoint evaluate(const TimePoint &initialTimePoint,
-                                   const TimePoint &constraintTimePoint) const override {
-                    return constraintTimePoint;
-                }
 
         };
 

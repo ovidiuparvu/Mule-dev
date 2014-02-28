@@ -10,6 +10,14 @@ TimePoint::TimePoint(unsigned long value) {
     this->consideredSpatialEntityType = ConsideredSpatialEntityType::All;
 }
 
+TimePoint::TimePoint(const TimePoint &timePoint) {
+    this->value                         = timePoint.value;
+    this->clusters                      = timePoint.clusters;
+    this->regions                       = timePoint.regions;
+    this->numericStateVariables         = timePoint.numericStateVariables;
+    this->consideredSpatialEntityType   = timePoint.consideredSpatialEntityType;
+}
+
 TimePoint::~TimePoint() {
     clusters.clear();
     regions.clear();
@@ -25,11 +33,11 @@ void TimePoint::setValue(unsigned long value) {
 }
 
 void TimePoint::addCluster(const Cluster &cluster) {
-    this->clusters.push_back(cluster);
+    this->clusters.insert(cluster);
 }
 
 void TimePoint::addRegion(const Region &region) {
-    this->regions.push_back(region);
+    this->regions.insert(region);
 }
 
 void TimePoint::addNumericStateVariable(const std::string &name, double value) {
@@ -40,11 +48,11 @@ bool TimePoint::existsNumericStateVariable(const std::string &name) {
     return (numericStateVariables.find(name) != numericStateVariables.end());
 }
 
-std::list<Cluster> TimePoint::getClusters() {
+std::set<Cluster> TimePoint::getClusters() const {
     return clusters;
 }
 
-std::list<Region> TimePoint::getRegions() {
+std::set<Region> TimePoint::getRegions() const {
     return regions;
 }
 
@@ -59,11 +67,11 @@ double TimePoint::getNumericStateVariable(const std::string &name) const {
     return it->second;
 }
 
-void TimePoint::removeCluster(const std::list<Cluster>::iterator &position) {
+void TimePoint::removeCluster(const std::set<Cluster>::iterator &position) {
     clusters.erase(position);
 }
 
-void TimePoint::removeRegion(const std::list<Region>::iterator &position) {
+void TimePoint::removeRegion(const std::set<Region>::iterator &position) {
     regions.erase(position);
 }
 

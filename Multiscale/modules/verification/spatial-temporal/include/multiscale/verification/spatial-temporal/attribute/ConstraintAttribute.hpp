@@ -1,7 +1,6 @@
 #ifndef CONSTRAINTATTRIBUTE_HPP
 #define CONSTRAINTATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/ConstraintEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -34,24 +33,12 @@ namespace multiscale {
 
 
         //! Class for representing a constraint attribute
-        class ConstraintAttribute : public ConstraintEvaluator {
+        class ConstraintAttribute {
 
             public:
 
                 ConstraintAttributeType                 firstConstraint;    /*!< The first constraint */
                 std::vector<ConstraintAttributeType>    nextConstraints;    /*!< The next constraints */
-
-            public:
-
-                //! Filter the set of spatial entities for a timepoint considering the given constraint(s)
-                /*!
-                 * \param initialTimePoint      The initial timepoint
-                 * \param constraintTimePoint   The result of applying constraints to the initial timepoint
-                 */
-                TimePoint evaluate(const TimePoint &initialTimePoint,
-                                   const TimePoint &constraintTimePoint) const override {
-                    return constraintTimePoint;
-                }
 
         };
 

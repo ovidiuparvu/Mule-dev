@@ -11,23 +11,11 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing an "implication" constraint attribute
-        class ImplicationConstraintAttribute : public ConstraintEvaluator {
+        class ImplicationConstraintAttribute {
 
             public:
 
                 ConstraintAttributeType constraint; /*!< The constraint following the "implication" operator */
-
-            public:
-
-                //! Filter the set of spatial entities for a timepoint considering the given constraint(s)
-                /*!
-                 * \param initialTimePoint      The initial timepoint
-                 * \param constraintTimePoint   The result of applying constraints to the initial timepoint
-                 */
-                TimePoint evaluate(const TimePoint &initialTimePoint,
-                                   const TimePoint &constraintTimePoint) const override {
-                    return constraintTimePoint;
-                }
 
         };
 

@@ -286,7 +286,6 @@ namespace multiscale {
                  *
                  * \param logicProperty The given logic property
                  * \param truthValue    The given truth value
-                 * \param trace         The given spatial temporal trace
                  */
                 bool evaluateNextLogicProperties(const LogicPropertyAttribute &logicProperty, bool truthValue) const {
                     std::vector<LogicPropertyAttributeType> precedingEvaluationLogicProperties;
