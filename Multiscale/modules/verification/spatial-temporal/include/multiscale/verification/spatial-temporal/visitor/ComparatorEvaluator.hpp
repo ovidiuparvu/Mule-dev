@@ -21,7 +21,7 @@ namespace multiscale {
                  *  \param rhsElement   The element which is on the right hand side of the comparator
                  */
                 template <typename T>
-                static bool compare(T lhsElement, const ComparatorType &comparator, T rhsElement) {
+                static bool evaluate(T lhsElement, const ComparatorType &comparator, T rhsElement) {
                     switch (comparator) {
                         case ComparatorType::GreaterThan:
                             return (lhsElement > rhsElement);

@@ -141,9 +141,9 @@ namespace multiscale {
                         double lhsNumericMeasureTwo = evaluateNumericMeasure(primaryLogicProperty.lhsNumericMeasure, trace, 0);
                         double rhsNumericMeasure    = evaluateNumericMeasure(primaryLogicProperty.rhsNumericMeasure, trace, 0);
 
-                        return ComparatorEvaluator::compare(lhsNumericMeasureOne - lhsNumericMeasureTwo,
-                                                            primaryLogicProperty.comparator.comparatorType,
-                                                            rhsNumericMeasure);
+                        return ComparatorEvaluator::evaluate(lhsNumericMeasureOne - lhsNumericMeasureTwo,
+                                                             primaryLogicProperty.comparator.comparatorType,
+                                                             rhsNumericMeasure);
                     }
 
                     return true;
@@ -160,9 +160,9 @@ namespace multiscale {
                     double lhsNumericMeasure = evaluateNumericMeasure(primaryLogicProperty.numericMeasure, trace);
                     double rhsNumericMeasure = evaluateNumericSpatialMeasure(primaryLogicProperty.numericSpatialMeasure, trace);
 
-                    return ComparatorEvaluator::compare(lhsNumericMeasure,
-                                                        primaryLogicProperty.comparator.comparatorType,
-                                                        rhsNumericMeasure);
+                    return ComparatorEvaluator::evaluate(lhsNumericMeasure,
+                                                         primaryLogicProperty.comparator.comparatorType,
+                                                         rhsNumericMeasure);
                 }
 
                 //! Overloading the "()" operator for the NumericNumericComparisonAttribute alternative
@@ -176,9 +176,9 @@ namespace multiscale {
                     double numericStateVariable = evaluateNumericMeasure(primaryLogicProperty.numericStateVariable, trace);
                     double numericMeasure       = evaluateNumericMeasure(primaryLogicProperty.numericMeasure, trace);
 
-                    return ComparatorEvaluator::compare(numericStateVariable,
-                                                        primaryLogicProperty.comparator.comparatorType,
-                                                        numericMeasure);
+                    return ComparatorEvaluator::evaluate(numericStateVariable,
+                                                         primaryLogicProperty.comparator.comparatorType,
+                                                         numericMeasure);
                 }
 
                 //! Overloading the "()" operator for the NotLogicPropertyAttribute alternative

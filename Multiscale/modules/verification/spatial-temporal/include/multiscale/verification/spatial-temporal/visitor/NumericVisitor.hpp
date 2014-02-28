@@ -3,6 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/ComparatorEvaluator.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/NumericEvaluator.hpp"
 
 #include <boost/variant.hpp>
 #include <string>
@@ -71,8 +72,7 @@ namespace multiscale {
 
                     double numericMeasure = evaluate(unaryNumericNumericMeasure.numericMeasure);
 
-                    // TODO: Implement
-                    return 1.0;
+                    return NumericEvaluator::evaluate(unaryNumericMeasureType, numericMeasure);
                 }
 
                 //! Overloading the "()" operator for the BinaryNumericNumericAttribute alternative
@@ -87,8 +87,7 @@ namespace multiscale {
                     double firstNumericMeasure  = evaluate(binaryNumericNumericMeasure.firstNumericMeasure);
                     double secondNumericMeasure = evaluate(binaryNumericNumericMeasure.secondNumericMeasure);
 
-                    // TODO: Implement
-                    return 1.0;
+                    return NumericEvaluator::evaluate(binaryNumericMeasureType, firstNumericMeasure, secondNumericMeasure);
                 }
 
                 //! Overloading the "()" operator for the UnarySubsetAttribute alternative

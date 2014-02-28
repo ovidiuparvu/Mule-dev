@@ -44,8 +44,58 @@ namespace multiscale {
              *  -1, if number < 0
              *  +1, if number > 0
              *  0, otherwise
+             *
+             *  \param number The considered number
              */
             static int sign(double number);
+
+            //! Return the logarithm of a number considering the given base
+            /*!
+             * The conditions imposed on the number and base are:
+             *     - number: a positive real number
+             *     - base:   a positive real number different from 1
+             *
+             *  \param number   The considered number
+             *  \param base     The considered base
+             */
+            static double log(double number, double base);
+
+        private:
+
+            //! Check if the number and the base are positive real numbers, and the base is additionally different from 1
+            /*!
+             * \param number    The considered number
+             * \param base      The considered base
+             */
+            static void validateLogNumberAndBase(double number, double base);
+
+            //! Check if the number is a positive real number
+            /*!
+             * \param number    The considered number
+             */
+            static void validateLogNumber(double number);
+
+            //! Check if the base is a positive real number different from 1
+            /*!
+             * \param base      The considered base
+             */
+            static void validateLogBase(double base);
+
+            //! Check if the given number is positive
+            /*!
+             * \param number The given number
+             */
+            template <typename T>
+            static bool isPositive(T number) {
+                return (number > 0);
+            }
+
+
+            // Constants
+            static const std::string ERR_LOG_BASE_START;
+            static const std::string ERR_LOG_BASE_END;
+            static const std::string ERR_LOG_NUMBER_START;
+            static const std::string ERR_LOG_NUMBER_END;
 
     };
 
