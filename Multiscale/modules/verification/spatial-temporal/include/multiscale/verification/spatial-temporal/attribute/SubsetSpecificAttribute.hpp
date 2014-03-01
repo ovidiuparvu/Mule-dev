@@ -29,7 +29,7 @@ namespace multiscale {
 
             public:
 
-                SubsetSpecificType subsetSpecific;    /*!< The specific subset which should be considered */
+                SubsetSpecificType subsetSpecificType;    /*!< The specific subset type */
 
             public:
 
@@ -45,7 +45,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::SubsetSpecificAttribute,
-    (multiscale::verification::SubsetSpecificType, subsetSpecific)
+    (multiscale::verification::SubsetSpecificType, subsetSpecificType)
 )
 
 #endif

@@ -4,7 +4,7 @@ using namespace multiscale::verification;
 
 
 SubsetSpecificType SubsetSpecificAttribute::evaluate() const {
-    return subsetSpecific;
+    return subsetSpecificType;
 }
 
 //! Overload the output stream operator for the enumeration
