@@ -1,6 +1,9 @@
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 #include "multiscale/verification/spatial-temporal/model/TimePoint.hpp"
 
+#include <algorithm>
+#include <iterator>
+
 using namespace multiscale;
 using namespace multiscale::verification;
 
@@ -30,6 +33,14 @@ unsigned long TimePoint::getValue() const {
 
 void TimePoint::setValue(unsigned long value) {
     this->value = value;
+}
+
+ConsideredSpatialEntityType TimePoint::getConsideredSpatialEntityType() {
+    return consideredSpatialEntityType;
+}
+
+void TimePoint::setConsideredSpatialEntityType(const ConsideredSpatialEntityType &consideredSpatialEntityType) {
+    this->consideredSpatialEntityType = consideredSpatialEntityType;
 }
 
 void TimePoint::addCluster(const Cluster &cluster) {
@@ -67,6 +78,18 @@ double TimePoint::getNumericStateVariable(const std::string &name) const {
     return it->second;
 }
 
+void TimePoint::timePointDifference(const TimePoint &timePoint) {
+    timePointSetOperation(timePoint, SetOperationType::Difference);
+}
+
+void TimePoint::timePointIntersection(const TimePoint &timePoint) {
+    timePointSetOperation(timePoint, SetOperationType::Intersection);
+}
+
+void TimePoint::timePointUnion(const TimePoint &timePoint) {
+    timePointSetOperation(timePoint, SetOperationType::Union);
+}
+
 void TimePoint::removeCluster(const std::set<Cluster>::iterator &position) {
     clusters.erase(position);
 }
@@ -75,8 +98,81 @@ void TimePoint::removeRegion(const std::set<Region>::iterator &position) {
     regions.erase(position);
 }
 
-void TimePoint::setConsideredSpatialEntityType(const ConsideredSpatialEntityType &consideredSpatialEntityType) {
-    this->consideredSpatialEntityType = consideredSpatialEntityType;
+void TimePoint::timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
+    switch (consideredSpatialEntityType) {
+        case ConsideredSpatialEntityType::All:
+            timePointSetOperationAll(timePoint, setOperationType);
+            break;
+
+        case ConsideredSpatialEntityType::Clusters:
+            timePointSetOperationClusters(timePoint, setOperationType);
+            break;
+
+        case ConsideredSpatialEntityType::Regions:
+            timePointSetOperationRegions(timePoint, setOperationType);
+            break;
+    }
+}
+
+void TimePoint::timePointSetOperationAll(const TimePoint &timePoint, const SetOperationType &setOperationType) {
+    clusters = clustersSetOperation(timePoint, setOperationType);
+    regions  = regionsSetOperation(timePoint, setOperationType);
+}
+
+void TimePoint::timePointSetOperationClusters(const TimePoint &timePoint, const SetOperationType &setOperationType) {
+    clusters = clustersSetOperation(timePoint, setOperationType);
+}
+
+void TimePoint::timePointSetOperationRegions(const TimePoint &timePoint, const SetOperationType &setOperationType) {
+    regions  = regionsSetOperation(timePoint, setOperationType);
+}
+
+std::set<Cluster> TimePoint::clustersSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
+    std::set<Cluster> newClusters;
+    std::set<Cluster> timePointClusters = timePoint.getClusters();
+
+    switch(setOperationType) {
+        case SetOperationType::Difference:
+            std::set_difference(clusters.begin(), clusters.end(), timePointClusters.begin(),
+                                timePointClusters.end(), std::inserter(newClusters, newClusters.begin()));
+            break;
+
+        case SetOperationType::Intersection:
+            std::set_intersection(clusters.begin(), clusters.end(), timePointClusters.begin(),
+                                  timePointClusters.end(), std::inserter(newClusters, newClusters.begin()));
+            break;
+
+        case SetOperationType::Union:
+            std::set_union(clusters.begin(), clusters.end(), timePointClusters.begin(),
+                           timePointClusters.end(), std::inserter(newClusters, newClusters.begin()));
+            break;
+    }
+
+    return newClusters;
+}
+
+std::set<Region> TimePoint::regionsSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
+    std::set<Region> newRegions;
+    std::set<Region> timePointRegions = timePoint.getRegions();
+
+    switch(setOperationType) {
+        case SetOperationType::Difference:
+            std::set_difference(regions.begin(), regions.end(), timePointRegions.begin(),
+                                timePointRegions.end(), std::inserter(newRegions, newRegions.begin()));
+            break;
+
+        case SetOperationType::Intersection:
+            std::set_intersection(regions.begin(), regions.end(), timePointRegions.begin(),
+                                  timePointRegions.end(), std::inserter(newRegions, newRegions.begin()));
+            break;
+
+        case SetOperationType::Union:
+            std::set_union(regions.begin(), regions.end(), timePointRegions.begin(),
+                           timePointRegions.end(), std::inserter(newRegions, newRegions.begin()));
+            break;
+    }
+
+    return newRegions;
 }
 
 

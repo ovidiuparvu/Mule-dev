@@ -26,8 +26,8 @@ double SpatialEntity::getDistanceFromOrigin() const {
     return distanceFromOrigin;
 }
 
-double SpatialEntity::getAngleDegrees() const {
-    return angleDegrees;
+double SpatialEntity::getAngle() const {
+    return angle;
 }
 
 double SpatialEntity::getTriangleMeasure() const {
@@ -81,10 +81,10 @@ void SpatialEntity::setDistanceFromOrigin(double distanceFromOrigin) {
     this->distanceFromOrigin = distanceFromOrigin;
 }
 
-void SpatialEntity::setAngleDegrees(double angleDegrees) {
-    validateAngleDegreesValue(angleDegrees);
+void SpatialEntity::setAngle(double angle) {
+    validateAngleValue(angle);
 
-    this->angleDegrees = angleDegrees;
+    this->angle = angle;
 }
 
 void SpatialEntity::setTriangleMeasure(double triangleMeasure) {
@@ -124,7 +124,7 @@ bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
         (this->area                  <   rhsSpatialEntity.area) ||
         (this->perimeter             <   rhsSpatialEntity.perimeter) ||
         (this->distanceFromOrigin    <   rhsSpatialEntity.distanceFromOrigin) ||
-        (this->angleDegrees          <   rhsSpatialEntity.angleDegrees) ||
+        (this->angle                 <   rhsSpatialEntity.angle) ||
         (this->triangleMeasure       <   rhsSpatialEntity.triangleMeasure) ||
         (this->rectangleMeasure      <   rhsSpatialEntity.rectangleMeasure) ||
         (this->circleMeasure         <   rhsSpatialEntity.circleMeasure) ||
@@ -140,7 +140,7 @@ void SpatialEntity::validateRealNonNegativeValue(double value) {
     }
 }
 
-void SpatialEntity::validateAngleDegreesValue(double value) {
+void SpatialEntity::validateAngleValue(double value) {
     if ((Numeric::lessOrEqual(value, 0)) || (Numeric::greaterOrEqual(value, 360))) {
         MS_throw_detailed(SpatialTemporalException, ERR_ANGLE_VALUE,
                           StringManipulator::toString<double>(value), ERR_SUFFIX);

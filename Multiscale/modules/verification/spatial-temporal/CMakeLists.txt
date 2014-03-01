@@ -109,7 +109,7 @@ set(PARSER_SAMPLE_SRC
     src/model/SpatialEntity.cpp
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
-     
+    
     sample/ParserSample.cpp 
 )
 

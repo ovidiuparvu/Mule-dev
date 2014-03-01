@@ -20,7 +20,7 @@ namespace multiscale {
                 double area;                /*!< The area of the spatial entity */
                 double perimeter;           /*!< The perimeter of the spatial entity */
                 double distanceFromOrigin;  /*!< The distance of the spatial entity from the centre of the discretised space */
-                double angleDegrees;        /*!< The angle described by the spatial entity with respect to the centre of the discretised space */
+                double angle;               /*!< The angle described by the spatial entity with respect to the centre of the discretised space expressed in degrees */
                 double triangleMeasure;     /*!< The measure indicating how triangular the shape of the spatial entity is */
                 double rectangleMeasure;    /*!< The measure indicating how rectangular the shape of the spatial entity is */
                 double circleMeasure;       /*!< The measure indicating how circular the shape of the spatial entity is */
@@ -48,7 +48,7 @@ namespace multiscale {
                 double getDistanceFromOrigin() const;
 
                 //! Get the value of the angle in degrees
-                double getAngleDegrees() const;
+                double getAngle() const;
 
                 //! Get the triangle measure
                 double getTriangleMeasure() const;
@@ -97,9 +97,9 @@ namespace multiscale {
 
                 //! Set the value of the angle in degrees
                 /*!
-                 *  \param angleDegrees  The value of the angle in degrees
+                 *  \param angle  The value of the angle in degrees
                  */
-                void setAngleDegrees(double angleDegrees);
+                void setAngle(double angle);
 
                 //! Set the value of the triangle measure
                 /*!
@@ -151,7 +151,7 @@ namespace multiscale {
                 /*!
                  * \param value The value to be checked
                  */
-                void validateAngleDegreesValue(double value);
+                void validateAngleValue(double value);
 
                 //! Check if the provided value is a real number between 0 and 1 and throw an exception if it is not
                 /*!

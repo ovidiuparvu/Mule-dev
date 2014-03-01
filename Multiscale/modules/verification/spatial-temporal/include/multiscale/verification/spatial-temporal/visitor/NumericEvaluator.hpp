@@ -46,7 +46,7 @@ namespace multiscale {
                             return (std::trunc(value));
                     }
 
-                    // Line added to avoid warnings "control reaches end of non-void function"
+                    // Line added to avoid "control reaches end of non-void function" warnings
                     return 0.0;
                 }
 
@@ -81,7 +81,7 @@ namespace multiscale {
                             return (firstValue - secondValue);
                     }
 
-                    // Line added to avoid warnings "control reaches end of non-void function"
+                    // Line added to avoid "control reaches end of non-void function" warnings
                     return 0.0;
                 }
 

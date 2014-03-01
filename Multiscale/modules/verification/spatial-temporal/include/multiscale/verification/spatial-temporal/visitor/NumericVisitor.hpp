@@ -142,4 +142,10 @@ namespace multiscale {
 
 };
 
+
+// NumericVisitor dependent includes
+
+#include "multiscale/verification/spatial-temporal/visitor/ConstraintVisitor.hpp"
+
+
 #endif

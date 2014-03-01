@@ -4,7 +4,6 @@
 #include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
 #include "multiscale/verification/spatial-temporal/model/Region.hpp"
 
-#include <algorithm>
 #include <limits>
 #include <map>
 #include <set>
@@ -20,6 +19,13 @@ namespace multiscale {
             All,        /*!< All */
             Clusters,   /*!< Clusters */
             Regions     /*!< Regions */
+        };
+
+        //! Enumeration for representing the set operation type(s)
+        enum class SetOperationType : int {
+            Difference,     /*!< Set difference */
+            Intersection,   /*!< Set intersection */
+            Union           /*!< Set union */
         };
 
 
@@ -51,6 +57,15 @@ namespace multiscale {
                  * \param value The value of the timepoint
                  */
                 void setValue(unsigned long value);
+
+                //! Get the considered spatial entity type
+                ConsideredSpatialEntityType getConsideredSpatialEntityType();
+
+                //! Set the considered spatial entity type
+                /*!
+                 * \param consideredSpatialEntityType   The considered type of the spatial entities
+                 */
+                void setConsideredSpatialEntityType(const ConsideredSpatialEntityType &consideredSpatialEntityType);
 
                 //! Add a cluster to the list of clusters
                 /*!
@@ -99,17 +114,7 @@ namespace multiscale {
                  *
                  * \param timePoint The given timepoint
                  */
-                template <class InputIterator1, class InputIterator2, class OutputIterator>
-                void timePointDifference(const TimePoint &timePoint) {
-                    timePointSetOperation(
-                        timePoint,
-                        [] (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                            InputIterator2 last2, OutputIterator result)
-                            {
-                                std::set_difference(first1, last1, first2, last2, result);
-                            }
-                    );
-                }
+                void timePointDifference(const TimePoint &timePoint);
 
                 //! Compute the intersection of this timepoint and the given timepoint
                 /*! Compute the intersection of this timepoint and the given timepoint by taking into account
@@ -117,17 +122,7 @@ namespace multiscale {
                  *
                  * \param timePoint The given timepoint
                  */
-                template <class InputIterator1, class InputIterator2, class OutputIterator>
-                void timePointIntersection(const TimePoint &timePoint) {
-                    timePointSetOperation(
-                        timePoint,
-                        [] (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                            InputIterator2 last2, OutputIterator result)
-                            {
-                                std::set_intersection(first1, last1, first2, last2, result);
-                            }
-                    );
-                }
+                void timePointIntersection(const TimePoint &timePoint);
 
                 //! Compute the union of this timepoint and the given timepoint
                 /*! Compute the union of this timepoint and the given timepoint by taking into account
@@ -135,17 +130,7 @@ namespace multiscale {
                  *
                  * \param timePoint The given timepoint
                  */
-                template <class InputIterator1, class InputIterator2, class OutputIterator>
-                void timePointUnion(const TimePoint &timePoint) {
-                    timePointSetOperation(
-                        timePoint,
-                        [] (InputIterator1 first1, InputIterator1 last1, InputIterator2 first2,
-                            InputIterator2 last2, OutputIterator result)
-                            {
-                                std::set_union(first1, last1, first2, last2, result);
-                            }
-                    );
-                }
+                void timePointUnion(const TimePoint &timePoint);
 
                 //! Remove the cluster from the given position
                 /*!
@@ -159,12 +144,6 @@ namespace multiscale {
                  */
                 void removeRegion(const std::set<Region>::iterator &position);
 
-                //! Set the considered spatial entity type
-                /*!
-                 * \param consideredSpatialEntityType   The considered type of the spatial entities
-                 */
-                void setConsideredSpatialEntityType(const ConsideredSpatialEntityType &consideredSpatialEntityType);
-
             private:
 
                 //! Compute the given set operation of this timepoint and the given timepoint considering the given set operation type
@@ -172,85 +151,42 @@ namespace multiscale {
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                template <typename SetOperation>
-                void timePointSetOperation(const TimePoint &timePoint, SetOperation &&setOperationType) {
-                    switch (consideredSpatialEntityType) {
-                        case ConsideredSpatialEntityType::All:
-                            timePointSetOperationAll(timePoint, setOperationType);
-                            break;
-
-                        case ConsideredSpatialEntityType::Clusters:
-                            timePointSetOperationClusters(timePoint, setOperationType);
-                            break;
-
-                        case ConsideredSpatialEntityType::Regions:
-                            timePointSetOperationRegions(timePoint, setOperationType);
-                            break;
-                    }
-                }
+                void timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
                 //! Compute the given set operation of this timepoint and the given timepoint considering all spatial entities
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                template <typename SetOperation>
-                void timePointSetOperationAll(const TimePoint &timePoint, SetOperation &&setOperationType) {
-                    clusters = clustersSetOperation(timePoint, setOperationType);
-                    regions  = regionsSetOperation(timePoint, setOperationType);
-                }
+                void timePointSetOperationAll(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
                 //! Compute the given set operation of this timepoint and the given timepoint considering clusters
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                template <typename SetOperation>
-                void timePointSetOperationClusters(const TimePoint &timePoint, SetOperation &&setOperationType) {
-                    clusters = clustersSetOperation(timePoint, setOperationType);
-                }
+                void timePointSetOperationClusters(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
                 //! Compute the given set operation of this timepoint and the given timepoint considering regions
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                template <typename SetOperation>
-                void timePointSetOperationRegions(const TimePoint &timePoint, SetOperation &&setOperationType) {
-                    regions  = regionsSetOperation(timePoint, setOperationType);
-                }
+                void timePointSetOperationRegions(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
                 //! Compute the given set operation of this set of clusters and the one provided by the given timepoint
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                template <typename SetOperation>
-                std::set<Cluster> clustersSetOperation(const TimePoint &timePoint, SetOperation &&setOperationType) {
-                    std::set<Cluster> newClusters;
-                    std::set<Cluster> timePointClusters = timePoint.getClusters();
-
-                    SetOperation(clusters.begin(), clusters.end(), timePointClusters.begin(),
-                                 timePointClusters.end(), newClusters.begin());
-
-                    return newClusters;
-                }
+                std::set<Cluster> clustersSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
                 //! Compute the given set operation of this set of regions and the one provided by the given timepoint
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                template <typename SetOperation>
-                std::set<Region> regionsSetOperation(const TimePoint &timePoint, SetOperation &&setOperationType) {
-                    std::set<Region> newRegions;
-                    std::set<Region> timePointRegions = timePoint.getRegions();
-
-                    SetOperation(regions.begin(), regions.end(), timePointRegions.begin(),
-                                 timePointRegions.end(), newRegions.begin());
-
-                    return newRegions;
-                }
+                std::set<Region> regionsSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
 
                 // Constants

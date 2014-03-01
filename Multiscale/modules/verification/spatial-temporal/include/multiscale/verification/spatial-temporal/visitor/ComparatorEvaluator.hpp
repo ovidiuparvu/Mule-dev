@@ -39,7 +39,7 @@ namespace multiscale {
                             return (Numeric::almostEqual(lhsElement, rhsElement));
                     }
 
-                    // Line added to avoid warnings "control reaches end of non-void function"
+                    // Line added to avoid "control reaches end of non-void function" warnings
                     return true;
                 }
 

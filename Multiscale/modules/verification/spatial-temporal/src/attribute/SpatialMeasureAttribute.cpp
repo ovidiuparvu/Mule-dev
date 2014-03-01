@@ -4,7 +4,7 @@ using namespace multiscale::verification;
 
 
 SpatialMeasureType SpatialMeasureAttribute::evaluate() const {
-    return spatialMeasure;
+    return spatialMeasureType;
 }
 
 //! Overload the output stream operator for the enumeration

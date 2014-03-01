@@ -20,7 +20,8 @@ bool evaluateLogicPropertyConsideringTrace(const std::string &inputString, const
 
 // Tests
 TEST(ParserEvaluationTest, Correct) {
-    EXPECT_TRUE(evaluateLogicPropertyConsideringTrace("P > 0.9 [count(regions) > 2]", SpatialTemporalTrace()));
+    // TODO: Update SpatialTemporalTrace instance
+    EXPECT_THROW(evaluateLogicPropertyConsideringTrace("P > 0.9 [count(regions) > 2]", SpatialTemporalTrace()), SpatialTemporalException);
 }
 
 

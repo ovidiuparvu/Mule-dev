@@ -1,9 +1,7 @@
 #ifndef CONSTRAINTVISITOR_HPP
 #define CONSTRAINTVISITOR_HPP
 
-#include "multiscale/verification/spatial-temporal/model/TimePoint.hpp"
-
-#include <boost/variant.hpp>
+#include "multiscale/verification/spatial-temporal/visitor/ConstraintEvaluator.hpp"
 
 
 namespace multiscale {
@@ -23,6 +21,14 @@ namespace multiscale {
                 ConstraintVisitor(const TimePoint &initialTimePoint, const TimePoint &constraintTimePoint) {
                     this->initialTimePoint = initialTimePoint;
                     this->constraintTimePoint = constraintTimePoint;
+                }
+
+                //! Overloading the "()" operator for the Nil alternative
+                /*!
+                 * \param constraint     The constraint
+                 */
+                TimePoint operator() (const Nil &constraint) const {
+                    return initialTimePoint;
                 }
 
                 //! Overloading the "()" operator for the ConstraintAttribute alternative
@@ -97,6 +103,39 @@ namespace multiscale {
                     return forwardImplication;
                 }
 
+                //! Overloading the "()" operator for the PrimaryConstraintAttribute alternative
+                /*!
+                 * \param constraint     The constraint
+                 */
+                TimePoint operator() (const PrimaryConstraintAttribute &primaryConstraint) const {
+                    return evaluate(primaryConstraint.primaryConstraint, constraintTimePoint);
+                }
+
+                //! Overloading the "()" operator for the NotConstraintAttribute alternative
+                /*!
+                 * \param constraint     The constraint
+                 */
+                TimePoint operator() (const NotConstraintAttribute &primaryConstraint) const {
+                    TimePoint constrainedTimePoint = evaluate(primaryConstraint.constraint, constraintTimePoint);
+                    TimePoint notTimePoint(initialTimePoint);
+
+                    notTimePoint.timePointDifference(constrainedTimePoint);
+
+                    return notTimePoint;
+                }
+
+                //! Overloading the "()" operator for the UnaryConstraintAttribute alternative
+                /*!
+                 * \param constraint     The constraint
+                 */
+                TimePoint operator() (const UnaryConstraintAttribute &primaryConstraint) const {
+                    ComparatorType comparatorType = primaryConstraint.comparator.comparatorType;
+                    double numericMeasure = evaluateNumericMeasure(primaryConstraint.numericMeasure, constraintTimePoint);
+
+                    return evaluateUnaryConstraint(primaryConstraint.spatialMeasure.spatialMeasureType,
+                                                   comparatorType, numericMeasure, constraintTimePoint);
+                }
+
             private:
 
                 //! Evaluate the constraint considering the given timepoint
@@ -133,6 +172,32 @@ namespace multiscale {
                     }
 
                     return constrainedTimePoint;
+                }
+
+                //! Evaluate the unary constraint considering the given spatial measure, comparator, numeric measure and timepoint
+                /*!
+                 * \param spatialMeasure    The spatial measure type
+                 * \param comparator        The comparator type
+                 * \param numericMeasure    The value of the numeric measure
+                 * \param timePoint         The considered timepoint
+                 */
+                TimePoint evaluateUnaryConstraint(const SpatialMeasureType &spatialMeasure, const ComparatorType &comparator,
+                                                  double numericMeasure, const TimePoint &timePoint) const {
+                    TimePoint unaryConstraintTimePoint(timePoint);
+
+                    ConstraintEvaluator::filter(unaryConstraintTimePoint, spatialMeasure, comparator, numericMeasure);
+
+                    return unaryConstraintTimePoint;
+                }
+
+                //! Evaluate the numeric measure considering the given timepoint
+                /*!
+                 * \param numericMeasure    The numeric measure
+                 * \param timePoint         The given timepoint
+                 */
+                double evaluateNumericMeasure(const NumericMeasureAttributeType &numericMeasure,
+                                              const TimePoint &timePoint) const {
+                    return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
                 }
 
         };
