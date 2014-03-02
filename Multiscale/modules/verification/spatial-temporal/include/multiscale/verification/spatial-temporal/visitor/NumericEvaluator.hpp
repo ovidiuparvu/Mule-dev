@@ -124,7 +124,34 @@ namespace multiscale {
                             return Numeric::harmonicMean(values);
 
                         case BinarySubsetMeasureType::Kurt:
-                            return Numeric::harmonicMean(values);
+                            return Numeric::kurtosis(values);
+
+                        case BinarySubsetMeasureType::Max:
+                            return Numeric::maximum(values);
+
+                        case BinarySubsetMeasureType::Median:
+                            return Numeric::median(values);
+
+                        case BinarySubsetMeasureType::Min:
+                            return Numeric::minimum(values);
+
+                        case BinarySubsetMeasureType::Mode:
+                            return Numeric::mode(values);
+
+                        case BinarySubsetMeasureType::Product:
+                            return Numeric::product(values);
+
+                        case BinarySubsetMeasureType::Skew:
+                            return Numeric::skew(values);
+
+                        case BinarySubsetMeasureType::Stdev:
+                            return Numeric::standardDeviation(values);
+
+                        case BinarySubsetMeasureType::Sum:
+                            return Numeric::sum(values);
+
+                        case BinarySubsetMeasureType::Var:
+                            return Numeric::variance(values);
 
                     }
 

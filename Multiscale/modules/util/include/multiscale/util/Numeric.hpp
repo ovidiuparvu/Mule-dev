@@ -145,6 +145,15 @@ namespace multiscale {
              */
             static double harmonicMean(const std::vector<double> &numbers);
 
+            //! Return the kurtosis of the provided numbers
+            /*!
+             * K = (n)(n + 1) / ((n - 1)(n - 2)(n - 3)) * (\sum_{i=1}^{n}{((x_i - mean) / stdev) ^ 4}) -
+             *     (3 * (n - 1) ^ 2) / ((n - 2) * (n - 3))
+             *
+             * \param numbers   The collection of numbers
+             */
+            static double kurtosis(const std::vector<double> &numbers);
+
             //! Return the logarithm of a number considering the given base
             /*!
              * The conditions imposed on the number and base are:
@@ -170,6 +179,36 @@ namespace multiscale {
              */
             static double maximum(const std::vector<double> &numbers);
 
+            //! Return the median of the provided numbers
+            /*!
+             * \param numbers   The collection of numbers
+             */
+            static double median(const std::vector<double> &numbers);
+
+            //! Return the mode of the provided numbers
+            /*!
+             * \param numbers   The collection of numbers
+             */
+            static double mode(const std::vector<double> &numbers);
+
+            //! Return the minimum of the provided numbers
+            /*!
+             * \param numbers   The collection of numbers
+             */
+            static double minimum(const std::vector<double> &numbers);
+
+            //! Return the product of the provided numbers
+            /*!
+             * \param numbers   The collection of numbers
+             */
+            static double product(const std::vector<double> &numbers);
+
+            //! Return the skew of the provided numbers
+            /*!
+             * \param numbers   The collection of numbers
+             */
+            static double skew(const std::vector<double> &numbers);
+
             //! Return the sign of the number
             /*!
              * The sign function returns:
@@ -181,7 +220,63 @@ namespace multiscale {
              */
             static int sign(double number);
 
+            //! Return the standard deviation of the provided set of values
+            /*!
+             * \param numbers   The collection of values
+             */
+            static double standardDeviation(const std::vector<double> &numbers);
+
+            //! Return the sum of the provided numbers
+            /*!
+             * \param numbers   The collection of numbers
+             */
+            static double sum(const std::vector<double> &numbers);
+
+            //! Return the variance of the provided set of values
+            /*!
+             * \param numbers   The collection of values
+             */
+            static double variance(const std::vector<double> &numbers);
+
         private:
+
+            //! Compute the kurtosis first term considering the given number of values
+            /*!
+             * \param nrOfValues The number of values
+             */
+            static double computeKurtosisFirstTerm(int nrOfValues);
+
+            //! Compute the kurtosis middle term considering the given values
+            /*!
+             * \param values        The values
+             * \param nrOfValues    The number of values
+             */
+            static double computeKurtosisMiddleTerm(const std::vector<double> &values, int nrOfValues);
+
+            //! Compute the kurtosis last term considering the given number of values
+            /*!
+             * \param nrOfValues The number of values
+             */
+            static double computeKurtosisLastTerm(int nrOfValues);
+
+            //! Return the skew first term considering the given values
+            /*!
+             * \param numbers   The collection of numbers
+             */
+            static double computeSkewFirstTerm(int nrOfValues);
+
+            //! Return the skew last term considering the given values
+            /*!
+             * \param numbers   The collection of numbers
+             */
+            static double computeSkewLastTerm(const std::vector<double> &numbers, int nrOfValues);
+
+            //! Compute the mode for the provided values
+            /*!
+             * \param values        The values
+             * \param nrOfValues    The number of values
+             */
+            static double mode(const std::vector<double> &values, int nrOfValues);
 
             //! Apply the operation on the given operands and throw an exception in case of overflow
             /*!

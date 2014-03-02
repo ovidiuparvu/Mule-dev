@@ -2,6 +2,7 @@
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
+#include <algorithm>
 #include <cmath>
 #include <limits>
 #include <vector>
@@ -62,6 +63,16 @@ double Numeric::harmonicMean(const std::vector<double> &numbers) {
                              : (nrOfValues * (1.0 / inverseSum));
 }
 
+double Numeric::kurtosis(const std::vector<double> &numbers) {
+    int nrOfValues = numbers.size();
+
+    double firstTerm = computeKurtosisFirstTerm(nrOfValues);
+    double middleTerm = computeKurtosisMiddleTerm(numbers, nrOfValues);
+    double lastTerm = computeKurtosisLastTerm(nrOfValues);
+
+    return ((firstTerm * middleTerm) - (lastTerm));
+}
+
 double Numeric::log(double number, double base) {
     validateLogNumberAndBase(number, base);
 
@@ -84,8 +95,165 @@ double Numeric::maximum(const std::vector<double> &numbers) {
     return maximum;
 }
 
+double Numeric::median(const std::vector<double> &numbers) {
+    std::vector<double> values = numbers;
+    int nrOfValues = values.size();
+
+    std::sort(values.begin(), values.end());
+
+    return (nrOfValues == 0) ? 0
+                             : (values[nrOfValues / 2]);
+}
+
+double Numeric::minimum(const std::vector<double> &numbers) {
+    double minimum = std::numeric_limits<double>::max();
+
+    for (double number : numbers) {
+        if (number < minimum) {
+            minimum = number;
+        }
+    }
+
+    return minimum;
+}
+
+double Numeric::mode(const std::vector<double> &numbers) {
+    std::vector<double> values = numbers;
+    int nrOfValues = values.size();
+
+    std::sort(values.begin(), values.end());
+
+    double modeValue = mode(values, nrOfValues);
+
+    return modeValue;
+}
+
+double Numeric::product(const std::vector<double> &numbers) {
+    double product = 1;
+
+    for (double number : numbers) {
+        product = applyOperation(MultiplicationOperation(), product, number);
+    }
+
+    return product;
+}
+
+double Numeric::skew(const std::vector<double> &numbers) {
+    int nrOfValues = numbers.size();
+
+    double firstTerm = computeSkewFirstTerm(nrOfValues);
+    double lastTerm  = computeSkewLastTerm(numbers, nrOfValues);
+
+    return (firstTerm * lastTerm);
+}
+
 int Numeric::sign(double number) {
     return (number > 0) ? 1 : ((number < 0) ? -1 : 0);
+}
+
+double Numeric::standardDeviation(const std::vector<double> &numbers) {
+    double mean = average(numbers);
+    double denominator = 0;
+    int nrOfValues = numbers.size();
+
+    for (double number : numbers) {
+        denominator = applyOperation(AdditionOperation(), denominator, std::pow(number - mean, 2));
+    }
+
+    return (nrOfValues <= 1) ? 0
+                             : std::sqrt(denominator / (nrOfValues - 1));
+}
+
+double Numeric::sum(const std::vector<double> &numbers) {
+    double sum = 0;
+
+    for (double number : numbers) {
+        sum = applyOperation(AdditionOperation(), sum, number);
+    }
+
+    return sum;
+}
+
+double Numeric::variance(const std::vector<double> &numbers) {
+    double mean = average(numbers);
+    double denominator = 0;
+    int nrOfValues = numbers.size();
+
+    for (double number : numbers) {
+        denominator = applyOperation(AdditionOperation(), denominator, std::pow(number - mean, 2));
+    }
+
+    return (nrOfValues <= 1) ? 0
+                             : (denominator / (nrOfValues - 1));
+}
+
+double Numeric::computeKurtosisFirstTerm(int nrOfValues) {
+    return (nrOfValues > 3) ? (nrOfValues * (nrOfValues + 1)) /
+                              ((nrOfValues - 1) * (nrOfValues - 2) * (nrOfValues - 3))
+                            : 0;
+}
+
+double Numeric::computeKurtosisMiddleTerm(const std::vector<double> &values, int nrOfValues) {
+    double middleTerm = 0;
+
+    double mean  = average(values);
+    double stdev = standardDeviation(values);
+
+    for (double value : values) {
+        middleTerm = applyOperation(AdditionOperation(), middleTerm, std::pow(value - mean, 4));
+    }
+
+    return (stdev != 0) ? (middleTerm / (std::pow(stdev, 4)))
+                        : 0;
+}
+
+double Numeric::computeKurtosisLastTerm(int nrOfValues) {
+    return (nrOfValues > 3) ? (3 * std::pow(nrOfValues - 1, 2)) /
+                              ((nrOfValues - 2) * (nrOfValues - 3))
+                            : 0;
+}
+
+double Numeric::computeSkewFirstTerm(int nrOfValues) {
+    return (nrOfValues > 2) ? (nrOfValues) / ((nrOfValues - 1) * (nrOfValues - 2))
+                            : 0;
+}
+
+double Numeric::computeSkewLastTerm(const std::vector<double> &numbers, int nrOfValues) {
+    double skewSum = 0;
+
+    double mean  = average(numbers);
+    double stdev = standardDeviation(numbers);
+
+    for (double number : numbers) {
+        skewSum = applyOperation(AdditionOperation(), skewSum, std::pow((number - mean) / (stdev), 3));
+    }
+
+    return skewSum;
+}
+
+double Numeric::mode(const std::vector<double> &values, int nrOfValues) {
+    int index = 0;
+    double modeValue = -1;
+    double countValue = 0;
+    int maxCount = 0;
+
+    while (index < nrOfValues) {
+        countValue = 1;
+
+        while ((index < (nrOfValues - 1)) && (values[index] == values[index + 1])) {
+            index++;
+            countValue++;
+        }
+
+        if (maxCount < countValue) {
+            maxCount = countValue;
+            modeValue = values[index];
+        }
+
+        index++;
+    }
+
+    return modeValue;
 }
 
 void Numeric::resetOverflowUnderflowFlags() {
