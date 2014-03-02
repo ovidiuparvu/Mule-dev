@@ -1,6 +1,7 @@
 #ifndef TIMEPOINT_HPP
 #define TIMEPOINT_HPP
 
+#include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
 #include "multiscale/verification/spatial-temporal/model/Region.hpp"
 
@@ -8,6 +9,7 @@
 #include <map>
 #include <set>
 #include <string>
+#include <vector>
 
 
 namespace multiscale {
@@ -67,6 +69,15 @@ namespace multiscale {
                  */
                 void setConsideredSpatialEntityType(const ConsideredSpatialEntityType &consideredSpatialEntityType);
 
+                //! Get the number of considered spatial entities
+                double numberOfSpatialEntities() const;
+
+                //! Get the clusteredness of the considered collection of spatial entities
+                double avgClusteredness() const;
+
+                //! Get the density of the considered collection of spatial entities
+                double avgDensity() const;
+
                 //! Add a cluster to the list of clusters
                 /*!
                  * \param cluster The cluster to be added
@@ -101,6 +112,9 @@ namespace multiscale {
 
                 //! Get the set of regions
                 std::set<Region> getRegions() const;
+
+                //! Get the collection of considered spatial entities
+                std::vector<SpatialEntity> getConsideredSpatialEntities() const;
 
                 //! Get the value of the numeric state variable with the given name if it exists and throw an exception otherwise
                 /*!
@@ -145,6 +159,18 @@ namespace multiscale {
                 void removeRegion(const std::set<Region>::iterator &position);
 
             private:
+
+                //! Compute the average Euclidean distance between the centroids of the given collection of spatial entities
+                /*!
+                 * \param spatialEntities   The collection of considered spatial entities
+                 */
+                double avgDistanceBetweenCentroids(const std::vector<SpatialEntity> &spatialEntities) const;
+
+                //! Compute the density of the given collection of spatial entities
+                /*!
+                 * \param spatialEntities   The collection of considered spatial entities
+                 */
+                double avgDensity(const std::vector<SpatialEntity> &spatialEntities) const;
 
                 //! Compute the given set operation of this timepoint and the given timepoint considering the given set operation type
                 /*!

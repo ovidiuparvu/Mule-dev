@@ -73,6 +73,13 @@ double Geometry2D::distanceBtwPoints(const Point2f &a, const Point2f &b) {
     return sqrt((xDiff * xDiff) + (yDiff * yDiff));
 }
 
+double Geometry2D::distanceBtwPoints(double x1, double y1, double x2, double y2) {
+    double xDiff = x1 - x2;
+    double yDiff = y1 - y2;
+
+    return sqrt((xDiff * xDiff) + (yDiff * yDiff));
+}
+
 double Geometry2D::distanceFromPointToLine(const Point2f &a, const Point2f &linePointB, const Point2f &linePointC) {
     double term1 = linePointC.x - linePointB.x;
     double term2 = linePointB.y - a.y;

@@ -88,6 +88,14 @@ namespace multiscale {
              */
             static double distanceBtwPoints(const Point2f &a, const Point2f &b);
 
+            //! Compute the distance between two points
+            /*! Compute the Euclidean distance between two points
+             *
+             * \param a Point2f a
+             * \param b Point2f b
+             */
+            static double distanceBtwPoints(double x1, double y1, double x2, double y2);
+
             //! Compute the distance from a point "a" to a line specified by two points "B" and "C"
             /*!
              * Formula used:

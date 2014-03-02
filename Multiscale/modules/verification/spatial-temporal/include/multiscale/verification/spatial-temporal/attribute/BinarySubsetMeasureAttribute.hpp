@@ -40,7 +40,7 @@ namespace multiscale {
 
             public:
 
-                BinarySubsetMeasureType binarySubsetMeasure;    /*!< The binary subset measure */
+                BinarySubsetMeasureType binarySubsetMeasureType;    /*!< The binary subset measure type */
 
             public:
 
@@ -56,7 +56,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::BinarySubsetMeasureAttribute,
-    (multiscale::verification::BinarySubsetMeasureType, binarySubsetMeasure)
+    (multiscale::verification::BinarySubsetMeasureType, binarySubsetMeasureType)
 )
 
 #endif

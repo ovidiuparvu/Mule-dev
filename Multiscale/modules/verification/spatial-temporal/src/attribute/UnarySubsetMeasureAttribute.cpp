@@ -4,7 +4,7 @@ using namespace multiscale::verification;
 
 
 UnarySubsetMeasureType UnarySubsetMeasureAttribute::evaluate() const {
-    return unarySubsetMeasure;
+    return unarySubsetMeasureType;
 }
 
 //! Overload the output stream operator for the enumeration

@@ -4,6 +4,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/ComparatorEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/NumericEvaluator.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/TimePointEvaluator.hpp"
 
 #include <boost/variant.hpp>
 #include <string>
@@ -57,8 +58,7 @@ namespace multiscale {
                  * \param numericSpatialMeasure  The numeric spatial measure attribute
                  */
                 double operator()(const NumericSpatialAttribute &numericSpatialMeasure) const {
-                    // TODO: Implement
-                    return 1.1;
+                    return evaluateNumericSpatialMeasure(numericSpatialMeasure);
                 }
 
                 //! Overloading the "()" operator for the UnaryNumericNumericAttribute alternative
@@ -94,19 +94,13 @@ namespace multiscale {
                 /*!
                  * \param unarySubset  The unary subset
                  */
-                double operator()(const UnarySubsetAttribute &unarySubset) const {
-                    // TODO: Implement
-                    return 1.0;
-                }
+                double operator()(const UnarySubsetAttribute &unarySubset) const;
 
                 //! Overloading the "()" operator for the BinarySubsetAttribute alternative
                 /*!
                  * \param binarySubset  The binary subset
                  */
-                double operator()(const BinarySubsetAttribute &binarySubset) const {
-                    // TODO: Implement
-                    return 1.0;
-                }
+                double operator()(const BinarySubsetAttribute &binarySubset) const;
 
                 //! Overloading the "()" operator for the TernarySubsetAttribute alternative
                 /*!
@@ -130,10 +124,18 @@ namespace multiscale {
 
                 //! Evaluate the given numeric measure considering the timePoint field
                 /*!
-                 * \param numericMeasure    Evaluate the given numeric measure
+                 * \param numericMeasure    The given numeric measure
                  */
                 double evaluate(const NumericMeasureAttributeType &numericMeasure) const {
                     return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
+                }
+
+                //! Evaluate the given numeric spatial measure considering the timePoint field
+                /*!
+                 * \param numericSpatialMeasure The given numeric spatial measure
+                 */
+                double evaluateNumericSpatialMeasure(const NumericSpatialAttributeType &numericSpatialMeasure) const {
+                    return boost::apply_visitor(NumericVisitor(timePoint), numericSpatialMeasure);
                 }
 
         };
@@ -148,5 +150,20 @@ namespace multiscale {
 #include "multiscale/verification/spatial-temporal/visitor/ConstraintVisitor.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/SubsetVisitor.hpp"
 
+// Implement NumericVisitor methods which are dependent on the ConstraintVisitor and SubsetVisitor classes
+
+inline double multiscale::verification::NumericVisitor::operator()(const UnarySubsetAttribute &unarySubset) const {
+    TimePoint subsetTimePoint = boost::apply_visitor(SubsetVisitor(timePoint), unarySubset.subset);
+
+    return NumericEvaluator::evaluate(unarySubset.unarySubsetMeasure.unarySubsetMeasureType, subsetTimePoint);
+}
+
+inline double multiscale::verification::NumericVisitor::operator()(const BinarySubsetAttribute &binarySubset) const {
+    TimePoint subsetTimePoint = boost::apply_visitor(SubsetVisitor(timePoint), binarySubset.subset);
+    std::vector<double> spatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(subsetTimePoint,
+                                                                                           binarySubset.spatialMeasure.spatialMeasureType);
+
+    return NumericEvaluator::evaluate(binarySubset.binarySubsetMeasure.binarySubsetMeasureType, spatialMeasureValues);
+}
 
 #endif

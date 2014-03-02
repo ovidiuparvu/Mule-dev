@@ -114,7 +114,7 @@ void Cluster::updateClusterednessDegree() {
         }
 
         totalAvgDistance += (entities.size() == 1) ? 0
-                                                   : avgDistance / (entities.size() - 1);
+                                                   : avgDistance / (entities.size());
     }
 
     totalAvgDistance /= (entities.size());

@@ -85,6 +85,53 @@ namespace multiscale {
                     return 0.0;
                 }
 
+                //! Evaluate the given unary subset measure expression
+                /*!
+                 * \param unarySubset   The unary subset measure type
+                 * \param timePoint     The considered timePoint
+                 */
+                static double evaluate(const UnarySubsetMeasureType &unarySubset, const TimePoint &timePoint) {
+                    switch (unarySubset) {
+                        case UnarySubsetMeasureType::Count:
+                            return timePoint.numberOfSpatialEntities();
+
+                        case UnarySubsetMeasureType::Clusteredness:
+                            return timePoint.avgClusteredness();
+
+                        case UnarySubsetMeasureType::Density:
+                            return timePoint.avgDensity();
+
+                    }
+
+                    // Line added to avoid "control reaches end of non-void function" warnings
+                    return 0.0;
+                }
+
+                //! Evaluate the given binary subset measure expression
+                /*!
+                 * \param binarySubset  The unary subset measure type
+                 * \param timePoint     The considered timePoint
+                 */
+                static double evaluate(const BinarySubsetMeasureType &binarySubset, const std::vector<double> &values) {
+                    switch (binarySubset) {
+                        case BinarySubsetMeasureType::Avg:
+                            return Numeric::average(values);
+
+                        case BinarySubsetMeasureType::Geomean:
+                            return Numeric::geometricMean(values);
+
+                        case BinarySubsetMeasureType::Harmean:
+                            return Numeric::harmonicMean(values);
+
+                        case BinarySubsetMeasureType::Kurt:
+                            return Numeric::harmonicMean(values);
+
+                    }
+
+                    // Line added to avoid "control reaches end of non-void function" warnings
+                    return 0.0;
+                }
+
         };
 
     };

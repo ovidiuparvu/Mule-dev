@@ -30,7 +30,7 @@ namespace multiscale {
 
             public:
 
-                UnarySubsetMeasureType unarySubsetMeasure;    /*!< The unary subset measure */
+                UnarySubsetMeasureType unarySubsetMeasureType;    /*!< The unary subset measure type */
 
             public:
 
@@ -46,7 +46,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UnarySubsetMeasureAttribute,
-    (multiscale::verification::UnarySubsetMeasureType, unarySubsetMeasure)
+    (multiscale::verification::UnarySubsetMeasureType, unarySubsetMeasureType)
 )
 
 #endif

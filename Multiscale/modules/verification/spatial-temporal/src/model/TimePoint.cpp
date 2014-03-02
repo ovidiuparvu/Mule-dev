@@ -1,3 +1,4 @@
+#include "multiscale/util/Geometry2D.hpp"
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 #include "multiscale/verification/spatial-temporal/model/TimePoint.hpp"
 
@@ -43,6 +44,38 @@ void TimePoint::setConsideredSpatialEntityType(const ConsideredSpatialEntityType
     this->consideredSpatialEntityType = consideredSpatialEntityType;
 }
 
+double TimePoint::numberOfSpatialEntities() const {
+    switch(consideredSpatialEntityType) {
+        case ConsideredSpatialEntityType::All:
+            return (clusters.size() + regions.size());
+
+        case ConsideredSpatialEntityType::Clusters:
+            return (clusters.size());
+
+        case ConsideredSpatialEntityType::Regions:
+            return (regions.size());
+    }
+
+    // Line added to avoid "control reaches end of non-void function" warnings
+    return 0.0;
+}
+
+double TimePoint::avgClusteredness() const {
+    std::vector<SpatialEntity> consideredSpatialEntities;
+
+    return avgDistanceBetweenCentroids(consideredSpatialEntities);
+}
+
+double TimePoint::avgDensity() const {
+    std::vector<SpatialEntity> consideredSpatialEntities;
+
+    double averageDensity  = avgDensity(consideredSpatialEntities);
+    double averageDistance = avgDistanceBetweenCentroids(consideredSpatialEntities);
+
+    return (averageDensity == 0) ? 0
+                                 : (averageDensity / averageDistance);
+}
+
 void TimePoint::addCluster(const Cluster &cluster) {
     this->clusters.insert(cluster);
 }
@@ -65,6 +98,27 @@ std::set<Cluster> TimePoint::getClusters() const {
 
 std::set<Region> TimePoint::getRegions() const {
     return regions;
+}
+
+std::vector<SpatialEntity> TimePoint::getConsideredSpatialEntities() const {
+    std::vector<SpatialEntity> consideredSpatialEntities;
+
+    switch (consideredSpatialEntityType) {
+        case ConsideredSpatialEntityType::All:
+            consideredSpatialEntities.insert(consideredSpatialEntities.begin(), clusters.begin(), clusters.end());
+            consideredSpatialEntities.insert(consideredSpatialEntities.begin(), regions.begin(), regions.end());
+            break;
+
+        case ConsideredSpatialEntityType::Clusters:
+            consideredSpatialEntities.insert(consideredSpatialEntities.begin(), clusters.begin(), clusters.end());
+            break;
+
+        case ConsideredSpatialEntityType::Regions:
+            consideredSpatialEntities.insert(consideredSpatialEntities.begin(), regions.begin(), regions.end());
+            break;
+    }
+
+    return consideredSpatialEntities;
 }
 
 double TimePoint::getNumericStateVariable(const std::string &name) const {
@@ -96,6 +150,33 @@ void TimePoint::removeCluster(const std::set<Cluster>::iterator &position) {
 
 void TimePoint::removeRegion(const std::set<Region>::iterator &position) {
     regions.erase(position);
+}
+
+double TimePoint::avgDistanceBetweenCentroids(const std::vector<SpatialEntity> &spatialEntities) const {
+    double distanceSum = 0;
+    int nrOfSpatialEntities = spatialEntities.size();
+
+    for (const auto &spatialEntity1 : spatialEntities) {
+        for (const auto &spatialEntity2 : spatialEntities) {
+            distanceSum += Geometry2D::distanceBtwPoints(spatialEntity1.getCentroidX(), spatialEntity1.getCentroidY(),
+                                                         spatialEntity2.getCentroidX(), spatialEntity2.getCentroidY());
+        }
+    }
+
+    return (nrOfSpatialEntities == 0) ? 0
+                                      : (distanceSum / (nrOfSpatialEntities * nrOfSpatialEntities));
+}
+
+double TimePoint::avgDensity(const std::vector<SpatialEntity> &spatialEntities) const {
+    double densitySum = 0;
+    int nrOfSpatialEntities = spatialEntities.size();
+
+    for (const auto &spatialEntity : spatialEntities) {
+        densitySum += spatialEntity.getDensity();
+    }
+
+    return (nrOfSpatialEntities == 0) ? 0
+                                      :(densitySum / nrOfSpatialEntities);
 }
 
 void TimePoint::timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {

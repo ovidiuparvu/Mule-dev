@@ -4,7 +4,7 @@ using namespace multiscale::verification;
 
 
 BinarySubsetMeasureType BinarySubsetMeasureAttribute::evaluate() const {
-    return binarySubsetMeasure;
+    return binarySubsetMeasureType;
 }
 
 //! Overload the output stream operator for the enumeration

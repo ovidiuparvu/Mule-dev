@@ -2,6 +2,7 @@
 #define NUMERIC_HPP
 
 #include <algorithm>
+#include <cfenv>
 #include <cmath>
 #include <limits>
 
@@ -9,6 +10,75 @@ using namespace std;
 
 
 namespace multiscale {
+
+    //! Functor representing an addition operation
+    class AdditionOperation {
+
+        public:
+
+            //! Add the two operands
+            /*!
+             * \param operand1  The first operand
+             * \param operand2  The second operand
+             */
+            template <typename Operand>
+            Operand operator()(Operand operand1, Operand operand2) const {
+                return (operand1 + operand2);
+            }
+
+    };
+
+    //! Functor representing a division operation
+    class DivisionOperation {
+
+        public:
+
+            //! Divide the two operands
+            /*!
+             * \param operand1  The first operand
+             * \param operand2  The second operand
+             */
+            template <typename Operand>
+            Operand operator()(Operand operand1, Operand operand2) const {
+                return (operand1 / operand2);
+            }
+
+    };
+
+    //! Functor representing a multiplication operation
+    class MultiplicationOperation {
+
+        public:
+
+            //! Multiply the two operands
+            /*!
+             * \param operand1  The first operand
+             * \param operand2  The second operand
+             */
+            template <typename Operand>
+            Operand operator()(Operand operand1, Operand operand2) const {
+                return (operand1 * operand2);
+            }
+
+    };
+
+    //! Functor representing a subtraction operation
+    class SubtractionOperation {
+
+        public:
+
+            //! Subtrace the two operands
+            /*!
+             * \param operand1  The first operand
+             * \param operand2  The second operand
+             */
+            template <typename Operand>
+            Operand operator()(Operand operand1, Operand operand2) const {
+                return (operand1 - operand2);
+            }
+
+    };
+
 
     //! Class for manipulating numbers (shorts, ints, floats, doubles etc.)
     class Numeric {
@@ -20,9 +90,17 @@ namespace multiscale {
         public:
 
             //! Check if the first number is greater than or equal to the second number
+            /*!
+             * \param number1 The first number
+             * \param number2 The second number
+             */
             static bool greaterOrEqual(double number1, double number2);
 
             //! Check if the first number is less than or equal to the second number
+            /*!
+             * \param number1 The first number
+             * \param number2 The second number
+             */
             static bool lessOrEqual(double number1, double number2);
 
             //! Check if the two numbers are equal (almost)
@@ -35,19 +113,37 @@ namespace multiscale {
              */
             static bool almostEqual(double number1, double number2);
 
-            //! Return the maximum of the provided numbers
-            static double maximum(double number1, double number2, double number3);
-
-            //! Return the sign of the number
+            //! Return the average (arithmetic mean) of the provided numbers
             /*!
-             * The sign function returns:
-             *  -1, if number < 0
-             *  +1, if number > 0
-             *  0, otherwise
+             *      x1 + x2 + ... + xn
+             * A = --------------------
+             *              n
              *
-             *  \param number The considered number
+             * \param numbers   The collection of numbers
              */
-            static int sign(double number);
+            static double average(const std::vector<double> &numbers);
+
+            //! Return the geometric mean of the provided numbers
+            /*!
+             *            1
+             * G = exp ( --- * (log(x1) + log(x2) + ... + log(xn)))
+             *            n
+             *
+             * \param numbers   The collection of numbers
+             */
+            static double geometricMean(const std::vector<double> &numbers);
+
+            //! Return the harmonic mean of the provided numbers
+            /*!
+             *                n
+             * H = ------------------------
+             *       1      1          1
+             *      ---- + ---- ... + ----
+             *       x1     x2         xn
+             *
+             * \param numbers   The collection of numbers
+             */
+            static double harmonicMean(const std::vector<double> &numbers);
 
             //! Return the logarithm of a number considering the given base
             /*!
@@ -60,7 +156,57 @@ namespace multiscale {
              */
             static double log(double number, double base);
 
+            //! Return the maximum of the provided numbers
+            /*!
+             * \param number1 The first number
+             * \param number2 The second number
+             * \param number3 The third number
+             */
+            static double maximum(double number1, double number2, double number3);
+
+            //! Return the maximum of the provided numbers
+            /*!
+             * \param numbers   The collection of numbers
+             */
+            static double maximum(const std::vector<double> &numbers);
+
+            //! Return the sign of the number
+            /*!
+             * The sign function returns:
+             *  -1, if number < 0
+             *  +1, if number > 0
+             *  0, otherwise
+             *
+             *  \param number The considered number
+             */
+            static int sign(double number);
+
         private:
+
+            //! Apply the operation on the given operands and throw an exception in case of overflow
+            /*!
+             * \param operation The operation
+             * \param operand1  The first operand
+             * \param operand2  The second operand
+             */
+            template <typename Operation, typename Operand>
+            static Operand applyOperation(Operation operation, Operand operand1, Operand operand2) {
+                resetOverflowUnderflowFlags();
+
+                Operand result = operation(operand1, operand2);
+
+                if (areOverflowUnderflowFlagsSet()) {
+
+                }
+
+                return result;
+            }
+
+            //! Reset the overflow and underflow flags
+            static void resetOverflowUnderflowFlags();
+
+            //! Reset the overflow and underflow flags
+            static bool areOverflowUnderflowFlagsSet();
 
             //! Check if the number and the base are positive real numbers, and the base is additionally different from 1
             /*!
@@ -96,6 +242,8 @@ namespace multiscale {
             static const std::string ERR_LOG_BASE_END;
             static const std::string ERR_LOG_NUMBER_START;
             static const std::string ERR_LOG_NUMBER_END;
+
+            static const std::string ERR_OVERFLOW_UNDERFLOW;
 
     };
 
