@@ -100,9 +100,7 @@ namespace multiscale {
             /*!
              * Formula used:
              *
-             *     |(x_c - x_b) * (y_b - y_a) - (x_b - x_a) * (y_c - y_b)|
-             * d = -------------------------------------------------------
-             *            sqrt(((x_c - x_b)^2) + ((y_c - y_b)^2))
+             * \f$ distance = \frac{\mid (x_c - x_b)(y_b - y_a) - (x_b - x_a)(y_c - y_b) \mid}{\sqrt{(x_c - x_b)^{2} + (y_c - y_b)^{2}}} \f$
              *
              * Reference: http://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html
              *

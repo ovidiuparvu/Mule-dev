@@ -193,7 +193,7 @@ static const std\-::string \hyperlink{classmultiscale_1_1Numeric_ac63a2d1c105ab4
 \end{DoxyParams}
 
 
-\-Definition at line 315 of file \-Numeric.\-hpp.
+\-Definition at line 306 of file \-Numeric.\-hpp.
 
 
 
@@ -236,7 +236,7 @@ static const std\-::string \hyperlink{classmultiscale_1_1Numeric_ac63a2d1c105ab4
 
 \-Return the average (arithmetic mean) of the provided numbers. 
 
-x1 + x2 + ... + xn \-A = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ n
+$ average = \frac{1}{n} \sum\limits^{n}_{i = 1}{x_{i}} $
 
 
 \begin{DoxyParams}{\-Parameters}
@@ -551,7 +551,7 @@ x1 + x2 + ... + xn \-A = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-
 
 \-Return the geometric mean of the provided numbers. 
 
-1 \-G = exp ( -\/-\/-\/ $\ast$ (log(x1) + log(x2) + ... + log(xn))) n
+$ geometricMean = e ^ {\frac{1}{n} \sum\limits_{i = 1}^{n}{log(x_{i})}} $
 
 
 \begin{DoxyParams}{\-Parameters}
@@ -634,7 +634,7 @@ x1 + x2 + ... + xn \-A = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-
 
 \-Return the harmonic mean of the provided numbers. 
 
-n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ 1 1 1 -\/-\/-\/-\/ + -\/-\/-\/-\/ ... + -\/-\/-\/-\/ x1 x2 xn
+$ harmonicMean = \frac{n}{\sum\limits_{i = 1}^{n}{\frac{1}{x_{i}}}} $
 
 
 \begin{DoxyParams}{\-Parameters}
@@ -682,7 +682,7 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 \end{DoxyParams}
 
 
-\-Definition at line 369 of file \-Numeric.\-hpp.
+\-Definition at line 360 of file \-Numeric.\-hpp.
 
 
 
@@ -710,7 +710,7 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 
 \-Return the kurtosis of the provided numbers. 
 
-\-K = (n)(n + 1) / ((n -\/ 1)(n -\/ 2)(n -\/ 3)) $\ast$ (\{i=1\}$^\wedge$\{n\}\{((x\-\_\-i -\/ mean) / stdev) $^\wedge$ 4\}) -\/ (3 $\ast$ (n -\/ 1) $^\wedge$ 2) / ((n -\/ 2) $\ast$ (n -\/ 3))
+$ kurtosis = \frac{n (n + 1)}{(n - 1)(n - 2)(n - 3)} \left( \sum\limits_{i=1}^{n}{(\frac{x_i - mean}{stdev})^{4}} \right) - \frac{3 (n - 1)^{2}} {(n - 2) (n - 3)} $
 
 
 \begin{DoxyParams}{\-Parameters}
@@ -1567,7 +1567,7 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 \subsubsection[{\-E\-R\-R\-\_\-\-L\-O\-G\-\_\-\-B\-A\-S\-E\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Numeric\-::\-E\-R\-R\-\_\-\-L\-O\-G\-\_\-\-B\-A\-S\-E\-\_\-\-E\-N\-D} = \char`\"{}) should be a positive real number different from 1. \-Please change.\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_a291c98ea0c6e6c4042fe9ecc4af0443a}
 
 
-\-Definition at line 376 of file \-Numeric.\-hpp.
+\-Definition at line 367 of file \-Numeric.\-hpp.
 
 
 
@@ -1578,7 +1578,7 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 \subsubsection[{\-E\-R\-R\-\_\-\-L\-O\-G\-\_\-\-B\-A\-S\-E\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Numeric\-::\-E\-R\-R\-\_\-\-L\-O\-G\-\_\-\-B\-A\-S\-E\-\_\-\-S\-T\-A\-R\-T} = \char`\"{}\-The base provided to the {\bf log} function (\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_a551052e6be615efea82ea046ba178010}
 
 
-\-Definition at line 375 of file \-Numeric.\-hpp.
+\-Definition at line 366 of file \-Numeric.\-hpp.
 
 
 
@@ -1589,7 +1589,7 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 \subsubsection[{\-E\-R\-R\-\_\-\-L\-O\-G\-\_\-\-N\-U\-M\-B\-E\-R\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Numeric\-::\-E\-R\-R\-\_\-\-L\-O\-G\-\_\-\-N\-U\-M\-B\-E\-R\-\_\-\-E\-N\-D} = \char`\"{}) should be a positive real number. \-Please change.\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_a2f61b82d42049e175a8d34cd75966c6c}
 
 
-\-Definition at line 378 of file \-Numeric.\-hpp.
+\-Definition at line 369 of file \-Numeric.\-hpp.
 
 
 
@@ -1600,7 +1600,7 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 \subsubsection[{\-E\-R\-R\-\_\-\-L\-O\-G\-\_\-\-N\-U\-M\-B\-E\-R\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Numeric\-::\-E\-R\-R\-\_\-\-L\-O\-G\-\_\-\-N\-U\-M\-B\-E\-R\-\_\-\-S\-T\-A\-R\-T} = \char`\"{}\-The number provided to the {\bf log} function (\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_a88ca9309ade745700dacbdc7c0d713f2}
 
 
-\-Definition at line 377 of file \-Numeric.\-hpp.
+\-Definition at line 368 of file \-Numeric.\-hpp.
 
 
 
@@ -1611,14 +1611,14 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 \subsubsection[{\-E\-R\-R\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-U\-N\-D\-E\-R\-F\-L\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Numeric\-::\-E\-R\-R\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-U\-N\-D\-E\-R\-F\-L\-O\-W} = \char`\"{}\-An underflow/overflow exception occurred.\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_aa56bde8322d97ccc99c252b951d44a9d}
 
 
-\-Definition at line 380 of file \-Numeric.\-hpp.
+\-Definition at line 371 of file \-Numeric.\-hpp.
 
 \hypertarget{classmultiscale_1_1Numeric_a0f89f3a8ecbc3709bac3f04b83819bf6}{\index{multiscale\-::\-Numeric@{multiscale\-::\-Numeric}!\-E\-R\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-E\-N\-D@{\-E\-R\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-E\-N\-D}}
 \index{\-E\-R\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-E\-N\-D@{\-E\-R\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-E\-N\-D}!multiscale::Numeric@{multiscale\-::\-Numeric}}
 \subsubsection[{\-E\-R\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Numeric\-::\-E\-R\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-E\-N\-D} = \char`\"{}) should be between 0 and 100. \-Please change.\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_a0f89f3a8ecbc3709bac3f04b83819bf6}
 
 
-\-Definition at line 383 of file \-Numeric.\-hpp.
+\-Definition at line 374 of file \-Numeric.\-hpp.
 
 
 
@@ -1629,7 +1629,7 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 \subsubsection[{\-E\-R\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Numeric\-::\-E\-R\-R\-\_\-\-P\-E\-R\-C\-E\-N\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-S\-T\-A\-R\-T} = \char`\"{}\-The provided {\bf percentile} value (\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_a3bdb010188c74dc7570f950539df5e93}
 
 
-\-Definition at line 382 of file \-Numeric.\-hpp.
+\-Definition at line 373 of file \-Numeric.\-hpp.
 
 
 
@@ -1640,7 +1640,7 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 \subsubsection[{\-E\-R\-R\-\_\-\-Q\-U\-A\-R\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Numeric\-::\-E\-R\-R\-\_\-\-Q\-U\-A\-R\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-E\-N\-D} = \char`\"{}) should be 25, 50 or 75. \-Please change.\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_ac63a2d1c105ab47208d6c40827f9769c}
 
 
-\-Definition at line 386 of file \-Numeric.\-hpp.
+\-Definition at line 377 of file \-Numeric.\-hpp.
 
 
 
@@ -1651,7 +1651,7 @@ n \-H = -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
 \subsubsection[{\-E\-R\-R\-\_\-\-Q\-U\-A\-R\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-S\-T\-A\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf \-Numeric\-::\-E\-R\-R\-\_\-\-Q\-U\-A\-R\-T\-I\-L\-E\-\_\-\-V\-A\-L\-U\-E\-\_\-\-S\-T\-A\-R\-T} = \char`\"{}\-The provided {\bf quartile} value (\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Numeric_ac76a6a6f1fa8abae2855f4fed0f0d97e}
 
 
-\-Definition at line 385 of file \-Numeric.\-hpp.
+\-Definition at line 376 of file \-Numeric.\-hpp.
 
 
 

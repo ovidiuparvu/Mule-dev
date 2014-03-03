@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Multiscale
-   &#160;<span id="projectnumber">0.6.38</span>
+   &#160;<span id="projectnumber">0.6.41</span>
    </div>
    
   </td>
@@ -310,7 +310,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00315">315</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00306">306</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>, <a class="el" href="Numeric_8cpp_source.html#l00235">computeKurtosisMiddleTerm()</a>, <a class="el" href="Numeric_8cpp_source.html#l00274">computeSkewLastTerm()</a>, <a class="el" href="Numeric_8cpp_source.html#l00040">covariance()</a>, <a class="el" href="Numeric_8cpp_source.html#l00056">geometricMean()</a>, <a class="el" href="Numeric_8cpp_source.html#l00068">harmonicMean()</a>, <a class="el" href="Numeric_8cpp_source.html#l00159">product()</a>, <a class="el" href="Numeric_8cpp_source.html#l00193">standardDeviation()</a>, <a class="el" href="Numeric_8cpp_source.html#l00206">sum()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00216">variance()</a>.</p>
 
@@ -363,7 +363,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
 <div class="memdoc">
 
 <p>Return the average (arithmetic mean) of the provided numbers. </p>
-<p>x1 + x2 + ... + xn A = -------------------- n</p>
+<p><img class="formulaInl" alt="$ average = \frac{1}{n} \sum\limits^{n}_{i = 1}{x_{i}} $" src="form_5.png"/></p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">numbers</td><td>The collection of numbers </td></tr>
@@ -373,7 +373,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00028">28</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00206">sum()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00206">sum()</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00235">computeKurtosisMiddleTerm()</a>, <a class="el" href="Numeric_8cpp_source.html#l00274">computeSkewLastTerm()</a>, <a class="el" href="Numeric_8cpp_source.html#l00040">covariance()</a>, <a class="el" href="NumericEvaluator_8hpp_source.html#l00115">multiscale::verification::NumericEvaluator::evaluate()</a>, <a class="el" href="Numeric_8cpp_source.html#l00193">standardDeviation()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00216">variance()</a>.</p>
 
@@ -506,7 +506,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00235">235</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>, <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00193">standardDeviation()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>, <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00193">standardDeviation()</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00082">kurtosis()</a>.</p>
 
@@ -658,7 +658,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00274">274</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>, <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00193">standardDeviation()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>, <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00193">standardDeviation()</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00180">skew()</a>.</p>
 
@@ -711,7 +711,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00040">40</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>.</p>
 
 <p>Referenced by <a class="el" href="NumericEvaluator_8hpp_source.html#l00188">multiscale::verification::NumericEvaluator::evaluate()</a>.</p>
 
@@ -744,7 +744,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
 <div class="memdoc">
 
 <p>Return the geometric mean of the provided numbers. </p>
-<p>1 G = exp ( --- * (log(x1) + log(x2) + ... + log(xn))) n</p>
+<p><img class="formulaInl" alt="$ geometricMean = e ^ {\frac{1}{n} \sum\limits_{i = 1}^{n}{log(x_{i})}} $" src="form_7.png"/></p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">numbers</td><td>The collection of numbers </td></tr>
@@ -754,7 +754,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00056">56</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>.</p>
 
 <p>Referenced by <a class="el" href="NumericEvaluator_8hpp_source.html#l00115">multiscale::verification::NumericEvaluator::evaluate()</a>.</p>
 
@@ -840,7 +840,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
 <div class="memdoc">
 
 <p>Return the harmonic mean of the provided numbers. </p>
-<p>n H = ------------------------ 1 1 1 ---- + ---- ... + ---- x1 x2 xn</p>
+<p><img class="formulaInl" alt="$ harmonicMean = \frac{n}{\sum\limits_{i = 1}^{n}{\frac{1}{x_{i}}}} $" src="form_8.png"/></p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">numbers</td><td>The collection of numbers </td></tr>
@@ -850,7 +850,7 @@ template&lt;typename Operation , typename Operand &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00068">68</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>.</p>
 
 <p>Referenced by <a class="el" href="NumericEvaluator_8hpp_source.html#l00115">multiscale::verification::NumericEvaluator::evaluate()</a>.</p>
 
@@ -892,7 +892,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00369">369</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00360">360</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00336">validateLogBase()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00329">validateLogNumber()</a>.</p>
 
@@ -925,7 +925,7 @@ template&lt;typename T &gt; </div>
 <div class="memdoc">
 
 <p>Return the kurtosis of the provided numbers. </p>
-<p>K = (n)(n + 1) / ((n - 1)(n - 2)(n - 3)) * ({i=1}^{n}{((x_i - mean) / stdev) ^ 4}) - (3 * (n - 1) ^ 2) / ((n - 2) * (n - 3))</p>
+<p><img class="formulaInl" alt="$ kurtosis = \frac{n (n + 1)}{(n - 1)(n - 2)(n - 3)} \left( \sum\limits_{i=1}^{n}{(\frac{x_i - mean}{stdev})^{4}} \right) - \frac{3 (n - 1)^{2}} {(n - 2) (n - 3)} $" src="form_6.png"/></p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">numbers</td><td>The collection of numbers </td></tr>
@@ -1385,7 +1385,7 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00159">159</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>.</p>
 
 <p>Referenced by <a class="el" href="NumericEvaluator_8hpp_source.html#l00115">multiscale::verification::NumericEvaluator::evaluate()</a>.</p>
 
@@ -1582,7 +1582,7 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00193">193</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00235">computeKurtosisMiddleTerm()</a>, <a class="el" href="Numeric_8cpp_source.html#l00274">computeSkewLastTerm()</a>, and <a class="el" href="NumericEvaluator_8hpp_source.html#l00115">multiscale::verification::NumericEvaluator::evaluate()</a>.</p>
 
@@ -1624,7 +1624,7 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00206">206</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>, and <a class="el" href="NumericEvaluator_8hpp_source.html#l00115">multiscale::verification::NumericEvaluator::evaluate()</a>.</p>
 
@@ -1666,7 +1666,7 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00336">336</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8cpp_source.html#l00024">almostEqual()</a>, <a class="el" href="Numeric_8hpp_source.html#l00376">ERR_LOG_BASE_END</a>, <a class="el" href="Numeric_8hpp_source.html#l00375">ERR_LOG_BASE_START</a>, <a class="el" href="Numeric_8hpp_source.html#l00369">isPositive()</a>, <a class="el" href="MultiscaleException_8hpp_source.html#l00013">MS_throw_detailed</a>, and <a class="el" href="StringManipulator_8hpp_source.html#l00046">multiscale::StringManipulator::toString()</a>.</p>
+<p>References <a class="el" href="Numeric_8cpp_source.html#l00024">almostEqual()</a>, <a class="el" href="Numeric_8hpp_source.html#l00367">ERR_LOG_BASE_END</a>, <a class="el" href="Numeric_8hpp_source.html#l00366">ERR_LOG_BASE_START</a>, <a class="el" href="Numeric_8hpp_source.html#l00360">isPositive()</a>, <a class="el" href="MultiscaleException_8hpp_source.html#l00013">MS_throw_detailed</a>, and <a class="el" href="StringManipulator_8hpp_source.html#l00046">multiscale::StringManipulator::toString()</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00324">validateLogNumberAndBase()</a>.</p>
 
@@ -1708,7 +1708,7 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00329">329</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00378">ERR_LOG_NUMBER_END</a>, <a class="el" href="Numeric_8hpp_source.html#l00377">ERR_LOG_NUMBER_START</a>, <a class="el" href="Numeric_8hpp_source.html#l00369">isPositive()</a>, <a class="el" href="MultiscaleException_8hpp_source.html#l00013">MS_throw_detailed</a>, and <a class="el" href="StringManipulator_8hpp_source.html#l00046">multiscale::StringManipulator::toString()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00369">ERR_LOG_NUMBER_END</a>, <a class="el" href="Numeric_8hpp_source.html#l00368">ERR_LOG_NUMBER_START</a>, <a class="el" href="Numeric_8hpp_source.html#l00360">isPositive()</a>, <a class="el" href="MultiscaleException_8hpp_source.html#l00013">MS_throw_detailed</a>, and <a class="el" href="StringManipulator_8hpp_source.html#l00046">multiscale::StringManipulator::toString()</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00324">validateLogNumberAndBase()</a>.</p>
 
@@ -1803,7 +1803,7 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00343">343</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00383">ERR_PERCENTILE_VALUE_END</a>, <a class="el" href="Numeric_8hpp_source.html#l00382">ERR_PERCENTILE_VALUE_START</a>, and <a class="el" href="MultiscaleException_8hpp_source.html#l00013">MS_throw_detailed</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00374">ERR_PERCENTILE_VALUE_END</a>, <a class="el" href="Numeric_8hpp_source.html#l00373">ERR_PERCENTILE_VALUE_START</a>, and <a class="el" href="MultiscaleException_8hpp_source.html#l00013">MS_throw_detailed</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00147">percentile()</a>.</p>
 
@@ -1845,7 +1845,7 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00350">350</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8cpp_source.html#l00024">almostEqual()</a>, <a class="el" href="Numeric_8hpp_source.html#l00386">ERR_QUARTILE_VALUE_END</a>, <a class="el" href="Numeric_8hpp_source.html#l00385">ERR_QUARTILE_VALUE_START</a>, and <a class="el" href="MultiscaleException_8hpp_source.html#l00013">MS_throw_detailed</a>.</p>
+<p>References <a class="el" href="Numeric_8cpp_source.html#l00024">almostEqual()</a>, <a class="el" href="Numeric_8hpp_source.html#l00377">ERR_QUARTILE_VALUE_END</a>, <a class="el" href="Numeric_8hpp_source.html#l00376">ERR_QUARTILE_VALUE_START</a>, and <a class="el" href="MultiscaleException_8hpp_source.html#l00013">MS_throw_detailed</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00169">quartile()</a>.</p>
 
@@ -1887,7 +1887,7 @@ template&lt;typename T &gt; </div>
 
 <p>Definition at line <a class="el" href="Numeric_8cpp_source.html#l00216">216</a> of file <a class="el" href="Numeric_8cpp_source.html">Numeric.cpp</a>.</p>
 
-<p>References <a class="el" href="Numeric_8hpp_source.html#l00315">applyOperation()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>.</p>
+<p>References <a class="el" href="Numeric_8hpp_source.html#l00306">applyOperation()</a>, and <a class="el" href="Numeric_8cpp_source.html#l00028">average()</a>.</p>
 
 <p>Referenced by <a class="el" href="NumericEvaluator_8hpp_source.html#l00115">multiscale::verification::NumericEvaluator::evaluate()</a>.</p>
 
@@ -1934,7 +1934,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00376">376</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00367">367</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00336">validateLogBase()</a>.</p>
 
@@ -1951,7 +1951,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00375">375</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00366">366</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00336">validateLogBase()</a>.</p>
 
@@ -1968,7 +1968,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00378">378</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00369">369</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00329">validateLogNumber()</a>.</p>
 
@@ -1985,7 +1985,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00377">377</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00368">368</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00329">validateLogNumber()</a>.</p>
 
@@ -2002,7 +2002,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00380">380</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00371">371</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 </div>
 </div>
@@ -2017,7 +2017,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00383">383</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00374">374</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00343">validatePercentile()</a>.</p>
 
@@ -2034,7 +2034,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00382">382</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00373">373</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00343">validatePercentile()</a>.</p>
 
@@ -2051,7 +2051,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00386">386</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00377">377</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00350">validateQuartile()</a>.</p>
 
@@ -2068,7 +2068,7 @@ template&lt;typename T &gt; </div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00385">385</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
+<p>Definition at line <a class="el" href="Numeric_8hpp_source.html#l00376">376</a> of file <a class="el" href="Numeric_8hpp_source.html">Numeric.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="Numeric_8cpp_source.html#l00350">validateQuartile()</a>.</p>
 
@@ -2099,7 +2099,7 @@ template&lt;typename T &gt; </div>
       <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a>      </li>
       <li class="navelem"><a class="el" href="classmultiscale_1_1Numeric.html">Numeric</a>      </li>
 
-    <li class="footer">Generated on Mon Mar 3 2014 16:05:30 for Multiscale by
+    <li class="footer">Generated on Mon Mar 3 2014 21:59:45 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

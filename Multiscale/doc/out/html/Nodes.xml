@@ -252,14 +252,6 @@
               <Path>classmultiscale_1_1verification_1_1AndLogicPropertyAttribute.html</Path>
              </Node>
              <Node>
-              <Name>Attribute</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-             </Node>
-             <Node>
-              <Name>AttributeVisitor</Name>
-              <Path>classmultiscale_1_1verification_1_1AttributeVisitor.html</Path>
-             </Node>
-             <Node>
               <Name>BinaryNumericMeasureAttribute</Name>
               <Path>classmultiscale_1_1verification_1_1BinaryNumericMeasureAttribute.html</Path>
              </Node>
@@ -578,11 +570,6 @@
              <Node>
               <Name>TimePointEvaluator</Name>
               <Path>classmultiscale_1_1verification_1_1TimePointEvaluator.html</Path>
-             </Node>
-             <Node>
-              <Name>AttributeTruthValue</Name>
-              <Path>namespacemultiscale_1_1verification.html</Path>
-              <Anchor>a59de9717a70a598869184fe3b925ea9d</Anchor>
              </Node>
              <Node>
               <Name>ConstraintAttributeType</Name>
@@ -1009,81 +996,9 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>multiscale::verification::Attribute</Name>
-            <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>~Attribute</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-              <Anchor>addf43507a6e7ccd140d7635f07ea363b</Anchor>
-             </Node>
-             <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-              <Anchor>a869193c788c737383b6cd94b01987d82</Anchor>
-             </Node>
-             <Node>
-              <Name>evaluateConsideringTruthValue</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-              <Anchor>a34dd24fa356bc725c1cf6688e013a3e1</Anchor>
-             </Node>
-             <Node>
-              <Name>evaluateExpression</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-              <Anchor>a8e18ca708d332c7da69437441eb44a13</Anchor>
-             </Node>
-             <Node>
-              <Name>evaluateNaryExpression</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-              <Anchor>a914ea85d54a76f621d8d42c9b386638b</Anchor>
-             </Node>
-             <Node>
-              <Name>evaluateNaryExpression</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-              <Anchor>aca8fb8395e78515b5a2fcd056cfeb99c</Anchor>
-             </Node>
-             <Node>
-              <Name>evaluateNextExpressions</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-              <Anchor>af99821b27f3429f3bb07a6d60fa21919</Anchor>
-             </Node>
-             <Node>
-              <Name>evaluateNextExpressions</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-              <Anchor>a78ffce770a879268887f5aa7541f29d4</Anchor>
-             </Node>
-             <Node>
-              <Name>evaluateUnaryExpression</Name>
-              <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-              <Anchor>ac3edf34386a5e24ea1196ff1b2c47f58</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>multiscale::verification::AttributeVisitor</Name>
-            <Path>classmultiscale_1_1verification_1_1AttributeVisitor.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>operator()</Name>
-              <Path>classmultiscale_1_1verification_1_1AttributeVisitor.html</Path>
-              <Anchor>aeb4077d9556de80dc96d7884d32b0a99</Anchor>
-             </Node>
-             <Node>
-              <Name>operator()</Name>
-              <Path>classmultiscale_1_1verification_1_1AttributeVisitor.html</Path>
-              <Anchor>a325a96b7780d5ad4a23724868d882928</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
             <Name>multiscale::verification::BinaryNumericMeasureAttribute</Name>
             <Path>classmultiscale_1_1verification_1_1BinaryNumericMeasureAttribute.html</Path>
             <Subnodes>
-             <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1BinaryNumericMeasureAttribute.html</Path>
-              <Anchor>aaf0c015407b9c6954da63c72b3755c6f</Anchor>
-             </Node>
              <Node>
               <Name>binaryNumericMeasureType</Name>
               <Path>classmultiscale_1_1verification_1_1BinaryNumericMeasureAttribute.html</Path>
@@ -1148,11 +1063,6 @@
             <Name>multiscale::verification::BinarySubsetMeasureAttribute</Name>
             <Path>classmultiscale_1_1verification_1_1BinarySubsetMeasureAttribute.html</Path>
             <Subnodes>
-             <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1BinarySubsetMeasureAttribute.html</Path>
-              <Anchor>a32e3e30f10a467e2154fc58dab487964</Anchor>
-             </Node>
              <Node>
               <Name>binarySubsetMeasureType</Name>
               <Path>classmultiscale_1_1verification_1_1BinarySubsetMeasureAttribute.html</Path>
@@ -1890,11 +1800,6 @@
             <Name>multiscale::verification::ComparatorAttribute</Name>
             <Path>classmultiscale_1_1verification_1_1ComparatorAttribute.html</Path>
             <Subnodes>
-             <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1ComparatorAttribute.html</Path>
-              <Anchor>a9d0577a0df73906dff2dbf277c58e0a5</Anchor>
-             </Node>
              <Node>
               <Name>comparatorType</Name>
               <Path>classmultiscale_1_1verification_1_1ComparatorAttribute.html</Path>
@@ -6008,11 +5913,6 @@
             <Path>classmultiscale_1_1verification_1_1QuaternarySubsetMeasureAttribute.html</Path>
             <Subnodes>
              <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1QuaternarySubsetMeasureAttribute.html</Path>
-              <Anchor>a651221441c401551c743f1c0306402da</Anchor>
-             </Node>
-             <Node>
               <Name>quaternarySubsetMeasureType</Name>
               <Path>classmultiscale_1_1verification_1_1QuaternarySubsetMeasureAttribute.html</Path>
               <Anchor>a2fb33362be236ae4df6fead93e429c89</Anchor>
@@ -6615,10 +6515,6 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>multiscale::verification::Region</Name>
-            <Path>classmultiscale_1_1verification_1_1Region.html</Path>
-           </Node>
-           <Node>
             <Name>multiscale::analysis::Region</Name>
             <Path>classmultiscale_1_1analysis_1_1Region.html</Path>
             <Subnodes>
@@ -6708,6 +6604,10 @@
               <Anchor>a40d1b47f30bb09c6a47521a968163b6d</Anchor>
              </Node>
             </Subnodes>
+           </Node>
+           <Node>
+            <Name>multiscale::verification::Region</Name>
+            <Path>classmultiscale_1_1verification_1_1Region.html</Path>
            </Node>
            <Node>
             <Name>multiscale::analysis::RegionDetector</Name>
@@ -7914,11 +7814,6 @@
             <Path>classmultiscale_1_1verification_1_1SpatialMeasureAttribute.html</Path>
             <Subnodes>
              <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1SpatialMeasureAttribute.html</Path>
-              <Anchor>a47857e83d32e3519a07c4670467b89b6</Anchor>
-             </Node>
-             <Node>
               <Name>spatialMeasureType</Name>
               <Path>classmultiscale_1_1verification_1_1SpatialMeasureAttribute.html</Path>
               <Anchor>a0c81eaf59809ddc62f0c00b020e998d7</Anchor>
@@ -8196,11 +8091,6 @@
             <Path>classmultiscale_1_1verification_1_1StateVariableAttribute.html</Path>
             <Subnodes>
              <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1StateVariableAttribute.html</Path>
-              <Anchor>ae7b784efdf24549ad429f9e15af2d81b</Anchor>
-             </Node>
-             <Node>
               <Name>name</Name>
               <Path>classmultiscale_1_1verification_1_1StateVariableAttribute.html</Path>
               <Anchor>a16899511c6d9c4ffadad57e0ed1fe350</Anchor>
@@ -8253,11 +8143,6 @@
             <Name>multiscale::verification::SubsetSpecificAttribute</Name>
             <Path>classmultiscale_1_1verification_1_1SubsetSpecificAttribute.html</Path>
             <Subnodes>
-             <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1SubsetSpecificAttribute.html</Path>
-              <Anchor>a470b8e4a70762f917611d6983d31c41e</Anchor>
-             </Node>
              <Node>
               <Name>subsetSpecificType</Name>
               <Path>classmultiscale_1_1verification_1_1SubsetSpecificAttribute.html</Path>
@@ -8363,11 +8248,6 @@
             <Name>multiscale::verification::TernarySubsetMeasureAttribute</Name>
             <Path>classmultiscale_1_1verification_1_1TernarySubsetMeasureAttribute.html</Path>
             <Subnodes>
-             <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1TernarySubsetMeasureAttribute.html</Path>
-              <Anchor>a19194ab6dc5169bd7560fb5a937fa33f</Anchor>
-             </Node>
              <Node>
               <Name>ternarySubsetMeasureType</Name>
               <Path>classmultiscale_1_1verification_1_1TernarySubsetMeasureAttribute.html</Path>
@@ -8624,11 +8504,6 @@
             <Path>classmultiscale_1_1verification_1_1UnaryNumericMeasureAttribute.html</Path>
             <Subnodes>
              <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1UnaryNumericMeasureAttribute.html</Path>
-              <Anchor>a6dbdac126bb6b756ceb661a8e082bea3</Anchor>
-             </Node>
-             <Node>
               <Name>unaryNumericMeasureType</Name>
               <Path>classmultiscale_1_1verification_1_1UnaryNumericMeasureAttribute.html</Path>
               <Anchor>a686c76cc8b4f1d565fc3e60a645a4090</Anchor>
@@ -8682,11 +8557,6 @@
             <Name>multiscale::verification::UnarySubsetMeasureAttribute</Name>
             <Path>classmultiscale_1_1verification_1_1UnarySubsetMeasureAttribute.html</Path>
             <Subnodes>
-             <Node>
-              <Name>evaluate</Name>
-              <Path>classmultiscale_1_1verification_1_1UnarySubsetMeasureAttribute.html</Path>
-              <Anchor>a9af60869232ac47b21981fb30bb2155a</Anchor>
-             </Node>
              <Node>
               <Name>unarySubsetMeasureType</Name>
               <Path>classmultiscale_1_1verification_1_1UnarySubsetMeasureAttribute.html</Path>
@@ -8803,14 +8673,6 @@
            <Node>
             <Name>multiscale::video::AnnularSector</Name>
             <Path>classmultiscale_1_1video_1_1AnnularSector.html</Path>
-           </Node>
-           <Node>
-            <Name>multiscale::verification::Attribute</Name>
-            <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-           </Node>
-           <Node>
-            <Name>multiscale::verification::AttributeVisitor</Name>
-            <Path>classmultiscale_1_1verification_1_1AttributeVisitor.html</Path>
            </Node>
            <Node>
             <Name>multiscale::verification::BinaryNumericMeasureAttribute</Name>
@@ -10555,21 +10417,6 @@
             <Path>AndLogicPropertyAttribute_8hpp.html</Path>
            </Node>
            <Node>
-            <Name>/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/verification/spatial-temporal/include/multiscale/verification/spatial-temporal/attribute/Attribute.hpp</Name>
-            <Path>Attribute_8hpp.html</Path>
-           </Node>
-           <Node>
-            <Name>/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/verification/spatial-temporal/include/multiscale/verification/spatial-temporal/attribute/AttributeVisitor.hpp</Name>
-            <Path>AttributeVisitor_8hpp.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>AttributeTruthValue</Name>
-              <Path>namespacemultiscale_1_1verification.html</Path>
-              <Anchor>a59de9717a70a598869184fe3b925ea9d</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
             <Name>/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/verification/spatial-temporal/include/multiscale/verification/spatial-temporal/attribute/BinaryNumericMeasureAttribute.hpp</Name>
             <Path>BinaryNumericMeasureAttribute_8hpp.html</Path>
             <Subnodes>
@@ -11131,10 +10978,6 @@
            <Node>
             <Name>/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/verification/spatial-temporal/src/attribute/SpatialMeasureAttribute.cpp</Name>
             <Path>SpatialMeasureAttribute_8cpp.html</Path>
-           </Node>
-           <Node>
-            <Name>/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/verification/spatial-temporal/src/attribute/StateVariableAttribute.cpp</Name>
-            <Path>StateVariableAttribute_8cpp.html</Path>
            </Node>
            <Node>
             <Name>/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/verification/spatial-temporal/src/attribute/SubsetSpecificAttribute.cpp</Name>

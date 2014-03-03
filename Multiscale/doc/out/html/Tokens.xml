@@ -913,17 +913,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>AttributeTruthValue</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>tdef</Type>
-      <Scope>multiscale::verification</Scope>
-    </TokenIdentifier>
-    <Path>namespacemultiscale_1_1verification.html</Path>
-    <Anchor>a59de9717a70a598869184fe3b925ea9d</Anchor>
-    <Abstract>Variant for representing the attribute truth value.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>operator&lt;&lt;</Name>
       <APILanguage>cpp</APILanguage>
       <Type>func</Type>
@@ -12351,17 +12340,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>AttributeTruthValue</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>tdef</Type>
-      <Scope>multiscale::verification</Scope>
-    </TokenIdentifier>
-    <Path>namespacemultiscale_1_1verification.html</Path>
-    <Anchor>a59de9717a70a598869184fe3b925ea9d</Anchor>
-    <Abstract>Variant for representing the attribute truth value.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>ConstraintAttributeType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>tdef</Type>
@@ -13170,148 +13148,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>multiscale::verification::Attribute</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Abstract>Class used to represent an attribute.</Abstract>
-    <DeclaredIn>Attribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>~Attribute</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Anchor>addf43507a6e7ccd140d7635f07ea363b</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Anchor>a869193c788c737383b6cd94b01987d82</Anchor>
-    <Abstract>Evaluate the attribute.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluateConsideringTruthValue</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Anchor>a34dd24fa356bc725c1cf6688e013a3e1</Anchor>
-    <Abstract>Evaluate the attribute considering the given truth value.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluateUnaryExpression</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Anchor>ac3edf34386a5e24ea1196ff1b2c47f58</Anchor>
-    <Abstract>Evaluate a unary expression.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluateNaryExpression</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Anchor>a914ea85d54a76f621d8d42c9b386638b</Anchor>
-    <Abstract>Evaluate an n-ary expression considering the given evaluation functor.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluateNaryExpression</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Anchor>aca8fb8395e78515b5a2fcd056cfeb99c</Anchor>
-    <Abstract>Evaluate an n-ary expression.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluateExpression</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Anchor>a8e18ca708d332c7da69437441eb44a13</Anchor>
-    <Abstract>Evaluate the given expression.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluateNextExpressions</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Anchor>af99821b27f3429f3bb07a6d60fa21919</Anchor>
-    <Abstract>Evaluate the next expressions considering the given evaluation functor and evaluation result...</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluateNextExpressions</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::Attribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1Attribute.html</Path>
-    <Anchor>a78ffce770a879268887f5aa7541f29d4</Anchor>
-    <Abstract>Evaluate the next expressions.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::verification::AttributeVisitor</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::verification::AttributeVisitor</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1AttributeVisitor.html</Path>
-    <Abstract>Class used to evaluate attributes.</Abstract>
-    <DeclaredIn>AttributeVisitor.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>operator()</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::AttributeVisitor</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1AttributeVisitor.html</Path>
-    <Anchor>aeb4077d9556de80dc96d7884d32b0a99</Anchor>
-    <Abstract>Overloading the operator ()</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>operator()</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::AttributeVisitor</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1AttributeVisitor.html</Path>
-    <Anchor>a325a96b7780d5ad4a23724868d882928</Anchor>
-    <Abstract>Overloading the operator ()</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>multiscale::verification::BinaryNumericMeasureAttribute</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -13320,17 +13156,6 @@
     <Path>classmultiscale_1_1verification_1_1BinaryNumericMeasureAttribute.html</Path>
     <Abstract>Class for representing a binary numeric measure attribute.</Abstract>
     <DeclaredIn>BinaryNumericMeasureAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::BinaryNumericMeasureAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1BinaryNumericMeasureAttribute.html</Path>
-    <Anchor>aaf0c015407b9c6954da63c72b3755c6f</Anchor>
-    <Abstract>Return the binary numeric measure type.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -13437,17 +13262,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::BinarySubsetMeasureAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1BinarySubsetMeasureAttribute.html</Path>
-    <Anchor>a32e3e30f10a467e2154fc58dab487964</Anchor>
-    <Abstract>Return the binary subset measure type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>binarySubsetMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -13466,17 +13280,6 @@
     <Path>classmultiscale_1_1verification_1_1ComparatorAttribute.html</Path>
     <Abstract>Class for representing a comparator attribute.</Abstract>
     <DeclaredIn>ComparatorAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::ComparatorAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1ComparatorAttribute.html</Path>
-    <Anchor>a9d0577a0df73906dff2dbf277c58e0a5</Anchor>
-    <Abstract>Return the comparator type.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14300,17 +14103,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::QuaternarySubsetMeasureAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1QuaternarySubsetMeasureAttribute.html</Path>
-    <Anchor>a651221441c401551c743f1c0306402da</Anchor>
-    <Abstract>Return the quaternary subset measure type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>quaternarySubsetMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -14329,17 +14121,6 @@
     <Path>classmultiscale_1_1verification_1_1SpatialMeasureAttribute.html</Path>
     <Abstract>Class for representing a spatial measure attribute.</Abstract>
     <DeclaredIn>SpatialMeasureAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::SpatialMeasureAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1SpatialMeasureAttribute.html</Path>
-    <Anchor>a47857e83d32e3519a07c4670467b89b6</Anchor>
-    <Abstract>Return the spatial measure type.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14405,17 +14186,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::StateVariableAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1StateVariableAttribute.html</Path>
-    <Anchor>ae7b784efdf24549ad429f9e15af2d81b</Anchor>
-    <Abstract>Return the name of the state variable as a string.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>name</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -14455,17 +14225,6 @@
     <Path>classmultiscale_1_1verification_1_1SubsetSpecificAttribute.html</Path>
     <Abstract>Class for representing a subset specific attribute.</Abstract>
     <DeclaredIn>SubsetSpecificAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::SubsetSpecificAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1SubsetSpecificAttribute.html</Path>
-    <Anchor>a470b8e4a70762f917611d6983d31c41e</Anchor>
-    <Abstract>Return the specific subset type.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14541,17 +14300,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::TernarySubsetMeasureAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1TernarySubsetMeasureAttribute.html</Path>
-    <Anchor>a19194ab6dc5169bd7560fb5a937fa33f</Anchor>
-    <Abstract>Return the ternary subset measure type.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>ternarySubsetMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -14611,17 +14359,6 @@
     <Path>classmultiscale_1_1verification_1_1UnaryNumericMeasureAttribute.html</Path>
     <Abstract>Class for representing a unary numeric measure attribute.</Abstract>
     <DeclaredIn>UnaryNumericMeasureAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::UnaryNumericMeasureAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1UnaryNumericMeasureAttribute.html</Path>
-    <Anchor>a6dbdac126bb6b756ceb661a8e082bea3</Anchor>
-    <Abstract>Return the unary numeric measure type.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14705,17 +14442,6 @@
     <Path>classmultiscale_1_1verification_1_1UnarySubsetMeasureAttribute.html</Path>
     <Abstract>Class for representing a unary subset measure attribute.</Abstract>
     <DeclaredIn>UnarySubsetMeasureAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::UnarySubsetMeasureAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1UnarySubsetMeasureAttribute.html</Path>
-    <Anchor>a9af60869232ac47b21981fb30bb2155a</Anchor>
-    <Abstract>Return the unary subset measure type.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -15128,7 +14854,7 @@
     </TokenIdentifier>
     <Path>structmultiscale_1_1verification_1_1ProbabilityErrorHandler.html</Path>
     <Anchor>a549012045af68c489b01d117d99c48e3</Anchor>
-    <Abstract>Convert the expected token to a std::string.</Abstract>
+    <Abstract>Convert the expected token to a string.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -15182,7 +14908,7 @@
     </TokenIdentifier>
     <Path>structmultiscale_1_1verification_1_1UnexpectedTokenErrorHandler.html</Path>
     <Anchor>a84b52ead7a2a1f2a46c407f84af4dcde</Anchor>
-    <Abstract>Convert the expected token to a std::string.</Abstract>
+    <Abstract>Convert the expected token to a string.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>

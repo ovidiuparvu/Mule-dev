@@ -5,8 +5,6 @@ var hierarchy =
     [ "multiscale::verification::AndConstraintAttribute", "classmultiscale_1_1verification_1_1AndConstraintAttribute.html", null ],
     [ "multiscale::verification::AndLogicPropertyAttribute", "classmultiscale_1_1verification_1_1AndLogicPropertyAttribute.html", null ],
     [ "multiscale::video::AnnularSector", "classmultiscale_1_1video_1_1AnnularSector.html", null ],
-    [ "multiscale::verification::Attribute", "classmultiscale_1_1verification_1_1Attribute.html", null ],
-    [ "multiscale::verification::AttributeVisitor", "classmultiscale_1_1verification_1_1AttributeVisitor.html", null ],
     [ "multiscale::verification::BinaryNumericMeasureAttribute", "classmultiscale_1_1verification_1_1BinaryNumericMeasureAttribute.html", null ],
     [ "multiscale::verification::BinaryNumericMeasureTypeParser", "structmultiscale_1_1verification_1_1BinaryNumericMeasureTypeParser.html", null ],
     [ "multiscale::verification::BinaryNumericNumericAttribute", "classmultiscale_1_1verification_1_1BinaryNumericNumericAttribute.html", null ],

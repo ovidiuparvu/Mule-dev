@@ -115,9 +115,7 @@ namespace multiscale {
 
             //! Return the average (arithmetic mean) of the provided numbers
             /*!
-             *      x1 + x2 + ... + xn
-             * A = --------------------
-             *              n
+             * \f$ average = \frac{1}{n} \sum\limits^{n}_{i = 1}{x_{i}} \f$
              *
              * \param numbers   The collection of numbers
              */
@@ -132,9 +130,7 @@ namespace multiscale {
 
             //! Return the geometric mean of the provided numbers
             /*!
-             *            1
-             * G = exp ( --- * (log(x1) + log(x2) + ... + log(xn)))
-             *            n
+             * \f$ geometricMean = e ^ {\frac{1}{n} \sum\limits_{i = 1}^{n}{log(x_{i})}} \f$
              *
              * \param numbers   The collection of numbers
              */
@@ -142,11 +138,7 @@ namespace multiscale {
 
             //! Return the harmonic mean of the provided numbers
             /*!
-             *                n
-             * H = ------------------------
-             *       1      1          1
-             *      ---- + ---- ... + ----
-             *       x1     x2         xn
+             *  \f$ harmonicMean = \frac{n}{\sum\limits_{i = 1}^{n}{\frac{1}{x_{i}}}} \f$
              *
              * \param numbers   The collection of numbers
              */
@@ -154,8 +146,7 @@ namespace multiscale {
 
             //! Return the kurtosis of the provided numbers
             /*!
-             * K = (n)(n + 1) / ((n - 1)(n - 2)(n - 3)) * (\sum_{i=1}^{n}{((x_i - mean) / stdev) ^ 4}) -
-             *     (3 * (n - 1) ^ 2) / ((n - 2) * (n - 3))
+             * \f$ kurtosis = \frac{n (n + 1)}{(n - 1)(n - 2)(n - 3)} \left( \sum\limits_{i=1}^{n}{(\frac{x_i - mean}{stdev})^{4}} \right) - \frac{3 (n - 1)^{2}} {(n - 2) (n - 3)} \f$
              *
              * \param numbers   The collection of numbers
              */
