@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Multiscale
-   &#160;<span id="projectnumber">0.6.34</span>
+   &#160;<span id="projectnumber">0.6.38</span>
    </div>
    
   </td>
@@ -103,6 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br/>
+<code>#include &lt;cfenv&gt;</code><br/>
 <code>#include &lt;cmath&gt;</code><br/>
 <code>#include &lt;limits&gt;</code><br/>
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -111,23 +112,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="Numeric_8hpp__incl.png" border="0" usemap="#_2home_2ovidiu_2Repositories_2git_2multiscale_2Multiscale_2modules_2util_2include_2multiscale_2util_2Numeric_8hpp" alt=""/></div>
-<map name="_2home_2ovidiu_2Repositories_2git_2multiscale_2Multiscale_2modules_2util_2include_2multiscale_2util_2Numeric_8hpp" id="_2home_2ovidiu_2Repositories_2git_2multiscale_2Multiscale_2modules_2util_2include_2multiscale_2util_2Numeric_8hpp">
-</map>
-</div>
-</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="Numeric_8hpp__dep__incl.png" border="0" usemap="#_2home_2ovidiu_2Repositories_2git_2multiscale_2Multiscale_2modules_2util_2include_2multiscale_2util_2Numeric_8hppdep" alt=""/></div>
-<map name="_2home_2ovidiu_2Repositories_2git_2multiscale_2Multiscale_2modules_2util_2include_2multiscale_2util_2Numeric_8hppdep" id="_2home_2ovidiu_2Repositories_2git_2multiscale_2Multiscale_2modules_2util_2include_2multiscale_2util_2Numeric_8hppdep">
-<area shape="rect" id="node3" href="Region_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/Region.cpp" alt="" coords="502,237,1056,267"/><area shape="rect" id="node5" href="SpatialEntityPseudo3D_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/SpatialEntityPseudo3D.cpp" alt="" coords="5750,83,6400,112"/><area shape="rect" id="node7" href="Geometry2D_8hpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/Geometry2D.hpp" alt="" coords="2851,83,3472,112"/><area shape="rect" id="node46" href="MinEnclosingTriangleFinder_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/src/MinEnclosingTriangleFinder.cpp" alt="" coords="4187,237,4790,267"/><area shape="rect" id="node58" href="Numeric_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/src/Numeric.cpp" alt="" coords="6424,83,6915,112"/><area shape="rect" id="node60" href="SpatialEntity_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/verification/spatial&#45;temporal/src/model/SpatialEntity.cpp" alt="" coords="6939,83,7635,112"/><area shape="rect" id="node62" href="SpatialTemporalTrace_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/verification/spatial&#45;temporal/src/model/SpatialTemporalTrace.cpp" alt="" coords="7659,83,8408,112"/><area shape="rect" id="node9" href="analysis_2spatial_2include_2multiscale_2analysis_2spatial_2Cluster_8hpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/Cluster.hpp" alt="" coords="5750,160,6486,189"/><area shape="rect" id="node24" href="Silhouette_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/Silhouette.cpp" alt="" coords="2386,315,2959,344"/><area shape="rect" id="node26" href="Cluster_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/Cluster.cpp" alt="" coords="4987,237,5544,267"/><area shape="rect" id="node28" href="CircularityMeasure_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/CircularityMeasure.cpp" alt="" coords="80,160,704,189"/><area shape="rect" id="node31" href="Detector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/Detector.cpp" alt="" coords="728,160,1294,189"/><area shape="rect" id="node33" href="Entity_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/Entity.cpp" alt="" coords="1318,160,1867,189"/><area shape="rect" id="node35" href="RegionDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/RegionDetector.cpp" alt="" coords="1891,160,2496,189"/><area shape="rect" id="node38" href="DBSCANTest_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/test/DBSCANTest.cpp" alt="" coords="2520,160,3123,189"/><area shape="rect" id="node40" href="MinEnclosingTriangleFinder_8hpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/MinEnclosingTriangleFinder.hpp" alt="" coords="3147,160,3856,189"/><area shape="rect" id="node44" href="MinEnclosingTriangleFinderSample_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/sample/MinEnclosingTriangleFinderSample.cpp" alt="" coords="2022,237,2691,267"/><area shape="rect" id="node50" href="LineCircleIntersectionSample_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/sample/LineCircleIntersectionSample.cpp" alt="" coords="3880,160,4515,189"/><area shape="rect" id="node53" href="Geometry2D_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/src/Geometry2D.cpp" alt="" coords="4539,160,5054,189"/><area shape="rect" id="node55" href="Geometry2DTest_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/test/Geometry2DTest.cpp" alt="" coords="5078,160,5624,189"/><area shape="rect" id="node11" href="ClusterDetector_8hpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/ClusterDetector.hpp" alt="" coords="6344,237,7131,267"/><area shape="rect" id="node21" href="Silhouette_8hpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/Silhouette.hpp" alt="" coords="5568,237,6320,267"/><area shape="rect" id="node13" href="SimulationClusterDetector_8hpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp" alt="" coords="6292,315,7183,344"/><area shape="rect" id="node19" href="ClusterDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/ClusterDetector.cpp" alt="" coords="5652,315,6258,344"/><area shape="rect" id="node15" href="SimulationClusterDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/cluster/SimulationClusterDetector.cpp" alt="" coords="6027,392,6736,421"/><area shape="rect" id="node17" href="SimulationDetectClusters_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/SimulationDetectClusters.cpp" alt="" coords="6760,392,7424,421"/><area shape="rect" id="node48" href="MinEnclosingTriangleFinderTest_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/test/MinEnclosingTriangleFinderTest.cpp" alt="" coords="3186,237,3818,267"/></map>
 </div>
 </div>
 <p><a href="Numeric_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1AdditionOperation.html">multiscale::AdditionOperation</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor representing an addition operation.  <a href="classmultiscale_1_1AdditionOperation.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1DivisionOperation.html">multiscale::DivisionOperation</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor representing a division operation.  <a href="classmultiscale_1_1DivisionOperation.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1MultiplicationOperation.html">multiscale::MultiplicationOperation</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor representing a multiplication operation.  <a href="classmultiscale_1_1MultiplicationOperation.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1SubtractionOperation.html">multiscale::SubtractionOperation</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor representing a subtraction operation.  <a href="classmultiscale_1_1SubtractionOperation.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1Numeric.html">multiscale::Numeric</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for manipulating numbers (shorts, ints, floats, doubles etc.)  <a href="classmultiscale_1_1Numeric.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="namespaces"></a>
@@ -154,7 +152,7 @@ Namespaces</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="Numeric_8hpp.html">Numeric.hpp</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 27 2014 17:40:17 for Multiscale by
+    <li class="footer">Generated on Mon Mar 3 2014 16:05:29 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

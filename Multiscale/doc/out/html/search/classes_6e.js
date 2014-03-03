@@ -10,10 +10,12 @@ var searchData=
   ['numberiterator',['NumberIterator',['../classmultiscale_1_1NumberIterator.html',1,'multiscale']]],
   ['numeric',['Numeric',['../classmultiscale_1_1Numeric.html',1,'multiscale']]],
   ['numericevaluator',['NumericEvaluator',['../classmultiscale_1_1verification_1_1NumericEvaluator.html',1,'multiscale::verification']]],
+  ['numericexception',['NumericException',['../classmultiscale_1_1NumericException.html',1,'multiscale']]],
   ['numericmeasureattribute',['NumericMeasureAttribute',['../classmultiscale_1_1verification_1_1NumericMeasureAttribute.html',1,'multiscale::verification']]],
   ['numericnumericcomparisonattribute',['NumericNumericComparisonAttribute',['../classmultiscale_1_1verification_1_1NumericNumericComparisonAttribute.html',1,'multiscale::verification']]],
   ['numericrangemanipulator',['NumericRangeManipulator',['../classmultiscale_1_1NumericRangeManipulator.html',1,'multiscale']]],
   ['numericspatialattribute',['NumericSpatialAttribute',['../classmultiscale_1_1verification_1_1NumericSpatialAttribute.html',1,'multiscale::verification']]],
   ['numericspatialnumericcomparisonattribute',['NumericSpatialNumericComparisonAttribute',['../classmultiscale_1_1verification_1_1NumericSpatialNumericComparisonAttribute.html',1,'multiscale::verification']]],
-  ['numericstatevariableattribute',['NumericStateVariableAttribute',['../classmultiscale_1_1verification_1_1NumericStateVariableAttribute.html',1,'multiscale::verification']]]
+  ['numericstatevariableattribute',['NumericStateVariableAttribute',['../classmultiscale_1_1verification_1_1NumericStateVariableAttribute.html',1,'multiscale::verification']]],
+  ['numericvisitor',['NumericVisitor',['../classmultiscale_1_1verification_1_1NumericVisitor.html',1,'multiscale::verification']]]
 ];

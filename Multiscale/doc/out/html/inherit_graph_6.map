@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$classmultiscale_1_1analysis_1_1DBSCAN.html" title="Class which implements an improved version of the DBSCAN algorithm." alt="" coords="5,5,208,35"/>
+<area shape="rect" id="node1" href="$classmultiscale_1_1analysis_1_1DataPoint.html" title="Class for representing a data point." alt="" coords="5,32,208,61"/>
+<area shape="rect" id="node3" href="$classEuclideanDataPoint.html" title="EuclideanDataPoint" alt="" coords="277,5,413,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)" alt="" coords="256,59,435,88"/>
 </map>

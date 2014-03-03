@@ -8,7 +8,6 @@ var searchData=
   ['_7ecircularmatfactory',['~CircularMatFactory',['../classmultiscale_1_1analysis_1_1CircularMatFactory.html#aaf49d7ad7e1955709929d180686e99d8',1,'multiscale::analysis::CircularMatFactory']]],
   ['_7ecluster',['~Cluster',['../classmultiscale_1_1analysis_1_1Cluster.html#a4bddfc88ac859610acab15dd12851b58',1,'multiscale::analysis::Cluster']]],
   ['_7eclusterdetector',['~ClusterDetector',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a18f5d5aab155a0a30137364749fb837c',1,'multiscale::analysis::ClusterDetector']]],
-  ['_7econstraintevaluator',['~ConstraintEvaluator',['../classmultiscale_1_1verification_1_1ConstraintEvaluator.html#ad99f2f543d799d41e9f66bc2046fde12',1,'multiscale::verification::ConstraintEvaluator']]],
   ['_7edatapoint',['~DataPoint',['../classmultiscale_1_1analysis_1_1DataPoint.html#ab7a7d2baf190376980cd3c2e130a9905',1,'multiscale::analysis::DataPoint']]],
   ['_7edbscan',['~DBSCAN',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a4deb359da661ba495d18a75f43a0b89c',1,'multiscale::analysis::DBSCAN']]],
   ['_7edetector',['~Detector',['../classmultiscale_1_1analysis_1_1Detector.html#ae16b7bf62f39cb287927d56ca17663d7',1,'multiscale::analysis::Detector']]],
@@ -20,7 +19,6 @@ var searchData=
   ['_7eminenclosingtrianglefindertest',['~MinEnclosingTriangleFinderTest',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a08084468ad154583a03421f73554342f',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
   ['_7emultiscaletest',['~MultiscaleTest',['../classmultiscaletest_1_1MultiscaleTest.html#a27aa0fd218670e2265edad84b2fb1f8f',1,'multiscaletest::MultiscaleTest']]],
   ['_7enumberiterator',['~NumberIterator',['../classmultiscale_1_1NumberIterator.html#aae2ce809339ed853f49619ad69596229',1,'multiscale::NumberIterator']]],
-  ['_7enumericevaluator',['~NumericEvaluator',['../classmultiscale_1_1verification_1_1NumericEvaluator.html#ad6aedc1ea13aeef11e8774c8e17a7832',1,'multiscale::verification::NumericEvaluator']]],
   ['_7eparser',['~Parser',['../classmultiscale_1_1verification_1_1Parser.html#a3e658b5917a93a3ef648050d060e3a93',1,'multiscale::verification::Parser']]],
   ['_7epolarcsvtoinputfilesconverter',['~PolarCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#afdd156ae24d5d6194b113dd661110ed5',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['_7erectangularcsvtoinputfilesconverter',['~RectangularCsvToInputFilesConverter',['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#ad45bb79ad6c37954376d4f9904872870',1,'multiscale::video::RectangularCsvToInputFilesConverter']]],
@@ -33,6 +31,5 @@ var searchData=
   ['_7espatialentitypseudo3d',['~SpatialEntityPseudo3D',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a5d44f1cc668d9ef8b1bb5ba573a08c93',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['_7espatialtemporaltrace',['~SpatialTemporalTrace',['../classmultiscale_1_1verification_1_1SpatialTemporalTrace.html#a5efb41af34f60a08762c98a8778ec531',1,'multiscale::verification::SpatialTemporalTrace']]],
   ['_7estandardnumberiterator',['~StandardNumberIterator',['../classmultiscale_1_1StandardNumberIterator.html#aa5b9da824bd014eebab86462f7d08219',1,'multiscale::StandardNumberIterator']]],
-  ['_7esubsetevaluator',['~SubsetEvaluator',['../classmultiscale_1_1verification_1_1SubsetEvaluator.html#aaedbd250494b1b8e19b68632f3dd4128',1,'multiscale::verification::SubsetEvaluator']]],
   ['_7etimepoint',['~TimePoint',['../classmultiscale_1_1verification_1_1TimePoint.html#a1d10e55ab225c515af45295e94ef5a2e',1,'multiscale::verification::TimePoint']]]
 ];

@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$MultiscaleTest_8hpp.html" title="multiscale/core/MultiscaleTest.hpp" alt="" coords="75,83,299,112"/>
-<area shape="rect" id="node7" href="$MinEnclosingTriangleFinder_8hpp.html" title="multiscale/util/MinEnclosingTriangleFinder.hpp" alt="" coords="323,83,613,112"/>
-<area shape="rect" id="node9" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2D.hpp" alt="" coords="311,160,516,189"/>
-<area shape="rect" id="node11" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="5,237,184,267"/>
+<area shape="rect" id="node3" href="$MultiscaleTest_8hpp.html" title="multiscale/core/MultiscaleTest.hpp" alt="" coords="111,83,335,112"/>
+<area shape="rect" id="node7" href="$MinEnclosingTriangleFinder_8hpp.html" title="multiscale/util/MinEnclosingTriangleFinder.hpp" alt="" coords="359,83,649,112"/>
+<area shape="rect" id="node9" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2D.hpp" alt="" coords="347,160,552,189"/>
+<area shape="rect" id="node11" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="41,237,220,267"/>
 </map>

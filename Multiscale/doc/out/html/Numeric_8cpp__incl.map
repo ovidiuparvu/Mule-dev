@@ -1,3 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="161,83,340,112"/>
+<area shape="rect" id="node3" href="$NumericException_8hpp.html" title="multiscale/exception/NumericException.hpp" alt="" coords="53,83,331,112"/>
+<area shape="rect" id="node7" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="261,237,493,267"/>
+<area shape="rect" id="node21" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="619,83,797,112"/>
+<area shape="rect" id="node5" href="$MultiscaleException_8hpp.html" title="multiscale/exception/MultiscaleException.hpp" alt="" coords="49,160,335,189"/>
 </map>

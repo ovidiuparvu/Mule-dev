@@ -1,5 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html" title="Class for representing a pseudo&#45;3D (explicit 2D + implicit height) object." alt="" coords="5,32,285,61"/>
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html" title="Class for representing a cluster of entities in an image." alt="" coords="333,5,520,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region." alt="" coords="333,59,520,88"/>
+<area shape="rect" id="node1" href="$classmultiscale_1_1analysis_1_1Silhouette.html" title="Class for computing the &quot;Silhouette&quot; clustering index." alt="" coords="5,5,208,35"/>
 </map>

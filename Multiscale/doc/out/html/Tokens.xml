@@ -5030,6 +5030,37 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>multiscale::NumericException</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::NumericException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1NumericException.html</Path>
+    <Abstract>Class for representing algorithm exceptions.</Abstract>
+    <DeclaredIn>NumericException.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NumericException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::NumericException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1NumericException.html</Path>
+    <Anchor>abbc1697bdd761f483a71aa49866c8ba3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NumericException</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::NumericException</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1NumericException.html</Path>
+    <Anchor>afd286d46674e0a2106f51867cf5bbd0c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::RuntimeException</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -5218,6 +5249,17 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1Geometry2D.html</Path>
     <Anchor>a911b35d7abde99988bb4b43f00d6be72</Anchor>
+    <Abstract>Compute the distance between two points.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>distanceBtwPoints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Geometry2D</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Geometry2D.html</Path>
+    <Anchor>a0b01b51c41789623f2cd7a0a2a66f462</Anchor>
     <Abstract>Compute the distance between two points.</Abstract>
   </Token>
   <Token>
@@ -6630,6 +6672,94 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>multiscale::AdditionOperation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::AdditionOperation</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1AdditionOperation.html</Path>
+    <Abstract>Functor representing an addition operation.</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::AdditionOperation</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1AdditionOperation.html</Path>
+    <Anchor>a993d628f06850d90e3550a651a38a158</Anchor>
+    <Abstract>Add the two operands.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::DivisionOperation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::DivisionOperation</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1DivisionOperation.html</Path>
+    <Abstract>Functor representing a division operation.</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::DivisionOperation</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1DivisionOperation.html</Path>
+    <Anchor>a97e69f1430caafa87ce3ae1e6a4883e2</Anchor>
+    <Abstract>Divide the two operands.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::MultiplicationOperation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::MultiplicationOperation</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiplicationOperation.html</Path>
+    <Abstract>Functor representing a multiplication operation.</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::MultiplicationOperation</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1MultiplicationOperation.html</Path>
+    <Anchor>a0b4db7b28b8ee6db8bd5f76292479372</Anchor>
+    <Abstract>Multiply the two operands.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::SubtractionOperation</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::SubtractionOperation</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1SubtractionOperation.html</Path>
+    <Abstract>Functor representing a subtraction operation.</Abstract>
+    <DeclaredIn>Numeric.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::SubtractionOperation</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1SubtractionOperation.html</Path>
+    <Anchor>a5d1b6924b654d66861d28991d51f884d</Anchor>
+    <Abstract>Subtrace the two operands.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::Numeric</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -6674,6 +6804,72 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>average</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a35c4c545f6ef78c31c94a85b9f070ee5</Anchor>
+    <Abstract>Return the average (arithmetic mean) of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>covariance</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a574e8c0824ad8e441898e4857816585a</Anchor>
+    <Abstract>Return the covariance for the provided collections of values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>geometricMean</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a53023741b672ebb4790bc2e89dbe1ee9</Anchor>
+    <Abstract>Return the geometric mean of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>harmonicMean</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a7ed4c2e74893a486e639051abfbbcdb7</Anchor>
+    <Abstract>Return the harmonic mean of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>kurtosis</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a71ef1e4e0e845b64bcb06a27b9f8fbd3</Anchor>
+    <Abstract>Return the kurtosis of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>log</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a27b50deac29d8aca5c41c8b19fba43e9</Anchor>
+    <Abstract>Return the logarithm of a number considering the given base.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>maximum</Name>
       <APILanguage>cpp</APILanguage>
       <Type>clm</Type>
@@ -6682,6 +6878,94 @@
     <Path>classmultiscale_1_1Numeric.html</Path>
     <Anchor>a54d5578d5980315b7bade31a5655cd72</Anchor>
     <Abstract>Return the maximum of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>maximum</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>ab55b4d890c6221a8e10b37a0e5f2cbdc</Anchor>
+    <Abstract>Return the maximum of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>median</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a254f9df60a269739a1bfd5e7c383aed2</Anchor>
+    <Abstract>Return the median of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>mode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a09dc6e20116ac163389d3b07a99618e1</Anchor>
+    <Abstract>Return the mode of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>minimum</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a1ba7305dcaa1d1baf17946beb233145d</Anchor>
+    <Abstract>Return the minimum of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>percentile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>aff0c6b0c3d82bec3761a5e2d08394513</Anchor>
+    <Abstract>Return the p-th percentile of the provided set of values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>product</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>af07966e00665420d17a8f4d2cd1d74b4</Anchor>
+    <Abstract>Return the product of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>quartile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a127a2b3e5e659b4e493767ba23fc45da</Anchor>
+    <Abstract>Return the q-th quartile of the provided set of values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>skew</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a3e6b145db3ae9d7d21c3992353211125</Anchor>
+    <Abstract>Return the skew of the provided numbers.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -6696,6 +6980,215 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>standardDeviation</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>aa842f3143ada026759ec0474816c97ae</Anchor>
+    <Abstract>Return the standard deviation of the provided set of values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sum</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>aca9366c38b9b992793dd364b8e421bbd</Anchor>
+    <Abstract>Return the sum of the provided numbers.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>variance</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a91bf7963069d7a51f01dff965508039c</Anchor>
+    <Abstract>Return the variance of the provided set of values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeKurtosisFirstTerm</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a1621cda906f63dd3c3866047ef85fefc</Anchor>
+    <Abstract>Compute the kurtosis first term considering the given number of values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeKurtosisMiddleTerm</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a4b78b74100f02ec7239c53a34431a602</Anchor>
+    <Abstract>Compute the kurtosis middle term considering the given values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeKurtosisLastTerm</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a7c1b060479a2a90f61f55d3a4974f4b8</Anchor>
+    <Abstract>Compute the kurtosis last term considering the given number of values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeQuartileValue</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a4189a889b6207303bfc977f6e0b1218d</Anchor>
+    <Abstract>Compute the quartile for the given collection of values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeSkewFirstTerm</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a5daee6bbc3b6eb9a10db03a7b212af3b</Anchor>
+    <Abstract>Return the skew first term considering the given values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>computeSkewLastTerm</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>ac62cbaf1b9aaceae09909a99fd3e7c55</Anchor>
+    <Abstract>Return the skew last term considering the given values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>mode</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a34de887efd74a0b761ce8e4cd7bf6f82</Anchor>
+    <Abstract>Compute the mode for the provided values.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>applyOperation</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a6fe5731e0a4b2728bd4827b564102eb3</Anchor>
+    <Abstract>Apply the operation on the given operands and throw an exception in case of overflow.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>resetOverflowUnderflowFlags</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a5b2a0b5b4aaf837d3d6cc8c3d41d445b</Anchor>
+    <Abstract>Reset the overflow and underflow flags.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>areOverflowUnderflowFlagsSet</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a096d5367722cb8571ece2bfdb800cea5</Anchor>
+    <Abstract>Reset the overflow and underflow flags.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateLogNumberAndBase</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a552ccfdcef70918e416191eecaa94481</Anchor>
+    <Abstract>Check if the number and the base are positive real numbers, and the base is additionally different fr...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateLogNumber</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a284b70a2cd738a3f37a45439aeb0934c</Anchor>
+    <Abstract>Check if the number is a positive real number.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateLogBase</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a5d8734939e6074e75f6363ac4cfb8d45</Anchor>
+    <Abstract>Check if the base is a positive real number different from 1.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validatePercentile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>abe940f7b4f7320912b34590d8297ab7e</Anchor>
+    <Abstract>Check if the value of the percentile is between 0 and 100.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>validateQuartile</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>aac8bb87dfc3d3f039089c7b1b5225641</Anchor>
+    <Abstract>Check if the value of the quartile is either 25, 50 or 75.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>isPositive</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>ac35688ef6f37f33cdf8f91999c07f414</Anchor>
+    <Abstract>Check if the given number is positive.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>epsilon</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -6703,6 +7196,96 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1Numeric.html</Path>
     <Anchor>ac66cc2092ff149af068ac93aa3a6cc51</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_LOG_BASE_START</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a551052e6be615efea82ea046ba178010</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_LOG_BASE_END</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a291c98ea0c6e6c4042fe9ecc4af0443a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_LOG_NUMBER_START</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a88ca9309ade745700dacbdc7c0d713f2</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_LOG_NUMBER_END</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a2f61b82d42049e175a8d34cd75966c6c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_OVERFLOW_UNDERFLOW</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>aa56bde8322d97ccc99c252b951d44a9d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_PERCENTILE_VALUE_START</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a3bdb010188c74dc7570f950539df5e93</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_PERCENTILE_VALUE_END</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>a0f89f3a8ecbc3709bac3f04b83819bf6</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_QUARTILE_VALUE_START</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>ac76a6a6f1fa8abae2855f4fed0f0d97e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ERR_QUARTILE_VALUE_END</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::Numeric</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1Numeric.html</Path>
+    <Anchor>ac63a2d1c105ab47208d6c40827f9769c</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -12265,6 +12848,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Difference</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>multiscale::verification</Scope>
+    </TokenIdentifier>
+    <Path>namespacemultiscale_1_1verification.html</Path>
+    <Anchor>a99b00bfdd7a4dcf957e787649946b624ab1ea47a0b639066e578fdc8e8607c9a3</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Intersection</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>multiscale::verification</Scope>
+    </TokenIdentifier>
+    <Path>namespacemultiscale_1_1verification.html</Path>
+    <Anchor>a99b00bfdd7a4dcf957e787649946b624a2d4c98bf93b1e11f867093bfe0d6e351</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Union</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>econst</Type>
+      <Scope>multiscale::verification</Scope>
+    </TokenIdentifier>
+    <Path>namespacemultiscale_1_1verification.html</Path>
+    <Anchor>a99b00bfdd7a4dcf957e787649946b624a28813d4e436e72ed8bc1f2ea34ad8d97</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>Clusteredness</Name>
       <APILanguage>cpp</APILanguage>
       <Type>econst</Type>
@@ -12526,17 +13139,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::AndConstraintAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1AndConstraintAttribute.html</Path>
-    <Anchor>abfbd74192b8fad37b5bb0d0fb6a82daa</Anchor>
-    <Abstract>Filter the set of spatial entities for a timepoint considering the given constraint(s)</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>constraint</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -12727,18 +13329,18 @@
       <Scope>multiscale::verification::BinaryNumericMeasureAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1BinaryNumericMeasureAttribute.html</Path>
-    <Anchor>aa224015a165064a6ae654a6dde9eb8ce</Anchor>
+    <Anchor>aaf0c015407b9c6954da63c72b3755c6f</Anchor>
     <Abstract>Return the binary numeric measure type.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>binaryNumericMeasure</Name>
+      <Name>binaryNumericMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::BinaryNumericMeasureAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1BinaryNumericMeasureAttribute.html</Path>
-    <Anchor>ad44b4082d07a33b39fb9bba273293c6d</Anchor>
+    <Anchor>a28274e93c56acd85a20043fc206120f7</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -12750,17 +13352,6 @@
     <Path>classmultiscale_1_1verification_1_1BinaryNumericNumericAttribute.html</Path>
     <Abstract>Class for representing a binary numeric numeric measure attribute.</Abstract>
     <DeclaredIn>BinaryNumericNumericAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::BinaryNumericNumericAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1BinaryNumericNumericAttribute.html</Path>
-    <Anchor>a5db862d67e811b566fac2a71061fe38c</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -12802,17 +13393,6 @@
     <Path>classmultiscale_1_1verification_1_1BinarySubsetAttribute.html</Path>
     <Abstract>Class for representing a binary subset attribute.</Abstract>
     <DeclaredIn>BinarySubsetAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::BinarySubsetAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1BinarySubsetAttribute.html</Path>
-    <Anchor>a4e91d56a5f9fdecd2914ee7d030c6dbf</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -12868,13 +13448,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>binarySubsetMeasure</Name>
+      <Name>binarySubsetMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::BinarySubsetMeasureAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1BinarySubsetMeasureAttribute.html</Path>
-    <Anchor>a1659631b55db26c227b834084f866b3e</Anchor>
+    <Anchor>a4335df1d83edb33a42d87053e95b6434</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -12895,18 +13475,18 @@
       <Scope>multiscale::verification::ComparatorAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1ComparatorAttribute.html</Path>
-    <Anchor>a54bd9aefb16aea141da14b9f1b44172e</Anchor>
+    <Anchor>a9d0577a0df73906dff2dbf277c58e0a5</Anchor>
     <Abstract>Return the comparator type.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>comparator</Name>
+      <Name>comparatorType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::ComparatorAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1ComparatorAttribute.html</Path>
-    <Anchor>a44b47659c38a1be45280b2a5122541be</Anchor>
+    <Anchor>afef6c2e87fe165896ca0c69331570611</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -12918,17 +13498,6 @@
     <Path>classmultiscale_1_1verification_1_1ConstraintAttribute.html</Path>
     <Abstract>Class for representing a constraint attribute.</Abstract>
     <DeclaredIn>ConstraintAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::ConstraintAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1ConstraintAttribute.html</Path>
-    <Anchor>a38310c22c5509bde05cc10326de5d548</Anchor>
-    <Abstract>Filter the set of spatial entities for a timepoint considering the given constraint(s)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -12949,38 +13518,6 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1ConstraintAttribute.html</Path>
     <Anchor>a7356c7c12aabb7243fd3d4dd65189a79</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::verification::ConstraintEvaluator</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::verification::ConstraintEvaluator</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1ConstraintEvaluator.html</Path>
-    <Abstract>Abstract class used for evaluating constraints.</Abstract>
-    <DeclaredIn>ConstraintEvaluator.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>~ConstraintEvaluator</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::ConstraintEvaluator</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1ConstraintEvaluator.html</Path>
-    <Anchor>ad99f2f543d799d41e9f66bc2046fde12</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::ConstraintEvaluator</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1ConstraintEvaluator.html</Path>
-    <Anchor>ac3b34bd2d1b20da8693b680b34e35505</Anchor>
-    <Abstract>Filter the set of spatial entities for a timepoint considering the given constraint(s)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -13036,17 +13573,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::EquivalenceConstraintAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1EquivalenceConstraintAttribute.html</Path>
-    <Anchor>ad7a14083440669f31174f7b0390c1534</Anchor>
-    <Abstract>Filter the set of spatial entities for a timepoint considering the given constraint(s)</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>constraint</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -13086,17 +13612,6 @@
     <Path>classmultiscale_1_1verification_1_1FilterSubsetAttribute.html</Path>
     <Abstract>Class for representing a filter subset attribute.</Abstract>
     <DeclaredIn>FilterSubsetAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::FilterSubsetAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1FilterSubsetAttribute.html</Path>
-    <Anchor>a812205147a414cd9bb9f696c87260d54</Anchor>
-    <Abstract>Compute a subset of spatial entities for the given timepoint.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -13210,17 +13725,6 @@
     <Path>classmultiscale_1_1verification_1_1ImplicationConstraintAttribute.html</Path>
     <Abstract>Class for representing an &amp;quot;implication&amp;quot; constraint attribute.</Abstract>
     <DeclaredIn>ImplicationConstraintAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::ImplicationConstraintAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1ImplicationConstraintAttribute.html</Path>
-    <Anchor>a4f07487a4c4d78c8602a7ca75f0f93fb</Anchor>
-    <Abstract>Filter the set of spatial entities for a timepoint considering the given constraint(s)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -13380,17 +13884,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::NotConstraintAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1NotConstraintAttribute.html</Path>
-    <Anchor>afaabde096538c2a1c1eb78685dc54f97</Anchor>
-    <Abstract>Filter the set of spatial entities for a timepoint considering the given constraint(s)</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>constraint</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -13422,38 +13915,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>multiscale::verification::NumericEvaluator</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::verification::NumericEvaluator</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
-    <Abstract>Abstract class used for evaluation numeric measures.</Abstract>
-    <DeclaredIn>NumericEvaluator.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>~NumericEvaluator</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::NumericEvaluator</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
-    <Anchor>ad6aedc1ea13aeef11e8774c8e17a7832</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::NumericEvaluator</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
-    <Anchor>a3138966813729ec08707747987facf59</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>multiscale::verification::NumericMeasureAttribute</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -13462,17 +13923,6 @@
     <Path>classmultiscale_1_1verification_1_1NumericMeasureAttribute.html</Path>
     <Abstract>Class for representing a numeric measure attribute.</Abstract>
     <DeclaredIn>NumericMeasureAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::NumericMeasureAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1NumericMeasureAttribute.html</Path>
-    <Anchor>ab9f66168d93ca10bf74a03223c711650</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -13538,17 +13988,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::NumericSpatialAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1NumericSpatialAttribute.html</Path>
-    <Anchor>aadb1518325c310dda2b0efead390fb08</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>numericSpatialMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -13611,17 +14050,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::NumericStateVariableAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1NumericStateVariableAttribute.html</Path>
-    <Anchor>a7ad41e52106e95e9b08565c59b044d56</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>stateVariable</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -13640,17 +14068,6 @@
     <Path>classmultiscale_1_1verification_1_1OrConstraintAttribute.html</Path>
     <Abstract>Class for representing an &amp;quot;or&amp;quot; constraint attribute.</Abstract>
     <DeclaredIn>OrConstraintAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::OrConstraintAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1OrConstraintAttribute.html</Path>
-    <Anchor>a6ba5c9c0e0462edbedb5a53ece23672d</Anchor>
-    <Abstract>Filter the set of spatial entities for a timepoint considering the given constraint(s)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -13693,17 +14110,6 @@
     <Path>classmultiscale_1_1verification_1_1PrimaryConstraintAttribute.html</Path>
     <Abstract>Class for representing a primary constraint attribute.</Abstract>
     <DeclaredIn>PrimaryConstraintAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::PrimaryConstraintAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1PrimaryConstraintAttribute.html</Path>
-    <Anchor>a133fd4cc8cffbfc37c14131bf6826587</Anchor>
-    <Abstract>Filter the set of spatial entities for a timepoint considering the given constraint(s)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -13833,17 +14239,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::QuaternarySubsetAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1QuaternarySubsetAttribute.html</Path>
-    <Anchor>a2177c7454e867ffad73f2ba53281f7b6</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>quaternarySubsetMeasure</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -13916,13 +14311,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>quaternarySubsetMeasure</Name>
+      <Name>quaternarySubsetMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::QuaternarySubsetMeasureAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1QuaternarySubsetMeasureAttribute.html</Path>
-    <Anchor>a2f1d97dea66746ecba3adfcf1ea9b30f</Anchor>
+    <Anchor>a2fb33362be236ae4df6fead93e429c89</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -13948,13 +14343,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>spatialMeasure</Name>
+      <Name>spatialMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::SpatialMeasureAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1SpatialMeasureAttribute.html</Path>
-    <Anchor>a8178b0c6d7836ce877ed64f8cde370bf</Anchor>
+    <Anchor>a0c81eaf59809ddc62f0c00b020e998d7</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14042,17 +14437,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::SubsetAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1SubsetAttribute.html</Path>
-    <Anchor>ae01690496dbae50bc9552b9f05eb5025</Anchor>
-    <Abstract>Compute a subset of spatial entities for the given timepoint.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>subset</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -14060,38 +14444,6 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1SubsetAttribute.html</Path>
     <Anchor>a124df303e9232059ef718a9d180b3b10</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>multiscale::verification::SubsetEvaluator</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>multiscale::verification::SubsetEvaluator</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1SubsetEvaluator.html</Path>
-    <Abstract>Abstract class used for evaluating subsets.</Abstract>
-    <DeclaredIn>SubsetEvaluator.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>~SubsetEvaluator</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::SubsetEvaluator</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1SubsetEvaluator.html</Path>
-    <Anchor>aaedbd250494b1b8e19b68632f3dd4128</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::SubsetEvaluator</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1SubsetEvaluator.html</Path>
-    <Anchor>a74e959ee7d4c4380f10370ef62af2c58</Anchor>
-    <Abstract>Compute a subset of spatial entities for the given timepoint.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14117,13 +14469,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>subsetSpecific</Name>
+      <Name>subsetSpecificType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::SubsetSpecificAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1SubsetSpecificAttribute.html</Path>
-    <Anchor>ab6e9cb33cd6663a43c774bed1c7305d3</Anchor>
+    <Anchor>ad63c03081828cfd9dabef466551f4d92</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14135,17 +14487,6 @@
     <Path>classmultiscale_1_1verification_1_1TernarySubsetAttribute.html</Path>
     <Abstract>Class for representing a ternary subset attribute.</Abstract>
     <DeclaredIn>TernarySubsetAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::TernarySubsetAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1TernarySubsetAttribute.html</Path>
-    <Anchor>ab0a19728405a4c586a23438bc925ebe6</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14211,13 +14552,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ternarySubsetMeasure</Name>
+      <Name>ternarySubsetMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::TernarySubsetMeasureAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1TernarySubsetMeasureAttribute.html</Path>
-    <Anchor>a85be31b2949749eb97b86fe7f50fea19</Anchor>
+    <Anchor>ad2838214d44a4acb1288803076dc8b1a</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14229,17 +14570,6 @@
     <Path>classmultiscale_1_1verification_1_1UnaryConstraintAttribute.html</Path>
     <Abstract>Class for representing a &amp;quot;unary&amp;quot; constraint attribute.</Abstract>
     <DeclaredIn>UnaryConstraintAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::UnaryConstraintAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1UnaryConstraintAttribute.html</Path>
-    <Anchor>a809fbf1a6c029e83fea813abde46f291</Anchor>
-    <Abstract>Filter the set of spatial entities for a timepoint considering the given constraint(s)</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14290,18 +14620,18 @@
       <Scope>multiscale::verification::UnaryNumericMeasureAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1UnaryNumericMeasureAttribute.html</Path>
-    <Anchor>ac6a1ac4e75dd958ded21eaae88b01ded</Anchor>
+    <Anchor>a6dbdac126bb6b756ceb661a8e082bea3</Anchor>
     <Abstract>Return the unary numeric measure type.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>unaryNumericMeasure</Name>
+      <Name>unaryNumericMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::UnaryNumericMeasureAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1UnaryNumericMeasureAttribute.html</Path>
-    <Anchor>a2acf1ad03a8cc82ef15d38717f19bf28</Anchor>
+    <Anchor>a686c76cc8b4f1d565fc3e60a645a4090</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14313,17 +14643,6 @@
     <Path>classmultiscale_1_1verification_1_1UnaryNumericNumericAttribute.html</Path>
     <Abstract>Class for representing a unary numeric numeric measure attribute.</Abstract>
     <DeclaredIn>UnaryNumericNumericAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::UnaryNumericNumericAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1UnaryNumericNumericAttribute.html</Path>
-    <Anchor>ae9923e73b69f5b01797dcff6abc57215</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14355,17 +14674,6 @@
     <Path>classmultiscale_1_1verification_1_1UnarySubsetAttribute.html</Path>
     <Abstract>Class for representing a unary subset attribute.</Abstract>
     <DeclaredIn>UnarySubsetAttribute.hpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>evaluate</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::UnarySubsetAttribute</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1UnarySubsetAttribute.html</Path>
-    <Anchor>adb63021c2088d9b9c14e963f5f62c688</Anchor>
-    <Abstract>Evaluate the truth value of a numeric measure considering the given time point.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14411,13 +14719,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>unarySubsetMeasure</Name>
+      <Name>unarySubsetMeasureType</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::UnarySubsetMeasureAttribute</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1UnarySubsetMeasureAttribute.html</Path>
-    <Anchor>ae24b7a6f63897e6bcd3b5b0df232c71b</Anchor>
+    <Anchor>ad908c12dbc33b6bc9cce42a103b3bd38</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14479,7 +14787,7 @@
       <Scope>multiscale::verification::ParserGrammarExceptionHandler</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1ParserGrammarExceptionHandler.html</Path>
-    <Anchor>a8ce9633d3622b3eaa0dee60a184cb41d</Anchor>
+    <Anchor>a0020999ea25b1154c960aff439ce6c0b</Anchor>
     <Abstract>Handle the exception when an unexpected token was encountered.</Abstract>
   </Token>
   <Token>
@@ -14490,7 +14798,7 @@
       <Scope>multiscale::verification::ParserGrammarExceptionHandler</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1ParserGrammarExceptionHandler.html</Path>
-    <Anchor>af2cfe3450a79efc00c23fbee4b584e2e</Anchor>
+    <Anchor>ae9dd28821e8fbe3b1646735b92d5773f</Anchor>
     <Abstract>Handle the exception when an invalid probability was encountered.</Abstract>
   </Token>
   <Token>
@@ -14501,7 +14809,7 @@
       <Scope>multiscale::verification::ParserGrammarExceptionHandler</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1ParserGrammarExceptionHandler.html</Path>
-    <Anchor>a888f78b6b50a5ff33c3c335d52030932</Anchor>
+    <Anchor>a3110144503020d298c5273c4b3120e5e</Anchor>
     <Abstract>Handle the exception when wrong input is provided.</Abstract>
   </Token>
   <Token>
@@ -14512,7 +14820,7 @@
       <Scope>multiscale::verification::ParserGrammarExceptionHandler</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1ParserGrammarExceptionHandler.html</Path>
-    <Anchor>a479352b7c675b0a44ad2fe02bd139eea</Anchor>
+    <Anchor>a652ab354dbff1fae541dc602efb84935</Anchor>
     <Abstract>Handle the exception when extra input is provided.</Abstract>
   </Token>
   <Token>
@@ -14523,8 +14831,8 @@
       <Scope>multiscale::verification::ParserGrammarExceptionHandler</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1ParserGrammarExceptionHandler.html</Path>
-    <Anchor>a35ad9966b409c9ae8fbe07f17536ed88</Anchor>
-    <Abstract>Handle the case where an unexpected token was found in the string.</Abstract>
+    <Anchor>a56f6e1c9af1255ae527b67ccfb9d3a09</Anchor>
+    <Abstract>Handle the case where an unexpected token was found in the std::string.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14534,8 +14842,8 @@
       <Scope>multiscale::verification::ParserGrammarExceptionHandler</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1ParserGrammarExceptionHandler.html</Path>
-    <Anchor>aa77efba3509eb86d085c10f6aac46118</Anchor>
-    <Abstract>Handle the case where an expected token was not encountered at the end of the string.</Abstract>
+    <Anchor>a54245b6445349ebad62f381a14892747</Anchor>
+    <Abstract>Handle the case where an expected token was not encountered at the end of the std::string.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14787,27 +15095,7 @@
       <Scope>multiscale::verification::SpatialTemporalException</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1SpatialTemporalException.html</Path>
-    <Anchor>a204c6c4e838555c37f8b73d7edfb9ff6</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SpatialTemporalException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::SpatialTemporalException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1SpatialTemporalException.html</Path>
     <Anchor>a9552f272629aa0cd054ec1156023df3a</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SpatialTemporalException</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>multiscale::verification::SpatialTemporalException</Scope>
-    </TokenIdentifier>
-    <Path>classmultiscale_1_1verification_1_1SpatialTemporalException.html</Path>
-    <Anchor>a4f7b0b878d6bdc01b13af58501339b44</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14839,8 +15127,8 @@
       <Scope>multiscale::verification::ProbabilityErrorHandler</Scope>
     </TokenIdentifier>
     <Path>structmultiscale_1_1verification_1_1ProbabilityErrorHandler.html</Path>
-    <Anchor>a692d06248d2cc4fb8d7c96350b4ee953</Anchor>
-    <Abstract>Convert the expected token to a string.</Abstract>
+    <Anchor>a549012045af68c489b01d117d99c48e3</Anchor>
+    <Abstract>Convert the expected token to a std::string.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -14893,8 +15181,8 @@
       <Scope>multiscale::verification::UnexpectedTokenErrorHandler</Scope>
     </TokenIdentifier>
     <Path>structmultiscale_1_1verification_1_1UnexpectedTokenErrorHandler.html</Path>
-    <Anchor>a2c7b4d73add6a13ece76ce666e85f812</Anchor>
-    <Abstract>Convert the expected token to a string.</Abstract>
+    <Anchor>a84b52ead7a2a1f2a46c407f84af4dcde</Anchor>
+    <Abstract>Convert the expected token to a std::string.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -15132,13 +15420,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>getAngleDegrees</Name>
+      <Name>getAngle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::verification::SpatialEntity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1SpatialEntity.html</Path>
-    <Anchor>a442d8b09cbe0f6df92a4e2a0551d5d47</Anchor>
+    <Anchor>a629c7e31f9d0b6f3dd555795eaeeeeb5</Anchor>
     <Abstract>Get the value of the angle in degrees.</Abstract>
   </Token>
   <Token>
@@ -15253,13 +15541,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>setAngleDegrees</Name>
+      <Name>setAngle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::verification::SpatialEntity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1SpatialEntity.html</Path>
-    <Anchor>ab181c71085bcf00e0511881fdc317b3e</Anchor>
+    <Anchor>a25b077c1bb56a8e7ca44420df694bb36</Anchor>
     <Abstract>Set the value of the angle in degrees.</Abstract>
   </Token>
   <Token>
@@ -15319,6 +15607,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>operator&lt;</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::SpatialEntity</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SpatialEntity.html</Path>
+    <Anchor>a877a02ed679f0e9b2400d3caf60ac82d</Anchor>
+    <Abstract>Overload the &amp;quot;&amp;lt;&amp;quot; operator for spatial entities.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>clusteredness</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -15369,13 +15668,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>angleDegrees</Name>
+      <Name>angle</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::SpatialEntity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1SpatialEntity.html</Path>
-    <Anchor>a4330e7045c66972f76eaf5591f2f9ab7</Anchor>
+    <Anchor>a7e7f33f6ea8c0e3aa4d78256153915fe</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -15440,13 +15739,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>validateAngleDegreesValue</Name>
+      <Name>validateAngleValue</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::verification::SpatialEntity</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1SpatialEntity.html</Path>
-    <Anchor>aa5eabe3f3a6d9ed86490f9dc696a0186</Anchor>
+    <Anchor>a02f3b5f8bc960074622b580b4a22eeef</Anchor>
     <Abstract>Check if the provided value is between 0 and 360 and throw an exception if it is not.</Abstract>
   </Token>
   <Token>
@@ -15871,6 +16170,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>TimePoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>ace916df23aed8ddb6a660940cde7ad4c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>~TimePoint</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -15900,6 +16209,61 @@
     <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
     <Anchor>af7136c369d494fed6aa3c6882be94508</Anchor>
     <Abstract>Set the value of the timepoint.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getConsideredSpatialEntityType</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>ab00f41e5aff119fbfa53860a9bc5becc</Anchor>
+    <Abstract>Get the considered spatial entity type.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setConsideredSpatialEntityType</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>ad47ec7b664620d0e47d7a8469ceebf74</Anchor>
+    <Abstract>Set the considered spatial entity type.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>numberOfSpatialEntities</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>acb14347d6c83d83351bb3a2e0aeedc76</Anchor>
+    <Abstract>Get the number of considered spatial entities.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avgClusteredness</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>acdcd8ea97a4c60474a4febfa2f62d41d</Anchor>
+    <Abstract>Get the clusteredness of the considered collection of spatial entities.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avgDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>a47cdf7aaed417afdcb54a95b28804ea7</Anchor>
+    <Abstract>Get the density of the considered collection of spatial entities.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -15953,8 +16317,8 @@
       <Scope>multiscale::verification::TimePoint</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
-    <Anchor>ab427a4334fa135dfcc0b51573181bcc5</Anchor>
-    <Abstract>Get the list of clusters.</Abstract>
+    <Anchor>a2680778ad18491484fc3b6aa91738b94</Anchor>
+    <Abstract>Get the set of clusters.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -15964,8 +16328,19 @@
       <Scope>multiscale::verification::TimePoint</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
-    <Anchor>a0584d68b3157dfe5e85c4d40477938bc</Anchor>
-    <Abstract>Get the list of regions.</Abstract>
+    <Anchor>af4688aa7dd5c3aa60f6cd0f1f7fc5b1e</Anchor>
+    <Abstract>Get the set of regions.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getConsideredSpatialEntities</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>a636d060ec5ddf5d04816fbaaadc9a64b</Anchor>
+    <Abstract>Get the collection of considered spatial entities.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -15980,13 +16355,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>timePointDifference</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>a4704ec17e35a658e47ac580d9cc172c7</Anchor>
+    <Abstract>Compute the difference of this timepoint and the given timepoint.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timePointIntersection</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>a229a76f5a3394f030130391923f5d862</Anchor>
+    <Abstract>Compute the intersection of this timepoint and the given timepoint.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timePointUnion</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>aafbd3272beb53a7188472127cbf9cac8</Anchor>
+    <Abstract>Compute the union of this timepoint and the given timepoint.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>removeCluster</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::verification::TimePoint</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
-    <Anchor>ad18fa3ff9ac32c8b8074e82b062c63c4</Anchor>
+    <Anchor>a8d8d9f8eb9c61750bbc37c2552c076b3</Anchor>
     <Abstract>Remove the cluster from the given position.</Abstract>
   </Token>
   <Token>
@@ -15997,19 +16405,96 @@
       <Scope>multiscale::verification::TimePoint</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
-    <Anchor>a510388835736e66058ea4ca80c5e2366</Anchor>
+    <Anchor>a9142dd868bac2b3aa78bb117ee47139e</Anchor>
     <Abstract>Remove the region from the given position.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>setConsideredSpatialEntityType</Name>
+      <Name>avgDistanceBetweenCentroids</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>multiscale::verification::TimePoint</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
-    <Anchor>ad47ec7b664620d0e47d7a8469ceebf74</Anchor>
-    <Abstract>Set the considered spatial entity type.</Abstract>
+    <Anchor>a6ee157de6834b4969c588b4c33424d1e</Anchor>
+    <Abstract>Compute the average Euclidean distance between the centroids of the given collection of spatial entit...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>avgDensity</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>adc686502f5d12a203a34be6d8b18ed16</Anchor>
+    <Abstract>Compute the density of the given collection of spatial entities.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timePointSetOperation</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>a7f7b4b9a28801db4c885373e0ca1a40d</Anchor>
+    <Abstract>Compute the given set operation of this timepoint and the given timepoint considering the given set o...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timePointSetOperationAll</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>adfae690aecebc6f47ebece8e8d302030</Anchor>
+    <Abstract>Compute the given set operation of this timepoint and the given timepoint considering all spatial ent...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timePointSetOperationClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>ae0f7934073fc97da7178d73f0820d202</Anchor>
+    <Abstract>Compute the given set operation of this timepoint and the given timepoint considering clusters...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timePointSetOperationRegions</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>a4665be6313783fbfbb48e838263b4cfd</Anchor>
+    <Abstract>Compute the given set operation of this timepoint and the given timepoint considering regions...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>clustersSetOperation</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>a0159cc8ba72cf8b848b65440a082bae3</Anchor>
+    <Abstract>Compute the given set operation of this set of clusters and the one provided by the given timepoint...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>regionsSetOperation</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::TimePoint</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
+    <Anchor>a191d4bb835f9af6510280314036dafbb</Anchor>
+    <Abstract>Compute the given set operation of this set of regions and the one provided by the given timepoint...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -16029,7 +16514,7 @@
       <Scope>multiscale::verification::TimePoint</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
-    <Anchor>a8f12000b48910993da53ab2589453763</Anchor>
+    <Anchor>ade2aac6594beee780d59f4423230181d</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -16039,7 +16524,7 @@
       <Scope>multiscale::verification::TimePoint</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1TimePoint.html</Path>
-    <Anchor>a174ca2230eac3c4481a530c3f0d40067</Anchor>
+    <Anchor>abcf0c5d00e01e34c374090078faac6de</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -17749,6 +18234,267 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>multiscale::verification::ComparatorEvaluator</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::verification::ComparatorEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ComparatorEvaluator.html</Path>
+    <Abstract>Class for evaluating comparison expressions.</Abstract>
+    <DeclaredIn>ComparatorEvaluator.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::ComparatorEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ComparatorEvaluator.html</Path>
+    <Anchor>a1d1d6430a082d53040966c45705604be</Anchor>
+    <Abstract>Compare two elements using a ComparatorType comparator.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::verification::ConstraintEvaluator</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::verification::ConstraintEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintEvaluator.html</Path>
+    <Abstract>Class for evaluating constraint expressions.</Abstract>
+    <DeclaredIn>ConstraintEvaluator.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>filter</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::ConstraintEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintEvaluator.html</Path>
+    <Anchor>a8c2d5409a5d42343c2f5616e803b6a62</Anchor>
+    <Abstract>Filter the timepoint considering the given constraints.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>filterClusters</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::ConstraintEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintEvaluator.html</Path>
+    <Anchor>aa11a7b0ff07065a5a19b443efb89ce18</Anchor>
+    <Abstract>Filter the clusters considering the given timepoint and constraints.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>filterRegions</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::ConstraintEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintEvaluator.html</Path>
+    <Anchor>a51da5acc6b8283d918c21563422a3b8c</Anchor>
+    <Abstract>Filter the regions considering the given timepoint and constraints.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::verification::ConstraintVisitor</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Abstract>Class used to evaluate constraints.</Abstract>
+    <DeclaredIn>ConstraintVisitor.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ConstraintVisitor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>aae05eb1e64e1b785c878fbd78dfa6bbb</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a5a28802042a2b513bf9fd62e5ef84410</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the Nil alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a978f40cec0c161307fc40a411d50ed28</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the ConstraintAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a5647e035326e690c96a9042cc9e364de</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the OrConstraintAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a2d4552360c2cf74c6039069cf1a4680f</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the AndConstraintAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a2b57e5962dcd392f07f0942abf290930</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the ImplicationConstraintAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a27316a3042600e9a8ba73dfe7914e0e7</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the EquivalenceConstraintAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a6b67607a5716b283afd356cd5e8aeaf9</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the PrimaryConstraintAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>ac5ddf1216f59f4c7f496454616b68fdc</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the NotConstraintAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a92c43924b6e01011ba5f149ff9a88dcf</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the UnaryConstraintAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>aa42a5787c6e02a399f9745565e2c32e4</Anchor>
+    <Abstract>Evaluate the constraint considering the given timepoint.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a25bb01a99d00505b186cb0117888ece4</Anchor>
+    <Abstract>Evaluate the primary constraint considering the given timepoints.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluateNextConstraints</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a1dd26a5b2ff997043b3405330d03fd9c</Anchor>
+    <Abstract>Evaluate the next constraints.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluateUnaryConstraint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a86b3e5a2ed6c69db1c0f29b0cd471cec</Anchor>
+    <Abstract>Evaluate the unary constraint considering the given spatial measure, comparator, numeric measure and ...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluateNumericMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a267726f51ab7d1a8c5edb6e0f6d7673c</Anchor>
+    <Abstract>Evaluate the numeric measure considering the given timepoint.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialTimePoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>aa37093210225c37001f75fb7d8b595ae</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>constraintTimePoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::ConstraintVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1ConstraintVisitor.html</Path>
+    <Anchor>a88c5cfd89f807ce010c6a991a928bc13</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>multiscale::verification::LogicPropertyVisitor</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -17767,7 +18513,6 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1LogicPropertyVisitor.html</Path>
     <Anchor>af96489f9b9650dcbdfa169935bb3306a</Anchor>
-    <Abstract>Constructor with parameters for the class.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -18002,6 +18747,28 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>evaluateNumericMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::LogicPropertyVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1LogicPropertyVisitor.html</Path>
+    <Anchor>ab577b4939924d024acbecdf23f23792b</Anchor>
+    <Abstract>Evaluate the numeric measure considering the given spatial temporal trace.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluateNumericSpatialMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::LogicPropertyVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1LogicPropertyVisitor.html</Path>
+    <Anchor>a37649d15c4344ff825e6614560c34b07</Anchor>
+    <Abstract>Evaluate the numeric spatial measure considering the given spatial temporal trace.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>trace</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
@@ -18029,6 +18796,420 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1LogicPropertyVisitor.html</Path>
     <Anchor>a38cfd5e59abdda9ebdd9b225ba670ccf</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::verification::NumericEvaluator</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::verification::NumericEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
+    <Abstract>Class for evaluating numeric expressions.</Abstract>
+    <DeclaredIn>NumericEvaluator.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::NumericEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
+    <Anchor>a26334e8a703ff62856e523071114d3fe</Anchor>
+    <Abstract>Evaluate the given unary numeric expression.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::NumericEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
+    <Anchor>ae22319b6472c3fd55211b77b63c4e75b</Anchor>
+    <Abstract>Evaluate the given binary numeric expression.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::NumericEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
+    <Anchor>ad89b2843c2cfac7e2ce4e29908a271d7</Anchor>
+    <Abstract>Evaluate the given unary subset measure expression.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::NumericEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
+    <Anchor>a252c930e502723b2b704c8a9e04b79b4</Anchor>
+    <Abstract>Evaluate the given binary subset measure expression.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::NumericEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
+    <Anchor>a0f2b0f3fae349ea7eaf25ef5d2522dc1</Anchor>
+    <Abstract>Evaluate the given ternary subset measure expression.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::NumericEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericEvaluator.html</Path>
+    <Anchor>ac6244619673250d95e2c8e5232516c06</Anchor>
+    <Abstract>Evaluate the given quaternary subset measure expression.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::verification::NumericVisitor</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Abstract>Class for evaluating numeric measures.</Abstract>
+    <DeclaredIn>NumericVisitor.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>NumericVisitor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>abb394a980859ce4918bc83969355ede4</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>af380afce46f22d9833b232123d510c89</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the NumericMeasureAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>a81132bbe2d77340d532178559e6dc937</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the real number alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>a921fc6510e1edd607d6c7835c89972aa</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the NumericStateVariableAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>a1e4c22f9a6d2c53044481bdb453b94e5</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the NumericSpatialAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>a2b0fb706bb14e007808f4da628984318</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the UnaryNumericNumericAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>ad9391c244f06d26fc80085c00bff1253</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the BinaryNumericNumericAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>a60388c587c7195d9aefa272905fee02c</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the UnarySubsetAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>a6b2439c81d18cf3a05842bc1cbf61b65</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the BinarySubsetAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>a663a3d6017f94f80c22861ca6981d5f2</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the TernarySubsetAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>af73a3b52aa7d60b932e2db8e56a7d8a9</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the QuaternarySubsetAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>af632982f0a35c9c82c13055f25ad44b7</Anchor>
+    <Abstract>Evaluate the given numeric measure considering the timePoint field.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluateNumericSpatialMeasure</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>aa6d6525e2206bc35ab34c687f7d705ac</Anchor>
+    <Abstract>Evaluate the given numeric spatial measure considering the timePoint field.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timePoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::NumericVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1NumericVisitor.html</Path>
+    <Anchor>a934bfaee8c9a4b33128ab1187fa57c82</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::verification::SpatialEntityEvaluator</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::verification::SpatialEntityEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SpatialEntityEvaluator.html</Path>
+    <Abstract>Class used to evaluate spatial entities.</Abstract>
+    <DeclaredIn>SpatialEntityEvaluator.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::SpatialEntityEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SpatialEntityEvaluator.html</Path>
+    <Anchor>aa08297c1d498696cf48bc40980e03953</Anchor>
+    <Abstract>Evaluate the numeric spatial measure for the given spatial entity.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::verification::SpatialMeasureEvaluator</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::verification::SpatialMeasureEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SpatialMeasureEvaluator.html</Path>
+    <Abstract>Class for evaluating spatial measures.</Abstract>
+    <DeclaredIn>SpatialMeasureEvaluator.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::SpatialMeasureEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SpatialMeasureEvaluator.html</Path>
+    <Anchor>ab1d97e41cf2f819a43e46ae12a4c957f</Anchor>
+    <Abstract>Return the value of the spatial measure for the given spatial entity.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::verification::SubsetVisitor</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::verification::SubsetVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SubsetVisitor.html</Path>
+    <Abstract>Class used to evaluate subsets.</Abstract>
+    <DeclaredIn>SubsetVisitor.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SubsetVisitor</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::SubsetVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SubsetVisitor.html</Path>
+    <Anchor>a7742a53673668d3916570be26f0ce370</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::SubsetVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SubsetVisitor.html</Path>
+    <Anchor>afe58d4f0715ce319adc18a9618860cba</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the SubsetAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::SubsetVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SubsetVisitor.html</Path>
+    <Anchor>a6e73ee3ee78201415846090bd4787107</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the SubsetSpecificAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>operator()</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::SubsetVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SubsetVisitor.html</Path>
+    <Anchor>a0ab9368a6b4388e3e18a4d8a6008d474</Anchor>
+    <Abstract>Overloading the &amp;quot;()&amp;quot; operator for the FilterSubsetAttribute alternative.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>evaluate</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::SubsetVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SubsetVisitor.html</Path>
+    <Anchor>a9f11037395fd38e286ae0dfc27c78a5a</Anchor>
+    <Abstract>Evaluate the subset considering the given timepoint.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>setTimePointConsideredSpatialEntityType</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::SubsetVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SubsetVisitor.html</Path>
+    <Anchor>a28a4b766cfbf46dcf5f801ba0851aece</Anchor>
+    <Abstract>Set the considered spatial entity type for the given timepoint using the specific subset type...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>filterTimePoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::SubsetVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SubsetVisitor.html</Path>
+    <Anchor>a9ef3ca09e984f9bd2e951bc7c66daf16</Anchor>
+    <Abstract>Filter the given timepoint considering the provided constraint.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>timePoint</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::SubsetVisitor</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1SubsetVisitor.html</Path>
+    <Anchor>a6253c9511b54c70f2684d8598dbd1235</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>multiscale::verification::TimePointEvaluator</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>multiscale::verification::TimePointEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePointEvaluator.html</Path>
+    <Abstract>Class used to evaludate timepoints.</Abstract>
+    <DeclaredIn>TimePointEvaluator.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getSpatialMeasureValues</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::TimePointEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePointEvaluator.html</Path>
+    <Anchor>a75c5fcdc3b974c2706cc3510b4435674</Anchor>
+    <Abstract>Return the spatial measure values for all considered spatial entities in the given timepoint...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>getSpatialMeasureValues</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>clm</Type>
+      <Scope>multiscale::verification::TimePointEvaluator</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1TimePointEvaluator.html</Path>
+    <Anchor>af765886b42b8a44cf026566eac61f934</Anchor>
+    <Abstract>Return the spatial measure values for all considered spatial entities in the given timepoint...</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>

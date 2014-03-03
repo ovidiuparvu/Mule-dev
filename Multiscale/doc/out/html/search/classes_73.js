@@ -3,8 +3,10 @@ var searchData=
   ['silhouette',['Silhouette',['../classmultiscale_1_1analysis_1_1Silhouette.html',1,'multiscale::analysis']]],
   ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html',1,'multiscale::analysis']]],
   ['spatialentity',['SpatialEntity',['../classmultiscale_1_1verification_1_1SpatialEntity.html',1,'multiscale::verification']]],
+  ['spatialentityevaluator',['SpatialEntityEvaluator',['../classmultiscale_1_1verification_1_1SpatialEntityEvaluator.html',1,'multiscale::verification']]],
   ['spatialentitypseudo3d',['SpatialEntityPseudo3D',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html',1,'multiscale::analysis']]],
   ['spatialmeasureattribute',['SpatialMeasureAttribute',['../classmultiscale_1_1verification_1_1SpatialMeasureAttribute.html',1,'multiscale::verification']]],
+  ['spatialmeasureevaluator',['SpatialMeasureEvaluator',['../classmultiscale_1_1verification_1_1SpatialMeasureEvaluator.html',1,'multiscale::verification']]],
   ['spatialmeasuretypeparser',['SpatialMeasureTypeParser',['../structmultiscale_1_1verification_1_1SpatialMeasureTypeParser.html',1,'multiscale::verification']]],
   ['spatialnumericcomparisonattribute',['SpatialNumericComparisonAttribute',['../classmultiscale_1_1verification_1_1SpatialNumericComparisonAttribute.html',1,'multiscale::verification']]],
   ['spatialtemporalexception',['SpatialTemporalException',['../classmultiscale_1_1verification_1_1SpatialTemporalException.html',1,'multiscale::verification']]],
@@ -13,7 +15,8 @@ var searchData=
   ['statevariableattribute',['StateVariableAttribute',['../classmultiscale_1_1verification_1_1StateVariableAttribute.html',1,'multiscale::verification']]],
   ['stringmanipulator',['StringManipulator',['../classmultiscale_1_1StringManipulator.html',1,'multiscale']]],
   ['subsetattribute',['SubsetAttribute',['../classmultiscale_1_1verification_1_1SubsetAttribute.html',1,'multiscale::verification']]],
-  ['subsetevaluator',['SubsetEvaluator',['../classmultiscale_1_1verification_1_1SubsetEvaluator.html',1,'multiscale::verification']]],
   ['subsetspecificattribute',['SubsetSpecificAttribute',['../classmultiscale_1_1verification_1_1SubsetSpecificAttribute.html',1,'multiscale::verification']]],
-  ['subsetspecifictypeparser',['SubsetSpecificTypeParser',['../structmultiscale_1_1verification_1_1SubsetSpecificTypeParser.html',1,'multiscale::verification']]]
+  ['subsetspecifictypeparser',['SubsetSpecificTypeParser',['../structmultiscale_1_1verification_1_1SubsetSpecificTypeParser.html',1,'multiscale::verification']]],
+  ['subsetvisitor',['SubsetVisitor',['../classmultiscale_1_1verification_1_1SubsetVisitor.html',1,'multiscale::verification']]],
+  ['subtractionoperation',['SubtractionOperation',['../classmultiscale_1_1SubtractionOperation.html',1,'multiscale']]]
 ];

@@ -2,4 +2,9 @@
 <area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#a08a817f0907a22cf7588ca43efa82ea7" title="Initialise the output file with the given index and simulation time." alt="" coords="297,5,767,35"/>
 <area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a03d74df6e7a0b18c5099eb39f3e4fc7c" title="Initialise the output file with the given index and simulation time." alt="" coords="335,59,729,88"/>
 <area shape="rect" id="node7" href="$classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a570257a89fa37733ba66624ede2e4377" title="Initialise the output file with the given index and simulation time." alt="" coords="315,112,749,141"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a5d8734939e6074e75f6363ac4cfb8d45" title="Check if the base is a positive real number different from 1." alt="" coords="411,165,653,195"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1Numeric.html#a284b70a2cd738a3f37a45439aeb0934c" title="Check if the number is a positive real number." alt="" coords="403,219,661,248"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a552ccfdcef70918e416191eecaa94481" title="Check if the number and the base are positive real numbers, and the base is additionally different fr..." alt="" coords="817,192,1127,221"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1Numeric.html#a27b50deac29d8aca5c41c8b19fba43e9" title="Return the logarithm of a number considering the given base." alt="" coords="1176,192,1339,221"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1verification_1_1NumericEvaluator.html#ae22319b6472c3fd55211b77b63c4e75b" title="Evaluate the given binary numeric expression." alt="" coords="1388,192,1708,221"/>
 </map>

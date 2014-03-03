@@ -9,6 +9,7 @@ var classmultiscale_1_1Geometry2D =
     [ "areIdenticalLines", "classmultiscale_1_1Geometry2D.html#a718faf02b261c9ccbedf9d7b0e19ada1", null ],
     [ "areOnTheSameSideOfLine", "classmultiscale_1_1Geometry2D.html#a828b7b579420ac06dabd7c4ba4d081ae", null ],
     [ "distanceBtwPoints", "classmultiscale_1_1Geometry2D.html#a911b35d7abde99988bb4b43f00d6be72", null ],
+    [ "distanceBtwPoints", "classmultiscale_1_1Geometry2D.html#a0b01b51c41789623f2cd7a0a2a66f462", null ],
     [ "distanceFromPointToLine", "classmultiscale_1_1Geometry2D.html#ae6c0f66accf4ecf31b0fd96437371626", null ],
     [ "findPointsOnEdge", "classmultiscale_1_1Geometry2D.html#a9e5c6378463c0e685136d66bfac2a8c1", null ],
     [ "inverseTranslate", "classmultiscale_1_1Geometry2D.html#a7a7526398a9675a05c609bb442fe02f0", null ],

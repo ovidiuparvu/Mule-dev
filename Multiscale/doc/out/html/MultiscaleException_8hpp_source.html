@@ -33,7 +33,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Multiscale
-   &#160;<span id="projectnumber">0.6.34</span>
+   &#160;<span id="projectnumber">0.6.38</span>
    </div>
    
   </td>
@@ -111,7 +111,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 <span class="keyword">using namespace </span>std;
 <a name="l00011"></a>00011 
 <a name="l00012"></a><a class="code" href="MultiscaleException_8hpp.html#a9793f281071f3aab9a528e323279f2f4">00012</a> <span class="preprocessor">#define MS_throw(ex, msg)                               (throw ex(__FILE__, __LINE__, msg))</span>
-<a name="l00013"></a><a class="code" href="MultiscaleException_8hpp.html#adf0c3f1b4d4e0d7fe497670a240fa1ba">00013</a> <span class="preprocessor"></span><span class="preprocessor">#define MS_throw_detailed(ex, startMsg, msg, endMsg)    (throw ex(__FILE__, __LINE__, startMsg, msg, endMsg))</span>
+<a name="l00013"></a><a class="code" href="MultiscaleException_8hpp.html#adf0c3f1b4d4e0d7fe497670a240fa1ba">00013</a> <span class="preprocessor"></span><span class="preprocessor">#define MS_throw_detailed(ex, startMsg, msg, endMsg)    (throw ex(__FILE__, __LINE__, startMsg + msg + endMsg))</span>
 <a name="l00014"></a>00014 <span class="preprocessor"></span>
 <a name="l00015"></a>00015 
 <a name="l00016"></a>00016 <span class="keyword">namespace </span>multiscale {
@@ -172,7 +172,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="MultiscaleException_8hpp.html">MultiscaleException.hpp</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 27 2014 17:40:16 for Multiscale by
+    <li class="footer">Generated on Mon Mar 3 2014 16:05:28 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

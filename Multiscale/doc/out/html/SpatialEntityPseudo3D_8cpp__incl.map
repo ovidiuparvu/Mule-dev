@@ -1,7 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$SpatialEntityPseudo3D_8hpp.html" title="multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp" alt="" coords="415,83,753,112"/>
-<area shape="rect" id="node11" href="$UnexpectedBehaviourException_8hpp.html" title="multiscale/exception/UnexpectedBehaviourException.hpp" alt="" coords="876,83,1231,112"/>
-<area shape="rect" id="node32" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="1281,83,1460,112"/>
+<area shape="rect" id="node3" href="$SpatialEntityPseudo3D_8hpp.html" title="multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp" alt="" coords="427,83,765,112"/>
+<area shape="rect" id="node11" href="$UnexpectedBehaviourException_8hpp.html" title="multiscale/exception/UnexpectedBehaviourException.hpp" alt="" coords="888,83,1243,112"/>
+<area shape="rect" id="node32" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="1292,83,1471,112"/>
 <area shape="rect" id="node5" href="$Shape2D_8hpp.html" title="multiscale/analysis/spatial/Shape2D.hpp" alt="" coords="5,160,264,189"/>
 <area shape="rect" id="node7" href="$SpatialEntityPseudo3DType_8hpp.html" title="multiscale/analysis/spatial/SpatialEntityPseudo3DType.hpp" alt="" coords="288,160,656,189"/>
 <area shape="rect" id="node13" href="$AlgorithmException_8hpp.html" title="multiscale/exception/AlgorithmException.hpp" alt="" coords="899,160,1181,189"/>

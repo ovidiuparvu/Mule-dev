@@ -1,12 +1,12 @@
 <map id="G" name="G">
 <area shape="rect" id="node3" href="$ClusterDetector_8hpp.html" title="multiscale/analysis/spatial/ClusterDetector.hpp" alt="" coords="1216,83,1512,112"/>
-<area shape="rect" id="node54" href="$DBSCAN_8hpp.html" title="multiscale/analysis/spatial/DBSCAN.hpp" alt="" coords="2148,237,2409,267"/>
-<area shape="rect" id="node59" href="$Silhouette_8hpp.html" title="multiscale/analysis/spatial/Silhouette.hpp" alt="" coords="780,83,1041,112"/>
-<area shape="rect" id="node62" href="$NumericRangeManipulator_8hpp.html" title="multiscale/util/NumericRangeManipulator.hpp" alt="" coords="2209,83,2495,112"/>
-<area shape="rect" id="node64" href="$RGBColourGenerator_8hpp.html" title="multiscale/util/RGBColourGenerator.hpp" alt="" coords="1932,83,2185,112"/>
+<area shape="rect" id="node56" href="$DBSCAN_8hpp.html" title="multiscale/analysis/spatial/DBSCAN.hpp" alt="" coords="2148,237,2409,267"/>
+<area shape="rect" id="node61" href="$Silhouette_8hpp.html" title="multiscale/analysis/spatial/Silhouette.hpp" alt="" coords="780,83,1041,112"/>
+<area shape="rect" id="node64" href="$NumericRangeManipulator_8hpp.html" title="multiscale/util/NumericRangeManipulator.hpp" alt="" coords="2209,83,2495,112"/>
+<area shape="rect" id="node66" href="$RGBColourGenerator_8hpp.html" title="multiscale/util/RGBColourGenerator.hpp" alt="" coords="1932,83,2185,112"/>
 <area shape="rect" id="node5" href="$analysis_2spatial_2include_2multiscale_2analysis_2spatial_2Cluster_8hpp.html" title="multiscale/analysis/spatial/Cluster.hpp" alt="" coords="712,160,957,189"/>
 <area shape="rect" id="node9" href="$Entity_8hpp.html" title="multiscale/analysis/spatial/Entity.hpp" alt="" coords="1032,237,1269,267"/>
-<area shape="rect" id="node40" href="$Detector_8hpp.html" title="multiscale/analysis/spatial/Detector.hpp" alt="" coords="1313,160,1567,189"/>
+<area shape="rect" id="node42" href="$Detector_8hpp.html" title="multiscale/analysis/spatial/Detector.hpp" alt="" coords="1313,160,1567,189"/>
 <area shape="rect" id="node18" href="$Shape2D_8hpp.html" title="multiscale/analysis/spatial/Shape2D.hpp" alt="" coords="5,315,264,344"/>
 <area shape="rect" id="node20" href="$SpatialEntityPseudo3D_8hpp.html" title="multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp" alt="" coords="288,237,627,267"/>
 <area shape="rect" id="node26" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2D.hpp" alt="" coords="651,237,856,267"/>

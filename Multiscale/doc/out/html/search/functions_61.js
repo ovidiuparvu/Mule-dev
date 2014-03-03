@@ -24,12 +24,14 @@ var searchData=
   ['anglebtwpoints',['angleBtwPoints',['../classmultiscale_1_1Geometry2D.html#ace72cd1329667fdb5bc3fc40b96694bd',1,'multiscale::Geometry2D']]],
   ['angleoflinewrtoxaxis',['angleOfLineWrtOxAxis',['../classmultiscale_1_1Geometry2D.html#a5c91b7d536f0445afa9c68c73ffe4139',1,'multiscale::Geometry2D']]],
   ['annularsector',['AnnularSector',['../classmultiscale_1_1video_1_1AnnularSector.html#a96ea49d6d05346ef9ae99289945eb578',1,'multiscale::video::AnnularSector']]],
+  ['applyoperation',['applyOperation',['../classmultiscale_1_1Numeric.html#a6fe5731e0a4b2728bd4827b564102eb3',1,'multiscale::Numeric']]],
   ['areaoftriangle',['areaOfTriangle',['../classmultiscale_1_1Geometry2D.html#abf0e96a63cf744cab74ab94398e28562',1,'multiscale::Geometry2D']]],
   ['arecollinear',['areCollinear',['../classmultiscale_1_1Geometry2D.html#aa8b75808a35a471becae0ad99e708bdd',1,'multiscale::Geometry2D']]],
   ['areequalpoints',['areEqualPoints',['../classmultiscale_1_1Geometry2D.html#aa2d3ac595072b9ab61879a44629d7969',1,'multiscale::Geometry2D']]],
   ['areidenticallines',['areIdenticalLines',['../classmultiscale_1_1Geometry2D.html#aaa19f84365e924bacfad4ea893875a42',1,'multiscale::Geometry2D::areIdenticalLines(double a1, double b1, double c1, double a2, double b2, double c2)'],['../classmultiscale_1_1Geometry2D.html#a718faf02b261c9ccbedf9d7b0e19ada1',1,'multiscale::Geometry2D::areIdenticalLines(const Point2f &amp;a1, const Point2f &amp;b1, const Point2f &amp;a2, const Point2f &amp;b2)'],['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a65a15d407aeab7f9b81fe527c9a53e81',1,'multiscale::MinEnclosingTriangleFinder::areIdenticalLines()']]],
   ['areintersectinglines',['areIntersectingLines',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a890d17359c3cdf30b6c20b08cd12b6c9',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['areonthesamesideofline',['areOnTheSameSideOfLine',['../classmultiscale_1_1Geometry2D.html#a828b7b579420ac06dabd7c4ba4d081ae',1,'multiscale::Geometry2D']]],
+  ['areoverflowunderflowflagsset',['areOverflowUnderflowFlagsSet',['../classmultiscale_1_1Numeric.html#a096d5367722cb8571ece2bfdb800cea5',1,'multiscale::Numeric']]],
   ['arepointsenclosed',['ArePointsEnclosed',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a73de7a5f4f5fc4eb72ce68e4a4d793b7',1,'multiscaletest::MinEnclosingTriangleFinderTest::ArePointsEnclosed()'],['../MinEnclosingTriangleFinderSample_8cpp.html#a034dc3c50ee9138b7ca750f1ca3a0180',1,'arePointsEnclosed():&#160;MinEnclosingTriangleFinderSample.cpp']]],
   ['arevalid',['areValid',['../classmultiscale_1_1analysis_1_1Entity.html#a8b38c81f4b86df13ab640f8d3bac5cbc',1,'multiscale::analysis::Entity']]],
   ['arevalidinputvalues',['areValidInputValues',['../classmultiscale_1_1analysis_1_1Region.html#a6319de4734b11039dbb90dfdd3e30e31',1,'multiscale::analysis::Region']]],
@@ -53,5 +55,9 @@ var searchData=
   ['assignnamestoprobabilisticlogicpropertyrules',['assignNamesToProbabilisticLogicPropertyRules',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a2411c5d1958484b365f1f7c5e56b53db',1,'multiscale::verification::ParserGrammar']]],
   ['assignnamestorules',['assignNamesToRules',['../classmultiscale_1_1verification_1_1ParserGrammar.html#ac326204f9c3374ed078e320e0e014061',1,'multiscale::verification::ParserGrammar']]],
   ['assignnamestospatialmeasurerules',['assignNamesToSpatialMeasureRules',['../classmultiscale_1_1verification_1_1ParserGrammar.html#aff6ec7e3535432cbe1c3318d2302f684',1,'multiscale::verification::ParserGrammar']]],
-  ['assignnamestosubsetrules',['assignNamesToSubsetRules',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a523bbc8b39bbd9f86a010ede50bf488b',1,'multiscale::verification::ParserGrammar']]]
+  ['assignnamestosubsetrules',['assignNamesToSubsetRules',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a523bbc8b39bbd9f86a010ede50bf488b',1,'multiscale::verification::ParserGrammar']]],
+  ['average',['average',['../classmultiscale_1_1Numeric.html#a35c4c545f6ef78c31c94a85b9f070ee5',1,'multiscale::Numeric']]],
+  ['avgclusteredness',['avgClusteredness',['../classmultiscale_1_1verification_1_1TimePoint.html#acdcd8ea97a4c60474a4febfa2f62d41d',1,'multiscale::verification::TimePoint']]],
+  ['avgdensity',['avgDensity',['../classmultiscale_1_1verification_1_1TimePoint.html#a47cdf7aaed417afdcb54a95b28804ea7',1,'multiscale::verification::TimePoint::avgDensity() const '],['../classmultiscale_1_1verification_1_1TimePoint.html#adc686502f5d12a203a34be6d8b18ed16',1,'multiscale::verification::TimePoint::avgDensity(const std::vector&lt; SpatialEntity &gt; &amp;spatialEntities) const ']]],
+  ['avgdistancebetweencentroids',['avgDistanceBetweenCentroids',['../classmultiscale_1_1verification_1_1TimePoint.html#a6ee157de6834b4969c588b4c33424d1e',1,'multiscale::verification::TimePoint']]]
 ];

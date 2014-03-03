@@ -7,8 +7,8 @@ var searchData=
   ['region',['Region',['../classmultiscale_1_1verification_1_1Region.html',1,'multiscale::verification']]],
   ['region',['Region',['../classmultiscale_1_1analysis_1_1Region.html',1,'multiscale::analysis']]],
   ['regiondetector',['RegionDetector',['../classmultiscale_1_1analysis_1_1RegionDetector.html',1,'multiscale::analysis']]],
-  ['result',['result',['../structmultiscale_1_1verification_1_1ProbabilityErrorHandler_1_1result.html',1,'multiscale::verification::ProbabilityErrorHandler']]],
   ['result',['result',['../structmultiscale_1_1verification_1_1UnexpectedTokenErrorHandler_1_1result.html',1,'multiscale::verification::UnexpectedTokenErrorHandler']]],
+  ['result',['result',['../structmultiscale_1_1verification_1_1ProbabilityErrorHandler_1_1result.html',1,'multiscale::verification::ProbabilityErrorHandler']]],
   ['rgbcolourgenerator',['RGBColourGenerator',['../classmultiscale_1_1RGBColourGenerator.html',1,'multiscale']]],
   ['runtimeexception',['RuntimeException',['../classmultiscale_1_1RuntimeException.html',1,'multiscale']]]
 ];

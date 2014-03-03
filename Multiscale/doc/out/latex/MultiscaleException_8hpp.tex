@@ -5,20 +5,11 @@
 {\ttfamily \#include $<$stdexcept$>$}\*
 {\ttfamily \#include $<$string$>$}\*
 {\ttfamily \#include $<$typeinfo$>$}\*
-\-Include dependency graph for \-Multiscale\-Exception.\-hpp\-:
-\nopagebreak
+\-Include dependency graph for \-Multiscale\-Exception.\-hpp\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{MultiscaleException_8hpp__incl}
-\end{center}
-\end{figure}
-\-This graph shows which files directly or indirectly include this file\-:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{MultiscaleException_8hpp__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{\-Classes}
@@ -36,7 +27,7 @@ namespace \hyperlink{namespacemultiscale}{multiscale}
 \item 
 \#define \hyperlink{MultiscaleException_8hpp_a9793f281071f3aab9a528e323279f2f4}{\-M\-S\-\_\-throw}(ex, msg)~(throw ex(\-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, msg))
 \item 
-\#define \hyperlink{MultiscaleException_8hpp_adf0c3f1b4d4e0d7fe497670a240fa1ba}{\-M\-S\-\_\-throw\-\_\-detailed}(ex, start\-Msg, msg, end\-Msg)~(throw ex(\-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, start\-Msg, msg, end\-Msg))
+\#define \hyperlink{MultiscaleException_8hpp_adf0c3f1b4d4e0d7fe497670a240fa1ba}{\-M\-S\-\_\-throw\-\_\-detailed}(ex, start\-Msg, msg, end\-Msg)~(throw ex(\-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, start\-Msg + msg + end\-Msg))
 \end{DoxyCompactItemize}
 
 
@@ -66,12 +57,12 @@ namespace \hyperlink{namespacemultiscale}{multiscale}
 \item[{}]{msg, }
 \item[{}]{end\-Msg}
 \end{DoxyParamCaption}
-)~(throw ex(\-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, start\-Msg, msg, end\-Msg))}}\label{MultiscaleException_8hpp_adf0c3f1b4d4e0d7fe497670a240fa1ba}
+)~(throw ex(\-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, start\-Msg + msg + end\-Msg))}}\label{MultiscaleException_8hpp_adf0c3f1b4d4e0d7fe497670a240fa1ba}
 
 
 \-Definition at line 13 of file \-Multiscale\-Exception.\-hpp.
 
 
 
-\-Referenced by multiscale\-::verification\-::\-Time\-Point\-::get\-Numeric\-State\-Variable(), multiscale\-::verification\-::\-Spatial\-Entity\-::validate\-Angle\-Degrees\-Value(), multiscale\-::verification\-::\-Spatial\-Temporal\-Trace\-::validate\-Index(), multiscale\-::verification\-::\-Spatial\-Entity\-::validate\-Real\-Non\-Negative\-Value(), multiscale\-::verification\-::\-Spatial\-Entity\-::validate\-Real\-Value\-Btw\-Zero\-And\-One(), multiscale\-::verification\-::\-Spatial\-Temporal\-Trace\-::validate\-Time\-Point\-Value(), multiscale\-::verification\-::\-Spatial\-Temporal\-Trace\-::validate\-Value(), and multiscale\-::verification\-::\-Spatial\-Temporal\-Trace\-::validate\-Values().
+\-Referenced by multiscale\-::verification\-::\-Time\-Point\-::get\-Numeric\-State\-Variable(), multiscale\-::verification\-::\-Spatial\-Entity\-::validate\-Angle\-Value(), multiscale\-::verification\-::\-Spatial\-Temporal\-Trace\-::validate\-Index(), multiscale\-::\-Numeric\-::validate\-Log\-Base(), multiscale\-::\-Numeric\-::validate\-Log\-Number(), multiscale\-::\-Numeric\-::validate\-Percentile(), multiscale\-::\-Numeric\-::validate\-Quartile(), multiscale\-::verification\-::\-Spatial\-Entity\-::validate\-Real\-Non\-Negative\-Value(), multiscale\-::verification\-::\-Spatial\-Entity\-::validate\-Real\-Value\-Btw\-Zero\-And\-One(), multiscale\-::verification\-::\-Spatial\-Temporal\-Trace\-::validate\-Time\-Point\-Value(), multiscale\-::verification\-::\-Spatial\-Temporal\-Trace\-::validate\-Value(), and multiscale\-::verification\-::\-Spatial\-Temporal\-Trace\-::validate\-Values().
 

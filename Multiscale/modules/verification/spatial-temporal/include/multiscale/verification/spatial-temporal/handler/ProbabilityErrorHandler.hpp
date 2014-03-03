@@ -8,8 +8,6 @@
 
 namespace qi = boost::spirit::qi;
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -32,25 +30,25 @@ namespace multiscale {
                  */
                 template<typename Iterator>
                 void operator()(qi::info const &expectedToken, Iterator errorPosition, Iterator last) const {
-                    string errorString          = string(errorPosition, last);
-                    string expectedTokenString  = getExpectedTokenAsString(expectedToken);
+                    std::string errorString          = std::string(errorPosition, last);
+                    std::string expectedTokenString  = getExpectedTokenAsString(expectedToken);
 
                     throw ParserGrammarProbabilityException(expectedTokenString, errorString);
                 }
 
             private:
 
-                //! Convert the expected token to a string
-                /*! Convert the expected token to a string and remove enclosing quotes
+                //! Convert the expected token to a std::string
+                /*! Convert the expected token to a std::string and remove enclosing quotes
                  *
-                 * \param expectedToken The expected token (not a string)
+                 * \param expectedToken The expected token (not a std::string)
                  */
-                string getExpectedTokenAsString(qi::info const &expectedToken) const {
-                    stringstream strStream;
+                std::string getExpectedTokenAsString(qi::info const &expectedToken) const {
+                    std::stringstream strStream;
 
                     strStream << expectedToken;
 
-                    string expectedTokenString  = strStream.str();
+                    std::string expectedTokenString  = strStream.str();
 
                     // Remove the enclosing quotes
                     return expectedTokenString.substr(1, (expectedTokenString.length() - 2));

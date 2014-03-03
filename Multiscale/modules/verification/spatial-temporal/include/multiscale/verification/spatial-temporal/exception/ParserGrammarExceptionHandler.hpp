@@ -6,7 +6,6 @@
 #include <string>
 
 using namespace multiscale;
-using namespace std;
 
 
 namespace multiscale {
@@ -20,57 +19,57 @@ namespace multiscale {
 
                 //! Handle the exception when an unexpected token was encountered
                 /*!
-                 * \param initialString     The initial string
-                 * \param errorString       A substring of the initial string which starts from the error position
+                 * \param initialString     The initial std::string
+                 * \param errorString       A substd::string of the initial std::string which starts from the error position
                  * \param expectedToken     The token which should replace the error token
                  */
-                static void handleUnexpectedTokenException(const string &initialString, const string &errorString,
-                                                           const string &expectedToken);
+                static void handleUnexpectedTokenException(const std::string &initialString, const std::string &errorString,
+                                                           const std::string &expectedToken);
 
                 //! Handle the exception when an invalid probability was encountered
                 /*!
-                 * \param initialString     The initial string
-                 * \param errorString       A substring of the initial string which starts from the error position
+                 * \param initialString     The initial std::string
+                 * \param errorString       A substd::string of the initial std::string which starts from the error position
                  * \param expectedToken     The token which should replace the error token
                  */
-                static void handleProbabilityException(const string &initialString, const string &errorString,
-                                                       const string &expectedToken);
+                static void handleProbabilityException(const std::string &initialString, const std::string &errorString,
+                                                       const std::string &expectedToken);
 
                 //! Handle the exception when wrong input is provided
                 /*!
-                 * \param initialString The initial string
-                 * \param errorString   Error string
+                 * \param initialString The initial std::string
+                 * \param errorString   Error std::string
                  */
-                static void handleUnparseableInputException(const string &initialString, const string &errorString);
+                static void handleUnparseableInputException(const std::string &initialString, const std::string &errorString);
 
                 //! Handle the exception when extra input is provided
                 /*!
-                 * \param initialString The initial string
+                 * \param initialString The initial std::string
                  * \param extraInput    Extra input
                  */
-                static void handleExtraInputException(const string &initialString, const string &extraInput);
+                static void handleExtraInputException(const std::string &initialString, const std::string &extraInput);
 
             private:
 
-                //! Handle the case where an unexpected token was found in the string
+                //! Handle the case where an unexpected token was found in the std::string
                 /*!
-                 * \param initialString     The initial string
-                 * \param errorString       A substring of the initial string which starts from the error position
+                 * \param initialString     The initial std::string
+                 * \param errorString       A substd::string of the initial std::string which starts from the error position
                  * \param expectedToken     The token which should replace the error token
                  */
-                static string handleUnexpectedTokenInString(const string &initialString, const string &errorString,
-                                                            const string &expectedToken);
+                static std::string handleUnexpectedTokenInString(const std::string &initialString, const std::string &errorString,
+                                                                 const std::string &expectedToken);
 
-                //! Handle the case where an expected token was not encountered at the end of the string
+                //! Handle the case where an expected token was not encountered at the end of the std::string
                 /*!
-                 * \param initialString     The initial string
+                 * \param initialString     The initial std::string
                  * \param expectedToken     The token which should replace the error token
                  */
-                static string handleExpectedTokenAtEndOfString(const string &initialString,
-                                                               const string &expectedToken);
+                static std::string handleExpectedTokenAtEndOfString(const std::string &initialString,
+                                                                    const std::string &expectedToken);
 
                 //! Return the generic introductory error message
-                static string getIntroductoryErrorMessage();
+                static std::string getIntroductoryErrorMessage();
 
         };
 

@@ -7,25 +7,24 @@
 
 using namespace multiscale;
 using namespace multiscale::verification;
-using namespace std;
 
 
 //  Main program
 int main(int argc, char **argv) {
-    string test;
+    std::string test;
     SpatialTemporalTrace trace;
     AbstractSyntaxTree result;
 
-    cout << "/////////////////////////////////////////////////////////\n\n";
-    cout << "\tA multidimensional logical query parser...\n\n";
-    cout << "/////////////////////////////////////////////////////////\n\n";
+    std::cout << "/////////////////////////////////////////////////////////\n\n";
+    std::cout << "\tA multidimensional logical query parser...\n\n";
+    std::cout << "/////////////////////////////////////////////////////////\n\n";
 
-    cout
-        << "Please enter a multidimensional logical query (or \"q\" to exit):" << endl
-        << endl;
+    std::cout
+        << "Please enter a multidimensional logical query (or \"q\" to exit):" << std::endl
+        << std::endl;
 
 
-    while (getline(cin, test)) {
+    while (getline(std::cin, test)) {
         if (test.compare("q") == 0) {
             break;
         }
@@ -34,22 +33,22 @@ int main(int argc, char **argv) {
 
         try {
             if (parser.parse(result)) {
-                cout << "-----------------------------------------------------" << endl;
-                cout << " Parsing succeeded"
+                std::cout << "-----------------------------------------------------" << std::endl;
+                std::cout << " Parsing succeeded"
                      << " and the AST evaluates to " << (result.evaluate(trace) ? "true" : "false")
-                     << "!" << endl;
-                cout << "-----------------------------------------------------" << endl << endl;
+                     << "!" << std::endl;
+                std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             } else {
-                cout << "-----------------------------------------------------" << endl;
-                cout << " Parsing failed!" << endl;
-                cout << "-----------------------------------------------------" << endl << endl;
+                std::cout << "-----------------------------------------------------" << std::endl;
+                std::cout << " Parsing failed!" << std::endl;
+                std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             }
         } catch(const exception &e) {
             ExceptionHandler::printErrorMessage(e);
 
             return ERR_CODE;
         } catch(...) {
-            cerr << "Exception of unknown type!" << endl;
+            cerr << "Exception of unknown type!" << std::endl;
         }
     }
 
