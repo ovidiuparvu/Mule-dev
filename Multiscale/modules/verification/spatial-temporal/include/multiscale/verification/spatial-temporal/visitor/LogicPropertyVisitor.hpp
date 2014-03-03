@@ -4,9 +4,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/LogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/NumericVisitor.hpp"
 
-
 #include <boost/variant.hpp>
-#include <iostream> // TODO: Remove
 
 
 namespace multiscale {
