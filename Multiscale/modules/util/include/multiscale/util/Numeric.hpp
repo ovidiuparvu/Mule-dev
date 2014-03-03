@@ -197,11 +197,23 @@ namespace multiscale {
              */
             static double minimum(const std::vector<double> &numbers);
 
+            //! Return the p-th percentile of the provided set of values
+            /*!
+             * \param numbers   The collection of values
+             */
+            static double percentile(const std::vector<double> &numbers, double percentile);
+
             //! Return the product of the provided numbers
             /*!
              * \param numbers   The collection of numbers
              */
             static double product(const std::vector<double> &numbers);
+
+            //! Return the q-th quartile of the provided set of values
+            /*!
+             * \param numbers   The collection of values
+             */
+            static double quartile(const std::vector<double> &numbers, double quartile);
 
             //! Return the skew of the provided numbers
             /*!
@@ -258,6 +270,14 @@ namespace multiscale {
              * \param nrOfValues The number of values
              */
             static double computeKurtosisLastTerm(int nrOfValues);
+
+            //! Compute the quartile for the given collection of values
+            /*!
+             * \param quartile  The quartile
+             * \param values    The collection of values
+             * \param nrOfValue The number of values in the collection
+             */
+            static double computeQuartileValue(double quartile, const std::vector<double> &values, int nrOfValues);
 
             //! Return the skew first term considering the given values
             /*!
@@ -322,6 +342,18 @@ namespace multiscale {
              */
             static void validateLogBase(double base);
 
+            //! Check if the value of the percentile is between 0 and 100
+            /*!
+             * \param percentile    The percentile value
+             */
+            static void validatePercentile(double percentile);
+
+            //! Check if the value of the quartile is either 25, 50 or 75
+            /*!
+             * \param quartile    The quartile value
+             */
+            static void validateQuartile(double quartile);
+
             //! Check if the given number is positive
             /*!
              * \param number The given number
@@ -339,6 +371,12 @@ namespace multiscale {
             static const std::string ERR_LOG_NUMBER_END;
 
             static const std::string ERR_OVERFLOW_UNDERFLOW;
+
+            static const std::string ERR_PERCENTILE_VALUE_START;
+            static const std::string ERR_PERCENTILE_VALUE_END;
+
+            static const std::string ERR_QUARTILE_VALUE_START;
+            static const std::string ERR_QUARTILE_VALUE_END;
 
     };
 

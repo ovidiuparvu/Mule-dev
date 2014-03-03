@@ -29,7 +29,7 @@ namespace multiscale {
 
             public:
 
-                TernarySubsetMeasureType ternarySubsetMeasure;    /*!< The ternary subset measure */
+                TernarySubsetMeasureType ternarySubsetMeasureType;    /*!< The ternary subset measure type */
 
             public:
 
@@ -45,7 +45,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::TernarySubsetMeasureAttribute,
-    (multiscale::verification::TernarySubsetMeasureType, ternarySubsetMeasure)
+    (multiscale::verification::TernarySubsetMeasureType, ternarySubsetMeasureType)
 )
 
 #endif

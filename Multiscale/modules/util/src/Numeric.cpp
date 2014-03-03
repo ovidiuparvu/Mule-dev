@@ -1,4 +1,4 @@
-#include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/exception/NumericException.hpp"
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
@@ -128,6 +128,18 @@ double Numeric::mode(const std::vector<double> &numbers) {
     return modeValue;
 }
 
+double Numeric::percentile(const std::vector<double> &numbers, double percentile) {
+    std::vector<double> values = numbers;
+    int nrOfValues = values.size();
+
+    std::sort(values.begin(), values.end());
+
+    validatePercentile(percentile);
+
+    return (nrOfValues > 0) ? numbers[std::floor(((percentile / 100) * nrOfValues) + (1 / 2))]
+                            : 0;
+}
+
 double Numeric::product(const std::vector<double> &numbers) {
     double product = 1;
 
@@ -136,6 +148,17 @@ double Numeric::product(const std::vector<double> &numbers) {
     }
 
     return product;
+}
+
+double Numeric::quartile(const std::vector<double> &numbers, double quartile) {
+    std::vector<double> values = numbers;
+    int nrOfValues = values.size();
+
+    std::sort(values.begin(), values.end());
+
+    validateQuartile(quartile);
+
+    return computeQuartileValue(quartile, values, nrOfValues);
 }
 
 double Numeric::skew(const std::vector<double> &numbers) {
@@ -213,6 +236,20 @@ double Numeric::computeKurtosisLastTerm(int nrOfValues) {
                             : 0;
 }
 
+double Numeric::computeQuartileValue(double quartile, const std::vector<double> &values, int nrOfValues) {
+    int medianIndex = nrOfValues / 2;
+
+    if (Numeric::almostEqual(quartile, 50)) {
+        return values[medianIndex];
+    } else if (Numeric::almostEqual(quartile, 25)) {
+        return (nrOfValues < 2) ? values[medianIndex]
+                                : values[(medianIndex - 1) / 2];
+    } else {
+        return (nrOfValues < 3) ? values[medianIndex]
+                                : values[(medianIndex + 1) + ((nrOfValues - medianIndex - 1) / 2)];
+    }
+}
+
 double Numeric::computeSkewFirstTerm(int nrOfValues) {
     return (nrOfValues > 2) ? (nrOfValues) / ((nrOfValues - 1) * (nrOfValues - 2))
                             : 0;
@@ -233,7 +270,7 @@ double Numeric::computeSkewLastTerm(const std::vector<double> &numbers, int nrOf
 
 double Numeric::mode(const std::vector<double> &values, int nrOfValues) {
     int index = 0;
-    double modeValue = -1;
+    double modeValue = numeric_limits<double>::min();
     double countValue = 0;
     int maxCount = 0;
 
@@ -275,15 +312,29 @@ void Numeric::validateLogNumberAndBase(double number, double base) {
 
 void Numeric::validateLogNumber(double number) {
     if (!isPositive(number)) {
-        MS_throw_detailed(InvalidInputException, ERR_LOG_NUMBER_START,
+        MS_throw_detailed(NumericException, ERR_LOG_NUMBER_START,
                           StringManipulator::toString(number), ERR_LOG_NUMBER_END);
     }
 }
 
 void Numeric::validateLogBase(double base) {
     if ((!isPositive(base)) || (almostEqual(base, 1))) {
-        MS_throw_detailed(InvalidInputException, ERR_LOG_BASE_START,
+        MS_throw_detailed(NumericException, ERR_LOG_BASE_START,
                           StringManipulator::toString(base), ERR_LOG_BASE_END);
+    }
+}
+
+void Numeric::validatePercentile(double percentile) {
+    if ((percentile < 0) || (percentile > 100)) {
+        MS_throw_detailed(NumericException, ERR_PERCENTILE_VALUE_START, StringManipulator::toString<double>(percentile),
+                ERR_PERCENTILE_VALUE_END);
+    }
+}
+
+void Numeric::validateQuartile(double quartile) {
+    if ((!almostEqual(quartile, 25)) && (!almostEqual(quartile, 50)) && (!almostEqual(quartile, 75))) {
+        MS_throw_detailed(NumericException, ERR_QUARTILE_VALUE_START, StringManipulator::toString<double>(quartile),
+                ERR_QUARTILE_VALUE_END);
     }
 }
 
@@ -296,3 +347,9 @@ const std::string Numeric::ERR_LOG_NUMBER_START = "The number provided to the lo
 const std::string Numeric::ERR_LOG_NUMBER_END   = ") should be a positive real number. Please change.";
 
 const std::string Numeric::ERR_OVERFLOW_UNDERFLOW = "An underflow/overflow exception occurred.";
+
+const std::string Numeric::ERR_PERCENTILE_VALUE_START = "The provided percentile value (";
+const std::string Numeric::ERR_PERCENTILE_VALUE_END   = ") should be between 0 and 100. Please change.";
+
+const std::string Numeric::ERR_QUARTILE_VALUE_START = "The provided quartile value (";
+const std::string Numeric::ERR_QUARTILE_VALUE_END   = ") should be 25, 50 or 75. Please change.";

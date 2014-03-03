@@ -106,10 +106,7 @@ namespace multiscale {
                 /*!
                  * \param ternarySubset  The ternary subset
                  */
-                double operator()(const TernarySubsetAttribute &ternarySubset) const {
-                    // TODO: Implement
-                    return 1.0;
-                }
+                double operator()(const TernarySubsetAttribute &ternarySubset) const;
 
                 //! Overloading the "()" operator for the QuaternarySubsetAttribute alternative
                 /*!
@@ -165,5 +162,15 @@ inline double multiscale::verification::NumericVisitor::operator()(const BinaryS
 
     return NumericEvaluator::evaluate(binarySubset.binarySubsetMeasure.binarySubsetMeasureType, spatialMeasureValues);
 }
+
+inline double multiscale::verification::NumericVisitor::operator()(const TernarySubsetAttribute &ternarySubset) const {
+    TimePoint subsetTimePoint = boost::apply_visitor(SubsetVisitor(timePoint), ternarySubset.subset);
+    std::vector<double> spatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(subsetTimePoint,
+                                                                                           ternarySubset.spatialMeasure.spatialMeasureType);
+
+    return NumericEvaluator::evaluate(ternarySubset.ternarySubsetMeasure.ternarySubsetMeasureType,
+                                      spatialMeasureValues, ternarySubset.parameter);
+}
+
 
 #endif

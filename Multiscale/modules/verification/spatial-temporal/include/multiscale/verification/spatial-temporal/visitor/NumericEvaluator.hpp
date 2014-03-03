@@ -109,7 +109,7 @@ namespace multiscale {
 
                 //! Evaluate the given binary subset measure expression
                 /*!
-                 * \param binarySubset  The unary subset measure type
+                 * \param binarySubset  The binary subset measure type
                  * \param timePoint     The considered timePoint
                  */
                 static double evaluate(const BinarySubsetMeasureType &binarySubset, const std::vector<double> &values) {
@@ -153,6 +153,25 @@ namespace multiscale {
                         case BinarySubsetMeasureType::Var:
                             return Numeric::variance(values);
 
+                    }
+
+                    // Line added to avoid "control reaches end of non-void function" warnings
+                    return 0.0;
+                }
+
+                //! Evaluate the given ternary subset measure expression
+                /*!
+                 * \param ternarySubset The ternary subset measure type
+                 * \param timePoint     The considered timePoint
+                 */
+                static double evaluate(const TernarySubsetMeasureType &ternarySubset, const std::vector<double> &values,
+                                       double parameter) {
+                    switch (ternarySubset) {
+                        case TernarySubsetMeasureType::Percentile:
+                            return Numeric::percentile(values, parameter);
+
+                        case TernarySubsetMeasureType::Quartile:
+                            return Numeric::quartile(values, parameter);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings
