@@ -31,11 +31,6 @@ namespace multiscale {
 
                 SubsetSpecificType subsetSpecificType;    /*!< The specific subset type */
 
-            public:
-
-                //! Return the specific subset type
-                SubsetSpecificType evaluate() const;
-
         };
 
     };

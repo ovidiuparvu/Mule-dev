@@ -16,11 +16,6 @@ namespace multiscale {
 
                 std::string name;   /*!< Name of the state variable */
 
-            public:
-
-                //! Return the name of the state variable as a string
-                std::string evaluate() const;
-
         };
 
     };

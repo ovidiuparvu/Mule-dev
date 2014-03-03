@@ -42,11 +42,6 @@ namespace multiscale {
 
                 BinarySubsetMeasureType binarySubsetMeasureType;    /*!< The binary subset measure type */
 
-            public:
-
-                //! Return the binary subset measure type
-                BinarySubsetMeasureType evaluate() const;
-
         };
 
     };

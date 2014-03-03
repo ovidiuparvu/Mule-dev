@@ -29,7 +29,6 @@ set(PARSER_EVALUATION_TEST_SRC
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
     src/attribute/SpatialMeasureAttribute.cpp
-    src/attribute/StateVariableAttribute.cpp
     src/attribute/SubsetSpecificAttribute.cpp
     src/attribute/TernarySubsetMeasureAttribute.cpp
     src/attribute/UnaryNumericMeasureAttribute.cpp
@@ -63,7 +62,6 @@ set(PARSER_TEST_SRC
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
     src/attribute/SpatialMeasureAttribute.cpp
-    src/attribute/StateVariableAttribute.cpp
     src/attribute/SubsetSpecificAttribute.cpp
     src/attribute/TernarySubsetMeasureAttribute.cpp
     src/attribute/UnaryNumericMeasureAttribute.cpp
@@ -86,7 +84,7 @@ target_link_libraries(ParserTest util)
 target_link_libraries(ParserTest gtest gtest_main)
 
 
-# ParserGrammarSample
+# ParserSample
 
 set(PARSER_SAMPLE_SRC
     src/parsing/Parser.cpp
@@ -97,7 +95,6 @@ set(PARSER_SAMPLE_SRC
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
     src/attribute/SpatialMeasureAttribute.cpp
-    src/attribute/StateVariableAttribute.cpp
     src/attribute/SubsetSpecificAttribute.cpp
     src/attribute/TernarySubsetMeasureAttribute.cpp
     src/attribute/UnaryNumericMeasureAttribute.cpp

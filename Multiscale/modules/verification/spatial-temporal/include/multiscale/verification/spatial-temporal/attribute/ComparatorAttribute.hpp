@@ -34,11 +34,6 @@ namespace multiscale {
 
                 ComparatorType comparatorType;  /*!< The comparator type */
 
-            public:
-
-                //! Return the comparator type
-                ComparatorType evaluate() const;
-
         };
 
     };

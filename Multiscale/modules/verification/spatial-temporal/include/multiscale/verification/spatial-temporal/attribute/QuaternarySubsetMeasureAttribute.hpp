@@ -30,11 +30,6 @@ namespace multiscale {
 
                 QuaternarySubsetMeasureType quaternarySubsetMeasureType;    /*!< The quaternary subset measure type */
 
-            public:
-
-                //! Return the quaternary subset measure type
-                QuaternarySubsetMeasureType evaluate() const;
-
         };
 
     };

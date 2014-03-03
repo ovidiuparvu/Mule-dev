@@ -36,11 +36,6 @@ namespace multiscale {
 
                 BinaryNumericMeasureType binaryNumericMeasureType;  /*!< The binary numeric measure type */
 
-            public:
-
-                //! Return the binary numeric measure type
-                BinaryNumericMeasureType evaluate() const;
-
         };
 
     };

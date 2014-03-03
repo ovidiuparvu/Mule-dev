@@ -3,10 +3,6 @@
 using namespace multiscale::verification;
 
 
-SpatialMeasureType SpatialMeasureAttribute::evaluate() const {
-    return spatialMeasureType;
-}
-
 //! Overload the output stream operator for the enumeration
 std::ostream& multiscale::verification::operator<<(std::ostream& out, const SpatialMeasureType &spatialMeasureType) {
     switch (spatialMeasureType) {

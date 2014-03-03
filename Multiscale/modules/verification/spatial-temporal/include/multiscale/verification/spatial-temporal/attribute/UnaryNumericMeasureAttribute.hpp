@@ -36,11 +36,6 @@ namespace multiscale {
 
                 UnaryNumericMeasureType unaryNumericMeasureType;    /*!< The unary numeric measure type */
 
-            public:
-
-                //! Return the unary numeric measure type
-                UnaryNumericMeasureType evaluate() const;
-
         };
 
     };

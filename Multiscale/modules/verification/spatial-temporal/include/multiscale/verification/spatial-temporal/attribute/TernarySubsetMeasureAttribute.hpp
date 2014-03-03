@@ -31,11 +31,6 @@ namespace multiscale {
 
                 TernarySubsetMeasureType ternarySubsetMeasureType;    /*!< The ternary subset measure type */
 
-            public:
-
-                //! Return the ternary subset measure type
-                TernarySubsetMeasureType evaluate() const;
-
         };
 
     };

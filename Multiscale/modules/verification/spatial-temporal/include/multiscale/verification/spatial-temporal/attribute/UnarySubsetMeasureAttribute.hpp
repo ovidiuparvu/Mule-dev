@@ -32,11 +32,6 @@ namespace multiscale {
 
                 UnarySubsetMeasureType unarySubsetMeasureType;    /*!< The unary subset measure type */
 
-            public:
-
-                //! Return the unary subset measure type
-                UnarySubsetMeasureType evaluate() const;
-
         };
 
     };

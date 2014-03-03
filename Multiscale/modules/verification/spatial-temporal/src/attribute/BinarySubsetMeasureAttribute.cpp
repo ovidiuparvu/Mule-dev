@@ -3,10 +3,6 @@
 using namespace multiscale::verification;
 
 
-BinarySubsetMeasureType BinarySubsetMeasureAttribute::evaluate() const {
-    return binarySubsetMeasureType;
-}
-
 //! Overload the output stream operator for the enumeration
 std::ostream& multiscale::verification::operator<<(std::ostream& out, const BinarySubsetMeasureType &binarySubsetMeasureType) {
     switch (binarySubsetMeasureType) {

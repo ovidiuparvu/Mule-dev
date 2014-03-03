@@ -40,10 +40,6 @@ namespace multiscale {
 
                 SpatialMeasureType spatialMeasureType;    /*!< The spatial measure type */
 
-            public:
-
-                //! Return the spatial measure type
-                SpatialMeasureType evaluate() const;
         };
 
     };
