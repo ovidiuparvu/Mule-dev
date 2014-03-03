@@ -38,8 +38,8 @@ namespace multiscale {
 
             private:
 
-                //! Convert the expected token to a std::string
-                /*! Convert the expected token to a std::string and remove enclosing quotes
+                //! Convert the expected token to a string
+                /*! Convert the expected token to a string and remove enclosing quotes
                  *
                  * \param expectedToken The expected token (not a std::string)
                  */
@@ -51,7 +51,7 @@ namespace multiscale {
                     std::string expectedTokenString  = strStream.str();
 
                     // Remove the enclosing quotes
-                    return expectedTokenString.substr(1, (expectedTokenString.length() - 2));
+                    return (expectedTokenString.substr(1, (expectedTokenString.length() - 2)));
                 }
 
         };

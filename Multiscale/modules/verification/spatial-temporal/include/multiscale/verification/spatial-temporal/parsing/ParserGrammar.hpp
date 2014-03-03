@@ -483,7 +483,7 @@ namespace multiscale {
                         =   ('{' > stateVariableNameRule > '}');
 
                     stateVariableNameRule
-                        =   +(qi::char_ - qi::char_("{}"));
+                        =   qi::raw[ +(qi::char_ - qi::char_("{}")) ];
                 }
 
                 //! Initialise debug support
