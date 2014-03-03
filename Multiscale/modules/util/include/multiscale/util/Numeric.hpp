@@ -123,6 +123,13 @@ namespace multiscale {
              */
             static double average(const std::vector<double> &numbers);
 
+            //! Return the covariance for the provided collections of values
+            /*!
+             * \param values1   The first collection of values
+             * \param values2   The second collection of values
+             */
+            static double covariance(const std::vector<double> &values1, const std::vector<double> &values2);
+
             //! Return the geometric mean of the provided numbers
             /*!
              *            1

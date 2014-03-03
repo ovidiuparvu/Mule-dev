@@ -4,7 +4,7 @@ using namespace multiscale::verification;
 
 
 QuaternarySubsetMeasureType QuaternarySubsetMeasureAttribute::evaluate() const {
-    return quaternarySubsetMeasure;
+    return quaternarySubsetMeasureType;
 }
 
 //! Overload the output stream operator for the enumeration

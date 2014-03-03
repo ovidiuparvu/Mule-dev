@@ -28,7 +28,7 @@ namespace multiscale {
 
             public:
 
-                QuaternarySubsetMeasureType quaternarySubsetMeasure;    /*!< The quaternary subset measure */
+                QuaternarySubsetMeasureType quaternarySubsetMeasureType;    /*!< The quaternary subset measure type */
 
             public:
 
@@ -44,7 +44,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::QuaternarySubsetMeasureAttribute,
-    (multiscale::verification::QuaternarySubsetMeasureType, quaternarySubsetMeasure)
+    (multiscale::verification::QuaternarySubsetMeasureType, quaternarySubsetMeasureType)
 )
 
 #endif

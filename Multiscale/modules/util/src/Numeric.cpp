@@ -37,6 +37,22 @@ double Numeric::average(const std::vector<double> &numbers) {
                              : (sum / nrOfValues);
 }
 
+double Numeric::covariance(const std::vector<double> &values1, const std::vector<double> &values2) {
+    int nrOfValues = std::min(values1.size(), values2.size());
+
+    double mean1 = average(values1);
+    double mean2 = average(values2);
+
+    double covariance = 0;
+
+    for (int i = 0; i < nrOfValues; i++) {
+        covariance = applyOperation(AdditionOperation(), covariance, (values1[i] - mean1) * (values2[i] - mean2));
+    }
+
+    return (nrOfValues > 1) ? (covariance / (nrOfValues - 1))
+                            : 0;
+}
+
 double Numeric::geometricMean(const std::vector<double> &numbers) {
     double logSum = 0;
     int nrOfValues = numbers.size();

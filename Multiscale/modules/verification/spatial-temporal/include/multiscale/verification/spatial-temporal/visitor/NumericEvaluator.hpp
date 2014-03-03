@@ -110,7 +110,7 @@ namespace multiscale {
                 //! Evaluate the given binary subset measure expression
                 /*!
                  * \param binarySubset  The binary subset measure type
-                 * \param timePoint     The considered timePoint
+                 * \param values        The considered values
                  */
                 static double evaluate(const BinarySubsetMeasureType &binarySubset, const std::vector<double> &values) {
                     switch (binarySubset) {
@@ -162,7 +162,8 @@ namespace multiscale {
                 //! Evaluate the given ternary subset measure expression
                 /*!
                  * \param ternarySubset The ternary subset measure type
-                 * \param timePoint     The considered timePoint
+                 * \param values        The considered values
+                 * \param parameter     The parameter used by the ternary subset measure
                  */
                 static double evaluate(const TernarySubsetMeasureType &ternarySubset, const std::vector<double> &values,
                                        double parameter) {
@@ -172,6 +173,23 @@ namespace multiscale {
 
                         case TernarySubsetMeasureType::Quartile:
                             return Numeric::quartile(values, parameter);
+                    }
+
+                    // Line added to avoid "control reaches end of non-void function" warnings
+                    return 0.0;
+                }
+
+                //! Evaluate the given quaternary subset measure expression
+                /*!
+                 * \param quaternarySubset  The quaternary subset measure type
+                 * \param values1           The first collection of considered values
+                 * \param values2           The second collection of considered values
+                 */
+                static double evaluate(const QuaternarySubsetMeasureType &quaternarySubset,
+                                       const std::vector<double> &values1, const std::vector<double> &values2) {
+                    switch (quaternarySubset) {
+                        case QuaternarySubsetMeasureType::Covar:
+                            return Numeric::covariance(values1, values2);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings
