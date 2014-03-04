@@ -37,6 +37,9 @@ namespace multiscale {
 
                         case ComparatorType::Equal:
                             return (Numeric::almostEqual(lhsElement, rhsElement));
+
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings

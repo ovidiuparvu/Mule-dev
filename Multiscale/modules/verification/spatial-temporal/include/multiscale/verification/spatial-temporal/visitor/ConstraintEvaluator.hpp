@@ -41,6 +41,9 @@ namespace multiscale {
                         case ConsideredSpatialEntityType::Regions:
                             filterRegions(timePoint, spatialMeasure, comparator, numericMeasure);
                             break;
+
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
                 }
 

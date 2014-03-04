@@ -44,6 +44,9 @@ namespace multiscale {
 
                         case UnaryNumericMeasureType::Trunc:
                             return (std::trunc(value));
+
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings
@@ -63,7 +66,8 @@ namespace multiscale {
                             return (firstValue + secondValue);
 
                         case BinaryNumericMeasureType::Div:
-                            return (firstValue / secondValue);
+                            return (secondValue != 0) ? (firstValue / secondValue)
+                                                      : 0;
 
                         case BinaryNumericMeasureType::Log:
                             return (Numeric::log(firstValue, secondValue));
@@ -79,6 +83,9 @@ namespace multiscale {
 
                         case BinaryNumericMeasureType::Subtract:
                             return (firstValue - secondValue);
+
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings
@@ -101,6 +108,8 @@ namespace multiscale {
                         case UnarySubsetMeasureType::Density:
                             return timePoint.avgDensity();
 
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings
@@ -153,6 +162,8 @@ namespace multiscale {
                         case BinarySubsetMeasureType::Var:
                             return Numeric::variance(values);
 
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings
@@ -173,6 +184,9 @@ namespace multiscale {
 
                         case TernarySubsetMeasureType::Quartile:
                             return Numeric::quartile(values, parameter);
+
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings
@@ -190,6 +204,9 @@ namespace multiscale {
                     switch (quaternarySubset) {
                         case QuaternarySubsetMeasureType::Covar:
                             return Numeric::covariance(values1, values2);
+
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings

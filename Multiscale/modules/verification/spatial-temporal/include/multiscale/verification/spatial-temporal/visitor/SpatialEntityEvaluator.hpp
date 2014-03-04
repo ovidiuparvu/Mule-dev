@@ -49,6 +49,9 @@ namespace multiscale {
 
                         case SpatialMeasureType::CentroidY:
                             return spatialEntity.getCentroidY();
+
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings

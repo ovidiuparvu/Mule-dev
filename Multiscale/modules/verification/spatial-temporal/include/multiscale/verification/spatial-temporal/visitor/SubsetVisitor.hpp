@@ -83,6 +83,9 @@ namespace multiscale {
                         case SubsetSpecificType::Regions:
                             timePoint.setConsideredSpatialEntityType(ConsideredSpatialEntityType::Regions);
                             break;
+
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
                     }
                 }
 
