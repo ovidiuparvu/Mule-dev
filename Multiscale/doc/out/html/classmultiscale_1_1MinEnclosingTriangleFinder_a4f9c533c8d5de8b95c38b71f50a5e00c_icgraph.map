@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a97747be924fe1d8efaf6cad9d635419b" title="Update the triangle vertices after all sides were set and check if a local minimal triangle was found..." alt="" coords="440,5,829,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="877,5,1280,35"/>
+<map id="multiscale::MinEnclosingTriangleFinder::isValidMinimalTriangle" name="multiscale::MinEnclosingTriangleFinder::isValidMinimalTriangle">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a97747be924fe1d8efaf6cad9d635419b" title="Update the triangle vertices after all sides were set and check if a local minimal triangle was found..." alt="" coords="252,5,449,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="499,5,709,69"/>
 </map>

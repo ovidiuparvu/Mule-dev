@@ -1,120 +1,129 @@
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator}{\section{multiscale\-:\-:video\-:\-:\-Rectangular\-Gnuplot\-Script\-Generator \-Class \-Reference}
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator}{\section{multiscale\-:\-:video\-:\-:Rectangular\-Gnuplot\-Script\-Generator Class Reference}
 \label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator}\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
 }
 
 
-\-Gnuplot script generator from the provided concentrations considering a rectangular geometry.  
+Gnuplot script generator from the provided concentrations considering a rectangular geometry.  
 
 
 
 
-{\ttfamily \#include $<$\-Rectangular\-Gnuplot\-Script\-Generator.\-hpp$>$}
+{\ttfamily \#include $<$Rectangular\-Gnuplot\-Script\-Generator.\-hpp$>$}
 
-\subsection*{\-Static \-Public \-Member \-Functions}
+
+
+Collaboration diagram for multiscale\-:\-:video\-:\-:Rectangular\-Gnuplot\-Script\-Generator\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8a2e69a85d54df5bacd2e18d27993c14}{generate\-Script} (const vector$<$ double $>$ \&concentrations, double simulation\-Time, unsigned long height, unsigned long width, const string \&output\-Filepath)
-\begin{DoxyCompactList}\small\item\em \-Generate the script. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Static \-Private \-Member \-Functions}
+\begin{DoxyCompactList}\small\item\em Generate the script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abe3a62a21428183cdaf91c405c59264f}{generate\-Header} (ofstream \&fout, const string \&output\-Filepath, double simulation\-Time, unsigned long height, unsigned long width)
-\begin{DoxyCompactList}\small\item\em \-Generate the header of the script. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Generate the header of the script. \end{DoxyCompactList}\item 
 static void \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_ae8464c4b7b05d86ea8bcbfa5a26f7374}{generate\-Body} (const vector$<$ double $>$ \&concentrations, unsigned long height, unsigned long width, ofstream \&fout)
-\begin{DoxyCompactList}\small\item\em \-Generate the body/content of the script. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Generate the body/content of the script. \end{DoxyCompactList}\item 
 static void \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a0b37e76bc9d825de0fd9d168f15a56be}{generate\-Footer} (ofstream \&fout)
-\begin{DoxyCompactList}\small\item\em \-Generate the footer of the script. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Generate the footer of the script. \end{DoxyCompactList}\item 
 static void \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a4b0c7a7b1e0b21dd2a432787ce8830d0}{output\-Header} (ifstream \&fin, const string \&output\-Filename, double simulation\-Time, unsigned long height, unsigned long width, ofstream \&fout)
-\begin{DoxyCompactList}\small\item\em \-Output the header of the script. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Output the header of the script. \end{DoxyCompactList}\item 
 static void \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a74e7f2fee2df4fc22a9ee3f1caee4e71}{output\-Content} (const vector$<$ double $>$ \&concentrations, unsigned long height, unsigned long width, ofstream \&fout)
-\begin{DoxyCompactList}\small\item\em \-Output the content of the script. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Output the content of the script. \end{DoxyCompactList}\item 
 static void \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a58ff6a7a353edb0dcda39ac8f1bac1c3}{output\-Footer} (ifstream \&fin, ofstream \&fout)
-\begin{DoxyCompactList}\small\item\em \-Output the footer of the script. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Static \-Private \-Attributes}
+\begin{DoxyCompactList}\small\item\em Output the footer of the script. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afeced106138e618bb292826093205023}{\-H\-E\-A\-D\-E\-R\-\_\-\-I\-N} = \char`\"{}/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/config/video/rectangular/header.\-in\char`\"{}
+static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afeced106138e618bb292826093205023}{H\-E\-A\-D\-E\-R\-\_\-\-I\-N} = \char`\"{}/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/rectangular/header.\-in\char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abbd954ff4d68e2a6ef9a7a81f615892c}{\-C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N} = \char`\"{}/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/config/video/rectangular/content.\-in\char`\"{}
+static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abbd954ff4d68e2a6ef9a7a81f615892c}{C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N} = \char`\"{}/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/rectangular/content.\-in\char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a5bff725c865bc3a426351644cee34229}{\-F\-O\-O\-T\-E\-R\-\_\-\-I\-N} = \char`\"{}/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/config/video/rectangular/footer.\-in\char`\"{}
+static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a5bff725c865bc3a426351644cee34229}{F\-O\-O\-T\-E\-R\-\_\-\-I\-N} = \char`\"{}/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/rectangular/footer.\-in\char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_aba834d6608c58a4ea91d73947f2cfe0a}{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E} = \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E\char`\"{}
+static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_aba834d6608c58a4ea91d73947f2cfe0a}{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E} = \char`\"{}O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E\char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a7c6bb61b310d321618f22d15f686fd44}{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T} = \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N1\char`\"{}
+static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a7c6bb61b310d321618f22d15f686fd44}{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T} = \char`\"{}O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N1\char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a2b9a87b266a126d6cdd6d6ee1d707b87}{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H} = \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N2\char`\"{}
+static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a2b9a87b266a126d6cdd6d6ee1d707b87}{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H} = \char`\"{}O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N2\char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a9eaa6120a15c5055eb6fbe5b1113d806}{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E} = \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E\char`\"{}
+static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a9eaa6120a15c5055eb6fbe5b1113d806}{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E} = \char`\"{}O\-U\-T\-P\-U\-T\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E\char`\"{}
 \item 
-static const double \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a90ca6d5bab28ed98c6adf71cb848676e}{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A} = 0.\-5
+static const double \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a90ca6d5bab28ed98c6adf71cb848676e}{R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A} = 0.\-5
 \item 
-static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8e42e0b2f41ffd1115f6123d45195ed0}{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R} = \char`\"{} \char`\"{}
+static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8e42e0b2f41ffd1115f6123d45195ed0}{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R} = \char`\"{} \char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afa1626f7904b3006ac768f770c799283}{\-G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N} = \char`\"{}.plt\char`\"{}
+static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afa1626f7904b3006ac768f770c799283}{G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N} = \char`\"{}.plt\char`\"{}
 \end{DoxyCompactItemize}
 
 
-\subsection{\-Detailed \-Description}
-\-Gnuplot script generator from the provided concentrations considering a rectangular geometry. 
+\subsection{Detailed Description}
+Gnuplot script generator from the provided concentrations considering a rectangular geometry. 
 
-\-Definition at line 15 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+Definition at line 15 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
 
 
 
-\subsection{\-Member \-Function \-Documentation}
+\subsection{Member Function Documentation}
 \hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_ae8464c4b7b05d86ea8bcbfa5a26f7374}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!generate\-Body@{generate\-Body}}
 \index{generate\-Body@{generate\-Body}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{generate\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Body} (
+\subsubsection[{generate\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Body (
 \begin{DoxyParamCaption}
 \item[{const vector$<$ double $>$ \&}]{concentrations, }
 \item[{unsigned long}]{height, }
 \item[{unsigned long}]{width, }
 \item[{ofstream \&}]{fout}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_ae8464c4b7b05d86ea8bcbfa5a26f7374}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_ae8464c4b7b05d86ea8bcbfa5a26f7374}
 
 
-\-Generate the body/content of the script. 
+Generate the body/content of the script. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em concentrations} & \-The concentrations \\
+\begin{DoxyParams}{Parameters}
+{\em concentrations} & The concentrations \\
 \hline
-{\em height} & \-The height of the grid \\
+{\em height} & The height of the grid \\
 \hline
-{\em width} & \-The width of the grid \\
+{\em width} & The width of the grid \\
 \hline
-{\em fout} & \-Output file stream \\
+{\em fout} & Output file stream \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 44 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
+Definition at line 44 of file Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
 
 \hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a0b37e76bc9d825de0fd9d168f15a56be}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!generate\-Footer@{generate\-Footer}}
 \index{generate\-Footer@{generate\-Footer}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{generate\-Footer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Footer} (
+\subsubsection[{generate\-Footer}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Footer (
 \begin{DoxyParamCaption}
 \item[{ofstream \&}]{fout}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a0b37e76bc9d825de0fd9d168f15a56be}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a0b37e76bc9d825de0fd9d168f15a56be}
 
 
-\-Generate the footer of the script. 
+Generate the footer of the script. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em fout} & \-Output file stream \\
+\begin{DoxyParams}{Parameters}
+{\em fout} & Output file stream \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 55 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
+Definition at line 55 of file Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
 
 \hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abe3a62a21428183cdaf91c405c59264f}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!generate\-Header@{generate\-Header}}
 \index{generate\-Header@{generate\-Header}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{generate\-Header}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Header} (
+\subsubsection[{generate\-Header}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Header (
 \begin{DoxyParamCaption}
 \item[{ofstream \&}]{fout, }
 \item[{const string \&}]{output\-Filepath, }
@@ -122,35 +131,35 @@ static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScr
 \item[{unsigned long}]{height, }
 \item[{unsigned long}]{width}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abe3a62a21428183cdaf91c405c59264f}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abe3a62a21428183cdaf91c405c59264f}
 
 
-\-Generate the header of the script. 
+Generate the header of the script. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em fout} & \-Output file stream \\
+\begin{DoxyParams}{Parameters}
+{\em fout} & Output file stream \\
 \hline
-{\em output\-Filepath} & \-Path to the output file \\
+{\em output\-Filepath} & Path to the output file \\
 \hline
-{\em simulation\-Time} & \-Simulation time \\
+{\em simulation\-Time} & Simulation time \\
 \hline
-{\em height} & \-Height of the grid \\
+{\em height} & Height of the grid \\
 \hline
-{\em width} & \-Width of the grid \\
+{\em width} & Width of the grid \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 30 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
+Definition at line 30 of file Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
 
 
 
-\-References multiscale\-::\-String\-Manipulator\-::filename\-From\-Path().
+References multiscale\-::\-String\-Manipulator\-::filename\-From\-Path().
 
 \hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8a2e69a85d54df5bacd2e18d27993c14}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!generate\-Script@{generate\-Script}}
 \index{generate\-Script@{generate\-Script}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{generate\-Script}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Script} (
+\subsubsection[{generate\-Script}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Gnuplot\-Script\-Generator\-::generate\-Script (
 \begin{DoxyParamCaption}
 \item[{const vector$<$ double $>$ \&}]{concentrations, }
 \item[{double}]{simulation\-Time, }
@@ -158,35 +167,35 @@ static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScr
 \item[{unsigned long}]{width, }
 \item[{const string \&}]{output\-Filepath}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8a2e69a85d54df5bacd2e18d27993c14}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8a2e69a85d54df5bacd2e18d27993c14}
 
 
-\-Generate the script. 
+Generate the script. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em concentrations} & \-Concentrations \\
+\begin{DoxyParams}{Parameters}
+{\em concentrations} & Concentrations \\
 \hline
-{\em simulation\-Time} & \-Simulation time \\
+{\em simulation\-Time} & Simulation time \\
 \hline
-{\em height} & \-Height of the grid \\
+{\em height} & Height of the grid \\
 \hline
-{\em width} & \-Width of the grid \\
+{\em width} & Width of the grid \\
 \hline
-{\em output\-Filepath} & \-Path of the output file \\
+{\em output\-Filepath} & Path of the output file \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 14 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
+Definition at line 14 of file Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
 
 
 
-\-Referenced by multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter\-::output\-Results().
+Referenced by multiscale\-::video\-::\-Cartesian\-To\-Concentrations\-Converter\-::output\-Results().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -197,59 +206,59 @@ static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScr
 
 \hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a74e7f2fee2df4fc22a9ee3f1caee4e71}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!output\-Content@{output\-Content}}
 \index{output\-Content@{output\-Content}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{output\-Content}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::output\-Content} (
+\subsubsection[{output\-Content}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Gnuplot\-Script\-Generator\-::output\-Content (
 \begin{DoxyParamCaption}
 \item[{const vector$<$ double $>$ \&}]{concentrations, }
 \item[{unsigned long}]{height, }
 \item[{unsigned long}]{width, }
 \item[{ofstream \&}]{fout}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a74e7f2fee2df4fc22a9ee3f1caee4e71}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a74e7f2fee2df4fc22a9ee3f1caee4e71}
 
 
-\-Output the content of the script. 
+Output the content of the script. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em concentrations} & \-The concentrations \\
+\begin{DoxyParams}{Parameters}
+{\em concentrations} & The concentrations \\
 \hline
-{\em height} & \-The height of the grid \\
+{\em height} & The height of the grid \\
 \hline
-{\em width} & \-The width of the grid \\
+{\em width} & The width of the grid \\
 \hline
-{\em fout} & \-Output file stream \\
+{\em fout} & Output file stream \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 81 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
+Definition at line 81 of file Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
 
 \hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a58ff6a7a353edb0dcda39ac8f1bac1c3}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!output\-Footer@{output\-Footer}}
 \index{output\-Footer@{output\-Footer}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{output\-Footer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::output\-Footer} (
+\subsubsection[{output\-Footer}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Gnuplot\-Script\-Generator\-::output\-Footer (
 \begin{DoxyParamCaption}
 \item[{ifstream \&}]{fin, }
 \item[{ofstream \&}]{fout}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a58ff6a7a353edb0dcda39ac8f1bac1c3}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a58ff6a7a353edb0dcda39ac8f1bac1c3}
 
 
-\-Output the footer of the script. 
+Output the footer of the script. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em fin} & \-Input file stream \\
+\begin{DoxyParams}{Parameters}
+{\em fin} & Input file stream \\
 \hline
-{\em fout} & \-Output file stream \\
+{\em fout} & Output file stream \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 94 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
+Definition at line 94 of file Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
 
 \hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a4b0c7a7b1e0b21dd2a432787ce8830d0}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!output\-Header@{output\-Header}}
 \index{output\-Header@{output\-Header}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{output\-Header}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::output\-Header} (
+\subsubsection[{output\-Header}]{\setlength{\rightskip}{0pt plus 5cm}void Rectangular\-Gnuplot\-Script\-Generator\-::output\-Header (
 \begin{DoxyParamCaption}
 \item[{ifstream \&}]{fin, }
 \item[{const string \&}]{output\-Filename, }
@@ -258,110 +267,110 @@ static const string \hyperlink{classmultiscale_1_1video_1_1RectangularGnuplotScr
 \item[{unsigned long}]{width, }
 \item[{ofstream \&}]{fout}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a4b0c7a7b1e0b21dd2a432787ce8830d0}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a4b0c7a7b1e0b21dd2a432787ce8830d0}
 
 
-\-Output the header of the script. 
+Output the header of the script. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em fin} & \-Input file stream \\
+\begin{DoxyParams}{Parameters}
+{\em fin} & Input file stream \\
 \hline
-{\em output\-Filename} & \-Name of the output file \\
+{\em output\-Filename} & Name of the output file \\
 \hline
-{\em simulation\-Time} & \-Simulation time \\
+{\em simulation\-Time} & Simulation time \\
 \hline
-{\em height} & \-The height of the grid \\
+{\em height} & The height of the grid \\
 \hline
-{\em width} & \-The width of the grid \\
+{\em width} & The width of the grid \\
 \hline
-{\em fout} & \-Output file stream \\
+{\em fout} & Output file stream \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 65 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
+Definition at line 65 of file Rectangular\-Gnuplot\-Script\-Generator.\-cpp.
 
 
 
-\-References multiscale\-::\-String\-Manipulator\-::replace().
+References multiscale\-::\-String\-Manipulator\-::replace().
 
 
 
-\subsection{\-Member \-Data \-Documentation}
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abbd954ff4d68e2a6ef9a7a81f615892c}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N@{\-C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N}}
-\index{\-C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N@{\-C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N} = \char`\"{}/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/config/video/rectangular/content.\-in\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abbd954ff4d68e2a6ef9a7a81f615892c}
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abbd954ff4d68e2a6ef9a7a81f615892c}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N@{C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N}}
+\index{C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N@{C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Rectangular\-Gnuplot\-Script\-Generator\-::\-C\-O\-N\-T\-E\-N\-T\-\_\-\-I\-N = \char`\"{}/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/rectangular/content.\-in\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_abbd954ff4d68e2a6ef9a7a81f615892c}
 
 
-\-Definition at line 104 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+Definition at line 104 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
 
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a5bff725c865bc3a426351644cee34229}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-F\-O\-O\-T\-E\-R\-\_\-\-I\-N@{\-F\-O\-O\-T\-E\-R\-\_\-\-I\-N}}
-\index{\-F\-O\-O\-T\-E\-R\-\_\-\-I\-N@{\-F\-O\-O\-T\-E\-R\-\_\-\-I\-N}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-F\-O\-O\-T\-E\-R\-\_\-\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-F\-O\-O\-T\-E\-R\-\_\-\-I\-N} = \char`\"{}/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/config/video/rectangular/footer.\-in\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a5bff725c865bc3a426351644cee34229}
-
-
-\-Definition at line 105 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
-
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afa1626f7904b3006ac768f770c799283}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{\-G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}}
-\index{\-G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{\-G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N} = \char`\"{}.plt\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afa1626f7904b3006ac768f770c799283}
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a5bff725c865bc3a426351644cee34229}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!F\-O\-O\-T\-E\-R\-\_\-\-I\-N@{F\-O\-O\-T\-E\-R\-\_\-\-I\-N}}
+\index{F\-O\-O\-T\-E\-R\-\_\-\-I\-N@{F\-O\-O\-T\-E\-R\-\_\-\-I\-N}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{F\-O\-O\-T\-E\-R\-\_\-\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Rectangular\-Gnuplot\-Script\-Generator\-::\-F\-O\-O\-T\-E\-R\-\_\-\-I\-N = \char`\"{}/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/rectangular/footer.\-in\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a5bff725c865bc3a426351644cee34229}
 
 
-\-Definition at line 116 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+Definition at line 105 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
 
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afeced106138e618bb292826093205023}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-H\-E\-A\-D\-E\-R\-\_\-\-I\-N@{\-H\-E\-A\-D\-E\-R\-\_\-\-I\-N}}
-\index{\-H\-E\-A\-D\-E\-R\-\_\-\-I\-N@{\-H\-E\-A\-D\-E\-R\-\_\-\-I\-N}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-H\-E\-A\-D\-E\-R\-\_\-\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-H\-E\-A\-D\-E\-R\-\_\-\-I\-N} = \char`\"{}/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/config/video/rectangular/header.\-in\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afeced106138e618bb292826093205023}
-
-
-\-Definition at line 103 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
-
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8e42e0b2f41ffd1115f6123d45195ed0}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}}
-\index{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R} = \char`\"{} \char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8e42e0b2f41ffd1115f6123d45195ed0}
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afa1626f7904b3006ac768f770c799283}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}}
+\index{G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N@{G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Rectangular\-Gnuplot\-Script\-Generator\-::\-G\-N\-U\-P\-L\-O\-T\-\_\-\-E\-X\-T\-E\-N\-S\-I\-O\-N = \char`\"{}.plt\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afa1626f7904b3006ac768f770c799283}
 
 
-\-Definition at line 114 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+Definition at line 116 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
 
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a90ca6d5bab28ed98c6adf71cb848676e}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A}}
-\index{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A} = 0.\-5\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a90ca6d5bab28ed98c6adf71cb848676e}
-
-
-\-Definition at line 112 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
-
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_aba834d6608c58a4ea91d73947f2cfe0a}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}}
-\index{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E} = \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_aba834d6608c58a4ea91d73947f2cfe0a}
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afeced106138e618bb292826093205023}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!H\-E\-A\-D\-E\-R\-\_\-\-I\-N@{H\-E\-A\-D\-E\-R\-\_\-\-I\-N}}
+\index{H\-E\-A\-D\-E\-R\-\_\-\-I\-N@{H\-E\-A\-D\-E\-R\-\_\-\-I\-N}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{H\-E\-A\-D\-E\-R\-\_\-\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const string Rectangular\-Gnuplot\-Script\-Generator\-::\-H\-E\-A\-D\-E\-R\-\_\-\-I\-N = \char`\"{}/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/rectangular/header.\-in\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_afeced106138e618bb292826093205023}
 
 
-\-Definition at line 107 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+Definition at line 103 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
 
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a7c6bb61b310d321618f22d15f686fd44}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T}}
-\index{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T} = \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N1\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a7c6bb61b310d321618f22d15f686fd44}
-
-
-\-Definition at line 108 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
-
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a9eaa6120a15c5055eb6fbe5b1113d806}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}}
-\index{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E} = \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a9eaa6120a15c5055eb6fbe5b1113d806}
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8e42e0b2f41ffd1115f6123d45195ed0}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}}
+\index{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R@{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}const string Rectangular\-Gnuplot\-Script\-Generator\-::\-O\-U\-T\-P\-U\-T\-\_\-\-S\-E\-P\-A\-R\-A\-T\-O\-R = \char`\"{} \char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a8e42e0b2f41ffd1115f6123d45195ed0}
 
 
-\-Definition at line 110 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+Definition at line 114 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
 
-\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a2b9a87b266a126d6cdd6d6ee1d707b87}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H}}
-\index{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H@{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
-\subsubsection[{\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H} = \char`\"{}\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N2\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a2b9a87b266a126d6cdd6d6ee1d707b87}
-
-
-\-Definition at line 109 of file \-Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a90ca6d5bab28ed98c6adf71cb848676e}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A@{R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A}}
+\index{R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A@{R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A}]{\setlength{\rightskip}{0pt plus 5cm}const double Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N\-\_\-\-E\-X\-T\-R\-A = 0.\-5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a90ca6d5bab28ed98c6adf71cb848676e}
 
 
+Definition at line 112 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
 
-\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_aba834d6608c58a4ea91d73947f2cfe0a}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E@{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}}
+\index{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E@{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E = \char`\"{}O\-U\-T\-P\-U\-T\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_aba834d6608c58a4ea91d73947f2cfe0a}
+
+
+Definition at line 107 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a7c6bb61b310d321618f22d15f686fd44}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T@{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T}}
+\index{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T@{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-H\-E\-I\-G\-H\-T = \char`\"{}O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N1\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a7c6bb61b310d321618f22d15f686fd44}
+
+
+Definition at line 108 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a9eaa6120a15c5055eb6fbe5b1113d806}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E@{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}}
+\index{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E@{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E = \char`\"{}O\-U\-T\-P\-U\-T\-\_\-\-S\-I\-M\-\_\-\-T\-I\-M\-E\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a9eaa6120a15c5055eb6fbe5b1113d806}
+
+
+Definition at line 110 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+
+\hypertarget{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a2b9a87b266a126d6cdd6d6ee1d707b87}{\index{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}!R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H@{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H}}
+\index{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H@{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H}!multiscale::video::RectangularGnuplotScriptGenerator@{multiscale\-::video\-::\-Rectangular\-Gnuplot\-Script\-Generator}}
+\subsubsection[{R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}const string Rectangular\-Gnuplot\-Script\-Generator\-::\-R\-E\-P\-L\-A\-C\-E\-\_\-\-H\-E\-A\-D\-E\-R\-\_\-\-W\-I\-D\-T\-H = \char`\"{}O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-M\-E\-N\-S\-I\-O\-N2\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator_a2b9a87b266a126d6cdd6d6ee1d707b87}
+
+
+Definition at line 109 of file Rectangular\-Gnuplot\-Script\-Generator.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/video/rectangular/include/multiscale/video/rectangular/\hyperlink{RectangularGnuplotScriptGenerator_8hpp}{\-Rectangular\-Gnuplot\-Script\-Generator.\-hpp}\item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/video/rectangular/src/\hyperlink{RectangularGnuplotScriptGenerator_8cpp}{\-Rectangular\-Gnuplot\-Script\-Generator.\-cpp}\end{DoxyCompactItemize}
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/video/rectangular/include/multiscale/video/rectangular/\hyperlink{RectangularGnuplotScriptGenerator_8hpp}{Rectangular\-Gnuplot\-Script\-Generator.\-hpp}\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/video/rectangular/src/\hyperlink{RectangularGnuplotScriptGenerator_8cpp}{Rectangular\-Gnuplot\-Script\-Generator.\-cpp}\end{DoxyCompactItemize}

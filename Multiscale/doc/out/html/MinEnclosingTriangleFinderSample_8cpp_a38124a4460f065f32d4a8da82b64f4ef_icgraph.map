@@ -1,7 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$MinEnclosingTriangleFinderSample_8cpp.html#aedf4a19a455ffa4eaa382766cd1d29f0" title="isValidTriangle" alt="" coords="173,32,280,61"/>
-<area shape="rect" id="node5" href="$MinEnclosingTriangleFinderSample_8cpp.html#aef6ea89ecb324851b646e1e9a8f50aff" title="runMinEnclosingTriangleFinder" alt="" coords="328,32,528,61"/>
-<area shape="rect" id="node7" href="$MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a" title="runMinEnclosingTriangleFinderUsingRandomPolygons" alt="" coords="577,5,913,35"/>
-<area shape="rect" id="node11" href="$MinEnclosingTriangleFinderSample_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="720,59,771,88"/>
-<area shape="rect" id="node9" href="$MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972" title="runMinEnclosingTriangleFinder" alt="" coords="963,5,1163,35"/>
+<map id="isOneEdgeFlush" name="isOneEdgeFlush">
+<area shape="rect" id="node3" href="$MinEnclosingTriangleFinderSample_8cpp.html#aedf4a19a455ffa4eaa382766cd1d29f0" title="isValidTriangle" alt="" coords="173,44,280,73"/>
+<area shape="rect" id="node5" href="$MinEnclosingTriangleFinderSample_8cpp.html#aef6ea89ecb324851b646e1e9a8f50aff" title="runMinEnclosingTriangleFinder" alt="" coords="328,44,528,73"/>
+<area shape="rect" id="node7" href="$MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a" title="runMinEnclosingTriangleFinder\lUsingRandomPolygons" alt="" coords="576,5,776,51"/>
+<area shape="rect" id="node11" href="$MinEnclosingTriangleFinderSample_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="651,75,701,104"/>
+<area shape="rect" id="node9" href="$MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972" title="runMinEnclosingTriangleFinder" alt="" coords="824,13,1024,43"/>
 </map>

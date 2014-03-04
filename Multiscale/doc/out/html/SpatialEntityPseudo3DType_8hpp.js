@@ -1,4 +1,7 @@
 var SpatialEntityPseudo3DType_8hpp =
 [
-    [ "SpatialEntityPseudo3DType", "namespacemultiscale_1_1analysis.html#a8f337e7ea9c75ff3ff2b3fe76fe7b5b6", null ]
+    [ "SpatialEntityPseudo3DType", "SpatialEntityPseudo3DType_8hpp.html#a6db9cbf10615e77e300c3e4cb1c56660", [
+      [ "Cluster", "SpatialEntityPseudo3DType_8hpp.html#a6db9cbf10615e77e300c3e4cb1c56660a249694a485fc5d3289c38986b4f8e887", null ],
+      [ "Region", "SpatialEntityPseudo3DType_8hpp.html#a6db9cbf10615e77e300c3e4cb1c56660af447ac856e7e72435904956e3b15f433", null ]
+    ] ]
 ];

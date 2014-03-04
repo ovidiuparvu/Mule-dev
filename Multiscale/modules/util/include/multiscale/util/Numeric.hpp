@@ -197,7 +197,8 @@ namespace multiscale {
 
             //! Return the p-th percentile of the provided set of values
             /*!
-             * \param numbers   The collection of values
+             * \param numbers       The collection of values
+             * \param percentile    The p-th percentile
              */
             static double percentile(const std::vector<double> &numbers, double percentile);
 
@@ -210,6 +211,7 @@ namespace multiscale {
             //! Return the q-th quartile of the provided set of values
             /*!
              * \param numbers   The collection of values
+             * \param quartile  The q-th quartile
              */
             static double quartile(const std::vector<double> &numbers, double quartile);
 
@@ -271,21 +273,22 @@ namespace multiscale {
 
             //! Compute the quartile for the given collection of values
             /*!
-             * \param quartile  The quartile
-             * \param values    The collection of values
-             * \param nrOfValue The number of values in the collection
+             * \param quartile      The quartile
+             * \param values        The collection of values
+             * \param nrOfValues    The number of values in the collection
              */
             static double computeQuartileValue(double quartile, const std::vector<double> &values, int nrOfValues);
 
             //! Return the skew first term considering the given values
             /*!
-             * \param numbers   The collection of numbers
+             * \param nrOfValues   The number of values
              */
             static double computeSkewFirstTerm(int nrOfValues);
 
             //! Return the skew last term considering the given values
             /*!
-             * \param numbers   The collection of numbers
+             * \param numbers       The collection of values
+             * \param nrOfValues    The number of values
              */
             static double computeSkewLastTerm(const std::vector<double> &numbers, int nrOfValues);
 

@@ -91,8 +91,10 @@ namespace multiscale {
             //! Compute the distance between two points
             /*! Compute the Euclidean distance between two points
              *
-             * \param a Point2f a
-             * \param b Point2f b
+             * \param x1 The x-coordinate of the first point
+             * \param y1 The y-coordinate of the first point
+             * \param x2 The x-coordinate of the second point
+             * \param y2 The y-coordinate of the second point
              */
             static double distanceBtwPoints(double x1, double y1, double x2, double y2);
 

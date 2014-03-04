@@ -1,6 +1,6 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="519,5,993,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="1043,5,1381,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1429,5,1829,35"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1877,5,2267,35"/>
+<map id="multiscale::analysis::ClusterDetector::updateClusterOriginDependentValues" name="multiscale::analysis::ClusterDetector::updateClusterOriginDependentValues">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="264,5,488,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="536,14,760,61"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="808,5,997,69"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1047,5,1257,69"/>
 </map>

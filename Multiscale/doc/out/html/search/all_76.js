@@ -27,7 +27,7 @@ var searchData=
   ['validation_5fsides_5fflush',['VALIDATION_SIDES_FLUSH',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a600e164d85dad81a0e0bfa6f89796033',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['validationflag',['validationFlag',['../classmultiscaletest_1_1MultiscaleTest.html#a0a15b3e8510007c85ca5af092c248c9c',1,'multiscaletest::MultiscaleTest::validationFlag()'],['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a19f9149638eddeec22b775eef632c6ef',1,'multiscale::MinEnclosingTriangleFinder::validationFlag()']]],
   ['value',['value',['../classmultiscale_1_1verification_1_1TimePoint.html#a367f5523f22ad58ca863dbde10d2977d',1,'multiscale::verification::TimePoint::value()'],['../classmultiscale_1_1RGBColourGenerator.html#a859abef56e015354d032c46680132850',1,'multiscale::RGBColourGenerator::VALUE()']]],
-  ['var',['Var',['../namespacemultiscale_1_1verification.html#a4aedbc0df4c78993a76da0f5d669fc3ba5e9f64c8c375424230864a04a28c18a0',1,'multiscale::verification']]],
+  ['var',['Var',['../namespacemultiscale_1_1verification.html#ab30125ef8d4e58878c9238c6af747760a5a92344ee95acf10c31901b36418be77',1,'multiscale::verification']]],
   ['variance',['variance',['../classmultiscale_1_1Numeric.html#a91bf7963069d7a51f01dff965508039c',1,'multiscale::Numeric']]],
   ['vertexa',['vertexA',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#adb758ed8b7e8758436d9f1bb381e017e',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['vertexb',['vertexB',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a18e5ea5e0b341b3d02c4a75887f44c9c',1,'multiscale::MinEnclosingTriangleFinder']]],

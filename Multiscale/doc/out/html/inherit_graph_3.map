@@ -1,4 +1,3 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$classboost_1_1spirit_1_1qi_1_1grammar.html" title="grammar" alt="" coords="7,5,79,35"/>
-<area shape="rect" id="node3" href="$classmultiscale_1_1verification_1_1ParserGrammar.html" title="The grammar for parsing (P)BLSTL spatial&#45;temporal logical queries." alt="" coords="128,5,445,35"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classmultiscale_1_1AdditionOperation.html" title="Functor representing an addition operation." alt="" coords="5,5,197,35"/>
 </map>

@@ -1,88 +1,97 @@
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector}{\section{multiscale\-:\-:analysis\-:\-:\-Cluster\-Detector \-Class \-Reference}
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector}{\section{multiscale\-:\-:analysis\-:\-:Cluster\-Detector Class Reference}
 \label{classmultiscale_1_1analysis_1_1ClusterDetector}\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
 }
 
 
-\-Class for detecting clusters in 2\-D images.  
+Class for detecting clusters in 2\-D images.  
 
 
 
 
-{\ttfamily \#include $<$\-Cluster\-Detector.\-hpp$>$}
+{\ttfamily \#include $<$Cluster\-Detector.\-hpp$>$}
 
 
 
-\-Inheritance diagram for multiscale\-:\-:analysis\-:\-:\-Cluster\-Detector\-:\nopagebreak
+Inheritance diagram for multiscale\-:\-:analysis\-:\-:Cluster\-Detector\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=550pt]{classmultiscale_1_1analysis_1_1ClusterDetector__inherit__graph}
 \end{center}
 \end{figure}
-\subsection*{\-Public \-Member \-Functions}
+
+
+Collaboration diagram for multiscale\-:\-:analysis\-:\-:Cluster\-Detector\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmultiscale_1_1analysis_1_1ClusterDetector__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a2b5da40fb5e977f5bbfe046feeb1b124}{\-Cluster\-Detector} (int max\-Pileup\-Number, double max\-Pileup\-Intensity, bool \hyperlink{classmultiscale_1_1analysis_1_1Detector_a4b42f796957efd6ee0b8cf7645494a65}{debug\-Mode}=false)
+\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a2b5da40fb5e977f5bbfe046feeb1b124}{Cluster\-Detector} (int max\-Pileup\-Number, double max\-Pileup\-Intensity, bool \hyperlink{classmultiscale_1_1analysis_1_1Detector_a4b42f796957efd6ee0b8cf7645494a65}{debug\-Mode}=false)
 \item 
 virtual \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a18f5d5aab155a0a30137364749fb837c}{$\sim$\-Cluster\-Detector} ()
 \item 
 double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a5f1699b100e7203720cb7fd1ef73cea1}{get\-Eps} ()
-\begin{DoxyCompactList}\small\item\em \-Get the value of the clustering algorithm parameter eps. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the value of the clustering algorithm parameter eps. \end{DoxyCompactList}\item 
 int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_af979c73c154bd42ef73d3328e80889ef}{get\-Min\-Points} ()
-\begin{DoxyCompactList}\small\item\em \-Get the value of the clustering algorithm parameter \-Min\-Points. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ const \& \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a0ed0e389d65161b7eef8f377efb20e5c}{get\-Clusters} ()
-\begin{DoxyCompactList}\small\item\em \-Get a const reference to the vector of detected clusters. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the value of the clustering algorithm parameter Min\-Points. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ const \& \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a0ed0e389d65161b7eef8f377efb20e5c}{get\-Clusters} ()
+\begin{DoxyCompactList}\small\item\em Get a const reference to the vector of detected clusters. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a35eaa560c893a86c3149471f40c15979}{set\-Eps} (double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a61e876f87d62245eada8f56d587d39cd}{eps})
-\begin{DoxyCompactList}\small\item\em \-Set the value of the clustering algorithm parameter eps. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set the value of the clustering algorithm parameter eps. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a190fd17d121e8c22c1ca6e4f5b7a213c}{set\-Min\-Points} (int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa94df1adc462be5931ec25ba24122fe9}{min\-Points})
-\begin{DoxyCompactList}\small\item\em \-Set the value of the clustering algorithm parameter \-Min\-Points. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Protected \-Member \-Functions}
+\begin{DoxyCompactList}\small\item\em Set the value of the clustering algorithm parameter Min\-Points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a67751dd6e21750019a20648b6ba3c8f2}{initialise\-Detector\-Specific\-Fields} () override
-\begin{DoxyCompactList}\small\item\em \-Initialise clustering values. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initialise clustering values. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a7877cc5364f576e6a9cd96a6cd528cfc}{create\-Detector\-Specific\-Trackbars} () override
-\begin{DoxyCompactList}\small\item\em \-Create the trackbars. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Create the trackbars. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a5679e30f1ea35203963bf2baa8d7ed36}{clear\-Previous\-Detection\-Results} () override
-\begin{DoxyCompactList}\small\item\em \-Clear the clusters from the previous detection. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Clear the clusters from the previous detection. \end{DoxyCompactList}\item 
 string \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa6adbee2ccb7b0b66fb5242635e78d08}{get\-Detector\-Type\-As\-String} () override
-\begin{DoxyCompactList}\small\item\em \-Get the type of the detector as a string. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the type of the detector as a string. \end{DoxyCompactList}\item 
 void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a736847233c57cfa59abb953f70ef9209}{process\-Image\-And\-Detect} () override
-\begin{DoxyCompactList}\small\item\em \-Process the provided image and detect clusters in it. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a115f47c1f0855886ef5ca48acc111843}{detect\-Entities\-In\-Image} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{\-Entity} $>$ \&entities)=0
-\begin{DoxyCompactList}\small\item\em \-Detect the entities in the image. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a46f98e066e74171774f0b6728118bc7b}{detect\-And\-Analyse\-Clusters} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{\-Entity} $>$ \&entities, vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
-\begin{DoxyCompactList}\small\item\em \-Detect and analyse the clusters of entities in the image. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a8c9c3ac0c3d8e924468a58f558984dda}{detect\-Clusters} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{\-Entity} $>$ \&entities, vector$<$ int $>$ \&cluster\-Indexes, int \&nr\-Of\-Clusters)
-\begin{DoxyCompactList}\small\item\em \-Detect the clusters of entities in the image. \end{DoxyCompactList}\item 
-vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{\-Data\-Point} $>$ $>$ \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa45fe0a4a548b4d44407ee7f346e66d3}{convert\-Entities} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{\-Entity} $>$ \&entities)
-\begin{DoxyCompactList}\small\item\em \-Convert the entities to the format required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} class. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a4b42b3de7411fe02c7871064497feef1}{convert\-Non\-Piled\-Up\-Entities} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{\-Entity} $>$ \&entities, vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{\-Data\-Point} $>$ $>$ \&data\-Points)
-\begin{DoxyCompactList}\small\item\em \-Convert the non pile up entities to the format required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} class. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a22ba21c341448af455111e718b058391}{convert\-Piled\-Up\-Entities} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{\-Entity} $>$ \&entities, vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{\-Data\-Point} $>$ $>$ \&data\-Points)
-\begin{DoxyCompactList}\small\item\em \-Convert the entities to the required format by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} class. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aefc4d0736d8af4ab53f1e5e76440f447}{add\-Entities\-To\-Clusters} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{\-Entity} $>$ \&entities, const vector$<$ int $>$ \&cluster\-Indexes, int nr\-Of\-Clusters, vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
-\begin{DoxyCompactList}\small\item\em \-Add the entities to the clusters as indicated by the cluster\-Indexes parameter. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_af994e960ba3cd76cc67e714ea276264a}{analyse\-Clusters} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
-\begin{DoxyCompactList}\small\item\em \-Analyse the clusters. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5}{analyse\-Clusters\-Origin\-Dependent\-Values} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
-\begin{DoxyCompactList}\small\item\em \-Analyse the clusters and compute the origin dependent values. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc}{update\-Cluster\-Origin\-Dependent\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \&cluster, const vector$<$ \-Point $>$ \&cluster\-Convex\-Hull)
-\begin{DoxyCompactList}\small\item\em \-Update the cluster and compute the origin dependent values considering the convex hull. \end{DoxyCompactList}\item 
-vector$<$ \-Point $>$ \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902}{get\-Cluster\-Convex\-Hull} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \&cluster)
-\begin{DoxyCompactList}\small\item\em \-Return the convex hull of the given cluster. \end{DoxyCompactList}\item 
-double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aaa7937daf9872614e09b23cb4f6e5aa8}{compute\-Clusteredness\-Index} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
-\begin{DoxyCompactList}\small\item\em \-Compute the clusteredness index for all the entities detected in the image. \end{DoxyCompactList}\item 
-double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a1efab8446c79feb8a9285d895bb64b05}{compute\-Average\-Pile\-Up\-Degree} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
-\begin{DoxyCompactList}\small\item\em \-Compute the average pile up degree for all entities in the image. \end{DoxyCompactList}\item 
-vector$<$ shared\-\_\-ptr\*
-$<$ \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D}{\-Spatial\-Entity\-Pseudo3\-D} $>$ $>$ \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a6bf0ac91b81cdcf46fe8e50f6dd4c9a8}{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D} () override
-\begin{DoxyCompactList}\small\item\em \-Get the collection of clusters detected in the image. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Process the provided image and detect clusters in it. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a115f47c1f0855886ef5ca48acc111843}{detect\-Entities\-In\-Image} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{Entity} $>$ \&entities)=0
+\begin{DoxyCompactList}\small\item\em Detect the entities in the image. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a46f98e066e74171774f0b6728118bc7b}{detect\-And\-Analyse\-Clusters} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{Entity} $>$ \&entities, vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
+\begin{DoxyCompactList}\small\item\em Detect and analyse the clusters of entities in the image. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a8c9c3ac0c3d8e924468a58f558984dda}{detect\-Clusters} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{Entity} $>$ \&entities, vector$<$ int $>$ \&cluster\-Indexes, int \&nr\-Of\-Clusters)
+\begin{DoxyCompactList}\small\item\em Detect the clusters of entities in the image. \end{DoxyCompactList}\item 
+vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} $>$ $>$ \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa45fe0a4a548b4d44407ee7f346e66d3}{convert\-Entities} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{Entity} $>$ \&entities)
+\begin{DoxyCompactList}\small\item\em Convert the entities to the format required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} class. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a4b42b3de7411fe02c7871064497feef1}{convert\-Non\-Piled\-Up\-Entities} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{Entity} $>$ \&entities, vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} $>$ $>$ \&data\-Points)
+\begin{DoxyCompactList}\small\item\em Convert the non pile up entities to the format required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} class. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a22ba21c341448af455111e718b058391}{convert\-Piled\-Up\-Entities} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{Entity} $>$ \&entities, vector$<$ shared\-\_\-ptr$<$ \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} $>$ $>$ \&data\-Points)
+\begin{DoxyCompactList}\small\item\em Convert the entities to the required format by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} class. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aefc4d0736d8af4ab53f1e5e76440f447}{add\-Entities\-To\-Clusters} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Entity}{Entity} $>$ \&entities, const vector$<$ int $>$ \&cluster\-Indexes, int nr\-Of\-Clusters, vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
+\begin{DoxyCompactList}\small\item\em Add the entities to the clusters as indicated by the cluster\-Indexes parameter. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_af994e960ba3cd76cc67e714ea276264a}{analyse\-Clusters} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
+\begin{DoxyCompactList}\small\item\em Analyse the clusters. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5}{analyse\-Clusters\-Origin\-Dependent\-Values} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
+\begin{DoxyCompactList}\small\item\em Analyse the clusters and compute the origin dependent values. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc}{update\-Cluster\-Origin\-Dependent\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \&cluster, const vector$<$ Point $>$ \&cluster\-Convex\-Hull)
+\begin{DoxyCompactList}\small\item\em Update the cluster and compute the origin dependent values considering the convex hull. \end{DoxyCompactList}\item 
+vector$<$ Point $>$ \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902}{get\-Cluster\-Convex\-Hull} (\hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \&cluster)
+\begin{DoxyCompactList}\small\item\em Return the convex hull of the given cluster. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aaa7937daf9872614e09b23cb4f6e5aa8}{compute\-Clusteredness\-Index} (const vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
+\begin{DoxyCompactList}\small\item\em Compute the clusteredness index for all the entities detected in the image. \end{DoxyCompactList}\item 
+double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a1efab8446c79feb8a9285d895bb64b05}{compute\-Average\-Pile\-Up\-Degree} (vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \&\hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters})
+\begin{DoxyCompactList}\small\item\em Compute the average pile up degree for all entities in the image. \end{DoxyCompactList}\item 
+vector$<$ shared\-\_\-ptr\\*
+$<$ \hyperlink{classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D}{Spatial\-Entity\-Pseudo3\-D} $>$ $>$ \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a6bf0ac91b81cdcf46fe8e50f6dd4c9a8}{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D} () override
+\begin{DoxyCompactList}\small\item\em Get the collection of clusters detected in the image. \end{DoxyCompactList}\item 
 double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_afccb86bfb93df00fff8408faea7a2651}{convert\-Eps\-Value} ()
-\begin{DoxyCompactList}\small\item\em \-Convert the value of eps from integer to double. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Convert the value of eps from integer to double. \end{DoxyCompactList}\item 
 int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_ab1c2514fb8599f74bf010e81154a9bf7}{get\-Valid\-Min\-Points\-Value} ()
-\begin{DoxyCompactList}\small\item\em \-Return non-\/zero value for min\-Points. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Protected \-Attributes}
+\begin{DoxyCompactList}\small\item\em Return non-\/zero value for min\-Points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 double \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aaa93a4b3a5a3c4279aa434669093ac40}{entity\-Pileup\-Degree}
@@ -91,42 +100,43 @@ int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a61e876f87d62245ea
 \item 
 int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa94df1adc462be5931ec25ba24122fe9}{min\-Points}
 \item 
-vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} $>$ \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters}
+vector$<$ \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} $>$ \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{clusters}
 \end{DoxyCompactItemize}
-\subsection*{\-Static \-Private \-Attributes}
+\subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const string \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_ae2eae436968e6f637208af7d5a9d93b1}{\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E} = \char`\"{}\-Clusters\char`\"{}
+static const string \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_ae2eae436968e6f637208af7d5a9d93b1}{D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E} = \char`\"{}Clusters\char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a656f64f88c73c25824e5a4416a742aaf}{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S} = \char`\"{}\-Eps (\-Multiplied by 10)\char`\"{}
+static const string \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a656f64f88c73c25824e5a4416a742aaf}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S} = \char`\"{}Eps (Multiplied by 10)\char`\"{}
 \item 
-static const string \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a7f0fbbf3de8479b106893c4a8161bdaf}{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S} = \char`\"{}\-Minimum number of points\char`\"{}
+static const string \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a7f0fbbf3de8479b106893c4a8161bdaf}{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S} = \char`\"{}Minimum number of points\char`\"{}
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa0219df3977a845e46be090e6c3f90ad}{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N} = 0
+static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aa0219df3977a845e46be090e6c3f90ad}{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N} = 0
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aabb41b5c6e865ee33cbb27568cae5a2d}{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X} = 100
+static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_aabb41b5c6e865ee33cbb27568cae5a2d}{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X} = 100
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a6c3517e03d1fd2c6b4d6cd0d81eb8684}{\-E\-P\-S\-\_\-\-M\-I\-N} = 0
+static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a6c3517e03d1fd2c6b4d6cd0d81eb8684}{E\-P\-S\-\_\-\-M\-I\-N} = 0
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a76d0b4ecd2793d478317cc1bc856e06f}{\-E\-P\-S\-\_\-\-M\-A\-X} = 10000
+static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a76d0b4ecd2793d478317cc1bc856e06f}{E\-P\-S\-\_\-\-M\-A\-X} = 10000
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_ad9542bde7e3bf36d501a0b203dc61e09}{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N} = 0
+static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_ad9542bde7e3bf36d501a0b203dc61e09}{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N} = 0
 \item 
-static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60b9e068a8addf9dd27382c74e6d62}{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X} = 1000
+static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60b9e068a8addf9dd27382c74e6d62}{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X} = 1000
 \end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
-\subsection{\-Detailed \-Description}
-\-Class for detecting clusters in 2\-D images. 
+\subsection{Detailed Description}
+Class for detecting clusters in 2\-D images. 
 
-\-Definition at line 20 of file \-Cluster\-Detector.\-hpp.
+Definition at line 20 of file Cluster\-Detector.\-hpp.
 
 
 
-\subsection{\-Constructor \& \-Destructor \-Documentation}
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a2b5da40fb5e977f5bbfe046feeb1b124}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-Cluster\-Detector@{\-Cluster\-Detector}}
-\index{\-Cluster\-Detector@{\-Cluster\-Detector}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-Cluster\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cluster\-Detector\-::\-Cluster\-Detector} (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a2b5da40fb5e977f5bbfe046feeb1b124}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!Cluster\-Detector@{Cluster\-Detector}}
+\index{Cluster\-Detector@{Cluster\-Detector}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{Cluster\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}Cluster\-Detector\-::\-Cluster\-Detector (
 \begin{DoxyParamCaption}
 \item[{int}]{max\-Pileup\-Number, }
 \item[{double}]{max\-Pileup\-Intensity, }
@@ -134,74 +144,74 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a2b5da40fb5e977f5bbfe046feeb1b124}
 
-\begin{DoxyParams}{\-Parameters}
-{\em debug\-Mode} & \-Flag indicating if detector should run in debug mode or not \\
+\begin{DoxyParams}{Parameters}
+{\em debug\-Mode} & Flag indicating if detector should run in debug mode or not \\
 \hline
-{\em max\-Pileup\-Number} & \-The maximum number of entities which can occupy a grid position at the same time \\
+{\em max\-Pileup\-Number} & The maximum number of entities which can occupy a grid position at the same time \\
 \hline
-{\em max\-Pileup\-Intensity} & \-The grayscale intensity of a maximally piled up grid position \\
+{\em max\-Pileup\-Intensity} & The grayscale intensity of a maximally piled up grid position \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 15 of file \-Cluster\-Detector.\-cpp.
+Definition at line 15 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References multiscale\-::analysis\-::\-Detector\-::avg\-Clusteredness\-Degree, multiscale\-::analysis\-::\-Detector\-::avg\-Density, entity\-Pileup\-Degree, eps, and min\-Points.
+References multiscale\-::analysis\-::\-Detector\-::avg\-Clusteredness\-Degree, multiscale\-::analysis\-::\-Detector\-::avg\-Density, entity\-Pileup\-Degree, eps, and min\-Points.
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a18f5d5aab155a0a30137364749fb837c}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!$\sim$\-Cluster\-Detector@{$\sim$\-Cluster\-Detector}}
 \index{$\sim$\-Cluster\-Detector@{$\sim$\-Cluster\-Detector}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{$\sim$\-Cluster\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cluster\-Detector\-::$\sim$\-Cluster\-Detector} (
+\subsubsection[{$\sim$\-Cluster\-Detector}]{\setlength{\rightskip}{0pt plus 5cm}Cluster\-Detector\-::$\sim$\-Cluster\-Detector (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a18f5d5aab155a0a30137364749fb837c}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a18f5d5aab155a0a30137364749fb837c}
 
 
-\-Definition at line 25 of file \-Cluster\-Detector.\-cpp.
+Definition at line 25 of file Cluster\-Detector.\-cpp.
 
 
 
-\subsection{\-Member \-Function \-Documentation}
+\subsection{Member Function Documentation}
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aefc4d0736d8af4ab53f1e5e76440f447}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!add\-Entities\-To\-Clusters@{add\-Entities\-To\-Clusters}}
 \index{add\-Entities\-To\-Clusters@{add\-Entities\-To\-Clusters}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{add\-Entities\-To\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::add\-Entities\-To\-Clusters} (
+\subsubsection[{add\-Entities\-To\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::add\-Entities\-To\-Clusters (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ {\bf \-Entity} $>$ \&}]{entities, }
+\item[{const vector$<$ {\bf Entity} $>$ \&}]{entities, }
 \item[{const vector$<$ int $>$ \&}]{cluster\-Indexes, }
 \item[{int}]{nr\-Of\-Clusters, }
-\item[{vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
+\item[{vector$<$ {\bf Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aefc4d0736d8af4ab53f1e5e76440f447}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aefc4d0736d8af4ab53f1e5e76440f447}
 
 
-\-Add the entities to the clusters as indicated by the cluster\-Indexes parameter. 
+Add the entities to the clusters as indicated by the cluster\-Indexes parameter. 
 
-\-Add the entities to the clusters as indicated by the cluster\-Indexes parameter
+Add the entities to the clusters as indicated by the cluster\-Indexes parameter
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em entities} & \-Entities detected in the image \\
+\begin{DoxyParams}{Parameters}
+{\em entities} & Entities detected in the image \\
 \hline
-{\em cluster\-Indexes} & \-Indexes to which cluster each entity belongs \\
+{\em cluster\-Indexes} & Indexes to which cluster each entity belongs \\
 \hline
-{\em nr\-Of\-Clusters} & \-Total number of clusters \\
+{\em nr\-Of\-Clusters} & Total number of clusters \\
 \hline
-{\em clusters} & \-Collection of clusters, each one with the updated measures \\
+{\em clusters} & Collection of clusters, each one with the updated measures \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 115 of file \-Cluster\-Detector.\-cpp.
+Definition at line 115 of file Cluster\-Detector.\-cpp.
 
 
 
-\-Referenced by detect\-And\-Analyse\-Clusters().
+Referenced by detect\-And\-Analyse\-Clusters().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -212,37 +222,37 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_af994e960ba3cd76cc67e714ea276264a}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!analyse\-Clusters@{analyse\-Clusters}}
 \index{analyse\-Clusters@{analyse\-Clusters}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{analyse\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::analyse\-Clusters} (
+\subsubsection[{analyse\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::analyse\-Clusters (
 \begin{DoxyParamCaption}
-\item[{vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
+\item[{vector$<$ {\bf Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_af994e960ba3cd76cc67e714ea276264a}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_af994e960ba3cd76cc67e714ea276264a}
 
 
-\-Analyse the clusters. 
+Analyse the clusters. 
 
-\-Analyse the clusters and compute the angle and distance from the centre, average clusteredness degree and pile up degree
+Analyse the clusters and compute the angle and distance from the centre, average clusteredness degree and pile up degree
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em clusters} & \-Collection of clusters, each one with the updated measures \\
+\begin{DoxyParams}{Parameters}
+{\em clusters} & Collection of clusters, each one with the updated measures \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 129 of file \-Cluster\-Detector.\-cpp.
+Definition at line 129 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References analyse\-Clusters\-Origin\-Dependent\-Values(), multiscale\-::analysis\-::\-Detector\-::avg\-Clusteredness\-Degree, multiscale\-::analysis\-::\-Detector\-::avg\-Density, compute\-Average\-Pile\-Up\-Degree(), and compute\-Clusteredness\-Index().
+References analyse\-Clusters\-Origin\-Dependent\-Values(), multiscale\-::analysis\-::\-Detector\-::avg\-Clusteredness\-Degree, multiscale\-::analysis\-::\-Detector\-::avg\-Density, compute\-Average\-Pile\-Up\-Degree(), and compute\-Clusteredness\-Index().
 
 
 
-\-Referenced by detect\-And\-Analyse\-Clusters().
+Referenced by detect\-And\-Analyse\-Clusters().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -253,37 +263,37 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!analyse\-Clusters\-Origin\-Dependent\-Values@{analyse\-Clusters\-Origin\-Dependent\-Values}}
 \index{analyse\-Clusters\-Origin\-Dependent\-Values@{analyse\-Clusters\-Origin\-Dependent\-Values}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{analyse\-Clusters\-Origin\-Dependent\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::analyse\-Clusters\-Origin\-Dependent\-Values} (
+\subsubsection[{analyse\-Clusters\-Origin\-Dependent\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::analyse\-Clusters\-Origin\-Dependent\-Values (
 \begin{DoxyParamCaption}
-\item[{vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
+\item[{vector$<$ {\bf Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_affff27bd4559d1272913ff1bceb229b5}
 
 
-\-Analyse the clusters and compute the origin dependent values. 
+Analyse the clusters and compute the origin dependent values. 
 
-\-The values which depend on the origin point are the distance of the cluster from the centre and the angle
+The values which depend on the origin point are the distance of the cluster from the centre and the angle
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em clusters} & \-Collection of clusters, each one with the updated measures \\
+\begin{DoxyParams}{Parameters}
+{\em clusters} & Collection of clusters, each one with the updated measures \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 136 of file \-Cluster\-Detector.\-cpp.
+Definition at line 136 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References get\-Cluster\-Convex\-Hull(), and update\-Cluster\-Origin\-Dependent\-Values().
+References get\-Cluster\-Convex\-Hull(), and update\-Cluster\-Origin\-Dependent\-Values().
 
 
 
-\-Referenced by analyse\-Clusters().
+Referenced by analyse\-Clusters().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -294,56 +304,56 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a5679e30f1ea35203963bf2baa8d7ed36}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!clear\-Previous\-Detection\-Results@{clear\-Previous\-Detection\-Results}}
 \index{clear\-Previous\-Detection\-Results@{clear\-Previous\-Detection\-Results}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{clear\-Previous\-Detection\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::clear\-Previous\-Detection\-Results} (
+\subsubsection[{clear\-Previous\-Detection\-Results}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::clear\-Previous\-Detection\-Results (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}override, protected, virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a5679e30f1ea35203963bf2baa8d7ed36}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a5679e30f1ea35203963bf2baa8d7ed36}
 
 
-\-Clear the clusters from the previous detection. 
-
-
-
-\-Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a3c2add35193ad09a0200003d0053da6b}{multiscale\-::analysis\-::\-Detector}.
+Clear the clusters from the previous detection. 
 
 
 
-\-Definition at line 61 of file \-Cluster\-Detector.\-cpp.
+Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a3c2add35193ad09a0200003d0053da6b}{multiscale\-::analysis\-::\-Detector}.
 
 
 
-\-References clusters.
+Definition at line 61 of file Cluster\-Detector.\-cpp.
+
+
+
+References clusters.
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a1efab8446c79feb8a9285d895bb64b05}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!compute\-Average\-Pile\-Up\-Degree@{compute\-Average\-Pile\-Up\-Degree}}
 \index{compute\-Average\-Pile\-Up\-Degree@{compute\-Average\-Pile\-Up\-Degree}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{compute\-Average\-Pile\-Up\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Cluster\-Detector\-::compute\-Average\-Pile\-Up\-Degree} (
+\subsubsection[{compute\-Average\-Pile\-Up\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}double Cluster\-Detector\-::compute\-Average\-Pile\-Up\-Degree (
 \begin{DoxyParamCaption}
-\item[{vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
+\item[{vector$<$ {\bf Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a1efab8446c79feb8a9285d895bb64b05}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a1efab8446c79feb8a9285d895bb64b05}
 
 
-\-Compute the average pile up degree for all entities in the image. 
+Compute the average pile up degree for all entities in the image. 
 
-\-Compute the average pile up degree for all entities in the image as the sum of the average pile up degrees of all clusters divided by the number of clusters
+Compute the average pile up degree for all entities in the image as the sum of the average pile up degrees of all clusters divided by the number of clusters
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em clusters} & \-Clusters of entities detected in the image \\
+\begin{DoxyParams}{Parameters}
+{\em clusters} & Clusters of entities detected in the image \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 169 of file \-Cluster\-Detector.\-cpp.
+Definition at line 169 of file Cluster\-Detector.\-cpp.
 
 
 
-\-Referenced by analyse\-Clusters().
+Referenced by analyse\-Clusters().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -354,37 +364,37 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aaa7937daf9872614e09b23cb4f6e5aa8}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!compute\-Clusteredness\-Index@{compute\-Clusteredness\-Index}}
 \index{compute\-Clusteredness\-Index@{compute\-Clusteredness\-Index}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{compute\-Clusteredness\-Index}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Cluster\-Detector\-::compute\-Clusteredness\-Index} (
+\subsubsection[{compute\-Clusteredness\-Index}]{\setlength{\rightskip}{0pt plus 5cm}double Cluster\-Detector\-::compute\-Clusteredness\-Index (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
+\item[{const vector$<$ {\bf Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aaa7937daf9872614e09b23cb4f6e5aa8}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aaa7937daf9872614e09b23cb4f6e5aa8}
 
 
-\-Compute the clusteredness index for all the entities detected in the image. 
+Compute the clusteredness index for all the entities detected in the image. 
 
-\-Compute the clusteredness index for all the entities detected in the image using \hyperlink{classmultiscale_1_1analysis_1_1Silhouette}{\-Silhouette} cluster validity index
+Compute the clusteredness index for all the entities detected in the image using \hyperlink{classmultiscale_1_1analysis_1_1Silhouette}{Silhouette} cluster validity index
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em clusters} & \-Collection of clusters, each one with the updated measures \\
+\begin{DoxyParams}{Parameters}
+{\em clusters} & Collection of clusters, each one with the updated measures \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 165 of file \-Cluster\-Detector.\-cpp.
+Definition at line 165 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References multiscale\-::analysis\-::\-Silhouette\-::compute\-Overall\-Average\-Measure().
+References multiscale\-::analysis\-::\-Silhouette\-::compute\-Overall\-Average\-Measure().
 
 
 
-\-Referenced by analyse\-Clusters().
+Referenced by analyse\-Clusters().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -395,35 +405,35 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aa45fe0a4a548b4d44407ee7f346e66d3}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!convert\-Entities@{convert\-Entities}}
 \index{convert\-Entities@{convert\-Entities}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{convert\-Entities}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ shared\-\_\-ptr$<$ {\bf \-Data\-Point} $>$ $>$ {\bf \-Cluster\-Detector\-::convert\-Entities} (
+\subsubsection[{convert\-Entities}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ shared\-\_\-ptr$<$ {\bf Data\-Point} $>$ $>$ Cluster\-Detector\-::convert\-Entities (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ {\bf \-Entity} $>$ \&}]{entities}
+\item[{const vector$<$ {\bf Entity} $>$ \&}]{entities}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa45fe0a4a548b4d44407ee7f346e66d3}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa45fe0a4a548b4d44407ee7f346e66d3}
 
 
-\-Convert the entities to the format required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} class. 
+Convert the entities to the format required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} class. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em entities} & \-Entities detected in the image \\
+\begin{DoxyParams}{Parameters}
+{\em entities} & Entities detected in the image \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 89 of file \-Cluster\-Detector.\-cpp.
+Definition at line 89 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References convert\-Non\-Piled\-Up\-Entities(), and convert\-Piled\-Up\-Entities().
+References convert\-Non\-Piled\-Up\-Entities(), and convert\-Piled\-Up\-Entities().
 
 
 
-\-Referenced by detect\-Clusters().
+Referenced by detect\-Clusters().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -434,30 +444,30 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_afccb86bfb93df00fff8408faea7a2651}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!convert\-Eps\-Value@{convert\-Eps\-Value}}
 \index{convert\-Eps\-Value@{convert\-Eps\-Value}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{convert\-Eps\-Value}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Cluster\-Detector\-::convert\-Eps\-Value} (
+\subsubsection[{convert\-Eps\-Value}]{\setlength{\rightskip}{0pt plus 5cm}double Cluster\-Detector\-::convert\-Eps\-Value (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_afccb86bfb93df00fff8408faea7a2651}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_afccb86bfb93df00fff8408faea7a2651}
 
 
-\-Convert the value of eps from integer to double. 
-
-
-
-\-Definition at line 194 of file \-Cluster\-Detector.\-cpp.
+Convert the value of eps from integer to double. 
 
 
 
-\-References eps, \-E\-P\-S\-\_\-\-M\-A\-X, \-E\-P\-S\-\_\-\-M\-I\-N, \-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X, and \-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N.
+Definition at line 194 of file Cluster\-Detector.\-cpp.
 
 
 
-\-Referenced by detect\-Clusters(), and get\-Eps().
+References eps, E\-P\-S\-\_\-\-M\-A\-X, E\-P\-S\-\_\-\-M\-I\-N, E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X, and E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N.
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Referenced by detect\-Clusters(), and get\-Eps().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -468,34 +478,34 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a4b42b3de7411fe02c7871064497feef1}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!convert\-Non\-Piled\-Up\-Entities@{convert\-Non\-Piled\-Up\-Entities}}
 \index{convert\-Non\-Piled\-Up\-Entities@{convert\-Non\-Piled\-Up\-Entities}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{convert\-Non\-Piled\-Up\-Entities}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::convert\-Non\-Piled\-Up\-Entities} (
+\subsubsection[{convert\-Non\-Piled\-Up\-Entities}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::convert\-Non\-Piled\-Up\-Entities (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ {\bf \-Entity} $>$ \&}]{entities, }
-\item[{vector$<$ shared\-\_\-ptr$<$ {\bf \-Data\-Point} $>$ $>$ \&}]{data\-Points}
+\item[{const vector$<$ {\bf Entity} $>$ \&}]{entities, }
+\item[{vector$<$ shared\-\_\-ptr$<$ {\bf Data\-Point} $>$ $>$ \&}]{data\-Points}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a4b42b3de7411fe02c7871064497feef1}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a4b42b3de7411fe02c7871064497feef1}
 
 
-\-Convert the non pile up entities to the format required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} class. 
+Convert the non pile up entities to the format required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} class. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em entities} & \-Entities detected in the image \\
+\begin{DoxyParams}{Parameters}
+{\em entities} & Entities detected in the image \\
 \hline
-{\em data\-Points} & \-Collection of \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{\-Data\-Point} instances required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} class \\
+{\em data\-Points} & Collection of \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} instances required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} class \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 98 of file \-Cluster\-Detector.\-cpp.
+Definition at line 98 of file Cluster\-Detector.\-cpp.
 
 
 
-\-Referenced by convert\-Entities().
+Referenced by convert\-Entities().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -506,34 +516,34 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a22ba21c341448af455111e718b058391}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!convert\-Piled\-Up\-Entities@{convert\-Piled\-Up\-Entities}}
 \index{convert\-Piled\-Up\-Entities@{convert\-Piled\-Up\-Entities}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{convert\-Piled\-Up\-Entities}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::convert\-Piled\-Up\-Entities} (
+\subsubsection[{convert\-Piled\-Up\-Entities}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::convert\-Piled\-Up\-Entities (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ {\bf \-Entity} $>$ \&}]{entities, }
-\item[{vector$<$ shared\-\_\-ptr$<$ {\bf \-Data\-Point} $>$ $>$ \&}]{data\-Points}
+\item[{const vector$<$ {\bf Entity} $>$ \&}]{entities, }
+\item[{vector$<$ shared\-\_\-ptr$<$ {\bf Data\-Point} $>$ $>$ \&}]{data\-Points}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a22ba21c341448af455111e718b058391}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a22ba21c341448af455111e718b058391}
 
 
-\-Convert the entities to the required format by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} class. 
+Convert the entities to the required format by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} class. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em entities} & \-Entities detected in the image \\
+\begin{DoxyParams}{Parameters}
+{\em entities} & Entities detected in the image \\
 \hline
-{\em data\-Points} & \-Collection of \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{\-Data\-Point} instances required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} class \\
+{\em data\-Points} & Collection of \hyperlink{classmultiscale_1_1analysis_1_1DataPoint}{Data\-Point} instances required by the \hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{D\-B\-S\-C\-A\-N} class \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 104 of file \-Cluster\-Detector.\-cpp.
+Definition at line 104 of file Cluster\-Detector.\-cpp.
 
 
 
-\-Referenced by convert\-Entities().
+Referenced by convert\-Entities().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -544,65 +554,65 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a7877cc5364f576e6a9cd96a6cd528cfc}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!create\-Detector\-Specific\-Trackbars@{create\-Detector\-Specific\-Trackbars}}
 \index{create\-Detector\-Specific\-Trackbars@{create\-Detector\-Specific\-Trackbars}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{create\-Detector\-Specific\-Trackbars}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::create\-Detector\-Specific\-Trackbars} (
+\subsubsection[{create\-Detector\-Specific\-Trackbars}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::create\-Detector\-Specific\-Trackbars (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}override, protected, virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a7877cc5364f576e6a9cd96a6cd528cfc}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a7877cc5364f576e6a9cd96a6cd528cfc}
 
 
-\-Create the trackbars. 
-
-
-
-\-Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a930ad07f5b8d9f21e6758341f71ae31a}{multiscale\-::analysis\-::\-Detector}.
+Create the trackbars. 
 
 
 
-\-Definition at line 56 of file \-Cluster\-Detector.\-cpp.
+Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a930ad07f5b8d9f21e6758341f71ae31a}{multiscale\-::analysis\-::\-Detector}.
 
 
 
-\-References eps, \-E\-P\-S\-\_\-\-M\-A\-X, \-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X, min\-Points, \-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S, \-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S, and multiscale\-::analysis\-::\-Detector\-::\-W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E.
+Definition at line 56 of file Cluster\-Detector.\-cpp.
+
+
+
+References eps, E\-P\-S\-\_\-\-M\-A\-X, M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X, min\-Points, T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S, T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S, and multiscale\-::analysis\-::\-Detector\-::\-W\-I\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-I\-M\-A\-G\-E.
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a46f98e066e74171774f0b6728118bc7b}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!detect\-And\-Analyse\-Clusters@{detect\-And\-Analyse\-Clusters}}
 \index{detect\-And\-Analyse\-Clusters@{detect\-And\-Analyse\-Clusters}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{detect\-And\-Analyse\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::detect\-And\-Analyse\-Clusters} (
+\subsubsection[{detect\-And\-Analyse\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::detect\-And\-Analyse\-Clusters (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ {\bf \-Entity} $>$ \&}]{entities, }
-\item[{vector$<$ {\bf \-Cluster} $>$ \&}]{clusters}
+\item[{const vector$<$ {\bf Entity} $>$ \&}]{entities, }
+\item[{vector$<$ {\bf Cluster} $>$ \&}]{clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a46f98e066e74171774f0b6728118bc7b}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a46f98e066e74171774f0b6728118bc7b}
 
 
-\-Detect and analyse the clusters of entities in the image. 
+Detect and analyse the clusters of entities in the image. 
 
-\-Detect and analyse the clusters of entities in the image
+Detect and analyse the clusters of entities in the image \begin{DoxyVerb}               Remark: The "noise" cluster will be ignored.
+\end{DoxyVerb}
 
-\-Remark\-: \-The \char`\"{}noise\char`\"{} cluster will be ignored.
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em entities} & \-Entities detected in the image \\
+\begin{DoxyParams}{Parameters}
+{\em entities} & Entities detected in the image \\
 \hline
-{\em clusters} & \-Clusters of entities detected in the image \\
+{\em clusters} & Clusters of entities detected in the image \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 76 of file \-Cluster\-Detector.\-cpp.
+Definition at line 76 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References add\-Entities\-To\-Clusters(), analyse\-Clusters(), multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::\-C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D, and detect\-Clusters().
+References add\-Entities\-To\-Clusters(), analyse\-Clusters(), multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::\-C\-L\-U\-S\-T\-E\-R\-I\-N\-G\-\_\-\-U\-N\-C\-L\-A\-S\-S\-I\-F\-I\-E\-D, and detect\-Clusters().
 
 
 
-\-Referenced by process\-Image\-And\-Detect().
+Referenced by process\-Image\-And\-Detect().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -613,43 +623,43 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a8c9c3ac0c3d8e924468a58f558984dda}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!detect\-Clusters@{detect\-Clusters}}
 \index{detect\-Clusters@{detect\-Clusters}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{detect\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::detect\-Clusters} (
+\subsubsection[{detect\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::detect\-Clusters (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ {\bf \-Entity} $>$ \&}]{entities, }
+\item[{const vector$<$ {\bf Entity} $>$ \&}]{entities, }
 \item[{vector$<$ int $>$ \&}]{cluster\-Indexes, }
 \item[{int \&}]{nr\-Of\-Clusters}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a8c9c3ac0c3d8e924468a58f558984dda}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a8c9c3ac0c3d8e924468a58f558984dda}
 
 
-\-Detect the clusters of entities in the image. 
+Detect the clusters of entities in the image. 
 
-\-Detect the clusters of entities in the image using \-Density \-Based scan (\-D\-Bscan) clustering algorithm \-Clusters start from index 1, because cluster 0 contains only noise data/points.
+Detect the clusters of entities in the image using Density Based scan (D\-Bscan) clustering algorithm Clusters start from index 1, because cluster 0 contains only noise data/points.
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em entities} & \-Entities detected in the image \\
+\begin{DoxyParams}{Parameters}
+{\em entities} & Entities detected in the image \\
 \hline
-{\em cluster\-Indexes} & \-Indexes to which cluster each entity belongs \\
+{\em cluster\-Indexes} & Indexes to which cluster each entity belongs \\
 \hline
-{\em nr\-Of\-Clusters} & \-Total number of clusters \\
+{\em nr\-Of\-Clusters} & Total number of clusters \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 85 of file \-Cluster\-Detector.\-cpp.
+Definition at line 85 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References convert\-Entities(), convert\-Eps\-Value(), get\-Valid\-Min\-Points\-Value(), and multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::run().
+References convert\-Entities(), convert\-Eps\-Value(), get\-Valid\-Min\-Points\-Value(), and multiscale\-::analysis\-::\-D\-B\-S\-C\-A\-N\-::run().
 
 
 
-\-Referenced by detect\-And\-Analyse\-Clusters().
+Referenced by detect\-And\-Analyse\-Clusters().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -660,33 +670,33 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a115f47c1f0855886ef5ca48acc111843}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!detect\-Entities\-In\-Image@{detect\-Entities\-In\-Image}}
 \index{detect\-Entities\-In\-Image@{detect\-Entities\-In\-Image}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{detect\-Entities\-In\-Image}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf multiscale\-::analysis\-::\-Cluster\-Detector\-::detect\-Entities\-In\-Image} (
+\subsubsection[{detect\-Entities\-In\-Image}]{\setlength{\rightskip}{0pt plus 5cm}virtual void multiscale\-::analysis\-::\-Cluster\-Detector\-::detect\-Entities\-In\-Image (
 \begin{DoxyParamCaption}
-\item[{vector$<$ {\bf \-Entity} $>$ \&}]{entities}
+\item[{vector$<$ {\bf Entity} $>$ \&}]{entities}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected, pure virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a115f47c1f0855886ef5ca48acc111843}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a115f47c1f0855886ef5ca48acc111843}
 
 
-\-Detect the entities in the image. 
+Detect the entities in the image. 
 
-\-Detect the entities in the image, compute their centre point and degree of pile up
+Detect the entities in the image, compute their centre point and degree of pile up
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em entities} & \-Entities detected in the image \\
+\begin{DoxyParams}{Parameters}
+{\em entities} & Entities detected in the image \\
 \hline
 \end{DoxyParams}
 
 
-\-Implemented in \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_af3c2206724a69794e12f34fe7fe5082b}{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}.
+Implemented in \hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector_af3c2206724a69794e12f34fe7fe5082b}{multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector}.
 
 
 
-\-Referenced by process\-Image\-And\-Detect().
+Referenced by process\-Image\-And\-Detect().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -697,35 +707,35 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!get\-Cluster\-Convex\-Hull@{get\-Cluster\-Convex\-Hull}}
 \index{get\-Cluster\-Convex\-Hull@{get\-Cluster\-Convex\-Hull}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{get\-Cluster\-Convex\-Hull}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \-Point $>$ {\bf \-Cluster\-Detector\-::get\-Cluster\-Convex\-Hull} (
+\subsubsection[{get\-Cluster\-Convex\-Hull}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Point $>$ Cluster\-Detector\-::get\-Cluster\-Convex\-Hull (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Cluster} \&}]{cluster}
+\item[{{\bf Cluster} \&}]{cluster}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a4a071efa7d7812c1db9ee577b7893902}
 
 
-\-Return the convex hull of the given cluster. 
+Return the convex hull of the given cluster. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em cluster} & \-The given cluster \\
+\begin{DoxyParams}{Parameters}
+{\em cluster} & The given cluster \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 155 of file \-Cluster\-Detector.\-cpp.
+Definition at line 155 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References multiscale\-::analysis\-::\-Cluster\-::get\-Entities\-Convex\-Hull().
+References multiscale\-::analysis\-::\-Cluster\-::get\-Entities\-Convex\-Hull().
 
 
 
-\-Referenced by analyse\-Clusters\-Origin\-Dependent\-Values().
+Referenced by analyse\-Clusters\-Origin\-Dependent\-Values().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -736,95 +746,95 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a0ed0e389d65161b7eef8f377efb20e5c}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!get\-Clusters@{get\-Clusters}}
 \index{get\-Clusters@{get\-Clusters}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{get\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf \-Cluster} $>$ const \& {\bf \-Cluster\-Detector\-::get\-Clusters} (
+\subsubsection[{get\-Clusters}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Cluster} $>$ const \& Cluster\-Detector\-::get\-Clusters (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a0ed0e389d65161b7eef8f377efb20e5c}
 
 
-\-Get a const reference to the vector of detected clusters. 
+Get a const reference to the vector of detected clusters. 
 
 
 
-\-Definition at line 35 of file \-Cluster\-Detector.\-cpp.
+Definition at line 35 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References clusters.
+References clusters.
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a6bf0ac91b81cdcf46fe8e50f6dd4c9a8}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D@{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D}}
 \index{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D@{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ shared\-\_\-ptr$<$ {\bf \-Spatial\-Entity\-Pseudo3\-D} $>$ $>$ {\bf \-Cluster\-Detector\-::get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D} (
+\subsubsection[{get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ shared\-\_\-ptr$<$ {\bf Spatial\-Entity\-Pseudo3\-D} $>$ $>$ Cluster\-Detector\-::get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}override, protected, virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a6bf0ac91b81cdcf46fe8e50f6dd4c9a8}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a6bf0ac91b81cdcf46fe8e50f6dd4c9a8}
 
 
-\-Get the collection of clusters detected in the image. 
-
-
-
-\-Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a684a7071aca4173e3dc968d8635bd92a}{multiscale\-::analysis\-::\-Detector}.
+Get the collection of clusters detected in the image. 
 
 
 
-\-Definition at line 184 of file \-Cluster\-Detector.\-cpp.
+Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a684a7071aca4173e3dc968d8635bd92a}{multiscale\-::analysis\-::\-Detector}.
 
 
 
-\-References multiscale\-::analysis\-::\-Cluster, and clusters.
+Definition at line 184 of file Cluster\-Detector.\-cpp.
+
+
+
+References multiscale\-::analysis\-::\-Cluster, and clusters.
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aa6adbee2ccb7b0b66fb5242635e78d08}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!get\-Detector\-Type\-As\-String@{get\-Detector\-Type\-As\-String}}
 \index{get\-Detector\-Type\-As\-String@{get\-Detector\-Type\-As\-String}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{get\-Detector\-Type\-As\-String}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-Cluster\-Detector\-::get\-Detector\-Type\-As\-String} (
+\subsubsection[{get\-Detector\-Type\-As\-String}]{\setlength{\rightskip}{0pt plus 5cm}string Cluster\-Detector\-::get\-Detector\-Type\-As\-String (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}override, protected, virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa6adbee2ccb7b0b66fb5242635e78d08}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa6adbee2ccb7b0b66fb5242635e78d08}
 
 
-\-Get the type of the detector as a string. 
-
-
-
-\-Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_aeb7667ac14f48b58fd4601b11f09cc68}{multiscale\-::analysis\-::\-Detector}.
+Get the type of the detector as a string. 
 
 
 
-\-Definition at line 65 of file \-Cluster\-Detector.\-cpp.
+Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_aeb7667ac14f48b58fd4601b11f09cc68}{multiscale\-::analysis\-::\-Detector}.
 
 
 
-\-References \-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E.
+Definition at line 65 of file Cluster\-Detector.\-cpp.
+
+
+
+References D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E.
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a5f1699b100e7203720cb7fd1ef73cea1}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!get\-Eps@{get\-Eps}}
 \index{get\-Eps@{get\-Eps}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{get\-Eps}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Cluster\-Detector\-::get\-Eps} (
+\subsubsection[{get\-Eps}]{\setlength{\rightskip}{0pt plus 5cm}double Cluster\-Detector\-::get\-Eps (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a5f1699b100e7203720cb7fd1ef73cea1}
 
 
-\-Get the value of the clustering algorithm parameter eps. 
+Get the value of the clustering algorithm parameter eps. 
 
 
 
-\-Definition at line 27 of file \-Cluster\-Detector.\-cpp.
+Definition at line 27 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References convert\-Eps\-Value().
+References convert\-Eps\-Value().
 
 
 
-\-Referenced by save\-Detector\-Parameter\-Values().
+Referenced by save\-Detector\-Parameter\-Values().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -835,30 +845,30 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_af979c73c154bd42ef73d3328e80889ef}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!get\-Min\-Points@{get\-Min\-Points}}
 \index{get\-Min\-Points@{get\-Min\-Points}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{get\-Min\-Points}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Cluster\-Detector\-::get\-Min\-Points} (
+\subsubsection[{get\-Min\-Points}]{\setlength{\rightskip}{0pt plus 5cm}int Cluster\-Detector\-::get\-Min\-Points (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_af979c73c154bd42ef73d3328e80889ef}
 
 
-\-Get the value of the clustering algorithm parameter \-Min\-Points. 
+Get the value of the clustering algorithm parameter Min\-Points. 
 
 
 
-\-Definition at line 31 of file \-Cluster\-Detector.\-cpp.
+Definition at line 31 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References min\-Points.
+References min\-Points.
 
 
 
-\-Referenced by save\-Detector\-Parameter\-Values().
+Referenced by save\-Detector\-Parameter\-Values().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -869,30 +879,30 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_ab1c2514fb8599f74bf010e81154a9bf7}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!get\-Valid\-Min\-Points\-Value@{get\-Valid\-Min\-Points\-Value}}
 \index{get\-Valid\-Min\-Points\-Value@{get\-Valid\-Min\-Points\-Value}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{get\-Valid\-Min\-Points\-Value}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Cluster\-Detector\-::get\-Valid\-Min\-Points\-Value} (
+\subsubsection[{get\-Valid\-Min\-Points\-Value}]{\setlength{\rightskip}{0pt plus 5cm}int Cluster\-Detector\-::get\-Valid\-Min\-Points\-Value (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_ab1c2514fb8599f74bf010e81154a9bf7}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_ab1c2514fb8599f74bf010e81154a9bf7}
 
 
-\-Return non-\/zero value for min\-Points. 
-
-
-
-\-Definition at line 198 of file \-Cluster\-Detector.\-cpp.
+Return non-\/zero value for min\-Points. 
 
 
 
-\-References min\-Points.
+Definition at line 198 of file Cluster\-Detector.\-cpp.
 
 
 
-\-Referenced by detect\-Clusters().
+References min\-Points.
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Referenced by detect\-Clusters().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -903,81 +913,81 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a67751dd6e21750019a20648b6ba3c8f2}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!initialise\-Detector\-Specific\-Fields@{initialise\-Detector\-Specific\-Fields}}
 \index{initialise\-Detector\-Specific\-Fields@{initialise\-Detector\-Specific\-Fields}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{initialise\-Detector\-Specific\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::initialise\-Detector\-Specific\-Fields} (
+\subsubsection[{initialise\-Detector\-Specific\-Fields}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::initialise\-Detector\-Specific\-Fields (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}override, protected, virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a67751dd6e21750019a20648b6ba3c8f2}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a67751dd6e21750019a20648b6ba3c8f2}
 
 
-\-Initialise clustering values. 
-
-
-
-\-Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a83aea2a1b70e54d08cf3b0514c780796}{multiscale\-::analysis\-::\-Detector}.
+Initialise clustering values. 
 
 
 
-\-Definition at line 51 of file \-Cluster\-Detector.\-cpp.
+Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a83aea2a1b70e54d08cf3b0514c780796}{multiscale\-::analysis\-::\-Detector}.
 
 
 
-\-References eps, and min\-Points.
+Definition at line 51 of file Cluster\-Detector.\-cpp.
+
+
+
+References eps, and min\-Points.
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a736847233c57cfa59abb953f70ef9209}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!process\-Image\-And\-Detect@{process\-Image\-And\-Detect}}
 \index{process\-Image\-And\-Detect@{process\-Image\-And\-Detect}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{process\-Image\-And\-Detect}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::process\-Image\-And\-Detect} (
+\subsubsection[{process\-Image\-And\-Detect}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::process\-Image\-And\-Detect (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}override, protected, virtual\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a736847233c57cfa59abb953f70ef9209}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a736847233c57cfa59abb953f70ef9209}
 
 
-\-Process the provided image and detect clusters in it. 
-
-
-
-\-Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a7451855e415300f15765082f21588f13}{multiscale\-::analysis\-::\-Detector}.
+Process the provided image and detect clusters in it. 
 
 
 
-\-Definition at line 69 of file \-Cluster\-Detector.\-cpp.
+Implements \hyperlink{classmultiscale_1_1analysis_1_1Detector_a7451855e415300f15765082f21588f13}{multiscale\-::analysis\-::\-Detector}.
 
 
 
-\-References clusters, detect\-And\-Analyse\-Clusters(), and detect\-Entities\-In\-Image().
+Definition at line 69 of file Cluster\-Detector.\-cpp.
+
+
+
+References clusters, detect\-And\-Analyse\-Clusters(), and detect\-Entities\-In\-Image().
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a35eaa560c893a86c3149471f40c15979}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!set\-Eps@{set\-Eps}}
 \index{set\-Eps@{set\-Eps}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{set\-Eps}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::set\-Eps} (
+\subsubsection[{set\-Eps}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::set\-Eps (
 \begin{DoxyParamCaption}
 \item[{double}]{eps}
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a35eaa560c893a86c3149471f40c15979}
 
 
-\-Set the value of the clustering algorithm parameter eps. 
+Set the value of the clustering algorithm parameter eps. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em eps} & \-Value of the clustering algorithm parameter eps \\
+\begin{DoxyParams}{Parameters}
+{\em eps} & Value of the clustering algorithm parameter eps \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 39 of file \-Cluster\-Detector.\-cpp.
+Definition at line 39 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References eps, \-E\-P\-S\-\_\-\-M\-A\-X, \-E\-P\-S\-\_\-\-M\-I\-N, \-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X, \-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N, and multiscale\-::analysis\-::\-Detector\-::set\-Detector\-Specific\-Fields\-Initialisation\-Flag().
+References eps, E\-P\-S\-\_\-\-M\-A\-X, E\-P\-S\-\_\-\-M\-I\-N, E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X, E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N, and multiscale\-::analysis\-::\-Detector\-::set\-Detector\-Specific\-Fields\-Initialisation\-Flag().
 
 
 
-\-Referenced by load\-Detector\-Parameter\-Values().
+Referenced by load\-Detector\-Parameter\-Values().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -988,35 +998,35 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a190fd17d121e8c22c1ca6e4f5b7a213c}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!set\-Min\-Points@{set\-Min\-Points}}
 \index{set\-Min\-Points@{set\-Min\-Points}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{set\-Min\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::set\-Min\-Points} (
+\subsubsection[{set\-Min\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::set\-Min\-Points (
 \begin{DoxyParamCaption}
 \item[{int}]{min\-Points}
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a190fd17d121e8c22c1ca6e4f5b7a213c}
 
 
-\-Set the value of the clustering algorithm parameter \-Min\-Points. 
+Set the value of the clustering algorithm parameter Min\-Points. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em min\-Points} & \-Value of the clustering algorithm parameter \-Min\-Points \\
+\begin{DoxyParams}{Parameters}
+{\em min\-Points} & Value of the clustering algorithm parameter Min\-Points \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 45 of file \-Cluster\-Detector.\-cpp.
+Definition at line 45 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References min\-Points, and multiscale\-::analysis\-::\-Detector\-::set\-Detector\-Specific\-Fields\-Initialisation\-Flag().
+References min\-Points, and multiscale\-::analysis\-::\-Detector\-::set\-Detector\-Specific\-Fields\-Initialisation\-Flag().
 
 
 
-\-Referenced by load\-Detector\-Parameter\-Values().
+Referenced by load\-Detector\-Parameter\-Values().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1027,40 +1037,40 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!update\-Cluster\-Origin\-Dependent\-Values@{update\-Cluster\-Origin\-Dependent\-Values}}
 \index{update\-Cluster\-Origin\-Dependent\-Values@{update\-Cluster\-Origin\-Dependent\-Values}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{update\-Cluster\-Origin\-Dependent\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values} (
+\subsubsection[{update\-Cluster\-Origin\-Dependent\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Cluster} \&}]{cluster, }
-\item[{const vector$<$ \-Point $>$ \&}]{cluster\-Convex\-Hull}
+\item[{{\bf Cluster} \&}]{cluster, }
+\item[{const vector$<$ Point $>$ \&}]{cluster\-Convex\-Hull}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_ac7e008a7674205095f94b91c8d7cdccc}
 
 
-\-Update the cluster and compute the origin dependent values considering the convex hull. 
+Update the cluster and compute the origin dependent values considering the convex hull. 
 
-\-The values which depend on the origin point are the distance of the cluster from the centre and the angle
+The values which depend on the origin point are the distance of the cluster from the centre and the angle
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{\-Cluster} \\
+\begin{DoxyParams}{Parameters}
+{\em cluster} & \hyperlink{classmultiscale_1_1analysis_1_1Cluster}{Cluster} \\
 \hline
-{\em cluster\-Convex\-Hull} & \-Convex hull of the cluster \\
+{\em cluster\-Convex\-Hull} & Convex hull of the cluster \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 146 of file \-Cluster\-Detector.\-cpp.
+Definition at line 146 of file Cluster\-Detector.\-cpp.
 
 
 
-\-References multiscale\-::\-Geometry2\-D\-::distance\-Btw\-Points(), multiscale\-::\-Geometry2\-D\-::minimum\-Distance\-Point\-Index(), multiscale\-::analysis\-::\-Detector\-::origin, multiscale\-::analysis\-::\-Detector\-::polygon\-Angle(), and multiscale\-::analysis\-::\-Cluster\-::set\-Origin\-Dependent\-Members().
+References multiscale\-::\-Geometry2\-D\-::distance\-Btw\-Points(), multiscale\-::\-Geometry2\-D\-::minimum\-Distance\-Point\-Index(), multiscale\-::analysis\-::\-Detector\-::origin, multiscale\-::analysis\-::\-Detector\-::polygon\-Angle(), and multiscale\-::analysis\-::\-Cluster\-::set\-Origin\-Dependent\-Members().
 
 
 
-\-Referenced by analyse\-Clusters\-Origin\-Dependent\-Values().
+Referenced by analyse\-Clusters\-Origin\-Dependent\-Values().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1071,149 +1081,155 @@ static const int \hyperlink{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60
 
 
 
-\subsection{\-Member \-Data \-Documentation}
+\subsection{Member Data Documentation}
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!clusters@{clusters}}
 \index{clusters@{clusters}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{clusters}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf \-Cluster}$>$ {\bf multiscale\-::analysis\-::\-Cluster\-Detector\-::clusters}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}
-\-Clusters found in the image 
+\subsubsection[{clusters}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Cluster}$>$ multiscale\-::analysis\-::\-Cluster\-Detector\-::clusters\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa81a8649bc743389c2fc1919d47eb5b3}
+Clusters found in the image 
 
-\-Definition at line 32 of file \-Cluster\-Detector.\-hpp.
-
-
-
-\-Referenced by clear\-Previous\-Detection\-Results(), get\-Clusters(), get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::output\-Results\-To\-Image(), and process\-Image\-And\-Detect().
-
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_ae2eae436968e6f637208af7d5a9d93b1}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E@{\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E}}
-\index{\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E@{\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Cluster\-Detector\-::\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E} = \char`\"{}\-Clusters\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_ae2eae436968e6f637208af7d5a9d93b1}
-
-
-\-Definition at line 199 of file \-Cluster\-Detector.\-hpp.
+Definition at line 32 of file Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by get\-Detector\-Type\-As\-String().
+Referenced by clear\-Previous\-Detection\-Results(), get\-Clusters(), get\-Collection\-Of\-Spatial\-Entity\-Pseudo3\-D(), multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::output\-Results\-To\-Image(), and process\-Image\-And\-Detect().
+
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_ae2eae436968e6f637208af7d5a9d93b1}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E@{D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E}}
+\index{D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E@{D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string Cluster\-Detector\-::\-D\-E\-T\-E\-C\-T\-O\-R\-\_\-\-T\-Y\-P\-E = \char`\"{}Clusters\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_ae2eae436968e6f637208af7d5a9d93b1}
+
+
+Definition at line 199 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by get\-Detector\-Type\-As\-String().
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aaa93a4b3a5a3c4279aa434669093ac40}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!entity\-Pileup\-Degree@{entity\-Pileup\-Degree}}
 \index{entity\-Pileup\-Degree@{entity\-Pileup\-Degree}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{entity\-Pileup\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf multiscale\-::analysis\-::\-Cluster\-Detector\-::entity\-Pileup\-Degree}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aaa93a4b3a5a3c4279aa434669093ac40}
-\-The pile up degree (intensity) of a grid position occupied by only one entity 
+\subsubsection[{entity\-Pileup\-Degree}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::analysis\-::\-Cluster\-Detector\-::entity\-Pileup\-Degree\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aaa93a4b3a5a3c4279aa434669093ac40}
+\begin{DoxyVerb}      The pile up degree (intensity) of a grid position occupied by only
+\end{DoxyVerb}
+ one entity 
 
-\-Definition at line 24 of file \-Cluster\-Detector.\-hpp.
+Definition at line 24 of file Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by \-Cluster\-Detector(), and multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::compute\-Pile\-Up\-Degree\-At\-Position().
+Referenced by Cluster\-Detector(), and multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::compute\-Pile\-Up\-Degree\-At\-Position().
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a61e876f87d62245eada8f56d587d39cd}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!eps@{eps}}
 \index{eps@{eps}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{eps}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf multiscale\-::analysis\-::\-Cluster\-Detector\-::eps}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a61e876f87d62245eada8f56d587d39cd}
-\hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} algorithm parameter for specifying the maximum radius of the neighbourhood 
+\subsubsection[{eps}]{\setlength{\rightskip}{0pt plus 5cm}int multiscale\-::analysis\-::\-Cluster\-Detector\-::eps\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a61e876f87d62245eada8f56d587d39cd}
+\begin{DoxyVerb}                        DBSCAN algorithm parameter for specifying the maximum radius
+\end{DoxyVerb}
+ of the neighbourhood 
 
-\-Definition at line 27 of file \-Cluster\-Detector.\-hpp.
-
-
-
-\-Referenced by \-Cluster\-Detector(), convert\-Eps\-Value(), create\-Detector\-Specific\-Trackbars(), initialise\-Detector\-Specific\-Fields(), and set\-Eps().
-
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a76d0b4ecd2793d478317cc1bc856e06f}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-E\-P\-S\-\_\-\-M\-A\-X@{\-E\-P\-S\-\_\-\-M\-A\-X}}
-\index{\-E\-P\-S\-\_\-\-M\-A\-X@{\-E\-P\-S\-\_\-\-M\-A\-X}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-E\-P\-S\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Cluster\-Detector\-::\-E\-P\-S\-\_\-\-M\-A\-X} = 10000\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a76d0b4ecd2793d478317cc1bc856e06f}
-
-
-\-Definition at line 208 of file \-Cluster\-Detector.\-hpp.
+Definition at line 27 of file Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by convert\-Eps\-Value(), create\-Detector\-Specific\-Trackbars(), and set\-Eps().
+Referenced by Cluster\-Detector(), convert\-Eps\-Value(), create\-Detector\-Specific\-Trackbars(), initialise\-Detector\-Specific\-Fields(), and set\-Eps().
 
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a6c3517e03d1fd2c6b4d6cd0d81eb8684}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-E\-P\-S\-\_\-\-M\-I\-N@{\-E\-P\-S\-\_\-\-M\-I\-N}}
-\index{\-E\-P\-S\-\_\-\-M\-I\-N@{\-E\-P\-S\-\_\-\-M\-I\-N}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-E\-P\-S\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Cluster\-Detector\-::\-E\-P\-S\-\_\-\-M\-I\-N} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a6c3517e03d1fd2c6b4d6cd0d81eb8684}
-
-
-\-Definition at line 207 of file \-Cluster\-Detector.\-hpp.
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a76d0b4ecd2793d478317cc1bc856e06f}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!E\-P\-S\-\_\-\-M\-A\-X@{E\-P\-S\-\_\-\-M\-A\-X}}
+\index{E\-P\-S\-\_\-\-M\-A\-X@{E\-P\-S\-\_\-\-M\-A\-X}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{E\-P\-S\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Cluster\-Detector\-::\-E\-P\-S\-\_\-\-M\-A\-X = 10000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a76d0b4ecd2793d478317cc1bc856e06f}
 
 
-
-\-Referenced by convert\-Eps\-Value(), and set\-Eps().
-
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60b9e068a8addf9dd27382c74e6d62}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}}
-\index{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Cluster\-Detector\-::\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X} = 1000\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60b9e068a8addf9dd27382c74e6d62}
-
-
-\-Definition at line 210 of file \-Cluster\-Detector.\-hpp.
+Definition at line 208 of file Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by convert\-Eps\-Value(), and set\-Eps().
+Referenced by convert\-Eps\-Value(), create\-Detector\-Specific\-Trackbars(), and set\-Eps().
 
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_ad9542bde7e3bf36d501a0b203dc61e09}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}}
-\index{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Cluster\-Detector\-::\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_ad9542bde7e3bf36d501a0b203dc61e09}
-
-
-\-Definition at line 209 of file \-Cluster\-Detector.\-hpp.
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a6c3517e03d1fd2c6b4d6cd0d81eb8684}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!E\-P\-S\-\_\-\-M\-I\-N@{E\-P\-S\-\_\-\-M\-I\-N}}
+\index{E\-P\-S\-\_\-\-M\-I\-N@{E\-P\-S\-\_\-\-M\-I\-N}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{E\-P\-S\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int Cluster\-Detector\-::\-E\-P\-S\-\_\-\-M\-I\-N = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a6c3517e03d1fd2c6b4d6cd0d81eb8684}
 
 
-
-\-Referenced by convert\-Eps\-Value(), and set\-Eps().
-
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aabb41b5c6e865ee33cbb27568cae5a2d}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X@{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}}
-\index{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X@{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Cluster\-Detector\-::\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X} = 100\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aabb41b5c6e865ee33cbb27568cae5a2d}
-
-
-\-Definition at line 205 of file \-Cluster\-Detector.\-hpp.
+Definition at line 207 of file Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by create\-Detector\-Specific\-Trackbars().
+Referenced by convert\-Eps\-Value(), and set\-Eps().
 
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aa0219df3977a845e46be090e6c3f90ad}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N@{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}}
-\index{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N@{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Cluster\-Detector\-::\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa0219df3977a845e46be090e6c3f90ad}
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60b9e068a8addf9dd27382c74e6d62}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}}
+\index{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X@{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Cluster\-Detector\-::\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-A\-X = 1000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a3e60b9e068a8addf9dd27382c74e6d62}
 
 
-\-Definition at line 204 of file \-Cluster\-Detector.\-hpp.
+Definition at line 210 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by convert\-Eps\-Value(), and set\-Eps().
+
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_ad9542bde7e3bf36d501a0b203dc61e09}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}}
+\index{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N@{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int Cluster\-Detector\-::\-E\-P\-S\-\_\-\-R\-E\-A\-L\-\_\-\-M\-I\-N = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_ad9542bde7e3bf36d501a0b203dc61e09}
+
+
+Definition at line 209 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by convert\-Eps\-Value(), and set\-Eps().
+
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aabb41b5c6e865ee33cbb27568cae5a2d}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X@{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}}
+\index{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X@{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Cluster\-Detector\-::\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-A\-X = 100\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aabb41b5c6e865ee33cbb27568cae5a2d}
+
+
+Definition at line 205 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by create\-Detector\-Specific\-Trackbars().
+
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aa0219df3977a845e46be090e6c3f90ad}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N@{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}}
+\index{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N@{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int Cluster\-Detector\-::\-M\-I\-N\-\_\-\-P\-O\-I\-N\-T\-S\-\_\-\-M\-I\-N = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa0219df3977a845e46be090e6c3f90ad}
+
+
+Definition at line 204 of file Cluster\-Detector.\-hpp.
 
 \hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_aa94df1adc462be5931ec25ba24122fe9}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!min\-Points@{min\-Points}}
 \index{min\-Points@{min\-Points}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{min\-Points}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf multiscale\-::analysis\-::\-Cluster\-Detector\-::min\-Points}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa94df1adc462be5931ec25ba24122fe9}
-\hyperlink{classmultiscale_1_1analysis_1_1DBSCAN}{\-D\-B\-S\-C\-A\-N} algorithm parameter for specifying the minimum number of points in an eps-\/neighbourhood of that point 
+\subsubsection[{min\-Points}]{\setlength{\rightskip}{0pt plus 5cm}int multiscale\-::analysis\-::\-Cluster\-Detector\-::min\-Points\hspace{0.3cm}{\ttfamily [protected]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_aa94df1adc462be5931ec25ba24122fe9}
+\begin{DoxyVerb}                  DBSCAN algorithm parameter for specifying the minimum number
+\end{DoxyVerb}
+ of points in an eps-\/neighbourhood of that point 
 
-\-Definition at line 29 of file \-Cluster\-Detector.\-hpp.
-
-
-
-\-Referenced by \-Cluster\-Detector(), create\-Detector\-Specific\-Trackbars(), get\-Min\-Points(), get\-Valid\-Min\-Points\-Value(), initialise\-Detector\-Specific\-Fields(), and set\-Min\-Points().
-
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a656f64f88c73c25824e5a4416a742aaf}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S@{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}}
-\index{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S@{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Cluster\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S} = \char`\"{}\-Eps (\-Multiplied by 10)\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a656f64f88c73c25824e5a4416a742aaf}
-
-
-\-Definition at line 201 of file \-Cluster\-Detector.\-hpp.
+Definition at line 29 of file Cluster\-Detector.\-hpp.
 
 
 
-\-Referenced by create\-Detector\-Specific\-Trackbars().
+Referenced by Cluster\-Detector(), create\-Detector\-Specific\-Trackbars(), get\-Min\-Points(), get\-Valid\-Min\-Points\-Value(), initialise\-Detector\-Specific\-Fields(), and set\-Min\-Points().
 
-\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a7f0fbbf3de8479b106893c4a8161bdaf}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}}
-\index{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
-\subsubsection[{\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-Cluster\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S} = \char`\"{}\-Minimum number of points\char`\"{}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a7f0fbbf3de8479b106893c4a8161bdaf}
-
-
-\-Definition at line 202 of file \-Cluster\-Detector.\-hpp.
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a656f64f88c73c25824e5a4416a742aaf}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}}
+\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string Cluster\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-E\-P\-S = \char`\"{}Eps (Multiplied by 10)\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a656f64f88c73c25824e5a4416a742aaf}
 
 
-
-\-Referenced by create\-Detector\-Specific\-Trackbars().
+Definition at line 201 of file Cluster\-Detector.\-hpp.
 
 
 
-\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+Referenced by create\-Detector\-Specific\-Trackbars().
+
+\hypertarget{classmultiscale_1_1analysis_1_1ClusterDetector_a7f0fbbf3de8479b106893c4a8161bdaf}{\index{multiscale\-::analysis\-::\-Cluster\-Detector@{multiscale\-::analysis\-::\-Cluster\-Detector}!T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}}
+\index{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}!multiscale::analysis::ClusterDetector@{multiscale\-::analysis\-::\-Cluster\-Detector}}
+\subsubsection[{T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string Cluster\-Detector\-::\-T\-R\-A\-C\-K\-B\-A\-R\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S = \char`\"{}Minimum number of points\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1analysis_1_1ClusterDetector_a7f0fbbf3de8479b106893c4a8161bdaf}
+
+
+Definition at line 202 of file Cluster\-Detector.\-hpp.
+
+
+
+Referenced by create\-Detector\-Specific\-Trackbars().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/\hyperlink{ClusterDetector_8hpp}{\-Cluster\-Detector.\-hpp}\item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/\hyperlink{ClusterDetector_8cpp}{\-Cluster\-Detector.\-cpp}\end{DoxyCompactItemize}
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/\hyperlink{ClusterDetector_8hpp}{Cluster\-Detector.\-hpp}\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/\hyperlink{ClusterDetector_8cpp}{Cluster\-Detector.\-cpp}\end{DoxyCompactItemize}

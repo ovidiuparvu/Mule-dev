@@ -1,5 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node7" href="$classmultiscale_1_1verification_1_1SpatialTemporalException.html" title="Class for representing a spatial temporal exception." alt="" coords="5,497,317,599"/>
-<area shape="rect" id="node2" href="$classmultiscale_1_1AlgorithmException.html" title="Class for representing algorithm exceptions." alt="" coords="60,193,263,295"/>
-<area shape="rect" id="node4" href="$classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project." alt="" coords="59,6,264,143"/>
+<map id="multiscale::UnexpectedBehaviourException" name="multiscale::UnexpectedBehaviourException">
+<area shape="rect" id="node11" href="$classmultiscale_1_1verification_1_1SpatialTemporalException.html" title="Class for representing a spatial temporal exception." alt="" coords="21,779,216,899"/>
+<area shape="rect" id="node2" href="$classmultiscale_1_1AlgorithmException.html" title="Class for representing algorithm exceptions." alt="" coords="17,459,220,562"/>
+<area shape="rect" id="node4" href="$classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project." alt="" coords="16,273,221,410"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="57,139,180,224"/>
+<area shape="rect" id="node8" title="STL class." alt="" coords="67,5,171,91"/>
 </map>

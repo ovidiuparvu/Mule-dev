@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="361,5,759,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="809,5,1121,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="1172,5,1559,35"/>
+<map id="multiscale::analysis::RegionDetector::regionArea" name="multiscale::analysis::RegionDetector::regionArea">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="247,5,452,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="503,14,700,61"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="749,5,960,69"/>
 </map>

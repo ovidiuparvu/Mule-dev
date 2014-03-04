@@ -12,6 +12,9 @@ using namespace std;
 Detector::Detector(bool debugMode) {
     this->debugMode = debugMode;
 
+    this->avgDensity = 0.0;
+    this->avgClusterednessDegree = 0.0;
+
     this->detectMethodCalled = false;
     this->detectorSpecificFieldsInitialised = false;
 }

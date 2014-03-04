@@ -105,7 +105,7 @@ namespace multiscale {
 
                 //! Overloading the "()" operator for the PrimaryConstraintAttribute alternative
                 /*!
-                 * \param constraint     The constraint
+                 * \param primaryConstraint The primary constraint
                  */
                 TimePoint operator() (const PrimaryConstraintAttribute &primaryConstraint) const {
                     return evaluate(primaryConstraint.primaryConstraint, constraintTimePoint);
@@ -113,7 +113,7 @@ namespace multiscale {
 
                 //! Overloading the "()" operator for the NotConstraintAttribute alternative
                 /*!
-                 * \param constraint     The constraint
+                 * \param primaryConstraint The primary constraint
                  */
                 TimePoint operator() (const NotConstraintAttribute &primaryConstraint) const {
                     TimePoint constrainedTimePoint = evaluate(primaryConstraint.constraint, constraintTimePoint);
@@ -126,7 +126,7 @@ namespace multiscale {
 
                 //! Overloading the "()" operator for the UnaryConstraintAttribute alternative
                 /*!
-                 * \param constraint     The constraint
+                 * \param primaryConstraint The primary constraint
                  */
                 TimePoint operator() (const UnaryConstraintAttribute &primaryConstraint) const {
                     ComparatorType comparatorType = primaryConstraint.comparator.comparatorType;

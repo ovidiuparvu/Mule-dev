@@ -1,11 +1,11 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a1540deb145740cb2e73c7c76a9dd244f" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="471,85,815,115"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe74965c39261feb7152f5556c0281cd" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="865,85,1143,115"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Region.html#acb88d149b42eee5225e7197a225d31c3" title="Get the measure that the cluster has a triangular shape." alt="" coords="1215,5,1524,35"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="1213,59,1525,88"/>
-<area shape="rect" id="node11" href="$MinEnclosingTriangleFinderSample_8cpp.html#aef6ea89ecb324851b646e1e9a8f50aff" title="runMinEnclosingTriangleFinder" alt="" coords="1269,112,1469,141"/>
-<area shape="rect" id="node19" href="$classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a9a0c1dfbe0e0b2451b1c4076967f47d9" title="Run the test for the given set of points." alt="" coords="1192,165,1547,195"/>
-<area shape="rect" id="node13" href="$MinEnclosingTriangleFinderSample_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1739,85,1789,115"/>
-<area shape="rect" id="node15" href="$MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a" title="runMinEnclosingTriangleFinderUsingRandomPolygons" alt="" coords="1596,139,1932,168"/>
-<area shape="rect" id="node17" href="$MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972" title="runMinEnclosingTriangleFinder" alt="" coords="1981,139,2181,168"/>
+<map id="multiscale::MinEnclosingTriangleFinder::returnMinEnclosingTriangle" name="multiscale::MinEnclosingTriangleFinder::returnMinEnclosingTriangle">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a1540deb145740cb2e73c7c76a9dd244f" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="277,105,477,151"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe74965c39261feb7152f5556c0281cd" title="Find the minimum area enclosing triangle for the given 2D point set." alt="" coords="527,105,692,151"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1Region.html#acb88d149b42eee5225e7197a225d31c3" title="Get the measure that the cluster has a triangular shape." alt="" coords="744,5,939,51"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1Cluster.html#a28efcf050af76acb01619b36505b662e" title="Get the measure that the cluster has a triangular shape." alt="" coords="743,74,940,121"/>
+<area shape="rect" id="node11" href="$MinEnclosingTriangleFinderSample_8cpp.html#aef6ea89ecb324851b646e1e9a8f50aff" title="runMinEnclosingTriangleFinder" alt="" coords="741,144,941,173"/>
+<area shape="rect" id="node19" href="$classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a9a0c1dfbe0e0b2451b1c4076967f47d9" title="Run the test for the given set of points." alt="" coords="747,197,936,243"/>
+<area shape="rect" id="node13" href="$MinEnclosingTriangleFinderSample_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1064,113,1115,143"/>
+<area shape="rect" id="node15" href="$MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a" title="runMinEnclosingTriangleFinder\lUsingRandomPolygons" alt="" coords="989,166,1189,213"/>
+<area shape="rect" id="node17" href="$MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972" title="runMinEnclosingTriangleFinder" alt="" coords="1237,175,1437,204"/>
 </map>

@@ -1,7 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="420,5,881,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="932,5,1407,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="1456,5,1795,35"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1843,5,2243,35"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="2291,5,2680,35"/>
+<map id="multiscale::analysis::Cluster::setOriginDependentMembers" name="multiscale::analysis::Cluster::setOriginDependentMembers">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#ac7e008a7674205095f94b91c8d7cdccc" title="Update the cluster and compute the origin dependent values considering the convex hull..." alt="" coords="248,5,459,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#affff27bd4559d1272913ff1bceb229b5" title="Analyse the clusters and compute the origin dependent values." alt="" coords="507,5,731,69"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#af994e960ba3cd76cc67e714ea276264a" title="Analyse the clusters." alt="" coords="779,14,1003,61"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="1051,5,1240,69"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="1289,5,1500,69"/>
 </map>

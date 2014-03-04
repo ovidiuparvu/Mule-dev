@@ -1,3 +1,6 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html" title="Class for representing a pseudo&#45;3D (explicit 2D + implicit height) object." alt="" coords="5,5,285,819"/>
+<map id="multiscale::analysis::Region" name="multiscale::analysis::Region">
+<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html" title="Class for representing a pseudo&#45;3D (explicit 2D + implicit height) object." alt="" coords="5,483,224,1365"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="75,176,155,261"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="52,6,177,109"/>
+<area shape="rect" id="node10" title="STL class." alt="" coords="260,176,375,261"/>
 </map>

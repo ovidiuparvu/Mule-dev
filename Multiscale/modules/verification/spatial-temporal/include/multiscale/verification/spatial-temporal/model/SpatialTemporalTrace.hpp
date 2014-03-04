@@ -56,8 +56,7 @@ namespace multiscale {
                 //! Get the subtrace containing timepoints with the index greater than the given index
                 /*!
                  * \param trace         The spatial temporal trace
-                 * \param startValue    The starting value of the subtrace
-                 * \param endValue      The end value of the subtrace
+                 * \param startIndex    The starting timepoint index
                  */
                 static SpatialTemporalTrace subTrace(const SpatialTemporalTrace &trace, unsigned int startIndex);
 
@@ -106,8 +105,8 @@ namespace multiscale {
                 //! Add the timepoints starting and ending with the given indices to the subtrace
                 /*!
                  * \param subTrace      The resulting subtrace
-                 * \param startValue    The starting timepoint index
-                 * \param endValue      The end timepoint index
+                 * \param startIndex    The starting timepoint index
+                 * \param endIndex      The end timepoint index
                  */
                 void addTimePointsToSubTrace(SpatialTemporalTrace &subTrace, int startIndex, int endIndex);
 

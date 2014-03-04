@@ -7,7 +7,7 @@ var searchData=
   ['generateheader',['generateHeader',['../classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#abad924831da9046dc757a7508f47ce55',1,'multiscale::video::PolarGnuplotScriptGenerator::generateHeader()'],['../classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#abe3a62a21428183cdaf91c405c59264f',1,'multiscale::video::RectangularGnuplotScriptGenerator::generateHeader()']]],
   ['generaterandomsetof2dpoints',['generateRandomSetOf2DPoints',['../MinEnclosingTriangleFinderSample_8cpp.html#a5d00a06554ce2c5a132d3dffc263e8b1',1,'MinEnclosingTriangleFinderSample.cpp']]],
   ['generatescript',['generateScript',['../classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#a9e60fa7dd9c47dc89cdce30a39175a6e',1,'multiscale::video::PolarGnuplotScriptGenerator::generateScript()'],['../classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#a8a2e69a85d54df5bacd2e18d27993c14',1,'multiscale::video::RectangularGnuplotScriptGenerator::generateScript()']]],
-  ['geomean',['Geomean',['../namespacemultiscale_1_1verification.html#a4aedbc0df4c78993a76da0f5d669fc3ba3d3b0f32c521b45f72c6a76a505c347c',1,'multiscale::verification']]],
+  ['geomean',['Geomean',['../namespacemultiscale_1_1verification.html#ab30125ef8d4e58878c9238c6af747760a58cbc1d73976db5ec9cd72bef6aefc49',1,'multiscale::verification']]],
   ['geometricmean',['geometricMean',['../classmultiscale_1_1Numeric.html#a53023741b672ebb4790bc2e89dbe1ee9',1,'multiscale::Numeric']]],
   ['geometry2d',['Geometry2D',['../classmultiscale_1_1Geometry2D.html',1,'multiscale']]],
   ['geometry2d_2ecpp',['Geometry2D.cpp',['../Geometry2D_8cpp.html',1,'']]],
@@ -87,9 +87,8 @@ var searchData=
   ['globallogicpropertytest_2ehpp',['GlobalLogicPropertyTest.hpp',['../GlobalLogicPropertyTest_8hpp.html',1,'']]],
   ['gnuplot_5fextension',['GNUPLOT_EXTENSION',['../classmultiscale_1_1video_1_1PolarGnuplotScriptGenerator.html#ab7c725911d4456addf22db345b622057',1,'multiscale::video::PolarGnuplotScriptGenerator::GNUPLOT_EXTENSION()'],['../classmultiscale_1_1video_1_1RectangularGnuplotScriptGenerator.html#afa1626f7904b3006ac768f770c799283',1,'multiscale::video::RectangularGnuplotScriptGenerator::GNUPLOT_EXTENSION()']]],
   ['grammar',['grammar',['../classmultiscale_1_1verification_1_1Parser.html#a334faf84dae48c5d7be5b504e9669683',1,'multiscale::verification::Parser']]],
-  ['grammar',['grammar',['../classboost_1_1spirit_1_1qi_1_1grammar.html',1,'']]],
   ['greaterorequal',['greaterOrEqual',['../classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5',1,'multiscale::Numeric']]],
-  ['greaterthan',['GreaterThan',['../namespacemultiscale_1_1verification.html#af018721840ca6de5f1725ed82e000d25a0efd29facaf3a4c2fd11c6e3b0ec5c12',1,'multiscale::verification']]],
-  ['greaterthanorequal',['GreaterThanOrEqual',['../namespacemultiscale_1_1verification.html#af018721840ca6de5f1725ed82e000d25a1e4abc0b05abc628929f69eb74a1cfd2',1,'multiscale::verification']]],
+  ['greaterthan',['GreaterThan',['../namespacemultiscale_1_1verification.html#a4926b4527bb717db0a0280f06a3e483faf6d044fe1f01fb0c956b80099e2a3072',1,'multiscale::verification']]],
+  ['greaterthanorequal',['GreaterThanOrEqual',['../namespacemultiscale_1_1verification.html#a4926b4527bb717db0a0280f06a3e483fa25c44812e9d75f685d2a0b815dea1ebe',1,'multiscale::verification']]],
   ['green',['green',['../classmultiscale_1_1RGBColourGenerator.html#ae8d94d24b109954be1da2a04c8ec9af7',1,'multiscale::RGBColourGenerator']]]
 ];

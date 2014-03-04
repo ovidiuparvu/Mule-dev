@@ -32,7 +32,7 @@ PROJECT_NAME = "Multiscale"
 # This could be handy for archiving the generated documentation or
 # if some version control system is used.
 
-PROJECT_NUMBER = 0.6.41
+PROJECT_NUMBER = 0.6.51
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer
@@ -266,7 +266,7 @@ AUTOLINK_SUPPORT = YES
 # func(std::string) {}). This also makes the inheritance and collaboration
 # diagrams that involve STL classes more complete and accurate.
 
-BUILTIN_STL_SUPPORT = NO
+BUILTIN_STL_SUPPORT = YES
 
 # If you use Microsoft's C++/CLI language, you should set this option to YES to
 # enable parsing support.
@@ -380,7 +380,7 @@ EXTRACT_PACKAGE = NO
 # If the EXTRACT_STATIC tag is set to YES all static members of a file
 # will be included in the documentation.
 
-EXTRACT_STATIC = NO
+EXTRACT_STATIC = YES
 
 # If the EXTRACT_LOCAL_CLASSES tag is set to YES classes (and structs)
 # defined locally in source files will be included in the documentation.
@@ -807,7 +807,7 @@ SOURCE_BROWSER = YES
 # Setting the INLINE_SOURCES tag to YES will include the body
 # of functions and classes directly in the documentation.
 
-INLINE_SOURCES = NO
+INLINE_SOURCES = 
 
 # Setting the STRIP_CODE_COMMENTS tag to YES (the default) will instruct
 # doxygen to hide any special comment blocks from generated source code
@@ -1067,7 +1067,7 @@ BINARY_TOC = NO
 # The TOC_EXPAND flag can be set to YES to add extra items for group members
 # to the contents of the HTML help documentation and to the tree view.
 
-TOC_EXPAND = NO
+TOC_EXPAND = YES
 
 # If the GENERATE_QHP tag is set to YES and both QHP_NAMESPACE and
 # QHP_VIRTUAL_FOLDER are set, an additional index file will be generated
@@ -1654,7 +1654,7 @@ PERL_PATH = /usr/bin/perl
 # this option also works with HAVE_DOT disabled, but it is recommended to
 # install and use dot, since it yields more powerful graphs.
 
-CLASS_DIAGRAMS = NO
+CLASS_DIAGRAMS = YES
 
 # You can define message sequence charts within doxygen comments using the \msc
 # command. Doxygen will then run the mscgen tool (see
@@ -1669,7 +1669,7 @@ MSCGEN_PATH =
 # inheritance and usage relations if the target is undocumented
 # or is not a class.
 
-HIDE_UNDOC_RELATIONS = YES
+HIDE_UNDOC_RELATIONS = 
 
 # If you set the HAVE_DOT tag to YES then doxygen will assume the dot tool is
 # available from the path. This tool is part of Graphviz, a graph visualization
@@ -1718,7 +1718,7 @@ CLASS_GRAPH = YES
 # indirect implementation dependencies (inheritance, containment, and
 # class references variables) of the class with other documented classes.
 
-COLLABORATION_GRAPH = NO
+COLLABORATION_GRAPH = 
 
 # If the GROUP_GRAPHS and HAVE_DOT tags are set to YES then doxygen
 # will generate a graph for groups, showing the direct groups dependencies

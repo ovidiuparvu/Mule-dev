@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="380,5,692,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="743,5,1129,35"/>
+<map id="multiscale::analysis::RegionDetector::isValidRegion" name="multiscale::analysis::RegionDetector::isValidRegion">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="265,14,463,61"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="512,5,723,69"/>
 </map>

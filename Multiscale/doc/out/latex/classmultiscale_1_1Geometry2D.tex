@@ -1,147 +1,161 @@
-\hypertarget{classmultiscale_1_1Geometry2D}{\section{multiscale\-:\-:\-Geometry2\-D \-Class \-Reference}
+\hypertarget{classmultiscale_1_1Geometry2D}{\section{multiscale\-:\-:Geometry2\-D Class Reference}
 \label{classmultiscale_1_1Geometry2D}\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}}
 }
 
 
-\-Two-\/dimensional geometric operations.  
+Two-\/dimensional geometric operations.  
 
 
 
 
-{\ttfamily \#include $<$\-Geometry2\-D.\-hpp$>$}
+{\ttfamily \#include $<$Geometry2\-D.\-hpp$>$}
 
-\subsection*{\-Static \-Public \-Member \-Functions}
+
+
+Collaboration diagram for multiscale\-:\-:Geometry2\-D\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classmultiscale_1_1Geometry2D__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static double \hyperlink{classmultiscale_1_1Geometry2D_a5c91b7d536f0445afa9c68c73ffe4139}{angle\-Of\-Line\-Wrt\-Ox\-Axis} (const \-Point2f \&a, const \-Point2f \&b)
-\begin{DoxyCompactList}\small\item\em \-Get the angle of the line measured from the \-Ox axis in counterclockwise direction. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a6555ae4c2762e25444bc0874e9bbc535}{is\-Angle\-Between} (double angle1, double angle2, double angle3)
-\begin{DoxyCompactList}\small\item\em \-Check if angle1 lies between angles 2 and 3. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_aa373f78afdba238ebe3bafaac6076aef}{is\-Opposite\-Angle\-Between} (double angle1, double angle2, double angle3)
-\begin{DoxyCompactList}\small\item\em \-Check if the opposite of angle1, ((angle1 + 180) \% 360), lies between angles 2 and 3. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a907466755f2d460e95e2bace5b386768}{is\-Angle\-Between\-Non\-Reflex} (double angle1, double angle2, double angle3)
-\begin{DoxyCompactList}\small\item\em \-Check if angle1 lies between non reflex angle determined by angles 2 and 3. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a28d74085708bba7fa68fbea05d0d51ad}{is\-Opposite\-Angle\-Between\-Non\-Reflex} (double angle1, double angle2, double angle3)
-\begin{DoxyCompactList}\small\item\em \-Check if the opposite of angle1, ((angle1 + 180) \% 360), lies between non reflex angle determined by angles 2 and 3. \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1Geometry2D_a3bb85fa2797ba25765f0f57786cb33ef}{opposite\-Angle} (double angle)
-\begin{DoxyCompactList}\small\item\em \-Return the angle opposite to the given angle. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a1219ac10c3647d43c5af77dc5bc574a2}{slope\-Of\-Line} (const \-Point2f \&a, const \-Point2f \&b, double \&slope)
-\begin{DoxyCompactList}\small\item\em \-Compute the slope of the line defined by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1Geometry2D_a911b35d7abde99988bb4b43f00d6be72}{distance\-Btw\-Points} (const \-Point2f \&a, const \-Point2f \&b)
-\begin{DoxyCompactList}\small\item\em \-Compute the distance between two points. \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1Geometry2D_a0b01b51c41789623f2cd7a0a2a66f462}{distance\-Btw\-Points} (double x1, double y1, double x2, double y2)
-\begin{DoxyCompactList}\small\item\em \-Compute the distance between two points. \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1Geometry2D_ae6c0f66accf4ecf31b0fd96437371626}{distance\-From\-Point\-To\-Line} (const \-Point2f \&a, const \-Point2f \&line\-Point\-B, const \-Point2f \&line\-Point\-C)
-\begin{DoxyCompactList}\small\item\em \-Compute the distance from a point \char`\"{}a\char`\"{} to a line specified by two points \char`\"{}\-B\char`\"{} and \char`\"{}\-C\char`\"{}. \end{DoxyCompactList}\item 
-static \-Point2f \hyperlink{classmultiscale_1_1Geometry2D_a178c13bdb5cc3f26de7d5e9fd05781f5}{middle\-Point} (const \-Point2f \&a, const \-Point2f \&b)
-\begin{DoxyCompactList}\small\item\em \-Get the point in the middle of the segment determined by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1Geometry2D_a3da27e8cecb0a0d2733afa85d356a912}{orthogonal\-Line\-To\-Another\-Line\-Edge\-Points} (const \-Point \&a1, const \-Point \&b1, \-Point \&a2, \-Point \&b2, int nr\-Of\-Rows, int nr\-Of\-Cols)
-\begin{DoxyCompactList}\small\item\em \-Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a828b7b579420ac06dabd7c4ba4d081ae}{are\-On\-The\-Same\-Side\-Of\-Line} (const \-Point2f \&p1, const \-Point2f \&p2, const \-Point2f \&a, const \-Point2f \&b)
-\begin{DoxyCompactList}\small\item\em \-Check if p1 and p2 are on the same side of the line determined by points a and b. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1Geometry2D_a6d72740d7f1b2441b0829c0f0c6a6853}{line\-Equation\-Determined\-By\-Points} (const \-Point2f \&p, const \-Point2f \&q, double \&a, double \&b, double \&c)
-\begin{DoxyCompactList}\small\item\em \-Get the values of \char`\"{}a\char`\"{}, \char`\"{}b\char`\"{} and \char`\"{}c\char`\"{} of the line equation ax + by + c = 0 knowing that point \char`\"{}p\char`\"{} and \char`\"{}q\char`\"{} are on the line. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_aaa19f84365e924bacfad4ea893875a42}{are\-Identical\-Lines} (double a1, double b1, double c1, double a2, double b2, double c2)
-\begin{DoxyCompactList}\small\item\em \-Check if two lines are identical. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a718faf02b261c9ccbedf9d7b0e19ada1}{are\-Identical\-Lines} (const \-Point2f \&a1, const \-Point2f \&b1, const \-Point2f \&a2, const \-Point2f \&b2)
-\begin{DoxyCompactList}\small\item\em \-Check if two lines are identical. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_aae24e97b32bdd8dab88c880d0d25ec86}{line\-Intersection} (const \-Point2f \&a1, const \-Point2f \&b1, const \-Point2f \&a2, const \-Point2f \&b2, \-Point2f \&intersection)
-\begin{DoxyCompactList}\small\item\em \-Determine the intersection point of two lines, if this point exists. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_aa9d9b17a7e5098c8bde0cd9d3dc08dc2}{line\-Intersection} (const \-Point \&a1, const \-Point \&b1, const \-Point \&a2, const \-Point \&b2, \-Point \&intersection)
-\begin{DoxyCompactList}\small\item\em \-Determine the intersection point of two lines, if this point exists. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a51a867b90c8492ce4ce85c227788678b}{line\-Intersection} (double a1, double b1, double c1, double a2, double b2, double c2, \-Point2f \&intersection)
-\begin{DoxyCompactList}\small\item\em \-Determine the intersection point of two lines, if this point exists. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a9931c3d8089d658186a8c1ac78db5773}{line\-Segment\-Intersection} (const \-Point \&a1, const \-Point \&b1, const \-Point \&a2, const \-Point \&b2, \-Point \&intersection)
-\begin{DoxyCompactList}\small\item\em \-Determine the intersection point of two line segments, if this point exists. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_ab04c08f83d066f0d936d516d015ea62c}{line\-Circle\-Intersection} (\-Point2f a, \-Point2f b, const \-Point2f \&circle\-Origin, double radius, vector$<$ \-Point2f $>$ \&intersection\-Points)
-\begin{DoxyCompactList}\small\item\em \-Determine if a line and a circle intersect and return the intersection points if they exist. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a92bd36cdda4cdacb4101c6db54474a6d}{line\-Segment\-Circle\-Intersection} (const \-Point2f \&a, const \-Point2f \&b, const \-Point2f \&circle\-Origin, double radius, vector$<$ \-Point2f $>$ \&intersection\-Points)
-\begin{DoxyCompactList}\small\item\em \-Determine if a line segment and a circle intersect and return the intersection points if they exist. \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1Geometry2D_ace72cd1329667fdb5bc3fc40b96694bd}{angle\-Btw\-Points} (const \-Point2f \&a, const \-Point2f \&b, const \-Point2f \&c)
-\begin{DoxyCompactList}\small\item\em \-Compute the angle between three points. \end{DoxyCompactList}\item 
-static vector$<$ \-Point2f $>$ \hyperlink{classmultiscale_1_1Geometry2D_a9e5c6378463c0e685136d66bfac2a8c1}{find\-Points\-On\-Edge} (const vector$<$ \-Point2f $>$ \&points, unsigned int nr\-Of\-Rows, unsigned int nr\-Of\-Cols)
-\begin{DoxyCompactList}\small\item\em \-Find the subset of points from the given set of points which lie on the edge. \end{DoxyCompactList}\item 
-static unsigned int \hyperlink{classmultiscale_1_1Geometry2D_ae8e5e46c312835e27478ce00b11f8a7c}{minimum\-Distance\-Point\-Index} (const vector$<$ \-Point $>$ \&points, const \-Point2f \&origin)
-\begin{DoxyCompactList}\small\item\em \-Get the index of the point which is the closest to the origin. \end{DoxyCompactList}\item 
-static double \hyperlink{classmultiscale_1_1Geometry2D_abf0e96a63cf744cab74ab94398e28562}{area\-Of\-Triangle} (const \-Point2f \&a, const \-Point2f \&b, const \-Point2f \&c)
-\begin{DoxyCompactList}\small\item\em \-Compute the area of a triangle defined by three points. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a608548e8588d9efbcfec90d2bd92ea55}{is\-Point\-On\-Line\-Segment} (const \-Point2f \&point, const \-Point2f \&line\-Segment\-Start, const \-Point2f \&line\-Segment\-End)
-\begin{DoxyCompactList}\small\item\em \-Check if one point lies between two other points. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_aa2d3ac595072b9ab61879a44629d7969}{are\-Equal\-Points} (const \-Point2f \&point1, const \-Point2f \&point2)
-\begin{DoxyCompactList}\small\item\em \-Check if points point1 and point2 are equal or not. \end{DoxyCompactList}\item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_aa8b75808a35a471becae0ad99e708bdd}{are\-Collinear} (const \-Point2f \&point1, const \-Point2f \&point2, const \-Point2f \&point3)
-\begin{DoxyCompactList}\small\item\em \-Check if the three points are collinear. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{\-Static \-Public \-Attributes}
-\begin{DoxyCompactItemize}
-\item 
-static const double \hyperlink{classmultiscale_1_1Geometry2D_a7039b8bbe89283e22744c0631d597660}{\-P\-I} = 3.\-14159265358979323846264338327950288419716939937510
-\item 
-static const int \hyperlink{classmultiscale_1_1Geometry2D_ade1d55d3ef110b73d42a3e4c4360ba17}{\-M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X} = 1
+{\footnotesize template$<$typename T , typename U $>$ }\\bool \hyperlink{classmultiscale_1_1Geometry2D_adc334365732eb2db3419a4cc2063485c}{is\-Between\-Coordinates} (T c, U c1, U c2)
 \end{DoxyCompactItemize}
-\subsection*{\-Static \-Private \-Member \-Functions}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static bool \hyperlink{classmultiscale_1_1Geometry2D_a4a6aba3c69956a83af5d81f4d087c205}{is\-Point\-On\-Edge} (const \-Point2f \&p, int nr\-Of\-Rows, int nr\-Of\-Cols)
-\begin{DoxyCompactList}\small\item\em \-Check if the given point is on the edge. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename T , typename U $>$ }\\static bool \hyperlink{classmultiscale_1_1Geometry2D_af8cb580f5f86a1fece582f43a0916c4a}{is\-Between\-Coordinates} (\-T c, \-U c1, \-U c2)
-\begin{DoxyCompactList}\small\item\em \-Check if the coordinate c lies between c1 and c2. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1Geometry2D_ae7299287a17f8cd47e8d84e19ddbe0e9}{translate} (\-Point2f \&point, const \-Point2f \&translation)
-\begin{DoxyCompactList}\small\item\em \-Translate a point by the given values. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1Geometry2D_a7a7526398a9675a05c609bb442fe02f0}{inverse\-Translate} (\-Point2f \&point, const \-Point2f \&translation)
-\begin{DoxyCompactList}\small\item\em \-Inverse translate a point by the given values. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1Geometry2D_ae501398552bf50acfd23c04db8d65300}{line\-Circle\-Two\-Intersection\-Points} (const \-Point2f \&circle\-Origin, double \-A, double \-B, double \-C, double delta, vector$<$ \-Point2f $>$ \&intersection\-Points)
-\begin{DoxyCompactList}\small\item\em \-Treat the case when the line and circle intersect in two points. \end{DoxyCompactList}\item 
-static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669ef94e03}{line\-Circle\-One\-Intersection\-Point} (const \-Point2f \&circle\-Origin, double \-A, double \-B, double \-C, double delta, vector$<$ \-Point2f $>$ \&intersection\-Points)
-\begin{DoxyCompactList}\small\item\em \-Treat the case when the line and circle intersect in one point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static double \hyperlink{classmultiscale_1_1Geometry2D_a5c91b7d536f0445afa9c68c73ffe4139}{angle\-Of\-Line\-Wrt\-Ox\-Axis} (const Point2f \&a, const Point2f \&b)
+\begin{DoxyCompactList}\small\item\em Get the angle of the line measured from the Ox axis in counterclockwise direction. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a6555ae4c2762e25444bc0874e9bbc535}{is\-Angle\-Between} (double angle1, double angle2, double angle3)
+\begin{DoxyCompactList}\small\item\em Check if angle1 lies between angles 2 and 3. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_aa373f78afdba238ebe3bafaac6076aef}{is\-Opposite\-Angle\-Between} (double angle1, double angle2, double angle3)
+\begin{DoxyCompactList}\small\item\em Check if the opposite of angle1, ((angle1 + 180) \% 360), lies between angles 2 and 3. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a907466755f2d460e95e2bace5b386768}{is\-Angle\-Between\-Non\-Reflex} (double angle1, double angle2, double angle3)
+\begin{DoxyCompactList}\small\item\em Check if angle1 lies between non reflex angle determined by angles 2 and 3. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a28d74085708bba7fa68fbea05d0d51ad}{is\-Opposite\-Angle\-Between\-Non\-Reflex} (double angle1, double angle2, double angle3)
+\begin{DoxyCompactList}\small\item\em Check if the opposite of angle1, ((angle1 + 180) \% 360), lies between non reflex angle determined by angles 2 and 3. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1Geometry2D_a3bb85fa2797ba25765f0f57786cb33ef}{opposite\-Angle} (double angle)
+\begin{DoxyCompactList}\small\item\em Return the angle opposite to the given angle. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a1219ac10c3647d43c5af77dc5bc574a2}{slope\-Of\-Line} (const Point2f \&a, const Point2f \&b, double \&slope)
+\begin{DoxyCompactList}\small\item\em Compute the slope of the line defined by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1Geometry2D_a911b35d7abde99988bb4b43f00d6be72}{distance\-Btw\-Points} (const Point2f \&a, const Point2f \&b)
+\begin{DoxyCompactList}\small\item\em Compute the distance between two points. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1Geometry2D_a0b01b51c41789623f2cd7a0a2a66f462}{distance\-Btw\-Points} (double x1, double y1, double x2, double y2)
+\begin{DoxyCompactList}\small\item\em Compute the distance between two points. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1Geometry2D_ae6c0f66accf4ecf31b0fd96437371626}{distance\-From\-Point\-To\-Line} (const Point2f \&a, const Point2f \&line\-Point\-B, const Point2f \&line\-Point\-C)
+\begin{DoxyCompactList}\small\item\em Compute the distance from a point \char`\"{}a\char`\"{} to a line specified by two points \char`\"{}\-B\char`\"{} and \char`\"{}\-C\char`\"{}. \end{DoxyCompactList}\item 
+static Point2f \hyperlink{classmultiscale_1_1Geometry2D_a178c13bdb5cc3f26de7d5e9fd05781f5}{middle\-Point} (const Point2f \&a, const Point2f \&b)
+\begin{DoxyCompactList}\small\item\em Get the point in the middle of the segment determined by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1Geometry2D_a3da27e8cecb0a0d2733afa85d356a912}{orthogonal\-Line\-To\-Another\-Line\-Edge\-Points} (const Point \&a1, const Point \&b1, Point \&a2, Point \&b2, int nr\-Of\-Rows, int nr\-Of\-Cols)
+\begin{DoxyCompactList}\small\item\em Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a828b7b579420ac06dabd7c4ba4d081ae}{are\-On\-The\-Same\-Side\-Of\-Line} (const Point2f \&p1, const Point2f \&p2, const Point2f \&a, const Point2f \&b)
+\begin{DoxyCompactList}\small\item\em Check if p1 and p2 are on the same side of the line determined by points a and b. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1Geometry2D_a6d72740d7f1b2441b0829c0f0c6a6853}{line\-Equation\-Determined\-By\-Points} (const Point2f \&p, const Point2f \&q, double \&a, double \&b, double \&c)
+\begin{DoxyCompactList}\small\item\em Get the values of \char`\"{}a\char`\"{}, \char`\"{}b\char`\"{} and \char`\"{}c\char`\"{} of the line equation ax + by + c = 0 knowing that point \char`\"{}p\char`\"{} and \char`\"{}q\char`\"{} are on the line. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_aaa19f84365e924bacfad4ea893875a42}{are\-Identical\-Lines} (double a1, double b1, double c1, double a2, double b2, double c2)
+\begin{DoxyCompactList}\small\item\em Check if two lines are identical. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a718faf02b261c9ccbedf9d7b0e19ada1}{are\-Identical\-Lines} (const Point2f \&a1, const Point2f \&b1, const Point2f \&a2, const Point2f \&b2)
+\begin{DoxyCompactList}\small\item\em Check if two lines are identical. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_aae24e97b32bdd8dab88c880d0d25ec86}{line\-Intersection} (const Point2f \&a1, const Point2f \&b1, const Point2f \&a2, const Point2f \&b2, Point2f \&intersection)
+\begin{DoxyCompactList}\small\item\em Determine the intersection point of two lines, if this point exists. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_aa9d9b17a7e5098c8bde0cd9d3dc08dc2}{line\-Intersection} (const Point \&a1, const Point \&b1, const Point \&a2, const Point \&b2, Point \&intersection)
+\begin{DoxyCompactList}\small\item\em Determine the intersection point of two lines, if this point exists. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a51a867b90c8492ce4ce85c227788678b}{line\-Intersection} (double a1, double b1, double c1, double a2, double b2, double c2, Point2f \&intersection)
+\begin{DoxyCompactList}\small\item\em Determine the intersection point of two lines, if this point exists. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a9931c3d8089d658186a8c1ac78db5773}{line\-Segment\-Intersection} (const Point \&a1, const Point \&b1, const Point \&a2, const Point \&b2, Point \&intersection)
+\begin{DoxyCompactList}\small\item\em Determine the intersection point of two line segments, if this point exists. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_ab04c08f83d066f0d936d516d015ea62c}{line\-Circle\-Intersection} (Point2f a, Point2f b, const Point2f \&circle\-Origin, double radius, vector$<$ Point2f $>$ \&intersection\-Points)
+\begin{DoxyCompactList}\small\item\em Determine if a line and a circle intersect and return the intersection points if they exist. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a92bd36cdda4cdacb4101c6db54474a6d}{line\-Segment\-Circle\-Intersection} (const Point2f \&a, const Point2f \&b, const Point2f \&circle\-Origin, double radius, vector$<$ Point2f $>$ \&intersection\-Points)
+\begin{DoxyCompactList}\small\item\em Determine if a line segment and a circle intersect and return the intersection points if they exist. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1Geometry2D_ace72cd1329667fdb5bc3fc40b96694bd}{angle\-Btw\-Points} (const Point2f \&a, const Point2f \&b, const Point2f \&c)
+\begin{DoxyCompactList}\small\item\em Compute the angle between three points. \end{DoxyCompactList}\item 
+static vector$<$ Point2f $>$ \hyperlink{classmultiscale_1_1Geometry2D_a9e5c6378463c0e685136d66bfac2a8c1}{find\-Points\-On\-Edge} (const vector$<$ Point2f $>$ \&points, unsigned int nr\-Of\-Rows, unsigned int nr\-Of\-Cols)
+\begin{DoxyCompactList}\small\item\em Find the subset of points from the given set of points which lie on the edge. \end{DoxyCompactList}\item 
+static unsigned int \hyperlink{classmultiscale_1_1Geometry2D_ae8e5e46c312835e27478ce00b11f8a7c}{minimum\-Distance\-Point\-Index} (const vector$<$ Point $>$ \&points, const Point2f \&origin)
+\begin{DoxyCompactList}\small\item\em Get the index of the point which is the closest to the origin. \end{DoxyCompactList}\item 
+static double \hyperlink{classmultiscale_1_1Geometry2D_abf0e96a63cf744cab74ab94398e28562}{area\-Of\-Triangle} (const Point2f \&a, const Point2f \&b, const Point2f \&c)
+\begin{DoxyCompactList}\small\item\em Compute the area of a triangle defined by three points. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a608548e8588d9efbcfec90d2bd92ea55}{is\-Point\-On\-Line\-Segment} (const Point2f \&point, const Point2f \&line\-Segment\-Start, const Point2f \&line\-Segment\-End)
+\begin{DoxyCompactList}\small\item\em Check if one point lies between two other points. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_aa2d3ac595072b9ab61879a44629d7969}{are\-Equal\-Points} (const Point2f \&point1, const Point2f \&point2)
+\begin{DoxyCompactList}\small\item\em Check if points point1 and point2 are equal or not. \end{DoxyCompactList}\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_aa8b75808a35a471becae0ad99e708bdd}{are\-Collinear} (const Point2f \&point1, const Point2f \&point2, const Point2f \&point3)
+\begin{DoxyCompactList}\small\item\em Check if the three points are collinear. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \hyperlink{classmultiscale_1_1Geometry2D_a7039b8bbe89283e22744c0631d597660}{P\-I} = 3.\-14159265358979323846264338327950288419716939937510
+\item 
+static const int \hyperlink{classmultiscale_1_1Geometry2D_ade1d55d3ef110b73d42a3e4c4360ba17}{M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X} = 1
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classmultiscale_1_1Geometry2D_a4a6aba3c69956a83af5d81f4d087c205}{is\-Point\-On\-Edge} (const Point2f \&p, int nr\-Of\-Rows, int nr\-Of\-Cols)
+\begin{DoxyCompactList}\small\item\em Check if the given point is on the edge. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename U $>$ }\\static bool \hyperlink{classmultiscale_1_1Geometry2D_a3574944f4c4a7cb422bc01b92330d862}{is\-Between\-Coordinates} (T c, U c1, U c2)
+\begin{DoxyCompactList}\small\item\em Check if the coordinate c lies between c1 and c2. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1Geometry2D_ae7299287a17f8cd47e8d84e19ddbe0e9}{translate} (Point2f \&point, const Point2f \&translation)
+\begin{DoxyCompactList}\small\item\em Translate a point by the given values. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1Geometry2D_a7a7526398a9675a05c609bb442fe02f0}{inverse\-Translate} (Point2f \&point, const Point2f \&translation)
+\begin{DoxyCompactList}\small\item\em Inverse translate a point by the given values. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1Geometry2D_ae501398552bf50acfd23c04db8d65300}{line\-Circle\-Two\-Intersection\-Points} (const Point2f \&circle\-Origin, double A, double B, double C, double delta, vector$<$ Point2f $>$ \&intersection\-Points)
+\begin{DoxyCompactList}\small\item\em Treat the case when the line and circle intersect in two points. \end{DoxyCompactList}\item 
+static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669ef94e03}{line\-Circle\-One\-Intersection\-Point} (const Point2f \&circle\-Origin, double A, double B, double C, double delta, vector$<$ Point2f $>$ \&intersection\-Points)
+\begin{DoxyCompactList}\small\item\em Treat the case when the line and circle intersect in one point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{\-Detailed \-Description}
-\-Two-\/dimensional geometric operations. 
+\subsection{Detailed Description}
+Two-\/dimensional geometric operations. 
 
-\-Definition at line 16 of file \-Geometry2\-D.\-hpp.
+Definition at line 16 of file Geometry2\-D.\-hpp.
 
 
 
-\subsection{\-Member \-Function \-Documentation}
+\subsection{Member Function Documentation}
 \hypertarget{classmultiscale_1_1Geometry2D_ace72cd1329667fdb5bc3fc40b96694bd}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!angle\-Btw\-Points@{angle\-Btw\-Points}}
 \index{angle\-Btw\-Points@{angle\-Btw\-Points}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{angle\-Btw\-Points}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Geometry2\-D\-::angle\-Btw\-Points} (
+\subsubsection[{angle\-Btw\-Points}]{\setlength{\rightskip}{0pt plus 5cm}double Geometry2\-D\-::angle\-Btw\-Points (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a, }
-\item[{const \-Point2f \&}]{b, }
-\item[{const \-Point2f \&}]{c}
+\item[{const Point2f \&}]{a, }
+\item[{const Point2f \&}]{b, }
+\item[{const Point2f \&}]{c}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_ace72cd1329667fdb5bc3fc40b96694bd}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_ace72cd1329667fdb5bc3fc40b96694bd}
 
 
-\-Compute the angle between three points. 
+Compute the angle between three points. 
 
-\-Compute the angle between the lines determined by points \-A, \-B and \-B, \-C
+Compute the angle between the lines determined by points A, B and B, C
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-Point2f a \\
+\begin{DoxyParams}{Parameters}
+{\em a} & Point2f a \\
 \hline
-{\em b} & \-Point2f b \\
+{\em b} & Point2f b \\
 \hline
-{\em c} & \-Point2f c \\
+{\em c} & Point2f c \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 314 of file \-Geometry2\-D.\-cpp.
+Definition at line 314 of file Geometry2\-D.\-cpp.
 
 
 
-\-References \-P\-I.
+References P\-I.
 
 
 
-\-Referenced by multiscale\-::analysis\-::\-Detector\-::polygon\-Angle().
+Referenced by multiscale\-::analysis\-::\-Detector\-::polygon\-Angle().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -152,40 +166,40 @@ static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669e
 
 \hypertarget{classmultiscale_1_1Geometry2D_a5c91b7d536f0445afa9c68c73ffe4139}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!angle\-Of\-Line\-Wrt\-Ox\-Axis@{angle\-Of\-Line\-Wrt\-Ox\-Axis}}
 \index{angle\-Of\-Line\-Wrt\-Ox\-Axis@{angle\-Of\-Line\-Wrt\-Ox\-Axis}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{angle\-Of\-Line\-Wrt\-Ox\-Axis}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Geometry2\-D\-::angle\-Of\-Line\-Wrt\-Ox\-Axis} (
+\subsubsection[{angle\-Of\-Line\-Wrt\-Ox\-Axis}]{\setlength{\rightskip}{0pt plus 5cm}double Geometry2\-D\-::angle\-Of\-Line\-Wrt\-Ox\-Axis (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a, }
-\item[{const \-Point2f \&}]{b}
+\item[{const Point2f \&}]{a, }
+\item[{const Point2f \&}]{b}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a5c91b7d536f0445afa9c68c73ffe4139}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a5c91b7d536f0445afa9c68c73ffe4139}
 
 
-\-Get the angle of the line measured from the \-Ox axis in counterclockwise direction. 
+Get the angle of the line measured from the Ox axis in counterclockwise direction. 
 
-\-The line is specified by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. \-The value of the angle is expressed in degrees.
+The line is specified by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. The value of the angle is expressed in degrees.
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-Point2f a \\
+\begin{DoxyParams}{Parameters}
+{\em a} & Point2f a \\
 \hline
-{\em b} & \-Point2f b \\
+{\em b} & Point2f b \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 9 of file \-Geometry2\-D.\-cpp.
+Definition at line 9 of file Geometry2\-D.\-cpp.
 
 
 
-\-References \-P\-I.
+References P\-I.
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects\-Above(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects\-Below().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects\-Above(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::intersects\-Below().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -196,39 +210,39 @@ static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669e
 
 \hypertarget{classmultiscale_1_1Geometry2D_abf0e96a63cf744cab74ab94398e28562}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!area\-Of\-Triangle@{area\-Of\-Triangle}}
 \index{area\-Of\-Triangle@{area\-Of\-Triangle}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{area\-Of\-Triangle}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Geometry2\-D\-::area\-Of\-Triangle} (
+\subsubsection[{area\-Of\-Triangle}]{\setlength{\rightskip}{0pt plus 5cm}double Geometry2\-D\-::area\-Of\-Triangle (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a, }
-\item[{const \-Point2f \&}]{b, }
-\item[{const \-Point2f \&}]{c}
+\item[{const Point2f \&}]{a, }
+\item[{const Point2f \&}]{b, }
+\item[{const Point2f \&}]{c}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_abf0e96a63cf744cab74ab94398e28562}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_abf0e96a63cf744cab74ab94398e28562}
 
 
-\-Compute the area of a triangle defined by three points. 
+Compute the area of a triangle defined by three points. 
 
-\-The area is computed using the determinant method. \-An example is presented at \href{http://demonstrations.wolfram.com/TheAreaOfATriangleUsingADeterminant/}{\tt http\-://demonstrations.\-wolfram.\-com/\-The\-Area\-Of\-A\-Triangle\-Using\-A\-Determinant/} (\-Last access\-: 10.\-07.\-2013)
+The area is computed using the determinant method. An example is presented at \href{http://demonstrations.wolfram.com/TheAreaOfATriangleUsingADeterminant/}{\tt http\-://demonstrations.\-wolfram.\-com/\-The\-Area\-Of\-A\-Triangle\-Using\-A\-Determinant/} (Last access\-: 10.\-07.\-2013)
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-Point2f a \\
+\begin{DoxyParams}{Parameters}
+{\em a} & Point2f a \\
 \hline
-{\em b} & \-Point2f b \\
+{\em b} & Point2f b \\
 \hline
-{\em c} & \-Point2f c \\
+{\em c} & Point2f c \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 359 of file \-Geometry2\-D.\-cpp.
+Definition at line 359 of file Geometry2\-D.\-cpp.
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::return\-Min\-Enclosing\-Triangle(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::update\-Min\-Enclosing\-Triangle().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::return\-Min\-Enclosing\-Triangle(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::update\-Min\-Enclosing\-Triangle().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -239,68 +253,68 @@ static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669e
 
 \hypertarget{classmultiscale_1_1Geometry2D_aa8b75808a35a471becae0ad99e708bdd}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!are\-Collinear@{are\-Collinear}}
 \index{are\-Collinear@{are\-Collinear}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{are\-Collinear}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::are\-Collinear} (
+\subsubsection[{are\-Collinear}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::are\-Collinear (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{point1, }
-\item[{const \-Point2f \&}]{point2, }
-\item[{const \-Point2f \&}]{point3}
+\item[{const Point2f \&}]{point1, }
+\item[{const Point2f \&}]{point2, }
+\item[{const Point2f \&}]{point3}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_aa8b75808a35a471becae0ad99e708bdd}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_aa8b75808a35a471becae0ad99e708bdd}
 
 
-\-Check if the three points are collinear. 
+Check if the three points are collinear. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em point1} & \-Point 1 \\
+\begin{DoxyParams}{Parameters}
+{\em point1} & Point 1 \\
 \hline
-{\em point2} & \-Point 2 \\
+{\em point2} & Point 2 \\
 \hline
-{\em point3} & \-Point 3 \\
+{\em point3} & Point 3 \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 381 of file \-Geometry2\-D.\-cpp.
+Definition at line 381 of file Geometry2\-D.\-cpp.
 
 
 
-\-References multiscale\-::\-Numeric\-::almost\-Equal().
+References multiscale\-::\-Numeric\-::almost\-Equal().
 
 \hypertarget{classmultiscale_1_1Geometry2D_aa2d3ac595072b9ab61879a44629d7969}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!are\-Equal\-Points@{are\-Equal\-Points}}
 \index{are\-Equal\-Points@{are\-Equal\-Points}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{are\-Equal\-Points}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::are\-Equal\-Points} (
+\subsubsection[{are\-Equal\-Points}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::are\-Equal\-Points (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{point1, }
-\item[{const \-Point2f \&}]{point2}
+\item[{const Point2f \&}]{point1, }
+\item[{const Point2f \&}]{point2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_aa2d3ac595072b9ab61879a44629d7969}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_aa2d3ac595072b9ab61879a44629d7969}
 
 
-\-Check if points point1 and point2 are equal or not. 
+Check if points point1 and point2 are equal or not. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em point1} & \-One point \\
+\begin{DoxyParams}{Parameters}
+{\em point1} & One point \\
 \hline
-{\em point2} & \-The other point \\
+{\em point2} & The other point \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 377 of file \-Geometry2\-D.\-cpp.
+Definition at line 377 of file Geometry2\-D.\-cpp.
 
 
 
-\-References multiscale\-::\-Numeric\-::almost\-Equal().
+References multiscale\-::\-Numeric\-::almost\-Equal().
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Valid\-Minimal\-Triangle(), and line\-Equation\-Determined\-By\-Points().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Valid\-Minimal\-Triangle(), and line\-Equation\-Determined\-By\-Points().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -311,7 +325,7 @@ static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669e
 
 \hypertarget{classmultiscale_1_1Geometry2D_aaa19f84365e924bacfad4ea893875a42}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!are\-Identical\-Lines@{are\-Identical\-Lines}}
 \index{are\-Identical\-Lines@{are\-Identical\-Lines}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{are\-Identical\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::are\-Identical\-Lines} (
+\subsubsection[{are\-Identical\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::are\-Identical\-Lines (
 \begin{DoxyParamCaption}
 \item[{double}]{a1, }
 \item[{double}]{b1, }
@@ -320,45 +334,45 @@ static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669e
 \item[{double}]{b2, }
 \item[{double}]{c2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_aaa19f84365e924bacfad4ea893875a42}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_aaa19f84365e924bacfad4ea893875a42}
 
 
-\-Check if two lines are identical. 
+Check if two lines are identical. 
 
-\-Lines are be specified in the following form\-: \-A1x + \-B1x = \-C1 \-A2x + \-B2x = \-C2
+Lines are be specified in the following form\-: A1x + B1x = C1 A2x + B2x = C2
 
-\-If (\-A1/\-A2) == (\-B1/\-B2) == (\-C1/\-C2), then the lines are identical else they are not
+If (A1/\-A2) == (B1/\-B2) == (C1/\-C2), then the lines are identical else they are not
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a1} & \-A1 \\
+\begin{DoxyParams}{Parameters}
+{\em a1} & A1 \\
 \hline
-{\em b1} & \-B1 \\
+{\em b1} & B1 \\
 \hline
-{\em c1} & \-C1 \\
+{\em c1} & C1 \\
 \hline
-{\em a2} & \-A2 \\
+{\em a2} & A2 \\
 \hline
-{\em b2} & \-B2 \\
+{\em b2} & B2 \\
 \hline
-{\em c2} & \-C2 \\
+{\em c2} & C2 \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 168 of file \-Geometry2\-D.\-cpp.
+Definition at line 168 of file Geometry2\-D.\-cpp.
 
 
 
-\-References multiscale\-::\-Numeric\-::almost\-Equal().
+References multiscale\-::\-Numeric\-::almost\-Equal().
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::are\-Identical\-Lines().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::are\-Identical\-Lines().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -369,83 +383,83 @@ static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669e
 
 \hypertarget{classmultiscale_1_1Geometry2D_a718faf02b261c9ccbedf9d7b0e19ada1}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!are\-Identical\-Lines@{are\-Identical\-Lines}}
 \index{are\-Identical\-Lines@{are\-Identical\-Lines}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{are\-Identical\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::are\-Identical\-Lines} (
+\subsubsection[{are\-Identical\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::are\-Identical\-Lines (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a1, }
-\item[{const \-Point2f \&}]{b1, }
-\item[{const \-Point2f \&}]{a2, }
-\item[{const \-Point2f \&}]{b2}
+\item[{const Point2f \&}]{a1, }
+\item[{const Point2f \&}]{b1, }
+\item[{const Point2f \&}]{a2, }
+\item[{const Point2f \&}]{b2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a718faf02b261c9ccbedf9d7b0e19ada1}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a718faf02b261c9ccbedf9d7b0e19ada1}
 
 
-\-Check if two lines are identical. 
+Check if two lines are identical. 
 
-\-The lines are specified by a pair of points each. \-If they are identical, then the function returns true, else it returns false.
+The lines are specified by a pair of points each. If they are identical, then the function returns true, else it returns false.
 
-\-Lines can be specified in the following form\-: \-A1x + \-B1x = \-C1 \-A2x + \-B2x = \-C2
+Lines can be specified in the following form\-: A1x + B1x = C1 A2x + B2x = C2
 
-\-If (\-A1/\-A2) == (\-B1/\-B2) == (\-C1/\-C2), then the lines are identical else they are not
+If (A1/\-A2) == (B1/\-B2) == (C1/\-C2), then the lines are identical else they are not
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a1} & \-First point for determining the first line \\
+\begin{DoxyParams}{Parameters}
+{\em a1} & First point for determining the first line \\
 \hline
-{\em b1} & \-Second point for determining the first line \\
+{\em b1} & Second point for determining the first line \\
 \hline
-{\em a2} & \-First point for determining the second line \\
+{\em a2} & First point for determining the second line \\
 \hline
-{\em b2} & \-Second point for determining the second line \\
+{\em b2} & Second point for determining the second line \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 179 of file \-Geometry2\-D.\-cpp.
+Definition at line 179 of file Geometry2\-D.\-cpp.
 
 
 
-\-References multiscale\-::\-Numeric\-::almost\-Equal().
+References multiscale\-::\-Numeric\-::almost\-Equal().
 
 \hypertarget{classmultiscale_1_1Geometry2D_a828b7b579420ac06dabd7c4ba4d081ae}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!are\-On\-The\-Same\-Side\-Of\-Line@{are\-On\-The\-Same\-Side\-Of\-Line}}
 \index{are\-On\-The\-Same\-Side\-Of\-Line@{are\-On\-The\-Same\-Side\-Of\-Line}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{are\-On\-The\-Same\-Side\-Of\-Line}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::are\-On\-The\-Same\-Side\-Of\-Line} (
+\subsubsection[{are\-On\-The\-Same\-Side\-Of\-Line}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::are\-On\-The\-Same\-Side\-Of\-Line (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{p1, }
-\item[{const \-Point2f \&}]{p2, }
-\item[{const \-Point2f \&}]{a, }
-\item[{const \-Point2f \&}]{b}
+\item[{const Point2f \&}]{p1, }
+\item[{const Point2f \&}]{p2, }
+\item[{const Point2f \&}]{a, }
+\item[{const Point2f \&}]{b}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a828b7b579420ac06dabd7c4ba4d081ae}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a828b7b579420ac06dabd7c4ba4d081ae}
 
 
-\-Check if p1 and p2 are on the same side of the line determined by points a and b. 
+Check if p1 and p2 are on the same side of the line determined by points a and b. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em p1} & \-Point p1 \\
+\begin{DoxyParams}{Parameters}
+{\em p1} & Point p1 \\
 \hline
-{\em p2} & \-Point p2 \\
+{\em p2} & Point p2 \\
 \hline
-{\em a} & \-First point for determining line \\
+{\em a} & First point for determining line \\
 \hline
-{\em b} & \-Second point for determining line \\
+{\em b} & Second point for determining line \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 148 of file \-Geometry2\-D.\-cpp.
+Definition at line 148 of file Geometry2\-D.\-cpp.
 
 
 
-\-References line\-Equation\-Determined\-By\-Points(), and multiscale\-::\-Numeric\-::sign().
+References line\-Equation\-Determined\-By\-Points(), and multiscale\-::\-Numeric\-::sign().
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::find\-Vertex\-C\-On\-Side\-B(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::gamma().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::find\-Vertex\-C\-On\-Side\-B(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::gamma().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -456,36 +470,36 @@ static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669e
 
 \hypertarget{classmultiscale_1_1Geometry2D_a911b35d7abde99988bb4b43f00d6be72}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!distance\-Btw\-Points@{distance\-Btw\-Points}}
 \index{distance\-Btw\-Points@{distance\-Btw\-Points}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{distance\-Btw\-Points}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Geometry2\-D\-::distance\-Btw\-Points} (
+\subsubsection[{distance\-Btw\-Points}]{\setlength{\rightskip}{0pt plus 5cm}double Geometry2\-D\-::distance\-Btw\-Points (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a, }
-\item[{const \-Point2f \&}]{b}
+\item[{const Point2f \&}]{a, }
+\item[{const Point2f \&}]{b}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a911b35d7abde99988bb4b43f00d6be72}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a911b35d7abde99988bb4b43f00d6be72}
 
 
-\-Compute the distance between two points. 
+Compute the distance between two points. 
 
-\-Compute the \-Euclidean distance between two points
+Compute the Euclidean distance between two points
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-Point2f a \\
+\begin{DoxyParams}{Parameters}
+{\em a} & Point2f a \\
 \hline
-{\em b} & \-Point2f b \\
+{\em b} & Point2f b \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 69 of file \-Geometry2\-D.\-cpp.
+Definition at line 69 of file Geometry2\-D.\-cpp.
 
 
 
-\-Referenced by multiscale\-::verification\-::\-Time\-Point\-::avg\-Distance\-Between\-Centroids(), multiscale\-::analysis\-::\-Region\-Detector\-::compute\-Average\-Clusteredness\-Degree(), multiscale\-::analysis\-::\-Silhouette\-::compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster(), multiscale\-::analysis\-::\-Silhouette\-::compute\-Average\-Dissimilarity\-Within\-Cluster(), multiscale\-::analysis\-::\-Region\-Detector\-::create\-Region\-From\-Polygon(), multiscale\-::analysis\-::\-Entity\-::distance\-To(), is\-Point\-On\-Line\-Segment(), minimum\-Distance\-Point\-Index(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values().
+Referenced by multiscale\-::verification\-::\-Time\-Point\-::avg\-Distance\-Between\-Centroids(), multiscale\-::analysis\-::\-Region\-Detector\-::compute\-Average\-Clusteredness\-Degree(), multiscale\-::analysis\-::\-Silhouette\-::compute\-Average\-Dissimilarity\-Btw\-Entity\-And\-Cluster(), multiscale\-::analysis\-::\-Silhouette\-::compute\-Average\-Dissimilarity\-Within\-Cluster(), multiscale\-::analysis\-::\-Region\-Detector\-::create\-Region\-From\-Polygon(), multiscale\-::analysis\-::\-Entity\-::distance\-To(), is\-Point\-On\-Line\-Segment(), minimum\-Distance\-Point\-Index(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -496,70 +510,74 @@ static void \hyperlink{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669e
 
 \hypertarget{classmultiscale_1_1Geometry2D_a0b01b51c41789623f2cd7a0a2a66f462}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!distance\-Btw\-Points@{distance\-Btw\-Points}}
 \index{distance\-Btw\-Points@{distance\-Btw\-Points}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{distance\-Btw\-Points}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Geometry2\-D\-::distance\-Btw\-Points} (
+\subsubsection[{distance\-Btw\-Points}]{\setlength{\rightskip}{0pt plus 5cm}double Geometry2\-D\-::distance\-Btw\-Points (
 \begin{DoxyParamCaption}
 \item[{double}]{x1, }
 \item[{double}]{y1, }
 \item[{double}]{x2, }
 \item[{double}]{y2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a0b01b51c41789623f2cd7a0a2a66f462}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a0b01b51c41789623f2cd7a0a2a66f462}
 
 
-\-Compute the distance between two points. 
+Compute the distance between two points. 
 
-\-Compute the \-Euclidean distance between two points
+Compute the Euclidean distance between two points
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-Point2f a \\
+\begin{DoxyParams}{Parameters}
+{\em x1} & The x-\/coordinate of the first point \\
 \hline
-{\em b} & \-Point2f b \\
+{\em y1} & The y-\/coordinate of the first point \\
+\hline
+{\em x2} & The x-\/coordinate of the second point \\
+\hline
+{\em y2} & The y-\/coordinate of the second point \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 76 of file \-Geometry2\-D.\-cpp.
+Definition at line 76 of file Geometry2\-D.\-cpp.
 
 \hypertarget{classmultiscale_1_1Geometry2D_ae6c0f66accf4ecf31b0fd96437371626}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!distance\-From\-Point\-To\-Line@{distance\-From\-Point\-To\-Line}}
 \index{distance\-From\-Point\-To\-Line@{distance\-From\-Point\-To\-Line}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{distance\-From\-Point\-To\-Line}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Geometry2\-D\-::distance\-From\-Point\-To\-Line} (
+\subsubsection[{distance\-From\-Point\-To\-Line}]{\setlength{\rightskip}{0pt plus 5cm}double Geometry2\-D\-::distance\-From\-Point\-To\-Line (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a, }
-\item[{const \-Point2f \&}]{line\-Point\-B, }
-\item[{const \-Point2f \&}]{line\-Point\-C}
+\item[{const Point2f \&}]{a, }
+\item[{const Point2f \&}]{line\-Point\-B, }
+\item[{const Point2f \&}]{line\-Point\-C}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_ae6c0f66accf4ecf31b0fd96437371626}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_ae6c0f66accf4ecf31b0fd96437371626}
 
 
-\-Compute the distance from a point \char`\"{}a\char`\"{} to a line specified by two points \char`\"{}\-B\char`\"{} and \char`\"{}\-C\char`\"{}. 
+Compute the distance from a point \char`\"{}a\char`\"{} to a line specified by two points \char`\"{}\-B\char`\"{} and \char`\"{}\-C\char`\"{}. 
 
-\-Formula used\-:
+Formula used\-:
 
 $ distance = \frac{\mid (x_c - x_b)(y_b - y_a) - (x_b - x_a)(y_c - y_b) \mid}{\sqrt{(x_c - x_b)^{2} + (y_c - y_b)^{2}}} $
 
-\-Reference\-: \href{http://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html}{\tt http\-://mathworld.\-wolfram.\-com/\-Point-\/\-Line\-Distance2-\/\-Dimensional.\-html}
+Reference\-: \href{http://mathworld.wolfram.com/Point-LineDistance2-Dimensional.html}{\tt http\-://mathworld.\-wolfram.\-com/\-Point-\/\-Line\-Distance2-\/\-Dimensional.\-html}
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-Point2f from which the distance is measures \\
+\begin{DoxyParams}{Parameters}
+{\em a} & Point2f from which the distance is measures \\
 \hline
-{\em line\-Point\-B} & \-One of the points determining the line \\
+{\em line\-Point\-B} & One of the points determining the line \\
 \hline
-{\em line\-Point\-C} & \-One of the points determining the line \\
+{\em line\-Point\-C} & One of the points determining the line \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 83 of file \-Geometry2\-D.\-cpp.
+Definition at line 83 of file Geometry2\-D.\-cpp.
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::height().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::height().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -570,66 +588,66 @@ $ distance = \frac{\mid (x_c - x_b)(y_b - y_a) - (x_b - x_a)(y_c - y_b) \mid}{\s
 
 \hypertarget{classmultiscale_1_1Geometry2D_a9e5c6378463c0e685136d66bfac2a8c1}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!find\-Points\-On\-Edge@{find\-Points\-On\-Edge}}
 \index{find\-Points\-On\-Edge@{find\-Points\-On\-Edge}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{find\-Points\-On\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ \-Point2f $>$ {\bf \-Geometry2\-D\-::find\-Points\-On\-Edge} (
+\subsubsection[{find\-Points\-On\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ Point2f $>$ Geometry2\-D\-::find\-Points\-On\-Edge (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ \-Point2f $>$ \&}]{points, }
+\item[{const vector$<$ Point2f $>$ \&}]{points, }
 \item[{unsigned int}]{nr\-Of\-Rows, }
 \item[{unsigned int}]{nr\-Of\-Cols}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a9e5c6378463c0e685136d66bfac2a8c1}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a9e5c6378463c0e685136d66bfac2a8c1}
 
 
-\-Find the subset of points from the given set of points which lie on the edge. 
+Find the subset of points from the given set of points which lie on the edge. 
 
-\-A point \char`\"{}p\char`\"{} is considered to be on the edge if\-: ((p.\-x == 1) \&\& (p.\-y $>$ 1) \&\& (p.\-y $<$ nr\-Of\-Cols)) \-O\-R ((p.\-x == nr\-Of\-Rows) \&\& (p.\-y $>$ 1) \&\& (p.\-y $<$ nr\-Of\-Cols)) \-O\-R ((p.\-y == 1) \&\& (p.\-x $>$ 1) \&\& (p.\-x $<$ nr\-Of\-Rows)) \-O\-R ((p.\-y == nr\-Of\-Cols) \&\& (p.\-x $>$ 1) \&\& (p.\-x $<$ nr\-Of\-Rows))
+A point \char`\"{}p\char`\"{} is considered to be on the edge if\-: ((p.\-x == 1) \&\& (p.\-y $>$ 1) \&\& (p.\-y $<$ nr\-Of\-Cols)) O\-R ((p.\-x == nr\-Of\-Rows) \&\& (p.\-y $>$ 1) \&\& (p.\-y $<$ nr\-Of\-Cols)) O\-R ((p.\-y == 1) \&\& (p.\-x $>$ 1) \&\& (p.\-x $<$ nr\-Of\-Rows)) O\-R ((p.\-y == nr\-Of\-Cols) \&\& (p.\-x $>$ 1) \&\& (p.\-x $<$ nr\-Of\-Rows))
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em points} & \-The set of points \\
+\begin{DoxyParams}{Parameters}
+{\em points} & The set of points \\
 \hline
-{\em nr\-Of\-Rows} & \-The number of rows \\
+{\em nr\-Of\-Rows} & The number of rows \\
 \hline
-{\em nr\-Of\-Cols} & \-The number of columns \\
+{\em nr\-Of\-Cols} & The number of columns \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 326 of file \-Geometry2\-D.\-cpp.
+Definition at line 326 of file Geometry2\-D.\-cpp.
 
 
 
-\-References is\-Point\-On\-Edge().
+References is\-Point\-On\-Edge().
 
 \hypertarget{classmultiscale_1_1Geometry2D_a7a7526398a9675a05c609bb442fe02f0}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!inverse\-Translate@{inverse\-Translate}}
 \index{inverse\-Translate@{inverse\-Translate}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{inverse\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Geometry2\-D\-::inverse\-Translate} (
+\subsubsection[{inverse\-Translate}]{\setlength{\rightskip}{0pt plus 5cm}void Geometry2\-D\-::inverse\-Translate (
 \begin{DoxyParamCaption}
-\item[{\-Point2f \&}]{point, }
-\item[{const \-Point2f \&}]{translation}
+\item[{Point2f \&}]{point, }
+\item[{const Point2f \&}]{translation}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a7a7526398a9675a05c609bb442fe02f0}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1Geometry2D_a7a7526398a9675a05c609bb442fe02f0}
 
 
-\-Inverse translate a point by the given values. 
+Inverse translate a point by the given values. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em point} & \-The point \\
+\begin{DoxyParams}{Parameters}
+{\em point} & The point \\
 \hline
-{\em translation} & \-Translation values \\
+{\em translation} & Translation values \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 407 of file \-Geometry2\-D.\-cpp.
+Definition at line 407 of file Geometry2\-D.\-cpp.
 
 
 
-\-Referenced by line\-Circle\-One\-Intersection\-Point(), and line\-Circle\-Two\-Intersection\-Points().
+Referenced by line\-Circle\-One\-Intersection\-Point(), and line\-Circle\-Two\-Intersection\-Points().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -640,37 +658,37 @@ $ distance = \frac{\mid (x_c - x_b)(y_b - y_a) - (x_b - x_a)(y_c - y_b) \mid}{\s
 
 \hypertarget{classmultiscale_1_1Geometry2D_a6555ae4c2762e25444bc0874e9bbc535}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!is\-Angle\-Between@{is\-Angle\-Between}}
 \index{is\-Angle\-Between@{is\-Angle\-Between}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{is\-Angle\-Between}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::is\-Angle\-Between} (
+\subsubsection[{is\-Angle\-Between}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::is\-Angle\-Between (
 \begin{DoxyParamCaption}
 \item[{double}]{angle1, }
 \item[{double}]{angle2, }
 \item[{double}]{angle3}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a6555ae4c2762e25444bc0874e9bbc535}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a6555ae4c2762e25444bc0874e9bbc535}
 
 
-\-Check if angle1 lies between angles 2 and 3. 
+Check if angle1 lies between angles 2 and 3. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em angle1} & \-The angle which lies between angle2 and angle3 or not \\
+\begin{DoxyParams}{Parameters}
+{\em angle1} & The angle which lies between angle2 and angle3 or not \\
 \hline
-{\em angle2} & \-One of the boundary angles \\
+{\em angle2} & One of the boundary angles \\
 \hline
-{\em angle3} & \-The other boundary angle \\
+{\em angle3} & The other boundary angle \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 19 of file \-Geometry2\-D.\-cpp.
+Definition at line 19 of file Geometry2\-D.\-cpp.
 
 
 
-\-Referenced by is\-Angle\-Between\-Non\-Reflex(), and is\-Opposite\-Angle\-Between().
+Referenced by is\-Angle\-Between\-Non\-Reflex(), and is\-Opposite\-Angle\-Between().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -681,41 +699,41 @@ $ distance = \frac{\mid (x_c - x_b)(y_b - y_a) - (x_b - x_a)(y_c - y_b) \mid}{\s
 
 \hypertarget{classmultiscale_1_1Geometry2D_a907466755f2d460e95e2bace5b386768}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!is\-Angle\-Between\-Non\-Reflex@{is\-Angle\-Between\-Non\-Reflex}}
 \index{is\-Angle\-Between\-Non\-Reflex@{is\-Angle\-Between\-Non\-Reflex}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{is\-Angle\-Between\-Non\-Reflex}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::is\-Angle\-Between\-Non\-Reflex} (
+\subsubsection[{is\-Angle\-Between\-Non\-Reflex}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::is\-Angle\-Between\-Non\-Reflex (
 \begin{DoxyParamCaption}
 \item[{double}]{angle1, }
 \item[{double}]{angle2, }
 \item[{double}]{angle3}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a907466755f2d460e95e2bace5b386768}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a907466755f2d460e95e2bace5b386768}
 
 
-\-Check if angle1 lies between non reflex angle determined by angles 2 and 3. 
+Check if angle1 lies between non reflex angle determined by angles 2 and 3. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em angle1} & \-The angle which lies between angle2 and angle3 or not \\
+\begin{DoxyParams}{Parameters}
+{\em angle1} & The angle which lies between angle2 and angle3 or not \\
 \hline
-{\em angle2} & \-One of the boundary angles \\
+{\em angle2} & One of the boundary angles \\
 \hline
-{\em angle3} & \-The other boundary angle \\
+{\em angle3} & The other boundary angle \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 33 of file \-Geometry2\-D.\-cpp.
+Definition at line 33 of file Geometry2\-D.\-cpp.
 
 
 
-\-References is\-Angle\-Between(), and multiscale\-::\-Numeric\-::less\-Or\-Equal().
+References is\-Angle\-Between(), and multiscale\-::\-Numeric\-::less\-Or\-Equal().
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Gamma\-Angle\-Between(), and is\-Opposite\-Angle\-Between\-Non\-Reflex().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Gamma\-Angle\-Between(), and is\-Opposite\-Angle\-Between\-Non\-Reflex().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -724,99 +742,108 @@ $ distance = \frac{\mid (x_c - x_b)(y_b - y_a) - (x_b - x_a)(y_c - y_b) \mid}{\s
 \end{figure}
 
 
-\hypertarget{classmultiscale_1_1Geometry2D_af8cb580f5f86a1fece582f43a0916c4a}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!is\-Between\-Coordinates@{is\-Between\-Coordinates}}
+\hypertarget{classmultiscale_1_1Geometry2D_adc334365732eb2db3419a4cc2063485c}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!is\-Between\-Coordinates@{is\-Between\-Coordinates}}
 \index{is\-Between\-Coordinates@{is\-Between\-Coordinates}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{is\-Between\-Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U $>$ bool {\bf \-Geometry2\-D\-::is\-Between\-Coordinates} (
+\subsubsection[{is\-Between\-Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U $>$ bool multiscale\-::\-Geometry2\-D\-::is\-Between\-Coordinates (
 \begin{DoxyParamCaption}
-\item[{\-T}]{c, }
-\item[{\-U}]{c1, }
-\item[{\-U}]{c2}
+\item[{T}]{c, }
+\item[{U}]{c1, }
+\item[{U}]{c2}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_af8cb580f5f86a1fece582f43a0916c4a}
+)}}\label{classmultiscale_1_1Geometry2D_adc334365732eb2db3419a4cc2063485c}
 
 
-\-Check if the coordinate c lies between c1 and c2. 
+Definition at line 398 of file Geometry2\-D.\-cpp.
+
+\hypertarget{classmultiscale_1_1Geometry2D_a3574944f4c4a7cb422bc01b92330d862}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!is\-Between\-Coordinates@{is\-Between\-Coordinates}}
+\index{is\-Between\-Coordinates@{is\-Between\-Coordinates}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
+\subsubsection[{is\-Between\-Coordinates}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename U $>$ static bool multiscale\-::\-Geometry2\-D\-::is\-Between\-Coordinates (
+\begin{DoxyParamCaption}
+\item[{T}]{c, }
+\item[{U}]{c1, }
+\item[{U}]{c2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1Geometry2D_a3574944f4c4a7cb422bc01b92330d862}
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em c} & \-Coordinate c \\
+Check if the coordinate c lies between c1 and c2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Coordinate c \\
 \hline
-{\em c1} & \-Coordinate c1 \\
+{\em c1} & Coordinate c1 \\
 \hline
-{\em c2} & \-Coordinate c2 \\
+{\em c2} & Coordinate c2 \\
 \hline
 \end{DoxyParams}
-
-
-\-Definition at line 398 of file \-Geometry2\-D.\-cpp.
-
 \hypertarget{classmultiscale_1_1Geometry2D_aa373f78afdba238ebe3bafaac6076aef}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!is\-Opposite\-Angle\-Between@{is\-Opposite\-Angle\-Between}}
 \index{is\-Opposite\-Angle\-Between@{is\-Opposite\-Angle\-Between}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{is\-Opposite\-Angle\-Between}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::is\-Opposite\-Angle\-Between} (
+\subsubsection[{is\-Opposite\-Angle\-Between}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::is\-Opposite\-Angle\-Between (
 \begin{DoxyParamCaption}
 \item[{double}]{angle1, }
 \item[{double}]{angle2, }
 \item[{double}]{angle3}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_aa373f78afdba238ebe3bafaac6076aef}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_aa373f78afdba238ebe3bafaac6076aef}
 
 
-\-Check if the opposite of angle1, ((angle1 + 180) \% 360), lies between angles 2 and 3. 
+Check if the opposite of angle1, ((angle1 + 180) \% 360), lies between angles 2 and 3. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em angle1} & \-The angle for which the opposite angle lies between angle2 and angle3 or not \\
+\begin{DoxyParams}{Parameters}
+{\em angle1} & The angle for which the opposite angle lies between angle2 and angle3 or not \\
 \hline
-{\em angle2} & \-One of the boundary angles \\
+{\em angle2} & One of the boundary angles \\
 \hline
-{\em angle3} & \-The other boundary angle \\
+{\em angle3} & The other boundary angle \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 27 of file \-Geometry2\-D.\-cpp.
+Definition at line 27 of file Geometry2\-D.\-cpp.
 
 
 
-\-References is\-Angle\-Between(), and opposite\-Angle().
+References is\-Angle\-Between(), and opposite\-Angle().
 
 \hypertarget{classmultiscale_1_1Geometry2D_a28d74085708bba7fa68fbea05d0d51ad}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!is\-Opposite\-Angle\-Between\-Non\-Reflex@{is\-Opposite\-Angle\-Between\-Non\-Reflex}}
 \index{is\-Opposite\-Angle\-Between\-Non\-Reflex@{is\-Opposite\-Angle\-Between\-Non\-Reflex}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{is\-Opposite\-Angle\-Between\-Non\-Reflex}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::is\-Opposite\-Angle\-Between\-Non\-Reflex} (
+\subsubsection[{is\-Opposite\-Angle\-Between\-Non\-Reflex}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::is\-Opposite\-Angle\-Between\-Non\-Reflex (
 \begin{DoxyParamCaption}
 \item[{double}]{angle1, }
 \item[{double}]{angle2, }
 \item[{double}]{angle3}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a28d74085708bba7fa68fbea05d0d51ad}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a28d74085708bba7fa68fbea05d0d51ad}
 
 
-\-Check if the opposite of angle1, ((angle1 + 180) \% 360), lies between non reflex angle determined by angles 2 and 3. 
+Check if the opposite of angle1, ((angle1 + 180) \% 360), lies between non reflex angle determined by angles 2 and 3. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em angle1} & \-The angle which lies between angle2 and angle3 or not \\
+\begin{DoxyParams}{Parameters}
+{\em angle1} & The angle which lies between angle2 and angle3 or not \\
 \hline
-{\em angle2} & \-One of the boundary angles \\
+{\em angle2} & One of the boundary angles \\
 \hline
-{\em angle3} & \-The other boundary angle \\
+{\em angle3} & The other boundary angle \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 45 of file \-Geometry2\-D.\-cpp.
+Definition at line 45 of file Geometry2\-D.\-cpp.
 
 
 
-\-References is\-Angle\-Between\-Non\-Reflex(), and opposite\-Angle().
+References is\-Angle\-Between\-Non\-Reflex(), and opposite\-Angle().
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -827,43 +854,43 @@ $ distance = \frac{\mid (x_c - x_b)(y_b - y_a) - (x_b - x_a)(y_c - y_b) \mid}{\s
 
 \hypertarget{classmultiscale_1_1Geometry2D_a4a6aba3c69956a83af5d81f4d087c205}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!is\-Point\-On\-Edge@{is\-Point\-On\-Edge}}
 \index{is\-Point\-On\-Edge@{is\-Point\-On\-Edge}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{is\-Point\-On\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::is\-Point\-On\-Edge} (
+\subsubsection[{is\-Point\-On\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::is\-Point\-On\-Edge (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{p, }
+\item[{const Point2f \&}]{p, }
 \item[{int}]{nr\-Of\-Rows, }
 \item[{int}]{nr\-Of\-Cols}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a4a6aba3c69956a83af5d81f4d087c205}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1Geometry2D_a4a6aba3c69956a83af5d81f4d087c205}
 
 
-\-Check if the given point is on the edge. 
+Check if the given point is on the edge. 
 
-\-A point \char`\"{}p\char`\"{} is considered to be on the edge if\-: ((p.\-x == 1) \&\& (p.\-y $>$ 1) \&\& (p.\-y $<$ nr\-Of\-Cols)) \-O\-R ((p.\-x == nr\-Of\-Rows) \&\& (p.\-y $>$ 1) \&\& (p.\-y $<$ nr\-Of\-Cols)) \-O\-R ((p.\-y == 1) \&\& (p.\-x $>$ 1) \&\& (p.\-x $<$ nr\-Of\-Rows)) \-O\-R ((p.\-y == nr\-Of\-Cols) \&\& (p.\-x $>$ 1) \&\& (p.\-x $<$ nr\-Of\-Rows))
+A point \char`\"{}p\char`\"{} is considered to be on the edge if\-: ((p.\-x == 1) \&\& (p.\-y $>$ 1) \&\& (p.\-y $<$ nr\-Of\-Cols)) O\-R ((p.\-x == nr\-Of\-Rows) \&\& (p.\-y $>$ 1) \&\& (p.\-y $<$ nr\-Of\-Cols)) O\-R ((p.\-y == 1) \&\& (p.\-x $>$ 1) \&\& (p.\-x $<$ nr\-Of\-Rows)) O\-R ((p.\-y == nr\-Of\-Cols) \&\& (p.\-x $>$ 1) \&\& (p.\-x $<$ nr\-Of\-Rows))
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em p} & \-Point2f p \\
+\begin{DoxyParams}{Parameters}
+{\em p} & Point2f p \\
 \hline
-{\em nr\-Of\-Rows} & \-The number of rows \\
+{\em nr\-Of\-Rows} & The number of rows \\
 \hline
-{\em nr\-Of\-Cols} & \-The number of columns \\
+{\em nr\-Of\-Cols} & The number of columns \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 388 of file \-Geometry2\-D.\-cpp.
+Definition at line 388 of file Geometry2\-D.\-cpp.
 
 
 
-\-References \-M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X.
+References M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X.
 
 
 
-\-Referenced by find\-Points\-On\-Edge(), and orthogonal\-Line\-To\-Another\-Line\-Edge\-Points().
+Referenced by find\-Points\-On\-Edge(), and orthogonal\-Line\-To\-Another\-Line\-Edge\-Points().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -874,41 +901,41 @@ $ distance = \frac{\mid (x_c - x_b)(y_b - y_a) - (x_b - x_a)(y_c - y_b) \mid}{\s
 
 \hypertarget{classmultiscale_1_1Geometry2D_a608548e8588d9efbcfec90d2bd92ea55}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!is\-Point\-On\-Line\-Segment@{is\-Point\-On\-Line\-Segment}}
 \index{is\-Point\-On\-Line\-Segment@{is\-Point\-On\-Line\-Segment}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{is\-Point\-On\-Line\-Segment}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::is\-Point\-On\-Line\-Segment} (
+\subsubsection[{is\-Point\-On\-Line\-Segment}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::is\-Point\-On\-Line\-Segment (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{point, }
-\item[{const \-Point2f \&}]{line\-Segment\-Start, }
-\item[{const \-Point2f \&}]{line\-Segment\-End}
+\item[{const Point2f \&}]{point, }
+\item[{const Point2f \&}]{line\-Segment\-Start, }
+\item[{const Point2f \&}]{line\-Segment\-End}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a608548e8588d9efbcfec90d2bd92ea55}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a608548e8588d9efbcfec90d2bd92ea55}
 
 
-\-Check if one point lies between two other points. 
+Check if one point lies between two other points. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em point} & \-Point lying possibly outside the line segment \\
+\begin{DoxyParams}{Parameters}
+{\em point} & Point lying possibly outside the line segment \\
 \hline
-{\em line\-Segment\-Start} & \-First point determining the line segment \\
+{\em line\-Segment\-Start} & First point determining the line segment \\
 \hline
-{\em line\-Segment\-End} & \-Second point determining the line segment \\
+{\em line\-Segment\-End} & Second point determining the line segment \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 368 of file \-Geometry2\-D.\-cpp.
+Definition at line 368 of file Geometry2\-D.\-cpp.
 
 
 
-\-References multiscale\-::\-Numeric\-::almost\-Equal(), and distance\-Btw\-Points().
+References multiscale\-::\-Numeric\-::almost\-Equal(), and distance\-Btw\-Points().
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Valid\-Minimal\-Triangle().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Valid\-Minimal\-Triangle().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -919,51 +946,51 @@ $ distance = \frac{\mid (x_c - x_b)(y_b - y_a) - (x_b - x_a)(y_c - y_b) \mid}{\s
 
 \hypertarget{classmultiscale_1_1Geometry2D_ab04c08f83d066f0d936d516d015ea62c}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!line\-Circle\-Intersection@{line\-Circle\-Intersection}}
 \index{line\-Circle\-Intersection@{line\-Circle\-Intersection}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{line\-Circle\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::line\-Circle\-Intersection} (
+\subsubsection[{line\-Circle\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::line\-Circle\-Intersection (
 \begin{DoxyParamCaption}
-\item[{\-Point2f}]{a, }
-\item[{\-Point2f}]{b, }
-\item[{const \-Point2f \&}]{circle\-Origin, }
+\item[{Point2f}]{a, }
+\item[{Point2f}]{b, }
+\item[{const Point2f \&}]{circle\-Origin, }
 \item[{double}]{radius, }
-\item[{vector$<$ \-Point2f $>$ \&}]{intersection\-Points}
+\item[{vector$<$ Point2f $>$ \&}]{intersection\-Points}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_ab04c08f83d066f0d936d516d015ea62c}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_ab04c08f83d066f0d936d516d015ea62c}
 
 
-\-Determine if a line and a circle intersect and return the intersection points if they exist. 
+Determine if a line and a circle intersect and return the intersection points if they exist. 
 
-\-We translate all the points such that the circle origin coincides with the origin of the coordinate system. \-When returning the results, the intersection points are inverse translated.
+We translate all the points such that the circle origin coincides with the origin of the coordinate system. When returning the results, the intersection points are inverse translated.
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-First point for determining the line \\
+\begin{DoxyParams}{Parameters}
+{\em a} & First point for determining the line \\
 \hline
-{\em b} & \-Second point for determining the line \\
+{\em b} & Second point for determining the line \\
 \hline
-{\em circle\-Origin} & \-Origin of the circle \\
+{\em circle\-Origin} & Origin of the circle \\
 \hline
-{\em radius} & \-Radius of the circle \\
+{\em radius} & Radius of the circle \\
 \hline
-{\em intersection\-Points} & \-The intersection points between the circle and the line \\
+{\em intersection\-Points} & The intersection points between the circle and the line \\
 \hline
 \end{DoxyParams}
-$<$ \-Two intersection points
+$<$ Two intersection points
 
-$<$ \-One intersection point 
+$<$ One intersection point 
 
-\-Definition at line 266 of file \-Geometry2\-D.\-cpp.
-
-
-
-\-References line\-Circle\-One\-Intersection\-Point(), line\-Circle\-Two\-Intersection\-Points(), and translate().
+Definition at line 266 of file Geometry2\-D.\-cpp.
 
 
 
-\-Referenced by line\-Segment\-Circle\-Intersection().
+References line\-Circle\-One\-Intersection\-Point(), line\-Circle\-Two\-Intersection\-Points(), and translate().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Referenced by line\-Segment\-Circle\-Intersection().
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -974,50 +1001,50 @@ $<$ \-One intersection point
 
 \hypertarget{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669ef94e03}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!line\-Circle\-One\-Intersection\-Point@{line\-Circle\-One\-Intersection\-Point}}
 \index{line\-Circle\-One\-Intersection\-Point@{line\-Circle\-One\-Intersection\-Point}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{line\-Circle\-One\-Intersection\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Geometry2\-D\-::line\-Circle\-One\-Intersection\-Point} (
+\subsubsection[{line\-Circle\-One\-Intersection\-Point}]{\setlength{\rightskip}{0pt plus 5cm}void Geometry2\-D\-::line\-Circle\-One\-Intersection\-Point (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{circle\-Origin, }
-\item[{double}]{\-A, }
-\item[{double}]{\-B, }
-\item[{double}]{\-C, }
+\item[{const Point2f \&}]{circle\-Origin, }
+\item[{double}]{A, }
+\item[{double}]{B, }
+\item[{double}]{C, }
 \item[{double}]{delta, }
-\item[{vector$<$ \-Point2f $>$ \&}]{intersection\-Points}
+\item[{vector$<$ Point2f $>$ \&}]{intersection\-Points}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669ef94e03}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1Geometry2D_ad9a4555568f44ef912601d669ef94e03}
 
 
-\-Treat the case when the line and circle intersect in one point. 
+Treat the case when the line and circle intersect in one point. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em circle\-Origin} & \-Origin of the circle \\
+\begin{DoxyParams}{Parameters}
+{\em circle\-Origin} & Origin of the circle \\
 \hline
-{\em \-A} & y2 -\/ y1 \\
+{\em A} & y2 -\/ y1 \\
 \hline
-{\em \-B} & x1 -\/ x2 \\
+{\em B} & x1 -\/ x2 \\
 \hline
-{\em \-C} & \-A$\ast$x1 + \-B$\ast$y1 \\
+{\em C} & A$\ast$x1 + B$\ast$y1 \\
 \hline
-{\em delta} & (4 $\ast$ \-B$^\wedge$2 $\ast$ \-C$^\wedge$2) -\/ (4 $\ast$ (\-A$^\wedge$2 + \-B$^\wedge$2) $\ast$ (\-C$^\wedge$2 -\/ (\-R$^\wedge$2 $\ast$ \-A$^\wedge$2))) \\
+{\em delta} & (4 $\ast$ B$^\wedge$2 $\ast$ C$^\wedge$2) -\/ (4 $\ast$ (A$^\wedge$2 + B$^\wedge$2) $\ast$ (C$^\wedge$2 -\/ (R$^\wedge$2 $\ast$ A$^\wedge$2))) \\
 \hline
-{\em intersection\-Points} & \-Intersection points \\
+{\em intersection\-Points} & Intersection points \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 430 of file \-Geometry2\-D.\-cpp.
+Definition at line 430 of file Geometry2\-D.\-cpp.
 
 
 
-\-References inverse\-Translate().
+References inverse\-Translate().
 
 
 
-\-Referenced by line\-Circle\-Intersection().
+Referenced by line\-Circle\-Intersection().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1028,50 +1055,50 @@ $<$ \-One intersection point
 
 \hypertarget{classmultiscale_1_1Geometry2D_ae501398552bf50acfd23c04db8d65300}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!line\-Circle\-Two\-Intersection\-Points@{line\-Circle\-Two\-Intersection\-Points}}
 \index{line\-Circle\-Two\-Intersection\-Points@{line\-Circle\-Two\-Intersection\-Points}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{line\-Circle\-Two\-Intersection\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Geometry2\-D\-::line\-Circle\-Two\-Intersection\-Points} (
+\subsubsection[{line\-Circle\-Two\-Intersection\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void Geometry2\-D\-::line\-Circle\-Two\-Intersection\-Points (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{circle\-Origin, }
-\item[{double}]{\-A, }
-\item[{double}]{\-B, }
-\item[{double}]{\-C, }
+\item[{const Point2f \&}]{circle\-Origin, }
+\item[{double}]{A, }
+\item[{double}]{B, }
+\item[{double}]{C, }
 \item[{double}]{delta, }
-\item[{vector$<$ \-Point2f $>$ \&}]{intersection\-Points}
+\item[{vector$<$ Point2f $>$ \&}]{intersection\-Points}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_ae501398552bf50acfd23c04db8d65300}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1Geometry2D_ae501398552bf50acfd23c04db8d65300}
 
 
-\-Treat the case when the line and circle intersect in two points. 
+Treat the case when the line and circle intersect in two points. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em circle\-Origin} & \-Origin of the circle \\
+\begin{DoxyParams}{Parameters}
+{\em circle\-Origin} & Origin of the circle \\
 \hline
-{\em \-A} & y2 -\/ y1 \\
+{\em A} & y2 -\/ y1 \\
 \hline
-{\em \-B} & x1 -\/ x2 \\
+{\em B} & x1 -\/ x2 \\
 \hline
-{\em \-C} & \-A$\ast$x1 + \-B$\ast$y1 \\
+{\em C} & A$\ast$x1 + B$\ast$y1 \\
 \hline
-{\em delta} & (4 $\ast$ \-B$^\wedge$2 $\ast$ \-C$^\wedge$2) -\/ (4 $\ast$ (\-A$^\wedge$2 + \-B$^\wedge$2) $\ast$ (\-C$^\wedge$2 -\/ (\-R$^\wedge$2 $\ast$ \-A$^\wedge$2))) \\
+{\em delta} & (4 $\ast$ B$^\wedge$2 $\ast$ C$^\wedge$2) -\/ (4 $\ast$ (A$^\wedge$2 + B$^\wedge$2) $\ast$ (C$^\wedge$2 -\/ (R$^\wedge$2 $\ast$ A$^\wedge$2))) \\
 \hline
-{\em intersection\-Points} & \-Intersection points \\
+{\em intersection\-Points} & Intersection points \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 412 of file \-Geometry2\-D.\-cpp.
+Definition at line 412 of file Geometry2\-D.\-cpp.
 
 
 
-\-References inverse\-Translate().
+References inverse\-Translate().
 
 
 
-\-Referenced by line\-Circle\-Intersection().
+Referenced by line\-Circle\-Intersection().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1082,49 +1109,49 @@ $<$ \-One intersection point
 
 \hypertarget{classmultiscale_1_1Geometry2D_a6d72740d7f1b2441b0829c0f0c6a6853}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!line\-Equation\-Determined\-By\-Points@{line\-Equation\-Determined\-By\-Points}}
 \index{line\-Equation\-Determined\-By\-Points@{line\-Equation\-Determined\-By\-Points}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{line\-Equation\-Determined\-By\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Geometry2\-D\-::line\-Equation\-Determined\-By\-Points} (
+\subsubsection[{line\-Equation\-Determined\-By\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void Geometry2\-D\-::line\-Equation\-Determined\-By\-Points (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{p, }
-\item[{const \-Point2f \&}]{q, }
+\item[{const Point2f \&}]{p, }
+\item[{const Point2f \&}]{q, }
 \item[{double \&}]{a, }
 \item[{double \&}]{b, }
 \item[{double \&}]{c}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a6d72740d7f1b2441b0829c0f0c6a6853}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a6d72740d7f1b2441b0829c0f0c6a6853}
 
 
-\-Get the values of \char`\"{}a\char`\"{}, \char`\"{}b\char`\"{} and \char`\"{}c\char`\"{} of the line equation ax + by + c = 0 knowing that point \char`\"{}p\char`\"{} and \char`\"{}q\char`\"{} are on the line. 
+Get the values of \char`\"{}a\char`\"{}, \char`\"{}b\char`\"{} and \char`\"{}c\char`\"{} of the line equation ax + by + c = 0 knowing that point \char`\"{}p\char`\"{} and \char`\"{}q\char`\"{} are on the line. 
 
 a = q.\-y -\/ p.\-y b = p.\-x -\/ q.\-x c = -\/ (p.\-x $\ast$ a) -\/ (p.\-y $\ast$ b)
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em p} & \-Point2f p \\
+\begin{DoxyParams}{Parameters}
+{\em p} & Point2f p \\
 \hline
-{\em q} & \-Point2f q \\
+{\em q} & Point2f q \\
 \hline
-{\em a} & \-Parameter \char`\"{}a\char`\"{} from the line equation \\
+{\em a} & Parameter \char`\"{}a\char`\"{} from the line equation \\
 \hline
-{\em b} & \-Parameter \char`\"{}b\char`\"{} from the line equation \\
+{\em b} & Parameter \char`\"{}b\char`\"{} from the line equation \\
 \hline
-{\em c} & \-Parameter \char`\"{}c\char`\"{} from the line equation \\
+{\em c} & Parameter \char`\"{}c\char`\"{} from the line equation \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 160 of file \-Geometry2\-D.\-cpp.
+Definition at line 160 of file Geometry2\-D.\-cpp.
 
 
 
-\-References are\-Equal\-Points().
+References are\-Equal\-Points().
 
 
 
-\-Referenced by are\-On\-The\-Same\-Side\-Of\-Line(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::line\-Equation\-Parameters().
+Referenced by are\-On\-The\-Same\-Side\-Of\-Line(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::line\-Equation\-Parameters().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1135,57 +1162,57 @@ a = q.\-y -\/ p.\-y b = p.\-x -\/ q.\-x c = -\/ (p.\-x $\ast$ a) -\/ (p.\-y $\as
 
 \hypertarget{classmultiscale_1_1Geometry2D_aae24e97b32bdd8dab88c880d0d25ec86}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!line\-Intersection@{line\-Intersection}}
 \index{line\-Intersection@{line\-Intersection}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{line\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::line\-Intersection} (
+\subsubsection[{line\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::line\-Intersection (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a1, }
-\item[{const \-Point2f \&}]{b1, }
-\item[{const \-Point2f \&}]{a2, }
-\item[{const \-Point2f \&}]{b2, }
-\item[{\-Point2f \&}]{intersection}
+\item[{const Point2f \&}]{a1, }
+\item[{const Point2f \&}]{b1, }
+\item[{const Point2f \&}]{a2, }
+\item[{const Point2f \&}]{b2, }
+\item[{Point2f \&}]{intersection}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_aae24e97b32bdd8dab88c880d0d25ec86}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_aae24e97b32bdd8dab88c880d0d25ec86}
 
 
-\-Determine the intersection point of two lines, if this point exists. 
+Determine the intersection point of two lines, if this point exists. 
 
-\-Two lines intersect if they are not parallel (\-Parallel lines intersect at +/-\/ infinity, but we do not consider this case here).
+Two lines intersect if they are not parallel (Parallel lines intersect at +/-\/ infinity, but we do not consider this case here).
 
-\-The lines are specified by a pair of points each. \-If they intersect, then the function returns true, else it returns false.
+The lines are specified by a pair of points each. If they intersect, then the function returns true, else it returns false.
 
-\-Lines can be specified in the following form\-: \-A1x + \-B1x = \-C1 \-A2x + \-B2x = \-C2
+Lines can be specified in the following form\-: A1x + B1x = C1 A2x + B2x = C2
 
-\-If det (= \-A1x\-B2 -\/ \-A2x\-B1) == 0, then lines are parallel else they intersect
+If det (= A1x\-B2 -\/ A2x\-B1) == 0, then lines are parallel else they intersect
 
-\-If they intersect, then let us denote the intersection point with \-P(x, y) where\-: x = (\-C1x\-B2 -\/ \-C2x\-B1) / (det) y = (\-C2x\-A1 -\/ \-C1x\-A2) / (det)
+If they intersect, then let us denote the intersection point with P(x, y) where\-: x = (C1x\-B2 -\/ C2x\-B1) / (det) y = (C2x\-A1 -\/ C1x\-A2) / (det)
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a1} & \-First point for determining the first line \\
+\begin{DoxyParams}{Parameters}
+{\em a1} & First point for determining the first line \\
 \hline
-{\em b1} & \-Second point for determining the first line \\
+{\em b1} & Second point for determining the first line \\
 \hline
-{\em a2} & \-First point for determining the second line \\
+{\em a2} & First point for determining the second line \\
 \hline
-{\em b2} & \-Second point for determining the second line \\
+{\em b2} & Second point for determining the second line \\
 \hline
-{\em intersection} & \-The intersection point, if this point exists \\
+{\em intersection} & The intersection point, if this point exists \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 219 of file \-Geometry2\-D.\-cpp.
+Definition at line 219 of file Geometry2\-D.\-cpp.
 
 
 
-\-References multiscale\-::\-Numeric\-::almost\-Equal().
+References multiscale\-::\-Numeric\-::almost\-Equal().
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::are\-Intersecting\-Lines(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Local\-Minimal\-Triangle(), line\-Segment\-Intersection(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::middle\-Point\-Of\-Side\-B().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::are\-Intersecting\-Lines(), multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Local\-Minimal\-Triangle(), line\-Segment\-Intersection(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::middle\-Point\-Of\-Side\-B().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1196,53 +1223,53 @@ a = q.\-y -\/ p.\-y b = p.\-x -\/ q.\-x c = -\/ (p.\-x $\ast$ a) -\/ (p.\-y $\as
 
 \hypertarget{classmultiscale_1_1Geometry2D_aa9d9b17a7e5098c8bde0cd9d3dc08dc2}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!line\-Intersection@{line\-Intersection}}
 \index{line\-Intersection@{line\-Intersection}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{line\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::line\-Intersection} (
+\subsubsection[{line\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::line\-Intersection (
 \begin{DoxyParamCaption}
-\item[{const \-Point \&}]{a1, }
-\item[{const \-Point \&}]{b1, }
-\item[{const \-Point \&}]{a2, }
-\item[{const \-Point \&}]{b2, }
-\item[{\-Point \&}]{intersection}
+\item[{const Point \&}]{a1, }
+\item[{const Point \&}]{b1, }
+\item[{const Point \&}]{a2, }
+\item[{const Point \&}]{b2, }
+\item[{Point \&}]{intersection}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_aa9d9b17a7e5098c8bde0cd9d3dc08dc2}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_aa9d9b17a7e5098c8bde0cd9d3dc08dc2}
 
 
-\-Determine the intersection point of two lines, if this point exists. 
+Determine the intersection point of two lines, if this point exists. 
 
-\-Two lines intersect if they are not parallel (\-Parallel lines intersect at +/-\/ infinity, but we do not consider this case here).
+Two lines intersect if they are not parallel (Parallel lines intersect at +/-\/ infinity, but we do not consider this case here).
 
-\-The lines are specified by a pair of points each. \-If they intersect, then the function returns true, else it returns false.
+The lines are specified by a pair of points each. If they intersect, then the function returns true, else it returns false.
 
-\-Lines can be specified in the following form\-: \-A1x + \-B1x = \-C1 \-A2x + \-B2x = \-C2
+Lines can be specified in the following form\-: A1x + B1x = C1 A2x + B2x = C2
 
-\-If det (= \-A1x\-B2 -\/ \-A2x\-B1) == 0, then lines are parallel else they intersect
+If det (= A1x\-B2 -\/ A2x\-B1) == 0, then lines are parallel else they intersect
 
-\-If they intersect, then let us denote the intersection point with \-P(x, y) where\-: x = (\-C1x\-B2 -\/ \-C2x\-B1) / (det) y = (\-C2x\-A1 -\/ \-C1x\-A2) / (det)
+If they intersect, then let us denote the intersection point with P(x, y) where\-: x = (C1x\-B2 -\/ C2x\-B1) / (det) y = (C2x\-A1 -\/ C1x\-A2) / (det)
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a1} & \-First point for determining the first line \\
+\begin{DoxyParams}{Parameters}
+{\em a1} & First point for determining the first line \\
 \hline
-{\em b1} & \-Second point for determining the first line \\
+{\em b1} & Second point for determining the first line \\
 \hline
-{\em a2} & \-First point for determining the second line \\
+{\em a2} & First point for determining the second line \\
 \hline
-{\em b2} & \-Second point for determining the second line \\
+{\em b2} & Second point for determining the second line \\
 \hline
-{\em intersection} & \-The intersection point, if this point exists \\
+{\em intersection} & The intersection point, if this point exists \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 198 of file \-Geometry2\-D.\-cpp.
+Definition at line 198 of file Geometry2\-D.\-cpp.
 
 
 
-\-References multiscale\-::\-Numeric\-::almost\-Equal().
+References multiscale\-::\-Numeric\-::almost\-Equal().
 
 \hypertarget{classmultiscale_1_1Geometry2D_a51a867b90c8492ce4ce85c227788678b}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!line\-Intersection@{line\-Intersection}}
 \index{line\-Intersection@{line\-Intersection}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{line\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::line\-Intersection} (
+\subsubsection[{line\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::line\-Intersection (
 \begin{DoxyParamCaption}
 \item[{double}]{a1, }
 \item[{double}]{b1, }
@@ -1250,129 +1277,135 @@ a = q.\-y -\/ p.\-y b = p.\-x -\/ q.\-x c = -\/ (p.\-x $\ast$ a) -\/ (p.\-y $\as
 \item[{double}]{a2, }
 \item[{double}]{b2, }
 \item[{double}]{c2, }
-\item[{\-Point2f \&}]{intersection}
+\item[{Point2f \&}]{intersection}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a51a867b90c8492ce4ce85c227788678b}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a51a867b90c8492ce4ce85c227788678b}
 
 
-\-Determine the intersection point of two lines, if this point exists. 
+Determine the intersection point of two lines, if this point exists. 
 
-\-Two lines intersect if they are not parallel (\-Parallel lines intersect at +/-\/ infinity, but we do not consider this case here).
+Two lines intersect if they are not parallel (Parallel lines intersect at +/-\/ infinity, but we do not consider this case here).
 
-\-The lines are specified in the following form\-: \-A1x + \-B1x = \-C1 \-A2x + \-B2x = \-C2
+The lines are specified in the following form\-: A1x + B1x = C1 A2x + B2x = C2
 
-\-If det (= \-A1x\-B2 -\/ \-A2x\-B1) == 0, then lines are parallel else they intersect
+If det (= A1x\-B2 -\/ A2x\-B1) == 0, then lines are parallel else they intersect
 
-\-If they intersect, then let us denote the intersection point with \-P(x, y) where\-: x = (\-C1x\-B2 -\/ \-C2x\-B1) / (det) y = (\-C2x\-A1 -\/ \-C1x\-A2) / (det)
+If they intersect, then let us denote the intersection point with P(x, y) where\-: x = (C1x\-B2 -\/ C2x\-B1) / (det) y = (C2x\-A1 -\/ C1x\-A2) / (det)
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a1} & \-A1 \\
+\begin{DoxyParams}{Parameters}
+{\em a1} & A1 \\
 \hline
-{\em b1} & \-B1 \\
+{\em b1} & B1 \\
 \hline
-{\em c1} & \-C1 \\
+{\em c1} & C1 \\
 \hline
-{\em a2} & \-A2 \\
+{\em a2} & A2 \\
 \hline
-{\em b2} & \-B2 \\
+{\em b2} & B2 \\
 \hline
-{\em c2} & \-C2 \\
+{\em c2} & C2 \\
 \hline
-{\em intersection} & \-The intersection point, if this point exists \\
+{\em intersection} & The intersection point, if this point exists \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 240 of file \-Geometry2\-D.\-cpp.
+Definition at line 240 of file Geometry2\-D.\-cpp.
 
 
 
-\-References multiscale\-::\-Numeric\-::almost\-Equal().
+References multiscale\-::\-Numeric\-::almost\-Equal().
 
 \hypertarget{classmultiscale_1_1Geometry2D_a92bd36cdda4cdacb4101c6db54474a6d}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!line\-Segment\-Circle\-Intersection@{line\-Segment\-Circle\-Intersection}}
 \index{line\-Segment\-Circle\-Intersection@{line\-Segment\-Circle\-Intersection}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{line\-Segment\-Circle\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::line\-Segment\-Circle\-Intersection} (
+\subsubsection[{line\-Segment\-Circle\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::line\-Segment\-Circle\-Intersection (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a, }
-\item[{const \-Point2f \&}]{b, }
-\item[{const \-Point2f \&}]{circle\-Origin, }
+\item[{const Point2f \&}]{a, }
+\item[{const Point2f \&}]{b, }
+\item[{const Point2f \&}]{circle\-Origin, }
 \item[{double}]{radius, }
-\item[{vector$<$ \-Point2f $>$ \&}]{intersection\-Points}
+\item[{vector$<$ Point2f $>$ \&}]{intersection\-Points}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a92bd36cdda4cdacb4101c6db54474a6d}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a92bd36cdda4cdacb4101c6db54474a6d}
 
 
-\-Determine if a line segment and a circle intersect and return the intersection points if they exist. 
+Determine if a line segment and a circle intersect and return the intersection points if they exist. 
 
-\-We translate all the points such that the circle origin coincides with the origin of the coordinate system. \-When returning the results, the intersection points are inverse translated.
+We translate all the points such that the circle origin coincides with the origin of the coordinate system. When returning the results, the intersection points are inverse translated.
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-First point for determining the line \\
+\begin{DoxyParams}{Parameters}
+{\em a} & First point for determining the line \\
 \hline
-{\em b} & \-Second point for determining the line \\
+{\em b} & Second point for determining the line \\
 \hline
-{\em circle\-Origin} & \-Origin of the circle \\
+{\em circle\-Origin} & Origin of the circle \\
 \hline
-{\em radius} & \-Radius of the circle \\
+{\em radius} & Radius of the circle \\
 \hline
-{\em intersection\-Points} & \-The intersection points between the circle and the line \\
+{\em intersection\-Points} & The intersection points between the circle and the line \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 295 of file \-Geometry2\-D.\-cpp.
+Definition at line 295 of file Geometry2\-D.\-cpp.
 
 
 
-\-References line\-Circle\-Intersection().
+References line\-Circle\-Intersection().
 
 \hypertarget{classmultiscale_1_1Geometry2D_a9931c3d8089d658186a8c1ac78db5773}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!line\-Segment\-Intersection@{line\-Segment\-Intersection}}
 \index{line\-Segment\-Intersection@{line\-Segment\-Intersection}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{line\-Segment\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::line\-Segment\-Intersection} (
+\subsubsection[{line\-Segment\-Intersection}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::line\-Segment\-Intersection (
 \begin{DoxyParamCaption}
-\item[{const \-Point \&}]{a1, }
-\item[{const \-Point \&}]{b1, }
-\item[{const \-Point \&}]{a2, }
-\item[{const \-Point \&}]{b2, }
-\item[{\-Point \&}]{intersection}
+\item[{const Point \&}]{a1, }
+\item[{const Point \&}]{b1, }
+\item[{const Point \&}]{a2, }
+\item[{const Point \&}]{b2, }
+\item[{Point \&}]{intersection}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a9931c3d8089d658186a8c1ac78db5773}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a9931c3d8089d658186a8c1ac78db5773}
 
 
-\-Determine the intersection point of two line segments, if this point exists. 
+Determine the intersection point of two line segments, if this point exists. 
 
-\-Find the intersection point of the lines, if this point exists. \-Let us assume that this point exists and let us denote it with \-P(x, y). \-Then, in order for the point to be the intersection of the segments and not of the lines, we have to verify the following conditions\-: 1. min(a1.\-x, b1.\-x) $<$= x $<$= max(a1.\-x, b1.\-x) -\/-\/ x coordinate is valid for first line segment 2. min(a2.\-x, b2.\-x) $<$= x $<$= max(a2.\-x, b2.\-x) -\/-\/ x coordinate is valid for second line segment 3. min(a1.\-y, b1.\-y) $<$= y $<$= max(a1.\-y, b1.\-y) -\/-\/ y coordinate is valid for first line segment 4. min(a2.\-y, b2.\-y) $<$= y $<$= max(a2.\-y, b2.\-y) -\/-\/ y coordinate is valid for second line segment
+Find the intersection point of the lines, if this point exists. Let us assume that this point exists and let us denote it with P(x, y). Then, in order for the point to be the intersection of the segments and not of the lines, we have to verify the following conditions\-:
+\begin{DoxyEnumerate}
+\item min(a1.\-x, b1.\-x) $<$= x $<$= max(a1.\-x, b1.\-x) -- x coordinate is valid for first line segment
+\item min(a2.\-x, b2.\-x) $<$= x $<$= max(a2.\-x, b2.\-x) -- x coordinate is valid for second line segment
+\item min(a1.\-y, b1.\-y) $<$= y $<$= max(a1.\-y, b1.\-y) -- y coordinate is valid for first line segment
+\item min(a2.\-y, b2.\-y) $<$= y $<$= max(a2.\-y, b2.\-y) -- y coordinate is valid for second line segment
+\end{DoxyEnumerate}
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a1} & \-First point for determining the first line \\
+\begin{DoxyParams}{Parameters}
+{\em a1} & First point for determining the first line \\
 \hline
-{\em b1} & \-Second point for determining the first line \\
+{\em b1} & Second point for determining the first line \\
 \hline
-{\em a2} & \-First point for determining the second line \\
+{\em a2} & First point for determining the second line \\
 \hline
-{\em b2} & \-Second point for determining the second line \\
+{\em b2} & Second point for determining the second line \\
 \hline
-{\em intersection} & \-The intersection point, if this point exists \\
+{\em intersection} & The intersection point, if this point exists \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 253 of file \-Geometry2\-D.\-cpp.
+Definition at line 253 of file Geometry2\-D.\-cpp.
 
 
 
-\-References line\-Intersection().
+References line\-Intersection().
 
 
 
-\-Referenced by multiscale\-::analysis\-::\-Detector\-::find\-Good\-Intersection\-Points().
+Referenced by multiscale\-::analysis\-::\-Detector\-::find\-Good\-Intersection\-Points().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1383,34 +1416,34 @@ a = q.\-y -\/ p.\-y b = p.\-x -\/ q.\-x c = -\/ (p.\-x $\ast$ a) -\/ (p.\-y $\as
 
 \hypertarget{classmultiscale_1_1Geometry2D_a178c13bdb5cc3f26de7d5e9fd05781f5}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!middle\-Point@{middle\-Point}}
 \index{middle\-Point@{middle\-Point}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{middle\-Point}]{\setlength{\rightskip}{0pt plus 5cm}\-Point2f {\bf \-Geometry2\-D\-::middle\-Point} (
+\subsubsection[{middle\-Point}]{\setlength{\rightskip}{0pt plus 5cm}Point2f Geometry2\-D\-::middle\-Point (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a, }
-\item[{const \-Point2f \&}]{b}
+\item[{const Point2f \&}]{a, }
+\item[{const Point2f \&}]{b}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a178c13bdb5cc3f26de7d5e9fd05781f5}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a178c13bdb5cc3f26de7d5e9fd05781f5}
 
 
-\-Get the point in the middle of the segment determined by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. 
+Get the point in the middle of the segment determined by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-Point2f a \\
+\begin{DoxyParams}{Parameters}
+{\em a} & Point2f a \\
 \hline
-{\em b} & \-Point2f b \\
+{\em b} & Point2f b \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 95 of file \-Geometry2\-D.\-cpp.
+Definition at line 95 of file Geometry2\-D.\-cpp.
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Valid\-Minimal\-Triangle(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::middle\-Point\-Of\-Side\-B().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Valid\-Minimal\-Triangle(), and multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::middle\-Point\-Of\-Side\-B().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1421,40 +1454,40 @@ a = q.\-y -\/ p.\-y b = p.\-x -\/ q.\-x c = -\/ (p.\-x $\ast$ a) -\/ (p.\-y $\as
 
 \hypertarget{classmultiscale_1_1Geometry2D_ae8e5e46c312835e27478ce00b11f8a7c}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!minimum\-Distance\-Point\-Index@{minimum\-Distance\-Point\-Index}}
 \index{minimum\-Distance\-Point\-Index@{minimum\-Distance\-Point\-Index}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{minimum\-Distance\-Point\-Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-Geometry2\-D\-::minimum\-Distance\-Point\-Index} (
+\subsubsection[{minimum\-Distance\-Point\-Index}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Geometry2\-D\-::minimum\-Distance\-Point\-Index (
 \begin{DoxyParamCaption}
-\item[{const vector$<$ \-Point $>$ \&}]{points, }
-\item[{const \-Point2f \&}]{origin}
+\item[{const vector$<$ Point $>$ \&}]{points, }
+\item[{const Point2f \&}]{origin}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_ae8e5e46c312835e27478ce00b11f8a7c}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_ae8e5e46c312835e27478ce00b11f8a7c}
 
 
-\-Get the index of the point which is the closest to the origin. 
+Get the index of the point which is the closest to the origin. 
 
-\-Get the index of the point \-P from the given set of points, such that for any point \-A from the set of points dist(\-A, origin) $>$= dist(\-P, origin).
+Get the index of the point P from the given set of points, such that for any point A from the set of points dist(\-A, origin) $>$= dist(\-P, origin).
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em points} & \-The set of points \\
+\begin{DoxyParams}{Parameters}
+{\em points} & The set of points \\
 \hline
-{\em origin} & \-The origin \\
+{\em origin} & The origin \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 340 of file \-Geometry2\-D.\-cpp.
+Definition at line 340 of file Geometry2\-D.\-cpp.
 
 
 
-\-References distance\-Btw\-Points().
+References distance\-Btw\-Points().
 
 
 
-\-Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Region\-From\-Polygon(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values().
+Referenced by multiscale\-::analysis\-::\-Region\-Detector\-::create\-Region\-From\-Polygon(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::update\-Cluster\-Origin\-Dependent\-Values().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1465,33 +1498,33 @@ a = q.\-y -\/ p.\-y b = p.\-x -\/ q.\-x c = -\/ (p.\-x $\ast$ a) -\/ (p.\-y $\as
 
 \hypertarget{classmultiscale_1_1Geometry2D_a3bb85fa2797ba25765f0f57786cb33ef}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!opposite\-Angle@{opposite\-Angle}}
 \index{opposite\-Angle@{opposite\-Angle}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{opposite\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf \-Geometry2\-D\-::opposite\-Angle} (
+\subsubsection[{opposite\-Angle}]{\setlength{\rightskip}{0pt plus 5cm}double Geometry2\-D\-::opposite\-Angle (
 \begin{DoxyParamCaption}
 \item[{double}]{angle}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a3bb85fa2797ba25765f0f57786cb33ef}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a3bb85fa2797ba25765f0f57786cb33ef}
 
 
-\-Return the angle opposite to the given angle. 
+Return the angle opposite to the given angle. 
 
 if (angle $<$ 180) then return (angle + 180); else return (angle -\/ 180); endif
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em angle} & \-Angle \\
+\begin{DoxyParams}{Parameters}
+{\em angle} & Angle \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 51 of file \-Geometry2\-D.\-cpp.
+Definition at line 51 of file Geometry2\-D.\-cpp.
 
 
 
-\-Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor(), is\-Opposite\-Angle\-Between(), and is\-Opposite\-Angle\-Between\-Non\-Reflex().
+Referenced by multiscale\-::\-Min\-Enclosing\-Triangle\-Finder\-::is\-Flush\-Angle\-Between\-Predecessor\-And\-Successor(), is\-Opposite\-Angle\-Between(), and is\-Opposite\-Angle\-Between\-Non\-Reflex().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1502,50 +1535,50 @@ if (angle $<$ 180) then return (angle + 180); else return (angle -\/ 180); endif
 
 \hypertarget{classmultiscale_1_1Geometry2D_a3da27e8cecb0a0d2733afa85d356a912}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!orthogonal\-Line\-To\-Another\-Line\-Edge\-Points@{orthogonal\-Line\-To\-Another\-Line\-Edge\-Points}}
 \index{orthogonal\-Line\-To\-Another\-Line\-Edge\-Points@{orthogonal\-Line\-To\-Another\-Line\-Edge\-Points}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{orthogonal\-Line\-To\-Another\-Line\-Edge\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Geometry2\-D\-::orthogonal\-Line\-To\-Another\-Line\-Edge\-Points} (
+\subsubsection[{orthogonal\-Line\-To\-Another\-Line\-Edge\-Points}]{\setlength{\rightskip}{0pt plus 5cm}void Geometry2\-D\-::orthogonal\-Line\-To\-Another\-Line\-Edge\-Points (
 \begin{DoxyParamCaption}
-\item[{const \-Point \&}]{a1, }
-\item[{const \-Point \&}]{b1, }
-\item[{\-Point \&}]{a2, }
-\item[{\-Point \&}]{b2, }
+\item[{const Point \&}]{a1, }
+\item[{const Point \&}]{b1, }
+\item[{Point \&}]{a2, }
+\item[{Point \&}]{b2, }
 \item[{int}]{nr\-Of\-Rows, }
 \item[{int}]{nr\-Of\-Cols}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a3da27e8cecb0a0d2733afa85d356a912}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a3da27e8cecb0a0d2733afa85d356a912}
 
 
-\-Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points. 
+Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a1} & \-First point for determining the first line \\
+\begin{DoxyParams}{Parameters}
+{\em a1} & First point for determining the first line \\
 \hline
-{\em b1} & \-Second point for determining the first line \\
+{\em b1} & Second point for determining the first line \\
 \hline
-{\em a2} & \-First point for determining the second line \\
+{\em a2} & First point for determining the second line \\
 \hline
-{\em b2} & \-Second point for determining the second line \\
+{\em b2} & Second point for determining the second line \\
 \hline
-{\em nr\-Of\-Rows} & \-Maximum number of rows in the considered matrix \\
+{\em nr\-Of\-Rows} & Maximum number of rows in the considered matrix \\
 \hline
-{\em nr\-Of\-Cols} & \-Maximum number of columns in the considered matrix \\
+{\em nr\-Of\-Cols} & Maximum number of columns in the considered matrix \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 102 of file \-Geometry2\-D.\-cpp.
+Definition at line 102 of file Geometry2\-D.\-cpp.
 
 
 
-\-References is\-Point\-On\-Edge().
+References is\-Point\-On\-Edge().
 
 
 
-\-Referenced by multiscale\-::analysis\-::\-Detector\-::find\-Good\-Points\-For\-Angle().
+Referenced by multiscale\-::analysis\-::\-Detector\-::find\-Good\-Points\-For\-Angle().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1556,62 +1589,62 @@ if (angle $<$ 180) then return (angle + 180); else return (angle -\/ 180); endif
 
 \hypertarget{classmultiscale_1_1Geometry2D_a1219ac10c3647d43c5af77dc5bc574a2}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!slope\-Of\-Line@{slope\-Of\-Line}}
 \index{slope\-Of\-Line@{slope\-Of\-Line}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{slope\-Of\-Line}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-Geometry2\-D\-::slope\-Of\-Line} (
+\subsubsection[{slope\-Of\-Line}]{\setlength{\rightskip}{0pt plus 5cm}bool Geometry2\-D\-::slope\-Of\-Line (
 \begin{DoxyParamCaption}
-\item[{const \-Point2f \&}]{a, }
-\item[{const \-Point2f \&}]{b, }
+\item[{const Point2f \&}]{a, }
+\item[{const Point2f \&}]{b, }
 \item[{double \&}]{slope}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a1219ac10c3647d43c5af77dc5bc574a2}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a1219ac10c3647d43c5af77dc5bc574a2}
 
 
-\-Compute the slope of the line defined by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. 
+Compute the slope of the line defined by points \char`\"{}a\char`\"{} and \char`\"{}b\char`\"{}. 
 
-\-Returns true if the slope of the line can be computed and false otherwise.
+Returns true if the slope of the line can be computed and false otherwise.
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em a} & \-Point2f a \\
+\begin{DoxyParams}{Parameters}
+{\em a} & Point2f a \\
 \hline
-{\em b} & \-Point2f b \\
+{\em b} & Point2f b \\
 \hline
-{\em slope} & \-Slope of the line if it is different from (+/-\/)infinity \\
+{\em slope} & Slope of the line if it is different from (+/-\/)infinity \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 56 of file \-Geometry2\-D.\-cpp.
+Definition at line 56 of file Geometry2\-D.\-cpp.
 
 \hypertarget{classmultiscale_1_1Geometry2D_ae7299287a17f8cd47e8d84e19ddbe0e9}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!translate@{translate}}
 \index{translate@{translate}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Geometry2\-D\-::translate} (
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}void Geometry2\-D\-::translate (
 \begin{DoxyParamCaption}
-\item[{\-Point2f \&}]{point, }
-\item[{const \-Point2f \&}]{translation}
+\item[{Point2f \&}]{point, }
+\item[{const Point2f \&}]{translation}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_ae7299287a17f8cd47e8d84e19ddbe0e9}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classmultiscale_1_1Geometry2D_ae7299287a17f8cd47e8d84e19ddbe0e9}
 
 
-\-Translate a point by the given values. 
+Translate a point by the given values. 
 
 
-\begin{DoxyParams}{\-Parameters}
-{\em point} & \-The point \\
+\begin{DoxyParams}{Parameters}
+{\em point} & The point \\
 \hline
-{\em translation} & \-Translation values \\
+{\em translation} & Translation values \\
 \hline
 \end{DoxyParams}
 
 
-\-Definition at line 402 of file \-Geometry2\-D.\-cpp.
+Definition at line 402 of file Geometry2\-D.\-cpp.
 
 
 
-\-Referenced by line\-Circle\-Intersection().
+Referenced by line\-Circle\-Intersection().
 
 
 
-\-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1622,32 +1655,32 @@ if (angle $<$ 180) then return (angle + 180); else return (angle -\/ 180); endif
 
 
 
-\subsection{\-Member \-Data \-Documentation}
-\hypertarget{classmultiscale_1_1Geometry2D_ade1d55d3ef110b73d42a3e4c4360ba17}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!\-M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X@{\-M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}}
-\index{\-M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X@{\-M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{\-M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-Geometry2\-D\-::\-M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_ade1d55d3ef110b73d42a3e4c4360ba17}
+\subsection{Member Data Documentation}
+\hypertarget{classmultiscale_1_1Geometry2D_ade1d55d3ef110b73d42a3e4c4360ba17}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X@{M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}}
+\index{M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X@{M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
+\subsubsection[{M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int Geometry2\-D\-::\-M\-A\-T\-R\-I\-X\-\_\-\-S\-T\-A\-R\-T\-\_\-\-I\-N\-D\-E\-X = 1\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_ade1d55d3ef110b73d42a3e4c4360ba17}
 
 
-\-Definition at line 451 of file \-Geometry2\-D.\-hpp.
-
-
-
-\-Referenced by is\-Point\-On\-Edge().
-
-\hypertarget{classmultiscale_1_1Geometry2D_a7039b8bbe89283e22744c0631d597660}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!\-P\-I@{\-P\-I}}
-\index{\-P\-I@{\-P\-I}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
-\subsubsection[{\-P\-I}]{\setlength{\rightskip}{0pt plus 5cm}const double {\bf \-Geometry2\-D\-::\-P\-I} = 3.\-14159265358979323846264338327950288419716939937510\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1Geometry2D_a7039b8bbe89283e22744c0631d597660}
-
-
-\-Definition at line 450 of file \-Geometry2\-D.\-hpp.
+Definition at line 453 of file Geometry2\-D.\-hpp.
 
 
 
-\-Referenced by angle\-Btw\-Points(), angle\-Of\-Line\-Wrt\-Ox\-Axis(), multiscale\-::analysis\-::\-Circularity\-Measure\-::compute(), multiscale\-::analysis\-::\-Region\-::is\-Circular\-Measure(), and multiscale\-::analysis\-::\-Cluster\-::is\-Circular\-Measure().
+Referenced by is\-Point\-On\-Edge().
+
+\hypertarget{classmultiscale_1_1Geometry2D_a7039b8bbe89283e22744c0631d597660}{\index{multiscale\-::\-Geometry2\-D@{multiscale\-::\-Geometry2\-D}!P\-I@{P\-I}}
+\index{P\-I@{P\-I}!multiscale::Geometry2D@{multiscale\-::\-Geometry2\-D}}
+\subsubsection[{P\-I}]{\setlength{\rightskip}{0pt plus 5cm}const double Geometry2\-D\-::\-P\-I = 3.\-14159265358979323846264338327950288419716939937510\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1Geometry2D_a7039b8bbe89283e22744c0631d597660}
+
+
+Definition at line 452 of file Geometry2\-D.\-hpp.
 
 
 
-\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+Referenced by angle\-Btw\-Points(), angle\-Of\-Line\-Wrt\-Ox\-Axis(), multiscale\-::analysis\-::\-Circularity\-Measure\-::compute(), multiscale\-::analysis\-::\-Region\-::is\-Circular\-Measure(), and multiscale\-::analysis\-::\-Cluster\-::is\-Circular\-Measure().
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/include/multiscale/util/\hyperlink{Geometry2D_8hpp}{\-Geometry2\-D.\-hpp}\item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/src/\hyperlink{Geometry2D_8cpp}{\-Geometry2\-D.\-cpp}\end{DoxyCompactItemize}
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/include/multiscale/util/\hyperlink{Geometry2D_8hpp}{Geometry2\-D.\-hpp}\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/src/\hyperlink{Geometry2D_8cpp}{Geometry2\-D.\-cpp}\end{DoxyCompactItemize}

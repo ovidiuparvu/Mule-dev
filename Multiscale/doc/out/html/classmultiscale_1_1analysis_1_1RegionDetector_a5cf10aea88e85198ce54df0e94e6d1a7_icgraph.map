@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="425,32,620,61"/>
-<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="671,5,865,35"/>
-<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="743,59,793,88"/>
+<map id="multiscale::analysis::RegionDetector::setRegionAreaThresh" name="multiscale::analysis::RegionDetector::setRegionAreaThresh">
+<area shape="rect" id="node3" href="$CircularDetectRegions_8cpp.html#a0252b9797b85fbd6f2de246ac5e72a7d" title="loadDetectorParameterValues" alt="" coords="244,32,439,61"/>
+<area shape="rect" id="node5" href="$CircularDetectRegions_8cpp.html#a15e563619acad1937efd4db33dcf8e3a" title="loadDetectorParameterValues" alt="" coords="489,5,684,35"/>
+<area shape="rect" id="node7" href="$CircularDetectRegions_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="561,59,612,88"/>
 </map>

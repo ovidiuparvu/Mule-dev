@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html" title="Class for representing a cluster of entities in an image." alt="" coords="5,867,275,1455"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region." alt="" coords="299,989,501,1334"/>
+<map id="multiscale::analysis::SpatialEntityPseudo3D" name="multiscale::analysis::SpatialEntityPseudo3D">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html" title="Class for representing a cluster of entities in an image." alt="" coords="5,1094,227,1751"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region." alt="" coords="251,1241,453,1604"/>
 </map>

@@ -346,9 +346,9 @@ namespace multiscale {
 
                 //! Evaluate the numeric spatial measure considering the given spatial temporal trace
                 /*!
-                 * \param numericMeasure    The given numeric measure
-                 * \param trace             The given spatial temporal trace
-                 * \param timePointIndex    The index of the considered timepoint from the trace
+                 * \param numericSpatialMeasure The given numeric spatial measure
+                 * \param trace                 The given spatial temporal trace
+                 * \param timePointIndex        The index of the considered timepoint from the trace
                  */
                 double evaluateNumericSpatialMeasure(const NumericSpatialAttributeType &numericSpatialMeasure, const SpatialTemporalTrace &trace,
                                                      unsigned int timePointIndex = 0) const {

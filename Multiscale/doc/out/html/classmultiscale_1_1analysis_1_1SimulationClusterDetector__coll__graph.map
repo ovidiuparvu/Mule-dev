@@ -1,4 +1,11 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html" title="Class for detecting clusters in 2D images." alt="" coords="45,713,283,1301"/>
-<area shape="rect" id="node4" href="$classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images." alt="" coords="5,6,323,663"/>
+<map id="multiscale::analysis::SimulationClusterDetector" name="multiscale::analysis::SimulationClusterDetector">
+<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html" title="Class for detecting clusters in 2D images." alt="" coords="115,4000,347,4779"/>
+<area shape="rect" id="node4" href="$classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images." alt="" coords="72,1144,333,2963"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="325,345,405,431"/>
+<area shape="rect" id="node12" href="$classmultiscale_1_1analysis_1_1Cluster.html" title="Class for representing a cluster of entities in an image." alt="" coords="615,3192,836,3763"/>
+<area shape="rect" id="node14" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html" title="Class for representing a pseudo&#45;3D (explicit 2D + implicit height) object." alt="" coords="560,1612,779,2495"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)" alt="" coords="705,757,857,1120"/>
+<area shape="rect" id="node8" title="STL class." alt="" coords="303,158,428,261"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1analysis_1_1DataPoint.html" title="Class for representing a data point." alt="" coords="713,328,849,448"/>
+<area shape="rect" id="node25" title="STL class." alt="" coords="1055,167,1169,252"/>
 </map>

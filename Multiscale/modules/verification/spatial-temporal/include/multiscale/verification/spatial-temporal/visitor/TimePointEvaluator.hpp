@@ -31,7 +31,9 @@ namespace multiscale {
 
                 //! Return the spatial measure values for all considered spatial entities in the given timepoint
                 /*!
-                 * \param spatialMeasure    The considered spatial measure
+                 * \param consideredSpatialEntities The considered spatial entities
+                 * \param spatialMeasureValues      The collection of values for the given spatial measure
+                 * \param spatialMeasure            The considered spatial measure
                  */
                 static void getSpatialMeasureValues(const std::vector<SpatialEntity> &consideredSpatialEntities,
                                                     std::vector<double> &spatialMeasureValues,
