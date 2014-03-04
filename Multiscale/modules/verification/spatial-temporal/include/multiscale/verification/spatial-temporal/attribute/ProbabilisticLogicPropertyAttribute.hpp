@@ -38,9 +38,12 @@ namespace multiscale {
                 /*!
                  * \param trace The spatial temporal trace
                  */
-                bool evaluate(const SpatialTemporalTrace &trace) {
-                    return boost::apply_visitor(LogicPropertyVisitor(trace), logicProperty, evaluationLogicProperty);
-                }
+                bool evaluate(const SpatialTemporalTrace &trace);
+
+            private:
+
+                // Constants
+                static const std::string ERR_TRACE_LENGTH_ZERO;
 
         };
 

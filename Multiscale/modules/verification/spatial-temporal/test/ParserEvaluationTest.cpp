@@ -1,29 +1,4 @@
-#include "multiscale/core/MultiscaleTest.hpp"
-#include "multiscale/exception/InvalidInputException.hpp"
-#include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
-
-#include <string>
-#include <vector>
-
-using namespace multiscale::verification;
-
-
-// Test function
-bool evaluateLogicPropertyConsideringTrace(const std::string &inputString, const SpatialTemporalTrace &trace) {
-    AbstractSyntaxTree parseResult;
-    Parser parser(inputString);
-
-    parser.parse(parseResult);
-
-    return parseResult.evaluate(trace);
-}
-
-// Tests
-TEST(ParserEvaluationTest, Correct) {
-    // TODO: Update SpatialTemporalTrace instance
-    EXPECT_THROW(evaluateLogicPropertyConsideringTrace("P > 0.9 [count(regions) > 2]", SpatialTemporalTrace()), SpatialTemporalException);
-}
-
+#include "ParserEvaluationTest.hpp"
 
 // Main method
 int main(int argc, char **argv) {

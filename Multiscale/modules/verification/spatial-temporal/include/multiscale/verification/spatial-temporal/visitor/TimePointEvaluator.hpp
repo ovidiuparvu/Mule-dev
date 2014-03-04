@@ -8,7 +8,7 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class used to evaludate timepoints
+        //! Class used to evaluate timepoints
         class TimePointEvaluator {
 
             public:
