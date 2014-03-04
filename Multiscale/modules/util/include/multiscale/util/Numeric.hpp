@@ -1,6 +1,8 @@
 #ifndef NUMERIC_HPP
 #define NUMERIC_HPP
 
+#include "multiscale/exception/NumericException.hpp"
+
 #include <algorithm>
 #include <cfenv>
 #include <cmath>
@@ -67,7 +69,7 @@ namespace multiscale {
 
         public:
 
-            //! Subtrace the two operands
+            //! Subtract the two operands
             /*!
              * \param operand1  The first operand
              * \param operand2  The second operand
@@ -80,7 +82,7 @@ namespace multiscale {
     };
 
 
-    //! Class for manipulating numbers (shorts, ints, floats, doubles etc.)
+    //! Class for processing numeric (shorts, ints, floats, doubles etc.) expressions
     class Numeric {
 
         private:
@@ -312,7 +314,7 @@ namespace multiscale {
                 Operand result = operation(operand1, operand2);
 
                 if (areOverflowUnderflowFlagsSet()) {
-
+                    MS_throw(NumericException, ERR_OVERFLOW_UNDERFLOW);
                 }
 
                 return result;
@@ -324,7 +326,7 @@ namespace multiscale {
             //! Reset the overflow and underflow flags
             static bool areOverflowUnderflowFlagsSet();
 
-            //! Check if the number and the base are positive real numbers, and the base is additionally different from 1
+            //! Check if the number and the base are positive real numbers, and if the base is different from 1
             /*!
              * \param number    The considered number
              * \param base      The considered base

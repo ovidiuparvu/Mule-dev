@@ -86,21 +86,21 @@ namespace multiscale {
                  */
                 TimePoint operator() (const EquivalenceConstraintAttribute &constraint) const {
                     TimePoint timePoint = evaluate(constraint.constraint, constraintTimePoint);
-                    TimePoint forwardImplication(initialTimePoint);
-                    TimePoint reverseImplication(initialTimePoint);
+                    TimePoint forwardImplicationTimePoint(initialTimePoint);
+                    TimePoint reverseImplicationTimePoint(initialTimePoint);
 
                     // (p => q)
-                    forwardImplication.timePointDifference(constraintTimePoint);
-                    forwardImplication.timePointUnion(timePoint);
+                    forwardImplicationTimePoint.timePointDifference(constraintTimePoint);
+                    forwardImplicationTimePoint.timePointUnion(timePoint);
 
                     // (q => p)
-                    reverseImplication.timePointDifference(timePoint);
-                    reverseImplication.timePointUnion(constraintTimePoint);
+                    reverseImplicationTimePoint.timePointDifference(timePoint);
+                    reverseImplicationTimePoint.timePointUnion(constraintTimePoint);
 
                     // (p => q) ^ (q => p)
-                    forwardImplication.timePointIntersection(reverseImplication);
+                    forwardImplicationTimePoint.timePointIntersection(reverseImplicationTimePoint);
 
-                    return forwardImplication;
+                    return forwardImplicationTimePoint;
                 }
 
                 //! Overloading the "()" operator for the PrimaryConstraintAttribute alternative

@@ -270,11 +270,11 @@ namespace multiscale {
 
                 //! Evaluate the logic property considering the given spatial temporal trace
                 /*!
-                 * \param logicProperty The logic property
-                 * \param trace         The given spatial temporal trace
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param trace                 The given spatial temporal trace
                  */
-                bool evaluate(const PrimaryLogicPropertyAttributeType &logicProperty, const SpatialTemporalTrace &trace) const {
-                    return boost::apply_visitor(LogicPropertyVisitor(trace), logicProperty, evaluationLogicProperty);
+                bool evaluate(const PrimaryLogicPropertyAttributeType &primaryLogicProperty, const SpatialTemporalTrace &trace) const {
+                    return boost::apply_visitor(LogicPropertyVisitor(trace), primaryLogicProperty, evaluationLogicProperty);
                 }
 
                 //! Evaluate the next logic properties

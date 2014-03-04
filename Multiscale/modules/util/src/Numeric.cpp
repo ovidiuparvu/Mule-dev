@@ -1,4 +1,3 @@
-#include "multiscale/exception/NumericException.hpp"
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
