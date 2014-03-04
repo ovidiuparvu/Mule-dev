@@ -3,6 +3,8 @@
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 
+#include <iostream> // TODO: Remove
+
 using namespace multiscale::verification;
 
 
@@ -19,10 +21,15 @@ SpatialTemporalTrace::~SpatialTemporalTrace() {
     timePoints.clear();
 }
 
-void SpatialTemporalTrace::addTimePoint(TimePoint &timePoint) {
-    updateLastTimePointValue(timePoint);
+void SpatialTemporalTrace::addTimePoint(const TimePoint &timePoint) {
+    TimePoint timePointCopy(timePoint);
 
-    timePoints.push_back(timePoint);
+    updateLastTimePointValue(timePointCopy);
+
+    timePoints.push_back(timePointCopy);
+
+    // TODO: Remove
+    std::cout << "Number of timepoints (after adding): " << timePoints.size() << std::endl;
 }
 
 TimePoint &SpatialTemporalTrace::getTimePoint(unsigned int index) {

@@ -1,14 +1,6 @@
 #ifndef PARSEREVALUATIONTEST_HPP
 #define PARSEREVALUATIONTEST_HPP
 
-// Include test function
-
-#include "parsing/InputStringParserAndEvaluator.hpp"
-
-using namespace multiscale;
-using namespace multiscaletest::verification;
-
-
 /////////////////////////////////////////////////////////////////
 //
 // Tests

@@ -3,6 +3,7 @@
 
 #include "multiscale/core/MultiscaleTest.hpp"
 #include "multiscale/exception/TestException.hpp"
+#include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <string>

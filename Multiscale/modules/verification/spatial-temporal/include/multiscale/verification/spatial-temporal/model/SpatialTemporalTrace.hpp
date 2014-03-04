@@ -29,7 +29,7 @@ namespace multiscale {
                 /*!
                  * \param timePoint Time point added to the array
                  */
-                void addTimePoint(TimePoint &timePoint);
+                void addTimePoint(const TimePoint &timePoint);
 
                 //! Get the time point at the given index in the array
                 /*!
