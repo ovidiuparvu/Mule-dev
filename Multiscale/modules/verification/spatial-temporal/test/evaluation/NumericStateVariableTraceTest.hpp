@@ -24,7 +24,7 @@ namespace multiscaletest {
 
         std::vector<TimePoint> timePoints;
 
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 0; i <= 11; i++) {
             timePoints.push_back(TimePoint(i));
             timePoints[i].addNumericStateVariable("B", 3);
         }
@@ -40,6 +40,7 @@ namespace multiscaletest {
         timePoints[8].addNumericStateVariable("A", 5);
         timePoints[9].addNumericStateVariable("A", 7);
         timePoints[10].addNumericStateVariable("A", 9);
+        timePoints[11].addNumericStateVariable("A", 12);
 
         for (TimePoint &timePoint : timePoints) {
             trace.addTimePoint(timePoint);
@@ -381,7 +382,7 @@ TEST_F(NumericStateVariableTraceTest, MultipleLogicProperties1) {
 }
 
 TEST_F(NumericStateVariableTraceTest, MultipleLogicProperties2) {
-    EXPECT_THROW(RunEvaluationTest("P <= 0.85934 [~( F [2, 3] ( max(filter(regions, perimeter <= 10), area) >= 2 ) ) => ( G [4, 5] (X (X [5] ( percentile(regions, area, 0.4) = 0.7 ))) ) <=> ( (clusteredness(filter(clusters, (area <= 2) ^ (distanceFromOrigin >= 6) V (angle >= 30) => (centroidX <= 2) <=> (centroidY >= 4)) ) >= 2) U [3, 7] ( kurt(regions, area) <= 0.00001 ) ) ]"), SpatialTemporalException);
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.85934 [~( F [2, 3] ( max(filter(regions, perimeter <= 10), area) >= 2 ) ) => ( G [4, 5] (X (X [5] ( percentile(regions, area, 0.4) = 0.7 ))) ) <=> ( (clusteredness(filter(clusters, (area <= 2) ^ (distanceFromOrigin >= 6) V (angle >= 30) => (centroidX <= 2) <=> (centroidY >= 4)) ) >= 2) U [3, 7] ( kurt(regions, area) <= 0.00001 ) ) ]"));
 }
 
 

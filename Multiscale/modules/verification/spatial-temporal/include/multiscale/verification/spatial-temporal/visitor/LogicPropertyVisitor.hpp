@@ -134,17 +134,13 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const DifferenceAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    if (trace.length() > 1) {
-                        double lhsNumericMeasureOne = evaluateNumericMeasure(primaryLogicProperty.lhsNumericMeasure, trace, 1);
-                        double lhsNumericMeasureTwo = evaluateNumericMeasure(primaryLogicProperty.lhsNumericMeasure, trace, 0);
-                        double rhsNumericMeasure    = evaluateNumericMeasure(primaryLogicProperty.rhsNumericMeasure, trace, 0);
+                    double lhsNumericMeasureOne = evaluateNumericMeasure(primaryLogicProperty.lhsNumericMeasure, trace, 1);
+                    double lhsNumericMeasureTwo = evaluateNumericMeasure(primaryLogicProperty.lhsNumericMeasure, trace, 0);
+                    double rhsNumericMeasure    = evaluateNumericMeasure(primaryLogicProperty.rhsNumericMeasure, trace, 0);
 
-                        return ComparatorEvaluator::evaluate(lhsNumericMeasureOne - lhsNumericMeasureTwo,
-                                                             primaryLogicProperty.comparator.comparatorType,
-                                                             rhsNumericMeasure);
-                    }
-
-                    return true;
+                    return ComparatorEvaluator::evaluate(lhsNumericMeasureOne - lhsNumericMeasureTwo,
+                                                         primaryLogicProperty.comparator.comparatorType,
+                                                         rhsNumericMeasure);
                 }
 
                 //! Overloading the "()" operator for the NumericSpatialNumericComparisonAttribute alternative
@@ -185,7 +181,8 @@ namespace multiscale {
                  * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const NotLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                bool operator() (const NotLogicPropertyAttribute &primaryLogicProperty,
+                                 const T &lhsLogicProperty) const {
                     bool logicPropertyTruthValue = evaluate(primaryLogicProperty.logicProperty, trace);
 
                     return (!logicPropertyTruthValue);
@@ -197,7 +194,8 @@ namespace multiscale {
                  * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const FutureLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                bool operator() (const FutureLogicPropertyAttribute &primaryLogicProperty,
+                                 const T &lhsLogicProperty) const {
                     unsigned long startTime = primaryLogicProperty.startTimepoint;
                     unsigned long endTime   = primaryLogicProperty.endTimepoint;
 
@@ -218,7 +216,8 @@ namespace multiscale {
                  * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const GlobalLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                bool operator() (const GlobalLogicPropertyAttribute &primaryLogicProperty,
+                                 const T &lhsLogicProperty) const {
                     unsigned long startTime = primaryLogicProperty.startTimepoint;
                     unsigned long endTime   = primaryLogicProperty.endTimepoint;
 
@@ -239,7 +238,8 @@ namespace multiscale {
                  * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const NextLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                bool operator() (const NextLogicPropertyAttribute &primaryLogicProperty,
+                                 const T &lhsLogicProperty) const {
                     SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, 1);
 
                     return evaluate(primaryLogicProperty.logicProperty, subTrace);
@@ -251,7 +251,8 @@ namespace multiscale {
                  * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const NextKLogicPropertyAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                bool operator() (const NextKLogicPropertyAttribute &primaryLogicProperty,
+                                 const T &lhsLogicProperty) const {
                     SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, primaryLogicProperty.nrOfTimepointsAhead);
 
                     return evaluate(primaryLogicProperty.logicProperty, subTrace);
@@ -264,7 +265,8 @@ namespace multiscale {
                  * \param logicProperty The logic property
                  * \param trace         The given spatial temporal trace
                  */
-                bool evaluate(const LogicPropertyAttributeType &logicProperty, const SpatialTemporalTrace &trace) const {
+                bool evaluate(const LogicPropertyAttributeType &logicProperty,
+                              const SpatialTemporalTrace &trace) const {
                     return boost::apply_visitor(LogicPropertyVisitor(trace), logicProperty, evaluationLogicProperty);
                 }
 
@@ -273,7 +275,8 @@ namespace multiscale {
                  * \param primaryLogicProperty  The primary logic property
                  * \param trace                 The given spatial temporal trace
                  */
-                bool evaluate(const PrimaryLogicPropertyAttributeType &primaryLogicProperty, const SpatialTemporalTrace &trace) const {
+                bool evaluate(const PrimaryLogicPropertyAttributeType &primaryLogicProperty,
+                              const SpatialTemporalTrace &trace) const {
                     return boost::apply_visitor(LogicPropertyVisitor(trace), primaryLogicProperty, evaluationLogicProperty);
                 }
 
@@ -318,7 +321,7 @@ namespace multiscale {
                  * \param precedingLogicProperties  The preceding logic properties
                  */
                 bool evaluatePrecedingLogicProperties(unsigned long stopIndex, unsigned long startTime, unsigned long endTime,
-                                                     const LogicPropertyAttributeType &precedingLogicProperties) const {
+                                                      const LogicPropertyAttributeType &precedingLogicProperties) const {
                     for (unsigned long j = startTime; j < stopIndex; j++) {
                         SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, j, endTime);
 
@@ -336,7 +339,8 @@ namespace multiscale {
                  * \param trace             The given spatial temporal trace
                  * \param timePointIndex    The index of the considered timepoint from the trace
                  */
-                double evaluateNumericMeasure(const NumericMeasureAttributeType &numericMeasure, const SpatialTemporalTrace &trace,
+                double evaluateNumericMeasure(const NumericMeasureAttributeType &numericMeasure,
+                                              const SpatialTemporalTrace &trace,
                                               unsigned int timePointIndex = 0) const {
                     SpatialTemporalTrace nonConstTrace = SpatialTemporalTrace(trace);
                     TimePoint timePoint = nonConstTrace.getTimePoint(timePointIndex);
@@ -350,7 +354,8 @@ namespace multiscale {
                  * \param trace                 The given spatial temporal trace
                  * \param timePointIndex        The index of the considered timepoint from the trace
                  */
-                double evaluateNumericSpatialMeasure(const NumericSpatialAttributeType &numericSpatialMeasure, const SpatialTemporalTrace &trace,
+                double evaluateNumericSpatialMeasure(const NumericSpatialAttributeType &numericSpatialMeasure,
+                                                     const SpatialTemporalTrace &trace,
                                                      unsigned int timePointIndex = 0) const {
                     SpatialTemporalTrace nonConstTrace = SpatialTemporalTrace(trace);
                     TimePoint timePoint = nonConstTrace.getTimePoint(timePointIndex);

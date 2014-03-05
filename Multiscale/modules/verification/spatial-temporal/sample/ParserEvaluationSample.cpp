@@ -13,7 +13,7 @@ using namespace multiscale::verification;
 void initialiseTrace(SpatialTemporalTrace &trace) {
     std::vector<TimePoint> timePoints;
 
-    for (int i = 0; i <= 10; i++) {
+    for (int i = 0; i <= 11; i++) {
         timePoints.push_back(TimePoint(i));
         timePoints[i].addNumericStateVariable("B", 3);
     }
@@ -29,6 +29,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
     timePoints[8].addNumericStateVariable("A", 5);
     timePoints[9].addNumericStateVariable("A", 7);
     timePoints[10].addNumericStateVariable("A", 9);
+    timePoints[11].addNumericStateVariable("A", 12);
 
     for (TimePoint &timePoint : timePoints) {
         trace.addTimePoint(timePoint);

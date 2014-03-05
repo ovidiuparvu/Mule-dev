@@ -146,9 +146,9 @@ void SpatialTemporalTrace::getSubTrace(SpatialTemporalTrace &subTrace, unsigned 
         // Do not add any timepoints to subTrace
     } else {
         if (endIndex == TIMEPOINT_INDEX_NOT_FOUND) {
-            addTimePointsToSubTrace(subTrace, startIndex, timePoints.size() - 1);
+            // Do not add any timepoints to subTrace
         } else {
-            addTimePointsToSubTrace(subTrace, startIndex, endIndex);
+            addTimePointsToSubTrace(subTrace, startIndex, timePoints.size() - 1);
         }
     }
 }
