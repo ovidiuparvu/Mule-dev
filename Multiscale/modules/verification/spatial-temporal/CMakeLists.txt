@@ -110,10 +110,37 @@ set(PARSER_SAMPLE_SRC
     sample/ParserSample.cpp 
 )
 
-add_executable(ParserSample ${PARSER_SAMPLE_SRC})
-AddSample(ParserSample)
 
-target_link_libraries(ParserSample util)
+# ParserEvaluationSample
+
+set(PARSER_EVALUATION_SAMPLE_SRC
+    src/parsing/Parser.cpp
+    
+    src/attribute/BinaryNumericMeasureAttribute.cpp
+    src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ComparatorAttribute.cpp
+    src/attribute/ProbabilisticLogicPropertyAttribute.cpp
+    src/attribute/QuaternarySubsetMeasureAttribute.cpp
+    src/attribute/SpatialMeasureAttribute.cpp
+    src/attribute/SubsetSpecificAttribute.cpp
+    src/attribute/TernarySubsetMeasureAttribute.cpp
+    src/attribute/UnaryNumericMeasureAttribute.cpp
+    src/attribute/UnarySubsetMeasureAttribute.cpp
+
+    src/exception/ParserGrammarExceptionHandler.cpp
+    
+    src/model/AbstractSyntaxTree.cpp
+    src/model/SpatialEntity.cpp
+    src/model/SpatialTemporalTrace.cpp
+    src/model/TimePoint.cpp
+    
+    sample/ParserEvaluationSample.cpp 
+)
+
+add_executable(ParserEvaluationSample ${PARSER_EVALUATION_SAMPLE_SRC})
+AddSample(ParserEvaluationSample)
+
+target_link_libraries(ParserEvaluationSample util)
 
 
 # EmployeeSample

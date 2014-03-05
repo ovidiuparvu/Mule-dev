@@ -2,11 +2,12 @@
 #define TRACEEVALUATIONTEST_HPP
 
 #include "multiscale/core/MultiscaleTest.hpp"
-#include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
+#include "multiscale/exception/TestException.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <string>
 
-//static const std::string ERR_MSG_TEST = "The given input string could not be successfully parsed.";
+static const std::string ERR_MSG_TEST = "The given input string could not be successfully parsed.";
 
 
 namespace multiscaletest {
@@ -24,19 +25,25 @@ namespace multiscaletest {
         public:
 
            //! Run the test with the given string
+            /*!
+             * \param query The given query
+             */
            bool RunEvaluationTest(const std::string &query);
 
         protected:
 
            //! Run the test
-           virtual void RunTest() = 0;
+           virtual void RunTest() override;
 
            //! Validate the results of the test
-           virtual void ValidateTestResults() = 0;
+           virtual void ValidateTestResults() override;
 
         private:
 
            //! Initialise the query
+           /*!
+            * \param query  The given query
+            */
            void InitialiseQuery(const std::string &query);
 
            //! Initialise the trace
@@ -53,6 +60,19 @@ namespace multiscaletest {
 
         return evaluationResult;
     }
+
+    void TraceEvaluationTest::RunTest() {
+        AbstractSyntaxTree parseResult;
+        Parser parser(query);
+
+        if (!parser.parse(parseResult)) {
+            MS_throw(multiscale::TestException, ERR_MSG_TEST);
+        }
+
+        evaluationResult = parseResult.evaluate(trace);
+    }
+
+    void TraceEvaluationTest::ValidateTestResults() {}
 
     void TraceEvaluationTest::InitialiseQuery(const std::string &query) {
         this->query = query;

@@ -3,33 +3,28 @@
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 
-#include <iostream> // TODO: Remove
-
 using namespace multiscale::verification;
 
 
 SpatialTemporalTrace::SpatialTemporalTrace() {
     lastTimePointValue = 0;
+    isLastTimePointValueInitialised = false;
 }
 
 SpatialTemporalTrace::SpatialTemporalTrace(const SpatialTemporalTrace &trace) {
-    this->timePoints            = trace.timePoints;
-    this->lastTimePointValue    = trace.lastTimePointValue;
+    this->timePoints                        = trace.timePoints;
+    this->lastTimePointValue                = trace.lastTimePointValue;
+    this->isLastTimePointValueInitialised   = trace.isLastTimePointValueInitialised;
 }
 
 SpatialTemporalTrace::~SpatialTemporalTrace() {
     timePoints.clear();
 }
 
-void SpatialTemporalTrace::addTimePoint(const TimePoint &timePoint) {
-    TimePoint timePointCopy(timePoint);
+void SpatialTemporalTrace::addTimePoint(TimePoint &timePoint) {
+    updateLastTimePointValue(timePoint);
 
-    updateLastTimePointValue(timePointCopy);
-
-    timePoints.push_back(timePointCopy);
-
-    // TODO: Remove
-    std::cout << "Number of timepoints (after adding): " << timePoints.size() << std::endl;
+    timePoints.push_back(timePoint);
 }
 
 TimePoint &SpatialTemporalTrace::getTimePoint(unsigned int index) {
@@ -89,13 +84,17 @@ void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint, unsign
 }
 
 void SpatialTemporalTrace::validateTimePointValue(unsigned long timePointValue) {
-    if (timePointValue <= lastTimePointValue) {
-        MS_throw_detailed(SpatialTemporalException,
-                          ERR_TIMEPOINT_VALUE_INVALID_START,
-                          StringManipulator::toString<unsigned long>(timePointValue) +
-                          ERR_TIMEPOINT_VALUE_INVALID_MIDDLE +
-                          StringManipulator::toString<unsigned long>(lastTimePointValue),
-                          ERR_TIMEPOINT_VALUE_INVALID_END);
+    if (isLastTimePointValueInitialised) {
+        if (timePointValue <= lastTimePointValue) {
+            MS_throw_detailed(SpatialTemporalException,
+                              ERR_TIMEPOINT_VALUE_INVALID_START,
+                              StringManipulator::toString<unsigned long>(timePointValue) +
+                              ERR_TIMEPOINT_VALUE_INVALID_MIDDLE +
+                              StringManipulator::toString<unsigned long>(lastTimePointValue),
+                              ERR_TIMEPOINT_VALUE_INVALID_END);
+        }
+    } else {
+        isLastTimePointValueInitialised = true;
     }
 }
 

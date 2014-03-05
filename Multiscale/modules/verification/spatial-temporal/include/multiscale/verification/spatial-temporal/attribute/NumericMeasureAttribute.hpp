@@ -20,11 +20,11 @@ namespace multiscale {
         //! Variant for the numeric measure attribute
         typedef boost::variant<
             double,
-            multiscale::verification::NumericStateVariableAttribute,
-            boost::recursive_wrapper<multiscale::verification::NumericSpatialAttribute>,
-            boost::recursive_wrapper<multiscale::verification::UnaryNumericNumericAttribute>,
-            boost::recursive_wrapper<multiscale::verification::BinaryNumericNumericAttribute>,
-            boost::recursive_wrapper<multiscale::verification::NumericMeasureAttribute>
+            NumericStateVariableAttribute,
+            boost::recursive_wrapper<NumericSpatialAttribute>,
+            boost::recursive_wrapper<UnaryNumericNumericAttribute>,
+            boost::recursive_wrapper<BinaryNumericNumericAttribute>,
+            boost::recursive_wrapper<NumericMeasureAttribute>
         > NumericMeasureAttributeType;
 
 

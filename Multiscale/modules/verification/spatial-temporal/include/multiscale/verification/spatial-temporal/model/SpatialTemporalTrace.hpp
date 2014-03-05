@@ -19,6 +19,8 @@ namespace multiscale {
                 std::vector<TimePoint> timePoints;          /*!< The array of time points */
                 unsigned long          lastTimePointValue;  /*!< The value of the last added timepoint */
 
+                bool isLastTimePointValueInitialised;  /*!< Flag to indicate if the last time point value was initialised */
+
             public:
 
                 SpatialTemporalTrace();
@@ -29,7 +31,7 @@ namespace multiscale {
                 /*!
                  * \param timePoint Time point added to the array
                  */
-                void addTimePoint(const TimePoint &timePoint);
+                void addTimePoint(TimePoint &timePoint);
 
                 //! Get the time point at the given index in the array
                 /*!

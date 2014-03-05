@@ -28,7 +28,7 @@ namespace multiscale {
                  * \param subset    The subset
                  */
                 TimePoint operator() (const SubsetAttribute &subset) const {
-                    return evaluate(subset, timePoint);
+                    return evaluate(subset.subset, timePoint);
                 }
 
                 //! Overloading the "()" operator for the SubsetSpecificAttribute alternative

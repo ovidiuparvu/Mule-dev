@@ -32,7 +32,7 @@ namespace multiscale {
                  * \param numericMeasure  The numeric measure
                  */
                 double operator()(const NumericMeasureAttribute &numericMeasure) const {
-                    return evaluate(numericMeasure);
+                    return evaluate(numericMeasure.numericMeasure);
                 }
 
                 //! Overloading the "()" operator for the real number alternative
@@ -58,7 +58,7 @@ namespace multiscale {
                  * \param numericSpatialMeasure  The numeric spatial measure attribute
                  */
                 double operator()(const NumericSpatialAttribute &numericSpatialMeasure) const {
-                    return evaluateNumericSpatialMeasure(numericSpatialMeasure);
+                    return evaluateNumericSpatialMeasure(numericSpatialMeasure.numericSpatialMeasure);
                 }
 
                 //! Overloading the "()" operator for the UnaryNumericNumericAttribute alternative
