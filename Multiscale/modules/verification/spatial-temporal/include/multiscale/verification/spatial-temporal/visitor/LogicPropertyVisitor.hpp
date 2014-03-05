@@ -155,8 +155,8 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const NumericSpatialNumericComparisonAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    double lhsNumericMeasure = evaluateNumericMeasure(primaryLogicProperty.numericMeasure, trace);
-                    double rhsNumericMeasure = evaluateNumericSpatialMeasure(primaryLogicProperty.numericSpatialMeasure, trace);
+                    double lhsNumericMeasure = evaluateNumericSpatialMeasure(primaryLogicProperty.numericSpatialMeasure, trace);
+                    double rhsNumericMeasure = evaluateNumericMeasure(primaryLogicProperty.numericMeasure, trace);
 
                     return ComparatorEvaluator::evaluate(lhsNumericMeasure,
                                                          primaryLogicProperty.comparator.comparatorType,
@@ -202,7 +202,7 @@ namespace multiscale {
                     unsigned long endTime   = primaryLogicProperty.endTimepoint;
 
                     for (unsigned long i = startTime; i <= endTime; i++) {
-                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, startTime, endTime);
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, i, endTime);
 
                         if (evaluate(primaryLogicProperty.logicProperty, subTrace)) {
                             return true;
@@ -223,7 +223,7 @@ namespace multiscale {
                     unsigned long endTime   = primaryLogicProperty.endTimepoint;
 
                     for (unsigned long i = startTime; i <= endTime; i++) {
-                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, startTime, endTime);
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, i, endTime);
 
                         if (!evaluate(primaryLogicProperty.logicProperty, subTrace)) {
                             return false;

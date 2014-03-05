@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
     initialiseTrace(trace);
 
     std::cout << "/////////////////////////////////////////////////////////\n\n";
-    std::cout << "\tA multidimensional logical query parser...\n\n";
+    std::cout << "\tA multidimensional logical query parser and evaluator...\n\n";
     std::cout << "/////////////////////////////////////////////////////////\n\n";
 
     std::cout

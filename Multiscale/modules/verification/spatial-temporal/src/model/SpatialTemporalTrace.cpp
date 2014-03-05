@@ -7,8 +7,7 @@ using namespace multiscale::verification;
 
 
 SpatialTemporalTrace::SpatialTemporalTrace() {
-    lastTimePointValue = 0;
-    isLastTimePointValueInitialised = false;
+    initialise();
 }
 
 SpatialTemporalTrace::SpatialTemporalTrace(const SpatialTemporalTrace &trace) {
@@ -25,6 +24,10 @@ void SpatialTemporalTrace::addTimePoint(TimePoint &timePoint) {
     updateLastTimePointValue(timePoint);
 
     timePoints.push_back(timePoint);
+}
+
+void SpatialTemporalTrace::clear() {
+    initialise();
 }
 
 TimePoint &SpatialTemporalTrace::getTimePoint(unsigned int index) {
@@ -66,6 +69,13 @@ SpatialTemporalTrace SpatialTemporalTrace::subTrace(const SpatialTemporalTrace &
     SpatialTemporalTrace traceCopy(trace);
 
     return traceCopy.subTrace(startValue, endValue);
+}
+
+void SpatialTemporalTrace::initialise() {
+    timePoints.clear();
+
+    lastTimePointValue = 0;
+    isLastTimePointValueInitialised = false;
 }
 
 void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint) {
@@ -150,8 +160,8 @@ void SpatialTemporalTrace::addTimePointsToSubTrace(SpatialTemporalTrace &subTrac
 }
 
 void SpatialTemporalTrace::validateValues(unsigned long startValue, unsigned long endValue) {
-    validateIndex(startValue);
-    validateIndex(endValue);
+    validateValue(startValue);
+    validateValue(endValue);
 
     if (endValue < startValue) {
         MS_throw_detailed(SpatialTemporalException, ERR_TIMEPOINT_END_START,
@@ -170,9 +180,9 @@ void SpatialTemporalTrace::validateIndex(unsigned int index) {
 }
 
 void SpatialTemporalTrace::validateValue(unsigned long value) {
-    if (Numeric::greaterOrEqual(value, timePoints[timePoints.size() - 1].getValue())) {
-        MS_throw_detailed(SpatialTemporalException, ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START,
-                          StringManipulator::toString<double>(value), ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END);
+    if (value > timePoints[timePoints.size() - 1].getValue()) {
+        MS_throw_detailed(SpatialTemporalException, ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_START,
+                          StringManipulator::toString<double>(value), ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_END);
     }
 }
 
@@ -180,6 +190,9 @@ void SpatialTemporalTrace::validateValue(unsigned long value) {
 // Constants
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START = "The provided timepoint index (";
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END   = ") is out of bounds for the given spatial temporal trace.";
+
+const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_START = "The provided timepoint value (";
+const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_END   = ") is out of bounds for the given spatial temporal trace.";
 
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_END_START     = "The provided end timepoint (";
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_END_MIDDLE    = ") should be greater or equal to the start timepoint  (";

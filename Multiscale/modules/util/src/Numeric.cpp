@@ -107,7 +107,8 @@ double Numeric::maximum(const std::vector<double> &numbers) {
         }
     }
 
-    return maximum;
+    return (numbers.size() > 0) ? maximum
+                                : 0;
 }
 
 double Numeric::median(const std::vector<double> &numbers) {
@@ -129,7 +130,8 @@ double Numeric::minimum(const std::vector<double> &numbers) {
         }
     }
 
-    return minimum;
+    return (numbers.size() > 0) ? minimum
+                                : 0;
 }
 
 double Numeric::mode(const std::vector<double> &numbers) {
@@ -173,7 +175,8 @@ double Numeric::quartile(const std::vector<double> &numbers, double quartile) {
 
     validateQuartile(quartile);
 
-    return computeQuartileValue(quartile, values, nrOfValues);
+    return (nrOfValues > 0) ? computeQuartileValue(quartile, values, nrOfValues)
+                            : 0;
 }
 
 double Numeric::skew(const std::vector<double> &numbers) {

@@ -7,6 +7,8 @@
 
 #include <string>
 
+namespace mv = multiscale::verification;
+
 static const std::string ERR_MSG_TEST = "The given input string could not be successfully parsed.";
 
 
@@ -17,10 +19,10 @@ namespace multiscaletest {
 
         protected:
 
-            multiscale::verification::SpatialTemporalTrace trace;   /*!< The spatial temporal trace */
-            std::string query;                                      /*!< The query to be checked */
+            mv::SpatialTemporalTrace trace; /*!< The spatial temporal trace */
+            std::string query;              /*!< The query to be checked */
 
-            bool evaluationResult;                                  /*!< The result of the evaluation */
+            bool evaluationResult;          /*!< The result of the evaluation */
 
         public:
 

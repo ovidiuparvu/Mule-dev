@@ -47,13 +47,13 @@ void TimePoint::setConsideredSpatialEntityType(const ConsideredSpatialEntityType
 double TimePoint::numberOfSpatialEntities() const {
     switch(consideredSpatialEntityType) {
         case ConsideredSpatialEntityType::All:
-            return (clusters.size() + regions.size());
+            return (static_cast<double>(clusters.size()) + static_cast<double>(regions.size()));
 
         case ConsideredSpatialEntityType::Clusters:
-            return (clusters.size());
+            return (static_cast<double>(clusters.size()));
 
         case ConsideredSpatialEntityType::Regions:
-            return (regions.size());
+            return (static_cast<double>(regions.size()));
     }
 
     // Line added to avoid "control reaches end of non-void function" warnings

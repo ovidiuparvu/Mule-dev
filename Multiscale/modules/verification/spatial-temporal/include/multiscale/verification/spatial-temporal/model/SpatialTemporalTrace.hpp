@@ -33,6 +33,9 @@ namespace multiscale {
                  */
                 void addTimePoint(TimePoint &timePoint);
 
+                //! Clear all the stored timepoints and reinitialise
+                void clear();
+
                 //! Get the time point at the given index in the array
                 /*!
                  * \param index The index of the position in the array
@@ -72,6 +75,9 @@ namespace multiscale {
                                                      unsigned long endValue);
 
             private:
+
+                //! Initialise the member fields
+                void initialise();
 
                 //! Update the last timepoint value
                 /*!
@@ -149,6 +155,9 @@ namespace multiscale {
                 // Constants
                 static const std::string ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START;
                 static const std::string ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END;
+
+                static const std::string ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_START;
+                static const std::string ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_END;
 
                 static const std::string ERR_TIMEPOINT_END_START;
                 static const std::string ERR_TIMEPOINT_END_MIDDLE;
