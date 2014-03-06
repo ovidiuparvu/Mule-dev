@@ -12,6 +12,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 # Util library
 
 set(LIB_SRC
+    src/ConsolePrinter.cpp
     src/Geometry2D.cpp
     src/MinEnclosingTriangleFinder.cpp
     src/NumberIterator.cpp
@@ -68,6 +69,19 @@ AddUnitTest(MinEnclosingTriangleFinderTest)
 target_link_libraries(MinEnclosingTriangleFinderTest util)
 target_link_libraries(MinEnclosingTriangleFinderTest ${OpenCV_LIBRARIES})
 target_link_libraries(MinEnclosingTriangleFinderTest gtest gtest_main)
+
+
+# NumericTest
+
+set(NUMERIC_TEST_SRC
+    test/NumericTest.cpp
+)
+
+add_executable(NumericTest ${NUMERIC_TEST_SRC})
+AddUnitTest(NumericTest)
+
+target_link_libraries(NumericTest util)
+target_link_libraries(NumericTest gtest gtest_main)
 
 
 # MinEnclosingTriangleFinderSample

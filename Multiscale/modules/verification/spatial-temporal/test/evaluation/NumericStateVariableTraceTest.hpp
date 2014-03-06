@@ -646,7 +646,7 @@ TEST_F(NumericStateVariableTraceTest, TernarySubsetMeasurePercentile) {
 }
 
 TEST_F(NumericStateVariableTraceTest, TernarySubsetMeasureQuartile) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [quartile(clusters, area, 4.3) <= 0.5]"), NumericException);
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [quartile(clusters, area, 4.3) <= 0.5]"));
 }
 
 

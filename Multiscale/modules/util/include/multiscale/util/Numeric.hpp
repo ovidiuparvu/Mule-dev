@@ -42,7 +42,8 @@ namespace multiscale {
              */
             template <typename Operand>
             Operand operator()(Operand operand1, Operand operand2) const {
-                return (operand1 / operand2);
+                return (operand2 != 0) ? (operand1 / operand2)
+                                       : 0;
             }
 
     };
@@ -254,24 +255,133 @@ namespace multiscale {
 
         private:
 
+            //! Print the no values warning message for the given function name
+            /*!
+             * \param functionName  The provided function name
+             */
+            static void printNoValuesWarningMessage(const string &functionName);
+
+            //! Return the average (arithmetic mean) of the provided numbers
+            /*!
+             * \f$ average = \frac{1}{n} \sum\limits^{n}_{i = 1}{x_{i}} \f$
+             *
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values in the collection of numbers
+             */
+            static double average(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Return the covariance for the provided collections of values
+            /*!
+             * \param values1       The first collection of values
+             * \param values2       The second collection of values
+             * \param nrOfValues    The number of values in the collection of numbers
+             */
+            static double covariance(const std::vector<double> &values1, const std::vector<double> &values2,
+                                     unsigned int nrOfValues);
+
+            //! Return the geometric mean of the provided numbers
+            /*!
+             * \f$ geometricMean = e ^ {\frac{1}{n} \sum\limits_{i = 1}^{n}{log(x_{i})}} \f$
+             *
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values in the collection of numbers
+             */
+            static double geometricMean(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Return the harmonic mean of the provided numbers
+            /*!
+             *  \f$ harmonicMean = \frac{n}{\sum\limits_{i = 1}^{n}{\frac{1}{x_{i}}}} \f$
+             *
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values in the collection of numbers
+             */
+            static double harmonicMean(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Return the kurtosis of the provided numbers
+            /*!
+             * \f$ kurtosis = \frac{n (n + 1)}{(n - 1)(n - 2)(n - 3)} \left( \sum\limits_{i=1}^{n}{(\frac{x_i - mean}{stdev})^{4}} \right) - \frac{3 (n - 1)^{2}} {(n - 2) (n - 3)} \f$
+             *
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values in the collection of numbers
+             */
+            static double kurtosis(const std::vector<double> &numbers, unsigned int nrOfValues);
+
             //! Compute the kurtosis first term considering the given number of values
             /*!
              * \param nrOfValues The number of values
              */
-            static double computeKurtosisFirstTerm(int nrOfValues);
+            static double computeKurtosisFirstTerm(unsigned int nrOfValues);
 
             //! Compute the kurtosis middle term considering the given values
             /*!
              * \param values        The values
              * \param nrOfValues    The number of values
              */
-            static double computeKurtosisMiddleTerm(const std::vector<double> &values, int nrOfValues);
+            static double computeKurtosisMiddleTerm(const std::vector<double> &values, unsigned int nrOfValues);
 
             //! Compute the kurtosis last term considering the given number of values
             /*!
              * \param nrOfValues The number of values
              */
-            static double computeKurtosisLastTerm(int nrOfValues);
+            static double computeKurtosisLastTerm(unsigned int nrOfValues);
+
+            //! Return the maximum of the provided numbers
+            /*!
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values
+             */
+            static double maximum(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Return the median of the provided numbers
+            /*!
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values
+             */
+            static double median(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Compute the mode for the provided values
+            /*!
+             * \param values        The values
+             * \param nrOfValues    The number of values
+             */
+            static double mode(const std::vector<double> &values, unsigned int nrOfValues);
+
+            //! Compute the mode for the provided values
+            /*!
+             * \param values        The values
+             * \param nrOfValues    The number of values
+             */
+            static double computeMode(const std::vector<double> &values, unsigned int nrOfValues);
+
+            //! Return the minimum of the provided numbers
+            /*!
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values
+             */
+            static double minimum(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Return the p-th percentile of the provided set of values
+            /*!
+             * \param numbers       The collection of values
+             * \param percentile    The p-th percentile
+             * \param nrOfValues    The number of values
+             */
+            static double percentile(const std::vector<double> &numbers, double percentile, unsigned int nrOfValues);
+
+            //! Return the product of the provided numbers
+            /*!
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values
+             */
+            static double product(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Return the q-th quartile of the provided set of values
+            /*!
+             * \param numbers       The collection of values
+             * \param quartile      The q-th quartile
+             * \param nrOfValues    The number of values
+             */
+            static double quartile(const std::vector<double> &numbers, double quartile, unsigned int nrOfValues);
 
             //! Compute the quartile for the given collection of values
             /*!
@@ -279,27 +389,48 @@ namespace multiscale {
              * \param values        The collection of values
              * \param nrOfValues    The number of values in the collection
              */
-            static double computeQuartileValue(double quartile, const std::vector<double> &values, int nrOfValues);
+            static double computeQuartileValue(double quartile, const std::vector<double> &values, unsigned int nrOfValues);
+
+            //! Return the skew of the provided numbers
+            /*!
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values
+             */
+            static double skew(const std::vector<double> &numbers, unsigned int nrOfValues);
 
             //! Return the skew first term considering the given values
             /*!
              * \param nrOfValues   The number of values
              */
-            static double computeSkewFirstTerm(int nrOfValues);
+            static double computeSkewFirstTerm(unsigned int nrOfValues);
 
             //! Return the skew last term considering the given values
             /*!
              * \param numbers       The collection of values
              * \param nrOfValues    The number of values
              */
-            static double computeSkewLastTerm(const std::vector<double> &numbers, int nrOfValues);
+            static double computeSkewLastTerm(const std::vector<double> &numbers, unsigned int nrOfValues);
 
-            //! Compute the mode for the provided values
+            //! Return the standard deviation of the provided set of values
             /*!
-             * \param values        The values
+             * \param numbers       The collection of values
              * \param nrOfValues    The number of values
              */
-            static double mode(const std::vector<double> &values, int nrOfValues);
+            static double standardDeviation(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Return the sum of the provided numbers
+            /*!
+             * \param numbers       The collection of numbers
+             * \param nrOfValues    The number of values
+             */
+            static double sum(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Return the variance of the provided set of values
+            /*!
+             * \param numbers       The collection of values
+             * \param nrOfValues    The number of values
+             */
+            static double variance(const std::vector<double> &numbers, unsigned int nrOfValues);
 
             //! Apply the operation on the given operands and throw an exception in case of overflow
             /*!
@@ -380,6 +511,26 @@ namespace multiscale {
 
             static const std::string ERR_QUARTILE_VALUE_START;
             static const std::string ERR_QUARTILE_VALUE_END;
+
+            static const std::string WRN_NO_VALUES_START;
+            static const std::string WRN_NO_VALUES_END;
+
+            static const std::string WRN_AVERAGE_FUNCTION_NAME;
+            static const std::string WRN_COVARIANCE_FUNCTION_NAME;
+            static const std::string WRN_GEOMETRIC_MEAN_FUNCTION_NAME;
+            static const std::string WRN_HARMONIC_MEAN_FUNCTION_NAME;
+            static const std::string WRN_KURTOSIS_FUNCTION_NAME;
+            static const std::string WRN_MAXIMUM_FUNCTION_NAME;
+            static const std::string WRN_MEDIAN_FUNCTION_NAME;
+            static const std::string WRN_MODE_FUNCTION_NAME;
+            static const std::string WRN_MINIMUM_FUNCTION_NAME;
+            static const std::string WRN_PERCENTILE_FUNCTION_NAME;
+            static const std::string WRN_PRODUCT_FUNCTION_NAME;
+            static const std::string WRN_QUARTILE_FUNCTION_NAME;
+            static const std::string WRN_SKEW_FUNCTION_NAME;
+            static const std::string WRN_STANDARD_DEVIATION_FUNCTION_NAME;
+            static const std::string WRN_SUM_FUNCTION_NAME;
+            static const std::string WRN_VARIANCE_FUNCTION_NAME;
 
     };
 

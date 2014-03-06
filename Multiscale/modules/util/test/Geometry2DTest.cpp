@@ -11,6 +11,7 @@ using namespace multiscaletest;
 
 const double DOUBLE_COMP_ERROR = 1E-6;
 
+
 // Tests
 TEST(Geometry2D, TriangleArea) {
     EXPECT_NEAR(0, Geometry2D::areaOfTriangle(Point2f(1, 2), Point2f(2, 3), Point2f(3, 4)), DOUBLE_COMP_ERROR);
