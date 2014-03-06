@@ -2,6 +2,7 @@
 #define NUMERIC_HPP
 
 #include "multiscale/exception/NumericException.hpp"
+#include "multiscale/util/ConsolePrinter.hpp"
 
 #include <algorithm>
 #include <cfenv>
@@ -497,6 +498,23 @@ namespace multiscale {
                 return (number > 0);
             }
 
+            //! Return the inverse of a number
+            /*! If the number is equal to zero then a warning is displayed
+             *  and the default value "0" is returned
+             *
+             * \param number    The given number
+             */
+            template <typename T>
+            static T numberInverse(T number) {
+                if (almostEqual(number, 0)) {
+                    ConsolePrinter::printWarningMessage(WRN_NUMBER_INVERSE);
+
+                    return 0;
+                }
+
+                return (1 / number);
+            }
+
 
             // Constants
             static const std::string ERR_LOG_BASE_START;
@@ -512,8 +530,10 @@ namespace multiscale {
             static const std::string ERR_QUARTILE_VALUE_START;
             static const std::string ERR_QUARTILE_VALUE_END;
 
-            static const std::string WRN_NO_VALUES_START;
-            static const std::string WRN_NO_VALUES_END;
+            static const std::string WRN_NUMBER_INVERSE;
+
+            static const std::string WRN_NOT_ENOUGH_VALUES_START;
+            static const std::string WRN_NOT_ENOUGH_VALUES_END;
 
             static const std::string WRN_AVERAGE_FUNCTION_NAME;
             static const std::string WRN_COVARIANCE_FUNCTION_NAME;

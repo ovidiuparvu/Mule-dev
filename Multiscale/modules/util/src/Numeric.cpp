@@ -1,10 +1,8 @@
-#include "multiscale/util/ConsolePrinter.hpp"
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
 #include <algorithm>
 #include <cmath>
-#include <iostream>
 #include <limits>
 #include <vector>
 
@@ -153,7 +151,7 @@ double Numeric::percentile(const std::vector<double> &numbers, double percentile
         return 0;
     }
 
-    return Numeric::percentile(numbers, nrOfValues, percentile);
+    return Numeric::percentile(numbers, percentile, nrOfValues);
 }
 
 double Numeric::product(const std::vector<double> &numbers) {
@@ -177,7 +175,7 @@ double Numeric::quartile(const std::vector<double> &numbers, double quartile) {
         return 0;
     }
 
-    return Numeric::quartile(numbers, nrOfValues);
+    return Numeric::quartile(numbers, quartile, nrOfValues);
 }
 
 double Numeric::skew(const std::vector<double> &numbers) {
@@ -233,7 +231,7 @@ double Numeric::variance(const std::vector<double> &numbers) {
 }
 
 void Numeric::printNoValuesWarningMessage(const string &functionName) {
-    ConsolePrinter::printWarningMessage(WRN_NO_VALUES_START + functionName + WRN_NO_VALUES_END);
+    ConsolePrinter::printWarningMessage(WRN_NOT_ENOUGH_VALUES_START + functionName + WRN_NOT_ENOUGH_VALUES_END);
 }
 
 double Numeric::average(const std::vector<double> &numbers, unsigned int nrOfValues) {
@@ -266,6 +264,8 @@ double Numeric::geometricMean(const std::vector<double> &numbers, unsigned int n
     double logSum = 0;
 
     for (double number : numbers) {
+        validateLogNumber(number);
+
         logSum = applyOperation(AdditionOperation(), logSum, std::log(number));
     }
 
@@ -277,7 +277,7 @@ double Numeric::harmonicMean(const std::vector<double> &numbers, unsigned int nr
     double inverseSum = 0;
 
     for (double number : numbers) {
-        double invertedNumber = (number == 0) ? 0 : (1.0 / number);
+        double invertedNumber = numberInverse(number);
 
         inverseSum = applyOperation(AdditionOperation(), inverseSum, invertedNumber);
     }
@@ -295,33 +295,38 @@ double Numeric::kurtosis(const std::vector<double> &numbers, unsigned int nrOfVa
 }
 
 double Numeric::computeKurtosisFirstTerm(unsigned int nrOfValues) {
-    return (nrOfValues > 3) ? (nrOfValues * (nrOfValues + 1)) /
-                              ((nrOfValues - 1) * (nrOfValues - 2) * (nrOfValues - 3))
-                            : 0;
+    double nrOfValues_ = static_cast<double>(nrOfValues);
+
+    return (nrOfValues_ > 3) ? (nrOfValues_ * (nrOfValues_ + 1)) /
+                               ((nrOfValues_ - 1) * (nrOfValues_ - 2) * (nrOfValues_ - 3))
+                             : 0;
 }
 
 double Numeric::computeKurtosisMiddleTerm(const std::vector<double> &values, unsigned int nrOfValues) {
-    double middleTerm = 0;
-
     double mean  = average(values);
     double stdev = standardDeviation(values);
 
+    double nominator   = 0;
+    double denominator = std::pow(stdev, 4);
+
     for (double value : values) {
-        middleTerm = applyOperation(AdditionOperation(), middleTerm, std::pow(value - mean, 4));
+        nominator = applyOperation(AdditionOperation(), nominator, std::pow((value - mean), 4));
     }
 
-    return (stdev != 0) ? (middleTerm / (std::pow(stdev, 4)))
-                        : 0;
+    return (denominator != 0) ? (nominator / denominator)
+                              : 0;
 }
 
 double Numeric::computeKurtosisLastTerm(unsigned int nrOfValues) {
-    return (nrOfValues > 3) ? (3 * std::pow(nrOfValues - 1, 2)) /
-                              ((nrOfValues - 2) * (nrOfValues - 3))
-                            : 0;
+    double nrOfValues_ = static_cast<double>(nrOfValues);
+
+    return (nrOfValues_ > 3) ? (std::pow((nrOfValues_ - 1), 2) * 3) /
+                               ((nrOfValues_ - 2) * (nrOfValues_ - 3))
+                             : 0;
 }
 
 double Numeric::maximum(const std::vector<double> &numbers, unsigned int nrOfValues) {
-    double maximum = std::numeric_limits<double>::min();
+    double maximum = std::numeric_limits<double>::lowest();
 
     for (double number : numbers) {
         if (number > maximum) {
@@ -329,8 +334,8 @@ double Numeric::maximum(const std::vector<double> &numbers, unsigned int nrOfVal
         }
     }
 
-    return (numbers.size() > 0) ? maximum
-                                : 0;
+    return (nrOfValues > 0) ? maximum
+                            : 0;
 }
 
 double Numeric::median(const std::vector<double> &numbers, unsigned int nrOfValues) {
@@ -392,13 +397,14 @@ double Numeric::computeMode(const std::vector<double> &values, unsigned int nrOf
 
 double Numeric::percentile(const std::vector<double> &numbers, double percentile, unsigned int nrOfValues) {
     std::vector<double> values = numbers;
+    double nrOfValues_ = static_cast<double>(nrOfValues);
 
     std::sort(values.begin(), values.end());
 
     validatePercentile(percentile);
 
-    return (nrOfValues > 0) ? numbers[std::floor(((percentile / 100) * nrOfValues) + (1 / 2))]
-                            : 0;
+    return (nrOfValues_ > 0) ? values[std::floor(((percentile / 100) * (nrOfValues_ - 1)) + (1 / 2))]
+                             : 0;
 }
 
 double Numeric::product(const std::vector<double> &numbers, unsigned int nrOfValues) {
@@ -444,21 +450,26 @@ double Numeric::skew(const std::vector<double> &numbers, unsigned int nrOfValues
 }
 
 double Numeric::computeSkewFirstTerm(unsigned int nrOfValues) {
-    return (nrOfValues > 2) ? (nrOfValues) / ((nrOfValues - 1) * (nrOfValues - 2))
-                            : 0;
+    double nrOfValues_ = static_cast<double>(nrOfValues);
+
+    return (nrOfValues_ > 2) ? (nrOfValues_) / ((nrOfValues_ - 1) * (nrOfValues_ - 2))
+                             : 0;
 }
 
 double Numeric::computeSkewLastTerm(const std::vector<double> &numbers, unsigned int nrOfValues) {
-    double skewSum = 0;
-
     double mean  = average(numbers);
     double stdev = standardDeviation(numbers);
 
+    double nominator    = 0;
+    double denominator  = std::pow(stdev, 3);
+
+
     for (double number : numbers) {
-        skewSum = applyOperation(AdditionOperation(), skewSum, std::pow((number - mean) / (stdev), 3));
+        nominator = applyOperation(AdditionOperation(), nominator, std::pow((number - mean), 3));
     }
 
-    return skewSum;
+    return (denominator != 0) ? (nominator / denominator)
+                              : 0;
 }
 
 double Numeric::standardDeviation(const std::vector<double> &numbers, unsigned int nrOfValues) {
@@ -469,7 +480,7 @@ double Numeric::standardDeviation(const std::vector<double> &numbers, unsigned i
         denominator = applyOperation(AdditionOperation(), denominator, std::pow(number - mean, 2));
     }
 
-    return (nrOfValues <= 1) ? 0
+    return (nrOfValues == 0) ? 0
                              : std::sqrt(denominator / (nrOfValues - 1));
 }
 
@@ -491,7 +502,7 @@ double Numeric::variance(const std::vector<double> &numbers, unsigned int nrOfVa
         denominator = applyOperation(AdditionOperation(), denominator, std::pow(number - mean, 2));
     }
 
-    return (nrOfValues <= 1) ? 0
+    return (nrOfValues == 0) ? 0
                              : (denominator / (nrOfValues - 1));
 }
 
@@ -556,8 +567,10 @@ const std::string Numeric::ERR_PERCENTILE_VALUE_END   = ") should be between 0 a
 const std::string Numeric::ERR_QUARTILE_VALUE_START = "The provided quartile value (";
 const std::string Numeric::ERR_QUARTILE_VALUE_END   = ") should be 25, 50 or 75. Please change.";
 
-const std::string Numeric::WRN_NO_VALUES_START  = "You provided less than the minimum required number of values to the Numeric::";
-const std::string Numeric::WRN_NO_VALUES_END    = "(...) function. The default value \"0\" was returned.";
+const std::string Numeric::WRN_NUMBER_INVERSE = "You provided the invalid value \"0\" to the Numeric::inverse(...) function. The default value \"0\" was returned.";
+
+const std::string Numeric::WRN_NOT_ENOUGH_VALUES_START  = "You provided less than the minimum required number of values to the Numeric::";
+const std::string Numeric::WRN_NOT_ENOUGH_VALUES_END    = "(...) function. The default value \"0\" was returned.";
 
 const std::string Numeric::WRN_AVERAGE_FUNCTION_NAME             = "average";
 const std::string Numeric::WRN_COVARIANCE_FUNCTION_NAME          = "covariance";
