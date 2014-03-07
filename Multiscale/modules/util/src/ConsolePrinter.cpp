@@ -1,25 +1,60 @@
 #include "multiscale/util/ConsolePrinter.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 
 #include <iostream>
+#if defined (_WIN32) || defined (_WIN64)
+    #include <windows.h>
+#endif
 
 using namespace multiscale;
 
 
 void ConsolePrinter::printWarningMessage(const std::string &message) {
     // If the Operating System is UNIX based
-#ifdef __unix__
-    std::cout << "\033[0;33m[ WARNING  ]\033[0m " << message << std::endl;
-#elif defined _WIN32
-    #include <windows.h>
+#if defined (__unix__)
+    std::cout << getUnixColourCode(UnixColourCode::YELLOW)
+              << WARNING_TAG
+              << getUnixResetCode()
+              << SEPARATOR
+              << message << std::endl;
+#elif defined (_WIN32) || defined (_WIN64)
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WindowsColourCode::DARK_YELLOW);
 
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 6);
+    std::cout << WARNING_TAG;
 
-    std::cout << "[ WARNING  ] ";
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WindowsColourCode::BLACK);
 
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0);
-
-    std::cout << message << std::endl;
+    std::cout << SEPARATOR << message << std::endl;
 #else
-    std::cout << "[ WARNING  ] " << message << std::endl;
+    std::cout << WARNING_TAG
+              << SEPARATOR
+              << message
+              << std::endl;
 #endif
 }
+
+std::string ConsolePrinter::getUnixColourCode(const UnixColourCode &unixColourCode) {
+    return (CSI_START_TAG + CSI_RESET_CODE + CSI_SEPARATOR +
+            unixColourCodeToString(unixColourCode) + CSI_COLOUR_CODE_END_TAG);
+}
+
+std::string ConsolePrinter::unixColourCodeToString(const UnixColourCode &unixColourCode) {
+    return StringManipulator::toString(CSI_COLOUR_START_VALUE + static_cast<int>(unixColourCode));
+}
+
+std::string ConsolePrinter::getUnixResetCode() {
+    return (CSI_START_TAG + CSI_RESET_CODE + CSI_COLOUR_CODE_END_TAG);
+}
+
+
+// Constants
+const std::string ConsolePrinter::SEPARATOR = " ";
+
+const std::string ConsolePrinter::WARNING_TAG = "[ WARNING  ]";
+
+const std::string ConsolePrinter::CSI_START_TAG             = "\033[";
+const std::string ConsolePrinter::CSI_COLOUR_CODE_END_TAG   = "m";
+const std::string ConsolePrinter::CSI_RESET_CODE            = "0";
+const std::string ConsolePrinter::CSI_SEPARATOR             = ";";
+
+const int         ConsolePrinter::CSI_COLOUR_START_VALUE    = 30;

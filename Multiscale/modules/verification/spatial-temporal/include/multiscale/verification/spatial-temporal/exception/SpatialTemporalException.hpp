@@ -13,14 +13,12 @@ namespace multiscale {
 
             public:
 
-                SpatialTemporalException(const string &file, int line, const string &msg)
-                                         : multiscale::UnexpectedBehaviourException(file, line, msg) {
-                    constructExplanatoryString<const string &>(file, line, msg);
+                SpatialTemporalException(const string &file, int line, const string &msg) {
+                    explanatoryString = msg;
                 }
 
-                SpatialTemporalException(const string &file, int line, const char *msg)
-                                         : multiscale::UnexpectedBehaviourException(file, line, msg) {
-                    constructExplanatoryString<const char *>(file, line, msg);
+                SpatialTemporalException(const string &file, int line, const char *msg) {
+                    explanatoryString = std::string(msg);
                 }
 
         };

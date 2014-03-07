@@ -15,13 +15,13 @@ namespace multiscale {
 
         public:
 
-        RuntimeException(const string &file, int line, const string &msg)
-                        : MultiscaleException(file, line, msg) {
+            RuntimeException() {}
+
+            explicit RuntimeException(const string &file, int line, const string &msg) {
                 constructExplanatoryString<const string &>(file, line, msg);
             }
 
-        RuntimeException(const string &file, int line, const char *msg)
-                        : MultiscaleException(file, line, msg) {
+            explicit RuntimeException(const string &file, int line, const char *msg) {
                 constructExplanatoryString<const char *>(file, line, msg);
             }
 

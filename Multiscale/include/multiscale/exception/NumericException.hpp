@@ -15,13 +15,13 @@ namespace multiscale {
 
         public:
 
-            NumericException(const string &file, int line, const string &msg)
-                             : MultiscaleException(file, line, msg) {
+            NumericException() {}
+
+            explicit NumericException(const string &file, int line, const string &msg) {
                 constructExplanatoryString<const string &>(file, line, msg);
             }
 
-            NumericException(const string &file, int line, const char *msg)
-                             : MultiscaleException(file, line, msg) {
+            explicit NumericException(const string &file, int line, const char *msg) {
                 constructExplanatoryString<const char *>(file, line, msg);
             }
 

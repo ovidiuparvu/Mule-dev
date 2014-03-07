@@ -15,13 +15,13 @@ namespace multiscale {
 
         public:
 
-        IndexOutOfBoundsException(const string &file, int line, const string &msg)
-                        : RuntimeException(file, line, msg) {
+            IndexOutOfBoundsException() {}
+
+            explicit IndexOutOfBoundsException(const string &file, int line, const string &msg) {
                 constructExplanatoryString<const string &>(file, line, msg);
             }
 
-        IndexOutOfBoundsException(const string &file, int line, const char *msg)
-                        : RuntimeException(file, line, msg) {
+            explicit IndexOutOfBoundsException(const string &file, int line, const char *msg) {
                 constructExplanatoryString<const char *>(file, line, msg);
             }
 

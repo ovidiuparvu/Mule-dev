@@ -1,6 +1,7 @@
 #ifndef LOGICPROPERTYVISITOR_HPP
 #define LOGICPROPERTYVISITOR_HPP
 
+#include "multiscale/util/ConsolePrinter.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/LogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/NumericVisitor.hpp"
 
@@ -10,6 +11,10 @@
 namespace multiscale {
 
     namespace verification {
+
+        // Constants
+        static const std::string WRN_LOGIC_PROPERTY_EVAL_FALSE = "The enclosing logic property was evaluated to the default value \"false\".";
+
 
         //! Class used to evaluate logic properties
         class LogicPropertyVisitor : public boost::static_visitor<bool> {
@@ -100,21 +105,18 @@ namespace multiscale {
                             ((!logicPropertyTruthValue) || precedingTruthValue));
                 }
 
-                //! Overloading the operator ()
+                //! Overloading the operator "()" for the UntilLogicPropertyAttribute alternative
+                /*!
+                 * \param logicProperty     The logic property
+                 * \param lhsLogicProperty  The left hand side logic property
+                 */
                 template <typename T>
                 bool operator() (const UntilLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    unsigned long startTime = logicProperty.startTimepoint;
-                    unsigned long endTime   = logicProperty.endTimepoint;
-
-                    for (unsigned long i = startTime; i <= endTime; i++) {
-                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, i, endTime);
-
-                        if (evaluate(logicProperty.logicProperty, subTrace)) {
-                            return evaluatePrecedingLogicProperties(i, startTime, endTime, lhsLogicProperty);
-                        }
+                    try {
+                        return evaluateUntilLogicProperty(logicProperty, lhsLogicProperty);
+                    } catch (const SpatialTemporalException &ex) {
+                        return printExceptionMessage(ex.what());
                     }
-
-                    return false;
                 }
 
                 //! Overloading the "()" operator for the PrimaryLogicPropertyAttribute alternative
@@ -134,13 +136,11 @@ namespace multiscale {
                  */
                 template <typename T>
                 bool operator() (const DifferenceAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    double lhsNumericMeasureOne = evaluateNumericMeasure(primaryLogicProperty.lhsNumericMeasure, trace, 1);
-                    double lhsNumericMeasureTwo = evaluateNumericMeasure(primaryLogicProperty.lhsNumericMeasure, trace, 0);
-                    double rhsNumericMeasure    = evaluateNumericMeasure(primaryLogicProperty.rhsNumericMeasure, trace, 0);
-
-                    return ComparatorEvaluator::evaluate(lhsNumericMeasureOne - lhsNumericMeasureTwo,
-                                                         primaryLogicProperty.comparator.comparatorType,
-                                                         rhsNumericMeasure);
+                    try {
+                        return evaluateDifference(primaryLogicProperty, lhsLogicProperty);
+                    } catch (const SpatialTemporalException &ex) {
+                        return printExceptionMessage(ex.what());
+                    }
                 }
 
                 //! Overloading the "()" operator for the NumericSpatialNumericComparisonAttribute alternative
@@ -151,12 +151,11 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const NumericSpatialNumericComparisonAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    double lhsNumericMeasure = evaluateNumericSpatialMeasure(primaryLogicProperty.numericSpatialMeasure, trace);
-                    double rhsNumericMeasure = evaluateNumericMeasure(primaryLogicProperty.numericMeasure, trace);
-
-                    return ComparatorEvaluator::evaluate(lhsNumericMeasure,
-                                                         primaryLogicProperty.comparator.comparatorType,
-                                                         rhsNumericMeasure);
+                    try {
+                        return evaluateNumericSpatialNumericComparison(primaryLogicProperty, lhsLogicProperty);
+                    } catch (const SpatialTemporalException &ex) {
+                        return printExceptionMessage(ex.what());
+                    }
                 }
 
                 //! Overloading the "()" operator for the NumericNumericComparisonAttribute alternative
@@ -167,12 +166,11 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const NumericNumericComparisonAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    double numericStateVariable = evaluateNumericMeasure(primaryLogicProperty.numericStateVariable, trace);
-                    double numericMeasure       = evaluateNumericMeasure(primaryLogicProperty.numericMeasure, trace);
-
-                    return ComparatorEvaluator::evaluate(numericStateVariable,
-                                                         primaryLogicProperty.comparator.comparatorType,
-                                                         numericMeasure);
+                    try {
+                        return evaluateNumericNumericComparison(primaryLogicProperty, lhsLogicProperty);
+                    } catch (const SpatialTemporalException &ex) {
+                        return printExceptionMessage(ex.what());
+                    }
                 }
 
                 //! Overloading the "()" operator for the NotLogicPropertyAttribute alternative
@@ -196,18 +194,11 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const FutureLogicPropertyAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    unsigned long startTime = primaryLogicProperty.startTimepoint;
-                    unsigned long endTime   = primaryLogicProperty.endTimepoint;
-
-                    for (unsigned long i = startTime; i <= endTime; i++) {
-                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, i, endTime);
-
-                        if (evaluate(primaryLogicProperty.logicProperty, subTrace)) {
-                            return true;
-                        }
+                    try {
+                        return evaluateFutureLogicProperty(primaryLogicProperty, lhsLogicProperty);
+                    } catch (const SpatialTemporalException &ex) {
+                        return printExceptionMessage(ex.what());
                     }
-
-                    return false;
                 }
 
                 //! Overloading the "()" operator for the GlobalLogicPropertyAttribute alternative
@@ -218,18 +209,11 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const GlobalLogicPropertyAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    unsigned long startTime = primaryLogicProperty.startTimepoint;
-                    unsigned long endTime   = primaryLogicProperty.endTimepoint;
-
-                    for (unsigned long i = startTime; i <= endTime; i++) {
-                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, i, endTime);
-
-                        if (!evaluate(primaryLogicProperty.logicProperty, subTrace)) {
-                            return false;
-                        }
+                    try {
+                        return evaluateGlobalLogicProperty(primaryLogicProperty, lhsLogicProperty);
+                    } catch (const SpatialTemporalException &ex) {
+                        return printExceptionMessage(ex.what());
                     }
-
-                    return true;
                 }
 
                 //! Overloading the "()" operator for the NextLogicPropertyAttribute alternative
@@ -240,9 +224,11 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const NextLogicPropertyAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, 1);
-
-                    return evaluate(primaryLogicProperty.logicProperty, subTrace);
+                    try {
+                        return evaluateNextLogicProperty(primaryLogicProperty, lhsLogicProperty);
+                    } catch (const SpatialTemporalException &ex) {
+                        return printExceptionMessage(ex.what());
+                    }
                 }
 
                 //! Overloading the "()" operator for the NextKLogicPropertyAttribute alternative
@@ -253,12 +239,165 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const NextKLogicPropertyAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, primaryLogicProperty.nrOfTimepointsAhead);
-
-                    return evaluate(primaryLogicProperty.logicProperty, subTrace);
+                    try {
+                        return evaluateNextKLogicProperty(primaryLogicProperty, lhsLogicProperty);
+                    } catch (const SpatialTemporalException &ex) {
+                        return printExceptionMessage(ex.what());
+                    }
                 }
 
             private:
+
+                //! Evaluate the given DifferenceAttribute
+                /*!
+                 * \param differenceAttribute   The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool evaluateDifference(const DifferenceAttribute &differenceAttribute, const T &lhsLogicProperty) const {
+                    double lhsNumericMeasureOne = evaluateNumericMeasure(differenceAttribute.lhsNumericMeasure, trace, 1);
+                    double lhsNumericMeasureTwo = evaluateNumericMeasure(differenceAttribute.lhsNumericMeasure, trace, 0);
+                    double rhsNumericMeasure    = evaluateNumericMeasure(differenceAttribute.rhsNumericMeasure, trace, 0);
+
+                    return ComparatorEvaluator::evaluate(lhsNumericMeasureOne - lhsNumericMeasureTwo,
+                                                         differenceAttribute.comparator.comparatorType,
+                                                         rhsNumericMeasure);
+                }
+
+                //! Evaluate the given UntilLogicPropertyAttribute
+                /*!
+                 * \param untilLogicProperty    The until logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool evaluateUntilLogicProperty(const UntilLogicPropertyAttribute &untilLogicProperty,
+                                                const T &lhsLogicProperty) const {
+                    unsigned long startTime = untilLogicProperty.startTimepoint;
+                    unsigned long endTime   = untilLogicProperty.endTimepoint;
+
+                    for (unsigned long i = startTime; i <= endTime; i++) {
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, i, endTime);
+
+                        if (evaluate(untilLogicProperty.logicProperty, subTrace)) {
+                            return evaluatePrecedingLogicProperties(i, startTime, endTime, lhsLogicProperty);
+                        }
+                    }
+
+                    return false;
+                }
+
+                //! Evaluate the given NumericSpatialNumericComparisonAttribute
+                /*!
+                 * \param comparisonAttribute   The numeric spatial numeric comparison attribute
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool evaluateNumericSpatialNumericComparison(const NumericSpatialNumericComparisonAttribute &comparisonAttribute,
+                                                             const T &lhsLogicProperty) const {
+                    double lhsNumericMeasure = evaluateNumericSpatialMeasure(comparisonAttribute.numericSpatialMeasure, trace);
+                    double rhsNumericMeasure = evaluateNumericMeasure(comparisonAttribute.numericMeasure, trace);
+
+                    return ComparatorEvaluator::evaluate(lhsNumericMeasure,
+                                                         comparisonAttribute.comparator.comparatorType,
+                                                         rhsNumericMeasure);
+                }
+
+                //! Evaluate the given NumericNumericComparisonAttribute
+                /*!
+                 * \param comparisonAttribute   The numeric numeric comparison attribute
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool evaluateNumericNumericComparison(const NumericNumericComparisonAttribute &comparisonAttribute,
+                                                      const T &lhsLogicProperty) const {
+                    double numericStateVariable = evaluateNumericMeasure(comparisonAttribute.numericStateVariable, trace);
+                    double numericMeasure       = evaluateNumericMeasure(comparisonAttribute.numericMeasure, trace);
+
+                    return ComparatorEvaluator::evaluate(numericStateVariable,
+                                                         comparisonAttribute.comparator.comparatorType,
+                                                         numericMeasure);
+                }
+
+                //! Evaluate the given FutureLogicPropertyAttribute
+                /*!
+                 * \param futureLogicProperty   The future logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool evaluateFutureLogicProperty(const FutureLogicPropertyAttribute &futureLogicProperty,
+                                                 const T &lhsLogicProperty) const {
+                    unsigned long startTime = futureLogicProperty.startTimepoint;
+                    unsigned long endTime   = futureLogicProperty.endTimepoint;
+
+                    for (unsigned long i = startTime; i <= endTime; i++) {
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, i, endTime);
+
+                        if (evaluate(futureLogicProperty.logicProperty, subTrace)) {
+                            return true;
+                        }
+                    }
+
+                    return false;
+                }
+
+                //! Evaluate the given GlobalLogicPropertyAttribute
+                /*!
+                 * \param globalLogicProperty   The global logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool evaluateGlobalLogicProperty(const GlobalLogicPropertyAttribute &globalLogicProperty,
+                                                 const T &lhsLogicProperty) const {
+                    unsigned long startTime = globalLogicProperty.startTimepoint;
+                    unsigned long endTime   = globalLogicProperty.endTimepoint;
+
+                    for (unsigned long i = startTime; i <= endTime; i++) {
+                        SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, i, endTime);
+
+                        if (!evaluate(globalLogicProperty.logicProperty, subTrace)) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+
+                //! Evaluate the given NextLogicPropertyAttribute
+                /*!
+                 * \param nextLogicProperty     The next logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool evaluateNextLogicProperty(const NextLogicPropertyAttribute &nextLogicProperty,
+                                               const T &lhsLogicProperty) const {
+                    return evaluateNextKLogicProperty(nextLogicProperty.logicProperty, trace, 1);
+                }
+
+                //! Evaluate the given NextKLogicPropertyAttribute 
+                /*!
+                 * \param nextKLogicProperty    The next "k" logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool evaluateNextKLogicProperty(const NextKLogicPropertyAttribute &nextKLogicProperty,
+                                                const T &lhsLogicProperty) const {
+                    return evaluateNextKLogicProperty(nextKLogicProperty.logicProperty, trace,
+                                                      nextKLogicProperty.nrOfTimepointsAhead);
+                }
+                
+                //! Evaluate the given NextKLogicPropertyAttribute
+                /*!
+                 * \param logicProperty         The logic property enclosed by the next "k" logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 * \param kValue                The value of "k"
+                 */
+                template <typename T>
+                bool evaluateNextKLogicProperty(const LogicPropertyAttributeType &logicProperty,
+                                                const T &lhsLogicProperty, unsigned long kValue) const {
+                    SpatialTemporalTrace subTrace = SpatialTemporalTrace::subTrace(trace, kValue);
+
+                    return evaluate(logicProperty, subTrace);
+                }
 
                 //! Evaluate the logic property considering the given spatial temporal trace
                 /*!
@@ -361,6 +500,18 @@ namespace multiscale {
                     TimePoint timePoint = nonConstTrace.getTimePoint(timePointIndex);
 
                     return boost::apply_visitor(NumericVisitor(timePoint), numericSpatialMeasure);
+                }
+
+                //! Print a warning message regarding the exception and return false
+                /*!
+                 * \param message   The exception message
+                 */
+                bool printExceptionMessage(const char *message) const {
+                    std::string detailedMessage = std::string(message) + WRN_LOGIC_PROPERTY_EVAL_FALSE;
+
+                    ConsolePrinter::printWarningMessage(detailedMessage);
+
+                    return false;
                 }
 
         };

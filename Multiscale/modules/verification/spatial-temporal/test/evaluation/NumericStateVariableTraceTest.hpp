@@ -378,7 +378,7 @@ TEST_F(NumericStateVariableTraceTest, LogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, MultipleLogicProperties1) {
-    EXPECT_THROW(RunEvaluationTest("P = 0.1234 [( d(4) >=  count(regions) ) ^ ( covar(regions, area, regions, perimeter) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"), SpatialTemporalException);
+    EXPECT_FALSE(RunEvaluationTest("P = 0.1234 [( d(4) >=  count(regions) ) ^ ( covar(regions, area, regions, perimeter) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, MultipleLogicProperties2) {
@@ -503,11 +503,11 @@ TEST_F(NumericStateVariableTraceTest, NumericStateVariable1) {
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariable2) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{a2#0f-} <= 3]"), SpatialTemporalException);
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{a2#0f-} <= 3]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariable3) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{`1234567890-=~!@#$%^&*()_+qwertyuiop[]asdfghjkl;'\\<zxcvbnm,./QWERTYUIOPASDFGHJKL:\"|>ZXCVBNM<>?} <= 3]"), SpatialTemporalException);
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{`1234567890-=~!@#$%^&*()_+qwertyuiop[]asdfghjkl;'\\<zxcvbnm,./QWERTYUIOPASDFGHJKL:\"|>ZXCVBNM<>?} <= 3]"));
 }
 
 
@@ -1044,7 +1044,7 @@ TEST_F(NumericStateVariableTraceTest, EnclosingWithParenthesesDifferently2) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, TimeIntervalExceedsTraceEndTime) {
-    EXPECT_THROW(RunEvaluationTest("P < 0.9 [G [0, 1000] (count(clusters) > 10)]"), SpatialTemporalException);
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 1000] (count(clusters) > 10)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, TimeIntervalExceedsTraceStartTime) {

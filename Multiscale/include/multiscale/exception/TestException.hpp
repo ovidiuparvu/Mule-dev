@@ -15,13 +15,13 @@ namespace multiscale {
 
         public:
 
-        TestException(const string &file, int line, const string &msg)
-                      : MultiscaleException(file, line, msg) {
+            TestException() {}
+
+            explicit TestException(const string &file, int line, const string &msg) {
                 constructExplanatoryString<const string &>(file, line, msg);
             }
 
-        TestException(const string &file, int line, const char *msg)
-                      : MultiscaleException(file, line, msg) {
+            explicit TestException(const string &file, int line, const char *msg) {
                 constructExplanatoryString<const char *>(file, line, msg);
             }
 

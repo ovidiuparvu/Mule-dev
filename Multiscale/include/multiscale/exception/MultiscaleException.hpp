@@ -18,11 +18,13 @@ namespace multiscale {
     //! Parent exception class for the project
     class MultiscaleException : public runtime_error {
 
-        private:
+        protected:
 
             string explanatoryString;   /*!< User friendly exception message */
 
         public:
+
+            MultiscaleException() : runtime_error("") {}
 
             explicit MultiscaleException(const string &file, int line, const string &msg)
                                         : runtime_error(msg) {}
