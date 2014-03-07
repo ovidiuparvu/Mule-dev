@@ -107,11 +107,17 @@ namespace multiscale {
                  */
                 bool existsNumericStateVariable(const std::string &name);
 
-                //! Get the set of clusters
-                std::set<Cluster> getClusters() const;
+                //! Get the begin iterator for the set of clusters
+                std::set<Cluster>::iterator getClustersBeginIterator() const;
 
-                //! Get the set of regions
-                std::set<Region> getRegions() const;
+                //! Get the end iterator for the set of clusters
+                std::set<Cluster>::iterator getClustersEndIterator() const;
+
+                //! Get the begin iterator for the set of regions
+                std::set<Region>::iterator getRegionsBeginIterator() const;
+
+                //! Get the end iterator for the set of regions
+                std::set<Region>::iterator getRegionsEndIterator() const;
 
                 //! Get the collection of considered spatial entities
                 std::vector<SpatialEntity> getConsideredSpatialEntities() const;
@@ -150,13 +156,13 @@ namespace multiscale {
                 /*!
                  * \param position  The position of the cluster to be removed
                  */
-                void removeCluster(const std::set<Cluster>::iterator &position);
+                void removeCluster(std::set<Cluster>::iterator &position);
 
                 //! Remove the region from the given position
                 /*!
                  * \param position  The position of the region to be removed
                  */
-                void removeRegion(const std::set<Region>::iterator &position);
+                void removeRegion(std::set<Region>::iterator &position);
 
             private:
 

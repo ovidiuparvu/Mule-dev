@@ -50,7 +50,6 @@ OUT_DISTANCE_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_distance_cAM
 OUT_NR_CAMP_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_nr_cAMP_clusters";
 OUT_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_nr_dicty_clusters";
 OUT_AREA_PILEUP_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_area_pileup_nr_dicty_clusters";
-OUT_TOTAL_CAMP="${OUT_ANALYSIS_FOLDER}/dicty_total_camp";
 
 DICTY_FILE_BASENAME="dictyostelium_${simulationGridHeight}x${simulationGridWidth}_${nrOfDictyosteliumCells}";
 CAMP_FILE_BASENAME="cAMP_${simulationGridHeight}x${simulationGridWidth}_${nrOfDictyosteliumCells}";
@@ -77,7 +76,6 @@ mkdir -p ${OUT_DISTANCE_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_NR_CAMP_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_AREA_PILEUP_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER};
-mkdir -p ${OUT_TOTAL_CAMP};
 
 
 ####################################################################################
@@ -88,10 +86,10 @@ mkdir -p ${OUT_TOTAL_CAMP};
 
 # Compute the indices for the columns of interest
 nrOfColumns=`awk -F',' '{print NF; exit}' ${simulationInputFile}`;
-startIndexCAMP=`expr ${nrOfColumns} - ${simulationGridHeight} \* ${simulationGridWidth} + 1`;
-stopIndexCAMP=${nrOfColumns};
-startIndexCells=`expr ${startIndexCAMP} - 2 \* ${nrOfDictyosteliumCells} - ${nrOfDictyosteliumCells}`;
-stopIndexCells=`expr ${startIndexCells} + 2 \* ${nrOfDictyosteliumCells} - 1`;
+startIndexCells=`expr ${nrOfColumns} - 2 \* ${nrOfDictyosteliumCells} + 1`;
+stopIndexCells=`expr ${startIndexCells} + 2 \* ${nrOfDictyosteliumCells}`;
+startIndexCAMP=`expr ${startIndexCells} - ${simulationGridHeight} \* ${simulationGridWidth}`;
+stopIndexCAMP=`expr ${startIndexCAMP} + ${simulationGridHeight} \* ${simulationGridWidth} - 1`;
 
 # Obtain the separate simulation file for the Dictyostelium cells
 cat ${simulationInputFile} | cut -d"," -f1,${startIndexCells}-${stopIndexCells} > ${DICTY_SIMULATION_FILE}
@@ -100,7 +98,7 @@ cat ${simulationInputFile} | cut -d"," -f1,${startIndexCells}-${stopIndexCells} 
 cat ${simulationInputFile} | cut -d"," -f1,${startIndexCAMP}-${stopIndexCAMP} > ${CAMP_SIMULATION_FILE}
 
 # Check if the initial marking for the Dictyostelium cells was greater than 0
-nrOfZeroInitialMarkings=`cat ${DICTY_SIMULATION_FILE} | cut -d, -f2- | grep "[^0-9]0[^0-9]" ${DICTY_SIMULATION_FILE} | wc -l`;
+nrOfZeroInitialMarkings=`cat ${DICTY_SIMULATION_FILE} | cut -d, -f2- | egrep "[^0-9]0[^0-9.]" ${DICTY_SIMULATION_FILE} | wc -l`;
 
 if [ ${nrOfZeroInitialMarkings} -gt 0 ];
 then
@@ -125,7 +123,7 @@ sed 's/^[;,:\t ]\+//g' <${CAMP_SIMULATION_FILE} | sed 's/[;,:\t ]\+/,/g' | tail 
 bin/RectangularMapCsvToInputFiles --input-file "${OUT_CAMP_INPUT_FOLDER}/${CAMP_FILE_BASENAME}" --nr-concentrations-position 1 --height ${simulationGridHeight} --width ${simulationGridWidth} --output-file "${OUT_CAMP_INPUT_FOLDER}/${CAMP_FILE_BASENAME}";
 
 # Run the MapCartesianToScript for converting each of the generated input files into gnuplot scripts
-ls -1 ${OUT_CAMP_INPUT_FOLDER}/*.in | parallel bin/MapCartesianToScript --input-file {} --output-file ${OUT_CAMP_SCRIPT_FOLDER}/{/.};
+find ${OUT_CAMP_INPUT_FOLDER} -name "*.in" | parallel bin/MapCartesianToScript --input-file {} --output-file ${OUT_CAMP_SCRIPT_FOLDER}/{/.};
 
 # Run gnuplot on each of the generated scripts from the script folder and ignore warnings
 cd ${OUT_CAMP_IMG_FOLDER};
@@ -148,7 +146,7 @@ sed 's/^[;,:\t ]\+//g' <${DICTY_SIMULATION_FILE} | sed 's/[;,:\t ]\+/,/g' | tail
 bin/RectangularMapEntityCsvToInputFiles --input-file "${OUT_DICTY_INPUT_FOLDER}/${DICTY_FILE_BASENAME}" --nr-entities ${nrOfDictyosteliumCells} --max-pileup ${maxPileup} --height ${simulationGridHeight} --width ${simulationGridWidth} --output-file "${OUT_DICTY_INPUT_FOLDER}/${DICTY_FILE_BASENAME}";
 
 # Run the MapCartesianToScript for converting each of the generated input files into gnuplot scripts
-ls -1 ${OUT_DICTY_INPUT_FOLDER}/*.in | parallel bin/MapCartesianToScript --input-file {} --output-file ${OUT_DICTY_SCRIPT_FOLDER}/{/.};
+find ${OUT_DICTY_INPUT_FOLDER} -name "*.in" | parallel bin/MapCartesianToScript --input-file {} --output-file ${OUT_DICTY_SCRIPT_FOLDER}/{/.};
 
 # Run gnuplot on each of the generated scripts from the script folder and ignore warnings
 cd ${OUT_DICTY_IMG_FOLDER};
@@ -176,7 +174,7 @@ imageBasename=`basename ${imageName}`;
 imageBasenameRoot=`echo ${imageBasename} | rev | cut -d'_' -f2- | rev`;
 
 # Run the cluster detection procedure for each image in parallel
-ls ${OUT_DICTY_IMG_FOLDER}/*.png | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${OUT_DICTY_ANALYSIS_FOLDER}/{/.} --height=${simulationGridHeight} --width=${simulationGridWidth} --max-pileup=${maxPileup}
+find ${OUT_DICTY_IMG_FOLDER} -name "*.png" | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${OUT_DICTY_ANALYSIS_FOLDER}/{/.} --height=${simulationGridHeight} --width=${simulationGridWidth} --max-pileup=${maxPileup}
 
 # Empty files which will store final results
 echo "Clusteredness degree,Pile up degree,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${clustersOutputFile};
@@ -185,7 +183,7 @@ echo "Clusteredness" > ${clusterednessOutputFile};
 echo "Pile up" > ${pileupOutputFile};
 
 # Write the clusters, number of clusters, overall clusteredness and overall pileup in separate files
-for output in `ls -1v ${OUT_DICTY_ANALYSIS_FOLDER}/*.out`;
+for output in `find ${OUT_DICTY_ANALYSIS_FOLDER} -name "*.out" | sort -V`;
 do
     cat ${output} | head -n-3 | tail -n+3 >> ${clustersOutputFile};
     cat ${output} | head -n-3 | tail -n+3 | wc -l >> ${nrOfClustersOutputFile}
@@ -203,7 +201,7 @@ done
 ####################################################################################
 
 # Define the basename of the images without numeric index at the end
-imageName=`ls ${OUT_CAMP_IMG_FOLDER}/*.png | head -n1`;
+imageName=`find ${OUT_CAMP_IMG_FOLDER} -name "*.png" | head -n1`;
 imageBasename=`basename ${imageName}`;
 imageBasenameRoot=`echo ${imageBasename} | rev | cut -d'_' -f2- | rev`;
 
@@ -214,7 +212,7 @@ clusterednessOutputFile=${OUT_CAMP_ANALYSIS_FOLDER}/"results_clusteredness";
 pileupOutputFile=${OUT_CAMP_ANALYSIS_FOLDER}/"results_pileup";
 
 # Run the region detection procedure for each image in parallel
-ls ${OUT_CAMP_IMG_FOLDER}/*.png | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${OUT_CAMP_ANALYSIS_FOLDER}/{/.} --debug-mode="false"
+find ${OUT_CAMP_IMG_FOLDER} -name "*.png" | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${OUT_CAMP_ANALYSIS_FOLDER}/{/.} --debug-mode="false"
 
 # Empty files which will store final results
 echo "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${regionsOutputFile};
@@ -223,7 +221,7 @@ echo "Clusteredness" > ${clusterednessOutputFile};
 echo "Pile up" > ${pileupOutputFile};
 
 # Write the regions, number of regions, overall clusteredness and overall pileup in separate files
-for output in `ls -1v ${OUT_CAMP_ANALYSIS_FOLDER}/*.out`;
+for output in `find ${OUT_CAMP_ANALYSIS_FOLDER} -name "*.out" | sort -V`;
 do
     cat ${output} | head -n-3 | tail -n+2 >> ${regionsOutputFile};
     cat ${output} | head -n-3 | tail -n+2 | wc -l >> ${nrOfRegionsOutputFile}
@@ -245,7 +243,6 @@ cp ${R_FOLDER}/*.R ${OUT_ANALYSIS_FOLDER};
 cd ${OUT_ANALYSIS_FOLDER};
 
 Rscript AnalyseResultsBatch.R "${OUT_DICTY_ANALYSIS_FOLDER}/results_clusters" "${OUT_DICTY_ANALYSIS_FOLDER}/results_nr_clusters" "${OUT_CAMP_ANALYSIS_FOLDER}/results_regions" "${OUT_CAMP_ANALYSIS_FOLDER}/results_nr_regions";
-Rscript TotalCAMP.R ${CAMP_SIMULATION_FILE} "${OUT_TOTAL_CAMP}/dicty_total_camp.svg"
 
 rm -f ${OUT_ANALYSIS_FOLDER}/*.R;
 

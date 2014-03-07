@@ -12,5 +12,6 @@
 
 #include "evaluation/EmptyTraceTest.hpp"
 #include "evaluation/NumericStateVariableTraceTest.hpp"
+#include "evaluation/SpatialEntitiesTraceTest.hpp"
 
 #endif

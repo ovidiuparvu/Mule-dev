@@ -60,14 +60,15 @@ namespace multiscale {
                                            const ComparatorType &comparator, double numericMeasure) {
                     double spatialMeasureValue = 0;
 
-                    std::set<Cluster> clusters = timePoint.getClusters();
-                    std::set<Cluster>::iterator clustersEndIterator = clusters.end();
+                    std::set<Cluster>::iterator it = timePoint.getClustersBeginIterator();
 
-                    for (std::set<Cluster>::iterator it = clusters.begin(); it != clustersEndIterator; it++) {
+                    while (it != timePoint.getClustersEndIterator()) {
                         spatialMeasureValue = SpatialMeasureEvaluator::evaluate(*it, spatialMeasure);
 
                         if (!ComparatorEvaluator::evaluate(spatialMeasureValue, comparator, numericMeasure)) {
                             timePoint.removeCluster(it);
+                        } else {
+                            it++;
                         }
                     }
                 }
@@ -83,14 +84,15 @@ namespace multiscale {
                                           const ComparatorType &comparator, double numericMeasure) {
                     double spatialMeasureValue = 0;
 
-                    std::set<Region> regions = timePoint.getRegions();
-                    std::set<Region>::iterator regionsEndIterator = regions.end();
+                    std::set<Region>::iterator it = timePoint.getRegionsBeginIterator();
 
-                    for (std::set<Region>::iterator it = regions.begin(); it != regionsEndIterator; it++) {
+                    while (it != timePoint.getRegionsEndIterator()) {
                         spatialMeasureValue = SpatialMeasureEvaluator::evaluate(*it, spatialMeasure);
 
                         if (!ComparatorEvaluator::evaluate(spatialMeasureValue, comparator, numericMeasure)) {
                             timePoint.removeRegion(it);
+                        } else {
+                            it++;
                         }
                     }
                 }

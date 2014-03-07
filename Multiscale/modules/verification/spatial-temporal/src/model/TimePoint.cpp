@@ -72,8 +72,8 @@ double TimePoint::avgDensity() const {
     double averageDensity  = avgDensity(consideredSpatialEntities);
     double averageDistance = avgDistanceBetweenCentroids(consideredSpatialEntities);
 
-    return (averageDensity == 0) ? 0
-                                 : (averageDensity / averageDistance);
+    return (averageDistance == 0) ? averageDensity
+                                  : (averageDensity / averageDistance);
 }
 
 void TimePoint::addCluster(const Cluster &cluster) {
@@ -92,12 +92,20 @@ bool TimePoint::existsNumericStateVariable(const std::string &name) {
     return (numericStateVariables.find(name) != numericStateVariables.end());
 }
 
-std::set<Cluster> TimePoint::getClusters() const {
-    return clusters;
+std::set<Cluster>::iterator TimePoint::getClustersBeginIterator() const {
+    return clusters.begin();
 }
 
-std::set<Region> TimePoint::getRegions() const {
-    return regions;
+std::set<Cluster>::iterator TimePoint::getClustersEndIterator() const {
+    return clusters.end();
+}
+
+std::set<Region>::iterator TimePoint::getRegionsBeginIterator() const {
+    return regions.begin();
+}
+
+std::set<Region>::iterator TimePoint::getRegionsEndIterator() const {
+    return regions.end();
 }
 
 std::vector<SpatialEntity> TimePoint::getConsideredSpatialEntities() const {
@@ -144,12 +152,12 @@ void TimePoint::timePointUnion(const TimePoint &timePoint) {
     timePointSetOperation(timePoint, SetOperationType::Union);
 }
 
-void TimePoint::removeCluster(const std::set<Cluster>::iterator &position) {
-    clusters.erase(position);
+void TimePoint::removeCluster(std::set<Cluster>::iterator &position) {
+    position = clusters.erase(position);
 }
 
-void TimePoint::removeRegion(const std::set<Region>::iterator &position) {
-    regions.erase(position);
+void TimePoint::removeRegion(std::set<Region>::iterator &position) {
+    position = regions.erase(position);
 }
 
 double TimePoint::avgDistanceBetweenCentroids(const std::vector<SpatialEntity> &spatialEntities) const {
@@ -176,7 +184,7 @@ double TimePoint::avgDensity(const std::vector<SpatialEntity> &spatialEntities) 
     }
 
     return (nrOfSpatialEntities == 0) ? 0
-                                      :(densitySum / nrOfSpatialEntities);
+                                      : (densitySum / nrOfSpatialEntities);
 }
 
 void TimePoint::timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
@@ -210,22 +218,21 @@ void TimePoint::timePointSetOperationRegions(const TimePoint &timePoint, const S
 
 std::set<Cluster> TimePoint::clustersSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
     std::set<Cluster> newClusters;
-    std::set<Cluster> timePointClusters = timePoint.getClusters();
 
     switch(setOperationType) {
         case SetOperationType::Difference:
-            std::set_difference(clusters.begin(), clusters.end(), timePointClusters.begin(),
-                                timePointClusters.end(), std::inserter(newClusters, newClusters.begin()));
+            std::set_difference(clusters.begin(), clusters.end(), timePoint.getClustersBeginIterator(),
+                                timePoint.getClustersEndIterator(), std::inserter(newClusters, newClusters.begin()));
             break;
 
         case SetOperationType::Intersection:
-            std::set_intersection(clusters.begin(), clusters.end(), timePointClusters.begin(),
-                                  timePointClusters.end(), std::inserter(newClusters, newClusters.begin()));
+            std::set_intersection(clusters.begin(), clusters.end(), timePoint.getClustersBeginIterator(),
+                    timePoint.getClustersEndIterator(), std::inserter(newClusters, newClusters.begin()));
             break;
 
         case SetOperationType::Union:
-            std::set_union(clusters.begin(), clusters.end(), timePointClusters.begin(),
-                           timePointClusters.end(), std::inserter(newClusters, newClusters.begin()));
+            std::set_union(clusters.begin(), clusters.end(), timePoint.getClustersBeginIterator(),
+                    timePoint.getClustersEndIterator(), std::inserter(newClusters, newClusters.begin()));
             break;
     }
 
@@ -234,22 +241,21 @@ std::set<Cluster> TimePoint::clustersSetOperation(const TimePoint &timePoint, co
 
 std::set<Region> TimePoint::regionsSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
     std::set<Region> newRegions;
-    std::set<Region> timePointRegions = timePoint.getRegions();
 
     switch(setOperationType) {
         case SetOperationType::Difference:
-            std::set_difference(regions.begin(), regions.end(), timePointRegions.begin(),
-                                timePointRegions.end(), std::inserter(newRegions, newRegions.begin()));
+            std::set_difference(regions.begin(), regions.end(), timePoint.getRegionsBeginIterator(),
+                                timePoint.getRegionsEndIterator(), std::inserter(newRegions, newRegions.begin()));
             break;
 
         case SetOperationType::Intersection:
-            std::set_intersection(regions.begin(), regions.end(), timePointRegions.begin(),
-                                  timePointRegions.end(), std::inserter(newRegions, newRegions.begin()));
+            std::set_intersection(regions.begin(), regions.end(), timePoint.getRegionsBeginIterator(),
+                                  timePoint.getRegionsEndIterator(), std::inserter(newRegions, newRegions.begin()));
             break;
 
         case SetOperationType::Union:
-            std::set_union(regions.begin(), regions.end(), timePointRegions.begin(),
-                           timePointRegions.end(), std::inserter(newRegions, newRegions.begin()));
+            std::set_union(regions.begin(), regions.end(), timePoint.getRegionsBeginIterator(),
+                           timePoint.getRegionsEndIterator(), std::inserter(newRegions, newRegions.begin()));
             break;
     }
 

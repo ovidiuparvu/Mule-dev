@@ -6,6 +6,20 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
+SpatialEntity::SpatialEntity() {
+    clusteredness       = 0;
+    density             = 0;
+    area                = 0;
+    perimeter           = 0;
+    distanceFromOrigin  = 0;
+    angle               = 0;
+    triangleMeasure     = 0;
+    rectangleMeasure    = 0;
+    circleMeasure       = 0;
+    centroidX           = 0;
+    centroidY           = 0;
+}
+
 double SpatialEntity::getClusteredness() const {
     return clusteredness;
 }
