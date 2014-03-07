@@ -16,10 +16,11 @@ TEST(Numeric, GreaterOrEqual) {
     EXPECT_TRUE(Numeric::greaterOrEqual(2, 0));
     EXPECT_TRUE(Numeric::greaterOrEqual(2, -2));
     EXPECT_TRUE(Numeric::greaterOrEqual(12312312312312312, -12312312312312312));
-    EXPECT_TRUE(Numeric::greaterOrEqual(2, 2));
+    EXPECT_TRUE(Numeric::greaterOrEqual(745, 745));
     EXPECT_TRUE(Numeric::greaterOrEqual(2, 2.00001));
     EXPECT_TRUE(Numeric::greaterOrEqual(2, 1.99999));
     EXPECT_FALSE(Numeric::greaterOrEqual(1, 2));
+    EXPECT_FALSE(Numeric::greaterOrEqual(1, 6897645));
 }
 
 TEST(Numeric, LessOrEqual) {
@@ -27,10 +28,11 @@ TEST(Numeric, LessOrEqual) {
     EXPECT_TRUE(Numeric::lessOrEqual(0, 2));
     EXPECT_TRUE(Numeric::lessOrEqual(-2, 2));
     EXPECT_TRUE(Numeric::lessOrEqual(-12312312312312312, 12312312312312312));
-    EXPECT_TRUE(Numeric::lessOrEqual(2, 2));
+    EXPECT_TRUE(Numeric::lessOrEqual(567, 567));
     EXPECT_TRUE(Numeric::lessOrEqual(2.00001, 2));
     EXPECT_TRUE(Numeric::lessOrEqual(1.99999, 2));
     EXPECT_FALSE(Numeric::lessOrEqual(2, 1));
+    EXPECT_FALSE(Numeric::lessOrEqual(123231, 1));
 }
 
 TEST(Numeric, AlmostEqual) {
@@ -39,17 +41,20 @@ TEST(Numeric, AlmostEqual) {
     EXPECT_FALSE(Numeric::almostEqual(-2, 2));
     EXPECT_FALSE(Numeric::almostEqual(-12312312312312312, 12312312312312312));
     EXPECT_TRUE(Numeric::almostEqual(2, 2));
-    EXPECT_TRUE(Numeric::almostEqual(2.00001, 2));
-    EXPECT_TRUE(Numeric::almostEqual(1.99999, 2));
+    EXPECT_FALSE(Numeric::almostEqual(2.001, 2));
+    EXPECT_FALSE(Numeric::almostEqual(1.999, 2));
     EXPECT_TRUE(Numeric::almostEqual(2.00000000001, 2));
-    EXPECT_TRUE(Numeric::almostEqual(1.99999999991, 2));
+    EXPECT_TRUE(Numeric::almostEqual(1.99999999999, 2));
     EXPECT_FALSE(Numeric::almostEqual(2, 1));
 }
 
 TEST(Numeric, Average) {
     EXPECT_NEAR(Numeric::average(std::vector<double>{}), 0.0, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::average(std::vector<double>{0}), 0.0, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::average(std::vector<double>{1, 2}), 1.5, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::average(std::vector<double>{2, 1}), 1.5, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::average(std::vector<double>{1, 2, 3, 4, 5}), 3, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::average(std::vector<double>{-1, -2, 3, 4, 5}), 1.8, DOUBLE_COMP_ERROR);
 }
 
 TEST(Numeric, Covariance) {
@@ -92,7 +97,7 @@ TEST(Numeric, Maximum) {
     EXPECT_NEAR(Numeric::maximum(std::vector<double>{0, 0, 0, 0}), 0, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::maximum(std::vector<double>{1, 2, 3, 4}), 4, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::maximum(std::vector<double>{4, 3, 2, 1}), 4, DOUBLE_COMP_ERROR);
-    EXPECT_NEAR(Numeric::maximum(std::vector<double>{4, 3, 6, 1}), 6, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::maximum(std::vector<double>{4, 3, 6, 1, -123.14, -1234.3, 1.13513}), 6, DOUBLE_COMP_ERROR);
 }
 
 TEST(Numeric, Median) {
@@ -114,6 +119,7 @@ TEST(Numeric, Minimum) {
     EXPECT_NEAR(Numeric::minimum(std::vector<double>{1, 2, 3, 4}), 1, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::minimum(std::vector<double>{4, 3, 2, 1}), 1, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::minimum(std::vector<double>{4, 3, 6, -1}), -1, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::minimum(std::vector<double>{123.123, 325.12, 4, 3, 6, -1, 12321.312}), -1, DOUBLE_COMP_ERROR);
 }
 
 TEST(Numeric, Mode) {
@@ -153,6 +159,9 @@ TEST(Numeric, Product) {
     EXPECT_NEAR(Numeric::product(std::vector<double>{1, 3, 4, 4}), 48, DOUBLE_COMP_ERROR);
     EXPECT_THROW(Numeric::product(std::vector<double>{2432342432434E100, 2342344233E200, 2342342344, 3123215, 3123126, 1233215, 123312}), NumericException);
     EXPECT_NEAR(Numeric::product(std::vector<double>{1, 2, -1, 2, 1, 2, -1, 1}), 8, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::product(std::vector<double>{1, 2, -1, 2.34, 0, 2, -1, 1}), 0, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::product(std::vector<double>{0, 2, -1, 2.34, 683.231, 2, -1, 1}), 0, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::product(std::vector<double>{7, 2, -1, 2.34, 123.943, 2, -1, 0}), 0, DOUBLE_COMP_ERROR);
 }
 
 TEST(Numeric, Quartile) {
@@ -204,6 +213,7 @@ TEST(Numeric, Sum) {
     EXPECT_NEAR(Numeric::sum(std::vector<double>{4, 3, 2, 4}), 13, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::sum(std::vector<double>{1, 3, 4, 1}), 9, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::sum(std::vector<double>{1, 4, 8.3, 4, 1, 7.4, 12, 1}), 38.7, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::sum(std::vector<double>{1, 2, 3, 4, -1, -4, -3, -2}), 0, DOUBLE_COMP_ERROR);
 }
 
 TEST(Numeric, Variance) {
