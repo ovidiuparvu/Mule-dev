@@ -141,13 +141,3 @@ add_executable(ParserEvaluationSample ${PARSER_EVALUATION_SAMPLE_SRC})
 AddSample(ParserEvaluationSample)
 
 target_link_libraries(ParserEvaluationSample util)
-
-
-# EmployeeSample
-
-set(EMPLOYEE_SAMPLE_SRC
-   sample/Employee.cpp 
-)
-
-add_executable(EmployeeSample ${EMPLOYEE_SAMPLE_SRC})
-AddSample(EmployeeSample)

@@ -38,19 +38,75 @@ namespace multiscale {
         WHITE           = 15    /*!< Faint white non-colour */
     };
 
+    // Enumeration for colour codes
+    enum class ColourCode : int {
+        BLACK   = 0,    /*!< Black non-colour */
+        RED     = 1,    /*!< Red colour */
+        GREEN   = 2,    /*!< Green colour */
+        YELLOW  = 3,    /*!< Yellow colour */
+        BLUE    = 4,    /*!< Blue colour */
+        MAGENTA = 5,    /*!< Magenta colour */
+        CYAN    = 6,    /*!< Cyan colour */
+        WHITE   = 7     /*!< White non-colour */
+    };
+
 
     //! Class used to print (coloured) messages to the console
     class ConsolePrinter {
 
         public:
 
-            //! Print a warning containing the given message string
+            //! Print a coloured message to the standard output
+            /*! The message will be printed in colour if and only if the standard output is a terminal.
+             *  Otherwise it will be printed without changing colour.
+             *
+             * \param message The given message
+             */
+            static void printColouredMessage(const std::string &message, const ColourCode &colourCode);
+
+            //! Print a message to the standard output
+            /*!
+             * \param message The given message
+             */
+            static void printMessage(const std::string &message);
+
+            //! Print a warning containing the given message string to the standard output
             /*!
              * \param message The given message
              */
             static void printWarningMessage(const std::string &message);
 
         private:
+
+            //! Print a coloured message to the standard output
+            /*! The message will be printed in colour if and only if the standard output is a terminal.
+             *  Otherwise it will be printed without changing colour.
+             *
+             * \param message The given message
+             */
+            static void printMessageUsingColour(const std::string &message, const ColourCode &colourCode);
+
+            //! Print a coloured warning containing the given message string
+            /*!
+             * \param message The given message
+             */
+            static void printColouredWarningMessage(const std::string &message, const ColourCode &colourCode);
+
+            //! Print a non-coloured warning containing the given message string
+            /*!
+             * \param message The given message
+             */
+            static void printNonColouredWarningMessage(const std::string &message);
+
+            //! Get the platform specific colour code for the given generic platform colour code
+            /*!
+             * \param colourCode    The generic platform colour code
+             */
+            #ifdef MULTISCALE_WINDOWS
+                static WindowsColourCode getColourCode(const ColourCode &colourCode);
+            #elif defined MULTISCALE_UNIX
+                static UnixColourCode getColourCode(const ColourCode &colourCode);
+            #endif
 
             //! Get the CSI string representation corresponding to the given UNIX colour code
             /*!
@@ -65,7 +121,11 @@ namespace multiscale {
             static std::string unixColourCodeToString(const UnixColourCode &unixColourCode);
 
             //! Get the CSI string representation for resetting all attributes (including colour)
-            static std::string getUnixResetCode();
+            #ifdef MULTISCALE_WINDOWS
+                static WindowsColourCode getResetCode();
+            #elif defined MULTISCALE_UNIX
+                static std::string getResetCode();
+            #endif
 
 
             // Constants
@@ -80,6 +140,7 @@ namespace multiscale {
 
             static const int         CSI_COLOUR_START_VALUE;
 
+            static const std::string ERR_INVALID_COLOUR_CODE;
     };
 
 };

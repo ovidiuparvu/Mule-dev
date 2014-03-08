@@ -5,6 +5,16 @@
 
 // Core definitions available for the entire multiscale project
 
+
+// Platform dependent macro definitions
+
+#if defined (_WIN32) || defined (WIN32) || defined (_WIN64) || defined (WIN64)
+    #define MULTISCALE_WINDOWS
+#elif defined (__unix__)
+    #define MULTISCALE_UNIX
+#endif
+
+
 namespace multiscale {
 
     // Error related definitions
