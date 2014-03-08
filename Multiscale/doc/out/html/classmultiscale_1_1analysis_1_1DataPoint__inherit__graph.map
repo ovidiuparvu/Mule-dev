@@ -1,4 +1,4 @@
-<map id="multiscale::analysis::DataPoint" name="multiscale::analysis::DataPoint">
-<area shape="rect" id="node3" href="$classEuclideanDataPoint.html" title="{EuclideanDataPoint\n|&#45; x\l&#45; y\l|+ EuclideanDataPoint()\l+ EuclideanDataPoint()\l+ ~EuclideanDataPoint()\l+ distanceTo()\l}" alt="" coords="5,312,171,467"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)" alt="" coords="195,173,368,605"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classEuclideanDataPoint.html" title="{EuclideanDataPoint\n|&#45; x\l&#45; y\l|+ EuclideanDataPoint()\l+ EuclideanDataPoint()\l+ ~EuclideanDataPoint()\l+ distanceTo()\l}" alt="" coords="5,288,171,443"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)" alt="" coords="195,158,373,573"/>
 </map>

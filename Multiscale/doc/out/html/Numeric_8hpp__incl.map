@@ -1,2 +1,6 @@
-<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/Numeric.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/Numeric.hpp">
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$NumericException_8hpp.html" title="multiscale/exception/NumericException.hpp" alt="" coords="348,83,625,112"/>
+<area shape="rect" id="node21" href="$ConsolePrinter_8hpp.html" title="multiscale/util/ConsolePrinter.hpp" alt="" coords="555,160,771,189"/>
+<area shape="rect" id="node5" href="$MultiscaleException_8hpp.html" title="multiscale/exception/MultiscaleException.hpp" alt="" coords="195,160,480,189"/>
+<area shape="rect" id="node7" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="5,237,237,267"/>
 </map>

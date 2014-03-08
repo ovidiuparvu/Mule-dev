@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name',['name',['../classmultiscale_1_1verification_1_1StateVariableAttribute.html#a16899511c6d9c4ffadad57e0ed1fe350',1,'multiscale::verification::StateVariableAttribute::name()'],['../structclient_1_1employee.html#ac313e15ff1051385afa5251a29ea568a',1,'client::employee::name()']]],
+  ['name',['name',['../classmultiscale_1_1verification_1_1StateVariableAttribute.html#a16899511c6d9c4ffadad57e0ed1fe350',1,'multiscale::verification::StateVariableAttribute']]],
   ['nextconstraints',['nextConstraints',['../classmultiscale_1_1verification_1_1ConstraintAttribute.html#a7356c7c12aabb7243fd3d4dd65189a79',1,'multiscale::verification::ConstraintAttribute']]],
   ['nextklogicpropertyrule',['nextKLogicPropertyRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#acd44ab47b9c4e2f59c06b4018a90aa96',1,'multiscale::verification::ParserGrammar']]],
   ['nextlogicproperties',['nextLogicProperties',['../classmultiscale_1_1verification_1_1LogicPropertyAttribute.html#a940f444bb49f901b054175add10d942e',1,'multiscale::verification::LogicPropertyAttribute']]],

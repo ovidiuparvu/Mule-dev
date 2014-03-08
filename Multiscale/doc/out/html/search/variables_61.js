@@ -1,7 +1,6 @@
 var searchData=
 [
   ['a',['a',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#acb13371219bdd9b7c57131f1535e4c89',1,'multiscale::MinEnclosingTriangleFinder']]],
-  ['age',['age',['../structclient_1_1employee.html#a8dc9d2050213f95528be76a0663c7c46',1,'client::employee']]],
   ['alpha',['alpha',['../classmultiscale_1_1analysis_1_1RegionDetector.html#ab768a3bbfff9835b441a889ab2cb05a6',1,'multiscale::analysis::RegionDetector']]],
   ['alpha_5fmax',['ALPHA_MAX',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a7ca1e136dc9d768f1e11cd6f770d950f',1,'multiscale::analysis::RegionDetector']]],
   ['alpha_5freal_5fmax',['ALPHA_REAL_MAX',['../classmultiscale_1_1analysis_1_1RegionDetector.html#abc853d2cfef9e4fafbf86715b48495e0',1,'multiscale::analysis::RegionDetector']]],

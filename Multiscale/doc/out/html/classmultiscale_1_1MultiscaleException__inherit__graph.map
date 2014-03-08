@@ -1,14 +1,15 @@
-<map id="multiscale::MultiscaleException" name="multiscale::MultiscaleException">
-<area shape="rect" id="node7" href="$classmultiscale_1_1AlgorithmException.html" title="Class for representing algorithm exceptions." alt="" coords="272,459,475,562"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1IOException.html" title="Class for representing input and output exceptions." alt="" coords="533,459,693,562"/>
-<area shape="rect" id="node21" href="$classmultiscale_1_1NumericException.html" title="Class for representing algorithm exceptions." alt="" coords="717,459,912,562"/>
-<area shape="rect" id="node23" href="$classmultiscale_1_1RuntimeException.html" title="Class for representing runtime exceptions." alt="" coords="936,459,1131,562"/>
-<area shape="rect" id="node2" title="STL class." alt="" coords="652,139,775,224"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="661,5,765,91"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1UnexpectedBehaviourException.html" title="Class for representing unexpected behaviour exceptions." alt="" coords="5,611,232,731"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1UnimplementedMethodException.html" title="Class for representing unimplemented method exceptions." alt="" coords="256,611,491,731"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1verification_1_1SpatialTemporalException.html" title="Class for representing a spatial temporal exception." alt="" coords="21,779,216,899"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1FileOpenException.html" title="Class for representing exceptions when opening a file." alt="" coords="515,619,712,722"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1InvalidInputException.html" title="Class for representing invalid input exceptions." alt="" coords="736,611,901,731"/>
-<area shape="rect" id="node25" href="$classmultiscale_1_1IndexOutOfBoundsException.html" title="Class for representing an index out of bounds exception." alt="" coords="928,611,1139,731"/>
+<map id="G" name="G">
+<area shape="rect" id="node7" href="$classmultiscale_1_1AlgorithmException.html" title="Class for representing algorithm exceptions." alt="" coords="361,475,564,595"/>
+<area shape="rect" id="node15" href="$classmultiscale_1_1IOException.html" title="Class for representing input and output exceptions." alt="" coords="680,475,840,595"/>
+<area shape="rect" id="node21" href="$classmultiscale_1_1NumericException.html" title="Class for representing algorithm exceptions." alt="" coords="864,475,1059,595"/>
+<area shape="rect" id="node23" href="$classmultiscale_1_1RuntimeException.html" title="Class for representing runtime exceptions." alt="" coords="1083,475,1277,595"/>
+<area shape="rect" id="node27" href="$classmultiscale_1_1TestException.html" title="Class for representing testing exceptions." alt="" coords="1301,475,1475,595"/>
+<area shape="rect" id="node2" title="STL class." alt="" coords="900,139,1023,224"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="909,5,1013,91"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1UnexpectedBehaviourException.html" title="Class for representing unexpected behaviour exceptions." alt="" coords="24,643,299,763"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1UnimplementedMethodException.html" title="Class for representing unimplemented method exceptions." alt="" coords="323,643,603,763"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1verification_1_1SpatialTemporalException.html" title="Class for representing a spatial temporal exception." alt="" coords="5,811,317,914"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1FileOpenException.html" title="Class for representing exceptions when opening a file." alt="" coords="627,643,824,763"/>
+<area shape="rect" id="node19" href="$classmultiscale_1_1InvalidInputException.html" title="Class for representing invalid input exceptions." alt="" coords="848,643,1061,763"/>
+<area shape="rect" id="node25" href="$classmultiscale_1_1IndexOutOfBoundsException.html" title="Class for representing an index out of bounds exception." alt="" coords="1085,643,1344,763"/>
 </map>

@@ -1,6 +1,10 @@
 var namespacemultiscaletest =
 [
-    [ "verification", "namespacemultiscaletest_1_1verification.html", null ],
-    [ "MultiscaleTest", "classmultiscaletest_1_1MultiscaleTest.html", "classmultiscaletest_1_1MultiscaleTest" ],
-    [ "MinEnclosingTriangleFinderTest", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest" ]
+    [ "MultiscaleTest", "classmultiscaletest_1_1MultiscaleTest.html", null ],
+    [ "MinEnclosingTriangleFinderTest", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html", null ],
+    [ "CompleteTraceTest", "classmultiscaletest_1_1CompleteTraceTest.html", null ],
+    [ "EmptyTraceTest", "classmultiscaletest_1_1EmptyTraceTest.html", null ],
+    [ "NumericStateVariableTraceTest", "classmultiscaletest_1_1NumericStateVariableTraceTest.html", null ],
+    [ "SpatialEntitiesTraceTest", "classmultiscaletest_1_1SpatialEntitiesTraceTest.html", null ],
+    [ "TraceEvaluationTest", "classmultiscaletest_1_1TraceEvaluationTest.html", null ]
 ];

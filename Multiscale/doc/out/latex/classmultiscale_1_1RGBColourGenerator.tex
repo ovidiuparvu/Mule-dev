@@ -1,52 +1,43 @@
-\hypertarget{classmultiscale_1_1RGBColourGenerator}{\section{multiscale\-:\-:R\-G\-B\-Colour\-Generator Class Reference}
+\hypertarget{classmultiscale_1_1RGBColourGenerator}{\section{multiscale\-:\-:\-R\-G\-B\-Colour\-Generator \-Class \-Reference}
 \label{classmultiscale_1_1RGBColourGenerator}\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
 }
 
 
-Generate a R\-G\-B colour.  
+\-Generate a \-R\-G\-B colour.  
 
 
 
 
-{\ttfamily \#include $<$R\-G\-B\-Colour\-Generator.\-hpp$>$}
+{\ttfamily \#include $<$\-R\-G\-B\-Colour\-Generator.\-hpp$>$}
 
-
-
-Collaboration diagram for multiscale\-:\-:R\-G\-B\-Colour\-Generator\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=240pt]{classmultiscale_1_1RGBColourGenerator__coll__graph}
-\end{center}
-\end{figure}
-\subsection*{Public Member Functions}
+\subsection*{\-Public \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
 string \hyperlink{classmultiscale_1_1RGBColourGenerator_ab96622fb17f93d1f92a3b8b9fd978725}{generate} (double concentration\-Min, double concentration\-Max, double concentration)
-\begin{DoxyCompactList}\small\item\em Generate a R\-G\-B colour for the given concentration. \end{DoxyCompactList}\item 
-Scalar \hyperlink{classmultiscale_1_1RGBColourGenerator_a9eadd001d970bdb3c4237ab3a1b6683a}{generate} (R\-N\-G \&random\-Number\-Generator)
-\begin{DoxyCompactList}\small\item\em Generate a random R\-G\-B colour. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Attributes}
+\begin{DoxyCompactList}\small\item\em \-Generate a \-R\-G\-B colour for the given concentration. \end{DoxyCompactList}\item 
+\-Scalar \hyperlink{classmultiscale_1_1RGBColourGenerator_a9eadd001d970bdb3c4237ab3a1b6683a}{generate} (\-R\-N\-G \&random\-Number\-Generator)
+\begin{DoxyCompactList}\small\item\em \-Generate a random \-R\-G\-B colour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Static \-Public \-Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const int \hyperlink{classmultiscale_1_1RGBColourGenerator_ae31c47c9fccf50b3688728126040bc23}{H\-U\-E\-\_\-\-M\-I\-N} = 0
+static const int \hyperlink{classmultiscale_1_1RGBColourGenerator_ae31c47c9fccf50b3688728126040bc23}{\-H\-U\-E\-\_\-\-M\-I\-N} = 0
 \item 
-static const int \hyperlink{classmultiscale_1_1RGBColourGenerator_a282d986019f3c02b46c122badf806cd0}{H\-U\-E\-\_\-\-M\-A\-X} = 120
+static const int \hyperlink{classmultiscale_1_1RGBColourGenerator_a282d986019f3c02b46c122badf806cd0}{\-H\-U\-E\-\_\-\-M\-A\-X} = 120
 \item 
-static const int \hyperlink{classmultiscale_1_1RGBColourGenerator_a9442495dac9306e4172a27cba12788cc}{S\-A\-T\-U\-R\-A\-T\-I\-O\-N} = 1
+static const int \hyperlink{classmultiscale_1_1RGBColourGenerator_a9442495dac9306e4172a27cba12788cc}{\-S\-A\-T\-U\-R\-A\-T\-I\-O\-N} = 1
 \item 
-static const int \hyperlink{classmultiscale_1_1RGBColourGenerator_a859abef56e015354d032c46680132850}{V\-A\-L\-U\-E} = 1
+static const int \hyperlink{classmultiscale_1_1RGBColourGenerator_a859abef56e015354d032c46680132850}{\-V\-A\-L\-U\-E} = 1
 \end{DoxyCompactItemize}
-\subsection*{Private Member Functions}
+\subsection*{\-Private \-Member \-Functions}
 \begin{DoxyCompactItemize}
 \item 
 string \hyperlink{classmultiscale_1_1RGBColourGenerator_af29401043271ed11f69cdd0ecf52649e}{convert\-H\-S\-V\-To\-R\-G\-B} (double hue, double saturation, double value)
-\begin{DoxyCompactList}\small\item\em Convert a colour from H\-S\-V to R\-G\-B colour space. \end{DoxyCompactList}\item 
-void \hyperlink{classmultiscale_1_1RGBColourGenerator_a3c72c2ef3fa50215e73732e324f6f1e1}{compute\-R\-G\-B\-Values} (int hue\-Prime, double X, double chroma, double m)
-\begin{DoxyCompactList}\small\item\em Compute R\-G\-B values from H\-S\-V specific values. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \-Convert a colour from \-H\-S\-V to \-R\-G\-B colour space. \end{DoxyCompactList}\item 
+void \hyperlink{classmultiscale_1_1RGBColourGenerator_a3c72c2ef3fa50215e73732e324f6f1e1}{compute\-R\-G\-B\-Values} (int hue\-Prime, double \-X, double chroma, double m)
+\begin{DoxyCompactList}\small\item\em \-Compute \-R\-G\-B values from \-H\-S\-V specific values. \end{DoxyCompactList}\item 
 string \hyperlink{classmultiscale_1_1RGBColourGenerator_ab5600e0c10534f0d80511178c43ec507}{convert\-R\-G\-B\-To\-String} ()
-\begin{DoxyCompactList}\small\item\em Convert the R\-G\-B colour to a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
+\begin{DoxyCompactList}\small\item\em \-Convert the \-R\-G\-B colour to a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
 \begin{DoxyCompactItemize}
 \item 
 double \hyperlink{classmultiscale_1_1RGBColourGenerator_a11da8c4a9ca59ea8c20177cbb5b57ceb}{red}
@@ -57,91 +48,91 @@ double \hyperlink{classmultiscale_1_1RGBColourGenerator_a5b48dae9174a794eb70c779
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Generate a R\-G\-B colour. 
+\subsection{\-Detailed \-Description}
+\-Generate a \-R\-G\-B colour. 
 
-Generate a R\-G\-B colour given the possible range for concentrations and the value of one of the concentrations
+\-Generate a \-R\-G\-B colour given the possible range for concentrations and the value of one of the concentrations
 
-The conversion H\-S\-V-\/$>$R\-G\-B is based on the wikipedia page on this topic 
+\-The conversion \-H\-S\-V-\/$>$\-R\-G\-B is based on the wikipedia page on this topic 
 
-Definition at line 20 of file R\-G\-B\-Colour\-Generator.\-hpp.
+\-Definition at line 20 of file \-R\-G\-B\-Colour\-Generator.\-hpp.
 
 
 
-\subsection{Member Function Documentation}
+\subsection{\-Member \-Function \-Documentation}
 \hypertarget{classmultiscale_1_1RGBColourGenerator_a3c72c2ef3fa50215e73732e324f6f1e1}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!compute\-R\-G\-B\-Values@{compute\-R\-G\-B\-Values}}
 \index{compute\-R\-G\-B\-Values@{compute\-R\-G\-B\-Values}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{compute\-R\-G\-B\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void R\-G\-B\-Colour\-Generator\-::compute\-R\-G\-B\-Values (
+\subsubsection[{compute\-R\-G\-B\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-R\-G\-B\-Colour\-Generator\-::compute\-R\-G\-B\-Values} (
 \begin{DoxyParamCaption}
 \item[{int}]{hue\-Prime, }
-\item[{double}]{X, }
+\item[{double}]{\-X, }
 \item[{double}]{chroma, }
 \item[{double}]{m}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1RGBColourGenerator_a3c72c2ef3fa50215e73732e324f6f1e1}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_a3c72c2ef3fa50215e73732e324f6f1e1}
 
 
-Compute R\-G\-B values from H\-S\-V specific values. 
+\-Compute \-R\-G\-B values from \-H\-S\-V specific values. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em hue\-Prime} & Hue' \\
+\begin{DoxyParams}{\-Parameters}
+{\em hue\-Prime} & \-Hue' \\
 \hline
-{\em X} & X \\
+{\em \-X} & \-X \\
 \hline
-{\em chroma} & Chroma \\
+{\em chroma} & \-Chroma \\
 \hline
 {\em m} & m \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 42 of file R\-G\-B\-Colour\-Generator.\-cpp.
+\-Definition at line 42 of file \-R\-G\-B\-Colour\-Generator.\-cpp.
 
 \hypertarget{classmultiscale_1_1RGBColourGenerator_af29401043271ed11f69cdd0ecf52649e}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!convert\-H\-S\-V\-To\-R\-G\-B@{convert\-H\-S\-V\-To\-R\-G\-B}}
 \index{convert\-H\-S\-V\-To\-R\-G\-B@{convert\-H\-S\-V\-To\-R\-G\-B}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{convert\-H\-S\-V\-To\-R\-G\-B}]{\setlength{\rightskip}{0pt plus 5cm}string R\-G\-B\-Colour\-Generator\-::convert\-H\-S\-V\-To\-R\-G\-B (
+\subsubsection[{convert\-H\-S\-V\-To\-R\-G\-B}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-R\-G\-B\-Colour\-Generator\-::convert\-H\-S\-V\-To\-R\-G\-B} (
 \begin{DoxyParamCaption}
 \item[{double}]{hue, }
 \item[{double}]{saturation, }
 \item[{double}]{value}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1RGBColourGenerator_af29401043271ed11f69cdd0ecf52649e}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_af29401043271ed11f69cdd0ecf52649e}
 
 
-Convert a colour from H\-S\-V to R\-G\-B colour space. 
+\-Convert a colour from \-H\-S\-V to \-R\-G\-B colour space. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em hue} & Hue \\
+\begin{DoxyParams}{\-Parameters}
+{\em hue} & \-Hue \\
 \hline
-{\em saturation} & Saturation \\
+{\em saturation} & \-Saturation \\
 \hline
-{\em value} & Value \\
+{\em value} & \-Value \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 28 of file R\-G\-B\-Colour\-Generator.\-cpp.
+\-Definition at line 28 of file \-R\-G\-B\-Colour\-Generator.\-cpp.
 
 \hypertarget{classmultiscale_1_1RGBColourGenerator_ab5600e0c10534f0d80511178c43ec507}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!convert\-R\-G\-B\-To\-String@{convert\-R\-G\-B\-To\-String}}
 \index{convert\-R\-G\-B\-To\-String@{convert\-R\-G\-B\-To\-String}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{convert\-R\-G\-B\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}string R\-G\-B\-Colour\-Generator\-::convert\-R\-G\-B\-To\-String (
+\subsubsection[{convert\-R\-G\-B\-To\-String}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-R\-G\-B\-Colour\-Generator\-::convert\-R\-G\-B\-To\-String} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1RGBColourGenerator_ab5600e0c10534f0d80511178c43ec507}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_ab5600e0c10534f0d80511178c43ec507}
 
 
-Convert the R\-G\-B colour to a string. 
+\-Convert the \-R\-G\-B colour to a string. 
 
 
 
-Definition at line 87 of file R\-G\-B\-Colour\-Generator.\-cpp.
+\-Definition at line 87 of file \-R\-G\-B\-Colour\-Generator.\-cpp.
 
 \hypertarget{classmultiscale_1_1RGBColourGenerator_ab96622fb17f93d1f92a3b8b9fd978725}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!generate@{generate}}
 \index{generate@{generate}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}string R\-G\-B\-Colour\-Generator\-::generate (
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf \-R\-G\-B\-Colour\-Generator\-::generate} (
 \begin{DoxyParamCaption}
 \item[{double}]{concentration\-Min, }
 \item[{double}]{concentration\-Max, }
@@ -150,30 +141,31 @@ Definition at line 87 of file R\-G\-B\-Colour\-Generator.\-cpp.
 )}}\label{classmultiscale_1_1RGBColourGenerator_ab96622fb17f93d1f92a3b8b9fd978725}
 
 
-Generate a R\-G\-B colour for the given concentration. 
+\-Generate a \-R\-G\-B colour for the given concentration. 
 
-Generate a R\-G\-B colour considering the range of values a concentration can have and the value of the concentration
+\-Generate a \-R\-G\-B colour considering the range of values a concentration can have and the value of the concentration
 
 
-\begin{DoxyParams}{Parameters}
-{\em concentration\-Min} & The minimum of the range of values a concentration can take \\
+\begin{DoxyParams}{\-Parameters}
+{\em concentration\-Min} & \-The minimum of the range of values a concentration can take \\
 \hline
-{\em concentration\-Max} & The maximum of the range of values a concentration can take \\
+{\em concentration\-Max} & \-The maximum of the range of values a concentration can take \\
 \hline
-{\em concentration} & The concentration \\
+{\em concentration} & \-The concentration \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 12 of file R\-G\-B\-Colour\-Generator.\-cpp.
+\-Definition at line 12 of file \-R\-G\-B\-Colour\-Generator.\-cpp.
 
 
 
-Referenced by main(), and multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::output\-Results\-To\-Image().
+\-Referenced by main(), and multiscale\-::analysis\-::\-Simulation\-Cluster\-Detector\-::output\-Results\-To\-Image().
 
 
 
-Here is the caller graph for this function\-:\nopagebreak
+\-Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -184,81 +176,81 @@ Here is the caller graph for this function\-:\nopagebreak
 
 \hypertarget{classmultiscale_1_1RGBColourGenerator_a9eadd001d970bdb3c4237ab3a1b6683a}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!generate@{generate}}
 \index{generate@{generate}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}Scalar R\-G\-B\-Colour\-Generator\-::generate (
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}\-Scalar {\bf \-R\-G\-B\-Colour\-Generator\-::generate} (
 \begin{DoxyParamCaption}
-\item[{R\-N\-G \&}]{random\-Number\-Generator}
+\item[{\-R\-N\-G \&}]{random\-Number\-Generator}
 \end{DoxyParamCaption}
 )}}\label{classmultiscale_1_1RGBColourGenerator_a9eadd001d970bdb3c4237ab3a1b6683a}
 
 
-Generate a random R\-G\-B colour. 
+\-Generate a random \-R\-G\-B colour. 
 
-Generate a random R\-G\-B colour using the given random number generator
+\-Generate a random \-R\-G\-B colour using the given random number generator
 
 
-\begin{DoxyParams}{Parameters}
-{\em random\-Number\-Generator} & Random number generator \\
+\begin{DoxyParams}{\-Parameters}
+{\em random\-Number\-Generator} & \-Random number generator \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 22 of file R\-G\-B\-Colour\-Generator.\-cpp.
+\-Definition at line 22 of file \-R\-G\-B\-Colour\-Generator.\-cpp.
 
 
 
-\subsection{Member Data Documentation}
+\subsection{\-Member \-Data \-Documentation}
 \hypertarget{classmultiscale_1_1RGBColourGenerator_a5b48dae9174a794eb70c779c05d87c3f}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!blue@{blue}}
 \index{blue@{blue}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{blue}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::\-R\-G\-B\-Colour\-Generator\-::blue\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1RGBColourGenerator_a5b48dae9174a794eb70c779c05d87c3f}
-The amount of blue 
+\subsubsection[{blue}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf multiscale\-::\-R\-G\-B\-Colour\-Generator\-::blue}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_a5b48dae9174a794eb70c779c05d87c3f}
+\-The amount of blue 
 
-Definition at line 26 of file R\-G\-B\-Colour\-Generator.\-hpp.
+\-Definition at line 26 of file \-R\-G\-B\-Colour\-Generator.\-hpp.
 
 \hypertarget{classmultiscale_1_1RGBColourGenerator_ae8d94d24b109954be1da2a04c8ec9af7}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!green@{green}}
 \index{green@{green}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{green}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::\-R\-G\-B\-Colour\-Generator\-::green\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1RGBColourGenerator_ae8d94d24b109954be1da2a04c8ec9af7}
-The amount of green 
+\subsubsection[{green}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf multiscale\-::\-R\-G\-B\-Colour\-Generator\-::green}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_ae8d94d24b109954be1da2a04c8ec9af7}
+\-The amount of green 
 
-Definition at line 25 of file R\-G\-B\-Colour\-Generator.\-hpp.
+\-Definition at line 25 of file \-R\-G\-B\-Colour\-Generator.\-hpp.
 
-\hypertarget{classmultiscale_1_1RGBColourGenerator_a282d986019f3c02b46c122badf806cd0}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!H\-U\-E\-\_\-\-M\-A\-X@{H\-U\-E\-\_\-\-M\-A\-X}}
-\index{H\-U\-E\-\_\-\-M\-A\-X@{H\-U\-E\-\_\-\-M\-A\-X}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{H\-U\-E\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int R\-G\-B\-Colour\-Generator\-::\-H\-U\-E\-\_\-\-M\-A\-X = 120\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1RGBColourGenerator_a282d986019f3c02b46c122badf806cd0}
-
-
-Definition at line 75 of file R\-G\-B\-Colour\-Generator.\-hpp.
-
-\hypertarget{classmultiscale_1_1RGBColourGenerator_ae31c47c9fccf50b3688728126040bc23}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!H\-U\-E\-\_\-\-M\-I\-N@{H\-U\-E\-\_\-\-M\-I\-N}}
-\index{H\-U\-E\-\_\-\-M\-I\-N@{H\-U\-E\-\_\-\-M\-I\-N}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{H\-U\-E\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int R\-G\-B\-Colour\-Generator\-::\-H\-U\-E\-\_\-\-M\-I\-N = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1RGBColourGenerator_ae31c47c9fccf50b3688728126040bc23}
+\hypertarget{classmultiscale_1_1RGBColourGenerator_a282d986019f3c02b46c122badf806cd0}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!\-H\-U\-E\-\_\-\-M\-A\-X@{\-H\-U\-E\-\_\-\-M\-A\-X}}
+\index{\-H\-U\-E\-\_\-\-M\-A\-X@{\-H\-U\-E\-\_\-\-M\-A\-X}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
+\subsubsection[{\-H\-U\-E\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-R\-G\-B\-Colour\-Generator\-::\-H\-U\-E\-\_\-\-M\-A\-X} = 120\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_a282d986019f3c02b46c122badf806cd0}
 
 
-Definition at line 74 of file R\-G\-B\-Colour\-Generator.\-hpp.
+\-Definition at line 75 of file \-R\-G\-B\-Colour\-Generator.\-hpp.
+
+\hypertarget{classmultiscale_1_1RGBColourGenerator_ae31c47c9fccf50b3688728126040bc23}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!\-H\-U\-E\-\_\-\-M\-I\-N@{\-H\-U\-E\-\_\-\-M\-I\-N}}
+\index{\-H\-U\-E\-\_\-\-M\-I\-N@{\-H\-U\-E\-\_\-\-M\-I\-N}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
+\subsubsection[{\-H\-U\-E\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-R\-G\-B\-Colour\-Generator\-::\-H\-U\-E\-\_\-\-M\-I\-N} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_ae31c47c9fccf50b3688728126040bc23}
+
+
+\-Definition at line 74 of file \-R\-G\-B\-Colour\-Generator.\-hpp.
 
 \hypertarget{classmultiscale_1_1RGBColourGenerator_a11da8c4a9ca59ea8c20177cbb5b57ceb}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!red@{red}}
 \index{red@{red}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{red}]{\setlength{\rightskip}{0pt plus 5cm}double multiscale\-::\-R\-G\-B\-Colour\-Generator\-::red\hspace{0.3cm}{\ttfamily [private]}}}\label{classmultiscale_1_1RGBColourGenerator_a11da8c4a9ca59ea8c20177cbb5b57ceb}
-The amount of red 
+\subsubsection[{red}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf multiscale\-::\-R\-G\-B\-Colour\-Generator\-::red}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_a11da8c4a9ca59ea8c20177cbb5b57ceb}
+\-The amount of red 
 
-Definition at line 24 of file R\-G\-B\-Colour\-Generator.\-hpp.
+\-Definition at line 24 of file \-R\-G\-B\-Colour\-Generator.\-hpp.
 
-\hypertarget{classmultiscale_1_1RGBColourGenerator_a9442495dac9306e4172a27cba12788cc}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!S\-A\-T\-U\-R\-A\-T\-I\-O\-N@{S\-A\-T\-U\-R\-A\-T\-I\-O\-N}}
-\index{S\-A\-T\-U\-R\-A\-T\-I\-O\-N@{S\-A\-T\-U\-R\-A\-T\-I\-O\-N}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{S\-A\-T\-U\-R\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int R\-G\-B\-Colour\-Generator\-::\-S\-A\-T\-U\-R\-A\-T\-I\-O\-N = 1\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1RGBColourGenerator_a9442495dac9306e4172a27cba12788cc}
-
-
-Definition at line 76 of file R\-G\-B\-Colour\-Generator.\-hpp.
-
-\hypertarget{classmultiscale_1_1RGBColourGenerator_a859abef56e015354d032c46680132850}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!V\-A\-L\-U\-E@{V\-A\-L\-U\-E}}
-\index{V\-A\-L\-U\-E@{V\-A\-L\-U\-E}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
-\subsubsection[{V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int R\-G\-B\-Colour\-Generator\-::\-V\-A\-L\-U\-E = 1\hspace{0.3cm}{\ttfamily [static]}}}\label{classmultiscale_1_1RGBColourGenerator_a859abef56e015354d032c46680132850}
+\hypertarget{classmultiscale_1_1RGBColourGenerator_a9442495dac9306e4172a27cba12788cc}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!\-S\-A\-T\-U\-R\-A\-T\-I\-O\-N@{\-S\-A\-T\-U\-R\-A\-T\-I\-O\-N}}
+\index{\-S\-A\-T\-U\-R\-A\-T\-I\-O\-N@{\-S\-A\-T\-U\-R\-A\-T\-I\-O\-N}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
+\subsubsection[{\-S\-A\-T\-U\-R\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-R\-G\-B\-Colour\-Generator\-::\-S\-A\-T\-U\-R\-A\-T\-I\-O\-N} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_a9442495dac9306e4172a27cba12788cc}
 
 
-Definition at line 77 of file R\-G\-B\-Colour\-Generator.\-hpp.
+\-Definition at line 76 of file \-R\-G\-B\-Colour\-Generator.\-hpp.
+
+\hypertarget{classmultiscale_1_1RGBColourGenerator_a859abef56e015354d032c46680132850}{\index{multiscale\-::\-R\-G\-B\-Colour\-Generator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}!\-V\-A\-L\-U\-E@{\-V\-A\-L\-U\-E}}
+\index{\-V\-A\-L\-U\-E@{\-V\-A\-L\-U\-E}!multiscale::RGBColourGenerator@{multiscale\-::\-R\-G\-B\-Colour\-Generator}}
+\subsubsection[{\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf \-R\-G\-B\-Colour\-Generator\-::\-V\-A\-L\-U\-E} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}\label{classmultiscale_1_1RGBColourGenerator_a859abef56e015354d032c46680132850}
+
+
+\-Definition at line 77 of file \-R\-G\-B\-Colour\-Generator.\-hpp.
 
 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/include/multiscale/util/\hyperlink{RGBColourGenerator_8hpp}{R\-G\-B\-Colour\-Generator.\-hpp}\item 
-/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/src/\hyperlink{RGBColourGenerator_8cpp}{R\-G\-B\-Colour\-Generator.\-cpp}\end{DoxyCompactItemize}
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/include/multiscale/util/\hyperlink{RGBColourGenerator_8hpp}{\-R\-G\-B\-Colour\-Generator.\-hpp}\item 
+/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/util/src/\hyperlink{RGBColourGenerator_8cpp}{\-R\-G\-B\-Colour\-Generator.\-cpp}\end{DoxyCompactItemize}

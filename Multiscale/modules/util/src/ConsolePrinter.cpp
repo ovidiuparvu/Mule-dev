@@ -31,7 +31,7 @@ void ConsolePrinter::printMessage(const std::string &message) {
 }
 
 void ConsolePrinter::printWarningMessage(const std::string &message) {
-    // If the standard output is a terminal then print output in color
+    // If the standard output is a terminal then print output in colour
     if (isatty(fileno(stdout))) {
         printColouredWarningMessage(message, ColourCode::YELLOW);
     } else {

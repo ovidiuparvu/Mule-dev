@@ -1,4 +1,8 @@
-<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/src/Geometry2D.cpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/src/Geometry2D.cpp">
-<area shape="rect" id="node3" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="263,118,433,165"/>
-<area shape="rect" id="node5" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="153,213,332,243"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2D.hpp" alt="" coords="352,83,557,112"/>
+<area shape="rect" id="node5" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="52,160,231,189"/>
+<area shape="rect" id="node7" href="$NumericException_8hpp.html" title="multiscale/exception/NumericException.hpp" alt="" coords="211,237,488,267"/>
+<area shape="rect" id="node25" href="$ConsolePrinter_8hpp.html" title="multiscale/util/ConsolePrinter.hpp" alt="" coords="65,315,281,344"/>
+<area shape="rect" id="node9" href="$MultiscaleException_8hpp.html" title="multiscale/exception/MultiscaleException.hpp" alt="" coords="356,315,641,344"/>
+<area shape="rect" id="node11" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="599,392,831,421"/>
 </map>

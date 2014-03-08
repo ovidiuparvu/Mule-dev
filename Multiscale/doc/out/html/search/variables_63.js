@@ -38,6 +38,11 @@ var searchData=
   ['contourpoints',['contourPoints',['../classmultiscale_1_1analysis_1_1Entity.html#a0199b0a0e5b22809015ecbc23d17785e',1,'multiscale::analysis::Entity']]],
   ['convex_5fhull_5fclockwise',['CONVEX_HULL_CLOCKWISE',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ad92f43d2b14c77def3f7a70b54810dd2',1,'multiscale::analysis::SpatialEntityPseudo3D::CONVEX_HULL_CLOCKWISE()'],['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a951b35e4f359e61301deb0840abea51a',1,'multiscale::MinEnclosingTriangleFinder::CONVEX_HULL_CLOCKWISE()']]],
   ['convexhull',['convexHull',['../classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html#a309e2484e202fab797520fc15517d95d',1,'multiscaletest::MinEnclosingTriangleFinderTest']]],
+  ['csi_5fcolour_5fcode_5fend_5ftag',['CSI_COLOUR_CODE_END_TAG',['../classmultiscale_1_1ConsolePrinter.html#a953c25d18b32980404e791e6e3affe4e',1,'multiscale::ConsolePrinter']]],
+  ['csi_5fcolour_5fstart_5fvalue',['CSI_COLOUR_START_VALUE',['../classmultiscale_1_1ConsolePrinter.html#a28db02cbecbc83d2b1714c0a4d0c5cfe',1,'multiscale::ConsolePrinter']]],
+  ['csi_5freset_5fcode',['CSI_RESET_CODE',['../classmultiscale_1_1ConsolePrinter.html#aacd2ce3339857c1a4d21978b05337906',1,'multiscale::ConsolePrinter']]],
+  ['csi_5fseparator',['CSI_SEPARATOR',['../classmultiscale_1_1ConsolePrinter.html#ad6e7401583153692acfc5ccacc470067',1,'multiscale::ConsolePrinter']]],
+  ['csi_5fstart_5ftag',['CSI_START_TAG',['../classmultiscale_1_1ConsolePrinter.html#a1a4fe9a790ab77a97947fcc7e91b3f7d',1,'multiscale::ConsolePrinter']]],
   ['csv_5fextension',['CSV_EXTENSION',['../classmultiscale_1_1analysis_1_1Detector.html#a5458417daa8430ea8ebbe1c25cb26f41',1,'multiscale::analysis::Detector']]],
   ['currentnumber',['currentNumber',['../classmultiscale_1_1StandardNumberIterator.html#a1f40c321994d53f705331badd64542be',1,'multiscale::StandardNumberIterator']]],
   ['currentnumberdigits',['currentNumberDigits',['../classmultiscale_1_1LexicographicNumberIterator.html#af42ebeea695a31c2da714332c520ae79',1,'multiscale::LexicographicNumberIterator']]]

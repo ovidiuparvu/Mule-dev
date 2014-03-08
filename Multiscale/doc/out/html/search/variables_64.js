@@ -12,5 +12,5 @@ var searchData=
   ['display_5fline_5fthickness',['DISPLAY_LINE_THICKNESS',['../classmultiscale_1_1analysis_1_1RegionDetector.html#aee6fbc641e8a6a85b1d877f9b4c6c6c3',1,'multiscale::analysis::RegionDetector']]],
   ['distancefromorigin',['distanceFromOrigin',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a056f67b90ed41c0e6dc4df31b71ad906',1,'multiscale::analysis::SpatialEntityPseudo3D::distanceFromOrigin()'],['../classmultiscale_1_1verification_1_1SpatialEntity.html#a110d413d26abbc3a50ebeab98431a8bb',1,'multiscale::verification::SpatialEntity::distanceFromOrigin()']]],
   ['distancematrix',['distanceMatrix',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a863a8b90ff30d401795264a246a09147',1,'multiscale::analysis::DBSCAN']]],
-  ['double_5fcomp_5ferror',['DOUBLE_COMP_ERROR',['../Geometry2DTest_8cpp.html#ac012264b6dbcdc17067434049ce72e8b',1,'Geometry2DTest.cpp']]]
+  ['double_5fcomp_5ferror',['DOUBLE_COMP_ERROR',['../Geometry2DTest_8cpp.html#ac012264b6dbcdc17067434049ce72e8b',1,'DOUBLE_COMP_ERROR():&#160;Geometry2DTest.cpp'],['../NumericTest_8cpp.html#ac012264b6dbcdc17067434049ce72e8b',1,'DOUBLE_COMP_ERROR():&#160;NumericTest.cpp']]]
 ];

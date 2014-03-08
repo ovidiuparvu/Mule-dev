@@ -1,7 +1,30 @@
 var searchData=
 [
-  ['what',['what',['../classmultiscale_1_1MultiscaleException.html#a2750c3e86e792919a8a4323b83800530',1,'multiscale::MultiscaleException']]],
+  ['warning_5ftag',['WARNING_TAG',['../classmultiscale_1_1ConsolePrinter.html#ace7e2138af37c79b1d99b518ec220e58',1,'multiscale::ConsolePrinter']]],
+  ['what',['what',['../classmultiscale_1_1MultiscaleException.html#a1af231f6e68715087f5be6e4000e8409',1,'multiscale::MultiscaleException']]],
+  ['white',['WHITE',['../namespacemultiscale.html#af0846ad927fc362e628b10c2d88d0c3aa45bd75f0410fd2f64bbd5bfc567987dd',1,'multiscale']]],
   ['width',['width',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a4c66a82aa1749dce31c767bc4008d904',1,'multiscale::analysis::SimulationClusterDetector::width()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#ae6fba5af405d884c7b70ed206a6d5cb1',1,'multiscale::video::CartesianToConcentrationsConverter::width()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a7fe7f3d014535567fbeb465eb01cde1b',1,'multiscale::video::RectangularCsvToInputFilesConverter::width()'],['../classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#ac4542ad4008e85ab4860146eed6e0200',1,'multiscale::video::RectangularEntityCsvToInputFilesConverter::width()']]],
   ['win_5fmin_5farea_5ftriangle',['WIN_MIN_AREA_TRIANGLE',['../MinEnclosingTriangleFinderSample_8cpp.html#a519bf48877dce88abe417e1701ca178b',1,'MinEnclosingTriangleFinderSample.cpp']]],
-  ['win_5foutput_5fimage',['WIN_OUTPUT_IMAGE',['../classmultiscale_1_1analysis_1_1Detector.html#a883b5de8d273a2bfab31e45bc285c78d',1,'multiscale::analysis::Detector']]]
+  ['win_5foutput_5fimage',['WIN_OUTPUT_IMAGE',['../classmultiscale_1_1analysis_1_1Detector.html#a883b5de8d273a2bfab31e45bc285c78d',1,'multiscale::analysis::Detector']]],
+  ['windowscolourcode',['WindowsColourCode',['../namespacemultiscale.html#a74c63fc7bd6afb6457e0d0c1ffe145ff',1,'multiscale']]],
+  ['wrn_5faverage_5ffunction_5fname',['WRN_AVERAGE_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a65b22b0d9cb95ff5dde4b7b41f342774',1,'multiscale::Numeric']]],
+  ['wrn_5fcovariance_5ffunction_5fname',['WRN_COVARIANCE_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a940b0ee737842f9113eb66b7c2cfa4a2',1,'multiscale::Numeric']]],
+  ['wrn_5fgeometric_5fmean_5ffunction_5fname',['WRN_GEOMETRIC_MEAN_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a96ed0e32f79d8801370a922c8778f436',1,'multiscale::Numeric']]],
+  ['wrn_5fharmonic_5fmean_5ffunction_5fname',['WRN_HARMONIC_MEAN_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a48747552d1ae9179e97e3c9b32e86220',1,'multiscale::Numeric']]],
+  ['wrn_5fkurtosis_5ffunction_5fname',['WRN_KURTOSIS_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a917a1224a1d3d2dc3ce2937a519b3a03',1,'multiscale::Numeric']]],
+  ['wrn_5flogic_5fproperty_5feval_5ffalse',['WRN_LOGIC_PROPERTY_EVAL_FALSE',['../namespacemultiscale_1_1verification.html#a4c6c42b6b156af4c6a0d58f802fe769c',1,'multiscale::verification']]],
+  ['wrn_5fmaximum_5ffunction_5fname',['WRN_MAXIMUM_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#aa76828c54d236550a16b8b3e189a892a',1,'multiscale::Numeric']]],
+  ['wrn_5fmedian_5ffunction_5fname',['WRN_MEDIAN_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a4ff61e6a5c3cd99f6f69a539d8790ec5',1,'multiscale::Numeric']]],
+  ['wrn_5fminimum_5ffunction_5fname',['WRN_MINIMUM_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#abe70187af1f3c5e168ee696836e51940',1,'multiscale::Numeric']]],
+  ['wrn_5fmode_5ffunction_5fname',['WRN_MODE_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a1c7fbb1e805d5c6a93c0db380327fb12',1,'multiscale::Numeric']]],
+  ['wrn_5fnot_5fenough_5fvalues_5fend',['WRN_NOT_ENOUGH_VALUES_END',['../classmultiscale_1_1Numeric.html#a735efee33b8687c010a03cb1e5e9589c',1,'multiscale::Numeric']]],
+  ['wrn_5fnot_5fenough_5fvalues_5fstart',['WRN_NOT_ENOUGH_VALUES_START',['../classmultiscale_1_1Numeric.html#ab78e644d069f448030e24fecb7c4c8d9',1,'multiscale::Numeric']]],
+  ['wrn_5fnumber_5finverse',['WRN_NUMBER_INVERSE',['../classmultiscale_1_1Numeric.html#ac1e4755ec54d2c04217d0d1f4b5d346b',1,'multiscale::Numeric']]],
+  ['wrn_5fpercentile_5ffunction_5fname',['WRN_PERCENTILE_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a8d81f8548808bc79d7a63913866d848f',1,'multiscale::Numeric']]],
+  ['wrn_5fproduct_5ffunction_5fname',['WRN_PRODUCT_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a22bdf6dcebf44567c9ae93f3abb71c9b',1,'multiscale::Numeric']]],
+  ['wrn_5fquartile_5ffunction_5fname',['WRN_QUARTILE_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a3ab290a7458614fca9b68a5af7ce3dd8',1,'multiscale::Numeric']]],
+  ['wrn_5fskew_5ffunction_5fname',['WRN_SKEW_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a9c6fc5d340716ef73174505cc60773bb',1,'multiscale::Numeric']]],
+  ['wrn_5fstandard_5fdeviation_5ffunction_5fname',['WRN_STANDARD_DEVIATION_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a159388348fe6f88ca0a6d665f196db9e',1,'multiscale::Numeric']]],
+  ['wrn_5fsum_5ffunction_5fname',['WRN_SUM_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a851f3fcc752646d3cd3ba1f1d05dc334',1,'multiscale::Numeric']]],
+  ['wrn_5fvariance_5ffunction_5fname',['WRN_VARIANCE_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a39cf0319c0ad0a4ce7d0a348cd6bfa71',1,'multiscale::Numeric']]]
 ];

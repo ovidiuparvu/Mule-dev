@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['name',['name',['../structclient_1_1name.html',1,'client']]],
-  ['nametypeparser',['NameTypeParser',['../structclient_1_1NameTypeParser.html',1,'client']]],
   ['nextklogicpropertyattribute',['NextKLogicPropertyAttribute',['../classmultiscale_1_1verification_1_1NextKLogicPropertyAttribute.html',1,'multiscale::verification']]],
   ['nextlogicpropertyattribute',['NextLogicPropertyAttribute',['../classmultiscale_1_1verification_1_1NextLogicPropertyAttribute.html',1,'multiscale::verification']]],
   ['nil',['Nil',['../classmultiscale_1_1verification_1_1Nil.html',1,'multiscale::verification']]],
@@ -17,5 +15,6 @@ var searchData=
   ['numericspatialattribute',['NumericSpatialAttribute',['../classmultiscale_1_1verification_1_1NumericSpatialAttribute.html',1,'multiscale::verification']]],
   ['numericspatialnumericcomparisonattribute',['NumericSpatialNumericComparisonAttribute',['../classmultiscale_1_1verification_1_1NumericSpatialNumericComparisonAttribute.html',1,'multiscale::verification']]],
   ['numericstatevariableattribute',['NumericStateVariableAttribute',['../classmultiscale_1_1verification_1_1NumericStateVariableAttribute.html',1,'multiscale::verification']]],
+  ['numericstatevariabletracetest',['NumericStateVariableTraceTest',['../classmultiscaletest_1_1NumericStateVariableTraceTest.html',1,'multiscaletest']]],
   ['numericvisitor',['NumericVisitor',['../classmultiscale_1_1verification_1_1NumericVisitor.html',1,'multiscale::verification']]]
 ];

@@ -6,7 +6,7 @@ var searchData=
   ['secondsubset',['secondSubset',['../classmultiscale_1_1verification_1_1QuaternarySubsetAttribute.html#af001f7ef9cbacd42afab2f42faddc9ba',1,'multiscale::verification::QuaternarySubsetAttribute']]],
   ['sectorsiterator',['sectorsIterator',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#aa6895c1613a551cd05195f05ae51862b',1,'multiscale::video::PolarCsvToInputFilesConverter']]],
   ['selectedconcentrationindex',['selectedConcentrationIndex',['../classmultiscale_1_1video_1_1PolarCsvToInputFilesConverter.html#a121d592659f9f5075c8c78aa46c2950c',1,'multiscale::video::PolarCsvToInputFilesConverter::selectedConcentrationIndex()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a5143d25a98a097107c2bed748b4d8df0',1,'multiscale::video::RectangularCsvToInputFilesConverter::selectedConcentrationIndex()']]],
-  ['separator',['SEPARATOR',['../AnnularSector_8cpp.html#aedac235f997173e1cb22712e4433a9d7',1,'AnnularSector.cpp']]],
+  ['separator',['SEPARATOR',['../classmultiscale_1_1ConsolePrinter.html#a019d3f636f714542368c9b7f220579bf',1,'multiscale::ConsolePrinter::SEPARATOR()'],['../AnnularSector_8cpp.html#aedac235f997173e1cb22712e4433a9d7',1,'SEPARATOR():&#160;AnnularSector.cpp']]],
   ['shape',['shape',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#abad3acd3d7067e8e86e168e692cb2c2e',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['sideaendvertex',['sideAEndVertex',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a132a1e2eed61d579e6038089fe08d150',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['sideastartvertex',['sideAStartVertex',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a2e9e3f20e0c0d8bcf34e8ce903aabb42',1,'multiscale::MinEnclosingTriangleFinder']]],
@@ -36,6 +36,5 @@ var searchData=
   ['subsetspecific',['subsetSpecific',['../classmultiscale_1_1verification_1_1FilterSubsetAttribute.html#a8d29a1f02bea1b7f27145c343e252fbb',1,'multiscale::verification::FilterSubsetAttribute']]],
   ['subsetspecificrule',['subsetSpecificRule',['../classmultiscale_1_1verification_1_1ParserGrammar.html#a3580809e0e25a717be9da3a6bffb62ee',1,'multiscale::verification::ParserGrammar']]],
   ['subsetspecifictype',['subsetSpecificType',['../classmultiscale_1_1verification_1_1SubsetSpecificAttribute.html#ad63c03081828cfd9dabef466551f4d92',1,'multiscale::verification::SubsetSpecificAttribute']]],
-  ['subsetspecifictypeparser',['subsetSpecificTypeParser',['../classmultiscale_1_1verification_1_1ParserGrammar.html#ac57ca507a2d31b2c8ca643f2e706d320',1,'multiscale::verification::ParserGrammar']]],
-  ['surname',['surname',['../structclient_1_1name.html#a0bff4826f84ff08aed8eedb0479ae9bb',1,'client::name']]]
+  ['subsetspecifictypeparser',['subsetSpecificTypeParser',['../classmultiscale_1_1verification_1_1ParserGrammar.html#ac57ca507a2d31b2c8ca643f2e706d320',1,'multiscale::verification::ParserGrammar']]]
 ];

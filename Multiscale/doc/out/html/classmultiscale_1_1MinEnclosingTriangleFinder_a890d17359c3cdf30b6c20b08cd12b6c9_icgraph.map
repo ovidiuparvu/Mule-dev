@@ -1,11 +1,11 @@
-<map id="multiscale::MinEnclosingTriangleFinder::areIntersectingLines" name="multiscale::MinEnclosingTriangleFinder::areIntersectingLines">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9eedc43ea3190d8ee6343879dc100edb" title="Find the intersection points to compute gamma(point)" alt="" coords="284,205,529,269"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a800413be1e1567d986a92fac4a6b937e" title="Find gamma for a given point &quot;p&quot; specified by its index." alt="" coords="613,162,779,209"/>
-<area shape="rect" id="node20" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab0b488d2d67f2d22077777eebc292c1a" title="Find vertex C which lies on side B at a distance = 2 * height(a&#45;1) from side C." alt="" coords="580,266,812,313"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a88ca299e33ef6104513bd153501d5530" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="876,5,1084,69"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="863,93,1097,139"/>
-<area shape="rect" id="node14" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9f071f42dbaff51c8975da1b77c1188e" title="Check if tangency for side B was not obtained." alt="" coords="876,162,1084,209"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab25b3b5dbe05cb06e83a49cd28b3116f" title="Set side B if tangency for side B was obtained." alt="" coords="887,231,1073,278"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1147,153,1357,217"/>
-<area shape="rect" id="node22" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a12f1835531784519d618b86e889af06d" title="Update sides B and possibly A if tangency for side B was not obtained." alt="" coords="879,301,1081,347"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9eedc43ea3190d8ee6343879dc100edb" title="Find the intersection points to compute gamma(point)" alt="" coords="429,152,859,181"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a800413be1e1567d986a92fac4a6b937e" title="Find gamma for a given point &quot;p&quot; specified by its index." alt="" coords="947,112,1245,141"/>
+<area shape="rect" id="node20" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab0b488d2d67f2d22077777eebc292c1a" title="Find vertex C which lies on side B at a distance = 2 * height(a&#45;1) from side C." alt="" coords="907,192,1285,221"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a88ca299e33ef6104513bd153501d5530" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="1333,5,1731,35"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="1341,59,1723,88"/>
+<area shape="rect" id="node14" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9f071f42dbaff51c8975da1b77c1188e" title="Check if tangency for side B was not obtained." alt="" coords="1355,112,1709,141"/>
+<area shape="rect" id="node17" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#ab25b3b5dbe05cb06e83a49cd28b3116f" title="Set side B if tangency for side B was obtained." alt="" coords="1367,165,1697,195"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1779,112,2181,141"/>
+<area shape="rect" id="node22" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a12f1835531784519d618b86e889af06d" title="Update sides B and possibly A if tangency for side B was not obtained." alt="" coords="1359,219,1705,248"/>
 </map>

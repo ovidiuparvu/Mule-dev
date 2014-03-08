@@ -1,3 +1,8 @@
-<map id="multiscaletest::MultiscaleTest" name="multiscaletest::MultiscaleTest">
-<area shape="rect" id="node5" href="$classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html" title="Class for testing the minimum enclosing triangle algorithm." alt="" coords="5,341,261,912"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html" title="Class for testing the minimum enclosing triangle algorithm." alt="" coords="63,208,359,744"/>
+<area shape="rect" id="node5" href="$classmultiscaletest_1_1TraceEvaluationTest.html" title="Class for testing evaluation of traces." alt="" coords="383,381,612,571"/>
+<area shape="rect" id="node7" href="$classmultiscaletest_1_1CompleteTraceTest.html" title="Class for testing evaluation of complete traces containing both numeric state variables and spatial e..." alt="" coords="5,792,232,877"/>
+<area shape="rect" id="node9" href="$classmultiscaletest_1_1EmptyTraceTest.html" title="Class for testing evaluation of empty traces." alt="" coords="256,792,464,877"/>
+<area shape="rect" id="node11" href="$classmultiscaletest_1_1NumericStateVariableTraceTest.html" title="Class for testing evaluation of numeric state variable&#45;only traces." alt="" coords="488,792,784,877"/>
+<area shape="rect" id="node13" href="$classmultiscaletest_1_1SpatialEntitiesTraceTest.html" title="Class for testing evaluation of spatial entities&#45;only traces." alt="" coords="808,792,1061,877"/>
 </map>

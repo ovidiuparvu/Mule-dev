@@ -1,10 +1,10 @@
-<map id="multiscale::analysis::ClusterDetector" name="multiscale::analysis::ClusterDetector">
-<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images." alt="" coords="72,1144,333,2963"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="325,345,405,431"/>
-<area shape="rect" id="node10" href="$classmultiscale_1_1analysis_1_1Cluster.html" title="Class for representing a cluster of entities in an image." alt="" coords="615,3192,836,3763"/>
-<area shape="rect" id="node12" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html" title="Class for representing a pseudo&#45;3D (explicit 2D + implicit height) object." alt="" coords="560,1612,779,2495"/>
-<area shape="rect" id="node17" href="$classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)" alt="" coords="705,757,857,1120"/>
-<area shape="rect" id="node6" title="STL class." alt="" coords="303,158,428,261"/>
-<area shape="rect" id="node19" href="$classmultiscale_1_1analysis_1_1DataPoint.html" title="Class for representing a data point." alt="" coords="713,328,849,448"/>
-<area shape="rect" id="node23" title="STL class." alt="" coords="1055,167,1169,252"/>
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images." alt="" coords="1095,1171,1412,1829"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="856,319,936,404"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1Cluster.html" title="Class for representing a cluster of entities in an image." alt="" coords="340,2118,609,2706"/>
+<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html" title="Class for representing a pseudo&#45;3D (explicit 2D + implicit height) object." alt="" coords="775,1093,1055,1907"/>
+<area shape="rect" id="node25" href="$classmultiscale_1_1analysis_1_1Entity.html" title="Class for representing an entity in an image (e.g. cell, organism etc.)" alt="" coords="231,654,409,1069"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="813,157,979,243"/>
+<area shape="rect" id="node18" title="STL class." alt="" coords="60,157,175,243"/>
+<area shape="rect" id="node27" href="$classmultiscale_1_1analysis_1_1DataPoint.html" title="Class for representing a data point." alt="" coords="216,310,419,413"/>
 </map>

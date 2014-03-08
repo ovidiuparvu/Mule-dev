@@ -1,7 +1,7 @@
-<map id="multiscale::analysis::RegionDetector::findContoursInImage" name="multiscale::analysis::RegionDetector::findContoursInImage">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="1028,17,1225,63"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18" title="Compute the area of the white holes in the given matrix." alt="" coords="257,46,481,93"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="1275,8,1485,72"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a938fa8d165c87dc69e962883942072d2" title="Compute the area of the given polygon considering holes." alt="" coords="532,49,721,95"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="772,43,977,107"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e" title="Find the regions in the image." alt="" coords="1612,5,1924,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ab110a0a67852484c700ff035089fce18" title="Compute the area of the white holes in the given matrix." alt="" coords="420,31,759,60"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="1975,5,2361,35"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a938fa8d165c87dc69e962883942072d2" title="Compute the area of the given polygon considering holes." alt="" coords="808,31,1115,60"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a1416b365f921e02e5161d72b0b69f287" title="Create a new region from the given polygon." alt="" coords="1164,31,1561,60"/>
 </map>

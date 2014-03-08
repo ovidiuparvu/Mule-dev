@@ -2,6 +2,7 @@ var searchData=
 [
   ['silhouette',['Silhouette',['../classmultiscale_1_1analysis_1_1Silhouette.html',1,'multiscale::analysis']]],
   ['simulationclusterdetector',['SimulationClusterDetector',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html',1,'multiscale::analysis']]],
+  ['spatialentitiestracetest',['SpatialEntitiesTraceTest',['../classmultiscaletest_1_1SpatialEntitiesTraceTest.html',1,'multiscaletest']]],
   ['spatialentity',['SpatialEntity',['../classmultiscale_1_1verification_1_1SpatialEntity.html',1,'multiscale::verification']]],
   ['spatialentityevaluator',['SpatialEntityEvaluator',['../classmultiscale_1_1verification_1_1SpatialEntityEvaluator.html',1,'multiscale::verification']]],
   ['spatialentitypseudo3d',['SpatialEntityPseudo3D',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html',1,'multiscale::analysis']]],

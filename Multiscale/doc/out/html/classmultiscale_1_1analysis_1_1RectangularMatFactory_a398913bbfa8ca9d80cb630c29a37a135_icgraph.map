@@ -1,5 +1,5 @@
-<map id="multiscale::analysis::RectangularMatFactory::isValidViewerImage" name="multiscale::analysis::RectangularMatFactory::isValidViewerImage">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3f86c9bd73eb8d8a27f272b47e984871" title="Create a Mat object from the image file obtained from the RectangularGeometryViewer." alt="" coords="271,5,441,69"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a9255b11748b4c48d76c769258d6b6ee0" title="Get the maximum grayscale intensity of the colour bar in the image." alt="" coords="221,93,491,157"/>
-<area shape="rect" id="node5" href="$RectangularMatFactorySample_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="539,67,589,96"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a3f86c9bd73eb8d8a27f272b47e984871" title="Create a Mat object from the image file obtained from the RectangularGeometryViewer." alt="" coords="508,5,937,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RectangularMatFactory.html#a9255b11748b4c48d76c769258d6b6ee0" title="Get the maximum grayscale intensity of the colour bar in the image." alt="" coords="459,59,987,88"/>
+<area shape="rect" id="node5" href="$RectangularMatFactorySample_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="1035,32,1085,61"/>
 </map>

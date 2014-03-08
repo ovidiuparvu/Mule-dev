@@ -1,0 +1,7 @@
+/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/ConsolePrinter.hpp:112: warning: argument 'colourCode' of command @param is not found in the argument list of multiscale::ConsolePrinter::getUnixColourCode(const UnixColourCode &unixColourCode)
+/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/ConsolePrinter.hpp:60: warning: The following parameters of multiscale::ConsolePrinter::printColouredMessage(const std::string &message, const ColourCode &colourCode) are not documented:
+  parameter 'colourCode'
+/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/ConsolePrinter.hpp:90: warning: The following parameters of multiscale::ConsolePrinter::printColouredWarningMessage(const std::string &message, const ColourCode &colourCode) are not documented:
+  parameter 'colourCode'
+/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/include/multiscale/util/ConsolePrinter.hpp:82: warning: The following parameters of multiscale::ConsolePrinter::printMessageUsingColour(const std::string &message, const ColourCode &colourCode) are not documented:
+  parameter 'colourCode'

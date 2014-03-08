@@ -1,5 +1,9 @@
-<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/CircularityMeasure.cpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/CircularityMeasure.cpp">
-<area shape="rect" id="node3" href="$CircularityMeasure_8hpp.html" title="multiscale/analysis\l/spatial/CircularityMeasure.hpp" alt="" coords="493,137,696,183"/>
-<area shape="rect" id="node11" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="297,137,468,183"/>
-<area shape="rect" id="node13" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="81,232,260,261"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$CircularityMeasure_8hpp.html" title="multiscale/analysis/spatial/CircularityMeasure.hpp" alt="" coords="20,83,332,112"/>
+<area shape="rect" id="node11" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2D.hpp" alt="" coords="356,83,561,112"/>
+<area shape="rect" id="node13" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="543,160,721,189"/>
+<area shape="rect" id="node15" href="$NumericException_8hpp.html" title="multiscale/exception/NumericException.hpp" alt="" coords="493,237,771,267"/>
+<area shape="rect" id="node32" href="$ConsolePrinter_8hpp.html" title="multiscale/util/ConsolePrinter.hpp" alt="" coords="692,315,908,344"/>
+<area shape="rect" id="node17" href="$MultiscaleException_8hpp.html" title="multiscale/exception/MultiscaleException.hpp" alt="" coords="317,315,603,344"/>
+<area shape="rect" id="node19" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="219,392,451,421"/>
 </map>

@@ -27,5 +27,7 @@ var searchData=
   ['numericspatialnumericcomparisontest_2ehpp',['NumericSpatialNumericComparisonTest.hpp',['../NumericSpatialNumericComparisonTest_8hpp.html',1,'']]],
   ['numericstatevariableattribute_2ehpp',['NumericStateVariableAttribute.hpp',['../NumericStateVariableAttribute_8hpp.html',1,'']]],
   ['numericstatevariabletest_2ehpp',['NumericStateVariableTest.hpp',['../NumericStateVariableTest_8hpp.html',1,'']]],
+  ['numericstatevariabletracetest_2ehpp',['NumericStateVariableTraceTest.hpp',['../NumericStateVariableTraceTest_8hpp.html',1,'']]],
+  ['numerictest_2ecpp',['NumericTest.cpp',['../NumericTest_8cpp.html',1,'']]],
   ['numericvisitor_2ehpp',['NumericVisitor.hpp',['../NumericVisitor_8hpp.html',1,'']]]
 ];

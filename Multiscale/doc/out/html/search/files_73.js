@@ -6,6 +6,7 @@ var searchData=
   ['simulationclusterdetector_2ecpp',['SimulationClusterDetector.cpp',['../SimulationClusterDetector_8cpp.html',1,'']]],
   ['simulationclusterdetector_2ehpp',['SimulationClusterDetector.hpp',['../SimulationClusterDetector_8hpp.html',1,'']]],
   ['simulationdetectclusters_2ecpp',['SimulationDetectClusters.cpp',['../SimulationDetectClusters_8cpp.html',1,'']]],
+  ['spatialentitiestracetest_2ehpp',['SpatialEntitiesTraceTest.hpp',['../SpatialEntitiesTraceTest_8hpp.html',1,'']]],
   ['spatialentity_2ecpp',['SpatialEntity.cpp',['../SpatialEntity_8cpp.html',1,'']]],
   ['spatialentity_2ehpp',['SpatialEntity.hpp',['../SpatialEntity_8hpp.html',1,'']]],
   ['spatialentityevaluator_2ehpp',['SpatialEntityEvaluator.hpp',['../SpatialEntityEvaluator_8hpp.html',1,'']]],

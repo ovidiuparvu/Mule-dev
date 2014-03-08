@@ -1,6 +1,6 @@
-<map id="multiscale::analysis::Cluster::getMinAreaEnclosingCircleRadius" name="multiscale::analysis::Cluster::getMinAreaEnclosingCircleRadius">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ab4e0ae4d5850be64ec2399d5c2c36828" title="Draw the best matching circular shape of the cluster on the image." alt="" coords="257,5,447,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a8dc451d799404ba7ecd72d85d2f7e955" title="Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image..." alt="" coords="497,5,679,69"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a0e29be5f9a15899f710f48aaf6c049f0" title="Display cluster on the image." alt="" coords="729,5,911,69"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a909e1e53836f1688ebe312c5f7fb70b5" title="Dsiaply clusters on image." alt="" coords="961,5,1143,69"/>
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#ab4e0ae4d5850be64ec2399d5c2c36828" title="Draw the best matching circular shape of the cluster on the image." alt="" coords="448,5,915,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a8dc451d799404ba7ecd72d85d2f7e955" title="Draw the best matching shape (triangular, rectangular, circular) of the cluster on the image..." alt="" coords="963,5,1384,35"/>
+<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a0e29be5f9a15899f710f48aaf6c049f0" title="Display cluster on the image." alt="" coords="1432,5,1867,35"/>
+<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a909e1e53836f1688ebe312c5f7fb70b5" title="Dsiaply clusters on image." alt="" coords="1916,5,2353,35"/>
 </map>
