@@ -141,3 +141,15 @@ add_executable(ParserEvaluationSample ${PARSER_EVALUATION_SAMPLE_SRC})
 AddSample(ParserEvaluationSample)
 
 target_link_libraries(ParserEvaluationSample util)
+
+
+# InputValidationSample
+
+set(INPUT_VALIDATION_SAMPLE_SRC
+    sample/InputValidationSample.cpp
+)
+
+add_executable(InputValidationSample ${INPUT_VALIDATION_SAMPLE_SRC})
+AddSample(InputValidationSample)
+
+target_link_libraries(InputValidationSample ${XERCESC_LIBRARY})

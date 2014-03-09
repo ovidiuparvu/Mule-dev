@@ -77,6 +77,14 @@ if(OpenCV_FOUND)
     message(STATUS "OpenCV library was successfully found.")
 endif()
 
+# Xerces
+find_package(Xerces REQUIRED)
+
+if(XERCESC_FOUND)
+    include_directories(${XERCESC_INCLUDE})
+
+    message(STATUS "Xerces C++ library was successfully found.")
+endif()
 
 #------------------------------------------------------------
 # Documentation configuration
