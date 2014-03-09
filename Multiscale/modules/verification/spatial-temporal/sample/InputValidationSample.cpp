@@ -3,6 +3,8 @@
 #include <xercesc/parsers/XercesDOMParser.hpp>
 #include <xercesc/validators/common/Grammar.hpp>
 
+// TODO: Remove
+
 XERCES_CPP_NAMESPACE_USE
 
 void ValidateSchema(const char* schemaFilePath, const char* xmlFilePath)
