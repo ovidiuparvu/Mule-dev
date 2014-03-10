@@ -86,9 +86,9 @@ mkdir -p ${OUT_AREA_PILEUP_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER};
 
 # Compute the indices for the columns of interest
 nrOfColumns=`awk -F',' '{print NF; exit}' ${simulationInputFile}`;
-startIndexCells=`expr ${nrOfColumns} - 2 \* ${nrOfDictyosteliumCells} + 1`;
-stopIndexCells=`expr ${startIndexCells} + 2 \* ${nrOfDictyosteliumCells}`;
-startIndexCAMP=`expr ${startIndexCells} - ${simulationGridHeight} \* ${simulationGridWidth}`;
+startIndexCells=`expr ${nrOfColumns} - 2 \* ${nrOfDictyosteliumCells} - ${simulationGridHeight} \* ${simulationGridWidth} + 1`;
+stopIndexCells=`expr ${startIndexCells} + 2 \* ${nrOfDictyosteliumCells} - 1`;
+startIndexCAMP=`expr ${startIndexCells} + 2 \* ${nrOfDictyosteliumCells}`;
 stopIndexCAMP=`expr ${startIndexCAMP} + ${simulationGridHeight} \* ${simulationGridWidth} - 1`;
 
 # Obtain the separate simulation file for the Dictyostelium cells
@@ -169,7 +169,7 @@ clusterednessOutputFile=${OUT_DICTY_ANALYSIS_FOLDER}/"results_clusteredness";
 pileupOutputFile=${OUT_DICTY_ANALYSIS_FOLDER}/"results_pileup";
 
 # Define the basename of the images without numeric index at the end
-imageName=`ls ${OUT_DICTY_IMG_FOLDER}/*.png | head -n1`;
+imageName=`find ${OUT_DICTY_IMG_FOLDER} -name "*.png" | head -n1`;
 imageBasename=`basename ${imageName}`;
 imageBasenameRoot=`echo ${imageBasename} | rev | cut -d'_' -f2- | rev`;
 

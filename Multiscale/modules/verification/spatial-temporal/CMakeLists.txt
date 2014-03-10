@@ -153,3 +153,13 @@ add_executable(InputValidationSample ${INPUT_VALIDATION_SAMPLE_SRC})
 AddSample(InputValidationSample)
 
 target_link_libraries(InputValidationSample ${XERCESC_LIBRARY})
+
+
+# FilesystemSample
+
+set(FILESYSTEM_SAMPLE_SRC
+    sample/FilesystemSample.cpp
+)
+
+add_executable(FilesystemSample ${FILESYSTEM_SAMPLE_SRC})
+AddSample(FilesystemSample)
