@@ -1,6 +1,6 @@
 Coding style rules:
 
-  - Tab size: 4;
+  - Tab size: 4 (spaces only);
   - Use camel case for the names of classes, fields, methods and enums;
   
   - Order of writing in source files: include, using, definitions, consts;
