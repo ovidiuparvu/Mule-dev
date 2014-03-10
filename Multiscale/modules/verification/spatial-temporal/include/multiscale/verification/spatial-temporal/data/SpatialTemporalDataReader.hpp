@@ -148,7 +148,7 @@ namespace multiscale {
                 //! Check if the given folder path is valid
                 /*! The folder path is valid if it is a path pointing to a folder.
                  *
-                 *  \param folderPath
+                 * \param folderPath
                  */
                 void validateFolderPath(const std::string &folderPath);
 
@@ -183,6 +183,9 @@ namespace multiscale {
 
                 static const std::string PSEUDO3D_SPATIAL_ENTITY_TYPE_REGION;
                 static const std::string PSEUDO3D_SPATIAL_ENTITY_TYPE_CLUSTER;
+
+                static const std::string INPUT_FILES_EXTENSION;
+                static const std::string INPUT_FILES_SCHEMA_PATH;
 
         };
 

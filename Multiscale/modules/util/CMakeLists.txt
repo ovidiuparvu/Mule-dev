@@ -13,6 +13,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 set(LIB_SRC
     src/ConsolePrinter.cpp
+    src/Filesystem.cpp
     src/Geometry2D.cpp
     src/MinEnclosingTriangleFinder.cpp
     src/NumberIterator.cpp
@@ -24,10 +25,11 @@ set(LIB_SRC
     src/iterator/StandardNumberIterator.cpp
 )
 
-add_library(util SHARED ${LIB_SRC})
+add_library(util STATIC ${LIB_SRC})
 
-target_link_libraries(util ${BOOST_LIBRARIES})
 target_link_libraries(util ${OpenCV_LIBRARIES})
+target_link_libraries(util ${XERCESC_LIBRARY})
+target_link_libraries(util ${Boost_LIBRARIES})
 
 
 # Geometry2DTest

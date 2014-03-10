@@ -164,4 +164,4 @@ set(FILESYSTEM_SAMPLE_SRC
 add_executable(FilesystemSample ${FILESYSTEM_SAMPLE_SRC})
 AddSample(FilesystemSample)
 
-target_link_libraries(FilesystemSample ${Boost_FILESYSTEM_LIBRARY} ${Boost_SYSTEM_LIBRARY})
+target_link_libraries(FilesystemSample ${Boost_LIBRARIES})
