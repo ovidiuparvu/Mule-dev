@@ -9,6 +9,13 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
+// Print the numeric state variables corresponding to the given timepoint
+void printNumericStateVariables(const TimePoint &timePoint) {
+    std::cout << "\tNumeric state variable" << std::endl;
+    std::cout << "\t\tName: avgClusterednessRegions" << std::endl;
+    std::cout << "\t\tValue: " << timePoint.getNumericStateVariable("avgClusterednessRegions") << std::endl;
+}
+
 // Print the regions corresponding to the given timepoint
 void printRegions(const TimePoint &timePoint) {
     for (auto it = timePoint.getRegionsBeginIterator(); it != timePoint.getRegionsEndIterator(); it++) {
@@ -53,6 +60,7 @@ void printTimePoint(const TimePoint &timePoint) {
 
     printClusters(timePoint);
     printRegions(timePoint);
+    printNumericStateVariables(timePoint);
 }
 
 // Print the given trace

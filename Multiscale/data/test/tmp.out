@@ -1,8 +1,0 @@
-Clusteredness degree,Pile up degree,Number of entities (ignoring pileup),Area,Perimeter,Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)
-0,0,0,0,0,undefined,0,0,0,0,0
-440.318,1,38,164641,2806,rectangle,0.497436,0.994872,0.193024,703.5,129.333
-291.262,1,73,316285,2144.85,circle,0.569579,0.729624,0.99597,386.856,957.155
-288.536,1,55,238297,2287.05,triangle,0.908239,0.549717,0.743341,1105.5,1067
-
-Clusteredness index: 0.433937
-Average pile up degree: 1

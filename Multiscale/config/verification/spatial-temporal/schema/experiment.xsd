@@ -34,6 +34,12 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
+	<xs:simpleType name="IntegerNonNegativeType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:simpleType name="RealNonNegativeType">
 		<xs:restriction base="xs:decimal">
 			<xs:totalDigits value="64" />
@@ -72,7 +78,7 @@
 			<xs:element name="area" type="RealNonNegativeType" />
 			<xs:element name="perimeter" type="RealNonNegativeType" />
 			<xs:element name="distanceFromOrigin" type="RealNonNegativeType" />
-			<xs:element name="angleDegrees" type="AngleDegreesType" />
+			<xs:element name="angle" type="AngleDegreesType" />
 			<xs:element name="shape" type="ShapeType" minOccurs="0" maxOccurs="1" />
 			<xs:element name="triangleMeasure" type="ShapeMeasureType" />
 			<xs:element name="rectangleMeasure" type="ShapeMeasureType" />
@@ -84,7 +90,7 @@
 	
 	<xs:complexType name="SpatialEntityType">
 		<xs:sequence>
-			<xs:element name="pseudo3D" type="Pseudo3DSpatialEntityType" />
+			<xs:element minOccurs="1" maxOccurs="1" name="pseudo3D" type="Pseudo3DSpatialEntityType" />
 		</xs:sequence>
 	</xs:complexType>
 	
@@ -93,7 +99,30 @@
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="spatialEntity" type="SpatialEntityType" />
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="numericStateVariable" type="NumericStateVariableType" />
 		</xs:sequence>
-		<xs:attribute name="value" type="RealNonNegativeType" />
+		<xs:attribute name="value" type="IntegerNonNegativeType" />
+		
+		<!-- Uniqueness constraints -->
+	
+		<xs:unique name="UniqueNumericStateVariables">
+			<xs:selector xpath="experiment/timepoint/numericStateVariable" />
+			<xs:field xpath="name" />
+		</xs:unique>
+		
+		<xs:unique name="UniqueSpatialEntities">
+			<xs:selector xpath="experiment/timepoint/spatialEntity" />
+			<xs:field xpath="pseudo3D/@type" />
+			<xs:field xpath="pseudo3D/clusteredness" />
+			<xs:field xpath="pseudo3D/density" />
+			<xs:field xpath="pseudo3D/area" />
+			<xs:field xpath="pseudo3D/perimeter" />
+			<xs:field xpath="pseudo3D/distanceFromOrigin" />
+			<xs:field xpath="pseudo3D/angle" />
+			<xs:field xpath="pseudo3D/triangleMeasure" />
+			<xs:field xpath="pseudo3D/rectangleMeasure" />
+			<xs:field xpath="pseudo3D/circleMeasure" />
+			<xs:field xpath="pseudo3D/centroid/x" />
+			<xs:field xpath="pseudo3D/centroid/y" />
+		</xs:unique>
 	</xs:complexType>
 	
 	<xs:complexType name="ExperimentType">
