@@ -100,32 +100,32 @@
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="numericStateVariable" type="NumericStateVariableType" />
 		</xs:sequence>
 		<xs:attribute name="value" type="IntegerNonNegativeType" />
-		
-		<!-- Uniqueness constraints -->
-	
-		<xs:unique name="UniqueNumericStateVariables">
-			<xs:selector xpath="experiment/timepoint/numericStateVariable" />
-			<xs:field xpath="name" />
-		</xs:unique>
-		
-		<xs:unique name="UniqueSpatialEntities">
-			<xs:selector xpath="experiment/timepoint/spatialEntity" />
-			<xs:field xpath="pseudo3D/@type" />
-			<xs:field xpath="pseudo3D/clusteredness" />
-			<xs:field xpath="pseudo3D/density" />
-			<xs:field xpath="pseudo3D/area" />
-			<xs:field xpath="pseudo3D/perimeter" />
-			<xs:field xpath="pseudo3D/distanceFromOrigin" />
-			<xs:field xpath="pseudo3D/angle" />
-			<xs:field xpath="pseudo3D/triangleMeasure" />
-			<xs:field xpath="pseudo3D/rectangleMeasure" />
-			<xs:field xpath="pseudo3D/circleMeasure" />
-			<xs:field xpath="pseudo3D/centroid/x" />
-			<xs:field xpath="pseudo3D/centroid/y" />
-		</xs:unique>
 	</xs:complexType>
 	
 	<!-- Elements -->
 	
-	<xs:element name="timepoint" type="TimepointType" />
+	<xs:element name="timepoint" type="TimepointType" >
+        <!-- Uniqueness constraints -->
+    
+        <xs:unique name="UniqueNumericStateVariables">
+            <xs:selector xpath="experiment/timepoint/numericStateVariable" />
+            <xs:field xpath="name" />
+        </xs:unique>
+        
+        <xs:unique name="UniqueSpatialEntities">
+            <xs:selector xpath="experiment/timepoint/spatialEntity" />
+            <xs:field xpath="pseudo3D/@type" />
+            <xs:field xpath="pseudo3D/clusteredness" />
+            <xs:field xpath="pseudo3D/density" />
+            <xs:field xpath="pseudo3D/area" />
+            <xs:field xpath="pseudo3D/perimeter" />
+            <xs:field xpath="pseudo3D/distanceFromOrigin" />
+            <xs:field xpath="pseudo3D/angle" />
+            <xs:field xpath="pseudo3D/triangleMeasure" />
+            <xs:field xpath="pseudo3D/rectangleMeasure" />
+            <xs:field xpath="pseudo3D/circleMeasure" />
+            <xs:field xpath="pseudo3D/centroid/x" />
+            <xs:field xpath="pseudo3D/centroid/y" />
+        </xs:unique>
+	</xs:element>
 </xs:schema>

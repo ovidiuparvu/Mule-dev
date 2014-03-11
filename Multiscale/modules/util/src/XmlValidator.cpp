@@ -1,9 +1,8 @@
+#include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/Filesystem.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/util/XmlValidator.hpp"
-
-#include <xercesc/parsers/XercesDOMParser.hpp>
-#include <xercesc/validators/common/Grammar.hpp>
 
 XERCES_CPP_NAMESPACE_USE
 
@@ -13,35 +12,37 @@ using namespace multiscale;
 bool XmlValidator::isValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath) {
     XMLPlatformUtils::Initialize();
 
-    bool isValue = verifyIfValidXmlFile(xmlFilepath, xmlSchemaPath);
+    bool isValid = isValidXmlPathAndFile(xmlFilepath, xmlSchemaPath);
 
     XMLPlatformUtils::Terminate();
 
-    return isValue;
+    return isValid;
 }
 
-bool XmlValidator::verifyIfValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath) {
+bool XmlValidator::isValidXmlPathAndFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath) {
     validateXmlFilepath(xmlFilepath);
     validateXmlSchemaPath(xmlSchemaPath);
 
-    return checkIfValidXmlFile(xmlFilepath, xmlSchemaPath);
+    return verifyIfValidXmlFile(xmlFilepath, xmlSchemaPath);
+}
+
+bool XmlValidator::verifyIfValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath) {
+    try {
+        return checkIfValidXmlFile(xmlFilepath, xmlSchemaPath);
+    } catch (const InvalidInputException &ex) {
+        return false;
+    }
 }
 
 bool XmlValidator::checkIfValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath) {
-    XercesDOMParser domParser;
+    XercesDOMParser parser;
 
-    if (domParser.loadGrammar(xmlSchemaPath.c_str(), Grammar::SchemaGrammarType) == NULL) {
-        MS_throw(InvalidInputException, ERR_SCHEMA_CONTENTS);
-    }
+    loadParserSchema(xmlSchemaPath, parser);
+    configureParser(parser);
 
-    domParser.setValidationScheme(XercesDOMParser::Val_Auto);
-    domParser.setDoNamespaces(true);
-    domParser.setDoSchema(true);
-    domParser.setValidationConstraintFatal(true);
+    parser.parse(xmlFilepath.c_str());
 
-    domParser.parse(xmlFilepath.c_str());
-
-    return (domParser.getErrorCount() == 0);
+    return (parser.getErrorCount() == 0);
 }
 
 void XmlValidator::validateXmlFilepath(const std::string &xmlFilepath) {
@@ -56,9 +57,66 @@ void XmlValidator::validateXmlSchemaPath(const std::string &xmlSchemaPath) {
     }
 }
 
+void XmlValidator::loadParserSchema(const std::string &xmlSchemaPath, XercesDOMParser &parser) {
+    if (parser.loadGrammar(xmlSchemaPath.c_str(), Grammar::SchemaGrammarType, true) == NULL) {
+        MS_throw(InvalidInputException, ERR_SCHEMA_CONTENTS);
+    }
+}
+
+void XmlValidator::configureParser(XercesDOMParser &parser) {
+    XmlValidationErrorHandler errorHandler;
+
+    parser.useCachedGrammarInParse(true);
+    parser.setErrorHandler(&errorHandler);
+    parser.setValidationScheme(XercesDOMParser::Val_Always);
+    parser.setDoNamespaces(true);
+    parser.setDoSchema(true);
+    parser.setValidationConstraintFatal(true);
+}
+
+void XmlValidator::XmlValidationErrorHandler::warning(const SAXParseException &ex) {
+    handleValidationException(ex);
+}
+
+void XmlValidator::XmlValidationErrorHandler::error(const SAXParseException &ex) {
+    handleValidationException(ex);
+}
+
+void XmlValidator::XmlValidationErrorHandler::fatalError(const SAXParseException &ex) {
+    handleValidationException(ex);
+}
+
+void XmlValidator::XmlValidationErrorHandler::resetErrors() {}
+
+void XmlValidator::XmlValidationErrorHandler::handleValidationException(const SAXParseException &ex) {
+    std::string exceptionMessage = constructExceptionMessage(ex);
+
+    MS_throw(InvalidInputException, exceptionMessage);
+}
+
+std::string XmlValidator::XmlValidationErrorHandler::constructExceptionMessage(const SAXParseException &ex) {
+    return (
+        ERR_EXCEPTION_BEGIN_MSG +
+        ERR_EXCEPTION_LINE_MSG +
+        StringManipulator::toString(ex.getLineNumber()) +
+        ERR_EXCEPTION_COLUMN_MSG +
+        StringManipulator::toString(ex.getColumnNumber()) +
+        ERR_EXCEPTION_MIDDLE_MSG +
+        std::string(XMLString::transcode(ex.getMessage())) +
+        ERR_EXCEPTION_END_MSG
+    );
+}
 
 // Constants
 const std::string XmlValidator::ERR_INVALID_XML_FILEPATH    = "The provided xml file path is invalid. Please change.";
 const std::string XmlValidator::ERR_INVALID_SCHEMA_FILEPATH = "The provided xml schema file path is invalid. Please change.";
 
 const std::string XmlValidator::ERR_SCHEMA_CONTENTS = "The provided xml schema is invalid. Please verify the xml schema contents.";
+
+const std::string XmlValidator::XmlValidationErrorHandler::ERR_EXCEPTION_BEGIN_MSG  = "The provided xml file is invalid. An error occurred at ";
+
+const std::string XmlValidator::XmlValidationErrorHandler::ERR_EXCEPTION_LINE_MSG   = "line ";
+const std::string XmlValidator::XmlValidationErrorHandler::ERR_EXCEPTION_COLUMN_MSG = ", column ";
+const std::string XmlValidator::XmlValidationErrorHandler::ERR_EXCEPTION_MIDDLE_MSG = " and the error message is \"";
+
+const std::string XmlValidator::XmlValidationErrorHandler::ERR_EXCEPTION_END_MSG = "\".";
