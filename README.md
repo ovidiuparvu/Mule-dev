@@ -23,7 +23,7 @@ Project multiscale
 
 **Author:** Ovidiu Parvu                                                        
 **Created on:** 4th of February, 2013                                           
-**Modified on:** 6th of October, 2013                                          
+**Modified on:** 11th of March, 2014                                          
 
 ## 2. Requirements
    
@@ -35,10 +35,11 @@ computer:
 * Boost library (ver. 1.52.0)
 * g++ (ver. 4.7 or higher)
 * OpenCV (ver. 2.4.4 or higher)
+* Xerces C++ (ver. 3.1.1 or higher)
 
 __Remarks:__ 
 
-1. CMake will attempt to automatically find the paths to your Boost and OpenCV include and library folders.
+1. CMake will attempt to automatically find the paths to your Boost, OpenCV and Xerces include and library folders.
 
 ### 2.2. Requirements for running the software
 
