@@ -279,7 +279,7 @@ void Detector::addSpatialEntityPropertiesToTree(SpatialEntityPseudo3D &spatialEn
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_AREA, spatialEntity.getArea());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PERIMETER, spatialEntity.getPerimeter());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN, spatialEntity.getDistanceFromOrigin());
-    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_ANGLE_DEGREES, spatialEntity.getAngle());
+    propertyTree.put<double>(LABEL_SPATIAL_ENTITY_ANGLE, spatialEntity.getAngle());
     propertyTree.put<string>(LABEL_SPATIAL_ENTITY_SHAPE, spatialEntity.getShapeAsString());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE, spatialEntity.getTriangularMeasure());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE, spatialEntity.getRectangularMeasure());
@@ -358,7 +358,7 @@ const string Detector::LABEL_SPATIAL_ENTITY_DENSITY               = "density";
 const string Detector::LABEL_SPATIAL_ENTITY_AREA                  = "area";
 const string Detector::LABEL_SPATIAL_ENTITY_PERIMETER             = "perimeter";
 const string Detector::LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN  = "distanceFromOrigin";
-const string Detector::LABEL_SPATIAL_ENTITY_ANGLE_DEGREES         = "angleDegrees";
+const string Detector::LABEL_SPATIAL_ENTITY_ANGLE                 = "angle";
 const string Detector::LABEL_SPATIAL_ENTITY_SHAPE                 = "shape";
 const string Detector::LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE      = "triangleMeasure";
 const string Detector::LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE     = "rectangleMeasure";

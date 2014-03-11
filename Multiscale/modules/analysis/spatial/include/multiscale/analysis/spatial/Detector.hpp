@@ -316,7 +316,7 @@ namespace multiscale {
                 static const string LABEL_SPATIAL_ENTITY_AREA;
                 static const string LABEL_SPATIAL_ENTITY_PERIMETER;
                 static const string LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN;
-                static const string LABEL_SPATIAL_ENTITY_ANGLE_DEGREES;
+                static const string LABEL_SPATIAL_ENTITY_ANGLE;
                 static const string LABEL_SPATIAL_ENTITY_SHAPE;
                 static const string LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE;
                 static const string LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE;
