@@ -79,7 +79,7 @@ void SpatialTemporalTrace::initialise() {
 }
 
 void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint) {
-    double timePointValue = timePoint.getValue();
+    unsigned long timePointValue = timePoint.getValue();
 
     validateTimePointValue(timePointValue);
     updateLastTimePointValue(timePoint, timePointValue);

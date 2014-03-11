@@ -20,6 +20,7 @@ set(LIB_SRC
     src/Numeric.cpp
     src/RGBColourGenerator.cpp
     src/StringManipulator.cpp
+    src/XmlValidator.cpp
 
     src/iterator/LexicographicNumberIterator.cpp
     src/iterator/StandardNumberIterator.cpp

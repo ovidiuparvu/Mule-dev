@@ -25,6 +25,12 @@ namespace multiscale {
              */
             static bool isValidFolderPath(const std::string &path);
 
+            //! Check if the given path is a valid file path
+            /*!
+             * \param path  The given path
+             */
+            static bool isValidFilePath(const std::string &path);
+
             //! Get the list of files with the given extension in the provided folder
             /*!
              * \param folderPath    The path to the folder

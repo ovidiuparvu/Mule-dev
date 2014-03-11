@@ -1,11 +1,12 @@
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/exception/RuntimeException.hpp"
 #include "multiscale/exception/UnexpectedBehaviourException.hpp"
 #include "multiscale/util/Filesystem.hpp"
 #include "multiscale/util/XmlValidator.hpp"
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
 
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/xml_parser.hpp>
+#include <iostream>
+#include <limits>
 
 using namespace multiscale::verification;
 
@@ -72,8 +73,12 @@ bool SpatialTemporalDataReader::hasValidNext() {
 
 SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace() {
     std::string inputFilepath = getFirstValidUnprocessedInputFilepath();
+    SpatialTemporalTrace trace = generateSpatialTemporalTrace(inputFilepath);
 
-    return generateSpatialTemporalTrace(inputFilepath);
+    // Add the file to the list of processed files
+    processedInputFiles.insert(inputFilepath);
+
+    return trace;
 }
 
 SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace(const std::string &inputFilepath) {
@@ -87,8 +92,8 @@ SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace(con
 SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace(const pt::ptree &tree) {
     SpatialTemporalTrace trace;
 
-    for (const pt::ptree &timePointTree : tree.get_child(LABEL_EXPERIMENT)) {
-        addTimePointToTrace(timePointTree, trace);
+    for (const auto &timePointTreePair : tree.get_child(LABEL_EXPERIMENT)) {
+        addTimePointToTrace(timePointTreePair.second, trace);
     }
 
     return trace;
@@ -104,14 +109,18 @@ void SpatialTemporalDataReader::addTimePointToTrace(const pt::ptree &timePointTr
 
 void SpatialTemporalDataReader::convertTimePointPropertyTreeToTrace(const pt::ptree &timePointTree,
                                                                     TimePoint &timePoint) {
+    setTimePointValue(timePointTree, timePoint);
+    addEntitiesToTimePoint(timePointTree, timePoint);
+}
+
+void SpatialTemporalDataReader::setTimePointValue(const pt::ptree &timePointTree, TimePoint &timePoint) {
     unsigned long timePointValue;
 
     if (timePointHasValue(timePointTree, timePointValue)) {
         timePoint.setValue(timePointValue);
+    } else {
+        timePoint.setValue(std::numeric_limits<unsigned long>::max());
     }
-
-    addNumericStateVariablesToTimePoint(timePointTree, timePoint);
-    addSpatialEntitiesToTimePoint(timePointTree, timePoint);
 }
 
 bool SpatialTemporalDataReader::timePointHasValue(const pt::ptree &propertyTree, unsigned long &value) {
@@ -126,10 +135,14 @@ bool SpatialTemporalDataReader::timePointHasValue(const pt::ptree &propertyTree,
     return false;
 }
 
-void SpatialTemporalDataReader::addNumericStateVariablesToTimePoint(const pt::ptree &timePointTree,
-                                                                    TimePoint &timePoint) {
-    for (const pt::ptree &numericStateVariableTree : timePointTree.get_child(LABEL_NUMERIC_STATE_VARIABLE)) {
-        addNumericStateVariableToTimePoint(numericStateVariableTree, timePoint);
+void SpatialTemporalDataReader::addEntitiesToTimePoint(const pt::ptree &timePointTree,
+                                                       TimePoint &timePoint) {
+    for (const auto &entityTree : timePointTree) {
+        if (entityTree.first.compare(LABEL_NUMERIC_STATE_VARIABLE) == 0) {
+            addNumericStateVariableToTimePoint(entityTree.second, timePoint);
+        } else if (entityTree.first.compare(LABEL_SPATIAL_ENTITY) == 0) {
+            addSpatialEntityToTimePoint(entityTree.second, timePoint);
+        }
     }
 }
 
@@ -141,27 +154,16 @@ void SpatialTemporalDataReader::addNumericStateVariableToTimePoint(const pt::ptr
     timePoint.addNumericStateVariable(name, value);
 }
 
-void SpatialTemporalDataReader::addSpatialEntitiesToTimePoint(const pt::ptree &timePointTree, TimePoint &timePoint) {
-    for (const pt::ptree &spatialEntityTree : timePointTree.get_child(LABEL_SPATIAL_ENTITY)) {
-        addSpatialEntityToTimePoint(spatialEntityTree, timePoint);
-    }
-}
-
 void SpatialTemporalDataReader::addSpatialEntityToTimePoint(const pt::ptree &spatialEntityTree,
                                                             TimePoint &timePoint) {
     std::string spatialEntityType = spatialEntityTree.get<std::string>(LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE);
 
-    switch (spatialEntityType) {
-        case PSEUDO3D_SPATIAL_ENTITY_TYPE_CLUSTER:
-            addClusterToTimePoint(spatialEntityTree, timePoint);
-            break;
-
-        case PSEUDO3D_SPATIAL_ENTITY_TYPE_REGION:
-            addRegionToTimePoint(spatialEntityTree, timePoint);
-            break;
-
-        default:
-            MS_throw(UnexpectedBehaviourException, ERR_UNDEFINED_SPATIAL_ENTITY_TYPE);
+    if (spatialEntityType.compare(PSEUDO3D_SPATIAL_ENTITY_TYPE_CLUSTER) == 0) {
+        addClusterToTimePoint(spatialEntityTree, timePoint);
+    } else if (spatialEntityType.compare(PSEUDO3D_SPATIAL_ENTITY_TYPE_REGION) == 0) {
+        addRegionToTimePoint(spatialEntityTree, timePoint);
+    } else {
+        MS_throw(UnexpectedBehaviourException, ERR_UNDEFINED_SPATIAL_ENTITY_TYPE);
     }
 }
 
@@ -206,9 +208,14 @@ std::string SpatialTemporalDataReader::getFirstValidUnprocessedInputFilepath() {
         MS_throw(RuntimeException, ERR_NO_VALID_INPUT_FILES_REMAINING);
     }
 
+    // Obtain the valid unprocessed input file
     std::unordered_set<std::string>::iterator it = unprocessedInputFiles.begin();
+    std::string validUnprocessedFile = (*it);
 
-    return (*it);
+    // Remove it from the list of unprocessed files
+    unprocessedInputFiles.erase(it);
+
+    return validUnprocessedFile;
 }
 
 void SpatialTemporalDataReader::updateFilesLists() {
@@ -239,14 +246,14 @@ const std::string SpatialTemporalDataReader::ERR_NO_VALID_INPUT_FILES_REMAINING 
 const std::string SpatialTemporalDataReader::ERR_UNDEFINED_SPATIAL_ENTITY_TYPE     = "The provided spatial entity type is invalid.";
 
 const std::string SpatialTemporalDataReader::LABEL_EXPERIMENT                      = "experiment";
-const std::string SpatialTemporalDataReader::LABEL_TIMEPOINT_VALUE                 = "value";
+const std::string SpatialTemporalDataReader::LABEL_TIMEPOINT_VALUE                 = "<xmlattr>.value";
 
 const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE          = "numericStateVariable";
 const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_NAME     = "name";
 const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_VALUE    = "value";
 
 const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY                  = "spatialEntity";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE;   = "pseudo3D.type";
+const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE    = "pseudo3D.<xmlattr>.type";
 
 const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_CLUSTEREDNESS         = "pseudo3D.clusteredness";
 const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_DENSITY               = "pseudo3D.density";

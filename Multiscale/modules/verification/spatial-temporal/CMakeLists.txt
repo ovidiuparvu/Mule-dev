@@ -143,25 +143,21 @@ AddSample(ParserEvaluationSample)
 target_link_libraries(ParserEvaluationSample util)
 
 
-# InputValidationSample
+# SpatialTemporalDataReaderSample
 
-set(INPUT_VALIDATION_SAMPLE_SRC
-    sample/InputValidationSample.cpp
+set(SPATIAL_TEMPORAL_DATA_READER_SAMPLE_SRC
+    src/data/SpatialTemporalDataReader.cpp
+    
+    src/model/SpatialEntity.cpp
+    src/model/SpatialTemporalTrace.cpp
+    src/model/TimePoint.cpp
+
+    sample/SpatialTemporalDataReaderSample.cpp
 )
 
-add_executable(InputValidationSample ${INPUT_VALIDATION_SAMPLE_SRC})
-AddSample(InputValidationSample)
+add_executable(SpatialTemporalDataReaderSample ${SPATIAL_TEMPORAL_DATA_READER_SAMPLE_SRC})
+AddSample(SpatialTemporalDataReaderSample)
 
-target_link_libraries(InputValidationSample ${XERCESC_LIBRARY})
-
-
-# FilesystemSample
-
-set(FILESYSTEM_SAMPLE_SRC
-    sample/FilesystemSample.cpp
-)
-
-add_executable(FilesystemSample ${FILESYSTEM_SAMPLE_SRC})
-AddSample(FilesystemSample)
-
-target_link_libraries(FilesystemSample ${Boost_LIBRARIES})
+target_link_libraries(SpatialTemporalDataReaderSample util)
+target_link_libraries(SpatialTemporalDataReaderSample ${Boost_LIBRARIES})
+target_link_libraries(SpatialTemporalDataReaderSample ${XERCESC_LIBRARY})

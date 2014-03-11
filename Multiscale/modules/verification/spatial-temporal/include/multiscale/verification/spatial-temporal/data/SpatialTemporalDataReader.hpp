@@ -3,8 +3,13 @@
 
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/xml_parser.hpp>
+
 #include <string>
 #include <unordered_set>
+
+namespace pt = boost::property_tree;
 
 
 namespace multiscale {
@@ -82,6 +87,13 @@ namespace multiscale {
                  */
                 void convertTimePointPropertyTreeToTrace(const pt::ptree &timePointTree, TimePoint &timePoint);
 
+                //! Set the value of the timepoint considering the given timepoint tree
+                /*!
+                 * \param timePointTree Property tree representation of the timepoint
+                 * \param timePoint     The TimePoint representation of the timepoint
+                 */
+                void setTimePointValue(const pt::ptree &timePointTree, TimePoint& timePoint);
+
                 //! Check if the provided property tree contains the attribute "value"
                 /*!
                  * \param propertyTree  The provided property tree
@@ -89,12 +101,12 @@ namespace multiscale {
                  */
                 bool timePointHasValue(const pt::ptree &propertyTree, unsigned long &value);
 
-                //! Add the numeric state variables contained by the property tree to the given timepoint
+                //! Add the numeric state variables and spatial entities contained by the property tree to the given timepoint
                 /*!
                  * \param timePointTree The given property tree
                  * \param timePoint     The given timepoint
                  */
-                void addNumericStateVariablesToTimePoint(const pt::ptree &timePointTree, TimePoint &timePoint);
+                void addEntitiesToTimePoint(const pt::ptree &timePointTree, TimePoint &timePoint);
 
                 //! Add the numeric state variable (provided as a tree) to the provided timepoint
                 /*!
@@ -102,13 +114,6 @@ namespace multiscale {
                  * \param timePoint                 The given timepoint
                  */
                 void addNumericStateVariableToTimePoint(const pt::ptree &numericStateVariableTree, TimePoint &timePoint);
-
-                //! Add the spatial entities contained by the property tree to the given timepoint
-                /*!
-                 * \param timePointTree The given property tree
-                 * \param timePoint     The given timepoint
-                 */
-                void addSpatialEntitiesToTimePoint(const pt::ptree &timePointTree, TimePoint &timePoint);
 
                 //! Add the spatial entity contained by the property tree to the given timePoint
                 /*!
