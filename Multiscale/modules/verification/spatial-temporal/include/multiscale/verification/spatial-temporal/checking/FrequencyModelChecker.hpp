@@ -35,16 +35,27 @@ namespace multiscale {
                 //! Check if more traces are required for evaluating the logic property
                 bool requiresMoreTraces() override;
 
+                //! Check if the given property holds
+                bool doesPropertyHold() override;
+
                 //! Output the results
-                void outputResults() override;
+                std::string getDetailedResults() override;
 
             private:
 
                 //! Initialisation function
                 void initialise();
 
-                //! Convert the result to a string
+                //! Convert the resulting probability to a string
                 std::string resultToString();
+
+                //! Compute the probability that the logic property holds
+                double computeProbabilityThatPropertyHolds();
+
+
+                // Constants
+                static const std::string PROPERTY_HOLDS_WITH_PROBABILITY_LABEL;
+                static const double      THRESH_PROBABILITY_THAT_PROPERTY_HOLDS;
 
         };
 

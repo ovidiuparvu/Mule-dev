@@ -20,7 +20,8 @@ namespace multiscale {
 
             public:
 
-                ModelChecker(const AbstractSyntaxTree &abstractSyntaxTree);
+                ModelChecker(const AbstractSyntaxTree &abstractSyntaxTree)
+                             : abstractSyntaxTree(abstractSyntaxTree) {}
                 virtual ~ModelChecker();
 
                 //! Evaluate the abstract syntax tree for the given trace
@@ -35,8 +36,11 @@ namespace multiscale {
                 //! Check if more traces are required for evaluating the logic property
                 virtual bool requiresMoreTraces() = 0;
 
-                //! Output the results
-                virtual void outputResults() = 0;
+                //! Check if the given property holds
+                virtual bool doesPropertyHold() = 0;
+
+                //! Get a detailed report of the results
+                virtual std::string getDetailedResults() = 0;
 
         };
 

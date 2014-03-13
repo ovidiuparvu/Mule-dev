@@ -1,13 +1,15 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/verification/spatial-temporal/checking/ModelCheckingOutputWriter.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingManager.hpp"
 
 using namespace multiscale::verification;
 
 
 ModelCheckingManager::ModelCheckingManager(const std::string &logicPropertyFilepath,
-                                           const std::string &tracesFolderPath) {
-    initialise(logicPropertyFilepath, tracesFolderPath);
+                                           const std::string &tracesFolderPath,
+                                           unsigned long extraEvaluationTime) {
+    initialise(logicPropertyFilepath, tracesFolderPath, extraEvaluationTime);
 }
 
 ModelCheckingManager::~ModelCheckingManager() {
@@ -24,7 +26,10 @@ void ModelCheckingManager::runFrequencyModelChecking() {
 }
 
 void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
-                                      const std::string &tracesFolderPath) {
+                                      const std::string &tracesFolderPath,
+                                      unsigned long extraEvaluationTime) {
+    this->extraEvaluationTime = extraEvaluationTime;
+
     initialiseLogicProperties(logicPropertyFilepath);
     initialiseTraceReader(tracesFolderPath);
 }
@@ -38,16 +43,25 @@ void ModelCheckingManager::initialiseTraceReader(const std::string &tracesFolder
 }
 
 void ModelCheckingManager::parseLogicProperties() {
-    for (const auto &logicProperty : logicProperties) {
-        // Inform user which logic property will be parsed
-        std::cout << "[ PARSING ] " << logicProperty << std::endl;
+    auto it = logicProperties.begin();
 
-        if (parseLogicProperty(logicProperty)) {
-            std::cout << "[ SUCCESS ]" << std::endl;
+    while (it != logicProperties.end()) {
+        if (parseLogicPropertyAndPrintMessages(*it)) {
+            it++;
         } else {
-            std::cout << "[ FAIL    ]" << std::endl;
+            it = logicProperties.erase(it);
         }
     }
+}
+
+bool ModelCheckingManager::parseLogicPropertyAndPrintMessages(const std::string &logicProperty) {
+    ModelCheckingOutputWriter::printParsingLogicPropertyMessage(logicProperty);
+
+    bool isParsedSuccessfully = parseLogicProperty(logicProperty);
+
+    printParsingMessage(isParsedSuccessfully);
+
+    return isParsedSuccessfully;
 }
 
 bool ModelCheckingManager::parseLogicProperty(const std::string &logicProperty) {
@@ -74,10 +88,41 @@ bool ModelCheckingManager::isValidLogicProperty(const std::string &logicProperty
     return false;
 }
 
+void ModelCheckingManager::printParsingMessage(bool isParsingSuccessful) {
+    if (isParsingSuccessful) {
+        ModelCheckingOutputWriter::printSuccessMessage();
+    } else {
+        ModelCheckingOutputWriter::printFailedMessage();
+    }
+}
+
 void ModelCheckingManager::createModelCheckers() {
     for (const auto &abstractSyntaxTree : abstractSyntaxTrees) {
-        std::shared_ptr<ModelChecker> modelChecker = FrequencyModelChecker(abstractSyntaxTree);
+        modelCheckers.push_back(
+            std::shared_ptr<ModelChecker>(new FrequencyModelChecker(abstractSyntaxTree))
+        );
+    }
+}
 
-        // TODO: Implement
+void ModelCheckingManager::runModelCheckers() {
+    bool continueEvaluation = true;
+
+    while ((continueEvaluation) && (traceReader.hasNext())) {
+        SpatialTemporalTrace trace = traceReader.getNextSpatialTemporalTrace();
+
+        runModelCheckersForTrace(trace, continueEvaluation);
+    }
+}
+
+void ModelCheckingManager::runModelCheckersForTrace(const SpatialTemporalTrace &trace,
+                                                    bool &continueEvaluation) {
+    continueEvaluation = false;
+
+    for (auto &modelChecker : modelCheckers) {
+        if (modelChecker->acceptsMoreTraces()) {
+            modelChecker->evaluate(trace);
+
+            continueEvaluation = true;
+        }
     }
 }

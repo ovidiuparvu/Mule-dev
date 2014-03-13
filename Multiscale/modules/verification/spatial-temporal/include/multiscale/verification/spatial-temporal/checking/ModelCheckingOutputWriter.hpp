@@ -18,17 +18,19 @@ namespace multiscale {
 
                 //! Print a message with the results of checking if the given property holds
                 /*!
-                 * \param result        The result indicating if the logic property holds (with a given probability and/or confidence)
-                 * \param logicProperty The logic property to be verified
+                 * \param propertyHolds     The flag indicating if the logic property holds (with a given probability and/or confidence)
+                 * \param detailedResult    The detailed result report indicating if the logic property holds (with a given probability and/or confidence)
+                 * \param logicProperty     The logic property to be verified
                  */
-                static void printModelCheckingResultMessage(const std::string &result,
+                static void printModelCheckingResultMessage(bool propertyHolds,
+                                                            const std::string &detailedResult,
                                                             const std::string &logicProperty);
 
                 //! Print a success message
                 static void printSuccessMessage();
 
                 //! Print a fail message
-                static void printFailMessage();
+                static void printFailedMessage();
 
             private:
 
@@ -36,7 +38,7 @@ namespace multiscale {
                 static const std::string MSG_PARSING;
                 static const std::string MSG_RESULT;
                 static const std::string MSG_SUCCESS;
-                static const std::string MSG_FAIL;
+                static const std::string MSG_FAILED;
 
         };
 
