@@ -6,46 +6,46 @@
 using namespace multiscale::verification;
 
 
-std::vector<std::string> LogicPropertyDataReader::readLogicQueriesFromFile(const std::string &inputFilepath) {
+std::vector<std::string> LogicPropertyDataReader::readLogicPropertiesFromFile(const std::string &inputFilepath) {
     if (!Filesystem::isValidFilePath(inputFilepath)) {
         MS_throw(InvalidInputException, ERR_INVALID_INPUT_PATH);
     }
 
-    return readLogicQueriesFromValidFilepath(inputFilepath);
+    return readLogicPropertiesFromValidFilepath(inputFilepath);
 }
 
-std::vector<std::string> LogicPropertyDataReader::readLogicQueriesFromValidFilepath(const std::string &inputFilepath) {
+std::vector<std::string> LogicPropertyDataReader::readLogicPropertiesFromValidFilepath(const std::string &inputFilepath) {
     std::ifstream fin(inputFilepath, std::ifstream::in);
 
     if (!fin.is_open()) {
         MS_throw(IOException, ERR_OPEN_INPUT_FILE);
     }
 
-    std::vector<std::string> logicQueries = readLogicQueriesFromOpenStream(fin);
+    std::vector<std::string> logicQueries = readLogicPropertiesFromOpenStream(fin);
 
     fin.close();
 
     return logicQueries;
 }
 
-std::vector<std::string> LogicPropertyDataReader::readLogicQueriesFromOpenStream(std::ifstream &fin) {
-    std::vector<std::string> logicQueries;
+std::vector<std::string> LogicPropertyDataReader::readLogicPropertiesFromOpenStream(std::ifstream &fin) {
+    std::vector<std::string> logicProperties;
     std::string currentLine;
 
     while (getline(fin, currentLine)) {
-        processLineFromInputFile(currentLine, logicQueries);
+        processLineFromInputFile(currentLine, logicProperties);
     }
 
-    createNewLogicProperty(logicQueries);
+    createNewLogicProperty(logicProperties);
 
-    return logicQueries;
+    return logicProperties;
 }
 
 void LogicPropertyDataReader::processLineFromInputFile(const std::string &line,
-                                                    std::vector<std::string> &logicQueries) {
+                                                       std::vector<std::string> &logicProperties) {
     if (line.size() > 0) {
-        if (line[0] == CHAR_START_LOGIC_QUERY) {
-            createNewLogicProperty(logicQueries);
+        if (line[0] == CHAR_START_LOGIC_PROPERTY) {
+            createNewLogicProperty(logicProperties);
             appendLineUsingStringBuilder(line);
         } else if (line[0] == CHAR_START_COMMENT) {
             // Ignore
@@ -55,13 +55,13 @@ void LogicPropertyDataReader::processLineFromInputFile(const std::string &line,
     }
 }
 
-void LogicPropertyDataReader::createNewLogicProperty(std::vector<std::string> &logicQueries) {
+void LogicPropertyDataReader::createNewLogicProperty(std::vector<std::string> &logicProperties) {
     std::string stringBuilderContent;
 
     stringBuilderContent = stringBuilder.str();
 
     if (stringBuilderContent.size() > 0) {
-        logicQueries.push_back(stringBuilderContent);
+        logicProperties.push_back(stringBuilderContent);
     }
 
     removeStringBuilderContents();
@@ -80,5 +80,5 @@ void LogicPropertyDataReader::removeStringBuilderContents() {
 const std::string LogicPropertyDataReader::ERR_INVALID_INPUT_PATH  = "The path to the file containing the logic queries is invalid. Please change.";
 const std::string LogicPropertyDataReader::ERR_OPEN_INPUT_FILE     = "The file containing the logic queries could not be opened. Please make sure it is not used by another process.";
 
-const char LogicPropertyDataReader::CHAR_START_LOGIC_QUERY = 'P';
+const char LogicPropertyDataReader::CHAR_START_LOGIC_PROPERTY = 'P';
 const char LogicPropertyDataReader::CHAR_START_COMMENT     = '#';

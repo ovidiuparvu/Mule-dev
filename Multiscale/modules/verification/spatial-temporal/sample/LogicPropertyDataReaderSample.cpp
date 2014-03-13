@@ -49,7 +49,7 @@ void readQueriesFromFile(const std::string &path) {
     try {
         LogicPropertyDataReader reader;
 
-        std::vector<std::string> queries = reader.readLogicQueriesFromFile(path);
+        std::vector<std::string> queries = reader.readLogicPropertiesFromFile(path);
 
         printQueries(queries);
     } catch (const MultiscaleException &ex) {

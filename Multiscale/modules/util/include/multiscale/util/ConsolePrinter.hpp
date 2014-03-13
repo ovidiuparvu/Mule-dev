@@ -56,6 +56,21 @@ namespace multiscale {
 
         public:
 
+            //! Print a message to the standard output
+            /*!
+             * \param message The given message
+             */
+            static void printMessage(const std::string &message);
+
+            //! Print a message with a coloured tag to the standard output
+            /*!
+             * \param message   The given message
+             * \param tag       The given tag
+             * \param tagColour The colour of the tag
+             */
+            static void printMessageWithColouredTag(const std::string &message, const std::string &tag,
+                                                    const ColourCode &tagColour);
+
             //! Print a coloured message to the standard output
             /*! The message will be printed in colour if and only if the standard output is a terminal.
              *  Otherwise it will be printed without changing colour.
@@ -64,11 +79,17 @@ namespace multiscale {
              */
             static void printColouredMessage(const std::string &message, const ColourCode &colourCode);
 
-            //! Print a message to the standard output
+            //! Print a coloured message with a coloured tag to the standard output
             /*!
-             * \param message The given message
+             * \param message       The given message
+             * \param messageColour The colour of the given message
+             * \param tag           The given tag
+             * \param tagColour     The colour of the given tag
              */
-            static void printMessage(const std::string &message);
+            static void printColouredMessageWithColouredTag(const std::string &message,
+                                                            const ColourCode &messageColour,
+                                                            const std::string &tag,
+                                                            const ColourCode &tagColour);
 
             //! Print a warning containing the given message string to the standard output
             /*!
@@ -78,25 +99,24 @@ namespace multiscale {
 
         private:
 
+            //! Print a (non-coloured) message to the standard output
+            /*!
+             * \param message               The given message
+             * \param appendNewLineAtEnd    Flag indicating if a new line character should be printed in the end
+             */
+            static void printNonColouredMessage(const std::string &message,
+                                                bool appendNewLineAtEnd = true);
+
             //! Print a coloured message to the standard output
             /*! The message will be printed in colour if and only if the standard output is a terminal.
-             *  Otherwise it will be printed without changing colour.
+             *  Otherwise it will be printed using default colour.
              *
-             * \param message The given message
+             * \param message               The given message
+             * \param colourCode            The given colour code
+             * 'param appendNewLineAtEnd    Flag indicating if a new line character should be printed in the end
              */
-            static void printMessageUsingColour(const std::string &message, const ColourCode &colourCode);
-
-            //! Print a coloured warning containing the given message string
-            /*!
-             * \param message The given message
-             */
-            static void printColouredWarningMessage(const std::string &message, const ColourCode &colourCode);
-
-            //! Print a non-coloured warning containing the given message string
-            /*!
-             * \param message The given message
-             */
-            static void printNonColouredWarningMessage(const std::string &message);
+            static void printMessageUsingColour(const std::string &message, const ColourCode &colourCode,
+                                                bool appendNewLineAtEnd = true);
 
             //! Get the platform specific colour code for the given generic platform colour code
             /*!
@@ -126,6 +146,12 @@ namespace multiscale {
             #elif defined MULTISCALE_UNIX
                 static std::string getResetCode();
             #endif
+
+            //! Print new line character if shouldPrint flag is true
+            /*!
+             * \param shouldPrint   Flag indicating if a new line character should be printed to the console
+             */
+            static void printNewLine(bool shouldPrint = true);
 
 
             // Constants

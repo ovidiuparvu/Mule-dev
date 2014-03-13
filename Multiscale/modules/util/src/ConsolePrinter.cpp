@@ -18,72 +18,78 @@
 using namespace multiscale;
 
 
-void ConsolePrinter::printColouredMessage(const std::string &message, const ColourCode &colourCode) {
+void ConsolePrinter::printMessage(const std::string &message) {
+    printNonColouredMessage(message, true);
+}
+
+void ConsolePrinter::printMessageWithColouredTag(const std::string &message, const std::string &tag,
+                                                 const ColourCode &tagColour) {
+    // If the standard output is a terminal then print output in colour
     if (isatty(fileno(stdout))) {
-        printMessageUsingColour(message, ColourCode::YELLOW);
+        printMessageUsingColour(tag + SEPARATOR, tagColour, false);
     } else {
-        printMessage(message);
+        printNonColouredMessage(tag + SEPARATOR, false);
+    }
+
+    printNonColouredMessage(message, true);
+}
+
+void ConsolePrinter::printColouredMessage(const std::string &message, const ColourCode &colourCode) {
+    // If the standard output is a terminal then print output in colour
+    if (isatty(fileno(stdout))) {
+        printMessageUsingColour(message, colourCode);
+    } else {
+        printNonColouredMessage(message, true);
     }
 }
 
-void ConsolePrinter::printMessage(const std::string &message) {
-    std::cout << message << std::endl;
+void ConsolePrinter::printColouredMessageWithColouredTag(const std::string &message,
+                                                         const ColourCode &messageColour,
+                                                         const std::string &tag,
+                                                         const ColourCode &tagColour) {
+    // If the standard output is a terminal then print output in colour
+    if (isatty(fileno(stdout))) {
+        printMessageUsingColour(tag + SEPARATOR, tagColour, false);
+        printMessageUsingColour(message, messageColour);
+    } else {
+        printNonColouredMessage(tag + SEPARATOR, false);
+        printNonColouredMessage(message, true);
+    }
 }
 
 void ConsolePrinter::printWarningMessage(const std::string &message) {
-    // If the standard output is a terminal then print output in colour
-    if (isatty(fileno(stdout))) {
-        printColouredWarningMessage(message, ColourCode::YELLOW);
-    } else {
-        printNonColouredWarningMessage(message);
-    }
+    printMessageWithColouredTag(message, WARNING_TAG, ColourCode::YELLOW);
 }
 
-void ConsolePrinter::printMessageUsingColour(const std::string &message, const ColourCode &colourCode) {
+void ConsolePrinter::printNonColouredMessage(const std::string &message,
+                                             bool appendNewLineAtEnd) {
+    std::cout << message;
+
+    printNewLine(appendNewLineAtEnd);
+}
+
+void ConsolePrinter::printMessageUsingColour(const std::string &message,
+                                             const ColourCode &colourCode,
+                                             bool appendNewLineAtEnd) {
     #if defined MULTISCALE_UNIX
         std::cout << getUnixColourCode(getColourCode(colourCode))
                   << message
-                  << getResetCode()
-                  << std::endl;
+                  << getResetCode();
+
+        printNewLine(appendNewLineAtEnd);
     #elif defined MULTISCALE_WINDOWS
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), getColourCode(colourCode));
 
-        std::cout << message << std::endl;
+        std::cout << message;
+
+        printNewLine(appendNewLineAtEnd);
 
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), getResetCode());
     #else
-        std::cout << message << std::endl;
+        std::cout << message;
+
+        printNewLine(appendNewLineAtEnd);
     #endif
-}
-
-void ConsolePrinter::printColouredWarningMessage(const std::string &message, const ColourCode &colourCode) {
-    #if defined MULTISCALE_UNIX
-        std::cout << getUnixColourCode(getColourCode(colourCode))
-                  << WARNING_TAG
-                  << getResetCode()
-                  << SEPARATOR
-                  << message << std::endl;
-    #elif defined MULTISCALE_WINDOWS
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), getColourCode(colourCode));
-
-        std::cout << WARNING_TAG;
-
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), getResetCode());
-
-        std::cout << SEPARATOR << message << std::endl;
-    #else
-        std::cout << WARNING_TAG
-                  << SEPARATOR
-                  << message
-                  << std::endl;
-    #endif
-}
-
-void ConsolePrinter::printNonColouredWarningMessage(const std::string &message) {
-    std::cout << WARNING_TAG
-              << SEPARATOR
-              << message
-              << std::endl;
 }
 
 #ifdef MULTISCALE_WINDOWS
@@ -174,6 +180,12 @@ std::string ConsolePrinter::unixColourCodeToString(const UnixColourCode &unixCol
         return (CSI_START_TAG + CSI_RESET_CODE + CSI_COLOUR_CODE_END_TAG);
     }
 #endif
+
+void ConsolePrinter::printNewLine(bool shouldPrint) {
+    if (shouldPrint) {
+        std::cout << std::endl;
+    }
+}
 
 
 // Constants

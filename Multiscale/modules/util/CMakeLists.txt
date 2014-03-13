@@ -98,7 +98,6 @@ AddSample(MinEnclosingTriangleFinderSample)
 
 target_link_libraries(MinEnclosingTriangleFinderSample util)
 target_link_libraries(MinEnclosingTriangleFinderSample ${OpenCV_LIBRARIES})
-target_link_libraries(MinEnclosingTriangleFinderSample gtest gtest_main)
 
 
 # RGBColourGeneratorSample
@@ -111,4 +110,15 @@ add_executable(RGBColourGeneratorSample ${RGB_COLOUR_GENERATOR_SAMPLE_SRC})
 AddSample(RGBColourGeneratorSample)
 
 target_link_libraries(RGBColourGeneratorSample util)
-target_link_libraries(RGBColourGeneratorSample gtest gtest_main)
+
+
+# ConsolePrinterSample
+
+set(CONSOLE_PRINTER_SAMPLE_SRC
+    sample/ConsolePrinterSample.cpp
+)
+
+add_executable(ConsolePrinterSample ${CONSOLE_PRINTER_SAMPLE_SRC})
+AddSample(ConsolePrinterSample)
+
+target_link_libraries(ConsolePrinterSample util)
