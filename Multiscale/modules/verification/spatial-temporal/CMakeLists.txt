@@ -143,6 +143,40 @@ AddSample(ParserEvaluationSample)
 target_link_libraries(ParserEvaluationSample util)
 
 
+# LogicPropertyDataReaderSample
+
+set(LOGIC_PROPERTY_DATA_READER_SAMPLE_SRC
+    src/data/LogicPropertyDataReader.cpp
+    
+    src/parsing/Parser.cpp
+    
+    src/attribute/BinaryNumericMeasureAttribute.cpp
+    src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ComparatorAttribute.cpp
+    src/attribute/ProbabilisticLogicPropertyAttribute.cpp
+    src/attribute/QuaternarySubsetMeasureAttribute.cpp
+    src/attribute/SpatialMeasureAttribute.cpp
+    src/attribute/SubsetSpecificAttribute.cpp
+    src/attribute/TernarySubsetMeasureAttribute.cpp
+    src/attribute/UnaryNumericMeasureAttribute.cpp
+    src/attribute/UnarySubsetMeasureAttribute.cpp
+
+    src/exception/ParserGrammarExceptionHandler.cpp
+    
+    src/model/AbstractSyntaxTree.cpp
+    src/model/SpatialEntity.cpp
+    src/model/SpatialTemporalTrace.cpp
+    src/model/TimePoint.cpp
+    
+    sample/LogicPropertyDataReaderSample.cpp
+)
+
+add_executable(LogicPropertyDataReaderSample ${LOGIC_PROPERTY_DATA_READER_SAMPLE_SRC})
+AddSample(LogicPropertyDataReaderSample)
+
+target_link_libraries(LogicPropertyDataReaderSample util)
+
+
 # SpatialTemporalDataReaderSample
 
 set(SPATIAL_TEMPORAL_DATA_READER_SAMPLE_SRC
@@ -159,5 +193,4 @@ add_executable(SpatialTemporalDataReaderSample ${SPATIAL_TEMPORAL_DATA_READER_SA
 AddSample(SpatialTemporalDataReaderSample)
 
 target_link_libraries(SpatialTemporalDataReaderSample util)
-target_link_libraries(SpatialTemporalDataReaderSample ${Boost_LIBRARIES})
 target_link_libraries(SpatialTemporalDataReaderSample ${XERCESC_LIBRARY})

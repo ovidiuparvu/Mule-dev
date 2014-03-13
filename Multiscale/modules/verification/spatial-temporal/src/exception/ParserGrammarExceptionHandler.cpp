@@ -1,5 +1,10 @@
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarExceptionHandler.hpp"
 
+#include <algorithm>
+#include <functional>
+#include <cctype>
+#include <locale>
+
 using namespace multiscale::verification;
 
 
@@ -28,11 +33,11 @@ void ParserGrammarExceptionHandler::handleProbabilityException(const string &ini
                 << "Please change the value of the following invalid probability \""
                 << initialString.substr(errorPositionIndex, expectedToken.length())
                 << "\" such that it is in the interval [0, 1]. "
-                << "You can find the error starting position emphasised by \">>>\" and \"<<<\" below (column "
+                << "You can find the error starting position emphasised by \">>>\" and \"<<<\" below (character "
                 << (errorPositionIndex + 1)
                 << "):" << endl
                 << initialString.substr(0, errorPositionIndex) + ">>>" +
-                initialString.at(errorPositionIndex) + "<<<" + errorString.substr(1);
+                   initialString.at(errorPositionIndex) + "<<<" + errorString.substr(1);
 
     MS_throw(InvalidInputException, strStream.str());
 }
@@ -47,10 +52,10 @@ void ParserGrammarExceptionHandler::handleUnparseableInputException(const string
                 << "Please rewrite the unparseable part \""
                 << errorString
                 << "\" of the query. "
-                << "You can find the unparseable input emphasised by \">>>\" and \"<<<\" below (column "
+                << "You can find the unparseable input emphasised by \">>>\" and \"<<<\" below (character "
                 << (correctlyParsedString.length() + 1)
                 << "): " << endl
-                << correctlyParsedString + ">>>" + errorString + "<<<";
+                << correctlyParsedString + ">>>" + trimRight(errorString) + "<<<";
 
     MS_throw(InvalidInputException, strStream.str());
 }
@@ -66,10 +71,10 @@ void ParserGrammarExceptionHandler::handleExtraInputException(const string &init
                 << extraInput
                 << "\" following the syntactically correct query \""
                 << correctlyParsedString << "\". "
-                << "You can find the extra input emphasised by \">>>\" and \"<<<\" below (column "
+                << "You can find the extra input emphasised by \">>>\" and \"<<<\" below (character "
                 << (correctlyParsedString.length() + 1)
                 << "): " << endl
-                << correctlyParsedString + ">>>" + extraInput + "<<<";
+                << correctlyParsedString + ">>>" + trimRight(extraInput) + "<<<";
 
     MS_throw(InvalidInputException, strStream.str());
 }
@@ -88,11 +93,11 @@ string ParserGrammarExceptionHandler::handleUnexpectedTokenInString(const string
                 << "instead of the expected token \""
                 << expectedToken
                 << "\". "
-                << "You can find the error starting position emphasised by \">>>\" and \"<<<\" below (column "
+                << "You can find the error starting position emphasised by \">>>\" and \"<<<\" below (character "
                 << (errorPositionIndex + 1)
                 << "):" << endl
                 << initialString.substr(0, errorPositionIndex) + ">>>" +
-                initialString.at(errorPositionIndex) + "<<<" + errorString.substr(1);
+                   initialString.at(errorPositionIndex) + "<<<" + errorString.substr(1);
 
     return strStream.str();
 }
@@ -109,6 +114,20 @@ string ParserGrammarExceptionHandler::handleExpectedTokenAtEndOfString(const str
                 << initialString;
 
     return strStream.str();
+}
+
+string ParserGrammarExceptionHandler::trimRight(const string &inputString) {
+    string trimmedString = inputString;
+
+    trimmedString.erase(
+        std::find_if(
+            trimmedString.rbegin(),
+            trimmedString.rend(),
+            std::not1(std::ptr_fun<int, int>(std::isspace))).base()
+        , trimmedString.end()
+   );
+
+   return trimmedString;
 }
 
 string ParserGrammarExceptionHandler::getIntroductoryErrorMessage() {

@@ -68,6 +68,12 @@ namespace multiscale {
                 static std::string handleExpectedTokenAtEndOfString(const std::string &initialString,
                                                                     const std::string &expectedToken);
 
+                //! Remove the trailing "new line" characters from the end of the string
+                /*!
+                 * \param inputString   The given input string
+                 */
+                static std::string trimRight(const std::string &inputString);
+
                 //! Return the generic introductory error message
                 static std::string getIntroductoryErrorMessage();
 
