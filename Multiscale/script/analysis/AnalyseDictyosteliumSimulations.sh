@@ -24,8 +24,12 @@ HOME_FOLDER=`pwd`;
 
 R_FOLDER="${HOME_FOLDER}/R";
 
+INPUT_FILENAME=${simulationInputFile##*/};
+INPUT_BASENAME=${INPUT_FILENAME%.*};
+INPUT_BASENAME_WITHOUT_PREFIX=${INPUT_BASENAME#*_};
+
 DATE=`date +"%F-%T"`;
-OUT_FOLDER="${HOME_FOLDER}/results/${simulationGridHeight}x${simulationGridWidth}_${nrOfDictyosteliumCells}/${DATE}";
+OUT_FOLDER="${HOME_FOLDER}/results/${INPUT_BASENAME_WITHOUT_PREFIX}/${DATE}";
 
 OUT_ANALYSIS_FOLDER="${OUT_FOLDER}/analysis";
 OUT_VISUALISATION_FOLDER="${OUT_FOLDER}/visualisation";
@@ -49,11 +53,12 @@ OUT_COMPARE_COORDINATES_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_compare_co
 OUT_DISTANCE_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_distance_cAMP_dicty_clusters";
 OUT_NR_CAMP_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_nr_cAMP_clusters";
 OUT_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_nr_dicty_clusters";
+OUT_NR_DICTY_AND_CAMP_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_nr_dicty_and_cAMP_clusters";
 OUT_AREA_PILEUP_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_area_pileup_nr_dicty_clusters";
 OUT_TOTAL_CAMP_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/total_cAMP";
 
-DICTY_FILE_BASENAME="dictyostelium_${simulationGridHeight}x${simulationGridWidth}_${nrOfDictyosteliumCells}";
-CAMP_FILE_BASENAME="cAMP_${simulationGridHeight}x${simulationGridWidth}_${nrOfDictyosteliumCells}";
+DICTY_FILE_BASENAME="dictyostelium_${INPUT_BASENAME_WITHOUT_PREFIX}";
+CAMP_FILE_BASENAME="cAMP_${INPUT_BASENAME_WITHOUT_PREFIX}";
 
 DICTY_SIMULATION_FILE="${OUT_FOLDER}/${DICTY_FILE_BASENAME}.csv";
 CAMP_SIMULATION_FILE="${OUT_FOLDER}/${CAMP_FILE_BASENAME}.csv";
@@ -76,8 +81,13 @@ mkdir -p ${OUT_COMPARE_COORDINATES_ANALYSIS_FOLDER};
 mkdir -p ${OUT_DISTANCE_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_NR_CAMP_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER};
+mkdir -p ${OUT_NR_DICTY_AND_CAMP_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_AREA_PILEUP_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_TOTAL_CAMP_ANALYSIS_FOLDER};
+
+
+# Start the timer for measuring the total execution time
+startTime=$(date +%s.%N);
 
 
 ####################################################################################
@@ -167,8 +177,8 @@ cd ${HOME_FOLDER};
 # Define the results output files
 clustersOutputFile=${OUT_DICTY_ANALYSIS_FOLDER}/"results_clusters";
 nrOfClustersOutputFile=${OUT_DICTY_ANALYSIS_FOLDER}/"results_nr_clusters";
-clusterednessOutputFile=${OUT_DICTY_ANALYSIS_FOLDER}/"results_clusteredness";
-pileupOutputFile=${OUT_DICTY_ANALYSIS_FOLDER}/"results_pileup";
+clustersClusterednessOutputFile=${OUT_DICTY_ANALYSIS_FOLDER}/"results_clusteredness";
+clustersPileupOutputFile=${OUT_DICTY_ANALYSIS_FOLDER}/"results_pileup";
 
 # Define the basename of the images without numeric index at the end
 imageName=`find ${OUT_DICTY_IMG_FOLDER} -name "*.png" | head -n1`;
@@ -181,8 +191,8 @@ find ${OUT_DICTY_IMG_FOLDER} -name "*.png" | parallel ./bin/SimulationDetectClus
 # Empty files which will store final results
 echo "Clusteredness degree,Pile up degree,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${clustersOutputFile};
 echo "Number of clusters" > ${nrOfClustersOutputFile};
-echo "Clusteredness" > ${clusterednessOutputFile};
-echo "Pile up" > ${pileupOutputFile};
+echo "Clusteredness" > ${clustersClusterednessOutputFile};
+echo "Pile up" > ${clustersPileupOutputFile};
 
 # Write the clusters, number of clusters, overall clusteredness and overall pileup in separate files
 for output in `find ${OUT_DICTY_ANALYSIS_FOLDER} -name "*.out" | sort -V`;
@@ -190,9 +200,9 @@ do
     cat ${output} | head -n-3 | tail -n+2 >> ${clustersOutputFile};
     cat ${output} | head -n-3 | tail -n+2 | wc -l >> ${nrOfClustersOutputFile}
 
-    cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | head -n 1 >> ${clusterednessOutputFile};
+    cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | head -n 1 >> ${clustersClusterednessOutputFile};
 
-    cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | tail -n 1 >> ${pileupOutputFile};
+    cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | tail -n 1 >> ${clustersPileupOutputFile};
 done
 
 
@@ -210,8 +220,8 @@ imageBasenameRoot=`echo ${imageBasename} | rev | cut -d'_' -f2- | rev`;
 # Define the results output files
 regionsOutputFile=${OUT_CAMP_ANALYSIS_FOLDER}/"results_regions";
 nrOfRegionsOutputFile=${OUT_CAMP_ANALYSIS_FOLDER}/"results_nr_regions";
-clusterednessOutputFile=${OUT_CAMP_ANALYSIS_FOLDER}/"results_clusteredness";
-pileupOutputFile=${OUT_CAMP_ANALYSIS_FOLDER}/"results_pileup";
+regionsClusterednessOutputFile=${OUT_CAMP_ANALYSIS_FOLDER}/"results_clusteredness";
+regionsPileupOutputFile=${OUT_CAMP_ANALYSIS_FOLDER}/"results_pileup";
 
 # Run the region detection procedure for each image in parallel
 find ${OUT_CAMP_IMG_FOLDER} -name "*.png" | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${OUT_CAMP_ANALYSIS_FOLDER}/{/.} --debug-mode="false"
@@ -219,8 +229,8 @@ find ${OUT_CAMP_IMG_FOLDER} -name "*.png" | parallel ./bin/RectangularDetectRegi
 # Empty files which will store final results
 echo "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${regionsOutputFile};
 echo "Number of regions" > ${nrOfRegionsOutputFile};
-echo "Clusteredness" > ${clusterednessOutputFile};
-echo "Pile up" > ${pileupOutputFile};
+echo "Clusteredness" > ${regionsClusterednessOutputFile};
+echo "Pile up" > ${regionsPileupOutputFile};
 
 # Write the regions, number of regions, overall clusteredness and overall pileup in separate files
 for output in `find ${OUT_CAMP_ANALYSIS_FOLDER} -name "*.out" | sort -V`;
@@ -228,9 +238,9 @@ do
     cat ${output} | head -n-3 | tail -n+2 >> ${regionsOutputFile};
     cat ${output} | head -n-3 | tail -n+2 | wc -l >> ${nrOfRegionsOutputFile}
 
-    cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | head -n 1 >> ${clusterednessOutputFile};
+    cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | head -n 1 >> ${regionsClusterednessOutputFile};
 
-    cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | tail -n 1 >> ${pileupOutputFile};
+    cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | tail -n 1 >> ${regionsPileupOutputFile};
 done
 
 
@@ -244,9 +254,17 @@ cp ${R_FOLDER}/*.R ${OUT_ANALYSIS_FOLDER};
 
 cd ${OUT_ANALYSIS_FOLDER};
 
-Rscript AnalyseResultsBatch.R "${OUT_DICTY_ANALYSIS_FOLDER}/results_clusters" "${OUT_DICTY_ANALYSIS_FOLDER}/results_nr_clusters" "${OUT_CAMP_ANALYSIS_FOLDER}/results_regions" "${OUT_CAMP_ANALYSIS_FOLDER}/results_nr_regions";
+Rscript AnalyseResultsBatch.R "${clustersOutputFile}" "${nrOfClustersOutputFile}" "${clustersClusterednessOutputFile}" "${regionsOutputFile}" "${nrOfRegionsOutputFile}" "${regionsClusterednessOutputFile}";
 Rscript TotalCAMP.R "${CAMP_SIMULATION_FILE}" "${OUT_TOTAL_CAMP_ANALYSIS_FOLDER}/total_cAMP.svg"
 
 rm -f ${OUT_ANALYSIS_FOLDER}/*.R;
 
 cd ${HOME_FOLDER};
+
+
+# End the timer for measuring the total execution time
+endTime=$(date +%s.%N);
+
+# Print the total execution time
+echo 
+echo "Total execution time: " $(echo "${endTime} - ${startTime}" | bc) " seconds.";
