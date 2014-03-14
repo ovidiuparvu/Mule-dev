@@ -114,6 +114,16 @@ void ModelCheckingManager::runModelCheckers() {
     }
 }
 
+void ModelCheckingManager::runModelCheckersForCurrentlyExistingTraces() {
+    bool continueEvaluation = true;
+
+    while ((continueEvaluation) && (traceReader.hasNext())) {
+        SpatialTemporalTrace trace = traceReader.getNextSpatialTemporalTrace();
+
+        runModelCheckersForTrace(trace, continueEvaluation);
+    }
+}
+
 void ModelCheckingManager::runModelCheckersForTrace(const SpatialTemporalTrace &trace,
                                                     bool &continueEvaluation) {
     continueEvaluation = false;
@@ -125,4 +135,8 @@ void ModelCheckingManager::runModelCheckersForTrace(const SpatialTemporalTrace &
             continueEvaluation = true;
         }
     }
+}
+
+void ModelCheckingManager::runModelCheckersAndRequestAdditionalTraces() {
+
 }

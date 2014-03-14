@@ -106,9 +106,6 @@ namespace multiscale {
                 //! Run the model checkers and verify the logic properties for the currently existing traces
                 void runModelCheckersForCurrentlyExistingTraces();
 
-                //! Run the model checkers and request additional traces
-                void runModelCheckersAndRequestAdditionalTraces();
-
                 //! Run the model checkers and verify the logic properties considering the given trace
                 /*! If none of the model checkers need additional traces then the continueEvaluation flag
                  *  will be set to false.
@@ -118,6 +115,9 @@ namespace multiscale {
                  */
                 void runModelCheckersForTrace(const SpatialTemporalTrace &trace,
                                               bool &continueEvaluation);
+
+                //! Run the model checkers and request additional traces
+                void runModelCheckersAndRequestAdditionalTraces();
 
                 //! Output the model checking results
                 void outputModelCheckersResults();

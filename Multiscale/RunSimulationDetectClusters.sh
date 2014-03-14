@@ -48,8 +48,8 @@ then
     # Write the clusters, number of clusters, overall clusteredness and overall pileup in separate files
     for output in `ls -1v ${outputFolder}/*.out`;
     do
-        cat ${output} | head -n-3 | tail -n+3 >> ${clustersOutputFile};
-        cat ${output} | head -n-3 | tail -n+3 | wc -l >> ${nrOfClustersOutputFile}
+        cat ${output} | head -n-3 | tail -n+2 >> ${clustersOutputFile};
+        cat ${output} | head -n-3 | tail -n+2 | wc -l >> ${nrOfClustersOutputFile}
 
         cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | head -n 1 >> ${clusterednessOutputFile};
    
