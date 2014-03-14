@@ -34,6 +34,9 @@ namespace multiscale {
                 //! Check if there are any remaining valid unprocessed traces in the given folder
                 bool hasNext();
 
+                //! Refresh the list of traces found in the given folder
+                void refresh();
+
                 //! Return the next spatial temporal trace
                 SpatialTemporalTrace getNextSpatialTemporalTrace();
 

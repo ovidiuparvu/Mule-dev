@@ -5,7 +5,10 @@
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
+#include <chrono>
+#include <ctime>
 #include <string>
+#include <thread>
 #include <vector>
 
 
@@ -18,20 +21,21 @@ namespace multiscale {
 
             private:
 
-                unsigned long                               extraEvaluationTime;            /*!< The number of minutes for which the program waits for
-                                                                                                 new traces to be added to the trace folder */
+                std::chrono::time_point<std::chrono::system_clock>  evaluationStartTime;            /*!< The start time for the evaluation process */
+                unsigned long                                       extraEvaluationTime;            /*!< The number of minutes for which the program waits for
+                                                                                                         new traces to be added to the trace folder */
 
-                Parser                                      parser;                         /*!< The parser used to verify if logical properties
-                                                                                                 are syntactically correct */
+                Parser                                              parser;                         /*!< The parser used to verify if logical properties
+                                                                                                         are syntactically correct */
 
-                std::vector<std::string>                    logicProperties;                /*!< The collection of logic properties */
-                std::vector<AbstractSyntaxTree>             abstractSyntaxTrees;            /*!< The collection of abstract syntax tree obtained after
-                                                                                                 parsing the logic properties */
+                std::vector<std::string>                            logicProperties;                /*!< The collection of logic properties */
+                std::vector<AbstractSyntaxTree>                     abstractSyntaxTrees;            /*!< The collection of abstract syntax tree obtained after
+                                                                                                         parsing the logic properties */
 
-                LogicPropertyDataReader                     logicPropertyReader;            /*!< The logic property reader */
-                SpatialTemporalDataReader                   traceReader;                    /*!< The behaviour/trace reader */
+                LogicPropertyDataReader                             logicPropertyReader;            /*!< The logic property reader */
+                SpatialTemporalDataReader                           traceReader;                    /*!< The behaviour/trace reader */
 
-                std::vector<std::shared_ptr<ModelChecker>>  modelCheckers;                  /*!< The collection of model checkers */
+                std::vector<std::shared_ptr<ModelChecker>>          modelCheckers;                  /*!< The collection of model checkers */
 
             public:
 
@@ -66,6 +70,14 @@ namespace multiscale {
                  */
                 void initialiseTraceReader(const std::string &tracesFolderPath);
 
+                //! Create the frequency model checker instances
+                /*! Each model checker instance verifies one logic property
+                 */
+                void createFrequencyModelCheckers();
+
+                //! Run the model checking tasks
+                void runModelCheckingTasks();
+
                 //! Parse the logic properties and create abstract syntax trees whenever a logic property was successfully parsed
                 void parseLogicProperties();
 
@@ -95,11 +107,6 @@ namespace multiscale {
                  */
                 void printParsingMessage(bool isParsingSuccessful);
 
-                //! Create the model checker instances
-                /*! Each model checker instance verifies one logic property
-                 */
-                void createModelCheckers();
-
                 //! Run the model checkers and verify the logic properties
                 void runModelCheckers();
 
@@ -119,12 +126,25 @@ namespace multiscale {
                 //! Run the model checkers and request additional traces
                 void runModelCheckersAndRequestAdditionalTraces();
 
+                //! Check if there is evaluation time remaining
+                bool isEvaluationTimeRemaining();
+
+                //! Check if there exist model checkers which require extra traces
+                bool areUnfinishedModelCheckingTasks();
+
+                //! Wait TRACE_INPUT_REFRESH_TIMEOUT minutes before updating the trace reader
+                void waitBeforeRetry();
+
+                //! Update trace reader
+                void updateTraceReader();
+
                 //! Output the model checking results
                 void outputModelCheckersResults();
 
 
                 // Constants
-                static const unsigned long TRACE_INPUT_REFRESH_TIMEOUT; /*!< The number of minutes for which the manager waits before updating the trace reader */
+                static const unsigned long TRACE_INPUT_REFRESH_TIMEOUT; /*!< The number of seconds for which the manager waits before updating the trace reader */
+                static const unsigned long NR_SECONDS_IN_ONE_MINUTE;
 
         };
 

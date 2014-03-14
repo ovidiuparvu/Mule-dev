@@ -19,16 +19,15 @@ ModelCheckingManager::~ModelCheckingManager() {
 }
 
 void ModelCheckingManager::runFrequencyModelChecking() {
-    parseLogicProperties();
-    createModelCheckers();
-    runModelCheckers();
-    outputModelCheckersResults();
+    createFrequencyModelCheckers();
+    runModelCheckingTasks();
 }
 
 void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
                                       const std::string &tracesFolderPath,
                                       unsigned long extraEvaluationTime) {
     this->extraEvaluationTime = extraEvaluationTime;
+    this->evaluationStartTime = std::chrono::system_clock::now();
 
     initialiseLogicProperties(logicPropertyFilepath);
     initialiseTraceReader(tracesFolderPath);
@@ -52,6 +51,20 @@ void ModelCheckingManager::parseLogicProperties() {
             it = logicProperties.erase(it);
         }
     }
+}
+
+void ModelCheckingManager::createFrequencyModelCheckers() {
+    for (const auto &abstractSyntaxTree : abstractSyntaxTrees) {
+        modelCheckers.push_back(
+            std::shared_ptr<ModelChecker>(new FrequencyModelChecker(abstractSyntaxTree))
+        );
+    }
+}
+
+void ModelCheckingManager::runModelCheckingTasks() {
+    parseLogicProperties();
+    runModelCheckers();
+    outputModelCheckersResults();
 }
 
 bool ModelCheckingManager::parseLogicPropertyAndPrintMessages(const std::string &logicProperty) {
@@ -96,22 +109,9 @@ void ModelCheckingManager::printParsingMessage(bool isParsingSuccessful) {
     }
 }
 
-void ModelCheckingManager::createModelCheckers() {
-    for (const auto &abstractSyntaxTree : abstractSyntaxTrees) {
-        modelCheckers.push_back(
-            std::shared_ptr<ModelChecker>(new FrequencyModelChecker(abstractSyntaxTree))
-        );
-    }
-}
-
 void ModelCheckingManager::runModelCheckers() {
-    bool continueEvaluation = true;
-
-    while ((continueEvaluation) && (traceReader.hasNext())) {
-        SpatialTemporalTrace trace = traceReader.getNextSpatialTemporalTrace();
-
-        runModelCheckersForTrace(trace, continueEvaluation);
-    }
+    runModelCheckersForCurrentlyExistingTraces();
+    runModelCheckersAndRequestAdditionalTraces();
 }
 
 void ModelCheckingManager::runModelCheckersForCurrentlyExistingTraces() {
@@ -138,5 +138,52 @@ void ModelCheckingManager::runModelCheckersForTrace(const SpatialTemporalTrace &
 }
 
 void ModelCheckingManager::runModelCheckersAndRequestAdditionalTraces() {
-
+    while ((isEvaluationTimeRemaining()) && (areUnfinishedModelCheckingTasks())) {
+        waitBeforeRetry();
+        updateTraceReader();
+        runModelCheckersForCurrentlyExistingTraces();
+    }
 }
+
+bool ModelCheckingManager::isEvaluationTimeRemaining() {
+    std::chrono::time_point<std::chrono::system_clock> currentTime = std::chrono::system_clock::now();
+    std::chrono::duration<double> elapsedSeconds = (currentTime - evaluationStartTime);
+
+    double nrOfMinutes = ((elapsedSeconds.count()) / NR_SECONDS_IN_ONE_MINUTE);
+
+    return (nrOfMinutes < extraEvaluationTime);
+}
+
+bool ModelCheckingManager::areUnfinishedModelCheckingTasks() {
+    for (const auto &modelChecker : modelCheckers) {
+        if (modelChecker->requiresMoreTraces()) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void ModelCheckingManager::waitBeforeRetry() {
+    std::this_thread::sleep_for(std::chrono::seconds(TRACE_INPUT_REFRESH_TIMEOUT));
+}
+
+void ModelCheckingManager::updateTraceReader() {
+    traceReader.refresh();
+}
+
+void ModelCheckingManager::outputModelCheckersResults() {
+    for (auto i = 0; i < modelCheckers.size(); i++) {
+        ModelCheckingOutputWriter::printModelCheckingResultMessage(
+            modelCheckers[i]->doesPropertyHold(),
+            modelCheckers[i]->getDetailedResults(),
+            logicProperties[i]
+        );
+    }
+}
+
+
+// Constants
+
+const unsigned long ModelCheckingManager::TRACE_INPUT_REFRESH_TIMEOUT   = 30;
+const unsigned long ModelCheckingManager::NR_SECONDS_IN_ONE_MINUTE      = 60;

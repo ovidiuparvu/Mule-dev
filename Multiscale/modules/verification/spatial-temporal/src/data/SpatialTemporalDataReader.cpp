@@ -23,13 +23,11 @@ SpatialTemporalDataReader::~SpatialTemporalDataReader() {
 }
 
 bool SpatialTemporalDataReader::hasNext() {
-    if (hasValidNext()) {
-        return true;
-    } else {
-        updateFilesLists();
+    return hasValidNext();
+}
 
-        return hasValidNext();
-    }
+void SpatialTemporalDataReader::refresh() {
+    updateFilesLists();
 }
 
 SpatialTemporalTrace SpatialTemporalDataReader::getNextSpatialTemporalTrace() {
