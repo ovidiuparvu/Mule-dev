@@ -50,6 +50,7 @@ OUT_DISTANCE_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_distance_cAM
 OUT_NR_CAMP_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_nr_cAMP_clusters";
 OUT_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_nr_dicty_clusters";
 OUT_AREA_PILEUP_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/dicty_area_pileup_nr_dicty_clusters";
+OUT_TOTAL_CAMP_ANALYSIS_FOLDER="${OUT_ANALYSIS_FOLDER}/total_cAMP";
 
 DICTY_FILE_BASENAME="dictyostelium_${simulationGridHeight}x${simulationGridWidth}_${nrOfDictyosteliumCells}";
 CAMP_FILE_BASENAME="cAMP_${simulationGridHeight}x${simulationGridWidth}_${nrOfDictyosteliumCells}";
@@ -76,6 +77,7 @@ mkdir -p ${OUT_DISTANCE_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_NR_CAMP_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER};
 mkdir -p ${OUT_AREA_PILEUP_NR_DICTY_CLUSTERS_ANALYSIS_FOLDER};
+mkdir -p ${OUT_TOTAL_CAMP_ANALYSIS_FOLDER};
 
 
 ####################################################################################
@@ -243,6 +245,7 @@ cp ${R_FOLDER}/*.R ${OUT_ANALYSIS_FOLDER};
 cd ${OUT_ANALYSIS_FOLDER};
 
 Rscript AnalyseResultsBatch.R "${OUT_DICTY_ANALYSIS_FOLDER}/results_clusters" "${OUT_DICTY_ANALYSIS_FOLDER}/results_nr_clusters" "${OUT_CAMP_ANALYSIS_FOLDER}/results_regions" "${OUT_CAMP_ANALYSIS_FOLDER}/results_nr_regions";
+Rscript TotalCAMP.R "${CAMP_SIMULATION_FILE}" "${OUT_TOTAL_CAMP_ANALYSIS_FOLDER}/total_cAMP.svg"
 
 rm -f ${OUT_ANALYSIS_FOLDER}/*.R;
 
