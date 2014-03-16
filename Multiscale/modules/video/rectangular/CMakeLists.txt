@@ -49,10 +49,6 @@ target_link_libraries(RectangularMapEntityCsvToInputFiles ${Boost_PROGRAM_OPTION
 
 # MapCartesianToRectangularScript
 
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularGnuplotScriptGenerator.cpp.in ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularGnuplotScriptGenerator.cpp
-)
-
 set(MAP_CARTESIAN_TO_SCRIPT
     src/CartesianToConcentrationsConverter.cpp
     src/MapCartesianToScript.cpp

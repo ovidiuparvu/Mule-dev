@@ -34,10 +34,6 @@ target_link_libraries(PolarMapCsvToInputFiles ${Boost_PROGRAM_OPTIONS_LIBRARY})
 
 # MapCartesianToPolarScript
 
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/PolarGnuplotScriptGenerator.cpp.in ${CMAKE_CURRENT_SOURCE_DIR}/src/PolarGnuplotScriptGenerator.cpp
-)
-
 set(MAP_CARTESIAN_TO_POLAR_SCRIPT
     src/AnnularSector.cpp
     src/CartesianToPolarConverter.cpp

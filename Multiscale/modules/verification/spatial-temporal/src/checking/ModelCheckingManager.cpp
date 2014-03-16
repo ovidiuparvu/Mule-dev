@@ -12,7 +12,7 @@ ModelCheckingManager::ModelCheckingManager(const std::string &logicPropertyFilep
                                            unsigned long extraEvaluationTime)
                                            : parser(PARSER_EMPTY_LOGIC_PROPERTY),
                                              traceReader(tracesFolderPath) {
-    initialise(logicPropertyFilepath, extraEvaluationTime);
+    initialiseAndPrintIntroductionMessage(logicPropertyFilepath, extraEvaluationTime);
 }
 
 ModelCheckingManager::~ModelCheckingManager() {
@@ -23,6 +23,13 @@ ModelCheckingManager::~ModelCheckingManager() {
 
 void ModelCheckingManager::runModelCheckingTasks(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
     runModelCheckingAndOutputResults(modelCheckerFactory);
+}
+
+void ModelCheckingManager::initialiseAndPrintIntroductionMessage(const std::string &logicPropertyFilepath,
+                                                                 unsigned long extraEvaluationTime) {
+    ModelCheckingOutputWriter::printIntroductionMessage();
+
+    initialise(logicPropertyFilepath, extraEvaluationTime);
 }
 
 void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
@@ -173,12 +180,17 @@ void ModelCheckingManager::outputModelCheckersResults() {
     unsigned int nrOfModelCheckers = modelCheckers.size();
 
     for (unsigned int i = 0; i < nrOfModelCheckers; i++) {
-        ModelCheckingOutputWriter::printModelCheckingResultMessage(
-            modelCheckers[i]->doesPropertyHold(),
-            modelCheckers[i]->getDetailedResults(),
-            logicProperties[i]
-        );
+        outputModelCheckerResults(modelCheckers[i], logicProperties[i]);
     }
+}
+
+void ModelCheckingManager::outputModelCheckerResults(const std::shared_ptr<ModelChecker> &modelChecker,
+                                                     const std::string &logicProperty) {
+    ModelCheckingOutputWriter::printModelCheckingResultMessage(
+        modelChecker->doesPropertyHold(),
+        modelChecker->getDetailedResults(),
+        logicProperty
+    );
 }
 
 

@@ -55,11 +55,18 @@ namespace multiscale {
 
             private:
 
-                //! Initialise the model checking manager considering the given logic properties input file, traces folder and extra evaluation time
+                //! Initialise the model checking manager considering the given logic properties input file and extra evaluation time, and print the introduction message
                 /*!
                  * \param logicPropertyFilepath The path to the logic properties input file
                  * \param extraEvaluationTime   The number of extra minutes allocated for evaluating logic properties
-                 * \param modelCheckerFactory   The factory used to create model checkers
+                 */
+                void initialiseAndPrintIntroductionMessage(const std::string &logicPropertyFilepath,
+                                                           unsigned long extraEvaluationTime);
+
+                //! Initialise the model checking manager considering the given logic properties input file and extra evaluation time, and print the introduction message
+                /*!
+                 * \param logicPropertyFilepath The path to the logic properties input file
+                 * \param extraEvaluationTime   The number of extra minutes allocated for evaluating logic properties
                  */
                 void initialise(const std::string &logicPropertyFilepath,
                                 unsigned long extraEvaluationTime);
@@ -145,6 +152,14 @@ namespace multiscale {
 
                 //! Output the model checking results
                 void outputModelCheckersResults();
+
+                //! Output the model checking results for the given model checker
+                /*!
+                 * \param modelChecker  The given model checker
+                 * \param logicProperty The logic property verified by the given model checker
+                 */
+                void outputModelCheckerResults(const std::shared_ptr<ModelChecker> &modelChecker,
+                                               const std::string &logicProperty);
 
 
                 // Constants
