@@ -37,7 +37,7 @@ bool FrequencyModelChecker::doesPropertyHold() {
     return (Numeric::greaterOrEqual(probability, THRESH_PROBABILITY_THAT_PROPERTY_HOLDS));
 }
 
-void FrequencyModelChecker::getDetailedResults() {
+std::string FrequencyModelChecker::getDetailedResults() {
     return (
         PROPERTY_HOLDS_WITH_PROBABILITY_LABEL +
         resultToString()
@@ -59,7 +59,7 @@ double FrequencyModelChecker::computeProbabilityThatPropertyHolds() {
     if (totalNumberOfEvaluations != 0) {
         return (static_cast<double>(totalNumberOfTrueEvaluations) /
                 totalNumberOfEvaluations);
-    else {
+    } else {
         return 0;
     }
 }

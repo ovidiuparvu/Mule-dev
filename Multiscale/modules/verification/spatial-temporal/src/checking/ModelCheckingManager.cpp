@@ -1,5 +1,6 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/verification/spatial-temporal/checking/FrequencyModelChecker.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingOutputWriter.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingManager.hpp"
 
@@ -8,8 +9,10 @@ using namespace multiscale::verification;
 
 ModelCheckingManager::ModelCheckingManager(const std::string &logicPropertyFilepath,
                                            const std::string &tracesFolderPath,
-                                           unsigned long extraEvaluationTime) {
-    initialise(logicPropertyFilepath, tracesFolderPath, extraEvaluationTime);
+                                           unsigned long extraEvaluationTime)
+                                           : parser(PARSER_EMPTY_LOGIC_PROPERTY),
+                                             traceReader(tracesFolderPath) {
+    initialise(logicPropertyFilepath, extraEvaluationTime);
 }
 
 ModelCheckingManager::~ModelCheckingManager() {
@@ -24,21 +27,15 @@ void ModelCheckingManager::runFrequencyModelChecking() {
 }
 
 void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
-                                      const std::string &tracesFolderPath,
                                       unsigned long extraEvaluationTime) {
     this->extraEvaluationTime = extraEvaluationTime;
     this->evaluationStartTime = std::chrono::system_clock::now();
 
     initialiseLogicProperties(logicPropertyFilepath);
-    initialiseTraceReader(tracesFolderPath);
 }
 
 void ModelCheckingManager::initialiseLogicProperties(const std::string &logicPropertiesFilepath) {
     logicProperties = logicPropertyReader.readLogicPropertiesFromFile(logicPropertiesFilepath);
-}
-
-void ModelCheckingManager::initialiseTraceReader(const std::string &tracesFolderPath) {
-    traceReader = SpatialTemporalDataReader(tracesFolderPath);
 }
 
 void ModelCheckingManager::parseLogicProperties() {
@@ -173,7 +170,9 @@ void ModelCheckingManager::updateTraceReader() {
 }
 
 void ModelCheckingManager::outputModelCheckersResults() {
-    for (auto i = 0; i < modelCheckers.size(); i++) {
+    unsigned int nrOfModelCheckers = modelCheckers.size();
+
+    for (unsigned int i = 0; i < nrOfModelCheckers; i++) {
         ModelCheckingOutputWriter::printModelCheckingResultMessage(
             modelCheckers[i]->doesPropertyHold(),
             modelCheckers[i]->getDetailedResults(),
@@ -187,3 +186,5 @@ void ModelCheckingManager::outputModelCheckersResults() {
 
 const unsigned long ModelCheckingManager::TRACE_INPUT_REFRESH_TIMEOUT   = 30;
 const unsigned long ModelCheckingManager::NR_SECONDS_IN_ONE_MINUTE      = 60;
+
+const std::string   ModelCheckingManager::PARSER_EMPTY_LOGIC_PROPERTY   = "";

@@ -2,6 +2,8 @@
 #define MODELCHECKINGMANAGER_HPP
 
 #include "multiscale/verification/spatial-temporal/checking/ModelChecker.hpp"
+#include "multiscale/verification/spatial-temporal/data/LogicPropertyDataReader.hpp"
+#include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
@@ -55,7 +57,6 @@ namespace multiscale {
                  * \param tracesFolderPath      The path to the folder containing traces
                  */
                 void initialise(const std::string &logicPropertyFilepath,
-                                const std::string &tracesFolderPath,
                                 unsigned long extraEvaluationTime);
 
                 //! Initialise the logic properties using the provided input file
@@ -63,12 +64,6 @@ namespace multiscale {
                  * \param logicPropertyFilepath The path to the logic properties input file
                  */
                 void initialiseLogicProperties(const std::string &logicPropertiesFilepath);
-
-                //! Initialise the spatial temporal trace reader using the provided folder path
-                /*!
-                 * \param tracesFolderPath  The path to the folder containing traces
-                 */
-                void initialiseTraceReader(const std::string &tracesFolderPath);
 
                 //! Create the frequency model checker instances
                 /*! Each model checker instance verifies one logic property
@@ -145,6 +140,8 @@ namespace multiscale {
                 // Constants
                 static const unsigned long TRACE_INPUT_REFRESH_TIMEOUT; /*!< The number of seconds for which the manager waits before updating the trace reader */
                 static const unsigned long NR_SECONDS_IN_ONE_MINUTE;
+
+                static const std::string   PARSER_EMPTY_LOGIC_PROPERTY;
 
         };
 

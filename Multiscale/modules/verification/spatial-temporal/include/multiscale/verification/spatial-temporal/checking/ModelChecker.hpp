@@ -12,7 +12,7 @@ namespace multiscale {
         //! Abstract class representing a generic model checker
         class ModelChecker {
 
-            private:
+            protected:
 
                 AbstractSyntaxTree abstractSyntaxTree;  /*!< The abstract syntax tree representing
                                                              the logic property which this model checker
@@ -22,7 +22,7 @@ namespace multiscale {
 
                 ModelChecker(const AbstractSyntaxTree &abstractSyntaxTree)
                              : abstractSyntaxTree(abstractSyntaxTree) {}
-                virtual ~ModelChecker();
+                virtual ~ModelChecker() {};
 
                 //! Evaluate the abstract syntax tree for the given trace
                 /*!

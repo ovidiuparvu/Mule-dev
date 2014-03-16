@@ -18,11 +18,50 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 #------------------------------------------------------------
 
 
+# FrequencyMUltiDImensionalModelChecker
+
+set(FREQUENCY_MULTIDIMENSIONAL_MODEL_CHECKER_SRC
+    src/data/LogicPropertyDataReader.cpp
+    src/data/SpatialTemporalDataReader.cpp
+    
+    src/attribute/BinaryNumericMeasureAttribute.cpp
+    src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ComparatorAttribute.cpp
+    src/attribute/ProbabilisticLogicPropertyAttribute.cpp
+    src/attribute/QuaternarySubsetMeasureAttribute.cpp
+    src/attribute/SpatialMeasureAttribute.cpp
+    src/attribute/SubsetSpecificAttribute.cpp
+    src/attribute/TernarySubsetMeasureAttribute.cpp
+    src/attribute/UnaryNumericMeasureAttribute.cpp
+    src/attribute/UnarySubsetMeasureAttribute.cpp
+    
+    src/checking/FrequencyModelChecker.cpp
+    src/checking/ModelCheckingManager.cpp
+    src/checking/ModelCheckingOutputWriter.cpp
+    
+    src/exception/ParserGrammarExceptionHandler.cpp
+    
+    src/model/AbstractSyntaxTree.cpp
+    src/model/SpatialEntity.cpp
+    src/model/SpatialTemporalTrace.cpp
+    src/model/TimePoint.cpp
+    
+    src/parsing/Parser.cpp
+    
+    src/FrequencyMudi.cpp 
+)
+
+add_executable(FrequencyMUltiDImensionalModelChecker ${FREQUENCY_MULTIDIMENSIONAL_MODEL_CHECKER_SRC})
+
+AddDebugPostfix(FrequencyMUltiDImensionalModelChecker)
+
+target_link_libraries(FrequencyMUltiDImensionalModelChecker util)
+target_link_libraries(FrequencyMUltiDImensionalModelChecker ${XERCESC_LIBRARY})
+
+
 # ParserEvaluationTest
 
 set(PARSER_EVALUATION_TEST_SRC
-    src/parsing/Parser.cpp
-
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
@@ -40,6 +79,8 @@ set(PARSER_EVALUATION_TEST_SRC
     src/model/SpatialEntity.cpp
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
+    
+    src/parsing/Parser.cpp
     
     test/ParserEvaluationTest.cpp
 )
@@ -54,8 +95,6 @@ target_link_libraries(ParserEvaluationTest gtest gtest_main)
 # ParserTest
 
 set(PARSER_TEST_SRC
-    src/parsing/Parser.cpp
-    
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
@@ -73,6 +112,8 @@ set(PARSER_TEST_SRC
     src/model/SpatialEntity.cpp
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
+    
+    src/parsing/Parser.cpp
     
     test/ParserTest.cpp
 )
@@ -87,8 +128,6 @@ target_link_libraries(ParserTest gtest gtest_main)
 # ParserSample
 
 set(PARSER_SAMPLE_SRC
-    src/parsing/Parser.cpp
-    
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
@@ -106,6 +145,8 @@ set(PARSER_SAMPLE_SRC
     src/model/SpatialEntity.cpp
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
+    
+    src/parsing/Parser.cpp
     
     sample/ParserSample.cpp 
 )
@@ -114,8 +155,6 @@ set(PARSER_SAMPLE_SRC
 # ParserEvaluationSample
 
 set(PARSER_EVALUATION_SAMPLE_SRC
-    src/parsing/Parser.cpp
-    
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
@@ -133,6 +172,8 @@ set(PARSER_EVALUATION_SAMPLE_SRC
     src/model/SpatialEntity.cpp
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
+    
+    src/parsing/Parser.cpp
     
     sample/ParserEvaluationSample.cpp 
 )
@@ -146,10 +187,6 @@ target_link_libraries(ParserEvaluationSample util)
 # LogicPropertyDataReaderSample
 
 set(LOGIC_PROPERTY_DATA_READER_SAMPLE_SRC
-    src/data/LogicPropertyDataReader.cpp
-    
-    src/parsing/Parser.cpp
-    
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
@@ -161,12 +198,16 @@ set(LOGIC_PROPERTY_DATA_READER_SAMPLE_SRC
     src/attribute/UnaryNumericMeasureAttribute.cpp
     src/attribute/UnarySubsetMeasureAttribute.cpp
 
+    src/data/LogicPropertyDataReader.cpp
+
     src/exception/ParserGrammarExceptionHandler.cpp
     
     src/model/AbstractSyntaxTree.cpp
     src/model/SpatialEntity.cpp
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
+    
+    src/parsing/Parser.cpp
     
     sample/LogicPropertyDataReaderSample.cpp
 )
