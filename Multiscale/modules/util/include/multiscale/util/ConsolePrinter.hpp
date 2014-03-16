@@ -1,6 +1,8 @@
 #ifndef CONSOLEPRINTER_HPP
 #define CONSOLEPRINTER_HPP
 
+#include "multiscale/core/Multiscale.hpp"
+
 #include <string>
 
 
@@ -107,6 +109,20 @@ namespace multiscale {
             static void printNonColouredMessage(const std::string &message,
                                                 bool appendNewLineAtEnd = true);
 
+            //! Check if the standard output is a terminal which supports colour
+            static bool isStdOutTerminalWhichSupportsColour();
+
+            //! Check if the terminal supports colour
+            /*!
+             * \param isTerminal    Flag indicating if the standard output is a terminal
+             */
+            static bool terminalSupportsColour(bool isTerminal);
+
+            //! Check if the terminal supports colour
+            /*! Assumption: Standard output is a terminal
+             */
+            static bool terminalSupportsColour();
+
             //! Print a coloured message to the standard output
             /*! The message will be printed in colour if and only if the standard output is a terminal.
              *  Otherwise it will be printed using default colour.
@@ -165,6 +181,8 @@ namespace multiscale {
             static const std::string CSI_SEPARATOR;
 
             static const int         CSI_COLOUR_START_VALUE;
+
+            static const std::string TERM_ENV_VARIABLE;
 
             static const std::string ERR_INVALID_COLOUR_CODE;
     };

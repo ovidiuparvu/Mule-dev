@@ -18,6 +18,7 @@ set(LIB_SRC
     src/MinEnclosingTriangleFinder.cpp
     src/NumberIterator.cpp
     src/Numeric.cpp
+    src/OperatingSystem.cpp
     src/RGBColourGenerator.cpp
     src/StringManipulator.cpp
     src/XmlValidator.cpp

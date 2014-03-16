@@ -1,6 +1,7 @@
 #include "multiscale/core/Multiscale.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/ConsolePrinter.hpp"
+#include "multiscale/util/OperatingSystem.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
 #include <iostream>
@@ -25,7 +26,7 @@ void ConsolePrinter::printMessage(const std::string &message) {
 void ConsolePrinter::printMessageWithColouredTag(const std::string &message, const std::string &tag,
                                                  const ColourCode &tagColour) {
     // If the standard output is a terminal then print output in colour
-    if (isatty(fileno(stdout))) {
+    if (isStdOutTerminalWhichSupportsColour()) {
         printMessageUsingColour(tag + SEPARATOR, tagColour, false);
     } else {
         printNonColouredMessage(tag + SEPARATOR, false);
@@ -36,7 +37,7 @@ void ConsolePrinter::printMessageWithColouredTag(const std::string &message, con
 
 void ConsolePrinter::printColouredMessage(const std::string &message, const ColourCode &colourCode) {
     // If the standard output is a terminal then print output in colour
-    if (isatty(fileno(stdout))) {
+    if (isStdOutTerminalWhichSupportsColour()) {
         printMessageUsingColour(message, colourCode);
     } else {
         printNonColouredMessage(message, true);
@@ -48,7 +49,7 @@ void ConsolePrinter::printColouredMessageWithColouredTag(const std::string &mess
                                                          const std::string &tag,
                                                          const ColourCode &tagColour) {
     // If the standard output is a terminal then print output in colour
-    if (isatty(fileno(stdout))) {
+    if (isStdOutTerminalWhichSupportsColour()) {
         printMessageUsingColour(tag + SEPARATOR, tagColour, false);
         printMessageUsingColour(message, messageColour);
     } else {
@@ -66,6 +67,41 @@ void ConsolePrinter::printNonColouredMessage(const std::string &message,
     std::cout << message;
 
     printNewLine(appendNewLineAtEnd);
+}
+
+bool ConsolePrinter::isStdOutTerminalWhichSupportsColour() {
+    #if defined MULTISCALE_UNIX
+        bool isATerminal     = isatty(fileno(stdout));
+        bool isColourSupport = terminalSupportsColour(isATerminal);
+
+        return (isATerminal && isColourSupport);
+    #elif defined MULTISCALE_WINDOWS
+        return isatty(fileno(stdout));
+    #else
+        return false;
+    #endif
+}
+
+bool ConsolePrinter::terminalSupportsColour(bool isTerminal) {
+    if (isTerminal) {
+        return terminalSupportsColour();
+    }
+
+    return false;
+}
+
+bool ConsolePrinter::terminalSupportsColour() {
+    std::string termType = OperatingSystem::getEnvironmentVariable(TERM_ENV_VARIABLE);
+
+    return (
+        (termType.compare("xterm")           == 0) ||
+        (termType.compare("xterm-color")     == 0) ||
+        (termType.compare("xterm-256color")  == 0) ||
+        (termType.compare("screen")          == 0) ||
+        (termType.compare("screen-256color") == 0) ||
+        (termType.compare("linux")           == 0) ||
+        (termType.compare("cygwin")          == 0)
+    );
 }
 
 void ConsolePrinter::printMessageUsingColour(const std::string &message,
@@ -199,5 +235,7 @@ const std::string ConsolePrinter::CSI_RESET_CODE            = "0";
 const std::string ConsolePrinter::CSI_SEPARATOR             = ";";
 
 const int         ConsolePrinter::CSI_COLOUR_START_VALUE    = 30;
+
+const std::string ConsolePrinter::TERM_ENV_VARIABLE         = "TERM";
 
 const std::string ConsolePrinter::ERR_INVALID_COLOUR_CODE   = "The provided colour code is invalid. Please provide a valid colour code instead (see documentation for more details).";
