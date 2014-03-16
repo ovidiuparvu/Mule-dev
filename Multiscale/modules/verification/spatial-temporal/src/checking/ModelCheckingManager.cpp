@@ -21,9 +21,8 @@ ModelCheckingManager::~ModelCheckingManager() {
     modelCheckers.clear();
 }
 
-void ModelCheckingManager::runFrequencyModelChecking() {
-    createFrequencyModelCheckers();
-    runModelCheckingTasks();
+void ModelCheckingManager::runModelCheckingTasks(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
+    runModelCheckingAndOutputResults(modelCheckerFactory);
 }
 
 void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
@@ -38,6 +37,13 @@ void ModelCheckingManager::initialiseLogicProperties(const std::string &logicPro
     logicProperties = logicPropertyReader.readLogicPropertiesFromFile(logicPropertiesFilepath);
 }
 
+void ModelCheckingManager::runModelCheckingAndOutputResults(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
+    parseLogicProperties();
+    createModelCheckers(modelCheckerFactory);
+    runModelCheckers();
+    outputModelCheckersResults();
+}
+
 void ModelCheckingManager::parseLogicProperties() {
     auto it = logicProperties.begin();
 
@@ -48,20 +54,6 @@ void ModelCheckingManager::parseLogicProperties() {
             it = logicProperties.erase(it);
         }
     }
-}
-
-void ModelCheckingManager::createFrequencyModelCheckers() {
-    for (const auto &abstractSyntaxTree : abstractSyntaxTrees) {
-        modelCheckers.push_back(
-            std::shared_ptr<ModelChecker>(new FrequencyModelChecker(abstractSyntaxTree))
-        );
-    }
-}
-
-void ModelCheckingManager::runModelCheckingTasks() {
-    parseLogicProperties();
-    runModelCheckers();
-    outputModelCheckersResults();
 }
 
 bool ModelCheckingManager::parseLogicPropertyAndPrintMessages(const std::string &logicProperty) {
@@ -103,6 +95,14 @@ void ModelCheckingManager::printParsingMessage(bool isParsingSuccessful) {
         ModelCheckingOutputWriter::printSuccessMessage();
     } else {
         ModelCheckingOutputWriter::printFailedMessage();
+    }
+}
+
+void ModelCheckingManager::createModelCheckers(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
+    for (const auto &abstractSyntaxTree : abstractSyntaxTrees) {
+        modelCheckers.push_back(
+            modelCheckerFactory->createInstance(abstractSyntaxTree)
+        );
     }
 }
 

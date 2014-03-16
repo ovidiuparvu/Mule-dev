@@ -27,7 +27,7 @@ bool SpatialTemporalDataReader::hasNext() {
 }
 
 void SpatialTemporalDataReader::refresh() {
-    updateFilesLists();
+    updateInputFilesSets();
 }
 
 SpatialTemporalTrace SpatialTemporalDataReader::getNextSpatialTemporalTrace() {
@@ -47,6 +47,11 @@ void SpatialTemporalDataReader::initialise(const std::string &folderPath) {
 }
 
 void SpatialTemporalDataReader::initialise() {
+    clearInputFilesSets();
+    updateInputFilesSets();
+}
+
+void SpatialTemporalDataReader::clearInputFilesSets() {
     processedInputFiles.clear();
     unprocessedInputFiles.clear();
 }
@@ -216,7 +221,7 @@ std::string SpatialTemporalDataReader::getFirstValidUnprocessedInputFilepath() {
     return validUnprocessedFile;
 }
 
-void SpatialTemporalDataReader::updateFilesLists() {
+void SpatialTemporalDataReader::updateInputFilesSets() {
     std::vector<std::string> filesInFolder = Filesystem::getFilesInFolder(folderPath, INPUT_FILES_EXTENSION);
 
     for (const std::string &file : filesInFolder) {

@@ -8,6 +8,7 @@
 
 #include "multiscale/core/Multiscale.hpp"
 #include "multiscale/exception/ExceptionHandler.hpp"
+#include "multiscale/verification/spatial-temporal/checking/FrequencyModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingManager.hpp"
 
 #include <boost/program_options.hpp>
@@ -92,22 +93,29 @@ bool areValidParameters(string &logicQueriesFilepath, string &tracesFolderPath,
     return false;
 }
 
-// Main function
-int main(int argc, char** argv) {
+// Run the model checking operations
+void runModelCheckers(int argc, char **argv) {
     string logicQueriesFilePath;
     string tracesFolderPath;
 
     unsigned long extraEvaluationTime;
 
-    try {
-        if (areValidParameters(logicQueriesFilePath, tracesFolderPath,
-                               extraEvaluationTime, argc, argv)) {
-            ModelCheckingManager manager(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
+    if (areValidParameters(logicQueriesFilePath, tracesFolderPath,
+                           extraEvaluationTime, argc, argv)) {
+        std::shared_ptr<FrequencyModelCheckerFactory> modelCheckerFactory = make_shared<FrequencyModelCheckerFactory>();
 
-            manager.runFrequencyModelChecking();
-        } else {
-            printWrongParameters();
-        }
+        ModelCheckingManager manager(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
+
+        manager.runModelCheckingTasks(modelCheckerFactory);
+    } else {
+        printWrongParameters();
+    }
+}
+
+// Main function
+int main(int argc, char** argv) {
+    try {
+        runModelCheckers(argc, argv);
     } catch(const exception &e) {
         ExceptionHandler::printErrorMessage(e);
 

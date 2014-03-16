@@ -36,6 +36,7 @@ set(FREQUENCY_MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     src/attribute/UnarySubsetMeasureAttribute.cpp
     
     src/checking/FrequencyModelChecker.cpp
+    src/checking/FrequencyModelCheckerFactory.cpp
     src/checking/ModelCheckingManager.cpp
     src/checking/ModelCheckingOutputWriter.cpp
     
@@ -51,12 +52,12 @@ set(FREQUENCY_MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     src/FrequencyMudi.cpp 
 )
 
-add_executable(FrequencyMUltiDImensionalModelChecker ${FREQUENCY_MULTIDIMENSIONAL_MODEL_CHECKER_SRC})
+add_executable(FrequencyMudi ${FREQUENCY_MULTIDIMENSIONAL_MODEL_CHECKER_SRC})
 
-AddDebugPostfix(FrequencyMUltiDImensionalModelChecker)
+AddDebugPostfix(FrequencyMudi)
 
-target_link_libraries(FrequencyMUltiDImensionalModelChecker util)
-target_link_libraries(FrequencyMUltiDImensionalModelChecker ${XERCESC_LIBRARY})
+target_link_libraries(FrequencyMudi util)
+target_link_libraries(FrequencyMudi ${XERCESC_LIBRARY})
 
 
 # ParserEvaluationTest

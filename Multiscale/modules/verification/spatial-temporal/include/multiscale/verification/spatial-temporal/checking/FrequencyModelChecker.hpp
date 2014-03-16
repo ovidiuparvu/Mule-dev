@@ -55,7 +55,6 @@ namespace multiscale {
 
                 // Constants
                 static const std::string PROPERTY_HOLDS_WITH_PROBABILITY_LABEL;
-                static const double      THRESH_PROBABILITY_THAT_PROPERTY_HOLDS;
 
         };
 

@@ -32,9 +32,12 @@ namespace multiscale {
                 ~SpatialTemporalDataReader();
 
                 //! Check if there are any remaining valid unprocessed traces in the given folder
+                /*!
+                 * This method does not automatically refresh the sets of input files.
+                 */
                 bool hasNext();
 
-                //! Refresh the list of traces found in the given folder
+                //! Refresh the sets of processed and unprocessed traces' input files considering the given folder
                 void refresh();
 
                 //! Return the next spatial temporal trace
@@ -50,6 +53,9 @@ namespace multiscale {
 
                 //! Initialise the sets for storing processed and unprocessed input files
                 void initialise();
+
+                //! Clear the contents of the sets of processed and unprocessed input files
+                void clearInputFilesSets();
 
                 //! Check if there are any remaining valid unprocessed traces in the given folder
                 bool hasValidNext();
@@ -142,8 +148,8 @@ namespace multiscale {
                 //! Get the first valid unprocessed input file
                 std::string getFirstValidUnprocessedInputFilepath();
 
-                //! Update the sets of files by checking if the folder contents have been updated
-                void updateFilesLists();
+                //! Update the sets of processed and unprocessed files by checking if the folder contents have been updated
+                void updateInputFilesSets();
 
                 //! Check if the given input file is valid
                 /*! An input file is valid if it is an xml file which conforms to the formal

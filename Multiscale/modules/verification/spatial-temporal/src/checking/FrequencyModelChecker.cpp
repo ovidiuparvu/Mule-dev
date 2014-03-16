@@ -1,6 +1,7 @@
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/checking/FrequencyModelChecker.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/ComparatorEvaluator.hpp"
 
 #include <iostream>
 
@@ -34,7 +35,8 @@ bool FrequencyModelChecker::requiresMoreTraces() {
 bool FrequencyModelChecker::doesPropertyHold() {
     double probability = computeProbabilityThatPropertyHolds();
 
-    return (Numeric::greaterOrEqual(probability, THRESH_PROBABILITY_THAT_PROPERTY_HOLDS));
+    return (ComparatorEvaluator::evaluate(probability, abstractSyntaxTree.getComparator(),
+                                          abstractSyntaxTree.getProbability()));
 }
 
 std::string FrequencyModelChecker::getDetailedResults() {
@@ -66,5 +68,4 @@ double FrequencyModelChecker::computeProbabilityThatPropertyHolds() {
 
 
 // Constants
-const std::string FrequencyModelChecker::PROPERTY_HOLDS_WITH_PROBABILITY_LABEL  = "The logic property holds with probability: ";
-const double      FrequencyModelChecker::THRESH_PROBABILITY_THAT_PROPERTY_HOLDS = 0.5;
+const std::string FrequencyModelChecker::PROPERTY_HOLDS_WITH_PROBABILITY_LABEL  = "The probability for the logic property to hold given the spatial-temporal traces is: ";

@@ -2,6 +2,7 @@
 #define MODELCHECKINGMANAGER_HPP
 
 #include "multiscale/verification/spatial-temporal/checking/ModelChecker.hpp"
+#include "multiscale/verification/spatial-temporal/checking/ModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/data/LogicPropertyDataReader.hpp"
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
@@ -47,14 +48,18 @@ namespace multiscale {
                 ~ModelCheckingManager();
 
                 //! Run the model checking tasks
-                void runFrequencyModelChecking();
+                /*!
+                 * \param modelCheckerFactory   The factory used to create model checkers
+                 */
+                void runModelCheckingTasks(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory);
 
             private:
 
                 //! Initialise the model checking manager considering the given logic properties input file, traces folder and extra evaluation time
                 /*!
                  * \param logicPropertyFilepath The path to the logic properties input file
-                 * \param tracesFolderPath      The path to the folder containing traces
+                 * \param extraEvaluationTime   The number of extra minutes allocated for evaluating logic properties
+                 * \param modelCheckerFactory   The factory used to create model checkers
                  */
                 void initialise(const std::string &logicPropertyFilepath,
                                 unsigned long extraEvaluationTime);
@@ -65,13 +70,11 @@ namespace multiscale {
                  */
                 void initialiseLogicProperties(const std::string &logicPropertiesFilepath);
 
-                //! Create the frequency model checker instances
-                /*! Each model checker instance verifies one logic property
+                //! Run the model checking tasks and output the results
+                /*!
+                 * \param modelCheckerFactory   The factory used to create model checkers
                  */
-                void createFrequencyModelCheckers();
-
-                //! Run the model checking tasks
-                void runModelCheckingTasks();
+                void runModelCheckingAndOutputResults(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory);
 
                 //! Parse the logic properties and create abstract syntax trees whenever a logic property was successfully parsed
                 void parseLogicProperties();
@@ -101,6 +104,13 @@ namespace multiscale {
                  * \param isParsingSuccessful   Flag indicating if the parsing was successful
                  */
                 void printParsingMessage(bool isParsingSuccessful);
+
+                //! Create the model checker instances using the provided model checker factory
+                /*! Each model checker instance verifies one logic property
+                 *
+                 * \param modelCheckerFactory   The factory used to create model checkers
+                 */
+                void createModelCheckers(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory);
 
                 //! Run the model checkers and verify the logic properties
                 void runModelCheckers();
