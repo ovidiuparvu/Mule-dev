@@ -6,10 +6,6 @@ results
 
 *.csv
 
-# Input files for unit tests
-
-data/test
-
 # Output folder
 
 out

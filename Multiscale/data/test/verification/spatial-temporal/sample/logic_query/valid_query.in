@@ -1,0 +1,6 @@
+# This is a query for testing if the average area of the regions is constant within time interval [0, 10]
+
+P > 0.2
+[
+  G [0, 10] d(avg(regions, area)) = 0
+]
