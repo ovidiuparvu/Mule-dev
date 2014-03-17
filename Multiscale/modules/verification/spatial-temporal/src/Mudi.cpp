@@ -1,5 +1,5 @@
 /**
- * This program is used for frequency MUltiDImensional model checking
+ * This program is used for multidimensional model checking
  *
  * Author: Ovidiu Parvu
  * Date created: 16.03.2014
@@ -10,6 +10,7 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/verification/spatial-temporal/checking/FrequencyModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingManager.hpp"
+#include "multiscale/verification/spatial-temporal/checking/ModelCheckingOutputWriter.hpp"
 
 #include <boost/program_options.hpp>
 #include <iostream>
@@ -93,6 +94,24 @@ bool areValidParameters(string &logicQueriesFilepath, string &tracesFolderPath,
     return false;
 }
 
+// Print the model checking initialisation messages
+void printModelCheckingInitialisationMessages(const string &logicQueriesFilePath,
+                                              const string &tracesFolderPath,
+                                              unsigned long extraEvaluationTime) {
+    ModelCheckingOutputWriter::printIntroductionMessage  ("Frequency", "None");
+    ModelCheckingOutputWriter::printInitialisationMessage(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
+}
+
+// Run the model checking operations
+void runModelCheckers(const string &logicQueriesFilePath, const string &tracesFolderPath,
+                      unsigned long extraEvaluationTime) {
+    std::shared_ptr<FrequencyModelCheckerFactory> modelCheckerFactory = make_shared<FrequencyModelCheckerFactory>();
+
+    ModelCheckingManager manager(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
+
+    manager.runModelCheckingTasks(modelCheckerFactory);
+}
+
 // Run the model checking operations
 void runModelCheckers(int argc, char **argv) {
     string logicQueriesFilePath;
@@ -102,11 +121,8 @@ void runModelCheckers(int argc, char **argv) {
 
     if (areValidParameters(logicQueriesFilePath, tracesFolderPath,
                            extraEvaluationTime, argc, argv)) {
-        std::shared_ptr<FrequencyModelCheckerFactory> modelCheckerFactory = make_shared<FrequencyModelCheckerFactory>();
-
-        ModelCheckingManager manager(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
-
-        manager.runModelCheckingTasks(modelCheckerFactory);
+        printModelCheckingInitialisationMessages(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
+        runModelCheckers(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
     } else {
         printWrongParameters();
     }

@@ -7,12 +7,12 @@
 using namespace multiscale::verification;
 
 
-ModelCheckingManager::ModelCheckingManager(const std::string &logicPropertyFilepath,
+ModelCheckingManager::ModelCheckingManager(const std::string &logicPropertiesFilepath,
                                            const std::string &tracesFolderPath,
                                            unsigned long extraEvaluationTime)
                                            : parser(PARSER_EMPTY_LOGIC_PROPERTY),
                                              traceReader(tracesFolderPath) {
-    initialiseAndPrintIntroductionMessage(logicPropertyFilepath, extraEvaluationTime);
+    initialise(logicPropertiesFilepath, extraEvaluationTime);
 }
 
 ModelCheckingManager::~ModelCheckingManager() {
@@ -23,13 +23,6 @@ ModelCheckingManager::~ModelCheckingManager() {
 
 void ModelCheckingManager::runModelCheckingTasks(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
     runModelCheckingAndOutputResults(modelCheckerFactory);
-}
-
-void ModelCheckingManager::initialiseAndPrintIntroductionMessage(const std::string &logicPropertyFilepath,
-                                                                 unsigned long extraEvaluationTime) {
-    ModelCheckingOutputWriter::printIntroductionMessage();
-
-    initialise(logicPropertyFilepath, extraEvaluationTime);
 }
 
 void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
@@ -45,10 +38,18 @@ void ModelCheckingManager::initialiseLogicProperties(const std::string &logicPro
 }
 
 void ModelCheckingManager::runModelCheckingAndOutputResults(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
-    parseLogicProperties();
+    parseLogicPropertiesAndPrintMessage();
     createModelCheckers(modelCheckerFactory);
     runModelCheckers();
-    outputModelCheckersResults();
+    outputModelCheckersResultsAndPrintMessage();
+}
+
+void ModelCheckingManager::parseLogicPropertiesAndPrintMessage() {
+    ModelCheckingOutputWriter::printParsingLogicPropertiesBeginMessage();
+
+    parseLogicProperties();
+
+    ModelCheckingOutputWriter::printParsingLogicPropertiesEndMessage();
 }
 
 void ModelCheckingManager::parseLogicProperties() {
@@ -174,6 +175,12 @@ void ModelCheckingManager::waitBeforeRetry() {
 
 void ModelCheckingManager::updateTraceReader() {
     traceReader.refresh();
+}
+
+void ModelCheckingManager::outputModelCheckersResultsAndPrintMessage() {
+    ModelCheckingOutputWriter::printModelCheckingResultsIntroductionMessage();
+
+    outputModelCheckersResults();
 }
 
 void ModelCheckingManager::outputModelCheckersResults() {

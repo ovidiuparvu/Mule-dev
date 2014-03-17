@@ -86,6 +86,7 @@ if(XERCESC_FOUND)
     message(STATUS "Xerces C++ library was successfully found.")
 endif()
 
+
 #------------------------------------------------------------
 # Documentation configuration
 #------------------------------------------------------------

@@ -19,6 +19,10 @@
 using namespace multiscale;
 
 
+void ConsolePrinter::printEmptyLine() {
+    printNewLine(true);
+}
+
 void ConsolePrinter::printMessage(const std::string &message) {
     printNonColouredMessage(message, true);
 }

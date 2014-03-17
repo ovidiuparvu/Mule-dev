@@ -18,13 +18,15 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 #------------------------------------------------------------
 
 
-# FrequencyMUltiDImensionalModelChecker
+# MultidimensionalModelChecker
 
-#configure_file(
-#    ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.cpp.in ${CMAKE_CURRENT_SOURCE_DIR}src/checking/ModelCheckingOutputWriter.cpp
-#)
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.cpp.in 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.cpp
+    @ONLY
+)
 
-set(FREQUENCY_MULTIDIMENSIONAL_MODEL_CHECKER_SRC
+set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     src/data/LogicPropertyDataReader.cpp
     src/data/SpatialTemporalDataReader.cpp
     
@@ -53,15 +55,15 @@ set(FREQUENCY_MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     
     src/parsing/Parser.cpp
     
-    src/FrequencyMudi.cpp 
+    src/Mudi.cpp 
 )
 
-add_executable(FrequencyMudi ${FREQUENCY_MULTIDIMENSIONAL_MODEL_CHECKER_SRC})
+add_executable(Mudi ${MULTIDIMENSIONAL_MODEL_CHECKER_SRC})
 
-AddDebugPostfix(FrequencyMudi)
+AddDebugPostfix(Mudi)
 
-target_link_libraries(FrequencyMudi util)
-target_link_libraries(FrequencyMudi ${XERCESC_LIBRARY})
+target_link_libraries(Mudi util)
+target_link_libraries(Mudi ${XERCESC_LIBRARY})
 
 
 # ParserEvaluationTest

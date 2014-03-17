@@ -58,6 +58,9 @@ namespace multiscale {
 
         public:
 
+            //! Print a new empty line
+            static void printEmptyLine();
+
             //! Print a message to the standard output
             /*!
              * \param message The given message

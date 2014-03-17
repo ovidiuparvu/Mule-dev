@@ -42,7 +42,7 @@ namespace multiscale {
 
             public:
 
-                ModelCheckingManager(const std::string &logicPropertyFilepath,
+                ModelCheckingManager(const std::string &logicPropertiesFilepath,
                                      const std::string &tracesFolderPath,
                                      unsigned long extraEvaluationTime);
                 ~ModelCheckingManager();
@@ -57,23 +57,15 @@ namespace multiscale {
 
                 //! Initialise the model checking manager considering the given logic properties input file and extra evaluation time, and print the introduction message
                 /*!
-                 * \param logicPropertyFilepath The path to the logic properties input file
-                 * \param extraEvaluationTime   The number of extra minutes allocated for evaluating logic properties
+                 * \param logicPropertiesFilepath   The path to the logic properties input file
+                 * \param extraEvaluationTime       The number of extra minutes allocated for evaluating logic properties
                  */
-                void initialiseAndPrintIntroductionMessage(const std::string &logicPropertyFilepath,
-                                                           unsigned long extraEvaluationTime);
-
-                //! Initialise the model checking manager considering the given logic properties input file and extra evaluation time, and print the introduction message
-                /*!
-                 * \param logicPropertyFilepath The path to the logic properties input file
-                 * \param extraEvaluationTime   The number of extra minutes allocated for evaluating logic properties
-                 */
-                void initialise(const std::string &logicPropertyFilepath,
+                void initialise(const std::string &logicPropertiesFilepath,
                                 unsigned long extraEvaluationTime);
 
                 //! Initialise the logic properties using the provided input file
                 /*!
-                 * \param logicPropertyFilepath The path to the logic properties input file
+                 * \param logicPropertiesFilepath The path to the logic properties input file
                  */
                 void initialiseLogicProperties(const std::string &logicPropertiesFilepath);
 
@@ -82,6 +74,9 @@ namespace multiscale {
                  * \param modelCheckerFactory   The factory used to create model checkers
                  */
                 void runModelCheckingAndOutputResults(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory);
+
+                //! Parse the logic properties and print message informing the user about this
+                void parseLogicPropertiesAndPrintMessage();
 
                 //! Parse the logic properties and create abstract syntax trees whenever a logic property was successfully parsed
                 void parseLogicProperties();
@@ -149,6 +144,9 @@ namespace multiscale {
 
                 //! Update trace reader
                 void updateTraceReader();
+
+                //! Output the model checking results and print the message informing the user about this
+                void outputModelCheckersResultsAndPrintMessage();
 
                 //! Output the model checking results
                 void outputModelCheckersResults();

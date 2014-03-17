@@ -117,16 +117,16 @@ const std::string ModelCheckingOutputWriter::TAG_SUCCESS    = "[ SUCCESS  ]";
 const std::string ModelCheckingOutputWriter::TAG_FAILED     = "[ FAILED   ]";
 const std::string ModelCheckingOutputWriter::TAG_SEPARATOR  = "[==========]";
 
-const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mudi 0.6.124 (Multidimensional model checker)";
+const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mudi @PROJECT_VERSION_MAJOR@.@PROJECT_VERSION_MINOR@.@PROJECT_VERSION_BUILD@ (Multidimensional model checker)";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_COPYRIGHT                    = "Copyright Ovidiu Pârvu 2014";
-const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_TYPE          = "Model checker type: ";
-const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_PARAMETERS    = "Parameters:         ";
+const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_TYPE          = "Type:       ";
+const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_PARAMETERS    = "Parameters: ";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_CONTACT                      = "For more details, recommendations or suggestions feel free to contact me at <ovidiu.parvu[AT]gmail.com>.";
 
 const std::string ModelCheckingOutputWriter::MSG_INIT_EXECUTION_PARAMETERS  = "Multidimensional model checking input parameters";
-const std::string ModelCheckingOutputWriter::MSG_INIT_LOGIC_PROPERTIES_PATH = "Logic properties input file:          ";
-const std::string ModelCheckingOutputWriter::MSG_INIT_TRACES_FOLDER_PATH    = "Spatial-temporal traces input folder: ";
-const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "Extra evaluation time:                ";
+const std::string ModelCheckingOutputWriter::MSG_INIT_LOGIC_PROPERTIES_PATH = "Path to the logic properties input file:      ";
+const std::string ModelCheckingOutputWriter::MSG_INIT_TRACES_FOLDER_PATH    = "Path to spatial-temporal traces input folder: ";
+const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "Extra evaluation time:                        ";
 
 const std::string ModelCheckingOutputWriter::MSG_PARSING_INTRODUCTION   = "I am starting to parse logic properties...";
 

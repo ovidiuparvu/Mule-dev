@@ -1,6 +1,9 @@
 #ifndef MODELCHECKINGOUTPUTWRITER_HPP
 #define MODELCHECKINGOUTPUTWRITER_HPP
 
+#include <string>
+
+
 namespace multiscale {
 
     namespace verification {
@@ -10,14 +13,38 @@ namespace multiscale {
 
             public:
 
-                //! Print the model checker introduction message
-                static void printIntroductionMessage();
+                //! Print the model checker introduction message considering the given model checker details
+                /*!
+                 * \param modelCheckerType          The type of the model checker
+                 * \param modelCheckerParameters    The model checking parameters
+                 */
+                static void printIntroductionMessage(const std::string &modelCheckerType,
+                                                     const std::string &modelCheckerParameters);
+
+                //! Print the model checker initialisation message
+                /*!
+                 * \param logicPropertyInputFilepath    The path to the input file containing logic properties
+                 * \param tracesFolderPath              The path to the folder containing the traces
+                 * \param extraEvaluationTime           The number of extra minutes which the application will wait for new traces to be provided and evaluated
+                 */
+                static void printInitialisationMessage(const std::string &logicProperty,
+                                                       const std::string &tracesFolderPath,
+                                                       unsigned long extraEvaluationTime);
+
+                //! Print an introduction message informing the user that the logic properties will be parsed
+                static void printParsingLogicPropertiesBeginMessage();
 
                 //! Print a message informing the user which logic property will be parsed
                 /*!
                  * \param logicProperty The given logic property
                  */
                 static void printParsingLogicPropertyMessage(const std::string &logicProperty);
+
+                //! Print a closing message after the logic properties were parsed
+                static void printParsingLogicPropertiesEndMessage();
+
+                // Print an introduction message informing the user that the model checking results will be displayed
+                static void printModelCheckingResultsIntroductionMessage();
 
                 //! Print a message with the results of checking if the given property holds
                 /*!
@@ -57,9 +84,8 @@ namespace multiscale {
                 static void printModelCheckingDetailedResult(bool doesPropertyHold,
                                                              const std::string &detailedResult);
 
-                //! Print a separator line for the model checking result
-                static void printSeparatorForResult();
-
+                //! Print a line containing a separator tag
+                static void printSeparatorTag();
 
             private:
 
@@ -72,16 +98,20 @@ namespace multiscale {
                 static const std::string TAG_FAILED;
                 static const std::string TAG_SEPARATOR;
 
-                static const std::string MSG_EMPTY;
-
                 static const std::string MSG_INTRO_NAME;
                 static const std::string MSG_INTRO_COPYRIGHT;
-
-                static const std::string MSG_INTRO_MODEL_CHECKING_DESC;
                 static const std::string MSG_INTRO_MODEL_CHECKING_TYPE;
                 static const std::string MSG_INTRO_MODEL_CHECKING_PARAMETERS;
-
                 static const std::string MSG_INTRO_CONTACT;
+
+                static const std::string MSG_INIT_EXECUTION_PARAMETERS;
+                static const std::string MSG_INIT_LOGIC_PROPERTIES_PATH;
+                static const std::string MSG_INIT_TRACES_FOLDER_PATH;
+                static const std::string MSG_INIT_EXTRA_EVALUATION_TIME;
+
+                static const std::string MSG_PARSING_INTRODUCTION;
+
+                static const std::string MSG_RESULTS_INTRODUCTION;
 
                 static const std::string MSG_LOGIC_PROPERTY_HOLDS;
                 static const std::string MSG_LOGIC_PROPERTY_HOLDS_TRUE;
