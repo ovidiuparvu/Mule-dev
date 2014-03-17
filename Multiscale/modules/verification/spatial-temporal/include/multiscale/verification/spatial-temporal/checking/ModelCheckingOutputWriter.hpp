@@ -84,6 +84,9 @@ namespace multiscale {
                 static void printModelCheckingDetailedResult(bool doesPropertyHold,
                                                              const std::string &detailedResult);
 
+                //! Print a line containing a result tag and no content
+                static void printResultTag();
+
                 //! Print a line containing a separator tag
                 static void printSeparatorTag();
 

@@ -38,6 +38,18 @@ namespace multiscale {
              */
             static vector<string> split(const string &initialString, const string &delimiter);
 
+            //! Remove the trailing "new line" characters from the end of the string
+            /*!
+             * \param inputString   The given input string
+             */
+            static string trimRight(string &inputString);
+
+            //! Remove the trailing "new line" characters from the end of the string
+            /*!
+             * \param inputString   The given input string
+             */
+            static string trimRight(const string &inputString);
+
             //! Convert the variable to a string
             /*!
              * \param variable Variable

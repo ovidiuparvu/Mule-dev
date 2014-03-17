@@ -51,7 +51,7 @@ void ModelCheckingOutputWriter::printParsingLogicPropertiesEndMessage() {
 }
 
 void ModelCheckingOutputWriter::printParsingLogicPropertyMessage(const std::string &logicProperty) {
-    ConsolePrinter::printMessageWithColouredTag(logicProperty, TAG_PARSING, ColourCode::GREEN);
+    ConsolePrinter::printMessageWithColouredTag(StringManipulator::trimRight(logicProperty), TAG_PARSING, ColourCode::GREEN);
 }
 
 void ModelCheckingOutputWriter::printModelCheckingResultsIntroductionMessage() {
@@ -65,6 +65,8 @@ void ModelCheckingOutputWriter::printModelCheckingResultMessage(bool doesPropert
                                                                 const std::string &detailedResult,
                                                                 const std::string &logicProperty) {
     printLogicPropertyForResult(logicProperty);
+    printResultTag();
+
     printModelCheckingResult(doesPropertyHold);
     printModelCheckingDetailedResult(doesPropertyHold, detailedResult);
     printSeparatorTag();
@@ -81,7 +83,8 @@ void ModelCheckingOutputWriter::printFailedMessage() {
 }
 
 void ModelCheckingOutputWriter::printLogicPropertyForResult(const std::string &logicProperty) {
-    ConsolePrinter::printMessageWithColouredTag(logicProperty, TAG_RESULT, ColourCode::GREEN);
+    ConsolePrinter::printMessageWithColouredTag(StringManipulator::trimRight(logicProperty),
+                                                TAG_RESULT, ColourCode::GREEN);
 }
 
 void ModelCheckingOutputWriter::printModelCheckingResult(bool doesPropertyHold) {
@@ -103,6 +106,10 @@ void ModelCheckingOutputWriter::printModelCheckingDetailedResult(bool doesProper
     }
 }
 
+void ModelCheckingOutputWriter::printResultTag() {
+    ConsolePrinter::printColouredMessage(TAG_RESULT, ColourCode::GREEN);
+}
+
 void ModelCheckingOutputWriter::printSeparatorTag() {
     ConsolePrinter::printColouredMessage(TAG_SEPARATOR, ColourCode::GREEN);
 }
@@ -117,7 +124,7 @@ const std::string ModelCheckingOutputWriter::TAG_SUCCESS    = "[ SUCCESS  ]";
 const std::string ModelCheckingOutputWriter::TAG_FAILED     = "[ FAILED   ]";
 const std::string ModelCheckingOutputWriter::TAG_SEPARATOR  = "[==========]";
 
-const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mudi 0.6.124 (Multidimensional model checker)";
+const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mudi 0.6.125 (Multidimensional model checker)";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_COPYRIGHT                    = "Copyright Ovidiu Pârvu 2014";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_TYPE          = "Model checker type: ";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_PARAMETERS    = "Parameters:         ";

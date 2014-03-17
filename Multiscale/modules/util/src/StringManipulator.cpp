@@ -36,6 +36,25 @@ vector<string> StringManipulator::split(const string &initialString, const strin
     return boost::split(tokens, initialStringCopy, boost::is_any_of(delimiter));
 }
 
+string StringManipulator::trimRight(string &inputString) {
+    inputString.erase(
+        std::find_if(
+                inputString.rbegin(),
+                inputString.rend(),
+            std::not1(std::ptr_fun<int, int>(std::isspace))).base()
+        , inputString.end()
+   );
+
+   return inputString;
+}
+
+string StringManipulator::trimRight(const string &inputString) {
+    string trimmedString = inputString;
+
+    trimRight(trimmedString);
+
+    return trimmedString;
+}
 
 // Constants
 const char StringManipulator::DIR_SEPARATOR = '/';

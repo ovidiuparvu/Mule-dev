@@ -1,3 +1,4 @@
+#include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarExceptionHandler.hpp"
 
 #include <algorithm>
@@ -5,6 +6,7 @@
 #include <cctype>
 #include <locale>
 
+using namespace multiscale;
 using namespace multiscale::verification;
 
 
@@ -68,7 +70,7 @@ void ParserGrammarExceptionHandler::handleExtraInputException(const string &init
 
     strStream   << getIntroductoryErrorMessage()
                 << "Please remove the additional tokens \""
-                << extraInput
+                << trimRight(extraInput)
                 << "\" following the syntactically correct query \""
                 << correctlyParsedString << "\". "
                 << "You can find the extra input emphasised by \">>>\" and \"<<<\" below (character "
@@ -117,17 +119,7 @@ string ParserGrammarExceptionHandler::handleExpectedTokenAtEndOfString(const str
 }
 
 string ParserGrammarExceptionHandler::trimRight(const string &inputString) {
-    string trimmedString = inputString;
-
-    trimmedString.erase(
-        std::find_if(
-            trimmedString.rbegin(),
-            trimmedString.rend(),
-            std::not1(std::ptr_fun<int, int>(std::isspace))).base()
-        , trimmedString.end()
-   );
-
-   return trimmedString;
+    return StringManipulator::trimRight(inputString);
 }
 
 string ParserGrammarExceptionHandler::getIntroductoryErrorMessage() {
