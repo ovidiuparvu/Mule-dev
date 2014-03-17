@@ -114,6 +114,9 @@ namespace multiscale {
                  */
                 void createModelCheckers(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory);
 
+                //! Run the model checkers and print a message informing the user about it
+                void runModelCheckersAndPrintMessage();
+
                 //! Run the model checkers and verify the logic properties
                 void runModelCheckers();
 

@@ -50,6 +50,15 @@ void ModelCheckingOutputWriter::printParsingLogicPropertiesEndMessage() {
     ConsolePrinter::printEmptyLine();
 }
 
+void ModelCheckingOutputWriter::printStartModelCheckingExecutionMessage() {
+    ConsolePrinter::printMessageWithColouredTag(MSG_START_MODEL_CHECKING_EXECUTION, TAG_EXECUTE, ColourCode::GREEN);
+    ConsolePrinter::printColouredMessage(TAG_EXECUTE, ColourCode::GREEN);
+    printSeparatorTag();
+    
+    ConsolePrinter::printEmptyLine();
+    ConsolePrinter::printEmptyLine();
+}
+
 void ModelCheckingOutputWriter::printParsingLogicPropertyMessage(const std::string &logicProperty) {
     ConsolePrinter::printMessageWithColouredTag(StringManipulator::trimRight(logicProperty), TAG_PARSING, ColourCode::GREEN);
 }
@@ -119,6 +128,7 @@ void ModelCheckingOutputWriter::printSeparatorTag() {
 const std::string ModelCheckingOutputWriter::TAG_INTRO      = "[ INTRO    ]";
 const std::string ModelCheckingOutputWriter::TAG_INIT       = "[ INIT     ]";
 const std::string ModelCheckingOutputWriter::TAG_PARSING    = "[ PARSING  ]";
+const std::string ModelCheckingOutputWriter::TAG_EXECUTE    = "[ EXECUTE  ]";
 const std::string ModelCheckingOutputWriter::TAG_RESULT     = "[ RESULT   ]";
 const std::string ModelCheckingOutputWriter::TAG_SUCCESS    = "[ SUCCESS  ]";
 const std::string ModelCheckingOutputWriter::TAG_FAILED     = "[ FAILED   ]";
@@ -135,9 +145,11 @@ const std::string ModelCheckingOutputWriter::MSG_INIT_LOGIC_PROPERTIES_PATH = "L
 const std::string ModelCheckingOutputWriter::MSG_INIT_TRACES_FOLDER_PATH    = "Spatial-temporal traces input folder: ";
 const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "Extra evaluation time:                ";
 
-const std::string ModelCheckingOutputWriter::MSG_PARSING_INTRODUCTION   = "I am starting to parse logic properties...";
+const std::string ModelCheckingOutputWriter::MSG_PARSING_INTRODUCTION           = "I am starting to parse logic properties...";
 
-const std::string ModelCheckingOutputWriter::MSG_RESULTS_INTRODUCTION   = "I have finished evaluating the logic properties and will display the results...";
+const std::string ModelCheckingOutputWriter::MSG_START_MODEL_CHECKING_EXECUTION = "I am starting the execution of the model checkers...";
+
+const std::string ModelCheckingOutputWriter::MSG_RESULTS_INTRODUCTION           = "I have finished evaluating the logic properties and will display the results...";
 
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS          = "The logic property holds: ";
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS_TRUE     = "TRUE";

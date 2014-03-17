@@ -43,7 +43,10 @@ namespace multiscale {
                 //! Print a closing message after the logic properties were parsed
                 static void printParsingLogicPropertiesEndMessage();
 
-                // Print an introduction message informing the user that the model checking results will be displayed
+                //! Print a message informing the user that the model checking execution has started
+                static void printStartModelCheckingExecutionMessage();
+
+                //! Print an introduction message informing the user that the model checking results will be displayed
                 static void printModelCheckingResultsIntroductionMessage();
 
                 //! Print a message with the results of checking if the given property holds
@@ -96,6 +99,7 @@ namespace multiscale {
                 static const std::string TAG_INTRO;
                 static const std::string TAG_INIT;
                 static const std::string TAG_PARSING;
+                static const std::string TAG_EXECUTE;
                 static const std::string TAG_RESULT;
                 static const std::string TAG_SUCCESS;
                 static const std::string TAG_FAILED;
@@ -113,6 +117,8 @@ namespace multiscale {
                 static const std::string MSG_INIT_EXTRA_EVALUATION_TIME;
 
                 static const std::string MSG_PARSING_INTRODUCTION;
+
+                static const std::string MSG_START_MODEL_CHECKING_EXECUTION;
 
                 static const std::string MSG_RESULTS_INTRODUCTION;
 

@@ -40,7 +40,7 @@ void ModelCheckingManager::initialiseLogicProperties(const std::string &logicPro
 void ModelCheckingManager::runModelCheckingAndOutputResults(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
     parseLogicPropertiesAndPrintMessage();
     createModelCheckers(modelCheckerFactory);
-    runModelCheckers();
+    runModelCheckersAndPrintMessage();
     outputModelCheckersResultsAndPrintMessage();
 }
 
@@ -112,6 +112,12 @@ void ModelCheckingManager::createModelCheckers(const std::shared_ptr<ModelChecke
             modelCheckerFactory->createInstance(abstractSyntaxTree)
         );
     }
+}
+
+void ModelCheckingManager::runModelCheckersAndPrintMessage() {
+    ModelCheckingOutputWriter::printStartModelCheckingExecutionMessage();
+
+    runModelCheckers();
 }
 
 void ModelCheckingManager::runModelCheckers() {

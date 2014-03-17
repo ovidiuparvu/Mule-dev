@@ -30,7 +30,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -62,7 +62,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -94,7 +94,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -126,7 +126,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -158,7 +158,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -190,7 +190,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -222,7 +222,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -254,7 +254,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -286,7 +286,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -318,7 +318,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 	<timepoint>
@@ -350,7 +350,7 @@
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>A</name>
-			<value>11</value>
+			<value>7</value>
 		</numericStateVariable>
 	</timepoint>
 </experiment>
