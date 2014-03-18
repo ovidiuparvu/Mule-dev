@@ -22,6 +22,10 @@ ModelCheckingManager::~ModelCheckingManager() {
     modelCheckers.clear();
 }
 
+void ModelCheckingManager::setShouldPrintDetailedEvaluation(bool shouldPrintDetailedEvaluation) {
+    this->shouldPrintDetailedEvaluation = shouldPrintDetailedEvaluation;
+}
+
 void ModelCheckingManager::runModelCheckingTasks(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
     runModelCheckingAndOutputResults(modelCheckerFactory);
 }
@@ -30,6 +34,8 @@ void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
                                       unsigned long extraEvaluationTime) {
     this->extraEvaluationTime = extraEvaluationTime;
     this->evaluationStartTime = std::chrono::system_clock::now();
+
+    this->shouldPrintDetailedEvaluation = false;
 
     initialiseLogicProperties(logicPropertyFilepath);
 }
@@ -145,13 +151,21 @@ SpatialTemporalTrace ModelCheckingManager::getNextSpatialTemporalTrace() {
     SpatialTemporalTrace trace = traceReader.getNextSpatialTemporalTrace(tracePath);
 
     // Record the path of the trace
-    tracesPaths.push_back(tracePath);
+    storeNewSpatialTemporalTracePath(tracePath);
 
     return trace;
 }
 
+void ModelCheckingManager::storeNewSpatialTemporalTracePath(const std::string &tracePath) {
+    if (shouldPrintDetailedEvaluation) {
+        tracesPaths.push_back(tracePath);
+    }
+}
+
 void ModelCheckingManager::createNewEvaluationResults() {
-    evaluationResults.push_back(std::vector<bool>(2 * modelCheckers.size(), false));
+    if (shouldPrintDetailedEvaluation) {
+        evaluationResults.push_back(std::vector<bool>(2 * modelCheckers.size(), false));
+    }
 }
 
 void ModelCheckingManager::runModelCheckersForTrace(const SpatialTemporalTrace &trace,
@@ -170,9 +184,12 @@ void ModelCheckingManager::runModelCheckersForTrace(const SpatialTemporalTrace &
 
 void ModelCheckingManager::runModelCheckerForTrace(const std::size_t &modelCheckerIndex,
                                                    const SpatialTemporalTrace &trace) {
+    // Update the model checker status and evaluate the trace
     bool evaluationResult = modelCheckers[modelCheckerIndex]->evaluate(trace);
 
-    updateEvaluationResults(modelCheckerIndex, evaluationResult);
+    if (shouldPrintDetailedEvaluation) {
+        updateEvaluationResults(modelCheckerIndex, evaluationResult);
+    }
 }
 
 void ModelCheckingManager::updateEvaluationResults(const std::size_t &modelCheckerIndex, bool evaluationResult) {
@@ -244,11 +261,13 @@ void ModelCheckingManager::outputModelCheckerResults(const std::shared_ptr<Model
 }
 
 void ModelCheckingManager::outputDetailedEvaluationResults() {
-    ModelCheckingOutputWriter::printDetailedEvaluationResults(
-        logicProperties,
-        tracesPaths,
-        evaluationResults
-    );
+    if (shouldPrintDetailedEvaluation) {
+        ModelCheckingOutputWriter::printDetailedEvaluationResults(
+            logicProperties,
+            tracesPaths,
+            evaluationResults
+        );
+    }
 }
 
 

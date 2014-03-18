@@ -24,10 +24,6 @@ namespace multiscale {
 
             private:
 
-                std::chrono::time_point<std::chrono::system_clock>  evaluationStartTime;            /*!< The start time for the evaluation process */
-                unsigned long                                       extraEvaluationTime;            /*!< The number of minutes for which the program waits for
-                                                                                                         new traces to be added to the trace folder */
-
                 Parser                                              parser;                         /*!< The parser used to verify if logical properties
                                                                                                          are syntactically correct */
 
@@ -46,6 +42,12 @@ namespace multiscale {
 
                 std::vector<std::shared_ptr<ModelChecker>>          modelCheckers;                  /*!< The collection of model checkers */
 
+                std::chrono::time_point<std::chrono::system_clock>  evaluationStartTime;            /*!< The start time for the evaluation process */
+                unsigned long                                       extraEvaluationTime;            /*!< The number of minutes for which the program waits for
+                                                                                                         new traces to be added to the trace folder */
+
+                bool                                                shouldPrintDetailedEvaluation;  /*!< Flag indicating if detailed evaluation results should be printed */
+
             public:
 
                 ModelCheckingManager(const std::string &logicPropertiesFilepath,
@@ -53,11 +55,18 @@ namespace multiscale {
                                      unsigned long extraEvaluationTime);
                 ~ModelCheckingManager();
 
+                //! Set the flag indicating if the detailed evaluation should be printed
+                /*!
+                 * \param shouldPrintDetailedEvaluation The flag
+                 */
+                void setShouldPrintDetailedEvaluation(bool shouldPrintDetailedEvaluation);
+                
                 //! Run the model checking tasks
                 /*!
                  * \param modelCheckerFactory   The factory used to create model checkers
                  */
                 void runModelCheckingTasks(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory);
+
 
             private:
 
@@ -132,7 +141,15 @@ namespace multiscale {
                 //! Get the next spatial temporal trace and store its path
                 SpatialTemporalTrace getNextSpatialTemporalTrace();
 
+                //! Store new trace path if the shouldPrintDetailedEvaluation flag is set to true
+                /*!
+                 * \param tracePath The path to the trace
+                 */
+                void storeNewSpatialTemporalTracePath(const std::string &tracePath);
+
                 //! Create a new vector for storing the evaluation results for the (logic property, new trace) pairs
+                /*! The vector is created only if the shouldPrintDetailedEvaluation flag is set to true
+                 */
                 void createNewEvaluationResults();
 
                 //! Run the model checkers and verify the logic properties considering the given trace
