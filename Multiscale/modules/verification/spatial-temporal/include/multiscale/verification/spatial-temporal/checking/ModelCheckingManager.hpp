@@ -34,9 +34,15 @@ namespace multiscale {
                 std::vector<std::string>                            logicProperties;                /*!< The collection of logic properties */
                 std::vector<AbstractSyntaxTree>                     abstractSyntaxTrees;            /*!< The collection of abstract syntax tree obtained after
                                                                                                          parsing the logic properties */
+                std::vector<std::string>                            tracesPaths;                    /*!< The collection of traces paths */
 
                 LogicPropertyDataReader                             logicPropertyReader;            /*!< The logic property reader */
                 SpatialTemporalDataReader                           traceReader;                    /*!< The behaviour/trace reader */
+
+                std::vector<std::vector<bool>>                      evaluationResults;              /*!< The two-dimensional array storing the evaluation result
+                                                                                                         for each (logic property, trace) pair. A pair of boolean
+                                                                                                         values (isEvaluated, evaluationResult) is associated to each
+                                                                                                         (logic property, trace) pair */
 
                 std::vector<std::shared_ptr<ModelChecker>>          modelCheckers;                  /*!< The collection of model checkers */
 
@@ -123,6 +129,12 @@ namespace multiscale {
                 //! Run the model checkers and verify the logic properties for the currently existing traces
                 void runModelCheckersForCurrentlyExistingTraces();
 
+                //! Get the next spatial temporal trace and store its path
+                SpatialTemporalTrace getNextSpatialTemporalTrace();
+
+                //! Create a new vector for storing the evaluation results for the (logic property, new trace) pairs
+                void createNewEvaluationResults();
+
                 //! Run the model checkers and verify the logic properties considering the given trace
                 /*! If none of the model checkers need additional traces then the continueEvaluation flag
                  *  will be set to false.
@@ -132,6 +144,21 @@ namespace multiscale {
                  */
                 void runModelCheckersForTrace(const SpatialTemporalTrace &trace,
                                               bool &continueEvaluation);
+
+                //! Run the model checker for the given trace
+                /*!
+                 * \param modelCheckerIndex The index of the model checker inside the collection of model checkers
+                 * \param trace             The given spatial-temporal trace
+                 */
+                void runModelCheckerForTrace(const std::size_t &modelCheckerIndex,
+                                             const SpatialTemporalTrace &trace);
+
+                //! Update the evaluation results for the given model checker index and result
+                /*!
+                 * \param modelCheckerIndex The index of the model checker inside the collection of model checkers
+                 * \param evaluationResult  The result of evaluating the model checker for the last trace
+                 */
+                void updateEvaluationResults(const std::size_t &modelCheckerIndex, bool evaluationResult);
 
                 //! Run the model checkers and request additional traces
                 void runModelCheckersAndRequestAdditionalTraces();
@@ -161,6 +188,9 @@ namespace multiscale {
                  */
                 void outputModelCheckerResults(const std::shared_ptr<ModelChecker> &modelChecker,
                                                const std::string &logicProperty);
+
+                //! Output the logic properties detailed evaluation results
+                void outputDetailedEvaluationResults();
 
 
                 // Constants

@@ -46,6 +46,13 @@ namespace multiscale {
                 //! Print a message informing the user that the model checking execution has started
                 static void printStartModelCheckingExecutionMessage();
 
+                //! Print a message informing the user that the model checking execution is suspended for timeOut seconds
+                /*! Additionally let the user know that the list of traces is updated after the timeout
+                 *
+                 * \param timeOut   The timeout value
+                 */
+                static void printTimeoutMessage(unsigned long timeOut);
+
                 //! Print an introduction message informing the user that the model checking results will be displayed
                 static void printModelCheckingResultsIntroductionMessage();
 
@@ -58,6 +65,16 @@ namespace multiscale {
                 static void printModelCheckingResultMessage(bool doesPropertyHold,
                                                             const std::string &detailedResult,
                                                             const std::string &logicProperty);
+
+                //! Print for each logic property the traces for which the evaluation result was true/false
+                /*!
+                 * \param logicProperties   The collection of logic properties
+                 * \param tracesPaths       The collection of trace paths
+                 * \param evaluationResults The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
+                 */
+                static void printDetailedEvaluationResults(const std::vector<std::string> &logicProperties,
+                                                           const std::vector<std::string> &tracesPaths,
+                                                           const std::vector<std::vector<bool>> &evaluationResults);
 
                 //! Print a success message
                 static void printSuccessMessage();
@@ -73,6 +90,14 @@ namespace multiscale {
                  */
                 static void printLogicPropertyForResult(const std::string &logicProperty);
 
+                //! Print the given logic property in the context of the provided tag
+                /*!
+                 * \param logicProperty The given logic property
+                 * \param tag           The given tag
+                 */
+                static void printLogicPropertyWithTag(const std::string &logicProperty,
+                                                      const std::string &tag);
+
                 //! Print if the logic property verified by the model checker holds in the context of a result message
                 /*!
                  * \param doesPropertyHold  Flag indicating if the logic property holds
@@ -87,6 +112,59 @@ namespace multiscale {
                 static void printModelCheckingDetailedResult(bool doesPropertyHold,
                                                              const std::string &detailedResult);
 
+                //! Print an introduction message informing the user that the detailed evaluation results will be printed
+                static void printDetailedEvaluationResultsIntroductionMessage();
+
+                //! Print the detailed evaluation results for the given logic properties and traces
+                /*!
+                 * \param logicProperties   The collection of logic properties
+                 * \param tracesPaths       The collection of trace paths
+                 * \param evaluationResults The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
+                 */
+                static void printDetailedEvaluationResultsForLogicProperties(const std::vector<std::string> &logicProperties,
+                                                                             const std::vector<std::string> &tracesPaths,
+                                                                             const std::vector<std::vector<bool>> &evaluationResults);
+
+                //! Print the detailed evaluation results for the given logic property
+                /*!
+                 * \param logicPropertyIndex    The index of the logic property in the collection of logic properties
+                 * \param tracesPaths           The collection of trace paths
+                 * \param evaluationResults     The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
+                 */
+                static void printDetailedEvaluationResults(const std::size_t &logicPropertyIndex,
+                                                           const std::vector<std::string> &tracesPaths,
+                                                           const std::vector<std::vector<bool>> &evaluationResults);
+
+                //! Print the detailed evaluation result for the given logic property and trace
+                /*!
+                 * \param logicPropertyIndex    The index of the logic property in the collection of logic properties
+                 * \param tracePath             The path to the spatial temporal trace
+                 * \param tracePathIndex        The index of the trace path in the collection of trace paths
+                 * \param evaluationResults     The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
+                 */
+                static void printDetailedEvaluationResult(const std::size_t &logicPropertyIndex,
+                                                          const std::string &tracePath,
+                                                          const std::size_t &tracePathIndex,
+                                                          const std::vector<std::vector<bool>> &evaluationResults);
+
+                //! Print the trace path with the associated evaluation result
+                /*!
+                 * \param tracePath         The path to the spatial temporal trace
+                 * \param evaluationResult  The evaluation result
+                 */
+                static void printTraceEvaluationResult(const std::string &tracePath, bool evaluationResult);
+
+                //! Print a message with the given tag and colour depending on the truth value
+                /*! If the truthValue is true then the tag colour is green, otherwise red
+                 *
+                 * \param message       The given message
+                 * \param tag           The given tag
+                 * \param truthValue    Boolean flag depending on which the tag colour is set
+                 */
+                static void printTruthValueDependentMessage(const std::string &message,
+                                                            const std::string &tag,
+                                                            bool truthValue);
+
                 //! Print a line containing a result tag and no content
                 static void printResultTag();
 
@@ -100,9 +178,13 @@ namespace multiscale {
                 static const std::string TAG_INIT;
                 static const std::string TAG_PARSING;
                 static const std::string TAG_EXECUTE;
+                static const std::string TAG_TIMEOUT;
                 static const std::string TAG_RESULT;
+                static const std::string TAG_DETAILS;
                 static const std::string TAG_SUCCESS;
                 static const std::string TAG_FAILED;
+                static const std::string TAG_TRUE;
+                static const std::string TAG_FALSE;
                 static const std::string TAG_SEPARATOR;
 
                 static const std::string MSG_INTRO_NAME;
@@ -119,12 +201,16 @@ namespace multiscale {
                 static const std::string MSG_PARSING_INTRODUCTION;
 
                 static const std::string MSG_START_MODEL_CHECKING_EXECUTION;
+                static const std::string MSG_EXECUTION_TIMEOUT_BEGIN;
+                static const std::string MSG_EXECUTION_TIMEOUT_END;
 
                 static const std::string MSG_RESULTS_INTRODUCTION;
+                static const std::string MSG_EVALUATION_RESULTS_INTRODUCTION;
 
                 static const std::string MSG_LOGIC_PROPERTY_HOLDS;
                 static const std::string MSG_LOGIC_PROPERTY_HOLDS_TRUE;
                 static const std::string MSG_LOGIC_PROPERTY_HOLDS_FALSE;
+
         };
 
     };

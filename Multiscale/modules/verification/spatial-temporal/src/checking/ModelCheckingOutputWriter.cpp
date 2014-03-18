@@ -45,6 +45,10 @@ void ModelCheckingOutputWriter::printParsingLogicPropertiesBeginMessage() {
     printSeparatorTag();
 }
 
+void ModelCheckingOutputWriter::printParsingLogicPropertyMessage(const std::string &logicProperty) {
+    ConsolePrinter::printMessageWithColouredTag(StringManipulator::trimRight(logicProperty), TAG_PARSING, ColourCode::GREEN);
+}
+
 void ModelCheckingOutputWriter::printParsingLogicPropertiesEndMessage() {
     ConsolePrinter::printEmptyLine();
     ConsolePrinter::printEmptyLine();
@@ -54,19 +58,21 @@ void ModelCheckingOutputWriter::printStartModelCheckingExecutionMessage() {
     ConsolePrinter::printMessageWithColouredTag(MSG_START_MODEL_CHECKING_EXECUTION, TAG_EXECUTE, ColourCode::GREEN);
     ConsolePrinter::printColouredMessage(TAG_EXECUTE, ColourCode::GREEN);
     printSeparatorTag();
-    
-    ConsolePrinter::printEmptyLine();
-    ConsolePrinter::printEmptyLine();
 }
 
-void ModelCheckingOutputWriter::printParsingLogicPropertyMessage(const std::string &logicProperty) {
-    ConsolePrinter::printMessageWithColouredTag(StringManipulator::trimRight(logicProperty), TAG_PARSING, ColourCode::GREEN);
+void ModelCheckingOutputWriter::printTimeoutMessage(unsigned long timeOut) {
+    ConsolePrinter::printMessageWithColouredTag(MSG_EXECUTION_TIMEOUT_BEGIN +
+                                                StringManipulator::toString(timeOut) +
+                                                MSG_EXECUTION_TIMEOUT_END,
+                                                TAG_TIMEOUT, ColourCode::GREEN);
 }
 
 void ModelCheckingOutputWriter::printModelCheckingResultsIntroductionMessage() {
+    ConsolePrinter::printEmptyLine();
+    ConsolePrinter::printEmptyLine();
+
     ConsolePrinter::printMessageWithColouredTag(MSG_RESULTS_INTRODUCTION, TAG_RESULT, ColourCode::GREEN);
     ConsolePrinter::printColouredMessage(TAG_RESULT, ColourCode::GREEN);
-
     printSeparatorTag();
 }
 
@@ -81,6 +87,13 @@ void ModelCheckingOutputWriter::printModelCheckingResultMessage(bool doesPropert
     printSeparatorTag();
 }
 
+void ModelCheckingOutputWriter::printDetailedEvaluationResults(const std::vector<std::string> &logicProperties,
+                                                               const std::vector<std::string> &tracesPaths,
+                                                               const std::vector<std::vector<bool>> &evaluationResults) {
+    printDetailedEvaluationResultsIntroductionMessage();
+    printDetailedEvaluationResultsForLogicProperties(logicProperties, tracesPaths, evaluationResults);
+}
+
 void ModelCheckingOutputWriter::printSuccessMessage() {
     ConsolePrinter::printColouredMessage(TAG_SUCCESS, ColourCode::GREEN);
     printSeparatorTag();
@@ -92,26 +105,90 @@ void ModelCheckingOutputWriter::printFailedMessage() {
 }
 
 void ModelCheckingOutputWriter::printLogicPropertyForResult(const std::string &logicProperty) {
+    printLogicPropertyWithTag(logicProperty, TAG_RESULT);
+}
+
+void ModelCheckingOutputWriter::printLogicPropertyWithTag(const std::string &logicProperty,
+                                                          const std::string &tag) {
     ConsolePrinter::printMessageWithColouredTag(StringManipulator::trimRight(logicProperty),
-                                                TAG_RESULT, ColourCode::GREEN);
+                                                tag, ColourCode::GREEN);
 }
 
 void ModelCheckingOutputWriter::printModelCheckingResult(bool doesPropertyHold) {
+
     if (doesPropertyHold) {
-        ConsolePrinter::printMessageWithColouredTag(MSG_LOGIC_PROPERTY_HOLDS + MSG_LOGIC_PROPERTY_HOLDS_TRUE,
-                                                    TAG_RESULT, ColourCode::GREEN);
+        printTruthValueDependentMessage(MSG_LOGIC_PROPERTY_HOLDS + MSG_LOGIC_PROPERTY_HOLDS_TRUE, TAG_RESULT, doesPropertyHold);
     } else {
-        ConsolePrinter::printMessageWithColouredTag(MSG_LOGIC_PROPERTY_HOLDS + MSG_LOGIC_PROPERTY_HOLDS_FALSE,
-                                                    TAG_RESULT, ColourCode::RED);
+        printTruthValueDependentMessage(MSG_LOGIC_PROPERTY_HOLDS + MSG_LOGIC_PROPERTY_HOLDS_FALSE, TAG_RESULT, doesPropertyHold);
     }
 }
 
 void ModelCheckingOutputWriter::printModelCheckingDetailedResult(bool doesPropertyHold,
                                                                  const std::string &detailedResult) {
-    if (doesPropertyHold) {
-        ConsolePrinter::printMessageWithColouredTag(detailedResult, TAG_RESULT, ColourCode::GREEN);
+    printTruthValueDependentMessage(detailedResult, TAG_RESULT, doesPropertyHold);
+}
+
+void ModelCheckingOutputWriter::printDetailedEvaluationResultsIntroductionMessage() {
+    ConsolePrinter::printEmptyLine();
+    ConsolePrinter::printEmptyLine();
+    ConsolePrinter::printMessageWithColouredTag(MSG_EVALUATION_RESULTS_INTRODUCTION,
+                                                TAG_DETAILS, ColourCode::GREEN);
+    ConsolePrinter::printColouredMessage(TAG_DETAILS, ColourCode::GREEN);
+    printSeparatorTag();
+}
+
+void ModelCheckingOutputWriter::printDetailedEvaluationResultsForLogicProperties(const std::vector<std::string> &logicProperties,
+                                                                                 const std::vector<std::string> &tracesPaths,
+                                                                                 const std::vector<std::vector<bool>> &evaluationResults) {
+    auto nrOfLogicProperties = logicProperties.size();
+
+    for (decltype(nrOfLogicProperties) i = 0; i != nrOfLogicProperties; i++) {
+        printLogicPropertyWithTag(logicProperties[i], TAG_DETAILS);
+        ConsolePrinter::printColouredMessage(TAG_DETAILS, ColourCode::GREEN);
+
+        printDetailedEvaluationResults(i, tracesPaths, evaluationResults);
+        printSeparatorTag();
+    }
+}
+
+void ModelCheckingOutputWriter::printDetailedEvaluationResults(const std::size_t &logicPropertyIndex,
+                                                               const std::vector<std::string> &tracesPaths,
+                                                               const std::vector<std::vector<bool>> &evaluationResults) {
+    auto nrOfTraces = tracesPaths.size();
+
+    for (decltype(nrOfTraces) i = 0; i != nrOfTraces; i++) {
+        printDetailedEvaluationResult(logicPropertyIndex, tracesPaths[i], i, evaluationResults);
+    }
+}
+
+void ModelCheckingOutputWriter::printDetailedEvaluationResult(const std::size_t &logicPropertyIndex,
+                                                              const std::string &tracePath,
+                                                              const std::size_t &tracePathIndex,
+                                                              const std::vector<std::vector<bool>> &evaluationResults) {
+    // If the logic property was evaluated for this trace
+    if ((evaluationResults[tracePathIndex])[2 * logicPropertyIndex]) {
+        printTraceEvaluationResult(
+            tracePath,
+            (evaluationResults[tracePathIndex])[(2 * logicPropertyIndex) + 1]
+        );
+    }
+}
+
+void ModelCheckingOutputWriter::printTraceEvaluationResult(const std::string &tracePath, bool evaluationResult) {
+    if (evaluationResult) {
+        printTruthValueDependentMessage(tracePath, TAG_TRUE, true);
     } else {
-        ConsolePrinter::printMessageWithColouredTag(detailedResult, TAG_RESULT, ColourCode::RED);
+        printTruthValueDependentMessage(tracePath, TAG_FALSE, false);
+    }
+}
+
+void ModelCheckingOutputWriter::printTruthValueDependentMessage(const std::string &message,
+                                                                const std::string &tag,
+                                                                bool truthValue) {
+    if (truthValue) {
+        ConsolePrinter::printMessageWithColouredTag(message, tag, ColourCode::GREEN);
+    } else {
+        ConsolePrinter::printMessageWithColouredTag(message, tag, ColourCode::RED);
     }
 }
 
@@ -129,9 +206,13 @@ const std::string ModelCheckingOutputWriter::TAG_INTRO      = "[ INTRO    ]";
 const std::string ModelCheckingOutputWriter::TAG_INIT       = "[ INIT     ]";
 const std::string ModelCheckingOutputWriter::TAG_PARSING    = "[ PARSING  ]";
 const std::string ModelCheckingOutputWriter::TAG_EXECUTE    = "[ EXECUTE  ]";
+const std::string ModelCheckingOutputWriter::TAG_TIMEOUT    = "[ TIMEOUT  ]";
 const std::string ModelCheckingOutputWriter::TAG_RESULT     = "[ RESULT   ]";
+const std::string ModelCheckingOutputWriter::TAG_DETAILS    = "[ DETAILS  ]";
 const std::string ModelCheckingOutputWriter::TAG_SUCCESS    = "[ SUCCESS  ]";
 const std::string ModelCheckingOutputWriter::TAG_FAILED     = "[ FAILED   ]";
+const std::string ModelCheckingOutputWriter::TAG_TRUE       = "[ TRUE     ]";
+const std::string ModelCheckingOutputWriter::TAG_FALSE      = "[ FALSE    ]";
 const std::string ModelCheckingOutputWriter::TAG_SEPARATOR  = "[==========]";
 
 const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mudi 0.6.126 (Multidimensional model checker)";
@@ -143,13 +224,16 @@ const std::string ModelCheckingOutputWriter::MSG_INTRO_CONTACT                  
 const std::string ModelCheckingOutputWriter::MSG_INIT_EXECUTION_PARAMETERS  = "Multidimensional model checking input parameters";
 const std::string ModelCheckingOutputWriter::MSG_INIT_LOGIC_PROPERTIES_PATH = "Logic properties input file:          ";
 const std::string ModelCheckingOutputWriter::MSG_INIT_TRACES_FOLDER_PATH    = "Spatial-temporal traces input folder: ";
-const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "Extra evaluation time:                ";
+const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "Extra evaluation time (minutes):      ";
 
 const std::string ModelCheckingOutputWriter::MSG_PARSING_INTRODUCTION           = "I am starting to parse logic properties...";
 
 const std::string ModelCheckingOutputWriter::MSG_START_MODEL_CHECKING_EXECUTION = "I am starting the execution of the model checkers...";
+const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_BEGIN        = "The model checker execution was suspended for ";
+const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_END          = " seconds during which new traces can be provided in the traces input folder.";
 
-const std::string ModelCheckingOutputWriter::MSG_RESULTS_INTRODUCTION           = "I have finished evaluating the logic properties and will display the results...";
+const std::string ModelCheckingOutputWriter::MSG_RESULTS_INTRODUCTION               = "I have finished evaluating the logic properties and will display the results...";
+const std::string ModelCheckingOutputWriter::MSG_EVALUATION_RESULTS_INTRODUCTION    = "I will display for each logic property which traces evaluated to TRUE and which evaluated to FALSE...";
 
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS          = "The logic property holds: ";
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS_TRUE     = "TRUE";

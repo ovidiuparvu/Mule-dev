@@ -16,14 +16,6 @@ FrequencyModelChecker::FrequencyModelChecker(const AbstractSyntaxTree &abstractS
 
 FrequencyModelChecker::~FrequencyModelChecker() {}
 
-void FrequencyModelChecker::evaluate(const SpatialTemporalTrace &trace) {
-    if (abstractSyntaxTree.evaluate(trace)) {
-        totalNumberOfTrueEvaluations++;
-    }
-
-    totalNumberOfEvaluations++;
-}
-
 bool FrequencyModelChecker::acceptsMoreTraces() {
     return true;
 }
@@ -44,6 +36,15 @@ std::string FrequencyModelChecker::getDetailedResults() {
         PROPERTY_HOLDS_WITH_PROBABILITY_LABEL +
         resultToString()
     );
+}
+
+void FrequencyModelChecker::updateModelCheckerForTrueEvaluation() {
+    totalNumberOfTrueEvaluations++;
+    totalNumberOfEvaluations++;
+}
+
+void FrequencyModelChecker::updateModelCheckerForFalseEvaluation() {
+    totalNumberOfEvaluations++;
 }
 
 void FrequencyModelChecker::initialise() {

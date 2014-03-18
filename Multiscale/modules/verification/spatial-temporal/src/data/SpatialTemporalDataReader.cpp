@@ -38,6 +38,14 @@ SpatialTemporalTrace SpatialTemporalDataReader::getNextSpatialTemporalTrace() {
     return generateSpatialTemporalTrace();
 }
 
+SpatialTemporalTrace SpatialTemporalDataReader::getNextSpatialTemporalTrace(std::string &tracePath) {
+    if (!hasNext()) {
+        MS_throw(RuntimeException, ERR_NO_VALID_INPUT_FILES_REMAINING);
+    }
+
+    return generateSpatialTemporalTrace(tracePath);
+}
+
 void SpatialTemporalDataReader::initialise(const std::string &folderPath) {
     validateFolderPath(folderPath);
 
@@ -76,7 +84,7 @@ bool SpatialTemporalDataReader::hasValidNext() {
 
 SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace() {
     std::string inputFilepath = getFirstValidUnprocessedInputFilepath();
-    SpatialTemporalTrace trace = generateSpatialTemporalTrace(inputFilepath);
+    SpatialTemporalTrace trace = constructSpatialTemporalTrace(inputFilepath);
 
     // Add the file to the list of processed files
     processedInputFiles.insert(inputFilepath);
@@ -84,15 +92,25 @@ SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace() {
     return trace;
 }
 
-SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace(const std::string &inputFilepath) {
+SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace(std::string &tracePath) {
+    tracePath = getFirstValidUnprocessedInputFilepath();
+    SpatialTemporalTrace trace = constructSpatialTemporalTrace(tracePath);
+
+    // Add the file to the list of processed files
+    processedInputFiles.insert(tracePath);
+
+    return trace;
+}
+
+SpatialTemporalTrace SpatialTemporalDataReader::constructSpatialTemporalTrace(const std::string &inputFilepath) {
     pt::ptree propertyTree;
 
     read_xml(inputFilepath, propertyTree, pt::xml_parser::trim_whitespace);
 
-    return generateSpatialTemporalTrace(propertyTree);
+    return constructSpatialTemporalTrace(propertyTree);
 }
 
-SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace(const pt::ptree &tree) {
+SpatialTemporalTrace SpatialTemporalDataReader::constructSpatialTemporalTrace(const pt::ptree &tree) {
     SpatialTemporalTrace trace;
 
     for (const auto &timePointTreePair : tree.get_child(LABEL_EXPERIMENT)) {

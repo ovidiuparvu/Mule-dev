@@ -43,6 +43,7 @@ set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     
     src/checking/FrequencyModelChecker.cpp
     src/checking/FrequencyModelCheckerFactory.cpp
+    src/checking/ModelChecker.cpp
     src/checking/ModelCheckingManager.cpp
     src/checking/ModelCheckingOutputWriter.cpp
     

@@ -23,12 +23,6 @@ namespace multiscale {
                 FrequencyModelChecker(const AbstractSyntaxTree &abstractSyntaxTree);
                 ~FrequencyModelChecker();
 
-                //! Evaluate the abstract syntax tree for the given trace
-                /*!
-                 * \param trace The given spatial temporal trace
-                 */
-                void evaluate(const SpatialTemporalTrace &trace) override;
-
                 //! Check if more traces are accepted for evaluating the logic property
                 bool acceptsMoreTraces() override;
 
@@ -40,6 +34,20 @@ namespace multiscale {
 
                 //! Output the results
                 std::string getDetailedResults() override;
+
+            protected:
+
+                //! Update the model checker results considering that the logic property was evaluated to true for the last trace
+                /*!
+                 * Increment the total number of true evaluations and the total number of evaluations
+                 */
+                void updateModelCheckerForTrueEvaluation() override;
+
+                //! Update the model checker results considering that the logic property was evaluated to false for the last trace
+                /*!
+                 * Increment the total number of evaluations
+                 */
+                void updateModelCheckerForFalseEvaluation() override;
 
             private:
 

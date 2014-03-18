@@ -143,7 +143,7 @@ const std::string ModelCheckingOutputWriter::MSG_INTRO_CONTACT                  
 const std::string ModelCheckingOutputWriter::MSG_INIT_EXECUTION_PARAMETERS  = "Multidimensional model checking input parameters";
 const std::string ModelCheckingOutputWriter::MSG_INIT_LOGIC_PROPERTIES_PATH = "Logic properties input file:          ";
 const std::string ModelCheckingOutputWriter::MSG_INIT_TRACES_FOLDER_PATH    = "Spatial-temporal traces input folder: ";
-const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "Extra evaluation time:                ";
+const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "Extra evaluation time (minutes):      ";
 
 const std::string ModelCheckingOutputWriter::MSG_PARSING_INTRODUCTION           = "I am starting to parse logic properties...";
 

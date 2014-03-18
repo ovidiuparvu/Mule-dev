@@ -43,6 +43,12 @@ namespace multiscale {
                 //! Return the next spatial temporal trace
                 SpatialTemporalTrace getNextSpatialTemporalTrace();
 
+                //! Return the next spatial temporal trace and its path
+                /*!
+                 * \param tracePath The path to the spatial temporal trace
+                 */
+                SpatialTemporalTrace getNextSpatialTemporalTrace(std::string &tracePath);
+
             private:
 
                 //! Initialise the sets for storing processed and unprocessed input files
@@ -70,17 +76,26 @@ namespace multiscale {
                 /*! The unprocessed input file will be moved to the set of processed input files after
                  *  creating the spatial temporal trace.
                  *
+                 *  The path to the trace will be returned in the tracePath output parameter.
+                 *
+                 *  \param tracePath    The path to the spatial temporal trace
+                 */
+                SpatialTemporalTrace generateSpatialTemporalTrace(std::string &tracePath);
+
+                //! Construct the spatial temporal trace corresponding to the first valid unprocessed input file
+                /*! The unprocessed input file will be processed and returned as a property tree.
+                 *
                  *  \param inputFilepath    The valid unprocessed input file path
                  */
-                SpatialTemporalTrace generateSpatialTemporalTrace(const std::string &inputFilepath);
+                SpatialTemporalTrace constructSpatialTemporalTrace(const std::string &inputFilepath);
 
-                //! Generate the spatial temporal trace corresponding to the given property tree
+                //! Construct the spatial temporal trace corresponding to the given property tree
                 /*  The property tree is the in-memory representation of the valid unprocessed
                  *  input xml file.
                  *
                  *  \param tree The valid unprocessed input file represented as a property tree
                  */
-                SpatialTemporalTrace generateSpatialTemporalTrace(const pt::ptree &tree);
+                SpatialTemporalTrace constructSpatialTemporalTrace(const pt::ptree &tree);
 
                 //! Add a timepoint corresponding to the given property tree to the spatial temporal trace
                 /*!
