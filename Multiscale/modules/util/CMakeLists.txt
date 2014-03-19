@@ -123,3 +123,15 @@ add_executable(ConsolePrinterSample ${CONSOLE_PRINTER_SAMPLE_SRC})
 AddSample(ConsolePrinterSample)
 
 target_link_libraries(ConsolePrinterSample util)
+
+
+# ExecuteProgramSample
+
+set(EXECUTE_PROGRAM_SAMPLE_SRC
+    sample/ExecuteProgramSample.cpp
+)
+
+add_executable(ExecuteProgramSample ${EXECUTE_PROGRAM_SAMPLE_SRC})
+AddSample(ExecuteProgramSample)
+
+target_link_libraries(ExecuteProgramSample util)

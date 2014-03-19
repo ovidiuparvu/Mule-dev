@@ -20,6 +20,7 @@ namespace multiscale {
 
         protected:
 
+            string message;             /*!< The raw message of the exception */
             string explanatoryString;   /*!< User friendly exception message */
 
         public:
@@ -34,6 +35,11 @@ namespace multiscale {
             //! Returns an explanatory string
             const char* what() const noexcept override {
                 return explanatoryString.c_str();
+            }
+
+            //! Return the raw message of the exception
+            std::string rawMessage() const noexcept {
+                return message;
             }
 
         protected:
@@ -54,6 +60,7 @@ namespace multiscale {
                           << "Error message: " << msg;
 
                 explanatoryString = strStream.str();
+                message           = std::string(msg);
             }
 
     };

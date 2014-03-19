@@ -1,3 +1,4 @@
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/Filesystem.hpp"
 
 using namespace multiscale;
@@ -23,6 +24,16 @@ bool Filesystem::isValidFilePath(const std::string &path) {
     return false;
 }
 
+std::string Filesystem::nativeFormatFilePath(const std::string &path) {
+    fs::path filePath(path);
+
+    if (!fs::exists(filePath)) {
+        MS_throw(InvalidInputException, ERR_INVALID_PATH);
+    }
+
+    return fs::canonical(filePath).string();
+}
+
 std::vector<std::string> Filesystem::getFilesInFolder(const std::string &folderPath,
                                                       const std::string &extension) {
     std::vector<std::string> filesWithExtension;
@@ -40,3 +51,7 @@ std::vector<std::string> Filesystem::getFilesInFolder(const std::string &folderP
 
     return filesWithExtension;
 }
+
+
+// Constants
+const std::string Filesystem::ERR_INVALID_PATH = "The given input file path is invalid. Please change.";

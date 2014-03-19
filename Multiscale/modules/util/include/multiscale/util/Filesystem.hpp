@@ -31,6 +31,12 @@ namespace multiscale {
              */
             static bool isValidFilePath(const std::string &path);
 
+            //! Return the given path as an absolute path in native format
+            /*!
+             * \param path The given path
+             */
+            static std::string nativeFormatFilePath(const std::string &path);
+
             //! Get the list of files with the given extension in the provided folder
             /*!
              * \param folderPath    The path to the folder
@@ -38,6 +44,11 @@ namespace multiscale {
              */
             static std::vector<std::string> getFilesInFolder(const std::string &folderPath,
                                                              const std::string &extension);
+
+        private:
+
+            // Constants
+            static const std::string ERR_INVALID_PATH;
 
     };
 
