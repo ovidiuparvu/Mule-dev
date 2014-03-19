@@ -60,6 +60,11 @@ void ModelCheckingOutputWriter::printStartModelCheckingExecutionMessage() {
     printSeparatorTag();
 }
 
+void ModelCheckingOutputWriter::printExecuteExtraEvaluationProgramMessage(const std::string &programPath) {
+    ConsolePrinter::printMessageWithColouredTag(MSG_START_EXTRA_EVALUATION_PROGRAM_EXECUTION +
+                                                programPath, TAG_EXECUTE, ColourCode::GREEN);
+}
+
 void ModelCheckingOutputWriter::printTimeoutMessage(unsigned long timeOut) {
     ConsolePrinter::printMessageWithColouredTag(MSG_EXECUTION_TIMEOUT_BEGIN +
                                                 StringManipulator::toString(timeOut) +
@@ -228,9 +233,10 @@ const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "E
 
 const std::string ModelCheckingOutputWriter::MSG_PARSING_INTRODUCTION           = "I am starting to parse logic properties...";
 
-const std::string ModelCheckingOutputWriter::MSG_START_MODEL_CHECKING_EXECUTION = "I am starting the execution of the model checkers...";
-const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_BEGIN        = "The model checker execution was suspended for ";
-const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_END          = " seconds during which new traces can be provided in the traces input folder.";
+const std::string ModelCheckingOutputWriter::MSG_START_MODEL_CHECKING_EXECUTION             = "I am starting the execution of the model checkers...";
+const std::string ModelCheckingOutputWriter::MSG_START_EXTRA_EVALUATION_PROGRAM_EXECUTION   = "I am starting the execution of the extra evaluation program located at the following path: ";
+const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_BEGIN                    = "The model checker execution was suspended for ";
+const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_END                      = " seconds during which new traces can be provided in the traces input folder.";
 
 const std::string ModelCheckingOutputWriter::MSG_RESULTS_INTRODUCTION               = "I have finished evaluating the logic properties and will display the results...";
 const std::string ModelCheckingOutputWriter::MSG_EVALUATION_RESULTS_INTRODUCTION    = "I will display for each logic property which traces evaluated to TRUE and which evaluated to FALSE...";
@@ -238,3 +244,9 @@ const std::string ModelCheckingOutputWriter::MSG_EVALUATION_RESULTS_INTRODUCTION
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS          = "The logic property holds: ";
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS_TRUE     = "TRUE";
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS_FALSE    = "FALSE";
+
+
+
+
+
+

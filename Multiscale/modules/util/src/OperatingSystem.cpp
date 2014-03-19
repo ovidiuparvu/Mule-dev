@@ -175,7 +175,7 @@ void OperatingSystem::executeProgramAndVerifyPath(const std::string &path) {
 
 // Constants
 const std::string OperatingSystem::ERR_EXECUTE_PROGRAM      = "The process executing the program located at the following path could not be created: ";
-const std::string OperatingSystem::ERR_INVALID_PROGRAM_PATH = "The provided program path is invalid: ";
+const std::string OperatingSystem::ERR_INVALID_PROGRAM_PATH = "The process was not created because the provided program path is invalid: ";
 
 const unsigned int OperatingSystem::TIMEOUT_MAX_NR      = 100;
 const unsigned int OperatingSystem::TIMEOUT_NR_SECONDS  = 1;

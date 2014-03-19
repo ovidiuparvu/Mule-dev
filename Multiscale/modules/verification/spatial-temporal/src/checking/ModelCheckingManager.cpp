@@ -1,9 +1,11 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/util/OperatingSystem.hpp"
 #include "multiscale/verification/spatial-temporal/checking/FrequencyModelChecker.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingOutputWriter.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingManager.hpp"
 
+using namespace multiscale;
 using namespace multiscale::verification;
 
 
@@ -20,6 +22,10 @@ ModelCheckingManager::~ModelCheckingManager() {
     abstractSyntaxTrees.clear();
     tracesPaths.clear();
     modelCheckers.clear();
+}
+
+void ModelCheckingManager::setExtraEvaluationProgramPath(const std::string &extraEvaluationProgramPath) {
+    this->extraEvaluationProgramPath = extraEvaluationProgramPath;
 }
 
 void ModelCheckingManager::setShouldPrintDetailedEvaluation(bool shouldPrintDetailedEvaluation) {
@@ -202,6 +208,7 @@ void ModelCheckingManager::updateEvaluationResults(const std::size_t &modelCheck
 
 void ModelCheckingManager::runModelCheckersAndRequestAdditionalTraces() {
     while ((isEvaluationTimeRemaining()) && (areUnfinishedModelCheckingTasks())) {
+        executeExtraEvaluationProgram();
         waitBeforeRetry();
         updateTraceReader();
         runModelCheckersForCurrentlyExistingTraces();
@@ -225,6 +232,18 @@ bool ModelCheckingManager::areUnfinishedModelCheckingTasks() {
     }
 
     return false;
+}
+
+void ModelCheckingManager::executeExtraEvaluationProgram() {
+    if (!extraEvaluationProgramPath.empty()) {
+        executeExtraEvaluationProgramAndPrintMessage();
+    }
+}
+
+void ModelCheckingManager::executeExtraEvaluationProgramAndPrintMessage() {
+    ModelCheckingOutputWriter::printExecuteExtraEvaluationProgramMessage(extraEvaluationProgramPath);
+
+    OperatingSystem::executeProgram(extraEvaluationProgramPath);
 }
 
 void ModelCheckingManager::waitBeforeRetry() {

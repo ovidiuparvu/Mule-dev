@@ -47,11 +47,12 @@ po::options_description initialiseAllowedOptions() {
     po::options_description requiredOptions("REQUIRED");
     po::options_description optionalOptions("OPTIONAL");
 
-    requiredOptions.add_options()("logic-queries,q"            , po::value<string>()->required()           , "provide the path to the spatial-temporal queries input file\n")
-                                 ("spatial-temporal-traces,t"  , po::value<string>()->required()           , "provide the path to the folder containing spatial-temporal traces\n")
-                                 ("extra-evaluation-time,e"    , po::value<unsigned long>()->required()    , "provide the maximum number of minutes the application can wait before finishing evaluation\n");
+    requiredOptions.add_options()("logic-queries,q"            , po::value<string>()->required()           , "the path to the spatial-temporal queries input file\n")
+                                 ("spatial-temporal-traces,t"  , po::value<string>()->required()           , "the path to the folder containing spatial-temporal traces\n")
+                                 ("extra-evaluation-time,e"    , po::value<unsigned long>()->required()    , "the maximum number of minutes the application can wait before finishing evaluation\n");
 
     optionalOptions.add_options()("help,h"                     , "display help message\n")
+                                 ("extra-evaluation-program,p" , po::value<string>()                       , "the program which will be executed whenever extra evaluation (and input traces) is required\n")
                                  ("verbose,v"                  , po::bool_switch()                         , "if this flag is set detailed evaluation results will be displayed\n");
 
     allowedOptions.add(requiredOptions).add(optionalOptions);
@@ -98,9 +99,14 @@ void printWrongParameters() {
 }
 
 // Update values of all optional parameters whenever values have been provided
-void updateOptionalParameterValues(bool &shouldVerboseDetailedResults, const po::variables_map &vm) {
+void updateOptionalParameterValues(std::string &extraEvaluationProgramPath, bool &shouldVerboseDetailedResults,
+                                   const po::variables_map &vm) {
     if (vm.count("verbose")) {
         shouldVerboseDetailedResults = vm["verbose"].as<bool>();
+    }
+
+    if (vm.count("extra-evaluation-program")) {
+        extraEvaluationProgramPath = vm["extra-evaluation-program"].as<string>();
     }
 }
 
@@ -114,7 +120,7 @@ void updateRequiredParameterValues(string &logicQueriesFilepath, string &tracesF
 
 // Get the needed parameters
 bool areValidParameters(string &logicQueriesFilepath, string &tracesFolderPath, unsigned long &extraEvaluationTime,
-                        bool &shouldVerboseDetailedResults, int argc, char** argv) {
+                        string &extraEvaluationProgram, bool &shouldVerboseDetailedResults, int argc, char** argv) {
     po::variables_map vm;
 
     // Check if the user wants to print help information
@@ -123,7 +129,7 @@ bool areValidParameters(string &logicQueriesFilepath, string &tracesFolderPath, 
     }
 
     updateRequiredParameterValues(logicQueriesFilepath, tracesFolderPath, extraEvaluationTime, vm);
-    updateOptionalParameterValues(shouldVerboseDetailedResults, vm);
+    updateOptionalParameterValues(extraEvaluationProgram, shouldVerboseDetailedResults, vm);
 
     return true;
 }
@@ -138,12 +144,15 @@ void printModelCheckingInitialisationMessages(const string &logicQueriesFilePath
 
 // Run the model checking operations
 void runModelCheckers(const string &logicQueriesFilePath, const string &tracesFolderPath,
-                      unsigned long extraEvaluationTime, bool shouldVerboseDetailedResults) {
+                      unsigned long extraEvaluationTime, const string &extraEvaluationProgramPath,
+                      bool shouldVerboseDetailedResults) {
     std::shared_ptr<FrequencyModelCheckerFactory> modelCheckerFactory = make_shared<FrequencyModelCheckerFactory>();
 
     ModelCheckingManager manager(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
 
+    manager.setExtraEvaluationProgramPath(extraEvaluationProgramPath);
     manager.setShouldPrintDetailedEvaluation(shouldVerboseDetailedResults);
+
     manager.runModelCheckingTasks(modelCheckerFactory);
 }
 
@@ -153,13 +162,15 @@ void runModelCheckers(int argc, char **argv) {
     string tracesFolderPath;
 
     unsigned long extraEvaluationTime;
+    string        extraEvaluationProgramPath;
 
     bool shouldVerboseDetailedResults;
 
     if (areValidParameters(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime,
-                           shouldVerboseDetailedResults, argc, argv)) {
+                           extraEvaluationProgramPath, shouldVerboseDetailedResults, argc, argv)) {
         printModelCheckingInitialisationMessages(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
-        runModelCheckers(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime, shouldVerboseDetailedResults);
+        runModelCheckers(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime,
+                         extraEvaluationProgramPath, shouldVerboseDetailedResults);
     } else {
         printWrongParameters();
     }

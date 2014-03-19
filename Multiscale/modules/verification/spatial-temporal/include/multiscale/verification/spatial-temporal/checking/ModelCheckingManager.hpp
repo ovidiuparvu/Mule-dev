@@ -45,6 +45,8 @@ namespace multiscale {
                 std::chrono::time_point<std::chrono::system_clock>  evaluationStartTime;            /*!< The start time for the evaluation process */
                 unsigned long                                       extraEvaluationTime;            /*!< The number of minutes for which the program waits for
                                                                                                          new traces to be added to the trace folder */
+                std::string                                         extraEvaluationProgramPath;     /*!< The path to the program which should be executed when
+                                                                                                         extra evaluation is required */
 
                 bool                                                shouldPrintDetailedEvaluation;  /*!< Flag indicating if detailed evaluation results should be printed */
 
@@ -54,6 +56,12 @@ namespace multiscale {
                                      const std::string &tracesFolderPath,
                                      unsigned long extraEvaluationTime);
                 ~ModelCheckingManager();
+
+                //! Set the path of the program which should be executed whenever extra evaluation is required
+                /*!
+                 * \param extraEvaluationProgramPath    The path to the program which will be executed when extra evaluation is required
+                 */
+                void setExtraEvaluationProgramPath(const std::string &extraEvaluationProgramPath);
 
                 //! Set the flag indicating if the detailed evaluation should be printed
                 /*!
@@ -185,6 +193,12 @@ namespace multiscale {
 
                 //! Check if there exist model checkers which require extra traces
                 bool areUnfinishedModelCheckingTasks();
+
+                //! Execute the extra evaluation program for generating potential new traces
+                void executeExtraEvaluationProgram();
+
+                //! Execute the extra evaluation program for generating potential new traces and print a message informing the user about this
+                void executeExtraEvaluationProgramAndPrintMessage();
 
                 //! Wait TRACE_INPUT_REFRESH_TIMEOUT minutes before updating the trace reader
                 void waitBeforeRetry();
