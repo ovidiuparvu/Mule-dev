@@ -46,6 +46,12 @@ namespace multiscale {
                 //! Print a message informing the user that the model checking execution has started
                 static void printStartModelCheckingExecutionMessage();
 
+                //! Print a message informing the user which trace will be evaluated next by the model checkers
+                /*!
+                 * \param tracePath     The path to the spatial-temporal trace
+                 */
+                static void printStartTraceEvaluationMessage(const std::string &tracePath);
+
                 //! Print a message informing the user that the extra evaluation program located at the given path will be executed
                 /*!
                  * \param programPath    The path to the extra evaluation program
@@ -207,6 +213,7 @@ namespace multiscale {
                 static const std::string MSG_PARSING_INTRODUCTION;
 
                 static const std::string MSG_START_MODEL_CHECKING_EXECUTION;
+                static const std::string MSG_START_TRACE_EVALUATION;
                 static const std::string MSG_START_EXTRA_EVALUATION_PROGRAM_EXECUTION;
                 static const std::string MSG_EXECUTION_TIMEOUT_BEGIN;
                 static const std::string MSG_EXECUTION_TIMEOUT_END;

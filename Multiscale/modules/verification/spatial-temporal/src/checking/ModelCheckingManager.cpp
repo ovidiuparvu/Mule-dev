@@ -156,6 +156,9 @@ SpatialTemporalTrace ModelCheckingManager::getNextSpatialTemporalTrace() {
     // Get the trace and its path
     SpatialTemporalTrace trace = traceReader.getNextSpatialTemporalTrace(tracePath);
 
+    // Inform the user that this trace will be evaluated
+    ModelCheckingOutputWriter::printStartTraceEvaluationMessage(tracePath);
+
     // Record the path of the trace
     storeNewSpatialTemporalTracePath(tracePath);
 

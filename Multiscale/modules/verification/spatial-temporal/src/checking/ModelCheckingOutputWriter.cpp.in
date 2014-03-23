@@ -60,6 +60,10 @@ void ModelCheckingOutputWriter::printStartModelCheckingExecutionMessage() {
     printSeparatorTag();
 }
 
+void ModelCheckingOutputWriter::printStartTraceEvaluationMessage(const std::string &tracePath) {
+    ConsolePrinter::printMessageWithColouredTag(MSG_START_TRACE_EVALUATION + tracePath, TAG_EXECUTE, ColourCode::GREEN);
+}
+
 void ModelCheckingOutputWriter::printExecuteExtraEvaluationProgramMessage(const std::string &programPath) {
     ConsolePrinter::printMessageWithColouredTag(MSG_START_EXTRA_EVALUATION_PROGRAM_EXECUTION +
                                                 programPath, TAG_EXECUTE, ColourCode::GREEN);
@@ -234,6 +238,7 @@ const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "E
 const std::string ModelCheckingOutputWriter::MSG_PARSING_INTRODUCTION           = "I am starting to parse logic properties...";
 
 const std::string ModelCheckingOutputWriter::MSG_START_MODEL_CHECKING_EXECUTION             = "I am starting the execution of the model checkers...";
+const std::string ModelCheckingOutputWriter::MSG_START_TRACE_EVALUATION                     = "Evaluating the spatial-temporal trace: ";
 const std::string ModelCheckingOutputWriter::MSG_START_EXTRA_EVALUATION_PROGRAM_EXECUTION   = "I am starting the execution of the extra evaluation program located at the following path: ";
 const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_BEGIN                    = "The model checker execution was suspended for ";
 const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_END                      = " seconds during which new traces can be provided in the traces input folder.";
@@ -244,9 +249,3 @@ const std::string ModelCheckingOutputWriter::MSG_EVALUATION_RESULTS_INTRODUCTION
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS          = "The logic property holds: ";
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS_TRUE     = "TRUE";
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS_FALSE    = "FALSE";
-
-
-
-
-
-
