@@ -118,13 +118,13 @@ void ConsolePrinter::printMessageUsingColour(const std::string &message,
 
         printNewLine(appendNewLineAtEnd);
     #elif defined MULTISCALE_WINDOWS
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), getColourCode(colourCode));
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), static_cast<unsigned short>(getColourCode(colourCode)));
 
         std::cout << message;
 
         printNewLine(appendNewLineAtEnd);
 
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), getResetCode());
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), static_cast<unsigned short>(getResetCode()));
     #else
         std::cout << message;
 

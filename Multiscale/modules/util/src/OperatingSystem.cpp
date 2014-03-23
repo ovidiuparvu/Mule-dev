@@ -5,15 +5,8 @@
 #include "multiscale/util/Filesystem.hpp"
 #include "multiscale/util/OperatingSystem.hpp"
 
-#include <cstdlib>
-#if defined MULTISCALE_UNIX
-    #include <signal.h>
-    #include <sys/types.h>
-    #include <sys/wait.h>
-    #include <unistd.h>
-#elif defined MULTISCALE_WINDOWS
-    #include <windows.h>
-#endif
+#include <chrono>
+#include <thread>
 
 using namespace multiscale;
 
@@ -72,16 +65,16 @@ void OperatingSystem::executeProgramAndVerifyPath(const std::string &path) {
         ZeroMemory( &pi, sizeof(pi) );
 
         // Start the child process.
-        executeChildProcessOperations(path);
+        executeChildProcessOperations(path, si, pi);
 
         // Wait until child process exits.
         if (WaitForSingleObject(pi.hProcess, 0) != WAIT_OBJECT_0) {
-            stopChildProcessExecutionAfterTimeout(hProcess);
+            stopChildProcessExecutionAfterTimeout(pi);
         }
 
         // Close process and thread handles.
-        CloseHandle( pi.hProcess );
-        CloseHandle( pi.hThread );
+        CloseHandle(pi.hProcess);
+        CloseHandle(pi.hThread);
     }
 #endif
 
@@ -97,19 +90,20 @@ void OperatingSystem::executeProgramAndVerifyPath(const std::string &path) {
         exit(1);
     }
 #elif defined MULTISCALE_WINDOWS
-    void OperatingSystem::executeChildProcessOperations(const std::string &path) {
+    void OperatingSystem::executeChildProcessOperations(const std::string &path, STARTUPINFO &si,
+                                                        PROCESS_INFORMATION &pi) {
         std::string nativeFormatPath = nativeWindowsFormatPath(path);
 
-        if( !CreateProcess( NULL,   // No module name (use command line)
-            nativeFormatPath,   // Command line
-            NULL,               // Process handle not inheritable
-            NULL,               // Thread handle not inheritable
-            FALSE,              // Set handle inheritance to FALSE
-            0,                  // No creation flags
-            NULL,               // Use parent's environment block
-            NULL,               // Use parent's starting directory
-            &si,                // Pointer to STARTUPINFO structure
-            &pi )               // Pointer to PROCESS_INFORMATION structure
+        if( !CreateProcess( NULL,       // No module name (use command line)
+            &nativeFormatPath[0],       // Command line
+            NULL,                       // Process handle not inheritable
+            NULL,                       // Thread handle not inheritable
+            FALSE,                      // Set handle inheritance to FALSE
+            0,                          // No creation flags
+            NULL,                       // Use parent's environment block
+            NULL,                       // Use parent's starting directory
+            &si,                        // Pointer to STARTUPINFO structure
+            &pi )                       // Pointer to PROCESS_INFORMATION structure
         ) {
             MS_throw(RuntimeException, ERR_EXECUTE_PROGRAM + path);
         }
@@ -128,7 +122,8 @@ void OperatingSystem::executeProgramAndVerifyPath(const std::string &path) {
         bool hasChildProcessExited = false;
 
         while ((nrOfTimeouts < TIMEOUT_MAX_NR) && (!hasChildProcessExited)) {
-            sleep(TIMEOUT_NR_SECONDS);
+            std::this_thread::sleep_for(std::chrono::seconds(TIMEOUT_NR_SECONDS));
+
             updateChildProcessStatus(pid, hasChildProcessExited, nrOfTimeouts);
         }
 
@@ -142,7 +137,8 @@ void OperatingSystem::executeProgramAndVerifyPath(const std::string &path) {
         bool hasChildProcessExited = false;
 
         while ((nrOfTimeouts < TIMEOUT_MAX_NR) && (!hasChildProcessExited)) {
-            sleep(TIMEOUT_NR_SECONDS);
+            std::this_thread::sleep_for(std::chrono::seconds(TIMEOUT_NR_SECONDS));
+
             updateChildProcessStatus(processInformation, hasChildProcessExited, nrOfTimeouts);
         }
 

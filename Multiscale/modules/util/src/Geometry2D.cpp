@@ -1,6 +1,7 @@
 #include "multiscale/util/Geometry2D.hpp"
 
 #include <algorithm>
+#include <cassert>
 #include <cmath>
 
 using namespace multiscale;

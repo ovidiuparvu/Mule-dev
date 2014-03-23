@@ -2,6 +2,7 @@
 #include "multiscale/util/StringManipulator.hpp"
 
 #include <algorithm>
+#include <cfenv>
 #include <cmath>
 #include <limits>
 #include <vector>

@@ -3,7 +3,18 @@
 
 #include "multiscale/core/Multiscale.hpp"
 
+#include <cstdlib>
 #include <string>
+#if defined MULTISCALE_UNIX
+    #include <signal.h>
+    #include <sys/types.h>
+    #include <sys/wait.h>
+    #include <unistd.h>
+#elif defined MULTISCALE_WINDOWS
+    #include <windows.h>
+    #include <stdio.h>
+    #include <tchar.h>
+#endif
 
 
 namespace multiscale {
@@ -39,11 +50,22 @@ namespace multiscale {
              */
             static void executeProgramOSSpecific(const std::string &path);
 
-            //! Execute child process operations
-            /*!
-             * \param path  The path to the program which will be executed
-             */
-            static void executeChildProcessOperations(const std::string &path);
+            #if defined MULTISCALE_UNIX
+                //! Execute child process operations
+                /*!
+                 * \param path  The path to the program which will be executed
+                 */
+                static void executeChildProcessOperations(const std::string &path);
+            #elif defined MULTISCALE_WINDOWS
+                //! Execute child process operations
+                /*!
+                 * \param path  The path to the program which will be executed
+                 * \param si    The process startup information
+                 * \param pi    The process information
+                 */
+                static void executeChildProcessOperations(const std::string &path, STARTUPINFO &si,
+                                                          PROCESS_INFORMATION &pi);
+            #endif
 
             #if defined MULTISCALE_WINDOWS
                 //! Convert the given path to a Windows compliant path

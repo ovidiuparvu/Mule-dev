@@ -5,7 +5,6 @@
 #include "multiscale/util/ConsolePrinter.hpp"
 
 #include <algorithm>
-#include <cfenv>
 #include <cmath>
 #include <limits>
 
