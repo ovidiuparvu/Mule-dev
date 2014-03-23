@@ -213,7 +213,7 @@ std::string ConsolePrinter::unixColourCodeToString(const UnixColourCode &unixCol
 
 #ifdef MULTISCALE_WINDOWS
     WindowsColourCode ConsolePrinter::getResetCode() {
-        return (WindowsColourCode::BLACK);
+        return (WindowsColourCode::DARK_WHITE);
     }
 #elif defined MULTISCALE_UNIX
     std::string ConsolePrinter::getResetCode() {
