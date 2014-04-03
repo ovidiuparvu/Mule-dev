@@ -16,6 +16,8 @@ namespace multiscale {
 
             private:
 
+                unsigned int           beginIndex;          /*!< The corresponding begin index */
+
                 std::vector<TimePoint> timePoints;          /*!< The array of time points */
                 unsigned long          lastTimePointValue;  /*!< The value of the last added timepoint */
 
@@ -51,12 +53,14 @@ namespace multiscale {
                  */
                 SpatialTemporalTrace subTrace(unsigned int startIndex) const;
 
-                //! Get the subtrace containing timepoints with values between the given values
+                //! Set the subtrace containing timepoints with values greater than the given start value
                 /*!
                  * \param startValue    The starting value of the subtrace
-                 * \param endValue      The end value of the subtrace
                  */
-                SpatialTemporalTrace subTrace(unsigned long startValue, unsigned long endValue) const;
+                void setSubTrace(unsigned long startValue);
+
+                //! Reset the subtrace start index beginIndex to the value zero
+                void resetSubTraceStartIndex();
 
             private:
 
@@ -89,13 +93,11 @@ namespace multiscale {
                  */
                 void validateTimePointValue(unsigned long timePointValue);
 
-                //! Get the subtrace starting and ending with the given values
+                //! Set the begin index for the subtrace starting with the given value
                 /*!
-                 * \param subTrace      The resulting subtrace
                  * \param startValue    The starting timepoint value of the subtrace
-                 * \param endValue      The end timepoint value of the subtrace
                  */
-                void getSubTrace(SpatialTemporalTrace &subTrace, unsigned long startValue, unsigned long endValue) const;
+                void setSubTraceIndex(unsigned long startValue);
 
                 //! Add the timepoints starting and ending with the given indices to the subtrace
                 /*!
@@ -110,21 +112,6 @@ namespace multiscale {
                  * \param value     The given value
                  */
                 int indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value) const;
-
-                //! Get the index of the last timepoint which has a value less than or equal to the given value
-                /*!
-                 * \param value     The given value
-                 */
-                int indexOfLastTimePointLessOrEqualToValue(unsigned long value) const;
-
-                //! Check if the provided value pair is valid
-                /*! Check if the provided timepoint values are smaller than the maximum timepoint value and
-                 *  the end timepoint value is greater than the start timepoint value
-                 *
-                 * \param startValue    The start value
-                 * \param endValue      The end value
-                 */
-                void validateValues(unsigned long startValue, unsigned long endValue) const;
 
                 //! Check if the provided index is smaller than the number of timepoints
                 /*!

@@ -275,11 +275,13 @@ namespace multiscale {
                     unsigned long startTime = untilLogicProperty.startTimepoint;
                     unsigned long endTime   = untilLogicProperty.endTimepoint;
 
-                    for (unsigned long i = startTime; i <= endTime; i++) {
-                        SpatialTemporalTrace subTrace(trace.subTrace(i, endTime));
+                    SpatialTemporalTrace traceCopy(trace);
 
-                        if (evaluate(untilLogicProperty.logicProperty, subTrace)) {
-                            return evaluatePrecedingLogicProperties(i, startTime, endTime, lhsLogicProperty);
+                    for (unsigned long i = startTime; i <= endTime; i++) {
+                        traceCopy.setSubTrace(i);
+
+                        if (evaluate(untilLogicProperty.logicProperty, traceCopy)) {
+                            return evaluatePrecedingLogicProperties(startTime, i, lhsLogicProperty);
                         }
                     }
 
@@ -329,10 +331,12 @@ namespace multiscale {
                     unsigned long startTime = futureLogicProperty.startTimepoint;
                     unsigned long endTime   = futureLogicProperty.endTimepoint;
 
-                    for (unsigned long i = startTime; i <= endTime; i++) {
-                        SpatialTemporalTrace subTrace(trace.subTrace(i, endTime));
+                    SpatialTemporalTrace traceCopy(trace);
 
-                        if (evaluate(futureLogicProperty.logicProperty, subTrace)) {
+                    for (unsigned long i = startTime; i <= endTime; i++) {
+                        traceCopy.setSubTrace(i);
+
+                        if (evaluate(futureLogicProperty.logicProperty, traceCopy)) {
                             return true;
                         }
                     }
@@ -351,10 +355,12 @@ namespace multiscale {
                     unsigned long startTime = globalLogicProperty.startTimepoint;
                     unsigned long endTime   = globalLogicProperty.endTimepoint;
 
-                    for (unsigned long i = startTime; i <= endTime; i++) {
-                        SpatialTemporalTrace subTrace(trace.subTrace(i, endTime));
+                    SpatialTemporalTrace traceCopy(trace);
 
-                        if (!evaluate(globalLogicProperty.logicProperty, subTrace)) {
+                    for (unsigned long i = startTime; i <= endTime; i++) {
+                        traceCopy.setSubTrace(i);
+
+                        if (!evaluate(globalLogicProperty.logicProperty, traceCopy)) {
                             return false;
                         }
                     }
@@ -462,17 +468,18 @@ namespace multiscale {
 
                 //! Evaluate the preceding logic properties
                 /*!
-                 * \param stopIndex                 All indices before this index are used as subtrace start index
                  * \param startTime                 The considered start time value
-                 * \param endTime                   The considered end time value
+                 * \param endTime                   The considered end time value (exclusive)
                  * \param precedingLogicProperties  The preceding logic properties
                  */
-                bool evaluatePrecedingLogicProperties(unsigned long stopIndex, unsigned long startTime, unsigned long endTime,
+                bool evaluatePrecedingLogicProperties(unsigned long startTime, unsigned long endTime,
                                                       const LogicPropertyAttributeType &precedingLogicProperties) const {
-                    for (unsigned long j = startTime; j < stopIndex; j++) {
-                        SpatialTemporalTrace subTrace(trace.subTrace(j, endTime));
+                    SpatialTemporalTrace traceCopy(trace);
 
-                        if (!evaluate(precedingLogicProperties, subTrace)) {
+                    for (unsigned long i = startTime; i < endTime; i++) {
+                        traceCopy.setSubTrace(i);
+
+                        if (!evaluate(precedingLogicProperties, traceCopy)) {
                             return false;
                         }
                     }
