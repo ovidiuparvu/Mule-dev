@@ -122,7 +122,7 @@ std::vector<SpatialEntity> TimePoint::getConsideredSpatialEntities() const {
 }
 
 double TimePoint::getNumericStateVariable(const std::string &name) const {
-    std::unordered_map<std::string, double>::const_iterator it = numericStateVariables.find(name);
+    auto it = numericStateVariables.find(name);
 
     if (it == numericStateVariables.end()) {
         MS_throw_detailed(SpatialTemporalException, ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX,

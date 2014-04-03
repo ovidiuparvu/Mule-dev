@@ -6,8 +6,8 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 
+#include <set>
 #include <string>
-#include <unordered_set>
 
 namespace pt = boost::property_tree;
 
@@ -21,8 +21,8 @@ namespace multiscale {
 
             private:
 
-                std::unordered_set<std::string> processedInputFiles;    /*!< The set of processed input files */
-                std::unordered_set<std::string> unprocessedInputFiles;  /*!< The set of unprocessed input files */
+                std::set<std::string> processedInputFiles;    /*!< The set of processed input files */
+                std::set<std::string> unprocessedInputFiles;  /*!< The set of unprocessed input files */
 
                 std::string folderPath;     /*!< The path to the folder where all input files are stored */
 

@@ -65,7 +65,7 @@ void SpatialTemporalDataReader::clearInputFilesSets() {
 }
 
 bool SpatialTemporalDataReader::hasValidNext() {
-    std::unordered_set<std::string>::iterator it = unprocessedInputFiles.begin();
+    auto it = unprocessedInputFiles.begin();
 
     while (it != unprocessedInputFiles.end()) {
         if (isValidInputFile(*it)) {
@@ -230,7 +230,7 @@ std::string SpatialTemporalDataReader::getFirstValidUnprocessedInputFilepath() {
     }
 
     // Obtain the valid unprocessed input file
-    std::unordered_set<std::string>::iterator it = unprocessedInputFiles.begin();
+    auto it = unprocessedInputFiles.begin();
     std::string validUnprocessedFile = (*it);
 
     // Remove it from the list of unprocessed files

@@ -7,8 +7,8 @@
 
 #include <limits>
 #include <list>
+#include <map>
 #include <string>
-#include <unordered_map>
 #include <vector>
 
 
@@ -51,7 +51,7 @@ namespace multiscale {
                 std::list<Cluster>  clusters;     /*!< The list of clusters */
                 std::list<Region>   regions;      /*!< The list of regions */
 
-                std::unordered_map<std::string, double>   numericStateVariables;      /*!< The associative map for storing numeric state variables */
+                std::map<std::string, double>   numericStateVariables;      /*!< The associative map for storing numeric state variables */
 
                 ConsideredSpatialEntityType consideredSpatialEntityType;    /*!< The considered spatial entity type */
 
