@@ -23,9 +23,7 @@ namespace multiscale {
 
             public:
 
-                NumericVisitor(const TimePoint &timePoint) {
-                    this->timePoint = timePoint;
-                }
+                NumericVisitor(const TimePoint &timePoint) : timePoint(timePoint) {}
 
                 //! Overloading the "()" operator for the NumericMeasureAttribute alternative
                 /*!

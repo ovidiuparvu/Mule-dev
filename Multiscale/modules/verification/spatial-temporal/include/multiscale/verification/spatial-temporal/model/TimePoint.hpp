@@ -6,9 +6,9 @@
 #include "multiscale/verification/spatial-temporal/model/Region.hpp"
 
 #include <limits>
-#include <map>
-#include <set>
+#include <list>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 
@@ -38,10 +38,20 @@ namespace multiscale {
 
                 unsigned long value;   /*!< The value of the timepoint within a simulation/experiment */
 
-                std::set<Cluster>  clusters;     /*!< The set of clusters */
-                std::set<Region>   regions;      /*!< The set of regions */
+                /*
+                 * TODO: Update Timepoint class if no longer validating input XML files
+                 *
+                 *  WARNING: The Timepoint class contains as members lists of regions/clusters
+                 *           because the uniqueness of the regions/clusters is determined using this
+                 *           method. If this method is no longer used then replace the lists
+                 *           in the Timepoint class with sets or lists in order to ensure
+                 *           the uniqueness of the elements.
+                 */
 
-                std::map<std::string, double>   numericStateVariables;      /*!< The associative map for storing numeric state variables */
+                std::list<Cluster>  clusters;     /*!< The list of clusters */
+                std::list<Region>   regions;      /*!< The list of regions */
+
+                std::unordered_map<std::string, double>   numericStateVariables;      /*!< The associative map for storing numeric state variables */
 
                 ConsideredSpatialEntityType consideredSpatialEntityType;    /*!< The considered spatial entity type */
 
@@ -108,16 +118,16 @@ namespace multiscale {
                 bool existsNumericStateVariable(const std::string &name);
 
                 //! Get the begin iterator for the set of clusters
-                std::set<Cluster>::iterator getClustersBeginIterator() const;
+                std::list<Cluster>::iterator getClustersBeginIterator();
 
                 //! Get the end iterator for the set of clusters
-                std::set<Cluster>::iterator getClustersEndIterator() const;
+                std::list<Cluster>::iterator getClustersEndIterator();
 
                 //! Get the begin iterator for the set of regions
-                std::set<Region>::iterator getRegionsBeginIterator() const;
+                std::list<Region>::iterator getRegionsBeginIterator();
 
                 //! Get the end iterator for the set of regions
-                std::set<Region>::iterator getRegionsEndIterator() const;
+                std::list<Region>::iterator getRegionsEndIterator();
 
                 //! Get the collection of considered spatial entities
                 std::vector<SpatialEntity> getConsideredSpatialEntities() const;
@@ -156,13 +166,13 @@ namespace multiscale {
                 /*!
                  * \param position  The position of the cluster to be removed
                  */
-                void removeCluster(std::set<Cluster>::iterator &position);
+                void removeCluster(std::list<Cluster>::iterator &position);
 
                 //! Remove the region from the given position
                 /*!
                  * \param position  The position of the region to be removed
                  */
-                void removeRegion(std::set<Region>::iterator &position);
+                void removeRegion(std::list<Region>::iterator &position);
 
             private:
 
@@ -211,14 +221,14 @@ namespace multiscale {
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                std::set<Cluster> clustersSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
+                std::list<Cluster> clustersSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
                 //! Compute the given set operation of this set of regions and the one provided by the given timepoint
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                std::set<Region> regionsSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
+                std::list<Region> regionsSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
 
                 // Constants

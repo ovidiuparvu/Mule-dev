@@ -10,15 +10,11 @@ SpatialTemporalTrace::SpatialTemporalTrace() {
     initialise();
 }
 
-SpatialTemporalTrace::SpatialTemporalTrace(const SpatialTemporalTrace &trace) {
-    this->timePoints                        = trace.timePoints;
-    this->lastTimePointValue                = trace.lastTimePointValue;
-    this->isLastTimePointValueInitialised   = trace.isLastTimePointValueInitialised;
-}
+SpatialTemporalTrace::SpatialTemporalTrace(const SpatialTemporalTrace &trace)
+                                          : timePoints(trace.timePoints), lastTimePointValue(trace.lastTimePointValue),
+                                            isLastTimePointValueInitialised(trace.isLastTimePointValueInitialised) {}
 
-SpatialTemporalTrace::~SpatialTemporalTrace() {
-    timePoints.clear();
-}
+SpatialTemporalTrace::~SpatialTemporalTrace() {}
 
 void SpatialTemporalTrace::addTimePoint(TimePoint &timePoint) {
     updateLastTimePointValue(timePoint);

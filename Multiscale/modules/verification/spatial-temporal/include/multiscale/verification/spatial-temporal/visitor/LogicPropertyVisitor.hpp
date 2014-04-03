@@ -29,10 +29,8 @@ namespace multiscale {
 
             public:
 
-                LogicPropertyVisitor(const SpatialTemporalTrace &trace, bool precedingTruthValue = true) {
-                    this->trace = trace;
-                    this->precedingTruthValue = precedingTruthValue;
-                }
+                LogicPropertyVisitor(const SpatialTemporalTrace &trace, bool precedingTruthValue = true)
+                                     : trace(trace), precedingTruthValue(precedingTruthValue) {}
 
                 //! Overloading the "()" operator for the Nil alternative
                 /*!

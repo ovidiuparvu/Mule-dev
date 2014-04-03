@@ -18,10 +18,8 @@ namespace multiscale {
 
             public:
 
-                ConstraintVisitor(const TimePoint &initialTimePoint, const TimePoint &constraintTimePoint) {
-                    this->initialTimePoint = initialTimePoint;
-                    this->constraintTimePoint = constraintTimePoint;
-                }
+                ConstraintVisitor(const TimePoint &initialTimePoint, const TimePoint &constraintTimePoint)
+                                  : initialTimePoint(initialTimePoint), constraintTimePoint(constraintTimePoint) {}
 
                 //! Overloading the "()" operator for the Nil alternative
                 /*!

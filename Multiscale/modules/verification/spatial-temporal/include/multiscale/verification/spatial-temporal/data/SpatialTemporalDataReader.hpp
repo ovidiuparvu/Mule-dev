@@ -170,8 +170,15 @@ namespace multiscale {
                 /*! An input file is valid if it is an xml file which conforms to the formal
                  *  specification given in the xml schema (xsd file).
                  *
+                 *  WARNING: The Timepoint class contains as members lists of regions/clusters
+                 *           because the uniqueness of the regions/clusters is determined using this
+                 *           method. If this method is no longer used then replace the lists
+                 *           in the Timepoint class with sets or unordered_sets in order to ensure
+                 *           the uniqueness of the elements.
+                 *
                  * \param inputFilepath The path to the input file
                  */
+                // TODO: Update Timepoint class if no longer using this function in the code
                 bool isValidInputFile(const std::string &inputFilepath);
 
                 //! Check if the given folder path is valid

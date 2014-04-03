@@ -10,7 +10,7 @@ using namespace multiscale::verification;
 
 
 // Print the regions corresponding to the given timepoint
-void printRegions(const TimePoint &timePoint) {
+void printRegions(TimePoint &timePoint) {
     for (auto it = timePoint.getRegionsBeginIterator(); it != timePoint.getRegionsEndIterator(); it++) {
         std::cout << "\tRegion" << std::endl;
 
@@ -29,7 +29,7 @@ void printRegions(const TimePoint &timePoint) {
 }
 
 // Print the clusters corresponding to the given timepoint
-void printClusters(const TimePoint &timePoint) {
+void printClusters(TimePoint &timePoint) {
     for (auto it = timePoint.getClustersBeginIterator(); it != timePoint.getClustersEndIterator(); it++) {
         std::cout << "\tCluster" << std::endl;
 
@@ -48,7 +48,7 @@ void printClusters(const TimePoint &timePoint) {
 }
 
 // Print the given timepoint
-void printTimePoint(const TimePoint &timePoint) {
+void printTimePoint(TimePoint &timePoint) {
     std::cout << "Timepoint " << timePoint.getValue() << std::endl;
 
     printClusters(timePoint);

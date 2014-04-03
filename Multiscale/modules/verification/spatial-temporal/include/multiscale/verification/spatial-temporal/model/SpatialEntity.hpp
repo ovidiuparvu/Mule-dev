@@ -30,7 +30,7 @@ namespace multiscale {
             public:
 
                 SpatialEntity();
-                virtual ~SpatialEntity() {};
+                ~SpatialEntity() {};
 
                 //! Get the degree of clusteredness
                 double getClusteredness() const;

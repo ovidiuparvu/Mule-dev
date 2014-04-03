@@ -60,7 +60,7 @@ namespace multiscale {
                                            const ComparatorType &comparator, double numericMeasure) {
                     double spatialMeasureValue = 0;
 
-                    std::set<Cluster>::iterator it = timePoint.getClustersBeginIterator();
+                    auto it = timePoint.getClustersBeginIterator();
 
                     while (it != timePoint.getClustersEndIterator()) {
                         spatialMeasureValue = SpatialMeasureEvaluator::evaluate(*it, spatialMeasure);
@@ -84,7 +84,7 @@ namespace multiscale {
                                           const ComparatorType &comparator, double numericMeasure) {
                     double spatialMeasureValue = 0;
 
-                    std::set<Region>::iterator it = timePoint.getRegionsBeginIterator();
+                    auto it = timePoint.getRegionsBeginIterator();
 
                     while (it != timePoint.getRegionsEndIterator()) {
                         spatialMeasureValue = SpatialMeasureEvaluator::evaluate(*it, spatialMeasure);

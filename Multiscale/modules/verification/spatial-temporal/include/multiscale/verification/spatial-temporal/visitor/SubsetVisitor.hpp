@@ -19,9 +19,7 @@ namespace multiscale {
 
             public:
 
-                SubsetVisitor(const TimePoint &timePoint) {
-                    this->timePoint = timePoint;
-                }
+                SubsetVisitor(const TimePoint &timePoint) : timePoint(timePoint) {}
 
                 //! Overloading the "()" operator for the SubsetAttribute alternative
                 /*!
