@@ -28,10 +28,10 @@ void SpatialTemporalTrace::clear() {
     initialise();
 }
 
-TimePoint &SpatialTemporalTrace::getTimePoint(unsigned int index) {
+TimePoint SpatialTemporalTrace::getTimePoint(unsigned int index) const {
     validateIndex(index);
 
-    return timePoints.at(index);
+    return timePoints[index];
 }
 
 unsigned int SpatialTemporalTrace::length() const {
@@ -168,7 +168,7 @@ void SpatialTemporalTrace::validateIndex(unsigned int index) const {
 }
 
 void SpatialTemporalTrace::validateValue(unsigned long value) const {
-    if (value > timePoints[timePoints.size() - 1].getValue()) {
+    if (value > timePoints.back().getValue()) {
         MS_throw_detailed(SpatialTemporalException, ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_START,
                           StringManipulator::toString<double>(value), ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_END);
     }

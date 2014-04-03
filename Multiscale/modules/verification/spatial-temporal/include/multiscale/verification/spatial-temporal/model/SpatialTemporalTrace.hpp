@@ -40,7 +40,7 @@ namespace multiscale {
                 /*!
                  * \param index The index of the position in the array
                  */
-                TimePoint &getTimePoint(unsigned int index);
+                TimePoint getTimePoint(unsigned int index) const;
 
                 //! Get the length of the spatial temporal trace (i.e. number of timepoints)
                 unsigned int length() const;

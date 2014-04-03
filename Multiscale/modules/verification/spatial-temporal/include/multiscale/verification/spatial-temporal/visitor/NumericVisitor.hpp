@@ -19,7 +19,7 @@ namespace multiscale {
 
             private:
 
-                TimePoint timePoint;  /*!< The considered timepoint */
+                const TimePoint &timePoint;  /*!< The considered timepoint */
 
             public:
 
@@ -145,13 +145,14 @@ namespace multiscale {
 // Implement NumericVisitor methods which are dependent on the ConstraintVisitor and SubsetVisitor classes
 
 inline double multiscale::verification::NumericVisitor::operator()(const UnarySubsetAttribute &unarySubset) const {
-    TimePoint subsetTimePoint = boost::apply_visitor(SubsetVisitor(timePoint), unarySubset.subset);
+    TimePoint subsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), unarySubset.subset));
 
     return NumericEvaluator::evaluate(unarySubset.unarySubsetMeasure.unarySubsetMeasureType, subsetTimePoint);
 }
 
 inline double multiscale::verification::NumericVisitor::operator()(const BinarySubsetAttribute &binarySubset) const {
-    TimePoint subsetTimePoint = boost::apply_visitor(SubsetVisitor(timePoint), binarySubset.subset);
+    TimePoint subsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), binarySubset.subset));
+
     std::vector<double> spatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(subsetTimePoint,
                                                                                            binarySubset.spatialMeasure.spatialMeasureType);
 
@@ -159,7 +160,8 @@ inline double multiscale::verification::NumericVisitor::operator()(const BinaryS
 }
 
 inline double multiscale::verification::NumericVisitor::operator()(const TernarySubsetAttribute &ternarySubset) const {
-    TimePoint subsetTimePoint = boost::apply_visitor(SubsetVisitor(timePoint), ternarySubset.subset);
+    TimePoint subsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), ternarySubset.subset));
+
     std::vector<double> spatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(subsetTimePoint,
                                                                                            ternarySubset.spatialMeasure.spatialMeasureType);
 
@@ -168,11 +170,13 @@ inline double multiscale::verification::NumericVisitor::operator()(const Ternary
 }
 
 inline double multiscale::verification::NumericVisitor::operator()(const QuaternarySubsetAttribute &quaternarySubset) const {
-    TimePoint firstSubsetTimePoint = boost::apply_visitor(SubsetVisitor(timePoint), quaternarySubset.firstSubset);
+    TimePoint firstSubsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), quaternarySubset.firstSubset));
+
     std::vector<double> firstSpatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(firstSubsetTimePoint,
                                                                                                 quaternarySubset.firstSpatialMeasure.spatialMeasureType);
 
-    TimePoint secondSubsetTimePoint = boost::apply_visitor(SubsetVisitor(timePoint), quaternarySubset.secondSubset);
+    TimePoint secondSubsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), quaternarySubset.secondSubset));
+
     std::vector<double> secondSpatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(secondSubsetTimePoint,
                                                                                                  quaternarySubset.firstSpatialMeasure.spatialMeasureType);
 

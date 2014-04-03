@@ -21,7 +21,7 @@ namespace multiscale {
 
             private:
 
-                SpatialTemporalTrace        trace;                      /*!< The spatial temporal trace */
+                const SpatialTemporalTrace  &trace;                     /*!< The spatial temporal trace */
                 LogicPropertyAttributeType  evaluationLogicProperty;    /*!< The logic property used only for
                                                                              evaluation purposes */
 
@@ -87,6 +87,7 @@ namespace multiscale {
                 bool operator() (const ImplicationLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
                     bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
 
+                    // p => q is logically equivalent to ~p V q
                     return ((!precedingTruthValue) || logicPropertyTruthValue);
                 }
 
@@ -99,6 +100,7 @@ namespace multiscale {
                 bool operator() (const EquivalenceLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
                     bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
 
+                    // p <=> q is logically equivalent to p => q and q => p
                     return (((!precedingTruthValue) || logicPropertyTruthValue) &&
                             ((!logicPropertyTruthValue) || precedingTruthValue));
                 }
@@ -429,7 +431,12 @@ namespace multiscale {
                     std::vector<LogicPropertyAttributeType> precedingEvaluationLogicProperties;
 
                     for (const auto &nextLogicProperty : logicProperty.nextLogicProperties) {
-                        LogicPropertyAttributeType precedingEvaluationLogicProperty = constructEvaluationLogicProperty(logicProperty, precedingEvaluationLogicProperties);
+                        LogicPropertyAttributeType precedingEvaluationLogicProperty(
+                            constructEvaluationLogicProperty(
+                                logicProperty,
+                                precedingEvaluationLogicProperties
+                            )
+                        );
 
                         truthValue = boost::apply_visitor(LogicPropertyVisitor(trace, truthValue), nextLogicProperty,
                                                           precedingEvaluationLogicProperty);
@@ -447,7 +454,10 @@ namespace multiscale {
                  */
                 LogicPropertyAttribute constructEvaluationLogicProperty(const LogicPropertyAttribute &logicProperty,
                                                                         const std::vector<LogicPropertyAttributeType> evaluationLogicProperties) const {
-                    return LogicPropertyAttribute(logicProperty.firstLogicProperty, evaluationLogicProperties);
+                    return LogicPropertyAttribute(
+                        logicProperty.firstLogicProperty,
+                        evaluationLogicProperties
+                    );
                 }
 
                 //! Evaluate the preceding logic properties
@@ -479,8 +489,7 @@ namespace multiscale {
                 double evaluateNumericMeasure(const NumericMeasureAttributeType &numericMeasure,
                                               const SpatialTemporalTrace &trace,
                                               unsigned int timePointIndex = 0) const {
-                    SpatialTemporalTrace nonConstTrace = SpatialTemporalTrace(trace);
-                    TimePoint timePoint = nonConstTrace.getTimePoint(timePointIndex);
+                    TimePoint timePoint = trace.getTimePoint(timePointIndex);
 
                     return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
                 }
@@ -494,8 +503,7 @@ namespace multiscale {
                 double evaluateNumericSpatialMeasure(const NumericSpatialAttributeType &numericSpatialMeasure,
                                                      const SpatialTemporalTrace &trace,
                                                      unsigned int timePointIndex = 0) const {
-                    SpatialTemporalTrace nonConstTrace = SpatialTemporalTrace(trace);
-                    TimePoint timePoint = nonConstTrace.getTimePoint(timePointIndex);
+                    TimePoint timePoint = trace.getTimePoint(timePointIndex);
 
                     return boost::apply_visitor(NumericVisitor(timePoint), numericSpatialMeasure);
                 }

@@ -15,7 +15,7 @@ namespace multiscale {
 
             private:
 
-                TimePoint timePoint;    /*!< The initial timepoint */
+                const TimePoint &timePoint;    /*!< The initial timepoint */
 
             public:
 
