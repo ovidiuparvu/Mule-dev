@@ -16,10 +16,12 @@ SpatialTemporalTrace::SpatialTemporalTrace(const SpatialTemporalTrace &trace)
 
 SpatialTemporalTrace::~SpatialTemporalTrace() {}
 
-void SpatialTemporalTrace::addTimePoint(TimePoint &timePoint) {
-    updateLastTimePointValue(timePoint);
+void SpatialTemporalTrace::addTimePoint(const TimePoint &timePoint) {
+    validateTimePointValue(timePoint);
 
     timePoints.push_back(timePoint);
+
+    updateLastTimePointValue(timePoints.back());
 }
 
 void SpatialTemporalTrace::clear() {
@@ -36,7 +38,7 @@ unsigned int SpatialTemporalTrace::length() const {
     return timePoints.size();
 }
 
-SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned int startIndex) {
+SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned int startIndex) const {
     SpatialTemporalTrace subTrace;
 
     validateIndex(startIndex);
@@ -45,26 +47,13 @@ SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned int startIndex) {
     return subTrace;
 }
 
-SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned long startValue, unsigned long endValue) {
+SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned long startValue, unsigned long endValue) const {
     SpatialTemporalTrace subTrace;
 
     validateValues(startValue, endValue);
     getSubTrace(subTrace, startValue, endValue);
 
     return subTrace;
-}
-
-SpatialTemporalTrace SpatialTemporalTrace::subTrace(const SpatialTemporalTrace &trace, unsigned int startIndex) {
-    SpatialTemporalTrace traceCopy(trace);
-
-    return traceCopy.subTrace(startIndex);
-}
-
-SpatialTemporalTrace SpatialTemporalTrace::subTrace(const SpatialTemporalTrace &trace, unsigned long startValue,
-                                                    unsigned long endValue) {
-    SpatialTemporalTrace traceCopy(trace);
-
-    return traceCopy.subTrace(startValue, endValue);
 }
 
 void SpatialTemporalTrace::initialise() {
@@ -77,16 +66,17 @@ void SpatialTemporalTrace::initialise() {
 void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint) {
     unsigned long timePointValue = timePoint.getValue();
 
-    validateTimePointValue(timePointValue);
-    updateLastTimePointValue(timePoint, timePointValue);
-}
-
-void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint, unsigned long timePointValue) {
     if (timePointValue == numeric_limits<unsigned long>::max()) {
         timePoint.setValue(++lastTimePointValue);
     } else {
         lastTimePointValue = timePointValue;
     }
+}
+
+void SpatialTemporalTrace::validateTimePointValue(const TimePoint &timePoint) {
+    unsigned long timePointValue = timePoint.getValue();
+
+    validateTimePointValue(timePointValue);
 }
 
 void SpatialTemporalTrace::validateTimePointValue(unsigned long timePointValue) {
@@ -104,7 +94,7 @@ void SpatialTemporalTrace::validateTimePointValue(unsigned long timePointValue) 
     }
 }
 
-int SpatialTemporalTrace::indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value) {
+int SpatialTemporalTrace::indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value) const {
     unsigned int nrOfTimePoints = timePoints.size();
     unsigned long currentValue = -1;
 
@@ -119,7 +109,7 @@ int SpatialTemporalTrace::indexOfFirstTimePointGreaterOrEqualToValue(unsigned lo
     return TIMEPOINT_INDEX_NOT_FOUND;
 }
 
-int SpatialTemporalTrace::indexOfLastTimePointLessOrEqualToValue(unsigned long value) {
+int SpatialTemporalTrace::indexOfLastTimePointLessOrEqualToValue(unsigned long value) const {
     unsigned int nrOfTimePoints = timePoints.size();
     unsigned long currentValue = -1;
 
@@ -134,7 +124,8 @@ int SpatialTemporalTrace::indexOfLastTimePointLessOrEqualToValue(unsigned long v
     return TIMEPOINT_INDEX_NOT_FOUND;
 }
 
-void SpatialTemporalTrace::getSubTrace(SpatialTemporalTrace &subTrace, unsigned long startValue, unsigned long endValue) {
+void SpatialTemporalTrace::getSubTrace(SpatialTemporalTrace &subTrace, unsigned long startValue,
+                                       unsigned long endValue) const {
     int startIndex = indexOfFirstTimePointGreaterOrEqualToValue(startValue);
     int endIndex = indexOfLastTimePointLessOrEqualToValue(endValue);
 
@@ -149,13 +140,14 @@ void SpatialTemporalTrace::getSubTrace(SpatialTemporalTrace &subTrace, unsigned 
     }
 }
 
-void SpatialTemporalTrace::addTimePointsToSubTrace(SpatialTemporalTrace &subTrace, int startIndex, int endIndex) {
+void SpatialTemporalTrace::addTimePointsToSubTrace(SpatialTemporalTrace &subTrace,
+                                                   int startIndex, int endIndex) const {
     for (int i = startIndex; i <= endIndex; i++) {
         subTrace.addTimePoint(timePoints[i]);
     }
 }
 
-void SpatialTemporalTrace::validateValues(unsigned long startValue, unsigned long endValue) {
+void SpatialTemporalTrace::validateValues(unsigned long startValue, unsigned long endValue) const {
     validateValue(startValue);
     validateValue(endValue);
 
@@ -168,14 +160,14 @@ void SpatialTemporalTrace::validateValues(unsigned long startValue, unsigned lon
     }
 }
 
-void SpatialTemporalTrace::validateIndex(unsigned int index) {
+void SpatialTemporalTrace::validateIndex(unsigned int index) const {
     if (index >= timePoints.size()) {
         MS_throw_detailed(SpatialTemporalException, ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START,
                           StringManipulator::toString<unsigned int>(index), ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END);
     }
 }
 
-void SpatialTemporalTrace::validateValue(unsigned long value) {
+void SpatialTemporalTrace::validateValue(unsigned long value) const {
     if (value > timePoints[timePoints.size() - 1].getValue()) {
         MS_throw_detailed(SpatialTemporalException, ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_START,
                           StringManipulator::toString<double>(value), ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_END);

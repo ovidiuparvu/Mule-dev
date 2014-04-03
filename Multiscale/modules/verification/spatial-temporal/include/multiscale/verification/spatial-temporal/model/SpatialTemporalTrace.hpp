@@ -31,7 +31,7 @@ namespace multiscale {
                 /*!
                  * \param timePoint Time point added to the array
                  */
-                void addTimePoint(TimePoint &timePoint);
+                void addTimePoint(const TimePoint &timePoint);
 
                 //! Clear all the stored timepoints and reinitialise
                 void clear();
@@ -49,30 +49,14 @@ namespace multiscale {
                 /*!
                  * \param startIndex    The starting index of the subtrace
                  */
-                SpatialTemporalTrace subTrace(unsigned int startIndex);
+                SpatialTemporalTrace subTrace(unsigned int startIndex) const;
 
                 //! Get the subtrace containing timepoints with values between the given values
                 /*!
                  * \param startValue    The starting value of the subtrace
                  * \param endValue      The end value of the subtrace
                  */
-                SpatialTemporalTrace subTrace(unsigned long startValue, unsigned long endValue);
-
-                //! Get the subtrace containing timepoints with the index greater than the given index
-                /*!
-                 * \param trace         The spatial temporal trace
-                 * \param startIndex    The starting timepoint index
-                 */
-                static SpatialTemporalTrace subTrace(const SpatialTemporalTrace &trace, unsigned int startIndex);
-
-                //! Get the subtrace containing timepoints with values between the given values
-                /*!
-                 * \param trace         The spatial temporal trace
-                 * \param startValue    The starting value of the subtrace
-                 * \param endValue      The end value of the subtrace
-                 */
-                static SpatialTemporalTrace subTrace(const SpatialTemporalTrace &trace, unsigned long startValue,
-                                                     unsigned long endValue);
+                SpatialTemporalTrace subTrace(unsigned long startValue, unsigned long endValue) const;
 
             private:
 
@@ -85,12 +69,15 @@ namespace multiscale {
                  */
                 void updateLastTimePointValue(TimePoint &timePoint);
 
-                //! Update the last timepoint value considering the given timepoint value
-                /*!
-                 * \param timePoint         The last added timepoint
-                 * \param timePointValue    The value of the current timepoint
+                //! Check if the provided time point value is greater than the last time point value
+                /*! The timepoint is considered to be uninitialised if the value is equal to the
+                 *  maximum value which can be represented as an unsigned long.
+                 *  Otherwise if the timepoint value is less or equal to the lastTimePointValue
+                 *  then an exception is thrown.
+                 *
+                 * \param timePoint    The given time point
                  */
-                void updateLastTimePointValue(TimePoint &timePoint, unsigned long timePointValue);
+                void validateTimePointValue(const TimePoint &timePoint);
 
                 //! Check if the provided time point value is greater than the last time point value
                 /*! The timepoint is considered to be uninitialised if the value is equal to the
@@ -108,7 +95,7 @@ namespace multiscale {
                  * \param startValue    The starting timepoint value of the subtrace
                  * \param endValue      The end timepoint value of the subtrace
                  */
-                void getSubTrace(SpatialTemporalTrace &subTrace, unsigned long startValue, unsigned long endValue);
+                void getSubTrace(SpatialTemporalTrace &subTrace, unsigned long startValue, unsigned long endValue) const;
 
                 //! Add the timepoints starting and ending with the given indices to the subtrace
                 /*!
@@ -116,19 +103,19 @@ namespace multiscale {
                  * \param startIndex    The starting timepoint index
                  * \param endIndex      The end timepoint index
                  */
-                void addTimePointsToSubTrace(SpatialTemporalTrace &subTrace, int startIndex, int endIndex);
+                void addTimePointsToSubTrace(SpatialTemporalTrace &subTrace, int startIndex, int endIndex) const;
 
                 //! Get the index of the first timepoint which has a value greater than or equal to the given value
                 /*!
                  * \param value     The given value
                  */
-                int indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value);
+                int indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value) const;
 
                 //! Get the index of the last timepoint which has a value less than or equal to the given value
                 /*!
                  * \param value     The given value
                  */
-                int indexOfLastTimePointLessOrEqualToValue(unsigned long value);
+                int indexOfLastTimePointLessOrEqualToValue(unsigned long value) const;
 
                 //! Check if the provided value pair is valid
                 /*! Check if the provided timepoint values are smaller than the maximum timepoint value and
@@ -137,19 +124,19 @@ namespace multiscale {
                  * \param startValue    The start value
                  * \param endValue      The end value
                  */
-                void validateValues(unsigned long startValue, unsigned long endValue);
+                void validateValues(unsigned long startValue, unsigned long endValue) const;
 
                 //! Check if the provided index is smaller than the number of timepoints
                 /*!
                  * \param index The provided index
                  */
-                void validateIndex(unsigned int index);
+                void validateIndex(unsigned int index) const;
 
                 //! Check if the provided value is smaller than or equal to the maximum timepoint value
                 /*!
                  * \param value The provided value
                  */
-                void validateValue(unsigned long value);
+                void validateValue(unsigned long value) const;
 
 
                 // Constants
