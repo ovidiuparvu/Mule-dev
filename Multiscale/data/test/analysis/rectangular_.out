@@ -1,5 +1,6 @@
 Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)
-0.999217,0.553521,187454,3163.02,104.652,97.0205,triangular,0.651114,0.580251,0.495698,342,680
+0.998036,0.309011,27129.5,757.761,316.228,36.4742,triangular,0.806409,0.593425,0.323701,1141.03,900.411
+0.990156,0.490193,240922,2153.13,108.632,109.778,rectangular,0.633482,0.706133,0.562425,314.983,698.88
 
-Average clusteredness degree: 0
-Average density: 0.553521
+Average clusteredness degree: 0.00117609
+Average density: 0.399602

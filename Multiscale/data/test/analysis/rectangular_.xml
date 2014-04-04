@@ -4,29 +4,47 @@
 	<timepoint>
 		<spatialEntity>
 			<pseudo3D type="region">
-				<clusteredness>0.9992170720611107</clusteredness>
-				<density>0.5535212152933584</density>
-				<area>187453.5</area>
-				<perimeter>3163.024443149567</perimeter>
-				<distanceFromOrigin>104.651803615609</distanceFromOrigin>
-				<angle>97.0204545133727</angle>
+				<clusteredness>0.9980355778675106</clusteredness>
+				<density>0.3090113050567821</density>
+				<area>27129.5</area>
+				<perimeter>757.760892868042</perimeter>
+				<distanceFromOrigin>316.227766016838</distanceFromOrigin>
+				<angle>36.47418500219597</angle>
 				<shape>triangular</shape>
-				<triangleMeasure>0.6511143438515108</triangleMeasure>
-				<rectangleMeasure>0.5802507924322718</rectangleMeasure>
-				<circleMeasure>0.4956977778969587</circleMeasure>
+				<triangleMeasure>0.8064085844117723</triangleMeasure>
+				<rectangleMeasure>0.5934254174991814</rectangleMeasure>
+				<circleMeasure>0.3237010885035476</circleMeasure>
 				<centroid>
-					<x>342</x>
-					<y>680</y>
+					<x>1141.03</x>
+					<y>900.4112</y>
+				</centroid>
+			</pseudo3D>
+		</spatialEntity>
+		<spatialEntity>
+			<pseudo3D type="region">
+				<clusteredness>0.9901557039492034</clusteredness>
+				<density>0.4901932634774364</density>
+				<area>240922</area>
+				<perimeter>2153.12531709671</perimeter>
+				<distanceFromOrigin>108.6324076875773</distanceFromOrigin>
+				<angle>109.7778345325739</angle>
+				<shape>rectangular</shape>
+				<triangleMeasure>0.6334815468757613</triangleMeasure>
+				<rectangleMeasure>0.706133489065172</rectangleMeasure>
+				<circleMeasure>0.5624248149434126</circleMeasure>
+				<centroid>
+					<x>314.9832</x>
+					<y>698.8802</y>
 				</centroid>
 			</pseudo3D>
 		</spatialEntity>
 		<numericStateVariable>
 			<name>avgClusterednessRegions</name>
-			<value>0</value>
+			<value>0.001176089756054817</value>
 		</numericStateVariable>
 		<numericStateVariable>
 			<name>avgDensityRegions</name>
-			<value>0.5535212152933584</value>
+			<value>0.3996022842671093</value>
 		</numericStateVariable>
 	</timepoint>
 </experiment>

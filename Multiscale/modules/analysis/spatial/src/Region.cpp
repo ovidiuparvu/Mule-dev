@@ -97,9 +97,10 @@ double Region::isCircularMeasure() {
 }
 
 void Region::updateCentrePoint() {
-    RotatedRect minAreaEnclosingRect = minAreaRect(polygon);
+    Moments polygonMoments = moments(polygon, false);
 
-    centre = minAreaEnclosingRect.center;
+    centre.x = (polygonMoments.m10 / polygonMoments.m00);
+    centre.y = (polygonMoments.m01 / polygonMoments.m00);
 }
 
 SpatialEntityPseudo3DType Region::type() {

@@ -148,14 +148,12 @@ void Cluster::updatePerimeter() {
 }
 
 void Cluster::updateCentrePoint() {
-    centre *= 0;
+    vector<Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
-    for (const Entity &entity : entities) {
-        centre += entity.getCentre();
-    }
+    Moments convexHullMoments = moments(entitiesConvexHull, false);
 
-    centre.x /= entities.size();
-    centre.y /= entities.size();
+    centre.x = (convexHullMoments.m10 / convexHullMoments.m00);
+    centre.y = (convexHullMoments.m01 / convexHullMoments.m00);
 }
 
 double Cluster::isTriangularMeasure() {
