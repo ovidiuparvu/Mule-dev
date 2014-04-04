@@ -7,6 +7,8 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
+#include <utility>
+
 using namespace std;
 using namespace cv;
 
@@ -14,6 +16,12 @@ using namespace cv;
 namespace multiscale {
 
     namespace analysis {
+
+        /*! Define a wrapper for polygons i.e. pairs (o, i) where o = outer contour
+         *  and i = collection of inner contours/holes
+         */
+        typedef std::pair<std::vector<Point>, std::vector<std::vector<Point>>> Polygon;
+
 
         //! Class for detecting regions of high intensity in grayscale images
         class RegionDetector : public Detector {
@@ -190,45 +198,93 @@ namespace multiscale {
                 /*!
                  * \param regions The regions in the image
                  */
-                void computeAverageClusterednessDegree(vector<Region> &regions);
+                void computeAverageClusterednessDegree(const vector<Region> &regions);
+
+                //! Compute the sum of the average distances from each region centroid to all the other regions' centroids
+                /*!
+                 * \param regions The regions in the image
+                 */
+                double sumOfAverageCentroidDistances(const vector<Region> &Regions);
 
                 //! Compute the average density
                 /*!
                  * \param regions The regions in the image
                  */
-                void computeAverageDensity(vector<Region> &regions);
+                void computeAverageDensity(const vector<Region> &regions);
 
-                //! Find contours in image
+                //! Find polygons in image
                 /*!
                  * \param image The image
                  */
-                vector<vector<Point> > findContoursInImage(const Mat &image);
+                vector<Polygon> findPolygonsInImage(const Mat &image);
+
+                //! Create polygons from the given contours and hierarchy information
+                /*!
+                 * \param contours  The contours
+                 * \param hierarchy The information regarding the hierarchy between contours
+                 */
+                vector<Polygon> createPolygons(const vector<vector<Point> > &contours,
+                                               const vector<vector<int> > &hierarchy);
+
+                //! Create a new polygon considering the given contour index, contours and hierarchy information
+                /*!
+                 * \param contourIndex  The index of the outer contour
+                 * \param contours      The collection of all contours
+                 * \param hierarchy     The information regarding the hierarchy between contours
+                 */
+                Polygon createPolygon(unsigned int contourIndex, const vector<vector<Point> > &contours,
+                                      const vector<vector<int> > &hierarchy);
+
+                //! Set the outer contour of the polygon
+                /*!
+                 * \param contourIndex  The index of the outer contour
+                 * \param contours      The collection of all contours
+                 * \param hierarchy     The information regarding the hierarchy between contours
+                 * \param polygon       The polygon for which the outer contour is set
+                 */
+                void setPolygonOuterContour(unsigned int contourIndex, const vector<vector<Point> > &contours,
+                                            const vector<vector<int> > &hierarchy, Polygon &polygon);
+
+                //! Set the inner contours of the polygon
+                /*!
+                 * \param contourIndex  The index of the outer contour
+                 * \param contours      The collection of all contours
+                 * \param hierarchy     The information regarding the hierarchy between contours
+                 * \param polygon       The polygon for which the outer contour is set
+                 */
+                void setPolygonInnerContours(unsigned int contourIndex, const vector<vector<Point> > &contours,
+                                             const vector<vector<int> > &hierarchy, Polygon &polygon);
+
+                //! Approximate the outer contour of the given polygon
+                /*!
+                 * \param polygon The given polygon
+                 */
+                void approximatePolygonOuterBorder(Polygon &polygon);
 
                 //! Create a new region from the given polygon
-                /*! Process the polygon in order to get the required information and
-                 *  create a region using this information
+                /*! Process the polygon in order to get the required information
+                 *  (e.g. clusteredness, area etc.) and create a region using this
+                 *  information
                  *
                  * \param polygon Polygon determining the region
                  */
-                Region createRegionFromPolygon(const vector<Point> &polygon);
+                Region createRegionFromPolygon(const Polygon &polygon);
 
-                //! Check if the region is valid
-                /*! Check if the area of the region > regionAreaThreshold
+                //! Check if the polygon is valid
+                /*! Check if the area determined by the outer border of the polygon > regionAreaThreshold
                  *
                  * \param polygon The polygon defining the region
                  */
-                bool isValidRegion(const vector<Point> &polygon);
+                bool isValidPolygon(const vector<Point> &polygon);
 
                 //! Compute the clusteredness degree of the region delimited by the given polygon
                 /*!
-                 * The density is equal to the average intensity of the pixels in the area
-                 * delimited by the given polygon divided by INTENSITY_MAX. The intensities
-                 * are considered from the thresholded image where the threshold value is 1
-                 * i.e. only the black patches are discarded.
+                 * The clusteredness value is computed as follows:
+                 * \f$ clusteredness = \frac{area_{outer contour} - \sum\limits_{inner \in inner contours}{area_{inner}}{area_{outer contour}} \f$
                  *
                  * \param polygon The given polygon
                  */
-                double regionClusterednessDegree(const vector<Point> &polygon);
+                double regionClusterednessDegree(const Polygon &polygon);
 
                 //! Compute the density of the area delimited by the given polygon
                 /*!
@@ -237,13 +293,13 @@ namespace multiscale {
                  *
                  * \param polygon The given polygon
                  */
-                double regionDensity(const vector<Point> &polygon);
+                double regionDensity(const Polygon &polygon);
 
                 //! Compute the area of the given polygon considering holes
                 /*!
                  * \param polygon The given polygon
                  */
-                double regionArea(const vector<Point> &polygon);
+                double regionArea(const Polygon &polygon);
 
                 //! Compute the area of the white holes in the given matrix
                 /*!
@@ -285,6 +341,11 @@ namespace multiscale {
                 static const string TRACKBAR_EPSILON;
                 static const string TRACKBAR_REGION_AREA_THRESH;
                 static const string TRACKBAR_THRESHOLD;
+
+                static const int HIERARCHY_NEXT_INDEX;
+                static const int HIERARCHY_PREV_INDEX;
+                static const int HIERARCHY_FIRST_CHILD_INDEX;
+                static const int HIERARCHY_PARENT_INDEX;
 
                 static const bool USE_CANNY_L2;
                 static const bool CONTOUR_AREA_ORIENTED;

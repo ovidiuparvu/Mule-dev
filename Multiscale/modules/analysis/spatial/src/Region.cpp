@@ -8,40 +8,41 @@
 using namespace multiscale::analysis;
 
 
-Region::Region(double clusterednessDegree, double density, double area, double distanceFromOrigin,
-               double angleWrtOrigin, const vector<Point> &polygon) : SpatialEntityPseudo3D() {
-    validateInputValues(clusterednessDegree, density, area, distanceFromOrigin, angleWrtOrigin, polygon);
+Region::Region(double clusterednessDegree, double density, double area,
+               double distanceFromOrigin, double angleWrtOrigin,
+               const vector<Point> &outerBorderPolygon) : SpatialEntityPseudo3D() {
+    validateInputValues(clusterednessDegree, density, area, distanceFromOrigin,
+                        angleWrtOrigin, outerBorderPolygon);
 
-    this->clusterednessDegree = clusterednessDegree;
-    this->density = density;
-    this->area = area;
-    this->distanceFromOrigin = distanceFromOrigin;
-    this->angle = angleWrtOrigin;
+    this->clusterednessDegree   = clusterednessDegree;
+    this->density               = density;
+    this->area                  = area;
+    this->distanceFromOrigin    = distanceFromOrigin;
+    this->angle                 = angleWrtOrigin;
 
-    this->polygon = polygon;
+    this->outerBorderPolygon = outerBorderPolygon;
 }
 
-Region::~Region() {
-    polygon.clear();
+Region::~Region() {}
+
+const vector<Point>& Region::getOuterBorderPolygon() {
+    return outerBorderPolygon;
 }
 
-const vector<Point>& Region::getPolygon() {
-    return polygon;
-}
-
-void Region::validateInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
-                                 double angleWrtOrigin, const vector<Point> &polygon) {
-    if (!areValidInputValues(clusterednessDegree, density, area, distanceFromOrigin, angleWrtOrigin, polygon)) {
+void Region::validateInputValues(double clusterednessDegree, double density, double area,
+                                 double distanceFromOrigin, double angleWrtOrigin,
+                                 const vector<Point> &outerBorderPolygon) {
+    if (!areValidInputValues(clusterednessDegree, density, area, distanceFromOrigin,
+                             angleWrtOrigin, outerBorderPolygon)) {
         MS_throw(InvalidInputException, ERR_INPUT);
     }
 }
 
-bool Region::areValidInputValues(double clusterednessDegree, double density, double area, double distanceFromOrigin,
-                                 double angleWrtOrigin, const vector<Point> &polygon) {
-    for (const Point &point : polygon) {
-        if ((point.x < 0) || (point.y < 0)) {
-            return false;
-        }
+bool Region::areValidInputValues(double clusterednessDegree, double density, double area,
+                                 double distanceFromOrigin, double angleWrtOrigin,
+                                 const vector<Point> &outerBorderPolygon) {
+    if (!isValidInputPolygon(outerBorderPolygon)) {
+        return false;
     }
 
     return (
@@ -54,6 +55,16 @@ bool Region::areValidInputValues(double clusterednessDegree, double density, dou
     );
 }
 
+bool Region::isValidInputPolygon(const vector<Point> &polygon) {
+    for (const Point &point : polygon) {
+        if ((point.x < 0) || (point.y < 0)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 void Region::updateClusterednessDegree() {}
 
 void Region::updateDensity() {}
@@ -61,14 +72,14 @@ void Region::updateDensity() {}
 void Region::updateArea() {}
 
 void Region::updatePerimeter() {
-    perimeter = arcLength(polygon, CONTOUR_CLOSED);
+    perimeter = arcLength(outerBorderPolygon, CONTOUR_CLOSED);
 }
 
 double Region::isTriangularMeasure() {
     vector<Point2f> minAreaEnclosingTriangle;
     vector<Point> contourConvexHull;
 
-    convexHull(polygon, contourConvexHull, CONVEX_HULL_CLOCKWISE);
+    convexHull(outerBorderPolygon, contourConvexHull, CONVEX_HULL_CLOCKWISE);
 
     double triangleArea = MinEnclosingTriangleFinder().find(convertPoints(contourConvexHull), minAreaEnclosingTriangle);
 
@@ -76,7 +87,7 @@ double Region::isTriangularMeasure() {
 }
 
 double Region::isRectangularMeasure() {
-    RotatedRect minAreaEnclosingRect = minAreaRect(polygon);
+    RotatedRect minAreaEnclosingRect = minAreaRect(outerBorderPolygon);
 
     // Compute the area of the minimum area enclosing rectangle
     double rectangleArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
@@ -88,7 +99,7 @@ double Region::isCircularMeasure() {
     Point2f minAreaEnclosingCircleCentre;
     float minAreaEnclosingCircleRadius;
 
-    minEnclosingCircle(polygon, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
+    minEnclosingCircle(outerBorderPolygon, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
     // Compute the area of the minimum area enclosing circle
     double circleArea = Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
@@ -97,7 +108,7 @@ double Region::isCircularMeasure() {
 }
 
 void Region::updateCentrePoint() {
-    Moments polygonMoments = moments(polygon, false);
+    Moments polygonMoments = moments(outerBorderPolygon, false);
 
     centre.x = (polygonMoments.m10 / polygonMoments.m00);
     centre.y = (polygonMoments.m01 / polygonMoments.m00);
