@@ -32,7 +32,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 include(AddDebugPostfix)
 include(AddSample)
 include(AddUnitTest)
-include(IncrementDoxygenBuildNumber)
+include(UpdateProjectBuildNumber)
 include(MacroOutOfSourceBuild)
  
 # Check if an "out of source" build folder was chosen
@@ -88,10 +88,10 @@ endif()
 
 
 #------------------------------------------------------------
-# Documentation configuration
+# Project build number
 #------------------------------------------------------------
 
-IncrementDoxygenBuildNumber(
+UpdateProjectBuildNumber(
     "Release" 
     ${PROJECT_SOURCE_DIR}/doc/Multiscale.doxyfile.in 
     ${PROJECT_SOURCE_DIR}/doc/Multiscale.doxyfile

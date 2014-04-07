@@ -185,10 +185,6 @@ void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
     vector<Polygon> polygons = findPolygonsInImage(image);
 
     for (auto polygon : polygons) {
-        if (!isValidPolygon(polygon.first)) {
-            continue;
-        }
-
         // Obtain the approximated polygon
         approximatePolygonOuterBorder(polygon);
 
@@ -202,7 +198,7 @@ void RegionDetector::computeAverageMeasures(vector<Region> &regions) {
     computeAverageDensity(regions);
 }
 
-void RegionDetector::computeAverageClusterednessDegree(const vector<Region> &regions) {
+void RegionDetector::computeAverageClusterednessDegree(vector<Region> &regions) {
     double avgClusterednessDegree = sumOfAverageCentroidDistances(regions);
 
     // Take the average of the sum of average distances between clusters
@@ -217,14 +213,14 @@ void RegionDetector::computeAverageClusterednessDegree(const vector<Region> &reg
     }
 }
 
-double RegionDetector::sumOfAverageCentroidDistances(const vector<Region> &regions) {
+double RegionDetector::sumOfAverageCentroidDistances(vector<Region> &regions) {
     avgClusterednessDegree = 0;
 
-    for (Region &region: regions) {
+    for (auto &region: regions) {
         Point2f centroid = region.getCentre();
         double distance = 0;
 
-        for (Region &otherRegion: regions) {
+        for (auto &otherRegion: regions) {
             Point2f otherCentroid = otherRegion.getCentre();
 
             distance += Geometry2D::distanceBtwPoints(centroid, otherCentroid);
@@ -237,10 +233,10 @@ double RegionDetector::sumOfAverageCentroidDistances(const vector<Region> &regio
     return avgClusterednessDegree;
 }
 
-void RegionDetector::computeAverageDensity(const vector<Region> &regions) {
+void RegionDetector::computeAverageDensity(vector<Region> &regions) {
     avgDensity = 0;
 
-    for (Region &region : regions) {
+    for (auto &region : regions) {
         avgDensity += region.getDensity();
     }
 
@@ -255,23 +251,23 @@ vector<Polygon> RegionDetector::findPolygonsInImage(const Mat &image) {
     // to the image matrix
     Mat modifiedImage = Mat::zeros(image.rows + 2, image.cols + 2, image.type());
     vector<vector<Point> > contours;
-    vector<vector<int> > hierarchy;
+    vector<Vec4i> hierarchy;
 
     image.copyTo(modifiedImage(Rect(1, 1, image.cols, image.rows)));
 
-    findContours(modifiedImage, contours, hierarchy, CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
+    findContours(modifiedImage, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_NONE);
 
     return createPolygons(contours, hierarchy);
 }
 
 vector<Polygon> RegionDetector::createPolygons(const vector<vector<Point> > &contours,
-                                               const vector<vector<int> > &hierarchy) {
+                                               const vector<Vec4i> &hierarchy) {
     vector<Polygon> polygons;
 
-    unsigned int nrOfContours = contours.size();
-
-    for (auto i = 0; i < nrOfContours; i++) {
-        if (hierarchy[i][HIERARCHY_FIRST_CHILD_INDEX] != -1) {
+    // Assuming that the algorithm for finding contours is the one proposed by Suzuki85
+    // the first contour is always an outer contour
+    for (int i = 0; i != -1; i = hierarchy[i][HIERARCHY_NEXT_INDEX]) {
+        if (isValidContour(contours[i])) {
             polygons.push_back(createPolygon(i, contours, hierarchy));
         }
     }
@@ -279,8 +275,8 @@ vector<Polygon> RegionDetector::createPolygons(const vector<vector<Point> > &con
     return polygons;
 }
 
-Polygon RegionDetector::createPolygon(unsigned int contourIndex, const vector<vector<Point> > &contours,
-                                      const vector<vector<int> > &hierarchy) {
+Polygon RegionDetector::createPolygon(int contourIndex, const vector<vector<Point> > &contours,
+                                      const vector<Vec4i> &hierarchy) {
     Polygon polygon;
 
     setPolygonOuterContour  (contourIndex, contours, hierarchy, polygon);
@@ -289,19 +285,20 @@ Polygon RegionDetector::createPolygon(unsigned int contourIndex, const vector<ve
     return polygon;
 }
 
-void RegionDetector::setPolygonOuterContour(unsigned int contourIndex, const vector<vector<Point> > &contours,
-                                            const vector<vector<int> > &hierarchy, Polygon &polygon) {
+void RegionDetector::setPolygonOuterContour(int contourIndex, const vector<vector<Point> > &contours,
+                                            const vector<Vec4i> &hierarchy, Polygon &polygon) {
     polygon.first = contours[contourIndex];
 }
 
-void RegionDetector::setPolygonInnerContours(unsigned int contourIndex, const vector<vector<Point> > &contours,
-                                             const vector<vector<int> > &hierarchy, Polygon &polygon) {
-    unsigned int childIndex = hierarchy[contourIndex][HIERARCHY_FIRST_CHILD_INDEX];
+void RegionDetector::setPolygonInnerContours(int contourIndex, const vector<vector<Point> > &contours,
+                                             const vector<Vec4i> &hierarchy, Polygon &polygon) {
+    int nrOfContours = contours.size();
 
-    while (childIndex != -1) {
-        polygon.second.push_back(contours[childIndex]);
-
-        childIndex = hierarchy[childIndex][HIERARCHY_NEXT_INDEX];
+    for (int i = 0; i < nrOfContours; i++) {
+        if ((hierarchy[i][HIERARCHY_PARENT_INDEX] == contourIndex) &&
+            (isValidHole(contours[i]))) {
+            polygon.second.push_back(contours[i]);
+        }
     }
 }
 
@@ -314,31 +311,23 @@ void RegionDetector::approximatePolygonOuterBorder(Polygon &polygon) {
 Region RegionDetector::createRegionFromPolygon(const Polygon &polygon) {
     unsigned int minDistancePointIndex = Geometry2D::minimumDistancePointIndex(polygon.first, origin);
 
-    double clusterednessDegree = regionClusterednessDegree(polygon);
     double density = regionDensity(polygon);
-    double area = regionArea(polygon);
     double distance = Geometry2D::distanceBtwPoints(polygon.first[minDistancePointIndex], origin);
     double angle = polygonAngle(polygon.first, minDistancePointIndex);
 
-    return Region(clusterednessDegree, density, area, distance, angle, polygon.first);
+    return Region(density, distance, angle, polygon.first, polygon.second);
 }
 
-bool RegionDetector::isValidPolygon(const vector<Point> &polygon) {
-    double area = contourArea(polygon, CONTOUR_AREA_ORIENTED);
+bool RegionDetector::isValidContour(const vector<Point> &contour) {
+    double area = contourArea(contour, CONTOUR_AREA_ORIENTED);
 
     return (area >= regionAreaThresh);
 }
 
-double RegionDetector::regionClusterednessDegree(const Polygon &polygon) {
-    double outerPolygonArea = contourArea(polygon.first, CONTOUR_AREA_ORIENTED);
-    double innerPolygonArea = 0;
+bool RegionDetector::isValidHole(const vector<Point> &hole) {
+    double area = contourArea(hole, CONTOUR_AREA_ORIENTED);
 
-    for (auto innerPolygon : polygon.second) {
-        innerPolygonArea += contourArea(innerPolygon, CONTOUR_AREA_ORIENTED);
-    }
-
-    return (outerPolygonArea != 0) ? ((outerPolygonArea - innerPolygonArea) / (outerPolygonArea))
-                                   : 0;
+    return (area >= THRESHOLD_HOLE_AREA);
 }
 
 double RegionDetector::regionDensity(const Polygon &polygon) {
@@ -350,28 +339,6 @@ double RegionDetector::regionDensity(const Polygon &polygon) {
     double averageIntensity = (mean(image, mask))[0];
 
     return (averageIntensity / static_cast<double>(INTENSITY_MAX));
-}
-
-double RegionDetector::regionArea(const Polygon &polygon) {
-    double outerPolygonArea = contourArea(polygon.first, CONTOUR_AREA_ORIENTED);
-    double innerPolygonArea = 0;
-
-    for (auto innerPolygon : polygon.second) {
-        innerPolygonArea += contourArea(innerPolygon, CONTOUR_AREA_ORIENTED);
-    }
-
-    return (outerPolygonArea - innerPolygonArea);
-}
-
-double RegionDetector::regionHolesArea(const Mat &matrix) {
-    vector<vector<Point> > contours = findPolygonsInImage(matrix);
-    double area = 0;
-
-    for (const vector<Point> &contour : contours) {
-        area += contourArea(contour, CONTOUR_AREA_ORIENTED);
-    }
-
-    return area;
 }
 
 void RegionDetector::clearPreviousDetectionResults() {
@@ -400,10 +367,27 @@ void RegionDetector::outputResultsToImage() {
     cvtColor(outputImage, outputImage, CV_GRAY2BGR);
 
     for (Region &region : regions) {
-        polylines(outputImage, region.getOuterBorderPolygon(), POLYGON_CLOSED, Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
+        outputRegionToImage(region, outputImage);
     }
 
     outputImage(Rect(1, 1, image.cols, image.rows)).copyTo(this->outputImage);
+}
+
+void RegionDetector::outputRegionToImage(const Region &region, Mat &outputImage) {
+    outputRegionOuterBorderToImage(region.getOuterBorderPolygon(), outputImage);
+    outputRegionInnerBordersToImage(region.getInnerBorderPolygons(), outputImage);
+}
+
+void RegionDetector::outputRegionOuterBorderToImage(const vector<Point> &outerBorder,
+                                                    Mat &outputImage) {
+    polylines(outputImage, outerBorder, POLYGON_CLOSED, Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
+}
+
+void RegionDetector::outputRegionInnerBordersToImage(const vector<vector<Point> > &innerBorders,
+                                                     Mat &outputImage) {
+    for (auto innerBorder : innerBorders) {
+        polylines(outputImage, innerBorder, POLYGON_CLOSED, Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
+    }
 }
 
 double RegionDetector::convertAlpha(int alpha) {
@@ -451,6 +435,8 @@ const int RegionDetector::REGION_AREA_THRESH_MAX  = 200000;
 const int RegionDetector::THRESHOLD_MAX           = 255;
 const int RegionDetector::THRESHOLD_CLUSTEREDNESS = 0;
 const int RegionDetector::INTENSITY_MAX           = 255;
+
+const int RegionDetector::THRESHOLD_HOLE_AREA     = 1000;
 
 const bool RegionDetector::POLYGON_CLOSED         = true;
 

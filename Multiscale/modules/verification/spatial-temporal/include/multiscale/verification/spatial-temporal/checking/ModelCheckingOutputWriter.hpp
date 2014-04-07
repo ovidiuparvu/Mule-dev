@@ -143,9 +143,29 @@ namespace multiscale {
                  * \param tracesPaths           The collection of trace paths
                  * \param evaluationResults     The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
                  */
+                static void printLogicPropertyDetailedEvaluationResults(const std::size_t &logicPropertyIndex,
+                                                                        const std::vector<std::string> &tracesPaths,
+                                                                        const std::vector<std::vector<bool>> &evaluationResults);
+
+                //! Print the detailed evaluation results for the given logic property
+                /*!
+                 * \param logicPropertyIndex    The index of the logic property in the collection of logic properties
+                 * \param tracesPaths           The collection of trace paths
+                 * \param evaluationResults     The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
+                 */
                 static void printDetailedEvaluationResults(const std::size_t &logicPropertyIndex,
                                                            const std::vector<std::string> &tracesPaths,
                                                            const std::vector<std::vector<bool>> &evaluationResults);
+
+                //! Check if the trace was evaluated for the given logic property
+                /*!
+                 * \param logicPropertyIndex    The index of the logic property in the collection of logic properties
+                 * \param tracePathIndex        The index of the trace path in the collection of trace paths
+                 * \param evaluationResults     The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
+                 */
+                static bool isTraceEvaluatedForLogicProperty(const std::size_t &logicPropertyIndex,
+                                                             const std::size_t &tracePathIndex,
+                                                             const std::vector<std::vector<bool>> &evaluationResults);
 
                 //! Print the detailed evaluation result for the given logic property and trace
                 /*!
@@ -154,10 +174,10 @@ namespace multiscale {
                  * \param tracePathIndex        The index of the trace path in the collection of trace paths
                  * \param evaluationResults     The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
                  */
-                static void printDetailedEvaluationResult(const std::size_t &logicPropertyIndex,
-                                                          const std::string &tracePath,
-                                                          const std::size_t &tracePathIndex,
-                                                          const std::vector<std::vector<bool>> &evaluationResults);
+                static void printDetailedTraceEvaluationResult(const std::size_t &logicPropertyIndex,
+                                                               const std::string &tracePath,
+                                                               const std::size_t &tracePathIndex,
+                                                               const std::vector<std::vector<bool>> &evaluationResults);
 
                 //! Print the trace path with the associated evaluation result
                 /*!
@@ -165,6 +185,40 @@ namespace multiscale {
                  * \param evaluationResult  The evaluation result
                  */
                 static void printTraceEvaluationResult(const std::string &tracePath, bool evaluationResult);
+
+                //! Print the summary of the evaluation results for the given logic property
+                /*!
+                 * Print a message informing the user how many traces out of the total number
+                 * of traces evaluated to true for the given logic property.
+                 *
+                 * \param logicPropertyIndex    The index of the logic property in the collection of logic properties
+                 * \param tracesPaths           The collection of trace paths
+                 * \param evaluationResults     The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
+                 */
+                static void printEvaluationResultsSummary(const std::size_t &logicPropertyIndex,
+                                                          const std::vector<std::string> &tracesPaths,
+                                                          const std::vector<std::vector<bool>> &evaluationResults);
+
+                //! Print the summary of the evaluation results for the given logic property
+                /*!
+                 * Print a message informing the user how many traces out of the total number
+                 * of traces evaluated to true for the given logic property.
+                 *
+                 * \param nrOfTraces        The total number of traces
+                 * \param nrOfCorrectTraces The number of traces out of the total number of traces which were evaluated to true
+                 */
+                static void printEvaluationResultsSummary(std::size_t nrOfTraces, std::size_t nrOfCorrectTraces);
+
+                //! Check if the trace was evaluated to true for the given logic property
+                /*!
+                 * \param logicPropertyIndex    The index of the logic property in the collection of logic properties
+                 * \param tracePathIndex        The index of the trace path in the collection of trace paths
+                 * \param evaluationResults     The evaluation results (i.e. a two-dimensional array of size |logicProperties| x |2 * |traces|| where the first boolean value associated to a (logicProperty, trace) pair states if the logic property was evaluated for that trace and the second one stores the evaluation value
+                 */
+                static bool isTraceEvaluatedTrueForLogicProperty(const std::size_t &logicPropertyIndex,
+                                                                 const std::size_t &tracePathIndex,
+                                                                 const std::vector<std::vector<bool>> &evaluationResults);
+
 
                 //! Print a message with the given tag and colour depending on the truth value
                 /*! If the truthValue is true then the tag colour is green, otherwise red
@@ -219,7 +273,10 @@ namespace multiscale {
                 static const std::string MSG_EXECUTION_TIMEOUT_END;
 
                 static const std::string MSG_RESULTS_INTRODUCTION;
+
                 static const std::string MSG_EVALUATION_RESULTS_INTRODUCTION;
+                static const std::string MSG_EVALUATION_SUMMARY_BEGIN;
+                static const std::string MSG_EVALUATION_SUMMARY_END;
 
                 static const std::string MSG_LOGIC_PROPERTY_HOLDS;
                 static const std::string MSG_LOGIC_PROPERTY_HOLDS_TRUE;

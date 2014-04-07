@@ -25,20 +25,22 @@ namespace multiscale {
 
             public:
                 
-                Region(double clusterednessDegree, double density, double area,
-                       double distanceFromOrigin, double angleWrtOrigin,
-                       const vector<Point> &outerBorderPolygon);
+                Region(double density, double distanceFromOrigin, double angleWrtOrigin,
+                       const vector<Point> &outerBorderPolygon,
+                       const vector<vector<Point> > &innerBorderPolygons);
                 ~Region();
 
-                //! Get the polygon defining the region
-                const vector<Point>& getOuterBorderPolygon();
+                //! Get the polygon defining the outer border of the region
+                const vector<Point>& getOuterBorderPolygon() const;
+
+                //! Get the polygons defining the inner borders of the region
+                const vector<vector<Point> > &getInnerBorderPolygons() const;
 
             private:
 
                 //! Validate the input values
                 /*!
                  * Validation rules:
-                 *  0 < clusterednessDegree
                  *  0 < density
                  *  0 < distanceFromOrigin
                  *  0 <= angleWrtOrigin <= 360
@@ -47,21 +49,19 @@ namespace multiscale {
                  *      0 <= p.x
                  *      0 <= p.y
                  *
-                 * \param clusterednessDegree   The clusteredness degree of the region
                  * \param density               The density of the region
-                 * \param area                  The area of the region considering holes
                  * \param distanceFromOrigin    The distance from the origin
                  * \param angleWrtOrigin        The angle computed wrt to the origin
                  * \param outerBorderPolygon    The polygon defining the outer border of the region
+                 * \param innerBorderPolygons   The polygon defining the inner borders of the region
                  */
-                void validateInputValues(double clusterednessDegree, double density, double area,
-                                         double distanceFromOrigin, double angleWrtOrigin,
-                                         const vector<Point> &outerBorderPolygon);
+                void validateInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
+                                         const vector<Point> &outerBorderPolygon,
+                                         const vector<vector<Point> > &innerBorderPolygons);
 
                 //! Check if the input values are valid or not
                 /*!
                  * Validation rules:
-                 *  0 < clusterednessDegree
                  *  0 < density
                  *  0 < distanceFromOrigin
                  *  0 <= angleWrtOrigin <= 360
@@ -70,16 +70,37 @@ namespace multiscale {
                  *      0 <= p.x
                  *      0 <= p.y
                  *
-                 * \param clusterednessDegree   The clusteredness degree of the region
                  * \param density               The density of the region
-                 * \param area                  The area of the region considering holes
                  * \param distanceFromOrigin    The distance from the origin
                  * \param angleWrtOrigin        The angle computed wrt to the origin
                  * \param outerBorderPolygon    The polygon defining the outer border of the region
+                 * \param innerBorderPolygons   The polygon defining the inner borders of the region
                  */
-                bool areValidInputValues(double clusterednessDegree, double density, double area,
-                                         double distanceFromOrigin, double angleWrtOrigin,
-                                         const vector<Point> &outerBorderPolygon);
+                bool areValidInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
+                                         const vector<Point> &outerBorderPolygon,
+                                         const vector<vector<Point> > &innerBorderPolygons);
+
+                //! Check if the given input outer/inner border polygons are valid
+                /*!
+                 *  For each polygon p and each point a:
+                 *      0 <= p.a.x
+                 *      0 <= p.a.y
+                 *
+                 * \param outerBorderPolygon    The polygon defining the outer border of the region
+                 * \param innerBorderPolygons   The polygon defining the inner borders of the region
+                 */
+                bool areValidInputPolygons(const vector<Point> &outerBorderPolygon,
+                                           const vector<vector<Point> > &innerBorderPolygons);
+
+                //! Check if the given input polygons are valid
+                /*!
+                 *  For each polygon p and each point a:
+                 *      0 <= p.a.x
+                 *      0 <= p.a.y
+                 *
+                 *  \param polygon The given collection of polygons
+                 */
+                bool areValidInputPolygons(const vector<vector<Point> > &polygons);
 
                 //! Check if the given input polygons are valid
                 /*!
@@ -87,28 +108,24 @@ namespace multiscale {
                  *      0 <= p.x
                  *      0 <= p.y
                  *
-                 *  \param polygon
-                 */
-                bool areValidInputPolygons(const vector<Point> &polygon);
-
-                //! Check if the given input polygons are valid
-                /*!
-                 *  For each polygon point p:
-                 *      0 <= p.x
-                 *      0 <= p.y
-                 *
-                 *  \param polygon
+                 *  \param polygon The given polygon
                  */
                 bool isValidInputPolygon(const vector<Point> &polygon);
 
                 //! Update the value of the clusteredness degree
                 void updateClusterednessDegree() override;
 
+                //! Compute the value of the clusteredness degree if the outer border of the region is defined
+                double computeClusterednessDegreeIfOuterBorderDefined();
+
                 //! Update the value of the density
                 void updateDensity() override;
 
                 //! Update the area
                 void updateArea() override;
+
+                //! Compute the value of the area if the outer border of the region is defined
+                double computeAreaIfOuterBoderDefined();
 
                 //! Update the perimeter
                 void updatePerimeter() override;

@@ -8,11 +8,11 @@
 using namespace multiscale::analysis;
 
 
-Region::Region(double clusterednessDegree, double density, double area,
-               double distanceFromOrigin, double angleWrtOrigin,
-               const vector<Point> &outerBorderPolygon) : SpatialEntityPseudo3D() {
-    validateInputValues(clusterednessDegree, density, area, distanceFromOrigin,
-                        angleWrtOrigin, outerBorderPolygon);
+Region::Region(double density, double distanceFromOrigin, double angleWrtOrigin,
+               const vector<Point> &outerBorderPolygon,
+               const vector<vector<Point> > &innerBorderPolygons) : SpatialEntityPseudo3D() {
+    validateInputValues(density, distanceFromOrigin, angleWrtOrigin,
+                        outerBorderPolygon, innerBorderPolygons);
 
     this->clusterednessDegree   = clusterednessDegree;
     this->density               = density;
@@ -20,28 +20,33 @@ Region::Region(double clusterednessDegree, double density, double area,
     this->distanceFromOrigin    = distanceFromOrigin;
     this->angle                 = angleWrtOrigin;
 
-    this->outerBorderPolygon = outerBorderPolygon;
+    this->outerBorderPolygon    = outerBorderPolygon;
+    this->innerBorderPolygons   = innerBorderPolygons;
 }
 
 Region::~Region() {}
 
-const vector<Point>& Region::getOuterBorderPolygon() {
+const vector<Point>& Region::getOuterBorderPolygon() const {
     return outerBorderPolygon;
 }
 
-void Region::validateInputValues(double clusterednessDegree, double density, double area,
-                                 double distanceFromOrigin, double angleWrtOrigin,
-                                 const vector<Point> &outerBorderPolygon) {
-    if (!areValidInputValues(clusterednessDegree, density, area, distanceFromOrigin,
-                             angleWrtOrigin, outerBorderPolygon)) {
+const vector<vector<Point> >& Region::getInnerBorderPolygons() const {
+    return innerBorderPolygons;
+}
+
+void Region::validateInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
+                                 const vector<Point> &outerBorderPolygon,
+                                 const vector<vector<Point> > &innerBorderPolygons) {
+    if (!areValidInputValues(density, distanceFromOrigin, angleWrtOrigin,
+                             outerBorderPolygon, innerBorderPolygons)) {
         MS_throw(InvalidInputException, ERR_INPUT);
     }
 }
 
-bool Region::areValidInputValues(double clusterednessDegree, double density, double area,
-                                 double distanceFromOrigin, double angleWrtOrigin,
-                                 const vector<Point> &outerBorderPolygon) {
-    if (!isValidInputPolygon(outerBorderPolygon)) {
+bool Region::areValidInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
+                                 const vector<Point> &outerBorderPolygon,
+                                 const vector<vector<Point> > &innerBorderPolygons) {
+    if (!areValidInputPolygons(outerBorderPolygon, innerBorderPolygons)) {
         return false;
     }
 
@@ -55,6 +60,24 @@ bool Region::areValidInputValues(double clusterednessDegree, double density, dou
     );
 }
 
+bool Region::areValidInputPolygons(const vector<Point> &outerBorderPolygon,
+                                   const vector<vector<Point> > &innerBorderPolygons) {
+    return (
+        (isValidInputPolygon(outerBorderPolygon)) &&
+        (areValidInputPolygons(innerBorderPolygons))
+    );
+}
+
+bool Region::areValidInputPolygons(const vector<vector<Point> > &polygons) {
+    for (auto polygon : polygons) {
+        if (!isValidInputPolygon(polygon)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 bool Region::isValidInputPolygon(const vector<Point> &polygon) {
     for (const Point &point : polygon) {
         if ((point.x < 0) || (point.y < 0)) {
@@ -65,11 +88,43 @@ bool Region::isValidInputPolygon(const vector<Point> &polygon) {
     return true;
 }
 
-void Region::updateClusterednessDegree() {}
+void Region::updateClusterednessDegree() {
+    if (outerBorderPolygon.size() > 0) {
+        clusterednessDegree = computeClusterednessDegreeIfOuterBorderDefined();
+    }
+}
+
+double Region::computeClusterednessDegreeIfOuterBorderDefined() {
+    double outerPolygonArea = contourArea(outerBorderPolygon, CONTOUR_ORIENTED);
+    double innerPolygonArea = 0;
+
+    for (auto innerPolygon : innerBorderPolygons) {
+        innerPolygonArea += contourArea(innerPolygon, CONTOUR_ORIENTED);
+    }
+
+    return (outerPolygonArea != 0)
+               ? ((outerPolygonArea - innerPolygonArea) / (outerPolygonArea))
+               : 0;
+}
 
 void Region::updateDensity() {}
 
-void Region::updateArea() {}
+void Region::updateArea() {
+    if (outerBorderPolygon.size() > 0) {
+        area = computeAreaIfOuterBoderDefined();
+    }
+}
+
+double Region::computeAreaIfOuterBoderDefined() {
+    double outerPolygonArea = contourArea(outerBorderPolygon, CONTOUR_ORIENTED);
+    double innerPolygonArea = 0;
+
+    for (auto innerPolygon : innerBorderPolygons) {
+        innerPolygonArea += contourArea(innerPolygon, CONTOUR_ORIENTED);
+    }
+
+    return (outerPolygonArea - innerPolygonArea);
+}
 
 void Region::updatePerimeter() {
     perimeter = arcLength(outerBorderPolygon, CONTOUR_CLOSED);

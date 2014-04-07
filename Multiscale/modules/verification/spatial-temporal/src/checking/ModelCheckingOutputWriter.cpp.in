@@ -155,9 +155,16 @@ void ModelCheckingOutputWriter::printDetailedEvaluationResultsForLogicProperties
         printLogicPropertyWithTag(logicProperties[i], TAG_DETAILS);
         ConsolePrinter::printColouredMessage(TAG_DETAILS, ColourCode::GREEN);
 
-        printDetailedEvaluationResults(i, tracesPaths, evaluationResults);
+        printLogicPropertyDetailedEvaluationResults(i, tracesPaths, evaluationResults);
         printSeparatorTag();
     }
+}
+
+void ModelCheckingOutputWriter::printLogicPropertyDetailedEvaluationResults(const std::size_t &logicPropertyIndex,
+                                                                            const std::vector<std::string> &tracesPaths,
+                                                                            const std::vector<std::vector<bool>> &evaluationResults) {
+    printDetailedEvaluationResults(logicPropertyIndex, tracesPaths, evaluationResults);
+    printEvaluationResultsSummary(logicPropertyIndex, tracesPaths, evaluationResults);
 }
 
 void ModelCheckingOutputWriter::printDetailedEvaluationResults(const std::size_t &logicPropertyIndex,
@@ -166,21 +173,56 @@ void ModelCheckingOutputWriter::printDetailedEvaluationResults(const std::size_t
     auto nrOfTraces = tracesPaths.size();
 
     for (decltype(nrOfTraces) i = 0; i != nrOfTraces; i++) {
-        printDetailedEvaluationResult(logicPropertyIndex, tracesPaths[i], i, evaluationResults);
+        if (isTraceEvaluatedForLogicProperty(logicPropertyIndex, i, evaluationResults)) {
+            printDetailedTraceEvaluationResult(logicPropertyIndex, tracesPaths[i], i, evaluationResults);
+        }
     }
 }
 
-void ModelCheckingOutputWriter::printDetailedEvaluationResult(const std::size_t &logicPropertyIndex,
-                                                              const std::string &tracePath,
-                                                              const std::size_t &tracePathIndex,
+void ModelCheckingOutputWriter::printEvaluationResultsSummary(const std::size_t &logicPropertyIndex,
+                                                              const std::vector<std::string> &tracesPaths,
                                                               const std::vector<std::vector<bool>> &evaluationResults) {
-    // If the logic property was evaluated for this trace
-    if ((evaluationResults[tracePathIndex])[2 * logicPropertyIndex]) {
-        printTraceEvaluationResult(
-            tracePath,
-            (evaluationResults[tracePathIndex])[(2 * logicPropertyIndex) + 1]
-        );
+    std::size_t nrOfTraces         = tracesPaths.size();
+    std::size_t nrOfCorrectTraces  = 0;
+
+    for (std::size_t i = 0; i != nrOfTraces; i++) {
+        if (isTraceEvaluatedTrueForLogicProperty(logicPropertyIndex, i, evaluationResults)) {
+            nrOfCorrectTraces++;
+        }
     }
+
+    printEvaluationResultsSummary(nrOfTraces, nrOfCorrectTraces);
+}
+
+void ModelCheckingOutputWriter::printEvaluationResultsSummary(std::size_t nrOfTraces,
+                                                              std::size_t nrOfCorrectTraces) {
+    ConsolePrinter::printColouredMessage(TAG_DETAILS, ColourCode::GREEN);
+
+    ConsolePrinter::printMessageWithColouredTag(
+        StringManipulator::toString(nrOfCorrectTraces) +
+        MSG_EVALUATION_SUMMARY_BEGIN +
+        StringManipulator::toString(nrOfTraces) +
+        MSG_EVALUATION_SUMMARY_END,
+        TAG_DETAILS,
+        ColourCode::GREEN
+    );
+}
+
+bool ModelCheckingOutputWriter::isTraceEvaluatedForLogicProperty(const std::size_t &logicPropertyIndex,
+                                                                 const std::size_t &tracePathIndex,
+                                                                 const std::vector<std::vector<bool>> &evaluationResults) {
+    return ((evaluationResults[tracePathIndex])[2 * logicPropertyIndex]);
+}
+
+void ModelCheckingOutputWriter::printDetailedTraceEvaluationResult(const std::size_t &logicPropertyIndex,
+                                                                   const std::string &tracePath,
+                                                                   const std::size_t &tracePathIndex,
+                                                                   const std::vector<std::vector<bool>> &evaluationResults) {
+    // If the logic property was evaluated for this trace
+    printTraceEvaluationResult(
+        tracePath,
+        (evaluationResults[tracePathIndex])[(2 * logicPropertyIndex) + 1]
+    );
 }
 
 void ModelCheckingOutputWriter::printTraceEvaluationResult(const std::string &tracePath, bool evaluationResult) {
@@ -189,6 +231,16 @@ void ModelCheckingOutputWriter::printTraceEvaluationResult(const std::string &tr
     } else {
         printTruthValueDependentMessage(tracePath, TAG_FALSE, false);
     }
+}
+
+bool ModelCheckingOutputWriter::isTraceEvaluatedTrueForLogicProperty(const std::size_t &logicPropertyIndex,
+                                                                     const std::size_t &tracePathIndex,
+                                                                     const std::vector<std::vector<bool>> &evaluationResults) {
+    if (isTraceEvaluatedForLogicProperty(logicPropertyIndex, tracePathIndex, evaluationResults)) {
+        return (evaluationResults[tracePathIndex])[(2 * logicPropertyIndex) + 1];
+    }
+
+    return false;
 }
 
 void ModelCheckingOutputWriter::printTruthValueDependentMessage(const std::string &message,
@@ -243,8 +295,11 @@ const std::string ModelCheckingOutputWriter::MSG_START_EXTRA_EVALUATION_PROGRAM_
 const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_BEGIN                    = "The model checker execution was suspended for ";
 const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_END                      = " seconds during which new traces can be provided in the traces input folder.";
 
-const std::string ModelCheckingOutputWriter::MSG_RESULTS_INTRODUCTION               = "I have finished evaluating the logic properties and will display the results...";
+const std::string ModelCheckingOutputWriter::MSG_RESULTS_INTRODUCTION   = "I have finished evaluating the logic properties and will display the results...";
+
 const std::string ModelCheckingOutputWriter::MSG_EVALUATION_RESULTS_INTRODUCTION    = "I will display for each logic property which traces evaluated to TRUE and which evaluated to FALSE...";
+const std::string ModelCheckingOutputWriter::MSG_EVALUATION_SUMMARY_BEGIN           = "/";
+const std::string ModelCheckingOutputWriter::MSG_EVALUATION_SUMMARY_END             = " spatial-temporal traces evaluated to TRUE";
 
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS          = "The logic property holds: ";
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS_TRUE     = "TRUE";

@@ -198,19 +198,19 @@ namespace multiscale {
                 /*!
                  * \param regions The regions in the image
                  */
-                void computeAverageClusterednessDegree(const vector<Region> &regions);
+                void computeAverageClusterednessDegree(vector<Region> &regions);
 
                 //! Compute the sum of the average distances from each region centroid to all the other regions' centroids
                 /*!
                  * \param regions The regions in the image
                  */
-                double sumOfAverageCentroidDistances(const vector<Region> &Regions);
+                double sumOfAverageCentroidDistances(vector<Region> &Regions);
 
                 //! Compute the average density
                 /*!
                  * \param regions The regions in the image
                  */
-                void computeAverageDensity(const vector<Region> &regions);
+                void computeAverageDensity(vector<Region> &regions);
 
                 //! Find polygons in image
                 /*!
@@ -224,7 +224,7 @@ namespace multiscale {
                  * \param hierarchy The information regarding the hierarchy between contours
                  */
                 vector<Polygon> createPolygons(const vector<vector<Point> > &contours,
-                                               const vector<vector<int> > &hierarchy);
+                                               const vector<Vec4i> &hierarchy);
 
                 //! Create a new polygon considering the given contour index, contours and hierarchy information
                 /*!
@@ -232,8 +232,8 @@ namespace multiscale {
                  * \param contours      The collection of all contours
                  * \param hierarchy     The information regarding the hierarchy between contours
                  */
-                Polygon createPolygon(unsigned int contourIndex, const vector<vector<Point> > &contours,
-                                      const vector<vector<int> > &hierarchy);
+                Polygon createPolygon(int contourIndex, const vector<vector<Point> > &contours,
+                                      const vector<Vec4i> &hierarchy);
 
                 //! Set the outer contour of the polygon
                 /*!
@@ -242,8 +242,8 @@ namespace multiscale {
                  * \param hierarchy     The information regarding the hierarchy between contours
                  * \param polygon       The polygon for which the outer contour is set
                  */
-                void setPolygonOuterContour(unsigned int contourIndex, const vector<vector<Point> > &contours,
-                                            const vector<vector<int> > &hierarchy, Polygon &polygon);
+                void setPolygonOuterContour(int contourIndex, const vector<vector<Point> > &contours,
+                                            const vector<Vec4i> &hierarchy, Polygon &polygon);
 
                 //! Set the inner contours of the polygon
                 /*!
@@ -252,8 +252,8 @@ namespace multiscale {
                  * \param hierarchy     The information regarding the hierarchy between contours
                  * \param polygon       The polygon for which the outer contour is set
                  */
-                void setPolygonInnerContours(unsigned int contourIndex, const vector<vector<Point> > &contours,
-                                             const vector<vector<int> > &hierarchy, Polygon &polygon);
+                void setPolygonInnerContours(int contourIndex, const vector<vector<Point> > &contours,
+                                             const vector<Vec4i> &hierarchy, Polygon &polygon);
 
                 //! Approximate the outer contour of the given polygon
                 /*!
@@ -270,21 +270,19 @@ namespace multiscale {
                  */
                 Region createRegionFromPolygon(const Polygon &polygon);
 
-                //! Check if the polygon is valid
-                /*! Check if the area determined by the outer border of the polygon > regionAreaThreshold
+                //! Check if the contour is valid
+                /*! Check if the area determined by the contour > regionAreaThreshold
                  *
-                 * \param polygon The polygon defining the region
+                 * \param contour The given contour
                  */
-                bool isValidPolygon(const vector<Point> &polygon);
+                bool isValidContour(const vector<Point> &contour);
 
-                //! Compute the clusteredness degree of the region delimited by the given polygon
-                /*!
-                 * The clusteredness value is computed as follows:
-                 * \f$ clusteredness = \frac{area_{outer contour} - \sum\limits_{inner \in inner contours}{area_{inner}}{area_{outer contour}} \f$
+                //! Check if the hole is valid
+                /*! Check if the area determined by the hole > THRESHOLD_HOLE_AREA
                  *
-                 * \param polygon The given polygon
+                 * \param hole  The contour of the hole
                  */
-                double regionClusterednessDegree(const Polygon &polygon);
+                bool isValidHole(const vector<Point> &hole);
 
                 //! Compute the density of the area delimited by the given polygon
                 /*!
@@ -295,18 +293,6 @@ namespace multiscale {
                  */
                 double regionDensity(const Polygon &polygon);
 
-                //! Compute the area of the given polygon considering holes
-                /*!
-                 * \param polygon The given polygon
-                 */
-                double regionArea(const Polygon &polygon);
-
-                //! Compute the area of the white holes in the given matrix
-                /*!
-                 * \param matrix The given matrix
-                 */
-                double regionHolesArea(const Mat &matrix);
-
                 //! Clear the element present in the regions vector
                 void clearPreviousDetectionResults() override;
 
@@ -315,6 +301,27 @@ namespace multiscale {
 
                 //! Output the results to the outputImage instance
                 void outputResultsToImage() override;
+
+                //! Output the region to the outputImage instance
+                /*!
+                 * \param region        The given region
+                 * \param outputImage   The given output image
+                 */
+                void outputRegionToImage(const Region &region, Mat &outputImage);
+
+                //! Output the outer border polygon of a region to the outputImage instance
+                /*!
+                 * \param outerBorderPolygon    The polygon defining the outer border of the region
+                 * \param outputImage           The given output image
+                 */
+                void outputRegionOuterBorderToImage(const vector<Point> &outerBorder, Mat &outputImage);
+
+                //! Output the inner border polygons of a region to the outputImage instance
+                /*!
+                 * \param innerBorderPolygons   The polygons defining the inner border(s) of the region
+                 * \param outputImage           The given output image
+                 */
+                void outputRegionInnerBordersToImage(const vector<vector<Point> > &innerBorders, Mat &outputImage);
 
                 //! Convert alpha from the range [0, ALPHA_MAX] to [ALPHA_REAL_MIN, ALPHA_REAL_MAX]
                 /*!
@@ -366,6 +373,8 @@ namespace multiscale {
                 static const int THRESHOLD_MAX;
                 static const int THRESHOLD_CLUSTEREDNESS;
                 static const int INTENSITY_MAX;
+
+                static const int THRESHOLD_HOLE_AREA;
 
                 static const bool POLYGON_CLOSED;
 
