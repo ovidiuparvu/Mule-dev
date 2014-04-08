@@ -1,6 +1,6 @@
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
-#include "multiscale/verification/spatial-temporal/checking/FrequencyModelChecker.hpp"
+#include "multiscale/verification/spatial-temporal/checking/ProbabilisticBlackBoxModelChecker.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/ComparatorEvaluator.hpp"
 
 #include <iostream>
@@ -9,56 +9,56 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-FrequencyModelChecker::FrequencyModelChecker(const AbstractSyntaxTree &abstractSyntaxTree)
+ProbabilisticBlackBoxModelChecker::ProbabilisticBlackBoxModelChecker(const AbstractSyntaxTree &abstractSyntaxTree)
                                              : ModelChecker(abstractSyntaxTree) {
     initialise();
 }
 
-FrequencyModelChecker::~FrequencyModelChecker() {}
+ProbabilisticBlackBoxModelChecker::~ProbabilisticBlackBoxModelChecker() {}
 
-bool FrequencyModelChecker::acceptsMoreTraces() {
+bool ProbabilisticBlackBoxModelChecker::acceptsMoreTraces() {
     return true;
 }
 
-bool FrequencyModelChecker::requiresMoreTraces() {
+bool ProbabilisticBlackBoxModelChecker::requiresMoreTraces() {
     return false;
 }
 
-bool FrequencyModelChecker::doesPropertyHold() {
+bool ProbabilisticBlackBoxModelChecker::doesPropertyHold() {
     double probability = computeProbabilityThatPropertyHolds();
 
     return (ComparatorEvaluator::evaluate(probability, abstractSyntaxTree.getComparator(),
                                           abstractSyntaxTree.getProbability()));
 }
 
-std::string FrequencyModelChecker::getDetailedResults() {
+std::string ProbabilisticBlackBoxModelChecker::getDetailedResults() {
     return (
         PROPERTY_HOLDS_WITH_PROBABILITY_LABEL +
         resultToString()
     );
 }
 
-void FrequencyModelChecker::updateModelCheckerForTrueEvaluation() {
+void ProbabilisticBlackBoxModelChecker::updateModelCheckerForTrueEvaluation() {
     totalNumberOfTrueEvaluations++;
     totalNumberOfEvaluations++;
 }
 
-void FrequencyModelChecker::updateModelCheckerForFalseEvaluation() {
+void ProbabilisticBlackBoxModelChecker::updateModelCheckerForFalseEvaluation() {
     totalNumberOfEvaluations++;
 }
 
-void FrequencyModelChecker::initialise() {
+void ProbabilisticBlackBoxModelChecker::initialise() {
     totalNumberOfEvaluations     = 0;
     totalNumberOfTrueEvaluations = 0;
 }
 
-std::string FrequencyModelChecker::resultToString() {
+std::string ProbabilisticBlackBoxModelChecker::resultToString() {
     double probability = computeProbabilityThatPropertyHolds();
 
     return StringManipulator::toString(probability);
 }
 
-double FrequencyModelChecker::computeProbabilityThatPropertyHolds() {
+double ProbabilisticBlackBoxModelChecker::computeProbabilityThatPropertyHolds() {
     if (totalNumberOfEvaluations != 0) {
         return (static_cast<double>(totalNumberOfTrueEvaluations) /
                 totalNumberOfEvaluations);
@@ -69,4 +69,4 @@ double FrequencyModelChecker::computeProbabilityThatPropertyHolds() {
 
 
 // Constants
-const std::string FrequencyModelChecker::PROPERTY_HOLDS_WITH_PROBABILITY_LABEL  = "The probability for the logic property to hold given the spatial-temporal traces is: ";
+const std::string ProbabilisticBlackBoxModelChecker::PROPERTY_HOLDS_WITH_PROBABILITY_LABEL  = "The probability for the logic property to hold given the spatial-temporal traces is: ";

@@ -9,8 +9,8 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class used to run frequency model checking tasks
-        class FrequencyModelChecker : public ModelChecker {
+        //! Class used to run probabilistic black-box model checking tasks
+        class ProbabilisticBlackBoxModelChecker : public ModelChecker {
 
             private:
 
@@ -20,8 +20,8 @@ namespace multiscale {
 
             public:
 
-                FrequencyModelChecker(const AbstractSyntaxTree &abstractSyntaxTree);
-                ~FrequencyModelChecker();
+                ProbabilisticBlackBoxModelChecker(const AbstractSyntaxTree &abstractSyntaxTree);
+                ~ProbabilisticBlackBoxModelChecker();
 
                 //! Check if more traces are accepted for evaluating the logic property
                 bool acceptsMoreTraces() override;

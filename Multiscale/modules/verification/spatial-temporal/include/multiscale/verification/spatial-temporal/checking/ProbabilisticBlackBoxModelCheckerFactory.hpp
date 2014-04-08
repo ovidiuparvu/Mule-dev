@@ -8,13 +8,13 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for creating FrequencyModelChecker instances
-        class FrequencyModelCheckerFactory : public ModelCheckerFactory {
+        //! Class for creating ProbabilisticBlackBoxModelChecker instances
+        class ProbabilisticBlackBoxModelCheckerFactory : public ModelCheckerFactory {
 
             public:
 
-                FrequencyModelCheckerFactory();
-                ~FrequencyModelCheckerFactory();
+                ProbabilisticBlackBoxModelCheckerFactory();
+                ~ProbabilisticBlackBoxModelCheckerFactory();
 
                 //! Create an instance of FrequencyModelChecker
                 /*!

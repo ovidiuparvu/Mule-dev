@@ -1,7 +1,7 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/OperatingSystem.hpp"
-#include "multiscale/verification/spatial-temporal/checking/FrequencyModelChecker.hpp"
+#include "multiscale/verification/spatial-temporal/checking/ProbabilisticBlackBoxModelChecker.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingOutputWriter.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingManager.hpp"
 

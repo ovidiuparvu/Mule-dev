@@ -8,7 +8,7 @@
 
 #include "multiscale/core/Multiscale.hpp"
 #include "multiscale/exception/ExceptionHandler.hpp"
-#include "multiscale/verification/spatial-temporal/checking/FrequencyModelCheckerFactory.hpp"
+#include "multiscale/verification/spatial-temporal/checking/ProbabilisticBlackBoxModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingManager.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingOutputWriter.hpp"
 
@@ -138,7 +138,7 @@ bool areValidParameters(string &logicQueriesFilepath, string &tracesFolderPath, 
 void printModelCheckingInitialisationMessages(const string &logicQueriesFilePath,
                                               const string &tracesFolderPath,
                                               unsigned long extraEvaluationTime) {
-    ModelCheckingOutputWriter::printIntroductionMessage  ("Frequency", "None");
+    ModelCheckingOutputWriter::printIntroductionMessage  ("Probabilistic black-box", "None");
     ModelCheckingOutputWriter::printInitialisationMessage(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
 }
 
@@ -146,7 +146,7 @@ void printModelCheckingInitialisationMessages(const string &logicQueriesFilePath
 void runModelCheckers(const string &logicQueriesFilePath, const string &tracesFolderPath,
                       unsigned long extraEvaluationTime, const string &extraEvaluationProgramPath,
                       bool shouldVerboseDetailedResults) {
-    std::shared_ptr<FrequencyModelCheckerFactory> modelCheckerFactory = make_shared<FrequencyModelCheckerFactory>();
+    std::shared_ptr<ProbabilisticBlackBoxModelCheckerFactory> modelCheckerFactory = make_shared<ProbabilisticBlackBoxModelCheckerFactory>();
 
     ModelCheckingManager manager(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
 

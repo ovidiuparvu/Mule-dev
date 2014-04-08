@@ -41,8 +41,8 @@ set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     src/attribute/UnaryNumericMeasureAttribute.cpp
     src/attribute/UnarySubsetMeasureAttribute.cpp
     
-    src/checking/FrequencyModelChecker.cpp
-    src/checking/FrequencyModelCheckerFactory.cpp
+    src/checking/ProbabilisticBlackBoxModelChecker.cpp
+    src/checking/ProbabilisticBlackBoxModelCheckerFactory.cpp
     src/checking/ModelChecker.cpp
     src/checking/ModelCheckingManager.cpp
     src/checking/ModelCheckingOutputWriter.cpp
