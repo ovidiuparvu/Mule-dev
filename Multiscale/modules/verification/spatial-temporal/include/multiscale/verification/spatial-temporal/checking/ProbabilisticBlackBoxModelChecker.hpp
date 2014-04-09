@@ -12,12 +12,6 @@ namespace multiscale {
         //! Class used to run probabilistic black-box model checking tasks
         class ProbabilisticBlackBoxModelChecker : public ModelChecker {
 
-            private:
-
-                unsigned int totalNumberOfEvaluations;      /*!< The total number of evaluations */
-                unsigned int totalNumberOfTrueEvaluations;  /*!< The total number of times the abstract
-                                                                 syntax tree was evaluated to true */
-
             public:
 
                 ProbabilisticBlackBoxModelChecker(const AbstractSyntaxTree &abstractSyntaxTree);
@@ -37,32 +31,17 @@ namespace multiscale {
 
             protected:
 
-                //! Update the model checker results considering that the logic property was evaluated to true for the last trace
+                //! Update the results of the derived model checker type considering that the logic property was evaluated to true for the last trace
                 /*!
-                 * Increment the total number of true evaluations and the total number of evaluations
+                 * Do not do anything
                  */
-                void updateModelCheckerForTrueEvaluation() override;
+                void updateDerivedModelCheckerForTrueEvaluation() override;
 
-                //! Update the model checker results considering that the logic property was evaluated to false for the last trace
+                //! Update the results of the derived model checker type considering that the logic property was evaluated to false for the last trace
                 /*!
-                 * Increment the total number of evaluations
+                 * Do not do anything
                  */
-                void updateModelCheckerForFalseEvaluation() override;
-
-            private:
-
-                //! Initialisation function
-                void initialise();
-
-                //! Convert the resulting probability to a string
-                std::string resultToString();
-
-                //! Compute the probability that the logic property holds
-                double computeProbabilityThatPropertyHolds();
-
-
-                // Constants
-                static const std::string PROPERTY_HOLDS_WITH_PROBABILITY_LABEL;
+                void updateDerivedModelCheckerForFalseEvaluation() override;
 
         };
 

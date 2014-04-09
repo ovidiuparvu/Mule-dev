@@ -23,6 +23,8 @@ set(LIB_SRC
     src/StringManipulator.cpp
     src/XmlValidator.cpp
 
+    src/statistics/BinomialDistribution.cpp
+
     src/iterator/LexicographicNumberIterator.cpp
     src/iterator/StandardNumberIterator.cpp
 )
@@ -86,6 +88,19 @@ AddUnitTest(NumericTest)
 
 target_link_libraries(NumericTest util)
 target_link_libraries(NumericTest gtest gtest_main)
+
+
+# StatisticsTest
+
+set(STATISTICS_TEST_SRC
+    test/StatisticsTest.cpp
+)
+
+add_executable(StatisticsTest ${STATISTICS_TEST_SRC})
+AddUnitTest(StatisticsTest)
+
+target_link_libraries(StatisticsTest util)
+target_link_libraries(StatisticsTest gtest gtest_main)
 
 
 # MinEnclosingTriangleFinderSample

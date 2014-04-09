@@ -32,7 +32,9 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
 include(AddDebugPostfix)
 include(AddSample)
 include(AddUnitTest)
+include(GetCurrentDate)
 include(UpdateProjectBuildNumber)
+include(UpdateProjectModifiedDate)
 include(MacroOutOfSourceBuild)
  
 # Check if an "out of source" build folder was chosen
@@ -95,6 +97,15 @@ UpdateProjectBuildNumber(
     "Release" 
     ${PROJECT_SOURCE_DIR}/doc/Multiscale.doxyfile.in 
     ${PROJECT_SOURCE_DIR}/doc/Multiscale.doxyfile
+)
+
+
+#------------------------------------------------------------
+# Project modified date
+#------------------------------------------------------------
+
+UpdateProjectModifiedDate(
+    ${PROJECT_SOURCE_DIR}/../README.md
 )
 
 

@@ -37,6 +37,19 @@ double Numeric::average(const std::vector<double> &numbers) {
     return average(numbers, nrOfValues);
 }
 
+double Numeric::combinations(unsigned int n, unsigned int k) {
+    if (n < k) {
+        MS_throw(
+            NumericException,
+            ERR_COMBINATIONS_START + StringManipulator::toString(n) +
+            ERR_COMBINATIONS_MIDDLE + StringManipulator::toString(k) +
+            ERR_COMBINATIONS_END
+        );
+    }
+
+    return computeCombinations(n, k);
+}
+
 double Numeric::covariance(const std::vector<double> &values1, const std::vector<double> &values2) {
     unsigned int nrOfValues = std::min(values1.size(), values2.size());
 
@@ -47,6 +60,16 @@ double Numeric::covariance(const std::vector<double> &values1, const std::vector
     }
 
     return covariance(values1, values2, nrOfValues);
+}
+
+unsigned long Numeric::factorial(unsigned int number) {
+    unsigned long result = 1;
+
+    for (unsigned long i = 2; i <= number; i++) {
+        result = applyOperation(MultiplicationOperation(), result, i);
+    }
+
+    return result;
 }
 
 double Numeric::geometricMean(const std::vector<double> &numbers) {
@@ -244,6 +267,17 @@ double Numeric::average(const std::vector<double> &numbers, unsigned int nrOfVal
 
     return (nrOfValues == 0) ? 0
                              : (sum / nrOfValues);
+}
+
+double Numeric::computeCombinations(unsigned int n, unsigned int k) {
+    double result = 1;
+
+    for (unsigned int i = 0; i < k; i++) {
+        result = result * (n - i);
+        result = result / (i + 1);
+    }
+
+    return result;
 }
 
 double Numeric::covariance(const std::vector<double> &values1, const std::vector<double> &values2,
@@ -561,6 +595,10 @@ const std::string Numeric::ERR_LOG_NUMBER_START = "The number provided to the lo
 const std::string Numeric::ERR_LOG_NUMBER_END   = ") should be a positive real number. Please change.";
 
 const std::string Numeric::ERR_OVERFLOW_UNDERFLOW = "An underflow/overflow exception occurred.";
+
+const std::string Numeric::ERR_COMBINATIONS_START   = "The provided number of elements n (";
+const std::string Numeric::ERR_COMBINATIONS_MIDDLE  = ") should be greater or equal to the number of elements in each group k (";
+const std::string Numeric::ERR_COMBINATIONS_END     = ") when computing combinations.";
 
 const std::string Numeric::ERR_PERCENTILE_VALUE_START = "The provided percentile value (";
 const std::string Numeric::ERR_PERCENTILE_VALUE_END   = ") should be between 0 and 100. Please change.";

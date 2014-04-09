@@ -57,6 +57,13 @@ TEST(Numeric, Average) {
     EXPECT_NEAR(Numeric::average(std::vector<double>{-1, -2, 3, 4, 5}), 1.8, DOUBLE_COMP_ERROR);
 }
 
+TEST(Numeric, Combinations) {
+    EXPECT_THROW(Numeric::combinations(4, 5), NumericException);
+    EXPECT_NEAR(Numeric::combinations(5, 2), 10, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::combinations(11, 7), 330, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(Numeric::combinations(31, 23), 7888725, DOUBLE_COMP_ERROR);
+}
+
 TEST(Numeric, Covariance) {
     EXPECT_NEAR(Numeric::covariance(std::vector<double>{}, std::vector<double>{}), 0.0, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::covariance(std::vector<double>{1}, std::vector<double>{}), 0.0, DOUBLE_COMP_ERROR);
@@ -64,6 +71,13 @@ TEST(Numeric, Covariance) {
     EXPECT_NEAR(Numeric::covariance(std::vector<double>{2}, std::vector<double>{1}), 0.0, DOUBLE_COMP_ERROR);
     EXPECT_NEAR(Numeric::covariance(std::vector<double>{1, 2, 3, 4, 5, 6, 7, 8},
                                     std::vector<double>{10, 12, 14, 16, 18, 20, 22, 24}), 12, DOUBLE_COMP_ERROR);
+}
+
+TEST(Numeric, Factorial) {
+    EXPECT_EQ(Numeric::factorial(0), 1);
+    EXPECT_EQ(Numeric::factorial(1), 1);
+    EXPECT_EQ(Numeric::factorial(6), 720);
+    EXPECT_EQ(Numeric::factorial(13), 6227020800);
 }
 
 TEST(Numeric, GeometricMean) {

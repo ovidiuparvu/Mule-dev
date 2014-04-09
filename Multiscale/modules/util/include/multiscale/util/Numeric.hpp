@@ -124,12 +124,25 @@ namespace multiscale {
              */
             static double average(const std::vector<double> &numbers);
 
+            //! Return combinations of n taken as groups of k
+            /*!
+             * \param n The total number of elements
+             * \param k The number of elements in each combination
+             */
+            static double combinations(unsigned int n, unsigned int k);
+
             //! Return the covariance for the provided collections of values
             /*!
              * \param values1   The first collection of values
              * \param values2   The second collection of values
              */
             static double covariance(const std::vector<double> &values1, const std::vector<double> &values2);
+
+            //! Return the factorial of a number
+            /*!
+             * \param n The number for which factorial should be computed
+             */
+            static unsigned long factorial(unsigned int number);
 
             //! Return the geometric mean of the provided numbers
             /*!
@@ -269,6 +282,13 @@ namespace multiscale {
              * \param nrOfValues    The number of values in the collection of numbers
              */
             static double average(const std::vector<double> &numbers, unsigned int nrOfValues);
+
+            //! Return combinations of n taken as groups of k
+            /*!
+             * \param n The total number of elements
+             * \param k The number of elements in each combination
+             */
+            static double computeCombinations(unsigned int n, unsigned int k);
 
             //! Return the covariance for the provided collections of values
             /*!
@@ -522,6 +542,10 @@ namespace multiscale {
             static const std::string ERR_LOG_NUMBER_END;
 
             static const std::string ERR_OVERFLOW_UNDERFLOW;
+
+            static const std::string ERR_COMBINATIONS_START;
+            static const std::string ERR_COMBINATIONS_MIDDLE;
+            static const std::string ERR_COMBINATIONS_END;
 
             static const std::string ERR_PERCENTILE_VALUE_START;
             static const std::string ERR_PERCENTILE_VALUE_END;

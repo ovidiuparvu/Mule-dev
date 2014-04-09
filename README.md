@@ -22,8 +22,8 @@ Project multiscale
 ## 1. Introduction
 
 **Author:** Ovidiu Parvu                                                        
-**Created on:** 4th of February, 2013                                           
-**Modified on:** 11th of March, 2014                                          
+**Created on:** 04.02.2013
+**Modified on:** 09.04.2014
 
 ## 2. Requirements
    
@@ -89,4 +89,3 @@ For detecting and analysing clusters of entities in images considering a rectang
 ## 6. Contact
 
 For more details please visit my [personal webpage](http://brunel.ac.uk/~cspgoop).
-
