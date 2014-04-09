@@ -423,7 +423,7 @@ TEST_F(CompleteTraceTest, LogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, MultipleLogicProperties1) {
-    EXPECT_FALSE(RunEvaluationTest("P = 0.1234 [( d({A}) >=  count(regions) ) ^ ( covar(regions, area, regions, perimeter) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"));
+    EXPECT_FALSE(RunEvaluationTest("P > 0.1234 [( d({A}) >=  count(regions) ) ^ ( covar(regions, area, regions, perimeter) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"));
 }
 
 TEST_F(CompleteTraceTest, MultipleLogicProperties2) {

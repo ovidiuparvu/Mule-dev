@@ -17,6 +17,10 @@ TEST(ProbabilisticLogicProperty, IncorrectComparator) {
     EXPECT_THROW(parseInputString("P != 0.3 [count(regions) >= 2]"), InvalidInputException);
 }
 
+TEST(ProbabilisticLogicProperty, IncorrectEqualComparator) {
+    EXPECT_THROW(parseInputString("P = 0.3 [count(regions) >= 2]"), InvalidInputException);
+}
+
 TEST(ProbabilisticLogicProperty, InvalidProbabilityValueTooLow) {
     EXPECT_THROW(parseInputString("P >= -0.1 [count(regions) >= 2]"), InvalidInputException);
 }

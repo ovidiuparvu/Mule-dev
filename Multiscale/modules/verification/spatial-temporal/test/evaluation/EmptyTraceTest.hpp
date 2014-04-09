@@ -358,7 +358,7 @@ TEST_F(EmptyTraceTest, LogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, MultipleLogicProperties1) {
-    EXPECT_THROW(RunEvaluationTest("P = 0.1234 [( d(4) >=  count(regions) ) ^ ( covar(regions, area, regions, perimeter) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P > 0.1234 [( d(4) >=  count(regions) ) ^ ( covar(regions, area, regions, perimeter) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, MultipleLogicProperties2) {

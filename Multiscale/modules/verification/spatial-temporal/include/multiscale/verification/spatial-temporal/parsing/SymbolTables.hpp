@@ -33,6 +33,20 @@ namespace multiscale {
 
         };
 
+        //! Symbol table and parser for the comparator type which does not accept the "=" symbol
+        struct ComparatorNonEqualTypeParser : qi::symbols<char, multiscale::verification::ComparatorType> {
+
+            ComparatorNonEqualTypeParser() {
+                add
+                    (">"    , ComparatorType::GreaterThan)
+                    (">="   , ComparatorType::GreaterThanOrEqual)
+                    ("<"    , ComparatorType::LessThan)
+                    ("<="   , ComparatorType::LessThanOrEqual)
+                ;
+            }
+
+        };
+
         //! Symbol table and parser for the spatial measure type
         struct SpatialMeasureTypeParser : qi::symbols<char, multiscale::verification::SpatialMeasureType> {
 

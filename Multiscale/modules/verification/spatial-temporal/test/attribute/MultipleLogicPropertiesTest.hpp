@@ -10,7 +10,7 @@ using namespace multiscaletest::verification;
 // MultipleLogicProperties
 
 TEST(MultipleLogicProperties, Correct1) {
-    EXPECT_TRUE(parseInputString("P = 0.1234 [( d(4) >=  count(regions) ) ^ ( covar(regions, area, regions, perimeter) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"));
+    EXPECT_TRUE(parseInputString("P >= 0.1234 [( d(4) >=  count(regions) ) ^ ( covar(regions, area, regions, perimeter) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"));
 }
 
 TEST(MultipleLogicProperties, Correct2) {
