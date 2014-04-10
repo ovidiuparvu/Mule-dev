@@ -1,5 +1,5 @@
-#ifndef FREQUENCYMODELCHECKER_HPP
-#define FREQUENCYMODELCHECKER_HPP
+#ifndef PROBABILISTICBLACKBOXMODELCHECKER_HPP
+#define PROBABILISTICBLACKBOXMODELCHECKER_HPP
 
 #include "multiscale/verification/spatial-temporal/checking/ModelChecker.hpp"
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
