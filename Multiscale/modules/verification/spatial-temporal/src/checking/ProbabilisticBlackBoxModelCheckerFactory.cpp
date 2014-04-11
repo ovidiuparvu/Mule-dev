@@ -9,6 +9,6 @@ ProbabilisticBlackBoxModelCheckerFactory::ProbabilisticBlackBoxModelCheckerFacto
 ProbabilisticBlackBoxModelCheckerFactory::~ProbabilisticBlackBoxModelCheckerFactory() {}
 
 std::shared_ptr<ModelChecker> ProbabilisticBlackBoxModelCheckerFactory::createInstance
-    (const AbstractSyntaxTree &abstractSyntaxTree) {
+                              (const AbstractSyntaxTree &abstractSyntaxTree) {
     return std::make_shared<ProbabilisticBlackBoxModelChecker>(abstractSyntaxTree);
 }

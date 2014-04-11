@@ -158,7 +158,7 @@ namespace multiscale {
 
 
                 // Constants
-                static const std::string P_VALUE_ANSWER_LABEL;
+                static const std::string MSG_OUTPUT_P_VALUE;
 
         };
 

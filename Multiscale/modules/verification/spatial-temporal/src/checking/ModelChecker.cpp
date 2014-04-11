@@ -30,7 +30,7 @@ std::string ModelChecker::getDetailedResultsUsingPValues() {
     updateHypothesesPValues();
 
     return (
-        P_VALUE_ANSWER_LABEL +
+        MSG_OUTPUT_P_VALUE +
         StringManipulator::toString(std::min(nullHypothesisPValue, alternativeHypothesisPValue))
     );
 }
@@ -116,4 +116,4 @@ bool ModelChecker::isGreaterThanOrEqualToComparator() {
 
 
 // Constants
-const std::string ModelChecker::P_VALUE_ANSWER_LABEL  = "The confidence level of the answer expressed as a p-value (lower is better): ";
+const std::string ModelChecker::MSG_OUTPUT_P_VALUE  = "The confidence level of the answer expressed as a p-value (lower is better): ";
