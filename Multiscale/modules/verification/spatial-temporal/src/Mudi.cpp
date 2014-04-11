@@ -24,7 +24,7 @@ namespace po = boost::program_options;
 // Print help message if needed
 void printHelpInformation(const po::variables_map &vm, const po::options_description &allowedOptions) {
     cout << "USAGE: " << endl
-         << "\tMudi <required-arguments> [<optional-arguments>]" << endl
+         << "\tMudi <required-arguments> [<optional-arguments>] <model-checking-specific-arguments>" << endl
          << endl;
     cout << allowedOptions << endl;
 }
@@ -166,8 +166,9 @@ void runModelCheckers(int argc, char **argv) {
 
     bool shouldVerboseDetailedResults;
 
-    if (areValidParameters(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime,
-                           extraEvaluationProgramPath, shouldVerboseDetailedResults, argc, argv)) {
+    if (areValidParameters(logicQueriesFilePath, tracesFolderPath,
+                           extraEvaluationTime, extraEvaluationProgramPath,
+                           shouldVerboseDetailedResults, argc, argv)) {
         printModelCheckingInitialisationMessages(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime);
         runModelCheckers(logicQueriesFilePath, tracesFolderPath, extraEvaluationTime,
                          extraEvaluationProgramPath, shouldVerboseDetailedResults);
