@@ -1,0 +1,5 @@
+P >= 0.6 [ G [0, 99] ({A} > 5) ]
+
+P >= 0.9 [ (d(avg(regions, area)) > 0) ^ F [0, 99] (d(avg(regions, area)) < 0) ]
+
+P < 0.9 [ (d(avg(regions, density)) < 0) ^ F [0, 99] (d(avg(regions, density)) > 0) ]
