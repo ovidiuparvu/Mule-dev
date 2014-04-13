@@ -54,7 +54,8 @@ bool StatisticalModelChecker::doesPropertyHold() {
 
 std::string StatisticalModelChecker::getDetailedResults() {
     if (modelCheckingResult == StatisticalModelCheckingResult::MORE_TRACES_REQUIRED) {
-        return (MSG_OUTPUT_MORE_TRACES_REQUIRED + getDetailedResultsUsingPValues());
+        return (MSG_OUTPUT_MORE_TRACES_REQUIRED + MSG_OUTPUT_SEPARATOR +
+                getDetailedResultsUsingPValues());
     } else {
         return (
             MSG_OUTPUT_RESULT_BEGIN  + StringManipulator::toString(typeIError)  +
@@ -165,11 +166,13 @@ double StatisticalModelChecker::computeFPrimeValue() {
 const std::string StatisticalModelChecker::ERR_UNEXPECTED_MODEL_CHECKING_RESULT = "An invalid statistical model checking result was obtained. Please check source code.";
 
 const std::string StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_BEGIN     = "The provided probabilities of type I and type II errors (";
-const std::string StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_MIDDLE    = ",";
+const std::string StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_MIDDLE    = ", ";
 const std::string StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_END       = ") should be greater than zero and less or equal to 1. Please change.";
 
-const std::string StatisticalModelChecker::MSG_OUTPUT_MORE_TRACES_REQUIRED = "More traces are required to provide a true/false answer assuming the given probabilities of type I and type II errors.";
+const std::string StatisticalModelChecker::MSG_OUTPUT_MORE_TRACES_REQUIRED = "More traces are required to provide a true/false answer assuming the given probabilities of type I and type II errors. Probabilistic black-box model checking was used instead to provide an answer.";
 
 const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_BEGIN  = "The provided answer is given for the probability of type I errors = ";
-const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_MIDDLE = "and the probability of type II errors = ";
-const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_END    = ".";
+const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_MIDDLE = " and the probability of type II errors = ";
+const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_END    = "";
+
+const std::string StatisticalModelChecker::MSG_OUTPUT_SEPARATOR    = " ";

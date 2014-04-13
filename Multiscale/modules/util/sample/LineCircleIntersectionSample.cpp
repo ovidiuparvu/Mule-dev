@@ -42,6 +42,5 @@ int main() {
 
     intersectionPoints.clear();
 
-
-    return 0;
+    return EXEC_SUCCESS_CODE;
 }

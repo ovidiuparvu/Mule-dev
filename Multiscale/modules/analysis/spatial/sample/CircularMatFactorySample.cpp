@@ -1,3 +1,4 @@
+#include "multiscale/core/Multiscale.hpp"
 #include "multiscale/analysis/spatial/factory/CircularMatFactory.hpp"
 
 #include <iostream>
@@ -24,5 +25,5 @@ int main() {
 
     waitKey(0);
 
-    return 0;
+    return multiscale::EXEC_SUCCESS_CODE;
 }

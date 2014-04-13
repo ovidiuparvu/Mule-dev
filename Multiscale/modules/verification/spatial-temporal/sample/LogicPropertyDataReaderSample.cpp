@@ -67,5 +67,5 @@ int main(int argc, char** argv) {
 
     readQueriesFromFile(std::string(argv[1]));
 
-    return 0;
+    return EXEC_SUCCESS_CODE;
 }

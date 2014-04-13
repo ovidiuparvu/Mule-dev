@@ -93,10 +93,10 @@ int main(int argc, char** argv) {
     if (argc != 2) {
         std::cerr << "Usage: SpatialTemporalDataReader <input-folder>" << std::endl;
 
-        return 1;
+        return EXEC_ERR_CODE;
     }
 
     readValidXmlFilesFromFolder(std::string(argv[1]));
 
-    return 0;
+    return EXEC_SUCCESS_CODE;
 }

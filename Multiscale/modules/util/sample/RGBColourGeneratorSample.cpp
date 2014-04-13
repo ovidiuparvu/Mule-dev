@@ -1,3 +1,4 @@
+#include "multiscale/core/Multiscale.hpp"
 #include "multiscale/util/RGBColourGenerator.hpp"
 
 #include <iostream>
@@ -11,5 +12,5 @@ int main() {
     cout << RGBColourGenerator().generate(0, 1, 0.75);
     cout << RGBColourGenerator().generate(0, 1, 1);
 
-    return 0;
+    return EXEC_SUCCESS_CODE;
 }

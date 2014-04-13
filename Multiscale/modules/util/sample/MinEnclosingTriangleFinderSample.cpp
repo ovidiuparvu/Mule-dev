@@ -193,5 +193,5 @@ int main(int argc, char** argv) {
         ExceptionHandler::printErrorMessage(ex);
     }
 
-    return 0;
+    return EXEC_SUCCESS_CODE;
 }

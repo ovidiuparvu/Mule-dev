@@ -133,5 +133,5 @@ void runTests() {
 int main() {
     runTests();
 
-    return 0;
+    return EXEC_SUCCESS_CODE;
 }

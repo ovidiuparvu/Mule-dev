@@ -159,6 +159,8 @@ namespace multiscale {
                 static const std::string MSG_OUTPUT_RESULT_MIDDLE;
                 static const std::string MSG_OUTPUT_RESULT_END;
 
+                static const std::string MSG_OUTPUT_SEPARATOR;
+
         };
 
     };

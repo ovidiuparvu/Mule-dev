@@ -17,9 +17,12 @@
 
 namespace multiscale {
 
+    // Execution return codes
+    const int EXEC_SUCCESS_CODE = 0;
+    const int EXEC_ERR_CODE     = 1;
+
     // Error related definitions
-   const int ERR_CODE = 1;
-   const std::string ERR_MSG = "An error occurred: ";
+    const std::string ERR_MSG = "An error occurred: ";
 
 };
 

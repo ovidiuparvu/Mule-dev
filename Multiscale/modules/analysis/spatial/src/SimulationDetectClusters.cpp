@@ -170,10 +170,10 @@ int main(int argc, char** argv) {
     } catch(const exception &e) {
         ExceptionHandler::printErrorMessage(e);
 
-        return ERR_CODE;
+        return EXEC_ERR_CODE;
     } catch(...) {
         cerr << "Exception of unknown type!" << endl;
     }
 
-    return 0;
+    return EXEC_SUCCESS_CODE;
 }

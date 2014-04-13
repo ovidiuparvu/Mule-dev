@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
         } catch(const exception &e) {
             ExceptionHandler::printErrorMessage(e);
 
-            return ERR_CODE;
+            return EXEC_ERR_CODE;
         } catch(...) {
             cerr << "Exception of unknown type!" << std::endl;
         }

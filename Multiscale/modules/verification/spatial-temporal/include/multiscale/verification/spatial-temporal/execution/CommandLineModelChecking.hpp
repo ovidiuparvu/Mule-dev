@@ -3,12 +3,10 @@
 
 #include "multiscale/core/Multiscale.hpp"
 #include "multiscale/exception/ExceptionHandler.hpp"
-#include "multiscale/verification/spatial-temporal/checking/ProbabilisticBlackBoxModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingManager.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelCheckingOutputWriter.hpp"
 
 #include <boost/program_options.hpp>
-#include <iostream>
 
 using namespace multiscale;
 using namespace multiscale::verification;
@@ -20,36 +18,40 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Enumeration used to specify the type of model checker
-        enum class ModelCheckerType : int {
-            STATISTICAL             = 1,   /*!< Statistical model checker */
-            PROBABILISTIC_BLACK_BOX = 2    /*!< Probabilistic black box model checker */
-        };
-
-
         //! Class for running model checkers from the command line
         class CommandLineModelChecking {
 
             private:
 
-                std::string                     logicQueriesFilePath;           /*!< The path to the logic queries file */
-                std::string                     tracesFolderPath;               /*!< The path to the folder containing traces */
+                std::string                             logicQueriesFilepath;               /*!< The path to the logic queries file */
+                std::string                             tracesFolderPath;                   /*!< The path to the folder containing traces */
 
-                unsigned long                   extraEvaluationTime;            /*!< The number of minutes for which the application waits
-                                                                                     for new traces to be produced */
-                std::string                     extraEvaluationProgramPath;     /*!< The path to the program which will be
-                                                                                     executed whenever more traces are required */
+                unsigned int                            modelCheckerType;                   /*!< The type of the model checker */
 
-                bool                            shouldVerboseDetailedResults;   /*!< The flag indicating if detailed results should
-                                                                                     be printed out */
+                unsigned long                           extraEvaluationTime;                /*!< The number of minutes for which the application waits
+                                                                                                 for new traces to be produced */
+                std::string                             extraEvaluationProgramPath;         /*!< The path to the program which will be
+                                                                                                 executed whenever more traces are required */
 
-                po::variables_map               variablesMap;                   /*!< The map containing <a, v> pairs where a = command
-                                                                                     line argument and v = value */
-                po::options_description         allowedArguments;               /*!< The configuration indicating which command line
-                                                                                     arguments are allowed */
+                bool                                    shouldVerboseDetailedResults;       /*!< The flag indicating if detailed results should
+                                                                                                 be printed out */
 
-                std::shared_ptr<ModelChecker>   modelChecker;                   /*!< The model checker */
-                ModelCheckingManager            modelCheckingManager;           /*!< The model checking task manager */
+                po::variables_map                       variablesMap;                       /*!< The map containing <a, v> pairs where a = command
+                                                                                                 line argument and v = value */
+                po::options_description                 allowedArguments;                   /*!< The configuration indicating which command line
+                                                                                                 arguments are allowed */
+                po::options_description                 requiredArguments;                  /*!< The configuration indicating which command line
+                                                                                                 arguments are allowed */
+                po::options_description                 optionalArguments;                  /*!< The configuration indicating which command line
+                                                                                                 arguments are allowed */
+                po::options_description                 modelCheckerTypeSpecificArguments;  /*!< The configuration indicating which command line
+                                                                                                 arguments are allowed */
+
+                std::string                             modelCheckerTypeName;               /*!< The name of the model checker type */
+                std::string                             modelCheckerParameters;             /*!< The parameters specific to the model checker */
+
+                std::shared_ptr<ModelCheckerFactory>    modelCheckerFactory;                /*!< The model checker */
+                std::shared_ptr<ModelCheckingManager>   modelCheckingManager;               /*!< The model checking task manager */
 
             public:
 
@@ -58,7 +60,7 @@ namespace multiscale {
 
                 //! Initialise the class with the given command line arguments
                 /*!
-                 * \param argc  The number of command line arguments provided
+                 * \param argc  The number of provided command line arguments
                  * \param argv  The collection of command line arguments
                  */
                 void initialise(int argc, char **argv);
@@ -70,14 +72,7 @@ namespace multiscale {
 
                 //! Check if the provided command line arguments are valid
                 /*!
-                 * \param argc  The number of command line arguments provided
-                 * \param argv  The collection of command line arguments
-                 */
-                bool areValidArgumentsAndSuccessfulInitialisation(int argc, char **argv);
-
-                //! Check if the provided command line arguments are valid and initialise class members
-                /*!
-                 * \param argc  The number of command line arguments provided
+                 * \param argc  The number of provided command line arguments
                  * \param argv  The collection of command line arguments
                  */
                 bool areValidArguments(int argc, char **argv);
@@ -85,21 +80,58 @@ namespace multiscale {
                 //! Initialise the configuration of allowed command line arguments
                 void initialiseAllowedArgumentsConfiguration();
 
-                //! Parse the command line arguments and store the provided values if all command line arguments were valid
+                //! Initialise the configuration of required command line arguments
+                void initialiseRequiredArgumentsConfiguration();
+
+                //! Initialise the configuration of optional command line arguments
+                void initialiseOptionalArgumentsConfiguration();
+
+                //! Initialise the configuration of model checker type specific command line arguments
+                void initialiseModelCheckerTypeSpecificArgumentsConfiguration();
+
+                //! Check if the provided command line arguments are valid
                 /*!
-                 * \param argc  The number of command line arguments provided
+                 * \param argc  The number of provided command line arguments
                  * \param argv  The collection of command line arguments
                  */
-                bool areArgumentsSuccessfullyParsed(int argc, char **argv);
+                bool areValidArgumentsConsideringConfiguration(int argc, char **argv);
+
+                //! Parse and store the command line arguments' values in a variables map
+                /*!
+                 * \param argc  The number of provided command line arguments
+                 * \param argv  The collection of command line arguments
+                 */
+                po::parsed_options parseAndStoreArgumentsValues(int argc, char **argv);
+
+                //! Check if any invalid command line arguments were provided
+                /*!
+                 * \param parsedArguments   The parsed command line arguments
+                 */
+                bool areInvalidArguments(const po::parsed_options &parsedArguments);
 
                 //! Check if the help command line argument is present
                 bool isHelpArgumentPresent();
 
-                //! Check if any unrecognized command line arguments are present
-                bool areUnrecognizedArgumentsPresent();
+                //! Print help message to the console
+                void printHelpMessage();
 
-                //! Check if all model checker type dependent arguments are present
-                bool areModelCheckerTypeArgumentsPresent();
+                //! Check if any unrecognized command line arguments are present
+                /*!
+                 * \param parsedArguments   The parsed command line arguments
+                 */
+                bool areUnrecognizedArgumentsPresent(const po::parsed_options &parsedArguments);
+
+                //! Check if any invalid model checker type dependent arguments are present
+                bool areInvalidModelCheckingArguments();
+
+                //! Check if any model checker type dependent arguments are invalid
+                bool areInvalidModelCheckingArgumentsPresent();
+
+                //! Check if the arguments specific to statistical model checking are present
+                /*!
+                 * \param allArguments  Flag indicating if all/at least one argument is present
+                 */
+                bool areStatisticalModelCheckingArgumentsPresent(bool allArguments);
 
                 //! Initialise the class members using the command line arguments
                 void initialiseClassMembers();
@@ -113,8 +145,46 @@ namespace multiscale {
                 //! Initialise the class members dependent on the model checker type
                 void initialiseModelCheckerTypeDependentClassMembers();
 
+                //! Initialise the model checker
+                void initialiseModelChecker();
+
+                //! Initialise the probabilistic black box model checker
+                void initialiseProbabilisticBlackBoxModelChecker();
+
+                //! Initialise the statistical model checker
+                void initialiseStatisticalModelChecker();
+
+                //! Initialise the model checking manager
+                void initialiseModelCheckingManager();
+
                 //! Print the model checking initialisation message
                 void printModelCheckingInitialisationMessage();
+
+
+                // Constants
+                static const std::string    ERR_INVALID_COMMAND_LINE_ARGUMENTS;
+                static const std::string    ERR_INVALID_MODEL_CHECKING_ARGUMENTS;
+
+                static const std::string    ERR_INVALID_MODEL_CHECKING_TYPE;
+
+                static const unsigned int   MODEL_CHECKER_TYPE_PROBABILISTIC_BLACK_BOX;
+                static const unsigned int   MODEL_CHECKER_TYPE_STATISTICAL;
+
+                static const std::string    MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_NAME;
+                static const std::string    MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_PARAMETERS;
+
+                static const std::string    MODEL_CHECKER_STATISTICAL_NAME;
+                static const std::string    MODEL_CHECKER_STATISTICAL_PARAMETERS_BEGIN;
+                static const std::string    MODEL_CHECKER_STATISTICAL_PARAMETERS_MIDDLE;
+                static const std::string    MODEL_CHECKER_STATISTICAL_PARAMETERS_END;
+
+                static const std::string    CONFIG_CAPTION_ALLOWED_ARGUMENTS;
+                static const std::string    CONFIG_CAPTION_REQUIRED_ARGUMENTS;
+                static const std::string    CONFIG_CAPTION_OPTIONAL_ARGUMENTS;
+                static const std::string    CONFIG_CAPTION_MODEL_CHECKER_TYPE_SPECIFIC_ARGUMENTS;
+
+                static const std::string    CONFIG_CAPTION_PROBABILISTIC_BLACK_BOX_MODEL_CHECKER_ARGUMENTS;
+                static const std::string    CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS;
 
         };
 

@@ -41,13 +41,17 @@ set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     src/attribute/UnaryNumericMeasureAttribute.cpp
     src/attribute/UnarySubsetMeasureAttribute.cpp
     
-    src/checking/ProbabilisticBlackBoxModelChecker.cpp
-    src/checking/ProbabilisticBlackBoxModelCheckerFactory.cpp
     src/checking/ModelChecker.cpp
     src/checking/ModelCheckingManager.cpp
     src/checking/ModelCheckingOutputWriter.cpp
+    src/checking/ProbabilisticBlackBoxModelChecker.cpp
+    src/checking/ProbabilisticBlackBoxModelCheckerFactory.cpp
+    src/checking/StatisticalModelChecker.cpp
+    src/checking/StatisticalModelCheckerFactory.cpp
     
     src/exception/ParserGrammarExceptionHandler.cpp
+    
+    src/execution/CommandLineModelChecking.cpp
     
     src/model/AbstractSyntaxTree.cpp
     src/model/SpatialEntity.cpp
