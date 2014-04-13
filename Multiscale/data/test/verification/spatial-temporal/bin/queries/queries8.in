@@ -1,0 +1,11 @@
+# Check if the concentration of A is greater than 1 within the time interval [0, 10] with probability > 0.2
+
+P > 0.2 [ G [0, 1099] ({A} > 10) ]
+
+# Check if the average area of the regions increases and then decreases within the time interval [0, 10]
+
+P >= 0.9 [ (d(avg(regions, area)) > 0) ^ F [0, 1099] (d(avg(regions, area)) < 0) ]
+
+# Check if the average density of the clusters decreases and then increases within the time interval [0, 10]
+
+P >= 0.9 [ (d(avg(regions, density)) < 0) ^ F [0, 1099] (d(avg(regions, density)) > 0) ]
