@@ -68,8 +68,8 @@ void CommandLineModelChecking::initialiseOptionalArgumentsConfiguration() {
 void CommandLineModelChecking::initialiseModelCheckerTypeSpecificArgumentsConfiguration() {
     po::options_description statisticalArguments(CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS);
 
-    statisticalArguments.add_options()("alpha,a",   po::value<double>(), "the probability of type I errors (false positives)\n")
-                                      ("beta,b",    po::value<double>(), "the probability of type II errors (false negatives)\n");
+    statisticalArguments.add_options()("alpha,a",   po::value<double>(), "the probability of type I errors\n")
+                                      ("beta,b",    po::value<double>(), "the probability of type II errors\n");
 
     modelCheckerTypeSpecificArguments.add(statisticalArguments);
 }

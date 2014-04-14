@@ -85,6 +85,9 @@ namespace multiscale {
                 //! Get the detailed results when deciding if the property holds based on p-values
                 std::string getDetailedResultsUsingPValues();
 
+                //! Check if the comparator used by the probabilistic logic property is greater than or equal to
+                bool isGreaterThanOrEqualToComparator();
+
             private:
 
                 //! Update the model checker results considering that the logic property was evaluated to evaluationResult for the last trace
@@ -152,9 +155,6 @@ namespace multiscale {
                 void updateAlternativeHypothesisPValue(unsigned int nrOfEvaluations,
                                                        unsigned int nrOfSuccesses,
                                                        double probability);
-
-                //! Check if the comparator used by the probabilistic logic property is greater than or equal to
-                bool isGreaterThanOrEqualToComparator();
 
 
                 // Constants

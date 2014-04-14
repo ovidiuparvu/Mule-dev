@@ -145,6 +145,15 @@ namespace multiscale {
                 //! Compute the value of f' (from original paper)
                 double computeFPrimeValue();
 
+                //! Check if the given probability holds considering the obtained answer and probability comparator (i.e. <=, >=)
+                /*! For queries of type :
+                 *      - P >= \theta [\phi] the isNullHypothesisTrue flag value is returned
+                 *      - P <= \theta [\phi] the !(isNullHypothesisTrue) flag value is returned
+                 *
+                 * \param isNullHypothesisTrue  Flag indicating if the null hypothesis is true considering a P >= [\phi] query
+                 */
+                bool doesPropertyHoldConsideringProbabilityComparator(bool isNullHypothesisTrue);
+
 
                 // Constants
                 static const std::string ERR_UNEXPECTED_MODEL_CHECKING_RESULT;

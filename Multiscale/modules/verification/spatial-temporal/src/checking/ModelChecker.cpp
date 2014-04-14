@@ -35,6 +35,15 @@ std::string ModelChecker::getDetailedResultsUsingPValues() {
     );
 }
 
+bool ModelChecker::isGreaterThanOrEqualToComparator() {
+    ComparatorType comparator = abstractSyntaxTree.getComparator();
+
+    return (
+        (comparator == ComparatorType::GreaterThan) ||
+        (comparator == ComparatorType::GreaterThanOrEqual)
+    );
+}
+
 void ModelChecker::updateModelChecker(bool evaluationResult) {
     updateModelCheckerForEvaluationResult(evaluationResult);
 
@@ -103,15 +112,6 @@ void ModelChecker::updateAlternativeHypothesisPValue(unsigned int nrOfEvaluation
                                                      unsigned int nrOfSuccesses,
                                                      double probability) {
     alternativeHypothesisPValue = BinomialDistribution::cdf(nrOfEvaluations, nrOfSuccesses, probability);
-}
-
-bool ModelChecker::isGreaterThanOrEqualToComparator() {
-    ComparatorType comparator = abstractSyntaxTree.getComparator();
-
-    return (
-        (comparator == ComparatorType::GreaterThan) ||
-        (comparator == ComparatorType::GreaterThanOrEqual)
-    );
 }
 
 

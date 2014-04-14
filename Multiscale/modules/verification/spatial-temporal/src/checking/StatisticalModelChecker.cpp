@@ -36,10 +36,10 @@ bool StatisticalModelChecker::requiresMoreTraces() {
 bool StatisticalModelChecker::doesPropertyHold() {
     switch (modelCheckingResult) {
         case StatisticalModelCheckingResult::TRUE:
-            return true;
+            return doesPropertyHoldConsideringProbabilityComparator(true);
 
         case StatisticalModelCheckingResult::FALSE:
-            return false;
+            return doesPropertyHoldConsideringProbabilityComparator(false);
 
         case StatisticalModelCheckingResult::MORE_TRACES_REQUIRED:
             return doesPropertyHoldUsingPValues();
@@ -159,6 +159,14 @@ double StatisticalModelChecker::computeFPrimeValue() {
         (totalNumberOfTrueEvaluations * fPrimeTerm1) +
         ((totalNumberOfEvaluations - totalNumberOfTrueEvaluations) * fPrimeTerm2)
     );
+}
+
+bool StatisticalModelChecker::doesPropertyHoldConsideringProbabilityComparator(bool isNullHypothesisTrue) {
+    if (isGreaterThanOrEqualToComparator()) {
+        return isNullHypothesisTrue;
+    } else {
+        return (!isNullHypothesisTrue);
+    }
 }
 
 
