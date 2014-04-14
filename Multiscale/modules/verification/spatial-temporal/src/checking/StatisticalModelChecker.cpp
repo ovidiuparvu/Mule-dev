@@ -82,12 +82,21 @@ void StatisticalModelChecker::validateTypesErrors(double typeIError, double type
 
 void StatisticalModelChecker::initialise() {
     probability              = abstractSyntaxTree.getProbability();
-    indifferenceIntervalHalf = 1;
+    indifferenceIntervalHalf = computeIndifferenceIntervalHalf(probability);
 
     a1FromPaper = std::log((1 - minTypesError) / (typeIError));
     b1FromPaper = std::log((minTypesError) / (1 - typeIError));
     a2FromPaper = std::log((1 - typeIIError) / (minTypesError));
     b2FromPaper = std::log((typeIIError) / (1 - minTypesError));
+}
+
+double StatisticalModelChecker::computeIndifferenceIntervalHalf(double probability) {
+    return (
+        std::max(
+            0.0,
+            std::min(probability, 1 - probability) - INDIFFERENCE_INTERVAL_HALF_EPS
+        )
+    );
 }
 
 bool StatisticalModelChecker::isValidTypeError(double typeError) {
@@ -183,4 +192,7 @@ const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_BEGIN  = "The provi
 const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_MIDDLE = " and the probability of type II errors = ";
 const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_END    = "";
 
-const std::string StatisticalModelChecker::MSG_OUTPUT_SEPARATOR    = " ";
+const std::string StatisticalModelChecker::MSG_OUTPUT_SEPARATOR     = " ";
+
+// The value of this constant should be smaller than the value of Numeric::epsilon
+const double StatisticalModelChecker::INDIFFERENCE_INTERVAL_HALF_EPS = 1E-6;

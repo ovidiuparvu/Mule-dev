@@ -105,6 +105,13 @@ namespace multiscale {
                 //! Initialisation of some of the class members
                 void initialise();
 
+                //! Compute the value of the indifference interval half considering the given probability
+                /*! indifferenceIntervalHalf = max(0, min(probability, 1 - probability) - eps)
+                 *
+                 * \param probability The value of the probability
+                 */
+                double computeIndifferenceIntervalHalf(double probability);
+
                 //! Check if the given type I/II error probability is valid
                 /*! The probability of the type I/II error to occur should be greater than zero and less than one
                  *
@@ -147,8 +154,8 @@ namespace multiscale {
 
                 //! Check if the given probability holds considering the obtained answer and probability comparator (i.e. <=, >=)
                 /*! For queries of type :
-                 *      - P >= \theta [\phi] the isNullHypothesisTrue flag value is returned
-                 *      - P <= \theta [\phi] the !(isNullHypothesisTrue) flag value is returned
+                 *      a) P >= \theta [\phi] the isNullHypothesisTrue flag value is returned
+                 *      b) P <= \theta [\phi] the !(isNullHypothesisTrue) flag value is returned
                  *
                  * \param isNullHypothesisTrue  Flag indicating if the null hypothesis is true considering a P >= [\phi] query
                  */
@@ -169,6 +176,8 @@ namespace multiscale {
                 static const std::string MSG_OUTPUT_RESULT_END;
 
                 static const std::string MSG_OUTPUT_SEPARATOR;
+
+                static const double      INDIFFERENCE_INTERVAL_HALF_EPS;
 
         };
 
