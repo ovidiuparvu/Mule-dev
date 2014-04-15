@@ -30,8 +30,11 @@ std::string ModelChecker::getDetailedResultsUsingPValues() {
     updateHypothesesPValues();
 
     return (
-        MSG_OUTPUT_P_VALUE +
-        StringManipulator::toString(std::min(nullHypothesisPValue, alternativeHypothesisPValue))
+        MSG_OUTPUT_P_VALUE_BEGIN +
+        StringManipulator::toString(std::min(nullHypothesisPValue, alternativeHypothesisPValue)) +
+        MSG_OUTPUT_P_VALUE_MIDDLE1 + StringManipulator::toString(nullHypothesisPValue) +
+        MSG_OUTPUT_P_VALUE_MIDDLE2 + StringManipulator::toString(alternativeHypothesisPValue) +
+        MSG_OUTPUT_P_VALUE_END
     );
 }
 
@@ -116,4 +119,7 @@ void ModelChecker::updateAlternativeHypothesisPValue(unsigned int nrOfEvaluation
 
 
 // Constants
-const std::string ModelChecker::MSG_OUTPUT_P_VALUE  = "The confidence level of the answer expressed as a p-value (lower is better): ";
+const std::string ModelChecker::MSG_OUTPUT_P_VALUE_BEGIN    = "The confidence level of the answer expressed as a p-value (lower is better): ";
+const std::string ModelChecker::MSG_OUTPUT_P_VALUE_MIDDLE1  = " (p-value H0: ";
+const std::string ModelChecker::MSG_OUTPUT_P_VALUE_MIDDLE2  = ", p-value H1: ";
+const std::string ModelChecker::MSG_OUTPUT_P_VALUE_END      = ")";

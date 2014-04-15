@@ -149,8 +149,40 @@ namespace multiscale {
                 //! Compute the value of f (from original paper)
                 double computeFValue();
 
+                //! Compute the value of the first term of f (from original paper)
+                /*!
+                 * If the value inside the logarithm is equal to zero than the
+                 * returned value is equal to LOGARITHM_ZERO_VALUE. Otherwise
+                 * the value of the logarithm is computed and returned.
+                 */
+                double computeFValueFirstTerm();
+
+                //! Compute the value of the second term of f (from original paper)
+                /*!
+                 * If the value inside the logarithm is equal to zero than the
+                 * returned value is equal to LOGARITHM_ZERO_VALUE. Otherwise
+                 * the value of the logarithm is computed and returned.
+                 */
+                double computeFValueSecondTerm();
+
                 //! Compute the value of f' (from original paper)
                 double computeFPrimeValue();
+
+                //! Compute the value of the first term of f' (from original paper)
+                /*!
+                 * If the value inside the logarithm is equal to zero than the
+                 * returned value is equal to LOGARITHM_ZERO_VALUE. Otherwise
+                 * the value of the logarithm is computed and returned.
+                 */
+                double computeFPrimeValueFirstTerm();
+
+                //! Compute the value of the second term of f' (from original paper)
+                /*!
+                 * If the value inside the logarithm is equal to zero than the
+                 * returned value is equal to LOGARITHM_ZERO_VALUE. Otherwise
+                 * the value of the logarithm is computed and returned.
+                 */
+                double computeFPrimeValueSecondTerm();
 
                 //! Check if the given probability holds considering the obtained answer and probability comparator (i.e. <=, >=)
                 /*! For queries of type :
@@ -178,6 +210,8 @@ namespace multiscale {
                 static const std::string MSG_OUTPUT_SEPARATOR;
 
                 static const double      INDIFFERENCE_INTERVAL_HALF_EPS;
+
+                static const double      LOGARITHM_ZERO_VALUE;          /*!< The value obtained when computing log(0) */
 
         };
 

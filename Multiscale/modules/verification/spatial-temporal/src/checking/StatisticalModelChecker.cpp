@@ -4,6 +4,8 @@
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/checking/StatisticalModelChecker.hpp"
 
+#include <limits>
+
 using namespace multiscale;
 using namespace multiscale::verification;
 
@@ -151,23 +153,59 @@ void StatisticalModelChecker::updateModelCheckingResultNotEnoughTraces() {
 }
 
 double StatisticalModelChecker::computeFValue() {
-    double fTerm1 = std::log((probability - indifferenceIntervalHalf) / (probability));
-    double fTerm2 = std::log((1 - (probability - indifferenceIntervalHalf)) / (1 - probability));
+    double fFirstTerm   = computeFValueFirstTerm();
+    double fSecondTerm  = computeFValueSecondTerm();
 
     return (
-        (totalNumberOfTrueEvaluations * fTerm1) +
-        ((totalNumberOfEvaluations - totalNumberOfTrueEvaluations) * fTerm2)
+        (totalNumberOfTrueEvaluations * fFirstTerm) +
+        ((totalNumberOfEvaluations - totalNumberOfTrueEvaluations) * fSecondTerm)
     );
 }
 
+double StatisticalModelChecker::computeFValueFirstTerm() {
+    if ((Numeric::almostEqual(probability - indifferenceIntervalHalf, 0)) ||
+        (Numeric::almostEqual(probability, 0))) {
+        return LOGARITHM_ZERO_VALUE;
+    } else {
+        return std::log((probability - indifferenceIntervalHalf) / (probability));
+    }
+}
+
+double StatisticalModelChecker::computeFValueSecondTerm() {
+    if ((Numeric::almostEqual(probability - indifferenceIntervalHalf, 1)) ||
+        (Numeric::almostEqual(probability, 1))) {
+        return LOGARITHM_ZERO_VALUE;
+    } else {
+        return std::log((1 - (probability - indifferenceIntervalHalf)) / (1 - probability));
+    }
+}
+
 double StatisticalModelChecker::computeFPrimeValue() {
-    double fPrimeTerm1 = std::log((probability) / (probability + indifferenceIntervalHalf));
-    double fPrimeTerm2 = std::log((1 - probability) / (1 - (probability + indifferenceIntervalHalf)));
+    double fPrimeFirstTerm  = computeFPrimeValueFirstTerm();
+    double fPrimeSecondTerm = computeFPrimeValueSecondTerm();
 
     return (
-        (totalNumberOfTrueEvaluations * fPrimeTerm1) +
-        ((totalNumberOfEvaluations - totalNumberOfTrueEvaluations) * fPrimeTerm2)
+        (totalNumberOfTrueEvaluations * fPrimeFirstTerm) +
+        ((totalNumberOfEvaluations - totalNumberOfTrueEvaluations) * fPrimeSecondTerm)
     );
+}
+
+double StatisticalModelChecker::computeFPrimeValueFirstTerm() {
+    if ((Numeric::almostEqual(probability, 0)) ||
+        (Numeric::almostEqual(probability + indifferenceIntervalHalf, 0))) {
+        return LOGARITHM_ZERO_VALUE;
+    } else {
+        return std::log((probability) / (probability + indifferenceIntervalHalf));
+    }
+}
+
+double StatisticalModelChecker::computeFPrimeValueSecondTerm() {
+    if ((Numeric::almostEqual(probability, 1)) ||
+        (Numeric::almostEqual(probability + indifferenceIntervalHalf, 1))) {
+        return LOGARITHM_ZERO_VALUE;
+    } else {
+        return std::log((1 - probability) / (1 - (probability + indifferenceIntervalHalf)));
+    }
 }
 
 bool StatisticalModelChecker::doesPropertyHoldConsideringProbabilityComparator(bool isNullHypothesisTrue) {
@@ -194,5 +232,11 @@ const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_END    = "";
 
 const std::string StatisticalModelChecker::MSG_OUTPUT_SEPARATOR     = " ";
 
-// The value of this constant should be smaller than the value of Numeric::epsilon
+//! The value of this constant should be smaller than the value of Numeric::epsilon
 const double StatisticalModelChecker::INDIFFERENCE_INTERVAL_HALF_EPS = 1E-6;
+
+//! The value of this constant should be a large negative number.
+/*! This value will be further multiplied by non-negative integer numbers.
+ *  In order to avoid overflow the lowest double value is divided by 1E10.
+ */
+const double StatisticalModelChecker::LOGARITHM_ZERO_VALUE = (std::numeric_limits<double>::lowest() / 1E+10);

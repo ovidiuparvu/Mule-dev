@@ -158,7 +158,10 @@ namespace multiscale {
 
 
                 // Constants
-                static const std::string MSG_OUTPUT_P_VALUE;
+                static const std::string MSG_OUTPUT_P_VALUE_BEGIN;
+                static const std::string MSG_OUTPUT_P_VALUE_MIDDLE1;
+                static const std::string MSG_OUTPUT_P_VALUE_MIDDLE2;
+                static const std::string MSG_OUTPUT_P_VALUE_END;
 
         };
 
