@@ -1,0 +1,38 @@
+#ifndef BAYESIANMODELCHECKERFACTORY_HPP
+#define BAYESIANMODELCHECKERFACTORY_HPP
+
+#include "multiscale/verification/spatial-temporal/checking/ModelCheckerFactory.hpp"
+
+
+namespace multiscale {
+
+    namespace verification {
+
+        //! Class for creating BayesianModelChecker instances
+        class BayesianModelCheckerFactory : public ModelCheckerFactory {
+
+            private:
+
+                double alpha;                   /*!< The shape parameter \f$ \alpha \f$ for the beta distribution prior */
+                double beta;                    /*!< The shape parameter \f$ \beta \f$ for the beta distribution prior */
+
+                double bayesFactorThreshold;    /*!< The Bayes factor threshold */
+
+            public:
+
+                BayesianModelCheckerFactory(double alpha, double beta, double bayesFactorThreshold);
+                ~BayesianModelCheckerFactory();
+
+                //! Create an instance of BayesianModelChecker
+                /*!
+                 * \param abstractSyntaxTree The abstract syntax tree representing the logic property to be checked
+                 */
+                std::shared_ptr<ModelChecker> createInstance(const AbstractSyntaxTree &abstractSyntaxTree) override;
+
+        };
+
+    };
+
+};
+
+#endif
