@@ -182,16 +182,36 @@ void ModelCheckingOutputWriter::printDetailedEvaluationResults(const std::size_t
 void ModelCheckingOutputWriter::printEvaluationResultsSummary(const std::size_t &logicPropertyIndex,
                                                               const std::vector<std::string> &tracesPaths,
                                                               const std::vector<std::vector<bool>> &evaluationResults) {
-    std::size_t nrOfTraces         = tracesPaths.size();
-    std::size_t nrOfCorrectTraces  = 0;
+    std::size_t nrOfTraces              = tracesPaths.size();
+    std::size_t nrOfEvaluatedTraces     = 0;
+    std::size_t nrOfTracesEvaluatedTrue = 0;
 
     for (std::size_t i = 0; i != nrOfTraces; i++) {
-        if (isTraceEvaluatedTrueForLogicProperty(logicPropertyIndex, i, evaluationResults)) {
-            nrOfCorrectTraces++;
-        }
+        updateSummaryEvaluationResults(logicPropertyIndex, i, evaluationResults,
+                                       nrOfEvaluatedTraces, nrOfTracesEvaluatedTrue);
     }
 
-    printEvaluationResultsSummary(nrOfTraces, nrOfCorrectTraces);
+    printEvaluationResultsSummary(nrOfEvaluatedTraces, nrOfTracesEvaluatedTrue);
+}
+
+void ModelCheckingOutputWriter::updateSummaryEvaluationResults(const std::size_t &logicPropertyIndex,
+                                                               const std::size_t &tracePathIndex,
+                                                               const std::vector<std::vector<bool>> &evaluationResults,
+                                                               size_t &nrOfEvaluatedTraces,
+                                                               size_t &nrOfTracesEvaluatedTrue) {
+    if (isTraceEvaluatedForLogicProperty(logicPropertyIndex, tracePathIndex, evaluationResults)) {
+        nrOfEvaluatedTraces++;
+
+        if (isTraceEvaluatedTrueForLogicProperty(logicPropertyIndex, tracePathIndex, evaluationResults)) {
+            nrOfTracesEvaluatedTrue++;
+        }
+    }
+}
+
+bool ModelCheckingOutputWriter::isTraceEvaluatedForLogicProperty(const std::size_t &logicPropertyIndex,
+                                                                 const std::size_t &tracePathIndex,
+                                                                 const std::vector<std::vector<bool>> &evaluationResults) {
+    return ((evaluationResults[tracePathIndex])[2 * logicPropertyIndex]);
 }
 
 void ModelCheckingOutputWriter::printEvaluationResultsSummary(std::size_t nrOfTraces,
@@ -206,12 +226,6 @@ void ModelCheckingOutputWriter::printEvaluationResultsSummary(std::size_t nrOfTr
         TAG_DETAILS,
         ColourCode::GREEN
     );
-}
-
-bool ModelCheckingOutputWriter::isTraceEvaluatedForLogicProperty(const std::size_t &logicPropertyIndex,
-                                                                 const std::size_t &tracePathIndex,
-                                                                 const std::vector<std::vector<bool>> &evaluationResults) {
-    return ((evaluationResults[tracePathIndex])[2 * logicPropertyIndex]);
 }
 
 void ModelCheckingOutputWriter::printDetailedTraceEvaluationResult(const std::size_t &logicPropertyIndex,

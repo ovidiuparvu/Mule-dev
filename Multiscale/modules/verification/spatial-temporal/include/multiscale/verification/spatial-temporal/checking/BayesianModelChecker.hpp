@@ -88,6 +88,15 @@ namespace multiscale {
 
             private:
 
+                //! Validate the input parameters \f$ \alpha \f$, \f$ \beta \f$ and the Bayes factor threshold
+                /*! \f$ \alpha \f$ and \f$ \beta \f$ should be greater than zero, and Bayes factor threshold should be greater than 1
+                 *
+                 * \param alpha                 The shape parameter \f$ \alpha \f$ for the beta distribution
+                 * \param beta                  The shape parameter \f$ \beta \f$ for the beta distribution
+                 * \param bayesFactorThreshold  The Bayes factor threshold
+                 */
+                void validateInput(double alpha, double beta, double bayesFactorThreshold);
+
                 //! Validate the shape parameters \f$ \alpha \f$ and \f$ \beta \f$
                 /*! \f$ \alpha \f$ and \f$ \beta \f$ should be greater than zero
                  *
@@ -103,6 +112,13 @@ namespace multiscale {
                  */
                 bool isValidShapeParameter(double shapeParameter);
 
+                //! Validate the Bayes factor threshold
+                /*! The Bayes factor threshold should be greater than 1
+                 *
+                 * \param bayesFactorThreshold  The Bayes factor threshold
+                 */
+                void validateBayesFactorThreshold(double bayesFactorThreshold);
+
                 //! Initialisation of some of the class members
                 void initialise();
 
@@ -117,6 +133,15 @@ namespace multiscale {
                  * \param bayesFactor   The given Bayes factor value
                  */
                 void updateModelCheckingResult(double bayesFactor);
+
+                //! Update the result of the model checking task considering that enough traces have been provided
+                /*!
+                 * \param bayesFactor   The given Bayes factor value
+                 */
+                void updateModelCheckingResultEnoughTraces(double bayesFactor);
+
+                //! Update the result of the model checking task considering that not enough traces have been provided
+                void updateModelCheckingResultNotEnoughTraces();
 
                 //! Compute the value of the Bayes factor
                 /*!
@@ -141,6 +166,9 @@ namespace multiscale {
                 static const std::string ERR_SHAPE_PARAMETERS_BEGIN;
                 static const std::string ERR_SHAPE_PARAMETERS_MIDDLE;
                 static const std::string ERR_SHAPE_PARAMETERS_END;
+
+                static const std::string ERR_BAYES_FACTOR_THRESHOLD_BEGIN;
+                static const std::string ERR_BAYES_FACTOR_THRESHOLD_END;
 
                 static const std::string MSG_OUTPUT_MORE_TRACES_REQUIRED;
 

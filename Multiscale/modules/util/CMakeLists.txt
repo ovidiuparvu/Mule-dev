@@ -24,6 +24,7 @@ set(LIB_SRC
     src/XmlValidator.cpp
 
     src/statistics/BinomialDistribution.cpp
+    src/statistics/Distribution.cpp
 
     src/iterator/LexicographicNumberIterator.cpp
     src/iterator/StandardNumberIterator.cpp

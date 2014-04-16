@@ -15,17 +15,6 @@ double BinomialDistribution::cdf(unsigned int nrOfObservations, unsigned int nrO
     return computeCdf(nrOfObservations, nrOfSuccesses, probability);
 }
 
-void BinomialDistribution::validateProbability(double probability) {
-    if ((probability < 0) || (probability > 1)) {
-        MS_throw(
-            NumericException,
-            ERR_PROBABILITY_VALUE_BEGIN +
-            StringManipulator::toString(probability) +
-            ERR_PROBABILITY_VALUE_END
-        );
-    }
-}
-
 void BinomialDistribution::validateNrOfSuccesses(unsigned nrOfObservations, unsigned int nrOfSuccesses) {
     if (nrOfSuccesses > nrOfObservations) {
         MS_throw(
@@ -48,9 +37,6 @@ double BinomialDistribution::computeCdf(unsigned int nrOfObservations, unsigned 
 
 
 // Constants
-const std::string BinomialDistribution::ERR_PROBABILITY_VALUE_BEGIN = "The given probability value (";
-const std::string BinomialDistribution::ERR_PROBABILITY_VALUE_END   = ") should be between 0 and 1.";
-
 const std::string BinomialDistribution::ERR_NR_OF_SUCCESSES_BEGIN   = "The given number of successes (";
 const std::string BinomialDistribution::ERR_NR_OF_SUCCESSES_MIDDLE  = ") should be less than or equal to the total number of observations (";
 const std::string BinomialDistribution::ERR_NR_OF_SUCCESSES_END     = ").";
