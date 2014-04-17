@@ -143,7 +143,7 @@ namespace multiscale {
                 void updateModelCheckingResultNotEnoughTraces();
 
                 //! Update the value of the type I error upper bound
-                double updateTypeIErrorUpperBound();
+                void updateTypeIErrorUpperBound();
 
                 //! Compute the value of the indicator function \f$ I_{\mathcal{B}(n, x) < 1/T}(x) \f$
                 /*!

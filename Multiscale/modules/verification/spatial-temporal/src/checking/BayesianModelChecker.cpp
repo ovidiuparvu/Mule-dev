@@ -64,7 +64,7 @@ std::string BayesianModelChecker::getDetailedResults() {
             MSG_OUTPUT_RESULT_BEGIN     + StringManipulator::toString(alpha)  +
             MSG_OUTPUT_RESULT_MIDDLE1   + StringManipulator::toString(beta) +
             MSG_OUTPUT_RESULT_MIDDLE2   + StringManipulator::toString(bayesFactorThreshold) +
-            MSG_OUTPUT_RESULT_MIDDLE3   + StringManipulator::toString(bayesFactorThreshold) +
+            MSG_OUTPUT_RESULT_MIDDLE3   + StringManipulator::toString(typeIErrorUpperBound) +
             MSG_OUTPUT_RESULT_END
         );
     }
@@ -144,16 +144,14 @@ void BayesianModelChecker::updateModelCheckingResultNotEnoughTraces() {
     modelCheckingResult = BayesianModelCheckingResult::MORE_TRACES_REQUIRED;
 }
 
-double BayesianModelChecker::updateTypeIErrorUpperBound() {
-    double typeIErrorBound = 0;
+void BayesianModelChecker::updateTypeIErrorUpperBound() {
+    typeIErrorUpperBound = 0;
 
     for (unsigned int i = 0; i < totalNumberOfEvaluations; i++) {
         if (indicatorFunction(i)) {
-            typeIErrorBound += computeMaximumBinomialPDF(i);
+            typeIErrorUpperBound += computeMaximumBinomialPDF(i);
         }
     }
-
-    return typeIErrorBound;
 }
 
 bool BayesianModelChecker::indicatorFunction(unsigned int nrOfSuccesses) {
@@ -184,8 +182,8 @@ double BayesianModelChecker::computeBayesFactorValue(unsigned int nrOfObservatio
     double betaShapeParameter   = static_cast<double>(nrOfObservations - nrOfSuccesses) + beta;
 
     double cdfValue     = BetaDistribution::cdf(alphaShapeParameter, betaShapeParameter, probability);
-    double cdfInverse   = (cdfValue == 0) ? numeric_limits<double>::max()
-                                          : (1 / cdfValue);
+    double cdfInverse   = (Numeric::almostEqual(cdfValue, 0)) ? numeric_limits<double>::max()
+                                                              : (1 / cdfValue);
 
     return (cdfInverse - 1);
 }

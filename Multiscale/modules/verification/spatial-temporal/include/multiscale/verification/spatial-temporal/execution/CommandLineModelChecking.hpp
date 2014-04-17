@@ -133,6 +133,12 @@ namespace multiscale {
                  */
                 bool areStatisticalModelCheckingArgumentsPresent(bool allArguments);
 
+                //! Check if the arguments specific to Bayesian model checking are present
+                /*!
+                 * \param allArguments  Flag indicating if all/at least one argument is present
+                 */
+                bool areBayesianModelCheckingArgumentsPresent(bool allArguments);
+
                 //! Initialise the class members using the command line arguments
                 void initialiseClassMembers();
 
@@ -154,6 +160,9 @@ namespace multiscale {
                 //! Initialise the statistical model checker
                 void initialiseStatisticalModelChecker();
 
+                //! Initialise the Bayesian model checker
+                void initialiseBayesianModelChecker();
+
                 //! Initialise the model checking manager
                 void initialiseModelCheckingManager();
 
@@ -169,6 +178,7 @@ namespace multiscale {
 
                 static const unsigned int   MODEL_CHECKER_TYPE_PROBABILISTIC_BLACK_BOX;
                 static const unsigned int   MODEL_CHECKER_TYPE_STATISTICAL;
+                static const unsigned int   MODEL_CHECKER_TYPE_BAYESIAN;
 
                 static const std::string    MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_NAME;
                 static const std::string    MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_PARAMETERS;
@@ -178,6 +188,12 @@ namespace multiscale {
                 static const std::string    MODEL_CHECKER_STATISTICAL_PARAMETERS_MIDDLE;
                 static const std::string    MODEL_CHECKER_STATISTICAL_PARAMETERS_END;
 
+                static const std::string    MODEL_CHECKER_BAYESIAN_NAME;
+                static const std::string    MODEL_CHECKER_BAYESIAN_PARAMETERS_BEGIN;
+                static const std::string    MODEL_CHECKER_BAYESIAN_PARAMETERS_MIDDLE1;
+                static const std::string    MODEL_CHECKER_BAYESIAN_PARAMETERS_MIDDLE2;
+                static const std::string    MODEL_CHECKER_BAYESIAN_PARAMETERS_END;
+
                 static const std::string    CONFIG_CAPTION_ALLOWED_ARGUMENTS;
                 static const std::string    CONFIG_CAPTION_REQUIRED_ARGUMENTS;
                 static const std::string    CONFIG_CAPTION_OPTIONAL_ARGUMENTS;
@@ -185,6 +201,7 @@ namespace multiscale {
 
                 static const std::string    CONFIG_CAPTION_PROBABILISTIC_BLACK_BOX_MODEL_CHECKER_ARGUMENTS;
                 static const std::string    CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS;
+                static const std::string    CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS;
 
         };
 
