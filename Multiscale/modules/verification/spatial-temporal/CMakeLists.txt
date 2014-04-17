@@ -40,7 +40,9 @@ set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     src/attribute/TernarySubsetMeasureAttribute.cpp
     src/attribute/UnaryNumericMeasureAttribute.cpp
     src/attribute/UnarySubsetMeasureAttribute.cpp
-    
+
+    src/checking/BayesianModelChecker.cpp
+    src/checking/BayesianModelCheckerFactory.cpp    
     src/checking/ModelChecker.cpp
     src/checking/ModelCheckingManager.cpp
     src/checking/ModelCheckingOutputWriter.cpp

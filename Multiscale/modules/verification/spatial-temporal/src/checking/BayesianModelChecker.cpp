@@ -2,6 +2,8 @@
 #include "multiscale/exception/UnexpectedBehaviourException.hpp"
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
+#include "multiscale/util/statistics/BetaDistribution.hpp"
+#include "multiscale/util/statistics/BinomialDistribution.hpp"
 #include "multiscale/verification/spatial-temporal/checking/BayesianModelChecker.hpp"
 
 #include <limits>
@@ -15,9 +17,9 @@ BayesianModelChecker::BayesianModelChecker(const AbstractSyntaxTree &abstractSyn
                                            : ModelChecker(abstractSyntaxTree) {
     validateInput(alpha, beta, bayesFactorThreshold);
 
-    this->alpha = alpha;
-    this->beta  = beta;
-    this->bayesFactorThreshold = bayesFactorThreshold;
+    this->alpha                 = alpha;
+    this->beta                  = beta;
+    this->bayesFactorThreshold  = bayesFactorThreshold;
 
     initialise();
 }
@@ -62,6 +64,7 @@ std::string BayesianModelChecker::getDetailedResults() {
             MSG_OUTPUT_RESULT_BEGIN     + StringManipulator::toString(alpha)  +
             MSG_OUTPUT_RESULT_MIDDLE1   + StringManipulator::toString(beta) +
             MSG_OUTPUT_RESULT_MIDDLE2   + StringManipulator::toString(bayesFactorThreshold) +
+            MSG_OUTPUT_RESULT_MIDDLE3   + StringManipulator::toString(bayesFactorThreshold) +
             MSG_OUTPUT_RESULT_END
         );
     }
@@ -103,7 +106,8 @@ void BayesianModelChecker::validateBayesFactorThreshold(double bayesFactorThresh
 }
 
 void BayesianModelChecker::initialise() {
-    probability = abstractSyntaxTree.getProbability();
+    probability             = abstractSyntaxTree.getProbability();
+    typeIErrorUpperBound    = 0;
 
     // Since the Bayes factor threshold should be greater than 1 the conditional statement is not mandatory
     bayesFactorThresholdInverse = (bayesFactorThreshold == 0)
@@ -112,20 +116,16 @@ void BayesianModelChecker::initialise() {
 }
 
 void BayesianModelChecker::updateModelCheckingResult() {
-    modelCheckingResult = StatisticalModelCheckingResult::UNDECIDED;
-
-    updateInitialisedModelCheckingResult();
-}
-
-void BayesianModelChecker::updateInitialisedModelCheckingResult() {
-    double bayesFactor = computeBayesFactorValue();
+    double bayesFactor = computeBayesFactorValue(totalNumberOfEvaluations,
+                                                 totalNumberOfTrueEvaluations);
 
     updateModelCheckingResult(bayesFactor);
+    updateTypeIErrorUpperBound();
 }
 
 void BayesianModelChecker::updateModelCheckingResult(double bayesFactor) {
     if ((bayesFactor > bayesFactorThreshold) ||
-        (bayesFactor < bayesFactorThresholdInverse))) {
+        (bayesFactor < bayesFactorThresholdInverse)) {
         updateModelCheckingResultEnoughTraces(bayesFactor);
     } else {
         updateModelCheckingResultNotEnoughTraces();
@@ -135,17 +135,59 @@ void BayesianModelChecker::updateModelCheckingResult(double bayesFactor) {
 void BayesianModelChecker::updateModelCheckingResultEnoughTraces(double bayesFactor) {
     if (bayesFactor > bayesFactorThreshold) {
         modelCheckingResult = BayesianModelCheckingResult::TRUE;
-    } else {
+    } else if (bayesFactor < bayesFactorThresholdInverse) {
         modelCheckingResult = BayesianModelCheckingResult::FALSE;
     }
 }
 
 void BayesianModelChecker::updateModelCheckingResultNotEnoughTraces() {
-    modelCheckingResult = StatisticalModelCheckingResult::MORE_TRACES_REQUIRED;
+    modelCheckingResult = BayesianModelCheckingResult::MORE_TRACES_REQUIRED;
 }
 
-double BayesianModelChecker::computeBayesFactorValue() {
-    // TODO: Implement
+double BayesianModelChecker::updateTypeIErrorUpperBound() {
+    double typeIErrorBound = 0;
+
+    for (unsigned int i = 0; i < totalNumberOfEvaluations; i++) {
+        if (indicatorFunction(i)) {
+            typeIErrorBound += computeMaximumBinomialPDF(i);
+        }
+    }
+
+    return typeIErrorBound;
+}
+
+bool BayesianModelChecker::indicatorFunction(unsigned int nrOfSuccesses) {
+    double bayesFactor = computeBayesFactorValue(totalNumberOfEvaluations, nrOfSuccesses);
+
+    return (bayesFactor < bayesFactorThresholdInverse);
+}
+
+double BayesianModelChecker::computeMaximumBinomialPDF(unsigned int nrOfSuccesses) {
+    double firstBinomialPDF  = computeBinomialPDF(nrOfSuccesses, probability);
+
+    double secondProbability = static_cast<double>(2 * nrOfSuccesses) /
+                               static_cast<double>(totalNumberOfEvaluations);
+    double secondBinomialPDF = computeBinomialPDF(nrOfSuccesses, secondProbability);
+
+    return std::max(firstBinomialPDF, secondBinomialPDF);
+}
+
+double BayesianModelChecker::computeBinomialPDF(unsigned int nrOfSuccesses, double probability) {
+    return (probability > 1)
+        ? 0.0
+        : BinomialDistribution::pdf(totalNumberOfEvaluations, nrOfSuccesses, probability);
+}
+
+double BayesianModelChecker::computeBayesFactorValue(unsigned int nrOfObservations,
+                                                     unsigned int nrOfSuccesses) {
+    double alphaShapeParameter  = static_cast<double>(nrOfSuccesses) + alpha;
+    double betaShapeParameter   = static_cast<double>(nrOfObservations - nrOfSuccesses) + beta;
+
+    double cdfValue     = BetaDistribution::cdf(alphaShapeParameter, betaShapeParameter, probability);
+    double cdfInverse   = (cdfValue == 0) ? numeric_limits<double>::max()
+                                          : (1 / cdfValue);
+
+    return (cdfInverse - 1);
 }
 
 bool BayesianModelChecker::doesPropertyHoldConsideringProbabilityComparator(bool isNullHypothesisTrue) {
@@ -172,6 +214,7 @@ const std::string BayesianModelChecker::MSG_OUTPUT_MORE_TRACES_REQUIRED         
 const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_BEGIN                 = "The provided answer is given for the beta distribution shape parameters alpha = ";
 const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_MIDDLE1               = " and beta = ";
 const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_MIDDLE2               = ", and Bayes factor threshold value = ";
+const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_MIDDLE3               = ". The type I error upper bound for the provided answer is = ";
 const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_END                   = "";
 
 const std::string BayesianModelChecker::MSG_OUTPUT_SEPARATOR                    = " ";

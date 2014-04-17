@@ -1,18 +1,23 @@
-#include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/exception/NumericException.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/util/statistics/BetaDistribution.hpp"
+
+#include <boost/math/distributions/beta.hpp>
 
 using namespace multiscale;
 
 
 double BetaDistribution::cdf(double alpha, double beta, double probability) {
-    // TODO: Implement
+    validateShapeParameters(alpha, beta);
+    validateProbability(probability);
+
+    return computeCdf(alpha, beta, probability);
 }
 
 void BetaDistribution::validateShapeParameters(double alpha, double beta) {
     if (!((isValidShapeParameter(alpha)) && (isValidShapeParameter(beta)))) {
         MS_throw(
-            InvalidInputException,
+            NumericException,
             ERR_SHAPE_PARAMETERS_BEGIN  + StringManipulator::toString(alpha)  +
             ERR_SHAPE_PARAMETERS_MIDDLE + StringManipulator::toString(beta) +
             ERR_SHAPE_PARAMETERS_END
@@ -22,6 +27,12 @@ void BetaDistribution::validateShapeParameters(double alpha, double beta) {
 
 bool BetaDistribution::isValidShapeParameter(double shapeParameter) {
     return (shapeParameter > 0);
+}
+
+double BetaDistribution::computeCdf(double alpha, double beta, double probability) {
+    boost::math::beta_distribution<> betaDistribution(alpha, beta);
+
+    return boost::math::cdf(betaDistribution, probability);
 }
 
 

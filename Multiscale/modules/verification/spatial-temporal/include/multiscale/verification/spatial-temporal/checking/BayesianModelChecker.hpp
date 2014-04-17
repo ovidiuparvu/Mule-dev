@@ -52,6 +52,8 @@ namespace multiscale {
                 double bayesFactorThreshold;        /*!< The Bayes factor threshold */
                 double bayesFactorThresholdInverse; /*!< The Bayes factor threshold to the power "-1" */
 
+                double typeIErrorUpperBound;        /*!< The type I error upper bound */
+
                 BayesianModelCheckingResult modelCheckingResult; /*!< The result of the model checking task */
 
             public:
@@ -125,9 +127,6 @@ namespace multiscale {
                 //! Update the result of the model checking task
                 void updateModelCheckingResult();
 
-                //! Update the initialised model checking task result
-                void updateInitialisedModelCheckingResult();
-
                 //! Update the result of the model checking task considering the given Bayes factor value
                 /*!
                  * \param bayesFactor   The given Bayes factor value
@@ -143,12 +142,38 @@ namespace multiscale {
                 //! Update the result of the model checking task considering that not enough traces have been provided
                 void updateModelCheckingResultNotEnoughTraces();
 
+                //! Update the value of the type I error upper bound
+                double updateTypeIErrorUpperBound();
+
+                //! Compute the value of the indicator function \f$ I_{\mathcal{B}(n, x) < 1/T}(x) \f$
+                /*!
+                 * \param nrOfSuccesses The number of successful observations/trials
+                 */
+                bool indicatorFunction(unsigned int nrOfSuccesses);
+
+                //! Compute the maximum value of the probability distribution function for the Binomial distribution
+                /*! The maximum value is reached when p = \f$ \theta \f$ or p = \f$ \frac{2k}{n} \f$
+                 *
+                 * \param nrOfSuccesses The number of successful observations/trials
+                 */
+                double computeMaximumBinomialPDF(unsigned int nrOfSuccesses);
+
+                //! Compute the value of the probability distribution function for the Binomial distribution
+                /*!
+                 * \param nrOfSucceses  The number of successful observations/trials
+                 * \param probability   The probability of success
+                 */
+                double computeBinomialPDF(unsigned int nrOfSuccesses, double probability);
+
                 //! Compute the value of the Bayes factor
                 /*!
                  * According to the original paper the Bayes factor can be computed as follows:
                  *  \f$ \mathcal{B} = \frac{1}{(F_{x + \alpha, n - x + \beta)}(\theta)} - 1\f$
+                 *
+                 *  \param nrOfObservations The total number of observations
+                 *  \param nrOfSuccesses    The total number of successes
                  */
-                double computeBayesFactorValue();
+                double computeBayesFactorValue(unsigned int nrOfObservations, unsigned int nrOfSucceses);
 
                 //! Check if the given probability holds considering the obtained answer and probability comparator (i.e. <=, >=)
                 /*! For queries of type :
@@ -175,6 +200,7 @@ namespace multiscale {
                 static const std::string MSG_OUTPUT_RESULT_BEGIN;
                 static const std::string MSG_OUTPUT_RESULT_MIDDLE1;
                 static const std::string MSG_OUTPUT_RESULT_MIDDLE2;
+                static const std::string MSG_OUTPUT_RESULT_MIDDLE3;
                 static const std::string MSG_OUTPUT_RESULT_END;
 
                 static const std::string MSG_OUTPUT_SEPARATOR;

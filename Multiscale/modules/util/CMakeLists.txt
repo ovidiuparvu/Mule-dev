@@ -23,6 +23,7 @@ set(LIB_SRC
     src/StringManipulator.cpp
     src/XmlValidator.cpp
 
+    src/statistics/BetaDistribution.cpp
     src/statistics/BinomialDistribution.cpp
     src/statistics/Distribution.cpp
 

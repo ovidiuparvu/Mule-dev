@@ -1,10 +1,13 @@
 #ifndef BETADISTRIBUTION_HPP
 #define BETADISTRIBUTION_HPP
 
+#include "multiscale/util/statistics/Distribution.hpp"
+
+
 namespace multiscale {
 
     //! Class for analysing Beta distributed data
-    class BetaDistribution {
+    class BetaDistribution : public Distribution {
 
         public:
 

@@ -7,12 +7,24 @@
 using namespace multiscale;
 
 
+double BinomialDistribution::pdf(unsigned int nrOfObservations, unsigned int nrOfSuccesses,
+                                 double probability) {
+    validateInput(nrOfObservations, nrOfSuccesses, probability);
+
+    return computePdf(nrOfObservations, nrOfSuccesses, probability);
+}
+
 double BinomialDistribution::cdf(unsigned int nrOfObservations, unsigned int nrOfSuccesses,
                                  double probability) {
-    validateProbability(probability);
-    validateNrOfSuccesses(nrOfObservations, nrOfSuccesses);
+    validateInput(nrOfObservations, nrOfSuccesses, probability);
 
     return computeCdf(nrOfObservations, nrOfSuccesses, probability);
+}
+
+void BinomialDistribution::validateInput(unsigned int nrOfObservations, unsigned int nrOfSuccesses,
+                                         double probability) {
+    validateProbability(probability);
+    validateNrOfSuccesses(nrOfObservations, nrOfSuccesses);
 }
 
 void BinomialDistribution::validateNrOfSuccesses(unsigned nrOfObservations, unsigned int nrOfSuccesses) {
@@ -26,6 +38,13 @@ void BinomialDistribution::validateNrOfSuccesses(unsigned nrOfObservations, unsi
             ERR_NR_OF_SUCCESSES_END
         );
     }
+}
+
+double BinomialDistribution::computePdf(unsigned int nrOfObservations, unsigned int nrOfSuccesses,
+                                        double probability) {
+    boost::math::binomial binomialDistribution(nrOfObservations, probability);
+
+    return boost::math::pdf(binomialDistribution, nrOfSuccesses);
 }
 
 double BinomialDistribution::computeCdf(unsigned int nrOfObservations, unsigned int nrOfSuccesses,

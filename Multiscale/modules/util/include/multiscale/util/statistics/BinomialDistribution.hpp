@@ -13,6 +13,16 @@ namespace multiscale {
 
         public:
 
+            //! Compute the value of the probability distribution/mass function (pdf) for a binomial distribution
+            /*!
+             * \param nrOfObservations  The total number of observations
+             * \param nrOfSuccesses     The number of successes
+             * \param probability       The probability p used by the cumulative distribution function
+             */
+            static double pdf(unsigned int nrOfObservations, unsigned int nrOfSuccesses,
+                              double probability);
+
+
             //! Compute the value of the cumulative distribution function (cdf) for a binomial distribution
             /*!
              * \param nrOfObservations  The total number of observations
@@ -24,12 +34,30 @@ namespace multiscale {
 
         private:
 
+            //! Validate the given input data
+            /*!
+             * \param nrOfObservations  The total number of observations
+             * \param nrOfSuccesses     The number of successes
+             * \param probability       The probability p used by the cumulative distribution function
+             */
+            static void validateInput(unsigned int nrOfObservations, unsigned int nrOfSuccesses,
+                                      double probability);
+
             //! Check if the number of true observations is less than or equal to the total number of observations
             /*!
              * \param nrOfObservations  The total number of observations
              * \param nrOfSuccesses     The number of successes
              */
             static void validateNrOfSuccesses(unsigned int nrOfObservations, unsigned int nrOfSuccesses);
+
+            //! Compute the value of the probability distribution function for a binomial distribution
+            /*!
+             * \param nrOfObservations  The total number of observations
+             * \param nrOfSuccesses     The number of successes
+             * \param probability       The probability p used by the cumulative distribution function
+             */
+            static double computePdf(unsigned int nrOfObservations, unsigned int nrOfSuccesses,
+                                     double probability);
 
             //! Compute the value of the cumulative distribution function for a binomial distribution
             /*!
