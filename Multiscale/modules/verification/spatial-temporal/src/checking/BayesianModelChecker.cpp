@@ -171,7 +171,7 @@ double BayesianModelChecker::computeMaximumBinomialPDF(unsigned int nrOfSuccesse
 }
 
 double BayesianModelChecker::computeBinomialPDF(unsigned int nrOfSuccesses, double probability) {
-    return (probability > 1)
+    return ((probability < (this->probability)) || (probability > 1))
         ? 0.0
         : BinomialDistribution::pdf(totalNumberOfEvaluations, nrOfSuccesses, probability);
 }
