@@ -179,6 +179,11 @@ namespace multiscale {
 
                 static const std::string    ERR_INVALID_MODEL_CHECKING_TYPE;
 
+                static const std::string    HELP_NAME_LABEL;
+                static const std::string    HELP_NAME_MSG;
+                static const std::string    HELP_USAGE_LABEL;
+                static const std::string    HELP_USAGE_MSG;
+
                 static const std::string    MSG_MODEL_CHECKING_HELP_REQUESTED;
 
                 static const unsigned int   MODEL_CHECKER_TYPE_PROBABILISTIC_BLACK_BOX;

@@ -126,11 +126,11 @@ void CommandLineModelChecking::handleHelpRequest() {
 
 void CommandLineModelChecking::printHelpMessage() {
     std::cout   << std::endl
-                << "NAME:" << std::endl
-                << "    Mudi - Multidimensional model checker" << std::endl
+                << HELP_NAME_LABEL << std::endl
+                << HELP_NAME_MSG   << std::endl
                 << std::endl
-                << "USAGE: " << std::endl
-                << "    bin/Mudi <required-arguments> [<optional-arguments>] <model-checking-type-specific-arguments>" << std::endl;
+                << HELP_USAGE_LABEL << std::endl
+                << HELP_USAGE_MSG   << std::endl;
 
     std::cout << allowedArguments << std::endl;
 }
@@ -315,6 +315,11 @@ const std::string   CommandLineModelChecking::ERR_INVALID_COMMAND_LINE_ARGUMENTS
 const std::string   CommandLineModelChecking::ERR_INVALID_MODEL_CHECKING_ARGUMENTS                              = "The command line arguments provided for the chosen model checking type are invalid. Please run Mudi with the --help flag to determine which arguments you should use.";
 
 const std::string   CommandLineModelChecking::ERR_INVALID_MODEL_CHECKING_TYPE                                   = "The provided model checking type is invalid. Please run Mudi with the --help flag to determine which values you can use.";
+
+const std::string   CommandLineModelChecking::HELP_NAME_LABEL                                                   = "NAME:";
+const std::string   CommandLineModelChecking::HELP_NAME_MSG                                                     = "    Mudi - Multidimensional model checker";
+const std::string   CommandLineModelChecking::HELP_USAGE_LABEL                                                  = "USAGE:";
+const std::string   CommandLineModelChecking::HELP_USAGE_MSG                                                    = "    bin/Mudi <required-arguments> [<optional-arguments>] <model-checking-type-specific-arguments>";
 
 const std::string   CommandLineModelChecking::MSG_MODEL_CHECKING_HELP_REQUESTED                                 = "A request for displaying help information was issued.";
 
