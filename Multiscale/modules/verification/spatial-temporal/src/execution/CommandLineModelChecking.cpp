@@ -4,6 +4,7 @@
 #include "multiscale/verification/spatial-temporal/checking/ProbabilisticBlackBoxModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/StatisticalModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ModelCheckingException.hpp"
+#include "multiscale/verification/spatial-temporal/exception/ModelCheckingHelpRequestException.hpp"
 #include "multiscale/verification/spatial-temporal/execution/CommandLineModelChecking.hpp"
 
 #include <iostream>
@@ -29,6 +30,8 @@ void CommandLineModelChecking::initialise(int argc, char **argv) {
     if (areValidArguments(argc, argv)) {
         initialiseClassMembers();
         printModelCheckingInitialisationMessage();
+    } else if (isHelpArgumentPresent()) {
+        handleHelpRequest();
     } else {
         MS_throw(ModelCheckingException, ERR_INVALID_COMMAND_LINE_ARGUMENTS);
     }
@@ -85,7 +88,7 @@ void CommandLineModelChecking::initialiseModelCheckerTypeSpecificArgumentsConfig
 bool CommandLineModelChecking::areValidArgumentsConsideringConfiguration(int argc, char **argv) {
     po::parsed_options parsedArguments = parseAndStoreArgumentsValues(argc, argv);
 
-    if (areInvalidArguments(parsedArguments)) {
+    if (areInvalidExecutionArguments(parsedArguments)) {
         return false;
     } else {
         // Check if all arguments are present and valid
@@ -104,7 +107,7 @@ po::parsed_options CommandLineModelChecking::parseAndStoreArgumentsValues(int ar
     return parsedOptions;
 }
 
-bool CommandLineModelChecking::areInvalidArguments(const po::parsed_options &parsedArguments) {
+bool CommandLineModelChecking::areInvalidExecutionArguments(const po::parsed_options &parsedArguments) {
     return (
         isHelpArgumentPresent()                             ||
         areUnrecognizedArgumentsPresent(parsedArguments)
@@ -112,19 +115,22 @@ bool CommandLineModelChecking::areInvalidArguments(const po::parsed_options &par
 }
 
 bool CommandLineModelChecking::isHelpArgumentPresent() {
-    if (variablesMap.count("help")) {
-        printHelpMessage();
+    return (variablesMap.count("help"));
+}
 
-        return true;
-    }
+void CommandLineModelChecking::handleHelpRequest() {
+    printHelpMessage();
 
-    return false;
+    MS_throw(ModelCheckingHelpRequestException, MSG_MODEL_CHECKING_HELP_REQUESTED);
 }
 
 void CommandLineModelChecking::printHelpMessage() {
-    std::cout << std::endl
-              << "USAGE: " << std::endl
-              << "    bin/Mudi <required-arguments> [<optional-arguments>] <model-checking-type-specific-arguments>" << std::endl;
+    std::cout   << std::endl
+                << "NAME:" << std::endl
+                << "    Mudi - Multidimensional model checker" << std::endl
+                << std::endl
+                << "USAGE: " << std::endl
+                << "    bin/Mudi <required-arguments> [<optional-arguments>] <model-checking-type-specific-arguments>" << std::endl;
 
     std::cout << allowedArguments << std::endl;
 }
@@ -309,6 +315,8 @@ const std::string   CommandLineModelChecking::ERR_INVALID_COMMAND_LINE_ARGUMENTS
 const std::string   CommandLineModelChecking::ERR_INVALID_MODEL_CHECKING_ARGUMENTS                              = "The command line arguments provided for the chosen model checking type are invalid. Please run Mudi with the --help flag to determine which arguments you should use.";
 
 const std::string   CommandLineModelChecking::ERR_INVALID_MODEL_CHECKING_TYPE                                   = "The provided model checking type is invalid. Please run Mudi with the --help flag to determine which values you can use.";
+
+const std::string   CommandLineModelChecking::MSG_MODEL_CHECKING_HELP_REQUESTED                                 = "A request for displaying help information was issued.";
 
 const std::string   CommandLineModelChecking::MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_NAME                        = "Probabilistic black-box";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_PARAMETERS                  = "None";

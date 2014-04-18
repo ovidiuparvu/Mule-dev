@@ -6,6 +6,7 @@
  * Date modified: 18.03.2014
  */
 
+#include "multiscale/verification/spatial-temporal/exception/ModelCheckingHelpRequestException.hpp"
 #include "multiscale/verification/spatial-temporal/execution/CommandLineModelChecking.hpp"
 
 using namespace multiscale::verification;
@@ -23,6 +24,8 @@ void runModelCheckingTask(int argc, char **argv) {
 int main(int argc, char** argv) {
     try {
         runModelCheckingTask(argc, argv);
+    } catch(const ModelCheckingHelpRequestException &e) {
+        return EXEC_SUCCESS_CODE;
     } catch(const exception &e) {
         ExceptionHandler::printErrorMessage(e);
 

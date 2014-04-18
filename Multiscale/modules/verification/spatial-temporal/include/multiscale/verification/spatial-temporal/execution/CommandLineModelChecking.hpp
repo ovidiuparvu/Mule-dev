@@ -103,14 +103,17 @@ namespace multiscale {
                  */
                 po::parsed_options parseAndStoreArgumentsValues(int argc, char **argv);
 
-                //! Check if any invalid command line arguments were provided
+                //! Check if any invalid execution arguments were provided
                 /*!
                  * \param parsedArguments   The parsed command line arguments
                  */
-                bool areInvalidArguments(const po::parsed_options &parsedArguments);
+                bool areInvalidExecutionArguments(const po::parsed_options &parsedArguments);
 
                 //! Check if the help command line argument is present
                 bool isHelpArgumentPresent();
+
+                //! Handle the help request i.e. if the --help flag was provided
+                void handleHelpRequest();
 
                 //! Print help message to the console
                 void printHelpMessage();
@@ -175,6 +178,8 @@ namespace multiscale {
                 static const std::string    ERR_INVALID_MODEL_CHECKING_ARGUMENTS;
 
                 static const std::string    ERR_INVALID_MODEL_CHECKING_TYPE;
+
+                static const std::string    MSG_MODEL_CHECKING_HELP_REQUESTED;
 
                 static const unsigned int   MODEL_CHECKER_TYPE_PROBABILISTIC_BLACK_BOX;
                 static const unsigned int   MODEL_CHECKER_TYPE_STATISTICAL;
