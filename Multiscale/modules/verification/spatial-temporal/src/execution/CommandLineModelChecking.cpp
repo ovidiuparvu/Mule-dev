@@ -58,7 +58,7 @@ void CommandLineModelChecking::initialiseRequiredArgumentsConfiguration() {
     requiredArguments.add_options()("logic-queries,q"            , po::value<string>()->required()          , "the path to the spatial-temporal queries input file\n")
                                    ("spatial-temporal-traces,t"  , po::value<string>()->required()          , "the path to the folder containing spatial-temporal traces\n")
                                    ("extra-evaluation-time,e"    , po::value<unsigned long>()->required()   , "the maximum number of minutes the application can wait before finishing evaluation\n")
-                                   ("model-checker-type,m"       , po::value<unsigned int>()->required()    , "the type of the model checker (0 = Probabilistic black-box, 1 = Statistical) \n");
+                                   ("model-checker-type,m"       , po::value<unsigned int>()->required()    , "the type of the model checker (0 = Probabilistic black-box, 1 = Statistical, 2 = Bayesian) \n");
 }
 
 void CommandLineModelChecking::initialiseOptionalArgumentsConfiguration() {
@@ -124,7 +124,7 @@ bool CommandLineModelChecking::isHelpArgumentPresent() {
 void CommandLineModelChecking::printHelpMessage() {
     std::cout << std::endl
               << "USAGE: " << std::endl
-              << "    Mudi <required-arguments> [<optional-arguments>] <model-checking-type-specific-arguments>" << std::endl;
+              << "    bin/Mudi <required-arguments> [<optional-arguments>] <model-checking-type-specific-arguments>" << std::endl;
 
     std::cout << allowedArguments << std::endl;
 }
