@@ -188,6 +188,55 @@ namespace multiscale {
 
                 static const std::string    ERR_INVALID_MODEL_CHECKING_TYPE;
 
+                static const std::string    ARG_LOGIC_QUERIES_NAME_LONG;
+                static const std::string    ARG_LOGIC_QUERIES_NAME_BOTH;
+                static const std::string    ARG_LOGIC_QUERIES_DESCRIPTION;
+
+                static const std::string    ARG_SPATIAL_TEMPORAL_TRACES_NAME_LONG;
+                static const std::string    ARG_SPATIAL_TEMPORAL_TRACES_NAME_BOTH;
+                static const std::string    ARG_SPATIAL_TEMPORAL_TRACES_DESCRIPTION;
+                
+                static const std::string    ARG_EXTRA_EVALUATION_TIME_NAME_LONG;
+                static const std::string    ARG_EXTRA_EVALUATION_TIME_NAME_BOTH;
+                static const std::string    ARG_EXTRA_EVALUATION_TIME_DESCRIPTION;
+
+                static const std::string    ARG_MODEL_CHECKER_TYPE_NAME_LONG;
+                static const std::string    ARG_MODEL_CHECKER_TYPE_NAME_BOTH;
+                static const std::string    ARG_MODEL_CHECKER_TYPE_DESCRIPTION;
+
+                static const std::string    ARG_HELP_NAME_LONG;
+                static const std::string    ARG_HELP_NAME_BOTH;
+                static const std::string    ARG_HELP_DESCRIPTION;
+
+                static const std::string    ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG;
+                static const std::string    ARG_EXTRA_EVALUATION_PROGRAM_NAME_BOTH;
+                static const std::string    ARG_EXTRA_EVALUATION_PROGRAM_DESCRIPTION;
+
+                static const std::string    ARG_VERBOSE_NAME_LONG;
+                static const std::string    ARG_VERBOSE_NAME_BOTH;
+                static const std::string    ARG_VERBOSE_DESCRIPTION;
+
+                static const std::string    ARG_TYPE_I_ERROR_NAME_LONG;
+                static const std::string    ARG_TYPE_I_ERROR_DESCRIPTION;
+
+                static const std::string    ARG_TYPE_II_ERROR_NAME_LONG;
+                static const std::string    ARG_TYPE_II_ERROR_DESCRIPTION;
+
+                static const std::string    ARG_DELTA_NAME_LONG;
+                static const std::string    ARG_DELTA_DESCRIPTION;
+
+                static const std::string    ARG_EPSILON_NAME_LONG;
+                static const std::string    ARG_EPSILON_DESCRIPTION;
+
+                static const std::string    ARG_ALPHA_NAME_LONG;
+                static const std::string    ARG_ALPHA_DESCRIPTION;
+
+                static const std::string    ARG_BETA_NAME_LONG;
+                static const std::string    ARG_BETA_DESCRIPTION;
+
+                static const std::string    ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG;
+                static const std::string    ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION;
+
                 static const std::string    HELP_NAME_LABEL;
                 static const std::string    HELP_NAME_MSG;
                 static const std::string    HELP_USAGE_LABEL;

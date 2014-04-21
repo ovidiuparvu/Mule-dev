@@ -60,16 +60,16 @@ void CommandLineModelChecking::initialiseAllowedArgumentsConfiguration() {
 }
 
 void CommandLineModelChecking::initialiseRequiredArgumentsConfiguration() {
-    requiredArguments.add_options()("logic-queries,q"            , po::value<string>()->required()          , "the path to the spatial-temporal queries input file\n")
-                                   ("spatial-temporal-traces,t"  , po::value<string>()->required()          , "the path to the folder containing spatial-temporal traces\n")
-                                   ("extra-evaluation-time,e"    , po::value<unsigned long>()->required()   , "the maximum number of minutes the application can wait before finishing evaluation\n")
-                                   ("model-checker-type,m"       , po::value<unsigned int>()->required()    , "the type of the model checker (0 = Probabilistic black-box, 1 = Statistical, 2 = Approximate probabilistic, 3 = Bayesian)\n");
+    requiredArguments.add_options()(ARG_LOGIC_QUERIES_NAME_BOTH.c_str()             , po::value<string>()->required()          , (ARG_LOGIC_QUERIES_DESCRIPTION + "\n").c_str())
+                                   (ARG_SPATIAL_TEMPORAL_TRACES_NAME_BOTH.c_str()   , po::value<string>()->required()          , (ARG_SPATIAL_TEMPORAL_TRACES_DESCRIPTION + "\n").c_str())
+                                   (ARG_EXTRA_EVALUATION_TIME_NAME_BOTH.c_str()     , po::value<unsigned long>()->required()   , (ARG_EXTRA_EVALUATION_TIME_DESCRIPTION + "\n").c_str())
+                                   (ARG_MODEL_CHECKER_TYPE_NAME_BOTH.c_str()        , po::value<unsigned int>()->required()    , (ARG_MODEL_CHECKER_TYPE_DESCRIPTION + "\n").c_str());
 }
 
 void CommandLineModelChecking::initialiseOptionalArgumentsConfiguration() {
-    optionalArguments.add_options()("help,h"                     , "display help message (describing the meaning and usage of each command line argument)\n")
-                                   ("extra-evaluation-program,p" , po::value<string>()                       , "the program which will be executed whenever extra evaluation (and input traces) is required\n")
-                                   ("verbose,v"                  , po::bool_switch()                         , "if this flag is set detailed evaluation results will be displayed\n");
+    optionalArguments.add_options()(ARG_HELP_NAME_BOTH.c_str()                                              , (ARG_HELP_DESCRIPTION + "\n").c_str())
+                                   (ARG_EXTRA_EVALUATION_PROGRAM_NAME_BOTH.c_str() , po::value<string>()    , (ARG_EXTRA_EVALUATION_PROGRAM_DESCRIPTION + "\n").c_str())
+                                   (ARG_VERBOSE_NAME_BOTH.c_str()                  , po::bool_switch()      , (ARG_VERBOSE_DESCRIPTION + "\n").c_str());
 }
 
 void CommandLineModelChecking::initialiseModelCheckerTypeSpecificArgumentsConfiguration() {
@@ -77,15 +77,15 @@ void CommandLineModelChecking::initialiseModelCheckerTypeSpecificArgumentsConfig
     po::options_description approximateProbabilisticArguments   (CONFIG_CAPTION_APPROXIMATE_PROBABILISTIC_MODEL_CHECKER_ARGUMENTS);
     po::options_description bayesianArguments                   (CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS);
 
-    statisticalArguments                .add_options()("type-I-error",              po::value<double>(), "the probability of type I errors\n")
-                                                      ("type-II-error",             po::value<double>(), "the probability of type II errors\n");
+    statisticalArguments                .add_options()(ARG_TYPE_I_ERROR_NAME_LONG.c_str()           , po::value<double>(), (ARG_TYPE_I_ERROR_DESCRIPTION + "\n").c_str())
+                                                      (ARG_TYPE_II_ERROR_NAME_LONG.c_str()          , po::value<double>(), (ARG_TYPE_II_ERROR_DESCRIPTION + "\n").c_str());
 
-    approximateProbabilisticArguments   .add_options()("delta",                     po::value<double>(), "the upper bound on the probability to deviate from the true probability\n")
-                                                      ("epsilon",                   po::value<double>(), "the considered deviation from the true probability\n");
+    approximateProbabilisticArguments   .add_options()(ARG_DELTA_NAME_LONG.c_str()                  , po::value<double>(), (ARG_DELTA_DESCRIPTION + "\n").c_str())
+                                                      (ARG_EPSILON_NAME_LONG.c_str()                , po::value<double>(), (ARG_EPSILON_DESCRIPTION + "\n").c_str());
 
-    bayesianArguments                   .add_options()("alpha",                     po::value<double>(), "the alpha shape parameter of the Beta distribution prior\n")
-                                                      ("beta",                      po::value<double>(), "the beta shape parameter of the Beta distribution prior\n")
-                                                      ("bayes-factor-threshold",    po::value<double>(), "the Bayes factor threshold used to fix the confidence level of the answer\n");
+    bayesianArguments                   .add_options()(ARG_ALPHA_NAME_LONG.c_str()                  , po::value<double>(), (ARG_ALPHA_DESCRIPTION + "\n").c_str())
+                                                      (ARG_BETA_NAME_LONG.c_str()                   , po::value<double>(), (ARG_BETA_DESCRIPTION + "\n").c_str())
+                                                      (ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG.c_str() , po::value<double>(), (ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION + "\n").c_str());
 
     modelCheckerTypeSpecificArguments.add(statisticalArguments)
                                      .add(approximateProbabilisticArguments)
@@ -122,7 +122,7 @@ bool CommandLineModelChecking::areInvalidExecutionArguments(const po::parsed_opt
 }
 
 bool CommandLineModelChecking::isHelpArgumentPresent() {
-    return (variablesMap.count("help"));
+    return (variablesMap.count(ARG_HELP_NAME_LONG));
 }
 
 void CommandLineModelChecking::handleHelpRequest() {
@@ -160,7 +160,7 @@ bool CommandLineModelChecking::areInvalidModelCheckingArguments() {
 bool CommandLineModelChecking::areInvalidModelCheckingArgumentsPresent() {
     // TODO: Implement a more abstract method which is not so error-prone
 
-    switch (variablesMap["model-checker-type"].as<unsigned int>()) {
+    switch (variablesMap[ARG_MODEL_CHECKER_TYPE_NAME_LONG].as<unsigned int>()) {
         case MODEL_CHECKER_TYPE_PROBABILISTIC_BLACK_BOX:
             return ((areStatisticalModelCheckingArgumentsPresent(false))                ||
                     (areApproximateProbabilisticModelCheckingArgumentsPresent(false))   ||
@@ -193,14 +193,14 @@ bool CommandLineModelChecking::areStatisticalModelCheckingArgumentsPresent(bool 
     if (allArguments) {
         // Are all arguments present?
         return (
-            (variablesMap.count("type-I-error")) &&
-            (variablesMap.count("type-II-error"))
+            (variablesMap.count(ARG_TYPE_I_ERROR_NAME_LONG)) &&
+            (variablesMap.count(ARG_TYPE_II_ERROR_NAME_LONG))
         );
     } else {
         // Is at least one argument present?
         return (
-            (variablesMap.count("type-I-error")) ||
-            (variablesMap.count("type-II-error"))
+            (variablesMap.count(ARG_TYPE_I_ERROR_NAME_LONG)) ||
+            (variablesMap.count(ARG_TYPE_II_ERROR_NAME_LONG))
         );
     }
 }
@@ -209,14 +209,14 @@ bool CommandLineModelChecking::areApproximateProbabilisticModelCheckingArguments
     if (allArguments) {
         // Are all arguments present?
         return (
-            (variablesMap.count("delta")) &&
-            (variablesMap.count("epsilon"))
+            (variablesMap.count(ARG_DELTA_NAME_LONG)) &&
+            (variablesMap.count(ARG_EPSILON_NAME_LONG))
         );
     } else {
         // Is at least one argument present?
         return (
-            (variablesMap.count("delta")) ||
-            (variablesMap.count("epsilon"))
+            (variablesMap.count(ARG_DELTA_NAME_LONG)) ||
+            (variablesMap.count(ARG_EPSILON_NAME_LONG))
         );
     }
 }
@@ -225,16 +225,16 @@ bool CommandLineModelChecking::areBayesianModelCheckingArgumentsPresent(bool all
     if (allArguments) {
         // Are all arguments present?
         return (
-            (variablesMap.count("alpha"))                   &&
-            (variablesMap.count("beta"))                    &&
-            (variablesMap.count("bayes-factor-threshold"))
+            (variablesMap.count(ARG_ALPHA_NAME_LONG))                   &&
+            (variablesMap.count(ARG_BETA_NAME_LONG))                    &&
+            (variablesMap.count(ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG))
         );
     } else {
         // Is at least one argument present?
         return (
-            (variablesMap.count("alpha"))                   ||
-            (variablesMap.count("beta"))                    ||
-            (variablesMap.count("bayes-factor-threshold"))
+            (variablesMap.count(ARG_ALPHA_NAME_LONG))                   ||
+            (variablesMap.count(ARG_BETA_NAME_LONG))                    ||
+            (variablesMap.count(ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG))
         );
     }
 }
@@ -246,19 +246,19 @@ void CommandLineModelChecking::initialiseClassMembers() {
 }
 
 void CommandLineModelChecking::initialiseRequiredArgumentsDependentClassMembers() {
-    logicQueriesFilepath  = variablesMap["logic-queries"].as<string>();
-    tracesFolderPath      = variablesMap["spatial-temporal-traces"].as<string>();
-    extraEvaluationTime   = variablesMap["extra-evaluation-time"].as<unsigned long>();
-    modelCheckerType      = variablesMap["model-checker-type"].as<unsigned int>();
+    logicQueriesFilepath  = variablesMap[ARG_LOGIC_QUERIES_NAME_LONG].as<string>();
+    tracesFolderPath      = variablesMap[ARG_SPATIAL_TEMPORAL_TRACES_NAME_LONG].as<string>();
+    extraEvaluationTime   = variablesMap[ARG_EXTRA_EVALUATION_TIME_NAME_LONG].as<unsigned long>();
+    modelCheckerType      = variablesMap[ARG_MODEL_CHECKER_TYPE_NAME_LONG].as<unsigned int>();
 }
 
 void CommandLineModelChecking::initialiseOptionalArgumentsDependentClassMembers() {
-    if (variablesMap.count("verbose")) {
-        shouldVerboseDetailedResults = variablesMap["verbose"].as<bool>();
+    if (variablesMap.count(ARG_VERBOSE_NAME_LONG)) {
+        shouldVerboseDetailedResults = variablesMap[ARG_VERBOSE_NAME_LONG].as<bool>();
     }
 
-    if (variablesMap.count("extra-evaluation-program")) {
-        extraEvaluationProgramPath = variablesMap["extra-evaluation-program"].as<string>();
+    if (variablesMap.count(ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG)) {
+        extraEvaluationProgramPath = variablesMap[ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG].as<string>();
     }
 }
 
@@ -298,8 +298,8 @@ void CommandLineModelChecking::initialiseProbabilisticBlackBoxModelChecker() {
 }
 
 void CommandLineModelChecking::initialiseStatisticalModelChecker() {
-    double typeIError   = variablesMap["type-I-error"].as<double>();
-    double typeIIError  = variablesMap["type-II-error"].as<double>();
+    double typeIError   = variablesMap[ARG_TYPE_I_ERROR_NAME_LONG].as<double>();
+    double typeIIError  = variablesMap[ARG_TYPE_II_ERROR_NAME_LONG].as<double>();
 
     modelCheckerFactory = make_shared<StatisticalModelCheckerFactory>(typeIError, typeIIError);
 
@@ -314,8 +314,8 @@ void CommandLineModelChecking::initialiseStatisticalModelChecker() {
 }
 
 void CommandLineModelChecking::initialiseApproximateProbabilisticModelChecker() {
-    double delta    = variablesMap["delta"].as<double>();
-    double epsilon  = variablesMap["epsilon"].as<double>();
+    double delta    = variablesMap[ARG_DELTA_NAME_LONG].as<double>();
+    double epsilon  = variablesMap[ARG_EPSILON_NAME_LONG].as<double>();
 
     modelCheckerFactory = make_shared<ApproximateProbabilisticModelCheckerFactory>(delta, epsilon);
 
@@ -330,9 +330,9 @@ void CommandLineModelChecking::initialiseApproximateProbabilisticModelChecker() 
 }
 
 void CommandLineModelChecking::initialiseBayesianModelChecker() {
-    double alpha                = variablesMap["alpha"].as<double>();
-    double beta                 = variablesMap["beta"].as<double>();
-    double bayesFactorThreshold = variablesMap["bayes-factor-threshold"].as<double>();
+    double alpha                = variablesMap[ARG_ALPHA_NAME_LONG].as<double>();
+    double beta                 = variablesMap[ARG_BETA_NAME_LONG].as<double>();
+    double bayesFactorThreshold = variablesMap[ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG].as<double>();
 
     modelCheckerFactory = make_shared<BayesianModelCheckerFactory>(alpha, beta, bayesFactorThreshold);
 
@@ -368,6 +368,55 @@ const std::string   CommandLineModelChecking::ERR_INVALID_COMMAND_LINE_ARGUMENTS
 const std::string   CommandLineModelChecking::ERR_INVALID_MODEL_CHECKING_ARGUMENTS                              = "The command line arguments provided for the chosen model checking type are invalid. Please run Mudi with the --help flag to determine which arguments you should use.";
 
 const std::string   CommandLineModelChecking::ERR_INVALID_MODEL_CHECKING_TYPE                                   = "The provided model checking type is invalid. Please run Mudi with the --help flag to determine which values you can use.";
+
+const std::string   CommandLineModelChecking::ARG_LOGIC_QUERIES_NAME_LONG                                       = "logic-queries";
+const std::string   CommandLineModelChecking::ARG_LOGIC_QUERIES_NAME_BOTH                                       = ARG_LOGIC_QUERIES_NAME_LONG + ",q";
+const std::string   CommandLineModelChecking::ARG_LOGIC_QUERIES_DESCRIPTION                                     = "the path to the spatial-temporal queries input file";
+
+const std::string   CommandLineModelChecking::ARG_SPATIAL_TEMPORAL_TRACES_NAME_LONG                             = "spatial-temporal-traces";
+const std::string   CommandLineModelChecking::ARG_SPATIAL_TEMPORAL_TRACES_NAME_BOTH                             = ARG_SPATIAL_TEMPORAL_TRACES_NAME_LONG + ",t";
+const std::string   CommandLineModelChecking::ARG_SPATIAL_TEMPORAL_TRACES_DESCRIPTION                           = "the path to the folder containing spatial-temporal traces";
+
+const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_TIME_NAME_LONG                               = "extra-evaluation-time";
+const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_TIME_NAME_BOTH                               = ARG_EXTRA_EVALUATION_TIME_NAME_LONG + ",e";
+const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_TIME_DESCRIPTION                             = "the maximum number of minutes the application can wait before finishing evaluation";
+
+const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_NAME_LONG                                  = "model-checker-type";
+const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_NAME_BOTH                                  = ARG_MODEL_CHECKER_TYPE_NAME_LONG + ",m";
+const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_DESCRIPTION                                = "the type of the model checker (0 = Probabilistic black-box, 1 = Statistical, 2 = Approximate probabilistic, 3 = Bayesian)";
+
+const std::string   CommandLineModelChecking::ARG_HELP_NAME_LONG                                                = "help";
+const std::string   CommandLineModelChecking::ARG_HELP_NAME_BOTH                                                = ARG_HELP_NAME_LONG + ",h";
+const std::string   CommandLineModelChecking::ARG_HELP_DESCRIPTION                                              = "display help message (describing the meaning and usage of each command line argument)";
+
+const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG                            = "extra-evaluation-program";
+const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_PROGRAM_NAME_BOTH                            = ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG + ",p";
+const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_PROGRAM_DESCRIPTION                          = "the program which will be executed whenever extra evaluation (and input traces) is required";
+
+const std::string   CommandLineModelChecking::ARG_VERBOSE_NAME_LONG                                             = "verbose";
+const std::string   CommandLineModelChecking::ARG_VERBOSE_NAME_BOTH                                             = ARG_VERBOSE_NAME_LONG + ",v";
+const std::string   CommandLineModelChecking::ARG_VERBOSE_DESCRIPTION                                           = "if this flag is set detailed evaluation results will be displayed";
+
+const std::string   CommandLineModelChecking::ARG_TYPE_I_ERROR_NAME_LONG                                        = "type-I-error";
+const std::string   CommandLineModelChecking::ARG_TYPE_I_ERROR_DESCRIPTION                                      = "the probability of type I errors";
+
+const std::string   CommandLineModelChecking::ARG_TYPE_II_ERROR_NAME_LONG                                       = "type-II-error";
+const std::string   CommandLineModelChecking::ARG_TYPE_II_ERROR_DESCRIPTION                                     = "the probability of type II errors";
+
+const std::string   CommandLineModelChecking::ARG_DELTA_NAME_LONG                                               = "delta";
+const std::string   CommandLineModelChecking::ARG_DELTA_DESCRIPTION                                             = "the upper bound on the probability to deviate from the true probability";
+
+const std::string   CommandLineModelChecking::ARG_EPSILON_NAME_LONG                                             = "epsilon";
+const std::string   CommandLineModelChecking::ARG_EPSILON_DESCRIPTION                                           = "the considered deviation from the true probability";
+
+const std::string   CommandLineModelChecking::ARG_ALPHA_NAME_LONG                                               = "alpha";
+const std::string   CommandLineModelChecking::ARG_ALPHA_DESCRIPTION                                             = "the alpha shape parameter of the Beta distribution prior";
+
+const std::string   CommandLineModelChecking::ARG_BETA_NAME_LONG                                                = "beta";
+const std::string   CommandLineModelChecking::ARG_BETA_DESCRIPTION                                              = "the beta shape parameter of the Beta distribution prior";
+
+const std::string   CommandLineModelChecking::ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG                              = "bayes-factor-threshold";
+const std::string   CommandLineModelChecking::ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION                            = "the Bayes factor threshold used to fix the confidence level of the answer";
 
 const std::string   CommandLineModelChecking::HELP_NAME_LABEL                                                   = "NAME:";
 const std::string   CommandLineModelChecking::HELP_NAME_MSG                                                     = "    Mudi - Multidimensional model checker";
