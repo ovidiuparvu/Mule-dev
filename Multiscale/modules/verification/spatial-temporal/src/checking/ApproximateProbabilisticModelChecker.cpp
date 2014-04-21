@@ -3,9 +3,6 @@
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ApproximateProbabilisticModelChecker.hpp"
 
-// TODO: Remove
-#include <iostream>
-
 using namespace multiscale;
 using namespace multiscale::verification;
 
@@ -85,10 +82,6 @@ void ApproximateProbabilisticModelChecker::initialiseNumberOfRequiredTraces() {
     double secondTerm   = std::log(2 / delta);
 
     nrOfRequiredTraces = static_cast<unsigned int>(std::ceil(firstTerm * secondTerm));
-
-    // TODO: Remove
-    std::cout << "Epsilon: " << epsilon << ", delta: " << delta << "." << std::endl;
-    std::cout << "The number of required traces is: " << nrOfRequiredTraces << "." << std::endl;
 }
 
 bool ApproximateProbabilisticModelChecker::doesPropertyHoldConsideringProbabilityComparator() {
