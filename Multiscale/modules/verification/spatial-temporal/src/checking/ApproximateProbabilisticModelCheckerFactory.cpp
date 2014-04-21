@@ -1,0 +1,16 @@
+#include "multiscale/verification/spatial-temporal/checking/ApproximateProbabilisticModelChecker.hpp"
+#include "multiscale/verification/spatial-temporal/checking/ApproximateProbabilisticModelCheckerFactory.hpp"
+
+using namespace multiscale::verification;
+
+
+ApproximateProbabilisticModelCheckerFactory::ApproximateProbabilisticModelCheckerFactory(double delta, double epsilon)
+                                                                                        : delta(delta),
+                                                                                          epsilon(epsilon) {}
+
+ApproximateProbabilisticModelCheckerFactory::~ApproximateProbabilisticModelCheckerFactory() {}
+
+std::shared_ptr<ModelChecker> ApproximateProbabilisticModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree) {
+    return make_shared<ApproximateProbabilisticModelChecker>(abstractSyntaxTree,
+                                                             delta, epsilon);
+}

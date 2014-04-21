@@ -1,5 +1,6 @@
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/StringManipulator.hpp"
+#include "multiscale/verification/spatial-temporal/checking/ApproximateProbabilisticModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/BayesianModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ProbabilisticBlackBoxModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/StatisticalModelCheckerFactory.hpp"
@@ -15,7 +16,8 @@ using namespace multiscale::verification;
 // Constants which need to be defined prior to some methods
 const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHECKER_TYPE_PROBABILISTIC_BLACK_BOX   = 0;
 const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHECKER_TYPE_STATISTICAL               = 1;
-const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHECKER_TYPE_BAYESIAN                  = 2;
+const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHECKER_TYPE_APPROXIMATE_PROBABILISTIC = 2;
+const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHECKER_TYPE_BAYESIAN                  = 3;
 
 
 CommandLineModelChecking::CommandLineModelChecking()
@@ -61,7 +63,7 @@ void CommandLineModelChecking::initialiseRequiredArgumentsConfiguration() {
     requiredArguments.add_options()("logic-queries,q"            , po::value<string>()->required()          , "the path to the spatial-temporal queries input file\n")
                                    ("spatial-temporal-traces,t"  , po::value<string>()->required()          , "the path to the folder containing spatial-temporal traces\n")
                                    ("extra-evaluation-time,e"    , po::value<unsigned long>()->required()   , "the maximum number of minutes the application can wait before finishing evaluation\n")
-                                   ("model-checker-type,m"       , po::value<unsigned int>()->required()    , "the type of the model checker (0 = Probabilistic black-box, 1 = Statistical, 2 = Bayesian) \n");
+                                   ("model-checker-type,m"       , po::value<unsigned int>()->required()    , "the type of the model checker (0 = Probabilistic black-box, 1 = Statistical, 2 = Approximate probabilistic, 3 = Bayesian)\n");
 }
 
 void CommandLineModelChecking::initialiseOptionalArgumentsConfiguration() {
@@ -71,17 +73,22 @@ void CommandLineModelChecking::initialiseOptionalArgumentsConfiguration() {
 }
 
 void CommandLineModelChecking::initialiseModelCheckerTypeSpecificArgumentsConfiguration() {
-    po::options_description statisticalArguments(CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS);
-    po::options_description bayesianArguments   (CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS);
+    po::options_description statisticalArguments                (CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS);
+    po::options_description approximateProbabilisticArguments   (CONFIG_CAPTION_APPROXIMATE_PROBABILISTIC_MODEL_CHECKER_ARGUMENTS);
+    po::options_description bayesianArguments                   (CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS);
 
-    statisticalArguments.add_options()("type-I-error",  po::value<double>(), "the probability of type I errors\n")
-                                      ("type-II-error", po::value<double>(), "the probability of type II errors\n");
+    statisticalArguments                .add_options()("type-I-error",              po::value<double>(), "the probability of type I errors\n")
+                                                      ("type-II-error",             po::value<double>(), "the probability of type II errors\n");
 
-    bayesianArguments   .add_options()("alpha",                     po::value<double>(), "the alpha shape parameter of the Beta distribution prior\n")
-                                      ("beta",                      po::value<double>(), "the beta shape parameter of the Beta distribution prior\n")
-                                      ("bayes-factor-threshold",    po::value<double>(), "the Bayes factor threshold used to fix the confidence level of the answer\n");
+    approximateProbabilisticArguments   .add_options()("delta",                     po::value<double>(), "the upper bound on the probability to deviate from the true probability\n")
+                                                      ("epsilon",                   po::value<double>(), "the considered deviation from the true probability\n");
+
+    bayesianArguments                   .add_options()("alpha",                     po::value<double>(), "the alpha shape parameter of the Beta distribution prior\n")
+                                                      ("beta",                      po::value<double>(), "the beta shape parameter of the Beta distribution prior\n")
+                                                      ("bayes-factor-threshold",    po::value<double>(), "the Bayes factor threshold used to fix the confidence level of the answer\n");
 
     modelCheckerTypeSpecificArguments.add(statisticalArguments)
+                                     .add(approximateProbabilisticArguments)
                                      .add(bayesianArguments);
 }
 
@@ -151,18 +158,28 @@ bool CommandLineModelChecking::areInvalidModelCheckingArguments() {
 }
 
 bool CommandLineModelChecking::areInvalidModelCheckingArgumentsPresent() {
+    // TODO: Implement a more abstract method which is not so error-prone
+
     switch (variablesMap["model-checker-type"].as<unsigned int>()) {
         case MODEL_CHECKER_TYPE_PROBABILISTIC_BLACK_BOX:
-            return ((areStatisticalModelCheckingArgumentsPresent(false)) ||
+            return ((areStatisticalModelCheckingArgumentsPresent(false))                ||
+                    (areApproximateProbabilisticModelCheckingArgumentsPresent(false))   ||
                     (areBayesianModelCheckingArgumentsPresent(false)));
 
         case MODEL_CHECKER_TYPE_STATISTICAL:
-            return ((!areStatisticalModelCheckingArgumentsPresent(true)) ||
+            return ((!areStatisticalModelCheckingArgumentsPresent(true))                ||
+                    (areApproximateProbabilisticModelCheckingArgumentsPresent(false))   ||
+                    (areBayesianModelCheckingArgumentsPresent(false)));
+
+        case MODEL_CHECKER_TYPE_APPROXIMATE_PROBABILISTIC:
+            return ((!areApproximateProbabilisticModelCheckingArgumentsPresent(true))   ||
+                    (areStatisticalModelCheckingArgumentsPresent(false))                ||
                     (areBayesianModelCheckingArgumentsPresent(false)));
 
         case MODEL_CHECKER_TYPE_BAYESIAN:
-            return ((!areBayesianModelCheckingArgumentsPresent(true)) ||
-                    (areStatisticalModelCheckingArgumentsPresent(false)));
+            return ((!areBayesianModelCheckingArgumentsPresent(true))                   ||
+                    (areStatisticalModelCheckingArgumentsPresent(false))                ||
+                    (areApproximateProbabilisticModelCheckingArgumentsPresent(false)));
 
         default:
             MS_throw(InvalidInputException, ERR_INVALID_MODEL_CHECKING_TYPE);
@@ -184,6 +201,22 @@ bool CommandLineModelChecking::areStatisticalModelCheckingArgumentsPresent(bool 
         return (
             (variablesMap.count("type-I-error")) ||
             (variablesMap.count("type-II-error"))
+        );
+    }
+}
+
+bool CommandLineModelChecking::areApproximateProbabilisticModelCheckingArgumentsPresent(bool allArguments) {
+    if (allArguments) {
+        // Are all arguments present?
+        return (
+            (variablesMap.count("delta")) &&
+            (variablesMap.count("epsilon"))
+        );
+    } else {
+        // Is at least one argument present?
+        return (
+            (variablesMap.count("delta")) ||
+            (variablesMap.count("epsilon"))
         );
     }
 }
@@ -244,6 +277,10 @@ void CommandLineModelChecking::initialiseModelChecker() {
             initialiseStatisticalModelChecker();
             break;
 
+        case MODEL_CHECKER_TYPE_APPROXIMATE_PROBABILISTIC:
+            initialiseApproximateProbabilisticModelChecker();
+            break;
+
         case MODEL_CHECKER_TYPE_BAYESIAN:
             initialiseBayesianModelChecker();
             break;
@@ -273,6 +310,22 @@ void CommandLineModelChecking::initialiseStatisticalModelChecker() {
         MODEL_CHECKER_STATISTICAL_PARAMETERS_MIDDLE +
         StringManipulator::toString(typeIIError) +
         MODEL_CHECKER_STATISTICAL_PARAMETERS_END
+    );
+}
+
+void CommandLineModelChecking::initialiseApproximateProbabilisticModelChecker() {
+    double delta    = variablesMap["delta"].as<double>();
+    double epsilon  = variablesMap["epsilon"].as<double>();
+
+    modelCheckerFactory = make_shared<ApproximateProbabilisticModelCheckerFactory>(delta, epsilon);
+
+    modelCheckerTypeName    = MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_NAME;
+    modelCheckerParameters  = (
+        MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_PARAMETERS_BEGIN +
+        StringManipulator::toString(delta) +
+        MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_PARAMETERS_MIDDLE +
+        StringManipulator::toString(epsilon) +
+        MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_PARAMETERS_END
     );
 }
 
@@ -327,9 +380,14 @@ const std::string   CommandLineModelChecking::MODEL_CHECKER_PROBABILISTIC_BLACK_
 const std::string   CommandLineModelChecking::MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_PARAMETERS                  = "None";
 
 const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_NAME                                    = "Statistical";
-const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_PARAMETERS_BEGIN                        = "Probability of type I errors (false positives) = ";
-const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_PARAMETERS_MIDDLE                       = " and of type II errors (false negatives) = ";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_PARAMETERS_BEGIN                        = "Probability of type I errors (false negatives) = ";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_PARAMETERS_MIDDLE                       = " and of type II errors (false positives) = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_PARAMETERS_END                          = ".";
+
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_NAME                      = "Approximate probabilistic";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_PARAMETERS_BEGIN          = "Upper bound on probability to deviate more than epsilon = ";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_PARAMETERS_MIDDLE         = " from the true probability is delta = ";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_PARAMETERS_END            = ".";
 
 const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_NAME                                       = "Bayesian";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_PARAMETERS_BEGIN                           = "Beta distribution prior shape parameters alpha = ";
@@ -340,8 +398,9 @@ const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_PARAMETERS_
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_ALLOWED_ARGUMENTS                                  = "";
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_REQUIRED_ARGUMENTS                                 = "REQUIRED ARGUMENTS";
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_OPTIONAL_ARGUMENTS                                 = "OPTIONAL ARGUMENTS";
-const std::string   CommandLineModelChecking::CONFIG_CAPTION_MODEL_CHECKER_TYPE_SPECIFIC_ARGUMENTS              = "REQUIRED ARGUMENTS SPECIFIC TO MODEL CHECKER TYPE";
+const std::string   CommandLineModelChecking::CONFIG_CAPTION_MODEL_CHECKER_TYPE_SPECIFIC_ARGUMENTS              = "MODEL CHECKING TYPE SPECIFIC ARGUMENTS";
 
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_PROBABILISTIC_BLACK_BOX_MODEL_CHECKER_ARGUMENTS    = "Probabilistic black-box";
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS                = "Statistical";
+const std::string   CommandLineModelChecking::CONFIG_CAPTION_APPROXIMATE_PROBABILISTIC_MODEL_CHECKER_ARGUMENTS  = "Approximate probabilistic";
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS                   = "Bayesian";

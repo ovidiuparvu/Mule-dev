@@ -41,6 +41,8 @@ set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     src/attribute/UnaryNumericMeasureAttribute.cpp
     src/attribute/UnarySubsetMeasureAttribute.cpp
 
+    src/checking/ApproximateProbabilisticModelChecker.cpp
+    src/checking/ApproximateProbabilisticModelCheckerFactory.cpp    
     src/checking/BayesianModelChecker.cpp
     src/checking/BayesianModelCheckerFactory.cpp    
     src/checking/ModelChecker.cpp
