@@ -46,8 +46,8 @@ namespace multiscale {
                 double probability;                 /*!< The probability specified by the user for the
                                                          logic property to be evaluated */
 
-                double alpha;                       /*!< The shape parameter \f$ \alpha \f$ for the beta distribution prior */
-                double beta;                        /*!< The shape parameter \f$ \beta \f$ for the beta distribution prior */
+                double alpha;                       /*!< The shape parameter \f$ \alpha \f$ for the Beta distribution prior */
+                double beta;                        /*!< The shape parameter \f$ \beta \f$ for the Beta distribution prior */
 
                 double bayesFactorThreshold;        /*!< The Bayes factor threshold */
                 double bayesFactorThresholdInverse; /*!< The Bayes factor threshold to the power "-1" */
@@ -93,8 +93,8 @@ namespace multiscale {
                 //! Validate the input parameters \f$ \alpha \f$, \f$ \beta \f$ and the Bayes factor threshold
                 /*! \f$ \alpha \f$ and \f$ \beta \f$ should be greater than zero, and Bayes factor threshold should be greater than 1
                  *
-                 * \param alpha                 The shape parameter \f$ \alpha \f$ for the beta distribution
-                 * \param beta                  The shape parameter \f$ \beta \f$ for the beta distribution
+                 * \param alpha                 The shape parameter \f$ \alpha \f$ for the Beta distribution
+                 * \param beta                  The shape parameter \f$ \beta \f$ for the Beta distribution
                  * \param bayesFactorThreshold  The Bayes factor threshold
                  */
                 void validateInput(double alpha, double beta, double bayesFactorThreshold);
@@ -102,8 +102,8 @@ namespace multiscale {
                 //! Validate the shape parameters \f$ \alpha \f$ and \f$ \beta \f$
                 /*! \f$ \alpha \f$ and \f$ \beta \f$ should be greater than zero
                  *
-                 * \param alpha The shape parameter \f$ \alpha \f$ for the beta distribution
-                 * \param beta  The shape parameter \f$ \beta \f$ for the beta distribution
+                 * \param alpha The shape parameter \f$ \alpha \f$ for the Beta distribution
+                 * \param beta  The shape parameter \f$ \beta \f$ for the Beta distribution
                  */
                 void validateShapeParameters(double alpha, double beta);
 

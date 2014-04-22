@@ -26,8 +26,8 @@ namespace multiscale {
             //! Validate the shape parameters \f$ \alpha \f$ and \f$ \beta \f$
             /*! \f$ \alpha \f$ and \f$ \beta \f$ should be greater than zero
              *
-             * \param alpha The shape parameter \f$ \alpha \f$ for the beta distribution
-             * \param beta  The shape parameter \f$ \beta \f$ for the beta distribution
+             * \param alpha The shape parameter \f$ \alpha \f$ for the Beta distribution
+             * \param beta  The shape parameter \f$ \beta \f$ for the Beta distribution
              */
             static void validateShapeParameters(double alpha, double beta);
 

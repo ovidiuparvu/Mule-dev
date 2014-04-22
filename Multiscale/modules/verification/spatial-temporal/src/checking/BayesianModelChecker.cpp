@@ -200,16 +200,16 @@ bool BayesianModelChecker::doesPropertyHoldConsideringProbabilityComparator(bool
 // Constants
 const std::string BayesianModelChecker::ERR_UNEXPECTED_MODEL_CHECKING_RESULT    = "An invalid Bayesian model checking result was obtained. Please check source code.";
 
-const std::string BayesianModelChecker::ERR_SHAPE_PARAMETERS_BEGIN              = "The provided beta distribution shape parameters alpha and beta (";
+const std::string BayesianModelChecker::ERR_SHAPE_PARAMETERS_BEGIN              = "The provided Beta distribution shape parameters alpha and beta (";
 const std::string BayesianModelChecker::ERR_SHAPE_PARAMETERS_MIDDLE             = ", ";
 const std::string BayesianModelChecker::ERR_SHAPE_PARAMETERS_END                = ") should be greater than zero. Please change.";
 
 const std::string BayesianModelChecker::ERR_BAYES_FACTOR_THRESHOLD_BEGIN        = "The provided Bayes factor threshold (";
 const std::string BayesianModelChecker::ERR_BAYES_FACTOR_THRESHOLD_END          = ") should be greater than one. Please change.";
 
-const std::string BayesianModelChecker::MSG_OUTPUT_MORE_TRACES_REQUIRED         = "More traces are required to provide a true/false answer assuming the given beta distribution shape parameters and Bayes factor threshold value. Probabilistic black-box model checking was used instead to provide an answer.";
+const std::string BayesianModelChecker::MSG_OUTPUT_MORE_TRACES_REQUIRED         = "More traces are required to provide a true/false answer assuming the given Beta distribution shape parameters and Bayes factor threshold value. Probabilistic black-box model checking was used instead to provide an answer.";
 
-const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_BEGIN                 = "The provided answer is given for the beta distribution shape parameters alpha = ";
+const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_BEGIN                 = "The provided answer is given for the Beta distribution shape parameters alpha = ";
 const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_MIDDLE1               = " and beta = ";
 const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_MIDDLE2               = ", and Bayes factor threshold value = ";
 const std::string BayesianModelChecker::MSG_OUTPUT_RESULT_MIDDLE3               = ". The type I error upper bound for the provided answer is = ";

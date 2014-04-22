@@ -18,6 +18,7 @@ const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHE
 const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHECKER_TYPE_STATISTICAL               = 1;
 const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHECKER_TYPE_APPROXIMATE_PROBABILISTIC = 2;
 const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHECKER_TYPE_BAYESIAN                  = 3;
+const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHECKER_TYPE_APPROXIMATE_BAYESIAN      = 4;
 
 
 CommandLineModelChecking::CommandLineModelChecking()
@@ -424,7 +425,7 @@ const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_TIME_DESCRIPT
 
 const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_NAME_LONG                                  = "model-checker-type";
 const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_NAME_BOTH                                  = ARG_MODEL_CHECKER_TYPE_NAME_LONG + ",m";
-const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_DESCRIPTION                                = "the type of the model checker (0 = Probabilistic black-box, 1 = Statistical, 2 = Approximate probabilistic, 3 = Bayesian)";
+const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_DESCRIPTION                                = "the type of the model checker (0 = Probabilistic black-box, 1 = Statistical, 2 = Approximate probabilistic, 3 = Bayesian, 4 = Approximate Bayesian)";
 
 const std::string   CommandLineModelChecking::ARG_HELP_NAME_LONG                                                = "help";
 const std::string   CommandLineModelChecking::ARG_HELP_NAME_BOTH                                                = ARG_HELP_NAME_LONG + ",h";
@@ -459,6 +460,9 @@ const std::string   CommandLineModelChecking::ARG_BETA_DESCRIPTION              
 const std::string   CommandLineModelChecking::ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG                              = "bayes-factor-threshold";
 const std::string   CommandLineModelChecking::ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION                            = "the Bayes factor threshold used to fix the confidence level of the answer";
 
+const std::string   CommandLineModelChecking::ARG_VARIANCE_THRESHOLD_NAME_LONG                                  = "variance-threshold";
+const std::string   CommandLineModelChecking::ARG_VARIANCE_THRESHOLD_DESCRIPTION                                = "the variance threshold used to fix the confidence level of the answer";
+
 const std::string   CommandLineModelChecking::HELP_NAME_LABEL                                                   = "NAME:";
 const std::string   CommandLineModelChecking::HELP_NAME_MSG                                                     = "    Mudi - Multidimensional model checker";
 const std::string   CommandLineModelChecking::HELP_USAGE_LABEL                                                  = "USAGE:";
@@ -485,6 +489,12 @@ const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_PARAMETERS_
 const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_PARAMETERS_MIDDLE2                         = ". Bayes factor threshold = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_PARAMETERS_END                             = ".";
 
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_NAME                           = "Approximate Bayesian";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_BEGIN               = "Beta distribution prior shape parameters alpha = ";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_MIDDLE1             = " and beta = ";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_MIDDLE2             = ". Variance threshold = ";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_END                 = ".";
+
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_ALLOWED_ARGUMENTS                                  = "";
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_REQUIRED_ARGUMENTS                                 = "REQUIRED ARGUMENTS";
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_OPTIONAL_ARGUMENTS                                 = "OPTIONAL ARGUMENTS";
@@ -494,3 +504,4 @@ const std::string   CommandLineModelChecking::CONFIG_CAPTION_PROBABILISTIC_BLACK
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS                = "Statistical";
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_APPROXIMATE_PROBABILISTIC_MODEL_CHECKER_ARGUMENTS  = "Approximate probabilistic";
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS                   = "Bayesian";
+const std::string   CommandLineModelChecking::CONFIG_CAPTION_APPROXIMATE_BAYESIAN_MODEL_CHECKER_ARGUMENTS       = "Approximate Bayesian";

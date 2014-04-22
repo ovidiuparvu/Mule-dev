@@ -37,6 +37,6 @@ double BetaDistribution::computeCdf(double alpha, double beta, double probabilit
 
 
 // Constants
-const std::string BetaDistribution::ERR_SHAPE_PARAMETERS_BEGIN  = "The provided beta distribution shape parameters alpha and beta (";
+const std::string BetaDistribution::ERR_SHAPE_PARAMETERS_BEGIN  = "The provided Beta distribution shape parameters alpha and beta (";
 const std::string BetaDistribution::ERR_SHAPE_PARAMETERS_MIDDLE = ", ";
 const std::string BetaDistribution::ERR_SHAPE_PARAMETERS_END    = ") should be greater than zero. Please change.";

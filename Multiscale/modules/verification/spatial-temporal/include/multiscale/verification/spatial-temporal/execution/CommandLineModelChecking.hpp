@@ -291,6 +291,9 @@ namespace multiscale {
                 static const std::string    ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG;
                 static const std::string    ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION;
 
+                static const std::string    ARG_VARIANCE_THRESHOLD_NAME_LONG;
+                static const std::string    ARG_VARIANCE_THRESHOLD_DESCRIPTION;
+
                 static const std::string    HELP_NAME_LABEL;
                 static const std::string    HELP_NAME_MSG;
                 static const std::string    HELP_USAGE_LABEL;
@@ -302,6 +305,7 @@ namespace multiscale {
                 static const unsigned int   MODEL_CHECKER_TYPE_STATISTICAL;
                 static const unsigned int   MODEL_CHECKER_TYPE_APPROXIMATE_PROBABILISTIC;
                 static const unsigned int   MODEL_CHECKER_TYPE_BAYESIAN;
+                static const unsigned int   MODEL_CHECKER_TYPE_APPROXIMATE_BAYESIAN;
 
                 static const std::string    MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_NAME;
                 static const std::string    MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_PARAMETERS;
@@ -322,6 +326,12 @@ namespace multiscale {
                 static const std::string    MODEL_CHECKER_BAYESIAN_PARAMETERS_MIDDLE2;
                 static const std::string    MODEL_CHECKER_BAYESIAN_PARAMETERS_END;
 
+                static const std::string    MODEL_CHECKER_APPROXIMATE_BAYESIAN_NAME;
+                static const std::string    MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_BEGIN;
+                static const std::string    MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_MIDDLE1;
+                static const std::string    MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_MIDDLE2;
+                static const std::string    MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_END;
+
                 static const std::string    CONFIG_CAPTION_ALLOWED_ARGUMENTS;
                 static const std::string    CONFIG_CAPTION_REQUIRED_ARGUMENTS;
                 static const std::string    CONFIG_CAPTION_OPTIONAL_ARGUMENTS;
@@ -331,6 +341,7 @@ namespace multiscale {
                 static const std::string    CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS;
                 static const std::string    CONFIG_CAPTION_APPROXIMATE_PROBABILISTIC_MODEL_CHECKER_ARGUMENTS;
                 static const std::string    CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS;
+                static const std::string    CONFIG_CAPTION_APPROXIMATE_BAYESIAN_MODEL_CHECKER_ARGUMENTS;
 
         };
 
