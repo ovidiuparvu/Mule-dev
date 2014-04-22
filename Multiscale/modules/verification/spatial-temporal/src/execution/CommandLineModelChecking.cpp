@@ -158,85 +158,126 @@ bool CommandLineModelChecking::areInvalidModelCheckingArguments() {
 }
 
 bool CommandLineModelChecking::areInvalidModelCheckingArgumentsPresent() {
-    // TODO: Implement a more abstract method which is not so error-prone
+    po::variables_map variablesMapCopy = variablesMap;
+    unsigned int      modelCheckerType = variablesMap[ARG_MODEL_CHECKER_TYPE_NAME_LONG].as<unsigned int>();
 
-    switch (variablesMap[ARG_MODEL_CHECKER_TYPE_NAME_LONG].as<unsigned int>()) {
+    removeRequiredArguments(variablesMapCopy);
+    removeOptionalArguments(variablesMapCopy);
+
+    return areInvalidModelCheckingTypeSpecificArguments(modelCheckerType, variablesMapCopy);
+}
+
+void CommandLineModelChecking::removeRequiredArguments(po::variables_map &variablesMap) {
+    variablesMap.erase(ARG_LOGIC_QUERIES_NAME_LONG);
+    variablesMap.erase(ARG_SPATIAL_TEMPORAL_TRACES_NAME_LONG);
+    variablesMap.erase(ARG_EXTRA_EVALUATION_TIME_NAME_LONG);
+    variablesMap.erase(ARG_MODEL_CHECKER_TYPE_NAME_LONG);
+}
+
+void CommandLineModelChecking::removeOptionalArguments(po::variables_map &variablesMap) {
+    if (variablesMap.count(ARG_HELP_NAME_LONG)) {
+        variablesMap.erase(ARG_HELP_NAME_LONG);
+    }
+
+    if (variablesMap.count(ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG)) {
+        variablesMap.erase(ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG);
+    }
+
+    if (variablesMap.count(ARG_VERBOSE_NAME_LONG)) {
+        variablesMap.erase(ARG_VERBOSE_NAME_LONG);
+    }
+}
+
+bool CommandLineModelChecking::areInvalidModelCheckingTypeSpecificArguments(unsigned int modelCheckerType,
+                                                                            po::variables_map &variablesMap) {
+    if (areModelCheckingTypeSpecificArgumentsPresent(modelCheckerType, variablesMap)) {
+        removeModelCheckingTypeSpecificArguments(modelCheckerType, variablesMap);
+
+        return (variablesMap.size() > 0);
+    } else {
+        return true;
+    }
+}
+
+bool CommandLineModelChecking::areModelCheckingTypeSpecificArgumentsPresent(unsigned int modelCheckerType,
+                                                                            const po::variables_map &variablesMap) {
+    switch (modelCheckerType) {
         case MODEL_CHECKER_TYPE_PROBABILISTIC_BLACK_BOX:
-            return ((areStatisticalModelCheckingArgumentsPresent(false))                ||
-                    (areApproximateProbabilisticModelCheckingArgumentsPresent(false))   ||
-                    (areBayesianModelCheckingArgumentsPresent(false)));
+            return true;
 
         case MODEL_CHECKER_TYPE_STATISTICAL:
-            return ((!areStatisticalModelCheckingArgumentsPresent(true))                ||
-                    (areApproximateProbabilisticModelCheckingArgumentsPresent(false))   ||
-                    (areBayesianModelCheckingArgumentsPresent(false)));
+            return areStatisticalModelCheckingArgumentsPresent(variablesMap);
 
         case MODEL_CHECKER_TYPE_APPROXIMATE_PROBABILISTIC:
-            return ((!areApproximateProbabilisticModelCheckingArgumentsPresent(true))   ||
-                    (areStatisticalModelCheckingArgumentsPresent(false))                ||
-                    (areBayesianModelCheckingArgumentsPresent(false)));
+            return areApproximateProbabilisticModelCheckingArgumentsPresent(variablesMap);
 
         case MODEL_CHECKER_TYPE_BAYESIAN:
-            return ((!areBayesianModelCheckingArgumentsPresent(true))                   ||
-                    (areStatisticalModelCheckingArgumentsPresent(false))                ||
-                    (areApproximateProbabilisticModelCheckingArgumentsPresent(false)));
+            return areBayesianModelCheckingArgumentsPresent(variablesMap);
 
         default:
             MS_throw(InvalidInputException, ERR_INVALID_MODEL_CHECKING_TYPE);
     }
-
-    // Line added to avoid "control reaches end of non-void function" warnings
-    return false;
 }
 
-bool CommandLineModelChecking::areStatisticalModelCheckingArgumentsPresent(bool allArguments) {
-    if (allArguments) {
-        // Are all arguments present?
-        return (
-            (variablesMap.count(ARG_TYPE_I_ERROR_NAME_LONG)) &&
-            (variablesMap.count(ARG_TYPE_II_ERROR_NAME_LONG))
-        );
-    } else {
-        // Is at least one argument present?
-        return (
-            (variablesMap.count(ARG_TYPE_I_ERROR_NAME_LONG)) ||
-            (variablesMap.count(ARG_TYPE_II_ERROR_NAME_LONG))
-        );
+bool CommandLineModelChecking::areStatisticalModelCheckingArgumentsPresent(const po::variables_map &variablesMap) {
+    return (
+        (variablesMap.count(ARG_TYPE_I_ERROR_NAME_LONG))    &&
+        (variablesMap.count(ARG_TYPE_II_ERROR_NAME_LONG))
+    );
+}
+
+bool CommandLineModelChecking::areApproximateProbabilisticModelCheckingArgumentsPresent(const po::variables_map &variablesMap) {
+    return (
+        (variablesMap.count(ARG_DELTA_NAME_LONG))   &&
+        (variablesMap.count(ARG_EPSILON_NAME_LONG))
+    );
+}
+
+bool CommandLineModelChecking::areBayesianModelCheckingArgumentsPresent(const po::variables_map &variablesMap) {
+    return (
+        (variablesMap.count(ARG_ALPHA_NAME_LONG))                   &&
+        (variablesMap.count(ARG_BETA_NAME_LONG))                    &&
+        (variablesMap.count(ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG))
+    );
+}
+
+void CommandLineModelChecking::removeModelCheckingTypeSpecificArguments(unsigned int modelCheckerType,
+                                                                        po::variables_map &variablesMap) {
+    switch (modelCheckerType) {
+        case MODEL_CHECKER_TYPE_PROBABILISTIC_BLACK_BOX:
+            break;
+
+        case MODEL_CHECKER_TYPE_STATISTICAL:
+            removeStatisticalModelCheckingArguments(variablesMap);
+            break;
+
+        case MODEL_CHECKER_TYPE_APPROXIMATE_PROBABILISTIC:
+            removeApproximateProbabilisticModelCheckingArguments(variablesMap);
+            break;
+
+        case MODEL_CHECKER_TYPE_BAYESIAN:
+            removeBayesianModelCheckingArguments(variablesMap);
+            break;
+
+        default:
+            MS_throw(InvalidInputException, ERR_INVALID_MODEL_CHECKING_TYPE);
     }
 }
 
-bool CommandLineModelChecking::areApproximateProbabilisticModelCheckingArgumentsPresent(bool allArguments) {
-    if (allArguments) {
-        // Are all arguments present?
-        return (
-            (variablesMap.count(ARG_DELTA_NAME_LONG)) &&
-            (variablesMap.count(ARG_EPSILON_NAME_LONG))
-        );
-    } else {
-        // Is at least one argument present?
-        return (
-            (variablesMap.count(ARG_DELTA_NAME_LONG)) ||
-            (variablesMap.count(ARG_EPSILON_NAME_LONG))
-        );
-    }
+void CommandLineModelChecking::removeStatisticalModelCheckingArguments(po::variables_map &variablesMap) {
+    variablesMap.erase(ARG_TYPE_I_ERROR_NAME_LONG);
+    variablesMap.erase(ARG_TYPE_II_ERROR_NAME_LONG);
 }
 
-bool CommandLineModelChecking::areBayesianModelCheckingArgumentsPresent(bool allArguments) {
-    if (allArguments) {
-        // Are all arguments present?
-        return (
-            (variablesMap.count(ARG_ALPHA_NAME_LONG))                   &&
-            (variablesMap.count(ARG_BETA_NAME_LONG))                    &&
-            (variablesMap.count(ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG))
-        );
-    } else {
-        // Is at least one argument present?
-        return (
-            (variablesMap.count(ARG_ALPHA_NAME_LONG))                   ||
-            (variablesMap.count(ARG_BETA_NAME_LONG))                    ||
-            (variablesMap.count(ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG))
-        );
-    }
+void CommandLineModelChecking::removeApproximateProbabilisticModelCheckingArguments(po::variables_map &variablesMap) {
+    variablesMap.erase(ARG_DELTA_NAME_LONG);
+    variablesMap.erase(ARG_EPSILON_NAME_LONG);
+}
+
+void CommandLineModelChecking::removeBayesianModelCheckingArguments(po::variables_map &variablesMap) {
+    variablesMap.erase(ARG_ALPHA_NAME_LONG);
+    variablesMap.erase(ARG_BETA_NAME_LONG);
+    variablesMap.erase(ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG);
 }
 
 void CommandLineModelChecking::initialiseClassMembers() {

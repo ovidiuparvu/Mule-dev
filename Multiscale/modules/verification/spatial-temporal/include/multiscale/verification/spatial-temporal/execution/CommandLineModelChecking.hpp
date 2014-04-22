@@ -130,23 +130,77 @@ namespace multiscale {
                 //! Check if any model checker type dependent arguments are invalid
                 bool areInvalidModelCheckingArgumentsPresent();
 
+                //! Remove the required arguments from the given variables_map
+                /*!
+                 * \param variablesMap  The map containing all parsed command line arguments
+                 */
+                void removeRequiredArguments(po::variables_map &variablesMap);
+
+                //! Remove the optional arguments from the given variables_map
+                /*!
+                 * \param variablesMap  The map containing all parsed command line arguments
+                 */
+                void removeOptionalArguments(po::variables_map &variablesMap);
+
+                //! Check if the model checking type specific arguments from the given variables_map are invalid
+                /*!
+                 * \param modelCheckerType  The type of the model checker
+                 * \param variablesMap      The map containing all parsed command line arguments
+                 */
+                bool areInvalidModelCheckingTypeSpecificArguments(unsigned int modelCheckerType,
+                                                                  po::variables_map &variablesMap);
+
+                //! Check if all model checking type specific arguments are present
+                /*!
+                 * \param modelCheckerType  The type of the model checker
+                 * \param variablesMap      The map containing all parsed command line arguments
+                 */
+                bool areModelCheckingTypeSpecificArgumentsPresent(unsigned int modelCheckerType,
+                                                                  const po::variables_map &variablesMap);
+
                 //! Check if the arguments specific to statistical model checking are present
                 /*!
-                 * \param allArguments  Flag indicating if all/at least one argument is present
+                 * \param variablesMap      The map containing all parsed command line arguments
                  */
-                bool areStatisticalModelCheckingArgumentsPresent(bool allArguments);
+                bool areStatisticalModelCheckingArgumentsPresent(const po::variables_map &variablesMap);
 
                 //! Check if the arguments specific to approximate probabilistic model checking are present
                 /*!
-                 * \param allArguments  Flag indicating if all/at least one argument is present
+                 * \param variablesMap      The map containing all parsed command line arguments
                  */
-                bool areApproximateProbabilisticModelCheckingArgumentsPresent(bool allArguments);
+                bool areApproximateProbabilisticModelCheckingArgumentsPresent(const po::variables_map &variablesMap);
 
                 //! Check if the arguments specific to Bayesian model checking are present
                 /*!
-                 * \param allArguments  Flag indicating if all/at least one argument is present
+                 * \param variablesMap      The map containing all parsed command line arguments
                  */
-                bool areBayesianModelCheckingArgumentsPresent(bool allArguments);
+                bool areBayesianModelCheckingArgumentsPresent(const po::variables_map &variablesMap);
+
+                //! Remove the model checking type specific arguments from the given variables_map
+                /*!
+                 * \param modelCheckerType  The type of the model checker
+                 * \param variablesMap      The map containing all parsed command line arguments
+                 */
+                void removeModelCheckingTypeSpecificArguments(unsigned int modelCheckerType,
+                                                              po::variables_map &variablesMap);
+
+                //! Remove the statistical model checking arguments from the given variables_map
+                /*!
+                 * \param variablesMap      The map containing all parsed command line arguments
+                 */
+                void removeStatisticalModelCheckingArguments(po::variables_map &variablesMap);
+
+                //! Remove the approximate probabilistic model checking arguments from the given variables_map
+                /*!
+                 * \param variablesMap      The map containing all parsed command line arguments
+                 */
+                void removeApproximateProbabilisticModelCheckingArguments(po::variables_map &variablesMap);
+
+                //! Remove the Bayesian model checking arguments from the given variables_map
+                /*!
+                 * \param variablesMap      The map containing all parsed command line arguments
+                 */
+                void removeBayesianModelCheckingArguments(po::variables_map &variablesMap);
 
                 //! Initialise the class members using the command line arguments
                 void initialiseClassMembers();
