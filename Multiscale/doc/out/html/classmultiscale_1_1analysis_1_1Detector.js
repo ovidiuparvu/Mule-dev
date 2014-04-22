@@ -68,7 +68,7 @@ var classmultiscale_1_1analysis_1_1Detector =
     [ "LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_NAME", "classmultiscale_1_1analysis_1_1Detector.html#a66701b2cd4111a3fd8c6e0a9faafcbc1", null ],
     [ "LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_VALUE", "classmultiscale_1_1analysis_1_1Detector.html#a46e4fde2eefd347da05a8c28f55fea8a", null ],
     [ "LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY", "classmultiscale_1_1analysis_1_1Detector.html#a8cade9693bb6ce63be30adebd318fd21", null ],
-    [ "LABEL_SPATIAL_ENTITY_ANGLE_DEGREES", "classmultiscale_1_1analysis_1_1Detector.html#a5cb6f0a78406631f55d4a1b11197652e", null ],
+    [ "LABEL_SPATIAL_ENTITY_ANGLE", "classmultiscale_1_1analysis_1_1Detector.html#a8d4353995ad98cc8349698aa6034bb79", null ],
     [ "LABEL_SPATIAL_ENTITY_AREA", "classmultiscale_1_1analysis_1_1Detector.html#a163a0858c9d71d9ddac78f814d48bee6", null ],
     [ "LABEL_SPATIAL_ENTITY_CENTROID_X", "classmultiscale_1_1analysis_1_1Detector.html#a76896a7d2a68a194ed5b4a8fecb85b6c", null ],
     [ "LABEL_SPATIAL_ENTITY_CENTROID_Y", "classmultiscale_1_1analysis_1_1Detector.html#a9aff1d4b3d73d4569d21865b8f29d1c2", null ],

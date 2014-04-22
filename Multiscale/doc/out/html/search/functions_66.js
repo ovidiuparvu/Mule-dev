@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['factorial',['factorial',['../classmultiscale_1_1Numeric.html#a8728bd6bdba7cb92d15c8c82b3073e5a',1,'multiscale::Numeric']]],
+  ['fatalerror',['fatalError',['../classmultiscale_1_1XmlValidator_1_1XmlValidationErrorHandler.html#a56da1820a69db92d036f64b71bcea9ee',1,'multiscale::XmlValidator::XmlValidationErrorHandler']]],
   ['fieldnamestostring',['fieldNamesToString',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a3c24e3f06c999002f18e1ddd8be3f927',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['fieldvaluestostring',['fieldValuesToString',['../classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#a232a5e4991e59dfc685107982fcaf0ce',1,'multiscale::analysis::SpatialEntityPseudo3D']]],
   ['filenamefrompath',['filenameFromPath',['../classmultiscale_1_1StringManipulator.html#ab0354ab5ca48df4394695445fe105640',1,'multiscale::StringManipulator']]],
@@ -10,13 +12,13 @@ var searchData=
   ['filtertimepoint',['filterTimePoint',['../classmultiscale_1_1verification_1_1SubsetVisitor.html#a9ef3ca09e984f9bd2e951bc7c66daf16',1,'multiscale::verification::SubsetVisitor']]],
   ['find',['find',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#afe74965c39261feb7152f5556c0281cd',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['findclosestcoredatapoint',['findClosestCoreDataPoint',['../classmultiscale_1_1analysis_1_1DBSCAN.html#a7a1c95e78edf9e804a7809648e130bda',1,'multiscale::analysis::DBSCAN']]],
-  ['findcontoursinimage',['findContoursInImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a19918b5cd0ec310ad6149c7345870b3f',1,'multiscale::analysis::RegionDetector']]],
   ['findgammaintersectionpoints',['findGammaIntersectionPoints',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a9eedc43ea3190d8ee6343879dc100edb',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['findgoodintersectionpoints',['findGoodIntersectionPoints',['../classmultiscale_1_1analysis_1_1Detector.html#a2d8fe1a58bc6c792a45ffca988f2afe7',1,'multiscale::analysis::Detector']]],
   ['findgoodpointsforangle',['findGoodPointsForAngle',['../classmultiscale_1_1analysis_1_1Detector.html#a9785ec165eb57a95243c5bcf679bc49b',1,'multiscale::analysis::Detector']]],
   ['findminenclosingtriangle',['findMinEnclosingTriangle',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a0b55638741cd5ff84d583df33d594a69',1,'multiscale::MinEnclosingTriangleFinder::findMinEnclosingTriangle(const vector&lt; Point2f &gt; &amp;polygon, vector&lt; Point2f &gt; &amp;minEnclosingTriangle)'],['../classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270',1,'multiscale::MinEnclosingTriangleFinder::findMinEnclosingTriangle(vector&lt; Point2f &gt; &amp;minEnclosingTriangle, double &amp;minEnclosingTriangleArea)']]],
   ['findmintriangle',['findMinTriangle',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a1540deb145740cb2e73c7c76a9dd244f',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['findpointsonedge',['findPointsOnEdge',['../classmultiscale_1_1Geometry2D.html#a9e5c6378463c0e685136d66bfac2a8c1',1,'multiscale::Geometry2D']]],
+  ['findpolygonsinimage',['findPolygonsInImage',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a43ef117cc15f29285251388c4bf4aeea',1,'multiscale::analysis::RegionDetector']]],
   ['findregions',['findRegions',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a886ec5ee1cd2fd816c1cfd4e2ea6778e',1,'multiscale::analysis::RegionDetector']]],
   ['findvertexconsideb',['findVertexCOnSideB',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#ab0b488d2d67f2d22077777eebc292c1a',1,'multiscale::MinEnclosingTriangleFinder']]]
 ];

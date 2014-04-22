@@ -1,3 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$classmultiscale_1_1ConsolePrinter.html" title="Class used to print (coloured) messages to the console." alt="" coords="7,5,180,35"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classmultiscale_1_1Distribution.html" title="multiscale::Distribution" alt="" coords="5,32,160,61"/>
+<area shape="rect" id="node3" href="$classmultiscale_1_1BetaDistribution.html" title="Class for analysing Beta distributed data." alt="" coords="220,5,401,35"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1BinomialDistribution.html" title="Class for analysing Binomial distributed data." alt="" coords="208,59,413,88"/>
 </map>

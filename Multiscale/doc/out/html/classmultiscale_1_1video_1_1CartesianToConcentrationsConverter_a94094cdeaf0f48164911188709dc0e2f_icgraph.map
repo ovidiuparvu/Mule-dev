@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a27de97c7e35097bd17453fd07f33a6f1" title="Start the conversion." alt="" coords="488,5,883,35"/>
-<area shape="rect" id="node5" href="$MapCartesianToScript_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="931,5,981,35"/>
+<map id="multiscale::video::CartesianToConcentrationsConverter::readInputData" name="multiscale::video::CartesianToConcentrationsConverter::readInputData">
+<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a27de97c7e35097bd17453fd07f33a6f1" title="Start the conversion." alt="" coords="295,5,532,69"/>
+<area shape="rect" id="node5" href="$MapCartesianToScript_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="581,23,632,52"/>
 </map>

@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a346e054266585ae6922d159b8d5fb804" title="Output the results." alt="" coords="481,5,913,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a27de97c7e35097bd17453fd07f33a6f1" title="Start the conversion." alt="" coords="963,5,1357,35"/>
-<area shape="rect" id="node7" href="$MapCartesianToScript_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1405,5,1456,35"/>
+<map id="multiscale::video::RectangularGnuplotScriptGenerator::generateScript" name="multiscale::video::RectangularGnuplotScriptGenerator::generateScript">
+<area shape="rect" id="node3" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a346e054266585ae6922d159b8d5fb804" title="Output the results." alt="" coords="284,5,521,69"/>
+<area shape="rect" id="node5" href="$classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#a27de97c7e35097bd17453fd07f33a6f1" title="Start the conversion." alt="" coords="572,5,809,69"/>
+<area shape="rect" id="node7" href="$MapCartesianToScript_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="859,23,909,52"/>
 </map>

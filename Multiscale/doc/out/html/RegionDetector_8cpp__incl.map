@@ -1,17 +1,18 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$MatFactory_8hpp.html" title="multiscale/analysis/spatial/MatFactory.hpp" alt="" coords="86,160,356,189"/>
-<area shape="rect" id="node9" href="$RectangularMatFactory_8hpp.html" title="multiscale/analysis/spatial/factory/RectangularMatFactory.hpp" alt="" coords="29,83,413,112"/>
-<area shape="rect" id="node12" href="$RegionDetector_8hpp.html" title="multiscale/analysis/spatial/RegionDetector.hpp" alt="" coords="1085,83,1378,112"/>
-<area shape="rect" id="node40" href="$NumericRangeManipulator_8hpp.html" title="multiscale/util/NumericRangeManipulator.hpp" alt="" coords="2468,83,2753,112"/>
-<area shape="rect" id="node42" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2D.hpp" alt="" coords="1564,83,1769,112"/>
-<area shape="rect" id="node14" href="$Detector_8hpp.html" title="multiscale/analysis/spatial/Detector.hpp" alt="" coords="832,160,1085,189"/>
-<area shape="rect" id="node32" href="$analysis_2spatial_2include_2multiscale_2analysis_2spatial_2Region_8hpp.html" title="multiscale/analysis/spatial/Region.hpp" alt="" coords="1109,160,1354,189"/>
-<area shape="rect" id="node16" href="$SpatialEntityPseudo3D_8hpp.html" title="multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp" alt="" coords="1054,237,1393,267"/>
-<area shape="rect" id="node18" href="$Shape2D_8hpp.html" title="multiscale/analysis/spatial/Shape2D.hpp" alt="" coords="1134,315,1393,344"/>
-<area shape="rect" id="node20" href="$SpatialEntityPseudo3DType_8hpp.html" title="multiscale/analysis/spatial/SpatialEntityPseudo3DType.hpp" alt="" coords="742,315,1110,344"/>
-<area shape="rect" id="node44" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="2032,160,2210,189"/>
-<area shape="rect" id="node46" href="$NumericException_8hpp.html" title="multiscale/exception/NumericException.hpp" alt="" coords="1806,237,2084,267"/>
-<area shape="rect" id="node63" href="$ConsolePrinter_8hpp.html" title="multiscale/util/ConsolePrinter.hpp" alt="" coords="2017,392,2233,421"/>
-<area shape="rect" id="node48" href="$MultiscaleException_8hpp.html" title="multiscale/exception/MultiscaleException.hpp" alt="" coords="1633,315,1918,344"/>
-<area shape="rect" id="node50" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="1660,392,1892,421"/>
+<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/RegionDetector.cpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/RegionDetector.cpp">
+<area shape="rect" id="node3" href="$MatFactory_8hpp.html" title="multiscale/analysis\l/spatial/MatFactory.hpp" alt="" coords="141,249,299,295"/>
+<area shape="rect" id="node9" href="$RectangularMatFactory_8hpp.html" title="multiscale/analysis\l/spatial/factory/Rectangular\lMatFactory.hpp" alt="" coords="275,136,456,200"/>
+<area shape="rect" id="node12" href="$RegionDetector_8hpp.html" title="multiscale/analysis\l/spatial/RegionDetector.hpp" alt="" coords="803,145,987,191"/>
+<area shape="rect" id="node42" href="$NumericRangeManipulator_8hpp.html" title="multiscale/util/NumericRange\lManipulator.hpp" alt="" coords="2091,145,2283,191"/>
+<area shape="rect" id="node44" href="$Geometry2D_8hpp.html" title="multiscale/util/Geometry2\lD.hpp" alt="" coords="1041,145,1212,191"/>
+<area shape="rect" id="node14" href="$Detector_8hpp.html" title="multiscale/analysis\l/spatial/Detector.hpp" alt="" coords="665,249,807,295"/>
+<area shape="rect" id="node32" href="$analysis_2spatial_2include_2multiscale_2analysis_2spatial_2Region_8hpp.html" title="multiscale/analysis\l/spatial/Region.hpp" alt="" coords="1011,249,1144,295"/>
+<area shape="rect" id="node16" href="$SpatialEntityPseudo3D_8hpp.html" title="multiscale/analysis\l/spatial/SpatialEntityPseudo3\lD.hpp" alt="" coords="589,344,781,408"/>
+<area shape="rect" id="node18" href="$Shape2D_8hpp.html" title="multiscale/analysis\l/spatial/Shape2D.hpp" alt="" coords="612,465,759,511"/>
+<area shape="rect" id="node20" href="$SpatialEntityPseudo3DType_8hpp.html" title="multiscale/analysis\l/spatial/SpatialEntityPseudo3\lDType.hpp" alt="" coords="396,456,588,520"/>
+<area shape="rect" id="node46" href="$Numeric_8hpp.html" title="multiscale/util/Numeric.hpp" alt="" coords="1465,257,1644,287"/>
+<area shape="rect" id="node48" href="$NumericException_8hpp.html" title="multiscale/exception\l/NumericException.hpp" alt="" coords="1547,353,1704,399"/>
+<area shape="rect" id="node65" href="$ConsolePrinter_8hpp.html" title="multiscale/util/ConsolePrinter.hpp" alt="" coords="1768,473,1984,503"/>
+<area shape="rect" id="node50" href="$MultiscaleException_8hpp.html" title="multiscale/exception\l/MultiscaleException.hpp" alt="" coords="1520,465,1688,511"/>
+<area shape="rect" id="node52" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="1219,568,1451,597"/>
+<area shape="rect" id="node67" href="$Multiscale_8hpp.html" title="multiscale/core/Multiscale.hpp" alt="" coords="1819,568,2016,597"/>
 </map>

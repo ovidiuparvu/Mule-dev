@@ -1,7 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node9" href="$classmultiscale_1_1FileOpenException.html" title="Class for representing exceptions when opening a file." alt="" coords="5,643,203,763"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1InvalidInputException.html" title="Class for representing invalid input exceptions." alt="" coords="227,643,440,763"/>
-<area shape="rect" id="node2" href="$classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project." alt="" coords="116,272,321,427"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="157,139,280,224"/>
-<area shape="rect" id="node6" title="STL class." alt="" coords="167,5,271,91"/>
+<map id="multiscale::IOException" name="multiscale::IOException">
+<area shape="rect" id="node9" href="$classmultiscale_1_1FileOpenException.html" title="Class for representing exceptions when opening a file." alt="" coords="5,687,203,807"/>
+<area shape="rect" id="node11" href="$classmultiscale_1_1InvalidInputException.html" title="Class for representing invalid input exceptions." alt="" coords="227,678,392,815"/>
+<area shape="rect" id="node2" href="$classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project." alt="" coords="104,272,309,461"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="145,139,268,224"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="155,5,259,91"/>
 </map>

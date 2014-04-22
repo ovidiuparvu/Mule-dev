@@ -111,7 +111,7 @@ namespace multiscale {
                 //! Update the p-values for the null and alternative hypothesis considering the comparator contained by the probabilistic logic property
                 void updateHypothesesPValuesConsideringComparator();
 
-                //! Update the p-values considering that the probabilistic logic property is of the form P >[=] \theta [\phi]
+                //! Update the p-values considering that the probabilistic logic property is of the form \f$ P >[=] \theta [\phi] \f$
                 /*!
                  * \f$ p-value_{H_{0}} = 1 - F(d - 1; n, \theta) \f$
                  * \f$ p-value_{H_{1}} = F(d; n, \theta) \f$
@@ -119,7 +119,7 @@ namespace multiscale {
                  */
                 void updateHypothesesPValuesForGreaterThan();
 
-                //! Update the p-values considering that the probabilistic logic property is of the form P <[=] \theta [\phi]
+                //! Update the p-values considering that the probabilistic logic property is of the form \f$ P <[=] \theta [\phi] \f$
                 /*!
                  * \f$ p-value_{H_{0}} = 1 - F(d' - 1; n, \theta) \f$
                  * \f$ p-value_{H_{1}} = F(d'; n, \theta) \f$

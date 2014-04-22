@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$IOException_8hpp.html" title="multiscale/exception/IOException.hpp" alt="" coords="288,83,531,112"/>
-<area shape="rect" id="node5" href="$MultiscaleException_8hpp.html" title="multiscale/exception/MultiscaleException.hpp" alt="" coords="195,160,480,189"/>
-<area shape="rect" id="node7" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="5,237,237,267"/>
+<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/exception/InvalidInputException.hpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/include/multiscale/exception/InvalidInputException.hpp">
+<area shape="rect" id="node3" href="$IOException_8hpp.html" title="multiscale/exception\l/IOException.hpp" alt="" coords="389,137,531,183"/>
+<area shape="rect" id="node5" href="$MultiscaleException_8hpp.html" title="multiscale/exception\l/MultiscaleException.hpp" alt="" coords="267,233,435,279"/>
+<area shape="rect" id="node7" href="$StringManipulator_8hpp.html" title="multiscale/util/StringManipulator.hpp" alt="" coords="5,328,237,357"/>
 </map>

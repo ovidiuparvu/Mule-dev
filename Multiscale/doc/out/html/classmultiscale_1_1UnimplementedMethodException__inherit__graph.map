@@ -1,6 +1,6 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classmultiscale_1_1AlgorithmException.html" title="Class for representing algorithm exceptions." alt="" coords="44,475,247,595"/>
-<area shape="rect" id="node4" href="$classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project." alt="" coords="43,272,248,427"/>
-<area shape="rect" id="node6" title="STL class." alt="" coords="84,139,207,224"/>
-<area shape="rect" id="node8" title="STL class." alt="" coords="93,5,197,91"/>
+<map id="multiscale::UnimplementedMethodException" name="multiscale::UnimplementedMethodException">
+<area shape="rect" id="node2" href="$classmultiscale_1_1AlgorithmException.html" title="Class for representing algorithm exceptions." alt="" coords="21,509,224,629"/>
+<area shape="rect" id="node4" href="$classmultiscale_1_1MultiscaleException.html" title="Parent exception class for the project." alt="" coords="20,272,225,461"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="61,139,184,224"/>
+<area shape="rect" id="node8" title="STL class." alt="" coords="71,5,175,91"/>
 </map>

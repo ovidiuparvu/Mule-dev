@@ -1,8 +1,8 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images." alt="" coords="623,1321,940,1978"/>
-<area shape="rect" id="node4" title="STL class." alt="" coords="513,157,593,243"/>
-<area shape="rect" id="node12" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html" title="Class for representing a pseudo&#45;3D (explicit 2D + implicit height) object." alt="" coords="236,483,516,1296"/>
-<area shape="rect" id="node6" title="STL class." alt="" coords="471,5,636,91"/>
-<area shape="rect" id="node10" href="$classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region." alt="" coords="141,2003,344,2349"/>
-<area shape="rect" id="node17" title="STL class." alt="" coords="5,157,120,243"/>
+<map id="multiscale::analysis::RegionDetector" name="multiscale::analysis::RegionDetector">
+<area shape="rect" id="node2" href="$classmultiscale_1_1analysis_1_1Detector.html" title="Abstract class for detecting entities of interest in images." alt="" coords="46,1629,307,3448"/>
+<area shape="rect" id="node4" title="STL class." alt="" coords="344,328,424,413"/>
+<area shape="rect" id="node12" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html" title="Class for representing a pseudo&#45;3D (explicit 2D + implicit height) object." alt="" coords="422,723,640,1605"/>
+<area shape="rect" id="node6" title="STL class." alt="" coords="322,158,447,261"/>
+<area shape="rect" id="node10" href="$classmultiscale_1_1analysis_1_1Region.html" title="Class for representing a region." alt="" coords="591,3472,826,3939"/>
+<area shape="rect" id="node19" title="STL class." alt="" coords="824,167,939,252"/>
 </map>

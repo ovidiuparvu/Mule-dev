@@ -1,5 +1,6 @@
 var MinEnclosingTriangleFinderTest_8cpp =
 [
+    [ "MinEnclosingTriangleFinderTest", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest.html", "classmultiscaletest_1_1MinEnclosingTriangleFinderTest" ],
     [ "main", "MinEnclosingTriangleFinderTest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
     [ "TEST_F", "MinEnclosingTriangleFinderTest_8cpp.html#ad7f6db74e17736f4ce33b239b6e9c9ca", null ],
     [ "TEST_F", "MinEnclosingTriangleFinderTest_8cpp.html#a1b354a9e14d6adcd91ca8c3961530947", null ],

@@ -1,4 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$RectangularMatFactory_8hpp.html" title="multiscale/analysis/spatial/factory/RectangularMatFactory.hpp" alt="" coords="5,83,389,112"/>
-<area shape="rect" id="node5" href="$MatFactory_8hpp.html" title="multiscale/analysis/spatial/MatFactory.hpp" alt="" coords="91,160,360,189"/>
+<map id="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/sample/RectangularMatFactorySample.cpp" name="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/sample/RectangularMatFactorySample.cpp">
+<area shape="rect" id="node3" href="$Multiscale_8hpp.html" title="multiscale/core/Multiscale.hpp" alt="" coords="5,153,203,183"/>
+<area shape="rect" id="node7" href="$RectangularMatFactory_8hpp.html" title="multiscale/analysis\l/spatial/factory/Rectangular\lMatFactory.hpp" alt="" coords="227,136,408,200"/>
+<area shape="rect" id="node9" href="$MatFactory_8hpp.html" title="multiscale/analysis\l/spatial/MatFactory.hpp" alt="" coords="239,249,396,295"/>
 </map>

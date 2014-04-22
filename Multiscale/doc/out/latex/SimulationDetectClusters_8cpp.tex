@@ -1,24 +1,23 @@
-\hypertarget{SimulationDetectClusters_8cpp}{\section{/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/\-Simulation\-Detect\-Clusters.cpp \-File \-Reference}
+\hypertarget{SimulationDetectClusters_8cpp}{\section{/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/\-Simulation\-Detect\-Clusters.cpp File Reference}
 \label{SimulationDetectClusters_8cpp}\index{/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/\-Simulation\-Detect\-Clusters.\-cpp@{/home/ovidiu/\-Repositories/git/multiscale/\-Multiscale/modules/analysis/spatial/src/\-Simulation\-Detect\-Clusters.\-cpp}}
 }
-{\ttfamily \#include \char`\"{}multiscale/core/\-Multiscale.\-hpp\char`\"{}}\*
-{\ttfamily \#include \char`\"{}multiscale/analysis/spatial/cluster/\-Simulation\-Cluster\-Detector.\-hpp\char`\"{}}\*
-{\ttfamily \#include \char`\"{}multiscale/analysis/spatial/factory/\-Rectangular\-Mat\-Factory.\-hpp\char`\"{}}\*
-{\ttfamily \#include \char`\"{}multiscale/exception/\-Exception\-Handler.\-hpp\char`\"{}}\*
-{\ttfamily \#include $<$boost/property\-\_\-tree/ptree.\-hpp$>$}\*
-{\ttfamily \#include $<$boost/property\-\_\-tree/xml\-\_\-parser.\-hpp$>$}\*
-{\ttfamily \#include $<$boost/program\-\_\-options.\-hpp$>$}\*
-{\ttfamily \#include $<$iostream$>$}\*
-{\ttfamily \#include $<$typeinfo$>$}\*
-\-Include dependency graph for \-Simulation\-Detect\-Clusters.\-cpp\-:
-\nopagebreak
+{\ttfamily \#include \char`\"{}multiscale/core/\-Multiscale.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multiscale/analysis/spatial/cluster/\-Simulation\-Cluster\-Detector.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multiscale/analysis/spatial/factory/\-Rectangular\-Mat\-Factory.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multiscale/exception/\-Exception\-Handler.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$boost/property\-\_\-tree/ptree.\-hpp$>$}\\*
+{\ttfamily \#include $<$boost/property\-\_\-tree/xml\-\_\-parser.\-hpp$>$}\\*
+{\ttfamily \#include $<$boost/program\-\_\-options.\-hpp$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$typeinfo$>$}\\*
+Include dependency graph for Simulation\-Detect\-Clusters.\-cpp\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{SimulationDetectClusters_8cpp__incl}
 \end{center}
 \end{figure}
-\subsection*{\-Functions}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 po\-::variables\-\_\-map \hyperlink{SimulationDetectClusters_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}{init\-Arguments\-Config} (po\-::options\-\_\-description \&usage\-Description, int argc, char $\ast$$\ast$argv)
@@ -29,35 +28,35 @@ void \hyperlink{SimulationDetectClusters_8cpp_a573a6d091545f311c155eb4f04c8a2cb}
 \item 
 bool \hyperlink{SimulationDetectClusters_8cpp_aa56ee69482577dad35ebe8ff014ca517}{are\-Valid\-Parameters} (string \&input\-Filepath, string \&output\-Filename, bool \&debug\-Flag, unsigned int \&height, unsigned int \&width, unsigned int \&max\-Pileup, int argc, char $\ast$$\ast$argv)
 \item 
-void \hyperlink{SimulationDetectClusters_8cpp_a3b2fe4e3a75a6cdca8ea050e37a9da13}{load\-Detector\-Parameter\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{\-Simulation\-Cluster\-Detector} \&detector)
+void \hyperlink{SimulationDetectClusters_8cpp_a3b2fe4e3a75a6cdca8ea050e37a9da13}{load\-Detector\-Parameter\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{Simulation\-Cluster\-Detector} \&detector)
 \item 
-void \hyperlink{SimulationDetectClusters_8cpp_a54440a034c11e07c393765b057b2bf65}{save\-Detector\-Parameter\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{\-Simulation\-Cluster\-Detector} \&detector)
+void \hyperlink{SimulationDetectClusters_8cpp_a54440a034c11e07c393765b057b2bf65}{save\-Detector\-Parameter\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{Simulation\-Cluster\-Detector} \&detector)
 \item 
-void \hyperlink{SimulationDetectClusters_8cpp_ab07b4a4cf6b2729884efe34b9947ad0d}{load\-Detector\-Parameter\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{\-Simulation\-Cluster\-Detector} \&detector, bool debug\-Mode)
+void \hyperlink{SimulationDetectClusters_8cpp_ab07b4a4cf6b2729884efe34b9947ad0d}{load\-Detector\-Parameter\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{Simulation\-Cluster\-Detector} \&detector, bool debug\-Mode)
 \item 
-void \hyperlink{SimulationDetectClusters_8cpp_a22f99fe837ee31d5b315c60eaffd6ea5}{save\-Detector\-Parameter\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{\-Simulation\-Cluster\-Detector} \&detector, bool debug\-Mode)
+void \hyperlink{SimulationDetectClusters_8cpp_a22f99fe837ee31d5b315c60eaffd6ea5}{save\-Detector\-Parameter\-Values} (\hyperlink{classmultiscale_1_1analysis_1_1SimulationClusterDetector}{Simulation\-Cluster\-Detector} \&detector, bool debug\-Mode)
 \item 
 int \hyperlink{SimulationDetectClusters_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
 \end{DoxyCompactItemize}
-\subsection*{\-Variables}
+\subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const string \hyperlink{SimulationDetectClusters_8cpp_a656a257c36273fa57ae244c25bf23ed8}{\-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E} = \char`\"{}config/analysis/spatial/simulation\-\_\-cluster\-\_\-detector.\-xml\char`\"{}
+const string \hyperlink{SimulationDetectClusters_8cpp_a656a257c36273fa57ae244c25bf23ed8}{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E} = \char`\"{}config/analysis/spatial/simulation\-\_\-cluster\-\_\-detector.\-xml\char`\"{}
 \item 
-const string \hyperlink{SimulationDetectClusters_8cpp_a410d625b5c5f905e5b97870673ac236c}{\-L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T} = \char`\"{}$<$xmlcomment$>$\char`\"{}
+const string \hyperlink{SimulationDetectClusters_8cpp_a410d625b5c5f905e5b97870673ac236c}{L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T} = \char`\"{}$<$xmlcomment$>$\char`\"{}
 \item 
-const string \hyperlink{SimulationDetectClusters_8cpp_a0be1706eb30a11850372529d7bee8f99}{\-L\-A\-B\-E\-L\-\_\-\-E\-P\-S} = \char`\"{}detector.\-eps\char`\"{}
+const string \hyperlink{SimulationDetectClusters_8cpp_a0be1706eb30a11850372529d7bee8f99}{L\-A\-B\-E\-L\-\_\-\-E\-P\-S} = \char`\"{}detector.\-eps\char`\"{}
 \item 
-const string \hyperlink{SimulationDetectClusters_8cpp_a59b1737ccf1b2a1e6b9c68a619633e69}{\-L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S} = \char`\"{}detector.\-min\-Points\char`\"{}
+const string \hyperlink{SimulationDetectClusters_8cpp_a59b1737ccf1b2a1e6b9c68a619633e69}{L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S} = \char`\"{}detector.\-min\-Points\char`\"{}
 \item 
-const string \hyperlink{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c882a07cb}{\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T} = \char`\"{}\-Warning! \-This xml file was automatically generated by a \-C++ program using the \-Boost \-Property\-Tree library.\char`\"{}
+const string \hyperlink{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c882a07cb}{R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T} = \char`\"{}Warning! This xml file was automatically generated by a C++ program using the Boost Property\-Tree library.\char`\"{}
 \end{DoxyCompactItemize}
 
 
-\subsection{\-Function \-Documentation}
-\hypertarget{SimulationDetectClusters_8cpp_aa56ee69482577dad35ebe8ff014ca517}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!are\-Valid\-Parameters@{are\-Valid\-Parameters}}
-\index{are\-Valid\-Parameters@{are\-Valid\-Parameters}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{are\-Valid\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf are\-Valid\-Parameters} (
+\subsection{Function Documentation}
+\hypertarget{SimulationDetectClusters_8cpp_aa56ee69482577dad35ebe8ff014ca517}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!are\-Valid\-Parameters@{are\-Valid\-Parameters}}
+\index{are\-Valid\-Parameters@{are\-Valid\-Parameters}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{are\-Valid\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}bool are\-Valid\-Parameters (
 \begin{DoxyParamCaption}
 \item[{string \&}]{input\-Filepath, }
 \item[{string \&}]{output\-Filename, }
@@ -71,15 +70,15 @@ const string \hyperlink{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c8
 )}}\label{SimulationDetectClusters_8cpp_aa56ee69482577dad35ebe8ff014ca517}
 
 
-\-Definition at line 71 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 71 of file Simulation\-Detect\-Clusters.\-cpp.
 
 
 
-\-References init\-Arguments\-Config(), and print\-Help\-Information().
+References init\-Arguments\-Config(), and print\-Help\-Information().
 
-\hypertarget{SimulationDetectClusters_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!init\-Arguments\-Config@{init\-Arguments\-Config}}
-\index{init\-Arguments\-Config@{init\-Arguments\-Config}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{init\-Arguments\-Config}]{\setlength{\rightskip}{0pt plus 5cm}po\-::variables\-\_\-map {\bf init\-Arguments\-Config} (
+\hypertarget{SimulationDetectClusters_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!init\-Arguments\-Config@{init\-Arguments\-Config}}
+\index{init\-Arguments\-Config@{init\-Arguments\-Config}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{init\-Arguments\-Config}]{\setlength{\rightskip}{0pt plus 5cm}po\-::variables\-\_\-map init\-Arguments\-Config (
 \begin{DoxyParamCaption}
 \item[{po\-::options\-\_\-description \&}]{usage\-Description, }
 \item[{int}]{argc, }
@@ -88,42 +87,42 @@ const string \hyperlink{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c8
 )}}\label{SimulationDetectClusters_8cpp_a6dab5a70bdde13257ac586fd8b81b16e}
 
 
-\-Definition at line 44 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 44 of file Simulation\-Detect\-Clusters.\-cpp.
 
-\hypertarget{SimulationDetectClusters_8cpp_a3b2fe4e3a75a6cdca8ea050e37a9da13}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!load\-Detector\-Parameter\-Values@{load\-Detector\-Parameter\-Values}}
-\index{load\-Detector\-Parameter\-Values@{load\-Detector\-Parameter\-Values}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{load\-Detector\-Parameter\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf load\-Detector\-Parameter\-Values} (
+\hypertarget{SimulationDetectClusters_8cpp_a3b2fe4e3a75a6cdca8ea050e37a9da13}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!load\-Detector\-Parameter\-Values@{load\-Detector\-Parameter\-Values}}
+\index{load\-Detector\-Parameter\-Values@{load\-Detector\-Parameter\-Values}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{load\-Detector\-Parameter\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void load\-Detector\-Parameter\-Values (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Simulation\-Cluster\-Detector} \&}]{detector}
+\item[{{\bf Simulation\-Cluster\-Detector} \&}]{detector}
 \end{DoxyParamCaption}
 )}}\label{SimulationDetectClusters_8cpp_a3b2fe4e3a75a6cdca8ea050e37a9da13}
 
 
-\-Definition at line 105 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 105 of file Simulation\-Detect\-Clusters.\-cpp.
 
 
 
-\-References \-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E, \-L\-A\-B\-E\-L\-\_\-\-E\-P\-S, \-L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S, multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Eps(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Min\-Points().
+References C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E, L\-A\-B\-E\-L\-\_\-\-E\-P\-S, L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S, multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Eps(), and multiscale\-::analysis\-::\-Cluster\-Detector\-::set\-Min\-Points().
 
-\hypertarget{SimulationDetectClusters_8cpp_ab07b4a4cf6b2729884efe34b9947ad0d}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!load\-Detector\-Parameter\-Values@{load\-Detector\-Parameter\-Values}}
-\index{load\-Detector\-Parameter\-Values@{load\-Detector\-Parameter\-Values}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{load\-Detector\-Parameter\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf load\-Detector\-Parameter\-Values} (
+\hypertarget{SimulationDetectClusters_8cpp_ab07b4a4cf6b2729884efe34b9947ad0d}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!load\-Detector\-Parameter\-Values@{load\-Detector\-Parameter\-Values}}
+\index{load\-Detector\-Parameter\-Values@{load\-Detector\-Parameter\-Values}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{load\-Detector\-Parameter\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void load\-Detector\-Parameter\-Values (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Simulation\-Cluster\-Detector} \&}]{detector, }
+\item[{{\bf Simulation\-Cluster\-Detector} \&}]{detector, }
 \item[{bool}]{debug\-Mode}
 \end{DoxyParamCaption}
 )}}\label{SimulationDetectClusters_8cpp_ab07b4a4cf6b2729884efe34b9947ad0d}
 
 
-\-Definition at line 129 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 129 of file Simulation\-Detect\-Clusters.\-cpp.
 
 
 
-\-References load\-Detector\-Parameter\-Values().
+References load\-Detector\-Parameter\-Values().
 
-\hypertarget{SimulationDetectClusters_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!main@{main}}
-\index{main@{main}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf main} (
+\hypertarget{SimulationDetectClusters_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!main@{main}}
+\index{main@{main}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
 \begin{DoxyParamCaption}
 \item[{int}]{argc, }
 \item[{char $\ast$$\ast$}]{argv}
@@ -131,15 +130,15 @@ const string \hyperlink{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c8
 )}}\label{SimulationDetectClusters_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
 
 
-\-Definition at line 141 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 141 of file Simulation\-Detect\-Clusters.\-cpp.
 
 
 
-\-References are\-Valid\-Parameters(), multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory\-::create\-From\-Viewer\-Image(), multiscale\-::analysis\-::\-Detector\-::detect(), multiscale\-::\-E\-R\-R\-\_\-\-C\-O\-D\-E, load\-Detector\-Parameter\-Values(), multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory\-::max\-Colour\-Bar\-Intensity\-From\-Viewer\-Image(), multiscale\-::analysis\-::\-Detector\-::output\-Results(), print\-Wrong\-Parameters(), and save\-Detector\-Parameter\-Values().
+References are\-Valid\-Parameters(), multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory\-::create\-From\-Viewer\-Image(), multiscale\-::analysis\-::\-Detector\-::detect(), multiscale\-::\-E\-X\-E\-C\-\_\-\-E\-R\-R\-\_\-\-C\-O\-D\-E, multiscale\-::\-E\-X\-E\-C\-\_\-\-S\-U\-C\-C\-E\-S\-S\-\_\-\-C\-O\-D\-E, load\-Detector\-Parameter\-Values(), multiscale\-::analysis\-::\-Rectangular\-Mat\-Factory\-::max\-Colour\-Bar\-Intensity\-From\-Viewer\-Image(), multiscale\-::analysis\-::\-Detector\-::output\-Results(), print\-Wrong\-Parameters(), and save\-Detector\-Parameter\-Values().
 
-\hypertarget{SimulationDetectClusters_8cpp_a49535fad6e4e5f21ee2eae91dff5a831}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!print\-Help\-Information@{print\-Help\-Information}}
-\index{print\-Help\-Information@{print\-Help\-Information}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{print\-Help\-Information}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-Help\-Information} (
+\hypertarget{SimulationDetectClusters_8cpp_a49535fad6e4e5f21ee2eae91dff5a831}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!print\-Help\-Information@{print\-Help\-Information}}
+\index{print\-Help\-Information@{print\-Help\-Information}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{print\-Help\-Information}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Help\-Information (
 \begin{DoxyParamCaption}
 \item[{const po\-::variables\-\_\-map \&}]{vm, }
 \item[{const po\-::options\-\_\-description \&}]{usage\-Description}
@@ -147,97 +146,97 @@ const string \hyperlink{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c8
 )}}\label{SimulationDetectClusters_8cpp_a49535fad6e4e5f21ee2eae91dff5a831}
 
 
-\-Definition at line 60 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 60 of file Simulation\-Detect\-Clusters.\-cpp.
 
-\hypertarget{SimulationDetectClusters_8cpp_a573a6d091545f311c155eb4f04c8a2cb}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!print\-Wrong\-Parameters@{print\-Wrong\-Parameters}}
-\index{print\-Wrong\-Parameters@{print\-Wrong\-Parameters}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{print\-Wrong\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-Wrong\-Parameters} (
+\hypertarget{SimulationDetectClusters_8cpp_a573a6d091545f311c155eb4f04c8a2cb}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!print\-Wrong\-Parameters@{print\-Wrong\-Parameters}}
+\index{print\-Wrong\-Parameters@{print\-Wrong\-Parameters}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{print\-Wrong\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Wrong\-Parameters (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{SimulationDetectClusters_8cpp_a573a6d091545f311c155eb4f04c8a2cb}
 
 
-\-Definition at line 65 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 65 of file Simulation\-Detect\-Clusters.\-cpp.
 
 
 
-\-References multiscale\-::\-E\-R\-R\-\_\-\-M\-S\-G.
+References multiscale\-::\-E\-R\-R\-\_\-\-M\-S\-G.
 
-\hypertarget{SimulationDetectClusters_8cpp_a54440a034c11e07c393765b057b2bf65}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!save\-Detector\-Parameter\-Values@{save\-Detector\-Parameter\-Values}}
-\index{save\-Detector\-Parameter\-Values@{save\-Detector\-Parameter\-Values}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{save\-Detector\-Parameter\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf save\-Detector\-Parameter\-Values} (
+\hypertarget{SimulationDetectClusters_8cpp_a54440a034c11e07c393765b057b2bf65}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!save\-Detector\-Parameter\-Values@{save\-Detector\-Parameter\-Values}}
+\index{save\-Detector\-Parameter\-Values@{save\-Detector\-Parameter\-Values}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{save\-Detector\-Parameter\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void save\-Detector\-Parameter\-Values (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Simulation\-Cluster\-Detector} \&}]{detector}
+\item[{{\bf Simulation\-Cluster\-Detector} \&}]{detector}
 \end{DoxyParamCaption}
 )}}\label{SimulationDetectClusters_8cpp_a54440a034c11e07c393765b057b2bf65}
 
 
-\-Definition at line 115 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 115 of file Simulation\-Detect\-Clusters.\-cpp.
 
 
 
-\-References \-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E, multiscale\-::analysis\-::\-Cluster\-Detector\-::get\-Eps(), multiscale\-::analysis\-::\-Cluster\-Detector\-::get\-Min\-Points(), \-L\-A\-B\-E\-L\-\_\-\-E\-P\-S, \-L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S, \-L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T, and \-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T.
+References C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E, multiscale\-::analysis\-::\-Cluster\-Detector\-::get\-Eps(), multiscale\-::analysis\-::\-Cluster\-Detector\-::get\-Min\-Points(), L\-A\-B\-E\-L\-\_\-\-E\-P\-S, L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S, L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T, and R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T.
 
-\hypertarget{SimulationDetectClusters_8cpp_a22f99fe837ee31d5b315c60eaffd6ea5}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!save\-Detector\-Parameter\-Values@{save\-Detector\-Parameter\-Values}}
-\index{save\-Detector\-Parameter\-Values@{save\-Detector\-Parameter\-Values}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{save\-Detector\-Parameter\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf save\-Detector\-Parameter\-Values} (
+\hypertarget{SimulationDetectClusters_8cpp_a22f99fe837ee31d5b315c60eaffd6ea5}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!save\-Detector\-Parameter\-Values@{save\-Detector\-Parameter\-Values}}
+\index{save\-Detector\-Parameter\-Values@{save\-Detector\-Parameter\-Values}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{save\-Detector\-Parameter\-Values}]{\setlength{\rightskip}{0pt plus 5cm}void save\-Detector\-Parameter\-Values (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Simulation\-Cluster\-Detector} \&}]{detector, }
+\item[{{\bf Simulation\-Cluster\-Detector} \&}]{detector, }
 \item[{bool}]{debug\-Mode}
 \end{DoxyParamCaption}
 )}}\label{SimulationDetectClusters_8cpp_a22f99fe837ee31d5b315c60eaffd6ea5}
 
 
-\-Definition at line 134 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 134 of file Simulation\-Detect\-Clusters.\-cpp.
 
 
 
-\-References save\-Detector\-Parameter\-Values().
+References save\-Detector\-Parameter\-Values().
 
 
 
-\subsection{\-Variable \-Documentation}
-\hypertarget{SimulationDetectClusters_8cpp_a656a257c36273fa57ae244c25bf23ed8}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!\-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E@{\-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E}}
-\index{\-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E@{\-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{\-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E} = \char`\"{}config/analysis/spatial/simulation\-\_\-cluster\-\_\-detector.\-xml\char`\"{}}}\label{SimulationDetectClusters_8cpp_a656a257c36273fa57ae244c25bf23ed8}
+\subsection{Variable Documentation}
+\hypertarget{SimulationDetectClusters_8cpp_a656a257c36273fa57ae244c25bf23ed8}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E@{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E}}
+\index{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E@{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}const string C\-O\-N\-F\-I\-G\-\_\-\-F\-I\-L\-E = \char`\"{}config/analysis/spatial/simulation\-\_\-cluster\-\_\-detector.\-xml\char`\"{}}}\label{SimulationDetectClusters_8cpp_a656a257c36273fa57ae244c25bf23ed8}
 
 
-\-Definition at line 34 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 34 of file Simulation\-Detect\-Clusters.\-cpp.
 
-\hypertarget{SimulationDetectClusters_8cpp_a0be1706eb30a11850372529d7bee8f99}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!\-L\-A\-B\-E\-L\-\_\-\-E\-P\-S@{\-L\-A\-B\-E\-L\-\_\-\-E\-P\-S}}
-\index{\-L\-A\-B\-E\-L\-\_\-\-E\-P\-S@{\-L\-A\-B\-E\-L\-\_\-\-E\-P\-S}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{\-L\-A\-B\-E\-L\-\_\-\-E\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-L\-A\-B\-E\-L\-\_\-\-E\-P\-S} = \char`\"{}detector.\-eps\char`\"{}}}\label{SimulationDetectClusters_8cpp_a0be1706eb30a11850372529d7bee8f99}
-
-
-\-Definition at line 37 of file \-Simulation\-Detect\-Clusters.\-cpp.
+\hypertarget{SimulationDetectClusters_8cpp_a0be1706eb30a11850372529d7bee8f99}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!L\-A\-B\-E\-L\-\_\-\-E\-P\-S@{L\-A\-B\-E\-L\-\_\-\-E\-P\-S}}
+\index{L\-A\-B\-E\-L\-\_\-\-E\-P\-S@{L\-A\-B\-E\-L\-\_\-\-E\-P\-S}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-E\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string L\-A\-B\-E\-L\-\_\-\-E\-P\-S = \char`\"{}detector.\-eps\char`\"{}}}\label{SimulationDetectClusters_8cpp_a0be1706eb30a11850372529d7bee8f99}
 
 
-
-\-Referenced by load\-Detector\-Parameter\-Values(), and save\-Detector\-Parameter\-Values().
-
-\hypertarget{SimulationDetectClusters_8cpp_a59b1737ccf1b2a1e6b9c68a619633e69}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!\-L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{\-L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}}
-\index{\-L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{\-L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{\-L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S} = \char`\"{}detector.\-min\-Points\char`\"{}}}\label{SimulationDetectClusters_8cpp_a59b1737ccf1b2a1e6b9c68a619633e69}
-
-
-\-Definition at line 38 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 37 of file Simulation\-Detect\-Clusters.\-cpp.
 
 
 
-\-Referenced by load\-Detector\-Parameter\-Values(), and save\-Detector\-Parameter\-Values().
+Referenced by load\-Detector\-Parameter\-Values(), and save\-Detector\-Parameter\-Values().
 
-\hypertarget{SimulationDetectClusters_8cpp_a410d625b5c5f905e5b97870673ac236c}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!\-L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T@{\-L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}}
-\index{\-L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T@{\-L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{\-L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T} = \char`\"{}$<$xmlcomment$>$\char`\"{}}}\label{SimulationDetectClusters_8cpp_a410d625b5c5f905e5b97870673ac236c}
-
-
-\-Definition at line 36 of file \-Simulation\-Detect\-Clusters.\-cpp.
-
-\hypertarget{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c882a07cb}{\index{\-Simulation\-Detect\-Clusters.\-cpp@{\-Simulation\-Detect\-Clusters.\-cpp}!\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T@{\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}}
-\index{\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T@{\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}!SimulationDetectClusters.cpp@{\-Simulation\-Detect\-Clusters.\-cpp}}
-\subsubsection[{\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string {\bf \-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T} = \char`\"{}\-Warning! \-This xml file was automatically generated by a \-C++ program using the \-Boost \-Property\-Tree library.\char`\"{}}}\label{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c882a07cb}
+\hypertarget{SimulationDetectClusters_8cpp_a59b1737ccf1b2a1e6b9c68a619633e69}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}}
+\index{L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S@{L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}const string L\-A\-B\-E\-L\-\_\-\-M\-I\-N\-P\-O\-I\-N\-T\-S = \char`\"{}detector.\-min\-Points\char`\"{}}}\label{SimulationDetectClusters_8cpp_a59b1737ccf1b2a1e6b9c68a619633e69}
 
 
-\-Definition at line 40 of file \-Simulation\-Detect\-Clusters.\-cpp.
+Definition at line 38 of file Simulation\-Detect\-Clusters.\-cpp.
+
+
+
+Referenced by load\-Detector\-Parameter\-Values(), and save\-Detector\-Parameter\-Values().
+
+\hypertarget{SimulationDetectClusters_8cpp_a410d625b5c5f905e5b97870673ac236c}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T@{L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}}
+\index{L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T@{L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string L\-A\-B\-E\-L\-\_\-\-R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T = \char`\"{}$<$xmlcomment$>$\char`\"{}}}\label{SimulationDetectClusters_8cpp_a410d625b5c5f905e5b97870673ac236c}
+
+
+Definition at line 36 of file Simulation\-Detect\-Clusters.\-cpp.
+
+\hypertarget{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c882a07cb}{\index{Simulation\-Detect\-Clusters.\-cpp@{Simulation\-Detect\-Clusters.\-cpp}!R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T@{R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}}
+\index{R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T@{R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}!SimulationDetectClusters.cpp@{Simulation\-Detect\-Clusters.\-cpp}}
+\subsubsection[{R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}const string R\-O\-O\-T\-\_\-\-C\-O\-M\-M\-E\-N\-T = \char`\"{}Warning! This xml file was automatically generated by a C++ program using the Boost Property\-Tree library.\char`\"{}}}\label{SimulationDetectClusters_8cpp_a5f7b50b65b0c3f69fb34244c882a07cb}
+
+
+Definition at line 40 of file Simulation\-Detect\-Clusters.\-cpp.
 

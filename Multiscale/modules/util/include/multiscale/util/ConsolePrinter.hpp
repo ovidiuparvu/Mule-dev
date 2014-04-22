@@ -80,7 +80,8 @@ namespace multiscale {
             /*! The message will be printed in colour if and only if the standard output is a terminal.
              *  Otherwise it will be printed without changing colour.
              *
-             * \param message The given message
+             * \param message       The given message
+             * \param colourCode    The colour code used for printing the message
              */
             static void printColouredMessage(const std::string &message, const ColourCode &colourCode);
 

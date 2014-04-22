@@ -1,12 +1,14 @@
 var searchData=
 [
+  ['waitbeforeretry',['waitBeforeRetry',['../classmultiscale_1_1verification_1_1ModelCheckingManager.html#aee207469561f865c8b3dac535ebe6f36',1,'multiscale::verification::ModelCheckingManager']]],
+  ['warning',['warning',['../classmultiscale_1_1XmlValidator_1_1XmlValidationErrorHandler.html#aa6e6b35f1bf6ac07dbc2d4605176827f',1,'multiscale::XmlValidator::XmlValidationErrorHandler']]],
   ['warning_5ftag',['WARNING_TAG',['../classmultiscale_1_1ConsolePrinter.html#ace7e2138af37c79b1d99b518ec220e58',1,'multiscale::ConsolePrinter']]],
-  ['what',['what',['../classmultiscale_1_1MultiscaleException.html#a1af231f6e68715087f5be6e4000e8409',1,'multiscale::MultiscaleException']]],
-  ['white',['WHITE',['../namespacemultiscale.html#af0846ad927fc362e628b10c2d88d0c3aa45bd75f0410fd2f64bbd5bfc567987dd',1,'multiscale']]],
+  ['what',['what',['../classmultiscale_1_1MultiscaleException.html#a2750c3e86e792919a8a4323b83800530',1,'multiscale::MultiscaleException']]],
+  ['white',['WHITE',['../namespacemultiscale.html#a7ce596f5e5a72c226e446def60450fb7ab5bf627e448384cf3a4c35121ca6008d',1,'multiscale::WHITE()'],['../namespacemultiscale.html#a5d84269d7cc69de2aa2a3523f149fda9ab5bf627e448384cf3a4c35121ca6008d',1,'multiscale::WHITE()'],['../namespacemultiscale.html#a760983f971506416febf4b2230436c4bab5bf627e448384cf3a4c35121ca6008d',1,'multiscale::WHITE()']]],
   ['width',['width',['../classmultiscale_1_1analysis_1_1SimulationClusterDetector.html#a4c66a82aa1749dce31c767bc4008d904',1,'multiscale::analysis::SimulationClusterDetector::width()'],['../classmultiscale_1_1video_1_1CartesianToConcentrationsConverter.html#ae6fba5af405d884c7b70ed206a6d5cb1',1,'multiscale::video::CartesianToConcentrationsConverter::width()'],['../classmultiscale_1_1video_1_1RectangularCsvToInputFilesConverter.html#a7fe7f3d014535567fbeb465eb01cde1b',1,'multiscale::video::RectangularCsvToInputFilesConverter::width()'],['../classmultiscale_1_1video_1_1RectangularEntityCsvToInputFilesConverter.html#ac4542ad4008e85ab4860146eed6e0200',1,'multiscale::video::RectangularEntityCsvToInputFilesConverter::width()']]],
   ['win_5fmin_5farea_5ftriangle',['WIN_MIN_AREA_TRIANGLE',['../MinEnclosingTriangleFinderSample_8cpp.html#a519bf48877dce88abe417e1701ca178b',1,'MinEnclosingTriangleFinderSample.cpp']]],
   ['win_5foutput_5fimage',['WIN_OUTPUT_IMAGE',['../classmultiscale_1_1analysis_1_1Detector.html#a883b5de8d273a2bfab31e45bc285c78d',1,'multiscale::analysis::Detector']]],
-  ['windowscolourcode',['WindowsColourCode',['../namespacemultiscale.html#a74c63fc7bd6afb6457e0d0c1ffe145ff',1,'multiscale']]],
+  ['windowscolourcode',['WindowsColourCode',['../namespacemultiscale.html#a5d84269d7cc69de2aa2a3523f149fda9',1,'multiscale']]],
   ['wrn_5faverage_5ffunction_5fname',['WRN_AVERAGE_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a65b22b0d9cb95ff5dde4b7b41f342774',1,'multiscale::Numeric']]],
   ['wrn_5fcovariance_5ffunction_5fname',['WRN_COVARIANCE_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a940b0ee737842f9113eb66b7c2cfa4a2',1,'multiscale::Numeric']]],
   ['wrn_5fgeometric_5fmean_5ffunction_5fname',['WRN_GEOMETRIC_MEAN_FUNCTION_NAME',['../classmultiscale_1_1Numeric.html#a96ed0e32f79d8801370a922c8778f436',1,'multiscale::Numeric']]],
