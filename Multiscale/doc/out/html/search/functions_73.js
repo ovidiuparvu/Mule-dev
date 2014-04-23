@@ -69,5 +69,5 @@ var searchData=
   ['subtrace',['subTrace',['../classmultiscale_1_1verification_1_1SpatialTemporalTrace.html#a882c610c1b15b61a2aadff682e6102c2',1,'multiscale::verification::SpatialTemporalTrace']]],
   ['successor',['successor',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a075472a453bfcb0eedd06a4a185241fc',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['sum',['sum',['../classmultiscale_1_1Numeric.html#aca9366c38b9b992793dd364b8e421bbd',1,'multiscale::Numeric::sum(const std::vector&lt; double &gt; &amp;numbers)'],['../classmultiscale_1_1Numeric.html#ad54bc039dde4ff22b8c4b5d3708d65bb',1,'multiscale::Numeric::sum(const std::vector&lt; double &gt; &amp;numbers, unsigned int nrOfValues)']]],
-  ['sumofaveragecentroiddistances',['sumOfAverageCentroidDistances',['../classmultiscale_1_1analysis_1_1RegionDetector.html#afcbf8c2e3b26990c6307b311aec8f06b',1,'multiscale::analysis::RegionDetector']]]
+  ['sumofaveragecentroiddistances',['sumOfAverageCentroidDistances',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a477a666686e68c996b4d525921df4121',1,'multiscale::analysis::RegionDetector']]]
 ];

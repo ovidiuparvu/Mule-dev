@@ -140,7 +140,7 @@ namespace multiscale {
 
             //! Return the factorial of a number
             /*!
-             * \param n The number for which factorial should be computed
+             * \param number The number for which factorial should be computed
              */
             static unsigned long factorial(unsigned int number);
 

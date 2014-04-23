@@ -204,7 +204,7 @@ namespace multiscale {
                 /*!
                  * \param regions The regions in the image
                  */
-                double sumOfAverageCentroidDistances(vector<Region> &Regions);
+                double sumOfAverageCentroidDistances(vector<Region> &regions);
 
                 //! Compute the average density
                 /*!
@@ -311,15 +311,15 @@ namespace multiscale {
 
                 //! Output the outer border polygon of a region to the outputImage instance
                 /*!
-                 * \param outerBorderPolygon    The polygon defining the outer border of the region
-                 * \param outputImage           The given output image
+                 * \param outerBorder   The polygon defining the outer border of the region
+                 * \param outputImage   The given output image
                  */
                 void outputRegionOuterBorderToImage(const vector<Point> &outerBorder, Mat &outputImage);
 
                 //! Output the inner border polygons of a region to the outputImage instance
                 /*!
-                 * \param innerBorderPolygons   The polygons defining the inner border(s) of the region
-                 * \param outputImage           The given output image
+                 * \param innerBorders  The polygons defining the inner border(s) of the region
+                 * \param outputImage   The given output image
                  */
                 void outputRegionInnerBordersToImage(const vector<vector<Point> > &innerBorders, Mat &outputImage);
 

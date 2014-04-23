@@ -151,8 +151,8 @@ namespace multiscale {
                 //! Check if the result of the model checking task is true considering the probabilistic comparator (i.e. <=, >=)
                 /*!
                  *  For queries of type :
-                 *      a) P >= \theta [\phi] the result is (mean >= theta)
-                 *      b) P <= \theta [\phi] the result is (mean <= theta)
+                 *      a) \f$ P >= \theta [\phi] \f$ the result is \f$ (mean >= \theta) \f$
+                 *      b) \f$ P <= \theta [\phi] \f$ the result is \f$ (mean <= \theta) \f$
                  *
                  * \param variance  The given variance value
                  */

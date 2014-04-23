@@ -251,9 +251,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a5ad71a8af2beb1a02573d0c125af4e16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5ad71a8af2beb1a02573d0c125af4e16">computeAverageClusterednessDegree</a> (vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;<a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">regions</a>)</td></tr>
 <tr class="memdesc:a5ad71a8af2beb1a02573d0c125af4e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the average clusteredness degree.  <a href="#a5ad71a8af2beb1a02573d0c125af4e16">More...</a><br/></td></tr>
 <tr class="separator:a5ad71a8af2beb1a02573d0c125af4e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcbf8c2e3b26990c6307b311aec8f06b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#afcbf8c2e3b26990c6307b311aec8f06b">sumOfAverageCentroidDistances</a> (vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;Regions)</td></tr>
-<tr class="memdesc:afcbf8c2e3b26990c6307b311aec8f06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the sum of the average distances from each region centroid to all the other regions' centroids.  <a href="#afcbf8c2e3b26990c6307b311aec8f06b">More...</a><br/></td></tr>
-<tr class="separator:afcbf8c2e3b26990c6307b311aec8f06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a477a666686e68c996b4d525921df4121"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a477a666686e68c996b4d525921df4121">sumOfAverageCentroidDistances</a> (vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;<a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">regions</a>)</td></tr>
+<tr class="memdesc:a477a666686e68c996b4d525921df4121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the sum of the average distances from each region centroid to all the other regions' centroids.  <a href="#a477a666686e68c996b4d525921df4121">More...</a><br/></td></tr>
+<tr class="separator:a477a666686e68c996b4d525921df4121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f1171daf4a952d12d573ab9d0838490"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a3f1171daf4a952d12d573ab9d0838490">computeAverageDensity</a> (vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;<a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aa6517ceb3a58295448d32e6e41499893">regions</a>)</td></tr>
 <tr class="memdesc:a3f1171daf4a952d12d573ab9d0838490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the average density.  <a href="#a3f1171daf4a952d12d573ab9d0838490">More...</a><br/></td></tr>
 <tr class="separator:a3f1171daf4a952d12d573ab9d0838490"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1935,7 +1935,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Output the inner border polygons of a region to the outputImage instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">innerBorderPolygons</td><td>The polygons defining the inner border(s) of the region </td></tr>
+    <tr><td class="paramname">innerBorders</td><td>The polygons defining the inner border(s) of the region </td></tr>
     <tr><td class="paramname">outputImage</td><td>The given output image </td></tr>
   </table>
   </dd>
@@ -1995,7 +1995,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Output the outer border polygon of a region to the outputImage instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">outerBorderPolygon</td><td>The polygon defining the outer border of the region </td></tr>
+    <tr><td class="paramname">outerBorder</td><td>The polygon defining the outer border of the region </td></tr>
     <tr><td class="paramname">outputImage</td><td>The given output image </td></tr>
   </table>
   </dd>
@@ -2732,7 +2732,7 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afcbf8c2e3b26990c6307b311aec8f06b"></a>
+<a class="anchor" id="a477a666686e68c996b4d525921df4121"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -2743,7 +2743,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">double RegionDetector::sumOfAverageCentroidDistances </td>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="classmultiscale_1_1analysis_1_1Region.html">Region</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Regions</em></td><td>)</td>
+          <td class="paramname"><em>regions</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -2773,8 +2773,8 @@ Additional Inherited Members</h2></td></tr>
 <div id="dynsection-38-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-38-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_afcbf8c2e3b26990c6307b311aec8f06b_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_afcbf8c2e3b26990c6307b311aec8f06b_icgraph" alt=""/></div>
-<map name="classmultiscale_1_1analysis_1_1RegionDetector_afcbf8c2e3b26990c6307b311aec8f06b_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_afcbf8c2e3b26990c6307b311aec8f06b_icgraph">
+<div class="center"><img src="classmultiscale_1_1analysis_1_1RegionDetector_a477a666686e68c996b4d525921df4121_icgraph.png" border="0" usemap="#classmultiscale_1_1analysis_1_1RegionDetector_a477a666686e68c996b4d525921df4121_icgraph" alt=""/></div>
+<map name="classmultiscale_1_1analysis_1_1RegionDetector_a477a666686e68c996b4d525921df4121_icgraph" id="classmultiscale_1_1analysis_1_1RegionDetector_a477a666686e68c996b4d525921df4121_icgraph">
 <area shape="rect" id="node3" href="classmultiscale_1_1analysis_1_1RegionDetector.html#a5ad71a8af2beb1a02573d0c125af4e16" title="Compute the average clusteredness degree." alt="" coords="269,5,496,69"/><area shape="rect" id="node5" href="classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1" title="Compute the average clusteredness degree and average density." alt="" coords="544,5,771,69"/><area shape="rect" id="node7" href="classmultiscale_1_1analysis_1_1RegionDetector.html#ae47319444db34d72d4316f49f965b69d" title="Process the given image." alt="" coords="819,5,1029,69"/></map>
 </div>
 </p>
@@ -3808,7 +3808,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacemultiscale.html">multiscale</a></li><li class="navelem"><a class="el" href="namespacemultiscale_1_1analysis.html">analysis</a></li><li class="navelem"><a class="el" href="classmultiscale_1_1analysis_1_1RegionDetector.html">RegionDetector</a></li>
-    <li class="footer">Generated on Tue Apr 22 2014 18:35:56 for Multiscale by
+    <li class="footer">Generated on Wed Apr 23 2014 15:00:27 for Multiscale by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

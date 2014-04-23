@@ -23,9 +23,9 @@ namespace multiscale {
 
                 //! Print the model checker initialisation message
                 /*!
-                 * \param logicPropertyInputFilepath    The path to the input file containing logic properties
-                 * \param tracesFolderPath              The path to the folder containing the traces
-                 * \param extraEvaluationTime           The number of extra minutes which the application will wait for new traces to be provided and evaluated
+                 * \param logicProperty         The path to the input file containing logic properties
+                 * \param tracesFolderPath      The path to the folder containing the traces
+                 * \param extraEvaluationTime   The number of extra minutes which the application will wait for new traces to be provided and evaluated
                  */
                 static void printInitialisationMessage(const std::string &logicProperty,
                                                        const std::string &tracesFolderPath,

@@ -186,10 +186,10 @@ namespace multiscale {
 
                 //! Check if the given probability holds considering the obtained answer and probability comparator (i.e. <=, >=)
                 /*! For queries of type :
-                 *      a) P >= \theta [\phi] the isNullHypothesisTrue flag value is returned
-                 *      b) P <= \theta [\phi] the !(isNullHypothesisTrue) flag value is returned
+                 *      a) \f$ P >= \theta [\phi] \f$ the isNullHypothesisTrue flag value is returned
+                 *      b) \f$ P <= \theta [\phi] \f$ the !(isNullHypothesisTrue) flag value is returned
                  *
-                 * \param isNullHypothesisTrue  Flag indicating if the null hypothesis is true considering a P >= [\phi] query
+                 * \param isNullHypothesisTrue  Flag indicating if the null hypothesis is true considering a \f$ P >= [\phi] \f$ query
                  */
                 bool doesPropertyHoldConsideringProbabilityComparator(bool isNullHypothesisTrue);
 

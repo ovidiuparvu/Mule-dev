@@ -160,7 +160,7 @@ namespace multiscale {
 
                 //! Compute the value of the probability distribution function for the Binomial distribution
                 /*!
-                 * \param nrOfSucceses  The number of successful observations/trials
+                 * \param nrOfSuccesses The number of successful observations/trials
                  * \param probability   The probability of success
                  */
                 double computeBinomialPDF(unsigned int nrOfSuccesses, double probability);
@@ -173,14 +173,14 @@ namespace multiscale {
                  *  \param nrOfObservations The total number of observations
                  *  \param nrOfSuccesses    The total number of successes
                  */
-                double computeBayesFactorValue(unsigned int nrOfObservations, unsigned int nrOfSucceses);
+                double computeBayesFactorValue(unsigned int nrOfObservations, unsigned int nrOfSuccesses);
 
                 //! Check if the given probability holds considering the obtained answer and probability comparator (i.e. <=, >=)
                 /*! For queries of type :
-                 *      a) P >= \theta [\phi] the isNullHypothesisTrue flag value is returned
-                 *      b) P <= \theta [\phi] the !(isNullHypothesisTrue) flag value is returned
+                 *      a) \f$ P >= \theta [\phi] \f$ the isNullHypothesisTrue flag value is returned
+                 *      b) \f$ P <= \theta [\phi] \f$ the !(isNullHypothesisTrue) flag value is returned
                  *
-                 * \param isNullHypothesisTrue  Flag indicating if the null hypothesis is true considering a P >= [\phi] query
+                 * \param isNullHypothesisTrue  Flag indicating if the null hypothesis is true considering a \f$ P >= [\phi] \f$ query
                  */
                 bool doesPropertyHoldConsideringProbabilityComparator(bool isNullHypothesisTrue);
 

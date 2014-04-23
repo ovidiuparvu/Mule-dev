@@ -181,7 +181,7 @@ var searchData=
   ['subtractionoperation',['SubtractionOperation',['../classmultiscale_1_1SubtractionOperation.html',1,'multiscale']]],
   ['successor',['successor',['../classmultiscale_1_1MinEnclosingTriangleFinder.html#a075472a453bfcb0eedd06a4a185241fc',1,'multiscale::MinEnclosingTriangleFinder']]],
   ['sum',['sum',['../classmultiscale_1_1Numeric.html#aca9366c38b9b992793dd364b8e421bbd',1,'multiscale::Numeric::sum(const std::vector&lt; double &gt; &amp;numbers)'],['../classmultiscale_1_1Numeric.html#ad54bc039dde4ff22b8c4b5d3708d65bb',1,'multiscale::Numeric::sum(const std::vector&lt; double &gt; &amp;numbers, unsigned int nrOfValues)'],['../namespacemultiscale_1_1verification.html#ab30125ef8d4e58878c9238c6af747760aa0ec87054b5e5b7847d0d8780a01a3d5',1,'multiscale::verification::Sum()']]],
-  ['sumofaveragecentroiddistances',['sumOfAverageCentroidDistances',['../classmultiscale_1_1analysis_1_1RegionDetector.html#afcbf8c2e3b26990c6307b311aec8f06b',1,'multiscale::analysis::RegionDetector']]],
+  ['sumofaveragecentroiddistances',['sumOfAverageCentroidDistances',['../classmultiscale_1_1analysis_1_1RegionDetector.html#a477a666686e68c996b4d525921df4121',1,'multiscale::analysis::RegionDetector']]],
   ['symboltables_2ehpp',['SymbolTables.hpp',['../SymbolTables_8hpp.html',1,'']]],
   ['synthesizedattribute_2ehpp',['SynthesizedAttribute.hpp',['../SynthesizedAttribute_8hpp.html',1,'']]]
 ];

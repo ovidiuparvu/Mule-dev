@@ -13532,7 +13532,7 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1ConsolePrinter.html</Path>
     <Anchor>ac621ba52a9114a6829e554eedec7ac5b</Anchor>
-    <Abstract>Get the platform specific colour code for the given generic platform colour code.</Abstract>
+    <Abstract>Get the CSI string representation corresponding to the given UNIX colour code.</Abstract>
     <DeclaredIn>ConsolePrinter.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -24457,7 +24457,7 @@
       <Scope>multiscale::analysis::RegionDetector</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1analysis_1_1RegionDetector.html</Path>
-    <Anchor>afcbf8c2e3b26990c6307b311aec8f06b</Anchor>
+    <Anchor>a477a666686e68c996b4d525921df4121</Anchor>
     <Abstract>Compute the sum of the average distances from each region centroid to all the other regions&amp;#39; centroid...</Abstract>
     <DeclaredIn>RegionDetector.hpp</DeclaredIn>
   </Token>
@@ -30520,7 +30520,7 @@
       <Scope>multiscale::verification::BayesianModelChecker</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1BayesianModelChecker.html</Path>
-    <Anchor>afab3e79823f4902a4b1cf6d1418972bc</Anchor>
+    <Anchor>af5bab92244f44fe4deb261cc83589496</Anchor>
     <Abstract>Compute the value of the Bayes factor.</Abstract>
     <DeclaredIn>BayesianModelChecker.hpp</DeclaredIn>
   </Token>

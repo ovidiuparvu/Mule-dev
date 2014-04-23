@@ -51,7 +51,7 @@ var classmultiscale_1_1analysis_1_1RegionDetector =
     [ "setRegionAreaThresh", "classmultiscale_1_1analysis_1_1RegionDetector.html#a5cf10aea88e85198ce54df0e94e6d1a7", null ],
     [ "setThresholdValue", "classmultiscale_1_1analysis_1_1RegionDetector.html#a066e87a1f134194dabfc760d241b8ab2", null ],
     [ "smoothImage", "classmultiscale_1_1analysis_1_1RegionDetector.html#a895f12ad46f2e0d1db45637a5935c2b5", null ],
-    [ "sumOfAverageCentroidDistances", "classmultiscale_1_1analysis_1_1RegionDetector.html#afcbf8c2e3b26990c6307b311aec8f06b", null ],
+    [ "sumOfAverageCentroidDistances", "classmultiscale_1_1analysis_1_1RegionDetector.html#a477a666686e68c996b4d525921df4121", null ],
     [ "thresholdImage", "classmultiscale_1_1analysis_1_1RegionDetector.html#a614cd80fac5d3df2a25c401bb221149c", null ],
     [ "alpha", "classmultiscale_1_1analysis_1_1RegionDetector.html#ab768a3bbfff9835b441a889ab2cb05a6", null ],
     [ "ALPHA_MAX", "classmultiscale_1_1analysis_1_1RegionDetector.html#a7ca1e136dc9d768f1e11cd6f770d950f", null ],

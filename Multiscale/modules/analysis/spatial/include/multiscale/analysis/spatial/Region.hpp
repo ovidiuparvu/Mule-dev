@@ -98,7 +98,7 @@ namespace multiscale {
                  *      0 <= p.a.x
                  *      0 <= p.a.y
                  *
-                 *  \param polygon The given collection of polygons
+                 *  \param polygons The given collection of polygons
                  */
                 bool areValidInputPolygons(const vector<vector<Point> > &polygons);
 

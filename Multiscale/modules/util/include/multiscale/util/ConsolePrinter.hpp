@@ -133,18 +133,22 @@ namespace multiscale {
              *
              * \param message               The given message
              * \param colourCode            The given colour code
-             * 'param appendNewLineAtEnd    Flag indicating if a new line character should be printed in the end
+             * \param appendNewLineAtEnd    Flag indicating if a new line character should be printed in the end
              */
             static void printMessageUsingColour(const std::string &message, const ColourCode &colourCode,
                                                 bool appendNewLineAtEnd = true);
 
-            //! Get the platform specific colour code for the given generic platform colour code
-            /*!
-             * \param colourCode    The generic platform colour code
-             */
             #ifdef MULTISCALE_WINDOWS
+                //! Get the platform specific colour code for the given generic platform colour code
+                /*!
+                 * \param colourCode    The generic platform colour code
+                 */
                 static WindowsColourCode getColourCode(const ColourCode &colourCode);
             #elif defined MULTISCALE_UNIX
+                //! Get the platform specific colour code for the given generic platform colour code
+                /*!
+                 * \param colourCode    The generic platform colour code
+                 */
                 static UnixColourCode getColourCode(const ColourCode &colourCode);
             #endif
 

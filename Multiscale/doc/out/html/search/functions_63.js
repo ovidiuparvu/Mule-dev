@@ -27,7 +27,7 @@ var searchData=
   ['computeaveragemeasure',['computeAverageMeasure',['../classmultiscale_1_1analysis_1_1Silhouette.html#ac2d55f89072bf46c86b8004d6787a820',1,'multiscale::analysis::Silhouette']]],
   ['computeaveragemeasures',['computeAverageMeasures',['../classmultiscale_1_1analysis_1_1RegionDetector.html#aee096ec729a12b62fd0c61f74601aad1',1,'multiscale::analysis::RegionDetector']]],
   ['computeaveragepileupdegree',['computeAveragePileUpDegree',['../classmultiscale_1_1analysis_1_1ClusterDetector.html#a1efab8446c79feb8a9285d895bb64b05',1,'multiscale::analysis::ClusterDetector']]],
-  ['computebayesfactorvalue',['computeBayesFactorValue',['../classmultiscale_1_1verification_1_1BayesianModelChecker.html#afab3e79823f4902a4b1cf6d1418972bc',1,'multiscale::verification::BayesianModelChecker']]],
+  ['computebayesfactorvalue',['computeBayesFactorValue',['../classmultiscale_1_1verification_1_1BayesianModelChecker.html#af5bab92244f44fe4deb261cc83589496',1,'multiscale::verification::BayesianModelChecker']]],
   ['computebinomialpdf',['computeBinomialPDF',['../classmultiscale_1_1verification_1_1BayesianModelChecker.html#a482bed5acf582b6bcf0956172f523076',1,'multiscale::verification::BayesianModelChecker']]],
   ['computecdf',['computeCdf',['../classmultiscale_1_1BetaDistribution.html#a9a8916dcd9c37a95fe1bcfe9e05e0d45',1,'multiscale::BetaDistribution::computeCdf()'],['../classmultiscale_1_1BinomialDistribution.html#a616518fa68ff8b85fe05842cadc8550a',1,'multiscale::BinomialDistribution::computeCdf()']]],
   ['computeclusterednessdegreeifouterborderdefined',['computeClusterednessDegreeIfOuterBorderDefined',['../classmultiscale_1_1analysis_1_1Region.html#a330d1dcf6d74faab5a2e7f4e7b57278d',1,'multiscale::analysis::Region']]],

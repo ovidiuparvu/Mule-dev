@@ -92,8 +92,8 @@ namespace multiscale {
 
                 //! Check if the given probability holds considering the probability comparator (i.e. <=, >=)
                 /*! For queries of type :
-                 *      a) P >= \theta [\phi] result = (#true_traces/#traces) - \epsilon >= \theta
-                 *      b) P <= \theta [\phi] result = (#true_traces/#traces) + \epsilon <= \theta
+                 *      a) \f$ P >= \theta [\phi] \f$ result = \f$ (nr_true_traces/nr_traces) - \epsilon >= \theta \f$
+                 *      b)\f$  P <= \theta [\phi] \f$ result = \f$ (nr_true_traces/nr_traces) + \epsilon <= \theta \f$
                  */
                 bool doesPropertyHoldConsideringProbabilityComparator();
 
