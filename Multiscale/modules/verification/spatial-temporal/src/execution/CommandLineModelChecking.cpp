@@ -1,5 +1,6 @@
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/StringManipulator.hpp"
+#include "multiscale/verification/spatial-temporal/checking/ApproximateBayesianModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ApproximateProbabilisticModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/BayesianModelCheckerFactory.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ProbabilisticBlackBoxModelCheckerFactory.hpp"
@@ -74,23 +75,53 @@ void CommandLineModelChecking::initialiseOptionalArgumentsConfiguration() {
 }
 
 void CommandLineModelChecking::initialiseModelCheckerTypeSpecificArgumentsConfiguration() {
-    po::options_description statisticalArguments                (CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS);
-    po::options_description approximateProbabilisticArguments   (CONFIG_CAPTION_APPROXIMATE_PROBABILISTIC_MODEL_CHECKER_ARGUMENTS);
-    po::options_description bayesianArguments                   (CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS);
-
-    statisticalArguments                .add_options()(ARG_TYPE_I_ERROR_NAME_LONG.c_str()           , po::value<double>(), (ARG_TYPE_I_ERROR_DESCRIPTION + "\n").c_str())
-                                                      (ARG_TYPE_II_ERROR_NAME_LONG.c_str()          , po::value<double>(), (ARG_TYPE_II_ERROR_DESCRIPTION + "\n").c_str());
-
-    approximateProbabilisticArguments   .add_options()(ARG_DELTA_NAME_LONG.c_str()                  , po::value<double>(), (ARG_DELTA_DESCRIPTION + "\n").c_str())
-                                                      (ARG_EPSILON_NAME_LONG.c_str()                , po::value<double>(), (ARG_EPSILON_DESCRIPTION + "\n").c_str());
-
-    bayesianArguments                   .add_options()(ARG_ALPHA_NAME_LONG.c_str()                  , po::value<double>(), (ARG_ALPHA_DESCRIPTION + "\n").c_str())
-                                                      (ARG_BETA_NAME_LONG.c_str()                   , po::value<double>(), (ARG_BETA_DESCRIPTION + "\n").c_str())
-                                                      (ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG.c_str() , po::value<double>(), (ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION + "\n").c_str());
+    auto statisticalArguments               = initialiseStatisticalModelCheckerArgumentsConfiguration();
+    auto approximateProbabilisticArguments  = initialiseApproximateProbabilisticModelCheckerArgumentsConfiguration();
+    auto bayesianArguments                  = initialiseBayesianModelCheckerArgumentsConfiguration();
+    auto approximateBayesianArguments       = initialiseApproximateBayesianModelCheckerArgumentsConfiguration();
 
     modelCheckerTypeSpecificArguments.add(statisticalArguments)
                                      .add(approximateProbabilisticArguments)
-                                     .add(bayesianArguments);
+                                     .add(bayesianArguments)
+                                     .add(approximateBayesianArguments);
+}
+
+po::options_description CommandLineModelChecking::initialiseStatisticalModelCheckerArgumentsConfiguration() {
+    po::options_description statisticalArguments(CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS);
+
+    statisticalArguments.add_options()(ARG_TYPE_I_ERROR_NAME_LONG.c_str()     , po::value<double>(), (ARG_TYPE_I_ERROR_DESCRIPTION + "\n").c_str())
+                                      (ARG_TYPE_II_ERROR_NAME_LONG.c_str()    , po::value<double>(), (ARG_TYPE_II_ERROR_DESCRIPTION + "\n").c_str());
+
+    return statisticalArguments;
+}
+
+po::options_description CommandLineModelChecking::initialiseApproximateProbabilisticModelCheckerArgumentsConfiguration() {
+    po::options_description approximateProbabilisticArguments(CONFIG_CAPTION_APPROXIMATE_PROBABILISTIC_MODEL_CHECKER_ARGUMENTS);
+
+    approximateProbabilisticArguments.add_options()(ARG_DELTA_NAME_LONG.c_str()     , po::value<double>(), (ARG_DELTA_DESCRIPTION + "\n").c_str())
+                                                   (ARG_EPSILON_NAME_LONG.c_str()   , po::value<double>(), (ARG_EPSILON_DESCRIPTION + "\n").c_str());
+
+    return approximateProbabilisticArguments;
+}
+
+po::options_description CommandLineModelChecking::initialiseBayesianModelCheckerArgumentsConfiguration() {
+    po::options_description bayesianArguments(CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS);
+
+    bayesianArguments.add_options()(ARG_BAYESIAN_ALPHA_NAME_LONG.c_str()        , po::value<double>(), (ARG_BAYESIAN_ALPHA_DESCRIPTION + "\n").c_str())
+                                   (ARG_BAYESIAN_BETA_NAME_LONG.c_str()         , po::value<double>(), (ARG_BAYESIAN_BETA_DESCRIPTION + "\n").c_str())
+                                   (ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG.c_str(), po::value<double>(), (ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION + "\n").c_str());
+
+    return bayesianArguments;
+}
+
+po::options_description CommandLineModelChecking::initialiseApproximateBayesianModelCheckerArgumentsConfiguration() {
+    po::options_description approximateBayesianArguments(CONFIG_CAPTION_APPROXIMATE_BAYESIAN_MODEL_CHECKER_ARGUMENTS);
+
+    approximateBayesianArguments.add_options()(ARG_APPROXIMATE_BAYESIAN_ALPHA_NAME_LONG.c_str() , po::value<double>(), (ARG_BAYESIAN_ALPHA_DESCRIPTION + "\n").c_str())
+                                              (ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG.c_str()  , po::value<double>(), (ARG_BAYESIAN_BETA_DESCRIPTION + "\n").c_str())
+                                              (ARG_VARIANCE_THRESHOLD_NAME_LONG.c_str()         , po::value<double>(), (ARG_VARIANCE_THRESHOLD_DESCRIPTION + "\n").c_str());
+
+    return approximateBayesianArguments;
 }
 
 bool CommandLineModelChecking::areValidArgumentsConsideringConfiguration(int argc, char **argv) {
@@ -133,14 +164,38 @@ void CommandLineModelChecking::handleHelpRequest() {
 }
 
 void CommandLineModelChecking::printHelpMessage() {
-    std::cout   << std::endl
-                << HELP_NAME_LABEL << std::endl
-                << HELP_NAME_MSG   << std::endl
-                << std::endl
-                << HELP_USAGE_LABEL << std::endl
-                << HELP_USAGE_MSG   << std::endl;
+    printHelpIntroMessage();
+    printHelpContentsMessage();
+    printHelpClosingMessage();
+}
 
+void CommandLineModelChecking::printHelpIntroMessage() {
+    std::cout   << std::endl
+                << HELP_NAME_LABEL          << std::endl
+                << HELP_NAME_MSG            << std::endl
+                << std::endl
+                << HELP_USAGE_LABEL         << std::endl
+                << HELP_USAGE_MSG           << std::endl
+                << std::endl
+                << HELP_DESCRIPTION_LABEL   << std::endl
+                << HELP_DESCRIPTION_MSG     << std::endl;
+}
+
+void CommandLineModelChecking::printHelpContentsMessage() {
     std::cout << allowedArguments << std::endl;
+}
+
+void CommandLineModelChecking::printHelpClosingMessage() {
+    std::cout   << std::endl
+                << HELP_AUTHOR_LABEL            << std::endl
+                << HELP_AUTHOR_MSG              << std::endl
+                << std::endl
+                << HELP_COPYRIGHT_LABEL         << std::endl
+                << HELP_COPYRIGHT_MSG           << std::endl
+                << std::endl
+                << HELP_REPORTING_BUGS_LABEL    << std::endl
+                << HELP_REPORTING_BUGS_MSG      << std::endl
+                << std::endl;
 }
 
 bool CommandLineModelChecking::areUnrecognizedArgumentsPresent(const po::parsed_options &parsedArguments) {
@@ -215,6 +270,9 @@ bool CommandLineModelChecking::areModelCheckingTypeSpecificArgumentsPresent(unsi
         case MODEL_CHECKER_TYPE_BAYESIAN:
             return areBayesianModelCheckingArgumentsPresent(variablesMap);
 
+        case MODEL_CHECKER_TYPE_APPROXIMATE_BAYESIAN:
+            return areApproximateBayesianModelCheckingArgumentsPresent(variablesMap);
+
         default:
             MS_throw(InvalidInputException, ERR_INVALID_MODEL_CHECKING_TYPE);
     }
@@ -236,9 +294,17 @@ bool CommandLineModelChecking::areApproximateProbabilisticModelCheckingArguments
 
 bool CommandLineModelChecking::areBayesianModelCheckingArgumentsPresent(const po::variables_map &variablesMap) {
     return (
-        (variablesMap.count(ARG_ALPHA_NAME_LONG))                   &&
-        (variablesMap.count(ARG_BETA_NAME_LONG))                    &&
+        (variablesMap.count(ARG_BAYESIAN_ALPHA_NAME_LONG))                   &&
+        (variablesMap.count(ARG_BAYESIAN_BETA_NAME_LONG))                    &&
         (variablesMap.count(ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG))
+    );
+}
+
+bool CommandLineModelChecking::areApproximateBayesianModelCheckingArgumentsPresent(const po::variables_map &variablesMap) {
+    return (
+        (variablesMap.count(ARG_APPROXIMATE_BAYESIAN_ALPHA_NAME_LONG))  &&
+        (variablesMap.count(ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG))   &&
+        (variablesMap.count(ARG_VARIANCE_THRESHOLD_NAME_LONG))
     );
 }
 
@@ -260,6 +326,10 @@ void CommandLineModelChecking::removeModelCheckingTypeSpecificArguments(unsigned
             removeBayesianModelCheckingArguments(variablesMap);
             break;
 
+        case MODEL_CHECKER_TYPE_APPROXIMATE_BAYESIAN:
+            removeApproximateBayesianModelCheckingArguments(variablesMap);
+            break;
+
         default:
             MS_throw(InvalidInputException, ERR_INVALID_MODEL_CHECKING_TYPE);
     }
@@ -276,9 +346,15 @@ void CommandLineModelChecking::removeApproximateProbabilisticModelCheckingArgume
 }
 
 void CommandLineModelChecking::removeBayesianModelCheckingArguments(po::variables_map &variablesMap) {
-    variablesMap.erase(ARG_ALPHA_NAME_LONG);
-    variablesMap.erase(ARG_BETA_NAME_LONG);
+    variablesMap.erase(ARG_BAYESIAN_ALPHA_NAME_LONG);
+    variablesMap.erase(ARG_BAYESIAN_BETA_NAME_LONG);
     variablesMap.erase(ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG);
+}
+
+void CommandLineModelChecking::removeApproximateBayesianModelCheckingArguments(po::variables_map &variablesMap) {
+    variablesMap.erase(ARG_APPROXIMATE_BAYESIAN_ALPHA_NAME_LONG);
+    variablesMap.erase(ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG);
+    variablesMap.erase(ARG_VARIANCE_THRESHOLD_NAME_LONG);
 }
 
 void CommandLineModelChecking::initialiseClassMembers() {
@@ -327,6 +403,10 @@ void CommandLineModelChecking::initialiseModelChecker() {
             initialiseBayesianModelChecker();
             break;
 
+        case MODEL_CHECKER_TYPE_APPROXIMATE_BAYESIAN:
+            initialiseApproximateBayesianModelChecker();
+            break;
+
         default:
             MS_throw(InvalidInputException, ERR_INVALID_MODEL_CHECKING_TYPE);
     }
@@ -372,8 +452,8 @@ void CommandLineModelChecking::initialiseApproximateProbabilisticModelChecker() 
 }
 
 void CommandLineModelChecking::initialiseBayesianModelChecker() {
-    double alpha                = variablesMap[ARG_ALPHA_NAME_LONG].as<double>();
-    double beta                 = variablesMap[ARG_BETA_NAME_LONG].as<double>();
+    double alpha                = variablesMap[ARG_BAYESIAN_ALPHA_NAME_LONG].as<double>();
+    double beta                 = variablesMap[ARG_BAYESIAN_BETA_NAME_LONG].as<double>();
     double bayesFactorThreshold = variablesMap[ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG].as<double>();
 
     modelCheckerFactory = make_shared<BayesianModelCheckerFactory>(alpha, beta, bayesFactorThreshold);
@@ -387,6 +467,25 @@ void CommandLineModelChecking::initialiseBayesianModelChecker() {
         MODEL_CHECKER_BAYESIAN_PARAMETERS_MIDDLE2 +
         StringManipulator::toString(bayesFactorThreshold) +
         MODEL_CHECKER_BAYESIAN_PARAMETERS_END
+    );
+}
+
+void CommandLineModelChecking::initialiseApproximateBayesianModelChecker() {
+    double alpha                = variablesMap[ARG_APPROXIMATE_BAYESIAN_ALPHA_NAME_LONG].as<double>();
+    double beta                 = variablesMap[ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG].as<double>();
+    double varianceThreshold    = variablesMap[ARG_VARIANCE_THRESHOLD_NAME_LONG].as<double>();
+
+    modelCheckerFactory = make_shared<ApproximateBayesianModelCheckerFactory>(alpha, beta, varianceThreshold);
+
+    modelCheckerTypeName    = MODEL_CHECKER_APPROXIMATE_BAYESIAN_NAME;
+    modelCheckerParameters  = (
+        MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_BEGIN     +
+        StringManipulator::toString(alpha)                      +
+        MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_MIDDLE1   +
+        StringManipulator::toString(beta)                       +
+        MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_MIDDLE2   +
+        StringManipulator::toString(varianceThreshold)          +
+        MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_END
     );
 }
 
@@ -451,14 +550,20 @@ const std::string   CommandLineModelChecking::ARG_DELTA_DESCRIPTION             
 const std::string   CommandLineModelChecking::ARG_EPSILON_NAME_LONG                                             = "epsilon";
 const std::string   CommandLineModelChecking::ARG_EPSILON_DESCRIPTION                                           = "the considered deviation from the true probability";
 
-const std::string   CommandLineModelChecking::ARG_ALPHA_NAME_LONG                                               = "alpha";
-const std::string   CommandLineModelChecking::ARG_ALPHA_DESCRIPTION                                             = "the alpha shape parameter of the Beta distribution prior";
+const std::string   CommandLineModelChecking::ARG_BAYESIAN_ALPHA_NAME_LONG                                      = "bayesian-alpha";
+const std::string   CommandLineModelChecking::ARG_BAYESIAN_ALPHA_DESCRIPTION                                    = "the alpha shape parameter of the Beta distribution prior";
 
-const std::string   CommandLineModelChecking::ARG_BETA_NAME_LONG                                                = "beta";
-const std::string   CommandLineModelChecking::ARG_BETA_DESCRIPTION                                              = "the beta shape parameter of the Beta distribution prior";
+const std::string   CommandLineModelChecking::ARG_BAYESIAN_BETA_NAME_LONG                                       = "bayesian-beta";
+const std::string   CommandLineModelChecking::ARG_BAYESIAN_BETA_DESCRIPTION                                     = "the beta shape parameter of the Beta distribution prior";
 
 const std::string   CommandLineModelChecking::ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG                              = "bayes-factor-threshold";
 const std::string   CommandLineModelChecking::ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION                            = "the Bayes factor threshold used to fix the confidence level of the answer";
+
+const std::string   CommandLineModelChecking::ARG_APPROXIMATE_BAYESIAN_ALPHA_NAME_LONG                          = "approximate-bayesian-alpha";
+const std::string   CommandLineModelChecking::ARG_APPROXIMATE_BAYESIAN_ALPHA_DESCRIPTION                        = "the alpha shape parameter of the Beta distribution prior";
+
+const std::string   CommandLineModelChecking::ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG                           = "approximate-bayesian-beta";
+const std::string   CommandLineModelChecking::ARG_APPROXIMATE_BAYESIAN_BETA_DESCRIPTION                         = "the beta shape parameter of the Beta distribution prior";
 
 const std::string   CommandLineModelChecking::ARG_VARIANCE_THRESHOLD_NAME_LONG                                  = "variance-threshold";
 const std::string   CommandLineModelChecking::ARG_VARIANCE_THRESHOLD_DESCRIPTION                                = "the variance threshold used to fix the confidence level of the answer";
@@ -467,6 +572,14 @@ const std::string   CommandLineModelChecking::HELP_NAME_LABEL                   
 const std::string   CommandLineModelChecking::HELP_NAME_MSG                                                     = "    Mudi - Multidimensional model checker";
 const std::string   CommandLineModelChecking::HELP_USAGE_LABEL                                                  = "USAGE:";
 const std::string   CommandLineModelChecking::HELP_USAGE_MSG                                                    = "    bin/Mudi <required-arguments> [<optional-arguments>] <model-checking-type-specific-arguments>";
+const std::string   CommandLineModelChecking::HELP_DESCRIPTION_LABEL                                            = "DESCRIPTION:";
+const std::string   CommandLineModelChecking::HELP_DESCRIPTION_MSG                                              = "    Mudi is a multidimensional (spatial-temporal) approximate probabilistic model checker. It can be used for two different types of applications. First of all Mudi can be employed to validate logic properties against multidimensional models. Secondly it can be used in reverse mode as a method to query time series data generated by in vivo/vitro experiments. Properties of interest are formalised using a spatial-temporal logic and their validity is checked using Mudi.";
+const std::string   CommandLineModelChecking::HELP_AUTHOR_LABEL                                                 = "AUTHOR:";
+const std::string   CommandLineModelChecking::HELP_AUTHOR_MSG                                                   = "    The author of this software is Ovidiu Parvu.";
+const std::string   CommandLineModelChecking::HELP_COPYRIGHT_LABEL                                              = "COPYRIGHT:";
+const std::string   CommandLineModelChecking::HELP_COPYRIGHT_MSG                                                = "    Copyright Ovidiu Parvu 2014.";
+const std::string   CommandLineModelChecking::HELP_REPORTING_BUGS_LABEL                                         = "REPORTING BUGS:";
+const std::string   CommandLineModelChecking::HELP_REPORTING_BUGS_MSG                                           = "    Please send requests for fixing bugs or recommendations to <ovidiu.parvu[AT]gmail.com>.";
 
 const std::string   CommandLineModelChecking::MSG_MODEL_CHECKING_HELP_REQUESTED                                 = "A request for displaying help information was issued.";
 

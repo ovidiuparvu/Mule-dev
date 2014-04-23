@@ -89,6 +89,18 @@ namespace multiscale {
                 //! Initialise the configuration of model checker type specific command line arguments
                 void initialiseModelCheckerTypeSpecificArgumentsConfiguration();
 
+                //! Initialise the configuration of the statistical model checker command line arguments
+                po::options_description initialiseStatisticalModelCheckerArgumentsConfiguration();
+
+                //! Initialise the configuration of the approximate probabilistic model checker command line arguments
+                po::options_description initialiseApproximateProbabilisticModelCheckerArgumentsConfiguration();
+
+                //! Initialise the configuration of the Bayesian model checker command line arguments
+                po::options_description initialiseBayesianModelCheckerArgumentsConfiguration();
+
+                //! Initialise the configuration of the approximate Bayesian model checker command line arguments
+                po::options_description initialiseApproximateBayesianModelCheckerArgumentsConfiguration();
+
                 //! Check if the provided command line arguments are valid
                 /*!
                  * \param argc  The number of provided command line arguments
@@ -117,6 +129,15 @@ namespace multiscale {
 
                 //! Print help message to the console
                 void printHelpMessage();
+
+                //! Print the help intro message to the console
+                void printHelpIntroMessage();
+
+                //! Print the help contents message to the console
+                void printHelpContentsMessage();
+
+                //! Print the help closing message to the console
+                void printHelpClosingMessage();
 
                 //! Check if any unrecognized command line arguments are present
                 /*!
@@ -176,6 +197,12 @@ namespace multiscale {
                  */
                 bool areBayesianModelCheckingArgumentsPresent(const po::variables_map &variablesMap);
 
+                //! Check if the arguments specific to approximate Bayesian model checking are present
+                /*!
+                 * \param variablesMap      The map containing all parsed command line arguments
+                 */
+                bool areApproximateBayesianModelCheckingArgumentsPresent(const po::variables_map &variablesMap);
+
                 //! Remove the model checking type specific arguments from the given variables_map
                 /*!
                  * \param modelCheckerType  The type of the model checker
@@ -201,6 +228,12 @@ namespace multiscale {
                  * \param variablesMap      The map containing all parsed command line arguments
                  */
                 void removeBayesianModelCheckingArguments(po::variables_map &variablesMap);
+
+                //! Remove the approximate Bayesian model checking arguments from the given variables_map
+                /*!
+                 * \param variablesMap      The map containing all parsed command line arguments
+                 */
+                void removeApproximateBayesianModelCheckingArguments(po::variables_map &variablesMap);
 
                 //! Initialise the class members using the command line arguments
                 void initialiseClassMembers();
@@ -228,6 +261,9 @@ namespace multiscale {
 
                 //! Initialise the Bayesian model checker
                 void initialiseBayesianModelChecker();
+
+                //! Initialise the approximate Bayesian model checker
+                void initialiseApproximateBayesianModelChecker();
 
                 //! Initialise the model checking manager
                 void initialiseModelCheckingManager();
@@ -282,14 +318,20 @@ namespace multiscale {
                 static const std::string    ARG_EPSILON_NAME_LONG;
                 static const std::string    ARG_EPSILON_DESCRIPTION;
 
-                static const std::string    ARG_ALPHA_NAME_LONG;
-                static const std::string    ARG_ALPHA_DESCRIPTION;
+                static const std::string    ARG_BAYESIAN_ALPHA_NAME_LONG;
+                static const std::string    ARG_BAYESIAN_ALPHA_DESCRIPTION;
 
-                static const std::string    ARG_BETA_NAME_LONG;
-                static const std::string    ARG_BETA_DESCRIPTION;
+                static const std::string    ARG_BAYESIAN_BETA_NAME_LONG;
+                static const std::string    ARG_BAYESIAN_BETA_DESCRIPTION;
 
                 static const std::string    ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG;
                 static const std::string    ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION;
+
+                static const std::string    ARG_APPROXIMATE_BAYESIAN_ALPHA_NAME_LONG;
+                static const std::string    ARG_APPROXIMATE_BAYESIAN_ALPHA_DESCRIPTION;
+
+                static const std::string    ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG;
+                static const std::string    ARG_APPROXIMATE_BAYESIAN_BETA_DESCRIPTION;
 
                 static const std::string    ARG_VARIANCE_THRESHOLD_NAME_LONG;
                 static const std::string    ARG_VARIANCE_THRESHOLD_DESCRIPTION;
@@ -298,6 +340,14 @@ namespace multiscale {
                 static const std::string    HELP_NAME_MSG;
                 static const std::string    HELP_USAGE_LABEL;
                 static const std::string    HELP_USAGE_MSG;
+                static const std::string    HELP_DESCRIPTION_LABEL;
+                static const std::string    HELP_DESCRIPTION_MSG;
+                static const std::string    HELP_AUTHOR_LABEL;
+                static const std::string    HELP_AUTHOR_MSG;
+                static const std::string    HELP_COPYRIGHT_LABEL;
+                static const std::string    HELP_COPYRIGHT_MSG;
+                static const std::string    HELP_REPORTING_BUGS_LABEL;
+                static const std::string    HELP_REPORTING_BUGS_MSG;
 
                 static const std::string    MSG_MODEL_CHECKING_HELP_REQUESTED;
 
