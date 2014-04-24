@@ -35457,6 +35457,54 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>initialiseStatisticalModelCheckerArgumentsConfiguration</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a1ebe757d13718da2c1d0a753ee7d1480</Anchor>
+    <Abstract>Initialise the configuration of the statistical model checker command line arguments.</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseApproximateProbabilisticModelCheckerArgumentsConfiguration</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a3344c71b24bd76f783da7948ecd20547</Anchor>
+    <Abstract>Initialise the configuration of the approximate probabilistic model checker command line arguments...</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseBayesianModelCheckerArgumentsConfiguration</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a55a09b026533d34f7ac9472b9eb08ac0</Anchor>
+    <Abstract>Initialise the configuration of the Bayesian model checker command line arguments.</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseApproximateBayesianModelCheckerArgumentsConfiguration</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>ae3e9b9da6bef4fc48aa8ce57ba5924dd</Anchor>
+    <Abstract>Initialise the configuration of the approximate Bayesian model checker command line arguments...</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>areValidArgumentsConsideringConfiguration</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -35525,6 +35573,42 @@
     <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
     <Anchor>a216026b7ef590e12b092857f569fdfc5</Anchor>
     <Abstract>Print help message to the console.</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printHelpIntroMessage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>af4201cd2a9a1a89701191adf3566d8fb</Anchor>
+    <Abstract>Print the help intro message to the console.</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printHelpContentsMessage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>aaa4a89d82b580836887af563d80dc79b</Anchor>
+    <Abstract>Print the help contents message to the console.</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>printHelpClosingMessage</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a5c9693205ca2c4aeffd9d37710681acc</Anchor>
+    <Abstract>Print the help closing message to the console.</Abstract>
     <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -35649,6 +35733,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>areApproximateBayesianModelCheckingArgumentsPresent</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>ab1f754bf001e1656b3fe10bb647e2313</Anchor>
+    <Abstract>Check if the arguments specific to approximate Bayesian model checking are present.</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>removeModelCheckingTypeSpecificArguments</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
@@ -35693,6 +35789,18 @@
     <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
     <Anchor>a4f1693ebbb27a397c3964c5c25fb1e0a</Anchor>
     <Abstract>Remove the Bayesian model checking arguments from the given variables_map.</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>removeApproximateBayesianModelCheckingArguments</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>af5ac10badb5a2e702fdf6031a2e938cf</Anchor>
+    <Abstract>Remove the approximate Bayesian model checking arguments from the given variables_map.</Abstract>
     <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -35801,6 +35909,18 @@
     <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
     <Anchor>a475628f5bdecf10875e1cb2ade7b6264</Anchor>
     <Abstract>Initialise the Bayesian model checker.</Abstract>
+    <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initialiseApproximateBayesianModelChecker</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a8fe7dfe7171709c24e06360677a028b9</Anchor>
+    <Abstract>Initialise the approximate Bayesian model checker.</Abstract>
     <DeclaredIn>CommandLineModelChecking.hpp</DeclaredIn>
   </Token>
   <Token>
@@ -36299,43 +36419,43 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ARG_ALPHA_NAME_LONG</Name>
+      <Name>ARG_BAYESIAN_ALPHA_NAME_LONG</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::CommandLineModelChecking</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-    <Anchor>a59fc2619ad5ece47be452a5190219396</Anchor>
+    <Anchor>af8f043903af560d43caf6a87b09cfb6e</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ARG_ALPHA_DESCRIPTION</Name>
+      <Name>ARG_BAYESIAN_ALPHA_DESCRIPTION</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::CommandLineModelChecking</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-    <Anchor>aa78fb9292eed0028e1cd649d1c21f2b4</Anchor>
+    <Anchor>ad9a2611bde76a87185214dc6c3897ed9</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ARG_BETA_NAME_LONG</Name>
+      <Name>ARG_BAYESIAN_BETA_NAME_LONG</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::CommandLineModelChecking</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-    <Anchor>afec4ace192948d1c4428f011e1648b83</Anchor>
+    <Anchor>ac75365c50e93084ebc129d9f2307b56b</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ARG_BETA_DESCRIPTION</Name>
+      <Name>ARG_BAYESIAN_BETA_DESCRIPTION</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
       <Scope>multiscale::verification::CommandLineModelChecking</Scope>
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-    <Anchor>a6781874bdb860326b81633cc69e26958</Anchor>
+    <Anchor>a42b4a2d69a44f094deef8ebc5fd60abc</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -36356,6 +36476,46 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
     <Anchor>a52f0e4b40fe94e056d442af97b7cf105</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ARG_APPROXIMATE_BAYESIAN_ALPHA_NAME_LONG</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a356f2e3234b84d59ca61af714f14a6ee</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ARG_APPROXIMATE_BAYESIAN_ALPHA_DESCRIPTION</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a61a598a6b8680dc6c1fc3e0856e3c707</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a5befa65f1fafd20b7c18e965e6b7a956</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>ARG_APPROXIMATE_BAYESIAN_BETA_DESCRIPTION</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a1741c816d601259f9c283a97add14988</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -36416,6 +36576,86 @@
     </TokenIdentifier>
     <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
     <Anchor>a998cdc5612c2c91163fdca0e77de43e9</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HELP_DESCRIPTION_LABEL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a39089cfea60b67e13525b97ea4b4c283</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HELP_DESCRIPTION_MSG</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>adf130c2f154563ecdee9ea337e7b731c</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HELP_AUTHOR_LABEL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a6288c82d7ed9eb1560e3817057e14971</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HELP_AUTHOR_MSG</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a40e30e32edfdd89371c69db4fd6ed8d2</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HELP_COPYRIGHT_LABEL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a473c241ea014bdd0911ad92ceae8f18d</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HELP_COPYRIGHT_MSG</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>a39af94cded37a8159feb9aa9e84ed60e</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HELP_REPORTING_BUGS_LABEL</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>add0d560f454a0ce9964cdded37a1ccd7</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>HELP_REPORTING_BUGS_MSG</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>data</Type>
+      <Scope>multiscale::verification::CommandLineModelChecking</Scope>
+    </TokenIdentifier>
+    <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+    <Anchor>aec8daeaa0ce7faced69477b9c01f4e72</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

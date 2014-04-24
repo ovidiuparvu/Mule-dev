@@ -23,6 +23,7 @@ namespace multiscale {
         /*!
          *  The implementation of this class is (partially) based on the algorithms
          *  described in the following paper:
+         *
          *  C. Langmead, ‘Generalized Queries and Bayesian Statistical Model Checking in Dynamic
          *  Bayesian Networks: Application to Personalized Medicine’, Computer Science Department,
          *  Aug. 2009.
@@ -31,12 +32,19 @@ namespace multiscale {
          *  have been given the following new names (left hand side of assignments):
          *
          *  probability                     \f$ = p                 \f$
+         *
          *  alpha                           \f$ = \alpha            \f$
+         *
          *  beta                            \f$ = \beta             \f$
+         *
          *  mean                            \f$ = \hat{\rho}        \f$
+         *
          *  variance                        \f$ = \hat{\nu}         \f$
+         *
          *  varianceThreshold               \f$ = T                 \f$
+         *
          *  totalNumberOfEvaluations        \f$ = n                 \f$
+         *
          *  totalNumberOfTrueEvaluations    \f$ = k                 \f$
          */
         class ApproximateBayesianModelChecker : public ModelChecker {

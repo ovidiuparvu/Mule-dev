@@ -10,6 +10,14 @@ namespace multiscale {
     namespace verification {
 
         //! Class used to run probabilistic black-box model checking tasks
+        /*!
+         *  The implementation of this class is (partially) based on the algorithms
+         *  described in the following paper:
+         *
+         *  H. L. S. Younes, ‘Probabilistic Verification for “Black-Box” Systems’,
+         *  in Computer Aided Verification, K. Etessami and S. K. Rajamani, Eds. Springer
+         *  Berlin Heidelberg, 2005, pp. 253–265.
+         */
         class ProbabilisticBlackBoxModelChecker : public ModelChecker {
 
             public:

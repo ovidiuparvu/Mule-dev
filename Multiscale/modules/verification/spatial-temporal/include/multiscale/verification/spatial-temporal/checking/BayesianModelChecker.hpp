@@ -23,6 +23,7 @@ namespace multiscale {
         /*!
          *  The implementation of this class is (partially) based on the algorithms
          *  described in the following paper:
+         *
          *  S. K. Jha, E. M. Clarke, C. J. Langmead, A. Legay, A. Platzer, and P. Zuliani,
          *  ‘A Bayesian Approach to Model Checking Biological Systems’, in Computational
          *  Methods in Systems Biology, P. Degano and R. Gorrieri, Eds. Springer Berlin
@@ -32,11 +33,17 @@ namespace multiscale {
          *  have been given the following new names (left hand side of assignments):
          *
          *  probability                     \f$ = \theta            \f$
+         *
          *  alpha                           \f$ = \alpha            \f$
+         *
          *  beta                            \f$ = \beta             \f$
+         *
          *  bayesFactor                     \f$ = \mathcal{B}_{n}   \f$
+         *
          *  bayesFactorThreshold            \f$ = T                 \f$
+         *
          *  totalNumberOfEvaluations        \f$ = n                 \f$
+         *
          *  totalNumberOfTrueEvaluations    \f$ = x                 \f$
          */
         class BayesianModelChecker : public ModelChecker {

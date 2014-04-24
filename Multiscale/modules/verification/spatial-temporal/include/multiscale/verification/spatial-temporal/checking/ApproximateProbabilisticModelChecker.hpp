@@ -14,6 +14,7 @@ namespace multiscale {
         /*!
          *  The implementation of this class is based on the algorithm described in
          *  the following paper:
+         *
          *  T. Hérault, R. Lassaigne, F. Magniette, and S. Peyronnet,
          *  ‘Approximate Probabilistic Model Checking’, in Verification, Model Checking,
          *  and Abstract Interpretation, B. Steffen and G. Levi, Eds. Springer Berlin

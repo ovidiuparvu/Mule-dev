@@ -5533,6 +5533,11 @@
                   <Anchor>aff31ec33d19e773f1b05b46352f60cb9</Anchor>
                  </Node>
                  <Node>
+                  <Name>areApproximateBayesianModelCheckingArgumentsPresent</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>ab1f754bf001e1656b3fe10bb647e2313</Anchor>
+                 </Node>
+                 <Node>
                   <Name>areApproximateProbabilisticModelCheckingArgumentsPresent</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                   <Anchor>a0d9d24fd5c48b43c035d3a42ca0c32b5</Anchor>
@@ -5608,14 +5613,34 @@
                   <Anchor>a976697a1ca799b3b948a00ea24de14e9</Anchor>
                  </Node>
                  <Node>
+                  <Name>initialiseApproximateBayesianModelChecker</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a8fe7dfe7171709c24e06360677a028b9</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>initialiseApproximateBayesianModelCheckerArgumentsConfiguration</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>ae3e9b9da6bef4fc48aa8ce57ba5924dd</Anchor>
+                 </Node>
+                 <Node>
                   <Name>initialiseApproximateProbabilisticModelChecker</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                   <Anchor>ab7c22250c328f947d7c1d6a8b0dac352</Anchor>
                  </Node>
                  <Node>
+                  <Name>initialiseApproximateProbabilisticModelCheckerArgumentsConfiguration</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a3344c71b24bd76f783da7948ecd20547</Anchor>
+                 </Node>
+                 <Node>
                   <Name>initialiseBayesianModelChecker</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                   <Anchor>a475628f5bdecf10875e1cb2ade7b6264</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>initialiseBayesianModelCheckerArgumentsConfiguration</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a55a09b026533d34f7ac9472b9eb08ac0</Anchor>
                  </Node>
                  <Node>
                   <Name>initialiseClassMembers</Name>
@@ -5673,6 +5698,11 @@
                   <Anchor>a8e1cbe59e16777a35e6c1a4ba2982d6e</Anchor>
                  </Node>
                  <Node>
+                  <Name>initialiseStatisticalModelCheckerArgumentsConfiguration</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a1ebe757d13718da2c1d0a753ee7d1480</Anchor>
+                 </Node>
+                 <Node>
                   <Name>isHelpArgumentPresent</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                   <Anchor>a0de2577b2f29b9630ac425fa80e4ecfb</Anchor>
@@ -5683,6 +5713,21 @@
                   <Anchor>ac5fcaf760059c4e59ae6dffe455e8797</Anchor>
                  </Node>
                  <Node>
+                  <Name>printHelpClosingMessage</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a5c9693205ca2c4aeffd9d37710681acc</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>printHelpContentsMessage</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>aaa4a89d82b580836887af563d80dc79b</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>printHelpIntroMessage</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>af4201cd2a9a1a89701191adf3566d8fb</Anchor>
+                 </Node>
+                 <Node>
                   <Name>printHelpMessage</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                   <Anchor>a216026b7ef590e12b092857f569fdfc5</Anchor>
@@ -5691,6 +5736,11 @@
                   <Name>printModelCheckingInitialisationMessage</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                   <Anchor>a12fc75489b22d0fdd7b01a1633aca8ec</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>removeApproximateBayesianModelCheckingArguments</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>af5ac10badb5a2e702fdf6031a2e938cf</Anchor>
                  </Node>
                  <Node>
                   <Name>removeApproximateProbabilisticModelCheckingArguments</Name>
@@ -5728,14 +5778,24 @@
                   <Anchor>a0723be84e45daa61832d613cf8c1674f</Anchor>
                  </Node>
                  <Node>
-                  <Name>ARG_ALPHA_DESCRIPTION</Name>
+                  <Name>ARG_APPROXIMATE_BAYESIAN_ALPHA_DESCRIPTION</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-                  <Anchor>aa78fb9292eed0028e1cd649d1c21f2b4</Anchor>
+                  <Anchor>a61a598a6b8680dc6c1fc3e0856e3c707</Anchor>
                  </Node>
                  <Node>
-                  <Name>ARG_ALPHA_NAME_LONG</Name>
+                  <Name>ARG_APPROXIMATE_BAYESIAN_ALPHA_NAME_LONG</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-                  <Anchor>a59fc2619ad5ece47be452a5190219396</Anchor>
+                  <Anchor>a356f2e3234b84d59ca61af714f14a6ee</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>ARG_APPROXIMATE_BAYESIAN_BETA_DESCRIPTION</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a1741c816d601259f9c283a97add14988</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a5befa65f1fafd20b7c18e965e6b7a956</Anchor>
                  </Node>
                  <Node>
                   <Name>ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION</Name>
@@ -5748,14 +5808,24 @@
                   <Anchor>ab984ca0af11a2d99db903446ad376789</Anchor>
                  </Node>
                  <Node>
-                  <Name>ARG_BETA_DESCRIPTION</Name>
+                  <Name>ARG_BAYESIAN_ALPHA_DESCRIPTION</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-                  <Anchor>a6781874bdb860326b81633cc69e26958</Anchor>
+                  <Anchor>ad9a2611bde76a87185214dc6c3897ed9</Anchor>
                  </Node>
                  <Node>
-                  <Name>ARG_BETA_NAME_LONG</Name>
+                  <Name>ARG_BAYESIAN_ALPHA_NAME_LONG</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-                  <Anchor>afec4ace192948d1c4428f011e1648b83</Anchor>
+                  <Anchor>af8f043903af560d43caf6a87b09cfb6e</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>ARG_BAYESIAN_BETA_DESCRIPTION</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a42b4a2d69a44f094deef8ebc5fd60abc</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>ARG_BAYESIAN_BETA_NAME_LONG</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>ac75365c50e93084ebc129d9f2307b56b</Anchor>
                  </Node>
                  <Node>
                   <Name>ARG_DELTA_DESCRIPTION</Name>
@@ -5983,6 +6053,36 @@
                   <Anchor>a551e39c660a75ef0c1250af6a08e2d96</Anchor>
                  </Node>
                  <Node>
+                  <Name>HELP_AUTHOR_LABEL</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a6288c82d7ed9eb1560e3817057e14971</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>HELP_AUTHOR_MSG</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a40e30e32edfdd89371c69db4fd6ed8d2</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>HELP_COPYRIGHT_LABEL</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a473c241ea014bdd0911ad92ceae8f18d</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>HELP_COPYRIGHT_MSG</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a39af94cded37a8159feb9aa9e84ed60e</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>HELP_DESCRIPTION_LABEL</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>a39089cfea60b67e13525b97ea4b4c283</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>HELP_DESCRIPTION_MSG</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>adf130c2f154563ecdee9ea337e7b731c</Anchor>
+                 </Node>
+                 <Node>
                   <Name>HELP_NAME_LABEL</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                   <Anchor>abb0ba9df88d1777f39477798daa22ef6</Anchor>
@@ -5991,6 +6091,16 @@
                   <Name>HELP_NAME_MSG</Name>
                   <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                   <Anchor>a94289da94052e68ae69761919a9a0bd2</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>HELP_REPORTING_BUGS_LABEL</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>add0d560f454a0ce9964cdded37a1ccd7</Anchor>
+                 </Node>
+                 <Node>
+                  <Name>HELP_REPORTING_BUGS_MSG</Name>
+                  <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                  <Anchor>aec8daeaa0ce7faced69477b9c01f4e72</Anchor>
                  </Node>
                  <Node>
                   <Name>HELP_USAGE_LABEL</Name>
@@ -23161,6 +23271,11 @@
                                 <Anchor>aff31ec33d19e773f1b05b46352f60cb9</Anchor>
                                </Node>
                                <Node>
+                                <Name>areApproximateBayesianModelCheckingArgumentsPresent</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>ab1f754bf001e1656b3fe10bb647e2313</Anchor>
+                               </Node>
+                               <Node>
                                 <Name>areApproximateProbabilisticModelCheckingArgumentsPresent</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                                 <Anchor>a0d9d24fd5c48b43c035d3a42ca0c32b5</Anchor>
@@ -23236,14 +23351,34 @@
                                 <Anchor>a976697a1ca799b3b948a00ea24de14e9</Anchor>
                                </Node>
                                <Node>
+                                <Name>initialiseApproximateBayesianModelChecker</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a8fe7dfe7171709c24e06360677a028b9</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>initialiseApproximateBayesianModelCheckerArgumentsConfiguration</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>ae3e9b9da6bef4fc48aa8ce57ba5924dd</Anchor>
+                               </Node>
+                               <Node>
                                 <Name>initialiseApproximateProbabilisticModelChecker</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                                 <Anchor>ab7c22250c328f947d7c1d6a8b0dac352</Anchor>
                                </Node>
                                <Node>
+                                <Name>initialiseApproximateProbabilisticModelCheckerArgumentsConfiguration</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a3344c71b24bd76f783da7948ecd20547</Anchor>
+                               </Node>
+                               <Node>
                                 <Name>initialiseBayesianModelChecker</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                                 <Anchor>a475628f5bdecf10875e1cb2ade7b6264</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>initialiseBayesianModelCheckerArgumentsConfiguration</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a55a09b026533d34f7ac9472b9eb08ac0</Anchor>
                                </Node>
                                <Node>
                                 <Name>initialiseClassMembers</Name>
@@ -23301,6 +23436,11 @@
                                 <Anchor>a8e1cbe59e16777a35e6c1a4ba2982d6e</Anchor>
                                </Node>
                                <Node>
+                                <Name>initialiseStatisticalModelCheckerArgumentsConfiguration</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a1ebe757d13718da2c1d0a753ee7d1480</Anchor>
+                               </Node>
+                               <Node>
                                 <Name>isHelpArgumentPresent</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                                 <Anchor>a0de2577b2f29b9630ac425fa80e4ecfb</Anchor>
@@ -23311,6 +23451,21 @@
                                 <Anchor>ac5fcaf760059c4e59ae6dffe455e8797</Anchor>
                                </Node>
                                <Node>
+                                <Name>printHelpClosingMessage</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a5c9693205ca2c4aeffd9d37710681acc</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>printHelpContentsMessage</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>aaa4a89d82b580836887af563d80dc79b</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>printHelpIntroMessage</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>af4201cd2a9a1a89701191adf3566d8fb</Anchor>
+                               </Node>
+                               <Node>
                                 <Name>printHelpMessage</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                                 <Anchor>a216026b7ef590e12b092857f569fdfc5</Anchor>
@@ -23319,6 +23474,11 @@
                                 <Name>printModelCheckingInitialisationMessage</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                                 <Anchor>a12fc75489b22d0fdd7b01a1633aca8ec</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>removeApproximateBayesianModelCheckingArguments</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>af5ac10badb5a2e702fdf6031a2e938cf</Anchor>
                                </Node>
                                <Node>
                                 <Name>removeApproximateProbabilisticModelCheckingArguments</Name>
@@ -23356,14 +23516,24 @@
                                 <Anchor>a0723be84e45daa61832d613cf8c1674f</Anchor>
                                </Node>
                                <Node>
-                                <Name>ARG_ALPHA_DESCRIPTION</Name>
+                                <Name>ARG_APPROXIMATE_BAYESIAN_ALPHA_DESCRIPTION</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-                                <Anchor>aa78fb9292eed0028e1cd649d1c21f2b4</Anchor>
+                                <Anchor>a61a598a6b8680dc6c1fc3e0856e3c707</Anchor>
                                </Node>
                                <Node>
-                                <Name>ARG_ALPHA_NAME_LONG</Name>
+                                <Name>ARG_APPROXIMATE_BAYESIAN_ALPHA_NAME_LONG</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-                                <Anchor>a59fc2619ad5ece47be452a5190219396</Anchor>
+                                <Anchor>a356f2e3234b84d59ca61af714f14a6ee</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>ARG_APPROXIMATE_BAYESIAN_BETA_DESCRIPTION</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a1741c816d601259f9c283a97add14988</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a5befa65f1fafd20b7c18e965e6b7a956</Anchor>
                                </Node>
                                <Node>
                                 <Name>ARG_BAYES_FACTOR_THRESHOLD_DESCRIPTION</Name>
@@ -23376,14 +23546,24 @@
                                 <Anchor>ab984ca0af11a2d99db903446ad376789</Anchor>
                                </Node>
                                <Node>
-                                <Name>ARG_BETA_DESCRIPTION</Name>
+                                <Name>ARG_BAYESIAN_ALPHA_DESCRIPTION</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-                                <Anchor>a6781874bdb860326b81633cc69e26958</Anchor>
+                                <Anchor>ad9a2611bde76a87185214dc6c3897ed9</Anchor>
                                </Node>
                                <Node>
-                                <Name>ARG_BETA_NAME_LONG</Name>
+                                <Name>ARG_BAYESIAN_ALPHA_NAME_LONG</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
-                                <Anchor>afec4ace192948d1c4428f011e1648b83</Anchor>
+                                <Anchor>af8f043903af560d43caf6a87b09cfb6e</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>ARG_BAYESIAN_BETA_DESCRIPTION</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a42b4a2d69a44f094deef8ebc5fd60abc</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>ARG_BAYESIAN_BETA_NAME_LONG</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>ac75365c50e93084ebc129d9f2307b56b</Anchor>
                                </Node>
                                <Node>
                                 <Name>ARG_DELTA_DESCRIPTION</Name>
@@ -23611,6 +23791,36 @@
                                 <Anchor>a551e39c660a75ef0c1250af6a08e2d96</Anchor>
                                </Node>
                                <Node>
+                                <Name>HELP_AUTHOR_LABEL</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a6288c82d7ed9eb1560e3817057e14971</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>HELP_AUTHOR_MSG</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a40e30e32edfdd89371c69db4fd6ed8d2</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>HELP_COPYRIGHT_LABEL</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a473c241ea014bdd0911ad92ceae8f18d</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>HELP_COPYRIGHT_MSG</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a39af94cded37a8159feb9aa9e84ed60e</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>HELP_DESCRIPTION_LABEL</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>a39089cfea60b67e13525b97ea4b4c283</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>HELP_DESCRIPTION_MSG</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>adf130c2f154563ecdee9ea337e7b731c</Anchor>
+                               </Node>
+                               <Node>
                                 <Name>HELP_NAME_LABEL</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                                 <Anchor>abb0ba9df88d1777f39477798daa22ef6</Anchor>
@@ -23619,6 +23829,16 @@
                                 <Name>HELP_NAME_MSG</Name>
                                 <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
                                 <Anchor>a94289da94052e68ae69761919a9a0bd2</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>HELP_REPORTING_BUGS_LABEL</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>add0d560f454a0ce9964cdded37a1ccd7</Anchor>
+                               </Node>
+                               <Node>
+                                <Name>HELP_REPORTING_BUGS_MSG</Name>
+                                <Path>classmultiscale_1_1verification_1_1CommandLineModelChecking.html</Path>
+                                <Anchor>aec8daeaa0ce7faced69477b9c01f4e72</Anchor>
                                </Node>
                                <Node>
                                 <Name>HELP_USAGE_LABEL</Name>

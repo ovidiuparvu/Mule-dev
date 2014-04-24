@@ -24,6 +24,7 @@ namespace multiscale {
         /*!
          *  The implementation of this class is (partially) based on the algorithms
          *  described in the following paper:
+         *
          *  C. H. Koh, S. K. Palaniappan, P. S. Thiagarajan, and L. Wong,
          *  ‘Improved statistical model checking methods for pathway analysis’,
          *  BMC Bioinformatics, vol. 13, no. Suppl 17, p. S15, Dec. 2012.
@@ -32,11 +33,17 @@ namespace multiscale {
          *  have been given the following new names (left hand side of assignments):
          *
          *  probability                     \f$ = \theta \f$
+         *
          *  indifference                    \f$ = \delta \f$
+         *
          *  typeIError                      \f$ = \alpha \f$
+         *
          *  typeIIError                     \f$ = \beta  \f$
+         *
          *  minTypesError                   \f$ = \gamma \f$
+         *
          *  totalNumberOfEvaluations        \f$ = n      \f$
+         *
          *  totalNumberOfTrueEvaluations    \f$ = d      \f$
          */
         class StatisticalModelChecker : public ModelChecker {
