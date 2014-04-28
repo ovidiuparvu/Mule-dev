@@ -95,7 +95,7 @@ void StatisticalModelChecker::initialise() {
 double StatisticalModelChecker::computeIndifferenceIntervalHalf(double probability) {
     return (
         std::max(
-            0.0,
+            INDIFFERENCE_INTERVAL_HALF_EPS,
             std::min(probability, 1 - probability) - INDIFFERENCE_INTERVAL_HALF_EPS
         )
     );
