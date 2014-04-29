@@ -202,23 +202,23 @@ namespace multiscale {
 
 
                 // Constants
-                static const std::string ERR_UNEXPECTED_MODEL_CHECKING_RESULT;
+                static const std::string  ERR_UNEXPECTED_MODEL_CHECKING_RESULT;
 
-                static const std::string ERR_TYPES_ERROR_VALUES_BEGIN;
-                static const std::string ERR_TYPES_ERROR_VALUES_MIDDLE;
-                static const std::string ERR_TYPES_ERROR_VALUES_END;
+                static const std::string  ERR_TYPES_ERROR_VALUES_BEGIN;
+                static const std::string  ERR_TYPES_ERROR_VALUES_MIDDLE;
+                static const std::string  ERR_TYPES_ERROR_VALUES_END;
 
-                static const std::string MSG_OUTPUT_MORE_TRACES_REQUIRED;
+                static const std::string  MSG_OUTPUT_MORE_TRACES_REQUIRED;
 
-                static const std::string MSG_OUTPUT_RESULT_BEGIN;
-                static const std::string MSG_OUTPUT_RESULT_MIDDLE;
-                static const std::string MSG_OUTPUT_RESULT_END;
+                static const std::string  MSG_OUTPUT_RESULT_BEGIN;
+                static const std::string  MSG_OUTPUT_RESULT_MIDDLE;
+                static const std::string  MSG_OUTPUT_RESULT_END;
 
-                static const std::string MSG_OUTPUT_SEPARATOR;
+                static const std::string  MSG_OUTPUT_SEPARATOR;
 
-                static const double      INDIFFERENCE_INTERVAL_HALF_EPS;
+                static const unsigned int INDIFFERENCE_INTERVAL_HALF_K;
 
-                static const double      LOGARITHM_ZERO_VALUE;          /*!< The value obtained when computing log(0) */
+                static const double       LOGARITHM_ZERO_VALUE;          /*!< The value obtained when computing log(0) */
 
         };
 

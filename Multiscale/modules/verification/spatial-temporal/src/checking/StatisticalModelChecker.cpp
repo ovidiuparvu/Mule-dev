@@ -93,12 +93,10 @@ void StatisticalModelChecker::initialise() {
 }
 
 double StatisticalModelChecker::computeIndifferenceIntervalHalf(double probability) {
-    return (
-        std::max(
-            INDIFFERENCE_INTERVAL_HALF_EPS,
-            std::min(probability, 1 - probability) - INDIFFERENCE_INTERVAL_HALF_EPS
-        )
-    );
+    double kTerm = static_cast<double>(INDIFFERENCE_INTERVAL_HALF_K - 1) /
+                   static_cast<double>(INDIFFERENCE_INTERVAL_HALF_K);
+
+    return (kTerm * std::min(probability, 1 - probability));
 }
 
 bool StatisticalModelChecker::isValidTypeError(double typeError) {
@@ -218,25 +216,25 @@ bool StatisticalModelChecker::doesPropertyHoldConsideringProbabilityComparator(b
 
 
 // Constants
-const std::string StatisticalModelChecker::ERR_UNEXPECTED_MODEL_CHECKING_RESULT = "An invalid statistical model checking result was obtained. Please check source code.";
+const std::string  StatisticalModelChecker::ERR_UNEXPECTED_MODEL_CHECKING_RESULT = "An invalid statistical model checking result was obtained. Please check source code.";
 
-const std::string StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_BEGIN     = "The provided probabilities of type I and type II errors (";
-const std::string StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_MIDDLE    = ", ";
-const std::string StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_END       = ") should be greater than zero and less or equal to 1. Please change.";
+const std::string  StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_BEGIN     = "The provided probabilities of type I and type II errors (";
+const std::string  StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_MIDDLE    = ", ";
+const std::string  StatisticalModelChecker::ERR_TYPES_ERROR_VALUES_END       = ") should be greater than zero and less or equal to 1. Please change.";
 
-const std::string StatisticalModelChecker::MSG_OUTPUT_MORE_TRACES_REQUIRED = "More traces are required to provide a true/false answer assuming the given probabilities of type I and type II errors. Probabilistic black-box model checking was used instead to provide an answer.";
+const std::string  StatisticalModelChecker::MSG_OUTPUT_MORE_TRACES_REQUIRED = "More traces are required to provide a true/false answer assuming the given probabilities of type I and type II errors. Probabilistic black-box model checking was used instead to provide an answer.";
 
-const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_BEGIN  = "The provided answer is given for the probability of type I errors = ";
-const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_MIDDLE = " and the probability of type II errors = ";
-const std::string StatisticalModelChecker::MSG_OUTPUT_RESULT_END    = "";
+const std::string  StatisticalModelChecker::MSG_OUTPUT_RESULT_BEGIN  = "The provided answer is given for the probability of type I errors = ";
+const std::string  StatisticalModelChecker::MSG_OUTPUT_RESULT_MIDDLE = " and the probability of type II errors = ";
+const std::string  StatisticalModelChecker::MSG_OUTPUT_RESULT_END    = "";
 
-const std::string StatisticalModelChecker::MSG_OUTPUT_SEPARATOR     = " ";
+const std::string  StatisticalModelChecker::MSG_OUTPUT_SEPARATOR     = " ";
 
-//! The value of this constant should be smaller than the value of Numeric::epsilon
-const double StatisticalModelChecker::INDIFFERENCE_INTERVAL_HALF_EPS = 1E-6;
+//! The value of this constant should be much greater than 1
+const unsigned int StatisticalModelChecker::INDIFFERENCE_INTERVAL_HALF_K = (std::numeric_limits<unsigned int>::max() >> 1);
 
 //! The value of this constant should be a large negative number.
 /*! This value will be further multiplied by non-negative integer numbers.
  *  In order to avoid overflow the lowest double value is divided by 1E10.
  */
-const double StatisticalModelChecker::LOGARITHM_ZERO_VALUE = (std::numeric_limits<double>::lowest() / 1E+10);
+const double       StatisticalModelChecker::LOGARITHM_ZERO_VALUE = (std::numeric_limits<double>::lowest() / 1E+10);
