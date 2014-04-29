@@ -220,11 +220,27 @@ namespace multiscale {
 
                 //! Create polygons from the given contours and hierarchy information
                 /*!
-                 * \param contours  The contours
+                 * \param contours  The given contours
                  * \param hierarchy The information regarding the hierarchy between contours
                  */
                 vector<Polygon> createPolygons(const vector<vector<Point> > &contours,
                                                const vector<Vec4i> &hierarchy);
+
+                //! Check if the number of contours is greater than 0
+                /*!
+                 * \param contours  The given contours
+                 */
+                bool existContours(const vector<vector<Point> > &contours);
+
+                //! Create polygons from the given contours and hierarchy information
+                /*!
+                 * \param contours  The given contours
+                 * \param hierarchy The information regarding the hierarchy between contours
+                 * \param polygons  The collection of polygons created from the given contours
+                 */
+                void createPolygonsFromContours(const vector<vector<Point> > &contours,
+                                                const vector<Vec4i> &hierarchy,
+                                                vector<Polygon> &polygons);
 
                 //! Create a new polygon considering the given contour index, contours and hierarchy information
                 /*!

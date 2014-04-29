@@ -264,6 +264,20 @@ vector<Polygon> RegionDetector::createPolygons(const vector<vector<Point> > &con
                                                const vector<Vec4i> &hierarchy) {
     vector<Polygon> polygons;
 
+    if (existContours(contours)) {
+        createPolygonsFromContours(contours, hierarchy, polygons);
+    }
+
+    return polygons;
+}
+
+bool RegionDetector::existContours(const vector<vector<Point> > &contours) {
+    return (!contours.empty());
+}
+
+void RegionDetector::createPolygonsFromContours(const vector<vector<Point> > &contours,
+                                                const vector<Vec4i> &hierarchy,
+                                                vector<Polygon> &polygons) {
     // Assuming that the algorithm for finding contours is the one proposed by Suzuki85
     // the first contour is always an outer contour
     for (int i = 0; i != -1; i = hierarchy[i][HIERARCHY_NEXT_INDEX]) {
@@ -271,8 +285,6 @@ vector<Polygon> RegionDetector::createPolygons(const vector<vector<Point> > &con
             polygons.push_back(createPolygon(i, contours, hierarchy));
         }
     }
-
-    return polygons;
 }
 
 Polygon RegionDetector::createPolygon(int contourIndex, const vector<vector<Point> > &contours,
