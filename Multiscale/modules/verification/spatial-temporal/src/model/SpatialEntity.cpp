@@ -148,21 +148,21 @@ bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
 }
 
 void SpatialEntity::validateRealNonNegativeValue(double value) {
-    if (Numeric::lessOrEqual(value, 0)) {
+    if (value < 0) {
         MS_throw_detailed(SpatialTemporalException, ERR_REAL_NON_NEGATIVE_VALUE,
                           StringManipulator::toString<double>(value), ERR_SUFFIX);
     }
 }
 
 void SpatialEntity::validateAngleValue(double value) {
-    if ((Numeric::lessOrEqual(value, 0)) || (Numeric::greaterOrEqual(value, 360))) {
+    if ((value < 0) || (value > 360)) {
         MS_throw_detailed(SpatialTemporalException, ERR_ANGLE_VALUE,
                           StringManipulator::toString<double>(value), ERR_SUFFIX);
     }
 }
 
 void SpatialEntity::validateRealValueBtwZeroAndOne(double value) {
-    if ((Numeric::lessOrEqual(value, 0)) || (Numeric::greaterOrEqual(value, 1))) {
+    if ((value < 0) || (value > 1)) {
         MS_throw_detailed(SpatialTemporalException, ERR_REAL_BTW_ZERO_AND_ONE,
                           StringManipulator::toString<double>(value), ERR_SUFFIX);
     }
