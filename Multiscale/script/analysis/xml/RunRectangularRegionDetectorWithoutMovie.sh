@@ -19,7 +19,6 @@ then
     
     # Create the output folders
     mkdir -p ${outputFolder}
-    mkdir -p ${movieOutputFolder}
 
     # Define the results output files
     regionsOutputFile=${outputFolder}/"results_regions";
@@ -54,22 +53,22 @@ then
     done
     
     # Define the variables required to merge the xml files
-    linesBeforeTimePointContent=2;
-    linesAfterTimePointContent=2;
+    linesBeforeTimePointContent=3;
+    linesAfterTimePointContent=1;
     regionsXMLOutputPath=${outputFolder}/"results_regions.xml";
 
     # Create the resulting file
-    fileCount=`find ${inputFolder} -name "*.xml" | wc -l`;
+    fileCount=`find ${outputFolder} -name "${imageBasenameRoot}*.xml" | wc -l`;
 
     if [[ ${fileCount} -gt 0 ]];
     then
-	sampleFilePath=`find ${inputFolder} -name "*.xml" | head -n1`;
+	sampleFilePath=`find ${outputFolder} -name "${imageBasenameRoot}*.xml" | head -n1`;
 
 	# Print the header to the resulting file
 	cat ${sampleFilePath} | head -n ${linesBeforeTimePointContent} > ${regionsXMLOutputPath};
 
 	# Process each input file
-	for file in `find ${inputFolder} -name "*.xml" | sort -V`;
+	for file in `find ${outputFolder} -name "${imageBasenameRoot}*.xml" | sort -V`;
 	do
 	    cat ${file} | head -n -${linesAfterTimePointContent} | tail -n +$((${linesBeforeTimePointContent} + 1)) >> ${regionsXMLOutputPath};
 	done 
