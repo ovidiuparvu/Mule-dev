@@ -56,39 +56,53 @@ namespace multiscale {
 
                 //! Overloading the "()" operator for the OrLogicPropertyAttribute alternative
                 /*!
+                 * Remark: Lazy evaluation is performed for efficiency purposes.
+                 *
                  * \param logicProperty     The logic property
                  * \param lhsLogicProperty  The left hand side logic property
                  */
                 template <typename T>
                 bool operator() (const OrLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
-
-                    return (precedingTruthValue || logicPropertyTruthValue);
+                    if (precedingTruthValue == true) {
+                        return true;
+                    } else {
+                        // Not considering precedingTruthValue because it is F (F V X = X where X = T/F)
+                        return evaluate(logicProperty.logicProperty, trace);
+                    }
                 }
 
                 //! Overloading the "()" operator for the AndLogicPropertyAttribute alternative
                 /*!
+                 * Remark: Lazy evaluation is performed for efficiency purposes.
+                 *
                  * \param logicProperty     The logic property
                  * \param lhsLogicProperty  The left hand side logic property
                  */
                 template <typename T>
                 bool operator() (const AndLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
-
-                    return (precedingTruthValue && logicPropertyTruthValue);
+                    if (precedingTruthValue == false) {
+                        return false;
+                    } else {
+                        // Not considering precedingTruthValue because it is T (T ^ X = X where X = T/F)
+                        return evaluate(logicProperty.logicProperty, trace);
+                    }
                 }
 
                 //! Overloading the "()" operator for the ImplicationLogicPropertyAttribute alternative
                 /*!
+                 * Remark: Lazy evaluation is performed for efficiency purposes.
+                 *
                  * \param logicProperty     The logic property
                  * \param lhsLogicProperty  The left hand side logic property
                  */
                 template <typename T>
                 bool operator() (const ImplicationLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
-                    bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
-
-                    // p => q is logically equivalent to ~p V q
-                    return ((!precedingTruthValue) || logicPropertyTruthValue);
+                    if (precedingTruthValue == false) {
+                        return true;
+                    } else {
+                        // Not considering precedingTruthValue because it is T ((T => X) logically equivalent to (~T V X) = X where X = T/F)
+                        return evaluate(logicProperty.logicProperty, trace);
+                    }
                 }
 
                 //! Overloading the "()" operator for the EquivalenceLogicPropertyAttribute alternative
