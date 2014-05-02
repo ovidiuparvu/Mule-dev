@@ -37,37 +37,15 @@ bool BayesianModelChecker::requiresMoreTraces() {
 }
 
 bool BayesianModelChecker::doesPropertyHold() {
-    switch (modelCheckingResult) {
-        case BayesianModelCheckingResult::TRUE:
-            return doesPropertyHoldConsideringProbabilityComparator(true);
+    updateModelCheckingResult();
 
-        case BayesianModelCheckingResult::FALSE:
-            return doesPropertyHoldConsideringProbabilityComparator(false);
-
-        case BayesianModelCheckingResult::MORE_TRACES_REQUIRED:
-            return doesPropertyHoldUsingPValues();
-
-        default:
-            MS_throw(UnexpectedBehaviourException, ERR_UNEXPECTED_MODEL_CHECKING_RESULT);
-    }
-
-    // Line added to avoid "control reaches end of non-void function" warnings
-    return false;
+    return doesPropertyHoldConsideringResult();
 }
 
 std::string BayesianModelChecker::getDetailedResults() {
-    if (modelCheckingResult == BayesianModelCheckingResult::MORE_TRACES_REQUIRED) {
-        return (MSG_OUTPUT_MORE_TRACES_REQUIRED + MSG_OUTPUT_SEPARATOR +
-                getDetailedResultsUsingPValues());
-    } else {
-        return (
-            MSG_OUTPUT_RESULT_BEGIN     + StringManipulator::toString(alpha)  +
-            MSG_OUTPUT_RESULT_MIDDLE1   + StringManipulator::toString(beta) +
-            MSG_OUTPUT_RESULT_MIDDLE2   + StringManipulator::toString(bayesFactorThreshold) +
-            MSG_OUTPUT_RESULT_MIDDLE3   + StringManipulator::toString(typeIErrorUpperBound) +
-            MSG_OUTPUT_RESULT_END
-        );
-    }
+    updateModelCheckingResult();
+
+    return getDetailedUpdatedResults();
 }
 
 void BayesianModelChecker::updateDerivedModelCheckerForTrueEvaluation()  {}
@@ -188,11 +166,45 @@ double BayesianModelChecker::computeBayesFactorValue(unsigned int nrOfObservatio
     return (cdfInverse - 1);
 }
 
+bool BayesianModelChecker::doesPropertyHoldConsideringResult() {
+    switch (modelCheckingResult) {
+        case BayesianModelCheckingResult::TRUE:
+            return doesPropertyHoldConsideringProbabilityComparator(true);
+
+        case BayesianModelCheckingResult::FALSE:
+            return doesPropertyHoldConsideringProbabilityComparator(false);
+
+        case BayesianModelCheckingResult::MORE_TRACES_REQUIRED:
+            return doesPropertyHoldUsingPValues();
+
+        default:
+            MS_throw(UnexpectedBehaviourException, ERR_UNEXPECTED_MODEL_CHECKING_RESULT);
+    }
+
+    // Line added to avoid "control reaches end of non-void function" warnings
+    return false;
+}
+
 bool BayesianModelChecker::doesPropertyHoldConsideringProbabilityComparator(bool isNullHypothesisTrue) {
     if (isGreaterThanOrEqualToComparator()) {
         return isNullHypothesisTrue;
     } else {
         return (!isNullHypothesisTrue);
+    }
+}
+
+std::string BayesianModelChecker::getDetailedUpdatedResults() {
+    if (modelCheckingResult == BayesianModelCheckingResult::MORE_TRACES_REQUIRED) {
+        return (MSG_OUTPUT_MORE_TRACES_REQUIRED + MSG_OUTPUT_SEPARATOR +
+                getDetailedResultsUsingPValues());
+    } else {
+        return (
+            MSG_OUTPUT_RESULT_BEGIN     + StringManipulator::toString(alpha)  +
+            MSG_OUTPUT_RESULT_MIDDLE1   + StringManipulator::toString(beta) +
+            MSG_OUTPUT_RESULT_MIDDLE2   + StringManipulator::toString(bayesFactorThreshold) +
+            MSG_OUTPUT_RESULT_MIDDLE3   + StringManipulator::toString(typeIErrorUpperBound) +
+            MSG_OUTPUT_RESULT_END
+        );
     }
 }
 

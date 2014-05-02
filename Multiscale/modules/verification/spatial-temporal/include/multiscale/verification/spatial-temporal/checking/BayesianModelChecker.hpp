@@ -78,7 +78,7 @@ namespace multiscale {
                 //! Check if the given property holds
                 bool doesPropertyHold() override;
 
-                //! Output the results
+                //! Get the detailed description of the results
                 std::string getDetailedResults() override;
 
             protected:
@@ -182,7 +182,10 @@ namespace multiscale {
                  */
                 double computeBayesFactorValue(unsigned int nrOfObservations, unsigned int nrOfSuccesses);
 
-                //! Check if the given probability holds considering the obtained answer and probability comparator (i.e. <=, >=)
+                //! Check if the given property holds considering the obtained model checking result
+                bool doesPropertyHoldConsideringResult();
+
+                //! Check if the given property holds considering the obtained answer and probability comparator (i.e. <=, >=)
                 /*! For queries of type :
                  *      a) \f$ P >= \theta [\phi] \f$ the isNullHypothesisTrue flag value is returned
                  *      b) \f$ P <= \theta [\phi] \f$ the !(isNullHypothesisTrue) flag value is returned
@@ -190,6 +193,9 @@ namespace multiscale {
                  * \param isNullHypothesisTrue  Flag indicating if the null hypothesis is true considering a \f$ P >= [\phi] \f$ query
                  */
                 bool doesPropertyHoldConsideringProbabilityComparator(bool isNullHypothesisTrue);
+
+                //! Get the detailed description of the updated results
+                std::string getDetailedUpdatedResults();
 
 
                 // Constants

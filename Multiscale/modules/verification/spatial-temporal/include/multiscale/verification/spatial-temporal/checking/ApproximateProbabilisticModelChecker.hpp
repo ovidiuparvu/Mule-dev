@@ -48,7 +48,7 @@ namespace multiscale {
                 //! Check if the given property holds
                 bool doesPropertyHold() override;
 
-                //! Output the results
+                //! Get the detailed description of the results
                 std::string getDetailedResults() override;
 
             protected:
@@ -91,7 +91,7 @@ namespace multiscale {
                  */
                 void initialiseNumberOfRequiredTraces();
 
-                //! Check if the given probability holds considering the probability comparator (i.e. <=, >=)
+                //! Check if the given property holds considering the probability comparator (i.e. <=, >=)
                 /*! For queries of type :
                  *      a) \f$ P >= \theta [\phi] \f$ result = \f$ (nr_true_traces/nr_traces) - \epsilon >= \theta \f$
                  *      b)\f$  P <= \theta [\phi] \f$ result = \f$ (nr_true_traces/nr_traces) + \epsilon <= \theta \f$

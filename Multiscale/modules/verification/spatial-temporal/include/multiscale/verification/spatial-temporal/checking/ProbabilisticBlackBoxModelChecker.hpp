@@ -34,7 +34,7 @@ namespace multiscale {
                 //! Check if the given property holds
                 bool doesPropertyHold() override;
 
-                //! Output the results
+                //! Get the detailed description of the results
                 std::string getDetailedResults() override;
 
             protected:

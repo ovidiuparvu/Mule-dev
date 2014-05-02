@@ -391,8 +391,8 @@ double Numeric::minimum(const std::vector<double> &numbers, unsigned int nrOfVal
         }
     }
 
-    return (numbers.size() > 0) ? minimum
-                                : 0;
+    return (nrOfValues > 0) ? minimum
+                            : 0;
 }
 
 double Numeric::mode(const std::vector<double> &numbers, unsigned int nrOfValues) {

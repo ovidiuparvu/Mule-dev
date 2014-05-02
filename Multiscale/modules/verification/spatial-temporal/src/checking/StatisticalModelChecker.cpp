@@ -36,35 +36,15 @@ bool StatisticalModelChecker::requiresMoreTraces() {
 }
 
 bool StatisticalModelChecker::doesPropertyHold() {
-    switch (modelCheckingResult) {
-        case StatisticalModelCheckingResult::TRUE:
-            return doesPropertyHoldConsideringProbabilityComparator(true);
+    updateModelCheckingResult();
 
-        case StatisticalModelCheckingResult::FALSE:
-            return doesPropertyHoldConsideringProbabilityComparator(false);
-
-        case StatisticalModelCheckingResult::MORE_TRACES_REQUIRED:
-            return doesPropertyHoldUsingPValues();
-
-        default:
-            MS_throw(UnexpectedBehaviourException, ERR_UNEXPECTED_MODEL_CHECKING_RESULT);
-    }
-
-    // Line added to avoid "control reaches end of non-void function" warnings
-    return false;
+    return doesPropertyHoldConsideringResult();
 }
 
 std::string StatisticalModelChecker::getDetailedResults() {
-    if (modelCheckingResult == StatisticalModelCheckingResult::MORE_TRACES_REQUIRED) {
-        return (MSG_OUTPUT_MORE_TRACES_REQUIRED + MSG_OUTPUT_SEPARATOR +
-                getDetailedResultsUsingPValues());
-    } else {
-        return (
-            MSG_OUTPUT_RESULT_BEGIN  + StringManipulator::toString(typeIError)  +
-            MSG_OUTPUT_RESULT_MIDDLE + StringManipulator::toString(typeIIError) +
-            MSG_OUTPUT_RESULT_END
-        );
-    }
+    updateModelCheckingResult();
+
+    return getDetailedUpdatedResults();
 }
 
 void StatisticalModelChecker::updateDerivedModelCheckerForTrueEvaluation()  {}
@@ -206,11 +186,43 @@ double StatisticalModelChecker::computeFPrimeValueSecondTerm() {
     }
 }
 
+bool StatisticalModelChecker::doesPropertyHoldConsideringResult() {
+    switch (modelCheckingResult) {
+        case StatisticalModelCheckingResult::TRUE:
+            return doesPropertyHoldConsideringProbabilityComparator(true);
+
+        case StatisticalModelCheckingResult::FALSE:
+            return doesPropertyHoldConsideringProbabilityComparator(false);
+
+        case StatisticalModelCheckingResult::MORE_TRACES_REQUIRED:
+            return doesPropertyHoldUsingPValues();
+
+        default:
+            MS_throw(UnexpectedBehaviourException, ERR_UNEXPECTED_MODEL_CHECKING_RESULT);
+    }
+
+    // Line added to avoid "control reaches end of non-void function" warnings
+    return false;
+}
+
 bool StatisticalModelChecker::doesPropertyHoldConsideringProbabilityComparator(bool isNullHypothesisTrue) {
     if (isGreaterThanOrEqualToComparator()) {
         return isNullHypothesisTrue;
     } else {
         return (!isNullHypothesisTrue);
+    }
+}
+
+std::string StatisticalModelChecker::getDetailedUpdatedResults() {
+    if (modelCheckingResult == StatisticalModelCheckingResult::MORE_TRACES_REQUIRED) {
+        return (MSG_OUTPUT_MORE_TRACES_REQUIRED + MSG_OUTPUT_SEPARATOR +
+                getDetailedResultsUsingPValues());
+    } else {
+        return (
+            MSG_OUTPUT_RESULT_BEGIN  + StringManipulator::toString(typeIError)  +
+            MSG_OUTPUT_RESULT_MIDDLE + StringManipulator::toString(typeIIError) +
+            MSG_OUTPUT_RESULT_END
+        );
     }
 }
 

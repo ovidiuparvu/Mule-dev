@@ -33,36 +33,15 @@ bool ApproximateBayesianModelChecker::requiresMoreTraces() {
 }
 
 bool ApproximateBayesianModelChecker::doesPropertyHold() {
-    switch (modelCheckingResult) {
-        case ApproximateBayesianModelCheckingResult::TRUE:
-            return true;
+    updateModelCheckingResult();
 
-        case ApproximateBayesianModelCheckingResult::FALSE:
-            return false;
-
-        case ApproximateBayesianModelCheckingResult::MORE_TRACES_REQUIRED:
-            return doesPropertyHoldUsingPValues();
-
-        default:
-            MS_throw(UnexpectedBehaviourException, ERR_UNEXPECTED_MODEL_CHECKING_RESULT);
-    }
-
-    // Line added to avoid "control reaches end of non-void function" warnings
-    return false;
+    return doesPropertyHoldConsideringResult();
 }
 
 std::string ApproximateBayesianModelChecker::getDetailedResults() {
-    if (modelCheckingResult == ApproximateBayesianModelCheckingResult::MORE_TRACES_REQUIRED) {
-        return (MSG_OUTPUT_MORE_TRACES_REQUIRED + MSG_OUTPUT_SEPARATOR +
-                getDetailedResultsUsingPValues());
-    } else {
-        return (
-            MSG_OUTPUT_RESULT_BEGIN     + StringManipulator::toString(alpha)  +
-            MSG_OUTPUT_RESULT_MIDDLE1   + StringManipulator::toString(beta) +
-            MSG_OUTPUT_RESULT_MIDDLE2   + StringManipulator::toString(varianceThreshold) +
-            MSG_OUTPUT_RESULT_END
-        );
-    }
+    updateModelCheckingResult();
+
+    return getDetailedUpdatedResults();
 }
 
 void ApproximateBayesianModelChecker::updateDerivedModelCheckerForTrueEvaluation()  {}
@@ -159,6 +138,39 @@ bool ApproximateBayesianModelChecker::isModelCheckingResultTrueConsideringCompar
 
 void ApproximateBayesianModelChecker::updateModelCheckingResultNotEnoughTraces() {
     modelCheckingResult = ApproximateBayesianModelCheckingResult::MORE_TRACES_REQUIRED;
+}
+
+bool ApproximateBayesianModelChecker::doesPropertyHoldConsideringResult() {
+    switch (modelCheckingResult) {
+        case ApproximateBayesianModelCheckingResult::TRUE:
+            return true;
+
+        case ApproximateBayesianModelCheckingResult::FALSE:
+            return false;
+
+        case ApproximateBayesianModelCheckingResult::MORE_TRACES_REQUIRED:
+            return doesPropertyHoldUsingPValues();
+
+        default:
+            MS_throw(UnexpectedBehaviourException, ERR_UNEXPECTED_MODEL_CHECKING_RESULT);
+    }
+
+    // Line added to avoid "control reaches end of non-void function" warnings
+    return false;
+}
+
+std::string ApproximateBayesianModelChecker::getDetailedUpdatedResults() {
+    if (modelCheckingResult == ApproximateBayesianModelCheckingResult::MORE_TRACES_REQUIRED) {
+        return (MSG_OUTPUT_MORE_TRACES_REQUIRED + MSG_OUTPUT_SEPARATOR +
+                getDetailedResultsUsingPValues());
+    } else {
+        return (
+            MSG_OUTPUT_RESULT_BEGIN     + StringManipulator::toString(alpha)  +
+            MSG_OUTPUT_RESULT_MIDDLE1   + StringManipulator::toString(beta) +
+            MSG_OUTPUT_RESULT_MIDDLE2   + StringManipulator::toString(varianceThreshold) +
+            MSG_OUTPUT_RESULT_END
+        );
+    }
 }
 
 

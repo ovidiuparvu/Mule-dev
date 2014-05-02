@@ -79,7 +79,7 @@ namespace multiscale {
                 //! Check if the given property holds
                 bool doesPropertyHold() override;
 
-                //! Output the results
+                //! Get the detailed description of the results
                 std::string getDetailedResults() override;
 
             protected:
@@ -168,6 +168,12 @@ namespace multiscale {
 
                 //! Update the result of the model checking task considering that not enough traces have been provided
                 void updateModelCheckingResultNotEnoughTraces();
+
+                //! Check if the given property holds considering the obtained model checking result
+                bool doesPropertyHoldConsideringResult();
+
+                //! Get the detailed description of the updated results
+                std::string getDetailedUpdatedResults();
 
 
                 // Constants
