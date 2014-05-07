@@ -5,9 +5,7 @@
 	<!-- User-defined simple types -->
 
 	<xs:simpleType name="RealBtwZeroAndOneType">
-		<xs:restriction base="xs:decimal">
-			<xs:totalDigits value="64" />
-			<xs:fractionDigits value="32" />
+		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0" />
 			<xs:maxInclusive value="1" />
 		</xs:restriction>
@@ -26,9 +24,7 @@
 	</xs:simpleType>
 	
 	<xs:simpleType name="AngleDegreesType">
-		<xs:restriction base="xs:decimal">
-			<xs:totalDigits value="64" />
-			<xs:fractionDigits value="32" />
+		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0" />
 			<xs:maxInclusive value="360" />
 		</xs:restriction>
@@ -41,9 +37,7 @@
 	</xs:simpleType>
 	
 	<xs:simpleType name="RealNonNegativeType">
-		<xs:restriction base="xs:decimal">
-			<xs:totalDigits value="64" />
-			<xs:fractionDigits value="32" />
+		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0" />
 		</xs:restriction>
 	</xs:simpleType>
@@ -60,7 +54,7 @@
 	<xs:complexType name="NumericStateVariableType">
 		<xs:sequence>
 			<xs:element name="name" type="xs:string" />
-			<xs:element name="value" type="xs:decimal" />
+			<xs:element name="value" type="xs:double" />
 		</xs:sequence>
 	</xs:complexType>
 	

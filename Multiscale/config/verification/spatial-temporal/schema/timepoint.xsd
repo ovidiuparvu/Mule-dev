@@ -5,9 +5,7 @@
 	<!-- User-defined simple types -->
 
 	<xs:simpleType name="RealBtwZeroAndOneType">
-		<xs:restriction base="xs:decimal">
-			<xs:totalDigits value="64" />
-			<xs:fractionDigits value="32" />
+		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0" />
 			<xs:maxInclusive value="1" />
 		</xs:restriction>
@@ -26,9 +24,7 @@
 	</xs:simpleType>
 	
 	<xs:simpleType name="AngleDegreesType">
-		<xs:restriction base="xs:decimal">
-			<xs:totalDigits value="64" />
-			<xs:fractionDigits value="32" />
+		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0" />
 			<xs:maxInclusive value="360" />
 		</xs:restriction>
@@ -41,9 +37,7 @@
 	</xs:simpleType>
 	
 	<xs:simpleType name="RealNonNegativeType">
-		<xs:restriction base="xs:decimal">
-			<xs:totalDigits value="64" />
-			<xs:fractionDigits value="32" />
+		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0" />
 		</xs:restriction>
 	</xs:simpleType>
@@ -60,7 +54,7 @@
 	<xs:complexType name="NumericStateVariableType">
 		<xs:sequence>
 			<xs:element name="name" type="xs:string" />
-			<xs:element name="value" type="xs:decimal" />
+			<xs:element name="value" type="xs:double" />
 		</xs:sequence>
 	</xs:complexType>
 	
@@ -107,25 +101,25 @@
 	<xs:element name="timepoint" type="TimepointType" >
         <!-- Uniqueness constraints -->
     
-        <xs:unique name="UniqueNumericStateVariables">
-            <xs:selector xpath="experiment/timepoint/numericStateVariable" />
-            <xs:field xpath="name" />
-        </xs:unique>
-        
-        <xs:unique name="UniqueSpatialEntities">
-            <xs:selector xpath="experiment/timepoint/spatialEntity" />
-            <xs:field xpath="pseudo3D/@type" />
-            <xs:field xpath="pseudo3D/clusteredness" />
-            <xs:field xpath="pseudo3D/density" />
-            <xs:field xpath="pseudo3D/area" />
-            <xs:field xpath="pseudo3D/perimeter" />
-            <xs:field xpath="pseudo3D/distanceFromOrigin" />
-            <xs:field xpath="pseudo3D/angle" />
-            <xs:field xpath="pseudo3D/triangleMeasure" />
-            <xs:field xpath="pseudo3D/rectangleMeasure" />
-            <xs:field xpath="pseudo3D/circleMeasure" />
-            <xs:field xpath="pseudo3D/centroid/x" />
-            <xs:field xpath="pseudo3D/centroid/y" />
-        </xs:unique>
+		<xs:unique name="UniqueNumericStateVariables">
+			<xs:selector xpath="numericStateVariable" />
+			<xs:field xpath="name" />
+		</xs:unique>
+		
+		<xs:unique name="UniqueSpatialEntities">
+			<xs:selector xpath="spatialEntity" />
+			<xs:field xpath="pseudo3D/@type" />
+			<xs:field xpath="pseudo3D/clusteredness" />
+			<xs:field xpath="pseudo3D/density" />
+			<xs:field xpath="pseudo3D/area" />
+			<xs:field xpath="pseudo3D/perimeter" />
+			<xs:field xpath="pseudo3D/distanceFromOrigin" />
+			<xs:field xpath="pseudo3D/angle" />
+			<xs:field xpath="pseudo3D/triangleMeasure" />
+			<xs:field xpath="pseudo3D/rectangleMeasure" />
+			<xs:field xpath="pseudo3D/circleMeasure" />
+			<xs:field xpath="pseudo3D/centroid/x" />
+			<xs:field xpath="pseudo3D/centroid/y" />
+		</xs:unique> 
 	</xs:element>
 </xs:schema>
