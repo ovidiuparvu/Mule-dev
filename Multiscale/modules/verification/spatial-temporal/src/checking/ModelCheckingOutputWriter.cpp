@@ -298,13 +298,13 @@ const std::string ModelCheckingOutputWriter::MSG_INTRO_CONTACT                  
 
 const std::string ModelCheckingOutputWriter::MSG_INIT_EXECUTION_PARAMETERS  = "Multidimensional model checking input parameters";
 const std::string ModelCheckingOutputWriter::MSG_INIT_LOGIC_PROPERTIES_PATH = "Logic properties input file:          ";
-const std::string ModelCheckingOutputWriter::MSG_INIT_TRACES_FOLDER_PATH    = "Spatial-temporal traces input folder: ";
+const std::string ModelCheckingOutputWriter::MSG_INIT_TRACES_FOLDER_PATH    = "Spatio-temporal traces input folder: ";
 const std::string ModelCheckingOutputWriter::MSG_INIT_EXTRA_EVALUATION_TIME = "Extra evaluation time (minutes):      ";
 
 const std::string ModelCheckingOutputWriter::MSG_PARSING_INTRODUCTION           = "I am starting to parse logic properties...";
 
 const std::string ModelCheckingOutputWriter::MSG_START_MODEL_CHECKING_EXECUTION             = "I am starting the execution of the model checkers...";
-const std::string ModelCheckingOutputWriter::MSG_START_TRACE_EVALUATION                     = "Evaluating the spatial-temporal trace: ";
+const std::string ModelCheckingOutputWriter::MSG_START_TRACE_EVALUATION                     = "Evaluating the spatio-temporal trace: ";
 const std::string ModelCheckingOutputWriter::MSG_START_EXTRA_EVALUATION_PROGRAM_EXECUTION   = "I am starting the execution of the extra evaluation program located at the following path: ";
 const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_BEGIN                    = "The model checker execution was suspended for ";
 const std::string ModelCheckingOutputWriter::MSG_EXECUTION_TIMEOUT_END                      = " seconds during which new traces can be provided in the traces input folder.";
@@ -313,7 +313,7 @@ const std::string ModelCheckingOutputWriter::MSG_RESULTS_INTRODUCTION   = "I hav
 
 const std::string ModelCheckingOutputWriter::MSG_EVALUATION_RESULTS_INTRODUCTION    = "I will display for each logic property which traces evaluated to TRUE and which evaluated to FALSE...";
 const std::string ModelCheckingOutputWriter::MSG_EVALUATION_SUMMARY_BEGIN           = "/";
-const std::string ModelCheckingOutputWriter::MSG_EVALUATION_SUMMARY_END             = " spatial-temporal traces evaluated to TRUE";
+const std::string ModelCheckingOutputWriter::MSG_EVALUATION_SUMMARY_END             = " spatio-temporal traces evaluated to TRUE";
 
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS          = "The logic property holds: ";
 const std::string ModelCheckingOutputWriter::MSG_LOGIC_PROPERTY_HOLDS_TRUE     = "TRUE";
