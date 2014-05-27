@@ -6,6 +6,7 @@
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
 
 #include <iostream>
+#include <iterator>
 #include <limits>
 
 using namespace multiscale::verification;
@@ -83,7 +84,7 @@ bool SpatialTemporalDataReader::hasValidNext() {
 }
 
 SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace() {
-    std::string inputFilepath = getFirstValidUnprocessedInputFilepath();
+    std::string inputFilepath = getRandomValidUnprocessedInputFilepath();
     SpatialTemporalTrace trace = constructSpatialTemporalTrace(inputFilepath);
 
     // Add the file to the list of processed files
@@ -93,7 +94,7 @@ SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace() {
 }
 
 SpatialTemporalTrace SpatialTemporalDataReader::generateSpatialTemporalTrace(std::string &tracePath) {
-    tracePath = getFirstValidUnprocessedInputFilepath();
+    tracePath = getRandomValidUnprocessedInputFilepath();
     SpatialTemporalTrace trace = constructSpatialTemporalTrace(tracePath);
 
     // Add the file to the list of processed files
@@ -239,8 +240,28 @@ std::string SpatialTemporalDataReader::getFirstValidUnprocessedInputFilepath() {
     return validUnprocessedFile;
 }
 
+std::string SpatialTemporalDataReader::getRandomValidUnprocessedInputFilepath() {
+    if (!hasNext()) {
+        MS_throw(RuntimeException, ERR_NO_VALID_INPUT_FILES_REMAINING);
+    }
+
+    // Obtain an iterator to the beginning of the collection
+    auto it = unprocessedInputFiles.begin();
+
+    // Advance the iterator for a valid random number of positions
+    std::advance(it, std::rand() % unprocessedInputFiles.size());
+
+    // Obtain the valid unprocessed input file
+    std::string validUnprocessedFile = (*it);
+
+    // Remove it from the list of unprocessed files
+    unprocessedInputFiles.erase(it);
+
+    return validUnprocessedFile;
+}
+
 void SpatialTemporalDataReader::updateInputFilesSets() {
-    std::vector<std::string> filesInFolder = Filesystem::getFilesInFolder(folderPath, INPUT_FILES_EXTENSION);
+    std::vector<std::string> filesInFolder = getFilesInFolder();
 
     for (const std::string &file : filesInFolder) {
         if (processedInputFiles.find(file) == processedInputFiles.end()) {
@@ -248,6 +269,10 @@ void SpatialTemporalDataReader::updateInputFilesSets() {
             unprocessedInputFiles.insert(file);
         }
     }
+}
+
+std::vector<std::string> SpatialTemporalDataReader::getFilesInFolder() {
+    return Filesystem::getFilesInFolder(folderPath, INPUT_FILES_EXTENSION);
 }
 
 bool SpatialTemporalDataReader::isValidInputFile(const std::string &inputFilepath) {

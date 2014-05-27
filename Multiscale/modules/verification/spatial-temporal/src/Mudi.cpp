@@ -22,6 +22,9 @@ void runModelCheckingTask(int argc, char **argv) {
 
 // Main function
 int main(int argc, char** argv) {
+    // Initialise the random number generator
+    std::srand(static_cast<unsigned>(std::time(0)));
+
     try {
         runModelCheckingTask(argc, argv);
     } catch(const ModelCheckingHelpRequestException &e) {

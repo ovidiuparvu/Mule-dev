@@ -163,8 +163,14 @@ namespace multiscale {
                 //! Get the first valid unprocessed input file
                 std::string getFirstValidUnprocessedInputFilepath();
 
+                //! Get a random valid unprocessed input file
+                std::string getRandomValidUnprocessedInputFilepath();
+
                 //! Update the sets of processed and unprocessed files by checking if the folder contents have been updated
                 void updateInputFilesSets();
+
+                //! Get the collection of files stored in the input folder
+                std::vector<std::string> getFilesInFolder();
 
                 //! Check if the given input file is valid
                 /*! An input file is valid if it is an xml file which conforms to the formal
