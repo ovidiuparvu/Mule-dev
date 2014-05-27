@@ -524,7 +524,7 @@ const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_TIME_DESCRIPT
 
 const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_NAME_LONG                                  = "model-checker-type";
 const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_NAME_BOTH                                  = ARG_MODEL_CHECKER_TYPE_NAME_LONG + ",m";
-const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_DESCRIPTION                                = "the type of the model checker (0 = Probabilistic black-box, 1 = Statistical, 2 = Approximate probabilistic, 3 = Bayesian, 4 = Approximate Bayesian)";
+const std::string   CommandLineModelChecking::ARG_MODEL_CHECKER_TYPE_DESCRIPTION                                = "the type of the model checker (0 = Probabilistic black-box, 1 = Frequentist statistical, 2 = Frequentist approximate probabilistic (Chernoff-Hoeffding), 3 = Bayesian (statistical hypothesis testing), 4 = Approximate Bayesian (mean and variance estimation))";
 
 const std::string   CommandLineModelChecking::ARG_HELP_NAME_LONG                                                = "help";
 const std::string   CommandLineModelChecking::ARG_HELP_NAME_BOTH                                                = ARG_HELP_NAME_LONG + ",h";
@@ -586,23 +586,23 @@ const std::string   CommandLineModelChecking::MSG_MODEL_CHECKING_HELP_REQUESTED 
 const std::string   CommandLineModelChecking::MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_NAME                        = "Probabilistic black-box";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_PARAMETERS                  = "None";
 
-const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_NAME                                    = "Statistical";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_NAME                                    = "Frequentist statistical";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_PARAMETERS_BEGIN                        = "Probability of type I errors (false negatives) = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_PARAMETERS_MIDDLE                       = " and of type II errors (false positives) = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_STATISTICAL_PARAMETERS_END                          = ".";
 
-const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_NAME                      = "Approximate probabilistic";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_NAME                      = "Frequentist approximate probabilistic (Chernoff-Hoeffding)";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_PARAMETERS_BEGIN          = "Upper bound on probability to deviate more than epsilon = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_PARAMETERS_MIDDLE         = " from the true probability is delta = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_PARAMETERS_END            = ".";
 
-const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_NAME                                       = "Bayesian";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_NAME                                       = "Bayesian (statistical hypothesis testing)";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_PARAMETERS_BEGIN                           = "Beta distribution prior shape parameters alpha = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_PARAMETERS_MIDDLE1                         = " and beta = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_PARAMETERS_MIDDLE2                         = ". Bayes factor threshold = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_BAYESIAN_PARAMETERS_END                             = ".";
 
-const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_NAME                           = "Approximate Bayesian";
+const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_NAME                           = "Approximate Bayesian (mean and variance estimate)";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_BEGIN               = "Beta distribution prior shape parameters alpha = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_MIDDLE1             = " and beta = ";
 const std::string   CommandLineModelChecking::MODEL_CHECKER_APPROXIMATE_BAYESIAN_PARAMETERS_MIDDLE2             = ". Variance threshold = ";
@@ -613,8 +613,8 @@ const std::string   CommandLineModelChecking::CONFIG_CAPTION_REQUIRED_ARGUMENTS 
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_OPTIONAL_ARGUMENTS                                 = "OPTIONAL ARGUMENTS";
 const std::string   CommandLineModelChecking::CONFIG_CAPTION_MODEL_CHECKER_TYPE_SPECIFIC_ARGUMENTS              = "MODEL CHECKING TYPE SPECIFIC ARGUMENTS";
 
-const std::string   CommandLineModelChecking::CONFIG_CAPTION_PROBABILISTIC_BLACK_BOX_MODEL_CHECKER_ARGUMENTS    = "Probabilistic black-box";
-const std::string   CommandLineModelChecking::CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS                = "Statistical";
-const std::string   CommandLineModelChecking::CONFIG_CAPTION_APPROXIMATE_PROBABILISTIC_MODEL_CHECKER_ARGUMENTS  = "Approximate probabilistic";
-const std::string   CommandLineModelChecking::CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS                   = "Bayesian";
-const std::string   CommandLineModelChecking::CONFIG_CAPTION_APPROXIMATE_BAYESIAN_MODEL_CHECKER_ARGUMENTS       = "Approximate Bayesian";
+const std::string   CommandLineModelChecking::CONFIG_CAPTION_PROBABILISTIC_BLACK_BOX_MODEL_CHECKER_ARGUMENTS    = MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_NAME;
+const std::string   CommandLineModelChecking::CONFIG_CAPTION_STATISTICAL_MODEL_CHECKER_ARGUMENTS                = MODEL_CHECKER_STATISTICAL_NAME;
+const std::string   CommandLineModelChecking::CONFIG_CAPTION_APPROXIMATE_PROBABILISTIC_MODEL_CHECKER_ARGUMENTS  = MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_NAME;
+const std::string   CommandLineModelChecking::CONFIG_CAPTION_BAYESIAN_MODEL_CHECKER_ARGUMENTS                   = MODEL_CHECKER_BAYESIAN_NAME;
+const std::string   CommandLineModelChecking::CONFIG_CAPTION_APPROXIMATE_BAYESIAN_MODEL_CHECKER_ARGUMENTS       = MODEL_CHECKER_APPROXIMATE_BAYESIAN_NAME;
