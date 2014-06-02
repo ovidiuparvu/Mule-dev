@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ####################################################################################
 # 
 # Initialisation step
@@ -12,6 +14,9 @@ then
     
     exit 1;
 fi
+
+# Change the current directory to the directory where the script is located
+cd "$( dirname "${BASH_SOURCE[0]}" )";
 
 # Constants initialisation
 CASE_STUDY_TITLE="chemotaxis2D";
