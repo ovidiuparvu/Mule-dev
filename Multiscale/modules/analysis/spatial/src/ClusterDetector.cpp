@@ -114,14 +114,17 @@ void ClusterDetector::convertPiledUpEntities(const vector<Entity> &entities, vec
 
 void ClusterDetector::addEntitiesToClusters(const vector<Entity> &entities, const vector<int> &clusterIndexes,
                                             int nrOfClusters, vector<Cluster> &clusters) {
-    if (nrOfClusters > 0) {
+    if (nrOfClusters > 1) {
         int nrOfEntities = entities.size();
 
         // The "noise" cluster will be ignored
         clusters.resize(nrOfClusters - 1);
 
         for (int i = 0; i < nrOfEntities; i++) {
-            clusters[clusterIndexes[i] - 1].addEntity(entities[i]);
+            // If the entity does not belong to the "noise" cluster
+            if (clusterIndexes[i] > 0) {
+                clusters[clusterIndexes[i] - 1].addEntity(entities[i]);
+            }
         }
     }
 }

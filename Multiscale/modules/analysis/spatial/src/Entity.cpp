@@ -6,7 +6,8 @@
 using namespace multiscale::analysis;
 
 
-Entity::Entity(unsigned int pileUpDegree, double area, double perimeter, const Point2f &centre, const vector<Point2f> &contourPoints) {
+Entity::Entity(unsigned int pileUpDegree, double area, double perimeter,
+               const Point2f &centre, const vector<Point2f> &contourPoints) {
     validateInputValues(pileUpDegree, area, perimeter, centre, contourPoints);
 
     this->pileUpDegree = pileUpDegree;

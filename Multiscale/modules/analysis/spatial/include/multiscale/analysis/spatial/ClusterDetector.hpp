@@ -129,6 +129,8 @@ namespace multiscale {
                 //! Add the entities to the clusters as indicated by the clusterIndexes parameter
                 /*! Add the entities to the clusters as indicated by the clusterIndexes parameter
                  *
+                 * The "noise" cluster will be ignored.
+                 *
                  *  \param entities         Entities detected in the image
                  *  \param clusterIndexes   Indexes to which cluster each entity belongs
                  *  \param nrOfClusters     Total number of clusters

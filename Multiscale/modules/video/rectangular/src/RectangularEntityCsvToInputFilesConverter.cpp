@@ -188,7 +188,7 @@ vector<double> RectangularEntityCsvToInputFilesConverter::splitLineInCoordinates
         unsigned int xCoordinate = computeCoordinate(tokens[entityIndex + nrOfEntities], true);
         unsigned int yCoordinate = computeCoordinate(tokens[entityIndex], false);
 
-        entitiesGrid[(width * (yCoordinate - 1)) + (xCoordinate - 1)] += (static_cast<double>(1) / maxNrOfEntitiesPerPosition);
+        entitiesGrid[(width * (yCoordinate)) + (xCoordinate)] += (static_cast<double>(1) / maxNrOfEntitiesPerPosition);
     }
 
     validateEntitiesGrid(entitiesGrid);
