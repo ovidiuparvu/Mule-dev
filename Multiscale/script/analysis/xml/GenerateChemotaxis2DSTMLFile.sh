@@ -64,15 +64,27 @@ do
     rawSimulationOutputPath="${OUT_SIMULATION_RAW}/${name}.log";
     stmlOutputPath="${OUT_STML_FOLDER}/${name}.xml";
 
+    # Inform user where the simulation output is stored
+    echo "Simulating ${MODEL_INPUT_FILE} and storing simulation output in ${rawSimulationOutputPath}...";
+
     # Run a simulation of the model
-    morpheus ${MODEL_INPUT_FILE} 1>${simulationLogOutputPath};
+    timelimit -T 360 morpheus ${MODEL_INPUT_FILE} 1>${simulationLogOutputPath};
 
     # Move the simulation result file to the simulation raw folder
-    mv ${MODEL_OUTPUT_FILE} ${rawSimulationOutputPath};
+    timelimit -T 360 mv ${MODEL_OUTPUT_FILE} ${rawSimulationOutputPath};
+
+    # Inform the user where the converted simulation output is stored
+    echo "Converting the simulation output to the required format...";
 
     # Convert the simulation result file to the required format
-    gawk -f ConvertSimulationOutputFormat.awk ${rawSimulationOutputPath} > ${processedSimulationOutputPath};
+    timelimit -T 360 gawk -f ConvertSimulationOutputFormat.awk ${rawSimulationOutputPath} > ${processedSimulationOutputPath};
 
     # Generate the STML file corresponding to the simulation output represented in the new format
-    AnalyseChemotaxis2DSimulation.sh ${processedSimulationOutputPath} ${MODEL_GRID_HEIGHT} ${MODEL_GRID_WIDTH} ${MODEL_NR_CELLS} ${MAX_NR_PILEUP} ${stmlOutputPath};
+    echo "Generating the ${stmlOutputPath} STML file from the converted simulation output ${processedSimulationOutputPath}...";
+
+    # Generate the STML file corresponding to the simulation output represented in the new format
+    timelimit -T 360 AnalyseChemotaxis2DSimulation.sh ${processedSimulationOutputPath} ${MODEL_GRID_HEIGHT} ${MODEL_GRID_WIDTH} ${MODEL_NR_CELLS} ${MAX_NR_PILEUP} ${stmlOutputPath};
+
+    # Separate model simulation output using a blank line
+    echo;
 done

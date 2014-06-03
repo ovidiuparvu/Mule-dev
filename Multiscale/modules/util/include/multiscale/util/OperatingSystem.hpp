@@ -114,7 +114,7 @@ namespace multiscale {
             static const std::string ERR_EXECUTE_PROGRAM;
             static const std::string ERR_INVALID_PROGRAM_PATH;
 
-            static const unsigned int TIMEOUT_MAX_NR;
+            static const unsigned int TIMEOUT_MAX_NR_SECONDS;
             static const unsigned int TIMEOUT_NR_SECONDS;
 
     };

@@ -121,7 +121,7 @@ void OperatingSystem::executeProgramAndVerifyPath(const std::string &path) {
         unsigned int nrOfTimeouts = 0;
         bool hasChildProcessExited = false;
 
-        while ((nrOfTimeouts < TIMEOUT_MAX_NR) && (!hasChildProcessExited)) {
+        while ((nrOfTimeouts < TIMEOUT_MAX_NR_SECONDS) && (!hasChildProcessExited)) {
             std::this_thread::sleep_for(std::chrono::seconds(TIMEOUT_NR_SECONDS));
 
             updateChildProcessStatus(pid, hasChildProcessExited, nrOfTimeouts);
@@ -136,7 +136,7 @@ void OperatingSystem::executeProgramAndVerifyPath(const std::string &path) {
         unsigned int nrOfTimeouts = 0;
         bool hasChildProcessExited = false;
 
-        while ((nrOfTimeouts < TIMEOUT_MAX_NR) && (!hasChildProcessExited)) {
+        while ((nrOfTimeouts < TIMEOUT_MAX_NR_SECONDS) && (!hasChildProcessExited)) {
             std::this_thread::sleep_for(std::chrono::seconds(TIMEOUT_NR_SECONDS));
 
             updateChildProcessStatus(processInformation, hasChildProcessExited, nrOfTimeouts);
@@ -173,5 +173,5 @@ void OperatingSystem::executeProgramAndVerifyPath(const std::string &path) {
 const std::string OperatingSystem::ERR_EXECUTE_PROGRAM      = "The process executing the program located at the following path could not be created: ";
 const std::string OperatingSystem::ERR_INVALID_PROGRAM_PATH = "The process was not created because the provided program path is invalid: ";
 
-const unsigned int OperatingSystem::TIMEOUT_MAX_NR      = 100;
-const unsigned int OperatingSystem::TIMEOUT_NR_SECONDS  = 1;
+const unsigned int OperatingSystem::TIMEOUT_MAX_NR_SECONDS  = 100;
+const unsigned int OperatingSystem::TIMEOUT_NR_SECONDS      = 1;
