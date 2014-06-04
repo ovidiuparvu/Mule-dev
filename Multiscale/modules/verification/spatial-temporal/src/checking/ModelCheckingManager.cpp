@@ -39,7 +39,8 @@ void ModelCheckingManager::runModelCheckingTasks(const std::shared_ptr<ModelChec
 void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
                                       unsigned long extraEvaluationTime) {
     this->extraEvaluationTime = extraEvaluationTime;
-    this->evaluationStartTime = std::chrono::system_clock::now();
+    this->extraEvaluationElapsedTime = 0;
+    this->extraEvaluationStartTime = std::chrono::system_clock::now();
 
     this->shouldPrintDetailedEvaluation = false;
 
@@ -136,7 +137,10 @@ void ModelCheckingManager::runModelCheckersAndPrintMessage() {
 
 void ModelCheckingManager::runModelCheckers() {
     runModelCheckersForCurrentlyExistingTraces();
-    runModelCheckersAndRequestAdditionalTraces();
+
+    if (areUnfinishedModelCheckingTasks()) {
+        runModelCheckersAndRequestAdditionalTraces();
+    }
 }
 
 void ModelCheckingManager::runModelCheckersForCurrentlyExistingTraces() {
@@ -210,7 +214,10 @@ void ModelCheckingManager::updateEvaluationResults(const std::size_t &modelCheck
 }
 
 void ModelCheckingManager::runModelCheckersAndRequestAdditionalTraces() {
+    updateExtraEvaluationStartTime();
+
     while ((isEvaluationTimeRemaining()) && (areUnfinishedModelCheckingTasks())) {
+        updateExtraEvaluationStartTime();
         executeExtraEvaluationProgram();
         waitBeforeRetry();
         updateTraceReader();
@@ -218,13 +225,17 @@ void ModelCheckingManager::runModelCheckersAndRequestAdditionalTraces() {
     }
 }
 
+void ModelCheckingManager::updateExtraEvaluationStartTime() {
+    extraEvaluationStartTime = std::chrono::system_clock::now();
+}
+
 bool ModelCheckingManager::isEvaluationTimeRemaining() {
     std::chrono::time_point<std::chrono::system_clock> currentTime = std::chrono::system_clock::now();
-    std::chrono::duration<double> elapsedSeconds = (currentTime - evaluationStartTime);
+    std::chrono::duration<double> elapsedSeconds = (currentTime - extraEvaluationStartTime);
 
-    double nrOfMinutes = ((elapsedSeconds.count()) / NR_SECONDS_IN_ONE_MINUTE);
+    extraEvaluationElapsedTime += elapsedSeconds.count();
 
-    return (nrOfMinutes < extraEvaluationTime);
+    return ((extraEvaluationElapsedTime / 60) < extraEvaluationTime);
 }
 
 bool ModelCheckingManager::areUnfinishedModelCheckingTasks() {
@@ -296,6 +307,5 @@ void ModelCheckingManager::outputDetailedEvaluationResults() {
 // Constants
 
 const unsigned long ModelCheckingManager::TRACE_INPUT_REFRESH_TIMEOUT   = 30;
-const unsigned long ModelCheckingManager::NR_SECONDS_IN_ONE_MINUTE      = 60;
 
 const std::string   ModelCheckingManager::PARSER_EMPTY_LOGIC_PROPERTY   = "";

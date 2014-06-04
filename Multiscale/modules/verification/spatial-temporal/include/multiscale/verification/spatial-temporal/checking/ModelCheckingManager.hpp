@@ -42,7 +42,9 @@ namespace multiscale {
 
                 std::vector<std::shared_ptr<ModelChecker>>          modelCheckers;                  /*!< The collection of model checkers */
 
-                std::chrono::time_point<std::chrono::system_clock>  evaluationStartTime;            /*!< The start time for the evaluation process */
+                std::chrono::time_point<std::chrono::system_clock>  extraEvaluationStartTime;       /*!< The start time for the current evaluation process */
+                double                                              extraEvaluationElapsedTime;     /*!< The elapsed time for the extra evaluation process
+                                                                                                         expressed in seconds */
                 unsigned long                                       extraEvaluationTime;            /*!< The number of minutes for which the program waits for
                                                                                                          new traces to be added to the trace folder */
                 std::string                                         extraEvaluationProgramPath;     /*!< The path to the program which should be executed when
@@ -188,6 +190,9 @@ namespace multiscale {
                 //! Run the model checkers and request additional traces
                 void runModelCheckersAndRequestAdditionalTraces();
 
+                //! Set the extra evaluation start time equal to current time
+                void updateExtraEvaluationStartTime();
+
                 //! Check if there is evaluation time remaining
                 bool isEvaluationTimeRemaining();
 
@@ -226,9 +231,8 @@ namespace multiscale {
 
                 // Constants
                 static const unsigned long TRACE_INPUT_REFRESH_TIMEOUT; /*!< The number of seconds for which the manager waits before updating the trace reader */
-                static const unsigned long NR_SECONDS_IN_ONE_MINUTE;
 
-                static const std::string   PARSER_EMPTY_LOGIC_PROPERTY;
+                static const std::string   PARSER_EMPTY_LOGIC_PROPERTY; /*!< An empty logic property */
 
         };
 
