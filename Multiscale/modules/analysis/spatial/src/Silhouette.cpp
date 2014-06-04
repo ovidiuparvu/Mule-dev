@@ -14,8 +14,7 @@ double Silhouette::computeOverallAverageMeasure(const vector<Cluster> &clusters)
     double sumOfMeasures = 0;
     unsigned int nrOfClusters = clusters.size();
 
-    // Ignore the noise cluster (i = 1)
-    for (unsigned int i = 1; i < nrOfClusters; i++) {
+    for (unsigned int i = 0; i < nrOfClusters; i++) {
         sumOfMeasures += computeAverageMeasure(i, clusters);
     }
 
@@ -67,8 +66,7 @@ double Silhouette::computeAverageDissimilarityToOtherClusters(unsigned int entit
     double minimumDistance = numeric_limits<double>::max();
     unsigned int nrOfClusters = clusters.size();
 
-    // Ignore the noise cluster (i = 1)
-    for (unsigned int i = 1; i < nrOfClusters; i++) {
+    for (unsigned int i = 0; i < nrOfClusters; i++) {
         if (i != clusterIndex) {
             double distanceToCluster = computeAverageDissimilarityBtwEntityAndCluster(entityIndex, clusterIndex, i, clusters);
 

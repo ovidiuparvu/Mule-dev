@@ -23,7 +23,10 @@ const unsigned int multiscale::verification::CommandLineModelChecking::MODEL_CHE
 
 
 CommandLineModelChecking::CommandLineModelChecking()
-    : allowedArguments(CONFIG_CAPTION_ALLOWED_ARGUMENTS),
+    : modelCheckerType(0),
+      extraEvaluationTime(0),
+      shouldVerboseDetailedResults(false),
+      allowedArguments(CONFIG_CAPTION_ALLOWED_ARGUMENTS),
       requiredArguments(CONFIG_CAPTION_REQUIRED_ARGUMENTS),
       optionalArguments(CONFIG_CAPTION_OPTIONAL_ARGUMENTS),
       modelCheckerTypeSpecificArguments(CONFIG_CAPTION_MODEL_CHECKER_TYPE_SPECIFIC_ARGUMENTS) {}
@@ -276,6 +279,9 @@ bool CommandLineModelChecking::areModelCheckingTypeSpecificArgumentsPresent(unsi
         default:
             MS_throw(InvalidInputException, ERR_INVALID_MODEL_CHECKING_TYPE);
     }
+
+    // Line added to avoid "control reaches end of non-void function" warnings
+    return false;
 }
 
 bool CommandLineModelChecking::areStatisticalModelCheckingArgumentsPresent(const po::variables_map &variablesMap) {

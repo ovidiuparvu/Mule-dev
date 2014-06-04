@@ -6,7 +6,7 @@
 using namespace multiscale::analysis;
 
 
-DBSCAN::DBSCAN() {}
+DBSCAN::DBSCAN() : eps(0), minPoints(0), nrOfDataPoints(0) {}
 
 DBSCAN::~DBSCAN() {
     distanceMatrix.clear();
