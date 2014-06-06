@@ -44,8 +44,8 @@ namespace multiscale {
                  *  WARNING: The Timepoint class contains as members lists of regions/clusters
                  *           because the uniqueness of the regions/clusters is determined using this
                  *           method. If this method is no longer used then replace the lists
-                 *           in the Timepoint class with sets or lists in order to ensure
-                 *           the uniqueness of the elements.
+                 *           in the Timepoint class with sets in order to ensure the uniqueness of
+                 *           the elements.
                  */
 
                 std::list<Cluster>  clusters;     /*!< The list of clusters */
@@ -162,17 +162,17 @@ namespace multiscale {
                  */
                 void timePointUnion(const TimePoint &timePoint);
 
-                //! Remove the cluster from the given position
+                //! Remove the cluster/region from the given position
                 /*!
-                 * \param position  The position of the cluster to be removed
+                 * \param position  The position of the cluster/region to be removed
                  */
-                void removeCluster(std::list<Cluster>::iterator &position);
+                void removeSpatialEntity(std::list<Cluster>::iterator &position);
 
                 //! Remove the region from the given position
                 /*!
                  * \param position  The position of the region to be removed
                  */
-                void removeRegion(std::list<Region>::iterator &position);
+                void removeSpatialEntity(std::list<Region>::iterator &position);
 
             private:
 

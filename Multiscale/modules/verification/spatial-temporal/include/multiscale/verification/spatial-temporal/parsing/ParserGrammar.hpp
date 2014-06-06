@@ -88,6 +88,10 @@ namespace multiscale {
                 qi::rule<Iterator, NotConstraintAttribute(), ascii::space_type>                     notConstraintRule;                          /*!< The rule for parsing a "not" constraint */
                 qi::rule<Iterator, UnaryConstraintAttribute(), ascii::space_type>                   unaryConstraintRule;                        /*!< The rule for parsing a unary constraint */
 
+                qi::rule<Iterator, FilterNumericMeasureAttribute(), ascii::space_type>              filterNumericMeasureRule;                   /*!< The rule for parsing a filter numeric measure */
+                qi::rule<Iterator, UnaryNumericFilterAttribute(), ascii::space_type>                unaryNumericFilterRule;                     /*!< The rule for parsing a unary numeric filter measure */
+                qi::rule<Iterator, BinaryNumericFilterAttribute(), ascii::space_type>               binaryNumericFilterRule;                    /*!< The rule for parsing a binary numeric filter measure*/
+
                 qi::rule<Iterator, AndConstraintAttribute(), ascii::space_type>                     andConstraintRule;                          /*!< The rule for parsing an "and" constraint */
                 qi::rule<Iterator, OrConstraintAttribute(), ascii::space_type>                      orConstraintRule;                           /*!< The rule for parsing an "or" constraint */
                 qi::rule<Iterator, ImplicationConstraintAttribute(), ascii::space_type>             implicationConstraintRule;                  /*!< The rule for parsing an "implication" constraint */
@@ -160,6 +164,7 @@ namespace multiscale {
                 void initialiseConstraintsRules() {
                     initialiseConstraintRule();
                     initialisePrimaryConstraintRule();
+                    initialiseFilterNumericMeasureRule();
                     initialiseComposedConstraintRule();
                 }
 
@@ -446,7 +451,25 @@ namespace multiscale {
                     unaryConstraintRule
                         =   spatialMeasureRule
                             > comparatorRule
-                            > numericMeasureRule;
+                            > filterNumericMeasureRule;
+                }
+
+                //! Initialise the filter numeric measure rule
+                void initialiseFilterNumericMeasureRule() {
+                    filterNumericMeasureRule
+                        =   numericMeasureRule
+                        |   spatialMeasureRule
+                        |   unaryNumericFilterRule
+                        |   binaryNumericFilterRule;
+
+                    unaryNumericFilterRule
+                        =   unaryNumericMeasureRule
+                            > filterNumericMeasureRule;
+
+                    binaryNumericFilterRule
+                        =   binaryNumericMeasureRule
+                            > filterNumericMeasureRule
+                            > filterNumericMeasureRule;
                 }
 
                 //! Initialise the composed constraint rule
@@ -525,6 +548,7 @@ namespace multiscale {
                 void assignNamesToConstraintsRules() {
                     assignNamesToConstraintRules();
                     assignNamesToPrimaryConstraintRules();
+                    assignNamesToFilterNumericMeasureRules();
                     assignNamesToComposedConstraintRules();
                 }
 
@@ -585,7 +609,7 @@ namespace multiscale {
                     quaternarySubsetMeasureRule .name("quaternarySubsetMeasureRule");
                 }
 
-                //! Assign names to the nary numeric measure rules
+                //! Assign names to the n-ary numeric measure rules
                 void assignNamesToNaryNumericMeasureRules() {
                     unaryNumericMeasureRule     .name("unaryNumericMeasureRule");
                     binaryNumericMeasureRule    .name("binaryNumericMeasureRule");
@@ -608,6 +632,13 @@ namespace multiscale {
                     primaryConstraintRule   .name("primaryConstraintRule");
                     notConstraintRule       .name("notConstraintRule");
                     unaryConstraintRule     .name("unaryConstraintRule");
+                }
+
+                //! Assign names to the filter numeric measure rules
+                void assignNamesToFilterNumericMeasureRules() {
+                    filterNumericMeasureRule.name("filterNumericMeasureRule");
+                    unaryNumericFilterRule  .name("unaryNumericFilterRule");
+                    binaryNumericFilterRule .name("binaryNumericFilterRule");
                 }
 
                 //! Assign names to the composed constraint rules
@@ -662,6 +693,7 @@ namespace multiscale {
                 void initialiseConstraintsRulesDebugging() {
                     initialiseConstraintRuleDebugging();
                     initialisePrimaryConstraintRuleDebugging();
+                    initialiseFilterNumericMeasureRuleDebugging();
                     initialiseComposedConstraintRuleDebugging();
                 }
 
@@ -728,7 +760,7 @@ namespace multiscale {
                     debug(binaryNumericMeasureRule);
                 }
 
-                //! Initialise debugging for the subset rule
+                //! Initialise debugging for the subset rules
                 void initialiseSubsetRuleDebugging() {
                     debug(subsetRule);
                     debug(filterSubsetRule);
@@ -740,11 +772,18 @@ namespace multiscale {
                     debug(constraintRule);
                 }
 
-                //! Initialise debugging for the primary constraint rule
+                //! Initialise debugging for the primary constraint rules
                 void initialisePrimaryConstraintRuleDebugging() {
                     debug(primaryConstraintRule);
                     debug(notConstraintRule);
                     debug(unaryConstraintRule);
+                }
+
+                //! Initialise debugging for the filter numeric measure rules
+                void initialiseFilterNumericMeasureRuleDebugging() {
+                    debug(filterNumericMeasureRule);
+                    debug(unaryNumericFilterRule);
+                    debug(binaryNumericFilterRule);
                 }
 
                 //! Initialise debugging for the composed constraint rule
@@ -793,6 +832,7 @@ namespace multiscale {
                 //! Initialise the constraints error handling support
                 void initialiseConstraintsErrorHandlingSupport() {
                     initialisePrimaryConstraintErrorHandlingSupport();
+                    initialiseFilterNumericMeasureErrorHandlingSupport();
                     initialiseComposedConstraintErrorHandlingSupport();
                 }
 
@@ -848,6 +888,13 @@ namespace multiscale {
                     qi::on_error<qi::fail>(primaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                     qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                     qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                }
+
+                //! Initialise the filter numeric measure error handling support
+                void initialiseFilterNumericMeasureErrorHandlingSupport() {
+                    qi::on_error<qi::fail>(filterNumericMeasureRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(unaryNumericFilterRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(binaryNumericFilterRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 }
 
                 //! Initialise the composed constraint error handling support

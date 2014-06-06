@@ -144,11 +144,11 @@ void TimePoint::timePointUnion(const TimePoint &timePoint) {
     timePointSetOperation(timePoint, SetOperationType::Union);
 }
 
-void TimePoint::removeCluster(std::list<Cluster>::iterator &position) {
+void TimePoint::removeSpatialEntity(std::list<Cluster>::iterator &position) {
     position = clusters.erase(position);
 }
 
-void TimePoint::removeRegion(std::list<Region>::iterator &position) {
+void TimePoint::removeSpatialEntity(std::list<Region>::iterator &position) {
     position = regions.erase(position);
 }
 

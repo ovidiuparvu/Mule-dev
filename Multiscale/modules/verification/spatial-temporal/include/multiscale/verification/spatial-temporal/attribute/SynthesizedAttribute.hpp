@@ -34,4 +34,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/ImplicationConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/EquivalenceConstraintAttribute.hpp"
 
+#include "multiscale/verification/spatial-temporal/attribute/UnaryNumericFilterAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericFilterAttribute.hpp"
+
 #endif

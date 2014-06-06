@@ -2,7 +2,7 @@
 #define UNARYCONSTRAINTATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/FilterNumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -17,9 +17,9 @@ namespace multiscale {
 
             public:
 
-                SpatialMeasureAttribute     spatialMeasure;    /*!< The spatial measure */
-                ComparatorAttribute         comparator;        /*!< The comparator */
-                NumericMeasureAttributeType numericMeasure;    /*!< The numeric measure */
+                SpatialMeasureAttribute             spatialMeasure;         /*!< The spatial measure */
+                ComparatorAttribute                 comparator;             /*!< The comparator */
+                FilterNumericMeasureAttributeType   filterNumericMeasure;   /*!< The filter numeric measure */
 
         };
 
@@ -32,7 +32,7 @@ BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UnaryConstraintAttribute,
     (multiscale::verification::SpatialMeasureAttribute, spatialMeasure)
     (multiscale::verification::ComparatorAttribute, comparator)
-    (multiscale::verification::NumericMeasureAttributeType, numericMeasure)
+    (multiscale::verification::FilterNumericMeasureAttributeType, filterNumericMeasure)
 )
 
 #endif

@@ -2,7 +2,6 @@
 #define NUMERICEVALUATOR_HPP
 
 #include "multiscale/util/Numeric.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/UnaryNumericMeasureAttribute.hpp"
 
 #include <cmath>
 
