@@ -20,10 +20,8 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 # MultidimensionalModelChecker
 
-configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.cpp.in 
+UpdateMudiBuildNumber (
     ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.cpp
-    @ONLY
 )
 
 set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC

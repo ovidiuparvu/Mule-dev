@@ -47,3 +47,31 @@ function(IncrementProjectBuildNumber)
     math(EXPR PROJECT_VERSION_BUILD "${PROJECT_VERSION_BUILD} + 1") 
     set(PROJECT_VERSION_BUILD ${PROJECT_VERSION_BUILD} PARENT_SCOPE)  
 endfunction(IncrementProjectBuildNumber)
+
+# Update the build number for the model checker Mudi
+
+function(UpdateMudiBuildNumber mudiInputFile)
+    file(
+        READ 
+        ${mudiInputFile}
+        MUDI_INPUT_FILE
+    )
+
+    message(STATUS "${MUDI_INPUT_FILE}")
+
+    string(
+        REGEX REPLACE 
+        "Mudi [0-9]+[.][0-9]+[.][0-9]+ [(]Multidimensional model checker[)]" 
+        "Mudi ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_BUILD} (Multidimensional model checker)" 
+        MUDI_MODIFIED_INPUT_FILE
+        "${MUDI_INPUT_FILE}"
+    )
+    
+    message(STATUS "${MUDI_MODIFIED_INPUT_FILE}")
+      
+    file(
+        WRITE
+        ${mudiInputFile}
+        "${MUDI_MODIFIED_INPUT_FILE}"    
+    )
+endfunction(UpdateMudiBuildNumber)
