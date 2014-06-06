@@ -98,6 +98,19 @@ namespace multiscaletest {
 /////////////////////////////////////////////////////////
 //
 //
+// BinaryNumericFilter
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, BinaryNumericFilter) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // BinaryNumericMeasure
 //
 //
@@ -338,6 +351,19 @@ TEST_F(CompleteTraceTest, Constraint) {
 
 TEST_F(CompleteTraceTest, Difference) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d(avg(clusters, area)) >= {B}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// FilterNumericMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, FilterNumericMeasure) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5) ^ circleMeasure > rectangleMeasure)) > 0]"));
 }
 
 
@@ -718,6 +744,19 @@ TEST_F(CompleteTraceTest, TernarySubset) {
 
 TEST_F(CompleteTraceTest, UnaryConstraint) {
     EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, perimeter <= subtract(60, multiply({B}, 6.59)))) <= {B}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryNumericFilter
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, UnaryNumericFilter) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < trunc(centroidY))) > 0]"));
 }
 
 

@@ -37,6 +37,7 @@ TEST(Input, IncorrectFInput) {
 
 // Include additional test cases
 
+#include "attribute/BinaryNumericFilterTest.hpp"
 #include "attribute/BinaryNumericMeasureTest.hpp"
 #include "attribute/BinaryNumericNumericTest.hpp"
 #include "attribute/BinarySubsetMeasureTest.hpp"
@@ -47,6 +48,7 @@ TEST(Input, IncorrectFInput) {
 #include "attribute/ConstraintParenthesesTest.hpp"
 #include "attribute/ConstraintTest.hpp"
 #include "attribute/DifferenceTest.hpp"
+#include "attribute/FilterNumericMeasureTest.hpp"
 #include "attribute/FilterSubsetTest.hpp"
 #include "attribute/FutureLogicPropertyTest.hpp"
 #include "attribute/GlobalLogicPropertyTest.hpp"
@@ -71,6 +73,7 @@ TEST(Input, IncorrectFInput) {
 #include "attribute/TernarySubsetMeasureTest.hpp"
 #include "attribute/TernarySubsetTest.hpp"
 #include "attribute/UnaryConstraintTest.hpp"
+#include "attribute/UnaryNumericFilterTest.hpp"
 #include "attribute/UnaryNumericMeasureTest.hpp"
 #include "attribute/UnaryNumericNumericTest.hpp"
 #include "attribute/UnarySubsetMeasureTest.hpp"

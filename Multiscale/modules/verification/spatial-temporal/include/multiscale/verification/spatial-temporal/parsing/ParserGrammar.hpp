@@ -467,13 +467,22 @@ namespace multiscale {
                         |   binaryNumericFilterRule;
 
                     unaryNumericFilterRule
-                        =   unaryNumericMeasureRule
-                            > filterNumericMeasureRule;
+                        =   (
+                                unaryNumericMeasureRule
+                                > '('
+                                > filterNumericMeasureRule
+                                > ')'
+                            );
 
                     binaryNumericFilterRule
-                        =   binaryNumericMeasureRule
-                            > filterNumericMeasureRule
-                            > filterNumericMeasureRule;
+                        =   (
+                                binaryNumericMeasureRule
+                                > '('
+                                > filterNumericMeasureRule
+                                > ','
+                                > filterNumericMeasureRule
+                                > ')'
+                            );
                 }
 
                 //! Initialise the composed constraint rule

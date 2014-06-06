@@ -83,6 +83,19 @@ namespace multiscaletest {
 /////////////////////////////////////////////////////////
 //
 //
+// BinaryNumericFilter
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(SpatialEntitiesTraceTest, BinaryNumericFilter) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // BinaryNumericMeasure
 //
 //
@@ -323,6 +336,19 @@ TEST_F(SpatialEntitiesTraceTest, Constraint) {
 
 TEST_F(SpatialEntitiesTraceTest, Difference) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d(avg(clusters, area)) >= 4]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// FilterNumericMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(SpatialEntitiesTraceTest, FilterNumericMeasure) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5) ^ circleMeasure > rectangleMeasure)) > 0]"));
 }
 
 
@@ -703,6 +729,19 @@ TEST_F(SpatialEntitiesTraceTest, TernarySubset) {
 
 TEST_F(SpatialEntitiesTraceTest, UnaryConstraint) {
     EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, perimeter <= 30.2)) <= 3]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryNumericFilter
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(SpatialEntitiesTraceTest, UnaryNumericFilter) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < trunc(centroidY))) > 0]"));
 }
 
 

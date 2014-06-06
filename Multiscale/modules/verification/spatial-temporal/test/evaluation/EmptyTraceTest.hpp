@@ -29,6 +29,19 @@ namespace multiscaletest {
 /////////////////////////////////////////////////////////
 //
 //
+// BinaryNumericFilter
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryNumericFilter) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5))) > 0]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // BinaryNumericMeasure
 //
 //
@@ -273,6 +286,19 @@ TEST_F(EmptyTraceTest, Constraint) {
 
 TEST_F(EmptyTraceTest, Difference) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [d(4) >= 4]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// FilterNumericMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, FilterNumericMeasure) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5) ^ area > perimeter)) > 0]"), SpatialTemporalException);
 }
 
 
@@ -653,6 +679,19 @@ TEST_F(EmptyTraceTest, TernarySubset) {
 
 TEST_F(EmptyTraceTest, UnaryConstraint) {
     EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(filter(clusters, perimeter <= 30.2)) <= 3]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryNumericFilter
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, UnaryNumericFilter) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < trunc(centroidY))) > 0]"), SpatialTemporalException);
 }
 
 

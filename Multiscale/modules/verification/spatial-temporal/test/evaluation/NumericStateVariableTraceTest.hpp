@@ -53,6 +53,19 @@ namespace multiscaletest {
 /////////////////////////////////////////////////////////
 //
 //
+// BinaryNumericFilter
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, BinaryNumericFilter) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // BinaryNumericMeasure
 //
 //
@@ -293,6 +306,19 @@ TEST_F(NumericStateVariableTraceTest, Constraint) {
 
 TEST_F(NumericStateVariableTraceTest, Difference) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [d({A}) >= 4]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// FilterNumericMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, FilterNumericMeasure) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5) ^ circleMeasure > rectangleMeasure)) > 0]"));
 }
 
 
@@ -673,6 +699,19 @@ TEST_F(NumericStateVariableTraceTest, TernarySubset) {
 
 TEST_F(NumericStateVariableTraceTest, UnaryConstraint) {
     EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, perimeter <= 30.2)) <= {B}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryNumericFilter
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, UnaryNumericFilter) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < trunc(centroidY))) > 0]"));
 }
 
 

@@ -29,15 +29,15 @@ TEST(BinaryNumericNumeric, IncorrectInputAfterStartBracket) {
     EXPECT_THROW(parseInputString("P >= 0.3 [{A} <= add( a 2, 3)]"), InvalidInputException);
 }
 
-TEST(BinaryNumericNumeric, InvalidStartTimepoint) {
+TEST(BinaryNumericNumeric, InvalidFirstParameter) {
     EXPECT_THROW(parseInputString("P >= 0.3 [{A} <= add(a, 3)]"), InvalidInputException);
 }
 
-TEST(BinaryNumericNumeric, MissingTimepointsComma) {
+TEST(BinaryNumericNumeric, MissingParametersComma) {
     EXPECT_THROW(parseInputString("P >= 0.3 [{A} <= add(2 3)]"), InvalidInputException);
 }
 
-TEST(BinaryNumericNumeric, InvalidEndTimepoint) {
+TEST(BinaryNumericNumeric, InvalidSecondParameter) {
     EXPECT_THROW(parseInputString("P >= 0.3 [{A} <= add(2, a)]"), InvalidInputException);
 }
 
