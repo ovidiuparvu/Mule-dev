@@ -14,6 +14,7 @@ namespace multiscale {
         class BinaryNumericNumericAttribute;
         class NumericMeasureAttribute;
         class NumericSpatialAttribute;
+        class PrimaryNumericMeasureAttribute;
         class UnaryNumericNumericAttribute;
 
 
@@ -22,6 +23,7 @@ namespace multiscale {
             double,
             NumericStateVariableAttribute,
             boost::recursive_wrapper<NumericSpatialAttribute>,
+            boost::recursive_wrapper<PrimaryNumericMeasureAttribute>,
             boost::recursive_wrapper<UnaryNumericNumericAttribute>,
             boost::recursive_wrapper<BinaryNumericNumericAttribute>,
             boost::recursive_wrapper<NumericMeasureAttribute>

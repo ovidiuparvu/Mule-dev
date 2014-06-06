@@ -33,16 +33,16 @@ namespace multiscale {
 
                     switch(type) {
                         case ConsideredSpatialEntityType::All:
-                            filterClusters(timePoint, spatialMeasure, comparator, filterNumericMeasure);
-                            filterRegions(timePoint, spatialMeasure, comparator, filterNumericMeasure);
+                            filterSpatialEntities<Cluster>(timePoint, spatialMeasure, comparator, filterNumericMeasure);
+                            filterSpatialEntities<Region>(timePoint, spatialMeasure, comparator, filterNumericMeasure);
                             break;
 
                         case ConsideredSpatialEntityType::Clusters:
-                            filterClusters(timePoint, spatialMeasure, comparator, filterNumericMeasure);
+                            filterSpatialEntities<Cluster>(timePoint, spatialMeasure, comparator, filterNumericMeasure);
                             break;
 
                         case ConsideredSpatialEntityType::Regions:
-                            filterRegions(timePoint, spatialMeasure, comparator, filterNumericMeasure);
+                            filterSpatialEntities<Region>(timePoint, spatialMeasure, comparator, filterNumericMeasure);
                             break;
 
                         default:
@@ -59,53 +59,63 @@ namespace multiscale {
                  * \param comparator            The type of the comparator
                  * \param filterNumericMeasure  The filter numeric measure
                  */
-                static void filterClusters(TimePoint &timePoint,
-                                           const SpatialMeasureType &spatialMeasure,
-                                           const ComparatorType &comparator,
-                                           const FilterNumericMeasureAttributeType &filterNumericMeasure) {
-                    double spatialMeasureValue          = 0;
-                    double filterNumericMeasureValue    = 0;
+                template <typename T>
+                static void filterSpatialEntities(TimePoint &timePoint,
+                                                  const SpatialMeasureType &spatialMeasure,
+                                                  const ComparatorType &comparator,
+                                                  const FilterNumericMeasureAttributeType &filterNumericMeasure) {
+                    typename std::list<T>::iterator beginIt;
+                    typename std::list<T>::iterator endIt;
 
-                    auto it = timePoint.getClustersBeginIterator();
+                    getBeginIterator(timePoint, beginIt);
+                    getEndIterator(timePoint, endIt);
 
-                    while (it != timePoint.getClustersEndIterator()) {
-                        spatialMeasureValue         = SpatialMeasureEvaluator::evaluate(*it, spatialMeasure);
-                        filterNumericMeasureValue   = evaluate(filterNumericMeasure, timePoint, *it);
+                    while (beginIt != endIt) {
+                        double spatialMeasureValue         = SpatialMeasureEvaluator::evaluate(*beginIt, spatialMeasure);
+                        double filterNumericMeasureValue   = evaluate(filterNumericMeasure, timePoint, *beginIt);
 
                         if (!ComparatorEvaluator::evaluate(spatialMeasureValue, comparator, filterNumericMeasureValue)) {
-                            timePoint.removeSpatialEntity(it);
+                            timePoint.removeSpatialEntity(beginIt);
                         } else {
-                            it++;
+                            beginIt++;
                         }
                     }
                 }
 
-                //! Filter the regions considering the given timepoint and constraints
+                //! Get the clusters begin iterator
                 /*!
-                 * \param timePoint             The timepoint which will be filtered
-                 * \param spatialMeasure        The type of the spatial measure
-                 * \param comparator            The type of the comparator
-                 * \param filterNumericMeasure  The filter numeric measure
+                 * \param timePoint     The considered timepoint
+                 * \param beginIterator The iterator pointing at the beginning of the clusters collection
                  */
-                static void filterRegions(TimePoint &timePoint,
-                                          const SpatialMeasureType &spatialMeasure,
-                                          const ComparatorType &comparator,
-                                          const FilterNumericMeasureAttributeType &filterNumericMeasure) {
-                    double spatialMeasureValue          = 0;
-                    double filterNumericMeasureValue    = 0;
+                static void getBeginIterator(TimePoint &timePoint, std::list<Cluster>::iterator &beginIterator) {
+                    beginIterator = timePoint.getClustersBeginIterator();
+                }
 
-                    auto it = timePoint.getRegionsBeginIterator();
+                //! Get the regions begin iterator
+                /*!
+                 * \param timePoint     The considered timepoint
+                 * \param beginIterator The iterator pointing at the beginning of the regions collection
+                 */
+                static void getBeginIterator(TimePoint &timePoint, std::list<Region>::iterator &beginIterator) {
+                    beginIterator = timePoint.getRegionsBeginIterator();
+                }
 
-                    while (it != timePoint.getRegionsEndIterator()) {
-                        spatialMeasureValue         = SpatialMeasureEvaluator::evaluate(*it, spatialMeasure);
-                        filterNumericMeasureValue   = evaluate(filterNumericMeasure, timePoint, *it);
+                //! Get the clusters end iterator
+                /*!
+                 * \param timePoint     The considered timepoint
+                 * \param endIterator   The iterator pointing at the end of the clusters collection
+                 */
+                static void getEndIterator(TimePoint &timePoint, std::list<Cluster>::iterator &endIterator) {
+                    endIterator = timePoint.getClustersEndIterator();
+                }
 
-                        if (!ComparatorEvaluator::evaluate(spatialMeasureValue, comparator, filterNumericMeasureValue)) {
-                            timePoint.removeSpatialEntity(it);
-                        } else {
-                            it++;
-                        }
-                    }
+                //! Get the regions end iterator
+                /*!
+                 * \param timePoint     The considered timepoint
+                 * \param endIterator   The iterator pointing at the end of the regions collection
+                 */
+                static void getEndIterator(TimePoint &timePoint, std::list<Region>::iterator &endIterator) {
+                    endIterator = timePoint.getRegionsEndIterator();
                 }
 
                 //! Evaluate the filter numeric measure considering the provided timepoint and spatial entity

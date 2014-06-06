@@ -33,6 +33,14 @@ namespace multiscale {
                     return evaluate(numericMeasure.numericMeasure);
                 }
 
+                //! Overloading the "()" operator for the PrimaryNumericMeasureAttribute alternative
+                /*!
+                 * \param primaryNumericMeasure The primary numeric measure
+                 */
+                double operator()(const PrimaryNumericMeasureAttribute &primaryNumericMeasure) const {
+                    return evaluatePrimaryNumericMeasure(primaryNumericMeasure.primaryNumericMeasure);
+                }
+
                 //! Overloading the "()" operator for the real number alternative
                 /*!
                  * \param realNumber The real number
@@ -120,6 +128,14 @@ namespace multiscale {
                  */
                 double evaluate(const NumericMeasureAttributeType &numericMeasure) const {
                     return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
+                }
+
+                //! Evaluate the given primary numeric measure considering the timePoint field
+                /*!
+                 * \param primaryNumericMeasure The given primary numeric measure
+                 */
+                double evaluatePrimaryNumericMeasure(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
+                    return boost::apply_visitor(NumericVisitor(timePoint), primaryNumericMeasure);
                 }
 
                 //! Evaluate the given numeric spatial measure considering the timePoint field

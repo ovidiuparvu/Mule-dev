@@ -1,7 +1,6 @@
 #ifndef FILTERNUMERICMEASUREATTRIBUTE_HPP
 #define FILTERNUMERICMEASUREATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -15,14 +14,14 @@ namespace multiscale {
         // Forward declarations
         class BinaryNumericFilterAttribute;
         class FilterNumericMeasureAttribute;
-        class SpatialMeasureAttribute;
+        class PrimaryNumericMeasureAttribute;
         class UnaryNumericFilterAttribute;
 
 
-        //! Variant for a unary constraint attribute
+        //! Variant for a filter numeric measure attribute
         typedef boost::variant<
             SpatialMeasureAttribute,
-            boost::recursive_wrapper<NumericMeasureAttribute>,
+            boost::recursive_wrapper<PrimaryNumericMeasureAttribute>,
             boost::recursive_wrapper<UnaryNumericFilterAttribute>,
             boost::recursive_wrapper<BinaryNumericFilterAttribute>,
             boost::recursive_wrapper<FilterNumericMeasureAttribute>

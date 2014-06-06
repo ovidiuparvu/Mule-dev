@@ -24,6 +24,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/EquivalenceLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UntilLogicPropertyAttribute.hpp"
 
+#include "multiscale/verification/spatial-temporal/attribute/PrimaryNumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericNumericAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericNumericAttribute.hpp"
 

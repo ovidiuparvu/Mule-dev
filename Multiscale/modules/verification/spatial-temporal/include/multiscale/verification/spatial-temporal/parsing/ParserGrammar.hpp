@@ -61,6 +61,7 @@ namespace multiscale {
                 qi::rule<Iterator, UntilLogicPropertyAttribute(), ascii::space_type>                untilLogicPropertyRule;                     /*!< The rule for parsing an "until" logic property */
 
                 qi::rule<Iterator, NumericMeasureAttribute(), ascii::space_type>                    numericMeasureRule;                         /*!< The rule for parsing a numeric measure */
+                qi::rule<Iterator, PrimaryNumericMeasureAttribute(), ascii::space_type>             primaryNumericMeasureRule;                  /*!< The rule for parsing a primary numeric numeric attribute */
                 qi::rule<Iterator, UnaryNumericNumericAttribute(), ascii::space_type>               unaryNumericNumericRule;                    /*!< The rule for parsing a unary numeric numeric attribute */
                 qi::rule<Iterator, BinaryNumericNumericAttribute(), ascii::space_type>              binaryNumericNumericRule;                   /*!< The rule for parsing a binary numeric numeric attribute */
 
@@ -304,11 +305,14 @@ namespace multiscale {
                 //! Initialise the numeric measure rule
                 void initialiseNumericMeasureRule() {
                     numericMeasureRule
-                        =   numericSpatialRule
-                        |   qi::double_
-                        |   numericStateVariableRule
+                        =   primaryNumericMeasureRule
                         |   unaryNumericNumericRule
                         |   binaryNumericNumericRule;
+
+                    primaryNumericMeasureRule
+                        =   numericSpatialRule
+                        |   qi::double_
+                        |   numericStateVariableRule;
 
                     unaryNumericNumericRule
                         =   (
@@ -457,7 +461,7 @@ namespace multiscale {
                 //! Initialise the filter numeric measure rule
                 void initialiseFilterNumericMeasureRule() {
                     filterNumericMeasureRule
-                        =   numericMeasureRule
+                        =   primaryNumericMeasureRule
                         |   spatialMeasureRule
                         |   unaryNumericFilterRule
                         |   binaryNumericFilterRule;
@@ -588,6 +592,7 @@ namespace multiscale {
                 //! Assign names to the numeric measure rules
                 void assignNamesToNumericMeasureRules() {
                     numericMeasureRule          .name("numericMeasureRule");
+                    primaryNumericMeasureRule   .name("primaryNumericMeasureRule");
                     unaryNumericNumericRule     .name("unaryNumericNumericRule");
                     binaryNumericNumericRule    .name("binaryNumericNumericRule");
                 }
@@ -733,6 +738,7 @@ namespace multiscale {
                 //! Initialise debugging for the numeric measure rule
                 void initialiseNumericMeasureRuleDebugging() {
                     debug(numericMeasureRule);
+                    debug(primaryNumericMeasureRule);
                     debug(unaryNumericNumericRule);
                     debug(binaryNumericNumericRule);
                 }

@@ -25,12 +25,20 @@ namespace multiscale {
                 FilterNumericVisitor(const TimePoint &timePoint, const SpatialEntity &spatialEntity)
                     : timePoint(timePoint), spatialEntity(spatialEntity) {}
 
-                //! Overloading the "()" operator for the NumericMeasureAttribute alternative
+                //! Overloading the "()" operator for the FilterNumericMeasureAttribute alternative
                 /*!
-                 * \param numericMeasure  The numeric measure
+                 * \param filterNumericMeasure   The filter numeric measure
                  */
-                double operator()(const NumericMeasureAttribute &numericMeasure) const {
-                    return evaluate(numericMeasure.numericMeasure);
+                double operator()(const FilterNumericMeasureAttribute &filterNumericMeasure) const {
+                    return evaluate(filterNumericMeasure.filterNumericMeasure);
+                }
+
+                //! Overloading the "()" operator for the PrimaryNumericMeasureAttribute alternative
+                /*!
+                 * \param primaryNumericMeasure The primary numeric measure
+                 */
+                double operator()(const PrimaryNumericMeasureAttribute &primaryNumericMeasure) const {
+                    return evaluate(primaryNumericMeasure.primaryNumericMeasure);
                 }
 
                 //! Overloading the "()" operator for the SpatialMeasureAttribute alternative
@@ -64,14 +72,6 @@ namespace multiscale {
                                                       firstFilterNumericMeasure, secondFilterNumericMeasure);
                 }
 
-                //! Overloading the "()" operator for the FilterNumericMeasureAttribute alternative
-                /*!
-                 * \param filterNumericMeasure   The filter numeric measure
-                 */
-                double operator()(const FilterNumericMeasureAttribute &filterNumericMeasure) const {
-                    return evaluate(filterNumericMeasure.filterNumericMeasure);
-                }
-
             private:
 
                 //! Evaluate the given filter numeric measure considering the timePoint and spatialEntity fields
@@ -82,12 +82,12 @@ namespace multiscale {
                     return boost::apply_visitor(FilterNumericVisitor(timePoint, spatialEntity), filterNumericMeasure);
                 }
 
-                //! Evaluate the given numeric measure considering the timePoint field
+                //! Evaluate the given primary numeric measure considering the timePoint field
                 /*!
-                 * \param numericMeasure The given numeric measure
+                 * \param primaryNumericMeasure The given primary numeric measure
                  */
-                double evaluate(const NumericMeasureAttributeType &numericMeasure) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
+                double evaluate(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
+                    return boost::apply_visitor(NumericVisitor(timePoint), primaryNumericMeasure);
                 }
 
         };
