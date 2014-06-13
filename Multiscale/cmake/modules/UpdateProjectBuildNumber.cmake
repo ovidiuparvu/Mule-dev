@@ -57,8 +57,6 @@ function(UpdateMudiBuildNumber mudiInputFile)
         MUDI_INPUT_FILE
     )
 
-    message(STATUS "${MUDI_INPUT_FILE}")
-
     string(
         REGEX REPLACE 
         "Mudi [0-9]+[.][0-9]+[.][0-9]+ [(]Multidimensional model checker[)]" 
@@ -66,9 +64,7 @@ function(UpdateMudiBuildNumber mudiInputFile)
         MUDI_MODIFIED_INPUT_FILE
         "${MUDI_INPUT_FILE}"
     )
-    
-    message(STATUS "${MUDI_MODIFIED_INPUT_FILE}")
-      
+        
     file(
         WRITE
         ${mudiInputFile}

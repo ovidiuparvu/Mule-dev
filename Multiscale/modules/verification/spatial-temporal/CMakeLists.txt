@@ -68,6 +68,7 @@ set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC
 )
 
 add_executable(Mudi ${MULTIDIMENSIONAL_MODEL_CHECKER_SRC})
+install(TARGETS Mudi DESTINATION bin)
 
 AddDebugPostfix(Mudi)
 
