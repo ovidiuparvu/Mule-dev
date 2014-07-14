@@ -7,6 +7,6 @@ function(AddUnitTest testName)
         DEBUG_POSTFIX _d
     )        
     
-    add_test(${testName} ${testName})
+    add_test(NAME ${testName} COMMAND ${testName})
 endfunction(AddUnitTest)
 

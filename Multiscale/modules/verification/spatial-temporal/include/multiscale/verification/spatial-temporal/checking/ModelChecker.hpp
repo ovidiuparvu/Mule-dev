@@ -33,6 +33,8 @@ namespace multiscale {
                              : abstractSyntaxTree(abstractSyntaxTree),
                                totalNumberOfEvaluations(0),
                                totalNumberOfTrueEvaluations(0),
+                               nullHypothesisPValue(1),
+                               alternativeHypothesisPValue(1),
                                arePValuesUpdatedFlag(false) {}
                 virtual ~ModelChecker() {};
 

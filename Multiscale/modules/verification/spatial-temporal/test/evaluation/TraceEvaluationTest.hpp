@@ -40,6 +40,9 @@ namespace multiscaletest {
            //! Validate the results of the test
            virtual void ValidateTestResults() override;
 
+           //! Initialise the trace
+           virtual void InitialiseTrace() = 0;
+
         private:
 
            //! Initialise the query
@@ -47,9 +50,6 @@ namespace multiscaletest {
             * \param query  The given query
             */
            void InitialiseQuery(const std::string &query);
-
-           //! Initialise the trace
-           virtual void InitialiseTrace() = 0;
 
     };
 

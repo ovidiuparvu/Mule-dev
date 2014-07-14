@@ -76,6 +76,54 @@ target_link_libraries(Mudi util)
 target_link_libraries(Mudi ${XERCESC_LIBRARY})
 
 
+# ModelCheckerTest
+
+set(MODEL_CHECKER_TEST_SRC
+    src/data/LogicPropertyDataReader.cpp
+    src/data/SpatialTemporalDataReader.cpp
+    
+    src/attribute/BinaryNumericMeasureAttribute.cpp
+    src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ComparatorAttribute.cpp
+    src/attribute/ProbabilisticLogicPropertyAttribute.cpp
+    src/attribute/QuaternarySubsetMeasureAttribute.cpp
+    src/attribute/SpatialMeasureAttribute.cpp
+    src/attribute/SubsetSpecificAttribute.cpp
+    src/attribute/TernarySubsetMeasureAttribute.cpp
+    src/attribute/UnaryNumericMeasureAttribute.cpp
+    src/attribute/UnarySubsetMeasureAttribute.cpp
+
+    src/checking/ApproximateBayesianModelChecker.cpp
+    src/checking/ApproximateBayesianModelCheckerFactory.cpp    
+    src/checking/ApproximateProbabilisticModelChecker.cpp
+    src/checking/ApproximateProbabilisticModelCheckerFactory.cpp    
+    src/checking/BayesianModelChecker.cpp
+    src/checking/BayesianModelCheckerFactory.cpp    
+    src/checking/ModelChecker.cpp
+    src/checking/ProbabilisticBlackBoxModelChecker.cpp
+    src/checking/ProbabilisticBlackBoxModelCheckerFactory.cpp
+    src/checking/StatisticalModelChecker.cpp
+    src/checking/StatisticalModelCheckerFactory.cpp
+    
+    src/exception/ParserGrammarExceptionHandler.cpp
+    
+    src/model/AbstractSyntaxTree.cpp
+    src/model/SpatialEntity.cpp
+    src/model/SpatialTemporalTrace.cpp
+    src/model/TimePoint.cpp
+    
+    src/parsing/Parser.cpp
+    
+    test/checking/ModelCheckerTest.cpp
+)
+
+add_executable(ModelCheckerTest ${MODEL_CHECKER_TEST_SRC})
+AddUnitTest(ModelCheckerTest)
+
+target_link_libraries(ModelCheckerTest util)
+target_link_libraries(ModelCheckerTest gtest gtest_main)
+
+
 # ParserEvaluationTest
 
 set(PARSER_EVALUATION_TEST_SRC
@@ -99,7 +147,7 @@ set(PARSER_EVALUATION_TEST_SRC
     
     src/parsing/Parser.cpp
     
-    test/ParserEvaluationTest.cpp
+    test/evaluation/ParserEvaluationTest.cpp
 )
 
 add_executable(ParserEvaluationTest ${PARSER_EVALUATION_TEST_SRC})
@@ -132,7 +180,7 @@ set(PARSER_TEST_SRC
     
     src/parsing/Parser.cpp
     
-    test/ParserTest.cpp
+    test/parsing/ParserTest.cpp
 )
 
 add_executable(ParserTest ${PARSER_TEST_SRC})
