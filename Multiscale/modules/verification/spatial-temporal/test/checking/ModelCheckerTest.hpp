@@ -544,7 +544,7 @@ TEST_F(ModelCheckingTest, ApproximateBayesianModelChecking) {
 
     double alphaParamBetaPrior  = 1;
     double betaParamBetaPrior   = 1;
-    double varianceThreshold    = 0.01;
+    double varianceThreshold    = 0.035;
 
     modelChecker = std::make_shared<mv::ApproximateBayesianModelChecker>(abstractSyntaxTree, alphaParamBetaPrior,
                                                                          betaParamBetaPrior, varianceThreshold);
