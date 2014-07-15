@@ -3,15 +3,11 @@
 
 #include "multiscale/core/MultiscaleTest.hpp"
 #include "multiscale/exception/TestException.hpp"
-#include "multiscale/verification/spatial-temporal/checking/ApproximateBayesianModelChecker.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelChecker.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <string>
-
-using namespace multiscale;
-using namespace multiscaletest;
 
 namespace mv = multiscale::verification;
 
@@ -21,23 +17,21 @@ const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(regions, area) 
 namespace multiscaletest {
 
     //! Class for testing model checkers
-    class ModelCheckingTest : public MultiscaleTest {
+    class ModelCheckerTest : public MultiscaleTest {
 
         protected:
 
-            std::vector<mv::SpatialTemporalTrace> traces;           /*!< The collection of spatio-temporal traces */
+            std::vector<mv::SpatialTemporalTrace> traces;               /*!< The collection of spatio-temporal traces */
 
-            std::shared_ptr<mv::ModelChecker>     modelChecker;     /*!< The specific type of model checker employed */
+            mv::AbstractSyntaxTree                abstractSyntaxTree;   /*!< The abstract syntax tree corresponding to the logic property */
+            std::shared_ptr<mv::ModelChecker>     modelChecker;         /*!< The specific type of model checker employed */
 
-            bool                                  evaluationResult; /*!< The result of the model checking evaluation */
+            bool                                  evaluationResult;     /*!< The result of the model checking evaluation */
 
         public:
 
            //! Run the test for the given logic property
-            /*!
-             * \param modelChecker  The specific type of model checker employed
-             */
-           bool RunModelCheckingTest(const std::shared_ptr<mv::ModelChecker> &modelChecker);
+           bool RunModelCheckingTest();
 
         protected:
 
@@ -47,13 +41,19 @@ namespace multiscaletest {
            //! Validate the results of the test
            virtual void ValidateTestResults() override;
 
+           //! Initialise the model checker
+           virtual void InitialiseModelChecker() = 0;
+
         private:
 
-           //! Initialise the model checker
-           void InitialiseModelChecker(const std::shared_ptr<mv::ModelChecker> &modelChecker);
+           //! Initialisation function
+           void Initialise();
 
            //! Initialise the collection of spatio-temporal traces
            void InitialiseSpatioTemporalTraces();
+
+           //! Initialise the abstract syntax tree
+           void InitialiseAbstractSyntaxTree();
 
            //! Initialise the globally increasing area spatio-temporal trace
            void InitialiseIncreasingSpatioTemporalTrace();
@@ -93,9 +93,8 @@ namespace multiscaletest {
 
     };
 
-    bool ModelCheckingTest::RunModelCheckingTest(const std::shared_ptr<mv::ModelChecker> &modelChecker) {
-        InitialiseSpatioTemporalTraces();
-        InitialiseModelChecker(modelChecker);
+    bool ModelCheckerTest::RunModelCheckingTest() {
+        Initialise();
 
         RunTest();
         ValidateTestResults();
@@ -103,23 +102,25 @@ namespace multiscaletest {
         return evaluationResult;
     }
 
-    void ModelCheckingTest::RunTest() {
+    void ModelCheckerTest::RunTest() {
         size_t traceIndex = 0;
 
-        while ((traceIndex < traces.size()) && (modelChecker->requiresMoreTraces())) {
+        while ((traceIndex < traces.size()) && (modelChecker->acceptsMoreTraces())) {
             modelChecker->evaluate(traces[traceIndex++]);
         }
 
         evaluationResult = modelChecker->doesPropertyHold();
     }
 
-    void ModelCheckingTest::ValidateTestResults() {}
+    void ModelCheckerTest::ValidateTestResults() {}
 
-    void ModelCheckingTest::InitialiseModelChecker(const std::shared_ptr<mv::ModelChecker> &modelChecker) {
-        this->modelChecker = modelChecker;
+    void ModelCheckerTest::Initialise() {
+        InitialiseSpatioTemporalTraces();
+        InitialiseAbstractSyntaxTree();
+        InitialiseModelChecker();
     }
 
-    void ModelCheckingTest::InitialiseSpatioTemporalTraces() {
+    void ModelCheckerTest::InitialiseSpatioTemporalTraces() {
         traces.clear();
 
         InitialiseIncreasingSpatioTemporalTrace();
@@ -136,7 +137,13 @@ namespace multiscaletest {
         InitialiseIncreasingConstantIncreasingSpatioTemporalTrace();
     }
 
-    void ModelCheckingTest::InitialiseIncreasingSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseAbstractSyntaxTree() {
+        mv::Parser parser(INPUT_LOGIC_PROPERTY);
+
+        parser.parse(abstractSyntaxTree);
+    }
+
+    void ModelCheckerTest::InitialiseIncreasingSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -165,7 +172,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseDecreasingSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseDecreasingSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -194,7 +201,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseIncreasingDecreasingSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseIncreasingDecreasingSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -223,7 +230,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseDecreasingIncreasingSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseDecreasingIncreasingSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -252,7 +259,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseConstantSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseConstantSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -281,7 +288,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseIncreasingConstantSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseIncreasingConstantSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -310,7 +317,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseDecreasingConstantSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseDecreasingConstantSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -339,7 +346,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseConstantIncreasingSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseConstantIncreasingSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -368,7 +375,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseConstantDecreasingSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseConstantDecreasingSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -397,7 +404,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseIncreasingConstantDecreasingSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseIncreasingConstantDecreasingSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -433,7 +440,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseDecreasingConstantIncreasingSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseDecreasingConstantIncreasingSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -469,7 +476,7 @@ namespace multiscaletest {
         traces.push_back(trace);
     }
 
-    void ModelCheckingTest::InitialiseIncreasingConstantIncreasingSpatioTemporalTrace() {
+    void ModelCheckerTest::InitialiseIncreasingConstantIncreasingSpatioTemporalTrace() {
         mv::SpatialTemporalTrace        trace;
         mv::TimePoint                   timePoint;
         mv::Region                      region;
@@ -506,51 +513,6 @@ namespace multiscaletest {
     }
 
 };
-
-
-/////////////////////////////////////////////////////////////////
-//
-// Helper functions
-//
-/////////////////////////////////////////////////////////////////
-
-//! Parse the given input string and return the corresponding abstract syntax tree
-/*!
- * \param inputString The input string
- */
-mv::AbstractSyntaxTree parseInputString(const std::string &inputString) {
-    mv::AbstractSyntaxTree parseResult;
-    mv::Parser parser(inputString);
-
-    parser.parse(parseResult);
-
-    return parseResult;
-}
-
-
-/////////////////////////////////////////////////////////////////
-//
-// Test functions
-//
-// The expected output for each test was computed manually
-// considering the model checking type specific parameters.
-//
-/////////////////////////////////////////////////////////////////
-
-TEST_F(ModelCheckingTest, ApproximateBayesianModelChecking) {
-    std::shared_ptr<mv::ApproximateBayesianModelChecker> modelChecker;
-
-    mv::AbstractSyntaxTree abstractSyntaxTree = parseInputString(INPUT_LOGIC_PROPERTY);
-
-    double alphaParamBetaPrior  = 1;
-    double betaParamBetaPrior   = 1;
-    double varianceThreshold    = 0.035;
-
-    modelChecker = std::make_shared<mv::ApproximateBayesianModelChecker>(abstractSyntaxTree, alphaParamBetaPrior,
-                                                                         betaParamBetaPrior, varianceThreshold);
-
-    EXPECT_TRUE(RunModelCheckingTest(modelChecker));
-}
 
 
 #endif

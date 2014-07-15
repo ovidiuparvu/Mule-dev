@@ -114,14 +114,14 @@ set(MODEL_CHECKER_TEST_SRC
     
     src/parsing/Parser.cpp
     
-    test/checking/ModelCheckerTest.cpp
+    test/checking/ModelCheckingTest.cpp
 )
 
-add_executable(ModelCheckerTest ${MODEL_CHECKER_TEST_SRC})
-AddUnitTest(ModelCheckerTest)
+add_executable(ModelCheckingTest ${MODEL_CHECKER_TEST_SRC})
+AddUnitTest(ModelCheckingTest)
 
-target_link_libraries(ModelCheckerTest util)
-target_link_libraries(ModelCheckerTest gtest gtest_main)
+target_link_libraries(ModelCheckingTest util)
+target_link_libraries(ModelCheckingTest gtest gtest_main)
 
 
 # ParserEvaluationTest
