@@ -50,11 +50,6 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmessage-length=0")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
-    
-    # Coverage specific flags when using the "Debug" build type
-    if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -fprofile-arcs -ftest-coverage")
-    endif(CMAKE_BUILD_TYPE STREQUAL "Debug") 
 endif()
 
 

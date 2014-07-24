@@ -9,8 +9,12 @@ using namespace multiscaletest::verification;
 
 // Subset
 
-TEST(Subset, IncorrectInputWrongSubsetAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [clusters <= 3]"), InvalidInputException);
+TEST(Subset, IncorrectInputWrongSubsetAlternativeRegion) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(region) <= 3]"), InvalidInputException);
+}
+
+TEST(Subset, IncorrectInputWrongSubsetAlternativeCluster) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(cluster) <= 3]"), InvalidInputException);
 }
 
 TEST(Subset, Correct) {

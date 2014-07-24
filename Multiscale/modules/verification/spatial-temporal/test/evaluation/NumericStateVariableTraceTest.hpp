@@ -632,6 +632,27 @@ TEST_F(NumericStateVariableTraceTest, SpatialMeasureCentroidY) {
 /////////////////////////////////////////////////////////
 //
 //
+// SubsetOperation
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, SubsetOperationDifference) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(difference(clusters, regions)) > 10]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, SubsetOperationIntersection) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(intersection(clusters, regions)) >= 3]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, SubsetOperationUnion) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(clusters, regions)) <= 21]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SubsetSpecific
 //
 //
@@ -643,6 +664,19 @@ TEST_F(NumericStateVariableTraceTest, SubsetSpecificClusters) {
 
 TEST_F(NumericStateVariableTraceTest, SubsetSpecificRegions) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(regions) <= {B}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// SubsetOperation
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, SubsetOperation) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(clusters, regions)) >= 4.3]"));
 }
 
 
@@ -686,6 +720,19 @@ TEST_F(NumericStateVariableTraceTest, TernarySubsetMeasureQuartile) {
 
 TEST_F(NumericStateVariableTraceTest, TernarySubset) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [percentile(clusters, area, 4.3) <= {B}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TypeConstraint
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, TypeConstraint) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(filter(clusters, type = 0)) > 7]"));
 }
 
 

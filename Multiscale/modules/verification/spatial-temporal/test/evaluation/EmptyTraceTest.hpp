@@ -612,6 +612,27 @@ TEST_F(EmptyTraceTest, SpatialMeasureCentroidY) {
 /////////////////////////////////////////////////////////
 //
 //
+// SubsetOperation
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, SubsetOperationDifference) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(difference(clusters, regions)) <= 3]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, SubsetOperationIntersection) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(intersection(clusters, regions)) <= 3]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, SubsetOperationUnion) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(union(clusters, regions)) <= 3]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SubsetSpecific
 //
 //
@@ -623,6 +644,19 @@ TEST_F(EmptyTraceTest, SubsetSpecificClusters) {
 
 TEST_F(EmptyTraceTest, SubsetSpecificRegions) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(regions) <= 3]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// SubsetSubsetOperation
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, SubsetSubsetOperation) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(difference(clusters, regions)) <= 3]"), SpatialTemporalException);
 }
 
 
@@ -666,6 +700,19 @@ TEST_F(EmptyTraceTest, TernarySubsetMeasureQuartile) {
 
 TEST_F(EmptyTraceTest, TernarySubset) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [percentile(clusters, area, 4.3) <= 0.5]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TypeConstraint
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, TypeConstraint) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(filter(clusters, type = 0)) <= 3]"), SpatialTemporalException);
 }
 
 

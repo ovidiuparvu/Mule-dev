@@ -662,6 +662,27 @@ TEST_F(SpatialEntitiesTraceTest, SpatialMeasureCentroidY) {
 /////////////////////////////////////////////////////////
 //
 //
+// SubsetOperation
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(SpatialEntitiesTraceTest, SubsetOperationDifference) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(difference(clusters, regions)) >= 11]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, SubsetOperationIntersection) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(intersection(clusters, regions)) <= 3]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, SubsetOperationUnion) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(clusters, regions)) <= 21]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SubsetSpecific
 //
 //
@@ -673,6 +694,19 @@ TEST_F(SpatialEntitiesTraceTest, SubsetSpecificClusters) {
 
 TEST_F(SpatialEntitiesTraceTest, SubsetSpecificRegions) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(regions) <= 3]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// SubsetOperation
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(SpatialEntitiesTraceTest, SubsetOperation) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(clusters, regions)) >= 4.3]"));
 }
 
 
@@ -716,6 +750,19 @@ TEST_F(SpatialEntitiesTraceTest, TernarySubsetMeasureQuartile) {
 
 TEST_F(SpatialEntitiesTraceTest, TernarySubset) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [percentile(clusters, area, 4.3) <= 0.5]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TypeConstraint
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(SpatialEntitiesTraceTest, TypeConstraint) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(filter(clusters, type = 1)) > 7]"));
 }
 
 
