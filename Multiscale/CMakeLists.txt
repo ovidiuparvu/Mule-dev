@@ -13,6 +13,85 @@ enable_testing()
 
 
 #------------------------------------------------------------
+# Project global variables definition
+#------------------------------------------------------------
+
+set(POLAR_GNUPLOT_SCRIPT_FILES_PATH "config/video/circular")
+set(POLAR_GNUPLOT_SCRIPT_HEADER_PATH "${POLAR_GNUPLOT_SCRIPT_FILES_PATH}/header.in")
+set(POLAR_GNUPLOT_SCRIPT_CONTENT_PATH "${POLAR_GNUPLOT_SCRIPT_FILES_PATH}/content.in")
+set(POLAR_GNUPLOT_SCRIPT_FOOTER_PATH "${POLAR_GNUPLOT_SCRIPT_FILES_PATH}/footer.in")
+
+set(RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH "config/video/rectangular")
+set(RECTANGULAR_GNUPLOT_SCRIPT_HEADER_PATH "${RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH}/header.in")
+set(RECTANGULAR_GNUPLOT_SCRIPT_CONTENT_PATH "${RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH}/content.in")
+set(RECTANGULAR_GNUPLOT_SCRIPT_FOOTER_PATH "${RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH}//footer.in")
+
+set(DETECTOR_CONFIG_FILES_PATH "config/analysis/spatial")
+set(CIRCULAR_REGION_DETECTOR_CONFIG_PATH "${DETECTOR_CONFIG_FILES_PATH}/circular_region_detector.xml")
+set(RECTANGULAR_REGION_DETECTOR_CONFIG_PATH "${DETECTOR_CONFIG_FILES_PATH}/rectangular_region_detector.xml")
+set(SIMULATION_CLUSTER_DETECTOR_CONFIG_PATH "${DETECTOR_CONFIG_FILES_PATH}/simulation_cluster_detector.xml")
+
+set(MULE_MSTML_SCHEMA_FOLDER_PATH "config/verification/spatial-temporal/schema")
+set(MULE_MSTML_SCHEMA_PATH "${MULE_MSTML_SCHEMA_FOLDER_PATH}/experiment.xsd")
+    
+    
+#------------------------------------------------------------
+# Files to be installed for "package" builds
+#------------------------------------------------------------
+
+if(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")
+    set(PACKAGE_CONFIG_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}/share")
+    
+    install(
+        FILES "${PROJECT_SOURCE_DIR}/${POLAR_GNUPLOT_SCRIPT_HEADER_PATH}"
+              "${PROJECT_SOURCE_DIR}/${POLAR_GNUPLOT_SCRIPT_CONTENT_PATH}"
+              "${PROJECT_SOURCE_DIR}/${POLAR_GNUPLOT_SCRIPT_FOOTER_PATH}"
+        DESTINATION "${PACKAGE_CONFIG_INSTALL_PREFIX}/${POLAR_GNUPLOT_SCRIPT_FILES_PATH}"    
+    )
+    
+    install(
+        FILES "${PROJECT_SOURCE_DIR}/${RECTANGULAR_GNUPLOT_SCRIPT_HEADER_PATH}"
+              "${PROJECT_SOURCE_DIR}/${RECTANGULAR_GNUPLOT_SCRIPT_CONTENT_PATH}"
+              "${PROJECT_SOURCE_DIR}/${RECTANGULAR_GNUPLOT_SCRIPT_FOOTER_PATH}"
+        DESTINATION "${PACKAGE_CONFIG_INSTALL_PREFIX}/${RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH}"    
+    )
+    
+    install(
+        FILES "${PROJECT_SOURCE_DIR}/${CIRCULAR_REGION_DETECTOR_CONFIG_PATH}"
+              "${PROJECT_SOURCE_DIR}/${RECTANGULAR_REGION_DETECTOR_CONFIG_PATH}"
+              "${PROJECT_SOURCE_DIR}/${SIMULATION_CLUSTER_DETECTOR_CONFIG_PATH}"
+        DESTINATION "${PACKAGE_CONFIG_INSTALL_PREFIX}/${DETECTOR_CONFIG_FILES_PATH}"    
+    )
+    
+    install(
+        FILES "${PROJECT_SOURCE_DIR}/${MULE_MSTML_SCHEMA_PATH}"
+        DESTINATION "${PACKAGE_CONFIG_INSTALL_PREFIX}/${MULE_MSTML_SCHEMA_FOLDER_PATH}"    
+    )
+endif(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")
+
+
+#------------------------------------------------------------
+# Project global variables updates for "package" builds
+#------------------------------------------------------------
+
+if(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")
+    set(POLAR_GNUPLOT_SCRIPT_HEADER_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${POLAR_GNUPLOT_SCRIPT_HEADER_PATH})
+    set(POLAR_GNUPLOT_SCRIPT_CONTENT_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${POLAR_GNUPLOT_SCRIPT_CONTENT_PATH})
+    set(POLAR_GNUPLOT_SCRIPT_FOOTER_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${POLAR_GNUPLOT_SCRIPT_FOOTER_PATH})
+    
+    set(RECTANGULAR_GNUPLOT_SCRIPT_HEADER_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${RECTANGULAR_GNUPLOT_SCRIPT_HEADER_PATH})
+    set(RECTANGULAR_GNUPLOT_SCRIPT_CONTENT_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${RECTANGULAR_GNUPLOT_SCRIPT_CONTENT_PATH})
+    set(RECTANGULAR_GNUPLOT_SCRIPT_FOOTER_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${RECTANGULAR_GNUPLOT_SCRIPT_FOOTER_PATH})
+    
+    set(CIRCULAR_REGION_DETECTOR_CONFIG_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${CIRCULAR_REGION_DETECTOR_CONFIG_PATH})
+    set(RECTANGULAR_REGION_DETECTOR_CONFIG_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${RECTANGULAR_REGION_DETECTOR_CONFIG_PATH})
+    set(SIMULATION_CLUSTER_DETECTOR_CONFIG_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${SIMULATION_CLUSTER_DETECTOR_CONFIG_PATH})
+    
+    set(MULE_MSTML_SCHEMA_PATH ${PACKAGE_CONFIG_INSTALL_PREFIX}/${MULE_MSTML_SCHEMA_PATH})
+endif(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")
+
+
+#------------------------------------------------------------
 # Configuration dependent details
 #------------------------------------------------------------
 
@@ -24,12 +103,14 @@ set(CMAKE_DEBUG_POSTFIX _d)
 # Enforce "out of source" build
 #------------------------------------------------------------
  
-# Appends the cmake/modules path inside the MAKE_MODULE_PATH variable which stores the
-# directories of additional CMake modules (ie. MacroOutOfSourceBuild.cmake):
+# Appends the cmake/modules and cmake/package paths inside the MAKE_MODULE_PATH variable 
+# which stores the directories of additional CMake modules (e.g. MacroOutOfSourceBuild.cmake):
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/package ${CMAKE_MODULE_PATH})
  
 # Incluse user defined CMake modules
 include(AddDebugPostfix)
+include(AddExecutableInstallTarget)
 include(AddSample)
 include(AddUnitTest)
 include(GetCurrentDate)
@@ -95,7 +176,7 @@ endif()
 
 UpdateProjectBuildNumber(
     "Release" 
-    ${PROJECT_SOURCE_DIR}/doc/Multiscale.doxyfile.in 
+    ${PROJECT_SOURCE_DIR}/doc/Multiscale.in.doxyfile 
     ${PROJECT_SOURCE_DIR}/doc/Multiscale.doxyfile
 )
 
@@ -105,6 +186,7 @@ UpdateProjectBuildNumber(
 #------------------------------------------------------------
 
 UpdateProjectModifiedDate(
+    ${PROJECT_SOURCE_DIR}/../README.in.md
     ${PROJECT_SOURCE_DIR}/../README.md
 )
 
@@ -135,3 +217,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
  
 add_subdirectory(extern)
 add_subdirectory(modules)
+
+
+#------------------------------------------------------------
+# Include CPack if the CMAKE_CUSTOM_BUILD_TYPE is Package
+#------------------------------------------------------------
+
+if(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")
+    include(CPackConfig)
+endif(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")

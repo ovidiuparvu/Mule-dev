@@ -1,9 +1,8 @@
 /**
- * This program is used for multidimensional model checking
+ * This program is used for multidimensional multiscale model checking
  *
  * Author: Ovidiu Parvu
  * Date created: 16.03.2014
- * Date modified: 18.03.2014
  */
 
 #include "multiscale/verification/spatial-temporal/exception/ModelCheckingHelpRequestException.hpp"

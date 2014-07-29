@@ -317,4 +317,4 @@ const std::string SpatialTemporalDataReader::PSEUDO3D_SPATIAL_ENTITY_TYPE_REGION
 const std::string SpatialTemporalDataReader::PSEUDO3D_SPATIAL_ENTITY_TYPE_CLUSTER       = "cluster";
 
 const std::string SpatialTemporalDataReader::INPUT_FILES_EXTENSION      = ".xml";
-const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "/usr/local/share/config/verification/spatial-temporal/schema/experiment.xsd";
+const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "${MULE_MSTML_SCHEMA_PATH}";

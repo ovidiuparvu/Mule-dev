@@ -24,8 +24,7 @@ set(POLAR_MAP_CSV_TO_INPUT_FILES_SRC
     src/PolarCsvToInputFilesConverter.cpp   
 )
 
-add_executable(PolarMapCsvToInputFiles ${POLAR_MAP_CSV_TO_INPUT_FILES_SRC})
-
+AddExecutableInstallTarget(PolarMapCsvToInputFiles "${POLAR_MAP_CSV_TO_INPUT_FILES_SRC}")
 AddDebugPostfix(PolarMapCsvToInputFiles)
 
 target_link_libraries(PolarMapCsvToInputFiles util)
@@ -34,6 +33,12 @@ target_link_libraries(PolarMapCsvToInputFiles ${Boost_PROGRAM_OPTIONS_LIBRARY})
 
 # MapCartesianToPolarScript
 
+# Set the paths to the script header, content and footer template
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/PolarGnuplotScriptGenerator.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/PolarGnuplotScriptGenerator.cpp
+)
+
 set(MAP_CARTESIAN_TO_POLAR_SCRIPT
     src/AnnularSector.cpp
     src/CartesianToPolarConverter.cpp
@@ -41,8 +46,7 @@ set(MAP_CARTESIAN_TO_POLAR_SCRIPT
     src/PolarGnuplotScriptGenerator.cpp
 )
 
-add_executable(MapCartesianToPolarScript ${MAP_CARTESIAN_TO_POLAR_SCRIPT})
-
+AddExecutableInstallTarget(MapCartesianToPolarScript "${MAP_CARTESIAN_TO_POLAR_SCRIPT}")
 AddDebugPostfix(MapCartesianToPolarScript)
 
 target_link_libraries(MapCartesianToPolarScript util)

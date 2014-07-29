@@ -19,6 +19,12 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 # CircularDetectRegions
 
+# Set the path to the configuration file
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/CircularDetectRegions.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/CircularDetectRegions.cpp
+)
+
 set(CIRCULAR_DETECT_REGIONS_SRC
     src/CircularityMeasure.cpp
     src/Detector.cpp
@@ -31,8 +37,7 @@ set(CIRCULAR_DETECT_REGIONS_SRC
     src/factory/CircularMatFactory.cpp 
 )
 
-add_executable(CircularDetectRegions ${CIRCULAR_DETECT_REGIONS_SRC})
-
+AddExecutableInstallTarget(CircularDetectRegions "${CIRCULAR_DETECT_REGIONS_SRC}")
 AddDebugPostfix(CircularDetectRegions)
 
 target_link_libraries(CircularDetectRegions util)
@@ -90,6 +95,12 @@ target_link_libraries(LexicographicIteratorSample gtest gtest_main)
 
 # RectangularDetectRegions
 
+# Set the path to the configuration file
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularDetectRegions.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularDetectRegions.cpp
+)
+
 set(RECTANGULAR_DETECT_REGIONS_SRC
     src/CircularityMeasure.cpp
     src/Detector.cpp
@@ -102,8 +113,7 @@ set(RECTANGULAR_DETECT_REGIONS_SRC
     src/factory/RectangularMatFactory.cpp 
 )
 
-add_executable(RectangularDetectRegions ${RECTANGULAR_DETECT_REGIONS_SRC})
-
+AddExecutableInstallTarget(RectangularDetectRegions "${RECTANGULAR_DETECT_REGIONS_SRC}")
 AddDebugPostfix(RectangularDetectRegions)
 
 target_link_libraries(RectangularDetectRegions util)
@@ -131,6 +141,12 @@ target_link_libraries(RectangularMatFactorySample gtest gtest_main)
 
 # SimulationDetectClusters
 
+# Set the path to the configuration file
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/SimulationDetectClusters.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/SimulationDetectClusters.cpp
+)
+
 set(SIMULATION_DETECT_CLUSTERS_SRC
     src/CircularityMeasure.cpp
     src/Cluster.cpp
@@ -147,8 +163,7 @@ set(SIMULATION_DETECT_CLUSTERS_SRC
     src/factory/RectangularMatFactory.cpp 
 )
 
-add_executable(SimulationDetectClusters ${SIMULATION_DETECT_CLUSTERS_SRC})
-
+AddExecutableInstallTarget(SimulationDetectClusters "${SIMULATION_DETECT_CLUSTERS_SRC}")
 AddDebugPostfix(SimulationDetectClusters)
 
 target_link_libraries(SimulationDetectClusters util)

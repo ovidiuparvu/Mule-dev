@@ -45,11 +45,11 @@ int main(int argc, char **argv) {
     initialiseTrace(trace);
 
     std::cout << "/////////////////////////////////////////////////////////\n\n";
-    std::cout << "\tA multidimensional logical query parser and evaluator...\n\n";
+    std::cout << "\tA multidimensional multiscale logical query parser and evaluator...\n\n";
     std::cout << "/////////////////////////////////////////////////////////\n\n";
 
     std::cout
-        << "Please enter a multidimensional logical query (or \"q\" to exit):" << std::endl
+        << "Please enter a multidimensional multiscale logical query (or \"q\" to exit):" << std::endl
         << std::endl;
 
 

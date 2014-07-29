@@ -290,7 +290,7 @@ const std::string ModelCheckingOutputWriter::TAG_TRUE       = "[ TRUE     ]";
 const std::string ModelCheckingOutputWriter::TAG_FALSE      = "[ FALSE    ]";
 const std::string ModelCheckingOutputWriter::TAG_SEPARATOR  = "[==========]";
 
-const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mule 1.0.89 (Multidimensional multiscale model checker)";
+const std::string ModelCheckingOutputWriter::MSG_INTRO_NAME                         = "Mule ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_BUILD} (Multidimensional multiscale model checker)";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_COPYRIGHT                    = "Copyright Ovidiu Pârvu 2014";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_TYPE          = "Model checker type: ";
 const std::string ModelCheckingOutputWriter::MSG_INTRO_MODEL_CHECKING_PARAMETERS    = "Parameters:         ";

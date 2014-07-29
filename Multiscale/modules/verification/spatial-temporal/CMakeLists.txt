@@ -18,13 +18,22 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 #------------------------------------------------------------
 
 
-# MultidimensionalModelChecker
+# MultidimensionalMultiscaleModelChecker
 
-UpdateMudiBuildNumber (
+# Update the build number of the model checker
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.in.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.cpp
 )
 
-set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC
+# Set the path to the MSTML xml schema definition file
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/data/SpatialTemporalDataReader.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/data/SpatialTemporalDataReader.cpp
+)
+
+# Set the dependencies for the model checker
+set(MULTIDIMENSIONAL_MULTISCALE_MODEL_CHECKER_SRC
     src/data/LogicPropertyDataReader.cpp
     src/data/SpatialTemporalDataReader.cpp
     
@@ -64,16 +73,14 @@ set(MULTIDIMENSIONAL_MODEL_CHECKER_SRC
     
     src/parsing/Parser.cpp
     
-    src/Mudi.cpp 
+    src/Mule.cpp 
 )
 
-add_executable(Mudi ${MULTIDIMENSIONAL_MODEL_CHECKER_SRC})
-install(TARGETS Mudi DESTINATION bin)
+AddExecutableInstallTarget(Mule "${MULTIDIMENSIONAL_MULTISCALE_MODEL_CHECKER_SRC}")
+AddDebugPostfix(Mule)
 
-AddDebugPostfix(Mudi)
-
-target_link_libraries(Mudi util)
-target_link_libraries(Mudi ${XERCESC_LIBRARY})
+target_link_libraries(Mule util)
+target_link_libraries(Mule ${XERCESC_LIBRARY})
 
 
 # ModelCheckerTest

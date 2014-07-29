@@ -113,9 +113,9 @@ string PolarGnuplotScriptGenerator::readContentTemplate(ifstream &fin) {
 
 
 // Constants
-const string PolarGnuplotScriptGenerator::HEADER_IN     = "/usr/local/share/config/video/circular/header.in";
-const string PolarGnuplotScriptGenerator::CONTENT_IN    = "/usr/local/share/config/video/circular/content.in";
-const string PolarGnuplotScriptGenerator::FOOTER_IN     = "/usr/local/share/config/video/circular/footer.in";
+const string PolarGnuplotScriptGenerator::HEADER_IN     = "${POLAR_GNUPLOT_SCRIPT_HEADER_PATH}";
+const string PolarGnuplotScriptGenerator::CONTENT_IN    = "${POLAR_GNUPLOT_SCRIPT_CONTENT_PATH}";
+const string PolarGnuplotScriptGenerator::FOOTER_IN     = "${POLAR_GNUPLOT_SCRIPT_FOOTER_PATH}";
 
 const string PolarGnuplotScriptGenerator::REPLACE_HEADER_FILENAME         = "OUTPUT_FILENAME";
 const string PolarGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME         = "OUTPUT_SIM_TIME";

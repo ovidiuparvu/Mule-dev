@@ -103,9 +103,9 @@ void RectangularGnuplotScriptGenerator::outputFooter(ifstream &fin, ofstream &fo
 
 
 // Constants
-const string RectangularGnuplotScriptGenerator::HEADER_IN   = "/usr/local/share/config/video/rectangular/header.in";
-const string RectangularGnuplotScriptGenerator::CONTENT_IN  = "/usr/local/share/config/video/rectangular/content.in";
-const string RectangularGnuplotScriptGenerator::FOOTER_IN   = "/usr/local/share/config/video/rectangular//footer.in";
+const string RectangularGnuplotScriptGenerator::HEADER_IN   = "${RECTANGULAR_GNUPLOT_SCRIPT_HEADER_PATH}";
+const string RectangularGnuplotScriptGenerator::CONTENT_IN  = "${RECTANGULAR_GNUPLOT_SCRIPT_CONTENT_PATH}";
+const string RectangularGnuplotScriptGenerator::FOOTER_IN   = "${RECTANGULAR_GNUPLOT_SCRIPT_FOOTER_PATH}";
 
 const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_FILENAME    = "OUTPUT_FILENAME";
 const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_HEIGHT      = "OUTPUT_DIMENSION1";

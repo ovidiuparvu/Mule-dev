@@ -24,8 +24,7 @@ set(RECTANGULAR_MAP_CSV_TO_INPUT_FILES_SRC
     src/RectangularCsvToInputFilesConverter.cpp   
 )
 
-add_executable(RectangularMapCsvToInputFiles ${RECTANGULAR_MAP_CSV_TO_INPUT_FILES_SRC})
-
+AddExecutableInstallTarget(RectangularMapCsvToInputFiles "${RECTANGULAR_MAP_CSV_TO_INPUT_FILES_SRC}")
 AddDebugPostfix(RectangularMapCsvToInputFiles)
 
 target_link_libraries(RectangularMapCsvToInputFiles util)
@@ -39,8 +38,7 @@ set(RECTANGULAR_MAP_ENTITY_CSV_TO_INPUT_FILES_SRC
     src/RectangularEntityCsvToInputFilesConverter.cpp   
 )
 
-add_executable(RectangularMapEntityCsvToInputFiles ${RECTANGULAR_MAP_ENTITY_CSV_TO_INPUT_FILES_SRC})
-
+AddExecutableInstallTarget(RectangularMapEntityCsvToInputFiles "${RECTANGULAR_MAP_ENTITY_CSV_TO_INPUT_FILES_SRC}")
 AddDebugPostfix(RectangularMapEntityCsvToInputFiles)
 
 target_link_libraries(RectangularMapEntityCsvToInputFiles util)
@@ -49,14 +47,19 @@ target_link_libraries(RectangularMapEntityCsvToInputFiles ${Boost_PROGRAM_OPTION
 
 # MapCartesianToRectangularScript
 
+# Set the paths to the script header, content and footer template
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularGnuplotScriptGenerator.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularGnuplotScriptGenerator.cpp
+)
+
 set(MAP_CARTESIAN_TO_SCRIPT
     src/CartesianToConcentrationsConverter.cpp
     src/MapCartesianToScript.cpp
     src/RectangularGnuplotScriptGenerator.cpp
 )
 
-add_executable(MapCartesianToScript ${MAP_CARTESIAN_TO_SCRIPT})
-
+AddExecutableInstallTarget(MapCartesianToScript "${MAP_CARTESIAN_TO_SCRIPT}")
 AddDebugPostfix(MapCartesianToScript)
 
 target_link_libraries(MapCartesianToScript util)
