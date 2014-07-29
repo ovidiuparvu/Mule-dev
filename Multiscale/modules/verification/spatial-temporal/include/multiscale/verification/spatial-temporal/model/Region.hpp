@@ -3,8 +3,6 @@
 
 #include "multiscale/verification/spatial-temporal/model/SpatialEntity.hpp"
 
-#include <functional>
-
 
 namespace multiscale {
 

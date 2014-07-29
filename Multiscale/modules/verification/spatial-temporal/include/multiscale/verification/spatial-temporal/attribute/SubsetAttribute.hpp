@@ -13,12 +13,14 @@ namespace multiscale {
 
         // Forward declaration of classes
         class SubsetAttribute;
+        class SubsetSubsetOperationAttribute;
 
 
         //! Variant for a subset attribute
         typedef boost::variant<
             SubsetSpecificAttribute,
             FilterSubsetAttribute,
+            boost::recursive_wrapper<SubsetSubsetOperationAttribute>,
             boost::recursive_wrapper<SubsetAttribute>
         > SubsetAttributeType;
 

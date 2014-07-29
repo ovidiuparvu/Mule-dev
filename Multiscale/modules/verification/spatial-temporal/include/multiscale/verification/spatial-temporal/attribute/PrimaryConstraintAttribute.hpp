@@ -1,7 +1,7 @@
 #ifndef PRIMARYCONSTRAINTATTRIBUTE_HPP
 #define PRIMARYCONSTRAINTATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/UnaryConstraintAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/Nil.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/variant.hpp>
@@ -14,14 +14,17 @@ namespace multiscale {
         // Forward declarations
         class ConstraintAttribute;
         class NotConstraintAttribute;
-        class UnaryConstraintAttribute;
+        class UnarySpatialConstraintAttribute;
+        class UnaryTypeConstraintAttribute;
 
 
-        //! Variant for a unary constraint attribute
+        //! Variant for a primary constraint attribute
         typedef boost::variant<
+            Nil,
             boost::recursive_wrapper<ConstraintAttribute>,
             boost::recursive_wrapper<NotConstraintAttribute>,
-            boost::recursive_wrapper<UnaryConstraintAttribute>
+            boost::recursive_wrapper<UnarySpatialConstraintAttribute>,
+            boost::recursive_wrapper<UnaryTypeConstraintAttribute>
         > PrimaryConstraintAttributeType;
 
 

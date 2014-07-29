@@ -34,6 +34,10 @@
 #include "multiscale/verification/spatial-temporal/attribute/AndConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ImplicationConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/EquivalenceConstraintAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/UnarySpatialConstraintAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/UnaryTypeConstraintAttribute.hpp"
+
+#include "multiscale/verification/spatial-temporal/attribute/SubsetSubsetOperationAttribute.hpp"
 
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericFilterAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericFilterAttribute.hpp"

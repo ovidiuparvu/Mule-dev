@@ -120,14 +120,26 @@ namespace multiscale {
                 //! Get the begin iterator for the set of clusters
                 std::list<Cluster>::iterator getClustersBeginIterator();
 
+                //! Get the begin iterator for the set of clusters
+                std::list<Cluster>::const_iterator getClustersBeginIterator() const;
+
                 //! Get the end iterator for the set of clusters
                 std::list<Cluster>::iterator getClustersEndIterator();
+
+                //! Get the end iterator for the set of clusters
+                std::list<Cluster>::const_iterator getClustersEndIterator() const;
 
                 //! Get the begin iterator for the set of regions
                 std::list<Region>::iterator getRegionsBeginIterator();
 
+                //! Get the begin iterator for the set of regions
+                std::list<Region>::const_iterator getRegionsBeginIterator() const;
+
                 //! Get the end iterator for the set of regions
                 std::list<Region>::iterator getRegionsEndIterator();
+
+                //! Get the end iterator for the set of regions
+                std::list<Region>::const_iterator getRegionsEndIterator() const;
 
                 //! Get the collection of considered spatial entities
                 std::vector<SpatialEntity> getConsideredSpatialEntities() const;
@@ -195,21 +207,21 @@ namespace multiscale {
                  */
                 void timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
-                //! Compute the given set operation of this timepoint and the given timepoint considering all spatial entities
+                //! Compute the given set operation of this timepoint and the given timepoint considering all spatial entities from timepoint
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
                 void timePointSetOperationAll(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
-                //! Compute the given set operation of this timepoint and the given timepoint considering clusters
+                //! Compute the given set operation of this timepoint and the given timepoint considering clusters from timepoint
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
                 void timePointSetOperationClusters(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
-                //! Compute the given set operation of this timepoint and the given timepoint considering regions
+                //! Compute the given set operation of this timepoint and the given timepoint considering regions from timepoint
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type

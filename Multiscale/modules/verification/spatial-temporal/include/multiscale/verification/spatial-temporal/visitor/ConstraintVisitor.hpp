@@ -122,16 +122,27 @@ namespace multiscale {
                     return notTimePoint;
                 }
 
-                //! Overloading the "()" operator for the UnaryConstraintAttribute alternative
+                //! Overloading the "()" operator for the UnaryTypeConstraintAttribute alternative
                 /*!
                  * \param primaryConstraint The primary constraint
                  */
-                TimePoint operator() (const UnaryConstraintAttribute &primaryConstraint) const {
+                TimePoint operator() (const UnaryTypeConstraintAttribute &primaryConstraint) const {
                     ComparatorType comparatorType = primaryConstraint.comparator.comparatorType;
 
-                    return evaluateUnaryConstraint(primaryConstraint.spatialMeasure.spatialMeasureType,
-                                                   comparatorType, primaryConstraint.filterNumericMeasure,
-                                                   constraintTimePoint);
+                    return evaluateUnaryTypeConstraint(comparatorType, primaryConstraint.filterNumericMeasure,
+                                                       constraintTimePoint);
+                }
+
+                //! Overloading the "()" operator for the UnarySpatialConstraintAttribute alternative
+                /*!
+                 * \param primaryConstraint The primary constraint
+                 */
+                TimePoint operator() (const UnarySpatialConstraintAttribute &primaryConstraint) const {
+                    ComparatorType comparatorType = primaryConstraint.comparator.comparatorType;
+
+                    return evaluateUnarySpatialConstraint(primaryConstraint.spatialMeasure.spatialMeasureType,
+                                                          comparatorType, primaryConstraint.filterNumericMeasure,
+                                                          constraintTimePoint);
                 }
 
             private:
@@ -172,14 +183,30 @@ namespace multiscale {
                     return constrainedTimePoint;
                 }
 
-                //! Evaluate the unary constraint considering the given spatial measure, comparator, numeric measure and timepoint
+                //! Evaluate the unary type constraint considering the given spatial measure, comparator, numeric measure and timepoint
+                /*!
+                 * \param comparator            The comparator type
+                 * \param filterNumericMeasure  The filter numeric measure
+                 * \param timePoint             The considered timepoint
+                 */
+                TimePoint evaluateUnaryTypeConstraint(const ComparatorType &comparator,
+                                                      const FilterNumericMeasureAttributeType &filterNumericMeasure,
+                                                      const TimePoint &timePoint) const {
+                    TimePoint unaryConstraintTimePoint(timePoint);
+
+                    ConstraintEvaluator::filter(unaryConstraintTimePoint, comparator, filterNumericMeasure);
+
+                    return unaryConstraintTimePoint;
+                }
+
+                //! Evaluate the unary spatial constraint considering the given spatial measure, comparator, numeric measure and timepoint
                 /*!
                  * \param spatialMeasure        The spatial measure type
                  * \param comparator            The comparator type
                  * \param filterNumericMeasure  The filter numeric measure
                  * \param timePoint             The considered timepoint
                  */
-                TimePoint evaluateUnaryConstraint(const SpatialMeasureType &spatialMeasure, const ComparatorType &comparator,
+                TimePoint evaluateUnarySpatialConstraint(const SpatialMeasureType &spatialMeasure, const ComparatorType &comparator,
                                                   const FilterNumericMeasureAttributeType &filterNumericMeasure,
                                                   const TimePoint &timePoint) const {
                     TimePoint unaryConstraintTimePoint(timePoint);

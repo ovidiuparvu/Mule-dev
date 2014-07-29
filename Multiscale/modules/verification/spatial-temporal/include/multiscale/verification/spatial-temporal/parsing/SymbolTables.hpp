@@ -7,6 +7,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/QuaternarySubsetMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SubsetSpecificAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SubsetOperationAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/TernarySubsetMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnarySubsetMeasureAttribute.hpp"
@@ -80,6 +81,18 @@ namespace multiscale {
 
         };
 
+        //! Symbol table and parser for the subset operation type
+        struct SubsetOperationTypeParser : qi::symbols<char, multiscale::verification::SubsetOperationType> {
+
+            SubsetOperationTypeParser() {
+                add
+                    ("difference"   , SubsetOperationType::Difference)
+                    ("intersection" , SubsetOperationType::Intersection)
+                    ("union"        , SubsetOperationType::Union)
+                ;
+            }
+
+        };
 
         //! Symbol table and parser for the binary numeric measure type
         struct BinaryNumericMeasureTypeParser : qi::symbols<char, multiscale::verification::BinaryNumericMeasureType> {

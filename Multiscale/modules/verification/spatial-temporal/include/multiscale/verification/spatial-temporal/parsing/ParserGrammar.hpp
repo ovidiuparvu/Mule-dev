@@ -80,14 +80,16 @@ namespace multiscale {
                 qi::rule<Iterator, BinaryNumericMeasureAttribute(), ascii::space_type>              binaryNumericMeasureRule;                   /*!< The rule for parsing a binary numeric measure */
 
                 qi::rule<Iterator, SubsetAttribute(), ascii::space_type>                            subsetRule;                                 /*!< The rule for parsing a subset */
-                qi::rule<Iterator, FilterSubsetAttribute(), ascii::space_type>                      filterSubsetRule;                           /*!< The rule for parsing a subset filter */
                 qi::rule<Iterator, SubsetSpecificAttribute(), ascii::space_type>                    subsetSpecificRule;                         /*!< The rule for parsing a specific subset */
+                qi::rule<Iterator, FilterSubsetAttribute(), ascii::space_type>                      filterSubsetRule;                           /*!< The rule for parsing a subset filter */
+                qi::rule<Iterator, SubsetSubsetOperationAttribute(), ascii::space_type>             subsetSubsetOperationRule;                  /*!< The rule for parsing a subset subset operation */
 
                 qi::rule<Iterator, ConstraintAttribute(), ascii::space_type>                        constraintRule;                             /*!< The rule for parsing a constraint */
 
                 qi::rule<Iterator, PrimaryConstraintAttribute(), ascii::space_type>                 primaryConstraintRule;                      /*!< The rule for parsing a primary constraint */
                 qi::rule<Iterator, NotConstraintAttribute(), ascii::space_type>                     notConstraintRule;                          /*!< The rule for parsing a "not" constraint */
-                qi::rule<Iterator, UnaryConstraintAttribute(), ascii::space_type>                   unaryConstraintRule;                        /*!< The rule for parsing a unary constraint */
+                qi::rule<Iterator, UnarySpatialConstraintAttribute(), ascii::space_type>            unarySpatialConstraintRule;                 /*!< The rule for parsing a unary spatial constraint */
+                qi::rule<Iterator, UnaryTypeConstraintAttribute(), ascii::space_type>               unaryTypeConstraintRule;                    /*!< The rule for parsing a unary type constraint */
 
                 qi::rule<Iterator, FilterNumericMeasureAttribute(), ascii::space_type>              filterNumericMeasureRule;                   /*!< The rule for parsing a filter numeric measure */
                 qi::rule<Iterator, UnaryNumericFilterAttribute(), ascii::space_type>                unaryNumericFilterRule;                     /*!< The rule for parsing a unary numeric filter measure */
@@ -118,6 +120,7 @@ namespace multiscale {
                 BinaryNumericMeasureTypeParser      binaryNumericMeasureTypeParser;     /*!< The binary numeric measure type parser */
 
                 SubsetSpecificTypeParser            subsetSpecificTypeParser;           /*!< The subset specific type parser */
+                SubsetOperationTypeParser           subsetOperationTypeParser;          /*!< The subset operation type parser */
 
                 SpatialMeasureTypeParser            spatialMeasureTypeParser;           /*!< The spatial measure type parser */
 
@@ -414,7 +417,11 @@ namespace multiscale {
                 void initialiseSubsetRule() {
                     subsetRule
                         =   subsetSpecificRule
-                        |   filterSubsetRule;
+                        |   filterSubsetRule
+                        |   subsetSubsetOperationRule;
+
+                    subsetSpecificRule
+                        =   subsetSpecificTypeParser;
 
                     filterSubsetRule
                         =   (
@@ -426,8 +433,15 @@ namespace multiscale {
                                 > ')'
                             );
 
-                    subsetSpecificRule
-                        =   subsetSpecificTypeParser;
+                    subsetSubsetOperationRule
+                        =   (
+                                subsetOperationTypeParser
+                                > '('
+                                > subsetRule
+                                > ','
+                                > subsetRule
+                                > ')'
+                            );
                 }
 
                 //! Initialise the constraint rule
@@ -446,13 +460,19 @@ namespace multiscale {
                 void initialisePrimaryConstraintRule() {
                     primaryConstraintRule
                         =   notConstraintRule
-                        |   unaryConstraintRule
+                        |   unaryTypeConstraintRule
+                        |   unarySpatialConstraintRule
                         |   ('(' > constraintRule > ')');
 
                     notConstraintRule
                         =   ('~' > constraintRule);
 
-                    unaryConstraintRule
+                    unaryTypeConstraintRule
+                        =   qi::lit("type")
+                            > comparatorRule
+                            > filterNumericMeasureRule;
+
+                    unarySpatialConstraintRule
                         =   spatialMeasureRule
                             > comparatorRule
                             > filterNumericMeasureRule;
@@ -631,9 +651,10 @@ namespace multiscale {
 
                 //! Assign names to the subset rules
                 void assignNamesToSubsetRules() {
-                    subsetRule          .name("subsetRule");
-                    filterSubsetRule    .name("filterSubsetRule");
-                    subsetSpecificRule  .name("subsetSpecificRule");
+                    subsetRule                  .name("subsetRule");
+                    subsetSpecificRule          .name("subsetSpecificRule");
+                    filterSubsetRule            .name("filterSubsetRule");
+                    subsetSubsetOperationRule   .name("subsetSubsetOperationRule");
                 }
 
                 //! Assign names to the constraint rules
@@ -643,9 +664,10 @@ namespace multiscale {
 
                 //! Assign names to the primary constraint rules
                 void assignNamesToPrimaryConstraintRules() {
-                    primaryConstraintRule   .name("primaryConstraintRule");
-                    notConstraintRule       .name("notConstraintRule");
-                    unaryConstraintRule     .name("unaryConstraintRule");
+                    primaryConstraintRule       .name("primaryConstraintRule");
+                    notConstraintRule           .name("notConstraintRule");
+                    unaryTypeConstraintRule     .name("unaryTypeConstraintRule");
+                    unarySpatialConstraintRule  .name("unarySpatialConstraintRule");
                 }
 
                 //! Assign names to the filter numeric measure rules
@@ -778,8 +800,9 @@ namespace multiscale {
                 //! Initialise debugging for the subset rules
                 void initialiseSubsetRuleDebugging() {
                     debug(subsetRule);
-                    debug(filterSubsetRule);
                     debug(subsetSpecificRule);
+                    debug(filterSubsetRule);
+                    debug(subsetSubsetOperationRule);
                 }
 
                 //! Initialise debugging for the constraint rule
@@ -791,7 +814,8 @@ namespace multiscale {
                 void initialisePrimaryConstraintRuleDebugging() {
                     debug(primaryConstraintRule);
                     debug(notConstraintRule);
-                    debug(unaryConstraintRule);
+                    debug(unaryTypeConstraintRule);
+                    debug(unarySpatialConstraintRule);
                 }
 
                 //! Initialise debugging for the filter numeric measure rules
@@ -896,13 +920,15 @@ namespace multiscale {
                 //! Initialise the subset error handling support
                 void initialiseSubsetErrorHandlingSupport() {
                     qi::on_error<qi::fail>(filterSubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(subsetSubsetOperationRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 }
 
                 //! Initialise the primary constraint error handling support
                 void initialisePrimaryConstraintErrorHandlingSupport() {
                     qi::on_error<qi::fail>(primaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                     qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(unaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(unaryTypeConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(unarySpatialConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                 }
 
                 //! Initialise the filter numeric measure error handling support

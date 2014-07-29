@@ -16,7 +16,6 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 # Add executables
 #------------------------------------------------------------
 
-
 # PolarMapCsvToInputFiles
 
 set(POLAR_MAP_CSV_TO_INPUT_FILES_SRC

@@ -622,7 +622,7 @@ TEST_F(EmptyTraceTest, SubsetOperationDifference) {
 }
 
 TEST_F(EmptyTraceTest, SubsetOperationIntersection) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(intersection(clusters, regions)) <= 3]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(intersection(clusters, clusters)) <= 3]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, SubsetOperationUnion) {
@@ -706,12 +706,12 @@ TEST_F(EmptyTraceTest, TernarySubset) {
 /////////////////////////////////////////////////////////
 //
 //
-// TypeConstraint
+// UnaryTypeConstraint
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, TypeConstraint) {
+TEST_F(EmptyTraceTest, UnaryTypeConstraint) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(filter(clusters, type = 0)) <= 3]"), SpatialTemporalException);
 }
 
@@ -719,12 +719,12 @@ TEST_F(EmptyTraceTest, TypeConstraint) {
 /////////////////////////////////////////////////////////
 //
 //
-// UnaryConstraint
+// UnarySpatialConstraint
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, UnaryConstraint) {
+TEST_F(EmptyTraceTest, UnarySpatialConstraint) {
     EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(filter(clusters, perimeter <= 30.2)) <= 3]"), SpatialTemporalException);
 }
 
@@ -1101,6 +1101,7 @@ TEST_F(EmptyTraceTest, EnclosingWithParenthesesDifferently2) {
     EXPECT_THROW(RunEvaluationTest("P < 0.9 [(avg(clusters, perimeter) > 10) ^ ((count(regions) < 1) V (density(clusters) > 100))]"), SpatialTemporalException);
 }
 
+
 /////////////////////////////////////////////////////////
 //
 //
@@ -1116,6 +1117,7 @@ TEST_F(EmptyTraceTest, TimeIntervalExceedsTraceEndTime) {
 TEST_F(EmptyTraceTest, TimeIntervalExceedsTraceStartTime) {
     EXPECT_THROW(RunEvaluationTest("P < 0.9 [G [5, 10] (count(clusters) > 10)]"), SpatialTemporalException);
 }
+
 
 /////////////////////////////////////////////////////////
 //
@@ -1136,5 +1138,6 @@ TEST_F(EmptyTraceTest, ConstraintsCombinationBinary) {
 TEST_F(EmptyTraceTest, ConstraintsCombinationNary) {
     EXPECT_THROW(RunEvaluationTest("P < 0.9 [G [0, 5] (count(filter(clusters, (area > 5) ^ ((perimeter > 1000) V (density > 100 V angle < 210)))) > 10)]"), SpatialTemporalException);
 }
+
 
 #endif

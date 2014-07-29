@@ -7,6 +7,8 @@ using namespace multiscale::verification;
 
 
 SpatialEntity::SpatialEntity() {
+    type = 0;
+
     clusteredness       = 0;
     density             = 0;
     area                = 0;
@@ -18,6 +20,10 @@ SpatialEntity::SpatialEntity() {
     circleMeasure       = 0;
     centroidX           = 0;
     centroidY           = 0;
+}
+
+unsigned long SpatialEntity::getType() const {
+    return type;
 }
 
 double SpatialEntity::getClusteredness() const {
@@ -64,6 +70,10 @@ double SpatialEntity::getCentroidY() const {
     return centroidY;
 }
 
+void SpatialEntity::setType(unsigned long type) {
+    this->type = type;
+}
+
 void SpatialEntity::setClusteredness(double clusteredness) {
     validateRealNonNegativeValue(clusteredness);
 
@@ -89,8 +99,7 @@ void SpatialEntity::setPerimeter(double perimeter) {
 }
 
 void SpatialEntity::setDistanceFromOrigin(double distanceFromOrigin) {
-    validateRealNonNegativeValue(distanceFromOrigin
-            );
+    validateRealNonNegativeValue(distanceFromOrigin);
 
     this->distanceFromOrigin = distanceFromOrigin;
 }
@@ -133,17 +142,18 @@ void SpatialEntity::setCentroidY(double centroidY) {
 
 bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
     return (
-        (this->clusteredness         <   rhsSpatialEntity.clusteredness) ||
-        (this->density               <   rhsSpatialEntity.density) ||
-        (this->area                  <   rhsSpatialEntity.area) ||
-        (this->perimeter             <   rhsSpatialEntity.perimeter) ||
-        (this->distanceFromOrigin    <   rhsSpatialEntity.distanceFromOrigin) ||
-        (this->angle                 <   rhsSpatialEntity.angle) ||
-        (this->triangleMeasure       <   rhsSpatialEntity.triangleMeasure) ||
-        (this->rectangleMeasure      <   rhsSpatialEntity.rectangleMeasure) ||
-        (this->circleMeasure         <   rhsSpatialEntity.circleMeasure) ||
-        (this->centroidX             <   rhsSpatialEntity.centroidX) ||
-        (this->centroidY             <   rhsSpatialEntity.centroidY)
+        (this->type                 <   rhsSpatialEntity.type) ||
+        (this->clusteredness        <   rhsSpatialEntity.clusteredness) ||
+        (this->density              <   rhsSpatialEntity.density) ||
+        (this->area                 <   rhsSpatialEntity.area) ||
+        (this->perimeter            <   rhsSpatialEntity.perimeter) ||
+        (this->distanceFromOrigin   <   rhsSpatialEntity.distanceFromOrigin) ||
+        (this->angle                <   rhsSpatialEntity.angle) ||
+        (this->triangleMeasure      <   rhsSpatialEntity.triangleMeasure) ||
+        (this->rectangleMeasure     <   rhsSpatialEntity.rectangleMeasure) ||
+        (this->circleMeasure        <   rhsSpatialEntity.circleMeasure) ||
+        (this->centroidX            <   rhsSpatialEntity.centroidX) ||
+        (this->centroidY            <   rhsSpatialEntity.centroidY)
     );
 }
 

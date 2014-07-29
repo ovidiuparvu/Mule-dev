@@ -642,7 +642,7 @@ TEST_F(NumericStateVariableTraceTest, SubsetOperationDifference) {
 }
 
 TEST_F(NumericStateVariableTraceTest, SubsetOperationIntersection) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(intersection(clusters, regions)) >= 3]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(intersection(clusters, clusters)) >= 3]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, SubsetOperationUnion) {
@@ -670,12 +670,12 @@ TEST_F(NumericStateVariableTraceTest, SubsetSpecificRegions) {
 /////////////////////////////////////////////////////////
 //
 //
-// SubsetOperation
+// SubsetSubsetOperation
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, SubsetOperation) {
+TEST_F(NumericStateVariableTraceTest, SubsetSubsetOperation) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(clusters, regions)) >= 4.3]"));
 }
 
@@ -726,12 +726,12 @@ TEST_F(NumericStateVariableTraceTest, TernarySubset) {
 /////////////////////////////////////////////////////////
 //
 //
-// TypeConstraint
+// UnaryTypeConstraint
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, TypeConstraint) {
+TEST_F(NumericStateVariableTraceTest, UnaryTypeConstraint) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(filter(clusters, type = 0)) > 7]"));
 }
 
@@ -739,12 +739,12 @@ TEST_F(NumericStateVariableTraceTest, TypeConstraint) {
 /////////////////////////////////////////////////////////
 //
 //
-// UnaryConstraint
+// UnarySpatialConstraint
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, UnaryConstraint) {
+TEST_F(NumericStateVariableTraceTest, UnarySpatialConstraint) {
     EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, perimeter <= 30.2)) <= {B}]"));
 }
 
@@ -1121,6 +1121,7 @@ TEST_F(NumericStateVariableTraceTest, EnclosingWithParenthesesDifferently2) {
     EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(avg(clusters, perimeter) > {B}) ^ ((count(regions) < 1) V (density(clusters) > 100))]"));
 }
 
+
 /////////////////////////////////////////////////////////
 //
 //
@@ -1136,6 +1137,7 @@ TEST_F(NumericStateVariableTraceTest, TimeIntervalExceedsTraceEndTime) {
 TEST_F(NumericStateVariableTraceTest, TimeIntervalExceedsTraceStartTime) {
     EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [5, 10] (count(clusters) > {B})]"));
 }
+
 
 /////////////////////////////////////////////////////////
 //
@@ -1156,5 +1158,6 @@ TEST_F(NumericStateVariableTraceTest, ConstraintsCombinationBinary) {
 TEST_F(NumericStateVariableTraceTest, ConstraintsCombinationNary) {
     EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 5] (count(filter(clusters, (area > {B}) ^ ((perimeter > 1000) V (density > 100 V angle < 210)))) > 10)]"));
 }
+
 
 #endif

@@ -672,7 +672,7 @@ TEST_F(SpatialEntitiesTraceTest, SubsetOperationDifference) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, SubsetOperationIntersection) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(intersection(clusters, regions)) <= 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(intersection(clusters, clusters)) <= 3]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, SubsetOperationUnion) {
@@ -700,12 +700,12 @@ TEST_F(SpatialEntitiesTraceTest, SubsetSpecificRegions) {
 /////////////////////////////////////////////////////////
 //
 //
-// SubsetOperation
+// SubsetSubsetOperation
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, SubsetOperation) {
+TEST_F(SpatialEntitiesTraceTest, SubsetSubsetOperation) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(clusters, regions)) >= 4.3]"));
 }
 
@@ -756,12 +756,12 @@ TEST_F(SpatialEntitiesTraceTest, TernarySubset) {
 /////////////////////////////////////////////////////////
 //
 //
-// TypeConstraint
+// UnaryTypeConstraint
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, TypeConstraint) {
+TEST_F(SpatialEntitiesTraceTest, UnaryTypeConstraint) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(filter(clusters, type = 1)) > 7]"));
 }
 
@@ -769,12 +769,12 @@ TEST_F(SpatialEntitiesTraceTest, TypeConstraint) {
 /////////////////////////////////////////////////////////
 //
 //
-// UnaryConstraint
+// UnarySpatialConstraint
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, UnaryConstraint) {
+TEST_F(SpatialEntitiesTraceTest, UnarySpatialConstraint) {
     EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, perimeter <= 30.2)) <= 3]"));
 }
 
@@ -1151,6 +1151,7 @@ TEST_F(SpatialEntitiesTraceTest, EnclosingWithParenthesesDifferently2) {
     EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(avg(clusters, perimeter) > 10) ^ ((count(regions) < 1) V (density(clusters) > 100))]"));
 }
 
+
 /////////////////////////////////////////////////////////
 //
 //
@@ -1166,6 +1167,7 @@ TEST_F(SpatialEntitiesTraceTest, TimeIntervalExceedsTraceEndTime) {
 TEST_F(SpatialEntitiesTraceTest, TimeIntervalExceedsTraceStartTime) {
     EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [5, 10] (count(clusters) > 10)]"));
 }
+
 
 /////////////////////////////////////////////////////////
 //
@@ -1186,5 +1188,6 @@ TEST_F(SpatialEntitiesTraceTest, ConstraintsCombinationBinary) {
 TEST_F(SpatialEntitiesTraceTest, ConstraintsCombinationNary) {
     EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 5] (count(filter(clusters, (area > 5) ^ ((perimeter > 1000) V (density > 100 V angle < 210)))) > 10)]"));
 }
+
 
 #endif

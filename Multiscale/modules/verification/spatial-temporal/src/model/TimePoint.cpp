@@ -88,7 +88,15 @@ std::list<Cluster>::iterator TimePoint::getClustersBeginIterator() {
     return clusters.begin();
 }
 
+std::list<Cluster>::const_iterator TimePoint::getClustersBeginIterator() const {
+    return clusters.begin();
+}
+
 std::list<Cluster>::iterator TimePoint::getClustersEndIterator() {
+    return clusters.end();
+}
+
+std::list<Cluster>::const_iterator TimePoint::getClustersEndIterator() const {
     return clusters.end();
 }
 
@@ -96,7 +104,15 @@ std::list<Region>::iterator TimePoint::getRegionsBeginIterator() {
     return regions.begin();
 }
 
+std::list<Region>::const_iterator TimePoint::getRegionsBeginIterator() const {
+    return regions.begin();
+}
+
 std::list<Region>::iterator TimePoint::getRegionsEndIterator() {
+    return regions.end();
+}
+
+std::list<Region>::const_iterator TimePoint::getRegionsEndIterator() const {
     return regions.end();
 }
 
@@ -180,31 +196,7 @@ double TimePoint::avgDensity(const std::vector<SpatialEntity> &spatialEntities) 
 }
 
 void TimePoint::timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
-    switch (consideredSpatialEntityType) {
-        case ConsideredSpatialEntityType::All:
-            timePointSetOperationAll(timePoint, setOperationType);
-            break;
-
-        case ConsideredSpatialEntityType::Clusters:
-            timePointSetOperationClusters(timePoint, setOperationType);
-            break;
-
-        case ConsideredSpatialEntityType::Regions:
-            timePointSetOperationRegions(timePoint, setOperationType);
-            break;
-    }
-}
-
-void TimePoint::timePointSetOperationAll(const TimePoint &timePoint, const SetOperationType &setOperationType) {
     clusters = clustersSetOperation(timePoint, setOperationType);
-    regions  = regionsSetOperation(timePoint, setOperationType);
-}
-
-void TimePoint::timePointSetOperationClusters(const TimePoint &timePoint, const SetOperationType &setOperationType) {
-    clusters = clustersSetOperation(timePoint, setOperationType);
-}
-
-void TimePoint::timePointSetOperationRegions(const TimePoint &timePoint, const SetOperationType &setOperationType) {
     regions  = regionsSetOperation(timePoint, setOperationType);
 }
 
@@ -213,8 +205,8 @@ std::list<Cluster> TimePoint::clustersSetOperation(const TimePoint &timePoint, c
 
     switch(setOperationType) {
         case SetOperationType::Difference:
-            std::set_difference(clusters.begin(), clusters.end(), timePoint.clusters.begin(),
-                                timePoint.clusters.end(), std::inserter(newClusters, newClusters.begin()));
+            std::set_difference(getClustersBeginIterator(), getClustersEndIterator(), timePoint.getClustersBeginIterator(),
+                                timePoint.getClustersEndIterator(), std::inserter(newClusters, newClusters.begin()));
             break;
 
         case SetOperationType::Intersection:
