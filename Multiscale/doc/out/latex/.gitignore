@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# Except the manual and this file
+!refman.pdf
+!.gitignore
