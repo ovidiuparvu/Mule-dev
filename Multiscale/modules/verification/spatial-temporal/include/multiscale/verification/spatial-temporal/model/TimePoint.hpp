@@ -2,6 +2,7 @@
 #define TIMEPOINT_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SubsetOperationAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SubsetSpecificAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialEntity.hpp"
 
@@ -17,14 +18,6 @@
 namespace multiscale {
 
     namespace verification {
-
-        //! Enumeration for representing the set operation type(s)
-        enum class SetOperationType : int {
-            Difference,     /*!< Set difference */
-            Intersection,   /*!< Set intersection */
-            Union           /*!< Set union */
-        };
-
 
         //! Class for representing a timepoint
         class TimePoint {
@@ -234,14 +227,14 @@ namespace multiscale {
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                void timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
+                void timePointSetOperation(const TimePoint &timePoint, const SubsetOperationType &setOperationType);
 
                 //! Apply the set operation to the collection of spatial entities from this and the given timepoint
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                void updateSpatialEntities(const TimePoint &timePoint, const SetOperationType &setOperationType);
+                void updateSpatialEntities(const TimePoint &timePoint, const SubsetOperationType &setOperationType);
 
                 //! Compute the given set operation on the set of spatial entities of the given type from this and the provided timepoint
                 /*!
@@ -250,7 +243,7 @@ namespace multiscale {
                  * \param spatialEntityTypeIndex    The considered spatial entity type index
                  */
                 std::list<std::shared_ptr<SpatialEntity>>
-                spatialEntitiesSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType,
+                spatialEntitiesSetOperation(const TimePoint &timePoint, const SubsetOperationType &setOperationType,
                                             const SubsetSpecificType &spatialEntityTypeIndex);
 
                 //! Update the considered spatial entity type of this timepoint considering the given setOperationType and consideredSpatialEntityTypes
@@ -267,7 +260,7 @@ namespace multiscale {
                  * \param setOperationType              The considered set operation type
                  */
                 void updateConsideredSpatialEntityTypes(const std::bitset<NR_SUBSET_SPECIFIC_TYPES> &consideredSpatialEntityTypes,
-                                                        const SetOperationType &setOperationType);
+                                                        const SubsetOperationType &setOperationType);
 
 
                 // Constants

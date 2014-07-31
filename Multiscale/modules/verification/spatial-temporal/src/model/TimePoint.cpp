@@ -156,15 +156,15 @@ double TimePoint::getNumericStateVariable(const std::string &name) const {
 }
 
 void TimePoint::timePointDifference(const TimePoint &timePoint) {
-    timePointSetOperation(timePoint, SetOperationType::Difference);
+    timePointSetOperation(timePoint, SubsetOperationType::Difference);
 }
 
 void TimePoint::timePointIntersection(const TimePoint &timePoint) {
-    timePointSetOperation(timePoint, SetOperationType::Intersection);
+    timePointSetOperation(timePoint, SubsetOperationType::Intersection);
 }
 
 void TimePoint::timePointUnion(const TimePoint &timePoint) {
-    timePointSetOperation(timePoint, SetOperationType::Union);
+    timePointSetOperation(timePoint, SubsetOperationType::Union);
 }
 
 std::list<std::shared_ptr<SpatialEntity>>::iterator
@@ -202,12 +202,12 @@ double TimePoint::avgDensity(const std::vector<std::shared_ptr<SpatialEntity>> &
                                       : (densitySum / nrOfSpatialEntities);
 }
 
-void TimePoint::timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
+void TimePoint::timePointSetOperation(const TimePoint &timePoint, const SubsetOperationType &setOperationType) {
     updateSpatialEntities(timePoint, setOperationType);
     updateConsideredSpatialEntityTypes(timePoint.consideredSpatialEntityTypes, setOperationType);
 }
 
-void TimePoint::updateSpatialEntities(const TimePoint &timePoint, const SetOperationType &setOperationType) {
+void TimePoint::updateSpatialEntities(const TimePoint &timePoint, const SubsetOperationType &setOperationType) {
     for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
         SubsetSpecificType subsetSpecificType = computeSubsetSpecificType(i);
 
@@ -216,12 +216,12 @@ void TimePoint::updateSpatialEntities(const TimePoint &timePoint, const SetOpera
 }
 
 std::list<std::shared_ptr<SpatialEntity>>
-TimePoint::spatialEntitiesSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType,
+TimePoint::spatialEntitiesSetOperation(const TimePoint &timePoint, const SubsetOperationType &setOperationType,
                                        const SubsetSpecificType &spatialEntitiesType) {
     std::list<std::shared_ptr<SpatialEntity>> newSpatialEntities;
 
     switch(setOperationType) {
-        case SetOperationType::Difference:
+        case SubsetOperationType::Difference:
             std::set_difference(getSpatialEntitiesBeginIterator(spatialEntitiesType),
                                 getSpatialEntitiesEndIterator(spatialEntitiesType),
                                 timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
@@ -229,7 +229,7 @@ TimePoint::spatialEntitiesSetOperation(const TimePoint &timePoint, const SetOper
                                 std::inserter(newSpatialEntities, newSpatialEntities.begin()));
             break;
 
-        case SetOperationType::Intersection:
+        case SubsetOperationType::Intersection:
             std::set_difference(getSpatialEntitiesBeginIterator(spatialEntitiesType),
                                 getSpatialEntitiesEndIterator(spatialEntitiesType),
                                 timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
@@ -237,7 +237,7 @@ TimePoint::spatialEntitiesSetOperation(const TimePoint &timePoint, const SetOper
                                 std::inserter(newSpatialEntities, newSpatialEntities.begin()));
             break;
 
-        case SetOperationType::Union:
+        case SubsetOperationType::Union:
             std::set_difference(getSpatialEntitiesBeginIterator(spatialEntitiesType),
                                 getSpatialEntitiesEndIterator(spatialEntitiesType),
                                 timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
@@ -250,17 +250,17 @@ TimePoint::spatialEntitiesSetOperation(const TimePoint &timePoint, const SetOper
 }
 
 void TimePoint::updateConsideredSpatialEntityTypes(const std::bitset<NR_SUBSET_SPECIFIC_TYPES> &consideredSpatialEntityTypes,
-                                                   const SetOperationType &setOperationType) {
+                                                   const SubsetOperationType &setOperationType) {
     switch(setOperationType) {
-        case SetOperationType::Difference:
+        case SubsetOperationType::Difference:
             // No changes required
             break;
 
-        case SetOperationType::Intersection:
+        case SubsetOperationType::Intersection:
             this->consideredSpatialEntityTypes &= consideredSpatialEntityTypes;
             break;
 
-        case SetOperationType::Union:
+        case SubsetOperationType::Union:
             this->consideredSpatialEntityTypes |= consideredSpatialEntityTypes;
             break;
     }

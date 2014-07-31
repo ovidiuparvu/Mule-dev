@@ -10,10 +10,10 @@ namespace multiscale {
     namespace verification {
 
         //! Enumeration for representing the types of subset operations
-        enum class SubsetOperationType : int {
-            Difference      = 1,    /*!< Difference of two subsets */
-            Intersection    = 2,    /*!< Intersection of two subsets */
-            Union           = 3     /*!< Union of two subsets */
+        enum class SubsetOperationType : unsigned int {
+            Difference,     /*!< Difference of two subsets */
+            Intersection,   /*!< Intersection of two subsets */
+            Union           /*!< Union of two subsets */
         };
 
 
