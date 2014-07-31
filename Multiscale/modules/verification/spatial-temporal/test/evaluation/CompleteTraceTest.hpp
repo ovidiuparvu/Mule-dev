@@ -870,11 +870,11 @@ TEST_F(CompleteTraceTest, UnarySubsetMeasureCount) {
 }
 
 TEST_F(CompleteTraceTest, UnarySubsetMeasureClusteredness) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [clusteredness(regions) <= subtract({B}, 0.99983)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [clusteredness(regions) >= subtract({B}, 3)]"));
 }
 
 TEST_F(CompleteTraceTest, UnarySubsetMeasureDensity) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) <= subtract({B}, 0.99983)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) >= subtract({B}, 2.99983)]"));
 }
 
 

@@ -46,7 +46,7 @@ namespace multiscaletest {
                 region->setRectangleMeasure(static_cast<double>(0.7));
                 region->setCircleMeasure(static_cast<double>(0.3));
                 region->setCentroidX(5.5);
-                region->setCentroidY(8.3);
+                region->setCentroidY(8.3 * i);
 
                 timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
             }
@@ -89,7 +89,7 @@ namespace multiscaletest {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, BinaryNumericFilter) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5))) > 0]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < subtract(centroidY, 2.5))) > 0]"));
 }
 
 
@@ -788,7 +788,7 @@ TEST_F(SpatialEntitiesTraceTest, UnarySpatialConstraint) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, UnaryNumericFilter) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(regions, centroidX < trunc(centroidY))) > 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [1, 11] count(filter(regions, centroidX < trunc(centroidY))) > 0]"));
 }
 
 
@@ -959,7 +959,7 @@ TEST_F(SpatialEntitiesTraceTest, FutureIncreasingValueBinaryNumeric) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, FutureIncreasingValueUnarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(count(regions)) > 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(density(regions)) > 0)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, FutureIncreasingValueBinarySubset) {
