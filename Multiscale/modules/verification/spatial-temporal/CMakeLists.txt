@@ -293,6 +293,8 @@ target_link_libraries(LogicPropertyDataReaderSample util)
 # SpatialTemporalDataReaderSample
 
 set(SPATIAL_TEMPORAL_DATA_READER_SAMPLE_SRC
+    src/attribute/SubsetSpecificAttribute.cpp
+        
     src/data/SpatialTemporalDataReader.cpp
     
     src/model/SpatialEntity.cpp

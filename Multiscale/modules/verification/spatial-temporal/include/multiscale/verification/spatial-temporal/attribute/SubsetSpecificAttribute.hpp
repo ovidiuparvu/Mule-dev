@@ -10,11 +10,44 @@ namespace multiscale {
     namespace verification {
 
         //! Enumeration for representing a specific subset type
-        enum class SubsetSpecificType : int {
-            Clusters    = 1,    /*!< Clusters */
-            Regions     = 2     /*!< Regions */
+        enum class SubsetSpecificType : unsigned int {
+            Clusters                        = 0,            /*!< Clusters */
+            Regions                            ,            /*!< Regions */
+            NrOfSubsetSpecificTypeEntries                   /*!< Enumeration type used to store the number of
+                                                                 elements in the enumeration. Always leave it last! */
         };
 
+        //! An std::size_t constant which stores the number of subset specific type entries
+        static const std::size_t
+        NR_SUBSET_SPECIFIC_TYPES = static_cast<std::size_t>(SubsetSpecificType::NrOfSubsetSpecificTypeEntries);
+
+        namespace subsetspecific {
+
+            //! Check if the given subset specific type is valid
+            /*!
+             * \param subsetSpecificType    The given subset specific type
+             */
+            void validateSubsetSpecificType(const SubsetSpecificType &subsetSpecificType);
+
+            //! Check if the given subset specific type index is valid
+            /*!
+             * \param subsetSpecificTypeIndex   The given subset specific type index
+             */
+            void validateSubsetSpecificTypeIndex(const std::size_t &subsetSpecificTypeIndex);
+
+            //! Compute the index of the subset specific type
+            /*!
+             * \param subsetSpecificType The given subset specific type
+             */
+            size_t computeSubsetSpecificTypeIndex(const SubsetSpecificType &subsetSpecificType);
+
+            //! Compute the subset specific type from the given index
+            /*!
+             * \param subsetSpecificTypeIndex    The given subset specific type index
+             */
+            SubsetSpecificType computeSubsetSpecificType(const std::size_t &subsetSpecificTypeIndex);
+
+        };
 
         //! Overload the output stream operator for the enumeration
         /*!

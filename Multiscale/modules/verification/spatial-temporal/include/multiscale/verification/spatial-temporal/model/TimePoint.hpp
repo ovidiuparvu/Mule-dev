@@ -2,12 +2,14 @@
 #define TIMEPOINT_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
-#include "multiscale/verification/spatial-temporal/model/Region.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SubsetSpecificAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/model/SpatialEntity.hpp"
 
+#include <bitset>
 #include <limits>
 #include <list>
 #include <map>
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -15,13 +17,6 @@
 namespace multiscale {
 
     namespace verification {
-
-        //! Enumeration for representing the considered spatial entity type(s)
-        enum class ConsideredSpatialEntityType : int {
-            All,        /*!< All */
-            Clusters,   /*!< Clusters */
-            Regions     /*!< Regions */
-        };
 
         //! Enumeration for representing the set operation type(s)
         enum class SetOperationType : int {
@@ -41,19 +36,24 @@ namespace multiscale {
                 /*
                  * TODO: Update Timepoint class if no longer validating input XML files
                  *
-                 *  WARNING: The Timepoint class contains as members lists of regions/clusters
-                 *           because the uniqueness of the regions/clusters is determined using this
-                 *           method. If this method is no longer used then replace the lists
-                 *           in the Timepoint class with sets in order to ensure the uniqueness of
-                 *           the elements.
+                 *  WARNING: The Timepoint class contains as a member a list of spatial entities
+                 *           because the uniqueness of the spatial entities is determined using XML
+                 *           input file validation. If this validation is no longer used then replace the list
+                 *           in the Timepoint class with a set in order to ensure the uniqueness of
+                 *           the spatial entities.
                  */
+                std::vector<std::list<std::shared_ptr<SpatialEntity>>> spatialEntities;     /*!< The meta-list of spatial entities smart pointers.
+                                                                                                 The i-th spatial entities list in the meta-list
+                                                                                                 corresponds to the i-th SubsetSpecificType
+                                                                                                 enumeration value*/
 
-                std::list<Cluster>  clusters;     /*!< The list of clusters */
-                std::list<Region>   regions;      /*!< The list of regions */
+                std::map<std::string, double>   numericStateVariables;                      /*!< The associative map for storing numeric state variables */
 
-                std::map<std::string, double>   numericStateVariables;      /*!< The associative map for storing numeric state variables */
-
-                ConsideredSpatialEntityType consideredSpatialEntityType;    /*!< The considered spatial entity type */
+                std::bitset<NR_SUBSET_SPECIFIC_TYPES> consideredSpatialEntityTypes;         /*!< The collection of bits recording the considered
+                                                                                                 spatial entity types. The i-th bit corresponds to the
+                                                                                                 i-th SubsetSpecificType enum value. If the bit is set
+                                                                                                 true then the corresponding subset specific type is
+                                                                                                 considered. Otherwise it is not. */
 
             public:
 
@@ -71,13 +71,13 @@ namespace multiscale {
                 void setValue(unsigned long value);
 
                 //! Get the considered spatial entity type
-                ConsideredSpatialEntityType getConsideredSpatialEntityType();
+                std::bitset<NR_SUBSET_SPECIFIC_TYPES> getConsideredSpatialEntityTypes();
 
-                //! Set the considered spatial entity type
+                //! Set the considered spatial entity type to the given type
                 /*!
                  * \param consideredSpatialEntityType   The considered type of the spatial entities
                  */
-                void setConsideredSpatialEntityType(const ConsideredSpatialEntityType &consideredSpatialEntityType);
+                void setConsideredSpatialEntityType(const SubsetSpecificType &consideredSpatialEntityType);
 
                 //! Get the number of considered spatial entities
                 double numberOfSpatialEntities() const;
@@ -88,17 +88,13 @@ namespace multiscale {
                 //! Get the density of the considered collection of spatial entities
                 double avgDensity() const;
 
-                //! Add a cluster to the list of clusters
+                //! Add a spatial entity of the given type to the list of spatial entities
                 /*!
-                 * \param cluster The cluster to be added
+                 * \param spatialEntity         The spatial entity
+                 * \param spatialEntityType     The type of the spatial entity
                  */
-                void addCluster(const Cluster &cluster);
-
-                //! Add a region to the list of regions
-                /*!
-                 * \param region The region to be added
-                 */
-                void addRegion(const Region &region);
+                void addSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                                      const SubsetSpecificType &spatialEntityType);
 
                 //! Add a numeric state variable to the map
                 /*!
@@ -117,32 +113,44 @@ namespace multiscale {
                  */
                 bool existsNumericStateVariable(const std::string &name);
 
-                //! Get the begin iterator for the set of clusters
-                std::list<Cluster>::iterator getClustersBeginIterator();
+                //! Get the begin iterator for the spatial entities of the given type
+                /*!
+                 * Return the spatial entities begin iterator if the considered spatial entity
+                 * type is of the given type. Otherwise return the spatial entities end
+                 * iterator.
+                 *
+                 * \param spatialEntityType The type of the spatial entities
+                 */
+                std::list<std::shared_ptr<SpatialEntity>>::iterator
+                getSpatialEntitiesBeginIterator(const SubsetSpecificType &spatialEntityType);
 
-                //! Get the begin iterator for the set of clusters
-                std::list<Cluster>::const_iterator getClustersBeginIterator() const;
+                //! Get the begin iterator for the spatial entities of the given type
+                /*!
+                 * Return the spatial entities begin iterator if the considered spatial entity
+                 * type is of the given type. Otherwise return the spatial entities end
+                 * iterator.
+                 *
+                 * \param spatialEntityType The type of the spatial entities
+                 */
+                std::list<std::shared_ptr<SpatialEntity>>::const_iterator
+                getSpatialEntitiesBeginIterator(const SubsetSpecificType &spatialEntityType) const;
 
-                //! Get the end iterator for the set of clusters
-                std::list<Cluster>::iterator getClustersEndIterator();
+                //! Get the end iterator for the spatial entities of the given type
+                /*!
+                 * \param spatialEntityType The type of the spatial entities
+                 */
+                std::list<std::shared_ptr<SpatialEntity>>::iterator
+                getSpatialEntitiesEndIterator(const SubsetSpecificType &spatialEntityType);
 
-                //! Get the end iterator for the set of clusters
-                std::list<Cluster>::const_iterator getClustersEndIterator() const;
-
-                //! Get the begin iterator for the set of regions
-                std::list<Region>::iterator getRegionsBeginIterator();
-
-                //! Get the begin iterator for the set of regions
-                std::list<Region>::const_iterator getRegionsBeginIterator() const;
-
-                //! Get the end iterator for the set of regions
-                std::list<Region>::iterator getRegionsEndIterator();
-
-                //! Get the end iterator for the set of regions
-                std::list<Region>::const_iterator getRegionsEndIterator() const;
+                //! Get the end iterator for the spatial entities of the given type
+                /*!
+                 * \param spatialEntityType The type of the spatial entities
+                 */
+                std::list<std::shared_ptr<SpatialEntity>>::const_iterator
+                getSpatialEntitiesEndIterator(const SubsetSpecificType &spatialEntityType) const;
 
                 //! Get the collection of considered spatial entities
-                std::vector<SpatialEntity> getConsideredSpatialEntities() const;
+                std::vector<std::shared_ptr<SpatialEntity>> getConsideredSpatialEntities() const;
 
                 //! Get the value of the numeric state variable with the given name if it exists and throw an exception otherwise
                 /*!
@@ -154,6 +162,12 @@ namespace multiscale {
                 /*! Compute the difference of this timepoint and the given timepoint by taking into account
                  *  the value of consideredSpatialEntityType
                  *
+                 *  Spatial entities belonging to the first and not to the second timepoint will be
+                 *  included in the resulting timepoint.
+                 *
+                 *  The consideredSpatialEntityType of the resulting timepoint will be the consideredSpatialEntityType
+                 *  of this timepoint.
+                 *
                  * \param timePoint The given timepoint
                  */
                 void timePointDifference(const TimePoint &timePoint);
@@ -162,43 +176,58 @@ namespace multiscale {
                 /*! Compute the intersection of this timepoint and the given timepoint by taking into account
                  *  the value of consideredSpatialEntityType
                  *
+                 *  Spatial entities belonging both to the first and the second timepoint will be
+                 *  included in the resulting timepoint.
+                 *
+                 *  The consideredSpatialEntityType of the resulting timepoint will be the intersection of the
+                 *  timepoints' consideredSpatialEntityTypes.
+                 *
                  * \param timePoint The given timepoint
                  */
                 void timePointIntersection(const TimePoint &timePoint);
 
                 //! Compute the union of this timepoint and the given timepoint
                 /*! Compute the union of this timepoint and the given timepoint by taking into account
-                 *  the value of consideredSpatialEntityType
+                 *  the value of consideredSpatialEntityType.
+                 *
+                 *  Spatial entities belonging either to the first or the second timepoint will be
+                 *  included in the resulting timepoint.
+                 *
+                 *  The consideredSpatialEntityType of the resulting timepoint will be the union of the
+                 *  timepoints' consideredSpatialEntityTypes.
                  *
                  * \param timePoint The given timepoint
                  */
                 void timePointUnion(const TimePoint &timePoint);
 
-                //! Remove the cluster/region from the given position
+                //! Remove the spatial entity of the given type from the given position
                 /*!
-                 * \param position  The position of the cluster/region to be removed
+                 * \param position          The position of the spatial entity to be removed
+                 * \param spatialEntityType The type of the spatial entity
                  */
-                void removeSpatialEntity(std::list<Cluster>::iterator &position);
-
-                //! Remove the region from the given position
-                /*!
-                 * \param position  The position of the region to be removed
-                 */
-                void removeSpatialEntity(std::list<Region>::iterator &position);
+                std::list<std::shared_ptr<SpatialEntity>>::iterator
+                removeSpatialEntity(std::list<std::shared_ptr<SpatialEntity>>::iterator &position,
+                                    const SubsetSpecificType &spatialEntityType);
 
             private:
 
                 //! Compute the average Euclidean distance between the centroids of the given collection of spatial entities
                 /*!
+                 * The average Euclidean distance between one centroid c1 and all other centroids is computed as below:
+                 * \f$ AED(c1) = \sum\limits_{c \in centroids}\frac{distance(c, c1)}{|centroids|} \f$.
+                 *
+                 * The average Euclidean distance between all centroids is computed as below:
+                 * \f$ AEDC = \sum\limits_{c \in centroids}\frac{AED(c)}{|centroids|} \f$.
+                 *
                  * \param spatialEntities   The collection of considered spatial entities
                  */
-                double avgDistanceBetweenCentroids(const std::vector<SpatialEntity> &spatialEntities) const;
+                double avgDistanceBetweenCentroids(const std::vector<std::shared_ptr<SpatialEntity>> &spatialEntities) const;
 
                 //! Compute the density of the given collection of spatial entities
                 /*!
                  * \param spatialEntities   The collection of considered spatial entities
                  */
-                double avgDensity(const std::vector<SpatialEntity> &spatialEntities) const;
+                double avgDensity(const std::vector<std::shared_ptr<SpatialEntity>> &spatialEntities) const;
 
                 //! Compute the given set operation of this timepoint and the given timepoint considering the given set operation type
                 /*!
@@ -207,40 +236,38 @@ namespace multiscale {
                  */
                 void timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
-                //! Compute the given set operation of this timepoint and the given timepoint considering all spatial entities from timepoint
+                //! Apply the set operation to the collection of spatial entities from this and the given timepoint
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
                  */
-                void timePointSetOperationAll(const TimePoint &timePoint, const SetOperationType &setOperationType);
+                void updateSpatialEntities(const TimePoint &timePoint, const SetOperationType &setOperationType);
 
-                //! Compute the given set operation of this timepoint and the given timepoint considering clusters from timepoint
+                //! Compute the given set operation on the set of spatial entities of the given type from this and the provided timepoint
                 /*!
                  * \param timePoint         The given timepoint
                  * \param setOperationType  The considered set operation type
+                 * \param spatialEntityType The considered spatial entity type
                  */
-                void timePointSetOperationClusters(const TimePoint &timePoint, const SetOperationType &setOperationType);
+                std::list<std::shared_ptr<SpatialEntity>>
+                spatialEntitiesSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType,
+                                            const SubsetSpecificType &spatialEntityTypeIndex);
 
-                //! Compute the given set operation of this timepoint and the given timepoint considering regions from timepoint
-                /*!
-                 * \param timePoint         The given timepoint
-                 * \param setOperationType  The considered set operation type
+                //! Update the considered spatial entity type of this timepoint considering the given setOperationType and consideredSpatialEntityTypes
+                /*
+                 * The i-th considered spatial entity type of this timepoint is updated depending on the given
+                 * setOperationType as follows:
+                 *     - Difference:    consideredSpatialEntityType(thisTimePoint) = consideredSpatialEntityType(thisTimePoint)
+                 *     - Intersection:  consideredSpatialEntityType(thisTimePoint) = consideredSpatialEntityType(thisTimePoint) AND
+                 *                                                                   consideredSpatialEntityType(givenTimePoint)
+                 *     - Union:         consideredSpatialEntityType(thisTimePoint) = consideredSpatialEntityType(thisTimePoint) OR
+                 *                                                                   consideredSpatialEntityType(thisTimePoint)
+                 *
+                 * \param consideredSpatialEntityTypes  The considered spatial entity types
+                 * \param setOperationType              The considered set operation type
                  */
-                void timePointSetOperationRegions(const TimePoint &timePoint, const SetOperationType &setOperationType);
-
-                //! Compute the given set operation of this set of clusters and the one provided by the given timepoint
-                /*!
-                 * \param timePoint         The given timepoint
-                 * \param setOperationType  The considered set operation type
-                 */
-                std::list<Cluster> clustersSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
-
-                //! Compute the given set operation of this set of regions and the one provided by the given timepoint
-                /*!
-                 * \param timePoint         The given timepoint
-                 * \param setOperationType  The considered set operation type
-                 */
-                std::list<Region> regionsSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType);
+                void updateConsideredSpatialEntityTypes(const std::bitset<NR_SUBSET_SPECIFIC_TYPES> &consideredSpatialEntityTypes,
+                                                        const SetOperationType &setOperationType);
 
 
                 // Constants

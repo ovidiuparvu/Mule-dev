@@ -4,6 +4,7 @@
 #include "multiscale/core/MultiscaleTest.hpp"
 #include "multiscale/exception/TestException.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelChecker.hpp"
+#include "multiscale/verification/spatial-temporal/model/Region.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
@@ -54,6 +55,15 @@ namespace multiscaletest {
 
            //! Initialise the abstract syntax tree
            void InitialiseAbstractSyntaxTree();
+
+           //! Initialise the collection of spatio-temporal traces with the given spatial entity area values
+           /*!
+            * The assumption is that each timepoint contains only one spatial entity of the same time.
+            * Therefore each area value corresponds to a different timepoint and spatial entity.
+            *
+            * \param areaValues The values of the areas
+            */
+           void InitialiseSpatioTemporalTraceWithAreaValues(const std::vector<double> areaValues);
 
            //! Initialise the globally increasing area spatio-temporal trace
            void InitialiseIncreasingSpatioTemporalTrace();
@@ -123,18 +133,18 @@ namespace multiscaletest {
     void ModelCheckerTest::InitialiseSpatioTemporalTraces() {
         traces.clear();
 
-        InitialiseIncreasingSpatioTemporalTrace();
-        InitialiseDecreasingSpatioTemporalTrace();
-        InitialiseIncreasingDecreasingSpatioTemporalTrace();
-        InitialiseDecreasingIncreasingSpatioTemporalTrace();
-        InitialiseConstantSpatioTemporalTrace();
-        InitialiseIncreasingConstantSpatioTemporalTrace();
-        InitialiseDecreasingConstantSpatioTemporalTrace();
-        InitialiseConstantIncreasingSpatioTemporalTrace();
-        InitialiseConstantDecreasingSpatioTemporalTrace();
-        InitialiseIncreasingConstantDecreasingSpatioTemporalTrace();
-        InitialiseDecreasingConstantIncreasingSpatioTemporalTrace();
-        InitialiseIncreasingConstantIncreasingSpatioTemporalTrace();
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{10, 20, 30});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{30, 20, 10});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{10, 20, 10});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{30, 20, 30});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{20, 20, 20});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{10, 20, 20});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{30, 20, 20});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{20, 20, 30});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{20, 20, 10});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{10, 20, 20, 10});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{30, 20, 20, 30});
+        InitialiseSpatioTemporalTraceWithAreaValues(std::vector<double>{10, 20, 20, 30});
     }
 
     void ModelCheckerTest::InitialiseAbstractSyntaxTree() {
@@ -143,371 +153,25 @@ namespace multiscaletest {
         parser.parse(abstractSyntaxTree);
     }
 
-    void ModelCheckerTest::InitialiseIncreasingSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
+    void ModelCheckerTest::InitialiseSpatioTemporalTraceWithAreaValues(const std::vector<double> areaValues) {
+        mv::SpatialTemporalTrace                            trace;
+        mv::TimePoint                                       timePoint;
+        std::shared_ptr<SpatialEntity>                      region;
+        std::list<std::shared_ptr<SpatialEntity>>::iterator iterator;
 
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
+        timePoint.setConsideredSpatialEntityType(mv::SubsetSpecificType::Regions);
 
-        region.setArea(10);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
+        for (std::size_t i = 0; i < areaValues.size(); i++) {
+            std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 
-        regionsIterator = timePoint.getRegionsBeginIterator();
+            region->setArea(areaValues[i]);
+            timePoint.addSpatialEntity(region, mv::SubsetSpecificType::Regions);
+            trace.addTimePoint(timePoint);
 
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
+            iterator = timePoint.getSpatialEntitiesBeginIterator(SubsetSpecificType::Regions);
 
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(30);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseDecreasingSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(30);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(10);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseIncreasingDecreasingSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(10);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(10);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseDecreasingIncreasingSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(30);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(30);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseConstantSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseIncreasingConstantSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(10);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseDecreasingConstantSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(30);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseConstantIncreasingSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(30);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseConstantDecreasingSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(10);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseIncreasingConstantDecreasingSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(10);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(10);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseDecreasingConstantIncreasingSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(30);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(30);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        traces.push_back(trace);
-    }
-
-    void ModelCheckerTest::InitialiseIncreasingConstantIncreasingSpatioTemporalTrace() {
-        mv::SpatialTemporalTrace        trace;
-        mv::TimePoint                   timePoint;
-        mv::Region                      region;
-        std::list<mv::Region>::iterator regionsIterator;
-
-        timePoint.setConsideredSpatialEntityType(mv::ConsideredSpatialEntityType::Regions);
-
-        region.setArea(10);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(20);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
-
-        regionsIterator = timePoint.getRegionsBeginIterator();
-
-        timePoint.removeSpatialEntity(regionsIterator);
-        region.setArea(30);
-        timePoint.addRegion(region);
-        trace.addTimePoint(timePoint);
+            timePoint.removeSpatialEntity(iterator, SubsetSpecificType::Regions);
+        }
 
         traces.push_back(trace);
     }

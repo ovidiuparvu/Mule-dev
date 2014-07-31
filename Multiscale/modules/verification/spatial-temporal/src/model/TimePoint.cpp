@@ -7,16 +7,19 @@
 
 using namespace multiscale;
 using namespace multiscale::verification;
+using namespace multiscale::verification::subsetspecific;
 
 
 TimePoint::TimePoint(unsigned long value) {
-    this->value = value;
-    this->consideredSpatialEntityType = ConsideredSpatialEntityType::All;
+    this->value             = value;
+    this->spatialEntities   = std::vector<std::list<shared_ptr<SpatialEntity>>>(NR_SUBSET_SPECIFIC_TYPES);
+
+    this->consideredSpatialEntityTypes.reset();
 }
 
-TimePoint::TimePoint(const TimePoint &timePoint) : value(timePoint.value), clusters(timePoint.clusters),
-                                                   regions(timePoint.regions), numericStateVariables(timePoint.numericStateVariables),
-                                                   consideredSpatialEntityType(timePoint.consideredSpatialEntityType) {}
+TimePoint::TimePoint(const TimePoint &timePoint) : value(timePoint.value), spatialEntities(timePoint.spatialEntities),
+                                                   numericStateVariables(timePoint.numericStateVariables),
+                                                   consideredSpatialEntityTypes(timePoint.consideredSpatialEntityTypes) {}
 
 TimePoint::~TimePoint() {}
 
@@ -28,38 +31,37 @@ void TimePoint::setValue(unsigned long value) {
     this->value = value;
 }
 
-ConsideredSpatialEntityType TimePoint::getConsideredSpatialEntityType() {
-    return consideredSpatialEntityType;
+std::bitset<NR_SUBSET_SPECIFIC_TYPES> TimePoint::getConsideredSpatialEntityTypes() {
+    return consideredSpatialEntityTypes;
 }
 
-void TimePoint::setConsideredSpatialEntityType(const ConsideredSpatialEntityType &consideredSpatialEntityType) {
-    this->consideredSpatialEntityType = consideredSpatialEntityType;
+void TimePoint::setConsideredSpatialEntityType(const SubsetSpecificType &consideredSpatialEntityType) {
+    validateSubsetSpecificType(consideredSpatialEntityType);
+
+    consideredSpatialEntityTypes.reset();
+    consideredSpatialEntityTypes.set(computeSubsetSpecificTypeIndex(consideredSpatialEntityType));
 }
 
 double TimePoint::numberOfSpatialEntities() const {
-    switch(consideredSpatialEntityType) {
-        case ConsideredSpatialEntityType::All:
-            return (static_cast<double>(clusters.size()) + static_cast<double>(regions.size()));
+    double nrOfSpatialEntities = 0;
 
-        case ConsideredSpatialEntityType::Clusters:
-            return (static_cast<double>(clusters.size()));
-
-        case ConsideredSpatialEntityType::Regions:
-            return (static_cast<double>(regions.size()));
+    for (size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
+        if (consideredSpatialEntityTypes[i] == true) {
+            nrOfSpatialEntities += static_cast<double>((spatialEntities[i]).size());
+        }
     }
 
-    // Line added to avoid "control reaches end of non-void function" warnings
-    return 0.0;
+    return nrOfSpatialEntities;
 }
 
 double TimePoint::avgClusteredness() const {
-    std::vector<SpatialEntity> consideredSpatialEntities;
+    std::vector<std::shared_ptr<SpatialEntity>> consideredSpatialEntities = getConsideredSpatialEntities();
 
     return avgDistanceBetweenCentroids(consideredSpatialEntities);
 }
 
 double TimePoint::avgDensity() const {
-    std::vector<SpatialEntity> consideredSpatialEntities;
+    std::vector<std::shared_ptr<SpatialEntity>> consideredSpatialEntities = getConsideredSpatialEntities();
 
     double averageDensity  = avgDensity(consideredSpatialEntities);
     double averageDistance = avgDistanceBetweenCentroids(consideredSpatialEntities);
@@ -68,12 +70,13 @@ double TimePoint::avgDensity() const {
                                   : (averageDensity / averageDistance);
 }
 
-void TimePoint::addCluster(const Cluster &cluster) {
-    this->clusters.push_back(cluster);
-}
+void TimePoint::addSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                                 const SubsetSpecificType &spatialEntityType) {
+    validateSubsetSpecificType(spatialEntityType);
 
-void TimePoint::addRegion(const Region &region) {
-    this->regions.push_back(region);
+    std::size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
+
+    (spatialEntities[spatialEntityTypeIndex]).push_back(spatialEntity);
 }
 
 void TimePoint::addNumericStateVariable(const std::string &name, double value) {
@@ -84,54 +87,58 @@ bool TimePoint::existsNumericStateVariable(const std::string &name) {
     return (numericStateVariables.find(name) != numericStateVariables.end());
 }
 
-std::list<Cluster>::iterator TimePoint::getClustersBeginIterator() {
-    return clusters.begin();
+std::list<std::shared_ptr<SpatialEntity>>::iterator TimePoint::getSpatialEntitiesBeginIterator(
+                                                        const SubsetSpecificType &spatialEntityType) {
+    validateSubsetSpecificType(spatialEntityType);
+
+    size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
+
+    if (consideredSpatialEntityTypes[spatialEntityTypeIndex] == true) {
+        return (spatialEntities[spatialEntityTypeIndex]).begin();
+    } else {
+        return (spatialEntities[spatialEntityTypeIndex]).end();
+    }
 }
 
-std::list<Cluster>::const_iterator TimePoint::getClustersBeginIterator() const {
-    return clusters.begin();
+std::list<std::shared_ptr<SpatialEntity>>::const_iterator TimePoint::getSpatialEntitiesBeginIterator(
+                                                              const SubsetSpecificType &spatialEntityType) const {
+    validateSubsetSpecificType(spatialEntityType);
+
+    size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
+
+    if (consideredSpatialEntityTypes[spatialEntityTypeIndex] == true) {
+        return (spatialEntities[spatialEntityTypeIndex]).begin();
+    } else {
+        return (spatialEntities[spatialEntityTypeIndex]).end();
+    }
 }
 
-std::list<Cluster>::iterator TimePoint::getClustersEndIterator() {
-    return clusters.end();
+std::list<std::shared_ptr<SpatialEntity>>::iterator TimePoint::getSpatialEntitiesEndIterator(
+                                                        const SubsetSpecificType &spatialEntityType) {
+    validateSubsetSpecificType(spatialEntityType);
+
+    size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
+
+    return (spatialEntities[spatialEntityTypeIndex]).end();
 }
 
-std::list<Cluster>::const_iterator TimePoint::getClustersEndIterator() const {
-    return clusters.end();
+std::list<std::shared_ptr<SpatialEntity>>::const_iterator TimePoint::getSpatialEntitiesEndIterator(
+                                                             const SubsetSpecificType &spatialEntityType) const {
+    validateSubsetSpecificType(spatialEntityType);
+
+    size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
+
+    return (spatialEntities[spatialEntityTypeIndex]).end();
 }
 
-std::list<Region>::iterator TimePoint::getRegionsBeginIterator() {
-    return regions.begin();
-}
+std::vector<std::shared_ptr<SpatialEntity>> TimePoint::getConsideredSpatialEntities() const {
+    std::vector<std::shared_ptr<SpatialEntity>> consideredSpatialEntities;
 
-std::list<Region>::const_iterator TimePoint::getRegionsBeginIterator() const {
-    return regions.begin();
-}
-
-std::list<Region>::iterator TimePoint::getRegionsEndIterator() {
-    return regions.end();
-}
-
-std::list<Region>::const_iterator TimePoint::getRegionsEndIterator() const {
-    return regions.end();
-}
-
-std::vector<SpatialEntity> TimePoint::getConsideredSpatialEntities() const {
-    std::vector<SpatialEntity> consideredSpatialEntities;
-
-    switch (consideredSpatialEntityType) {
-        case ConsideredSpatialEntityType::All:
-            consideredSpatialEntities.insert(consideredSpatialEntities.begin(), clusters.begin(), clusters.end());
-            consideredSpatialEntities.insert(consideredSpatialEntities.begin(), regions.begin(), regions.end());
-            break;
-
-        case ConsideredSpatialEntityType::Clusters:
-            consideredSpatialEntities.insert(consideredSpatialEntities.begin(), clusters.begin(), clusters.end());
-            break;
-
-        case ConsideredSpatialEntityType::Regions:
-            consideredSpatialEntities.insert(consideredSpatialEntities.begin(), regions.begin(), regions.end());
-            break;
+    for (size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
+        if (consideredSpatialEntityTypes[i] == true) {
+            consideredSpatialEntities.insert(consideredSpatialEntities.begin(), (spatialEntities[i]).begin(),
+                                             (spatialEntities[i]).end());
+        }
     }
 
     return consideredSpatialEntities;
@@ -160,22 +167,22 @@ void TimePoint::timePointUnion(const TimePoint &timePoint) {
     timePointSetOperation(timePoint, SetOperationType::Union);
 }
 
-void TimePoint::removeSpatialEntity(std::list<Cluster>::iterator &position) {
-    position = clusters.erase(position);
+std::list<std::shared_ptr<SpatialEntity>>::iterator
+TimePoint::removeSpatialEntity(std::list<std::shared_ptr<SpatialEntity>>::iterator &position,
+                               const SubsetSpecificType &spatialEntityType) {
+    validateSubsetSpecificType(spatialEntityType);
+
+    return spatialEntities[computeSubsetSpecificTypeIndex(spatialEntityType)].erase(position);
 }
 
-void TimePoint::removeSpatialEntity(std::list<Region>::iterator &position) {
-    position = regions.erase(position);
-}
-
-double TimePoint::avgDistanceBetweenCentroids(const std::vector<SpatialEntity> &spatialEntities) const {
-    double distanceSum = 0;
-    int nrOfSpatialEntities = spatialEntities.size();
+double TimePoint::avgDistanceBetweenCentroids(const std::vector<std::shared_ptr<SpatialEntity>> &spatialEntities) const {
+    double      distanceSum         = 0;
+    std::size_t nrOfSpatialEntities = spatialEntities.size();
 
     for (const auto &spatialEntity1 : spatialEntities) {
         for (const auto &spatialEntity2 : spatialEntities) {
-            distanceSum += Geometry2D::distanceBtwPoints(spatialEntity1.getCentroidX(), spatialEntity1.getCentroidY(),
-                                                         spatialEntity2.getCentroidX(), spatialEntity2.getCentroidY());
+            distanceSum += Geometry2D::distanceBtwPoints((*spatialEntity1).getCentroidX(), (*spatialEntity1).getCentroidY(),
+                                                         (*spatialEntity2).getCentroidX(), (*spatialEntity2).getCentroidY());
         }
     }
 
@@ -183,12 +190,12 @@ double TimePoint::avgDistanceBetweenCentroids(const std::vector<SpatialEntity> &
                                       : (distanceSum / (nrOfSpatialEntities * nrOfSpatialEntities));
 }
 
-double TimePoint::avgDensity(const std::vector<SpatialEntity> &spatialEntities) const {
-    double densitySum = 0;
-    int nrOfSpatialEntities = spatialEntities.size();
+double TimePoint::avgDensity(const std::vector<std::shared_ptr<SpatialEntity>> &spatialEntities) const {
+    double      densitySum          = 0;
+    std::size_t nrOfSpatialEntities = spatialEntities.size();
 
     for (const auto &spatialEntity : spatialEntities) {
-        densitySum += spatialEntity.getDensity();
+        densitySum += (*spatialEntity).getDensity();
     }
 
     return (nrOfSpatialEntities == 0) ? 0
@@ -196,57 +203,70 @@ double TimePoint::avgDensity(const std::vector<SpatialEntity> &spatialEntities) 
 }
 
 void TimePoint::timePointSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
-    clusters = clustersSetOperation(timePoint, setOperationType);
-    regions  = regionsSetOperation(timePoint, setOperationType);
+    updateSpatialEntities(timePoint, setOperationType);
+    updateConsideredSpatialEntityTypes(timePoint.consideredSpatialEntityTypes, setOperationType);
 }
 
-std::list<Cluster> TimePoint::clustersSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
-    std::list<Cluster> newClusters;
+void TimePoint::updateSpatialEntities(const TimePoint &timePoint, const SetOperationType &setOperationType) {
+    for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
+        SubsetSpecificType subsetSpecificType = computeSubsetSpecificType(i);
+
+        spatialEntitiesSetOperation(timePoint, setOperationType, subsetSpecificType);
+    }
+}
+
+std::list<std::shared_ptr<SpatialEntity>>
+TimePoint::spatialEntitiesSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType,
+                                       const SubsetSpecificType &spatialEntitiesType) {
+    std::list<std::shared_ptr<SpatialEntity>> newSpatialEntities;
 
     switch(setOperationType) {
         case SetOperationType::Difference:
-            std::set_difference(getClustersBeginIterator(), getClustersEndIterator(), timePoint.getClustersBeginIterator(),
-                                timePoint.getClustersEndIterator(), std::inserter(newClusters, newClusters.begin()));
+            std::set_difference(getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                                getSpatialEntitiesEndIterator(spatialEntitiesType),
+                                timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                                timePoint.getSpatialEntitiesEndIterator(spatialEntitiesType),
+                                std::inserter(newSpatialEntities, newSpatialEntities.begin()));
             break;
 
         case SetOperationType::Intersection:
-            std::set_intersection(clusters.begin(), clusters.end(), timePoint.clusters.begin(),
-                                  timePoint.clusters.end(), std::inserter(newClusters, newClusters.begin()));
+            std::set_difference(getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                                getSpatialEntitiesEndIterator(spatialEntitiesType),
+                                timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                                timePoint.getSpatialEntitiesEndIterator(spatialEntitiesType),
+                                std::inserter(newSpatialEntities, newSpatialEntities.begin()));
             break;
 
         case SetOperationType::Union:
-            std::set_union(clusters.begin(), clusters.end(), timePoint.clusters.begin(),
-                           timePoint.clusters.end(), std::inserter(newClusters, newClusters.begin()));
+            std::set_difference(getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                                getSpatialEntitiesEndIterator(spatialEntitiesType),
+                                timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                                timePoint.getSpatialEntitiesEndIterator(spatialEntitiesType),
+                                std::inserter(newSpatialEntities, newSpatialEntities.begin()));
             break;
     }
 
-    return newClusters;
+    return newSpatialEntities;
 }
 
-std::list<Region> TimePoint::regionsSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType) {
-    std::list<Region> newRegions;
-
+void TimePoint::updateConsideredSpatialEntityTypes(const std::bitset<NR_SUBSET_SPECIFIC_TYPES> &consideredSpatialEntityTypes,
+                                                   const SetOperationType &setOperationType) {
     switch(setOperationType) {
         case SetOperationType::Difference:
-            std::set_difference(regions.begin(), regions.end(), timePoint.regions.begin(),
-                                timePoint.regions.end(), std::inserter(newRegions, newRegions.begin()));
+            // No changes required
             break;
 
         case SetOperationType::Intersection:
-            std::set_intersection(regions.begin(), regions.end(), timePoint.regions.begin(),
-                                  timePoint.regions.end(), std::inserter(newRegions, newRegions.begin()));
+            this->consideredSpatialEntityTypes &= consideredSpatialEntityTypes;
             break;
 
         case SetOperationType::Union:
-            std::set_union(regions.begin(), regions.end(), timePoint.regions.begin(),
-                           timePoint.regions.end(), std::inserter(newRegions, newRegions.begin()));
+            this->consideredSpatialEntityTypes |= consideredSpatialEntityTypes;
             break;
     }
-
-    return newRegions;
 }
 
 
 // Constants
-const std::string TimePoint::ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX = "The numeric state variable identified by the given name (";
-const std::string TimePoint::ERR_GET_NUMERIC_STATE_VARIABLE_SUFFIX = ") does not exist.";
+const std::string TimePoint::ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX      = "The numeric state variable identified by the given name (";
+const std::string TimePoint::ERR_GET_NUMERIC_STATE_VARIABLE_SUFFIX      = ") does not exist.";

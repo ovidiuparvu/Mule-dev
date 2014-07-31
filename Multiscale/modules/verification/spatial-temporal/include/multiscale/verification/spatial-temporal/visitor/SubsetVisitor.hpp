@@ -85,18 +85,7 @@ namespace multiscale {
                  */
                 void setTimePointConsideredSpatialEntityType(TimePoint &timePoint,
                                                              const SubsetSpecificType &subsetType) const {
-                    switch(subsetType) {
-                        case SubsetSpecificType::Clusters:
-                            timePoint.setConsideredSpatialEntityType(ConsideredSpatialEntityType::Clusters);
-                            break;
-
-                        case SubsetSpecificType::Regions:
-                            timePoint.setConsideredSpatialEntityType(ConsideredSpatialEntityType::Regions);
-                            break;
-
-                        default:
-                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
-                    }
+                    timePoint.setConsideredSpatialEntityType(subsetType);
                 }
 
                 //! Filter the given timepoint considering the provided constraint

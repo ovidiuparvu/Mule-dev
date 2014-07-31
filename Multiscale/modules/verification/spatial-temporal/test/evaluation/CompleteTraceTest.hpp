@@ -49,40 +49,40 @@ namespace multiscaletest {
 
             // Add regions to the timepoint
             for (int j = 0; j <= i; j++) {
-                Region region;
+                std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 
-                region.setClusteredness(static_cast<double>(1) / ((j + 1) * 10));
-                region.setDensity(static_cast<double>(0.53));
-                region.setArea(static_cast<double>(100 + (j * 100.34)));
-                region.setPerimeter(static_cast<double>(4000));
-                region.setAngle(static_cast<double>(189));
-                region.setDistanceFromOrigin(static_cast<double>(500));
-                region.setTriangleMeasure(static_cast<double>(0.3));
-                region.setRectangleMeasure(static_cast<double>(0.7));
-                region.setCircleMeasure(static_cast<double>(0.3));
-                region.setCentroidX(5.5);
-                region.setCentroidY(8.3);
+                region->setClusteredness(static_cast<double>(1) / ((j + 1) * 10));
+                region->setDensity(static_cast<double>(0.53));
+                region->setArea(static_cast<double>(100 + (j * 100.34)));
+                region->setPerimeter(static_cast<double>(4000));
+                region->setAngle(static_cast<double>(189));
+                region->setDistanceFromOrigin(static_cast<double>(500));
+                region->setTriangleMeasure(static_cast<double>(0.3));
+                region->setRectangleMeasure(static_cast<double>(0.7));
+                region->setCircleMeasure(static_cast<double>(0.3));
+                region->setCentroidX(5.5);
+                region->setCentroidY(8.3);
 
-                timePoints[i].addRegion(region);
+                timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
             }
 
             // Add clusters to the timepoint
             for (int k = ((((i + 1) % 4) == 0) ? (i - 1) : 0); k < i; k++) {
-                Cluster cluster;
+                std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
 
-                cluster.setClusteredness(static_cast<double>((k * 2.4) + 1));
-                cluster.setDensity(static_cast<double>(0.53));
-                cluster.setArea(static_cast<double>(100 + (k / 100.34)));
-                cluster.setPerimeter(static_cast<double>(4000));
-                cluster.setAngle(static_cast<double>(189));
-                cluster.setDistanceFromOrigin(static_cast<double>(500));
-                cluster.setTriangleMeasure(static_cast<double>(0.3));
-                cluster.setRectangleMeasure(static_cast<double>(0.7));
-                cluster.setCircleMeasure(static_cast<double>(0.3));
-                cluster.setCentroidX(5.5);
-                cluster.setCentroidY(8.3);
+                cluster->setClusteredness(static_cast<double>((k * 2.4) + 1));
+                cluster->setDensity(static_cast<double>(0.53));
+                cluster->setArea(static_cast<double>(100 + (k / 100.34)));
+                cluster->setPerimeter(static_cast<double>(4000));
+                cluster->setAngle(static_cast<double>(189));
+                cluster->setDistanceFromOrigin(static_cast<double>(500));
+                cluster->setTriangleMeasure(static_cast<double>(0.3));
+                cluster->setRectangleMeasure(static_cast<double>(0.7));
+                cluster->setCircleMeasure(static_cast<double>(0.3));
+                cluster->setCentroidX(5.5);
+                cluster->setCentroidY(8.3);
 
-                timePoints[i].addCluster(cluster);
+                timePoints[i].addSpatialEntity(cluster, SubsetSpecificType::Clusters);
             }
         }
 
@@ -687,11 +687,11 @@ TEST_F(CompleteTraceTest, SubsetOperationDifference) {
 }
 
 TEST_F(CompleteTraceTest, SubsetOperationIntersection) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(intersection(clusters, clusters)) >= 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(intersection(clusters, clusters)) >= 3]"));
 }
 
 TEST_F(CompleteTraceTest, SubsetOperationUnion) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(clusters, regions)) >= 21]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(clusters, regions)) < 1]"));
 }
 
 
@@ -828,7 +828,7 @@ TEST_F(CompleteTraceTest, UnaryNumericMeasureFloor) {
 }
 
 TEST_F(CompleteTraceTest, UnaryNumericMeasureRound) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) <= add(round(count(clusters)), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) >= add(round(count(clusters)), 0)]"));
 }
 
 TEST_F(CompleteTraceTest, UnaryNumericMeasureSign) {
@@ -925,7 +925,7 @@ TEST_F(CompleteTraceTest, GlobalConstantValueNumericStateVariable) {
 }
 
 TEST_F(CompleteTraceTest, GlobalConstantValueUnaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(round(density(clusters))) = 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [G [1, 10] (d(round(density(clusters))) = 0)]"));
 }
 
 TEST_F(CompleteTraceTest, GlobalConstantValueBinaryNumeric) {

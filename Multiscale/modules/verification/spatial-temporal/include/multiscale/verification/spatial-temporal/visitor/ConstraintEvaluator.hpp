@@ -18,162 +18,107 @@ namespace multiscale {
 
             public:
 
-                //! Filter the timepoint considering the given constraints
+                //! Filter the timepoint's spatial entities considering the given spatial measure constraint
                 /*!
-                 * \param timePoint             The timepoint which will be filtered
+                 * All considered spatial entities which fail to meet the constraints
+                 * will be removed from the given timepoint.
+                 *
+                 * \param timePoint             The timepoint storing the collection of spatial entities which will be filtered
                  * \param spatialMeasure        The type of the spatial measure
                  * \param comparator            The type of the comparator
                  * \param filterNumericMeasure  The filter numeric measure
                  */
-                static void filter(TimePoint &timePoint,
-                                   const SpatialMeasureType &spatialMeasure,
-                                   const ComparatorType &comparator,
-                                   const FilterNumericMeasureAttributeType &filterNumericMeasure) {
-                    ConsideredSpatialEntityType type = timePoint.getConsideredSpatialEntityType();
+                static void evalSpatialMeasureConstraint(TimePoint &timePoint,
+                                                         const SpatialMeasureType &spatialMeasure,
+                                                         const ComparatorType &comparator,
+                                                         const FilterNumericMeasureAttributeType &filterNumericMeasure) {
+                    std::bitset<NR_SUBSET_SPECIFIC_TYPES> consideredSpatialEntityTypes = timePoint.getConsideredSpatialEntityTypes();
 
-                    switch(type) {
-                        case ConsideredSpatialEntityType::All:
-                            filterSpatialEntities<Cluster>(timePoint, spatialMeasure, comparator, filterNumericMeasure);
-                            filterSpatialEntities<Region>(timePoint, spatialMeasure, comparator, filterNumericMeasure);
-                            break;
+                    for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
+                        if (consideredSpatialEntityTypes[i] == true) {
+                            SubsetSpecificType subsetSpecificType = subsetspecific::computeSubsetSpecificType(i);
 
-                        case ConsideredSpatialEntityType::Clusters:
-                            filterSpatialEntities<Cluster>(timePoint, spatialMeasure, comparator, filterNumericMeasure);
-                            break;
-
-                        case ConsideredSpatialEntityType::Regions:
-                            filterSpatialEntities<Region>(timePoint, spatialMeasure, comparator, filterNumericMeasure);
-                            break;
-
-                        default:
-                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
+                            filterSpatialEntitiesWrtSpatialMeasure(timePoint, subsetSpecificType, spatialMeasure,
+                                                                   comparator, filterNumericMeasure);
+                        }
                     }
                 }
 
-                //! Filter the timepoint considering the given constraints
+                //! Filter the timepoint's spatial entities considering the type of each spatial entity
                 /*!
-                 * \param timePoint             The timepoint which will be filtered
+                 * \param timePoint             The timepoint storing the collection of spatial entities which will be filtered
                  * \param comparator            The type of the comparator
                  * \param filterNumericMeasure  The filter numeric measure
                  */
-                static void filter(TimePoint &timePoint,
-                                   const ComparatorType &comparator,
-                                   const FilterNumericMeasureAttributeType &filterNumericMeasure) {
-                    ConsideredSpatialEntityType type = timePoint.getConsideredSpatialEntityType();
+                static void evalTypeConstraint(TimePoint &timePoint,
+                                               const ComparatorType &comparator,
+                                               const FilterNumericMeasureAttributeType &filterNumericMeasure) {
+                    std::bitset<NR_SUBSET_SPECIFIC_TYPES> consideredSpatialEntityTypes = timePoint.getConsideredSpatialEntityTypes();
 
-                    switch(type) {
-                        case ConsideredSpatialEntityType::All:
-                            filterSpatialEntities<Cluster>(timePoint, comparator, filterNumericMeasure);
-                            filterSpatialEntities<Region>(timePoint, comparator, filterNumericMeasure);
-                            break;
+                    for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
+                        if (consideredSpatialEntityTypes[i] == true) {
+                            SubsetSpecificType subsetSpecificType = subsetspecific::computeSubsetSpecificType(i);
 
-                        case ConsideredSpatialEntityType::Clusters:
-                            filterSpatialEntities<Cluster>(timePoint, comparator, filterNumericMeasure);
-                            break;
-
-                        case ConsideredSpatialEntityType::Regions:
-                            filterSpatialEntities<Region>(timePoint, comparator, filterNumericMeasure);
-                            break;
-
-                        default:
-                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
+                            filterSpatialEntitiesWrtType(timePoint, subsetSpecificType, comparator,
+                                                         filterNumericMeasure);
+                        }
                     }
                 }
 
             private:
 
-                //! Filter the spatial entities considering the given timepoint and constraints
+                //! Remove from the timepoint the spatial entities which fail to meet the spatial measure constraint
                 /*!
                  * \param timePoint             The timepoint which will be filtered
-                 * \param comparator            The type of the comparator
-                 * \param filterNumericMeasure  The filter numeric measure
-                 */
-                template <typename T>
-                static void filterSpatialEntities(TimePoint &timePoint,
-                                                  const ComparatorType &comparator,
-                                                  const FilterNumericMeasureAttributeType &filterNumericMeasure) {
-                    typename std::list<T>::iterator beginIt;
-                    typename std::list<T>::iterator endIt;
-
-                    getBeginIterator(timePoint, beginIt);
-                    getEndIterator(timePoint, endIt);
-
-                    while (beginIt != endIt) {
-                        double typeValue                    = static_cast<double>(beginIt->getType());
-                        double filterNumericMeasureValue    = evaluate(filterNumericMeasure, timePoint, *beginIt);
-
-                        if (!ComparatorEvaluator::evaluate(typeValue, comparator, filterNumericMeasureValue)) {
-                            timePoint.removeSpatialEntity(beginIt);
-                        } else {
-                            beginIt++;
-                        }
-                    }
-                }
-
-                //! Filter the spatial entities considering the given timepoint and constraints
-                /*!
-                 * \param timePoint             The timepoint which will be filtered
+                 * \param spatialEntityType     The considered spatial entity type
                  * \param spatialMeasure        The type of the spatial measure
                  * \param comparator            The type of the comparator
                  * \param filterNumericMeasure  The filter numeric measure
                  */
-                template <typename T>
-                static void filterSpatialEntities(TimePoint &timePoint,
-                                                  const SpatialMeasureType &spatialMeasure,
-                                                  const ComparatorType &comparator,
-                                                  const FilterNumericMeasureAttributeType &filterNumericMeasure) {
-                    typename std::list<T>::iterator beginIt;
-                    typename std::list<T>::iterator endIt;
-
-                    getBeginIterator(timePoint, beginIt);
-                    getEndIterator(timePoint, endIt);
+                static void filterSpatialEntitiesWrtSpatialMeasure(TimePoint &timePoint,
+                                                                   const SubsetSpecificType &spatialEntityType,
+                                                                   const SpatialMeasureType &spatialMeasure,
+                                                                   const ComparatorType &comparator,
+                                                                   const FilterNumericMeasureAttributeType &filterNumericMeasure) {
+                    std::list<std::shared_ptr<SpatialEntity>>::iterator beginIt = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
+                    std::list<std::shared_ptr<SpatialEntity>>::iterator endIt   = timePoint.getSpatialEntitiesEndIterator(spatialEntityType);
 
                     while (beginIt != endIt) {
-                        double spatialMeasureValue         = SpatialMeasureEvaluator::evaluate(*beginIt, spatialMeasure);
-                        double filterNumericMeasureValue   = evaluate(filterNumericMeasure, timePoint, *beginIt);
+                        double spatialMeasureValue          = SpatialMeasureEvaluator::evaluate(*(*beginIt), spatialMeasure);
+                        double filterNumericMeasureValue    = evalFilterNumericMeasure(filterNumericMeasure, timePoint, *(*beginIt));
 
                         if (!ComparatorEvaluator::evaluate(spatialMeasureValue, comparator, filterNumericMeasureValue)) {
-                            timePoint.removeSpatialEntity(beginIt);
+                            beginIt = timePoint.removeSpatialEntity(beginIt, spatialEntityType);
                         } else {
                             beginIt++;
                         }
                     }
                 }
 
-                //! Get the clusters begin iterator
+                //! Remove from the timepoint the spatial entities which fail to meet the type constraint
                 /*!
-                 * \param timePoint     The considered timepoint
-                 * \param beginIterator The iterator pointing at the beginning of the clusters collection
+                 * \param timePoint             The timepoint which will be filtered
+                 * \param spatialEntityType     The considered spatial entity type
+                 * \param comparator            The type of the comparator
+                 * \param filterNumericMeasure  The filter numeric measure
                  */
-                static void getBeginIterator(TimePoint &timePoint, std::list<Cluster>::iterator &beginIterator) {
-                    beginIterator = timePoint.getClustersBeginIterator();
-                }
+                static void filterSpatialEntitiesWrtType(TimePoint &timePoint,
+                                                         const SubsetSpecificType &spatialEntityType,
+                                                         const ComparatorType &comparator,
+                                                         const FilterNumericMeasureAttributeType &filterNumericMeasure) {
+                    std::list<std::shared_ptr<SpatialEntity>>::iterator beginIt = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
+                    std::list<std::shared_ptr<SpatialEntity>>::iterator endIt   = timePoint.getSpatialEntitiesEndIterator(spatialEntityType);
 
-                //! Get the regions begin iterator
-                /*!
-                 * \param timePoint     The considered timepoint
-                 * \param beginIterator The iterator pointing at the beginning of the regions collection
-                 */
-                static void getBeginIterator(TimePoint &timePoint, std::list<Region>::iterator &beginIterator) {
-                    beginIterator = timePoint.getRegionsBeginIterator();
-                }
+                    while (beginIt != endIt) {
+                        double typeValue                    = static_cast<double>((*beginIt)->getType());
+                        double filterNumericMeasureValue    = evalFilterNumericMeasure(filterNumericMeasure, timePoint, *(*beginIt));
 
-                //! Get the clusters end iterator
-                /*!
-                 * \param timePoint     The considered timepoint
-                 * \param endIterator   The iterator pointing at the end of the clusters collection
-                 */
-                static void getEndIterator(TimePoint &timePoint, std::list<Cluster>::iterator &endIterator) {
-                    endIterator = timePoint.getClustersEndIterator();
-                }
-
-                //! Get the regions end iterator
-                /*!
-                 * \param timePoint     The considered timepoint
-                 * \param endIterator   The iterator pointing at the end of the regions collection
-                 */
-                static void getEndIterator(TimePoint &timePoint, std::list<Region>::iterator &endIterator) {
-                    endIterator = timePoint.getRegionsEndIterator();
+                        if (!ComparatorEvaluator::evaluate(typeValue, comparator, filterNumericMeasureValue)) {
+                            beginIt = timePoint.removeSpatialEntity(beginIt, spatialEntityType);
+                        } else {
+                            beginIt++;
+                        }
+                    }
                 }
 
                 //! Evaluate the filter numeric measure considering the provided timepoint and spatial entity
@@ -182,8 +127,8 @@ namespace multiscale {
                  * \param timePoint             The considered timepoint
                  * \param spatialEntity         The considered spatial entity
                  */
-                static double evaluate(const FilterNumericMeasureAttributeType &filterNumericMeasure,
-                                       const TimePoint &timePoint, const SpatialEntity &spatialEntity) {
+                static double evalFilterNumericMeasure(const FilterNumericMeasureAttributeType &filterNumericMeasure,
+                                                       const TimePoint &timePoint, const SpatialEntity &spatialEntity) {
                     return boost::apply_visitor(FilterNumericVisitor(timePoint, spatialEntity), filterNumericMeasure);
                 }
 

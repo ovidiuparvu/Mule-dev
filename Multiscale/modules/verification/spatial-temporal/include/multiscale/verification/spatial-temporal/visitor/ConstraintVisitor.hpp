@@ -194,7 +194,7 @@ namespace multiscale {
                                                       const TimePoint &timePoint) const {
                     TimePoint unaryConstraintTimePoint(timePoint);
 
-                    ConstraintEvaluator::filter(unaryConstraintTimePoint, comparator, filterNumericMeasure);
+                    ConstraintEvaluator::evalTypeConstraint(unaryConstraintTimePoint, comparator, filterNumericMeasure);
 
                     return unaryConstraintTimePoint;
                 }
@@ -211,7 +211,7 @@ namespace multiscale {
                                                   const TimePoint &timePoint) const {
                     TimePoint unaryConstraintTimePoint(timePoint);
 
-                    ConstraintEvaluator::filter(unaryConstraintTimePoint, spatialMeasure, comparator, filterNumericMeasure);
+                    ConstraintEvaluator::evalSpatialMeasureConstraint(unaryConstraintTimePoint, spatialMeasure, comparator, filterNumericMeasure);
 
                     return unaryConstraintTimePoint;
                 }

@@ -9,50 +9,36 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-// Print the regions corresponding to the given timepoint
-void printRegions(TimePoint &timePoint) {
-    for (auto it = timePoint.getRegionsBeginIterator(); it != timePoint.getRegionsEndIterator(); it++) {
-        std::cout << "\tRegion" << std::endl;
+// Print the spatial entities corresponding to the given timepoint and of the requested type
+void printSpatialEntities(TimePoint &timePoint, const SubsetSpecificType &spatialEntityType) {
+    for (auto it = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
+         it != timePoint.getSpatialEntitiesEndIterator(spatialEntityType); it++) {
+        std::cout << "\t SpatialEntity" << std::endl;
 
-        std::cout << "\t\tClusteredness: "      << (*it).getClusteredness() << std::endl;
-        std::cout << "\t\tDensity: "            << (*it).getDensity() << std::endl;
-        std::cout << "\t\tArea: "               << (*it).getArea() << std::endl;
-        std::cout << "\t\tPerimeter: "          << (*it).getPerimeter() << std::endl;
-        std::cout << "\t\tDistanceFromOrigin: " << (*it).getDistanceFromOrigin() << std::endl;
-        std::cout << "\t\tAngle: "              << (*it).getAngle() << std::endl;
-        std::cout << "\t\tTriangleMeasure: "    << (*it).getTriangleMeasure() << std::endl;
-        std::cout << "\t\tRectangleMeasure: "   << (*it).getRectangleMeasure() << std::endl;
-        std::cout << "\t\tCircleMeasure: "      << (*it).getCircleMeasure() << std::endl;
-        std::cout << "\t\tCentroidX: "          << (*it).getCentroidX() << std::endl;
-        std::cout << "\t\tCentroidY: "          << (*it).getCentroidY() << std::endl;
-    }
-}
-
-// Print the clusters corresponding to the given timepoint
-void printClusters(TimePoint &timePoint) {
-    for (auto it = timePoint.getClustersBeginIterator(); it != timePoint.getClustersEndIterator(); it++) {
-        std::cout << "\tCluster" << std::endl;
-
-        std::cout << "\t\tClusteredness: "      << (*it).getClusteredness() << std::endl;
-        std::cout << "\t\tDensity: "            << (*it).getDensity() << std::endl;
-        std::cout << "\t\tArea: "               << (*it).getArea() << std::endl;
-        std::cout << "\t\tPerimeter: "          << (*it).getPerimeter() << std::endl;
-        std::cout << "\t\tDistanceFromOrigin: " << (*it).getDistanceFromOrigin() << std::endl;
-        std::cout << "\t\tAngle: "              << (*it).getAngle() << std::endl;
-        std::cout << "\t\tTriangleMeasure: "    << (*it).getTriangleMeasure() << std::endl;
-        std::cout << "\t\tRectangleMeasure: "   << (*it).getRectangleMeasure() << std::endl;
-        std::cout << "\t\tCircleMeasure: "      << (*it).getCircleMeasure() << std::endl;
-        std::cout << "\t\tCentroidX: "          << (*it).getCentroidX() << std::endl;
-        std::cout << "\t\tCentroidY: "          << (*it).getCentroidY() << std::endl;
+        std::cout << "\t\tClusteredness: "      << (*(*it)).getClusteredness() << std::endl;
+        std::cout << "\t\tDensity: "            << (*(*it)).getDensity() << std::endl;
+        std::cout << "\t\tArea: "               << (*(*it)).getArea() << std::endl;
+        std::cout << "\t\tPerimeter: "          << (*(*it)).getPerimeter() << std::endl;
+        std::cout << "\t\tDistanceFromOrigin: " << (*(*it)).getDistanceFromOrigin() << std::endl;
+        std::cout << "\t\tAngle: "              << (*(*it)).getAngle() << std::endl;
+        std::cout << "\t\tTriangleMeasure: "    << (*(*it)).getTriangleMeasure() << std::endl;
+        std::cout << "\t\tRectangleMeasure: "   << (*(*it)).getRectangleMeasure() << std::endl;
+        std::cout << "\t\tCircleMeasure: "      << (*(*it)).getCircleMeasure() << std::endl;
+        std::cout << "\t\tCentroidX: "          << (*(*it)).getCentroidX() << std::endl;
+        std::cout << "\t\tCentroidY: "          << (*(*it)).getCentroidY() << std::endl;
     }
 }
 
 // Print the given timepoint
 void printTimePoint(TimePoint &timePoint) {
-    std::cout << "Timepoint " << timePoint.getValue() << std::endl;
+    std::cout << "Timepoint " << timePoint.getValue() << std::endl
+              << std::endl << "=== Clusters ===" << std::endl;
 
-    printClusters(timePoint);
-    printRegions(timePoint);
+    printSpatialEntities(timePoint, SubsetSpecificType::Clusters);
+
+    std::cout << "=== Regions ===" << std::endl;
+
+    printSpatialEntities(timePoint, SubsetSpecificType::Regions);
 }
 
 // Print the given trace

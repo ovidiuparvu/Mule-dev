@@ -67,7 +67,7 @@ namespace multiscale {
 
 
     // Constants
-   const std::string ERR_UNDEFINED_ENUM_VALUE = "The provided enumeration value is invalid. Please use one of the available enumeration values instead.";
+    const std::string ERR_UNDEFINED_ENUM_VALUE = "The provided enumeration value is invalid. Please use one of the available enumeration values instead.";
 
 };
 

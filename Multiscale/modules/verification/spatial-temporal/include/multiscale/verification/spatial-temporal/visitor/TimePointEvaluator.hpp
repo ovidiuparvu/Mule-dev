@@ -22,7 +22,7 @@ namespace multiscale {
                                                                    const SpatialMeasureType &spatialMeasure) {
                     std::vector<double> spatialMeasureValues;
 
-                    std::vector<SpatialEntity> consideredSpatialEntities = timePoint.getConsideredSpatialEntities();
+                    std::vector<std::shared_ptr<SpatialEntity>> consideredSpatialEntities = timePoint.getConsideredSpatialEntities();
 
                     getSpatialMeasureValues(consideredSpatialEntities, spatialMeasureValues, spatialMeasure);
 
@@ -35,13 +35,13 @@ namespace multiscale {
                  * \param spatialMeasureValues      The collection of values for the given spatial measure
                  * \param spatialMeasure            The considered spatial measure
                  */
-                static void getSpatialMeasureValues(const std::vector<SpatialEntity> &consideredSpatialEntities,
+                static void getSpatialMeasureValues(const std::vector<std::shared_ptr<SpatialEntity>> &consideredSpatialEntities,
                                                     std::vector<double> &spatialMeasureValues,
                                                     const SpatialMeasureType &spatialMeasure) {
                     double spatialMeasureValue = 0;
 
                     for (const auto &spatialEntity : consideredSpatialEntities) {
-                        spatialMeasureValue = SpatialEntityEvaluator::evaluate(spatialEntity, spatialMeasure);
+                        spatialMeasureValue = SpatialEntityEvaluator::evaluate(*spatialEntity, spatialMeasure);
 
                         spatialMeasureValues.push_back(spatialMeasureValue);
                     }

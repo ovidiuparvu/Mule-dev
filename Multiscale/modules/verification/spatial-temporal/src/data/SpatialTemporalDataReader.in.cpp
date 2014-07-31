@@ -4,10 +4,13 @@
 #include "multiscale/util/Filesystem.hpp"
 #include "multiscale/util/XmlValidator.hpp"
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
+#include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
+#include "multiscale/verification/spatial-temporal/model/Region.hpp"
 
 #include <iostream>
 #include <iterator>
 #include <limits>
+#include <memory>
 
 using namespace multiscale::verification;
 
@@ -178,51 +181,44 @@ void SpatialTemporalDataReader::addNumericStateVariableToTimePoint(const pt::ptr
 
 void SpatialTemporalDataReader::addSpatialEntityToTimePoint(const pt::ptree &spatialEntityTree,
                                                             TimePoint &timePoint) {
-    std::string spatialEntityType = spatialEntityTree.get<std::string>(LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE);
+    std::shared_ptr<SpatialEntity>  spatialEntity;
+    SubsetSpecificType              spatialEntityType;
 
-    if (spatialEntityType.compare(PSEUDO3D_SPATIAL_ENTITY_TYPE_CLUSTER) == 0) {
-        addClusterToTimePoint(spatialEntityTree, timePoint);
-    } else if (spatialEntityType.compare(PSEUDO3D_SPATIAL_ENTITY_TYPE_REGION) == 0) {
-        addRegionToTimePoint(spatialEntityTree, timePoint);
+    createDerivedSpatialEntity(spatialEntityTree, spatialEntity, spatialEntityType);
+    setSpatialEntityValues(spatialEntityTree, spatialEntity);
+
+    timePoint.addSpatialEntity(spatialEntity, spatialEntityType);
+}
+
+void SpatialTemporalDataReader::createDerivedSpatialEntity(const pt::ptree &spatialEntityTree,
+                                                           std::shared_ptr<SpatialEntity> &spatialEntity,
+                                                           SubsetSpecificType &spatialEntityType) {
+    std::string spatialEntityTypeLabel = spatialEntityTree.get<std::string>(LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE);
+
+    if (spatialEntityTypeLabel.compare(PSEUDO3D_SPATIAL_ENTITY_TYPE_CLUSTER) == 0) {
+        spatialEntity       = std::make_shared<Cluster>();
+        spatialEntityType   = SubsetSpecificType::Clusters;
+    } else if (spatialEntityTypeLabel.compare(PSEUDO3D_SPATIAL_ENTITY_TYPE_REGION) == 0) {
+        spatialEntity       = std::make_shared<Region>();
+        spatialEntityType   = SubsetSpecificType::Regions;
     } else {
         MS_throw(UnexpectedBehaviourException, ERR_UNDEFINED_SPATIAL_ENTITY_TYPE);
     }
 }
 
-void SpatialTemporalDataReader::addClusterToTimePoint(const pt::ptree &clusterTree, TimePoint &timePoint) {
-    Cluster cluster;
-
-    cluster.setClusteredness(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_CLUSTEREDNESS));
-    cluster.setDensity(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_DENSITY));
-    cluster.setArea(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_AREA));
-    cluster.setPerimeter(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_PERIMETER));
-    cluster.setDistanceFromOrigin(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN));
-    cluster.setAngle(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_ANGLE));
-    cluster.setTriangleMeasure(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE));
-    cluster.setRectangleMeasure(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE));
-    cluster.setCircleMeasure(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE));
-    cluster.setCentroidX(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_X));
-    cluster.setCentroidY(clusterTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_Y));
-
-    timePoint.addCluster(cluster);
-}
-
-void SpatialTemporalDataReader::addRegionToTimePoint(const pt::ptree &regionTree, TimePoint &timePoint) {
-    Region region;
-
-    region.setClusteredness(regionTree.get<double>(LABEL_SPATIAL_ENTITY_CLUSTEREDNESS));
-    region.setDensity(regionTree.get<double>(LABEL_SPATIAL_ENTITY_DENSITY));
-    region.setArea(regionTree.get<double>(LABEL_SPATIAL_ENTITY_AREA));
-    region.setPerimeter(regionTree.get<double>(LABEL_SPATIAL_ENTITY_PERIMETER));
-    region.setDistanceFromOrigin(regionTree.get<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN));
-    region.setAngle(regionTree.get<double>(LABEL_SPATIAL_ENTITY_ANGLE));
-    region.setTriangleMeasure(regionTree.get<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE));
-    region.setRectangleMeasure(regionTree.get<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE));
-    region.setCircleMeasure(regionTree.get<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE));
-    region.setCentroidX(regionTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_X));
-    region.setCentroidY(regionTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_Y));
-
-    timePoint.addRegion(region);
+void SpatialTemporalDataReader::setSpatialEntityValues(const pt::ptree &spatialEntityTree,
+                                                       const std::shared_ptr<SpatialEntity> &spatialEntity) {
+    spatialEntity->setClusteredness(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CLUSTEREDNESS));
+    spatialEntity->setDensity(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_DENSITY));
+    spatialEntity->setArea(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_AREA));
+    spatialEntity->setPerimeter(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_PERIMETER));
+    spatialEntity->setDistanceFromOrigin(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN));
+    spatialEntity->setAngle(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_ANGLE));
+    spatialEntity->setTriangleMeasure(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE));
+    spatialEntity->setRectangleMeasure(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE));
+    spatialEntity->setCircleMeasure(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE));
+    spatialEntity->setCentroidX(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_X));
+    spatialEntity->setCentroidY(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_Y));
 }
 
 std::string SpatialTemporalDataReader::getFirstValidUnprocessedInputFilepath() {

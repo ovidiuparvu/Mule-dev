@@ -146,19 +146,23 @@ namespace multiscale {
                  */
                 void addSpatialEntityToTimePoint(const pt::ptree &spatialEntityTree, TimePoint &timePoint);
 
-                //! Add the cluster contained by the property tree to the given timePoint
+                //! Create a derived spatial entity considering the type specified in the given tree
                 /*!
-                 * \param clusterTree   The given cluster represented as a property tree
-                 * \param timePoint     The given timepoint
+                 * \param spatialEntityTree The given spatial entity represented as a property tree
+                 * \param spatialEntity     The created spatial entity
+                 * \param spatialEntityType The derived type of the spatial entity
                  */
-                void addClusterToTimePoint(const pt::ptree &clusterTree, TimePoint &timePoint);
+                void createDerivedSpatialEntity(const pt::ptree &spatialEntityTree,
+                                                std::shared_ptr<SpatialEntity> &spatialEntity,
+                                                SubsetSpecificType &spatialEntityType);
 
-                //! Add the region contained by the property tree to the given timePoint
+                //! Initialise the spatial entity values using the given spatialEntityTree
                 /*!
-                 * \param regionTree    The given region represented as a property tree
-                 * \param timePoint     The given timepoint
+                 * \param spatialEntityTree The spatial entity tree
+                 * \param spatialEntity     The spatial entity to be initialised
                  */
-                void addRegionToTimePoint(const pt::ptree &regionTree, TimePoint &timePoint);
+                void setSpatialEntityValues(const pt::ptree &spatialEntityTree,
+                                            const std::shared_ptr<SpatialEntity> &spatialEntity);
 
                 //! Get the first valid unprocessed input file
                 std::string getFirstValidUnprocessedInputFilepath();
