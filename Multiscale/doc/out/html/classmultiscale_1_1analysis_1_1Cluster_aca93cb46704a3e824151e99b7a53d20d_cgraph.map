@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#adbb1a108b2ae638fbba0450c7f7fee20" title="Get the collection of entities&#39; contour points." alt="" coords="429,5,768,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#aaceb2d7941931c472a947925df1e0988" title="Get the normalised shape measure ([0, 1]) that the cluster has a particular shape." alt="" coords="380,59,817,88"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="867,59,1085,88"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1133,59,1336,88"/>
-</map>

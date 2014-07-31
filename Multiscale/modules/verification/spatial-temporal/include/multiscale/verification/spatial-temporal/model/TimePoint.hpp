@@ -245,9 +245,9 @@ namespace multiscale {
 
                 //! Compute the given set operation on the set of spatial entities of the given type from this and the provided timepoint
                 /*!
-                 * \param timePoint         The given timepoint
-                 * \param setOperationType  The considered set operation type
-                 * \param spatialEntityType The considered spatial entity type
+                 * \param timePoint                 The given timepoint
+                 * \param setOperationType          The considered set operation type
+                 * \param spatialEntityTypeIndex    The considered spatial entity type index
                  */
                 std::list<std::shared_ptr<SpatialEntity>>
                 spatialEntitiesSetOperation(const TimePoint &timePoint, const SetOperationType &setOperationType,

@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#ad9a4555568f44ef912601d669ef94e03" title="Treat the case when the line and circle intersect in one point." alt="" coords="351,5,697,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Geometry2D.html#ae501398552bf50acfd23c04db8d65300" title="Treat the case when the line and circle intersect in two points." alt="" coords="347,59,701,88"/>
-<area shape="rect" id="node10" href="$classmultiscale_1_1Geometry2D.html#ae7299287a17f8cd47e8d84e19ddbe0e9" title="Translate a point by the given values." alt="" coords="413,112,635,141"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Geometry2D.html#a7a7526398a9675a05c609bb442fe02f0" title="Inverse translate a point by the given values." alt="" coords="749,32,1016,61"/>
-</map>

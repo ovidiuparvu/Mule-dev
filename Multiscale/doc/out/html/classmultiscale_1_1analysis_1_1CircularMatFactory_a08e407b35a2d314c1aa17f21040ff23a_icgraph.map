@@ -1,5 +1,0 @@
-<map id="multiscale::analysis::CircularMatFactory::isValidViewerImage" name="multiscale::analysis::CircularMatFactory::isValidViewerImage">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1CircularMatFactory.html#a8d5fccf946065b982bfa700b9e47b1f5" title="Create a Mat object from the image file obtained from the CircularGeometryViewer." alt="" coords="249,5,420,69"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1CircularMatFactory.html#aea41720f6adfb983bb94ea0a45789874" title="Get the maximum grayscale intensity of the colour bar in the image." alt="" coords="200,93,469,157"/>
-<area shape="rect" id="node5" href="$CircularMatFactorySample_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="517,67,568,96"/>
-</map>

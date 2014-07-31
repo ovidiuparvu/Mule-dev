@@ -1,4 +1,0 @@
-<map id="multiscale::analysis::SpatialEntityPseudo3D::type" name="multiscale::analysis::SpatialEntityPseudo3D::type">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1SpatialEntityPseudo3D.html#ae8b5c03174d91efc64509dec1a01e69c" title="Return the type of the pseudo 3D spatial entity as a string." alt="" coords="253,5,419,69"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Detector.html#ae166867e5af40637dbde9ac0da6dac9a" title="Add the type of the spatial entity to the property tree." alt="" coords="468,5,649,69"/>
-</map>

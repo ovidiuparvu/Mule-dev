@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a3de7a4d365c182917b74117a22075ec4" title="Convert alpha from the range [0, ALPHA_MAX] to [ALPHA_REAL_MIN, ALPHA_REAL_MAX]." alt="" coords="475,5,795,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a60083ca10a42c25d67e371506cbf5620" title="Convert beta from the range [0, BETA_MAX] to [BETA_REAL_MIN, BETA_REAL_MAX]." alt="" coords="477,59,792,88"/>
-</map>

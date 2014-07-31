@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$LexicographicIteratorSample_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/sample/LexicographicIteratorSample.cpp" alt="" coords="5,83,709,112"/>
-<area shape="rect" id="node5" href="$LexicographicNumberIterator_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/util/src/iterator/LexicographicNumberIterator.cpp" alt="" coords="733,83,1387,112"/>
-<area shape="rect" id="node7" href="$PolarCsvToInputFilesConverter_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/circular/src/PolarCsvToInputFilesConverter.cpp" alt="" coords="1411,83,2096,112"/>
-<area shape="rect" id="node9" href="$RectangularCsvToInputFilesConverter_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/rectangular/src/RectangularCsvToInputFilesConverter.cpp" alt="" coords="2120,83,2867,112"/>
-<area shape="rect" id="node11" href="$RectangularEntityCsvToInputFilesConverter_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/video/rectangular/src/RectangularEntityCsvToInputFilesConverter.cpp" alt="" coords="2891,83,3672,112"/>
-</map>

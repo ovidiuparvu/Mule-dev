@@ -1,7 +1,0 @@
-<map id="printPolygon" name="printPolygon">
-<area shape="rect" id="node3" href="$MinEnclosingTriangleFinderSample_8cpp.html#a2d0d2b34e6f06ccf477a26d7dca4919e" title="outputMinEnclosingTriangle\lFinderResults" alt="" coords="151,35,332,82"/>
-<area shape="rect" id="node5" href="$MinEnclosingTriangleFinderSample_8cpp.html#aef6ea89ecb324851b646e1e9a8f50aff" title="runMinEnclosingTriangleFinder" alt="" coords="381,44,581,73"/>
-<area shape="rect" id="node7" href="$MinEnclosingTriangleFinderSample_8cpp.html#a6d765cc21caf0cbe2e95f43feb90305a" title="runMinEnclosingTriangleFinder\lUsingRandomPolygons" alt="" coords="629,5,829,51"/>
-<area shape="rect" id="node11" href="$MinEnclosingTriangleFinderSample_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="704,75,755,104"/>
-<area shape="rect" id="node9" href="$MinEnclosingTriangleFinderSample_8cpp.html#afe2b408db704907729503ff139bd5972" title="runMinEnclosingTriangleFinder" alt="" coords="877,13,1077,43"/>
-</map>

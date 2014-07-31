@@ -1,9 +1,0 @@
-<map id="multiscale::MinEnclosingTriangleFinder::isGammaAngleEqualTo" name="multiscale::MinEnclosingTriangleFinder::isGammaAngleEqualTo">
-<area shape="rect" id="node3" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a586e3fde222d1464eb57a3e20ceb136c" title="Check if/where the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygo..." alt="" coords="257,47,425,94"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#aba0848fcc9021b379fd5f02a6708912d" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon abov..." alt="" coords="476,10,681,57"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a0abe1c7d5ef5a43f8ea1b404db0066e0" title="Check if the line determined by gammaPoint and polygon[polygonPointIndex] intersects the polygon belo..." alt="" coords="476,83,681,130"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a9f071f42dbaff51c8975da1b77c1188e" title="Check if tangency for side B was not obtained." alt="" coords="745,5,953,51"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#afe968e24fdc374841baa8fe21a6d8270" title="Find the minimum area enclosing triangle for the given polygon." alt="" coords="1016,75,1227,139"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a88ca299e33ef6104513bd153501d5530" title="Move &quot;a&quot; if it is low and &quot;b&quot; if it is high." alt="" coords="745,75,953,139"/>
-<area shape="rect" id="node16" href="$classmultiscale_1_1MinEnclosingTriangleFinder.html#a7064b538e01622880b6a044e84d3ad0e" title="Search for the tangency of side B." alt="" coords="732,162,967,209"/>
-</map>

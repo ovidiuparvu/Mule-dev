@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a0cc3c3bfcd5e29b19a30acd0566a9d71" title="Get the value of field alpha." alt="" coords="323,5,616,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a1b60390d9e55980ecf1da3616782a7e3" title="Get the value of field beta." alt="" coords="325,59,613,88"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#af0b30b57a664d7a5b1bb0ec6be5e8068" title="Get the value of field blurKernelSize." alt="" coords="296,112,643,141"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a730df92f22ef336a5e24ffdb9afa50c9" title="Get the value of field epsilon." alt="" coords="317,165,621,195"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a6099482d13eaf15e3c199155ba0a8816" title="Get the value of field morphologicalCloseIterations." alt="" coords="255,219,684,248"/>
-<area shape="rect" id="node13" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#a376ab8398852d02f3f4f2f5ffa4ec34b" title="Get the value of field regionAreaThresh." alt="" coords="284,272,655,301"/>
-<area shape="rect" id="node15" href="$classmultiscale_1_1analysis_1_1RegionDetector.html#aa429084aca1e04ec288878822e33bf36" title="Get the value of field thresholdValue." alt="" coords="293,325,645,355"/>
-</map>

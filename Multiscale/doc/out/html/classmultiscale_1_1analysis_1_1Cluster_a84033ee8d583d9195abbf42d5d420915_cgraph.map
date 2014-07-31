@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1Cluster.html#a26b9c11e63bfdbfc837a35f68c5c40dd" title="Validate the origin dependent values (i.e. non&#45;negative)" alt="" coords="420,5,796,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1Cluster.html#a05e8593354fabd5c1ca18b6a2b19096e" title="Check if the origin dependent values are valid (i.e. non&#45;negative)" alt="" coords="845,5,1224,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a13ae1e2b35654937bed4c19e776ccdb5" title="Check if the first number is greater than or equal to the second number." alt="" coords="1273,5,1505,35"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="1555,5,1773,35"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="1821,5,2024,35"/>
-</map>

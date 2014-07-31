@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1Geometry2D.html#aae24e97b32bdd8dab88c880d0d25ec86" title="Determine the intersection point of two lines, if this point exists." alt="" coords="365,5,624,35"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1Numeric.html#a996dda9f7361be59b4614eace0b93f24" title="Check if the two numbers are equal (almost)" alt="" coords="672,5,891,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1Numeric.html#a54d5578d5980315b7bade31a5655cd72" title="Return the maximum of the provided numbers." alt="" coords="939,5,1141,35"/>
-</map>

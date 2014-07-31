@@ -1,5 +1,0 @@
-<map id="multiscale::analysis::ClusterDetector::getValidMinPointsValue" name="multiscale::analysis::ClusterDetector::getValidMinPointsValue">
-<area shape="rect" id="node3" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a8c9c3ac0c3d8e924468a58f558984dda" title="Detect the clusters of entities in the image." alt="" coords="233,14,447,61"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a46f98e066e74171774f0b6728118bc7b" title="Detect and analyse the clusters of entities in the image." alt="" coords="496,5,685,69"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1analysis_1_1ClusterDetector.html#a736847233c57cfa59abb953f70ef9209" title="Process the provided image and detect clusters in it." alt="" coords="735,5,945,69"/>
-</map>

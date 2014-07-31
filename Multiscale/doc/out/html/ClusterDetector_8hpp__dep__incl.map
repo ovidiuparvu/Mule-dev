@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$SimulationClusterDetector_8hpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/include/multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp" alt="" coords="269,83,1160,112"/>
-<area shape="rect" id="node9" href="$ClusterDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/ClusterDetector.cpp" alt="" coords="1184,83,1789,112"/>
-<area shape="rect" id="node5" href="$SimulationClusterDetector_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/cluster/SimulationClusterDetector.cpp" alt="" coords="5,160,715,189"/>
-<area shape="rect" id="node7" href="$SimulationDetectClusters_8cpp.html" title="/home/ovidiu/Repositories/git/multiscale/Multiscale/modules/analysis/spatial/src/SimulationDetectClusters.cpp" alt="" coords="739,160,1403,189"/>
-</map>

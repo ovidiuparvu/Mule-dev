@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$classmultiscale_1_1NumberIterator.html#a9169e7244347d2dbd657ad4f36b55f5b" title="Check if there is a next number." alt="" coords="141,59,373,88"/>
-<area shape="rect" id="node9" href="$classmultiscale_1_1LexicographicNumberIterator.html#a282d970d0d1a33d2736bbdf104c18336" title="Get the number pointed by the iterator." alt="" coords="104,112,411,141"/>
-<area shape="rect" id="node5" href="$classmultiscale_1_1NumberIterator.html#a446f1ec484d5e16092674c5de25150f1" title="Check if there is a next number when in not initialised state." alt="" coords="483,5,792,35"/>
-<area shape="rect" id="node7" href="$classmultiscale_1_1NumberIterator.html#a3c84ccdf0e279e67861b3cce34a26588" title="Check if there is a next number when in initialised state." alt="" coords="493,59,781,88"/>
-<area shape="rect" id="node11" href="$classmultiscale_1_1LexicographicNumberIterator.html#a9bcb610b3b63b02ceed7d556960e57c3" title="Convert the vector of digits to the number they represent." alt="" coords="460,112,815,141"/>
-</map>
