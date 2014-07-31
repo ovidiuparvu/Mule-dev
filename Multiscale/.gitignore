@@ -1,3 +1,5 @@
-# Output folder
+# Ignore all .csv files in which results are stored
+*.csv
 
+# Output folder
 /out
