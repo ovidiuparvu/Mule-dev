@@ -14,6 +14,13 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 
 #------------------------------------------------------------
+# Generate source files considering logic configuration file 
+#------------------------------------------------------------
+
+# 
+
+
+#------------------------------------------------------------
 # Add executables
 #------------------------------------------------------------
 
@@ -22,13 +29,13 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 # Update the build number of the model checker
 configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.cpp.in
     ${CMAKE_CURRENT_SOURCE_DIR}/src/checking/ModelCheckingOutputWriter.cpp
 )
 
 # Set the path to the MSTML xml schema definition file
 configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/data/SpatialTemporalDataReader.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/data/SpatialTemporalDataReader.cpp.in
     ${CMAKE_CURRENT_SOURCE_DIR}/src/data/SpatialTemporalDataReader.cpp
 )
 

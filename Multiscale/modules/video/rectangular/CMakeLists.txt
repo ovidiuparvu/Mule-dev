@@ -49,7 +49,7 @@ target_link_libraries(RectangularMapEntityCsvToInputFiles ${Boost_PROGRAM_OPTION
 
 # Set the paths to the script header, content and footer template
 configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularGnuplotScriptGenerator.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularGnuplotScriptGenerator.cpp.in
     ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularGnuplotScriptGenerator.cpp
 )
 

@@ -34,7 +34,7 @@ target_link_libraries(PolarMapCsvToInputFiles ${Boost_PROGRAM_OPTIONS_LIBRARY})
 
 # Set the paths to the script header, content and footer template
 configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/PolarGnuplotScriptGenerator.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/PolarGnuplotScriptGenerator.cpp.in
     ${CMAKE_CURRENT_SOURCE_DIR}/src/PolarGnuplotScriptGenerator.cpp
 )
 

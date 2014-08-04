@@ -21,7 +21,7 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 # Set the path to the configuration file
 configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/CircularDetectRegions.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/CircularDetectRegions.cpp.in
     ${CMAKE_CURRENT_SOURCE_DIR}/src/CircularDetectRegions.cpp
 )
 
@@ -97,7 +97,7 @@ target_link_libraries(LexicographicIteratorSample gtest gtest_main)
 
 # Set the path to the configuration file
 configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularDetectRegions.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularDetectRegions.cpp.in
     ${CMAKE_CURRENT_SOURCE_DIR}/src/RectangularDetectRegions.cpp
 )
 
@@ -143,7 +143,7 @@ target_link_libraries(RectangularMatFactorySample gtest gtest_main)
 
 # Set the path to the configuration file
 configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/SimulationDetectClusters.in.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/SimulationDetectClusters.cpp.in
     ${CMAKE_CURRENT_SOURCE_DIR}/src/SimulationDetectClusters.cpp
 )
 
