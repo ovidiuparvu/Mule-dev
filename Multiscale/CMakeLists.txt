@@ -183,6 +183,13 @@ if(XERCESC_FOUND)
     message(STATUS "Xerces C++ library was successfully found.")
 endif()
 
+# Python interpreter
+find_package(PythonInterp REQUIRED)
+
+if(PYTHONINTERP_FOUND)
+    message(STATUS "Python interpreter was successfully found.")
+endif()
+
 
 #------------------------------------------------------------
 # Project build number

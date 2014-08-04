@@ -1,7 +1,7 @@
 #ifndef TIMEPOINTEVALUATOR_HPP
 #define TIMEPOINTEVALUATOR_HPP
 
-#include "multiscale/verification/spatial-temporal/visitor/SpatialEntityEvaluator.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/SpatialMeasureEvaluator.hpp"
 
 
 namespace multiscale {
@@ -41,7 +41,7 @@ namespace multiscale {
                     double spatialMeasureValue = 0;
 
                     for (const auto &spatialEntity : consideredSpatialEntities) {
-                        spatialMeasureValue = SpatialEntityEvaluator::evaluate(*spatialEntity, spatialMeasure);
+                        spatialMeasureValue = SpatialMeasureEvaluator::evaluate(*spatialEntity, spatialMeasure);
 
                         spatialMeasureValues.push_back(spatialMeasureValue);
                     }

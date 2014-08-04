@@ -14,10 +14,18 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 
 
 #------------------------------------------------------------
-# Generate source files considering logic configuration file 
+# Generate source files considering spatial_description 
+# generator configuration file 
 #------------------------------------------------------------
 
-# 
+# Add a custom command which specifies which source files are generated
+add_custom_command(
+    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/src/model/SpatialEntity.cpp
+    COMMAND python "${PROJECT_SOURCE_DIR}/script/verification/generator/generator.py"
+    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/model/SpatialEntity.cpp 
+    MAIN_DEPENDENCY "${PROJECT_SOURCE_DIR}/config/verification/spatial-temporal/generator/spatial_description.xml"
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
 
 #------------------------------------------------------------
