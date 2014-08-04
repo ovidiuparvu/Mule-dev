@@ -16,7 +16,7 @@ namespace multiscale {
 
             protected:
 
-                unsigned long type;         /*!< The type of the spatial entity */
+                unsigned long semanticType; /*!< The semantic type of the spatial entity */
 
                 double clusteredness;       /*!< The clusteredness of the spatial entity */
                 double density;             /*!< The density of the spatial entity */
@@ -35,8 +35,8 @@ namespace multiscale {
                 SpatialEntity();
                 ~SpatialEntity() {};
 
-                //! Get the type
-                unsigned long getType() const;
+                //! Get the semantic type
+                unsigned long getSemanticType() const;
 
                 //! Get the degree of clusteredness
                 double getClusteredness() const;
@@ -71,11 +71,11 @@ namespace multiscale {
                 //! Get the y-coordinate of the centroid
                 double getCentroidY() const;
 
-                //! Set the value of the type
+                //! Set the value of the semantic type
                 /*!
-                 * \param type The value of the type
+                 * \param semanticType The value of the semantic type
                  */
-                void setType(unsigned long type);
+                void setSemanticType(unsigned long semanticType);
 
                 //! Set the value of the clusteredness
                 /*!

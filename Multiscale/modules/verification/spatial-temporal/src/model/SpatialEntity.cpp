@@ -7,7 +7,7 @@ using namespace multiscale::verification;
 
 
 SpatialEntity::SpatialEntity() {
-    type = 0;
+    semanticType = 0;
 
     clusteredness       = 0;
     density             = 0;
@@ -22,8 +22,8 @@ SpatialEntity::SpatialEntity() {
     centroidY           = 0;
 }
 
-unsigned long SpatialEntity::getType() const {
-    return type;
+unsigned long SpatialEntity::getSemanticType() const {
+    return semanticType;
 }
 
 double SpatialEntity::getClusteredness() const {
@@ -70,8 +70,8 @@ double SpatialEntity::getCentroidY() const {
     return centroidY;
 }
 
-void SpatialEntity::setType(unsigned long type) {
-    this->type = type;
+void SpatialEntity::setSemanticType(unsigned long semanticType) {
+    this->semanticType = semanticType;
 }
 
 void SpatialEntity::setClusteredness(double clusteredness) {
@@ -142,7 +142,7 @@ void SpatialEntity::setCentroidY(double centroidY) {
 
 bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
     return (
-        (this->type                 <   rhsSpatialEntity.type) ||
+        (this->semanticType                 <   rhsSpatialEntity.semanticType) ||
         (this->clusteredness        <   rhsSpatialEntity.clusteredness) ||
         (this->density              <   rhsSpatialEntity.density) ||
         (this->area                 <   rhsSpatialEntity.area) ||

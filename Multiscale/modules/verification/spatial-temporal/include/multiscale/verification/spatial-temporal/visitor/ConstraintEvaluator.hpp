@@ -110,7 +110,7 @@ namespace multiscale {
                     std::list<std::shared_ptr<SpatialEntity>>::iterator endIt   = timePoint.getSpatialEntitiesEndIterator(spatialEntityType);
 
                     while (beginIt != endIt) {
-                        double typeValue                    = static_cast<double>((*beginIt)->getType());
+                        double typeValue                    = static_cast<double>((*beginIt)->getSemanticType());
                         double filterNumericMeasureValue    = evalFilterNumericMeasure(filterNumericMeasure, timePoint, *(*beginIt));
 
                         if (!ComparatorEvaluator::evaluate(typeValue, comparator, filterNumericMeasureValue)) {
