@@ -184,8 +184,10 @@ double TimePoint::avgDistanceBetweenCentroids(const std::vector<std::shared_ptr<
 
     for (const auto &spatialEntity1 : spatialEntities) {
         for (const auto &spatialEntity2 : spatialEntities) {
-            distanceSum += Geometry2D::distanceBtwPoints((*spatialEntity1).getCentroidX(), (*spatialEntity1).getCentroidY(),
-                                                         (*spatialEntity2).getCentroidX(), (*spatialEntity2).getCentroidY());
+            distanceSum += Geometry2D::distanceBtwPoints((*spatialEntity1).getSpatialMeasureValue(SpatialMeasureType::CentroidX),
+                                                         (*spatialEntity1).getSpatialMeasureValue(SpatialMeasureType::CentroidY),
+                                                         (*spatialEntity2).getSpatialMeasureValue(SpatialMeasureType::CentroidX),
+                                                         (*spatialEntity2).getSpatialMeasureValue(SpatialMeasureType::CentroidY));
         }
     }
 
@@ -198,7 +200,7 @@ double TimePoint::avgDensity(const std::vector<std::shared_ptr<SpatialEntity>> &
     std::size_t nrOfSpatialEntities = spatialEntities.size();
 
     for (const auto &spatialEntity : spatialEntities) {
-        densitySum += (*spatialEntity).getDensity();
+        densitySum += (*spatialEntity).getSpatialMeasureValue(SpatialMeasureType::Density);
     }
 
     return (nrOfSpatialEntities == 0) ? 0

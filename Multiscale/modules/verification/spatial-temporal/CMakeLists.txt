@@ -22,7 +22,7 @@ link_directories(${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/util)
 add_custom_command(
     OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/src/model/SpatialEntity.cpp
     COMMAND python "${PROJECT_SOURCE_DIR}/script/verification/generator/generator.py"
-    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/model/SpatialEntity.cpp 
+#    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/model/SpatialEntity.cpp
     MAIN_DEPENDENCY "${PROJECT_SOURCE_DIR}/config/verification/spatial-temporal/generator/spatial_description.xml"
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
@@ -308,6 +308,7 @@ target_link_libraries(LogicPropertyDataReaderSample util)
 # SpatialTemporalDataReaderSample
 
 set(SPATIAL_TEMPORAL_DATA_READER_SAMPLE_SRC
+    src/attribute/SpatialMeasureAttribute.cpp
     src/attribute/SubsetSpecificAttribute.cpp
         
     src/data/SpatialTemporalDataReader.cpp

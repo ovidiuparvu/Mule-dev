@@ -15,17 +15,7 @@ void printSpatialEntities(TimePoint &timePoint, const SubsetSpecificType &spatia
          it != timePoint.getSpatialEntitiesEndIterator(spatialEntityType); it++) {
         std::cout << "\t SpatialEntity" << std::endl;
 
-        std::cout << "\t\tClusteredness: "      << (*(*it)).getClusteredness() << std::endl;
-        std::cout << "\t\tDensity: "            << (*(*it)).getDensity() << std::endl;
-        std::cout << "\t\tArea: "               << (*(*it)).getArea() << std::endl;
-        std::cout << "\t\tPerimeter: "          << (*(*it)).getPerimeter() << std::endl;
-        std::cout << "\t\tDistanceFromOrigin: " << (*(*it)).getDistanceFromOrigin() << std::endl;
-        std::cout << "\t\tAngle: "              << (*(*it)).getAngle() << std::endl;
-        std::cout << "\t\tTriangleMeasure: "    << (*(*it)).getTriangleMeasure() << std::endl;
-        std::cout << "\t\tRectangleMeasure: "   << (*(*it)).getRectangleMeasure() << std::endl;
-        std::cout << "\t\tCircleMeasure: "      << (*(*it)).getCircleMeasure() << std::endl;
-        std::cout << "\t\tCentroidX: "          << (*(*it)).getCentroidX() << std::endl;
-        std::cout << "\t\tCentroidY: "          << (*(*it)).getCentroidY() << std::endl;
+        std::cout << (*(*it)).toString() << std::endl;
     }
 }
 

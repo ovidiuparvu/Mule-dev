@@ -208,17 +208,28 @@ void SpatialTemporalDataReader::createDerivedSpatialEntity(const pt::ptree &spat
 
 void SpatialTemporalDataReader::setSpatialEntityValues(const pt::ptree &spatialEntityTree,
                                                        const std::shared_ptr<SpatialEntity> &spatialEntity) {
-    spatialEntity->setClusteredness(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CLUSTEREDNESS));
-    spatialEntity->setDensity(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_DENSITY));
-    spatialEntity->setArea(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_AREA));
-    spatialEntity->setPerimeter(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_PERIMETER));
-    spatialEntity->setDistanceFromOrigin(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN));
-    spatialEntity->setAngle(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_ANGLE));
-    spatialEntity->setTriangleMeasure(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE));
-    spatialEntity->setRectangleMeasure(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE));
-    spatialEntity->setCircleMeasure(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE));
-    spatialEntity->setCentroidX(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_X));
-    spatialEntity->setCentroidY(spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_Y));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Clusteredness,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CLUSTEREDNESS));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Density,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_DENSITY));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Area,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_AREA));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Perimeter,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_PERIMETER));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Angle,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_ANGLE));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CentroidX,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_X));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CentroidY,
+                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_Y));
 }
 
 std::string SpatialTemporalDataReader::getFirstValidUnprocessedInputFilepath() {

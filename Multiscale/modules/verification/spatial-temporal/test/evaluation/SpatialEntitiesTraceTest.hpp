@@ -36,17 +36,17 @@ namespace multiscaletest {
             for (int j = 0; j <= i; j++) {
                 std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 
-                region->setClusteredness(static_cast<double>(1) / ((j + 1) * 10));
-                region->setDensity(static_cast<double>(0.53));
-                region->setArea(static_cast<double>(100 + (j * 100.34)));
-                region->setPerimeter(static_cast<double>(4000));
-                region->setAngle(static_cast<double>(189));
-                region->setDistanceFromOrigin(static_cast<double>(500));
-                region->setTriangleMeasure(static_cast<double>(0.3));
-                region->setRectangleMeasure(static_cast<double>(0.7));
-                region->setCircleMeasure(static_cast<double>(0.3));
-                region->setCentroidX(5.5);
-                region->setCentroidY(8.3 * i);
+                region->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>(1) / ((j + 1) * 10));
+                region->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(0.53));
+                region->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>(100 + (j * 100.34)));
+                region->setSpatialMeasureValue(SpatialMeasureType::Perimeter, static_cast<double>(4000));
+                region->setSpatialMeasureValue(SpatialMeasureType::Angle, static_cast<double>(189));
+                region->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin, static_cast<double>(500));
+                region->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure, static_cast<double>(0.3));
+                region->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure, static_cast<double>(0.7));
+                region->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(0.3));
+                region->setSpatialMeasureValue(SpatialMeasureType::CentroidX, 5.5);
+                region->setSpatialMeasureValue(SpatialMeasureType::CentroidY, 8.3 * i);
 
                 timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
             }
@@ -55,17 +55,17 @@ namespace multiscaletest {
             for (int k = ((((i + 1) % 4) == 0) ? (i - 1) : 0); k < i; k++) {
                 std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
 
-                cluster->setClusteredness(static_cast<double>((k * 2.4) + 1));
-                cluster->setDensity(static_cast<double>(0.53));
-                cluster->setArea(static_cast<double>(100 + (k / 100.34)));
-                cluster->setPerimeter(static_cast<double>(4000));
-                cluster->setAngle(static_cast<double>(189));
-                cluster->setDistanceFromOrigin(static_cast<double>(500));
-                cluster->setTriangleMeasure(static_cast<double>(0.3));
-                cluster->setRectangleMeasure(static_cast<double>(0.7));
-                cluster->setCircleMeasure(static_cast<double>(0.3));
-                cluster->setCentroidX(5.5);
-                cluster->setCentroidY(8.3);
+                cluster->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>((k * 2.4) + 1));
+                cluster->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(0.53));
+                cluster->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>(100 + (k / 100.34)));
+                cluster->setSpatialMeasureValue(SpatialMeasureType::Perimeter, static_cast<double>(4000));
+                cluster->setSpatialMeasureValue(SpatialMeasureType::Angle, static_cast<double>(189));
+                cluster->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin, static_cast<double>(500));
+                cluster->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure, static_cast<double>(0.3));
+                cluster->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure, static_cast<double>(0.7));
+                cluster->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(0.3));
+                cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidX, 5.5);
+                cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidY, 8.3);
 
                 timePoints[i].addSpatialEntity(cluster, SubsetSpecificType::Clusters);
             }

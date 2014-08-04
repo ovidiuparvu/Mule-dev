@@ -4,184 +4,86 @@
 
 using namespace multiscale;
 using namespace multiscale::verification;
+using namespace multiscale::verification::spatialmeasure;
 
 
 SpatialEntity::SpatialEntity() {
-    semanticType = 0;
-
-    clusteredness       = 0;
-    density             = 0;
-    area                = 0;
-    perimeter           = 0;
-    distanceFromOrigin  = 0;
-    angle               = 0;
-    triangleMeasure     = 0;
-    rectangleMeasure    = 0;
-    circleMeasure       = 0;
-    centroidX           = 0;
-    centroidY           = 0;
+    semanticType         = 0;
+    spatialMeasureValues = std::vector<double>(NR_SPATIAL_MEASURE_TYPES, 0);
 }
 
 unsigned long SpatialEntity::getSemanticType() const {
     return semanticType;
 }
 
-double SpatialEntity::getClusteredness() const {
-    return clusteredness;
-}
-
-double SpatialEntity::getDensity() const {
-    return density;
-}
-
-double SpatialEntity::getArea() const {
-    return area;
-}
-
-double SpatialEntity::getPerimeter() const {
-    return perimeter;
-}
-
-double SpatialEntity::getDistanceFromOrigin() const {
-    return distanceFromOrigin;
-}
-
-double SpatialEntity::getAngle() const {
-    return angle;
-}
-
-double SpatialEntity::getTriangleMeasure() const {
-    return triangleMeasure;
-}
-
-double SpatialEntity::getRectangleMeasure() const {
-    return rectangleMeasure;
-}
-
-double SpatialEntity::getCircleMeasure() const {
-    return circleMeasure;
-}
-
-double SpatialEntity::getCentroidX() const {
-    return centroidX;
-}
-
-double SpatialEntity::getCentroidY() const {
-    return centroidY;
-}
-
 void SpatialEntity::setSemanticType(unsigned long semanticType) {
     this->semanticType = semanticType;
 }
 
-void SpatialEntity::setClusteredness(double clusteredness) {
-    validateRealNonNegativeValue(clusteredness);
+double SpatialEntity::getSpatialMeasureValue(const SpatialMeasureType &spatialMeasureType) const {
+    std::size_t spatialMeasureTypeIndex = computeSpatialMeasureTypeIndex(spatialMeasureType);
 
-    this->clusteredness = clusteredness;
+    return spatialMeasureValues[spatialMeasureTypeIndex];
 }
 
-void SpatialEntity::setDensity(double density) {
-    validateRealNonNegativeValue(density);
+void SpatialEntity::setSpatialMeasureValue(const SpatialMeasureType &spatialMeasureType,
+                                           double spatialMeasureValue) {
+    validateSpatialMeasureValue(spatialMeasureValue, spatialMeasureType);
 
-    this->density = density;
-}
+    std::size_t spatialMeasureTypeIndex = computeSpatialMeasureTypeIndex(spatialMeasureType);
 
-void SpatialEntity::setArea(double area) {
-    validateRealNonNegativeValue(area);
-
-    this->area = area;
-}
-
-void SpatialEntity::setPerimeter(double perimeter) {
-    validateRealNonNegativeValue(perimeter);
-
-    this->perimeter = perimeter;
-}
-
-void SpatialEntity::setDistanceFromOrigin(double distanceFromOrigin) {
-    validateRealNonNegativeValue(distanceFromOrigin);
-
-    this->distanceFromOrigin = distanceFromOrigin;
-}
-
-void SpatialEntity::setAngle(double angle) {
-    validateAngleValue(angle);
-
-    this->angle = angle;
-}
-
-void SpatialEntity::setTriangleMeasure(double triangleMeasure) {
-    validateRealValueBtwZeroAndOne(triangleMeasure);
-
-    this->triangleMeasure = triangleMeasure;
-}
-
-void SpatialEntity::setRectangleMeasure(double rectangleMeasure) {
-    validateRealValueBtwZeroAndOne(rectangleMeasure);
-
-    this->rectangleMeasure = rectangleMeasure;
-}
-
-void SpatialEntity::setCircleMeasure(double circleMeasure) {
-    validateRealValueBtwZeroAndOne(circleMeasure);
-
-    this->circleMeasure = circleMeasure;
-}
-
-void SpatialEntity::setCentroidX(double centroidX) {
-    validateRealNonNegativeValue(centroidX);
-
-    this->centroidX = centroidX;
-}
-
-void SpatialEntity::setCentroidY(double centroidY) {
-    validateRealNonNegativeValue(centroidY);
-
-    this->centroidY = centroidY;
+    spatialMeasureValues[spatialMeasureTypeIndex] = spatialMeasureValue;
 }
 
 bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
-    return (
-        (this->semanticType                 <   rhsSpatialEntity.semanticType) ||
-        (this->clusteredness        <   rhsSpatialEntity.clusteredness) ||
-        (this->density              <   rhsSpatialEntity.density) ||
-        (this->area                 <   rhsSpatialEntity.area) ||
-        (this->perimeter            <   rhsSpatialEntity.perimeter) ||
-        (this->distanceFromOrigin   <   rhsSpatialEntity.distanceFromOrigin) ||
-        (this->angle                <   rhsSpatialEntity.angle) ||
-        (this->triangleMeasure      <   rhsSpatialEntity.triangleMeasure) ||
-        (this->rectangleMeasure     <   rhsSpatialEntity.rectangleMeasure) ||
-        (this->circleMeasure        <   rhsSpatialEntity.circleMeasure) ||
-        (this->centroidX            <   rhsSpatialEntity.centroidX) ||
-        (this->centroidY            <   rhsSpatialEntity.centroidY)
-    );
-}
-
-void SpatialEntity::validateRealNonNegativeValue(double value) {
-    if (value < 0) {
-        MS_throw_detailed(SpatialTemporalException, ERR_REAL_NON_NEGATIVE_VALUE,
-                          StringManipulator::toString<double>(value), ERR_SUFFIX);
+    // Return true if lhs.semanticType < rhs.semanticType
+    if (this->semanticType < rhsSpatialEntity.semanticType) {
+        return true;
     }
-}
 
-void SpatialEntity::validateAngleValue(double value) {
-    if ((value < 0) || (value > 360)) {
-        MS_throw_detailed(SpatialTemporalException, ERR_ANGLE_VALUE,
-                          StringManipulator::toString<double>(value), ERR_SUFFIX);
+    // Return true if lhs.spatialMeasureValue < rhs.spatialMeasureValue
+    for (std::size_t i = 0; i < NR_SPATIAL_MEASURE_TYPES; i++) {
+        if (this->spatialMeasureValues[i] < rhsSpatialEntity.spatialMeasureValues[i]) {
+            return true;
+        }
     }
+
+    // Otherwise, return false
+    return false;
 }
 
-void SpatialEntity::validateRealValueBtwZeroAndOne(double value) {
-    if ((value < 0) || (value > 1)) {
-        MS_throw_detailed(SpatialTemporalException, ERR_REAL_BTW_ZERO_AND_ONE,
-                          StringManipulator::toString<double>(value), ERR_SUFFIX);
+std::string SpatialEntity::toString() const {
+    std::string outputString = StringManipulator::toString<unsigned long>(semanticType);
+
+    // Add all spatial measure values to the output string
+    for (std::size_t i = 0; i < NR_SPATIAL_MEASURE_TYPES; i++) {
+        outputString += (OUTPUT_SPATIAL_MEASURE_VALUE_SEPARATOR +
+                         StringManipulator::toString<double>(spatialMeasureValues[i]));
+    }
+
+    return outputString;
+}
+
+void SpatialEntity::validateSpatialMeasureValue(double spatialMeasureValue,
+                                                const SpatialMeasureType &spatialMeasureType) {
+    spatialmeasure::validateSpatialMeasureType(spatialMeasureType);
+
+    if ((spatialMeasureValue < spatialmeasure::getMinValidSpatialMeasureValue(spatialMeasureType)) ||
+        (spatialMeasureValue > spatialmeasure::getMaxValidSpatialMeasureValue(spatialMeasureType))) {
+        MS_throw(SpatialTemporalException,
+                 ERR_INVALID_SPATIAL_MEASURE_BEGIN +
+                 StringManipulator::toString<double>(spatialMeasureValue) +
+                 ERR_INVALID_SPATIAL_MEASURE_MIDDLE +
+                 StringManipulator::toString<SpatialMeasureType>(spatialMeasureType) +
+                 ERR_INVALID_SPATIAL_MEASURE_END
+        );
     }
 }
 
 
 // Constants
-const std::string SpatialEntity::ERR_SUFFIX = ").";
+const std::string SpatialEntity::OUTPUT_SPATIAL_MEASURE_VALUE_SEPARATOR = ", ";
 
-const std::string SpatialEntity::ERR_REAL_NON_NEGATIVE_VALUE    = "Please update the values of the spatial measures such that they are all positive (Reported error value: ";
-const std::string SpatialEntity::ERR_ANGLE_VALUE                = "Please update the value of the angle such that it is positive (Reported error value: ";
-const std::string SpatialEntity::ERR_REAL_BTW_ZERO_AND_ONE      = "Please update the values of the shape (triangular, rectangular, circular) measures such that they are between 0 and 1 (Reported error value: ";
+const std::string SpatialEntity::ERR_INVALID_SPATIAL_MEASURE_BEGIN  = "The provided spatial measure value (";
+const std::string SpatialEntity::ERR_INVALID_SPATIAL_MEASURE_MIDDLE = "is invalid for the given spatial measure type (";
+const std::string SpatialEntity::ERR_INVALID_SPATIAL_MEASURE_END    = "). Please change.";

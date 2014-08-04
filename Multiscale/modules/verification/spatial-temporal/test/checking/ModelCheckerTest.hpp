@@ -12,7 +12,7 @@
 
 namespace mv = multiscale::verification;
 
-const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(regions, area) > 20)]";
+const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(regions, density) > 20)]";
 
 
 namespace multiscaletest {
@@ -63,7 +63,7 @@ namespace multiscaletest {
             *
             * \param areaValues The values of the areas
             */
-           void InitialiseSpatioTemporalTraceWithAreaValues(const std::vector<double> areaValues);
+           void InitialiseSpatioTemporalTraceWithAreaValues(const std::vector<double> densityValues);
 
            //! Initialise the globally increasing area spatio-temporal trace
            void InitialiseIncreasingSpatioTemporalTrace();
@@ -153,7 +153,7 @@ namespace multiscaletest {
         parser.parse(abstractSyntaxTree);
     }
 
-    void ModelCheckerTest::InitialiseSpatioTemporalTraceWithAreaValues(const std::vector<double> areaValues) {
+    void ModelCheckerTest::InitialiseSpatioTemporalTraceWithAreaValues(const std::vector<double> densityValues) {
         mv::SpatialTemporalTrace                            trace;
         mv::TimePoint                                       timePoint;
         std::shared_ptr<SpatialEntity>                      region;
@@ -161,10 +161,10 @@ namespace multiscaletest {
 
         timePoint.setConsideredSpatialEntityType(mv::SubsetSpecificType::Regions);
 
-        for (std::size_t i = 0; i < areaValues.size(); i++) {
+        for (std::size_t i = 0; i < densityValues.size(); i++) {
             std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 
-            region->setArea(areaValues[i]);
+            region->setSpatialMeasureValue(SpatialMeasureType::Density, densityValues[i]);
             timePoint.addSpatialEntity(region, mv::SubsetSpecificType::Regions);
             trace.addTimePoint(timePoint);
 

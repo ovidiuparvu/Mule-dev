@@ -38,7 +38,7 @@ namespace multiscale {
                 std::vector<std::list<std::shared_ptr<SpatialEntity>>> spatialEntities;     /*!< The meta-list of spatial entities smart pointers.
                                                                                                  The i-th spatial entities list in the meta-list
                                                                                                  corresponds to the i-th SubsetSpecificType
-                                                                                                 enumeration value*/
+                                                                                                 enumeration value */
 
                 std::map<std::string, double>   numericStateVariables;                      /*!< The associative map for storing numeric state variables */
 
