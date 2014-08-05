@@ -61,7 +61,7 @@ namespace multiscaletest {
             * The assumption is that each timepoint contains only one spatial entity of the same time.
             * Therefore each area value corresponds to a different timepoint and spatial entity.
             *
-            * \param areaValues The values of the areas
+            * \param densityValues The values of the densities
             */
            void InitialiseSpatioTemporalTraceWithAreaValues(const std::vector<double> densityValues);
 
