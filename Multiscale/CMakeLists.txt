@@ -32,7 +32,7 @@ set(RECTANGULAR_REGION_DETECTOR_CONFIG_PATH "${DETECTOR_CONFIG_FILES_PATH}/recta
 set(SIMULATION_CLUSTER_DETECTOR_CONFIG_PATH "${DETECTOR_CONFIG_FILES_PATH}/simulation_cluster_detector.xml")
 
 set(MULE_MSTML_SCHEMA_FOLDER_PATH "config/verification/spatial-temporal/schema")
-set(MULE_MSTML_SCHEMA_PATH "${MULE_MSTML_SCHEMA_FOLDER_PATH}/experiment.xsd")
+set(MULE_MSTML_SCHEMA_PATH "${MULE_MSTML_SCHEMA_FOLDER_PATH}/MSTML_L1V1.xsd")
     
     
 #------------------------------------------------------------

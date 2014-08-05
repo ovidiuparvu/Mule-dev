@@ -152,3 +152,15 @@ add_executable(ExecuteProgramSample ${EXECUTE_PROGRAM_SAMPLE_SRC})
 AddSample(ExecuteProgramSample)
 
 target_link_libraries(ExecuteProgramSample util)
+
+
+# XmlValidatorSample
+
+set(XML_VALIDATOR_SAMPLE_SRC
+    sample/XmlValidatorSample.cpp
+)
+
+add_executable(XmlValidatorSample ${XML_VALIDATOR_SAMPLE_SRC})
+AddSample(XmlValidatorSample)
+
+target_link_libraries(XmlValidatorSample util)

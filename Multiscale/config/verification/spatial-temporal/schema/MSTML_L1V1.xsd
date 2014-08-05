@@ -2,6 +2,15 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+	<!-- Human-readable information -->
+	
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+			Multiscale Spatial Temporal Markup Language description.
+			Copyright 2014 Ovidiu Parvu. 
+		</xs:documentation>
+	</xs:annotation>
+
 	<!-- User-defined simple types -->
 
 	<xs:simpleType name="RealBtwZeroAndOneType">

@@ -1,131 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-	<!-- User-defined simple types -->
+	<!-- Human-readable information -->
+	
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+			Spatial description schema for multiscale multidimensional model checking.
+			Copyright 2014 Ovidiu Parvu. 
+		</xs:documentation>
+	</xs:annotation>
 
-	<xs:simpleType name="RealBtwZeroAndOneType">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0" />
-			<xs:maxInclusive value="1" />
-		</xs:restriction>
-	</xs:simpleType>
+	<!-- Elements -->
 	
-	<xs:simpleType name="ShapeMeasureType">
-		<xs:restriction base="RealBtwZeroAndOneType" />
-	</xs:simpleType>
-	
-	<xs:simpleType name="ShapeType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="triangular" />
-			<xs:enumeration value="rectangular" />
-			<xs:enumeration value="circular" />
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:simpleType name="AngleDegreesType">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0" />
-			<xs:maxInclusive value="360" />
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:simpleType name="IntegerNonNegativeType">
-		<xs:restriction base="xs:integer">
-			<xs:minInclusive value="0" />
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:simpleType name="RealNonNegativeType">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0" />
-		</xs:restriction>
-	</xs:simpleType>
-	
-	<xs:simpleType name="TypeOfPseudo3DSpatialEntityType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="region" />
-			<xs:enumeration value="cluster" />
-		</xs:restriction>
-	</xs:simpleType>
-	
+	<xs:element name="spatialDescription" type="SpatialDescriptionType" />
+
 	<!-- User-defined complex types -->
 	
-	<xs:complexType name="NumericStateVariableType">
+	<xs:complexType name="SpatialDescriptionType">
 		<xs:sequence>
-			<xs:element name="name" type="xs:string" />
-			<xs:element name="value" type="xs:double" />
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="CentroidType">
-		<xs:sequence>
-			<xs:element name="x" type="RealNonNegativeType" />
-			<xs:element name="y" type="RealNonNegativeType" />
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="Pseudo3DSpatialEntityType">
-		<xs:sequence>
-			<xs:element name="clusteredness" type="RealNonNegativeType" />
-			<xs:element name="density" type="RealNonNegativeType" />
-			<xs:element name="area" type="RealNonNegativeType" />
-			<xs:element name="perimeter" type="RealNonNegativeType" />
-			<xs:element name="distanceFromOrigin" type="RealNonNegativeType" />
-			<xs:element name="angle" type="AngleDegreesType" />
-			<xs:element name="shape" type="ShapeType" minOccurs="0" maxOccurs="1" />
-			<xs:element name="triangleMeasure" type="ShapeMeasureType" />
-			<xs:element name="rectangleMeasure" type="ShapeMeasureType" />
-			<xs:element name="circleMeasure" type="ShapeMeasureType" />
-			<xs:element name="centroid" type="CentroidType" />
-		</xs:sequence>
-		<xs:attribute name="type" type="TypeOfPseudo3DSpatialEntityType" use="required" />
-	</xs:complexType>
-	
-	<xs:complexType name="SpatialEntityType">
-		<xs:sequence>
-			<xs:element minOccurs="1" maxOccurs="1" name="pseudo3D" type="Pseudo3DSpatialEntityType" />
-		</xs:sequence>
-	</xs:complexType>
-	
-	<xs:complexType name="TimepointType">
-		<xs:sequence>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="spatialEntity" type="SpatialEntityType" />
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="numericStateVariable" type="NumericStateVariableType" />
-		</xs:sequence>
-		<xs:attribute name="value" type="IntegerNonNegativeType" />
-	</xs:complexType>
-	
-	<xs:complexType name="ExperimentType">
-		<xs:sequence>
-			<xs:element minOccurs="1" maxOccurs="unbounded" name="timepoint" type="TimepointType" >
-				<!-- Uniqueness constraints -->
-				
-				<xs:unique name="UniqueNumericStateVariables">
-				    <xs:selector xpath="numericStateVariable" />
-				    <xs:field xpath="name" />
-				</xs:unique>
+			<xs:element name="spatialEntities" type="SpatialEntitiesType" >
+				<!-- The spatial entities must be unique -->
 				
 				<xs:unique name="UniqueSpatialEntities">
-				    <xs:selector xpath="spatialEntity" />
-				    <xs:field xpath="pseudo3D/@type" />
-				    <xs:field xpath="pseudo3D/clusteredness" />
-				    <xs:field xpath="pseudo3D/density" />
-				    <xs:field xpath="pseudo3D/area" />
-				    <xs:field xpath="pseudo3D/perimeter" />
-				    <xs:field xpath="pseudo3D/distanceFromOrigin" />
-				    <xs:field xpath="pseudo3D/angle" />
-				    <xs:field xpath="pseudo3D/triangleMeasure" />
-				    <xs:field xpath="pseudo3D/rectangleMeasure" />
-				    <xs:field xpath="pseudo3D/circleMeasure" />
-				    <xs:field xpath="pseudo3D/centroid/x" />
-				    <xs:field xpath="pseudo3D/centroid/y" />
-				</xs:unique> 
+					<xs:selector xpath="spatialEntity" />
+					<xs:field xpath="name" />
+				</xs:unique>
+			</xs:element>
+			<xs:element name="spatialMeasures" type="SpatialMeasuresType">
+				<!-- The spatial measures must be unique -->
+					
+				<xs:unique name="UniqueSpatialMeasures">
+					<xs:selector xpath="spatialMeasure" />
+					<xs:field xpath="name" />
+					<xs:field xpath="description" />
+					<xs:field xpath="minValue" />
+					<xs:field xpath="maxValue" />
+				</xs:unique>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	
-	<!-- Elements -->
+	<xs:complexType name="SpatialEntitiesType">
+		<xs:sequence>
+			<xs:element name="spatialEntity" type="SingleSpatialEntityType" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
 	
-	<xs:element name="experiment" type="ExperimentType" />
+	<xs:complexType name="SpatialMeasuresType">
+		<xs:sequence>
+			<xs:element name="spatialMeasure" type="SingleSpatialMeasureType" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="SingleSpatialEntityType">
+		<xs:sequence>
+			<xs:element name="name" type="AlphaLowerCaseStartingString" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SingleSpatialMeasureType">
+		<xs:sequence>
+			<xs:element name="name" type="AlphaLowerCaseStartingString" />
+			<xs:element name="description" type="NonEmptyStringType" />
+			<xs:element name="minValue" type="xs:double" />
+			<xs:element name="maxValue" type="xs:double" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- User-defined simple types -->
+
+	<xs:simpleType name="AlphaLowerCaseStartingString">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-z][a-zA-Z]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="NonEmptyStringType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
 </xs:schema>
