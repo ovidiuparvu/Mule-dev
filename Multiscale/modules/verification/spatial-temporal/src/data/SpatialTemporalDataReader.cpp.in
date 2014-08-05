@@ -195,10 +195,10 @@ void SpatialTemporalDataReader::createDerivedSpatialEntity(const pt::ptree &spat
                                                            SubsetSpecificType &spatialEntityType) {
     std::string spatialEntityTypeLabel = spatialEntityTree.get<std::string>(LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE);
 
-    if (spatialEntityTypeLabel.compare(PSEUDO3D_SPATIAL_ENTITY_TYPE_CLUSTER) == 0) {
+    if (spatialEntityTypeLabel.compare("cluster") == 0) {
         spatialEntity       = std::make_shared<Cluster>();
         spatialEntityType   = SubsetSpecificType::Clusters;
-    } else if (spatialEntityTypeLabel.compare(PSEUDO3D_SPATIAL_ENTITY_TYPE_REGION) == 0) {
+    } else if (spatialEntityTypeLabel.compare("region") == 0) {
         spatialEntity       = std::make_shared<Region>();
         spatialEntityType   = SubsetSpecificType::Regions;
     } else {
@@ -209,27 +209,27 @@ void SpatialTemporalDataReader::createDerivedSpatialEntity(const pt::ptree &spat
 void SpatialTemporalDataReader::setSpatialEntityValues(const pt::ptree &spatialEntityTree,
                                                        const std::shared_ptr<SpatialEntity> &spatialEntity) {
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Clusteredness,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CLUSTEREDNESS));
+                                          spatialEntityTree.get<double>("pseudo3D.clusteredness"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Density,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_DENSITY));
+                                          spatialEntityTree.get<double>("pseudo3D.density"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Area,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_AREA));
+                                          spatialEntityTree.get<double>("pseudo3D.area"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Perimeter,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_PERIMETER));
+                                          spatialEntityTree.get<double>("pseudo3D.perimeter"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN));
+                                          spatialEntityTree.get<double>("pseudo3D.distanceFromOrigin"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Angle,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_ANGLE));
+                                          spatialEntityTree.get<double>("pseudo3D.angle"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE));
+                                          spatialEntityTree.get<double>("pseudo3D.triangleMeasure"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE));
+                                          spatialEntityTree.get<double>("pseudo3D.rectangleMeasure"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE));
+                                          spatialEntityTree.get<double>("pseudo3D.circleMeasure"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CentroidX,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_X));
+                                          spatialEntityTree.get<double>("pseudo3D.centroid.x"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CentroidY,
-                                          spatialEntityTree.get<double>(LABEL_SPATIAL_ENTITY_CENTROID_Y));
+                                          spatialEntityTree.get<double>("pseudo3D.centroid.y"));
 }
 
 std::string SpatialTemporalDataReader::getFirstValidUnprocessedInputFilepath() {
@@ -307,21 +307,6 @@ const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_VALUE 
 
 const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY                  = "spatialEntity";
 const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE    = "pseudo3D.<xmlattr>.type";
-
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_CLUSTEREDNESS         = "pseudo3D.clusteredness";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_DENSITY               = "pseudo3D.density";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_AREA                  = "pseudo3D.area";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_PERIMETER             = "pseudo3D.perimeter";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN  = "pseudo3D.distanceFromOrigin";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_ANGLE                 = "pseudo3D.angle";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE      = "pseudo3D.triangleMeasure";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE     = "pseudo3D.rectangleMeasure";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE        = "pseudo3D.circleMeasure";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_CENTROID_X            = "pseudo3D.centroid.x";
-const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_CENTROID_Y            = "pseudo3D.centroid.y";
-
-const std::string SpatialTemporalDataReader::PSEUDO3D_SPATIAL_ENTITY_TYPE_REGION        = "region";
-const std::string SpatialTemporalDataReader::PSEUDO3D_SPATIAL_ENTITY_TYPE_CLUSTER       = "cluster";
 
 const std::string SpatialTemporalDataReader::INPUT_FILES_EXTENSION      = ".xml";
 const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "${MULE_MSTML_SCHEMA_PATH}";

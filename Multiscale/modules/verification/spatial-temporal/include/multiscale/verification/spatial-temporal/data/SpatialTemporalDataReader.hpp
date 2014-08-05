@@ -215,21 +215,6 @@ namespace multiscale {
                 static const std::string LABEL_SPATIAL_ENTITY;
                 static const std::string LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE;
 
-                static const std::string LABEL_SPATIAL_ENTITY_CLUSTEREDNESS;
-                static const std::string LABEL_SPATIAL_ENTITY_DENSITY;
-                static const std::string LABEL_SPATIAL_ENTITY_AREA;
-                static const std::string LABEL_SPATIAL_ENTITY_PERIMETER;
-                static const std::string LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN;
-                static const std::string LABEL_SPATIAL_ENTITY_ANGLE;
-                static const std::string LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE;
-                static const std::string LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE;
-                static const std::string LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE;
-                static const std::string LABEL_SPATIAL_ENTITY_CENTROID_X;
-                static const std::string LABEL_SPATIAL_ENTITY_CENTROID_Y;
-
-                static const std::string PSEUDO3D_SPATIAL_ENTITY_TYPE_REGION;
-                static const std::string PSEUDO3D_SPATIAL_ENTITY_TYPE_CLUSTER;
-
                 static const std::string INPUT_FILES_EXTENSION;
                 static const std::string INPUT_FILES_SCHEMA_PATH;
 
