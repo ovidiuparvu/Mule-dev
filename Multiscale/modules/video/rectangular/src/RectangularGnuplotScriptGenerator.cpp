@@ -103,9 +103,9 @@ void RectangularGnuplotScriptGenerator::outputFooter(ifstream &fin, ofstream &fo
 
 
 // Constants
-const string RectangularGnuplotScriptGenerator::HEADER_IN   = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/rectangular/header.in";
-const string RectangularGnuplotScriptGenerator::CONTENT_IN  = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/rectangular/content.in";
-const string RectangularGnuplotScriptGenerator::FOOTER_IN   = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/video/rectangular/footer.in";
+const string RectangularGnuplotScriptGenerator::HEADER_IN   = "/usr/local/share/config/video/rectangular/header.in";
+const string RectangularGnuplotScriptGenerator::CONTENT_IN  = "/usr/local/share/config/video/rectangular/content.in";
+const string RectangularGnuplotScriptGenerator::FOOTER_IN   = "/usr/local/share/config/video/rectangular/footer.in";
 
 const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_FILENAME    = "OUTPUT_FILENAME";
 const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_HEIGHT      = "OUTPUT_DIMENSION1";

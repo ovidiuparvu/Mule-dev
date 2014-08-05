@@ -21,14 +21,13 @@ void printSpatialEntities(TimePoint &timePoint, const SubsetSpecificType &spatia
 
 // Print the given timepoint
 void printTimePoint(TimePoint &timePoint) {
-    std::cout << "Timepoint " << timePoint.getValue() << std::endl
-              << std::endl << "=== Clusters ===" << std::endl;
+    std::cout << "Timepoint " << timePoint.getValue() << std::endl;
 
-    printSpatialEntities(timePoint, SubsetSpecificType::Clusters);
+    for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
+        std::cout << "Subset specific type " << i << ": " << std::endl;
 
-    std::cout << "=== Regions ===" << std::endl;
-
-    printSpatialEntities(timePoint, SubsetSpecificType::Regions);
+        printSpatialEntities(timePoint, subsetspecific::computeSubsetSpecificType(i));
+    }
 }
 
 // Print the given trace
