@@ -1,4 +1,19 @@
 #------------------------------------------------------------
+# 
+# This file contains the build configuration for the project.
+#
+# Important configuration parameters:
+#
+# + CMAKE_CUSTOM_BUILD 
+#     if (value == "Package") then build package
+#
+# + CMAKE_CUSTOM_MODEL_CHECKER = "" OR "Generate"
+#     if (value == "Generate") then generate custom model checker
+#
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
 # General project configuration
 #------------------------------------------------------------
 
@@ -128,6 +143,7 @@ include(AddExecutableInstallTarget)
 include(AddSample)
 include(AddUnitTest)
 include(GetCurrentDate)
+include(GenerateCustomModelChecker)
 include(UpdateProjectBuildNumber)
 include(UpdateProjectModifiedDate)
 include(MacroOutOfSourceBuild)
@@ -153,9 +169,9 @@ endif()
 #------------------------------------------------------------
 
 # Boost
-set (Boost_USE_STATIC_LIBS ON)
-set (Boost_USE_MULTITHREADED OFF)
-set (Boost_USE_STATIC_RUNTIME OFF)
+set(Boost_USE_STATIC_LIBS ON)
+set(Boost_USE_MULTITHREADED OFF)
+set(Boost_USE_STATIC_RUNTIME OFF)
 
 find_package(Boost COMPONENTS system filesystem program_options REQUIRED)
 
@@ -183,28 +199,6 @@ if(XERCESC_FOUND)
     message(STATUS "Xerces C++ library was successfully found.")
 endif()
 
-# Python interpreter and required libraries
-find_package(PythonInterp REQUIRED)
-
-if(PYTHONINTERP_FOUND)
-    message(STATUS "Python interpreter was successfully found.")
-    
-    # Comma separated list of dependent python libraries
-    set(PYTHON_DEPENDENT_LIBS "lxml")
-    
-    # Execute the command to check if the libraries are installed
-    execute_process(
-        COMMAND ${PYTHON_EXECUTABLE} -c "import ${PYTHON_DEPENDENT_LIBS};"
-        RESULT_VARIABLE PYTHON_DEPENDENT_LIBS_RESULT
-        OUTPUT_QUIET
-        ERROR_QUIET
-    )
-    
-    # If not return with fatal error message
-    if(NOT "${PYTHON_DEPENDENT_LIBS_RESULT}" STREQUAL "0")
-        message(FATAL_ERROR "Please install the required python libraries: ${PYTHON_DEPENDENT_LIBS}.")  
-    endif(NOT "${PYTHON_DEPENDENT_LIBS_RESULT}" STREQUAL "0")
-endif()
 
 #------------------------------------------------------------
 # Project build number
@@ -225,6 +219,16 @@ UpdateProjectModifiedDate(
     ${PROJECT_SOURCE_DIR}/../README.md.in
     ${PROJECT_SOURCE_DIR}/../README.md
 )
+
+
+#------------------------------------------------------------
+# Generate custom model checker
+#------------------------------------------------------------
+
+# Generate custom model checker (if requested)
+if("${CMAKE_CUSTOM_MODEL_CHECKER}" STREQUAL "Generate")
+    GenerateCustomModelChecker()
+endif("${CMAKE_CUSTOM_MODEL_CHECKER}" STREQUAL "Generate")
 
 
 #------------------------------------------------------------

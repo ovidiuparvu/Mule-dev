@@ -1,6 +1,8 @@
 #ifndef SUBSETSPECIFICATTRIBUTE_HPP
 #define SUBSETSPECIFICATTRIBUTE_HPP
 
+#include "multiscale/verification/spatial-temporal/attribute/SubsetSpecificType.hpp"
+
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <fstream>
 
@@ -8,14 +10,6 @@
 namespace multiscale {
 
     namespace verification {
-
-        //! Enumeration for representing a specific subset type
-        enum class SubsetSpecificType : unsigned int {
-            Clusters                        = 0,            /*!< Clusters */
-            Regions                            ,            /*!< Regions */
-            NrOfSubsetSpecificTypeEntries                   /*!< Enumeration type used to store the number of
-                                                                 elements in the enumeration. Always leave it last! */
-        };
 
         //! An std::size_t constant which stores the number of subset specific type entries
         static const std::size_t

@@ -1,15 +1,27 @@
-# Import required modules
 import os
 import shutil
+import sys
+
+import model
+import parsing
 
 
-# Dummy stub method which copies a file in the verification/spatio-temporal/model folder
-def generateSourceFiles(relativeSourcePath, relativeDestinationPath):
-    # Print a message which indicates that the generator script was executed
-    print("Executing the python generator.py script...")
+# Generate all spatial description dependent source files for the project
+def generateSourceFiles(relative_source_path, relative_destination_path):
+    # Construct xml parser
+    parser = parsing.parser.SpatialDescriptionParser(relative_source_path, relative_destination_path)
+    
+    # Parse the spatial description
+    if parser.parse():
+        print("The xml file is valid.")
+    else:
+        print("The xml file is invalid according to the xml schema specification. Please change.")
 
 
 # Do the following whenever the script is executed
 if __name__ == "__main__":
-    generateSourceFiles("src/model/SpatialEntity.cpp", "src/model/SpatialEntity.cpp")
+    if len(sys.argv) != 3:
+        print("Usage: generator.py <xml_file_path> <xml_schema_file_path>")
+    else:
+        generateSourceFiles(sys.argv[1], sys.argv[2])
     

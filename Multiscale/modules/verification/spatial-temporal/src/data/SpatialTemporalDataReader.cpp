@@ -1,6 +1,5 @@
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/exception/RuntimeException.hpp"
-#include "multiscale/exception/UnexpectedBehaviourException.hpp"
 #include "multiscale/util/Filesystem.hpp"
 #include "multiscale/util/XmlValidator.hpp"
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
@@ -190,48 +189,6 @@ void SpatialTemporalDataReader::addSpatialEntityToTimePoint(const pt::ptree &spa
     timePoint.addSpatialEntity(spatialEntity, spatialEntityType);
 }
 
-void SpatialTemporalDataReader::createDerivedSpatialEntity(const pt::ptree &spatialEntityTree,
-                                                           std::shared_ptr<SpatialEntity> &spatialEntity,
-                                                           SubsetSpecificType &spatialEntityType) {
-    std::string spatialEntityTypeLabel = spatialEntityTree.get<std::string>(LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE);
-
-    if (spatialEntityTypeLabel.compare("cluster") == 0) {
-        spatialEntity       = std::make_shared<Cluster>();
-        spatialEntityType   = SubsetSpecificType::Clusters;
-    } else if (spatialEntityTypeLabel.compare("region") == 0) {
-        spatialEntity       = std::make_shared<Region>();
-        spatialEntityType   = SubsetSpecificType::Regions;
-    } else {
-        MS_throw(UnexpectedBehaviourException, ERR_UNDEFINED_SPATIAL_ENTITY_TYPE);
-    }
-}
-
-void SpatialTemporalDataReader::setSpatialEntityValues(const pt::ptree &spatialEntityTree,
-                                                       const std::shared_ptr<SpatialEntity> &spatialEntity) {
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Clusteredness,
-                                          spatialEntityTree.get<double>("pseudo3D.clusteredness"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Density,
-                                          spatialEntityTree.get<double>("pseudo3D.density"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Area,
-                                          spatialEntityTree.get<double>("pseudo3D.area"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Perimeter,
-                                          spatialEntityTree.get<double>("pseudo3D.perimeter"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin,
-                                          spatialEntityTree.get<double>("pseudo3D.distanceFromOrigin"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Angle,
-                                          spatialEntityTree.get<double>("pseudo3D.angle"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure,
-                                          spatialEntityTree.get<double>("pseudo3D.triangleMeasure"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure,
-                                          spatialEntityTree.get<double>("pseudo3D.rectangleMeasure"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure,
-                                          spatialEntityTree.get<double>("pseudo3D.circleMeasure"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CentroidX,
-                                          spatialEntityTree.get<double>("pseudo3D.centroid.x"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CentroidY,
-                                          spatialEntityTree.get<double>("pseudo3D.centroid.y"));
-}
-
 std::string SpatialTemporalDataReader::getFirstValidUnprocessedInputFilepath() {
     if (!hasNext()) {
         MS_throw(RuntimeException, ERR_NO_VALID_INPUT_FILES_REMAINING);
@@ -309,4 +266,4 @@ const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY               
 const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE    = "pseudo3D.<xmlattr>.type";
 
 const std::string SpatialTemporalDataReader::INPUT_FILES_EXTENSION      = ".xml";
-const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "/usr/local/share/config/verification/spatial-temporal/schema/MSTML_L1V1.xsd";
+const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/verification/spatial-temporal/schema/MSTML_L1V1.xsd";
