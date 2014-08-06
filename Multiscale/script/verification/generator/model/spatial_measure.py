@@ -30,11 +30,11 @@ class SpatialMeasure:
         return self._description
     
     @property
-    def minValue(self):
+    def min_value(self):
         """ Get the spatial measure minimum valid value """
         return self._minValue
     
     @property
-    def maxValue(self):
+    def max_value(self):
         """ Get the spatial measure maximum valid value """
         return self._maxValue
