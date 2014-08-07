@@ -1,3 +1,12 @@
+/******************************************************************************
+ *
+ * WARNING! AUTO-GENERATED FILE.
+ *
+ * PLEASE DO NOT UPDATE THIS FILE MANUALLY. 
+ * USE THE PYTHON GENERATOR SCRIPTS FOR ANY MODIFICATIONS.
+ *
+ *****************************************************************************/
+
 #include "multiscale/exception/MultiscaleException.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"

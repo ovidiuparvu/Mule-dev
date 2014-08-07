@@ -266,4 +266,4 @@ const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY               
 const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE    = "pseudo3D.<xmlattr>.type";
 
 const std::string SpatialTemporalDataReader::INPUT_FILES_EXTENSION      = ".xml";
-const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/verification/spatial-temporal/schema/MSTML_L1V1.xsd";
+const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "/usr/local/share/config/verification/spatial-temporal/schema/MSTML_L1V1.xsd";

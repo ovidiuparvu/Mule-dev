@@ -1,3 +1,9 @@
+/******************************************************************************
+{% for line in auto_generated_warning %}
+ {{ line }}
+{% endfor %}
+ *****************************************************************************/
+
 #include "multiscale/exception/MultiscaleException.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"

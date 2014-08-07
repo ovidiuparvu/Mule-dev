@@ -27,6 +27,9 @@ namespace multiscale {
 
     };
 
+    // Constants
+    const std::string ERR_UNIMPLEMENTED_METHOD = "The method you tried to call is not implemented. Please change.";
+
 };
 
 
