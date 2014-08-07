@@ -1,3 +1,12 @@
+/******************************************************************************
+ *
+ * WARNING! AUTO-GENERATED FILE.
+ *
+ * PLEASE DO NOT UPDATE THIS FILE MANUALLY. 
+ * USE THE PYTHON GENERATOR SCRIPTS FOR ANY MODIFICATIONS.
+ *
+ *****************************************************************************/
+ 
 #include "multiscale/exception/UnexpectedBehaviourException.hpp"
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
 #include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
@@ -29,25 +38,25 @@ void SpatialTemporalDataReader::createDerivedSpatialEntity(const pt::ptree &spat
 void SpatialTemporalDataReader::setSpatialEntityValues(const pt::ptree &spatialEntityTree,
                                                        const std::shared_ptr<SpatialEntity> &spatialEntity) {
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Clusteredness,
-                                          spatialEntityTree.get<double>("pseudo3D.clusteredness"));
+                                          spatialEntityTree.get<double>("clusteredness"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Density,
-                                          spatialEntityTree.get<double>("pseudo3D.density"));
+                                          spatialEntityTree.get<double>("density"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Area,
-                                          spatialEntityTree.get<double>("pseudo3D.area"));
+                                          spatialEntityTree.get<double>("area"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Perimeter,
-                                          spatialEntityTree.get<double>("pseudo3D.perimeter"));
+                                          spatialEntityTree.get<double>("perimeter"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin,
-                                          spatialEntityTree.get<double>("pseudo3D.distanceFromOrigin"));
+                                          spatialEntityTree.get<double>("distanceFromOrigin"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Angle,
-                                          spatialEntityTree.get<double>("pseudo3D.angle"));
+                                          spatialEntityTree.get<double>("angle"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure,
-                                          spatialEntityTree.get<double>("pseudo3D.triangleMeasure"));
+                                          spatialEntityTree.get<double>("triangleMeasure"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure,
-                                          spatialEntityTree.get<double>("pseudo3D.rectangleMeasure"));
+                                          spatialEntityTree.get<double>("rectangleMeasure"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure,
-                                          spatialEntityTree.get<double>("pseudo3D.circleMeasure"));
+                                          spatialEntityTree.get<double>("circleMeasure"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CentroidX,
-                                          spatialEntityTree.get<double>("pseudo3D.centroid.x"));
+                                          spatialEntityTree.get<double>("centroidX"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::CentroidY,
-                                          spatialEntityTree.get<double>("pseudo3D.centroid.y"));
+                                          spatialEntityTree.get<double>("centroidY"));
 }

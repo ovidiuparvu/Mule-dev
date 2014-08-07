@@ -1,10 +1,7 @@
 /******************************************************************************
- *
- * WARNING! AUTO-GENERATED FILE.
- *
- * PLEASE DO NOT UPDATE THIS FILE MANUALLY. 
- * USE THE PYTHON GENERATOR SCRIPTS FOR ANY MODIFICATIONS.
- *
+{% for line in auto_generated_warning %}
+ {{ line }}
+{% endfor %}
  *****************************************************************************/
 
 #include "multiscale/verification/spatial-temporal/attribute/SubsetSpecificAttribute.hpp"
@@ -16,12 +13,11 @@ using namespace multiscale::verification;
 std::ostream&
 multiscale::verification::operator<<(std::ostream& out, const SubsetSpecificType &subsetSpecificType) {
     switch (subsetSpecificType) {
-        case SubsetSpecificType::Clusters:
-            out << "clusters";
+    {% for spatial_entity in spatial_entities %}
+        case SubsetSpecificType::{{ spatial_entity.name|first_to_upper }}s:
+            out << "{{ spatial_entity.name }}s";
             break;
-        case SubsetSpecificType::Regions:
-            out << "regions";
-            break;
+    {% endfor %}
 
         default:
             out << "undefined";

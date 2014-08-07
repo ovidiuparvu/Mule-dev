@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- 
-    * WARNING! AUTO-GENERATED FILE.
-    *
-    * PLEASE DO NOT UPDATE THIS FILE MANUALLY. 
-    * USE THE PYTHON GENERATOR SCRIPTS FOR ANY MODIFICATIONS.
+{% for line in auto_generated_warning %}
+    {{ line }}
+{% endfor %}
 -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">

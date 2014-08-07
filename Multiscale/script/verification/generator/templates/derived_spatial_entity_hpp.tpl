@@ -1,13 +1,10 @@
-#ifndef CLUSTER_HPP
-#define CLUSTER_HPP
+#ifndef {{ spatial_entity_name|upper }}_HPP
+#define {{ spatial_entity_name|upper }}_HPP
 
 /******************************************************************************
- *
- * WARNING! AUTO-GENERATED FILE.
- *
- * PLEASE DO NOT UPDATE THIS FILE MANUALLY. 
- * USE THE PYTHON GENERATOR SCRIPTS FOR ANY MODIFICATIONS.
- *
+{% for line in auto_generated_warning %}
+ {{ line }}
+{% endfor %}
  *****************************************************************************/
 
 #include "multiscale/verification/spatial-temporal/model/SpatialEntity.hpp"
@@ -17,8 +14,8 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for representing a cluster
-        class Cluster : public SpatialEntity {};
+        //! Class for representing a {{ spatial_entity_name }}
+        class {{ spatial_entity_name|first_to_upper }} : public SpatialEntity {};
 
     };
 

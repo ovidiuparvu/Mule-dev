@@ -6,10 +6,10 @@
     
     <spatialEntities>
        <spatialEntity>
-            <name>clusters</name>
+            <name>cluster</name>
         </spatialEntity>
         <spatialEntity>
-            <name>regions</name>
+            <name>region</name>
         </spatialEntity>
     </spatialEntities>
     
