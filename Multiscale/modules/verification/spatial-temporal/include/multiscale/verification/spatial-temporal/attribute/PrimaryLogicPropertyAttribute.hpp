@@ -55,4 +55,5 @@ BOOST_FUSION_ADAPT_STRUCT (
     (multiscale::verification::PrimaryLogicPropertyAttributeType, primaryLogicProperty)
 );
 
+
 #endif

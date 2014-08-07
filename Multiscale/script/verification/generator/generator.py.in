@@ -30,7 +30,7 @@ WRN_AUTO_GENERATED_FILE = [
 "*"
 ]
   
-PROJECT_ROOT_FOLDER = "/home/ovidiu/Repositories/git/multiscale/Multiscale"
+PROJECT_ROOT_FOLDER = "${PROJECT_SOURCE_DIR}"
 TEMPLATES_FOLDER_PATH = PROJECT_ROOT_FOLDER + "/script/verification/generator/templates"
 
 TAG_WRN_AUTO_GENERATED_FILE = "auto_generated_warning"

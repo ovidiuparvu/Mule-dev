@@ -3,6 +3,7 @@
 
 #include "gtest/gtest.h"
 
+
 namespace multiscaletest {
 
     class MultiscaleTest : public ::testing::Test {
@@ -29,5 +30,6 @@ namespace multiscaletest {
     };
 
 };
+
 
 #endif

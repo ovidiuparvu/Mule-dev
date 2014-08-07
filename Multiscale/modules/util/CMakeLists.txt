@@ -44,12 +44,14 @@ set(GEOMETRY2D_TEST_SRC
     test/Geometry2DTest.cpp
 )
 
-add_executable(Geometry2DTest ${GEOMETRY2D_TEST_SRC})
-AddUnitTest(Geometry2DTest)
+set(GEOMETRY2D_TEST_LINK_LIBS
+    util
+    ${OpenCV_LIBRARIES}
+    gtest
+    gtest_main
+)
 
-target_link_libraries(Geometry2DTest util)
-target_link_libraries(Geometry2DTest ${OpenCV_LIBRARIES})
-target_link_libraries(Geometry2DTest gtest gtest_main)
+AddUnitTest(Geometry2DTest "${GEOMETRY2D_TEST_SRC}" "${GEOMETRY2D_TEST_LINK_LIBS}")
 
 
 # LineCircleIntersectionSample
@@ -71,12 +73,14 @@ set(MIN_ENCLOSING_TRIANGLE_FINDER_TEST_SRC
     test/MinEnclosingTriangleFinderTest.cpp
 )
 
-add_executable(MinEnclosingTriangleFinderTest ${MIN_ENCLOSING_TRIANGLE_FINDER_TEST_SRC})
-AddUnitTest(MinEnclosingTriangleFinderTest)
+set(MIN_ENCLOSING_TRIANGLE_FINDER_TEST_LINK_LIBS
+    util
+    ${OpenCV_LIBRARIES}
+    gtest
+    gtest_main
+)
 
-target_link_libraries(MinEnclosingTriangleFinderTest util)
-target_link_libraries(MinEnclosingTriangleFinderTest ${OpenCV_LIBRARIES})
-target_link_libraries(MinEnclosingTriangleFinderTest gtest gtest_main)
+AddUnitTest(MinEnclosingTriangleFinderTest "${MIN_ENCLOSING_TRIANGLE_FINDER_TEST_SRC}" "${MIN_ENCLOSING_TRIANGLE_FINDER_TEST_LINK_LIBS}")
 
 
 # NumericTest
@@ -85,11 +89,13 @@ set(NUMERIC_TEST_SRC
     test/NumericTest.cpp
 )
 
-add_executable(NumericTest ${NUMERIC_TEST_SRC})
-AddUnitTest(NumericTest)
+set(NUMERIC_TEST_LINK_LIBS
+    util
+    gtest
+    gtest_main
+)
 
-target_link_libraries(NumericTest util)
-target_link_libraries(NumericTest gtest gtest_main)
+AddUnitTest(NumericTest "${NUMERIC_TEST_SRC}" "${NUMERIC_TEST_LINK_LIBS}")
 
 
 # StatisticsTest
@@ -98,11 +104,13 @@ set(STATISTICS_TEST_SRC
     test/StatisticsTest.cpp
 )
 
-add_executable(StatisticsTest ${STATISTICS_TEST_SRC})
-AddUnitTest(StatisticsTest)
+set(STATISTICS_TEST_LINK_LIBS
+    util
+    gtest
+    gtest_main
+)
 
-target_link_libraries(StatisticsTest util)
-target_link_libraries(StatisticsTest gtest gtest_main)
+AddUnitTest(StatisticsTest "${STATISTICS_TEST_SRC}" "${STATISTICS_TEST_LINK_LIBS}")
 
 
 # MinEnclosingTriangleFinderSample

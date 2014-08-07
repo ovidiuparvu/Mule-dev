@@ -71,12 +71,14 @@ set(DBSCAN_TEST_SRC
     src/DBSCAN.cpp
 )
 
-add_executable(DBSCANTest ${DBSCAN_TEST_SRC})
-AddUnitTest(DBSCANTest)
+set(DBSCAN_TEST_LINK_LIBS
+    util
+    ${OpenCV_LIBRARIES}
+    gtest 
+    gtest_main
+)
 
-target_link_libraries(DBSCANTest util)
-target_link_libraries(DBSCANTest ${OpenCV_LIBRARIES})
-target_link_libraries(DBSCANTest gtest gtest_main)
+AddUnitTest(DBSCANTest "${DBSCAN_TEST_SRC}" "${DBSCAN_TEST_LINK_LIBS}")
 
 
 # LexicographicIteratorSample

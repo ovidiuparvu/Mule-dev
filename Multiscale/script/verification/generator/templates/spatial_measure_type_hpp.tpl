@@ -14,12 +14,12 @@ namespace multiscale {
 
         //! Enumeration for representing the types of spatial measures
         enum class SpatialMeasureType : unsigned int {
-            {{ "%-#spatial_measure_fixed_widths"|format(spatial_measures[0].name|first_to_upper) }} = 0,    /*!< {{ spatial_measures[0].description }} */
+            {{ "%-33s"|format(spatial_measures[0].name|first_to_upper) }} = 0,    /*!< {{ spatial_measures[0].description }} */
             {% for spatial_measure in spatial_measures[1:] %}
-            {{ "%-#spatial_measure_fixed_widths"|format(spatial_measure.name|first_to_upper) }}    ,    /*!< {{ spatial_measure.description }} */
+            {{ "%-33s"|format(spatial_measure.name|first_to_upper) }}    ,    /*!< {{ spatial_measure.description }} */
             {% endfor %}
-            {{ "%-#spatial_measure_fixed_widths"|format("NrOfSpatialMeasureTypeEntries") }}         /*!< Enumeration type used to store the number of
-            {{ "%-#spatial_measure_fixed_widths"|format(" ") }}              elements in the enumeration. Always leave it last! */
+            {{ "%-33s"|format("NrOfSpatialMeasureTypeEntries") }}         /*!< Enumeration type used to store the number of
+            {{ "%-33s"|format(" ") }}              elements in the enumeration. Always leave it last! */
         };
 
     };
