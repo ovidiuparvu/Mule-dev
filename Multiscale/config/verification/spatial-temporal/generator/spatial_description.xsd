@@ -37,6 +37,13 @@
 					<xs:field xpath="minValue" />
 					<xs:field xpath="maxValue" />
 				</xs:unique>
+				
+				<!-- The spatial measures' names must be unique -->
+					
+				<xs:unique name="UniqueSpatialMeasuresNames">
+					<xs:selector xpath="spatialMeasure" />
+					<xs:field xpath="name" />
+				</xs:unique>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
