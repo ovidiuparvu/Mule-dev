@@ -118,11 +118,11 @@ TEST_F(SpatialEntitiesTraceTest, BinaryNumericMeasureMod) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, BinaryNumericMeasureMultiply) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) <= multiply(2, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(regions) <= multiply(2, 3)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, BinaryNumericMeasurePower) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [clusteredness(clusters) <= power(2, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetClusteredness(clusters) <= power(2, 3)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, BinaryNumericMeasureSubtract) {
@@ -438,7 +438,7 @@ TEST_F(SpatialEntitiesTraceTest, MultipleLogicProperties1) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, MultipleLogicProperties2) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.85934 [~( F [2, 3] ( max(filter(regions, perimeter <= 10), area) >= 2 ) ) => ( G [4, 5] (X (X [5] ( percentile(regions, area, 0.4) = 0.7 ))) ) <=> ( (clusteredness(filter(clusters, (area <= 2) ^ (distanceFromOrigin >= 6) V (angle >= 30) => (centroidX <= 2) <=> (centroidY >= 4)) ) >= 2) U [3, 7] ( kurt(regions, area) <= 0.00001 ) ) ]"));
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.85934 [~( F [2, 3] ( max(filter(regions, perimeter <= 10), area) >= 2 ) ) => ( G [4, 5] (X (X [5] ( percentile(regions, area, 0.4) = 0.7 ))) ) <=> ( (subsetClusteredness(filter(clusters, (area <= 2) ^ (distanceFromOrigin >= 6) V (angle >= 30) => (centroidX <= 2) <=> (centroidY >= 4)) ) >= 2) U [3, 7] ( kurt(regions, area) <= 0.00001 ) ) ]"));
 }
 
 
@@ -542,7 +542,7 @@ TEST_F(SpatialEntitiesTraceTest, NumericSpatialMeasure) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, NumericSpatialNumericComparison) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [clusteredness(clusters) >= 4.2]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [subsetClusteredness(clusters) >= 4.2]"));
 }
 
 
@@ -801,31 +801,31 @@ TEST_F(SpatialEntitiesTraceTest, UnaryNumericFilter) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, UnaryNumericMeasureAbs) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) <= abs(-3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(regions) <= abs(-3)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, UnaryNumericMeasureCeil) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) <= ceil(0.3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(regions) <= ceil(0.3)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, UnaryNumericMeasureFloor) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [density(regions) <= floor(0.49)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [subsetDensity(regions) <= floor(0.49)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, UnaryNumericMeasureRound) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) >= round(count(clusters))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(regions) >= round(count(clusters))]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, UnaryNumericMeasureSign) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) <= sign(21.1)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(regions) <= sign(21.1)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, UnaryNumericMeasureSqrt) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) <= sqrt(2)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(regions) <= sqrt(2)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, UnaryNumericMeasureTrunc) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) <= trunc(1.1)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(regions) <= trunc(1.1)]"));
 }
 
 
@@ -855,11 +855,11 @@ TEST_F(SpatialEntitiesTraceTest, UnarySubsetMeasureCount) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, UnarySubsetMeasureClusteredness) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [clusteredness(regions) <= 2]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetClusteredness(regions) <= 2]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, UnarySubsetMeasureDensity) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(regions) <= 2]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(regions) <= 2]"));
 }
 
 
@@ -910,7 +910,7 @@ TEST_F(SpatialEntitiesTraceTest, GlobalConstantValueNumericStateVariable) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, GlobalConstantValueUnaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [G [1, 10] (d(round(density(clusters))) = 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [G [1, 10] (d(round(subsetDensity(clusters))) = 0)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, GlobalConstantValueBinaryNumeric) {
@@ -951,7 +951,7 @@ TEST_F(SpatialEntitiesTraceTest, FutureIncreasingValueNumericStateVariable) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, FutureIncreasingValueUnaryNumeric) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(round(density(regions))) > 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(round(subsetDensity(regions))) > 0)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, FutureIncreasingValueBinaryNumeric) {
@@ -959,7 +959,7 @@ TEST_F(SpatialEntitiesTraceTest, FutureIncreasingValueBinaryNumeric) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, FutureIncreasingValueUnarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(density(regions)) > 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(subsetDensity(regions)) > 0)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, FutureIncreasingValueBinarySubset) {
@@ -1037,7 +1037,7 @@ TEST_F(SpatialEntitiesTraceTest, IncreasingUntilDecreasingValueUnaryNumeric) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, IncreasingUntilDecreasingValueBinaryNumeric) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(clusteredness(regions) >= 0) U [0, 10] (d(add({A}, {B})) <= 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(subsetClusteredness(regions) >= 0) U [0, 10] (d(add({A}, {B})) <= 0)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, IncreasingUntilDecreasingValueUnarySubset) {
@@ -1078,7 +1078,7 @@ TEST_F(SpatialEntitiesTraceTest, DecreasingUntilIncreasingValueUnaryNumeric) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, DecreasingUntilIncreasingValueBinaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(clusteredness(regions) <= 0) U [0, 10] (d(add(count(regions), count(clusters))) >= 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(subsetClusteredness(regions) <= 0) U [0, 10] (d(add(count(regions), count(clusters))) >= 0)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, DecreasingUntilIncreasingValueUnarySubset) {
@@ -1144,11 +1144,11 @@ TEST_F(SpatialEntitiesTraceTest, OscillationsValueQuaternarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, EnclosingWithParenthesesDifferently1) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [((avg(clusters, perimeter) > 10) ^ (count(regions) < 1)) V (density(clusters) > 100)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [((avg(clusters, perimeter) > 10) ^ (count(regions) < 1)) V (subsetDensity(clusters) > 100)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, EnclosingWithParenthesesDifferently2) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(avg(clusters, perimeter) > 10) ^ ((count(regions) < 1) V (density(clusters) > 100))]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(avg(clusters, perimeter) > 10) ^ ((count(regions) < 1) V (subsetDensity(clusters) > 100))]"));
 }
 
 

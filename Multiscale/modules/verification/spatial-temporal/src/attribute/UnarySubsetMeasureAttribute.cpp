@@ -10,12 +10,12 @@ std::ostream& multiscale::verification::operator<<(std::ostream& out, const Unar
             out << "count";
             break;
 
-        case UnarySubsetMeasureType::Clusteredness:
-            out << "clusteredness";
+        case UnarySubsetMeasureType::SubsetClusteredness:
+            out << "subsetClusteredness";
             break;
 
-        case UnarySubsetMeasureType::Density:
-            out << "density";
+        case UnarySubsetMeasureType::SubsetDensity:
+            out << "subsetDensity";
             break;
 
         default:

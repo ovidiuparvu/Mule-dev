@@ -101,10 +101,10 @@ namespace multiscale {
                         case UnarySubsetMeasureType::Count:
                             return timePoint.numberOfSpatialEntities();
 
-                        case UnarySubsetMeasureType::Clusteredness:
+                        case UnarySubsetMeasureType::SubsetClusteredness:
                             return timePoint.avgClusteredness();
 
-                        case UnarySubsetMeasureType::Density:
+                        case UnarySubsetMeasureType::SubsetDensity:
                             return timePoint.avgDensity();
 
                         default:

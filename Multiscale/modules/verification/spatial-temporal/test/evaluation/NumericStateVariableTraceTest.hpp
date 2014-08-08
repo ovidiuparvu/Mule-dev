@@ -408,7 +408,7 @@ TEST_F(NumericStateVariableTraceTest, MultipleLogicProperties1) {
 }
 
 TEST_F(NumericStateVariableTraceTest, MultipleLogicProperties2) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.85934 [~( F [2, 3] ( max(filter(regions, perimeter <= 10), area) >= 2 ) ) => ( G [4, 5] (X (X [5] ( percentile(regions, area, 0.4) = 0.7 ))) ) <=> ( (clusteredness(filter(clusters, (area <= 2) ^ (distanceFromOrigin >= 6) V (angle >= 30) => (centroidX <= 2) <=> (centroidY >= 4)) ) >= 2) U [3, 7] ( kurt(regions, area) <= {A} ) ) ]"));
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.85934 [~( F [2, 3] ( max(filter(regions, perimeter <= 10), area) >= 2 ) ) => ( G [4, 5] (X (X [5] ( percentile(regions, area, 0.4) = 0.7 ))) ) <=> ( (subsetClusteredness(filter(clusters, (area <= 2) ^ (distanceFromOrigin >= 6) V (angle >= 30) => (centroidX <= 2) <=> (centroidY >= 4)) ) >= 2) U [3, 7] ( kurt(regions, area) <= {A} ) ) ]"));
 }
 
 
@@ -512,7 +512,7 @@ TEST_F(NumericStateVariableTraceTest, NumericSpatialMeasure) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, NumericSpatialNumericComparison) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [clusteredness(clusters) >= {A}]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [subsetClusteredness(clusters) >= {A}]"));
 }
 
 
@@ -825,11 +825,11 @@ TEST_F(NumericStateVariableTraceTest, UnarySubsetMeasureCount) {
 }
 
 TEST_F(NumericStateVariableTraceTest, UnarySubsetMeasureClusteredness) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [clusteredness(clusters) <= {A}]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetClusteredness(clusters) <= {A}]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, UnarySubsetMeasureDensity) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [density(clusters) <= {A}]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(clusters) <= {A}]"));
 }
 
 
@@ -1007,7 +1007,7 @@ TEST_F(NumericStateVariableTraceTest, IncreasingUntilDecreasingValueUnaryNumeric
 }
 
 TEST_F(NumericStateVariableTraceTest, IncreasingUntilDecreasingValueBinaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(clusteredness(regions) >= 0) U [0, 10] (d(add({A}, {B})) <= 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(subsetClusteredness(regions) >= 0) U [0, 10] (d(add({A}, {B})) <= 0)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, IncreasingUntilDecreasingValueUnarySubset) {
@@ -1048,7 +1048,7 @@ TEST_F(NumericStateVariableTraceTest, DecreasingUntilIncreasingValueUnaryNumeric
 }
 
 TEST_F(NumericStateVariableTraceTest, DecreasingUntilIncreasingValueBinaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(clusteredness(regions) <= 0) U [0, 10] (d(add({A}, {B})) >= 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(subsetClusteredness(regions) <= 0) U [0, 10] (d(add({A}, {B})) >= 0)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, DecreasingUntilIncreasingValueUnarySubset) {
@@ -1114,11 +1114,11 @@ TEST_F(NumericStateVariableTraceTest, OscillationsValueQuaternarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, EnclosingWithParenthesesDifferently1) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [((avg(clusters, perimeter) > {B}) ^ (count(regions) < 1)) V (density(clusters) > 100)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [((avg(clusters, perimeter) > {B}) ^ (count(regions) < 1)) V (subsetDensity(clusters) > 100)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, EnclosingWithParenthesesDifferently2) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(avg(clusters, perimeter) > {B}) ^ ((count(regions) < 1) V (density(clusters) > 100))]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(avg(clusters, perimeter) > {B}) ^ ((count(regions) < 1) V (subsetDensity(clusters) > 100))]"));
 }
 
 

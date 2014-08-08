@@ -892,7 +892,7 @@ TEST(MultipleLogicProperties, Correct1) {
 }
 
 TEST(MultipleLogicProperties, Correct2) {
-    EXPECT_TRUE(parseInputString("P <= 0.85934 [~( F [2, 3] ( max(filter(regions, perimeter <= 10), area) >= 2 ) ) => ( G [10, 20] (X (X [10] ( percentile(regions, area, 0.4) = 0.7 ))) ) <=> ( (clusteredness(filter(clusters, (area <= 2) ^ (distanceFromOrigin >= 6) V (angle >= 30) => (centroidX <= 2) <=> (centroidY >= 4)) ) >= 2) U [10, 400] ( kurt(regions, area) <= 0.00001 ) ) ]"));
+    EXPECT_TRUE(parseInputString("P <= 0.85934 [~( F [2, 3] ( max(filter(regions, perimeter <= 10), area) >= 2 ) ) => ( G [10, 20] (X (X [10] ( percentile(regions, area, 0.4) = 0.7 ))) ) <=> ( (subsetClusteredness(filter(clusters, (area <= 2) ^ (distanceFromOrigin >= 6) V (angle >= 30) => (centroidX <= 2) <=> (centroidY >= 4)) ) >= 2) U [10, 400] ( kurt(regions, area) <= 0.00001 ) ) ]"));
 }
 
 
@@ -1104,7 +1104,7 @@ TEST(NumericSpatialNumericComparison, IncorrectOrder) {
 }
 
 TEST(NumericSpatialNumericComparison, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [clusteredness(clusters) >= 4.2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetClusteredness(clusters) >= 4.2]"));
 }
 
 
@@ -1683,35 +1683,35 @@ TEST(UnaryNumericFilter, Correct) {
 
 
 TEST(UnaryNumericMeasure, IncorrectUnaryNumericMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [density(regions) <= frac(count(clusters))]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [subsetDensity(regions) <= frac(count(clusters))]"), InvalidInputException);
 }
 
 TEST(UnaryNumericMeasure, CorrectAbs) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [density(regions) <= abs(count(clusters))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetDensity(regions) <= abs(count(clusters))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectCeil) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [density(regions) <= ceil(count(clusters))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetDensity(regions) <= ceil(count(clusters))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectFloor) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [density(regions) <= floor(count(clusters))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetDensity(regions) <= floor(count(clusters))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectRound) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [density(regions) <= round(count(clusters))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetDensity(regions) <= round(count(clusters))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectSign) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [density(regions) <= sign(count(clusters))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetDensity(regions) <= sign(count(clusters))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectSqrt) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [density(regions) <= sqrt(count(clusters))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetDensity(regions) <= sqrt(count(clusters))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectTrunc) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [density(regions) <= trunc(count(clusters))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetDensity(regions) <= trunc(count(clusters))]"));
 }
 
 
@@ -1813,11 +1813,11 @@ TEST(UnarySubsetMeasure, CorrectCount) {
 }
 
 TEST(UnarySubsetMeasure, CorrectClusteredness) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [clusteredness(clusters) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetClusteredness(clusters) <= 2]"));
 }
 
 TEST(UnarySubsetMeasure, CorrectDensity) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [density(clusters) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [subsetDensity(clusters) <= 2]"));
 }
 
 

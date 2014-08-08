@@ -11,9 +11,9 @@ namespace multiscale {
 
         //! Enumeration for representing a unary subset measure type
         enum class UnarySubsetMeasureType : int {
-            Count           = 1,    /*!< Number of spatial entities */
-            Clusteredness   = 2,    /*!< The overall clusteredness of the entities */
-            Density         = 3     /*!< The overall density of the entities */
+            Count               = 1,    /*!< Number of spatial entities */
+            SubsetClusteredness = 2,    /*!< The clusteredness of a spatial entities subset */
+            SubsetDensity       = 3     /*!< The density of a spatial entities subset */
         };
 
 

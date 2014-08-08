@@ -1,8 +1,0 @@
-# Ignore all .csv files in which results are stored
-*.csv
-
-# Ignore all *.pyc files generated from *.py files
-*.csv
-
-# Output folder
-/out

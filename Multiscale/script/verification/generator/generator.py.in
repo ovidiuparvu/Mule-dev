@@ -155,6 +155,11 @@ SOURCE_FILE_GENERATING_IO = {
         MODEL_CHECKING_TEST_FOLDER + str(
             "/checking/ModelCheckerTest.hpp"
         )
+        ,
+    "test/evaluation/complete_trace_test_hpp.tpl" : 
+        MODEL_CHECKING_TEST_FOLDER + str(
+            "/evaluation/CompleteTraceTest.hpp"
+        )
 }
 
 DERIVED_SPATIAL_ENTITY_TEMPLATE_PATH = str(

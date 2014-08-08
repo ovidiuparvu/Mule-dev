@@ -145,9 +145,9 @@ namespace multiscale {
 
             UnarySubsetMeasureTypeParser() {
                 add
-                    ("count"            , UnarySubsetMeasureType::Count)
-                    ("clusteredness"    , UnarySubsetMeasureType::Clusteredness)
-                    ("density"          , UnarySubsetMeasureType::Density)
+                    ("count"                , UnarySubsetMeasureType::Count)
+                    ("subsetClusteredness"  , UnarySubsetMeasureType::SubsetClusteredness)
+                    ("subsetDensity"        , UnarySubsetMeasureType::SubsetDensity)
                 ;
             }
 
