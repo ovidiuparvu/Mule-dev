@@ -171,6 +171,11 @@ SOURCE_FILE_GENERATING_IO = {
             "/evaluation/NumericStateVariableTraceTest.hpp"
         )
     ,
+    "test/evaluation/spatial_entities_trace_test_hpp.tpl" :
+        MODEL_CHECKING_TEST_FOLDER + str(
+            "/evaluation/SpatialEntitiesTraceTest.hpp"
+        )
+    ,
     "test/parsing/parser_test_hpp.tpl" :
         MODEL_CHECKING_TEST_FOLDER + str(
             "/parsing/ParserTest.hpp"
