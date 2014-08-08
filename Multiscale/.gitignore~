@@ -2,7 +2,7 @@
 *.csv
 
 # Ignore all *.pyc files generated from *.py files
-*.pyc
+*.csv
 
 # Output folder
 /out
