@@ -1,7 +1,7 @@
 /******************************************************************************
-{% for line in auto_generated_warning %}
- {{ line }}
-{% endfor %}
+/*{% for line in auto_generated_warning %}*/
+ /*{{ line }}*/
+/*{% endfor %}*/
  *****************************************************************************/
 
 #include "multiscale/exception/UnimplementedMethodException.hpp"
@@ -13,7 +13,7 @@ using namespace multiscale::verification;
 
 
 double TimePoint::avgDistanceBetweenCentroids(const std::vector<std::shared_ptr<SpatialEntity>> &spatialEntities) const {
-{% if is_centroid_x_spatial_measure and is_centroid_y_spatial_measure %}
+/*{% if is_centroid_x_spatial_measure and is_centroid_y_spatial_measure %}*/
     double      distanceSum         = 0;
     std::size_t nrOfSpatialEntities = spatialEntities.size();
 
@@ -28,16 +28,16 @@ double TimePoint::avgDistanceBetweenCentroids(const std::vector<std::shared_ptr<
 
     return (nrOfSpatialEntities == 0) ? 0
                                       : (distanceSum / (nrOfSpatialEntities * nrOfSpatialEntities));
-{% else %}
+/*{% else %}*/
     // This method is unimplemented because the currently generated custom model checker
     // is missing at least one of the required spatial measures (density, centroidX, centroidY)
     // from the SpatialEntity class
     MS_throw(UnimplementedMethodException, ERR_UNIMPLEMENTED_METHOD);
-{% endif %}
+/*{% endif %}*/
 }
 
 double TimePoint::avgDensity(const std::vector<std::shared_ptr<SpatialEntity>> &spatialEntities) const {
-{% if is_density_spatial_measure %}
+/*{% if is_density_spatial_measure %}*/
     double      densitySum          = 0;
     std::size_t nrOfSpatialEntities = spatialEntities.size();
 
@@ -47,10 +47,10 @@ double TimePoint::avgDensity(const std::vector<std::shared_ptr<SpatialEntity>> &
 
     return (nrOfSpatialEntities == 0) ? 0
                                       : (densitySum / nrOfSpatialEntities);
-{% else %}
+/*{% else %}*/
     // This method is unimplemented because the currently generated custom model checker
     // is missing at least one of the required spatial measures (density, centroidX, centroidY)
     // from the SpatialEntity class
     MS_throw(UnimplementedMethodException, ERR_UNIMPLEMENTED_METHOD);
-{% endif %}
+/*{% endif %}*/
 }

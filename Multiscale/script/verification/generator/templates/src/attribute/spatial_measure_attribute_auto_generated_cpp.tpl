@@ -1,7 +1,7 @@
 /******************************************************************************
-{% for line in auto_generated_warning %}
- {{ line }}
-{% endfor %}
+/*{% for line in auto_generated_warning %}*/
+ /*{{ line }}*/
+/*{% endfor %}*/
  *****************************************************************************/
 
 #include "multiscale/exception/MultiscaleException.hpp"
@@ -17,12 +17,12 @@ using namespace multiscale::verification::spatialmeasure;
 double
 multiscale::verification::spatialmeasure::getMinValidSpatialMeasureValue(const SpatialMeasureType &spatialMeasureType) {
     switch (spatialMeasureType) {
-    {% for spatial_measure in spatial_measures %}
-        case SpatialMeasureType::{{ spatial_measure.name|first_to_upper }}:
-            return {{ spatial_measure.min_value }};
+    /*{% for spatial_measure in spatial_measures %}*/
+        case SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/:
+            return /*{{ spatial_measure.min_value }}*/;
             break;
             
-    {% endfor %}
+    /*{% endfor %}*/
         default:
             MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
     }
@@ -34,12 +34,12 @@ multiscale::verification::spatialmeasure::getMinValidSpatialMeasureValue(const S
 double
 multiscale::verification::spatialmeasure::getMaxValidSpatialMeasureValue(const SpatialMeasureType &spatialMeasureType) {
     switch (spatialMeasureType) {
-    {% for spatial_measure in spatial_measures %}
-        case SpatialMeasureType::{{ spatial_measure.name|first_to_upper }}:
-            return {{ spatial_measure.max_value }};
+    /*{% for spatial_measure in spatial_measures %}*/
+        case SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/:
+            return /*{{ spatial_measure.max_value }}*/;
             break;
             
-    {% endfor %}
+    /*{% endfor %}*/
         default:
             MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
     }
@@ -52,12 +52,12 @@ multiscale::verification::spatialmeasure::getMaxValidSpatialMeasureValue(const S
 std::ostream&
 multiscale::verification::operator<<(std::ostream& out, const SpatialMeasureType &spatialMeasureType) {
     switch (spatialMeasureType) {
-   {% for spatial_measure in spatial_measures %}
-        case SpatialMeasureType::{{ spatial_measure.name|first_to_upper }}:
-            out << "{{ spatial_measure.name }}";
+   /*{% for spatial_measure in spatial_measures %}*/
+        case SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/:
+            out << "/*{{ spatial_measure.name }}*/";
             break;
             
-    {% endfor %}
+    /*{% endfor %}*/
         default:
             out << "undefined";
     }

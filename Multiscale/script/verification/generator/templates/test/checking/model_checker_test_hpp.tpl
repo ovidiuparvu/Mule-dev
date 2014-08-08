@@ -4,7 +4,7 @@
 #include "multiscale/core/MultiscaleTest.hpp"
 #include "multiscale/exception/TestException.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelChecker.hpp"
-#include "multiscale/verification/spatial-temporal/model/{{ spatial_entities[0].name|first_to_upper }}.hpp"
+#include "multiscale/verification/spatial-temporal/model//*{{ spatial_entities[0].name|first_to_upper }}*/.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
@@ -12,7 +12,7 @@
 
 namespace mv = multiscale::verification;
 
-const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg({{ spatial_entities[0].name }}s, {{ spatial_measures[0].name }}) > 20)]";
+const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) > 20)]";
 
 
 namespace multiscaletest {
@@ -56,14 +56,14 @@ namespace multiscaletest {
            //! Initialise the abstract syntax tree
            void InitialiseAbstractSyntaxTree();
 
-           //! Initialise the collection of spatio-temporal traces with the given spatial entity {{ spatial_measures[0].name }} values
+           //! Initialise the collection of spatio-temporal traces with the given spatial entity /*{{ spatial_measures[0].name }}*/ values
            /*!
             * The assumption is that each timepoint contains only one spatial entity of the same type.
-            * Therefore each {{ spatial_measures[0].name }} value corresponds to a different timepoint and spatial entity.
+            * Therefore each /*{{ spatial_measures[0].name }}*/ value corresponds to a different timepoint and spatial entity.
             *
-            * \param {{ spatial_measures[0].name }}Values The collection of {{ spatial_measures[0].name }} values
+            * \param /*{{ spatial_measures[0].name }}*/Values The collection of /*{{ spatial_measures[0].name }}*/ values
             */
-           void InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(const std::vector<double> {{ spatial_measures[0].name }}Values);
+           void InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(const std::vector<double> /*{{ spatial_measures[0].name }}*/Values);
 
     };
 
@@ -97,18 +97,18 @@ namespace multiscaletest {
     void ModelCheckerTest::InitialiseSpatioTemporalTraces() {
         traces.clear();
 
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{10, 20, 30});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{30, 20, 10});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{10, 20, 10});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{30, 20, 30});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{20, 20, 20});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{10, 20, 20});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{30, 20, 20});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{20, 20, 30});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{20, 20, 10});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{10, 20, 20, 10});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{30, 20, 20, 30});
-        InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(std::vector<double>{10, 20, 20, 30});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 30});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{30, 20, 10});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 10});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{30, 20, 30});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{20, 20, 20});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 20});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{30, 20, 20});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{20, 20, 30});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{20, 20, 10});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 20, 10});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{30, 20, 20, 30});
+        InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(std::vector<double>{10, 20, 20, 30});
     }
 
     void ModelCheckerTest::InitialiseAbstractSyntaxTree() {
@@ -117,23 +117,23 @@ namespace multiscaletest {
         parser.parse(abstractSyntaxTree);
     }
 
-    void ModelCheckerTest::InitialiseSpatioTemporalTraceWith{{ spatial_measures[0].name|first_to_upper }}Values(const std::vector<double> {{ spatial_measures[0].name }}Values) {
+    void ModelCheckerTest::InitialiseSpatioTemporalTraceWith/*{{ spatial_measures[0].name|first_to_upper }}*/Values(const std::vector<double> /*{{ spatial_measures[0].name }}*/Values) {
         mv::SpatialTemporalTrace                            trace;
         mv::TimePoint                                       timePoint;
         std::list<std::shared_ptr<SpatialEntity>>::iterator iterator;
 
-        timePoint.setConsideredSpatialEntityType(mv::SubsetSpecificType::{{ spatial_entities[0].name|first_to_upper }}s);
+        timePoint.setConsideredSpatialEntityType(mv::SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
 
-        for (std::size_t i = 0; i < {{ spatial_measures[0].name }}Values.size(); i++) {
-            std::shared_ptr<SpatialEntity> {{ spatial_entities[0].name }} = std::make_shared<{{ spatial_entities[0].name|first_to_upper }}>();
+        for (std::size_t i = 0; i < /*{{ spatial_measures[0].name }}*/Values.size(); i++) {
+            std::shared_ptr<SpatialEntity> /*{{ spatial_entities[0].name }}*/ = std::make_shared</*{{ spatial_entities[0].name|first_to_upper }}*/>();
 
-            {{ spatial_entities[0].name }}->setSpatialMeasureValue(SpatialMeasureType::{{ spatial_measures[0].name|first_to_upper }}, {{ spatial_measures[0].name }}Values[i]);
-            timePoint.addSpatialEntity({{ spatial_entities[0].name }}, mv::SubsetSpecificType::{{ spatial_entities[0].name|first_to_upper }}s);
+            /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measures[0].name|first_to_upper }}*/, /*{{ spatial_measures[0].name }}*/Values[i]);
+            timePoint.addSpatialEntity(/*{{ spatial_entities[0].name }}*/, mv::SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
             trace.addTimePoint(timePoint);
 
-            iterator = timePoint.getSpatialEntitiesBeginIterator(SubsetSpecificType::{{ spatial_entities[0].name|first_to_upper }}s);
+            iterator = timePoint.getSpatialEntitiesBeginIterator(SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
 
-            timePoint.removeSpatialEntity(iterator, SubsetSpecificType::{{ spatial_entities[0].name|first_to_upper }}s);
+            timePoint.removeSpatialEntity(iterator, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
         }
 
         traces.push_back(trace);

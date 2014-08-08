@@ -1,6 +1,15 @@
 #ifndef COMPLETETRACETEST_HPP
 #define COMPLETETRACETEST_HPP
 
+/******************************************************************************
+ *
+ * WARNING! AUTO-GENERATED FILE.
+ *
+ * PLEASE DO NOT UPDATE THIS FILE MANUALLY. 
+ * USE THE PYTHON GENERATOR SCRIPTS FOR ANY MODIFICATIONS.
+ *
+ *****************************************************************************/
+
 #include "TraceEvaluationTest.hpp"
 
 using namespace multiscale;
@@ -85,7 +94,7 @@ namespace multiscaletest {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryNumericFilter) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(clusters) >= 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(filter(clusters, clusteredness > subtract(clusteredness, 2.5))) > 0]"));
 }
 
 

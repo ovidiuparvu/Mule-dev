@@ -155,10 +155,25 @@ SOURCE_FILE_GENERATING_IO = {
         MODEL_CHECKING_TEST_FOLDER + str(
             "/checking/ModelCheckerTest.hpp"
         )
-        ,
+    ,
     "test/evaluation/complete_trace_test_hpp.tpl" : 
         MODEL_CHECKING_TEST_FOLDER + str(
             "/evaluation/CompleteTraceTest.hpp"
+        )
+    ,
+    "test/evaluation/empty_trace_test_hpp.tpl" :
+        MODEL_CHECKING_TEST_FOLDER + str(
+            "/evaluation/EmptyTraceTest.hpp"
+        )
+    ,
+    "test/evaluation/numeric_state_variable_trace_test_hpp.tpl" :
+        MODEL_CHECKING_TEST_FOLDER + str(
+            "/evaluation/NumericStateVariableTraceTest.hpp"
+        )
+    ,
+    "test/parsing/parser_test_hpp.tpl" :
+        MODEL_CHECKING_TEST_FOLDER + str(
+            "/parsing/ParserTest.hpp"
         )
 }
 
@@ -400,6 +415,10 @@ def generate_source_files(spatial_entities, spatial_measures):
                       loader=jinja2.loaders.FileSystemLoader(
                           TEMPLATES_FOLDER_PATH
                       ),
+                      block_start_string="/*{%",
+                      block_end_string="%}*/",
+                      variable_start_string="/*{{",
+                      variable_end_string="}}*/",
                       trim_blocks=True,
                       lstrip_blocks=True
                   )

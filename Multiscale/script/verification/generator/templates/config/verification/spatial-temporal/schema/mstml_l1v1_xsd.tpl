@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- 
-{% for line in auto_generated_warning %}
-    {{ line }}
-{% endfor %}
+/*{% for line in auto_generated_warning %}*/
+    /*{{ line }}*/
+/*{% endfor %}*/
 -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -37,9 +37,9 @@
                     <xs:selector xpath="spatialEntity" />
                     <xs:field xpath="@spatialType" />
                     <xs:field xpath="@semanticType" />
-                    {% for spatial_measure in spatial_measures %}
-                    <xs:field xpath="{{ spatial_measure.name }}" />
-                    {% endfor %}
+                    /*{% for spatial_measure in spatial_measures %}*/
+                    <xs:field xpath="/*{{ spatial_measure.name }}*/" />
+                    /*{% endfor %}*/
                 </xs:unique> 
             </xs:element>
         </xs:sequence>
@@ -56,9 +56,9 @@
 
     <xs:complexType name="SpatialEntityType">
         <xs:sequence>
-        {% for spatial_measure in spatial_measures %}
-            <xs:element name="{{ spatial_measure.name }}" type="{{ spatial_measure.name|first_to_upper }}Type" />
-        {% endfor %}
+        /*{% for spatial_measure in spatial_measures %}*/
+            <xs:element name="/*{{ spatial_measure.name }}*/" type="/*{{ spatial_measure.name|first_to_upper }}*/Type" />
+        /*{% endfor %}*/
         </xs:sequence>
         
         <xs:attribute name="spatialType" type="SpatialMetaType" use="required" />
@@ -74,20 +74,20 @@
     
     <!-- User-defined simple types -->
 
-    {% for spatial_measure in spatial_measures %}
-    <xs:simpleType name="{{ spatial_measure.name|first_to_upper }}Type">
+    /*{% for spatial_measure in spatial_measures %}*/
+    <xs:simpleType name="/*{{ spatial_measure.name|first_to_upper }}*/Type">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="{{ spatial_measure.min_value }}" />
-            <xs:maxInclusive value="{{ spatial_measure.max_value }}" />
+            <xs:minInclusive value="/*{{ spatial_measure.min_value }}*/" />
+            <xs:maxInclusive value="/*{{ spatial_measure.max_value }}*/" />
         </xs:restriction>
     </xs:simpleType>
     
-    {% endfor %}
+    /*{% endfor %}*/
     <xs:simpleType name="SpatialMetaType">
         <xs:restriction base="xs:string">
-        {% for spatial_entity in spatial_entities %}
-            <xs:enumeration value="{{ spatial_entity.name }}" />
-        {% endfor %}
+        /*{% for spatial_entity in spatial_entities %}*/
+            <xs:enumeration value="/*{{ spatial_entity.name }}*/" />
+        /*{% endfor %}*/
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

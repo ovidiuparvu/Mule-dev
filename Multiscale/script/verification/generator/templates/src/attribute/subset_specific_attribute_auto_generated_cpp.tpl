@@ -1,7 +1,7 @@
 /******************************************************************************
-{% for line in auto_generated_warning %}
- {{ line }}
-{% endfor %}
+/*{% for line in auto_generated_warning %}*/
+ /*{{ line }}*/
+/*{% endfor %}*/
  *****************************************************************************/
 
 #include "multiscale/verification/spatial-temporal/attribute/SubsetSpecificAttribute.hpp"
@@ -13,11 +13,11 @@ using namespace multiscale::verification;
 std::ostream&
 multiscale::verification::operator<<(std::ostream& out, const SubsetSpecificType &subsetSpecificType) {
     switch (subsetSpecificType) {
-    {% for spatial_entity in spatial_entities %}
-        case SubsetSpecificType::{{ spatial_entity.name|first_to_upper }}s:
-            out << "{{ spatial_entity.name }}s";
+    /*{% for spatial_entity in spatial_entities %}*/
+        case SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s:
+            out << "/*{{ spatial_entity.name }}*/s";
             break;
-    {% endfor %}
+    /*{% endfor %}*/
 
         default:
             out << "undefined";
