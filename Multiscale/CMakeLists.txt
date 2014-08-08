@@ -7,8 +7,11 @@
 # + CMAKE_CUSTOM_BUILD 
 #     if (value == "Package") then build package
 #
-# + CMAKE_CUSTOM_MODEL_CHECKER = "" OR "Generate"
+# + CMAKE_CUSTOM_MODEL_CHECKER
 #     if (value == "Generate") then generate custom model checker
+#
+# + CMAKE_CUSTOM_MODEL_CHECKING_UNIT_TESTS
+#     if (value == "Generate") then generate custom model checking unit tests
 #
 #------------------------------------------------------------
 

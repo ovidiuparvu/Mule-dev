@@ -78,7 +78,9 @@ class SpatialDescriptionParser:
                 return True
           
         # Else raise invalid value error  
-        raise ValueError(ERR_INVALID_PATH_BEGIN + file_path + ERR_INVALID_PATH_END)
+        raise ValueError(
+            ERR_INVALID_PATH_BEGIN + file_path + ERR_INVALID_PATH_END
+        )
         
     def _is_valid_xml(self):
         """ Check if the xml file is valid according to the given schema """
@@ -96,7 +98,9 @@ class SpatialDescriptionParser:
         """
         self._spatial_entities = []
         
-        for spatial_entity_element in self._xml_tree_root.findall(XPATH_SPATIAL_ENTITY):
+        for spatial_entity_element in (
+            self._xml_tree_root.findall(XPATH_SPATIAL_ENTITY)
+        ):
             spatial_entity_name = spatial_entity_element.find(TAG_NAME).text
             
             self._spatial_entities.append(
@@ -109,11 +113,21 @@ class SpatialDescriptionParser:
         """
         self._spatial_measures = []
         
-        for spatial_measure_element in self._xml_tree_root.findall(XPATH_SPATIAL_MEASURE):
-            spatial_measure_name = spatial_measure_element.find(TAG_NAME).text
-            spatial_measure_description = spatial_measure_element.find(TAG_DESCRIPTION).text
-            spatial_measure_min_value = spatial_measure_element.find(TAG_MIN_VALUE).text
-            spatial_measure_max_value = spatial_measure_element.find(TAG_MAX_VALUE).text
+        for spatial_measure_element in (
+            self._xml_tree_root.findall(XPATH_SPATIAL_MEASURE)
+        ):
+            spatial_measure_name = (
+                spatial_measure_element.find(TAG_NAME).text
+            )
+            spatial_measure_description = (
+                spatial_measure_element.find(TAG_DESCRIPTION).text
+            )
+            spatial_measure_min_value = (
+                spatial_measure_element.find(TAG_MIN_VALUE).text
+            )
+            spatial_measure_max_value = (
+                spatial_measure_element.find(TAG_MAX_VALUE).text
+            )
             
             self._spatial_measures.append(
                 model.spatial_measure.SpatialMeasure(
