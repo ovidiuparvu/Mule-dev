@@ -24,7 +24,13 @@ namespace multiscale {
     // Error related definitions
     const std::string ERR_MSG = "An error occurred: ";
 
+    // Specific error messages
+    const std::string ERR_UNDEFINED_ENUM_VALUE = "The provided enumeration value is invalid. Please use one of the available enumeration values instead.";
+
+    const std::string ERR_INDEX_OUT_OF_BOUNDS_BEGIN = "The provided index value (";
+    const std::string ERR_INDEX_OUT_OF_BOUNDS_END   = ") is invalid. Please change.";
+
 };
 
 
-#endif /* CORE_HPP */
+#endif

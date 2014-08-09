@@ -1,4 +1,5 @@
 #include "multiscale/analysis/spatial/Silhouette.hpp"
+#include "multiscale/exception/IndexOutOfBoundsException.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
 #include <algorithm>
@@ -9,12 +10,10 @@ using namespace multiscale::analysis;
 
 
 double Silhouette::computeOverallAverageMeasure(const vector<Cluster> &clusters) {
-    assert(clusters.size() > 0);
-
     double sumOfMeasures = 0;
-    unsigned int nrOfClusters = clusters.size();
+    std::size_t nrOfClusters = clusters.size();
 
-    for (unsigned int i = 0; i < nrOfClusters; i++) {
+    for (std::size_t i = 0; i < nrOfClusters; i++) {
         sumOfMeasures += computeAverageMeasure(i, clusters);
     }
 
@@ -22,15 +21,15 @@ double Silhouette::computeOverallAverageMeasure(const vector<Cluster> &clusters)
                                : 0;
 }
 
-double Silhouette::computeAverageMeasure(unsigned int clusterIndex, const vector<Cluster> &clusters) {
-    assert((clusterIndex > 0) && (clusterIndex < clusters.size()));
+double Silhouette::computeAverageMeasure(std::size_t clusterIndex, const vector<Cluster> &clusters) {
+    validateClusterIndex(clusterIndex, clusters.size());
 
     double sumOfMeasures = 0;
 
     vector<Entity> entities = clusters[clusterIndex].getEntities();
-    unsigned int nrOfEntities = entities.size();
+    std::size_t nrOfEntities = entities.size();
 
-    for (unsigned int i = 0; i < nrOfEntities; i++) {
+    for (std::size_t i = 0; i < nrOfEntities; i++) {
         sumOfMeasures += computeMeasure(i, clusterIndex, clusters);
     }
 
@@ -38,8 +37,10 @@ double Silhouette::computeAverageMeasure(unsigned int clusterIndex, const vector
                                : 0;
 }
 
-double Silhouette::computeMeasure(unsigned int entityIndex, unsigned int clusterIndex, const vector<Cluster> &clusters) {
-    assert((clusterIndex > 0) && (clusterIndex < clusters.size()) && (entityIndex < clusters[clusterIndex].getEntities().size()));
+double Silhouette::computeMeasure(std::size_t entityIndex, std::size_t clusterIndex,
+                                  const vector<Cluster> &clusters) {
+    validateClusterIndex(clusterIndex, clusters.size());
+    validateEntityIndex(entityIndex, clusters[clusterIndex].getEntities().size());
 
     double a = computeAverageDissimilarityWithinCluster(entityIndex, clusterIndex, clusters);
     double b = computeAverageDissimilarityToOtherClusters(entityIndex, clusterIndex, clusters);
@@ -48,27 +49,34 @@ double Silhouette::computeMeasure(unsigned int entityIndex, unsigned int cluster
                                   : 1;
 }
 
-double Silhouette::computeAverageDissimilarityWithinCluster(unsigned int entityIndex, unsigned int clusterIndex, const vector<Cluster> &clusters) {
+double Silhouette::computeAverageDissimilarityWithinCluster(std::size_t entityIndex, std::size_t clusterIndex,
+                                                            const vector<Cluster> &clusters) {
     double sumOfDistances = 0;
 
     vector<Entity> entities = clusters[clusterIndex].getEntities();
-    unsigned int nrOfEntities = entities.size();
+    std::size_t nrOfEntities = entities.size();
 
-    for (unsigned int i = 0; i < nrOfEntities; i++) {
-        sumOfDistances += Geometry2D::distanceBtwPoints(entities[entityIndex].getCentre(), entities[i].getCentre());
+    for (std::size_t i = 0; i < nrOfEntities; i++) {
+        sumOfDistances += Geometry2D::distanceBtwPoints(
+                              entities[entityIndex].getCentre(),
+                              entities[i].getCentre()
+                          );
     }
 
     return (nrOfEntities != 0) ? (sumOfDistances / nrOfEntities)
                                : 0;
 }
 
-double Silhouette::computeAverageDissimilarityToOtherClusters(unsigned int entityIndex, unsigned int clusterIndex, const vector<Cluster> &clusters) {
+double Silhouette::computeAverageDissimilarityToOtherClusters(std::size_t entityIndex, std::size_t clusterIndex,
+                                                              const vector<Cluster> &clusters) {
     double minimumDistance = numeric_limits<double>::max();
-    unsigned int nrOfClusters = clusters.size();
+    std::size_t nrOfClusters = clusters.size();
 
-    for (unsigned int i = 0; i < nrOfClusters; i++) {
+    for (std::size_t i = 0; i < nrOfClusters; i++) {
         if (i != clusterIndex) {
-            double distanceToCluster = computeAverageDissimilarityBtwEntityAndCluster(entityIndex, clusterIndex, i, clusters);
+            double distanceToCluster = computeAverageDissimilarityBtwEntityAndCluster(
+                                           entityIndex, clusterIndex, i, clusters
+                                       );
 
             if (distanceToCluster < minimumDistance) {
                 minimumDistance = distanceToCluster;
@@ -79,15 +87,17 @@ double Silhouette::computeAverageDissimilarityToOtherClusters(unsigned int entit
     return minimumDistance;
 }
 
-double Silhouette::computeAverageDissimilarityBtwEntityAndCluster(unsigned int entityIndex, unsigned int entityClusterIndex,
-                                                                  unsigned int clusterIndex, const vector<Cluster> &clusters) {
+double Silhouette::computeAverageDissimilarityBtwEntityAndCluster(std::size_t entityIndex,
+                                                                  std::size_t entityClusterIndex,
+                                                                  std::size_t clusterIndex,
+                                                                  const vector<Cluster> &clusters) {
     double sumOfDissimilarities = 0;
 
     Point2f entityCentrePoint = (clusters[entityClusterIndex].getEntities())[entityIndex].getCentre();
     vector<Entity> entities = clusters[clusterIndex].getEntities();
-    unsigned int nrOfEntities = entities.size();
+    std::size_t nrOfEntities = entities.size();
 
-    for (unsigned int i = 0; i < nrOfEntities; i++) {
+    for (std::size_t i = 0; i < nrOfEntities; i++) {
         sumOfDissimilarities += Geometry2D::distanceBtwPoints(entityCentrePoint, entities[i].getCentre());
     }
 
@@ -95,3 +105,16 @@ double Silhouette::computeAverageDissimilarityBtwEntityAndCluster(unsigned int e
                                : 0;
 }
 
+void Silhouette::validateClusterIndex(std::size_t clusterIndex, std::size_t totalNrOfClusters) {
+    return validateElementIndex(clusterIndex, totalNrOfClusters);
+}
+
+void Silhouette::validateEntityIndex(std::size_t entityIndex, std::size_t totalNrOfEntities) {
+    return validateElementIndex(entityIndex, totalNrOfEntities);
+}
+
+void Silhouette::validateElementIndex(std::size_t elementIndex, std::size_t totalNrOfElements) {
+    if ((elementIndex < 0) || (elementIndex >= totalNrOfElements)) {
+        MS_throw(IndexOutOfBoundsException, StringManipulator::toString<std::size_t>(elementIndex));
+    }
+}

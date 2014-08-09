@@ -199,7 +199,7 @@ void RegionDetector::computeAverageMeasures(vector<Region> &regions) {
 }
 
 void RegionDetector::computeAverageClusterednessDegree(vector<Region> &regions) {
-    double avgClusterednessDegree = sumOfAverageCentroidDistances(regions);
+    avgClusterednessDegree = sumOfAverageCentroidDistances(regions);
 
     // Take the average of the sum of average distances between clusters
     avgClusterednessDegree = (regions.size() != 0) ? avgClusterednessDegree / (regions.size())
@@ -207,7 +207,7 @@ void RegionDetector::computeAverageClusterednessDegree(vector<Region> &regions) 
 
     // Invert the value such that it is between 0 and 1. Since we are working with pixels
     // the minimum distance between two distinct pixels is 1.
-    if (avgClusterednessDegree != 0) {
+    if (avgClusterednessDegree > 0) {
         avgClusterednessDegree = (avgClusterednessDegree > 1) ? (1 / avgClusterednessDegree)
                                                               : 1;
     }

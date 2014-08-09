@@ -236,7 +236,7 @@ void Detector::addSpatialEntitiesToPropertyTree(pt::ptree &propertyTree) {
     vector<shared_ptr<SpatialEntityPseudo3D>> spatialEntities = getCollectionOfSpatialEntityPseudo3D();
 
     for (shared_ptr<SpatialEntityPseudo3D> &spatialEntityPointer : spatialEntities) {
-        pt::ptree spatialEntityPropertyTree = constructPropertyTree(*spatialEntityPointer);
+        pt::ptree spatialEntityPropertyTree = constructSpatialEntityPropertyTree(*spatialEntityPointer);
 
         propertyTree.add_child(LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY, spatialEntityPropertyTree);
     }
@@ -261,16 +261,13 @@ void Detector::addNumericStateVariableToPropertyTree(pt::ptree &propertyTree,
     propertyTree.add_child(LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE, numericStateVariablePropertyTree);
 }
 
-pt::ptree Detector::constructPropertyTree(SpatialEntityPseudo3D &spatialEntity) {
-    pt::ptree propertyTree;
-    pt::ptree pseudo3DpropertyTree;
+pt::ptree Detector::constructSpatialEntityPropertyTree(SpatialEntityPseudo3D &spatialEntity) {
+    pt::ptree spatialEntityTree;
 
-    addSpatialEntityPropertiesToTree(spatialEntity, pseudo3DpropertyTree);
-    addSpatialEntityTypeToPropertyTree(spatialEntity, pseudo3DpropertyTree);
+    addSpatialEntityPropertiesToTree(spatialEntity, spatialEntityTree);
+    addSpatialEntityTypeToPropertyTree(spatialEntity, spatialEntityTree);
 
-    propertyTree.add_child(LABEL_SPATIAL_ENTITY_PSEUDO_3D, pseudo3DpropertyTree);
-
-    return propertyTree;
+    return spatialEntityTree;
 }
 
 void Detector::addSpatialEntityPropertiesToTree(SpatialEntityPseudo3D &spatialEntity, pt::ptree &propertyTree) {
@@ -280,7 +277,6 @@ void Detector::addSpatialEntityPropertiesToTree(SpatialEntityPseudo3D &spatialEn
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_PERIMETER, spatialEntity.getPerimeter());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN, spatialEntity.getDistanceFromOrigin());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_ANGLE, spatialEntity.getAngle());
-    propertyTree.put<string>(LABEL_SPATIAL_ENTITY_SHAPE, spatialEntity.getShapeAsString());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE, spatialEntity.getTriangularMeasure());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE, spatialEntity.getRectangularMeasure());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE, spatialEntity.getCircularMeasure());
@@ -291,7 +287,7 @@ void Detector::addSpatialEntityPropertiesToTree(SpatialEntityPseudo3D &spatialEn
 void Detector::addSpatialEntityTypeToPropertyTree(SpatialEntityPseudo3D &spatialEntity, pt::ptree &propertyTree) {
     pt::ptree attributeTree;
 
-    attributeTree.put<string>(LABEL_SPATIAL_ENTITY_TYPE, spatialEntity.typeAsString());
+    attributeTree.put<string>(LABEL_SPATIAL_ENTITY_SPATIAL_TYPE, spatialEntity.typeAsString());
 
     propertyTree.add_child(LABEL_ATTRIBUTE, attributeTree);
 }
@@ -350,21 +346,18 @@ const string Detector::LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY            = "e
 const string Detector::LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_NAME   = "name";
 const string Detector::LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_VALUE  = "value";
 
-const string Detector::LABEL_SPATIAL_ENTITY_PSEUDO_3D   = "pseudo3D";
-
-const string Detector::LABEL_SPATIAL_ENTITY_TYPE                  = "type";
+const string Detector::LABEL_SPATIAL_ENTITY_SPATIAL_TYPE          = "spatialType";
 const string Detector::LABEL_SPATIAL_ENTITY_CLUSTEREDNESS         = "clusteredness";
 const string Detector::LABEL_SPATIAL_ENTITY_DENSITY               = "density";
 const string Detector::LABEL_SPATIAL_ENTITY_AREA                  = "area";
 const string Detector::LABEL_SPATIAL_ENTITY_PERIMETER             = "perimeter";
 const string Detector::LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN  = "distanceFromOrigin";
 const string Detector::LABEL_SPATIAL_ENTITY_ANGLE                 = "angle";
-const string Detector::LABEL_SPATIAL_ENTITY_SHAPE                 = "shape";
 const string Detector::LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE      = "triangleMeasure";
 const string Detector::LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE     = "rectangleMeasure";
 const string Detector::LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE        = "circleMeasure";
-const string Detector::LABEL_SPATIAL_ENTITY_CENTROID_X            = "centroid.x";
-const string Detector::LABEL_SPATIAL_ENTITY_CENTROID_Y            = "centroid.y";
+const string Detector::LABEL_SPATIAL_ENTITY_CENTROID_X            = "centroidX";
+const string Detector::LABEL_SPATIAL_ENTITY_CENTROID_Y            = "centroidY";
 
 const string Detector::LABEL_AVG_CLUSTEREDNESS  = "avgClusteredness";
 const string Detector::LABEL_AVG_DENSITY        = "avgDensity";

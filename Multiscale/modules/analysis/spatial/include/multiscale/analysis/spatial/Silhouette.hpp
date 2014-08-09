@@ -26,7 +26,7 @@ namespace multiscale {
                  * \param clusterIndex  The index of the cluster for which the average silhouette measure is computed
                  * \param clusters      Collection of all clusters
                  */
-                static double computeAverageMeasure(unsigned int clusterIndex, const vector<Cluster> &clusters);
+                static double computeAverageMeasure(std::size_t clusterIndex, const vector<Cluster> &clusters);
 
                 //! Compute the silhouette measure for the given entity
                 /*!
@@ -34,7 +34,8 @@ namespace multiscale {
                  * \param clusterIndex  The index of the cluster to which the entity belongs
                  * \param clusters      Collection of all clusters
                  */
-                static double computeMeasure(unsigned int entityIndex, unsigned int clusterIndex, const vector<Cluster> &clusters);
+                static double computeMeasure(std::size_t entityIndex, std::size_t clusterIndex,
+                                             const vector<Cluster> &clusters);
 
             private:
 
@@ -44,7 +45,9 @@ namespace multiscale {
                  * \param clusterIndex  The index of the cluster to which the entity belongs
                  * \param clusters      Collection of all clusters
                  */
-                static double computeAverageDissimilarityWithinCluster(unsigned int entityIndex, unsigned int clusterIndex, const vector<Cluster> &clusters);
+                static double computeAverageDissimilarityWithinCluster(std::size_t entityIndex,
+                                                                       std::size_t clusterIndex,
+                                                                       const vector<Cluster> &clusters);
 
                 //! Compute the average dissimilarity of the entity to the other clusters (i.e. clusters which are different from the cluster to which the entity belongs)
                 /*!
@@ -52,7 +55,9 @@ namespace multiscale {
                  * \param clusterIndex  The index of the cluster to which the entity belongs
                  * \param clusters      Collection of all clusters
                  */
-                static double computeAverageDissimilarityToOtherClusters(unsigned int entityIndex, unsigned int clusterIndex, const vector<Cluster> &clusters);
+                static double computeAverageDissimilarityToOtherClusters(std::size_t entityIndex,
+                                                                         std::size_t clusterIndex,
+                                                                         const vector<Cluster> &clusters);
 
                 //! Compute the average dissimilarity between entity and cluster
                 /*!
@@ -61,8 +66,37 @@ namespace multiscale {
                  * \param clusterIndex          The index of the cluster to which the average distance is computed
                  * \param clusters              Collection of all clusters
                  */
-                static double computeAverageDissimilarityBtwEntityAndCluster(unsigned int entityIndex, unsigned int entityClusterIndex,
-                                                                             unsigned int clusterIndex, const vector<Cluster> &clusters);
+                static double computeAverageDissimilarityBtwEntityAndCluster(std::size_t entityIndex,
+                                                                             std::size_t entityClusterIndex,
+                                                                             std::size_t clusterIndex,
+                                                                             const vector<Cluster> &clusters);
+
+                //! Check if the provided cluster index is valid
+                /*! The cluster index clusterIndex (0-based indexing) is valid if and only if:
+                 *  0 <= clusterIndex < total number of clusters
+                 *
+                 * \param clusterIndex      The index of the cluster
+                 * \param totalNrOfClusters The total number of clusters
+                 */
+                static void validateClusterIndex(std::size_t clusterIndex, std::size_t totalNrOfClusters);
+
+                //! Check if the provided entity index is valid
+                /*! The entity index entityIndex (0-based indexing) is valid if and only if:
+                 *  0 <= entityIndex < total number of entities
+                 *
+                 * \param entityIndex       The index of the entity
+                 * \param totalNrOfEntities The total number of entities
+                 */
+                static void validateEntityIndex(std::size_t entityIndex, std::size_t totalNrOfEntities);
+
+                //! Check if the provided element index is valid
+                /*! The element index elementIndex (0-based indexing) is valid if and only if:
+                 *  0 <= elementIndex < total number of elements
+                 *
+                 * \param elementIndex      The index of the element
+                 * \param totalNrOfElements The total number of elements
+                 */
+                static void validateElementIndex(std::size_t elementIndex, std::size_t totalNrOfElements);
 
         };
 

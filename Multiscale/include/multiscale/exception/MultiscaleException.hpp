@@ -1,6 +1,7 @@
 #ifndef MULTISCALEEXCEPTION_HPP
 #define MULTISCALEEXCEPTION_HPP
 
+#include "multiscale/core/Multiscale.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
 #include <stdexcept>
@@ -64,10 +65,6 @@ namespace multiscale {
             }
 
     };
-
-
-    // Constants
-    const std::string ERR_UNDEFINED_ENUM_VALUE = "The provided enumeration value is invalid. Please use one of the available enumeration values instead.";
 
 };
 

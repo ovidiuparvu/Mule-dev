@@ -166,7 +166,8 @@ vector<Point> ClusterDetector::getClusterConvexHull(Cluster &cluster) {
 }
 
 double ClusterDetector::computeClusterednessIndex(const vector<Cluster> &clusters) {
-    return Silhouette::computeOverallAverageMeasure(clusters);
+    return (clusters.size() > 0) ? Silhouette::computeOverallAverageMeasure(clusters)
+                                 : 0;
 }
 
 double ClusterDetector::computeAveragePileUpDegree(vector<Cluster> &clusters) {
