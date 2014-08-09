@@ -44,7 +44,7 @@ TEST(BinaryNumericFilter, IncorrectInputAfterStartBracket) {
 }
 
 TEST(BinaryNumericFilter, InvalidFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(filter(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/ <= add(volume, /*{{ spatial_measures[0].name }}*/))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(filter(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/ <= add(volume23D, /*{{ spatial_measures[0].name }}*/))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, MissingParametersComma) {

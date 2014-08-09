@@ -47,7 +47,7 @@ TEST(BinaryNumericFilter, IncorrectInputAfterStartBracket) {
 }
 
 TEST(BinaryNumericFilter, InvalidFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(filter(clusters, clusteredness <= add(volume, clusteredness))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(filter(clusters, clusteredness <= add(volume23D, clusteredness))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, MissingParametersComma) {
