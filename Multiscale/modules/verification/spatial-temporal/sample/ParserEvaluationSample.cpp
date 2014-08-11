@@ -1,6 +1,7 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <iostream>
@@ -11,13 +12,17 @@ using namespace multiscale::verification;
 
 // Initialise the provided trace
 void initialiseTrace(SpatialTemporalTrace &trace) {
+    trace.clear();
+
     std::vector<TimePoint> timePoints;
 
-    for (int i = 0; i <= 11; i++) {
+    // Add 12 timepoints containing the numeric state variable "B" to the collection of timepoints
+    for (int i = 0; i < 12; i++) {
         timePoints.push_back(TimePoint(i));
         timePoints[i].addNumericStateVariable("B", 3);
     }
 
+    // Add a second numeric state variable to the collection of timepoints
     timePoints[0].addNumericStateVariable("A", 4);
     timePoints[1].addNumericStateVariable("A", 5);
     timePoints[2].addNumericStateVariable("A", 6);
@@ -31,6 +36,30 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
     timePoints[10].addNumericStateVariable("A", 9);
     timePoints[11].addNumericStateVariable("A", 12);
 
+    // Add spatial entities to each timepoint
+    for (int i = 0; i < 12; i++) {
+
+        // Add clusters to the timepoint
+        for (int k = ((((i + 1) % 4) == 0) ? (i - 1) : 0); k <= i; k++) {
+            std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
+
+            cluster->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>((k * 2.4) + 1));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>((1E+37 - 0) / 2));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>((1E+37 - 0) / 2));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::Perimeter, static_cast<double>((1E+37 - 0) / 2));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin, static_cast<double>((1E+37 - 0) / 2));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::Angle, static_cast<double>((360 - 0) / 2));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure, static_cast<double>((1 - 0) / 2));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure, static_cast<double>((1 - 0) / 2));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>((1 - 0) / 2));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>((1E+37 - 0) / 2));
+            cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>((1E+37 - 0) / 2));
+
+            timePoints[i].addSpatialEntity(cluster, SubsetSpecificType::Clusters);
+        }
+    }
+
+    // Add all timepoints to the trace
     for (TimePoint &timePoint : timePoints) {
         trace.addTimePoint(timePoint);
     }

@@ -118,81 +118,132 @@ TEST_F(NumericStateVariableTraceTest, BinaryNumericMeasureSubtract) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, BinaryNumericNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= add(2, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg([0, 3] multiply({A}, 2)) <= add(9, 4)]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// BinarySubsetMeasure
+// BinaryNumericTemporal
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureAvg) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureGeomean) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureHarmean) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [harmean(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureKurt) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [kurt(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureMax) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureMedian) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [median(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureMin) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureMode) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [mode(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureProduct) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [product(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureSkew) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [skew(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureStdev) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [stdev(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureSum) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [sum(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureVar) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [var(clusters, clusteredness) <= {A}]"));
+TEST_F(NumericStateVariableTraceTest, BinaryNumericTemporal) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subtract({A}, 2) >= add(2, -0.111111)]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// BinarySubset
+// BinaryStatisticalMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(NumericStateVariableTraceTest, BinarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) <= {A}]"));
+TEST_F(NumericStateVariableTraceTest, BinaryStatisticalMeasure) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters)) >= {A}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalNumeric
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, BinaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters)) < 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalQuantileMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, BinaryStatisticalQuantileMeasurePercentile) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [percentile(clusteredness(clusters), 4.3) <= {B}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinaryStatisticalQuantileMeasureQuartile) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [quartile(clusteredness(clusters), 4.3) <= {B}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalQuantileNumeric
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, BinaryStatisticalQuantileNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [percentile(clusteredness(clusters), 4.3) <= {B}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalQuantileSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, BinaryStatisticalQuantileSpatial) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [mode([0, 3] percentile(clusteredness(clusters), 4.3)) <= {B}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, BinaryStatisticalSpatial) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min([0, 7] covar(clusteredness(clusters), clusteredness(clusters))) < 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// ChangeMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, ChangeMeasureDifference) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d({A}) >= 1]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, ChangeMeasureRatio) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [r({B}) = 1]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// ChangeTemporalNumericMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, ChangeTemporalNumericMeasure) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d({A}) <= 3]"));
 }
 
 
@@ -562,32 +613,6 @@ TEST_F(NumericStateVariableTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
-// QuaternarySubsetMeasure
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(NumericStateVariableTraceTest, QuaternarySubsetCovar) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [covar(clusters, clusteredness, clusters, clusteredness) >= {A}]"));
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// QuaternarySubset
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(NumericStateVariableTraceTest, QuaternarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [covar(clusters, clusteredness, clusters, clusteredness) >= {A}]"));
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
 // SpatialMeasure
 //
 //
@@ -705,36 +730,6 @@ TEST_F(NumericStateVariableTraceTest, Subset) {
 /////////////////////////////////////////////////////////
 //
 //
-// TernarySubsetMeasure
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(NumericStateVariableTraceTest, TernarySubsetMeasurePercentile) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [percentile(clusters, clusteredness, 4.3) <= {B}]"));
-}
-
-TEST_F(NumericStateVariableTraceTest, TernarySubsetMeasureQuartile) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [quartile(clusters, clusteredness, 4.3) <= {B}]"));
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// TernarySubset
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(NumericStateVariableTraceTest, TernarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [percentile(clusters, clusteredness, 4.3) <= {B}]"));
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
 // UnaryTypeConstraint
 //
 //
@@ -818,6 +813,80 @@ TEST_F(NumericStateVariableTraceTest, UnaryNumericMeasureTrunc) {
 
 TEST_F(NumericStateVariableTraceTest, UnaryNumericNumeric) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A} <= abs(3.0)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinarySubsetMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureAvg) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureGeomean) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureHarmean) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [harmean(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureKurt) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [kurt(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureMax) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureMedian) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [median(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureMin) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureMode) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [mode(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureProduct) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [product(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureSkew) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [skew(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureStdev) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [stdev(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureSum) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [sum(clusters, clusteredness) <= {A}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, BinarySubsetMeasureVar) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [var(clusters, clusteredness) <= {A}]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinarySubset
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, BinarySubset) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) <= {A}]"));
 }
 
 

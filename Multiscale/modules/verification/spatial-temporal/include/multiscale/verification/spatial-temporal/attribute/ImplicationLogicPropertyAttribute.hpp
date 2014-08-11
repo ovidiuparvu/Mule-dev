@@ -15,7 +15,8 @@ namespace multiscale {
 
             public:
 
-                LogicPropertyAttributeType logicProperty;   /*!< The logical property following the "implication" operator */
+                LogicPropertyAttributeType logicProperty;   /*!< The logical property following the
+                                                                 "implication" operator */
 
         };
 
@@ -28,5 +29,6 @@ BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::ImplicationLogicPropertyAttribute,
     (multiscale::verification::LogicPropertyAttributeType, logicProperty)
 )
+
 
 #endif

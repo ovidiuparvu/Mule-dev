@@ -47,4 +47,5 @@ BOOST_FUSION_ADAPT_STRUCT(
     (multiscale::verification::FilterNumericMeasureAttributeType, filterNumericMeasure)
 )
 
+
 #endif

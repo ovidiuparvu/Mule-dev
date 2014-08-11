@@ -94,81 +94,132 @@ TEST_F(EmptyTraceTest, BinaryNumericMeasureSubtract) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, BinaryNumericNumeric) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A} <= add(2, 3)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min([0, 3] power({B}, 1.3)) <= add(2, 3)]"), SpatialTemporalException);
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// BinarySubsetMeasure
+// BinaryNumericTemporal
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, BinarySubsetMeasureAvg) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureGeomean) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureHarmean) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [harmean(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureKurt) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [kurt(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureMax) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureMedian) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [median(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureMin) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureMode) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [mode(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureProduct) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [product(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureSkew) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [skew(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureStdev) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [stdev(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureSum) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [sum(clusters, clusteredness) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureVar) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [var(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+TEST_F(EmptyTraceTest, BinaryNumericTemporal) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [power({B}, 1.3) <= add(2, 3)]"), SpatialTemporalException);
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// BinarySubset
+// BinaryStatisticalMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, BinarySubset) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+TEST_F(EmptyTraceTest, BinaryStatisticalMeasure) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters)) >= 0.001]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalNumeric
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalNumeric) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters)) >= 0.0005]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalQuantileMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalQuantileMeasurePercentile) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [percentile(clusteredness(clusters), 4.3) <= 0.5]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinaryStatisticalQuantileMeasureQuartile) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [quartile(clusteredness(clusters), 4.3) <= 0.5]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalQuantileNumeric
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalQuantileNumeric) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [percentile(clusteredness(clusters), 4.3) <= 0.5]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalQuantileSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalQuantileSpatial) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg([0, 1] percentile(clusteredness(clusters), 4.3)) <= 0.5]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalSpatial) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [mode([0, 10] covar(clusteredness(clusters), clusteredness(clusters))) >= 0.0005]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// ChangeMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, ChangeMeasureDifference) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [d(max(clusteredness(clusters))) >= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, ChangeMeasureRatio) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [r(max(clusteredness(clusters))) >= 4]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// ChangeTemporalNumericMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, ChangeTemporalNumericMeasure) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [d(max(clusteredness(clusters))) <= 3]"), SpatialTemporalException);
 }
 
 
@@ -542,32 +593,6 @@ TEST_F(EmptyTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
-// QuaternarySubsetMeasure
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(EmptyTraceTest, QuaternarySubsetCovar) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [covar(clusters, clusteredness, clusters, clusteredness) >= 0.001]"), SpatialTemporalException);
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// QuaternarySubset
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(EmptyTraceTest, QuaternarySubset) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [covar(clusters, clusteredness, clusters, clusteredness) >= 0.001]"), SpatialTemporalException);
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
 // SpatialMeasure
 //
 //
@@ -685,36 +710,6 @@ TEST_F(EmptyTraceTest, Subset) {
 /////////////////////////////////////////////////////////
 //
 //
-// TernarySubsetMeasure
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(EmptyTraceTest, TernarySubsetMeasurePercentile) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [percentile(clusters, clusteredness, 4.3) <= 0.5]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, TernarySubsetMeasureQuartile) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [quartile(clusters, clusteredness, 4.3) <= 0.5]"), SpatialTemporalException);
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// TernarySubset
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(EmptyTraceTest, TernarySubset) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [percentile(clusters, clusteredness, 4.3) <= 0.5]"), SpatialTemporalException);
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
 // UnaryTypeConstraint
 //
 //
@@ -819,6 +814,80 @@ TEST_F(EmptyTraceTest, UnarySubsetMeasureClusteredness) {
 
 TEST_F(EmptyTraceTest, UnarySubsetMeasureDensity) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [subsetDensity(clusters) <= 2]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinarySubsetMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureAvg) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureGeomean) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureHarmean) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [harmean(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureKurt) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [kurt(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureMax) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureMedian) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [median(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureMin) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureMode) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [mode(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureProduct) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [product(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureSkew) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [skew(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureStdev) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [stdev(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureSum) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [sum(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureVar) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [var(clusters, clusteredness) <= 2]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinarySubset
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinarySubset) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) <= 2]"), SpatialTemporalException);
 }
 
 

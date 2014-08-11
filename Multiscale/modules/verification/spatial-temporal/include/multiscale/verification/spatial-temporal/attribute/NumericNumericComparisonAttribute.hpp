@@ -17,9 +17,11 @@ namespace multiscale {
 
             public:
 
-                NumericStateVariableAttribute   numericStateVariable;   /*!< The numeric state variable preceding the comparator */
+                NumericStateVariableAttribute   numericStateVariable;   /*!< The numeric state variable preceding the
+                                                                             comparator */
                 ComparatorAttribute             comparator;             /*!< The comparator */
-                NumericMeasureAttributeType     numericMeasure;         /*!< The numeric measure following the comparator */
+                NumericMeasureAttributeType     numericMeasure;         /*!< The numeric measure succeeding the
+                                                                             comparator */
 
         };
 
@@ -34,5 +36,6 @@ BOOST_FUSION_ADAPT_STRUCT(
     (multiscale::verification::ComparatorAttribute, comparator)
     (multiscale::verification::NumericMeasureAttributeType, numericMeasure)
 )
+
 
 #endif

@@ -67,4 +67,5 @@ BOOST_FUSION_ADAPT_STRUCT(
     (std::vector<multiscale::verification::LogicPropertyAttributeType>, nextLogicProperties)
 )
 
+
 #endif

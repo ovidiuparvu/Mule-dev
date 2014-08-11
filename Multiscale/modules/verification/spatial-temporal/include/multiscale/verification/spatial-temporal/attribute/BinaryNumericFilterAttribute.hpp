@@ -16,9 +16,12 @@ namespace multiscale {
 
             public:
 
-                BinaryNumericMeasureAttribute       binaryNumericMeasure;       /*!< The binary numeric measure */
-                FilterNumericMeasureAttributeType   firstFilterNumericMeasure;  /*!< The first filter numeric measure */
-                FilterNumericMeasureAttributeType   secondFilterNumericMeasure; /*!< The second filter numeric measure */
+                BinaryNumericMeasureAttribute
+                    binaryNumericMeasure;       /*!< The binary numeric measure */
+                FilterNumericMeasureAttributeType
+                    firstFilterNumericMeasure;  /*!< The first filter numeric measure */
+                FilterNumericMeasureAttributeType
+                    secondFilterNumericMeasure; /*!< The second filter numeric measure */
 
         };
 
@@ -33,5 +36,6 @@ BOOST_FUSION_ADAPT_STRUCT(
     (multiscale::verification::FilterNumericMeasureAttributeType, firstFilterNumericMeasure)
     (multiscale::verification::FilterNumericMeasureAttributeType, secondFilterNumericMeasure)
 )
+
 
 #endif

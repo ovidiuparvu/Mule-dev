@@ -521,7 +521,7 @@ namespace multiscale {
                  * \param trace                 The given spatial temporal trace
                  * \param timePointIndex        The index of the considered timepoint from the trace
                  */
-                double evaluateNumericSpatialMeasure(const NumericSpatialAttributeType &numericSpatialMeasure,
+                double evaluateNumericSpatialMeasure(const NumericSpatialMeasureAttributeType &numericSpatialMeasure,
                                                      const SpatialTemporalTrace &trace,
                                                      unsigned int timePointIndex = 0) const {
                     TimePoint timePoint = trace.getTimePoint(timePointIndex);

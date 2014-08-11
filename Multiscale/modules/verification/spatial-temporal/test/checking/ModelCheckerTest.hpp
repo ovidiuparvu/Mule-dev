@@ -12,7 +12,7 @@
 
 namespace mv = multiscale::verification;
 
-const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(clusters, clusteredness) > 20)]";
+const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(clusteredness(clusters)) > 20)]";
 
 
 namespace multiscaletest {

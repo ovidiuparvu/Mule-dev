@@ -23,7 +23,7 @@ Project multiscale
 
 **Author:** Ovidiu Parvu                                                        
 **Created on:** 04.02.2013                                                        
-**Modified on:** 09.08.2014
+**Modified on:** 11.08.2014
 
 ## 2. Requirements
    
@@ -31,11 +31,11 @@ Project multiscale
 
 For building the program the following software need to be installed on your
 computer:
-* CMake (ver. 2.8 or higher)
-* Boost library (ver. 1.52.0 or higher)
-* g++ (ver. 4.7 or higher)
-* OpenCV (ver. 2.4.4 or higher)
-* Xerces C++ (ver. 3.1.1 or higher)
+* CMake (ver. 2.8)
+* Boost library (ver. 1.55.0)
+* g++ (ver. 4.7)
+* OpenCV (ver. 2.4.8)
+* Xerces C++ (ver. 3.1.1)
 
 __Remarks:__ 
 

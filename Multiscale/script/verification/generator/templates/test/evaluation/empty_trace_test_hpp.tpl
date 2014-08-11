@@ -91,81 +91,132 @@ TEST_F(EmptyTraceTest, BinaryNumericMeasureSubtract) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, BinaryNumericNumeric) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A} <= add(2, 3)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min([0, 3] power({B}, 1.3)) <= add(2, 3)]"), SpatialTemporalException);
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// BinarySubsetMeasure
+// BinaryNumericTemporal
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, BinarySubsetMeasureAvg) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureGeomean) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [geomean(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureHarmean) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [harmean(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureKurt) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [kurt(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureMax) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureMedian) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [median(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureMin) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureMode) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [mode(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureProduct) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [product(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureSkew) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [skew(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureStdev) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [stdev(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureSum) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [sum(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, BinarySubsetMeasureVar) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [var(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+TEST_F(EmptyTraceTest, BinaryNumericTemporal) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [power({B}, 1.3) <= add(2, 3)]"), SpatialTemporalException);
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// BinarySubset
+// BinaryStatisticalMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, BinarySubset) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [geomean(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+TEST_F(EmptyTraceTest, BinaryStatisticalMeasure) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [covar(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 0.001]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalNumeric
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalNumeric) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [covar(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 0.0005]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalQuantileMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalQuantileMeasurePercentile) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [percentile(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), 4.3) <= 0.5]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinaryStatisticalQuantileMeasureQuartile) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [quartile(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), 4.3) <= 0.5]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalQuantileNumeric
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalQuantileNumeric) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [percentile(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), 4.3) <= 0.5]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalQuantileSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalQuantileSpatial) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg([0, 1] percentile(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), 4.3)) <= 0.5]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryStatisticalSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryStatisticalSpatial) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [mode([0, 10] covar(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 0.0005]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// ChangeMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, ChangeMeasureDifference) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [d(max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, ChangeMeasureRatio) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [r(max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// ChangeTemporalNumericMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, ChangeTemporalNumericMeasure) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [d(max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) <= 3]"), SpatialTemporalException);
 }
 
 
@@ -178,23 +229,23 @@ TEST_F(EmptyTraceTest, BinarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, ComparatorGreaterThan) {
-    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_entities[0].name }}*/s) > 3]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > 3]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, ComparatorLessThan) {
-    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_entities[0].name }}*/s) < 3]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) < 3]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, ComparatorGreaterThanOrEqual) {
-    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_entities[0].name }}*/s) >= 3]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 3]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, ComparatorLessThanOrEqual) {
-    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_entities[0].name }}*/s) <= 3]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) <= 3]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, ComparatorEqual) {
-    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_entities[0].name }}*/s) = 3]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) = 3]"), SpatialTemporalException);
 }
 
 
@@ -539,32 +590,6 @@ TEST_F(EmptyTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
-// QuaternarySubsetMeasure
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(EmptyTraceTest, QuaternarySubsetCovar) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [covar(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/, /*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) >= 0.001]"), SpatialTemporalException);
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// QuaternarySubset
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(EmptyTraceTest, QuaternarySubset) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [covar(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/, /*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) >= 0.001]"), SpatialTemporalException);
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
 // SpatialMeasure
 //
 //
@@ -644,36 +669,6 @@ TEST_F(EmptyTraceTest, SubsetSubsetOperation) {
 
 TEST_F(EmptyTraceTest, Subset) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(/*{{ spatial_entities[0].name }}*/s) <= 3]"), SpatialTemporalException);
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// TernarySubsetMeasure
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(EmptyTraceTest, TernarySubsetMeasurePercentile) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [percentile(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/, 4.3) <= 0.5]"), SpatialTemporalException);
-}
-
-TEST_F(EmptyTraceTest, TernarySubsetMeasureQuartile) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [quartile(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/, 4.3) <= 0.5]"), SpatialTemporalException);
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// TernarySubset
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(EmptyTraceTest, TernarySubset) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [percentile(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/, 4.3) <= 0.5]"), SpatialTemporalException);
 }
 
 
@@ -784,6 +779,80 @@ TEST_F(EmptyTraceTest, UnarySubsetMeasureClusteredness) {
 
 TEST_F(EmptyTraceTest, UnarySubsetMeasureDensity) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [subsetDensity(/*{{ spatial_entities[0].name }}*/s) <= 2]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinarySubsetMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureAvg) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureGeomean) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [geomean(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureHarmean) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [harmean(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureKurt) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [kurt(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureMax) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureMedian) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [median(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureMin) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureMode) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [mode(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureProduct) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [product(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureSkew) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [skew(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureStdev) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [stdev(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureSum) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [sum(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, BinarySubsetMeasureVar) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [var(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinarySubset
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinarySubset) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [geomean(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) <= 2]"), SpatialTemporalException);
 }
 
 

@@ -13,7 +13,7 @@ namespace multiscale {
         // Forward declaration of classes
         class BinaryNumericNumericAttribute;
         class NumericMeasureAttribute;
-        class NumericSpatialAttribute;
+        class NumericSpatialMeasureAttribute;
         class PrimaryNumericMeasureAttribute;
         class UnaryNumericNumericAttribute;
 
@@ -22,7 +22,7 @@ namespace multiscale {
         typedef boost::variant<
             double,
             NumericStateVariableAttribute,
-            boost::recursive_wrapper<NumericSpatialAttribute>,
+            boost::recursive_wrapper<NumericSpatialMeasureAttribute>,
             boost::recursive_wrapper<PrimaryNumericMeasureAttribute>,
             boost::recursive_wrapper<UnaryNumericNumericAttribute>,
             boost::recursive_wrapper<BinaryNumericNumericAttribute>,
@@ -48,5 +48,6 @@ BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NumericMeasureAttribute,
     (multiscale::verification::NumericMeasureAttributeType, numericMeasure)
 )
+
 
 #endif

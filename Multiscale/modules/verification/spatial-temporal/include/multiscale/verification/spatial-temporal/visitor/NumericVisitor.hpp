@@ -63,7 +63,7 @@ namespace multiscale {
                 /*!
                  * \param numericSpatialMeasure  The numeric spatial measure attribute
                  */
-                double operator()(const NumericSpatialAttribute &numericSpatialMeasure) const {
+                double operator()(const NumericSpatialMeasureAttribute &numericSpatialMeasure) const {
                     return evaluateNumericSpatialMeasure(numericSpatialMeasure.numericSpatialMeasure);
                 }
 
@@ -142,7 +142,7 @@ namespace multiscale {
                 /*!
                  * \param numericSpatialMeasure The given numeric spatial measure
                  */
-                double evaluateNumericSpatialMeasure(const NumericSpatialAttributeType &numericSpatialMeasure) const {
+                double evaluateNumericSpatialMeasure(const NumericSpatialMeasureAttributeType &numericSpatialMeasure) const {
                     return boost::apply_visitor(NumericVisitor(timePoint), numericSpatialMeasure);
                 }
 

@@ -12,7 +12,7 @@
 
 namespace mv = multiscale::verification;
 
-const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/) > 20)]";
+const std::string INPUT_LOGIC_PROPERTY = "P > 0.6 [F [0, 3] (avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > 20)]";
 
 
 namespace multiscaletest {

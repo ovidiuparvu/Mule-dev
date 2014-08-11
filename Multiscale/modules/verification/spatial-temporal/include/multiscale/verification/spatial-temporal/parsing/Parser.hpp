@@ -2,7 +2,7 @@
 #define PARSER_HPP
 
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
-#include "multiscale/verification/spatial-temporal/parsing/ParserGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/LogicPropertyGrammar.hpp"
 
 #include <string>
 
@@ -18,13 +18,14 @@ namespace multiscale {
 
             private:
 
-                std::string logicalQuery;                            /*!< The logical query to be parsed */
+                std::string logicalQuery;                                   /*!< The logical query to be parsed */
 
-                std::string::const_iterator logicalQueryIterator;    /*!< Iterator of the logical query */
-                std::string::const_iterator logicalQueryEnd;         /*!< Iterator pointing at the end of the
-                                                                          logical query */
+                std::string::const_iterator logicalQueryIterator;           /*!< Iterator of the logical query */
+                std::string::const_iterator logicalQueryEnd;                /*!< Iterator pointing at the end of the
+                                                                                 logical query */
 
-                ParserGrammar<std::string::const_iterator> grammar;  /*!< The grammar used for parsing logical queries */
+                LogicPropertyGrammar<std::string::const_iterator> grammar;  /*!< The grammar used for parsing logic
+                                                                                 properties */
 
             public:
 

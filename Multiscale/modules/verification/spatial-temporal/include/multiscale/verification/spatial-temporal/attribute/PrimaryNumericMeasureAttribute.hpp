@@ -12,14 +12,14 @@ namespace multiscale {
 
         // Forward declaration of classes
         class PrimaryNumericMeasureAttribute;
-        class NumericSpatialAttribute;
+        class NumericSpatialMeasureAttribute;
 
 
         //! Variant for the primary numeric measure attribute
         typedef boost::variant<
             double,
             NumericStateVariableAttribute,
-            boost::recursive_wrapper<NumericSpatialAttribute>,
+            boost::recursive_wrapper<NumericSpatialMeasureAttribute>,
             boost::recursive_wrapper<PrimaryNumericMeasureAttribute>
         > PrimaryNumericMeasureAttributeType;
 
@@ -42,5 +42,6 @@ BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::PrimaryNumericMeasureAttribute,
     (multiscale::verification::PrimaryNumericMeasureAttributeType, primaryNumericMeasure)
 )
+
 
 #endif

@@ -15,7 +15,8 @@ namespace multiscale {
 
             public:
 
-                LogicPropertyAttributeType logicProperty;   /*!< The logical property following the "equivalence" operator */
+                LogicPropertyAttributeType logicProperty;   /*!< The logic property following the
+                                                                 "equivalence" operator */
 
         };
 
@@ -28,5 +29,6 @@ BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::EquivalenceLogicPropertyAttribute,
     (multiscale::verification::LogicPropertyAttributeType, logicProperty)
 )
+
 
 #endif

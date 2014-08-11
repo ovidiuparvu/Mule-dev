@@ -15,7 +15,8 @@ namespace multiscale {
 
             public:
 
-                LogicPropertyAttributeType logicProperty;   /*!< The logic property attribute following the "next" operator */
+                LogicPropertyAttributeType logicProperty;   /*!< The logic property attribute following the
+                                                                 "next" operator */
 
         };
 
@@ -28,5 +29,6 @@ BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NextLogicPropertyAttribute,
     (multiscale::verification::LogicPropertyAttributeType, logicProperty)
 )
+
 
 #endif

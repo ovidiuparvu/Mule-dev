@@ -48,4 +48,5 @@ BOOST_FUSION_ADAPT_STRUCT(
     (multiscale::verification::BinaryNumericMeasureType, binaryNumericMeasureType)
 )
 
+
 #endif

@@ -5,6 +5,7 @@
 #include "multiscale/verification/spatial-temporal/handler/ProbabilityErrorHandler.hpp"
 #include "multiscale/verification/spatial-temporal/handler/UnexpectedTokenErrorHandler.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/TemporalNumericMeasureGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -28,108 +29,193 @@ namespace multiscale {
         namespace ascii = boost::spirit::ascii;
 
         // Create a lazy error handler function
-        phoenix::function<UnexpectedTokenErrorHandler> const    handleUnexpectedTokenError     = UnexpectedTokenErrorHandler();
-        phoenix::function<ProbabilityErrorHandler> const        handleProbabilityError         = ProbabilityErrorHandler();
+        phoenix::function<ProbabilityErrorHandler> const handleProbabilityError = ProbabilityErrorHandler();
 
 
-        //! The grammar for parsing (P)BLSTL spatial-temporal logical queries
+        //! The grammar for parsing logic properties
         template <typename Iterator>
-        class ParserGrammar : public qi::grammar<Iterator, ProbabilisticLogicPropertyAttribute(), ascii::space_type> {
+        class LogicPropertyGrammar : public qi::grammar<
+            Iterator, ProbabilisticLogicPropertyAttribute(), ascii::space_type> {
 
             private:
 
+                // Grammars
+
+                TemporalNumericMeasureGrammar<Iterator>
+                    numericMeasureRule;                         /*!< The rule for parsing a numeric measure */
+
                 // Rules
 
-                qi::rule<Iterator, ProbabilisticLogicPropertyAttribute(), ascii::space_type>        probabilisticLogicPropertyRule;             /*!< The rule for parsing a probabilistic logic property */
-                qi::rule<Iterator, double(), ascii::space_type>                                     probabilityRule;                            /*!< The rule for parsing a probability */
-                qi::rule<Iterator, LogicPropertyAttribute(), ascii::space_type>                     logicPropertyRule;                          /*!< The rule for parsing a logic property */
+                qi::rule<Iterator, ProbabilisticLogicPropertyAttribute(), ascii::space_type>
+                    probabilisticLogicPropertyRule;             /*!< The rule for parsing a probabilistic logic
+                                                                     property */
+                qi::rule<Iterator, double(), ascii::space_type>
+                    probabilityRule;                            /*!< The rule for parsing a probability value */
+                qi::rule<Iterator, LogicPropertyAttribute(), ascii::space_type>
+                    logicPropertyRule;                          /*!< The rule for parsing a logic property */
 
-                qi::rule<Iterator, PrimaryLogicPropertyAttribute(), ascii::space_type>              primaryLogicPropertyRule;                   /*!< The rule for parsing a primary logic property */
-                qi::rule<Iterator, DifferenceAttribute(), ascii::space_type>                        differenceRule;                             /*!< The rule for parsing a difference attribute */
-                qi::rule<Iterator, NumericNumericComparisonAttribute(), ascii::space_type>          numericNumericComparisonRule;               /*!< The rule for parsing a numeric numeric comparison */
-                qi::rule<Iterator, NumericSpatialNumericComparisonAttribute(), ascii::space_type>   numericSpatialNumericComparisonRule;        /*!< The rule for parsing a numeric spatial numeric comparison */
-                qi::rule<Iterator, NotLogicPropertyAttribute(), ascii::space_type>                  notLogicPropertyRule;                       /*!< The rule for parsing a "not" logic property */
-                qi::rule<Iterator, FutureLogicPropertyAttribute(), ascii::space_type>               futureLogicPropertyRule;                    /*!< The rule for parsing a "future" logic property */
-                qi::rule<Iterator, GlobalLogicPropertyAttribute(), ascii::space_type>               globalLogicPropertyRule;                    /*!< The rule for parsing a "global" logic property */
-                qi::rule<Iterator, NextLogicPropertyAttribute(), ascii::space_type>                 nextLogicPropertyRule;                      /*!< The rule for parsing a "next" logic property */
-                qi::rule<Iterator, NextKLogicPropertyAttribute(), ascii::space_type>                nextKLogicPropertyRule;                     /*!< The rule for parsing a "next K" logic property */
+                qi::rule<Iterator, PrimaryLogicPropertyAttribute(), ascii::space_type>
+                    primaryLogicPropertyRule;                   /*!< The rule for parsing a primary logic property */
+                qi::rule<Iterator, DifferenceAttribute(), ascii::space_type>
+                    differenceRule;                             /*!< The rule for parsing a difference attribute */
+                qi::rule<Iterator, NumericNumericComparisonAttribute(), ascii::space_type>
+                    numericNumericComparisonRule;               /*!< The rule for parsing a numeric numeric
+                                                                     comparison */
+                qi::rule<Iterator, NumericSpatialNumericComparisonAttribute(), ascii::space_type>
+                    numericSpatialNumericComparisonRule;        /*!< The rule for parsing a numeric spatial numeric
+                                                                     comparison */
+                qi::rule<Iterator, NotLogicPropertyAttribute(), ascii::space_type>
+                    notLogicPropertyRule;                       /*!< The rule for parsing a "not" logic property */
+                qi::rule<Iterator, FutureLogicPropertyAttribute(), ascii::space_type>
+                    futureLogicPropertyRule;                    /*!< The rule for parsing a "future" logic property */
+                qi::rule<Iterator, GlobalLogicPropertyAttribute(), ascii::space_type>
+                    globalLogicPropertyRule;                    /*!< The rule for parsing a "global" logic property */
+                qi::rule<Iterator, NextLogicPropertyAttribute(), ascii::space_type>
+                    nextLogicPropertyRule;                      /*!< The rule for parsing a "next" logic property */
+                qi::rule<Iterator, NextKLogicPropertyAttribute(), ascii::space_type>
+                    nextKLogicPropertyRule;                     /*!< The rule for parsing a "next K" logic property */
 
-                qi::rule<Iterator, AndLogicPropertyAttribute(), ascii::space_type>                  andLogicPropertyRule;                       /*!< The rule for parsing an "and" logic property */
-                qi::rule<Iterator, OrLogicPropertyAttribute(), ascii::space_type>                   orLogicPropertyRule;                        /*!< The rule for parsing an "or" logic property */
-                qi::rule<Iterator, ImplicationLogicPropertyAttribute(), ascii::space_type>          implicationLogicPropertyRule;               /*!< The rule for parsing an "implication" logic property */
-                qi::rule<Iterator, EquivalenceLogicPropertyAttribute(), ascii::space_type>          equivalenceLogicPropertyRule;               /*!< The rule for parsing an "equivalence" logic property */
-                qi::rule<Iterator, UntilLogicPropertyAttribute(), ascii::space_type>                untilLogicPropertyRule;                     /*!< The rule for parsing an "until" logic property */
+                qi::rule<Iterator, AndLogicPropertyAttribute(), ascii::space_type>
+                    andLogicPropertyRule;                       /*!< The rule for parsing an "and" logic property */
+                qi::rule<Iterator, OrLogicPropertyAttribute(), ascii::space_type>
+                    orLogicPropertyRule;                        /*!< The rule for parsing an "or" logic property */
+                qi::rule<Iterator, ImplicationLogicPropertyAttribute(), ascii::space_type>
+                    implicationLogicPropertyRule;               /*!< The rule for parsing an "implication" logic
+                                                                     property */
+                qi::rule<Iterator, EquivalenceLogicPropertyAttribute(), ascii::space_type>
+                    equivalenceLogicPropertyRule;               /*!< The rule for parsing an "equivalence" logic
+                                                                     property */
+                qi::rule<Iterator, UntilLogicPropertyAttribute(), ascii::space_type>
+                    untilLogicPropertyRule;                     /*!< The rule for parsing an "until" logic property */
 
-                qi::rule<Iterator, NumericMeasureAttribute(), ascii::space_type>                    numericMeasureRule;                         /*!< The rule for parsing a numeric measure */
-                qi::rule<Iterator, PrimaryNumericMeasureAttribute(), ascii::space_type>             primaryNumericMeasureRule;                  /*!< The rule for parsing a primary numeric numeric attribute */
-                qi::rule<Iterator, UnaryNumericNumericAttribute(), ascii::space_type>               unaryNumericNumericRule;                    /*!< The rule for parsing a unary numeric numeric attribute */
-                qi::rule<Iterator, BinaryNumericNumericAttribute(), ascii::space_type>              binaryNumericNumericRule;                   /*!< The rule for parsing a binary numeric numeric attribute */
+                qi::rule<Iterator, PrimaryNumericMeasureAttribute(), ascii::space_type>
+                    primaryNumericMeasureRule;                  /*!< The rule for parsing a primary numeric numeric
+                                                                     attribute */
+                qi::rule<Iterator, UnaryNumericNumericAttribute(), ascii::space_type>
+                    unaryNumericNumericRule;                    /*!< The rule for parsing a unary numeric numeric
+                                                                     attribute */
+                qi::rule<Iterator, BinaryNumericNumericAttribute(), ascii::space_type>
+                    binaryNumericNumericRule;                   /*!< The rule for parsing a binary numeric numeric
+                                                                     attribute */
 
-                qi::rule<Iterator, NumericSpatialAttribute(), ascii::space_type>                    numericSpatialRule;                         /*!< The rule for parsing a numeric spatial measure */
-                qi::rule<Iterator, UnarySubsetAttribute(), ascii::space_type>                       unarySubsetRule;                            /*!< The rule for parsing a unary subset */
-                qi::rule<Iterator, BinarySubsetAttribute(), ascii::space_type>                      binarySubsetRule;                           /*!< The rule for parsing a binary subset */
-                qi::rule<Iterator, TernarySubsetAttribute(), ascii::space_type>                     ternarySubsetRule;                          /*!< The rule for parsing a ternary subset */
-                qi::rule<Iterator, QuaternarySubsetAttribute(), ascii::space_type>                  quaternarySubsetRule;                       /*!< The rule for parsing a quaternary subset */
+                qi::rule<Iterator, NumericSpatialMeasureAttribute(), ascii::space_type>
+                    numericSpatialRule;                         /*!< The rule for parsing a numeric spatial measure */
+                qi::rule<Iterator, UnarySubsetAttribute(), ascii::space_type>
+                    unarySubsetRule;                            /*!< The rule for parsing a unary subset */
+                qi::rule<Iterator, BinarySubsetAttribute(), ascii::space_type>
+                    binarySubsetRule;                           /*!< The rule for parsing a binary subset */
+                qi::rule<Iterator, TernarySubsetAttribute(), ascii::space_type>
+                    ternarySubsetRule;                          /*!< The rule for parsing a ternary subset */
+                qi::rule<Iterator, QuaternarySubsetAttribute(), ascii::space_type>
+                    quaternarySubsetRule;                       /*!< The rule for parsing a quaternary subset */
 
-                qi::rule<Iterator, UnarySubsetMeasureAttribute(), ascii::space_type>                unarySubsetMeasureRule;                     /*!< The rule for parsing a unary subset measure */
-                qi::rule<Iterator, BinarySubsetMeasureAttribute(), ascii::space_type>               binarySubsetMeasureRule;                    /*!< The rule for parsing a binary subset measure */
-                qi::rule<Iterator, TernarySubsetMeasureAttribute(), ascii::space_type>              ternarySubsetMeasureRule;                   /*!< The rule for parsing a ternary subset measure */
-                qi::rule<Iterator, QuaternarySubsetMeasureAttribute(), ascii::space_type>           quaternarySubsetMeasureRule;                /*!< The rule for parsing a quaternary subset measure */
+                qi::rule<Iterator, UnarySubsetMeasureAttribute(), ascii::space_type>
+                    unarySubsetMeasureRule;                     /*!< The rule for parsing a unary subset measure */
+                qi::rule<Iterator, BinarySubsetMeasureAttribute(), ascii::space_type>
+                    binarySubsetMeasureRule;                    /*!< The rule for parsing a binary subset measure */
+                qi::rule<Iterator, TernarySubsetMeasureAttribute(), ascii::space_type>
+                    ternarySubsetMeasureRule;                   /*!< The rule for parsing a ternary subset measure */
+                qi::rule<Iterator, QuaternarySubsetMeasureAttribute(), ascii::space_type>
+                    quaternarySubsetMeasureRule;                /*!< The rule for parsing a quaternary subset
+                                                                     measure */
 
-                qi::rule<Iterator, UnaryNumericMeasureAttribute(), ascii::space_type>               unaryNumericMeasureRule;                    /*!< The rule for parsing a unary numeric measure */
-                qi::rule<Iterator, BinaryNumericMeasureAttribute(), ascii::space_type>              binaryNumericMeasureRule;                   /*!< The rule for parsing a binary numeric measure */
+                qi::rule<Iterator, UnaryNumericMeasureAttribute(), ascii::space_type>
+                    unaryNumericMeasureRule;                    /*!< The rule for parsing a unary numeric measure */
+                qi::rule<Iterator, BinaryNumericMeasureAttribute(), ascii::space_type>
+                    binaryNumericMeasureRule;                   /*!< The rule for parsing a binary numeric measure */
 
-                qi::rule<Iterator, SubsetAttribute(), ascii::space_type>                            subsetRule;                                 /*!< The rule for parsing a subset */
-                qi::rule<Iterator, SubsetSpecificAttribute(), ascii::space_type>                    subsetSpecificRule;                         /*!< The rule for parsing a specific subset */
-                qi::rule<Iterator, FilterSubsetAttribute(), ascii::space_type>                      filterSubsetRule;                           /*!< The rule for parsing a subset filter */
-                qi::rule<Iterator, SubsetSubsetOperationAttribute(), ascii::space_type>             subsetSubsetOperationRule;                  /*!< The rule for parsing a subset subset operation */
+                qi::rule<Iterator, SubsetAttribute(), ascii::space_type>
+                    subsetRule;                                 /*!< The rule for parsing a subset */
+                qi::rule<Iterator, SubsetSpecificAttribute(), ascii::space_type>
+                    subsetSpecificRule;                         /*!< The rule for parsing a specific subset */
+                qi::rule<Iterator, FilterSubsetAttribute(), ascii::space_type>
+                    filterSubsetRule;                           /*!< The rule for parsing a subset filter */
+                qi::rule<Iterator, SubsetSubsetOperationAttribute(), ascii::space_type>
+                    subsetSubsetOperationRule;                  /*!< The rule for parsing a subset subset operation */
 
-                qi::rule<Iterator, ConstraintAttribute(), ascii::space_type>                        constraintRule;                             /*!< The rule for parsing a constraint */
+                qi::rule<Iterator, ConstraintAttribute(), ascii::space_type>
+                    constraintRule;                             /*!< The rule for parsing a constraint */
 
-                qi::rule<Iterator, PrimaryConstraintAttribute(), ascii::space_type>                 primaryConstraintRule;                      /*!< The rule for parsing a primary constraint */
-                qi::rule<Iterator, NotConstraintAttribute(), ascii::space_type>                     notConstraintRule;                          /*!< The rule for parsing a "not" constraint */
-                qi::rule<Iterator, UnarySpatialConstraintAttribute(), ascii::space_type>            unarySpatialConstraintRule;                 /*!< The rule for parsing a unary spatial constraint */
-                qi::rule<Iterator, UnaryTypeConstraintAttribute(), ascii::space_type>               unaryTypeConstraintRule;                    /*!< The rule for parsing a unary type constraint */
+                qi::rule<Iterator, PrimaryConstraintAttribute(), ascii::space_type>
+                    primaryConstraintRule;                      /*!< The rule for parsing a primary constraint */
+                qi::rule<Iterator, NotConstraintAttribute(), ascii::space_type>
+                    notConstraintRule;                          /*!< The rule for parsing a "not" constraint */
+                qi::rule<Iterator, UnarySpatialConstraintAttribute(), ascii::space_type>
+                    unarySpatialConstraintRule;                 /*!< The rule for parsing a unary spatial
+                                                                     constraint */
+                qi::rule<Iterator, UnaryTypeConstraintAttribute(), ascii::space_type>
+                    unaryTypeConstraintRule;                    /*!< The rule for parsing a unary type constraint */
 
-                qi::rule<Iterator, FilterNumericMeasureAttribute(), ascii::space_type>              filterNumericMeasureRule;                   /*!< The rule for parsing a filter numeric measure */
-                qi::rule<Iterator, UnaryNumericFilterAttribute(), ascii::space_type>                unaryNumericFilterRule;                     /*!< The rule for parsing a unary numeric filter measure */
-                qi::rule<Iterator, BinaryNumericFilterAttribute(), ascii::space_type>               binaryNumericFilterRule;                    /*!< The rule for parsing a binary numeric filter measure*/
+                qi::rule<Iterator, FilterNumericMeasureAttribute(), ascii::space_type>
+                    filterNumericMeasureRule;                   /*!< The rule for parsing a filter numeric measure */
+                qi::rule<Iterator, UnaryNumericFilterAttribute(), ascii::space_type>
+                    unaryNumericFilterRule;                     /*!< The rule for parsing a unary numeric filter
+                                                                     measure */
+                qi::rule<Iterator, BinaryNumericFilterAttribute(), ascii::space_type>
+                    binaryNumericFilterRule;                    /*!< The rule for parsing a binary numeric filter
+                                                                     measure */
 
-                qi::rule<Iterator, AndConstraintAttribute(), ascii::space_type>                     andConstraintRule;                          /*!< The rule for parsing an "and" constraint */
-                qi::rule<Iterator, OrConstraintAttribute(), ascii::space_type>                      orConstraintRule;                           /*!< The rule for parsing an "or" constraint */
-                qi::rule<Iterator, ImplicationConstraintAttribute(), ascii::space_type>             implicationConstraintRule;                  /*!< The rule for parsing an "implication" constraint */
-                qi::rule<Iterator, EquivalenceConstraintAttribute(), ascii::space_type>             equivalenceConstraintRule;                  /*!< The rule for parsing an "equivalence" constraint */
+                qi::rule<Iterator, AndConstraintAttribute(), ascii::space_type>
+                    andConstraintRule;                          /*!< The rule for parsing an "and" constraint */
+                qi::rule<Iterator, OrConstraintAttribute(), ascii::space_type>
+                    orConstraintRule;                           /*!< The rule for parsing an "or" constraint */
+                qi::rule<Iterator, ImplicationConstraintAttribute(), ascii::space_type>
+                    implicationConstraintRule;                  /*!< The rule for parsing an "implication"
+                                                                     constraint */
+                qi::rule<Iterator, EquivalenceConstraintAttribute(), ascii::space_type>
+                    equivalenceConstraintRule;                  /*!< The rule for parsing an "equivalence"
+                                                                     constraint */
 
-                qi::rule<Iterator, SpatialMeasureAttribute(), ascii::space_type>                    spatialMeasureRule;                         /*!< The rule for parsing a spatial measure */
+                qi::rule<Iterator, SpatialMeasureAttribute(), ascii::space_type>
+                    spatialMeasureRule;                         /*!< The rule for parsing a spatial measure */
 
-                qi::rule<Iterator, ComparatorAttribute(), ascii::space_type>                        comparatorRule;                             /*!< The rule for parsing a comparator */
-                qi::rule<Iterator, ComparatorAttribute(), ascii::space_type>                        probabilisticLogicPropertyComparatorRule;   /*!< The rule for parsing a comparator for a probabilistic logic property */
+                qi::rule<Iterator, ComparatorAttribute(), ascii::space_type>
+                    comparatorRule;                             /*!< The rule for parsing a comparator */
+                qi::rule<Iterator, ComparatorAttribute(), ascii::space_type>
+                    probabilisticLogicPropertyComparatorRule;   /*!< The rule for parsing a comparator for a
+                                                                     probabilistic logic property */
 
-                qi::rule<Iterator, NumericStateVariableAttribute(), ascii::space_type>              numericStateVariableRule;                   /*!< The rule for parsing a numeric state variable */
-                qi::rule<Iterator, StateVariableAttribute(), ascii::space_type>                     stateVariableRule;                          /*!< The rule for parsing a state variable */
-                qi::rule<Iterator, std::string(), ascii::space_type>                                stateVariableNameRule;                      /*!< The rule for parsing the name of a state variable without escaping white space */
+                qi::rule<Iterator, NumericStateVariableAttribute(), ascii::space_type>
+                    numericStateVariableRule;                   /*!< The rule for parsing a numeric state variable */
+                qi::rule<Iterator, StateVariableAttribute(), ascii::space_type>
+                    stateVariableRule;                          /*!< The rule for parsing a state variable */
+                qi::rule<Iterator, std::string(), ascii::space_type>
+                    stateVariableNameRule;                      /*!< The rule for parsing the name of a state
+                                                                     variable without escaping white space */
 
                 // Enumeration parsers
 
-                UnarySubsetMeasureTypeParser        unarySubsetMeasureTypeParser;       /*!< The unary subset measure type parser */
-                BinarySubsetMeasureTypeParser       binarySubsetMeasureTypeParser;      /*!< The binary subset measure type parser */
-                TernarySubsetMeasureTypeParser      ternarySubsetMeasureTypeParser;     /*!< The ternary subset measure type parser */
-                QuaternarySubsetMeasureTypeParser   quaternarySubsetMeasureTypeParser;  /*!< The quaternary subset measure type parser */
+                UnarySubsetMeasureTypeParser
+                    unarySubsetMeasureTypeParser;       /*!< The unary subset measure type parser */
+                BinarySubsetMeasureTypeParser
+                    binarySubsetMeasureTypeParser;      /*!< The binary subset measure type parser */
+                TernarySubsetMeasureTypeParser
+                    ternarySubsetMeasureTypeParser;     /*!< The ternary subset measure type parser */
+                QuaternarySubsetMeasureTypeParser
+                    quaternarySubsetMeasureTypeParser;  /*!< The quaternary subset measure type parser */
 
-                UnaryNumericMeasureTypeParser       unaryNumericMeasureTypeParser;      /*!< The unary numeric measure type parser */
-                BinaryNumericMeasureTypeParser      binaryNumericMeasureTypeParser;     /*!< The binary numeric measure type parser */
+                UnaryNumericMeasureTypeParser
+                    unaryNumericMeasureTypeParser;      /*!< The unary numeric measure type parser */
+                BinaryNumericMeasureTypeParser
+                    binaryNumericMeasureTypeParser;     /*!< The binary numeric measure type parser */
 
-                SubsetSpecificTypeParser            subsetSpecificTypeParser;           /*!< The subset specific type parser */
-                SubsetOperationTypeParser           subsetOperationTypeParser;          /*!< The subset operation type parser */
+                SubsetSpecificTypeParser
+                    subsetSpecificTypeParser;           /*!< The subset specific type parser */
+                SubsetOperationTypeParser
+                    subsetOperationTypeParser;          /*!< The subset operation type parser */
 
-                SpatialMeasureTypeParser            spatialMeasureTypeParser;           /*!< The spatial measure type parser */
+                SpatialMeasureTypeParser
+                    spatialMeasureTypeParser;           /*!< The spatial measure type parser */
 
-                ComparatorTypeParser                comparatorTypeParser;               /*!< The comparator type parser */
-                ComparatorNonEqualTypeParser        comparatorNonEqualTypeParser;       /*!< The comparator type parser which does not accept the "=" symbol */
+                ComparatorTypeParser
+                    comparatorTypeParser;               /*!< The comparator type parser */
+                ComparatorNonEqualTypeParser
+                    comparatorNonEqualTypeParser;       /*!< The comparator type parser which does not accept
+                                                             the "=" symbol */
 
             public:
 
-                ParserGrammar() : ParserGrammar::base_type(probabilisticLogicPropertyRule) {
+                LogicPropertyGrammar() : LogicPropertyGrammar::base_type(probabilisticLogicPropertyRule) {
                     initialise();
                 }
 
@@ -176,11 +262,13 @@ namespace multiscale {
                 void initialiseProbabilisticLogicPropertyRule() {
                     probabilisticLogicPropertyRule
                         =   'P'
-                            > (probabilisticLogicPropertyComparatorRule
-                            > probabilityRule
-                            > '['
-                            > logicPropertyRule
-                            > ']');
+                            > (
+                                probabilisticLogicPropertyComparatorRule
+                                > probabilityRule
+                                > '['
+                                > logicPropertyRule
+                                > ']'
+                            );
 
                     probabilityRule
                         %=  qi::eps
@@ -307,11 +395,6 @@ namespace multiscale {
 
                 //! Initialise the numeric measure rule
                 void initialiseNumericMeasureRule() {
-                    numericMeasureRule
-                        =   primaryNumericMeasureRule
-                        |   unaryNumericNumericRule
-                        |   binaryNumericNumericRule;
-
                     primaryNumericMeasureRule
                         =   numericSpatialRule
                         |   qi::double_

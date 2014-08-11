@@ -29,4 +29,5 @@ BOOST_FUSION_ADAPT_STRUCT(
     (multiscale::verification::StateVariableAttribute, stateVariable)
 )
 
+
 #endif

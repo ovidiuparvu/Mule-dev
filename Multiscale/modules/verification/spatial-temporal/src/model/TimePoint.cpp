@@ -187,7 +187,7 @@ void TimePoint::updateSpatialEntities(const TimePoint &timePoint, const SubsetOp
     for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
         SubsetSpecificType subsetSpecificType = computeSubsetSpecificType(i);
 
-        spatialEntitiesSetOperation(timePoint, setOperationType, subsetSpecificType);
+        spatialEntities[i] = spatialEntitiesSetOperation(timePoint, setOperationType, subsetSpecificType);
     }
 }
 
@@ -206,19 +206,19 @@ TimePoint::spatialEntitiesSetOperation(const TimePoint &timePoint, const SubsetO
             break;
 
         case SubsetOperationType::Intersection:
-            std::set_difference(getSpatialEntitiesBeginIterator(spatialEntitiesType),
-                                getSpatialEntitiesEndIterator(spatialEntitiesType),
-                                timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
-                                timePoint.getSpatialEntitiesEndIterator(spatialEntitiesType),
-                                std::inserter(newSpatialEntities, newSpatialEntities.begin()));
+            std::set_intersection(getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                                  getSpatialEntitiesEndIterator(spatialEntitiesType),
+                                  timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                                  timePoint.getSpatialEntitiesEndIterator(spatialEntitiesType),
+                                  std::inserter(newSpatialEntities, newSpatialEntities.begin()));
             break;
 
         case SubsetOperationType::Union:
-            std::set_difference(getSpatialEntitiesBeginIterator(spatialEntitiesType),
-                                getSpatialEntitiesEndIterator(spatialEntitiesType),
-                                timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
-                                timePoint.getSpatialEntitiesEndIterator(spatialEntitiesType),
-                                std::inserter(newSpatialEntities, newSpatialEntities.begin()));
+            std::set_union(getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                           getSpatialEntitiesEndIterator(spatialEntitiesType),
+                           timePoint.getSpatialEntitiesBeginIterator(spatialEntitiesType),
+                           timePoint.getSpatialEntitiesEndIterator(spatialEntitiesType),
+                           std::inserter(newSpatialEntities, newSpatialEntities.begin()));
             break;
     }
 

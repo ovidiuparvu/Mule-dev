@@ -19,9 +19,11 @@ namespace multiscale {
 
                 QuaternarySubsetMeasureAttribute    quaternarySubsetMeasure;    /*!< The quaternary subset measure */
                 SubsetAttributeType                 firstSubset;                /*!< The first considered subset */
-                SpatialMeasureAttribute             firstSpatialMeasure;        /*!< The first considered spatial measure */
+                SpatialMeasureAttribute             firstSpatialMeasure;        /*!< The first considered spatial
+                                                                                     measure */
                 SubsetAttributeType                 secondSubset;               /*!< The second considered subset */
-                SpatialMeasureAttribute             secondSpatialMeasure;       /*!< The second considered spatial measure */
+                SpatialMeasureAttribute             secondSpatialMeasure;       /*!< The second considered spatial
+                                                                                     measure */
 
         };
 
@@ -38,5 +40,6 @@ BOOST_FUSION_ADAPT_STRUCT(
     (multiscale::verification::SubsetAttributeType, secondSubset)
     (multiscale::verification::SpatialMeasureAttribute, secondSpatialMeasure)
 )
+
 
 #endif

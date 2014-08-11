@@ -42,4 +42,5 @@ BOOST_FUSION_ADAPT_STRUCT(
     (multiscale::verification::QuaternarySubsetMeasureType, quaternarySubsetMeasureType)
 )
 
+
 #endif

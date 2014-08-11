@@ -44,4 +44,5 @@ BOOST_FUSION_ADAPT_STRUCT(
     (multiscale::verification::SubsetAttributeType, subset)
 )
 
+
 #endif

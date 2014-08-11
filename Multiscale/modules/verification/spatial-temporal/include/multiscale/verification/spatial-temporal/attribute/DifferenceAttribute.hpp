@@ -35,4 +35,5 @@ BOOST_FUSION_ADAPT_STRUCT(
     (multiscale::verification::NumericMeasureAttributeType, rhsNumericMeasure)
 )
 
+
 #endif
