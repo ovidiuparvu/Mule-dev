@@ -11,6 +11,8 @@
  *****************************************************************************/
 
 #include "TraceEvaluationTest.hpp"
+ 
+#include <algorithm>
 
 using namespace multiscale;
 using namespace multiscaletest;
@@ -21,6 +23,11 @@ namespace multiscaletest {
     //! Class for testing evaluation of complete traces containing both numeric state variables and spatial entities
     class CompleteTraceTest : public TraceEvaluationTest {
 
+        protected:
+            
+            double clustersClusterednessMinValue;  /*!< The minimum clusteredness value for the cluster spatial entity type */
+            double clustersClusterednessMaxValue;  /*!< The maximum clusteredness value for the cluster spatial entity type */
+            
         private:
 
            //! Initialise the trace
@@ -29,38 +36,49 @@ namespace multiscaletest {
     };
 
     void CompleteTraceTest::InitialiseTrace() {
+        // Initialise private class fields
+        nrOfTimePoints = 12;
+        
+        bConstantValue = 3;
+        aMinValue = 1;
+        
+        clustersClusterednessMinValue = 1;
+        
+        // Initialise timepoints
         trace.clear();
 
         std::vector<TimePoint> timePoints;
 
-        // Add 12 timepoints containing the numeric state variable "B" to the collection of timepoints
-        for (int i = 0; i < 12; i++) {
+        // Add timepoints containing the numeric state variable "B" to the collection of timepoints
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             timePoints.push_back(TimePoint(i));
-            timePoints[i].addNumericStateVariable("B", 3);
+            timePoints[i].addNumericStateVariable("B", bConstantValue);
         }
 
         // Add a second numeric state variable to the collection of timepoints
-        timePoints[0].addNumericStateVariable("A", 4);
-        timePoints[1].addNumericStateVariable("A", 5);
-        timePoints[2].addNumericStateVariable("A", 6);
-        timePoints[3].addNumericStateVariable("A", 10);
-        timePoints[4].addNumericStateVariable("A", 8);
-        timePoints[5].addNumericStateVariable("A", 6);
-        timePoints[6].addNumericStateVariable("A", 4);
-        timePoints[7].addNumericStateVariable("A", 1);
-        timePoints[8].addNumericStateVariable("A", 5);
-        timePoints[9].addNumericStateVariable("A", 7);
-        timePoints[10].addNumericStateVariable("A", 9);
-        timePoints[11].addNumericStateVariable("A", 12);
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            if (i % 4 == 0) {
+                timePoints[i].addNumericStateVariable("A", aMinValue);
+            } else {
+                timePoints[i].addNumericStateVariable("A", aMinValue + i);
+            }
+        }
 
+        // Initialise the aMaxValue field
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariable("A"));
+        }
+        
         // Add spatial entities to each timepoint
-        for (int i = 0; i < 12; i++) {
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
 
             // Add clusters to the timepoint
-            for (int k = ((((i + 1) % 4) == 0) ? (i - 1) : 0); k <= i; k++) {
+            for (std::size_t j = ((((i + 1) % 4) == 0) ? (i - 1) : 0); j <= i; j++) {
                 std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
 
-                cluster->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>((k * 2.4) + 1));
+                clustersClusterednessMaxValue = std::max(clustersClusterednessMaxValue, static_cast<double>((j * 2.4) + clustersClusterednessMinValue));
+                
+                cluster->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>((j * 2.4) + clustersClusterednessMinValue));
                 cluster->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(1E+37 - 0) / 2);
                 cluster->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>(1E+37 - 0) / 2);
                 cluster->setSpatialMeasureValue(SpatialMeasureType::Perimeter, static_cast<double>(1E+37 - 0) / 2);
@@ -71,9 +89,30 @@ namespace multiscaletest {
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 2);
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 2);
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 2);
+                cluster->setSemanticType(0);
 
                 timePoints[i].addSpatialEntity(cluster, SubsetSpecificType::Clusters);
             }
+            
+            // Add regions to the timepoint
+            for (std::size_t k = 0; k <= i; k++) {
+                    std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
+
+                    region->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>((k * 0.3) + 0.7));
+                    region->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(1E+37 - 0) / 3);
+                    region->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>(1E+37 - 0) / 3);
+                    region->setSpatialMeasureValue(SpatialMeasureType::Perimeter, static_cast<double>(1E+37 - 0) / 3);
+                    region->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin, static_cast<double>(1E+37 - 0) / 3);
+                    region->setSpatialMeasureValue(SpatialMeasureType::Angle, static_cast<double>(360 - 0) / 3);
+                    region->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure, static_cast<double>(1 - 0) / 3);
+                    region->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure, static_cast<double>(1 - 0) / 3);
+                    region->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 3);
+                    region->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 3);
+                    region->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 3);
+                    region->setSemanticType(0);
+
+                    timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
+                }
         }
 
         // Add all timepoints to the trace
@@ -94,7 +133,7 @@ namespace multiscaletest {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryNumericFilter) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(filter(clusters, clusteredness > subtract(clusteredness, 2.5))) > 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(filter(clusters, clusteredness > subtract(clusteredness, 0.00001)))) > 10]"));
 }
 
 
@@ -107,31 +146,31 @@ TEST_F(CompleteTraceTest, BinaryNumericFilter) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryNumericMeasureAdd) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= add(2, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= add(" + StringManipulator::toString<double>(aMaxValue) + ", 0.0001)]"));
 }
 
 TEST_F(CompleteTraceTest, BinaryNumericMeasureDiv) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(clusters) > div({B}, 1)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) > div({B}, " + StringManipulator::toString<double>(bConstantValue - 0.1) + ")]"));
 }
 
 TEST_F(CompleteTraceTest, BinaryNumericMeasureLog) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= log({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) <= log({A}, 3)]"));
 }
 
 TEST_F(CompleteTraceTest, BinaryNumericMeasureMod) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= mod({A}, {B})]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) <= mod({A}, {B})]"));
 }
 
 TEST_F(CompleteTraceTest, BinaryNumericMeasureMultiply) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetClusteredness(clusters) <= multiply({A}, {B})]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters) >= multiply({A}, 1)]"));
 }
 
 TEST_F(CompleteTraceTest, BinaryNumericMeasurePower) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetClusteredness(clusters) <= power(2, {B})]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters) <= power(2, 0)]"));
 }
 
 TEST_F(CompleteTraceTest, BinaryNumericMeasureSubtract) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(filter(clusters, clusteredness > 1)) > subtract(3, {A})]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness > 1))) = subtract({A}, {A})]"));
 }
 
 
@@ -144,7 +183,7 @@ TEST_F(CompleteTraceTest, BinaryNumericMeasureSubtract) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryNumericNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 5] add(count(clusters), 2)) >= 7.99999]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 5] add(count(clusteredness(clusters)), 2)) >= 7.99999]"));
 }
 
 
@@ -157,7 +196,7 @@ TEST_F(CompleteTraceTest, BinaryNumericNumeric) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryNumericTemporal) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [multiply(count(clusters), 2) >= 1.99999]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [multiply(count(clusteredness(clusters)), 2) >= 1.99999]"));
 }
 
 
@@ -183,7 +222,7 @@ TEST_F(CompleteTraceTest, BinaryStatisticalMeasure) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryStatisticalNumeric) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters)) <= 1]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters)) < 1]"));
 }
 
 
@@ -196,11 +235,11 @@ TEST_F(CompleteTraceTest, BinaryStatisticalNumeric) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryStatisticalQuantileMeasurePercentile) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [X[4] percentile(clusteredness(clusters), 4.3) <= div(count(clusters), add(multiply({B}, 1.5), 3))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [X[4] percentile(clusteredness(clusters), 100) >= 10.5999]"));
 }
 
 TEST_F(CompleteTraceTest, BinaryStatisticalQuantileMeasureQuartile) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [X[4] quartile(clusteredness(clusters), 50) <= div(count(clusters), add(multiply({B}, 1.5), 3))]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [X[4] quartile(clusteredness(clusters), 50) <= 6]"));
 }
 
 
@@ -213,7 +252,7 @@ TEST_F(CompleteTraceTest, BinaryStatisticalQuantileMeasureQuartile) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryStatisticalQuantileNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [percentile(clusteredness(clusters), 79.4) >= div(count(clusters), add(multiply({B}, 1.5), 3))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [percentile(clusteredness(clusters), 79.4) = 1]"));
 }
 
 
@@ -226,7 +265,7 @@ TEST_F(CompleteTraceTest, BinaryStatisticalQuantileNumeric) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryStatisticalQuantileSpatial) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 2] percentile(clusteredness(clusters), 79.4)) >= div(count(clusters), add(multiply({B}, 1.5), 3))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 2] percentile(clusteredness(clusters), 90)) >= 5.79"));
 }
 
 
@@ -252,11 +291,11 @@ TEST_F(CompleteTraceTest, BinaryStatisticalSpatial) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, ChangeMeasureDifference) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d(max(clusteredness(clusters))) >= 2]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d(max(clusteredness(clusters))) >= 2.47]"));
 }
 
 TEST_F(CompleteTraceTest, ChangeMeasureRatio) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [r(max(clusteredness(clusters))) >= 4]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [r(max(clusteredness(clusters))) >= 3.49]"));
 }
 
 
@@ -269,7 +308,7 @@ TEST_F(CompleteTraceTest, ChangeMeasureRatio) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, ChangeTemporalNumericMeasure) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d(max(clusteredness(clusters))) <= 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d(max(clusteredness(clusters))) <= 2.49]"));
 }
 
 
@@ -282,23 +321,23 @@ TEST_F(CompleteTraceTest, ChangeTemporalNumericMeasure) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, ComparatorGreaterThan) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusters) > {B}]"));
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusteredness(clusters))) > subtract({B}, 1.99999)]"));
 }
 
 TEST_F(CompleteTraceTest, ComparatorLessThan) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusters) < log({A}, 2)]"));
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusteredness(clusters))) < log({A}, 2)]"));
 }
 
 TEST_F(CompleteTraceTest, ComparatorGreaterThanOrEqual) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusters) >= add({A}, {B})]"));
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusteredness(clusters))) >= add({A}, 0.0001)]"));
 }
 
 TEST_F(CompleteTraceTest, ComparatorLessThanOrEqual) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusters) <= trunc({B})]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(clusters))) <= trunc(subtract({B}, 1.0001))]"));
 }
 
 TEST_F(CompleteTraceTest, ComparatorEqual) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusters) = ceil({B})]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(clusters))) = ceil(subtract({A}, 0.00001))]"));
 }
 
 
@@ -311,17 +350,17 @@ TEST_F(CompleteTraceTest, ComparatorEqual) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, CompoundConstraint) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, (clusteredness <= power({B}, 4)) ^ (clusteredness = 0.1))) <= {A}]"));
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, (clusteredness <= power({B}, 4)) V (clusteredness = 0.3))) > 0]"));
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, (clusteredness <= power({B}, 4)) => (clusteredness = 0.1))) > {A}]"));
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, (clusteredness <= power({B}, 4)) <=> (clusteredness = 0.1))) <= {A}]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 1) ^ (clusteredness = 0.1)))) = 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 1) V (clusteredness = 0.3)))) > 0]"));
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 1) => (clusteredness = 0.1)))) > 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 1) <=> (clusteredness = 0.1)))) = 0]"));
 }
 
 TEST_F(CompleteTraceTest, CompoundConstraintMultiple) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, (clusteredness <= power({B}, 4)) ^ (clusteredness = 0.1) ^ (~ clusteredness >= 4000))) <= {A}]"));
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, (clusteredness <= power({B}, 4)) V (clusteredness = 0.1) V (~ clusteredness >= 4000))) <= {A}]"));
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, (clusteredness <= power({B}, 4)) => (clusteredness = 0.1) => (~ clusteredness >= 4000))) > 0]"));
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, (clusteredness <= power({B}, 4)) <=> (clusteredness = 0.1) <=> (~ clusteredness >= 4000))) <= 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 1.00001) ^ (clusteredness = 0.1) ^ (~ clusteredness >= 4000)))) < 1]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 1.00001) V (clusteredness = 0.1) V (~ clusteredness >= 4000)))) = 1]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 1.00001) => (clusteredness = 0.1) => (~ clusteredness >= 4000)))) > 0]"));
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 1.00001) <=> (clusteredness = 0.1) <=> (~ clusteredness >= 4000)))) = 0]"));
 }
 
 
@@ -334,17 +373,17 @@ TEST_F(CompleteTraceTest, CompoundConstraintMultiple) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, CompoundLogicProperty) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= multiply({A}, 25)) ^ (count(clusters) >= div({A}, 2))]"));
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= multiply({A}, 25)) V (count(clusters) = 0)]"));
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= multiply({A}, 25)) => (count(clusters) >= {A})]"));
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= multiply({A}, 25)) <=> (count(clusters) >= div({A}, div({A}, 1)))]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= 1.0001) ^ (count(clusteredness(clusters)) >= div({A}, 2))]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= 1.0001) V (count(clusteredness(clusters)) = 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= 1.0001) => (count(clusteredness(clusters)) >= 1)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= 1.0001) <=> (count(clusteredness(clusters)) >= div({A}, div({A}, 1)))]"));
 }
 
 TEST_F(CompleteTraceTest, CompoundLogicPropertyMultiple) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= 100) ^ (count(clusters) >= 4) ^ (count(clusters) <= 4) ^ {B} = 3]"));
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= 100) V (count(clusters) >= 4) V (count(clusters) <= 4) V {B} = 3]"));
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= 100) => (count(clusters) >= 4) => (count(clusters) <= 4) => {B} = 3]"));
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) >= 100) <=> (count(clusters) >= 4) <=> (count(clusters) <= 4) <=> {B} = 3]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) > 1) ^ (count(clusteredness(clusters)) <= 1) ^ {B} = 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) > 1) V (count(clusteredness(clusters)) <= 1) V {B} = 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) > 1) => (count(clusteredness(clusters)) <= 1) => {B} = 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(avg(clusteredness(clusters)) > 1) <=> (count(clusteredness(clusters)) <= 1) <=> {B} = 3]"));
 }
 
 
@@ -357,15 +396,15 @@ TEST_F(CompleteTraceTest, CompoundLogicPropertyMultiple) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, ConstraintEnclosedByParentheses) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, clusteredness <= 30.2)) <= add(trunc(round(ceil(floor({B})))), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 1.0001)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, ConstraintEnclosedByParenthesesDoubled) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, ((clusteredness >= 30.2)))) <= subtract(trunc(round(ceil(floor({B})))), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, ((clusteredness >= 1.0001))))) < 1]"));
 }
 
 TEST_F(CompleteTraceTest, ConstraintEnclosedByParenthesesQuadrupled) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, ((((clusteredness >= 30.2)))))) <= add(trunc(round(ceil(floor({B})))), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, ((((clusteredness >= 1.0001))))))) = 0]"));
 }
 
 
@@ -378,20 +417,7 @@ TEST_F(CompleteTraceTest, ConstraintEnclosedByParenthesesQuadrupled) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, Constraint) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, clusteredness <= power(add({A}, count(clusters)), subtract(7, max(clusters, clusteredness))))) <= 3]"));
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// Difference
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(CompleteTraceTest, Difference) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [d(avg(clusters, clusteredness)) >= {B}]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 1))) = 1]"));
 }
 
 
@@ -404,7 +430,7 @@ TEST_F(CompleteTraceTest, Difference) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, FilterNumericMeasure) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(filter(clusters, clusteredness < subtract(clusteredness, 2.5) ^ clusteredness > clusteredness)) > 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(filter(clusters, clusteredness < subtract(clusteredness, -clusteredness) ^ clusteredness <= {A}))) > 0]"));
 }
 
 
@@ -417,7 +443,7 @@ TEST_F(CompleteTraceTest, FilterNumericMeasure) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, FilterSubset) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(filter(clusters, clusteredness >= 4.3)) <= {B}]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness >= " + StringManipulator::toString<double>(clustersClusterednessMinValue) + "))) = 1]"));
 }
 
 
@@ -430,7 +456,7 @@ TEST_F(CompleteTraceTest, FilterSubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, FutureLogicProperty) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [2, 3] (count(clusters) >= add(power({A}, 1), -4))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [2, 3] (count(clusteredness(clusters)) > add(power({A}, 1), -1))]"));
 }
 
 
@@ -443,7 +469,7 @@ TEST_F(CompleteTraceTest, FutureLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, GlobalLogicProperty) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [2, 3] (count(clusters) > add({A}, {A}))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [2, 3] (count(clusteredness(clusters)) >= ceil(div({A}, 2)))]"));
 }
 
 
@@ -456,15 +482,15 @@ TEST_F(CompleteTraceTest, GlobalLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, LogicPropertyEnclosedByParentheses) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(count(clusters) >= multiply({B}, 2))]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(count(clusteredness(clusters)) >= multiply({B}, 0.334))]"));
 }
 
 TEST_F(CompleteTraceTest, LogicPropertyEnclosedByParenthesesDoubled) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [((count(clusters) >= multiply({B}, 2)))]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [((count(clusteredness(clusters)) >= multiply({B}, 0.334)))]"));
 }
 
 TEST_F(CompleteTraceTest, LogicPropertyEnclosedByParenthesesQuadrupled) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [((((count(clusters) >= multiply({B}, 2)))))]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [((((count(clusteredness(clusters)) >= multiply({B}, 0.334)))))]"));
 }
 
 
@@ -477,7 +503,7 @@ TEST_F(CompleteTraceTest, LogicPropertyEnclosedByParenthesesQuadrupled) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, LogicProperty) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(clusters) >= multiply({B}, 2)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) >= 1.00001]"));
 }
 
 
@@ -490,11 +516,11 @@ TEST_F(CompleteTraceTest, LogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, MultipleLogicProperties1) {
-    EXPECT_FALSE(RunEvaluationTest("P > 0.1234 [( d({A}) >=  count(clusters) ) ^ ( covar(clusters, clusteredness, clusters, clusteredness) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"));
+    EXPECT_FALSE(RunEvaluationTest("P > 0.1234 [( d({A}) >=  count(clusteredness(clusters)) ) ^ ( covar(clusteredness(clusters), clusteredness(clusters)) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"));
 }
 
 TEST_F(CompleteTraceTest, MultipleLogicProperties2) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.85934 [~( F [2, 3] ( max(filter(clusters, clusteredness <= 10), clusteredness) >= 2 ) ) => ( G [4, 5] (X (X [5] ( percentile(clusters, clusteredness, 0.4) = 0.7 ))) ) <=> ( (subsetClusteredness(filter(clusters, (clusteredness <= 2) ^ (clusteredness >= 6) V (clusteredness >= 30) => (clusteredness <= 2) <=> (clusteredness >= 4)) ) >= 2) U [3, 7] ( kurt(clusters, clusteredness) <= sqrt(sqrt(sqrt({A}))) ) ) ]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.85934 [~( F [2, 3] ( max(clusteredness(filter(clusters, clusteredness <= 10))) >= 2 ) ) => ( G [4, 5] (X (X [5] ( percentile(clusteredness(clusters), 0.4) = 0.7 ))) ) <=> ( (count(clusteredness(filter(clusters, (clusteredness <= 2) ^ (clusteredness >= 6) V (clusteredness >= 30) => (clusteredness <= 2) <=> (clusteredness >= 4)) ) >= 1) U [3, 7] ( kurt(clusteredness(clusters))) <= sqrt(sqrt(sqrt({A}))) ) ) ]"));
 }
 
 
@@ -507,7 +533,7 @@ TEST_F(CompleteTraceTest, MultipleLogicProperties2) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, NextKLogicProperty) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [X [3] (max(clusters, clusteredness) > subtract(subtract({A}, {B}), {B}))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [X [3] (max(clusteredness(clusters)) > add(add({A}, {B}), 1.3))]"));
 }
 
 
@@ -520,7 +546,7 @@ TEST_F(CompleteTraceTest, NextKLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, NextLogicProperty) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [X (max(clusters, clusteredness) >= multiply({B}, 0.2))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [X (max(clusteredness(clusters)) >= multiply({B}, 1.096))]"));
 }
 
 
@@ -533,7 +559,7 @@ TEST_F(CompleteTraceTest, NextLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, NotConstraint) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, ~ (clusteredness <= 30.2))) <= {B}]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, ~ (clusteredness > 1)))) = 1]"));
 }
 
 
@@ -546,7 +572,7 @@ TEST_F(CompleteTraceTest, NotConstraint) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, NotLogicProperty) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [~(count(clusters) >= add({A}, 0.2))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [~(count(clusteredness(clusters)) >= add({A}, 0.2))]"));
 }
 
 
@@ -559,20 +585,20 @@ TEST_F(CompleteTraceTest, NotLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, NumericMeasure) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(count(clusters) >= {A})]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max([0, 5] count(clusteredness(clusters))) = 7]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// NumericNumericComparison
+// NumericMeasureCollection
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, NumericNumericComparison) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(clusters, clusteredness) >= subtract(8.5, {A})]"));
+TEST_F(CompleteTraceTest, NumericMeasureCollection) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [mode(clusteredness(clusters)) = 0]"));
 }
 
 
@@ -585,20 +611,7 @@ TEST_F(CompleteTraceTest, NumericNumericComparison) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, NumericSpatialMeasure) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(clusters, clusteredness) >= add(2, {B})]"));
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// NumericSpatialNumericComparison
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(CompleteTraceTest, NumericSpatialNumericComparison) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [subsetClusteredness(clusters) >= multiply(2.1, {B})]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(clusteredness(clusters)) <= 1]"));
 }
 
 
@@ -611,7 +624,7 @@ TEST_F(CompleteTraceTest, NumericSpatialNumericComparison) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, NumericStateVariable1) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A} <= {B}]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= {B}]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariable2) {
@@ -626,13 +639,26 @@ TEST_F(CompleteTraceTest, NumericStateVariable3) {
 /////////////////////////////////////////////////////////
 //
 //
+// NumericStatisticalMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, NumericStatisticalMeasure) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [X min(count(clusteredness(clusters))) >= 2]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // ProbabilisticLogicProperty
 //
 //
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, ProbabilisticLogicProperty) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(clusters) >= div({A}, 2)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) >= div({A}, 2)]"));
 }
 
 
@@ -645,99 +671,60 @@ TEST_F(CompleteTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, SpatialMeasureClusteredness) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, clusteredness <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 1))) > {A}]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasureDensity) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, density <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, density <= div(1E+37, 1.078)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasureArea) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, area <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, area <= div(1E+37, 1.078)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasurePerimeter) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, perimeter <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, perimeter <= div(1E+37, 1.078)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasureDistanceFromOrigin) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, distanceFromOrigin <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, distanceFromOrigin <= div(1E+37, 1.078)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasureAngle) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, angle <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, angle <= div(360, 1.078)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasureTriangleMeasure) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, triangleMeasure <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, triangleMeasure <= div(1, 1.078)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasureRectangleMeasure) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, rectangleMeasure <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, rectangleMeasure <= div(1, 1.078)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasureCircleMeasure) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, circleMeasure <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, circleMeasure <= div(1, 1.078)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasureCentroidX) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, centroidX <= 30.2)) > subtract({A}, 3)]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, centroidX <= div(1E+37, 1.078)))) = 1]"));
 }
 
 TEST_F(CompleteTraceTest, SpatialMeasureCentroidY) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, centroidY <= 30.2)) > subtract({A}, 3)]"));
-}
-
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// SubsetOperation
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(CompleteTraceTest, SubsetOperationDifference) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(difference(clusters, clusters)) < 1]"));
-}
-
-TEST_F(CompleteTraceTest, SubsetOperationIntersection) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(intersection(clusters, filter(clusters, clusteredness > 22))) >= 2]"));
-}
-
-TEST_F(CompleteTraceTest, SubsetOperationUnion) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(filter(clusters, clusteredness < 20), filter(clusters, clusteredness >= 20))) > 10]"));
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, centroidY <= div(1E+37, 1.078)))) = 1]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// SubsetSpecific
+// SpatialMeasureCollection
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, SubsetSpecificClusters) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= add({B}, 0)]"));
-}
-
-TEST_F(CompleteTraceTest, SubsetSpecificRegions) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= add(count(clusters), add(multiply({B}, 1.5), 3))]"));
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// SubsetSubsetOperation
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(CompleteTraceTest, SubsetSubsetOperation) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(union(clusters, clusters)) <= 3]"));
+TEST_F(CompleteTraceTest, SpatialMeasureCollection) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] avg(clusteredness(clusters)) > 12]"));
 }
 
 
@@ -750,33 +737,109 @@ TEST_F(CompleteTraceTest, SubsetSubsetOperation) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, Subset) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= add(count(clusters), add(multiply({B}, 1.5), 3))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) > add(multiply({B}, 0.31), 0))]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// UnaryTypeConstraint
+// SubsetOperation
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, UnaryTypeConstraint) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(filter(clusters, type = 0)) > 7]"));
+TEST_F(CompleteTraceTest, SubsetOperationDifference) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(difference(clusters, clusters))) = 0]"));
+}
+
+TEST_F(CompleteTraceTest, SubsetOperationDifferenceRegion) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(difference(regions, clusters))) = 12]"));
+}
+
+TEST_F(CompleteTraceTest, SubsetOperationIntersection) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(intersection(clusters, filter(clusters, clusteredness > 24.999)))) >= 2]"));
+}
+
+TEST_F(CompleteTraceTest, SubsetOperationIntersectionRegion) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(intersection(clusters, regions))) = 0]"));
+}
+
+TEST_F(CompleteTraceTest, SubsetOperationUnion) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(union(filter(clusters, clusteredness < 20), filter(clusters, clusteredness >= 20)))) > 10]"));
+}
+
+TEST_F(CompleteTraceTest, SubsetOperationUnionRegion) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(union(clusters, regions))) = 22]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// UnarySpatialConstraint
+// SubsetSpecific
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, UnarySpatialConstraint) {
-    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(filter(clusters, clusteredness <= subtract(60, multiply({B}, 6.59)))) <= {B}]"));
+TEST_F(CompleteTraceTest, SubsetSpecificClusters) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) >= 1]"));
+}
+
+TEST_F(CompleteTraceTest, SubsetSpecificRegions) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) = 1]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// SubsetSubsetOperation
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, SubsetSubsetOperation) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(union(clusters, clusters))) = count(clusteredness(clusters))]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TemporalNumericComparison
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, TemporalNumericComparison) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(clusteredness(clusters)) >= 1]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TemporalNumericMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, TemporalNumericMeasure) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [(count(clusteredness(clusters)) = 0)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TemporalNumericMeasureCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, TemporalNumericMeasureCollection) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 11] count(clusteredness(clusters))) = 11)]"));
 }
 
 
@@ -789,7 +852,7 @@ TEST_F(CompleteTraceTest, UnarySpatialConstraint) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, UnaryNumericFilter) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(filter(clusters, clusteredness <= round(clusteredness))) > 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(filter(clusters, clusteredness <= round(clusteredness)))) > 0]"));
 }
 
 
@@ -802,31 +865,31 @@ TEST_F(CompleteTraceTest, UnaryNumericFilter) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, UnaryNumericMeasureAbs) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(clusters) <= abs(subtract(3.99, {B}))]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) <= abs(subtract(3.99, {B}))]"));
 }
 
 TEST_F(CompleteTraceTest, UnaryNumericMeasureCeil) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= sqrt(ceil(0.3))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) = sqrt(ceil(0.3))]"));
 }
 
 TEST_F(CompleteTraceTest, UnaryNumericMeasureFloor) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= ceil(floor({B}))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) >= floor(1.2)]"));
 }
 
 TEST_F(CompleteTraceTest, UnaryNumericMeasureRound) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) >= add(round(count(clusters)), -0.005)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) = round(-0.005)]"));
 }
 
 TEST_F(CompleteTraceTest, UnaryNumericMeasureSign) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= add(sign(21.1), 0.4363)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) = sign(21.1)]"));
 }
 
 TEST_F(CompleteTraceTest, UnaryNumericMeasureSqrt) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= sqrt(sqrt(multiply({A}, 1)))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) <= sqrt(sqrt(multiply(1, 1)))]"));
 }
 
 TEST_F(CompleteTraceTest, UnaryNumericMeasureTrunc) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) > add(trunc(1.1), -0.0001)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) > trunc(1.9999)]"));
 }
 
 
@@ -839,115 +902,136 @@ TEST_F(CompleteTraceTest, UnaryNumericMeasureTrunc) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, UnaryNumericNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= abs(add({B}, 0.0001))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 11] count(clusteredness(clusters))) = 11]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// BinarySubsetMeasure
+// UnaryNumericTemporal
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, BinarySubsetMeasureAvg) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureGeomean) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) <= {B}]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureHarmean) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [harmean(clusters, clusteredness) >= add({A}, {B})]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureKurt) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [kurt(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureMax) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(clusters, clusteredness) <= {B}]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureMedian) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [median(clusters, clusteredness) <= power({A}, {B})]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureMin) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(clusters, clusteredness) >= sqrt({A})]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureMode) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [mode(clusters, clusteredness) <= subtract({B}, 5)]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureProduct) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [product(clusters, clusteredness) <= {A}]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureSkew) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [skew(clusters, clusteredness) <= {B}]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureStdev) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [stdev(clusters, clusteredness) <= subtract({A}, 0)]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureSum) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [sum(clusters, clusteredness) >= multiply({A}, {B})]"));
-}
-
-TEST_F(CompleteTraceTest, BinarySubsetMeasureVar) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [var(clusters, clusteredness) <= add({A}, 2)]"));
+TEST_F(CompleteTraceTest, UnaryNumericTemporal) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) = abs(-1)]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// BinarySubset
+// UnarySpatialConstraint
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, BinarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [geomean(clusters, clusteredness) >= {B}]"));
+TEST_F(CompleteTraceTest, UnarySpatialConstraint) {
+    EXPECT_TRUE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness < 1))) = 0]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// UnarySubsetMeasure
+// UnaryStatisticalMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, UnarySubsetMeasureCount) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= subtract({B}, 0.99983)]"));
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureAvg) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(clusteredness(clusters)) = 1]"));
 }
 
-TEST_F(CompleteTraceTest, UnarySubsetMeasureClusteredness) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetClusteredness(clusters) >= subtract({B}, 3)]"));
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureCount) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) >= 1]"));
 }
 
-TEST_F(CompleteTraceTest, UnarySubsetMeasureDensity) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [subsetDensity(clusters) >= subtract({B}, 3.099983)]"));
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureGeomean) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [geomean(clusteredness(clusters)) <= 1]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureHarmean) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [harmean(clusteredness(clusters)) = 0]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureKurt) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [kurt(clusteredness(clusters)) <= 1]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureMax) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(clusteredness(clusters)) = 1]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureMedian) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [median(clusteredness(clusters)) <= 1]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureMin) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(clusteredness(clusters)) > 1]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureMode) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [mode(clusteredness(clusters)) = 0"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureProduct) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [product(clusteredness(clusters)) >= 1]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureSkew) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [skew(clusteredness(clusters)) <= 1.00001]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureStdev) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [stdev(clusteredness(clusters)) <= subtract(1, 0.9999)]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureSum) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [sum(clusteredness(clusters)) >= 1.00001]"));
+}
+
+TEST_F(CompleteTraceTest, UnaryStatisticalMeasureVar) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [var(clusteredness(clusters)) < 0.00001]"));
 }
 
 
 /////////////////////////////////////////////////////////
 //
 //
-// UnarySubset
+// UnaryStatisticalNumeric
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, UnarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusters) <= subtract({B}, 0.99983)]"));
+TEST_F(CompleteTraceTest, UnaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(clusters)) = 1]"));
+}
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryStatisticalSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, UnaryStatisticalSpatial) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 5] count(clusteredness(clusters))) < 6.01]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryTypeConstraint
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, UnaryTypeConstraint) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 1) + "] count(clusteredness(filter(clusters, type = 0))) > 0]"));
 }
 
 
@@ -960,11 +1044,11 @@ TEST_F(CompleteTraceTest, UnarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, UntilLogicProperty) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(count(clusters) >= 1) U [2, 3] (count(clusters) >= add({A}, -3.00032))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d(count(clusteredness(clusters)) >= 0) U [0, 2] (count(clusteredness(clusters)) = 3)]"));
 }
 
 TEST_F(CompleteTraceTest, UntilLogicPropertyMultiple) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [(count(clusters) < multiply(add({B}, 1.9994), 2)) U [2, 8] (count(clusters) >= add({A}, 0.00032)) U [2, 6] (count(clusters) <= add({A}, 0.00032))]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [d(count(clusteredness(clusters)) >= 0) U [0, 2] (count(clusteredness(clusters)) = 3) <=> {A} = 3]"));
 }
 
 
@@ -977,35 +1061,31 @@ TEST_F(CompleteTraceTest, UntilLogicPropertyMultiple) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, GlobalConstantValueReal) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(2) = 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(2) = 0)]"));
 }
 
 TEST_F(CompleteTraceTest, GlobalConstantValueNumericStateVariable) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d({A}) = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d({A}) = 0)]"));
 }
 
 TEST_F(CompleteTraceTest, GlobalConstantValueUnaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [G [1, 10] (d(round(subsetClusteredness(clusters))) = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [1, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(round(count(clusteredness(clusters)))) = 0)]"));
 }
 
 TEST_F(CompleteTraceTest, GlobalConstantValueBinaryNumeric) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(add(count(clusters), count(clusters))) = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(add(count(clusteredness(clusters)), 2)) = 0)]"));
 }
 
-TEST_F(CompleteTraceTest, GlobalConstantValueUnarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(count(clusters)) = 0)]"));
+TEST_F(CompleteTraceTest, GlobalConstantValueUnaryStatisticalNumeric) {
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(count(clusteredness(clusters))) = 0)]"));
 }
 
-TEST_F(CompleteTraceTest, GlobalConstantValueBinarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(avg(filter(clusters, clusteredness > add({A}, {B})), clusteredness)) = 0)]"));
+TEST_F(CompleteTraceTest, GlobalConstantValueBinaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(covar(clusteredness(filter(clusters, clusteredness < 1)), clusteredness(clusters))) = 0)]"));
 }
 
-TEST_F(CompleteTraceTest, GlobalConstantValueTernarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(quartile(clusters, clusteredness, 50)) = 0)]"));
-}
-
-TEST_F(CompleteTraceTest, GlobalConstantValueQuaternarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(covar(clusters, clusteredness, clusters, clusteredness)) = 0)]"));
+TEST_F(CompleteTraceTest, GlobalConstantValueBinaryStatisticalQuantileNumeric) {
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(quartile(clusteredness(clusters), 50)) = 0)]"));
 }
 
 
@@ -1018,35 +1098,31 @@ TEST_F(CompleteTraceTest, GlobalConstantValueQuaternarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, FutureIncreasingValueReal) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(2) > 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(2) > 0)]"));
 }
 
 TEST_F(CompleteTraceTest, FutureIncreasingValueNumericStateVariable) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d({A}) > 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d({A}) > 0)]"));
 }
 
 TEST_F(CompleteTraceTest, FutureIncreasingValueUnaryNumeric) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(round(subsetClusteredness(clusters))) > 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(round(count(clusteredness(clusters)))) > 0)]"));
 }
 
 TEST_F(CompleteTraceTest, FutureIncreasingValueBinaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(add(count(clusters), count(clusters))) > 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(add(count(clusteredness(clusters)), 1)) > 0)]"));
 }
 
-TEST_F(CompleteTraceTest, FutureIncreasingValueUnarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(count(clusters)) > 0)]"));
+TEST_F(CompleteTraceTest, FutureIncreasingValueUnaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(count(clusteredness(clusters))) > 0)]"));
 }
 
-TEST_F(CompleteTraceTest, FutureIncreasingValueBinarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(avg(filter(clusters, clusteredness > 5), clusteredness)) > 0)]"));
+TEST_F(CompleteTraceTest, FutureIncreasingValueBinaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(covar(clusteredness(clusters), clusteredness(clusters))) > 0)]"));
 }
 
-TEST_F(CompleteTraceTest, FutureIncreasingValueTernarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(quartile(clusters, clusteredness, 50)) > 0)]"));
-}
-
-TEST_F(CompleteTraceTest, FutureIncreasingValueQuaternarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] (d(covar(clusters, clusteredness, clusters, clusteredness)) > 0)]"));
+TEST_F(CompleteTraceTest, FutureIncreasingValueBinaryStatisticalQuantileNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(quartile(clusteredness(clusters), 50)) > 0)]"));
 }
 
 
@@ -1059,35 +1135,31 @@ TEST_F(CompleteTraceTest, FutureIncreasingValueQuaternarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, GlobalDecreasingValueReal) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(2) <= 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(2) < 0)]"));
 }
 
 TEST_F(CompleteTraceTest, GlobalDecreasingValueNumericStateVariable) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d({A}) <= 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d({A}) < 0)]"));
 }
 
 TEST_F(CompleteTraceTest, GlobalDecreasingValueUnaryNumeric) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(round({A})) <= 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(round({A})) < 0)]"));
 }
 
 TEST_F(CompleteTraceTest, GlobalDecreasingValueBinaryNumeric) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(add({A}, {B})) <= 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(add({A}, {B})) < 0)]"));
 }
 
-TEST_F(CompleteTraceTest, GlobalDecreasingValueUnarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(count(clusters)) <= 0)]"));
+TEST_F(CompleteTraceTest, GlobalDecreasingValueUnaryStatisticalNumeric) {
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(count(clusteredness(clusters))) < 0)]"));
 }
 
-TEST_F(CompleteTraceTest, GlobalDecreasingValueBinarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(avg(filter(clusters, clusteredness > 5), clusteredness)) <= 0)]"));
+TEST_F(CompleteTraceTest, GlobalDecreasingValueBinaryStatisticalNumeric) {
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(covar(clusteredness(clusters), clusteredness(clusters))) < 0)]"));
 }
 
-TEST_F(CompleteTraceTest, GlobalDecreasingValueTernarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(quartile(clusters, clusteredness, 50)) <= 0)]"));
-}
-
-TEST_F(CompleteTraceTest, GlobalDecreasingValueQuaternarySubset) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 10] (d(covar(clusters, clusteredness, clusters, clusteredness)) <= 0)]"));
+TEST_F(CompleteTraceTest, GlobalDecreasingValueBinaryStatisticalQuantileNumeric) {
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(quartile(clusteredness(clusters), 50)) < 0)]"));
 }
 
 
@@ -1100,39 +1172,35 @@ TEST_F(CompleteTraceTest, GlobalDecreasingValueQuaternarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueReal) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(count(clusters)) >= 0) U [0, 10] (d(2) <= 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(d(2)) > 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(2) < 0)]"));
 }
 
 TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueNumericStateVariable) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({A}) >= 0) U [0, 10] (d({A}) <= 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({A}) > 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d({A}) < 0)]"));
 }
 
 TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueNumericStateVariable2) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({A}) >= 0) U [0, 10] (d(count(clusters)) <= 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({A}) > 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(count(clusteredness(clusters))) < 0)]"));
 }
 
 TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueUnaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(count(clusters)) >= 0) U [0, 10] (d(round(2)) <= 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(count(clusteredness(clusters))) >= 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(count(clusteredness(clusters))) < 0)]"));
 }
 
 TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueBinaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(subsetClusteredness(clusters) >= 0) U [0, 10] (d(add({A}, {B})) <= 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(count(clusters) >= 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(add({A}, {B})) < 0)]"));
 }
 
-TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueUnarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(power(count(clusters), count(clusters))) >= 0) U [0, 10] (d(count(clusters)) <= 0)]"));
+TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueUnaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(power(count(clusteredness(clusters)), 1)) > 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(power(count(clusteredness(clusters)), 1)) < 0)]"));
 }
 
-TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueBinarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(multiply(count(clusters), 2)) >= 0) U [0, 10] (d(avg(filter(clusters, clusteredness > 5 V clusteredness < 10000), clusteredness)) <= 0)]"));
+TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueBinaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(covar(clusteredness(clusters), clusteredness(clusters))) >= 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(avg(clusteredness(filter(clusters, clusteredness > 5 V clusteredness < 10000)))) < 0)]"));
 }
 
-TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueTernarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(percentile(clusters, clusteredness, 80)) >= 0) U [0, 10] (d(quartile(clusters, clusteredness, 50)) <= 0)]"));
-}
-
-TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueQuaternarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(1231.3) >= 0) U [0, 10] (d(covar(clusters, clusteredness, clusters, clusteredness)) <= 0)]"));
+TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueBinaryStatisticalQuantileNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(percentile(clusteredness(clusters), 80)) >= 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(quartile(clusteredness(clusters), 50)) < 0)]"));
 }
 
 
@@ -1145,35 +1213,31 @@ TEST_F(CompleteTraceTest, IncreasingUntilDecreasingValueQuaternarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueReal) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(count(clusters)) <= 0) U [0, 10] (d({A}) >= 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(d(2) < 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(4) >= 0)]"));
 }
 
 TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueNumericStateVariable) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(count(clusters)) <= 0) U [0, 10] (d({B}) >= 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({A}) < 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d({A}) > 0)]"));
 }
 
 TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueUnaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(count(clusters)) <= 0) U [0, 10] (d(count(clusters)) >= 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(count(clusteredness(clusters))) <= 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(count(clusteredness(clusters))) >= 0)]"));
 }
 
 TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueBinaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(subsetClusteredness(clusters) <= 0) U [0, 10] (d(add(count(clusters), count(clusters))) >= 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(count(clusters) <= 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(add(count(clusteredness(clusters)), 2)) >= 0)]"));
 }
 
-TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueUnarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(power(count(clusters), count(clusters))) <= 0) U [0, 10] (d(count(clusters)) >= 0)]"));
+TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueUnaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(power(count(clusteredness(clusters)), 1)) < 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(power(count(clusteredness(clusters)), 1)) > 0)]"));
 }
 
-TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueBinarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(multiply(count(clusters), 2)) <= 0) U [0, 10] (d(avg(filter(clusters, clusteredness > 5 V clusteredness < 10000), clusteredness)) >= 0)]"));
+TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueBinaryStatisticalNumeric) {
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(d(covar(clusteredness(clusters), clusteredness(clusters))) < 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(covar(clusteredness(clusters), clusteredness(clusters))) > 0)]"));
 }
 
-TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueTernarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(percentile(clusters, clusteredness, 80)) <= 0) U [0, 10] (d(quartile(clusters, clusteredness, 50)) >= 0)]"));
-}
-
-TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueQuaternarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(1231.3) <= 0) U [0, 10] (d(covar(clusters, clusteredness, clusters, clusteredness)) >= 0)]"));
+TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueBinaryStatisticalQuantileNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d(percentile(clusteredness(clusters), 80)) < 0) U [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(quartile(clusteredness(clusters), 50)) >= 0)]"));
 }
 
 
@@ -1186,31 +1250,27 @@ TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueQuaternarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, OscillationValueNumericStateVariable) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] ( (d({A}) >= 0) ^ F [0, 10] ( (d({A}) <= 0) ^ F [0, 10] (d({A}) >= 0) ) )]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d({A}) >= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d({A}) <= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d({A}) >= 0) ) )]"));
 }
 
 TEST_F(CompleteTraceTest, OscillationsValueUnaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] ( (d(round(count(clusters))) >= 0) ^ F [0, 10] ( (d(round(count(clusters))) <= 0) ^ F [0, 10] (d(round(count(clusters))) >= 0) ) )]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(abs(count(clusteredness(clusters))) >= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(abs(count(clusteredness(clusters))) <= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(abs(count(clusteredness(clusters))) >= 0) ) )]"));
 }
 
 TEST_F(CompleteTraceTest, OscillationsValueBinaryNumeric) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] ( (d(add(count(clusters), count(clusters))) >= 0) ^ F [0, 10] ( (d(count(clusters)) <= 0) ^ F [0, 10] (d(add(count(clusters), count(clusters))) >= 0) ) )]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(add(count(clusteredness(clusters)), 2)) >= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(add(count(clusteredness(clusters)), 2)) <= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(add(count(clusteredness(clusters)), 2)) >= 0) ) )]"));
 }
 
-TEST_F(CompleteTraceTest, OscillationsValueUnarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] ( (d(count(clusters)) >= 0) ^ F [0, 10] ( (d(count(clusters)) <= 0) ^ F [0, 10] (d(count(clusters)) >= 0) ) )]"));
+TEST_F(CompleteTraceTest, OscillationsValueUnaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(count(clusteredness(clusters))) >= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(count(clusteredness(clusters))) <= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(count(clusteredness(clusters))) >= 0) ) )]"));
 }
 
-TEST_F(CompleteTraceTest, OscillationsValueBinarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] ( (d(avg(filter(clusters, clusteredness > 5 V clusteredness < 10000), clusteredness)) >= 0) ^ F [0, 10] ( (d(avg(filter(clusters, clusteredness > 5 V clusteredness < 10000), clusteredness)) <= 0) ^ F [0, 10] (d(avg(filter(clusters, clusteredness > 5 V clusteredness < 10000), clusteredness)) >= 0) ) )]"));
+TEST_F(CompleteTraceTest, OscillationsValueBinaryStatisticalNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(covar(clusteredness(clusters, clusteredness(clusters))) >= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(covar(clusteredness(clusters, clusteredness(clusters))) <= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(covar(clusteredness(clusters, clusteredness(clusters))) >= 0) ) )]"));
 }
 
-TEST_F(CompleteTraceTest, OscillationsValueTernarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] ( (d(quartile(clusters, clusteredness, 50)) >= 0) ^ F [0, 10] ( (d(quartile(clusters, clusteredness, 50)) <= 0) ^ F [0, 10] (d(quartile(clusters, clusteredness, 50)) >= 0) ) )]"));
-}
-
-TEST_F(CompleteTraceTest, OscillationsValueQuaternarySubset) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, 10] ( (d(covar(clusters, clusteredness, clusters, clusteredness)) >= 0) ^ F [0, 10] ( (d(covar(clusters, clusteredness, clusters, clusteredness)) <= 0) ^ F [0, 10] (d(covar(clusters, clusteredness, clusters, clusteredness)) >= 0) ) )]"));
+TEST_F(CompleteTraceTest, OscillationsValueBinaryStatisticalQuantileNumeric) {
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(quartile(clusteredness(clusters), 50)) >= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] ( (d(quartile(clusters, clusteredness, 50)) <= 0) ^ F [0, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (d(quartile(clusters, clusteredness, 50)) >= 0) ) )]"));
 }
 
 
@@ -1223,11 +1283,11 @@ TEST_F(CompleteTraceTest, OscillationsValueQuaternarySubset) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, EnclosingWithParenthesesDifferently1) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [((avg(clusters, clusteredness) > 10) ^ (count(clusters) < subtract({A}, {B}))) V (subsetClusteredness(clusters) > 100)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [((avg(clusteredness(clusters)) > 10) ^ (count(clusteredness(clusters)) > 100)]"));
 }
 
 TEST_F(CompleteTraceTest, EnclosingWithParenthesesDifferently2) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(avg(clusters, clusteredness) > 10) ^ ((count(clusters) < subtract({A}, {B})) V (subsetClusteredness(clusters) > 100))]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(avg(clusteredness(clusters)) > 10) ^ ((count(clusteredness(clusters)) > 100))]"));
 }
 
 
@@ -1240,11 +1300,11 @@ TEST_F(CompleteTraceTest, EnclosingWithParenthesesDifferently2) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, TimeIntervalExceedsTraceEndTime) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 1000] (count(clusters) > add(add({A}, {A}), {B}))]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 1000] (count(clusteredness(clusters)) > add(add({A}, {A}), {B}))]"));
 }
 
 TEST_F(CompleteTraceTest, TimeIntervalExceedsTraceStartTime) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [5, 10] (count(clusters) > add(add({A}, {A}), {B}))]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [5, " + StringManipulator::toString<unsigned long>(nrOfTimePoints - 2) + "] (count(clusteredness(clusters)) > add(add({A}, {A}), {B}))]"));
 }
 
 
@@ -1257,15 +1317,15 @@ TEST_F(CompleteTraceTest, TimeIntervalExceedsTraceStartTime) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, ConstraintsCombinationUnary) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 5] (count(filter(clusters, clusteredness > 5)) > add(add({A}, {A}), {B}))]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 5] (count(clusteredness(filter(clusters, clusteredness > 5))) > add(add({A}, {A}), {B}))]"));
 }
 
 TEST_F(CompleteTraceTest, ConstraintsCombinationBinary) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 5] (count(filter(clusters, clusteredness > 5 ^ clusteredness > 1000)) > add(add({A}, {A}), {B}))]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 5] (count(clusteredness(filter(clusters, clusteredness > 5 ^ clusteredness > 1000))) > add(add({A}, {A}), {B}))]"));
 }
 
 TEST_F(CompleteTraceTest, ConstraintsCombinationNary) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 5] (count(filter(clusters, (clusteredness > 5) ^ ((clusteredness > 1000) V (clusteredness > 100 V clusteredness < 210)))) > add(add({A}, {A}), {B}))]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [G [0, 5] (count(clusteredness(filter(clusters, (clusteredness > 5) ^ ((clusteredness > 1000) V (clusteredness > 100 V clusteredness < 210))))) > add(add({A}, {A}), {B}))]"));
 }
 
 

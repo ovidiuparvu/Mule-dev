@@ -14,6 +14,7 @@ namespace multiscale {
 
         // Constants
         static const std::string WRN_LOGIC_PROPERTY_EVAL_FALSE = "The enclosing logic property was evaluated to the default value \"false\".";
+        static const std::string WRN_OUTPUT_SEPARATOR          = " ";
 
 
         //! Class used to evaluate logic properties
@@ -534,7 +535,8 @@ namespace multiscale {
                  * \param message   The exception message
                  */
                 bool printExceptionMessage(const char *message) const {
-                    std::string detailedMessage = std::string(message) + WRN_LOGIC_PROPERTY_EVAL_FALSE;
+                    std::string detailedMessage = std::string(message) + WRN_OUTPUT_SEPARATOR +
+                                                  WRN_LOGIC_PROPERTY_EVAL_FALSE;
 
                     ConsolePrinter::printWarningMessage(detailedMessage);
 

@@ -3,6 +3,7 @@
 
 #include "multiscale/core/MultiscaleTest.hpp"
 #include "multiscale/exception/TestException.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
 #include "multiscale/verification/spatial-temporal/model/Region.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
@@ -20,6 +21,12 @@ namespace multiscaletest {
     class TraceEvaluationTest : public MultiscaleTest {
 
         protected:
+
+            std::size_t nrOfTimePoints;     /*!< The number of timepoints in the trace */
+
+            double bConstantValue;          /*!< The constant value of numeric state variable "B" */
+            double aMinValue;               /*!< The minimum value of numeric state variable "A" */
+            double aMaxValue;               /*!< The maximum value of numeric state variable "A" */
 
             mv::SpatialTemporalTrace trace; /*!< The spatial temporal trace */
             std::string query;              /*!< The query to be checked */
