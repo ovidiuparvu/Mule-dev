@@ -92,6 +92,7 @@ set(MULTIDIMENSIONAL_MULTISCALE_MODEL_CHECKER_SRC
     
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ChangeMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
@@ -148,6 +149,7 @@ set(MODEL_CHECKER_TEST_SRC
     
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ChangeMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
@@ -198,6 +200,7 @@ AddUnitTest(ModelCheckingTest "${MODEL_CHECKER_TEST_SRC}" "${MODEL_CHECKER_TEST_
 set(PARSER_EVALUATION_TEST_SRC
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ChangeMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
@@ -236,6 +239,7 @@ AddUnitTest(ParserEvaluationTest "${PARSER_EVALUATION_TEST_SRC}" "${PARSER_EVALU
 set(PARSER_TEST_SRC
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ChangeMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
@@ -274,6 +278,7 @@ AddUnitTest(ParserTest "${PARSER_TEST_SRC}" "${PARSER_TEST_LINK_LIBS}")
 set(PARSER_SAMPLE_SRC
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ChangeMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
@@ -304,6 +309,7 @@ set(PARSER_SAMPLE_SRC
 set(PARSER_EVALUATION_SAMPLE_SRC
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ChangeMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp
@@ -339,6 +345,7 @@ target_link_libraries(ParserEvaluationSample util)
 set(LOGIC_PROPERTY_DATA_READER_SAMPLE_SRC
     src/attribute/BinaryNumericMeasureAttribute.cpp
     src/attribute/BinarySubsetMeasureAttribute.cpp
+    src/attribute/ChangeMeasureAttribute.cpp
     src/attribute/ComparatorAttribute.cpp
     src/attribute/ProbabilisticLogicPropertyAttribute.cpp
     src/attribute/QuaternarySubsetMeasureAttribute.cpp

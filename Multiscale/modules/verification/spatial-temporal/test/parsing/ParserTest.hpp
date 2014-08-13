@@ -629,7 +629,7 @@ TEST(CompoundConstraint, BinaryOperatorAsUnaryAfter) {
     }
 }
 
-TEST(CompoundConstraint, NumericNumericComparisonBeforeBinaryOperator) {
+TEST(CompoundConstraint, TemporalNumericComparisonBeforeBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
         EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ({A} >= 3 " + binaryOperator + " (clusteredness = 0.1)))) <= 3]"), InvalidInputException);
     }

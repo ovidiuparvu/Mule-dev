@@ -1,9 +1,8 @@
 #ifndef PRIMARYLOGICPROPERTYATTRIBUTE_HPP
 #define PRIMARYLOGICPROPERTYATTRIBUTE_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/DifferenceAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericNumericComparisonAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialNumericComparisonAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ChangeTemporalNumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericComparisonAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/variant.hpp>
@@ -24,9 +23,8 @@ namespace multiscale {
 
         //! Variant for representing a primary logic property type
         typedef boost::variant<
-            DifferenceAttribute,
-            NumericSpatialNumericComparisonAttribute,
-            NumericNumericComparisonAttribute,
+            TemporalNumericComparisonAttribute,
+            ChangeTemporalNumericMeasureAttribute,
             boost::recursive_wrapper<NotLogicPropertyAttribute>,
             boost::recursive_wrapper<FutureLogicPropertyAttribute>,
             boost::recursive_wrapper<GlobalLogicPropertyAttribute>,

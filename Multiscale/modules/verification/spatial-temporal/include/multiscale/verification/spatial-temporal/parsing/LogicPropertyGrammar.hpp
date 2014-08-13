@@ -56,13 +56,13 @@ namespace multiscale {
 
                 qi::rule<Iterator, PrimaryLogicPropertyAttribute(), ascii::space_type>
                     primaryLogicPropertyRule;                   /*!< The rule for parsing a primary logic property */
-                qi::rule<Iterator, DifferenceAttribute(), ascii::space_type>
-                    differenceRule;                             /*!< The rule for parsing a difference attribute */
-                qi::rule<Iterator, NumericNumericComparisonAttribute(), ascii::space_type>
-                    numericNumericComparisonRule;               /*!< The rule for parsing a numeric numeric
-                                                                     comparison */
-                qi::rule<Iterator, NumericSpatialNumericComparisonAttribute(), ascii::space_type>
-                    numericSpatialNumericComparisonRule;        /*!< The rule for parsing a numeric spatial numeric
+                qi::rule<Iterator, ChangeMeasureAttribute(), ascii::space_type>
+                    changeMeasureRule;                          /*!< The rule for parsing a change measure */
+                qi::rule<Iterator, ChangeTemporalNumericMeasureAttribute(), ascii::space_type>
+                    changeTemporalNumericMeasureRule;           /*!< The rule for parsing a change temporal numeric
+                                                                     measure */
+                qi::rule<Iterator, TemporalNumericComparisonAttribute(), ascii::space_type>
+                    temporalNumericComparisonRule;              /*!< The rule for parsing a temporal numeric
                                                                      comparison */
                 qi::rule<Iterator, NotLogicPropertyAttribute(), ascii::space_type>
                     notLogicPropertyRule;                       /*!< The rule for parsing a "not" logic property */
@@ -185,33 +185,33 @@ namespace multiscale {
 
                 // Enumeration parsers
 
-                UnarySubsetMeasureTypeParser
-                    unarySubsetMeasureTypeParser;       /*!< The unary subset measure type parser */
-                BinarySubsetMeasureTypeParser
-                    binarySubsetMeasureTypeParser;      /*!< The binary subset measure type parser */
-                TernarySubsetMeasureTypeParser
-                    ternarySubsetMeasureTypeParser;     /*!< The ternary subset measure type parser */
-                QuaternarySubsetMeasureTypeParser
-                    quaternarySubsetMeasureTypeParser;  /*!< The quaternary subset measure type parser */
-
-                UnaryNumericMeasureTypeParser
-                    unaryNumericMeasureTypeParser;      /*!< The unary numeric measure type parser */
                 BinaryNumericMeasureTypeParser
                     binaryNumericMeasureTypeParser;     /*!< The binary numeric measure type parser */
-
-                SubsetSpecificTypeParser
-                    subsetSpecificTypeParser;           /*!< The subset specific type parser */
-                SubsetOperationTypeParser
-                    subsetOperationTypeParser;          /*!< The subset operation type parser */
-
-                SpatialMeasureTypeParser
-                    spatialMeasureTypeParser;           /*!< The spatial measure type parser */
-
+                BinarySubsetMeasureTypeParser
+                    binarySubsetMeasureTypeParser;      /*!< The binary subset measure type parser */
+                ChangeMeasureTypeParser
+                    changeMeasureTypeParser;            /*!< The change measure type parser */
                 ComparatorTypeParser
                     comparatorTypeParser;               /*!< The comparator type parser */
                 ComparatorNonEqualTypeParser
                     comparatorNonEqualTypeParser;       /*!< The comparator type parser which does not accept
                                                              the "=" symbol */
+                QuaternarySubsetMeasureTypeParser
+                    quaternarySubsetMeasureTypeParser;  /*!< The quaternary subset measure type parser */
+                SpatialMeasureTypeParser
+                    spatialMeasureTypeParser;           /*!< The spatial measure type parser */
+                SubsetSpecificTypeParser
+                    subsetSpecificTypeParser;           /*!< The subset specific type parser */
+                SubsetOperationTypeParser
+                    subsetOperationTypeParser;          /*!< The subset operation type parser */
+                TernarySubsetMeasureTypeParser
+                    ternarySubsetMeasureTypeParser;     /*!< The ternary subset measure type parser */
+                UnaryNumericMeasureTypeParser
+                    unaryNumericMeasureTypeParser;      /*!< The unary numeric measure type parser */
+                UnarySubsetMeasureTypeParser
+                    unarySubsetMeasureTypeParser;       /*!< The unary subset measure type parser */
+
+
 
             public:
 
@@ -231,6 +231,7 @@ namespace multiscale {
                 //! Initialise the grammar
                 void initialiseGrammar() {
                     initialiseLogicPropertiesRules();
+                    initialiseChangeMeasureRule();
                     initialiseNumericMeasureRule();
                     initialiseNumericSpatialMeasureRule();
                     initialiseNumericSpatialSubsetMeasureRule();
@@ -291,18 +292,17 @@ namespace multiscale {
                 //! Initialise the primary logic property rule
                 void initialisePrimaryLogicPropertyRule() {
                     primaryLogicPropertyRule
-                        =   numericSpatialNumericComparisonRule
-                        |   numericNumericComparisonRule
-                        |   differenceRule
+                        =   temporalNumericComparisonRule
+                        |   changeTemporalNumericMeasureRule
                         |   notLogicPropertyRule
                         |   futureLogicPropertyRule
                         |   globalLogicPropertyRule
                         |   ('X' > (nextLogicPropertyRule | nextKLogicPropertyRule))
                         |   ('(' > logicPropertyRule > ')');
 
-                    differenceRule
+                    changeTemporalNumericMeasureRule
                         =   (
-                                qi::lit("d")
+                                changeMeasureRule
                                 > '('
                                 > numericMeasureRule
                                 > ')'
@@ -310,16 +310,9 @@ namespace multiscale {
                                 > numericMeasureRule
                             );
 
-                    numericSpatialNumericComparisonRule
+                    temporalNumericComparisonRule
                         =   (
-                                numericSpatialRule
-                                > comparatorRule
-                                > numericMeasureRule
-                            );
-
-                    numericNumericComparisonRule
-                        =   (
-                                numericStateVariableRule
+                                numericMeasureRule
                                 > comparatorRule
                                 > numericMeasureRule
                             );
@@ -391,6 +384,12 @@ namespace multiscale {
                                     > logicPropertyRule
                                 )
                             );
+                }
+
+                //! Initialise the change measure rule
+                void initialiseChangeMeasureRule() {
+                    changeMeasureRule
+                        =   changeMeasureTypeParser;
                 }
 
                 //! Initialise the numeric measure rule
@@ -641,6 +640,7 @@ namespace multiscale {
                 //! Assign names to the rules
                 void assignNamesToRules() {
                     assignNamesToLogicPropertiesRules();
+                    assignNamesToChangeMeasureRules();
                     assignNamesToNumericMeasureRules();
                     assignNamesToNumericSpatialMeasureRules();
                     assignNamesToNumericSpatialSubsetMeasureRules();
@@ -682,9 +682,8 @@ namespace multiscale {
                 //! Assign names to the primary logic property rules
                 void assignNamesToPrimaryLogicPropertyRules() {
                     primaryLogicPropertyRule            .name("primaryLogicPropertyRule");
-                    differenceRule                      .name("differenceRule");
-                    numericSpatialNumericComparisonRule .name("numericSpatialNumericComparisonRule");
-                    numericNumericComparisonRule        .name("numericNumericComparisonRule");
+                    changeTemporalNumericMeasureRule    .name("changeTemporalNumericMeasureRule");
+                    temporalNumericComparisonRule       .name("temporalNumericComparisonRule");
                     notLogicPropertyRule                .name("notLogicPropertyRule");
                     futureLogicPropertyRule             .name("futureLogicPropertyRule");
                     globalLogicPropertyRule             .name("globalLogicPropertyRule");
@@ -699,6 +698,11 @@ namespace multiscale {
                     implicationLogicPropertyRule    .name("implicationLogicPropertyRule");
                     equivalenceLogicPropertyRule    .name("equivalenceLogicPropertyRule");
                     untilLogicPropertyRule          .name("untilLogicPropertyRule");
+                }
+
+                //! Assign names to the change measure rules
+                void assignNamesToChangeMeasureRules() {
+                    changeMeasureRule.name("changeMeasureRule");
                 }
 
                 //! Assign names to the numeric measure rules
@@ -789,6 +793,7 @@ namespace multiscale {
                 //! Initialise the debugging of rules
                 void initialiseRulesDebugging() {
                     initialiseLogicPropertiesRulesDebugging();
+                    initialiseChangeMeasureRuleDebugging();
                     initialiseNumericMeasureRuleDebugging();
                     initialiseNumericSpatialMeasureRuleDebugging();
                     initialiseSpatialSubsetMeasureRuleDebugging();
@@ -830,9 +835,8 @@ namespace multiscale {
                 //! Initialise debugging for the primary logic property rule
                 void initialisePrimaryLogicPropertyRuleDebugging() {
                     debug(primaryLogicPropertyRule);
-                    debug(differenceRule);
-                    debug(numericSpatialNumericComparisonRule);
-                    debug(numericNumericComparisonRule);
+                    debug(changeTemporalNumericMeasureRule);
+                    debug(temporalNumericComparisonRule);
                     debug(notLogicPropertyRule);
                     debug(futureLogicPropertyRule);
                     debug(globalLogicPropertyRule);
@@ -847,6 +851,11 @@ namespace multiscale {
                     debug(implicationLogicPropertyRule);
                     debug(equivalenceLogicPropertyRule);
                     debug(untilLogicPropertyRule);
+                }
+
+                //! Initialise debugging for the change measure rule
+                void initialiseChangeMeasureRuleDebugging() {
+                    debug(changeMeasureRule);
                 }
 
                 //! Initialise debugging for the numeric measure rule
@@ -967,9 +976,8 @@ namespace multiscale {
                 //! Initialise the primary logic property error handling support
                 void initialisePrimaryLogicPropertyErrorHandlingSupport() {
                     qi::on_error<qi::fail>(primaryLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(differenceRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(numericSpatialNumericComparisonRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(numericNumericComparisonRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(changeTemporalNumericMeasureRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(temporalNumericComparisonRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                     qi::on_error<qi::fail>(notLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                     qi::on_error<qi::fail>(futureLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
                     qi::on_error<qi::fail>(globalLogicPropertyRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));

@@ -3,6 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/BinarySubsetMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ChangeMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/QuaternarySubsetMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SubsetOperationAttribute.hpp"
@@ -18,48 +19,6 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Symbol table and parser for the comparator type
-        struct ComparatorTypeParser : qi::symbols<char, multiscale::verification::ComparatorType> {
-
-            ComparatorTypeParser() {
-                add
-                    (">"    , ComparatorType::GreaterThan)
-                    (">="   , ComparatorType::GreaterThanOrEqual)
-                    ("<"    , ComparatorType::LessThan)
-                    ("<="   , ComparatorType::LessThanOrEqual)
-                    ("="    , ComparatorType::Equal)
-                ;
-            }
-
-        };
-
-        //! Symbol table and parser for the comparator type which does not accept the "=" symbol
-        struct ComparatorNonEqualTypeParser : qi::symbols<char, multiscale::verification::ComparatorType> {
-
-            ComparatorNonEqualTypeParser() {
-                add
-                    (">"    , ComparatorType::GreaterThan)
-                    (">="   , ComparatorType::GreaterThanOrEqual)
-                    ("<"    , ComparatorType::LessThan)
-                    ("<="   , ComparatorType::LessThanOrEqual)
-                ;
-            }
-
-        };
-
-        //! Symbol table and parser for the subset operation type
-        struct SubsetOperationTypeParser : qi::symbols<char, multiscale::verification::SubsetOperationType> {
-
-            SubsetOperationTypeParser() {
-                add
-                    ("difference"   , SubsetOperationType::Difference)
-                    ("intersection" , SubsetOperationType::Intersection)
-                    ("union"        , SubsetOperationType::Union)
-                ;
-            }
-
-        };
-
         //! Symbol table and parser for the binary numeric measure type
         struct BinaryNumericMeasureTypeParser : qi::symbols<char, multiscale::verification::BinaryNumericMeasureType> {
 
@@ -72,46 +31,6 @@ namespace multiscale {
                     ("multiply" , BinaryNumericMeasureType::Multiply)
                     ("power"    , BinaryNumericMeasureType::Power)
                     ("subtract" , BinaryNumericMeasureType::Subtract)
-                ;
-            }
-
-        };
-
-        //! Symbol table and parser for the unary numeric measure type
-        struct UnaryNumericMeasureTypeParser : qi::symbols<char, multiscale::verification::UnaryNumericMeasureType> {
-
-            UnaryNumericMeasureTypeParser() {
-                add
-                    ("abs"      , UnaryNumericMeasureType::Abs)
-                    ("ceil"     , UnaryNumericMeasureType::Ceil)
-                    ("floor"    , UnaryNumericMeasureType::Floor)
-                    ("round"    , UnaryNumericMeasureType::Round)
-                    ("sign"     , UnaryNumericMeasureType::Sign)
-                    ("sqrt"     , UnaryNumericMeasureType::Sqrt)
-                    ("trunc"    , UnaryNumericMeasureType::Trunc)
-                ;
-            }
-
-        };
-
-        //! Symbol table and parser for the quaternary subset measure type
-        struct QuaternarySubsetMeasureTypeParser : qi::symbols<char, multiscale::verification::QuaternarySubsetMeasureType> {
-
-            QuaternarySubsetMeasureTypeParser() {
-                add
-                    ("covar"    , QuaternarySubsetMeasureType::Covar)
-                ;
-            }
-
-        };
-
-        //! Symbol table and parser for the ternary subset measure type
-        struct TernarySubsetMeasureTypeParser : qi::symbols<char, multiscale::verification::TernarySubsetMeasureType> {
-
-            TernarySubsetMeasureTypeParser() {
-                add
-                    ("percentile"   , TernarySubsetMeasureType::Percentile)
-                    ("quartile"     , TernarySubsetMeasureType::Quartile)
                 ;
             }
 
@@ -135,6 +54,100 @@ namespace multiscale {
                     ("stdev"    , BinarySubsetMeasureType::Stdev)
                     ("sum"      , BinarySubsetMeasureType::Sum)
                     ("var"      , BinarySubsetMeasureType::Var)
+                ;
+            }
+
+        };
+
+        //! Symbol table and parser for the change measure type
+        struct ChangeMeasureTypeParser : qi::symbols<char, multiscale::verification::ChangeMeasureType> {
+
+            ChangeMeasureTypeParser() {
+                add
+                    ("d"    , ChangeMeasureType::Derivative)
+                    ("r"    , ChangeMeasureType::Ratio)
+                ;
+            }
+
+        };
+
+        //! Symbol table and parser for the comparator type which does not accept the "=" symbol
+        struct ComparatorNonEqualTypeParser : qi::symbols<char, multiscale::verification::ComparatorType> {
+
+            ComparatorNonEqualTypeParser() {
+                add
+                    (">"    , ComparatorType::GreaterThan)
+                    (">="   , ComparatorType::GreaterThanOrEqual)
+                    ("<"    , ComparatorType::LessThan)
+                    ("<="   , ComparatorType::LessThanOrEqual)
+                ;
+            }
+
+        };
+
+        //! Symbol table and parser for the comparator type
+        struct ComparatorTypeParser : qi::symbols<char, multiscale::verification::ComparatorType> {
+
+            ComparatorTypeParser() {
+                add
+                    (">"    , ComparatorType::GreaterThan)
+                    (">="   , ComparatorType::GreaterThanOrEqual)
+                    ("<"    , ComparatorType::LessThan)
+                    ("<="   , ComparatorType::LessThanOrEqual)
+                    ("="    , ComparatorType::Equal)
+                ;
+            }
+
+        };
+
+        //! Symbol table and parser for the quaternary subset measure type
+        struct QuaternarySubsetMeasureTypeParser : qi::symbols<char, multiscale::verification::QuaternarySubsetMeasureType> {
+
+            QuaternarySubsetMeasureTypeParser() {
+                add
+                    ("covar"    , QuaternarySubsetMeasureType::Covar)
+                ;
+            }
+
+        };
+
+        //! Symbol table and parser for the subset operation type
+        struct SubsetOperationTypeParser : qi::symbols<char, multiscale::verification::SubsetOperationType> {
+
+            SubsetOperationTypeParser() {
+                add
+                    ("difference"   , SubsetOperationType::Difference)
+                    ("intersection" , SubsetOperationType::Intersection)
+                    ("union"        , SubsetOperationType::Union)
+                ;
+            }
+
+        };
+
+        //! Symbol table and parser for the ternary subset measure type
+        struct TernarySubsetMeasureTypeParser : qi::symbols<char, multiscale::verification::TernarySubsetMeasureType> {
+
+            TernarySubsetMeasureTypeParser() {
+                add
+                    ("percentile"   , TernarySubsetMeasureType::Percentile)
+                    ("quartile"     , TernarySubsetMeasureType::Quartile)
+                ;
+            }
+
+        };
+
+        //! Symbol table and parser for the unary numeric measure type
+        struct UnaryNumericMeasureTypeParser : qi::symbols<char, multiscale::verification::UnaryNumericMeasureType> {
+
+            UnaryNumericMeasureTypeParser() {
+                add
+                    ("abs"      , UnaryNumericMeasureType::Abs)
+                    ("ceil"     , UnaryNumericMeasureType::Ceil)
+                    ("floor"    , UnaryNumericMeasureType::Floor)
+                    ("round"    , UnaryNumericMeasureType::Round)
+                    ("sign"     , UnaryNumericMeasureType::Sign)
+                    ("sqrt"     , UnaryNumericMeasureType::Sqrt)
+                    ("trunc"    , UnaryNumericMeasureType::Trunc)
                 ;
             }
 

@@ -1,5 +1,5 @@
-#ifndef UNARYNUMERICMEASURE_HPP
-#define UNARYNUMERICMEASURE_HPP
+#ifndef UNARYNUMERICMEASUREATTRIBUTE_HPP
+#define UNARYNUMERICMEASUREATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <fstream>

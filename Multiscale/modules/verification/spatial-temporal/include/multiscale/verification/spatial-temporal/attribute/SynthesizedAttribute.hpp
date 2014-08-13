@@ -8,9 +8,10 @@
 // Include forward declared types
 
 #include "multiscale/verification/spatial-temporal/attribute/PrimaryLogicPropertyAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/DifferenceAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericNumericComparisonAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialNumericComparisonAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericComparisonAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ChangeTemporalNumericMeasureAttribute.hpp"
+
+#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialMeasureAttribute.hpp"
 
 #include "multiscale/verification/spatial-temporal/attribute/NotLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/FutureLogicPropertyAttribute.hpp"

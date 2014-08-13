@@ -626,7 +626,7 @@ TEST(CompoundConstraint, BinaryOperatorAsUnaryAfter) {
     }
 }
 
-TEST(CompoundConstraint, NumericNumericComparisonBeforeBinaryOperator) {
+TEST(CompoundConstraint, TemporalNumericComparisonBeforeBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
         EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, ({A} >= 3 " + binaryOperator + " (/*{{ spatial_measures[0].name }}*/ = 0.1)))) <= 3]"), InvalidInputException);
     }
