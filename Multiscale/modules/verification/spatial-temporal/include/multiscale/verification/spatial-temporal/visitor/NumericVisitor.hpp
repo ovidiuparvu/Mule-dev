@@ -29,7 +29,8 @@ namespace multiscale {
                 /*!
                  * \param numericMeasure  The numeric measure
                  */
-                double operator()(const NumericMeasureAttribute &numericMeasure) const {
+                double
+                operator()(const NumericMeasureAttribute &numericMeasure) const {
                     return evaluate(numericMeasure.numericMeasure);
                 }
 
@@ -37,7 +38,8 @@ namespace multiscale {
                 /*!
                  * \param primaryNumericMeasure The primary numeric measure
                  */
-                double operator()(const PrimaryNumericMeasureAttribute &primaryNumericMeasure) const {
+                double
+                operator()(const PrimaryNumericMeasureAttribute &primaryNumericMeasure) const {
                     return evaluatePrimaryNumericMeasure(primaryNumericMeasure.primaryNumericMeasure);
                 }
 
@@ -45,7 +47,8 @@ namespace multiscale {
                 /*!
                  * \param realNumber The real number
                  */
-                double operator()(double realNumber) const {
+                double
+                operator()(double realNumber) const {
                     return realNumber;
                 }
 
@@ -53,7 +56,8 @@ namespace multiscale {
                 /*!
                  * \param numericStateVariable  The numeric state variable
                  */
-                double operator()(const NumericStateVariableAttribute &numericStateVariable) const {
+                double
+                operator()(const NumericStateVariableAttribute &numericStateVariable) const {
                     std::string name = numericStateVariable.stateVariable.name;
 
                     return timePoint.getNumericStateVariable(name);
@@ -63,7 +67,8 @@ namespace multiscale {
                 /*!
                  * \param numericSpatialMeasure  The numeric spatial measure attribute
                  */
-                double operator()(const NumericSpatialMeasureAttribute &numericSpatialMeasure) const {
+                double
+                operator()(const NumericSpatialMeasureAttribute &numericSpatialMeasure) const {
                     return evaluateNumericSpatialMeasure(numericSpatialMeasure.numericSpatialMeasure);
                 }
 
@@ -71,7 +76,8 @@ namespace multiscale {
                 /*!
                  * \param unaryNumericNumericMeasure  The unary numeric numeric measure
                  */
-                double operator()(const UnaryNumericNumericAttribute &unaryNumericNumericMeasure) const {
+                double
+                operator()(const UnaryNumericNumericAttribute &unaryNumericNumericMeasure) const {
                     UnaryNumericMeasureType unaryNumericMeasureType = unaryNumericNumericMeasure.
                                                                       unaryNumericMeasure.
                                                                       unaryNumericMeasureType;
@@ -85,7 +91,8 @@ namespace multiscale {
                 /*!
                  * \param binaryNumericNumericMeasure  The binary numeric numeric measure
                  */
-                double operator()(const BinaryNumericNumericAttribute &binaryNumericNumericMeasure) const {
+                double
+                operator()(const BinaryNumericNumericAttribute &binaryNumericNumericMeasure) const {
                     BinaryNumericMeasureType binaryNumericMeasureType = binaryNumericNumericMeasure.
                                                                         binaryNumericMeasure.
                                                                         binaryNumericMeasureType;
@@ -93,32 +100,34 @@ namespace multiscale {
                     double firstNumericMeasure  = evaluate(binaryNumericNumericMeasure.firstNumericMeasure);
                     double secondNumericMeasure = evaluate(binaryNumericNumericMeasure.secondNumericMeasure);
 
-                    return NumericEvaluator::evaluate(binaryNumericMeasureType, firstNumericMeasure, secondNumericMeasure);
+                    return NumericEvaluator::evaluate(binaryNumericMeasureType,
+                                                      firstNumericMeasure,
+                                                      secondNumericMeasure);
                 }
 
-                //! Overloading the "()" operator for the UnarySubsetAttribute alternative
+                //! Overloading the "()" operator for the UnaryStatisticalSpatialAttribute alternative
                 /*!
-                 * \param unarySubset  The unary subset
+                 * \param unaryStatisticalSpatialAttribute  The unary statisticalSpatialAttribute
                  */
-                double operator()(const UnarySubsetAttribute &unarySubset) const;
+                double
+                operator()(const UnaryStatisticalSpatialAttribute &unaryStatisticalSpatialAttribute) const;
 
-                //! Overloading the "()" operator for the BinarySubsetAttribute alternative
+                //! Overloading the "()" operator for the BinaryStatisticalSpatialAttribute alternative
                 /*!
-                 * \param binarySubset  The binary subset
+                 * \param binaryStatisticalSpatialAttribute  The binary statistical spatial attribute
                  */
-                double operator()(const BinarySubsetAttribute &binarySubset) const;
+                double
+                operator()(const BinaryStatisticalSpatialAttribute &binaryStatisticalSpatialAttribute) const;
+
 
                 //! Overloading the "()" operator for the TernarySubsetAttribute alternative
                 /*!
-                 * \param ternarySubset  The ternary subset
+                 * \param binaryStatisticalQuantileSpatialAttribute The binary statistical quantile spatial attribute
                  */
-                double operator()(const TernarySubsetAttribute &ternarySubset) const;
+                double
+                operator()(const BinaryStatisticalQuantileSpatialAttribute
+                           &binaryStatisticalQuantileSpatialAttribute) const;
 
-                //! Overloading the "()" operator for the QuaternarySubsetAttribute alternative
-                /*!
-                 * \param quaternarySubset  The quaternary subset
-                 */
-                double operator()(const QuaternarySubsetAttribute &quaternarySubset) const;
 
             private:
 
@@ -126,7 +135,8 @@ namespace multiscale {
                 /*!
                  * \param numericMeasure    The given numeric measure
                  */
-                double evaluate(const NumericMeasureAttributeType &numericMeasure) const {
+                double
+                evaluate(const NumericMeasureAttributeType &numericMeasure) const {
                     return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
                 }
 
@@ -134,7 +144,8 @@ namespace multiscale {
                 /*!
                  * \param primaryNumericMeasure The given primary numeric measure
                  */
-                double evaluatePrimaryNumericMeasure(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
+                double
+                evaluatePrimaryNumericMeasure(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
                     return boost::apply_visitor(NumericVisitor(timePoint), primaryNumericMeasure);
                 }
 
@@ -142,7 +153,8 @@ namespace multiscale {
                 /*!
                  * \param numericSpatialMeasure The given numeric spatial measure
                  */
-                double evaluateNumericSpatialMeasure(const NumericSpatialMeasureAttributeType &numericSpatialMeasure) const {
+                double
+                evaluateNumericSpatialMeasure(const NumericSpatialMeasureAttributeType &numericSpatialMeasure) const {
                     return boost::apply_visitor(NumericVisitor(timePoint), numericSpatialMeasure);
                 }
 
@@ -156,49 +168,60 @@ namespace multiscale {
 // NumericVisitor dependent includes
 
 #include "multiscale/verification/spatial-temporal/visitor/ConstraintVisitor.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/SubsetVisitor.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/SpatialMeasureCollectionEvaluator.hpp"
 
-// Implement NumericVisitor methods which are dependent on the ConstraintVisitor and SubsetVisitor classes
+// Implement NumericVisitor methods which are dependent on the ConstraintVisitor and SpatialMeasureEvaluator classes
 
-inline double multiscale::verification::NumericVisitor::operator()(const UnarySubsetAttribute &unarySubset) const {
-    TimePoint subsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), unarySubset.subset));
+inline double
+multiscale::verification::NumericVisitor::operator()(const UnaryStatisticalSpatialAttribute
+                                                     &unaryStatisticalSpatialAttribute) const {
+    std::vector<double> spatialMeasureValues = SpatialMeasureCollectionEvaluator::evaluate(
+                                                   timePoint,
+                                                   unaryStatisticalSpatialAttribute.spatialMeasureCollection
+                                               );
 
-    return NumericEvaluator::evaluate(unarySubset.unarySubsetMeasure.unarySubsetMeasureType, subsetTimePoint);
+    return NumericEvaluator::evaluate(
+        unaryStatisticalSpatialAttribute.unarySubsetMeasure.unaryStatisticalMeasureType,
+        spatialMeasureValues
+    );
 }
 
-inline double multiscale::verification::NumericVisitor::operator()(const BinarySubsetAttribute &binarySubset) const {
-    TimePoint subsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), binarySubset.subset));
+inline double
+multiscale::verification::NumericVisitor::operator()(const BinaryStatisticalSpatialAttribute
+                                                     &binaryStatisticalSpatialAttribute) const {
+    std::vector<double> firstSpatialMeasureValues =
+        SpatialMeasureCollectionEvaluator::evaluate(
+            timePoint,
+            binaryStatisticalSpatialAttribute.firstSpatialMeasureCollection
+        );
+    std::vector<double> secondSpatialMeasureValues =
+        SpatialMeasureCollectionEvaluator::evaluate(
+            timePoint,
+            binaryStatisticalSpatialAttribute.secondSpatialMeasureCollection
+        );
 
-    std::vector<double> spatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(subsetTimePoint,
-                                                                                           binarySubset.spatialMeasure.spatialMeasureType);
-
-    return NumericEvaluator::evaluate(binarySubset.binarySubsetMeasure.binarySubsetMeasureType, spatialMeasureValues);
+    return NumericEvaluator::evaluate(
+        binaryStatisticalSpatialAttribute.binaryStatisticalMeasure.binaryStatisticalMeasureType,
+        firstSpatialMeasureValues,
+        secondSpatialMeasureValues
+    );
 }
 
-inline double multiscale::verification::NumericVisitor::operator()(const TernarySubsetAttribute &ternarySubset) const {
-    TimePoint subsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), ternarySubset.subset));
+inline double
+multiscale::verification::NumericVisitor::operator()(const BinaryStatisticalQuantileSpatialAttribute
+                                                     &binaryStatisticalQuantileSpatialAttribute) const {
+    std::vector<double> spatialMeasureValues =
+        SpatialMeasureCollectionEvaluator::evaluate(
+            timePoint,
+            binaryStatisticalQuantileSpatialAttribute.spatialMeasureCollection
+        );
 
-    std::vector<double> spatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(subsetTimePoint,
-                                                                                           ternarySubset.spatialMeasure.spatialMeasureType);
-
-    return NumericEvaluator::evaluate(ternarySubset.ternarySubsetMeasure.ternarySubsetMeasureType,
-                                      spatialMeasureValues, ternarySubset.parameter);
-}
-
-inline double multiscale::verification::NumericVisitor::operator()(const QuaternarySubsetAttribute &quaternarySubset) const {
-    TimePoint firstSubsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), quaternarySubset.firstSubset));
-
-    std::vector<double> firstSpatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(firstSubsetTimePoint,
-                                                                                                quaternarySubset.firstSpatialMeasure.spatialMeasureType);
-
-    TimePoint secondSubsetTimePoint(boost::apply_visitor(SubsetVisitor(timePoint), quaternarySubset.secondSubset));
-
-    std::vector<double> secondSpatialMeasureValues = TimePointEvaluator::getSpatialMeasureValues(secondSubsetTimePoint,
-                                                                                                 quaternarySubset.firstSpatialMeasure.spatialMeasureType);
-
-
-    return NumericEvaluator::evaluate(quaternarySubset.quaternarySubsetMeasure.quaternarySubsetMeasureType,
-                                      firstSpatialMeasureValues, secondSpatialMeasureValues);
+    return NumericEvaluator::evaluate(
+        binaryStatisticalQuantileSpatialAttribute.binaryStatisticalQuantileMeasure.
+            binaryStatisticalQuantileMeasureType,
+        spatialMeasureValues,
+        binaryStatisticalQuantileSpatialAttribute.parameter
+    );
 }
 
 

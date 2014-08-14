@@ -59,7 +59,7 @@ bool Parser::parseLogicalQuery(AbstractSyntaxTree &parseResult) {
 }
 
 bool Parser::parseLogicalQuery(ProbabilisticLogicPropertyAttribute &parseResult) {
-    bool isSuccesfulParse = phrase_parse(logicalQueryIterator, logicalQueryEnd, grammar, ascii::space, parseResult);
+    bool isSuccesfulParse = phrase_parse(logicalQueryIterator, logicalQueryEnd, grammar, qi::space, parseResult);
 
     checkIfErrorCase(isSuccesfulParse);
 

@@ -30,7 +30,7 @@ namespace multiscale {
 
             public:
 
-                SubsetAttributeType subset; /*!< The subset */
+                SubsetAttributeType subset; /*!< The considered subset */
 
         };
 

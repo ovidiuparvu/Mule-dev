@@ -29,6 +29,9 @@ namespace multiscale {
                     return spatialMeasureValues;
                 }
 
+
+            private:
+
                 //! Return the spatial measure values for all considered spatial entities in the given timepoint
                 /*!
                  * \param consideredSpatialEntities The considered spatial entities

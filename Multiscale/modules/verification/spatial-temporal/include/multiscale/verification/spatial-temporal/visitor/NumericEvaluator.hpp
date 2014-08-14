@@ -91,75 +91,69 @@ namespace multiscale {
                     return 0.0;
                 }
 
-                //! Evaluate the given unary subset measure expression
+                //! Evaluate the given unary statistical measure expression
                 /*!
-                 * \param unarySubset   The unary subset measure type
-                 * \param timePoint     The considered timePoint
+                 * \param unaryStatisticalMeasure   The unary statistical measure type
+                 * \param values                    The considered collection of values
                  */
-                static double evaluate(const UnarySubsetMeasureType &unarySubset, const TimePoint &timePoint) {
-                    switch (unarySubset) {
-                        case UnarySubsetMeasureType::Count:
-                            return timePoint.numberOfSpatialEntities();
-
-                        case UnarySubsetMeasureType::SubsetClusteredness:
-                            return timePoint.avgClusteredness();
-
-                        case UnarySubsetMeasureType::SubsetDensity:
-                            return timePoint.avgDensity();
-
-                        default:
-                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
-                    }
-
-                    // Line added to avoid "control reaches end of non-void function" warnings
-                    return 0.0;
-                }
-
-                //! Evaluate the given binary subset measure expression
-                /*!
-                 * \param binarySubset  The binary subset measure type
-                 * \param values        The considered values
-                 */
-                static double evaluate(const BinarySubsetMeasureType &binarySubset, const std::vector<double> &values) {
-                    switch (binarySubset) {
-                        case BinarySubsetMeasureType::Avg:
+                static double evaluate(const UnaryStatisticalMeasureType &unaryStatisticalMeasure,
+                                       const std::vector<double> &values) {
+                    switch (unaryStatisticalMeasure) {
+                        case UnaryStatisticalMeasureType::Avg:
                             return Numeric::average(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Geomean:
+                        case UnaryStatisticalMeasureType::Count:
+                            return static_cast<double>(values.size());
+                            break;
+
+                        case UnaryStatisticalMeasureType::Geomean:
                             return Numeric::geometricMean(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Harmean:
+                        case UnaryStatisticalMeasureType::Harmean:
                             return Numeric::harmonicMean(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Kurt:
+                        case UnaryStatisticalMeasureType::Kurt:
                             return Numeric::kurtosis(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Max:
+                        case UnaryStatisticalMeasureType::Max:
                             return Numeric::maximum(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Median:
+                        case UnaryStatisticalMeasureType::Median:
                             return Numeric::median(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Min:
+                        case UnaryStatisticalMeasureType::Min:
                             return Numeric::minimum(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Mode:
+                        case UnaryStatisticalMeasureType::Mode:
                             return Numeric::mode(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Product:
+                        case UnaryStatisticalMeasureType::Product:
                             return Numeric::product(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Skew:
+                        case UnaryStatisticalMeasureType::Skew:
                             return Numeric::skew(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Stdev:
+                        case UnaryStatisticalMeasureType::Stdev:
                             return Numeric::standardDeviation(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Sum:
+                        case UnaryStatisticalMeasureType::Sum:
                             return Numeric::sum(values);
+                            break;
 
-                        case BinarySubsetMeasureType::Var:
+                        case UnaryStatisticalMeasureType::Var:
                             return Numeric::variance(values);
+                            break;
 
                         default:
                             MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
@@ -175,13 +169,13 @@ namespace multiscale {
                  * \param values        The considered values
                  * \param parameter     The parameter used by the ternary subset measure
                  */
-                static double evaluate(const TernarySubsetMeasureType &ternarySubset, const std::vector<double> &values,
+                static double evaluate(const BinaryStatisticalQuantileMeasureType &ternarySubset, const std::vector<double> &values,
                                        double parameter) {
                     switch (ternarySubset) {
-                        case TernarySubsetMeasureType::Percentile:
+                        case BinaryStatisticalQuantileMeasureType::Percentile:
                             return Numeric::percentile(values, parameter);
 
-                        case TernarySubsetMeasureType::Quartile:
+                        case BinaryStatisticalQuantileMeasureType::Quartile:
                             return Numeric::quartile(values, parameter);
 
                         default:
@@ -198,10 +192,10 @@ namespace multiscale {
                  * \param values1           The first collection of considered values
                  * \param values2           The second collection of considered values
                  */
-                static double evaluate(const QuaternarySubsetMeasureType &quaternarySubset,
+                static double evaluate(const BinaryStatisticalMeasureType &quaternarySubset,
                                        const std::vector<double> &values1, const std::vector<double> &values2) {
                     switch (quaternarySubset) {
-                        case QuaternarySubsetMeasureType::Covar:
+                        case BinaryStatisticalMeasureType::Covar:
                             return Numeric::covariance(values1, values2);
 
                         default:

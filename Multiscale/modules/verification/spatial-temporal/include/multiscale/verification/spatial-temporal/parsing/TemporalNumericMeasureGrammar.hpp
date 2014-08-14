@@ -24,7 +24,6 @@ namespace multiscale {
         // Namespace aliases
         namespace phoenix = boost::phoenix;
         namespace qi = boost::spirit::qi;
-        namespace ascii = boost::spirit::ascii;
 
         // Create a lazy error handler function
         phoenix::function<UnexpectedTokenErrorHandler> const
@@ -34,131 +33,137 @@ namespace multiscale {
         //! The grammar for parsing temporal numeric measure statements
         template <typename Iterator>
         class TemporalNumericMeasureGrammar : public qi::grammar<
-            Iterator, NumericMeasureAttribute(), ascii::space_type> {
+                                                         Iterator, NumericMeasureAttribute(), qi::space_type
+                                                     > {
 
             private:
 
                 // Rules
 
-                qi::rule<Iterator, NumericMeasureAttribute(), ascii::space_type>
+                qi::rule<Iterator, NumericMeasureAttribute(), qi::space_type>
                     numericMeasureRule;                         /*!< The rule for parsing a numeric measure */
-                qi::rule<Iterator, PrimaryNumericMeasureAttribute(), ascii::space_type>
+                qi::rule<Iterator, PrimaryNumericMeasureAttribute(), qi::space_type>
                     primaryNumericMeasureRule;                  /*!< The rule for parsing a primary numeric numeric
                                                                      attribute */
-                qi::rule<Iterator, UnaryNumericNumericAttribute(), ascii::space_type>
+                qi::rule<Iterator, UnaryNumericNumericAttribute(), qi::space_type>
                     unaryNumericNumericRule;                    /*!< The rule for parsing a unary numeric numeric
                                                                      attribute */
-                qi::rule<Iterator, BinaryNumericNumericAttribute(), ascii::space_type>
+                qi::rule<Iterator, BinaryNumericNumericAttribute(), qi::space_type>
                     binaryNumericNumericRule;                   /*!< The rule for parsing a binary numeric numeric
                                                                      attribute */
 
-                qi::rule<Iterator, NumericSpatialMeasureAttribute(), ascii::space_type>
+                qi::rule<Iterator, NumericSpatialMeasureAttribute(), qi::space_type>
                     numericSpatialMeasureRule;                  /*!< The rule for parsing a numeric spatial measure */
-                qi::rule<Iterator, UnarySubsetAttribute(), ascii::space_type>
-                    unarySubsetRule;                            /*!< The rule for parsing a unary subset */
-                qi::rule<Iterator, BinarySubsetAttribute(), ascii::space_type>
-                    binarySubsetRule;                           /*!< The rule for parsing a binary subset */
-                qi::rule<Iterator, TernarySubsetAttribute(), ascii::space_type>
-                    ternarySubsetRule;                          /*!< The rule for parsing a ternary subset */
-                qi::rule<Iterator, QuaternarySubsetAttribute(), ascii::space_type>
-                    quaternarySubsetRule;                       /*!< The rule for parsing a quaternary subset */
 
-                qi::rule<Iterator, UnarySubsetMeasureAttribute(), ascii::space_type>
-                    unarySubsetMeasureRule;                     /*!< The rule for parsing a unary subset measure */
-                qi::rule<Iterator, BinarySubsetMeasureAttribute(), ascii::space_type>
-                    binarySubsetMeasureRule;                    /*!< The rule for parsing a binary subset measure */
-                qi::rule<Iterator, TernarySubsetMeasureAttribute(), ascii::space_type>
-                    ternarySubsetMeasureRule;                   /*!< The rule for parsing a ternary subset measure */
-                qi::rule<Iterator, QuaternarySubsetMeasureAttribute(), ascii::space_type>
-                    quaternarySubsetMeasureRule;                /*!< The rule for parsing a quaternary subset
+                qi::rule<Iterator, UnaryStatisticalSpatialAttribute(), qi::space_type>
+                    unaryStatisticalSpatialRule;                /*!< The rule for parsing a unary statistical spatial
+                                                                     attribute */
+                qi::rule<Iterator, BinaryStatisticalSpatialAttribute(), qi::space_type>
+                    binaryStatisticalSpatialRule;               /*!< The rule for parsing a binary statistical
+                                                                     spatial attribute */
+                qi::rule<Iterator, BinaryStatisticalQuantileSpatialAttribute(), qi::space_type>
+                    binaryStatisticalQuantileSpatialRule;       /*!< The rule for parsing a binary statistical
+                                                                     quantile spatial attribute */
+
+                qi::rule<Iterator, UnaryStatisticalMeasureAttribute(), qi::space_type>
+                    unaryStatisticalMeasureRule;                /*!< The rule for parsing a unary statistical
                                                                      measure */
+                qi::rule<Iterator, BinaryStatisticalMeasureAttribute(), qi::space_type>
+                    binaryStatisticalMeasureRule;               /*!< The rule for parsing a binary statistical
+                                                                     measure */
+                qi::rule<Iterator, BinaryStatisticalQuantileMeasureAttribute(), qi::space_type>
+                    binaryStatisticalQuantileMeasureRule;       /*!< The rule for parsing a binary statistical
+                                                                     quantile measure */
 
-                qi::rule<Iterator, UnaryNumericMeasureAttribute(), ascii::space_type>
+                qi::rule<Iterator, UnaryNumericMeasureAttribute(), qi::space_type>
                     unaryNumericMeasureRule;                    /*!< The rule for parsing a unary numeric measure */
-                qi::rule<Iterator, BinaryNumericMeasureAttribute(), ascii::space_type>
+                qi::rule<Iterator, BinaryNumericMeasureAttribute(), qi::space_type>
                     binaryNumericMeasureRule;                   /*!< The rule for parsing a binary numeric measure */
 
-                qi::rule<Iterator, SubsetAttribute(), ascii::space_type>
+                qi::rule<Iterator, SpatialMeasureCollectionAttribute(), qi::space_type>
+                    spatialMeasureCollectionRule;               /*!< The rule for parsing a spatial measure
+                                                                     collection */
+
+                qi::rule<Iterator, SpatialMeasureAttribute(), qi::space_type>
+                    spatialMeasureRule;                         /*!< The rule for parsing a spatial measure */
+
+                qi::rule<Iterator, SubsetAttribute(), qi::space_type>
                     subsetRule;                                 /*!< The rule for parsing a subset */
-                qi::rule<Iterator, SubsetSpecificAttribute(), ascii::space_type>
+                qi::rule<Iterator, SubsetSpecificAttribute(), qi::space_type>
                     subsetSpecificRule;                         /*!< The rule for parsing a specific subset */
-                qi::rule<Iterator, FilterSubsetAttribute(), ascii::space_type>
+                qi::rule<Iterator, FilterSubsetAttribute(), qi::space_type>
                     filterSubsetRule;                           /*!< The rule for parsing a subset filter */
-                qi::rule<Iterator, SubsetSubsetOperationAttribute(), ascii::space_type>
+                qi::rule<Iterator, SubsetSubsetOperationAttribute(), qi::space_type>
                     subsetSubsetOperationRule;                  /*!< The rule for parsing a subset subset operation */
 
-                qi::rule<Iterator, ConstraintAttribute(), ascii::space_type>
+                qi::rule<Iterator, ConstraintAttribute(), qi::space_type>
                     constraintRule;                             /*!< The rule for parsing a constraint */
 
-                qi::rule<Iterator, PrimaryConstraintAttribute(), ascii::space_type>
+                qi::rule<Iterator, PrimaryConstraintAttribute(), qi::space_type>
                     primaryConstraintRule;                      /*!< The rule for parsing a primary constraint */
-                qi::rule<Iterator, NotConstraintAttribute(), ascii::space_type>
+                qi::rule<Iterator, NotConstraintAttribute(), qi::space_type>
                     notConstraintRule;                          /*!< The rule for parsing a "not" constraint */
-                qi::rule<Iterator, UnarySpatialConstraintAttribute(), ascii::space_type>
+                qi::rule<Iterator, UnarySpatialConstraintAttribute(), qi::space_type>
                     unarySpatialConstraintRule;                 /*!< The rule for parsing a unary spatial constraint */
-                qi::rule<Iterator, UnaryTypeConstraintAttribute(), ascii::space_type>
+                qi::rule<Iterator, UnaryTypeConstraintAttribute(), qi::space_type>
                     unaryTypeConstraintRule;                    /*!< The rule for parsing a unary type constraint */
 
-                qi::rule<Iterator, FilterNumericMeasureAttribute(), ascii::space_type>
+                qi::rule<Iterator, FilterNumericMeasureAttribute(), qi::space_type>
                     filterNumericMeasureRule;                   /*!< The rule for parsing a filter numeric measure */
-                qi::rule<Iterator, UnaryNumericFilterAttribute(), ascii::space_type>
+                qi::rule<Iterator, UnaryNumericFilterAttribute(), qi::space_type>
                     unaryNumericFilterRule;                     /*!< The rule for parsing a unary numeric filter
                                                                      measure */
-                qi::rule<Iterator, BinaryNumericFilterAttribute(), ascii::space_type>
+                qi::rule<Iterator, BinaryNumericFilterAttribute(), qi::space_type>
                     binaryNumericFilterRule;                    /*!< The rule for parsing a binary numeric filter
                                                                      measure */
 
-                qi::rule<Iterator, AndConstraintAttribute(), ascii::space_type>
+                qi::rule<Iterator, AndConstraintAttribute(), qi::space_type>
                     andConstraintRule;                          /*!< The rule for parsing an "and" constraint */
-                qi::rule<Iterator, OrConstraintAttribute(), ascii::space_type>
+                qi::rule<Iterator, OrConstraintAttribute(), qi::space_type>
                     orConstraintRule;                           /*!< The rule for parsing an "or" constraint */
-                qi::rule<Iterator, ImplicationConstraintAttribute(), ascii::space_type>
+                qi::rule<Iterator, ImplicationConstraintAttribute(), qi::space_type>
                     implicationConstraintRule;                  /*!< The rule for parsing an "implication"
                                                                      constraint */
-                qi::rule<Iterator, EquivalenceConstraintAttribute(), ascii::space_type>
+                qi::rule<Iterator, EquivalenceConstraintAttribute(), qi::space_type>
                     equivalenceConstraintRule;                  /*!< The rule for parsing an "equivalence"
                                                                      constraint */
 
-                qi::rule<Iterator, SpatialMeasureAttribute(), ascii::space_type>
-                    spatialMeasureRule;                         /*!< The rule for parsing a spatial measure */
-
-                qi::rule<Iterator, ComparatorAttribute(), ascii::space_type>
+                qi::rule<Iterator, ComparatorAttribute(), qi::space_type>
                     comparatorRule;                             /*!< The rule for parsing a comparator */
 
-                qi::rule<Iterator, NumericStateVariableAttribute(), ascii::space_type>
+                qi::rule<Iterator, NumericStateVariableAttribute(), qi::space_type>
                     numericStateVariableRule;                   /*!< The rule for parsing a numeric state variable */
-                qi::rule<Iterator, StateVariableAttribute(), ascii::space_type>
+                qi::rule<Iterator, StateVariableAttribute(), qi::space_type>
                     stateVariableRule;                          /*!< The rule for parsing a state variable */
-                qi::rule<Iterator, std::string(), ascii::space_type>
+                qi::rule<Iterator, std::string(), qi::space_type>
                     stateVariableNameRule;                      /*!< The rule for parsing the name of a
                                                                      state variable without escaping white space */
 
                 // Enumeration parsers
 
-                UnarySubsetMeasureTypeParser
-                    unarySubsetMeasureTypeParser;       /*!< The unary subset measure type parser */
-                BinarySubsetMeasureTypeParser
-                    binarySubsetMeasureTypeParser;      /*!< The binary subset measure type parser */
-                TernarySubsetMeasureTypeParser
-                    ternarySubsetMeasureTypeParser;     /*!< The ternary subset measure type parser */
-                QuaternarySubsetMeasureTypeParser
-                    quaternarySubsetMeasureTypeParser;  /*!< The quaternary subset measure type parser */
+                UnaryStatisticalMeasureTypeParser
+                    unaryStatisticalMeasureTypeParser;          /*!< The unary statistical measure type parser */
+                BinaryStatisticalMeasureTypeParser
+                    binaryStatisticalMeasureTypeParser;         /*!< The binary statistical measure type parser */
+                BinaryStatisticalQuantileMeasureTypeParser
+                    binaryStatisticalQuantileMeasureTypeParser; /*!< The binary statistical quantile measure type
+                                                                     parser */
 
                 UnaryNumericMeasureTypeParser
-                    unaryNumericMeasureTypeParser;      /*!< The unary numeric measure type parser */
+                    unaryNumericMeasureTypeParser;              /*!< The unary numeric measure type parser */
                 BinaryNumericMeasureTypeParser
-                    binaryNumericMeasureTypeParser;     /*!< The binary numeric measure type parser */
+                    binaryNumericMeasureTypeParser;             /*!< The binary numeric measure type parser */
 
                 SubsetSpecificTypeParser
-                    subsetSpecificTypeParser;           /*!< The subset specific type parser */
+                    subsetSpecificTypeParser;                   /*!< The subset specific type parser */
                 SubsetOperationTypeParser
-                    subsetOperationTypeParser;          /*!< The subset operation type parser */
+                    subsetOperationTypeParser;                  /*!< The subset operation type parser */
 
                 SpatialMeasureTypeParser
-                    spatialMeasureTypeParser;           /*!< The spatial measure type parser */
+                    spatialMeasureTypeParser;                   /*!< The spatial measure type parser */
 
                 ComparatorTypeParser
-                    comparatorTypeParser;               /*!< The comparator type parser */
+                    comparatorTypeParser;                       /*!< The comparator type parser */
 
             public:
 
@@ -181,9 +186,10 @@ namespace multiscale {
                     initialiseNumericSpatialMeasureRule();
                     initialiseNumericSpatialSubsetMeasureRule();
                     initialiseNaryNumericMeasureRule();
+                    initialiseSpatialMeasureCollectionRule();
+                    initialiseSpatialMeasureRule();
                     initialiseSubsetRule();
                     initialiseConstraintsRules();
-                    initialiseSpatialMeasureRule();
                     initialiseComparatorRules();
                     initialiseNumericStateVariableRule();
                 }
@@ -230,69 +236,49 @@ namespace multiscale {
                 //! Initialise the numeric spatial measure rule
                 void initialiseNumericSpatialMeasureRule() {
                     numericSpatialMeasureRule
-                        =   unarySubsetRule
-                        |   binarySubsetRule
-                        |   ternarySubsetRule
-                        |   quaternarySubsetRule;
+                        =   unaryStatisticalSpatialRule
+                        |   binaryStatisticalSpatialRule
+                        |   binaryStatisticalQuantileSpatialRule;
 
-                    unarySubsetRule
+                    unaryStatisticalSpatialRule
                         =   (
-                                unarySubsetMeasureRule
+                                unaryStatisticalMeasureRule
                                 > '('
-                                > subsetRule
+                                > spatialMeasureCollectionRule
                                 > ')'
                             );
 
-                    binarySubsetRule
+                    binaryStatisticalSpatialRule
                         =   (
-                                binarySubsetMeasureRule
+                                binaryStatisticalMeasureRule
                                 > '('
-                                > subsetRule
+                                > spatialMeasureCollectionRule
                                 > ','
-                                > spatialMeasureRule
+                                > spatialMeasureCollectionRule
                                 > ')'
                             );
 
-                    ternarySubsetRule
+                    binaryStatisticalQuantileSpatialRule
                         =   (
-                                ternarySubsetMeasureRule
+                                binaryStatisticalQuantileMeasureRule
                                 > '('
-                                > subsetRule
-                                > ','
-                                > spatialMeasureRule
+                                > spatialMeasureCollectionRule
                                 > ','
                                 > qi::double_
-                                > ')'
-                            );
-
-                    quaternarySubsetRule
-                        =   (
-                                quaternarySubsetMeasureRule
-                                > '('
-                                > subsetRule
-                                > ','
-                                > spatialMeasureRule
-                                > ','
-                                > subsetRule
-                                > ','
-                                > spatialMeasureRule
                                 > ')'
                             );
                 }
 
                 //! Initialise the numeric spatial subset measure rule
                 void initialiseNumericSpatialSubsetMeasureRule() {
-                    unarySubsetMeasureRule
-                        =   unarySubsetMeasureTypeParser;
+                    unaryStatisticalMeasureRule
+                        =   unaryStatisticalMeasureTypeParser;
 
-                    binarySubsetMeasureRule
-                        =   binarySubsetMeasureTypeParser;
+                    binaryStatisticalMeasureRule
+                        =   binaryStatisticalMeasureTypeParser;
 
-                    ternarySubsetMeasureRule
-                        =   ternarySubsetMeasureTypeParser;
-
-                    quaternarySubsetMeasureRule
-                        =   quaternarySubsetMeasureTypeParser;
+                    binaryStatisticalQuantileMeasureRule
+                        =   binaryStatisticalQuantileMeasureTypeParser;
                 }
 
                 //! Initialise the n-ary numeric measure rule
@@ -302,6 +288,23 @@ namespace multiscale {
 
                     binaryNumericMeasureRule
                         =   binaryNumericMeasureTypeParser;
+                }
+
+                //! Initialise the spatial measure collection rule
+                void initialiseSpatialMeasureCollectionRule() {
+                    spatialMeasureCollectionRule
+                        =   (
+                                spatialMeasureRule
+                                > '('
+                                > subsetRule
+                                > ')'
+                            );
+                }
+
+                //! Initialise the spatial measure rule
+                void initialiseSpatialMeasureRule() {
+                    spatialMeasureRule
+                        =   spatialMeasureTypeParser;
                 }
 
                 //! Initialise the subset rule
@@ -411,12 +414,6 @@ namespace multiscale {
                         =   ("<=>" > constraintRule);
                 }
 
-                //! Initialise the spatial measure rule
-                void initialiseSpatialMeasureRule() {
-                    spatialMeasureRule
-                        =   spatialMeasureTypeParser;
-                }
-
                 //! Initialise the comparator rules
                 void initialiseComparatorRules() {
                     comparatorRule
@@ -449,6 +446,7 @@ namespace multiscale {
                     assignNamesToNumericSpatialMeasureRules();
                     assignNamesToNumericSpatialSubsetMeasureRules();
                     assignNamesToNaryNumericMeasureRules();
+                    assignNamesToSpatialMeasureCollectionRules();
                     assignNamesToSubsetRules();
                     assignNamesToConstraintsRules();
                     assignNamesToSpatialMeasureRules();
@@ -474,25 +472,28 @@ namespace multiscale {
 
                 //! Assign names to the numeric spatial measure rules
                 void assignNamesToNumericSpatialMeasureRules() {
-                    numericSpatialMeasureRule      .name("numericSpatialRule");
-                    unarySubsetRule         .name("unarySubsetRule");
-                    binarySubsetRule        .name("binarySubsetRule");
-                    ternarySubsetRule       .name("ternarySubsetRule");
-                    quaternarySubsetRule    .name("quaternarySubsetRule");
+                    numericSpatialMeasureRule           .name("numericSpatialRule");
+                    unaryStatisticalSpatialRule         .name("unarySubsetRule");
+                    binaryStatisticalSpatialRule        .name("binaryStatisticalSpatialRule");
+                    binaryStatisticalQuantileSpatialRule.name("binaryStatisticalQuantileSpatialRule");
                 }
 
                 //! Assign names to the numeric spatial subset measure rules
                 void assignNamesToNumericSpatialSubsetMeasureRules() {
-                    unarySubsetMeasureRule      .name("unarySubsetMeasureRule");
-                    binarySubsetMeasureRule     .name("binarySubsetMeasureRule");
-                    ternarySubsetMeasureRule    .name("ternarySubsetMeasureRule");
-                    quaternarySubsetMeasureRule .name("quaternarySubsetMeasureRule");
+                    unaryStatisticalMeasureRule         .name("unaryStatisticalMeasureRule");
+                    binaryStatisticalMeasureRule        .name("binaryStatisticalMeasureRule");
+                    binaryStatisticalQuantileMeasureRule.name("binaryStatisticalQuantileMeasureRule");
                 }
 
                 //! Assign names to the n-ary numeric measure rules
                 void assignNamesToNaryNumericMeasureRules() {
                     unaryNumericMeasureRule     .name("unaryNumericMeasureRule");
                     binaryNumericMeasureRule    .name("binaryNumericMeasureRule");
+                }
+
+                //! Assign names to the spatial measure collection rules
+                void assignNamesToSpatialMeasureCollectionRules() {
+                    spatialMeasureCollectionRule.name("spatialMeasureCollectionRule");
                 }
 
                 //! Assign names to the subset rules
@@ -554,6 +555,7 @@ namespace multiscale {
                     initialiseNumericSpatialMeasureRuleDebugging();
                     initialiseSpatialSubsetMeasureRuleDebugging();
                     initialiseNaryNumericMeasureRuleDebugging();
+                    initialiseSpatialMeasureCollectionRuleDebugging();
                     initialiseSubsetRuleDebugging();
                     initialiseConstraintsRulesDebugging();
                     initialiseSpatialMeasureRuleDebugging();
@@ -580,24 +582,27 @@ namespace multiscale {
                 //! Initialise debugging for the numeric spatial measure rule
                 void initialiseNumericSpatialMeasureRuleDebugging() {
                     debug(numericSpatialMeasureRule);
-                    debug(unarySubsetRule);
-                    debug(binarySubsetRule);
-                    debug(ternarySubsetRule);
-                    debug(quaternarySubsetRule);
+                    debug(unaryStatisticalSpatialRule);
+                    debug(binaryStatisticalSpatialRule);
+                    debug(binaryStatisticalQuantileSpatialRule);
                 }
 
                 //! Initialise debugging for the spatial subset measure rule
                 void initialiseSpatialSubsetMeasureRuleDebugging() {
-                    debug(unarySubsetMeasureRule);
-                    debug(binarySubsetMeasureRule);
-                    debug(ternarySubsetMeasureRule);
-                    debug(quaternarySubsetMeasureRule);
+                    debug(unaryStatisticalMeasureRule);
+                    debug(binaryStatisticalMeasureRule);
+                    debug(binaryStatisticalQuantileMeasureRule);
                 }
 
                 //! Initialise debugging for the n-ary numeric measure rule
                 void initialiseNaryNumericMeasureRuleDebugging() {
                     debug(unaryNumericMeasureRule);
                     debug(binaryNumericMeasureRule);
+                }
+
+                //! Initialise debugging for the spatial measure collection rule
+                void initialiseSpatialMeasureCollectionRuleDebugging() {
+                    debug(spatialMeasureCollectionRule);
                 }
 
                 //! Initialise debugging for the subset rules
@@ -657,6 +662,7 @@ namespace multiscale {
                 void initialiseErrorHandlingSupport() {
                     initialiseNumericMeasureErrorHandlingSupport();
                     initialiseNumericSpatialMeasureErrorHandlingSupport();
+                    initialiseSpatialMeasureCollectionErrorHandlingSupport();
                     initialiseSubsetErrorHandlingSupport();
                     initialiseConstraintsErrorHandlingSupport();
                     initialiseStateVariableErrorHandlingSupport();
@@ -671,50 +677,115 @@ namespace multiscale {
 
                 //! Initialise the numeric measure error handling support
                 void initialiseNumericMeasureErrorHandlingSupport() {
-                    qi::on_error<qi::fail>(unaryNumericNumericRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(binaryNumericNumericRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(
+                        unaryNumericNumericRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        binaryNumericNumericRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
                 }
 
                 //! Initialise the numeric spatial measure error handling support
                 void initialiseNumericSpatialMeasureErrorHandlingSupport() {
-                    qi::on_error<qi::fail>(unarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(binarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(ternarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(quaternarySubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(
+                        unaryStatisticalSpatialRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        binaryStatisticalSpatialRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        binaryStatisticalQuantileSpatialRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
                 }
+
+                //! Initialise the spatial measure collection error handling support
+                void initialiseSpatialMeasureCollectionErrorHandlingSupport() {
+                    qi::on_error<qi::fail>(
+                        spatialMeasureCollectionRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                }
+
 
                 //! Initialise the subset error handling support
                 void initialiseSubsetErrorHandlingSupport() {
-                    qi::on_error<qi::fail>(filterSubsetRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(subsetSubsetOperationRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(
+                        filterSubsetRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        subsetSubsetOperationRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
                 }
 
                 //! Initialise the primary constraint error handling support
                 void initialisePrimaryConstraintErrorHandlingSupport() {
-                    qi::on_error<qi::fail>(primaryConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(notConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(unaryTypeConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(unarySpatialConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(
+                        primaryConstraintRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        notConstraintRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        unaryTypeConstraintRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        unarySpatialConstraintRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
                 }
 
                 //! Initialise the filter numeric measure error handling support
                 void initialiseFilterNumericMeasureErrorHandlingSupport() {
-                    qi::on_error<qi::fail>(filterNumericMeasureRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(unaryNumericFilterRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(binaryNumericFilterRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(
+                        filterNumericMeasureRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        unaryNumericFilterRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        binaryNumericFilterRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
                 }
 
                 //! Initialise the composed constraint error handling support
                 void initialiseComposedConstraintErrorHandlingSupport() {
-                    qi::on_error<qi::fail>(andConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(orConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(implicationConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
-                    qi::on_error<qi::fail>(equivalenceConstraintRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(
+                        andConstraintRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        orConstraintRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        implicationConstraintRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        equivalenceConstraintRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
                 }
 
                 //! Initialise the state variable error handling support
                 void initialiseStateVariableErrorHandlingSupport() {
-                    qi::on_error<qi::fail>(stateVariableNameRule, multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2));
+                    qi::on_error<qi::fail>(
+                        stateVariableNameRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
                 }
 
         };
