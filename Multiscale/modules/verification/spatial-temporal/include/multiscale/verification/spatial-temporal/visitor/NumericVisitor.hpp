@@ -7,6 +7,7 @@
 #include "multiscale/verification/spatial-temporal/visitor/TimePointEvaluator.hpp"
 
 #include <boost/variant.hpp>
+
 #include <string>
 
 
@@ -107,7 +108,7 @@ namespace multiscale {
 
                 //! Overloading the "()" operator for the UnaryStatisticalSpatialAttribute alternative
                 /*!
-                 * \param unaryStatisticalSpatialAttribute  The unary statisticalSpatialAttribute
+                 * \param unaryStatisticalSpatialAttribute  The unary statistical spatial attribute
                  */
                 double
                 operator()(const UnaryStatisticalSpatialAttribute &unaryStatisticalSpatialAttribute) const;
@@ -120,7 +121,7 @@ namespace multiscale {
                 operator()(const BinaryStatisticalSpatialAttribute &binaryStatisticalSpatialAttribute) const;
 
 
-                //! Overloading the "()" operator for the TernarySubsetAttribute alternative
+                //! Overloading the "()" operator for the BinaryStatisticalQuantileSpatialAttribute alternative
                 /*!
                  * \param binaryStatisticalQuantileSpatialAttribute The binary statistical quantile spatial attribute
                  */
@@ -136,7 +137,7 @@ namespace multiscale {
                  * \param numericMeasure    The given numeric measure
                  */
                 double
-                evaluate(const NumericMeasureAttributeType &numericMeasure) const {
+                evaluate(const NumericMeasureType &numericMeasure) const {
                     return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
                 }
 
@@ -154,7 +155,7 @@ namespace multiscale {
                  * \param numericSpatialMeasure The given numeric spatial measure
                  */
                 double
-                evaluateNumericSpatialMeasure(const NumericSpatialMeasureAttributeType &numericSpatialMeasure) const {
+                evaluateNumericSpatialMeasure(const NumericSpatialMeasureType &numericSpatialMeasure) const {
                     return boost::apply_visitor(NumericVisitor(timePoint), numericSpatialMeasure);
                 }
 
@@ -165,23 +166,24 @@ namespace multiscale {
 };
 
 
-// NumericVisitor dependent includes
+// NumericVisitor dependent includes added here to avoid include circular dependency issues
 
 #include "multiscale/verification/spatial-temporal/visitor/ConstraintVisitor.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/SpatialMeasureCollectionEvaluator.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/NumericMeasureCollectionEvaluator.hpp"
 
-// Implement NumericVisitor methods which are dependent on the ConstraintVisitor and SpatialMeasureEvaluator classes
+// Implement NumericVisitor methods which are dependent on the ConstraintVisitor and
+// NumericMeasureCollectionEvaluator classes
 
 inline double
 multiscale::verification::NumericVisitor::operator()(const UnaryStatisticalSpatialAttribute
                                                      &unaryStatisticalSpatialAttribute) const {
-    std::vector<double> spatialMeasureValues = SpatialMeasureCollectionEvaluator::evaluate(
+    std::vector<double> spatialMeasureValues = NumericMeasureCollectionEvaluator::evaluate(
                                                    timePoint,
                                                    unaryStatisticalSpatialAttribute.spatialMeasureCollection
                                                );
 
     return NumericEvaluator::evaluate(
-        unaryStatisticalSpatialAttribute.unarySubsetMeasure.unaryStatisticalMeasureType,
+        unaryStatisticalSpatialAttribute.unaryStatisticalMeasure.unaryStatisticalMeasureType,
         spatialMeasureValues
     );
 }
@@ -190,12 +192,12 @@ inline double
 multiscale::verification::NumericVisitor::operator()(const BinaryStatisticalSpatialAttribute
                                                      &binaryStatisticalSpatialAttribute) const {
     std::vector<double> firstSpatialMeasureValues =
-        SpatialMeasureCollectionEvaluator::evaluate(
+        NumericMeasureCollectionEvaluator::evaluate(
             timePoint,
             binaryStatisticalSpatialAttribute.firstSpatialMeasureCollection
         );
     std::vector<double> secondSpatialMeasureValues =
-        SpatialMeasureCollectionEvaluator::evaluate(
+        NumericMeasureCollectionEvaluator::evaluate(
             timePoint,
             binaryStatisticalSpatialAttribute.secondSpatialMeasureCollection
         );
@@ -211,7 +213,7 @@ inline double
 multiscale::verification::NumericVisitor::operator()(const BinaryStatisticalQuantileSpatialAttribute
                                                      &binaryStatisticalQuantileSpatialAttribute) const {
     std::vector<double> spatialMeasureValues =
-        SpatialMeasureCollectionEvaluator::evaluate(
+        NumericMeasureCollectionEvaluator::evaluate(
             timePoint,
             binaryStatisticalQuantileSpatialAttribute.spatialMeasureCollection
         );

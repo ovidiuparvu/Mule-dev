@@ -7,12 +7,6 @@
 
 // Include forward declared types
 
-#include "multiscale/verification/spatial-temporal/attribute/PrimaryLogicPropertyAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericComparisonAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/ChangeTemporalNumericMeasureAttribute.hpp"
-
-#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialMeasureAttribute.hpp"
-
 #include "multiscale/verification/spatial-temporal/attribute/NotLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/FutureLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/GlobalLogicPropertyAttribute.hpp"
@@ -25,9 +19,18 @@
 #include "multiscale/verification/spatial-temporal/attribute/EquivalenceLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UntilLogicPropertyAttribute.hpp"
 
+#include "multiscale/verification/spatial-temporal/attribute/PrimaryLogicPropertyAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericComparisonAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ChangeTemporalNumericMeasureAttribute.hpp"
+
+#include "multiscale/verification/spatial-temporal/attribute/UnaryNumericTemporalAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericTemporalAttribute.hpp"
+
 #include "multiscale/verification/spatial-temporal/attribute/PrimaryNumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericNumericAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericNumericAttribute.hpp"
+
+#include "multiscale/verification/spatial-temporal/attribute/NumericSpatialMeasureAttribute.hpp"
 
 #include "multiscale/verification/spatial-temporal/attribute/PrimaryConstraintAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NotConstraintAttribute.hpp"

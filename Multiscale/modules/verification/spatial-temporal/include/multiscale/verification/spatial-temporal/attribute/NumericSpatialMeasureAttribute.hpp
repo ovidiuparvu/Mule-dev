@@ -22,7 +22,7 @@ namespace multiscale {
             BinaryStatisticalSpatialAttribute,
             BinaryStatisticalQuantileSpatialAttribute,
             boost::recursive_wrapper<NumericSpatialMeasureAttribute>
-        > NumericSpatialMeasureAttributeType;
+        > NumericSpatialMeasureType;
 
 
         //! Class for representing a numeric spatial measure attribute
@@ -30,7 +30,7 @@ namespace multiscale {
 
             public:
 
-                NumericSpatialMeasureAttributeType numericSpatialMeasure;  /*!< The numeric spatial measure */
+                NumericSpatialMeasureType numericSpatialMeasure;  /*!< The numeric spatial measure */
 
         };
 
@@ -41,7 +41,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NumericSpatialMeasureAttribute,
-    (multiscale::verification::NumericSpatialMeasureAttributeType, numericSpatialMeasure)
+    (multiscale::verification::NumericSpatialMeasureType, numericSpatialMeasure)
 )
 
 

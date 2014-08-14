@@ -41,7 +41,8 @@ namespace multiscale {
                 // Grammars
 
                 TemporalNumericMeasureGrammar<Iterator>
-                    numericMeasureRule;                         /*!< The rule for parsing a numeric measure */
+                    temporalNumericMeasureRule;                 /*!< The grammar for parsing a temporal numeric
+                                                                     measure */
 
                 // Rules
 
@@ -187,19 +188,19 @@ namespace multiscale {
 
                     temporalNumericComparisonRule
                         =   (
-                                numericMeasureRule
+                                temporalNumericMeasureRule
                                 > comparatorRule
-                                > numericMeasureRule
+                                > temporalNumericMeasureRule
                             );
 
                     changeTemporalNumericMeasureRule
                         =   (
                                 changeMeasureRule
                                 > '('
-                                > numericMeasureRule
+                                > temporalNumericMeasureRule
                                 > ')'
                                 > comparatorRule
-                                > numericMeasureRule
+                                > temporalNumericMeasureRule
                             );
 
                     notLogicPropertyRule

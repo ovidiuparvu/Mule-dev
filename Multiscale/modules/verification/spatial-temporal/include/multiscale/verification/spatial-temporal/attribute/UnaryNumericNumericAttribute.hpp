@@ -17,7 +17,7 @@ namespace multiscale {
             public:
 
                 UnaryNumericMeasureAttribute    unaryNumericMeasure;    /*!< The unary numeric measure */
-                NumericMeasureAttributeType     numericMeasure;         /*!< The considered numeric measure */
+                NumericMeasureType              numericMeasure;         /*!< The considered numeric measure */
 
         };
 
@@ -29,7 +29,7 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UnaryNumericNumericAttribute,
     (multiscale::verification::UnaryNumericMeasureAttribute, unaryNumericMeasure)
-    (multiscale::verification::NumericMeasureAttributeType, numericMeasure)
+    (multiscale::verification::NumericMeasureType, numericMeasure)
 )
 
 

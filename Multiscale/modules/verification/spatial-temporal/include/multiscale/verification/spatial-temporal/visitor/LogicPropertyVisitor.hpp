@@ -4,7 +4,7 @@
 #include "multiscale/util/ConsolePrinter.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/LogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/ChangeMeasureEvaluator.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/NumericVisitor.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/TemporalNumericVisitor.hpp"
 
 #include <boost/variant.hpp>
 
@@ -145,20 +145,6 @@ namespace multiscale {
                     return evaluate(logicProperty.primaryLogicProperty, trace);
                 }
 
-                //! Overloading the "()" operator for the ChangeTemporalNumericMeasureAttribute alternative
-                /*!
-                 * \param primaryLogicProperty  The primary logic property
-                 * \param lhsLogicProperty      The left hand side logic property
-                 */
-                template <typename T>
-                bool operator() (const ChangeTemporalNumericMeasureAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
-                    try {
-                        return evaluateChangeTemporalNumericMeasure(primaryLogicProperty, lhsLogicProperty);
-                    } catch (const SpatialTemporalException &ex) {
-                        return printExceptionMessage(ex.what());
-                    }
-                }
-
                 //! Overloading the "()" operator for the TemporalNumericComparisonAttribute alternative
                 /*!
                  * \param primaryLogicProperty  The primary logic property
@@ -169,6 +155,20 @@ namespace multiscale {
                                  const T &lhsLogicProperty) const {
                     try {
                         return evaluateTemporalNumericComparison(primaryLogicProperty, lhsLogicProperty);
+                    } catch (const SpatialTemporalException &ex) {
+                        return printExceptionMessage(ex.what());
+                    }
+                }
+
+                //! Overloading the "()" operator for the ChangeTemporalNumericMeasureAttribute alternative
+                /*!
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool operator() (const ChangeTemporalNumericMeasureAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                    try {
+                        return evaluateChangeTemporalNumericMeasure(primaryLogicProperty, lhsLogicProperty);
                     } catch (const SpatialTemporalException &ex) {
                         return printExceptionMessage(ex.what());
                     }
@@ -249,6 +249,28 @@ namespace multiscale {
 
             private:
 
+                //! Evaluate the given TemporalNumericComparisonAttribute
+                /*!
+                 * \param comparisonAttribute   The numeric numeric comparison attribute
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool evaluateTemporalNumericComparison(const TemporalNumericComparisonAttribute &comparisonAttribute,
+                                                      const T &lhsLogicProperty) const {
+                    double lhsNumericMeasure = evaluateTemporalNumericMeasure(
+                                                   comparisonAttribute.lhsTemporalNumericMeasure,
+                                                   trace
+                                               );
+                    double rhsNumericMeasure = evaluateTemporalNumericMeasure(
+                                                   comparisonAttribute.rhsTemporalNumericMeasure,
+                                                   trace
+                                               );
+
+                    return ComparatorEvaluator::evaluate(lhsNumericMeasure,
+                                                         comparisonAttribute.comparator.comparatorType,
+                                                         rhsNumericMeasure);
+                }
+
                 //! Evaluate the given ChangeTemporalNumericMeasureAttribute
                 /*!
                  * \param changeAttribute   The change temporal numeric measure attribute
@@ -258,7 +280,11 @@ namespace multiscale {
                 bool evaluateChangeTemporalNumericMeasure(const ChangeTemporalNumericMeasureAttribute &changeAttribute,
                                                           const T &lhsLogicProperty) const {
                     double lhsNumericMeasure = evaluateChangeLhsTemporalNumericMeasure(changeAttribute);
-                    double rhsNumericMeasure = evaluateNumericMeasure(changeAttribute.rhsNumericMeasure, trace, 0);
+                    double rhsNumericMeasure = evaluateTemporalNumericMeasure(
+                                                   changeAttribute.rhsTemporalNumericMeasure,
+                                                   trace,
+                                                   0
+                                               );
 
                     return ComparatorEvaluator::evaluate(lhsNumericMeasure,
                                                          changeAttribute.comparator.comparatorType,
@@ -271,11 +297,15 @@ namespace multiscale {
                  */
                 double evaluateChangeLhsTemporalNumericMeasure(const ChangeTemporalNumericMeasureAttribute
                                                                &changeAttribute) const {
-                    double lhsNumericMeasureFirstTimepoint  = evaluateNumericMeasure(
-                                                                 changeAttribute.lhsNumericMeasure, trace, 1
+                    double lhsNumericMeasureFirstTimepoint  = evaluateTemporalNumericMeasure(
+                                                                 changeAttribute.lhsTemporalNumericMeasure,
+                                                                 trace,
+                                                                 1
                                                               );
-                    double lhsNumericMeasureSecondTimepoint = evaluateNumericMeasure(
-                                                                  changeAttribute.lhsNumericMeasure, trace, 0
+                    double lhsNumericMeasureSecondTimepoint = evaluateTemporalNumericMeasure(
+                                                                  changeAttribute.lhsTemporalNumericMeasure,
+                                                                  trace,
+                                                                  0
                                                               );
 
                     unsigned long timeValueFirstTimepoint  = trace.getTimePoint(0).getValue();
@@ -310,22 +340,6 @@ namespace multiscale {
                     }
 
                     return false;
-                }
-
-                //! Evaluate the given TemporalNumericComparisonAttribute
-                /*!
-                 * \param comparisonAttribute   The numeric numeric comparison attribute
-                 * \param lhsLogicProperty      The left hand side logic property
-                 */
-                template <typename T>
-                bool evaluateTemporalNumericComparison(const TemporalNumericComparisonAttribute &comparisonAttribute,
-                                                      const T &lhsLogicProperty) const {
-                    double lhsNumericMeasure = evaluateNumericMeasure(comparisonAttribute.lhsNumericMeasure, trace);
-                    double rhsNumericMeasure = evaluateNumericMeasure(comparisonAttribute.rhsNumericMeasure, trace);
-
-                    return ComparatorEvaluator::evaluate(lhsNumericMeasure,
-                                                         comparisonAttribute.comparator.comparatorType,
-                                                         rhsNumericMeasure);
                 }
 
                 //! Evaluate the given FutureLogicPropertyAttribute
@@ -495,18 +509,16 @@ namespace multiscale {
                     return true;
                 }
 
-                //! Evaluate the numeric measure considering the given spatial temporal trace
+                //! Evaluate the temporal numeric measure considering the given spatial temporal trace
                 /*!
-                 * \param numericMeasure    The given numeric measure
-                 * \param trace             The given spatial temporal trace
-                 * \param timePointIndex    The index of the considered timepoint from the trace
+                 * \param temporalNumericMeasure    The given temporal numeric measure
+                 * \param trace                     The given spatial temporal trace
+                 * \param timePointIndex            The index of the considered starting timepoint from the trace
                  */
-                double evaluateNumericMeasure(const NumericMeasureAttributeType &numericMeasure,
-                                              const SpatialTemporalTrace &trace,
-                                              unsigned int timePointIndex = 0) const {
-                    TimePoint timePoint = trace.getTimePoint(timePointIndex);
-
-                    return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
+                double evaluateTemporalNumericMeasure(const TemporalNumericMeasureType &temporalNumericMeasure,
+                                                      const SpatialTemporalTrace &trace,
+                                                      unsigned int timePointIndex = 0) const {
+                    return boost::apply_visitor(TemporalNumericVisitor(trace), temporalNumericMeasure);
                 }
 
                 //! Print a warning message regarding the exception and return false

@@ -422,7 +422,7 @@ TEST(BinaryStatisticalSpatial, IncorrectInputBeforeStartBracket) {
 }
 
 TEST(BinaryStatisticalSpatial, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(_/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(_/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalSpatial, MissingComma) {
@@ -451,7 +451,7 @@ TEST(BinaryStatisticalSpatial, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(ChangeMeasure, IncorrectChangeMeasure) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [z(max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 2]"));
+    EXPECT_THROW(parseInputString("P >= 0.3 [z(max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 2]"), InvalidInputException);
 }
 
 TEST(ChangeMeasure, CorrectDifference) {
@@ -459,7 +459,7 @@ TEST(ChangeMeasure, CorrectDifference) {
 }
 
 TEST(ChangeMeasure, CorrectRatio) {
-    EXPECT_FALSE(parseInputString("P >= 0.3 [r(max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [r(max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4]"));
 }
 
 
@@ -545,35 +545,35 @@ TEST(ChangeTemporalNumericMeasure, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(Comparator, IncorrectEqual) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) == 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) == 3]"), InvalidInputException);
 }
 
 TEST(Comparator, IncorrectDifferent1) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) <> 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) <> 3]"), InvalidInputException);
 }
 
 TEST(Comparator, IncorrectDifferent2) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) != 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) != 3]"), InvalidInputException);
 }
 
 TEST(Comparator, CorrectGreaterThan) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > 3]"));
 }
 
 TEST(Comparator, CorrectLessThan) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) < 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) < 3]"));
 }
 
 TEST(Comparator, CorrectGreaterThanOrEqual) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 3]"));
 }
 
 TEST(Comparator, CorrectLessThanOrEqual) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) <= 3]"));
 }
 
 TEST(Comparator, CorrectEqual) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) = 3]"));
 }
 
 
@@ -628,25 +628,25 @@ TEST(CompoundConstraint, BinaryOperatorAsUnaryAfter) {
 
 TEST(CompoundConstraint, TemporalNumericComparisonBeforeBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, ({A} >= 3 " + binaryOperator + " (/*{{ spatial_measures[0].name }}*/ = 0.1)))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, ({A} >= 3 " + binaryOperator + " (/*{{ spatial_measures[0].name }}*/ = 0.1))))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, UnaryNumericMeasureAfterBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, ((/*{{ spatial_measures[0].name }}*/ = 0.1) " + binaryOperator + " count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 3))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, ((/*{{ spatial_measures[0].name }}*/ = 0.1) " + binaryOperator + " count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 3)))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, AdditionalOperatorBeforeBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, ((/*{{ spatial_measures[0].name }}*/ = 0.1) ~ " + binaryOperator + " count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 3))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, ((/*{{ spatial_measures[0].name }}*/ = 0.1) ~ " + binaryOperator + " count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 3)))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, AdditionalOperatorAfterBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, ((/*{{ spatial_measures[0].name }}*/ = 0.1) " + binaryOperator + " " + binaryOperator + " count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 3))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, ((/*{{ spatial_measures[0].name }}*/ = 0.1) " + binaryOperator + " " + binaryOperator + " count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 3)))) <= 3]"), InvalidInputException);
     }
 }
 
@@ -679,7 +679,7 @@ const static std::vector<std::string> LOGIC_PROPERTIES_BINARY_OPERATORS = std::v
 // CompoundLogicProperty
 
 TEST(CompoundLogicProperty, MissingBinaryOperator) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4) ]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4) ]"), InvalidInputException);
 }
 
 TEST(CompoundLogicProperty, MissingLogicProperties) {
@@ -690,7 +690,7 @@ TEST(CompoundLogicProperty, MissingLogicProperties) {
 
 TEST(CompoundLogicProperty, MissingFirstLogicProperty) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [" + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [" + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4) ]"), InvalidInputException);
     }
 }
 
@@ -702,49 +702,49 @@ TEST(CompoundLogicProperty, MissingSecondLogicProperty) {
 
 TEST(CompoundLogicProperty, BinaryOperatorAsUnaryBefore) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [" + binaryOperator + " ({A} >= 4) (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4)]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [" + binaryOperator + " ({A} >= 4) (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4)]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, BinaryOperatorAsUnaryAfter) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4) " + binaryOperator + "]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4) " + binaryOperator + "]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, UnaryStatisticalMeasureBeforeBinaryOperator) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [(/*{{ spatial_measures[0].name }}*/) " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [(/*{{ spatial_measures[0].name }}*/) " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4) ]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, UnaryNumericMeasureAfterBinaryOperator) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) ]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, AdditionalOperatorBeforeBinaryOperator) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) ~ " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) ~ " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4) ]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, AdditionalOperatorAfterBinaryOperator) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4) ]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, Correct) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) >= 4) ]"));
+        EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4) ]"));
     }
 }
 
 TEST(CompoundLogicProperty, MultipleCorrect) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) <= 4) " + binaryOperator + " {B} = 3]"));
+        EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) <= 4) " + binaryOperator + " {B} = 3]"));
     }
 }
 
@@ -1094,7 +1094,7 @@ TEST(MultipleLogicProperties, Correct1) {
 }
 
 TEST(MultipleLogicProperties, Correct2) {
-    EXPECT_TRUE(parseInputString("P <= 0.85934 [~( F [2, 3] ( max(filter(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/ <= 10), /*{{ spatial_measures[0].name }}*/) >= 2 ) ) => ( G [10, 20] (X (X [10] ( percentile(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), 0.4) = 0.7 ))) ) <=> ( (subsetClusteredness(filter(/*{{ spatial_entities[0].name }}*/s, (/*{{ spatial_measures[0].name }}*/ <= 2) ^ (/*{{ spatial_measures[0].name }}*/ >= 6) V (/*{{ spatial_measures[0].name }}*/ >= 30) => (/*{{ spatial_measures[0].name }}*/ <= 2) <=> (/*{{ spatial_measures[0].name }}*/ >= 4)) ) >= 2) U [10, 400] ( kurt(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) <= 0.00001 ) ) ]"));
+    EXPECT_TRUE(parseInputString("P <= 0.85934 [~( F [2, 3] ( max(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/ <= 10))) >= 2 ) ) => ( G [10, 20] (X (X [10] ( percentile(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), 0.4) = 0.7 ))) ) <=> ( (count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, (/*{{ spatial_measures[0].name }}*/ <= 2) ^ (/*{{ spatial_measures[0].name }}*/ >= 6) V (/*{{ spatial_measures[0].name }}*/ >= 30) => (/*{{ spatial_measures[0].name }}*/ <= 2) <=> (/*{{ spatial_measures[0].name }}*/ >= 4)) )) >= 2) U [10, 400] ( kurt(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) <= 0.00001 ) ) ]"));
 }
 
 
@@ -1236,7 +1236,7 @@ TEST(NumericMeasureCollection, WrongAlternative) {
 }
 
 TEST(NumericMeasureCollection, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 0]"));
 }
 
 
@@ -1689,7 +1689,7 @@ TEST(TemporalNumericMeasure, WrongAlternative) {
 }
 
 TEST(TemporalNumericMeasure, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [(count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4)]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) >= 4]"));
 }
 
 
@@ -1702,51 +1702,51 @@ TEST(TemporalNumericMeasure, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputBeforeBeginParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min(~ [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min(~ [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingBeginParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min(0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min(0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingBeginTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingEndTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, ] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, ] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingEndTimepointAndComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputExtraTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11, 100] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11, 100] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11 count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11 count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputExtraSurroundingParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] (count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputBeforeNumericMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] -count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] -count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputAfterNumericMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [min([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1)]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [min([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"));
 }
 
 

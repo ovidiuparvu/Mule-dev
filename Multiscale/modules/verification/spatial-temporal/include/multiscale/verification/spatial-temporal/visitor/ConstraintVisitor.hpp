@@ -3,6 +3,8 @@
 
 #include "multiscale/verification/spatial-temporal/visitor/ConstraintEvaluator.hpp"
 
+#include <boost/variant.hpp>
+
 
 namespace multiscale {
 
@@ -221,7 +223,7 @@ namespace multiscale {
                  * \param numericMeasure    The numeric measure
                  * \param timePoint         The given timepoint
                  */
-                double evaluateNumericMeasure(const NumericMeasureAttributeType &numericMeasure,
+                double evaluateNumericMeasure(const NumericMeasureType &numericMeasure,
                                               const TimePoint &timePoint) const {
                     return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
                 }

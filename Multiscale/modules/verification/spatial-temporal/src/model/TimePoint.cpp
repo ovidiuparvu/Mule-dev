@@ -59,8 +59,8 @@ double TimePoint::avgClusteredness() const {
 
     double avgDistanceBtwCentroids = avgDistanceBetweenCentroids(consideredSpatialEntities);
 
-    return (!Numeric::almostEqual(avgDistanceBtwCentroids, 0)) ? (1 / avgDistanceBtwCentroids)
-                                                               : 1;
+    return (avgDistanceBtwCentroids != 0) ? (1 / avgDistanceBtwCentroids)
+                                          : 1;
 }
 
 double TimePoint::avgDensity() const {
@@ -69,8 +69,8 @@ double TimePoint::avgDensity() const {
     double averageDensity  = avgDensity(consideredSpatialEntities);
     double averageDistance = avgDistanceBetweenCentroids(consideredSpatialEntities);
 
-    return (averageDistance == 0) ? averageDensity
-                                  : (averageDensity / averageDistance);
+    return (averageDistance != 0) ? (averageDensity / averageDistance)
+                                  : averageDensity;
 }
 
 void TimePoint::addSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,

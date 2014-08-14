@@ -1,7 +1,7 @@
 # Generate a custom model checker according to the given configuration file
 
 function(GenerateCustomModelChecker)
-    message(AUTHOR_WARNING "Generating custom model checker corresponding to the spatial_description configuration file. Please manually update all unit test accordingly.")
+    message(AUTHOR_WARNING "Generating custom model checker corresponding to the spatial_description configuration file. Please manually update all unit tests accordingly.")
 
     # Check if the python interpreter is available for use
     find_package(PythonInterp REQUIRED)

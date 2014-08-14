@@ -17,8 +17,8 @@ namespace multiscale {
             public:
 
                 BinaryNumericMeasureAttribute   binaryNumericMeasure;   /*!< The binary numeric measure */
-                NumericMeasureAttributeType     firstNumericMeasure;    /*!< The first numeric measure */
-                NumericMeasureAttributeType     secondNumericMeasure;   /*!< The second numeric measure */
+                NumericMeasureType              firstNumericMeasure;    /*!< The first numeric measure */
+                NumericMeasureType              secondNumericMeasure;   /*!< The second numeric measure */
 
         };
 
@@ -30,8 +30,8 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::BinaryNumericNumericAttribute,
     (multiscale::verification::BinaryNumericMeasureAttribute, binaryNumericMeasure)
-    (multiscale::verification::NumericMeasureAttributeType, firstNumericMeasure)
-    (multiscale::verification::NumericMeasureAttributeType, secondNumericMeasure)
+    (multiscale::verification::NumericMeasureType, firstNumericMeasure)
+    (multiscale::verification::NumericMeasureType, secondNumericMeasure)
 )
 
 

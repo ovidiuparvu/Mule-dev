@@ -27,7 +27,7 @@ namespace multiscale {
             boost::recursive_wrapper<UnaryNumericNumericAttribute>,
             boost::recursive_wrapper<BinaryNumericNumericAttribute>,
             boost::recursive_wrapper<NumericMeasureAttribute>
-        > NumericMeasureAttributeType;
+        > NumericMeasureType;
 
 
         //! Class for representing a numeric measure attribute
@@ -35,7 +35,7 @@ namespace multiscale {
 
             public:
 
-                NumericMeasureAttributeType numericMeasure; /*!< The numeric measure */
+                NumericMeasureType numericMeasure; /*!< The numeric measure */
 
         };
 
@@ -46,7 +46,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NumericMeasureAttribute,
-    (multiscale::verification::NumericMeasureAttributeType, numericMeasure)
+    (multiscale::verification::NumericMeasureType, numericMeasure)
 )
 
 

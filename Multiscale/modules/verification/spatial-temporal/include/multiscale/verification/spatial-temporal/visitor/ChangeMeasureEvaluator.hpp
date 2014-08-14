@@ -2,6 +2,7 @@
 #define CHANGEMEASUREEVALUATOR_HPP
 
 #include "multiscale/exception/MultiscaleException.hpp"
+#include "multiscale/util/Numeric.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ChangeMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 
@@ -37,7 +38,9 @@ namespace multiscale {
                                                      timeValueSecondTimepoint
                                                  );
 
-                    return (numericValueChange / timeValueDifference);
+                    return (timeValueDifference != 0)
+                        ? (numericValueChange / timeValueDifference)
+                        : 0;
                 }
 
             private:
@@ -68,7 +71,9 @@ namespace multiscale {
                             break;
 
                         case ChangeMeasureType::Ratio:
-                            return (numericMeasureSecondTimepoint / numericMeasureFirstTimepoint);
+                            return (numericMeasureFirstTimepoint != 0)
+                                ? (numericMeasureSecondTimepoint / numericMeasureFirstTimepoint)
+                                : 0;
                             break;
 
                         default:

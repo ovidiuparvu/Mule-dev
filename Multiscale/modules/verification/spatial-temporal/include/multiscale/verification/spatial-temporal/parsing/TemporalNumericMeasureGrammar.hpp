@@ -1,7 +1,7 @@
 #ifndef TEMPORALNUMERICMEASREGRAMMAR_HPP
 #define TEMPORALNUMERICMEASREGRAMMAR_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/handler/UnexpectedTokenErrorHandler.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
 
@@ -33,12 +33,44 @@ namespace multiscale {
         //! The grammar for parsing temporal numeric measure statements
         template <typename Iterator>
         class TemporalNumericMeasureGrammar : public qi::grammar<
-                                                         Iterator, NumericMeasureAttribute(), qi::space_type
+                                                         Iterator,
+                                                         TemporalNumericMeasureAttribute(),
+                                                         qi::space_type
                                                      > {
 
             private:
 
                 // Rules
+
+                qi::rule<Iterator, TemporalNumericMeasureAttribute(), qi::space_type>
+                    temporalNumericMeasureRule;                 /*!< The rule for parsing a temporal numeric
+                                                                     measure */
+                qi::rule<Iterator, UnaryNumericTemporalAttribute(), qi::space_type>
+                    unaryNumericTemporalRule;                   /*!< The rule for parsing a unary numeric
+                                                                     temporal attribute */
+                qi::rule<Iterator, BinaryNumericTemporalAttribute(), qi::space_type>
+                    binaryNumericTemporalRule;                  /*!< The rule for parsing a binary numeric
+                                                                     temporal attribute */
+
+                qi::rule<Iterator, NumericStatisticalMeasureAttribute(), qi::space_type>
+                    numericStatisticalMeasureRule;              /*!< The rule for parsing a numeric statistical
+                                                                     measure */
+                qi::rule<Iterator, UnaryStatisticalNumericAttribute(), qi::space_type>
+                    unaryStatisticalNumericRule;                /*!< The rule for parsing a unary statistical
+                                                                     numeric attribute */
+                qi::rule<Iterator, BinaryStatisticalNumericAttribute(), qi::space_type>
+                    binaryStatisticalNumericRule;               /*!< The rule for parsing a binary statistical
+                                                                     numeric attribute */
+                qi::rule<Iterator, BinaryStatisticalQuantileNumericAttribute(), qi::space_type>
+                    binaryStatisticalQuantileNumericRule;       /*!< The rule for parsing a binary statistical
+                                                                     quantile numeric attribute */
+
+                qi::rule<Iterator, NumericMeasureCollectionAttribute(), qi::space_type>
+                    numericMeasureCollectionRule;               /*!< The rule for parsing numeric measure
+                                                                     collections */
+                qi::rule<Iterator, TemporalNumericMeasureCollectionAttribute(), qi::space_type>
+                    temporalNumericMeasureCollectionRule;       /*!< The rule for parsing temporal numeric measure
+                                                                     collections */
 
                 qi::rule<Iterator, NumericMeasureAttribute(), qi::space_type>
                     numericMeasureRule;                         /*!< The rule for parsing a numeric measure */
@@ -54,7 +86,6 @@ namespace multiscale {
 
                 qi::rule<Iterator, NumericSpatialMeasureAttribute(), qi::space_type>
                     numericSpatialMeasureRule;                  /*!< The rule for parsing a numeric spatial measure */
-
                 qi::rule<Iterator, UnaryStatisticalSpatialAttribute(), qi::space_type>
                     unaryStatisticalSpatialRule;                /*!< The rule for parsing a unary statistical spatial
                                                                      attribute */
@@ -167,7 +198,9 @@ namespace multiscale {
 
             public:
 
-                TemporalNumericMeasureGrammar() : TemporalNumericMeasureGrammar::base_type(numericMeasureRule) {
+                TemporalNumericMeasureGrammar() : TemporalNumericMeasureGrammar::base_type(
+                                                      temporalNumericMeasureRule
+                                                  ) {
                     initialise();
                 }
 
@@ -182,11 +215,13 @@ namespace multiscale {
 
                 //! Initialise the grammar
                 void initialiseGrammar() {
+                    initialiseTemporalNumericMeasureRule();
+                    initialiseNumericStatisticalMeasureRule();
+                    initialiseNumericMeasureCollectionRule();
                     initialiseNumericMeasureRule();
                     initialiseNumericSpatialMeasureRule();
-                    initialiseNumericSpatialSubsetMeasureRule();
                     initialiseNaryNumericMeasureRule();
-                    initialiseSpatialMeasureCollectionRule();
+                    initialiseStatisticalMeasureRule();
                     initialiseSpatialMeasureRule();
                     initialiseSubsetRule();
                     initialiseConstraintsRules();
@@ -200,6 +235,95 @@ namespace multiscale {
                     initialisePrimaryConstraintRule();
                     initialiseFilterNumericMeasureRule();
                     initialiseComposedConstraintRule();
+                }
+
+                //! Initialise the temporal numeric measure rule
+                void initialiseTemporalNumericMeasureRule() {
+                    temporalNumericMeasureRule
+                        =   qi::double_
+                        |   numericStateVariableRule
+                        |   numericStatisticalMeasureRule
+                        |   unaryNumericTemporalRule
+                        |   binaryNumericTemporalRule;
+
+                    unaryNumericTemporalRule
+                        =   (
+                                unaryNumericMeasureRule
+                                > '('
+                                > temporalNumericMeasureRule
+                                > ')'
+                            );
+
+                    binaryNumericTemporalRule
+                        =   (
+                                binaryNumericMeasureRule
+                                > '('
+                                > temporalNumericMeasureRule
+                                > ','
+                                > temporalNumericMeasureRule
+                                > ')'
+                            );
+                }
+
+                //! Initialise the numeric statistical measure rules
+                void initialiseNumericStatisticalMeasureRule() {
+                    numericStatisticalMeasureRule
+                        =   unaryStatisticalNumericRule
+                        |   binaryStatisticalNumericRule
+                        |   binaryStatisticalQuantileNumericRule;
+
+                    unaryStatisticalNumericRule
+                        =   (
+                                unaryStatisticalMeasureRule
+                                > '('
+                                > numericMeasureCollectionRule
+                                > ')'
+                            );
+
+                    binaryStatisticalNumericRule
+                        =   (
+                                binaryStatisticalMeasureRule
+                                > '('
+                                > numericMeasureCollectionRule
+                                > ','
+                                > numericMeasureCollectionRule
+                                > ')'
+                            );
+
+                    binaryStatisticalQuantileNumericRule
+                        =   (
+                                binaryStatisticalQuantileMeasureRule
+                                > '('
+                                > numericMeasureCollectionRule
+                                > ','
+                                > qi::double_
+                                > ')'
+                            );
+                }
+
+                //! Initialise the numeric measure collection rules
+                void initialiseNumericMeasureCollectionRule() {
+                    numericMeasureCollectionRule
+                        =   temporalNumericMeasureCollectionRule
+                        |   spatialMeasureCollectionRule;
+
+                    temporalNumericMeasureCollectionRule
+                        =   (
+                                '['
+                                > qi::ulong_
+                                > ','
+                                > qi::ulong_
+                                > ']'
+                                > numericMeasureRule
+                            );
+
+                    spatialMeasureCollectionRule
+                        =   (
+                                spatialMeasureRule
+                                > '('
+                                > subsetRule
+                                > ')'
+                            );
                 }
 
                 //! Initialise the numeric measure rule
@@ -269,18 +393,6 @@ namespace multiscale {
                             );
                 }
 
-                //! Initialise the numeric spatial subset measure rule
-                void initialiseNumericSpatialSubsetMeasureRule() {
-                    unaryStatisticalMeasureRule
-                        =   unaryStatisticalMeasureTypeParser;
-
-                    binaryStatisticalMeasureRule
-                        =   binaryStatisticalMeasureTypeParser;
-
-                    binaryStatisticalQuantileMeasureRule
-                        =   binaryStatisticalQuantileMeasureTypeParser;
-                }
-
                 //! Initialise the n-ary numeric measure rule
                 void initialiseNaryNumericMeasureRule() {
                     unaryNumericMeasureRule
@@ -290,15 +402,16 @@ namespace multiscale {
                         =   binaryNumericMeasureTypeParser;
                 }
 
-                //! Initialise the spatial measure collection rule
-                void initialiseSpatialMeasureCollectionRule() {
-                    spatialMeasureCollectionRule
-                        =   (
-                                spatialMeasureRule
-                                > '('
-                                > subsetRule
-                                > ')'
-                            );
+                //! Initialise the statistical measure rule
+                void initialiseStatisticalMeasureRule() {
+                    unaryStatisticalMeasureRule
+                        =   unaryStatisticalMeasureTypeParser;
+
+                    binaryStatisticalMeasureRule
+                        =   binaryStatisticalMeasureTypeParser;
+
+                    binaryStatisticalQuantileMeasureRule
+                        =   binaryStatisticalQuantileMeasureTypeParser;
                 }
 
                 //! Initialise the spatial measure rule
@@ -442,11 +555,13 @@ namespace multiscale {
 
                 //! Assign names to the rules
                 void assignNamesToRules() {
+                    assignNamesToTemporalNumericMeasureRules();
+                    assignNamesToNumericStatisticalMeasureRules();
+                    assignNamesToNumericMeasureCollectionRules();
                     assignNamesToNumericMeasureRules();
                     assignNamesToNumericSpatialMeasureRules();
-                    assignNamesToNumericSpatialSubsetMeasureRules();
                     assignNamesToNaryNumericMeasureRules();
-                    assignNamesToSpatialMeasureCollectionRules();
+                    assignNamesToStatisticalMeasureRules();
                     assignNamesToSubsetRules();
                     assignNamesToConstraintsRules();
                     assignNamesToSpatialMeasureRules();
@@ -460,6 +575,28 @@ namespace multiscale {
                     assignNamesToPrimaryConstraintRules();
                     assignNamesToFilterNumericMeasureRules();
                     assignNamesToComposedConstraintRules();
+                }
+
+                //! Assign names to the temporal numeric measure rules
+                void assignNamesToTemporalNumericMeasureRules() {
+                    temporalNumericMeasureRule  .name("temporalNumericMeasureRule");
+                    unaryNumericTemporalRule    .name("unaryNumericTemporalRule");
+                    binaryNumericTemporalRule   .name("binaryNumericTemporalRule");
+                }
+
+                //! Assign names to the numeric statistical measure rules
+                void assignNamesToNumericStatisticalMeasureRules() {
+                    numericStatisticalMeasureRule       .name("numericStatisticalMeasureRule");
+                    unaryStatisticalNumericRule         .name("unaryStatisticalNumericRule");
+                    binaryStatisticalNumericRule        .name("binaryStatisticalNumericRule");
+                    binaryStatisticalQuantileNumericRule.name("binaryStatisticalQuantileNumericRule");
+                }
+
+                //! Assign names to the numeric measure collection rules
+                void assignNamesToNumericMeasureCollectionRules() {
+                    numericMeasureCollectionRule        .name("numericMeasureCollectionRule");
+                    temporalNumericMeasureCollectionRule.name("temporalNumericMeasureCollectionRule");
+                    spatialMeasureCollectionRule        .name("spatialMeasureCollectionRule");
                 }
 
                 //! Assign names to the numeric measure rules
@@ -478,22 +615,17 @@ namespace multiscale {
                     binaryStatisticalQuantileSpatialRule.name("binaryStatisticalQuantileSpatialRule");
                 }
 
-                //! Assign names to the numeric spatial subset measure rules
-                void assignNamesToNumericSpatialSubsetMeasureRules() {
-                    unaryStatisticalMeasureRule         .name("unaryStatisticalMeasureRule");
-                    binaryStatisticalMeasureRule        .name("binaryStatisticalMeasureRule");
-                    binaryStatisticalQuantileMeasureRule.name("binaryStatisticalQuantileMeasureRule");
-                }
-
                 //! Assign names to the n-ary numeric measure rules
                 void assignNamesToNaryNumericMeasureRules() {
                     unaryNumericMeasureRule     .name("unaryNumericMeasureRule");
                     binaryNumericMeasureRule    .name("binaryNumericMeasureRule");
                 }
 
-                //! Assign names to the spatial measure collection rules
-                void assignNamesToSpatialMeasureCollectionRules() {
-                    spatialMeasureCollectionRule.name("spatialMeasureCollectionRule");
+                //! Assign names to the numeric statistical measure rules
+                void assignNamesToStatisticalMeasureRules() {
+                    unaryStatisticalMeasureRule         .name("unaryStatisticalMeasureRule");
+                    binaryStatisticalMeasureRule        .name("binaryStatisticalMeasureRule");
+                    binaryStatisticalQuantileMeasureRule.name("binaryStatisticalQuantileMeasureRule");
                 }
 
                 //! Assign names to the subset rules
@@ -551,11 +683,13 @@ namespace multiscale {
 
                 //! Initialise the debugging of rules
                 void initialiseRulesDebugging() {
+                    initialiseTemporalNumericMeasureRuleDebugging();
+                    initialiseNumericStatisticalMeasureRuleDebugging();
+                    initialiseNumericMeasureCollectionRuleDebugging();
                     initialiseNumericMeasureRuleDebugging();
                     initialiseNumericSpatialMeasureRuleDebugging();
-                    initialiseSpatialSubsetMeasureRuleDebugging();
                     initialiseNaryNumericMeasureRuleDebugging();
-                    initialiseSpatialMeasureCollectionRuleDebugging();
+                    initialiseStatisticalMeasureRuleDebugging();
                     initialiseSubsetRuleDebugging();
                     initialiseConstraintsRulesDebugging();
                     initialiseSpatialMeasureRuleDebugging();
@@ -569,6 +703,28 @@ namespace multiscale {
                     initialisePrimaryConstraintRuleDebugging();
                     initialiseFilterNumericMeasureRuleDebugging();
                     initialiseComposedConstraintRuleDebugging();
+                }
+
+                //! Initialise debugging for the temporal numeric measure rule
+                void initialiseTemporalNumericMeasureRuleDebugging() {
+                    debug(temporalNumericMeasureRule);
+                    debug(unaryNumericTemporalRule);
+                    debug(binaryNumericTemporalRule);
+                }
+
+                //! Initialise debugging for the numeric statistical measure rule
+                void initialiseNumericStatisticalMeasureRuleDebugging() {
+                    debug(numericStatisticalMeasureRule);
+                    debug(unaryStatisticalNumericRule);
+                    debug(binaryStatisticalNumericRule);
+                    debug(binaryStatisticalQuantileNumericRule);
+                }
+
+                //! Initialise debugging for the numeric measure collection rule
+                void initialiseNumericMeasureCollectionRuleDebugging() {
+                    debug(numericMeasureCollectionRule);
+                    debug(temporalNumericMeasureCollectionRule);
+                    debug(spatialMeasureCollectionRule);
                 }
 
                 //! Initialise debugging for the numeric measure rule
@@ -587,22 +743,17 @@ namespace multiscale {
                     debug(binaryStatisticalQuantileSpatialRule);
                 }
 
-                //! Initialise debugging for the spatial subset measure rule
-                void initialiseSpatialSubsetMeasureRuleDebugging() {
-                    debug(unaryStatisticalMeasureRule);
-                    debug(binaryStatisticalMeasureRule);
-                    debug(binaryStatisticalQuantileMeasureRule);
-                }
-
                 //! Initialise debugging for the n-ary numeric measure rule
                 void initialiseNaryNumericMeasureRuleDebugging() {
                     debug(unaryNumericMeasureRule);
                     debug(binaryNumericMeasureRule);
                 }
 
-                //! Initialise debugging for the spatial measure collection rule
-                void initialiseSpatialMeasureCollectionRuleDebugging() {
-                    debug(spatialMeasureCollectionRule);
+                //! Initialise debugging for the statistical measure rule
+                void initialiseStatisticalMeasureRuleDebugging() {
+                    debug(unaryStatisticalMeasureRule);
+                    debug(binaryStatisticalMeasureRule);
+                    debug(binaryStatisticalQuantileMeasureRule);
                 }
 
                 //! Initialise debugging for the subset rules
@@ -660,9 +811,11 @@ namespace multiscale {
 
                 //! Initialise the error handling routines
                 void initialiseErrorHandlingSupport() {
+                    initialiseTemporalNumericMeasureErrorHandlingSupport();
+                    initialiseNumericStatisticalMeasureErrorHandlingSupport();
+                    initialiseNumericMeasureCollectionErrorHandlingSupport();
                     initialiseNumericMeasureErrorHandlingSupport();
                     initialiseNumericSpatialMeasureErrorHandlingSupport();
-                    initialiseSpatialMeasureCollectionErrorHandlingSupport();
                     initialiseSubsetErrorHandlingSupport();
                     initialiseConstraintsErrorHandlingSupport();
                     initialiseStateVariableErrorHandlingSupport();
@@ -673,6 +826,54 @@ namespace multiscale {
                     initialisePrimaryConstraintErrorHandlingSupport();
                     initialiseFilterNumericMeasureErrorHandlingSupport();
                     initialiseComposedConstraintErrorHandlingSupport();
+                }
+
+                //! Initialise the temporal numeric measure error handling support
+                void initialiseTemporalNumericMeasureErrorHandlingSupport() {
+                    qi::on_error<qi::fail>(
+                        temporalNumericMeasureRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        unaryNumericTemporalRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        binaryNumericTemporalRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                }
+
+                //! Initialise the numeric statistical measure error handling support
+                void initialiseNumericStatisticalMeasureErrorHandlingSupport() {
+                    qi::on_error<qi::fail>(
+                        unaryStatisticalNumericRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        binaryStatisticalNumericRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        binaryStatisticalQuantileNumericRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                }
+
+                //! Initialise the numeric measure collection error handling support
+                void initialiseNumericMeasureCollectionErrorHandlingSupport() {
+                    qi::on_error<qi::fail>(
+                        numericMeasureCollectionRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        temporalNumericMeasureCollectionRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        spatialMeasureCollectionRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
                 }
 
                 //! Initialise the numeric measure error handling support
@@ -702,15 +903,6 @@ namespace multiscale {
                         multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
                     );
                 }
-
-                //! Initialise the spatial measure collection error handling support
-                void initialiseSpatialMeasureCollectionErrorHandlingSupport() {
-                    qi::on_error<qi::fail>(
-                        spatialMeasureCollectionRule,
-                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
-                    );
-                }
-
 
                 //! Initialise the subset error handling support
                 void initialiseSubsetErrorHandlingSupport() {

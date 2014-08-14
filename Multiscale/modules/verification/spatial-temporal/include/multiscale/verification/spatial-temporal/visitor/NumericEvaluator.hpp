@@ -163,20 +163,17 @@ namespace multiscale {
                     return 0.0;
                 }
 
-                //! Evaluate the given ternary subset measure expression
+                //! Evaluate the given binary statistical measure expression
                 /*!
-                 * \param ternarySubset The ternary subset measure type
-                 * \param values        The considered values
-                 * \param parameter     The parameter used by the ternary subset measure
+                 * \param binaryStatisticalMeasure  The binary statistical measure type
+                 * \param values1                   The first collection of considered values
+                 * \param values2                   The second collection of considered values
                  */
-                static double evaluate(const BinaryStatisticalQuantileMeasureType &ternarySubset, const std::vector<double> &values,
-                                       double parameter) {
-                    switch (ternarySubset) {
-                        case BinaryStatisticalQuantileMeasureType::Percentile:
-                            return Numeric::percentile(values, parameter);
-
-                        case BinaryStatisticalQuantileMeasureType::Quartile:
-                            return Numeric::quartile(values, parameter);
+                static double evaluate(const BinaryStatisticalMeasureType &binaryStatisticalMeasure,
+                                       const std::vector<double> &values1, const std::vector<double> &values2) {
+                    switch (binaryStatisticalMeasure) {
+                        case BinaryStatisticalMeasureType::Covar:
+                            return Numeric::covariance(values1, values2);
 
                         default:
                             MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
@@ -186,17 +183,21 @@ namespace multiscale {
                     return 0.0;
                 }
 
-                //! Evaluate the given quaternary subset measure expression
+                //! Evaluate the given binary statistical quantile measure expression
                 /*!
-                 * \param quaternarySubset  The quaternary subset measure type
-                 * \param values1           The first collection of considered values
-                 * \param values2           The second collection of considered values
+                 * \param binaryStatisticalQuantileMeasure  The binary statistical quantile measure type
+                 * \param values                            The considered values
+                 * \param parameter                         The parameter used by the ternary subset measure
                  */
-                static double evaluate(const BinaryStatisticalMeasureType &quaternarySubset,
-                                       const std::vector<double> &values1, const std::vector<double> &values2) {
-                    switch (quaternarySubset) {
-                        case BinaryStatisticalMeasureType::Covar:
-                            return Numeric::covariance(values1, values2);
+                static double evaluate(const BinaryStatisticalQuantileMeasureType &binaryStatisticalQuantileMeasure,
+                                       const std::vector<double> &values,
+                                       double parameter) {
+                    switch (binaryStatisticalQuantileMeasure) {
+                        case BinaryStatisticalQuantileMeasureType::Percentile:
+                            return Numeric::percentile(values, parameter);
+
+                        case BinaryStatisticalQuantileMeasureType::Quartile:
+                            return Numeric::quartile(values, parameter);
 
                         default:
                             MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);

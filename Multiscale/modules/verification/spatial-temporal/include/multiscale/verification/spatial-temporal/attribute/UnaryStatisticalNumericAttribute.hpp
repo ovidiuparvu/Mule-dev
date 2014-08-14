@@ -1,8 +1,8 @@
-#ifndef UNARYSTATISTICALSPATIALATTRIBUTE_HPP
-#define UNARYSTATISTICALSPATIALATTRIBUTE_HPP
+#ifndef UNARYSTATISTICALNUMERICATTRIBUTE_HPP
+#define UNARYSTATISTICALNUMERICATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/UnaryStatisticalMeasureAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureCollectionAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureCollectionAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 
@@ -11,13 +11,13 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for representing a unary statistical spatial attribute
-        class UnaryStatisticalSpatialAttribute {
+        //! Class for representing a unary statistical numeric attribute
+        class UnaryStatisticalNumericAttribute {
 
             public:
 
                 UnaryStatisticalMeasureAttribute  unaryStatisticalMeasure;   /*!< The unary statistical measure */
-                SpatialMeasureCollectionAttribute spatialMeasureCollection;  /*!< The considered spatial measure
+                NumericMeasureCollectionAttribute numericMeasureCollection;  /*!< The considered numeric measure
                                                                                   collection */
 
         };
@@ -28,9 +28,9 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::UnaryStatisticalSpatialAttribute,
+    multiscale::verification::UnaryStatisticalNumericAttribute,
     (multiscale::verification::UnaryStatisticalMeasureAttribute, unaryStatisticalMeasure)
-    (multiscale::verification::SpatialMeasureCollectionAttribute, spatialMeasureCollection)
+    (multiscale::verification::NumericMeasureCollectionAttribute, numericMeasureCollection)
 )
 
 

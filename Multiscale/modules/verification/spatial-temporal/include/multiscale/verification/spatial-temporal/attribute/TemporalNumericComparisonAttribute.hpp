@@ -2,7 +2,7 @@
 #define TEMPORALNUMERICCOMPARISONATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericMeasureAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 
@@ -16,9 +16,12 @@ namespace multiscale {
 
             public:
 
-                NumericMeasureAttributeType lhsNumericMeasure;  /*!< The numeric measure preceding the comparator */
-                ComparatorAttribute         comparator;         /*!< The comparator */
-                NumericMeasureAttributeType rhsNumericMeasure;  /*!< The numeric measure succeeding the comparator */
+                TemporalNumericMeasureType
+                    lhsTemporalNumericMeasure;  /*!< The temporal numeric measure preceding the comparator */
+                ComparatorAttribute
+                    comparator;                 /*!< The comparator */
+                TemporalNumericMeasureType
+                    rhsTemporalNumericMeasure;  /*!< The temporal numeric measure succeeding the comparator */
 
         };
 
@@ -29,9 +32,9 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::TemporalNumericComparisonAttribute,
-    (multiscale::verification::NumericMeasureAttributeType, lhsNumericMeasure)
+    (multiscale::verification::TemporalNumericMeasureType, lhsTemporalNumericMeasure)
     (multiscale::verification::ComparatorAttribute, comparator)
-    (multiscale::verification::NumericMeasureAttributeType, rhsNumericMeasure)
+    (multiscale::verification::TemporalNumericMeasureType, rhsTemporalNumericMeasure)
 )
 
 
