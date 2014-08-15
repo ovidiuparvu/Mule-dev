@@ -3,6 +3,8 @@
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 
+#include <limits>
+
 using namespace multiscale::verification;
 
 
@@ -37,6 +39,14 @@ TimePoint SpatialTemporalTrace::getTimePoint(unsigned int index) const {
 
 unsigned int SpatialTemporalTrace::length() const {
     return (timePoints.size() - beginIndex);
+}
+
+unsigned long SpatialTemporalTrace::nextTimePointValue() const {
+    if (beginIndex == (static_cast<unsigned long>(timePoints.size()) - 1)) {
+        return nextTimePointValueForLastTimePoint();
+    } else {
+        return (timePoints[beginIndex + 1].getValue());
+    }
 }
 
 SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned int startIndex) const {
@@ -107,6 +117,14 @@ void SpatialTemporalTrace::setSubTraceIndex(unsigned long startValue) {
     }
 }
 
+unsigned long SpatialTemporalTrace::nextTimePointValueForLastTimePoint() const {
+    if (timePoints.back().getValue() == std::numeric_limits<unsigned long>::max()) {
+        MS_throw(SpatialTemporalException, ERR_NEXT_TIMEPOINT_VALUE_NOT_EXISTS);
+    }
+
+    return std::numeric_limits<unsigned long>::max();
+}
+
 void SpatialTemporalTrace::addTimePointsToSubTrace(SpatialTemporalTrace &subTrace,
                                                    int startIndex, int endIndex) const {
     for (int i = startIndex; i <= endIndex; i++) {
@@ -115,10 +133,10 @@ void SpatialTemporalTrace::addTimePointsToSubTrace(SpatialTemporalTrace &subTrac
 }
 
 int SpatialTemporalTrace::indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value) const {
-    unsigned int  totalNrOfTimePoints = timePoints.size();
+    std::size_t   totalNrOfTimePoints = timePoints.size();
     unsigned long currentValue        = -1;
 
-    for (unsigned int i = beginIndex; i < totalNrOfTimePoints; i++) {
+    for (std::size_t i = beginIndex; i < totalNrOfTimePoints; i++) {
         currentValue = timePoints[i].getValue();
 
         if (currentValue >= value) {
@@ -137,7 +155,7 @@ void SpatialTemporalTrace::validateIndex(unsigned int index) const {
 }
 
 void SpatialTemporalTrace::validateValue(unsigned long value) const {
-    if (value > timePoints.back().getValue()) {
+    if ((timePoints.size() == 0) || (value > timePoints.back().getValue())) {
         MS_throw_detailed(SpatialTemporalException, ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_START,
                           StringManipulator::toString<double>(value), ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_END);
     }
@@ -158,6 +176,8 @@ const std::string SpatialTemporalTrace::ERR_TIMEPOINT_END_END       = ").";
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_INVALID_START   = "The current timepoint value (";
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_INVALID_MIDDLE  = ") should be greater than the previously added timepoint value (";
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_INVALID_END     = ").";
+
+const std::string SpatialTemporalTrace::ERR_NEXT_TIMEPOINT_VALUE_NOT_EXISTS = "The value of the last timepoint is the maximum value which can be represented by an unsigned long. Therefore a next timepoint value, which is greater than the value of the last timepoint, does not exist.";
 
 const std::string SpatialTemporalTrace::ERR_ITERATOR_NEXT   = "There is no next timepoint which the iterator can"
                                                               " return. Please use the hasNext() method before"

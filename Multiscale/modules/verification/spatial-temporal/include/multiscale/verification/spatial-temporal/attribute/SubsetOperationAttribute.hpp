@@ -11,9 +11,9 @@ namespace multiscale {
 
         //! Enumeration for representing the types of subset operations
         enum class SubsetOperationType : unsigned int {
-            Difference,     /*!< Difference of two subsets */
-            Intersection,   /*!< Intersection of two subsets */
-            Union           /*!< Union of two subsets */
+            Difference      = 0,    /*!< Difference of two subsets */
+            Intersection       ,    /*!< Intersection of two subsets */
+            Union                   /*!< Union of two subsets */
         };
 
 

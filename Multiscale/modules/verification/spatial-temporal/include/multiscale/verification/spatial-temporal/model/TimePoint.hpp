@@ -35,18 +35,21 @@ namespace multiscale {
                  *           in the Timepoint class with a set in order to ensure the uniqueness of
                  *           the spatial entities.
                  */
-                std::vector<std::list<std::shared_ptr<SpatialEntity>>> spatialEntities;     /*!< The meta-list of spatial entities smart pointers.
-                                                                                                 The i-th spatial entities list in the meta-list
-                                                                                                 corresponds to the i-th SubsetSpecificType
-                                                                                                 enumeration value */
+                std::vector<std::list<std::shared_ptr<SpatialEntity>>>
+                    spatialEntities;                /*!< The meta-list of spatial entities smart pointers.
+                                                         The i-th spatial entities list in the meta-list
+                                                         corresponds to the i-th SubsetSpecificType
+                                                         enumeration value */
 
-                std::map<std::string, double>   numericStateVariables;                      /*!< The associative map for storing numeric state variables */
+                std::map<std::string, double>
+                    numericStateVariables;          /*!< The associative map for storing numeric state variables */
 
-                std::bitset<NR_SUBSET_SPECIFIC_TYPES> consideredSpatialEntityTypes;         /*!< The collection of bits recording the considered
-                                                                                                 spatial entity types. The i-th bit corresponds to the
-                                                                                                 i-th SubsetSpecificType enum value. If the bit is set
-                                                                                                 true then the corresponding subset specific type is
-                                                                                                 considered. Otherwise it is not. */
+                std::bitset<NR_SUBSET_SPECIFIC_TYPES>
+                    consideredSpatialEntityTypes;   /*!< The collection of bits recording the considered
+                                                         spatial entity types. The i-th bit corresponds to the
+                                                         i-th SubsetSpecificType enum value. If the bit is set
+                                                         true then the corresponding subset specific type is
+                                                         considered. Otherwise it is not. */
 
             public:
 
@@ -151,7 +154,7 @@ namespace multiscale {
                  */
                 double getNumericStateVariable(const std::string &name) const;
 
-                //! Compute the difference of this timepoint and the given timepoint
+                //! Compute the difference of this timepoint and the given timepoint (spatial entities only)
                 /*! Compute the difference of this timepoint and the given timepoint by taking into account
                  *  the value of consideredSpatialEntityType
                  *
@@ -165,7 +168,7 @@ namespace multiscale {
                  */
                 void timePointDifference(const TimePoint &timePoint);
 
-                //! Compute the intersection of this timepoint and the given timepoint
+                //! Compute the intersection of this timepoint and the given timepoint (spatial entities only)
                 /*! Compute the intersection of this timepoint and the given timepoint by taking into account
                  *  the value of consideredSpatialEntityType
                  *
@@ -179,7 +182,7 @@ namespace multiscale {
                  */
                 void timePointIntersection(const TimePoint &timePoint);
 
-                //! Compute the union of this timepoint and the given timepoint
+                //! Compute the union of this timepoint and the given timepoint (spatial entities only)
                 /*! Compute the union of this timepoint and the given timepoint by taking into account
                  *  the value of consideredSpatialEntityType.
                  *

@@ -98,11 +98,13 @@ namespace multiscale {
                  * \param lhsLogicProperty  The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const ImplicationLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
+                bool operator() (const ImplicationLogicPropertyAttribute &logicProperty,
+                                 const T &lhsLogicProperty) const {
                     if (precedingTruthValue == false) {
                         return true;
                     } else {
-                        // Not considering precedingTruthValue because it is T ((T => X) logically equivalent to (~T V X) = X where X = T/F)
+                        // Not considering precedingTruthValue because it is T ((T => X) logically equivalent
+                        // to (~T V X) = X where X = T/F)
                         return evaluate(logicProperty.logicProperty, trace);
                     }
                 }
@@ -113,7 +115,8 @@ namespace multiscale {
                  * \param lhsLogicProperty  The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const EquivalenceLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
+                bool operator() (const EquivalenceLogicPropertyAttribute &logicProperty,
+                                 const T &lhsLogicProperty) const {
                     bool logicPropertyTruthValue = evaluate(logicProperty.logicProperty, trace);
 
                     // p <=> q is logically equivalent to p => q and q => p
@@ -141,7 +144,8 @@ namespace multiscale {
                  * \param lhsLogicProperty  The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
+                bool operator() (const PrimaryLogicPropertyAttribute &logicProperty,
+                                 const T &lhsLogicProperty) const {
                     return evaluate(logicProperty.primaryLogicProperty, trace);
                 }
 
@@ -166,7 +170,8 @@ namespace multiscale {
                  * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool operator() (const ChangeTemporalNumericMeasureAttribute &primaryLogicProperty, const T &lhsLogicProperty) const {
+                bool operator() (const ChangeTemporalNumericMeasureAttribute &primaryLogicProperty,
+                                 const T &lhsLogicProperty) const {
                     try {
                         return evaluateChangeTemporalNumericMeasure(primaryLogicProperty, lhsLogicProperty);
                     } catch (const SpatialTemporalException &ex) {
@@ -282,8 +287,7 @@ namespace multiscale {
                     double lhsNumericMeasure = evaluateChangeLhsTemporalNumericMeasure(changeAttribute);
                     double rhsNumericMeasure = evaluateTemporalNumericMeasure(
                                                    changeAttribute.rhsTemporalNumericMeasure,
-                                                   trace,
-                                                   0
+                                                   trace
                                                );
 
                     return ComparatorEvaluator::evaluate(lhsNumericMeasure,
@@ -297,23 +301,23 @@ namespace multiscale {
                  */
                 double evaluateChangeLhsTemporalNumericMeasure(const ChangeTemporalNumericMeasureAttribute
                                                                &changeAttribute) const {
-                    double lhsNumericMeasureFirstTimepoint  = evaluateTemporalNumericMeasure(
-                                                                 changeAttribute.lhsTemporalNumericMeasure,
-                                                                 trace,
-                                                                 1
-                                                              );
-                    double lhsNumericMeasureSecondTimepoint = evaluateTemporalNumericMeasure(
-                                                                  changeAttribute.lhsTemporalNumericMeasure,
-                                                                  trace,
-                                                                  0
-                                                              );
+                    double lhsTemporalNumericMeasureFirstTimepoint = evaluateTemporalNumericMeasure(
+                                                                         changeAttribute.lhsTemporalNumericMeasure,
+                                                                         trace,
+                                                                         0
+                                                                     );
+                    double lhsTemporalNumericMeasureSecondTimepoint = evaluateTemporalNumericMeasure(
+                                                                          changeAttribute.lhsTemporalNumericMeasure,
+                                                                          trace,
+                                                                          1
+                                                                      );
 
                     unsigned long timeValueFirstTimepoint  = trace.getTimePoint(0).getValue();
                     unsigned long timeValueSecondTimepoint = trace.getTimePoint(1).getValue();
 
                     return ChangeMeasureEvaluator::evaluate(changeAttribute.changeMeasure.changeMeasureType,
-                                                            lhsNumericMeasureFirstTimepoint,
-                                                            lhsNumericMeasureSecondTimepoint,
+                                                            lhsTemporalNumericMeasureFirstTimepoint,
+                                                            lhsTemporalNumericMeasureSecondTimepoint,
                                                             timeValueFirstTimepoint,
                                                             timeValueSecondTimepoint);
                 }
@@ -331,8 +335,8 @@ namespace multiscale {
 
                     SpatialTemporalTrace traceCopy(trace);
 
-                    for (unsigned long i = startTime; i <= endTime; i++) {
-                        traceCopy.setSubTrace(i);
+                    for (unsigned long i = startTime; i <= endTime; i = traceCopy.nextTimePointValue()) {
+                         traceCopy.setSubTrace(i);
 
                         if (evaluate(untilLogicProperty.logicProperty, traceCopy)) {
                             return evaluatePrecedingLogicProperties(startTime, i, lhsLogicProperty);
@@ -355,7 +359,7 @@ namespace multiscale {
 
                     SpatialTemporalTrace traceCopy(trace);
 
-                    for (unsigned long i = startTime; i <= endTime; i++) {
+                    for (unsigned long i = startTime; i <= endTime; i = traceCopy.nextTimePointValue()) {
                         traceCopy.setSubTrace(i);
 
                         if (evaluate(futureLogicProperty.logicProperty, traceCopy)) {
@@ -379,7 +383,7 @@ namespace multiscale {
 
                     SpatialTemporalTrace traceCopy(trace);
 
-                    for (unsigned long i = startTime; i <= endTime; i++) {
+                    for (unsigned long i = startTime; i <= endTime; i = traceCopy.nextTimePointValue()) {
                         traceCopy.setSubTrace(i);
 
                         if (!evaluate(globalLogicProperty.logicProperty, traceCopy)) {
@@ -444,7 +448,11 @@ namespace multiscale {
                  */
                 bool evaluate(const PrimaryLogicPropertyAttributeType &primaryLogicProperty,
                               const SpatialTemporalTrace &trace) const {
-                    return boost::apply_visitor(LogicPropertyVisitor(trace), primaryLogicProperty, evaluationLogicProperty);
+                    return boost::apply_visitor(
+                        LogicPropertyVisitor(trace),
+                        primaryLogicProperty,
+                        evaluationLogicProperty
+                    );
                 }
 
                 //! Evaluate the next logic properties
@@ -477,28 +485,32 @@ namespace multiscale {
 
                 //! Construct a new logic property attribute using the evaluation logic properties
                 /*!
-                 * \param logicProperty             The logic property containing the currently evaluated logic subproperty
-                 * \param evaluationLogicProperties The logic properties preceding the currently evaluated logic subproperty
+                 * \param logicProperty             The logic property containing the currently evaluated logic
+                 *                                  subproperty
+                 * \param evaluationLogicProperties The logic properties preceding the currently evaluated logic
+                 *                                  subproperty
                  */
                 LogicPropertyAttribute constructEvaluationLogicProperty(const LogicPropertyAttribute &logicProperty,
-                                                                        const std::vector<LogicPropertyAttributeType> evaluationLogicProperties) const {
+                                                                        const std::vector<LogicPropertyAttributeType>
+                                                                        &evaluationLogicProperties) const {
                     return LogicPropertyAttribute(
                         logicProperty.firstLogicProperty,
                         evaluationLogicProperties
                     );
                 }
 
-                //! Evaluate the preceding logic properties
+                //! Evaluate the preceding logic properties considering the interval [startTime, endTime)
                 /*!
                  * \param startTime                 The considered start time value
                  * \param endTime                   The considered end time value (exclusive)
                  * \param precedingLogicProperties  The preceding logic properties
                  */
                 bool evaluatePrecedingLogicProperties(unsigned long startTime, unsigned long endTime,
-                                                      const LogicPropertyAttributeType &precedingLogicProperties) const {
+                                                      const LogicPropertyAttributeType
+                                                      &precedingLogicProperties) const {
                     SpatialTemporalTrace traceCopy(trace);
 
-                    for (unsigned long i = startTime; i < endTime; i++) {
+                    for (unsigned long i = startTime; i < endTime; i = traceCopy.nextTimePointValue()) {
                         traceCopy.setSubTrace(i);
 
                         if (!evaluate(precedingLogicProperties, traceCopy)) {
@@ -518,7 +530,9 @@ namespace multiscale {
                 double evaluateTemporalNumericMeasure(const TemporalNumericMeasureType &temporalNumericMeasure,
                                                       const SpatialTemporalTrace &trace,
                                                       unsigned int timePointIndex = 0) const {
-                    return boost::apply_visitor(TemporalNumericVisitor(trace), temporalNumericMeasure);
+                    SpatialTemporalTrace subTrace(trace.subTrace(timePointIndex));
+
+                    return boost::apply_visitor(TemporalNumericVisitor(subTrace), temporalNumericMeasure);
                 }
 
                 //! Print a warning message regarding the exception and return false

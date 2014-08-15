@@ -36,7 +36,7 @@ namespace multiscale {
                  * \param constraint     The constraint
                  */
                 TimePoint operator() (const ConstraintAttribute &constraint) const {
-                    TimePoint timePoint(evaluate(constraint.firstConstraint, constraintTimePoint));
+                    TimePoint timePoint(evaluate(constraint.firstConstraint, initialTimePoint));
 
                     return evaluateNextConstraints(constraint, timePoint);
                 }
@@ -46,7 +46,7 @@ namespace multiscale {
                  * \param constraint     The constraint
                  */
                 TimePoint operator() (const OrConstraintAttribute &constraint) const {
-                    TimePoint timePoint(evaluate(constraint.constraint, constraintTimePoint));
+                    TimePoint timePoint(evaluate(constraint.constraint, initialTimePoint));
 
                     timePoint.timePointUnion(constraintTimePoint);
 
@@ -58,7 +58,7 @@ namespace multiscale {
                  * \param constraint     The constraint
                  */
                 TimePoint operator() (const AndConstraintAttribute &constraint) const {
-                    TimePoint timePoint(evaluate(constraint.constraint, constraintTimePoint));
+                    TimePoint timePoint(evaluate(constraint.constraint, initialTimePoint));
 
                     timePoint.timePointIntersection(constraintTimePoint);
 
@@ -70,7 +70,7 @@ namespace multiscale {
                  * \param constraint     The constraint
                  */
                 TimePoint operator() (const ImplicationConstraintAttribute &constraint) const {
-                    TimePoint timePoint(evaluate(constraint.constraint, constraintTimePoint));
+                    TimePoint timePoint(evaluate(constraint.constraint, initialTimePoint));
                     TimePoint initialTimePointCopy(initialTimePoint);
 
                     // (p => q)
@@ -85,7 +85,7 @@ namespace multiscale {
                  * \param constraint     The constraint
                  */
                 TimePoint operator() (const EquivalenceConstraintAttribute &constraint) const {
-                    TimePoint timePoint(evaluate(constraint.constraint, constraintTimePoint));
+                    TimePoint timePoint(evaluate(constraint.constraint, initialTimePoint));
                     TimePoint forwardImplicationTimePoint(initialTimePoint);
                     TimePoint reverseImplicationTimePoint(initialTimePoint);
 
@@ -163,7 +163,8 @@ namespace multiscale {
                  * \param primaryConstraint The given primary constraint
                  * \param timePoint         The given timepoint
                  */
-                TimePoint evaluate(const PrimaryConstraintAttributeType &primaryConstraint, const TimePoint &timePoint) const {
+                TimePoint evaluate(const PrimaryConstraintAttributeType &primaryConstraint,
+                                   const TimePoint &timePoint) const {
                     return boost::apply_visitor(ConstraintVisitor(initialTimePoint, timePoint), primaryConstraint);
                 }
 
@@ -172,21 +173,28 @@ namespace multiscale {
                  * Evaluate the next constraints considering the given constraint and timepoints
                  *
                  * \param constraint    The given constraint
-                 * \param timePoint     The resulting timepoint after applying the first constraint to the initial timepoint
+                 * \param timePoint     The resulting timepoint after applying the first constraint to the
+                 *                      initial timepoint
                  */
-                TimePoint evaluateNextConstraints(const ConstraintAttribute &constraint, const TimePoint &timePoint) const {
+                TimePoint evaluateNextConstraints(const ConstraintAttribute &constraint,
+                                                  const TimePoint &timePoint) const {
                     TimePoint constrainedTimePoint(timePoint);
 
                     for (const auto &nextConstraint : constraint.nextConstraints) {
-                        constrainedTimePoint = boost::apply_visitor(ConstraintVisitor(initialTimePoint, constrainedTimePoint),
+                        constrainedTimePoint = boost::apply_visitor(ConstraintVisitor(
+                                                                        initialTimePoint,
+                                                                        constrainedTimePoint
+                                                                    ),
                                                                     nextConstraint);
                     }
 
                     return constrainedTimePoint;
                 }
 
-                //! Evaluate the unary type constraint considering the given spatial measure, comparator, numeric measure and timepoint
-                /*!
+                //! Evaluate the unary type constraint
+                /*! Evaluate the unary type constraint considering the given spatial measure, comparator,
+                 *  numeric measure and timepoint
+                 *
                  * \param comparator            The comparator type
                  * \param filterNumericMeasure  The filter numeric measure
                  * \param timePoint             The considered timepoint
@@ -196,24 +204,29 @@ namespace multiscale {
                                                       const TimePoint &timePoint) const {
                     TimePoint unaryConstraintTimePoint(timePoint);
 
-                    ConstraintEvaluator::evalTypeConstraint(unaryConstraintTimePoint, comparator, filterNumericMeasure);
+                    ConstraintEvaluator::evalTypeConstraint(unaryConstraintTimePoint, comparator,
+                                                            filterNumericMeasure);
 
                     return unaryConstraintTimePoint;
                 }
 
-                //! Evaluate the unary spatial constraint considering the given spatial measure, comparator, numeric measure and timepoint
-                /*!
+                //! Evaluate the unary spatial constraint
+                /*! Evaluate the unary spatial constraint considering the given spatial measure, comparator,
+                 *  numeric measure and timepoint
+                 *
                  * \param spatialMeasure        The spatial measure type
                  * \param comparator            The comparator type
                  * \param filterNumericMeasure  The filter numeric measure
                  * \param timePoint             The considered timepoint
                  */
-                TimePoint evaluateUnarySpatialConstraint(const SpatialMeasureType &spatialMeasure, const ComparatorType &comparator,
-                                                  const FilterNumericMeasureAttributeType &filterNumericMeasure,
-                                                  const TimePoint &timePoint) const {
+                TimePoint evaluateUnarySpatialConstraint(const SpatialMeasureType &spatialMeasure,
+                                                         const ComparatorType &comparator,
+                                                         const FilterNumericMeasureAttributeType &filterNumericMeasure,
+                                                         const TimePoint &timePoint) const {
                     TimePoint unaryConstraintTimePoint(timePoint);
 
-                    ConstraintEvaluator::evalSpatialMeasureConstraint(unaryConstraintTimePoint, spatialMeasure, comparator, filterNumericMeasure);
+                    ConstraintEvaluator::evalSpatialMeasureConstraint(unaryConstraintTimePoint, spatialMeasure,
+                                                                      comparator, filterNumericMeasure);
 
                     return unaryConstraintTimePoint;
                 }

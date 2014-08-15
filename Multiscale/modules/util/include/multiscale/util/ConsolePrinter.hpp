@@ -9,7 +9,7 @@
 namespace multiscale {
 
     // Enumeration for UNIX colour codes
-    enum class UnixColourCode : int {
+    enum class UnixColourCode : unsigned int {
         BLACK   = 0,    /*!< Black non-colour */
         RED     = 1,    /*!< Red colour */
         GREEN   = 2,    /*!< Green colour */
@@ -21,7 +21,7 @@ namespace multiscale {
     };
 
     // Enumeration for Windows colour codes
-    enum class WindowsColourCode : int {
+    enum class WindowsColourCode : unsigned int {
         BLACK           = 0,    /*!< Black non-colour */
         DARK_BLUE       = 1,    /*!< Dark blue colour */
         DARK_GREEN      = 2,    /*!< Dark green colour */
@@ -41,7 +41,7 @@ namespace multiscale {
     };
 
     // Enumeration for colour codes
-    enum class ColourCode : int {
+    enum class ColourCode : unsigned int {
         BLACK   = 0,    /*!< Black non-colour */
         RED     = 1,    /*!< Red colour */
         GREEN   = 2,    /*!< Green colour */

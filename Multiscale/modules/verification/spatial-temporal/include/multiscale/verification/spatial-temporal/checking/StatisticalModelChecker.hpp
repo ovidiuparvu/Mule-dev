@@ -13,10 +13,11 @@ namespace multiscale {
 
         //! Enumeration for representing the model checking result
         enum class StatisticalModelCheckingResult : int {
-            TRUE                    ,   /*!< The logic property was evaluated to true */
-            FALSE                   ,   /*!< The logic property was evaluated to false */
-            UNDECIDED               ,   /*!< The truth value of the logic property is undecided */
-            MORE_TRACES_REQUIRED        /*!< More traces are required to determine the truth value of the logic property */
+            TRUE                    = 0,    /*!< The logic property was evaluated to true */
+            FALSE                      ,    /*!< The logic property was evaluated to false */
+            UNDECIDED                  ,    /*!< The truth value of the logic property is undecided */
+            MORE_TRACES_REQUIRED            /*!< More traces are required to determine the truth value of
+                                                 the logic property */
         };
 
 

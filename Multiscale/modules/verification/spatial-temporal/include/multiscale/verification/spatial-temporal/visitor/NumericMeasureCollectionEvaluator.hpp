@@ -30,11 +30,11 @@ namespace multiscale {
 
                     SpatialTemporalTrace traceCopy(trace);
 
-                    for (unsigned long i = startTimepoint; i <= endTimepoint; i++) {
+                    for (unsigned long i = startTimepoint; i <= endTimepoint; i = traceCopy.nextTimePointValue()) {
                         traceCopy.setSubTrace(i);
 
                         numericMeasureValues.push_back(
-                            boost::apply_visitor(NumericVisitor(trace.getTimePoint(0)), numericMeasure)
+                            boost::apply_visitor(NumericVisitor(traceCopy.getTimePoint(0)), numericMeasure)
                         );
                     }
 

@@ -12,10 +12,11 @@ namespace multiscale {
     namespace verification {
 
         //! Enumeration for representing the model checking result
-        enum class ApproximateBayesianModelCheckingResult : int {
-            TRUE                    ,   /*!< The logic property was evaluated to true */
-            FALSE                   ,   /*!< The logic property was evaluated to false */
-            MORE_TRACES_REQUIRED        /*!< More traces are required to determine the truth value of the logic property */
+        enum class ApproximateBayesianModelCheckingResult : unsigned int {
+            TRUE                    = 0,    /*!< The logic property was evaluated to true */
+            FALSE                      ,    /*!< The logic property was evaluated to false */
+            MORE_TRACES_REQUIRED            /*!< More traces are required to determine the truth value of
+                                                 the logic property */
         };
 
 

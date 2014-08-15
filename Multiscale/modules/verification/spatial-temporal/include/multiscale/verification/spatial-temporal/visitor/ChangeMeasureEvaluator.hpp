@@ -18,28 +18,31 @@ namespace multiscale {
 
                 //! Compute the value of the change measure considering the given numeric measure and time values
                 /*!
-                 * \param changeMeasureType             The type of the change measure
-                 * \param numericMeasureFirstTimepoint  The numeric measure value corresponding to the
-                 *                                      initial timepoint
-                 * \param numericMeasureSecondTimepoint The numeric measure value corresponding to the
-                 *                                      second timepoint
-                 * \param timeValueFirstTimepoint       The time value corresponding to the first timepoint
-                 * \param timeValueSecondTimepoint      The time value corresponding to the second timepoint
+                 * \param changeMeasureType                     The type of the change measure
+                 * \param temporalNumericMeasureFirstTimepoint  The temporal numeric measure value corresponding to the
+                 *                                              trace starting from the initial timepoint
+                 * \param temporalNumericMeasureSecondTimepoint The temporal numeric measure value corresponding to the
+                 *                                              trace starting from the second timepoint
+                 * \param timeValueFirstTimepoint               The time value corresponding to the first timepoint
+                 * \param timeValueSecondTimepoint              The time value corresponding to the second timepoint
                  */
-                static double evaluate(const ChangeMeasureType &changeMeasureType, double numericMeasureFirstTimepoint,
-                                       double numericMeasureSecondTimepoint, unsigned long timeValueFirstTimepoint,
+                static double evaluate(const ChangeMeasureType &changeMeasureType,
+                                       double temporalNumericMeasureFirstTimepoint,
+                                       double temporalNumericMeasureSecondTimepoint,
+                                       unsigned long timeValueFirstTimepoint,
                                        unsigned long timeValueSecondTimepoint) {
-                    double numericValueChange  = computeNumericMeasureValueChange(
-                                                     changeMeasureType, numericMeasureFirstTimepoint,
-                                                     numericMeasureSecondTimepoint
-                                                 );
+                    double temporalNumericValueChange  = computeNumericMeasureValueChange(
+                                                             changeMeasureType,
+                                                             temporalNumericMeasureFirstTimepoint,
+                                                             temporalNumericMeasureSecondTimepoint
+                                                         );
                     double timeValueDifference = computeTimeValueDifference(
                                                      timeValueFirstTimepoint,
                                                      timeValueSecondTimepoint
                                                  );
 
                     return (timeValueDifference != 0)
-                        ? (numericValueChange / timeValueDifference)
+                        ? (temporalNumericValueChange / timeValueDifference)
                         : 0;
                 }
 
@@ -58,21 +61,23 @@ namespace multiscale {
 
                 //! Compute the numeric measure value change considering the given change measure and numeric values
                 /*!
-                 * \param changeMeasureType             The type of the change measure
-                 * \param numericMeasureFirstTimepoint  The numeric measure value corresponding to the first timepoint
-                 * \param numericMeasureSecondTimepoint The numeric measure value corresponding to the second timepoint
+                 * \param changeMeasureType                     The type of the change measure
+                 * \param temporalNumericMeasureFirstTimepoint  The temporal numeric measure value corresponding to the
+                 *                                              trace starting from the initial timepoint
+                 * \param temporalNumericMeasureSecondTimepoint The temporal numeric measure value corresponding to the
+                 *                                              trace starting from the second timepoint
                  */
                 static double computeNumericMeasureValueChange(const ChangeMeasureType &changeMeasureType,
-                                                               unsigned long numericMeasureFirstTimepoint,
-                                                               unsigned long numericMeasureSecondTimepoint) {
+                                                               double temporalNumericMeasureFirstTimepoint,
+                                                               double temporalNumericMeasureSecondTimepoint) {
                     switch(changeMeasureType) {
                         case ChangeMeasureType::Derivative:
-                            return (numericMeasureSecondTimepoint - numericMeasureFirstTimepoint);
+                            return (temporalNumericMeasureSecondTimepoint - temporalNumericMeasureFirstTimepoint);
                             break;
 
                         case ChangeMeasureType::Ratio:
-                            return (numericMeasureFirstTimepoint != 0)
-                                ? (numericMeasureSecondTimepoint / numericMeasureFirstTimepoint)
+                            return (temporalNumericMeasureFirstTimepoint != 0)
+                                ? (temporalNumericMeasureSecondTimepoint / temporalNumericMeasureFirstTimepoint)
                                 : 0;
                             break;
 

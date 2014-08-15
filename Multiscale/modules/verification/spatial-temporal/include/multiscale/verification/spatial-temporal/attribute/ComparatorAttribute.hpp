@@ -10,12 +10,12 @@ namespace multiscale {
     namespace verification {
 
         //! Enumeration for representing a comparator type
-        enum class ComparatorType : int {
-            GreaterThan         = 1,        /*!< Greater than */
-            GreaterThanOrEqual  = 2,        /*!< Greater than or equal */
-            LessThan            = 3,        /*!< Less than */
-            LessThanOrEqual     = 4,        /*!< Less than or equal */
-            Equal               = 5         /*!< Equal */
+        enum class ComparatorType : unsigned int {
+            GreaterThan         = 0,        /*!< Greater than */
+            GreaterThanOrEqual     ,        /*!< Greater than or equal */
+            LessThan               ,        /*!< Less than */
+            LessThanOrEqual        ,        /*!< Less than or equal */
+            Equal                           /*!< Equal */
         };
 
 

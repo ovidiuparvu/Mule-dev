@@ -10,14 +10,14 @@ namespace multiscale {
     namespace verification {
 
         //! Enumeration for representing a binary numeric measure type
-        enum class BinaryNumericMeasureType : int {
-            Add         = 1,    /*!< Addition */
-            Div         = 2,    /*!< Division */
-            Log         = 3,    /*!< Logarithm */
-            Mod         = 4,    /*!< Remainder of division */
-            Multiply    = 5,    /*!< Multiplication */
-            Power       = 6,    /*!< Raise to power */
-            Subtract    = 7     /*!< Subtraction */
+        enum class BinaryNumericMeasureType : unsigned int {
+            Add         = 0,    /*!< Addition */
+            Div            ,    /*!< Division */
+            Log            ,    /*!< Logarithm */
+            Mod            ,    /*!< Remainder of division */
+            Multiply       ,    /*!< Multiplication */
+            Power          ,    /*!< Raise to power */
+            Subtract            /*!< Subtraction */
         };
 
 

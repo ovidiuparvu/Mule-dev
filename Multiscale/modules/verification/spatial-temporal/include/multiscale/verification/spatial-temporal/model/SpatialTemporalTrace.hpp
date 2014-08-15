@@ -47,6 +47,9 @@ namespace multiscale {
                 //! Get the length of the spatial temporal trace (i.e. number of timepoints)
                 unsigned int length() const;
 
+                //! Get the value of the next timepoint considering beginIndex
+                unsigned long nextTimePointValue() const;
+
                 //! Get the subtrace containing timepoints with the index greater than the given index
                 /*!
                  * \param startIndex    The starting index of the subtrace
@@ -99,6 +102,14 @@ namespace multiscale {
                  */
                 void setSubTraceIndex(unsigned long startValue);
 
+                //! Get the value of the next timepoint when beginIndex is the index of the last timepoint
+                /*!
+                 *  Return maximum unsigned long value if the value of the
+                 *  last timepoint is smaller than the maximum unsigned long value.
+                 *  Otherwise throw an exception.
+                 */
+                unsigned long nextTimePointValueForLastTimePoint() const;
+
                 //! Add the timepoints starting and ending with the given indices to the subtrace
                 /*!
                  * \param subTrace      The resulting subtrace
@@ -140,6 +151,8 @@ namespace multiscale {
                 static const std::string ERR_TIMEPOINT_VALUE_INVALID_START;
                 static const std::string ERR_TIMEPOINT_VALUE_INVALID_MIDDLE;
                 static const std::string ERR_TIMEPOINT_VALUE_INVALID_END;
+
+                static const std::string ERR_NEXT_TIMEPOINT_VALUE_NOT_EXISTS;
 
                 static const std::string ERR_ITERATOR_NEXT;
 

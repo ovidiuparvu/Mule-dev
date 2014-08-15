@@ -438,7 +438,7 @@ double Numeric::percentile(const std::vector<double> &numbers, double percentile
 
     validatePercentile(percentile);
 
-    return (nrOfValues_ > 0) ? values[std::floor(((percentile / 100) * (nrOfValues_ - 1)) + (1 / 2))]
+    return (nrOfValues_ > 0) ? values[std::floor(((percentile / 100) * (nrOfValues_ - 1)) + (0.5))]
                              : 0;
 }
 
