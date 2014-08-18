@@ -146,7 +146,7 @@ TEST_F(CompleteTraceTest, BinaryNumericFilter) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, BinaryNumericMeasureAdd) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= add(" + StringManipulator::toString<double>(aMaxValue) + ", 0.0001)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= add(12, 0.0001)]"));
 }
 
 TEST_F(CompleteTraceTest, BinaryNumericMeasureDiv) {

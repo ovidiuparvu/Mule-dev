@@ -77,7 +77,7 @@ TEST(Numeric, Factorial) {
     EXPECT_EQ(Numeric::factorial(0), 1);
     EXPECT_EQ(Numeric::factorial(1), 1);
     EXPECT_EQ(Numeric::factorial(6), 720);
-    EXPECT_EQ(Numeric::factorial(13), 6227020800);
+    EXPECT_EQ(Numeric::factorial(10), 3628800);
 }
 
 TEST(Numeric, GeometricMean) {
