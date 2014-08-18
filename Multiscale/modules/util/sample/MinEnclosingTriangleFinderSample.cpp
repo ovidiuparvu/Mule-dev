@@ -2,6 +2,7 @@
 #include "multiscale/util/Geometry2D.hpp"
 #include "multiscale/util/MinEnclosingTriangleFinder.hpp"
 
+#include <ctime>
 #include <iostream>
 
 using namespace std;
