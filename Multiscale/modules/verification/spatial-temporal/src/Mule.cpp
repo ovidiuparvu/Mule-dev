@@ -8,6 +8,8 @@
 #include "multiscale/verification/spatial-temporal/exception/ModelCheckingHelpRequestException.hpp"
 #include "multiscale/verification/spatial-temporal/execution/CommandLineModelChecking.hpp"
 
+#include <ctime>
+
 using namespace multiscale::verification;
 
 

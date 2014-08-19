@@ -20,7 +20,7 @@
 	<xs:complexType name="SpatialDescriptionType">
 		<xs:sequence>
 			<xs:element name="spatialEntities" type="SpatialEntitiesType" >
-				<!-- The spatial entities must be unique -->
+				<!-- The spatial entities' names must be unique -->
 				
 				<xs:unique name="UniqueSpatialEntities">
 					<xs:selector xpath="spatialEntity" />
@@ -28,19 +28,9 @@
 				</xs:unique>
 			</xs:element>
 			<xs:element name="spatialMeasures" type="SpatialMeasuresType">
-				<!-- The spatial measures must be unique -->
-					
-				<xs:unique name="UniqueSpatialMeasures">
-					<xs:selector xpath="spatialMeasure" />
-					<xs:field xpath="name" />
-					<xs:field xpath="description" />
-					<xs:field xpath="minValue" />
-					<xs:field xpath="maxValue" />
-				</xs:unique>
-				
 				<!-- The spatial measures' names must be unique -->
 					
-				<xs:unique name="UniqueSpatialMeasuresNames">
+				<xs:unique name="UniqueSpatialMeasures">
 					<xs:selector xpath="spatialMeasure" />
 					<xs:field xpath="name" />
 				</xs:unique>
