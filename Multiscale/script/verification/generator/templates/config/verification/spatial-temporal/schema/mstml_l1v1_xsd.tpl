@@ -70,6 +70,8 @@
             <xs:element name="name" type="xs:string" />
             <xs:element name="value" type="xs:double" />
         </xs:sequence>
+        
+        <xs:attribute name="semanticType" type="xs:nonNegativeInteger" />
     </xs:complexType>
     
     <!-- User-defined simple types -->

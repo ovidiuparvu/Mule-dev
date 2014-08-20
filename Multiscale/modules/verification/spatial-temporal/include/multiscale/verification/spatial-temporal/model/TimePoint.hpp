@@ -79,12 +79,6 @@ namespace multiscale {
                 //! Get the number of considered spatial entities
                 double numberOfSpatialEntities() const;
 
-                //! Get the clusteredness of the considered collection of spatial entities
-                double avgClusteredness() const;
-
-                //! Get the density of the considered collection of spatial entities
-                double avgDensity() const;
-
                 //! Add a spatial entity of the given type to the list of spatial entities
                 /*!
                  * \param spatialEntity         The spatial entity
@@ -209,24 +203,6 @@ namespace multiscale {
                                     const SubsetSpecificType &spatialEntityType);
 
             private:
-
-                //! Compute the average Euclidean distance between the centroids of the given collection of spatial entities
-                /*!
-                 * The average Euclidean distance between one centroid c1 and all other centroids is computed as below:
-                 * \f$ AED(c1) = \sum\limits_{c \in centroids}\frac{distance(c, c1)}{|centroids|} \f$.
-                 *
-                 * The average Euclidean distance between all centroids is computed as below:
-                 * \f$ AEDC = \sum\limits_{c \in centroids}\frac{AED(c)}{|centroids|} \f$.
-                 *
-                 * \param spatialEntities   The collection of considered spatial entities
-                 */
-                double avgDistanceBetweenCentroids(const std::vector<std::shared_ptr<SpatialEntity>> &spatialEntities) const;
-
-                //! Compute the density of the given collection of spatial entities
-                /*!
-                 * \param spatialEntities   The collection of considered spatial entities
-                 */
-                double avgDensity(const std::vector<std::shared_ptr<SpatialEntity>> &spatialEntities) const;
 
                 //! Compute the given set operation of this timepoint and the given timepoint considering the given set operation type
                 /*!
