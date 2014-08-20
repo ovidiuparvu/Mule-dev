@@ -52,7 +52,9 @@ namespace multiscale {
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
                     NumericStateVariableId numericStateVariableId(
                         numericStateVariable.stateVariable.name,
-                        numericStateVariable.type.get_value_or(0)
+                        numericStateVariable.semanticType.get_value_or(
+                            StateVariableTypeAttribute(0)
+                        ).type
                     );
 
                     return trace.getTimePoint(0).getNumericStateVariable(numericStateVariableId);

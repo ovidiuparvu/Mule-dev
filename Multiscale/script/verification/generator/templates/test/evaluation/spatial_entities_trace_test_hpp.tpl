@@ -35,7 +35,7 @@ namespace multiscaletest {
     };
 
     void SpatialEntitiesTraceTest::InitialiseTrace() {
-        // Initialise private class fields
+        // Initialise protected class fields
         nrOfTimePoints = 12;
         
         /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MinValue = 1;

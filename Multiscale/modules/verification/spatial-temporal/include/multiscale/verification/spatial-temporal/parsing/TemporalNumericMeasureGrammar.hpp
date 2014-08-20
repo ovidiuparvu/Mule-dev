@@ -169,6 +169,9 @@ namespace multiscale {
                 qi::rule<Iterator, std::string(), qi::space_type>
                     stateVariableNameRule;                      /*!< The rule for parsing the name of a
                                                                      state variable without escaping white space */
+                qi::rule<Iterator, StateVariableTypeAttribute(), qi::space_type>
+                    stateVariableTypeRule;                      /*!< The rule for parsing a state variable type */
+
 
                 // Enumeration parsers
 
@@ -536,13 +539,23 @@ namespace multiscale {
                 //! Initialise the numeric state variable rule
                 void initialiseNumericStateVariableRule() {
                     numericStateVariableRule
-                        =   stateVariableRule;
+                        =   stateVariableRule
+                            > -(stateVariableTypeRule);
 
                     stateVariableRule
                         =   ('{' > stateVariableNameRule > '}');
 
                     stateVariableNameRule
                         =   qi::raw[ +(qi::char_ - qi::char_("{}")) ];
+
+                    stateVariableTypeRule
+                        =   (
+                                '('
+                                > qi::lit("type")
+                                > '='
+                                > qi::ulong_
+                                > ')'
+                            );
                 }
 
                 //! Initialise debug support
@@ -679,6 +692,7 @@ namespace multiscale {
                     numericStateVariableRule    .name("numericStateVariableRule");
                     stateVariableRule           .name("stateVariableRule");
                     stateVariableNameRule       .name("stateVariableNameRule");
+                    stateVariableTypeRule       .name("stateVariableTypeRule");
                 }
 
                 //! Initialise the debugging of rules
@@ -807,6 +821,7 @@ namespace multiscale {
                     debug(numericStateVariableRule);
                     debug(stateVariableRule);
                     debug(stateVariableNameRule);
+                    debug(stateVariableTypeRule);
                 }
 
                 //! Initialise the error handling routines
@@ -976,6 +991,10 @@ namespace multiscale {
                 void initialiseStateVariableErrorHandlingSupport() {
                     qi::on_error<qi::fail>(
                         stateVariableNameRule,
+                        multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+                    );
+                    qi::on_error<qi::fail>(
+                        stateVariableTypeRule,
                         multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
                     );
                 }

@@ -57,7 +57,7 @@ TEST_F(EmptyTraceTest, BinaryNumericFilter) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, BinaryNumericMeasureAdd) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A} <= add(" + StringManipulator::toString<double>(aMaxValue) + ", 0.0001)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A} <= add(1, 0.0001)]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, BinaryNumericMeasureDiv) {

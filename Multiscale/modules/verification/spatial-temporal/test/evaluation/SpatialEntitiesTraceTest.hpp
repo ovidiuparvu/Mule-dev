@@ -37,7 +37,7 @@ namespace multiscaletest {
     };
 
     void SpatialEntitiesTraceTest::InitialiseTrace() {
-        // Initialise private class fields
+        // Initialise protected class fields
         nrOfTimePoints = 12;
         
         clustersClusterednessMinValue = 1;

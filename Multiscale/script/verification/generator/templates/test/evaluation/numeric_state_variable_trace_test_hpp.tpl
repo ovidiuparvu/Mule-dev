@@ -30,7 +30,7 @@ namespace multiscaletest {
     };
 
     void NumericStateVariableTraceTest::InitialiseTrace() {
-        // Initialise private class fields
+        // Initialise protected class fields
         nrOfTimePoints = 12;
         
         /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MinValue = 1;
@@ -67,9 +67,9 @@ namespace multiscaletest {
         // Add a numeric state variable "C" to the collection of timepoints
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             if (i % 4 == 0) {
-                timePoints[i].addNumericStateVariable(aNumericStateVariableId, cMaxValue);
+                timePoints[i].addNumericStateVariable(cNumericStateVariableId, cMaxValue);
             } else {
-                timePoints[i].addNumericStateVariable(aNumericStateVariableId, nrOfTimePoints - i);
+                timePoints[i].addNumericStateVariable(cNumericStateVariableId, nrOfTimePoints - i);
             }
         }
 
@@ -109,7 +109,7 @@ TEST_F(NumericStateVariableTraceTest, BinaryNumericFilter) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, BinaryNumericMeasureAdd) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= add(" + StringManipulator::toString<double>(aMaxValue) + ", 0.0111)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= add(1, 0.0111)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, BinaryNumericMeasureDiv) {
