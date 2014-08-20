@@ -4,6 +4,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/StateVariableAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
+#include <boost/optional.hpp>
 
 
 namespace multiscale {
@@ -15,7 +16,8 @@ namespace multiscale {
 
             public:
 
-                StateVariableAttribute stateVariable;    /*!< The state variable */
+                StateVariableAttribute          stateVariable;    /*!< The state variable */
+                boost::optional<unsigned long>  type;             /*!< The type of the numeric state variable */
 
         };
 

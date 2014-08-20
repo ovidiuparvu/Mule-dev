@@ -50,9 +50,12 @@ namespace multiscale {
                  */
                 double
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
-                    std::string name = numericStateVariable.stateVariable.name;
+                    NumericStateVariableId numericStateVariableId(
+                        numericStateVariable.stateVariable.name,
+                        numericStateVariable.type.get_value_or(0)
+                    );
 
-                    return trace.getTimePoint(0).getNumericStateVariable(name);
+                    return trace.getTimePoint(0).getNumericStateVariable(numericStateVariableId);
                 }
 
                 //! Overloading the "()" operator for the NumericStatisticalMeasureAttribute alternative

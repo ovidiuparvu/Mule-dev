@@ -4,6 +4,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SubsetOperationAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SubsetSpecificAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/model/NumericStateVariableId.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialEntity.hpp"
 
 #include <bitset>
@@ -41,7 +42,7 @@ namespace multiscale {
                                                          corresponds to the i-th SubsetSpecificType
                                                          enumeration value */
 
-                std::map<std::string, double>
+                std::map<NumericStateVariableId, double>
                     numericStateVariables;          /*!< The associative map for storing numeric state variables */
 
                 std::bitset<NR_SUBSET_SPECIFIC_TYPES>
@@ -94,20 +95,20 @@ namespace multiscale {
 
                 //! Add a numeric state variable to the map
                 /*!
-                 * If a numeric state variable with the same name exists then the value
+                 * If a numeric state variable with the same id exists then the value
                  * of the existing numeric state variable will be replaced by the provided
                  * new value.
                  *
-                 * \param name  The name of the numeric state variable
+                 * \param id    The id (name, type) of the numeric state variable
                  * \param value The value of the numeric state variable
                  */
-                void addNumericStateVariable(const std::string &name, double value);
+                void addNumericStateVariable(const NumericStateVariableId &id, double value);
 
-                //! Check if the numeric state variable with the given name exists
+                //! Check if the numeric state variable with the given id exists
                 /*!
-                 * \param name The name of the numeric state variable
+                 * \param id The id of the numeric state variable
                  */
-                bool existsNumericStateVariable(const std::string &name);
+                bool existsNumericStateVariable(const NumericStateVariableId &id);
 
                 //! Get the begin iterator for the spatial entities of the given type
                 /*!
@@ -148,11 +149,13 @@ namespace multiscale {
                 //! Get the collection of considered spatial entities
                 std::vector<std::shared_ptr<SpatialEntity>> getConsideredSpatialEntities() const;
 
-                //! Get the value of the numeric state variable with the given name if it exists and throw an exception otherwise
-                /*!
-                 * \param name The name of the numeric state variable
+                //! Get the value of the numeric state variable with the given id
+                /*! Get the value of the numeric state variable with the given id if it exists and
+                 *  throw an exception otherwise
+                 *
+                 * \param id The id of the numeric state variable
                  */
-                double getNumericStateVariable(const std::string &name) const;
+                double getNumericStateVariable(const NumericStateVariableId &id) const;
 
                 //! Compute the difference of this timepoint and the given timepoint (spatial entities only)
                 /*! Compute the difference of this timepoint and the given timepoint by taking into account

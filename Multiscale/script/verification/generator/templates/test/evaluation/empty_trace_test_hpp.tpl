@@ -591,16 +591,48 @@ TEST_F(EmptyTraceTest, NumericSpatialMeasure) {
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, NumericStateVariable1) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A} <= 3]"), SpatialTemporalException);
+TEST_F(EmptyTraceTest, NumericStateVariableWithoutTypes) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A} <= {B}]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, NumericStateVariable2) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{a2#0f-} <= 3]"), SpatialTemporalException);
+TEST_F(EmptyTraceTest, NumericStateVariableTypeLeft) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, NumericStateVariable3) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{`1234567890-=~!@#$%^&*()_+qwertyuiop[]asdfghjkl;'\\<zxcvbnm,./QWERTYUIOPASDFGHJKL:\"|>ZXCVBNM<>?} <= 3]"), SpatialTemporalException);
+TEST_F(EmptyTraceTest, NumericStateVariableTypeRight) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = 0)]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, NumericStateVariableBothTypes) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}(type = 0)]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 1)]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, NumericStateVariableOneNumericStateVariable) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{C}(type = 1) = 12]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, NumericStateVariableWrongRhsType) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 0)]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, NumericStateVariableWrongName) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{a2#0f-} <= {B}]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, NumericStateVariableWrongLongName) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{`1234567890-=~!@#$%^&*()_+qwertyuiop[]asdfghjkl;'\\<zxcvbnm,./QWERTYUIOPASDFGHJKL:\"|>ZXCVBNM<>?} <= {B}]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, NumericStateVariableWrongTypeLhs) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 1) <= {B}]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{B}(type = 213121) <= {B}]"), SpatialTemporalException);
 }
 
 
@@ -1141,7 +1173,7 @@ TEST_F(EmptyTraceTest, DecreasingUntilIncreasingValueReal) {
 }
 
 TEST_F(EmptyTraceTest, DecreasingUntilIncreasingValueNumericStateVariable) {
-    EXPECT_THROW(RunEvaluationTest("P < 0.9 [(d({A}) < 0) U [0, 10] (d({A}) > 0)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P < 0.9 [(d({C}(type = 1)) < 0) U [0, 10] (d({C}(type = 1)) > 0)]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, DecreasingUntilIncreasingValueUnaryNumeric) {

@@ -59,9 +59,12 @@ namespace multiscale {
                  */
                 double
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
-                    std::string name = numericStateVariable.stateVariable.name;
+                    NumericStateVariableId numericStateVariableId(
+                        numericStateVariable.stateVariable.name,
+                        numericStateVariable.type.get_value_or(0)
+                    );
 
-                    return timePoint.getNumericStateVariable(name);
+                    return timePoint.getNumericStateVariable(numericStateVariableId);
                 }
 
                 //! Overloading the "()" operator for the NumericSpatialAttribute alternative

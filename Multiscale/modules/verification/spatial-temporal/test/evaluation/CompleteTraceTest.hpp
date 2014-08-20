@@ -12,6 +12,9 @@
 
 #include "TraceEvaluationTest.hpp"
  
+#include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
+#include "multiscale/verification/spatial-temporal/model/Region.hpp"
+ 
 #include <algorithm>
 
 using namespace multiscale;
@@ -39,9 +42,6 @@ namespace multiscaletest {
         // Initialise private class fields
         nrOfTimePoints = 12;
         
-        bConstantValue = 3;
-        aMinValue = 1;
-        
         clustersClusterednessMinValue = 1;
         
         // Initialise timepoints
@@ -49,24 +49,42 @@ namespace multiscaletest {
 
         std::vector<TimePoint> timePoints;
 
-        // Add timepoints containing the numeric state variable "B" to the collection of timepoints
+        // Add timepoints to the trace
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             timePoints.push_back(TimePoint(i));
-            timePoints[i].addNumericStateVariable("B", bConstantValue);
         }
 
-        // Add a second numeric state variable to the collection of timepoints
+        // Add a numeric state variable "A" to the collection of timepoints
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             if (i % 4 == 0) {
-                timePoints[i].addNumericStateVariable("A", aMinValue);
+                timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue);
             } else {
-                timePoints[i].addNumericStateVariable("A", aMinValue + i);
+                timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue + i);
             }
         }
 
         // Initialise the aMaxValue field
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariable("A"));
+            aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariable(aNumericStateVariableId));
+        }
+        
+        // Add a numeric state variable "B" to the collection of timepoints
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            timePoints[i].addNumericStateVariable(bNumericStateVariableId, bConstantValue);
+        }
+
+        // Add a numeric state variable "C" to the collection of timepoints
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            if (i % 4 == 0) {
+                timePoints[i].addNumericStateVariable(aNumericStateVariableId, cMaxValue);
+            } else {
+                timePoints[i].addNumericStateVariable(aNumericStateVariableId, nrOfTimePoints - i);
+            }
+        }
+
+        // Initialise the cMinValue field
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            cMinValue = std::min(cMinValue, timePoints[i].getNumericStateVariable(cNumericStateVariableId));
         }
         
         // Add spatial entities to each timepoint
@@ -678,16 +696,48 @@ TEST_F(CompleteTraceTest, NumericSpatialMeasure) {
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(CompleteTraceTest, NumericStateVariable1) {
+TEST_F(CompleteTraceTest, NumericStateVariableWithoutTypes) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= {B}]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariable2) {
+TEST_F(CompleteTraceTest, NumericStateVariableTypeLeft) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableTypeRight) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = 0)]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableBothTypes) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}(type = 0)]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 1)]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableOneNumericStateVariable) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{C}(type = 1) = 12]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableWrongRhsType) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 0)]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableWrongName) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{a2#0f-} <= {B}]"));
 }
 
-TEST_F(CompleteTraceTest, NumericStateVariable3) {
+TEST_F(CompleteTraceTest, NumericStateVariableWrongLongName) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{`1234567890-=~!@#$%^&*()_+qwertyuiop[]asdfghjkl;'\\<zxcvbnm,./QWERTYUIOPASDFGHJKL:\"|>ZXCVBNM<>?} <= {B}]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableWrongTypeLhs) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 1) <= {B}]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(type = 213121) <= {B}]"));
 }
 
 
@@ -1272,7 +1322,7 @@ TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueReal) {
 }
 
 TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueNumericStateVariable) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({A}) < 0) U [0, 10] (d({A}) > 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({C}(type = 1)) < 0) U [0, 10] (d({C}(type = 1)) > 0)]"));
 }
 
 TEST_F(CompleteTraceTest, DecreasingUntilIncreasingValueUnaryNumeric) {

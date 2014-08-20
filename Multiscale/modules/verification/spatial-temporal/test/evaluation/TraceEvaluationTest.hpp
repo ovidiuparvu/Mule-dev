@@ -4,10 +4,10 @@
 #include "multiscale/core/MultiscaleTest.hpp"
 #include "multiscale/exception/TestException.hpp"
 #include "multiscale/util/StringManipulator.hpp"
-#include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
-#include "multiscale/verification/spatial-temporal/model/Region.hpp"
+#include "multiscale/verification/spatial-temporal/model/NumericStateVariableId.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
+#include <limits>
 #include <string>
 
 namespace mv = multiscale::verification;
@@ -24,9 +24,18 @@ namespace multiscaletest {
 
             std::size_t nrOfTimePoints;     /*!< The number of timepoints in the trace */
 
-            double bConstantValue;          /*!< The constant value of numeric state variable "B" */
+            NumericStateVariableId
+                aNumericStateVariableId;    /*!< The id of the numeric state variable "A" */
+            NumericStateVariableId
+                bNumericStateVariableId;    /*!< The id of the numeric state variable "B" */
+            NumericStateVariableId
+                cNumericStateVariableId;    /*!< The id of the numeric state variable "C" */
+
             double aMinValue;               /*!< The minimum value of numeric state variable "A" */
             double aMaxValue;               /*!< The maximum value of numeric state variable "A" */
+            double bConstantValue;          /*!< The constant value of numeric state variable "B" */
+            double cMinValue;               /*!< The minimum value of numeric state variable "C" */
+            double cMaxValue;               /*!< The maximum value of numeric state variable "C" */
 
             mv::SpatialTemporalTrace trace; /*!< The spatial temporal trace */
             std::string query;              /*!< The query to be checked */
@@ -34,6 +43,8 @@ namespace multiscaletest {
             bool evaluationResult;          /*!< The result of the evaluation */
 
         public:
+
+            TraceEvaluationTest();
 
            //! Run the test with the given string
             /*!
@@ -61,6 +72,13 @@ namespace multiscaletest {
            void InitialiseQuery(const std::string &query);
 
     };
+
+
+    TraceEvaluationTest::TraceEvaluationTest() : nrOfTimePoints(12), aNumericStateVariableId("A", 0),
+                                                 bNumericStateVariableId("B", 0), cNumericStateVariableId("C", 1),
+                                                 aMinValue(1), aMaxValue(std::numeric_limits<double>::lowest()),
+                                                 bConstantValue(3), cMinValue(std::numeric_limits<double>::max()),
+                                                 cMaxValue(12), evaluationResult(false) {}
 
     bool TraceEvaluationTest::RunEvaluationTest(const std::string &query) {
         InitialiseQuery(query);

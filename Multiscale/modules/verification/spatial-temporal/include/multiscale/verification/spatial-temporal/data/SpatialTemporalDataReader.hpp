@@ -66,6 +66,14 @@ namespace multiscale {
                 //! Check if there are any remaining valid unprocessed traces in the given folder
                 bool hasValidNext();
 
+                //! Process the invalid input file to which the given iterator points
+                /*! The iterator corresponds to a position in the list of unprocessed input files
+                 *
+                 * \param invalidInputFileIterator  The iterator pointing to the invalid input file path
+                 */
+                std::set<std::string>::iterator processInvalidInputFile(const std::set<std::string>::iterator
+                                                                        &invalidInputFileIterator);
+
                 //! Generate the spatial temporal trace corresponding to the first valid unprocessed input file
                 /*! The unprocessed input file will be moved to the set of processed input files after
                  *  creating the spatial temporal trace.
@@ -156,19 +164,37 @@ namespace multiscale {
                                                 std::shared_ptr<SpatialEntity> &spatialEntity,
                                                 SubsetSpecificType &spatialEntityType);
 
-                //! Initialise the spatial entity values using the given spatialEntityTree
+                //! Initialise the spatial entity semantic type value using the given spatialEntityTree
+                /*!
+                 * If the value of the semantic type is not provided in the spatialEntityTree
+                 * the default value 0 is used instead.
+                 *
+                 * \param spatialEntityTree The spatial entity tree
+                 * \param spatialEntity     The spatial entity to be initialised
+                 */
+                void setSpatialEntitySemanticTypeValue(const pt::ptree &spatialEntityTree,
+                                                       const std::shared_ptr<SpatialEntity> &spatialEntity);
+
+                //! Initialise the spatial entity measure values using the given spatialEntityTree
                 /*!
                  * \param spatialEntityTree The spatial entity tree
                  * \param spatialEntity     The spatial entity to be initialised
                  */
-                void setSpatialEntityValues(const pt::ptree &spatialEntityTree,
-                                            const std::shared_ptr<SpatialEntity> &spatialEntity);
+                void setSpatialEntityMeasureValues(const pt::ptree &spatialEntityTree,
+                                                   const std::shared_ptr<SpatialEntity> &spatialEntity);
 
-                //! Get the first valid unprocessed input file
-                std::string getFirstValidUnprocessedInputFilepath();
+                //! Get an iterator pointing to a random valid unprocessed input file
+                std::set<std::string>::iterator getRandomValidUnprocessedInputFilepath();
 
-                //! Get a random valid unprocessed input file
-                std::string getRandomValidUnprocessedInputFilepath();
+                //! Get an iterator pointing to a random unprocessed input file
+                std::set<std::string>::iterator getRandomUnprocessedInputFile();
+
+                //! Process the valid input file to which the given iterator points
+                /*! The iterator corresponds to a position in the list of unprocessed input files
+                 *
+                 * \param validInputFileIterator    The iterator pointing to the valid input file path
+                 */
+                void processValidInputFile(const std::set<std::string>::iterator &validInputFileIterator);
 
                 //! Update the sets of processed and unprocessed files by checking if the folder contents have been updated
                 void updateInputFilesSets();
@@ -209,11 +235,13 @@ namespace multiscale {
                 static const std::string LABEL_TIMEPOINT_VALUE;
 
                 static const std::string LABEL_NUMERIC_STATE_VARIABLE;
+                static const std::string LABEL_NUMERIC_STATE_VARIABLE_SEMANTIC_TYPE;
                 static const std::string LABEL_NUMERIC_STATE_VARIABLE_NAME;
                 static const std::string LABEL_NUMERIC_STATE_VARIABLE_VALUE;
 
                 static const std::string LABEL_SPATIAL_ENTITY;
-                static const std::string LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE;
+                static const std::string LABEL_SPATIAL_ENTITY_SPATIAL_TYPE;
+                static const std::string LABEL_SPATIAL_ENTITY_SEMANTIC_TYPE;
 
                 static const std::string INPUT_FILES_EXTENSION;
                 static const std::string INPUT_FILES_SCHEMA_PATH;

@@ -22,7 +22,7 @@ namespace pt = boost::property_tree;
 void SpatialTemporalDataReader::createDerivedSpatialEntity(const pt::ptree &spatialEntityTree,
                                                            std::shared_ptr<SpatialEntity> &spatialEntity,
                                                            SubsetSpecificType &spatialEntityType) {
-    std::string spatialEntityTypeLabel = spatialEntityTree.get<std::string>(LABEL_SPATIAL_ENTITY_PSEUDO3D_TYPE);
+    std::string spatialEntityTypeLabel = spatialEntityTree.get<std::string>(LABEL_SPATIAL_ENTITY_SPATIAL_TYPE);
 
     if (spatialEntityTypeLabel.compare("cluster") == 0) {
         spatialEntity       = std::make_shared<Cluster>();
@@ -35,8 +35,8 @@ void SpatialTemporalDataReader::createDerivedSpatialEntity(const pt::ptree &spat
     }
 }
 
-void SpatialTemporalDataReader::setSpatialEntityValues(const pt::ptree &spatialEntityTree,
-                                                       const std::shared_ptr<SpatialEntity> &spatialEntity) {
+void SpatialTemporalDataReader::setSpatialEntityMeasureValues(const pt::ptree &spatialEntityTree,
+                                                              const std::shared_ptr<SpatialEntity> &spatialEntity) {
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Clusteredness,
                                           spatialEntityTree.get<double>("clusteredness"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Density,

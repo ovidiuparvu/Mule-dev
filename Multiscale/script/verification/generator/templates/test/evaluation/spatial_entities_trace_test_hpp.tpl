@@ -9,6 +9,10 @@
 
 #include "TraceEvaluationTest.hpp"
 
+/*{% for spatial_entity in spatial_entities %}*/
+#include "multiscale/verification/spatial-temporal/model//*{{ spatial_entity.name|first_to_upper }}*/.hpp"
+/*{% endfor %}*/
+ 
 using namespace multiscale;
 using namespace multiscaletest;
 
@@ -34,9 +38,6 @@ namespace multiscaletest {
         // Initialise private class fields
         nrOfTimePoints = 12;
         
-        bConstantValue = 3;
-        aMinValue = 1;
-        
         /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MinValue = 1;
         
         // Initialise timepoints
@@ -44,7 +45,7 @@ namespace multiscaletest {
 
         std::vector<TimePoint> timePoints;
 
-        // Add timepoints containing the numeric state variable "B" to the collection of timepoints
+        // Add timepoints to the trace
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             timePoints.push_back(TimePoint(i));
         }
@@ -646,16 +647,48 @@ TEST_F(SpatialEntitiesTraceTest, NumericSpatialMeasure) {
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(SpatialEntitiesTraceTest, NumericStateVariable1) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A} = 1]"));
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWithoutTypes) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A} <= {B}]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, NumericStateVariable2) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{a2#0f-} <= 3]"));
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableTypeLeft) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}]"));
 }
 
-TEST_F(SpatialEntitiesTraceTest, NumericStateVariable3) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{`1234567890-=~!@#$%^&*()_+qwertyuiop[]asdfghjkl;'\\<zxcvbnm,./QWERTYUIOPASDFGHJKL:\"|>ZXCVBNM<>?} <= 3]"));
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableTypeRight) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = 0)]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableBothTypes) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}(type = 0)]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 1)]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableOneNumericStateVariable) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{C}(type = 1) = 12]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongRhsType) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 0)]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongName) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{a2#0f-} <= {B}]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongLongName) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{`1234567890-=~!@#$%^&*()_+qwertyuiop[]asdfghjkl;'\\<zxcvbnm,./QWERTYUIOPASDFGHJKL:\"|>ZXCVBNM<>?} <= {B}]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongTypeLhs) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 1) <= {B}]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(type = 213121) <= {B}]"));
 }
 
 
@@ -1216,7 +1249,7 @@ TEST_F(SpatialEntitiesTraceTest, DecreasingUntilIncreasingValueReal) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, DecreasingUntilIncreasingValueNumericStateVariable) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(d({A}) < 0) U [0, 10] (d({A}) > 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(d({C}(type = 1)) < 0) U [0, 10] (d({C}(type = 1)) > 0)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, DecreasingUntilIncreasingValueUnaryNumeric) {

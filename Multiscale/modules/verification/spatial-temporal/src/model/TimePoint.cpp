@@ -17,32 +17,38 @@ TimePoint::TimePoint(unsigned long value) {
     this->consideredSpatialEntityTypes.reset();
 }
 
-TimePoint::TimePoint(const TimePoint &timePoint) : value(timePoint.value), spatialEntities(timePoint.spatialEntities),
-                                                   numericStateVariables(timePoint.numericStateVariables),
-                                                   consideredSpatialEntityTypes(timePoint.consideredSpatialEntityTypes) {}
+TimePoint::TimePoint(const TimePoint &timePoint)
+    : value(timePoint.value), spatialEntities(timePoint.spatialEntities),
+      numericStateVariables(timePoint.numericStateVariables),
+      consideredSpatialEntityTypes(timePoint.consideredSpatialEntityTypes) {}
 
 TimePoint::~TimePoint() {}
 
-unsigned long TimePoint::getValue() const {
+unsigned long
+TimePoint::getValue() const {
     return value;
 }
 
-void TimePoint::setValue(unsigned long value) {
+void
+TimePoint::setValue(unsigned long value) {
     this->value = value;
 }
 
-std::bitset<NR_SUBSET_SPECIFIC_TYPES> TimePoint::getConsideredSpatialEntityTypes() {
+std::bitset<NR_SUBSET_SPECIFIC_TYPES>
+TimePoint::getConsideredSpatialEntityTypes() {
     return consideredSpatialEntityTypes;
 }
 
-void TimePoint::setConsideredSpatialEntityType(const SubsetSpecificType &consideredSpatialEntityType) {
+void
+TimePoint::setConsideredSpatialEntityType(const SubsetSpecificType &consideredSpatialEntityType) {
     validateSubsetSpecificType(consideredSpatialEntityType);
 
     consideredSpatialEntityTypes.reset();
     consideredSpatialEntityTypes.set(computeSubsetSpecificTypeIndex(consideredSpatialEntityType));
 }
 
-double TimePoint::numberOfSpatialEntities() const {
+double
+TimePoint::numberOfSpatialEntities() const {
     double nrOfSpatialEntities = 0;
 
     for (size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
@@ -54,7 +60,8 @@ double TimePoint::numberOfSpatialEntities() const {
     return nrOfSpatialEntities;
 }
 
-double TimePoint::avgClusteredness() const {
+double
+TimePoint::avgClusteredness() const {
     std::vector<std::shared_ptr<SpatialEntity>> consideredSpatialEntities = getConsideredSpatialEntities();
 
     double avgDistanceBtwCentroids = avgDistanceBetweenCentroids(consideredSpatialEntities);
@@ -63,7 +70,8 @@ double TimePoint::avgClusteredness() const {
                                           : 1;
 }
 
-double TimePoint::avgDensity() const {
+double
+TimePoint::avgDensity() const {
     std::vector<std::shared_ptr<SpatialEntity>> consideredSpatialEntities = getConsideredSpatialEntities();
 
     double averageDensity  = avgDensity(consideredSpatialEntities);
@@ -73,8 +81,9 @@ double TimePoint::avgDensity() const {
                                   : averageDensity;
 }
 
-void TimePoint::addSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
-                                 const SubsetSpecificType &spatialEntityType) {
+void
+TimePoint::addSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                            const SubsetSpecificType &spatialEntityType) {
     validateSubsetSpecificType(spatialEntityType);
 
     std::size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
@@ -82,16 +91,18 @@ void TimePoint::addSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEn
     (spatialEntities[spatialEntityTypeIndex]).push_back(spatialEntity);
 }
 
-void TimePoint::addNumericStateVariable(const std::string &name, double value) {
-    numericStateVariables[name] = value;
+void
+TimePoint::addNumericStateVariable(const NumericStateVariableId &id, double value) {
+    numericStateVariables[id] = value;
 }
 
-bool TimePoint::existsNumericStateVariable(const std::string &name) {
-    return (numericStateVariables.find(name) != numericStateVariables.end());
+bool
+TimePoint::existsNumericStateVariable(const NumericStateVariableId &id) {
+    return (numericStateVariables.find(id) != numericStateVariables.end());
 }
 
-std::list<std::shared_ptr<SpatialEntity>>::iterator TimePoint::getSpatialEntitiesBeginIterator(
-                                                        const SubsetSpecificType &spatialEntityType) {
+std::list<std::shared_ptr<SpatialEntity>>::iterator
+TimePoint::getSpatialEntitiesBeginIterator(const SubsetSpecificType &spatialEntityType) {
     validateSubsetSpecificType(spatialEntityType);
 
     size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
@@ -103,8 +114,8 @@ std::list<std::shared_ptr<SpatialEntity>>::iterator TimePoint::getSpatialEntitie
     }
 }
 
-std::list<std::shared_ptr<SpatialEntity>>::const_iterator TimePoint::getSpatialEntitiesBeginIterator(
-                                                              const SubsetSpecificType &spatialEntityType) const {
+std::list<std::shared_ptr<SpatialEntity>>::const_iterator
+TimePoint::getSpatialEntitiesBeginIterator(const SubsetSpecificType &spatialEntityType) const {
     validateSubsetSpecificType(spatialEntityType);
 
     size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
@@ -116,8 +127,8 @@ std::list<std::shared_ptr<SpatialEntity>>::const_iterator TimePoint::getSpatialE
     }
 }
 
-std::list<std::shared_ptr<SpatialEntity>>::iterator TimePoint::getSpatialEntitiesEndIterator(
-                                                        const SubsetSpecificType &spatialEntityType) {
+std::list<std::shared_ptr<SpatialEntity>>::iterator
+TimePoint::getSpatialEntitiesEndIterator(const SubsetSpecificType &spatialEntityType) {
     validateSubsetSpecificType(spatialEntityType);
 
     size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
@@ -125,8 +136,8 @@ std::list<std::shared_ptr<SpatialEntity>>::iterator TimePoint::getSpatialEntitie
     return (spatialEntities[spatialEntityTypeIndex]).end();
 }
 
-std::list<std::shared_ptr<SpatialEntity>>::const_iterator TimePoint::getSpatialEntitiesEndIterator(
-                                                             const SubsetSpecificType &spatialEntityType) const {
+std::list<std::shared_ptr<SpatialEntity>>::const_iterator
+TimePoint::getSpatialEntitiesEndIterator(const SubsetSpecificType &spatialEntityType) const {
     validateSubsetSpecificType(spatialEntityType);
 
     size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
@@ -134,7 +145,8 @@ std::list<std::shared_ptr<SpatialEntity>>::const_iterator TimePoint::getSpatialE
     return (spatialEntities[spatialEntityTypeIndex]).end();
 }
 
-std::vector<std::shared_ptr<SpatialEntity>> TimePoint::getConsideredSpatialEntities() const {
+std::vector<std::shared_ptr<SpatialEntity>>
+TimePoint::getConsideredSpatialEntities() const {
     std::vector<std::shared_ptr<SpatialEntity>> consideredSpatialEntities;
 
     for (size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
@@ -147,26 +159,30 @@ std::vector<std::shared_ptr<SpatialEntity>> TimePoint::getConsideredSpatialEntit
     return consideredSpatialEntities;
 }
 
-double TimePoint::getNumericStateVariable(const std::string &name) const {
-    auto it = numericStateVariables.find(name);
+double
+TimePoint::getNumericStateVariable(const NumericStateVariableId &id) const {
+    auto it = numericStateVariables.find(id);
 
     if (it == numericStateVariables.end()) {
         MS_throw_detailed(SpatialTemporalException, ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX,
-                          name, ERR_GET_NUMERIC_STATE_VARIABLE_SUFFIX);
+                          id.toString(), ERR_GET_NUMERIC_STATE_VARIABLE_SUFFIX);
     }
 
     return it->second;
 }
 
-void TimePoint::timePointDifference(const TimePoint &timePoint) {
+void
+TimePoint::timePointDifference(const TimePoint &timePoint) {
     timePointSetOperation(timePoint, SubsetOperationType::Difference);
 }
 
-void TimePoint::timePointIntersection(const TimePoint &timePoint) {
+void
+TimePoint::timePointIntersection(const TimePoint &timePoint) {
     timePointSetOperation(timePoint, SubsetOperationType::Intersection);
 }
 
-void TimePoint::timePointUnion(const TimePoint &timePoint) {
+void
+TimePoint::timePointUnion(const TimePoint &timePoint) {
     timePointSetOperation(timePoint, SubsetOperationType::Union);
 }
 
@@ -178,12 +194,14 @@ TimePoint::removeSpatialEntity(std::list<std::shared_ptr<SpatialEntity>>::iterat
     return spatialEntities[computeSubsetSpecificTypeIndex(spatialEntityType)].erase(position);
 }
 
-void TimePoint::timePointSetOperation(const TimePoint &timePoint, const SubsetOperationType &setOperationType) {
+void
+TimePoint::timePointSetOperation(const TimePoint &timePoint, const SubsetOperationType &setOperationType) {
     updateSpatialEntities(timePoint, setOperationType);
     updateConsideredSpatialEntityTypes(timePoint.consideredSpatialEntityTypes, setOperationType);
 }
 
-void TimePoint::updateSpatialEntities(const TimePoint &timePoint, const SubsetOperationType &setOperationType) {
+void
+TimePoint::updateSpatialEntities(const TimePoint &timePoint, const SubsetOperationType &setOperationType) {
     for (std::size_t i = 0; i < NR_SUBSET_SPECIFIC_TYPES; i++) {
         SubsetSpecificType subsetSpecificType = computeSubsetSpecificType(i);
 
@@ -225,8 +243,10 @@ TimePoint::spatialEntitiesSetOperation(const TimePoint &timePoint, const SubsetO
     return newSpatialEntities;
 }
 
-void TimePoint::updateConsideredSpatialEntityTypes(const std::bitset<NR_SUBSET_SPECIFIC_TYPES> &consideredSpatialEntityTypes,
-                                                   const SubsetOperationType &setOperationType) {
+void
+TimePoint::updateConsideredSpatialEntityTypes(const std::bitset<NR_SUBSET_SPECIFIC_TYPES>
+                                              &consideredSpatialEntityTypes,
+                                              const SubsetOperationType &setOperationType) {
     switch(setOperationType) {
         case SubsetOperationType::Difference:
             // No changes required
@@ -244,5 +264,5 @@ void TimePoint::updateConsideredSpatialEntityTypes(const std::bitset<NR_SUBSET_S
 
 
 // Constants
-const std::string TimePoint::ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX      = "The numeric state variable identified by the given name (";
-const std::string TimePoint::ERR_GET_NUMERIC_STATE_VARIABLE_SUFFIX      = ") does not exist.";
+const std::string TimePoint::ERR_GET_NUMERIC_STATE_VARIABLE_PREFIX  = "The numeric state variable with the given id ";
+const std::string TimePoint::ERR_GET_NUMERIC_STATE_VARIABLE_SUFFIX  = " does not exist.";

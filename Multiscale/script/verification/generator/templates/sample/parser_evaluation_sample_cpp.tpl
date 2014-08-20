@@ -1,17 +1,15 @@
 /******************************************************************************
- *
- * WARNING! AUTO-GENERATED FILE.
- *
- * PLEASE DO NOT UPDATE THIS FILE MANUALLY. 
- * USE THE PYTHON GENERATOR SCRIPTS FOR ANY MODIFICATIONS.
- *
+/*{% for line in auto_generated_warning %}*/
+ /*{{ line }}*/
+/*{% endfor %}*/
  *****************************************************************************/
 
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
-#include "multiscale/verification/spatial-temporal/model/Region.hpp"
+/*{% for spatial_entity in spatial_entities %}*/
+#include "multiscale/verification/spatial-temporal/model//*{{ spatial_entity.name|first_to_upper }}*/.hpp"
+/*{% endfor %}*/
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <iostream>
@@ -33,8 +31,8 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
 
     double bConstantValue = 3;
 
-    double clustersClusterednessMinValue = 1;
-    double clustersClusterednessMaxValue = -1;
+    double /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MinValue = 1;
+    double /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MaxValue = -1;
 
     // Initialise timepoints
     trace.clear();
@@ -64,47 +62,35 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
     // Add spatial entities to each timepoint
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
 
-        // Add clusters to the timepoint
+        // Add /*{{ spatial_entities[0].name }}*/s to the timepoint
         for (std::size_t j = ((((i + 1) % 4) == 0) ? (i - 1) : 0); j <= i; j++) {
-            std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
+            std::shared_ptr<SpatialEntity> /*{{ spatial_entities[0].name }}*/ = std::make_shared</*{{ spatial_entities[0].name|first_to_upper }}*/>();
 
-            clustersClusterednessMaxValue = std::max(clustersClusterednessMaxValue, static_cast<double>((j * 2.4) + clustersClusterednessMinValue));
+            /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MaxValue = std::max(/*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MaxValue, static_cast<double>((j * 2.4) + /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MinValue));
 
-            cluster->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>((j * 2.4) + clustersClusterednessMinValue));
-            cluster->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(1E+37 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>(1E+37 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::Perimeter, static_cast<double>(1E+37 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin, static_cast<double>(1E+37 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::Angle, static_cast<double>(360 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure, static_cast<double>(1 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure, static_cast<double>(1 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 2);
-            cluster->setSemanticType(0);
+            /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measures[0].name|first_to_upper }}*/, static_cast<double>((j * 2.4) + /*{{ spatial_entities[0].name }}*/s/*{{ spatial_measures[0].name|first_to_upper }}*/MinValue));
+        /*{% for spatial_measure in spatial_measures[1:] %}*/
+            /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 2);
+        /*{% endfor %}*/
+            /*{{ spatial_entities[0].name }}*/->setSemanticType(0);
 
-            timePoints[i].addSpatialEntity(cluster, SubsetSpecificType::Clusters);
+            timePoints[i].addSpatialEntity(/*{{ spatial_entities[0].name }}*/, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
         }
 
-        // Add regions to the timepoint
+    /*{% for spatial_entity in spatial_entities[1:] %}*/
+        // Add /*{{ spatial_entity.name }}*/s to the timepoint
         for (std::size_t k = 0; k <= i; k++) {
-                std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
+                std::shared_ptr<SpatialEntity> /*{{ spatial_entity.name }}*/ = std::make_shared</*{{ spatial_entity.name|first_to_upper }}*/>();
 
-                region->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>((k * 0.3) + 0.7));
-                region->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(1E+37 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>(1E+37 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::Perimeter, static_cast<double>(1E+37 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin, static_cast<double>(1E+37 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::Angle, static_cast<double>(360 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure, static_cast<double>(1 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::RectangleMeasure, static_cast<double>(1 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 3);
-                region->setSemanticType(0);
+                /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measures[0].name|first_to_upper }}*/, static_cast<double>((k * 0.3) + 0.7));
+            /*{% for spatial_measure in spatial_measures[1:] %}*/
+                /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
+            /*{% endfor %}*/
+                /*{{ spatial_entity.name }}*/->setSemanticType(0);
 
-                timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
+                timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
+    /*{% endfor %}*/
     }
 
     // Add all timepoints to the trace

@@ -1301,16 +1301,100 @@ TEST(NumericStateVariable, IncorrectRoundBrackets) {
     EXPECT_THROW(parseInputString("P >= 0.3 [(A) <= 3]"), InvalidInputException);
 }
 
-TEST(NumericStateVariable, Correct1) {
+TEST(NumericStateVariable, MissingLeftParanthesisForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}type = 1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, MissingRightParanthesisForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(type = 1 <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, MissingBothParanthesesForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}type = 1 <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, MissingTypeKeywordForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}( = 1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, MissingEqualComparatorForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(type 1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, MissingTypeValueForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(type = ) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, MissingTypeKeywordAndEqualComparatorForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, MissingAllForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}() <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, IncorrectLeftParanthesisForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}[type = 1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, IncorrectRightParanthesisForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(type = 1] <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, IncorrectParanthesesForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}{type = 1} <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, IncorrectTypeSpecifierForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(typee = 1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, IncorrectTypeSpecifierForTypeConstraint2) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(ttype = 1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, IncorrectComparatorForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(type > 1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, IncorrectTypeValueRealForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(type = 1.2) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, IncorrectTypeValueNegativeForTypeConstraint) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A}(type = -1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, MissingNumericStateVariableName) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{}(type = 1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, MissingNumericStateVariableNameAndBraces) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [(type = 1) <= 3]"), InvalidInputException);
+}
+
+TEST(NumericStateVariable, CorrectNumericStateVariableSimple1) {
     EXPECT_TRUE(parseInputString("P >= 0.3 [{A} <= 3]"));
 }
 
-TEST(NumericStateVariable, Correct2) {
+TEST(NumericStateVariable, CorrectNumericStateVariableSimple2) {
     EXPECT_TRUE(parseInputString("P >= 0.3 [{a2#0f-} <= 3]"));
 }
 
-TEST(NumericStateVariable, Correct3) {
+TEST(NumericStateVariable, CorrectNumericStateVariableSimple3) {
     EXPECT_TRUE(parseInputString("P >= 0.3 [{`1234567890-=~!@#$%^&*()_+qwertyuiop[]asdfghjkl;'\\<zxcvbnm,./QWERTYUIOPASDFGHJKL:\"|>ZXCVBNM<>?} <= 3]"));
+}
+
+TEST(NumericStateVariable, CorrectNumericStateVariableWithTypeConstraint4) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [{A}(type = 2) <= 3]"));
+}
+
+TEST(NumericStateVariable, CorrectNumericStateVariableWithTypeConstraint5) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [{A}  (type = 2) <= 3]"));
+}
+
+TEST(NumericStateVariable, CorrectNumericStateVariableWithTypeConstraint6) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [{A}(type   =   2) <= 3]"));
 }
 
 
