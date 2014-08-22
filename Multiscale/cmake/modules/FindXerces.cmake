@@ -12,8 +12,6 @@ IF (XERCESC_INCLUDE AND XERCESC_LIBRARY)
   SET(XERCESC_FIND_QUIETLY TRUE)
 ENDIF (XERCESC_INCLUDE AND XERCESC_LIBRARY)
 
-
-
 IF (NOT  ${XERCESC_WAS_STATIC} STREQUAL ${XERCESC_STATIC})
   UNSET(XERCESC_LIBRARY CACHE)
   UNSET(XERCESC_LIBRARY_DEBUG CACHE)
@@ -70,9 +68,6 @@ ENDIF (DEFINED MSVC_VERSION)
 SET (XERCESC_POSSIBLE_ROOT_DIRS
   "$ENV{XERCESC_INCLUDE_DIR}/.."
   "${XERCESC_INCLUDE_DIR}/.."
-  "$ENV{ProgramFiles}/CodeSynthesis XSD 3.3"
-  "$ENV{ProgramFiles(x86)}/CodeSynthesis XSD 3.3"
-  "$ENV{ProgramW6432}/CodeSynthesis XSD 3.3"
   /usr/local
   /usr
  "$ENV{PATH}"
@@ -90,9 +85,6 @@ FIND_PATH(XERCESC_INCLUDE NAMES xercesc/util/XercesVersion.hpp
   PATHS
   "$ENV{XERCESC_INCLUDE_DIR}"
   "${XERCESC_INCLUDE_DIR}"
-  "$ENV{ProgramFiles}/CodeSynthesis XSD 3.3/include"
-  "$ENV{ProgramFiles(x86)}/CodeSynthesis XSD 3.3/include"
-  "$ENV{ProgramW6432}/CodeSynthesis XSD 3.3/include"
   /usr/local/include
   /usr/include
   "${XERCESC_ROOT_DIR}/include"
@@ -108,9 +100,6 @@ IF (BUILD_SHARED_LIBS)
    $ENV{XERCESC_LIBRARY_DIR}
    "${XERCESC_LIBRARY_DIR}"
    "${XERCESC_INCLUDE_DIR}/../lib"
-  "$ENV{ProgramFiles}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
-  "$ENV{ProgramFiles(x86)}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
-  "$ENV{ProgramW6432}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
    /usr/lib
    /usr/local/lib
     "${XERCESC_ROOT_DIR}"
@@ -125,9 +114,6 @@ IF (BUILD_SHARED_LIBS)
    $ENV{XERCESC_LIBRARY_DIR}
    "${XERCESC_LIBRARY_DIR}"
    "${XERCESC_INCLUDE_DIR}/../lib"
-  "$ENV{ProgramFiles}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
-  "$ENV{ProgramFiles(x86)}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
-  "$ENV{ProgramW6432}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
    /usr/lib
    /usr/local/lib
     "${XERCESC_ROOT_DIR}"
@@ -145,9 +131,6 @@ ELSE (BUILD_SHARED_LIBS)
    $ENV{XERCESC_LIBRARY_DIR}
    "${XERCESC_INCLUDE_DIR}/../lib"
    "${XERCESC_LIBRARY_DIR}"
-   "$ENV{ProgramFiles}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
-   "$ENV{ProgramFiles(x86)}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
-   "$ENV{ProgramW6432}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
    /usr/lib
    /usr/local/lib
    "${XERCESC_ROOT_DIR}"
@@ -162,9 +145,6 @@ ELSE (BUILD_SHARED_LIBS)
    $ENV{XERCESC_LIBRARY_DIR}
    "${XERCESC_LIBRARY_DIR}"
    "${XERCESC_INCLUDE_DIR}/../lib"
-  "$ENV{ProgramFiles}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
-  "$ENV{ProgramFiles(x86)}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
-  "$ENV{ProgramW6432}/CodeSynthesis XSD 3.3/${XERCES_LIBPATH_POSTFIX}"
    /usr/lib
    /usr/local/lib
     "${XERCESC_ROOT_DIR}"
