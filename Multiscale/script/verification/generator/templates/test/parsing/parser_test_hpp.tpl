@@ -466,6 +466,91 @@ TEST(ChangeMeasure, CorrectRatio) {
 /////////////////////////////////////////////////////////
 //
 //
+// ChangeTemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(ChangeTemporalNumericCollection, IncorrectChangeMeasureDf) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(df([0, 10] {A})) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectChangeMeasureDiff) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(diff([0, 10] {A})) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectChangeMeasureRatio) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(ratio([0, 10] {A})) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectInputBeforeChangeMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(-d([0, 10] {A})) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectInputBeforeStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d[([0, 10] {A})) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectInputAfterStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d(([0, 10] {A})) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, MissingParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d()) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectInputMissingParameterAndBrackets) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectOpeningBracket) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d[[0, 10] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectClosingBracket) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d([0, 10] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))]) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectBrackets) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d{[0, 10] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))}) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectBracketsInverted) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d)[0, 10] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))() >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectBracketsDoubled) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d(([0, 10] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))))) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectInputBeforeEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d([0, 10] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) + 2)) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectInputAfterEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d([0, 10] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) - 1) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectTemporalNumericCollectionRealNumber) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d(3.01)) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectTemporalNumericCollectionNumericStateVariable) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d({A})) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, IncorrectTemporalNumericCollectionNumericSpatialMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d(count(clusteredness(clusters)))) >= 4]"), InvalidInputException);
+}
+
+TEST(ChangeTemporalNumericCollection, Correct) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(d([0, 10] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) >= 4]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // ChangeTemporalNumericMeasure
 //
 //
@@ -1010,6 +1095,162 @@ TEST(GlobalLogicProperty, Correct) {
 /////////////////////////////////////////////////////////
 //
 //
+// HeterogeneousTimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(HeterogeneousTimeseriesComponent, WrongAlternativeSpike) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(spike, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HeterogeneousTimeseriesComponent, WrongAlternativeSink) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(sink, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HeterogeneousTimeseriesComponent, WrongAlternativeTrough) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(trough, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HeterogeneousTimeseriesComponent, CorrectPeak) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+TEST(HeterogeneousTimeseriesComponent, CorrectValley) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(valley, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousHomogeneousTimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputBeforeHomogeneousTimeseriesMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(+value(ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputWrongHomogeneousTimeseriesMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(cvalue(ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputBeforeStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value of(ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputAfterStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value((ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputInvalidFirstParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(valley, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputMissingFirstParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputMissingCommaBetweenParameters) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputMissingSecondParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent)) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputInvalidSecondParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputBeforeEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), {A})) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputAfterEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))), 2) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputMissingParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputInvertedParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value)ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))() > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputDoubledParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value((ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputWrongParanthesesType) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value{ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))}) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousHomogeneousTimeseriesMeasure, Correct) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousTimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(HomogeneousTimeseriesComponent, IncorrectAlternativeHeterogeneousTimeseriesComponent) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousTimeseriesComponent, CorrectAscent) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+TEST(HomogeneousTimeseriesComponent, CorrectDescent) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(descent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+TEST(HomogeneousTimeseriesComponent, CorrectPlateu) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+TEST(HomogeneousTimeseriesComponent, CorrectUniformAscent) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniform-ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+TEST(HomogeneousTimeseriesComponent, CorrectUniformDescent) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniform-descent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousTimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(HomogeneousTimeseriesMeasure, IncorrectAlternativeTimeseriesMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(HomogeneousTimeseriesMeasure, CorrectDuration) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(duration(uniform-ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+TEST(HomogeneousTimeseriesMeasure, CorrectValue) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniform-descent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // LogicPropertyParentheses
 //
 //
@@ -1515,11 +1756,112 @@ TEST(ProbabilisticLogicProperty, ProbabilityHigh) {
 /////////////////////////////////////////////////////////
 //
 //
-// SpatialMeasure
+// SimilarityMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
+TEST(SimilarityMeasure, IncorrectSimilarityMeasure) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [approximately-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityMeasure, CorrectAntiSimilar) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"));
+}
+
+TEST(SimilarityMeasure, CorrectSimilar) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// SimilarityTemporalNumericCollectionAttribute
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBeforeStartParanthesis) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar(([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputAfterStartParanthesis) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar( _ [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectFirstParameterType) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar({A}, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, MissingFirstParameter) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectSecondParameterType) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), {A}, 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, MissingSecondParameter) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, MissingSecondParameterExcludingComma) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), , 2)]"), InvalidInputException);
+}
+ 
+TEST(SimilarityTemporalNumericCollectionAttribute, MissingFirstAndSecondParameter) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar(2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputInvalidThirdParameterType) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), {B})]"), InvalidInputException);
+}
+ 
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBeforeEndParanthesis) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2 + 1)]"), InvalidInputException);
+}
+ 
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputAfterEndParanthesis) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2) V True]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputExtraParameter) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2, 4)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBetweenFirstAndSecondParameters) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 4, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBetweenSecondAndThirdParameters) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, MissingParameters) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar()]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, MissingParametersAndParantheses) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, MissingSimilarityMeasure) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+}
+
+TEST(SimilarityTemporalNumericCollectionAttribute, Correct) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// SpatialMeasure
+//
+//
+/////////////////////////////////////////////////////////
 
 TEST(SpatialMeasure, IncorrectSpatialMeasure) {
     EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, height__ <= 30.2))) <= 3]"), InvalidInputException);
@@ -1702,6 +2044,23 @@ TEST(SubsetSubsetOperation, Correct) {
 /////////////////////////////////////////////////////////
 //
 //
+// TemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(TemporalNumericCollection, IncorrectInputWrongAlternative) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max({A}) > 2]"), InvalidInputException);
+}
+
+TEST(TemporalNumericCollection, Correct) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 2]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // TemporalNumericComparison
 //
 //
@@ -1831,6 +2190,173 @@ TEST(TemporalNumericMeasureCollection, IncorrectInputAfterNumericMeasure) {
 
 TEST(TemporalNumericMeasureCollection, Correct) {
     EXPECT_TRUE(parseInputString("P >= 0.3 [min([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(TimeseriesMeasure, IncorrectInputWrongAlternative) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [min(value(peak, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 1]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasure, CorrectEnteringTime) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [min(enteringTime(peak, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 1]"));
+}
+
+TEST(TimeseriesMeasure, CorrectEnteringValue) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [min(enteringValue(peak, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 1]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasureHeterogeneous
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputBeforeTimeseriesMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(+enteringValue(peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputWrongTimeseriesMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(wenteringValue(peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputBeforeStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue () (peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputAfterStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(()peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputInvalidFirstParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputMissingFirstParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputMissingCommaBetweenParameters) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputMissingSecondParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak)) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputInvalidSecondParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputBeforeEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) < 2)) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputAfterEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) [0, 3]) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputMissingParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputInvertedParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue)peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))() > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputDoubledParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, IncorrectInputWrongParanthesesType) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue{peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))}) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHeterogeneous, Correct) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasureHomogeneous
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputBeforeTimeseriesMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(+enteringValue(plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputWrongTimeseriesMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(wenteringValue(plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputBeforeStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue () (plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputAfterStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(()plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputInvalidFirstParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valley, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputMissingFirstParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputMissingCommaBetweenParameters) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputMissingSecondParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu)) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputInvalidSecondParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputBeforeEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) < 2)) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputAfterEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) [0, 3]) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputMissingParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputInvertedParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue)plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))() > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputDoubledParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, IncorrectInputWrongParanthesesType) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue{plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))}) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesMeasureHomogeneous, Correct) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
 
