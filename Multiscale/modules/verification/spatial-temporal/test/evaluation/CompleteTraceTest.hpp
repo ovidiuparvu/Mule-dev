@@ -320,6 +320,19 @@ TEST_F(CompleteTraceTest, ChangeMeasureRatio) {
 /////////////////////////////////////////////////////////
 //
 //
+// ChangeTemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, ChangeTemporalNumericCollection) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(d([0, 11] {C}(type = 1))) = -9]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // ChangeTemporalNumericMeasure
 //
 //
@@ -488,6 +501,82 @@ TEST_F(CompleteTraceTest, FutureLogicProperty) {
 
 TEST_F(CompleteTraceTest, GlobalLogicProperty) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [2, 3] (count(clusteredness(clusters)) >= ceil(div({A}, 2)))]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HeterogeneousTimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, HeterogeneousTimeseriesComponentPeak) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(peak, [0, 11] {A})) = 4]"));
+}
+
+TEST_F(CompleteTraceTest, HeterogeneousTimeseriesComponentValley) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] count(clusteredness(clusters)))) = 2]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousHomogeneousTimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, HomogeneousHomogeneousTimeseriesMeasure) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(duration(plateau, [0, 11] {B})) = 12]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousTimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentAscent) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(value(ascent, [0, 11] count(clusteredness(clusters)))) = 1]"));
+}
+
+TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentDescent) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(value(descent, [0, 11] {C}(type = 1))) = 7.5]"));
+}
+
+TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentPlateu) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(value(plateau, [0, 11] {B})) = 2.999]"));
+}
+
+TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(value(uniform-ascent, [0, 11] count(clusteredness(clusters)))) = 11]"));
+}
+
+TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(value(uniform-descent, [0, 11] {C}(type = 1))) = 6.6]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousTimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, HomogeneousTimeseriesMeasureDuration) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(duration(ascent, [0, 11] count(clusteredness(clusters)))) = 3]"));
+}
+
+TEST_F(CompleteTraceTest, HomogeneousTimeseriesMeasureValue) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(value(descent, [0, 11] count(clusteredness(clusters)))) = 4.51]"));
 }
 
 
@@ -770,6 +859,36 @@ TEST_F(CompleteTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
+// SimilarityMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, SimilarityMeasureAntiSimilar) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [anti-similar(d([0, 11] {A}), d([0, 11] {C}), 0)]"));
+}
+
+TEST_F(CompleteTraceTest, SimilarityMeasureSimilar) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [similar(r([0, 11] count(clusteredness(clusters))), r([0, 11] multiply(count(clusteredness(clusters)), 2)), 0)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// SimilarityTemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, SimilarityTemporalNumericCollection) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [similar([0, 11] {B}, [0, 5] 3, 0)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SpatialMeasure
 //
 //
@@ -912,6 +1031,19 @@ TEST_F(CompleteTraceTest, SubsetSubsetOperation) {
 /////////////////////////////////////////////////////////
 //
 //
+// TemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, TemporalNumericCollection) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 11] min(clusteredness(clusters))) = 1]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // TemporalNumericComparison
 //
 //
@@ -945,6 +1077,49 @@ TEST_F(CompleteTraceTest, TemporalNumericMeasure) {
 
 TEST_F(CompleteTraceTest, TemporalNumericMeasureCollection) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 11] count(clusteredness(clusters))) = 11]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringTime) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(enteringTime(descent, [0, 11] count(clusteredness(clusters)))) < 10]"));
+}
+
+TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringValue) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniform-descent, [0, 11] {C})) = 3]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasureHeterogeneous
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, TimeseriesMeasureHeterogeneous) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(enteringTime(peak, [0, 11] count(clusteredness(clusters)))) = 6]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasureHomogeneous
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, TimeseriesMeasureHomogeneous) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniform-ascent, [0, 11] count(clusteredness(clusters)))) > 5]"));
 }
 
 

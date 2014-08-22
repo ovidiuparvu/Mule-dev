@@ -210,6 +210,19 @@ TEST_F(EmptyTraceTest, ChangeMeasureRatio) {
 /////////////////////////////////////////////////////////
 //
 //
+// ChangeTemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, ChangeTemporalNumericCollection) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(d([0, 11] {C}(type = 1))) = -9]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // ChangeTemporalNumericMeasure
 //
 //
@@ -382,6 +395,82 @@ TEST_F(EmptyTraceTest, FutureLogicProperty) {
 
 TEST_F(EmptyTraceTest, GlobalLogicProperty) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [G [2, 3] ({A} >= 4)]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HeterogeneousTimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, HeterogeneousTimeseriesComponentPeak) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(enteringValue(peak, [0, 11] {A})) = 4]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, HeterogeneousTimeseriesComponentValley) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/)))) = 2]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousHomogeneousTimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, HomogeneousHomogeneousTimeseriesMeasure) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(duration(plateau, [0, 11] {B})) = 12]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousTimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentAscent) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(value(ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 1]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentDescent) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(value(descent, [0, 11] {C}(type = 1))) = 7.5]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentPlateu) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(value(plateau, [0, 11] {B})) = 2.999]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(value(uniform-ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 11]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(value(uniform-descent, [0, 11] {C}(type = 1))) = 6.6]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousTimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, HomogeneousTimeseriesMeasureDuration) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(duration(ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 3]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, HomogeneousTimeseriesMeasureValue) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(value(descent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 4.51]"), SpatialTemporalException);
 }
 
 
@@ -665,6 +754,36 @@ TEST_F(EmptyTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
+// SimilarityMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, SimilarityMeasureAntiSimilar) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [anti-similar(d([0, 11] {A}), d([0, 11] {C}), 0)]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, SimilarityMeasureSimilar) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [similar(r([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))), r([0, 11] multiply(count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)), 0)]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// SimilarityTemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, SimilarityTemporalNumericCollection) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [similar([0, 11] {B}, [0, 5] 3, 0)]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SpatialMeasure
 //
 //
@@ -763,6 +882,19 @@ TEST_F(EmptyTraceTest, SubsetSubsetOperation) {
 /////////////////////////////////////////////////////////
 //
 //
+// TemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, TemporalNumericCollection) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max([0, 11] min(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // TemporalNumericComparison
 //
 //
@@ -796,6 +928,49 @@ TEST_F(EmptyTraceTest, TemporalNumericMeasure) {
 
 TEST_F(EmptyTraceTest, TemporalNumericMeasureCollection) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 11]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, TimeseriesMeasureEnteringTime) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(enteringTime(descent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) < 10]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, TimeseriesMeasureEnteringValue) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniform-descent, [0, 11] {C})) = 3]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasureHeterogeneous
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, TimeseriesMeasureHeterogeneous) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(enteringTime(peak, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 6]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasureHomogeneous
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, TimeseriesMeasureHomogeneous) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniform-ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 5]"), SpatialTemporalException);
 }
 
 

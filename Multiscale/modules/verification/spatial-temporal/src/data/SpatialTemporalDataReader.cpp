@@ -152,7 +152,7 @@ SpatialTemporalDataReader::addTimePointToTrace(const pt::ptree &timePointTree, S
 
 void
 SpatialTemporalDataReader::convertTimePointPropertyTreeToTrace(const pt::ptree &timePointTree,
-                                                                    TimePoint &timePoint) {
+                                                               TimePoint &timePoint) {
     setTimePointValue(timePointTree, timePoint);
     addEntitiesToTimePoint(timePointTree, timePoint);
 }

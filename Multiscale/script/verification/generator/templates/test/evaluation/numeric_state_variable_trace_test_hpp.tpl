@@ -265,6 +265,19 @@ TEST_F(NumericStateVariableTraceTest, ChangeMeasureRatio) {
 /////////////////////////////////////////////////////////
 //
 //
+// ChangeTemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, ChangeTemporalNumericCollection) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(r([0, 11] {A})) > 10]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // ChangeTemporalNumericMeasure
 //
 //
@@ -433,6 +446,82 @@ TEST_F(NumericStateVariableTraceTest, FutureLogicProperty) {
 
 TEST_F(NumericStateVariableTraceTest, GlobalLogicProperty) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [2, 3] ({A} >= 3)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HeterogeneousTimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeseriesComponentPeak) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(enteringValue(peak, [0, 11] {A})) > 8]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeseriesComponentValley) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] {C}(type = 1))) < 7.001 ^ avg(enteringValue(valley, [0, 11] {C}(type = 1))) > 6.99]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousHomogeneousTimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, HomogeneousHomogeneousTimeseriesMeasure) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(duration(plateau, [0, 11] {2})) = 12]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousTimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentAscent) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [median(value(ascent, [0, 11] {A})) = 6]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentDescent) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [mode(value(descent, [0, 11] {C}(type = 1))) = 12]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentPlateu) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(duration(plateau, [0, 11] {B})) = 12]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(duration(uniform-ascent, [0, 11] {A})) = 4]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(value(uniform-descent, [0, 11] {C}(type = 1))) = 7.5]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// HomogeneousTimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesMeasureDuration) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(duration(descent, [0, 11] {C}(type = 1))) = 4]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesMeasureValue) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(value(plateu, [0, 11] {A})) > 0]"));
 }
 
 
@@ -715,6 +804,36 @@ TEST_F(NumericStateVariableTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
+// SimilarityMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, SimilarityMeasureAntiSimilar) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [anti-similar(d([0, 11] {A}), d([0, 11] {C}), 0)]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, SimilarityMeasureSimilar) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [~similar(r([0, 11] {A}), r([0, 11] multiply({A}, 2)), 0)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// SimilarityTemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, SimilarityTemporalNumericCollection) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [similar([0, 11] {B}, [0, 5] 3.001, 0)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SpatialMeasure
 //
 //
@@ -832,6 +951,19 @@ TEST_F(NumericStateVariableTraceTest, SubsetSubsetOperation) {
 /////////////////////////////////////////////////////////
 //
 //
+// TemporalNumericCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, TemporalNumericCollection) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(enteringTime(ascent, [0, 11] {A})) = 8]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // TemporalNumericComparison
 //
 //
@@ -865,6 +997,49 @@ TEST_F(NumericStateVariableTraceTest, TemporalNumericMeasure) {
 
 TEST_F(NumericStateVariableTraceTest, TemporalNumericMeasureCollection) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasure
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureEnteringTime) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(enteringTime(descent, [0, 11] {A})) = 7]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureEnteringValue) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(enteringValue(uniform-descent, [0, 11] {C})) < 12]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasureHeterogeneous
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureHeterogeneous) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(enteringTime(peak, [0, 11] {A})) > 5]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// TimeseriesMeasureHomogeneous
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureHomogeneous) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(enteringValue(uniform-ascent, [0, 11] {A})) < 11]"));
 }
 
 
