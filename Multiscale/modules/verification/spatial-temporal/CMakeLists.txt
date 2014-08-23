@@ -135,7 +135,11 @@ set(MULTIDIMENSIONAL_MULTISCALE_MODEL_CHECKER_SRC
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
     
+    src/parsing/LogicPropertyGrammar.cpp
+    src/parsing/NumericMeasureCollectionGrammar.cpp
+    src/parsing/NumericStateVariableGrammar.cpp
     src/parsing/Parser.cpp
+    src/parsing/TemporalNumericMeasureGrammar.cpp
     
     src/Mule.cpp 
 )
@@ -188,7 +192,11 @@ set(MODEL_CHECKER_TEST_SRC
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
     
+    src/parsing/LogicPropertyGrammar.cpp
+    src/parsing/NumericMeasureCollectionGrammar.cpp
+    src/parsing/NumericStateVariableGrammar.cpp
     src/parsing/Parser.cpp
+    src/parsing/TemporalNumericMeasureGrammar.cpp
     
     test/checking/ModelCheckingTest.cpp
 )
@@ -227,7 +235,11 @@ set(PARSER_EVALUATION_TEST_SRC
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
     
+    src/parsing/LogicPropertyGrammar.cpp
+    src/parsing/NumericMeasureCollectionGrammar.cpp
+    src/parsing/NumericStateVariableGrammar.cpp
     src/parsing/Parser.cpp
+    src/parsing/TemporalNumericMeasureGrammar.cpp
     
     test/evaluation/ParserEvaluationTest.cpp
 )
@@ -266,7 +278,11 @@ set(PARSER_TEST_SRC
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
     
+    src/parsing/LogicPropertyGrammar.cpp
+    src/parsing/NumericMeasureCollectionGrammar.cpp
+    src/parsing/NumericStateVariableGrammar.cpp
     src/parsing/Parser.cpp
+    src/parsing/TemporalNumericMeasureGrammar.cpp
     
     test/parsing/ParserTest.cpp
 )
@@ -305,7 +321,11 @@ set(PARSER_SAMPLE_SRC
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
     
+    src/parsing/LogicPropertyGrammar.cpp
+    src/parsing/NumericMeasureCollectionGrammar.cpp
+    src/parsing/NumericStateVariableGrammar.cpp
     src/parsing/Parser.cpp
+    src/parsing/TemporalNumericMeasureGrammar.cpp
     
     sample/ParserSample.cpp 
 )
@@ -336,7 +356,11 @@ set(PARSER_EVALUATION_SAMPLE_SRC
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
     
+    src/parsing/LogicPropertyGrammar.cpp
+    src/parsing/NumericMeasureCollectionGrammar.cpp
+    src/parsing/NumericStateVariableGrammar.cpp
     src/parsing/Parser.cpp
+    src/parsing/TemporalNumericMeasureGrammar.cpp
     
     sample/ParserEvaluationSample.cpp 
 )
@@ -374,7 +398,11 @@ set(LOGIC_PROPERTY_DATA_READER_SAMPLE_SRC
     src/model/SpatialTemporalTrace.cpp
     src/model/TimePoint.cpp
     
+    src/parsing/LogicPropertyGrammar.cpp
+    src/parsing/NumericMeasureCollectionGrammar.cpp
+    src/parsing/NumericStateVariableGrammar.cpp
     src/parsing/Parser.cpp
+    src/parsing/TemporalNumericMeasureGrammar.cpp
     
     sample/LogicPropertyDataReaderSample.cpp
 )
