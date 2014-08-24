@@ -328,4 +328,4 @@ const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_SPATIAL_TYPE  
 const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_SEMANTIC_TYPE    = "<xmlattr>.semanticType";
 
 const std::string SpatialTemporalDataReader::INPUT_FILES_EXTENSION      = ".xml";
-const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "/usr/local/share/mule/config/verification/spatial-temporal/schema/MSTML_L1V1.xsd";
+const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/verification/spatial-temporal/schema/MSTML_L1V1.xsd";

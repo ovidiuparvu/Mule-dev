@@ -500,11 +500,11 @@ TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentPlateu) {
 }
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(duration(uniform-ascent, [0, 11] {A})) = 4]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(duration(uniformAscent, [0, 11] {A})) = 4]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(value(uniform-descent, [0, 11] {C}(type = 1))) = 7.5]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(value(uniformDescent, [0, 11] {C}(type = 1))) = 7.5]"));
 }
 
 
@@ -810,7 +810,7 @@ TEST_F(NumericStateVariableTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, SimilarityMeasureAntiSimilar) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [anti-similar(d([0, 11] {A}), d([0, 11] {C}), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [antiSimilar(d([0, 11] {A}), d([0, 11] {C}), 0)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, SimilarityMeasureSimilar) {
@@ -1013,7 +1013,7 @@ TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureEnteringTime) {
 }
 
 TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureEnteringValue) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(enteringValue(uniform-descent, [0, 11] {C})) < 12]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max(enteringValue(uniformDescent, [0, 11] {C})) < 12]"));
 }
 
 
@@ -1039,7 +1039,7 @@ TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureHeterogeneous) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, TimeseriesMeasureHomogeneous) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(enteringValue(uniform-ascent, [0, 11] {A})) < 11]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(enteringValue(uniformAscent, [0, 11] {A})) < 11]"));
 }
 
 

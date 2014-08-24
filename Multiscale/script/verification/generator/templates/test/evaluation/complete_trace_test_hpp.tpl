@@ -541,11 +541,11 @@ TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentPlateu) {
 }
 
 TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(value(uniform-ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 11]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(value(uniformAscent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 11]"));
 }
 
 TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(value(uniform-descent, [0, 11] {C}(type = 1))) = 6.6]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(value(uniformDescent, [0, 11] {C}(type = 1))) = 6.6]"));
 }
 
 
@@ -851,7 +851,7 @@ TEST_F(CompleteTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, SimilarityMeasureAntiSimilar) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [anti-similar(d([0, 11] {A}), d([0, 11] {C}), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [antiSimilar(d([0, 11] {A}), d([0, 11] {C}), 0)]"));
 }
 
 TEST_F(CompleteTraceTest, SimilarityMeasureSimilar) {
@@ -1053,7 +1053,7 @@ TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringTime) {
 }
 
 TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringValue) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniform-descent, [0, 11] {C})) = 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniformDescent, [0, 11] {C})) = 3]"));
 }
 
 
@@ -1079,7 +1079,7 @@ TEST_F(CompleteTraceTest, TimeseriesMeasureHeterogeneous) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, TimeseriesMeasureHomogeneous) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniform-ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 5]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniformAscent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 5]"));
 }
 
 

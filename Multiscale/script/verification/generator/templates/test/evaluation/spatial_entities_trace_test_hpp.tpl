@@ -506,11 +506,11 @@ TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesComponentPlateu) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(value(uniform-ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 11]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max(value(uniformAscent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 11]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(value(uniform-descent, [0, 11] avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(value(uniformDescent, [0, 11] avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
 
@@ -816,7 +816,7 @@ TEST_F(SpatialEntitiesTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, SimilarityMeasureAntiSimilar) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [anti-similar([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 11] subtract(0, count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [antiSimilar([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 11] subtract(0, count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))), 0)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, SimilarityMeasureSimilar) {
@@ -1019,7 +1019,7 @@ TEST_F(SpatialEntitiesTraceTest, TimeseriesMeasureEnteringTime) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, TimeseriesMeasureEnteringValue) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniform-descent, [0, 11] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniformDescent, [0, 11] max(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
 
@@ -1045,7 +1045,7 @@ TEST_F(SpatialEntitiesTraceTest, TimeseriesMeasureHeterogeneous) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, TimeseriesMeasureHomogeneous) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniform-ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) < 5]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniformAscent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) < 5]"));
 }
 
 

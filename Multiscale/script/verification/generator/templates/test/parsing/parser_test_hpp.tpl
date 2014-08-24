@@ -1219,11 +1219,11 @@ TEST(HomogeneousTimeseriesComponent, CorrectPlateu) {
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectUniformAscent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniform-ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniformAscent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectUniformDescent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniform-descent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniformDescent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
 
@@ -1240,11 +1240,11 @@ TEST(HomogeneousTimeseriesMeasure, IncorrectAlternativeTimeseriesMeasure) {
 }
 
 TEST(HomogeneousTimeseriesMeasure, CorrectDuration) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(duration(uniform-ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(duration(uniformAscent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesMeasure, CorrectValue) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniform-descent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniformDescent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
 
@@ -1766,7 +1766,7 @@ TEST(SimilarityMeasure, IncorrectSimilarityMeasure) {
 }
 
 TEST(SimilarityMeasure, CorrectAntiSimilar) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"));
 }
 
 TEST(SimilarityMeasure, CorrectSimilar) {
@@ -1783,67 +1783,67 @@ TEST(SimilarityMeasure, CorrectSimilar) {
 /////////////////////////////////////////////////////////
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBeforeStartParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar(([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar(([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputAfterStartParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar( _ [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar( _ [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectFirstParameterType) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar({A}, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar({A}, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingFirstParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectSecondParameterType) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), {A}, 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), {A}, 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingSecondParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingSecondParameterExcludingComma) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), , 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), , 2)]"), InvalidInputException);
 }
  
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingFirstAndSecondParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar(2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar(2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputInvalidThirdParameterType) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), {B})]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), {B})]"), InvalidInputException);
 }
  
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2 + 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2 + 1)]"), InvalidInputException);
 }
  
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2) V True]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2) V True]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputExtraParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2, 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2, 4)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBetweenFirstAndSecondParameters) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 4, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 4, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBetweenSecondAndThirdParameters) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingParameters) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar()]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar()]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingParametersAndParantheses) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [anti-similar]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingSimilarityMeasure) {
@@ -1851,7 +1851,7 @@ TEST(SimilarityTemporalNumericCollectionAttribute, MissingSimilarityMeasure) {
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, Correct) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [anti-similar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)]"));
 }
 
 
