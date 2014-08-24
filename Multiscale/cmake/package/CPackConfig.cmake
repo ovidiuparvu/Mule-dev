@@ -56,6 +56,10 @@ if(UNIX)
     
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
     set(CPACK_DEBIAN_PACKAGE_DEPENDS "${CPACK_DEBIAN_PACKAGE_DEPENDS} libxerces-c3.1")
+elseif(WIN32)
+    set(CPACK_NSIS_MODIFY_PATH ON)
+    
+    set(CPACK_NSIS_CONTACT "ovidiu.parvu@gmail.com")
 endif(UNIX)
  
  

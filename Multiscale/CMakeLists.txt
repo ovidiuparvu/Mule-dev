@@ -18,7 +18,7 @@
 #------------------------------------------------------------
 
 # Project name
-project(multiscale)
+project(mule)
 
 # Minimum version number
 cmake_minimum_required(VERSION 2.8)
@@ -55,8 +55,14 @@ set(MULE_MSTML_SCHEMA_PATH "${MULE_MSTML_SCHEMA_FOLDER_PATH}/MSTML_L1V1.xsd")
 #------------------------------------------------------------
 
 if(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")
-    set(PACKAGE_CONFIG_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}/share")
+    # Define relative installation paths
+    if(UNIX)
+        set(PACKAGE_CONFIG_INSTALL_PREFIX "share/${PROJECT_NAME}")
+    elseif(WIN32)
+        set(PACKAGE_CONFIG_INSTALL_PREFIX ".")
+    endif(UNIX)
     
+    # Define files to be installed
     install(
         FILES "${PROJECT_SOURCE_DIR}/${POLAR_GNUPLOT_SCRIPT_HEADER_PATH}"
               "${PROJECT_SOURCE_DIR}/${POLAR_GNUPLOT_SCRIPT_CONTENT_PATH}"
@@ -90,6 +96,10 @@ endif(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")
 #------------------------------------------------------------
 
 if(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")
+    # Define absolute installation paths
+    set(PACKAGE_CONFIG_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}/${PACKAGE_CONFIG_INSTALL_PREFIX}")
+    
+    # Update configuration files absolute paths
     set(POLAR_GNUPLOT_SCRIPT_HEADER_PATH "${PACKAGE_CONFIG_INSTALL_PREFIX}/${POLAR_GNUPLOT_SCRIPT_HEADER_PATH}")
     set(POLAR_GNUPLOT_SCRIPT_CONTENT_PATH "${PACKAGE_CONFIG_INSTALL_PREFIX}/${POLAR_GNUPLOT_SCRIPT_CONTENT_PATH}")
     set(POLAR_GNUPLOT_SCRIPT_FOOTER_PATH "${PACKAGE_CONFIG_INSTALL_PREFIX}/${POLAR_GNUPLOT_SCRIPT_FOOTER_PATH}")
