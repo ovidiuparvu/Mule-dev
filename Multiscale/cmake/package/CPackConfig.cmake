@@ -57,9 +57,18 @@ if(UNIX)
     set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
     set(CPACK_DEBIAN_PACKAGE_DEPENDS "${CPACK_DEBIAN_PACKAGE_DEPENDS} libxerces-c3.1")
 elseif(WIN32)
+    set(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL ON)
+    
     set(CPACK_NSIS_MODIFY_PATH ON)
     
+    set(CPACK_NSIS_DISPLAY_NAME ${PACKAGE_PROJECT_NAME})
+    set(CPACK_NSIS_PACKAGE_NAME ${PACKAGE_PROJECT_NAME})
+    
+    set(CPACK_NSIS_HELP_LINK "http://mule.modelchecking.org/support")
+    set(CPACK_NSIS_URL_INFO_ABOUT "http://mule.modelchecking.org")
     set(CPACK_NSIS_CONTACT "ovidiu.parvu@gmail.com")
+    
+    set(CPACK_NSIS_MUI_FINISHPAGE_RUN "Mule")
 endif(UNIX)
  
  
