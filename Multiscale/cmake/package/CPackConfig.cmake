@@ -16,8 +16,8 @@ set(CPACK_PACKAGE_NAME "${PACKAGE_PROJECT_NAME}")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PACKAGE_PROJECT_NAME} - multidimensional multiscale model checking")
 set(CPACK_PACKAGE_DESCRIPTION "${PACKAGE_PROJECT_NAME} is a multidimensional multiscale pseudo-3D spatio-temporal model checker employed for the formal validation of computational models")
 
-set(CPACK_PACKAGE_EXECUTABLES "Mule;Mule")
-set(CPACK_PACKAGE_FILE_NAME "Mule")
+set(CPACK_PACKAGE_FILE_NAME "${PACKAGE_PROJECT_NAME}")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "${PACKAGE_PROJECT_NAME}")
 
 set(CPACK_PACKAGE_VENDOR "Ovidiu Parvu")
 
