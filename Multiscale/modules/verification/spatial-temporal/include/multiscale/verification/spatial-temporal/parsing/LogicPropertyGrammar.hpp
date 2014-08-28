@@ -3,6 +3,8 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/handler/ProbabilityErrorHandler.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/ChangeMeasureGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/ComparatorGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/TemporalNumericMeasureGrammar.hpp"
 
@@ -40,6 +42,11 @@ namespace multiscale {
                     temporalNumericMeasureRule;                 /*!< The grammar for parsing a temporal numeric
                                                                      measure */
 
+                ChangeMeasureGrammar<Iterator>
+                    changeMeasureRule;                          /*!< The grammar for parsing a change measure */
+                ComparatorGrammar<Iterator>
+                    comparatorRule;                             /*!< The grammar for parsing a comparator */
+
                 // Rules
 
                 qi::rule<Iterator, ProbabilisticLogicPropertyAttribute(), qi::space_type>
@@ -52,14 +59,12 @@ namespace multiscale {
 
                 qi::rule<Iterator, PrimaryLogicPropertyAttribute(), qi::space_type>
                     primaryLogicPropertyRule;                   /*!< The rule for parsing a primary logic property */
-                qi::rule<Iterator, ChangeMeasureAttribute(), qi::space_type>
-                    changeMeasureRule;                          /*!< The rule for parsing a change measure */
-                qi::rule<Iterator, ChangeTemporalNumericMeasureAttribute(), qi::space_type>
-                    changeTemporalNumericMeasureRule;           /*!< The rule for parsing a change temporal numeric
-                                                                     measure */
                 qi::rule<Iterator, TemporalNumericComparisonAttribute(), qi::space_type>
                     temporalNumericComparisonRule;              /*!< The rule for parsing a temporal numeric
                                                                      comparison */
+                qi::rule<Iterator, ChangeTemporalNumericMeasureAttribute(), qi::space_type>
+                    changeTemporalNumericMeasureRule;           /*!< The rule for parsing a change temporal numeric
+                                                                     measure */
                 qi::rule<Iterator, NotLogicPropertyAttribute(), qi::space_type>
                     notLogicPropertyRule;                       /*!< The rule for parsing a "not" logic property */
                 qi::rule<Iterator, FutureLogicPropertyAttribute(), qi::space_type>
@@ -95,17 +100,11 @@ namespace multiscale {
                                                                      attribute */
 
                 qi::rule<Iterator, ComparatorAttribute(), qi::space_type>
-                    comparatorRule;                             /*!< The rule for parsing a comparator */
-                qi::rule<Iterator, ComparatorAttribute(), qi::space_type>
                     probabilisticLogicPropertyComparatorRule;   /*!< The rule for parsing a comparator for a
                                                                      probabilistic logic property */
 
                 // Enumeration parsers
 
-                ChangeMeasureTypeParser
-                    changeMeasureTypeParser;            /*!< The change measure type parser */
-                ComparatorTypeParser
-                    comparatorTypeParser;               /*!< The comparator type parser */
                 ComparatorNonEqualTypeParser
                     comparatorNonEqualTypeParser;       /*!< The comparator type parser which does not accept
                                                              the "=" symbol */
@@ -137,9 +136,6 @@ namespace multiscale {
                 //! Initialise the composed logic property rule
                 void initialiseComposedLogicPropertyRule();
 
-                //! Initialise the change measure rule
-                void initialiseChangeMeasureRule();
-
                 //! Initialise the comparator rules
                 void initialiseComparatorRules();
 
@@ -164,9 +160,6 @@ namespace multiscale {
                 //! Assign names to the composed logic property rules
                 void assignNamesToComposedLogicPropertyRules();
 
-                //! Assign names to the change measure rules
-                void assignNamesToChangeMeasureRules();
-
                 //! Assign names to the comparator rules
                 void assignNamesToComparatorRules();
 
@@ -187,9 +180,6 @@ namespace multiscale {
 
                 //! Initialise debugging for the composed logic property rule
                 void initialiseComposedLogicPropertyRuleDebugging();
-
-                //! Initialise debugging for the change measure rule
-                void initialiseChangeMeasureRuleDebugging();
 
                 //! Initialise debugging for the comparator rule
                 void initialiseComparatorRuleDebugging();

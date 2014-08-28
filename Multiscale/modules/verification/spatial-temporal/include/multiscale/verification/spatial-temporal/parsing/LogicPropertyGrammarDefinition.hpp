@@ -48,7 +48,6 @@ namespace multiscale {
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::initialiseGrammar() {
             initialiseLogicPropertiesRules();
-            initialiseChangeMeasureRule();
             initialiseComparatorRules();
         }
 
@@ -192,19 +191,9 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the change measure rule
-        template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseChangeMeasureRule() {
-            changeMeasureRule
-                =   changeMeasureTypeParser;
-        }
-
         //! Initialise the comparator rules
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::initialiseComparatorRules() {
-            comparatorRule
-                =   comparatorTypeParser;
-
             probabilisticLogicPropertyComparatorRule
                 =   comparatorNonEqualTypeParser;
         }
@@ -222,7 +211,6 @@ namespace multiscale {
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::assignNamesToRules() {
             assignNamesToLogicPropertiesRules();
-            assignNamesToChangeMeasureRules();
             assignNamesToComparatorRules();
         }
 
@@ -252,8 +240,8 @@ namespace multiscale {
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::assignNamesToPrimaryLogicPropertyRules() {
             primaryLogicPropertyRule            .name("primaryLogicPropertyRule");
-            changeTemporalNumericMeasureRule    .name("changeTemporalNumericMeasureRule");
             temporalNumericComparisonRule       .name("temporalNumericComparisonRule");
+            changeTemporalNumericMeasureRule    .name("changeTemporalNumericMeasureRule");
             notLogicPropertyRule                .name("notLogicPropertyRule");
             futureLogicPropertyRule             .name("futureLogicPropertyRule");
             globalLogicPropertyRule             .name("globalLogicPropertyRule");
@@ -271,16 +259,9 @@ namespace multiscale {
             untilLogicPropertyRule          .name("untilLogicPropertyRule");
         }
 
-        //! Assign names to the change measure rules
-        template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::assignNamesToChangeMeasureRules() {
-            changeMeasureRule.name("changeMeasureRule");
-        }
-
         //! Assign names to the comparator rules
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::assignNamesToComparatorRules() {
-            comparatorRule                          .name("comparatorRule");
             probabilisticLogicPropertyComparatorRule.name("probabilisticLogicPropertyComparatorRule");
         }
 
@@ -288,7 +269,6 @@ namespace multiscale {
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::initialiseRulesDebugging() {
             initialiseLogicPropertiesRulesDebugging();
-            initialiseChangeMeasureRuleDebugging();
             initialiseComparatorRuleDebugging();
         }
 
@@ -318,8 +298,8 @@ namespace multiscale {
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::initialisePrimaryLogicPropertyRuleDebugging() {
             debug(primaryLogicPropertyRule);
-            debug(changeTemporalNumericMeasureRule);
             debug(temporalNumericComparisonRule);
+            debug(changeTemporalNumericMeasureRule);
             debug(notLogicPropertyRule);
             debug(futureLogicPropertyRule);
             debug(globalLogicPropertyRule);
@@ -337,16 +317,9 @@ namespace multiscale {
             debug(untilLogicPropertyRule);
         }
 
-        //! Initialise debugging for the change measure rule
-        template <typename Iterator>
-        void LogicPropertyGrammar<Iterator>::initialiseChangeMeasureRuleDebugging() {
-            debug(changeMeasureRule);
-        }
-
         //! Initialise debugging for the comparator rule
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::initialiseComparatorRuleDebugging() {
-            debug(comparatorRule);
             debug(probabilisticLogicPropertyComparatorRule);
         }
 
@@ -385,11 +358,11 @@ namespace multiscale {
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
             qi::on_error<qi::fail>(
-                changeTemporalNumericMeasureRule,
+                temporalNumericComparisonRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
             qi::on_error<qi::fail>(
-                temporalNumericComparisonRule,
+                changeTemporalNumericMeasureRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
             qi::on_error<qi::fail>(

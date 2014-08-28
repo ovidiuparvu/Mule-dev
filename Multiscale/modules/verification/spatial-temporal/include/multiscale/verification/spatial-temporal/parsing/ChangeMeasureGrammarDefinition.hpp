@@ -1,7 +1,8 @@
-#ifndef UNARYNUMERICMEASUREGRAMMARDEFINITION_HPP
-#define UNARYNUMERICMEASUREGRAMMARDEFINITION_HPP
+#ifndef CHANGEMEASUREGRAMMARDEFINITION_HPP
+#define CHANGEMEASUREGRAMMARDEFINITION_HPP
 
-#include "multiscale/verification/spatial-temporal/parsing/UnaryNumericMeasureGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/handler/UnexpectedTokenErrorHandler.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/ChangeMeasureGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -19,32 +20,34 @@ namespace multiscale {
 
     namespace verification {
 
+        // Create a lazy error handler function
+        phoenix::function<UnexpectedTokenErrorHandler> const
+            handleUnexpectedTokenError = UnexpectedTokenErrorHandler();
+
+
         template <typename Iterator>
-        UnaryNumericMeasureGrammar<Iterator>::UnaryNumericMeasureGrammar()
-            : UnaryNumericMeasureGrammar::base_type(
-                                              unaryNumericMeasureRule,
-                                              "unaryNumericMeasureRule"
-                                          ) {
+        ChangeMeasureGrammar<Iterator>::ChangeMeasureGrammar()
+            : ChangeMeasureGrammar::base_type(changeMeasureRule, "changeMeasureRule") {
             initialise();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialise() {
+        void ChangeMeasureGrammar<Iterator>::initialise() {
             initialiseGrammar();
             initialiseDebugSupport();
         }
 
         //! Initialise the grammar
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialiseGrammar() {
-            unaryNumericMeasureRule
-                =   unaryNumericMeasureTypeParser;
+        void ChangeMeasureGrammar<Iterator>::initialiseGrammar() {
+            changeMeasureRule
+                =   changeMeasureTypeParser;
         }
 
         //! Initialise debug support
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void ChangeMeasureGrammar<Iterator>::initialiseDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
@@ -53,14 +56,14 @@ namespace multiscale {
 
         //! Assign names to the rules
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::assignNamesToRules() {
-            unaryNumericMeasureRule.name("unaryNumericMeasureRule");
+        void ChangeMeasureGrammar<Iterator>::assignNamesToRules() {
+            changeMeasureRule.name("changeMeasureRule");
         }
 
         //! Initialise the debugging of rules
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialiseRulesDebugging() {
-            debug(unaryNumericMeasureRule);
+        void ChangeMeasureGrammar<Iterator>::initialiseRulesDebugging() {
+            debug(changeMeasureRule);
         }
 
     };

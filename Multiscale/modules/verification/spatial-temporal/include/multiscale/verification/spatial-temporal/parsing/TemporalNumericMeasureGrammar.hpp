@@ -5,9 +5,10 @@
 #include "multiscale/verification/spatial-temporal/parsing/BinaryNumericMeasureGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/BinaryStatisticalMeasureGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/BinaryStatisticalQuantileMeasureGrammar.hpp"
-#include "multiscale/verification/spatial-temporal/parsing/NumericMeasureCollectionGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/NumericStateVariableGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/SpatialMeasureCollectionGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/TemporalNumericCollectionGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/UnaryNumericMeasureGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/UnaryStatisticalMeasureGrammar.hpp"
 
@@ -58,9 +59,13 @@ namespace multiscale {
                     binaryNumericMeasureRule;                   /*!< The grammar for parsing a binary numeric
                                                                      measure */
 
-                NumericMeasureCollectionGrammar<Iterator>
-                    numericMeasureCollectionRule;               /*!< The grammar for parsing a numeric measure
+                TemporalNumericCollectionGrammar<Iterator>
+                    temporalNumericCollectionRule;              /*!< The grammar for parsing a temporal numeric
                                                                      collection */
+                SpatialMeasureCollectionGrammar<Iterator>
+                    spatialMeasureCollectionRule;               /*!< The grammar for parsing a spatial measure
+                                                                     collection */
+
                 NumericStateVariableGrammar<Iterator>
                     numericStateVariableRule;                   /*!< The grammar for parsing a numeric state
                                                                      variable */
@@ -90,6 +95,10 @@ namespace multiscale {
                     binaryStatisticalQuantileNumericRule;       /*!< The rule for parsing a binary statistical
                                                                      quantile numeric attribute */
 
+                qi::rule<Iterator, NumericMeasureCollectionAttribute(), qi::space_type>
+                    numericMeasureCollectionRule;                   /*!< The rule for parsing numeric measure
+                                                                         collections */
+
             public:
 
                 TemporalNumericMeasureGrammar();
@@ -108,6 +117,9 @@ namespace multiscale {
                 //! Initialise the numeric statistical measure rules
                 void initialiseNumericStatisticalMeasureRule();
 
+                //! Initialise the numeric measure collection rule
+                void initialiseNumericMeasureCollectionRule();
+
                 //! Initialise debug support
                 void initialiseDebugSupport();
 
@@ -120,6 +132,9 @@ namespace multiscale {
                 //! Assign names to the numeric statistical measure rules
                 void assignNamesToNumericStatisticalMeasureRules();
 
+                //! Assign names to the numeric measure collection rules
+                void assignNamesToNumericMeasureCollectionRules();
+
                 //! Initialise the debugging of rules
                 void initialiseRulesDebugging();
 
@@ -128,6 +143,9 @@ namespace multiscale {
 
                 //! Initialise debugging for the numeric statistical measure rule
                 void initialiseNumericStatisticalMeasureRuleDebugging();
+
+                //! Initialise debugging for the numeric measure collection rule
+                void initialiseNumericMeasureCollectionRuleDebugging();
 
                 //! Initialise the error handling routines
                 void initialiseErrorHandlingSupport();

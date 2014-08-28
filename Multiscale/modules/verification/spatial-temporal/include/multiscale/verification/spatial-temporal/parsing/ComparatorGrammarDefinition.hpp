@@ -1,7 +1,8 @@
-#ifndef UNARYNUMERICMEASUREGRAMMARDEFINITION_HPP
-#define UNARYNUMERICMEASUREGRAMMARDEFINITION_HPP
+#ifndef COMPARATORGRAMMARDEFINITION_HPP
+#define COMPARATORGRAMMARDEFINITION_HPP
 
-#include "multiscale/verification/spatial-temporal/parsing/UnaryNumericMeasureGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/handler/UnexpectedTokenErrorHandler.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/ComparatorGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -19,32 +20,34 @@ namespace multiscale {
 
     namespace verification {
 
+        // Create a lazy error handler function
+        phoenix::function<UnexpectedTokenErrorHandler> const
+            handleUnexpectedTokenError = UnexpectedTokenErrorHandler();
+
+
         template <typename Iterator>
-        UnaryNumericMeasureGrammar<Iterator>::UnaryNumericMeasureGrammar()
-            : UnaryNumericMeasureGrammar::base_type(
-                                              unaryNumericMeasureRule,
-                                              "unaryNumericMeasureRule"
-                                          ) {
+        ComparatorGrammar<Iterator>::ComparatorGrammar()
+            : ComparatorGrammar::base_type(comparatorRule, "comparatorRule") {
             initialise();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialise() {
+        void ComparatorGrammar<Iterator>::initialise() {
             initialiseGrammar();
             initialiseDebugSupport();
         }
 
         //! Initialise the grammar
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialiseGrammar() {
-            unaryNumericMeasureRule
-                =   unaryNumericMeasureTypeParser;
+        void ComparatorGrammar<Iterator>::initialiseGrammar() {
+            comparatorRule
+                =   comparatorTypeParser;
         }
 
         //! Initialise debug support
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialiseDebugSupport() {
+        void ComparatorGrammar<Iterator>::initialiseDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
@@ -53,14 +56,14 @@ namespace multiscale {
 
         //! Assign names to the rules
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::assignNamesToRules() {
-            unaryNumericMeasureRule.name("unaryNumericMeasureRule");
+        void ComparatorGrammar<Iterator>::assignNamesToRules() {
+            comparatorRule.name("comparatorRule");
         }
 
         //! Initialise the debugging of rules
         template <typename Iterator>
-        void UnaryNumericMeasureGrammar<Iterator>::initialiseRulesDebugging() {
-            debug(unaryNumericMeasureRule);
+        void ComparatorGrammar<Iterator>::initialiseRulesDebugging() {
+            debug(comparatorRule);
         }
 
     };

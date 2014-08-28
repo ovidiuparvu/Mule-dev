@@ -1,5 +1,6 @@
 #include "multiscale/verification/spatial-temporal/attribute/SynthesizedAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/parsing/NumericMeasureCollectionGrammarDefinition.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/PrimaryNumericMeasureGrammarDefinition.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/SpatialMeasureCollectionGrammar.hpp"
 
 using namespace multiscale::verification;
 
@@ -8,4 +9,4 @@ using namespace multiscale::verification;
 typedef std::string::const_iterator iteratorType;
 
 // Explicitly instantiate the template for the given iterator type
-template class NumericMeasureCollectionGrammar<iteratorType>;
+template class PrimaryNumericMeasureGrammar<iteratorType>;

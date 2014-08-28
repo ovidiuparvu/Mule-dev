@@ -22,9 +22,9 @@ namespace multiscale {
         template <typename Iterator>
         UnaryStatisticalMeasureGrammar<Iterator>::UnaryStatisticalMeasureGrammar()
             : UnaryStatisticalMeasureGrammar::base_type(
-                                                   unaryStatisticalMeasureRule,
-                                                   "unaryStatisticalMeasureRule"
-                                               ) {
+                                                  unaryStatisticalMeasureRule,
+                                                  "unaryStatisticalMeasureRule"
+                                              ) {
             initialise();
         }
 

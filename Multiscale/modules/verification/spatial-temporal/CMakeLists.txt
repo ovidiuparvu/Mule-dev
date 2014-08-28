@@ -123,10 +123,14 @@ set(CORE_FORMAL_LOGIC_SRC
     src/parsing/BinaryNumericMeasureGrammar.cpp
     src/parsing/BinaryStatisticalMeasureGrammar.cpp
     src/parsing/BinaryStatisticalQuantileMeasureGrammar.cpp
+    src/parsing/ChangeMeasureGrammar.cpp
+    src/parsing/ComparatorGrammar.cpp
     src/parsing/LogicPropertyGrammar.cpp
-    src/parsing/NumericMeasureCollectionGrammar.cpp
     src/parsing/NumericStateVariableGrammar.cpp
     src/parsing/Parser.cpp
+    src/parsing/PrimaryNumericMeasureGrammar.cpp
+    src/parsing/SpatialMeasureCollectionGrammar.cpp
+    src/parsing/TemporalNumericCollectionGrammar.cpp
     src/parsing/TemporalNumericMeasureGrammar.cpp
     src/parsing/UnaryNumericMeasureGrammar.cpp
     src/parsing/UnaryStatisticalMeasureGrammar.cpp

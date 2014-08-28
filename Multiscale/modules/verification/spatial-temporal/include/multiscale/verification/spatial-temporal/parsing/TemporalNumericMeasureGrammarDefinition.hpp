@@ -44,6 +44,7 @@ namespace multiscale {
         void TemporalNumericMeasureGrammar<Iterator>::initialiseGrammar() {
             initialiseTemporalNumericMeasureRule();
             initialiseNumericStatisticalMeasureRule();
+            initialiseNumericMeasureCollectionRule();
         }
 
         //! Initialise the temporal numeric measure rule
@@ -112,6 +113,14 @@ namespace multiscale {
                     );
         }
 
+        //! Initialise the numeric measure collection rule
+        template <typename Iterator>
+        void TemporalNumericMeasureGrammar<Iterator>::initialiseNumericMeasureCollectionRule() {
+            numericMeasureCollectionRule
+                =   temporalNumericCollectionRule
+                |   spatialMeasureCollectionRule;
+        }
+
         //! Initialise debug support
         template <typename Iterator>
         void TemporalNumericMeasureGrammar<Iterator>::initialiseDebugSupport() {
@@ -126,6 +135,7 @@ namespace multiscale {
         void TemporalNumericMeasureGrammar<Iterator>::assignNamesToRules() {
             assignNamesToTemporalNumericMeasureRules();
             assignNamesToNumericStatisticalMeasureRules();
+            assignNamesToNumericMeasureCollectionRules();
         }
 
         //! Assign names to the temporal numeric measure rules
@@ -145,11 +155,18 @@ namespace multiscale {
             binaryStatisticalQuantileNumericRule.name("binaryStatisticalQuantileNumericRule");
         }
 
+        //! Assign names to the numeric measure collection rules
+        template <typename Iterator>
+        void TemporalNumericMeasureGrammar<Iterator>::assignNamesToNumericMeasureCollectionRules() {
+            numericMeasureCollectionRule.name("numericMeasureCollectionRule");
+        }
+
         //! Initialise the debugging of rules
         template <typename Iterator>
         void TemporalNumericMeasureGrammar<Iterator>::initialiseRulesDebugging() {
             initialiseTemporalNumericMeasureRuleDebugging();
             initialiseNumericStatisticalMeasureRuleDebugging();
+            initialiseNumericMeasureCollectionRuleDebugging();
         }
 
         //! Initialise debugging for the temporal numeric measure rule
@@ -167,6 +184,12 @@ namespace multiscale {
             debug(unaryStatisticalNumericRule);
             debug(binaryStatisticalNumericRule);
             debug(binaryStatisticalQuantileNumericRule);
+        }
+
+        //! Initialise debugging for the numeric measure collection rule
+        template <typename Iterator>
+        void TemporalNumericMeasureGrammar<Iterator>::initialiseNumericMeasureCollectionRuleDebugging() {
+            debug(numericMeasureCollectionRule);
         }
 
         //! Initialise the error handling routines

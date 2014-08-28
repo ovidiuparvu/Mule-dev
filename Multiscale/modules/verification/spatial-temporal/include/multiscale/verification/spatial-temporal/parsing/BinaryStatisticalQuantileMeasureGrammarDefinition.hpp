@@ -22,9 +22,9 @@ namespace multiscale {
         template <typename Iterator>
         BinaryStatisticalQuantileMeasureGrammar<Iterator>::BinaryStatisticalQuantileMeasureGrammar()
             : BinaryStatisticalQuantileMeasureGrammar::base_type(
-                                                   binaryStatisticalQuantileMeasureRule,
-                                                   "binaryStatisticalQuantileMeasureRule"
-                                               ) {
+                                                           binaryStatisticalQuantileMeasureRule,
+                                                           "binaryStatisticalQuantileMeasureRule"
+                                                       ) {
             initialise();
         }
 

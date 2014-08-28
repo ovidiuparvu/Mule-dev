@@ -22,9 +22,9 @@ namespace multiscale {
         template <typename Iterator>
         BinaryNumericMeasureGrammar<Iterator>::BinaryNumericMeasureGrammar()
             : BinaryNumericMeasureGrammar::base_type(
-                                                   binaryNumericMeasureRule,
-                                                   "binaryNumericMeasureRule"
-                                               ) {
+                                               binaryNumericMeasureRule,
+                                               "binaryNumericMeasureRule"
+                                           ) {
             initialise();
         }
 
