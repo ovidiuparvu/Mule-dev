@@ -8,12 +8,12 @@ std::ostream&
 multiscale::verification::operator<<(std::ostream& out,
                                      const HomogeneousTimeseriesMeasureType &homogeneousTimeseriesMeasureType) {
     switch (homogeneousTimeseriesMeasureType) {
-        case HomogeneousTimeseriesMeasureType::Duration:
-            out << "duration";
+        case HomogeneousTimeseriesMeasureType::TimeSpan:
+            out << "timeSpan";
             break;
 
-        case HomogeneousTimeseriesMeasureType::Value:
-            out << "value";
+        case HomogeneousTimeseriesMeasureType::Values:
+            out << "values";
             break;
 
         default:

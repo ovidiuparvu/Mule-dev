@@ -8,8 +8,8 @@ std::ostream&
 multiscale::verification::operator<<(std::ostream& out,
                                      const SimilarityMeasureType &similarityMeasureType) {
     switch (similarityMeasureType) {
-        case SimilarityMeasureType::AntiSimilar:
-            out << "antiSimilar";
+        case SimilarityMeasureType::Opposite:
+            out << "opposite";
             break;
 
         case SimilarityMeasureType::Similar:

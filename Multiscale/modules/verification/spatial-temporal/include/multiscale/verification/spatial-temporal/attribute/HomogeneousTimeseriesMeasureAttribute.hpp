@@ -11,8 +11,8 @@ namespace multiscale {
 
         //! Enumeration for representing a homogeneous timeseries measure type
         enum class HomogeneousTimeseriesMeasureType : unsigned int {
-            Duration    = 0,    /*!< The duration of the homogeneous timeseries */
-            Value               /*!< The values defining the homogeneous timeseries */
+            TimeSpan    = 0,    /*!< The time span covered by the homogeneous timeseries */
+            Values              /*!< The values defining the homogeneous timeseries */
         };
 
         //! Overload the output stream operator for the enumeration

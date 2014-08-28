@@ -421,13 +421,13 @@ TEST_F(EmptyTraceTest, HeterogeneousTimeseriesComponentValley) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousHomogeneousTimeseriesMeasure
+// HomogeneousHomogeneousTimeseries
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, HomogeneousHomogeneousTimeseriesMeasure) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(duration(plateau, [0, 11] {B})) = 12]"), SpatialTemporalException);
+TEST_F(EmptyTraceTest, HomogeneousHomogeneousTimeseries) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(timeSpan(plateau, [0, 11] {B})) = 12]"), SpatialTemporalException);
 }
 
 
@@ -440,23 +440,23 @@ TEST_F(EmptyTraceTest, HomogeneousHomogeneousTimeseriesMeasure) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentAscent) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(value(ascent, [0, 11] count(clusteredness(clusters)))) = 1]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(values(ascent, [0, 11] count(clusteredness(clusters)))) = 1]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentDescent) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(value(descent, [0, 11] {C}(type = 1))) = 7.5]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] {C}(type = 1))) = 7.5]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentPlateu) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(value(plateau, [0, 11] {B})) = 2.999]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(values(plateau, [0, 11] {B})) = 2.999]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(value(uniformAscent, [0, 11] count(clusteredness(clusters)))) = 11]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max(values(uniformAscent, [0, 11] count(clusteredness(clusters)))) = 11]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(value(uniformDescent, [0, 11] {C}(type = 1))) = 6.6]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(type = 1))) = 6.6]"), SpatialTemporalException);
 }
 
 
@@ -468,12 +468,12 @@ TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, HomogeneousTimeseriesMeasureDuration) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(duration(ascent, [0, 11] count(clusteredness(clusters)))) = 3]"), SpatialTemporalException);
+TEST_F(EmptyTraceTest, HomogeneousTimeseriesMeasureTimeSpan) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(timeSpan(ascent, [0, 11] count(clusteredness(clusters)))) = 3]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, HomogeneousTimeseriesMeasureValue) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(value(descent, [0, 11] count(clusteredness(clusters)))) = 4.51]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] count(clusteredness(clusters)))) = 4.51]"), SpatialTemporalException);
 }
 
 
@@ -763,7 +763,7 @@ TEST_F(EmptyTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, SimilarityMeasureAntiSimilar) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [antiSimilar(d([0, 11] {A}), d([0, 11] {C}), 0)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [opposite(d([0, 11] {A}), d([0, 11] {C}), 0)]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, SimilarityMeasureSimilar) {
@@ -969,6 +969,19 @@ TEST_F(EmptyTraceTest, TemporalNumericMeasureCollection) {
 /////////////////////////////////////////////////////////
 //
 //
+// TimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, TimeseriesComponent) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniformAscent, [0, 11] count(clusteredness(clusters)))) > 5]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // TimeseriesMeasure
 //
 //
@@ -986,26 +999,13 @@ TEST_F(EmptyTraceTest, TimeseriesMeasureEnteringValue) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesMeasureHeterogeneous
+// TimeseriesTimeseriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST_F(EmptyTraceTest, TimeseriesMeasureHeterogeneous) {
+TEST_F(EmptyTraceTest, TimeseriesTimeseriesComponent) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(enteringTime(peak, [0, 11] count(clusteredness(clusters)))) = 6]"), SpatialTemporalException);
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// TimeseriesMeasureHomogeneous
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST_F(EmptyTraceTest, TimeseriesMeasureHomogeneous) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [median(enteringValue(uniformAscent, [0, 11] count(clusteredness(clusters)))) > 5]"), SpatialTemporalException);
 }
 
 

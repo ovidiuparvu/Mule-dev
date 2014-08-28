@@ -11,8 +11,8 @@ namespace multiscale {
 
         //! Enumeration for representing a similarity measure type
         enum class SimilarityMeasureType : unsigned int {
-            AntiSimilar = 0,    /*!< The type opposite of similar */
-            Similar             /*!< The similar type */
+            Opposite = 0,   /*!< The opposite type */
+            Similar         /*!< The similar type */
         };
 
         //! Overload the output stream operator for the enumeration

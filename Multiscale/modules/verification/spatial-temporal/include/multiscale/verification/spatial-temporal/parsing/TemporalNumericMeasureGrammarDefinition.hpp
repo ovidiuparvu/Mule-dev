@@ -44,8 +44,6 @@ namespace multiscale {
         void TemporalNumericMeasureGrammar<Iterator>::initialiseGrammar() {
             initialiseTemporalNumericMeasureRule();
             initialiseNumericStatisticalMeasureRule();
-            initialiseNaryNumericMeasureRule();
-            initialiseStatisticalMeasureRule();
         }
 
         //! Initialise the temporal numeric measure rule
@@ -114,29 +112,6 @@ namespace multiscale {
                     );
         }
 
-        //! Initialise the n-ary numeric measure rule
-        template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseNaryNumericMeasureRule() {
-            unaryNumericMeasureRule
-                =   unaryNumericMeasureTypeParser;
-
-            binaryNumericMeasureRule
-                =   binaryNumericMeasureTypeParser;
-        }
-
-        //! Initialise the statistical measure rule
-        template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseStatisticalMeasureRule() {
-            unaryStatisticalMeasureRule
-                =   unaryStatisticalMeasureTypeParser;
-
-            binaryStatisticalMeasureRule
-                =   binaryStatisticalMeasureTypeParser;
-
-            binaryStatisticalQuantileMeasureRule
-                =   binaryStatisticalQuantileMeasureTypeParser;
-        }
-
         //! Initialise debug support
         template <typename Iterator>
         void TemporalNumericMeasureGrammar<Iterator>::initialiseDebugSupport() {
@@ -151,8 +126,6 @@ namespace multiscale {
         void TemporalNumericMeasureGrammar<Iterator>::assignNamesToRules() {
             assignNamesToTemporalNumericMeasureRules();
             assignNamesToNumericStatisticalMeasureRules();
-            assignNamesToNaryNumericMeasureRules();
-            assignNamesToStatisticalMeasureRules();
         }
 
         //! Assign names to the temporal numeric measure rules
@@ -172,28 +145,11 @@ namespace multiscale {
             binaryStatisticalQuantileNumericRule.name("binaryStatisticalQuantileNumericRule");
         }
 
-        //! Assign names to the n-ary numeric measure rules
-        template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::assignNamesToNaryNumericMeasureRules() {
-            unaryNumericMeasureRule     .name("unaryNumericMeasureRule");
-            binaryNumericMeasureRule    .name("binaryNumericMeasureRule");
-        }
-
-        //! Assign names to the numeric statistical measure rules
-        template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::assignNamesToStatisticalMeasureRules() {
-            unaryStatisticalMeasureRule         .name("unaryStatisticalMeasureRule");
-            binaryStatisticalMeasureRule        .name("binaryStatisticalMeasureRule");
-            binaryStatisticalQuantileMeasureRule.name("binaryStatisticalQuantileMeasureRule");
-        }
-
         //! Initialise the debugging of rules
         template <typename Iterator>
         void TemporalNumericMeasureGrammar<Iterator>::initialiseRulesDebugging() {
             initialiseTemporalNumericMeasureRuleDebugging();
             initialiseNumericStatisticalMeasureRuleDebugging();
-            initialiseNaryNumericMeasureRuleDebugging();
-            initialiseStatisticalMeasureRuleDebugging();
         }
 
         //! Initialise debugging for the temporal numeric measure rule
@@ -211,21 +167,6 @@ namespace multiscale {
             debug(unaryStatisticalNumericRule);
             debug(binaryStatisticalNumericRule);
             debug(binaryStatisticalQuantileNumericRule);
-        }
-
-        //! Initialise debugging for the n-ary numeric measure rule
-        template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseNaryNumericMeasureRuleDebugging() {
-            debug(unaryNumericMeasureRule);
-            debug(binaryNumericMeasureRule);
-        }
-
-        //! Initialise debugging for the statistical measure rule
-        template <typename Iterator>
-        void TemporalNumericMeasureGrammar<Iterator>::initialiseStatisticalMeasureRuleDebugging() {
-            debug(unaryStatisticalMeasureRule);
-            debug(binaryStatisticalMeasureRule);
-            debug(binaryStatisticalQuantileMeasureRule);
         }
 
         //! Initialise the error handling routines

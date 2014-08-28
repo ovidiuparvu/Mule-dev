@@ -2,8 +2,13 @@
 #define NUMERICMEASURECOLLECTIONGRAMMAR_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/NumericMeasureCollectionAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/BinaryNumericMeasureGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/BinaryStatisticalMeasureGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/BinaryStatisticalQuantileMeasureGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/NumericStateVariableGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/UnaryNumericMeasureGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/UnaryStatisticalMeasureGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -36,132 +41,174 @@ namespace multiscale {
                 // Grammars
 
                 NumericStateVariableGrammar<Iterator>
-                    numericStateVariableRule;                   /*!< The rule for parsing numeric state variables */
+                    numericStateVariableRule;                       /*!< The grammar for parsing numeric state
+                                                                         variables */
+
+                UnaryStatisticalMeasureGrammar<Iterator>
+                    unaryStatisticalMeasureRule;                    /*!< The grammar for parsing unary statistical
+                                                                         measures */
+                BinaryStatisticalMeasureGrammar<Iterator>
+                    binaryStatisticalMeasureRule;                   /*!< The grammar for parsing binary statistical
+                                                                         measures */
+                BinaryStatisticalQuantileMeasureGrammar<Iterator>
+                    binaryStatisticalQuantileMeasureRule;           /*!< The grammar for parsing binary statistical
+                                                                         quantile measures */
+
+                UnaryNumericMeasureGrammar<Iterator>
+                    unaryNumericMeasureRule;                        /*!< The grammar for parsing unary numeric
+                                                                         measures */
+                BinaryNumericMeasureGrammar<Iterator>
+                    binaryNumericMeasureRule;                       /*!< The grammar for parsing binary numeric
+                                                                         measures */
 
                 // Rules
 
                 qi::rule<Iterator, NumericMeasureCollectionAttribute(), qi::space_type>
-                    numericMeasureCollectionRule;               /*!< The rule for parsing numeric measure
-                                                                     collections */
+                    numericMeasureCollectionRule;                   /*!< The rule for parsing numeric measure
+                                                                         collections */
+
+                qi::rule<Iterator, TemporalNumericCollectionAttribute(), qi::space_type>
+                    temporalNumericCollectionRule;                  /*!< The rule for parsing temporal numeric
+                                                                         collections */
                 qi::rule<Iterator, TemporalNumericMeasureCollectionAttribute(), qi::space_type>
-                    temporalNumericMeasureCollectionRule;       /*!< The rule for parsing temporal numeric measure
-                                                                     collections */
+                    temporalNumericMeasureCollectionRule;           /*!< The rule for parsing temporal numeric measure
+                                                                         collections */
+                qi::rule<Iterator, ChangeTemporalNumericCollectionAttribute(), qi::space_type>
+                    changeTemporalNumericCollectionRule;            /*!< The rule for parsing a change temporal numeric
+                                                                         collections attribute */
+                qi::rule<Iterator, TimeseriesTimeseriesComponentAttribute(), qi::space_type>
+                    timeseriesTimeseriesComponentRule;              /*!< The rule for parsing a timeseries timeseries
+                                                                         component attribute */
+                qi::rule<Iterator, HomogeneousHomogeneousTimeseriesAttribute(), qi::space_type>
+                    homogeneousHomogeneousTimeseriesRule;           /*!< The rule for parsing a homogeneous homogeneous
+                                                                         timeseries measure attribute */
+
+                qi::rule<Iterator, ChangeMeasureAttribute(), qi::space_type>
+                    changeMeasureRule;                              /*!< The rule for parsing a change measure */
+
+                qi::rule<Iterator, TimeseriesMeasureAttribute(), qi::space_type>
+                    timeseriesMeasureRule;                          /*!< The rule for parsing a timeseries measure */
+                qi::rule<Iterator, HomogeneousTimeseriesMeasureAttribute(), qi::space_type>
+                    homogeneousTimeseriesMeasureRule;               /*!< The rule for parsing a homogeneous timeseries
+                                                                         measure */
+
+                qi::rule<Iterator, TimeseriesComponentAttribute(), qi::space_type>
+                    timeseriesComponentRule;                        /*!< The rule for parsing a timeseries
+                                                                         component */
+                qi::rule<Iterator, HeterogeneousTimeseriesComponentAttribute(), qi::space_type>
+                    heterogeneousTimeseriesComponentRule;           /*!< The rule for parsing a heterogeneous
+                                                                         timeseries component */
+                qi::rule<Iterator, HomogeneousTimeseriesComponentAttribute(), qi::space_type>
+                    homogeneousTimeseriesComponentRule;             /*!< The rule for parsing a homogeneous timeseries
+                                                                         component */
 
                 qi::rule<Iterator, NumericMeasureAttribute(), qi::space_type>
-                    numericMeasureRule;                         /*!< The rule for parsing a numeric measure */
+                    numericMeasureRule;                             /*!< The rule for parsing a numeric measure */
                 qi::rule<Iterator, PrimaryNumericMeasureAttribute(), qi::space_type>
-                    primaryNumericMeasureRule;                  /*!< The rule for parsing a primary numeric numeric
-                                                                     attribute */
+                    primaryNumericMeasureRule;                      /*!< The rule for parsing a primary numeric numeric
+                                                                         attribute */
                 qi::rule<Iterator, UnaryNumericNumericAttribute(), qi::space_type>
-                    unaryNumericNumericRule;                    /*!< The rule for parsing a unary numeric numeric
-                                                                     attribute */
+                    unaryNumericNumericRule;                        /*!< The rule for parsing a unary numeric numeric
+                                                                         attribute */
                 qi::rule<Iterator, BinaryNumericNumericAttribute(), qi::space_type>
-                    binaryNumericNumericRule;                   /*!< The rule for parsing a binary numeric numeric
-                                                                     attribute */
+                    binaryNumericNumericRule;                       /*!< The rule for parsing a binary numeric numeric
+                                                                         attribute */
 
                 qi::rule<Iterator, NumericSpatialMeasureAttribute(), qi::space_type>
-                    numericSpatialMeasureRule;                  /*!< The rule for parsing a numeric spatial measure */
+                    numericSpatialMeasureRule;                      /*!< The rule for parsing a numeric spatial measure */
                 qi::rule<Iterator, UnaryStatisticalSpatialAttribute(), qi::space_type>
-                    unaryStatisticalSpatialRule;                /*!< The rule for parsing a unary statistical spatial
-                                                                     attribute */
+                    unaryStatisticalSpatialRule;                    /*!< The rule for parsing a unary statistical
+                                                                         spatial attribute */
                 qi::rule<Iterator, BinaryStatisticalSpatialAttribute(), qi::space_type>
-                    binaryStatisticalSpatialRule;               /*!< The rule for parsing a binary statistical
-                                                                     spatial attribute */
+                    binaryStatisticalSpatialRule;                   /*!< The rule for parsing a binary statistical
+                                                                         spatial attribute */
                 qi::rule<Iterator, BinaryStatisticalQuantileSpatialAttribute(), qi::space_type>
-                    binaryStatisticalQuantileSpatialRule;       /*!< The rule for parsing a binary statistical
-                                                                     quantile spatial attribute */
-
-                qi::rule<Iterator, UnaryStatisticalMeasureAttribute(), qi::space_type>
-                    unaryStatisticalMeasureRule;                /*!< The rule for parsing a unary statistical
-                                                                     measure */
-                qi::rule<Iterator, BinaryStatisticalMeasureAttribute(), qi::space_type>
-                    binaryStatisticalMeasureRule;               /*!< The rule for parsing a binary statistical
-                                                                     measure */
-                qi::rule<Iterator, BinaryStatisticalQuantileMeasureAttribute(), qi::space_type>
-                    binaryStatisticalQuantileMeasureRule;       /*!< The rule for parsing a binary statistical
-                                                                     quantile measure */
-
-                qi::rule<Iterator, UnaryNumericMeasureAttribute(), qi::space_type>
-                    unaryNumericMeasureRule;                    /*!< The rule for parsing a unary numeric measure */
-                qi::rule<Iterator, BinaryNumericMeasureAttribute(), qi::space_type>
-                    binaryNumericMeasureRule;                   /*!< The rule for parsing a binary numeric measure */
+                    binaryStatisticalQuantileSpatialRule;           /*!< The rule for parsing a binary statistical
+                                                                         quantile spatial attribute */
 
                 qi::rule<Iterator, SpatialMeasureCollectionAttribute(), qi::space_type>
-                    spatialMeasureCollectionRule;               /*!< The rule for parsing a spatial measure
-                                                                     collection */
+                    spatialMeasureCollectionRule;                   /*!< The rule for parsing a spatial measure
+                                                                         collection */
 
                 qi::rule<Iterator, SpatialMeasureAttribute(), qi::space_type>
-                    spatialMeasureRule;                         /*!< The rule for parsing a spatial measure */
+                    spatialMeasureRule;                             /*!< The rule for parsing a spatial measure */
 
                 qi::rule<Iterator, SubsetAttribute(), qi::space_type>
-                    subsetRule;                                 /*!< The rule for parsing a subset */
+                    subsetRule;                                     /*!< The rule for parsing a subset */
                 qi::rule<Iterator, SubsetSpecificAttribute(), qi::space_type>
-                    subsetSpecificRule;                         /*!< The rule for parsing a specific subset */
+                    subsetSpecificRule;                             /*!< The rule for parsing a specific subset */
                 qi::rule<Iterator, FilterSubsetAttribute(), qi::space_type>
-                    filterSubsetRule;                           /*!< The rule for parsing a subset filter */
+                    filterSubsetRule;                               /*!< The rule for parsing a subset filter */
                 qi::rule<Iterator, SubsetSubsetOperationAttribute(), qi::space_type>
-                    subsetSubsetOperationRule;                  /*!< The rule for parsing a subset subset operation */
+                    subsetSubsetOperationRule;                      /*!< The rule for parsing a subset subset
+                                                                         operation */
 
                 qi::rule<Iterator, ConstraintAttribute(), qi::space_type>
-                    constraintRule;                             /*!< The rule for parsing a constraint */
+                    constraintRule;                                 /*!< The rule for parsing a constraint */
 
                 qi::rule<Iterator, PrimaryConstraintAttribute(), qi::space_type>
-                    primaryConstraintRule;                      /*!< The rule for parsing a primary constraint */
+                    primaryConstraintRule;                          /*!< The rule for parsing a primary constraint */
                 qi::rule<Iterator, NotConstraintAttribute(), qi::space_type>
-                    notConstraintRule;                          /*!< The rule for parsing a "not" constraint */
+                    notConstraintRule;                              /*!< The rule for parsing a "not" constraint */
                 qi::rule<Iterator, UnarySpatialConstraintAttribute(), qi::space_type>
-                    unarySpatialConstraintRule;                 /*!< The rule for parsing a unary spatial constraint */
+                    unarySpatialConstraintRule;                     /*!< The rule for parsing a unary spatial
+                                                                         constraint */
                 qi::rule<Iterator, UnaryTypeConstraintAttribute(), qi::space_type>
-                    unaryTypeConstraintRule;                    /*!< The rule for parsing a unary type constraint */
+                    unaryTypeConstraintRule;                        /*!< The rule for parsing a unary type
+                                                                         constraint */
 
                 qi::rule<Iterator, FilterNumericMeasureAttribute(), qi::space_type>
-                    filterNumericMeasureRule;                   /*!< The rule for parsing a filter numeric measure */
+                    filterNumericMeasureRule;                       /*!< The rule for parsing a filter numeric
+                                                                         measure */
                 qi::rule<Iterator, UnaryNumericFilterAttribute(), qi::space_type>
-                    unaryNumericFilterRule;                     /*!< The rule for parsing a unary numeric filter
-                                                                     measure */
+                    unaryNumericFilterRule;                         /*!< The rule for parsing a unary numeric filter
+                                                                         measure */
                 qi::rule<Iterator, BinaryNumericFilterAttribute(), qi::space_type>
-                    binaryNumericFilterRule;                    /*!< The rule for parsing a binary numeric filter
-                                                                     measure */
+                    binaryNumericFilterRule;                        /*!< The rule for parsing a binary numeric filter
+                                                                         measure */
 
                 qi::rule<Iterator, AndConstraintAttribute(), qi::space_type>
-                    andConstraintRule;                          /*!< The rule for parsing an "and" constraint */
+                    andConstraintRule;                              /*!< The rule for parsing an "and" constraint */
                 qi::rule<Iterator, OrConstraintAttribute(), qi::space_type>
-                    orConstraintRule;                           /*!< The rule for parsing an "or" constraint */
+                    orConstraintRule;                               /*!< The rule for parsing an "or" constraint */
                 qi::rule<Iterator, ImplicationConstraintAttribute(), qi::space_type>
-                    implicationConstraintRule;                  /*!< The rule for parsing an "implication"
-                                                                     constraint */
+                    implicationConstraintRule;                      /*!< The rule for parsing an "implication"
+                                                                         constraint */
                 qi::rule<Iterator, EquivalenceConstraintAttribute(), qi::space_type>
-                    equivalenceConstraintRule;                  /*!< The rule for parsing an "equivalence"
-                                                                     constraint */
+                    equivalenceConstraintRule;                      /*!< The rule for parsing an "equivalence"
+                                                                         constraint */
 
                 qi::rule<Iterator, ComparatorAttribute(), qi::space_type>
-                    comparatorRule;                             /*!< The rule for parsing a comparator */
+                    comparatorRule;                                 /*!< The rule for parsing a comparator */
 
                 // Enumeration parsers
 
-                UnaryStatisticalMeasureTypeParser
-                    unaryStatisticalMeasureTypeParser;          /*!< The unary statistical measure type parser */
-                BinaryStatisticalMeasureTypeParser
-                    binaryStatisticalMeasureTypeParser;         /*!< The binary statistical measure type parser */
-                BinaryStatisticalQuantileMeasureTypeParser
-                    binaryStatisticalQuantileMeasureTypeParser; /*!< The binary statistical quantile measure type
-                                                                     parser */
+                ChangeMeasureTypeParser
+                    changeMeasureTypeParser;                        /*!< The change measure type parser */
 
-                UnaryNumericMeasureTypeParser
-                    unaryNumericMeasureTypeParser;              /*!< The unary numeric measure type parser */
-                BinaryNumericMeasureTypeParser
-                    binaryNumericMeasureTypeParser;             /*!< The binary numeric measure type parser */
+                TimeseriesMeasureTypeParser
+                    timeseriesMeasureTypeParser;                    /*!< The timeseries measure type parser */
+                HomogeneousTimeseriesMeasureTypeParser
+                    homogeneousTimeseriesMeasureTypeParser;         /*!< The homogeneous timeseries measure type
+                                                                         parser */
+
+                HeterogeneousTimeseriesComponentTypeParser
+                    heterogeneousTimeseriesComponentTypeParser;     /*!< The heterogeneous timeseries component type
+                                                                         parser */
+                HomogeneousTimeseriesComponentTypeParser
+                    homogeneousTimeseriesComponentTypeParser;       /*!< The homogeneous timeseries component type
+                                                                         parser */
 
                 SubsetSpecificTypeParser
-                    subsetSpecificTypeParser;                   /*!< The subset specific type parser */
+                    subsetSpecificTypeParser;                       /*!< The subset specific type parser */
                 SubsetOperationTypeParser
-                    subsetOperationTypeParser;                  /*!< The subset operation type parser */
+                    subsetOperationTypeParser;                      /*!< The subset operation type parser */
 
                 SpatialMeasureTypeParser
-                    spatialMeasureTypeParser;                   /*!< The spatial measure type parser */
+                    spatialMeasureTypeParser;                       /*!< The spatial measure type parser */
 
                 ComparatorTypeParser
-                    comparatorTypeParser;                       /*!< The comparator type parser */
+                    comparatorTypeParser;                           /*!< The comparator type parser */
 
             public:
 
@@ -178,17 +225,23 @@ namespace multiscale {
                 //! Initialise the numeric measure collection rules
                 void initialiseNumericMeasureCollectionRule();
 
+                //! Initialise the temporal numeric collection rule
+                void initialiseTemporalNumericCollectionRule();
+
+                //! Initialise the change measure rule
+                void initialiseChangeMeasureRule();
+
+                //! Initialise the timeseries measure rule
+                void initialiseTimeseriesMeasureRule();
+
+                //! Initialise the timeseries component rule
+                void initialiseTimeseriesComponentRule();
+
                 //! Initialise the numeric measure rule
                 void initialiseNumericMeasureRule();
 
                 //! Initialise the numeric spatial measure rule
                 void initialiseNumericSpatialMeasureRule();
-
-                //! Initialise the n-ary numeric measure rule
-                void initialiseNaryNumericMeasureRule();
-
-                //! Initialise the statistical measure rule
-                void initialiseStatisticalMeasureRule();
 
                 //! Initialise the spatial measure rule
                 void initialiseSpatialMeasureRule();
@@ -223,17 +276,23 @@ namespace multiscale {
                 //! Assign names to the numeric measure collection rules
                 void assignNamesToNumericMeasureCollectionRules();
 
+                //! Assign names to the temporal numeric collection rule
+                void assignNamesToTemporalNumericCollectionRules();
+
+                //! Assign names to the change measure rule
+                void assignNamesToChangeMeasureRules();
+
+                //! Assign names to the timeseries measure rule
+                void assignNamesToTimeseriesMeasureRules();
+
+                //! Assign names to the timeseries component rule
+                void assignNamesToTimeseriesComponentRules();
+
                 //! Assign names to the numeric measure rules
                 void assignNamesToNumericMeasureRules();
 
                 //! Assign names to the numeric spatial measure rules
                 void assignNamesToNumericSpatialMeasureRules();
-
-                //! Assign names to the n-ary numeric measure rules
-                void assignNamesToNaryNumericMeasureRules();
-
-                //! Assign names to the numeric statistical measure rules
-                void assignNamesToStatisticalMeasureRules();
 
                 //! Assign names to the subset rules
                 void assignNamesToSubsetRules();
@@ -265,17 +324,23 @@ namespace multiscale {
                 //! Initialise debugging for the numeric measure collection rule
                 void initialiseNumericMeasureCollectionRuleDebugging();
 
+                //! Initialise debugging for the temporal numeric collection rule
+                void initialiseTemporalNumericCollectionRuleDebugging();
+
+                //! Initialise debugging for the change measure rule
+                void initialiseChangeMeasureRuleDebugging();
+
+                //! Initialise debugging for the timeseries measure rule
+                void initialiseTimeseriesMeasureRuleDebugging();
+
+                //! Initialise debugging for the timeseries component rule
+                void initialiseTimeseriesComponentRuleDebugging();
+
                 //! Initialise debugging for the numeric measure rule
                 void initialiseNumericMeasureRuleDebugging();
 
                 //! Initialise debugging for the numeric spatial measure rule
                 void initialiseNumericSpatialMeasureRuleDebugging();
-
-                //! Initialise debugging for the n-ary numeric measure rule
-                void initialiseNaryNumericMeasureRuleDebugging();
-
-                //! Initialise debugging for the statistical measure rule
-                void initialiseStatisticalMeasureRuleDebugging();
 
                 //! Initialise debugging for the subset rules
                 void initialiseSubsetRuleDebugging();
@@ -306,6 +371,9 @@ namespace multiscale {
 
                 //! Initialise the numeric measure collection error handling support
                 void initialiseNumericMeasureCollectionErrorHandlingSupport();
+
+                //! Initialise the temporal numeric collection error handling support
+                void initialiseTemporalNumericCollectionErrorHandlingSupport();
 
                 //! Initialise the numeric measure error handling support
                 void initialiseNumericMeasureErrorHandlingSupport();

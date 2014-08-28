@@ -1,8 +1,8 @@
-#ifndef TIMESERIESMEASUREHOMOGENEOUSATTRIBUTE_HPP
-#define TIMESERIESMEASUREHOMOGENEOUSATTRIBUTE_HPP
+#ifndef TIMESERIESTIMESERIESCOMPONENTATTRIBUTE_HPP
+#define TIMESERIESTIMESERIESCOMPONENTATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/TimeseriesMeasureAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/HomogeneousTimeseriesComponentAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/TimeseriesComponentAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/TemporalNumericCollectionAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -13,15 +13,15 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for representing a timeseries measure homogeneous attribute
-        class TimeseriesMeasureHomogeneousAttribute {
+        //! Class for representing a timeseries timeseries component attribute
+        class TimeseriesTimeseriesComponentAttribute {
 
             public:
 
                 TimeseriesMeasureAttribute
-                    timeseriesMeasure;              /*!< The considered timeseries measure */
-                HomogeneousTimeseriesComponentAttribute
-                    homogeneousTimeseriesComponent; /*!< The homogeneous timeseries component */
+                    timeseriesMeasure;              /*!< The timeseries measure */
+                TimeseriesComponentAttribute
+                    timeseriesComponent;            /*!< The timeseries component */
                 TemporalNumericCollectionAttribute
                     temporalNumericCollection;      /*!< The temporal numeric collection */
 
@@ -33,9 +33,9 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::TimeseriesMeasureHomogeneousAttribute,
+    multiscale::verification::TimeseriesTimeseriesComponentAttribute,
     (multiscale::verification::TimeseriesMeasureAttribute, timeseriesMeasure)
-    (multiscale::verification::HomogeneousTimeseriesComponentAttribute, homogeneousTimeseriesComponent)
+    (multiscale::verification::TimeseriesComponentAttribute, timeseriesComponent)
     (multiscale::verification::TemporalNumericCollectionAttribute, temporalNumericCollection)
 )
 

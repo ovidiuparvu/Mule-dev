@@ -2,9 +2,14 @@
 #define TEMPORALNUMERICMEASUREGRAMMAR_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/TemporalNumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/BinaryNumericMeasureGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/BinaryStatisticalMeasureGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/BinaryStatisticalQuantileMeasureGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/NumericMeasureCollectionGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/NumericStateVariableGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/UnaryNumericMeasureGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/UnaryStatisticalMeasureGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -35,6 +40,23 @@ namespace multiscale {
             private:
 
                 // Grammars
+
+                UnaryStatisticalMeasureGrammar<Iterator>
+                    unaryStatisticalMeasureRule;                /*!< The grammar for parsing a unary statistical
+                                                                     measure */
+                BinaryStatisticalMeasureGrammar<Iterator>
+                    binaryStatisticalMeasureRule;               /*!< The grammar for parsing a binary statistical
+                                                                     measure */
+                BinaryStatisticalQuantileMeasureGrammar<Iterator>
+                    binaryStatisticalQuantileMeasureRule;       /*!< The grammar for parsing a binary statistical
+                                                                     quantile measure */
+
+                UnaryNumericMeasureGrammar<Iterator>
+                    unaryNumericMeasureRule;                    /*!< The grammar for parsing a unary numeric
+                                                                     measure */
+                BinaryNumericMeasureGrammar<Iterator>
+                    binaryNumericMeasureRule;                   /*!< The grammar for parsing a binary numeric
+                                                                     measure */
 
                 NumericMeasureCollectionGrammar<Iterator>
                     numericMeasureCollectionRule;               /*!< The grammar for parsing a numeric measure
@@ -68,38 +90,6 @@ namespace multiscale {
                     binaryStatisticalQuantileNumericRule;       /*!< The rule for parsing a binary statistical
                                                                      quantile numeric attribute */
 
-                qi::rule<Iterator, UnaryStatisticalMeasureAttribute(), qi::space_type>
-                    unaryStatisticalMeasureRule;                /*!< The rule for parsing a unary statistical
-                                                                     measure */
-                qi::rule<Iterator, BinaryStatisticalMeasureAttribute(), qi::space_type>
-                    binaryStatisticalMeasureRule;               /*!< The rule for parsing a binary statistical
-                                                                     measure */
-                qi::rule<Iterator, BinaryStatisticalQuantileMeasureAttribute(), qi::space_type>
-                    binaryStatisticalQuantileMeasureRule;       /*!< The rule for parsing a binary statistical
-                                                                     quantile measure */
-
-                qi::rule<Iterator, UnaryNumericMeasureAttribute(), qi::space_type>
-                    unaryNumericMeasureRule;                    /*!< The rule for parsing a unary numeric measure */
-                qi::rule<Iterator, BinaryNumericMeasureAttribute(), qi::space_type>
-                    binaryNumericMeasureRule;                   /*!< The rule for parsing a binary numeric measure */
-
-
-                // Enumeration parsers
-
-                UnaryStatisticalMeasureTypeParser
-                    unaryStatisticalMeasureTypeParser;          /*!< The unary statistical measure type parser */
-                BinaryStatisticalMeasureTypeParser
-                    binaryStatisticalMeasureTypeParser;         /*!< The binary statistical measure type parser */
-                BinaryStatisticalQuantileMeasureTypeParser
-                    binaryStatisticalQuantileMeasureTypeParser; /*!< The binary statistical quantile measure type
-                                                                     parser */
-
-                UnaryNumericMeasureTypeParser
-                    unaryNumericMeasureTypeParser;              /*!< The unary numeric measure type parser */
-                BinaryNumericMeasureTypeParser
-                    binaryNumericMeasureTypeParser;             /*!< The binary numeric measure type parser */
-
-
             public:
 
                 TemporalNumericMeasureGrammar();
@@ -118,12 +108,6 @@ namespace multiscale {
                 //! Initialise the numeric statistical measure rules
                 void initialiseNumericStatisticalMeasureRule();
 
-                //! Initialise the n-ary numeric measure rule
-                void initialiseNaryNumericMeasureRule();
-
-                //! Initialise the statistical measure rule
-                void initialiseStatisticalMeasureRule();
-
                 //! Initialise debug support
                 void initialiseDebugSupport();
 
@@ -136,12 +120,6 @@ namespace multiscale {
                 //! Assign names to the numeric statistical measure rules
                 void assignNamesToNumericStatisticalMeasureRules();
 
-                //! Assign names to the n-ary numeric measure rules
-                void assignNamesToNaryNumericMeasureRules();
-
-                //! Assign names to the numeric statistical measure rules
-                void assignNamesToStatisticalMeasureRules();
-
                 //! Initialise the debugging of rules
                 void initialiseRulesDebugging();
 
@@ -150,12 +128,6 @@ namespace multiscale {
 
                 //! Initialise debugging for the numeric statistical measure rule
                 void initialiseNumericStatisticalMeasureRuleDebugging();
-
-                //! Initialise debugging for the n-ary numeric measure rule
-                void initialiseNaryNumericMeasureRuleDebugging();
-
-                //! Initialise debugging for the statistical measure rule
-                void initialiseStatisticalMeasureRuleDebugging();
 
                 //! Initialise the error handling routines
                 void initialiseErrorHandlingSupport();

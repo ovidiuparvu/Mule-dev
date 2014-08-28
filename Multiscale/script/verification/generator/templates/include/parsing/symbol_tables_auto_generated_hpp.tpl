@@ -17,6 +17,10 @@ namespace multiscale {
 
     namespace verification {
 
+        // Namespace aliases
+        namespace qi = boost::spirit::qi;
+
+
         //! Symbol table and parser for the spatial measure type
         struct SpatialMeasureTypeParser : qi::symbols<char, multiscale::verification::SpatialMeasureType> {
 

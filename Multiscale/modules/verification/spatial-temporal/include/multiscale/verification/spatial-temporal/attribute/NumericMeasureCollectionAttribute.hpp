@@ -2,7 +2,7 @@
 #define NUMERICMEASURECOLLECTIONATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureCollectionAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericMeasureCollectionAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericCollectionAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 
@@ -14,7 +14,7 @@ namespace multiscale {
         //! Variant for the numeric measure collection attribute
         typedef boost::variant<
             SpatialMeasureCollectionAttribute,
-            TemporalNumericMeasureCollectionAttribute
+            TemporalNumericCollectionAttribute
         > NumericMeasureCollectionType;
 
 

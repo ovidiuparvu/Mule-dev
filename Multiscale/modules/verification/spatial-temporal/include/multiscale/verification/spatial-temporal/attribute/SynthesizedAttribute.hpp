@@ -31,9 +31,8 @@
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericTemporalAttribute.hpp"
 
 #include "multiscale/verification/spatial-temporal/attribute/ChangeTemporalNumericCollectionAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/TimeseriesMeasureHeterogeneousAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/TimeseriesMeasureHomogeneousAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/HomogeneousHomogeneousTimeseriesMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/TimeseriesTimeseriesComponentAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/HomogeneousHomogeneousTimeseriesAttribute.hpp"
 
 #include "multiscale/verification/spatial-temporal/attribute/PrimaryNumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericNumericAttribute.hpp"

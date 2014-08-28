@@ -22,18 +22,15 @@ namespace multiscale {
 
                 NumericMeasureCollectionVisitor(const SpatialTemporalTrace &trace) : trace(trace) {}
 
-                //! Overloading the "()" operator for the TemporalNumericMeasureCollectionAttribute alternative
+                //! Overloading the "()" operator for the TemporalNumericCollectionAttribute alternative
                 /*!
-                 * \param temporalNumericMeasureCollection  The temporal numeric measure collection
+                 * \param temporalNumericCollection The temporal numeric collection
                  */
                 std::vector<double>
-                operator()(const TemporalNumericMeasureCollectionAttribute &temporalNumericMeasureCollection) const {
-                    return NumericMeasureCollectionEvaluator::evaluate(
-                        trace,
-                        temporalNumericMeasureCollection.startTimepoint,
-                        temporalNumericMeasureCollection.endTimepoint,
-                        temporalNumericMeasureCollection.numericMeasure
-                    );
+                operator()(const TemporalNumericCollectionAttribute &temporalNumericCollection) const {
+                    // TODO: Replace with the actual implementation + refactor evaluate method from
+                    // NumericMeasureCollectionEvaluator class
+                    return std::vector<double>();
                 }
 
                 //! Overloading the "()" operator for the SpatialMeasureCollectionAttribute alternative

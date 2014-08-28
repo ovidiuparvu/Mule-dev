@@ -1,5 +1,5 @@
-#ifndef HOMOGENEOUSHOMOGENEOUSTIMESERIESMEASUREATTRIBUTE_HPP
-#define HOMOGENEOUSHOMOGENEOUSTIMESERIESMEASUREATTRIBUTE_HPP
+#ifndef HOMOGENEOUSHOMOGENEOUSTIMESERIESATTRIBUTE_HPP
+#define HOMOGENEOUSHOMOGENEOUSTIMESERIESATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/HomogeneousTimeseriesMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/HomogeneousTimeseriesComponentAttribute.hpp"
@@ -13,8 +13,8 @@ namespace multiscale {
 
     namespace verification {
 
-        //! Class for representing a homogeneous homogeneous timeseries measure attribute
-        class HomogeneousHomogeneousTimeseriesMeasureAttribute {
+        //! Class for representing a homogeneous homogeneous timeseries attribute
+        class HomogeneousHomogeneousTimeseriesAttribute {
 
             public:
 
@@ -33,7 +33,7 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::HomogeneousHomogeneousTimeseriesMeasureAttribute,
+    multiscale::verification::HomogeneousHomogeneousTimeseriesAttribute,
     (multiscale::verification::HomogeneousTimeseriesMeasureAttribute, homogeneousTimeseriesMeasure)
     (multiscale::verification::HomogeneousTimeseriesComponentAttribute, homogeneousTimeseriesComponent)
     (multiscale::verification::TemporalNumericCollectionAttribute, temporalNumericCollection)

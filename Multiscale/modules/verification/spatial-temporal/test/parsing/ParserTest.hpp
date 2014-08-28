@@ -1127,73 +1127,73 @@ TEST(HeterogeneousTimeseriesComponent, CorrectValley) {
 /////////////////////////////////////////////////////////
 //
 //
-// HomogeneousHomogeneousTimeseriesMeasure
+// HomogeneousHomogeneousTimeseries
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputBeforeHomogeneousTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(+value(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputBeforeHomogeneousTimeseriesMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(+values(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputWrongHomogeneousTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(cvalue(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputWrongHomogeneousTimeseriesMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(cvalues(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputBeforeStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value of(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputBeforeStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values of(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputAfterStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value((ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputAfterStartParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values((ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputInvalidFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(valley, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputInvalidFirstParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(valley, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputMissingFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value([0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputMissingFirstParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values([0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputMissingCommaBetweenParameters) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputMissingCommaBetweenParameters) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputMissingSecondParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent)) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputMissingSecondParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent)) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputInvalidSecondParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] clusteredness(clusters))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputInvalidSecondParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] clusteredness(clusters))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] count(clusteredness(clusters)), {A})) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputBeforeEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(clusteredness(clusters)), {A})) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] count(clusteredness(clusters))), 2) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputAfterEndParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(clusteredness(clusters))), 2) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputMissingParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value ascent, [0, 5] count(clusteredness(clusters))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputMissingParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values ascent, [0, 5] count(clusteredness(clusters))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputInvertedParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value)ascent, [0, 5] count(clusteredness(clusters))() > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputInvertedParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values)ascent, [0, 5] count(clusteredness(clusters))() > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputDoubledParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value((ascent, [0, 5] count(clusteredness(clusters))))) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputDoubledParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values((ascent, [0, 5] count(clusteredness(clusters))))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, IncorrectInputWrongParanthesesType) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value{ascent, [0, 5] count(clusteredness(clusters))}) > 0]"), InvalidInputException);
+TEST(HomogeneousHomogeneousTimeseries, IncorrectInputWrongParanthesesType) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values{ascent, [0, 5] count(clusteredness(clusters))}) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseriesMeasure, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+TEST(HomogeneousHomogeneousTimeseries, Correct) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"));
 }
 
 
@@ -1206,27 +1206,27 @@ TEST(HomogeneousHomogeneousTimeseriesMeasure, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(HomogeneousTimeseriesComponent, IncorrectAlternativeHeterogeneousTimeseriesComponent) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(value(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectAscent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectDescent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(descent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(descent, [0, 5] count(clusteredness(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectPlateu) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(plateu, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(plateu, [0, 5] count(clusteredness(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectUniformAscent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniformAscent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(uniformAscent, [0, 5] count(clusteredness(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectUniformDescent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniformDescent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(uniformDescent, [0, 5] count(clusteredness(clusters)))) > 0]"));
 }
 
 
@@ -1239,15 +1239,15 @@ TEST(HomogeneousTimeseriesComponent, CorrectUniformDescent) {
 /////////////////////////////////////////////////////////
 
 TEST(HomogeneousTimeseriesMeasure, IncorrectAlternativeTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(exitingValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousTimeseriesMeasure, CorrectDuration) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(duration(uniformAscent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+TEST(HomogeneousTimeseriesMeasure, CorrectTimeSpan) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(timeSpan(uniformAscent, [0, 5] count(clusteredness(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesMeasure, CorrectValue) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(value(uniformDescent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(uniformDescent, [0, 5] count(clusteredness(clusters)))) > 0]"));
 }
 
 
@@ -1769,7 +1769,7 @@ TEST(SimilarityMeasure, IncorrectSimilarityMeasure) {
 }
 
 TEST(SimilarityMeasure, CorrectAntiSimilar) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"));
 }
 
 TEST(SimilarityMeasure, CorrectSimilar) {
@@ -1786,67 +1786,67 @@ TEST(SimilarityMeasure, CorrectSimilar) {
 /////////////////////////////////////////////////////////
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBeforeStartParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar(([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite(([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputAfterStartParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar( _ [0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite( _ [0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectFirstParameterType) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar({A}, [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite({A}, [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingFirstParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectSecondParameterType) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), {A}, 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), {A}, 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingSecondParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingSecondParameterExcludingComma) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), , 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), , 2)]"), InvalidInputException);
 }
  
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingFirstAndSecondParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar(2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite(2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputInvalidThirdParameterType) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), {B})]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), {B})]"), InvalidInputException);
 }
  
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2 + 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2 + 1)]"), InvalidInputException);
 }
  
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2) V True]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2) V True]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputExtraParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2, 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2, 4)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBetweenFirstAndSecondParameters) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), 4, [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), 4, [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBetweenSecondAndThirdParameters) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingParameters) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar()]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite()]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingParametersAndParantheses) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [antiSimilar]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingSimilarityMeasure) {
@@ -1854,7 +1854,7 @@ TEST(SimilarityTemporalNumericCollectionAttribute, MissingSimilarityMeasure) {
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, Correct) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [antiSimilar([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"));
 }
 
 
@@ -2235,13 +2235,46 @@ TEST(TemporalNumericMeasureCollection, Correct) {
 /////////////////////////////////////////////////////////
 //
 //
+// TimeseriesComponent
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(TimeseriesComponent, IncorrectInputBeforeTimeseriesComponent) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((plateu)valley, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesComponent, IncorrectParanthesisBeforeTimeseriesComponent) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((valley, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesComponent, IncorrectInputAfterTimeseriesComponent) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valley(valley), [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesComponent, IncorrectParanthesisAfterTimeseriesComponent) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valley), [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesComponent, IncorrectInputInvalidAlternative) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valleys, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+}
+
+TEST(TimeseriesComponent, Correct) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] count(clusteredness(clusters)))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // TimeseriesMeasure
 //
 //
 /////////////////////////////////////////////////////////
 
 TEST(TimeseriesMeasure, IncorrectInputWrongAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min(value(peak, [0, 11] count(clusteredness(clusters)))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min(values(peak, [0, 11] count(clusteredness(clusters)))) = 1]"), InvalidInputException);
 }
 
 TEST(TimeseriesMeasure, CorrectEnteringTime) {
@@ -2256,146 +2289,73 @@ TEST(TimeseriesMeasure, CorrectEnteringValue) {
 /////////////////////////////////////////////////////////
 //
 //
-// TimeseriesMeasureHeterogeneous
+// TimeseriesTimeseriesComponent
 //
 //
 /////////////////////////////////////////////////////////
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputBeforeTimeseriesMeasure) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputBeforeTimeseriesMeasure) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(+enteringValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputWrongTimeseriesMeasure) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputWrongTimeseriesMeasure) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(wenteringValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputBeforeStartParanthesis) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputBeforeStartParanthesis) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue () (peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputAfterStartParanthesis) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputAfterStartParanthesis) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(()peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputInvalidFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+TEST(TimeseriesTimeseriesComponent, IncorrectInputInvalidFirstParameter) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(climb, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputMissingFirstParameter) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputMissingFirstParameter) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue([0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputMissingCommaBetweenParameters) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputMissingCommaBetweenParameters) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputMissingSecondParameter) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputMissingSecondParameter) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak)) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputInvalidSecondParameter) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputInvalidSecondParameter) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] clusteredness(clusters))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputBeforeEndParanthesis) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputBeforeEndParanthesis) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(clusteredness(clusters)) < 2)) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputAfterEndParanthesis) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputAfterEndParanthesis) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(clusteredness(clusters))) [0, 3]) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputMissingParantheses) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputMissingParantheses) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue peak, [0, 5] count(clusteredness(clusters))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputInvertedParantheses) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputInvertedParantheses) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue)peak, [0, 5] count(clusteredness(clusters))() > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputDoubledParantheses) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputDoubledParantheses) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((peak, [0, 5] count(clusteredness(clusters))))) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, IncorrectInputWrongParanthesesType) {
+TEST(TimeseriesTimeseriesComponent, IncorrectInputWrongParanthesesType) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue{peak, [0, 5] count(clusteredness(clusters))}) > 0]"), InvalidInputException);
 }
 
-TEST(TimeseriesMeasureHeterogeneous, Correct) {
+TEST(TimeseriesTimeseriesComponent, Correct) {
     EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"));
-}
-
-
-/////////////////////////////////////////////////////////
-//
-//
-// TimeseriesMeasureHomogeneous
-//
-//
-/////////////////////////////////////////////////////////
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputBeforeTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(+enteringValue(plateu, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputWrongTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(wenteringValue(plateu, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputBeforeStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue () (plateu, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputAfterStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(()plateu, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputInvalidFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valley, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputMissingFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue([0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputMissingCommaBetweenParameters) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputMissingSecondParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu)) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputInvalidSecondParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] clusteredness(clusters))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] count(clusteredness(clusters)) < 2)) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] count(clusteredness(clusters))) [0, 3]) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputMissingParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue plateu, [0, 5] count(clusteredness(clusters))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputInvertedParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue)plateu, [0, 5] count(clusteredness(clusters))() > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputDoubledParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((plateu, [0, 5] count(clusteredness(clusters))))) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, IncorrectInputWrongParanthesesType) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue{plateu, [0, 5] count(clusteredness(clusters))}) > 0]"), InvalidInputException);
-}
-
-TEST(TimeseriesMeasureHomogeneous, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] count(clusteredness(clusters)))) > 0]"));
 }
 
 

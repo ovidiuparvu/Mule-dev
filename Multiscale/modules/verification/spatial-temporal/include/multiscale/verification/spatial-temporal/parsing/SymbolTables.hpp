@@ -110,6 +110,19 @@ namespace multiscale {
 
         };
 
+        //! Symbol table and parser for the heterogeneous timeseries component type
+        struct HeterogeneousTimeseriesComponentTypeParser
+            : qi::symbols<char, multiscale::verification::HeterogeneousTimeseriesComponentType> {
+
+            HeterogeneousTimeseriesComponentTypeParser() {
+                add
+                    ("peak"     , HeterogeneousTimeseriesComponentType::Peak)
+                    ("valley"   , HeterogeneousTimeseriesComponentType::Valley)
+                ;
+            }
+
+        };
+
         //! Symbol table and parser for the homogeneous timeseries component type
         struct HomogeneousTimeseriesComponentTypeParser
             : qi::symbols<char, multiscale::verification::HomogeneousTimeseriesComponentType> {
@@ -132,8 +145,8 @@ namespace multiscale {
 
             HomogeneousTimeseriesMeasureTypeParser() {
                 add
-                    ("duration" , HomogeneousTimeseriesMeasureType::Duration)
-                    ("value"    , HomogeneousTimeseriesMeasureType::Value)
+                    ("timeSpan" , HomogeneousTimeseriesMeasureType::TimeSpan)
+                    ("values"   , HomogeneousTimeseriesMeasureType::Values)
                 ;
             }
 
@@ -145,8 +158,8 @@ namespace multiscale {
 
             SimilarityMeasureTypeParser() {
                 add
-                    ("antiSimilar"  , SimilarityMeasureType::AntiSimilar)
-                    ("similar"      , SimilarityMeasureType::Similar)
+                    ("opposite" , SimilarityMeasureType::Opposite)
+                    ("similar"  , SimilarityMeasureType::Similar)
                 ;
             }
 
