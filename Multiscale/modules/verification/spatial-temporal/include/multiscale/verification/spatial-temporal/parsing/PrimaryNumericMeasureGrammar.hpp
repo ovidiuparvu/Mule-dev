@@ -68,7 +68,7 @@ namespace multiscale {
                     binaryNumericMeasureRule;                       /*!< The grammar for parsing binary numeric
                                                                          measures */
 
-                std::shared_ptr<SpatialMeasureCollectionGrammar<Iterator>>
+                SpatialMeasureCollectionGrammar<Iterator>*
                     spatialMeasureCollectionRule;                   /*!< The grammar for parsing spatial measure
                                                                          collections */
 
@@ -98,8 +98,8 @@ namespace multiscale {
 
             public:
 
-                PrimaryNumericMeasureGrammar(const std::shared_ptr<SpatialMeasureCollectionGrammar<Iterator>>
-                                             &spatialMeasureCollectionGrammar);
+                PrimaryNumericMeasureGrammar(SpatialMeasureCollectionGrammar<Iterator>
+                                             *spatialMeasureCollectionGrammar);
 
             private:
 

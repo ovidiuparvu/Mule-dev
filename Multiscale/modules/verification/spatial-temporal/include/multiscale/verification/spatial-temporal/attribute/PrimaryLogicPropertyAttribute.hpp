@@ -2,6 +2,7 @@
 #define PRIMARYLOGICPROPERTYATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/ChangeTemporalNumericMeasureAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SimilarityTemporalNumericCollectionAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/TemporalNumericComparisonAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
@@ -25,6 +26,7 @@ namespace multiscale {
         typedef boost::variant<
             TemporalNumericComparisonAttribute,
             ChangeTemporalNumericMeasureAttribute,
+            SimilarityTemporalNumericCollectionAttribute,
             boost::recursive_wrapper<NotLogicPropertyAttribute>,
             boost::recursive_wrapper<FutureLogicPropertyAttribute>,
             boost::recursive_wrapper<GlobalLogicPropertyAttribute>,

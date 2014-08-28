@@ -38,10 +38,14 @@ namespace multiscale {
 
                 // Grammars
 
-                PrimaryNumericMeasureGrammar<Iterator>
+                std::shared_ptr<SpatialMeasureCollectionGrammar<Iterator>>
+                    spatialMeasureCollectionGrammar;               /*!< The grammar for parsing spatial measure
+                                                                        collection which will be passed by reference
+                                                                        to the primary numeric measure grammar */
+
+                std::shared_ptr<PrimaryNumericMeasureGrammar<Iterator>>
                     primaryNumericMeasureRule;                      /*!< The grammar for parsing primary numeric
                                                                          measures */
-
                 UnaryNumericMeasureGrammar<Iterator>
                     unaryNumericMeasureRule;                        /*!< The grammar for parsing unary numeric
                                                                          measures */

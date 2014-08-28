@@ -48,6 +48,7 @@ namespace multiscale {
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::initialiseGrammar() {
             initialiseLogicPropertiesRules();
+            initialiseSimilarityMeasureRules();
             initialiseComparatorRules();
         }
 
@@ -98,6 +99,7 @@ namespace multiscale {
             primaryLogicPropertyRule
                 =   temporalNumericComparisonRule
                 |   changeTemporalNumericMeasureRule
+                |   similarityTemporalNumericCollectionRule
                 |   notLogicPropertyRule
                 |   futureLogicPropertyRule
                 |   globalLogicPropertyRule
@@ -119,6 +121,18 @@ namespace multiscale {
                         > ')'
                         > comparatorRule
                         > temporalNumericMeasureRule
+                    );
+
+            similarityTemporalNumericCollectionRule
+                =   (
+                        similarityMeasureRule
+                        > '('
+                        > temporalNumericCollectionRule
+                        > ','
+                        > temporalNumericCollectionRule
+                        > ','
+                        > qi::double_
+                        > ')'
                     );
 
             notLogicPropertyRule
@@ -191,6 +205,13 @@ namespace multiscale {
                     );
         }
 
+        //! Initialise the similarity measure rules
+        template <typename Iterator>
+        void LogicPropertyGrammar<Iterator>::initialiseSimilarityMeasureRules() {
+            similarityMeasureRule
+                =   similarityMeasureTypeParser;
+        }
+
         //! Initialise the comparator rules
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::initialiseComparatorRules() {
@@ -211,6 +232,7 @@ namespace multiscale {
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::assignNamesToRules() {
             assignNamesToLogicPropertiesRules();
+            assignNamesToSimilarityMeasureRules();
             assignNamesToComparatorRules();
         }
 
@@ -259,6 +281,12 @@ namespace multiscale {
             untilLogicPropertyRule          .name("untilLogicPropertyRule");
         }
 
+        //! Assign names to the similarity measure rules
+        template <typename Iterator>
+        void LogicPropertyGrammar<Iterator>::assignNamesToSimilarityMeasureRules() {
+            similarityMeasureRule.name("similarityMeasureRule");
+        }
+
         //! Assign names to the comparator rules
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::assignNamesToComparatorRules() {
@@ -269,6 +297,7 @@ namespace multiscale {
         template <typename Iterator>
         void LogicPropertyGrammar<Iterator>::initialiseRulesDebugging() {
             initialiseLogicPropertiesRulesDebugging();
+            initialiseSimilarityMeasureRuleDebugging();
             initialiseComparatorRuleDebugging();
         }
 
@@ -315,6 +344,12 @@ namespace multiscale {
             debug(implicationLogicPropertyRule);
             debug(equivalenceLogicPropertyRule);
             debug(untilLogicPropertyRule);
+        }
+
+        //! Initialise debugging for the similarity measure rule
+        template <typename Iterator>
+        void LogicPropertyGrammar<Iterator>::initialiseSimilarityMeasureRuleDebugging() {
+            debug(similarityMeasureRule);
         }
 
         //! Initialise debugging for the comparator rule

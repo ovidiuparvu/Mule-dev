@@ -6,6 +6,7 @@
 #include "multiscale/verification/spatial-temporal/parsing/ChangeMeasureGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/ComparatorGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/TemporalNumericCollectionGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/TemporalNumericMeasureGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
@@ -42,6 +43,10 @@ namespace multiscale {
                     temporalNumericMeasureRule;                 /*!< The grammar for parsing a temporal numeric
                                                                      measure */
 
+                TemporalNumericCollectionGrammar<Iterator>
+                    temporalNumericCollectionRule;              /*!< The grammar for parsing a temporal numeric
+                                                                     collection */
+
                 ChangeMeasureGrammar<Iterator>
                     changeMeasureRule;                          /*!< The grammar for parsing a change measure */
                 ComparatorGrammar<Iterator>
@@ -65,6 +70,11 @@ namespace multiscale {
                 qi::rule<Iterator, ChangeTemporalNumericMeasureAttribute(), qi::space_type>
                     changeTemporalNumericMeasureRule;           /*!< The rule for parsing a change temporal numeric
                                                                      measure */
+                qi::rule<Iterator, SimilarityTemporalNumericCollectionAttribute(), qi::space_type>
+                    similarityTemporalNumericCollectionRule;    /*!< The rule for parsing a similarity temporal numeric
+                                                                     collection attribute */
+                qi::rule<Iterator, SimilarityMeasureAttribute(), qi::space_type>
+                    similarityMeasureRule;                      /*!< The rule for parsing a similarity measure */
                 qi::rule<Iterator, NotLogicPropertyAttribute(), qi::space_type>
                     notLogicPropertyRule;                       /*!< The rule for parsing a "not" logic property */
                 qi::rule<Iterator, FutureLogicPropertyAttribute(), qi::space_type>
@@ -105,6 +115,9 @@ namespace multiscale {
 
                 // Enumeration parsers
 
+                SimilarityMeasureTypeParser
+                    similarityMeasureTypeParser;        /*!< The similarity measure type parser */
+
                 ComparatorNonEqualTypeParser
                     comparatorNonEqualTypeParser;       /*!< The comparator type parser which does not accept
                                                              the "=" symbol */
@@ -136,6 +149,9 @@ namespace multiscale {
                 //! Initialise the composed logic property rule
                 void initialiseComposedLogicPropertyRule();
 
+                //! Initialise the similarity measure rules
+                void initialiseSimilarityMeasureRules();
+
                 //! Initialise the comparator rules
                 void initialiseComparatorRules();
 
@@ -160,6 +176,9 @@ namespace multiscale {
                 //! Assign names to the composed logic property rules
                 void assignNamesToComposedLogicPropertyRules();
 
+                //! Assign names to the similarity measure rules
+                void assignNamesToSimilarityMeasureRules();
+
                 //! Assign names to the comparator rules
                 void assignNamesToComparatorRules();
 
@@ -180,6 +199,9 @@ namespace multiscale {
 
                 //! Initialise debugging for the composed logic property rule
                 void initialiseComposedLogicPropertyRuleDebugging();
+
+                //! Initialise debugging for the similarity measure rule
+                void initialiseSimilarityMeasureRuleDebugging();
 
                 //! Initialise debugging for the comparator rule
                 void initialiseComparatorRuleDebugging();

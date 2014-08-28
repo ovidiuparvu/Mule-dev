@@ -32,10 +32,13 @@ namespace multiscale {
             : TemporalNumericCollectionGrammar::base_type(
                                                     temporalNumericCollectionRule,
                                                     "temporalNumericCollectionRule"
-                                                ),
-              primaryNumericMeasureRule(
-                  std::make_shared<SpatialMeasureCollectionGrammar<Iterator>>()
-              ) {
+                                                ) {
+            // Define the dependent sub-grammars
+            spatialMeasureCollectionGrammar = std::make_shared<SpatialMeasureCollectionGrammar<Iterator>>();
+            primaryNumericMeasureRule = std::make_shared<PrimaryNumericMeasureGrammar<Iterator>>(
+                                            spatialMeasureCollectionGrammar.get()
+                                        );
+
             initialise();
         }
 
@@ -132,7 +135,7 @@ namespace multiscale {
         template <typename Iterator>
         void TemporalNumericCollectionGrammar<Iterator>::initialiseNumericMeasureRule() {
             numericMeasureRule
-                =   primaryNumericMeasureRule
+                =   (*primaryNumericMeasureRule)
                 |   unaryNumericNumericRule
                 |   binaryNumericNumericRule;
 

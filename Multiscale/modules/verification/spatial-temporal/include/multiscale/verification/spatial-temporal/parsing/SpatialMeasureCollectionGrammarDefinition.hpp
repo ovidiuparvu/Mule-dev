@@ -32,9 +32,7 @@ namespace multiscale {
                                                    "spatialMeasureCollectionRule"
                                                ),
               primaryNumericMeasureRule(
-                  std::make_shared<PrimaryNumericMeasureGrammar<Iterator>>(
-                      std::shared_ptr<SpatialMeasureCollectionGrammar>(this)
-                  )
+                  std::make_shared<PrimaryNumericMeasureGrammar<Iterator>>(this)
               ) {
             initialise();
         }

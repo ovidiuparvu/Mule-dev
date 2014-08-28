@@ -26,7 +26,7 @@ namespace multiscale {
 
         template <typename Iterator>
         PrimaryNumericMeasureGrammar<Iterator>::PrimaryNumericMeasureGrammar(
-            const std::shared_ptr<SpatialMeasureCollectionGrammar<Iterator>> &spatialMeasureCollectionGrammar)
+            SpatialMeasureCollectionGrammar<Iterator> *spatialMeasureCollectionGrammar)
             : PrimaryNumericMeasureGrammar::base_type(primaryNumericMeasureRule, "primaryNumericMeasureRule"),
               spatialMeasureCollectionRule(spatialMeasureCollectionGrammar) {
             initialise();

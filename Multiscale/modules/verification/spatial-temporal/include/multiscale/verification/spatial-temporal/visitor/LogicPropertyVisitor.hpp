@@ -179,6 +179,18 @@ namespace multiscale {
                     }
                 }
 
+                //! Overloading the "()" operator for the SimilarityTemporalNumericCollectionAttribute alternative
+                /*!
+                 * \param primaryLogicProperty  The primary logic property
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename T>
+                bool operator() (const SimilarityTemporalNumericCollectionAttribute &primaryLogicProperty,
+                                 const T &lhsLogicProperty) const {
+                    // TODO: Implement
+                    return false;
+                }
+
                 //! Overloading the "()" operator for the NotLogicPropertyAttribute alternative
                 /*!
                  * \param primaryLogicProperty  The primary logic property
