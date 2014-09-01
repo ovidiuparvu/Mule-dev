@@ -94,9 +94,7 @@ namespace multiscale {
                  * \param constraint    The provided constraint
                  */
                 TimePoint filterTimePoint(const TimePoint &timePoint,
-                                          const ConstraintAttributeType &constraint) const {
-                    return boost::apply_visitor(ConstraintVisitor(timePoint, timePoint), constraint);
-                }
+                                          const ConstraintAttributeType &constraint) const;
 
                 //! Evaluate subsetOperation against the given subsets timepoints
                 /*!
@@ -134,6 +132,20 @@ namespace multiscale {
     };
 
 };
+
+
+// Includes added after class declaration to avoid include circular dependency errors
+
+#include "multiscale/verification/spatial-temporal/visitor/ConstraintVisitor.hpp"
+
+
+// Methods which depend on the immediately above included classes
+
+inline multiscale::verification::TimePoint
+multiscale::verification::SubsetVisitor::filterTimePoint(const TimePoint &timePoint,
+                                                         const ConstraintAttributeType &constraint) const {
+    return boost::apply_visitor(ConstraintVisitor(timePoint, timePoint), constraint);
+}
 
 
 #endif

@@ -810,7 +810,7 @@ TEST_F(NumericStateVariableTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, SimilarityMeasureAntiSimilar) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [opposite(d([0, 11] {A}), d([0, 11] {C}), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [opposite(d([0, 11] {A}), d([0, 11] {C} (type = 1)), 0)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, SimilarityMeasureSimilar) {

@@ -2,8 +2,10 @@
 #define LOGICPROPERTYVISITOR_HPP
 
 #include "multiscale/util/ConsolePrinter.hpp"
+#include "multiscale/util/Numeric.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/LogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/ChangeMeasureEvaluator.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/NumericVisitor.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/TemporalNumericVisitor.hpp"
 
 #include <boost/variant.hpp>
@@ -187,8 +189,24 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const SimilarityTemporalNumericCollectionAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
-                    // TODO: Implement
-                    return false;
+                    std::vector<double> lhsTemporalNumericCollectionValues =
+                        NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
+                            trace,
+                            primaryLogicProperty.lhsTemporalNumericCollection
+                        );
+
+                    std::vector<double> rhsTemporalNumericCollectionValues =
+                        NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
+                            trace,
+                            primaryLogicProperty.rhsTemporalNumericCollection
+                        );
+
+                    return evaluateSimilarityTemporalNumericCollection(
+                        primaryLogicProperty.similarityMeasure.similarityMeasure,
+                        lhsTemporalNumericCollectionValues,
+                        rhsTemporalNumericCollectionValues,
+                        primaryLogicProperty.toleratedSimilarityDifference
+                    );
                 }
 
                 //! Overloading the "()" operator for the NotLogicPropertyAttribute alternative
@@ -332,6 +350,107 @@ namespace multiscale {
                                                             lhsTemporalNumericMeasureSecondTimepoint,
                                                             timeValueFirstTimepoint,
                                                             timeValueSecondTimepoint);
+                }
+
+                //! Evaluate the given SimilarityTemporalNumericCollectionAttribute
+                /*!
+                 * \param similarityMeasureType                 The specific similarity measure type
+                 * \param lhsTemporalNumericCollectionValues    The left hand side temporal numeric collection values
+                 * \param rhsTemporalNumericCollectionValues    The right hand side temporal numeric collection values
+                 * \param toleratedSimilarityDifference         The maximum tolerated similarity difference between
+                 *                                              two values
+                 */
+                bool
+                evaluateSimilarityTemporalNumericCollection(const SimilarityMeasureType &similarityMeasureType,
+                                                            const std::vector<double>
+                                                            &lhsTemporalNumericCollectionValues,
+                                                            const std::vector<double>
+                                                            &rhsTemporalNumericCollectionValues,
+                                                            double toleratedSimilarityDifference) const {
+                    if (lhsTemporalNumericCollectionValues.size() < rhsTemporalNumericCollectionValues.size()) {
+                        return isLhsSimilarToRhs(lhsTemporalNumericCollectionValues,
+                                                 rhsTemporalNumericCollectionValues,
+                                                 toleratedSimilarityDifference, similarityMeasureType);
+                    } else {
+                        return isLhsSimilarToRhs(rhsTemporalNumericCollectionValues,
+                                                 lhsTemporalNumericCollectionValues,
+                                                 toleratedSimilarityDifference, similarityMeasureType);
+                    }
+                }
+
+                //! Check if the left- and right-hand side collections of values are similar
+                /*!
+                 * \param similarityMeasureType                 The specific similarity measure type
+                 * \param lhsTemporalNumericCollectionValues    The left hand side temporal numeric collection values
+                 * \param rhsTemporalNumericCollectionValues    The right hand side temporal numeric collection values
+                 * \param toleratedSimilarityDifference         The maximum tolerated similarity difference between
+                 *                                              two values
+                 */
+                bool
+                isLhsSimilarToRhs(const std::vector<double> &lhsTemporalNumericCollectionValues,
+                                  const std::vector<double> &rhsTemporalNumericCollectionValues,
+                                  double toleratedSimilarityDifference,
+                                  const SimilarityMeasureType &similarityMeasureType) const {
+                    // Precondition
+                    assert(lhsTemporalNumericCollectionValues.size() <= rhsTemporalNumericCollectionValues.size());
+
+                    std::size_t lhsIndex = 0;
+                    std::size_t rhsIndex = 0;
+
+                    std::size_t nrOfLhsElements = lhsTemporalNumericCollectionValues.size();
+                    std::size_t nrOfRhsElements = rhsTemporalNumericCollectionValues.size();
+
+                    // Incrementally check if the collections of values are similar
+                    while ((lhsIndex < nrOfLhsElements) &&
+                           ((nrOfLhsElements - lhsIndex) <= (nrOfRhsElements - rhsIndex))) {
+                        if (areSimilarValues(lhsTemporalNumericCollectionValues[lhsIndex],
+                                             rhsTemporalNumericCollectionValues[rhsIndex],
+                                             toleratedSimilarityDifference, similarityMeasureType)) {
+                            lhsIndex++;
+                        }
+
+                        rhsIndex++;
+                    }
+
+                    return (lhsIndex == nrOfLhsElements);
+                }
+
+                //! Check if two values are similar considering the given similarity measure type
+                /*!
+                 * \param similarityMeasureType         The specific similarity measure type
+                 * \param lhsValue                      The left hand side value
+                 * \param rhsValue                      The right hand side value
+                 * \param toleratedSimilarityDifference The maximum tolerated similarity difference between
+                 *                                      two values
+                 */
+                bool
+                areSimilarValues(double lhsValue, double rhsValue, double toleratedSimilarityDifference,
+                                 const SimilarityMeasureType &similarityMeasureType) const {
+                    switch (similarityMeasureType) {
+                        case SimilarityMeasureType::Opposite:
+                            return (
+                                Numeric::lessOrEqual(
+                                    std::abs(lhsValue + rhsValue),
+                                    toleratedSimilarityDifference
+                                )
+                            );
+                            break;
+
+                        case SimilarityMeasureType::Similar:
+                            return (
+                                Numeric::lessOrEqual(
+                                    std::abs(lhsValue - rhsValue),
+                                    toleratedSimilarityDifference
+                                )
+                            );
+                            break;
+
+                        default:
+                            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
+                    }
+
+                    // Line added to avoid "control reaches end of non-void function" warnings
+                    return false;
                 }
 
                 //! Evaluate the given UntilLogicPropertyAttribute

@@ -2,9 +2,8 @@
 #define NUMERICMEASURECOLLECTIONEVALUATOR_HPP
 
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/NumericVisitor.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/SpatialMeasureEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/SubsetVisitor.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/TimePointEvaluator.hpp"
 
 
 namespace multiscale {
@@ -16,14 +15,30 @@ namespace multiscale {
 
             public:
 
+                //! Evaluate the given temporal numeric collection
+                /*!
+                 * \param trace                     The given spatial temporal trace
+                 * \param temporalNumericCollection The given temporal numeric collection
+                 */
+                static std::vector<double>
+                evaluateTemporalNumericCollection(const SpatialTemporalTrace &trace,
+                                                  const TemporalNumericCollectionAttribute
+                                                  &temporalNumericCollection) {
+                    return boost::apply_visitor(
+                        NumericMeasureCollectionVisitor(trace),
+                        temporalNumericCollection.temporalNumericCollection
+                    );
+                }
+
                 //! Evaluate the spatial measure collection considering the given timepoint
                 /*!
                  * \param timePoint                 The given timepoint
                  * \param spatialMeasureCollection  The considered spatial measure collection
                  */
                 static std::vector<double>
-                evaluate(const TimePoint &timePoint,
-                         const SpatialMeasureCollectionAttribute &spatialMeasureCollection) {
+                evaluateSpatialMeasureCollection(const TimePoint &timePoint,
+                                                 const SpatialMeasureCollectionAttribute
+                                                 &spatialMeasureCollection) {
                     TimePoint subsetTimePoint(
                         boost::apply_visitor(
                             SubsetVisitor(timePoint),

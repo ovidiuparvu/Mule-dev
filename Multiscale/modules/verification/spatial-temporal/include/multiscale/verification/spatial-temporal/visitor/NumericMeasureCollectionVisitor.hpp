@@ -2,7 +2,6 @@
 #define NUMERICMEASURECOLLECTIONVISITOR_HPP
 
 #include "multiscale/verification/spatial-temporal/visitor/ChangeMeasureEvaluator.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/NumericMeasureCollectionEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/TimeseriesComponentVisitor.hpp"
 
 #include <boost/variant.hpp>
@@ -29,21 +28,14 @@ namespace multiscale {
                  * \param temporalNumericCollection The temporal numeric collection
                  */
                 std::vector<double>
-                operator()(const TemporalNumericCollectionAttribute &temporalNumericCollection) const {
-                    return evaluateTemporalNumericCollection(trace, temporalNumericCollection);
-                }
+                operator()(const TemporalNumericCollectionAttribute &temporalNumericCollection) const;
 
                 //! Overloading the "()" operator for the SpatialMeasureCollectionAttribute alternative
                 /*!
                  * \param spatialMeasureCollection  The spatial measure collection
                  */
                 std::vector<double>
-                operator()(const SpatialMeasureCollectionAttribute &spatialMeasureCollection) const {
-                    return NumericMeasureCollectionEvaluator::evaluate(
-                        trace.getTimePoint(0),
-                        spatialMeasureCollection
-                    );
-                }
+                operator()(const SpatialMeasureCollectionAttribute &spatialMeasureCollection) const;
 
                 //! Overloading the "()" operator for the TemporalNumericMeasureCollectionAttribute alternative
                 /*!
@@ -64,18 +56,7 @@ namespace multiscale {
                  * \param changeTemporalNumericCollection The change temporal numeric collection
                  */
                 std::vector<double>
-                operator()(const ChangeTemporalNumericCollectionAttribute &changeTemporalNumericCollection) const {
-                    std::vector<double> temporalNumericCollectionValues
-                        = evaluateTemporalNumericCollection(
-                              trace,
-                              changeTemporalNumericCollection.temporalNumericCollection
-                          );
-
-                    return evaluateChangeTemporalNumericCollection(
-                        changeTemporalNumericCollection.changeMeasure,
-                        temporalNumericCollectionValues
-                    );
-                }
+                operator()(const ChangeTemporalNumericCollectionAttribute &changeTemporalNumericCollection) const;
 
                 //! Overloading the "()" operator for the TimeseriesTimeseriesComponent alternative
                 /*!
@@ -139,21 +120,6 @@ namespace multiscale {
 
             private:
 
-                //! Evaluate the given temporal numeric collection
-                /*!
-                 * \param trace                     The given spatial temporal trace
-                 * \param temporalNumericCollection The given temporal numeric collection
-                 */
-                std::vector<double>
-                evaluateTemporalNumericCollection(const SpatialTemporalTrace &trace,
-                                                  const TemporalNumericCollectionAttribute
-                                                  &temporalNumericCollection) const {
-                    return boost::apply_visitor(
-                        NumericMeasureCollectionVisitor(trace),
-                        temporalNumericCollection.temporalNumericCollection
-                    );
-                }
-
                 //! Evaluate the temporal numeric measure collection considering the given spatio-temporal trace
                 /*!
                  * \param trace             The considered spatio-temporal trace
@@ -165,22 +131,7 @@ namespace multiscale {
                 evaluateTemporalNumericMeasureCollection(const SpatialTemporalTrace &trace,
                                                          unsigned long startTimepoint,
                                                          unsigned long endTimepoint,
-                                                         const NumericMeasureType &numericMeasure) const {
-                    std::vector<double> numericMeasureValues;
-
-                    SpatialTemporalTrace traceCopy(trace);
-
-                    // Compute the numeric measure values
-                    for (unsigned long i = startTimepoint; i <= endTimepoint; i = traceCopy.nextTimePointValue()) {
-                        traceCopy.setSubTrace(i);
-
-                        numericMeasureValues.push_back(
-                            boost::apply_visitor(NumericVisitor(traceCopy.getTimePoint(0)), numericMeasure)
-                        );
-                    }
-
-                    return numericMeasureValues;
-                }
+                                                         const NumericMeasureType &numericMeasure) const;
 
                 //! Compute the collection of timepoints considering the given trace, and start and end timepoints
                 /*!
@@ -444,6 +395,72 @@ namespace multiscale {
     };
 
 };
+
+
+// Includes added after class declaration to avoid include circular dependency errors
+
+#include "multiscale/verification/spatial-temporal/visitor/NumericMeasureCollectionEvaluator.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/NumericVisitor.hpp"
+
+
+// Methods which depend on the immediately above included classes
+
+inline std::vector<double>
+multiscale::verification::NumericMeasureCollectionVisitor::operator()(
+    const TemporalNumericCollectionAttribute &temporalNumericCollection
+) const {
+    return NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
+        trace,
+        temporalNumericCollection
+    );
+}
+
+inline std::vector<double>
+multiscale::verification::NumericMeasureCollectionVisitor::operator()(
+    const SpatialMeasureCollectionAttribute &spatialMeasureCollection
+) const {
+    return NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
+        trace.getTimePoint(0),
+        spatialMeasureCollection
+    );
+}
+
+inline std::vector<double>
+multiscale::verification::NumericMeasureCollectionVisitor::operator()(
+    const ChangeTemporalNumericCollectionAttribute &changeTemporalNumericCollection
+) const {
+    std::vector<double> temporalNumericCollectionValues
+        = NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
+              trace,
+              changeTemporalNumericCollection.temporalNumericCollection
+          );
+
+    return evaluateChangeTemporalNumericCollection(
+        changeTemporalNumericCollection.changeMeasure,
+        temporalNumericCollectionValues
+    );
+}
+
+inline std::vector<double>
+multiscale::verification::NumericMeasureCollectionVisitor::evaluateTemporalNumericMeasureCollection(
+    const SpatialTemporalTrace &trace, unsigned long startTimepoint, unsigned long endTimepoint,
+    const NumericMeasureType &numericMeasure
+) const {
+    std::vector<double> numericMeasureValues;
+
+    SpatialTemporalTrace traceCopy(trace);
+
+    // Compute the numeric measure values
+    for (unsigned long i = startTimepoint; i <= endTimepoint; i = traceCopy.nextTimePointValue()) {
+        traceCopy.setSubTrace(i);
+
+        numericMeasureValues.push_back(
+            boost::apply_visitor(NumericVisitor(traceCopy.getTimePoint(0)), numericMeasure)
+        );
+    }
+
+    return numericMeasureValues;
+}
 
 
 #endif
