@@ -3,7 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/HomogeneousTimeseriesMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/HomogeneousTimeseriesComponentAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericCollectionAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/TemporalNumericMeasureCollectionAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <fstream>
@@ -19,11 +19,11 @@ namespace multiscale {
             public:
 
                 HomogeneousTimeseriesMeasureAttribute
-                    homogeneousTimeseriesMeasure;   /*!< The homogeneous timeseries measure */
+                    homogeneousTimeseriesMeasure;       /*!< The homogeneous timeseries measure */
                 HomogeneousTimeseriesComponentAttribute
-                    homogeneousTimeseriesComponent; /*!< The homogeneous timeseries component */
-                TemporalNumericCollectionAttribute
-                    temporalNumericCollection;      /*!< The temporal numeric collection */
+                    homogeneousTimeseriesComponent;     /*!< The homogeneous timeseries component */
+                TemporalNumericMeasureCollectionAttribute
+                    temporalNumericMeasureCollection;   /*!< The temporal numeric measure collection */
 
         };
 
@@ -36,7 +36,7 @@ BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::HomogeneousHomogeneousTimeseriesAttribute,
     (multiscale::verification::HomogeneousTimeseriesMeasureAttribute, homogeneousTimeseriesMeasure)
     (multiscale::verification::HomogeneousTimeseriesComponentAttribute, homogeneousTimeseriesComponent)
-    (multiscale::verification::TemporalNumericCollectionAttribute, temporalNumericCollection)
+    (multiscale::verification::TemporalNumericMeasureCollectionAttribute, temporalNumericMeasureCollection)
 )
 
 

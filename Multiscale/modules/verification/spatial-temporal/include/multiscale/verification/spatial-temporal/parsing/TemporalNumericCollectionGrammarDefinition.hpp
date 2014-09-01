@@ -92,7 +92,7 @@ namespace multiscale {
                         > '('
                         > timeseriesComponentRule
                         > ','
-                        > temporalNumericCollectionRule
+                        > temporalNumericMeasureCollectionRule
                         > ')'
                     );
 
@@ -102,7 +102,7 @@ namespace multiscale {
                         > '('
                         > homogeneousTimeseriesComponentRule
                         > ','
-                        > temporalNumericCollectionRule
+                        > temporalNumericMeasureCollectionRule
                         > ')'
                     );
         }

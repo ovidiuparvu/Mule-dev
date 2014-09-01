@@ -475,7 +475,7 @@ TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeseriesComponentValley) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousHomogeneousTimeseries) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(timeSpan(plateau, [0, 11] {2})) = 12]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(timeSpan(plateau, [0, 11] 2)) = 11]"));
 }
 
 
@@ -495,8 +495,8 @@ TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentDescent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [mode(values(descent, [0, 11] {C}(type = 1))) = 12]"));
 }
 
-TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentPlateu) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(timeSpan(plateau, [0, 11] {B})) = 12]"));
+TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentPlateau) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(timeSpan(plateau, [0, 11] {B})) = 11]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
@@ -517,11 +517,11 @@ TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformDesce
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesMeasureTimeSpan) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(descent, [0, 11] {C}(type = 1))) = 4]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(descent, [0, 11] {C}(type = 1))) = 3]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesMeasureValue) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(values(plateu, [0, 11] {A})) > 0]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(values(plateau, [0, 11] {A})) > 0]"));
 }
 
 

@@ -414,7 +414,7 @@ TEST_F(EmptyTraceTest, HeterogeneousTimeseriesComponentPeak) {
 }
 
 TEST_F(EmptyTraceTest, HeterogeneousTimeseriesComponentValley) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] count(clusteredness(cluster)))) = 2]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] count(clusteredness(clusters)))) = 2]"), SpatialTemporalException);
 }
 
 
@@ -447,7 +447,7 @@ TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentDescent) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] {C}(type = 1))) = 7.5]"), SpatialTemporalException);
 }
 
-TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentPlateu) {
+TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentPlateau) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(values(plateau, [0, 11] {B})) = 2.999]"), SpatialTemporalException);
 }
 

@@ -16,7 +16,27 @@ namespace multiscale {
 
             public:
 
-                //! Compute the value of the change measure considering the given numeric measure and time values
+                //! Compute the change measure value considering temporal numeric measure collection and time values
+                /*!
+                 * \param changeMeasureType                             The type of the change measure
+                 * \param temporalNumericMeasureCollectionFirstValue    The temporal numeric measure collection value
+                 *                                                      corresponding to the trace starting from the
+                 *                                                      initial timepoint
+                 * \param temporalNumericMeasureCollectionSecondValue   The temporal numeric measure collection value
+                 *                                                      corresponding to the trace starting from the
+                 *                                                      timepoint succeeding the initial timepoint
+                 */
+                static double evaluate(const ChangeMeasureType &changeMeasureType,
+                                       double temporalNumericMeasureCollectionFirstValue,
+                                       double temporalNumericMeasureCollectionSecondValue) {
+                    return computeNumericMeasureValueChange(
+                         changeMeasureType,
+                         temporalNumericMeasureCollectionFirstValue,
+                         temporalNumericMeasureCollectionSecondValue
+                     );
+                }
+
+                //! Compute the change measure value considering the given temporal numeric measure and time values
                 /*!
                  * \param changeMeasureType                     The type of the change measure
                  * \param temporalNumericMeasureFirstTimepoint  The temporal numeric measure value corresponding to the

@@ -131,7 +131,7 @@ namespace multiscale {
                 add
                     ("ascent"           , HomogeneousTimeseriesComponentType::Ascent)
                     ("descent"          , HomogeneousTimeseriesComponentType::Descent)
-                    ("plateu"           , HomogeneousTimeseriesComponentType::Plateu)
+                    ("plateau"          , HomogeneousTimeseriesComponentType::Plateau)
                     ("uniformAscent"    , HomogeneousTimeseriesComponentType::UniformAscent)
                     ("uniformDescent"   , HomogeneousTimeseriesComponentType::UniformDescent)
                 ;

@@ -16,31 +16,6 @@ namespace multiscale {
 
             public:
 
-                //! Evaluate the temporal numeric measure collection considering the given spatio-temporal trace
-                /*!
-                 * \param trace             The considered spatio-temporal trace
-                 * \param startTimepoint    The considered start timepoint value
-                 * \param endTimepoint      The considered end timepoint value
-                 * \param numericMeasure    The numeric measure to be evaluated
-                 */
-                static std::vector<double>
-                evaluate(const SpatialTemporalTrace &trace, unsigned long startTimepoint,
-                         unsigned long endTimepoint, const NumericMeasureType &numericMeasure) {
-                    std::vector<double> numericMeasureValues;
-
-                    SpatialTemporalTrace traceCopy(trace);
-
-                    for (unsigned long i = startTimepoint; i <= endTimepoint; i = traceCopy.nextTimePointValue()) {
-                        traceCopy.setSubTrace(i);
-
-                        numericMeasureValues.push_back(
-                            boost::apply_visitor(NumericVisitor(traceCopy.getTimePoint(0)), numericMeasure)
-                        );
-                    }
-
-                    return numericMeasureValues;
-                }
-
                 //! Evaluate the spatial measure collection considering the given timepoint
                 /*!
                  * \param timePoint                 The given timepoint

@@ -13,7 +13,7 @@ namespace multiscale {
         enum class HomogeneousTimeseriesComponentType : unsigned int {
             Ascent          = 0,    /*!< The ascending timeseries type */
             Descent            ,    /*!< The descending timeseries type */
-            Plateu             ,    /*!< The plateu timeseries type */
+            Plateau            ,    /*!< The plateau timeseries type */
             UniformAscent      ,    /*!< The uniformly (constantly) ascending timeseries type */
             UniformDescent          /*!< The uniformly (constantly) descending timeseries type */
         };

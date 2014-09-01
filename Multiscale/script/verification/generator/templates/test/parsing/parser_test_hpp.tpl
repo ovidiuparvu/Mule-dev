@@ -1189,7 +1189,11 @@ TEST(HomogeneousHomogeneousTimeseries, IncorrectInputWrongParanthesesType) {
     EXPECT_THROW(parseInputString("P >= 0.3 [max(values{ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))}) > 0]"), InvalidInputException);
 }
 
-TEST(HomogeneousHomogeneousTimeseries, Correct) {
+TEST(HomogeneousHomogeneousTimeseries, CorrectNumericStateVariables) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [avg(timeSpan(plateau, [0, 11] {B})) = 12]"));
+}
+
+TEST(HomogeneousHomogeneousTimeseries, CorrectSpatialEntities) {
     EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
@@ -1214,8 +1218,8 @@ TEST(HomogeneousTimeseriesComponent, CorrectDescent) {
     EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(descent, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
-TEST(HomogeneousTimeseriesComponent, CorrectPlateu) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+TEST(HomogeneousTimeseriesComponent, CorrectPlateau) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(plateau, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectUniformAscent) {
@@ -2202,7 +2206,7 @@ TEST(TemporalNumericMeasureCollection, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(TimeseriesComponent, IncorrectInputBeforeTimeseriesComponent) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((plateu)valley, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((plateau)valley, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesComponent, IncorrectParanthesisBeforeTimeseriesComponent) {
@@ -2222,7 +2226,7 @@ TEST(TimeseriesComponent, IncorrectInputInvalidAlternative) {
 }
 
 TEST(TimeseriesComponent, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(plateu, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(plateau, [0, 5] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) > 0]"));
 }
 
 

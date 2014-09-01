@@ -16,8 +16,8 @@ multiscale::verification::operator<<(std::ostream& out,
             out << "descent";
             break;
 
-        case HomogeneousTimeseriesComponentType::Plateu:
-            out << "plateu";
+        case HomogeneousTimeseriesComponentType::Plateau:
+            out << "plateau";
             break;
 
         case HomogeneousTimeseriesComponentType::UniformAscent:

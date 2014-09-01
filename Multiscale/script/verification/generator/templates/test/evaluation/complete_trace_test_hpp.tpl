@@ -516,7 +516,7 @@ TEST_F(CompleteTraceTest, HeterogeneousTimeseriesComponentValley) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, HomogeneousHomogeneousTimeseries) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(plateau, [0, 11] {B})) = 12]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(plateau, [0, 11] {B})) = 11]"));
 }
 
 
@@ -536,7 +536,7 @@ TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentDescent) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] {C}(type = 1))) = 7.5]"));
 }
 
-TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentPlateu) {
+TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentPlateau) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [min(values(plateau, [0, 11] {B})) = 2.999]"));
 }
 
@@ -558,7 +558,7 @@ TEST_F(CompleteTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, HomogeneousTimeseriesMeasureTimeSpan) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(timeSpan(ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(timeSpan(ascent, [0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)))) = 2]"));
 }
 
 TEST_F(CompleteTraceTest, HomogeneousTimeseriesMeasureValue) {
@@ -997,7 +997,7 @@ TEST_F(CompleteTraceTest, SubsetSubsetOperation) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, TemporalNumericCollection) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 11] min(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min([0, 11] min(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1]"));
 }
 
 
@@ -1066,7 +1066,7 @@ TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringTime) {
 }
 
 TEST_F(CompleteTraceTest, TimeseriesMeasureEnteringValue) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniformDescent, [0, 11] {C})) = 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [min(enteringValue(uniformDescent, [0, 11] {C}(type = 1))) = 3]"));
 }
 
 
