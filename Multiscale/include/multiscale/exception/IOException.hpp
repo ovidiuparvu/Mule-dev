@@ -5,23 +5,21 @@
 
 #include <string>
 
-using namespace std;
-
 
 namespace multiscale {
 
     //! Class for representing input and output exceptions
-    class IOException : public MultiscaleException {
+    class IOException : public multiscale::MultiscaleException {
 
         public:
 
             IOException() {}
 
-            explicit IOException(const string &file, int line, const string &msg) {
-                constructExplanatoryString<const string &>(file, line, msg);
+            explicit IOException(const std::string &file, int line, const std::string &msg) {
+                constructExplanatoryString<const std::string &>(file, line, msg);
             }
 
-            explicit IOException(const string &file, int line, const char *msg) {
+            explicit IOException(const std::string &file, int line, const char *msg) {
                 constructExplanatoryString<const char *>(file, line, msg);
             }
 

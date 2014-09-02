@@ -17,8 +17,14 @@ bool Filesystem::isValidFolderPath(const std::string &path) {
 bool Filesystem::isValidFilePath(const std::string &path) {
     fs::path filePath(path);
 
-    if (fs::exists(filePath)) {
-        return (fs::is_regular_file(filePath));
+    return isValidFilePath(filePath);
+}
+
+bool Filesystem::isValidFilePath(const std::string &path, const std::string &extension) {
+    fs::path filePath(path);
+
+    if (isValidFilePath(filePath)) {
+        return (filePath.extension().compare(extension) == 0);
     }
 
     return false;
@@ -50,6 +56,14 @@ std::vector<std::string> Filesystem::getFilesInFolder(const std::string &folderP
     }
 
     return filesWithExtension;
+}
+
+bool Filesystem::isValidFilePath(const fs::path &path) {
+    if (fs::exists(path)) {
+        return (fs::is_regular_file(path));
+    }
+
+    return false;
 }
 
 

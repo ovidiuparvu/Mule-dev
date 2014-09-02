@@ -1,4 +1,5 @@
 #include "multiscale/util/statistics/BinomialDistribution.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelChecker.hpp"
 
 using namespace multiscale::verification;

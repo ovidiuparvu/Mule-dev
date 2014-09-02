@@ -1,6 +1,9 @@
 #ifndef STRINGMANIPULATOR_HPP
 #define STRINGMANIPULATOR_HPP
 
+#include "multiscale/core/UserDefinedTypeName.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
+
 #include <string>
 #include <vector>
 #include <sstream>
@@ -50,6 +53,31 @@ namespace multiscale {
              */
             static string trimRight(const string &inputString);
 
+            //! Convert the string to the given type
+            /*!
+             * \param inputString   The given input string
+             */
+            template <typename T>
+            static T convert(const std::string &inputString) {
+                stringstream stringStream(inputString);
+                T outputVariable;
+
+                stringStream >> outputVariable;
+
+                if ((stringStream.fail()) || (!stringStream.eof())) {
+                    MS_throw(
+                        InvalidInputException,
+                        ERR_INVALID_CONVERSION_BEGIN +
+                        inputString +
+                        ERR_INVALID_CONVERSION_MIDDLE +
+                        multiscale::UserDefinedTypeName<T>::name() +
+                        ERR_INVALID_CONVERSION_END
+                    );
+                }
+
+                return outputVariable;
+            }
+
             //! Convert the variable to a string
             /*!
              * \param variable Variable
@@ -67,6 +95,10 @@ namespace multiscale {
 
             // Constants
             static const char DIR_SEPARATOR;
+
+            static const std::string ERR_INVALID_CONVERSION_BEGIN;
+            static const std::string ERR_INVALID_CONVERSION_MIDDLE;
+            static const std::string ERR_INVALID_CONVERSION_END;
 
     };
 

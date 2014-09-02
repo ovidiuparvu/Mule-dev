@@ -31,6 +31,13 @@ namespace multiscale {
              */
             static bool isValidFilePath(const std::string &path);
 
+            //! Check if the given path is a valid file path and has the given extension
+            /*!
+             * \param path      The given path
+             * \param extension The given extension
+             */
+            static bool isValidFilePath(const std::string &path, const std::string &extension);
+
             //! Return the given path as an absolute path in native format
             /*!
              * \param path The given path
@@ -46,6 +53,13 @@ namespace multiscale {
                                                              const std::string &extension);
 
         private:
+
+            //! Check if the given path is a valid file path
+            /*!
+             * \param path  The given path
+             */
+            static bool isValidFilePath(const fs::path &path);
+
 
             // Constants
             static const std::string ERR_INVALID_PATH;

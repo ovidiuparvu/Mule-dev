@@ -155,8 +155,10 @@ int main(int argc, char **argv) {
             return EXEC_ERR_CODE;
         } catch(...) {
             cerr << "Exception of unknown type!" << std::endl;
+
+            return EXEC_ERR_CODE;
         }
     }
 
-    return -1;
+    return EXEC_ERR_CODE;
 }

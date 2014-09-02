@@ -5,23 +5,21 @@
 
 #include <string>
 
-using namespace std;
-
 
 namespace multiscale {
 
     //! Class for representing invalid input exceptions
-    class InvalidInputException : public IOException {
+    class InvalidInputException : public multiscale::IOException {
 
         public:
 
             InvalidInputException() {}
 
-            explicit InvalidInputException(const string &file, int line, const string &msg) {
-                constructExplanatoryString<const string &>(file, line, msg);
+            explicit InvalidInputException(const std::string &file, int line, const std::string &msg) {
+                constructExplanatoryString<const std::string &>(file, line, msg);
             }
 
-            explicit InvalidInputException(const string &file, int line, const char *msg) {
+            explicit InvalidInputException(const std::string &file, int line, const char *msg) {
                 constructExplanatoryString<const char *>(file, line, msg);
             }
 

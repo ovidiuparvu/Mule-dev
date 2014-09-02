@@ -1,6 +1,7 @@
 #include "multiscale/analysis/spatial/Silhouette.hpp"
 #include "multiscale/exception/IndexOutOfBoundsException.hpp"
 #include "multiscale/util/Geometry2D.hpp"
+#include "multiscale/util/StringManipulator.hpp"
 
 #include <algorithm>
 #include <limits>

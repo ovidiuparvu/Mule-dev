@@ -150,6 +150,26 @@ TimePoint::getNumericStateVariable(const NumericStateVariableId &id) const {
     return it->second;
 }
 
+std::map<NumericStateVariableId, double>::iterator
+TimePoint::getNumericStateVariablesBeginIterator() {
+    return numericStateVariables.begin();
+}
+
+std::map<NumericStateVariableId, double>::const_iterator
+TimePoint::getNumericStateVariablesBeginIterator() const {
+    return numericStateVariables.begin();
+}
+
+std::map<NumericStateVariableId, double>::iterator
+TimePoint::getNumericStateVariablesEndIterator() {
+    return numericStateVariables.end();
+}
+
+std::map<NumericStateVariableId, double>::const_iterator
+TimePoint::getNumericStateVariablesEndIterator() const {
+    return numericStateVariables.end();
+}
+
 void
 TimePoint::timePointDifference(const TimePoint &timePoint) {
     timePointSetOperation(timePoint, SubsetOperationType::Difference);

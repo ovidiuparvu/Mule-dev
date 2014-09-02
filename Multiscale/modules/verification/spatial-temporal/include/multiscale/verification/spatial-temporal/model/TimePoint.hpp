@@ -151,6 +151,22 @@ namespace multiscale {
                  */
                 double getNumericStateVariable(const NumericStateVariableId &id) const;
 
+                //! Get the begin iterator for the collection of numeric state variables
+                std::map<NumericStateVariableId, double>::iterator
+                getNumericStateVariablesBeginIterator();
+
+                //! Get the begin iterator for the collection of numeric state variables
+                std::map<NumericStateVariableId, double>::const_iterator
+                getNumericStateVariablesBeginIterator() const;
+
+                //! Get the end iterator for the collection of numeric state variables
+                std::map<NumericStateVariableId, double>::iterator
+                getNumericStateVariablesEndIterator();
+
+                //! Get the end iterator for the collection of numeric state variables
+                std::map<NumericStateVariableId, double>::const_iterator
+                getNumericStateVariablesEndIterator() const;
+
                 //! Compute the difference of this timepoint and the given timepoint (spatial entities only)
                 /*! Compute the difference of this timepoint and the given timepoint by taking into account
                  *  the value of consideredSpatialEntityType

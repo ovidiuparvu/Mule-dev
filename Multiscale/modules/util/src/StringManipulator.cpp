@@ -58,3 +58,7 @@ string StringManipulator::trimRight(const string &inputString) {
 
 // Constants
 const char StringManipulator::DIR_SEPARATOR = '/';
+
+const std::string StringManipulator::ERR_INVALID_CONVERSION_BEGIN   = "The provided string (";
+const std::string StringManipulator::ERR_INVALID_CONVERSION_MIDDLE  = ") could not be converted to a ";
+const std::string StringManipulator::ERR_INVALID_CONVERSION_END     = ". Please change.";
