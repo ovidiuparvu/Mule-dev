@@ -22,7 +22,7 @@ bool Numeric::lessOrEqual(double number1, double number2) {
 }
 
 bool Numeric::almostEqual(double number1, double number2) {
-    return (abs(number1 - number2) <= (epsilon * maximum(1.0, abs(number1), abs(number2))));
+    return (fabs(number1 - number2) <= (epsilon * maximum(1.0, fabs(number1), fabs(number2))));
 }
 
 double Numeric::average(const std::vector<double> &numbers) {

@@ -430,7 +430,7 @@ namespace multiscale {
                         case SimilarityMeasureType::Opposite:
                             return (
                                 Numeric::lessOrEqual(
-                                    std::abs(lhsValue + rhsValue),
+                                    std::fabs(lhsValue + rhsValue),
                                     toleratedSimilarityDifference
                                 )
                             );
@@ -439,7 +439,7 @@ namespace multiscale {
                         case SimilarityMeasureType::Similar:
                             return (
                                 Numeric::lessOrEqual(
-                                    std::abs(lhsValue - rhsValue),
+                                    std::fabs(lhsValue - rhsValue),
                                     toleratedSimilarityDifference
                                 )
                             );

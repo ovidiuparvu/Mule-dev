@@ -31,7 +31,7 @@ string RGBColourGenerator::convertHSVToRGB(double hue, double saturation, double
     double chroma   = value * saturation;
     int    huePrime = hue / 60;
 
-    double X = chroma * (1 - abs((huePrime % 2) - 1));
+    double X = chroma * (1 - fabs((huePrime % 2) - 1));
     double m = value - chroma;
 
     computeRGBValues(huePrime, X, chroma, m);

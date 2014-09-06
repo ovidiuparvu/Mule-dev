@@ -32,7 +32,7 @@ bool Geometry2D::isOppositeAngleBetween(double angle1, double angle2, double ang
 }
 
 bool Geometry2D::isAngleBetweenNonReflex(double angle1, double angle2, double angle3) {
-    if (abs(angle2 - angle3) > 180) {
+    if (fabs(angle2 - angle3) > 180) {
         if (angle2 > angle3) {
             return ((angle2 < angle1) && (Numeric::lessOrEqual(angle1, 360))) || ((Numeric::lessOrEqual(0, angle1)) && (angle1 < angle3));
         } else {
@@ -87,7 +87,7 @@ double Geometry2D::distanceFromPointToLine(const Point2f &a, const Point2f &line
     double term3 = linePointB.x - a.x;
     double term4 = linePointC.y - linePointB.y;
 
-    double nominator = abs((term1 * term2) - (term3 * term4));
+    double nominator = fabs((term1 * term2) - (term3 * term4));
     double denominator = sqrt((term1 * term1) + (term4 * term4));
 
     return (nominator / denominator);
@@ -321,7 +321,7 @@ double Geometry2D::angleBtwPoints(const Point2f &a, const Point2f &b, const Poin
 
     double alpha = atan2(crossProduct, dotProduct);
 
-    return abs(((alpha * 180) / PI));
+    return fabs(((alpha * 180) / PI));
 }
 
 vector<Point2f> Geometry2D::findPointsOnEdge(const vector<Point2f> &points,
@@ -363,7 +363,7 @@ double Geometry2D::areaOfTriangle(const Point2f &a, const Point2f &b, const Poin
 
     double determinant = posTerm - negTerm;
 
-    return abs(determinant) / 2;
+    return fabs(determinant) / 2;
 }
 
 bool Geometry2D::isPointOnLineSegment(const Point2f &point, const Point2f &lineSegmentStart,
