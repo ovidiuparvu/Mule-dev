@@ -4,7 +4,40 @@
 
 set(PACKAGE_PROJECT_NAME "Mule")
 set(PACKAGE_PROJECT_DIR "mule")
-set(PACKAGE_SHARE_DIR "share/${PACKAGE_PROJECT_DIR}/schema")
+
+
+#------------------------------------------------------------
+# Operating system dependent configurations
+#------------------------------------------------------------
+
+if(UNIX)
+    set(CPACK_GENERATOR "DEB")
+
+    set(CPACK_SYSTEM_NAME "Linux-${CPACK_SYSTEM_NAME}")
+    
+    set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Ovidiu Parvu")
+    set(CPACK_DEBIAN_PACKAGE_SECTION "Science")
+    
+    set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
+    set(CPACK_DEBIAN_PACKAGE_DEPENDS "${CPACK_DEBIAN_PACKAGE_DEPENDS} libxerces-c3.1")
+    
+    set(CPACK_PACKAGING_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
+elseif(WIN32)
+    set(CPACK_GENERATOR "NSIS")
+    
+    set(CPACK_SYSTEM_NAME "Windows-${CPACK_SYSTEM_NAME}")
+    
+    set(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL ON)
+    
+    set(CPACK_NSIS_MODIFY_PATH ON)
+    
+    set(CPACK_NSIS_DISPLAY_NAME ${PACKAGE_PROJECT_NAME})
+    set(CPACK_NSIS_PACKAGE_NAME ${PACKAGE_PROJECT_NAME})
+    
+    set(CPACK_NSIS_HELP_LINK "http://mule.modelchecking.org/support")
+    set(CPACK_NSIS_URL_INFO_ABOUT "http://mule.modelchecking.org")
+    set(CPACK_NSIS_CONTACT "ovidiu.parvu@gmail.com")
+endif(UNIX)
 
 
 #------------------------------------------------------------
@@ -49,38 +82,6 @@ endif(
     CMAKE_SYSTEM_PROCESSOR_LOWERCASE STREQUAL "amd64" 
 )
 
-
-#------------------------------------------------------------
-# Operating system dependent configurations
-#------------------------------------------------------------
-
-if(UNIX)
-    set(CPACK_GENERATOR "DEB")
-
-    set(CPACK_SYSTEM_NAME "Linux-${CPACK_SYSTEM_NAME}")
-    
-    set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Ovidiu Parvu")
-    set(CPACK_DEBIAN_PACKAGE_SECTION "Science")
-    
-    set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
-    set(CPACK_DEBIAN_PACKAGE_DEPENDS "${CPACK_DEBIAN_PACKAGE_DEPENDS} libxerces-c3.1")
-elseif(WIN32)
-    set(CPACK_GENERATOR "NSIS")
-    
-    set(CPACK_SYSTEM_NAME "Windows-${CPACK_SYSTEM_NAME}")
-    
-    set(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL ON)
-    
-    set(CPACK_NSIS_MODIFY_PATH ON)
-    
-    set(CPACK_NSIS_DISPLAY_NAME ${PACKAGE_PROJECT_NAME})
-    set(CPACK_NSIS_PACKAGE_NAME ${PACKAGE_PROJECT_NAME})
-    
-    set(CPACK_NSIS_HELP_LINK "http://mule.modelchecking.org/support")
-    set(CPACK_NSIS_URL_INFO_ABOUT "http://mule.modelchecking.org")
-    set(CPACK_NSIS_CONTACT "ovidiu.parvu@gmail.com")
-endif(UNIX)
- 
  
 #------------------------------------------------------------
 # Include CPack
