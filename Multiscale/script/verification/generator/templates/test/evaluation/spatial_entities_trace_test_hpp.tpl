@@ -69,18 +69,31 @@ namespace multiscaletest {
             }
             
         /*{% for spatial_entity in spatial_entities[1:] %}*/
-            // Add /*{{ spatial_entity.name }}*/s to the timepoint
+            // Add /*{{ spatial_entity.name }}*/s with semantic type "0" to the timepoint
             for (std::size_t k = 0; k <= i; k++) {
-                    std::shared_ptr<SpatialEntity> /*{{ spatial_entity.name }}*/ = std::make_shared</*{{ spatial_entity.name|first_to_upper }}*/>();
+                std::shared_ptr<SpatialEntity> /*{{ spatial_entity.name }}*/ = std::make_shared</*{{ spatial_entity.name|first_to_upper }}*/>();
 
-                    /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measures[0].name|first_to_upper }}*/, static_cast<double>((k * 0.3) + 0.7));
-                /*{% for spatial_measure in spatial_measures[1:] %}*/
-                    /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
-                /*{% endfor %}*/
-                    /*{{ spatial_entity.name }}*/->setSemanticType(0);
+                /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measures[0].name|first_to_upper }}*/, static_cast<double>((k * 0.3) + 0.7));
+            /*{% for spatial_measure in spatial_measures[1:] %}*/
+                /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
+            /*{% endfor %}*/
+                /*{{ spatial_entity.name }}*/->setSemanticType(0);
 
-                    timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
-                }
+                timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
+            }
+            
+            // Add /*{{ spatial_entity.name }}*/s with semantic type "1" to the timepoint
+            for (std::size_t k = 0; k <= i; k++) {
+                std::shared_ptr<SpatialEntity> /*{{ spatial_entity.name }}*/ = std::make_shared</*{{ spatial_entity.name|first_to_upper }}*/>();
+
+                /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measures[0].name|first_to_upper }}*/, static_cast<double>((k * 0.3) + 0.7));
+            /*{% for spatial_measure in spatial_measures[1:] %}*/
+                /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
+            /*{% endfor %}*/
+                /*{{ spatial_entity.name }}*/->setSemanticType(1);
+
+                timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
+            }
         /*{% endfor %}*/
         }
 
@@ -896,7 +909,7 @@ TEST_F(SpatialEntitiesTraceTest, SubsetOperationDifference) {
 
 /*{% for spatial_entity in spatial_entities[1:] %}*/
 TEST_F(SpatialEntitiesTraceTest, SubsetOperationDifference/*{{ spatial_entity.name|first_to_upper }}*/) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(difference(/*{{ spatial_entity.name }}*/s, /*{{ spatial_entities[0].name }}*/s))) > 12]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(difference(/*{{ spatial_entity.name }}*/s, /*{{ spatial_entities[0].name }}*/s))) > 24]"));
 }
 
 /*{% endfor %}*/
@@ -916,7 +929,7 @@ TEST_F(SpatialEntitiesTraceTest, SubsetOperationUnion) {
 
 /*{% for spatial_entity in spatial_entities[1:] %}*/
 TEST_F(SpatialEntitiesTraceTest, SubsetOperationUnion/*{{ spatial_entity.name|first_to_upper }}*/) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(/*{{ spatial_measures[0].name }}*/(union(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_entity.name }}*/s))) >= 2]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] count(/*{{ spatial_measures[0].name }}*/(union(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_entity.name }}*/s))) >= 3]"));
 }
 
 /*{% endfor %}*/
@@ -935,7 +948,7 @@ TEST_F(SpatialEntitiesTraceTest, SubsetSpecific/*{{ spatial_entities[0].name|fir
 
 /*{% for spatial_entity in spatial_entities[1:] %}*/
 TEST_F(SpatialEntitiesTraceTest, SubsetSpecific/*{{ spatial_entity.name|first_to_upper }}*/s) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entity.name }}*/s)) < 1]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entity.name }}*/s)) < 2]"));
 }
 
 /*{% endfor %}*/
