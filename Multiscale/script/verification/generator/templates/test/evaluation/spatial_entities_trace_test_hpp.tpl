@@ -823,6 +823,19 @@ TEST_F(SpatialEntitiesTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
+// SemanticType
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(SpatialEntitiesTraceTest, SemanticType) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, type = 0))) >= 1]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SimilarityMeasure
 //
 //

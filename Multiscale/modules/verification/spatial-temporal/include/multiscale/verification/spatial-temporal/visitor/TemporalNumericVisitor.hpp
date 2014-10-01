@@ -53,7 +53,7 @@ namespace multiscale {
                     NumericStateVariableId numericStateVariableId(
                         numericStateVariable.stateVariable.name,
                         numericStateVariable.semanticType.get_value_or(
-                            StateVariableTypeAttribute(0)
+                            SemanticTypeAttribute(0)
                         ).type
                     );
 

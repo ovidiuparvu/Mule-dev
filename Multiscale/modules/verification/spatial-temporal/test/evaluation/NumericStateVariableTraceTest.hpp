@@ -807,6 +807,19 @@ TEST_F(NumericStateVariableTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
+// SemanticType
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, SemanticType) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [{C}(type = 1) = 12]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SimilarityMeasure
 //
 //

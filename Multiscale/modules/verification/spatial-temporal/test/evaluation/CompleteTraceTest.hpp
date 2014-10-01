@@ -879,6 +879,19 @@ TEST_F(CompleteTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
+// SemanticType
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, SemanticType) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.4 [count(clusteredness(filter(clusters, type = 1))) > 0]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SimilarityMeasure
 //
 //

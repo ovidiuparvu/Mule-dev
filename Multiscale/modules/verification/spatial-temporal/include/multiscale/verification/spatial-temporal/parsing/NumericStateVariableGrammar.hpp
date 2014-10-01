@@ -39,8 +39,8 @@ namespace multiscale {
                 qi::rule<Iterator, std::string(), qi::space_type>
                     stateVariableNameRule;                      /*!< The rule for parsing the name of a
                                                                      state variable without escaping white space */
-                qi::rule<Iterator, StateVariableTypeAttribute(), qi::space_type>
-                    stateVariableTypeRule;                      /*!< The rule for parsing a state variable type */
+                qi::rule<Iterator, SemanticTypeAttribute(), qi::space_type>
+                    semanticTypeRule;                           /*!< The rule for parsing a semantic type */
 
 
             public:

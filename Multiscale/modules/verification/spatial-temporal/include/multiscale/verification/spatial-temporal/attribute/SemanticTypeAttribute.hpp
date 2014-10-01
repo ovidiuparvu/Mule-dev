@@ -1,16 +1,18 @@
-#ifndef STATEVARIABLETYPEATTRIBUTE_HPP
-#define STATEVARIABLETYPEATTRIBUTE_HPP
+#ifndef SEMANTICTYPEATTRIBUTE_HPP
+#define SEMANTICTYPEATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_adt.hpp>
 #include <boost/optional.hpp>
+
+#include <string>
 
 
 namespace multiscale {
 
     namespace verification {
 
-        //! Class for representing a state variable type attribute
-        class StateVariableTypeAttribute {
+        //! Class for representing a semantic type attribute
+        class SemanticTypeAttribute {
 
             public:
 
@@ -19,7 +21,7 @@ namespace multiscale {
 
             public:
 
-                StateVariableTypeAttribute(unsigned long type = 0) : type(type) {}
+                SemanticTypeAttribute(unsigned long type = 0) : type(type) {}
 
         };
 
@@ -29,7 +31,7 @@ namespace multiscale {
 
 
 BOOST_FUSION_ADAPT_STRUCT(
-    multiscale::verification::StateVariableTypeAttribute,
+    multiscale::verification::SemanticTypeAttribute,
     (unsigned long, type)
 )
 

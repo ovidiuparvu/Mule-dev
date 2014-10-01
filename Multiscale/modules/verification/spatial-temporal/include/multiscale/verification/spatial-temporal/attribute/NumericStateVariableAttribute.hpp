@@ -2,7 +2,7 @@
 #define NUMERICSTATEVARIABLEATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/StateVariableAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/StateVariableTypeAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SemanticTypeAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 #include <boost/optional.hpp>
@@ -19,7 +19,7 @@ namespace multiscale {
 
                 StateVariableAttribute
                     stateVariable;  /*!< The state variable */
-                boost::optional<StateVariableTypeAttribute>
+                boost::optional<SemanticTypeAttribute>
                     semanticType;   /*!< The semantic type */
 
         };
@@ -32,7 +32,7 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::NumericStateVariableAttribute,
     (multiscale::verification::StateVariableAttribute, stateVariable)
-    (boost::optional<multiscale::verification::StateVariableTypeAttribute>, semanticType)
+    (boost::optional<multiscale::verification::SemanticTypeAttribute>, semanticType)
 )
 
 

@@ -844,6 +844,19 @@ TEST_F(SpatialEntitiesTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 //
 //
+// SemanticType
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(SpatialEntitiesTraceTest, SemanticType) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(clusteredness(filter(clusters, type = 0))) >= 1]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SimilarityMeasure
 //
 //

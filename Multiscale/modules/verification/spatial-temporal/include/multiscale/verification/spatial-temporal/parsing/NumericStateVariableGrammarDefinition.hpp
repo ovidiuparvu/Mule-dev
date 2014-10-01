@@ -43,7 +43,7 @@ namespace multiscale {
         void NumericStateVariableGrammar<Iterator>::initialiseGrammar() {
             numericStateVariableRule
                 =   stateVariableRule
-                    > -(stateVariableTypeRule);
+                    > -(semanticTypeRule);
 
             stateVariableRule
                 =   ('{' > stateVariableNameRule > '}');
@@ -51,7 +51,7 @@ namespace multiscale {
             stateVariableNameRule
                 =   qi::raw[ +(qi::char_ - qi::char_("{}")) ];
 
-            stateVariableTypeRule
+            semanticTypeRule
                 =   (
                         '('
                         > qi::lit("type")
@@ -76,7 +76,7 @@ namespace multiscale {
             numericStateVariableRule    .name("numericStateVariableRule");
             stateVariableRule           .name("stateVariableRule");
             stateVariableNameRule       .name("stateVariableNameRule");
-            stateVariableTypeRule       .name("stateVariableTypeRule");
+            semanticTypeRule            .name("semanticTypeRule");
         }
 
         //! Initialise the debugging of rules
@@ -85,7 +85,7 @@ namespace multiscale {
             debug(numericStateVariableRule);
             debug(stateVariableRule);
             debug(stateVariableNameRule);
-            debug(stateVariableTypeRule);
+            debug(semanticTypeRule);
         }
 
         //! Initialise the error handling routines
@@ -96,7 +96,7 @@ namespace multiscale {
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
             qi::on_error<qi::fail>(
-                stateVariableTypeRule,
+                semanticTypeRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
         }

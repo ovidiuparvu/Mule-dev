@@ -1760,6 +1760,39 @@ TEST(ProbabilisticLogicProperty, ProbabilityHigh) {
 /////////////////////////////////////////////////////////
 //
 //
+// SemanticType
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(SemanticType, IncorrectSemanticTypeString) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (type > abc) >= 2]"), InvalidInputException);
+}
+
+TEST(SemanticType, IncorrectSemanticTypeNegativeIntegerValue) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (type > -1) >= 2]"), InvalidInputException);
+}
+
+TEST(SemanticType, IncorrectSemanticTypePositiveDoubleValue) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (type > 1.0) >= 2]"), InvalidInputException);
+}
+
+TEST(SemanticType, IncorrectSemanticTypeZeroDoubleValue) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (type > 0.0) >= 2]"), InvalidInputException);
+}
+
+TEST(SemanticType, IncorrectSemanticTypeNegativeDoubleValue) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} (type > -1.0) >= 2]"), InvalidInputException);
+}
+
+TEST(SemanticType, Correct) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [{A} (type > 1) >= 2]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // SimilarityMeasure
 //
 //
