@@ -462,7 +462,7 @@ TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeseriesComponentPeak) {
 }
 
 TEST_F(NumericStateVariableTraceTest, HeterogeneousTimeseriesComponentValley) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] {C}(type = 1))) < 7.001 ^ avg(enteringValue(valley, [0, 11] {C}(type = 1))) > 6.99]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(enteringValue(valley, [0, 11] {C}(type = Organ.Heart))) < 7.001 ^ avg(enteringValue(valley, [0, 11] {C}(type = Organ.Heart))) > 6.99]"));
 }
 
 
@@ -492,7 +492,7 @@ TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentAscent) {
 }
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentDescent) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [mode(values(descent, [0, 11] {C}(type = 1))) = 12]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [mode(values(descent, [0, 11] {C}(type = Organ.Heart))) = 12]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentPlateau) {
@@ -504,7 +504,7 @@ TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformAscen
 }
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(type = 1))) = 7.5]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(type = Organ.Heart))) = 7.5]"));
 }
 
 
@@ -517,7 +517,7 @@ TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesComponentUniformDesce
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesMeasureTimeSpan) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(descent, [0, 11] {C}(type = 1))) = 3]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [avg(timeSpan(descent, [0, 11] {C}(type = Organ.Heart))) = 3]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, HomogeneousTimeseriesMeasureValue) {
@@ -747,11 +747,11 @@ TEST_F(NumericStateVariableTraceTest, NumericStateVariableBothTypes) {
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [add({A}(type = 0), 11) = {C}(type = 1)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [add({A}(type = 0), 11) = {C}(type = Organ.Heart)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableOneNumericStateVariable) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{C}(type = 1) = 12]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{C}(type = Organ.Heart) = 12]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableWrongRhsType) {
@@ -767,7 +767,7 @@ TEST_F(NumericStateVariableTraceTest, NumericStateVariableWrongLongName) {
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableWrongTypeLhs) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 1) <= {B}]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Heart) <= {B}]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
@@ -810,7 +810,7 @@ TEST_F(NumericStateVariableTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, SemanticType) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [{C}(type = 1) = 12]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [{C}(type = Organ.Heart) = 12]"));
 }
 
 
@@ -823,7 +823,7 @@ TEST_F(NumericStateVariableTraceTest, SemanticType) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, SimilarityMeasureAntiSimilar) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [opposite(d([0, 11] {A}), d([0, 11] {C} (type = 1)), 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [opposite(d([0, 11] {A}), d([0, 11] {C} (type = Organ.Heart)), 0)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, SimilarityMeasureSimilar) {
@@ -1431,7 +1431,7 @@ TEST_F(NumericStateVariableTraceTest, DecreasingUntilIncreasingValueReal) {
 }
 
 TEST_F(NumericStateVariableTraceTest, DecreasingUntilIncreasingValueNumericStateVariable) {
-    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({C}(type = 1)) < 0) U [0, 10] (d({C}(type = 1)) > 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P < 0.9 [(d({C}(type = Organ.Heart)) < 0) U [0, 10] (d({C}(type = Organ.Heart)) > 0)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, DecreasingUntilIncreasingValueUnaryNumeric) {

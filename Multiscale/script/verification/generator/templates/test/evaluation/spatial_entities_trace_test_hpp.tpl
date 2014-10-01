@@ -766,11 +766,11 @@ TEST_F(SpatialEntitiesTraceTest, NumericStateVariableBothTypes) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 1)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = Organ.Heart)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableOneNumericStateVariable) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{C}(type = 1) = 12]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{C}(type = Organ.Heart) = 12]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongRhsType) {
@@ -786,7 +786,7 @@ TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongLongName) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongTypeLhs) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 1) <= {B}]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Heart) <= {B}]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
@@ -1264,7 +1264,7 @@ TEST_F(SpatialEntitiesTraceTest, UnaryStatisticalSpatial) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, UnaryTypeConstraint) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, type = 1))) = 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, type = Organ.Heart))) = 0]"));
 }
 
 
@@ -1450,7 +1450,7 @@ TEST_F(SpatialEntitiesTraceTest, DecreasingUntilIncreasingValueReal) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, DecreasingUntilIncreasingValueNumericStateVariable) {
-    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(d({C}(type = 1)) < 0) U [0, 10] (d({C}(type = 1)) > 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P < 0.9 [(d({C}(type = Organ.Heart)) < 0) U [0, 10] (d({C}(type = Organ.Heart)) > 0)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, DecreasingUntilIncreasingValueUnaryNumeric) {

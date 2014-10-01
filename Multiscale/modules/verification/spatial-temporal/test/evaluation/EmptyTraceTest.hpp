@@ -219,7 +219,7 @@ TEST_F(EmptyTraceTest, ChangeMeasureRatio) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, ChangeTemporalNumericCollection) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(d([0, 11] {C}(type = 1))) = -9]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [min(d([0, 11] {C}(type = Organ.Heart))) = -9]"), SpatialTemporalException);
 }
 
 
@@ -444,7 +444,7 @@ TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentAscent) {
 }
 
 TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentDescent) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] {C}(type = 1))) = 7.5]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(descent, [0, 11] {C}(type = Organ.Heart))) = 7.5]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentPlateau) {
@@ -456,7 +456,7 @@ TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformAscent) {
 }
 
 TEST_F(EmptyTraceTest, HomogeneousTimeseriesComponentUniformDescent) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(type = 1))) = 6.6]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [avg(values(uniformDescent, [0, 11] {C}(type = Organ.Heart))) = 6.6]"), SpatialTemporalException);
 }
 
 
@@ -700,11 +700,11 @@ TEST_F(EmptyTraceTest, NumericStateVariableBothTypes) {
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 1)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = Organ.Heart)]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableOneNumericStateVariable) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{C}(type = 1) = 12]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{C}(type = Organ.Heart) = 12]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableWrongRhsType) {
@@ -720,7 +720,7 @@ TEST_F(EmptyTraceTest, NumericStateVariableWrongLongName) {
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableWrongTypeLhs) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 1) <= {B}]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Heart) <= {B}]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
@@ -763,7 +763,7 @@ TEST_F(EmptyTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, SemanticType) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.4 [{C}(type = 1) = 12]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.4 [{C}(type = Organ.Heart) = 12]"), SpatialTemporalException);
 }
 
 
@@ -1396,7 +1396,7 @@ TEST_F(EmptyTraceTest, DecreasingUntilIncreasingValueReal) {
 }
 
 TEST_F(EmptyTraceTest, DecreasingUntilIncreasingValueNumericStateVariable) {
-    EXPECT_THROW(RunEvaluationTest("P < 0.9 [(d({C}(type = 1)) < 0) U [0, 10] (d({C}(type = 1)) > 0)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P < 0.9 [(d({C}(type = Organ.Heart)) < 0) U [0, 10] (d({C}(type = Organ.Heart)) > 0)]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, DecreasingUntilIncreasingValueUnaryNumeric) {
