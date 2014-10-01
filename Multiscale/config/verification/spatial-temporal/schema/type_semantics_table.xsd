@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!-- Human-readable information -->
+	
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+			Type semantics table description schema for multiscale multidimensional model checking.
+			Copyright 2014 Ovidiu Parvu. 
+		</xs:documentation>
+	</xs:annotation>
+
+	<!-- Elements -->
+	
+	<xs:element name="typeSemanticsTable" type="TypeSemanticsTableType" />
+
+	<!-- User-defined complex types -->
+	
+	<xs:complexType name="TypeSemanticsTableType">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="1" name="semanticCriteria" type="SemanticCriteriaType" />
+			<xs:element minOccurs="1" maxOccurs="1" name="semanticTypes" type="SemanticTypesType">
+				<!-- The semantics of each type must be unique -->
+					
+				<xs:unique name="UniqueSemanticTypes">
+					<xs:selector xpath="type" />
+					<xs:field xpath="@semantics" />
+				</xs:unique>
+				
+				<!-- The value of each type must be unique -->
+					
+				<xs:unique name="UniqueSemanticValues">
+					<xs:selector xpath="type" />
+					<xs:field xpath="@value" />
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="SemanticCriteriaType">
+		<xs:attribute name="description" type="AlphaNumericStringsSeparatedByDots" use="required" />
+	</xs:complexType>
+	
+	<xs:complexType name="SemanticTypesType">
+		<xs:sequence>
+			<xs:element minOccurs="1" maxOccurs="unbounded" name="type" type="MetaType" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MetaType">
+		<xs:attribute name="semantics" type="AlphaNumericStringsSeparatedByDots" use="required" />
+		<xs:attribute name="value" type="PositiveInteger" use="required" />
+	</xs:complexType>
+	
+	<!-- User-defined simple types -->
+
+	<xs:simpleType name="AlphaNumericStringsSeparatedByDots">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9a-zA-Z]+(\.[0-9a-zA-Z]+)*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="PositiveInteger">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-9][0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

@@ -62,7 +62,7 @@
         </xs:sequence>
         
         <xs:attribute name="spatialType" type="SpatialMetaType" use="required" />
-        <xs:attribute name="semanticType" type="xs:nonNegativeInteger" />
+        <xs:attribute name="semanticType" type="SemanticMetaType" />
     </xs:complexType>
 
     <xs:complexType name="NumericStateVariableType">
@@ -71,10 +71,16 @@
             <xs:element name="value" type="xs:double" />
         </xs:sequence>
         
-        <xs:attribute name="semanticType" type="xs:nonNegativeInteger" />
+        <xs:attribute name="semanticType" type="SemanticMetaType" />
     </xs:complexType>
     
     <!-- User-defined simple types -->
+
+    <xs:simpleType name="SemanticMetaType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9a-zA-Z]+(\.[0-9a-zA-Z]+)*"/>
+        </xs:restriction>
+    </xs:simpleType>
 
     /*{% for spatial_measure in spatial_measures %}*/
     <xs:simpleType name="/*{{ spatial_measure.name|first_to_upper }}*/Type">
