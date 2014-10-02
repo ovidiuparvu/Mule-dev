@@ -1,9 +1,11 @@
 #ifndef SPATIALMEASURECOLLECTIONGRAMMAR_HPP
 #define SPATIALMEASURECOLLECTIONGRAMMAR_HPP
 
+#include "multiscale/verification/spatial-temporal/attribute/SemanticTypeAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureCollectionAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/BinaryNumericMeasureGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/ComparatorGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/SemanticTypeGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/UnaryNumericMeasureGrammar.hpp"
 
@@ -56,6 +58,9 @@ namespace multiscale {
 
                 ComparatorGrammar<Iterator>
                     comparatorRule;                                 /*!< The grammar for parsing comparators */
+
+                SemanticTypeGrammar<Iterator>
+                    semanticTypeRule;                               /*!< The grammar for parsing semantic types */
 
                 // Rules
 

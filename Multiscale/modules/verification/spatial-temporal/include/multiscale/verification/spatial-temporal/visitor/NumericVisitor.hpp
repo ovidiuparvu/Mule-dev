@@ -20,11 +20,14 @@ namespace multiscale {
 
             private:
 
-                const TimePoint &timePoint;  /*!< The considered timepoint */
+                const TimePoint            &timePoint;          /*!< The considered timepoint */
+                const TypeSemanticsTable   &typeSemanticsTable; /*!< The type semantics table */
 
             public:
 
-                NumericVisitor(const TimePoint &timePoint) : timePoint(timePoint) {}
+                NumericVisitor(const TimePoint &timePoint,
+                               const TypeSemanticsTable &typeSemanticsTable)
+                               : timePoint(timePoint), typeSemanticsTable(typeSemanticsTable) {}
 
                 //! Overloading the "()" operator for the NumericMeasureAttribute alternative
                 /*!
@@ -61,9 +64,11 @@ namespace multiscale {
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
                     NumericStateVariableId numericStateVariableId(
                         numericStateVariable.stateVariable.name,
-                        numericStateVariable.semanticType.get_value_or(
-                            SemanticTypeAttribute(0)
-                        ).type
+                        // TODO: Update accordingly
+//                        numericStateVariable.semanticType.get_value_or(
+//                            SemanticTypeAttribute(0)
+//                        ).type
+                        std::string()
                     );
 
                     return timePoint.getNumericStateVariable(numericStateVariableId);
@@ -143,7 +148,7 @@ namespace multiscale {
                  */
                 double
                 evaluate(const NumericMeasureType &numericMeasure) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
+                    return boost::apply_visitor(NumericVisitor(timePoint, typeSemanticsTable), numericMeasure);
                 }
 
                 //! Evaluate the given primary numeric measure considering the timePoint field
@@ -152,7 +157,8 @@ namespace multiscale {
                  */
                 double
                 evaluatePrimaryNumericMeasure(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint), primaryNumericMeasure);
+                    return boost::apply_visitor(NumericVisitor(timePoint, typeSemanticsTable),
+                                                primaryNumericMeasure);
                 }
 
                 //! Evaluate the given numeric spatial measure considering the timePoint field
@@ -161,7 +167,8 @@ namespace multiscale {
                  */
                 double
                 evaluateNumericSpatialMeasure(const NumericSpatialMeasureType &numericSpatialMeasure) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint), numericSpatialMeasure);
+                    return boost::apply_visitor(NumericVisitor(timePoint, typeSemanticsTable),
+                                                numericSpatialMeasure);
                 }
 
         };
@@ -184,7 +191,7 @@ multiscale::verification::NumericVisitor::operator()(const UnaryStatisticalSpati
                                                      &unaryStatisticalSpatialAttribute) const {
     std::vector<double> spatialMeasureValues =
         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-            timePoint,
+            timePoint, typeSemanticsTable,
             unaryStatisticalSpatialAttribute.spatialMeasureCollection
         );
 
@@ -199,12 +206,12 @@ multiscale::verification::NumericVisitor::operator()(const BinaryStatisticalSpat
                                                      &binaryStatisticalSpatialAttribute) const {
     std::vector<double> firstSpatialMeasureValues =
         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-            timePoint,
+            timePoint, typeSemanticsTable,
             binaryStatisticalSpatialAttribute.firstSpatialMeasureCollection
         );
     std::vector<double> secondSpatialMeasureValues =
         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-            timePoint,
+            timePoint, typeSemanticsTable,
             binaryStatisticalSpatialAttribute.secondSpatialMeasureCollection
         );
 
@@ -220,7 +227,7 @@ multiscale::verification::NumericVisitor::operator()(const BinaryStatisticalQuan
                                                      &binaryStatisticalQuantileSpatialAttribute) const {
     std::vector<double> spatialMeasureValues =
         NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-            timePoint,
+            timePoint, typeSemanticsTable,
             binaryStatisticalQuantileSpatialAttribute.spatialMeasureCollection
         );
 

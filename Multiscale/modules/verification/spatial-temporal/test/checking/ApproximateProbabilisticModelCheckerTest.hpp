@@ -54,7 +54,7 @@ namespace multiscaletest {
 
     void ApproximateProbabilisticModelCheckerTest::InitialiseModelChecker() {
         modelChecker = std::make_shared<mv::ApproximateProbabilisticModelChecker>(
-                           abstractSyntaxTree, delta, epsilon
+                           abstractSyntaxTree, typeSemanticsTable, delta, epsilon
                        );
     }
 

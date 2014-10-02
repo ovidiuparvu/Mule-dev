@@ -5,6 +5,12 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
+NumericStateVariableId::NumericStateVariableId(const std::string &name,
+                                               const std::string &semanticType)
+                                               : name(name), semanticType(semanticType) {}
+
+NumericStateVariableId::~NumericStateVariableId() {}
+
 const std::string& NumericStateVariableId::getName() const {
     return name;
 }
@@ -13,11 +19,11 @@ void NumericStateVariableId::setName(const std::string& name) {
     this->name = name;
 }
 
-unsigned long NumericStateVariableId::getSemanticType() const {
+std::string NumericStateVariableId::getSemanticType() const {
     return semanticType;
 }
 
-void NumericStateVariableId::setSemanticType(unsigned long semanticType) {
+void NumericStateVariableId::setSemanticType(const std::string &semanticType) {
     this->semanticType = semanticType;
 }
 
@@ -37,7 +43,7 @@ std::string NumericStateVariableId::toString() const {
     return (
         OUTPUT_STRING_BEGIN +
         name + OUTPUT_STRING_SEPARATOR +
-        StringManipulator::toString<unsigned long>(semanticType) +
+        semanticType +
         OUTPUT_STRING_END
     );
 }
@@ -47,4 +53,3 @@ std::string NumericStateVariableId::toString() const {
 const std::string NumericStateVariableId::OUTPUT_STRING_BEGIN       = "(";
 const std::string NumericStateVariableId::OUTPUT_STRING_SEPARATOR   = ", ";
 const std::string NumericStateVariableId::OUTPUT_STRING_END         = ")";
-

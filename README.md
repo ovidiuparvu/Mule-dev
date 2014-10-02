@@ -23,7 +23,7 @@ Project multiscale
 
 **Author:** Ovidiu Parvu                                                        
 **Created on:** 04.02.2013                                                        
-**Modified on:** 02.10.2014
+**Modified on:** 03.10.2014
 
 ## 2. Requirements
    

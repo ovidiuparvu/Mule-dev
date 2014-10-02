@@ -24,8 +24,11 @@ namespace multiscale {
                 //! Create an instance of StatisticalModelChecker
                 /*!
                  * \param abstractSyntaxTree The abstract syntax tree representing the logic property to be checked
+                 * \param typeSemanticsTable The type semantics table mapping semantic criteria values to
+                 *                           abstract natural numbers
                  */
-                std::shared_ptr<ModelChecker> createInstance(const AbstractSyntaxTree &abstractSyntaxTree) override;
+                std::shared_ptr<ModelChecker> createInstance(const AbstractSyntaxTree &abstractSyntaxTree,
+                                                             const TypeSemanticsTable &typeSemanticsTable) override;
 
         };
 

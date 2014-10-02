@@ -71,6 +71,7 @@ namespace multiscale {
             public:
 
                 StatisticalModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
+                                        const TypeSemanticsTable &typeSemanticsTable,
                                         double typeIError, double typeIIError);
                 ~StatisticalModelChecker();
 

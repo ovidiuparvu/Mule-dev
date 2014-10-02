@@ -5,6 +5,8 @@
 #include "multiscale/exception/TestException.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/model/NumericStateVariableId.hpp"
+#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
+#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <limits>
@@ -22,25 +24,33 @@ namespace multiscaletest {
 
         protected:
 
-            std::size_t nrOfTimePoints;     /*!< The number of timepoints in the trace */
+            std::size_t nrOfTimePoints;             /*!< The number of timepoints in the trace */
 
             NumericStateVariableId
-                aNumericStateVariableId;    /*!< The id of the numeric state variable "A" */
+                aNumericStateVariableId;            /*!< The id of the numeric state variable "A" (no type) */
             NumericStateVariableId
-                bNumericStateVariableId;    /*!< The id of the numeric state variable "B" */
+                bNumericStateVariableId;            /*!< The id of the numeric state variable "B" (no type) */
             NumericStateVariableId
-                cNumericStateVariableId;    /*!< The id of the numeric state variable "C" */
+                aWithTypeNumericStateVariableId;    /*!< The id of the numeric state variable "A" (with type) */
+            NumericStateVariableId
+                bWithTypeNumericStateVariableId;    /*!< The id of the numeric state variable "B" (with type) */
+            NumericStateVariableId
+                cNumericStateVariableId;            /*!< The id of the numeric state variable "C" */
 
-            double aMinValue;               /*!< The minimum value of numeric state variable "A" */
-            double aMaxValue;               /*!< The maximum value of numeric state variable "A" */
-            double bConstantValue;          /*!< The constant value of numeric state variable "B" */
-            double cMinValue;               /*!< The minimum value of numeric state variable "C" */
-            double cMaxValue;               /*!< The maximum value of numeric state variable "C" */
+            double aMinValue;                       /*!< The minimum value of numeric state variable "A" */
+            double aMaxValue;                       /*!< The maximum value of numeric state variable "A" */
+            double bConstantValue;                  /*!< The constant value of numeric state variable "B" */
+            double cMinValue;                       /*!< The minimum value of numeric state variable "C" */
+            double cMaxValue;                       /*!< The maximum value of numeric state variable "C" */
 
-            mv::SpatialTemporalTrace trace; /*!< The spatial temporal trace */
-            std::string query;              /*!< The query to be checked */
+            mv::SpatialTemporalTrace
+                trace;                              /*!< The spatial temporal trace */
+            mv::TypeSemanticsTable
+                typeSemanticsTable;                 /*!< The type semantics table */
 
-            bool evaluationResult;          /*!< The result of the evaluation */
+            std::string query;                      /*!< The query to be checked */
+
+            bool evaluationResult;                  /*!< The result of the evaluation */
 
         public:
 
@@ -71,41 +81,16 @@ namespace multiscaletest {
             */
            void InitialiseQuery(const std::string &query);
 
+           //! Initialise the type semantics table
+           void InitialiseTypeSemanticsTable();
+
+        protected:
+
+           // Constants
+           static const std::string SEMANTIC_TYPE_ORGAN_HEART;
+           static const std::string SEMANTIC_TYPE_ORGAN_KIDNEY;
+
     };
-
-
-    TraceEvaluationTest::TraceEvaluationTest() : nrOfTimePoints(12), aNumericStateVariableId("A", 0),
-                                                 bNumericStateVariableId("B", 0), cNumericStateVariableId("C", 1),
-                                                 aMinValue(1), aMaxValue(std::numeric_limits<double>::lowest()),
-                                                 bConstantValue(3), cMinValue(std::numeric_limits<double>::max()),
-                                                 cMaxValue(12), evaluationResult(false) {}
-
-    bool TraceEvaluationTest::RunEvaluationTest(const std::string &query) {
-        InitialiseQuery(query);
-        InitialiseTrace();
-
-        RunTest();
-        ValidateTestResults();
-
-        return evaluationResult;
-    }
-
-    void TraceEvaluationTest::RunTest() {
-        AbstractSyntaxTree parseResult;
-        Parser parser(query);
-
-        if (!parser.parse(parseResult)) {
-            MS_throw(multiscale::TestException, ERR_MSG_TEST);
-        }
-
-        evaluationResult = parseResult.evaluate(trace);
-    }
-
-    void TraceEvaluationTest::ValidateTestResults() {}
-
-    void TraceEvaluationTest::InitialiseQuery(const std::string &query) {
-        this->query = query;
-    }
 
 };
 

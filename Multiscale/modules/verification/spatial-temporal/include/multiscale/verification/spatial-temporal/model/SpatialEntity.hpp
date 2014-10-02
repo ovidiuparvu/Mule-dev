@@ -18,7 +18,7 @@ namespace multiscale {
 
             protected:
 
-                unsigned long semanticType;                 /*!< The semantic type of the spatial entity */
+                std::string semanticType;                   /*!< The semantic type of the spatial entity */
 
                 std::vector<double> spatialMeasureValues;   /*!< The vector of spatial measures' values.
                                                                  The i-th spatial measure value in the vector
@@ -28,16 +28,16 @@ namespace multiscale {
             public:
 
                 SpatialEntity();
-                ~SpatialEntity() {};
+                ~SpatialEntity();
 
                 //! Get the semantic type
-                unsigned long getSemanticType() const;
+                std::string getSemanticType() const;
 
                 //! Set the value of the semantic type
                 /*!
                  * \param semanticType The value of the semantic type
                  */
-                void setSemanticType(unsigned long semanticType);
+                void setSemanticType(const std::string &semanticType);
 
                 //! Get the value of the given spatial measure
                 /*!

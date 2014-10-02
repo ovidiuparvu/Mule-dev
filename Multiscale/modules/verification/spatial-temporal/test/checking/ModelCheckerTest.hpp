@@ -1,6 +1,15 @@
 #ifndef MODELCHECKINGTEST_HPP
 #define MODELCHECKINGTEST_HPP
 
+/******************************************************************************
+ *
+ * WARNING! AUTO-GENERATED FILE.
+ *
+ * PLEASE DO NOT UPDATE THIS FILE MANUALLY. 
+ * USE THE PYTHON GENERATOR SCRIPTS FOR ANY MODIFICATIONS.
+ *
+ *****************************************************************************/
+ 
 #include "multiscale/core/MultiscaleTest.hpp"
 #include "multiscale/exception/TestException.hpp"
 #include "multiscale/verification/spatial-temporal/checking/ModelChecker.hpp"
@@ -22,12 +31,20 @@ namespace multiscaletest {
 
         protected:
 
-            std::vector<mv::SpatialTemporalTrace> traces;               /*!< The collection of spatio-temporal traces */
+            std::vector<mv::SpatialTemporalTrace> 
+                traces;                         /*!< The collection of spatio-temporal traces */
 
-            mv::AbstractSyntaxTree                abstractSyntaxTree;   /*!< The abstract syntax tree corresponding to the logic property */
-            std::shared_ptr<mv::ModelChecker>     modelChecker;         /*!< The specific type of model checker employed */
+            TypeSemanticsTable
+                typeSemanticsTable;             /*!< The type semantics table mapping semantic criteria values to
+                                                     abstract natural numbers */
+            
+            mv::AbstractSyntaxTree                
+                abstractSyntaxTree;             /*!< The abstract syntax tree corresponding to the logic property */
+            std::shared_ptr<mv::ModelChecker>     
+                modelChecker;                   /*!< The specific type of model checker employed */
 
-            bool                                  evaluationResult;     /*!< The result of the model checking evaluation */
+            bool                                  
+                evaluationResult;               /*!< The result of the model checking evaluation */
 
         public:
 
@@ -53,6 +70,9 @@ namespace multiscaletest {
            //! Initialise the collection of spatio-temporal traces
            void InitialiseSpatioTemporalTraces();
 
+           //! Initialise the type semantics table
+           void InitialiseTypeSemanticsTable();
+           
            //! Initialise the abstract syntax tree
            void InitialiseAbstractSyntaxTree();
 
@@ -90,6 +110,7 @@ namespace multiscaletest {
 
     void ModelCheckerTest::Initialise() {
         InitialiseSpatioTemporalTraces();
+        InitialiseTypeSemanticsTable();
         InitialiseAbstractSyntaxTree();
         InitialiseModelChecker();
     }
@@ -111,6 +132,10 @@ namespace multiscaletest {
         InitialiseSpatioTemporalTraceWithClusterednessValues(std::vector<double>{10, 20, 20, 30});
     }
 
+    void ModelCheckerTest::InitialiseTypeSemanticsTable() {
+        // Do nothing
+    }
+    
     void ModelCheckerTest::InitialiseAbstractSyntaxTree() {
         mv::Parser parser(INPUT_LOGIC_PROPERTY);
 

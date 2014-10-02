@@ -48,7 +48,7 @@ namespace multiscaletest {
             timePoints.push_back(TimePoint(i));
         }
 
-        // Add a numeric state variable "A" to the collection of timepoints
+        // Add a numeric state variable "A" (without type) to the collection of timepoints
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             if (i % 4 == 0) {
                 timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue);
@@ -56,15 +56,29 @@ namespace multiscaletest {
                 timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue + i);
             }
         }
+        
+        // Add a numeric state variable "A" (with type) to the collection of timepoints
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            if (i % 4 == 0) {
+                timePoints[i].addNumericStateVariable(aWithTypeNumericStateVariableId, aMinValue);
+            } else {
+                timePoints[i].addNumericStateVariable(aWithTypeNumericStateVariableId, aMinValue + i);
+            }
+        }
 
-        // Initialise the aMaxValue field
+        // Initialise the aMaxValue field considering numeric state variable "A" (without type)
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariable(aNumericStateVariableId));
         }
         
-        // Add a numeric state variable "B" to the collection of timepoints
+        // Add a numeric state variable "B" (without type) to the collection of timepoints
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             timePoints[i].addNumericStateVariable(bNumericStateVariableId, bConstantValue);
+        }
+        
+        // Add a numeric state variable "B" (with type) to the collection of timepoints
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            timePoints[i].addNumericStateVariable(bWithTypeNumericStateVariableId, bConstantValue);
         }
 
         // Add a numeric state variable "C" to the collection of timepoints
@@ -738,19 +752,19 @@ TEST_F(NumericStateVariableTraceTest, NumericStateVariableWithoutTypes) {
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableTypeLeft) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) = 1]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) = 1]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableTypeRight) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [3 <= {B}(type = 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [3 <= {B}(type = Organ.Kidney)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableBothTypes) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}(type = 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}(type = Organ.Kidney)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [add({A}(type = 0), 11) = {C}(type = Organ.Heart)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [add({A}(type = Organ.Kidney), 11) = {C}(type = Organ.Heart)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableOneNumericStateVariable) {
@@ -758,7 +772,7 @@ TEST_F(NumericStateVariableTraceTest, NumericStateVariableOneNumericStateVariabl
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableWrongRhsType) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Kidney)]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableWrongName) {
@@ -1274,7 +1288,7 @@ TEST_F(NumericStateVariableTraceTest, UnaryStatisticalSpatial) {
 /////////////////////////////////////////////////////////
 
 TEST_F(NumericStateVariableTraceTest, UnaryTypeConstraint) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(clusteredness(filter(clusters, type = 0))) = 1]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(clusteredness(filter(clusters, type < 1))) = 1]"));
 }
 
 

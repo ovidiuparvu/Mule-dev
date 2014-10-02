@@ -10,6 +10,7 @@
 /*{% for spatial_entity in spatial_entities %}*/
 #include "multiscale/verification/spatial-temporal/model//*{{ spatial_entity.name|first_to_upper }}*/.hpp"
 /*{% endfor %}*/
+#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <iostream>
@@ -72,7 +73,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
         /*{% for spatial_measure in spatial_measures[1:] %}*/
             /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 2);
         /*{% endfor %}*/
-            /*{{ spatial_entities[0].name }}*/->setSemanticType(0);
+            /*{{ spatial_entities[0].name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
 
             timePoints[i].addSpatialEntity(/*{{ spatial_entities[0].name }}*/, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
         }
@@ -86,7 +87,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
             /*{% endfor %}*/
-                /*{{ spatial_entity.name }}*/->setSemanticType(0);
+                /*{{ spatial_entity.name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
@@ -103,6 +104,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
 int main(int argc, char **argv) {
     std::string test;
     SpatialTemporalTrace trace;
+    TypeSemanticsTable typeSemanticsTable;
     AbstractSyntaxTree result;
 
     initialiseTrace(trace);
@@ -127,7 +129,8 @@ int main(int argc, char **argv) {
             if (parser.parse(result)) {
                 std::cout << "-----------------------------------------------------" << std::endl;
                 std::cout << " Parsing succeeded"
-                          << " and the AST evaluates to " << (result.evaluate(trace) ? "true" : "false")
+                          << " and the AST evaluates to " 
+                          << (result.evaluate(trace, typeSemanticsTable) ? "true" : "false")
                           << "!" << std::endl;
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             } else {
@@ -136,7 +139,7 @@ int main(int argc, char **argv) {
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             }
         } catch(const exception &e) {
-            ExceptionHandler::printErrorMessage(e);
+            ExceptionHandler::printDetailedErrorMessage(e);
 
             return EXEC_ERR_CODE;
         } catch(...) {

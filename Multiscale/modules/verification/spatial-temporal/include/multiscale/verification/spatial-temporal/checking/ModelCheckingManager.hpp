@@ -6,10 +6,12 @@
 #include "multiscale/verification/spatial-temporal/data/LogicPropertyDataReader.hpp"
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
+#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <chrono>
 #include <ctime>
+#include <memory>
 #include <string>
 #include <thread>
 #include <vector>
@@ -24,44 +26,63 @@ namespace multiscale {
 
             private:
 
-                Parser                                              parser;                         /*!< The parser used to verify if logical properties
-                                                                                                         are syntactically correct */
+                Parser
+                    parser;                         /*!< The parser used to verify if logical properties
+                                                         are syntactically correct */
 
-                std::vector<std::string>                            logicProperties;                /*!< The collection of logic properties */
-                std::vector<AbstractSyntaxTree>                     abstractSyntaxTrees;            /*!< The collection of abstract syntax tree obtained after
-                                                                                                         parsing the logic properties */
-                std::vector<std::string>                            tracesPaths;                    /*!< The collection of traces paths */
+                std::vector<std::string>
+                    logicProperties;                /*!< The collection of logic properties */
+                std::vector<AbstractSyntaxTree>
+                    abstractSyntaxTrees;            /*!< The collection of abstract syntax tree obtained after
+                                                         parsing the logic properties */
+                std::vector<std::string>
+                    tracesPaths;                    /*!< The collection of traces paths */
 
-                LogicPropertyDataReader                             logicPropertyReader;            /*!< The logic property reader */
-                SpatialTemporalDataReader                           traceReader;                    /*!< The behaviour/trace reader */
+                LogicPropertyDataReader
+                    logicPropertyReader;            /*!< The logic property reader */
+                SpatialTemporalDataReader
+                    traceReader;                    /*!< The behaviour/trace reader */
 
-                std::vector<std::vector<bool>>                      evaluationResults;              /*!< The two-dimensional array storing the evaluation result
-                                                                                                         for each (logic property, trace) pair. A pair of boolean
-                                                                                                         values (isEvaluated, evaluationResult) is associated to each
-                                                                                                         (logic property, trace) pair */
+                TypeSemanticsTable
+                    typeSemanticsTable;             /*!< The type semantics table */
 
-                std::vector<std::shared_ptr<ModelChecker>>          modelCheckers;                  /*!< The collection of model checkers */
+                std::vector<std::vector<bool>>
+                    evaluationResults;              /*!< The two-dimensional array storing the evaluation result
+                                                         for each (logic property, trace) pair. A pair of boolean
+                                                         values (isEvaluated, evaluationResult) is associated to each
+                                                         (logic property, trace) pair */
 
-                std::chrono::time_point<std::chrono::system_clock>  extraEvaluationStartTime;       /*!< The start time for the current evaluation process */
-                double                                              extraEvaluationElapsedTime;     /*!< The elapsed time for the extra evaluation process
-                                                                                                         expressed in seconds */
-                unsigned long                                       extraEvaluationTime;            /*!< The number of minutes for which the program waits for
-                                                                                                         new traces to be added to the trace folder */
-                std::string                                         extraEvaluationProgramPath;     /*!< The path to the program which should be executed when
-                                                                                                         extra evaluation is required */
+                std::vector<std::shared_ptr<ModelChecker>>
+                    modelCheckers;                  /*!< The collection of model checkers */
 
-                bool                                                shouldPrintDetailedEvaluation;  /*!< Flag indicating if detailed evaluation results should be printed */
+                std::chrono::time_point<std::chrono::system_clock>
+                    extraEvaluationStartTime;       /*!< The start time for the current evaluation process */
+                double
+                    extraEvaluationElapsedTime;     /*!< The elapsed time for the extra evaluation process
+                                                         expressed in seconds */
+                unsigned long
+                    extraEvaluationTime;            /*!< The number of minutes for which the program waits for
+                                                         new traces to be added to the trace folder */
+                std::string
+                    extraEvaluationProgramPath;     /*!< The path to the program which should be executed when
+                                                         extra evaluation is required */
+
+                bool
+                    shouldPrintDetailedEvaluation;  /*!< Flag indicating if detailed evaluation results should
+                                                         be printed */
 
             public:
 
                 ModelCheckingManager(const std::string &logicPropertiesFilepath,
                                      const std::string &tracesFolderPath,
-                                     unsigned long extraEvaluationTime);
+                                     unsigned long extraEvaluationTime,
+                                     const std::string &typeSemanticsTableFilepath);
                 ~ModelCheckingManager();
 
                 //! Set the path of the program which should be executed whenever extra evaluation is required
                 /*!
-                 * \param extraEvaluationProgramPath    The path to the program which will be executed when extra evaluation is required
+                 * \param extraEvaluationProgramPath    The path to the program which will be executed when extra
+                 *                                      evaluation is required
                  */
                 void setExtraEvaluationProgramPath(const std::string &extraEvaluationProgramPath);
 
@@ -80,13 +101,31 @@ namespace multiscale {
 
             private:
 
-                //! Initialise the model checking manager considering the given logic properties input file and extra evaluation time, and print the introduction message
-                /*!
-                 * \param logicPropertiesFilepath   The path to the logic properties input file
-                 * \param extraEvaluationTime       The number of extra minutes allocated for evaluating logic properties
+                //! Initialise the model checking manager
+                /*! Initialise the model checking manager considering the given logic properties input file and
+                 *  extra evaluation time, and print the introduction message
+                 *
+                 * \param logicPropertiesFilepath       The path to the logic properties input file
+                 * \param extraEvaluationTime           The number of extra minutes allocated for evaluating
+                 *                                      logic properties
+                 * \param typeSemanticsTableFilepath    The path to the type semantics table
                  */
                 void initialise(const std::string &logicPropertiesFilepath,
-                                unsigned long extraEvaluationTime);
+                                unsigned long extraEvaluationTime,
+                                const std::string &typeSemanticsTableFilepath);
+
+                //! Initialise the extra evaluation time counters
+                /*!
+                 * \param extraEvaluationTime   The number of extra minutes allocated for evaluating
+                 *                              logic properties
+                 */
+                void initialiseExtraEvaluationTimeCounters(unsigned long extraEvaluationTime);
+
+                //! Initialise the type semantics table
+                /*!
+                 * \param typeSemanticsTableFilepath    The path to the type semantics table input file
+                 */
+                void initialiseTypeSemanticsTable(const std::string &typeSemanticsTableFilepath);
 
                 //! Initialise the logic properties using the provided input file
                 /*!
@@ -103,7 +142,10 @@ namespace multiscale {
                 //! Parse the logic properties and print message informing the user about this
                 void parseLogicPropertiesAndPrintMessage();
 
-                //! Parse the logic properties and create abstract syntax trees whenever a logic property was successfully parsed
+                //! Parse the logic properties and create abstract syntax trees
+                /*! Parse the logic properties and create abstract syntax trees whenever a logic property
+                 *  was successfully parsed
+                 */
                 void parseLogicProperties();
 
                 //! Parse the logic property and inform the user if the logic property was syntactically correct
@@ -167,7 +209,9 @@ namespace multiscale {
                  *  will be set to false.
                  *
                  * \param trace                 The spatial temporal trace used for the logic properties evaluation
-                 * \param continueEvaluation    The flag indicating if there is at least one logic property whose truth value was not determined yet and needs to be evaluated considering more spatial temporal traces
+                 * \param continueEvaluation    The flag indicating if there is at least one logic property whose
+                 *                              truth value was not determined yet and needs to be evaluated
+                 *                              considering more spatial temporal traces
                  */
                 void runModelCheckersForTrace(const SpatialTemporalTrace &trace,
                                               bool &continueEvaluation);
@@ -202,7 +246,10 @@ namespace multiscale {
                 //! Execute the extra evaluation program for generating potential new traces
                 void executeExtraEvaluationProgram();
 
-                //! Execute the extra evaluation program for generating potential new traces and print a message informing the user about this
+                //! Execute the extra evaluation program for generating potential new traces
+                /*! Execute the extra evaluation program for generating potential new traces and print a message
+                 *  informing the user about this
+                 */
                 void executeExtraEvaluationProgramAndPrintMessage();
 
                 //! Wait TRACE_INPUT_REFRESH_TIMEOUT minutes before updating the trace reader
@@ -230,7 +277,9 @@ namespace multiscale {
 
 
                 // Constants
-                static const unsigned long TRACE_INPUT_REFRESH_TIMEOUT; /*!< The number of seconds for which the manager waits before updating the trace reader */
+                static const unsigned long TRACE_INPUT_REFRESH_TIMEOUT; /*!< The number of seconds for which the
+                                                                             manager waits before updating the trace
+                                                                             reader */
 
                 static const std::string   PARSER_EMPTY_LOGIC_PROPERTY; /*!< An empty logic property */
 

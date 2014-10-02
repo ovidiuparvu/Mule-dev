@@ -11,8 +11,9 @@ using namespace multiscale::verification;
 
 
 StatisticalModelChecker::StatisticalModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
+                                                 const TypeSemanticsTable &typeSemanticsTable,
                                                  double typeIError, double typeIIError)
-                                                 : ModelChecker(abstractSyntaxTree) {
+                                                 : ModelChecker(abstractSyntaxTree, typeSemanticsTable) {
     validateTypesErrors(typeIError, typeIIError);
 
     this->typeIError    = typeIError;

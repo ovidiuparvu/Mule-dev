@@ -63,7 +63,7 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 2);
             /*{% endfor %}*/
-                /*{{ spatial_entities[0].name }}*/->setSemanticType(0);
+                /*{{ spatial_entities[0].name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntity(/*{{ spatial_entities[0].name }}*/, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
             }
@@ -77,7 +77,7 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
             /*{% endfor %}*/
-                /*{{ spatial_entity.name }}*/->setSemanticType(0);
+                /*{{ spatial_entity.name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
@@ -90,7 +90,7 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
             /*{% endfor %}*/
-                /*{{ spatial_entity.name }}*/->setSemanticType(1);
+                /*{{ spatial_entity.name }}*/->setSemanticType(SEMANTIC_TYPE_ORGAN_HEART);
 
                 timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
@@ -754,19 +754,19 @@ TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWithoutTypes) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableTypeLeft) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableTypeRight) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = Organ.Kidney)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableBothTypes) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}(type = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}(type = Organ.Kidney)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = Organ.Heart)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Heart)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableOneNumericStateVariable) {
@@ -774,7 +774,7 @@ TEST_F(SpatialEntitiesTraceTest, NumericStateVariableOneNumericStateVariable) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongRhsType) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Kidney)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongName) {
@@ -829,7 +829,7 @@ TEST_F(SpatialEntitiesTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, SemanticType) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, type = 0))) >= 1]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, type < 1))) >= 1]"));
 }
 
 

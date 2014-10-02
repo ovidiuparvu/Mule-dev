@@ -11,8 +11,12 @@ ApproximateBayesianModelCheckerFactory::ApproximateBayesianModelCheckerFactory(d
 
 ApproximateBayesianModelCheckerFactory::~ApproximateBayesianModelCheckerFactory() {}
 
-std::shared_ptr<ModelChecker> ApproximateBayesianModelCheckerFactory::createInstance
-                                      (const AbstractSyntaxTree &abstractSyntaxTree) {
-    return std::make_shared<ApproximateBayesianModelChecker>(abstractSyntaxTree, alpha, beta,
-                                                             varianceThreshold);
+std::shared_ptr<ModelChecker>
+ApproximateBayesianModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree,
+                                                       const TypeSemanticsTable &typeSemanticsTable) {
+    return (
+        std::make_shared<ApproximateBayesianModelChecker>(
+            abstractSyntaxTree, typeSemanticsTable, alpha, beta, varianceThreshold
+        )
+    );
 }

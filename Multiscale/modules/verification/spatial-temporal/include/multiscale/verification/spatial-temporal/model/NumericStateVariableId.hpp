@@ -1,6 +1,8 @@
 #ifndef NUMERICSTATEVARIABLEID_HPP
 #define NUMERICSTATEVARIABLEID_HPP
 
+#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
+
 #include <string>
 
 
@@ -13,16 +15,15 @@ namespace multiscale {
 
             private:
 
-                std::string     name;           /*!< The name of the numeric state variable */
-                unsigned long   semanticType;   /*!< The semantic type of the numeric state variable */
+                std::string name;           /*!< The name of the numeric state variable */
+                std::string semanticType;   /*!< The semantic type of the numeric state variable */
                 
             public:
 
-                /*!
-                 * The default value for the numeric state variable type is 0.
-                 */
-                NumericStateVariableId(const std::string &name, unsigned long semanticType = 0)
-                    : name(name), semanticType(semanticType) {}
+                NumericStateVariableId(const std::string &name,
+                                       const std::string &semanticType = SemanticType::DEFAULT_VALUE);
+
+                ~NumericStateVariableId();
 
                 //! Get the name of the numeric state variable
                 const std::string& getName() const;
@@ -34,13 +35,13 @@ namespace multiscale {
                 void setName(const std::string& name);
 
                 //! Get the semantic type of the numeric state variable
-                unsigned long getSemanticType() const;
+                std::string getSemanticType() const;
 
                 //! Set the semantic type of the numeric state variable
                 /*!
                  * \param type  The type of the numeric state variable
                  */
-                void setSemanticType(unsigned long semanticType);
+                void setSemanticType(const std::string &semanticType);
 
                 //! Overload the < operator
                 /*!

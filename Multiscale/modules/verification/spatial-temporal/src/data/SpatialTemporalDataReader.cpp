@@ -3,8 +3,7 @@
 #include "multiscale/util/Filesystem.hpp"
 #include "multiscale/util/XmlValidator.hpp"
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
-#include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
-#include "multiscale/verification/spatial-temporal/model/Region.hpp"
+#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
 
 #include <iostream>
 #include <iterator>
@@ -200,14 +199,14 @@ SpatialTemporalDataReader::addNumericStateVariableToTimePoint(const pt::ptree &n
                                                                    TimePoint &timePoint) {
     std::string name
         = numericStateVariableTree.get<std::string>(LABEL_NUMERIC_STATE_VARIABLE_NAME);
-    boost::optional<unsigned long> semanticType
-        = numericStateVariableTree.get_optional<unsigned long>(LABEL_NUMERIC_STATE_VARIABLE_SEMANTIC_TYPE);
+    boost::optional<std::string> semanticType
+        = numericStateVariableTree.get_optional<std::string>(LABEL_NUMERIC_STATE_VARIABLE_SEMANTIC_TYPE);
     double value
         = numericStateVariableTree.get<double>(LABEL_NUMERIC_STATE_VARIABLE_VALUE);
 
     NumericStateVariableId numericStateVariableId(
         name,
-        semanticType.get_value_or(0)
+        semanticType.get_value_or(SemanticType::DEFAULT_VALUE)
     );
 
     timePoint.addNumericStateVariable(numericStateVariableId, value);
@@ -229,15 +228,13 @@ SpatialTemporalDataReader::addSpatialEntityToTimePoint(const pt::ptree &spatialE
 void
 SpatialTemporalDataReader::setSpatialEntitySemanticTypeValue(const pt::ptree &spatialEntityTree,
                                                              const std::shared_ptr<SpatialEntity> &spatialEntity) {
-    boost::optional<unsigned long> semanticTypeValue = spatialEntityTree.get_optional<unsigned long>(
-                                                           LABEL_SPATIAL_ENTITY_SEMANTIC_TYPE
-                                                       );
+    boost::optional<std::string> semanticTypeValue = spatialEntityTree.get_optional<std::string>(
+                                                         LABEL_SPATIAL_ENTITY_SEMANTIC_TYPE
+                                                     );
 
-    if (semanticTypeValue) {
-        spatialEntity->setSemanticType(*semanticTypeValue);
-    } else {
-        spatialEntity->setSemanticType(0);
-    }
+    spatialEntity->setSemanticType(
+        semanticTypeValue.get_value_or(SemanticType::DEFAULT_VALUE)
+    );
 }
 
 std::set<std::string>::iterator
@@ -328,4 +325,4 @@ const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_SPATIAL_TYPE  
 const std::string SpatialTemporalDataReader::LABEL_SPATIAL_ENTITY_SEMANTIC_TYPE    = "<xmlattr>.semanticType";
 
 const std::string SpatialTemporalDataReader::INPUT_FILES_EXTENSION      = ".xml";
-const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/verification/spatial-temporal/schema/MSTML_L1V1.xsd";
+const std::string SpatialTemporalDataReader::INPUT_FILES_SCHEMA_PATH    = "/usr/local/share/mule/config/verification/spatial-temporal/schema/MSTML_L1V1.xsd";

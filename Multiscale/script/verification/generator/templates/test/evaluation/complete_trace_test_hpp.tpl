@@ -52,7 +52,7 @@ namespace multiscaletest {
             timePoints.push_back(TimePoint(i));
         }
 
-        // Add a numeric state variable "A" to the collection of timepoints
+        // Add a numeric state variable "A" (without type) to the collection of timepoints
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             if (i % 4 == 0) {
                 timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue);
@@ -60,15 +60,29 @@ namespace multiscaletest {
                 timePoints[i].addNumericStateVariable(aNumericStateVariableId, aMinValue + i);
             }
         }
+        
+        // Add a numeric state variable "A" (with type) to the collection of timepoints
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            if (i % 4 == 0) {
+                timePoints[i].addNumericStateVariable(aWithTypeNumericStateVariableId, aMinValue);
+            } else {
+                timePoints[i].addNumericStateVariable(aWithTypeNumericStateVariableId, aMinValue + i);
+            }
+        }
 
-        // Initialise the aMaxValue field
+        // Initialise the aMaxValue field considering numeric state variable "A" (without type)
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariable(aNumericStateVariableId));
         }
         
-        // Add a numeric state variable "B" to the collection of timepoints
+        // Add a numeric state variable "B" (without type) to the collection of timepoints
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
             timePoints[i].addNumericStateVariable(bNumericStateVariableId, bConstantValue);
+        }
+        
+        // Add a numeric state variable "B" (with type) to the collection of timepoints
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            timePoints[i].addNumericStateVariable(bWithTypeNumericStateVariableId, bConstantValue);
         }
 
         // Add a numeric state variable "C" to the collection of timepoints
@@ -98,7 +112,7 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 2);
             /*{% endfor %}*/
-                /*{{ spatial_entities[0].name }}*/->setSemanticType(0);
+                /*{{ spatial_entities[0].name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntity(/*{{ spatial_entities[0].name }}*/, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
             }
@@ -112,7 +126,7 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
             /*{% endfor %}*/
-                /*{{ spatial_entity.name }}*/->setSemanticType(0);
+                /*{{ spatial_entity.name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
@@ -125,7 +139,7 @@ namespace multiscaletest {
             /*{% for spatial_measure in spatial_measures[1:] %}*/
                 /*{{ spatial_entity.name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measure.name|first_to_upper }}*/, static_cast<double>(/*{{ spatial_measure.max_value }}*/ - /*{{ spatial_measure.min_value }}*/) / 3);
             /*{% endfor %}*/
-                /*{{ spatial_entity.name }}*/->setSemanticType(1);
+                /*{{ spatial_entity.name }}*/->setSemanticType(SEMANTIC_TYPE_ORGAN_HEART);
 
                 timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
@@ -789,19 +803,19 @@ TEST_F(CompleteTraceTest, NumericStateVariableWithoutTypes) {
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableTypeLeft) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableTypeRight) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = Organ.Kidney)]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableBothTypes) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}(type = 0)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}(type = Organ.Kidney)]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = Organ.Heart)]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Heart)]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableOneNumericStateVariable) {
@@ -809,7 +823,7 @@ TEST_F(CompleteTraceTest, NumericStateVariableOneNumericStateVariable) {
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableWrongRhsType) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Kidney)]"));
 }
 
 TEST_F(CompleteTraceTest, NumericStateVariableWrongName) {
@@ -1297,7 +1311,7 @@ TEST_F(CompleteTraceTest, UnaryStatisticalSpatial) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, UnaryTypeConstraint) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, type = 0))) > 0]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, type < 1))) > 0]"));
 }
 
 

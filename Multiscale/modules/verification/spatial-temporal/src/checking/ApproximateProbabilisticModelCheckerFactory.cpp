@@ -10,7 +10,12 @@ ApproximateProbabilisticModelCheckerFactory::ApproximateProbabilisticModelChecke
 
 ApproximateProbabilisticModelCheckerFactory::~ApproximateProbabilisticModelCheckerFactory() {}
 
-std::shared_ptr<ModelChecker> ApproximateProbabilisticModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree) {
-    return make_shared<ApproximateProbabilisticModelChecker>(abstractSyntaxTree,
-                                                             delta, epsilon);
+std::shared_ptr<ModelChecker>
+ApproximateProbabilisticModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree,
+                                                            const TypeSemanticsTable &typeSemanticsTable) {
+    return (
+        make_shared<ApproximateProbabilisticModelChecker>(
+            abstractSyntaxTree, typeSemanticsTable, delta, epsilon
+        )
+    );
 }

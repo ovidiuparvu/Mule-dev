@@ -17,13 +17,16 @@ namespace multiscale {
 
             private:
 
-                const TimePoint     &timePoint;     /*!< The considered timepoint */
-                const SpatialEntity &spatialEntity; /*!< The considered spatial entity */
+                const TimePoint             &timePoint;             /*!< The considered timepoint */
+                const SpatialEntity         &spatialEntity;         /*!< The considered spatial entity */
+                const TypeSemanticsTable    &typeSemanticsTable;    /*!< The considered type semantics table */
 
             public:
 
-                FilterNumericVisitor(const TimePoint &timePoint, const SpatialEntity &spatialEntity)
-                    : timePoint(timePoint), spatialEntity(spatialEntity) {}
+                FilterNumericVisitor(const TimePoint &timePoint, const SpatialEntity &spatialEntity,
+                                     const TypeSemanticsTable &typeSemanticsTable)
+                                     : timePoint(timePoint), spatialEntity(spatialEntity),
+                                       typeSemanticsTable(typeSemanticsTable) {}
 
                 //! Overloading the "()" operator for the FilterNumericMeasureAttribute alternative
                 /*!
@@ -79,7 +82,8 @@ namespace multiscale {
                  * \param filterNumericMeasure  The given filter numeric measure
                  */
                 double evaluate(const FilterNumericMeasureAttributeType &filterNumericMeasure) const {
-                    return boost::apply_visitor(FilterNumericVisitor(timePoint, spatialEntity), filterNumericMeasure);
+                    return boost::apply_visitor(FilterNumericVisitor(timePoint, spatialEntity, typeSemanticsTable),
+                                                filterNumericMeasure);
                 }
 
                 //! Evaluate the given primary numeric measure considering the timePoint field
@@ -87,7 +91,8 @@ namespace multiscale {
                  * \param primaryNumericMeasure The given primary numeric measure
                  */
                 double evaluate(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint), primaryNumericMeasure);
+                    return boost::apply_visitor(NumericVisitor(timePoint, typeSemanticsTable),
+                                                primaryNumericMeasure);
                 }
 
         };

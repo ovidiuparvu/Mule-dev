@@ -17,11 +17,13 @@ namespace multiscale {
 
             AlgorithmException() {}
 
-            explicit AlgorithmException(const string &file, int line, const string &msg) {
+            explicit AlgorithmException(const string &file, int line, const string &msg)
+                : MultiscaleException(file, line, msg) {
                 constructExplanatoryString<const string &>(file, line, msg);
             }
 
-            explicit AlgorithmException(const string &file, int line, const char *msg) {
+            explicit AlgorithmException(const string &file, int line, const char *msg)
+                : MultiscaleException(file, line, msg) {
                 constructExplanatoryString<const char *>(file, line, msg);
             }
 

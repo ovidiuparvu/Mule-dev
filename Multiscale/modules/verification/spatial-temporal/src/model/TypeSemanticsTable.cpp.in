@@ -164,7 +164,7 @@ const std::string TypeSemanticsTable::LABEL_SEMANTIC_TYPE_VALUE       = "<xmlatt
 const char TypeSemanticsTable::SEMANTIC_CRITERIA_SEPARATOR = '.';
 
 const std::string TypeSemanticsTable::TYPE_SEMANTICS_TABLE_INPUT_FILE_EXTENSION = ".xml";
-const std::string TypeSemanticsTable::TYPE_SEMANTICS_TABLE_XSD_PATH             = "/usr/local/share/mule/config/verification/spatial-temporal/schema/type_semantics_table.xsd";
+const std::string TypeSemanticsTable::TYPE_SEMANTICS_TABLE_XSD_PATH             = "${TYPE_SEMANTICS_TABLE_SCHEMA_PATH}";
 
 const std::string TypeSemanticsTable::ERR_INVALID_INPUT_FILE_PATH_BEGIN   = "The provided input file path (";
 const std::string TypeSemanticsTable::ERR_INVALID_INPUT_FILE_PATH_END     = ") does not point to a regular file with the required extension (" + TYPE_SEMANTICS_TABLE_INPUT_FILE_EXTENSION + "). Please change.";

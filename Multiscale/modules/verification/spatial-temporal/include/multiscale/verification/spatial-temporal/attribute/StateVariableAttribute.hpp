@@ -2,6 +2,7 @@
 #define STATEVARIABLEATTRIBUTE_HPP
 
 #include <boost/fusion/include/adapt_struct.hpp>
+
 #include <string>
 
 

@@ -11,7 +11,12 @@ StatisticalModelCheckerFactory::StatisticalModelCheckerFactory(double typeIError
 
 StatisticalModelCheckerFactory::~StatisticalModelCheckerFactory() {}
 
-std::shared_ptr<ModelChecker> StatisticalModelCheckerFactory::createInstance
-                              (const AbstractSyntaxTree &abstractSyntaxTree) {
-    return std::make_shared<StatisticalModelChecker>(abstractSyntaxTree, typeIError, typeIIError);
+std::shared_ptr<ModelChecker>
+StatisticalModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree,
+                                               const TypeSemanticsTable &typeSemanticsTable) {
+    return (
+        std::make_shared<StatisticalModelChecker>(
+            abstractSyntaxTree, typeSemanticsTable, typeIError, typeIIError
+        )
+    );
 }

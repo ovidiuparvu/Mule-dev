@@ -9,8 +9,12 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-ProbabilisticBlackBoxModelChecker::ProbabilisticBlackBoxModelChecker(const AbstractSyntaxTree &abstractSyntaxTree)
-                                             : ModelChecker(abstractSyntaxTree) {}
+ProbabilisticBlackBoxModelChecker::ProbabilisticBlackBoxModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
+                                                                     const TypeSemanticsTable &typeSemanticsTable)
+                                                                     : ModelChecker(
+                                                                           abstractSyntaxTree,
+                                                                           typeSemanticsTable
+                                                                       ) {}
 
 ProbabilisticBlackBoxModelChecker::~ProbabilisticBlackBoxModelChecker() {}
 

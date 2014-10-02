@@ -1806,7 +1806,7 @@ TEST(SemanticType, IncorrectSemanticTypeInvalidValuesBeforeAndAfterDots2) {
 }
 
 TEST(SemanticType, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [{A} (type > Organ.Heart) >= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [{A} (type = Organ.Heart) >= 2]"));
 }
 
 

@@ -22,7 +22,8 @@ namespace multiscale {
 
             public:
 
-                ProbabilisticBlackBoxModelChecker(const AbstractSyntaxTree &abstractSyntaxTree);
+                ProbabilisticBlackBoxModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
+                                                  const TypeSemanticsTable &typeSemanticsTable);
                 ~ProbabilisticBlackBoxModelChecker();
 
                 //! Check if more traces are accepted for evaluating the logic property

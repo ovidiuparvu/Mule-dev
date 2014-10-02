@@ -12,12 +12,14 @@ double ProbabilisticLogicPropertyAttribute::getProbability() {
     return probability;
 }
 
-bool ProbabilisticLogicPropertyAttribute::evaluate(const SpatialTemporalTrace &trace) {
+bool ProbabilisticLogicPropertyAttribute::evaluate(const SpatialTemporalTrace &trace,
+                                                   const TypeSemanticsTable &typeSemanticsTable) {
     if (trace.length() == 0) {
         MS_throw(SpatialTemporalException, ERR_TRACE_LENGTH_ZERO);
     }
 
-    return boost::apply_visitor(LogicPropertyVisitor(trace), logicProperty, evaluationLogicProperty);
+    return boost::apply_visitor(LogicPropertyVisitor(trace, typeSemanticsTable),
+                                logicProperty, evaluationLogicProperty);
 }
 
 

@@ -1,3 +1,4 @@
+#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialEntity.hpp"
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
@@ -8,15 +9,17 @@ using namespace multiscale::verification::spatialmeasure;
 
 
 SpatialEntity::SpatialEntity() {
-    semanticType         = 0;
+    semanticType         = SemanticType::DEFAULT_VALUE;
     spatialMeasureValues = std::vector<double>(NR_SPATIAL_MEASURE_TYPES, 0);
 }
 
-unsigned long SpatialEntity::getSemanticType() const {
+SpatialEntity::~SpatialEntity() {}
+
+std::string SpatialEntity::getSemanticType() const {
     return semanticType;
 }
 
-void SpatialEntity::setSemanticType(unsigned long semanticType) {
+void SpatialEntity::setSemanticType(const std::string &semanticType) {
     this->semanticType = semanticType;
 }
 
@@ -37,7 +40,7 @@ void SpatialEntity::setSpatialMeasureValue(const SpatialMeasureType &spatialMeas
 
 bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
     // Return true if lhs.semanticType < rhs.semanticType
-    if (this->semanticType < rhsSpatialEntity.semanticType) {
+    if (this->semanticType.compare(rhsSpatialEntity.semanticType) == -1) {
         return true;
     }
 
@@ -53,7 +56,7 @@ bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
 }
 
 std::string SpatialEntity::toString() const {
-    std::string outputString = StringManipulator::toString<unsigned long>(semanticType);
+    std::string outputString = semanticType;
 
     // Add all spatial measure values to the output string
     for (std::size_t i = 0; i < NR_SPATIAL_MEASURE_TYPES; i++) {

@@ -23,12 +23,13 @@ double AbstractSyntaxTree::getProbability() {
     return probabilisticLogicProperty.getProbability();
 }
 
-bool AbstractSyntaxTree::evaluate(const SpatialTemporalTrace &spatialTemporalTrace) {
+bool AbstractSyntaxTree::evaluate(const SpatialTemporalTrace &spatialTemporalTrace,
+                                  const TypeSemanticsTable &typeSemanticsTable) {
     if (!isInitialised) {
         MS_throw(UnexpectedBehaviourException, ERR_ABSTRACT_SYNTAX_TREE_NOT_INITIALISED);
     }
 
-    return probabilisticLogicProperty.evaluate(spatialTemporalTrace);
+    return probabilisticLogicProperty.evaluate(spatialTemporalTrace, typeSemanticsTable);
 }
 
 

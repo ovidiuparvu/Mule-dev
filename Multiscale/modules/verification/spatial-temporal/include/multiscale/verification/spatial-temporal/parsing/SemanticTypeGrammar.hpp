@@ -1,7 +1,7 @@
-#ifndef NUMERICSTATEVARIABLEGRAMMAR_HPP
-#define NUMERICSTATEVARIABLEGRAMMAR_HPP
+#ifndef SEMANTICTYPEGRAMMAR_HPP
+#define SEMANTICTYPEGRAMMAR_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/NumericStateVariableAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/SemanticTypeAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SemanticTypeStringGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
@@ -24,33 +24,27 @@ namespace multiscale {
         namespace phoenix = boost::phoenix;
         namespace qi = boost::spirit::qi;
 
-        //! The grammar for parsing numeric state variable statements
+        //! The grammar for parsing semantic type statements
         template <typename Iterator>
-        class NumericStateVariableGrammar
-            : public qi::grammar<Iterator, NumericStateVariableAttribute(), qi::space_type> {
+        class SemanticTypeGrammar
+            : public qi::grammar<Iterator, SemanticTypeAttribute(), qi::space_type> {
 
             private:
 
                 // Grammars
 
                 SemanticTypeStringGrammar<Iterator>
-                    semanticTypeRule;                           /*!< The grammar for parsing semantic types */
+                    semanticTypeStringRule;                     /*!< The rule for parsing a string representing
+                                                                     a semantic type */
 
                 // Rules
 
-                qi::rule<Iterator, NumericStateVariableAttribute(), qi::space_type>
-                    numericStateVariableRule;                   /*!< The rule for parsing a numeric state variable */
-                qi::rule<Iterator, StateVariableAttribute(), qi::space_type>
-                    stateVariableRule;                          /*!< The rule for parsing a state variable */
-                qi::rule<Iterator, std::string(), qi::space_type>
-                    stateVariableNameRule;                      /*!< The rule for parsing the name of a
-                                                                     state variable without escaping white space */
                 qi::rule<Iterator, SemanticTypeAttribute(), qi::space_type>
-                    stateVariableTypeRule;                      /*!< The rule for parsing a state variable type */
+                    semanticTypeRule;                           /*!< The rule for parsing a semantic type */
 
             public:
 
-                NumericStateVariableGrammar();
+                SemanticTypeGrammar();
 
             private:
 

@@ -16,12 +16,15 @@ namespace multiscale {
 
             private:
 
-                const SpatialTemporalTrace &trace;  /*!< The considered spatial temporal trace */
+                const SpatialTemporalTrace &trace;              /*!< The considered spatial temporal trace */
+                const TypeSemanticsTable   &typeSemanticsTable; /*!< The type semantics table */
 
 
             public:
 
-                NumericMeasureCollectionVisitor(const SpatialTemporalTrace &trace) : trace(trace) {}
+                NumericMeasureCollectionVisitor(const SpatialTemporalTrace &trace,
+                                                const TypeSemanticsTable &typeSemanticsTable)
+                                                : trace(trace), typeSemanticsTable(typeSemanticsTable) {}
 
                 //! Overloading the "()" operator for the TemporalNumericCollectionAttribute alternative
                 /*!
@@ -410,7 +413,7 @@ multiscale::verification::NumericMeasureCollectionVisitor::operator()(
     const TemporalNumericCollectionAttribute &temporalNumericCollection
 ) const {
     return NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
-        trace,
+        trace, typeSemanticsTable,
         temporalNumericCollection
     );
 }
@@ -420,7 +423,7 @@ multiscale::verification::NumericMeasureCollectionVisitor::operator()(
     const SpatialMeasureCollectionAttribute &spatialMeasureCollection
 ) const {
     return NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-        trace.getTimePoint(0),
+        trace.getTimePoint(0), typeSemanticsTable,
         spatialMeasureCollection
     );
 }
@@ -431,7 +434,7 @@ multiscale::verification::NumericMeasureCollectionVisitor::operator()(
 ) const {
     std::vector<double> temporalNumericCollectionValues
         = NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
-              trace,
+              trace, typeSemanticsTable,
               changeTemporalNumericCollection.temporalNumericCollection
           );
 
@@ -455,7 +458,8 @@ multiscale::verification::NumericMeasureCollectionVisitor::evaluateTemporalNumer
         traceCopy.setSubTrace(i);
 
         numericMeasureValues.push_back(
-            boost::apply_visitor(NumericVisitor(traceCopy.getTimePoint(0)), numericMeasure)
+            boost::apply_visitor(NumericVisitor(traceCopy.getTimePoint(0), typeSemanticsTable),
+                                 numericMeasure)
         );
     }
 

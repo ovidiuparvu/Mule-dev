@@ -20,11 +20,14 @@ namespace multiscale {
 
             private:
 
-                const SpatialTemporalTrace &trace;  /*!< The considered spatial temporal trace */
+                const SpatialTemporalTrace &trace;              /*!< The considered spatial temporal trace */
+                const TypeSemanticsTable   &typeSemanticsTable; /*!< The type semantics table */
 
             public:
 
-                TemporalNumericVisitor(const SpatialTemporalTrace &trace) : trace(trace) {}
+                TemporalNumericVisitor(const SpatialTemporalTrace &trace,
+                                       const TypeSemanticsTable &typeSemanticsTable)
+                                       : trace(trace), typeSemanticsTable(typeSemanticsTable) {}
 
                 //! Overloading the "()" operator for the TemporalNumericMeasureAttribute alternative
                 /*!
@@ -52,9 +55,11 @@ namespace multiscale {
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
                     NumericStateVariableId numericStateVariableId(
                         numericStateVariable.stateVariable.name,
-                        numericStateVariable.semanticType.get_value_or(
-                            SemanticTypeAttribute(0)
-                        ).type
+                        // TODO: Update accordingly
+//                        numericStateVariable.semanticType.get_value_or(
+//                            SemanticTypeAttribute(0)
+//                        ).type
+                        std::string()
                     );
 
                     return trace.getTimePoint(0).getNumericStateVariable(numericStateVariableId);
@@ -175,7 +180,8 @@ namespace multiscale {
                  */
                 double
                 evaluate(const TemporalNumericMeasureType &temporalNumericMeasure) const {
-                    return boost::apply_visitor(TemporalNumericVisitor(trace), temporalNumericMeasure);
+                    return boost::apply_visitor(TemporalNumericVisitor(trace, typeSemanticsTable),
+                                                temporalNumericMeasure);
                 }
 
                 //! Evaluate the given numeric statistical measure considering the trace field
@@ -185,7 +191,8 @@ namespace multiscale {
                 double
                 evaluateNumericStatisticalMeasure(const NumericStatisticalMeasureType
                                                   &numericStatisticalMeasure) const {
-                    return boost::apply_visitor(TemporalNumericVisitor(trace), numericStatisticalMeasure);
+                    return boost::apply_visitor(TemporalNumericVisitor(trace, typeSemanticsTable),
+                                                numericStatisticalMeasure);
                 }
 
                 //! Evaluate the given numeric measure collection considering the trace field
@@ -219,7 +226,7 @@ multiscale::verification::TemporalNumericVisitor::evaluateNumericMeasureCollecti
                                                       const NumericMeasureCollectionAttribute
                                                       &numericMeasureCollection) const {
     return boost::apply_visitor(
-        NumericMeasureCollectionVisitor(trace),
+        NumericMeasureCollectionVisitor(trace, typeSemanticsTable),
         numericMeasureCollection.numericMeasureCollection
     );
 }

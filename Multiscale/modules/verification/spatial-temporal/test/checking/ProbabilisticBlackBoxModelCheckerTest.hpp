@@ -24,7 +24,7 @@ namespace multiscaletest {
 
     void ProbabilisticBlackBoxModelCheckerTest::InitialiseModelChecker() {
         modelChecker = std::make_shared<mv::ProbabilisticBlackBoxModelChecker>(
-                           abstractSyntaxTree
+                           abstractSyntaxTree, typeSemanticsTable
                        );
     }
 

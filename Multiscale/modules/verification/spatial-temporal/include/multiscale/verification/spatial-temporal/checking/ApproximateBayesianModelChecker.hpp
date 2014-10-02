@@ -68,6 +68,7 @@ namespace multiscale {
             public:
 
                 ApproximateBayesianModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
+                                                const TypeSemanticsTable &typeSemanticsTable,
                                                 double alpha, double beta, double varianceThreshold);
                 ~ApproximateBayesianModelChecker();
 

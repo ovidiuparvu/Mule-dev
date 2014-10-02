@@ -7,9 +7,15 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-ApproximateProbabilisticModelChecker::ApproximateProbabilisticModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
+ApproximateProbabilisticModelChecker::ApproximateProbabilisticModelChecker(const AbstractSyntaxTree
+                                                                           &abstractSyntaxTree,
+                                                                           const TypeSemanticsTable
+                                                                           &typeSemanticsTable,
                                                                            double delta, double epsilon)
-                                                                           : ModelChecker(abstractSyntaxTree) {
+                                                                           : ModelChecker(
+                                                                                 abstractSyntaxTree,
+                                                                                 typeSemanticsTable
+                                                                             ) {
     validateInput(delta, epsilon);
 
     this->delta     = delta;

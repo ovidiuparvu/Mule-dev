@@ -688,19 +688,19 @@ TEST_F(EmptyTraceTest, NumericStateVariableWithoutTypes) {
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableTypeLeft) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableTypeRight) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = 0)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = Organ.Kidney)]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableBothTypes) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}(type = 0)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}(type = Organ.Kidney)]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = Organ.Heart)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Heart)]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableOneNumericStateVariable) {
@@ -708,7 +708,7 @@ TEST_F(EmptyTraceTest, NumericStateVariableOneNumericStateVariable) {
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableWrongRhsType) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 0)]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Kidney)]"), SpatialTemporalException);
 }
 
 TEST_F(EmptyTraceTest, NumericStateVariableWrongName) {
@@ -1210,7 +1210,7 @@ TEST_F(EmptyTraceTest, UnaryStatisticalSpatial) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, UnaryTypeConstraint) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(clusteredness(filter(clusters, type = 0))) = 1]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [count(clusteredness(filter(clusters, type < 1))) = 1]"), SpatialTemporalException);
 }
 
 

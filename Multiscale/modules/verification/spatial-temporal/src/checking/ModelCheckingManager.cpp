@@ -11,10 +11,11 @@ using namespace multiscale::verification;
 
 ModelCheckingManager::ModelCheckingManager(const std::string &logicPropertiesFilepath,
                                            const std::string &tracesFolderPath,
-                                           unsigned long extraEvaluationTime)
+                                           unsigned long extraEvaluationTime,
+                                           const std::string &typeSemanticsTableFilepath)
                                            : parser(PARSER_EMPTY_LOGIC_PROPERTY),
                                              traceReader(tracesFolderPath) {
-    initialise(logicPropertiesFilepath, extraEvaluationTime);
+    initialise(logicPropertiesFilepath, extraEvaluationTime, typeSemanticsTableFilepath);
 }
 
 ModelCheckingManager::~ModelCheckingManager() {
@@ -37,21 +38,33 @@ void ModelCheckingManager::runModelCheckingTasks(const std::shared_ptr<ModelChec
 }
 
 void ModelCheckingManager::initialise(const std::string &logicPropertyFilepath,
-                                      unsigned long extraEvaluationTime) {
-    this->extraEvaluationTime = extraEvaluationTime;
-    this->extraEvaluationElapsedTime = 0;
-    this->extraEvaluationStartTime = std::chrono::system_clock::now();
-
+                                      unsigned long extraEvaluationTime,
+                                      const std::string &typeSemanticsTableFilepath) {
     this->shouldPrintDetailedEvaluation = false;
 
+    initialiseExtraEvaluationTimeCounters(extraEvaluationTime);
+    initialiseTypeSemanticsTable(typeSemanticsTableFilepath);
     initialiseLogicProperties(logicPropertyFilepath);
+}
+
+void ModelCheckingManager::initialiseExtraEvaluationTimeCounters(unsigned long extraEvaluationTime) {
+    this->extraEvaluationTime           = extraEvaluationTime;
+    this->extraEvaluationElapsedTime    = 0;
+    this->extraEvaluationStartTime      = std::chrono::system_clock::now();
+}
+
+void ModelCheckingManager::initialiseTypeSemanticsTable(const std::string &typeSemanticsTableFilepath) {
+    if (!typeSemanticsTableFilepath.empty()) {
+        typeSemanticsTable.readTableFromFile(typeSemanticsTableFilepath);
+    }
 }
 
 void ModelCheckingManager::initialiseLogicProperties(const std::string &logicPropertiesFilepath) {
     logicProperties = logicPropertyReader.readLogicPropertiesFromFile(logicPropertiesFilepath);
 }
 
-void ModelCheckingManager::runModelCheckingAndOutputResults(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
+void ModelCheckingManager::runModelCheckingAndOutputResults(const std::shared_ptr<ModelCheckerFactory>
+                                                            &modelCheckerFactory) {
     parseLogicPropertiesAndPrintMessage();
     createModelCheckers(modelCheckerFactory);
     runModelCheckersAndPrintMessage();
@@ -124,7 +137,7 @@ void ModelCheckingManager::printParsingMessage(bool isParsingSuccessful) {
 void ModelCheckingManager::createModelCheckers(const std::shared_ptr<ModelCheckerFactory> &modelCheckerFactory) {
     for (const auto &abstractSyntaxTree : abstractSyntaxTrees) {
         modelCheckers.push_back(
-            modelCheckerFactory->createInstance(abstractSyntaxTree)
+            modelCheckerFactory->createInstance(abstractSyntaxTree, typeSemanticsTable)
         );
     }
 }

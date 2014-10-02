@@ -13,13 +13,11 @@ namespace multiscale {
 
             public:
 
-                SpatialTemporalException(const string &file, int line, const string &msg) {
-                    constructExplanatoryString(file, line, msg);
-                }
+                SpatialTemporalException(const string &file, int line, const string &msg)
+                    : UnexpectedBehaviourException(file, line, msg) {}
 
-                SpatialTemporalException(const string &file, int line, const char *msg) {
-                    constructExplanatoryString(file, line, msg);
-                }
+                SpatialTemporalException(const string &file, int line, const char *msg)
+                    : UnexpectedBehaviourException(file, line, msg) {}
 
         };
 

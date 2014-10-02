@@ -2,6 +2,7 @@
 #define MODELCHECKER_HPP
 
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
+#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 
 
@@ -18,6 +19,9 @@ namespace multiscale {
                                                                  the logic property which this model checker
                                                                  instance evaluates */
 
+                TypeSemanticsTable typeSemanticsTable;      /*!< The type semantics table mapping semantic
+                                                                 criteria values to abstract natural numbers */
+
                 unsigned int totalNumberOfEvaluations;      /*!< The total number of evaluations */
                 unsigned int totalNumberOfTrueEvaluations;  /*!< The total number of times the abstract
                                                                  syntax tree was evaluated to true */
@@ -29,8 +33,10 @@ namespace multiscale {
 
             public:
 
-                ModelChecker(const AbstractSyntaxTree &abstractSyntaxTree)
+                ModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
+                             const TypeSemanticsTable &typeSemanticsTable)
                              : abstractSyntaxTree(abstractSyntaxTree),
+                               typeSemanticsTable(typeSemanticsTable),
                                totalNumberOfEvaluations(0),
                                totalNumberOfTrueEvaluations(0),
                                nullHypothesisPValue(1),

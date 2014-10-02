@@ -15,11 +15,13 @@ namespace multiscale {
 
             private:
 
-                const TimePoint &timePoint;    /*!< The initial timepoint */
+                const TimePoint             &timePoint;             /*!< The initial timepoint */
+                const TypeSemanticsTable    &typeSemanticsTable;    /*!< The considered type semantics table */
 
             public:
 
-                SubsetVisitor(const TimePoint &timePoint) : timePoint(timePoint) {}
+                SubsetVisitor(const TimePoint &timePoint, const TypeSemanticsTable &typeSemanticsTable)
+                              : timePoint(timePoint), typeSemanticsTable(typeSemanticsTable) {}
 
                 //! Overloading the "()" operator for the SubsetAttribute alternative
                 /*!
@@ -75,7 +77,8 @@ namespace multiscale {
                  * \param timePoint The given timepoint
                  */
                 TimePoint evaluate(const SubsetAttributeType &subset, const TimePoint &timePoint) const {
-                    return boost::apply_visitor(SubsetVisitor(timePoint), subset);
+                    return boost::apply_visitor(SubsetVisitor(timePoint, typeSemanticsTable),
+                                                subset);
                 }
 
                 //! Set the considered spatial entity type for the given timepoint using the specific subset type
@@ -144,7 +147,8 @@ namespace multiscale {
 inline multiscale::verification::TimePoint
 multiscale::verification::SubsetVisitor::filterTimePoint(const TimePoint &timePoint,
                                                          const ConstraintAttributeType &constraint) const {
-    return boost::apply_visitor(ConstraintVisitor(timePoint, timePoint), constraint);
+    return boost::apply_visitor(ConstraintVisitor(timePoint, timePoint, typeSemanticsTable),
+                                constraint);
 }
 
 

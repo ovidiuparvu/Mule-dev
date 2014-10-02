@@ -18,14 +18,16 @@ namespace multiscale {
                 //! Evaluate the given temporal numeric collection
                 /*!
                  * \param trace                     The given spatial temporal trace
+                 * \param typeSemanticsTable        The given type semantics table
                  * \param temporalNumericCollection The given temporal numeric collection
                  */
                 static std::vector<double>
                 evaluateTemporalNumericCollection(const SpatialTemporalTrace &trace,
+                                                  const TypeSemanticsTable &typeSemanticsTable,
                                                   const TemporalNumericCollectionAttribute
                                                   &temporalNumericCollection) {
                     return boost::apply_visitor(
-                        NumericMeasureCollectionVisitor(trace),
+                        NumericMeasureCollectionVisitor(trace, typeSemanticsTable),
                         temporalNumericCollection.temporalNumericCollection
                     );
                 }
@@ -33,15 +35,17 @@ namespace multiscale {
                 //! Evaluate the spatial measure collection considering the given timepoint
                 /*!
                  * \param timePoint                 The given timepoint
+                 * \param typeSemanticsTable        The given type semantics table
                  * \param spatialMeasureCollection  The considered spatial measure collection
                  */
                 static std::vector<double>
                 evaluateSpatialMeasureCollection(const TimePoint &timePoint,
+                                                 const TypeSemanticsTable &typeSemanticsTable,
                                                  const SpatialMeasureCollectionAttribute
                                                  &spatialMeasureCollection) {
                     TimePoint subsetTimePoint(
                         boost::apply_visitor(
-                            SubsetVisitor(timePoint),
+                            SubsetVisitor(timePoint, typeSemanticsTable),
                             spatialMeasureCollection.subset.subset
                         )
                     );

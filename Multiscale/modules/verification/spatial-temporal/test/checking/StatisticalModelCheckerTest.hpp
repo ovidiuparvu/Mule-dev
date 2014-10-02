@@ -54,7 +54,7 @@ namespace multiscaletest {
 
     void StatisticalModelCheckerTest::InitialiseModelChecker() {
         modelChecker = std::make_shared<mv::StatisticalModelChecker>(
-                           abstractSyntaxTree, typeIError, typeIIError
+                           abstractSyntaxTree, typeSemanticsTable, typeIError, typeIIError
                        );
     }
 

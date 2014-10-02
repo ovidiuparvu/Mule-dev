@@ -12,6 +12,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/model/Cluster.hpp"
 #include "multiscale/verification/spatial-temporal/model/Region.hpp"
+#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 
 #include <iostream>
@@ -81,7 +82,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
             cluster->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 2);
             cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 2);
             cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 2);
-            cluster->setSemanticType(0);
+            cluster->setSemanticType(SemanticType::DEFAULT_VALUE);
 
             timePoints[i].addSpatialEntity(cluster, SubsetSpecificType::Clusters);
         }
@@ -101,7 +102,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
                 region->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 3);
                 region->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 3);
                 region->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 3);
-                region->setSemanticType(0);
+                region->setSemanticType(SemanticType::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
             }
@@ -117,6 +118,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
 int main(int argc, char **argv) {
     std::string test;
     SpatialTemporalTrace trace;
+    TypeSemanticsTable typeSemanticsTable;
     AbstractSyntaxTree result;
 
     initialiseTrace(trace);
@@ -141,7 +143,8 @@ int main(int argc, char **argv) {
             if (parser.parse(result)) {
                 std::cout << "-----------------------------------------------------" << std::endl;
                 std::cout << " Parsing succeeded"
-                          << " and the AST evaluates to " << (result.evaluate(trace) ? "true" : "false")
+                          << " and the AST evaluates to " 
+                          << (result.evaluate(trace, typeSemanticsTable) ? "true" : "false")
                           << "!" << std::endl;
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             } else {

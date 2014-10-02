@@ -26,6 +26,8 @@ namespace multiscale {
             private:
 
                 const SpatialTemporalTrace  &trace;                     /*!< The spatial temporal trace */
+                const TypeSemanticsTable    &typeSemanticsTable;        /*!< The type semantics table */
+
                 LogicPropertyAttributeType  evaluationLogicProperty;    /*!< The logic property used only for
                                                                              evaluation purposes */
 
@@ -33,8 +35,11 @@ namespace multiscale {
 
             public:
 
-                LogicPropertyVisitor(const SpatialTemporalTrace &trace, bool precedingTruthValue = true)
-                                     : trace(trace), precedingTruthValue(precedingTruthValue) {}
+                LogicPropertyVisitor(const SpatialTemporalTrace &trace,
+                                     const TypeSemanticsTable &typeSemanticsTable,
+                                     bool precedingTruthValue = true)
+                                     : trace(trace), typeSemanticsTable(typeSemanticsTable),
+                                       precedingTruthValue(precedingTruthValue) {}
 
                 //! Overloading the "()" operator for the Nil alternative
                 /*!
@@ -191,13 +196,13 @@ namespace multiscale {
                                  const T &lhsLogicProperty) const {
                     std::vector<double> lhsTemporalNumericCollectionValues =
                         NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
-                            trace,
+                            trace, typeSemanticsTable,
                             primaryLogicProperty.lhsTemporalNumericCollection
                         );
 
                     std::vector<double> rhsTemporalNumericCollectionValues =
                         NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
-                            trace,
+                            trace, typeSemanticsTable,
                             primaryLogicProperty.rhsTemporalNumericCollection
                         );
 
@@ -569,7 +574,8 @@ namespace multiscale {
                  */
                 bool evaluate(const LogicPropertyAttributeType &logicProperty,
                               const SpatialTemporalTrace &trace) const {
-                    return boost::apply_visitor(LogicPropertyVisitor(trace), logicProperty, evaluationLogicProperty);
+                    return boost::apply_visitor(LogicPropertyVisitor(trace, typeSemanticsTable),
+                                                logicProperty, evaluationLogicProperty);
                 }
 
                 //! Evaluate the logic property considering the given spatial temporal trace
@@ -580,7 +586,7 @@ namespace multiscale {
                 bool evaluate(const PrimaryLogicPropertyAttributeType &primaryLogicProperty,
                               const SpatialTemporalTrace &trace) const {
                     return boost::apply_visitor(
-                        LogicPropertyVisitor(trace),
+                        LogicPropertyVisitor(trace, typeSemanticsTable),
                         primaryLogicProperty,
                         evaluationLogicProperty
                     );
@@ -605,8 +611,8 @@ namespace multiscale {
                             )
                         );
 
-                        truthValue = boost::apply_visitor(LogicPropertyVisitor(trace, truthValue), nextLogicProperty,
-                                                          precedingEvaluationLogicProperty);
+                        truthValue = boost::apply_visitor(LogicPropertyVisitor(trace, typeSemanticsTable, truthValue),
+                                                          nextLogicProperty, precedingEvaluationLogicProperty);
 
                         precedingEvaluationLogicProperties.push_back(nextLogicProperty);
                     }
@@ -663,7 +669,10 @@ namespace multiscale {
                                                       unsigned int timePointIndex = 0) const {
                     SpatialTemporalTrace subTrace(trace.subTrace(timePointIndex));
 
-                    return boost::apply_visitor(TemporalNumericVisitor(subTrace), temporalNumericMeasure);
+                    return (
+                        boost::apply_visitor(TemporalNumericVisitor(subTrace, typeSemanticsTable),
+                                             temporalNumericMeasure)
+                    );
                 }
 
                 //! Print a warning message regarding the exception and return false

@@ -11,8 +11,12 @@ BayesianModelCheckerFactory::BayesianModelCheckerFactory(double alpha, double be
 
 BayesianModelCheckerFactory::~BayesianModelCheckerFactory() {}
 
-std::shared_ptr<ModelChecker> BayesianModelCheckerFactory::createInstance
-                              (const AbstractSyntaxTree &abstractSyntaxTree) {
-    return std::make_shared<BayesianModelChecker>(abstractSyntaxTree, alpha, beta,
-                                                  bayesFactorThreshold);
+std::shared_ptr<ModelChecker>
+BayesianModelCheckerFactory::createInstance(const AbstractSyntaxTree &abstractSyntaxTree,
+                                            const TypeSemanticsTable &typeSemanticsTable) {
+    return (
+        std::make_shared<BayesianModelChecker>(
+            abstractSyntaxTree, typeSemanticsTable, alpha, beta, bayesFactorThreshold
+        )
+    );
 }

@@ -72,7 +72,7 @@ namespace multiscaletest {
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 2);
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 2);
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 2);
-                cluster->setSemanticType(0);
+                cluster->setSemanticType(SemanticType::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntity(cluster, SubsetSpecificType::Clusters);
             }
@@ -92,7 +92,7 @@ namespace multiscaletest {
                 region->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 3);
                 region->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 3);
                 region->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 3);
-                region->setSemanticType(0);
+                region->setSemanticType(SemanticType::DEFAULT_VALUE);
 
                 timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
             }
@@ -112,7 +112,7 @@ namespace multiscaletest {
                 region->setSpatialMeasureValue(SpatialMeasureType::CircleMeasure, static_cast<double>(1 - 0) / 3);
                 region->setSpatialMeasureValue(SpatialMeasureType::CentroidX, static_cast<double>(1E+37 - 0) / 3);
                 region->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 3);
-                region->setSemanticType(1);
+                region->setSemanticType(SEMANTIC_TYPE_ORGAN_HEART);
 
                 timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
             }
@@ -775,19 +775,19 @@ TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWithoutTypes) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableTypeLeft) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableTypeRight) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A} <= {B}(type = Organ.Kidney)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableBothTypes) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {B}(type = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {B}(type = Organ.Kidney)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableBothTypesAndDifferentTypeValues) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = Organ.Heart)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Heart)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableOneNumericStateVariable) {
@@ -795,7 +795,7 @@ TEST_F(SpatialEntitiesTraceTest, NumericStateVariableOneNumericStateVariable) {
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongRhsType) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = 0) <= {C}(type = 0)]"));
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{A}(type = Organ.Kidney) <= {C}(type = Organ.Kidney)]"));
 }
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongName) {
@@ -850,7 +850,7 @@ TEST_F(SpatialEntitiesTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, SemanticType) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(clusteredness(filter(clusters, type = 0))) >= 1]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(clusteredness(filter(clusters, type < 1))) >= 1]"));
 }
 
 

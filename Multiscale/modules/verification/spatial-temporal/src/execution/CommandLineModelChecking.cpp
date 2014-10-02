@@ -74,6 +74,7 @@ void CommandLineModelChecking::initialiseRequiredArgumentsConfiguration() {
 void CommandLineModelChecking::initialiseOptionalArgumentsConfiguration() {
     optionalArguments.add_options()(ARG_HELP_NAME_BOTH.c_str()                                              , (ARG_HELP_DESCRIPTION + "\n").c_str())
                                    (ARG_EXTRA_EVALUATION_PROGRAM_NAME_BOTH.c_str() , po::value<string>()    , (ARG_EXTRA_EVALUATION_PROGRAM_DESCRIPTION + "\n").c_str())
+                                   (ARG_TYPE_SEMANTICS_TABLE_NAME_BOTH.c_str()     , po::value<string>()    , (ARG_TYPE_SEMANTICS_TABLE_DESCRIPTION + "\n").c_str())
                                    (ARG_VERBOSE_NAME_BOTH.c_str()                  , po::bool_switch()      , (ARG_VERBOSE_DESCRIPTION + "\n").c_str());
 }
 
@@ -242,6 +243,10 @@ void CommandLineModelChecking::removeOptionalArguments(po::variables_map &variab
         variablesMap.erase(ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG);
     }
 
+    if (variablesMap.count(ARG_TYPE_SEMANTICS_TABLE_NAME_LONG)) {
+        variablesMap.erase(ARG_TYPE_SEMANTICS_TABLE_NAME_LONG);
+    }
+
     if (variablesMap.count(ARG_VERBOSE_NAME_LONG)) {
         variablesMap.erase(ARG_VERBOSE_NAME_LONG);
     }
@@ -377,12 +382,16 @@ void CommandLineModelChecking::initialiseRequiredArgumentsDependentClassMembers(
 }
 
 void CommandLineModelChecking::initialiseOptionalArgumentsDependentClassMembers() {
-    if (variablesMap.count(ARG_VERBOSE_NAME_LONG)) {
-        shouldVerboseDetailedResults = variablesMap[ARG_VERBOSE_NAME_LONG].as<bool>();
-    }
-
     if (variablesMap.count(ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG)) {
         extraEvaluationProgramPath = variablesMap[ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG].as<string>();
+    }
+
+    if (variablesMap.count(ARG_TYPE_SEMANTICS_TABLE_NAME_LONG)) {
+        typeSemanticsTableFilepath = variablesMap[ARG_TYPE_SEMANTICS_TABLE_NAME_LONG].as<string>();
+    }
+
+    if (variablesMap.count(ARG_VERBOSE_NAME_LONG)) {
+        shouldVerboseDetailedResults = variablesMap[ARG_VERBOSE_NAME_LONG].as<bool>();
     }
 }
 
@@ -498,7 +507,8 @@ void CommandLineModelChecking::initialiseApproximateBayesianModelChecker() {
 void CommandLineModelChecking::initialiseModelCheckingManager() {
     modelCheckingManager = make_shared<ModelCheckingManager>(logicQueriesFilepath,
                                                              tracesFolderPath,
-                                                             extraEvaluationTime);
+                                                             extraEvaluationTime,
+                                                             typeSemanticsTableFilepath);
 
     modelCheckingManager->setExtraEvaluationProgramPath(extraEvaluationProgramPath);
     modelCheckingManager->setShouldPrintDetailedEvaluation(shouldVerboseDetailedResults);
@@ -539,6 +549,10 @@ const std::string   CommandLineModelChecking::ARG_HELP_DESCRIPTION              
 const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG                            = "extra-evaluation-program";
 const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_PROGRAM_NAME_BOTH                            = ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG + ",p";
 const std::string   CommandLineModelChecking::ARG_EXTRA_EVALUATION_PROGRAM_DESCRIPTION                          = "the program which will be executed whenever extra evaluation (and input traces) is required";
+
+const std::string   CommandLineModelChecking::ARG_TYPE_SEMANTICS_TABLE_NAME_LONG                                = "type-semantics-table";
+const std::string   CommandLineModelChecking::ARG_TYPE_SEMANTICS_TABLE_NAME_BOTH                                = ARG_TYPE_SEMANTICS_TABLE_NAME_LONG + ",s";
+const std::string   CommandLineModelChecking::ARG_TYPE_SEMANTICS_TABLE_DESCRIPTION                              = "the type semantics table mapping semantic criteria values (e.g. Organ.Heart) to abstract positive natural numbers";
 
 const std::string   CommandLineModelChecking::ARG_VERBOSE_NAME_LONG                                             = "verbose";
 const std::string   CommandLineModelChecking::ARG_VERBOSE_NAME_BOTH                                             = ARG_VERBOSE_NAME_LONG + ",v";

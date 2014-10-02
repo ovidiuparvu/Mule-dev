@@ -9,8 +9,12 @@ using namespace multiscale::verification;
 
 
 ApproximateBayesianModelChecker::ApproximateBayesianModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
+                                                                 const TypeSemanticsTable &typeSemanticsTable,
                                                                  double alpha, double beta, double varianceThreshold)
-                                                                 : ModelChecker(abstractSyntaxTree) {
+                                                                 : ModelChecker(
+                                                                       abstractSyntaxTree,
+                                                                       typeSemanticsTable
+                                                                   ) {
     validateInput(alpha, beta, varianceThreshold);
 
     this->alpha                 = alpha;

@@ -19,6 +19,7 @@ int analysePatterns(const std::string &inputFilePath) {
     TemporalDataReader reader;
 
     SpatialTemporalTrace trace = reader.read(inputFilePath);
+    TypeSemanticsTable typeSemanticsTable;
 
     std::cout << "/////////////////////////////////////////////////////////\n\n";
     std::cout << "\tA pattern analysis logic property evaluator...\n\n";
@@ -39,7 +40,8 @@ int analysePatterns(const std::string &inputFilePath) {
             if (parser.parse(result)) {
                 std::cout << "-----------------------------------------------------" << std::endl;
                 std::cout << " Parsing succeeded"
-                          << " and the AST evaluates to " << (result.evaluate(trace) ? "true" : "false")
+                          << " and the AST evaluates to "
+                          << (result.evaluate(trace, typeSemanticsTable) ? "true" : "false")
                           << "!" << std::endl;
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             } else {

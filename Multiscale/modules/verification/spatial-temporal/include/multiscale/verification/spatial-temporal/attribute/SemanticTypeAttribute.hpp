@@ -1,8 +1,7 @@
 #ifndef SEMANTICTYPEATTRIBUTE_HPP
 #define SEMANTICTYPEATTRIBUTE_HPP
 
-#include <boost/fusion/include/adapt_adt.hpp>
-#include <boost/optional.hpp>
+#include <boost/fusion/include/adapt_struct.hpp>
 
 #include <string>
 
@@ -16,12 +15,7 @@ namespace multiscale {
 
             public:
 
-                unsigned long type;    /*!< The considered type */
-
-
-            public:
-
-                SemanticTypeAttribute(unsigned long type = 0) : type(type) {}
+                std::string semanticType;    /*!< The considered semantic type */
 
         };
 
@@ -32,7 +26,7 @@ namespace multiscale {
 
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::SemanticTypeAttribute,
-    (unsigned long, type)
+    (std::string, semanticType)
 )
 
 

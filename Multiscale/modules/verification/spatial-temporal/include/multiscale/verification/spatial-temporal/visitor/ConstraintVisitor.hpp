@@ -20,13 +20,16 @@ namespace multiscale {
 
             private:
 
-                const TimePoint &initialTimePoint;     /*!< A copy of the initial timepoint */
-                const TimePoint &constraintTimePoint;  /*!< The currently obtained constraint timepoint */
+                const TimePoint             &initialTimePoint;     /*!< A copy of the initial timepoint */
+                const TimePoint             &constraintTimePoint;  /*!< The currently obtained constraint timepoint */
+                const TypeSemanticsTable    &typeSemanticsTable;   /*!< The considered type semantics table */
 
             public:
 
-                ConstraintVisitor(const TimePoint &initialTimePoint, const TimePoint &constraintTimePoint)
-                                  : initialTimePoint(initialTimePoint), constraintTimePoint(constraintTimePoint) {}
+                ConstraintVisitor(const TimePoint &initialTimePoint, const TimePoint &constraintTimePoint,
+                                  const TypeSemanticsTable &typeSemanticsTable)
+                                  : initialTimePoint(initialTimePoint), constraintTimePoint(constraintTimePoint),
+                                    typeSemanticsTable(typeSemanticsTable) {}
 
                 //! Overloading the "()" operator for the Nil alternative
                 /*!
@@ -136,7 +139,7 @@ namespace multiscale {
                 TimePoint operator() (const UnaryTypeConstraintAttribute &primaryConstraint) const {
                     ComparatorType comparatorType = primaryConstraint.comparator.comparatorType;
 
-                    return evaluateUnaryTypeConstraint(comparatorType, primaryConstraint.filterNumericMeasure,
+                    return evaluateUnaryTypeConstraint(comparatorType, primaryConstraint.semanticType,
                                                        constraintTimePoint);
                 }
 
@@ -160,7 +163,8 @@ namespace multiscale {
                  * \param timePoint     The given timepoint
                  */
                 TimePoint evaluate(const ConstraintAttributeType &constraint, const TimePoint &timePoint) const {
-                    return boost::apply_visitor(ConstraintVisitor(initialTimePoint, timePoint), constraint);
+                    return boost::apply_visitor(ConstraintVisitor(initialTimePoint, timePoint, typeSemanticsTable),
+                                                constraint);
                 }
 
                 //! Evaluate the primary constraint considering the given timepoints
@@ -170,7 +174,8 @@ namespace multiscale {
                  */
                 TimePoint evaluate(const PrimaryConstraintAttributeType &primaryConstraint,
                                    const TimePoint &timePoint) const {
-                    return boost::apply_visitor(ConstraintVisitor(initialTimePoint, timePoint), primaryConstraint);
+                    return boost::apply_visitor(ConstraintVisitor(initialTimePoint, timePoint, typeSemanticsTable),
+                                                primaryConstraint);
                 }
 
                 //! Evaluate the next constraints
@@ -187,10 +192,9 @@ namespace multiscale {
 
                     for (const auto &nextConstraint : constraint.nextConstraints) {
                         constrainedTimePoint = boost::apply_visitor(ConstraintVisitor(
-                                                                        initialTimePoint,
-                                                                        constrainedTimePoint
-                                                                    ),
-                                                                    nextConstraint);
+                                                                        initialTimePoint, constrainedTimePoint,
+                                                                        typeSemanticsTable
+                                                                    ), nextConstraint);
                     }
 
                     return constrainedTimePoint;
@@ -198,32 +202,31 @@ namespace multiscale {
 
                 //! Evaluate the unary type constraint
                 /*! Evaluate the unary type constraint considering the given spatial measure, comparator,
-                 *  numeric measure and timepoint
+                 *  semantic type and timepoint
                  *
-                 * \param comparator            The comparator type
-                 * \param filterNumericMeasure  The filter numeric measure
-                 * \param timePoint             The considered timepoint
+                 * \param comparator    The comparator type
+                 * \param semanticType  The semantic type
+                 * \param timePoint     The considered timepoint
                  */
                 TimePoint evaluateUnaryTypeConstraint(const ComparatorType &comparator,
-                                                      const FilterNumericMeasureAttributeType &filterNumericMeasure,
+                                                      const SemanticTypeAttribute &semanticType,
                                                       const TimePoint &timePoint) const {
                     TimePoint unaryConstraintTimePoint(timePoint);
 
-                    evaluateTypeConstraint(unaryConstraintTimePoint, comparator, filterNumericMeasure);
+                    evaluateTypeConstraint(unaryConstraintTimePoint, comparator, semanticType);
 
                     return unaryConstraintTimePoint;
                 }
 
                 //! Filter the timepoint's spatial entities considering the type of each spatial entity
                 /*!
-                 * \param timePoint             The timepoint storing the collection of spatial entities which
-                 *                              will be filtered
-                 * \param comparator            The type of the comparator
-                 * \param filterNumericMeasure  The filter numeric measure
+                 * \param timePoint     The timepoint storing the collection of spatial entities which
+                 *                      will be filtered
+                 * \param comparator    The type of the comparator
+                 * \param semanticType  The semantic type
                  */
-                void evaluateTypeConstraint(TimePoint &timePoint,
-                                            const ComparatorType &comparator,
-                                            const FilterNumericMeasureAttributeType &filterNumericMeasure) const {
+                void evaluateTypeConstraint(TimePoint &timePoint, const ComparatorType &comparator,
+                                            const SemanticTypeAttribute &semanticType) const {
                     std::bitset<NR_SUBSET_SPECIFIC_TYPES> consideredSpatialEntityTypes
                         = timePoint.getConsideredSpatialEntityTypes();
 
@@ -232,7 +235,7 @@ namespace multiscale {
                             SubsetSpecificType subsetSpecificType = subsetspecific::computeSubsetSpecificType(i);
 
                             filterSpatialEntitiesWrtType(timePoint, subsetSpecificType, comparator,
-                                                         filterNumericMeasure);
+                                                         semanticType);
                         }
                     }
                 }
@@ -265,7 +268,8 @@ namespace multiscale {
                  */
                 double evaluateNumericMeasure(const NumericMeasureType &numericMeasure,
                                               const TimePoint &timePoint) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint), numericMeasure);
+                    return boost::apply_visitor(NumericVisitor(timePoint, typeSemanticsTable),
+                                                numericMeasure);
                 }
 
                 //! Filter the timepoint's spatial entities considering the given spatial measure constraint
@@ -336,25 +340,24 @@ namespace multiscale {
                  * \param timePoint             The timepoint which will be filtered
                  * \param spatialEntityType     The considered spatial entity type
                  * \param comparator            The type of the comparator
-                 * \param filterNumericMeasure  The filter numeric measure
+                 * \param semanticType          The semantic type
                  */
                 void filterSpatialEntitiesWrtType(TimePoint &timePoint,
                                                   const SubsetSpecificType &spatialEntityType,
                                                   const ComparatorType &comparator,
-                                                  const FilterNumericMeasureAttributeType
-                                                  &filterNumericMeasure) const {
-                    std::list<std::shared_ptr<SpatialEntity>>::iterator beginIt
-                        = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
-                    std::list<std::shared_ptr<SpatialEntity>>::iterator endIt
-                        = timePoint.getSpatialEntitiesEndIterator(spatialEntityType);
+                                                  const SemanticTypeAttribute &semanticType) const {
+                    // Obtain the type value for the right hand side semantic criteria values
+                    double rhsTypeValue = translateSemanticTypeToAbstractNaturalNumber(semanticType.semanticType);
 
+                    auto beginIt = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
+                    auto endIt   = timePoint.getSpatialEntitiesEndIterator(spatialEntityType);
+
+                    // Filter spatial entities considering their type
                     while (beginIt != endIt) {
-                        double typeValue
-                            = static_cast<double>((*beginIt)->getSemanticType());
-                        double filterNumericMeasureValue
-                            = evaluateFilterNumericMeasure(filterNumericMeasure, timePoint, *(*beginIt));
+                        double lhsTypeValue
+                            = translateSemanticTypeToAbstractNaturalNumber((*beginIt)->getSemanticType());
 
-                        if (!ComparatorEvaluator::evaluate(typeValue, comparator, filterNumericMeasureValue)) {
+                        if (!ComparatorEvaluator::evaluate(lhsTypeValue, comparator, rhsTypeValue)) {
                             beginIt = timePoint.removeSpatialEntity(beginIt, spatialEntityType);
                         } else {
                             beginIt++;
@@ -371,7 +374,22 @@ namespace multiscale {
                 double evaluateFilterNumericMeasure(const FilterNumericMeasureAttributeType &filterNumericMeasure,
                                                     const TimePoint &timePoint,
                                                     const SpatialEntity &spatialEntity) const {
-                    return boost::apply_visitor(FilterNumericVisitor(timePoint, spatialEntity), filterNumericMeasure);
+                    return boost::apply_visitor(FilterNumericVisitor(timePoint, spatialEntity, typeSemanticsTable),
+                                                filterNumericMeasure);
+                }
+
+                //! Translate the given semantic type to an abstract natural number
+                /*! The type semantics table is used to compute the natural number corresponding
+                 *  to the semantic type.
+                 *
+                 * \param semanticType  The considered semantic type
+                 */
+                double translateSemanticTypeToAbstractNaturalNumber(const std::string &semanticType) const {
+                    return (
+                        static_cast<double>(
+                            typeSemanticsTable.getTypeOfSemanticCriteriaValues(semanticType)
+                        )
+                    );
                 }
 
         };

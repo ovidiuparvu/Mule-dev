@@ -3,6 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
+#include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
 
 
 namespace multiscale {
@@ -14,8 +15,12 @@ namespace multiscale {
 
             private:
 
-                bool                                isInitialised;              /*!< Flag for indicating if the abstract syntax tree was initialised */
-                ProbabilisticLogicPropertyAttribute probabilisticLogicProperty; /*!< The abstract syntax tree represented using a probabilistic logic property attribute */
+                bool
+                    isInitialised;                      /*!< Flag for indicating if the abstract syntax tree
+                                                             was initialised */
+                ProbabilisticLogicPropertyAttribute
+                    probabilisticLogicProperty;         /*!< The abstract syntax tree represented using a
+                                                             probabilistic logic property attribute */
 
             public:
 
@@ -34,11 +39,13 @@ namespace multiscale {
                 //! Get the value of the probability used in the probabilistic logical query
                 double getProbability();
 
-                //! Evaluate the abstract syntax tree considering the given trace
+                //! Evaluate the abstract syntax tree considering the given trace and type semantics table
                 /*!
                  * \param spatialTemporalTrace  The given spatial temporal trace
+                 * \param typeSemanticsTable    The considered type semantics table
                  */
-                bool evaluate(const SpatialTemporalTrace &spatialTemporalTrace);
+                bool evaluate(const SpatialTemporalTrace &spatialTemporalTrace,
+                              const TypeSemanticsTable &typeSemanticsTable);
 
             private:
 

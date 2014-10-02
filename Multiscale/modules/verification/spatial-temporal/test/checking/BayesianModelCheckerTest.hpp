@@ -67,8 +67,8 @@ namespace multiscaletest {
 
     void BayesianModelCheckerTest::InitialiseModelChecker() {
         modelChecker = std::make_shared<mv::BayesianModelChecker>(
-                           abstractSyntaxTree, alphaParamForBetaPrior,
-                           betaParamForBetaPrior, bayesFactorThreshold
+                           abstractSyntaxTree, typeSemanticsTable,
+                           alphaParamForBetaPrior, betaParamForBetaPrior, bayesFactorThreshold
                        );
     }
 

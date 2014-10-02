@@ -142,7 +142,7 @@ namespace multiscale {
             unaryTypeConstraintRule
                 =   qi::lit("type")
                     > comparatorRule
-                    > filterNumericMeasureRule;
+                    > semanticTypeRule;
 
             unarySpatialConstraintRule
                 =   spatialMeasureRule

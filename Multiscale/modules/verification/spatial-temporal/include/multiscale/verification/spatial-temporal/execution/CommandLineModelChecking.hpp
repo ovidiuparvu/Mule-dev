@@ -23,35 +23,53 @@ namespace multiscale {
 
             private:
 
-                std::string                             logicQueriesFilepath;               /*!< The path to the logic queries file */
-                std::string                             tracesFolderPath;                   /*!< The path to the folder containing traces */
+                std::string
+                    logicQueriesFilepath;               /*!< The path to the logic queries file */
+                std::string
+                    tracesFolderPath;                   /*!< The path to the folder containing traces */
 
-                unsigned int                            modelCheckerType;                   /*!< The type of the model checker */
+                unsigned int
+                    modelCheckerType;                   /*!< The type of the model checker */
 
-                unsigned long                           extraEvaluationTime;                /*!< The number of minutes for which the application waits
-                                                                                                 for new traces to be produced */
-                std::string                             extraEvaluationProgramPath;         /*!< The path to the program which will be
-                                                                                                 executed whenever more traces are required */
+                unsigned long
+                    extraEvaluationTime;                /*!< The number of minutes for which the application waits
+                                                             for new traces to be produced */
+                std::string
+                    extraEvaluationProgramPath;         /*!< The path to the program which will be
+                                                             executed whenever more traces are required */
 
-                bool                                    shouldVerboseDetailedResults;       /*!< The flag indicating if detailed results should
-                                                                                                 be printed out */
+                std::string
+                    typeSemanticsTableFilepath;         /*!< The path to the type semantics table */
 
-                po::variables_map                       variablesMap;                       /*!< The map containing <a, v> pairs where a = command
-                                                                                                 line argument and v = value */
-                po::options_description                 allowedArguments;                   /*!< The configuration indicating which command line
-                                                                                                 arguments are allowed */
-                po::options_description                 requiredArguments;                  /*!< The configuration indicating which command line
-                                                                                                 arguments are allowed */
-                po::options_description                 optionalArguments;                  /*!< The configuration indicating which command line
-                                                                                                 arguments are allowed */
-                po::options_description                 modelCheckerTypeSpecificArguments;  /*!< The configuration indicating which command line
-                                                                                                 arguments are allowed */
+                bool
+                    shouldVerboseDetailedResults;       /*!< The flag indicating if detailed results should
+                                                             be printed out */
 
-                std::string                             modelCheckerTypeName;               /*!< The name of the model checker type */
-                std::string                             modelCheckerParameters;             /*!< The parameters specific to the model checker */
+                po::variables_map
+                    variablesMap;                       /*!< The map containing <a, v> pairs where a = command
+                                                             line argument and v = value */
+                po::options_description
+                    allowedArguments;                   /*!< The configuration indicating which command line
+                                                             arguments are allowed */
+                po::options_description
+                    requiredArguments;                  /*!< The configuration indicating which command line
+                                                             arguments are allowed */
+                po::options_description
+                    optionalArguments;                  /*!< The configuration indicating which command line
+                                                             arguments are allowed */
+                po::options_description
+                    modelCheckerTypeSpecificArguments;  /*!< The configuration indicating which command line
+                                                             arguments are allowed */
 
-                std::shared_ptr<ModelCheckerFactory>    modelCheckerFactory;                /*!< The model checker */
-                std::shared_ptr<ModelCheckingManager>   modelCheckingManager;               /*!< The model checking task manager */
+                std::string
+                    modelCheckerTypeName;               /*!< The name of the model checker type */
+                std::string
+                    modelCheckerParameters;             /*!< The parameters specific to the model checker */
+
+                std::shared_ptr<ModelCheckerFactory>
+                    modelCheckerFactory;                /*!< The model checker */
+                std::shared_ptr<ModelCheckingManager>
+                    modelCheckingManager;               /*!< The model checking task manager */
 
             public:
 
@@ -301,6 +319,10 @@ namespace multiscale {
                 static const std::string    ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG;
                 static const std::string    ARG_EXTRA_EVALUATION_PROGRAM_NAME_BOTH;
                 static const std::string    ARG_EXTRA_EVALUATION_PROGRAM_DESCRIPTION;
+
+                static const std::string    ARG_TYPE_SEMANTICS_TABLE_NAME_LONG;
+                static const std::string    ARG_TYPE_SEMANTICS_TABLE_NAME_BOTH;
+                static const std::string    ARG_TYPE_SEMANTICS_TABLE_DESCRIPTION;
 
                 static const std::string    ARG_VERBOSE_NAME_LONG;
                 static const std::string    ARG_VERBOSE_NAME_BOTH;

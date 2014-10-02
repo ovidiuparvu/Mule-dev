@@ -36,6 +36,7 @@ namespace multiscale {
             public:
 
                 ApproximateProbabilisticModelChecker(const AbstractSyntaxTree &abstractSyntaxTree,
+                                                     const TypeSemanticsTable &typeSemanticsTable,
                                                      double delta, double epsilon);
                 ~ApproximateProbabilisticModelChecker();
 
