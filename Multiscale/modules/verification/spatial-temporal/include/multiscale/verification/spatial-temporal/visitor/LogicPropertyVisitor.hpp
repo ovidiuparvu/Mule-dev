@@ -136,7 +136,7 @@ namespace multiscale {
                     try {
                         return evaluateUntilLogicProperty(logicProperty, lhsLogicProperty);
                     } catch (const SpatialTemporalException &ex) {
-                        return printExceptionMessage(ex.what());
+                        return printExceptionMessage(ex.rawMessage());
                     }
                 }
 
@@ -670,9 +670,8 @@ namespace multiscale {
                 /*!
                  * \param message   The exception message
                  */
-                bool printExceptionMessage(const char *message) const {
-                    std::string detailedMessage = std::string(message) + WRN_OUTPUT_SEPARATOR +
-                                                  WRN_LOGIC_PROPERTY_EVAL_FALSE;
+                bool printExceptionMessage(const std::string &message) const {
+                    std::string detailedMessage = message + WRN_OUTPUT_SEPARATOR + WRN_LOGIC_PROPERTY_EVAL_FALSE;
 
                     ConsolePrinter::printWarningMessage(detailedMessage);
 

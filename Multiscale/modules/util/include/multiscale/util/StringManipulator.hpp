@@ -18,6 +18,13 @@ namespace multiscale {
 
         public:
 
+            //! Count how many times character occurs in the given string
+            /*!
+             * \param searchChar    The search character of interest
+             * \param inputString   The input string in which the character will be searched for
+             */
+            static unsigned long count(char searchChar, const std::string &inputString);
+
             //! Obtain the file name from the given file path
             /*!
              * \param filepath File path

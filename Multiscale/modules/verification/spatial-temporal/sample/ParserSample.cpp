@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             }
         } catch(const exception &e) {
-            ExceptionHandler::printErrorMessage(e);
+            ExceptionHandler::printDetailedErrorMessage(e);
 
             return EXEC_ERR_CODE;
         } catch(...) {

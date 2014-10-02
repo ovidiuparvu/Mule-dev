@@ -59,7 +59,7 @@ void readValidXmlFilesFromFolder(const std::string &path) {
 
         readValidXmlFiles(reader);
     } catch (const MultiscaleException &ex) {
-        ExceptionHandler::printErrorMessage(ex);
+        ExceptionHandler::printDetailedErrorMessage(ex);
     }
 }
 

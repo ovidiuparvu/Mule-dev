@@ -48,7 +48,7 @@ int analysePatterns(const std::string &inputFilePath) {
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             }
         } catch(const exception &e) {
-            ExceptionHandler::printErrorMessage(e);
+            ExceptionHandler::printDetailedErrorMessage(e);
 
             return EXEC_ERR_CODE;
         } catch(...) {
@@ -72,7 +72,7 @@ int main(int argc, char **argv) {
     try {
         return analysePatterns(std::string(argv[1]));
     } catch(const exception &e) {
-        ExceptionHandler::printErrorMessage(e);
+        ExceptionHandler::printDetailedErrorMessage(e);
     } catch(...) {
         cerr << "Exception of unknown type!" << std::endl;
     }

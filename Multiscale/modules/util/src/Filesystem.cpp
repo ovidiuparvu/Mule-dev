@@ -34,7 +34,10 @@ std::string Filesystem::nativeFormatFilePath(const std::string &path) {
     fs::path filePath(path);
 
     if (!fs::exists(filePath)) {
-        MS_throw(InvalidInputException, ERR_INVALID_PATH);
+        MS_throw(
+            InvalidInputException,
+            (ERR_INVALID_PATH_BEGIN + path + ERR_INVALID_PATH_END)
+        );
     }
 
     return fs::canonical(filePath).string();
@@ -68,4 +71,5 @@ bool Filesystem::isValidFilePath(const fs::path &path) {
 
 
 // Constants
-const std::string Filesystem::ERR_INVALID_PATH = "The given input file path is invalid. Please change.";
+const std::string Filesystem::ERR_INVALID_PATH_BEGIN = "The given input file path (";
+const std::string Filesystem::ERR_INVALID_PATH_END   = ") does not exist or does not point to a regular file. Please change.";

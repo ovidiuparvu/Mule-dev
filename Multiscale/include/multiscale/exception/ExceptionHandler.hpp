@@ -2,11 +2,10 @@
 #define EXCEPTIONHANDLER_HPP
 
 #include "multiscale/core/Multiscale.hpp"
+#include "multiscale/exception/MultiscaleException.hpp"
 
 #include <iostream>
 #include <string>
-
-using namespace std;
 
 
 namespace multiscale {
@@ -16,15 +15,26 @@ namespace multiscale {
 
         public:
 
-            //! Print the error message
+            //! Print the detailed error message
             /*! The error message is printed using the ex.what() method
              *
              * \param ex Exception
              */
-            static void printErrorMessage(const exception &ex) {
-                cerr << endl << ERR_MSG << endl
-                     << endl << ex.what()
-                     << endl << endl;
+            static void printDetailedErrorMessage(const std::exception &ex) {
+                std::cerr << std::endl << ERR_MSG << std::endl
+                          << std::endl << ex.what()
+                          << std::endl << std::endl;
+            }
+
+            //! Print the raw error message
+            /*! The error message is printed using the ex.rawMessage() method
+             *
+             * \param ex Exception
+             */
+            static void printRawErrorMessage(const MultiscaleException &ex) {
+                std::cerr << std::endl << ERR_MSG << std::endl
+                          << std::endl << ex.rawMessage()
+                          << std::endl << std::endl;
             }
 
     };

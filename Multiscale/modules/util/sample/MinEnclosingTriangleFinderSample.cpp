@@ -191,7 +191,7 @@ int main(int argc, char** argv) {
     try {
         runMinEnclosingTriangleFinder();
     } catch (const std::exception &ex) {
-        ExceptionHandler::printErrorMessage(ex);
+        ExceptionHandler::printDetailedErrorMessage(ex);
     }
 
     return EXEC_SUCCESS_CODE;

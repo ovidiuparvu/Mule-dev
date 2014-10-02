@@ -31,7 +31,7 @@ using namespace multiscale::analysis;
 namespace po = boost::program_options;
 namespace pt = boost::property_tree;
 
-const string CONFIG_FILE = "/usr/local/share/mule/config/analysis/spatial/simulation_cluster_detector.xml";
+const string CONFIG_FILE = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/analysis/spatial/simulation_cluster_detector.xml";
 
 const string LABEL_ROOT_COMMENT      = "<xmlcomment>";
 const string LABEL_EPS               = "detector.eps";
@@ -168,7 +168,7 @@ int main(int argc, char** argv) {
             printWrongParameters();
         }
     } catch(const exception &e) {
-        ExceptionHandler::printErrorMessage(e);
+        ExceptionHandler::printDetailedErrorMessage(e);
 
         return EXEC_ERR_CODE;
     } catch(...) {

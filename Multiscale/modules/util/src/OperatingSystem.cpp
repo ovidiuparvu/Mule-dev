@@ -27,7 +27,7 @@ void OperatingSystem::executeProgram(const std::string &path) {
     } catch (const MultiscaleException &ex) {
         ConsolePrinter::printWarningMessage(ex.rawMessage());
     } catch (const std::exception &ex) {
-        ExceptionHandler::printErrorMessage(ex);
+        ExceptionHandler::printDetailedErrorMessage(ex);
     }
 }
 

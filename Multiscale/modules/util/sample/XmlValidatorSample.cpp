@@ -22,7 +22,7 @@ void validateXmlFile(int argc, char **argv) {
 
         checkIfValidXmlFile(xmlFilePath, xmlSchemaPath);
     } catch (const std::exception &ex) {
-        ExceptionHandler::printErrorMessage(ex);
+        ExceptionHandler::printDetailedErrorMessage(ex);
     }
 }
 

@@ -9,7 +9,7 @@
 namespace multiscale {
 
     //! Class for representing input and output exceptions
-    class IOException : public multiscale::MultiscaleException {
+    class IOException : public MultiscaleException {
 
         public:
 

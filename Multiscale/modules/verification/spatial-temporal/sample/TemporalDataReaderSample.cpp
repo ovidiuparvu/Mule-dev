@@ -45,7 +45,7 @@ int readAndPrintInputFile(const std::string &filePath) {
 
         printSpatialTemporalTrace(trace);
     } catch (const MultiscaleException &ex) {
-        ExceptionHandler::printErrorMessage(ex);
+        ExceptionHandler::printDetailedErrorMessage(ex);
 
         return EXEC_ERR_CODE;
     }

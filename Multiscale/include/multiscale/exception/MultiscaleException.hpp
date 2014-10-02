@@ -27,9 +27,9 @@ namespace multiscale {
             MultiscaleException() : std::runtime_error("") {}
 
             explicit MultiscaleException(const std::string &file, int line, const std::string &msg)
-                                        : std::runtime_error(msg) {}
+                                        : std::runtime_error(msg), message(msg) {}
             explicit MultiscaleException(const std::string &file, int line, const char *msg)
-                                        : std::runtime_error(msg) {}
+                                        : std::runtime_error(msg), message(msg) {}
 
             //! Returns an explanatory string
             const char* what() const noexcept override {
@@ -59,7 +59,6 @@ namespace multiscale {
                           << "Error message: " << msg;
 
                 explanatoryString = strStream.str();
-                message           = std::string(msg);
             }
 
     };

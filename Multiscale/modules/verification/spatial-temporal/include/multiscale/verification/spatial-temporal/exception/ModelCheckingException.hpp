@@ -9,17 +9,15 @@ namespace multiscale {
     namespace verification {
 
         //! Class for representing a model checking exception
-        class ModelCheckingException : public multiscale::UnexpectedBehaviourException {
+        class ModelCheckingException : public UnexpectedBehaviourException {
 
             public:
 
-                ModelCheckingException(const string &file, int line, const string &msg) {
-                    explanatoryString = msg;
-                }
+                ModelCheckingException(const string &file, int line, const string &msg)
+                    : UnexpectedBehaviourException(file, line, msg) {}
 
-                ModelCheckingException(const string &file, int line, const char *msg) {
-                    explanatoryString = std::string(msg);
-                }
+                ModelCheckingException(const string &file, int line, const char *msg)
+                    : UnexpectedBehaviourException(file, line, msg) {}
 
         };
 

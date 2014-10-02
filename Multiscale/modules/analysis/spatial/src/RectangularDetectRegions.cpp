@@ -30,7 +30,7 @@ using namespace multiscale::analysis;
 namespace po = boost::program_options;
 namespace pt = boost::property_tree;
 
-const string CONFIG_FILE = "/usr/local/share/mule/config/analysis/spatial/rectangular_region_detector.xml";
+const string CONFIG_FILE = "/home/ovidiu/Repositories/git/multiscale/Multiscale/config/analysis/spatial/rectangular_region_detector.xml";
 
 const string LABEL_ROOT_COMMENT                      = "<xmlcomment>";
 const string LABEL_ALPHA                             = "detector.alpha";
@@ -165,7 +165,7 @@ int main(int argc, char** argv) {
             printWrongParameters();
         }
     } catch(const exception &e) {
-        ExceptionHandler::printErrorMessage(e);
+        ExceptionHandler::printDetailedErrorMessage(e);
 
         return EXEC_ERR_CODE;
     } catch(...) {

@@ -165,7 +165,7 @@ int main(int argc, char** argv) {
             printWrongParameters();
         }
     } catch(const exception &e) {
-        ExceptionHandler::printErrorMessage(e);
+        ExceptionHandler::printDetailedErrorMessage(e);
 
         return EXEC_ERR_CODE;
     } catch(...) {

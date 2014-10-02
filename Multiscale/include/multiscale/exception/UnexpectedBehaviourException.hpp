@@ -17,13 +17,11 @@ namespace multiscale {
 
             UnexpectedBehaviourException() {}
 
-            explicit UnexpectedBehaviourException(const string &file, int line, const string &msg) {
-                constructExplanatoryString<const string &>(file, line, msg);
-            }
+            explicit UnexpectedBehaviourException(const string &file, int line, const string &msg)
+                : AlgorithmException(file, line, msg) {}
 
-            explicit UnexpectedBehaviourException(const string &file, int line, const char *msg) {
-                constructExplanatoryString<const char *>(file, line, msg);
-            }
+            explicit UnexpectedBehaviourException(const string &file, int line, const char *msg)
+                : AlgorithmException(file, line, msg) {}
 
     };
 

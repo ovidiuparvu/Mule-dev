@@ -30,8 +30,12 @@ int main(int argc, char** argv) {
         runModelCheckingTask(argc, argv);
     } catch(const ModelCheckingHelpRequestException &e) {
         return EXEC_SUCCESS_CODE;
+    } catch(const MultiscaleException &e) {
+        ExceptionHandler::printRawErrorMessage(e);
+
+        return EXEC_ERR_CODE;
     } catch(const exception &e) {
-        ExceptionHandler::printErrorMessage(e);
+        ExceptionHandler::printDetailedErrorMessage(e);
 
         return EXEC_ERR_CODE;
     } catch(...) {

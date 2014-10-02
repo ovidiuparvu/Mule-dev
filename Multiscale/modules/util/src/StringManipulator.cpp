@@ -6,6 +6,19 @@
 using namespace multiscale;
 
 
+unsigned long StringManipulator::count(char searchChar, const std::string &inputString) {
+    std::size_t     nrOfCharacters  = inputString.size();
+    unsigned long   nrOfOccurrences = 0;
+
+    for (std::size_t i = 0; i < nrOfCharacters; i++) {
+        if (inputString[i] == searchChar) {
+            nrOfOccurrences++;
+        }
+    }
+
+    return nrOfOccurrences;
+}
+
 string StringManipulator::filenameFromPath(const string &filepath) {
     unsigned int position = filepath.find_last_of(DIR_SEPARATOR);
 

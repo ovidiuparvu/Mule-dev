@@ -22,7 +22,7 @@ void printParsingResult(Parser &parser, AbstractSyntaxTree &parsingResult) {
                   << "."
                   << std::endl << std::endl;
     } catch (const InvalidInputException &ex) {
-        ExceptionHandler::printErrorMessage(ex);
+        ExceptionHandler::printDetailedErrorMessage(ex);
     }
 }
 
@@ -53,7 +53,7 @@ void readQueriesFromFile(const std::string &path) {
 
         printQueries(queries);
     } catch (const MultiscaleException &ex) {
-        ExceptionHandler::printErrorMessage(ex);
+        ExceptionHandler::printDetailedErrorMessage(ex);
     }
 }
 

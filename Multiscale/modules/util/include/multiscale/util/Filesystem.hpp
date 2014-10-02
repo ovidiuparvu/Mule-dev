@@ -21,18 +21,24 @@ namespace multiscale {
 
             //! Check if the given path is a valid folder path
             /*!
+             * A folder path is valid if it points to a directory.
+             *
              * \param path  The given path
              */
             static bool isValidFolderPath(const std::string &path);
 
             //! Check if the given path is a valid file path
             /*!
+             * A file path is valid if it points to a regular file.
+             *
              * \param path  The given path
              */
             static bool isValidFilePath(const std::string &path);
 
             //! Check if the given path is a valid file path and has the given extension
             /*!
+             * A file path is valid if it points to a regular file with the given extension.
+             *
              * \param path      The given path
              * \param extension The given extension
              */
@@ -40,12 +46,16 @@ namespace multiscale {
 
             //! Return the given path as an absolute path in native format
             /*!
+             * Precondition: The given path points to a regular file.
+             *
              * \param path The given path
              */
             static std::string nativeFormatFilePath(const std::string &path);
 
             //! Get the list of files with the given extension in the provided folder
             /*!
+             * Precondition: The provided folder path points to a directory.
+             *
              * \param folderPath    The path to the folder
              * \param extension     The given extension
              */
@@ -62,7 +72,8 @@ namespace multiscale {
 
 
             // Constants
-            static const std::string ERR_INVALID_PATH;
+            static const std::string ERR_INVALID_PATH_BEGIN;
+            static const std::string ERR_INVALID_PATH_END;
 
     };
 

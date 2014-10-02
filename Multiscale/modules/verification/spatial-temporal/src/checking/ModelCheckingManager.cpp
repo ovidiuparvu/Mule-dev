@@ -93,7 +93,7 @@ bool ModelCheckingManager::parseLogicProperty(const std::string &logicProperty) 
     try {
         return isValidLogicProperty(logicProperty);
     } catch (const InvalidInputException &ex) {
-        ExceptionHandler::printErrorMessage(ex);
+        ExceptionHandler::printDetailedErrorMessage(ex);
 
         return false;
     }
