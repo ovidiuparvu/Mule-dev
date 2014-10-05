@@ -1,12 +1,10 @@
 #ifndef RGBCOLOURGENERATOR_HPP
 #define RGBCOLOURGENERATOR_HPP
 
-#include <string>
-#include "opencv2/imgproc/imgproc.hpp"
-#include "opencv2/highgui/highgui.hpp"
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
 
-using namespace cv;
-using namespace std;
+#include <string>
 
 
 namespace multiscale {
@@ -35,16 +33,16 @@ namespace multiscale {
              *  \param concentrationMax The maximum of the range of values a concentration can take
              *  \param concentration    The concentration
              */
-            string generate(double concentrationMin,
-                            double concentrationMax,
-                            double concentration);
+            std::string generate(double concentrationMin,
+                                 double concentrationMax,
+                                 double concentration);
 
             //! Generate a random RGB colour
             /*! Generate a random RGB colour using the given random number generator
              *
              * \param randomNumberGenerator Random number generator
              */
-            Scalar generate(RNG &randomNumberGenerator);
+            cv::Scalar generate(cv::RNG &randomNumberGenerator);
 
         private:
 
@@ -54,7 +52,7 @@ namespace multiscale {
              *  \param saturation Saturation
              *  \param value Value
              */
-            string convertHSVToRGB(double hue, double saturation, double value);
+            std::string convertHSVToRGB(double hue, double saturation, double value);
 
             //! Compute RGB values from HSV specific values
             /*!
@@ -65,8 +63,8 @@ namespace multiscale {
              */
             void computeRGBValues(int huePrime, double X, double chroma, double m);
 
-            //! Convert the RGB colour to a string
-            string convertRGBToString();
+            //! Convert the RGB colour to a std::string
+            std::string convertRGBToString();
 
         public:
 

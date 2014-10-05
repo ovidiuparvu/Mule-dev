@@ -12,7 +12,7 @@ using namespace multiscale::verification::subsetspecific;
 
 TimePoint::TimePoint(unsigned long value) {
     this->value             = value;
-    this->spatialEntities   = std::vector<std::list<shared_ptr<SpatialEntity>>>(NR_SUBSET_SPECIFIC_TYPES);
+    this->spatialEntities   = std::vector<std::list<std::shared_ptr<SpatialEntity>>>(NR_SUBSET_SPECIFIC_TYPES);
 
     this->consideredSpatialEntityTypes.reset();
 }

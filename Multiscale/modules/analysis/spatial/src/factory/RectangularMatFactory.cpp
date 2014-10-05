@@ -10,23 +10,23 @@ RectangularMatFactory::RectangularMatFactory() : MatFactory() {}
 
 RectangularMatFactory::~RectangularMatFactory() {}
 
-Mat RectangularMatFactory::createFromViewerImage(const string &inputFile) {
-    Mat image = imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
+cv::Mat RectangularMatFactory::createFromViewerImage(const std::string &inputFile) {
+    cv::Mat image = cv::imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
 
     isValidViewerImage(image);
 
-    return image(Rect(ROI_START_X, ROI_START_Y, ROI_WIDTH, ROI_HEIGHT));
+    return image(cv::Rect(ROI_START_X, ROI_START_Y, ROI_WIDTH, ROI_HEIGHT));
 }
 
-double RectangularMatFactory::maxColourBarIntensityFromViewerImage(const string &inputFile) {
-    Mat image = imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
+double RectangularMatFactory::maxColourBarIntensityFromViewerImage(const std::string &inputFile) {
+    cv::Mat image = cv::imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
 
     isValidViewerImage(image);
 
-    return (double)image.at<uchar>(Point(COLOURBAR_MAX_X, COLOURBAR_MAX_Y));
+    return (double)image.at<uchar>(cv::Point(COLOURBAR_MAX_X, COLOURBAR_MAX_Y));
 }
 
-unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
+unsigned char *RectangularMatFactory::processConcentrations(std::ifstream& fin) {
     unsigned char *data = new unsigned char[rows*cols];
     int nrOfConcentrations = rows * cols;
     double concentration = 0;
@@ -44,7 +44,7 @@ unsigned char *RectangularMatFactory::processConcentrations(ifstream& fin) {
     return data;
 }
 
-bool RectangularMatFactory::isValidViewerImage(const Mat &image) {
+bool RectangularMatFactory::isValidViewerImage(const cv::Mat &image) {
     if (!image.data) {
         MS_throw(InvalidInputException, ERR_INPUT_OPEN);
     }
@@ -58,7 +58,7 @@ bool RectangularMatFactory::isValidViewerImage(const Mat &image) {
 
 
 // Constants
-const string RectangularMatFactory::ERR_CONC   = "All concentrations have to be between 0 and 1.";
+const std::string RectangularMatFactory::ERR_CONC   = "All concentrations have to be between 0 and 1.";
 
 const int RectangularMatFactory::ROI_START_X       = 321;
 const int RectangularMatFactory::ROI_START_Y       = 318;

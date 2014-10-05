@@ -4,8 +4,6 @@
 #include <limits>
 #include <vector>
 
-using namespace std;
-using namespace cv;
 using namespace multiscale;
 using namespace multiscaletest;
 
@@ -17,18 +15,18 @@ namespace multiscaletest {
 
         protected:
 
-            vector<Point2f> convexHull;     /*!< Convex hull of the 2D point set */
+            std::vector<cv::Point2f> convexHull;    /*!< Convex hull of the 2D point set */
 
-            vector<Point2f> points;         /*!< Collection of 2D points */
-            vector<Point2f> triangle;       /*!< Minimum enclosing triangle */
-            double area;                    /*!< Area of the minimum enclosing triangle */
+            std::vector<cv::Point2f> points;        /*!< Collection of 2D points */
+            std::vector<cv::Point2f> triangle;      /*!< Minimum enclosing triangle */
+            double area;                            /*!< Area of the minimum enclosing triangle */
 
         public:
 
            MinEnclosingTriangleFinderTest();
            ~MinEnclosingTriangleFinderTest();
 
-           //! Test the scenario when an empty vector of points is provided
+           //! Test the scenario when an empty std::vector of points is provided
            bool TestNoPoints();
 
            //! Test the scenario when there exists at least one point with negative x coordinate
@@ -52,10 +50,10 @@ namespace multiscaletest {
            //! Test the scenario when more than three input points are provided
            bool TestMorePoints();
 
-           //! Test the scenario when the output vector is not empty
+           //! Test the scenario when the output std::vector is not empty
            bool TestMorePointsAndNonEmptyTriangle();
 
-           //! Test the scenario when randomly initialised vectors of input points are provided
+           //! Test the scenario when randomly initialised std::vectors of input points are provided
            bool TestRandomPoints();
 
         protected:
@@ -119,7 +117,7 @@ namespace multiscaletest {
     }
 
     bool MinEnclosingTriangleFinderTest::TestPointsWithNegativeXCoordinate() {
-        points = vector<Point2f>({Point2f(-2, 1), Point2f(2, 2), Point2f(4, 4)});
+        points = std::vector<cv::Point2f>({cv::Point2f(-2, 1), cv::Point2f(2, 2), cv::Point2f(4, 4)});
 
         RunTest();
         ValidateTestResults();
@@ -128,7 +126,7 @@ namespace multiscaletest {
     }
 
     bool MinEnclosingTriangleFinderTest::TestPointsWithNegativeYCoordinate() {
-        points = vector<Point2f>({Point2f(2, -1), Point2f(2, 2), Point2f(4, 4)});
+        points = std::vector<cv::Point2f>({cv::Point2f(2, -1), cv::Point2f(2, 2), cv::Point2f(4, 4)});
 
         RunTest();
         ValidateTestResults();
@@ -137,7 +135,7 @@ namespace multiscaletest {
     }
 
     bool MinEnclosingTriangleFinderTest::TestPointsWithNegativeCoordinates() {
-        points = vector<Point2f>({Point2f(-2, -1), Point2f(2, 2), Point2f(4, 4)});
+        points = std::vector<cv::Point2f>({cv::Point2f(-2, -1), cv::Point2f(2, 2), cv::Point2f(4, 4)});
 
         RunTest();
         ValidateTestResults();
@@ -146,7 +144,7 @@ namespace multiscaletest {
     }
 
     bool MinEnclosingTriangleFinderTest::TestOnePoint() {
-        points = vector<Point2f>({Point2f(1, 1)});
+        points = std::vector<cv::Point2f>({cv::Point2f(1, 1)});
 
         RunTest();
         ValidateTestResults();
@@ -155,7 +153,7 @@ namespace multiscaletest {
     }
 
     bool MinEnclosingTriangleFinderTest::TestTwoPoints() {
-        points = vector<Point2f>({Point2f(1, 1), Point2f(2, 2)});
+        points = std::vector<cv::Point2f>({cv::Point2f(1, 1), cv::Point2f(2, 2)});
 
         RunTest();
         ValidateTestResults();
@@ -164,7 +162,7 @@ namespace multiscaletest {
     }
 
     bool MinEnclosingTriangleFinderTest::TestThreePoints() {
-        points = vector<Point2f>({Point2f(1, 1), Point2f(2, 2), Point2f(4, 1)});
+        points = std::vector<cv::Point2f>({cv::Point2f(1, 1), cv::Point2f(2, 2), cv::Point2f(4, 1)});
 
         RunTest();
         ValidateTestResults();
@@ -173,7 +171,8 @@ namespace multiscaletest {
     }
 
     bool MinEnclosingTriangleFinderTest::TestMorePoints() {
-        points = vector<Point2f>({Point2f(1, 1), Point2f(2, 2), Point2f(4, 1), Point2f(5, 5), Point2f(6, 4)});
+        points = std::vector<cv::Point2f>({cv::Point2f(1, 1), cv::Point2f(2, 2), cv::Point2f(4, 1),
+                                           cv::Point2f(5, 5), cv::Point2f(6, 4)});
 
         RunTest();
         ValidateTestResults();
@@ -182,9 +181,10 @@ namespace multiscaletest {
     }
 
     bool MinEnclosingTriangleFinderTest::TestMorePointsAndNonEmptyTriangle() {
-        points = vector<Point2f>({Point2f(1, 1), Point2f(2, 2), Point2f(4, 1), Point2f(5, 5), Point2f(6, 4)});
+        points = std::vector<cv::Point2f>({cv::Point2f(1, 1), cv::Point2f(2, 2), cv::Point2f(4, 1),
+                                           cv::Point2f(5, 5), cv::Point2f(6, 4)});
 
-        triangle.push_back(Point2f(1, 1));
+        triangle.push_back(cv::Point2f(1, 1));
 
         RunTest();
         ValidateTestResults();
@@ -203,7 +203,7 @@ namespace multiscaletest {
             int nrOfPoints = GetRandomNrOfPoints();
 
             for (int j = 0; j < nrOfPoints; j++) {
-                points.push_back(Point2f(rand(), rand()));
+                points.push_back(cv::Point2f(rand(), rand()));
             }
 
             RunTest();
@@ -232,19 +232,19 @@ namespace multiscaletest {
     }
 
     int MinEnclosingTriangleFinderTest::GetRandomNrOfExecutions() {
-        return (MIN_NR_EXECUTIONS + ((double)rand() / numeric_limits<double>::max()) *
+        return (MIN_NR_EXECUTIONS + ((double)rand() / std::numeric_limits<double>::max()) *
                                     (MAX_NR_EXECUTIONS - MIN_NR_EXECUTIONS));
     }
 
     int MinEnclosingTriangleFinderTest::GetRandomNrOfPoints() {
-        return (MIN_NR_POINTS + ((double)rand() / numeric_limits<double>::max()) *
+        return (MIN_NR_POINTS + ((double)rand() / std::numeric_limits<double>::max()) *
                                 (MAX_NR_POINTS - MIN_NR_POINTS));
     }
 
     bool MinEnclosingTriangleFinderTest::ArePointsEnclosed() {
         double distance = 0;
 
-        for (const Point2f &point : points) {
+        for (const cv::Point2f &point : points) {
             distance = pointPolygonTest(triangle, point, true);
 
             if (distance < -(POINT_IN_TRIANGLE_THRESH)) {
@@ -260,7 +260,7 @@ namespace multiscaletest {
 
         for (int i = 0; i < 3; i++) {
             bool isTouching = false;
-            Point2f middlePoint = Geometry2D::middlePoint(triangle[i], triangle[(i + 1) % 3]);
+            cv::Point2f middlePoint = Geometry2D::middlePoint(triangle[i], triangle[(i + 1) % 3]);
 
             for (int j = 0; j < nrOfPolygonPoints; j++) {
                 if (Geometry2D::isPointOnLineSegment(middlePoint, convexHull[j],

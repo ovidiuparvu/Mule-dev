@@ -27,18 +27,18 @@ void SimulationClusterDetector::initialiseDetectorSpecificImageDependentFields()
 }
 
 void SimulationClusterDetector::initialiseThresholdedImage() {
-    threshold(image, thresholdedImage, THRESHOLD, THRESHOLD_MAX, THRESH_BINARY);
+    cv::threshold(image, thresholdedImage, THRESHOLD, THRESHOLD_MAX, cv::THRESH_BINARY);
 }
 
-void SimulationClusterDetector::detectEntitiesInImage(vector<Entity> &entities) {
+void SimulationClusterDetector::detectEntitiesInImage(std::vector<Entity> &entities) {
     for (unsigned int i = 0; i < height; i++) {
         for (unsigned int j = 0; j < width; j++) {
             if (isEntityAtPosition(j, i)) {
                 unsigned int pileUpDegree = computePileUpDegreeAtPosition(j, i);
                 double area = entityHeight * entityWidth;
                 double perimeter = 2 * (entityHeight + entityWidth);
-                Point2f centre = getEntityCentrePoint(j, i);
-                vector<Point2f> contourPoints = getEntityContourPoints(j, i);
+                cv::Point2f centre = getEntityCentrePoint(j, i);
+                std::vector<cv::Point2f> contourPoints = getEntityContourPoints(j, i);
 
                 entities.push_back(Entity(pileUpDegree, area, perimeter, centre, contourPoints));
             }
@@ -47,26 +47,26 @@ void SimulationClusterDetector::detectEntitiesInImage(vector<Entity> &entities) 
 }
 
 bool SimulationClusterDetector::isEntityAtPosition(int x, int y) {
-    Rect mask(x * entityWidth, y * entityHeight, entityWidth, entityHeight);
+    cv::Rect mask(x * entityWidth, y * entityHeight, entityWidth, entityHeight);
 
-    Scalar positionMean = mean(thresholdedImage(mask));
+    cv::Scalar positionMean = cv::mean(thresholdedImage(mask));
 
     return (positionMean.val[0] > ENTITY_THRESH);
 }
 
-Point2f SimulationClusterDetector::getEntityCentrePoint(int x, int y) {
+cv::Point2f SimulationClusterDetector::getEntityCentrePoint(int x, int y) {
     double xCentre = (x * entityWidth) + (entityWidth / 2);
     double yCentre = (y * entityHeight) + (entityHeight / 2);
 
-    return Point2f(xCentre, yCentre);
+    return cv::Point2f(xCentre, yCentre);
 }
 
-vector<Point2f> SimulationClusterDetector::getEntityContourPoints(int x, int y) {
-    vector<Point2f> contourPoints;
+std::vector<cv::Point2f> SimulationClusterDetector::getEntityContourPoints(int x, int y) {
+    std::vector<cv::Point2f> contourPoints;
 
     for (int i = x; i < (x + 2); i++) {
         for (int j = y; j < (y + 2); j++) {
-            contourPoints.push_back(Point(i * entityWidth, j * entityHeight));
+            contourPoints.push_back(cv::Point(i * entityWidth, j * entityHeight));
         }
     }
 
@@ -77,13 +77,13 @@ unsigned int SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int
     int xCoordinate = (x * entityWidth) + (entityWidth / 2);
     int yCoordinate = (y * entityHeight) + (entityHeight / 2);
 
-    unsigned char intensityAtPosition = image.at<uchar>(Point(xCoordinate, yCoordinate));
+    unsigned char intensityAtPosition = image.at<uchar>(cv::Point(xCoordinate, yCoordinate));
 
     return static_cast<unsigned int>(round(intensityAtPosition / entityPileupDegree));
 }
 
 void SimulationClusterDetector::outputResultsToImage() {
-    RNG randomNumberGenerator;
+    cv::RNG randomNumberGenerator;
 
     cvtColor(image, outputImage, CV_GRAY2RGB);
 
@@ -91,23 +91,23 @@ void SimulationClusterDetector::outputResultsToImage() {
 
     for (unsigned int i = 0; i < nrOfClusters; i++) {
         // Choose a random colour for the cluster
-        Scalar colour = RGBColourGenerator().generate(randomNumberGenerator);
+        cv::Scalar colour = RGBColourGenerator().generate(randomNumberGenerator);
 
         outputClusterToImage(clusters[i], colour, outputImage);
     }
 }
 
-void SimulationClusterDetector::outputClusterToImage(Cluster &cluster, Scalar colour, Mat &image) {
-    vector<Entity> entities = cluster.getEntities();
+void SimulationClusterDetector::outputClusterToImage(Cluster &cluster, cv::Scalar colour, cv::Mat &image) {
+    std::vector<Entity> entities = cluster.getEntities();
 
     for (const Entity &entity : entities) {
-        circle(image, entity.getCentre(), DATAPOINT_WIDTH, colour, DATAPOINT_THICKNESS);
+        cv::circle(image, entity.getCentre(), DATAPOINT_WIDTH, colour, DATAPOINT_THICKNESS);
     }
 
     outputClusterShape(cluster, colour, image);
 }
 
-void SimulationClusterDetector::outputClusterShape(Cluster &cluster, Scalar colour, Mat &image) {
+void SimulationClusterDetector::outputClusterShape(Cluster &cluster, cv::Scalar colour, cv::Mat &image) {
     Shape2D shape = cluster.getShape();
 
     switch (shape) {
@@ -129,31 +129,31 @@ void SimulationClusterDetector::outputClusterShape(Cluster &cluster, Scalar colo
     }
 }
 
-void SimulationClusterDetector::outputClusterTriangularShape(Cluster &cluster, Scalar colour, Mat &image) {
-    vector<Point2f> trianglePoints = cluster.getMinAreaEnclosingTriangle();
+void SimulationClusterDetector::outputClusterTriangularShape(Cluster &cluster, cv::Scalar colour, cv::Mat &image) {
+    std::vector<cv::Point2f> trianglePoints = cluster.getMinAreaEnclosingTriangle();
 
     assert(trianglePoints.size() == 3);
 
     for (int i = 0; i < 3; i++) {
-        line(image, trianglePoints[i], trianglePoints[(i + 1) % 3], colour, DATAPOINT_WIDTH);
+        cv::line(image, trianglePoints[i], trianglePoints[(i + 1) % 3], colour, DATAPOINT_WIDTH);
     }
 }
 
-void SimulationClusterDetector::outputClusterRectangularShape(Cluster &cluster, Scalar colour, Mat &image) {
-    Point2f rectanglePoints[4];
+void SimulationClusterDetector::outputClusterRectangularShape(Cluster &cluster, cv::Scalar colour, cv::Mat &image) {
+    cv::Point2f rectanglePoints[4];
 
     cluster.getMinAreaEnclosingRect().points(rectanglePoints);
 
     for (int i = 0; i < 4; i++) {
-        line(image, rectanglePoints[i], rectanglePoints[(i + 1) % 4], colour, DATAPOINT_WIDTH);
+        cv::line(image, rectanglePoints[i], rectanglePoints[(i + 1) % 4], colour, DATAPOINT_WIDTH);
     }
 }
 
-void SimulationClusterDetector::outputClusterCircularShape(Cluster &cluster, Scalar colour, Mat &image) {
-    Point2f centre = cluster.getMinAreaEnclosingCircleCentre();
+void SimulationClusterDetector::outputClusterCircularShape(Cluster &cluster, cv::Scalar colour, cv::Mat &image) {
+    cv::Point2f centre = cluster.getMinAreaEnclosingCircleCentre();
     float radius = cluster.getMinAreaEnclosingCircleRadius();
 
-    circle(image, centre, radius, colour, DATAPOINT_WIDTH);
+    cv::circle(image, centre, radius, colour, DATAPOINT_WIDTH);
 }
 
 

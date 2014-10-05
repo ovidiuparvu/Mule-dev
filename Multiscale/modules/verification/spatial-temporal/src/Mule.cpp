@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
         ExceptionHandler::printRawErrorMessage(e);
 
         return EXEC_ERR_CODE;
-    } catch(const exception &e) {
+    } catch(const std::exception &e) {
         ExceptionHandler::printDetailedErrorMessage(e);
 
         return EXEC_ERR_CODE;

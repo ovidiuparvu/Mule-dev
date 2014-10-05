@@ -53,7 +53,7 @@ Shape2D SpatialEntityPseudo3D::getShape() {
     return shape;
 }
 
-string SpatialEntityPseudo3D::getShapeAsString() {
+std::string SpatialEntityPseudo3D::getShapeAsString() {
     return shapeAsString();
 }
 
@@ -69,23 +69,26 @@ double SpatialEntityPseudo3D::getCircularMeasure() {
     return circularMeasure;
 }
 
-Point2f SpatialEntityPseudo3D::getCentre() {
+cv::Point2f SpatialEntityPseudo3D::getCentre() {
     updateMeasuresIfRequired();
 
     return centre;
 }
 
-string SpatialEntityPseudo3D::fieldNamesToString() {
-    return "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)";
+std::string SpatialEntityPseudo3D::fieldNamesToString() {
+    return (
+        "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,"
+        "Triangle measure,cv::Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)"
+    );
 }
 
-string SpatialEntityPseudo3D::toString() {
+std::string SpatialEntityPseudo3D::toString() {
     updateMeasuresIfRequired();
 
     return fieldValuesToString();
 }
 
-string SpatialEntityPseudo3D::typeAsString() {
+std::string SpatialEntityPseudo3D::typeAsString() {
     SpatialEntityPseudo3DType spatialEntityType = type();
 
     switch (spatialEntityType) {
@@ -155,7 +158,7 @@ double SpatialEntityPseudo3D::normalisedShapeMeasure(double shapeArea) {
     }
 }
 
-string SpatialEntityPseudo3D::shapeAsString() {
+std::string SpatialEntityPseudo3D::shapeAsString() {
     switch (shape) {
         case Shape2D::Triangle:
             return STR_TRIANGLE;
@@ -177,8 +180,8 @@ string SpatialEntityPseudo3D::shapeAsString() {
     return STR_UNDEFINED;
 }
 
-string SpatialEntityPseudo3D::fieldValuesToString() {
-    stringstream strStream;
+std::string SpatialEntityPseudo3D::fieldValuesToString() {
+    std::stringstream strStream;
 
     strStream << clusterednessDegree << OUTPUT_SEPARATOR
               << density << OUTPUT_SEPARATOR
@@ -196,11 +199,11 @@ string SpatialEntityPseudo3D::fieldValuesToString() {
     return strStream.str();
 }
 
-vector<Point2f> SpatialEntityPseudo3D::convertPoints(const vector<Point> &points) {
-    vector<Point2f> convertedPoints;
+std::vector<cv::Point2f> SpatialEntityPseudo3D::convertPoints(const std::vector<cv::Point> &points) {
+    std::vector<cv::Point2f> convertedPoints;
 
-    for (const Point &point : points) {
-        convertedPoints.push_back(Point2f(point.x, point.y));
+    for (const cv::Point &point : points) {
+        convertedPoints.push_back(cv::Point2f(point.x, point.y));
     }
 
     return convertedPoints;
@@ -221,17 +224,17 @@ void SpatialEntityPseudo3D::initialise() {
 
 
 // Constants
-const string SpatialEntityPseudo3D::STR_REGION  = "region";
-const string SpatialEntityPseudo3D::STR_CLUSTER = "cluster";
+const std::string SpatialEntityPseudo3D::STR_REGION  = "region";
+const std::string SpatialEntityPseudo3D::STR_CLUSTER = "cluster";
 
-const string SpatialEntityPseudo3D::STR_TRIANGLE    = "triangular";
-const string SpatialEntityPseudo3D::STR_RECTANGLE   = "rectangular";
-const string SpatialEntityPseudo3D::STR_CIRCLE      = "circular";
-const string SpatialEntityPseudo3D::STR_UNDEFINED   = "undefined";
+const std::string SpatialEntityPseudo3D::STR_TRIANGLE    = "triangular";
+const std::string SpatialEntityPseudo3D::STR_RECTANGLE   = "rectangular";
+const std::string SpatialEntityPseudo3D::STR_CIRCLE      = "circular";
+const std::string SpatialEntityPseudo3D::STR_UNDEFINED   = "undefined";
 
-const string SpatialEntityPseudo3D::OUTPUT_SEPARATOR    = ",";
+const std::string SpatialEntityPseudo3D::OUTPUT_SEPARATOR    = ",";
 
-const string SpatialEntityPseudo3D::ERR_INPUT           = "Invalid input parameters were provided to the constructor.";
-const string SpatialEntityPseudo3D::ERR_UNDEFINED_TYPE  = "Pseudo 3D spatial entity of undefined type encountered.";
+const std::string SpatialEntityPseudo3D::ERR_INPUT           = "Invalid input parameters were provided to the constructor.";
+const std::string SpatialEntityPseudo3D::ERR_UNDEFINED_TYPE  = "Pseudo 3D spatial entity of undefined type encountered.";
 
 const bool SpatialEntityPseudo3D::CONVEX_HULL_CLOCKWISE = true;

@@ -50,7 +50,7 @@ void LexicographicNumberIterator::resetCurrentNumber() {
     }
 }
 
-void LexicographicNumberIterator::numberToDigits(unsigned int number, vector<unsigned char> &digits) {
+void LexicographicNumberIterator::numberToDigits(unsigned int number, std::vector<unsigned char> &digits) {
     while (number != 0) {
         digits.push_back(number % 10);
 
@@ -60,7 +60,7 @@ void LexicographicNumberIterator::numberToDigits(unsigned int number, vector<uns
     reverseDigits(digits);
 }
 
-void LexicographicNumberIterator::reverseDigits(vector<unsigned char> &digits) {
+void LexicographicNumberIterator::reverseDigits(std::vector<unsigned char> &digits) {
     int             nrOfDigits = digits.size();
     unsigned char   tmpDigit   = 0;
 
@@ -71,7 +71,7 @@ void LexicographicNumberIterator::reverseDigits(vector<unsigned char> &digits) {
     }
 }
 
-unsigned int LexicographicNumberIterator::digitsToNumber(vector<unsigned char> &digits) {
+unsigned int LexicographicNumberIterator::digitsToNumber(std::vector<unsigned char> &digits) {
     unsigned int number = 0;
 
     int nrOfDigits = digits.size();

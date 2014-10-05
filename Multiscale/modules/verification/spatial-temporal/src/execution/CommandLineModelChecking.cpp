@@ -65,17 +65,17 @@ void CommandLineModelChecking::initialiseAllowedArgumentsConfiguration() {
 }
 
 void CommandLineModelChecking::initialiseRequiredArgumentsConfiguration() {
-    requiredArguments.add_options()(ARG_LOGIC_QUERIES_NAME_BOTH.c_str()             , po::value<string>()->required()          , (ARG_LOGIC_QUERIES_DESCRIPTION + "\n").c_str())
-                                   (ARG_SPATIAL_TEMPORAL_TRACES_NAME_BOTH.c_str()   , po::value<string>()->required()          , (ARG_SPATIAL_TEMPORAL_TRACES_DESCRIPTION + "\n").c_str())
-                                   (ARG_EXTRA_EVALUATION_TIME_NAME_BOTH.c_str()     , po::value<unsigned long>()->required()   , (ARG_EXTRA_EVALUATION_TIME_DESCRIPTION + "\n").c_str())
-                                   (ARG_MODEL_CHECKER_TYPE_NAME_BOTH.c_str()        , po::value<unsigned int>()->required()    , (ARG_MODEL_CHECKER_TYPE_DESCRIPTION + "\n").c_str());
+    requiredArguments.add_options()(ARG_LOGIC_QUERIES_NAME_BOTH.c_str()             , po::value<std::string>()->required()      , (ARG_LOGIC_QUERIES_DESCRIPTION + "\n").c_str())
+                                   (ARG_SPATIAL_TEMPORAL_TRACES_NAME_BOTH.c_str()   , po::value<std::string>()->required()      , (ARG_SPATIAL_TEMPORAL_TRACES_DESCRIPTION + "\n").c_str())
+                                   (ARG_EXTRA_EVALUATION_TIME_NAME_BOTH.c_str()     , po::value<unsigned long>()->required()    , (ARG_EXTRA_EVALUATION_TIME_DESCRIPTION + "\n").c_str())
+                                   (ARG_MODEL_CHECKER_TYPE_NAME_BOTH.c_str()        , po::value<unsigned int>()->required()     , (ARG_MODEL_CHECKER_TYPE_DESCRIPTION + "\n").c_str());
 }
 
 void CommandLineModelChecking::initialiseOptionalArgumentsConfiguration() {
-    optionalArguments.add_options()(ARG_HELP_NAME_BOTH.c_str()                                              , (ARG_HELP_DESCRIPTION + "\n").c_str())
-                                   (ARG_EXTRA_EVALUATION_PROGRAM_NAME_BOTH.c_str() , po::value<string>()    , (ARG_EXTRA_EVALUATION_PROGRAM_DESCRIPTION + "\n").c_str())
-                                   (ARG_TYPE_SEMANTICS_TABLE_NAME_BOTH.c_str()     , po::value<string>()    , (ARG_TYPE_SEMANTICS_TABLE_DESCRIPTION + "\n").c_str())
-                                   (ARG_VERBOSE_NAME_BOTH.c_str()                  , po::bool_switch()      , (ARG_VERBOSE_DESCRIPTION + "\n").c_str());
+    optionalArguments.add_options()(ARG_HELP_NAME_BOTH.c_str()                                                  , (ARG_HELP_DESCRIPTION + "\n").c_str())
+                                   (ARG_EXTRA_EVALUATION_PROGRAM_NAME_BOTH.c_str() , po::value<std::string>()   , (ARG_EXTRA_EVALUATION_PROGRAM_DESCRIPTION + "\n").c_str())
+                                   (ARG_TYPE_SEMANTICS_TABLE_NAME_BOTH.c_str()     , po::value<std::string>()   , (ARG_TYPE_SEMANTICS_TABLE_DESCRIPTION + "\n").c_str())
+                                   (ARG_VERBOSE_NAME_BOTH.c_str()                  , po::bool_switch()          , (ARG_VERBOSE_DESCRIPTION + "\n").c_str());
 }
 
 void CommandLineModelChecking::initialiseModelCheckerTypeSpecificArgumentsConfiguration() {
@@ -375,19 +375,19 @@ void CommandLineModelChecking::initialiseClassMembers() {
 }
 
 void CommandLineModelChecking::initialiseRequiredArgumentsDependentClassMembers() {
-    logicQueriesFilepath  = variablesMap[ARG_LOGIC_QUERIES_NAME_LONG].as<string>();
-    tracesFolderPath      = variablesMap[ARG_SPATIAL_TEMPORAL_TRACES_NAME_LONG].as<string>();
+    logicQueriesFilepath  = variablesMap[ARG_LOGIC_QUERIES_NAME_LONG].as<std::string>();
+    tracesFolderPath      = variablesMap[ARG_SPATIAL_TEMPORAL_TRACES_NAME_LONG].as<std::string>();
     extraEvaluationTime   = variablesMap[ARG_EXTRA_EVALUATION_TIME_NAME_LONG].as<unsigned long>();
     modelCheckerType      = variablesMap[ARG_MODEL_CHECKER_TYPE_NAME_LONG].as<unsigned int>();
 }
 
 void CommandLineModelChecking::initialiseOptionalArgumentsDependentClassMembers() {
     if (variablesMap.count(ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG)) {
-        extraEvaluationProgramPath = variablesMap[ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG].as<string>();
+        extraEvaluationProgramPath = variablesMap[ARG_EXTRA_EVALUATION_PROGRAM_NAME_LONG].as<std::string>();
     }
 
     if (variablesMap.count(ARG_TYPE_SEMANTICS_TABLE_NAME_LONG)) {
-        typeSemanticsTableFilepath = variablesMap[ARG_TYPE_SEMANTICS_TABLE_NAME_LONG].as<string>();
+        typeSemanticsTableFilepath = variablesMap[ARG_TYPE_SEMANTICS_TABLE_NAME_LONG].as<std::string>();
     }
 
     if (variablesMap.count(ARG_VERBOSE_NAME_LONG)) {
@@ -428,7 +428,7 @@ void CommandLineModelChecking::initialiseModelChecker() {
 }
 
 void CommandLineModelChecking::initialiseProbabilisticBlackBoxModelChecker() {
-    modelCheckerFactory = make_shared<ProbabilisticBlackBoxModelCheckerFactory>();
+    modelCheckerFactory = std::make_shared<ProbabilisticBlackBoxModelCheckerFactory>();
 
     modelCheckerTypeName    = MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_NAME;
     modelCheckerParameters  = MODEL_CHECKER_PROBABILISTIC_BLACK_BOX_PARAMETERS;
@@ -438,7 +438,7 @@ void CommandLineModelChecking::initialiseStatisticalModelChecker() {
     double typeIError   = variablesMap[ARG_TYPE_I_ERROR_NAME_LONG].as<double>();
     double typeIIError  = variablesMap[ARG_TYPE_II_ERROR_NAME_LONG].as<double>();
 
-    modelCheckerFactory = make_shared<StatisticalModelCheckerFactory>(typeIError, typeIIError);
+    modelCheckerFactory = std::make_shared<StatisticalModelCheckerFactory>(typeIError, typeIIError);
 
     modelCheckerTypeName    = MODEL_CHECKER_STATISTICAL_NAME;
     modelCheckerParameters  = (
@@ -454,7 +454,7 @@ void CommandLineModelChecking::initialiseApproximateProbabilisticModelChecker() 
     double delta    = variablesMap[ARG_DELTA_NAME_LONG].as<double>();
     double epsilon  = variablesMap[ARG_EPSILON_NAME_LONG].as<double>();
 
-    modelCheckerFactory = make_shared<ApproximateProbabilisticModelCheckerFactory>(delta, epsilon);
+    modelCheckerFactory = std::make_shared<ApproximateProbabilisticModelCheckerFactory>(delta, epsilon);
 
     modelCheckerTypeName    = MODEL_CHECKER_APPROXIMATE_PROBABILISTIC_NAME;
     modelCheckerParameters  = (
@@ -471,7 +471,7 @@ void CommandLineModelChecking::initialiseBayesianModelChecker() {
     double beta                 = variablesMap[ARG_BAYESIAN_BETA_NAME_LONG].as<double>();
     double bayesFactorThreshold = variablesMap[ARG_BAYES_FACTOR_THRESHOLD_NAME_LONG].as<double>();
 
-    modelCheckerFactory = make_shared<BayesianModelCheckerFactory>(alpha, beta, bayesFactorThreshold);
+    modelCheckerFactory = std::make_shared<BayesianModelCheckerFactory>(alpha, beta, bayesFactorThreshold);
 
     modelCheckerTypeName    = MODEL_CHECKER_BAYESIAN_NAME;
     modelCheckerParameters  = (
@@ -490,7 +490,9 @@ void CommandLineModelChecking::initialiseApproximateBayesianModelChecker() {
     double beta                 = variablesMap[ARG_APPROXIMATE_BAYESIAN_BETA_NAME_LONG].as<double>();
     double varianceThreshold    = variablesMap[ARG_VARIANCE_THRESHOLD_NAME_LONG].as<double>();
 
-    modelCheckerFactory = make_shared<ApproximateBayesianModelCheckerFactory>(alpha, beta, varianceThreshold);
+    modelCheckerFactory = std::make_shared<ApproximateBayesianModelCheckerFactory>(
+                              alpha, beta, varianceThreshold
+                          );
 
     modelCheckerTypeName    = MODEL_CHECKER_APPROXIMATE_BAYESIAN_NAME;
     modelCheckerParameters  = (
@@ -505,10 +507,10 @@ void CommandLineModelChecking::initialiseApproximateBayesianModelChecker() {
 }
 
 void CommandLineModelChecking::initialiseModelCheckingManager() {
-    modelCheckingManager = make_shared<ModelCheckingManager>(logicQueriesFilepath,
-                                                             tracesFolderPath,
-                                                             extraEvaluationTime,
-                                                             typeSemanticsTableFilepath);
+    modelCheckingManager = std::make_shared<ModelCheckingManager>(
+                               logicQueriesFilepath, tracesFolderPath,
+                               extraEvaluationTime, typeSemanticsTableFilepath
+                           );
 
     modelCheckingManager->setExtraEvaluationProgramPath(extraEvaluationProgramPath);
     modelCheckingManager->setShouldPrintDetailedEvaluation(shouldVerboseDetailedResults);

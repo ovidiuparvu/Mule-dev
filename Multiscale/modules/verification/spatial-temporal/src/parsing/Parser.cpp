@@ -5,7 +5,6 @@
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnexpectedTokenException.hpp"
 #include "multiscale/verification/spatial-temporal/exception/ParserGrammarUnparseableInputException.hpp"
 
-using namespace boost::spirit;
 using namespace multiscale::verification;
 
 
@@ -29,15 +28,27 @@ bool Parser::parse(AbstractSyntaxTree &parseResult) {
     try {
         isSuccessfulParse = parseLogicalQuery(parseResult);
     } catch(const ParserGrammarUnexpectedTokenException &e) {
-        ParserGrammarExceptionHandler::handleUnexpectedTokenException(std::string(logicalQueryIterator, logicalQueryEnd),
-                                                                      e.getErrorString(), e.getExpectedToken());
+        ParserGrammarExceptionHandler::handleUnexpectedTokenException(
+            std::string(logicalQueryIterator, logicalQueryEnd),
+            e.getErrorString(),
+            e.getExpectedToken()
+        );
     } catch(const ParserGrammarProbabilityException &e) {
-        ParserGrammarExceptionHandler::handleProbabilityException(std::string(logicalQueryIterator, logicalQueryEnd),
-                                                                  e.getErrorString(), e.getExpectedToken());
+        ParserGrammarExceptionHandler::handleProbabilityException(
+            std::string(logicalQueryIterator, logicalQueryEnd),
+            e.getErrorString(),
+            e.getExpectedToken()
+        );
     } catch(const ParserGrammarExtraInputException &e) {
-        ParserGrammarExceptionHandler::handleExtraInputException(logicalQuery, e.getErrorString());
+        ParserGrammarExceptionHandler::handleExtraInputException(
+            logicalQuery,
+            e.getErrorString()
+        );
     } catch(const ParserGrammarUnparseableInputException &e) {
-        ParserGrammarExceptionHandler::handleUnparseableInputException(logicalQuery, e.getErrorString());
+        ParserGrammarExceptionHandler::handleUnparseableInputException(
+            logicalQuery,
+            e.getErrorString()
+        );
     }
 
     return isSuccessfulParse;
@@ -59,7 +70,9 @@ bool Parser::parseLogicalQuery(AbstractSyntaxTree &parseResult) {
 }
 
 bool Parser::parseLogicalQuery(ProbabilisticLogicPropertyAttribute &parseResult) {
-    bool isSuccesfulParse = phrase_parse(logicalQueryIterator, logicalQueryEnd, grammar, qi::space, parseResult);
+    bool isSuccesfulParse = phrase_parse(
+        logicalQueryIterator, logicalQueryEnd, grammar, qi::space, parseResult
+    );
 
     checkIfErrorCase(isSuccesfulParse);
 

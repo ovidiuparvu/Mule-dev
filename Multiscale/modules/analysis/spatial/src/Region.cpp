@@ -9,14 +9,12 @@ using namespace multiscale::analysis;
 
 
 Region::Region(double density, double distanceFromOrigin, double angleWrtOrigin,
-               const vector<Point> &outerBorderPolygon,
-               const vector<vector<Point> > &innerBorderPolygons) : SpatialEntityPseudo3D() {
+               const std::vector<cv::Point> &outerBorderPolygon,
+               const std::vector<std::vector<cv::Point> > &innerBorderPolygons) : SpatialEntityPseudo3D() {
     validateInputValues(density, distanceFromOrigin, angleWrtOrigin,
                         outerBorderPolygon, innerBorderPolygons);
 
-    this->clusterednessDegree   = clusterednessDegree;
     this->density               = density;
-    this->area                  = area;
     this->distanceFromOrigin    = distanceFromOrigin;
     this->angle                 = angleWrtOrigin;
 
@@ -26,17 +24,17 @@ Region::Region(double density, double distanceFromOrigin, double angleWrtOrigin,
 
 Region::~Region() {}
 
-const vector<Point>& Region::getOuterBorderPolygon() const {
+const std::vector<cv::Point>& Region::getOuterBorderPolygon() const {
     return outerBorderPolygon;
 }
 
-const vector<vector<Point> >& Region::getInnerBorderPolygons() const {
+const std::vector<std::vector<cv::Point> >& Region::getInnerBorderPolygons() const {
     return innerBorderPolygons;
 }
 
 void Region::validateInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
-                                 const vector<Point> &outerBorderPolygon,
-                                 const vector<vector<Point> > &innerBorderPolygons) {
+                                 const std::vector<cv::Point> &outerBorderPolygon,
+                                 const std::vector<std::vector<cv::Point> > &innerBorderPolygons) {
     if (!areValidInputValues(density, distanceFromOrigin, angleWrtOrigin,
                              outerBorderPolygon, innerBorderPolygons)) {
         MS_throw(InvalidInputException, ERR_INPUT);
@@ -44,8 +42,8 @@ void Region::validateInputValues(double density, double distanceFromOrigin, doub
 }
 
 bool Region::areValidInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
-                                 const vector<Point> &outerBorderPolygon,
-                                 const vector<vector<Point> > &innerBorderPolygons) {
+                                 const std::vector<cv::Point> &outerBorderPolygon,
+                                 const std::vector<std::vector<cv::Point> > &innerBorderPolygons) {
     if (!areValidInputPolygons(outerBorderPolygon, innerBorderPolygons)) {
         return false;
     }
@@ -60,15 +58,15 @@ bool Region::areValidInputValues(double density, double distanceFromOrigin, doub
     );
 }
 
-bool Region::areValidInputPolygons(const vector<Point> &outerBorderPolygon,
-                                   const vector<vector<Point> > &innerBorderPolygons) {
+bool Region::areValidInputPolygons(const std::vector<cv::Point> &outerBorderPolygon,
+                                   const std::vector<std::vector<cv::Point> > &innerBorderPolygons) {
     return (
         (isValidInputPolygon(outerBorderPolygon)) &&
         (areValidInputPolygons(innerBorderPolygons))
     );
 }
 
-bool Region::areValidInputPolygons(const vector<vector<Point> > &polygons) {
+bool Region::areValidInputPolygons(const std::vector<std::vector<cv::Point> > &polygons) {
     for (auto polygon : polygons) {
         if (!isValidInputPolygon(polygon)) {
             return false;
@@ -78,8 +76,8 @@ bool Region::areValidInputPolygons(const vector<vector<Point> > &polygons) {
     return true;
 }
 
-bool Region::isValidInputPolygon(const vector<Point> &polygon) {
-    for (const Point &point : polygon) {
+bool Region::isValidInputPolygon(const std::vector<cv::Point> &polygon) {
+    for (const cv::Point &point : polygon) {
         if ((point.x < 0) || (point.y < 0)) {
             return false;
         }
@@ -131,18 +129,20 @@ void Region::updatePerimeter() {
 }
 
 double Region::isTriangularMeasure() {
-    vector<Point2f> minAreaEnclosingTriangle;
-    vector<Point> contourConvexHull;
+    std::vector<cv::Point2f> minAreaEnclosingTriangle;
+    std::vector<cv::Point> contourConvexHull;
 
     convexHull(outerBorderPolygon, contourConvexHull, CONVEX_HULL_CLOCKWISE);
 
-    double triangleArea = MinEnclosingTriangleFinder().find(convertPoints(contourConvexHull), minAreaEnclosingTriangle);
+    double triangleArea = MinEnclosingTriangleFinder().find(
+                              convertPoints(contourConvexHull), minAreaEnclosingTriangle
+                          );
 
     return normalisedShapeMeasure(triangleArea);
 }
 
 double Region::isRectangularMeasure() {
-    RotatedRect minAreaEnclosingRect = minAreaRect(outerBorderPolygon);
+    cv::RotatedRect minAreaEnclosingRect = minAreaRect(outerBorderPolygon);
 
     // Compute the area of the minimum area enclosing rectangle
     double rectangleArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
@@ -151,19 +151,19 @@ double Region::isRectangularMeasure() {
 }
 
 double Region::isCircularMeasure() {
-    Point2f minAreaEnclosingCircleCentre;
+    cv::Point2f minAreaEnclosingCircleCentre;
     float minAreaEnclosingCircleRadius;
 
     minEnclosingCircle(outerBorderPolygon, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
-    // Compute the area of the minimum area enclosing circle
+    // Compute the area of the minimum area enclosing cv::circle
     double circleArea = Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
 
     return normalisedShapeMeasure(circleArea);
 }
 
 void Region::updateCentrePoint() {
-    Moments polygonMoments = moments(outerBorderPolygon, false);
+    cv::Moments polygonMoments = moments(outerBorderPolygon, false);
 
     centre.x = (polygonMoments.m10 / polygonMoments.m00);
     centre.y = (polygonMoments.m01 / polygonMoments.m00);

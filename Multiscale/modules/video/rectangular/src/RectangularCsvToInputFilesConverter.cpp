@@ -14,11 +14,10 @@
 
 using namespace multiscale::video;
 using namespace multiscale;
-using namespace std;
 
 
-RectangularCsvToInputFilesConverter::RectangularCsvToInputFilesConverter(const string &inputFilepath,
-                                                                         const string &outputFilepath,
+RectangularCsvToInputFilesConverter::RectangularCsvToInputFilesConverter(const std::string &inputFilepath,
+                                                                         const std::string &outputFilepath,
                                                                          unsigned int height,
                                                                          unsigned int width,
                                                                          unsigned int nrOfConcentrationsForPosition,
@@ -47,7 +46,7 @@ RectangularCsvToInputFilesConverter::~RectangularCsvToInputFilesConverter() {
 }
 
 void RectangularCsvToInputFilesConverter::convert() {
-    ifstream fin;
+    std::ifstream fin;
 
     validateSelectedConcentrationIndex();
     validateInput(fin);
@@ -59,19 +58,19 @@ void RectangularCsvToInputFilesConverter::convert() {
     fin.close();
 }
 
-void RectangularCsvToInputFilesConverter::initInputFile(ifstream &fin) {
-    fin.open(inputFilepath, ios_base::in);
+void RectangularCsvToInputFilesConverter::initInputFile(std::ifstream &fin) {
+    fin.open(inputFilepath, std::ios_base::in);
 
     if (!fin.is_open()) {
         MS_throw(FileOpenException, ERR_INPUT_OPEN);
     }
 }
 
-void RectangularCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin) {
-    double maximumConcentration = numeric_limits<double>::min();
-    string currentLine;
+void RectangularCsvToInputFilesConverter::initMaximumConcentration(std::ifstream &fin) {
+    double maximumConcentration = std::numeric_limits<double>::min();
+    std::string currentLine;
 
-    fin.open(inputFilepath, ios_base::in);
+    fin.open(inputFilepath, std::ios_base::in);
 
     if (!fin.is_open()) {
         MS_throw(FileOpenException, ERR_INPUT_OPEN);
@@ -91,21 +90,22 @@ void RectangularCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin
     this->maximumConcentration = maximumConcentration;
 }
 
-void RectangularCsvToInputFilesConverter::initOutputFile(ofstream &fout, unsigned int index, double &simulationTime) {
+void RectangularCsvToInputFilesConverter::initOutputFile(std::ofstream &fout, unsigned int index,
+                                                         double &simulationTime) {
     fout.open(
-                (
-                    (outputFilepath + OUTPUT_FILE_SEPARATOR) +
-                    StringManipulator::toString(index) +
-                    OUTPUT_EXTENSION
-                ),
-                ios_base::trunc
-            );
+        (
+            (outputFilepath + OUTPUT_FILE_SEPARATOR) +
+            StringManipulator::toString(index) +
+            OUTPUT_EXTENSION
+        ),
+        std::ios_base::trunc
+    );
 
     assert(fout.is_open());
 
     fout << height << OUTPUT_SEPARATOR
          << width  << OUTPUT_SEPARATOR
-         << simulationTime << endl;
+         << simulationTime << std::endl;
 }
 
 void RectangularCsvToInputFilesConverter::initIterators(const NumberIteratorType &numberIteratorType) {
@@ -131,11 +131,11 @@ void RectangularCsvToInputFilesConverter::validateSelectedConcentrationIndex() {
     }
 }
 
-void RectangularCsvToInputFilesConverter::validateInput(ifstream &fin) {
+void RectangularCsvToInputFilesConverter::validateInput(std::ifstream &fin) {
     unsigned int lineNumber = 0;
-    string currentLine;
+    std::string currentLine;
 
-    fin.open(inputFilepath, ios_base::in);
+    fin.open(inputFilepath, std::ios_base::in);
 
     if (!fin.is_open()) {
         MS_throw(FileOpenException, ERR_INPUT_OPEN);
@@ -155,28 +155,29 @@ void RectangularCsvToInputFilesConverter::validateInput(ifstream &fin) {
     fin.close();
 }
 
-void RectangularCsvToInputFilesConverter::validateInputLine(const string &currentLine, unsigned int lineNumber) {
-    vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
+void RectangularCsvToInputFilesConverter::validateInputLine(const std::string &currentLine,
+                                                            unsigned int lineNumber) {
+    std::vector<std::string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
     if (tokens.size() < ((height * width * nrOfConcentrationsForPosition) + 1)) {
         MS_throw(InvalidInputException, ERR_NR_CONCENTRATIONS);
     }
 
-    for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
-        double value = stod(*it);
+    for (auto it = tokens.begin(); it != tokens.end(); it++) {
+        double value = std::stod(*it);
 
         if (value < 0) {
             MS_throw(InvalidInputException,
-                     string(ERR_INVALID_VALUE_LINE)  +
+                     std::string(ERR_INVALID_VALUE_LINE)  +
                      StringManipulator::toString<unsigned int>(lineNumber) +
-                     string(ERR_INVALID_VALUE_TOKEN) + (*it)
+                     std::string(ERR_INVALID_VALUE_TOKEN) + (*it)
             );
         }
     }
 }
 
-void RectangularCsvToInputFilesConverter::processInputFile(ifstream &fin) {
-    string currentLine;
+void RectangularCsvToInputFilesConverter::processInputFile(std::ifstream &fin) {
+    std::string currentLine;
 
     unsigned int index = 1;
 
@@ -190,11 +191,11 @@ void RectangularCsvToInputFilesConverter::processInputFile(ifstream &fin) {
     }
 }
 
-void RectangularCsvToInputFilesConverter::processLine(const string &line, unsigned int outputIndex) {
-    ofstream fout;
+void RectangularCsvToInputFilesConverter::processLine(const std::string &line, unsigned int outputIndex) {
+    std::ofstream fout;
     double simulationTime;
 
-    vector<double> concentrations = splitLineInConcentrations(line, simulationTime);
+    std::vector<double> concentrations = splitLineInConcentrations(line, simulationTime);
 
     initOutputFile(fout, outputIndex, simulationTime);
 
@@ -203,14 +204,15 @@ void RectangularCsvToInputFilesConverter::processLine(const string &line, unsign
             fout << concentrations[(i * width) + j] << OUTPUT_SEPARATOR;
         }
 
-        fout << concentrations[(i * width) + width - 1] << endl;
+        fout << concentrations[(i * width) + width - 1] << std::endl;
     }
 }
 
-vector<double> RectangularCsvToInputFilesConverter::splitLineInConcentrations(const string &line, double &simulationTime) {
-    vector<double> concentrations(height * width);
+std::vector<double> RectangularCsvToInputFilesConverter::splitLineInConcentrations(const std::string &line,
+                                                                                   double &simulationTime) {
+    std::vector<double> concentrations(height * width);
 
-    vector<string> tokens = StringManipulator::split(line, INPUT_FILE_SEPARATOR);
+    std::vector<std::string> tokens = StringManipulator::split(line, INPUT_FILE_SEPARATOR);
 
     simulationTime = computeSimulationTime(tokens[0]);
     concentrationsIndex = 1;
@@ -228,8 +230,8 @@ vector<double> RectangularCsvToInputFilesConverter::splitLineInConcentrations(co
     return concentrations;
 }
 
-void RectangularCsvToInputFilesConverter::splitLineInConcentrations(vector<double> &concentrations,
-                                                                    vector<string> &tokens,
+void RectangularCsvToInputFilesConverter::splitLineInConcentrations(std::vector<double> &concentrations,
+                                                                    std::vector<std::string> &tokens,
                                                                     unsigned int rowIndex) {
     while (columnsIterator->hasNext()) {
         unsigned int sectorIndex = columnsIterator->number();
@@ -243,7 +245,7 @@ void RectangularCsvToInputFilesConverter::splitLineInConcentrations(vector<doubl
     }
 }
 
-inline double RectangularCsvToInputFilesConverter::computeSimulationTime(const string &token) {
+double RectangularCsvToInputFilesConverter::computeSimulationTime(const std::string &token) {
     double simulationTime = stod(token);
 
     if (simulationTime < 0) {
@@ -253,8 +255,8 @@ inline double RectangularCsvToInputFilesConverter::computeSimulationTime(const s
     return simulationTime;
 }
 
-inline double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int concentrationIndex,
-                                                                             vector<string> &tokens) {
+double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int concentrationIndex,
+                                                                             std::vector<std::string> &tokens) {
     double concentration = 0;
     double totalConcentration = 0;
 
@@ -280,17 +282,17 @@ inline double RectangularCsvToInputFilesConverter::computeNextPositionConcentrat
     }
 }
 
-inline double RectangularCsvToInputFilesConverter::computeConcentration(const string &concentration) {
+double RectangularCsvToInputFilesConverter::computeConcentration(const std::string &concentration) {
     return ((nrOfConcentrationsForPosition == 1) && (useLogScaling))
                 ? computeScaledConcentration(concentration)
                 : computeNonScaledConcentration(concentration);
 }
 
-inline double RectangularCsvToInputFilesConverter::computeNonScaledConcentration(const string &concentration) {
+double RectangularCsvToInputFilesConverter::computeNonScaledConcentration(const std::string &concentration) {
     return stod(concentration);
 }
 
-inline double RectangularCsvToInputFilesConverter::computeScaledConcentration(const string &concentration) {
+double RectangularCsvToInputFilesConverter::computeScaledConcentration(const std::string &concentration) {
     double scaledConcentration = stod(concentration);
 
     // Convert all concentrations which are lower than 1 to 1,
@@ -302,16 +304,17 @@ inline double RectangularCsvToInputFilesConverter::computeScaledConcentration(co
     return log2(scaledConcentration);
 }
 
-inline double RectangularCsvToInputFilesConverter::computeNormalisedConcentration(double concentration) {
+double RectangularCsvToInputFilesConverter::computeNormalisedConcentration(double concentration) {
     return (concentration / maximumConcentration);
 }
 
-void RectangularCsvToInputFilesConverter::updateMaximumConcentration(const string &currentLine, double &maximumConcentration) {
+void RectangularCsvToInputFilesConverter::updateMaximumConcentration(const std::string &currentLine,
+                                                                     double &maximumConcentration) {
     double simulationTime;
 
-    vector<double> concentrations = splitLineInConcentrations(currentLine, simulationTime);
+    std::vector<double> concentrations = splitLineInConcentrations(currentLine, simulationTime);
 
-    for (vector<double>::iterator it = concentrations.begin(); it != concentrations.end(); it++) {
+    for (std::vector<double>::iterator it = concentrations.begin(); it != concentrations.end(); it++) {
         if ((*it) > maximumConcentration) {
             maximumConcentration = (*it);
         }
@@ -320,15 +323,15 @@ void RectangularCsvToInputFilesConverter::updateMaximumConcentration(const strin
 
 
 // Constants
-const string RectangularCsvToInputFilesConverter::OUTPUT_EXTENSION        = ".in";
-const string RectangularCsvToInputFilesConverter::OUTPUT_SEPARATOR        = " ";
-const string RectangularCsvToInputFilesConverter::OUTPUT_FILE_SEPARATOR   = "_";
-const string RectangularCsvToInputFilesConverter::INPUT_FILE_SEPARATOR    = ",";
+const std::string RectangularCsvToInputFilesConverter::OUTPUT_EXTENSION        = ".in";
+const std::string RectangularCsvToInputFilesConverter::OUTPUT_SEPARATOR        = " ";
+const std::string RectangularCsvToInputFilesConverter::OUTPUT_FILE_SEPARATOR   = "_";
+const std::string RectangularCsvToInputFilesConverter::INPUT_FILE_SEPARATOR    = ",";
 
-const string RectangularCsvToInputFilesConverter::ERR_NEG_CONCENTRATION               = "All concentrations must be non-negative.";
-const string RectangularCsvToInputFilesConverter::ERR_SELECTED_CONCENTRATION_INDEX    = "The selected concentration index (0-based indexing) should be smaller than the number of concentrations.";
-const string RectangularCsvToInputFilesConverter::ERR_NR_CONCENTRATIONS               = "The number of concentrations in the input file does not match the values of the input parameters height and width.";
-const string RectangularCsvToInputFilesConverter::ERR_NEG_SIM_TIME                    = "The simulation time must be non-negative.";
-const string RectangularCsvToInputFilesConverter::ERR_INPUT_OPEN                      = "The input file could not be opened.";
-const string RectangularCsvToInputFilesConverter::ERR_INVALID_VALUE_LINE              = "Invalid value on line: ";
-const string RectangularCsvToInputFilesConverter::ERR_INVALID_VALUE_TOKEN             = ", value: ";
+const std::string RectangularCsvToInputFilesConverter::ERR_NEG_CONCENTRATION               = "All concentrations must be non-negative.";
+const std::string RectangularCsvToInputFilesConverter::ERR_SELECTED_CONCENTRATION_INDEX    = "The selected concentration index (0-based indexing) should be smaller than the number of concentrations.";
+const std::string RectangularCsvToInputFilesConverter::ERR_NR_CONCENTRATIONS               = "The number of concentrations in the input file does not match the values of the input parameters height and width.";
+const std::string RectangularCsvToInputFilesConverter::ERR_NEG_SIM_TIME                    = "The simulation time must be non-negative.";
+const std::string RectangularCsvToInputFilesConverter::ERR_INPUT_OPEN                      = "The input file could not be opened.";
+const std::string RectangularCsvToInputFilesConverter::ERR_INVALID_VALUE_LINE              = "Invalid value on line: ";
+const std::string RectangularCsvToInputFilesConverter::ERR_INVALID_VALUE_TOKEN             = ", value: ";

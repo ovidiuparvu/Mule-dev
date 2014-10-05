@@ -8,11 +8,11 @@
 #include <fstream>
 #include <string>
 
-using namespace std;
 using namespace multiscale::analysis;
 
 
-ClusterDetector::ClusterDetector(int maxPileupNumber, double maxPileupIntensity, bool debugMode) : Detector(debugMode) {
+ClusterDetector::ClusterDetector(int maxPileupNumber, double maxPileupIntensity, bool debugMode)
+                                 : Detector(debugMode) {
     this->eps = 0;
     this->minPoints = 0;
 
@@ -32,14 +32,16 @@ int ClusterDetector::getMinPoints() {
     return minPoints;
 }
 
-vector<Cluster> const &ClusterDetector::getClusters() {
+std::vector<Cluster> const &ClusterDetector::getClusters() {
     return clusters;
 }
 
 void ClusterDetector::setEps(double eps) {
     setDetectorSpecificFieldsInitialisationFlag();
 
-    this->eps = NumericRangeManipulator::convertFromRange<double, int>(EPS_REAL_MIN, EPS_REAL_MAX, EPS_MIN, EPS_MAX, eps);
+    this->eps = NumericRangeManipulator::convertFromRange<double, int>(
+                    EPS_REAL_MIN, EPS_REAL_MAX, EPS_MIN, EPS_MAX, eps
+                );
 }
 
 void ClusterDetector::setMinPoints(int minPoints) {
@@ -54,27 +56,28 @@ void ClusterDetector::initialiseDetectorSpecificFields() {
 }
 
 void ClusterDetector::createDetectorSpecificTrackbars() {
-    createTrackbar(TRACKBAR_MINPOINTS, WIN_OUTPUT_IMAGE, &minPoints, MIN_POINTS_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_EPS, WIN_OUTPUT_IMAGE, &eps, EPS_MAX, nullptr, nullptr);
+    cv::createTrackbar(TRACKBAR_MINPOINTS, WIN_OUTPUT_IMAGE, &minPoints, MIN_POINTS_MAX, nullptr, nullptr);
+    cv::createTrackbar(TRACKBAR_EPS, WIN_OUTPUT_IMAGE, &eps, EPS_MAX, nullptr, nullptr);
 }
 
 void ClusterDetector::clearPreviousDetectionResults() {
     clusters.clear();
 }
 
-string ClusterDetector::getDetectorTypeAsString() {
+std::string ClusterDetector::getDetectorTypeAsString() {
     return DETECTOR_TYPE;
 }
 
 void ClusterDetector::processImageAndDetect() {
-    vector<Entity> entities;
+    std::vector<Entity> entities;
 
     detectEntitiesInImage(entities);
     detectAndAnalyseClusters(entities, clusters);
 }
 
-void ClusterDetector::detectAndAnalyseClusters(const vector<Entity> &entities, vector<Cluster> &clusters) {
-    vector<int> clusterIndexes(entities.size(), DBSCAN::CLUSTERING_UNCLASSIFIED);
+void ClusterDetector::detectAndAnalyseClusters(const std::vector<Entity> &entities,
+                                               std::vector<Cluster> &clusters) {
+    std::vector<int> clusterIndexes(entities.size(), DBSCAN::CLUSTERING_UNCLASSIFIED);
     int nrOfClusters;
 
     detectClusters(entities, clusterIndexes, nrOfClusters);
@@ -82,12 +85,19 @@ void ClusterDetector::detectAndAnalyseClusters(const vector<Entity> &entities, v
     analyseClusters(clusters);
 }
 
-void ClusterDetector::detectClusters(const vector<Entity> &entities, vector<int> &clusterIndexes, int &nrOfClusters) {
-    DBSCAN().run(convertEntities(entities), clusterIndexes, nrOfClusters, convertEpsValue(), getValidMinPointsValue());
+void ClusterDetector::detectClusters(const std::vector<Entity> &entities, std::vector<int> &clusterIndexes,
+                                     int &nrOfClusters) {
+    DBSCAN().run(
+        convertEntities(entities),
+        clusterIndexes,
+        nrOfClusters,
+        convertEpsValue(),
+        getValidMinPointsValue()
+    );
 }
 
-vector<shared_ptr<DataPoint>> ClusterDetector::convertEntities(const vector<Entity> &entities) {
-    vector<shared_ptr<DataPoint>> dataPoints;
+std::vector<std::shared_ptr<DataPoint>> ClusterDetector::convertEntities(const std::vector<Entity> &entities) {
+    std::vector<std::shared_ptr<DataPoint>> dataPoints;
 
     convertNonPiledUpEntities(entities, dataPoints);
     convertPiledUpEntities(entities, dataPoints);
@@ -95,25 +105,29 @@ vector<shared_ptr<DataPoint>> ClusterDetector::convertEntities(const vector<Enti
     return dataPoints;
 }
 
-void ClusterDetector::convertNonPiledUpEntities(const vector<Entity> &entities, vector<shared_ptr<DataPoint> > &dataPoints) {
+void ClusterDetector::convertNonPiledUpEntities(const std::vector<Entity> &entities,
+                                                std::vector<std::shared_ptr<DataPoint> > &dataPoints) {
     for (const Entity &entity : entities) {
-        dataPoints.push_back(shared_ptr<DataPoint>(new Entity(entity)));
+        dataPoints.push_back(std::shared_ptr<DataPoint>(new Entity(entity)));
     }
 }
 
-void ClusterDetector::convertPiledUpEntities(const vector<Entity> &entities, vector<shared_ptr<DataPoint> > &dataPoints) {
+void ClusterDetector::convertPiledUpEntities(const std::vector<Entity> &entities,
+                                             std::vector<std::shared_ptr<DataPoint> > &dataPoints) {
     for (const Entity &entity : entities) {
         int nrOfPiledUpEntities = entity.getPileUpDegree();
 
         // Consider only the above entities (at level 2+)
         for (int i = 1; i < nrOfPiledUpEntities; i++) {
-            dataPoints.push_back(shared_ptr<DataPoint>(new Entity(entity)));
+            dataPoints.push_back(std::shared_ptr<DataPoint>(new Entity(entity)));
         }
     }
 }
 
-void ClusterDetector::addEntitiesToClusters(const vector<Entity> &entities, const vector<int> &clusterIndexes,
-                                            int nrOfClusters, vector<Cluster> &clusters) {
+void ClusterDetector::addEntitiesToClusters(const std::vector<Entity> &entities,
+                                            const std::vector<int> &clusterIndexes,
+                                            int nrOfClusters,
+                                            std::vector<Cluster> &clusters) {
     if (nrOfClusters > 1) {
         int nrOfEntities = entities.size();
 
@@ -129,16 +143,16 @@ void ClusterDetector::addEntitiesToClusters(const vector<Entity> &entities, cons
     }
 }
 
-void ClusterDetector::analyseClusters(vector<Cluster> &clusters) {
+void ClusterDetector::analyseClusters(std::vector<Cluster> &clusters) {
     analyseClustersOriginDependentValues(clusters);
 
     avgClusterednessDegree = computeClusterednessIndex(clusters);
     avgDensity = computeAveragePileUpDegree(clusters);
 }
 
-void ClusterDetector::analyseClustersOriginDependentValues(vector<Cluster> &clusters) {
+void ClusterDetector::analyseClustersOriginDependentValues(std::vector<Cluster> &clusters) {
     for (Cluster &cluster : clusters) {
-        vector<Point> convexHull = getClusterConvexHull(cluster);
+        std::vector<cv::Point> convexHull = getClusterConvexHull(cluster);
 
         if (convexHull.size() > 0) {
             updateClusterOriginDependentValues(cluster, convexHull);
@@ -146,7 +160,8 @@ void ClusterDetector::analyseClustersOriginDependentValues(vector<Cluster> &clus
     }
 }
 
-void ClusterDetector::updateClusterOriginDependentValues(Cluster &cluster, const vector<Point> &clusterConvexHull) {
+void ClusterDetector::updateClusterOriginDependentValues(Cluster &cluster,
+                                                         const std::vector<cv::Point> &clusterConvexHull) {
     unsigned int minDistancePointIndex = Geometry2D::minimumDistancePointIndex(clusterConvexHull, origin);
 
     double distance = Geometry2D::distanceBtwPoints(clusterConvexHull[minDistancePointIndex], origin);
@@ -155,22 +170,22 @@ void ClusterDetector::updateClusterOriginDependentValues(Cluster &cluster, const
     cluster.setOriginDependentMembers(distance, angle);
 }
 
-vector<Point> ClusterDetector::getClusterConvexHull(Cluster &cluster) {
-    vector<Point> clusterConvexHull;
+std::vector<cv::Point> ClusterDetector::getClusterConvexHull(Cluster &cluster) {
+    std::vector<cv::Point> clusterConvexHull;
 
-    vector<Point2f> entitiesConvexHull = cluster.getEntitiesConvexHull();
+    std::vector<cv::Point2f> entitiesConvexHull = cluster.getEntitiesConvexHull();
 
-    Mat(entitiesConvexHull).copyTo(clusterConvexHull);
+    cv::Mat(entitiesConvexHull).copyTo(clusterConvexHull);
 
     return clusterConvexHull;
 }
 
-double ClusterDetector::computeClusterednessIndex(const vector<Cluster> &clusters) {
+double ClusterDetector::computeClusterednessIndex(const std::vector<Cluster> &clusters) {
     return (clusters.size() > 0) ? Silhouette::computeOverallAverageMeasure(clusters)
                                  : 0;
 }
 
-double ClusterDetector::computeAveragePileUpDegree(vector<Cluster> &clusters) {
+double ClusterDetector::computeAveragePileUpDegree(std::vector<Cluster> &clusters) {
     double averagePileUpDegree = 0;
 
     for (Cluster &cluster : clusters) {
@@ -183,18 +198,22 @@ double ClusterDetector::computeAveragePileUpDegree(vector<Cluster> &clusters) {
                                : (averagePileUpDegree / nrOfClusters);
 }
 
-vector<shared_ptr<SpatialEntityPseudo3D>> ClusterDetector::getCollectionOfSpatialEntityPseudo3D() {
-    vector<shared_ptr<SpatialEntityPseudo3D>> convertedClusters;
+std::vector<std::shared_ptr<SpatialEntityPseudo3D>> ClusterDetector::getCollectionOfSpatialEntityPseudo3D() {
+    std::vector<std::shared_ptr<SpatialEntityPseudo3D>> convertedClusters;
 
     for (Cluster &cluster : clusters) {
-        convertedClusters.push_back(shared_ptr<SpatialEntityPseudo3D>(new Cluster(cluster)));
+        convertedClusters.push_back(std::shared_ptr<SpatialEntityPseudo3D>(new Cluster(cluster)));
     }
 
     return convertedClusters;
 }
 
 double ClusterDetector::convertEpsValue() {
-    return NumericRangeManipulator::convertFromRange<int, double>(EPS_MIN, EPS_MAX, EPS_REAL_MIN, EPS_REAL_MAX, eps);
+    return (
+        NumericRangeManipulator::convertFromRange<int, double>(
+            EPS_MIN, EPS_MAX, EPS_REAL_MIN, EPS_REAL_MAX, eps
+        )
+    );
 }
 
 int ClusterDetector::getValidMinPointsValue() {
@@ -204,10 +223,10 @@ int ClusterDetector::getValidMinPointsValue() {
 
 
 // Constants
-const string ClusterDetector::DETECTOR_TYPE = "Clusters";
+const std::string ClusterDetector::DETECTOR_TYPE = "Clusters";
 
-const string ClusterDetector::TRACKBAR_EPS           = "Eps (Multiplied by 10)";
-const string ClusterDetector::TRACKBAR_MINPOINTS     = "Minimum number of points";
+const std::string ClusterDetector::TRACKBAR_EPS           = "Eps (Multiplied by 10)";
+const std::string ClusterDetector::TRACKBAR_MINPOINTS     = "Minimum number of points";
 
 const int ClusterDetector::MIN_POINTS_MIN    = 0;
 const int ClusterDetector::MIN_POINTS_MAX    = 100;

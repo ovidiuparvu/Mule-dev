@@ -15,11 +15,10 @@
 
 using namespace multiscale::video;
 using namespace multiscale;
-using namespace std;
 
 
-PolarCsvToInputFilesConverter::PolarCsvToInputFilesConverter(const string &inputFilepath,
-                                                             const string &outputFilepath,
+PolarCsvToInputFilesConverter::PolarCsvToInputFilesConverter(const std::string &inputFilepath,
+                                                             const std::string &outputFilepath,
                                                              unsigned int nrOfConcentricCircles,
                                                              unsigned int nrOfSectors,
                                                              unsigned int nrOfConcentrationsForPosition,
@@ -48,7 +47,7 @@ PolarCsvToInputFilesConverter::~PolarCsvToInputFilesConverter() {
 }
 
 void PolarCsvToInputFilesConverter::convert() {
-    ifstream fin;
+    std::ifstream fin;
 
     validateSelectedConcentrationIndex();
     validateInput(fin);
@@ -60,19 +59,19 @@ void PolarCsvToInputFilesConverter::convert() {
     fin.close();
 }
 
-void PolarCsvToInputFilesConverter::initInputFile(ifstream &fin) {
-    fin.open(inputFilepath, ios_base::in);
+void PolarCsvToInputFilesConverter::initInputFile(std::ifstream &fin) {
+    fin.open(inputFilepath, std::ios_base::in);
 
     if (!fin.is_open()) {
         MS_throw(FileOpenException, ERR_INPUT_OPEN);
     }
 }
 
-void PolarCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin) {
-    double maximumConcentration = numeric_limits<double>::min();
-    string currentLine;
+void PolarCsvToInputFilesConverter::initMaximumConcentration(std::ifstream &fin) {
+    double maximumConcentration = std::numeric_limits<double>::min();
+    std::string currentLine;
 
-    fin.open(inputFilepath, ios_base::in);
+    fin.open(inputFilepath, std::ios_base::in);
 
     if (!fin.is_open()) {
         MS_throw(FileOpenException, ERR_INPUT_OPEN);
@@ -92,21 +91,22 @@ void PolarCsvToInputFilesConverter::initMaximumConcentration(ifstream &fin) {
     this->maximumConcentration = maximumConcentration;
 }
 
-void PolarCsvToInputFilesConverter::initOutputFile(ofstream &fout, unsigned int index, double &simulationTime) {
+void PolarCsvToInputFilesConverter::initOutputFile(std::ofstream &fout, unsigned int index,
+                                                   double &simulationTime) {
     fout.open(
-                (
-                    (outputFilepath + OUTPUT_FILE_SEPARATOR) +
-                    StringManipulator::toString(index) +
-                    OUTPUT_EXTENSION
-                ),
-                ios_base::trunc
-            );
+        (
+            (outputFilepath + OUTPUT_FILE_SEPARATOR) +
+            StringManipulator::toString(index) +
+            OUTPUT_EXTENSION
+        ),
+        std::ios_base::trunc
+    );
 
     assert(fout.is_open());
 
     fout << nrOfConcentricCircles << OUTPUT_SEPARATOR
          << nrOfSectors           << OUTPUT_SEPARATOR
-         << simulationTime        << endl;
+         << simulationTime        << std::endl;
 }
 
 void PolarCsvToInputFilesConverter::initIterators(const NumberIteratorType &numberIteratorType) {
@@ -132,11 +132,11 @@ void PolarCsvToInputFilesConverter::validateSelectedConcentrationIndex() {
     }
 }
 
-void PolarCsvToInputFilesConverter::validateInput(ifstream &fin) {
+void PolarCsvToInputFilesConverter::validateInput(std::ifstream &fin) {
     unsigned int lineNumber = 0;
-    string currentLine;
+    std::string currentLine;
 
-    fin.open(inputFilepath, ios_base::in);
+    fin.open(inputFilepath, std::ios_base::in);
 
     if (!fin.is_open()) {
         MS_throw(FileOpenException, ERR_INPUT_OPEN);
@@ -156,28 +156,29 @@ void PolarCsvToInputFilesConverter::validateInput(ifstream &fin) {
     fin.close();
 }
 
-void PolarCsvToInputFilesConverter::validateInputLine(const string &currentLine, unsigned int lineNumber) {
-    vector<string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
+void PolarCsvToInputFilesConverter::validateInputLine(const std::string &currentLine,
+                                                      unsigned int lineNumber) {
+    std::vector<std::string> tokens = StringManipulator::split(currentLine, INPUT_FILE_SEPARATOR);
 
     if (tokens.size() < (((nrOfConcentricCircles - 1) * nrOfSectors + 1) * nrOfConcentrationsForPosition)) {
         MS_throw(InvalidInputException, ERR_NR_CONCENTRATIONS);
     }
 
-    for (vector<string>::iterator it = tokens.begin(); it != tokens.end(); it++) {
-        double value = stod(*it);
+    for (auto it = tokens.begin(); it != tokens.end(); it++) {
+        double value = std::stod(*it);
 
         if (value < 0) {
             MS_throw(InvalidInputException,
-                     string(ERR_INVALID_VALUE_LINE)  +
+                     std::string(ERR_INVALID_VALUE_LINE)  +
                      StringManipulator::toString<unsigned int>(lineNumber) +
-                     string(ERR_INVALID_VALUE_TOKEN) + (*it)
+                     std::string(ERR_INVALID_VALUE_TOKEN) + (*it)
             );
         }
     }
 }
 
-void PolarCsvToInputFilesConverter::processInputFile(ifstream &fin) {
-    string currentLine;
+void PolarCsvToInputFilesConverter::processInputFile(std::ifstream &fin) {
+    std::string currentLine;
 
     unsigned int index = 1;
 
@@ -191,29 +192,30 @@ void PolarCsvToInputFilesConverter::processInputFile(ifstream &fin) {
     }
 }
 
-void PolarCsvToInputFilesConverter::processLine(const string &line, unsigned int outputIndex) {
-    ofstream fout;
+void PolarCsvToInputFilesConverter::processLine(const std::string &line, unsigned int outputIndex) {
+    std::ofstream fout;
     double simulationTime;
 
-    vector<double> concentrations = splitLineInConcentrations(line, simulationTime);
+    std::vector<double> concentrations = splitLineInConcentrations(line, simulationTime);
 
     initOutputFile(fout, outputIndex, simulationTime);
 
-    fout << concentrations[0] << endl;
+    fout << concentrations[0] << std::endl;
 
     for (unsigned int i = 1; i < nrOfConcentricCircles; i++) {
         for (unsigned int j = 0; j < (nrOfSectors - 1); j++) {
             fout << concentrations[(i - 1) * nrOfSectors + j + 1] << OUTPUT_SEPARATOR;
         }
 
-        fout << concentrations[i * nrOfSectors] << endl;
+        fout << concentrations[i * nrOfSectors] << std::endl;
     }
 }
 
-vector<double> PolarCsvToInputFilesConverter::splitLineInConcentrations(const string &line, double &simulationTime) {
-    vector<double> concentrations(((nrOfSectors * (nrOfConcentricCircles - 1)) + 1));
+std::vector<double> PolarCsvToInputFilesConverter::splitLineInConcentrations(const std::string &line,
+                                                                             double &simulationTime) {
+    std::vector<double> concentrations(((nrOfSectors * (nrOfConcentricCircles - 1)) + 1));
 
-    vector<string> tokens = StringManipulator::split(line, INPUT_FILE_SEPARATOR);
+    std::vector<std::string> tokens = StringManipulator::split(line, INPUT_FILE_SEPARATOR);
 
     simulationTime = computeSimulationTime(tokens[0]);
     concentrationsIndex = 1;
@@ -235,8 +237,8 @@ vector<double> PolarCsvToInputFilesConverter::splitLineInConcentrations(const st
     return concentrations;
 }
 
-void PolarCsvToInputFilesConverter::splitFirstPartInConcentrations(vector<double> &concentrations,
-                                                                   const vector<string> &tokens,
+void PolarCsvToInputFilesConverter::splitFirstPartInConcentrations(std::vector<double> &concentrations,
+                                                                   const std::vector<std::string> &tokens,
                                                                    unsigned int circleIndex) {
     unsigned int sectorIndex = 1;
 
@@ -249,8 +251,8 @@ void PolarCsvToInputFilesConverter::splitFirstPartInConcentrations(vector<double
     concentrationsIndex++;
 }
 
-void PolarCsvToInputFilesConverter::splitOtherPartsInConcentrations(vector<double> &concentrations,
-                                                                    const vector<string> &tokens,
+void PolarCsvToInputFilesConverter::splitOtherPartsInConcentrations(std::vector<double> &concentrations,
+                                                                    const std::vector<std::string> &tokens,
                                                                     unsigned int circleIndex) {
     while (sectorsIterator->hasNext()) {
         unsigned int sectorIndex = sectorsIterator->number();
@@ -265,7 +267,7 @@ void PolarCsvToInputFilesConverter::splitOtherPartsInConcentrations(vector<doubl
     }
 }
 
-inline double PolarCsvToInputFilesConverter::computeSimulationTime(const string &token) {
+double PolarCsvToInputFilesConverter::computeSimulationTime(const std::string &token) {
     double simulationTime = stod(token);
 
     if (simulationTime < 0) {
@@ -275,9 +277,9 @@ inline double PolarCsvToInputFilesConverter::computeSimulationTime(const string 
     return simulationTime;
 }
 
-inline double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned int circleIndex,
-                                                                              int concentrationIndex,
-                                                                              const vector<string> &tokens) {
+double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned int circleIndex,
+                                                                       int concentrationIndex,
+                                                                       const std::vector<std::string> &tokens) {
     double concentration = 0;
     double totalConcentration = 0;
 
@@ -304,20 +306,23 @@ inline double PolarCsvToInputFilesConverter::computeNextPositionConcentration(un
     }
 }
 
-inline double PolarCsvToInputFilesConverter::computeConcentration(const string &concentration, int circleIndex) {
+double PolarCsvToInputFilesConverter::computeConcentration(const std::string &concentration,
+                                                           int circleIndex) {
     return ((nrOfConcentrationsForPosition == 1) && (useLogScaling))
                 ? computeScaledConcentration(concentration, circleIndex)
                 : computeNonScaledConcentration(concentration, circleIndex);
 }
 
-inline double PolarCsvToInputFilesConverter::computeNonScaledConcentration(const string &concentration, int circleIndex) {
-    double amount = stod(concentration);
+double PolarCsvToInputFilesConverter::computeNonScaledConcentration(const std::string &concentration,
+                                                                    int circleIndex) {
+    double amount = std::stod(concentration);
 
     return computeConcentrationWrtArea(amount, circleIndex);
 }
 
-inline double PolarCsvToInputFilesConverter::computeScaledConcentration(const string &concentration, int circleIndex) {
-    double amount = stod(concentration);
+double PolarCsvToInputFilesConverter::computeScaledConcentration(const std::string &concentration,
+                                                                 int circleIndex) {
+    double amount = std::stod(concentration);
 
     double scaledConcentration = computeConcentrationWrtArea(amount, circleIndex);
 
@@ -330,20 +335,21 @@ inline double PolarCsvToInputFilesConverter::computeScaledConcentration(const st
     return log2(scaledConcentration);
 }
 
-inline double PolarCsvToInputFilesConverter::computeConcentrationWrtArea(double amount, int circleIndex) {
+double PolarCsvToInputFilesConverter::computeConcentrationWrtArea(double amount, int circleIndex) {
     return amount / ((2 * (circleIndex - 1)) + 1);
 }
 
-inline double PolarCsvToInputFilesConverter::computeNormalisedConcentration(double concentration, int circleIndex) {
+double PolarCsvToInputFilesConverter::computeNormalisedConcentration(double concentration, int circleIndex) {
     return (concentration / maximumConcentration);
 }
 
-void PolarCsvToInputFilesConverter::updateMaximumConcentration(const string &currentLine, double &maximumConcentration) {
+void PolarCsvToInputFilesConverter::updateMaximumConcentration(const std::string &currentLine,
+                                                               double &maximumConcentration) {
     double simulationTime;
 
-    vector<double> concentrations = splitLineInConcentrations(currentLine, simulationTime);
+    std::vector<double> concentrations = splitLineInConcentrations(currentLine, simulationTime);
 
-    for (vector<double>::iterator it = concentrations.begin(); it != concentrations.end(); it++) {
+    for (auto it = concentrations.begin(); it != concentrations.end(); it++) {
         if ((*it) > maximumConcentration) {
             maximumConcentration = (*it);
         }
@@ -354,15 +360,15 @@ void PolarCsvToInputFilesConverter::updateMaximumConcentration(const string &cur
 // Constants
 const int PolarCsvToInputFilesConverter::RADIUS_MIN  = 1;
 
-const string PolarCsvToInputFilesConverter::OUTPUT_EXTENSION        = ".in";
-const string PolarCsvToInputFilesConverter::OUTPUT_SEPARATOR        = " ";
-const string PolarCsvToInputFilesConverter::OUTPUT_FILE_SEPARATOR   = "_";
-const string PolarCsvToInputFilesConverter::INPUT_FILE_SEPARATOR    = ",";
+const std::string PolarCsvToInputFilesConverter::OUTPUT_EXTENSION        = ".in";
+const std::string PolarCsvToInputFilesConverter::OUTPUT_SEPARATOR        = " ";
+const std::string PolarCsvToInputFilesConverter::OUTPUT_FILE_SEPARATOR   = "_";
+const std::string PolarCsvToInputFilesConverter::INPUT_FILE_SEPARATOR    = ",";
 
-const string PolarCsvToInputFilesConverter::ERR_NEG_CONCENTRATION               = "All concentrations must be non-negative.";
-const string PolarCsvToInputFilesConverter::ERR_SELECTED_CONCENTRATION_INDEX    = "The selected concentration index (0-based indexing) should be smaller than the number of concentrations.";
-const string PolarCsvToInputFilesConverter::ERR_NR_CONCENTRATIONS               = "The number of concentrations in the input file does not match the values of the input parameters height and width.";
-const string PolarCsvToInputFilesConverter::ERR_NEG_SIM_TIME                    = "The simulation time must be non-negative.";
-const string PolarCsvToInputFilesConverter::ERR_INPUT_OPEN                      = "The input file could not be opened.";
-const string PolarCsvToInputFilesConverter::ERR_INVALID_VALUE_LINE              = "Invalid value on line: ";
-const string PolarCsvToInputFilesConverter::ERR_INVALID_VALUE_TOKEN             = ", value: ";
+const std::string PolarCsvToInputFilesConverter::ERR_NEG_CONCENTRATION               = "All concentrations must be non-negative.";
+const std::string PolarCsvToInputFilesConverter::ERR_SELECTED_CONCENTRATION_INDEX    = "The selected concentration index (0-based indexing) should be smaller than the number of concentrations.";
+const std::string PolarCsvToInputFilesConverter::ERR_NR_CONCENTRATIONS               = "The number of concentrations in the input file does not match the values of the input parameters height and width.";
+const std::string PolarCsvToInputFilesConverter::ERR_NEG_SIM_TIME                    = "The simulation time must be non-negative.";
+const std::string PolarCsvToInputFilesConverter::ERR_INPUT_OPEN                      = "The input file could not be opened.";
+const std::string PolarCsvToInputFilesConverter::ERR_INVALID_VALUE_LINE              = "Invalid value on line: ";
+const std::string PolarCsvToInputFilesConverter::ERR_INVALID_VALUE_TOKEN             = ", value: ";

@@ -3,7 +3,6 @@
 
 #include <memory>
 
-using namespace std;
 
 namespace multiscale {
 
@@ -20,7 +19,7 @@ namespace multiscale {
                 /*!
                  * \param point Data point to which the distance is measured
                  */
-                virtual double distanceTo(shared_ptr<DataPoint> point) = 0;
+                virtual double distanceTo(std::shared_ptr<DataPoint> point) = 0;
 
         };
 

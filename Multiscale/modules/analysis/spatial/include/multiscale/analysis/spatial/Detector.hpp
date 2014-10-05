@@ -3,18 +3,15 @@
 
 #include "multiscale/analysis/spatial/SpatialEntityPseudo3D.hpp"
 
-#include "opencv2/imgproc/imgproc.hpp"
-#include "opencv2/highgui/highgui.hpp"
-
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/xml_parser.hpp>
+
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
 
 #include <fstream>
 
 namespace pt = boost::property_tree;
-
-using namespace cv;
-using namespace std;
 
 
 namespace multiscale {
@@ -26,27 +23,27 @@ namespace multiscale {
 
             protected:
 
-                double avgClusterednessDegree;      /*!< For regions:
-                                                         Average degree of clusteredness of all regions
+                double avgClusterednessDegree;          /*!< For regions:
+                                                             Average degree of clusteredness of all regions
 
-                                                         For clusters:
-                                                         Index of clusteredness for all clusters */
-                double avgDensity;                  /*!< For regions:
-                                                         Average density of all regions
+                                                             For clusters:
+                                                             Index of clusteredness for all clusters */
+                double avgDensity;                      /*!< For regions:
+                                                             Average density of all regions
 
-                                                         For clusters:
-                                                         Average pile up degree of all clusters */
+                                                             For clusters:
+                                                             Average pile up degree of all clusters */
 
-                Mat image;                      /*!< Input image */
-                string outputFilepath;          /*!< Path of the output file */
-                bool debugMode;                 /*!< Flag for indicating if debug mode is set */
+                cv::Mat image;                          /*!< Input image */
+                std::string outputFilepath;                  /*!< Path of the output file */
+                bool debugMode;                         /*!< Flag for indicating if debug mode is set */
 
-                Mat outputImage;                /*!< Image for displaying the results */
+                cv::Mat outputImage;                    /*!< Image for displaying the results */
 
                 bool detectMethodCalled;                /*!< Flag for indicating if the detect method was called */
                 bool detectorSpecificFieldsInitialised; /*!< Flag for indicating if the parameters were */
 
-                Point origin;                   /*!< The point representing the origin */
+                cv::Point origin;                       /*!< The point representing the origin */
 
             public:
 
@@ -57,13 +54,13 @@ namespace multiscale {
                 /*!
                  * \param inputImage The input image
                  */
-                void detect(const Mat &inputImage);
+                void detect(const cv::Mat &inputImage);
 
                 //! Output the results to the given file
                 /*!
                  * \param outputFilepath Path to the output file
                  */
-                void outputResults(const string &outputFilepath);
+                void outputResults(const std::string &outputFilepath);
 
             protected:
 
@@ -96,10 +93,10 @@ namespace multiscale {
                  *
                  * \param inputImage The input image
                  */
-                bool isValidInputImage(const Mat& inputImage);
+                bool isValidInputImage(const cv::Mat& inputImage);
 
-                //! Get the type of the employed detector as a string
-                virtual string getDetectorTypeAsString() = 0;
+                //! Get the type of the employed detector as a std::string
+                virtual std::string getDetectorTypeAsString() = 0;
 
                 //! Run the detection procedure
                 void detect();
@@ -118,27 +115,29 @@ namespace multiscale {
                  *      - Point B is the centre point of the bounding rotated rectangle.
                  *
                  *  \param polygon              Given polygon
-                 *  \param closestPointIndex    Index of the closest point to the origin from the set of points defining the polygon
+                 *  \param closestPointIndex    Index of the closest point to the origin from the set of points
+                 *                              defining the polygon
                  */
-                double polygonAngle(const vector<Point> &polygon, unsigned int closestPointIndex);
+                double polygonAngle(const std::vector<cv::Point> &polygon, unsigned int closestPointIndex);
 
                 //! Compute the angle of the polygon
                 /*! Compute the angle determined by the closest point to the origin and the points P1 and P2.
                  * These points are obtained from the intersection of the convex hull with the line AB, determined
-                 * by points A and B. Points A and B are the middle points of the sides of the rotated rectangle enclosing
-                 * the polygon that are orthogonal to the line which is the nearest to the closestPoint.
+                 * by points A and B. Points A and B are the middle points of the sides of the rotated rectangle
+                 * enclosing the polygon that are orthogonal to the line which is the nearest to the closestPoint.
                  *
                  *  \param polygonConvexHull    Convex hull of polygon
-                 *  \param closestPoint         Closest point to the origin from the set of points defining the polygon
+                 *  \param closestPoint         Closest point to the origin from the set of points defining the
+                 *                              polygon
                  */
-                double polygonAngle(const vector<Point> &polygonConvexHull, const Point &closestPoint);
+                double polygonAngle(const std::vector<cv::Point> &polygonConvexHull, const cv::Point &closestPoint);
 
                 //! Get the centre of the minimum area bounding rectangle
                 /*!
                  * \param polygon   The polygon
                  * \param centre    The centre of the bounding rectangle
                  */
-                void minAreaRectCentre(const vector<Point> &polygon, Point &centre);
+                void minAreaRectCentre(const std::vector<cv::Point> &polygon, cv::Point &centre);
 
                 //! Find the points for determining the angle of the polygon
                 /*!
@@ -147,18 +146,22 @@ namespace multiscale {
                  *  \param closestPoint         Closest point to the origin from the set of points defining the polygon
                  *  \param goodPointsForAngle   The points which are relevant for computing the angle
                  */
-                void findGoodPointsForAngle(const vector<Point> &polygonConvexHull, const Point &boundingRectCentre,
-                                            const Point &closestPoint, vector<Point> &goodPointsForAngle);
+                void findGoodPointsForAngle(const std::vector<cv::Point> &polygonConvexHull,
+                                            const cv::Point &boundingRectCentre,
+                                            const cv::Point &closestPoint,
+                                            std::vector<cv::Point> &goodPointsForAngle);
 
                 //! Find good intersection points for computing the angle of the polygon
                 /*!
                  * \param polygonConvexHull     The convex hull of the polygon
-                 * \param edgePointA            Point A on the edge
-                 * \param edgePointB            Point B on the edge
+                 * \param edgePointA            cv::Point A on the edge
+                 * \param edgePointB            cv::Point B on the edge
                  * \param goodPointsForAngle    The "good" points for computing the angle
                  */
-                void findGoodIntersectionPoints(const vector<Point> &polygonConvexHull, const Point &edgePointA,
-                                                const Point &edgePointB, vector<Point> &goodPointsForAngle);
+                void findGoodIntersectionPoints(const std::vector<cv::Point> &polygonConvexHull,
+                                                const cv::Point &edgePointA,
+                                                const cv::Point &edgePointB,
+                                                std::vector<cv::Point> &goodPointsForAngle);
 
 
                 //! Display the results in a window
@@ -180,19 +183,19 @@ namespace multiscale {
                 /*!
                  * \param fout Output file stream
                  */
-                void outputResultsToCsvFile(ofstream &fout);
+                void outputResultsToCsvFile(std::ofstream &fout);
 
                 //! Output the pseudo 3D spatial entities to a csv file
                 /*!
                  * \param fout Output file stream
                  */
-                void outputSpatialEntitiesToCsvFile(ofstream &fout);
+                void outputSpatialEntitiesToCsvFile(std::ofstream &fout);
 
                 //! Output the averaged measures to a csv file
                 /*!
                  * \param fout Output file stream
                  */
-                void outputAveragedMeasuresToCsvFile(ofstream &fout);
+                void outputAveragedMeasuresToCsvFile(std::ofstream &fout);
 
                 //! Output the results to an xml file
                 void outputResultsToXMLFile();
@@ -201,7 +204,7 @@ namespace multiscale {
                 /*!
                  * \param filepath Output file path
                  */
-                void outputResultsToXMLFile(const string &filepath);
+                void outputResultsToXMLFile(const std::string &filepath);
 
                 //! Add the pseudo 3D spatial entities to the property tree
                 /*!
@@ -222,7 +225,7 @@ namespace multiscale {
                  * \param value         The value of the numeric state variable
                  */
                 void addNumericStateVariableToPropertyTree(pt::ptree &propertyTree,
-                                                           const string &name, double value);
+                                                           const std::string &name, double value);
 
                 //! Construct the property tree corresponding to the given spatial entity
                 /*!
@@ -235,17 +238,19 @@ namespace multiscale {
                  * \param spatialEntity Spatial entity
                  * \param propertyTree  Property tree
                  */
-                void addSpatialEntityPropertiesToTree(SpatialEntityPseudo3D &spatialEntity, pt::ptree &propertyTree);
+                void addSpatialEntityPropertiesToTree(SpatialEntityPseudo3D &spatialEntity,
+                                                      pt::ptree &propertyTree);
 
                 //! Add the type of the spatial entity to the property tree
                 /*!
                  * \param spatialEntity Spatial entity
                  * \param propertyTree  Property tree
                  */
-                void addSpatialEntityTypeToPropertyTree(SpatialEntityPseudo3D &spatialEntity, pt::ptree &propertyTree);
+                void addSpatialEntityTypeToPropertyTree(SpatialEntityPseudo3D &spatialEntity,
+                                                        pt::ptree &propertyTree);
 
                 //! Get the collection of pseudo 3D entities detected in the image
-                virtual vector<shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() = 0;
+                virtual std::vector<std::shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() = 0;
 
                 //! Process the input image and detect objects/entities of interest
                 virtual void processImageAndDetect() = 0;
@@ -273,7 +278,7 @@ namespace multiscale {
                  * \param image The image
                  * \param windowName The name of the window
                  */
-                void displayImage(const Mat &image, const string &windowName);
+                void displayImage(const cv::Mat &image, const std::string &windowName);
 
                 //! Print error message, because the detect method was not called before calling the output method
                 void printOutputErrorMessage();
@@ -281,48 +286,48 @@ namespace multiscale {
             protected:
 
                 // Constants
-                static const string OUTPUT_CLUSTEREDNESS;
-                static const string OUTPUT_DENSITY;
+                static const std::string OUTPUT_CLUSTEREDNESS;
+                static const std::string OUTPUT_DENSITY;
 
-                static const string ERR_OUTPUT_WITHOUT_DETECT;
-                static const string ERR_OUTPUT_FILE;
-                static const string ERR_INVALID_IMAGE;
+                static const std::string ERR_OUTPUT_WITHOUT_DETECT;
+                static const std::string ERR_OUTPUT_FILE;
+                static const std::string ERR_INVALID_IMAGE;
 
-                static const string CSV_EXTENSION;
-                static const string IMG_EXTENSION;
-                static const string XML_EXTENSION;
+                static const std::string CSV_EXTENSION;
+                static const std::string IMG_EXTENSION;
+                static const std::string XML_EXTENSION;
 
-                static const string WIN_OUTPUT_IMAGE;
+                static const std::string WIN_OUTPUT_IMAGE;
 
                 static const int KEY_ESC;
                 static const int KEY_SAVE;
 
-                static const string LABEL_ATTRIBUTE;
-                static const string LABEL_COMMENT;
+                static const std::string LABEL_ATTRIBUTE;
+                static const std::string LABEL_COMMENT;
 
-                static const string LABEL_COMMENT_CONTENTS;
+                static const std::string LABEL_COMMENT_CONTENTS;
 
-                static const string LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE;
-                static const string LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY;
+                static const std::string LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE;
+                static const std::string LABEL_EXPERIMENT_TIMEPOINT_SPATIAL_ENTITY;
 
-                static const string LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_NAME;
-                static const string LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_VALUE;
+                static const std::string LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_NAME;
+                static const std::string LABEL_EXPERIMENT_TIMEPOINT_NUMERIC_STATE_VARIABLE_VALUE;
 
-                static const string LABEL_SPATIAL_ENTITY_SPATIAL_TYPE;
-                static const string LABEL_SPATIAL_ENTITY_CLUSTEREDNESS;
-                static const string LABEL_SPATIAL_ENTITY_DENSITY;
-                static const string LABEL_SPATIAL_ENTITY_AREA;
-                static const string LABEL_SPATIAL_ENTITY_PERIMETER;
-                static const string LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN;
-                static const string LABEL_SPATIAL_ENTITY_ANGLE;
-                static const string LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE;
-                static const string LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE;
-                static const string LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE;
-                static const string LABEL_SPATIAL_ENTITY_CENTROID_X;
-                static const string LABEL_SPATIAL_ENTITY_CENTROID_Y;
+                static const std::string LABEL_SPATIAL_ENTITY_SPATIAL_TYPE;
+                static const std::string LABEL_SPATIAL_ENTITY_CLUSTEREDNESS;
+                static const std::string LABEL_SPATIAL_ENTITY_DENSITY;
+                static const std::string LABEL_SPATIAL_ENTITY_AREA;
+                static const std::string LABEL_SPATIAL_ENTITY_PERIMETER;
+                static const std::string LABEL_SPATIAL_ENTITY_DISTANCE_FROM_ORIGIN;
+                static const std::string LABEL_SPATIAL_ENTITY_ANGLE;
+                static const std::string LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE;
+                static const std::string LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE;
+                static const std::string LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE;
+                static const std::string LABEL_SPATIAL_ENTITY_CENTROID_X;
+                static const std::string LABEL_SPATIAL_ENTITY_CENTROID_Y;
 
-                static const string LABEL_AVG_CLUSTEREDNESS;
-                static const string LABEL_AVG_DENSITY;
+                static const std::string LABEL_AVG_CLUSTEREDNESS;
+                static const std::string LABEL_AVG_DENSITY;
 
         };
 

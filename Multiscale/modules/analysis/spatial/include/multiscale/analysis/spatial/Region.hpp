@@ -7,9 +7,6 @@
 
 #include <vector>
 
-using namespace cv;
-using namespace std;
-
 
 namespace multiscale {
 
@@ -20,21 +17,23 @@ namespace multiscale {
 
             private:
 
-                vector<Point>           outerBorderPolygon;   /*!< Polygon defining the outer border of the region */
-                vector<vector<Point> >  innerBorderPolygons;  /*!< Polygon defining the inner borders of the region */
+                std::vector<cv::Point>
+                    outerBorderPolygon;   /*!< Polygon defining the outer border of the region */
+                std::vector<std::vector<cv::Point> >
+                    innerBorderPolygons;  /*!< Polygon defining the inner borders of the region */
 
             public:
                 
                 Region(double density, double distanceFromOrigin, double angleWrtOrigin,
-                       const vector<Point> &outerBorderPolygon,
-                       const vector<vector<Point> > &innerBorderPolygons);
+                       const std::vector<cv::Point> &outerBorderPolygon,
+                       const std::vector<std::vector<cv::Point> > &innerBorderPolygons);
                 ~Region();
 
                 //! Get the polygon defining the outer border of the region
-                const vector<Point>& getOuterBorderPolygon() const;
+                const std::vector<cv::Point>& getOuterBorderPolygon() const;
 
                 //! Get the polygons defining the inner borders of the region
-                const vector<vector<Point> > &getInnerBorderPolygons() const;
+                const std::vector<std::vector<cv::Point> > &getInnerBorderPolygons() const;
 
             private:
 
@@ -56,8 +55,8 @@ namespace multiscale {
                  * \param innerBorderPolygons   The polygon defining the inner borders of the region
                  */
                 void validateInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
-                                         const vector<Point> &outerBorderPolygon,
-                                         const vector<vector<Point> > &innerBorderPolygons);
+                                         const std::vector<cv::Point> &outerBorderPolygon,
+                                         const std::vector<std::vector<cv::Point> > &innerBorderPolygons);
 
                 //! Check if the input values are valid or not
                 /*!
@@ -77,8 +76,8 @@ namespace multiscale {
                  * \param innerBorderPolygons   The polygon defining the inner borders of the region
                  */
                 bool areValidInputValues(double density, double distanceFromOrigin, double angleWrtOrigin,
-                                         const vector<Point> &outerBorderPolygon,
-                                         const vector<vector<Point> > &innerBorderPolygons);
+                                         const std::vector<cv::Point> &outerBorderPolygon,
+                                         const std::vector<std::vector<cv::Point> > &innerBorderPolygons);
 
                 //! Check if the given input outer/inner border polygons are valid
                 /*!
@@ -89,8 +88,8 @@ namespace multiscale {
                  * \param outerBorderPolygon    The polygon defining the outer border of the region
                  * \param innerBorderPolygons   The polygon defining the inner borders of the region
                  */
-                bool areValidInputPolygons(const vector<Point> &outerBorderPolygon,
-                                           const vector<vector<Point> > &innerBorderPolygons);
+                bool areValidInputPolygons(const std::vector<cv::Point> &outerBorderPolygon,
+                                           const std::vector<std::vector<cv::Point> > &innerBorderPolygons);
 
                 //! Check if the given input polygons are valid
                 /*!
@@ -100,7 +99,7 @@ namespace multiscale {
                  *
                  *  \param polygons The given collection of polygons
                  */
-                bool areValidInputPolygons(const vector<vector<Point> > &polygons);
+                bool areValidInputPolygons(const std::vector<std::vector<cv::Point> > &polygons);
 
                 //! Check if the given input polygons are valid
                 /*!
@@ -110,7 +109,7 @@ namespace multiscale {
                  *
                  *  \param polygon The given polygon
                  */
-                bool isValidInputPolygon(const vector<Point> &polygon);
+                bool isValidInputPolygon(const std::vector<cv::Point> &polygon);
 
                 //! Update the value of the clusteredness degree
                 void updateClusterednessDegree() override;

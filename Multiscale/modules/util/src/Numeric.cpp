@@ -115,7 +115,7 @@ double Numeric::log(double number, double base) {
 }
 
 double Numeric::maximum(double number1, double number2, double number3) {
-    return max(max(number1, number2), number3);
+    return std::max(std::max(number1, number2), number3);
 }
 
 double Numeric::maximum(const std::vector<double> &numbers) {
@@ -254,7 +254,7 @@ double Numeric::variance(const std::vector<double> &numbers) {
     return Numeric::variance(numbers, nrOfValues);
 }
 
-void Numeric::printNoValuesWarningMessage(const string &functionName) {
+void Numeric::printNoValuesWarningMessage(const std::string &functionName) {
     ConsolePrinter::printWarningMessage(WRN_NOT_ENOUGH_VALUES_START + functionName + WRN_NOT_ENOUGH_VALUES_END);
 }
 
@@ -407,7 +407,7 @@ double Numeric::mode(const std::vector<double> &numbers, unsigned int nrOfValues
 
 double Numeric::computeMode(const std::vector<double> &values, unsigned int nrOfValues) {
     unsigned int index = 0;
-    double modeValue = numeric_limits<double>::min();
+    double modeValue = std::numeric_limits<double>::min();
     double countValue = 0;
     int maxCount = 0;
 

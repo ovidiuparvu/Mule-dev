@@ -103,15 +103,13 @@ namespace multiscale {
 
                 //! Add the semantic types to the type semantics table
                 /*!
-                 * \param propertyTree          The property tree corresponding to the xml input file
-                 * \param typeSemanticsTable    The type semantics table to which semantics type will be added
+                 * \param propertyTree  The property tree corresponding to the xml input file
                  */
                 void addSemanticTypesToTable(const pt::ptree &propertyTree);
 
                 //! Add a semantic type to the type semantics table
                 /*!
-                 * \param semanticTypeTree      The property tree corresponding to the semantic type
-                 * \param typeSemanticsTable    The type semantics table to which the semantic type will be added
+                 * \param semanticTypeTree  The property tree corresponding to the semantic type
                  */
                 void addSemanticTypeToTable(const pt::ptree &semanticTypeTree);
 

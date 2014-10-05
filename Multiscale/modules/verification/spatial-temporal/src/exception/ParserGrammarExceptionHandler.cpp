@@ -10,10 +10,10 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-void ParserGrammarExceptionHandler::handleUnexpectedTokenException(const string &initialString,
-                                                                   const string &errorString,
-                                                                   const string &expectedToken) {
-    string errorMessage;
+void ParserGrammarExceptionHandler::handleUnexpectedTokenException(const std::string &initialString,
+                                                                   const std::string &errorString,
+                                                                   const std::string &expectedToken) {
+    std::string errorMessage;
 
     if (errorString.length() == 0) {
         errorMessage = handleExpectedTokenAtEndOfString(initialString, expectedToken);
@@ -24,10 +24,10 @@ void ParserGrammarExceptionHandler::handleUnexpectedTokenException(const string 
     MS_throw(InvalidInputException, errorMessage);
 }
 
-void ParserGrammarExceptionHandler::handleProbabilityException(const string &initialString,
-                                                               const string &errorString,
-                                                               const string &expectedToken) {
-    stringstream strStream;
+void ParserGrammarExceptionHandler::handleProbabilityException(const std::string &initialString,
+                                                               const std::string &errorString,
+                                                               const std::string &expectedToken) {
+    std::stringstream strStream;
 
     unsigned errorPositionIndex = initialString.length() - errorString.length();
 
@@ -37,18 +37,18 @@ void ParserGrammarExceptionHandler::handleProbabilityException(const string &ini
                 << "\" such that it is in the interval [0, 1]. "
                 << "You can find the error starting position emphasised by \">>>\" and \"<<<\" below (character "
                 << (errorPositionIndex + 1)
-                << "):" << endl
+                << "):" << std::endl
                 << initialString.substr(0, errorPositionIndex) + ">>>" +
                    initialString.at(errorPositionIndex) + "<<<" + errorString.substr(1);
 
     MS_throw(InvalidInputException, strStream.str());
 }
 
-void ParserGrammarExceptionHandler::handleUnparseableInputException(const string &initialString, const string &errorString) {
-    stringstream strStream;
+void ParserGrammarExceptionHandler::handleUnparseableInputException(const std::string &initialString, const std::string &errorString) {
+    std::stringstream strStream;
 
     unsigned correctlyParsedStringLength = initialString.length() - errorString.length();
-    string correctlyParsedString = initialString.substr(0, correctlyParsedStringLength);
+    std::string correctlyParsedString = initialString.substr(0, correctlyParsedStringLength);
 
     strStream   << getIntroductoryErrorMessage()
                 << "Please rewrite the unparseable part \""
@@ -56,17 +56,17 @@ void ParserGrammarExceptionHandler::handleUnparseableInputException(const string
                 << "\" of the query. "
                 << "You can find the unparseable input emphasised by \">>>\" and \"<<<\" below (character "
                 << (correctlyParsedString.length() + 1)
-                << "): " << endl
+                << "): " << std::endl
                 << correctlyParsedString + ">>>" + trimRight(errorString) + "<<<";
 
     MS_throw(InvalidInputException, strStream.str());
 }
 
-void ParserGrammarExceptionHandler::handleExtraInputException(const string &initialString, const string &extraInput) {
-    stringstream strStream;
+void ParserGrammarExceptionHandler::handleExtraInputException(const std::string &initialString, const std::string &extraInput) {
+    std::stringstream strStream;
 
     unsigned correctlyParsedStringLength = initialString.length() - extraInput.length();
-    string correctlyParsedString = initialString.substr(0, correctlyParsedStringLength);
+    std::string correctlyParsedString = initialString.substr(0, correctlyParsedStringLength);
 
     strStream   << getIntroductoryErrorMessage()
                 << "Please remove the additional tokens \""
@@ -75,16 +75,16 @@ void ParserGrammarExceptionHandler::handleExtraInputException(const string &init
                 << correctlyParsedString << "\". "
                 << "You can find the extra input emphasised by \">>>\" and \"<<<\" below (character "
                 << (correctlyParsedString.length() + 1)
-                << "): " << endl
+                << "): " << std::endl
                 << correctlyParsedString + ">>>" + trimRight(extraInput) + "<<<";
 
     MS_throw(InvalidInputException, strStream.str());
 }
 
-string ParserGrammarExceptionHandler::handleUnexpectedTokenInString(const string &initialString,
-                                                                    const string &errorString,
-                                                                    const string &expectedToken) {
-    stringstream strStream;
+std::string ParserGrammarExceptionHandler::handleUnexpectedTokenInString(const std::string &initialString,
+                                                                    const std::string &errorString,
+                                                                    const std::string &expectedToken) {
+    std::stringstream strStream;
 
     unsigned errorPositionIndex = initialString.length() - errorString.length();
 
@@ -97,37 +97,37 @@ string ParserGrammarExceptionHandler::handleUnexpectedTokenInString(const string
                 << "\". "
                 << "You can find the error starting position emphasised by \">>>\" and \"<<<\" below (character "
                 << (errorPositionIndex + 1)
-                << "):" << endl
+                << "):" << std::endl
                 << initialString.substr(0, errorPositionIndex) + ">>>" +
                    initialString.at(errorPositionIndex) + "<<<" + errorString.substr(1);
 
     return strStream.str();
 }
 
-string ParserGrammarExceptionHandler::handleExpectedTokenAtEndOfString(const string &initialString,
-                                                                       const string &expectedToken) {
-    stringstream strStream;
+std::string ParserGrammarExceptionHandler::handleExpectedTokenAtEndOfString(const std::string &initialString,
+                                                                       const std::string &expectedToken) {
+    std::stringstream strStream;
 
     strStream   << getIntroductoryErrorMessage()
                 << "The token \""
                 << expectedToken
                 << "\" was expected after the provided input query and was not found. "
-                << "The input query is displayed below: " << endl
+                << "The input query is displayed below: " << std::endl
                 << initialString;
 
     return strStream.str();
 }
 
-string ParserGrammarExceptionHandler::trimRight(const string &inputString) {
+std::string ParserGrammarExceptionHandler::trimRight(const std::string &inputString) {
     return StringManipulator::trimRight(inputString);
 }
 
-string ParserGrammarExceptionHandler::getIntroductoryErrorMessage() {
-    stringstream strStream;
+std::string ParserGrammarExceptionHandler::getIntroductoryErrorMessage() {
+    std::stringstream strStream;
 
-    strStream   << endl
+    strStream   << std::endl
                 << "You have to consider the syntax rules specified by the grammar of the language "
-                << "when writing logical queries." << endl << endl;
+                << "when writing logical queries." << std::endl << std::endl;
 
     return strStream.str();
 }

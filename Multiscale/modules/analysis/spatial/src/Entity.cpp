@@ -7,7 +7,7 @@ using namespace multiscale::analysis;
 
 
 Entity::Entity(unsigned int pileUpDegree, double area, double perimeter,
-               const Point2f &centre, const vector<Point2f> &contourPoints) {
+               const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints) {
     validateInputValues(pileUpDegree, area, perimeter, centre, contourPoints);
 
     this->pileUpDegree = pileUpDegree;
@@ -23,7 +23,7 @@ Entity::Entity(const Entity &entity) {
     pileUpDegree = entity.pileUpDegree;
     area = entity.area;
     perimeter = entity.perimeter;
-    centre = Point2f(entity.centre.x, entity.centre.y);
+    centre = cv::Point2f(entity.centre.x, entity.centre.y);
     contourPoints = entity.contourPoints;
 }
 
@@ -41,22 +41,22 @@ double Entity::getPerimeter() const {
     return perimeter;
 }
 
-Point2f Entity::getCentre() const {
+cv::Point2f Entity::getCentre() const {
     return centre;
 }
 
-vector<Point2f> Entity::getContourPoints() const {
+std::vector<cv::Point2f> Entity::getContourPoints() const {
     return contourPoints;
 }
 
-string Entity::toString() {
+std::string Entity::toString() {
     return StringManipulator::toString<unsigned int>(pileUpDegree) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
            StringManipulator::toString<double>(centre.y);
 }
 
-double Entity::distanceTo(shared_ptr<DataPoint> point) {
-    shared_ptr<Entity> entity = dynamic_pointer_cast<Entity>(point);
+double Entity::distanceTo(std::shared_ptr<DataPoint> point) {
+    std::shared_ptr<Entity> entity = std::dynamic_pointer_cast<Entity>(point);
 
     return Geometry2D::distanceBtwPoints(centre, entity->centre);
 }
@@ -65,15 +65,16 @@ double Entity::distanceTo(const Entity &entity) {
     return Geometry2D::distanceBtwPoints(centre, entity.centre);
 }
 
-void Entity::validateInputValues(unsigned int pileUpDegree, double area, double perimeter, const Point2f &centre,
-                                 const vector<Point2f> &contourPoints) {
+void Entity::validateInputValues(unsigned int pileUpDegree, double area, double perimeter,
+                                 const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints) {
     if (!areValid(pileUpDegree, area, perimeter, centre, contourPoints)) {
         MS_throw(InvalidInputException, ERR_INPUT);
     }
 }
 
-bool Entity::areValid(unsigned int pileUpDegree, double area, double perimeter, const Point2f &centre, const vector<Point2f> &contourPoints) {
-    for (const Point2f &point: contourPoints) {
+bool Entity::areValid(unsigned int pileUpDegree, double area, double perimeter,
+                      const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints) {
+    for (const cv::Point2f &point: contourPoints) {
         if ((point.x < 0) || (point.y < 0)) {
             return false;
         }
@@ -83,13 +84,16 @@ bool Entity::areValid(unsigned int pileUpDegree, double area, double perimeter, 
         (pileUpDegree > 0) &&
         (area > 0) &&
         (perimeter > 0) &&
-        ((Numeric::greaterOrEqual(centre.x, 0)) && (Numeric::greaterOrEqual(centre.y, 0)))
+        (
+            (Numeric::greaterOrEqual(centre.x, 0)) &&
+            (Numeric::greaterOrEqual(centre.y, 0))
+        )
     );
 }
 
 
 // Constants
-const string Entity::ERR_INPUT           = "Invalid input parameters were provided to the constructor.";
-const string Entity::ERR_DISTANCE        = "The distance to an object of a different type cannot be computed.";
+const std::string Entity::ERR_INPUT           = "Invalid input parameters were provided to the constructor.";
+const std::string Entity::ERR_DISTANCE        = "The distance to an object of a different type cannot be computed.";
 
-const string Entity::OUTPUT_SEPARATOR    = ",";
+const std::string Entity::OUTPUT_SEPARATOR    = ",";

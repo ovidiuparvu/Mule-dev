@@ -9,9 +9,6 @@
 
 #include <utility>
 
-using namespace std;
-using namespace cv;
-
 
 namespace multiscale {
 
@@ -20,7 +17,7 @@ namespace multiscale {
         /*! Define a wrapper for polygons i.e. pairs (o, i) where o = outer contour
          *  and i = collection of inner contours/holes
          */
-        typedef std::pair<std::vector<Point>, std::vector<std::vector<Point>>> Polygon;
+        typedef std::pair<std::vector<cv::Point>, std::vector<std::vector<cv::Point>>> Polygon;
 
 
         //! Class for detecting regions of high intensity in grayscale images
@@ -36,7 +33,7 @@ namespace multiscale {
                 int regionAreaThresh;               /*!< Threshold for considering a region */
                 int thresholdValue;                 /*!< Value of the threshold for the threshold filter */
 
-                vector<Region> regions;             /*!< Regions detected in the image */
+                std::vector<Region> regions;             /*!< Regions detected in the image */
 
             public:
 
@@ -70,8 +67,8 @@ namespace multiscale {
                 //! Get the value of field thresholdValue
                 int getThresholdValue();
 
-                //! Get a const reference to the vector of detected regions
-                vector<Region> const &getRegions();
+                //! Get a const reference to the std::vector of detected regions
+                std::vector<Region> const &getRegions();
 
                 //! Set the value of field alpha
                 /*!
@@ -138,8 +135,8 @@ namespace multiscale {
                 //! Create the trackbars
                 void createDetectorSpecificTrackbars() override;
 
-                //! Get the type of the detector as a string
-                string getDetectorTypeAsString() override;
+                //! Get the type of the detector as a std::string
+                std::string getDetectorTypeAsString() override;
 
                 //! Process the given image
                 /*! Apply filters to the image, threshold it, find its contours,
@@ -147,7 +144,7 @@ namespace multiscale {
                  *  to find their distance from the origin, their area and the angle determined
                  *  by the points from the contour which are on the edge and the closest point to
                  *  the origin. Return all the polygons together with the processed information
-                 *  as a vector of regions.
+                 *  as a std::vector of regions.
                  */
                 void processImageAndDetect() override;
 
@@ -157,27 +154,27 @@ namespace multiscale {
                  *
                  *  \param processedImage The processed image
                  */
-                void changeContrastAndBrightness(Mat &processedImage);
+                void changeContrastAndBrightness(cv::Mat &processedImage);
 
                 //! Smooth out differences in the image
                 /*! Apply a Gaussian blur filter
                  *
                  * \param image The image
                  */
-                void smoothImage(Mat &image);
+                void smoothImage(cv::Mat &image);
 
                 //! Apply the morphological close operator on the image
                 /*!
                  * \param image The image
                  */
-                void morphologicalClose(Mat &image);
+                void morphologicalClose(cv::Mat &image);
 
                 //! Apply the threshold filter on the image
                 /*!
                  * \param image The image
                  * \param thresholdedImage The thresholded image
                  */
-                void thresholdImage(const Mat &image, Mat &thresholdedImage);
+                void thresholdImage(const cv::Mat &image, cv::Mat &thresholdedImage);
 
                 //! Find the regions in the image
                 /*! Find the contours, approximate the polygons and extract the required
@@ -186,51 +183,51 @@ namespace multiscale {
                  * \param image The image
                  * \param regions The regions in the image
                  */
-                void findRegions(const Mat &image, vector<Region> &regions);
+                void findRegions(const cv::Mat &image, std::vector<Region> &regions);
 
                 //! Compute the average clusteredness degree and average density
                 /*!
                  * \param regions The regions in the image
                  */
-                void computeAverageMeasures(vector<Region> &regions);
+                void computeAverageMeasures(std::vector<Region> &regions);
 
                 //! Compute the average clusteredness degree
                 /*!
                  * \param regions The regions in the image
                  */
-                void computeAverageClusterednessDegree(vector<Region> &regions);
+                void computeAverageClusterednessDegree(std::vector<Region> &regions);
 
-                //! Compute the sum of the average distances from each region centroid to all the other regions' centroids
+                //! Compute the average distances sum between regions' centroids
                 /*!
                  * \param regions The regions in the image
                  */
-                double sumOfAverageCentroidDistances(vector<Region> &regions);
+                double sumOfAverageCentroidDistances(std::vector<Region> &regions);
 
                 //! Compute the average density
                 /*!
                  * \param regions The regions in the image
                  */
-                void computeAverageDensity(vector<Region> &regions);
+                void computeAverageDensity(std::vector<Region> &regions);
 
                 //! Find polygons in image
                 /*!
                  * \param image The image
                  */
-                vector<Polygon> findPolygonsInImage(const Mat &image);
+                std::vector<Polygon> findPolygonsInImage(const cv::Mat &image);
 
                 //! Create polygons from the given contours and hierarchy information
                 /*!
                  * \param contours  The given contours
                  * \param hierarchy The information regarding the hierarchy between contours
                  */
-                vector<Polygon> createPolygons(const vector<vector<Point> > &contours,
-                                               const vector<Vec4i> &hierarchy);
+                std::vector<Polygon> createPolygons(const std::vector<std::vector<cv::Point> > &contours,
+                                               const std::vector<cv::Vec4i> &hierarchy);
 
                 //! Check if the number of contours is greater than 0
                 /*!
                  * \param contours  The given contours
                  */
-                bool existContours(const vector<vector<Point> > &contours);
+                bool existContours(const std::vector<std::vector<cv::Point> > &contours);
 
                 //! Create polygons from the given contours and hierarchy information
                 /*!
@@ -238,9 +235,9 @@ namespace multiscale {
                  * \param hierarchy The information regarding the hierarchy between contours
                  * \param polygons  The collection of polygons created from the given contours
                  */
-                void createPolygonsFromContours(const vector<vector<Point> > &contours,
-                                                const vector<Vec4i> &hierarchy,
-                                                vector<Polygon> &polygons);
+                void createPolygonsFromContours(const std::vector<std::vector<cv::Point> > &contours,
+                                                const std::vector<cv::Vec4i> &hierarchy,
+                                                std::vector<Polygon> &polygons);
 
                 //! Create a new polygon considering the given contour index, contours and hierarchy information
                 /*!
@@ -248,8 +245,8 @@ namespace multiscale {
                  * \param contours      The collection of all contours
                  * \param hierarchy     The information regarding the hierarchy between contours
                  */
-                Polygon createPolygon(int contourIndex, const vector<vector<Point> > &contours,
-                                      const vector<Vec4i> &hierarchy);
+                Polygon createPolygon(int contourIndex, const std::vector<std::vector<cv::Point> > &contours,
+                                      const std::vector<cv::Vec4i> &hierarchy);
 
                 //! Set the outer contour of the polygon
                 /*!
@@ -258,8 +255,8 @@ namespace multiscale {
                  * \param hierarchy     The information regarding the hierarchy between contours
                  * \param polygon       The polygon for which the outer contour is set
                  */
-                void setPolygonOuterContour(int contourIndex, const vector<vector<Point> > &contours,
-                                            const vector<Vec4i> &hierarchy, Polygon &polygon);
+                void setPolygonOuterContour(int contourIndex, const std::vector<std::vector<cv::Point> > &contours,
+                                            const std::vector<cv::Vec4i> &hierarchy, Polygon &polygon);
 
                 //! Set the inner contours of the polygon
                 /*!
@@ -268,8 +265,8 @@ namespace multiscale {
                  * \param hierarchy     The information regarding the hierarchy between contours
                  * \param polygon       The polygon for which the outer contour is set
                  */
-                void setPolygonInnerContours(int contourIndex, const vector<vector<Point> > &contours,
-                                             const vector<Vec4i> &hierarchy, Polygon &polygon);
+                void setPolygonInnerContours(int contourIndex, const std::vector<std::vector<cv::Point> > &contours,
+                                             const std::vector<cv::Vec4i> &hierarchy, Polygon &polygon);
 
                 //! Approximate the outer contour of the given polygon
                 /*!
@@ -291,14 +288,14 @@ namespace multiscale {
                  *
                  * \param contour The given contour
                  */
-                bool isValidContour(const vector<Point> &contour);
+                bool isValidContour(const std::vector<cv::Point> &contour);
 
                 //! Check if the hole is valid
                 /*! Check if the area determined by the hole > THRESHOLD_HOLE_AREA
                  *
                  * \param hole  The contour of the hole
                  */
-                bool isValidHole(const vector<Point> &hole);
+                bool isValidHole(const std::vector<cv::Point> &hole);
 
                 //! Compute the density of the area delimited by the given polygon
                 /*!
@@ -309,11 +306,11 @@ namespace multiscale {
                  */
                 double regionDensity(const Polygon &polygon);
 
-                //! Clear the element present in the regions vector
+                //! Clear the element present in the regions std::vector
                 void clearPreviousDetectionResults() override;
 
                 //! Get the collection of clusters detected in the image
-                vector<shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() override;
+                std::vector<std::shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() override;
 
                 //! Output the results to the outputImage instance
                 void outputResultsToImage() override;
@@ -323,21 +320,23 @@ namespace multiscale {
                  * \param region        The given region
                  * \param outputImage   The given output image
                  */
-                void outputRegionToImage(const Region &region, Mat &outputImage);
+                void outputRegionToImage(const Region &region, cv::Mat &outputImage);
 
                 //! Output the outer border polygon of a region to the outputImage instance
                 /*!
                  * \param outerBorder   The polygon defining the outer border of the region
                  * \param outputImage   The given output image
                  */
-                void outputRegionOuterBorderToImage(const vector<Point> &outerBorder, Mat &outputImage);
+                void outputRegionOuterBorderToImage(const std::vector<cv::Point> &outerBorder,
+                                                    cv::Mat &outputImage);
 
                 //! Output the inner border polygons of a region to the outputImage instance
                 /*!
                  * \param innerBorders  The polygons defining the inner border(s) of the region
                  * \param outputImage   The given output image
                  */
-                void outputRegionInnerBordersToImage(const vector<vector<Point> > &innerBorders, Mat &outputImage);
+                void outputRegionInnerBordersToImage(const std::vector<std::vector<cv::Point> > &innerBorders,
+                                                     cv::Mat &outputImage);
 
                 //! Convert alpha from the range [0, ALPHA_MAX] to [ALPHA_REAL_MIN, ALPHA_REAL_MAX]
                 /*!
@@ -354,16 +353,16 @@ namespace multiscale {
             private:
 
                 // Constants
-                static const string DETECTOR_TYPE;
+                static const std::string DETECTOR_TYPE;
 
-                static const string TRACKBAR_ALPHA;
-                static const string TRACKBAR_BETA;
-                static const string TRACKBAR_KERNEL;
-                static const string TRACKBAR_MORPH;
-                static const string TRACKBAR_CANNY;
-                static const string TRACKBAR_EPSILON;
-                static const string TRACKBAR_REGION_AREA_THRESH;
-                static const string TRACKBAR_THRESHOLD;
+                static const std::string TRACKBAR_ALPHA;
+                static const std::string TRACKBAR_BETA;
+                static const std::string TRACKBAR_KERNEL;
+                static const std::string TRACKBAR_MORPH;
+                static const std::string TRACKBAR_CANNY;
+                static const std::string TRACKBAR_EPSILON;
+                static const std::string TRACKBAR_REGION_AREA_THRESH;
+                static const std::string TRACKBAR_THRESHOLD;
 
                 static const int HIERARCHY_NEXT_INDEX;
                 static const int HIERARCHY_PREV_INDEX;

@@ -13,7 +13,8 @@
 using namespace multiscale::video;
 
 
-CartesianToConcentrationsConverter::CartesianToConcentrationsConverter(const string &inputFilepath, const string &outputFilepath) {
+CartesianToConcentrationsConverter::CartesianToConcentrationsConverter(const std::string &inputFilepath,
+                                                                       const std::string &outputFilepath) {
     this->inputFilepath.assign(inputFilepath);
     this->outputFilepath.assign(outputFilepath);
 
@@ -30,7 +31,7 @@ void CartesianToConcentrationsConverter::convert() {
 }
 
 void CartesianToConcentrationsConverter::readInputData() {
-    ifstream fin(inputFilepath, ios_base::in);
+    std::ifstream fin(inputFilepath, std::ios_base::in);
 
     if (!fin.is_open()) {
         MS_throw(FileOpenException, ERR_INPUT_OPEN);
@@ -53,7 +54,7 @@ void CartesianToConcentrationsConverter::readInputData() {
     fin.close();
 }
 
-void CartesianToConcentrationsConverter::readHeaderLine(ifstream &fin) {
+void CartesianToConcentrationsConverter::readHeaderLine(std::ifstream &fin) {
     fin >> height >> width >> simulationTime;
 
     // Validate the header line
@@ -62,7 +63,7 @@ void CartesianToConcentrationsConverter::readHeaderLine(ifstream &fin) {
     if (simulationTime < 0) MS_throw(InvalidInputException, ERR_NEG_SIM_TIME);
 }
 
-void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) {
+void CartesianToConcentrationsConverter::readConcentrations(std::ifstream &fin) {
     int nrOfConcentrations = height * width;
 
     concentrations.resize(nrOfConcentrations);
@@ -83,18 +84,20 @@ void CartesianToConcentrationsConverter::readConcentrations(ifstream &fin) {
 }
 
 void CartesianToConcentrationsConverter::outputResults() {
-    RectangularGnuplotScriptGenerator::generateScript(concentrations, simulationTime, height, width, outputFilepath);
+    RectangularGnuplotScriptGenerator::generateScript(
+        concentrations, simulationTime, height, width, outputFilepath
+    );
 }
 
 
 // Constants
-const string CartesianToConcentrationsConverter::ERR_CONC                = "All concentrations have to be between 0 and 1.";
-const string CartesianToConcentrationsConverter::ERR_NONPOS_DIMENSION    = "The dimensions N and M must be positive.";
-const string CartesianToConcentrationsConverter::ERR_NEG_SIM_TIME        = "The simulation time must be non-negative.";
-const string CartesianToConcentrationsConverter::ERR_INPUT_OPEN          = "The input file could not be opened";
-const string CartesianToConcentrationsConverter::ERR_IN_EXTRA_DATA       = "The input file contains more data than required.";
+const std::string CartesianToConcentrationsConverter::ERR_CONC                = "All concentrations have to be between 0 and 1.";
+const std::string CartesianToConcentrationsConverter::ERR_NONPOS_DIMENSION    = "The dimensions N and M must be positive.";
+const std::string CartesianToConcentrationsConverter::ERR_NEG_SIM_TIME        = "The simulation time must be non-negative.";
+const std::string CartesianToConcentrationsConverter::ERR_INPUT_OPEN          = "The input file could not be opened";
+const std::string CartesianToConcentrationsConverter::ERR_IN_EXTRA_DATA       = "The input file contains more data than required.";
 
-const string CartesianToConcentrationsConverter::OUTPUT_FILE_EXTENSION   = ".out";
+const std::string CartesianToConcentrationsConverter::OUTPUT_FILE_EXTENSION   = ".out";
 
 const double CartesianToConcentrationsConverter::RADIUS_MIN  = 0.001;
 const double CartesianToConcentrationsConverter::RADIUS_MAX  = 0.3;

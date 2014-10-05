@@ -4,8 +4,6 @@
 #include <vector>
 #include <string>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -24,11 +22,11 @@ namespace multiscale {
                  * \param width Width of the grid
                  * \param outputFilepath Path of the output file
                  */
-                static void generateScript(const vector<double> &concentrations,
+                static void generateScript(const std::vector<double> &concentrations,
                                            double simulationTime,
                                            unsigned long height,
                                            unsigned long width,
-                                           const string &outputFilepath);
+                                           const std::string &outputFilepath);
 
             private:
 
@@ -40,7 +38,7 @@ namespace multiscale {
                  * \param height Height of the grid
                  * \param width Width of the grid
                  */
-                static void generateHeader(ofstream &fout, const string &outputFilepath,
+                static void generateHeader(std::ofstream &fout, const std::string &outputFilepath,
                                            double simulationTime, unsigned long height,
                                            unsigned long width);
 
@@ -51,16 +49,16 @@ namespace multiscale {
                  * \param width The width of the grid
                  * \param fout Output file stream
                  */
-                static void generateBody(const vector<double> &concentrations,
+                static void generateBody(const std::vector<double> &concentrations,
                                          unsigned long height,
                                          unsigned long width,
-                                         ofstream &fout);
+                                         std::ofstream &fout);
 
                 //! Generate the footer of the script
                 /*!
                  * \param fout Output file stream
                  */
-                static void generateFooter(ofstream &fout);
+                static void generateFooter(std::ofstream &fout);
 
                 //! Output the header of the script
                 /*!
@@ -71,12 +69,12 @@ namespace multiscale {
                  * \param width The width of the grid
                  * \param fout Output file stream
                  */
-                static void outputHeader(ifstream &fin,
-                                         const string &outputFilename,
+                static void outputHeader(std::ifstream &fin,
+                                         const std::string &outputFilename,
                                          double simulationTime,
                                          unsigned long height,
                                          unsigned long width,
-                                         ofstream &fout);
+                                         std::ofstream &fout);
 
                 //! Output the content of the script
                 /*!
@@ -85,35 +83,35 @@ namespace multiscale {
                  * \param width The width of the grid
                  * \param fout Output file stream
                  */
-                static void outputContent(const vector<double> &concentrations,
+                static void outputContent(const std::vector<double> &concentrations,
                                           unsigned long height,
                                           unsigned long width,
-                                          ofstream &fout);
+                                          std::ofstream &fout);
 
                 //! Output the footer of the script
                 /*!
                  * \param fin Input file stream
                  * \param fout Output file stream
                  */
-                static void outputFooter(ifstream &fin, ofstream &fout);
+                static void outputFooter(std::ifstream &fin, std::ofstream &fout);
 
             private:
 
                 // Constants
-                static const string HEADER_IN;
-                static const string CONTENT_IN;
-                static const string FOOTER_IN;
+                static const std::string HEADER_IN;
+                static const std::string CONTENT_IN;
+                static const std::string FOOTER_IN;
 
-                static const string REPLACE_HEADER_FILENAME;
-                static const string REPLACE_HEADER_HEIGHT;
-                static const string REPLACE_HEADER_WIDTH;
-                static const string REPLACE_HEADER_SIM_TIME;
+                static const std::string REPLACE_HEADER_FILENAME;
+                static const std::string REPLACE_HEADER_HEIGHT;
+                static const std::string REPLACE_HEADER_WIDTH;
+                static const std::string REPLACE_HEADER_SIM_TIME;
 
                 static const double REPLACE_DIMENSION_EXTRA;
 
-                static const string OUTPUT_SEPARATOR;
+                static const std::string OUTPUT_SEPARATOR;
 
-                static const string GNUPLOT_EXTENSION;
+                static const std::string GNUPLOT_EXTENSION;
 
 
         };

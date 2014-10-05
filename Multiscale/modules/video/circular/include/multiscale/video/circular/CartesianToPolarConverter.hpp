@@ -6,8 +6,6 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -18,19 +16,26 @@ namespace multiscale {
 
             private:
 
-                vector<AnnularSector>   annularSectors;     /*!< Resulting annular sectors */
-                vector<double>          concentrations;     /*!< Concentrations received as input */
+                std::vector<AnnularSector>
+                    annularSectors;             /*!< Resulting annular sectors */
+                std::vector<double>
+                    concentrations;             /*!< Concentrations received as input */
 
-                unsigned long nrOfConcentricCircles;    /*!< Number of concentric circles */
-                unsigned long nrOfSectors;              /*!< Number of sectors */
-                double        simulationTime;           /*!< Simulation time corresponding to the input data */
+                unsigned long
+                    nrOfConcentricCircles;      /*!< Number of concentric circles */
+                unsigned long
+                    nrOfSectors;                /*!< Number of sectors */
+                double
+                    simulationTime;             /*!< Simulation time corresponding to the input data */
 
-                string inputFilepath;   /*!< Path to the input file */
-                string outputFilepath;  /*!< Path to the output file */
+                std::string
+                    inputFilepath;              /*!< Path to the input file */
+                std::string
+                    outputFilepath;             /*!< Path to the output file */
 
             public:
 
-                CartesianToPolarConverter (const string &inputFilepath, const string &outputFilepath);
+                CartesianToPolarConverter(const std::string &inputFilepath, const std::string &outputFilepath);
                 ~CartesianToPolarConverter();
 
                 //! Start the conversion
@@ -51,13 +56,13 @@ namespace multiscale {
                  *
                  * \param fin Input file stream
                  */
-                void readHeaderLine(ifstream &fin);
+                void readHeaderLine(std::ifstream &fin);
 
                 //! Read the concentrations
                 /*!
                  * \param fin Input file stream
                  */
-                void readConcentrations(ifstream &fin);
+                void readConcentrations(std::ifstream &fin);
 
                 //! Convert the concentrations to annular sectors
                 void transformToAnnularSectors();
@@ -71,13 +76,13 @@ namespace multiscale {
             private:
 
                 // Constants
-                static const string ERR_CONC;
-                static const string ERR_NONPOS_DIMENSION;
-                static const string ERR_NEG_SIM_TIME;
-                static const string ERR_INPUT_OPEN;
-                static const string ERR_IN_EXTRA_DATA;
+                static const std::string ERR_CONC;
+                static const std::string ERR_NONPOS_DIMENSION;
+                static const std::string ERR_NEG_SIM_TIME;
+                static const std::string ERR_INPUT_OPEN;
+                static const std::string ERR_IN_EXTRA_DATA;
 
-                static const string OUTPUT_FILE_EXTENSION;
+                static const std::string OUTPUT_FILE_EXTENSION;
 
                 static const double RADIUS_MIN;
                 static const double RADIUS_MAX;

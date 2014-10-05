@@ -7,8 +7,6 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -19,12 +17,12 @@ namespace multiscale {
 
             private:
 
-                string inputFilepath;   /*!< Path to the input file */
-                string outputFilepath;  /*!< Path to the output file */
+                std::string inputFilepath;                  /*!< Path to the input file */
+                std::string outputFilepath;                 /*!< Path to the output file */
 
-                unsigned int nrOfConcentricCircles;             /*!< Number of concentric circles */
-                unsigned int nrOfSectors;                       /*!< Number of sectors */
-                unsigned int nrOfConcentrationsForPosition;     /*!< Number of concentrations for each position */
+                unsigned int nrOfConcentricCircles;         /*!< Number of concentric circles */
+                unsigned int nrOfSectors;                   /*!< Number of sectors */
+                unsigned int nrOfConcentrationsForPosition; /*!< Number of concentrations for each position */
 
                 unsigned int concentrationsIndex;           /*!< Index of the current concentration */
 
@@ -35,23 +33,24 @@ namespace multiscale {
                                                                  N is the number of concentrations for each position
                                                             */
 
-                bool useLogScaling;                  /*!< Flag for using logarithmic scaling for concentrations or not */
+                bool useLogScaling;                         /*!< Flag for using logarithmic scaling for
+                                                                 concentrations */
 
-                double maximumConcentration;        /*!< The maximum concentration in the input file */
+                double maximumConcentration;                /*!< The maximum concentration in the input file */
 
-                NumberIterator* circlesIterator;    /*!< Iterator over the number of concentric circles */
-                NumberIterator* sectorsIterator;    /*!< Iterator over the number of sectors */
+                NumberIterator* circlesIterator;            /*!< Iterator over the number of concentric circles */
+                NumberIterator* sectorsIterator;            /*!< Iterator over the number of sectors */
 
             public:
 
-                PolarCsvToInputFilesConverter (const string &inputFilepath,
-                                               const string &outputFilepath,
-                                               unsigned int nrOfConcentricCircles,
-                                               unsigned int nrOfSectors,
-                                               unsigned int nrOfConcentrationsForPosition,
-                                               unsigned int selectedConcentrationIndex,
-                                               bool useLogScaling,
-                                               NumberIteratorType numberIteratorType);
+                PolarCsvToInputFilesConverter(const std::string &inputFilepath,
+                                              const std::string &outputFilepath,
+                                              unsigned int nrOfConcentricCircles,
+                                              unsigned int nrOfSectors,
+                                              unsigned int nrOfConcentrationsForPosition,
+                                              unsigned int selectedConcentrationIndex,
+                                              bool useLogScaling,
+                                              NumberIteratorType numberIteratorType);
                 ~PolarCsvToInputFilesConverter();
 
                 //! Start the conversion
@@ -63,13 +62,13 @@ namespace multiscale {
                 /*!
                  * \param fin Input file stream
                  */
-                void initInputFile(ifstream &fin);
+                void initInputFile(std::ifstream &fin);
 
                 //! Compute the value of member maximum concentration
                 /*!
                  * \param fin Input file stream
                  */
-                void initMaximumConcentration(ifstream &fin);
+                void initMaximumConcentration(std::ifstream &fin);
 
                 //! Initialise the output file with the given index and simulation time
                 /*!
@@ -77,7 +76,7 @@ namespace multiscale {
                  * \param index Index of the output file
                  * \param simulationTime Simulation time
                  */
-                void initOutputFile(ofstream &fout, unsigned int index, double &simulationTime);
+                void initOutputFile(std::ofstream &fout, unsigned int index, double &simulationTime);
 
                 //! Initialise the iterators considering the given number iterator type
                 /*!
@@ -92,14 +91,14 @@ namespace multiscale {
                 /*!
                  * \param fin Input file stream
                  */
-                void validateInput(ifstream &fin);
+                void validateInput(std::ifstream &fin);
 
                 //! Validate the provided line identified by a line number
                 /*!
                  * \param line Line from input file
                  * \param lineNumber Number of the line
                  */
-                void validateInputLine(const string &line, unsigned int lineNumber);
+                void validateInputLine(const std::string &line, unsigned int lineNumber);
 
                 //! Process the input file
                 /*!
@@ -107,21 +106,21 @@ namespace multiscale {
                  *
                  * \param fin Input file stream
                  */
-                void processInputFile(ifstream &fin);
+                void processInputFile(std::ifstream &fin);
 
                 //! Process the provided line
                 /*!
                  * \param line Line
                  * \param outputIndex Index integrated in the name of the output file
                  */
-                void processLine(const string &line, unsigned int outputIndex);
+                void processLine(const std::string &line, unsigned int outputIndex);
 
                 //! Split the line in concentrations
                 /*!
                  * \param line Line
                  * \param simulationTime Simulation time associated with the line
                  */
-                vector<double>  splitLineInConcentrations(const string &line, double &simulationTime);
+                std::vector<double>  splitLineInConcentrations(const std::string &line, double &simulationTime);
 
                 //! Split first part of the line (i.e. part representing the origin) into concentrations
                 /*!
@@ -129,24 +128,25 @@ namespace multiscale {
                  * \param tokens Tokens representing the line
                  * \param circleIndex Index of the current concentric circle
                  */
-                void splitFirstPartInConcentrations(vector<double> &concentrations,
-                                                    const vector<string> &tokens,
+                void splitFirstPartInConcentrations(std::vector<double> &concentrations,
+                                                    const std::vector<std::string> &tokens,
                                                     unsigned int circleIndex);
+
                 //! Split other parts of the line (i.e. non-first part) into concentrations
                 /*!
                  * \param concentrations Concentrations extracted from tokens
                  * \param tokens Tokens representing the line
                  * \param circleIndex Index of the current concentric circle
                  */
-                void splitOtherPartsInConcentrations(vector<double> &concentrations,
-                                                     const vector<string> &tokens,
+                void splitOtherPartsInConcentrations(std::vector<double> &concentrations,
+                                                     const std::vector<std::string> &tokens,
                                                      unsigned int circleIndex);
 
                 //! Compute the simulation time from the given token and check if it is valid
                 /*!
-                 * \param token Token (string)
+                 * \param token Token (std::string)
                  */
-                double computeSimulationTime(const string &token);
+                double computeSimulationTime(const std::string &token);
 
                 //! Compute the concentration for the next position
                 /*!
@@ -156,29 +156,34 @@ namespace multiscale {
                  */
                 double computeNextPositionConcentration(unsigned int circleIndex,
                                                         int concentrationIndex,
-                                                        const vector<string> &tokens);
-                //! Compute the concentration from the given string considering the index of the current concentric circle
-                /*!
-                 * \param concentration String representing the concentration
-                 * \param circleIndex Index of the concentric circle
-                 */
-                double computeConcentration(const string &concentration, int circleIndex);
+                                                        const std::vector<std::string> &tokens);
 
-                //! Compute the non-scaled concentration from the given string considering the index of the current concentric circle
-                /*!
-                 * \param concentration String representing the concentration
-                 * \param circleIndex Index of the concentric circle
-                 */
-                double computeNonScaledConcentration(const string &concentration, int circleIndex);
-
-                //! Compute the scaled concentration from the given string considering the index of the current concentric circle
-                /*! Compute the scaled concentration from the given string by applying
-                 *  a logit transformation to it
+                //! Compute the concentration from the given string
+                /*! Compute the concentration from the given string considering the index of the current
+                 *  concentric circle
                  *
                  * \param concentration String representing the concentration
                  * \param circleIndex Index of the concentric circle
                  */
-                double computeScaledConcentration(const string &concentration, int circleIndex);
+                double computeConcentration(const std::string &concentration, int circleIndex);
+
+                //! Compute the non-scaled concentration from the given string
+                /*! Compute the non-scaled concentration from the given string considering the index of the current
+                 *  concentric circle
+                 *
+                 * \param concentration String representing the concentration
+                 * \param circleIndex Index of the concentric circle
+                 */
+                double computeNonScaledConcentration(const std::string &concentration, int circleIndex);
+
+                //! Compute the scaled concentration from the given string
+                /*! Compute the scaled concentration from the given string considering the index of the current
+                 *  concentric circle by applying a logit transformation to it
+                 *
+                 * \param concentration String representing the concentration
+                 * \param circleIndex Index of the concentric circle
+                 */
+                double computeScaledConcentration(const std::string &concentration, int circleIndex);
 
                 //! Compute the concentration wrt. the area of the annular sector
                 /*!
@@ -187,8 +192,10 @@ namespace multiscale {
                  */
                 double computeConcentrationWrtArea(double amount, int circleIndex);
 
-                //! Normalise the concentration considering the index of the current concentric circle by dividing it to the maximum concentration
-                /*!
+                //! Normalise the concentration considering the index of the current concentric circle
+                /*! Normalise the concentration considering the index of the current concentric circle by dividing it
+                 *  to the maximum concentration
+                 *
                  * \param concentration The concentration
                  * \param circleIndex Index of the concentric circle
                  */
@@ -199,25 +206,25 @@ namespace multiscale {
                  * \param line Line from input file
                  * \param maximumConcentration The maximum concentration
                  */
-                void updateMaximumConcentration(const string &line, double &maximumConcentration);
+                void updateMaximumConcentration(const std::string &line, double &maximumConcentration);
 
             private:
 
                 // Constants
                 static const int RADIUS_MIN;
 
-                static const string OUTPUT_EXTENSION;
-                static const string OUTPUT_SEPARATOR;
-                static const string OUTPUT_FILE_SEPARATOR;
-                static const string INPUT_FILE_SEPARATOR;
+                static const std::string OUTPUT_EXTENSION;
+                static const std::string OUTPUT_SEPARATOR;
+                static const std::string OUTPUT_FILE_SEPARATOR;
+                static const std::string INPUT_FILE_SEPARATOR;
 
-                static const string ERR_NEG_CONCENTRATION;
-                static const string ERR_SELECTED_CONCENTRATION_INDEX;
-                static const string ERR_NR_CONCENTRATIONS;
-                static const string ERR_NEG_SIM_TIME;
-                static const string ERR_INPUT_OPEN;
-                static const string ERR_INVALID_VALUE_LINE;
-                static const string ERR_INVALID_VALUE_TOKEN;
+                static const std::string ERR_NEG_CONCENTRATION;
+                static const std::string ERR_SELECTED_CONCENTRATION_INDEX;
+                static const std::string ERR_NR_CONCENTRATIONS;
+                static const std::string ERR_NEG_SIM_TIME;
+                static const std::string ERR_INPUT_OPEN;
+                static const std::string ERR_INVALID_VALUE_LINE;
+                static const std::string ERR_INVALID_VALUE_TOKEN;
 
         };
 

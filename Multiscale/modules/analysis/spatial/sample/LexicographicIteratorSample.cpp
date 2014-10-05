@@ -2,13 +2,14 @@
 
 #include <iostream>
 
-using namespace std;
 using namespace multiscale;
+
+// Main function
 
 int main() {
     LexicographicNumberIterator it(1023);
 
     while (it.hasNext()) {
-        cout << it.number() << endl;
+        std::cout << it.number() << std::endl;
     }
 }

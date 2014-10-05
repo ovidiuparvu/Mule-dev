@@ -24,7 +24,8 @@ MinEnclosingTriangleFinder::MinEnclosingTriangleFinder() {
 
 MinEnclosingTriangleFinder::~MinEnclosingTriangleFinder() {}
 
-double MinEnclosingTriangleFinder::find(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle) {
+double MinEnclosingTriangleFinder::find(const std::vector<cv::Point2f> &points,
+                                        std::vector<cv::Point2f> &minEnclosingTriangle) {
     if (points.size() == 0) {
         MS_throw(InvalidInputException, ERR_NR_POINTS);
 
@@ -35,7 +36,8 @@ double MinEnclosingTriangleFinder::find(const vector<Point2f> &points, vector<Po
     }
 }
 
-double MinEnclosingTriangleFinder::findMinTriangle(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle) {
+double MinEnclosingTriangleFinder::findMinTriangle(const std::vector<cv::Point2f> &points,
+                                                   std::vector<cv::Point2f> &minEnclosingTriangle) {
     initialise(points, minEnclosingTriangle);
 
     if (polygon.size() > 3) {
@@ -45,22 +47,23 @@ double MinEnclosingTriangleFinder::findMinTriangle(const vector<Point2f> &points
     }
 }
 
-void MinEnclosingTriangleFinder::initialise(const vector<Point2f> &points, vector<Point2f> &minEnclosingTriangle) {
-    // Clear all points previously stored in the vector
+void MinEnclosingTriangleFinder::initialise(const std::vector<cv::Point2f> &points,
+                                            std::vector<cv::Point2f> &minEnclosingTriangle) {
+    // Clear all points previously stored in the std::vector
     minEnclosingTriangle.clear();
 
     initialiseConvexPolygon(points);
 }
 
-void MinEnclosingTriangleFinder::initialiseConvexPolygon(const vector<Point2f> &points) {
+void MinEnclosingTriangleFinder::initialiseConvexPolygon(const std::vector<cv::Point2f> &points) {
     polygon.clear();
 
     convexHull(points, polygon, CONVEX_HULL_CLOCKWISE);
 }
 
-double MinEnclosingTriangleFinder::findMinEnclosingTriangle(const vector<Point2f> &polygon,
-                                                            vector<Point2f> &minEnclosingTriangle) {
-    double minEnclosingTriangleArea = numeric_limits<double>::max();
+double MinEnclosingTriangleFinder::findMinEnclosingTriangle(const std::vector<cv::Point2f> &polygon,
+                                                            std::vector<cv::Point2f> &minEnclosingTriangle) {
+    double minEnclosingTriangleArea = std::numeric_limits<double>::max();
 
     initialiseAlgorithmVariables();
 
@@ -69,8 +72,8 @@ double MinEnclosingTriangleFinder::findMinEnclosingTriangle(const vector<Point2f
     return minEnclosingTriangleArea;
 }
 
-double MinEnclosingTriangleFinder::returnMinEnclosingTriangle(const vector<Point2f> &polygon,
-                                                              vector<Point2f> &minEnclosingTriangle) {
+double MinEnclosingTriangleFinder::returnMinEnclosingTriangle(const std::vector<cv::Point2f> &polygon,
+                                                              std::vector<cv::Point2f> &minEnclosingTriangle) {
     int nrOfPolygonPoints = polygon.size();
 
     for (int i = 0; i < 3; i++) {
@@ -88,7 +91,7 @@ void MinEnclosingTriangleFinder::initialiseAlgorithmVariables() {
     c = 0;
 }
 
-void MinEnclosingTriangleFinder::findMinEnclosingTriangle(vector<Point2f> &minEnclosingTriangle,
+void MinEnclosingTriangleFinder::findMinEnclosingTriangle(std::vector<cv::Point2f> &minEnclosingTriangle,
                                                           double &minEnclosingTriangleArea) {
     for (c = 0; c < nrOfPoints; c++) {
         advanceBToRightChain();
@@ -117,7 +120,7 @@ void MinEnclosingTriangleFinder::advanceBToRightChain() {
 
 void MinEnclosingTriangleFinder::moveAIfLowAndBIfHigh() {
     while(height(b) > height(a)) {
-        Point2f gammaOfA;
+        cv::Point2f gammaOfA;
 
         if ((gamma(a, gammaOfA)) && (intersectsBelow(gammaOfA, b))) {
             advance(b);
@@ -128,7 +131,7 @@ void MinEnclosingTriangleFinder::moveAIfLowAndBIfHigh() {
 }
 
 void MinEnclosingTriangleFinder::searchForBTangency() {
-    Point2f gammaOfB;
+    cv::Point2f gammaOfB;
 
     while (((gamma(b, gammaOfB)) && (intersectsBelow(gammaOfB, b))) &&
            (Numeric::greaterOrEqual(height(b), height(predecessor(a))))) {
@@ -137,7 +140,7 @@ void MinEnclosingTriangleFinder::searchForBTangency() {
 }
 
 bool MinEnclosingTriangleFinder::isNotBTangency() {
-    Point2f gammaOfB;
+    cv::Point2f gammaOfB;
 
     if (((gamma(b, gammaOfB)) && (intersectsAbove(gammaOfB, b))) || (height(b) < height(predecessor(a)))) {
         return true;
@@ -160,7 +163,7 @@ void MinEnclosingTriangleFinder::updateSidesBA() {
     sideBEndVertex = polygon[b];
 
     // Find middle point of side B
-    Point2f sideBMiddlePoint;
+    cv::Point2f sideBMiddlePoint;
 
     if ((middlePointOfSideB(sideBMiddlePoint)) & (height(sideBMiddlePoint) < height(predecessor(a)))) {
         sideAStartVertex = polygon[predecessor(a)];
@@ -193,9 +196,9 @@ bool MinEnclosingTriangleFinder::isLocalMinimalTriangle() {
 }
 
 bool MinEnclosingTriangleFinder::isValidMinimalTriangle() {
-    Point2f midpointSideA = Geometry2D::middlePoint(vertexB, vertexC);
-    Point2f midpointSideB = Geometry2D::middlePoint(vertexA, vertexC);
-    Point2f midpointSideC = Geometry2D::middlePoint(vertexA, vertexB);
+    cv::Point2f midpointSideA = Geometry2D::middlePoint(vertexB, vertexC);
+    cv::Point2f midpointSideB = Geometry2D::middlePoint(vertexA, vertexC);
+    cv::Point2f midpointSideC = Geometry2D::middlePoint(vertexA, vertexB);
 
     bool sideAValid = (validationFlag == VALIDATION_SIDE_A_TANGENT)
                         ? (Geometry2D::areEqualPoints(midpointSideA, polygon[predecessor(a)]))
@@ -210,7 +213,8 @@ bool MinEnclosingTriangleFinder::isValidMinimalTriangle() {
     return (sideAValid && sideBValid && sideCValid);
 }
 
-void MinEnclosingTriangleFinder::updateMinEnclosingTriangle(vector<Point2f> &minEnclosingTriangle, double &minEnclosingTriangleArea) {
+void MinEnclosingTriangleFinder::updateMinEnclosingTriangle(std::vector<cv::Point2f> &minEnclosingTriangle,
+                                                            double &minEnclosingTriangleArea) {
     area = Geometry2D::areaOfTriangle(vertexA, vertexB, vertexC);
 
     if (area < minEnclosingTriangleArea) {
@@ -224,8 +228,8 @@ void MinEnclosingTriangleFinder::updateMinEnclosingTriangle(vector<Point2f> &min
     }
 }
 
-bool MinEnclosingTriangleFinder::middlePointOfSideB(Point2f &middlePoint) {
-    Point2f vertexA, vertexC;
+bool MinEnclosingTriangleFinder::middlePointOfSideB(cv::Point2f &middlePoint) {
+    cv::Point2f vertexA, vertexC;
 
     if ((!Geometry2D::lineIntersection(sideBStartVertex, sideBEndVertex, sideCStartVertex, sideCEndVertex, vertexA)) ||
         (!Geometry2D::lineIntersection(sideBStartVertex, sideBEndVertex, sideAStartVertex, sideAEndVertex, vertexC))) {
@@ -237,24 +241,27 @@ bool MinEnclosingTriangleFinder::middlePointOfSideB(Point2f &middlePoint) {
     return true;
 }
 
-bool MinEnclosingTriangleFinder::intersectsBelow(const Point2f &gammaPoint, unsigned int polygonPointIndex) {
+bool MinEnclosingTriangleFinder::intersectsBelow(const cv::Point2f &gammaPoint, unsigned int polygonPointIndex) {
     double angleOfGammaAndPoint = Geometry2D::angleOfLineWrtOxAxis(polygon[polygonPointIndex], gammaPoint);
 
     return (intersects(angleOfGammaAndPoint, polygonPointIndex) == INTERSECTS_BELOW);
 }
 
-bool MinEnclosingTriangleFinder::intersectsAbove(const Point2f &gammaPoint, unsigned int polygonPointIndex) {
+bool MinEnclosingTriangleFinder::intersectsAbove(const cv::Point2f &gammaPoint, unsigned int polygonPointIndex) {
     double angleOfGammaAndPoint = Geometry2D::angleOfLineWrtOxAxis(gammaPoint, polygon[polygonPointIndex]);
 
     return (intersects(angleOfGammaAndPoint, polygonPointIndex) == INTERSECTS_ABOVE);
 }
 
 unsigned int MinEnclosingTriangleFinder::intersects(double angleOfGammaAndPoint, unsigned int polygonPointIndex) {
-    double angleOfPointAndPredecessor = Geometry2D::angleOfLineWrtOxAxis(polygon[predecessor(polygonPointIndex)], polygon[polygonPointIndex]);
-    double angleOfPointAndSuccessor = Geometry2D::angleOfLineWrtOxAxis(polygon[successor(polygonPointIndex)], polygon[polygonPointIndex]);
+    double angleOfPointAndPredecessor = Geometry2D::angleOfLineWrtOxAxis(polygon[predecessor(polygonPointIndex)],
+                                                                         polygon[polygonPointIndex]);
+    double angleOfPointAndSuccessor = Geometry2D::angleOfLineWrtOxAxis(polygon[successor(polygonPointIndex)],
+                                                                       polygon[polygonPointIndex]);
     double angleOfFlushEdge = Geometry2D::angleOfLineWrtOxAxis(polygon[predecessor(c)], polygon[c]);
 
-    if (isFlushAngleBetweenPredecessorAndSuccessor(angleOfFlushEdge, angleOfPointAndPredecessor, angleOfPointAndSuccessor)) {
+    if (isFlushAngleBetweenPredecessorAndSuccessor(angleOfFlushEdge, angleOfPointAndPredecessor,
+                                                   angleOfPointAndSuccessor)) {
         if ((isGammaAngleBetween(angleOfGammaAndPoint, angleOfPointAndPredecessor, angleOfFlushEdge)) ||
             (Numeric::almostEqual(angleOfGammaAndPoint, angleOfPointAndPredecessor))) {
             return intersectsAboveOrBelow(predecessor(polygonPointIndex), polygonPointIndex);
@@ -263,9 +270,15 @@ unsigned int MinEnclosingTriangleFinder::intersects(double angleOfGammaAndPoint,
             return intersectsAboveOrBelow(successor(polygonPointIndex), polygonPointIndex);
         }
     } else {
-        if ((isGammaAngleBetween(angleOfGammaAndPoint, angleOfPointAndPredecessor, angleOfPointAndSuccessor)) ||
-            ((isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfPointAndPredecessor)) && (!isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfFlushEdge))) ||
-            ((isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfPointAndSuccessor)) && (!isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfFlushEdge)))) {
+        if ((
+                isGammaAngleBetween(angleOfGammaAndPoint, angleOfPointAndPredecessor, angleOfPointAndSuccessor)
+            ) || (
+                (isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfPointAndPredecessor)) &&
+                (!isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfFlushEdge))
+            ) || (
+                (isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfPointAndSuccessor)) &&
+                (!isGammaAngleEqualTo(angleOfGammaAndPoint, angleOfFlushEdge))
+            )) {
             return INTERSECTS_BELOW;
         }
     }
@@ -273,7 +286,8 @@ unsigned int MinEnclosingTriangleFinder::intersects(double angleOfGammaAndPoint,
     return INTERSECTS_CRITICAL;
 }
 
-unsigned int MinEnclosingTriangleFinder::intersectsAboveOrBelow(unsigned int successorOrPredecessorIndex, unsigned int pointIndex) {
+unsigned int MinEnclosingTriangleFinder::intersectsAboveOrBelow(unsigned int successorOrPredecessorIndex,
+                                                                unsigned int pointIndex) {
     if (height(successorOrPredecessorIndex) > height(pointIndex)) {
         return INTERSECTS_ABOVE;
     } else {
@@ -281,7 +295,8 @@ unsigned int MinEnclosingTriangleFinder::intersectsAboveOrBelow(unsigned int suc
     }
 }
 
-bool MinEnclosingTriangleFinder::isFlushAngleBetweenPredecessorAndSuccessor(double &angleFlushEdge, double anglePredecessor,
+bool MinEnclosingTriangleFinder::isFlushAngleBetweenPredecessorAndSuccessor(double &angleFlushEdge,
+                                                                            double anglePredecessor,
                                                                             double angleSuccessor) {
     if (Geometry2D::isAngleBetweenNonReflex(angleFlushEdge, anglePredecessor, angleSuccessor)) {
         return true;
@@ -303,23 +318,23 @@ bool MinEnclosingTriangleFinder::isGammaAngleEqualTo(double &gammaAngle, double 
 }
 
 double MinEnclosingTriangleFinder::height(unsigned int polygonPointIndex) {
-    Point2f pointC = polygon[c];
-    Point2f pointCPredecessor = polygon[predecessor(c)];
+    cv::Point2f pointC = polygon[c];
+    cv::Point2f pointCPredecessor = polygon[predecessor(c)];
 
-    Point2f polygonPoint = polygon[polygonPointIndex];
-
-    return Geometry2D::distanceFromPointToLine(polygonPoint, pointC, pointCPredecessor);
-}
-
-double MinEnclosingTriangleFinder::height(const Point2f &polygonPoint) {
-    Point2f pointC = polygon[c];
-    Point2f pointCPredecessor = polygon[predecessor(c)];
+    cv::Point2f polygonPoint = polygon[polygonPointIndex];
 
     return Geometry2D::distanceFromPointToLine(polygonPoint, pointC, pointCPredecessor);
 }
 
-bool MinEnclosingTriangleFinder::gamma(unsigned int polygonPointIndex, Point2f &gammaPoint) {
-    Point2f intersectionPoint1, intersectionPoint2;
+double MinEnclosingTriangleFinder::height(const cv::Point2f &polygonPoint) {
+    cv::Point2f pointC = polygon[c];
+    cv::Point2f pointCPredecessor = polygon[predecessor(c)];
+
+    return Geometry2D::distanceFromPointToLine(polygonPoint, pointC, pointCPredecessor);
+}
+
+bool MinEnclosingTriangleFinder::gamma(unsigned int polygonPointIndex, cv::Point2f &gammaPoint) {
+    cv::Point2f intersectionPoint1, intersectionPoint2;
 
     // Get intersection points if they exist
     if (!findGammaIntersectionPoints(polygonPointIndex, polygon[a], polygon[predecessor(a)], polygon[c],
@@ -328,7 +343,8 @@ bool MinEnclosingTriangleFinder::gamma(unsigned int polygonPointIndex, Point2f &
     }
 
     // Select the point which is on the same side of line C as the polygon
-    if (Geometry2D::areOnTheSameSideOfLine(intersectionPoint1, polygon[successor(c)], polygon[c], polygon[predecessor(c)])) {
+    if (Geometry2D::areOnTheSameSideOfLine(intersectionPoint1, polygon[successor(c)],
+                                           polygon[c], polygon[predecessor(c)])) {
         gammaPoint = intersectionPoint1;
     } else {
         gammaPoint = intersectionPoint2;
@@ -337,29 +353,33 @@ bool MinEnclosingTriangleFinder::gamma(unsigned int polygonPointIndex, Point2f &
     return true;
 }
 
-Point2f MinEnclosingTriangleFinder::findVertexCOnSideB() {
-    Point2f intersectionPoint1, intersectionPoint2;
+cv::Point2f MinEnclosingTriangleFinder::findVertexCOnSideB() {
+    cv::Point2f intersectionPoint1, intersectionPoint2;
 
     // Get intersection points if they exist
-    if (!findGammaIntersectionPoints(predecessor(a), sideBStartVertex, sideBEndVertex, sideCStartVertex, sideCEndVertex,
-                                     intersectionPoint1, intersectionPoint2)) {
+    if (!findGammaIntersectionPoints(predecessor(a), sideBStartVertex, sideBEndVertex, sideCStartVertex,
+                                     sideCEndVertex, intersectionPoint1, intersectionPoint2)) {
         MS_throw(UnexpectedBehaviourException, ERR_VERTEX_C_ON_SIDE_B);
     }
 
     // Select the point which is on the same side of line C as the polygon
-    if (Geometry2D::areOnTheSameSideOfLine(intersectionPoint1, polygon[successor(c)], polygon[c], polygon[predecessor(c)])) {
+    if (Geometry2D::areOnTheSameSideOfLine(intersectionPoint1, polygon[successor(c)],
+                                           polygon[c], polygon[predecessor(c)])) {
         return intersectionPoint1;
     } else {
         return intersectionPoint2;
     }
 }
 
-bool MinEnclosingTriangleFinder::findGammaIntersectionPoints(unsigned int polygonPointIndex, const Point2f &side1StartVertex,
-                                                             const Point2f &side1EndVertex, const Point2f &side2StartVertex,
-                                                             const Point2f &side2EndVertex, Point2f &intersectionPoint1,
-                                                             Point2f &intersectionPoint2) {
-    vector<double> side1Params = lineEquationParameters(side1StartVertex, side1EndVertex);
-    vector<double> side2Params = lineEquationParameters(side2StartVertex, side2EndVertex);
+bool MinEnclosingTriangleFinder::findGammaIntersectionPoints(unsigned int polygonPointIndex,
+                                                             const cv::Point2f &side1StartVertex,
+                                                             const cv::Point2f &side1EndVertex,
+                                                             const cv::Point2f &side2StartVertex,
+                                                             const cv::Point2f &side2EndVertex,
+                                                             cv::Point2f &intersectionPoint1,
+                                                             cv::Point2f &intersectionPoint2) {
+    std::vector<double> side1Params = lineEquationParameters(side1StartVertex, side1EndVertex);
+    std::vector<double> side2Params = lineEquationParameters(side2StartVertex, side2EndVertex);
 
     // Compute side C extra parameter using the formula for distance from a point to a line
     double polygonPointHeight = height(polygonPointIndex);
@@ -377,7 +397,8 @@ bool MinEnclosingTriangleFinder::findGammaIntersectionPoints(unsigned int polygo
     return true;
 }
 
-bool MinEnclosingTriangleFinder::areIdenticalLines(const vector<double> &side1Params, const vector<double> &side2Params,
+bool MinEnclosingTriangleFinder::areIdenticalLines(const std::vector<double> &side1Params,
+                                                   const std::vector<double> &side2Params,
                                                    double sideCExtraParam) {
     return (
         (Geometry2D::areIdenticalLines(side1Params[0], side1Params[1], -(side1Params[2]),
@@ -387,8 +408,11 @@ bool MinEnclosingTriangleFinder::areIdenticalLines(const vector<double> &side1Pa
     );
 }
 
-bool MinEnclosingTriangleFinder::areIntersectingLines(const vector<double> &side1Params, const vector<double> &side2Params, double sideCExtraParam,
-                                                      Point2f &intersectionPoint1, Point2f &intersectionPoint2) {
+bool MinEnclosingTriangleFinder::areIntersectingLines(const std::vector<double> &side1Params,
+                                                      const std::vector<double> &side2Params,
+                                                      double sideCExtraParam,
+                                                      cv::Point2f &intersectionPoint1,
+                                                      cv::Point2f &intersectionPoint2) {
     return (
         (Geometry2D::lineIntersection(side1Params[0], side1Params[1], -(side1Params[2]),
                                       side2Params[0], side2Params[1], -(side2Params[2]) - sideCExtraParam,
@@ -399,8 +423,9 @@ bool MinEnclosingTriangleFinder::areIntersectingLines(const vector<double> &side
     );
 }
 
-vector<double> MinEnclosingTriangleFinder::lineEquationParameters(const Point2f &p, const Point2f &q) {
-    vector<double> lineEquationParameters;
+std::vector<double> MinEnclosingTriangleFinder::lineEquationParameters(const cv::Point2f &p,
+                                                                       const cv::Point2f &q) {
+    std::vector<double> lineEquationParameters;
     double a, b, c;
 
     Geometry2D::lineEquationDeterminedByPoints(p, q, a, b, c);
@@ -434,11 +459,11 @@ const unsigned int MinEnclosingTriangleFinder::INTERSECTS_ABOVE      = 2;
 const unsigned int MinEnclosingTriangleFinder::INTERSECTS_CRITICAL   = 3;
 const unsigned int MinEnclosingTriangleFinder::INTERSECTS_LIMIT      = 4;
 
-const string MinEnclosingTriangleFinder::ERR_NR_POINTS           = "The number of 2D points in the input vector should be greater than 0.";
-const string MinEnclosingTriangleFinder::ERR_MIDPOINT_SIDE_B     = "The position of the middle point of side B could not be determined.";
-const string MinEnclosingTriangleFinder::ERR_SIDE_B_GAMMA        = "The position of side B could not be determined, because gamma(b) could not be computed.";
-const string MinEnclosingTriangleFinder::ERR_VERTEX_C_ON_SIDE_B  = "The position of the vertex C on side B could not be determined, because the considered lines do not intersect.";
-const string MinEnclosingTriangleFinder::ERR_TRIANGLE_VERTICES   = "The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect.";
+const std::string MinEnclosingTriangleFinder::ERR_NR_POINTS           = "The number of 2D points in the input std::vector should be greater than 0.";
+const std::string MinEnclosingTriangleFinder::ERR_MIDPOINT_SIDE_B     = "The position of the middle point of side B could not be determined.";
+const std::string MinEnclosingTriangleFinder::ERR_SIDE_B_GAMMA        = "The position of side B could not be determined, because gamma(b) could not be computed.";
+const std::string MinEnclosingTriangleFinder::ERR_VERTEX_C_ON_SIDE_B  = "The position of the vertex C on side B could not be determined, because the considered lines do not intersect.";
+const std::string MinEnclosingTriangleFinder::ERR_TRIANGLE_VERTICES   = "The position of the triangle vertices could not be determined, because the sides of the triangle do not intersect.";
 
 const unsigned int MinEnclosingTriangleFinder::VALIDATION_SIDE_A_TANGENT   = 0;
 const unsigned int MinEnclosingTriangleFinder::VALIDATION_SIDE_B_TANGENT   = 1;

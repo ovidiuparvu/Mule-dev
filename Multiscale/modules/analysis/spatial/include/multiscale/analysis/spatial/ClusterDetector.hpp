@@ -8,9 +8,6 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
-using namespace std;
-using namespace cv;
-
 
 namespace multiscale {
 
@@ -29,13 +26,14 @@ namespace multiscale {
                 int minPoints;                  /*!< DBSCAN algorithm parameter for specifying the minimum number
                                                      of points in an eps-neighbourhood of that point */
 
-                vector<Cluster> clusters;       /*!< Clusters found in the image */
+                std::vector<Cluster> clusters;  /*!< Clusters found in the image */
 
             public:
 
                 /*!
                  * \param debugMode             Flag indicating if detector should run in debug mode or not
-                 * \param maxPileupNumber       The maximum number of entities which can occupy a grid position at the same time
+                 * \param maxPileupNumber       The maximum number of entities which can occupy a grid position at
+                 *                              the same time
                  * \param maxPileupIntensity    The grayscale intensity of a maximally piled up grid position
                  */
                 ClusterDetector(int maxPileupNumber, double maxPileupIntensity, bool debugMode = false);
@@ -47,8 +45,8 @@ namespace multiscale {
                 //! Get the value of the clustering algorithm parameter MinPoints
                 int getMinPoints();
 
-                //! Get a const reference to the vector of detected clusters
-                vector<Cluster> const &getClusters();
+                //! Get a const reference to the std::vector of detected clusters
+                std::vector<Cluster> const &getClusters();
 
                 //! Set the value of the clustering algorithm parameter eps
                 /*!
@@ -73,8 +71,8 @@ namespace multiscale {
                 //! Clear the clusters from the previous detection
                 void clearPreviousDetectionResults() override;
 
-                //! Get the type of the detector as a string
-                string getDetectorTypeAsString() override;
+                //! Get the type of the detector as a std::string
+                std::string getDetectorTypeAsString() override;
 
                 //! Process the provided image and detect clusters in it
                 void processImageAndDetect() override;
@@ -84,7 +82,7 @@ namespace multiscale {
                  *
                  *  \param entities Entities detected in the image
                  */
-                virtual void detectEntitiesInImage(vector<Entity> &entities) = 0;
+                virtual void detectEntitiesInImage(std::vector<Entity> &entities) = 0;
 
                 //! Detect and analyse the clusters of entities in the image
                 /*! Detect and analyse the clusters of entities in the image
@@ -94,7 +92,7 @@ namespace multiscale {
                  *  \param entities     Entities detected in the image
                  *  \param clusters     Clusters of entities detected in the image
                  */
-                void detectAndAnalyseClusters(const vector<Entity> &entities, vector<Cluster> &clusters);
+                void detectAndAnalyseClusters(const std::vector<Entity> &entities, std::vector<Cluster> &clusters);
 
                 //! Detect the clusters of entities in the image
                 /*! Detect the clusters of entities in the image using Density Based scan (DBscan) clustering algorithm
@@ -104,27 +102,30 @@ namespace multiscale {
                  *  \param clusterIndexes   Indexes to which cluster each entity belongs
                  *  \param nrOfClusters     Total number of clusters
                  */
-                void detectClusters(const vector<Entity> &entities, vector<int> &clusterIndexes, int &nrOfClusters);
+                void detectClusters(const std::vector<Entity> &entities, std::vector<int> &clusterIndexes,
+                                    int &nrOfClusters);
 
                 //! Convert the entities to the format required by the DBSCAN class
                 /*!
                  * \param entities Entities detected in the image
                  */
-                vector<shared_ptr<DataPoint>> convertEntities(const vector<Entity> &entities);
+                std::vector<std::shared_ptr<DataPoint>> convertEntities(const std::vector<Entity> &entities);
 
                 //! Convert the non pile up entities to the format required by the DBSCAN class
                 /*!
                  * \param entities Entities detected in the image
                  * \param dataPoints Collection of DataPoint instances required by the DBSCAN class
                  */
-                void convertNonPiledUpEntities(const vector<Entity> &entities, vector<shared_ptr<DataPoint> > &dataPoints);
+                void convertNonPiledUpEntities(const std::vector<Entity> &entities,
+                                               std::vector<std::shared_ptr<DataPoint> > &dataPoints);
 
                 //! Convert the entities to the required format by the DBSCAN class
                 /*!
                  * \param entities Entities detected in the image
                  * \param dataPoints Collection of DataPoint instances required by the DBSCAN class
                  */
-                void convertPiledUpEntities(const vector<Entity> &entities, vector<shared_ptr<DataPoint> > &dataPoints);
+                void convertPiledUpEntities(const std::vector<Entity> &entities,
+                                            std::vector<std::shared_ptr<DataPoint> > &dataPoints);
 
                 //! Add the entities to the clusters as indicated by the clusterIndexes parameter
                 /*! Add the entities to the clusters as indicated by the clusterIndexes parameter
@@ -136,8 +137,10 @@ namespace multiscale {
                  *  \param nrOfClusters     Total number of clusters
                  *  \param clusters         Collection of clusters, each one with the updated measures
                  */
-                void addEntitiesToClusters(const vector<Entity> &entities, const vector<int> &clusterIndexes, int nrOfClusters,
-                                           vector<Cluster> &clusters);
+                void addEntitiesToClusters(const std::vector<Entity> &entities,
+                                           const std::vector<int> &clusterIndexes,
+                                           int nrOfClusters,
+                                           std::vector<Cluster> &clusters);
 
                 //! Analyse the clusters
                 /*! Analyse the clusters and compute the angle and distance from the centre,
@@ -145,7 +148,7 @@ namespace multiscale {
                  *
                  *  \param clusters Collection of clusters, each one with the updated measures
                  */
-                void analyseClusters(vector<Cluster> &clusters);
+                void analyseClusters(std::vector<Cluster> &clusters);
 
                 //! Analyse the clusters and compute the origin dependent values
                 /*! The values which depend on the origin point are the distance of the
@@ -153,7 +156,7 @@ namespace multiscale {
                  *
                  *  \param clusters Collection of clusters, each one with the updated measures
                  */
-                void analyseClustersOriginDependentValues(vector<Cluster> &clusters);
+                void analyseClustersOriginDependentValues(std::vector<Cluster> &clusters);
 
                 //! Update the cluster and compute the origin dependent values considering the convex hull
                 /*! The values which depend on the origin point are the distance of the
@@ -162,20 +165,22 @@ namespace multiscale {
                  *  \param cluster              Cluster
                  *  \param clusterConvexHull    Convex hull of the cluster
                  */
-                void updateClusterOriginDependentValues(Cluster &cluster, const vector<Point> &clusterConvexHull);
+                void updateClusterOriginDependentValues(Cluster &cluster,
+                                                        const std::vector<cv::Point> &clusterConvexHull);
 
                 //! Return the convex hull of the given cluster
                 /*!
                  * \param cluster The given cluster
                  */
-                vector<Point> getClusterConvexHull(Cluster &cluster);
+                std::vector<cv::Point> getClusterConvexHull(Cluster &cluster);
 
                 //! Compute the clusteredness index for all the entities detected in the image
-                /*! Compute the clusteredness index for all the entities detected in the image using Silhouette cluster validity index
+                /*! Compute the clusteredness index for all the entities detected in the image using Silhouette
+                 *  cluster validity index
                  *
                  *  \param clusters Collection of clusters, each one with the updated measures
                  */
-                double computeClusterednessIndex(const vector<Cluster> &clusters);
+                double computeClusterednessIndex(const std::vector<Cluster> &clusters);
 
                 //! Compute the average pile up degree for all entities in the image
                 /*! Compute the average pile up degree for all entities in the image
@@ -184,10 +189,10 @@ namespace multiscale {
                  *
                  *  \param clusters Clusters of entities detected in the image
                  */
-                double computeAveragePileUpDegree(vector<Cluster> &clusters);
+                double computeAveragePileUpDegree(std::vector<Cluster> &clusters);
 
                 //! Get the collection of clusters detected in the image
-                vector<shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() override;
+                std::vector<std::shared_ptr<SpatialEntityPseudo3D>> getCollectionOfSpatialEntityPseudo3D() override;
 
                 //! Convert the value of eps from integer to double
                 double convertEpsValue();
@@ -198,10 +203,10 @@ namespace multiscale {
             private:
 
                 // Constants
-                static const string DETECTOR_TYPE;
+                static const std::string DETECTOR_TYPE;
 
-                static const string TRACKBAR_EPS;
-                static const string TRACKBAR_MINPOINTS;
+                static const std::string TRACKBAR_EPS;
+                static const std::string TRACKBAR_MINPOINTS;
 
                 static const int MIN_POINTS_MIN;
                 static const int MIN_POINTS_MAX;

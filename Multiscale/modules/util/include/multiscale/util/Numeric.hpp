@@ -8,8 +8,6 @@
 #include <cmath>
 #include <limits>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -272,7 +270,7 @@ namespace multiscale {
             /*!
              * \param functionName  The provided function name
              */
-            static void printNoValuesWarningMessage(const string &functionName);
+            static void printNoValuesWarningMessage(const std::string &functionName);
 
             //! Return the average (arithmetic mean) of the provided numbers
             /*!

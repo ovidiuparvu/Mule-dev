@@ -21,7 +21,6 @@
 #include <boost/program_options.hpp>
 #include <iostream>
 
-using namespace std;
 using namespace multiscale;
 using namespace multiscale::video;
 
@@ -31,8 +30,8 @@ namespace po = boost::program_options;
 // Initialise the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description &usageDescription, int argc, char** argv) {
     usageDescription.add_options()("help,h", "display help message\n")
-                                  ("input-file,i", po::value<string>(), "provide the path to the input file\n")
-                                  ("output-file,o", po::value<string>(), "provide the path of the output file (without extension)\n")
+                                  ("input-file,i", po::value<std::string>(), "provide the path to the input file\n")
+                                  ("output-file,o", po::value<std::string>(), "provide the path of the output file (without extension)\n")
                                   ("height,e", po::value<unsigned int>(), "provide the height of the grid (number of rows)\n")
                                   ("width,w", po::value<unsigned int>(), "provide the width of the grid (number of columns)\n")
                                   ("nr-entities,n", po::value<unsigned int>(), "provide the number of entities observed in the simulation\n")
@@ -47,13 +46,13 @@ po::variables_map initArgumentsConfig(po::options_description &usageDescription,
 
 // Print help message if needed
 void printHelpInformation(const po::variables_map &vm, const po::options_description &usageDescription) {
-    cout << usageDescription << endl;
+    std::cout << usageDescription << std::endl;
 }
 
 // Print error message if wrong parameters are provided
 void printWrongParameters() {
-    cout << ERR_MSG << "Wrong input arguments provided." << endl;
-    cout << "Run the program with the argument \"--help\" for more information." << endl;
+    std::cout << ERR_MSG << "Wrong input arguments provided." << std::endl;
+    std::cout << "Run the program with the argument \"--help\" for more information." << std::endl;
 }
 
 // Set the number iterator type to lexicographic if requested
@@ -62,7 +61,7 @@ void setNumberIteratorType(const po::variables_map &vm, NumberIteratorType &numb
 }
 
 // Get the needed parameters
-bool areValidParameters(string &inputFilepath, string &outputFilename, unsigned int &height,
+bool areValidParameters(std::string &inputFilepath, std::string &outputFilename, unsigned int &height,
                    unsigned int &width, unsigned int &nrOfEntities, unsigned int &maxPileup,
                    NumberIteratorType &numberIteratorType, int argc, char** argv) {
     po::options_description usageDescription("Usage");
@@ -80,8 +79,8 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, unsigned 
     if ((vm.count("input-file")) && (vm.count("output-file")) &&
         (vm.count("height")) && (vm.count("width")) &&
         (vm.count("nr-entities")) && (vm.count("max-pileup"))) {
-        inputFilepath  = vm["input-file"].as<string>();
-        outputFilename = vm["output-file"].as<string>();
+        inputFilepath  = vm["input-file"].as<std::string>();
+        outputFilename = vm["output-file"].as<std::string>();
 
         height = vm["height"].as<unsigned int>();
         width  = vm["width"].as<unsigned int>();
@@ -101,8 +100,8 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, unsigned 
 
 // Main function
 int main(int argc, char** argv) {
-    string inputFilePath;
-    string outputFilepath;
+    std::string inputFilePath;
+    std::string outputFilepath;
 
     unsigned int height;
     unsigned int width;
@@ -123,12 +122,12 @@ int main(int argc, char** argv) {
         } else {
             printWrongParameters();
         }
-    } catch(const exception &e) {
+    } catch(const std::exception &e) {
         ExceptionHandler::printDetailedErrorMessage(e);
 
         return EXEC_ERR_CODE;
     } catch(...) {
-        cerr << "Exception of unknown type!" << endl;
+        std::cerr << "Exception of unknown type!" << std::endl;
     }
 
     return EXEC_SUCCESS_CODE;

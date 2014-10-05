@@ -3,8 +3,6 @@
 
 #include "multiscale/analysis/spatial/Cluster.hpp"
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -19,49 +17,56 @@ namespace multiscale {
                 /*!
                  * \param clusters Collection of all clusters
                  */
-                static double computeOverallAverageMeasure(const vector<Cluster> &clusters);
+                static double computeOverallAverageMeasure(const std::vector<Cluster> &clusters);
 
                 //! Compute the average silhouette measure for the given cluster
                 /*!
-                 * \param clusterIndex  The index of the cluster for which the average silhouette measure is computed
+                 * \param clusterIndex  The index of the cluster for which the average silhouette measure
+                 *                      is computed
                  * \param clusters      Collection of all clusters
                  */
-                static double computeAverageMeasure(std::size_t clusterIndex, const vector<Cluster> &clusters);
+                static double computeAverageMeasure(std::size_t clusterIndex, const std::vector<Cluster> &clusters);
 
                 //! Compute the silhouette measure for the given entity
                 /*!
-                 * \param entityIndex   The index of the entity in the cluster for which the silhouette measure is computed
+                 * \param entityIndex   The index of the entity in the cluster for which the silhouette measure
+                 *                      is computed
                  * \param clusterIndex  The index of the cluster to which the entity belongs
                  * \param clusters      Collection of all clusters
                  */
                 static double computeMeasure(std::size_t entityIndex, std::size_t clusterIndex,
-                                             const vector<Cluster> &clusters);
+                                             const std::vector<Cluster> &clusters);
 
             private:
 
                 //! Compute the average dissimilarity within cluster to which the entity belongs
                 /*!
-                 * \param entityIndex   The index of the entity in the cluster for which the silhouette measure is computed
+                 * \param entityIndex   The index of the entity in the cluster for which the silhouette measure
+                 *                      is computed
                  * \param clusterIndex  The index of the cluster to which the entity belongs
                  * \param clusters      Collection of all clusters
                  */
                 static double computeAverageDissimilarityWithinCluster(std::size_t entityIndex,
                                                                        std::size_t clusterIndex,
-                                                                       const vector<Cluster> &clusters);
+                                                                       const std::vector<Cluster> &clusters);
 
-                //! Compute the average dissimilarity of the entity to the other clusters (i.e. clusters which are different from the cluster to which the entity belongs)
-                /*!
-                 * \param entityIndex   The index of the entity in the cluster for which the silhouette measure is computed
+                //! Compute the average dissimilarity of the entity to the other clusters
+                /*! Compute the average dissimilarity of the entity to the other clusters (i.e. clusters which are
+                 *  different from the cluster to which the entity belongs)
+                 *
+                 * \param entityIndex   The index of the entity in the cluster for which the silhouette measure
+                 *                      is computed
                  * \param clusterIndex  The index of the cluster to which the entity belongs
                  * \param clusters      Collection of all clusters
                  */
                 static double computeAverageDissimilarityToOtherClusters(std::size_t entityIndex,
                                                                          std::size_t clusterIndex,
-                                                                         const vector<Cluster> &clusters);
+                                                                         const std::vector<Cluster> &clusters);
 
                 //! Compute the average dissimilarity between entity and cluster
                 /*!
-                 * \param entityIndex           The index of the entity in the cluster for which the distance is computed
+                 * \param entityIndex           The index of the entity in the cluster for which the distance
+                 *                              is computed
                  * \param entityClusterIndex    The index of the cluster to which the entity belongs
                  * \param clusterIndex          The index of the cluster to which the average distance is computed
                  * \param clusters              Collection of all clusters
@@ -69,7 +74,7 @@ namespace multiscale {
                 static double computeAverageDissimilarityBtwEntityAndCluster(std::size_t entityIndex,
                                                                              std::size_t entityClusterIndex,
                                                                              std::size_t clusterIndex,
-                                                                             const vector<Cluster> &clusters);
+                                                                             const std::vector<Cluster> &clusters);
 
                 //! Check if the provided cluster index is valid
                 /*! The cluster index clusterIndex (0-based indexing) is valid if and only if:

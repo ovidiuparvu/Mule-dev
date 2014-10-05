@@ -39,7 +39,7 @@ namespace multiscale {
 
                 //! Set the semantic type of the numeric state variable
                 /*!
-                 * \param type  The type of the numeric state variable
+                 * \param semanticType  The semantic type of the numeric state variable
                  */
                 void setSemanticType(const std::string &semanticType);
 

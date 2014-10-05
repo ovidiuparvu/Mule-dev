@@ -6,9 +6,6 @@
 
 #include "opencv2/imgproc/imgproc.hpp"
 
-using namespace cv;
-using namespace std;
-
 
 namespace multiscale {
 
@@ -33,12 +30,15 @@ namespace multiscale {
                 double distanceFromOrigin;      /*!< Distance from the origin  */
                 double angle;                   /*!< Angle of the region wrt the origin */
 
-                double triangularMeasure;       /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is triangular */
-                double rectangularMeasure;      /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is rectangular */
-                double circularMeasure;         /*!< Measure ([0, 1]) indicating that the shape of the spatial collection is circular */
+                double triangularMeasure;       /*!< Measure ([0, 1]) indicating the similarity between the shape
+                                                     of the spatial collection and a triangle */
+                double rectangularMeasure;      /*!< Measure ([0, 1]) indicating the similarity between the shape
+                                                     of the spatial collection and a rectangle */
+                double circularMeasure;         /*!< Measure ([0, 1]) indicating the similarity between the shape
+                                                     of the spatial collection and a circle */
 
                 Shape2D shape;                  /*!< Shape of the spatial collection */
-                Point2f centre;                 /*!< Point defining the centre of the spatial collection */
+                cv::Point2f centre;             /*!< Point defining the centre of the spatial collection */
 
                 bool updateFlag;                /*!< Flag indicating if the field values dependent on the
                                                      collection of entities need to be updated. This flag is
@@ -71,8 +71,8 @@ namespace multiscale {
                 //! Get the shape best fitting the spatial collection
                 Shape2D getShape();
 
-                //! Get the shape best fitting the spatial collection as a string
-                string getShapeAsString();
+                //! Get the shape best fitting the spatial collection as a std::string
+                std::string getShapeAsString();
 
                 //! Get the measure indicating how much the shape of the contour resembles a triangle
                 double getTriangularMeasure();
@@ -80,20 +80,20 @@ namespace multiscale {
                 //! Get the measure indicating how much the shape of the contour resembles a rectangle
                 double getRectangularMeasure();
 
-                //! Get the measure indicating how much the shape of the contour resembles a circle
+                //! Get the measure indicating how much the shape of the contour resembles a cv::circle
                 double getCircularMeasure();
 
                 //! Get the point defining the centre of the entity
-                Point2f getCentre();
+                cv::Point2f getCentre();
 
-                //! Get a string representation of all the field names printed in the "toString" method
-                static string fieldNamesToString();
+                //! Get a std::string representation of all the field names printed in the "toString" method
+                static std::string fieldNamesToString();
 
-                //! Get the string representation of all field values
-                string toString();
+                //! Get the std::string representation of all field values
+                std::string toString();
 
-                //! Return the type of the pseudo 3D spatial entity as a string
-                string typeAsString();
+                //! Return the type of the pseudo 3D spatial entity as a std::string
+                std::string typeAsString();
 
             protected:
 
@@ -136,20 +136,20 @@ namespace multiscale {
                  */
                 double normalisedShapeMeasure(double shapeArea);
 
-                //! Return the shape of the cluster as a string
-                string shapeAsString();
+                //! Return the shape of the cluster as a std::string
+                std::string shapeAsString();
 
-                //! Return the values of the fields as a string
-                string fieldValuesToString();
+                //! Return the values of the fields as a std::string
+                std::string fieldValuesToString();
 
                 //! Return the type of the pseudo 3D spatial entity
                 virtual SpatialEntityPseudo3DType type() = 0;
 
-                //! Convert the collection of points from type Point to type Point2f
+                //! Convert the collection of points from type cv::Point to type cv::Point2f
                 /*!
                  * \param points Collection of points
                  */
-                vector<Point2f> convertPoints(const vector<Point> &points);
+                std::vector<cv::Point2f> convertPoints(const std::vector<cv::Point> &points);
 
             private:
 
@@ -159,18 +159,18 @@ namespace multiscale {
             protected:
 
                 // Constants
-                static const string STR_REGION;
-                static const string STR_CLUSTER;
+                static const std::string STR_REGION;
+                static const std::string STR_CLUSTER;
 
-                static const string STR_TRIANGLE;
-                static const string STR_RECTANGLE;
-                static const string STR_CIRCLE;
-                static const string STR_UNDEFINED;
+                static const std::string STR_TRIANGLE;
+                static const std::string STR_RECTANGLE;
+                static const std::string STR_CIRCLE;
+                static const std::string STR_UNDEFINED;
 
-                static const string OUTPUT_SEPARATOR;
+                static const std::string OUTPUT_SEPARATOR;
 
-                static const string ERR_INPUT;
-                static const string ERR_UNDEFINED_TYPE;
+                static const std::string ERR_INPUT;
+                static const std::string ERR_UNDEFINED_TYPE;
 
                 static const bool CONVEX_HULL_CLOCKWISE;
 

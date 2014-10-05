@@ -5,25 +5,24 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-using namespace cv;
 using namespace multiscale::analysis;
-using namespace std;
+
 
 // Main function
 
 int main() {
     CircularMatFactory factory;
 
-    Mat image = factory.createFromViewerImage("data/test/circular.png");
+    cv::Mat image = factory.createFromViewerImage("data/test/circular.png");
 
-    namedWindow("Test", WINDOW_NORMAL);
-    imshow("Test", image);
+    cv::namedWindow("Test", cv::WINDOW_NORMAL);
+    cv::imshow("Test", image);
 
-    cout << "Maximum colour bar intensity: "
-         << factory.maxColourBarIntensityFromViewerImage("data/test/circular.png")
-         << endl;
+    std::cout << "Maximum colour bar intensity: "
+              << factory.maxColourBarIntensityFromViewerImage("data/test/circular.png")
+              << std::endl;
 
-    waitKey(0);
+    cv::waitKey(0);
 
     return multiscale::EXEC_SUCCESS_CODE;
 }

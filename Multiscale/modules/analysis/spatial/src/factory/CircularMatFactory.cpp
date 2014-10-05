@@ -4,57 +4,58 @@
 
 #include "opencv2/highgui/highgui.hpp"
 
-using namespace cv;
 using namespace multiscale::analysis;
+
 
 CircularMatFactory::CircularMatFactory() : MatFactory() {}
 
 CircularMatFactory::~CircularMatFactory() {}
 
-Mat CircularMatFactory::createFromViewerImage(const string &inputFile) {
-    Mat image = imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
+cv::Mat CircularMatFactory::createFromViewerImage(const std::string &inputFile) {
+    cv::Mat image = cv::imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
 
     isValidViewerImage(image);
 
-    Mat croppedImage = image(
-                            Rect(
+    cv::Mat croppedImage = image(
+                            cv::Rect(
                                 ROI_START_X - ROI_RADIUS,
                                 ROI_START_Y - ROI_RADIUS,
                                 2 * ROI_RADIUS, 2 * ROI_RADIUS
                             )
                        );
-    Mat circularImage = Mat::zeros(croppedImage.size(), CV_8UC1);
+    cv::Mat circularImage = cv::Mat::zeros(croppedImage.size(), CV_8UC1);
 
     croppedImage.copyTo(circularImage, createCircularMask(ROI_RADIUS, ROI_RADIUS, ROI_RADIUS - 1, croppedImage));
 
     return circularImage;
 }
 
-double CircularMatFactory::maxColourBarIntensityFromViewerImage(const string &inputFile) {
-    Mat image = imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
+double CircularMatFactory::maxColourBarIntensityFromViewerImage(const std::string &inputFile) {
+    cv::Mat image = cv::imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
 
     isValidViewerImage(image);
 
-    return (double)image.at<uchar>(Point(COLOURBAR_MAX_X, COLOURBAR_MAX_Y));
+    return (double)image.at<uchar>(cv::Point(COLOURBAR_MAX_X, COLOURBAR_MAX_Y));
 }
 
-unsigned char * CircularMatFactory::processConcentrations(ifstream& fin) {
+unsigned char * CircularMatFactory::processConcentrations(std::ifstream& fin) {
     MS_throw(UnimplementedMethodException, ERR_UNIMPLEMENTED_METHOD);
 
     // Statement not executed but added to overcome warning message
     throw UnimplementedMethodException(__FILE__, __LINE__, ERR_UNIMPLEMENTED_METHOD);
 }
 
-Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int originY,
-                                           unsigned int radius, const Mat &image) {
-    Mat mask = Mat::zeros(image.size(), CV_8UC1);
+cv::Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int originY,
+                                               unsigned int radius, const cv::Mat &image) {
+    cv::Mat mask = cv::Mat::zeros(image.size(), CV_8UC1);
 
-    circle(mask, Point(originX, originY), radius, Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX), CV_FILLED);
+    cv::circle(mask, cv::Point(originX, originY), radius, cv::Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX),
+               CV_FILLED);
 
     return mask;
 }
 
-bool CircularMatFactory::isValidViewerImage(const Mat &image) {
+bool CircularMatFactory::isValidViewerImage(const cv::Mat &image) {
     if (!image.data) {
         MS_throw(InvalidInputException, ERR_INPUT_OPEN);
     }
@@ -68,7 +69,7 @@ bool CircularMatFactory::isValidViewerImage(const Mat &image) {
 
 
 // Constants
-const string CircularMatFactory::ERR_UNIMPLEMENTED_METHOD = "The method you called is not implemented.";
+const std::string CircularMatFactory::ERR_UNIMPLEMENTED_METHOD = "The method you called is not implemented.";
 
 const int CircularMatFactory::INTENSITY_MAX     = 255;
 

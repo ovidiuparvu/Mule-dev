@@ -5,11 +5,10 @@
 #include <cassert>
 #include <sstream>
 
-using namespace std;
 using namespace multiscale;
 
 
-string RGBColourGenerator::generate(double concentrationMin, double concentrationMax, double concentration) {
+std::string RGBColourGenerator::generate(double concentrationMin, double concentrationMax, double concentration) {
     concentration = (concentration - concentrationMin)/(concentrationMax - concentrationMin);
 
     double hue        = HUE_MIN + (concentration * (HUE_MAX - HUE_MIN));
@@ -19,13 +18,13 @@ string RGBColourGenerator::generate(double concentrationMin, double concentratio
     return convertHSVToRGB(hue, saturation, value);
 }
 
-Scalar RGBColourGenerator::generate(RNG &randomNumberGenerator) {
+cv::Scalar RGBColourGenerator::generate(cv::RNG &randomNumberGenerator) {
     int colour = (unsigned) randomNumberGenerator;
 
-    return Scalar(colour & 255, ((colour >> 8) & 255), ((colour >> 16) & 255));
+    return cv::Scalar(colour & 255, ((colour >> 8) & 255), ((colour >> 16) & 255));
 }
 
-string RGBColourGenerator::convertHSVToRGB(double hue, double saturation, double value) {
+std::string RGBColourGenerator::convertHSVToRGB(double hue, double saturation, double value) {
     assert((hue >= 0) && (hue < 360));
 
     double chroma   = value * saturation;
@@ -39,8 +38,7 @@ string RGBColourGenerator::convertHSVToRGB(double hue, double saturation, double
     return convertRGBToString();
 }
 
-void RGBColourGenerator::computeRGBValues(int    huePrime, double X,
-                                          double chroma,   double m) {
+void RGBColourGenerator::computeRGBValues(int huePrime, double X, double chroma, double m) {
     switch (huePrime) {
     case 0:
         red   = chroma;
@@ -84,8 +82,8 @@ void RGBColourGenerator::computeRGBValues(int    huePrime, double X,
     blue  += m;
 }
 
-string RGBColourGenerator::convertRGBToString() {
-    ostringstream stringStream;
+std::string RGBColourGenerator::convertRGBToString() {
+    std::ostringstream stringStream;
 
     stringStream << "#";
     stringStream << std::setfill('0') << std::setw(2) << std::hex << (int) (red * 255);

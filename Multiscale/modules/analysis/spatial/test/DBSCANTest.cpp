@@ -6,10 +6,8 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-using namespace cv;
 using namespace multiscale;
 using namespace multiscale::analysis;
-using namespace std;
 
 
 // Class for definig a Euclidean data point
@@ -24,38 +22,38 @@ class EuclideanDataPoint : public DataPoint {
         EuclideanDataPoint(const EuclideanDataPoint &point) : x(point.x), y(point.y) {}
         ~EuclideanDataPoint() {};
 
-        double distanceTo(shared_ptr<DataPoint> point) override {
-            shared_ptr<EuclideanDataPoint> ePoint = dynamic_pointer_cast<EuclideanDataPoint>(point);
+        double distanceTo(std::shared_ptr<DataPoint> point) override {
+            std::shared_ptr<EuclideanDataPoint> ePoint = std::dynamic_pointer_cast<EuclideanDataPoint>(point);
 
-            return Geometry2D::distanceBtwPoints(Point(x, y), Point(ePoint->x, ePoint->y));
+            return Geometry2D::distanceBtwPoints(cv::Point(x, y), cv::Point(ePoint->x, ePoint->y));
         }
 
 };
 
 
-// Convert vector of points to vector of shared_ptr of points
-vector<shared_ptr<DataPoint>> convertPoints(vector<EuclideanDataPoint> &points) {
-    vector<shared_ptr<DataPoint> > dataPoints;
+// Convert std::vector of points to std::vector of std::shared_ptr of points
+std::vector<std::shared_ptr<DataPoint>> convertPoints(std::vector<EuclideanDataPoint> &points) {
+    std::vector<std::shared_ptr<DataPoint> > dataPoints;
 
     for (EuclideanDataPoint &point : points) {
-        dataPoints.push_back(shared_ptr<DataPoint>(new EuclideanDataPoint(point)));
+        dataPoints.push_back(std::shared_ptr<DataPoint>(new EuclideanDataPoint(point)));
     }
 
     return dataPoints;
 }
 
 // Print the results of the test case
-void printResults(const vector<int> &clusterIndexes) {
-    cout << endl << "+++ NEW TEST CASE +++" << endl << endl;
+void printResults(const std::vector<int> &clusterIndexes) {
+    std::cout << std::endl << "+++ NEW TEST CASE +++" << std::endl << std::endl;
 
     for (unsigned int i = 0; i < clusterIndexes.size(); i++) {
-        cout << "Point " << (i + 1) << " belongs to cluster: " << clusterIndexes[i] << endl;
+        std::cout << "cv::Point " << (i + 1) << " belongs to cluster: " << clusterIndexes[i] << std::endl;
     }
 }
 
 // Run a test for the given set of points
-void runTest(vector<EuclideanDataPoint> &points, double eps, int minPoints) {
-    vector<int> clusterIndexes;
+void runTest(std::vector<EuclideanDataPoint> &points, double eps, int minPoints) {
+    std::vector<int> clusterIndexes;
     int nrOfClusters;
 
     DBSCAN().run(convertPoints(points), clusterIndexes, nrOfClusters, eps, minPoints);
@@ -65,7 +63,7 @@ void runTest(vector<EuclideanDataPoint> &points, double eps, int minPoints) {
 
 // TC: Each point in its own cluster
 void runTest1() {
-    vector<EuclideanDataPoint> points;
+    std::vector<EuclideanDataPoint> points;
 
     for (int i = 0; i < 100; i++) {
         points.push_back(EuclideanDataPoint(i + 1, i + 3));
@@ -76,7 +74,7 @@ void runTest1() {
 
 // TC: Three clusters
 void runTest2() {
-    vector<EuclideanDataPoint> points = {
+    std::vector<EuclideanDataPoint> points = {
             EuclideanDataPoint(1, 3),
             EuclideanDataPoint(2, 2),
             EuclideanDataPoint(2, 4),
@@ -93,7 +91,7 @@ void runTest2() {
 
 // TC: All points in same cluster
 void runTest3() {
-    vector<EuclideanDataPoint> points;
+    std::vector<EuclideanDataPoint> points;
 
     for (int i = 0; i < 100; i++) {
         points.push_back(EuclideanDataPoint(i + 1, i + 3));
@@ -104,14 +102,14 @@ void runTest3() {
 
 // TC: No points
 void runTest4() {
-    vector<EuclideanDataPoint> points;
+    std::vector<EuclideanDataPoint> points;
 
     runTest(points, 10, 7);
 }
 
 // TC: All noise points
 void runTest5() {
-    vector<EuclideanDataPoint> points;
+    std::vector<EuclideanDataPoint> points;
 
     for (int i = 0; i < 100; i++) {
         points.push_back(EuclideanDataPoint(i + 1, i + 3));

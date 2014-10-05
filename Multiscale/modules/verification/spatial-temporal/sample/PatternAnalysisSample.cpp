@@ -49,12 +49,12 @@ int analysePatterns(const std::string &inputFilePath) {
                 std::cout << " Parsing failed!" << std::endl;
                 std::cout << "-----------------------------------------------------" << std::endl << std::endl;
             }
-        } catch(const exception &e) {
+        } catch(const std::exception &e) {
             ExceptionHandler::printDetailedErrorMessage(e);
 
             return EXEC_ERR_CODE;
         } catch(...) {
-            cerr << "Exception of unknown type!" << std::endl;
+            std::cerr << "Exception of unknown type!" << std::endl;
 
             return EXEC_ERR_CODE;
         }
@@ -73,10 +73,10 @@ int main(int argc, char **argv) {
 
     try {
         return analysePatterns(std::string(argv[1]));
-    } catch(const exception &e) {
+    } catch(const std::exception &e) {
         ExceptionHandler::printDetailedErrorMessage(e);
     } catch(...) {
-        cerr << "Exception of unknown type!" << std::endl;
+        std::cerr << "Exception of unknown type!" << std::endl;
     }
 
     return EXEC_ERR_CODE;

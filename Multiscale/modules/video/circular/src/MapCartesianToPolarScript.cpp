@@ -41,7 +41,6 @@
 #include <boost/program_options.hpp>
 #include <iostream>
 
-using namespace std;
 using namespace multiscale;
 using namespace multiscale::video;
 
@@ -51,8 +50,8 @@ namespace po = boost::program_options;
 // Initialise the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description &usageDescription, int argc, char** argv) {
     usageDescription.add_options()("help,h", "display help message\n")
-                                  ("input-file,i", po::value<string>(), "provide the path to the input file\n")
-                                  ("output-file,o",po::value<string>(), "provide the path of the output file (without extension)\n")
+                                  ("input-file,i", po::value<std::string>(), "provide the path to the input file\n")
+                                  ("output-file,o",po::value<std::string>(), "provide the path of the output file (without extension)\n")
                                   ("output-type,t", po::value<int>()->default_value(0), "Specify the type of the output:\n"
                                                                                         "\t 0 - output as script.\n"
                                                                                         "\t 1 - output as file.\n\n"
@@ -66,13 +65,13 @@ po::variables_map initArgumentsConfig(po::options_description &usageDescription,
 
 // Print help message if needed
 void printHelpInformation(const po::variables_map &vm, const po::options_description &usageDescription) {
-    cout << usageDescription << endl;
+    std::cout << usageDescription << std::endl;
 }
 
 // Print error message if wrong parameters are provided
 void printWrongParameters() {
-    cout << ERR_MSG << "Wrong input arguments provided." << endl;
-    cout << "Run the program with the argument \"--help\" for more information." << endl;
+    std::cout << ERR_MSG << "Wrong input arguments provided." << std::endl;
+    std::cout << "Run the program with the argument \"--help\" for more information." << std::endl;
 }
 
 // Check if the output type is valid
@@ -81,9 +80,9 @@ bool isValidOutputType(const po::variables_map &vm, bool &isScript) {
         int outputType = vm["output-type"].as<int>();
 
         if ((outputType < 0) || (outputType > 1)) {
-            cout << ERR_MSG
+            std::cout << ERR_MSG
                     << "Parameter output-type can have either the value 0 or 1."
-                    << endl;
+                    << std::endl;
 
             return false;
         }
@@ -97,7 +96,7 @@ bool isValidOutputType(const po::variables_map &vm, bool &isScript) {
 }
 
 // Get the needed parameters
-bool areValidParameters(string &inputFilepath, string &outputFilename, bool &isScript, int argc, char** argv) {
+bool areValidParameters(std::string &inputFilepath, std::string &outputFilename, bool &isScript, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
@@ -113,8 +112,8 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, bool &isS
 
     // Check if the given parameters are correct
     if ((vm.count("input-file")) && (vm.count("output-file"))) {
-        inputFilepath  = vm["input-file"].as<string>();
-        outputFilename = vm["output-file"].as<string>();
+        inputFilepath  = vm["input-file"].as<std::string>();
+        outputFilename = vm["output-file"].as<std::string>();
 
         return isValidOutputType(vm, isScript);
     }
@@ -124,8 +123,8 @@ bool areValidParameters(string &inputFilepath, string &outputFilename, bool &isS
 
 // Main function
 int main(int argc, char** argv) {
-    string inputFilePath;
-    string outputFilepath;
+    std::string inputFilePath;
+    std::string outputFilepath;
     bool   isScript = true;
 
     try {
@@ -136,12 +135,12 @@ int main(int argc, char** argv) {
         } else {
             printWrongParameters();
         }
-    } catch(const exception &e) {
+    } catch(const std::exception &e) {
         ExceptionHandler::printDetailedErrorMessage(e);
 
         return EXEC_ERR_CODE;
     } catch(...) {
-        cerr << "Exception of unknown type!" << endl;
+        std::cerr << "Exception of unknown type!" << std::endl;
     }
 
     return EXEC_SUCCESS_CODE;

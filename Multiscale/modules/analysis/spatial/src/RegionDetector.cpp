@@ -8,7 +8,6 @@
 #include <fstream>
 #include <string>
 
-using namespace std;
 using namespace multiscale::analysis;
 
 
@@ -63,7 +62,7 @@ int RegionDetector::getThresholdValue() {
     return thresholdValue;
 }
 
-vector<Region> const &RegionDetector::getRegions() {
+std::vector<Region> const &RegionDetector::getRegions() {
     return regions;
 }
 
@@ -134,21 +133,23 @@ void RegionDetector::initialiseDetectorSpecificFields() {
 void RegionDetector::initialiseDetectorSpecificImageDependentFields() {}
 
 void RegionDetector::createDetectorSpecificTrackbars() {
-    createTrackbar(TRACKBAR_ALPHA, WIN_OUTPUT_IMAGE, &alpha, ALPHA_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_BETA, WIN_OUTPUT_IMAGE, &beta, BETA_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_KERNEL, WIN_OUTPUT_IMAGE, &blurKernelSize, KERNEL_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_MORPH, WIN_OUTPUT_IMAGE, &morphologicalCloseIterations, MORPH_ITER_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_EPSILON, WIN_OUTPUT_IMAGE, &epsilon, EPSILON_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_REGION_AREA_THRESH, WIN_OUTPUT_IMAGE, &regionAreaThresh, REGION_AREA_THRESH_MAX, nullptr, nullptr);
-    createTrackbar(TRACKBAR_THRESHOLD, WIN_OUTPUT_IMAGE, &thresholdValue, THRESHOLD_MAX, nullptr, nullptr);
+    cv::createTrackbar(TRACKBAR_ALPHA, WIN_OUTPUT_IMAGE, &alpha, ALPHA_MAX, nullptr, nullptr);
+    cv::createTrackbar(TRACKBAR_BETA, WIN_OUTPUT_IMAGE, &beta, BETA_MAX, nullptr, nullptr);
+    cv::createTrackbar(TRACKBAR_KERNEL, WIN_OUTPUT_IMAGE, &blurKernelSize, KERNEL_MAX, nullptr, nullptr);
+    cv::createTrackbar(TRACKBAR_MORPH, WIN_OUTPUT_IMAGE, &morphologicalCloseIterations, MORPH_ITER_MAX,
+                       nullptr, nullptr);
+    cv::createTrackbar(TRACKBAR_EPSILON, WIN_OUTPUT_IMAGE, &epsilon, EPSILON_MAX, nullptr, nullptr);
+    cv::createTrackbar(TRACKBAR_REGION_AREA_THRESH, WIN_OUTPUT_IMAGE, &regionAreaThresh, REGION_AREA_THRESH_MAX,
+                       nullptr, nullptr);
+    cv::createTrackbar(TRACKBAR_THRESHOLD, WIN_OUTPUT_IMAGE, &thresholdValue, THRESHOLD_MAX, nullptr, nullptr);
 }
 
-string RegionDetector::getDetectorTypeAsString() {
+std::string RegionDetector::getDetectorTypeAsString() {
     return DETECTOR_TYPE;
 }
 
 void RegionDetector::processImageAndDetect() {
-    Mat processedImage, thresholdedImage;
+    cv::Mat processedImage, thresholdedImage;
 
     changeContrastAndBrightness(processedImage);
     morphologicalClose(processedImage);
@@ -159,30 +160,30 @@ void RegionDetector::processImageAndDetect() {
     computeAverageMeasures(regions);
 }
 
-void RegionDetector::changeContrastAndBrightness(Mat &processedImage) {
+void RegionDetector::changeContrastAndBrightness(cv::Mat &processedImage) {
     image.convertTo(processedImage, -1, convertAlpha(alpha), convertBeta(beta));
 }
 
-void RegionDetector::smoothImage(Mat &image) {
+void RegionDetector::smoothImage(cv::Mat &image) {
     if (blurKernelSize % 2) {
-        GaussianBlur(image, image, Size(blurKernelSize, blurKernelSize), 0);
+        cv::GaussianBlur(image, image, cv::Size(blurKernelSize, blurKernelSize), 0);
     } else {
-        GaussianBlur(image, image, Size(blurKernelSize + 1, blurKernelSize + 1), 0);
+        cv::GaussianBlur(image, image, cv::Size(blurKernelSize + 1, blurKernelSize + 1), 0);
     }
 }
 
-void RegionDetector::morphologicalClose(Mat &image) {
+void RegionDetector::morphologicalClose(cv::Mat &image) {
     if (morphologicalCloseIterations > 0) {
-        morphologyEx(image, image, MORPH_CLOSE, Mat(), Point(-1, -1), morphologicalCloseIterations);
+        cv::morphologyEx(image, image, cv::MORPH_CLOSE, cv::Mat(), cv::Point(-1, -1), morphologicalCloseIterations);
     }
 }
 
-void RegionDetector::thresholdImage(const Mat &image, Mat &thresholdedImage) {
-    threshold(image, thresholdedImage, thresholdValue, THRESHOLD_MAX, THRESH_BINARY);
+void RegionDetector::thresholdImage(const cv::Mat &image, cv::Mat &thresholdedImage) {
+    cv::threshold(image, thresholdedImage, thresholdValue, THRESHOLD_MAX, cv::THRESH_BINARY);
 }
 
-void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
-    vector<Polygon> polygons = findPolygonsInImage(image);
+void RegionDetector::findRegions(const cv::Mat &image, std::vector<Region> &regions) {
+    std::vector<Polygon> polygons = findPolygonsInImage(image);
 
     for (auto polygon : polygons) {
         // Obtain the approximated polygon
@@ -193,12 +194,12 @@ void RegionDetector::findRegions(const Mat &image, vector<Region> &regions) {
     }
 }
 
-void RegionDetector::computeAverageMeasures(vector<Region> &regions) {
+void RegionDetector::computeAverageMeasures(std::vector<Region> &regions) {
     computeAverageClusterednessDegree(regions);
     computeAverageDensity(regions);
 }
 
-void RegionDetector::computeAverageClusterednessDegree(vector<Region> &regions) {
+void RegionDetector::computeAverageClusterednessDegree(std::vector<Region> &regions) {
     avgClusterednessDegree = sumOfAverageCentroidDistances(regions);
 
     // Take the average of the sum of average distances between clusters
@@ -213,15 +214,15 @@ void RegionDetector::computeAverageClusterednessDegree(vector<Region> &regions) 
     }
 }
 
-double RegionDetector::sumOfAverageCentroidDistances(vector<Region> &regions) {
+double RegionDetector::sumOfAverageCentroidDistances(std::vector<Region> &regions) {
     avgClusterednessDegree = 0;
 
     for (auto &region: regions) {
-        Point2f centroid = region.getCentre();
+        cv::Point2f centroid = region.getCentre();
         double distance = 0;
 
         for (auto &otherRegion: regions) {
-            Point2f otherCentroid = otherRegion.getCentre();
+            cv::Point2f otherCentroid = otherRegion.getCentre();
 
             distance += Geometry2D::distanceBtwPoints(centroid, otherCentroid);
         }
@@ -233,7 +234,7 @@ double RegionDetector::sumOfAverageCentroidDistances(vector<Region> &regions) {
     return avgClusterednessDegree;
 }
 
-void RegionDetector::computeAverageDensity(vector<Region> &regions) {
+void RegionDetector::computeAverageDensity(std::vector<Region> &regions) {
     avgDensity = 0;
 
     for (auto &region : regions) {
@@ -244,25 +245,25 @@ void RegionDetector::computeAverageDensity(vector<Region> &regions) {
                                        : 0;
 }
 
-vector<Polygon> RegionDetector::findPolygonsInImage(const Mat &image) {
+std::vector<Polygon> RegionDetector::findPolygonsInImage(const cv::Mat &image) {
     // Two extra pixels required for each dimension, because the contour detection
-    // algorithm ignores the first and last lines and columns of the image matrix. In order
-    // to consider the entire input image we add blank first and last lines and columns
+    // algorithm ignores the first and last cv::lines and columns of the image matrix. In order
+    // to consider the entire input image we add blank first and last cv::lines and columns
     // to the image matrix
-    Mat modifiedImage = Mat::zeros(image.rows + 2, image.cols + 2, image.type());
-    vector<vector<Point> > contours;
-    vector<Vec4i> hierarchy;
+    cv::Mat modifiedImage = cv::Mat::zeros(image.rows + 2, image.cols + 2, image.type());
+    std::vector<std::vector<cv::Point> > contours;
+    std::vector<cv::Vec4i> hierarchy;
 
-    image.copyTo(modifiedImage(Rect(1, 1, image.cols, image.rows)));
+    image.copyTo(modifiedImage(cv::Rect(1, 1, image.cols, image.rows)));
 
     findContours(modifiedImage, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_NONE);
 
     return createPolygons(contours, hierarchy);
 }
 
-vector<Polygon> RegionDetector::createPolygons(const vector<vector<Point> > &contours,
-                                               const vector<Vec4i> &hierarchy) {
-    vector<Polygon> polygons;
+std::vector<Polygon> RegionDetector::createPolygons(const std::vector<std::vector<cv::Point> > &contours,
+                                                    const std::vector<cv::Vec4i> &hierarchy) {
+    std::vector<Polygon> polygons;
 
     if (existContours(contours)) {
         createPolygonsFromContours(contours, hierarchy, polygons);
@@ -271,13 +272,13 @@ vector<Polygon> RegionDetector::createPolygons(const vector<vector<Point> > &con
     return polygons;
 }
 
-bool RegionDetector::existContours(const vector<vector<Point> > &contours) {
+bool RegionDetector::existContours(const std::vector<std::vector<cv::Point> > &contours) {
     return (!contours.empty());
 }
 
-void RegionDetector::createPolygonsFromContours(const vector<vector<Point> > &contours,
-                                                const vector<Vec4i> &hierarchy,
-                                                vector<Polygon> &polygons) {
+void RegionDetector::createPolygonsFromContours(const std::vector<std::vector<cv::Point> > &contours,
+                                                const std::vector<cv::Vec4i> &hierarchy,
+                                                std::vector<Polygon> &polygons) {
     // Assuming that the algorithm for finding contours is the one proposed by Suzuki85
     // the first contour is always an outer contour
     for (int i = 0; i != -1; i = hierarchy[i][HIERARCHY_NEXT_INDEX]) {
@@ -287,8 +288,8 @@ void RegionDetector::createPolygonsFromContours(const vector<vector<Point> > &co
     }
 }
 
-Polygon RegionDetector::createPolygon(int contourIndex, const vector<vector<Point> > &contours,
-                                      const vector<Vec4i> &hierarchy) {
+Polygon RegionDetector::createPolygon(int contourIndex, const std::vector<std::vector<cv::Point> > &contours,
+                                      const std::vector<cv::Vec4i> &hierarchy) {
     Polygon polygon;
 
     setPolygonOuterContour  (contourIndex, contours, hierarchy, polygon);
@@ -297,13 +298,13 @@ Polygon RegionDetector::createPolygon(int contourIndex, const vector<vector<Poin
     return polygon;
 }
 
-void RegionDetector::setPolygonOuterContour(int contourIndex, const vector<vector<Point> > &contours,
-                                            const vector<Vec4i> &hierarchy, Polygon &polygon) {
+void RegionDetector::setPolygonOuterContour(int contourIndex, const std::vector<std::vector<cv::Point> > &contours,
+                                            const std::vector<cv::Vec4i> &hierarchy, Polygon &polygon) {
     polygon.first = contours[contourIndex];
 }
 
-void RegionDetector::setPolygonInnerContours(int contourIndex, const vector<vector<Point> > &contours,
-                                             const vector<Vec4i> &hierarchy, Polygon &polygon) {
+void RegionDetector::setPolygonInnerContours(int contourIndex, const std::vector<std::vector<cv::Point> > &contours,
+                                             const std::vector<cv::Vec4i> &hierarchy, Polygon &polygon) {
     int nrOfContours = contours.size();
 
     for (int i = 0; i < nrOfContours; i++) {
@@ -315,7 +316,7 @@ void RegionDetector::setPolygonInnerContours(int contourIndex, const vector<vect
 }
 
 void RegionDetector::approximatePolygonOuterBorder(Polygon &polygon) {
-    vector<Point> polygonOuterBorder(polygon.first);
+    std::vector<cv::Point> polygonOuterBorder(polygon.first);
 
     approxPolyDP(polygonOuterBorder, polygon.first, epsilon, true);
 }
@@ -330,23 +331,23 @@ Region RegionDetector::createRegionFromPolygon(const Polygon &polygon) {
     return Region(density, distance, angle, polygon.first, polygon.second);
 }
 
-bool RegionDetector::isValidContour(const vector<Point> &contour) {
+bool RegionDetector::isValidContour(const std::vector<cv::Point> &contour) {
     double area = contourArea(contour, CONTOUR_AREA_ORIENTED);
 
     return (area >= regionAreaThresh);
 }
 
-bool RegionDetector::isValidHole(const vector<Point> &hole) {
+bool RegionDetector::isValidHole(const std::vector<cv::Point> &hole) {
     double area = contourArea(hole, CONTOUR_AREA_ORIENTED);
 
     return (area >= THRESHOLD_HOLE_AREA);
 }
 
 double RegionDetector::regionDensity(const Polygon &polygon) {
-    Mat mask(Mat::zeros(image.rows, image.cols, image.type()));
+    cv::Mat mask(cv::Mat::zeros(image.rows, image.cols, image.type()));
 
-    drawContours(mask, vector<vector<Point>>(1, polygon.first), -1, Scalar(INTENSITY_MAX), CV_FILLED);
-    drawContours(mask, polygon.second, -1, Scalar(0), CV_FILLED);
+    drawContours(mask, std::vector<std::vector<cv::Point>>(1, polygon.first), -1, cv::Scalar(INTENSITY_MAX), CV_FILLED);
+    drawContours(mask, polygon.second, -1, cv::Scalar(0), CV_FILLED);
 
     double averageIntensity = (mean(image, mask))[0];
 
@@ -357,11 +358,11 @@ void RegionDetector::clearPreviousDetectionResults() {
     regions.clear();
 }
 
-vector<shared_ptr<SpatialEntityPseudo3D>> RegionDetector::getCollectionOfSpatialEntityPseudo3D() {
-    vector<shared_ptr<SpatialEntityPseudo3D>> convertedRegions;
+std::vector<std::shared_ptr<SpatialEntityPseudo3D>> RegionDetector::getCollectionOfSpatialEntityPseudo3D() {
+    std::vector<std::shared_ptr<SpatialEntityPseudo3D>> convertedRegions;
 
     for (Region &region : regions) {
-        convertedRegions.push_back(shared_ptr<SpatialEntityPseudo3D>(new Region(region)));
+        convertedRegions.push_back(std::shared_ptr<SpatialEntityPseudo3D>(new Region(region)));
     }
 
     return convertedRegions;
@@ -369,12 +370,12 @@ vector<shared_ptr<SpatialEntityPseudo3D>> RegionDetector::getCollectionOfSpatial
 
 void RegionDetector::outputResultsToImage() {
     // Two extra pixels required for each dimension, because the contour detection
-    // algorithm ignores the first and last lines and columns of the image matrix. In order
-    // to consider the entire input image we add blank first and last lines and columns
+    // algorithm ignores the first and last cv::lines and columns of the image matrix. In order
+    // to consider the entire input image we add blank first and last cv::lines and columns
     // to the image matrix
-    Mat outputImage = Mat::zeros(image.rows + 2, image.cols + 2, image.type());
+    cv::Mat outputImage = cv::Mat::zeros(image.rows + 2, image.cols + 2, image.type());
 
-    image.copyTo(outputImage(Rect(1, 1, image.cols, image.rows)));
+    image.copyTo(outputImage(cv::Rect(1, 1, image.cols, image.rows)));
 
     cvtColor(outputImage, outputImage, CV_GRAY2BGR);
 
@@ -382,46 +383,56 @@ void RegionDetector::outputResultsToImage() {
         outputRegionToImage(region, outputImage);
     }
 
-    outputImage(Rect(1, 1, image.cols, image.rows)).copyTo(this->outputImage);
+    outputImage(cv::Rect(1, 1, image.cols, image.rows)).copyTo(this->outputImage);
 }
 
-void RegionDetector::outputRegionToImage(const Region &region, Mat &outputImage) {
+void RegionDetector::outputRegionToImage(const Region &region, cv::Mat &outputImage) {
     outputRegionOuterBorderToImage(region.getOuterBorderPolygon(), outputImage);
     outputRegionInnerBordersToImage(region.getInnerBorderPolygons(), outputImage);
 }
 
-void RegionDetector::outputRegionOuterBorderToImage(const vector<Point> &outerBorder,
-                                                    Mat &outputImage) {
-    polylines(outputImage, outerBorder, POLYGON_CLOSED, Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
+void RegionDetector::outputRegionOuterBorderToImage(const std::vector<cv::Point> &outerBorder,
+                                                    cv::Mat &outputImage) {
+    polylines(outputImage, outerBorder, POLYGON_CLOSED,
+              cv::Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
 }
 
-void RegionDetector::outputRegionInnerBordersToImage(const vector<vector<Point> > &innerBorders,
-                                                     Mat &outputImage) {
+void RegionDetector::outputRegionInnerBordersToImage(const std::vector<std::vector<cv::Point> > &innerBorders,
+                                                     cv::Mat &outputImage) {
     for (auto innerBorder : innerBorders) {
-        polylines(outputImage, innerBorder, POLYGON_CLOSED, Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
+        polylines(outputImage, innerBorder, POLYGON_CLOSED,
+                  cv::Scalar(INTENSITY_MAX, 0, 0), DISPLAY_LINE_THICKNESS);
     }
 }
 
 double RegionDetector::convertAlpha(int alpha) {
-    return NumericRangeManipulator::convertFromRange<int, double>(0, ALPHA_MAX, ALPHA_REAL_MIN, ALPHA_REAL_MAX, alpha);
+    return (
+        NumericRangeManipulator::convertFromRange<int, double>(
+            0, ALPHA_MAX, ALPHA_REAL_MIN, ALPHA_REAL_MAX, alpha
+        )
+    );
 }
 
 int RegionDetector::convertBeta(int beta) {
-    return NumericRangeManipulator::convertFromRange<int, int>(0, BETA_MAX, BETA_REAL_MIN, BETA_REAL_MAX, beta);
+    return (
+        NumericRangeManipulator::convertFromRange<int, int>(
+            0, BETA_MAX, BETA_REAL_MIN, BETA_REAL_MAX, beta
+        )
+    );
 }
 
 
 // Constants
-const string RegionDetector::DETECTOR_TYPE  = "Regions";
+const std::string RegionDetector::DETECTOR_TYPE  = "Regions";
 
-const string RegionDetector::TRACKBAR_ALPHA              = "Alpha";
-const string RegionDetector::TRACKBAR_BETA               = "Beta";
-const string RegionDetector::TRACKBAR_KERNEL             = "Gaussian blur kernel size";
-const string RegionDetector::TRACKBAR_MORPH              = "Morphological open, number of iterations";
-const string RegionDetector::TRACKBAR_CANNY              = "Canny lower threshold";
-const string RegionDetector::TRACKBAR_EPSILON            = "Epsilon";
-const string RegionDetector::TRACKBAR_REGION_AREA_THRESH = "Region area threshold";
-const string RegionDetector::TRACKBAR_THRESHOLD          = "Threshold value";
+const std::string RegionDetector::TRACKBAR_ALPHA              = "Alpha";
+const std::string RegionDetector::TRACKBAR_BETA               = "Beta";
+const std::string RegionDetector::TRACKBAR_KERNEL             = "Gaussian blur kernel size";
+const std::string RegionDetector::TRACKBAR_MORPH              = "Morphological open, number of iterations";
+const std::string RegionDetector::TRACKBAR_CANNY              = "Canny lower threshold";
+const std::string RegionDetector::TRACKBAR_EPSILON            = "Epsilon";
+const std::string RegionDetector::TRACKBAR_REGION_AREA_THRESH = "Region area threshold";
+const std::string RegionDetector::TRACKBAR_THRESHOLD          = "Threshold value";
 
 const int RegionDetector::HIERARCHY_NEXT_INDEX          = 0;
 const int RegionDetector::HIERARCHY_PREV_INDEX          = 1;

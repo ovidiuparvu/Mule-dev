@@ -8,15 +8,14 @@
 #include <fstream>
 
 using namespace multiscale::video;
-using namespace std;
 
 
-void RectangularGnuplotScriptGenerator::generateScript(const vector<double> &concentrations,
+void RectangularGnuplotScriptGenerator::generateScript(const std::vector<double> &concentrations,
                                                        double simulationTime,
                                                        unsigned long height,
                                                        unsigned long width,
-                                                       const string &outputFilepath) {
-    ofstream fout((outputFilepath + GNUPLOT_EXTENSION), std::ios_base::trunc);
+                                                       const std::string &outputFilepath) {
+    std::ofstream fout((outputFilepath + GNUPLOT_EXTENSION), std::ios_base::trunc);
 
     assert(fout.is_open());
 
@@ -27,23 +26,24 @@ void RectangularGnuplotScriptGenerator::generateScript(const vector<double> &con
     fout.close();
 }
 
-void RectangularGnuplotScriptGenerator::generateHeader(ofstream &fout, const string &outputFilepath,
+void RectangularGnuplotScriptGenerator::generateHeader(std::ofstream &fout, const std::string &outputFilepath,
                                                        double simulationTime, unsigned long height,
                                                        unsigned long width) {
-    ifstream fin(HEADER_IN);
+    std::ifstream fin(HEADER_IN);
 
     assert(fin.is_open());
 
-    string outputFilename = StringManipulator::filenameFromPath(outputFilepath);
+    std::string outputFilename = StringManipulator::filenameFromPath(outputFilepath);
 
     outputHeader(fin, outputFilename, simulationTime, height, width, fout);
 
     fin.close();
 }
 
-void RectangularGnuplotScriptGenerator::generateBody(const vector<double> &concentrations, unsigned long height,
-                                                     unsigned long width, ofstream &fout) {
-    ifstream fin(CONTENT_IN);
+void RectangularGnuplotScriptGenerator::generateBody(const std::vector<double> &concentrations,
+                                                     unsigned long height, unsigned long width,
+                                                     std::ofstream &fout) {
+    std::ifstream fin(CONTENT_IN);
 
     assert(fin.is_open());
 
@@ -52,8 +52,8 @@ void RectangularGnuplotScriptGenerator::generateBody(const vector<double> &conce
     fin.close();
 }
 
-void RectangularGnuplotScriptGenerator::generateFooter(ofstream &fout) {
-    ifstream fin(FOOTER_IN);
+void RectangularGnuplotScriptGenerator::generateFooter(std::ofstream &fout) {
+    std::ifstream fin(FOOTER_IN);
 
     assert(fin.is_open());
 
@@ -62,40 +62,60 @@ void RectangularGnuplotScriptGenerator::generateFooter(ofstream &fout) {
     fin.close();
 }
 
-void RectangularGnuplotScriptGenerator::outputHeader(ifstream &fin, const string &outputFilename, double simulationTime,
-                                                     unsigned long height, unsigned long width, ofstream &fout) {
-    string line;
+void RectangularGnuplotScriptGenerator::outputHeader(std::ifstream &fin,
+                                                     const std::string &outputFilename,
+                                                     double simulationTime,
+                                                     unsigned long height, unsigned long width,
+                                                     std::ofstream &fout) {
+    std::string line;
 
     while (getline(fin, line)) {
-        line = StringManipulator::replace(line, REPLACE_HEADER_FILENAME, outputFilename);
-        line = StringManipulator::replace(line, REPLACE_HEADER_HEIGHT, StringManipulator::toString<double>(height - REPLACE_DIMENSION_EXTRA));
-        line = StringManipulator::replace(line, REPLACE_HEADER_WIDTH, StringManipulator::toString<double>(width - REPLACE_DIMENSION_EXTRA));
-        line = StringManipulator::replace(line, REPLACE_HEADER_SIM_TIME, StringManipulator::toString<double>(simulationTime));
+        line = StringManipulator::replace(
+                   line,
+                   REPLACE_HEADER_FILENAME,
+                   outputFilename
+               );
+        line = StringManipulator::replace(
+                   line,
+                   REPLACE_HEADER_HEIGHT,
+                   StringManipulator::toString<double>(height - REPLACE_DIMENSION_EXTRA)
+               );
+        line = StringManipulator::replace(
+                   line,
+                   REPLACE_HEADER_WIDTH,
+                   StringManipulator::toString<double>(width - REPLACE_DIMENSION_EXTRA)
+               );
+        line = StringManipulator::replace(
+                   line,
+                   REPLACE_HEADER_SIM_TIME,
+                   StringManipulator::toString<double>(simulationTime)
+               );
 
-        fout << line << endl;
+        fout << line << std::endl;
     }
 
     fout.flush();
 }
 
-void RectangularGnuplotScriptGenerator::outputContent(const vector<double> &concentrations, unsigned long height,
-                                                      unsigned long width, ofstream &fout) {
+void RectangularGnuplotScriptGenerator::outputContent(const std::vector<double> &concentrations,
+                                                      unsigned long height, unsigned long width,
+                                                      std::ofstream &fout) {
     for (unsigned int i = 0; i < height; i++) {
         for (unsigned int j = 0; j < (width - 1); j++) {
             fout << concentrations[(i * width) + j] << OUTPUT_SEPARATOR;
         }
 
-        fout << concentrations[(i * width) + width - 1] << endl;
+        fout << concentrations[(i * width) + width - 1] << std::endl;
     }
 
     fout.flush();
 }
 
-void RectangularGnuplotScriptGenerator::outputFooter(ifstream &fin, ofstream &fout) {
-    string line;
+void RectangularGnuplotScriptGenerator::outputFooter(std::ifstream &fin, std::ofstream &fout) {
+    std::string line;
 
     while (getline(fin, line)) {
-        fout << line << endl;
+        fout << line << std::endl;
     }
 
     fout.flush();
@@ -103,17 +123,17 @@ void RectangularGnuplotScriptGenerator::outputFooter(ifstream &fin, ofstream &fo
 
 
 // Constants
-const string RectangularGnuplotScriptGenerator::HEADER_IN   = "/usr/local/share/mule/config/video/rectangular/header.in";
-const string RectangularGnuplotScriptGenerator::CONTENT_IN  = "/usr/local/share/mule/config/video/rectangular/content.in";
-const string RectangularGnuplotScriptGenerator::FOOTER_IN   = "/usr/local/share/mule/config/video/rectangular/footer.in";
+const std::string RectangularGnuplotScriptGenerator::HEADER_IN   = "/usr/local/share/mule/config/video/rectangular/header.in";
+const std::string RectangularGnuplotScriptGenerator::CONTENT_IN  = "/usr/local/share/mule/config/video/rectangular/content.in";
+const std::string RectangularGnuplotScriptGenerator::FOOTER_IN   = "/usr/local/share/mule/config/video/rectangular/footer.in";
 
-const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_FILENAME    = "OUTPUT_FILENAME";
-const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_HEIGHT      = "OUTPUT_DIMENSION1";
-const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_WIDTH       = "OUTPUT_DIMENSION2";
-const string RectangularGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME    = "OUTPUT_SIM_TIME";
+const std::string RectangularGnuplotScriptGenerator::REPLACE_HEADER_FILENAME    = "OUTPUT_FILENAME";
+const std::string RectangularGnuplotScriptGenerator::REPLACE_HEADER_HEIGHT      = "OUTPUT_DIMENSION1";
+const std::string RectangularGnuplotScriptGenerator::REPLACE_HEADER_WIDTH       = "OUTPUT_DIMENSION2";
+const std::string RectangularGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME    = "OUTPUT_SIM_TIME";
 
 const double RectangularGnuplotScriptGenerator::REPLACE_DIMENSION_EXTRA = 0.5;
 
-const string RectangularGnuplotScriptGenerator::OUTPUT_SEPARATOR    = " ";
+const std::string RectangularGnuplotScriptGenerator::OUTPUT_SEPARATOR    = " ";
 
-const string RectangularGnuplotScriptGenerator::GNUPLOT_EXTENSION   = ".plt";
+const std::string RectangularGnuplotScriptGenerator::GNUPLOT_EXTENSION   = ".plt";

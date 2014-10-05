@@ -13,7 +13,8 @@
 using namespace multiscale::video;
 
 
-CartesianToPolarConverter::CartesianToPolarConverter(const string &inputFilepath, const string &outputFilepath) {
+CartesianToPolarConverter::CartesianToPolarConverter(const std::string &inputFilepath,
+                                                     const std::string &outputFilepath) {
     this->inputFilepath.assign(inputFilepath);
     this->outputFilepath.assign(outputFilepath);
 
@@ -36,7 +37,7 @@ void CartesianToPolarConverter::convert(bool outputToScript) {
 }
 
 void CartesianToPolarConverter::readInputData() {
-    ifstream fin(inputFilepath, ios_base::in);
+    std::ifstream fin(inputFilepath, std::ios_base::in);
 
     if (!fin.is_open()) {
         MS_throw(FileOpenException, ERR_INPUT_OPEN);
@@ -59,7 +60,7 @@ void CartesianToPolarConverter::readInputData() {
     fin.close();
 }
 
-void CartesianToPolarConverter::readHeaderLine(ifstream &fin) {
+void CartesianToPolarConverter::readHeaderLine(std::ifstream &fin) {
     fin >> nrOfConcentricCircles >> nrOfSectors >> simulationTime;
 
     // Validate the header line
@@ -68,7 +69,7 @@ void CartesianToPolarConverter::readHeaderLine(ifstream &fin) {
     if (simulationTime < 0)         MS_throw(InvalidInputException, ERR_NEG_SIM_TIME);
 }
 
-void CartesianToPolarConverter::readConcentrations(ifstream &fin) {
+void CartesianToPolarConverter::readConcentrations(std::ifstream &fin) {
     int nrOfConcentrations = ((nrOfConcentricCircles - 1) * nrOfSectors) + 1;
 
     concentrations.resize(nrOfConcentrations);
@@ -106,23 +107,29 @@ void CartesianToPolarConverter::transformToAnnularSectors() {
         int row = (i - 1) / nrOfSectors;
         int col = (i - 1) % nrOfSectors;
 
-        double startRadius = NumericRangeManipulator::convertFromRange<int, double>(0, maxRadius, RADIUS_MIN, RADIUS_MAX, row);
-        double endRadius   = NumericRangeManipulator::convertFromRange<int, double>(0, maxRadius, RADIUS_MIN, RADIUS_MAX, row + 1);
+        double startRadius = NumericRangeManipulator::convertFromRange<int, double>(
+                                 0, maxRadius, RADIUS_MIN, RADIUS_MAX, row
+                             );
+        double endRadius   = NumericRangeManipulator::convertFromRange<int, double>(
+                                 0, maxRadius, RADIUS_MIN, RADIUS_MAX, row + 1
+                             );
 
-        (annularSectors.at(i)).initialise(startRadius, endRadius, col * angle, (col + 1) * angle, concentrations.at(i));
+        (annularSectors.at(i)).initialise(
+            startRadius, endRadius, col * angle, (col + 1) * angle, concentrations.at(i)
+        );
     }
 }
 
 void CartesianToPolarConverter::outputResultsAsFile() {
     int nrOfAnnularSectors = annularSectors.size();
 
-    ofstream fout((outputFilepath.append(OUTPUT_FILE_EXTENSION)), ios_base::trunc);
+    std::ofstream fout((outputFilepath.append(OUTPUT_FILE_EXTENSION)), std::ios_base::trunc);
 
     assert(fout.is_open());
 
     // Output the information of the annular sectors
     for (int i = 0; i < nrOfAnnularSectors; i++) {
-        fout << (annularSectors.at(i)).toString() << endl;
+        fout << (annularSectors.at(i)).toString() << std::endl;
     }
 
     fout.close();
@@ -133,13 +140,13 @@ void CartesianToPolarConverter::outputResultsAsScript() {
 }
 
 // Constants
-const string CartesianToPolarConverter::ERR_CONC                = "All concentrations have to be between 0 and 1.";
-const string CartesianToPolarConverter::ERR_NONPOS_DIMENSION    = "The dimensions N and M must be positive.";
-const string CartesianToPolarConverter::ERR_NEG_SIM_TIME        = "The simulation time must be non-negative.";
-const string CartesianToPolarConverter::ERR_INPUT_OPEN          = "The input file could not be opened";
-const string CartesianToPolarConverter::ERR_IN_EXTRA_DATA       = "The input file contains more data than required.";
+const std::string CartesianToPolarConverter::ERR_CONC                = "All concentrations have to be between 0 and 1.";
+const std::string CartesianToPolarConverter::ERR_NONPOS_DIMENSION    = "The dimensions N and M must be positive.";
+const std::string CartesianToPolarConverter::ERR_NEG_SIM_TIME        = "The simulation time must be non-negative.";
+const std::string CartesianToPolarConverter::ERR_INPUT_OPEN          = "The input file could not be opened";
+const std::string CartesianToPolarConverter::ERR_IN_EXTRA_DATA       = "The input file contains more data than required.";
 
-const string CartesianToPolarConverter::OUTPUT_FILE_EXTENSION   = ".out";
+const std::string CartesianToPolarConverter::OUTPUT_FILE_EXTENSION   = ".out";
 
 const double CartesianToPolarConverter::RADIUS_MIN  = 0.001;
 const double CartesianToPolarConverter::RADIUS_MAX  = 0.3;

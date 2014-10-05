@@ -161,7 +161,7 @@ double BayesianModelChecker::computeBayesFactorValue(unsigned int nrOfObservatio
     double betaShapeParameter   = static_cast<double>(nrOfObservations - nrOfSuccesses) + beta;
 
     double cdfValue     = BetaDistribution::cdf(alphaShapeParameter, betaShapeParameter, probability);
-    double cdfInverse   = (Numeric::almostEqual(cdfValue, 0)) ? numeric_limits<double>::max()
+    double cdfInverse   = (Numeric::almostEqual(cdfValue, 0)) ? std::numeric_limits<double>::max()
                                                               : (1 / cdfValue);
 
     return (cdfInverse - 1);

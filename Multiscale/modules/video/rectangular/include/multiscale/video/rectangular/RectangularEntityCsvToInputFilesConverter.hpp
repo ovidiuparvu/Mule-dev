@@ -7,8 +7,6 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -19,26 +17,26 @@ namespace multiscale {
 
             private:
 
-                string inputFilepath;   /*!< Path to the input file */
-                string outputFilepath;  /*!< Path to the output file */
+                std::string inputFilepath;                  /*!< Path to the input file */
+                std::string outputFilepath;                 /*!< Path to the output file */
 
-                unsigned int height;            /*!< Height of the grid */
-                unsigned int width;             /*!< Width of the grid */
-                unsigned int nrOfEntities;      /*!< Number of entities */
+                unsigned int height;                        /*!< Height of the grid */
+                unsigned int width;                         /*!< Width of the grid */
+                unsigned int nrOfEntities;                  /*!< Number of entities */
 
-                unsigned int maxNrOfEntitiesPerPosition; /*!< The maximum number of entities per position */
+                unsigned int maxNrOfEntitiesPerPosition;    /*!< The maximum number of entities per position */
 
-                NumberIterator* entitiesIterator;   /*!< Iterator over the number of rows */
+                NumberIterator* entitiesIterator;           /*!< Iterator over the number of rows */
 
             public:
 
-                RectangularEntityCsvToInputFilesConverter (const string &inputFilepath,
-                                                           const string &outputFilepath,
-                                                           unsigned int height,
-                                                           unsigned int width,
-                                                           unsigned int nrOfEntities,
-                                                           unsigned int maxNrOfEntitiesPerPosition,
-                                                           NumberIteratorType numberIteratorType);
+                RectangularEntityCsvToInputFilesConverter(const std::string &inputFilepath,
+                                                          const std::string &outputFilepath,
+                                                          unsigned int height,
+                                                          unsigned int width,
+                                                          unsigned int nrOfEntities,
+                                                          unsigned int maxNrOfEntitiesPerPosition,
+                                                          NumberIteratorType numberIteratorType);
                 ~RectangularEntityCsvToInputFilesConverter();
 
                 //! Start the conversion
@@ -50,7 +48,7 @@ namespace multiscale {
                 /*!
                  * \param fin Input file stream
                  */
-                void initInputFile(ifstream &fin);
+                void initInputFile(std::ifstream &fin);
 
 
                 //! Initialise the output file with the given index and simulation time
@@ -59,7 +57,7 @@ namespace multiscale {
                  * \param index Index of the output file
                  * \param simulationTime Simulation time
                  */
-                void initOutputFile(ofstream &fout, unsigned int index, double &simulationTime);
+                void initOutputFile(std::ofstream &fout, unsigned int index, double &simulationTime);
 
                 //! Initialise the iterators considering the given number iterator type
                 /*!
@@ -74,14 +72,14 @@ namespace multiscale {
                 /*!
                  * \param fin Input file stream
                  */
-                void validateInput(ifstream &fin);
+                void validateInput(std::ifstream &fin);
 
                 //! Validate the provided line identified by a line number
                 /*!
                  * \param line Line from input file
                  * \param lineNumber Number of the line
                  */
-                void validateInputLine(const string &line, unsigned int lineNumber);
+                void validateInputLine(const std::string &line, unsigned int lineNumber);
 
                 //! Process the input file
                 /*!
@@ -89,75 +87,75 @@ namespace multiscale {
                  *
                  * \param fin Input file stream
                  */
-                void processInputFile(ifstream &fin);
+                void processInputFile(std::ifstream &fin);
 
                 //! Process the provided line
                 /*!
                  * \param line Line
                  * \param outputIndex Index integrated in the name of the output file
                  */
-                void processLine(const string &line, unsigned int outputIndex);
+                void processLine(const std::string &line, unsigned int outputIndex);
 
-                //! Split the line in coordinates and return the grid of size height * width showing the position of the entities
-                /*!
-                 * The number of entities per grid position is normalised to the range [0, 1]
+                //! Split the line in coordinates
+                /*! Split the line in coordinates and return the grid of size height * width recording the position
+                 *  of the entities. The number of entities per grid position is normalised to the range [0, 1]
                  *
                  * \param line Line
                  * \param simulationTime Simulation time associated with the line
                  */
-                vector<double> splitLineInCoordinates(const string &line, double &simulationTime);
+                std::vector<double> splitLineInCoordinates(const std::string &line, double &simulationTime);
 
                 //! Compute the simulation time from the given token and check if it is valid
                 /*!
-                 * \param token Token (string)
+                 * \param token Token (std::string)
                  */
-                double computeSimulationTime(const string &token);
+                double computeSimulationTime(const std::string &token);
 
-                //! Compute the coordinate from the given string and check if it is valid
+                //! Compute the coordinate from the given std::string and check if it is valid
                 /*!
-                 * \param token Token (string)
+                 * \param token Token (std::string)
                  * \param isOxCoordinate Flag which indicates if the coordinate corresponds to Ox axis or not
                  */
-                unsigned int computeCoordinate(const string &token, bool isOxCoordinate);
+                unsigned int computeCoordinate(const std::string &token, bool isOxCoordinate);
 
                 //! Check if the simulation time is valid
                 /*!
-                 * \param token Token (string)
+                 * \param token Token (std::string)
                  * \param lineNumber Number of the line
                  */
-                void validateSimulationTime(const string &token, unsigned int lineNumber);
+                void validateSimulationTime(const std::string &token, unsigned int lineNumber);
 
                 //! Check if the coordinate is valid
                 /*!
-                 * \param token Token (string)
+                 * \param token Token (std::string)
                  * \param lineNumber Number of the line
                  * \param isOxCoordinate Flag which indicates if the coordinate corresponds to Ox axis or not
                  */
-                void validateCoordinate(const string &token, unsigned int lineNumber, bool isOxCoordinate);
+                void validateCoordinate(const std::string &token, unsigned int lineNumber, bool isOxCoordinate);
 
                 //! Check if the entities grid contains only values between zero and one
                 /*!
                  * \param entitiesGrid The grid of entities
                  */
-                void validateEntitiesGrid(const vector<double> &entitiesGrid);
+                void validateEntitiesGrid(const std::vector<double> &entitiesGrid);
 
             private:
 
                 // Constants
-                static const string OUTPUT_EXTENSION;
-                static const string OUTPUT_SEPARATOR;
-                static const string OUTPUT_FILE_SEPARATOR;
-                static const string INPUT_FILE_SEPARATOR;
+                static const std::string OUTPUT_EXTENSION;
+                static const std::string OUTPUT_SEPARATOR;
+                static const std::string OUTPUT_FILE_SEPARATOR;
+                static const std::string INPUT_FILE_SEPARATOR;
 
-                static const string ERR_INVALID_NR_ENTITIES;
-                static const string ERR_INVALID_OX_COORDINATE;
-                static const string ERR_INVALID_OY_COORDINATE;
-                static const string ERR_MAX_NR_ENTITIES;
-                static const string ERR_NR_COORDINATES;
-                static const string ERR_NEG_SIM_TIME;
-                static const string ERR_INPUT_OPEN;
-                static const string ERR_INVALID_VALUE_LINE;
-                static const string ERR_INVALID_VALUE_TOKEN;
+                static const std::string ERR_INVALID_NR_ENTITIES;
+                static const std::string ERR_INVALID_OX_COORDINATE;
+                static const std::string ERR_INVALID_OY_COORDINATE;
+                static const std::string ERR_MAX_NR_ENTITIES;
+                static const std::string ERR_NR_COORDINATES;
+                static const std::string ERR_NEG_SIM_TIME;
+                static const std::string ERR_INPUT_OPEN;
+                static const std::string ERR_INVALID_VALUE_LINE;
+                static const std::string ERR_INVALID_VALUE_TOKEN;
 
 
         };

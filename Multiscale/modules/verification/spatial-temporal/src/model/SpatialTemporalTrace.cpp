@@ -79,7 +79,7 @@ void SpatialTemporalTrace::initialise() {
 void SpatialTemporalTrace::updateLastTimePointValue(TimePoint &timePoint) {
     unsigned long timePointValue = timePoint.getValue();
 
-    if (timePointValue == numeric_limits<unsigned long>::max()) {
+    if (timePointValue == std::numeric_limits<unsigned long>::max()) {
         timePoint.setValue(++lastTimePointValue);
     } else {
         lastTimePointValue = timePointValue;

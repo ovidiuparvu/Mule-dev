@@ -5,11 +5,10 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
-using namespace cv;
 using namespace multiscale;
 
-const string WIN_MIN_AREA_TRIANGLE  = "Minimum area enclosing triangle";
+
+const std::string WIN_MIN_AREA_TRIANGLE  = "Minimum area enclosing triangle";
 
 const int KEY_ESC = 27;
 
@@ -24,11 +23,11 @@ const double POINT_IN_TRIANGLE_THRESH = 1E-4;
 
 
 // Generate a new random set of points
-vector<Point2f> generateRandomSetOf2DPoints(int nrOfPoints) {
-    vector<Point2f> points;
+std::vector<cv::Point2f> generateRandomSetOf2DPoints(int nrOfPoints) {
+    std::vector<cv::Point2f> points;
 
     for (int i = 0; i < nrOfPoints; i++) {
-        points.push_back(Point2f((rand() % POLYGON_POINT_X_MAX) + POLYGON_POINT_X_MAX,
+        points.push_back(cv::Point2f((rand() % POLYGON_POINT_X_MAX) + POLYGON_POINT_X_MAX,
                                  (rand() % POLYGON_POINT_Y_MAX) + POLYGON_POINT_Y_MAX));
     }
 
@@ -36,50 +35,54 @@ vector<Point2f> generateRandomSetOf2DPoints(int nrOfPoints) {
 }
 
 // Print the polygon points
-void printPolygon(const vector<Point2f> &points) {
-    vector<Point2f> polygon;
+void printPolygon(const std::vector<cv::Point2f> &points) {
+    std::vector<cv::Point2f> polygon;
 
     convexHull(points, polygon);
 
     // Print the polygon points
-    cout << "Polygon points: ";
+    std::cout << "Polygon points: ";
 
-    for (const Point2f &point : polygon) {
-        cout << "(" << point.x << ", " << point.y << ") ";
+    for (const cv::Point2f &point : polygon) {
+        std::cout << "(" << point.x << ", " << point.y << ") ";
     }
 
-    cout << endl;
+    std::cout << std::endl;
 }
 
 // Output the results for the minimum area enclosing triangle
-void outputMinEnclosingTriangleFinderResults(const vector<Point2f> &minEnclosingTriangle, const vector<Point2f> &points) {
-    Mat image = Mat::zeros(POLYGON_POINT_X_MAX * 3, POLYGON_POINT_Y_MAX * 3, CV_32FC3);
-    Mat flippedImage = Mat::zeros(POLYGON_POINT_X_MAX * 3, POLYGON_POINT_Y_MAX * 3, CV_32FC3);
+void outputMinEnclosingTriangleFinderResults(const std::vector<cv::Point2f> &minEnclosingTriangle,
+                                             const std::vector<cv::Point2f> &points) {
+    cv::Mat image = cv::Mat::zeros(POLYGON_POINT_X_MAX * 3, POLYGON_POINT_Y_MAX * 3, CV_32FC3);
+    cv::Mat flippedImage = cv::Mat::zeros(POLYGON_POINT_X_MAX * 3, POLYGON_POINT_Y_MAX * 3, CV_32FC3);
 
     // Draw minimum area enclosing triangle
     for (unsigned int i = 0; i < minEnclosingTriangle.size(); i++) {
-        line(image, minEnclosingTriangle[i], minEnclosingTriangle[(i + 1) % minEnclosingTriangle.size()], Scalar(0, 255, 255), LINE_THICKNESS);
+        cv::line(
+            image, minEnclosingTriangle[i], minEnclosingTriangle[(i + 1) % minEnclosingTriangle.size()],
+            cv::Scalar(0, 255, 255), LINE_THICKNESS
+        );
     }
 
     // Draw convex hull points
-    for (const Point2f &point : points) {
-        circle(image, point, RADIUS, Scalar(0, 0, 255), LINE_THICKNESS);
+    for (const cv::Point2f &point : points) {
+        cv::circle(image, point, RADIUS, cv::Scalar(0, 0, 255), LINE_THICKNESS);
     }
 
     printPolygon(points);
 
     // Flip image wrt Ox axis and show it
-    flip(image, flippedImage, 0);
+    cv::flip(image, flippedImage, 0);
 
-    namedWindow(WIN_MIN_AREA_TRIANGLE, WINDOW_NORMAL);
-    imshow(WIN_MIN_AREA_TRIANGLE, flippedImage);
+    cv::namedWindow(WIN_MIN_AREA_TRIANGLE, cv::WINDOW_NORMAL);
+    cv::imshow(WIN_MIN_AREA_TRIANGLE, flippedImage);
 }
 
 // Check if all the points are enclosed by the minimal enclosing triangle
-bool arePointsEnclosed(const vector<Point2f> &points, const vector<Point2f> &triangle) {
+bool arePointsEnclosed(const std::vector<cv::Point2f> &points, const std::vector<cv::Point2f> &triangle) {
     double distance = 0;
 
-    for (const Point2f &point : points) {
+    for (const cv::Point2f &point : points) {
         distance = pointPolygonTest(triangle, point, true);
 
         if (distance < -(POINT_IN_TRIANGLE_THRESH)) {
@@ -91,12 +94,13 @@ bool arePointsEnclosed(const vector<Point2f> &points, const vector<Point2f> &tri
 }
 
 // Check if all the triangle sides' middle points touch the convex hull of the given set of points
-bool isTriangleTouchingPolygon(const vector<Point2f> &convexPolygon, const vector<Point2f> &triangle) {
+bool isTriangleTouchingPolygon(const std::vector<cv::Point2f> &convexPolygon,
+                               const std::vector<cv::Point2f> &triangle) {
     int nrOfPolygonPoints = convexPolygon.size();
 
     for (int i = 0; i < 3; i++) {
         bool isTouching = false;
-        Point2f middlePoint = Geometry2D::middlePoint(triangle[i], triangle[(i + 1) % 3]);
+        cv::Point2f middlePoint = Geometry2D::middlePoint(triangle[i], triangle[(i + 1) % 3]);
 
         for (int j = 0; j < nrOfPolygonPoints; j++) {
             if (Geometry2D::isPointOnLineSegment(middlePoint, convexPolygon[j],
@@ -114,7 +118,7 @@ bool isTriangleTouchingPolygon(const vector<Point2f> &convexPolygon, const vecto
 }
 
 // Check if at least one side of the triangle is flush with an edge of the polygon
-bool isOneEdgeFlush(const vector<Point2f> &convexPolygon, const vector<Point2f> &triangle) {
+bool isOneEdgeFlush(const std::vector<cv::Point2f> &convexPolygon, const std::vector<cv::Point2f> &triangle) {
     int nrOfPolygonPoints = convexPolygon.size();
 
     for (int i = 0; i < 3; i++) {
@@ -132,8 +136,8 @@ bool isOneEdgeFlush(const vector<Point2f> &convexPolygon, const vector<Point2f> 
 }
 
 // Check if the minimum enclosing triangle encloses all points
-bool isValidTriangle(const vector<Point2f> &points, const vector<Point2f> &triangle) {
-    vector<Point2f> convexPolygon;
+bool isValidTriangle(const std::vector<cv::Point2f> &points, const std::vector<cv::Point2f> &triangle) {
+    std::vector<cv::Point2f> convexPolygon;
 
     convexHull(points, convexPolygon, true);
 
@@ -145,8 +149,8 @@ bool isValidTriangle(const vector<Point2f> &points, const vector<Point2f> &trian
 }
 
 // Run the minimum area enclosing triangle program
-void runMinEnclosingTriangleFinder(const vector<Point2f> &points) {
-    vector<Point2f> minEnclosingTriangle;
+void runMinEnclosingTriangleFinder(const std::vector<cv::Point2f> &points) {
+    std::vector<cv::Point2f> minEnclosingTriangle;
     double area = 0;
 
     // Find the minimum area enclosing triangle
@@ -155,7 +159,7 @@ void runMinEnclosingTriangleFinder(const vector<Point2f> &points) {
     // Validate the found triangle
     assert(isValidTriangle(points, minEnclosingTriangle));
 
-    cout << "The area of the minimum area enclosing triangle is: " << area << endl;
+    std::cout << "The area of the minimum area enclosing triangle is: " << area << std::endl;
 
     outputMinEnclosingTriangleFinderResults(minEnclosingTriangle, points);
 }
@@ -173,11 +177,11 @@ void runMinEnclosingTriangleFinderUsingRandomPolygons() {
         nrOfPoints = (nrOfPoints == 0) ? 1
                                        : nrOfPoints;
 
-        vector<Point2f> points = generateRandomSetOf2DPoints(nrOfPoints);
+        std::vector<cv::Point2f> points = generateRandomSetOf2DPoints(nrOfPoints);
 
         runMinEnclosingTriangleFinder(points);
 
-        key = waitKey();
+        key = cv::waitKey();
     }
 }
 

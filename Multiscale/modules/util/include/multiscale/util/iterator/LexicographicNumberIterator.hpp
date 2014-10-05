@@ -5,8 +5,6 @@
 
 #include <vector>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -15,8 +13,8 @@ namespace multiscale {
 
         private:
 
-            vector<unsigned char> upperBoundDigits;     /*!< The digits of the upper bound */
-            vector<unsigned char> currentNumberDigits;  /*!< The digits of the number to which the iterator points */
+            std::vector<unsigned char> upperBoundDigits;     /*!< The digits of the upper bound */
+            std::vector<unsigned char> currentNumberDigits;  /*!< The digits of the number to which the iterator points */
 
         public:
 
@@ -28,7 +26,7 @@ namespace multiscale {
 
         private:
 
-            //! Initialise the vectors of digits
+            //! Initialise the std::vectors of digits
             void initialise();
 
             //! Check if there is a next number when in initialised state
@@ -37,12 +35,12 @@ namespace multiscale {
             //! Reset the digits of the current number to the initial value
             void resetCurrentNumber();
 
-            //! Convert the number to a vector of digits
+            //! Convert the number to a std::vector of digits
             /*!
              *  \param number The number
              *  \param digits The digits of the number
              */
-            void numberToDigits(unsigned int number, vector<unsigned char> &digits);
+            void numberToDigits(unsigned int number, std::vector<unsigned char> &digits);
 
             //! Reverse the order of the digits
             /*! Reverse the order of the digits such that the first one is swapped with the last one,
@@ -50,13 +48,13 @@ namespace multiscale {
              *
              *  \param digits The digits
              */
-            void reverseDigits (vector<unsigned char> &digits);
+            void reverseDigits (std::vector<unsigned char> &digits);
 
-            //! Convert the vector of digits to the number they represent
+            //! Convert the std::vector of digits to the number they represent
             /*!
              *  \param digits The digits
              */
-            unsigned int digitsToNumber(vector<unsigned char> &digits);
+            unsigned int digitsToNumber(std::vector<unsigned char> &digits);
 
             //! Check if the current number with the provided last digit is greater than the upper bound
             /*!Check if the current number is greater than the upper bound

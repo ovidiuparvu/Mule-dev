@@ -6,8 +6,6 @@
 #include <memory>
 #include <vector>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -18,14 +16,16 @@ namespace multiscale {
 
             private:
 
-                double eps;                              /*!< DBSCAN algorithm parameter for specifying the maximum radius
-                                                              of the neighbourhood */
-                unsigned int minPoints;                  /*!< DBSCAN algorithm parameter for specifying the minimum number
-                                                              of points in an eps-neighbourhood of that point */
+                double eps;                         /*!< DBSCAN algorithm parameter for specifying the maximum radius
+                                                         of the neighbourhood */
+                unsigned int minPoints;             /*!< DBSCAN algorithm parameter for specifying the minimum number
+                                                         of points in an eps-neighbourhood of that point */
 
-                unsigned int nrOfDataPoints;             /*!< Number of data points in the data set */
+                unsigned int nrOfDataPoints;        /*!< Number of data points in the data set */
 
-                vector<vector<double>> distanceMatrix;   /*!< The matrix containing the distances between any two data points */
+                std::vector<std::vector<double>>
+                    distanceMatrix;                 /*!< The matrix containing the distances between any two
+                                                         data points */
 
             public:
 
@@ -34,7 +34,9 @@ namespace multiscale {
 
                 //! Run the improved DBSCAN algorithm on the provided set of points
                 /*! The implementation of the improved DBSCAN algorithm is based on the paper:
-                 *  T. N. Tran, K. Drab, and M. Daszykowski, ‘Revised DBSCAN algorithm to cluster data with dense adjacent clusters’, Chemometrics and Intelligent Laboratory Systems, vol. 120, pp. 92–96, Jan. 2013.
+                 *  T. N. Tran, K. Drab, and M. Daszykowski, ‘Revised DBSCAN algorithm to cluster data with
+                 *  dense adjacent clusters’, Chemometrics and Intelligent Laboratory Systems, vol. 120,
+                 *  pp. 92–96, Jan. 2013.
                  *
                  * Clusters start from index 1, because cluster 0 contains only noise data/points.
                  *
@@ -44,14 +46,17 @@ namespace multiscale {
                  *  \param eps              Maximum distance between two neighbours
                  *  \param minPoints        Minimum number of points in one cluster
                  */
-                void run(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> &clusterIndexes, int &nrOfClusters,
+                void run(const std::vector<std::shared_ptr<DataPoint>> &dataPoints,
+                         std::vector<int> &clusterIndexes, int &nrOfClusters,
                          double eps, int minPoints);
 
             private:
 
                 //! Run the improved DBSCAN algorithm on the provided set of points
                 /*! The implementation of the improved DBSCAN algorithm is based on the paper:
-                 *  T. N. Tran, K. Drab, and M. Daszykowski, ‘Revised DBSCAN algorithm to cluster data with dense adjacent clusters’, Chemometrics and Intelligent Laboratory Systems, vol. 120, pp. 92–96, Jan. 2013.
+                 *  T. N. Tran, K. Drab, and M. Daszykowski, ‘Revised DBSCAN algorithm to cluster data with
+                 *  dense adjacent clusters’, Chemometrics and Intelligent Laboratory Systems, vol. 120,
+                 *  pp. 92–96, Jan. 2013.
                  *
                  * Clusters start from index 1, because cluster 0 contains only noise data/points.
                  *
@@ -59,13 +64,14 @@ namespace multiscale {
                  *  \param clusterIndexes   Indexes to which cluster each data point belongs
                  *  \param nrOfClusters     Total number of clusters
                  */
-                void runAlgorithm(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> &clusterIndexes, int &nrOfClusters);
+                void runAlgorithm(const std::vector<std::shared_ptr<DataPoint>> &dataPoints,
+                                  std::vector<int> &clusterIndexes, int &nrOfClusters);
 
                 //! Construct the distance matrix between any two data points
                 /*!
                  * \param dataPoints Data points
                  */
-                void constructDistanceMatrix(const vector<shared_ptr<DataPoint>> &dataPoints);
+                void constructDistanceMatrix(const std::vector<std::shared_ptr<DataPoint>> &dataPoints);
 
                 //! Expand the cluster around the given core data point
                 /*!
@@ -73,7 +79,7 @@ namespace multiscale {
                  *  \param coreDataPointIndex   Core data point index
                  *  \param clusterId            Id of the cluster to which the core data point belongs
                  */
-                bool expandCoreCluster(vector<int> &clusterIndexes, int coreDataPointIndex, int clusterId);
+                bool expandCoreCluster(std::vector<int> &clusterIndexes, int coreDataPointIndex, int clusterId);
 
                 //! Add all unclassified neighbour nodes to the seeds list
                 /*!
@@ -81,27 +87,29 @@ namespace multiscale {
                  * \param clusterIndexes    Indexes to which cluster each data point belongs
                  * \param seeds             List of seeds (see DBSCAN algorithm)
                  */
-                void addUnclassifiedNodesToSeedsList(const vector<int> &neighbours, const vector<int> &clusterIndexes,
-                                                     vector<int> &seeds);
+                void addUnclassifiedNodesToSeedsList(const std::vector<int> &neighbours,
+                                                     const std::vector<int> &clusterIndexes,
+                                                     std::vector<int> &seeds);
 
                //! Label all unclassified and noise neighbour nodes as border nodes
                /*!
                 * \param neighbours        Neighbour nodes
                 * \param clusterIndexes    Indexes to which cluster each data point belongs
                 */
-                void labelUnclassifiedAndNoiseAsBorder(const vector<int> &neighbours, vector<int> &clusterIndexes);
+                void labelUnclassifiedAndNoiseAsBorder(const std::vector<int> &neighbours,
+                                                       std::vector<int> &clusterIndexes);
 
                 //! Retrieve the list of neighbour indexes which are at a distance < eps far from the given data point
                 /*!
                  * \param dataPointIndex    Index of the data point for which the neighbours will be retrieved
                  */
-                vector<int> retrieveNeighbours(int dataPointIndex);
+                std::vector<int> retrieveNeighbours(int dataPointIndex);
 
                 //! Assign the border nodes to the clusters to which the closest core objects belong
                 /*!
                  * \param clusterIndexes    Indexes to which cluster each data point belongs
                  */
-                void assignBorderNodesToClusters(vector<int> &clusterIndexes);
+                void assignBorderNodesToClusters(std::vector<int> &clusterIndexes);
 
                 //! Find the closest core data point from the given set of neighbours to the given border data point
                 /*!
@@ -109,8 +117,8 @@ namespace multiscale {
                  * \param borderDataPointIndex  Index of the border data point
                  * \param clusterIndexes        Indexes to which cluster each data point belongs
                  */
-                int findClosestCoreDataPoint(const vector<int> &neighbours, int borderDataPointIndex,
-                                             const vector<int> &clusterIndexes);
+                int findClosestCoreDataPoint(const std::vector<int> &neighbours, int borderDataPointIndex,
+                                             const std::vector<int> &clusterIndexes);
 
                 //! Allocate the distance matrix
                 void allocateDistanceMatrix();

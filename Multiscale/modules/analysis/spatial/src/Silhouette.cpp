@@ -10,7 +10,7 @@ using namespace multiscale;
 using namespace multiscale::analysis;
 
 
-double Silhouette::computeOverallAverageMeasure(const vector<Cluster> &clusters) {
+double Silhouette::computeOverallAverageMeasure(const std::vector<Cluster> &clusters) {
     double sumOfMeasures = 0;
     std::size_t nrOfClusters = clusters.size();
 
@@ -22,12 +22,12 @@ double Silhouette::computeOverallAverageMeasure(const vector<Cluster> &clusters)
                                : 0;
 }
 
-double Silhouette::computeAverageMeasure(std::size_t clusterIndex, const vector<Cluster> &clusters) {
+double Silhouette::computeAverageMeasure(std::size_t clusterIndex, const std::vector<Cluster> &clusters) {
     validateClusterIndex(clusterIndex, clusters.size());
 
     double sumOfMeasures = 0;
 
-    vector<Entity> entities = clusters[clusterIndex].getEntities();
+    std::vector<Entity> entities = clusters[clusterIndex].getEntities();
     std::size_t nrOfEntities = entities.size();
 
     for (std::size_t i = 0; i < nrOfEntities; i++) {
@@ -39,22 +39,22 @@ double Silhouette::computeAverageMeasure(std::size_t clusterIndex, const vector<
 }
 
 double Silhouette::computeMeasure(std::size_t entityIndex, std::size_t clusterIndex,
-                                  const vector<Cluster> &clusters) {
+                                  const std::vector<Cluster> &clusters) {
     validateClusterIndex(clusterIndex, clusters.size());
     validateEntityIndex(entityIndex, clusters[clusterIndex].getEntities().size());
 
     double a = computeAverageDissimilarityWithinCluster(entityIndex, clusterIndex, clusters);
     double b = computeAverageDissimilarityToOtherClusters(entityIndex, clusterIndex, clusters);
 
-    return ((a != 0) || (b != 0)) ? (b - a) / (max(a, b))
+    return ((a != 0) || (b != 0)) ? (b - a) / (std::max(a, b))
                                   : 1;
 }
 
 double Silhouette::computeAverageDissimilarityWithinCluster(std::size_t entityIndex, std::size_t clusterIndex,
-                                                            const vector<Cluster> &clusters) {
+                                                            const std::vector<Cluster> &clusters) {
     double sumOfDistances = 0;
 
-    vector<Entity> entities = clusters[clusterIndex].getEntities();
+    std::vector<Entity> entities = clusters[clusterIndex].getEntities();
     std::size_t nrOfEntities = entities.size();
 
     for (std::size_t i = 0; i < nrOfEntities; i++) {
@@ -69,8 +69,8 @@ double Silhouette::computeAverageDissimilarityWithinCluster(std::size_t entityIn
 }
 
 double Silhouette::computeAverageDissimilarityToOtherClusters(std::size_t entityIndex, std::size_t clusterIndex,
-                                                              const vector<Cluster> &clusters) {
-    double minimumDistance = numeric_limits<double>::max();
+                                                              const std::vector<Cluster> &clusters) {
+    double minimumDistance = std::numeric_limits<double>::max();
     std::size_t nrOfClusters = clusters.size();
 
     for (std::size_t i = 0; i < nrOfClusters; i++) {
@@ -91,11 +91,11 @@ double Silhouette::computeAverageDissimilarityToOtherClusters(std::size_t entity
 double Silhouette::computeAverageDissimilarityBtwEntityAndCluster(std::size_t entityIndex,
                                                                   std::size_t entityClusterIndex,
                                                                   std::size_t clusterIndex,
-                                                                  const vector<Cluster> &clusters) {
+                                                                  const std::vector<Cluster> &clusters) {
     double sumOfDissimilarities = 0;
 
-    Point2f entityCentrePoint = (clusters[entityClusterIndex].getEntities())[entityIndex].getCentre();
-    vector<Entity> entities = clusters[clusterIndex].getEntities();
+    cv::Point2f entityCentrePoint = (clusters[entityClusterIndex].getEntities())[entityIndex].getCentre();
+    std::vector<Entity> entities = clusters[clusterIndex].getEntities();
     std::size_t nrOfEntities = entities.size();
 
     for (std::size_t i = 0; i < nrOfEntities; i++) {

@@ -3,7 +3,7 @@
 
 #include <sstream>
 
-const string SEPARATOR = " ";
+const std::string SEPARATOR = " ";
 
 using namespace multiscale::video;
 
@@ -47,8 +47,8 @@ double AnnularSector::getStartingRadius() const {
     return startingRadius;
 }
 
-string AnnularSector::toString() {
-    string annularSectorDescription = "";
+std::string AnnularSector::toString() {
+    std::string annularSectorDescription = "";
 
     annularSectorDescription += StringManipulator::toString<double>(startingRadius);
     annularSectorDescription += SEPARATOR;

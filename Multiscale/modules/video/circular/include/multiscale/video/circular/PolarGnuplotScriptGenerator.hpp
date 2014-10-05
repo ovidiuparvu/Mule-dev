@@ -5,8 +5,6 @@
 
 #include <vector>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -23,9 +21,9 @@ namespace multiscale {
                  * \param simulationTime Simulation time
                  * \param outputFilepath Path of the output file
                  */
-                static void generateScript(const vector<AnnularSector> &annularSectors,
+                static void generateScript(const std::vector<AnnularSector> &annularSectors,
                                            double simulationTime,
-                                           const string &outputFilepath);
+                                           const std::string &outputFilepath);
 
             private:
 
@@ -35,7 +33,7 @@ namespace multiscale {
                  * \param outputFilepath Path to the output file
                  * \param simulationTime Simulation time
                  */
-                static void generateHeader(ofstream &fout, const string &outputFilepath,
+                static void generateHeader(std::ofstream &fout, const std::string &outputFilepath,
                                            double simulationTime);
 
                 //! Generate the body/content of the script
@@ -43,14 +41,14 @@ namespace multiscale {
                  * \param annularSectors Annular sectors
                  * \param fout Output file stream
                  */
-                static void generateBody(const vector<AnnularSector> &annularSectors,
-                                         ofstream &fout);
+                static void generateBody(const std::vector<AnnularSector> &annularSectors,
+                                         std::ofstream &fout);
 
                 //! Generate the footer of the script
                 /*!
                  * \param fout Output file stream
                  */
-                static void generateFooter(ofstream &fout);
+                static void generateFooter(std::ofstream &fout);
 
                 //! Output the header of the script
                 /*!
@@ -59,8 +57,8 @@ namespace multiscale {
                  * \param simulationTime Simulation time
                  * \param fout Output file stream
                  */
-                static void outputHeader(ifstream &fin, const string &outputFilename,
-                                         double simulationTime, ofstream &fout);
+                static void outputHeader(std::ifstream &fin, const std::string &outputFilename,
+                                         double simulationTime, std::ofstream &fout);
 
                 //! Output the content of the script
                 /*!
@@ -68,40 +66,40 @@ namespace multiscale {
                  * \param contentTemplate Template used for generating output for each annular sector
                  * \param fout Output file stream
                  */
-                static void outputContent(const vector<AnnularSector> &annularSectors,
-                                          const string &contentTemplate,
-                                          ofstream &fout);
+                static void outputContent(const std::vector<AnnularSector> &annularSectors,
+                                          const std::string &contentTemplate,
+                                          std::ofstream &fout);
 
                 //! Output the footer of the script
                 /*!
                  * \param fin Input file stream
                  * \param fout Output file stream
                  */
-                static void outputFooter(ifstream &fin, ofstream &fout);
+                static void outputFooter(std::ifstream &fin, std::ofstream &fout);
 
                 //! Read content template
                 /*!
                  * \param fin Input file stream
                  */
-                static string readContentTemplate(ifstream &fin);
+                static std::string readContentTemplate(std::ifstream &fin);
 
             private:
 
                 // Constants
-                static const string HEADER_IN;
-                static const string CONTENT_IN;
-                static const string FOOTER_IN;
+                static const std::string HEADER_IN;
+                static const std::string CONTENT_IN;
+                static const std::string FOOTER_IN;
 
-                static const string REPLACE_HEADER_FILENAME;
-                static const string REPLACE_HEADER_SIM_TIME;
+                static const std::string REPLACE_HEADER_FILENAME;
+                static const std::string REPLACE_HEADER_SIM_TIME;
 
-                static const string REPLACE_CONTENT_INDEX;
-                static const string REPLACE_CONTENT_RADIUS;
-                static const string REPLACE_CONTENT_START_ANGLE;
-                static const string REPLACE_CONTENT_END_ANGLE;
-                static const string REPLACE_CONTENT_CONCENTRATION;
+                static const std::string REPLACE_CONTENT_INDEX;
+                static const std::string REPLACE_CONTENT_RADIUS;
+                static const std::string REPLACE_CONTENT_START_ANGLE;
+                static const std::string REPLACE_CONTENT_END_ANGLE;
+                static const std::string REPLACE_CONTENT_CONCENTRATION;
 
-                static const string GNUPLOT_EXTENSION;
+                static const std::string GNUPLOT_EXTENSION;
 
         };
 

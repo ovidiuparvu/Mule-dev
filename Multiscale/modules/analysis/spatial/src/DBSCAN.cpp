@@ -12,8 +12,9 @@ DBSCAN::~DBSCAN() {
     distanceMatrix.clear();
 }
 
-void DBSCAN::run(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> &clusterIndexes, int &nrOfClusters, double eps,
-                 int minPoints) {
+void DBSCAN::run(const std::vector<std::shared_ptr<DataPoint>> &dataPoints,
+                 std::vector<int> &clusterIndexes, int &nrOfClusters,
+                 double eps, int minPoints) {
     this->eps = eps;
     this->minPoints = minPoints;
 
@@ -23,7 +24,8 @@ void DBSCAN::run(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> &c
     runAlgorithm(dataPoints, clusterIndexes, nrOfClusters);
 }
 
-void DBSCAN::runAlgorithm(const vector<shared_ptr<DataPoint>> &dataPoints, vector<int> &clusterIndexes, int &nrOfClusters) {
+void DBSCAN::runAlgorithm(const std::vector<std::shared_ptr<DataPoint>> &dataPoints,
+                          std::vector<int> &clusterIndexes, int &nrOfClusters) {
     nrOfClusters = 1;
 
     // Mark all points as unclassified
@@ -41,7 +43,7 @@ void DBSCAN::runAlgorithm(const vector<shared_ptr<DataPoint>> &dataPoints, vecto
     assignBorderNodesToClusters(clusterIndexes);
 }
 
-void DBSCAN::constructDistanceMatrix(const vector<shared_ptr<DataPoint>> &dataPoints) {
+void DBSCAN::constructDistanceMatrix(const std::vector<std::shared_ptr<DataPoint>> &dataPoints) {
     allocateDistanceMatrix();
 
     assert(distanceMatrix.size() == nrOfDataPoints);
@@ -54,8 +56,8 @@ void DBSCAN::constructDistanceMatrix(const vector<shared_ptr<DataPoint>> &dataPo
     }
 }
 
-bool DBSCAN::expandCoreCluster(vector<int> &clusterIndexes, int coreDataPointIndex, int clusterId) {
-    vector<int> seeds = retrieveNeighbours(coreDataPointIndex);
+bool DBSCAN::expandCoreCluster(std::vector<int> &clusterIndexes, int coreDataPointIndex, int clusterId) {
+    std::vector<int> seeds = retrieveNeighbours(coreDataPointIndex);
     unsigned int currentSeedIndex = 0;
 
     if (seeds.size() < minPoints) {
@@ -65,7 +67,7 @@ bool DBSCAN::expandCoreCluster(vector<int> &clusterIndexes, int coreDataPointInd
         return false;
     } else {
         while (currentSeedIndex < seeds.size()) {
-            vector<int> neighbours = retrieveNeighbours(seeds[currentSeedIndex]);
+            std::vector<int> neighbours = retrieveNeighbours(seeds[currentSeedIndex]);
 
             if (neighbours.size() >= minPoints) {
                 // Assign data point to cluster identified by clusterId
@@ -82,8 +84,9 @@ bool DBSCAN::expandCoreCluster(vector<int> &clusterIndexes, int coreDataPointInd
     }
 }
 
-void DBSCAN::addUnclassifiedNodesToSeedsList(const vector<int> &neighbours, const vector<int> &clusterIndexes,
-                                             vector<int> &seeds) {
+void DBSCAN::addUnclassifiedNodesToSeedsList(const std::vector<int> &neighbours,
+                                             const std::vector<int> &clusterIndexes,
+                                             std::vector<int> &seeds) {
     for (int neighbour : neighbours) {
         if (clusterIndexes[neighbour] == CLUSTERING_UNCLASSIFIED) {
             seeds.push_back(neighbour);
@@ -91,7 +94,8 @@ void DBSCAN::addUnclassifiedNodesToSeedsList(const vector<int> &neighbours, cons
     }
 }
 
-void DBSCAN::labelUnclassifiedAndNoiseAsBorder(const vector<int> &neighbours, vector<int> &clusterIndexes) {
+void DBSCAN::labelUnclassifiedAndNoiseAsBorder(const std::vector<int> &neighbours,
+                                               std::vector<int> &clusterIndexes) {
     for (int neighbour : neighbours) {
         if ((clusterIndexes[neighbour] == CLUSTERING_UNCLASSIFIED) ||
             (clusterIndexes[neighbour] == CLUSTERING_NOISE)) {
@@ -100,9 +104,9 @@ void DBSCAN::labelUnclassifiedAndNoiseAsBorder(const vector<int> &neighbours, ve
     }
 }
 
-vector<int> DBSCAN::retrieveNeighbours(int dataPointIndex) {
-    vector<double> dataPointDistancesToNeighbours = distanceMatrix[dataPointIndex];
-    vector<int> neighbours;
+std::vector<int> DBSCAN::retrieveNeighbours(int dataPointIndex) {
+    std::vector<double> dataPointDistancesToNeighbours = distanceMatrix[dataPointIndex];
+    std::vector<int> neighbours;
 
     // Check for all neighbours including the point itself
     for (unsigned int i = 0; i < nrOfDataPoints; i++) {
@@ -114,10 +118,10 @@ vector<int> DBSCAN::retrieveNeighbours(int dataPointIndex) {
     return neighbours;
 }
 
-void DBSCAN::assignBorderNodesToClusters(vector<int> &clusterIndexes) {
+void DBSCAN::assignBorderNodesToClusters(std::vector<int> &clusterIndexes) {
     for (unsigned int i = 0; i < nrOfDataPoints; i++) {
         if (clusterIndexes[i] == CLUSTERING_BORDER) {
-            vector<int> neighbours = retrieveNeighbours(i);
+            std::vector<int> neighbours = retrieveNeighbours(i);
             int closestCoreDataPoint = findClosestCoreDataPoint(neighbours, i, clusterIndexes);
 
             clusterIndexes[i] = clusterIndexes[closestCoreDataPoint];
@@ -125,9 +129,9 @@ void DBSCAN::assignBorderNodesToClusters(vector<int> &clusterIndexes) {
     }
 }
 
-int DBSCAN::findClosestCoreDataPoint(const vector<int> &neighbours, int borderDataPointIndex,
-                                     const vector<int> &clusterIndexes) {
-    double minDistance = numeric_limits<double>::max();
+int DBSCAN::findClosestCoreDataPoint(const std::vector<int> &neighbours, int borderDataPointIndex,
+                                     const std::vector<int> &clusterIndexes) {
+    double minDistance = std::numeric_limits<double>::max();
     int minIndex = -1;
 
     int nrOfNeighbours = neighbours.size();
@@ -149,7 +153,7 @@ void DBSCAN::allocateDistanceMatrix() {
     distanceMatrix.clear();
 
     for (unsigned int i = 0; i < nrOfDataPoints; i++) {
-        distanceMatrix.push_back(vector<double>(nrOfDataPoints, 0));
+        distanceMatrix.push_back(std::vector<double>(nrOfDataPoints, 0));
     }
 }
 

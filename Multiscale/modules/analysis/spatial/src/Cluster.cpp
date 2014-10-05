@@ -20,19 +20,19 @@ void Cluster::addEntity(const Entity &entity) {
     updateFlag = true;
 }
 
-vector<Point2f> Cluster::getMinAreaEnclosingTriangle() {
+std::vector<cv::Point2f> Cluster::getMinAreaEnclosingTriangle() {
     updateMeasuresIfRequired();
 
     return minAreaEnclosingTriangle;
 }
 
-RotatedRect Cluster::getMinAreaEnclosingRect() {
+cv::RotatedRect Cluster::getMinAreaEnclosingRect() {
     updateMeasuresIfRequired();
 
     return minAreaEnclosingRect;
 }
 
-Point2f Cluster::getMinAreaEnclosingCircleCentre() {
+cv::Point2f Cluster::getMinAreaEnclosingCircleCentre() {
     updateMeasuresIfRequired();
 
     return minAreaEnclosingCircleCentre;
@@ -44,13 +44,13 @@ float Cluster::getMinAreaEnclosingCircleRadius() {
     return minAreaEnclosingCircleRadius;
 }
 
-vector<Entity> Cluster::getEntities() const {
+std::vector<Entity> Cluster::getEntities() const {
     return entities;
 }
 
-vector<Point2f> Cluster::getEntitiesConvexHull() {
-    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
-    vector<Point2f> entitiesConvexHull;
+std::vector<cv::Point2f> Cluster::getEntitiesConvexHull() {
+    std::vector<cv::Point2f> entitiesContourPoints = getEntitiesContourPoints();
+    std::vector<cv::Point2f> entitiesConvexHull;
 
     if (entities.size() > 0) {
         convexHull(entitiesContourPoints, entitiesConvexHull, CONVEX_HULL_CLOCKWISE);
@@ -81,8 +81,8 @@ void Cluster::initialise() {
     entities.clear();
 }
 
-vector<Point2f> Cluster::getEntitiesCentrePoints() {
-    vector<Point2f> centrePoints;
+std::vector<cv::Point2f> Cluster::getEntitiesCentrePoints() {
+    std::vector<cv::Point2f> centrePoints;
 
     for (const Entity& entity : entities) {
         centrePoints.push_back(entity.getCentre());
@@ -91,11 +91,11 @@ vector<Point2f> Cluster::getEntitiesCentrePoints() {
     return centrePoints;
 }
 
-vector<Point2f> Cluster::getEntitiesContourPoints() {
-    vector<Point2f> contourPoints;
+std::vector<cv::Point2f> Cluster::getEntitiesContourPoints() {
+    std::vector<cv::Point2f> contourPoints;
 
     for (const Entity& entity : entities) {
-        vector<Point2f> entityContourPoints = entity.getContourPoints();
+        std::vector<cv::Point2f> entityContourPoints = entity.getContourPoints();
 
         contourPoints.insert(contourPoints.begin(), entityContourPoints.begin(), entityContourPoints.end());
     }
@@ -142,22 +142,22 @@ void Cluster::updateArea() {
 }
 
 void Cluster::updatePerimeter() {
-    vector<Point2f> entitiesConvexHull = getEntitiesConvexHull();
+    std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
     perimeter = arcLength(entitiesConvexHull, true);
 }
 
 void Cluster::updateCentrePoint() {
-    vector<Point2f> entitiesConvexHull = getEntitiesConvexHull();
+    std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
-    Moments convexHullMoments = moments(entitiesConvexHull, false);
+    cv::Moments convexHullMoments = moments(entitiesConvexHull, false);
 
     centre.x = (convexHullMoments.m10 / convexHullMoments.m00);
     centre.y = (convexHullMoments.m01 / convexHullMoments.m00);
 }
 
 double Cluster::isTriangularMeasure() {
-    vector<Point2f> entitiesConvexHull = getEntitiesConvexHull();
+    std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
     double triangleArea = MinEnclosingTriangleFinder().find(entitiesConvexHull, minAreaEnclosingTriangle);
 
@@ -165,7 +165,7 @@ double Cluster::isTriangularMeasure() {
 }
 
 double Cluster::isRectangularMeasure() {
-    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
+    std::vector<cv::Point2f> entitiesContourPoints = getEntitiesContourPoints();
 
     minAreaEnclosingRect = minAreaRect(entitiesContourPoints);
 
@@ -176,11 +176,11 @@ double Cluster::isRectangularMeasure() {
 }
 
 double Cluster::isCircularMeasure() {
-    vector<Point2f> entitiesContourPoints = getEntitiesContourPoints();
+    std::vector<cv::Point2f> entitiesContourPoints = getEntitiesContourPoints();
 
     minEnclosingCircle(entitiesContourPoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
-    // Compute the area of the minimum area enclosing circle
+    // Compute the area of the minimum area enclosing cv::circle
     double circleArea = Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
 
     return normalisedShapeMeasure(circleArea);
@@ -205,5 +205,5 @@ bool Cluster::areValidOriginDependentValues(double distanceFromOrigin, double an
 
 
 // Constants
-const string Cluster::ERR_UNDEFINED_SHAPE         = "The shape of the given cluster is undefined.";
-const string Cluster::ERR_ORIGIN_DEPENDENT_VALUES = "The origin dependent values are invalid (i.e. negative).";
+const std::string Cluster::ERR_UNDEFINED_SHAPE         = "The shape of the given cluster is undefined.";
+const std::string Cluster::ERR_ORIGIN_DEPENDENT_VALUES = "The origin dependent values are invalid (i.e. negative).";

@@ -8,20 +8,18 @@
 #include <vector>
 #include <sstream>
 
-using namespace std;
-
 
 namespace multiscale {
 
-    //! Class for manipulating strings
+    //! Class for manipulating std::strings
     class StringManipulator {
 
         public:
 
-            //! Count how many times character occurs in the given string
+            //! Count how many times character occurs in the given std::string
             /*!
              * \param searchChar    The search character of interest
-             * \param inputString   The input string in which the character will be searched for
+             * \param inputString   The input std::string in which the character will be searched for
              */
             static unsigned long count(char searchChar, const std::string &inputString);
 
@@ -29,44 +27,44 @@ namespace multiscale {
             /*!
              * \param filepath File path
              */
-            static string filenameFromPath(const string &filepath);
+            static std::string filenameFromPath(const std::string &filepath);
 
-            //! Replace a substring of the given string with another string
+            //! Replace a substd::string of the given std::string with another std::string
             /*!
-             * \param initialString Initial string
-             * \param replaceWhat Substring which will be replaced
-             * \param replaceTo String which will be inserted instead of the replaceWhat string
+             * \param initialString Initial std::string
+             * \param replaceWhat Substd::string which will be replaced
+             * \param replaceTo String which will be inserted instead of the replaceWhat std::string
              */
-            static string replace(const string &initialString,
-                                  const string &replaceWhat,
-                                  const string &replaceTo);
+            static std::string replace(const std::string &initialString,
+                                       const std::string &replaceWhat,
+                                       const std::string &replaceTo);
 
-            //! Split the given string into a vector of strings considering the given delimiter
+            //! Split the given std::string into a std::vector of std::strings considering the given delimiter
             /*!
-             * \param initialString Initial string
+             * \param initialString Initial std::string
              * \param delimiter Delimiter
              */
-            static vector<string> split(const string &initialString, const string &delimiter);
+            static std::vector<std::string> split(const std::string &initialString, const std::string &delimiter);
 
-            //! Remove the trailing "new line" characters from the end of the string
+            //! Remove the trailing "new line" characters from the end of the std::string
             /*!
-             * \param inputString   The given input string
+             * \param inputString   The given input std::string
              */
-            static string trimRight(string &inputString);
+            static std::string trimRight(std::string &inputString);
 
-            //! Remove the trailing "new line" characters from the end of the string
+            //! Remove the trailing "new line" characters from the end of the std::string
             /*!
-             * \param inputString   The given input string
+             * \param inputString   The given input std::string
              */
-            static string trimRight(const string &inputString);
+            static std::string trimRight(const std::string &inputString);
 
-            //! Convert the string to the given type
+            //! Convert the std::string to the given type
             /*!
-             * \param inputString   The given input string
+             * \param inputString   The given input std::string
              */
             template <typename T>
             static T convert(const std::string &inputString) {
-                stringstream stringStream(inputString);
+                std::stringstream stringStream(inputString);
                 T outputVariable;
 
                 stringStream >> outputVariable;
@@ -85,13 +83,13 @@ namespace multiscale {
                 return outputVariable;
             }
 
-            //! Convert the variable to a string
+            //! Convert the variable to a std::string
             /*!
              * \param variable Variable
              */
             template <typename T>
-            static string toString(T variable) {
-                ostringstream stringStream;
+            static std::string toString(T variable) {
+                std::ostringstream stringStream;
 
                 stringStream << variable;
 
