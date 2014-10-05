@@ -5,8 +5,6 @@
 
 #include <string>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -22,8 +20,8 @@ namespace multiscale {
              * \param line  The line number from which the exception was thrown
              * \param msg   The index value
              */
-            explicit IndexOutOfBoundsException(const string &file, int line, const string &msg) {
-                constructExplanatoryString<const string &>(file, line,
+            explicit IndexOutOfBoundsException(const std::string &file, int line, const std::string &msg) {
+                constructExplanatoryString<const std::string &>(file, line,
                     ERR_INDEX_OUT_OF_BOUNDS_BEGIN + msg + ERR_INDEX_OUT_OF_BOUNDS_END
                 );
             }
@@ -33,8 +31,8 @@ namespace multiscale {
              * \param line  The line number from which the exception was thrown
              * \param msg   The index value
              */
-            explicit IndexOutOfBoundsException(const string &file, int line, const char *msg) {
-                constructExplanatoryString<const string &>(file, line,
+            explicit IndexOutOfBoundsException(const std::string &file, int line, const char *msg) {
+                constructExplanatoryString<const std::string &>(file, line,
                     (ERR_INDEX_OUT_OF_BOUNDS_BEGIN + std::string(msg) + ERR_INDEX_OUT_OF_BOUNDS_END).c_str()
                 );
             }

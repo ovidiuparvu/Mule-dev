@@ -13,11 +13,15 @@ namespace multiscale {
 
             public:
 
-                ModelCheckingException(const string &file, int line, const string &msg)
-                    : UnexpectedBehaviourException(file, line, msg) {}
+                explicit ModelCheckingException(const std::string &file, int line, const std::string &msg)
+                    : UnexpectedBehaviourException(file, line, msg) {
+                    constructExplanatoryString<const std::string &>(file, line, msg);
+                }
 
-                ModelCheckingException(const string &file, int line, const char *msg)
-                    : UnexpectedBehaviourException(file, line, msg) {}
+                explicit ModelCheckingException(const std::string &file, int line, const char *msg)
+                    : UnexpectedBehaviourException(file, line, msg) {
+                    constructExplanatoryString<const char *>(file, line, msg);
+                }
 
         };
 

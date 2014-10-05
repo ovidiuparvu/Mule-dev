@@ -32,7 +32,7 @@ SpatialTemporalTrace TemporalDataReader::read(const std::string &filePath) {
 SpatialTemporalTrace TemporalDataReader::readFromValidInputFile() {
     SpatialTemporalTrace trace;
 
-    ifstream fin(filePath, std::ifstream::in);
+    std::ifstream fin(filePath, std::ifstream::in);
 
     readFromValidOpenedInputFile(fin, trace);
 
@@ -41,7 +41,7 @@ SpatialTemporalTrace TemporalDataReader::readFromValidInputFile() {
     return trace;
 }
 
-void TemporalDataReader::readFromValidOpenedInputFile(ifstream &fin, SpatialTemporalTrace &trace) {
+void TemporalDataReader::readFromValidOpenedInputFile(std::ifstream &fin, SpatialTemporalTrace &trace) {
     if (fin.is_open()) {
         readInputFileHeader(fin, trace);
         readInputFileContents(fin, trace);
@@ -55,7 +55,7 @@ void TemporalDataReader::readFromValidOpenedInputFile(ifstream &fin, SpatialTemp
     }
 }
 
-void TemporalDataReader::readInputFileHeader(ifstream &fin, SpatialTemporalTrace &trace) {
+void TemporalDataReader::readInputFileHeader(std::ifstream &fin, SpatialTemporalTrace &trace) {
     std::string headerRow;
 
     getline(fin, headerRow);
@@ -91,7 +91,7 @@ void TemporalDataReader::validateObservableVariables() {
     }
 }
 
-void TemporalDataReader::readInputFileContents(ifstream &fin, SpatialTemporalTrace &trace) {
+void TemporalDataReader::readInputFileContents(std::ifstream &fin, SpatialTemporalTrace &trace) {
     std::string              line;
     std::vector<std::string> lineValues;
 

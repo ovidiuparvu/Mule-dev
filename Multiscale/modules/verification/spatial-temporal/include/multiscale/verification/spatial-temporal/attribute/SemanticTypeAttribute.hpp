@@ -1,6 +1,8 @@
 #ifndef SEMANTICTYPEATTRIBUTE_HPP
 #define SEMANTICTYPEATTRIBUTE_HPP
 
+#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
+
 #include <boost/fusion/include/adapt_struct.hpp>
 
 #include <string>
@@ -16,6 +18,11 @@ namespace multiscale {
             public:
 
                 std::string semanticType;    /*!< The considered semantic type */
+
+            public:
+
+                SemanticTypeAttribute(const std::string &semanticType = SemanticType::DEFAULT_VALUE)
+                                      : semanticType(semanticType) {}
 
         };
 

@@ -3,6 +3,7 @@
 
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
 
+#include <fstream>
 #include <string>
 
 
@@ -52,14 +53,14 @@ namespace multiscale {
                  * \param fin   The input file stream opened for the given input file
                  * \param trace The spatial temporal trace created using the data from the input file
                  */
-                void readFromValidOpenedInputFile(ifstream &fin, SpatialTemporalTrace &trace);
+                void readFromValidOpenedInputFile(std::ifstream &fin, SpatialTemporalTrace &trace);
 
                 //! Read the header row from the input file
                 /*!
                  * \param fin   The input file stream opened for the given input file
                  * \param trace The spatial temporal trace created using the data from the input file
                  */
-                void readInputFileHeader(ifstream &fin, SpatialTemporalTrace &trace);
+                void readInputFileHeader(std::ifstream &fin, SpatialTemporalTrace &trace);
 
                 //! Validate the observable variables
                 /*!
@@ -72,7 +73,7 @@ namespace multiscale {
                  * \param fin   The input file stream opened for the given input file
                  * \param trace The spatial temporal trace created using the data from the input file
                  */
-                void readInputFileContents(ifstream &fin, SpatialTemporalTrace &trace);
+                void readInputFileContents(std::ifstream &fin, SpatialTemporalTrace &trace);
 
                 //! Check if the provided line tokens are valid and, if yes, add them to the trace
                 /*!

@@ -167,7 +167,7 @@ namespace multiscale {
                     try {
                         return evaluateTemporalNumericComparison(primaryLogicProperty, lhsLogicProperty);
                     } catch (const SpatialTemporalException &ex) {
-                        return printExceptionMessage(ex.what());
+                        return printExceptionMessage(ex.rawMessage());
                     }
                 }
 
@@ -182,7 +182,7 @@ namespace multiscale {
                     try {
                         return evaluateChangeTemporalNumericMeasure(primaryLogicProperty, lhsLogicProperty);
                     } catch (const SpatialTemporalException &ex) {
-                        return printExceptionMessage(ex.what());
+                        return printExceptionMessage(ex.rawMessage());
                     }
                 }
 
@@ -238,7 +238,7 @@ namespace multiscale {
                     try {
                         return evaluateFutureLogicProperty(primaryLogicProperty, lhsLogicProperty);
                     } catch (const SpatialTemporalException &ex) {
-                        return printExceptionMessage(ex.what());
+                        return printExceptionMessage(ex.rawMessage());
                     }
                 }
 
@@ -253,7 +253,7 @@ namespace multiscale {
                     try {
                         return evaluateGlobalLogicProperty(primaryLogicProperty, lhsLogicProperty);
                     } catch (const SpatialTemporalException &ex) {
-                        return printExceptionMessage(ex.what());
+                        return printExceptionMessage(ex.rawMessage());
                     }
                 }
 
@@ -268,7 +268,7 @@ namespace multiscale {
                     try {
                         return evaluateNextLogicProperty(primaryLogicProperty, lhsLogicProperty);
                     } catch (const SpatialTemporalException &ex) {
-                        return printExceptionMessage(ex.what());
+                        return printExceptionMessage(ex.rawMessage());
                     }
                 }
 
@@ -283,7 +283,7 @@ namespace multiscale {
                     try {
                         return evaluateNextKLogicProperty(primaryLogicProperty, lhsLogicProperty);
                     } catch (const SpatialTemporalException &ex) {
-                        return printExceptionMessage(ex.what());
+                        return printExceptionMessage(ex.rawMessage());
                     }
                 }
 

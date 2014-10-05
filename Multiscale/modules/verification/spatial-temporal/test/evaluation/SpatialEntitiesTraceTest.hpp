@@ -850,7 +850,7 @@ TEST_F(SpatialEntitiesTraceTest, ProbabilisticLogicProperty) {
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, SemanticType) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(clusteredness(filter(clusters, type < 1))) >= 1]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.4 [count(clusteredness(filter(clusters, type < Organ.Kidney))) >= 1]"));
 }
 
 

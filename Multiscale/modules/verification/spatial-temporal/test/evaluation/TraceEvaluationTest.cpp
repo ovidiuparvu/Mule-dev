@@ -15,6 +15,7 @@ TraceEvaluationTest::TraceEvaluationTest() : nrOfTimePoints(12),
 
 bool TraceEvaluationTest::RunEvaluationTest(const std::string &query) {
     InitialiseQuery(query);
+    InitialiseTypeSemanticsTable();
     InitialiseTrace();
 
     RunTest();

@@ -5,8 +5,6 @@
 
 #include <string>
 
-using namespace std;
-
 
 namespace multiscale {
 
@@ -17,11 +15,15 @@ namespace multiscale {
 
             UnimplementedMethodException() {}
 
-            explicit UnimplementedMethodException(const string &file, int line, const string &msg)
-                : AlgorithmException(file, line, msg) {}
+            explicit UnimplementedMethodException(const std::string &file, int line, const std::string &msg)
+                : AlgorithmException(file, line, msg) {
+                constructExplanatoryString<const std::string &>(file, line, msg);
+            }
 
-            explicit UnimplementedMethodException(const string &file, int line, const char *msg)
-                : AlgorithmException(file, line, msg) {}
+            explicit UnimplementedMethodException(const std::string &file, int line, const char *msg)
+                : AlgorithmException(file, line, msg) {
+                constructExplanatoryString<const char *>(file, line, msg);
+            }
 
     };
 

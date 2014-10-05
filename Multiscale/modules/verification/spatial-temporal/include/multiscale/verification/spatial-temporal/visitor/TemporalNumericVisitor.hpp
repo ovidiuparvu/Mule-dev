@@ -55,11 +55,9 @@ namespace multiscale {
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
                     NumericStateVariableId numericStateVariableId(
                         numericStateVariable.stateVariable.name,
-                        // TODO: Update accordingly
-//                        numericStateVariable.semanticType.get_value_or(
-//                            SemanticTypeAttribute(0)
-//                        ).type
-                        std::string()
+                        numericStateVariable.semanticType.get_value_or(
+                            SemanticTypeAttribute()
+                        ).semanticType
                     );
 
                     return trace.getTimePoint(0).getNumericStateVariable(numericStateVariableId);
