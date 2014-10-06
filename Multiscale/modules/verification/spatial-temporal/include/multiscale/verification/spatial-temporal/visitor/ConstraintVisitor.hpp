@@ -342,12 +342,68 @@ namespace multiscale {
                  * \param comparator            The type of the comparator
                  * \param semanticType          The semantic type
                  */
-                void filterSpatialEntitiesWrtType(TimePoint &timePoint,
-                                                  const SubsetSpecificType &spatialEntityType,
-                                                  const ComparatorType &comparator,
-                                                  const SemanticTypeAttribute &semanticType) const {
+                void filterSpatialEntitiesWrtType(
+                    TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
+                    const ComparatorType &comparator, const SemanticTypeAttribute &semanticType
+                ) const {
                     // Obtain the type value for the right hand side semantic criteria values
-                    double rhsTypeValue = translateSemanticTypeToAbstractNaturalNumber(semanticType.semanticType);
+                    std::string rhsSemanticType = semanticType.semanticType;
+
+                    if (comparator == ComparatorType::Equal) {
+                        filterSpatialEntitiesWrtTypeConsideringEqualComparator(
+                            timePoint, spatialEntityType, rhsSemanticType
+                        );
+                    } else {
+                        filterSpatialEntitiesWrtTypeConsideringNonEqualComparator(
+                            timePoint, spatialEntityType, comparator, rhsSemanticType
+                        );
+                    }
+                }
+
+                //! Remove from the timepoint the spatial entities which fail to meet the type constraint
+                /*! The assumption for this method is that the considered comparator is "=".
+                 *
+                 * In this case the type semantics table is NOT used.
+                 *
+                 * \param timePoint             The timepoint which will be filtered
+                 * \param spatialEntityType     The considered spatial entity type
+                 * \param rhsSemanticType       The semantic type on the right of the comparator
+                 */
+                void filterSpatialEntitiesWrtTypeConsideringEqualComparator(
+                    TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
+                    const std::string &rhsSemanticType
+                ) const {
+                    auto beginIt = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
+                    auto endIt   = timePoint.getSpatialEntitiesEndIterator(spatialEntityType);
+
+                    // Filter spatial entities considering their type
+                    while (beginIt != endIt) {
+                        std::string lhsTypeValue = ((*beginIt)->getSemanticType());
+
+                        if (lhsTypeValue.compare(rhsSemanticType) != 0) {
+                            beginIt = timePoint.removeSpatialEntity(beginIt, spatialEntityType);
+                        } else {
+                            beginIt++;
+                        }
+                    }
+                }
+
+                //! Remove from the timepoint the spatial entities which fail to meet the type constraint
+                /*! The assumption for this method is that the considered comparator is different from "=".
+                 *
+                 * In this case the type semantics table is used.
+                 *
+                 * \param timePoint             The timepoint which will be filtered
+                 * \param spatialEntityType     The considered spatial entity type
+                 * \param comparator            The type of the comparator
+                 * \param rhsSemanticType       The semantic type on the right of the comparator
+                 */
+                void filterSpatialEntitiesWrtTypeConsideringNonEqualComparator(
+                    TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
+                    const ComparatorType &comparator, const std::string &rhsSemanticType
+                ) const {
+                    // Obtain the type value for the right hand side semantic criteria values
+                    double rhsTypeValue = translateSemanticTypeToAbstractNaturalNumber(rhsSemanticType);
 
                     auto beginIt = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
                     auto endIt   = timePoint.getSpatialEntitiesEndIterator(spatialEntityType);

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<typeSemanticsTable>
+	<semanticCriteria description="LevelOfOrganisation.OrganismType"/>
+	<semanticTypes>
+		<type semantics="Cell.EK" value="1" /> 
+		<type semantics="Cell.PK" value="2" /> 
+		<type semantics="Cell" value="3" /> 
+	</semanticTypes>
+</typeSemanticsTable>
