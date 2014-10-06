@@ -8,6 +8,6 @@ P > 0.6 [ F [0, 2] (avg(area(filter(clusters, type = Cell.EK))) < {B}(type = Cel
 P < 0.1 [ G [0, 2] (max(perimeter(union(filter(regions, type < Cell), filter(clusters, type < Cell)))) < 3) ]
 
 
-# The A numeric state variable rate of change is greater than 0.9 and the Cell.EK B numeric state variable rate of change is smaller than 1.1 with probability greater than 0.8 in the forthcoming timepoint
+# The A numeric state variable rate of change is greater than 0.9 and the Cell.EK B numeric state variable rate of change is smaller than 1.1 with probability greater than 0.2 in the forthcoming timepoint
 
-P > 0.8 [ X ((d({A}) > 0.9) ^ (d({B}(type = Cell.EK)) < 1.1)) ]
+P > 0.2 [ X ((d({A}) > 0.9) ^ (d({B}(type = Cell.EK)) < 1.1)) ]
