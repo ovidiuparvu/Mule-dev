@@ -22,34 +22,54 @@ namespace multiscale {
             //! Check if the given xml file is valid considering the provided xml schema (xsd file)
             /*! The validation is performed using the Xerces C++ library.
              *
-             * \param xmlFilepath   The path to the xml file
-             * \param xmlSchemaPath The path to the xml schema file
+             * \param xmlFilepath       The path to the xml file
+             * \param xmlSchemaPath     The path to the xml schema file
              */
             static bool isValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath);
+
+            //! Check if the given xml file is valid considering the provided xml schema (xsd file)
+            /*! The validation is performed using the Xerces C++ library.
+             *
+             * In case the xml file is not valid the error message is retrieved in xmlErrorMessage.
+             *
+             * \param xmlFilepath       The path to the xml file
+             * \param xmlSchemaPath     The path to the xml schema file
+             * \param xmlErrorMessage   The error message explaining why the xml file is not valid
+             */
+            static bool isValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath,
+                                       std::string &xmlErrorMessage);
 
         private:
 
             //! Check if the given xml file is valid considering the provided xml schema (xsd file)
             /*! The validation is performed using the Xerces C++ library.
              *
-             * \param xmlFilepath   The path to the xml file
-             * \param xmlSchemaPath The path to the xml schema file
+             * In case the xml file is not valid the error message is retrieved in xmlErrorMessage.
+             *
+             * \param xmlFilepath       The path to the xml file
+             * \param xmlSchemaPath     The path to the xml schema file
+             * \param xmlErrorMessage   The error message explaining why the xml file is not valid
              */
-            static bool isValidXmlPathAndFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath);
+            static bool isValidXmlPathAndFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath,
+                                              std::string &xmlErrorMessage);
 
             //! Check if the given xml file is valid considering the provided xml schema (xsd file)
             /*! The validation is performed using the Xerces C++ library.
              *
-             * \param xmlFilepath   The path to the xml file
-             * \param xmlSchemaPath The path to the xml schema file
+             * In case the xml file is not valid the error message is retrieved in xmlErrorMessage.
+             *
+             * \param xmlFilepath       The path to the xml file
+             * \param xmlSchemaPath     The path to the xml schema file
+             * \param xmlErrorMessage   The error message explaining why the xml file is not valid
              */
-            static bool verifyIfValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath);
+            static bool verifyIfValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath,
+                                             std::string &xmlErrorMessage);
 
             //! Check if the given xml file is valid considering the provided xml schema (xsd file)
             /*! The validation is performed using the Xerces C++ library.
              *
-             * \param xmlFilepath   The path to the xml file
-             * \param xmlSchemaPath The path to the xml schema file
+             * \param xmlFilepath       The path to the xml file
+             * \param xmlSchemaPath     The path to the xml schema file
              */
             static bool checkIfValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath);
 

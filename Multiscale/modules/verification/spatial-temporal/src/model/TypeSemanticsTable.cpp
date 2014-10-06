@@ -60,12 +60,15 @@ void TypeSemanticsTable::read() {
 }
 
 void TypeSemanticsTable::readFromValidFile() {
-    if (!XmlValidator::isValidXmlFile(inputFilePath, TYPE_SEMANTICS_TABLE_XSD_PATH)) {
+    std::string xmlErrorMessage;
+
+    if (!XmlValidator::isValidXmlFile(inputFilePath, TYPE_SEMANTICS_TABLE_XSD_PATH, xmlErrorMessage)) {
         MS_throw(
             SpatialTemporalException,
             ERR_INVALID_INPUT_FILE_RELATIVE_TO_XSD_BEGIN +
             inputFilePath +
-            ERR_INVALID_INPUT_FILE_RELATIVE_TO_XSD_END
+            ERR_INVALID_INPUT_FILE_RELATIVE_TO_XSD_END +
+            xmlErrorMessage
         );
     }
 
@@ -170,7 +173,7 @@ const std::string TypeSemanticsTable::ERR_INVALID_INPUT_FILE_PATH_BEGIN   = "The
 const std::string TypeSemanticsTable::ERR_INVALID_INPUT_FILE_PATH_END     = ") does not point to a regular file with the required extension (" + TYPE_SEMANTICS_TABLE_INPUT_FILE_EXTENSION + "). Please change.";
 
 const std::string TypeSemanticsTable::ERR_INVALID_INPUT_FILE_RELATIVE_TO_XSD_BEGIN    = "The provided xml input file (";
-const std::string TypeSemanticsTable::ERR_INVALID_INPUT_FILE_RELATIVE_TO_XSD_END      = ") is invalid relative to the xsd file (" + TYPE_SEMANTICS_TABLE_XSD_PATH + ").";
+const std::string TypeSemanticsTable::ERR_INVALID_INPUT_FILE_RELATIVE_TO_XSD_END      = ") is invalid relative to the xsd file (" + TYPE_SEMANTICS_TABLE_XSD_PATH + "). ";
 
 const std::string TypeSemanticsTable::ERR_UNDEFINED_SEMANTIC_CRITERIA_BEGIN   = "The number of semantic criteria provided in the semantic description (";
 const std::string TypeSemanticsTable::ERR_UNDEFINED_SEMANTIC_CRITERIA_MIDDLE1 = ") of input file (" ;

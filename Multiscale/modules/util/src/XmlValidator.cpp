@@ -10,28 +10,39 @@ using namespace multiscale;
 
 
 bool XmlValidator::isValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath) {
+    std::string xmlErrorMessage;
+
+    return isValidXmlFile(xmlFilepath, xmlSchemaPath, xmlErrorMessage);
+}
+
+bool XmlValidator::isValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath,
+                                  std::string &xmlErrorMessage) {
     XMLPlatformUtils::Initialize();
 
-    bool isValid = isValidXmlPathAndFile(xmlFilepath, xmlSchemaPath);
+    bool isValid = isValidXmlPathAndFile(xmlFilepath, xmlSchemaPath, xmlErrorMessage);
 
     XMLPlatformUtils::Terminate();
 
     return isValid;
 }
 
-bool XmlValidator::isValidXmlPathAndFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath) {
+bool XmlValidator::isValidXmlPathAndFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath,
+                                         std::string &xmlErrorMessage) {
     validateXmlFilepath(xmlFilepath);
     validateXmlSchemaPath(xmlSchemaPath);
 
-    return verifyIfValidXmlFile(xmlFilepath, xmlSchemaPath);
+    return verifyIfValidXmlFile(xmlFilepath, xmlSchemaPath, xmlErrorMessage);
 }
 
-bool XmlValidator::verifyIfValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath) {
+bool XmlValidator::verifyIfValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath,
+                                        std::string &xmlErrorMessage) {
     try {
         return checkIfValidXmlFile(xmlFilepath, xmlSchemaPath);
     } catch (const InvalidInputException &ex) {
-        return false;
+        xmlErrorMessage = ex.rawMessage();
     }
+
+    return false;
 }
 
 bool XmlValidator::checkIfValidXmlFile(const std::string &xmlFilepath, const std::string &xmlSchemaPath) {
@@ -113,7 +124,7 @@ const std::string XmlValidator::ERR_INVALID_SCHEMA_FILEPATH = "The provided xml 
 
 const std::string XmlValidator::ERR_SCHEMA_CONTENTS = "The provided xml schema is invalid. Please verify the xml schema contents.";
 
-const std::string XmlValidator::XmlValidationErrorHandler::ERR_EXCEPTION_BEGIN_MSG  = "The provided xml file is invalid. An error occurred at ";
+const std::string XmlValidator::XmlValidationErrorHandler::ERR_EXCEPTION_BEGIN_MSG  = "An error occurred at ";
 
 const std::string XmlValidator::XmlValidationErrorHandler::ERR_EXCEPTION_LINE_MSG   = "line ";
 const std::string XmlValidator::XmlValidationErrorHandler::ERR_EXCEPTION_COLUMN_MSG = ", column ";
