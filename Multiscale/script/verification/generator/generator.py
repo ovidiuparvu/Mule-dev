@@ -470,5 +470,10 @@ if __name__ == "__main__":
     if len(sys.argv) != 3:
         print(ERR_INCORRECT_NR_ARGS)
     else:
+        # Inform the user that the generator script is executed
+        print("%-------------------------------------------------------------")
+        print("% Generating source files using the generator.py script... ")
+        print("%-------------------------------------------------------------")
+
         parse_configuration_and_generate_files(sys.argv[1], sys.argv[2])
     
