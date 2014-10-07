@@ -100,9 +100,11 @@ double Region::computeClusterednessDegreeIfOuterBorderDefined() {
         innerPolygonArea += contourArea(innerPolygon, CONTOUR_ORIENTED);
     }
 
-    return (outerPolygonArea != 0)
-               ? ((outerPolygonArea - innerPolygonArea) / (outerPolygonArea))
-               : 0;
+    return (
+        (Numeric::almostEqual(outerPolygonArea, 0))
+            ? 0
+            : ((outerPolygonArea - innerPolygonArea) / (outerPolygonArea))
+    );
 }
 
 void Region::updateDensity() {}

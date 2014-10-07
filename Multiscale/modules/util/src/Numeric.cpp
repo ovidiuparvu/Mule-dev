@@ -10,7 +10,7 @@
 using namespace multiscale;
 
 
-double Numeric::epsilon = 1E-5;
+double Numeric::epsilon = 1E-9;
 
 
 bool Numeric::greaterOrEqual(double number1, double number2) {
@@ -22,7 +22,10 @@ bool Numeric::lessOrEqual(double number1, double number2) {
 }
 
 bool Numeric::almostEqual(double number1, double number2) {
-    return (fabs(number1 - number2) <= (epsilon * maximum(1.0, fabs(number1), fabs(number2))));
+    return (
+        (std::fabs(number1 - number2) <=
+        (epsilon * maximum(1.0, std::fabs(number1), std::fabs(number2))))
+    );
 }
 
 double Numeric::average(const std::vector<double> &numbers) {
@@ -317,8 +320,8 @@ double Numeric::harmonicMean(const std::vector<double> &numbers, unsigned int nr
         inverseSum = applyOperation(AdditionOperation(), inverseSum, invertedNumber);
     }
 
-    return (inverseSum == 0) ? 0
-                             : (nrOfValues * (1.0 / inverseSum));
+    return (almostEqual(inverseSum, 0)) ? 0
+                                        : (nrOfValues * (1.0 / inverseSum));
 }
 
 double Numeric::kurtosis(const std::vector<double> &numbers, unsigned int nrOfValues) {
@@ -348,8 +351,8 @@ double Numeric::computeKurtosisMiddleTerm(const std::vector<double> &values, uns
         nominator = applyOperation(AdditionOperation(), nominator, std::pow((value - mean), 4));
     }
 
-    return (denominator != 0) ? (nominator / denominator)
-                              : 0;
+    return (almostEqual(denominator, 0)) ? 0
+                                         : (nominator / denominator);
 }
 
 double Numeric::computeKurtosisLastTerm(unsigned int nrOfValues) {
@@ -414,7 +417,7 @@ double Numeric::computeMode(const std::vector<double> &values, unsigned int nrOf
     while (index < nrOfValues) {
         countValue = 1;
 
-        while ((index < (nrOfValues - 1)) && (values[index] == values[index + 1])) {
+        while ((index < (nrOfValues - 1)) && (almostEqual(values[index], values[index + 1]))) {
             index++;
             countValue++;
         }
@@ -503,8 +506,8 @@ double Numeric::computeSkewLastTerm(const std::vector<double> &numbers, unsigned
         nominator = applyOperation(AdditionOperation(), nominator, std::pow((number - mean), 3));
     }
 
-    return (denominator != 0) ? (nominator / denominator)
-                              : 0;
+    return (almostEqual(denominator, 0)) ? 0
+                                         : (nominator / denominator);
 }
 
 double Numeric::standardDeviation(const std::vector<double> &numbers, unsigned int nrOfValues) {

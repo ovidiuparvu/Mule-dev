@@ -64,7 +64,7 @@ bool Geometry2D::slopeOfLine(const cv::Point2f &a, const cv::Point2f &b, double 
     double nominator = b.y - a.y;
     double denominator = b.x - a.x;
 
-    if (denominator == 0) {
+    if (Numeric::almostEqual(denominator, 0)) {
         return false;
     } else {
         slope = nominator / denominator;
@@ -306,7 +306,7 @@ bool Geometry2D::lineCircleIntersection(cv::Point2f a, cv::Point2f b, const cv::
         lineCircleTwoIntersectionPoints(circleOrigin, A, B, C, delta, intersectionPoints);
 
         return true;
-    } else if (delta == 0) {    /*!< One intersection point */
+    } else if (Numeric::almostEqual(delta, 0)) {    /*!< One intersection point */
         lineCircleOneIntersectionPoint(circleOrigin, A, B, C, delta, intersectionPoints);
 
         return true;

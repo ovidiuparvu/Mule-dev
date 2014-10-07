@@ -65,8 +65,9 @@ namespace multiscale {
                             return (firstValue + secondValue);
 
                         case BinaryNumericMeasureType::Div:
-                            return (secondValue != 0) ? (firstValue / secondValue)
-                                                      : 0;
+                            return (Numeric::almostEqual(secondValue, 0))
+                                        ? 0
+                                        : (firstValue / secondValue);
 
                         case BinaryNumericMeasureType::Log:
                             return (Numeric::log(firstValue, secondValue));

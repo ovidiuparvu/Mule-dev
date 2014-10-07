@@ -4,6 +4,7 @@
 #include "multiscale/util/iterator/NumberIteratorType.hpp"
 #include "multiscale/util/iterator/LexicographicNumberIterator.hpp"
 #include "multiscale/util/iterator/StandardNumberIterator.hpp"
+#include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
 #include <cmath>
@@ -302,7 +303,9 @@ double PolarCsvToInputFilesConverter::computeNextPositionConcentration(unsigned 
     if (nrOfConcentrationsForPosition == 1) {
         return computeNormalisedConcentration(totalConcentration, circleIndex);
     } else {
-        return (totalConcentration != 0) ? (concentration/totalConcentration) : 0;
+        return (Numeric::almostEqual(totalConcentration, 0))
+                    ? 0
+                    : (concentration / totalConcentration);
     }
 }
 
@@ -332,7 +335,7 @@ double PolarCsvToInputFilesConverter::computeScaledConcentration(const std::stri
         scaledConcentration = 1;
     }
 
-    return log2(scaledConcentration);
+    return std::log2(scaledConcentration);
 }
 
 double PolarCsvToInputFilesConverter::computeConcentrationWrtArea(double amount, int circleIndex) {

@@ -89,7 +89,7 @@ void BayesianModelChecker::initialise() {
     typeIErrorUpperBound    = 0;
 
     // Since the Bayes factor threshold should be greater than 1 the conditional statement is not mandatory
-    bayesFactorThresholdInverse = (bayesFactorThreshold == 0)
+    bayesFactorThresholdInverse = (Numeric::almostEqual(bayesFactorThreshold, 0))
                                       ? (std::numeric_limits<double>::max())
                                       : (1 / bayesFactorThreshold);
 }

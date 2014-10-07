@@ -4,6 +4,7 @@
 #include "multiscale/util/iterator/NumberIteratorType.hpp"
 #include "multiscale/util/iterator/LexicographicNumberIterator.hpp"
 #include "multiscale/util/iterator/StandardNumberIterator.hpp"
+#include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
 #include <cmath>
@@ -278,7 +279,9 @@ double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int
     if (nrOfConcentrationsForPosition == 1) {
         return computeNormalisedConcentration(totalConcentration);
     } else {
-        return (totalConcentration != 0) ? (concentration/totalConcentration) : 0;
+        return (Numeric::almostEqual(totalConcentration, 0))
+                    ? 0
+                    : (concentration / totalConcentration);
     }
 }
 
@@ -301,7 +304,7 @@ double RectangularCsvToInputFilesConverter::computeScaledConcentration(const std
         scaledConcentration = 1;
     }
 
-    return log2(scaledConcentration);
+    return std::log2(scaledConcentration);
 }
 
 double RectangularCsvToInputFilesConverter::computeNormalisedConcentration(double concentration) {

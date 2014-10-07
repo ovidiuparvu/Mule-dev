@@ -119,8 +119,8 @@ void Cluster::updateClusterednessDegree() {
 
     totalAvgDistance /= (entities.size());
 
-    clusterednessDegree = (totalAvgDistance != 0) ? (1 / totalAvgDistance)
-                                                  : 1;
+    clusterednessDegree = (Numeric::almostEqual(totalAvgDistance, 0)) ? 1
+                                                                      : (1 / totalAvgDistance);
 }
 
 void Cluster::updateDensity() {

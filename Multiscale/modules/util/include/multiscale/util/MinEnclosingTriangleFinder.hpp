@@ -366,9 +366,20 @@ namespace multiscale {
              */
             unsigned int predecessor(unsigned int index);
 
+            //! Check if the provided real numbers are "almost" equal
+            /*! The expression for determining if two real numbers x and y are equal is:
+             *  (Abs(x - y) <= EPSILON * Max(1.0f, Abs(x), Abs(y))).
+             *
+             *  \param lhsNumber    The left hand side real number
+             *  \param rhsNumber    The right hand side real number
+             */
+            bool almostEqual(float lhsNumber, float rhsNumber);
+
         private:
 
             // Constants
+            static const float EPSILON;
+
             static const bool CONVEX_HULL_CLOCKWISE;
 
             static const unsigned int INTERSECTS_BELOW;

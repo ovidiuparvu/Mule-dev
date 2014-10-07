@@ -46,8 +46,12 @@ double Silhouette::computeMeasure(std::size_t entityIndex, std::size_t clusterIn
     double a = computeAverageDissimilarityWithinCluster(entityIndex, clusterIndex, clusters);
     double b = computeAverageDissimilarityToOtherClusters(entityIndex, clusterIndex, clusters);
 
-    return ((a != 0) || (b != 0)) ? (b - a) / (std::max(a, b))
-                                  : 1;
+    return (
+        (Numeric::almostEqual(a, 0) &&
+         Numeric::almostEqual(b, 0))
+             ? 0
+             : (b - a) / (std::max(a, b))
+     );
 }
 
 double Silhouette::computeAverageDissimilarityWithinCluster(std::size_t entityIndex, std::size_t clusterIndex,

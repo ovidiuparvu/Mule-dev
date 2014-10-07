@@ -263,10 +263,10 @@ unsigned int MinEnclosingTriangleFinder::intersects(double angleOfGammaAndPoint,
     if (isFlushAngleBetweenPredecessorAndSuccessor(angleOfFlushEdge, angleOfPointAndPredecessor,
                                                    angleOfPointAndSuccessor)) {
         if ((isGammaAngleBetween(angleOfGammaAndPoint, angleOfPointAndPredecessor, angleOfFlushEdge)) ||
-            (Numeric::almostEqual(angleOfGammaAndPoint, angleOfPointAndPredecessor))) {
+            (almostEqual(angleOfGammaAndPoint, angleOfPointAndPredecessor))) {
             return intersectsAboveOrBelow(predecessor(polygonPointIndex), polygonPointIndex);
         } else if ((isGammaAngleBetween(angleOfGammaAndPoint, angleOfPointAndSuccessor, angleOfFlushEdge)) ||
-                  (Numeric::almostEqual(angleOfGammaAndPoint, angleOfPointAndSuccessor))) {
+                  (almostEqual(angleOfGammaAndPoint, angleOfPointAndSuccessor))) {
             return intersectsAboveOrBelow(successor(polygonPointIndex), polygonPointIndex);
         }
     } else {
@@ -314,7 +314,7 @@ bool MinEnclosingTriangleFinder::isGammaAngleBetween(double &gammaAngle, double 
 }
 
 bool MinEnclosingTriangleFinder::isGammaAngleEqualTo(double &gammaAngle, double angle) {
-    return (Numeric::almostEqual(gammaAngle, angle));
+    return (almostEqual(gammaAngle, angle));
 }
 
 double MinEnclosingTriangleFinder::height(unsigned int polygonPointIndex) {
@@ -450,8 +450,17 @@ unsigned int MinEnclosingTriangleFinder::predecessor(unsigned int index) {
                         : (index - 1);
 }
 
+bool MinEnclosingTriangleFinder::almostEqual(float lhsNumber, float rhsNumber) {
+    return (
+        (std::fabs(lhsNumber - rhsNumber) <=
+        (EPSILON * std::max(1.0f, std::max(std::fabs(lhsNumber), std::fabs(rhsNumber)))))
+    );
+}
+
 
 // Constants
+const float MinEnclosingTriangleFinder::EPSILON = 1E-5;
+
 const bool MinEnclosingTriangleFinder::CONVEX_HULL_CLOCKWISE = true;
 
 const unsigned int MinEnclosingTriangleFinder::INTERSECTS_BELOW      = 1;

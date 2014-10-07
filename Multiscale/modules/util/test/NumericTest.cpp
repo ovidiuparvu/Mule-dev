@@ -16,8 +16,8 @@ TEST(Numeric, GreaterOrEqual) {
     EXPECT_TRUE(Numeric::greaterOrEqual(2, -2));
     EXPECT_TRUE(Numeric::greaterOrEqual(12312312312312312, -12312312312312312));
     EXPECT_TRUE(Numeric::greaterOrEqual(745, 745));
-    EXPECT_TRUE(Numeric::greaterOrEqual(2, 2.00001));
-    EXPECT_TRUE(Numeric::greaterOrEqual(2, 1.99999));
+    EXPECT_TRUE(Numeric::greaterOrEqual(2, 2.000000001));
+    EXPECT_TRUE(Numeric::greaterOrEqual(2, 1.999999999));
     EXPECT_FALSE(Numeric::greaterOrEqual(1, 2));
     EXPECT_FALSE(Numeric::greaterOrEqual(1, 6897645));
 }
@@ -28,8 +28,8 @@ TEST(Numeric, LessOrEqual) {
     EXPECT_TRUE(Numeric::lessOrEqual(-2, 2));
     EXPECT_TRUE(Numeric::lessOrEqual(-12312312312312312, 12312312312312312));
     EXPECT_TRUE(Numeric::lessOrEqual(567, 567));
-    EXPECT_TRUE(Numeric::lessOrEqual(2.00001, 2));
-    EXPECT_TRUE(Numeric::lessOrEqual(1.99999, 2));
+    EXPECT_TRUE(Numeric::lessOrEqual(2.000000001, 2));
+    EXPECT_TRUE(Numeric::lessOrEqual(1.999999999, 2));
     EXPECT_FALSE(Numeric::lessOrEqual(2, 1));
     EXPECT_FALSE(Numeric::lessOrEqual(123231, 1));
 }
