@@ -3,6 +3,7 @@
 
 #include "multiscale/core/Multiscale.hpp"
 
+#include <algorithm>
 #include <stdexcept>
 #include <string>
 #include <sstream>
@@ -27,9 +28,9 @@ namespace multiscale {
             MultiscaleException() : std::runtime_error("") {}
 
             explicit MultiscaleException(const std::string &file, int line, const std::string &msg)
-                                        : std::runtime_error(msg), message(msg) {}
+                                        : std::runtime_error(trimRight(msg)), message(trimRight(msg)) {}
             explicit MultiscaleException(const std::string &file, int line, const char *msg)
-                                        : std::runtime_error(msg), message(msg) {}
+                                        : std::runtime_error(trimRight(msg)), message(trimRight(msg)) {}
 
             //! Returns an explanatory string
             const char* what() const noexcept override {
@@ -56,9 +57,30 @@ namespace multiscale {
                 strStream << "File: " << file << ", " << std::endl
                           << "Line: " << line << ", " << std::endl
                           << "Type: " << typeid(*this).name() << ", " << std::endl
-                          << "Error message: " << msg;
+                          << "Error message: " << trimRight(msg);
 
                 explanatoryString = strStream.str();
+            }
+
+        private:
+
+            //! Trim the right hand side of the provided string
+            /*!
+             * \param inputString   The provided input string
+             */
+            std::string trimRight(const std::string &inputString) {
+                std::string trimmedString = inputString;
+
+                trimmedString.erase(
+                    std::find_if(
+                        trimmedString.rbegin(),
+                        trimmedString.rend(),
+                        std::not1(std::ptr_fun<int, int>(std::isspace))
+                    ).base(),
+                    trimmedString.end()
+               );
+
+               return trimmedString;
             }
 
     };

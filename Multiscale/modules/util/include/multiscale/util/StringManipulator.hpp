@@ -23,6 +23,12 @@ namespace multiscale {
              */
             static unsigned long count(char searchChar, const std::string &inputString);
 
+            //! Escape carriage return characters in the provided string
+            /*!
+             * \param initialString The provided initial string
+             */
+            static std::string escapeCarriageReturns(const std::string &initialString);
+
             //! Obtain the file name from the given file path
             /*!
              * \param filepath File path
@@ -73,7 +79,7 @@ namespace multiscale {
                     MS_throw(
                         InvalidInputException,
                         ERR_INVALID_CONVERSION_BEGIN +
-                        inputString +
+                        escapeCarriageReturns(inputString) +
                         ERR_INVALID_CONVERSION_MIDDLE +
                         multiscale::UserDefinedTypeName<T>::name() +
                         ERR_INVALID_CONVERSION_END
