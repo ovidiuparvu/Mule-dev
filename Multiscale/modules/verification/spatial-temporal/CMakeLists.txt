@@ -385,17 +385,33 @@ AddSample(TypeSemanticsTableDataReaderSample)
 target_link_libraries(TypeSemanticsTableDataReaderSample util)
 
 
-# PatternAnalysisSample
+# PatternAnalysisInteractiveSample
 
-set(PATTERN_ANALYSIS_SAMPLE_SRC
+set(PATTERN_ANALYSIS_INTERACTIVE_SAMPLE_SRC
     "${CORE_MODEL_CHECKER_SRC}"
     
     src/data/TemporalDataReader.cpp
     
-    sample/PatternAnalysisSample.cpp 
+    sample/PatternAnalysisInteractiveSample.cpp 
 )
 
-add_executable(PatternAnalysisSample ${PATTERN_ANALYSIS_SAMPLE_SRC})
-AddSample(PatternAnalysisSample)
+add_executable(PatternAnalysisInteractiveSample ${PATTERN_ANALYSIS_INTERACTIVE_SAMPLE_SRC})
+AddSample(PatternAnalysisInteractiveSample)
 
-target_link_libraries(PatternAnalysisSample util)
+target_link_libraries(PatternAnalysisInteractiveSample util)
+
+
+# PatternAnalysisNonInteractiveSample
+
+set(PATTERN_ANALYSIS_NONINTERACTIVE_SAMPLE_SRC
+    "${CORE_MODEL_CHECKER_SRC}"
+    
+    src/data/TemporalDataReader.cpp
+    
+    sample/PatternAnalysisNonInteractiveSample.cpp 
+)
+
+add_executable(PatternAnalysisNonInteractiveSample ${PATTERN_ANALYSIS_NONINTERACTIVE_SAMPLE_SRC})
+AddSample(PatternAnalysisNonInteractiveSample)
+
+target_link_libraries(PatternAnalysisNonInteractiveSample util)
