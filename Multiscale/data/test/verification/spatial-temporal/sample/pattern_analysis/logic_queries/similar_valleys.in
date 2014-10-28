@@ -1,0 +1,20 @@
+################################################################################
+#
+# The valley values of A and B are similar considering the time interval 
+# [1, 10]. Two values are considered similar if their difference is smaller or 
+# equal to the threshold value 0.5.
+#
+# Remark: The probability specification (P > 0.5) is irrelevant for this 
+#         application because a single timeseries is considered. However it
+#         needs to be specified in order for the entire logic property to be
+#         parsed correctly.
+#
+################################################################################
+
+P > 0.5 [
+    similar(
+        enteringValue(valley, [1, 10] {A}), 
+        enteringValue(valley, [1, 10] {B}), 
+        0.5
+    )
+]

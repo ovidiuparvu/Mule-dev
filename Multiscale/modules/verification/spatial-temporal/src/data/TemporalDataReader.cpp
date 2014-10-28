@@ -10,7 +10,7 @@ using namespace multiscale::verification;
 
 TemporalDataReader::TemporalDataReader() : currentLineNumber(0) {}
 
-SpatialTemporalTrace TemporalDataReader::read(const std::string &filePath) {
+SpatialTemporalTrace TemporalDataReader::readTimeseriesFromFile(const std::string &filePath) {
     if (Filesystem::isValidFilePath(filePath, INPUT_FILE_EXTENSION)) {
         this->filePath = filePath;
         this->currentLineNumber = 0;

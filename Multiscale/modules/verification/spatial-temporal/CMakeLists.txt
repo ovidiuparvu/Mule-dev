@@ -406,6 +406,7 @@ target_link_libraries(PatternAnalysisInteractiveSample util)
 set(PATTERN_ANALYSIS_NONINTERACTIVE_SAMPLE_SRC
     "${CORE_MODEL_CHECKER_SRC}"
     
+    src/data/LogicPropertyDataReader.cpp
     src/data/TemporalDataReader.cpp
     
     sample/PatternAnalysisNonInteractiveSample.cpp 

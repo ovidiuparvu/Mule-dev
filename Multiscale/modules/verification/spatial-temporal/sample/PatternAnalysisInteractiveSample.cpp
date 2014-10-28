@@ -18,7 +18,7 @@ int analysePatterns(const std::string &inputFilePath) {
     AbstractSyntaxTree result;
     TemporalDataReader reader;
 
-    SpatialTemporalTrace trace = reader.read(inputFilePath);
+    SpatialTemporalTrace trace = reader.readTimeseriesFromFile(inputFilePath);
     TypeSemanticsTable typeSemanticsTable;
 
     std::cout << "/////////////////////////////////////////////////////////\n\n";

@@ -3,6 +3,7 @@
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/ProbabilisticLogicPropertyAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/data/LogicPropertyDataReader.hpp"
 #include "multiscale/verification/spatial-temporal/data/TemporalDataReader.hpp"
 #include "multiscale/verification/spatial-temporal/model/AbstractSyntaxTree.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
@@ -13,76 +14,62 @@ using namespace multiscale;
 using namespace multiscale::verification;
 
 
-// Construct the logic statement considering the provided input file path
-/*!
- * The format of the file path should be:
- *     "<NumericStateVariable1Name>_<NumericStateVariable1Name>.csv"
- */
-void constructLogicStatement(std::string &logicStatement,
-                             const std::string &inputFilePath) {
-    std::vector<std::string> numericStateVariablesNames
-        = StringManipulator::split(inputFilePath, "/_.");
-
-    std::string firstNumericStateVariableName
-        = numericStateVariablesNames[numericStateVariablesNames.size() - 3];
-    std::string secondNumericStateVariableName
-        = numericStateVariablesNames[numericStateVariablesNames.size() - 2];
-
-    logicStatement = "P > 0.9 [ " + (
-                         "similar(" + (
-                             "[1, 19] {" + firstNumericStateVariableName + "}, " +
-                             "[1, 19] {" + secondNumericStateVariableName + "}, " +
-                             "5"
-                         ) + ") ]"
-                     );
-}
-
-// Evaluate the abstract syntax tree considering the provided trace
+// Evaluate the abstract syntax tree considering the provided timeseries
 void evaluateAbstractSyntaxTree(AbstractSyntaxTree &abstractSyntaxTree,
-                                const SpatialTemporalTrace &trace) {
+                                const SpatialTemporalTrace &timeseries) {
     TypeSemanticsTable typeSemanticsTable;
 
-    std::cout << (abstractSyntaxTree.evaluate(trace, typeSemanticsTable))
-              << std::endl;
+    bool evaluationResult = abstractSyntaxTree.evaluate(timeseries, typeSemanticsTable);
+
+    std::cout << (evaluationResult ? "T" : "F") << std::endl;
 }
 
-// Analyse patterns considering the provided parser and trace
-int analysePatterns(Parser &parser, const SpatialTemporalTrace &trace) {
+// Analyse patterns considering the provided logic properties and timeseries
+int analysePatterns(const std::vector<std::string> &logicProperties,
+                    const SpatialTemporalTrace &timeseries) {
     AbstractSyntaxTree result;
 
-    parser.parse(result);
+    for (const std::string &logicProperty : logicProperties) {
+        // Create a new parser for the provided logic property
+        Parser parser(logicProperty);
 
-    evaluateAbstractSyntaxTree(result, trace);
+        // Parse the logic property and create the corresponding abstract syntax tree
+        parser.parse(result);
+
+        // Evaluate the abstract syntax tree considering the provided timeseries
+        evaluateAbstractSyntaxTree(result, timeseries);
+    }
 
     return EXEC_SUCCESS_CODE;
 }
 
-// Analyse patterns considering timeseries data provided in the input file
-int analysePatterns(const std::string &inputFilePath) {
-    std::string logicStatement;
-    AbstractSyntaxTree result;
-    TemporalDataReader reader;
+// Analyse patterns considering timeseries data and logic properties provided in the input files
+int analysePatterns(const std::string &timeseriesInputFilePath,
+                    const std::string &logicPropertiesInputFilePath) {
+    TemporalDataReader timeseriesReader;
+    LogicPropertyDataReader logicPropertiesReader;
 
-    // Construct the logic statement considering the provided input file path
-    constructLogicStatement(logicStatement, inputFilePath);
+    std::vector<std::string> logicProperties
+        = logicPropertiesReader.readLogicPropertiesFromFile(logicPropertiesInputFilePath);
 
-    Parser parser(logicStatement);
+    SpatialTemporalTrace timeseries
+        = timeseriesReader.readTimeseriesFromFile(timeseriesInputFilePath);
 
-    SpatialTemporalTrace trace = reader.read(inputFilePath);
-
-    return analysePatterns(parser, trace);
+    return analysePatterns(logicProperties, timeseries);
 }
 
 // Main program
 int main(int argc, char **argv) {
-    if (argc != 2) {
-        std::cerr << "Usage: PatternAnalysisNonInteractiveSample <timeseries-input-file>" << std::endl;
+    if (argc != 3) {
+        std::cerr << "Usage: PatternAnalysisNonInteractiveSample "
+                  << "<timeseries-input-file> <logic-properties-input-file>"
+                  << std::endl;
 
         return EXEC_ERR_CODE;
     }
 
     try {
-        return analysePatterns(std::string(argv[1]));
+        return analysePatterns(std::string(argv[1]), std::string(argv[2]));
     } catch(const std::exception &e) {
         ExceptionHandler::printDetailedErrorMessage(e);
     } catch(...) {

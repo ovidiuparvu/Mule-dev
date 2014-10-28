@@ -41,7 +41,7 @@ namespace multiscale {
                 /*!
                  * \param filePath  The input file path
                  */
-                SpatialTemporalTrace read(const std::string &filePath);
+                SpatialTemporalTrace readTimeseriesFromFile(const std::string &filePath);
 
             private:
 

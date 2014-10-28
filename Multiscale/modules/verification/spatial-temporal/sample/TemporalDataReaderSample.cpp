@@ -41,7 +41,7 @@ int readAndPrintInputFile(const std::string &filePath) {
     try {
         TemporalDataReader reader;
 
-        SpatialTemporalTrace trace = reader.read(filePath);
+        SpatialTemporalTrace trace = reader.readTimeseriesFromFile(filePath);
 
         printSpatialTemporalTrace(trace);
     } catch (const MultiscaleException &ex) {
