@@ -10,6 +10,10 @@
 
 #include <boost/variant.hpp>
 
+#include <iomanip>
+#include <iostream>
+#include <limits>
+
 
 namespace multiscale {
 
@@ -372,6 +376,15 @@ namespace multiscale {
                                                             const std::vector<double>
                                                             &rhsTemporalNumericCollectionValues,
                                                             double toleratedSimilarityDifference) const {
+                    // The following line was added only for the PatternAnalysisNonInteractiveSample application
+                    // TODO: The below line and the dependent methods should not exist outside the
+                    //       "pattern_analysis" branch. Remove them if necessary.
+                    printLhsToRhsSimilarityValue(
+                        lhsTemporalNumericCollectionValues,
+                        rhsTemporalNumericCollectionValues,
+                        similarityMeasureType
+                    );
+
                     if (lhsTemporalNumericCollectionValues.size() < rhsTemporalNumericCollectionValues.size()) {
                         return isLhsSimilarToRhs(lhsTemporalNumericCollectionValues,
                                                  rhsTemporalNumericCollectionValues,
@@ -381,6 +394,57 @@ namespace multiscale {
                                                  lhsTemporalNumericCollectionValues,
                                                  toleratedSimilarityDifference, similarityMeasureType);
                     }
+                }
+
+                //! Compute and print the similarity value for the provided numeric collection values
+                /*!
+                 * \param similarityMeasureType                 The specific similarity measure type
+                 * \param lhsTemporalNumericCollectionValues    The left hand side temporal numeric collection values
+                 * \param rhsTemporalNumericCollectionValues    The right hand side temporal numeric collection values
+                 */
+                void
+                printLhsToRhsSimilarityValue(const std::vector<double> &lhsTemporalNumericCollectionValues,
+                                             const std::vector<double> &rhsTemporalNumericCollectionValues,
+                                             const SimilarityMeasureType &similarityMeasureType) const {
+                    if (lhsTemporalNumericCollectionValues.size() == rhsTemporalNumericCollectionValues.size()) {
+                        double similarityValue = computeLhsToRhsSimilarityValue(
+                                                     lhsTemporalNumericCollectionValues,
+                                                     rhsTemporalNumericCollectionValues,
+                                                     similarityMeasureType
+                                                 );
+
+                        // Print the similarity value
+                        std::cout << std::setprecision(std::numeric_limits<double>::max_digits10)
+                                  << similarityValue << " ";
+                    }
+                }
+
+                //! Compute the similarity value for the provided numeric collection values
+                /*!
+                 * \param similarityMeasureType                 The specific similarity measure type
+                 * \param lhsTemporalNumericCollectionValues    The left hand side temporal numeric collection values
+                 * \param rhsTemporalNumericCollectionValues    The right hand side temporal numeric collection values
+                 */
+                double
+                computeLhsToRhsSimilarityValue(const std::vector<double> &lhsTemporalNumericCollectionValues,
+                                               const std::vector<double> &rhsTemporalNumericCollectionValues,
+                                               const SimilarityMeasureType &similarityMeasureType) const {
+                    double      dissimilarityValue  = 0;
+                    std::size_t nrOfValues          = lhsTemporalNumericCollectionValues.size();
+
+                    for (std::size_t i = 0; i < nrOfValues; i++) {
+                        dissimilarityValue += computeDissimilarityValue(
+                                                  lhsTemporalNumericCollectionValues[i],
+                                                  rhsTemporalNumericCollectionValues[i],
+                                                  similarityMeasureType
+                                              );
+                    }
+
+                    // Similarity is equal to (1 / dissimilarity) if dissimilarity != 0, and 0 otherwise
+                    return (
+                        (Numeric::almostEqual(dissimilarityValue, 0)) ? 0
+                                                                      : (1 / dissimilarityValue)
+                    );
                 }
 
                 //! Check if the left- and right-hand side collections of values are similar
@@ -422,32 +486,39 @@ namespace multiscale {
 
                 //! Check if two values are similar considering the given similarity measure type
                 /*!
-                 * \param similarityMeasureType         The specific similarity measure type
                  * \param lhsValue                      The left hand side value
                  * \param rhsValue                      The right hand side value
                  * \param toleratedSimilarityDifference The maximum tolerated similarity difference between
                  *                                      two values
+                 * \param similarityMeasureType         The specific similarity measure type
                  */
                 bool
                 areSimilarValues(double lhsValue, double rhsValue, double toleratedSimilarityDifference,
                                  const SimilarityMeasureType &similarityMeasureType) const {
+                    return (
+                        Numeric::lessOrEqual(
+                            computeDissimilarityValue(lhsValue, rhsValue, similarityMeasureType),
+                            toleratedSimilarityDifference
+                        )
+                    );
+                }
+
+                //! Compute the dissimilarity between two values considering the given similarity measure type
+                /*!
+                 * \param lhsValue                  The left hand side value
+                 * \param rhsValue                  The right hand side value
+                 * \param similarityMeasureType     The specific similarity measure type
+                 */
+                double
+                computeDissimilarityValue(double lhsValue, double rhsValue,
+                                          const SimilarityMeasureType &similarityMeasureType) const {
                     switch (similarityMeasureType) {
                         case SimilarityMeasureType::Opposite:
-                            return (
-                                Numeric::lessOrEqual(
-                                    std::fabs(lhsValue + rhsValue),
-                                    toleratedSimilarityDifference
-                                )
-                            );
+                            return (std::fabs(lhsValue + rhsValue));
                             break;
 
                         case SimilarityMeasureType::Similar:
-                            return (
-                                Numeric::lessOrEqual(
-                                    std::fabs(lhsValue - rhsValue),
-                                    toleratedSimilarityDifference
-                                )
-                            );
+                            return (std::fabs(lhsValue - rhsValue));
                             break;
 
                         default:
@@ -455,7 +526,7 @@ namespace multiscale {
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings
-                    return false;
+                    return 0.0;
                 }
 
                 //! Evaluate the given UntilLogicPropertyAttribute
