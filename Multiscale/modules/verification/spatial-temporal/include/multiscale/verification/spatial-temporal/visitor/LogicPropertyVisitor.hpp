@@ -429,7 +429,7 @@ namespace multiscale {
                 computeLhsToRhsSimilarityValue(const std::vector<double> &lhsTemporalNumericCollectionValues,
                                                const std::vector<double> &rhsTemporalNumericCollectionValues,
                                                const SimilarityMeasureType &similarityMeasureType) const {
-                    double      dissimilarityValue  = 0;
+                    double      dissimilarityValue  = 1;
                     std::size_t nrOfValues          = lhsTemporalNumericCollectionValues.size();
 
                     for (std::size_t i = 0; i < nrOfValues; i++) {
@@ -440,11 +440,9 @@ namespace multiscale {
                                               );
                     }
 
-                    // Similarity is equal to (1 / dissimilarity) if dissimilarity != 0, and 0 otherwise
-                    return (
-                        (Numeric::almostEqual(dissimilarityValue, 0)) ? 0
-                                                                      : (1 / dissimilarityValue)
-                    );
+                    // Similarity is the inverse of dissimilarity. Since
+                    // dissimilarity \in [1, +inf) similarity \in [0, 1]
+                    return (1 / dissimilarityValue);
                 }
 
                 //! Check if the left- and right-hand side collections of values are similar
