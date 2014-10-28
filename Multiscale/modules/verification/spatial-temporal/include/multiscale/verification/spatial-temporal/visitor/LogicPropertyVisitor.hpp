@@ -421,33 +421,42 @@ namespace multiscale {
                 }
 
                 //! Check if two values are similar considering the given similarity measure type
-                /*!
-                 * \param similarityMeasureType         The specific similarity measure type
+                /*! Two values are considered similar if their dissimilarity value is smaller or equal to
+                 *  toleratedSimilarityDifference.
+                 *
                  * \param lhsValue                      The left hand side value
                  * \param rhsValue                      The right hand side value
                  * \param toleratedSimilarityDifference The maximum tolerated similarity difference between
                  *                                      two values
+                 * \param similarityMeasureType         The specific similarity measure type
                  */
                 bool
                 areSimilarValues(double lhsValue, double rhsValue, double toleratedSimilarityDifference,
                                  const SimilarityMeasureType &similarityMeasureType) const {
+                    return (
+                        Numeric::lessOrEqual(
+                            computeDissimilarityValue(lhsValue, rhsValue, similarityMeasureType),
+                            toleratedSimilarityDifference
+                        )
+                    );
+                }
+
+                //! Compute the dissimilarity between two values considering the given similarity measure type
+                /*!
+                 * \param lhsValue                  The left hand side value
+                 * \param rhsValue                  The right hand side value
+                 * \param similarityMeasureType     The specific similarity measure type
+                 */
+                double
+                computeDissimilarityValue(double lhsValue, double rhsValue,
+                                          const SimilarityMeasureType &similarityMeasureType) const {
                     switch (similarityMeasureType) {
                         case SimilarityMeasureType::Opposite:
-                            return (
-                                Numeric::lessOrEqual(
-                                    std::fabs(lhsValue + rhsValue),
-                                    toleratedSimilarityDifference
-                                )
-                            );
+                            return (std::fabs(lhsValue + rhsValue));
                             break;
 
                         case SimilarityMeasureType::Similar:
-                            return (
-                                Numeric::lessOrEqual(
-                                    std::fabs(lhsValue - rhsValue),
-                                    toleratedSimilarityDifference
-                                )
-                            );
+                            return (std::fabs(lhsValue - rhsValue));
                             break;
 
                         default:
@@ -455,7 +464,7 @@ namespace multiscale {
                     }
 
                     // Line added to avoid "control reaches end of non-void function" warnings
-                    return false;
+                    return 0.0;
                 }
 
                 //! Evaluate the given UntilLogicPropertyAttribute
