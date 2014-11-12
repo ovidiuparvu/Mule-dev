@@ -37,6 +37,18 @@ TimePoint SpatialTemporalTrace::getTimePoint(unsigned int index) const {
     return timePoints[beginIndex + index];
 }
 
+TimePoint& SpatialTemporalTrace::getTimePointReference(unsigned int index) {
+    validateIndex(index);
+
+    return timePoints[beginIndex + index];
+}
+
+const TimePoint& SpatialTemporalTrace::getTimePointReference(unsigned int index) const {
+    validateIndex(index);
+
+    return timePoints[beginIndex + index];
+}
+
 unsigned int SpatialTemporalTrace::length() const {
     return (timePoints.size() - beginIndex);
 }
@@ -95,12 +107,14 @@ void SpatialTemporalTrace::validateTimePointValue(const TimePoint &timePoint) {
 void SpatialTemporalTrace::validateTimePointValue(unsigned long timePointValue) {
     if (isLastTimePointValueInitialised) {
         if (timePointValue <= lastTimePointValue) {
-            MS_throw_detailed(SpatialTemporalException,
-                              ERR_TIMEPOINT_VALUE_INVALID_START,
-                              StringManipulator::toString<unsigned long>(timePointValue) +
-                              ERR_TIMEPOINT_VALUE_INVALID_MIDDLE +
-                              StringManipulator::toString<unsigned long>(lastTimePointValue),
-                              ERR_TIMEPOINT_VALUE_INVALID_END);
+            MS_throw_detailed(
+                SpatialTemporalException,
+                ERR_TIMEPOINT_VALUE_INVALID_START,
+                StringManipulator::toString<unsigned long>(timePointValue) +
+                ERR_TIMEPOINT_VALUE_INVALID_MIDDLE +
+                StringManipulator::toString<unsigned long>(lastTimePointValue),
+                ERR_TIMEPOINT_VALUE_INVALID_END
+            );
         }
     } else {
         isLastTimePointValueInitialised = true;

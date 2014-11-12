@@ -71,21 +71,43 @@ namespace multiscale {
                 std::bitset<NR_SUBSET_SPECIFIC_TYPES> getConsideredSpatialEntityTypes();
 
                 //! Set the considered spatial entity type to the given type
-                /*!
+                /*! The flag corresponding to the given spatial entity type is set to 1 and all others
+                 *  are set to 0.
+                 *
                  * \param consideredSpatialEntityType   The considered type of the spatial entities
                  */
                 void setConsideredSpatialEntityType(const SubsetSpecificType &consideredSpatialEntityType);
+
+                //! Add the given type to the collection of considered spatial entity types
+                /*! The flag corresponding to the given spatial entity type is set to 1 and all other flags
+                 *  will keep their previous value.
+                 *
+                 *  \param consideredSpatialEntityType  The considered spatial entity type
+                 */
+                void addConsideredSpatialEntityType(const SubsetSpecificType &consideredSpatialEntityType);
 
                 //! Get the number of considered spatial entities
                 double numberOfSpatialEntities() const;
 
                 //! Add a spatial entity of the given type to the list of spatial entities
-                /*!
+                /*! This method does not update the considered spatial entity types. If the considered spatial
+                 *  entity types should be updated then use the addSpatialEntityAndType() method instead.
+                 *
                  * \param spatialEntity         The spatial entity
                  * \param spatialEntityType     The type of the spatial entity
                  */
                 void addSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                       const SubsetSpecificType &spatialEntityType);
+
+                //! Add a spatial entity and its corresponding type to the timepoint
+                /*! The spatial entity is added to the timepoint and the corresponding spatial entity type flag is set
+                 *  in the collection of considered spatial entity types.
+                 *
+                 * \param spatialEntity         The spatial entity
+                 * \param spatialEntityType     The type of the spatial entity
+                 */
+                void addSpatialEntityAndType(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                                             const SubsetSpecificType &spatialEntityType);
 
                 //! Add a numeric state variable to the map
                 /*!
@@ -102,7 +124,15 @@ namespace multiscale {
                 /*!
                  * \param id The id of the numeric state variable
                  */
-                bool existsNumericStateVariable(const NumericStateVariableId &id);
+                bool containsNumericStateVariable(const NumericStateVariableId &id);
+
+                //! Check if an identical valued spatial entity is already contained by the timepoint
+                /*!
+                 * \param spatialEntity     The considered spatial entity
+                 * \param spatialEntityType The type of the spatial entity
+                 */
+                bool containsSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                                           const SubsetSpecificType &spatialEntityType);
 
                 //! Get the begin iterator for the spatial entities of the given type
                 /*!
@@ -115,6 +145,17 @@ namespace multiscale {
                 std::list<std::shared_ptr<SpatialEntity>>::iterator
                 getSpatialEntitiesBeginIterator(const SubsetSpecificType &spatialEntityType);
 
+                //! Get the begin iterator for the spatial entities corresponding to the given type index
+                /*!
+                 * Return the spatial entities begin iterator if the considered spatial entity
+                 * type is of the given type. Otherwise return the spatial entities end
+                 * iterator.
+                 *
+                 * \param spatialEntityTypeIndex    The index of the the spatial entities type
+                 */
+                std::list<std::shared_ptr<SpatialEntity>>::iterator
+                getSpatialEntitiesBeginIterator(const std::size_t &spatialEntityTypeIndex);
+
                 //! Get the begin iterator for the spatial entities of the given type
                 /*!
                  * Return the spatial entities begin iterator if the considered spatial entity
@@ -126,6 +167,17 @@ namespace multiscale {
                 std::list<std::shared_ptr<SpatialEntity>>::const_iterator
                 getSpatialEntitiesBeginIterator(const SubsetSpecificType &spatialEntityType) const;
 
+                //! Get the begin iterator for the spatial entities corresponding to the given type index
+                /*!
+                 * Return the spatial entities begin iterator if the considered spatial entity
+                 * type is of the given type. Otherwise return the spatial entities end
+                 * iterator.
+                 *
+                 * \param spatialEntityTypeIndex    The index of the the spatial entities type
+                 */
+                std::list<std::shared_ptr<SpatialEntity>>::const_iterator
+                getSpatialEntitiesBeginIterator(const std::size_t &spatialEntityTypeIndex) const;
+
                 //! Get the end iterator for the spatial entities of the given type
                 /*!
                  * \param spatialEntityType The type of the spatial entities
@@ -133,12 +185,26 @@ namespace multiscale {
                 std::list<std::shared_ptr<SpatialEntity>>::iterator
                 getSpatialEntitiesEndIterator(const SubsetSpecificType &spatialEntityType);
 
+                //! Get the end iterator for the spatial entities corresponding to the given type index
+                /*!
+                 * \param spatialEntityTypeIndex    The index of the spatial entities type
+                 */
+                std::list<std::shared_ptr<SpatialEntity>>::iterator
+                getSpatialEntitiesEndIterator(const std::size_t &spatialEntityTypeIndex);
+
                 //! Get the end iterator for the spatial entities of the given type
                 /*!
                  * \param spatialEntityType The type of the spatial entities
                  */
                 std::list<std::shared_ptr<SpatialEntity>>::const_iterator
                 getSpatialEntitiesEndIterator(const SubsetSpecificType &spatialEntityType) const;
+
+                //! Get the end iterator for the spatial entities corresponding to the given type index
+                /*!
+                 * \param spatialEntityTypeIndex    The index of the spatial entities type
+                 */
+                std::list<std::shared_ptr<SpatialEntity>>::const_iterator
+                getSpatialEntitiesEndIterator(const std::size_t &spatialEntityTypeIndex) const;
 
                 //! Get the collection of considered spatial entities
                 std::vector<std::shared_ptr<SpatialEntity>> getConsideredSpatialEntities() const;

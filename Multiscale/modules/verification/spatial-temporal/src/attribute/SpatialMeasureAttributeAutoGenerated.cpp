@@ -7,7 +7,6 @@
  *
  *****************************************************************************/
 
-#include "multiscale/exception/MultiscaleException.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
 
@@ -125,6 +124,94 @@ multiscale::verification::spatialmeasure::getMaxValidSpatialMeasureValue(const S
 
     // Line added to avoid "control reaches end of non-void function" warnings
     return 0.0;
+}
+
+std::string
+multiscale::verification::spatialmeasure::toString(const SpatialMeasureType &spatialMeasureType) {
+    switch (spatialMeasureType) {
+        case SpatialMeasureType::Clusteredness:
+            return "clusteredness";
+            
+        case SpatialMeasureType::Density:
+            return "density";
+            
+        case SpatialMeasureType::Area:
+            return "area";
+            
+        case SpatialMeasureType::Perimeter:
+            return "perimeter";
+            
+        case SpatialMeasureType::DistanceFromOrigin:
+            return "distanceFromOrigin";
+            
+        case SpatialMeasureType::Angle:
+            return "angle";
+            
+        case SpatialMeasureType::TriangleMeasure:
+            return "triangleMeasure";
+            
+        case SpatialMeasureType::RectangleMeasure:
+            return "rectangleMeasure";
+            
+        case SpatialMeasureType::CircleMeasure:
+            return "circleMeasure";
+            
+        case SpatialMeasureType::CentroidX:
+            return "centroidX";
+            
+        case SpatialMeasureType::CentroidY:
+            return "centroidY";
+            
+        default:
+            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
+    }
+
+    // Line added to avoid "control reaches end of non-void function" warnings
+    return std::string();
+}
+
+std::string
+multiscale::verification::spatialmeasure::toString(const std::size_t &spatialMeasureTypeIndex) {
+    switch (spatialMeasureTypeIndex) {
+        case 0:
+            return "clusteredness";
+            
+        case 1:
+            return "density";
+            
+        case 2:
+            return "area";
+            
+        case 3:
+            return "perimeter";
+            
+        case 4:
+            return "distanceFromOrigin";
+            
+        case 5:
+            return "angle";
+            
+        case 6:
+            return "triangleMeasure";
+            
+        case 7:
+            return "rectangleMeasure";
+            
+        case 8:
+            return "circleMeasure";
+            
+        case 9:
+            return "centroidX";
+            
+        case 10:
+            return "centroidY";
+            
+        default:
+            MS_throw(SpatialTemporalException, multiscale::ERR_UNDEFINED_ENUM_VALUE);
+    }
+
+    // Line added to avoid "control reaches end of non-void function" warnings
+    return std::string();
 }
 
 //! Overload the output stream operator for the SpatialMeasureType enumeration

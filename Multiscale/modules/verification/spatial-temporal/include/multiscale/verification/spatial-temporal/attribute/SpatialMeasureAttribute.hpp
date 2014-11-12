@@ -53,6 +53,18 @@ namespace multiscale {
              */
             double getMaxValidSpatialMeasureValue(const SpatialMeasureType &spatialMeasureType);
 
+            //! Get the string representation of the given spatial measure type
+            /*!
+             * \param spatialMeasureType    The given spatial measure type
+             */
+            std::string toString(const SpatialMeasureType &spatialMeasureType);
+
+            //! Get the string representation corresponding to the the given spatial measure type index
+            /*!
+             * \param spatialMeasureTypeIndex    The given spatial measure type index
+             */
+            std::string toString(const std::size_t &spatialMeasureTypeIndex);
+
         };
 
         //! Overload the output stream operator for the enumeration

@@ -61,6 +61,22 @@ namespace multiscale {
                  */
                 bool operator<(const SpatialEntity &rhsSpatialEntity) const;
 
+                //! Overload the "==" operator for spatial entities
+                /*! In this implementation spatial entity se1 is equal to spatial entity se2 (se1 == se2)
+                 * if all the fields in se1 == the corresponding fields in se2
+                 *
+                 * \param rhsSpatialEntity  The spatial entity lying on the right hand side of the comparison operator
+                 */
+                bool operator==(const SpatialEntity &rhsSpatialEntity) const;
+
+                //! Overload the "!=" operator for spatial entities
+                /*! In this implementation spatial entity se1 is different from spatial entity se2 (se1 != se2)
+                 * if at least one of the fields in se1 != the corresponding field in se2
+                 *
+                 * \param rhsSpatialEntity  The spatial entity lying on the right hand side of the comparison operator
+                 */
+                bool operator!=(const SpatialEntity &rhsSpatialEntity) const;
+
                 //! Return a string representation of the spatial entity contents
                 std::string toString() const;
 

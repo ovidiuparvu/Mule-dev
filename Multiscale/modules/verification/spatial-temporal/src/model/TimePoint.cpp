@@ -47,6 +47,13 @@ TimePoint::setConsideredSpatialEntityType(const SubsetSpecificType &consideredSp
     consideredSpatialEntityTypes.set(computeSubsetSpecificTypeIndex(consideredSpatialEntityType));
 }
 
+void
+TimePoint::addConsideredSpatialEntityType(const SubsetSpecificType &consideredSpatialEntityType) {
+    validateSubsetSpecificType(consideredSpatialEntityType);
+
+    consideredSpatialEntityTypes.set(computeSubsetSpecificTypeIndex(consideredSpatialEntityType));
+}
+
 double
 TimePoint::numberOfSpatialEntities() const {
     double nrOfSpatialEntities = 0;
@@ -71,13 +78,41 @@ TimePoint::addSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
 }
 
 void
+TimePoint::addSpatialEntityAndType(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                                   const SubsetSpecificType &spatialEntityType) {
+    addConsideredSpatialEntityType(spatialEntityType);
+    addSpatialEntity(spatialEntity, spatialEntityType);
+}
+
+void
 TimePoint::addNumericStateVariable(const NumericStateVariableId &id, double value) {
     numericStateVariables[id] = value;
 }
 
 bool
-TimePoint::existsNumericStateVariable(const NumericStateVariableId &id) {
+TimePoint::containsNumericStateVariable(const NumericStateVariableId &id) {
     return (numericStateVariables.find(id) != numericStateVariables.end());
+}
+
+bool
+TimePoint::containsSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                                 const SubsetSpecificType &spatialEntityType) {
+    std::size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
+
+    // Obtain references to begin and end spatial entities iterators
+    auto spatialEntitiesBeginIterator   = spatialEntities[spatialEntityTypeIndex].begin();
+    auto spatialEntitiesEndIterator     = spatialEntities[spatialEntityTypeIndex].end();
+
+    // Check if there exists an equal valued spatial entity
+    for (auto it = spatialEntitiesBeginIterator; it != spatialEntitiesEndIterator; it++) {
+        // If the contents of the spatial entities is identical
+        if ((*(*it)) == (*spatialEntity)) {
+            return true;
+        }
+    }
+
+    // If the spatial entity was not found then it is not contained by the timepoint
+    return false;
 }
 
 std::list<std::shared_ptr<SpatialEntity>>::iterator
@@ -85,6 +120,13 @@ TimePoint::getSpatialEntitiesBeginIterator(const SubsetSpecificType &spatialEnti
     validateSubsetSpecificType(spatialEntityType);
 
     size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
+
+    return getSpatialEntitiesBeginIterator(spatialEntityTypeIndex);
+}
+
+std::list<std::shared_ptr<SpatialEntity>>::iterator
+TimePoint::getSpatialEntitiesBeginIterator(const std::size_t &spatialEntityTypeIndex) {
+    validateSubsetSpecificTypeIndex(spatialEntityTypeIndex);
 
     if (consideredSpatialEntityTypes[spatialEntityTypeIndex] == true) {
         return (spatialEntities[spatialEntityTypeIndex]).begin();
@@ -99,6 +141,13 @@ TimePoint::getSpatialEntitiesBeginIterator(const SubsetSpecificType &spatialEnti
 
     size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
 
+    return getSpatialEntitiesBeginIterator(spatialEntityTypeIndex);
+}
+
+std::list<std::shared_ptr<SpatialEntity>>::const_iterator
+TimePoint::getSpatialEntitiesBeginIterator(const std::size_t &spatialEntityTypeIndex) const {
+    validateSubsetSpecificTypeIndex(spatialEntityTypeIndex);
+
     if (consideredSpatialEntityTypes[spatialEntityTypeIndex] == true) {
         return (spatialEntities[spatialEntityTypeIndex]).begin();
     } else {
@@ -112,6 +161,13 @@ TimePoint::getSpatialEntitiesEndIterator(const SubsetSpecificType &spatialEntity
 
     size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
 
+    return getSpatialEntitiesEndIterator(spatialEntityTypeIndex);
+}
+
+std::list<std::shared_ptr<SpatialEntity>>::iterator
+TimePoint::getSpatialEntitiesEndIterator(const std::size_t &spatialEntityTypeIndex) {
+    validateSubsetSpecificTypeIndex(spatialEntityTypeIndex);
+
     return (spatialEntities[spatialEntityTypeIndex]).end();
 }
 
@@ -120,6 +176,13 @@ TimePoint::getSpatialEntitiesEndIterator(const SubsetSpecificType &spatialEntity
     validateSubsetSpecificType(spatialEntityType);
 
     size_t spatialEntityTypeIndex = computeSubsetSpecificTypeIndex(spatialEntityType);
+
+    return getSpatialEntitiesEndIterator(spatialEntityTypeIndex);
+}
+
+std::list<std::shared_ptr<SpatialEntity>>::const_iterator
+TimePoint::getSpatialEntitiesEndIterator(const std::size_t &spatialEntityTypeIndex) const {
+    validateSubsetSpecificTypeIndex(spatialEntityTypeIndex);
 
     return (spatialEntities[spatialEntityTypeIndex]).end();
 }

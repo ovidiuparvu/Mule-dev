@@ -55,6 +55,34 @@ bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
     return false;
 }
 
+bool SpatialEntity::operator==(const SpatialEntity &rhsSpatialEntity) const {
+    // Return false if lhs.semanticType != rhs.semanticType
+    if (this->semanticType.compare(rhsSpatialEntity.semanticType) != 0) {
+        return false;
+    }
+
+    // Return false if at least once lhs.spatialMeasureValue != rhs.spatialMeasureValue
+    for (std::size_t i = 0; i < NR_SPATIAL_MEASURE_TYPES; i++) {
+        if (!Numeric::almostEqual(
+                this->spatialMeasureValues[i],
+                rhsSpatialEntity.spatialMeasureValues[i]
+            )
+        ) {
+            return false;
+        }
+    }
+
+    // Otherwise, return true
+    return true;
+}
+
+bool SpatialEntity::operator!=(const SpatialEntity &rhsSpatialEntity) const {
+    // Return the negation of (this == rhsSpatialEntity)
+    return (
+        !(this->operator==(rhsSpatialEntity))
+    );
+}
+
 std::string SpatialEntity::toString() const {
     std::string outputString = semanticType;
 

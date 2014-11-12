@@ -41,6 +41,18 @@ namespace multiscale {
              */
             SubsetSpecificType computeSubsetSpecificType(const std::size_t &subsetSpecificTypeIndex);
 
+            //! Get the string representation of the given subset specific type
+            /*!
+             * \param subsetSpecificType    The given subset specific type
+             */
+            std::string toString(const SubsetSpecificType &subsetSpecificType);
+
+            //! Get the string representation corresponding to the the given subset specific type index
+            /*!
+             * \param subsetSpecificTypeIndex   The given subset specific type index
+             */
+            std::string toString(const std::size_t &subsetSpecificTypeIndex);
+
         };
 
         //! Overload the output stream operator for the enumeration
