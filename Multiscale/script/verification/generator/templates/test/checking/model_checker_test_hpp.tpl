@@ -150,7 +150,7 @@ namespace multiscaletest {
             std::shared_ptr<SpatialEntity> /*{{ spatial_entities[0].name }}*/ = std::make_shared</*{{ spatial_entities[0].name|first_to_upper }}*/>();
 
             /*{{ spatial_entities[0].name }}*/->setSpatialMeasureValue(SpatialMeasureType::/*{{ spatial_measures[0].name|first_to_upper }}*/, /*{{ spatial_measures[0].name }}*/Values[i]);
-            timePoint.addSpatialEntity(/*{{ spatial_entities[0].name }}*/, mv::SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
+            timePoint.addSpatialEntityAndType(/*{{ spatial_entities[0].name }}*/, mv::SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
             trace.addTimePoint(timePoint);
 
             iterator = timePoint.getSpatialEntitiesBeginIterator(SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);

@@ -172,6 +172,7 @@ namespace multiscale {
 
                 // Constants
                 static const std::string LABEL_ATTRIBUTE;
+                static const std::string LABEL_ATTRIBUTE_SEPARATOR;
                 static const std::string LABEL_COMMENT;
 
                 static const std::string LABEL_EXPERIMENT;

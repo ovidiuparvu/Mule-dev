@@ -153,7 +153,7 @@ namespace multiscaletest {
             std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
 
             cluster->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, clusterednessValues[i]);
-            timePoint.addSpatialEntity(cluster, mv::SubsetSpecificType::Clusters);
+            timePoint.addSpatialEntityAndType(cluster, mv::SubsetSpecificType::Clusters);
             trace.addTimePoint(timePoint);
 
             iterator = timePoint.getSpatialEntitiesBeginIterator(SubsetSpecificType::Clusters);

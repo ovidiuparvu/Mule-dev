@@ -55,13 +55,33 @@ void MSTMLSubfilesMerger::readTimepointsValuesFromStream(std::ifstream &fin) {
     unsigned long timepointValue;
     std::string line;
 
+    // Skip the first header line (usually "Time")
+    getline(fin, line);
+
+    // Read the timepoints values
     while (getline(fin, line)) {
         // Convert the line to a timepoint value
-        timepointValue = StringManipulator::convert<unsigned long>(line);
+        timepointValue = convertToTimepointValue(line);
 
         // Store the timepoint value
         timepointsValues.push_back(timepointValue);
     }
+}
+
+unsigned long MSTMLSubfilesMerger::convertToTimepointValue(const std::string &timepointValueAsString) {
+    try {
+        return StringManipulator::convert<unsigned long>(timepointValueAsString);
+    } catch (const MultiscaleException &ex) {
+        MS_throw(
+            InvalidInputException,
+            ERR_INVALID_FORMAT_TIMEPOINT_VALUE_BEGIN +
+            timepointsValuesFilePath +
+            ERR_INVALID_FORMAT_TIMEPOINT_VALUE_END
+        );
+    }
+
+    // Line added to avoid "control reaches end of non-void function" warnings
+    return 0;
 }
 
 void MSTMLSubfilesMerger::addSubtracesToResultingTrace() {
@@ -119,9 +139,9 @@ void MSTMLSubfilesMerger::validateSubtraceTimepointsValues(const SpatialTemporal
         if (areMismatchingTimepointValues(subtrace)) {
             MS_throw(
                 InvalidInputException,
-                ERR_INVALID_TIMEPOINT_VALUE_BEGIN +
+                ERR_NON_MATCHING_TIMEPOINT_VALUE_BEGIN +
                 subtraceFilepath +
-                ERR_INVALID_TIMEPOINT_VALUE_END
+                ERR_NON_MATCHING_TIMEPOINT_VALUE_END
             );
         }
     }
@@ -308,8 +328,11 @@ const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_MIDDLE2    = " 
 const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_MIDDLE3    = ") specified in the timepoints values file ";
 const std::string MSTMLSubfilesMerger::ERR_INVALID_NR_TIMEPOINTS_END        = ". Please change.";
 
-const std::string MSTMLSubfilesMerger::ERR_INVALID_TIMEPOINT_VALUE_BEGIN    = "The MSTML subfile ";
-const std::string MSTMLSubfilesMerger::ERR_INVALID_TIMEPOINT_VALUE_END      = " contains a timepoint value which does not match the corresponding timepoint value from the resulting trace. Please change.";
+const std::string MSTMLSubfilesMerger::ERR_INVALID_FORMAT_TIMEPOINT_VALUE_BEGIN = "The provided timepoints values input file ";
+const std::string MSTMLSubfilesMerger::ERR_INVALID_FORMAT_TIMEPOINT_VALUE_END   = " contains incorrectly formatted timepoint values. ";
+
+const std::string MSTMLSubfilesMerger::ERR_NON_MATCHING_TIMEPOINT_VALUE_BEGIN   = "The MSTML subfile ";
+const std::string MSTMLSubfilesMerger::ERR_NON_MATCHING_TIMEPOINT_VALUE_END     = " contains a timepoint value which does not match the corresponding timepoint value from the resulting trace. Please change.";
 
 const std::string MSTMLSubfilesMerger::ERR_NUMERIC_STATE_VARIABLE_EXISTS_BEGIN  = "The resulting trace contains a numeric state variable which has the same id (";
 const std::string MSTMLSubfilesMerger::ERR_NUMERIC_STATE_VARIABLE_EXISTS_MIDDLE = ") as one of the numeric state variables in the subtrace ";

@@ -101,7 +101,7 @@ namespace multiscale {
 
                 //! Add a spatial entity and its corresponding type to the timepoint
                 /*! The spatial entity is added to the timepoint and the corresponding spatial entity type flag is set
-                 *  in the collection of considered spatial entity types.
+                 *  to true in the collection of considered spatial entity types.
                  *
                  * \param spatialEntity         The spatial entity
                  * \param spatialEntityType     The type of the spatial entity

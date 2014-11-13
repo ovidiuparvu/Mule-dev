@@ -123,7 +123,7 @@ namespace multiscaletest {
                 cluster->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 2);
                 cluster->setSemanticType(SemanticType::DEFAULT_VALUE);
 
-                timePoints[i].addSpatialEntity(cluster, SubsetSpecificType::Clusters);
+                timePoints[i].addSpatialEntityAndType(cluster, SubsetSpecificType::Clusters);
             }
             
             // Add regions with semantic type "0" to the timepoint
@@ -143,7 +143,7 @@ namespace multiscaletest {
                 region->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 3);
                 region->setSemanticType(SemanticType::DEFAULT_VALUE);
 
-                timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
+                timePoints[i].addSpatialEntityAndType(region, SubsetSpecificType::Regions);
             }
             
             // Add regions with semantic type "1" to the timepoint
@@ -163,7 +163,7 @@ namespace multiscaletest {
                 region->setSpatialMeasureValue(SpatialMeasureType::CentroidY, static_cast<double>(1E+37 - 0) / 3);
                 region->setSemanticType(SEMANTIC_TYPE_ORGAN_HEART);
 
-                timePoints[i].addSpatialEntity(region, SubsetSpecificType::Regions);
+                timePoints[i].addSpatialEntityAndType(region, SubsetSpecificType::Regions);
             }
         }
 

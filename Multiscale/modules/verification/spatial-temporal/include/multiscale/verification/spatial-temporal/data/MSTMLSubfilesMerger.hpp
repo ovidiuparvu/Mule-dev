@@ -53,10 +53,23 @@ namespace multiscale {
                 void readTimepointsValues();
 
                 //! Read timepoints' values from the provided input stream
-                /*!
+                /*! The format of the timepoints values input file is:
+                 *  Line (L) 1: Header (usually "Time")
+                 *  L2:         Timepoint value 1
+                 *  L3:         Timepoint value 2
+                 *  ...         ...
+                 *  Ln:         Timepoint value n-1
+                 *
                  * \param fin   Input stream of timepoints' values
                  */
                 void readTimepointsValuesFromStream(std::ifstream &fin);
+
+                //! Convert the provided string to a timepoint value (i.e. unsigned long)
+                /*! If the provided string cannot be converted to an unsigned long an error is thrown.
+                 *
+                 * \param timepointValueAsString    The timepoint value represented as a string
+                 */
+                unsigned long convertToTimepointValue(const std::string &timepointValueAsString);
 
                 //! Add the subtraces corresponding to the MSTML subfiles to the resulting trace
                 void addSubtracesToResultingTrace();
@@ -205,8 +218,11 @@ namespace multiscale {
                 static const std::string ERR_INVALID_NR_TIMEPOINTS_MIDDLE3;
                 static const std::string ERR_INVALID_NR_TIMEPOINTS_END;
 
-                static const std::string ERR_INVALID_TIMEPOINT_VALUE_BEGIN;
-                static const std::string ERR_INVALID_TIMEPOINT_VALUE_END;
+                static const std::string ERR_INVALID_FORMAT_TIMEPOINT_VALUE_BEGIN;
+                static const std::string ERR_INVALID_FORMAT_TIMEPOINT_VALUE_END;
+
+                static const std::string ERR_NON_MATCHING_TIMEPOINT_VALUE_BEGIN;
+                static const std::string ERR_NON_MATCHING_TIMEPOINT_VALUE_END;
 
                 static const std::string ERR_NUMERIC_STATE_VARIABLE_EXISTS_BEGIN;
                 static const std::string ERR_NUMERIC_STATE_VARIABLE_EXISTS_MIDDLE;

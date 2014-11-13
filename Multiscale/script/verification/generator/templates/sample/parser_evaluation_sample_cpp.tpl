@@ -75,7 +75,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
         /*{% endfor %}*/
             /*{{ spatial_entities[0].name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
 
-            timePoints[i].addSpatialEntity(/*{{ spatial_entities[0].name }}*/, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
+            timePoints[i].addSpatialEntityAndType(/*{{ spatial_entities[0].name }}*/, SubsetSpecificType::/*{{ spatial_entities[0].name|first_to_upper }}*/s);
         }
 
     /*{% for spatial_entity in spatial_entities[1:] %}*/
@@ -89,7 +89,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
             /*{% endfor %}*/
                 /*{{ spatial_entity.name }}*/->setSemanticType(SemanticType::DEFAULT_VALUE);
 
-                timePoints[i].addSpatialEntity(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
+                timePoints[i].addSpatialEntityAndType(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
     /*{% endfor %}*/
     }

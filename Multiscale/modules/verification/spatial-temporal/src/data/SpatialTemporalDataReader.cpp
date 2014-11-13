@@ -222,7 +222,7 @@ SpatialTemporalDataReader::addSpatialEntityToTimePoint(const pt::ptree &spatialE
     setSpatialEntitySemanticTypeValue(spatialEntityTree, spatialEntity);
     setSpatialEntityMeasureValues(spatialEntityTree, spatialEntity);
 
-    timePoint.addSpatialEntity(spatialEntity, spatialEntityType);
+    timePoint.addSpatialEntityAndType(spatialEntity, spatialEntityType);
 }
 
 void
