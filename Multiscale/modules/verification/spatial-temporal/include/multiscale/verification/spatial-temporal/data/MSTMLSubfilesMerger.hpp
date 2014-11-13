@@ -38,8 +38,13 @@ namespace multiscale {
                 //! Merge the MSTML sufiles from the provided folder considering the given timepoints values
                 void mergeMSTMLSubfiles();
 
+                //! Get the resulting merged spatial temporal trace
+                SpatialTemporalTrace getResultingMergedTrace();
+
                 //! Output the resulting MSTML file to the file having the provided output path
-                /*!
+                /*! If the number of timepoints in the trace is greater than zero output the trace
+                 *  to an xml file. Otherwise throw an exception.
+                 *
                  * \param mstmlFileOutputPath   The path to the resulting (merged) MSTML file
                  */
                 void outputResultingMSTMLFile(const std::string &mstmlFileOutputPath);
@@ -205,12 +210,20 @@ namespace multiscale {
                                                  const std::string &subtraceFilepath);
 
                 //! Replace the resulting trace timepoints values with the timepoints values read from file
+                /*! If the number of timepoints in the timepoints values input file and the resulting trace
+                 *  differ throw an exception.
+                 */
                 void updateResultingTraceTimepointsValues();
+
+                //! Check if the number of timepoints is equal in the resulting trace and the timepoints values file
+                void validateNumberOfTimepointsInResultingTrace();
 
 
                 // Constants
                 static const std::string ERR_INVALID_TIMEPOINTS_VALUES_FILE_BEGIN;
                 static const std::string ERR_INVALID_TIMEPOINTS_VALUES_FILE_END;
+
+                static const std::string ERR_INVALID_NR_TIMEPOINTS_RESULTING_TRACE_BEGIN;
 
                 static const std::string ERR_INVALID_NR_TIMEPOINTS_BEGIN;
                 static const std::string ERR_INVALID_NR_TIMEPOINTS_MIDDLE1;
@@ -231,6 +244,8 @@ namespace multiscale {
                 static const std::string ERR_SPATIAL_ENTITY_EXISTS_BEGIN;
                 static const std::string ERR_SPATIAL_ENTITY_EXISTS_MIDDLE;
                 static const std::string ERR_SPATIAL_ENTITY_EXISTS_END;
+
+                static const std::string ERR_EMPTY_RESULTING_MSTML_FILE;
 
         };
 

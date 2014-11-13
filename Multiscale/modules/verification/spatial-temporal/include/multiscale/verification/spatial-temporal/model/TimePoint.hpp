@@ -126,6 +126,12 @@ namespace multiscale {
                  */
                 bool containsNumericStateVariable(const NumericStateVariableId &id);
 
+                //! Check if the numeric state variable with the given id exists
+                /*!
+                 * \param id The id of the numeric state variable
+                 */
+                bool containsNumericStateVariable(const NumericStateVariableId &id) const;
+
                 //! Check if an identical valued spatial entity is already contained by the timepoint
                 /*!
                  * \param spatialEntity     The considered spatial entity
@@ -133,6 +139,30 @@ namespace multiscale {
                  */
                 bool containsSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                            const SubsetSpecificType &spatialEntityType);
+
+                //! Check if an identical valued spatial entity is already contained by the timepoint
+                /*!
+                 * \param spatialEntity             The considered spatial entity
+                 * \param spatialEntityTypeIndex    The index of the spatial entity type
+                 */
+                bool containsSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                                           const std::size_t &spatialEntityTypeIndex);
+
+                //! Check if an identical valued spatial entity is already contained by the timepoint
+                /*!
+                 * \param spatialEntity     The considered spatial entity
+                 * \param spatialEntityType The type of the spatial entity
+                 */
+                bool containsSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                                           const SubsetSpecificType &spatialEntityType) const;
+
+                //! Check if an identical valued spatial entity is already contained by the timepoint
+                /*!
+                 * \param spatialEntity             The considered spatial entity
+                 * \param spatialEntityTypeIndex    The index of the spatial entity type
+                 */
+                bool containsSpatialEntity(const std::shared_ptr<SpatialEntity> &spatialEntity,
+                                           const std::size_t &spatialEntityTypeIndex) const;
 
                 //! Get the begin iterator for the spatial entities of the given type
                 /*!
@@ -284,6 +314,18 @@ namespace multiscale {
                 removeSpatialEntity(std::list<std::shared_ptr<SpatialEntity>>::iterator &position,
                                     const SubsetSpecificType &spatialEntityType);
 
+                //! Check if two timepoints (this instance and the provided one) are equal
+                /*!
+                 * \param rhsTimepoint  The provided timepoint against which this timepoint is compared
+                 */
+                bool operator==(const TimePoint &rhsTimepoint);
+
+                //! Check if two timepoints (this instance and the provided one) are different (i.e. not equal)
+                /*!
+                 * \param rhsTimepoint  The provided timepoint against which this timepoint is compared
+                 */
+                bool operator!=(const TimePoint &rhsTimepoint);
+
             private:
 
                 //! Compute the given set operation of this timepoint and the given timepoint considering the given set operation type
@@ -325,6 +367,29 @@ namespace multiscale {
                  */
                 void updateConsideredSpatialEntityTypes(const std::bitset<NR_SUBSET_SPECIFIC_TYPES> &consideredSpatialEntityTypes,
                                                         const SubsetOperationType &setOperationType);
+
+                /*! Check if this and the provided timepoint contain the same numeric state variables
+                 *
+                 * \param rhsTimepoint  The timepoint against which this timepoint's numeric state variables
+                 *                      are compared
+                 */
+                bool areEqualNumericStateVariables(const TimePoint &rhsTimepoint);
+
+                //! Check if this and the provided timepoint contain the same spatial entities
+                /*!
+                 * \param rhsTimepoint  The timepoint against which this timepoint's numeric state variables
+                 *                      are compared
+                 */
+                bool areEqualSpatialEntities(const TimePoint &rhsTimepoint);
+
+                //! Check if this and the provided timepoint contain the same spatial entities of the given type
+                /*!
+                 * \param rhsTimepoint              The timepoint against which this timepoint's numeric state
+                 *                                  variables are compared
+                 * \param spatialEntityTypeIndex    The index of the considered spatial entity type
+                 */
+                bool areEqualSpatialEntitiesOfSpecificType(const TimePoint &rhsTimepoint,
+                                                           const std::size_t &spatialEntityTypeIndex);
 
 
                 // Constants

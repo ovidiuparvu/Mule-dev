@@ -77,6 +77,13 @@ namespace multiscale {
                 //! Reset the subtrace start index beginIndex to the value zero
                 void resetSubTraceStartIndex();
 
+                // Check if two spatial temporal traces (this instance and the provided one) are equal
+                /*!
+                 * \param rhsSpatialTemporalTrace   The provided spatial temporal trace against which this trace
+                 *                                  is compared
+                 */
+                bool operator==(const SpatialTemporalTrace &rhsSpatialTemporalTrace);
+
             private:
 
                 //! Initialise the member fields

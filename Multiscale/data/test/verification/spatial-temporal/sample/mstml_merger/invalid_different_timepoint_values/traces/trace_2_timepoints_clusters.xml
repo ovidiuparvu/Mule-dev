@@ -16,7 +16,7 @@
             <centroidY>843</centroidY>
         </spatialEntity>
     </timepoint>
-    <timepoint value="2">
+    <timepoint value="3">
         <spatialEntity spatialType="cluster" semanticType="Cell.EK">
             <clusteredness>0.9992170720611107</clusteredness>
             <density>0.5535212152933584</density>

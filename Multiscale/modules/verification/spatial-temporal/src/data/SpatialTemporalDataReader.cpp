@@ -214,7 +214,7 @@ SpatialTemporalDataReader::addNumericStateVariableToTimePoint(const pt::ptree &n
 
 void
 SpatialTemporalDataReader::addSpatialEntityToTimePoint(const pt::ptree &spatialEntityTree,
-                                                            TimePoint &timePoint) {
+                                                       TimePoint &timePoint) {
     std::shared_ptr<SpatialEntity>  spatialEntity;
     SubsetSpecificType              spatialEntityType;
 
@@ -302,18 +302,24 @@ SpatialTemporalDataReader::isValidInputFile(const std::string &inputFilepath) {
 void
 SpatialTemporalDataReader::validateFolderPath(const std::string &folderPath) {
     if (!Filesystem::isValidFolderPath(folderPath)) {
-        MS_throw(InvalidInputException, ERR_INVALID_FOLDER_PATH);
+        MS_throw(
+            InvalidInputException, 
+            ERR_INVALID_FOLDER_PATH_BEGIN +
+            folderPath +
+            ERR_INVALID_FOLDER_PATH_END
+        );
     }
 }
 
 
 // Constants
-const std::string SpatialTemporalDataReader::ERR_INVALID_FOLDER_PATH               = "The provided path does not point to a folder. Please change.";
-const std::string SpatialTemporalDataReader::ERR_NO_VALID_INPUT_FILES_REMAINING    = "There are no valid unprocessed input files remaining.";
-const std::string SpatialTemporalDataReader::ERR_UNDEFINED_SPATIAL_ENTITY_TYPE     = "The provided spatial entity type is invalid.";
+const std::string SpatialTemporalDataReader::ERR_INVALID_FOLDER_PATH_BEGIN          = "The provided path (";
+const std::string SpatialTemporalDataReader::ERR_INVALID_FOLDER_PATH_END            = ") does not point to a folder. Please change.";
+const std::string SpatialTemporalDataReader::ERR_NO_VALID_INPUT_FILES_REMAINING     = "There are no valid unprocessed input files remaining.";
+const std::string SpatialTemporalDataReader::ERR_UNDEFINED_SPATIAL_ENTITY_TYPE      = "The provided spatial entity type is invalid.";
 
-const std::string SpatialTemporalDataReader::LABEL_EXPERIMENT                      = "experiment";
-const std::string SpatialTemporalDataReader::LABEL_TIMEPOINT_VALUE                 = "<xmlattr>.value";
+const std::string SpatialTemporalDataReader::LABEL_EXPERIMENT                       = "experiment";
+const std::string SpatialTemporalDataReader::LABEL_TIMEPOINT_VALUE                  = "<xmlattr>.value";
 
 const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE               = "numericStateVariable";
 const std::string SpatialTemporalDataReader::LABEL_NUMERIC_STATE_VARIABLE_SEMANTIC_TYPE = "<xmlattr>.semanticType";

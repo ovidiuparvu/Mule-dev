@@ -227,7 +227,9 @@ namespace multiscale {
             private:
 
                 // Constants
-                static const std::string ERR_INVALID_FOLDER_PATH;
+                static const std::string ERR_INVALID_FOLDER_PATH_BEGIN;
+                static const std::string ERR_INVALID_FOLDER_PATH_END;
+
                 static const std::string ERR_NO_VALID_INPUT_FILES_REMAINING;
                 static const std::string ERR_UNDEFINED_SPATIAL_ENTITY_TYPE;
 

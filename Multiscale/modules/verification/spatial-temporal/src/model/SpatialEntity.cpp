@@ -38,6 +38,13 @@ void SpatialEntity::setSpatialMeasureValue(const SpatialMeasureType &spatialMeas
     spatialMeasureValues[spatialMeasureTypeIndex] = spatialMeasureValue;
 }
 
+bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) {
+    // Call the const version of the operator
+    return (
+        (static_cast<const SpatialEntity&>(*this)).operator<(rhsSpatialEntity)
+    );
+}
+
 bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
     // Return true if lhs.semanticType < rhs.semanticType
     if (this->semanticType.compare(rhsSpatialEntity.semanticType) == -1) {
@@ -53,6 +60,13 @@ bool SpatialEntity::operator<(const SpatialEntity &rhsSpatialEntity) const {
 
     // Otherwise, return false
     return false;
+}
+
+bool SpatialEntity::operator==(const SpatialEntity &rhsSpatialEntity) {
+    // Call the const version of the operator
+    return (
+        (static_cast<const SpatialEntity&>(*this)).operator==(rhsSpatialEntity)
+    );
 }
 
 bool SpatialEntity::operator==(const SpatialEntity &rhsSpatialEntity) const {
@@ -74,6 +88,13 @@ bool SpatialEntity::operator==(const SpatialEntity &rhsSpatialEntity) const {
 
     // Otherwise, return true
     return true;
+}
+
+bool SpatialEntity::operator!=(const SpatialEntity &rhsSpatialEntity) {
+    // Call the const version of the operator
+    return (
+        (static_cast<const SpatialEntity&>(*this)).operator!=(rhsSpatialEntity)
+    );
 }
 
 bool SpatialEntity::operator!=(const SpatialEntity &rhsSpatialEntity) const {

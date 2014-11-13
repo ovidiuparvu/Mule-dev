@@ -79,6 +79,29 @@ void SpatialTemporalTrace::resetSubTraceStartIndex() {
     beginIndex = 0;
 }
 
+bool SpatialTemporalTrace::operator==(const SpatialTemporalTrace &rhsSpatialTemporalTrace) {
+    // Compute the number of timepoints in this and the right hand side trace
+    std::size_t lhsNrOfTimepoints = timePoints.size();
+    std::size_t rhsNrOfTimepoints = rhsSpatialTemporalTrace.timePoints.size();
+
+    // If the number of timepoints in the traces differ then return false
+    if (lhsNrOfTimepoints != rhsNrOfTimepoints) {
+        return false;
+    // Otherwise check if each timepoint from this trace is equal to its corresponding timepoint
+    // from the right hand side trace
+    } else {
+        for (std::size_t i = 0; i < lhsNrOfTimepoints; i++) {
+            // If the timepoints are different return false
+            if (timePoints[i] != rhsSpatialTemporalTrace.timePoints[i]) {
+                return false;
+            }
+        }
+
+        // Otherwise return true
+        return true;
+    }
+}
+
 void SpatialTemporalTrace::initialise() {
     beginIndex = 0;
 
