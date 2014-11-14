@@ -63,7 +63,7 @@ namespace multiscale {
              */
             void computeRGBValues(int huePrime, double X, double chroma, double m);
 
-            //! Convert the RGB colour to a std::string
+            //! Convert the RGB colour to a string
             std::string convertRGBToString();
 
         public:

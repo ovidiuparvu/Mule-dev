@@ -54,7 +54,7 @@ namespace multiscale {
                 //! Get the value of the starting radius
                 double getStartingRadius() const;
 
-                //! Get the std::string representation of the annular sector
+                //! Get the string representation of the annular sector
                 std::string toString();
 
         };

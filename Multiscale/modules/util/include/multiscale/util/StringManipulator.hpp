@@ -11,15 +11,15 @@
 
 namespace multiscale {
 
-    //! Class for manipulating std::strings
+    //! Class for manipulating strings
     class StringManipulator {
 
         public:
 
-            //! Count how many times character occurs in the given std::string
+            //! Count how many times character occurs in the given string
             /*!
              * \param searchChar    The search character of interest
-             * \param inputString   The input std::string in which the character will be searched for
+             * \param inputString   The input string in which the character will be searched for
              */
             static unsigned long count(char searchChar, const std::string &inputString);
 
@@ -35,38 +35,38 @@ namespace multiscale {
              */
             static std::string filenameFromPath(const std::string &filepath);
 
-            //! Replace a substd::string of the given std::string with another std::string
+            //! Replace a substd::string of the given std::string with another string
             /*!
-             * \param initialString Initial std::string
-             * \param replaceWhat Substd::string which will be replaced
-             * \param replaceTo String which will be inserted instead of the replaceWhat std::string
+             * \param initialString Initial string
+             * \param replaceWhat Substring which will be replaced
+             * \param replaceTo String which will be inserted instead of the replaceWhat string
              */
             static std::string replace(const std::string &initialString,
                                        const std::string &replaceWhat,
                                        const std::string &replaceTo);
 
-            //! Split the given std::string into a std::vector of std::strings considering the given delimiter
+            //! Split the given std::string into a std::vector of strings considering the given delimiter
             /*!
-             * \param initialString Initial std::string
+             * \param initialString Initial string
              * \param delimiter Delimiter
              */
             static std::vector<std::string> split(const std::string &initialString, const std::string &delimiter);
 
-            //! Remove the trailing "new line" characters from the end of the std::string
+            //! Remove the trailing "new line" characters from the end of the string
             /*!
-             * \param inputString   The given input std::string
+             * \param inputString   The given input string
              */
             static std::string trimRight(std::string &inputString);
 
-            //! Remove the trailing "new line" characters from the end of the std::string
+            //! Remove the trailing "new line" characters from the end of the string
             /*!
-             * \param inputString   The given input std::string
+             * \param inputString   The given input string
              */
             static std::string trimRight(const std::string &inputString);
 
-            //! Convert the std::string to the given type
+            //! Convert the string to the given type
             /*!
-             * \param inputString   The given input std::string
+             * \param inputString   The given input string
              */
             template <typename T>
             static T convert(const std::string &inputString) {
@@ -89,7 +89,7 @@ namespace multiscale {
                 return outputVariable;
             }
 
-            //! Convert the variable to a std::string
+            //! Convert the variable to a string
             /*!
              * \param variable Variable
              */

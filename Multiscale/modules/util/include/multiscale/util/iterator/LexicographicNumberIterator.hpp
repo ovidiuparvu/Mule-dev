@@ -26,7 +26,7 @@ namespace multiscale {
 
         private:
 
-            //! Initialise the std::vectors of digits
+            //! Initialise the vectors of digits
             void initialise();
 
             //! Check if there is a next number when in initialised state
@@ -35,7 +35,7 @@ namespace multiscale {
             //! Reset the digits of the current number to the initial value
             void resetCurrentNumber();
 
-            //! Convert the number to a std::vector of digits
+            //! Convert the number to a vector of digits
             /*!
              *  \param number The number
              *  \param digits The digits of the number
@@ -50,7 +50,7 @@ namespace multiscale {
              */
             void reverseDigits (std::vector<unsigned char> &digits);
 
-            //! Convert the std::vector of digits to the number they represent
+            //! Convert the vector of digits to the number they represent
             /*!
              *  \param digits The digits
              */

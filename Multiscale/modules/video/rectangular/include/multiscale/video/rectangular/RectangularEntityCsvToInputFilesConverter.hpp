@@ -107,27 +107,27 @@ namespace multiscale {
 
                 //! Compute the simulation time from the given token and check if it is valid
                 /*!
-                 * \param token Token (std::string)
+                 * \param token Token (string)
                  */
                 double computeSimulationTime(const std::string &token);
 
-                //! Compute the coordinate from the given std::string and check if it is valid
+                //! Compute the coordinate from the given string and check if it is valid
                 /*!
-                 * \param token Token (std::string)
+                 * \param token Token (string)
                  * \param isOxCoordinate Flag which indicates if the coordinate corresponds to Ox axis or not
                  */
                 unsigned int computeCoordinate(const std::string &token, bool isOxCoordinate);
 
                 //! Check if the simulation time is valid
                 /*!
-                 * \param token Token (std::string)
+                 * \param token Token (string)
                  * \param lineNumber Number of the line
                  */
                 void validateSimulationTime(const std::string &token, unsigned int lineNumber);
 
                 //! Check if the coordinate is valid
                 /*!
-                 * \param token Token (std::string)
+                 * \param token Token (string)
                  * \param lineNumber Number of the line
                  * \param isOxCoordinate Flag which indicates if the coordinate corresponds to Ox axis or not
                  */

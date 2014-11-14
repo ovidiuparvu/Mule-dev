@@ -135,32 +135,32 @@ namespace multiscale {
 
                 //! Compute the simulation time from the given token and check if it is valid
                 /*!
-                 * \param token Token (std::string)
+                 * \param token Token (string)
                  */
                 double computeSimulationTime(const std::string &token);
 
                 //! Compute the concentration for the next position
                 /*!
-                 * \param concentrationIndex Index of the current concentration from the std::vector of tokens
+                 * \param concentrationIndex Index of the current concentration from the vector of tokens
                  * \param tokens Vector of tokens
                  */
                 double computeNextPositionConcentration(int concentrationIndex,
                                                         std::vector<std::string> &tokens);
 
-                //! Compute the concentration from the given std::string
+                //! Compute the concentration from the given string
                 /*!
                  * \param concentration String representing the concentration
                  */
                 double computeConcentration(const std::string &concentration);
 
-                //! Compute the non-scaled concentration from the given std::string
+                //! Compute the non-scaled concentration from the given string
                 /*!
                  * \param concentration String representing the concentration
                  */
                 double computeNonScaledConcentration(const std::string &concentration);
 
-                //! Compute the scaled concentration from the given std::string
-                /*! Compute the scaled concentration from the given std::string by applying
+                //! Compute the scaled concentration from the given string
+                /*! Compute the scaled concentration from the given string by applying
                  *  a logit transformation to it
                  *
                  * \param concentration String representing the concentration

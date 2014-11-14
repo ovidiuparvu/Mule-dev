@@ -71,7 +71,7 @@ namespace multiscale {
                 //! Get the shape best fitting the spatial collection
                 Shape2D getShape();
 
-                //! Get the shape best fitting the spatial collection as a std::string
+                //! Get the shape best fitting the spatial collection as a string
                 std::string getShapeAsString();
 
                 //! Get the measure indicating how much the shape of the contour resembles a triangle
@@ -86,13 +86,13 @@ namespace multiscale {
                 //! Get the point defining the centre of the entity
                 cv::Point2f getCentre();
 
-                //! Get a std::string representation of all the field names printed in the "toString" method
+                //! Get a string representation of all the field names printed in the "toString" method
                 static std::string fieldNamesToString();
 
-                //! Get the std::string representation of all field values
+                //! Get the string representation of all field values
                 std::string toString();
 
-                //! Return the type of the pseudo 3D spatial entity as a std::string
+                //! Return the type of the pseudo 3D spatial entity as a string
                 std::string typeAsString();
 
             protected:
@@ -136,10 +136,10 @@ namespace multiscale {
                  */
                 double normalisedShapeMeasure(double shapeArea);
 
-                //! Return the shape of the cluster as a std::string
+                //! Return the shape of the cluster as a string
                 std::string shapeAsString();
 
-                //! Return the values of the fields as a std::string
+                //! Return the values of the fields as a string
                 std::string fieldValuesToString();
 
                 //! Return the type of the pseudo 3D spatial entity

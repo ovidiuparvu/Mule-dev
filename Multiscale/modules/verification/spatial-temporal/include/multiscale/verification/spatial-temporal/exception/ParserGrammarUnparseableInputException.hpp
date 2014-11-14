@@ -15,7 +15,7 @@ namespace multiscale {
 
             private:
 
-                std::string errorString;    /*!< The substring from the original std::string starting with
+                std::string errorString;    /*!< The substring from the original string starting with
                                                  the index of the error token */
 
             public:

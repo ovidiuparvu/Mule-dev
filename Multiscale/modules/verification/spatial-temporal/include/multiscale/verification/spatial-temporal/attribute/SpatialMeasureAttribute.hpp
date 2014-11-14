@@ -11,7 +11,7 @@ namespace multiscale {
 
     namespace verification {
 
-        //! An std::size_t constant which stores the number of spatial measure type entries
+        //! An size_t constant which stores the number of spatial measure type entries
         static const std::size_t
         NR_SPATIAL_MEASURE_TYPES = static_cast<std::size_t>(SpatialMeasureType::NrOfSpatialMeasureTypeEntries);
 

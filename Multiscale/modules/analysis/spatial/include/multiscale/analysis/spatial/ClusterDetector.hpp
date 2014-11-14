@@ -45,7 +45,7 @@ namespace multiscale {
                 //! Get the value of the clustering algorithm parameter MinPoints
                 int getMinPoints();
 
-                //! Get a const reference to the std::vector of detected clusters
+                //! Get a const reference to the vector of detected clusters
                 std::vector<Cluster> const &getClusters();
 
                 //! Set the value of the clustering algorithm parameter eps
@@ -71,7 +71,7 @@ namespace multiscale {
                 //! Clear the clusters from the previous detection
                 void clearPreviousDetectionResults() override;
 
-                //! Get the type of the detector as a std::string
+                //! Get the type of the detector as a string
                 std::string getDetectorTypeAsString() override;
 
                 //! Process the provided image and detect clusters in it

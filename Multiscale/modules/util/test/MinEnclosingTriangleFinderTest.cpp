@@ -26,7 +26,7 @@ namespace multiscaletest {
            MinEnclosingTriangleFinderTest();
            ~MinEnclosingTriangleFinderTest();
 
-           //! Test the scenario when an empty std::vector of points is provided
+           //! Test the scenario when an empty vector of points is provided
            bool TestNoPoints();
 
            //! Test the scenario when there exists at least one point with negative x coordinate
@@ -50,10 +50,10 @@ namespace multiscaletest {
            //! Test the scenario when more than three input points are provided
            bool TestMorePoints();
 
-           //! Test the scenario when the output std::vector is not empty
+           //! Test the scenario when the output vector is not empty
            bool TestMorePointsAndNonEmptyTriangle();
 
-           //! Test the scenario when randomly initialised std::vectors of input points are provided
+           //! Test the scenario when randomly initialised vectors of input points are provided
            bool TestRandomPoints();
 
         protected:

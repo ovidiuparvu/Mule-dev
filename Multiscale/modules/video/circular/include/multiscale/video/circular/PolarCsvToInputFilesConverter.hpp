@@ -144,7 +144,7 @@ namespace multiscale {
 
                 //! Compute the simulation time from the given token and check if it is valid
                 /*!
-                 * \param token Token (std::string)
+                 * \param token Token (string)
                  */
                 double computeSimulationTime(const std::string &token);
 

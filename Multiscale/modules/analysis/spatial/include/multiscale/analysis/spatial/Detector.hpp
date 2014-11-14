@@ -95,7 +95,7 @@ namespace multiscale {
                  */
                 bool isValidInputImage(const cv::Mat& inputImage);
 
-                //! Get the type of the employed detector as a std::string
+                //! Get the type of the employed detector as a string
                 virtual std::string getDetectorTypeAsString() = 0;
 
                 //! Run the detection procedure

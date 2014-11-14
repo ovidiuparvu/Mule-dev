@@ -67,7 +67,7 @@ namespace multiscale {
                 //! Get the value of field thresholdValue
                 int getThresholdValue();
 
-                //! Get a const reference to the std::vector of detected regions
+                //! Get a const reference to the vector of detected regions
                 std::vector<Region> const &getRegions();
 
                 //! Set the value of field alpha
@@ -135,7 +135,7 @@ namespace multiscale {
                 //! Create the trackbars
                 void createDetectorSpecificTrackbars() override;
 
-                //! Get the type of the detector as a std::string
+                //! Get the type of the detector as a string
                 std::string getDetectorTypeAsString() override;
 
                 //! Process the given image
@@ -144,7 +144,7 @@ namespace multiscale {
                  *  to find their distance from the origin, their area and the angle determined
                  *  by the points from the contour which are on the edge and the closest point to
                  *  the origin. Return all the polygons together with the processed information
-                 *  as a std::vector of regions.
+                 *  as a vector of regions.
                  */
                 void processImageAndDetect() override;
 
@@ -306,7 +306,7 @@ namespace multiscale {
                  */
                 double regionDensity(const Polygon &polygon);
 
-                //! Clear the element present in the regions std::vector
+                //! Clear the element present in the regions vector
                 void clearPreviousDetectionResults() override;
 
                 //! Get the collection of clusters detected in the image

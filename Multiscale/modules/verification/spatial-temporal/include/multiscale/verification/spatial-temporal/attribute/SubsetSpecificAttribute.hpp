@@ -11,7 +11,7 @@ namespace multiscale {
 
     namespace verification {
 
-        //! An std::size_t constant which stores the number of subset specific type entries
+        //! An size_t constant which stores the number of subset specific type entries
         static const std::size_t
         NR_SUBSET_SPECIFIC_TYPES = static_cast<std::size_t>(SubsetSpecificType::NrOfSubsetSpecificTypeEntries);
 

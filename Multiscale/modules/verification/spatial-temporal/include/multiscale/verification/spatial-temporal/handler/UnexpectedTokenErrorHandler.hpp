@@ -41,7 +41,7 @@ namespace multiscale {
                 //! Convert the expected token to a string
                 /*! Convert the expected token to a string and remove enclosing quotes
                  *
-                 * \param expectedToken The expected token (not a std::string)
+                 * \param expectedToken The expected token (not a string)
                  */
                 std::string getExpectedTokenAsString(qi::info const &expectedToken) const {
                     std::stringstream strStream;

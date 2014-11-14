@@ -51,7 +51,7 @@ namespace multiscale {
                 //! Get the set of points defining the contour of the entity
                 std::vector<cv::Point2f> getContourPoints() const;
 
-                //! Get a std::string representation of all the field values
+                //! Get a string representation of all the field values
                 std::string toString();
 
                 //! Get the distance between this entity and another one
