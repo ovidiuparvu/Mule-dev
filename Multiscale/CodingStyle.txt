@@ -19,7 +19,7 @@ Coding style rules:
     - Additional folders can be created for organising the source files which do not have a direct 
       corresponding namespace.
       
-Build system:
+Build system: 
 
     - CMake + CTest + CPack;
     - The name of input files which are provided to the "configure_file" command have an additional 
