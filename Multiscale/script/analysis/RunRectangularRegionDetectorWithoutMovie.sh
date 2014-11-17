@@ -19,7 +19,6 @@ then
     
     # Create the output folders
     mkdir -p ${outputFolder}
-    mkdir -p ${movieOutputFolder}
 
     # Define the results output files
     regionsOutputFile=${outputFolder}/"results_regions";
@@ -33,7 +32,7 @@ then
     # Inform user of the next action
     echo "Running the region detection procedure for each image...";
 
-    # Run the cluster detection procedure for each image in parallel
+    # Run the region detection procedure for each image in parallel
     ls ${inputFolder}/*.png | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${outputFolder}/{/.} --debug-mode="false"
 
     # Empty files which will store final results
@@ -53,15 +52,31 @@ then
         cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | tail -n 1 >> ${pileupOutputFile};
     done
     
-    # Inform user of the next action
-    # echo "Generating the movie from the images...";
-    
-    # Generate the movie
-    # avconv ${MOVIE_FLAGS} -f image2 -i ${outputFolder}/${imageBasenameRoot}_%d.png ${movieOutputFolder}/${imageBasenameRoot}.mp4
-    
-    # Print end message
-    # echo "The movie was generated successfully.";
+    # Define the variables required to merge the xml files
+    linesBeforeTimePointContent=3;
+    linesAfterTimePointContent=1;
+    regionsXMLOutputPath=${outputFolder}/"results_regions.xml";
 
+    # Create the resulting file
+    fileCount=`find ${outputFolder} -name "${imageBasenameRoot}*.xml" | wc -l`;
+
+    if [[ ${fileCount} -gt 0 ]];
+    then
+	sampleFilePath=`find ${outputFolder} -name "${imageBasenameRoot}*.xml" | head -n1`;
+
+	# Print the header to the resulting file
+	cat ${sampleFilePath} | head -n ${linesBeforeTimePointContent} > ${regionsXMLOutputPath};
+
+	# Process each input file
+	for file in `find ${outputFolder} -name "${imageBasenameRoot}*.xml" | sort -V`;
+	do
+	    cat ${file} | head -n -${linesAfterTimePointContent} | tail -n +$((${linesBeforeTimePointContent} + 1)) >> ${regionsXMLOutputPath};
+	done 
+
+	# Print the footer to the resulting file
+	cat ${sampleFilePath} | tail -n ${linesAfterTimePointContent} >> ${regionsXMLOutputPath};
+    fi
+    
     # End the timer for measuring the total execution time
     endTime=$(date +%s.%N);
     
