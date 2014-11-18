@@ -87,9 +87,12 @@ TEST(MSTMLSubfilesMerger, InvalidNoData) {
     );
 }
 
-// Test which are compiled only in non-Debug mode
 
 #ifndef PROJECT_BUILD_TYPE_DEBUG
+
+// Tests which are compiled only in non-Debug mode.
+// Including the tests in Debug mode leads to SIGSEGV errors due to the 
+// internal implementation of the XercesC3.1 library
 
 TEST(MSTMLSubfilesMerger, InvalidTracesStructure1) {
     // Create the MSTML subfiles merger
