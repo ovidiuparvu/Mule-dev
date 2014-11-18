@@ -8,6 +8,8 @@ using namespace multiscale;
 using namespace multiscaletest;
 using namespace multiscale::verification;
 
+${PROJECT_BUILD_TYPE}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -81,6 +83,10 @@ TEST(MSTMLSubfilesMerger, InvalidNoData) {
     );
 }
 
+// Test which are compiled only in non-Debug mode
+
+#ifndef PROJECT_BUILD_TYPE_DEBUG
+
 TEST(MSTMLSubfilesMerger, InvalidTracesStructure1) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
@@ -106,6 +112,9 @@ TEST(MSTMLSubfilesMerger, InvalidTracesStructure2) {
         InvalidInputException
     );
 }
+
+#endif
+
 
 TEST(MSTMLSubfilesMerger, InvalidDifferentNumberOfTimepoints) {
     // Create the MSTML subfiles merger

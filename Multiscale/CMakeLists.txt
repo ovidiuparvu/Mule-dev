@@ -149,6 +149,14 @@ endif(CMAKE_CUSTOM_BUILD_TYPE STREQUAL "Package")
 # Change the names of the output libraries depending on the chosen configuration
 set(CMAKE_DEBUG_POSTFIX _d)
 
+# Set debug define macro in order to change compilation of cpp source files 
+# depending on the build type i.e. Release/Debug
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set(PROJECT_BUILD_TYPE "#define PROJECT_BUILD_TYPE_DEBUG")
+else(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set(PROJECT_BUILD_TYPE "")
+endif()
+
 
 #------------------------------------------------------------
 # Enforce "out of source" build
