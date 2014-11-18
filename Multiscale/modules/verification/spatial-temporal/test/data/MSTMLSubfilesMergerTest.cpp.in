@@ -8,6 +8,10 @@ using namespace multiscale;
 using namespace multiscaletest;
 using namespace multiscale::verification;
 
+// The following line contains a #define statement in case the
+// project build type is "Debug". Otherwise the line will be blank.
+// The #define statement is used to include/exclude test cases from 
+// the unit test MSTMLSubfilesMerger
 ${PROJECT_BUILD_TYPE}
 
 
@@ -83,9 +87,12 @@ TEST(MSTMLSubfilesMerger, InvalidNoData) {
     );
 }
 
-// Test which are compiled only in non-Debug mode
 
 #ifndef PROJECT_BUILD_TYPE_DEBUG
+
+// Tests which are compiled only in non-Debug mode.
+// Including the tests in Debug mode leads to SIGSEGV errors due to the 
+// internal implementation of the XercesC3.1 library
 
 TEST(MSTMLSubfilesMerger, InvalidTracesStructure1) {
     // Create the MSTML subfiles merger
