@@ -65,7 +65,7 @@ namespace multiscaletest {
 
         // Initialise the aMaxValue field considering numeric state variable "A" (without type)
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariable(aNumericStateVariableId));
+            aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariableValue(aNumericStateVariableId));
         }
         
         // Add a numeric state variable "B" (without type) to the collection of timepoints
@@ -89,7 +89,7 @@ namespace multiscaletest {
 
         // Initialise the cMinValue field
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-            cMinValue = std::min(cMinValue, timePoints[i].getNumericStateVariable(cNumericStateVariableId));
+            cMinValue = std::min(cMinValue, timePoints[i].getNumericStateVariableValue(cNumericStateVariableId));
         }
         
         // Add all timepoints to the trace

@@ -57,7 +57,7 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
 
     // Initialise the aMaxValue field
     for (std::size_t i = 0; i < nrOfTimePoints; i++) {
-        aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariable(aNumericStateVariableId));
+        aMaxValue = std::max(aMaxValue, timePoints[i].getNumericStateVariableValue(aNumericStateVariableId));
     }
 
     // Add spatial entities to each timepoint
