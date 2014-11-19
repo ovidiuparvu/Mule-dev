@@ -8,8 +8,12 @@
 #     if (value == "Package") then build package
 #
 # + CMAKE_CUSTOM_MODEL_CHECKER
-#     if (value == "Generate") then generate custom model checker
+#     if (value == "Generate") then generate custom model 
+#     checker
 #
+# + CMAKE_BUILD_FOR_PROFILING
+#     if (value == "Yes") then add gprof profiling flag -pg
+#     to the project compilation flags
 #------------------------------------------------------------
 
 
@@ -191,6 +195,10 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wfloat-equal -Wmissing-include-dirs")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fmessage-length=0")
+    
+    if("${CMAKE_BUILD_FOR_PROFILING}" STREQUAL "Yes")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pg")
+    endif("${CMAKE_BUILD_FOR_PROFILING}" STREQUAL "Yes")
 endif()
 
 

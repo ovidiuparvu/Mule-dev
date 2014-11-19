@@ -336,6 +336,7 @@ namespace multiscale {
                  */
                 double evaluateChangeLhsTemporalNumericMeasure(const ChangeTemporalNumericMeasureAttribute
                                                                &changeAttribute) const {
+                    // Compute the value of the temporal numeric measure considering the current and next timepoint
                     double lhsTemporalNumericMeasureFirstTimepoint = evaluateTemporalNumericMeasure(
                                                                          changeAttribute.lhsTemporalNumericMeasure,
                                                                          trace,
@@ -347,9 +348,11 @@ namespace multiscale {
                                                                           1
                                                                       );
 
-                    unsigned long timeValueFirstTimepoint  = trace.getTimePoint(0).getValue();
-                    unsigned long timeValueSecondTimepoint = trace.getTimePoint(1).getValue();
+                    // Compute the time values corresponding to the current and next timepoint
+                    unsigned long timeValueFirstTimepoint  = trace.getTimePointReference(0).getValue();
+                    unsigned long timeValueSecondTimepoint = trace.getTimePointReference(1).getValue();
 
+                    // Compute the change measure value
                     return ChangeMeasureEvaluator::evaluate(changeAttribute.changeMeasure.changeMeasureType,
                                                             lhsTemporalNumericMeasureFirstTimepoint,
                                                             lhsTemporalNumericMeasureSecondTimepoint,

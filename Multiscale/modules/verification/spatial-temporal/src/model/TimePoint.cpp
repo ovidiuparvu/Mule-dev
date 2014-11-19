@@ -248,7 +248,7 @@ TimePoint::getConsideredSpatialEntities() const {
 }
 
 double
-TimePoint::getNumericStateVariable(const NumericStateVariableId &id) const {
+TimePoint::getNumericStateVariableValue(const NumericStateVariableId &id) const {
     auto it = numericStateVariables.find(id);
 
     if (it == numericStateVariables.end()) {

@@ -268,7 +268,6 @@
 			<target name="Run CMake - Debug" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>cmake</buildCommand>
 				<buildArguments>-E chdir build/Debug cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -DCMAKE_CUSTOM_BUILD_TYPE=Package -DCMAKE_CUSTOM_MODEL_CHECKER=Generate ../../</buildArguments>
-				<buildTarget/>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>false</useDefaultCommand>
 				<runAllBuilders>true</runAllBuilders>
@@ -276,6 +275,22 @@
 			<target name="Run CMake - Release" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
 				<buildCommand>cmake</buildCommand>
 				<buildArguments>-E chdir build/Release cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release -DCMAKE_CUSTOM_BUILD_TYPE=Package -DCMAKE_CUSTOM_MODEL_CHECKER=Generate ../../</buildArguments>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="Run CMake - Debug (including profiling)" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>cmake</buildCommand>
+				<buildArguments>-E chdir build/Debug cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -DCMAKE_CUSTOM_BUILD_TYPE=Package -DCMAKE_BUILD_FOR_PROFILING=Yes -DCMAKE_CUSTOM_MODEL_CHECKER=Generate ../../</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="Run CMake - Release (including profiling)" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+				<buildCommand>cmake</buildCommand>
+				<buildArguments>-E chdir build/Release cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release -DCMAKE_CUSTOM_BUILD_TYPE=Package -DCMAKE_BUILD_FOR_PROFILING=Yes -DCMAKE_CUSTOM_MODEL_CHECKER=Generate ../../</buildArguments>
+				<buildTarget/>
 				<stopOnError>true</stopOnError>
 				<useDefaultCommand>false</useDefaultCommand>
 				<runAllBuilders>true</runAllBuilders>

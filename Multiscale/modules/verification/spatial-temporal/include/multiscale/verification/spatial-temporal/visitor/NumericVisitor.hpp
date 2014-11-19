@@ -69,7 +69,7 @@ namespace multiscale {
                         ).semanticType
                     );
 
-                    return timePoint.getNumericStateVariable(numericStateVariableId);
+                    return timePoint.getNumericStateVariableValue(numericStateVariableId);
                 }
 
                 //! Overloading the "()" operator for the NumericSpatialAttribute alternative

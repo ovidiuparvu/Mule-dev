@@ -1,6 +1,8 @@
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/model/NumericStateVariableId.hpp"
 
+#include <boost/functional/hash.hpp>
+
 using namespace multiscale;
 using namespace multiscale::verification;
 
@@ -31,7 +33,7 @@ bool NumericStateVariableId::operator<(const NumericStateVariableId &rhs) const 
     if (this->name.compare(rhs.name) < 0) {
         return true;
     } else if (this->name.compare(rhs.name) == 0) {
-        if (this->semanticType < rhs.semanticType) {
+        if (this->semanticType.compare(rhs.semanticType) < 0) {
             return true;
         }
     }

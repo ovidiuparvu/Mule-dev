@@ -245,7 +245,7 @@ namespace multiscale {
                  *
                  * \param id The id of the numeric state variable
                  */
-                double getNumericStateVariable(const NumericStateVariableId &id) const;
+                double getNumericStateVariableValue(const NumericStateVariableId &id) const;
 
                 //! Get the begin iterator for the collection of numeric state variables
                 std::map<NumericStateVariableId, double>::iterator

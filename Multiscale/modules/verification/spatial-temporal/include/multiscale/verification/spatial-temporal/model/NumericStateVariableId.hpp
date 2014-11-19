@@ -46,7 +46,7 @@ namespace multiscale {
                 //! Overload the < operator
                 /*!
                  * \param rhs   The right hand side numeric state variable identity
-                 *              i.e. (lhs < rhs)?
+                 *              in the expression (lhs < rhs)
                  */
                 bool operator<(const NumericStateVariableId &rhs) const;
 

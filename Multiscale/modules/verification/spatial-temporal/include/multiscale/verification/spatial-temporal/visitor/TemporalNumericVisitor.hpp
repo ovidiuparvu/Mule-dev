@@ -53,6 +53,7 @@ namespace multiscale {
                  */
                 double
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
+                    // Construct the numeric state variable id corresponding to the given name and value
                     NumericStateVariableId numericStateVariableId(
                         numericStateVariable.stateVariable.name,
                         numericStateVariable.semanticType.get_value_or(
@@ -60,7 +61,13 @@ namespace multiscale {
                         ).semanticType
                     );
 
-                    return trace.getTimePoint(0).getNumericStateVariable(numericStateVariableId);
+                    // Retrieve a reference to the current timepoint in the trace
+                    const TimePoint &currentTimePoint = trace.getTimePointReference(0);
+
+                    // Return the value of the numeric state variable
+                    return (
+                        currentTimePoint.getNumericStateVariableValue(numericStateVariableId)
+                    );
                 }
 
                 //! Overloading the "()" operator for the NumericStatisticalMeasureAttribute alternative
