@@ -16,10 +16,11 @@ namespace multiscale {
 
             private:
 
-                unsigned int           beginIndex;          /*!< The corresponding begin index */
+                std::vector<unsigned int>   beginIndices;       /*!< The stack of stored trace begin indices */
+                unsigned int                beginIndex;         /*!< The currently employed trace begin index */
 
-                std::vector<TimePoint> timePoints;          /*!< The array of time points */
-                unsigned long          lastTimePointValue;  /*!< The value of the last added timepoint */
+                std::vector<TimePoint>      timePoints;         /*!< The array of time points */
+                unsigned long               lastTimePointValue; /*!< The value of the last added timepoint */
 
                 bool isLastTimePointValueInitialised;  /*!< Flag to indicate if the last time point value was initialised */
 
@@ -62,20 +63,42 @@ namespace multiscale {
                 //! Get the value of the next timepoint considering beginIndex
                 unsigned long nextTimePointValue() const;
 
-                //! Get the subtrace containing timepoints with the index greater than the given index
-                /*!
-                 * \param startIndex    The starting index of the subtrace
-                 */
-                SpatialTemporalTrace subTrace(unsigned int startIndex) const;
-
                 //! Set the subtrace containing timepoints with values greater than the given start value
                 /*!
                  * \param startValue    The starting value of the subtrace
                  */
-                void setSubTrace(unsigned long startValue);
+                void setSubTraceWithTimepointsValuesGreaterThan(unsigned long startValue);
 
-                //! Reset the subtrace start index beginIndex to the value zero
-                void resetSubTraceStartIndex();
+                //! Advance the trace begin index by the given value
+                /*!
+                 * \param advanceValue  The value by which the trace begin index should be advanced
+                 */
+                void advanceTraceBeginIndex(unsigned long advanceValue);
+
+                //! Set the trace begin index to the given value
+                /*!
+                 * \param newBeginIndex The new value of the trace starting/begin index
+                 */
+                void setTraceBeginIndex(unsigned int newBeginIndex);
+
+                //! Add the current value of beginIndex to the beginIndices stack
+                void storeSubTraceBeginIndex();
+
+                //! Retrieve the value of the most recent stored subtrace begin index
+                /*! If the beginIndices stack is non-empty then retrieve the top
+                 *  value in the stack. Otherwise return 0.
+                 */
+                unsigned int getMostRecentlyStoredSubTraceBeginIndex();
+
+                //! Restore the subtrace beginIndex from the beginIndices stack
+                /*! If the beginIndices stack is non-empty then the value of beginIndex
+                 *  will be equal to the top value in the stack. Otherwise the value of
+                 *  beginIndex will be set to 0.
+                 *
+                 *  If the value of beginIndex is updated from the beginIndices stack then
+                 *  the top value is popped out of the stack.
+                 */
+                void restoreSubTraceBeginIndex();
 
                 // Check if two spatial temporal traces (this instance and the provided one) are equal
                 /*!
@@ -143,11 +166,17 @@ namespace multiscale {
                  */
                 int indexOfFirstTimePointGreaterOrEqualToValue(unsigned long value) const;
 
-                //! Check if the provided index is smaller than the number of timepoints
+                //! Check if relative to beginIndex the provided index is smaller than the number of timepoints
                 /*!
                  * \param index The provided index
                  */
-                void validateIndex(unsigned int index) const;
+                void validateIndexRelativeToBeginIndex(unsigned int index) const;
+
+                //! Check if the provided absolute index is smaller than the number of timepoints
+                /*!
+                 * \param index The provided index
+                 */
+                void validateAbsoluteIndex(unsigned int index) const;
 
                 //! Check if the provided value is smaller than or equal to the maximum timepoint value
                 /*!
@@ -157,8 +186,12 @@ namespace multiscale {
 
 
                 // Constants
-                static const std::string ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START;
-                static const std::string ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END;
+                static const std::string ERR_RELATIVE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START;
+                static const std::string ERR_RELATIVE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_MIDDLE;
+                static const std::string ERR_RELATIVE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END;
+
+                static const std::string ERR_ABSOLUTE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START;
+                static const std::string ERR_ABSOLUTE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END;
 
                 static const std::string ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_START;
                 static const std::string ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_END;

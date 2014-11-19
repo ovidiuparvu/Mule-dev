@@ -17,13 +17,13 @@ namespace multiscale {
 
             private:
 
-                const TimePoint             &timePoint;             /*!< The considered timepoint */
+                TimePoint                   &timePoint;             /*!< The considered timepoint */
                 const SpatialEntity         &spatialEntity;         /*!< The considered spatial entity */
                 const TypeSemanticsTable    &typeSemanticsTable;    /*!< The considered type semantics table */
 
             public:
 
-                FilterNumericVisitor(const TimePoint &timePoint, const SpatialEntity &spatialEntity,
+                FilterNumericVisitor(TimePoint &timePoint, const SpatialEntity &spatialEntity,
                                      const TypeSemanticsTable &typeSemanticsTable)
                                      : timePoint(timePoint), spatialEntity(spatialEntity),
                                        typeSemanticsTable(typeSemanticsTable) {}
@@ -91,8 +91,12 @@ namespace multiscale {
                  * \param primaryNumericMeasure The given primary numeric measure
                  */
                 double evaluate(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint, typeSemanticsTable),
-                                                primaryNumericMeasure);
+                    return (
+                        boost::apply_visitor(
+                            NumericVisitor(timePoint, typeSemanticsTable),
+                            primaryNumericMeasure
+                        )
+                    );
                 }
 
         };

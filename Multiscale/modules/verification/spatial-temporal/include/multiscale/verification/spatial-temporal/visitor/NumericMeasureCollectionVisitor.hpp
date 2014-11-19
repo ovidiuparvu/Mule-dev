@@ -16,13 +16,13 @@ namespace multiscale {
 
             private:
 
-                const SpatialTemporalTrace &trace;              /*!< The considered spatial temporal trace */
+                SpatialTemporalTrace       &trace;              /*!< The considered spatial temporal trace */
                 const TypeSemanticsTable   &typeSemanticsTable; /*!< The type semantics table */
 
 
             public:
 
-                NumericMeasureCollectionVisitor(const SpatialTemporalTrace &trace,
+                NumericMeasureCollectionVisitor(SpatialTemporalTrace &trace,
                                                 const TypeSemanticsTable &typeSemanticsTable)
                                                 : trace(trace), typeSemanticsTable(typeSemanticsTable) {}
 
@@ -67,6 +67,7 @@ namespace multiscale {
                  */
                 std::vector<double>
                 operator()(const TimeseriesTimeseriesComponentAttribute &timeseriesTimeseriesComponent) const {
+                    // Compute the values corresponding to the temporal numeric measure collection
                     std::vector<double> values = evaluateTemporalNumericMeasureCollection(
                         trace,
                         timeseriesTimeseriesComponent.temporalNumericMeasureCollection.startTimepoint,
@@ -74,17 +75,21 @@ namespace multiscale {
                         timeseriesTimeseriesComponent.temporalNumericMeasureCollection.numericMeasure
                     );
 
+                    // Compute the timepoints corresponding to the temporal numeric measure collection
                     std::vector<double> timepoints = evaluateTemporalNumericMeasureCollectionTimepoints(
                         trace,
                         timeseriesTimeseriesComponent.temporalNumericMeasureCollection.startTimepoint,
                         timeseriesTimeseriesComponent.temporalNumericMeasureCollection.endTimepoint
                     );
 
+                    // Compute the starting and ending indices corresponding to the timeseries components
+                    // in the provided temporal numeric measure collection
                     std::vector<std::size_t> indices = evaluateTimeseriesComponent(
                         values,
                         timeseriesTimeseriesComponent.timeseriesComponent
                     );
 
+                    // Evaluate the timeseries timeseries components
                     return evaluateTimeseriesTimeseriesComponent(
                         timeseriesTimeseriesComponent.timeseriesMeasure.timeseriesMeasure,
                         values, timepoints, indices
@@ -97,6 +102,7 @@ namespace multiscale {
                  */
                 std::vector<double>
                 operator()(const HomogeneousHomogeneousTimeseriesAttribute &homogeneousHomogeneousTimeseries) const {
+                    // Compute the values corresponding to the temporal numeric measure collection
                     std::vector<double> values = evaluateTemporalNumericMeasureCollection(
                         trace,
                         homogeneousHomogeneousTimeseries.temporalNumericMeasureCollection.startTimepoint,
@@ -104,17 +110,21 @@ namespace multiscale {
                         homogeneousHomogeneousTimeseries.temporalNumericMeasureCollection.numericMeasure
                     );
 
+                    // Compute the timepoints corresponding to the temporal numeric measure collection
                     std::vector<double> timepoints = evaluateTemporalNumericMeasureCollectionTimepoints(
                         trace,
                         homogeneousHomogeneousTimeseries.temporalNumericMeasureCollection.startTimepoint,
                         homogeneousHomogeneousTimeseries.temporalNumericMeasureCollection.endTimepoint
                     );
 
+                    // Compute the starting and ending indices corresponding to the homogeneous timeseries
+                    // components in the provided temporal numeric measure collection
                     std::vector<std::size_t> indices = TimeseriesComponentEvaluator::evaluate(
                         homogeneousHomogeneousTimeseries.homogeneousTimeseriesComponent,
                         values
                     );
 
+                    // Evaluate the homogeneous homogeneous timeseries
                     return evaluateHomogeneousHomogeneousTimeseries(
                         homogeneousHomogeneousTimeseries.homogeneousTimeseriesMeasure.homogeneousTimeseriesMeasure,
                         values, timepoints, indices
@@ -131,7 +141,7 @@ namespace multiscale {
                  * \param numericMeasure    The numeric measure to be evaluated
                  */
                 std::vector<double>
-                evaluateTemporalNumericMeasureCollection(const SpatialTemporalTrace &trace,
+                evaluateTemporalNumericMeasureCollection(SpatialTemporalTrace &trace,
                                                          unsigned long startTimepoint,
                                                          unsigned long endTimepoint,
                                                          const NumericMeasureType &numericMeasure) const;
@@ -143,22 +153,27 @@ namespace multiscale {
                  * \param endTimepoint      The considered end timepoint value
                  */
                 std::vector<double>
-                evaluateTemporalNumericMeasureCollectionTimepoints(const SpatialTemporalTrace &trace,
+                evaluateTemporalNumericMeasureCollectionTimepoints(SpatialTemporalTrace &trace,
                                                                    unsigned long startTimepoint,
                                                                    unsigned long endTimepoint) const {
+                    // Create an empty collection for storing the timepoints values
                     std::vector<double> timePoints;
 
-                    SpatialTemporalTrace traceCopy(trace);
+                    // Store the current starting timepoint index
+                    trace.storeSubTraceBeginIndex();
 
-                    // Compute the timepoints values
-                    for (unsigned long i = startTimepoint; i <= endTimepoint; i = traceCopy.nextTimePointValue()) {
-                        traceCopy.setSubTrace(i);
+                    // Compute the timepoints values and add them to the timepoints collection
+                    for (unsigned long i = startTimepoint; i <= endTimepoint; i = trace.nextTimePointValue()) {
+                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
 
                         // Add timepoint to collection
                         timePoints.push_back(
                             static_cast<double>(i)
                         );
                     }
+
+                    // Restore the starting timepoint index to the immediately above stored value
+                    trace.restoreSubTraceBeginIndex();
 
                     return timePoints;
                 }
@@ -204,9 +219,11 @@ namespace multiscale {
                 std::vector<std::size_t>
                 evaluateTimeseriesComponent(const std::vector<double> &values,
                                             const TimeseriesComponentAttribute &timeseriesComponent) const {
-                    return boost::apply_visitor(
-                        TimeseriesComponentVisitor(values),
-                        timeseriesComponent.timeseriesComponent
+                    return (
+                        boost::apply_visitor(
+                            TimeseriesComponentVisitor(values),
+                            timeseriesComponent.timeseriesComponent
+                        )
                     );
                 }
 
@@ -353,9 +370,11 @@ namespace multiscale {
 
                     // Stop at the last but one element index because both (index) and
                     // (index + 1) are considered below
-                    std::size_t stopIndex = (indices.size() > 0) ? (indices.size() - 1)
-                                                                  : 0;
+                    std::size_t stopIndex = (indices.size() > 0)
+                                                ? (indices.size() - 1)
+                                                : 0;
 
+                    // Compute the homogeneous components timespans
                     for (std::size_t i = 0; i < stopIndex; i += 2) {
                         homogeneousComponentTimeSpans.push_back(
                             timePoints[indices.at(i + 1)] - timePoints[indices.at(i)]
@@ -381,9 +400,11 @@ namespace multiscale {
 
                     // Stop at the last but one element index because both (index) and
                     // (index + 1) are considered below
-                    std::size_t stopIndex = (indices.size() > 0) ? (indices.size() - 1)
-                                                                 : 0;
+                    std::size_t stopIndex = (indices.size() > 0)
+                                                ? (indices.size() - 1)
+                                                : 0;
 
+                    // Compute the homogeneous component values
                     for (std::size_t i = 0; i < stopIndex; i += 2) {
                         for (std::size_t j = indices.at(i); j <= indices.at(i + 1); j++) {
                             homogeneousComponentValues.push_back(values.at(j));
@@ -412,9 +433,12 @@ inline std::vector<double>
 multiscale::verification::NumericMeasureCollectionVisitor::operator()(
     const TemporalNumericCollectionAttribute &temporalNumericCollection
 ) const {
-    return NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
-        trace, typeSemanticsTable,
-        temporalNumericCollection
+    return (
+        NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
+            trace,
+            typeSemanticsTable,
+            temporalNumericCollection
+        )
     );
 }
 
@@ -422,9 +446,12 @@ inline std::vector<double>
 multiscale::verification::NumericMeasureCollectionVisitor::operator()(
     const SpatialMeasureCollectionAttribute &spatialMeasureCollection
 ) const {
-    return NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
-        trace.getTimePoint(0), typeSemanticsTable,
-        spatialMeasureCollection
+    return (
+        NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
+            trace.getTimePointReference(0),
+            typeSemanticsTable,
+            spatialMeasureCollection
+        )
     );
 }
 
@@ -432,12 +459,15 @@ inline std::vector<double>
 multiscale::verification::NumericMeasureCollectionVisitor::operator()(
     const ChangeTemporalNumericCollectionAttribute &changeTemporalNumericCollection
 ) const {
+    // Compute the collection of temporal numeric values
     std::vector<double> temporalNumericCollectionValues
         = NumericMeasureCollectionEvaluator::evaluateTemporalNumericCollection(
-              trace, typeSemanticsTable,
+              trace,
+              typeSemanticsTable,
               changeTemporalNumericCollection.temporalNumericCollection
           );
 
+    // Evaluate the change measure for the provided temporal numeric collection values
     return evaluateChangeTemporalNumericCollection(
         changeTemporalNumericCollection.changeMeasure,
         temporalNumericCollectionValues
@@ -446,22 +476,30 @@ multiscale::verification::NumericMeasureCollectionVisitor::operator()(
 
 inline std::vector<double>
 multiscale::verification::NumericMeasureCollectionVisitor::evaluateTemporalNumericMeasureCollection(
-    const SpatialTemporalTrace &trace, unsigned long startTimepoint, unsigned long endTimepoint,
+    SpatialTemporalTrace &trace, unsigned long startTimepoint, unsigned long endTimepoint,
     const NumericMeasureType &numericMeasure
 ) const {
+    // Create an empty collection for storing numeric measure values
     std::vector<double> numericMeasureValues;
 
-    SpatialTemporalTrace traceCopy(trace);
+    // Store the current starting timepoint index
+    trace.storeSubTraceBeginIndex();
 
     // Compute the numeric measure values
-    for (unsigned long i = startTimepoint; i <= endTimepoint; i = traceCopy.nextTimePointValue()) {
-        traceCopy.setSubTrace(i);
+    for (unsigned long i = startTimepoint; i <= endTimepoint; i = trace.nextTimePointValue()) {
+        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
 
+        // Add the evaluation result to the collection of numeric measure values
         numericMeasureValues.push_back(
-            boost::apply_visitor(NumericVisitor(traceCopy.getTimePoint(0), typeSemanticsTable),
-                                 numericMeasure)
+            boost::apply_visitor(
+                NumericVisitor(trace.getTimePointReference(0), typeSemanticsTable),
+                numericMeasure
+            )
         );
     }
+
+    // Restore the starting timepoint index to the immediately above stored value
+    trace.restoreSubTraceBeginIndex();
 
     return numericMeasureValues;
 }

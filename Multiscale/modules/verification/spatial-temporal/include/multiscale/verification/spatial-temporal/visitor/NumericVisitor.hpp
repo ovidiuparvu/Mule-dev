@@ -20,12 +20,12 @@ namespace multiscale {
 
             private:
 
-                const TimePoint            &timePoint;          /*!< The considered timepoint */
+                TimePoint                  &timePoint;          /*!< The considered timepoint */
                 const TypeSemanticsTable   &typeSemanticsTable; /*!< The type semantics table */
 
             public:
 
-                NumericVisitor(const TimePoint &timePoint,
+                NumericVisitor(TimePoint &timePoint,
                                const TypeSemanticsTable &typeSemanticsTable)
                                : timePoint(timePoint), typeSemanticsTable(typeSemanticsTable) {}
 
@@ -62,6 +62,7 @@ namespace multiscale {
                  */
                 double
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
+                    // Construct the numeric state variable identity considering its name and semantic type
                     NumericStateVariableId numericStateVariableId(
                         numericStateVariable.stateVariable.name,
                         numericStateVariable.semanticType.get_value_or(
@@ -69,7 +70,10 @@ namespace multiscale {
                         ).semanticType
                     );
 
-                    return timePoint.getNumericStateVariableValue(numericStateVariableId);
+                    // Return the value of the numeric state variable
+                    return (
+                        timePoint.getNumericStateVariableValue(numericStateVariableId)
+                    );
                 }
 
                 //! Overloading the "()" operator for the NumericSpatialAttribute alternative
@@ -87,9 +91,8 @@ namespace multiscale {
                  */
                 double
                 operator()(const UnaryNumericNumericAttribute &unaryNumericNumericMeasure) const {
-                    UnaryNumericMeasureType unaryNumericMeasureType = unaryNumericNumericMeasure.
-                                                                      unaryNumericMeasure.
-                                                                      unaryNumericMeasureType;
+                    UnaryNumericMeasureType unaryNumericMeasureType
+                        = unaryNumericNumericMeasure.unaryNumericMeasure.unaryNumericMeasureType;
 
                     double numericMeasure = evaluate(unaryNumericNumericMeasure.numericMeasure);
 
@@ -102,9 +105,8 @@ namespace multiscale {
                  */
                 double
                 operator()(const BinaryNumericNumericAttribute &binaryNumericNumericMeasure) const {
-                    BinaryNumericMeasureType binaryNumericMeasureType = binaryNumericNumericMeasure.
-                                                                        binaryNumericMeasure.
-                                                                        binaryNumericMeasureType;
+                    BinaryNumericMeasureType binaryNumericMeasureType
+                        = binaryNumericNumericMeasure.binaryNumericMeasure.binaryNumericMeasureType;
 
                     double firstNumericMeasure  = evaluate(binaryNumericNumericMeasure.firstNumericMeasure);
                     double secondNumericMeasure = evaluate(binaryNumericNumericMeasure.secondNumericMeasure);
@@ -146,7 +148,12 @@ namespace multiscale {
                  */
                 double
                 evaluate(const NumericMeasureType &numericMeasure) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint, typeSemanticsTable), numericMeasure);
+                    return (
+                        boost::apply_visitor(
+                            NumericVisitor(timePoint, typeSemanticsTable),
+                            numericMeasure
+                        )
+                    );
                 }
 
                 //! Evaluate the given primary numeric measure considering the timePoint field
@@ -155,8 +162,12 @@ namespace multiscale {
                  */
                 double
                 evaluatePrimaryNumericMeasure(const PrimaryNumericMeasureAttributeType &primaryNumericMeasure) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint, typeSemanticsTable),
-                                                primaryNumericMeasure);
+                    return (
+                        boost::apply_visitor(
+                            NumericVisitor(timePoint, typeSemanticsTable),
+                            primaryNumericMeasure
+                        )
+                    );
                 }
 
                 //! Evaluate the given numeric spatial measure considering the timePoint field
@@ -165,8 +176,12 @@ namespace multiscale {
                  */
                 double
                 evaluateNumericSpatialMeasure(const NumericSpatialMeasureType &numericSpatialMeasure) const {
-                    return boost::apply_visitor(NumericVisitor(timePoint, typeSemanticsTable),
-                                                numericSpatialMeasure);
+                    return (
+                        boost::apply_visitor(
+                            NumericVisitor(timePoint, typeSemanticsTable),
+                            numericSpatialMeasure
+                        )
+                    );
                 }
 
         };

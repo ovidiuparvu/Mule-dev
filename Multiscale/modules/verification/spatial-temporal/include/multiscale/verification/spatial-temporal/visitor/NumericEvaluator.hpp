@@ -190,7 +190,8 @@ namespace multiscale {
                  * \param values                            The considered values
                  * \param parameter                         The parameter used by the ternary subset measure
                  */
-                static double evaluate(const BinaryStatisticalQuantileMeasureType &binaryStatisticalQuantileMeasure,
+                static double evaluate(const BinaryStatisticalQuantileMeasureType
+                                       &binaryStatisticalQuantileMeasure,
                                        const std::vector<double> &values,
                                        double parameter) {
                     switch (binaryStatisticalQuantileMeasure) {

@@ -22,13 +22,15 @@ namespace multiscale {
                  * \param temporalNumericCollection The given temporal numeric collection
                  */
                 static std::vector<double>
-                evaluateTemporalNumericCollection(const SpatialTemporalTrace &trace,
+                evaluateTemporalNumericCollection(SpatialTemporalTrace &trace,
                                                   const TypeSemanticsTable &typeSemanticsTable,
                                                   const TemporalNumericCollectionAttribute
                                                   &temporalNumericCollection) {
-                    return boost::apply_visitor(
-                        NumericMeasureCollectionVisitor(trace, typeSemanticsTable),
-                        temporalNumericCollection.temporalNumericCollection
+                    return (
+                        boost::apply_visitor(
+                            NumericMeasureCollectionVisitor(trace, typeSemanticsTable),
+                            temporalNumericCollection.temporalNumericCollection
+                        )
                     );
                 }
 
@@ -39,10 +41,11 @@ namespace multiscale {
                  * \param spatialMeasureCollection  The considered spatial measure collection
                  */
                 static std::vector<double>
-                evaluateSpatialMeasureCollection(const TimePoint &timePoint,
+                evaluateSpatialMeasureCollection(TimePoint &timePoint,
                                                  const TypeSemanticsTable &typeSemanticsTable,
                                                  const SpatialMeasureCollectionAttribute
                                                  &spatialMeasureCollection) {
+                    // Create the subset timepoint corresponding to the given timepoint
                     TimePoint subsetTimePoint(
                         boost::apply_visitor(
                             SubsetVisitor(timePoint, typeSemanticsTable),
@@ -50,6 +53,8 @@ namespace multiscale {
                         )
                     );
 
+                    // Compute the spatial measure values corresponding to the above created
+                    // subset timepoint
                     std::vector<double> spatialMeasureValues =
                         TimePointEvaluator::getSpatialMeasureValues(
                             subsetTimePoint,

@@ -32,19 +32,19 @@ void SpatialTemporalTrace::clear() {
 }
 
 TimePoint SpatialTemporalTrace::getTimePoint(unsigned int index) const {
-    validateIndex(index);
+    validateIndexRelativeToBeginIndex(index);
 
     return timePoints[beginIndex + index];
 }
 
 TimePoint& SpatialTemporalTrace::getTimePointReference(unsigned int index) {
-    validateIndex(index);
+    validateIndexRelativeToBeginIndex(index);
 
     return timePoints[beginIndex + index];
 }
 
 const TimePoint& SpatialTemporalTrace::getTimePointReference(unsigned int index) const {
-    validateIndex(index);
+    validateIndexRelativeToBeginIndex(index);
 
     return timePoints[beginIndex + index];
 }
@@ -61,22 +61,50 @@ unsigned long SpatialTemporalTrace::nextTimePointValue() const {
     }
 }
 
-SpatialTemporalTrace SpatialTemporalTrace::subTrace(unsigned int startIndex) const {
-    SpatialTemporalTrace subTrace;
-
-    validateIndex(startIndex);
-    addTimePointsToSubTrace(subTrace, startIndex + beginIndex, timePoints.size() - 1);
-
-    return subTrace;
-}
-
-void SpatialTemporalTrace::setSubTrace(unsigned long startValue) {
+void SpatialTemporalTrace::setSubTraceWithTimepointsValuesGreaterThan(unsigned long startValue) {
     validateValue(startValue);
     setSubTraceIndex(startValue);
 }
 
-void SpatialTemporalTrace::resetSubTraceStartIndex() {
-    beginIndex = 0;
+void SpatialTemporalTrace::advanceTraceBeginIndex(unsigned long advanceValue) {
+    // Check if the new begin index value is valid
+    validateIndexRelativeToBeginIndex(advanceValue);
+
+    // Update the begin index value
+    beginIndex = beginIndex + advanceValue;
+}
+
+void SpatialTemporalTrace::setTraceBeginIndex(unsigned int newBeginIndex) {
+    // Check if the provided begin index value is valid
+    validateAbsoluteIndex(newBeginIndex);
+
+    // Update the begin index value
+    beginIndex = newBeginIndex;
+}
+
+void SpatialTemporalTrace::storeSubTraceBeginIndex() {
+    // Add the current value of beginIndex to the stack
+    beginIndices.push_back(beginIndex);
+}
+
+unsigned int SpatialTemporalTrace::getMostRecentlyStoredSubTraceBeginIndex() {
+    if (beginIndices.size() > 0) {
+        return beginIndices.back();
+    } else {
+        return 0;
+    }
+}
+
+void SpatialTemporalTrace::restoreSubTraceBeginIndex() {
+    if (beginIndices.size() > 0) {
+        // Update the value of beginIndex according to the top stack value
+        beginIndex = beginIndices.back();
+
+        // Remove the top value from the beginIndices stack
+        beginIndices.pop_back();
+    } else {
+        beginIndex = 0;
+    }
 }
 
 bool SpatialTemporalTrace::operator==(const SpatialTemporalTrace &rhsSpatialTemporalTrace) {
@@ -184,10 +212,27 @@ int SpatialTemporalTrace::indexOfFirstTimePointGreaterOrEqualToValue(unsigned lo
     return TIMEPOINT_INDEX_NOT_FOUND;
 }
 
-void SpatialTemporalTrace::validateIndex(unsigned int index) const {
+void SpatialTemporalTrace::validateIndexRelativeToBeginIndex(unsigned int index) const {
     if ((beginIndex + index) >= timePoints.size()) {
-        MS_throw_detailed(SpatialTemporalException, ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START,
-                          StringManipulator::toString<unsigned int>(index), ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END);
+        MS_throw(
+            SpatialTemporalException,
+            ERR_RELATIVE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START +
+            StringManipulator::toString(beginIndex) +
+            ERR_RELATIVE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_MIDDLE +
+            StringManipulator::toString(index) +
+            ERR_RELATIVE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END
+        );
+    }
+}
+
+void SpatialTemporalTrace::validateAbsoluteIndex(unsigned int index) const {
+    if (index >= timePoints.size()) {
+        MS_throw_detailed(
+            SpatialTemporalException,
+            ERR_ABSOLUTE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START,
+            StringManipulator::toString(index),
+            ERR_ABSOLUTE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END
+        );
     }
 }
 
@@ -200,8 +245,12 @@ void SpatialTemporalTrace::validateValue(unsigned long value) const {
 
 
 // Constants
-const std::string SpatialTemporalTrace::ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START = "The provided timepoint index (";
-const std::string SpatialTemporalTrace::ERR_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END   = ") is out of bounds for the given spatial temporal trace.";
+const std::string SpatialTemporalTrace::ERR_RELATIVE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START    = "Relative to the begin index (";
+const std::string SpatialTemporalTrace::ERR_RELATIVE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_MIDDLE   = ") the provided timepoint index (";
+const std::string SpatialTemporalTrace::ERR_RELATIVE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END      = ") is out of bounds for the given spatial temporal trace.";
+
+const std::string SpatialTemporalTrace::ERR_ABSOLUTE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_START = "The provided timepoint index (";
+const std::string SpatialTemporalTrace::ERR_ABSOLUTE_TIMEPOINT_INDEX_OUT_OF_BOUNDS_END   = ") is out of bounds for the given spatial temporal trace.";
 
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_START = "The provided timepoint value (";
 const std::string SpatialTemporalTrace::ERR_TIMEPOINT_VALUE_OUT_OF_BOUNDS_END   = ") is out of bounds for the given spatial temporal trace.";

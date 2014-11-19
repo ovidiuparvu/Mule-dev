@@ -25,7 +25,8 @@ namespace multiscale {
 
             private:
 
-                const SpatialTemporalTrace  &trace;                     /*!< The spatial temporal trace */
+                SpatialTemporalTrace        &trace;                     /*!< A reference to the spatial temporal
+                                                                             trace */
                 const TypeSemanticsTable    &typeSemanticsTable;        /*!< The type semantics table */
 
                 LogicPropertyAttributeType  evaluationLogicProperty;    /*!< The logic property used only for
@@ -35,7 +36,7 @@ namespace multiscale {
 
             public:
 
-                LogicPropertyVisitor(const SpatialTemporalTrace &trace,
+                LogicPropertyVisitor(SpatialTemporalTrace &trace,
                                      const TypeSemanticsTable &typeSemanticsTable,
                                      bool precedingTruthValue = true)
                                      : trace(trace), typeSemanticsTable(typeSemanticsTable),
@@ -139,7 +140,12 @@ namespace multiscale {
                 template <typename T>
                 bool operator() (const UntilLogicPropertyAttribute &logicProperty, const T &lhsLogicProperty) const {
                     try {
-                        return evaluateUntilLogicProperty(logicProperty, lhsLogicProperty);
+                        return (
+                            evaluateTemporalLogicPropertyWithStartEndTimepoints(
+                                logicProperty,
+                                lhsLogicProperty
+                            )
+                        );
                     } catch (const SpatialTemporalException &ex) {
                         return printExceptionMessage(ex.rawMessage());
                     }
@@ -236,7 +242,12 @@ namespace multiscale {
                 bool operator() (const FutureLogicPropertyAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
                     try {
-                        return evaluateFutureLogicProperty(primaryLogicProperty, lhsLogicProperty);
+                        return (
+                            evaluateTemporalLogicPropertyWithStartEndTimepoints(
+                                primaryLogicProperty,
+                                lhsLogicProperty
+                            )
+                        );
                     } catch (const SpatialTemporalException &ex) {
                         return printExceptionMessage(ex.rawMessage());
                     }
@@ -251,7 +262,12 @@ namespace multiscale {
                 bool operator() (const GlobalLogicPropertyAttribute &primaryLogicProperty,
                                  const T &lhsLogicProperty) const {
                     try {
-                        return evaluateGlobalLogicProperty(primaryLogicProperty, lhsLogicProperty);
+                        return (
+                            evaluateTemporalLogicPropertyWithStartEndTimepoints(
+                                primaryLogicProperty,
+                                lhsLogicProperty
+                            )
+                        );
                     } catch (const SpatialTemporalException &ex) {
                         return printExceptionMessage(ex.rawMessage());
                     }
@@ -295,8 +311,9 @@ namespace multiscale {
                  * \param lhsLogicProperty      The left hand side logic property
                  */
                 template <typename T>
-                bool evaluateTemporalNumericComparison(const TemporalNumericComparisonAttribute &comparisonAttribute,
-                                                      const T &lhsLogicProperty) const {
+                bool evaluateTemporalNumericComparison(const TemporalNumericComparisonAttribute
+                                                       &comparisonAttribute,
+                                                       const T &lhsLogicProperty) const {
                     double lhsNumericMeasure = evaluateTemporalNumericMeasure(
                                                    comparisonAttribute.lhsTemporalNumericMeasure,
                                                    trace
@@ -375,6 +392,9 @@ namespace multiscale {
                                                             const std::vector<double>
                                                             &rhsTemporalNumericCollectionValues,
                                                             double toleratedSimilarityDifference) const {
+                    // Check if the left-hand-side collection of temporal numeric values if similar to the
+                    // right-hand-side collection where the left-hand-side collection is always the collection
+                    // with less values
                     if (lhsTemporalNumericCollectionValues.size() < rhsTemporalNumericCollectionValues.size()) {
                         return isLhsSimilarToRhs(lhsTemporalNumericCollectionValues,
                                                  rhsTemporalNumericCollectionValues,
@@ -470,75 +490,127 @@ namespace multiscale {
                     return 0.0;
                 }
 
-                //! Evaluate the given UntilLogicPropertyAttribute
-                /*!
-                 * \param untilLogicProperty    The until logic property
+                //! Evaluate the given temporal logic property having start and end timepoints
+                /*! The considered temporal logic properties correspond to the Future, Global and Until
+                 *  temporal operators.
+                 *
+                 * \param temporalLogicProperty The given temporal logic property (corresponding to either the
+                 *                              Future, Global or Until temporal operator)
                  * \param lhsLogicProperty      The left hand side logic property
                  */
-                template <typename T>
-                bool evaluateUntilLogicProperty(const UntilLogicPropertyAttribute &untilLogicProperty,
-                                                const T &lhsLogicProperty) const {
-                    unsigned long startTime = untilLogicProperty.startTimepoint;
-                    unsigned long endTime   = untilLogicProperty.endTimepoint;
+                template <typename T, typename U>
+                bool evaluateTemporalLogicPropertyWithStartEndTimepoints(const T &temporalLogicProperty,
+                                                                         const U &lhsLogicProperty) const {
+                    unsigned long startTime = temporalLogicProperty.startTimepoint;
+                    unsigned long endTime   = temporalLogicProperty.endTimepoint;
 
-                    SpatialTemporalTrace traceCopy(trace);
+                    // Store the current begin timepoint index
+                    trace.storeSubTraceBeginIndex();
 
-                    for (unsigned long i = startTime; i <= endTime; i = traceCopy.nextTimePointValue()) {
-                         traceCopy.setSubTrace(i);
+                    // Evaluate the temporal logic property considering the provided start
+                    // and end timepoints
+                    bool evaluationResult
+                        = evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
+                              temporalLogicProperty, lhsLogicProperty, startTime, endTime
+                          );
 
-                        if (evaluate(untilLogicProperty.logicProperty, traceCopy)) {
-                            return evaluatePrecedingLogicProperties(startTime, i, lhsLogicProperty);
+                    // Restore the starting timepoint index to the immediately above stored value
+                    trace.restoreSubTraceBeginIndex();
+
+                    return evaluationResult;
+                }
+
+                //! Evaluate the given temporal logic property having start and end timepoints
+                /*! The considered temporal logic property corresponds to the Until temporal operator.
+                 *
+                 * \param temporalLogicProperty The given temporal logic property (corresponding to
+                 *                              the Until temporal operator)
+                 * \param lhsLogicProperty      The left hand side logic property
+                 */
+                template <typename U>
+                bool evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
+                    const UntilLogicPropertyAttribute &temporalLogicProperty, const U &lhsLogicProperty,
+                    unsigned long startTime, unsigned long endTime
+                ) const {
+                    // Retrieve the most recently stored begin timepoint index
+                    unsigned int beginIndexBeforeUntilLogicPropertyEvaluation
+                        = trace.getMostRecentlyStoredSubTraceBeginIndex();
+
+                    // Increment the considered starting timepoint index incrementally
+                    // for the given time interval
+                    for (unsigned long i = startTime; i <= endTime; i = trace.nextTimePointValue()) {
+                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
+
+                        // If the right hand side logic substatement of the until logic property
+                        // evaluates to true then evaluate the left-hand-side preceding logic properties
+                        if (evaluate(temporalLogicProperty.logicProperty, trace)) {
+                            return (
+                                evaluatePrecedingLogicProperties(
+                                    startTime,
+                                    i,
+                                    lhsLogicProperty,
+                                    beginIndexBeforeUntilLogicPropertyEvaluation
+                                )
+                            );
                         }
                     }
 
+                    // If no timepoint was found for which the Until logic property holds
+                    // then return false
                     return false;
                 }
 
-                //! Evaluate the given FutureLogicPropertyAttribute
-                /*!
-                 * \param futureLogicProperty   The future logic property
+                //! Evaluate the given temporal logic property having start and end timepoints
+                /*! The considered temporal logic property corresponds to the Future temporal operator.
+                 *
+                 * \param temporalLogicProperty The given temporal logic property (corresponding to
+                 *                              the Future temporal operator)
                  * \param lhsLogicProperty      The left hand side logic property
                  */
-                template <typename T>
-                bool evaluateFutureLogicProperty(const FutureLogicPropertyAttribute &futureLogicProperty,
-                                                 const T &lhsLogicProperty) const {
-                    unsigned long startTime = futureLogicProperty.startTimepoint;
-                    unsigned long endTime   = futureLogicProperty.endTimepoint;
+                template <typename U>
+                bool evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
+                    const FutureLogicPropertyAttribute &temporalLogicProperty, const U &lhsLogicProperty,
+                    unsigned long startTime, unsigned long endTime
+                ) const {
+                    // Increment the considered starting timepoint index incrementally
+                    // for the given time interval and check if the logic property evaluates to true
+                    for (unsigned long i = startTime; i <= endTime; i = trace.nextTimePointValue()) {
+                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
 
-                    SpatialTemporalTrace traceCopy(trace);
-
-                    for (unsigned long i = startTime; i <= endTime; i = traceCopy.nextTimePointValue()) {
-                        traceCopy.setSubTrace(i);
-
-                        if (evaluate(futureLogicProperty.logicProperty, traceCopy)) {
+                        if (evaluate(temporalLogicProperty.logicProperty, trace)) {
                             return true;
                         }
                     }
 
+                    // If no timepoint was found for which the Future logic property holds
+                    // then return false
                     return false;
                 }
 
-                //! Evaluate the given GlobalLogicPropertyAttribute
-                /*!
-                 * \param globalLogicProperty   The global logic property
+                //! Evaluate the given temporal logic property having start and end timepoints
+                /*! The considered temporal logic property corresponds to the Global temporal operator.
+                 *
+                 * \param temporalLogicProperty The given temporal logic property (corresponding to
+                 *                              the Global temporal operator)
                  * \param lhsLogicProperty      The left hand side logic property
                  */
-                template <typename T>
-                bool evaluateGlobalLogicProperty(const GlobalLogicPropertyAttribute &globalLogicProperty,
-                                                 const T &lhsLogicProperty) const {
-                    unsigned long startTime = globalLogicProperty.startTimepoint;
-                    unsigned long endTime   = globalLogicProperty.endTimepoint;
+                template <typename U>
+                bool evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
+                    const GlobalLogicPropertyAttribute &temporalLogicProperty, const U &lhsLogicProperty,
+                    unsigned long startTime, unsigned long endTime
+                ) const {
+                    // Increment the considered starting timepoint index incrementally
+                    // for the given time interval and check if the logic property evaluates to false
+                    for (unsigned long i = startTime; i <= endTime; i = trace.nextTimePointValue()) {
+                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
 
-                    SpatialTemporalTrace traceCopy(trace);
-
-                    for (unsigned long i = startTime; i <= endTime; i = traceCopy.nextTimePointValue()) {
-                        traceCopy.setSubTrace(i);
-
-                        if (!evaluate(globalLogicProperty.logicProperty, traceCopy)) {
+                        if (!evaluate(temporalLogicProperty.logicProperty, trace)) {
                             return false;
                         }
                     }
 
+                    // If no timepoint was found for which the Global logic property does not hold
+                    // then return true
                     return true;
                 }
 
@@ -574,9 +646,20 @@ namespace multiscale {
                 template <typename T>
                 bool evaluateNextKLogicProperty(const LogicPropertyAttributeType &logicProperty,
                                                 const T &lhsLogicProperty, unsigned long kValue) const {
-                    SpatialTemporalTrace subTrace(trace.subTrace(kValue));
+                    // Store the current begin timepoint index
+                    trace.storeSubTraceBeginIndex();
 
-                    return evaluate(logicProperty, subTrace);
+                    // Advance the trace begin index with the value kValue
+                    trace.advanceTraceBeginIndex(kValue);
+
+                    // Evaluate the logic property
+                    bool evaluationResult = evaluate(logicProperty, trace);
+
+                    // Restore the starting timepoint index to the immediately above stored value
+                    trace.restoreSubTraceBeginIndex();
+
+                    // Return the evaluation result
+                    return evaluationResult;
                 }
 
                 //! Evaluate the logic property considering the given spatial temporal trace
@@ -585,7 +668,7 @@ namespace multiscale {
                  * \param trace         The given spatial temporal trace
                  */
                 bool evaluate(const LogicPropertyAttributeType &logicProperty,
-                              const SpatialTemporalTrace &trace) const {
+                              SpatialTemporalTrace &trace) const {
                     return boost::apply_visitor(LogicPropertyVisitor(trace, typeSemanticsTable),
                                                 logicProperty, evaluationLogicProperty);
                 }
@@ -596,7 +679,7 @@ namespace multiscale {
                  * \param trace                 The given spatial temporal trace
                  */
                 bool evaluate(const PrimaryLogicPropertyAttributeType &primaryLogicProperty,
-                              const SpatialTemporalTrace &trace) const {
+                              SpatialTemporalTrace &trace) const {
                     return boost::apply_visitor(
                         LogicPropertyVisitor(trace, typeSemanticsTable),
                         primaryLogicProperty,
@@ -613,8 +696,10 @@ namespace multiscale {
                  * \param truthValue    The given truth value
                  */
                 bool evaluateNextLogicProperties(const LogicPropertyAttribute &logicProperty, bool truthValue) const {
+                    // Create a vector in which all preceding logic properties are stored
                     std::vector<LogicPropertyAttributeType> precedingEvaluationLogicProperties;
 
+                    // Evaluate each succeeding logic property
                     for (const auto &nextLogicProperty : logicProperty.nextLogicProperties) {
                         LogicPropertyAttributeType precedingEvaluationLogicProperty(
                             constructEvaluationLogicProperty(
@@ -623,9 +708,11 @@ namespace multiscale {
                             )
                         );
 
+                        // Evaluate the logic property
                         truthValue = boost::apply_visitor(LogicPropertyVisitor(trace, typeSemanticsTable, truthValue),
                                                           nextLogicProperty, precedingEvaluationLogicProperty);
 
+                        // Add the evaluated logic property to the preceding logic properties collection
                         precedingEvaluationLogicProperties.push_back(nextLogicProperty);
                     }
 
@@ -650,19 +737,28 @@ namespace multiscale {
 
                 //! Evaluate the preceding logic properties considering the interval [startTime, endTime)
                 /*!
+                 * Precondition: The
+                 *
                  * \param startTime                 The considered start time value
                  * \param endTime                   The considered end time value (exclusive)
                  * \param precedingLogicProperties  The preceding logic properties
+                 * \param initialTraceBeginIndex    The initial trace begin index value which should be set
+                 *                                  before starting to evaluate the preceding logic properties
                  */
                 bool evaluatePrecedingLogicProperties(unsigned long startTime, unsigned long endTime,
                                                       const LogicPropertyAttributeType
-                                                      &precedingLogicProperties) const {
-                    SpatialTemporalTrace traceCopy(trace);
+                                                      &precedingLogicProperties,
+                                                      unsigned int initialTraceBeginIndex) const {
+                    // Set the trace begin index to the value which was considered immediately
+                    // before starting the evaluation of the "Until" logic property
+                    trace.setTraceBeginIndex(initialTraceBeginIndex);
 
-                    for (unsigned long i = startTime; i < endTime; i = traceCopy.nextTimePointValue()) {
-                        traceCopy.setSubTrace(i);
+                    // Increment the considered starting timepoint index incrementally
+                    // for the given time interval
+                    for (unsigned long i = startTime; i < endTime; i = trace.nextTimePointValue()) {
+                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
 
-                        if (!evaluate(precedingLogicProperties, traceCopy)) {
+                        if (!evaluate(precedingLogicProperties, trace)) {
                             return false;
                         }
                     }
@@ -677,14 +773,25 @@ namespace multiscale {
                  * \param timePointIndex            The index of the considered starting timepoint from the trace
                  */
                 double evaluateTemporalNumericMeasure(const TemporalNumericMeasureType &temporalNumericMeasure,
-                                                      const SpatialTemporalTrace &trace,
+                                                      SpatialTemporalTrace &trace,
                                                       unsigned int timePointIndex = 0) const {
-                    SpatialTemporalTrace subTrace(trace.subTrace(timePointIndex));
+                    // Store the current begin timepoint index
+                    trace.storeSubTraceBeginIndex();
 
-                    return (
-                        boost::apply_visitor(TemporalNumericVisitor(subTrace, typeSemanticsTable),
-                                             temporalNumericMeasure)
-                    );
+                    // Advance the trace begin index with the value kValue
+                    trace.advanceTraceBeginIndex(timePointIndex);
+
+                    // Evaluate the logic property
+                    double evaluationResult = boost::apply_visitor(
+                                                  TemporalNumericVisitor(trace, typeSemanticsTable),
+                                                  temporalNumericMeasure
+                                              );
+
+                    // Restore the starting timepoint index to the immediately above stored value
+                    trace.restoreSubTraceBeginIndex();
+
+                    // Return the evaluation result
+                    return evaluationResult;
                 }
 
                 //! Print a warning message regarding the exception and return false

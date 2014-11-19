@@ -18,7 +18,11 @@ bool ProbabilisticLogicPropertyAttribute::evaluate(const SpatialTemporalTrace &t
         MS_throw(SpatialTemporalException, ERR_TRACE_LENGTH_ZERO);
     }
 
-    return boost::apply_visitor(LogicPropertyVisitor(trace, typeSemanticsTable),
+    // Create a copy of the spatial-temporal trace
+    SpatialTemporalTrace traceCopy(trace);
+
+    // Pass the copy of the spatial-temporal trace to the LogicPropertyVisitor
+    return boost::apply_visitor(LogicPropertyVisitor(traceCopy, typeSemanticsTable),
                                 logicProperty, evaluationLogicProperty);
 }
 
