@@ -4,6 +4,10 @@
 #include "multiscale/verification/spatial-temporal/handler/UnexpectedTokenErrorHandler.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SemanticTypeGrammar.hpp"
 
+#include <boost/config/warning_disable.hpp>
+#include <boost/spirit/include/qi.hpp>
+#include <boost/spirit/include/phoenix_function.hpp>
+
 #include <string>
 
 
