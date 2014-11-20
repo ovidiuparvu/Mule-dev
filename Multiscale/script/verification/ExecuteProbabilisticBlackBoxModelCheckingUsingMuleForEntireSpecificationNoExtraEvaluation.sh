@@ -89,13 +89,9 @@ do
 
         # Get the specific information of interest
         modelCheckerExecutionId=${i};
-        modelCheckingResult=`cat ${pblmstlStatementsNthResults} | egrep "\[ RESULT   \] The logic property holds: .*" | egrep -o "[^ ]+$"`;
-        nrOfEvaluatedTraces=`cat ${pblmstlStatementsNthResults} | tail -n3 | head -n1 | egrep -o "[0-9]+/[0-9]+" | cut -d"/" -f2`;
-        nrOfTracesEvaluatedTrue=`cat ${pblmstlStatementsNthResults} | tail -n3 | head -n1 | egrep -o "[0-9]+/[0-9]+" | cut -d"/" -f1`;
-        nrOfTracesEvaluatedFalse=$((${nrOfEvaluatedTraces} - ${nrOfTracesEvaluatedTrue}));
         executionTime=`cat ${pblmstlStatementsNthResults} | tail -n1`;
 
         # Output summary results to the centralised results file
-        echo "${modelCheckerExecutionId} ${modelCheckingResult} ${nrOfEvaluatedTraces} ${nrOfTracesEvaluatedTrue} ${nrOfTracesEvaluatedFalse} ${executionTime}" >> ${pblmstlStatementsResults};
+        echo "${modelCheckerExecutionId} ${executionTime}" >> ${pblmstlStatementsResults};
     done
 done

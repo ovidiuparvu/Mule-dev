@@ -59,7 +59,7 @@ muleTypeSpecificParameters="--basyesian-alpha 1 --bayesian-beta 1 --bayesian-fac
 mkdir -p ${outputFolder};
 
 # Run the model checker for each PBLSTL statement input file and record results
-for pblmstlStatementsFile in `find ${pblmstlStatementsInputFolder} -type f`; 
+for pblmstlStatementsFile in `find ${pblmstlStatementsInputFolder} -maxdepth 1 -type f`; 
 do
     # Inform the user about which PBLMSTL statements input file is evaluated
     echo "Evaluating ${pblmstlStatementsFile}...";
