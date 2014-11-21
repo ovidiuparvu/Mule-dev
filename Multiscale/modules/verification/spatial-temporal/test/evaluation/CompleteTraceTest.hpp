@@ -508,7 +508,7 @@ TEST_F(CompleteTraceTest, FilterNumericMeasure) {
 /////////////////////////////////////////////////////////
 
 TEST_F(CompleteTraceTest, FilterSubset) {
-    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness >= " + StringManipulator::toString<double>(clustersClusterednessMinValue) + "))) = 1]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness >= 0))) = 1]"));
 }
 
 
