@@ -193,13 +193,13 @@ function GenerateNumericTemporaryMSTMLSubfile() {
     # Add the contents to the MSTML subfile
     echo "${numericStateVariableValues}" | while read numericStateVariableValue;
     do
-        echo -e "\t<timepoint>" >> ${outputFilepath};
-        echo -e "\t\t<numericStateVariable semanticType=\"$4\">" >> ${outputFilepath};
-        echo -e "\t\t\t<name>${numericStateVariableName}</name>" >> ${outputFilepath};
-        echo -e "\t\t\t<value>${numericStateVariableValue}</value>" >> ${outputFilepath};
-        echo -e "\t\t</numericStateVariable>" >> ${outputFilepath};
-        echo -e "\t</timepoint>" >> ${outputFilepath};
-    done;
+        echo -e "\t<timepoint>";
+        echo -e "\t\t<numericStateVariable semanticType=\"$4\">";
+        echo -e "\t\t\t<name>${numericStateVariableName}</name>";
+        echo -e "\t\t\t<value>${numericStateVariableValue}</value>";
+        echo -e "\t\t</numericStateVariable>";
+        echo -e "\t</timepoint>";
+    done >> ${outputFilepath};
     
     # Add footer information to the MSTML subfile
     echo "</experiment>" >> ${outputFilepath};

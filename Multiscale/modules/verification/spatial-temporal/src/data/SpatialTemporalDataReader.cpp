@@ -183,7 +183,7 @@ SpatialTemporalDataReader::timePointHasValue(const pt::ptree &propertyTree, unsi
 
 void
 SpatialTemporalDataReader::addEntitiesToTimePoint(const pt::ptree &timePointTree,
-                                                  TimePoint &timePoint) {
+                                                       TimePoint &timePoint) {
     for (const auto &entityTree : timePointTree) {
         if (entityTree.first.compare(LABEL_NUMERIC_STATE_VARIABLE) == 0) {
             addNumericStateVariableToTimePoint(entityTree.second, timePoint);
