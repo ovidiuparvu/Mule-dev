@@ -40,6 +40,12 @@ OUT_EXECUTION_TIME_FOLDER="log/execution_time";
 OUT_MSTML_FOLDER="mstml";
 OUT_MSTML_SUBFILES_TMP_FOLDER="${OUT_MSTML_FOLDER}/tmp";
 
+# Detection and analysis constants
+DETECTION_AND_ANALYSIS_CONFIG_FOLDER="config/analysis/spatial";
+
+CLUSTER_DETECTION_AND_ANALYSIS_CONFIG_FILE="${DETECTION_AND_ANALYSIS_CONFIG_FOLDER}/simulation_cluster_detector.xml";
+RECTANGULAR_REGION_DETECTION_AND_ANALYSIS_CONFIG_FILE="${DETECTION_AND_ANALYSIS_CONFIG_FOLDER}/rectangular_region_detector.xml";
+
 # MSTML constants
 LINES_BEFORE_TIMEPOINT_CONTENT=3;
 LINES_AFTER_TIMEPOINT_CONTENT=1;
@@ -50,8 +56,8 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 # Simulation output analysis specification
 #
 # This specification is used to determine which columns from the processed 
-# simulation output file should be (analysed and) included in the resulting 
-# MSTML file.
+# simulation output file should be included in the resulting MSTML file and how
+# they should be analysed.
 #
 # The specification format depends on the considered state variable type as 
 # follows:
@@ -81,6 +87,11 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 #                                   discretised space
 #       <semantic-type>             represents the semantic type of the spatial
 #                                   state variable
+#       <max-neighbours-distance>   represents the maximum distance between
+#                                   two neighbouring points
+#       <min-neighbours-in-cluster> represents the minimum number of 
+#                                   neighbouring points required to build a
+#                                   cluster
 #
 #   + Region:   Region <start-column> <stop-column> <simulation-grid-height> 
 #               <simulation-grid-width> <nr-of-concentrations> <semantic-type>, 
@@ -98,8 +109,30 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 #                                   discretised space
 #       <semantic-type>             represents the semantic type of the spatial
 #                                   state variable
+#       <alpha>                     represents the value by which the contrast
+#                                   of the image corresponding to the 
+#                                   discretised space is changed 
+#       <beta>                      represents the value by which the 
+#                                   brightness of the image corresponding to 
+#                                   the discretised space is changed
+#       <blur-kernel-size>          represents the size of the kernel applied
+#                                   during the blur operation
+#       <morphological-close-iter>  represents the number of times the 
+#                                   morphological close operation is applied
+#       <epsilon>                   represents the approximation degree of the
+#                                   polygon constructed from the contour of the
+#                                   region
+#       <region-area-thresh>        represents the threshold value above which 
+#                                   the area of a region has to be in order to 
+#                                   be considered
+#       <threshold-value>           represents the threshold value above which
+#                                   the intensity of a position in the 
+#                                   discretised space has to be in order to be 
+#                                   considered
+#                                   
 #
-# TODO: Update MSTML generation specification relative to the considered case study
+# TODO: Update MSTML generation specification relative to the considered case 
+#       study
 #
 ###############################################################################
 
@@ -130,21 +163,27 @@ Numeric 9 OrganSystem.Cardiovascular
 #
 # TODO: Update case study-specific instructions accordingly
 function SimulateModel() {
+    # Initialisation
+    local rawSimulationOutputPath=$1;
+    local simulationLogOutputPath=$2;
+    local executionTimeLogOutputPath=$3;
+
     # Inform user where the simulation output is stored
-    echo "Simulating ${MODEL_INPUT_FILE} and storing simulation output in $1...";
+    echo "Simulating ${MODEL_INPUT_FILE} and storing simulation output in ${rawSimulationOutputPath}...";
 
     # Record execution start time
     local startTime=$(date +%s.%N);
     
     # Run a simulation of the model
-    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} ${JSIMHOME}/linux/bin/jsbatch -f ${MODEL_INPUT_FILE} -ofmt csv -out $1 1>$2 2>&1;
+    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} ${JSIMHOME}/linux/bin/jsbatch -f ${MODEL_INPUT_FILE} -ofmt csv -out ${rawSimulationOutputPath} 1>${simulationLogOutputPath} 2>&1;
     
     # Record execution stop time
     local stopTime=$(date +%s.%N);
     
     # Print the execution time to file
-    echo "Model simulation execution time:" $(echo "${stopTime} - ${startTime}" | bc) "seconds." >> $3;
+    echo "Model simulation execution time:" $(echo "${stopTime} - ${startTime}" | bc) "seconds." >> ${executionTimeLogOutputPath};
 }
+
 
 # Convert the simulation output to csv
 #
@@ -155,20 +194,25 @@ function SimulateModel() {
 #
 # TODO: Update case study-specific instructions accordingly
 function ConvertModelSimulationOutputToCsv() {
+    # Initialisation
+    local rawSimulationOutputPath=$1;
+    local processedSimulationOutputPath=$2;
+    local executionTimeLogOutputPath=$3;
+
     # Inform the user where the converted simulation output is stored
-    echo "Converting the simulation output from raw ($1) to csv format ($2)...";
+    echo "Converting the simulation output from raw (${rawSimulationOutputPath}) to csv format (${processedSimulationOutputPath})...";
 
     # Record execution start time
     local startTime=$(date +%s.%N);
     
     # Convert the simulation output to csv format
-    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} cat $1 | cut -d"," -f1,109,112,119,121,122,123,125,126 | awk --field-separator="," '/^[0-9.,]+/ { time=($1 * 1000); sub("[0-9E.]+", "", $0); print time $0; } /^time/ { print $0; }' > $2;
+    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} cat ${rawSimulationOutputPath} | cut -d"," -f1,109,112,119,121,122,123,125,126 | awk --field-separator="," '/^[0-9.,]+/ { time=($1 * 1000); sub("[0-9E.]+", "", $0); print time $0; } /^time/ { print $0; }' > ${processedSimulationOutputPath};
     
     # Record execution stop time
     local stopTime=$(date +%s.%N);
     
     # Print the execution time to file
-    echo "Simulation output conversion to csv format execution time:" $(echo "${stopTime} - ${startTime}" | bc) "seconds." >> $3;
+    echo "Simulation output conversion to csv format execution time:" $(echo "${stopTime} - ${startTime}" | bc) "seconds." >> ${executionTimeLogOutputPath};
 }
 
 
@@ -181,9 +225,14 @@ function ConvertModelSimulationOutputToCsv() {
 #   $4 - The semantic type of the numeric state variable
 function GenerateNumericTemporaryMSTMLSubfile() {
     # Initialisation
-    numericStateVariableName=$(cat $2 | head -n1 | cut -d"," -f $3);
-    numericStateVariableValues=$(cat $2 | tail -n+2 | cut -d"," -f $3);
-    outputFilepath="$1/Numeric_$4_${numericStateVariableName}.xml";
+    local temporaryMSTMLSubfilesFolderPath=$1;
+    local processedSimulationOutputPath=$2;
+    local numericStateVariableColumnIndex=$3;
+    local numericStateVariableSemanticType=$4;
+
+    local numericStateVariableName=$(cat ${processedSimulationOutputPath} | head -n1 | cut -d"," -f ${numericStateVariableColumnIndex});
+    local numericStateVariableValues=$(cat ${processedSimulationOutputPath} | tail -n+2 | cut -d"," -f ${numericStateVariableColumnIndex});
+    local outputFilepath="${temporaryMSTMLSubfilesFolderPath}/Numeric_${numericStateVariableSemanticType}_${numericStateVariableName}.xml";
 
     # Add header information to the MSTML subfile
     echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>" > ${outputFilepath};
@@ -194,7 +243,7 @@ function GenerateNumericTemporaryMSTMLSubfile() {
     echo "${numericStateVariableValues}" | while read numericStateVariableValue;
     do
         echo -e "\t<timepoint>";
-        echo -e "\t\t<numericStateVariable semanticType=\"$4\">";
+        echo -e "\t\t<numericStateVariable semanticType=\"${numericStateVariableSemanticType}\">";
         echo -e "\t\t\t<name>${numericStateVariableName}</name>";
         echo -e "\t\t\t<value>${numericStateVariableValue}</value>";
         echo -e "\t\t</numericStateVariable>";
@@ -209,34 +258,62 @@ function GenerateNumericTemporaryMSTMLSubfile() {
 export -f GenerateNumericTemporaryMSTMLSubfile 
 
 
+# Update the cluster detection configuration file with the provided values 
+#
+# Function parameters:
+#   $1 - The maximum distance between two neighbouring points
+#   $2 - The minimum number of neighbouring points in a cluster
+function UpdateClusterDetectionConfigurationFile() {
+    # Initialisation
+    local maxDistanceBtwNeighouringPoints=$1;
+    local minNrOfNeighbouringPointsInCluster=$2;
+
+    # Create a temporary configuration file
+    temporaryDetectionConfigurationFile=$(mktemp);
+
+    # Store the updated configuration in the temporary file
+    cat ${CLUSTER_DETECTION_AND_ANALYSIS_CONFIG_FILE} | sed "s/\(<eps>\)[0-9]\+.\?[0-9]*\(<\/eps>\)/\1${maxDistanceBtwNeighouringPoints}\2/g" | sed "s/\(<minPoints>\)[0-9]\+.\?[0-9]*\(<\/minPoints>\)/\1${minNrOfNeighbouringPointsInCluster}\2/g" > ${temporaryDetectionConfigurationFile};
+
+    # Replace the initial configuration file with the temporary file
+    mv ${temporaryDetectionConfigurationFile} ${CLUSTER_DETECTION_AND_ANALYSIS_CONFIG_FILE};
+}
+
+
 # Generate a temporary MSTML subfile corresponding to a cluster
 #
-# Function parameters
+# Function parameters:
 #   $1 - The temporary MSTML subfiles folder
 #   $2 - Processed simulation output file path
-#   $3 - Index of the start column recording values corresponding to potential clusters
-#   $4 - Index of the stop column recording values corresponding to potential clusters
+#   $3 - Index of the start column recording values corresponding to potential 
+#        clusters
+#   $4 - Index of the stop column recording values corresponding to potential 
+#        clusters
 #   $5 - The height (number of rows) of the discretised spatial domain
 #   $6 - The width (number of columns) of the discretised spatial domain
-#   $7 - The number of entities which are tracked by their position in the discretised spatial domain
+#   $7 - The number of entities which are tracked by their position in the 
+#        discretised spatial domain
 #   $8 - The maximum number of entities which can pile up on top of each other
 #   $9 - The semantic type of the cluster state variable
 function GenerateClusterTemporaryMSTMLSubfile() {
     # Initialisation
+    local temporaryMSTMLSubfilesFolderPath=$1;
+    local processedSimulationOutputPath=$2;
+    local clustersStartColumnIndex=$3;
+    local clustersStopColumnIndex=$4;
     local simulationGridHeight=$5;
     local simulationGridWidth=$6;
     local nrOfEntities=$7;
     local maxPileup=$8;
-    local semanticType=$9;
+    local clustersSemanticType=$9;
 
-    local stmlOutputPath="$1/Cluster_${semanticType}";
+    local mstmlOutputPath="${temporaryMSTMLSubfilesFolderPath}/Cluster_${clustersSemanticType}.xml";
 
     local HOME_FOLDER=$(pwd);
 
-    local INPUT_FILENAME=${2##*/};
+    local INPUT_FILENAME=${processedSimulationOutputPath##*/};
     local INPUT_BASENAME=${INPUT_FILENAME%.*};
 
-    local OUT_FOLDER="${HOME_FOLDER}/results/${INPUT_BASENAME}/cluster";
+    local OUT_FOLDER="${HOME_FOLDER}/results/${INPUT_BASENAME}/cluster_${clustersSemanticType}";
 
     local OUT_ANALYSIS_FOLDER="${OUT_FOLDER}/analysis";
 
@@ -258,7 +335,7 @@ function GenerateClusterTemporaryMSTMLSubfile() {
     local simulationInputFile=$(mktemp);
 
     # Add the values to the temporary file
-    cat $2 | tail -n+2 | cut -d"," -f$3-$4 > ${simulationInputFile};
+    cat ${processedSimulationOutputPath} | cut -d"," -f1,${clustersStartColumnIndex}-${clustersStopColumnIndex} > ${simulationInputFile};
 
 
     ####################################################################################
@@ -271,7 +348,7 @@ function GenerateClusterTemporaryMSTMLSubfile() {
     # Run the program for converting the ".csv" file to "Number of time points" input files for the MapCartesianToScript program
     bin/RectangularMapEntityCsvToInputFiles --input-file "${OUT_INPUT_FOLDER}/${INPUT_BASENAME}" --nr-entities ${nrOfEntities} --max-pileup ${maxPileup} --height ${simulationGridHeight} --width ${simulationGridWidth} --output-file "${OUT_INPUT_FOLDER}/${INPUT_BASENAME}";
 
-    # Run the MapCartesianToScript for converting each of the generated input files into gnuplot scripts
+    # Run MapCartesianToScript for converting each of the generated input files into gnuplot scripts
     find ${OUT_INPUT_FOLDER} -name "*.in" | parallel bin/MapCartesianToScript --input-file {} --output-file ${OUT_SCRIPT_FOLDER}/{/.};
 
     # Run gnuplot on each of the generated scripts from the script folder and ignore warnings
@@ -286,12 +363,6 @@ function GenerateClusterTemporaryMSTMLSubfile() {
     # Step 2: Analyse images of entities
     ####################################################################################
 
-    # Define the results output files
-    local clustersOutputFile=${OUT_ANALYSIS_FOLDER}/"results_clusters";
-    local nrOfClustersOutputFile=${OUT_ANALYSIS_FOLDER}/"results_nr_clusters";
-    local clustersClusterednessOutputFile=${OUT_ANALYSIS_FOLDER}/"results_clusteredness";
-    local clustersPileupOutputFile=${OUT_ANALYSIS_FOLDER}/"results_pileup";
-
     # Define the basename of the images without numeric index at the end
     local imageName=$(find ${OUT_IMG_FOLDER} -name "*.png" | head -n1);
     local imageBasename=$(basename ${imageName});
@@ -299,23 +370,6 @@ function GenerateClusterTemporaryMSTMLSubfile() {
 
     # Run the cluster detection procedure for each image in parallel
     ls ${OUT_IMG_FOLDER}/*.png | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${OUT_ANALYSIS_FOLDER}/{/.} --height=${simulationGridHeight} --width=${simulationGridWidth} --max-pileup=${maxPileup} --debug-mode="false"
-
-    # Empty files which will store final results
-    echo "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${clustersOutputFile};
-    echo "Number of regions" > ${nrOfClustersOutputFile};
-    echo "Clusteredness" > ${clustersClusterednessOutputFile};
-    echo "Pile up" > ${clustersPileupOutputFile};
-
-    # Write the clusters, number of clusters, overall clusteredness and overall pileup in separate files
-    for output in $(ls -1v ${OUT_ANALYSIS_FOLDER}/*.out);
-    do
-        cat ${output} | head -n-3 | tail -n+2 >> ${clustersOutputFile};
-        cat ${output} | head -n-3 | tail -n+2 | wc -l >> ${nrOfClustersOutputFile}
-
-        cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | head -n 1 >> ${clustersClusterednessOutputFile};
-
-        cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | tail -n 1 >> ${clustersPileupOutputFile};
-    done
 
     # Define the variables required to merge the xml files
     local clustersXMLOutputPath=${OUT_ANALYSIS_FOLDER}/"results_clusters.xml";
@@ -333,21 +387,57 @@ function GenerateClusterTemporaryMSTMLSubfile() {
         # Process each input file
         for file in $(find ${OUT_ANALYSIS_FOLDER} -name "${imageBasenameRoot}*.xml" | sort -V);
         do
-            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"cluster\"\)/\0 semanticType=\"${semanticType}\"/g" >> ${clustersXMLOutputPath};
-        done 
+            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"cluster\"\)/\0 semanticType=\"${clustersSemanticType}\"/g"; 
+        done >> ${clustersXMLOutputPath};
 
         # Print the footer to the resulting file
         cat ${sampleFilePath} | tail -n ${LINES_AFTER_TIMEPOINT_CONTENT} >> ${clustersXMLOutputPath};
     fi
 
     # Copy the resulting file where indicated
-    cp ${clustersXMLOutputPath} ${stmlOutputPath}; 
+    cp ${clustersXMLOutputPath} ${mstmlOutputPath}; 
+}
+
+
+# Update the region detection configuration file with the provided values 
+#
+# Function parameters:
+#   $1 - The value by which the contrast of the image corresponding to the
+#        discretised space is changed
+#   $2 - The value by which the brightness of the image corresponding to 
+#        the discretised space is changed
+#   $3 - The size of the kernel employed during the blur operation
+#   $4 - The number of times the morphological close operation is applied
+#   $5 - The degree of approximation employed during the construction
+#        of the polygon corresponding to the regions contours
+#   $6 - The threshold value above which the area of a region has to be
+#        in order to be considered
+#   $7 - The threshold value above which the intensity of each position in
+#        the discretised space has to be in order to be considered
+function UpdateRegionDetectionConfigurationFile() {
+    # Initialisation
+    local contrastChangingValue=$1;
+    local brightnessChangingValue=$2;
+    local blurKernelSize=$3;
+    local morphologicalCloseIterations=$4;
+    local polygonConstructionApproximationDegree=$5;
+    local regionAreaThresholdValue=$6;
+    local positionIntensityThresholdValue=$7;
+
+    # Create a temporary configuration file
+    temporaryDetectionConfigurationFile=$(mktemp);
+
+    # Store the updated configuration in the temporary file
+    cat ${RECTANGULAR_REGION_DETECTION_AND_ANALYSIS_CONFIG_FILE} | sed "s/\(<alpha>\)[0-9]\+.\?[0-9]*\(<\/alpha>\)/\1${contrastChangingValue}\2/g" | sed "s/\(<beta>\)[0-9]\+.\?[0-9]*\(<\/beta>\)/\1${brightnessChangingValue}\2/g" | sed "s/\(<blurKernelSize>\)[0-9]\+.\?[0-9]*\(<\/blurKernelSize>\)/\1${blurKernelSize}\2/g" | sed "s/\(<morphologicalCloseIterations>\)[0-9]\+.\?[0-9]*\(<\/morphologicalCloseIterations>\)/\1${morphologicalCloseIterations}\2/g" | sed "s/\(<epsilon>\)[0-9]\+.\?[0-9]*\(<\/epsilon>\)/\1${polygonConstructionApproximationDegree}\2/g" | sed "s/\(<regionAreaThresh>\)[0-9]\+.\?[0-9]*\(<\/regionAreaThresh>\)/\1${regionAreaThresholdValue}\2/g" | sed "s/\(<thresholdValue>\)[0-9]\+.\?[0-9]*\(<\/thresholdValue>\)/\1${positionIntensityThresholdValue}\2/g" > ${temporaryDetectionConfigurationFile};
+
+    # Replace the initial configuration file with the temporary file
+    mv ${temporaryDetectionConfigurationFile} ${RECTANGULAR_REGION_DETECTION_AND_ANALYSIS_CONFIG_FILE};
 }
 
 
 # Generate a temporary MSTML subfile corresponding to a region
 #
-# Function parameters
+# Function parameters:
 #   $1 - The temporary MSTML subfiles folder
 #   $2 - Processed simulation output file path
 #   $3 - Index of the start column recording values corresponding to potential regions
@@ -358,19 +448,23 @@ function GenerateClusterTemporaryMSTMLSubfile() {
 #   $8 - The semantic type of the region state variable
 function GenerateRegionTemporaryMSTMLSubfile() {
     # Initialisation
+    local temporaryMSTMLSubfilesFolderPath=$1;
+    local processedSimulationOutputPath=$2;
+    local regionsStartColumnIndex=$3;
+    local regionsStopColumnIndex=$4;
     local simulationGridHeight=$5;
     local simulationGridWidth=$6;
     local nrOfConcentrationsForEachPosition=$7;
-    local semanticType=$8;
+    local regionsSemanticType=$8;
 
-    local stmlOutputPath="$1/Region_${semanticType}";
+    local mstmlOutputPath="${temporaryMSTMLSubfilesFolderPath}/Region_${regionsSemanticType}.xml";
 
     local HOME_FOLDER=$(pwd);
 
-    local INPUT_FILENAME=${2##*/};
+    local INPUT_FILENAME=${processedSimulationOutputPath##*/};
     local INPUT_BASENAME=${INPUT_FILENAME%.*};
 
-    local OUT_FOLDER="${HOME_FOLDER}/results/${INPUT_BASENAME}/region";
+    local OUT_FOLDER="${HOME_FOLDER}/results/${INPUT_BASENAME}/region_${regionsSemanticType}";
 
     local OUT_ANALYSIS_FOLDER="${OUT_FOLDER}/analysis";
 
@@ -393,7 +487,7 @@ function GenerateRegionTemporaryMSTMLSubfile() {
     local simulationInputFile=$(mktemp);
 
     # Add the values to the temporary file
-    cat $2 | tail -n+2 | cut -d"," -f$3-$4 > ${simulationInputFile};
+    cat ${processedSimulationOutputPath} | cut -d"," -f1,${regionsStartColumnIndex}-${regionsStopColumnIndex} > ${simulationInputFile};
 
 
     ####################################################################################
@@ -406,7 +500,7 @@ function GenerateRegionTemporaryMSTMLSubfile() {
     # Run the program for converting the ".csv" file to "Number of time points" input files for the MapCartesianToScript program
     bin/RectangularMapCsvToInputFiles --input-file "${OUT_INPUT_FOLDER}/${INPUT_BASENAME}" --nr-concentrations-position ${nrOfConcentrationsForEachPosition} --height ${simulationGridHeight} --width ${simulationGridWidth} --output-file "${OUT_INPUT_FOLDER}/${INPUT_BASENAME}";
 
-    # Run the MapCartesianToScript for converting each of the generated input files into gnuplot scripts
+    # Run MapCartesianToScript for converting each of the generated input files into gnuplot scripts
     find ${OUT_INPUT_FOLDER} -name "*.in" | parallel bin/MapCartesianToScript --input-file {} --output-file ${OUT_SCRIPT_FOLDER}/{/.};
 
     # Run gnuplot on each of the generated scripts from the script folder and ignore warnings
@@ -421,12 +515,6 @@ function GenerateRegionTemporaryMSTMLSubfile() {
     # Step 2: Analyse images of regions
     ####################################################################################
 
-    # Define the results output files
-    local regionsOutputFile=${OUT_ANALYSIS_FOLDER}/"results_regions";
-    local nrOfRegionsOutputFile=${OUT_ANALYSIS_FOLDER}/"results_nr_regions";
-    local regionsClusterednessOutputFile=${OUT_ANALYSIS_FOLDER}/"results_clusteredness";
-    local regionsPileupOutputFile=${OUT_ANALYSIS_FOLDER}/"results_pileup";
-
     # Define the basename of the images without numeric index at the end
     local imageName=$(find ${OUT_IMG_FOLDER} -name "*.png" | head -n1);
     local imageBasename=$(basename ${imageName});
@@ -434,23 +522,6 @@ function GenerateRegionTemporaryMSTMLSubfile() {
 
     # Run the region detection procedure for each image in parallel
     ls ${OUT_IMG_FOLDER}/*.png | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${OUT_ANALYSIS_FOLDER}/{/.} --debug-mode="false"
-
-    # Empty files which will store final results
-    echo "Clusteredness degree,Density,Area,Perimeter,Distance from origin,Angle(degrees),Shape,Triangle measure,Rectangle measure,Circle measure,Centre (x-coord),Centre (y-coord)" > ${regionsOutputFile};
-    echo "Number of regions" > ${nrOfRegionsOutputFile};
-    echo "Clusteredness" > ${regionsClusterednessOutputFile};
-    echo "Pile up" > ${regionsPileupOutputFile};
-
-    # Write the regions, number of regions, overall clusteredness and overall pileup in separate files
-    for output in $(ls -1v ${OUT_ANALYSIS_FOLDER}/*.out);
-    do
-        cat ${output} | head -n-3 | tail -n+2 >> ${regionsOutputFile};
-        cat ${output} | head -n-3 | tail -n+2 | wc -l >> ${nrOfRegionsOutputFile}
-
-        cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | head -n 1 >> ${regionsClusterednessOutputFile};
-
-        cat ${output} | tail -n 2 | grep -o "[0-9.]\+" | tail -n 1 >> ${regionsPileupOutputFile};
-    done
 
     # Define the variables required to merge the xml files
     local regionsXMLOutputPath=${OUT_ANALYSIS_FOLDER}/"results_regions.xml";
@@ -468,15 +539,15 @@ function GenerateRegionTemporaryMSTMLSubfile() {
         # Process each input file
         for file in $(find ${OUT_ANALYSIS_FOLDER} -name "${imageBasenameRoot}*.xml" | sort -V);
         do
-            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"region\"\)/\0 semanticType=\"${semanticType}\"/g" >> ${regionsXMLOutputPath};
-        done 
+            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"region\"\)/\0 semanticType=\"${regionsSemanticType}\"/g"; 
+        done >> ${regionsXMLOutputPath};
 
         # Print the footer to the resulting file
         cat ${sampleFilePath} | tail -n ${LINES_AFTER_TIMEPOINT_CONTENT} >> ${regionsXMLOutputPath};
     fi
 
     # Copy the resulting file where indicated
-    cp ${regionsXMLOutputPath} ${stmlOutputPath}; 
+    cp ${regionsXMLOutputPath} ${mstmlOutputPath}; 
 }
 
 
@@ -487,14 +558,18 @@ function GenerateRegionTemporaryMSTMLSubfile() {
 #    $1 - Processed simulation output path
 #    $2 - Execution time log file path
 function GenerateTemporaryMSTMLSubfiles() {
+    # Initialisation
+    local processedSimulationOutputPath=$1;
+    local executionTimeLogOutputPath=$2;
+
     # Inform the user where the temporary MSTML subfiles are stored
-    echo "Processing (including spatio-temporal analysis) the csv file ($1) and storing the resulting temporary MSTML subfiles in ${OUT_MSTML_SUBFILES_TMP_FOLDER}...";
+    echo "Processing (including spatio-temporal analysis) the csv file (${processedSimulationOutputPath}) and storing the resulting temporary MSTML subfiles in ${OUT_MSTML_SUBFILES_TMP_FOLDER}...";
 
     # Record execution start time
     local startTime=$(date +%s.%N);
 
     # Generate a MSTML subfile corresponding to each line in MSTML_GENERATION_SPECIFICATION starting with "Numeric"
-    echo "${MSTML_GENERATION_SPECIFICATION}" | egrep "^Numeric" | parallel --colsep ' ' --timeout ${COMMAND_EXECUTION_TIMELIMIT} "GenerateNumericTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} $1 {2} {3}";
+    echo "${MSTML_GENERATION_SPECIFICATION}" | egrep "^Numeric" | parallel --colsep ' ' --timeout ${COMMAND_EXECUTION_TIMELIMIT} "GenerateNumericTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} ${processedSimulationOutputPath} {2} {3}";
 
     # Generate a MSTML subfile corresponding to each line in MSTML_GENERATION_SPECIFICATION starting with "Cluster"/"Region"
     echo "${MSTML_GENERATION_SPECIFICATION}" | egrep -v "^Numeric" | while read mstmlSubfileSpecification;
@@ -511,9 +586,14 @@ function GenerateTemporaryMSTMLSubfiles() {
             local nrOfEntities=$(echo ${mstmlSubfileSpecification} | cut -d" " -f6);
             local maxPileup=$(echo ${mstmlSubfileSpecification} | cut -d" " -f7);
             local semanticType=$(echo ${mstmlSubfileSpecification} | cut -d" " -f8);
+            local maxDistanceBtwNeighours=$(echo ${mstmlSubfileSpecification} | cut -d" " -f9);
+            local minNrOfNeighboursInCluster=$(echo ${mstmlSubfileSpecification} | cut -d" " -f10);
            
+            # Update the clusters detection configuration file
+            UpdateClusterDetectionConfigurationFile ${maxDistanceBtwNeighours} ${minNrOfNeighboursInCluster};
+
             # Generate the cluster temporary MSTML subfile 
-            timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} GenerateClusterTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} $1 ${startColumn} ${stopColumn} ${simulationGridHeight} ${simulationGridWidth} ${nrOfEntities} ${maxPileup} ${semanticType};
+            GenerateClusterTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} ${processedSimulationOutputPath} ${startColumn} ${stopColumn} ${simulationGridHeight} ${simulationGridWidth} ${nrOfEntities} ${maxPileup} ${semanticType};
         elif [[ ${stateVariableType} == "Region" ]];
         then
             local startColumn=$(echo ${mstmlSubfileSpecification} | cut -d" " -f2);
@@ -522,9 +602,19 @@ function GenerateTemporaryMSTMLSubfiles() {
             local simulationGridWidth=$(echo ${mstmlSubfileSpecification} | cut -d" " -f5);
             local nrOfConcentrationsForEachPosition=$(echo ${mstmlSubfileSpecification} | cut -d" " -f6);
             local semanticType=$(echo ${mstmlSubfileSpecification} | cut -d" " -f7);
+            local contrastChangingValue=$(echo ${mstmlSubfileSpecification} | cut -d" " -f8);
+            local brightnessChangingValue=$(echo ${mstmlSubfileSpecification} | cut -d" " -f9);
+            local blurKernelSize=$(echo ${mstmlSubfileSpecification} | cut -d" " -f10);
+            local morphologicalCloseIterations=$(echo ${mstmlSubfileSpecification} | cut -d" " -f11);
+            local polygonConstructionApproximationDegree=$(echo ${mstmlSubfileSpecification} | cut -d" " -f12);
+            local regionAreaThresholdValue=$(echo ${mstmlSubfileSpecification} | cut -d" " -f13);
+            local thresholdValue=$(echo ${mstmlSubfileSpecification} | cut -d" " -f14);
+
+            # Update the regions detection configuration file
+            UpdateRegionDetectionConfigurationFile ${contrastChangingValue} ${brightnessChangingValue} ${blurKernelSize} ${morphologicalCloseIterations} ${polygonConstructionApproximationDegree} ${regionAreaThresholdValue} ${thresholdValue};
            
             # Generate the cluster temporary MSTML subfile 
-            timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} GenerateRegionTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} $1 ${startColumn} ${stopColumn} ${simulationGridHeight} ${simulationGridWidth} ${nrOfConcentrationsForEachPosition} ${semanticType};
+            GenerateRegionTemporaryMSTMLSubfile ${OUT_MSTML_SUBFILES_TMP_FOLDER} ${processedSimulationOutputPath} ${startColumn} ${stopColumn} ${simulationGridHeight} ${simulationGridWidth} ${nrOfConcentrationsForEachPosition} ${semanticType};
         fi;
     done;
     
@@ -532,7 +622,7 @@ function GenerateTemporaryMSTMLSubfiles() {
     local stopTime=$(date +%s.%N);
     
     # Print the execution time to file
-    echo "MSTML subfiles generation execution time:" $(echo "${stopTime} - ${startTime}" | bc) "seconds." >> $2;
+    echo "MSTML subfiles generation execution time:" $(echo "${stopTime} - ${startTime}" | bc) "seconds." >> ${executionTimeLogOutputPath};
 }
 
 
@@ -543,9 +633,15 @@ function GenerateTemporaryMSTMLSubfiles() {
 #   $2 - Processed simulation output path
 #   $3 - MSTML output path
 #   $4 - Execution time log file path
-function MergeSTMLSubfiles() {
+function MergeMSTMLSubfiles() {
+    # Initialisation
+    local temporaryMSTMLSubfilesFolderPath=$1;
+    local processedSimulationOutputPath=$2;
+    local mstmlOutputPath=$3;
+    local executionTimeLogOutputPath=$4;
+
     # Inform the user where the resulting MSTML file is stored
-    echo "Merging MSTML subfiles from the $1 folder into the resulting MSTML file $3...";
+    echo "Merging MSTML subfiles from the ${temporaryMSTMLSubfilesFolderPath} folder into the resulting MSTML file ${mstmlOutputPath}...";
 
     # Record execution start time
     local startTime=$(date +%s.%N);
@@ -557,19 +653,19 @@ function MergeSTMLSubfiles() {
     # Step 1: Store the timepoints values in a separate file
     ####################################################################################
      
-    cat $2 | cut -d"," -f1 >> ${timepointsValuesFilePath};
+    cat ${processedSimulationOutputPath} | cut -d"," -f1 >> ${timepointsValuesFilePath};
 
     ####################################################################################
     # Step 2: Merge MSTML subfiles
     ####################################################################################
 
-    bin/MSTMLSubfilesMergerSample --mstml-subfiles-folder $1 --timepoints-values-file ${timepointsValuesFilePath} --mstml-output-file $3
+    bin/MSTMLSubfilesMergerSample --mstml-subfiles-folder ${temporaryMSTMLSubfilesFolderPath} --timepoints-values-file ${timepointsValuesFilePath} --mstml-output-file ${mstmlOutputPath}
 
     # Record execution stop time
     local stopTime=$(date +%s.%N);
     
     # Print the execution time to file
-    echo "MSTML subfiles merging execution time:" $(echo "${stopTime} - ${startTime}" | bc) "seconds." >> $4;
+    echo "MSTML subfiles merging execution time:" $(echo "${stopTime} - ${startTime}" | bc) "seconds." >> ${executionTimeLogOutputPath};
 }
 
 
@@ -657,7 +753,7 @@ do
     # Step 4: Merge MSTML subfile(s) into a single subfile
     ##############################################################################
     
-    MergeSTMLSubfiles ${OUT_MSTML_SUBFILES_TMP_FOLDER} ${processedSimulationOutputPath} ${mstmlOutputPath} ${executionTimeLogOutputPath}
+    MergeMSTMLSubfiles ${OUT_MSTML_SUBFILES_TMP_FOLDER} ${processedSimulationOutputPath} ${mstmlOutputPath} ${executionTimeLogOutputPath}
 
     
     ##############################################################################

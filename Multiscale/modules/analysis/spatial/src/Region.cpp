@@ -167,8 +167,12 @@ double Region::isCircularMeasure() {
 void Region::updateCentrePoint() {
     cv::Moments polygonMoments = moments(outerBorderPolygon, false);
 
-    centre.x = (polygonMoments.m10 / polygonMoments.m00);
-    centre.y = (polygonMoments.m01 / polygonMoments.m00);
+    centre.x = (Numeric::almostEqual(polygonMoments.m00, 0))
+                    ? polygonMoments.m10
+                    : (polygonMoments.m10 / polygonMoments.m00);
+    centre.y = (Numeric::almostEqual(polygonMoments.m00, 0))
+                    ? polygonMoments.m01
+                    : (polygonMoments.m01 / polygonMoments.m00);
 }
 
 SpatialEntityPseudo3DType Region::type() {

@@ -147,7 +147,9 @@ void SpatialEntityPseudo3D::updateShape() {
 }
 
 double SpatialEntityPseudo3D::normalisedShapeMeasure(double shapeArea) {
-    double normalisedShapeMeasure = (area / shapeArea);
+    double normalisedShapeMeasure = (Numeric::almostEqual(shapeArea, 0))
+                                        ? area
+                                        : (area / shapeArea);
 
     if (Numeric::lessOrEqual(normalisedShapeMeasure, 0)) {
         return 0;

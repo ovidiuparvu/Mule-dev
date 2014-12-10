@@ -152,8 +152,12 @@ void Cluster::updateCentrePoint() {
 
     cv::Moments convexHullMoments = moments(entitiesConvexHull, false);
 
-    centre.x = (convexHullMoments.m10 / convexHullMoments.m00);
-    centre.y = (convexHullMoments.m01 / convexHullMoments.m00);
+    centre.x = (Numeric::almostEqual(convexHullMoments.m00, 0))
+                    ? convexHullMoments.m10
+                    : (convexHullMoments.m10 / convexHullMoments.m00);
+    centre.y = (Numeric::almostEqual(convexHullMoments.m00, 0))
+                    ? convexHullMoments.m01
+                    : (convexHullMoments.m01 / convexHullMoments.m00);
 }
 
 double Cluster::isTriangularMeasure() {
