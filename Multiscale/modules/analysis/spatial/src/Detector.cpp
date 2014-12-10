@@ -174,11 +174,14 @@ void Detector::displayResultsInWindow() {
 }
 
 void Detector::outputResultsToFile() {
-    outputResultsToCsvFile();
-    outputResultsToXMLFile();
+    // Uncomment for csv output
+    // outputResultsToCsvFile();
 
+    outputResultsToXMLFile();
     outputResultsToImage();
-    storeOutputImageOnDisk();
+
+    // Uncomment for storing the output image to disk
+    // storeOutputImageOnDisk();
 }
 
 void Detector::storeOutputImageOnDisk() {
