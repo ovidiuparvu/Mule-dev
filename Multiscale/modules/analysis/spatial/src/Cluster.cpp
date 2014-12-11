@@ -113,14 +113,14 @@ void Cluster::updateClusterednessDegree() {
             avgDistance += e1.distanceTo(e2);
         }
 
-        totalAvgDistance += (entities.size() == 1) ? 0
-                                                   : avgDistance / (entities.size());
+        totalAvgDistance += (entities.size() == 1)
+                                ? 0
+                                : Numeric::division(avgDistance, entities.size());
     }
 
     totalAvgDistance /= (entities.size());
 
-    clusterednessDegree = (Numeric::almostEqual(totalAvgDistance, 0)) ? 1
-                                                                      : (1 / totalAvgDistance);
+    clusterednessDegree = (Numeric::division(1, totalAvgDistance));
 }
 
 void Cluster::updateDensity() {
@@ -152,12 +152,8 @@ void Cluster::updateCentrePoint() {
 
     cv::Moments convexHullMoments = moments(entitiesConvexHull, false);
 
-    centre.x = (Numeric::almostEqual(convexHullMoments.m00, 0))
-                    ? convexHullMoments.m10
-                    : (convexHullMoments.m10 / convexHullMoments.m00);
-    centre.y = (Numeric::almostEqual(convexHullMoments.m00, 0))
-                    ? convexHullMoments.m01
-                    : (convexHullMoments.m01 / convexHullMoments.m00);
+    centre.x = (Numeric::division(convexHullMoments.m10, convexHullMoments.m00));
+    centre.y = (Numeric::division(convexHullMoments.m01, convexHullMoments.m00));
 }
 
 double Cluster::isTriangularMeasure() {

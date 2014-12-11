@@ -101,9 +101,10 @@ double Region::computeClusterednessDegreeIfOuterBorderDefined() {
     }
 
     return (
-        (Numeric::almostEqual(outerPolygonArea, 0))
-            ? 0
-            : ((outerPolygonArea - innerPolygonArea) / (outerPolygonArea))
+        Numeric::division(
+            (outerPolygonArea - innerPolygonArea),
+            outerPolygonArea
+        )
     );
 }
 
@@ -167,12 +168,8 @@ double Region::isCircularMeasure() {
 void Region::updateCentrePoint() {
     cv::Moments polygonMoments = moments(outerBorderPolygon, false);
 
-    centre.x = (Numeric::almostEqual(polygonMoments.m00, 0))
-                    ? polygonMoments.m10
-                    : (polygonMoments.m10 / polygonMoments.m00);
-    centre.y = (Numeric::almostEqual(polygonMoments.m00, 0))
-                    ? polygonMoments.m01
-                    : (polygonMoments.m01 / polygonMoments.m00);
+    centre.x = Numeric::division(polygonMoments.m10, polygonMoments.m00);
+    centre.y = Numeric::division(polygonMoments.m01, polygonMoments.m00);
 }
 
 SpatialEntityPseudo3DType Region::type() {

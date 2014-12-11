@@ -11,75 +11,6 @@
 
 namespace multiscale {
 
-    //! Functor representing an addition operation
-    class AdditionOperation {
-
-        public:
-
-            //! Add the two operands
-            /*!
-             * \param operand1  The first operand
-             * \param operand2  The second operand
-             */
-            template <typename Operand>
-            Operand operator()(Operand operand1, Operand operand2) const {
-                return (operand1 + operand2);
-            }
-
-    };
-
-    //! Functor representing a division operation
-    class DivisionOperation {
-
-        public:
-
-            //! Divide the two operands
-            /*!
-             * \param operand1  The first operand
-             * \param operand2  The second operand
-             */
-            template <typename Operand>
-            Operand operator()(Operand operand1, Operand operand2) const {
-                return (operand2 != 0) ? (operand1 / operand2)
-                                       : 0;
-            }
-
-    };
-
-    //! Functor representing a multiplication operation
-    class MultiplicationOperation {
-
-        public:
-
-            //! Multiply the two operands
-            /*!
-             * \param operand1  The first operand
-             * \param operand2  The second operand
-             */
-            template <typename Operand>
-            Operand operator()(Operand operand1, Operand operand2) const {
-                return (operand1 * operand2);
-            }
-
-    };
-
-    //! Functor representing a subtraction operation
-    class SubtractionOperation {
-
-        public:
-
-            //! Subtract the two operands
-            /*!
-             * \param operand1  The first operand
-             * \param operand2  The second operand
-             */
-            template <typename Operand>
-            Operand operator()(Operand operand1, Operand operand2) const {
-                return (operand1 - operand2);
-            }
-
-    };
-
 
     //! Class for processing numeric (shorts, ints, floats, doubles etc.) expressions
     class Numeric {
@@ -135,6 +66,16 @@ namespace multiscale {
              * \param values2   The second collection of values
              */
             static double covariance(const std::vector<double> &values1, const std::vector<double> &values2);
+
+            //! Return the result of dividing two numbers
+            /*! If the denominator is almost equal to zero then return zero.
+             *  Otherwise return the result of dividing the nominator to the
+             *  denominator.
+             *
+             * \param nominator     The nominator
+             * \param denominator   The denominator
+             */
+            static double division(double nominator, double denominator);
 
             //! Return the factorial of a number
             /*!
@@ -572,6 +513,79 @@ namespace multiscale {
             static const std::string WRN_STANDARD_DEVIATION_FUNCTION_NAME;
             static const std::string WRN_SUM_FUNCTION_NAME;
             static const std::string WRN_VARIANCE_FUNCTION_NAME;
+
+    };
+
+
+    //! Functor representing an addition operation
+    class AdditionOperation {
+
+        public:
+
+            //! Add the two operands
+            /*!
+             * \param operand1  The first operand
+             * \param operand2  The second operand
+             */
+            template <typename Operand>
+            Operand operator()(Operand operand1, Operand operand2) const {
+                return (operand1 + operand2);
+            }
+
+    };
+
+    //! Functor representing a division operation
+    class DivisionOperation {
+
+        public:
+
+            //! Divide the two operands
+            /*!
+             * \param operand1  The first operand
+             * \param operand2  The second operand
+             */
+            template <typename Operand>
+            Operand operator()(Operand operand1, Operand operand2) const {
+                return (
+                    (Numeric::almostEqual(operand2, 0))
+                        ? 0
+                        : (operand1 / operand2)
+                );
+            }
+
+    };
+
+    //! Functor representing a multiplication operation
+    class MultiplicationOperation {
+
+        public:
+
+            //! Multiply the two operands
+            /*!
+             * \param operand1  The first operand
+             * \param operand2  The second operand
+             */
+            template <typename Operand>
+            Operand operator()(Operand operand1, Operand operand2) const {
+                return (operand1 * operand2);
+            }
+
+    };
+
+    //! Functor representing a subtraction operation
+    class SubtractionOperation {
+
+        public:
+
+            //! Subtract the two operands
+            /*!
+             * \param operand1  The first operand
+             * \param operand2  The second operand
+             */
+            template <typename Operand>
+            Operand operator()(Operand operand1, Operand operand2) const {
+                return (operand1 - operand2);
+            }
 
     };
 

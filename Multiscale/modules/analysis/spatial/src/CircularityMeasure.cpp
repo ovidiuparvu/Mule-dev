@@ -16,8 +16,7 @@ double CircularityMeasure::compute(const std::vector<cv::Point2f> &points) {
     double nominator = (contourMoments.m00 * contourMoments.m00);
     double denominator = (2 * Geometry2D::PI * (contourMoments.mu20 + contourMoments.mu02));
 
-    return (Numeric::almostEqual(denominator, 0)) ? 0
-                                                  : (nominator / denominator);
+    return (Numeric::division(nominator, denominator));
 }
 
 double CircularityMeasure::compute(const std::vector<cv::Point> &points) {
@@ -32,6 +31,5 @@ double CircularityMeasure::compute(const std::vector<cv::Point> &points) {
     double nominator = (contourMoments.m00 * contourMoments.m00);
     double denominator = (2 * Geometry2D::PI * (contourMoments.mu20 + contourMoments.mu02));
 
-    return (Numeric::almostEqual(denominator, 0)) ? 0
-                                                  : (nominator / denominator);
+    return (Numeric::division(nominator, denominator));
 }

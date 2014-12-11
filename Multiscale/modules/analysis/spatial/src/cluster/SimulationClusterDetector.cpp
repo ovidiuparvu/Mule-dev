@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp"
 #include "multiscale/exception/UnexpectedBehaviourException.hpp"
+#include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/RGBColourGenerator.hpp"
 
 #include <iostream>
@@ -20,8 +21,14 @@ SimulationClusterDetector::SimulationClusterDetector(unsigned int height, unsign
 SimulationClusterDetector::~SimulationClusterDetector() {}
 
 void SimulationClusterDetector::initialiseDetectorSpecificImageDependentFields() {
-    this->entityHeight = ((double)image.rows) / height;
-    this->entityWidth = ((double)image.cols) / width;
+    this->entityHeight = Numeric::division(
+                             static_cast<double>(image.rows),
+                             static_cast<double>(height)
+                         );
+    this->entityWidth = Numeric::division(
+                            static_cast<double>(image.cols),
+                            static_cast<double>(width)
+                        );
 
     initialiseThresholdedImage();
 }
@@ -79,7 +86,16 @@ unsigned int SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int
 
     unsigned char intensityAtPosition = image.at<uchar>(cv::Point(xCoordinate, yCoordinate));
 
-    return static_cast<unsigned int>(round(intensityAtPosition / entityPileupDegree));
+    return (
+        static_cast<unsigned int>(
+            round(
+                Numeric::division(
+                    static_cast<double>(intensityAtPosition),
+                    static_cast<double>(entityPileupDegree)
+                )
+            )
+        )
+    );
 }
 
 void SimulationClusterDetector::outputResultsToImage() {

@@ -1,6 +1,7 @@
 #include "multiscale/analysis/spatial/ClusterDetector.hpp"
 #include "multiscale/analysis/spatial/DBSCAN.hpp"
 #include "multiscale/analysis/spatial/Silhouette.hpp"
+#include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
 #include "multiscale/util/RGBColourGenerator.hpp"
 
@@ -19,7 +20,7 @@ ClusterDetector::ClusterDetector(int maxPileupNumber, double maxPileupIntensity,
     this->avgDensity = 0;
     this->avgClusterednessDegree = 0;
 
-    this->entityPileupDegree = (maxPileupIntensity / maxPileupNumber);
+    this->entityPileupDegree = Numeric::division(maxPileupIntensity, maxPileupNumber);
 }
 
 ClusterDetector::~ClusterDetector() {}
@@ -194,8 +195,7 @@ double ClusterDetector::computeAveragePileUpDegree(std::vector<Cluster> &cluster
 
     unsigned int nrOfClusters = clusters.size();
 
-    return (nrOfClusters == 0) ? 0
-                               : (averagePileUpDegree / nrOfClusters);
+    return (Numeric::division(averagePileUpDegree, nrOfClusters));
 }
 
 std::vector<std::shared_ptr<SpatialEntityPseudo3D>> ClusterDetector::getCollectionOfSpatialEntityPseudo3D() {

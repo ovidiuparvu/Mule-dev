@@ -61,9 +61,12 @@ namespace multiscale {
                                                      timeValueSecondTimepoint
                                                  );
 
-                    return (Numeric::almostEqual(timeValueDifference, 0))
-                        ? 0
-                        : (temporalNumericValueChange / timeValueDifference);
+                    return (
+                        Numeric::division(
+                            temporalNumericValueChange,
+                            timeValueDifference
+                        )
+                    );
                 }
 
             private:
@@ -96,9 +99,12 @@ namespace multiscale {
                             break;
 
                         case ChangeMeasureType::Ratio:
-                            return (Numeric::almostEqual(temporalNumericMeasureFirstTimepoint, 0))
-                                ? 0
-                                : (temporalNumericMeasureSecondTimepoint / temporalNumericMeasureFirstTimepoint);
+                            return (
+                                Numeric::division(
+                                    temporalNumericMeasureSecondTimepoint,
+                                    temporalNumericMeasureFirstTimepoint
+                                )
+                            );
                             break;
 
                         default:

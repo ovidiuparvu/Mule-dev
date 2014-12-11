@@ -18,8 +18,7 @@ double Silhouette::computeOverallAverageMeasure(const std::vector<Cluster> &clus
         sumOfMeasures += computeAverageMeasure(i, clusters);
     }
 
-    return (nrOfClusters != 0) ? (sumOfMeasures / nrOfClusters)
-                               : 0;
+    return (Numeric::division(sumOfMeasures, nrOfClusters));
 }
 
 double Silhouette::computeAverageMeasure(std::size_t clusterIndex, const std::vector<Cluster> &clusters) {
@@ -34,8 +33,7 @@ double Silhouette::computeAverageMeasure(std::size_t clusterIndex, const std::ve
         sumOfMeasures += computeMeasure(i, clusterIndex, clusters);
     }
 
-    return (nrOfEntities != 0) ? (sumOfMeasures / nrOfEntities)
-                               : 0;
+    return (Numeric::division(sumOfMeasures, nrOfEntities));
 }
 
 double Silhouette::computeMeasure(std::size_t entityIndex, std::size_t clusterIndex,
@@ -47,10 +45,10 @@ double Silhouette::computeMeasure(std::size_t entityIndex, std::size_t clusterIn
     double b = computeAverageDissimilarityToOtherClusters(entityIndex, clusterIndex, clusters);
 
     return (
-        (Numeric::almostEqual(a, 0) &&
-         Numeric::almostEqual(b, 0))
-             ? 0
-             : (b - a) / (std::max(a, b))
+        Numeric::division(
+            (b - a),
+            std::max(a, b)
+        )
      );
 }
 
@@ -68,8 +66,7 @@ double Silhouette::computeAverageDissimilarityWithinCluster(std::size_t entityIn
                           );
     }
 
-    return (nrOfEntities != 0) ? (sumOfDistances / nrOfEntities)
-                               : 0;
+    return (Numeric::division(sumOfDistances, nrOfEntities));
 }
 
 double Silhouette::computeAverageDissimilarityToOtherClusters(std::size_t entityIndex, std::size_t clusterIndex,
@@ -106,8 +103,7 @@ double Silhouette::computeAverageDissimilarityBtwEntityAndCluster(std::size_t en
         sumOfDissimilarities += Geometry2D::distanceBtwPoints(entityCentrePoint, entities[i].getCentre());
     }
 
-    return (nrOfEntities != 0) ? (sumOfDissimilarities / nrOfEntities)
-                               : 0;
+    return (Numeric::division(sumOfDissimilarities, nrOfEntities));
 }
 
 void Silhouette::validateClusterIndex(std::size_t clusterIndex, std::size_t totalNrOfClusters) {

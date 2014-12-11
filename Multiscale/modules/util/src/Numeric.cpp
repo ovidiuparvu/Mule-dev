@@ -65,6 +65,14 @@ double Numeric::covariance(const std::vector<double> &values1, const std::vector
     return covariance(values1, values2, nrOfValues);
 }
 
+double Numeric::division(double nominator, double denominator) {
+    return (
+        (almostEqual(denominator, 0))
+            ? 0
+            : (nominator / denominator)
+    );
+}
+
 unsigned long Numeric::factorial(unsigned int number) {
     unsigned long result = 1;
 
@@ -268,8 +276,7 @@ double Numeric::average(const std::vector<double> &numbers, unsigned int nrOfVal
         sum = applyOperation(AdditionOperation(), sum, number);
     }
 
-    return (nrOfValues == 0) ? 0
-                             : (sum / nrOfValues);
+    return (division(sum, nrOfValues));
 }
 
 double Numeric::computeCombinations(unsigned int n, unsigned int k) {
@@ -294,8 +301,7 @@ double Numeric::covariance(const std::vector<double> &values1, const std::vector
         covariance = applyOperation(AdditionOperation(), covariance, (values1[i] - mean1) * (values2[i] - mean2));
     }
 
-    return (nrOfValues > 1) ? (covariance / (nrOfValues - 1))
-                            : 0;
+    return (division(covariance, (nrOfValues - 1)));
 }
 
 double Numeric::geometricMean(const std::vector<double> &numbers, unsigned int nrOfValues) {
@@ -320,8 +326,7 @@ double Numeric::harmonicMean(const std::vector<double> &numbers, unsigned int nr
         inverseSum = applyOperation(AdditionOperation(), inverseSum, invertedNumber);
     }
 
-    return (almostEqual(inverseSum, 0)) ? 0
-                                        : (nrOfValues * (1.0 / inverseSum));
+    return (nrOfValues * (division(1.0, inverseSum)));
 }
 
 double Numeric::kurtosis(const std::vector<double> &numbers, unsigned int nrOfValues) {
@@ -351,8 +356,7 @@ double Numeric::computeKurtosisMiddleTerm(const std::vector<double> &values, uns
         nominator = applyOperation(AdditionOperation(), nominator, std::pow((value - mean), 4));
     }
 
-    return (almostEqual(denominator, 0)) ? 0
-                                         : (nominator / denominator);
+    return (division(nominator, denominator));
 }
 
 double Numeric::computeKurtosisLastTerm(unsigned int nrOfValues) {
@@ -506,8 +510,7 @@ double Numeric::computeSkewLastTerm(const std::vector<double> &numbers, unsigned
         nominator = applyOperation(AdditionOperation(), nominator, std::pow((number - mean), 3));
     }
 
-    return (almostEqual(denominator, 0)) ? 0
-                                         : (nominator / denominator);
+    return (division(nominator, denominator));
 }
 
 double Numeric::standardDeviation(const std::vector<double> &numbers, unsigned int nrOfValues) {
@@ -518,7 +521,7 @@ double Numeric::standardDeviation(const std::vector<double> &numbers, unsigned i
         denominator = applyOperation(AdditionOperation(), denominator, std::pow(number - mean, 2));
     }
 
-    return (nrOfValues == 0) ? 0
+    return (nrOfValues <= 1) ? 0
                              : std::sqrt(denominator / (nrOfValues - 1));
 }
 
@@ -540,7 +543,7 @@ double Numeric::variance(const std::vector<double> &numbers, unsigned int nrOfVa
         denominator = applyOperation(AdditionOperation(), denominator, std::pow(number - mean, 2));
     }
 
-    return (nrOfValues == 0) ? 0
+    return (nrOfValues <= 1) ? 0
                              : (denominator / (nrOfValues - 1));
 }
 

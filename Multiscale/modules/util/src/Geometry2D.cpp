@@ -97,7 +97,7 @@ double Geometry2D::distanceFromPointToLine(const cv::Point2f &a, const cv::Point
     double nominator = fabs((term1 * term2) - (term3 * term4));
     double denominator = sqrt((term1 * term1) + (term4 * term4));
 
-    return (nominator / denominator);
+    return (Numeric::division(nominator, denominator));
 }
 
 cv::Point2f Geometry2D::middlePoint(const cv::Point2f &a, const cv::Point2f &b) {
@@ -132,9 +132,12 @@ void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const cv::Point &a1, cons
             while (!isPointOnEdge(b2, nrOfRows, nrOfCols))
                 b2.x++;
         } else {                        // Otherwise
-            double oldSlope = ((double)(b1.y - a1.y)) / (b1.x - a1.x);
+            double oldSlope = Numeric::division(
+                                  static_cast<double>(b1.y - a1.y),
+                                  static_cast<double>(b1.x - a1.x)
+                              );
 
-            double newSlope = (-1) / (oldSlope);
+            double newSlope = Numeric::division((-1), oldSlope);
             double intercept = b1.y - (newSlope * b1.x);
 
             a2 = b1;
@@ -440,11 +443,11 @@ void Geometry2D::inverseTranslate(cv::Point2f &point, const cv::Point2f &transla
 void Geometry2D::lineCircleTwoIntersectionPoints(const cv::Point2f &circleOrigin, double A,
                                                  double B, double C, double delta,
                                                  std::vector<cv::Point2f> &intersectionPoints) {
-    double y1 = ((2 * B * C) + (sqrt(delta))) / (2 * ((A * A) + (B * B)));
-    double y2 = ((2 * B * C) - (sqrt(delta))) / (2 * ((A * A) + (B * B)));
+    double y1 = Numeric::division(((2 * B * C) + (sqrt(delta))), (2 * ((A * A) + (B * B))));
+    double y2 = Numeric::division(((2 * B * C) - (sqrt(delta))), (2 * ((A * A) + (B * B))));
 
-    double x1 = (C - (B * y1)) / (A);
-    double x2 = (C - (B * y2)) / (A);
+    double x1 = Numeric::division(C - (B * y1), A);
+    double x2 = Numeric::division(C - (B * y2), A);
 
     cv::Point2f firstIntersectionPoint(x1, y1);
     cv::Point2f secondIntersectionPoint(x2, y2);
@@ -459,8 +462,8 @@ void Geometry2D::lineCircleTwoIntersectionPoints(const cv::Point2f &circleOrigin
 void Geometry2D::lineCircleOneIntersectionPoint(const cv::Point2f &circleOrigin, double A,
                                                 double B, double C, double delta,
                                                 std::vector<cv::Point2f> &intersectionPoints) {
-    double y = (B * C) / ((A * A) + (B * B));
-    double x = (C - (B * y)) / (A);
+    double y = Numeric::division((B * C), ((A * A) + (B * B)));
+    double x = Numeric::division((C - (B * y)), (A));
 
     cv::Point2f intersectionPoint(x, y);
 

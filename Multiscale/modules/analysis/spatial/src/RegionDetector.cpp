@@ -203,8 +203,7 @@ void RegionDetector::computeAverageClusterednessDegree(std::vector<Region> &regi
     avgClusterednessDegree = sumOfAverageCentroidDistances(regions);
 
     // Take the average of the sum of average distances between clusters
-    avgClusterednessDegree = (regions.size() != 0) ? avgClusterednessDegree / (regions.size())
-                                                   : 0;
+    avgClusterednessDegree = Numeric::division(avgClusterednessDegree, regions.size());
 
     // Invert the value such that it is between 0 and 1. Since we are working with pixels
     // the minimum distance between two distinct pixels is 1.
@@ -241,8 +240,7 @@ void RegionDetector::computeAverageDensity(std::vector<Region> &regions) {
         avgDensity += region.getDensity();
     }
 
-    avgDensity = (regions.size() != 0) ? (avgDensity / regions.size())
-                                       : 0;
+    avgDensity = Numeric::division(avgDensity, regions.size());
 }
 
 std::vector<Polygon> RegionDetector::findPolygonsInImage(const cv::Mat &image) {

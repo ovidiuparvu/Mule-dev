@@ -104,7 +104,7 @@ void ApproximateBayesianModelChecker::updateMean() {
     double nominator    = static_cast<double>(totalNumberOfTrueEvaluations) + alpha;
     double denominator  = alpha + beta + static_cast<double>(totalNumberOfEvaluations);
 
-    mean = (nominator / denominator);
+    mean = Numeric::division(nominator, denominator);
 }
 
 void ApproximateBayesianModelChecker::updateVariance() {
@@ -113,7 +113,7 @@ void ApproximateBayesianModelChecker::updateVariance() {
     double denominator  = std::pow((alpha + static_cast<double>(totalNumberOfEvaluations) + beta), 2) *
                           (alpha + static_cast<double>(totalNumberOfEvaluations) + beta + 1);
 
-    variance = (nominator / denominator);
+    variance = Numeric::division(nominator, denominator);
 }
 
 void ApproximateBayesianModelChecker::updateModelCheckingResult(double variance) {

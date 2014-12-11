@@ -1,6 +1,9 @@
 #ifndef NUMERICRANGEMANIPULATOR_HPP
 #define NUMERICRANGEMANIPULATOR_HPP
 
+#include "multiscale/util/Numeric.hpp"
+
+
 namespace multiscale {
 
     //! Operations for ranges of numeric values
@@ -18,7 +21,10 @@ namespace multiscale {
              */
             template <class T, class U>
             static U convertFromRange(T oldRangeMin, T oldRangeMax, U newRangeMin, U newRangeMax, T oldValue) {
-                double normalisedValue = ((double)(oldValue - oldRangeMin)) / (oldRangeMax - oldRangeMin);
+                double normalisedValue = Numeric::division(
+                    static_cast<double>(oldValue - oldRangeMin),
+                    static_cast<double>(oldRangeMax - oldRangeMin)
+                );
 
                 return (newRangeMin + normalisedValue * (newRangeMax - newRangeMin));
             }
