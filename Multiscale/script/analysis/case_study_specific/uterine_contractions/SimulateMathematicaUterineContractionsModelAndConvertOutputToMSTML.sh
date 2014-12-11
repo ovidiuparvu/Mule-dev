@@ -2,7 +2,7 @@
 
 ###############################################################################
 # 
-# Script for simulating the Cardiovascular Virtual Physiological Rat JSim model
+# Script for simulating the uterine contractions of labour Mathematica model
 # and converting the simulation output to MSTML. (TODO: Update)
 #
 # Author: Ovidiu Parvu
@@ -20,15 +20,15 @@
 ###############################################################################
 
 # Naming constants (TODO: Update)
-CASE_STUDY_TITLE="cardiovascular_vpr";
+CASE_STUDY_TITLE="uterine_contractions";
 
 # Execution constants
 NR_MODEL_SIMULATIONS=1;
 COMMAND_EXECUTION_TIMELIMIT=360;
 
 # I/O constants (TODO: Update)
-MODEL_INPUT_FILE="model/BaroCV_Merged_Valsalva.proj";
-MODEL_SIMULATION_OUTPUT_FILE="cardiovascular_vpr_simulation_results.csv";
+MODEL_INPUT_FILE="model/UterineContractionsModel.m";
+MODEL_SIMULATION_OUTPUT_FILE="uterine_contractions_simulation_results.csv";
 
 OUT_SIMULATION_FOLDER="simulations";
 OUT_SIMULATION_LOG_FOLDER="${OUT_SIMULATION_FOLDER}/log";
@@ -137,14 +137,10 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 ###############################################################################
 
 MSTML_GENERATION_SPECIFICATION="
-Numeric 2 OrganSystem.Cardiovascular
-Numeric 3 Cellular.Baroreflex
-Numeric 4 OrganSystem.Cardiovascular
-Numeric 5 OrganSystem.Cardiovascular
-Numeric 6 OrganSystem.Cardiovascular
-Numeric 7 OrganSystem.Cardiovascular
-Numeric 8 OrganSystem.Cardiovascular
-Numeric 9 OrganSystem.Cardiovascular
+Numeric 2 Organ.Uterus
+Region 3 18 4 4 1 Tissue.ContractileActivity 930 40 0 0 0 10000 10
+Region 19 34 4 4 1 Tissue.BurstActivity 930 40 0 0 0 10000 250
+Region 35 50 4 4 1 Tissue.RefractoryActivity 930 40 0 0 0 10000 250
 ";
 
 
@@ -168,14 +164,27 @@ function SimulateModel() {
     local simulationLogOutputPath=$2;
     local executionTimeLogOutputPath=$3;
 
+    local rawSimulationOutputFolderPath=${rawSimulationOutputPath%.*};
+
     # Inform user where the simulation output is stored
     echo "Simulating ${MODEL_INPUT_FILE} and storing simulation output in ${rawSimulationOutputPath}...";
 
+    # Create the raw simulation output folder if it does not exist already
+    mkdir -p ${rawSimulationOutputFolderPath};
+
+    # Create a temporary file for storing the version of the model in which the
+    # generic path was replaced with the explicit path
+    temporaryModelInputFile="${OUT_MSTML_SUBFILES_TMP_FOLDER}/tmp_model_input_file";
+
+    # Replace the generic output path in the model with the explicit path and
+    # store the resulting model in a temporary file
+    cat ${MODEL_INPUT_FILE} | sed "s|SIMULATION_OUTPUT_FOLDER_PATH|${rawSimulationOutputFolderPath}|g" > ${temporaryModelInputFile};
+    
     # Record execution start time
     local startTime=$(date +%s.%N);
     
     # Run a simulation of the model
-    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} ${JSIMHOME}/linux/bin/jsbatch -f ${MODEL_INPUT_FILE} -ofmt csv -out ${rawSimulationOutputPath} 1>${simulationLogOutputPath} 2>&1;
+    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} math -noprompt -script ${temporaryModelInputFile} 1>${simulationLogOutputPath} 2>&1;
     
     # Record execution stop time
     local stopTime=$(date +%s.%N);
@@ -199,14 +208,19 @@ function ConvertModelSimulationOutputToCsv() {
     local processedSimulationOutputPath=$2;
     local executionTimeLogOutputPath=$3;
 
+    local rawSimulationOutputFolderPath=${rawSimulationOutputPath%.*};
+
     # Inform the user where the converted simulation output is stored
-    echo "Converting the simulation output from raw (${rawSimulationOutputPath}) to csv format (${processedSimulationOutputPath})...";
+    echo "Converting the simulation output from raw (${rawSimulationOutputFolderPath}) to csv format (${processedSimulationOutputPath})...";
+
+    # Create the raw simulation output folder if it does not exist already
+    mkdir -p ${rawSimulationOutputFolderPath};
 
     # Record execution start time
     local startTime=$(date +%s.%N);
     
     # Convert the simulation output to csv format
-    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} cat ${rawSimulationOutputPath} | cut -d"," -f1,109,112,119,121,122,123,125,126 | awk --field-separator="," '/^[0-9.,]+/ { time=($1 * 1000); sub("[0-9E.]+", "", $0); print time $0; } /^time/ { print $0; }' > ${processedSimulationOutputPath};
+    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} paste "${rawSimulationOutputFolderPath}/pressure.out" "${rawSimulationOutputFolderPath}/activity.out" "${rawSimulationOutputFolderPath}/burst.out" "${rawSimulationOutputFolderPath}/refractory.out" | egrep "^[T0-9]+" | sed "s/[\t\n ]\+/,/g" | cut --complement -d"," -f3,20,37 > ${processedSimulationOutputPath};
     
     # Record execution stop time
     local stopTime=$(date +%s.%N);
