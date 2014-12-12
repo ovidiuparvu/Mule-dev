@@ -2,7 +2,7 @@
  * This program is used for detecting regions of high intensity in grayscale images considering a rectangular geometry
  *
  * FORMAT OF INPUT FILE:
- * Images generated with cv::RectangularGeometryViewer
+ * Image or text file (formatted according to output of MapCsvToInputFiles)
  *
  * FORMAT OF OUTPUT FILE:
  * If in debug mode, then also display results. Else only print them in a .csv/xml file.
@@ -13,7 +13,7 @@
  */
 
 #include "multiscale/core/Multiscale.hpp"
-#include "multiscale/analysis/spatial/RegionDetector.hpp"
+#include "multiscale/analysis/spatial/detector/RegionDetector.hpp"
 #include "multiscale/analysis/spatial/factory/RectangularMatFactory.hpp"
 #include "multiscale/exception/ExceptionHandler.hpp"
 
@@ -45,14 +45,17 @@ const std::string ROOT_COMMENT   = "Warning! This xml file was automatically gen
 
 // Initialise the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description &usageDescription, int argc, char** argv) {
-    usageDescription.add_options()("help,h", "display help message\n")
-                                  ("input-file,i", po::value<std::string>(), "provide the path to the input file\n")
-                                  ("output-file,o", po::value<std::string>(), "provide the path of the output file (without extension)\n")
-                                  ("debug-mode,d", po::value<bool>()->implicit_value(false), "start the program in debug mode\n");
+    usageDescription.add_options()("help,h"                                                             , "display help message\n")
+                                  ("input-file,i"           , po::value<std::string>()                  , "provide the path to the input file\n")
+                                  ("text-input-file,t"      , po::value<bool>()->implicit_value(true)   , "flag indicating if the input file type is text (true) or image (false); default flag value is true.\n")
+                                  ("output-file,o"          , po::value<std::string>()                  , "provide the path of the output file (without extension)\n")
+                                  ("debug-mode,d"           , po::value<bool>()->implicit_value(false)  , "start the program in debug mode\n");
 
     po::variables_map vm;
+
     po::store(po::parse_command_line(argc, argv, usageDescription), vm);
     po::notify(vm);
+
     return vm;
 }
 
@@ -68,7 +71,8 @@ void printWrongParameters() {
 }
 
 // Get the needed parameters
-bool areValidParameters(std::string &inputFilepath, std::string &outputFilename, bool &debugFlag, int argc, char** argv) {
+bool areValidParameters(std::string &inputFilepath, std::string &outputFilename,
+                        bool &isTextInputFile, bool &isDebugMode, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
@@ -85,8 +89,14 @@ bool areValidParameters(std::string &inputFilepath, std::string &outputFilename,
         inputFilepath  = vm["input-file"].as<std::string>();
         outputFilename = vm["output-file"].as<std::string>();
 
+        // Update the input file type flag
+        if (vm.count("text-input-file")) {
+            isTextInputFile = vm["text-input-file"].as<bool>();
+        }
+
+        // Update the debug mode flag
         if (vm.count("debug-mode")) {
-            debugFlag = vm["debug-mode"].as<bool>();
+            isDebugMode = vm["debug-mode"].as<bool>();
         }
 
         return true;
@@ -141,25 +151,38 @@ void saveDetectorParameterValues(RegionDetector &detector, bool debugMode) {
     }
 }
 
+// Create a Mat instance from the given input file
+cv::Mat createMatFromInputFile(const std::string &inputFilePath, bool isTextInputFile) {
+    RectangularMatFactory factory;
+
+    if (isTextInputFile) {
+        return factory.createFromTextFile(inputFilePath);
+    } else {
+        return factory.createFromImageFile(inputFilePath);
+    }
+}
+
 // Main function
 int main(int argc, char** argv) {
     std::string inputFilePath;
     std::string outputFilepath;
 
-    bool debugFlag = false;
+    bool isTextInputFile = true;
+    bool isDebugMode     = false;
 
     try {
-        if (areValidParameters(inputFilePath, outputFilepath, debugFlag, argc, argv)) {
-            cv::Mat image = RectangularMatFactory().createFromImageFile(inputFilePath);
+        if (areValidParameters(inputFilePath, outputFilepath, isTextInputFile,
+                               isDebugMode, argc, argv)) {
+            cv::Mat image = createMatFromInputFile(inputFilePath, isTextInputFile);
 
-            RegionDetector detector(debugFlag);
+            RegionDetector detector(isDebugMode, isTextInputFile);
 
-            loadDetectorParameterValues(detector, debugFlag);
+            loadDetectorParameterValues(detector, isDebugMode);
 
             detector.detect(image);
             detector.outputResults(outputFilepath);
 
-            saveDetectorParameterValues(detector, debugFlag);
+            saveDetectorParameterValues(detector, isDebugMode);
         } else {
             printWrongParameters();
         }

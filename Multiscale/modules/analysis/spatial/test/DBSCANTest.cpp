@@ -1,5 +1,4 @@
-#include "multiscale/analysis/spatial/DataPoint.hpp"
-#include "multiscale/analysis/spatial/DBSCAN.hpp"
+#include "multiscale/analysis/spatial/util/DBSCAN.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
 #include <iostream>

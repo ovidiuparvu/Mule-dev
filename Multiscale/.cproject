@@ -128,8 +128,8 @@
 								<option id="gnu.both.asm.option.include.paths.452842092" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/util/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/circular/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/video/rectangular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/visualisation/circular/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/modules/visualisation/rectangular/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Multiscale/extern/gtest-1.7.0/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.2070858362" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>

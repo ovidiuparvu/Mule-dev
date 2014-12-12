@@ -26,13 +26,13 @@ configure_file(
 )
 
 set(CIRCULAR_DETECT_REGIONS_SRC
-    src/CircularityMeasure.cpp
-    src/Detector.cpp
-    src/MatFactory.cpp 
     src/CircularDetectRegions.cpp 
-    src/Region.cpp
-    src/RegionDetector.cpp
-    src/SpatialEntityPseudo3D.cpp
+    src/detector/Detector.cpp
+    src/detector/RegionDetector.cpp
+    src/factory/MatFactory.cpp
+    src/model/Region.cpp
+    src/model/SpatialEntityPseudo3D.cpp
+    src/util/CircularityMeasure.cpp
     
     src/factory/CircularMatFactory.cpp 
 )
@@ -51,8 +51,8 @@ set(CIRCULAR_MAT_FACTORY_SAMPLE_SRC
     sample/CircularMatFactorySample.cpp
     
     src/factory/CircularMatFactory.cpp
-    src/DBSCAN.cpp
-    src/MatFactory.cpp
+    src/factory/MatFactory.cpp
+    src/util/DBSCAN.cpp
 )
 
 add_executable(CircularMatFactorySample ${CIRCULAR_MAT_FACTORY_SAMPLE_SRC})
@@ -68,7 +68,7 @@ target_link_libraries(CircularMatFactorySample gtest gtest_main)
 set(DBSCAN_TEST_SRC
     test/DBSCANTest.cpp
     
-    src/DBSCAN.cpp
+    src/util/DBSCAN.cpp
 )
 
 set(DBSCAN_TEST_LINK_LIBS
@@ -104,13 +104,12 @@ configure_file(
 )
 
 set(RECTANGULAR_DETECT_REGIONS_SRC
-    src/CircularityMeasure.cpp
-    src/Detector.cpp
-    src/MatFactory.cpp 
-    src/RectangularDetectRegions.cpp 
-    src/Region.cpp
-    src/RegionDetector.cpp
-    src/SpatialEntityPseudo3D.cpp
+    src/detector/Detector.cpp
+    src/detector/RegionDetector.cpp
+    src/factory/MatFactory.cpp 
+    src/model/Region.cpp
+    src/model/SpatialEntityPseudo3D.cpp
+    src/RectangularDetectRegions.cpp
     
     src/factory/RectangularMatFactory.cpp 
 )
@@ -128,9 +127,9 @@ target_link_libraries(RectangularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
 set(RECTANGULAR_MAT_FACTORY_SAMPLE_SRC
     sample/RectangularMatFactorySample.cpp
     
-    src/DBSCAN.cpp
-    src/MatFactory.cpp
+    src/factory/MatFactory.cpp
     src/factory/RectangularMatFactory.cpp
+    src/util/DBSCAN.cpp
 )
 
 add_executable(RectangularMatFactorySample ${RECTANGULAR_MAT_FACTORY_SAMPLE_SRC})
@@ -150,17 +149,16 @@ configure_file(
 )
 
 set(SIMULATION_DETECT_CLUSTERS_SRC
-    src/CircularityMeasure.cpp
-    src/Cluster.cpp
-    src/ClusterDetector.cpp
-    src/DBSCAN.cpp
-    src/Detector.cpp
-    src/Entity.cpp
-    src/MatFactory.cpp
-    src/Silhouette.cpp
-    src/cluster/SimulationClusterDetector.cpp
+    src/detector/ClusterDetector.cpp
+    src/detector/Detector.cpp
+    src/detector/SimulationClusterDetector.cpp
+    src/factory/MatFactory.cpp
+    src/model/Cluster.cpp
+    src/model/Entity.cpp
+    src/model/SpatialEntityPseudo3D.cpp
     src/SimulationDetectClusters.cpp
-    src/SpatialEntityPseudo3D.cpp
+    src/util/DBSCAN.cpp
+    src/util/Silhouette.cpp
     
     src/factory/RectangularMatFactory.cpp 
 )

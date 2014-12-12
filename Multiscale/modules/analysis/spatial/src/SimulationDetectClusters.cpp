@@ -13,7 +13,7 @@
  */
 
 #include "multiscale/core/Multiscale.hpp"
-#include "multiscale/analysis/spatial/cluster/SimulationClusterDetector.hpp"
+#include "multiscale/analysis/spatial/detector/SimulationClusterDetector.hpp"
 #include "multiscale/analysis/spatial/factory/RectangularMatFactory.hpp"
 #include "multiscale/exception/ExceptionHandler.hpp"
 
@@ -41,17 +41,20 @@ const std::string ROOT_COMMENT            = "Warning! This xml file was automati
 
 // Initialise the arguments configuration
 po::variables_map initArgumentsConfig(po::options_description &usageDescription, int argc, char** argv) {
-    usageDescription.add_options()("help,h", "display help message\n")
-                                  ("height,e", po::value<unsigned int>(), "provide the height of the grid (number of rows)\n")
-                                  ("width,w", po::value<unsigned int>(), "provide the width of the grid (number of columns)\n")
-                                  ("input-file,i", po::value<std::string>(), "provide the path to the input file\n")
-                                  ("output-file,o", po::value<std::string>(), "provide the path of the output file (without extension)\n")
-                                  ("max-pileup,m", po::value<unsigned int>(), "provide the maximum number of entities which can occupy a grid position at the same time\n")
-                                  ("debug-mode,d", po::value<bool>()->implicit_value(false), "start the program in debug mode\n");
+    usageDescription.add_options()("help,h"                                                         , "display help message\n")
+                                  ("height,e"           , po::value<unsigned int>()                 , "provide the height of the grid (number of rows)\n")
+                                  ("width,w"            , po::value<unsigned int>()                 , "provide the width of the grid (number of columns)\n")
+                                  ("input-file,i"       , po::value<std::string>()                  , "provide the path to the input file\n")
+                                  ("text-input-file,t"  , po::value<bool>()->implicit_value(true)   , "flag indicating if the input file type is text (true) or image (false); default flag value is true.\n")
+                                  ("output-file,o"      , po::value<std::string>()                  , "provide the path of the output file (without extension)\n")
+                                  ("max-pileup,m"       , po::value<unsigned int>()                 , "provide the maximum number of entities which can occupy a grid position at the same time\n")
+                                  ("debug-mode,d"       , po::value<bool>()->implicit_value(false)  , "start the program in debug mode\n");
 
     po::variables_map vm;
+
     po::store(po::parse_command_line(argc, argv, usageDescription), vm);
     po::notify(vm);
+
     return vm;
 }
 
@@ -67,8 +70,9 @@ void printWrongParameters() {
 }
 
 // Get the needed parameters
-bool areValidParameters(std::string &inputFilepath, std::string &outputFilename, bool &debugFlag, unsigned int &height,
-                        unsigned int &width, unsigned int &maxPileup, int argc, char** argv) {
+bool areValidParameters(std::string &inputFilepath, std::string &outputFilepath, bool &isTextInputFile,
+                        bool &isDebugMode, unsigned int &height, unsigned int &width,
+                        unsigned int &maxPileup, int argc, char** argv) {
     po::options_description usageDescription("Usage");
 
     po::variables_map vm = initArgumentsConfig(usageDescription, argc, argv);
@@ -81,17 +85,27 @@ bool areValidParameters(std::string &inputFilepath, std::string &outputFilename,
     }
 
     // Check if the given parameters are correct
-    if ((vm.count("input-file")) && (vm.count("output-file")) && (vm.count("height")) && (vm.count("width")) && (vm.count("max-pileup"))) {
+    if ((vm.count("input-file")) && (vm.count("output-file")) &&
+        (vm.count("height")) && (vm.count("width")) && (vm.count("max-pileup"))) {
+        // Update the input/output file paths
         inputFilepath  = vm["input-file"].as<std::string>();
-        outputFilename = vm["output-file"].as<std::string>();
+        outputFilepath = vm["output-file"].as<std::string>();
 
+        // Update the height and the width
         height = vm["height"].as<unsigned int>();
         width = vm["width"].as<unsigned int>();
 
+        // Update the maximum pileup
         maxPileup = vm["max-pileup"].as<unsigned int>();
 
+        // Update the input file type flag
+        if (vm.count("text-input-file")) {
+            isTextInputFile = vm["text-input-file"].as<bool>();
+        }
+
+        // Update the debug mode flag
         if (vm.count("debug-mode")) {
-            debugFlag = vm["debug-mode"].as<bool>();
+            isDebugMode = vm["debug-mode"].as<bool>();
         }
 
         return true;
@@ -136,6 +150,17 @@ void saveDetectorParameterValues(SimulationClusterDetector &detector, bool debug
     }
 }
 
+// Create a Mat instance from the given input file
+cv::Mat createMatFromInputFile(const std::string &inputFilePath, bool isTextInputFile) {
+    RectangularMatFactory factory;
+
+    if (isTextInputFile) {
+        return factory.createFromTextFile(inputFilePath);
+    } else {
+        return factory.createFromImageFile(inputFilePath);
+    }
+}
+
 // Main function
 int main(int argc, char** argv) {
     std::string inputFilePath;
@@ -143,25 +168,25 @@ int main(int argc, char** argv) {
 
     unsigned int maxPileup;
 
-    bool debugFlag = false;
+    bool isTextInputFile = true;
+    bool isDebugMode     = false;
 
     unsigned int height;
     unsigned int width;
 
     try {
-        if (areValidParameters(inputFilePath, outputFilepath, debugFlag, height, width, maxPileup, argc, argv)) {
-            RectangularMatFactory factory;
+        if (areValidParameters(inputFilePath, outputFilepath, isTextInputFile, isDebugMode,
+                               height, width, maxPileup, argc, argv)) {
+            cv::Mat image = createMatFromInputFile(inputFilePath, isTextInputFile);
 
-            cv::Mat image = factory.createFromImageFile(inputFilePath);
+            SimulationClusterDetector detector(height, width, maxPileup, isDebugMode, isTextInputFile);
 
-            SimulationClusterDetector detector(height, width, maxPileup, debugFlag);
-
-            loadDetectorParameterValues(detector, debugFlag);
+            loadDetectorParameterValues(detector, isDebugMode);
 
             detector.detect(image);
             detector.outputResults(outputFilepath);
 
-            saveDetectorParameterValues(detector, debugFlag);
+            saveDetectorParameterValues(detector, isDebugMode);
         } else {
             printWrongParameters();
         }

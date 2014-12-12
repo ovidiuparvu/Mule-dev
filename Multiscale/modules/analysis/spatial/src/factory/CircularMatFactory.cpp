@@ -37,7 +37,7 @@ cv::Mat CircularMatFactory::createFromImageFile(const std::string &inputFilePath
     return circularGrayscaleImage;
 }
 
-void *CircularMatFactory::readValuesFromFile(std::ifstream& fin) {
+float *CircularMatFactory::readValuesFromFile(std::ifstream& fin) {
     MS_throw(UnimplementedMethodException, ERR_UNIMPLEMENTED_METHOD);
 
     // Statement not executed but added to avoid warning messages
@@ -46,10 +46,10 @@ void *CircularMatFactory::readValuesFromFile(std::ifstream& fin) {
 
 cv::Mat CircularMatFactory::createCircularMaskFromCentreToEdge(const cv::Mat &image) {
     // Start with a blank mask where all pixels have 0 intensity
-    cv::Mat mask = cv::Mat::zeros(image.size(), CV_32FC1);
+    cv::Mat mask = cv::Mat::zeros(image.size(), CV_8UC1);
 
     // Compute the image centre point
-    cv::Point imageCentrePoint(image.cols / 2, image.rows / 2);
+    cv::Point imageCentrePoint((image.cols + 1) / 2, (image.rows + 1) / 2);
 
     // Compute the radius of the circular mask
     double radius = static_cast<double>(std::min(image.cols, image.rows)) / 2.0;

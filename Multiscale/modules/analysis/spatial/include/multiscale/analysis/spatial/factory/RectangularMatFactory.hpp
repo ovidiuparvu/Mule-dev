@@ -1,7 +1,7 @@
 #ifndef RECTANGULARMATFACTORY_HPP
 #define RECTANGULARMATFACTORY_HPP
 
-#include "multiscale/analysis/spatial/MatFactory.hpp"
+#include "multiscale/analysis/spatial/factory/MatFactory.hpp"
 
 
 namespace multiscale {
@@ -28,14 +28,15 @@ namespace multiscale {
                 //! Read the values from the given input file
                 /*!
                  * Read the values from the input file and return them as an array which can be used
-                 * afterwards to create a cv::Mat object
+                 * afterwards to create a cv::Mat object. Each floating point value is in the interval
+                 * [0, 255].
                  *
                  * REMARK: The constructor of cv::Mat does not copy the data. Therefore, DO NOT
                  *         deallocate the data in this class.
                  *
                  * \param fin Input file stream from which the concentrations are read
                  */
-                void *readValuesFromFile(std::ifstream& fin) override;
+                float *readValuesFromFile(std::ifstream& fin) override;
 
             private:
 

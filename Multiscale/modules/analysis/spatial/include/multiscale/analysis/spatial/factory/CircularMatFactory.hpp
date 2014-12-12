@@ -1,7 +1,7 @@
 #ifndef CIRCULARMATFACTORY_HPP
 #define CIRCULARMATFACTORY_HPP
 
-#include "multiscale/analysis/spatial/MatFactory.hpp"
+#include "multiscale/analysis/spatial/factory/MatFactory.hpp"
 
 
 namespace multiscale {
@@ -31,7 +31,7 @@ namespace multiscale {
                  *
                  * \param fin Input file stream from which the values are read
                  */
-                void *readValuesFromFile(std::ifstream& fin) override;
+                float *readValuesFromFile(std::ifstream& fin) override;
 
             private:
 

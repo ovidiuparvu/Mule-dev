@@ -1,0 +1,160 @@
+#include "multiscale/visualisation/circular/PolarGnuplotScriptGenerator.hpp"
+#include "multiscale/util/StringManipulator.hpp"
+
+#include <cassert>
+#include <iostream>
+#include <vector>
+#include <sstream>
+#include <fstream>
+
+using namespace multiscale::visualisation;
+
+
+void PolarGnuplotScriptGenerator::generateScript(const std::vector<AnnularSector> &annularSectors,
+                                                 double simulationTime,
+                                                 const std::string &outputFilepath) {
+    std::ofstream fout((outputFilepath + GNUPLOT_EXTENSION), std::ios_base::trunc);
+
+    assert(fout.is_open());
+
+    generateHeader(fout, outputFilepath, simulationTime);
+    generateBody  (annularSectors, fout);
+    generateFooter(fout);
+
+    fout.close();
+}
+
+void PolarGnuplotScriptGenerator::generateHeader(std::ofstream &fout, const std::string &outputFilepath,
+                                                 double simulationTime) {
+    std::ifstream fin(HEADER_IN);
+
+    assert(fin.is_open());
+
+    std::string outputFilename = StringManipulator::filenameFromPath(outputFilepath);
+
+    outputHeader(fin, outputFilename, simulationTime, fout);
+
+    fin.close();
+}
+
+void PolarGnuplotScriptGenerator::generateBody(const std::vector<AnnularSector> &annularSectors,
+                                               std::ofstream &fout) {
+    std::ifstream fin(CONTENT_IN);
+
+    assert(fin.is_open());
+
+    std::string contentTemplate = readContentTemplate(fin);
+
+    outputContent(annularSectors, contentTemplate, fout);
+
+    fin.close();
+}
+
+void PolarGnuplotScriptGenerator::generateFooter(std::ofstream &fout) {
+    std::ifstream fin(FOOTER_IN);
+
+    assert(fin.is_open());
+
+    outputFooter(fin, fout);
+
+    fin.close();
+}
+
+void PolarGnuplotScriptGenerator::outputHeader(std::ifstream &fin, const std::string &outputFilename,
+                                               double simulationTime, std::ofstream &fout) {
+    std::string line;
+
+    while (getline(fin, line)) {
+        line = StringManipulator::replace(
+                   line,
+                   REPLACE_HEADER_FILENAME,
+                   outputFilename
+               );
+        line = StringManipulator::replace(
+                   line,
+                   REPLACE_HEADER_SIM_TIME,
+                   StringManipulator::toString<double>(simulationTime)
+               );
+
+        fout << line << std::endl;
+    }
+
+    fout.flush();
+}
+
+void PolarGnuplotScriptGenerator::outputContent(const std::vector<AnnularSector> &annularSectors,
+                                                const std::string &contentTemplate, std::ofstream &fout) {
+    int index = annularSectors.size();
+
+    for (auto it = annularSectors.begin(); it != annularSectors.end(); it++) {
+        std::string content = contentTemplate;
+
+        content = StringManipulator::replace(
+                      content,
+                      REPLACE_CONTENT_INDEX,
+                      StringManipulator::toString<int>(index--)
+                  );
+        content = StringManipulator::replace(
+                      content,
+                      REPLACE_CONTENT_RADIUS,
+                      StringManipulator::toString<double>((*it).getEndingRadius())
+                  );
+        content = StringManipulator::replace(
+                      content,
+                      REPLACE_CONTENT_START_ANGLE,
+                      StringManipulator::toString<double>((*it).getStartingAngle())
+                  );
+        content = StringManipulator::replace(
+                      content,
+                      REPLACE_CONTENT_END_ANGLE,
+                      StringManipulator::toString<double>((*it).getEndingAngle())
+                  );
+        content = StringManipulator::replace(
+                      content,
+                      REPLACE_CONTENT_CONCENTRATION,
+                      StringManipulator::toString<double>((*it).getConcentration())
+                  );
+
+        fout << content << std::endl;
+    }
+
+    fout.flush();
+}
+
+void PolarGnuplotScriptGenerator::outputFooter(std::ifstream &fin, std::ofstream &fout) {
+    std::string line;
+
+    while (getline(fin, line)) {
+        fout << line << std::endl;
+    }
+
+    fout.flush();
+}
+
+std::string PolarGnuplotScriptGenerator::readContentTemplate(std::ifstream &fin) {
+    std::ostringstream stringStream;
+    std::string line;
+
+    while (getline(fin, line)) {
+        stringStream << line << std::endl;
+    }
+
+    return stringStream.str();
+}
+
+
+// Constants
+const std::string PolarGnuplotScriptGenerator::HEADER_IN     = "${POLAR_GNUPLOT_SCRIPT_HEADER_PATH}";
+const std::string PolarGnuplotScriptGenerator::CONTENT_IN    = "${POLAR_GNUPLOT_SCRIPT_CONTENT_PATH}";
+const std::string PolarGnuplotScriptGenerator::FOOTER_IN     = "${POLAR_GNUPLOT_SCRIPT_FOOTER_PATH}";
+
+const std::string PolarGnuplotScriptGenerator::REPLACE_HEADER_FILENAME         = "OUTPUT_FILENAME";
+const std::string PolarGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME         = "OUTPUT_SIM_TIME";
+
+const std::string PolarGnuplotScriptGenerator::REPLACE_CONTENT_INDEX           = "OBJ_INDEX";
+const std::string PolarGnuplotScriptGenerator::REPLACE_CONTENT_RADIUS          = "OBJ_END_RADIUS";
+const std::string PolarGnuplotScriptGenerator::REPLACE_CONTENT_START_ANGLE     = "OBJ_START_ANGLE";
+const std::string PolarGnuplotScriptGenerator::REPLACE_CONTENT_END_ANGLE       = "OBJ_END_ANGLE";
+const std::string PolarGnuplotScriptGenerator::REPLACE_CONTENT_CONCENTRATION   = "OBJ_CONCENTRATION";
+
+const std::string PolarGnuplotScriptGenerator::GNUPLOT_EXTENSION  = ".plt";

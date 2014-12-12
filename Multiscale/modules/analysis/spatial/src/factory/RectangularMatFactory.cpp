@@ -28,7 +28,7 @@ cv::Mat RectangularMatFactory::createFromImageFile(const std::string &inputFileP
     return grayscaleImage;
 }
 
-void *RectangularMatFactory::readValuesFromFile(std::ifstream &fin) {
+float *RectangularMatFactory::readValuesFromFile(std::ifstream &fin) {
     float value = 0;
 
     // Create an array of floats
@@ -36,7 +36,6 @@ void *RectangularMatFactory::readValuesFromFile(std::ifstream &fin) {
 
     // Compute the number of expected values
     std::size_t nrOfValues = rows * cols;
-
 
     // Read the values from the input file stream
     for (std::size_t i = 0; i < nrOfValues; i++) {
@@ -46,7 +45,8 @@ void *RectangularMatFactory::readValuesFromFile(std::ifstream &fin) {
             MS_throw(InvalidInputException, ERR_INVALID_VALUE);
         }
 
-        data[i] = value;
+        // Scale up the value to the interval [0, 255]
+        data[i] = (value * 255);
     }
 
     // Return the values read from the input file stream
