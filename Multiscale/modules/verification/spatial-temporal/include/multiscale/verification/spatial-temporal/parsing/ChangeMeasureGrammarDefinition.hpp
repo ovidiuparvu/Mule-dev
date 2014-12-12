@@ -36,8 +36,17 @@ namespace multiscale {
         //! Initialise the grammar
         template <typename Iterator>
         void ChangeMeasureGrammar<Iterator>::initialiseGrammar() {
+            // In order to be a successful parse the change measure
+            // should be followed by a "(". The "(" character is not
+            // explicitly consumed i.e. the "&" predicate is used for
+            // look-ahead techniques.
+            //
+            // At the time of writing this look-ahead technique was
+            // employed to avoid ambiguity in the grammar between
+            // "density" and "d"
             changeMeasureRule
-                =   changeMeasureTypeParser;
+                =   changeMeasureTypeParser
+                    >> &qi::lit('(');
         }
 
         //! Initialise debug support

@@ -1923,8 +1923,56 @@ TEST(SimilarityTemporalNumericCollectionAttribute, Correct) {
 //
 /////////////////////////////////////////////////////////
 
-TEST(SpatialMeasure, IncorrectSpatialMeasure) {
+TEST(SpatialMeasure, IncorrectSpatialMeasureInFilter) {
     EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, height__ <= 30.2))) <= 3]"), InvalidInputException);
+}
+
+TEST(SpatialMeasure, IncorrectSpatialMeasure) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(height__(filter(clusters, clusteredness <= 30.2))) <= 3]"), InvalidInputException);
+}
+
+TEST(SpatialMeasure, CorrectClusterednessInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectDensityInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, density <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectAreaInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, area <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectPerimeterInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, perimeter <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectDistanceFromOriginInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, distanceFromOrigin <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectAngleInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, angle <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectTriangleMeasureInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, triangleMeasure <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectRectangleMeasureInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, rectangleMeasure <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectCircleMeasureInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, circleMeasure <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectCentroidXInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, centroidX <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectCentroidYInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, centroidY <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectClusteredness) {
@@ -1932,43 +1980,43 @@ TEST(SpatialMeasure, CorrectClusteredness) {
 }
 
 TEST(SpatialMeasure, CorrectDensity) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, density <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(density(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectArea) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, area <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectPerimeter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, perimeter <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(perimeter(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectDistanceFromOrigin) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, distanceFromOrigin <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(distanceFromOrigin(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectAngle) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, angle <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(angle(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectTriangleMeasure) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, triangleMeasure <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(triangleMeasure(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectRectangleMeasure) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, rectangleMeasure <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(rectangleMeasure(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectCircleMeasure) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, circleMeasure <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(circleMeasure(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectCentroidX) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, centroidX <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(centroidX(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectCentroidY) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, centroidY <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(centroidY(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
 

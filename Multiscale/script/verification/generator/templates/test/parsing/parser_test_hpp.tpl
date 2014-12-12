@@ -1920,13 +1920,23 @@ TEST(SimilarityTemporalNumericCollectionAttribute, Correct) {
 //
 /////////////////////////////////////////////////////////
 
-TEST(SpatialMeasure, IncorrectSpatialMeasure) {
+TEST(SpatialMeasure, IncorrectSpatialMeasureInFilter) {
     EXPECT_THROW(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, height__ <= 30.2))) <= 3]"), InvalidInputException);
 }
 
+TEST(SpatialMeasure, IncorrectSpatialMeasure) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(height__(filter(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/ <= 30.2))) <= 3]"), InvalidInputException);
+}
+
+/*{% for spatial_measure in spatial_measures %}*/
+TEST(SpatialMeasure, Correct/*{{ spatial_measure.name|first_to_upper }}*/InFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measure.name }}*/ <= 30.2))) <= 3]"));
+}
+
+/*{% endfor %}*/
 /*{% for spatial_measure in spatial_measures %}*/
 TEST(SpatialMeasure, Correct/*{{ spatial_measure.name|first_to_upper }}*/) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measures[0].name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measure.name }}*/ <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(/*{{ spatial_measure.name }}*/(filter(/*{{ spatial_entities[0].name }}*/s, /*{{ spatial_measures[0].name }}*/ <= 30.2))) <= 3]"));
 }
 
 /*{% endfor %}*/
