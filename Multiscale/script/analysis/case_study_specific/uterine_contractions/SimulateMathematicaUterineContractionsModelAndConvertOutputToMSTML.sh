@@ -41,6 +41,8 @@ OUT_MSTML_FOLDER="mstml";
 OUT_MSTML_SUBFILES_TMP_FOLDER="${OUT_MSTML_FOLDER}/tmp";
 
 # Detection and analysis constants
+GENERATE_IMAGES_FROM_SIMULATION_OUTPUT=0;
+
 DETECTION_AND_ANALYSIS_CONFIG_FOLDER="config/analysis/spatial";
 
 CLUSTER_DETECTION_AND_ANALYSIS_CONFIG_FILE="${DETECTION_AND_ANALYSIS_CONFIG_FOLDER}/simulation_cluster_detector.xml";
@@ -138,9 +140,9 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 
 MSTML_GENERATION_SPECIFICATION="
 Numeric 2 Organ.Uterus
-Region 3 18 4 4 1 Tissue.ContractileActivity 930 40 0 0 0 10000 10
-Region 19 34 4 4 1 Tissue.BurstActivity 930 40 0 0 0 10000 250
-Region 35 50 4 4 1 Tissue.RefractoryActivity 930 40 0 0 0 10000 250
+Region 3 18 4 4 1 Tissue.ContractileActivity 0 0 0 0 0 0 0
+Region 19 34 4 4 1 Tissue.BurstActivity 930 40 0 0 0 0 250
+Region 35 50 4 4 1 Tissue.RefractoryActivity 930 40 0 0 0 0 250
 ";
 
 
@@ -357,7 +359,7 @@ function GenerateClusterTemporaryMSTMLSubfile() {
 
 
     ####################################################################################
-    # Step 1: Generate images for simulation file
+    # Step 1: Preprocessing of simulation file for spatial analysis
     ####################################################################################
 
     # Copy the part of the csv file with necessary information to its corresponding input folder
@@ -366,44 +368,50 @@ function GenerateClusterTemporaryMSTMLSubfile() {
     # Run the program for converting the ".csv" file to "Number of time points" input files for the MapCartesianToScript program
     bin/RectangularMapEntityCsvToInputFiles --input-file "${inputDataOutputFolder}/${inputFileBasename}" --nr-entities ${nrOfEntities} --max-pileup ${maxPileup} --height ${simulationGridHeight} --width ${simulationGridWidth} --output-file "${inputDataOutputFolder}/${inputFileBasename}";
 
-    # Run MapCartesianToScript for converting each of the generated input files into gnuplot scripts
-    find ${inputDataOutputFolder} -name "*.in" | parallel bin/MapCartesianToScript --input-file {} --output-file ${scriptOutputFolder}/{/.};
+    # If the constant "GENERATE_IMAGES_FROM_SIMULATION_OUTPUT" != 0 then generate 
+    # for each timepoint an image showing the value of the positions in the discretised 
+    # space
+    if [[ ${GENERATE_IMAGES_FROM_SIMULATION_OUTPUT} -ne 0 ]];
+    then
+        # Run MapCartesianToScript for converting each of the generated input files into gnuplot scripts
+        find ${inputDataOutputFolder} -name "*.in" | parallel bin/MapCartesianToScript --input-file {} --output-file ${scriptOutputFolder}/{/.};
 
-    # Run gnuplot on each of the generated scripts from the script folder and ignore warnings
-    cd ${imagesOutputFolder};
+        # Run gnuplot on each of the generated scripts from the script folder and ignore warnings
+        cd ${imagesOutputFolder};
 
-    ls -1 ${scriptOutputFolder} | parallel gnuplot ${scriptOutputFolder}/{} 2>/dev/null;
+        ls -1 ${scriptOutputFolder} | parallel gnuplot ${scriptOutputFolder}/{} 2>/dev/null;
 
-    cd ${homeFolder};
+        cd ${homeFolder};
+    fi
 
 
     ####################################################################################
-    # Step 2: Analyse images of entities
+    # Step 2: Spatial analysis of input files
     ####################################################################################
 
-    # Define the basename of the images without numeric index at the end
-    local imageName=$(find ${imagesOutputFolder} -name "*.png" | head -n1);
-    local imageBasename=$(basename ${imageName});
-    local imageBasenameRoot=$(echo ${imageBasename} | rev | cut -d'_' -f2- | rev);
+    # Define the basename of the input files without numeric index at the end
+    local inputFileName=$(find ${inputDataOutputFolder} -name "*.in" | head -n1);
+    local inputFileBasename=$(basename ${inputFileName});
+    local inputFileBasenameRoot=$(echo ${inputFileBasename} | rev | cut -d'_' -f2- | rev);
 
-    # Run the cluster detection procedure for each image in parallel
-    ls ${imagesOutputFolder}/*.png | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${analysisOutputFolder}/{/.} --height=${simulationGridHeight} --width=${simulationGridWidth} --max-pileup=${maxPileup} --debug-mode="false"
+    # Run the cluster detection procedure for each input file in parallel
+    ls ${inputDataOutputFolder}/*.in | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${analysisOutputFolder}/{/.} --height=${simulationGridHeight} --width=${simulationGridWidth} --max-pileup=${maxPileup} --debug-mode="false"
 
     # Define the variables required to merge the xml files
     local clustersXMLOutputPath=${analysisOutputFolder}/"results_clusters.xml";
 
     # Create the resulting file
-    local fileCount=$(find ${analysisOutputFolder} -name "${imageBasenameRoot}*.xml" | wc -l);
+    local fileCount=$(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | wc -l);
 
     if [[ ${fileCount} -gt 0 ]];
     then
-        local sampleFilePath=$(find ${analysisOutputFolder} -name "${imageBasenameRoot}*.xml" | head -n1);
+        local sampleFilePath=$(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | head -n1);
 
         # Print the header to the resulting file
         cat ${sampleFilePath} | head -n ${LINES_BEFORE_TIMEPOINT_CONTENT} > ${clustersXMLOutputPath};
 
         # Process each input file
-        for file in $(find ${analysisOutputFolder} -name "${imageBasenameRoot}*.xml" | sort -V);
+        for file in $(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | sort -V);
         do
             cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"cluster\"\)/\0 semanticType=\"${clustersSemanticType}\"/g" | sed "s/\(<name>avgDensityClusters\|avgClusterednessClusters\)\(<\/name>\)/\1${clustersSemanticTypeOnlyLetters}\2/g"; 
         done >> ${clustersXMLOutputPath};
@@ -509,9 +517,8 @@ function GenerateRegionTemporaryMSTMLSubfile() {
     # Add the values to the temporary file
     cat ${processedSimulationOutputPath} | cut -d"," -f1,${regionsStartColumnIndex}-${regionsStopColumnIndex} > ${simulationInputFile};
 
-
     ####################################################################################
-    # Step 1: Generate images for simulation file
+    # Step 1: Preprocessing of simulation file for spatial analysis
     ####################################################################################
 
     # Copy the part of the csv file with necessary information to its corresponding input folder
@@ -520,44 +527,49 @@ function GenerateRegionTemporaryMSTMLSubfile() {
     # Run the program for converting the ".csv" file to "Number of time points" input files for the MapCartesianToScript program
     bin/RectangularMapCsvToInputFiles --input-file "${inputDataOutputFolder}/${inputFileBasename}" --nr-concentrations-position ${nrOfConcentrationsForEachPosition} --height ${simulationGridHeight} --width ${simulationGridWidth} --output-file "${inputDataOutputFolder}/${inputFileBasename}";
 
-    # Run MapCartesianToScript for converting each of the generated input files into gnuplot scripts
-    find ${inputDataOutputFolder} -name "*.in" | parallel bin/MapCartesianToScript --input-file {} --output-file ${scriptOutputFolder}/{/.};
+    # If the constant "GENERATE_IMAGES_FROM_SIMULATION_OUTPUT" != 0 then generate 
+    # for each timepoint an image showing the value of the positions in the discretised 
+    # space
+    if [[ ${GENERATE_IMAGES_FROM_SIMULATION_OUTPUT} -ne 0 ]];
+    then
+        # Run MapCartesianToScript for converting each of the generated input files into gnuplot scripts
+        find ${inputDataOutputFolder} -name "*.in" | parallel bin/MapCartesianToScript --input-file {} --output-file ${scriptOutputFolder}/{/.};
 
-    # Run gnuplot on each of the generated scripts from the script folder and ignore warnings
-    cd ${imagesOutputFolder};
+        # Run gnuplot on each of the generated scripts from the script folder and ignore warnings
+        cd ${imagesOutputFolder};
 
-    ls -1 ${scriptOutputFolder} | parallel gnuplot ${scriptOutputFolder}/{} 2>/dev/null;
+        ls -1 ${scriptOutputFolder} | parallel gnuplot ${scriptOutputFolder}/{} 2>/dev/null;
 
-    cd ${homeFolder};
-
+        cd ${homeFolder};
+    fi
 
     ####################################################################################
-    # Step 2: Analyse images of regions
+    # Step 2: Spatial analysis of input files
     ####################################################################################
 
-    # Define the basename of the images without numeric index at the end
-    local imageName=$(find ${imagesOutputFolder} -name "*.png" | head -n1);
-    local imageBasename=$(basename ${imageName});
-    local imageBasenameRoot=$(echo ${imageBasename} | rev | cut -d'_' -f2- | rev);
+    # Define the basename of the input files without numeric index at the end
+    local inputFileName=$(find ${inputDataOutputFolder} -name "*.in" | head -n1);
+    local inputFileBasename=$(basename ${inputFileName});
+    local inputFileBasenameRoot=$(echo ${inputFileBasename} | rev | cut -d'_' -f2- | rev);
 
-    # Run the region detection procedure for each image in parallel
-    ls ${imagesOutputFolder}/*.png | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${analysisOutputFolder}/{/.} --debug-mode="false"
+    # Run the region detection procedure for each input file in parallel
+    ls ${inputDataOutputFolder}/*.in | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${analysisOutputFolder}/{/.} --debug-mode="false"
 
     # Define the variables required to merge the xml files
     local regionsXMLOutputPath=${analysisOutputFolder}/"results_regions.xml";
 
     # Create the resulting file
-    local fileCount=$(find ${analysisOutputFolder} -name "${imageBasenameRoot}*.xml" | wc -l);
+    local fileCount=$(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | wc -l);
 
     if [[ ${fileCount} -gt 0 ]];
     then
-        local sampleFilePath=$(find ${analysisOutputFolder} -name "${imageBasenameRoot}*.xml" | head -n1);
+        local sampleFilePath=$(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | head -n1);
 
         # Print the header to the resulting file
         cat ${sampleFilePath} | head -n ${LINES_BEFORE_TIMEPOINT_CONTENT} > ${regionsXMLOutputPath};
 
         # Process each input file
-        for file in $(find ${analysisOutputFolder} -name "${imageBasenameRoot}*.xml" | sort -V);
+        for file in $(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | sort -V);
         do
             cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"region\"\)/\0 semanticType=\"${regionsSemanticType}\"/g" | sed "s/\(<name>avgDensityRegions\|avgClusterednessRegions\)\(<\/name>\)/\1${regionsSemanticTypeOnlyLetters}\2/g"; 
         done >> ${regionsXMLOutputPath};
