@@ -11,46 +11,78 @@ MatFactory::MatFactory() : rows(0), cols(0), simulationTime(0) {}
 
 MatFactory::~MatFactory() {}
 
-cv::Mat MatFactory::create(const std::string &inputFile) {
+cv::Mat MatFactory::createFromTextFile(const std::string &inputFilePath) {
     std::ifstream fin;
 
-    initInputFile(fin, inputFile);
+    // Initialise the input file stream
+    initInputFile(fin, inputFilePath);
 
-    unsigned char *data = processConcentrations(fin);
+    // Read the values from the input file
+    void *data = readValuesFromFile(fin);
 
+    // Close the input file stream
+    closeInputFileStream(fin, inputFilePath);
+
+    // Return the Mat object containing the given data
+    return (
+        cv::Mat(rows, cols, CV_32FC1, data)
+    );
+}
+
+void MatFactory::initInputFile(std::ifstream &fin, const std::string& inputFilePath) {
+    fin.open(inputFilePath, std::ios_base::in);
+
+    // Check if the file was successfully opened
+    if (!fin.is_open()) {
+        MS_throw(
+            FileOpenException,
+            ERR_OPEN_INPUT_FILE_BEGIN +
+            inputFilePath +
+            ERR_OPEN_INPUT_FILE_END
+        );
+    }
+
+    // Read the number of rows, columns, respectively the corresponding simulation time
+    fin >> rows >> cols >> simulationTime;
+}
+
+void MatFactory::closeInputFileStream(std::ifstream &fin, const std::string &inputFilePath) {
     // Check if the file contains additional unnecessary data
     // after excluding the cv::line feed character
     fin.get();
 
     if (fin.peek() != EOF) {
-        MS_throw(InvalidInputException, ERR_IN_EXTRA_DATA);
+        MS_throw(
+            InvalidInputException,
+            ERR_INPUT_FILE_EXTRA_DATA_BEGIN +
+            inputFilePath +
+            ERR_INPUT_FILE_EXTRA_DATA_END
+        );
     }
 
     fin.close();
-
-    return cv::Mat(rows, cols, CV_8UC1, data);
 }
 
-void MatFactory::initInputFile(std::ifstream &fin, const std::string& inputFile) {
-    fin.open(inputFile, std::ios_base::in);
-
-    if (!fin.is_open()) {
-        MS_throw(FileOpenException, ERR_INPUT_OPEN);
+bool MatFactory::isValidInputImage(const cv::Mat &image, const std::string &imageFilePath) {
+    if (!image.data) {
+        MS_throw(
+            InvalidInputException,
+            ERR_OPEN_INPUT_FILE_BEGIN +
+            imageFilePath +
+            ERR_OPEN_INPUT_FILE_END
+        );
     }
 
-    fin >> rows >> cols >> simulationTime;
-}
-
-unsigned char MatFactory::convertToIntensity(double concentration) {
-    return (
-        NumericRangeManipulator::convertFromRange<double, unsigned char>(
-            0, 1, 0, 255, concentration
-        )
-    );
+    return true;
 }
 
 
 // Constants
-const std::string MatFactory::ERR_INPUT_OPEN      = "The input file could not be opened.";
-const std::string MatFactory::ERR_IMG_RESOLUTION  = "The resolution of the input image is not the expected one.";
-const std::string MatFactory::ERR_IN_EXTRA_DATA   = "The input file contains more data than required.";
+const std::string MatFactory::ERR_OPEN_INPUT_FILE_BEGIN = "The input file (";
+const std::string MatFactory::ERR_OPEN_INPUT_FILE_END   = ") could not be opened.";
+
+const std::string MatFactory::ERR_INPUT_FILE_EXTRA_DATA_BEGIN   = "The input file (";
+const std::string MatFactory::ERR_INPUT_FILE_EXTRA_DATA_END     = ") contains more data than required. Please change.";
+
+const std::string MatFactory::ERR_INVALID_IMAGE_FILE_BEGIN  = "The provided image input file (";
+const std::string MatFactory::ERR_INVALID_IMAGE_FILE_END    = ") is invalid. Please change.";

@@ -179,7 +179,13 @@ void RegionDetector::morphologicalClose(cv::Mat &image) {
 }
 
 void RegionDetector::thresholdImage(const cv::Mat &image, cv::Mat &thresholdedImage) {
-    cv::threshold(image, thresholdedImage, thresholdValue, THRESHOLD_MAX, cv::THRESH_BINARY);
+    cv::Mat tmpThresholdedImage;
+
+    // Threshold the image
+    cv::threshold(image, tmpThresholdedImage, thresholdValue, THRESHOLD_MAX, cv::THRESH_BINARY);
+
+    // Convert the resulting thresholded Image to grayscale
+    tmpThresholdedImage.convertTo(thresholdedImage, CV_8UC1);
 }
 
 void RegionDetector::findRegions(const cv::Mat &image, std::vector<Region> &regions) {
@@ -245,10 +251,11 @@ void RegionDetector::computeAverageDensity(std::vector<Region> &regions) {
 
 std::vector<Polygon> RegionDetector::findPolygonsInImage(const cv::Mat &image) {
     // Two extra pixels required for each dimension, because the contour detection
-    // algorithm ignores the first and last cv::lines and columns of the image matrix. In order
-    // to consider the entire input image we add blank first and last cv::lines and columns
+    // algorithm ignores the first and last lines and columns of the image matrix. In order
+    // to consider the entire input image we add blank first and last lines and columns
     // to the image matrix
     cv::Mat modifiedImage = cv::Mat::zeros(image.rows + 2, image.cols + 2, image.type());
+
     std::vector<std::vector<cv::Point> > contours;
     std::vector<cv::Vec4i> hierarchy;
 
@@ -342,14 +349,19 @@ bool RegionDetector::isValidHole(const std::vector<cv::Point> &hole) {
 }
 
 double RegionDetector::regionDensity(const Polygon &polygon) {
-    cv::Mat mask(cv::Mat::zeros(image.rows, image.cols, image.type()));
+    // Create a blank mask where each pixel is initialised with zero intensity
+    cv::Mat mask(cv::Mat::zeros(image.rows, image.cols, CV_8UC1));
 
+    // Set the intensity of all pixels surrounded by the polygon outer border to maximum
     drawContours(mask, std::vector<std::vector<cv::Point>>(1, polygon.first), -1, cv::Scalar(INTENSITY_MAX), CV_FILLED);
+
+    // Set the intensity of all pixels surrounded by inner borders to zero
     drawContours(mask, polygon.second, -1, cv::Scalar(0), CV_FILLED);
 
+    // Compute the average intensity of the pixels considering the mask
     double averageIntensity = (mean(image, mask))[0];
 
-    return (averageIntensity / static_cast<double>(INTENSITY_MAX));
+    return averageIntensity;
 }
 
 void RegionDetector::clearPreviousDetectionResults() {
@@ -371,17 +383,21 @@ void RegionDetector::outputResultsToImage() {
     // algorithm ignores the first and last cv::lines and columns of the image matrix. In order
     // to consider the entire input image we add blank first and last cv::lines and columns
     // to the image matrix
-    cv::Mat outputImage = cv::Mat::zeros(image.rows + 2, image.cols + 2, image.type());
+    cv::Mat tmpOutputImage = cv::Mat::zeros(image.rows + 2, image.cols + 2, CV_8UC1);
 
-    image.copyTo(outputImage(cv::Rect(1, 1, image.cols, image.rows)));
+    // Convert the floating point initial image to a unsigned char output image
+    image.convertTo(tmpOutputImage(cv::Rect(1, 1, image.cols, image.rows)), CV_8UC1);
 
-    cvtColor(outputImage, outputImage, CV_GRAY2BGR);
+    // Convert the temporary grayscale output image to coloured
+    cvtColor(tmpOutputImage, tmpOutputImage, CV_GRAY2BGR);
 
+    // Output the regions to the image
     for (Region &region : regions) {
-        outputRegionToImage(region, outputImage);
+        outputRegionToImage(region, tmpOutputImage);
     }
 
-    outputImage(cv::Rect(1, 1, image.cols, image.rows)).copyTo(this->outputImage);
+    // Copy the temporary to the regular output image
+    tmpOutputImage(cv::Rect(1, 1, image.cols, image.rows)).copyTo(outputImage);
 }
 
 void RegionDetector::outputRegionToImage(const Region &region, cv::Mat &outputImage) {

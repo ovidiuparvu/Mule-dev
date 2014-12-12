@@ -32,12 +32,10 @@ namespace multiscale {
                  * \param debugMode             Flag indicating if detector should run in debug mode or not
                  * \param maxPileupNumber       The maximum number of entities which can occupy a grid position at
                  *                              the same time
-                 * \param maxPileupIntensity    The grayscale intensity of a maximally piled up grid position
                  */
                 SimulationClusterDetector(unsigned int height,
                                           unsigned int width,
-                                          int maxPileupNumber,
-                                          double maxPileupIntensity,
+                                          unsigned int maxPileupNumber,
                                           bool debugMode = false);
                 ~SimulationClusterDetector();
 

@@ -8,9 +8,9 @@
 using namespace multiscale::analysis;
 
 
-SimulationClusterDetector::SimulationClusterDetector(unsigned int height, unsigned int width, int maxPileupNumber,
-                                                     double maxPileupIntensity, bool debugMode)
-                                                    : ClusterDetector(maxPileupNumber, maxPileupIntensity, debugMode) {
+SimulationClusterDetector::SimulationClusterDetector(unsigned int height, unsigned int width,
+                                                     unsigned int maxPileupNumber, bool debugMode)
+                                                    : ClusterDetector(maxPileupNumber, debugMode) {
     this->height = height;
     this->width = width;
 

@@ -2,6 +2,7 @@
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/exception/UnimplementedMethodException.hpp"
 
+#include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
 using namespace multiscale::analysis;
@@ -11,74 +12,60 @@ CircularMatFactory::CircularMatFactory() : MatFactory() {}
 
 CircularMatFactory::~CircularMatFactory() {}
 
-cv::Mat CircularMatFactory::createFromViewerImage(const std::string &inputFile) {
-    cv::Mat image = cv::imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
+cv::Mat CircularMatFactory::createFromImageFile(const std::string &inputFilePath) {
+    cv::Mat initialImage;
+    cv::Mat grayscaleImage;
 
-    isValidViewerImage(image);
+    // Read the initial image from disk in 32FC3 format
+    cv::imread(inputFilePath, CV_LOAD_IMAGE_COLOR).convertTo(initialImage, CV_32FC3);
 
-    cv::Mat croppedImage = image(
-                            cv::Rect(
-                                ROI_START_X - ROI_RADIUS,
-                                ROI_START_Y - ROI_RADIUS,
-                                2 * ROI_RADIUS, 2 * ROI_RADIUS
-                            )
-                       );
-    cv::Mat circularImage = cv::Mat::zeros(croppedImage.size(), CV_8UC1);
+    // Convert the image to grayscale considering 32-bit floating point precision
+    cv::cvtColor(initialImage, grayscaleImage, CV_BGR2GRAY);
 
-    croppedImage.copyTo(circularImage, createCircularMask(ROI_RADIUS, ROI_RADIUS, ROI_RADIUS - 1, croppedImage));
+    // Check if the input image is valid
+    isValidInputImage(grayscaleImage, inputFilePath);
 
-    return circularImage;
+    // Create a circular image which masks out all pixels outside the circle
+    cv::Mat circularGrayscaleImage = cv::Mat::zeros(grayscaleImage.size(), CV_32FC1);
+
+    grayscaleImage.copyTo(
+        circularGrayscaleImage,
+        createCircularMaskFromCentreToEdge(grayscaleImage)
+    );
+
+    // Return the resulting circular grayscale image
+    return circularGrayscaleImage;
 }
 
-double CircularMatFactory::maxColourBarIntensityFromViewerImage(const std::string &inputFile) {
-    cv::Mat image = cv::imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
-
-    isValidViewerImage(image);
-
-    return (double)image.at<uchar>(cv::Point(COLOURBAR_MAX_X, COLOURBAR_MAX_Y));
-}
-
-unsigned char * CircularMatFactory::processConcentrations(std::ifstream& fin) {
+void *CircularMatFactory::readValuesFromFile(std::ifstream& fin) {
     MS_throw(UnimplementedMethodException, ERR_UNIMPLEMENTED_METHOD);
 
-    // Statement not executed but added to overcome warning message
+    // Statement not executed but added to avoid warning messages
     throw UnimplementedMethodException(__FILE__, __LINE__, ERR_UNIMPLEMENTED_METHOD);
 }
 
-cv::Mat CircularMatFactory::createCircularMask(unsigned int originX, unsigned int originY,
-                                               unsigned int radius, const cv::Mat &image) {
-    cv::Mat mask = cv::Mat::zeros(image.size(), CV_8UC1);
+cv::Mat CircularMatFactory::createCircularMaskFromCentreToEdge(const cv::Mat &image) {
+    // Start with a blank mask where all pixels have 0 intensity
+    cv::Mat mask = cv::Mat::zeros(image.size(), CV_32FC1);
 
-    cv::circle(mask, cv::Point(originX, originY), radius, cv::Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX),
-               CV_FILLED);
+    // Compute the image centre point
+    cv::Point imageCentrePoint(image.cols / 2, image.rows / 2);
+
+    // Compute the radius of the circular mask
+    double radius = static_cast<double>(std::min(image.cols, image.rows)) / 2.0;
+
+    // Draw max intensity pixels of the mask
+    cv::circle(
+        mask, imageCentrePoint, radius,
+        cv::Scalar(INTENSITY_MAX, INTENSITY_MAX, INTENSITY_MAX),
+        CV_FILLED
+    );
 
     return mask;
-}
-
-bool CircularMatFactory::isValidViewerImage(const cv::Mat &image) {
-    if (!image.data) {
-        MS_throw(InvalidInputException, ERR_INPUT_OPEN);
-    }
-
-    if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT)) {
-        MS_throw(InvalidInputException, ERR_IMG_RESOLUTION);
-    }
-
-    return true;
 }
 
 
 // Constants
 const std::string CircularMatFactory::ERR_UNIMPLEMENTED_METHOD = "The method you called is not implemented.";
 
-const int CircularMatFactory::INTENSITY_MAX     = 255;
-
-const int CircularMatFactory::ROI_START_X       = 1024;
-const int CircularMatFactory::ROI_START_Y       = 786;
-const int CircularMatFactory::ROI_RADIUS        = 615;
-
-const int CircularMatFactory::INPUT_IMG_WIDTH   = 2048;
-const int CircularMatFactory::INPUT_IMG_HEIGHT  = 1572;
-
-const int CircularMatFactory::COLOURBAR_MAX_X   = 1775;
-const int CircularMatFactory::COLOURBAR_MAX_Y   = 56;
+const int CircularMatFactory::INTENSITY_MAX = 1;

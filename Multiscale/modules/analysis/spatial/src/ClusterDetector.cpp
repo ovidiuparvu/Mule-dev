@@ -12,7 +12,7 @@
 using namespace multiscale::analysis;
 
 
-ClusterDetector::ClusterDetector(int maxPileupNumber, double maxPileupIntensity, bool debugMode)
+ClusterDetector::ClusterDetector(unsigned int maxPileupNumber, bool debugMode)
                                  : Detector(debugMode) {
     this->eps = 0;
     this->minPoints = 0;
@@ -20,7 +20,8 @@ ClusterDetector::ClusterDetector(int maxPileupNumber, double maxPileupIntensity,
     this->avgDensity = 0;
     this->avgClusterednessDegree = 0;
 
-    this->entityPileupDegree = Numeric::division(maxPileupIntensity, maxPileupNumber);
+    this->entityPileupDegree =
+        Numeric::division(1.0, static_cast<double>(maxPileupNumber));
 }
 
 ClusterDetector::~ClusterDetector() {}

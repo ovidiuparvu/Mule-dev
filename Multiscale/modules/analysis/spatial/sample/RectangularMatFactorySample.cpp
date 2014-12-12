@@ -13,14 +13,10 @@ using namespace multiscale::analysis;
 int main() {
     RectangularMatFactory factory;
 
-    cv::Mat image = factory.createFromViewerImage("data/test/rectangular.png");
+    cv::Mat image = factory.createFromImageFile("data/test/rectangular.png");
 
     cv::namedWindow("Test", cv::WINDOW_NORMAL);
     cv::imshow("Test", image);
-
-    std::cout << "Maximum colour bar intensity: "
-              << factory.maxColourBarIntensityFromViewerImage("data/test/rectangular.png")
-              << std::endl;
 
     cv::waitKey(0);
 

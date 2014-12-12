@@ -152,10 +152,9 @@ int main(int argc, char** argv) {
         if (areValidParameters(inputFilePath, outputFilepath, debugFlag, height, width, maxPileup, argc, argv)) {
             RectangularMatFactory factory;
 
-            cv::Mat image = factory.createFromViewerImage(inputFilePath);
-            double maxPileupIntensity = factory.maxColourBarIntensityFromViewerImage(inputFilePath);
+            cv::Mat image = factory.createFromImageFile(inputFilePath);
 
-            SimulationClusterDetector detector(height, width, maxPileup, maxPileupIntensity, debugFlag);
+            SimulationClusterDetector detector(height, width, maxPileup, debugFlag);
 
             loadDetectorParameterValues(detector, debugFlag);
 

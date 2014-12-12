@@ -36,7 +36,7 @@ namespace multiscale {
                  *                              the same time
                  * \param maxPileupIntensity    The grayscale intensity of a maximally piled up grid position
                  */
-                ClusterDetector(int maxPileupNumber, double maxPileupIntensity, bool debugMode = false);
+                ClusterDetector(unsigned int maxPileupNumber, bool debugMode = false);
                 virtual ~ClusterDetector();
 
                 //! Get the value of the clustering algorithm parameter eps

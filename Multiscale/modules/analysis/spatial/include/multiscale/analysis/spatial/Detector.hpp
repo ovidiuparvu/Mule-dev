@@ -35,7 +35,7 @@ namespace multiscale {
                                                              Average pile up degree of all clusters */
 
                 cv::Mat image;                          /*!< Input image */
-                std::string outputFilepath;                  /*!< Path of the output file */
+                std::string outputFilepath;             /*!< Path of the output file */
                 bool debugMode;                         /*!< Flag for indicating if debug mode is set */
 
                 cv::Mat outputImage;                    /*!< Image for displaying the results */

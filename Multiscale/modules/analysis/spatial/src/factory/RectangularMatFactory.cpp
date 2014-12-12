@@ -1,6 +1,7 @@
 #include "multiscale/analysis/spatial/factory/RectangularMatFactory.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
 
+#include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
 using namespace multiscale::analysis;
@@ -10,63 +11,48 @@ RectangularMatFactory::RectangularMatFactory() : MatFactory() {}
 
 RectangularMatFactory::~RectangularMatFactory() {}
 
-cv::Mat RectangularMatFactory::createFromViewerImage(const std::string &inputFile) {
-    cv::Mat image = cv::imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
+cv::Mat RectangularMatFactory::createFromImageFile(const std::string &inputFilePath) {
+    cv::Mat initialImage;
+    cv::Mat grayscaleImage;
 
-    isValidViewerImage(image);
+    // Read the initial image from disk in 32FC3 format
+    cv::imread(inputFilePath, CV_LOAD_IMAGE_COLOR).convertTo(initialImage, CV_32FC3);
 
-    return image(cv::Rect(ROI_START_X, ROI_START_Y, ROI_WIDTH, ROI_HEIGHT));
+    // Convert the image to grayscale considering 32-bit floating point precision
+    cv::cvtColor(initialImage, grayscaleImage, CV_BGR2GRAY);
+
+    // Check if the image is valid
+    isValidInputImage(grayscaleImage, inputFilePath);
+
+    // Return the grayscale image
+    return grayscaleImage;
 }
 
-double RectangularMatFactory::maxColourBarIntensityFromViewerImage(const std::string &inputFile) {
-    cv::Mat image = cv::imread(inputFile, CV_LOAD_IMAGE_GRAYSCALE);
+void *RectangularMatFactory::readValuesFromFile(std::ifstream &fin) {
+    float value = 0;
 
-    isValidViewerImage(image);
+    // Create an array of floats
+    float *data = new float[rows * cols];
 
-    return (double)image.at<uchar>(cv::Point(COLOURBAR_MAX_X, COLOURBAR_MAX_Y));
-}
+    // Compute the number of expected values
+    std::size_t nrOfValues = rows * cols;
 
-unsigned char *RectangularMatFactory::processConcentrations(std::ifstream& fin) {
-    unsigned char *data = new unsigned char[rows*cols];
-    int nrOfConcentrations = rows * cols;
-    double concentration = 0;
 
-    for (int i = 0; i < nrOfConcentrations; i++) {
-        fin >> concentration;
+    // Read the values from the input file stream
+    for (std::size_t i = 0; i < nrOfValues; i++) {
+        fin >> value;
 
-        if ((concentration < 0) || (concentration > 1)) {
-            MS_throw(InvalidInputException, ERR_CONC);
+        if ((value < 0) || (value > 1)) {
+            MS_throw(InvalidInputException, ERR_INVALID_VALUE);
         }
 
-        data[i] = convertToIntensity(concentration);
+        data[i] = value;
     }
 
+    // Return the values read from the input file stream
     return data;
-}
-
-bool RectangularMatFactory::isValidViewerImage(const cv::Mat &image) {
-    if (!image.data) {
-        MS_throw(InvalidInputException, ERR_INPUT_OPEN);
-    }
-
-    if ((image.cols != INPUT_IMG_WIDTH) || (image.rows != INPUT_IMG_HEIGHT)) {
-        MS_throw(InvalidInputException, ERR_IMG_RESOLUTION);
-    }
-
-    return true;
 }
 
 
 // Constants
-const std::string RectangularMatFactory::ERR_CONC   = "All concentrations have to be between 0 and 1.";
-
-const int RectangularMatFactory::ROI_START_X       = 321;
-const int RectangularMatFactory::ROI_START_Y       = 318;
-const int RectangularMatFactory::ROI_WIDTH         = 1407;
-const int RectangularMatFactory::ROI_HEIGHT        = 1358;
-
-const int RectangularMatFactory::INPUT_IMG_WIDTH   = 2048;
-const int RectangularMatFactory::INPUT_IMG_HEIGHT  = 2048;
-
-const int RectangularMatFactory::COLOURBAR_MAX_X   = 1799;
-const int RectangularMatFactory::COLOURBAR_MAX_Y   = 320;
+const std::string RectangularMatFactory::ERR_INVALID_VALUE = "All values have to be between 0 and 1.";

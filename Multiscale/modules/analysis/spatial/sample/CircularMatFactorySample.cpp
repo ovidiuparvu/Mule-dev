@@ -13,14 +13,10 @@ using namespace multiscale::analysis;
 int main() {
     CircularMatFactory factory;
 
-    cv::Mat image = factory.createFromViewerImage("data/test/circular.png");
+    cv::Mat image = factory.createFromImageFile("data/test/circular.png");
 
     cv::namedWindow("Test", cv::WINDOW_NORMAL);
     cv::imshow("Test", image);
-
-    std::cout << "Maximum colour bar intensity: "
-              << factory.maxColourBarIntensityFromViewerImage("data/test/circular.png")
-              << std::endl;
 
     cv::waitKey(0);
 

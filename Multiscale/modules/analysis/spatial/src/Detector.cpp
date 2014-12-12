@@ -74,8 +74,10 @@ void Detector::initialiseImageOrigin() {
 }
 
 bool Detector::isValidInputImage(const cv::Mat &inputImage) {
+    std::cout << inputImage.type();
+
     return (
-        (inputImage.type() == CV_8UC1) &&
+        (inputImage.type() == CV_32FC1) &&
         (inputImage.dims == 2) &&
         (inputImage.rows > 1) &&
         (inputImage.cols > 1)

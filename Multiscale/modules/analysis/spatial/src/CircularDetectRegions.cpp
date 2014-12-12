@@ -150,7 +150,7 @@ int main(int argc, char** argv) {
 
     try {
         if (areValidParameters(inputFilePath, outputFilepath, debugFlag, argc, argv)) {
-            cv::Mat image = CircularMatFactory().createFromViewerImage(inputFilePath);
+            cv::Mat image = CircularMatFactory().createFromImageFile(inputFilePath);
 
             RegionDetector detector(debugFlag);
 
