@@ -20,17 +20,6 @@ namespace multiscale {
 
             private:
 
-                std::vector<cv::Point2f>
-                    minAreaEnclosingTriangle;       /*!< The minimum area enclosing triangle */
-
-                cv::RotatedRect
-                    minAreaEnclosingRect;           /*!< The minimum area enclosing rectangle */
-
-                cv::Point2f
-                    minAreaEnclosingCircleCentre;   /*!< The minimum area enclosing circle centre point */
-                float
-                    minAreaEnclosingCircleRadius;   /*!< The minimum area enclosing circle radius */
-
                 std::vector<Entity>
                     entities;                       /*!< Entities which belong to this cluster */
 

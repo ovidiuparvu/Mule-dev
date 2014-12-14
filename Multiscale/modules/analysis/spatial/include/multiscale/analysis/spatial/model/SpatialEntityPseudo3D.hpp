@@ -45,6 +45,17 @@ namespace multiscale {
                                                      used for lazy evaluation purposes, such that new field
                                                      values are computed only when required */
 
+                std::vector<cv::Point2f>
+                    minAreaEnclosingTriangle;       /*!< The minimum area enclosing triangle */
+
+                cv::RotatedRect
+                    minAreaEnclosingRect;           /*!< The minimum area enclosing rectangle */
+
+                cv::Point2f
+                    minAreaEnclosingCircleCentre;   /*!< The minimum area enclosing circle centre point */
+                float
+                    minAreaEnclosingCircleRadius;   /*!< The minimum area enclosing circle radius */
+
             public:
 
                 SpatialEntityPseudo3D();
@@ -130,6 +141,9 @@ namespace multiscale {
                 //! Get the measure that the cluster has a circular shape
                 virtual double isCircularMeasure() = 0;
 
+                //! Return the set of points defining the minimum area rectangle enclosing the given polygon
+                std::vector<cv::Point> minAreaEnclosingRectPoints(const std::vector<cv::Point> &polygon);
+
                 //! Get the normalised shape measure ([0, 1]) that the cluster has a particular shape
                 /*!
                  * \param shapeArea The area of the considered shape
@@ -150,6 +164,12 @@ namespace multiscale {
                  * \param points Collection of points
                  */
                 std::vector<cv::Point2f> convertPoints(const std::vector<cv::Point> &points);
+
+                //! Convert the collection of points from type cv::Point2f to type cv::Point
+                /*!
+                 * \param points Collection of points
+                 */
+                std::vector<cv::Point> convertPoints(const std::vector<cv::Point2f> &points);
 
             private:
 

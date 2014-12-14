@@ -32,7 +32,7 @@ set(CIRCULAR_DETECT_REGIONS_SRC
     src/factory/MatFactory.cpp
     src/model/Region.cpp
     src/model/SpatialEntityPseudo3D.cpp
-    src/util/CircularityMeasure.cpp
+    src/util/SpatialMeasureCalculator.cpp
     
     src/factory/CircularMatFactory.cpp 
 )
@@ -110,6 +110,7 @@ set(RECTANGULAR_DETECT_REGIONS_SRC
     src/model/Region.cpp
     src/model/SpatialEntityPseudo3D.cpp
     src/RectangularDetectRegions.cpp
+    src/util/SpatialMeasureCalculator.cpp
     
     src/factory/RectangularMatFactory.cpp 
 )
@@ -159,6 +160,7 @@ set(SIMULATION_DETECT_CLUSTERS_SRC
     src/SimulationDetectClusters.cpp
     src/util/DBSCAN.cpp
     src/util/Silhouette.cpp
+    src/util/SpatialMeasureCalculator.cpp
     
     src/factory/RectangularMatFactory.cpp 
 )

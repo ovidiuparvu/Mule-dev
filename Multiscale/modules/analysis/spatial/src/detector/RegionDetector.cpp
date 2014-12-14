@@ -1,5 +1,6 @@
 #include "multiscale/analysis/spatial/detector/RegionDetector.hpp"
 #include "multiscale/analysis/spatial/factory/RectangularMatFactory.hpp"
+#include "multiscale/analysis/spatial/util/SpatialMeasureCalculator.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
@@ -213,10 +214,8 @@ void RegionDetector::computeAverageClusterednessDegree(std::vector<Region> &regi
 
     // Invert the value such that it is between 0 and 1. Since we are working with pixels
     // the minimum distance between two distinct pixels is 1.
-    if (avgClusterednessDegree > 0) {
-        avgClusterednessDegree = (avgClusterednessDegree > 1) ? (1 / avgClusterednessDegree)
-                                                              : 1;
-    }
+    avgClusterednessDegree = (avgClusterednessDegree > 1) ? (1 / avgClusterednessDegree)
+                                                          : 1;
 }
 
 double RegionDetector::sumOfAverageCentroidDistances(std::vector<Region> &regions) {
@@ -337,15 +336,15 @@ Region RegionDetector::createRegionFromPolygon(const Polygon &polygon) {
 }
 
 bool RegionDetector::isValidContour(const std::vector<cv::Point> &contour) {
-    double area = contourArea(contour, CONTOUR_AREA_ORIENTED);
+    double area = SpatialMeasureCalculator::computePolygonArea(contour);
 
-    return (area >= regionAreaThresh);
+    return (area > regionAreaThresh);
 }
 
 bool RegionDetector::isValidHole(const std::vector<cv::Point> &hole) {
-    double area = contourArea(hole, CONTOUR_AREA_ORIENTED);
+    double area = SpatialMeasureCalculator::computePolygonArea(hole);
 
-    return (area >= THRESHOLD_HOLE_AREA);
+    return (area > THRESHOLD_HOLE_AREA);
 }
 
 double RegionDetector::regionDensity(const Polygon &polygon) {
@@ -489,7 +488,7 @@ const int RegionDetector::THRESHOLD_MAX           = 255;
 const int RegionDetector::THRESHOLD_CLUSTEREDNESS = 0;
 const int RegionDetector::INTENSITY_MAX           = 255;
 
-const int RegionDetector::THRESHOLD_HOLE_AREA     = 1000;
+const int RegionDetector::THRESHOLD_HOLE_AREA     = 0;
 
 const bool RegionDetector::POLYGON_CLOSED         = true;
 

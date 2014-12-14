@@ -1,4 +1,5 @@
 #include "multiscale/analysis/spatial/model/Cluster.hpp"
+#include "multiscale/analysis/spatial/util/SpatialMeasureCalculator.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 #include "multiscale/util/MinEnclosingTriangleFinder.hpp"
@@ -133,17 +134,23 @@ void Cluster::updateDensity() {
 }
 
 void Cluster::updateArea() {
-    area = 0;
+    std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
-    for (const Entity &entity : entities) {
-        area += entity.getArea();
-    }
+    area = static_cast<double>(
+               SpatialMeasureCalculator::computePolygonArea(
+                   convertPoints(entitiesConvexHull)
+               )
+           );
 }
 
 void Cluster::updatePerimeter() {
     std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
-    perimeter = arcLength(entitiesConvexHull, true);
+    perimeter = static_cast<double>(
+                    SpatialMeasureCalculator::computePolygonPerimeter(
+                        convertPoints(entitiesConvexHull)
+                    )
+                );
 }
 
 void Cluster::updateCentrePoint() {
@@ -158,18 +165,32 @@ void Cluster::updateCentrePoint() {
 double Cluster::isTriangularMeasure() {
     std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
-    double triangleArea = MinEnclosingTriangleFinder().find(entitiesConvexHull, minAreaEnclosingTriangle);
+    // Find the minimum area triangle enclosing the convex hull
+    MinEnclosingTriangleFinder().find(entitiesConvexHull, minAreaEnclosingTriangle);
 
+    // Compute the area of the triangle
+    double triangleArea = static_cast<double>(
+                              SpatialMeasureCalculator::computePolygonArea(
+                                  convertPoints(minAreaEnclosingTriangle)
+                              )
+                          );
+
+    // Normalise the triangular measure
     return normalisedShapeMeasure(triangleArea);
 }
 
 double Cluster::isRectangularMeasure() {
     std::vector<cv::Point2f> entitiesContourPoints = getEntitiesContourPoints();
 
-    minAreaEnclosingRect = minAreaRect(entitiesContourPoints);
+    std::vector<cv::Point> minAreaEnclosingRect =
+        minAreaEnclosingRectPoints(convertPoints(entitiesContourPoints));
 
     // Compute the area of the minimum area enclosing rectangle
-    double rectangleArea = minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width;
+    double rectangleArea = static_cast<double>(
+                               SpatialMeasureCalculator::computePolygonArea(
+                                   minAreaEnclosingRect
+                               )
+                           );
 
     return normalisedShapeMeasure(rectangleArea);
 }
@@ -179,8 +200,13 @@ double Cluster::isCircularMeasure() {
 
     minEnclosingCircle(entitiesContourPoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
-    // Compute the area of the minimum area enclosing cv::circle
-    double circleArea = Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius;
+    // Compute the area of the minimum area enclosing circle
+    double circleArea = static_cast<double>(
+                            SpatialMeasureCalculator::computeCircleArea(
+                                minAreaEnclosingCircleCentre,
+                                minAreaEnclosingCircleRadius
+                            )
+                        );
 
     return normalisedShapeMeasure(circleArea);
 }

@@ -141,6 +141,12 @@ namespace multiscale {
                 //! Update the centre of the region
                 void updateCentrePoint() override;
 
+                //! Update the centre of the region in case the region is defined by a single point
+                void updateCentrePointWhenRegionDefinedBySinglePoint();
+
+                //! Update the centre of the region in case the region is defined by multiple points
+                void updateCentrePointWhenRegionDefinedByMultiplePoints();
+
                 //! Return the type of the pseudo 3D spatial entity
                 SpatialEntityPseudo3DType type() override;
 
