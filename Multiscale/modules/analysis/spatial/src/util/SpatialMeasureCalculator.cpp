@@ -14,7 +14,23 @@ int SpatialMeasureCalculator::computePolygonArea(const std::vector<cv::Point> &p
     );
 }
 
+int SpatialMeasureCalculator::computePolygonHoleArea(const std::vector<cv::Point> &hole,
+                                                     const std::vector<cv::Point> &polygon) {
+    cv::Mat holeImage = drawFilledPolygonOnImage(hole);
+
+    // Set the pixels which are common to the polygon and the
+    // hole to the minimum value
+    subtractPolygonBorderFromImage(polygon, holeImage);
+
+    // Return the number of pixels covered by the hole
+    // and not contained by the polygon border
+    return (
+        cv::countNonZero(holeImage)
+    );
+}
+
 int SpatialMeasureCalculator::computeCircleArea(const cv::Point2f &circleOrigin, double circleRadius) {
+    // The circle radius has to be converted to a
     cv::Mat circleImage = drawFilledCircleOnImage(circleOrigin, circleRadius);
 
     // Return the number of pixels covered by the circle
@@ -63,19 +79,35 @@ cv::Mat SpatialMeasureCalculator::drawFilledPolygonOnImage(const std::vector<cv:
     return polygonImage;
 }
 
+void SpatialMeasureCalculator::subtractPolygonBorderFromImage(const std::vector<cv::Point> &polygon,
+                                                              cv::Mat &image) {
+    std::size_t nrOfPolygonPoints = polygon.size();
+
+    // Draw lines between each two points in the polygon
+    for (std::size_t i = 0; i < nrOfPolygonPoints; i++) {
+        line(
+            image,
+            polygon[i],
+            polygon[(i + 1) % nrOfPolygonPoints],
+            cv::Scalar(POINT_MIN_VALUE)
+        );
+    }
+}
+
 cv::Mat SpatialMeasureCalculator::drawFilledCircleOnImage(const cv::Point2f &circleOrigin, double circleRadius) {
-    int circleRadiusAsInt = static_cast<int>(std::ceil(circleRadius));
+    int circleRadiusAsInt = static_cast<int>(circleRadius);
 
     // Define the image to which the circle is added.
     cv::Mat circleImage = cv::Mat::zeros(
-        std::ceil(circleOrigin.y) + circleRadiusAsInt,
-        std::ceil(circleOrigin.x) + circleRadiusAsInt,
+        std::ceil(circleOrigin.y) + circleRadiusAsInt + 2,
+        std::ceil(circleOrigin.x) + circleRadiusAsInt + 2,
         CV_8UC1
     );
 
     // Add the circle to the image
     cv::circle(
-        circleImage, circleOrigin, circleRadiusAsInt, cv::Scalar(POINT_MAX_VALUE)
+        circleImage, circleOrigin, circleRadiusAsInt,
+        cv::Scalar(POINT_MAX_VALUE), CV_FILLED
     );
 
     return circleImage;

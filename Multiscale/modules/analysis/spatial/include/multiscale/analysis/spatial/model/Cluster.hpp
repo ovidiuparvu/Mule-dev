@@ -76,6 +76,9 @@ namespace multiscale {
                 //! Update the value of the area
                 void updateArea() override;
 
+                //! Update the value of the spatial entity shape
+                void updateSpatialEntityShapeArea() override;
+
                 //! Update the value of the perimeter
                 void updatePerimeter() override;
 

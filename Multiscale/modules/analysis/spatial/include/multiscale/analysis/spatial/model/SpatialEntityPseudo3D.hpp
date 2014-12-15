@@ -24,8 +24,8 @@ namespace multiscale {
                                                      For clusters:
                                                      Degree of pile up */
 
-                double area;                    /*!< Area of the spatial collection */
-                double perimeter;               /*!< Perimeter of the spatial collection */
+                double area;                    /*!< Area of the spatial entity */
+                double perimeter;               /*!< Perimeter of the spatial entity */
 
                 double distanceFromOrigin;      /*!< Distance from the origin  */
                 double angle;                   /*!< Angle of the region wrt the origin */
@@ -37,7 +37,13 @@ namespace multiscale {
                 double circularMeasure;         /*!< Measure ([0, 1]) indicating the similarity between the shape
                                                      of the spatial collection and a circle */
 
-                Shape2D shape;                  /*!< Shape of the spatial collection */
+                double spatialEntityShapeArea;  /*!< The area of the spatial entity considered when
+                                                     computing its shape. The difference between the
+                                                     shape area and the regular area is that the former
+                                                     considers the entities centre points while the latter
+                                                     the entities border points */
+
+                Shape2D shape;                  /*!< Shape of the spatial entity */
                 cv::Point2f centre;             /*!< Point defining the centre of the spatial entity */
 
                 bool updateFlag;                /*!< Flag indicating if the field values dependent on the
@@ -123,6 +129,9 @@ namespace multiscale {
                 //! Update the value of the area
                 virtual void updateArea() = 0;
 
+                //! Update the value of the spatial entity shape area
+                virtual void updateSpatialEntityShapeArea() = 0;
+
                 //! Update the value of the perimeter
                 virtual void updatePerimeter() = 0;
 
@@ -141,12 +150,11 @@ namespace multiscale {
                 //! Get the measure that the cluster has a circular shape
                 virtual double isCircularMeasure() = 0;
 
-                //! Return the set of points defining the minimum area rectangle enclosing the given polygon
-                std::vector<cv::Point> minAreaEnclosingRectPoints(const std::vector<cv::Point> &polygon);
-
-                //! Get the normalised shape measure ([0, 1]) that the cluster has a particular shape
-                /*!
-                 * \param shapeArea The area of the considered shape
+                //! Get the normalised shape measure ([0, 1]) that the spatial entity has a particular shape
+                /*! The normalised shape measure is the result of dividing
+                 *  spatialEntityShapeArea to shapeArea
+                 *
+                 * \param shapeArea The area of the shape
                  */
                 double normalisedShapeMeasure(double shapeArea);
 

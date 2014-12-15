@@ -313,7 +313,7 @@ void RegionDetector::setPolygonInnerContours(int contourIndex, const std::vector
 
     for (int i = 0; i < nrOfContours; i++) {
         if ((hierarchy[i][HIERARCHY_PARENT_INDEX] == contourIndex) &&
-            (isValidHole(contours[i]))) {
+            (isValidHole(contours[i], contours[contourIndex]))) {
             polygon.second.push_back(contours[i]);
         }
     }
@@ -341,8 +341,9 @@ bool RegionDetector::isValidContour(const std::vector<cv::Point> &contour) {
     return (area > regionAreaThresh);
 }
 
-bool RegionDetector::isValidHole(const std::vector<cv::Point> &hole) {
-    double area = SpatialMeasureCalculator::computePolygonArea(hole);
+bool RegionDetector::isValidHole(const std::vector<cv::Point> &hole,
+                                 const std::vector<cv::Point> &outerPolygon) {
+    double area = SpatialMeasureCalculator::computePolygonHoleArea(hole, outerPolygon);
 
     return (area > THRESHOLD_HOLE_AREA);
 }
@@ -486,7 +487,6 @@ const int RegionDetector::EPSILON_MAX             = 100;
 const int RegionDetector::REGION_AREA_THRESH_MAX  = 200000;
 const int RegionDetector::THRESHOLD_MAX           = 255;
 const int RegionDetector::THRESHOLD_CLUSTEREDNESS = 0;
-const int RegionDetector::INTENSITY_MAX           = 255;
 
 const int RegionDetector::THRESHOLD_HOLE_AREA     = 0;
 

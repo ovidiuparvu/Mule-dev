@@ -29,9 +29,10 @@ namespace multiscale {
                 /*!
                  * REMARK: This method is not implemented and throws an error when called.
                  *
-                 * \param fin Input file stream from which the values are read
+                 * \param fin   Input file stream from which the values are read
+                 * \param image The image to which the values are written
                  */
-                float *readValuesFromFile(std::ifstream& fin) override;
+                void readValuesFromFile(std::ifstream& fin, cv::Mat &image) override;
 
             private:
 

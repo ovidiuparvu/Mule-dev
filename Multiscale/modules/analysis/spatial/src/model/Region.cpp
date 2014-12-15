@@ -116,20 +116,37 @@ void Region::updateDensity() {}
 
 void Region::updateArea() {
     if (outerBorderPolygon.size() > 0) {
-        area = static_cast<double>(computeAreaIfOuterBoderDefined());
+        area = computeAreaIfOuterBoderDefined();
+    }
+}
+
+void Region::updateSpatialEntityShapeArea() {
+    if (outerBorderPolygon.size() > 0) {
+        spatialEntityShapeArea = computeSpatialEntityShapeAreaIfOuterBoderDefined();
     }
 }
 
 double Region::computeAreaIfOuterBoderDefined() {
     double outerPolygonArea = static_cast<double>(
-                                  SpatialMeasureCalculator::computePolygonArea(outerBorderPolygon)
+                                  SpatialMeasureCalculator::computePolygonArea(
+                                      outerBorderPolygon
+                                  )
                               );
     double innerPolygonArea = 0.0;
 
     for (auto innerPolygon : innerBorderPolygons) {
-        innerPolygonArea += static_cast<double>(
-                                SpatialMeasureCalculator::computePolygonArea(innerPolygon)
-                             );
+        innerPolygonArea += SpatialMeasureCalculator::computePolygonHoleArea(innerPolygon, outerBorderPolygon);
+    }
+
+    return (outerPolygonArea - innerPolygonArea);
+}
+
+double Region::computeSpatialEntityShapeAreaIfOuterBoderDefined() {
+    double outerPolygonArea = contourArea(outerBorderPolygon, CONTOUR_ORIENTED);
+    double innerPolygonArea = 0.0;
+
+    for (auto innerPolygon : innerBorderPolygons) {
+        innerPolygonArea += contourArea(innerPolygon, CONTOUR_ORIENTED);
     }
 
     return (outerPolygonArea - innerPolygonArea);
@@ -138,7 +155,9 @@ double Region::computeAreaIfOuterBoderDefined() {
 void Region::updatePerimeter() {
     if (outerBorderPolygon.size() > 0) {
         perimeter = static_cast<double>(
-                        SpatialMeasureCalculator::computePolygonPerimeter(outerBorderPolygon)
+                        SpatialMeasureCalculator::computePolygonPerimeter(
+                            outerBorderPolygon
+                        )
                     );
     }
 }
@@ -150,13 +169,9 @@ double Region::isTriangularMeasure() {
     convexHull(outerBorderPolygon, contourConvexHull, CONVEX_HULL_CLOCKWISE);
 
     // Find the minimum area triangle enclosing the convex hull
-    MinEnclosingTriangleFinder().find(convertPoints(contourConvexHull), minAreaEnclosingTriangle);
-
-    // Compute the area of the triangle
-    double triangleArea = static_cast<double>(
-                              SpatialMeasureCalculator::computePolygonArea(
-                                  convertPoints(minAreaEnclosingTriangle)
-                              )
+    double triangleArea = MinEnclosingTriangleFinder().find(
+                              convertPoints(contourConvexHull),
+                              minAreaEnclosingTriangle
                           );
 
     // Normalise the triangular measure
@@ -164,13 +179,10 @@ double Region::isTriangularMeasure() {
 }
 
 double Region::isRectangularMeasure() {
-    std::vector<cv::Point> minAreaEnclosingRect =
-        minAreaEnclosingRectPoints(outerBorderPolygon);
+    cv::RotatedRect minAreaEnclosingRect = minAreaRect(outerBorderPolygon);
 
     // Compute the area of the minimum area enclosing rectangle
-    double rectangleArea = static_cast<double>(
-                               SpatialMeasureCalculator::computePolygonArea(minAreaEnclosingRect)
-                           );
+    double rectangleArea = (minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width);
 
     return normalisedShapeMeasure(rectangleArea);
 }
@@ -179,12 +191,7 @@ double Region::isCircularMeasure() {
     minEnclosingCircle(outerBorderPolygon, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
     // Compute the area of the minimum area enclosing circle
-    double circleArea = static_cast<double>(
-                            SpatialMeasureCalculator::computeCircleArea(
-                                minAreaEnclosingCircleCentre,
-                                minAreaEnclosingCircleRadius
-                            )
-                        );
+    double circleArea = (Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius);
 
     return normalisedShapeMeasure(circleArea);
 }

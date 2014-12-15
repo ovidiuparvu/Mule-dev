@@ -368,7 +368,9 @@ void Detector::printOutputErrorMessage() {
 
 
 // Constants
-const int Detector::INPUT_IMAGE_SCALING_FACTOR = 1;
+const int Detector::INPUT_IMAGE_SCALING_FACTOR  = 1;
+
+const int Detector::INTENSITY_MAX = 255;
 
 const std::string Detector::OUTPUT_CLUSTEREDNESS   = "Average clusteredness degree: ";
 const std::string Detector::OUTPUT_DENSITY         = "Average density: ";

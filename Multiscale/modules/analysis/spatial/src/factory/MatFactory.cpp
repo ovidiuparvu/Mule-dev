@@ -12,24 +12,23 @@ MatFactory::MatFactory() : rows(0), cols(0), simulationTime(0) {}
 MatFactory::~MatFactory() {}
 
 cv::Mat MatFactory::createFromTextFile(const std::string &inputFilePath) {
-    cv::Mat image;
-    cv::Mat fliipedImage;
-
     std::ifstream fin;
 
-    // Initialise the input file stream
+    // Initialise the input file stream and read the number of rows, cols
+    // and the simulation time from the input file
     initInputFile(fin, inputFilePath);
 
+    // Create the image
+    cv::Mat image = cv::Mat(rows, cols, CV_32FC1);
+
     // Read the values from the input file
-    float *data = readValuesFromFile(fin);
+    readValuesFromFile(fin, image);
 
     // Close the input file stream
     closeInputFileStream(fin, inputFilePath);
 
-    // Return the Mat object containing the given data
-    return (
-        image = cv::Mat(rows, cols, CV_32FC1, data)
-    );
+    // Return the image
+    return image;
 }
 
 void MatFactory::initInputFile(std::ifstream &fin, const std::string& inputFilePath) {

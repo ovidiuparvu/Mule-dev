@@ -28,29 +28,24 @@ cv::Mat RectangularMatFactory::createFromImageFile(const std::string &inputFileP
     return grayscaleImage;
 }
 
-float *RectangularMatFactory::readValuesFromFile(std::ifstream &fin) {
-    float value = 0;
-
-    // Create an array of floats
-    float *data = new float[rows * cols];
-
-    // Compute the number of expected values
-    std::size_t nrOfValues = rows * cols;
+void RectangularMatFactory::readValuesFromFile(std::ifstream &fin, cv::Mat &image) {
+    float value;
 
     // Read the values from the input file stream
-    for (std::size_t i = 0; i < nrOfValues; i++) {
-        fin >> value;
+    for (std::size_t i = 0; i < rows; i++) {
+        for (std::size_t j = 0; j < cols; j++) {
+            // Read the next value
+            fin >> value;
 
-        if ((value < 0) || (value > 1)) {
-            MS_throw(InvalidInputException, ERR_INVALID_VALUE);
+            // Check if the value is valid
+            if ((value < 0) || (value > 1)) {
+                MS_throw(InvalidInputException, ERR_INVALID_VALUE);
+            }
+
+            // Scale up the value to the interval [0, 255]
+            image.at<float>(i, j) = (value * 255);
         }
-
-        // Scale up the value to the interval [0, 255]
-        data[i] = (value * 255);
     }
-
-    // Return the values read from the input file stream
-    return data;
 }
 
 

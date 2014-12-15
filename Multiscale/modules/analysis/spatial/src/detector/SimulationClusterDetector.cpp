@@ -102,7 +102,11 @@ unsigned int SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int
 void SimulationClusterDetector::outputResultsToImage() {
     cv::RNG randomNumberGenerator;
 
-    cvtColor(image, outputImage, CV_GRAY2RGB);
+    // Convert the floating point initial image to a unsigned char output image
+    image.convertTo(outputImage, CV_8UC1);
+
+    // Convert the temporary grayscale output image to coloured
+    cvtColor(outputImage, outputImage, CV_GRAY2BGR);
 
     unsigned int nrOfClusters = clusters.size();
 
@@ -180,5 +184,5 @@ const int SimulationClusterDetector::THRESHOLD_MAX       = 255;
 
 const int SimulationClusterDetector::ENTITY_THRESH       = 200;
 
-const int SimulationClusterDetector::DATAPOINT_WIDTH     = 10;
+const int SimulationClusterDetector::DATAPOINT_WIDTH     = 1;
 const int SimulationClusterDetector::DATAPOINT_THICKNESS = -1;

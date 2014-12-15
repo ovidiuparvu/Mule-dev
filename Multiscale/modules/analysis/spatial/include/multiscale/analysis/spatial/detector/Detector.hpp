@@ -305,6 +305,8 @@ namespace multiscale {
                 // Constants
                 static const int INPUT_IMAGE_SCALING_FACTOR;
 
+                static const int INTENSITY_MAX;
+
                 static const std::string OUTPUT_CLUSTEREDNESS;
                 static const std::string OUTPUT_DENSITY;
 

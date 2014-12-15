@@ -26,15 +26,15 @@ configure_file(
 )
 
 set(CIRCULAR_DETECT_REGIONS_SRC
-    src/CircularDetectRegions.cpp 
     src/detector/Detector.cpp
     src/detector/RegionDetector.cpp
+    src/factory/CircularMatFactory.cpp
     src/factory/MatFactory.cpp
     src/model/Region.cpp
     src/model/SpatialEntityPseudo3D.cpp
     src/util/SpatialMeasureCalculator.cpp
     
-    src/factory/CircularMatFactory.cpp 
+    src/CircularDetectRegions.cpp 
 )
 
 AddExecutableInstallTarget(CircularDetectRegions "${CIRCULAR_DETECT_REGIONS_SRC}")
@@ -48,11 +48,11 @@ target_link_libraries(CircularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
 # CircularMatFactorySample
 
 set(CIRCULAR_MAT_FACTORY_SAMPLE_SRC
-    sample/CircularMatFactorySample.cpp
-    
     src/factory/CircularMatFactory.cpp
     src/factory/MatFactory.cpp
     src/util/DBSCAN.cpp
+    
+    sample/CircularMatFactorySample.cpp
 )
 
 add_executable(CircularMatFactorySample ${CIRCULAR_MAT_FACTORY_SAMPLE_SRC})
@@ -63,12 +63,40 @@ target_link_libraries(CircularMatFactorySample ${OpenCV_LIBRARIES})
 target_link_libraries(CircularMatFactorySample gtest gtest_main)
 
 
+# ClusterDetectorTest
+
+set(CLUSTER_DETECTOR_TEST_SRC
+    src/detector/ClusterDetector.cpp
+    src/detector/Detector.cpp
+    src/detector/SimulationClusterDetector.cpp
+    src/factory/MatFactory.cpp
+    src/factory/RectangularMatFactory.cpp 
+    src/model/Cluster.cpp
+    src/model/Entity.cpp
+    src/model/SpatialEntityPseudo3D.cpp
+    src/util/DBSCAN.cpp
+    src/util/Silhouette.cpp
+    src/util/SpatialMeasureCalculator.cpp
+    
+    test/ClusterDetectorTest.cpp
+)
+
+set(CLUSTER_DETECTOR_TEST_LINK_LIBS
+    util
+    ${OpenCV_LIBRARIES}
+    gtest 
+    gtest_main
+)
+
+AddUnitTest(ClusterDetectorTest "${CLUSTER_DETECTOR_TEST_SRC}" "${CLUSTER_DETECTOR_TEST_LINK_LIBS}")
+
+
 # DBSCANTest
 
 set(DBSCAN_TEST_SRC
-    test/DBSCANTest.cpp
-    
     src/util/DBSCAN.cpp
+    
+    test/DBSCANTest.cpp
 )
 
 set(DBSCAN_TEST_LINK_LIBS
@@ -79,6 +107,30 @@ set(DBSCAN_TEST_LINK_LIBS
 )
 
 AddUnitTest(DBSCANTest "${DBSCAN_TEST_SRC}" "${DBSCAN_TEST_LINK_LIBS}")
+
+
+# RegionDetectorTest
+
+set(REGION_DETECTOR_TEST_SRC
+    src/detector/Detector.cpp
+    src/detector/RegionDetector.cpp
+    src/factory/MatFactory.cpp 
+    src/factory/RectangularMatFactory.cpp
+    src/model/Region.cpp
+    src/model/SpatialEntityPseudo3D.cpp
+    src/util/SpatialMeasureCalculator.cpp
+    
+    test/RegionDetectorTest.cpp
+)
+
+set(REGION_DETECTOR_TEST_LINK_LIBS
+    util
+    ${OpenCV_LIBRARIES}
+    gtest 
+    gtest_main
+)
+
+AddUnitTest(RegionDetectorTest "${REGION_DETECTOR_TEST_SRC}" "${REGION_DETECTOR_TEST_LINK_LIBS}")
 
 
 # LexicographicIteratorSample
@@ -107,12 +159,12 @@ set(RECTANGULAR_DETECT_REGIONS_SRC
     src/detector/Detector.cpp
     src/detector/RegionDetector.cpp
     src/factory/MatFactory.cpp 
+    src/factory/RectangularMatFactory.cpp
     src/model/Region.cpp
     src/model/SpatialEntityPseudo3D.cpp
-    src/RectangularDetectRegions.cpp
     src/util/SpatialMeasureCalculator.cpp
     
-    src/factory/RectangularMatFactory.cpp 
+    src/RectangularDetectRegions.cpp
 )
 
 AddExecutableInstallTarget(RectangularDetectRegions "${RECTANGULAR_DETECT_REGIONS_SRC}")
@@ -126,11 +178,11 @@ target_link_libraries(RectangularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
 # RectangularMatFactorySample
 
 set(RECTANGULAR_MAT_FACTORY_SAMPLE_SRC
-    sample/RectangularMatFactorySample.cpp
-    
     src/factory/MatFactory.cpp
     src/factory/RectangularMatFactory.cpp
     src/util/DBSCAN.cpp
+    
+    sample/RectangularMatFactorySample.cpp
 )
 
 add_executable(RectangularMatFactorySample ${RECTANGULAR_MAT_FACTORY_SAMPLE_SRC})
@@ -154,15 +206,15 @@ set(SIMULATION_DETECT_CLUSTERS_SRC
     src/detector/Detector.cpp
     src/detector/SimulationClusterDetector.cpp
     src/factory/MatFactory.cpp
+    src/factory/RectangularMatFactory.cpp 
     src/model/Cluster.cpp
     src/model/Entity.cpp
     src/model/SpatialEntityPseudo3D.cpp
-    src/SimulationDetectClusters.cpp
     src/util/DBSCAN.cpp
     src/util/Silhouette.cpp
     src/util/SpatialMeasureCalculator.cpp
     
-    src/factory/RectangularMatFactory.cpp 
+    src/SimulationDetectClusters.cpp
 )
 
 AddExecutableInstallTarget(SimulationDetectClusters "${SIMULATION_DETECT_CLUSTERS_SRC}")

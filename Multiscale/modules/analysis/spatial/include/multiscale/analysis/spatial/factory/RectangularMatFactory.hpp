@@ -34,9 +34,10 @@ namespace multiscale {
                  * REMARK: The constructor of cv::Mat does not copy the data. Therefore, DO NOT
                  *         deallocate the data in this class.
                  *
-                 * \param fin Input file stream from which the concentrations are read
+                 * \param fin   Input file stream from which the values are read
+                 * \param image Image to which the values are written
                  */
-                float *readValuesFromFile(std::ifstream& fin) override;
+                void readValuesFromFile(std::ifstream& fin, cv::Mat &image) override;
 
             private:
 

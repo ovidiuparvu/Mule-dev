@@ -418,10 +418,10 @@ bool Geometry2D::areCollinear(const cv::Point2f &point1, const cv::Point2f &poin
 
 bool Geometry2D::isPointOnEdge(const cv::Point2f &p, int nrOfRows, int nrOfCols) {
     return (
-        ((p.x <= MATRIX_START_INDEX) && (p.y > MATRIX_START_INDEX) && (p.y < nrOfCols)) ||
-        ((p.x >= nrOfRows) && (p.y > MATRIX_START_INDEX) && (p.y < nrOfCols)) ||
-        ((p.y <= MATRIX_START_INDEX) && (p.x > MATRIX_START_INDEX) && (p.x < nrOfRows)) ||
-        ((p.y >= nrOfCols) && (p.x > MATRIX_START_INDEX) && (p.x < nrOfRows))
+        ((static_cast<int>(p.x) == MATRIX_START_INDEX) && (p.y >= MATRIX_START_INDEX) && (p.y <= nrOfCols)) ||
+        ((static_cast<int>(p.x) == nrOfRows) && (p.y >= MATRIX_START_INDEX) && (p.y <= nrOfCols)) ||
+        ((static_cast<int>(p.y) == MATRIX_START_INDEX) && (p.x >= MATRIX_START_INDEX) && (p.x <= nrOfRows)) ||
+        ((static_cast<int>(p.y) == nrOfCols) && (p.x >= MATRIX_START_INDEX) && (p.x <= nrOfRows))
     );
 }
 
@@ -475,4 +475,4 @@ void Geometry2D::lineCircleOneIntersectionPoint(const cv::Point2f &circleOrigin,
 
 // Constants
 const double Geometry2D::PI = 3.14159265358979323846264338327950288419716939937510;
-const int Geometry2D::MATRIX_START_INDEX = 1;
+const int Geometry2D::MATRIX_START_INDEX = 0;

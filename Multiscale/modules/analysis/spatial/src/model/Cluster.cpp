@@ -49,11 +49,11 @@ std::vector<Entity> Cluster::getEntities() const {
 }
 
 std::vector<cv::Point2f> Cluster::getEntitiesConvexHull() {
-    std::vector<cv::Point2f> entitiesContourPoints = getEntitiesContourPoints();
+    std::vector<cv::Point2f> entitiesCentrePoints = getEntitiesCentrePoints();
     std::vector<cv::Point2f> entitiesConvexHull;
 
     if (entities.size() > 0) {
-        convexHull(entitiesContourPoints, entitiesConvexHull, CONVEX_HULL_CLOCKWISE);
+        convexHull(entitiesCentrePoints, entitiesConvexHull, CONVEX_HULL_CLOCKWISE);
     }
 
     return entitiesConvexHull;
@@ -143,6 +143,12 @@ void Cluster::updateArea() {
            );
 }
 
+void Cluster::updateSpatialEntityShapeArea() {
+    std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
+
+    spatialEntityShapeArea = contourArea(entitiesConvexHull, false);
+}
+
 void Cluster::updatePerimeter() {
     std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
@@ -169,10 +175,9 @@ double Cluster::isTriangularMeasure() {
     MinEnclosingTriangleFinder().find(entitiesConvexHull, minAreaEnclosingTriangle);
 
     // Compute the area of the triangle
-    double triangleArea = static_cast<double>(
-                              SpatialMeasureCalculator::computePolygonArea(
-                                  convertPoints(minAreaEnclosingTriangle)
-                              )
+    double triangleArea = MinEnclosingTriangleFinder().find(
+                              entitiesConvexHull,
+                              minAreaEnclosingTriangle
                           );
 
     // Normalise the triangular measure
@@ -180,33 +185,23 @@ double Cluster::isTriangularMeasure() {
 }
 
 double Cluster::isRectangularMeasure() {
-    std::vector<cv::Point2f> entitiesContourPoints = getEntitiesContourPoints();
+    std::vector<cv::Point2f> entitiesCentrePoints = getEntitiesConvexHull();
 
-    std::vector<cv::Point> minAreaEnclosingRect =
-        minAreaEnclosingRectPoints(convertPoints(entitiesContourPoints));
+    cv::RotatedRect minAreaEnclosingRect = minAreaRect(entitiesCentrePoints);
 
     // Compute the area of the minimum area enclosing rectangle
-    double rectangleArea = static_cast<double>(
-                               SpatialMeasureCalculator::computePolygonArea(
-                                   minAreaEnclosingRect
-                               )
-                           );
+    double rectangleArea = (minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width);
 
     return normalisedShapeMeasure(rectangleArea);
 }
 
 double Cluster::isCircularMeasure() {
-    std::vector<cv::Point2f> entitiesContourPoints = getEntitiesContourPoints();
+    std::vector<cv::Point2f> entitiesCentrePoints = getEntitiesConvexHull();
 
-    minEnclosingCircle(entitiesContourPoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
+    minEnclosingCircle(entitiesCentrePoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
     // Compute the area of the minimum area enclosing circle
-    double circleArea = static_cast<double>(
-                            SpatialMeasureCalculator::computeCircleArea(
-                                minAreaEnclosingCircleCentre,
-                                minAreaEnclosingCircleRadius
-                            )
-                        );
+    double circleArea = (Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius);
 
     return normalisedShapeMeasure(circleArea);
 }

@@ -402,10 +402,10 @@ namespace multiscale {
             //! Check if the given point is on the edge
             /*!
              *  A point "p" is considered to be on the edge if:
-             *      ((p.x == 1) && (p.y > 1) && (p.y < nrOfCols)) OR
-             *      ((p.x == nrOfRows) && (p.y > 1) && (p.y < nrOfCols)) OR
-             *      ((p.y == 1) && (p.x > 1) && (p.x < nrOfRows)) OR
-             *      ((p.y == nrOfCols) && (p.x > 1) && (p.x < nrOfRows))
+             *      ((p.x == 0) && (p.y >= 1) && (p.y <= nrOfCols)) OR
+             *      ((p.x == nrOfRows) && (p.y >= 1) && (p.y <= nrOfCols)) OR
+             *      ((p.y == 0) && (p.x >= 1) && (p.x <= nrOfRows)) OR
+             *      ((p.y == nrOfCols) && (p.x >= 1) && (p.x <= nrOfRows))
              *
              *  \param p        The point p
              *  \param nrOfRows The number of rows

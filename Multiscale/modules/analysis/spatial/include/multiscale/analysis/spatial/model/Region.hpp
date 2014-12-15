@@ -123,8 +123,14 @@ namespace multiscale {
                 //! Update the area
                 void updateArea() override;
 
+                //! Update the spatial entity shape area
+                void updateSpatialEntityShapeArea() override;
+
                 //! Compute the value of the area if the outer border of the region is defined
                 double computeAreaIfOuterBoderDefined();
+
+                //! Compute the value of the spatial entity shape area if the outer border of the region is defined
+                double computeSpatialEntityShapeAreaIfOuterBoderDefined();
 
                 //! Update the perimeter
                 void updatePerimeter() override;

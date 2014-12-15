@@ -55,12 +55,14 @@ namespace multiscale {
                  */
                 void initInputFile(std::ifstream &fin, const std::string &inputFilePath);
 
-                //! Read values from the given file
+                //! Read image values from the given file
                 /*!
-                 * Read the values from the given file. Each floating point value is in the interval
-                 * [0, 255].
+                 * Read the image values (in [0, 1]) from the given file.
+                 *
+                 * \param fin   The file from which the values are read
+                 * \param image The image to which the values are written
                  */
-                virtual float *readValuesFromFile(std::ifstream &fin) = 0;
+                virtual void readValuesFromFile(std::ifstream &fin, cv::Mat &image) = 0;
 
                 //! Close the input file stream
                 /*! If the file contains more data than expected throw an exception.

@@ -33,7 +33,7 @@ namespace multiscale {
                 int regionAreaThresh;               /*!< Threshold for considering a region */
                 int thresholdValue;                 /*!< Value of the threshold for the threshold filter */
 
-                std::vector<Region> regions;             /*!< Regions detected in the image */
+                std::vector<Region> regions;        /*!< Regions detected in the image */
 
             public:
 
@@ -284,18 +284,20 @@ namespace multiscale {
                 Region createRegionFromPolygon(const Polygon &polygon);
 
                 //! Check if the contour is valid
-                /*! Check if the area determined by the contour > regionAreaThreshold
+                /*! The contour is valid if its area > regionAreaThreshold
                  *
                  * \param contour The given contour
                  */
                 bool isValidContour(const std::vector<cv::Point> &contour);
 
-                //! Check if the hole is valid
-                /*! Check if the area determined by the hole > THRESHOLD_HOLE_AREA
+                //! Check if the hole contained by the outer polygon is valid
+                /*! The hole is valid if its area > THRESHOLD_HOLE_AREA
                  *
-                 * \param hole  The contour of the hole
+                 * \param hole          The contour of the hole
+                 * \param outerPolygon  The contour of the outer polygon which contains the hole
                  */
-                bool isValidHole(const std::vector<cv::Point> &hole);
+                bool isValidHole(const std::vector<cv::Point> &hole,
+                                 const std::vector<cv::Point> &outerPolygon);
 
                 //! Compute the density of the area delimited by the given polygon
                 /*!
@@ -387,7 +389,6 @@ namespace multiscale {
                 static const int REGION_AREA_THRESH_MAX;
                 static const int THRESHOLD_MAX;
                 static const int THRESHOLD_CLUSTEREDNESS;
-                static const int INTENSITY_MAX;
 
                 static const int THRESHOLD_HOLE_AREA;
 

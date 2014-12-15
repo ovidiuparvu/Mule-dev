@@ -37,7 +37,7 @@ cv::Mat CircularMatFactory::createFromImageFile(const std::string &inputFilePath
     return circularGrayscaleImage;
 }
 
-float *CircularMatFactory::readValuesFromFile(std::ifstream& fin) {
+void CircularMatFactory::readValuesFromFile(std::ifstream& fin, cv::Mat &image) {
     MS_throw(UnimplementedMethodException, ERR_UNIMPLEMENTED_METHOD);
 
     // Statement not executed but added to avoid warning messages

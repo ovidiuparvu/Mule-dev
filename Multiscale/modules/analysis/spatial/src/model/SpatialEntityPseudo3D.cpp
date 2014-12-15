@@ -121,6 +121,7 @@ void SpatialEntityPseudo3D::updateMeasures() {
     updateClusterednessDegree();
     updateDensity();
     updateArea();
+    updateSpatialEntityShapeArea();
     updatePerimeter();
     updateShape();
     updateCentrePoint();
@@ -146,38 +147,8 @@ void SpatialEntityPseudo3D::updateShape() {
     }
 }
 
-std::vector<cv::Point>
-SpatialEntityPseudo3D::minAreaEnclosingRectPoints(const std::vector<cv::Point> &polygon) {
-    std::vector<cv::Point> minAreaEnclosingRectPoints;
-
-    // Allocate memory for the points defining the minimum area
-    // enclosing rectangle
-    cv::Point2f *tmpMinAreaEnclosingRectPoints = new cv::Point2f[4];
-
-    // Compute the minimum area enclosing rectangle
-    cv::RotatedRect minAreaEnclosingRect = minAreaRect(polygon);
-
-    // Obtain a pointer to the 4 vertices defining the rotated rectangle
-    minAreaEnclosingRect.points(tmpMinAreaEnclosingRectPoints);
-
-    // Add the points to a vector
-    for (std::size_t i = 0; i < 4; i++) {
-        minAreaEnclosingRectPoints.push_back(
-            cv::Point(
-                tmpMinAreaEnclosingRectPoints[i].x,
-                tmpMinAreaEnclosingRectPoints[i].y
-            )
-        );
-    }
-
-    // Deallocate minimum area enclosing rectangle points
-    delete tmpMinAreaEnclosingRectPoints;
-
-    return minAreaEnclosingRectPoints;
-}
-
 double SpatialEntityPseudo3D::normalisedShapeMeasure(double shapeArea) {
-    double normalisedShapeMeasure = Numeric::division(area, shapeArea);
+    double normalisedShapeMeasure = Numeric::division(spatialEntityShapeArea, shapeArea);
 
     if (Numeric::lessOrEqual(normalisedShapeMeasure, 0)) {
         return 0;
@@ -256,6 +227,8 @@ void SpatialEntityPseudo3D::initialise() {
     triangularMeasure = 0;
     rectangularMeasure = 0;
     circularMeasure = 0;
+
+    spatialEntityShapeArea = 0;
 
     shape = Shape2D::Undefined;
 

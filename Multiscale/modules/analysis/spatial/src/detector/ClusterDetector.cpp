@@ -22,7 +22,10 @@ ClusterDetector::ClusterDetector(
     this->avgClusterednessDegree = 0;
 
     this->entityPileupDegree =
-        Numeric::division(1.0, static_cast<double>(maxPileupNumber));
+        Numeric::division(
+            static_cast<double>(INTENSITY_MAX),
+            static_cast<double>(maxPileupNumber)
+        );
 }
 
 ClusterDetector::~ClusterDetector() {}
