@@ -1,7 +1,7 @@
 # Constants initialisations
 # (TODO: Update)
-caseStudy="CardiovascularVPR";
-caseStudyTypeSemanticsTable="type_semantics_table_cardiovascular_vpr.xml";
+caseStudy="UterineContractions";
+caseStudyTypeSemanticsTable="type_semantics_table_uterine_contractions.xml";
 
 # Path initialisations
 modelCheckerExecutionScript="/home/ovidiu/Repositories/git/multiscale/Multiscale/script/verification/ExecuteProbabilisticBlackBoxModelCheckingUsingMuleNoExtraEvaluation.sh";

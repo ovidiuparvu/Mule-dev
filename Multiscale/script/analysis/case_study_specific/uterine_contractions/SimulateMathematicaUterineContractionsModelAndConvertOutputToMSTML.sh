@@ -140,9 +140,9 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 
 MSTML_GENERATION_SPECIFICATION="
 Numeric 2 Organ.Uterus
-Region 3 18 4 4 1 Tissue.ContractileActivity 0 0 0 0 0 0 0
-Region 19 34 4 4 1 Tissue.BurstActivity 930 40 0 0 0 0 250
-Region 35 50 4 4 1 Tissue.RefractoryActivity 930 40 0 0 0 0 250
+Region 3 18 4 4 1 Tissue.ContractileActivity 0 100 0 0 0 0 0
+Region 19 34 4 4 1 Tissue.BurstActivity 0 100 0 0 0 0 250
+Region 35 50 4 4 1 Tissue.RefractoryActivity 0 100 0 0 0 0 250
 ";
 
 
