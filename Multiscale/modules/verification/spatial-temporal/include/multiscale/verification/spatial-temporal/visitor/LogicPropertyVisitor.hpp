@@ -526,6 +526,8 @@ namespace multiscale {
                  * \param temporalLogicProperty The given temporal logic property (corresponding to
                  *                              the Until temporal operator)
                  * \param lhsLogicProperty      The left hand side logic property
+                 * \param startTime             The considered start timepoint
+                 * \param endTime               The considered end timepoint
                  */
                 template <typename U>
                 bool evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
@@ -566,6 +568,8 @@ namespace multiscale {
                  * \param temporalLogicProperty The given temporal logic property (corresponding to
                  *                              the Future temporal operator)
                  * \param lhsLogicProperty      The left hand side logic property
+                 * \param startTime             The considered start timepoint
+                 * \param endTime               The considered end timepoint
                  */
                 template <typename U>
                 bool evaluateTemporalLogicPropertyWithStartAndEndTimepoints(
@@ -593,6 +597,8 @@ namespace multiscale {
                  * \param temporalLogicProperty The given temporal logic property (corresponding to
                  *                              the Global temporal operator)
                  * \param lhsLogicProperty      The left hand side logic property
+                 * \param startTime             The considered start timepoint
+                 * \param endTime               The considered end timepoint
                  */
                 template <typename U>
                 bool evaluateTemporalLogicPropertyWithStartAndEndTimepoints(

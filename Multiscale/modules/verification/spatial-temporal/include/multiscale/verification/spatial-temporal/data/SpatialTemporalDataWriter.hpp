@@ -22,7 +22,8 @@ namespace multiscale {
 
                 //! Output the given spatial temporal trace in xml format to the specified file path
                 /*!
-                 * \param trace The provided spatial temporal trace
+                 * \param trace             The provided spatial temporal trace
+                 * \param outputFilepath    The path of the file where the trace will be written
                  */
                 static void
                 outputTraceInXmlFormatToFile(const SpatialTemporalTrace &trace,
