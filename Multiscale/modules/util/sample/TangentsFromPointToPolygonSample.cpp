@@ -1,6 +1,7 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
+#include <ctime>
 #include <iostream>
 
 using namespace multiscale;
