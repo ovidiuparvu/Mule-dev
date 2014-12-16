@@ -11,8 +11,7 @@
 using namespace multiscale::analysis;
 
 
-RegionDetector::RegionDetector(bool isDebugMode, bool shouldScaleInputImage)
-                                : Detector(isDebugMode, shouldScaleInputImage) {
+RegionDetector::RegionDetector(bool isDebugMode) : Detector(isDebugMode) {
     avgDensity = 0;
     avgClusterednessDegree = 0;
 

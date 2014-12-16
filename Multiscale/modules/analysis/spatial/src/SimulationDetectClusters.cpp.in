@@ -179,7 +179,7 @@ int main(int argc, char** argv) {
                                height, width, maxPileup, argc, argv)) {
             cv::Mat image = createMatFromInputFile(inputFilePath, isTextInputFile);
 
-            SimulationClusterDetector detector(height, width, maxPileup, isDebugMode, isTextInputFile);
+            SimulationClusterDetector detector(height, width, maxPileup, isDebugMode);
 
             loadDetectorParameterValues(detector, isDebugMode);
 

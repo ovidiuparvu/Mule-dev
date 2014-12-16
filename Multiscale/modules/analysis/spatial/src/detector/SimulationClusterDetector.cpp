@@ -9,9 +9,9 @@ using namespace multiscale::analysis;
 
 
 SimulationClusterDetector::SimulationClusterDetector(
-    unsigned int height, unsigned int width, unsigned int maxPileupNumber,
-    bool isDebugMode, bool shouldScaleInputImage
-) : ClusterDetector(maxPileupNumber, isDebugMode, shouldScaleInputImage) {
+    unsigned int height, unsigned int width,
+    unsigned int maxPileupNumber, bool isDebugMode
+) : ClusterDetector(maxPileupNumber, isDebugMode) {
     this->height = height;
     this->width = width;
 

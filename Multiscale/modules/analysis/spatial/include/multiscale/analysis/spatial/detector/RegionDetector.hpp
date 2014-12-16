@@ -37,7 +37,7 @@ namespace multiscale {
 
             public:
 
-                RegionDetector(bool isDebugMode = false, bool shouldScaleInputImage = true);
+                RegionDetector(bool isDebugMode = false);
                 ~RegionDetector();
 
                 //! Get the value of field alpha

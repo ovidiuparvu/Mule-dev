@@ -13,8 +13,8 @@ using namespace multiscale::analysis;
 
 
 ClusterDetector::ClusterDetector(
-    unsigned int maxPileupNumber, bool isDebugMode, bool shouldScaleInputImage
-) : Detector(isDebugMode, shouldScaleInputImage) {
+    unsigned int maxPileupNumber, bool isDebugMode
+) : Detector(isDebugMode) {
     this->eps = 0;
     this->minPoints = 0;
 

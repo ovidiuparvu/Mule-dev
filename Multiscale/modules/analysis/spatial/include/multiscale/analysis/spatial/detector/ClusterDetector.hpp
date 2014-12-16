@@ -31,8 +31,7 @@ namespace multiscale {
             public:
 
                 ClusterDetector(unsigned int maxPileupNumber,
-                                bool isDebugMode = false,
-                                bool shouldScaleInputImage = true);
+                                bool isDebugMode = false);
                 virtual ~ClusterDetector();
 
                 //! Get the value of the clustering algorithm parameter eps

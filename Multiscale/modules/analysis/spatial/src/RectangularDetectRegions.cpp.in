@@ -175,7 +175,7 @@ int main(int argc, char** argv) {
                                isDebugMode, argc, argv)) {
             cv::Mat image = createMatFromInputFile(inputFilePath, isTextInputFile);
 
-            RegionDetector detector(isDebugMode, isTextInputFile);
+            RegionDetector detector(isDebugMode);
 
             loadDetectorParameterValues(detector, isDebugMode);
 

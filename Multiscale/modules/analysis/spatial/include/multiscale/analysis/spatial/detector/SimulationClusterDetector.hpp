@@ -29,8 +29,7 @@ namespace multiscale {
                 SimulationClusterDetector(unsigned int height,
                                           unsigned int width,
                                           unsigned int maxPileupNumber,
-                                          bool isDebugMode = false,
-                                          bool shouldScaleInputImage = true);
+                                          bool isDebugMode = false);
                 ~SimulationClusterDetector();
 
             private:

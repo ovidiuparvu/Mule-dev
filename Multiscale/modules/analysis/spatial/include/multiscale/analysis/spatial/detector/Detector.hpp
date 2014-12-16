@@ -38,7 +38,6 @@ namespace multiscale {
                 std::string outputFilepath;             /*!< Path of the output file */
 
                 bool isDebugMode;                       /*!< Flag for indicating if debug mode is set */
-                bool shouldScaleInputImage;             /*!< Flag for indicating if the input image should be scaled */
 
                 cv::Mat outputImage;                    /*!< Image for displaying the results */
 
@@ -49,7 +48,7 @@ namespace multiscale {
 
             public:
 
-                Detector(bool isDebugMode = false, bool shouldScaleInputImage = true);
+                Detector(bool isDebugMode = false);
                 virtual ~Detector();
 
                 //! Run the detection procedure on the given image

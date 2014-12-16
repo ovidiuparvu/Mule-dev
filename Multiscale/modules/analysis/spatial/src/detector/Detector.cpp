@@ -8,9 +8,8 @@
 using namespace multiscale::analysis;
 
 
-Detector::Detector(bool isDebugMode, bool shouldScaleInputImage)
-                    : isDebugMode(isDebugMode),
-                      shouldScaleInputImage(shouldScaleInputImage) {
+Detector::Detector(bool isDebugMode)
+                    : isDebugMode(isDebugMode) {
     this->avgDensity = 0.0;
     this->avgClusterednessDegree = 0.0;
 
@@ -52,36 +51,7 @@ void Detector::initialise(const cv::Mat &inputImage) {
 }
 
 void Detector::initialiseImage(const cv::Mat &inputImage) {
-    if (shouldScaleInputImage) {
-        initialiseScaledImage(inputImage);
-    } else {
-        // Copy the initial input image without scaling
-        inputImage.copyTo(image);
-    }
-}
-
-void Detector::initialiseScaledImage(const cv::Mat &inputImage) {
-    // Create an empty image of the required size
-    image = cv::Mat(
-                inputImage.rows * INPUT_IMAGE_SCALING_FACTOR,
-                inputImage.cols * INPUT_IMAGE_SCALING_FACTOR,
-                inputImage.type()
-            );
-
-    // Copy each value from initial image (INPUT_IMAGE_SCALING_FACTOR ^ 2) times
-    // in the resulting image
-    for (int i = 0; i < inputImage.rows; i++) {
-        for (int j = 0; j < inputImage.cols; j++) {
-            for (int k = 0; k < INPUT_IMAGE_SCALING_FACTOR; k++) {
-                for (int l = 0; l < INPUT_IMAGE_SCALING_FACTOR; l++) {
-                    int imageRow = (i * INPUT_IMAGE_SCALING_FACTOR) + k;
-                    int imageCol = (j * INPUT_IMAGE_SCALING_FACTOR) + l;
-
-                    image.at<float>(imageRow, imageCol) = inputImage.at<float>(i, j);
-                }
-            }
-        }
-    }
+    inputImage.copyTo(image);
 }
 
 void Detector::initialiseImageDependentFields() {
