@@ -262,6 +262,10 @@ std::vector<Polygon> RegionDetector::findPolygonsInImage(const cv::Mat &image) {
 
     findContours(modifiedImage, contours, hierarchy, CV_RETR_CCOMP, CV_CHAIN_APPROX_NONE);
 
+    // Offset the contours by (-1, -1) in order to account for the extra rows
+    // and columns added initially to the image
+    offsetPolygons(contours, cv::Point(-1, -1));
+
     return createPolygons(contours, hierarchy);
 }
 
@@ -330,7 +334,7 @@ Region RegionDetector::createRegionFromPolygon(const Polygon &polygon) {
 
     double density = regionDensity(polygon);
     double distance = Geometry2D::distanceBtwPoints(polygon.first[minDistancePointIndex], origin);
-    double angle = polygonAngle(polygon.first, minDistancePointIndex);
+    double angle = polygonAngle(polygon.first);
 
     return Region(density, distance, angle, polygon.first, polygon.second);
 }
@@ -353,19 +357,15 @@ double RegionDetector::regionDensity(const Polygon &polygon) {
     cv::Mat mask(cv::Mat::zeros(image.rows, image.cols, CV_8UC1));
 
     // Set the intensity of all pixels surrounded by the polygon outer border to maximum
-    // When drawing the mask offset it by (-1, -1) to account for the extra border pixels
-    // added to the image when findContours was called
     drawContours(
         mask, std::vector<std::vector<cv::Point>>(1, polygon.first), -1,
-        cv::Scalar(INTENSITY_MAX), CV_FILLED, 8, cv::Mat(), INT_MAX, cv::Point(-1,-1)
+        cv::Scalar(INTENSITY_MAX), CV_FILLED, 8, cv::Mat(), INT_MAX
     );
 
     // Set the intensity of all pixels surrounded by inner borders to zero
-    // When drawing the mask offset it by (-1, -1) to account for the extra border pixels
-    // added to the image when findContours was called
     drawContours(
         mask, polygon.second, -1, cv::Scalar(0), CV_FILLED,
-        8, cv::Mat(), INT_MAX, cv::Point(-1,-1)
+        8, cv::Mat(), INT_MAX
     );
 
     // Compute the average intensity of the pixels considering the mask
@@ -395,25 +395,16 @@ std::vector<std::shared_ptr<SpatialEntityPseudo3D>> RegionDetector::getCollectio
 }
 
 void RegionDetector::outputResultsToImage() {
-    // Two extra pixels required for each dimension, because the contour detection
-    // algorithm ignores the first and last cv::lines and columns of the image matrix. In order
-    // to consider the entire input image we add blank first and last cv::lines and columns
-    // to the image matrix
-    cv::Mat tmpOutputImage = cv::Mat::zeros(image.rows + 2, image.cols + 2, CV_8UC1);
-
     // Convert the floating point initial image to a unsigned char output image
-    image.convertTo(tmpOutputImage(cv::Rect(1, 1, image.cols, image.rows)), CV_8UC1);
+    image.convertTo(outputImage, CV_8UC1);
 
     // Convert the temporary grayscale output image to coloured
-    cvtColor(tmpOutputImage, tmpOutputImage, CV_GRAY2BGR);
+    cvtColor(outputImage, outputImage, CV_GRAY2BGR);
 
     // Output the regions to the image
     for (Region &region : regions) {
-        outputRegionToImage(region, tmpOutputImage);
+        outputRegionToImage(region, outputImage);
     }
-
-    // Copy the temporary to the regular output image
-    tmpOutputImage(cv::Rect(1, 1, image.cols, image.rows)).copyTo(outputImage);
 }
 
 void RegionDetector::outputRegionToImage(const Region &region, cv::Mat &outputImage) {

@@ -54,19 +54,6 @@ set(GEOMETRY2D_TEST_LINK_LIBS
 AddUnitTest(Geometry2DTest "${GEOMETRY2D_TEST_SRC}" "${GEOMETRY2D_TEST_LINK_LIBS}")
 
 
-# LineCircleIntersectionSample
-
-set(LINE_CIRCLE_INTERSECTION_SAMPLE_SRC
-    sample/LineCircleIntersectionSample.cpp
-)
-
-add_executable(LineCircleIntersectionSample ${LINE_CIRCLE_INTERSECTION_SAMPLE_SRC})
-AddSample(LineCircleIntersectionSample)
-
-target_link_libraries(LineCircleIntersectionSample util)
-target_link_libraries(LineCircleIntersectionSample gtest gtest_main)
-
-
 # MinEnclosingTriangleFinderTest
 
 set(MIN_ENCLOSING_TRIANGLE_FINDER_TEST_SRC
@@ -113,6 +100,43 @@ set(STATISTICS_TEST_LINK_LIBS
 AddUnitTest(StatisticsTest "${STATISTICS_TEST_SRC}" "${STATISTICS_TEST_LINK_LIBS}")
 
 
+# ConsolePrinterSample
+
+set(CONSOLE_PRINTER_SAMPLE_SRC
+    sample/ConsolePrinterSample.cpp
+)
+
+add_executable(ConsolePrinterSample ${CONSOLE_PRINTER_SAMPLE_SRC})
+AddSample(ConsolePrinterSample)
+
+target_link_libraries(ConsolePrinterSample util)
+
+
+# ExecuteProgramSample
+
+set(EXECUTE_PROGRAM_SAMPLE_SRC
+    sample/ExecuteProgramSample.cpp
+)
+
+add_executable(ExecuteProgramSample ${EXECUTE_PROGRAM_SAMPLE_SRC})
+AddSample(ExecuteProgramSample)
+
+target_link_libraries(ExecuteProgramSample util)
+
+
+# LineCircleIntersectionSample
+
+set(LINE_CIRCLE_INTERSECTION_SAMPLE_SRC
+    sample/LineCircleIntersectionSample.cpp
+)
+
+add_executable(LineCircleIntersectionSample ${LINE_CIRCLE_INTERSECTION_SAMPLE_SRC})
+AddSample(LineCircleIntersectionSample)
+
+target_link_libraries(LineCircleIntersectionSample util)
+target_link_libraries(LineCircleIntersectionSample gtest gtest_main)
+
+
 # MinEnclosingTriangleFinderSample
 
 set(MIN_ENCLOSING_TRIANGLE_FINDER_SAMPLE_SRC
@@ -138,28 +162,16 @@ AddSample(RGBColourGeneratorSample)
 target_link_libraries(RGBColourGeneratorSample util)
 
 
-# ConsolePrinterSample
+# TangentsFromPointToPolygonSample
 
-set(CONSOLE_PRINTER_SAMPLE_SRC
-    sample/ConsolePrinterSample.cpp
+set(TANGENTS_FROM_POINT_TO_POLYGON_SAMPLE_SRC
+    sample/TangentsFromPointToPolygonSample.cpp
 )
 
-add_executable(ConsolePrinterSample ${CONSOLE_PRINTER_SAMPLE_SRC})
-AddSample(ConsolePrinterSample)
+add_executable(TangentsFromPointToPolygonSample ${TANGENTS_FROM_POINT_TO_POLYGON_SAMPLE_SRC})
+AddSample(TangentsFromPointToPolygonSample)
 
-target_link_libraries(ConsolePrinterSample util)
-
-
-# ExecuteProgramSample
-
-set(EXECUTE_PROGRAM_SAMPLE_SRC
-    sample/ExecuteProgramSample.cpp
-)
-
-add_executable(ExecuteProgramSample ${EXECUTE_PROGRAM_SAMPLE_SRC})
-AddSample(ExecuteProgramSample)
-
-target_link_libraries(ExecuteProgramSample util)
+target_link_libraries(TangentsFromPointToPolygonSample util)
 
 
 # XmlValidatorSample

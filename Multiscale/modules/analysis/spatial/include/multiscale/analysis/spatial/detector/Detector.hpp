@@ -124,30 +124,21 @@ namespace multiscale {
                 //! Run the detection procedure when in release mode (i.e. non-debug mode)
                 void detectInReleaseMode();
 
-                //! Compute the angle of the polygon
-                /*! Compute the angle determined by the closest point to the origin and the points P1 and P2.
-                 * These points are obtained from the intersection of the polygon with the line  which is
-                 * orthogonal to the line AB where:
-                 *      - Point A is the polygon point closest to the origin;
-                 *      - Point B is the centre point of the bounding rotated rectangle.
+                //! Compute the angle determined by the polygon tangents from a given point
+                /*! The considered point through which the tangents pass is the image/matrix
+                 *  centre point (origin).
                  *
-                 *  \param polygon              Given polygon
-                 *  \param closestPointIndex    Index of the closest point to the origin from the set of points
-                 *                              defining the polygon
+                 *  \param polygon  Polygon for which the angle is computed
                  */
-                double polygonAngle(const std::vector<cv::Point> &polygon, unsigned int closestPointIndex);
+                double polygonAngle(const std::vector<cv::Point> &polygon);
 
-                //! Compute the angle of the polygon
-                /*! Compute the angle determined by the closest point to the origin and the points P1 and P2.
-                 * These points are obtained from the intersection of the convex hull with the line AB, determined
-                 * by points A and B. Points A and B are the middle points of the sides of the rotated rectangle
-                 * enclosing the polygon that are orthogonal to the line which is the nearest to the closestPoint.
-                 *
+                //! Compute the angle of the tangents from the provided point to the polygon
+                /*!
                  *  \param polygonConvexHull    Convex hull of polygon
-                 *  \param closestPoint         Closest point to the origin from the set of points defining the
-                 *                              polygon
+                 *  \param tangentsPoint        Point through which the tangents pass
                  */
-                double polygonAngle(const std::vector<cv::Point> &polygonConvexHull, const cv::Point &closestPoint);
+                double polygonAngle(const std::vector<cv::Point> &polygonConvexHull,
+                                    const cv::Point &tangentsPoint);
 
                 //! Get the centre of the minimum area bounding rectangle
                 /*!
@@ -299,6 +290,16 @@ namespace multiscale {
 
                 //! Print error message, because the detect method was not called before calling the output method
                 void printOutputErrorMessage();
+
+                //! Offset the given collection of polygons by the given point
+                /*! The polygon points are offset by adding to their coordinates the
+                 *  coordinates of the given point.
+                 *
+                 * \param polygons  The collection of given polygons
+                 * \param offset    The offset point
+                 */
+                void offsetPolygons(std::vector<std::vector<cv::Point>> &polygons,
+                                    const cv::Point &offset);
 
             protected:
 

@@ -409,6 +409,123 @@ TEST(ClusterDetector, OneCircularCluster) {
     EXPECT_TRUE(detectedClusters.back().getShape() == Shape2D::Circle);
 }
 
+TEST(ClusterDetector, OneZeroAngleCluster) {
+    // Define the cluster detector
+    SimulationClusterDetector detector(7, 7, 1);
+
+    // Set the spatial analysis parameter values
+    detector.setEps(15);
+    detector.setMinPoints(1);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 0.0, 0.0, 0.0, 255.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+
+    // Detect clusters in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected clusters
+    std::vector<Cluster> detectedClusters = detector.getClusters();
+
+    // Test the corresponding condition
+    EXPECT_NEAR(detectedClusters.back().getAngle(), 0, DOUBLE_COMP_ERROR);
+}
+
+TEST(ClusterDetector, OneNinetyAngleCluster) {
+    // Define the cluster detector
+    SimulationClusterDetector detector(15, 15, 1);
+
+    // Set the spatial analysis parameter values
+    detector.setEps(30);
+    detector.setMinPoints(0);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(15, 15) << 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 255.0, 255.0, 255.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 255.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+
+    // Detect clusters in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected clusters
+    std::vector<Cluster> detectedClusters = detector.getClusters();
+
+    // Test the corresponding condition
+    EXPECT_NEAR(detectedClusters.back().getAngle(), 90, DOUBLE_COMP_ERROR);
+}
+
+TEST(ClusterDetector, OneBetweenZeroAndOneHundredEightyAngleCluster) {
+    // Define the cluster detector
+    SimulationClusterDetector detector(7, 7, 1);
+
+    // Set the spatial analysis parameter values
+    detector.setEps(15);
+    detector.setMinPoints(1);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 0.0, 0.0, 255.0, 255.0, 255.0, 0.0, 0.0,
+                                                   0.0, 255.0, 255.0, 255.0, 255.0, 255.0, 0.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    // Detect clusters in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected clusters
+    std::vector<Cluster> detectedClusters = detector.getClusters();
+
+    // Test the corresponding condition
+    EXPECT_TRUE(
+        (detectedClusters.back().getAngle() >= 0) &&
+        (detectedClusters.back().getAngle() <= 180)
+    );
+}
+
+TEST(ClusterDetector, OneMaximumAngleCluster) {
+    // Define the cluster detector
+    SimulationClusterDetector detector(7, 7, 1);
+
+    // Set the spatial analysis parameter values
+    detector.setEps(15);
+    detector.setMinPoints(1);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 0.0, 0.0, 255.0, 255.0, 255.0, 0.0, 0.0,
+                                                   0.0, 255.0, 255.0, 255.0, 255.0, 255.0, 0.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    // Detect clusters in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected clusters
+    std::vector<Cluster> detectedClusters = detector.getClusters();
+
+    // Test the corresponding condition
+    EXPECT_NEAR(detectedClusters.back().getAngle(), 360, DOUBLE_COMP_ERROR);
+}
+
 TEST(ClusterDetector, MultipleClusters) {
     // Define the cluster detector
     SimulationClusterDetector detector(8, 8, 1);

@@ -971,6 +971,145 @@ TEST(RegionDetector, OneCircularRegion) {
     EXPECT_TRUE(detectedRegions.back().getShape() == Shape2D::Circle);
 }
 
+TEST(RegionDetector, OneZeroAngleRegion) {
+    // Define the region detector
+    RegionDetector detector;
+
+    // Set the spatial analysis parameter values
+    detector.setAlpha(0);
+    detector.setBeta(100);
+    detector.setBlurKernelSize(0);
+    detector.setMorphologicalCloseIterations(0);
+    detector.setEpsilon(0);
+    detector.setRegionAreaThresh(0);
+    detector.setThresholdValue(125);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 0.0, 0.0, 0.0, 255.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+
+    // Detect regions in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected regions
+    std::vector<Region> detectedRegions = detector.getRegions();
+
+    // Test the corresponding condition
+    EXPECT_NEAR(detectedRegions.back().getAngle(), 0, DOUBLE_COMP_ERROR);
+}
+
+TEST(RegionDetector, OneNinetyAngleRegion) {
+    // Define the region detector
+    RegionDetector detector;
+
+    // Set the spatial analysis parameter values
+    detector.setAlpha(0);
+    detector.setBeta(100);
+    detector.setBlurKernelSize(0);
+    detector.setMorphologicalCloseIterations(0);
+    detector.setEpsilon(0);
+    detector.setRegionAreaThresh(0);
+    detector.setThresholdValue(125);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(15, 15) << 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 255.0, 255.0, 255.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 255.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+
+    // Detect regions in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected regions
+    std::vector<Region> detectedRegions = detector.getRegions();
+
+    // Test the corresponding condition
+    EXPECT_NEAR(detectedRegions.back().getAngle(), 90, DOUBLE_COMP_ERROR);
+}
+
+TEST(RegionDetector, OneBetweenZeroAndOneHundredEightyAngleRegion) {
+    // Define the region detector
+    RegionDetector detector;
+
+    // Set the spatial analysis parameter values
+    detector.setAlpha(0);
+    detector.setBeta(100);
+    detector.setBlurKernelSize(0);
+    detector.setMorphologicalCloseIterations(0);
+    detector.setEpsilon(0);
+    detector.setRegionAreaThresh(0);
+    detector.setThresholdValue(125);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 0.0, 0.0, 255.0, 255.0, 255.0, 0.0, 0.0,
+                                                   0.0, 255.0, 255.0, 255.0, 255.0, 255.0, 0.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+
+    // Detect regions in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected regions
+    std::vector<Region> detectedRegions = detector.getRegions();
+
+    // Test the corresponding condition
+    EXPECT_TRUE(
+        (detectedRegions.back().getAngle() >= 0) &&
+        (detectedRegions.back().getAngle() <= 180)
+    );
+}
+
+TEST(RegionDetector, OneMaximumAngleRegion) {
+    // Define the region detector
+    RegionDetector detector;
+
+    // Set the spatial analysis parameter values
+    detector.setAlpha(0);
+    detector.setBeta(100);
+    detector.setBlurKernelSize(0);
+    detector.setMorphologicalCloseIterations(0);
+    detector.setEpsilon(0);
+    detector.setRegionAreaThresh(0);
+    detector.setThresholdValue(125);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 0.0, 0.0, 255.0, 255.0, 255.0, 0.0, 0.0,
+                                                   0.0, 255.0, 255.0, 255.0, 255.0, 255.0, 0.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+
+    // Detect regions in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected regions
+    std::vector<Region> detectedRegions = detector.getRegions();
+
+    // Test the corresponding condition
+    EXPECT_NEAR(detectedRegions.back().getAngle(), 360, DOUBLE_COMP_ERROR);
+}
+
 TEST(RegionDetector, MultipleRegions) {
     // Define the region detector
     RegionDetector detector;

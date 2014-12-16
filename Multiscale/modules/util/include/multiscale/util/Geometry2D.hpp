@@ -14,6 +14,16 @@ namespace multiscale {
 
         public:
 
+            //! Compute the angle ABC between three points A, B and C
+            /*! Compute the angle between the lines determined by
+             * points (A, B) and (B, C)
+             *
+             * \param a cv::Point2f a
+             * \param b cv::Point2f b
+             * \param c cv::Point2f c
+             */
+            static double angleBtwPoints(const cv::Point2f &a, const cv::Point2f &b, const cv::Point2f &c);
+
             //! Get the angle of the line measured from the Ox axis in counterclockwise direction
             /*!
              * The line is specified by points "a" and "b". The value of the angle is expressed in degrees.
@@ -120,6 +130,20 @@ namespace multiscale {
              */
             static cv::Point2f middlePoint(const cv::Point2f &a, const cv::Point2f &b);
 
+            //! Compute the polygon points where the tangents from a reference point touch the given polygon
+            /*! The employed algorithms are based on the information presented at:
+             *  http://geomalgorithms.com/a15-_tangents.html (Accessed on: 16.12.2014)
+             *
+             * \param convexPolygon         The considered convex polygon
+             * \param referencePoint        The reference point through which the polygon tangents pass
+             * \param leftMostTangentPoint  The left most polygon point through which the tangent passes
+             * \param rightMostTangentPoint The right most polygon point through which the tangent passes
+             */
+            static void tangentsFromPointToPolygon(const std::vector<cv::Point> &convexPolygon,
+                                                   const cv::Point2f &referencePoint,
+                                                   cv::Point &leftMostTangentPoint,
+                                                   cv::Point &rightMostTangentPoint);
+
             //! Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points
             /*!
              * \param a1        First point for determining the first line
@@ -132,6 +156,37 @@ namespace multiscale {
             static void orthogonalLineToAnotherLineEdgePoints(const cv::Point &a1, const cv::Point &b1,
                                                               cv::Point &a2, cv::Point &b2, int nrOfRows,
                                                               int nrOfCols);
+
+            //! Compute on which side of the line (A, B) the given point P lies
+            /*! The function returns:
+             *      <0, if P lies to the left of (A, B)
+             *       0, if P lies on the line (A, B)
+             *      >0, if P lies to the right of (A, B)
+             *
+             * \param point             The considered point P
+             * \param lineStartPointA   The line start point A
+             * \param lineEndPointB     The line end point B
+             */
+            static double sideOfLine(const cv::Point2f &point, const cv::Point &lineStartPointA,
+                                     const cv::Point &lineEndPointB);
+
+            //! Check if the point P lies to the right of line (A, B)
+            /*!
+             * \param point             The considered point P
+             * \param lineStartPointA   The line start point A
+             * \param lineEndPointB     The line end point B
+             */
+            static bool isToTheRightOfLine(const cv::Point2f &point, const cv::Point &lineStartPointA,
+                                           const cv::Point &lineEndPointB);
+
+            //! Check if the point P lies to the left of line (A, B)
+            /*!
+             * \param point             The considered point P
+             * \param lineStartPointA   The line start point A
+             * \param lineEndPointB     The line end point B
+             */
+            static bool isToTheLeftOfLine(const cv::Point2f &point, const cv::Point &lineStartPointA,
+                                          const cv::Point &lineEndPointB);
 
             //! Check if p1 and p2 are on the same side of the line determined by points a and b
             /*!
@@ -326,16 +381,6 @@ namespace multiscale {
                                                       const cv::Point2f &circleOrigin, double radius,
                                                       std::vector<cv::Point2f> &intersectionPoints);
 
-            //! Compute the angle between three points
-            /*! Compute the angle between the lines determined by
-             * points A, B and B, C
-             *
-             * \param a cv::Point2f a
-             * \param b cv::Point2f b
-             * \param c cv::Point2f c
-             */
-            static double angleBtwPoints(const cv::Point2f &a, const cv::Point2f &b, const cv::Point2f &c);
-
             //! Find the subset of points from the given set of points which lie on the edge
             /*!
              *  A point "p" is considered to be on the edge if:
@@ -348,8 +393,9 @@ namespace multiscale {
              *  \param nrOfRows The number of rows
              *  \param nrOfCols The number of columns
              */
-            static std::vector<cv::Point2f> findPointsOnEdge(const std::vector<cv::Point2f> &points, unsigned int nrOfRows,
-                                                         unsigned int nrOfCols);
+            static std::vector<cv::Point2f> findPointsOnEdge(const std::vector<cv::Point2f> &points,
+                                                             unsigned int nrOfRows,
+                                                             unsigned int nrOfCols);
 
             //! Get the index of the point which is the closest to the origin
             /*! Get the index of the point P from the given set of points, such that
@@ -358,19 +404,8 @@ namespace multiscale {
              * \param points The set of points
              * \param origin The origin
              */
-            static unsigned int minimumDistancePointIndex(const std::vector<cv::Point> &points, const cv::Point2f &origin);
-
-            //! Compute the area of a triangle defined by three points
-            /*!
-             * The area is computed using the determinant method.
-             * An example is presented at http://demonstrations.wolfram.com/TheAreaOfATriangleUsingADeterminant/
-             * (Last access: 10.07.2013)
-             *
-             * \param a Point a
-             * \param b Point b
-             * \param c Point c
-             */
-            static double areaOfTriangle(const cv::Point2f &a, const cv::Point2f &b, const cv::Point2f &c);
+            static unsigned int minimumDistancePointIndex(const std::vector<cv::Point> &points,
+                                                          const cv::Point2f &origin);
 
             //! Check if one point lies between two other points
             /*!
@@ -397,7 +432,37 @@ namespace multiscale {
             static bool areCollinear(const cv::Point2f &point1, const cv::Point2f &point2,
                                      const cv::Point2f &point3);
 
+            //! Compute the area of a triangle defined by three points
+            /*!
+             * The area is computed using the determinant method.
+             * An example is presented at http://demonstrations.wolfram.com/TheAreaOfATriangleUsingADeterminant/
+             * (Last access: 10.07.2013)
+             *
+             * \param a Point a
+             * \param b Point b
+             * \param c Point c
+             */
+            static double areaOfTriangle(const cv::Point2f &a, const cv::Point2f &b, const cv::Point2f &c);
+
         private:
+
+            //! Compute the left-most polygon tangent point considering the given reference point
+            /*! The tangent point is found using a binary search like procedure.
+             *
+             * \param convexPolygon         The considered convex polygon
+             * \param referencePoint        The reference point through which the polygon tangents pass
+             */
+            static cv::Point computeLeftMostTangentPoint(const std::vector<cv::Point> &convexPolygon,
+                                                         const cv::Point2f &referencePoint);
+
+            //! Compute the right-most polygon tangent point considering the given reference point
+            /*! The tangent point is found using a binary search like procedure.
+             *
+             * \param convexPolygon         The considered convex polygon
+             * \param referencePoint        The reference point through which the polygon tangents pass
+             */
+            static cv::Point computeRightMostTangentPoint(const std::vector<cv::Point> &convexPolygon,
+                                                          const cv::Point2f &referencePoint);
 
             //! Check if the given point is on the edge
             /*!
@@ -458,9 +523,24 @@ namespace multiscale {
              * \param delta                 (4 * B^2 * C^2) - (4 * (A^2 + B^2) * (C^2 - (R^2 * A^2)))
              * \param intersectionPoints    Intersection points
              */
-            static void lineCircleOneIntersectionPoint(const cv::Point2f &circleOrigin, double A,
-                                                       double B, double C, double delta,
+            static void lineCircleOneIntersectionPoint(const cv::Point2f &circleOrigin,
+                                                       double A, double B, double C, double delta,
                                                        std::vector<cv::Point2f> &intersectionPoints);
+
+            //! Return the predecessor of the provided index
+            /*!
+             * \param currentIndex  The current index (0-based)
+             * \param nrOfIndices   The total number of indices
+             */
+            static int predecessor(int currentIndex, int nrOfIndices);
+
+            //! Return the successor of the provided index
+            /*!
+             * \param currentIndex  The current index (0-based)
+             * \param nrOfIndices   The total number of indices
+             */
+            static int successor(int currentIndex, int nrOfIndices);
+
 
         public:
 

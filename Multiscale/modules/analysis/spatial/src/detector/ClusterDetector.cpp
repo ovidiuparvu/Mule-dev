@@ -171,7 +171,7 @@ void ClusterDetector::updateClusterOriginDependentValues(Cluster &cluster,
     unsigned int minDistancePointIndex = Geometry2D::minimumDistancePointIndex(clusterConvexHull, origin);
 
     double distance = Geometry2D::distanceBtwPoints(clusterConvexHull[minDistancePointIndex], origin);
-    double angle = polygonAngle(clusterConvexHull, minDistancePointIndex);
+    double angle = polygonAngle(clusterConvexHull);
 
     cluster.setOriginDependentMembers(distance, angle);
 }

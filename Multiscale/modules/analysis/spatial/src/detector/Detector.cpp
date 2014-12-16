@@ -90,8 +90,8 @@ void Detector::initialiseImageDependentFields() {
 }
 
 void Detector::initialiseImageOrigin() {
-    int originX = (image.rows + 1) / 2;
-    int originY = (image.cols + 1) / 2;
+    int originX = (image.rows) / 2;
+    int originY = (image.cols) / 2;
 
     origin = cv::Point(originX, originY);
 }
@@ -147,26 +147,45 @@ void Detector::detectInReleaseMode() {
     processImageAndDetect();
 }
 
-double Detector::polygonAngle(const std::vector<cv::Point> &polygon, unsigned int closestPointIndex) {
+double Detector::polygonAngle(const std::vector<cv::Point> &polygon) {
     std::vector<cv::Point> polygonConvexHull;
 
     convexHull(polygon, polygonConvexHull);
 
-    return polygonAngle(polygonConvexHull, polygon[closestPointIndex]);
+    return (
+        polygonAngle(polygonConvexHull, origin)
+    );
 }
 
-double Detector::polygonAngle(const std::vector<cv::Point> &polygonConvexHull, const cv::Point &closestPoint) {
-    cv::Point centre;
-    std::vector<cv::Point> goodPointsForAngle;
+double Detector::polygonAngle(const std::vector<cv::Point> &polygonConvexHull,
+                              const cv::Point &tangentsPoint) {
+    // If the polygon is defined by maximum one point
+    if (polygonConvexHull.size() <= 1) {
+        return 0.0;
+    // Else if the tangents points is contained by the polygon
+    } else if (cv::pointPolygonTest(polygonConvexHull, tangentsPoint, false) > 0) {
+        return 360.0;
+    } else {
+        cv::Point leftMostTangentPoint;
+        cv::Point rightMostTangentPoint;
 
-    minAreaRectCentre(polygonConvexHull, centre);
-    findGoodPointsForAngle(polygonConvexHull, centre, closestPoint, goodPointsForAngle);
+        // Compute the left- and right-most polygon tangent points
+        Geometry2D::tangentsFromPointToPolygon(
+            polygonConvexHull,
+            tangentsPoint,
+            leftMostTangentPoint,
+            rightMostTangentPoint
+        );
 
-    return (
-        (goodPointsForAngle.size() == 2)
-            ? Geometry2D::angleBtwPoints(goodPointsForAngle.at(0), closestPoint, goodPointsForAngle.at(1))
-            : 0
-    );
+        // Compute the angle
+        return (
+            Geometry2D::angleBtwPoints(
+                leftMostTangentPoint,
+                tangentsPoint,
+                rightMostTangentPoint
+            )
+        );
+    }
 }
 
 void Detector::minAreaRectCentre(const std::vector<cv::Point> &polygon, cv::Point &centre) {
@@ -328,8 +347,11 @@ void Detector::addSpatialEntityPropertiesToTree(SpatialEntityPseudo3D &spatialEn
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_TRIANGLE_MEASURE, spatialEntity.getTriangularMeasure());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_RECTANGLE_MEASURE, spatialEntity.getRectangularMeasure());
     propertyTree.put<double>(LABEL_SPATIAL_ENTITY_CIRCLE_MEASURE, spatialEntity.getCircularMeasure());
-    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_X, spatialEntity.getCentre().x);
-    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_Y, spatialEntity.getCentre().y);
+
+    // Offset the centre point with (1, 1) such that the indexing starts from (1, 1)
+    // instead of (0, 0) because it is more intuitive
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_X, spatialEntity.getCentre().x + 1);
+    propertyTree.put<float>(LABEL_SPATIAL_ENTITY_CENTROID_Y, spatialEntity.getCentre().y + 1);
 }
 
 void Detector::addSpatialEntityTypeToPropertyTree(SpatialEntityPseudo3D &spatialEntity,
@@ -364,6 +386,22 @@ void Detector::displayImage(const cv::Mat &image, const std::string &windowName)
 
 void Detector::printOutputErrorMessage() {
     std::cout << ERR_OUTPUT_WITHOUT_DETECT << std::endl;
+}
+
+void Detector::offsetPolygons(std::vector<std::vector<cv::Point>> &polygons,
+                              const cv::Point &offset) {
+    std::size_t nrOfPolygons = polygons.size();
+
+    // For each polygon
+    for (std::size_t i = 0; i < nrOfPolygons; i++) {
+        std::size_t nrOfPoints = polygons[i].size();
+
+        // For each point
+        for (std::size_t j = 0; j < nrOfPoints; j++) {
+            // Apply the given offset
+            (polygons[i])[j] += offset;
+        }
+    }
 }
 
 
