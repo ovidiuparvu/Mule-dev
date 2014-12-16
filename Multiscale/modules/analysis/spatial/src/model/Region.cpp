@@ -170,7 +170,7 @@ double Region::isTriangularMeasure() {
 
     // Find the minimum area triangle enclosing the convex hull
     double triangleArea = MinEnclosingTriangleFinder().find(
-                              convertPoints(contourConvexHull),
+                              Geometry2D::convertPoints(contourConvexHull),
                               minAreaEnclosingTriangle
                           );
 

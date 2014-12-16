@@ -341,7 +341,7 @@ TEST(ClusterDetector, OneTriangularCluster) {
     // Create the input image
     cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 0.0, 0.0, 0.0, 255.0, 0.0, 0.0, 0.0,
                                                    0.0, 0.0, 255.0, 255.0, 255.0, 0.0, 0.0,
-                                                   0.0, 255.0, 255.0, 255.0, 255.0, 255.0, 0.0,                                                             0, 0, 0, 0, 0, 0, 0, 0,
+                                                   0.0, 255.0, 255.0, 255.0, 255.0, 255.0, 0.0,
                                                    255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
                                                    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
                                                    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
@@ -369,7 +369,7 @@ TEST(ClusterDetector, OneRectangularCluster) {
     // Create the input image
     cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
                                                    255.0, 0.0, 255.0, 255.0, 255.0, 0.0, 0.0,
-                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 0.0,                                                             0, 0, 0, 0, 0, 0, 0, 0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 0.0,
                                                    255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
                                                    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
                                                    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
@@ -388,16 +388,16 @@ TEST(ClusterDetector, OneRectangularCluster) {
 
 TEST(ClusterDetector, OneCircularCluster) {
     // Define the cluster detector
-    SimulationClusterDetector detector(101, 101, 1);
+    SimulationClusterDetector detector(51, 51, 1);
 
     // Set the spatial analysis parameter values
-    detector.setEps(1.0);
+    detector.setEps(15);
     detector.setMinPoints(1);
 
     // Create the input image
-    cv::Mat inputImage = cv::Mat::zeros(101, 101, CV_32FC1);
+    cv::Mat inputImage = cv::Mat::zeros(51, 51, CV_32FC1);
 
-    cv::circle(inputImage, cv::Point(51, 51), 40, cv::Scalar(255), CV_FILLED);
+    cv::circle(inputImage, cv::Point(25, 25), 25, cv::Scalar(255), CV_FILLED);
 
     // Detect clusters in the image
     detector.detect(inputImage);

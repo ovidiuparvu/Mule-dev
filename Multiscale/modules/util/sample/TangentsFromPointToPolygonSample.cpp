@@ -23,8 +23,8 @@ const cv::Point origin = cv::Point(0, 0);
 
 
 // Generate a new random set of 2D points
-std::vector<cv::Point> generateRandomSetOf2DPoints(int nrOfPoints) {
-    std::vector<cv::Point> points;
+std::vector<cv::Point2f> generateRandomSetOf2DPoints(int nrOfPoints) {
+    std::vector<cv::Point2f> points;
 
     for (int i = 0; i < nrOfPoints; i++) {
         points.push_back(
@@ -39,7 +39,7 @@ std::vector<cv::Point> generateRandomSetOf2DPoints(int nrOfPoints) {
 }
 
 // Output the results for the minimum area enclosing triangle
-void outputTangentsAndPolygon(const std::vector<cv::Point> &polygon,
+void outputTangentsAndPolygon(const std::vector<cv::Point2f> &polygon,
                               const cv::Point &leftMostTangentPoint,
                               const cv::Point &rightMostTangentPoint) {
     cv::Mat image = cv::Mat::zeros(POLYGON_POINT_RAND_X_MAX * 3, POLYGON_POINT_RAND_Y_MAX * 3, CV_32FC3);
@@ -61,7 +61,7 @@ void outputTangentsAndPolygon(const std::vector<cv::Point> &polygon,
 }
 
 // Find tangents from a fixed point to the given polygon
-void findTangentsForRandomPolygon(const std::vector<cv::Point> &polygon) {
+void findTangentsForRandomPolygon(const std::vector<cv::Point2f> &polygon) {
     cv::Point leftMostTangentPoint;
     cv::Point rightMostTangentPoint;
 
@@ -90,7 +90,7 @@ int generateRandomNumberOfPoints() {
 
 // Find tangents from fixed point to randomly generated polygons
 void findTangentsForRandomPolygons() {
-    std::vector<cv::Point> randomPolygon;
+    std::vector<cv::Point2f> randomPolygon;
 
     char key = 0;
 
@@ -101,7 +101,7 @@ void findTangentsForRandomPolygons() {
         int nrOfPoints = generateRandomNumberOfPoints();
 
         // Generate points
-        std::vector<cv::Point> points = generateRandomSetOf2DPoints(nrOfPoints);
+        std::vector<cv::Point2f> points = generateRandomSetOf2DPoints(nrOfPoints);
 
         // Construct a polygon from the points
         cv::convexHull(points, randomPolygon);
@@ -115,7 +115,7 @@ void findTangentsForRandomPolygons() {
 
 // Find tangents from fixed point to randomly generated lines (i.e. polygons comprising only 2 points)
 void findTangentsForRandomLines() {
-    std::vector<cv::Point> randomPolygon;
+    std::vector<cv::Point2f> randomPolygon;
 
     char key = 0;
 
@@ -124,7 +124,7 @@ void findTangentsForRandomLines() {
 
     while (key != KEY_ESC) {
         // Generate points
-        std::vector<cv::Point> points = generateRandomSetOf2DPoints(2);
+        std::vector<cv::Point2f> points = generateRandomSetOf2DPoints(2);
 
         // Construct a polygon from the points
         cv::convexHull(points, randomPolygon);
@@ -138,7 +138,7 @@ void findTangentsForRandomLines() {
 
 // Find tangents from a fixed point to different polygons
 void findTangentsFromPointToPolygons() {
-    // TODO: Uncomment if interested in random lines
+    // Uncomment if interested in random lines
     // findTangentsForRandomLines();
 
     findTangentsForRandomPolygons();

@@ -60,10 +60,10 @@ void Detector::initialiseImageDependentFields() {
 }
 
 void Detector::initialiseImageOrigin() {
-    int originX = (image.rows) / 2;
-    int originY = (image.cols) / 2;
+    float originX = static_cast<float>(image.rows - 1) / 2.0;
+    float originY = static_cast<float>(image.cols - 1) / 2.0;
 
-    origin = cv::Point(originX, originY);
+    origin = cv::Point2f(originX, originY);
 }
 
 void Detector::initialiseDetectorSpecificFieldsIfNotSet() {
@@ -118,7 +118,15 @@ void Detector::detectInReleaseMode() {
 }
 
 double Detector::polygonAngle(const std::vector<cv::Point> &polygon) {
-    std::vector<cv::Point> polygonConvexHull;
+    std::vector<cv::Point2f> convertedPolygon = Geometry2D::convertPoints(polygon);
+
+    return (
+        polygonAngle(convertedPolygon)
+    );
+}
+
+double Detector::polygonAngle(const std::vector<cv::Point2f> &polygon) {
+    std::vector<cv::Point2f> polygonConvexHull;
 
     convexHull(polygon, polygonConvexHull);
 
@@ -127,7 +135,7 @@ double Detector::polygonAngle(const std::vector<cv::Point> &polygon) {
     );
 }
 
-double Detector::polygonAngle(const std::vector<cv::Point> &polygonConvexHull,
+double Detector::polygonAngle(const std::vector<cv::Point2f> &polygonConvexHull,
                               const cv::Point &tangentsPoint) {
     // If the polygon is defined by maximum one point
     if (polygonConvexHull.size() <= 1) {
@@ -155,40 +163,6 @@ double Detector::polygonAngle(const std::vector<cv::Point> &polygonConvexHull,
                 rightMostTangentPoint
             )
         );
-    }
-}
-
-void Detector::minAreaRectCentre(const std::vector<cv::Point> &polygon, cv::Point &centre) {
-    cv::RotatedRect enclosingRectangle = minAreaRect(polygon);
-
-    centre = enclosingRectangle.center;
-}
-
-void Detector::findGoodPointsForAngle(const std::vector<cv::Point> &polygonConvexHull,
-                                      const cv::Point &boundingRectCentre,
-                                      const cv::Point &closestPoint,
-                                      std::vector<cv::Point> &goodPointsForAngle) {
-    cv::Point firstEdgePoint, secondEdgePoint;
-
-    Geometry2D::orthogonalLineToAnotherLineEdgePoints(closestPoint, boundingRectCentre, firstEdgePoint,
-                                                      secondEdgePoint, image.rows, image.cols);
-
-    findGoodIntersectionPoints(polygonConvexHull, firstEdgePoint, secondEdgePoint, goodPointsForAngle);
-}
-
-void Detector::findGoodIntersectionPoints(const std::vector<cv::Point> &polygonConvexHull,
-                                          const cv::Point &edgePointA,
-                                          const cv::Point &edgePointB,
-                                          std::vector<cv::Point> &goodPointsForAngle) {
-    cv::Point intersection;
-    int nrOfPolygonPoints = polygonConvexHull.size();
-
-    for (int i = 0; i < nrOfPolygonPoints; i++) {
-        if (Geometry2D::lineSegmentIntersection(polygonConvexHull.at(i),
-                                                polygonConvexHull.at((i+1) % nrOfPolygonPoints),
-                                                edgePointA, edgePointB, intersection)) {
-            goodPointsForAngle.push_back(intersection);
-        }
     }
 }
 
@@ -232,7 +206,7 @@ void Detector::outputResultsToCsvFile(std::ofstream &fout) {
 
     outputSpatialEntitiesToCsvFile(fout);
 
-    // Add an empty cv::line between the pseudo 3D spatial entities data and the averaged data
+    // Add an empty line between the pseudo 3D spatial entities data and the averaged data
     fout << std::endl;
 
     outputAveragedMeasuresToCsvFile(fout);
@@ -376,8 +350,6 @@ void Detector::offsetPolygons(std::vector<std::vector<cv::Point>> &polygons,
 
 
 // Constants
-const int Detector::INPUT_IMAGE_SCALING_FACTOR  = 1;
-
 const int Detector::INTENSITY_MAX = 255;
 
 const std::string Detector::OUTPUT_CLUSTEREDNESS   = "Average clusteredness degree: ";

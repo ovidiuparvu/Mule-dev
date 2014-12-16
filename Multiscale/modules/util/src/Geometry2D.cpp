@@ -119,7 +119,7 @@ cv::Point2f Geometry2D::middlePoint(const cv::Point2f &a, const cv::Point2f &b) 
     return cv::Point2f(middleX, middleY);
 }
 
-void Geometry2D::tangentsFromPointToPolygon(const std::vector<cv::Point> &convexPolygon,
+void Geometry2D::tangentsFromPointToPolygon(const std::vector<cv::Point2f> &convexPolygon,
                                             const cv::Point2f &referencePoint,
                                             cv::Point &leftMostTangentPoint,
                                             cv::Point &rightMostTangentPoint) {
@@ -407,6 +407,15 @@ std::vector<cv::Point2f> Geometry2D::findPointsOnEdge(const std::vector<cv::Poin
 
 unsigned int Geometry2D::minimumDistancePointIndex(const std::vector<cv::Point> &contour,
                                                    const cv::Point2f &origin) {
+    std::vector<cv::Point2f> contourPoints = convertPoints(contour);
+
+    return (
+        minimumDistancePointIndex(contourPoints, origin)
+    );
+}
+
+unsigned int Geometry2D::minimumDistancePointIndex(const std::vector<cv::Point2f> &contour,
+                                                   const cv::Point2f &origin) {
     double minDistance = std::numeric_limits<int>::max();
     double distance = 0.0;
     int nrOfPoints = contour.size();
@@ -457,7 +466,37 @@ double Geometry2D::areaOfTriangle(const cv::Point2f &a, const cv::Point2f &b, co
     return fabs(determinant) / 2;
 }
 
-cv::Point Geometry2D::computeLeftMostTangentPoint(const std::vector<cv::Point> &convexPolygon,
+std::vector<cv::Point2f> Geometry2D::convertPoints(const std::vector<cv::Point> &pointsCollection) {
+    std::vector<cv::Point2f> convertedPoints;
+
+    for (const cv::Point &point : pointsCollection) {
+        convertedPoints.push_back(
+            cv::Point2f(
+                static_cast<float>(point.x),
+                static_cast<float>(point.y)
+            )
+        );
+    }
+
+    return convertedPoints;
+}
+
+std::vector<cv::Point> Geometry2D::convertPoints(const std::vector<cv::Point2f> &pointsCollection) {
+    std::vector<cv::Point> convertedPoints;
+
+    for (const cv::Point2f &point : pointsCollection) {
+        convertedPoints.push_back(
+            cv::Point(
+                static_cast<int>(point.x),
+                static_cast<int>(point.y)
+            )
+        );
+    }
+
+    return convertedPoints;
+}
+
+cv::Point Geometry2D::computeLeftMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
                                                   const cv::Point2f &referencePoint) {
     // Compute the number of points in the polygon
     int nrOfPolygonPoints = convexPolygon.size();
@@ -563,7 +602,7 @@ cv::Point Geometry2D::computeLeftMostTangentPoint(const std::vector<cv::Point> &
     return cv::Point();
 }
 
-cv::Point Geometry2D::computeRightMostTangentPoint(const std::vector<cv::Point> &convexPolygon,
+cv::Point Geometry2D::computeRightMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
                                                    const cv::Point2f &referencePoint) {
     // Compute the number of points in the polygon
     int nrOfPolygonPoints = convexPolygon.size();

@@ -358,13 +358,21 @@ double RegionDetector::regionDensity(const Polygon &polygon) {
     // Set the intensity of all pixels surrounded by the polygon outer border to maximum
     drawContours(
         mask, std::vector<std::vector<cv::Point>>(1, polygon.first), -1,
-        cv::Scalar(INTENSITY_MAX), CV_FILLED, 8, cv::Mat(), INT_MAX
+        cv::Scalar(INTENSITY_MAX), CV_FILLED
     );
 
     // Set the intensity of all pixels surrounded by inner borders to zero
     drawContours(
-        mask, polygon.second, -1, cv::Scalar(0), CV_FILLED,
-        8, cv::Mat(), INT_MAX
+        mask, polygon.second, -1, cv::Scalar(0), CV_FILLED
+    );
+
+    // Set the intensity of all pixels defined by the polygon outer border to maximum
+    // The reason for adding this step is that some of the pixels may have been
+    // assigned zero intensity in the previous step because they are common to both
+    // outer and inner borders
+    drawContours(
+        mask, std::vector<std::vector<cv::Point>>(1, polygon.first), -1,
+        cv::Scalar(INTENSITY_MAX), 1
     );
 
     // Compute the average intensity of the pixels considering the mask

@@ -118,7 +118,7 @@ void Cluster::updateClusterednessDegree() {
                                 : Numeric::division(avgDistance, entities.size());
     }
 
-    totalAvgDistance /= (entities.size());
+    totalAvgDistance = Numeric::division(totalAvgDistance, entities.size());
 
     clusterednessDegree = (Numeric::division(1, totalAvgDistance));
 }
@@ -130,7 +130,7 @@ void Cluster::updateDensity() {
         density += entity.getPileUpDegree();
     }
 
-    density /= (entities.size());
+    density = Numeric::division(density, entities.size());
 }
 
 void Cluster::updateArea() {
@@ -138,7 +138,7 @@ void Cluster::updateArea() {
 
     area = static_cast<double>(
                SpatialMeasureCalculator::computePolygonArea(
-                   convertPoints(entitiesConvexHull)
+                   Geometry2D::convertPoints(entitiesConvexHull)
                )
            );
 }
@@ -154,7 +154,7 @@ void Cluster::updatePerimeter() {
 
     perimeter = static_cast<double>(
                     SpatialMeasureCalculator::computePolygonPerimeter(
-                        convertPoints(entitiesConvexHull)
+                        Geometry2D::convertPoints(entitiesConvexHull)
                     )
                 );
 }
@@ -185,9 +185,9 @@ double Cluster::isTriangularMeasure() {
 }
 
 double Cluster::isRectangularMeasure() {
-    std::vector<cv::Point2f> entitiesCentrePoints = getEntitiesConvexHull();
+    std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
-    cv::RotatedRect minAreaEnclosingRect = minAreaRect(entitiesCentrePoints);
+    cv::RotatedRect minAreaEnclosingRect = minAreaRect(entitiesConvexHull);
 
     // Compute the area of the minimum area enclosing rectangle
     double rectangleArea = (minAreaEnclosingRect.size.height * minAreaEnclosingRect.size.width);
@@ -196,9 +196,9 @@ double Cluster::isRectangularMeasure() {
 }
 
 double Cluster::isCircularMeasure() {
-    std::vector<cv::Point2f> entitiesCentrePoints = getEntitiesConvexHull();
+    std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
-    minEnclosingCircle(entitiesCentrePoints, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
+    minEnclosingCircle(entitiesConvexHull, minAreaEnclosingCircleCentre, minAreaEnclosingCircleRadius);
 
     // Compute the area of the minimum area enclosing circle
     double circleArea = (Geometry2D::PI * minAreaEnclosingCircleRadius * minAreaEnclosingCircleRadius);
@@ -219,7 +219,8 @@ void Cluster::validateOriginDependentValues(double distanceFromOrigin, double an
 bool Cluster::areValidOriginDependentValues(double distanceFromOrigin, double angleWrtOrigin) {
     return (
       (Numeric::greaterOrEqual(distanceFromOrigin, 0)) &&
-      (Numeric::greaterOrEqual(angleWrtOrigin, 0))
+      (Numeric::lessOrEqual(0, angleWrtOrigin)) &&
+      (Numeric::lessOrEqual(angleWrtOrigin, 360))
     );
 }
 

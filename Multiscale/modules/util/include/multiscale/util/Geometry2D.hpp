@@ -139,7 +139,7 @@ namespace multiscale {
              * \param leftMostTangentPoint  The left most polygon point through which the tangent passes
              * \param rightMostTangentPoint The right most polygon point through which the tangent passes
              */
-            static void tangentsFromPointToPolygon(const std::vector<cv::Point> &convexPolygon,
+            static void tangentsFromPointToPolygon(const std::vector<cv::Point2f> &convexPolygon,
                                                    const cv::Point2f &referencePoint,
                                                    cv::Point &leftMostTangentPoint,
                                                    cv::Point &rightMostTangentPoint);
@@ -407,6 +407,16 @@ namespace multiscale {
             static unsigned int minimumDistancePointIndex(const std::vector<cv::Point> &points,
                                                           const cv::Point2f &origin);
 
+            //! Get the index of the point which is the closest to the origin
+            /*! Get the index of the point P from the given set of points, such that
+             *  for any point A from the set of points dist(A, origin) >= dist(P, origin).
+             *
+             * \param points The set of points
+             * \param origin The origin
+             */
+            static unsigned int minimumDistancePointIndex(const std::vector<cv::Point2f> &points,
+                                                          const cv::Point2f &origin);
+
             //! Check if one point lies between two other points
             /*!
              * \param point             Point lying possibly outside the line segment
@@ -444,6 +454,18 @@ namespace multiscale {
              */
             static double areaOfTriangle(const cv::Point2f &a, const cv::Point2f &b, const cv::Point2f &c);
 
+            //! Convert the coordinates from integers to floating point for the given points collection
+            /*!
+             * \param pointsCollection  The given collection of points
+             */
+            static std::vector<cv::Point2f> convertPoints(const std::vector<cv::Point> &pointsCollection);
+
+            //! Convert the coordinates from floating point to integers for the given points collection
+            /*!
+             * \param pointsCollection  The given collection of points
+             */
+            static std::vector<cv::Point> convertPoints(const std::vector<cv::Point2f> &pointsCollection);
+
         private:
 
             //! Compute the left-most polygon tangent point considering the given reference point
@@ -452,7 +474,7 @@ namespace multiscale {
              * \param convexPolygon         The considered convex polygon
              * \param referencePoint        The reference point through which the polygon tangents pass
              */
-            static cv::Point computeLeftMostTangentPoint(const std::vector<cv::Point> &convexPolygon,
+            static cv::Point computeLeftMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
                                                          const cv::Point2f &referencePoint);
 
             //! Compute the right-most polygon tangent point considering the given reference point
@@ -461,7 +483,7 @@ namespace multiscale {
              * \param convexPolygon         The considered convex polygon
              * \param referencePoint        The reference point through which the polygon tangents pass
              */
-            static cv::Point computeRightMostTangentPoint(const std::vector<cv::Point> &convexPolygon,
+            static cv::Point computeRightMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
                                                           const cv::Point2f &referencePoint);
 
             //! Check if the given point is on the edge
@@ -540,7 +562,6 @@ namespace multiscale {
              * \param nrOfIndices   The total number of indices
              */
             static int successor(int currentIndex, int nrOfIndices);
-
 
         public:
 

@@ -167,18 +167,6 @@ namespace multiscale {
                 //! Return the type of the pseudo 3D spatial entity
                 virtual SpatialEntityPseudo3DType type() = 0;
 
-                //! Convert the collection of points from type cv::Point to type cv::Point2f
-                /*!
-                 * \param points Collection of points
-                 */
-                std::vector<cv::Point2f> convertPoints(const std::vector<cv::Point> &points);
-
-                //! Convert the collection of points from type cv::Point2f to type cv::Point
-                /*!
-                 * \param points Collection of points
-                 */
-                std::vector<cv::Point> convertPoints(const std::vector<cv::Point2f> &points);
-
             private:
 
                 //! Initialisation function for the class

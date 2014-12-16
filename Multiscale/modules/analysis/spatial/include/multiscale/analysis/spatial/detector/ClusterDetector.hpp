@@ -161,13 +161,7 @@ namespace multiscale {
                  *  \param clusterConvexHull    Convex hull of the cluster
                  */
                 void updateClusterOriginDependentValues(Cluster &cluster,
-                                                        const std::vector<cv::Point> &clusterConvexHull);
-
-                //! Return the convex hull of the given cluster
-                /*!
-                 * \param cluster The given cluster
-                 */
-                std::vector<cv::Point> getClusterConvexHull(Cluster &cluster);
+                                                        const std::vector<cv::Point2f> &clusterConvexHull);
 
                 //! Compute the clusteredness index for all the entities detected in the image
                 /*! Compute the clusteredness index for all the entities detected in the image using Silhouette

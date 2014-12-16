@@ -63,8 +63,8 @@ bool SimulationClusterDetector::isEntityAtPosition(int x, int y) {
 }
 
 cv::Point2f SimulationClusterDetector::getEntityCentrePoint(int x, int y) {
-    double xCentre = (x * entityWidth) + (entityWidth / 2);
-    double yCentre = (y * entityHeight) + (entityHeight / 2);
+    double xCentre = (x * entityWidth) + (entityWidth / 2.0) - (0.5);
+    double yCentre = (y * entityHeight) + (entityHeight / 2.0) - (0.5);
 
     return cv::Point2f(xCentre, yCentre);
 }
@@ -74,7 +74,12 @@ std::vector<cv::Point2f> SimulationClusterDetector::getEntityContourPoints(int x
 
     for (int i = x; i < (x + 2); i++) {
         for (int j = y; j < (y + 2); j++) {
-            contourPoints.push_back(cv::Point(i * entityWidth, j * entityHeight));
+            contourPoints.push_back(
+                cv::Point2f(
+                    (i * entityWidth) - (0.5),
+                    (j * entityHeight) - (0.5)
+                )
+            );
         }
     }
 

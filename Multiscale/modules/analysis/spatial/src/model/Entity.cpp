@@ -50,9 +50,13 @@ std::vector<cv::Point2f> Entity::getContourPoints() const {
 }
 
 std::string Entity::toString() {
-    return StringManipulator::toString<unsigned int>(pileUpDegree) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(centre.x) + OUTPUT_SEPARATOR +
-           StringManipulator::toString<double>(centre.y);
+    // Offset the centre points by (1, 1) in order to use a 1-based indexing
+    // which could be potentially more intuitive
+    return (
+        StringManipulator::toString<unsigned int>(pileUpDegree) + OUTPUT_SEPARATOR +
+        StringManipulator::toString<double>(centre.x + 1) + OUTPUT_SEPARATOR +
+        StringManipulator::toString<double>(centre.y + 1)
+   );
 }
 
 double Entity::distanceTo(std::shared_ptr<DataPoint> point) {
@@ -75,7 +79,9 @@ void Entity::validateInputValues(unsigned int pileUpDegree, double area, double 
 bool Entity::areValid(unsigned int pileUpDegree, double area, double perimeter,
                       const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints) {
     for (const cv::Point2f &point: contourPoints) {
-        if ((point.x < 0) || (point.y < 0)) {
+        // Minimum contour points values are (-0.5, -0.5) because
+        // the minimum centre point is (0, 0)
+        if ((point.x < (-0.5)) || (point.y < (-0.5))) {
             return false;
         }
     }

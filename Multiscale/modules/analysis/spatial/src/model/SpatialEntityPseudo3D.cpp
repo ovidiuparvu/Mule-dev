@@ -184,6 +184,8 @@ std::string SpatialEntityPseudo3D::shapeAsString() {
 std::string SpatialEntityPseudo3D::fieldValuesToString() {
     std::stringstream strStream;
 
+    // Offset the centre point by (1, 1) in order to use a 1-based indexing
+    // which could be potentially more intuitive
     strStream << clusterednessDegree << OUTPUT_SEPARATOR
               << density << OUTPUT_SEPARATOR
               << area << OUTPUT_SEPARATOR
@@ -194,30 +196,10 @@ std::string SpatialEntityPseudo3D::fieldValuesToString() {
               << triangularMeasure << OUTPUT_SEPARATOR
               << rectangularMeasure << OUTPUT_SEPARATOR
               << circularMeasure << OUTPUT_SEPARATOR
-              << centre.x << OUTPUT_SEPARATOR
-              << centre.y;
+              << (centre.x + 1) << OUTPUT_SEPARATOR
+              << (centre.y + 1);
 
     return strStream.str();
-}
-
-std::vector<cv::Point2f> SpatialEntityPseudo3D::convertPoints(const std::vector<cv::Point> &points) {
-    std::vector<cv::Point2f> convertedPoints;
-
-    for (const cv::Point &point : points) {
-        convertedPoints.push_back(cv::Point2f(point.x, point.y));
-    }
-
-    return convertedPoints;
-}
-
-std::vector<cv::Point> SpatialEntityPseudo3D::convertPoints(const std::vector<cv::Point2f> &points) {
-    std::vector<cv::Point> convertedPoints;
-
-    for (const cv::Point2f &point : points) {
-        convertedPoints.push_back(cv::Point(point.x, point.y));
-    }
-
-    return convertedPoints;
 }
 
 void SpatialEntityPseudo3D::initialise() {

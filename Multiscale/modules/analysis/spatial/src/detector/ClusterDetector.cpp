@@ -158,7 +158,7 @@ void ClusterDetector::analyseClusters(std::vector<Cluster> &clusters) {
 
 void ClusterDetector::analyseClustersOriginDependentValues(std::vector<Cluster> &clusters) {
     for (Cluster &cluster : clusters) {
-        std::vector<cv::Point> convexHull = getClusterConvexHull(cluster);
+        std::vector<cv::Point2f> convexHull = cluster.getEntitiesConvexHull();
 
         if (convexHull.size() > 0) {
             updateClusterOriginDependentValues(cluster, convexHull);
@@ -167,23 +167,13 @@ void ClusterDetector::analyseClustersOriginDependentValues(std::vector<Cluster> 
 }
 
 void ClusterDetector::updateClusterOriginDependentValues(Cluster &cluster,
-                                                         const std::vector<cv::Point> &clusterConvexHull) {
+                                                         const std::vector<cv::Point2f> &clusterConvexHull) {
     unsigned int minDistancePointIndex = Geometry2D::minimumDistancePointIndex(clusterConvexHull, origin);
 
     double distance = Geometry2D::distanceBtwPoints(clusterConvexHull[minDistancePointIndex], origin);
     double angle = polygonAngle(clusterConvexHull);
 
     cluster.setOriginDependentMembers(distance, angle);
-}
-
-std::vector<cv::Point> ClusterDetector::getClusterConvexHull(Cluster &cluster) {
-    std::vector<cv::Point> clusterConvexHull;
-
-    std::vector<cv::Point2f> entitiesConvexHull = cluster.getEntitiesConvexHull();
-
-    cv::Mat(entitiesConvexHull).copyTo(clusterConvexHull);
-
-    return clusterConvexHull;
 }
 
 double ClusterDetector::computeClusterednessIndex(const std::vector<Cluster> &clusters) {

@@ -44,7 +44,7 @@ namespace multiscale {
                 bool detectMethodCalled;                /*!< Flag for indicating if the detect method was called */
                 bool detectorSpecificFieldsInitialised; /*!< Flag for indicating if the parameters were */
 
-                cv::Point origin;                       /*!< The point representing the origin */
+                cv::Point2f origin;                     /*!< The point representing the origin */
 
             public:
 
@@ -131,45 +131,21 @@ namespace multiscale {
                  */
                 double polygonAngle(const std::vector<cv::Point> &polygon);
 
+                //! Compute the angle determined by the polygon tangents from a given point
+                /*! The considered point through which the tangents pass is the image/matrix
+                 *  centre point (origin).
+                 *
+                 *  \param polygon  Polygon for which the angle is computed
+                 */
+                double polygonAngle(const std::vector<cv::Point2f> &polygon);
+
                 //! Compute the angle of the tangents from the provided point to the polygon
                 /*!
                  *  \param polygonConvexHull    Convex hull of polygon
                  *  \param tangentsPoint        Point through which the tangents pass
                  */
-                double polygonAngle(const std::vector<cv::Point> &polygonConvexHull,
+                double polygonAngle(const std::vector<cv::Point2f> &polygonConvexHull,
                                     const cv::Point &tangentsPoint);
-
-                //! Get the centre of the minimum area bounding rectangle
-                /*!
-                 * \param polygon   The polygon
-                 * \param centre    The centre of the bounding rectangle
-                 */
-                void minAreaRectCentre(const std::vector<cv::Point> &polygon, cv::Point &centre);
-
-                //! Find the points for determining the angle of the polygon
-                /*!
-                 *  \param polygonConvexHull    Convex hull of polygon
-                 *  \param boundingRectCentre   Centre of the rotated rectangle enclosing the polygon convex hull
-                 *  \param closestPoint         Closest point to the origin from the set of points defining the polygon
-                 *  \param goodPointsForAngle   The points which are relevant for computing the angle
-                 */
-                void findGoodPointsForAngle(const std::vector<cv::Point> &polygonConvexHull,
-                                            const cv::Point &boundingRectCentre,
-                                            const cv::Point &closestPoint,
-                                            std::vector<cv::Point> &goodPointsForAngle);
-
-                //! Find good intersection points for computing the angle of the polygon
-                /*!
-                 * \param polygonConvexHull     The convex hull of the polygon
-                 * \param edgePointA            cv::Point A on the edge
-                 * \param edgePointB            cv::Point B on the edge
-                 * \param goodPointsForAngle    The "good" points for computing the angle
-                 */
-                void findGoodIntersectionPoints(const std::vector<cv::Point> &polygonConvexHull,
-                                                const cv::Point &edgePointA,
-                                                const cv::Point &edgePointB,
-                                                std::vector<cv::Point> &goodPointsForAngle);
-
 
                 //! Display the results in a window
                 void displayResultsInWindow();
@@ -303,8 +279,6 @@ namespace multiscale {
             protected:
 
                 // Constants
-                static const int INPUT_IMAGE_SCALING_FACTOR;
-
                 static const int INTENSITY_MAX;
 
                 static const std::string OUTPUT_CLUSTEREDNESS;
