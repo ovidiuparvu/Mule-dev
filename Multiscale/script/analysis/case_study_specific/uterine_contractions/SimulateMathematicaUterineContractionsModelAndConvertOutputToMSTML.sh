@@ -413,7 +413,7 @@ function GenerateClusterTemporaryMSTMLSubfile() {
         # Process each input file
         for file in $(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | sort -V);
         do
-            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"cluster\"\)/\0 semanticType=\"${clustersSemanticType}\"/g" | sed "s/\(<name>avgDensityClusters\|avgClusterednessClusters\)\(<\/name>\)/\1${clustersSemanticTypeOnlyLetters}\2/g"; 
+            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"cluster\"\)/\0 semanticType=\"${clustersSemanticType}\"/g" | sed "s/<numericStateVariable>/<numericStateVariable semanticType=\"${clustersSemanticType}\">/g"; 
         done >> ${clustersXMLOutputPath};
 
         # Print the footer to the resulting file
@@ -571,7 +571,7 @@ function GenerateRegionTemporaryMSTMLSubfile() {
         # Process each input file
         for file in $(find ${analysisOutputFolder} -name "${inputFileBasenameRoot}*.xml" | sort -V);
         do
-            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"region\"\)/\0 semanticType=\"${regionsSemanticType}\"/g" | sed "s/\(<name>avgDensityRegions\|avgClusterednessRegions\)\(<\/name>\)/\1${regionsSemanticTypeOnlyLetters}\2/g"; 
+            cat ${file} | head -n -${LINES_AFTER_TIMEPOINT_CONTENT} | tail -n +$((${LINES_BEFORE_TIMEPOINT_CONTENT} + 1)) | sed "s/\(spatialType=\"region\"\)/\0 semanticType=\"${regionsSemanticType}\"/g" | sed "s/<numericStateVariable>/<numericStateVariable semanticType=\"${regionsSemanticType}\">/g";
         done >> ${regionsXMLOutputPath};
 
         # Print the footer to the resulting file

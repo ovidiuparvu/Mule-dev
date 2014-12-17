@@ -30,6 +30,7 @@
                 
                 <xs:unique name="UniqueNumericStateVariables">
                     <xs:selector xpath="numericStateVariable" />
+                    <xs:field xpath="@semanticType" />            
                     <xs:field xpath="name" />
                 </xs:unique>
                 
