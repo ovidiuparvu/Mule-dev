@@ -329,13 +329,19 @@ void RegionDetector::approximatePolygonOuterBorder(Polygon &polygon) {
 }
 
 Region RegionDetector::createRegionFromPolygon(const Polygon &polygon) {
-    unsigned int minDistancePointIndex = Geometry2D::minimumDistancePointIndex(polygon.first, origin);
+    double density  = computeRegionDensity(polygon);
+    double distance = computeDistanceFromOrigin(polygon.first);
+    double angle    = computePolygonAngle(polygon.first);
 
-    double density = regionDensity(polygon);
-    double distance = Geometry2D::distanceBtwPoints(polygon.first[minDistancePointIndex], origin);
-    double angle = polygonAngle(polygon.first);
-
-    return Region(density, distance, angle, polygon.first, polygon.second);
+    return (
+        Region(
+            density,
+            distance,
+            angle,
+            polygon.first,
+            polygon.second
+        )
+    );
 }
 
 bool RegionDetector::isValidContour(const std::vector<cv::Point> &contour) {
@@ -351,7 +357,7 @@ bool RegionDetector::isValidHole(const std::vector<cv::Point> &hole,
     return (area > THRESHOLD_HOLE_AREA);
 }
 
-double RegionDetector::regionDensity(const Polygon &polygon) {
+double RegionDetector::computeRegionDensity(const Polygon &polygon) {
     // Create a blank mask where each pixel is initialised with zero intensity
     cv::Mat mask(cv::Mat::zeros(image.rows, image.cols, CV_8UC1));
 

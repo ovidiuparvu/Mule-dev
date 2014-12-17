@@ -1110,6 +1110,88 @@ TEST(RegionDetector, OneMaximumAngleRegion) {
     EXPECT_NEAR(detectedRegions.back().getAngle(), 360, DOUBLE_COMP_ERROR);
 }
 
+TEST(RegionDetector, OneRegionSpatialMeasures) {
+    // Define the region detector
+    RegionDetector detector;
+
+    // Set the spatial analysis parameter values
+    detector.setAlpha(0);
+    detector.setBeta(100);
+    detector.setBlurKernelSize(0);
+    detector.setMorphologicalCloseIterations(0);
+    detector.setEpsilon(0);
+    detector.setRegionAreaThresh(0);
+    detector.setThresholdValue(125);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   255.0, 255.0, 255.0, 255.0, 255.0, 255.0, 255.0,
+                                                   0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+
+    // Detect regions in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected regions
+    std::vector<Region> detectedRegions = detector.getRegions();
+
+    // Test the corresponding condition
+    EXPECT_TRUE(detectedRegions.size() == 1);
+    EXPECT_NEAR(detectedRegions.back().getClusterednessDegree(), 1, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getDensity(), 1, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getArea(), 35, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getPerimeter(), 24, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getDistanceFromOrigin(), 0, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getAngle(), 360, DOUBLE_COMP_ERROR);
+    EXPECT_TRUE(detectedRegions.back().getShape() == Shape2D::Rectangle);
+    EXPECT_NEAR(detectedRegions.back().getCentre().x, 3, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getCentre().y, 3, DOUBLE_COMP_ERROR);
+}
+
+TEST(RegionDetector, OneRegionWithHoleAllSpatialMeasures) {
+    // Define the region detector
+    RegionDetector detector;
+
+    // Set the spatial analysis parameter values
+    detector.setAlpha(0);
+    detector.setBeta(100);
+    detector.setBlurKernelSize(0);
+    detector.setMorphologicalCloseIterations(0);
+    detector.setEpsilon(0);
+    detector.setRegionAreaThresh(0);
+    detector.setThresholdValue(125);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(7, 7) << 0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+                                                   0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+                                                   0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+                                                   0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+                                                   200.0,   200.0,  200.0,  0.0,    0.0,    0.0,    0.0,
+                                                   200.0,   0.0,    200.0,  0.0,    0.0,    0.0,    0.0,
+                                                   200.0,   200.0,  200.0,  0.0,    0.0,    0.0,    0.0);
+
+    // Detect regions in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected regions
+    std::vector<Region> detectedRegions = detector.getRegions();
+
+    // Test the corresponding condition
+    EXPECT_TRUE(detectedRegions.size() == 1);
+    EXPECT_NEAR(detectedRegions.back().getClusterednessDegree(), 0.88888888888888888888, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getDensity(), 0.78431372549019607843, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getArea(), 8, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getPerimeter(), 12, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getDistanceFromOrigin(), 1.41421356237309504880, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getAngle(), 53.130102354155978703144, DOUBLE_COMP_ERROR);
+    EXPECT_TRUE(detectedRegions.back().getShape() == Shape2D::Rectangle);
+    EXPECT_NEAR(detectedRegions.back().getCentre().x, 1, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getCentre().y, 5, DOUBLE_COMP_ERROR);
+}
+
 TEST(RegionDetector, MultipleRegions) {
     // Define the region detector
     RegionDetector detector;

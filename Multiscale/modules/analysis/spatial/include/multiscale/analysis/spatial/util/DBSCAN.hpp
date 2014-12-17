@@ -24,8 +24,11 @@ namespace multiscale {
                 unsigned int nrOfDataPoints;        /*!< Number of data points in the data set */
 
                 std::vector<std::vector<double>>
-                    distanceMatrix;                 /*!< The matrix containing the distances between any two
-                                                         data points */
+                    distancesMatrix;                /*!< The matrix containing the distances between each possible
+                                                         pair of datapoints */
+                std::vector<std::vector<int>>
+                    neighboursIndicesMatrix;        /*!< The matrix containing for each data point a vector of
+                                                         indices corresponding to the neighbouring data points */
 
             public:
 
@@ -67,11 +70,17 @@ namespace multiscale {
                 void runAlgorithm(const std::vector<std::shared_ptr<DataPoint>> &dataPoints,
                                   std::vector<int> &clusterIndexes, int &nrOfClusters);
 
-                //! Construct the distance matrix between any two data points
+                //! Construct the distances matrix
                 /*!
-                 * \param dataPoints Data points
+                 * \param dataPoints The considered data points
                  */
-                void constructDistanceMatrix(const std::vector<std::shared_ptr<DataPoint>> &dataPoints);
+                void constructDistancesMatrix(const std::vector<std::shared_ptr<DataPoint>> &dataPoints);
+
+                //! Construct the neighbours indices matrix
+                /*!
+                 * \param dataPoints The considered data points
+                 */
+                void constructNeighboursIndicesMatrix(const std::vector<std::shared_ptr<DataPoint>> &dataPoints);
 
                 //! Expand the cluster around the given core data point
                 /*!
@@ -81,15 +90,28 @@ namespace multiscale {
                  */
                 bool expandCoreCluster(std::vector<int> &clusterIndexes, int coreDataPointIndex, int clusterId);
 
-                //! Add all unclassified neighbour nodes to the seeds list
+                //! Process the collection of provided seeds (see DBSCAN algorithm for details)
                 /*!
+                 * \param clusterIndexes    Indexes to which cluster each data point belongs
+                 * \param clusterId         The index of the data point to which the seeds correspond
+                 * \param seeds             The collection of seeds
+                 * \param consideredSeeds   The collection of previously considered seeds
+                 */
+                void processSeeds(std::vector<int> &clusterIndexes, int clusterId,
+                                  std::vector<int> &seeds, std::vector<bool> &consideredSeeds);
+
+                //! Add all unclassified previously not considered neighbour nodes to the seeds list
+                /*! A node is added to the seed list only if it was not considered already
+                 *
                  * \param neighbours        Neighbour nodes
                  * \param clusterIndexes    Indexes to which cluster each data point belongs
                  * \param seeds             List of seeds (see DBSCAN algorithm)
+                 * \param consideredSeeds   List of previously considered seeds
                  */
                 void addUnclassifiedNodesToSeedsList(const std::vector<int> &neighbours,
                                                      const std::vector<int> &clusterIndexes,
-                                                     std::vector<int> &seeds);
+                                                     std::vector<int> &seeds,
+                                                     std::vector<bool> &consideredSeeds);
 
                //! Label all unclassified and noise neighbour nodes as border nodes
                /*!
@@ -99,8 +121,10 @@ namespace multiscale {
                 void labelUnclassifiedAndNoiseAsBorder(const std::vector<int> &neighbours,
                                                        std::vector<int> &clusterIndexes);
 
-                //! Retrieve the list of neighbour indexes which are at a distance < eps far from the given data point
-                /*!
+                //! Retrieve the list of neighbour indexes for the given data point
+                /*! Retrieve the list of neighbour indexes which are at a distance < eps
+                 *  far from the given data point
+                 *
                  * \param dataPointIndex    Index of the data point for which the neighbours will be retrieved
                  */
                 std::vector<int> retrieveNeighbours(int dataPointIndex);
@@ -113,15 +137,17 @@ namespace multiscale {
 
                 //! Find the closest core data point from the given set of neighbours to the given border data point
                 /*!
-                 * \param neighbours            Set of neighbours
                  * \param borderDataPointIndex  Index of the border data point
                  * \param clusterIndexes        Indexes to which cluster each data point belongs
                  */
-                int findClosestCoreDataPoint(const std::vector<int> &neighbours, int borderDataPointIndex,
+                int findClosestCoreDataPoint(int borderDataPointIndex,
                                              const std::vector<int> &clusterIndexes);
 
-                //! Allocate the distance matrix
-                void allocateDistanceMatrix();
+                //! Allocate the distances matrix
+                void allocateDistancesMatrix();
+
+                //! Allocate the neighbours indices matrix
+                void allocateNeighboursIndicesMatrix();
 
             public:
 

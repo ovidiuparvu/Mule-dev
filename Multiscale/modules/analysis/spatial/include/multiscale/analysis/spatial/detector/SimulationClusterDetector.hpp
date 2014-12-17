@@ -54,26 +54,26 @@ namespace multiscale {
                  */
                 bool isEntityAtPosition(int x, int y);
 
-                //! Get the point representing the centre of the entity
+                //! Compute the point representing the centre of the entity
                 /*!
                  * \param x Ox coordinate
                  * \param y Oy coordinate
                  */
-                cv::Point2f getEntityCentrePoint(int x, int y);
+                cv::Point2f computeEntityCentrePoint(int x, int y);
 
-                //! Get the points representing the contour of the entity
+                //! Compute the points representing the contour of the entity
                 /*!
                  * \param x Ox coordinate
                  * \param y Oy coordinate
                  */
-                std::vector<cv::Point2f> getEntityContourPoints(int x, int y);
+                std::vector<cv::Point2f> computeEntityContourPoints(int x, int y);
 
                 //! Compute the pile up degree at the given position
                 /*!
                  * \param x Coordinate for Ox axis
                  * \param y Coordinate for Oy axis
                  */
-                unsigned int computePileUpDegreeAtPosition(int x, int y);
+                double computePileUpDegreeAtPosition(int x, int y);
 
                 //! Dsiaply clusters on image
                 void outputResultsToImage() override;

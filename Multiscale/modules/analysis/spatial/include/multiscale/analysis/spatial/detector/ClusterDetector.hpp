@@ -18,8 +18,11 @@ namespace multiscale {
 
             protected:
 
-                double entityPileupDegree;      /*!< The pile up degree (intensity) of a grid position occupied by only
-                                                     one entity */
+                double singleEntityIntensity;   /*!< The intensity (pile up degree) of a grid position
+                                                     occupied by a single entity */
+
+                unsigned int maxPileupNumber;   /*!< The maximum number of entities which can occupy
+                                                     the same grid position */
 
                 int eps;                        /*!< DBSCAN algorithm parameter for specifying the maximum radius
                                                      of the neighbourhood */

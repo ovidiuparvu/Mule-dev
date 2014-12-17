@@ -6,7 +6,7 @@
 using namespace multiscale::analysis;
 
 
-Entity::Entity(unsigned int pileUpDegree, double area, double perimeter,
+Entity::Entity(double pileUpDegree, double area, double perimeter,
                const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints) {
     validateInputValues(pileUpDegree, area, perimeter, centre, contourPoints);
 
@@ -29,7 +29,7 @@ Entity::Entity(const Entity &entity) {
 
 Entity::~Entity() {}
 
-unsigned int Entity::getPileUpDegree() const {
+double Entity::getPileUpDegree() const {
     return pileUpDegree;
 }
 
@@ -53,7 +53,7 @@ std::string Entity::toString() {
     // Offset the centre points by (1, 1) in order to use a 1-based indexing
     // which could be potentially more intuitive
     return (
-        StringManipulator::toString<unsigned int>(pileUpDegree) + OUTPUT_SEPARATOR +
+        StringManipulator::toString<double>(pileUpDegree) + OUTPUT_SEPARATOR +
         StringManipulator::toString<double>(centre.x + 1) + OUTPUT_SEPARATOR +
         StringManipulator::toString<double>(centre.y + 1)
    );
@@ -69,14 +69,14 @@ double Entity::distanceTo(const Entity &entity) {
     return Geometry2D::distanceBtwPoints(centre, entity.centre);
 }
 
-void Entity::validateInputValues(unsigned int pileUpDegree, double area, double perimeter,
+void Entity::validateInputValues(double pileUpDegree, double area, double perimeter,
                                  const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints) {
     if (!areValid(pileUpDegree, area, perimeter, centre, contourPoints)) {
         MS_throw(InvalidInputException, ERR_INPUT);
     }
 }
 
-bool Entity::areValid(unsigned int pileUpDegree, double area, double perimeter,
+bool Entity::areValid(double pileUpDegree, double area, double perimeter,
                       const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints) {
     for (const cv::Point2f &point: contourPoints) {
         // Minimum contour points values are (-0.5, -0.5) because
@@ -87,7 +87,8 @@ bool Entity::areValid(unsigned int pileUpDegree, double area, double perimeter,
     }
 
     return (
-        (pileUpDegree > 0) &&
+        (Numeric::lessOrEqual(0, pileUpDegree)) &&
+        (Numeric::lessOrEqual(pileUpDegree, 1)) &&
         (area > 0) &&
         (perimeter > 0) &&
         (

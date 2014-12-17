@@ -119,22 +119,54 @@ cv::Point2f Geometry2D::middlePoint(const cv::Point2f &a, const cv::Point2f &b) 
     return cv::Point2f(middleX, middleY);
 }
 
+cv::Point2f Geometry2D::centroid(const std::vector<cv::Point> &points) {
+    std::vector<cv::Point2f> convertedPoints = convertPoints(points);
+
+    return (
+        centroid(convertedPoints)
+    );
+}
+
+cv::Point2f Geometry2D::centroid(const std::vector<cv::Point2f> &points) {
+    cv::Point2f centroid;
+
+    // Compute the sum of all points coordinates
+    for (const cv::Point2f &point: points) {
+        centroid += point;
+    }
+
+    // Divide the coordinates sum by the number of points
+    centroid.x /= static_cast<float>(points.size());
+    centroid.y /= static_cast<float>(points.size());
+
+    return centroid;
+}
+
 void Geometry2D::tangentsFromPointToPolygon(const std::vector<cv::Point2f> &convexPolygon,
                                             const cv::Point2f &referencePoint,
                                             cv::Point &leftMostTangentPoint,
                                             cv::Point &rightMostTangentPoint) {
-    // Compute the polygon tangent points only if the
-    // provided polygon is convex or contains two points,
-    // and the reference point lies outside the polygon
-    if ((
-            (cv::isContourConvex(convexPolygon)) ||
-            (convexPolygon.size() >= 2)
-        ) && (
-            cv::pointPolygonTest(convexPolygon, referencePoint, false) <= 0
-        )
-    ) {
-        leftMostTangentPoint    = computeLeftMostTangentPoint(convexPolygon, referencePoint);
-        rightMostTangentPoint   = computeRightMostTangentPoint(convexPolygon, referencePoint);
+    // If the reference point is outside and does not touch the polygon
+    if (cv::pointPolygonTest(convexPolygon, referencePoint, false) <= 0) {
+        // Compute the polygon tangent points only if the
+        // provided polygon is convex
+        if (cv::isContourConvex(convexPolygon)) {
+            leftMostTangentPoint    = computeLeftMostTangentPoint(convexPolygon, referencePoint);
+            rightMostTangentPoint   = computeRightMostTangentPoint(convexPolygon, referencePoint);
+        // Otherwise if the polygon contains only two points which
+        // are not collinear with the reference point return these
+        // two polygon points
+        } else if (
+            (convexPolygon.size() == 2) &&
+            (!areCollinear(
+                convexPolygon[0],
+                convexPolygon[1],
+                referencePoint)
+            )
+        ) {
+            leftMostTangentPoint    = convexPolygon[0];
+            rightMostTangentPoint   = convexPolygon[1];
+        }
     }
 }
 
@@ -463,7 +495,9 @@ double Geometry2D::areaOfTriangle(const cv::Point2f &a, const cv::Point2f &b, co
 
     double determinant = posTerm - negTerm;
 
-    return fabs(determinant) / 2;
+    return (
+        fabs(determinant) / 2.0
+    );
 }
 
 std::vector<cv::Point2f> Geometry2D::convertPoints(const std::vector<cv::Point> &pointsCollection) {

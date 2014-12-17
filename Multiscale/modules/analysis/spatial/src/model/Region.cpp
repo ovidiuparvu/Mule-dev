@@ -93,14 +93,22 @@ void Region::updateClusterednessDegree() {
 }
 
 double Region::computeClusterednessDegreeIfOuterBorderDefined() {
+    // Compute the entire polygon area
     double outerPolygonArea = static_cast<double>(
-                                  SpatialMeasureCalculator::computePolygonArea(outerBorderPolygon)
+                                  SpatialMeasureCalculator::computePolygonArea(
+                                      outerBorderPolygon
+                                  )
                               );
+
     double innerPolygonArea = 0.0;
 
+    // Compute the holes areas
     for (auto innerPolygon : innerBorderPolygons) {
         innerPolygonArea += static_cast<double>(
-                                SpatialMeasureCalculator::computePolygonArea(innerPolygon)
+                                SpatialMeasureCalculator::computePolygonHoleArea(
+                                    innerPolygon,
+                                    outerBorderPolygon
+                                )
                             );
     }
 
@@ -127,15 +135,21 @@ void Region::updateSpatialEntityShapeArea() {
 }
 
 double Region::computeAreaIfOuterBoderDefined() {
+    // Compute the outer polygon area
     double outerPolygonArea = static_cast<double>(
                                   SpatialMeasureCalculator::computePolygonArea(
                                       outerBorderPolygon
                                   )
                               );
+
     double innerPolygonArea = 0.0;
 
+    // Compute the holes areas
     for (auto innerPolygon : innerBorderPolygons) {
-        innerPolygonArea += SpatialMeasureCalculator::computePolygonHoleArea(innerPolygon, outerBorderPolygon);
+        innerPolygonArea += SpatialMeasureCalculator::computePolygonHoleArea(
+                                innerPolygon,
+                                outerBorderPolygon
+                            );
     }
 
     return (outerPolygonArea - innerPolygonArea);
@@ -209,10 +223,7 @@ void Region::updateCentrePointWhenRegionDefinedBySinglePoint() {
 }
 
 void Region::updateCentrePointWhenRegionDefinedByMultiplePoints() {
-    cv::Moments polygonMoments = moments(outerBorderPolygon, false);
-
-    centre.x = Numeric::division(polygonMoments.m10, polygonMoments.m00);
-    centre.y = Numeric::division(polygonMoments.m01, polygonMoments.m00);
+    centre = Geometry2D::centroid(outerBorderPolygon);
 }
 
 SpatialEntityPseudo3DType Region::type() {

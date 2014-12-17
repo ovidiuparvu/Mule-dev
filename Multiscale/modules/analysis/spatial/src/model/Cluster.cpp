@@ -162,10 +162,7 @@ void Cluster::updatePerimeter() {
 void Cluster::updateCentrePoint() {
     std::vector<cv::Point2f> entitiesConvexHull = getEntitiesConvexHull();
 
-    cv::Moments convexHullMoments = moments(entitiesConvexHull, false);
-
-    centre.x = (Numeric::division(convexHullMoments.m10, convexHullMoments.m00));
-    centre.y = (Numeric::division(convexHullMoments.m01, convexHullMoments.m00));
+    centre = Geometry2D::centroid(entitiesConvexHull);
 }
 
 double Cluster::isTriangularMeasure() {

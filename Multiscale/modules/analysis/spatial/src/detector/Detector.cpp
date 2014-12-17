@@ -117,25 +117,49 @@ void Detector::detectInReleaseMode() {
     processImageAndDetect();
 }
 
-double Detector::polygonAngle(const std::vector<cv::Point> &polygon) {
+double Detector::computeDistanceFromOrigin(const std::vector<cv::Point> &polygon) {
+    std::vector<cv::Point2f> convertedPolygon = Geometry2D::convertPoints(polygon);
+
+    return computeDistanceFromOrigin(convertedPolygon);
+}
+
+double Detector::computeDistanceFromOrigin(const std::vector<cv::Point2f> &polygon) {
+    // If the origin lies within the polygon return 0
+    if (cv::pointPolygonTest(polygon, origin, false) >= 0) {
+        return 0.0;
+    // Otherwise compute the distance
+    } else {
+        unsigned int minDistancePointIndex
+            = Geometry2D::minimumDistancePointIndex(polygon, origin);
+
+        return (
+            Geometry2D::distanceBtwPoints(
+                polygon[minDistancePointIndex],
+                origin
+            )
+        );
+    }
+}
+
+double Detector::computePolygonAngle(const std::vector<cv::Point> &polygon) {
     std::vector<cv::Point2f> convertedPolygon = Geometry2D::convertPoints(polygon);
 
     return (
-        polygonAngle(convertedPolygon)
+        computePolygonAngle(convertedPolygon)
     );
 }
 
-double Detector::polygonAngle(const std::vector<cv::Point2f> &polygon) {
+double Detector::computePolygonAngle(const std::vector<cv::Point2f> &polygon) {
     std::vector<cv::Point2f> polygonConvexHull;
 
     convexHull(polygon, polygonConvexHull);
 
     return (
-        polygonAngle(polygonConvexHull, origin)
+        computePolygonAngle(polygonConvexHull, origin)
     );
 }
 
-double Detector::polygonAngle(const std::vector<cv::Point2f> &polygonConvexHull,
+double Detector::computePolygonAngle(const std::vector<cv::Point2f> &polygonConvexHull,
                               const cv::Point &tangentsPoint) {
     // If the polygon is defined by maximum one point
     if (polygonConvexHull.size() <= 1) {

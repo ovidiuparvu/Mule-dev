@@ -130,6 +130,18 @@ namespace multiscale {
              */
             static cv::Point2f middlePoint(const cv::Point2f &a, const cv::Point2f &b);
 
+            //! Compute the centroid of the provided collection of points
+            /*!
+             * \param points    The considered collection of points
+             */
+            static cv::Point2f centroid(const std::vector<cv::Point> &points);
+
+            //! Compute the centroid of the provided collection of points
+            /*!
+             * \param points    The considered collection of points
+             */
+            static cv::Point2f centroid(const std::vector<cv::Point2f> &points);
+
             //! Compute the polygon points where the tangents from a reference point touch the given polygon
             /*! The employed algorithms are based on the information presented at:
              *  http://geomalgorithms.com/a15-_tangents.html (Accessed on: 16.12.2014)

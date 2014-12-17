@@ -80,7 +80,13 @@ double MinEnclosingTriangleFinder::returnMinEnclosingTriangle(const std::vector<
         minEnclosingTriangle.push_back(polygon[i % nrOfPolygonPoints]);
     }
 
-    return Geometry2D::areaOfTriangle(minEnclosingTriangle[0], minEnclosingTriangle[1], minEnclosingTriangle[2]);
+    return (
+        Geometry2D::areaOfTriangle(
+            minEnclosingTriangle[0],
+            minEnclosingTriangle[1],
+            minEnclosingTriangle[2]
+        )
+    );
 }
 
 void MinEnclosingTriangleFinder::initialiseAlgorithmVariables() {

@@ -9,18 +9,21 @@ using namespace multiscale::analysis;
 DBSCAN::DBSCAN() : eps(0), minPoints(0), nrOfDataPoints(0) {}
 
 DBSCAN::~DBSCAN() {
-    distanceMatrix.clear();
+    distancesMatrix.clear();
+    neighboursIndicesMatrix.clear();
 }
 
 void DBSCAN::run(const std::vector<std::shared_ptr<DataPoint>> &dataPoints,
                  std::vector<int> &clusterIndexes, int &nrOfClusters,
                  double eps, int minPoints) {
-    this->eps = eps;
+    this->eps       = eps;
     this->minPoints = minPoints;
 
-    nrOfDataPoints = dataPoints.size();
+    nrOfDataPoints  = dataPoints.size();
 
-    constructDistanceMatrix(dataPoints);
+    constructDistancesMatrix(dataPoints);
+    constructNeighboursIndicesMatrix(dataPoints);
+
     runAlgorithm(dataPoints, clusterIndexes, nrOfClusters);
 }
 
@@ -43,22 +46,36 @@ void DBSCAN::runAlgorithm(const std::vector<std::shared_ptr<DataPoint>> &dataPoi
     assignBorderNodesToClusters(clusterIndexes);
 }
 
-void DBSCAN::constructDistanceMatrix(const std::vector<std::shared_ptr<DataPoint>> &dataPoints) {
-    allocateDistanceMatrix();
-
-    assert(distanceMatrix.size() == nrOfDataPoints);
+void DBSCAN::constructDistancesMatrix(
+    const std::vector<std::shared_ptr<DataPoint>> &dataPoints
+) {
+    allocateDistancesMatrix();
 
     for (unsigned int i = 0; i < nrOfDataPoints; i++) {
         for (unsigned int j = 0; j < i; j++) {
-            distanceMatrix[i][j] = dataPoints[i]->distanceTo(dataPoints[j]);
-            distanceMatrix[j][i] = distanceMatrix[i][j];
+            distancesMatrix[i][j] = dataPoints[i]->distanceTo(dataPoints[j]);
+            distancesMatrix[j][i] = distancesMatrix[i][j];
+        }
+    }
+}
+
+void DBSCAN::constructNeighboursIndicesMatrix(
+    const std::vector<std::shared_ptr<DataPoint>> &dataPoints
+) {
+    allocateNeighboursIndicesMatrix();
+
+    for (unsigned int i = 0; i < nrOfDataPoints; i++) {
+        for (unsigned int j = 0; j <= i; j++) {
+            if (distancesMatrix[i][j] < eps) {
+                neighboursIndicesMatrix[i].push_back(j);
+                neighboursIndicesMatrix[j].push_back(i);
+            }
         }
     }
 }
 
 bool DBSCAN::expandCoreCluster(std::vector<int> &clusterIndexes, int coreDataPointIndex, int clusterId) {
     std::vector<int> seeds = retrieveNeighbours(coreDataPointIndex);
-    unsigned int currentSeedIndex = 0;
 
     if (seeds.size() < minPoints) {
         // Mark data point as noise
@@ -66,30 +83,53 @@ bool DBSCAN::expandCoreCluster(std::vector<int> &clusterIndexes, int coreDataPoi
 
         return false;
     } else {
-        while (currentSeedIndex < seeds.size()) {
-            std::vector<int> neighbours = retrieveNeighbours(seeds[currentSeedIndex]);
+        std::vector<bool> consideredSeeds = std::vector<bool>(nrOfDataPoints, false);
 
-            if (neighbours.size() >= minPoints) {
-                // Assign data point to cluster identified by clusterId
-                clusterIndexes[seeds[currentSeedIndex]] = clusterId;
-
-                addUnclassifiedNodesToSeedsList(neighbours, clusterIndexes, seeds);
-                labelUnclassifiedAndNoiseAsBorder(neighbours, clusterIndexes);
-            }
-
-            currentSeedIndex++;
-        }
+        // Process the collection of seeds
+        processSeeds(
+            clusterIndexes,
+            clusterId,
+            seeds,
+            consideredSeeds
+        );
 
         return true;
     }
 }
 
+void DBSCAN::processSeeds(std::vector<int> &clusterIndexes, int clusterId,
+                          std::vector<int> &seeds, std::vector<bool> &consideredSeeds) {
+    std::size_t currentSeedIndex = 0;
+
+    while (currentSeedIndex < seeds.size()) {
+        std::vector<int> neighbours = retrieveNeighbours(seeds[currentSeedIndex]);
+
+        if (neighbours.size() >= minPoints) {
+            // Assign data point to cluster identified by clusterId
+            clusterIndexes[seeds[currentSeedIndex]] = clusterId;
+
+            addUnclassifiedNodesToSeedsList(neighbours, clusterIndexes, seeds, consideredSeeds);
+            labelUnclassifiedAndNoiseAsBorder(neighbours, clusterIndexes);
+        }
+
+        // Update the list of visited seeds
+        consideredSeeds[seeds[currentSeedIndex]] = true;
+
+        currentSeedIndex++;
+    }
+}
+
 void DBSCAN::addUnclassifiedNodesToSeedsList(const std::vector<int> &neighbours,
                                              const std::vector<int> &clusterIndexes,
-                                             std::vector<int> &seeds) {
-    for (int neighbour : neighbours) {
+                                             std::vector<int> &seeds,
+                                             std::vector<bool> &consideredSeeds) {
+    for (auto neighbour : neighbours) {
         if (clusterIndexes[neighbour] == CLUSTERING_UNCLASSIFIED) {
-            seeds.push_back(neighbour);
+            if (consideredSeeds[neighbour] == false) {
+                seeds.push_back(neighbour);
+
+                consideredSeeds[neighbour] = true;
+            }
         }
     }
 }
@@ -105,55 +145,54 @@ void DBSCAN::labelUnclassifiedAndNoiseAsBorder(const std::vector<int> &neighbour
 }
 
 std::vector<int> DBSCAN::retrieveNeighbours(int dataPointIndex) {
-    std::vector<double> dataPointDistancesToNeighbours = distanceMatrix[dataPointIndex];
-    std::vector<int> neighbours;
-
-    // Check for all neighbours including the point itself
-    for (unsigned int i = 0; i < nrOfDataPoints; i++) {
-        if (dataPointDistancesToNeighbours[i] < eps) {
-            neighbours.push_back(i);
-        }
-    }
-
-    return neighbours;
+    return (
+        neighboursIndicesMatrix[dataPointIndex]
+    );
 }
 
 void DBSCAN::assignBorderNodesToClusters(std::vector<int> &clusterIndexes) {
     for (unsigned int i = 0; i < nrOfDataPoints; i++) {
         if (clusterIndexes[i] == CLUSTERING_BORDER) {
-            std::vector<int> neighbours = retrieveNeighbours(i);
-            int closestCoreDataPoint = findClosestCoreDataPoint(neighbours, i, clusterIndexes);
+            int closestCoreDataPoint = findClosestCoreDataPoint(i, clusterIndexes);
 
             clusterIndexes[i] = clusterIndexes[closestCoreDataPoint];
         }
     }
 }
 
-int DBSCAN::findClosestCoreDataPoint(const std::vector<int> &neighbours, int borderDataPointIndex,
+int DBSCAN::findClosestCoreDataPoint(int borderDataPointIndex,
                                      const std::vector<int> &clusterIndexes) {
-    double minDistance = std::numeric_limits<double>::max();
-    int minIndex = -1;
+    std::vector<int> neighbours = retrieveNeighbours(borderDataPointIndex);
 
-    int nrOfNeighbours = neighbours.size();
+    double  minDistance      = std::numeric_limits<double>::max();
+    int     minDistanceIndex = -1;
 
-    for (int i = 0; i < nrOfNeighbours; i++) {
+    for (auto neighbourIndex : neighbours) {
         // Check if the neighbour is a core data point
-        if (clusterIndexes[neighbours[i]] > 0) {
-            if (distanceMatrix[borderDataPointIndex][neighbours[i]] < minDistance) {
-                minDistance = distanceMatrix[borderDataPointIndex][neighbours[i]];
-                minIndex = i;
+        if (clusterIndexes[neighbourIndex] > 0) {
+            if (distancesMatrix[borderDataPointIndex][neighbourIndex] < minDistance) {
+                minDistance = distancesMatrix[borderDataPointIndex][neighbourIndex];
+                minDistanceIndex = neighbourIndex;
             }
         }
     }
 
-    return neighbours[minIndex];
+    return minDistanceIndex;
 }
 
-void DBSCAN::allocateDistanceMatrix() {
-    distanceMatrix.clear();
+void DBSCAN::allocateDistancesMatrix() {
+    distancesMatrix.clear();
 
     for (unsigned int i = 0; i < nrOfDataPoints; i++) {
-        distanceMatrix.push_back(std::vector<double>(nrOfDataPoints, 0));
+        distancesMatrix.push_back(std::vector<double>(nrOfDataPoints, 0));
+    }
+}
+
+void DBSCAN::allocateNeighboursIndicesMatrix() {
+    neighboursIndicesMatrix.clear();
+
+    for (unsigned int i = 0; i < nrOfDataPoints; i++) {
+        neighboursIndicesMatrix.push_back(std::vector<int>());
     }
 }
 

@@ -306,7 +306,7 @@ namespace multiscale {
                  *
                  * \param polygon The given polygon
                  */
-                double regionDensity(const Polygon &polygon);
+                double computeRegionDensity(const Polygon &polygon);
 
                 //! Clear the element present in the regions vector
                 void clearPreviousDetectionResults() override;

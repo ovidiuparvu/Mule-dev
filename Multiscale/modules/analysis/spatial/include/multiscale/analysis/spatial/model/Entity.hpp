@@ -17,7 +17,7 @@ namespace multiscale {
 
             private:
 
-                unsigned int
+                double
                     pileUpDegree;   /*!< Degree of pile up (relevant only if entities can pile up onto each other) */
                 double
                     area;           /*!< Area of the entity */
@@ -31,13 +31,13 @@ namespace multiscale {
 
             public:
 
-                Entity(unsigned int pileUpDegree, double area, double perimeter,
+                Entity(double pileUpDegree, double area, double perimeter,
                        const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints);
                 Entity(const Entity &entity);
                 ~Entity();
 
                 //! Get the degree of pile up
-                unsigned int getPileUpDegree() const;
+                double getPileUpDegree() const;
 
                 //! Get the area
                 double getArea() const;
@@ -72,7 +72,7 @@ namespace multiscale {
                  * \param centre        Centre of the entity
                  * \param contourPoints Points defining the contour of the entity
                  */
-                void validateInputValues(unsigned int pileUpDegree, double area, double perimeter,
+                void validateInputValues(double pileUpDegree, double area, double perimeter,
                                          const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints);
 
                 //! Check if the provided degree of pile up, area, centre and contour points are valid
@@ -83,7 +83,7 @@ namespace multiscale {
                 * \param centre         Centre of the entity
                 * \param contourPoints  Points defining the contour of the entity
                 */
-                bool areValid(unsigned int pileUpDegree, double area, double perimeter,
+                bool areValid(double pileUpDegree, double area, double perimeter,
                               const cv::Point2f &centre, const std::vector<cv::Point2f> &contourPoints);
 
             private:

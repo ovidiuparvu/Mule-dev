@@ -1,12 +1,11 @@
 #include "multiscale/analysis/spatial/util/DBSCAN.hpp"
+#include "multiscale/core/MultiscaleTest.hpp"
+#include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/Geometry2D.hpp"
-
-#include <iostream>
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
 
 using namespace multiscale;
 using namespace multiscale::analysis;
+using namespace multiscaletest;
 
 
 // Class for definig a Euclidean data point
@@ -24,7 +23,12 @@ class EuclideanDataPoint : public DataPoint {
         double distanceTo(std::shared_ptr<DataPoint> point) override {
             std::shared_ptr<EuclideanDataPoint> ePoint = std::dynamic_pointer_cast<EuclideanDataPoint>(point);
 
-            return Geometry2D::distanceBtwPoints(cv::Point(x, y), cv::Point(ePoint->x, ePoint->y));
+            return (
+                Geometry2D::distanceBtwPoints(
+                    cv::Point(x, y),
+                    cv::Point(ePoint->x, ePoint->y)
+                )
+            );
         }
 
 };
@@ -41,94 +45,135 @@ std::vector<std::shared_ptr<DataPoint>> convertPoints(std::vector<EuclideanDataP
     return dataPoints;
 }
 
-// Print the results of the test case
-void printResults(const std::vector<int> &clusterIndexes) {
-    std::cout << std::endl << "+++ NEW TEST CASE +++" << std::endl << std::endl;
 
-    for (unsigned int i = 0; i < clusterIndexes.size(); i++) {
-        std::cout << "cv::Point " << (i + 1) << " belongs to cluster: " << clusterIndexes[i] << std::endl;
+///////////////////////////////////////////////////////////////////////////////
+//
+// Tests
+//
+///////////////////////////////////////////////////////////////////////////////
+
+TEST(DBSCAN, EachPointInItsOwnCluster) {
+    std::vector<EuclideanDataPoint> points;
+
+    // Create collection of points
+    for (int i = 0; i < 100; i++) {
+        points.push_back(EuclideanDataPoint(i + 1, i + 3));
     }
-}
 
-// Run a test for the given set of points
-void runTest(std::vector<EuclideanDataPoint> &points, double eps, int minPoints) {
     std::vector<int> clusterIndexes;
     int nrOfClusters;
 
-    DBSCAN().run(convertPoints(points), clusterIndexes, nrOfClusters, eps, minPoints);
+    // Run DBSCAN
+    DBSCAN().run(convertPoints(points), clusterIndexes, nrOfClusters, 0.5, 1);
 
-    printResults(clusterIndexes);
-}
-
-// TC: Each point in its own cluster
-void runTest1() {
-    std::vector<EuclideanDataPoint> points;
+    // Test the corresponding condition(s)
+    // Add one to account for the noise cluster
+    EXPECT_TRUE(nrOfClusters == static_cast<int>(points.size() + 1));
 
     for (int i = 0; i < 100; i++) {
-        points.push_back(EuclideanDataPoint(i + 1, i + 3));
+        EXPECT_TRUE(clusterIndexes[i] == i + 1);
     }
-
-    runTest(points, 0.5, 1);
 }
 
-// TC: Three clusters
-void runTest2() {
+TEST(DBSCAN, ThreeClusters) {
+    // Create collection of points
     std::vector<EuclideanDataPoint> points = {
-            EuclideanDataPoint(1, 3),
-            EuclideanDataPoint(2, 2),
-            EuclideanDataPoint(2, 4),
-            EuclideanDataPoint(6, 1),
-            EuclideanDataPoint(7, 0),
-            EuclideanDataPoint(7, 2),
-            EuclideanDataPoint(6, 9),
-            EuclideanDataPoint(6, 11),
-            EuclideanDataPoint(7, 10)
+        EuclideanDataPoint(1, 3),
+        EuclideanDataPoint(2, 2),
+        EuclideanDataPoint(2, 4),
+        EuclideanDataPoint(6, 1),
+        EuclideanDataPoint(7, 0),
+        EuclideanDataPoint(7, 2),
+        EuclideanDataPoint(6, 9),
+        EuclideanDataPoint(6, 11),
+        EuclideanDataPoint(7, 10)
     };
 
-    runTest(points, 4, 3);
+    std::vector<int> clusterIndexes;
+    int nrOfClusters;
+
+    // Run DBSCAN
+    DBSCAN().run(convertPoints(points), clusterIndexes, nrOfClusters, 4, 3);
+
+    // Test the corresponding condition(s)
+    // Add one to account for the noise cluster
+    EXPECT_TRUE(nrOfClusters == (3 + 1));
+
+    EXPECT_TRUE(clusterIndexes[0] == 1);
+    EXPECT_TRUE(clusterIndexes[1] == 1);
+    EXPECT_TRUE(clusterIndexes[2] == 1);
+    EXPECT_TRUE(clusterIndexes[3] == 2);
+    EXPECT_TRUE(clusterIndexes[4] == 2);
+    EXPECT_TRUE(clusterIndexes[5] == 2);
+    EXPECT_TRUE(clusterIndexes[6] == 3);
+    EXPECT_TRUE(clusterIndexes[7] == 3);
+    EXPECT_TRUE(clusterIndexes[8] == 3);
 }
 
-// TC: All points in same cluster
-void runTest3() {
+TEST(DBSCAN, AllPointsInSameCluster) {
     std::vector<EuclideanDataPoint> points;
 
+    // Create collection of points
     for (int i = 0; i < 100; i++) {
         points.push_back(EuclideanDataPoint(i + 1, i + 3));
     }
 
-    runTest(points, 10, 7);
+    std::vector<int> clusterIndexes;
+    int nrOfClusters;
+
+    // Run DBSCAN
+    DBSCAN().run(convertPoints(points), clusterIndexes, nrOfClusters, 10, 7);
+
+    // Test the corresponding condition(s)
+    // Add one to account for the noise cluster
+    EXPECT_TRUE(nrOfClusters == (1 + 1));
+
+    for (int i = 0; i < 100; i++) {
+        EXPECT_TRUE(clusterIndexes[i] == 1);
+    }
 }
 
-// TC: No points
-void runTest4() {
+TEST(DBSCAN, NoPoints) {
     std::vector<EuclideanDataPoint> points;
 
-    runTest(points, 10, 7);
+    std::vector<int> clusterIndexes;
+    int nrOfClusters;
+
+    // Run DBSCAN
+    DBSCAN().run(convertPoints(points), clusterIndexes, nrOfClusters, 10, 7);
+
+    // Test the corresponding condition(s)
+    // Add one to account for the noise cluster
+    EXPECT_TRUE(nrOfClusters == (0 + 1));
 }
 
-// TC: All noise points
-void runTest5() {
+TEST(DBSCAN, AllPointsInNoiseCluster) {
     std::vector<EuclideanDataPoint> points;
 
+    // Create collection of points
     for (int i = 0; i < 100; i++) {
         points.push_back(EuclideanDataPoint(i + 1, i + 3));
     }
 
-    runTest(points, 0.5, 5);
+    std::vector<int> clusterIndexes;
+    int nrOfClusters;
+
+    // Run DBSCAN
+    DBSCAN().run(convertPoints(points), clusterIndexes, nrOfClusters, 0.5, 5);
+
+    // Test the corresponding condition(s)
+    // Add one to account for the noise cluster
+    EXPECT_TRUE(nrOfClusters == (0 + 1));
+
+    for (int i = 0; i < 100; i++) {
+        EXPECT_TRUE(clusterIndexes[i] == 0);
+    }
 }
 
-// Run the tests
-void runTests() {
-    runTest1();
-    runTest2();
-    runTest3();
-    runTest4();
-    runTest5();
-}
 
-// Main function
-int main() {
-    runTests();
+// Main method
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
 
-    return EXEC_SUCCESS_CODE;
+    return RUN_ALL_TESTS();
 }

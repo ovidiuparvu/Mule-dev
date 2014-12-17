@@ -123,13 +123,17 @@ namespace multiscale {
                 //! Run the detection procedure when in release mode (i.e. non-debug mode)
                 void detectInReleaseMode();
 
-                //! Compute the angle determined by the polygon tangents from a given point
-                /*! The considered point through which the tangents pass is the image/matrix
-                 *  centre point (origin).
-                 *
-                 *  \param polygon  Polygon for which the angle is computed
+                //! Compute the distance of the given polygon from the origin
+                /*!
+                 * \param polygon   The considered polygon
                  */
-                double polygonAngle(const std::vector<cv::Point> &polygon);
+                double computeDistanceFromOrigin(const std::vector<cv::Point> &polygon);
+
+                //! Compute the distance of the given polygon from the origin
+                /*!
+                 * \param polygon   The considered polygon
+                 */
+                double computeDistanceFromOrigin(const std::vector<cv::Point2f> &polygon);
 
                 //! Compute the angle determined by the polygon tangents from a given point
                 /*! The considered point through which the tangents pass is the image/matrix
@@ -137,15 +141,23 @@ namespace multiscale {
                  *
                  *  \param polygon  Polygon for which the angle is computed
                  */
-                double polygonAngle(const std::vector<cv::Point2f> &polygon);
+                double computePolygonAngle(const std::vector<cv::Point> &polygon);
+
+                //! Compute the angle determined by the polygon tangents from a given point
+                /*! The considered point through which the tangents pass is the image/matrix
+                 *  centre point (origin).
+                 *
+                 *  \param polygon  Polygon for which the angle is computed
+                 */
+                double computePolygonAngle(const std::vector<cv::Point2f> &polygon);
 
                 //! Compute the angle of the tangents from the provided point to the polygon
                 /*!
                  *  \param polygonConvexHull    Convex hull of polygon
                  *  \param tangentsPoint        Point through which the tangents pass
                  */
-                double polygonAngle(const std::vector<cv::Point2f> &polygonConvexHull,
-                                    const cv::Point &tangentsPoint);
+                double computePolygonAngle(const std::vector<cv::Point2f> &polygonConvexHull,
+                                           const cv::Point &tangentsPoint);
 
                 //! Display the results in a window
                 void displayResultsInWindow();

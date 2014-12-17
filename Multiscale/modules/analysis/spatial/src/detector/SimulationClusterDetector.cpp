@@ -42,13 +42,22 @@ void SimulationClusterDetector::detectEntitiesInImage(std::vector<Entity> &entit
     for (unsigned int i = 0; i < height; i++) {
         for (unsigned int j = 0; j < width; j++) {
             if (isEntityAtPosition(j, i)) {
-                unsigned int pileUpDegree = computePileUpDegreeAtPosition(j, i);
-                double area = entityHeight * entityWidth;
-                double perimeter = 2 * (entityHeight + entityWidth);
-                cv::Point2f centre = getEntityCentrePoint(j, i);
-                std::vector<cv::Point2f> contourPoints = getEntityContourPoints(j, i);
+                double pileUpDegree = computePileUpDegreeAtPosition(j, i);
+                double area         = entityHeight * entityWidth;
+                double perimeter    = 2 * (entityHeight + entityWidth);
+                cv::Point2f centre  = computeEntityCentrePoint(j, i);
 
-                entities.push_back(Entity(pileUpDegree, area, perimeter, centre, contourPoints));
+                std::vector<cv::Point2f> contourPoints = computeEntityContourPoints(j, i);
+
+                entities.push_back(
+                    Entity(
+                        pileUpDegree,
+                        area,
+                        perimeter,
+                        centre,
+                        contourPoints
+                    )
+                );
             }
         }
     }
@@ -62,14 +71,14 @@ bool SimulationClusterDetector::isEntityAtPosition(int x, int y) {
     return (positionMean.val[0] > ENTITY_THRESH);
 }
 
-cv::Point2f SimulationClusterDetector::getEntityCentrePoint(int x, int y) {
-    double xCentre = (x * entityWidth) + (entityWidth / 2.0) - (0.5);
-    double yCentre = (y * entityHeight) + (entityHeight / 2.0) - (0.5);
+cv::Point2f SimulationClusterDetector::computeEntityCentrePoint(int x, int y) {
+    double xCentre = (static_cast<double>(x) * entityWidth) + (entityWidth / 2.0) - (0.5);
+    double yCentre = (static_cast<double>(y) * entityHeight) + (entityHeight / 2.0) - (0.5);
 
     return cv::Point2f(xCentre, yCentre);
 }
 
-std::vector<cv::Point2f> SimulationClusterDetector::getEntityContourPoints(int x, int y) {
+std::vector<cv::Point2f> SimulationClusterDetector::computeEntityContourPoints(int x, int y) {
     std::vector<cv::Point2f> contourPoints;
 
     for (int i = x; i < (x + 2); i++) {
@@ -86,20 +95,25 @@ std::vector<cv::Point2f> SimulationClusterDetector::getEntityContourPoints(int x
     return contourPoints;
 }
 
-unsigned int SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int y) {
-    int xCoordinate = (x * entityWidth) + (entityWidth / 2);
-    int yCoordinate = (y * entityHeight) + (entityHeight / 2);
+double SimulationClusterDetector::computePileUpDegreeAtPosition(int x, int y) {
+    int xCoordinate = static_cast<int>((x * entityWidth) + (entityWidth / 2));
+    int yCoordinate = static_cast<int>((y * entityHeight) + (entityHeight / 2));
 
     float intensityAtPosition = image.at<float>(cv::Point(xCoordinate, yCoordinate));
 
+    unsigned int nrOfPiledUpEntities = static_cast<unsigned int>(
+                                           std::round(
+                                               Numeric::division(
+                                                   intensityAtPosition,
+                                                   singleEntityIntensity
+                                               )
+                                           )
+                                        );
+
     return (
-        static_cast<unsigned int>(
-            round(
-                Numeric::division(
-                    static_cast<double>(intensityAtPosition),
-                    static_cast<double>(entityPileupDegree)
-                )
-            )
+        Numeric::division(
+            static_cast<double>(nrOfPiledUpEntities),
+            maxPileupNumber
         )
     );
 }

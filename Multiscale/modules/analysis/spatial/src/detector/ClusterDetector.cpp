@@ -14,14 +14,14 @@ using namespace multiscale::analysis;
 
 ClusterDetector::ClusterDetector(
     unsigned int maxPileupNumber, bool isDebugMode
-) : Detector(isDebugMode) {
+) : Detector(isDebugMode), maxPileupNumber(maxPileupNumber) {
     this->eps = 0;
     this->minPoints = 0;
 
     this->avgDensity = 0;
     this->avgClusterednessDegree = 0;
 
-    this->entityPileupDegree =
+    this->singleEntityIntensity =
         Numeric::division(
             static_cast<double>(INTENSITY_MAX),
             static_cast<double>(maxPileupNumber)
@@ -167,11 +167,10 @@ void ClusterDetector::analyseClustersOriginDependentValues(std::vector<Cluster> 
 }
 
 void ClusterDetector::updateClusterOriginDependentValues(Cluster &cluster,
-                                                         const std::vector<cv::Point2f> &clusterConvexHull) {
-    unsigned int minDistancePointIndex = Geometry2D::minimumDistancePointIndex(clusterConvexHull, origin);
-
-    double distance = Geometry2D::distanceBtwPoints(clusterConvexHull[minDistancePointIndex], origin);
-    double angle = polygonAngle(clusterConvexHull);
+                                                         const std::vector<cv::Point2f>
+                                                         &clusterConvexHull) {
+    double distance = computeDistanceFromOrigin(clusterConvexHull);
+    double angle = computePolygonAngle(clusterConvexHull);
 
     cluster.setOriginDependentMembers(distance, angle);
 }
@@ -223,8 +222,8 @@ int ClusterDetector::getValidMinPointsValue() {
 // Constants
 const std::string ClusterDetector::DETECTOR_TYPE = "Clusters";
 
-const std::string ClusterDetector::TRACKBAR_EPS           = "Eps (Multiplied by 10)";
-const std::string ClusterDetector::TRACKBAR_MINPOINTS     = "Minimum number of points";
+const std::string ClusterDetector::TRACKBAR_EPS         = "Eps (Multiplied by 10)";
+const std::string ClusterDetector::TRACKBAR_MINPOINTS   = "Minimum number of points";
 
 const int ClusterDetector::MIN_POINTS_MIN    = 0;
 const int ClusterDetector::MIN_POINTS_MAX    = 100;
