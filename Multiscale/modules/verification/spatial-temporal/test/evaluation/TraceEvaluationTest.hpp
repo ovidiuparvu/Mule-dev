@@ -36,12 +36,15 @@ namespace multiscaletest {
                 bWithTypeNumericStateVariableId;    /*!< The id of the numeric state variable "B" (with type) */
             NumericStateVariableId
                 cNumericStateVariableId;            /*!< The id of the numeric state variable "C" */
+            NumericStateVariableId
+                dNumericStateVariableId;            /*!< The id of the numeric state variable "D" */
 
             double aMinValue;                       /*!< The minimum value of numeric state variable "A" */
             double aMaxValue;                       /*!< The maximum value of numeric state variable "A" */
             double bConstantValue;                  /*!< The constant value of numeric state variable "B" */
             double cMinValue;                       /*!< The minimum value of numeric state variable "C" */
             double cMaxValue;                       /*!< The maximum value of numeric state variable "C" */
+            double dConstantValue;                  /*!< The constant value of numeric state variable "D" */
 
             mv::SpatialTemporalTrace
                 trace;                              /*!< The spatial temporal trace */
@@ -89,6 +92,7 @@ namespace multiscaletest {
            // Constants
            static const std::string SEMANTIC_TYPE_ORGAN_HEART;
            static const std::string SEMANTIC_TYPE_ORGAN_KIDNEY;
+           static const std::string SEMANTIC_TYPE_ORGAN_LIVER;
 
     };
 

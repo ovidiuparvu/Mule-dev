@@ -99,6 +99,11 @@ namespace multiscaletest {
             cMinValue = std::min(cMinValue, timePoints[i].getNumericStateVariableValue(cNumericStateVariableId));
         }
         
+        // Add a numeric state variable "D" (with type) to the collection of timepoints
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            timePoints[i].addNumericStateVariable(dNumericStateVariableId, dConstantValue);
+        }
+
         // Add spatial entities to each timepoint
         for (std::size_t i = 0; i < nrOfTimePoints; i++) {
 
@@ -118,7 +123,7 @@ namespace multiscaletest {
             }
             
         /*{% for spatial_entity in spatial_entities[1:] %}*/
-            // Add /*{{ spatial_entity.name }}*/s with semantic type "0" to the timepoint
+            // Add /*{{ spatial_entity.name }}*/s with default semantic type to the timepoint
             for (std::size_t k = 0; k <= i; k++) {
                 std::shared_ptr<SpatialEntity> /*{{ spatial_entity.name }}*/ = std::make_shared</*{{ spatial_entity.name|first_to_upper }}*/>();
 
@@ -131,7 +136,7 @@ namespace multiscaletest {
                 timePoints[i].addSpatialEntityAndType(/*{{ spatial_entity.name }}*/, SubsetSpecificType::/*{{ spatial_entity.name|first_to_upper }}*/s);
             }
             
-            // Add /*{{ spatial_entity.name }}*/s with semantic type "1" to the timepoint
+            // Add /*{{ spatial_entity.name }}*/s with semantic type "Organ.Heart" to the timepoint
             for (std::size_t k = 0; k <= i; k++) {
                 std::shared_ptr<SpatialEntity> /*{{ spatial_entity.name }}*/ = std::make_shared</*{{ spatial_entity.name|first_to_upper }}*/>();
 
@@ -840,6 +845,14 @@ TEST_F(CompleteTraceTest, NumericStateVariableWrongTypeLhs) {
 
 TEST_F(CompleteTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(type = 213121) <= {B}]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableSemanticTypeNotInTypeSemanticsTable) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({D}(type = Organ.Liver) < 5.01) ^ ({D}(type = Organ.Liver) > 4.99))]"));
+}
+
+TEST_F(CompleteTraceTest, NumericStateVariableTypeInTypeSemanticsTable) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({B}(type = Organ.Kidney) < 3.01) ^ ({B}(type = Organ.Kidney) > 2.99))]"));
 }
 
 

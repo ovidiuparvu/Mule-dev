@@ -65,6 +65,12 @@ namespace multiscale {
                 //! Get a const reference to the iterator pointing at the end of the table
                 std::map<std::string, unsigned long>::const_iterator getEndIterator() const;
 
+                //! Check if the given semantic type exists in the table
+                /*!
+                 * \param semanticType  The provided semantic type
+                 */
+                bool existsSemanticType(const std::string &semanticType) const;
+
                 //! Get the type corresponding to the semantic criteria values
                 /*!
                  * \param semanticCriteriaValues    The semantic criteria values for which the type

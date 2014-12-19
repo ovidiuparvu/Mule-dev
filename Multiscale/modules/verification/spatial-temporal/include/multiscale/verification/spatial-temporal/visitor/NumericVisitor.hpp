@@ -4,6 +4,7 @@
 #include "multiscale/verification/spatial-temporal/attribute/NumericMeasureAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/ComparatorEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/NumericEvaluator.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/NumericStateVariableEvaluator.hpp"
 #include "multiscale/verification/spatial-temporal/visitor/TimePointEvaluator.hpp"
 
 #include <boost/variant.hpp>
@@ -62,17 +63,13 @@ namespace multiscale {
                  */
                 double
                 operator()(const NumericStateVariableAttribute &numericStateVariable) const {
-                    // Construct the numeric state variable identity considering its name and semantic type
-                    NumericStateVariableId numericStateVariableId(
-                        numericStateVariable.stateVariable.name,
-                        numericStateVariable.semanticType.get_value_or(
-                            SemanticTypeAttribute()
-                        ).semanticType
-                    );
-
                     // Return the value of the numeric state variable
                     return (
-                        timePoint.getNumericStateVariableValue(numericStateVariableId)
+                        NumericStateVariableEvaluator::evaluate(
+                            numericStateVariable,
+                            timePoint,
+                            typeSemanticsTable
+                        )
                     );
                 }
 

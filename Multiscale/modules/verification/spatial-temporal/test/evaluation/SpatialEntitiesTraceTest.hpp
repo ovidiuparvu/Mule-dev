@@ -77,7 +77,7 @@ namespace multiscaletest {
                 timePoints[i].addSpatialEntityAndType(cluster, SubsetSpecificType::Clusters);
             }
             
-            // Add regions with semantic type "0" to the timepoint
+            // Add regions with default semantic type to the timepoint
             for (std::size_t k = 0; k <= i; k++) {
                 std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 
@@ -97,7 +97,7 @@ namespace multiscaletest {
                 timePoints[i].addSpatialEntityAndType(region, SubsetSpecificType::Regions);
             }
             
-            // Add regions with semantic type "1" to the timepoint
+            // Add regions with semantic type "Organ.Heart" to the timepoint
             for (std::size_t k = 0; k <= i; k++) {
                 std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 
@@ -812,6 +812,14 @@ TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongTypeLhs) {
 
 TEST_F(SpatialEntitiesTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(type = 213121) <= {B}]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableSemanticTypeNotInTypeSemanticsTable) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({D}(type = Organ.Liver) < 5.01) ^ ({D}(type = Organ.Liver) > 4.99))]"));
+}
+
+TEST_F(SpatialEntitiesTraceTest, NumericStateVariableTypeInTypeSemanticsTable) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] (({B}(type = Organ.Kidney) < 3.01) ^ ({B}(type = Organ.Kidney) > 2.99))]"));
 }
 
 

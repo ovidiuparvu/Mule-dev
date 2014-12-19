@@ -95,6 +95,11 @@ namespace multiscaletest {
             cMinValue = std::min(cMinValue, timePoints[i].getNumericStateVariableValue(cNumericStateVariableId));
         }
         
+        // Add a numeric state variable "D" (with type) to the collection of timepoints
+        for (std::size_t i = 0; i < nrOfTimePoints; i++) {
+            timePoints[i].addNumericStateVariable(dNumericStateVariableId, dConstantValue);
+        }
+
         // Add all timepoints to the trace
         for (TimePoint &timePoint : timePoints) {
             trace.addTimePoint(timePoint);
@@ -789,6 +794,14 @@ TEST_F(NumericStateVariableTraceTest, NumericStateVariableWrongTypeLhs) {
 
 TEST_F(NumericStateVariableTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [{B}(type = 213121) <= {B}]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, NumericStateVariableSemanticTypeNotInTypeSemanticsTable) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [G [0, 11] ({D}(type = Organ.Liver) = 5)]"));
+}
+
+TEST_F(NumericStateVariableTraceTest, NumericStateVariableTypeInTypeSemanticsTable) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [G [0, 11] ({B}(type = Organ.Kidney) = 3)]"));
 }
 
 

@@ -12,23 +12,33 @@ TypeSemanticsTable::TypeSemanticsTable() : nrOfDescribedSemanticCriteria(0) {}
 
 TypeSemanticsTable::~TypeSemanticsTable() {}
 
-void TypeSemanticsTable::readTableFromFile(const std::string &inputFilePath) {
+void
+TypeSemanticsTable::readTableFromFile(const std::string &inputFilePath) {
     this->inputFilePath = inputFilePath;
 
     // Read the type semantics table from the input file
     read();
 }
 
-std::map<std::string, unsigned long>::const_iterator TypeSemanticsTable::getBeginIterator() const {
+std::map<std::string, unsigned long>::const_iterator
+TypeSemanticsTable::getBeginIterator() const {
     return table.cbegin();
 }
 
-std::map<std::string, unsigned long>::const_iterator TypeSemanticsTable::getEndIterator() const {
+std::map<std::string, unsigned long>::const_iterator
+TypeSemanticsTable::getEndIterator() const {
     return table.cend();
 }
 
-unsigned long TypeSemanticsTable::getTypeOfSemanticCriteriaValues(const std::string
-                                                                  &semanticCriteriaValues) const {
+bool
+TypeSemanticsTable::existsSemanticType(const std::string &semanticType) const {
+    return (
+        existsEntryInTableForSemanticCriteriaValues(semanticType)
+    );
+}
+
+unsigned long
+TypeSemanticsTable::getTypeOfSemanticCriteriaValues(const std::string &semanticCriteriaValues) const {
     if (existsEntryInTableForSemanticCriteriaValues(semanticCriteriaValues)) {
         return table.at(semanticCriteriaValues);
     } else if (areDefaultSemanticCriteriaValues(semanticCriteriaValues)) {
@@ -46,7 +56,8 @@ unsigned long TypeSemanticsTable::getTypeOfSemanticCriteriaValues(const std::str
     return 0;
 }
 
-void TypeSemanticsTable::read() {
+void
+TypeSemanticsTable::read() {
     if (!Filesystem::isValidFilePath(inputFilePath, TYPE_SEMANTICS_TABLE_INPUT_FILE_EXTENSION)) {
         MS_throw(
             SpatialTemporalException,
@@ -59,7 +70,8 @@ void TypeSemanticsTable::read() {
     return readFromValidFile();
 }
 
-void TypeSemanticsTable::readFromValidFile() {
+void
+TypeSemanticsTable::readFromValidFile() {
     std::string xmlErrorMessage;
 
     if (!XmlValidator::isValidXmlFile(inputFilePath, TYPE_SEMANTICS_TABLE_XSD_PATH, xmlErrorMessage)) {
@@ -75,7 +87,8 @@ void TypeSemanticsTable::readFromValidFile() {
     return readFromValidXmlFile();
 }
 
-void TypeSemanticsTable::readFromValidXmlFile() {
+void
+TypeSemanticsTable::readFromValidXmlFile() {
     pt::ptree propertyTree;
 
     read_xml(inputFilePath, propertyTree, pt::xml_parser::trim_whitespace);
@@ -83,12 +96,14 @@ void TypeSemanticsTable::readFromValidXmlFile() {
     return constructTypeSemanticsTable(propertyTree);
 }
 
-void TypeSemanticsTable::constructTypeSemanticsTable(const pt::ptree &propertyTree) {
+void
+TypeSemanticsTable::constructTypeSemanticsTable(const pt::ptree &propertyTree) {
     processSemanticCriteriaDescription(propertyTree);
     addSemanticTypesToTable(propertyTree);
 }
 
-void TypeSemanticsTable::processSemanticCriteriaDescription(const pt::ptree &propertyTree) {
+void
+TypeSemanticsTable::processSemanticCriteriaDescription(const pt::ptree &propertyTree) {
     semanticCriteriaDescription     = propertyTree.get<std::string>(LABEL_SEMANTIC_CRITERIA_DESCRIPTION);
     nrOfDescribedSemanticCriteria   = StringManipulator::count(
                                           SEMANTIC_CRITERIA_SEPARATOR,
@@ -96,7 +111,8 @@ void TypeSemanticsTable::processSemanticCriteriaDescription(const pt::ptree &pro
                                       ) + 1;
 }
 
-void TypeSemanticsTable::addSemanticTypesToTable(const pt::ptree &propertyTree) {
+void
+TypeSemanticsTable::addSemanticTypesToTable(const pt::ptree &propertyTree) {
     pt::ptree semanticTypesTree = propertyTree.get_child(LABEL_SEMANTIC_TYPES);
 
     // Process each type stored in the tree
@@ -105,7 +121,8 @@ void TypeSemanticsTable::addSemanticTypesToTable(const pt::ptree &propertyTree) 
     }
 }
 
-void TypeSemanticsTable::addSemanticTypeToTable(const pt::ptree &semanticTypeTree) {
+void
+TypeSemanticsTable::addSemanticTypeToTable(const pt::ptree &semanticTypeTree) {
     std::string     typeSemantics = semanticTypeTree.get<std::string>(LABEL_SEMANTIC_TYPE_SEMANTICS);
     unsigned long   typeValue     = semanticTypeTree.get<unsigned long>(LABEL_SEMANTIC_TYPE_VALUE);
 
@@ -125,12 +142,14 @@ void TypeSemanticsTable::addSemanticTypeToTable(const pt::ptree &semanticTypeTre
     }
 }
 
-void TypeSemanticsTable::addTableEntry(const std::string &semanticCriteriaValues,
+void
+TypeSemanticsTable::addTableEntry(const std::string &semanticCriteriaValues,
                                        unsigned long type) {
     table[semanticCriteriaValues] = type;
 }
 
-bool TypeSemanticsTable::isNoUndefinedSemanticCriteriaValue(const std::string &semanticCriteriaValues) {
+bool
+TypeSemanticsTable::isNoUndefinedSemanticCriteriaValue(const std::string &semanticCriteriaValues) {
     unsigned long nrOfSemanticCriteria = StringManipulator::count(
                                              SEMANTIC_CRITERIA_SEPARATOR, semanticCriteriaValues
                                          ) + 1;
@@ -138,14 +157,15 @@ bool TypeSemanticsTable::isNoUndefinedSemanticCriteriaValue(const std::string &s
     return (nrOfSemanticCriteria <= nrOfDescribedSemanticCriteria);
 }
 
-bool TypeSemanticsTable::existsEntryInTableForSemanticCriteriaValues(const std::string
-                                                                     &semanticCriteriaValues) const {
+bool
+TypeSemanticsTable::existsEntryInTableForSemanticCriteriaValues(const std::string &semanticCriteriaValues) const {
     return (
         table.find(semanticCriteriaValues) != table.end()
     );
 }
 
-bool TypeSemanticsTable::areDefaultSemanticCriteriaValues(const std::string
+bool
+TypeSemanticsTable::areDefaultSemanticCriteriaValues(const std::string
                                                           &semanticCriteriaValues) const {
     return (
         semanticCriteriaValues.compare(SemanticType::DEFAULT_VALUE) == 0

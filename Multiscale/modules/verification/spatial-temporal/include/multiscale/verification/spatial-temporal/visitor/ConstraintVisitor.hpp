@@ -366,16 +366,43 @@ namespace multiscale {
                     TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
                     const ComparatorType &comparator, const SemanticTypeAttribute &semanticType
                 ) const {
-                    // Obtain the type value for the right hand side semantic criteria values
+                    // Obtain the right hand side semantic type
                     std::string rhsSemanticType = semanticType.semanticType;
 
+                    // Validate the semantic type
+                    SemanticTypeEvaluator::validate(rhsSemanticType, typeSemanticsTable);
+
+                    // Filter the spatial entities with respect to the semantic type
+                    return (
+                        filterSpatialEntitiesWrtType(
+                            timePoint,
+                            spatialEntityType,
+                            comparator,
+                            rhsSemanticType
+                        )
+                    );
+                }
+
+                //! Remove from the timepoint the spatial entities which fail to meet the type constraint
+                /*! The assumption for this method is that the provided semantic type exists in the
+                 *  type semantics table.
+                 *
+                 * \param timePoint             The timepoint which will be filtered
+                 * \param spatialEntityType     The considered spatial entity type
+                 * \param comparator            The type of the comparator
+                 * \param semanticType          The semantic type
+                 */
+                void filterSpatialEntitiesWrtType(
+                    TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
+                    const ComparatorType &comparator, const std::string &semanticType
+                ) const {
                     if (comparator == ComparatorType::Equal) {
                         filterSpatialEntitiesWrtTypeConsideringEqualComparator(
-                            timePoint, spatialEntityType, rhsSemanticType
+                            timePoint, spatialEntityType, semanticType
                         );
                     } else {
                         filterSpatialEntitiesWrtTypeConsideringNonEqualComparator(
-                            timePoint, spatialEntityType, comparator, rhsSemanticType
+                            timePoint, spatialEntityType, comparator, semanticType
                         );
                     }
                 }

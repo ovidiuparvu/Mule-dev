@@ -173,6 +173,8 @@ set(CORE_MODEL_CHECKER_SRC
     src/parsing/TemporalNumericMeasureGrammar.cpp
     src/parsing/UnaryNumericMeasureGrammar.cpp
     src/parsing/UnaryStatisticalMeasureGrammar.cpp
+    
+    src/visitor/SemanticTypeEvaluator.cpp
 )
 
 # Mule

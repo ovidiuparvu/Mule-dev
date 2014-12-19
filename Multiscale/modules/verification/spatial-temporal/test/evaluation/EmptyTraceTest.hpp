@@ -727,6 +727,14 @@ TEST_F(EmptyTraceTest, NumericStateVariableWrongTypeLhsLargerValue) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [{B}(type = 213121) <= {B}]"), SpatialTemporalException);
 }
 
+TEST_F(EmptyTraceTest, NumericStateVariableSemanticTypeNotInTypeSemanticsTable) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [G [0, 11] (({D}(type = Organ.Liver) < 5.01) ^ ({D}(type = Organ.Liver) > 4.99))]"), SpatialTemporalException);
+}
+
+TEST_F(EmptyTraceTest, NumericStateVariableTypeInTypeSemanticsTable) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [G [0, 11] (({B}(type = Organ.Kidney) < 3.01) ^ ({B}(type = Organ.Kidney) > 2.99))]"), SpatialTemporalException);
+}
+
 
 /////////////////////////////////////////////////////////
 //
