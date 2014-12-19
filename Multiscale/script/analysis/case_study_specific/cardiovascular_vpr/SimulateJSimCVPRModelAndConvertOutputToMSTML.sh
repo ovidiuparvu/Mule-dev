@@ -140,7 +140,7 @@ LINES_AFTER_TIMEPOINT_CONTENT=1;
 
 MSTML_GENERATION_SPECIFICATION="
 Numeric 2 OrganSystem.Cardiovascular
-Numeric 3 Cellular.Baroreflex
+Numeric 3 Cellular.Baroreceptor
 Numeric 4 OrganSystem.Cardiovascular
 Numeric 5 OrganSystem.Cardiovascular
 Numeric 6 OrganSystem.Cardiovascular
