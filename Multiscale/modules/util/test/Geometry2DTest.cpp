@@ -38,6 +38,50 @@ TEST(Geometry2D, TangentsFromPointToPolygon) {
     EXPECT_NEAR(rightMostTangentPoint.y, 32, DOUBLE_COMP_ERROR);
 }
 
+TEST(Geometry2D, TangentsFromPointToPolygonReferenceAndTangentPointsAreCollinearWithPolygonPoint) {
+    std::vector<cv::Point2f> convexPolygon(
+        { cv::Point2f(9, 42), cv::Point2f(7, 44), cv::Point2f(6, 44), cv::Point2f(4, 42), cv::Point2f(7, 40) }
+    );
+
+    cv::Point2f referencePoint(25.5, 25.5);
+
+    // Find the tangents from the reference point to the convex polygon
+    cv::Point2f leftMostTangentPoint;
+    cv::Point2f rightMostTangentPoint;
+
+    Geometry2D::tangentsFromPointToPolygon(
+        convexPolygon, referencePoint, leftMostTangentPoint, rightMostTangentPoint
+    );
+
+    // Check if the obtained tangent points are the expected ones
+    EXPECT_NEAR(leftMostTangentPoint.x, 4, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(leftMostTangentPoint.y, 42, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(rightMostTangentPoint.x, 9, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(rightMostTangentPoint.y, 42, DOUBLE_COMP_ERROR);
+}
+
+TEST(Geometry2D, TangentsFromPointToPolygonFirstPointRightMostTangentPoint) {
+    std::vector<cv::Point2f> convexPolygon(
+        { cv::Point2f(9, 42), cv::Point2f(7, 44), cv::Point2f(6, 44), cv::Point2f(4, 42), cv::Point2f(7, 40) }
+    );
+
+    cv::Point2f referencePoint(25.5, 25.5);
+
+    // Find the tangents from the reference point to the convex polygon
+    cv::Point2f leftMostTangentPoint;
+    cv::Point2f rightMostTangentPoint;
+
+    Geometry2D::tangentsFromPointToPolygon(
+        convexPolygon, referencePoint, leftMostTangentPoint, rightMostTangentPoint
+    );
+
+    // Check if the obtained tangent points are the expected ones
+    EXPECT_NEAR(leftMostTangentPoint.x, 4, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(leftMostTangentPoint.y, 42, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(rightMostTangentPoint.x, 9, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(rightMostTangentPoint.y, 42, DOUBLE_COMP_ERROR);
+}
+
 TEST(Geometry2D, PointOnLineSegment) {
     EXPECT_TRUE(Geometry2D::isPointOnLineSegment(cv::Point2f(2, 2), cv::Point2f(2, 2), cv::Point2f(10, 4)));
     EXPECT_TRUE(Geometry2D::isPointOnLineSegment(cv::Point2f(10, 4), cv::Point2f(2, 2), cv::Point2f(10, 4)));
