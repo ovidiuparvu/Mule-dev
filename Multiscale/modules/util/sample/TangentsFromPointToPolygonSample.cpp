@@ -63,8 +63,8 @@ void outputTangentsAndPolygon(const std::vector<cv::Point2f> &polygon,
 
 // Find tangents from a fixed point to the given polygon
 void findTangentsForRandomPolygon(const std::vector<cv::Point2f> &polygon) {
-    cv::Point leftMostTangentPoint;
-    cv::Point rightMostTangentPoint;
+    cv::Point2f leftMostTangentPoint;
+    cv::Point2f rightMostTangentPoint;
 
     // Find the tangent points
     Geometry2D::tangentsFromPointToPolygon(

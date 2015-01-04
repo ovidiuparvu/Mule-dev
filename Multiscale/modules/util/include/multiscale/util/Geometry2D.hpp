@@ -153,8 +153,8 @@ namespace multiscale {
              */
             static void tangentsFromPointToPolygon(const std::vector<cv::Point2f> &convexPolygon,
                                                    const cv::Point2f &referencePoint,
-                                                   cv::Point &leftMostTangentPoint,
-                                                   cv::Point &rightMostTangentPoint);
+                                                   cv::Point2f &leftMostTangentPoint,
+                                                   cv::Point2f &rightMostTangentPoint);
 
             //! Find the points which are on the edge and on the line orthogonal to the line defined by 2 given points
             /*!
@@ -179,8 +179,8 @@ namespace multiscale {
              * \param lineStartPointA   The line start point A
              * \param lineEndPointB     The line end point B
              */
-            static double sideOfLine(const cv::Point2f &point, const cv::Point &lineStartPointA,
-                                     const cv::Point &lineEndPointB);
+            static double sideOfLine(const cv::Point2f &point, const cv::Point2f &lineStartPointA,
+                                     const cv::Point2f &lineEndPointB);
 
             //! Check if the point P lies to the right of line (A, B)
             /*!
@@ -188,8 +188,8 @@ namespace multiscale {
              * \param lineStartPointA   The line start point A
              * \param lineEndPointB     The line end point B
              */
-            static bool isToTheRightOfLine(const cv::Point2f &point, const cv::Point &lineStartPointA,
-                                           const cv::Point &lineEndPointB);
+            static bool isToTheRightOfLine(const cv::Point2f &point, const cv::Point2f &lineStartPointA,
+                                           const cv::Point2f &lineEndPointB);
 
             //! Check if the point P lies to the left of line (A, B)
             /*!
@@ -197,8 +197,8 @@ namespace multiscale {
              * \param lineStartPointA   The line start point A
              * \param lineEndPointB     The line end point B
              */
-            static bool isToTheLeftOfLine(const cv::Point2f &point, const cv::Point &lineStartPointA,
-                                          const cv::Point &lineEndPointB);
+            static bool isToTheLeftOfLine(const cv::Point2f &point, const cv::Point2f &lineStartPointA,
+                                          const cv::Point2f &lineEndPointB);
 
             //! Check if p1 and p2 are on the same side of the line determined by points a and b
             /*!
@@ -486,8 +486,8 @@ namespace multiscale {
              * \param convexPolygon         The considered convex polygon
              * \param referencePoint        The reference point through which the polygon tangents pass
              */
-            static cv::Point computeLeftMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
-                                                         const cv::Point2f &referencePoint);
+            static cv::Point2f computeLeftMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
+                                                           const cv::Point2f &referencePoint);
 
             //! Compute the right-most polygon tangent point considering the given reference point
             /*! The tangent point is found using a binary search like procedure.
@@ -495,8 +495,8 @@ namespace multiscale {
              * \param convexPolygon         The considered convex polygon
              * \param referencePoint        The reference point through which the polygon tangents pass
              */
-            static cv::Point computeRightMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
-                                                          const cv::Point2f &referencePoint);
+            static cv::Point2f computeRightMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
+                                                            const cv::Point2f &referencePoint);
 
             //! Check if the given point is on the edge
             /*!

@@ -144,8 +144,8 @@ cv::Point2f Geometry2D::centroid(const std::vector<cv::Point2f> &points) {
 
 void Geometry2D::tangentsFromPointToPolygon(const std::vector<cv::Point2f> &convexPolygon,
                                             const cv::Point2f &referencePoint,
-                                            cv::Point &leftMostTangentPoint,
-                                            cv::Point &rightMostTangentPoint) {
+                                            cv::Point2f &leftMostTangentPoint,
+                                            cv::Point2f &rightMostTangentPoint) {
     // If the reference point is outside and does not touch the polygon
     if (cv::pointPolygonTest(convexPolygon, referencePoint, false) <= 0) {
         // Compute the polygon tangent points only if the
@@ -219,23 +219,23 @@ void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const cv::Point &a1, cons
     }
 }
 
-double Geometry2D::sideOfLine(const cv::Point2f &point, const cv::Point &lineStartPointA,
-                              const cv::Point &lineEndPointB) {
+double Geometry2D::sideOfLine(const cv::Point2f &point, const cv::Point2f &lineStartPointA,
+                              const cv::Point2f &lineEndPointB) {
     return (
         ((lineStartPointA.x - point.x) * (lineEndPointB.y - point.y)) -
         ((lineEndPointB.x - point.x) * (lineStartPointA.y - point.y))
     );
 }
 
-bool Geometry2D::isToTheRightOfLine(const cv::Point2f &point, const cv::Point &lineStartPointA,
-                                    const cv::Point &lineEndPointB) {
+bool Geometry2D::isToTheRightOfLine(const cv::Point2f &point, const cv::Point2f &lineStartPointA,
+                                    const cv::Point2f &lineEndPointB) {
     return (
         sideOfLine(point, lineStartPointA, lineEndPointB) > 0
     );
 }
 
-bool Geometry2D::isToTheLeftOfLine(const cv::Point2f &point, const cv::Point &lineStartPointA,
-                                    const cv::Point &lineEndPointB) {
+bool Geometry2D::isToTheLeftOfLine(const cv::Point2f &point, const cv::Point2f &lineStartPointA,
+                                   const cv::Point2f &lineEndPointB) {
     return (
         sideOfLine(point, lineStartPointA, lineEndPointB) < 0
     );
@@ -530,8 +530,8 @@ std::vector<cv::Point> Geometry2D::convertPoints(const std::vector<cv::Point2f> 
     return convertedPoints;
 }
 
-cv::Point Geometry2D::computeLeftMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
-                                                  const cv::Point2f &referencePoint) {
+cv::Point2f Geometry2D::computeLeftMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
+                                                    const cv::Point2f &referencePoint) {
     // Compute the number of points in the polygon
     int nrOfPolygonPoints = convexPolygon.size();
 
@@ -636,8 +636,8 @@ cv::Point Geometry2D::computeLeftMostTangentPoint(const std::vector<cv::Point2f>
     return cv::Point();
 }
 
-cv::Point Geometry2D::computeRightMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
-                                                   const cv::Point2f &referencePoint) {
+cv::Point2f Geometry2D::computeRightMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
+                                                     const cv::Point2f &referencePoint) {
     // Compute the number of points in the polygon
     int nrOfPolygonPoints = convexPolygon.size();
 

@@ -144,7 +144,7 @@ TypeSemanticsTable::addSemanticTypeToTable(const pt::ptree &semanticTypeTree) {
 
 void
 TypeSemanticsTable::addTableEntry(const std::string &semanticCriteriaValues,
-                                       unsigned long type) {
+                                  unsigned long type) {
     table[semanticCriteriaValues] = type;
 }
 

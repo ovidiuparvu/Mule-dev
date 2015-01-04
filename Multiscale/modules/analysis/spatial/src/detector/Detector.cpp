@@ -160,16 +160,16 @@ double Detector::computePolygonAngle(const std::vector<cv::Point2f> &polygon) {
 }
 
 double Detector::computePolygonAngle(const std::vector<cv::Point2f> &polygonConvexHull,
-                              const cv::Point &tangentsPoint) {
+                                     const cv::Point2f &tangentsPoint) {
     // If the polygon is defined by maximum one point
     if (polygonConvexHull.size() <= 1) {
         return 0.0;
-    // Else if the tangents points is contained by the polygon
+    // Else if the tangents point is contained by the polygon
     } else if (cv::pointPolygonTest(polygonConvexHull, tangentsPoint, false) > 0) {
         return 360.0;
     } else {
-        cv::Point leftMostTangentPoint;
-        cv::Point rightMostTangentPoint;
+        cv::Point2f leftMostTangentPoint;
+        cv::Point2f rightMostTangentPoint;
 
         // Compute the left- and right-most polygon tangent points
         Geometry2D::tangentsFromPointToPolygon(

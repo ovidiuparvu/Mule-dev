@@ -157,7 +157,7 @@ namespace multiscale {
                  *  \param tangentsPoint        Point through which the tangents pass
                  */
                 double computePolygonAngle(const std::vector<cv::Point2f> &polygonConvexHull,
-                                           const cv::Point &tangentsPoint);
+                                           const cv::Point2f &tangentsPoint);
 
                 //! Display the results in a window
                 void displayResultsInWindow();
