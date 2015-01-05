@@ -2,8 +2,6 @@
 #define NUMERICMEASURECOLLECTIONEVALUATOR_HPP
 
 #include "multiscale/verification/spatial-temporal/model/SpatialTemporalTrace.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/SubsetVisitor.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/TimePointEvaluator.hpp"
 
 
 namespace multiscale {
@@ -44,31 +42,34 @@ namespace multiscale {
                 evaluateSpatialMeasureCollection(TimePoint &timePoint,
                                                  const TypeSemanticsTable &typeSemanticsTable,
                                                  const SpatialMeasureCollectionAttribute
-                                                 &spatialMeasureCollection) {
-                    // Create the subset timepoint corresponding to the given timepoint
-                    TimePoint subsetTimePoint(
-                        boost::apply_visitor(
-                            SubsetVisitor(timePoint, typeSemanticsTable),
-                            spatialMeasureCollection.subset.subset
-                        )
-                    );
-
-                    // Compute the spatial measure values corresponding to the above created
-                    // subset timepoint
-                    std::vector<double> spatialMeasureValues =
-                        TimePointEvaluator::getSpatialMeasureValues(
-                            subsetTimePoint,
-                            spatialMeasureCollection.spatialMeasure.spatialMeasureType
-                        );
-
-                    return spatialMeasureValues;
-                }
+                                                 &spatialMeasureCollection);
 
         };
 
     };
 
 };
+
+
+// Includes added after class declaration to avoid include circular dependency errors
+
+#include "multiscale/verification/spatial-temporal/visitor/SpatialMeasureCollectionVisitor.hpp"
+
+
+// Methods which depend on the immediately above included classes
+
+inline std::vector<double>
+multiscale::verification::NumericMeasureCollectionEvaluator::evaluateSpatialMeasureCollection(
+    TimePoint &timePoint, const TypeSemanticsTable &typeSemanticsTable,
+    const SpatialMeasureCollectionAttribute &spatialMeasureCollection
+) {
+    return (
+        boost::apply_visitor(
+            SpatialMeasureCollectionVisitor(timePoint, typeSemanticsTable),
+            spatialMeasureCollection.spatialMeasureCollection
+        )
+    );
+}
 
 
 #endif

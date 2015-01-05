@@ -765,6 +765,19 @@ TEST_F(EmptyTraceTest, NumericStatisticalMeasure) {
 /////////////////////////////////////////////////////////
 //
 //
+// PrimarySpatialMeasureCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, PrimarySpatialMeasureCollection) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [F [0, 11] avg(clusteredness(clusters)) > 12]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // ProbabilisticLogicProperty
 //
 //
@@ -880,7 +893,7 @@ TEST_F(EmptyTraceTest, SpatialMeasureCentroidY) {
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, SpatialMeasureCollection) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [F [0, 11] avg(clusteredness(clusters)) > 12]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [F [0, 11] avg(clusteredness(clusters)) > 27.3999]"), SpatialTemporalException);
 }
 
 

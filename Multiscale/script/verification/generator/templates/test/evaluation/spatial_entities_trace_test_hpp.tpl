@@ -831,6 +831,19 @@ TEST_F(SpatialEntitiesTraceTest, NumericStatisticalMeasure) {
 /////////////////////////////////////////////////////////
 //
 //
+// PrimarySpatialMeasureCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(SpatialEntitiesTraceTest, PrimarySpatialMeasureCollection) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > 26.21]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // ProbabilisticLogicProperty
 //
 //
@@ -912,7 +925,7 @@ TEST_F(SpatialEntitiesTraceTest, SpatialMeasure/*{{ spatial_measure.name|first_t
 /////////////////////////////////////////////////////////
 
 TEST_F(SpatialEntitiesTraceTest, SpatialMeasureCollection) {
-    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > 26.21]"));
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) < 26.21]"));
 }
 
 

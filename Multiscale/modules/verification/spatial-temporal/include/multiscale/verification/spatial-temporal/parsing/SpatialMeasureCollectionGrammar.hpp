@@ -1,8 +1,11 @@
 #ifndef SPATIALMEASURECOLLECTIONGRAMMAR_HPP
 #define SPATIALMEASURECOLLECTIONGRAMMAR_HPP
 
+#include "multiscale/verification/spatial-temporal/attribute/BinaryNumericSpatialAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/PrimarySpatialMeasureCollectionAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SemanticTypeAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureCollectionAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/UnaryNumericSpatialAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/BinaryNumericMeasureGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/ComparatorGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SemanticTypeGrammar.hpp"
@@ -61,6 +64,16 @@ namespace multiscale {
                 qi::rule<Iterator, SpatialMeasureCollectionAttribute(), qi::space_type>
                     spatialMeasureCollectionRule;                   /*!< The rule for parsing a spatial measure
                                                                          collection */
+
+                qi::rule<Iterator, PrimarySpatialMeasureCollectionAttribute(), qi::space_type>
+                    primarySpatialMeasureCollectionRule;            /*!< The rule for parsing a primary spatial
+                                                                         measure collection */
+                qi::rule<Iterator, UnaryNumericSpatialAttribute(), qi::space_type>
+                    unaryNumericSpatialMeasureCollectionRule;       /*!< The rule for parsing a unary numeric spatial
+                                                                         measure collection */
+                qi::rule<Iterator, BinaryNumericSpatialAttribute(), qi::space_type>
+                    binaryNumericSpatialMeasureCollectionRule;      /*!< The rule for parsing a binary numeric spatial
+                                                                         measure collection */
 
                 qi::rule<Iterator, SpatialMeasureAttribute(), qi::space_type>
                     spatialMeasureRule;                             /*!< The rule for parsing a spatial measure */

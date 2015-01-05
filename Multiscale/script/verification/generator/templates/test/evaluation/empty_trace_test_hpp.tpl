@@ -762,6 +762,19 @@ TEST_F(EmptyTraceTest, NumericStatisticalMeasure) {
 /////////////////////////////////////////////////////////
 //
 //
+// PrimarySpatialMeasureCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, PrimarySpatialMeasureCollection) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [F [0, 11] avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > 12]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // ProbabilisticLogicProperty
 //
 //
@@ -843,7 +856,7 @@ TEST_F(EmptyTraceTest, SpatialMeasure/*{{ spatial_measure.name|first_to_upper }}
 /////////////////////////////////////////////////////////
 
 TEST_F(EmptyTraceTest, SpatialMeasureCollection) {
-    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [F [0, 11] avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > 12]"), SpatialTemporalException);
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [F [0, 11] avg(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)) > 27.3999]"), SpatialTemporalException);
 }
 
 

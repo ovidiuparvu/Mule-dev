@@ -142,30 +142,36 @@ cv::Point2f Geometry2D::centroid(const std::vector<cv::Point2f> &points) {
     return centroid;
 }
 
+bool Geometry2D::isPointInsidePolygon(const cv::Point2f &point, const std::vector<cv::Point2f> &polygon) {
+    // TODO: Implement method myself to remove dependency between this class
+    //       and the OpenCV library
+    return (
+        cv::pointPolygonTest(polygon, point, false) > 0
+    );
+}
+
+bool Geometry2D::isConvexPolygon(const std::vector<cv::Point2f> &polygon) {
+    // TODO: Implement method myself to remove dependency between this class
+    //       and the OpenCV library
+    return (
+        cv::isContourConvex(polygon)
+    );
+}
+
 void Geometry2D::tangentsFromPointToPolygon(const std::vector<cv::Point2f> &convexPolygon,
                                             const cv::Point2f &referencePoint,
                                             cv::Point2f &leftMostTangentPoint,
                                             cv::Point2f &rightMostTangentPoint) {
-    // If the reference point is outside and does not touch the polygon
-    if (cv::pointPolygonTest(convexPolygon, referencePoint, false) <= 0) {
-        // Compute the polygon tangent points only if the
-        // provided polygon is convex
-        if (cv::isContourConvex(convexPolygon)) {
-            leftMostTangentPoint    = computeLeftMostTangentPoint(convexPolygon, referencePoint);
-            rightMostTangentPoint   = computeRightMostTangentPoint(convexPolygon, referencePoint);
-        // Otherwise if the polygon contains only two points which
-        // are not collinear with the reference point return these
-        // two polygon points
+    if (!isPointInsidePolygon(referencePoint, convexPolygon)) {
+        if (isConvexPolygon(convexPolygon)) {
+            leftMostTangentPoint  = computeLeftMostTangentPoint(convexPolygon, referencePoint);
+            rightMostTangentPoint = computeRightMostTangentPoint(convexPolygon, referencePoint);
         } else if (
             (convexPolygon.size() == 2) &&
-            (!areCollinear(
-                convexPolygon[0],
-                convexPolygon[1],
-                referencePoint)
-            )
+            (!areCollinear(convexPolygon[0], convexPolygon[1], referencePoint))
         ) {
-            leftMostTangentPoint    = convexPolygon[0];
-            rightMostTangentPoint   = convexPolygon[1];
+            leftMostTangentPoint  = convexPolygon[0];
+            rightMostTangentPoint = convexPolygon[1];
         }
     }
 }

@@ -124,10 +124,8 @@ double Detector::computeDistanceFromOrigin(const std::vector<cv::Point> &polygon
 }
 
 double Detector::computeDistanceFromOrigin(const std::vector<cv::Point2f> &polygon) {
-    // If the origin lies within the polygon return 0
-    if (cv::pointPolygonTest(polygon, origin, false) >= 0) {
+    if (Geometry2D::isPointInsidePolygon(origin, polygon)) {
         return 0.0;
-    // Otherwise compute the distance
     } else {
         unsigned int minDistancePointIndex
             = Geometry2D::minimumDistancePointIndex(polygon, origin);
@@ -161,11 +159,9 @@ double Detector::computePolygonAngle(const std::vector<cv::Point2f> &polygon) {
 
 double Detector::computePolygonAngle(const std::vector<cv::Point2f> &polygonConvexHull,
                                      const cv::Point2f &tangentsPoint) {
-    // If the polygon is defined by maximum one point
     if (polygonConvexHull.size() <= 1) {
         return 0.0;
-    // Else if the tangents point is contained by the polygon
-    } else if (cv::pointPolygonTest(polygonConvexHull, tangentsPoint, false) > 0) {
+    } else if (Geometry2D::isPointInsidePolygon(tangentsPoint, polygonConvexHull)) {
         return 360.0;
     } else {
         cv::Point2f leftMostTangentPoint;

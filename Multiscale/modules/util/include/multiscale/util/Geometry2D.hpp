@@ -142,6 +142,20 @@ namespace multiscale {
              */
             static cv::Point2f centroid(const std::vector<cv::Point2f> &points);
 
+            //! Check if the given point lies inside the polygon
+            /*!
+             * \param point     The given point
+             * \param polygon   The given polygon
+             */
+            static bool isPointInsidePolygon(const cv::Point2f &point,
+                                             const std::vector<cv::Point2f> &polygon);
+
+            //! Check if the provided polygon is convex
+            /*!
+             * \param polygon   The provided polygon
+             */
+            static bool isConvexPolygon(const std::vector<cv::Point2f> &polygon);
+
             //! Compute the polygon points where the tangents from a reference point touch the given polygon
             /*! The employed algorithms are based on the information presented at:
              *  http://geomalgorithms.com/a15-_tangents.html (Accessed on: 16.12.2014)

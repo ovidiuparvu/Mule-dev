@@ -1726,6 +1726,55 @@ TEST(NumericStatisticalMeasure, Correct) {
 /////////////////////////////////////////////////////////
 //
 //
+// PrimarySpatialMeasureCollection
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(PrimarySpatialMeasureCollection, IncorrectInputBeforeSpatialMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(avg(clusteredness(clusters))) > 12.1]"), InvalidInputException);
+}
+
+TEST(PrimarySpatialMeasureCollection, IncorrectSpatialMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(volume__2D__(clusters)) > 12.1]"), InvalidInputException);
+}
+
+TEST(PrimarySpatialMeasureCollection, IncorrectInputAfterSpatialMeasure) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusterednesss(clusters)) > 12.1]"), InvalidInputException);
+}
+
+TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingFirstParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness clusters)) > 12.1]"), InvalidInputException);
+}
+
+TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingSecondParanthesis) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness(clusters) > 12.1]"), InvalidInputException);
+}
+
+TEST(PrimarySpatialMeasureCollection, IncorrectInputInvalidSubset) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness(cluster__)) > 12.1]"), InvalidInputException);
+}
+
+TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingSubset) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness()) > 12.1]"), InvalidInputException);
+}
+
+TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingSubsetAndParantheses) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness) > 12.1]"), InvalidInputException);
+}
+
+TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingAll) {
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg() > 12.1]"), InvalidInputException);
+}
+
+TEST(PrimarySpatialMeasureCollection, Correct) {
+    EXPECT_TRUE(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness(clusters)) > 12.1]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // ProbabilisticLogicProperty
 //
 //
@@ -2080,40 +2129,8 @@ TEST(SpatialMeasure, CorrectCentroidY) {
 //
 /////////////////////////////////////////////////////////
 
-TEST(SpatialMeasureCollection, IncorrectInputBeforeSpatialMeasure) {
+TEST(SpatialMeasureCollection, IncorrectAlternative) {
     EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(avg(clusteredness(clusters))) > 12.1]"), InvalidInputException);
-}
-
-TEST(SpatialMeasureCollection, IncorrectSpatialMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(volume__2D__(clusters)) > 12.1]"), InvalidInputException);
-}
-
-TEST(SpatialMeasureCollection, IncorrectInputAfterSpatialMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusterednesss(clusters)) > 12.1]"), InvalidInputException);
-}
-
-TEST(SpatialMeasureCollection, IncorrectInputMissingFirstParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness clusters)) > 12.1]"), InvalidInputException);
-}
-
-TEST(SpatialMeasureCollection, IncorrectInputMissingSecondParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness(clusters) > 12.1]"), InvalidInputException);
-}
-
-TEST(SpatialMeasureCollection, IncorrectInputInvalidSubset) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness(cluster__)) > 12.1]"), InvalidInputException);
-}
-
-TEST(SpatialMeasureCollection, IncorrectInputMissingSubset) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness()) > 12.1]"), InvalidInputException);
-}
-
-TEST(SpatialMeasureCollection, IncorrectInputMissingSubsetAndParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness) > 12.1]"), InvalidInputException);
-}
-
-TEST(SpatialMeasureCollection, IncorrectInputMissingAll) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg() > 12.1]"), InvalidInputException);
 }
 
 TEST(SpatialMeasureCollection, Correct) {

@@ -245,16 +245,16 @@ namespace multiscale {
                                                       const std::vector<std::size_t> &indices) const {
                     switch(timeseriesMeasureType) {
                         case TimeseriesMeasureType::EnteringTime:
-                            return subCollection(
+                            return constructSubCollection(
                                 timePoints,
-                                indicesSubCollection(indices, 0, 2) // Consider only the start/entering indices
+                                computeIndicesSubCollection(indices, 0, 2) // Consider only the start/entering indices
                             );
                             break;
 
                         case TimeseriesMeasureType::EnteringValue:
-                            return subCollection(
+                            return constructSubCollection(
                                 values,
-                                indicesSubCollection(indices, 0, 2) // Consider only the start/entering indices
+                                computeIndicesSubCollection(indices, 0, 2) // Consider only the start/entering indices
                             );
                             break;
 
@@ -275,8 +275,8 @@ namespace multiscale {
                  *                      in the sub-collection
                  */
                 std::vector<std::size_t>
-                indicesSubCollection(const std::vector<std::size_t> &indices, std::size_t startPosition,
-                                     std::size_t step) const {
+                computeIndicesSubCollection(const std::vector<std::size_t> &indices,
+                                            std::size_t startPosition, std::size_t step) const {
                     std::vector<std::size_t> indicesSubCollection;
 
                     std::size_t nrOfIndices = indices.size();
@@ -299,8 +299,8 @@ namespace multiscale {
                  */
                 template <typename T>
                 std::vector<T>
-                subCollection(const std::vector<T> &initialCollection,
-                              const std::vector<std::size_t> &indices) const {
+                constructSubCollection(const std::vector<T> &initialCollection,
+                                       const std::vector<std::size_t> &indices) const {
                     std::vector<T> subCollection;
 
                     // Add elements to subcollection

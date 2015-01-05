@@ -53,10 +53,33 @@ namespace multiscale {
         template <typename Iterator>
         void SpatialMeasureCollectionGrammar<Iterator>::initialiseSpatialMeasureCollectionRule() {
             spatialMeasureCollectionRule
+                =   primarySpatialMeasureCollectionRule
+                |   unaryNumericSpatialMeasureCollectionRule
+                |   binaryNumericSpatialMeasureCollectionRule;
+
+            primarySpatialMeasureCollectionRule
                 =   (
                         spatialMeasureRule
                         > '('
                         > subsetRule
+                        > ')'
+                    );
+
+            unaryNumericSpatialMeasureCollectionRule
+                =   (
+                        unaryNumericMeasureRule
+                        > '('
+                        > spatialMeasureCollectionRule
+                        > ')'
+                    );
+
+            binaryNumericSpatialMeasureCollectionRule
+                =   (
+                        binaryNumericMeasureRule
+                        > '('
+                        > spatialMeasureCollectionRule
+                        > ','
+                        > spatialMeasureCollectionRule
                         > ')'
                     );
         }
@@ -210,7 +233,10 @@ namespace multiscale {
         //! Assign names to the spatial measure collection rules
         template <typename Iterator>
         void SpatialMeasureCollectionGrammar<Iterator>::assignNamesToSpatialMeasureCollectionRules() {
-            spatialMeasureCollectionRule.name("spatialMeasureCollectionRule");
+            spatialMeasureCollectionRule                .name("spatialMeasureCollectionRule");
+            primarySpatialMeasureCollectionRule         .name("primarySpatialMeasureCollectionRule");
+            unaryNumericSpatialMeasureCollectionRule    .name("unaryNumericSpatialMeasureCollectionRule");
+            binaryNumericSpatialMeasureCollectionRule   .name("binaryNumericSpatialMeasureCollectionRule");
         }
 
         //! Assign names to the spatial measure rules
@@ -282,6 +308,9 @@ namespace multiscale {
         template <typename Iterator>
         void SpatialMeasureCollectionGrammar<Iterator>::initialiseSpatialMeasureCollectionRuleDebugging() {
             debug(spatialMeasureCollectionRule);
+            debug(primarySpatialMeasureCollectionRule);
+            debug(unaryNumericSpatialMeasureCollectionRule);
+            debug(binaryNumericSpatialMeasureCollectionRule);
         }
 
         //! Initialise debugging for the spatial measure rule
@@ -352,7 +381,15 @@ namespace multiscale {
         template <typename Iterator>
         void SpatialMeasureCollectionGrammar<Iterator>::initialiseSpatialMeasureCollectionErrorHandlingSupport() {
             qi::on_error<qi::fail>(
-                spatialMeasureCollectionRule,
+                primarySpatialMeasureCollectionRule,
+                multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+            );
+            qi::on_error<qi::fail>(
+                unaryNumericSpatialMeasureCollectionRule,
+                multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
+            );
+            qi::on_error<qi::fail>(
+                binaryNumericSpatialMeasureCollectionRule,
                 multiscale::verification::handleUnexpectedTokenError(qi::_4, qi::_3, qi::_2)
             );
         }
