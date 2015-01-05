@@ -222,6 +222,18 @@ TEST_F(CompleteTraceTest, BinaryNumericNumeric) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 5] add(count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s)), 2)) >= 7.99999]"));
 }
 
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, BinaryNumericSpatial) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] (sum(multiply(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1375.76)]"));
+}
+
 
 /////////////////////////////////////////////////////////
 //
@@ -1196,6 +1208,19 @@ TEST_F(CompleteTraceTest, UnaryNumericMeasureTrunc) {
 
 TEST_F(CompleteTraceTest, UnaryNumericNumeric) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 11] count(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 11]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, UnaryNumericSpatial) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] (max(ceil(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 28)]"));
 }
 
 

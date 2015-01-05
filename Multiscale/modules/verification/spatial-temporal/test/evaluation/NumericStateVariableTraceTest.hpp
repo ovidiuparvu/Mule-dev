@@ -175,6 +175,19 @@ TEST_F(NumericStateVariableTraceTest, BinaryNumericNumeric) {
 /////////////////////////////////////////////////////////
 //
 //
+// BinaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, BinaryNumericSpatial) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] (sum(multiply(clusteredness(clusters), clusteredness(clusters))) > 0)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // BinaryNumericTemporal
 //
 //
@@ -1172,6 +1185,19 @@ TEST_F(NumericStateVariableTraceTest, UnaryNumericMeasureTrunc) {
 
 TEST_F(NumericStateVariableTraceTest, UnaryNumericNumeric) {
     EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [max([0, 11] {A}) > 12]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(NumericStateVariableTraceTest, UnaryNumericSpatial) {
+    EXPECT_FALSE(RunEvaluationTest("P >= 0.3 [F [0, 11] (max(ceil(clusteredness(clusters))) > 0)]"));
 }
 
 

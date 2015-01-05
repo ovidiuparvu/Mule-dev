@@ -79,7 +79,6 @@ TEST(BinaryNumericFilter, Correct) {
 //
 /////////////////////////////////////////////////////////
 
-
 TEST(BinaryNumericMeasure, IncorrectBinaryNumericMeasure) {
     EXPECT_THROW(parseInputString("P >= 0.3 [{A} <= coord(2, 3) a]"), InvalidInputException);
 }
@@ -163,6 +162,59 @@ TEST(BinaryNumericNumeric, IncorrectInputAfterEndBracket) {
 
 TEST(BinaryNumericNumeric, Correct) {
     EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 5] add(3, {A})) <= 6]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(BinaryNumericSpatial, IncorrectInputMissingParameterOne) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply(density(regions))) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, IncorrectInputMissingParameterTwo) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply(area(regions))) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, IncorrectInputMissingParametersOneTwo) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply()) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, IncorrectInputBeforeStartBracket) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply((area(regions), density(regions))) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, IncorrectInputAfterStartBracket) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply(.area(regions), density(regions))) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, InvalidFirstParameter) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply(2, density(regions))) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, MissingParametersComma) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply(area(regions) density(regions))) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, InvalidSecondParameter) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply(area(regions), {B})) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, IncorrectInputBeforeEndBracket) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply(area(regions), density(regions), perimeter(regions))) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, IncorrectInputAfterEndBracket) {
+    EXPECT_THROW(parseInputString("P <= 0.9 [sum(multiply(area(regions), density(regions)) + 3) > 3]"), InvalidInputException);
+}
+
+TEST(BinaryNumericSpatial, Correct) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [sum(multiply(area(regions), density(regions))) > 3]"));
 }
 
 
@@ -2588,6 +2640,43 @@ TEST(UnaryNumericNumeric, IncorrectInputMissingBothOperands) {
 
 TEST(UnaryNumericNumeric, Correct) {
     EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 11] {A}) <= abs(3)]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST(UnaryNumericSpatial, IncorrectInputMissingParameter) {
+    EXPECT_THROW(parseInputString("P > 0.23 [product(round()) = 4]"), InvalidInputException);
+}
+
+TEST(UnaryNumericSpatial, IncorrectInputBeforeStartBracket) {
+    EXPECT_THROW(parseInputString("P > 0.23 [product(roundabs(perimeter(regions))) = 4]"), InvalidInputException);
+}
+
+TEST(UnaryNumericSpatial, IncorrectInputAfterStartBracket) {
+    EXPECT_THROW(parseInputString("P > 0.23 [product(round(0.2 + perimeter(regions))) = 4]"), InvalidInputException);
+}
+
+TEST(UnaryNumericSpatial, IncorrectInputBeforeEndBracket) {
+    EXPECT_THROW(parseInputString("P > 0.23 [product(round(perimeter(regions) % 3)) = 4]"), InvalidInputException);
+}
+
+TEST(UnaryNumericSpatial, IncorrectInputAfterEndBracket) {
+    EXPECT_THROW(parseInputString("P > 0.23 [product(round(perimeter(regions)) + 0.9) = 4]"), InvalidInputException);
+}
+
+TEST(UnaryNumericSpatial, IncorrectInputDoubleBrackets) {
+    EXPECT_THROW(parseInputString("P > 0.23 [product(round((perimeter(regions)))) = 4]"), InvalidInputException);
+}
+
+TEST(UnaryNumericSpatial, Correct) {
+    EXPECT_TRUE(parseInputString("P > 0.23 [product(round(perimeter(regions))) = 4]"));
 }
 
 

@@ -243,6 +243,18 @@ TEST_F(CompleteTraceTest, BinaryNumericNumeric) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 5] add(count(clusteredness(clusters)), 2)) >= 7.99999]"));
 }
 
+/////////////////////////////////////////////////////////
+//
+//
+// BinaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, BinaryNumericSpatial) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] (sum(multiply(clusteredness(clusters), clusteredness(clusters))) = 1375.76)]"));
+}
+
 
 /////////////////////////////////////////////////////////
 //
@@ -1243,6 +1255,19 @@ TEST_F(CompleteTraceTest, UnaryNumericMeasureTrunc) {
 
 TEST_F(CompleteTraceTest, UnaryNumericNumeric) {
     EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [max([0, 11] count(clusteredness(clusters))) = 11]"));
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(CompleteTraceTest, UnaryNumericSpatial) {
+    EXPECT_TRUE(RunEvaluationTest("P >= 0.3 [F [0, 11] (max(ceil(clusteredness(clusters))) = 28)]"));
 }
 
 

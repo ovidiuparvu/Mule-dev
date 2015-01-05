@@ -98,6 +98,19 @@ TEST_F(EmptyTraceTest, BinaryNumericNumeric) {
 /////////////////////////////////////////////////////////
 //
 //
+// BinaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, BinaryNumericSpatial) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [F [0, 11] (sum(multiply(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s), /*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 1375.76)]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
 // BinaryNumericTemporal
 //
 //
@@ -1055,6 +1068,19 @@ TEST_F(EmptyTraceTest, UnaryNumericMeasureTrunc) {
 
 TEST_F(EmptyTraceTest, UnaryNumericNumeric) {
     EXPECT_THROW(RunEvaluationTest("P >= 0.3 [max([0, 11] {A}) <= abs(3.0)]"), SpatialTemporalException);
+}
+
+
+/////////////////////////////////////////////////////////
+//
+//
+// UnaryNumericSpatial
+//
+//
+/////////////////////////////////////////////////////////
+
+TEST_F(EmptyTraceTest, UnaryNumericSpatial) {
+    EXPECT_THROW(RunEvaluationTest("P >= 0.3 [F [0, 11] (max(ceil(/*{{ spatial_measures[0].name }}*/(/*{{ spatial_entities[0].name }}*/s))) = 28)]"), SpatialTemporalException);
 }
 
 
