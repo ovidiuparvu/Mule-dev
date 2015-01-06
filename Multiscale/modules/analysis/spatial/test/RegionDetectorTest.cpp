@@ -971,6 +971,35 @@ TEST(RegionDetector, OneCircularRegion) {
     EXPECT_TRUE(detectedRegions.back().getShape() == Shape2D::Circle);
 }
 
+TEST(RegionDetector, OneRegionComprisingDifferentDensityPositions) {
+    // Define the region detector
+    RegionDetector detector;
+
+    // Set the spatial analysis parameter values
+    detector.setAlpha(0);
+    detector.setBeta(100);
+    detector.setBlurKernelSize(0);
+    detector.setMorphologicalCloseIterations(0);
+    detector.setEpsilon(0);
+    detector.setRegionAreaThresh(0);
+    detector.setThresholdValue(0);
+
+    // Create the input image
+    cv::Mat inputImage = (cv::Mat_<float>(3, 5) << 63.75,   0.0,    127.5,  0.0,    0.0,
+                                                   63.75,   63.75,  0.0,    63.75,  0.0,
+                                                   0.0,     0.0,    0.0,    0.0,    63.75);
+
+    // Detect regions in the image
+    detector.detect(inputImage);
+
+    // Retrieve the collection of detected regions
+    std::vector<Region> detectedRegions = detector.getRegions();
+
+    // Test the corresponding condition
+    EXPECT_NEAR(detectedRegions.back().getDensity(), 0.2916666666, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(detectedRegions.back().getArea(), 6, DOUBLE_COMP_ERROR);
+}
+
 TEST(RegionDetector, OneZeroAngleRegion) {
     // Define the region detector
     RegionDetector detector;

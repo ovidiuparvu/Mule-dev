@@ -63,11 +63,11 @@ namespace multiscale {
                 //! Get the value of the next timepoint considering beginIndex
                 unsigned long nextTimePointValue() const;
 
-                //! Set the subtrace containing timepoints with values greater than the given start value
+                //! Set the subtrace containing timepoints with values greater or equal to the given start value
                 /*!
                  * \param startValue    The starting value of the subtrace
                  */
-                void setSubTraceWithTimepointsValuesGreaterThan(unsigned long startValue);
+                void setSubTraceWithTimepointsValuesGreaterOrEqualTo(unsigned long startValue);
 
                 //! Advance the trace begin index by the given value
                 /*!

@@ -1,9 +1,11 @@
 #include "multiscale/analysis/spatial/factory/RectangularMatFactory.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
+#include "multiscale/util/Numeric.hpp"
 
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
+using namespace multiscale;
 using namespace multiscale::analysis;
 
 
@@ -34,17 +36,18 @@ void RectangularMatFactory::readValuesFromFile(std::ifstream &fin, cv::Mat &imag
     // Read the values from the input file stream
     for (std::size_t i = 0; i < rows; i++) {
         for (std::size_t j = 0; j < cols; j++) {
-            // Read the next value
-            fin >> value;
-
-            // Check if the value is valid
-            if ((value < 0) || (value > 1)) {
-                MS_throw(InvalidInputException, ERR_INVALID_VALUE);
-            }
+            readNextValueFromFile(fin, value);
+            validateValue(value);
 
             // Scale up the value to the interval [0, 255]
-            image.at<float>(i, j) = (value * 255);
+            image.at<float>(i, j) = (value * 255.0);
         }
+    }
+}
+
+void RectangularMatFactory::validateValue(float value) {
+    if ((value < 0) || (value > 1)) {
+        MS_throw(InvalidInputException, ERR_INVALID_VALUE);
     }
 }
 

@@ -3,6 +3,8 @@
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/NumericRangeManipulator.hpp"
 
+#include <limits>
+
 using namespace multiscale;
 using namespace analysis;
 
@@ -48,6 +50,13 @@ void MatFactory::initInputFile(std::ifstream &fin, const std::string& inputFileP
     fin >> rows >> cols >> simulationTime;
 }
 
+void MatFactory::readNextValueFromFile(std::ifstream &fin, float &value) {
+    fin >> value;
+
+    // Round the value to the requested precision
+    value = Numeric::round(value, INPUT_VALUE_PRECISION);
+}
+
 void MatFactory::closeInputFileStream(std::ifstream &fin, const std::string &inputFilePath) {
     // Check if the file contains additional unnecessary data
     // after excluding the cv::line feed character
@@ -80,6 +89,8 @@ bool MatFactory::isValidInputImage(const cv::Mat &image, const std::string &imag
 
 
 // Constants
+const int         MatFactory::INPUT_VALUE_PRECISION = std::numeric_limits<float>::max_digits10;
+
 const std::string MatFactory::ERR_OPEN_INPUT_FILE_BEGIN = "The input file (";
 const std::string MatFactory::ERR_OPEN_INPUT_FILE_END   = ") could not be opened.";
 

@@ -19,6 +19,7 @@ namespace multiscale {
                 /*!
                  * \param numericStateVariable  The provided numeric state variable
                  * \param timePoint             The given timepoint
+                 * \param typeSemanticsTable    The given type semantics table
                  */
                 static double evaluate(const NumericStateVariableAttribute &numericStateVariable,
                                        const TimePoint &timePoint,

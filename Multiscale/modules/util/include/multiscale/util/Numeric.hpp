@@ -170,6 +170,21 @@ namespace multiscale {
              */
             static double quartile(const std::vector<double> &numbers, double quartile);
 
+            //! Round the number considering the given precision
+            /*!
+             * \param number    The given number
+             * \param precision The considered precision
+             */
+            template <typename FloatingPointType>
+            static FloatingPointType round(FloatingPointType number, unsigned int precision = 2) {
+                FloatingPointType precisionMultiplierFactor = std::pow(10.0, static_cast<FloatingPointType>(precision));
+
+                return (
+                    (std::round(number * precisionMultiplierFactor)) /
+                    (precisionMultiplierFactor)
+                );
+            }
+
             //! Return the skew of the provided numbers
             /*!
              * \param numbers   The collection of numbers

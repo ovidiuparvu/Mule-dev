@@ -41,6 +41,15 @@ namespace multiscale {
 
             private:
 
+                //! Validate the provided image value
+                /*! The image value is valid if it is between 0 and 1.
+                 *  An exception is thrown if the image value is invalid.
+                 *
+                 * \param value The provided image value
+                 */
+                void validateValue(float value);
+
+
                 // Constants
                 static const std::string ERR_INVALID_VALUE;
 

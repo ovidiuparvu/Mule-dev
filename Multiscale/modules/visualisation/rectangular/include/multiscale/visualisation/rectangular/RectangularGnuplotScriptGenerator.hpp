@@ -109,6 +109,8 @@ namespace multiscale {
 
                 static const double REPLACE_DIMENSION_EXTRA;
 
+                static const int         OUTPUT_PRECISION;
+
                 static const std::string OUTPUT_SEPARATOR;
 
                 static const std::string GNUPLOT_EXTENSION;

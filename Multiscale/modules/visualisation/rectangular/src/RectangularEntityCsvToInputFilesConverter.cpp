@@ -10,6 +10,7 @@
 #include <cassert>
 #include <cstdlib>
 #include <fstream>
+#include <iomanip>
 #include <limits>
 
 using namespace multiscale::visualisation;
@@ -164,10 +165,12 @@ void RectangularEntityCsvToInputFilesConverter::processLine(const std::string &l
 
     for (unsigned int i = 0; i < height; i++) {
         for (unsigned int j = 0; j < (width - 1); j++) {
-            fout << entitiesGrid[(i * width) + j] << OUTPUT_SEPARATOR;
+            fout << std::setprecision(OUTPUT_PRECISION)
+                 << entitiesGrid[(i * width) + j] << OUTPUT_SEPARATOR;
         }
 
-        fout << entitiesGrid[(i * width) + width - 1] << std::endl;
+        fout << std::setprecision(OUTPUT_PRECISION)
+             << entitiesGrid[(i * width) + width - 1] << std::endl;
     }
 
     fout.close();
@@ -264,6 +267,8 @@ void RectangularEntityCsvToInputFilesConverter::validateEntitiesGrid(const std::
 
 
 // Constants
+const int         RectangularEntityCsvToInputFilesConverter::OUTPUT_PRECISION        = std::numeric_limits<double>::max_digits10;
+
 const std::string RectangularEntityCsvToInputFilesConverter::OUTPUT_EXTENSION        = ".in";
 const std::string RectangularEntityCsvToInputFilesConverter::OUTPUT_SEPARATOR        = " ";
 const std::string RectangularEntityCsvToInputFilesConverter::OUTPUT_FILE_SEPARATOR   = "_";

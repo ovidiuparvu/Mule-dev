@@ -213,6 +213,8 @@ namespace multiscale {
                 // Constants
                 static const int RADIUS_MIN;
 
+                static const int OUTPUT_PRECISION;
+
                 static const std::string OUTPUT_EXTENSION;
                 static const std::string OUTPUT_SEPARATOR;
                 static const std::string OUTPUT_FILE_SEPARATOR;

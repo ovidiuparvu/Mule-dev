@@ -11,6 +11,7 @@
 #include <cassert>
 #include <cstdlib>
 #include <fstream>
+#include <iomanip>
 #include <limits>
 #include <string>
 
@@ -201,14 +202,17 @@ void PolarCsvToInputFilesConverter::processLine(const std::string &line, unsigne
 
     initOutputFile(fout, outputIndex, simulationTime);
 
-    fout << concentrations[0] << std::endl;
+    fout << std::setprecision(OUTPUT_PRECISION)
+         << concentrations[0] << std::endl;
 
     for (unsigned int i = 1; i < nrOfConcentricCircles; i++) {
         for (unsigned int j = 0; j < (nrOfSectors - 1); j++) {
-            fout << concentrations[(i - 1) * nrOfSectors + j + 1] << OUTPUT_SEPARATOR;
+            fout << std::setprecision(OUTPUT_PRECISION)
+                 << concentrations[(i - 1) * nrOfSectors + j + 1] << OUTPUT_SEPARATOR;
         }
 
-        fout << concentrations[i * nrOfSectors] << std::endl;
+        fout << std::setprecision(OUTPUT_PRECISION)
+             << concentrations[i * nrOfSectors] << std::endl;
     }
 }
 
@@ -359,7 +363,9 @@ void PolarCsvToInputFilesConverter::updateMaximumConcentration(const std::string
 
 
 // Constants
-const int PolarCsvToInputFilesConverter::RADIUS_MIN  = 1;
+const int PolarCsvToInputFilesConverter::RADIUS_MIN = 1;
+
+const int PolarCsvToInputFilesConverter::OUTPUT_PRECISION = std::numeric_limits<double>::max_digits10;
 
 const std::string PolarCsvToInputFilesConverter::OUTPUT_EXTENSION        = ".in";
 const std::string PolarCsvToInputFilesConverter::OUTPUT_SEPARATOR        = " ";

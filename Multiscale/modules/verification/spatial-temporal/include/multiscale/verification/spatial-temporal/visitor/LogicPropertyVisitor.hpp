@@ -541,7 +541,7 @@ namespace multiscale {
                     // Increment the considered starting timepoint index incrementally
                     // for the given time interval
                     for (unsigned long i = startTime; i <= endTime; i = trace.nextTimePointValue()) {
-                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
+                        trace.setSubTraceWithTimepointsValuesGreaterOrEqualTo(i);
 
                         // If the right hand side logic substatement of the until logic property
                         // evaluates to true then evaluate the left-hand-side preceding logic properties
@@ -579,7 +579,7 @@ namespace multiscale {
                     // Increment the considered starting timepoint index incrementally
                     // for the given time interval and check if the logic property evaluates to true
                     for (unsigned long i = startTime; i <= endTime; i = trace.nextTimePointValue()) {
-                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
+                        trace.setSubTraceWithTimepointsValuesGreaterOrEqualTo(i);
 
                         if (evaluate(temporalLogicProperty.logicProperty, trace)) {
                             return true;
@@ -608,7 +608,7 @@ namespace multiscale {
                     // Increment the considered starting timepoint index incrementally
                     // for the given time interval and check if the logic property evaluates to false
                     for (unsigned long i = startTime; i <= endTime; i = trace.nextTimePointValue()) {
-                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
+                        trace.setSubTraceWithTimepointsValuesGreaterOrEqualTo(i);
 
                         if (!evaluate(temporalLogicProperty.logicProperty, trace)) {
                             return false;
@@ -762,7 +762,7 @@ namespace multiscale {
                     // Increment the considered starting timepoint index incrementally
                     // for the given time interval
                     for (unsigned long i = startTime; i < endTime; i = trace.nextTimePointValue()) {
-                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
+                        trace.setSubTraceWithTimepointsValuesGreaterOrEqualTo(i);
 
                         if (!evaluate(precedingLogicProperties, trace)) {
                             return false;

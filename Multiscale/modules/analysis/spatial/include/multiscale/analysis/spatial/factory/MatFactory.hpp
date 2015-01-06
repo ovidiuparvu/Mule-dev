@@ -59,10 +59,17 @@ namespace multiscale {
                 /*!
                  * Read the image values (in [0, 1]) from the given file.
                  *
-                 * \param fin   The file from which the values are read
+                 * \param fin   The input file stream from which the values are read
                  * \param image The image to which the values are written
                  */
                 virtual void readValuesFromFile(std::ifstream &fin, cv::Mat &image) = 0;
+
+                //! Read the next image value from the provided input file stream
+                /*!
+                 * \param fin       The input file stream from which the values are read
+                 * \param nextValue The next image value read from the file
+                 */
+                void readNextValueFromFile(std::ifstream &fin, float &nextValue);
 
                 //! Close the input file stream
                 /*! If the file contains more data than expected throw an exception.
@@ -82,6 +89,8 @@ namespace multiscale {
             protected:
 
                 // Constants
+                static const int         INPUT_VALUE_PRECISION;
+
                 static const std::string ERR_OPEN_INPUT_FILE_BEGIN;
                 static const std::string ERR_OPEN_INPUT_FILE_END;
 

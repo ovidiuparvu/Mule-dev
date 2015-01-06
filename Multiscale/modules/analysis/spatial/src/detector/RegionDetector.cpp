@@ -206,7 +206,7 @@ void RegionDetector::computeAverageMeasures(std::vector<Region> &regions) {
 }
 
 void RegionDetector::computeAverageClusterednessDegree(std::vector<Region> &regions) {
-    avgClusterednessDegree = sumOfAverageCentroidDistances(regions);
+    avgClusterednessDegree = computeSumOfAverageCentroidDistances(regions);
 
     // Take the average of the sum of average distances between clusters
     avgClusterednessDegree = Numeric::division(avgClusterednessDegree, regions.size());
@@ -217,24 +217,37 @@ void RegionDetector::computeAverageClusterednessDegree(std::vector<Region> &regi
                                                           : 1;
 }
 
-double RegionDetector::sumOfAverageCentroidDistances(std::vector<Region> &regions) {
-    avgClusterednessDegree = 0;
+double RegionDetector::computeSumOfAverageCentroidDistances(std::vector<Region> &regions) {
+    double sumOfAverageCentroidDistances = 0;
 
     for (auto &region: regions) {
-        cv::Point2f centroid = region.getCentre();
-        double distance = 0;
-
-        for (auto &otherRegion: regions) {
-            cv::Point2f otherCentroid = otherRegion.getCentre();
-
-            distance += Geometry2D::distanceBtwPoints(centroid, otherCentroid);
-        }
-
-        avgClusterednessDegree += (regions.size() > 1) ? (distance / (regions.size() - 1))
-                                                       : 0;
+        sumOfAverageCentroidDistances += computeAverageCentroidDistance(
+                                             region.getCentre(),
+                                             regions
+                                         );
     }
 
-    return avgClusterednessDegree;
+    return sumOfAverageCentroidDistances;
+}
+
+double RegionDetector::computeAverageCentroidDistance(const cv::Point2f &centroid,
+                                                      std::vector<Region> &regions) {
+    double distance = 0;
+
+    // Compute the sum of all centroid distances
+    for (auto &region: regions) {
+        distance += Geometry2D::distanceBtwPoints(
+                        centroid,
+                        region.getCentre()
+                    );
+    }
+
+    // Divide the centroid distances sum by the number of regions
+    // excluding the one for which the centroid was passed as a parameter
+    return (
+        (regions.size() > 1) ? (distance / (regions.size() - 1))
+                             : 0
+    );
 }
 
 void RegionDetector::computeAverageDensity(std::vector<Region> &regions) {
@@ -358,37 +371,65 @@ bool RegionDetector::isValidHole(const std::vector<cv::Point> &hole,
 }
 
 double RegionDetector::computeRegionDensity(const Polygon &polygon) {
-    // Create a blank mask where each pixel is initialised with zero intensity
-    cv::Mat mask(cv::Mat::zeros(image.rows, image.cols, CV_8UC1));
-
-    // Set the intensity of all pixels surrounded by the polygon outer border to maximum
-    drawContours(
-        mask, std::vector<std::vector<cv::Point>>(1, polygon.first), -1,
-        cv::Scalar(INTENSITY_MAX), CV_FILLED
-    );
-
-    // Set the intensity of all pixels surrounded by inner borders to zero
-    drawContours(
-        mask, polygon.second, -1, cv::Scalar(0), CV_FILLED
-    );
-
-    // Set the intensity of all pixels defined by the polygon outer border to maximum
-    // The reason for adding this step is that some of the pixels may have been
-    // assigned zero intensity in the previous step because they are common to both
-    // outer and inner borders
-    drawContours(
-        mask, std::vector<std::vector<cv::Point>>(1, polygon.first), -1,
-        cv::Scalar(INTENSITY_MAX), 1
-    );
+    cv::Mat mask = createMaskForPolygon(polygon.first, polygon.second);
 
     // Compute the average intensity of the pixels considering the mask
-    double averageIntensity = (mean(image, mask))[0];
+    double averageIntensity = computeAverageIntensity(image, mask);
 
     // Normalise the density such that its value is in [0, 1]
     return (
         Numeric::division(
             averageIntensity,
             static_cast<double>(INTENSITY_MAX)
+        )
+    );
+}
+
+cv::Mat RegionDetector::createMaskForPolygon(const std::vector<cv::Point> &outerBorderPolygon,
+                                             const std::vector<std::vector<cv::Point>> &innerBorderPolygons) {
+    // Create a blank mask where each pixel is initialised with zero intensity
+    cv::Mat mask(cv::Mat::zeros(image.rows, image.cols, CV_8UC1));
+
+    // Set the intensity of all pixels surrounded by the polygon outer border to maximum
+    drawContours(
+        mask, std::vector<std::vector<cv::Point>>(1, outerBorderPolygon), -1,
+        cv::Scalar(INTENSITY_MAX), CV_FILLED
+    );
+
+    // Set the intensity of all pixels surrounded by inner borders to zero
+    drawContours(
+        mask, innerBorderPolygons, -1, cv::Scalar(0), CV_FILLED
+    );
+
+    // Set the intensity of all pixels defined by the polygon outer border to maximum.
+    // The reason for adding this step is that some of the pixels may have been
+    // assigned zero intensity in the previous step because they are common to both
+    // outer and inner borders
+    drawContours(
+        mask, std::vector<std::vector<cv::Point>>(1, outerBorderPolygon), -1,
+        cv::Scalar(INTENSITY_MAX), 1
+    );
+
+    return mask;
+}
+
+double RegionDetector::computeAverageIntensity(const cv::Mat &image, const cv::Mat &mask) {
+    std::vector<double> consideredIntensityValues;
+
+    // Collect the considered intensity values
+    for (int i = 0; i < image.rows; i++) {
+        for (int j = 0; j < image.cols; j++) {
+            if (mask.at<uchar>(i, j) == INTENSITY_MAX) {
+                consideredIntensityValues.push_back(
+                    static_cast<double>(image.at<float>(i, j))
+                );
+            }
+        }
+    }
+
+    return (
+        Numeric::average(
+            consideredIntensityValues
         )
     );
 }
@@ -473,8 +514,7 @@ const int RegionDetector::HIERARCHY_PREV_INDEX          = 1;
 const int RegionDetector::HIERARCHY_FIRST_CHILD_INDEX   = 2;
 const int RegionDetector::HIERARCHY_PARENT_INDEX        = 3;
 
-const bool RegionDetector::USE_CANNY_L2             = true;
-const bool RegionDetector::CONTOUR_AREA_ORIENTED    = false;
+const bool RegionDetector::CONTOUR_AREA_ORIENTED = false;
 
 const double RegionDetector::ALPHA_REAL_MIN = 1.0;
 const double RegionDetector::ALPHA_REAL_MAX = 3.0;

@@ -11,6 +11,7 @@
 #include <cassert>
 #include <cstdlib>
 #include <fstream>
+#include <iomanip>
 #include <limits>
 
 using namespace multiscale::visualisation;
@@ -202,10 +203,12 @@ void RectangularCsvToInputFilesConverter::processLine(const std::string &line, u
 
     for (unsigned int i = 0; i < height; i++) {
         for (unsigned int j = 0; j < (width - 1); j++) {
-            fout << concentrations[(i * width) + j] << OUTPUT_SEPARATOR;
+            fout << std::setprecision(OUTPUT_PRECISION)
+                 << concentrations[(i * width) + j] << OUTPUT_SEPARATOR;
         }
 
-        fout << concentrations[(i * width) + width - 1] << std::endl;
+        fout << std::setprecision(OUTPUT_PRECISION)
+             << concentrations[(i * width) + width - 1] << std::endl;
     }
 }
 
@@ -263,10 +266,9 @@ double RectangularCsvToInputFilesConverter::computeNextPositionConcentration(int
 
     // Read the concentrations
     for (unsigned int i = 0; i < nrOfConcentrationsForPosition; i++) {
-        double tmpConcentration = computeConcentration(tokens[(nrOfConcentrationsForPosition *
-                                                              (concentrationIndex - 1)) +
-                                                              1 + i]
-                                                      );
+        double tmpConcentration = computeConcentration(tokens[((nrOfConcentrationsForPosition) *
+                                                       (concentrationIndex - 1)) + 1 + i]);
+
         // Set the concentration A for computing "A / sum(concentrations)"
         if (i == selectedConcentrationIndex) {
             concentration = tmpConcentration;
@@ -324,6 +326,8 @@ void RectangularCsvToInputFilesConverter::updateMaximumConcentration(const std::
 
 
 // Constants
+const int         RectangularCsvToInputFilesConverter::OUTPUT_PRECISION        = std::numeric_limits<double>::max_digits10;
+
 const std::string RectangularCsvToInputFilesConverter::OUTPUT_EXTENSION        = ".in";
 const std::string RectangularCsvToInputFilesConverter::OUTPUT_SEPARATOR        = " ";
 const std::string RectangularCsvToInputFilesConverter::OUTPUT_FILE_SEPARATOR   = "_";

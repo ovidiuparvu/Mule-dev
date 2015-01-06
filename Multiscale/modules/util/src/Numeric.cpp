@@ -14,11 +14,17 @@ double Numeric::epsilon = 1E-9;
 
 
 bool Numeric::greaterOrEqual(double number1, double number2) {
-    return ((number1 > number2) || (almostEqual(number1, number2)));
+    return (
+        (number1 > number2) ||
+        (almostEqual(number1, number2))
+    );
 }
 
 bool Numeric::lessOrEqual(double number1, double number2) {
-    return ((number1 < number2) || (almostEqual(number1, number2)));
+    return (
+        (number1 < number2) ||
+        (almostEqual(number1, number2))
+    );
 }
 
 bool Numeric::almostEqual(double number1, double number2) {

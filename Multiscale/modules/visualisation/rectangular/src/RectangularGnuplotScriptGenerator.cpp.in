@@ -2,10 +2,12 @@
 #include "multiscale/util/StringManipulator.hpp"
 
 #include <cassert>
-#include <iostream>
-#include <vector>
-#include <sstream>
 #include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <vector>
+
 
 using namespace multiscale::visualisation;
 
@@ -102,10 +104,12 @@ void RectangularGnuplotScriptGenerator::outputContent(const std::vector<double> 
                                                       std::ofstream &fout) {
     for (unsigned int i = 0; i < height; i++) {
         for (unsigned int j = 0; j < (width - 1); j++) {
-            fout << concentrations[(i * width) + j] << OUTPUT_SEPARATOR;
+            fout << std::setprecision(OUTPUT_PRECISION)
+                 << concentrations[(i * width) + j] << OUTPUT_SEPARATOR;
         }
 
-        fout << concentrations[(i * width) + width - 1] << std::endl;
+        fout << std::setprecision(OUTPUT_PRECISION)
+             << concentrations[(i * width) + width - 1] << std::endl;
     }
 
     fout.flush();
@@ -133,6 +137,8 @@ const std::string RectangularGnuplotScriptGenerator::REPLACE_HEADER_WIDTH       
 const std::string RectangularGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME    = "OUTPUT_SIM_TIME";
 
 const double RectangularGnuplotScriptGenerator::REPLACE_DIMENSION_EXTRA = 0.5;
+
+const int         RectangularGnuplotScriptGenerator::OUTPUT_PRECISION    = std::numeric_limits<double>::max_digits10;
 
 const std::string RectangularGnuplotScriptGenerator::OUTPUT_SEPARATOR    = " ";
 

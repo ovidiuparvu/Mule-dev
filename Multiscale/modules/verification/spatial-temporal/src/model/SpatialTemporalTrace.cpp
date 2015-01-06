@@ -61,7 +61,7 @@ unsigned long SpatialTemporalTrace::nextTimePointValue() const {
     }
 }
 
-void SpatialTemporalTrace::setSubTraceWithTimepointsValuesGreaterThan(unsigned long startValue) {
+void SpatialTemporalTrace::setSubTraceWithTimepointsValuesGreaterOrEqualTo(unsigned long startValue) {
     validateValue(startValue);
     setSubTraceIndex(startValue);
 }

@@ -164,7 +164,7 @@ namespace multiscale {
 
                     // Compute the timepoints values and add them to the timepoints collection
                     for (unsigned long i = startTimepoint; i <= endTimepoint; i = trace.nextTimePointValue()) {
-                        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
+                        trace.setSubTraceWithTimepointsValuesGreaterOrEqualTo(i);
 
                         // Add timepoint to collection
                         timePoints.push_back(
@@ -487,7 +487,7 @@ multiscale::verification::NumericMeasureCollectionVisitor::evaluateTemporalNumer
 
     // Compute the numeric measure values
     for (unsigned long i = startTimepoint; i <= endTimepoint; i = trace.nextTimePointValue()) {
-        trace.setSubTraceWithTimepointsValuesGreaterThan(i);
+        trace.setSubTraceWithTimepointsValuesGreaterOrEqualTo(i);
 
         // Add the evaluation result to the collection of numeric measure values
         numericMeasureValues.push_back(

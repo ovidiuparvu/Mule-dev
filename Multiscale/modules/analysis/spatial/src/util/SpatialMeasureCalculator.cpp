@@ -72,8 +72,9 @@ cv::Mat SpatialMeasureCalculator::drawFilledPolygonOnImage(const std::vector<cv:
     );
 
     // Add the polygon to the image
-    cv::fillConvexPoly(
-        polygonImage, cv::Mat(polygon), cv::Scalar(POINT_MAX_VALUE)
+    drawContours(
+        polygonImage, std::vector<std::vector<cv::Point>>(1, polygon), -1,
+        cv::Scalar(POINT_MAX_VALUE), CV_FILLED
     );
 
     return polygonImage;
@@ -81,17 +82,14 @@ cv::Mat SpatialMeasureCalculator::drawFilledPolygonOnImage(const std::vector<cv:
 
 void SpatialMeasureCalculator::subtractPolygonBorderFromImage(const std::vector<cv::Point> &polygon,
                                                               cv::Mat &image) {
-    std::size_t nrOfPolygonPoints = polygon.size();
-
-    // Draw lines between each two points in the polygon
-    for (std::size_t i = 0; i < nrOfPolygonPoints; i++) {
-        line(
-            image,
-            polygon[i],
-            polygon[(i + 1) % nrOfPolygonPoints],
-            cv::Scalar(POINT_MIN_VALUE)
-        );
-    }
+    // Set the intensity of all pixels defined by the polygon outer border to minimum.
+    // The reason for adding this step is that some of the outer border pixels may have been
+    // assigned maximum intensity when drawing the inner border polygon because they are
+    // common to both outer and inner borders
+    drawContours(
+        image, std::vector<std::vector<cv::Point>>(1, polygon), -1,
+        cv::Scalar(POINT_MIN_VALUE), 1
+    );
 }
 
 cv::Mat SpatialMeasureCalculator::drawFilledCircleOnImage(const cv::Point2f &circleOrigin, double circleRadius) {

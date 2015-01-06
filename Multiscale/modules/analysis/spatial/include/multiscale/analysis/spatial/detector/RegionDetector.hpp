@@ -201,7 +201,16 @@ namespace multiscale {
                 /*!
                  * \param regions The regions in the image
                  */
-                double sumOfAverageCentroidDistances(std::vector<Region> &regions);
+                double computeSumOfAverageCentroidDistances(std::vector<Region> &regions);
+
+                //! Compute the average distance from the given centroid to all other regions centroids
+                /*!
+                 * \param centroid  The centroid from which the distance to all other regions' centroids
+                 *                  are computed
+                 * \param regions   The collection of all regions
+                 */
+                double computeAverageCentroidDistance(const cv::Point2f &centroid,
+                                                      std::vector<Region> &regions);
 
                 //! Compute the average density
                 /*!
@@ -308,6 +317,24 @@ namespace multiscale {
                  */
                 double computeRegionDensity(const Polygon &polygon);
 
+                //! Create an image mask considering the given outer and inner border polygons
+                /*! The value of a mask pixel is maximum if the pixel is contained by the outer and not
+                 *  the inner border polygons. Otherwise the value of the mask pixel is minimum.
+                 *
+                 * \param outerBorderPolygon    The outer border polygon
+                 * \param innerBorderPolygons   The collection of inner border polygons
+                 */
+                cv::Mat createMaskForPolygon(const std::vector<cv::Point> &outerBorderPolygon,
+                                             const std::vector<std::vector<cv::Point>> &innerBorderPolygons);
+
+                //! Compute the average intensity of the image considering only the positions specified by the mask
+                /*! The type of the image is assumed to be CV_32FC1, respectively of the mask CV_8UC1.
+                 *
+                 * \param image The provided image
+                 * \param mask  The considered mask
+                 */
+                double computeAverageIntensity(const cv::Mat &image, const cv::Mat &mask);
+
                 //! Clear the element present in the regions vector
                 void clearPreviousDetectionResults() override;
 
@@ -371,7 +398,6 @@ namespace multiscale {
                 static const int HIERARCHY_FIRST_CHILD_INDEX;
                 static const int HIERARCHY_PARENT_INDEX;
 
-                static const bool USE_CANNY_L2;
                 static const bool CONTOUR_AREA_ORIENTED;
 
                 static const double ALPHA_REAL_MIN;
