@@ -177,7 +177,7 @@ function SimulateModel() {
     local startTime=$(date +%s.%N);
     
     # Run a simulation of the model
-    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} ${JSIMHOME}/linux/bin/jsbatch -f ${MODEL_INPUT_FILE} -ofmt csv -out ${rawSimulationOutputPath} 1>${simulationLogOutputPath} 2>&1;
+    timeout ${COMMAND_EXECUTION_TIMELIMIT} ${JSIMHOME}/linux/bin/jsbatch -f ${MODEL_INPUT_FILE} -ofmt csv -out ${rawSimulationOutputPath} 1>${simulationLogOutputPath} 2>&1;
     
     # Record execution stop time
     local stopTime=$(date +%s.%N);
@@ -208,7 +208,7 @@ function ConvertModelSimulationOutputToCsv() {
     local startTime=$(date +%s.%N);
     
     # Convert the simulation output to csv format
-    timelimit -T ${COMMAND_EXECUTION_TIMELIMIT} cat ${rawSimulationOutputPath} | cut -d"," -f1,109,112,119,121,122,123,125,126 | awk --field-separator="," '/^[0-9.,]+/ { time=($1 * 1000); sub("[0-9E.]+", "", $0); print time $0; } /^time/ { print $0; }' > ${processedSimulationOutputPath};
+    timeout ${COMMAND_EXECUTION_TIMELIMIT} cat ${rawSimulationOutputPath} | cut -d"," -f1,109,112,119,121,122,123,125,126 | awk --field-separator="," '/^[0-9.,]+/ { time=($1 * 1000); sub("[0-9E.]+", "", $0); print time $0; } /^time/ { print $0; }' > ${processedSimulationOutputPath};
     
     # Record execution stop time
     local stopTime=$(date +%s.%N);
@@ -381,7 +381,7 @@ function GenerateClusterTemporaryMSTMLSubfile() {
     local inputFileBasenameRoot=$(echo ${inputFileBasename} | rev | cut -d'_' -f2- | rev);
 
     # Run the cluster detection procedure for each input file in parallel
-    ls ${inputDataOutputFolder}/*.in | parallel ./bin/SimulationDetectClusters --input-file={} --output-file=${analysisOutputFolder}/{/.} --height=${simulationGridHeight} --width=${simulationGridWidth} --max-pileup=${maxPileup} --debug-mode="false"
+    ls ${inputDataOutputFolder}/*.in | parallel --timeout ${COMMAND_EXECUTION_TIMELIMIT} bin/SimulationDetectClusters --input-file={} --output-file=${analysisOutputFolder}/{/.} --height=${simulationGridHeight} --width=${simulationGridWidth} --max-pileup=${maxPileup} --debug-mode="false"
 
     # Define the variables required to merge the xml files
     local clustersXMLOutputPath=${analysisOutputFolder}/"results_clusters.xml";
@@ -539,7 +539,7 @@ function GenerateRegionTemporaryMSTMLSubfile() {
     local inputFileBasenameRoot=$(echo ${inputFileBasename} | rev | cut -d'_' -f2- | rev);
 
     # Run the region detection procedure for each input file in parallel
-    ls ${inputDataOutputFolder}/*.in | parallel ./bin/RectangularDetectRegions --input-file={} --output-file=${analysisOutputFolder}/{/.} --debug-mode="false"
+    ls ${inputDataOutputFolder}/*.in | parallel --timeout ${COMMAND_EXECUTION_TIMELIMIT} bin/RectangularDetectRegions --input-file={} --output-file=${analysisOutputFolder}/{/.} --debug-mode="false"
 
     # Define the variables required to merge the xml files
     local regionsXMLOutputPath=${analysisOutputFolder}/"results_regions.xml";
@@ -671,7 +671,7 @@ function MergeMSTMLSubfiles() {
     # Step 1: Store the timepoints values in a separate file
     ####################################################################################
      
-    cat ${processedSimulationOutputPath} | cut -d"," -f1 >> ${timepointsValuesFilePath};
+    cat ${processedSimulationOutputPath} | cut -d"," -f1 > ${timepointsValuesFilePath};
 
     ####################################################################################
     # Step 2: Merge MSTML subfiles
@@ -747,6 +747,14 @@ do
 
 
     ##############################################################################
+    # Step 0: Initialisation
+    ##############################################################################
+    
+    # Inform the user that the user will be simulated and analysed the i-th time
+    echo "Model simulation and analysis iteration: ${i} (Start time: ${date})";
+
+
+    ##############################################################################
     # Step 1: Simulate the model
     ##############################################################################
     
@@ -777,7 +785,7 @@ do
     ##############################################################################
     # Step 5: Post-processing
     ##############################################################################
-    
+   
     # Separate model simulation output using a blank line
     echo;
 done
@@ -788,11 +796,11 @@ echo "${NR_MODEL_SIMULATIONS} MSTML file(s) were generated successfully.";
 echo "";
 
 
-###############################################################################
+##############################################################################
 #
 # Termination
 #
-###############################################################################
+##############################################################################
 
 # Remove temporary folder(s)
 rm -rf ${OUT_MSTML_SUBFILES_TMP_FOLDER}
