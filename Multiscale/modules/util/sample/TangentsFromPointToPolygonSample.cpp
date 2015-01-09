@@ -105,7 +105,7 @@ void findTangentsForRandomPolygons() {
         std::vector<cv::Point2f> points = generateRandomSetOf2DPoints(nrOfPoints);
 
         // Construct a polygon from the points
-        cv::convexHull(points, randomPolygon);
+        randomPolygon = Geometry2D::computeConvexHull(points);
 
         // Find tangents to the polygon
         findTangentsForRandomPolygon(randomPolygon);
@@ -128,7 +128,7 @@ void findTangentsForRandomLines() {
         std::vector<cv::Point2f> points = generateRandomSetOf2DPoints(2);
 
         // Construct a polygon from the points
-        cv::convexHull(points, randomPolygon);
+        randomPolygon = Geometry2D::computeConvexHull(points);
 
         // Find tangents to the polygon
         findTangentsForRandomPolygon(randomPolygon);

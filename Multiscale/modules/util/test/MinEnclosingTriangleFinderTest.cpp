@@ -1,5 +1,5 @@
 #include "multiscale/core/MultiscaleTest.hpp"
-#include "multiscale/util/MinEnclosingTriangleFinder.hpp"
+#include "multiscale/util/geometry/MinEnclosingTriangleFinder.hpp"
 
 #include <limits>
 #include <vector>
@@ -220,7 +220,7 @@ namespace multiscaletest {
     void MinEnclosingTriangleFinderTest::RunTest() {
         area = MinEnclosingTriangleFinder().find(points, triangle);
 
-        cv::convexHull(points, convexHull);
+        convexHull = Geometry2D::computeConvexHull(points);
     }
 
     void MinEnclosingTriangleFinderTest::ValidateTestResults() {

@@ -1,7 +1,7 @@
 #include "multiscale/analysis/spatial/model/Region.hpp"
 #include "multiscale/analysis/spatial/util/SpatialMeasureCalculator.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
-#include "multiscale/util/MinEnclosingTriangleFinder.hpp"
+#include "multiscale/util/geometry/MinEnclosingTriangleFinder.hpp"
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
@@ -180,7 +180,7 @@ double Region::isTriangularMeasure() {
     std::vector<cv::Point> contourConvexHull;
 
     // Compute the convex hull of the outer border polygon
-    convexHull(outerBorderPolygon, contourConvexHull, CONVEX_HULL_CLOCKWISE);
+    contourConvexHull = Geometry2D::computeConvexHull(outerBorderPolygon, CONVEX_HULL_CLOCKWISE);
 
     // Find the minimum area triangle enclosing the convex hull
     double triangleArea = MinEnclosingTriangleFinder().find(

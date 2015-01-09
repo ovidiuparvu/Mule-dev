@@ -60,6 +60,29 @@ TEST(Geometry2D, TangentsFromPointToPolygonReferenceAndTangentPointsAreCollinear
     EXPECT_NEAR(rightMostTangentPoint.y, 42, DOUBLE_COMP_ERROR);
 }
 
+TEST(Geometry2D, TangentsFromPointToLargerPolygonReferenceAndTangentPointsAreCollinearWithPolygonPoint) {
+    std::vector<cv::Point2f> convexPolygon(
+        { cv::Point2f(35, 28), cv::Point2f(31, 32), cv::Point2f(29, 32), cv::Point2f(27, 30), cv::Point2f(26, 25),
+          cv::Point2f(27, 24), cv::Point2f(34, 24), cv::Point2f(35, 25) }
+    );
+
+    cv::Point2f referencePoint(25.5, 25.5);
+
+    // Find the tangents from the reference point to the convex polygon
+    cv::Point2f leftMostTangentPoint;
+    cv::Point2f rightMostTangentPoint;
+
+    Geometry2D::tangentsFromPointToPolygon(
+        convexPolygon, referencePoint, leftMostTangentPoint, rightMostTangentPoint
+    );
+
+    // Check if the obtained tangent points are the expected ones
+    EXPECT_NEAR(leftMostTangentPoint.x, 27, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(leftMostTangentPoint.y, 30, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(rightMostTangentPoint.x, 26, DOUBLE_COMP_ERROR);
+    EXPECT_NEAR(rightMostTangentPoint.y, 25, DOUBLE_COMP_ERROR);
+}
+
 TEST(Geometry2D, TangentsFromPointToPolygonFirstPointRightMostTangentPoint) {
     std::vector<cv::Point2f> convexPolygon(
         { cv::Point2f(9, 42), cv::Point2f(7, 44), cv::Point2f(6, 44), cv::Point2f(4, 42), cv::Point2f(7, 40) }

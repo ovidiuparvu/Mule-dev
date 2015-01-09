@@ -1,3 +1,4 @@
+#include "multiscale/util/geometry/TangentsFromPointToPolygonFinder.hpp"
 #include "multiscale/util/Geometry2D.hpp"
 
 #include <algorithm>
@@ -158,22 +159,38 @@ bool Geometry2D::isConvexPolygon(const std::vector<cv::Point2f> &polygon) {
     );
 }
 
+std::vector<cv::Point> Geometry2D::computeConvexHull(const std::vector<cv::Point> &polygon,
+                                                     bool arePointsInClockwiseOrder) {
+    std::vector<cv::Point> polygonConvexHull;
+
+    // TODO: Implement method myself to remove dependency between this class
+    //       and the OpenCV library
+    cv::convexHull(polygon, polygonConvexHull, arePointsInClockwiseOrder);
+
+    return polygonConvexHull;
+}
+
+std::vector<cv::Point2f> Geometry2D::computeConvexHull(const std::vector<cv::Point2f> &polygon,
+                                                       bool arePointsInClockwiseOrder) {
+    std::vector<cv::Point2f> polygonConvexHull;
+
+    // TODO: Implement method myself to remove dependency between this class
+    //       and the OpenCV library
+    cv::convexHull(polygon, polygonConvexHull, arePointsInClockwiseOrder);
+
+    return polygonConvexHull;
+}
+
 void Geometry2D::tangentsFromPointToPolygon(const std::vector<cv::Point2f> &convexPolygon,
                                             const cv::Point2f &referencePoint,
                                             cv::Point2f &leftMostTangentPoint,
                                             cv::Point2f &rightMostTangentPoint) {
-    if (!isPointInsidePolygon(referencePoint, convexPolygon)) {
-        if (isConvexPolygon(convexPolygon)) {
-            leftMostTangentPoint  = computeLeftMostTangentPoint(convexPolygon, referencePoint);
-            rightMostTangentPoint = computeRightMostTangentPoint(convexPolygon, referencePoint);
-        } else if (
-            (convexPolygon.size() == 2) &&
-            (!areCollinear(convexPolygon[0], convexPolygon[1], referencePoint))
-        ) {
-            leftMostTangentPoint  = convexPolygon[0];
-            rightMostTangentPoint = convexPolygon[1];
-        }
-    }
+    TangentsFromPointToPolygonFinder<float, float> tangentsFinder(convexPolygon, referencePoint);
+
+    tangentsFinder.computeTangentsPointsForConvexPolygon(
+        leftMostTangentPoint,
+        rightMostTangentPoint
+    );
 }
 
 void Geometry2D::orthogonalLineToAnotherLineEdgePoints(const cv::Point &a1, const cv::Point &b1, cv::Point &a2,
@@ -536,233 +553,6 @@ std::vector<cv::Point> Geometry2D::convertPoints(const std::vector<cv::Point2f> 
     return convertedPoints;
 }
 
-cv::Point2f Geometry2D::computeLeftMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
-                                                    const cv::Point2f &referencePoint) {
-    // Compute the number of points in the polygon
-    int nrOfPolygonPoints = convexPolygon.size();
-
-    // Indices for polygon points
-    int a = 0;
-    int b = nrOfPolygonPoints;
-    int c = 0;
-
-    // Flags indicating the direction of edges A and C
-    bool isEdgeADown = false;
-    bool isEdgeCDown = false;
-
-    // Check if convexPolygon[0] is the left most tangent point
-    if (
-        (
-            isToTheLeftOfLine(
-                referencePoint,
-                convexPolygon[nrOfPolygonPoints - 1],
-                convexPolygon[0]
-            ) || areCollinear(
-                referencePoint,
-                convexPolygon[nrOfPolygonPoints - 1],
-                convexPolygon[0]
-            )
-        ) && !isToTheRightOfLine(
-            referencePoint,
-            convexPolygon[1],
-            convexPolygon[0]
-        )
-    ) {
-        return convexPolygon[0];
-    }
-
-    // Otherwise search for the right most tangent point
-    for (;;) {
-        // Compute the middle point of a and b
-        c = (a + b) / 2;
-
-        // Check if edge C is pointing down
-        isEdgeCDown = isToTheRightOfLine(
-                          referencePoint,
-                          convexPolygon[successor(c, nrOfPolygonPoints)],
-                          convexPolygon[c]
-                      );
-
-        // Check if convexPolygon[c] is the left most tangent point
-        if (isToTheLeftOfLine(
-                referencePoint,
-                convexPolygon[predecessor(c, nrOfPolygonPoints)],
-                convexPolygon[c]
-            ) && !isEdgeCDown
-        )  {
-            return convexPolygon[c];
-        }
-
-        // If no left most tangent point was found choose one of the
-        // subchains [a, c] or [c, b]
-        isEdgeADown = isToTheRightOfLine(
-                          referencePoint,
-                          convexPolygon[successor(a, nrOfPolygonPoints)],
-                          convexPolygon[a]
-                      );
-
-        // If the edge A points down
-        if (isEdgeADown) {
-            // And the edge C points up
-            if (!isEdgeCDown) {
-                // Select subchain [a, c]
-                b = c;
-            } else {
-                // If convexPolygon[a] below convexPolygon[c]
-                if (isToTheRightOfLine(
-                        referencePoint,
-                        convexPolygon[a],
-                        convexPolygon[c]
-                    )
-                ) {
-                    // Select subchain [a, c]
-                    b = c;
-                } else {
-                    // Select subchain [c, b]
-                    a = c;
-                }
-            }
-        } else {
-            // If the edge C points down
-            if (isEdgeCDown) {
-                // Select subchain [c, b]
-                a = c;
-            } else {
-                // If convexPolygon[a] above convexPolygon[c]
-                if (isToTheLeftOfLine(
-                        referencePoint,
-                        convexPolygon[a],
-                        convexPolygon[c]
-                    )
-                ) {
-                    // Select subchain [a, c]
-                    b = c;
-                } else {
-                    // Select subchain [c, b]
-                    a = c;
-                }
-            }
-        }
-    }
-
-    // Line added to avoid "control reaches end of non-void function" warnings
-    return cv::Point2f();
-}
-
-cv::Point2f Geometry2D::computeRightMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
-                                                     const cv::Point2f &referencePoint) {
-    // Compute the number of points in the polygon
-    int nrOfPolygonPoints = convexPolygon.size();
-
-    // Indices for polygon points
-    int a = 0;
-    int b = nrOfPolygonPoints;
-    int c = 0;
-
-    // Flags indicating the direction of edges A and C
-    bool isEdgeAUp   = false;
-    bool isEdgeCDown = false;
-
-    // Check if convexPolygon[0] is the right most tangent point
-    if (
-        (
-            isToTheRightOfLine(
-                referencePoint,
-                convexPolygon[1],
-                convexPolygon[0]
-            ) || areCollinear(
-                referencePoint,
-                convexPolygon[1],
-                convexPolygon[0]
-            )
-        ) && !isToTheLeftOfLine(
-            referencePoint,
-            convexPolygon[nrOfPolygonPoints - 1],
-            convexPolygon[0]
-        )
-    ) {
-        return convexPolygon[0];
-    }
-
-    // Otherwise search for the right most tangent point
-    for (;;) {
-        // Compute the middle point of a and b
-        c = (a + b) / 2;
-
-        // Check if edge C is pointing down
-        isEdgeCDown = isToTheRightOfLine(
-                          referencePoint,
-                          convexPolygon[successor(c, nrOfPolygonPoints)],
-                          convexPolygon[c]
-                      );
-
-        // Check if convexPolygon[c] is the right most tangent point
-        if (isEdgeCDown &&
-            !isToTheLeftOfLine(
-                referencePoint,
-                convexPolygon[predecessor(c, nrOfPolygonPoints)],
-                convexPolygon[c]
-            )
-        ) {
-            return convexPolygon[c];
-        }
-
-        // If no right most tangent point was found choose one of the
-        // subchains [a, c] or [c, b]
-        isEdgeAUp = isToTheLeftOfLine(
-                        referencePoint,
-                        convexPolygon[successor(a, nrOfPolygonPoints)],
-                        convexPolygon[a]
-                    );
-
-        // If the edge A points up
-        if (isEdgeAUp) {
-            // And the edge C points down
-            if (isEdgeCDown) {
-                // Select subchain [a, c]
-                b = c;
-            } else {
-                // If convexPolygon[a] above convexPolygon[c]
-                if (isToTheLeftOfLine(
-                        referencePoint,
-                        convexPolygon[a],
-                        convexPolygon[c]
-                    )
-                ) {
-                    // Select subchain [a, c]
-                    b = c;
-                } else {
-                    // Select subchain [c, b]
-                    a = c;
-                }
-            }
-        } else {
-            // If the edge C points up
-            if (!isEdgeCDown) {
-                // Select subchain [c, b]
-                a = c;
-            } else {
-                // If convexPolygon[a] below convexPolygon[c]
-                if (isToTheRightOfLine(
-                        referencePoint,
-                        convexPolygon[a],
-                        convexPolygon[c]
-                    )
-                ) {
-                    // Select subchain [a, c]
-                    b = c;
-                } else {
-                    // Select subchain [c, b]
-                    a = c;
-                }
-            }
-        }
-    }
-
-    // Line added to avoid "control reaches end of non-void function" warnings
-    return cv::Point2f();
-}
-
 bool Geometry2D::isPointOnEdge(const cv::Point2f &p, int nrOfRows, int nrOfCols) {
     return (
         ((static_cast<int>(p.x) == MATRIX_START_INDEX) && (p.y >= MATRIX_START_INDEX) && (p.y <= nrOfCols)) ||
@@ -817,20 +607,6 @@ void Geometry2D::lineCircleOneIntersectionPoint(const cv::Point2f &circleOrigin,
     inverseTranslate(intersectionPoint, cv::Point2f(-circleOrigin.x, -circleOrigin.y));
 
     intersectionPoints.push_back(intersectionPoint);
-}
-
-int Geometry2D::predecessor(int currentIndex, int nrOfIndices) {
-    return (
-        (currentIndex == 0)
-            ? (nrOfIndices - 1)
-            : (currentIndex - 1)
-    );
-}
-
-int Geometry2D::successor(int currentIndex, int nrOfIndices) {
-    return (
-        (currentIndex + 1) % nrOfIndices
-    );
 }
 
 

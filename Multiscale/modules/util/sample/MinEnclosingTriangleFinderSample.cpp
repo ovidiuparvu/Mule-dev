@@ -1,6 +1,6 @@
 #include "multiscale/exception/ExceptionHandler.hpp"
 #include "multiscale/util/Geometry2D.hpp"
-#include "multiscale/util/MinEnclosingTriangleFinder.hpp"
+#include "multiscale/util/geometry/MinEnclosingTriangleFinder.hpp"
 
 #include <ctime>
 #include <iostream>
@@ -38,7 +38,7 @@ std::vector<cv::Point2f> generateRandomSetOf2DPoints(int nrOfPoints) {
 void printPolygon(const std::vector<cv::Point2f> &points) {
     std::vector<cv::Point2f> polygon;
 
-    convexHull(points, polygon);
+    polygon = Geometry2D::computeConvexHull(points);
 
     // Print the polygon points
     std::cout << "Polygon points: ";
@@ -139,7 +139,7 @@ bool isOneEdgeFlush(const std::vector<cv::Point2f> &convexPolygon, const std::ve
 bool isValidTriangle(const std::vector<cv::Point2f> &points, const std::vector<cv::Point2f> &triangle) {
     std::vector<cv::Point2f> convexPolygon;
 
-    convexHull(points, convexPolygon, true);
+    convexPolygon = Geometry2D::computeConvexHull(points, true);
 
     return (
         (arePointsEnclosed(points, triangle)) &&

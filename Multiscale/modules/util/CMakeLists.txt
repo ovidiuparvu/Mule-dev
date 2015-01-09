@@ -14,8 +14,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(LIB_SRC
     src/ConsolePrinter.cpp
     src/Filesystem.cpp
+    src/geometry/MinEnclosingTriangleFinder.cpp
     src/Geometry2D.cpp
-    src/MinEnclosingTriangleFinder.cpp
     src/NumberIterator.cpp
     src/Numeric.cpp
     src/OperatingSystem.cpp

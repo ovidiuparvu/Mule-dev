@@ -2,7 +2,7 @@
 #include "multiscale/analysis/spatial/util/SpatialMeasureCalculator.hpp"
 #include "multiscale/exception/InvalidInputException.hpp"
 #include "multiscale/util/Geometry2D.hpp"
-#include "multiscale/util/MinEnclosingTriangleFinder.hpp"
+#include "multiscale/util/geometry/MinEnclosingTriangleFinder.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 
 using namespace multiscale::analysis;
@@ -53,7 +53,10 @@ std::vector<cv::Point2f> Cluster::getEntitiesConvexHull() {
     std::vector<cv::Point2f> entitiesConvexHull;
 
     if (entities.size() > 0) {
-        convexHull(entitiesCentrePoints, entitiesConvexHull, CONVEX_HULL_CLOCKWISE);
+        entitiesConvexHull = Geometry2D::computeConvexHull(
+                                 entitiesCentrePoints,
+                                 CONVEX_HULL_CLOCKWISE
+                             );
     }
 
     return entitiesConvexHull;

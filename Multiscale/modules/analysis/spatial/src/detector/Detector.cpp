@@ -150,7 +150,7 @@ double Detector::computePolygonAngle(const std::vector<cv::Point> &polygon) {
 double Detector::computePolygonAngle(const std::vector<cv::Point2f> &polygon) {
     std::vector<cv::Point2f> polygonConvexHull;
 
-    convexHull(polygon, polygonConvexHull);
+    polygonConvexHull = Geometry2D::computeConvexHull(polygon);
 
     return (
         computePolygonAngle(polygonConvexHull, origin)

@@ -156,10 +156,26 @@ namespace multiscale {
              */
             static bool isConvexPolygon(const std::vector<cv::Point2f> &polygon);
 
+            //! Compute the convex hull for the provided polygon
+            /*!
+             * \param polygon                   The provided polygon
+             * \param arePointsInClockwiseOrder Flag indicating if the points in the convex hull
+             *                                  are sorted in clockwise order
+             */
+            static std::vector<cv::Point> computeConvexHull(const std::vector<cv::Point> &polygon,
+                                                            bool arePointsInClockwiseOrder = false);
+
+            //! Compute the convex hull for the provided polygon
+            /*!
+             * \param polygon                   The provided polygon
+             * \param arePointsInClockwiseOrder Flag indicating if the points in the convex hull
+             *                                  are sorted in clockwise order
+             */
+            static std::vector<cv::Point2f> computeConvexHull(const std::vector<cv::Point2f> &polygon,
+                                                              bool arePointsInClockwiseOrder = false);
+
             //! Compute the polygon points where the tangents from a reference point touch the given polygon
-            /*! The employed algorithms are based on the information presented at:
-             *  http://geomalgorithms.com/a15-_tangents.html (Accessed on: 16.12.2014)
-             *
+            /*!
              * \param convexPolygon         The considered convex polygon
              * \param referencePoint        The reference point through which the polygon tangents pass
              * \param leftMostTangentPoint  The left most polygon point through which the tangent passes
@@ -494,24 +510,6 @@ namespace multiscale {
 
         private:
 
-            //! Compute the left-most polygon tangent point considering the given reference point
-            /*! The tangent point is found using a binary search like procedure.
-             *
-             * \param convexPolygon         The considered convex polygon
-             * \param referencePoint        The reference point through which the polygon tangents pass
-             */
-            static cv::Point2f computeLeftMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
-                                                           const cv::Point2f &referencePoint);
-
-            //! Compute the right-most polygon tangent point considering the given reference point
-            /*! The tangent point is found using a binary search like procedure.
-             *
-             * \param convexPolygon         The considered convex polygon
-             * \param referencePoint        The reference point through which the polygon tangents pass
-             */
-            static cv::Point2f computeRightMostTangentPoint(const std::vector<cv::Point2f> &convexPolygon,
-                                                            const cv::Point2f &referencePoint);
-
             //! Check if the given point is on the edge
             /*!
              *  A point "p" is considered to be on the edge if:
@@ -574,20 +572,6 @@ namespace multiscale {
             static void lineCircleOneIntersectionPoint(const cv::Point2f &circleOrigin,
                                                        double A, double B, double C, double delta,
                                                        std::vector<cv::Point2f> &intersectionPoints);
-
-            //! Return the predecessor of the provided index
-            /*!
-             * \param currentIndex  The current index (0-based)
-             * \param nrOfIndices   The total number of indices
-             */
-            static int predecessor(int currentIndex, int nrOfIndices);
-
-            //! Return the successor of the provided index
-            /*!
-             * \param currentIndex  The current index (0-based)
-             * \param nrOfIndices   The total number of indices
-             */
-            static int successor(int currentIndex, int nrOfIndices);
 
         public:
 
