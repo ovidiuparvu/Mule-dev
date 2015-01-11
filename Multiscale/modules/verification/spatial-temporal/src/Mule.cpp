@@ -32,10 +32,12 @@ int main(int argc, char** argv) {
         return EXEC_SUCCESS_CODE;
     } catch(const MultiscaleException &e) {
         ExceptionHandler::printRawErrorMessage(e);
+        ExceptionHandler::printHelpMessage();
 
         return EXEC_ERR_CODE;
     } catch(const std::exception &e) {
         ExceptionHandler::printDetailedErrorMessage(e);
+        ExceptionHandler::printHelpMessage();
 
         return EXEC_ERR_CODE;
     } catch(...) {

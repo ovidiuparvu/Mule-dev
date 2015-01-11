@@ -12,7 +12,7 @@ using namespace multiscale::verification;
 // project build type is "Debug". Otherwise the line will be blank.
 // The #define statement is used to include/exclude test cases from 
 // the unit test MSTMLSubfilesMerger
-#define PROJECT_BUILD_TYPE_DEBUG
+
 
 
 ///////////////////////////////////////////////////////////////////////////////

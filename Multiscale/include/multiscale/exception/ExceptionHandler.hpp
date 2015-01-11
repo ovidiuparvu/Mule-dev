@@ -37,6 +37,17 @@ namespace multiscale {
                           << std::endl << std::endl;
             }
 
+            //! Print the help message
+            /*! A message is printed informing the user that (s)he should run the
+             *  program with the "-h" command line argument for useful execution
+             *  information.
+             */
+            static void printHelpMessage() {
+                std::cout << "For more details on correct execution "
+                          << "run the program with the \"-h\" command line argument."
+                          << std::endl << std::endl;
+            }
+
     };
 
 };
