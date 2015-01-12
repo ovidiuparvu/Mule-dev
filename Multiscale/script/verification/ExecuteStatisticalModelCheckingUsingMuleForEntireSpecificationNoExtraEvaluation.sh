@@ -2,7 +2,7 @@
 
 ###############################################################################
 #
-# A script for executing the probabilistic black box model checker Mule for
+# A script for executing the statistical model checker Mule for
 # a given set of PBLMSTL statements, multiscale spatio-temporal traces, type
 # semantics table and output folder.
 #
@@ -59,10 +59,10 @@ typeSemanticTable=$4;
 outputFolder=$5;
 
 # Initialise the parameter values passed to the Mule model checker
-muleModelCheckerType=0;
+muleModelCheckerType=1;
 muleSpatioTemporalTraces=${multiscaleSpatioTemporalTracesFolder};
 muleExtraEvaluationTime=0;
-muleTypeSpecificParameters="";
+muleTypeSpecificParameters="--type-I-error 0.05 --type-II-error 0.05";
 
 # Create output folder
 mkdir -p ${outputFolder};

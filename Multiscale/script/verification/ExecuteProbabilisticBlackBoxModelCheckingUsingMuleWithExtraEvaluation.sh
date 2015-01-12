@@ -2,7 +2,7 @@
 
 ###############################################################################
 #
-# A script for executing the Bayesian probabilistic model checker Mule for
+# A script for executing the probabilistic black box model checker Mule for
 # a given set of PBLMSTL statements, multiscale spatio-temporal traces, type
 # semantics table, output folder, extra evaluation time and extra evaluation 
 # program path.

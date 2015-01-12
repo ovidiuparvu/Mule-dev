@@ -2,7 +2,7 @@
 
 ###############################################################################
 #
-# A script for executing the probabilistic black box model checker Mule for
+# A script for executing the statistical model checker Mule for
 # a given set of PBLMSTL statements, multiscale spatio-temporal traces, type
 # semantics table and output folder.
 #
@@ -59,10 +59,10 @@ typeSemanticTable=$4;
 outputFolder=$5;
 
 # Initialise the parameter values passed to the Mule model checker
-muleModelCheckerType=0;
+muleModelCheckerType=1;
 muleSpatioTemporalTraces=${multiscaleSpatioTemporalTracesFolder};
 muleExtraEvaluationTime=0;
-muleTypeSpecificParameters="";
+muleTypeSpecificParameters="--type-I-error 0.05 --type-II-error 0.05";
 
 # Create output folder
 mkdir -p ${outputFolder};
@@ -98,9 +98,13 @@ do
 
         # Get the specific information of interest
         modelCheckerExecutionId=${i};
+        modelCheckingResult=`cat ${pblmstlStatementsNthResults} | egrep "\[ RESULT   \] The logic property holds: .*" | egrep -o "[^ ]+$"`;
+        nrOfEvaluatedTraces=`cat ${pblmstlStatementsNthResults} | tail -n3 | head -n1 | egrep -o "[0-9]+/[0-9]+" | cut -d"/" -f2`;
+        nrOfTracesEvaluatedTrue=`cat ${pblmstlStatementsNthResults} | tail -n3 | head -n1 | egrep -o "[0-9]+/[0-9]+" | cut -d"/" -f1`;
+        nrOfTracesEvaluatedFalse=$((${nrOfEvaluatedTraces} - ${nrOfTracesEvaluatedTrue}));
         executionTime=`cat ${pblmstlStatementsNthResults} | tail -n1`;
 
         # Output summary results to the centralised results file
-        echo "${modelCheckerExecutionId} ${executionTime}" >> ${pblmstlStatementsResults};
+        echo "${modelCheckerExecutionId} ${modelCheckingResult} ${nrOfEvaluatedTraces} ${nrOfTracesEvaluatedTrue} ${nrOfTracesEvaluatedFalse} ${executionTime}" >> ${pblmstlStatementsResults};
     done
 done
