@@ -83,18 +83,19 @@ void ClusterDetector::processImageAndDetect() {
 
 void ClusterDetector::detectAndAnalyseClusters(const std::vector<Entity> &entities,
                                                std::vector<Cluster> &clusters) {
-    std::vector<int> clusterIndexes(entities.size(), DBSCAN::CLUSTERING_UNCLASSIFIED);
-    int nrOfClusters;
+    std::vector<int> clusterIndexes;
+    std::size_t nrOfClusters;
 
     detectClusters(entities, clusterIndexes, nrOfClusters);
     addEntitiesToClusters(entities, clusterIndexes, nrOfClusters, clusters);
     analyseClusters(clusters);
 }
 
-void ClusterDetector::detectClusters(const std::vector<Entity> &entities, std::vector<int> &clusterIndexes,
-                                     int &nrOfClusters) {
-    DBSCAN().run(
-        convertEntities(entities),
+void ClusterDetector::detectClusters(const std::vector<Entity> &entities,
+                                     std::vector<int> &clusterIndexes,
+                                     std::size_t &nrOfClusters) {
+    DBSCAN<Entity>().run(
+        flattenEntitiesCollection(entities),
         clusterIndexes,
         nrOfClusters,
         convertEpsValue(),
@@ -102,45 +103,39 @@ void ClusterDetector::detectClusters(const std::vector<Entity> &entities, std::v
     );
 }
 
-std::vector<std::shared_ptr<DataPoint>> ClusterDetector::convertEntities(const std::vector<Entity> &entities) {
-    std::vector<std::shared_ptr<DataPoint>> dataPoints;
+std::vector<Entity> ClusterDetector::flattenEntitiesCollection(const std::vector<Entity> &entities) {
+    std::vector<Entity> flattenedEntities;
 
-    convertNonPiledUpEntities(entities, dataPoints);
-    convertPiledUpEntities(entities, dataPoints);
+    flattenedEntities.insert(flattenedEntities.begin(), entities.begin(), entities.end());
 
-    return dataPoints;
+    addPiledUpEntitiesToCollection(entities, flattenedEntities);
+
+    return flattenedEntities;
 }
 
-void ClusterDetector::convertNonPiledUpEntities(const std::vector<Entity> &entities,
-                                                std::vector<std::shared_ptr<DataPoint> > &dataPoints) {
+void ClusterDetector::addPiledUpEntitiesToCollection(const std::vector<Entity> &entities,
+                                                     std::vector<Entity> &flattenedEntities) {
     for (const Entity &entity : entities) {
-        dataPoints.push_back(std::shared_ptr<DataPoint>(new Entity(entity)));
-    }
-}
-
-void ClusterDetector::convertPiledUpEntities(const std::vector<Entity> &entities,
-                                             std::vector<std::shared_ptr<DataPoint> > &dataPoints) {
-    for (const Entity &entity : entities) {
-        int nrOfPiledUpEntities = entity.getPileUpDegree();
+        std::size_t nrOfPiledUpEntities = static_cast<std::size_t>(entity.getPileUpDegree());
 
         // Consider only the above entities (at level 2+)
-        for (int i = 1; i < nrOfPiledUpEntities; i++) {
-            dataPoints.push_back(std::shared_ptr<DataPoint>(new Entity(entity)));
+        for (std::size_t i = 1; i < nrOfPiledUpEntities; i++) {
+            flattenedEntities.push_back(entity);
         }
     }
 }
 
 void ClusterDetector::addEntitiesToClusters(const std::vector<Entity> &entities,
                                             const std::vector<int> &clusterIndexes,
-                                            int nrOfClusters,
+                                            std::size_t nrOfClusters,
                                             std::vector<Cluster> &clusters) {
     if (nrOfClusters > 1) {
-        int nrOfEntities = entities.size();
+        std::size_t nrOfEntities = entities.size();
 
         // The "noise" cluster will be ignored
         clusters.resize(nrOfClusters - 1);
 
-        for (int i = 0; i < nrOfEntities; i++) {
+        for (std::size_t i = 0; i < nrOfEntities; i++) {
             // If the entity does not belong to the "noise" cluster
             if (clusterIndexes[i] > 0) {
                 clusters[clusterIndexes[i] - 1].addEntity(entities[i]);
@@ -214,8 +209,10 @@ double ClusterDetector::convertEpsValue() {
 }
 
 int ClusterDetector::getValidMinPointsValue() {
-    return (minPoints > 0) ? minPoints
-                           : 1;
+    return (
+        (minPoints > 0) ? minPoints
+                        : 1
+    );
 }
 
 

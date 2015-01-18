@@ -59,14 +59,13 @@ std::string Entity::toString() {
    );
 }
 
-double Entity::distanceTo(std::shared_ptr<DataPoint> point) {
-    std::shared_ptr<Entity> entity = std::dynamic_pointer_cast<Entity>(point);
-
-    return Geometry2D::distanceBtwPoints(centre, entity->centre);
-}
-
-double Entity::distanceTo(const Entity &entity) {
-    return Geometry2D::distanceBtwPoints(centre, entity.centre);
+double Entity::distanceTo(const Entity &entity) const {
+    return (
+        Geometry2D::distanceBtwPoints(
+            centre,
+            entity.centre
+        )
+    );
 }
 
 void Entity::validateInputValues(double pileUpDegree, double area, double perimeter,

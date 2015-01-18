@@ -50,7 +50,6 @@ target_link_libraries(CircularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
 set(CIRCULAR_MAT_FACTORY_SAMPLE_SRC
     src/factory/CircularMatFactory.cpp
     src/factory/MatFactory.cpp
-    src/util/DBSCAN.cpp
     
     sample/CircularMatFactorySample.cpp
 )
@@ -74,7 +73,6 @@ set(CLUSTER_DETECTOR_TEST_SRC
     src/model/Cluster.cpp
     src/model/Entity.cpp
     src/model/SpatialEntityPseudo3D.cpp
-    src/util/DBSCAN.cpp
     src/util/Silhouette.cpp
     src/util/SpatialMeasureCalculator.cpp
     
@@ -94,8 +92,6 @@ AddUnitTest(ClusterDetectorTest "${CLUSTER_DETECTOR_TEST_SRC}" "${CLUSTER_DETECT
 # DBSCANTest
 
 set(DBSCAN_TEST_SRC
-    src/util/DBSCAN.cpp
-    
     test/DBSCANTest.cpp
 )
 
@@ -180,7 +176,6 @@ target_link_libraries(RectangularDetectRegions ${Boost_PROGRAM_OPTIONS_LIBRARY})
 set(RECTANGULAR_MAT_FACTORY_SAMPLE_SRC
     src/factory/MatFactory.cpp
     src/factory/RectangularMatFactory.cpp
-    src/util/DBSCAN.cpp
     
     sample/RectangularMatFactorySample.cpp
 )
@@ -210,7 +205,6 @@ set(SIMULATION_DETECT_CLUSTERS_SRC
     src/model/Cluster.cpp
     src/model/Entity.cpp
     src/model/SpatialEntityPseudo3D.cpp
-    src/util/DBSCAN.cpp
     src/util/Silhouette.cpp
     src/util/SpatialMeasureCalculator.cpp
     

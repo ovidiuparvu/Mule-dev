@@ -86,18 +86,16 @@ bool Geometry2D::slopeOfLine(const cv::Point2f &a, const cv::Point2f &b, double 
     }
 }
 
-double Geometry2D::distanceBtwPoints(const cv::Point2f &a, const cv::Point2f &b) {
-    double xDiff = a.x - b.x;
-    double yDiff = a.y - b.y;
-
-    return sqrt((xDiff * xDiff) + (yDiff * yDiff));
-}
-
 double Geometry2D::distanceBtwPoints(double x1, double y1, double x2, double y2) {
     double xDiff = x1 - x2;
     double yDiff = y1 - y2;
 
-    return sqrt((xDiff * xDiff) + (yDiff * yDiff));
+    return (
+        sqrt(
+            (xDiff * xDiff) +
+            (yDiff * yDiff)
+        )
+    );
 }
 
 double Geometry2D::distanceFromPointToLine(const cv::Point2f &a, const cv::Point2f &linePointB,
@@ -120,29 +118,6 @@ cv::Point2f Geometry2D::middlePoint(const cv::Point2f &a, const cv::Point2f &b) 
     return cv::Point2f(middleX, middleY);
 }
 
-cv::Point2f Geometry2D::centroid(const std::vector<cv::Point> &points) {
-    std::vector<cv::Point2f> convertedPoints = convertPoints(points);
-
-    return (
-        centroid(convertedPoints)
-    );
-}
-
-cv::Point2f Geometry2D::centroid(const std::vector<cv::Point2f> &points) {
-    cv::Point2f centroid;
-
-    // Compute the sum of all points coordinates
-    for (const cv::Point2f &point: points) {
-        centroid += point;
-    }
-
-    // Divide the coordinates sum by the number of points
-    centroid.x /= static_cast<float>(points.size());
-    centroid.y /= static_cast<float>(points.size());
-
-    return centroid;
-}
-
 bool Geometry2D::isPointInsidePolygon(const cv::Point2f &point, const std::vector<cv::Point2f> &polygon) {
     // TODO: Implement method myself to remove dependency between this class
     //       and the OpenCV library
@@ -157,28 +132,6 @@ bool Geometry2D::isConvexPolygon(const std::vector<cv::Point2f> &polygon) {
     return (
         cv::isContourConvex(polygon)
     );
-}
-
-std::vector<cv::Point> Geometry2D::computeConvexHull(const std::vector<cv::Point> &polygon,
-                                                     bool arePointsInClockwiseOrder) {
-    std::vector<cv::Point> polygonConvexHull;
-
-    // TODO: Implement method myself to remove dependency between this class
-    //       and the OpenCV library
-    cv::convexHull(polygon, polygonConvexHull, arePointsInClockwiseOrder);
-
-    return polygonConvexHull;
-}
-
-std::vector<cv::Point2f> Geometry2D::computeConvexHull(const std::vector<cv::Point2f> &polygon,
-                                                       bool arePointsInClockwiseOrder) {
-    std::vector<cv::Point2f> polygonConvexHull;
-
-    // TODO: Implement method myself to remove dependency between this class
-    //       and the OpenCV library
-    cv::convexHull(polygon, polygonConvexHull, arePointsInClockwiseOrder);
-
-    return polygonConvexHull;
 }
 
 void Geometry2D::tangentsFromPointToPolygon(const std::vector<cv::Point2f> &convexPolygon,
@@ -460,35 +413,6 @@ std::vector<cv::Point2f> Geometry2D::findPointsOnEdge(const std::vector<cv::Poin
     return pointsOnEdge;
 }
 
-unsigned int Geometry2D::minimumDistancePointIndex(const std::vector<cv::Point> &contour,
-                                                   const cv::Point2f &origin) {
-    std::vector<cv::Point2f> contourPoints = convertPoints(contour);
-
-    return (
-        minimumDistancePointIndex(contourPoints, origin)
-    );
-}
-
-unsigned int Geometry2D::minimumDistancePointIndex(const std::vector<cv::Point2f> &contour,
-                                                   const cv::Point2f &origin) {
-    double minDistance = std::numeric_limits<int>::max();
-    double distance = 0.0;
-    int nrOfPoints = contour.size();
-    int minimumDistancePointIndex = -1;
-
-    for (int i = 0; i < nrOfPoints; i++) {
-        distance = distanceBtwPoints(contour[i], origin);
-
-        if (distance < minDistance) {
-            minDistance = distance;
-
-            minimumDistancePointIndex = i;
-        }
-    }
-
-    return minimumDistancePointIndex;
-}
-
 bool Geometry2D::isPointOnLineSegment(const cv::Point2f &point, const cv::Point2f &lineSegmentStart,
                                       const cv::Point2f &lineSegmentEnd) {
     double d1 = distanceBtwPoints(point, lineSegmentStart);
@@ -521,36 +445,6 @@ double Geometry2D::areaOfTriangle(const cv::Point2f &a, const cv::Point2f &b, co
     return (
         fabs(determinant) / 2.0
     );
-}
-
-std::vector<cv::Point2f> Geometry2D::convertPoints(const std::vector<cv::Point> &pointsCollection) {
-    std::vector<cv::Point2f> convertedPoints;
-
-    for (const cv::Point &point : pointsCollection) {
-        convertedPoints.push_back(
-            cv::Point2f(
-                static_cast<float>(point.x),
-                static_cast<float>(point.y)
-            )
-        );
-    }
-
-    return convertedPoints;
-}
-
-std::vector<cv::Point> Geometry2D::convertPoints(const std::vector<cv::Point2f> &pointsCollection) {
-    std::vector<cv::Point> convertedPoints;
-
-    for (const cv::Point2f &point : pointsCollection) {
-        convertedPoints.push_back(
-            cv::Point(
-                static_cast<int>(point.x),
-                static_cast<int>(point.y)
-            )
-        );
-    }
-
-    return convertedPoints;
 }
 
 bool Geometry2D::isPointOnEdge(const cv::Point2f &p, int nrOfRows, int nrOfCols) {

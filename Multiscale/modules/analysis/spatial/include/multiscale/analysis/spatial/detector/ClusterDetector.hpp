@@ -100,30 +100,27 @@ namespace multiscale {
                  *  \param clusterIndexes   Indexes to which cluster each entity belongs
                  *  \param nrOfClusters     Total number of clusters
                  */
-                void detectClusters(const std::vector<Entity> &entities, std::vector<int> &clusterIndexes,
-                                    int &nrOfClusters);
+                void detectClusters(const std::vector<Entity> &entities,
+                                    std::vector<int> &clusterIndexes,
+                                    std::size_t &nrOfClusters);
 
-                //! Convert the entities to the format required by the DBSCAN class
-                /*!
+                //! Flatten the collection of entities
+                /*! Add each piled up entity in the original collection as a single
+                 *  standing entity in the resulting collection. The first entities
+                 *  in the resulting collection are the entities in the given collection.
+                 *  All piled up entities are added afterwards in the resulting collection.
+                 *
                  * \param entities Entities detected in the image
                  */
-                std::vector<std::shared_ptr<DataPoint>> convertEntities(const std::vector<Entity> &entities);
+                std::vector<Entity> flattenEntitiesCollection(const std::vector<Entity> &entities);
 
-                //! Convert the non pile up entities to the format required by the DBSCAN class
+                //! Add the piled up entities to the flattened collection of entities
                 /*!
-                 * \param entities Entities detected in the image
-                 * \param dataPoints Collection of DataPoint instances required by the DBSCAN class
+                 * \param entities          Entities detected in the image
+                 * \param flattenedEntities Flattened collection of entities
                  */
-                void convertNonPiledUpEntities(const std::vector<Entity> &entities,
-                                               std::vector<std::shared_ptr<DataPoint> > &dataPoints);
-
-                //! Convert the entities to the required format by the DBSCAN class
-                /*!
-                 * \param entities Entities detected in the image
-                 * \param dataPoints Collection of DataPoint instances required by the DBSCAN class
-                 */
-                void convertPiledUpEntities(const std::vector<Entity> &entities,
-                                            std::vector<std::shared_ptr<DataPoint> > &dataPoints);
+                void addPiledUpEntitiesToCollection(const std::vector<Entity> &entities,
+                                                    std::vector<Entity> &flattenedEntities);
 
                 //! Add the entities to the clusters as indicated by the clusterIndexes parameter
                 /*! Add the entities to the clusters as indicated by the clusterIndexes parameter
@@ -137,7 +134,7 @@ namespace multiscale {
                  */
                 void addEntitiesToClusters(const std::vector<Entity> &entities,
                                            const std::vector<int> &clusterIndexes,
-                                           int nrOfClusters,
+                                           std::size_t nrOfClusters,
                                            std::vector<Cluster> &clusters);
 
                 //! Analyse the clusters

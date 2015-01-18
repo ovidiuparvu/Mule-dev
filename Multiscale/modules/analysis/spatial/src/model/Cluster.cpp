@@ -141,7 +141,7 @@ void Cluster::updateArea() {
 
     area = static_cast<double>(
                SpatialMeasureCalculator::computePolygonArea(
-                   Geometry2D::convertPoints(entitiesConvexHull)
+                   Geometry2D::convertPoints<float, int>(entitiesConvexHull)
                )
            );
 }
@@ -157,7 +157,7 @@ void Cluster::updatePerimeter() {
 
     perimeter = static_cast<double>(
                     SpatialMeasureCalculator::computePolygonPerimeter(
-                        Geometry2D::convertPoints(entitiesConvexHull)
+                        Geometry2D::convertPoints<float, int>(entitiesConvexHull)
                     )
                 );
 }

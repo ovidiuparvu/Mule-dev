@@ -184,7 +184,7 @@ double Region::isTriangularMeasure() {
 
     // Find the minimum area triangle enclosing the convex hull
     double triangleArea = MinEnclosingTriangleFinder().find(
-                              Geometry2D::convertPoints(contourConvexHull),
+                              Geometry2D::convertPoints<int, float>(contourConvexHull),
                               minAreaEnclosingTriangle
                           );
 
@@ -223,7 +223,7 @@ void Region::updateCentrePointWhenRegionDefinedBySinglePoint() {
 }
 
 void Region::updateCentrePointWhenRegionDefinedByMultiplePoints() {
-    centre = Geometry2D::centroid(outerBorderPolygon);
+    centre = Geometry2D::centroid<int>(outerBorderPolygon);
 }
 
 SpatialEntityPseudo3DType Region::type() {

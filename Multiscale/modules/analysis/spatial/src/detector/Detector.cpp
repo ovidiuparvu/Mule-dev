@@ -118,7 +118,7 @@ void Detector::detectInReleaseMode() {
 }
 
 double Detector::computeDistanceFromOrigin(const std::vector<cv::Point> &polygon) {
-    std::vector<cv::Point2f> convertedPolygon = Geometry2D::convertPoints(polygon);
+    std::vector<cv::Point2f> convertedPolygon = Geometry2D::convertPoints<int, float>(polygon);
 
     return computeDistanceFromOrigin(convertedPolygon);
 }
@@ -140,7 +140,7 @@ double Detector::computeDistanceFromOrigin(const std::vector<cv::Point2f> &polyg
 }
 
 double Detector::computePolygonAngle(const std::vector<cv::Point> &polygon) {
-    std::vector<cv::Point2f> convertedPolygon = Geometry2D::convertPoints(polygon);
+    std::vector<cv::Point2f> convertedPolygon = Geometry2D::convertPoints<int, float>(polygon);
 
     return (
         computePolygonAngle(convertedPolygon)

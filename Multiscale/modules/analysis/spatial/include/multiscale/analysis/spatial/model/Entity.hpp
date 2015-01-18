@@ -1,8 +1,6 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 
-#include "multiscale/analysis/spatial/model/DataPoint.hpp"
-
 #include "opencv2/imgproc/imgproc.hpp"
 
 #include <vector>
@@ -13,7 +11,7 @@ namespace multiscale {
     namespace analysis {
 
         //! Class for representing an entity in an image (e.g. cell, organism etc.)
-        class Entity : public DataPoint {
+        class Entity {
 
             private:
 
@@ -55,12 +53,7 @@ namespace multiscale {
                 std::string toString();
 
                 //! Get the distance between this entity and another one
-                double distanceTo(std::shared_ptr<DataPoint> point) override;
-
-                //! Get the distance between this entity and another one
-                double distanceTo(const Entity &entity);
-
-
+                double distanceTo(const Entity &entity) const;
 
             private:
 

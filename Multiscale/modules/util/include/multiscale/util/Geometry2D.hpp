@@ -95,7 +95,24 @@ namespace multiscale {
              * \param a Point a
              * \param b Point b
              */
-            static double distanceBtwPoints(const cv::Point2f &a, const cv::Point2f &b);
+            template <typename LhsCoordinateType, typename RhsCoordinateType>
+            static double distanceBtwPoints(const cv::Point_<LhsCoordinateType> &a,
+                                            const cv::Point_<RhsCoordinateType> &b) {
+                double aXCoordinate = static_cast<double>(a.x);
+                double aYCoordinate = static_cast<double>(a.y);
+
+                double bXCoordinate = static_cast<double>(b.x);
+                double bYCoordinate = static_cast<double>(b.y);
+
+                return (
+                    distanceBtwPoints(
+                        aXCoordinate,
+                        aYCoordinate,
+                        bXCoordinate,
+                        bYCoordinate
+                    )
+                );
+            }
 
             //! Compute the distance between two points
             /*! Compute the Euclidean distance between two points
@@ -134,13 +151,24 @@ namespace multiscale {
             /*!
              * \param points    The considered collection of points
              */
-            static cv::Point2f centroid(const std::vector<cv::Point> &points);
+            template <typename CoordinateType>
+            static cv::Point2f centroid(const std::vector<cv::Point_<CoordinateType>> &points) {
+                cv::Point2f centroid;
 
-            //! Compute the centroid of the provided collection of points
-            /*!
-             * \param points    The considered collection of points
-             */
-            static cv::Point2f centroid(const std::vector<cv::Point2f> &points);
+                // Compute the sum of all points coordinates
+                for (const auto &point: points) {
+                    centroid += cv::Point2f(
+                                    static_cast<float>(point.x),
+                                    static_cast<float>(point.y)
+                                );
+                }
+
+                // Divide the coordinates sum by the number of points
+                centroid.x /= static_cast<float>(points.size());
+                centroid.y /= static_cast<float>(points.size());
+
+                return centroid;
+            }
 
             //! Check if the given point lies inside the polygon
             /*!
@@ -162,17 +190,18 @@ namespace multiscale {
              * \param arePointsInClockwiseOrder Flag indicating if the points in the convex hull
              *                                  are sorted in clockwise order
              */
-            static std::vector<cv::Point> computeConvexHull(const std::vector<cv::Point> &polygon,
-                                                            bool arePointsInClockwiseOrder = false);
+            template <typename CoordinateType>
+            static std::vector<cv::Point_<CoordinateType>>
+            computeConvexHull(const std::vector<cv::Point_<CoordinateType>> &polygon,
+                              bool arePointsInClockwiseOrder = false) {
+                std::vector<cv::Point_<CoordinateType>> polygonConvexHull;
 
-            //! Compute the convex hull for the provided polygon
-            /*!
-             * \param polygon                   The provided polygon
-             * \param arePointsInClockwiseOrder Flag indicating if the points in the convex hull
-             *                                  are sorted in clockwise order
-             */
-            static std::vector<cv::Point2f> computeConvexHull(const std::vector<cv::Point2f> &polygon,
-                                                              bool arePointsInClockwiseOrder = false);
+                // TODO: Implement method myself to remove dependency between this class
+                //       and the OpenCV library
+                cv::convexHull(polygon, polygonConvexHull, arePointsInClockwiseOrder);
+
+                return polygonConvexHull;
+            }
 
             //! Compute the polygon points where the tangents from a reference point touch the given polygon
             /*!
@@ -456,8 +485,27 @@ namespace multiscale {
              * \param points The set of points
              * \param origin The origin
              */
-            static unsigned int minimumDistancePointIndex(const std::vector<cv::Point2f> &points,
-                                                          const cv::Point2f &origin);
+            template <typename PointCoordinateType>
+            static unsigned int minimumDistancePointIndex(const std::vector<cv::Point_<PointCoordinateType>> &points,
+                                                          const cv::Point2f &origin) {
+                double  minDistance             = std::numeric_limits<int>::max();
+                int     minDistancePointIndex   = -1;
+
+                double      distance    = 0.0;
+                std::size_t nrOfPoints  = points.size();
+
+                for (std::size_t i = 0; i < nrOfPoints; i++) {
+                    distance = distanceBtwPoints(points[i], origin);
+
+                    if (distance < minDistance) {
+                        minDistance = distance;
+
+                        minDistancePointIndex = i;
+                    }
+                }
+
+                return minDistancePointIndex;
+            }
 
             //! Check if one point lies between two other points
             /*!
@@ -500,13 +548,22 @@ namespace multiscale {
             /*!
              * \param pointsCollection  The given collection of points
              */
-            static std::vector<cv::Point2f> convertPoints(const std::vector<cv::Point> &pointsCollection);
+            template <typename SourceCoordinateType, typename DestinationCoordinateType>
+            static std::vector<cv::Point_<DestinationCoordinateType>>
+            convertPoints(const std::vector<cv::Point_<SourceCoordinateType>> &pointsCollection) {
+                std::vector<cv::Point_<DestinationCoordinateType>> convertedPoints;
 
-            //! Convert the coordinates from floating point to integers for the given points collection
-            /*!
-             * \param pointsCollection  The given collection of points
-             */
-            static std::vector<cv::Point> convertPoints(const std::vector<cv::Point2f> &pointsCollection);
+                for (const auto &point : pointsCollection) {
+                    convertedPoints.push_back(
+                        cv::Point_<DestinationCoordinateType>(
+                            static_cast<DestinationCoordinateType>(point.x),
+                            static_cast<DestinationCoordinateType>(point.y)
+                        )
+                    );
+                }
+
+                return convertedPoints;
+            }
 
         private:
 
