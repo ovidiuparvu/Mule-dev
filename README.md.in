@@ -40,7 +40,7 @@ __Remark:__  The build system CMake will attempt to automatically find the paths
 cd %PROJECT_SOURCE_DIRECTORY%/build/Release
 ```
 
-__Remark:__ If the %PROJECT_SOURCE_DIRECTORY%/build/Release folder does not exist then please create and then open it.
+__Remark:__ If the %PROJECT_SOURCE_DIRECTORY%/build/Release folder does not exist then please create it.
 
 2) Run cmake to generate the Makefiles employed for compiling the project using:
 
@@ -52,7 +52,7 @@ where:
 
 * -G specifies the custom build system generator (e.g. replace %GENERATOR% with "Unix Makefiles" for Linux, respectively "MinGW Makefiles" for Windows)
 * -DCMAKE_BUILD_TYPE specifies the build type which can be either "Release" or "Debug"
-* -DCMAKE_CUSTOM_BUILD_TYPE specifies if files for generating a package (or installer) should be created (if corresponding value is equal to "Package" the package generator files are created)
+* -DCMAKE_CUSTOM_BUILD_TYPE specifies if files for generating an installer should be created (files are created if parameter value is equal to "Package")
 * -DCMAKE_CUSTOM_MODEL_CHECKER specifies if a custom instance of the model checker should be generated considering the spatial entity types and properties described in the %PROJECT_SOURCE_DIRECTORY%/config/verification/spatial-temporal/generator/spatial_description.xml configuration file
 
 3) Build the project using:
@@ -67,7 +67,7 @@ make all
 cpack
 ```
 
-5) Run the generated platform dependent installer to install the model checker.
+5) Run the generated installer to set up the model checker.
 
 Click [here](#top) to go back to the top of the page.
 
@@ -81,11 +81,11 @@ For running all scripts and/or executable modules ensure the following software 
 * GNU parallel (ver. 20140722) - employed only by scripts to run tasks in parallel;
 * gnuplot (ver. 4.6) - employed only by visualisation scripts.
 
-__Remark:__ If the project was compiled using the shared libraries, then the path to the shared libraries should be included in your PATH environment variable, such that they are accessible at runtime.
+__Remark:__ If the project was compiled using shared libraries then include the path to the shared libraries in your PATH environment variable to ensure that the libraries are accessible at runtime.
 
 ### 3.2. Execution steps
 
-The executable modules including but not limited to the model checker can be run using:
+The executable modules can be run using:
 
 ```bash
 %PROJECT_SOURCE_DIRECTORY%/bin/%EXECUTABLE_MODULE%
