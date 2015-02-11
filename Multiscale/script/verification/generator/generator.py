@@ -38,7 +38,7 @@ WRN_AUTO_GENERATED_FILE = [
 "*"
 ]
   
-PROJECT_ROOT_FOLDER = "/home/ovidiu/Repositories/git/multiscale/Mule"
+PROJECT_ROOT_FOLDER = "/home/ovidiu/Repositories/git/multiscale/Multiscale"
 MODEL_CHECKING_FOLDER = PROJECT_ROOT_FOLDER + str(
     "/modules/verification/spatial-temporal"                                  
 ) 

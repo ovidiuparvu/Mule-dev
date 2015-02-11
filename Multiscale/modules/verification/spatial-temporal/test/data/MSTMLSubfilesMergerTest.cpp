@@ -24,8 +24,8 @@ using namespace multiscale::verification;
 TEST(MSTMLSubfilesMerger, InvalidNoTracesNoTimepointsInvalidOutputFile) {
     EXPECT_THROW(
         MSTMLSubfilesMerger(
-            "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_traces_no_timepoints_invalid_output_file/traces/",
-            "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_traces_no_timepoints_invalid_output_file/timepoints_values.csv"
+            "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_traces_no_timepoints_invalid_output_file/traces/",
+            "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_traces_no_timepoints_invalid_output_file/timepoints_values.csv"
         ),
         InvalidInputException
     );
@@ -34,8 +34,8 @@ TEST(MSTMLSubfilesMerger, InvalidNoTracesNoTimepointsInvalidOutputFile) {
 TEST(MSTMLSubfilesMerger, InvalidNoTraces) {
     EXPECT_THROW(
         MSTMLSubfilesMerger(
-            "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_traces/traces/",
-            "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_traces/timepoints_values.csv"
+            "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_traces/traces/",
+            "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_traces/timepoints_values.csv"
         ),
         InvalidInputException
     );
@@ -44,8 +44,8 @@ TEST(MSTMLSubfilesMerger, InvalidNoTraces) {
 TEST(MSTMLSubfilesMerger, InvalidNoTimepoints) {
     EXPECT_THROW(
         MSTMLSubfilesMerger(
-            "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_timepoints/traces/",
-            "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_timepoints/timepoints_values.csv"
+            "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_timepoints/traces/",
+            "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_timepoints/timepoints_values.csv"
         ),
         InvalidInputException
     );
@@ -54,8 +54,8 @@ TEST(MSTMLSubfilesMerger, InvalidNoTimepoints) {
 TEST(MSTMLSubfilesMerger, InvalidWrongOutputFile) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_wrong_output_file/traces/",
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_wrong_output_file/timepoints_values.csv"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_wrong_output_file/traces/",
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_wrong_output_file/timepoints_values.csv"
     );
 
     // Merge the MSTML subfiles
@@ -63,7 +63,7 @@ TEST(MSTMLSubfilesMerger, InvalidWrongOutputFile) {
 
     EXPECT_THROW(
         mstmlSubfilesMerger.outputResultingMSTMLFile(
-            "///home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_wrong_output_file/"
+            "///home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_wrong_output_file/"
         ),
         std::exception
     );
@@ -72,8 +72,8 @@ TEST(MSTMLSubfilesMerger, InvalidWrongOutputFile) {
 TEST(MSTMLSubfilesMerger, InvalidNoData) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_data/traces/",
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_data/timepoints_values.csv"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_data/traces/",
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_data/timepoints_values.csv"
     );
 
     // Merge the MSTML subfiles
@@ -81,7 +81,7 @@ TEST(MSTMLSubfilesMerger, InvalidNoData) {
 
     EXPECT_THROW(
         mstmlSubfilesMerger.outputResultingMSTMLFile(
-            "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_data/traces_2_timepoints.xml"
+            "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_no_data/traces_2_timepoints.xml"
         ),
         InvalidOutputException
     );
@@ -97,8 +97,8 @@ TEST(MSTMLSubfilesMerger, InvalidNoData) {
 TEST(MSTMLSubfilesMerger, InvalidTracesStructure1) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_traces_structure1/traces/",
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_traces_structure1/timepoints_values.csv"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_traces_structure1/traces/",
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_traces_structure1/timepoints_values.csv"
     );
 
     EXPECT_THROW(
@@ -110,8 +110,8 @@ TEST(MSTMLSubfilesMerger, InvalidTracesStructure1) {
 TEST(MSTMLSubfilesMerger, InvalidTracesStructure2) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_traces_structure2/traces/",
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_traces_structure2/timepoints_values.csv"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_traces_structure2/traces/",
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_traces_structure2/timepoints_values.csv"
     );
 
     EXPECT_THROW(
@@ -126,8 +126,8 @@ TEST(MSTMLSubfilesMerger, InvalidTracesStructure2) {
 TEST(MSTMLSubfilesMerger, InvalidDifferentNumberOfTimepoints) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_different_number_of_timepoints/traces/",
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_different_number_of_timepoints/timepoints_values.csv"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_different_number_of_timepoints/traces/",
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_different_number_of_timepoints/timepoints_values.csv"
     );
 
     EXPECT_THROW(
@@ -139,8 +139,8 @@ TEST(MSTMLSubfilesMerger, InvalidDifferentNumberOfTimepoints) {
 TEST(MSTMLSubfilesMerger, InvalidDifferentTimepointsValues) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_different_timepoint_values/traces/",
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_different_timepoint_values/timepoints_values.csv"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_different_timepoint_values/traces/",
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_different_timepoint_values/timepoints_values.csv"
     );
 
     EXPECT_THROW(
@@ -152,8 +152,8 @@ TEST(MSTMLSubfilesMerger, InvalidDifferentTimepointsValues) {
 TEST(MSTMLSubfilesMerger, InvalidIdenticNumericStateVariables) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_identic_numeric_state_variables/traces/",
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_identic_numeric_state_variables/timepoints_values.csv"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_identic_numeric_state_variables/traces/",
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_identic_numeric_state_variables/timepoints_values.csv"
     );
 
     EXPECT_THROW(
@@ -165,8 +165,8 @@ TEST(MSTMLSubfilesMerger, InvalidIdenticNumericStateVariables) {
 TEST(MSTMLSubfilesMerger, InvalidIdenticSpatialEntities) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_identic_spatial_entities/traces/",
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_identic_spatial_entities/timepoints_values.csv"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_identic_spatial_entities/traces/",
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/invalid_identic_spatial_entities/timepoints_values.csv"
     );
 
     EXPECT_THROW(
@@ -178,8 +178,8 @@ TEST(MSTMLSubfilesMerger, InvalidIdenticSpatialEntities) {
 TEST(MSTMLSubfilesMerger, Valid) {
     // Create the MSTML subfiles merger
     MSTMLSubfilesMerger mstmlSubfilesMerger(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/valid/traces/",
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/valid/timepoints_values.csv"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/valid/traces/",
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/valid/timepoints_values.csv"
     );
 
     // Merge MSTML subfiles
@@ -190,7 +190,7 @@ TEST(MSTMLSubfilesMerger, Valid) {
 
     // Read expected merged MSTML file
     SpatialTemporalDataReader mstmlReader(
-        "/home/ovidiu/Repositories/git/multiscale/Mule/data/test/verification/spatial-temporal/sample/mstml_merger/valid/expected_trace/"
+        "/home/ovidiu/Repositories/git/multiscale/Multiscale/data/test/verification/spatial-temporal/sample/mstml_merger/valid/expected_trace/"
     );
 
     // Obtain the expected spatial temporal trace

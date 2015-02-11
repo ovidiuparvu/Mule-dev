@@ -1,22 +1,22 @@
 The multiscale multidimensional meta-model checker Mule
 ==========
 
-## Contents
+## <a name="top"></a> Contents
 
 1. [**Description**](#description)
 2. [**Install guide**](#install_guide)
 3. [**Execution guide**](#execution_guide)
 4. [**Additional information**](#additional_information)
 
-## <a name="description"></a> 1. Description
+## <a name="description"></a> 1. Description \[[top](#top)\]
 
 Mule is a multiscale multidimensional spatio-temporal approximate probabilistic meta-model checker employed for the validation of computational models relative to a given formal specification.
 
-**Author:**      Ovidiu Pârvu
+**Author:**      Ovidiu Pârvu   
 **Created on:**  04.02.2013                                          
 **Modified on:** 11.02.2015
 
-## <a name="install_guide"></a> 2. Install guide
+## <a name="install_guide"></a> 2. Install guide \[[top](#top)\]
 
 ### 2.1. Prerequisites
 
@@ -32,29 +32,26 @@ __Remark:__  The build system CMake will attempt to automatically find the paths
 
 ### 2.2. Installation steps
 
-1) Assuming the source code of the project is available in folder <PROJECT_SOURCE_DIRECTORY> (called by default Mule) the first step for compiling and installing the project is to change the current directory to the <PROJECT_SOURCE_DIRECTORY>/build/Release folder (for Release version) using:
+1) Assuming the source code of the project is available in folder $PROJECT_SOURCE_DIRECTORY$ (called by default Mule) the first step for compiling and installing the project is to change the current directory to the $PROJECT_SOURCE_DIRECTORY$/build/Release folder (for Release version) using:
 
 ```bash
-cd <PROJECT_SOURCE_DIRECTORY>/build/Release
+cd $PROJECT_SOURCE_DIRECTORY$/build/Release
 ```
 
-__Remark:__ If the <PROJECT_SOURCE_DIRECTORY>/build/Release folder does not exist then please create and then open it.
+__Remark:__ If the $PROJECT_SOURCE_DIRECTORY$/build/Release folder does not exist then please create and then open it.
 
 2) Run cmake to generate the Makefiles employed for compiling the project using:
 
-```bash
+```cmake
 cmake -G <GENERATOR> -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUSTOM_BUILD_TYPE=Package -DCMAKE_CUSTOM_MODEL_CHECKER=Generate ../../
 ```
 
 where:
 
--G specifies the custom build system generator (e.g. replace <GENERATOR> with "Unix Makefiles" for Linux, respectively "MinGW Makefiles" for Windows)
-
--DCMAKE_BUILD_TYPE specifies the build type which can be either "Release" or "Debug"
-
--DCMAKE_CUSTOM_BUILD_TYPE specifies if files for generating a package (or installer) should be created (if corresponding value is equal to "Package" the package generator files are created)
-
--DCMAKE_CUSTOM_MODEL_CHECKER specifies if a custom instance of the model checker should be generated considering the spatial entity types and properties described in the <PROJECT_SOURCE_DIRECTORY>/config/verification/spatial-temporal/generator/spatial_description.xml configuration file
+* -G specifies the custom build system generator (e.g. replace <GENERATOR> with "Unix Makefiles" for Linux, respectively "MinGW Makefiles" for Windows)
+* -DCMAKE_BUILD_TYPE specifies the build type which can be either "Release" or "Debug"
+* -DCMAKE_CUSTOM_BUILD_TYPE specifies if files for generating a package (or installer) should be created (if corresponding value is equal to "Package" the package generator files are created)
+* -DCMAKE_CUSTOM_MODEL_CHECKER specifies if a custom instance of the model checker should be generated considering the spatial entity types and properties described in the $PROJECT_SOURCE_DIRECTORY$/config/verification/spatial-temporal/generator/spatial_description.xml configuration file
 
 3) Build the project using:
 
@@ -70,7 +67,7 @@ cpack
 
 5) Run the generated platform dependent installer to install the model checker.
 
-## <a name="execution_guide"></a> 3. Execution guide
+## <a name="execution_guide"></a> 3. Execution guide \[[top](#top)\]
 
 ### 3.1. Prerequisites
 
@@ -87,10 +84,10 @@ __Remark:__ If the project was compiled using the shared libraries, then the pat
 The executable modules including but not limited to the model checker can be run using:
 
 ```bash
-<PROJECT_SOURCE_DIRECTORY>/bin/<EXECUTABLE_MODULE>
+$PROJECT_SOURCE_DIRECTORY$/bin/$EXECUTABLE_MODULE$
 ```
 
-where <EXECUTABLE_MODULE> is one of the following:
+where $EXECUTABLE_MODULE$ is one of the following:
 
 * **CircularDetectRegions**: Spatio-temporal module for automatically detecting regions and computing their geometric properties (e.g. area) considering a circular geometry;
 * **MapCartesianToPolarScript**: Module for converting timepoint input files (i.e. input files corresponding to a single simulation timepoint) to gnuplot scripts considering a circular geometry;
@@ -102,8 +99,8 @@ where <EXECUTABLE_MODULE> is one of the following:
 * **RectangularMapEntityCsvToInputFiles**: Module for converting csv files describing positions of spatial entities in 2D space to timepoint input files which are employed either for (clusters) spatio-temporal analysis or for generating gnuplot scripts;
 * **SimulationDetectClusters**: Spatio-temporal module for automatically detecting clusters and computing their geometric properties (e.g. area).
 
-__Remark:__ Assuming the model checker Mule was set up using the installer and its installation path was added to the PATH environment variable, it can be executed without prefixing it with the "<PROJECT_SOURCE_DIRECTORY>/bin" path.
+__Remark:__ Assuming the model checker Mule was set up using the installer and its installation path was added to the PATH environment variable, it can be executed without prefixing it with the "$PROJECT_SOURCE_DIRECTORY$/bin" path.
 
-## <a name="additional_information"></a> 4. Additional information
+## <a name="additional_information"></a> 4. Additional information \[[top](#top)\]
 
 For additional information please visit the [official Mule website](http://mule.modelchecking.org).
