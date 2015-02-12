@@ -35,12 +35,12 @@ enable_testing()
 # Define global project variables using relative paths
 #------------------------------------------------------------
 
-set(POLAR_GNUPLOT_SCRIPT_FILES_PATH "config/video/circular")
+set(POLAR_GNUPLOT_SCRIPT_FILES_PATH "config/visualisation/circular")
 set(POLAR_GNUPLOT_SCRIPT_HEADER_PATH "${POLAR_GNUPLOT_SCRIPT_FILES_PATH}/header.in")
 set(POLAR_GNUPLOT_SCRIPT_CONTENT_PATH "${POLAR_GNUPLOT_SCRIPT_FILES_PATH}/content.in")
 set(POLAR_GNUPLOT_SCRIPT_FOOTER_PATH "${POLAR_GNUPLOT_SCRIPT_FILES_PATH}/footer.in")
 
-set(RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH "config/video/rectangular")
+set(RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH "config/visualisation/rectangular")
 set(RECTANGULAR_GNUPLOT_SCRIPT_HEADER_PATH "${RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH}/header.in")
 set(RECTANGULAR_GNUPLOT_SCRIPT_CONTENT_PATH "${RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH}/content.in")
 set(RECTANGULAR_GNUPLOT_SCRIPT_FOOTER_PATH "${RECTANGULAR_GNUPLOT_SCRIPT_FILES_PATH}/footer.in")

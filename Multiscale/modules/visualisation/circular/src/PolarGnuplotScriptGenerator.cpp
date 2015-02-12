@@ -144,9 +144,9 @@ std::string PolarGnuplotScriptGenerator::readContentTemplate(std::ifstream &fin)
 
 
 // Constants
-const std::string PolarGnuplotScriptGenerator::HEADER_IN     = "/usr/local/share/mule/config/video/circular/header.in";
-const std::string PolarGnuplotScriptGenerator::CONTENT_IN    = "/usr/local/share/mule/config/video/circular/content.in";
-const std::string PolarGnuplotScriptGenerator::FOOTER_IN     = "/usr/local/share/mule/config/video/circular/footer.in";
+const std::string PolarGnuplotScriptGenerator::HEADER_IN     = "/usr/local/share/mule/config/visualisation/circular/header.in";
+const std::string PolarGnuplotScriptGenerator::CONTENT_IN    = "/usr/local/share/mule/config/visualisation/circular/content.in";
+const std::string PolarGnuplotScriptGenerator::FOOTER_IN     = "/usr/local/share/mule/config/visualisation/circular/footer.in";
 
 const std::string PolarGnuplotScriptGenerator::REPLACE_HEADER_FILENAME         = "OUTPUT_FILENAME";
 const std::string PolarGnuplotScriptGenerator::REPLACE_HEADER_SIM_TIME         = "OUTPUT_SIM_TIME";
