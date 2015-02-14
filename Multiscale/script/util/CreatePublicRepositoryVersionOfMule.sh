@@ -49,6 +49,7 @@ rm Multiscale/script/analysis/*.*;
 rm -rf Multiscale/script/analysis/case_study_specific/chemotaxis/;
 rm -rf Multiscale/script/analysis/case_study_specific/dictyostelium/;
 rm -rf Multiscale/script/buildbot/
+rm -rf Multiscale/script/docker/
 rm -rf Multiscale/script/util
 rm -rf Multiscale/script/verification/sample/
 rm Multiscale/script/verification/MergeAttributeTestFiles.sh

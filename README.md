@@ -14,7 +14,7 @@ Mule is a multiscale multidimensional spatio-temporal approximate probabilistic 
 
 **Author:**      Ovidiu Pârvu   
 **Created on:**  04.02.2013                                          
-**Modified on:** 12.02.2015
+**Modified on:** 14.02.2015
 
 Click [here](#top) to go back to the top of the page.
 
@@ -103,7 +103,7 @@ where %EXECUTABLE_MODULE% is one of the following:
 * **RectangularMapEntityCsvToInputFiles**: Module for converting csv files describing positions of spatial entities in 2D space to timepoint input files which are employed either for (clusters) spatio-temporal analysis or for generating gnuplot scripts;
 * **SimulationDetectClusters**: Spatio-temporal module for automatically detecting clusters and computing their geometric properties (e.g. area).
 
-__Remark:__ Assuming the model checker Mule was set up using the installer and its installation path was added to the PATH environment variable, it can be executed without prefixing it with the "%PROJECT_SOURCE_DIRECTORY%/bin" path.
+__Remark:__ Assuming the executable modules were set up using the installer and their installation path was added to the PATH environment variable, they can be executed from the command line without prefixing them with the "%PROJECT_SOURCE_DIRECTORY%/bin" path.
 
 Click [here](#top) to go back to the top of the page.
 

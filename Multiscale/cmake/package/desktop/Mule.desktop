@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mule
+GenericName=Mule
+Comment=Multiscale multidimensional (spatial-temporal) approximate probabilistic meta-model checker.
+TryExec=Mule
+Exec=Mule
+Icon=Mule
+Categories=Model checking
