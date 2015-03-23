@@ -392,7 +392,7 @@ double Numeric::median(const std::vector<double> &numbers, unsigned int nrOfValu
     std::sort(values.begin(), values.end());
 
     return (nrOfValues == 0) ? 0
-                             : (values[nrOfValues / 2]);
+                             : (values[std::floor(nrOfValues / 2.0)]);
 }
 
 double Numeric::minimum(const std::vector<double> &numbers, unsigned int nrOfValues) {

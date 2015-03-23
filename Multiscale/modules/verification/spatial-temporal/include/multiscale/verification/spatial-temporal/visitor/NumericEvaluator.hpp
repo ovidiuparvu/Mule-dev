@@ -36,7 +36,7 @@ namespace multiscale {
                             return (std::round(value));
 
                         case UnaryNumericMeasureType::Sign:
-                            return (multiscale::Numeric::sign(value));
+                            return (Numeric::sign(value));
 
                         case UnaryNumericMeasureType::Sqrt:
                             return (std::sqrt(value));

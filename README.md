@@ -14,7 +14,7 @@ Mule is a multiscale multidimensional spatio-temporal approximate probabilistic 
 
 **Author:**      Ovidiu Pârvu   
 **Created on:**  04.02.2013                                          
-**Modified on:** 14.02.2015
+**Modified on:** 23.03.2015
 
 Click [here](#top) to go back to the top of the page.
 
