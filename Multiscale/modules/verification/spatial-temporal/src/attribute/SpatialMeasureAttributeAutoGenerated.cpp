@@ -75,11 +75,11 @@ double
 multiscale::verification::spatialmeasure::getMaxValidSpatialMeasureValue(const SpatialMeasureType &spatialMeasureType) {
     switch (spatialMeasureType) {
         case SpatialMeasureType::Clusteredness:
-            return 1E+37;
+            return 1;
             break;
             
         case SpatialMeasureType::Density:
-            return 1E+37;
+            return 1;
             break;
             
         case SpatialMeasureType::Area:

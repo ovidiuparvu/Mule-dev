@@ -913,7 +913,7 @@ TEST_F(NumericStateVariableTraceTest, SpatialMeasureClusteredness) {
 }
 
 TEST_F(NumericStateVariableTraceTest, SpatialMeasureDensity) {
-    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, density > 1E+37))) = 1]"));
+    EXPECT_FALSE(RunEvaluationTest("P <= 0.9 [count(clusteredness(filter(clusters, density > 1))) = 1]"));
 }
 
 TEST_F(NumericStateVariableTraceTest, SpatialMeasureArea) {

@@ -137,5 +137,5 @@ void SpatialEntity::validateSpatialMeasureValue(double spatialMeasureValue,
 const std::string SpatialEntity::OUTPUT_SPATIAL_MEASURE_VALUE_SEPARATOR = ", ";
 
 const std::string SpatialEntity::ERR_INVALID_SPATIAL_MEASURE_BEGIN  = "The provided spatial measure value (";
-const std::string SpatialEntity::ERR_INVALID_SPATIAL_MEASURE_MIDDLE = "is invalid for the given spatial measure type (";
+const std::string SpatialEntity::ERR_INVALID_SPATIAL_MEASURE_MIDDLE = ") is invalid for the given spatial measure type (";
 const std::string SpatialEntity::ERR_INVALID_SPATIAL_MEASURE_END    = "). Please change.";

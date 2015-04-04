@@ -22,7 +22,7 @@
 
     <!-- Elements -->
     
-    <xs:element name="experiment" type="ExperimentType" />
+    <xs:element name="experiment" type="ExperimentType"/>
     
     <!-- User-defined complex types -->
     
@@ -32,26 +32,26 @@
                 <!-- Uniqueness constraints -->
                 
                 <xs:unique name="UniqueNumericStateVariables">
-                    <xs:selector xpath="numericStateVariable" />
-                    <xs:field xpath="@scaleAndSubsystem" />            
-                    <xs:field xpath="name" />
+                    <xs:selector xpath="numericStateVariable"/>
+                    <xs:field xpath="@scaleAndSubsystem"/>            
+                    <xs:field xpath="name"/>
                 </xs:unique>
                 
                 <xs:unique name="UniqueSpatialEntities">
-                    <xs:selector xpath="spatialEntity" />
-                    <xs:field xpath="@spatialType" />
-                    <xs:field xpath="@scaleAndSubsystem" />
-                    <xs:field xpath="clusteredness" />
-                    <xs:field xpath="density" />
-                    <xs:field xpath="area" />
-                    <xs:field xpath="perimeter" />
-                    <xs:field xpath="distanceFromOrigin" />
-                    <xs:field xpath="angle" />
-                    <xs:field xpath="triangleMeasure" />
-                    <xs:field xpath="rectangleMeasure" />
-                    <xs:field xpath="circleMeasure" />
-                    <xs:field xpath="centroidX" />
-                    <xs:field xpath="centroidY" />
+                    <xs:selector xpath="spatialEntity"/>
+                    <xs:field xpath="@spatialType"/>
+                    <xs:field xpath="@scaleAndSubsystem"/>
+                    <xs:field xpath="clusteredness"/>
+                    <xs:field xpath="density"/>
+                    <xs:field xpath="area"/>
+                    <xs:field xpath="perimeter"/>
+                    <xs:field xpath="distanceFromOrigin"/>
+                    <xs:field xpath="angle"/>
+                    <xs:field xpath="triangleMeasure"/>
+                    <xs:field xpath="rectangleMeasure"/>
+                    <xs:field xpath="circleMeasure"/>
+                    <xs:field xpath="centroidX"/>
+                    <xs:field xpath="centroidY"/>
                 </xs:unique> 
             </xs:element>
         </xs:sequence>
@@ -59,39 +59,39 @@
 
     <xs:complexType name="TimepointType">
         <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="spatialEntity" type="SpatialEntityType" />
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="numericStateVariable" type="NumericStateVariableType" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="spatialEntity" type="SpatialEntityType"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="numericStateVariable" type="NumericStateVariableType"/>
         </xs:sequence>
         
-        <xs:attribute name="value" type="xs:nonNegativeInteger" />
+        <xs:attribute name="value" type="xs:nonNegativeInteger"/>
     </xs:complexType>
 
     <xs:complexType name="SpatialEntityType">
         <xs:sequence>
-            <xs:element name="clusteredness" type="ClusterednessType" />
-            <xs:element name="density" type="DensityType" />
-            <xs:element name="area" type="AreaType" />
-            <xs:element name="perimeter" type="PerimeterType" />
-            <xs:element name="distanceFromOrigin" type="DistanceFromOriginType" />
-            <xs:element name="angle" type="AngleType" />
-            <xs:element name="triangleMeasure" type="TriangleMeasureType" />
-            <xs:element name="rectangleMeasure" type="RectangleMeasureType" />
-            <xs:element name="circleMeasure" type="CircleMeasureType" />
-            <xs:element name="centroidX" type="CentroidXType" />
-            <xs:element name="centroidY" type="CentroidYType" />
+            <xs:element name="clusteredness" type="ClusterednessType"/>
+            <xs:element name="density" type="DensityType"/>
+            <xs:element name="area" type="AreaType"/>
+            <xs:element name="perimeter" type="PerimeterType"/>
+            <xs:element name="distanceFromOrigin" type="DistanceFromOriginType"/>
+            <xs:element name="angle" type="AngleType"/>
+            <xs:element name="triangleMeasure" type="TriangleMeasureType"/>
+            <xs:element name="rectangleMeasure" type="RectangleMeasureType"/>
+            <xs:element name="circleMeasure" type="CircleMeasureType"/>
+            <xs:element name="centroidX" type="CentroidXType"/>
+            <xs:element name="centroidY" type="CentroidYType"/>
         </xs:sequence>
         
-        <xs:attribute name="spatialType" type="SpatialMetaType" use="required" />
-        <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType" />
+        <xs:attribute name="spatialType" type="SpatialMetaType" use="required"/>
+        <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType"/>
     </xs:complexType>
 
     <xs:complexType name="NumericStateVariableType">
         <xs:sequence>
-            <xs:element name="name" type="xs:string" />
-            <xs:element name="value" type="xs:double" />
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="value" type="xs:double"/>
         </xs:sequence>
         
-        <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType" />
+        <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType"/>
     </xs:complexType>
     
     <!-- User-defined simple types -->
@@ -104,85 +104,85 @@
 
     <xs:simpleType name="ClusterednessType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1E+37" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="DensityType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1E+37" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="AreaType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1E+37" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1E+37"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="PerimeterType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1E+37" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1E+37"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="DistanceFromOriginType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1E+37" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1E+37"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="AngleType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="360" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="360"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="TriangleMeasureType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="RectangleMeasureType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="CircleMeasureType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="CentroidXType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1E+37" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1E+37"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="CentroidYType">
         <xs:restriction base="xs:double">
-            <xs:minInclusive value="0" />
-            <xs:maxInclusive value="1E+37" />
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1E+37"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="SpatialMetaType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="cluster" />
-            <xs:enumeration value="region" />
+            <xs:enumeration value="cluster"/>
+            <xs:enumeration value="region"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>
