@@ -30,14 +30,14 @@
                 
                 <xs:unique name="UniqueNumericStateVariables">
                     <xs:selector xpath="numericStateVariable" />
-                    <xs:field xpath="@semanticType" />            
+                    <xs:field xpath="@scaleAndSubsystem" />            
                     <xs:field xpath="name" />
                 </xs:unique>
                 
                 <xs:unique name="UniqueSpatialEntities">
                     <xs:selector xpath="spatialEntity" />
                     <xs:field xpath="@spatialType" />
-                    <xs:field xpath="@semanticType" />
+                    <xs:field xpath="@scaleAndSubsystem" />
                     /*{% for spatial_measure in spatial_measures %}*/
                     <xs:field xpath="/*{{ spatial_measure.name }}*/" />
                     /*{% endfor %}*/
@@ -63,7 +63,7 @@
         </xs:sequence>
         
         <xs:attribute name="spatialType" type="SpatialMetaType" use="required" />
-        <xs:attribute name="semanticType" type="SemanticMetaType" />
+        <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType" />
     </xs:complexType>
 
     <xs:complexType name="NumericStateVariableType">
@@ -72,14 +72,14 @@
             <xs:element name="value" type="xs:double" />
         </xs:sequence>
         
-        <xs:attribute name="semanticType" type="SemanticMetaType" />
+        <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType" />
     </xs:complexType>
     
     <!-- User-defined simple types -->
 
-    <xs:simpleType name="SemanticMetaType">
+    <xs:simpleType name="ScaleAndSubsystemType">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[0-9a-zA-Z]+(\.[0-9a-zA-Z]+)*"/>
+            <xs:pattern value="[0-9a-zA-Z]+\.[0-9a-zA-Z]+"/>
         </xs:restriction>
     </xs:simpleType>
 
