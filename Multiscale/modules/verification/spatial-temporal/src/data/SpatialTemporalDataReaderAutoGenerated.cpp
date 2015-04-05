@@ -37,14 +37,14 @@ void SpatialTemporalDataReader::createDerivedSpatialEntity(const pt::ptree &spat
 
 void SpatialTemporalDataReader::setSpatialEntityMeasureValues(const pt::ptree &spatialEntityTree,
                                                               const std::shared_ptr<SpatialEntity> &spatialEntity) {
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Clusteredness,
-                                          spatialEntityTree.get<double>("clusteredness"));
-    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Density,
-                                          spatialEntityTree.get<double>("density"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Area,
                                           spatialEntityTree.get<double>("area"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Perimeter,
                                           spatialEntityTree.get<double>("perimeter"));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Clusteredness,
+                                          spatialEntityTree.get<double>("clusteredness"));
+    spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Density,
+                                          spatialEntityTree.get<double>("density"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin,
                                           spatialEntityTree.get<double>("distanceFromOrigin"));
     spatialEntity->setSpatialMeasureValue(SpatialMeasureType::Angle,

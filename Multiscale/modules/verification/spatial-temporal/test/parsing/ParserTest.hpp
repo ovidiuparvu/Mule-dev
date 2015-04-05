@@ -27,47 +27,47 @@ using namespace multiscaletest::verification;
 /////////////////////////////////////////////////////////
 
 TEST(BinaryNumericFilter, IncorrectInputMissingParameterOne) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add(3)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add(3)))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, IncorrectInputMissingParameterTwo) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add(3)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add(3)))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, IncorrectInputMissingParametersOneTwo) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add()))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add()))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, IncorrectInputBeforeStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add1(clusteredness, clusteredness)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add1(area, area)))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add(1 + clusteredness, clusteredness)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add(1 + area, area)))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, InvalidFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add(volume23D, clusteredness)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add(volume23D, area)))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, MissingParametersComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add(clusteredness clusteredness)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add(area area)))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, InvalidSecondParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add(clusteredness, entropyy_)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add(area, entropyy_)))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, IncorrectInputBeforeEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add(clusteredness, clusteredness / 2)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add(area, area / 2)))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, IncorrectInputAfterEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add(clusteredness, clusteredness) * 1))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add(area, area) * 1))) > 1]"), InvalidInputException);
 }
 
 TEST(BinaryNumericFilter, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= add(clusteredness, clusteredness)))) > 1]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= add(area, area)))) > 1]"));
 }
 
 
@@ -280,11 +280,11 @@ TEST(BinaryNumericTemporal, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(BinaryStatisticalMeasure, IncorrectQuaternarySubsetMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [correlation(clusteredness(clusters), clusteredness(clusters)) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [correlation(area(clusters), area(clusters)) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalMeasure, CorrectCovar) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters)) >= 0.001]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [covar(area(clusters), area(clusters)) >= 0.001]"));
 }
 
 
@@ -297,11 +297,11 @@ TEST(BinaryStatisticalMeasure, CorrectCovar) {
 /////////////////////////////////////////////////////////
 
 TEST(BinaryStatisticalNumeric, IncorrectInputMissingParameterOne) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [covar(clusteredness(clusters)) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [covar(area(clusters)) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalNumeric, IncorrectInputMissingParameterTwo) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [covar(clusteredness(clusters)) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [covar(area(clusters)) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalNumeric, IncorrectInputMissingParametersOneTwo) {
@@ -309,27 +309,27 @@ TEST(BinaryStatisticalNumeric, IncorrectInputMissingParametersOneTwo) {
 }
 
 TEST(BinaryStatisticalNumeric, IncorrectInputBeforeStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [covar V covar(clusteredness(clusters), clusteredness(clusters)) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [covar V covar(area(clusters), area(clusters)) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalNumeric, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [covar(_clusteredness(clusters), clusteredness(clusters)) >= 0.001"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [covar(_area(clusters), area(clusters)) >= 0.001"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalNumeric, MissingComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [covar(clusteredness(clusters) clusteredness(clusters)) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [covar(area(clusters) area(clusters)) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalNumeric, IncorrectInputBeforeEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters) ^ clusteredness) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [covar(area(clusters), area(clusters) ^ area) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalNumeric, IncorrectInputAfterEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters)) <>= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [covar(area(clusters), area(clusters)) <>= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalNumeric, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [covar(clusteredness(clusters), clusteredness(clusters)) >= 0.001]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [covar(area(clusters), area(clusters)) >= 0.001]"));
 }
 
 
@@ -342,15 +342,15 @@ TEST(BinaryStatisticalNumeric, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(BinaryStatisticalQuantileMeasure, IncorrectBinaryStatisticalQuantileMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [midtile(clusteredness(clusters), 4.3) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [midtile(area(clusters), 4.3) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileMeasure, CorrectPercentile) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [percentile(clusteredness(clusters), 4.3) <= 0.5]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [percentile(area(clusters), 4.3) <= 0.5]"));
 }
 
 TEST(BinaryStatisticalQuantileMeasure, CorrectQuartile) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [quartile(clusteredness(clusters), 4.3) <= 0.5]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [quartile(area(clusters), 4.3) <= 0.5]"));
 }
 
 
@@ -367,7 +367,7 @@ TEST(BinaryStatisticalQuantileNumeric, IncorrectInputMissingParameterOne) {
 }
 
 TEST(BinaryStatisticalQuantileNumeric, IncorrectInputMissingParameterTwo) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [percentile(clusteredness(clusters)) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [percentile(area(clusters)) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileNumeric, IncorrectInputMissingParametersOneTwo) {
@@ -375,15 +375,15 @@ TEST(BinaryStatisticalQuantileNumeric, IncorrectInputMissingParametersOneTwo) {
 }
 
 TEST(BinaryStatisticalQuantileNumeric, IncorrectInputBeforeStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [percentile ^ quartile(clusteredness(clusters), 4.3) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [percentile ^ quartile(area(clusters), 4.3) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileNumeric, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [percentile ( _ clusteredness(clusters), 4.3) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [percentile ( _ area(clusters), 4.3) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileNumeric, MissingComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [percentile(clusteredness(clusters) 4.3) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [percentile(area(clusters) 4.3) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileNumeric, InvalidSpatialMeasureCollection) {
@@ -391,15 +391,15 @@ TEST(BinaryStatisticalQuantileNumeric, InvalidSpatialMeasureCollection) {
 }
 
 TEST(BinaryStatisticalQuantileNumeric, IncorrectInputBeforeEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [percentile(clusteredness(clusters), 4.3, 1.2) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [percentile(area(clusters), 4.3, 1.2) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileNumeric, IncorrectInputAfterEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [percentile(clusteredness(clusters), 4.3) V true <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [percentile(area(clusters), 4.3) V true <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileNumeric, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [percentile(clusteredness(clusters), 4.3) <= 0.5]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [percentile(area(clusters), 4.3) <= 0.5]"));
 }
 
 
@@ -416,7 +416,7 @@ TEST(BinaryStatisticalQuantileSpatial, IncorrectInputMissingParameterOne) {
 }
 
 TEST(BinaryStatisticalQuantileSpatial, IncorrectInputMissingParameterTwo) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile(clusteredness(clusters))) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile(area(clusters))) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileSpatial, IncorrectInputMissingParametersOneTwo) {
@@ -424,15 +424,15 @@ TEST(BinaryStatisticalQuantileSpatial, IncorrectInputMissingParametersOneTwo) {
 }
 
 TEST(BinaryStatisticalQuantileSpatial, IncorrectInputBeforeStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile ^ quartile(clusteredness(clusters), 4.3)) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile ^ quartile(area(clusters), 4.3)) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileSpatial, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile ( _ clusteredness(clusters), 4.3)) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile ( _ area(clusters), 4.3)) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileSpatial, MissingComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile(clusteredness(clusters) 4.3)) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile(area(clusters) 4.3)) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileSpatial, InvalidSpatialMeasureCollection) {
@@ -440,15 +440,15 @@ TEST(BinaryStatisticalQuantileSpatial, InvalidSpatialMeasureCollection) {
 }
 
 TEST(BinaryStatisticalQuantileSpatial, IncorrectInputBeforeEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile(clusteredness(clusters), 4.3, 1.2)) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile(area(clusters), 4.3, 1.2)) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileSpatial, IncorrectInputAfterEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile(clusteredness(clusters), 4.3) V true) <= 0.5]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 3] percentile(area(clusters), 4.3) V true) <= 0.5]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalQuantileSpatial, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [min([0, 3] percentile(clusteredness(clusters), 4.3)) <= 0.5]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [min([0, 3] percentile(area(clusters), 4.3)) <= 0.5]"));
 }
 
 
@@ -461,11 +461,11 @@ TEST(BinaryStatisticalQuantileSpatial, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(BinaryStatisticalSpatial, IncorrectInputMissingParameterOne) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(clusteredness(clusters))) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(area(clusters))) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalSpatial, IncorrectInputMissingParameterTwo) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(clusteredness(clusters))) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(area(clusters))) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalSpatial, IncorrectInputMissingParametersOneTwo) {
@@ -473,27 +473,27 @@ TEST(BinaryStatisticalSpatial, IncorrectInputMissingParametersOneTwo) {
 }
 
 TEST(BinaryStatisticalSpatial, IncorrectInputBeforeStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar V covar(clusteredness(clusters), clusteredness(clusters))) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar V covar(area(clusters), area(clusters))) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalSpatial, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(_clusteredness(clusters), clusteredness(clusters))) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(_area(clusters), area(clusters))) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalSpatial, MissingComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(clusteredness(clusters) clusteredness(clusters))) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(area(clusters) area(clusters))) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalSpatial, IncorrectInputBeforeEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(clusteredness(clusters), clusteredness(clusters) ^ clusteredness)) >= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(area(clusters), area(clusters) ^ area)) >= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalSpatial, IncorrectInputAfterEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(clusteredness(clusters), clusteredness(clusters))) <>= 0.001]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [median([0, 3] covar(area(clusters), area(clusters))) <>= 0.001]"), InvalidInputException);
 }
 
 TEST(BinaryStatisticalSpatial, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [median([0, 3] covar(clusteredness(clusters), clusteredness(clusters))) >= 0.001]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [median([0, 3] covar(area(clusters), area(clusters))) >= 0.001]"));
 }
 
 
@@ -506,15 +506,15 @@ TEST(BinaryStatisticalSpatial, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(ChangeMeasure, IncorrectChangeMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [z(max(clusteredness(clusters))) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [z(max(area(clusters))) >= 2]"), InvalidInputException);
 }
 
 TEST(ChangeMeasure, CorrectDifference) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [d(max(clusteredness(clusters))) >= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [d(max(area(clusters))) >= 2]"));
 }
 
 TEST(ChangeMeasure, CorrectRatio) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [r(max(clusteredness(clusters))) >= 4]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [r(max(area(clusters))) >= 4]"));
 }
 
 
@@ -559,31 +559,31 @@ TEST(ChangeTemporalNumericCollection, IncorrectInputMissingParameterAndBrackets)
 }
 
 TEST(ChangeTemporalNumericCollection, IncorrectOpeningBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(d[[0, 10] max(clusteredness(clusters)))) >= 4]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d[[0, 10] max(area(clusters)))) >= 4]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericCollection, IncorrectClosingBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(d([0, 10] max(clusteredness(clusters))]) >= 4]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d([0, 10] max(area(clusters))]) >= 4]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericCollection, IncorrectBrackets) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(d{[0, 10] max(clusteredness(clusters))}) >= 4]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d{[0, 10] max(area(clusters))}) >= 4]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericCollection, IncorrectBracketsInverted) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(d)[0, 10] max(clusteredness(clusters))() >= 4]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d)[0, 10] max(area(clusters))() >= 4]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericCollection, IncorrectBracketsDoubled) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(d(([0, 10] max(clusteredness(clusters))))) >= 4]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d(([0, 10] max(area(clusters))))) >= 4]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericCollection, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(d([0, 10] max(clusteredness(clusters)) + 2)) >= 4]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d([0, 10] max(area(clusters)) + 2)) >= 4]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericCollection, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(d([0, 10] max(clusteredness(clusters))) - 1) >= 4]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(d([0, 10] max(area(clusters))) - 1) >= 4]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericCollection, IncorrectTemporalNumericCollectionRealNumber) {
@@ -599,7 +599,7 @@ TEST(ChangeTemporalNumericCollection, IncorrectTemporalNumericCollectionNumericS
 }
 
 TEST(ChangeTemporalNumericCollection, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(d([0, 10] max(clusteredness(clusters)))) >= 4]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(d([0, 10] max(area(clusters)))) >= 4]"));
 }
 
 
@@ -616,15 +616,15 @@ TEST(ChangeTemporalNumericMeasure, IncorrectChangeMeasure) {
 }
 
 TEST(ChangeTemporalNumericMeasure, IncorrectInputBeforeChangeMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [T ^ d(max(clusteredness(clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [T ^ d(max(area(clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericMeasure, IncorrectInputBeforeStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [d V d(max(clusteredness(clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [d V d(max(area(clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericMeasure, IncorrectInputAfterStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [d(~ max(clusteredness(clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [d(~ max(area(clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericMeasure, MissingParameter) {
@@ -656,23 +656,23 @@ TEST(ChangeTemporalNumericMeasure, IncorrectBracketsDoubled) {
 }
 
 TEST(ChangeTemporalNumericMeasure, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [d(max(clusteredness(clusters)), max(clusteredness(clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [d(max(area(clusters)), max(area(clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericMeasure, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [d(max(clusteredness(clusters))), 2) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [d(max(area(clusters))), 2) <= 3]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericMeasure, MissingComparator) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [d(max(clusteredness(clusters))) 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [d(max(area(clusters))) 3]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericMeasure, IncorrectEndOperand) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [d(max(clusteredness(clusters))) <= ~(add(2, 3))]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [d(max(area(clusters))) <= ~(add(2, 3))]"), InvalidInputException);
 }
 
 TEST(ChangeTemporalNumericMeasure, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [d(max(clusteredness(clusters))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [d(max(area(clusters))) <= 3]"));
 }
 
 
@@ -685,35 +685,35 @@ TEST(ChangeTemporalNumericMeasure, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(Comparator, IncorrectEqual) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(clusters)) == 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(clusters)) == 3]"), InvalidInputException);
 }
 
 TEST(Comparator, IncorrectDifferent1) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(clusters)) <> 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(clusters)) <> 3]"), InvalidInputException);
 }
 
 TEST(Comparator, IncorrectDifferent2) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(clusters)) != 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(clusters)) != 3]"), InvalidInputException);
 }
 
 TEST(Comparator, CorrectGreaterThan) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(clusters)) > 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(clusters)) > 3]"));
 }
 
 TEST(Comparator, CorrectLessThan) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(clusters)) < 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(clusters)) < 3]"));
 }
 
 TEST(Comparator, CorrectGreaterThanOrEqual) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(clusters)) >= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(clusters)) >= 3]"));
 }
 
 TEST(Comparator, CorrectLessThanOrEqual) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(clusters)) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(clusters)) <= 3]"));
 }
 
 TEST(Comparator, CorrectEqual) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(clusters)) = 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(clusters)) = 3]"));
 }
 
 
@@ -733,72 +733,72 @@ const static std::vector<std::string> CONSTRAINTS_BINARY_OPERATORS = std::vector
 // CompoundConstraint
 
 TEST(CompoundConstraint, MissingBinaryOperator) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 30.2) (clusteredness >= 8)))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, (area <= 30.2) (area >= 8)))) <= 3]"), InvalidInputException);
 }
 
 TEST(CompoundConstraint, MissingConstraints) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, " + binaryOperator + " =>))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, " + binaryOperator + " =>))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, MissingFirstConstraint) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, " + binaryOperator + " (clusteredness = 34)))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, " + binaryOperator + " (area = 34)))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, MissingSecondConstraint) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness = 34) " + binaryOperator + "))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, (area = 34) " + binaryOperator + "))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, BinaryOperatorAsUnaryBefore) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, " + binaryOperator + " (clusteredness <= 30.2)))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, " + binaryOperator + " (area <= 30.2)))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, BinaryOperatorAsUnaryAfter) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 30.2) " + binaryOperator + "))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, (area <= 30.2) " + binaryOperator + "))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, TemporalNumericComparisonBeforeBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ({A} >= 3 " + binaryOperator + " (clusteredness = 0.1))))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, ({A} >= 3 " + binaryOperator + " (area = 0.1))))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, UnaryNumericMeasureAfterBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ((clusteredness = 0.1) " + binaryOperator + " count(clusteredness(clusters)) >= 3)))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, ((area = 0.1) " + binaryOperator + " count(area(clusters)) >= 3)))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, AdditionalOperatorBeforeBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ((clusteredness = 0.1) ~ " + binaryOperator + " count(clusteredness(clusters)) >= 3)))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, ((area = 0.1) ~ " + binaryOperator + " count(area(clusters)) >= 3)))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, AdditionalOperatorAfterBinaryOperator) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ((clusteredness = 0.1) " + binaryOperator + " " + binaryOperator + " count(clusteredness(clusters)) >= 3)))) <= 3]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, ((area = 0.1) " + binaryOperator + " " + binaryOperator + " count(area(clusters)) >= 3)))) <= 3]"), InvalidInputException);
     }
 }
 
 TEST(CompoundConstraint, Correct) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 30.2) " + binaryOperator + " (clusteredness = 0.1)))) <= 3]"));
+        EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, (area <= 30.2) " + binaryOperator + " (area = 0.1)))) <= 3]"));
     }
 }
 
 TEST(CompoundConstraint, MultipleCorrect) {
     for (auto &binaryOperator : CONSTRAINTS_BINARY_OPERATORS) {
-        EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 30.2) " + binaryOperator + " (clusteredness = 0.1) " + binaryOperator + " (~ clusteredness >= 4000)))) <= 3]"));
+        EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, (area <= 30.2) " + binaryOperator + " (area = 0.1) " + binaryOperator + " (~ area >= 4000)))) <= 3]"));
     }
 }
 
@@ -819,7 +819,7 @@ const static std::vector<std::string> LOGIC_PROPERTIES_BINARY_OPERATORS = std::v
 // CompoundLogicProperty
 
 TEST(CompoundLogicProperty, MissingBinaryOperator) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) (count(clusteredness(clusters)) >= 4) ]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) (count(area(clusters)) >= 4) ]"), InvalidInputException);
 }
 
 TEST(CompoundLogicProperty, MissingLogicProperties) {
@@ -830,7 +830,7 @@ TEST(CompoundLogicProperty, MissingLogicProperties) {
 
 TEST(CompoundLogicProperty, MissingFirstLogicProperty) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [" + binaryOperator + " (count(clusteredness(clusters)) >= 4) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [" + binaryOperator + " (count(area(clusters)) >= 4) ]"), InvalidInputException);
     }
 }
 
@@ -842,49 +842,49 @@ TEST(CompoundLogicProperty, MissingSecondLogicProperty) {
 
 TEST(CompoundLogicProperty, BinaryOperatorAsUnaryBefore) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [" + binaryOperator + " ({A} >= 4) (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [" + binaryOperator + " ({A} >= 4) (count(area(clusters)) >= 4)]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, BinaryOperatorAsUnaryAfter) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) (count(clusteredness(clusters)) >= 4) " + binaryOperator + "]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) (count(area(clusters)) >= 4) " + binaryOperator + "]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, UnaryStatisticalMeasureBeforeBinaryOperator) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [(clusteredness) " + binaryOperator + " (count(clusteredness(clusters)) >= 4) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [(area) " + binaryOperator + " (count(area(clusters)) >= 4) ]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, UnaryNumericMeasureAfterBinaryOperator) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(clusteredness(clusters))) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(area(clusters))) ]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, AdditionalOperatorBeforeBinaryOperator) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) ~ " + binaryOperator + " (count(clusteredness(clusters)) >= 4) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) ~ " + binaryOperator + " (count(area(clusters)) >= 4) ]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, AdditionalOperatorAfterBinaryOperator) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " " + binaryOperator + " (count(clusteredness(clusters)) >= 4) ]"), InvalidInputException);
+        EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " " + binaryOperator + " (count(area(clusters)) >= 4) ]"), InvalidInputException);
     }
 }
 
 TEST(CompoundLogicProperty, Correct) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(clusteredness(clusters)) >= 4) ]"));
+        EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(area(clusters)) >= 4) ]"));
     }
 }
 
 TEST(CompoundLogicProperty, MultipleCorrect) {
     for (auto &binaryOperator : LOGIC_PROPERTIES_BINARY_OPERATORS) {
-        EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(clusteredness(clusters)) <= 4) " + binaryOperator + " {B} = 3]"));
+        EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) " + binaryOperator + " (count(area(clusters)) <= 4) " + binaryOperator + " {B} = 3]"));
     }
 }
 
@@ -898,43 +898,43 @@ TEST(CompoundLogicProperty, MultipleCorrect) {
 /////////////////////////////////////////////////////////
 
 TEST(ConstraintEnclosedByParentheses, MissingParenthesisRight) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 30.2))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, (area <= 30.2))) <= 3]"), InvalidInputException);
 }
 
 TEST(ConstraintEnclosedByParentheses, MissingParenthesisLeft) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 30.2)))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, area <= 30.2)))) <= 3]"), InvalidInputException);
 }
 
 TEST(ConstraintEnclosedByParentheses, ExtraParenthesisLeft) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ((clusteredness <= 30.2)))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, ((area <= 30.2)))) <= 3]"), InvalidInputException);
 }
 
 TEST(ConstraintEnclosedByParentheses, ExtraParenthesisRight) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 30.2))))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, (area <= 30.2))))) <= 3]"), InvalidInputException);
 }
 
 TEST(ConstraintEnclosedByParentheses, InvertedParentheses) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, )clusteredness <= 30.2())) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, )area <= 30.2())) <= 3]"), InvalidInputException);
 }
 
 TEST(ConstraintEnclosedByParentheses, ExtraParenthesesBothSides) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (((clusteredness <= 30.2)))))))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, (((area <= 30.2)))))))) <= 3]"), InvalidInputException);
 }
 
 TEST(ConstraintEnclosedByParentheses, ParenthesesInWrongOrder) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (((())(clusteredness <= 30.2)))))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, (((())(area <= 30.2)))))) <= 3]"), InvalidInputException);
 }
 
 TEST(ConstraintEnclosedByParentheses, Correct) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 TEST(ConstraintEnclosedByParentheses, CorrectDoubled) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ((clusteredness <= 30.2))))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, ((area <= 30.2))))) <= 3]"));
 }
 
 TEST(ConstraintEnclosedByParentheses, CorrectQuadrupled) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ((((clusteredness <= 30.2))))))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, ((((area <= 30.2))))))) <= 3]"));
 }
 
 
@@ -947,15 +947,15 @@ TEST(ConstraintEnclosedByParentheses, CorrectQuadrupled) {
 /////////////////////////////////////////////////////////
 
 TEST(Constraint, ExtraInputBeforeConstraint) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness, clusteredness <= 30.2))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, area, area <= 30.2))) <= 3]"), InvalidInputException);
 }
 
 TEST(Constraint, ExtraInputAfterConstraint) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 30.2, true))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, area <= 30.2, true))) <= 3]"), InvalidInputException);
 }
 
 TEST(Constraint, Correct) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 
@@ -968,23 +968,23 @@ TEST(Constraint, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(FilterSubset, IncorrectAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, d(count(clusteredness(clusters))) >= 4.3))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, d(count(area(clusters))) >= 4.3))) <= 3]"), InvalidInputException);
 }
 
 TEST(FilterSubset, CorrectSpatialMeasureRealValue) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness >= 4.3))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(filter(clusters, area >= 4.3))) <= 3]"));
 }
 
 TEST(FilterSubset, CorrectSpatialMeasures) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness >= clusteredness))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(filter(clusters, area >= area))) <= 3]"));
 }
 
 TEST(FilterSubset, CorrectMultiple) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness >= 4.3 ^ clusteredness < 2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(filter(clusters, area >= 4.3 ^ area < 2))) <= 3]"));
 }
 
 TEST(FilterSubset, CorrectMultipleComplex) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness >= sqrt(add(power(subtract(10, clusteredness), 2), power(subtract(10, clusteredness), 2)))))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(filter(clusters, area >= sqrt(add(power(subtract(10, area), 2), power(subtract(10, area), 2)))))) <= 3]"));
 }
 
 
@@ -997,31 +997,31 @@ TEST(FilterSubset, CorrectMultipleComplex) {
 /////////////////////////////////////////////////////////
 
 TEST(FilterSubset, IncorrectInputMisspelledFilter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(fillter[(clusters, clusteredness >= 4.3))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(fillter[(clusters, area >= 4.3))) <= 3]"), InvalidInputException);
 }
 
 TEST(FilterSubset, IncorrectInputBeforeStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter[(clusters, clusteredness >= 4.3))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter[(clusters, area >= 4.3))) <= 3]"), InvalidInputException);
 }
 
 TEST(FilterSubset, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusters, clusteredness >= 4.3))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, clusters, area >= 4.3))) <= 3]"), InvalidInputException);
 }
 
 TEST(FilterSubset, IncorrectInputMissingComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters clusteredness >= 4.3))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters area >= 4.3))) <= 3]"), InvalidInputException);
 }
 
 TEST(FilterSubset, IncorrectInputBeforeEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness >= 4.3, clusteredness <= 2))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area >= 4.3, area <= 2))) <= 3]"), InvalidInputException);
 }
 
 TEST(FilterSubset, IncorrectInputAfterEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusters))) = 2 V <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, clusters))) = 2 V <= 3]"), InvalidInputException);
 }
 
 TEST(FilterSubset, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness >= 4.3))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(filter(clusters, area >= 4.3))) <= 3]"));
 }
 
 
@@ -1156,23 +1156,23 @@ TEST(GlobalLogicProperty, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(HeterogeneousTimeseriesComponent, WrongAlternativeSpike) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(spike, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(spike, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HeterogeneousTimeseriesComponent, WrongAlternativeSink) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(sink, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(sink, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HeterogeneousTimeseriesComponent, WrongAlternativeTrough) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(trough, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(trough, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HeterogeneousTimeseriesComponent, CorrectPeak) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 TEST(HeterogeneousTimeseriesComponent, CorrectValley) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(valley, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(valley, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 
@@ -1185,31 +1185,31 @@ TEST(HeterogeneousTimeseriesComponent, CorrectValley) {
 /////////////////////////////////////////////////////////
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputBeforeHomogeneousTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(+values(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(+values(ascent, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputWrongHomogeneousTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(cvalues(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(cvalues(ascent, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputBeforeStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values of(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values of(ascent, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputAfterStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values((ascent, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values((ascent, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputInvalidFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(valley, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(valley, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputMissingFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values([0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values([0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputMissingCommaBetweenParameters) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputMissingSecondParameter) {
@@ -1217,31 +1217,31 @@ TEST(HomogeneousHomogeneousTimeseries, IncorrectInputMissingSecondParameter) {
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputInvalidSecondParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] clusteredness(clusters))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] area(clusters))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(clusteredness(clusters)), {A})) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(area(clusters)), {A})) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(clusteredness(clusters))), 2) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(area(clusters))), 2) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputMissingParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values ascent, [0, 5] count(clusteredness(clusters))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values ascent, [0, 5] count(area(clusters))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputInvertedParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values)ascent, [0, 5] count(clusteredness(clusters))() > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values)ascent, [0, 5] count(area(clusters))() > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputDoubledParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values((ascent, [0, 5] count(clusteredness(clusters))))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values((ascent, [0, 5] count(area(clusters))))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, IncorrectInputWrongParanthesesType) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values{ascent, [0, 5] count(clusteredness(clusters))}) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values{ascent, [0, 5] count(area(clusters))}) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousHomogeneousTimeseries, CorrectNumericStateVariables) {
@@ -1249,7 +1249,7 @@ TEST(HomogeneousHomogeneousTimeseries, CorrectNumericStateVariables) {
 }
 
 TEST(HomogeneousHomogeneousTimeseries, CorrectSpatialEntities) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 
@@ -1262,27 +1262,27 @@ TEST(HomogeneousHomogeneousTimeseries, CorrectSpatialEntities) {
 /////////////////////////////////////////////////////////
 
 TEST(HomogeneousTimeseriesComponent, IncorrectAlternativeHeterogeneousTimeseriesComponent) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(values(peak, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectAscent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(ascent, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectDescent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(descent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(descent, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectPlateau) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(plateau, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(plateau, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectUniformAscent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(uniformAscent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(uniformAscent, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesComponent, CorrectUniformDescent) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(uniformDescent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(uniformDescent, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 
@@ -1295,15 +1295,15 @@ TEST(HomogeneousTimeseriesComponent, CorrectUniformDescent) {
 /////////////////////////////////////////////////////////
 
 TEST(HomogeneousTimeseriesMeasure, IncorrectAlternativeTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(exitingValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(exitingValue(peak, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(HomogeneousTimeseriesMeasure, CorrectTimeSpan) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(timeSpan(uniformAscent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(timeSpan(uniformAscent, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 TEST(HomogeneousTimeseriesMeasure, CorrectValue) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(uniformDescent, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(values(uniformDescent, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 
@@ -1365,19 +1365,19 @@ TEST(LogicPropertyEnclosedByParentheses, CorrectQuadrupled) {
 /////////////////////////////////////////////////////////
 
 TEST(LogicProperty, ExtraInputBeforeLogicProperty) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [aaa count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [aaa count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(LogicProperty, ExtraInputInsideLogicProperty) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(clusters)) aaa >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(clusters)) aaa >= 2]"), InvalidInputException);
 }
 
 TEST(LogicProperty, ExtraInputAfterLogicProperty) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(clusters)) >= 2 aaa]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(clusters)) >= 2 aaa]"), InvalidInputException);
 }
 
 TEST(LogicProperty, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) >= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) >= 2]"));
 }
 
 
@@ -1390,11 +1390,11 @@ TEST(LogicProperty, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(MultipleLogicProperties, Correct1) {
-    EXPECT_TRUE(parseInputString("P >= 0.1234 [( d(4) >=  count(clusteredness(clusters)) ) ^ ( covar(clusteredness(clusters), clusteredness(clusters)) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"));
+    EXPECT_TRUE(parseInputString("P >= 0.1234 [( d(4) >=  count(area(clusters)) ) ^ ( covar(area(clusters), area(clusters)) >= {A} ) V ( {B} = sqrt(add({B}, {C})) )]"));
 }
 
 TEST(MultipleLogicProperties, Correct2) {
-    EXPECT_TRUE(parseInputString("P <= 0.85934 [~( F [2, 3] ( max(clusteredness(filter(clusters, clusteredness <= 10))) >= 2 ) ) => ( G [10, 20] (X (X [10] ( percentile(clusteredness(clusters), 0.4) = 0.7 ))) ) <=> ( (count(clusteredness(filter(clusters, (clusteredness <= 2) ^ (clusteredness >= 6) V (clusteredness >= 30) => (clusteredness <= 2) <=> (clusteredness >= 4)) )) >= 2) U [10, 400] ( kurt(clusteredness(clusters)) <= 0.00001 ) ) ]"));
+    EXPECT_TRUE(parseInputString("P <= 0.85934 [~( F [2, 3] ( max(area(filter(clusters, area <= 10))) >= 2 ) ) => ( G [10, 20] (X (X [10] ( percentile(area(clusters), 0.4) = 0.7 ))) ) <=> ( (count(area(filter(clusters, (area <= 2) ^ (area >= 6) V (area >= 30) => (area <= 2) <=> (area >= 4)) )) >= 2) U [10, 400] ( kurt(area(clusters)) <= 0.00001 ) ) ]"));
 }
 
 
@@ -1461,23 +1461,23 @@ TEST(NextLogicProperty, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(NotConstraint, IncorrectOperator) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, !(clusteredness <= 30.2)))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, !(area <= 30.2)))) <= 3]"), InvalidInputException);
 }
 
 TEST(NotConstraint, OperatorAfterConstraint) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 30.2) ~))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, (area <= 30.2) ~))) <= 3]"), InvalidInputException);
 }
 
 TEST(NotConstraint, OperatorAfterConstraintAndExtraConstraint) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, (clusteredness <= 30.2) (clusteredness = 2.4) ~))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, (area <= 30.2) (area = 2.4) ~))) <= 3]"), InvalidInputException);
 }
 
 TEST(NotConstraint, OperatorBeforeConstraintAndExtraConstraint) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ~ (clusteredness <= 30.2) (clusteredness = 2.4)))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, ~ (area <= 30.2) (area = 2.4)))) <= 3]"), InvalidInputException);
 }
 
 TEST(NotConstraint, Correct) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ~ (clusteredness <= 30.2)))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, ~ (area <= 30.2)))) <= 3]"));
 }
 
 
@@ -1519,7 +1519,7 @@ TEST(NumericMeasure, WrongAlternative) {
 }
 
 TEST(NumericMeasure, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 3] count(clusteredness(clusters))) >= 4]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 3] count(area(clusters))) >= 4]"));
 }
 
 
@@ -1536,7 +1536,7 @@ TEST(NumericMeasureCollection, WrongAlternative) {
 }
 
 TEST(NumericMeasureCollection, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 5] count(clusteredness(clusters))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 5] count(area(clusters))) > 0]"));
 }
 
 
@@ -1549,11 +1549,11 @@ TEST(NumericMeasureCollection, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(NumericSpatialMeasure, IncorrectAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [entropy__(clusteredness(clusters)) <= add(2, 3)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [entropy__(area(clusters)) <= add(2, 3)]"), InvalidInputException);
 }
 
 TEST(NumericSpatialMeasure, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [geomean(clusteredness(clusters)) <= add(2, 3)]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [geomean(area(clusters)) <= add(2, 3)]"));
 }
 
 
@@ -1715,11 +1715,11 @@ TEST(NumericStateVariable, CorrectNumericStateVariableWithTypeConstraint6) {
 /////////////////////////////////////////////////////////
 
 TEST(NumericStatisticalMeasure, IncorrectAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [X cardinality__(clusteredness(clusters)) <= 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [X cardinality__(area(clusters)) <= 1]"), InvalidInputException);
 }
 
 TEST(NumericStatisticalMeasure, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [X count(clusteredness(clusters)) <= 1]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [X count(area(clusters)) <= 1]"));
 }
 
 
@@ -1732,7 +1732,7 @@ TEST(NumericStatisticalMeasure, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(PrimarySpatialMeasureCollection, IncorrectInputBeforeSpatialMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(avg(clusteredness(clusters))) > 12.1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(avg(area(clusters))) > 12.1]"), InvalidInputException);
 }
 
 TEST(PrimarySpatialMeasureCollection, IncorrectSpatialMeasure) {
@@ -1740,27 +1740,27 @@ TEST(PrimarySpatialMeasureCollection, IncorrectSpatialMeasure) {
 }
 
 TEST(PrimarySpatialMeasureCollection, IncorrectInputAfterSpatialMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusterednesss(clusters)) > 12.1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(areas(clusters)) > 12.1]"), InvalidInputException);
 }
 
 TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingFirstParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness clusters)) > 12.1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(area clusters)) > 12.1]"), InvalidInputException);
 }
 
 TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingSecondParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness(clusters) > 12.1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(area(clusters) > 12.1]"), InvalidInputException);
 }
 
 TEST(PrimarySpatialMeasureCollection, IncorrectInputInvalidSubset) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness(cluster__)) > 12.1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(area(cluster__)) > 12.1]"), InvalidInputException);
 }
 
 TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingSubset) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness()) > 12.1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(area()) > 12.1]"), InvalidInputException);
 }
 
 TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingSubsetAndParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness) > 12.1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(area) > 12.1]"), InvalidInputException);
 }
 
 TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingAll) {
@@ -1768,7 +1768,7 @@ TEST(PrimarySpatialMeasureCollection, IncorrectInputMissingAll) {
 }
 
 TEST(PrimarySpatialMeasureCollection, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness(clusters)) > 12.1]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [F [0, 11] avg(area(clusters)) > 12.1]"));
 }
 
 
@@ -1781,35 +1781,35 @@ TEST(PrimarySpatialMeasureCollection, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(ProbabilisticLogicProperty, IncorrectProbabilitySymbol) {
-    EXPECT_THROW(parseInputString("PT >= 0.3 [count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("PT >= 0.3 [count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectProbabilitySymbol2) {
-    EXPECT_THROW(parseInputString("Prob >= 0.3 [count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("Prob >= 0.3 [count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectComparator) {
-    EXPECT_THROW(parseInputString("P != 0.3 [count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P != 0.3 [count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectEqualComparator) {
-    EXPECT_THROW(parseInputString("P = 0.3 [count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P = 0.3 [count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, InvalidProbabilityValueTooLow) {
-    EXPECT_THROW(parseInputString("P >= -0.1 [count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= -0.1 [count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, InvalidProbabilityValueTooLowMinor) {
-    EXPECT_THROW(parseInputString("P >= -0.000000001 [count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= -0.000000001 [count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, InvalidProbabilityValueTooHigh) {
-    EXPECT_THROW(parseInputString("P >= 2.9 [count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 2.9 [count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, InvalidProbabilityValueTooHighMinor) {
-    EXPECT_THROW(parseInputString("P >= 1.000000001 [count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 1.000000001 [count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectLogicProperty) {
@@ -1817,55 +1817,55 @@ TEST(ProbabilisticLogicProperty, IncorrectLogicProperty) {
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectlyEnclosingParanthesesLeftMissing) {
-    EXPECT_THROW(parseInputString("P >= 0.3 count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectlyEnclosingParanthesesRightMissing) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(clusters)) >= 2"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(clusters)) >= 2"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectlyEnclosingParanthesesLeftExtra) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [[count(clusteredness(clusters)) >= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [[count(area(clusters)) >= 2]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectlyEnclosingParanthesesRightExtra) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(clusters)) >= 2]]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(clusters)) >= 2]]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectlyEnclosingParanthesesLeftRightExtra) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [[count(clusteredness(clusters)) >= 2]]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [[count(area(clusters)) >= 2]]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectlyEnclosingParanthesesInverted) {
-    EXPECT_THROW(parseInputString("P >= 0.3 ]count(clusteredness(clusters)) >= 2["), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 ]count(area(clusters)) >= 2["), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectlyEnclosingParanthesesClosing) {
-    EXPECT_THROW(parseInputString("P >= 0.3 []count(clusteredness(clusters)) >= 2[]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 []count(area(clusters)) >= 2[]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, IncorrectlyEnclosingParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [[[count(clusteredness(clusters)) >= 2]][]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [[[count(area(clusters)) >= 2]][]"), InvalidInputException);
 }
 
 TEST(ProbabilisticLogicProperty, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) >= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) >= 2]"));
 }
 
 TEST(ProbabilisticLogicProperty, ProbabilityMin) {
-    EXPECT_TRUE(parseInputString("P >= 0.0 [count(clusteredness(clusters)) >= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.0 [count(area(clusters)) >= 2]"));
 }
 
 TEST(ProbabilisticLogicProperty, ProbabilityMax) {
-    EXPECT_TRUE(parseInputString("P >= 1.0 [count(clusteredness(clusters)) >= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 1.0 [count(area(clusters)) >= 2]"));
 }
 
 TEST(ProbabilisticLogicProperty, ProbabilityLow) {
-    EXPECT_TRUE(parseInputString("P >= 0.00000001 [count(clusteredness(clusters)) >= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.00000001 [count(area(clusters)) >= 2]"));
 }
 
 TEST(ProbabilisticLogicProperty, ProbabilityHigh) {
-    EXPECT_TRUE(parseInputString("P >= 0.99999999 [count(clusteredness(clusters)) >= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.99999999 [count(area(clusters)) >= 2]"));
 }
 
 
@@ -1923,15 +1923,15 @@ TEST(SemanticType, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(SimilarityMeasure, IncorrectSimilarityMeasure) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [approximately-similar([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [approximately-similar([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityMeasure, CorrectAntiSimilar) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2)]"));
 }
 
 TEST(SimilarityMeasure, CorrectSimilar) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [similar([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [similar([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2)]"));
 }
 
 
@@ -1944,31 +1944,31 @@ TEST(SimilarityMeasure, CorrectSimilar) {
 /////////////////////////////////////////////////////////
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBeforeStartParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite(([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite(([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputAfterStartParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite( _ [0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite( _ [0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectFirstParameterType) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite({A}, [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite({A}, [0, 5] count(area(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingFirstParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectSecondParameterType) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), {A}, 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), {A}, 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingSecondParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingSecondParameterExcludingComma) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), , 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), , 2)]"), InvalidInputException);
 }
  
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingFirstAndSecondParameter) {
@@ -1976,27 +1976,27 @@ TEST(SimilarityTemporalNumericCollectionAttribute, MissingFirstAndSecondParamete
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputInvalidThirdParameterType) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), {B})]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), {B})]"), InvalidInputException);
 }
  
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2 + 1)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2 + 1)]"), InvalidInputException);
 }
  
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2) V True]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2) V True]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputExtraParameter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2, 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2, 4)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBetweenFirstAndSecondParameters) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), 4, [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), 4, [0, 5] count(area(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, IncorrectInputBetweenSecondAndThirdParameters) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingParameters) {
@@ -2008,11 +2008,11 @@ TEST(SimilarityTemporalNumericCollectionAttribute, MissingParametersAndParanthes
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, MissingSimilarityMeasure) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2)]"), InvalidInputException);
 }
 
 TEST(SimilarityTemporalNumericCollectionAttribute, Correct) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [opposite([0, 5] count(clusteredness(clusters)), [0, 5] count(clusteredness(clusters)), 2)]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [opposite([0, 5] count(area(clusters)), [0, 5] count(area(clusters)), 2)]"));
 }
 
 
@@ -2025,99 +2025,99 @@ TEST(SimilarityTemporalNumericCollectionAttribute, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(SpatialMeasure, IncorrectSpatialMeasureInFilter) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, height__ <= 30.2))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, height__ <= 30.2))) <= 3]"), InvalidInputException);
 }
 
 TEST(SpatialMeasure, IncorrectSpatialMeasure) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(height__(filter(clusters, clusteredness <= 30.2))) <= 3]"), InvalidInputException);
-}
-
-TEST(SpatialMeasure, CorrectClusterednessInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectDensityInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, density <= 30.2))) <= 3]"));
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(height__(filter(clusters, area <= 30.2))) <= 3]"), InvalidInputException);
 }
 
 TEST(SpatialMeasure, CorrectAreaInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, area <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectPerimeterInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, perimeter <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, perimeter <= 30.2))) <= 3]"));
 }
 
-TEST(SpatialMeasure, CorrectDistanceFromOriginInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, distanceFromOrigin <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectAngleInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, angle <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectTriangleMeasureInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, triangleMeasure <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectRectangleMeasureInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, rectangleMeasure <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectCircleMeasureInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, circleMeasure <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectCentroidXInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, centroidX <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectCentroidYInFilter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, centroidY <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectClusteredness) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectDensity) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(density(filter(clusters, clusteredness <= 30.2))) <= 3]"));
-}
-
-TEST(SpatialMeasure, CorrectArea) {
+TEST(SpatialMeasure, CorrectClusterednessInFilter) {
     EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, clusteredness <= 30.2))) <= 3]"));
 }
 
+TEST(SpatialMeasure, CorrectDensityInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, density <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectDistanceFromOriginInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, distanceFromOrigin <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectAngleInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, angle <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectTriangleMeasureInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, triangleMeasure <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectRectangleMeasureInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, rectangleMeasure <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectCircleMeasureInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, circleMeasure <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectCentroidXInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, centroidX <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectCentroidYInFilter) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, centroidY <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectArea) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, area <= 30.2))) <= 3]"));
+}
+
 TEST(SpatialMeasure, CorrectPerimeter) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(perimeter(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(perimeter(filter(clusters, area <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectClusteredness) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, area <= 30.2))) <= 3]"));
+}
+
+TEST(SpatialMeasure, CorrectDensity) {
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(density(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectDistanceFromOrigin) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(distanceFromOrigin(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(distanceFromOrigin(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectAngle) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(angle(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(angle(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectTriangleMeasure) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(triangleMeasure(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(triangleMeasure(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectRectangleMeasure) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(rectangleMeasure(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(rectangleMeasure(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectCircleMeasure) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(circleMeasure(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(circleMeasure(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectCentroidX) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(centroidX(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(centroidX(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 TEST(SpatialMeasure, CorrectCentroidY) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(centroidY(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(centroidY(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 
@@ -2130,11 +2130,11 @@ TEST(SpatialMeasure, CorrectCentroidY) {
 /////////////////////////////////////////////////////////
 
 TEST(SpatialMeasureCollection, IncorrectAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(avg(clusteredness(clusters))) > 12.1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [F [0, 11] avg(avg(area(clusters))) > 12.1]"), InvalidInputException);
 }
 
 TEST(SpatialMeasureCollection, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [F [0, 11] avg(clusteredness(clusters)) > 12.1]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [F [0, 11] avg(area(clusters)) > 12.1]"));
 }
 
 
@@ -2155,7 +2155,7 @@ TEST(Subset, IncorrectInputWrongSubsetAlternativeCluster) {
 }
 
 TEST(Subset, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= 3]"));
 }
 
 
@@ -2168,19 +2168,19 @@ TEST(Subset, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(SubsetOperation, IncorrectInputWrongSubsetOperationAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(multiplication(clusters, clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(multiplication(clusters, clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetOperation, CorrectDifference) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(difference(clusters, clusters))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(difference(clusters, clusters))) <= 3]"));
 }
 
 TEST(SubsetOperation, CorrectIntersection) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(intersection(clusters, clusters))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(intersection(clusters, clusters))) <= 3]"));
 }
 
 TEST(SubsetOperation, CorrectUnion) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(union(clusters, clusters))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(union(clusters, clusters))) <= 3]"));
 }
 
 
@@ -2197,11 +2197,11 @@ TEST(SubsetSpecific, IncorrectInputWrongSubsetAlternative) {
 }
 
 TEST(SubsetSpecific, CorrectClusters) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= 3]"));
 }
 
 TEST(SubsetSpecific, CorrectRegions) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= 3]"));
 }
 
 
@@ -2214,43 +2214,43 @@ TEST(SubsetSpecific, CorrectRegions) {
 /////////////////////////////////////////////////////////
 
 TEST(SubsetSubsetOperation, IncorrectInputWrongAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(division(clusters, clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(division(clusters, clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetSubsetOperation, IncorrectInputBeforeStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(union2(clusters, clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(union2(clusters, clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetSubsetOperation, IncorrectInputAfterStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(union(clusters V clusters, clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(union(clusters V clusters, clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetSubsetOperation, IncorrectInputMissingFirstArgument) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(union(, clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(union(, clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetSubsetOperation, IncorrectInputMissingSeparatorComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(union(clusters clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(union(clusters clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetSubsetOperation, IncorrectInputMissingCommaAndArgument) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(union(clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(union(clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetSubsetOperation, IncorrectInputMissingSecondArgument) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(union(clusters, ))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(union(clusters, ))) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetSubsetOperation, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(union(clusters, clusters => clusters))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(union(clusters, clusters => clusters))) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetSubsetOperation, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(union(clusters, clusters) [0, 10])) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(union(clusters, clusters) [0, 10])) <= 3]"), InvalidInputException);
 }
 
 TEST(SubsetSubsetOperation, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(union(clusters, clusters))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(union(clusters, clusters))) <= 3]"));
 }
 
 
@@ -2267,7 +2267,7 @@ TEST(TemporalNumericCollection, IncorrectInputWrongAlternative) {
 }
 
 TEST(TemporalNumericCollection, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 5] count(clusteredness(clusters))) > 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 5] count(area(clusters))) > 2]"));
 }
 
 
@@ -2341,11 +2341,11 @@ TEST(TemporalNumericComparison, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(TemporalNumericMeasure, WrongAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [__geographicmean(count(clusteredness(clusters))) < 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [__geographicmean(count(area(clusters))) < 2]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasure, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) >= 4]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) >= 4]"));
 }
 
 
@@ -2358,51 +2358,51 @@ TEST(TemporalNumericMeasure, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputBeforeBeginParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min(~ [0, 11] count(clusteredness(clusters))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min(~ [0, 11] count(area(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingBeginParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min(0, 11] count(clusteredness(clusters))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min(0, 11] count(area(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingBeginTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([, 11] count(clusteredness(clusters))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([, 11] count(area(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0 11] count(clusteredness(clusters))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0 11] count(area(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingEndTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, ] count(clusteredness(clusters))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, ] count(area(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingEndTimepointAndComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0] count(clusteredness(clusters))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0] count(area(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputExtraTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11, 100] count(clusteredness(clusters))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11, 100] count(area(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputMissingEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11 count(clusteredness(clusters))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11 count(area(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputExtraSurroundingParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] (count(clusteredness(clusters)))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] (count(area(clusters)))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputBeforeNumericMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] -count(clusteredness(clusters))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] -count(area(clusters))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, IncorrectInputAfterNumericMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] count(clusteredness(clusters)))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min([0, 11] count(area(clusters)))) = 1]"), InvalidInputException);
 }
 
 TEST(TemporalNumericMeasureCollection, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [min([0, 11] count(clusteredness(clusters))) = 1]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [min([0, 11] count(area(clusters))) = 1]"));
 }
 
 
@@ -2415,27 +2415,27 @@ TEST(TemporalNumericMeasureCollection, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(TimeseriesComponent, IncorrectInputBeforeTimeseriesComponent) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((plateau)valley, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((plateau)valley, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesComponent, IncorrectParanthesisBeforeTimeseriesComponent) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((valley, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((valley, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesComponent, IncorrectInputAfterTimeseriesComponent) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valley(valley), [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valley(valley), [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesComponent, IncorrectParanthesisAfterTimeseriesComponent) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valley), [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valley), [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesComponent, IncorrectInputInvalidAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valleys, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(valleys, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesComponent, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(plateau, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(plateau, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 
@@ -2448,15 +2448,15 @@ TEST(TimeseriesComponent, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(TimeseriesMeasure, IncorrectInputWrongAlternative) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [min(values(peak, [0, 11] count(clusteredness(clusters)))) = 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [min(values(peak, [0, 11] count(area(clusters)))) = 1]"), InvalidInputException);
 }
 
 TEST(TimeseriesMeasure, CorrectEnteringTime) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [min(enteringTime(peak, [0, 11] count(clusteredness(clusters)))) = 1]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [min(enteringTime(peak, [0, 11] count(area(clusters)))) = 1]"));
 }
 
 TEST(TimeseriesMeasure, CorrectEnteringValue) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [min(enteringValue(peak, [0, 11] count(clusteredness(clusters)))) = 1]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [min(enteringValue(peak, [0, 11] count(area(clusters)))) = 1]"));
 }
 
 
@@ -2469,31 +2469,31 @@ TEST(TimeseriesMeasure, CorrectEnteringValue) {
 /////////////////////////////////////////////////////////
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputBeforeTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(+enteringValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(+enteringValue(peak, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputWrongTimeseriesMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(wenteringValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(wenteringValue(peak, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputBeforeStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue () (peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue () (peak, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputAfterStartParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(()peak, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(()peak, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputInvalidFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(climb, [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(climb, [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputMissingFirstParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue([0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue([0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputMissingCommaBetweenParameters) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak [0, 5] count(clusteredness(clusters)))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak [0, 5] count(area(clusters)))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputMissingSecondParameter) {
@@ -2501,35 +2501,35 @@ TEST(TimeseriesTimeseriesComponent, IncorrectInputMissingSecondParameter) {
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputInvalidSecondParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] clusteredness(clusters))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] area(clusters))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputBeforeEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(clusteredness(clusters)) < 2)) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(area(clusters)) < 2)) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputAfterEndParanthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(clusteredness(clusters))) [0, 3]) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(area(clusters))) [0, 3]) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputMissingParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue peak, [0, 5] count(clusteredness(clusters))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue peak, [0, 5] count(area(clusters))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputInvertedParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue)peak, [0, 5] count(clusteredness(clusters))() > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue)peak, [0, 5] count(area(clusters))() > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputDoubledParantheses) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((peak, [0, 5] count(clusteredness(clusters))))) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue((peak, [0, 5] count(area(clusters))))) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, IncorrectInputWrongParanthesesType) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue{peak, [0, 5] count(clusteredness(clusters))}) > 0]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max(enteringValue{peak, [0, 5] count(area(clusters))}) > 0]"), InvalidInputException);
 }
 
 TEST(TimeseriesTimeseriesComponent, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(clusteredness(clusters)))) > 0]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(enteringValue(peak, [0, 5] count(area(clusters)))) > 0]"));
 }
 
 
@@ -2542,27 +2542,27 @@ TEST(TimeseriesTimeseriesComponent, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(UnaryNumericFilter, IncorrectInputMissingParameter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= abs()))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= abs()))) > 1]"), InvalidInputException);
 }
 
 TEST(UnaryNumericFilter, IncorrectInputBeforeStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= abs ^ sqrt(clusteredness)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= abs ^ sqrt(area)))) > 1]"), InvalidInputException);
 }
 
 TEST(UnaryNumericFilter, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [{A} <= count(clusteredness(filter(clusters, clusteredness <= abs(1, clusteredness))))]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [{A} <= count(area(filter(clusters, area <= abs(1, area))))]"), InvalidInputException);
 }
 
 TEST(UnaryNumericFilter, IncorrectInputBeforeEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= abs(clusteredness, 3)))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= abs(area, 3)))) > 1]"), InvalidInputException);
 }
 
 TEST(UnaryNumericFilter, IncorrectInputAfterEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= abs(clusteredness) * 2))) > 1]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= abs(area) * 2))) > 1]"), InvalidInputException);
 }
 
 TEST(UnaryNumericFilter, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, clusteredness <= abs(clusteredness)))) > 1]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(filter(clusters, area <= abs(area)))) > 1]"));
 }
 
 
@@ -2575,35 +2575,35 @@ TEST(UnaryNumericFilter, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(UnaryNumericMeasure, IncorrectUnaryNumericMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= frac(count(clusteredness(clusters)))]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(clusters)) <= frac(count(area(clusters)))]"), InvalidInputException);
 }
 
 TEST(UnaryNumericMeasure, CorrectAbs) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= abs(count(clusteredness(clusters)))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= abs(count(area(clusters)))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectCeil) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= ceil(count(clusteredness(clusters)))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= ceil(count(area(clusters)))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectFloor) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= floor(count(clusteredness(clusters)))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= floor(count(area(clusters)))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectRound) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= round(count(clusteredness(clusters)))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= round(count(area(clusters)))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectSign) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= sign(count(clusteredness(clusters)))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= sign(count(area(clusters)))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectSqrt) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= sqrt(count(clusteredness(clusters)))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= sqrt(count(area(clusters)))]"));
 }
 
 TEST(UnaryNumericMeasure, CorrectTrunc) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= trunc(count(clusteredness(clusters)))]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= trunc(count(area(clusters)))]"));
 }
 
 
@@ -2743,43 +2743,43 @@ TEST(UnaryNumericTemporal, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(UnarySpatialConstraint, IncorrectSpatialMeasureBeforeConstraint) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness ^ clusteredness <= 30.2))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, area ^ area <= 30.2))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnarySpatialConstraint, IncorrectInputSpatialEntityInsteadOfSpatialMeasure) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusters <= 2))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, clusters <= 2))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnarySpatialConstraint, IncorrectInputMissingSpatialMeasure) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, <= 30.2))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, <= 30.2))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnarySpatialConstraint, IncorrectInputMissingComparator) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness 30.2))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, area 30.2))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnarySpatialConstraint, IncorrectInputMissingNumericMeasure) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness >= ))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, area >= ))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnarySpatialConstraint, IncorrectInputMissingComparatorNumericMeasure) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, area))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnarySpatialConstraint, IncorrectInputMissingSpatialMeasureNumericMeasure) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, >=))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, >=))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnarySpatialConstraint, IncorrectInputMissingSpatialMeasureComparator) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, 4.4))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, 4.4))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnarySpatialConstraint, IncorrectInputEmptyConstraint) {
-    EXPECT_THROW(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, ()))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P <= 0.9 [count(area(filter(clusters, ()))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnarySpatialConstraint, Correct) {
-    EXPECT_TRUE(parseInputString("P <= 0.9 [count(clusteredness(filter(clusters, clusteredness <= 30.2))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P <= 0.9 [count(area(filter(clusters, area <= 30.2))) <= 3]"));
 }
 
 
@@ -2792,63 +2792,63 @@ TEST(UnarySpatialConstraint, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(UnaryStatisticalMeasure, IncorrectUnaryStatisticalMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [arithmeticmean__(clusters, clusteredness) ^ geomean(clusteredness(clusters)) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [arithmeticmean__(clusters, area) ^ geomean(area(clusters)) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalMeasure, CorrectAvg) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [avg(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [avg(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectCount) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectGeomean) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [geomean(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [geomean(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectHarmean) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [harmean(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [harmean(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectKurt) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [kurt(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [kurt(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectMax) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectMedian) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [median(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [median(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectMin) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [min(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [min(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectMode) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [mode(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [mode(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectProduct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [product(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [product(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectSkew) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [skew(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [skew(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectStdev) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [stdev(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [stdev(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectSum) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [sum(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [sum(area(clusters)) <= 2]"));
 }
 
 TEST(UnaryStatisticalMeasure, CorrectVar) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [var(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [var(area(clusters)) <= 2]"));
 }
 
 
@@ -2865,27 +2865,27 @@ TEST(UnaryStatisticalNumeric, IncorrectInputNoSubset) {
 }
 
 TEST(UnaryStatisticalNumeric, IncorrectInputBeforeStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count [ (clusteredness(clusters)) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count [ (area(clusters)) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalNumeric, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count( [ clusteredness(clusters)) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count( [ area(clusters)) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalNumeric, IncorrectInputBeforeEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(clusters) } ) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(clusters) } ) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalNumeric, IncorrectInputAfterEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(clusters) ) } <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(clusters) ) } <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalNumeric, IncorrectInputDoubleBrackets) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count((clusteredness(clusters))) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count((area(clusters))) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalNumeric, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(clusters)) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(clusters)) <= 2]"));
 }
 
 
@@ -2902,27 +2902,27 @@ TEST(UnaryStatisticalSpatial, IncorrectInputNoSubset) {
 }
 
 TEST(UnaryStatisticalSpatial, IncorrectInputBeforeStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count [ (clusteredness(clusters))) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count [ (area(clusters))) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalSpatial, IncorrectInputAfterStartBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count( [ clusteredness(clusters))) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count( [ area(clusters))) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalSpatial, IncorrectInputBeforeEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count(clusteredness(clusters) } )) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count(area(clusters) } )) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalSpatial, IncorrectInputAfterEndBracket) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count(clusteredness(clusters) ) }) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count(area(clusters) ) }) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalSpatial, IncorrectInputDoubleBrackets) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count((clusteredness(clusters) ))) <= 2]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [max([0, 5] count((area(clusters) ))) <= 2]"), InvalidInputException);
 }
 
 TEST(UnaryStatisticalSpatial, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 5] count(clusteredness(clusters))) <= 2]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [max([0, 5] count(area(clusters))) <= 2]"));
 }
 
 
@@ -2935,31 +2935,31 @@ TEST(UnaryStatisticalSpatial, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(UnaryTypeConstraint, IncorrectInputWrongTypeKeywordExtraLetterAfter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, typee = Organ.Heart))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, typee = Organ.Heart))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnaryTypeConstraint, IncorrectInputWrongTypeKeywordExtraLetterBefore) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, ttype = Organ.Heart))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, ttype = Organ.Heart))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnaryTypeConstraint, IncorrectInputBeforeTypeKeyword) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, 0 ^ type = Organ.Heart))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, 0 ^ type = Organ.Heart))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnaryTypeConstraint, IncorrectInputAfterTypeKeyword) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, type += Organ.Heart))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, type += Organ.Heart))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnaryTypeConstraint, IncorrectInputAfterComparator) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, type = *))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, type = *))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnaryTypeConstraint, IncorrectInputAfterFilterNumericMeasure) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, type >= Organ.Heart - 0.3))) <= 3]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [count(area(filter(clusters, type >= Organ.Heart - 0.3))) <= 3]"), InvalidInputException);
 }
 
 TEST(UnaryTypeConstraint, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [count(clusteredness(filter(clusters, type = Organ.Heart))) <= 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [count(area(filter(clusters, type = Organ.Heart))) <= 3]"));
 }
 
 
@@ -2972,95 +2972,95 @@ TEST(UnaryTypeConstraint, Correct) {
 /////////////////////////////////////////////////////////
 
 TEST(UntilLogicProperty, IncorrectInputMissingStartTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [3] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [3] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, IncorrectInputMissingEndTimepoint) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, IncorrectInputMissingTimepoints) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, IncorrectInputMissingTimepointsAndBrackets) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, UntilOperatorAsUnaryBefore) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [U [2, 3] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [U [2, 3] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, UntilOperatorAsUnaryAfter) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [(count(clusteredness(clusters)) >= 4) U [2, 3]]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [(count(area(clusters)) >= 4) U [2, 3]]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, IncorrectInputBeforeUntilOperator) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) ({A} >= 4) U [2, 3] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) ({A} >= 4) U [2, 3] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, AdditionalOperatorBeforeUntilOperator) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) ~ U [2, 3] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) ~ U [2, 3] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, IncorrectInputAfterUntilOperator) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2, 3] ({A} >= 4) (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2, 3] ({A} >= 4) (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, AdditionalOperatorAfterUntilOperator) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2, 3] V (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2, 3] V (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, WrongInputBeforeStartParenthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U ({A} >= 4) [A, 3] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U ({A} >= 4) [A, 3] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, WrongInputAfterStartParenthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [ ({A} >= 4) 2, 3] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [ ({A} >= 4) 2, 3] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, MissingTimepointsComma) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2 3] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [2 3] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, StartTimepointInvalid) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [A, 3] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [A, 3] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, StartTimepointRealNumber) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1.0, 3] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1.0, 3] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, EndTimepointInvalid) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, A] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, A] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, EndTimepointRealNumber) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3.0] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3.0] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, TimepointsInvalid) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [A, B] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [A, B] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, TimepointsRealNumber) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1.0, 3.0] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1.0, 3.0] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, WrongInputBeforeEndParenthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3 ({A} >= 4) ] (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3 ({A} >= 4) ] (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, WrongInputAfterEndParenthesis) {
-    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3] ({A} >= 4) (count(clusteredness(clusters)) >= 4)]"), InvalidInputException);
+    EXPECT_THROW(parseInputString("P >= 0.3 [({A} >= 4) U [1, 3] ({A} >= 4) (count(area(clusters)) >= 4)]"), InvalidInputException);
 }
 
 TEST(UntilLogicProperty, Correct) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) U [2, 3] (count(clusteredness(clusters)) >= 4)]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) U [2, 3] (count(area(clusters)) >= 4)]"));
 }
 
 TEST(UntilLogicProperty, MultipleCorrect) {
-    EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) U [2, 3] (count(clusteredness(clusters)) <= 4) <=> {B} = 3]"));
+    EXPECT_TRUE(parseInputString("P >= 0.3 [({A} >= 4) U [2, 3] (count(area(clusters)) <= 4) <=> {B} = 3]"));
 }
 
 

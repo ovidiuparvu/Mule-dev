@@ -34,8 +34,8 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
 
     double bConstantValue = 3;
 
-    double clustersClusterednessMinValue = 1;
-    double clustersClusterednessMaxValue = -1;
+    double clustersAreaMinValue = 1;
+    double clustersAreaMaxValue = -1;
 
     // Initialise timepoints
     trace.clear();
@@ -69,12 +69,12 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
         for (std::size_t j = ((((i + 1) % 4) == 0) ? (i - 1) : 0); j <= i; j++) {
             std::shared_ptr<SpatialEntity> cluster = std::make_shared<Cluster>();
 
-            clustersClusterednessMaxValue = std::max(clustersClusterednessMaxValue, static_cast<double>((j * 2.4) + clustersClusterednessMinValue));
+            clustersAreaMaxValue = std::max(clustersAreaMaxValue, static_cast<double>((j * 2.4) + clustersAreaMinValue));
 
-            cluster->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>((j * 2.4) + clustersClusterednessMinValue));
-            cluster->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(1 - 0) / 2);
-            cluster->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>(1E+37 - 0) / 2);
+            cluster->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>((j * 2.4) + clustersAreaMinValue));
             cluster->setSpatialMeasureValue(SpatialMeasureType::Perimeter, static_cast<double>(1E+37 - 0) / 2);
+            cluster->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>(1 - 0) / 2);
+            cluster->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(1 - 0) / 2);
             cluster->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin, static_cast<double>(1E+37 - 0) / 2);
             cluster->setSpatialMeasureValue(SpatialMeasureType::Angle, static_cast<double>(360 - 0) / 2);
             cluster->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure, static_cast<double>(1 - 0) / 2);
@@ -91,10 +91,10 @@ void initialiseTrace(SpatialTemporalTrace &trace) {
         for (std::size_t k = 0; k <= i; k++) {
                 std::shared_ptr<SpatialEntity> region = std::make_shared<Region>();
 
-                region->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>((k * 0.3) + 0.7));
-                region->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(1 - 0) / 3);
-                region->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>(1E+37 - 0) / 3);
+                region->setSpatialMeasureValue(SpatialMeasureType::Area, static_cast<double>((k * 0.3) + 0.7));
                 region->setSpatialMeasureValue(SpatialMeasureType::Perimeter, static_cast<double>(1E+37 - 0) / 3);
+                region->setSpatialMeasureValue(SpatialMeasureType::Clusteredness, static_cast<double>(1 - 0) / 3);
+                region->setSpatialMeasureValue(SpatialMeasureType::Density, static_cast<double>(1 - 0) / 3);
                 region->setSpatialMeasureValue(SpatialMeasureType::DistanceFromOrigin, static_cast<double>(1E+37 - 0) / 3);
                 region->setSpatialMeasureValue(SpatialMeasureType::Angle, static_cast<double>(360 - 0) / 3);
                 region->setSpatialMeasureValue(SpatialMeasureType::TriangleMeasure, static_cast<double>(1 - 0) / 3);

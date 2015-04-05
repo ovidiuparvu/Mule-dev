@@ -21,20 +21,6 @@ namespace pt = boost::property_tree;
 void SpatialTemporalDataWriter::addSpatialMeasuresValuesToTree(const std::shared_ptr<SpatialEntity> &spatialEntity,
                                                                pt::ptree &spatialEntityTree) {
     spatialEntityTree.put(
-        "clusteredness",
-        spatialEntity->getSpatialMeasureValue(
-            SpatialMeasureType::Clusteredness
-        )
-    );
-    
-    spatialEntityTree.put(
-        "density",
-        spatialEntity->getSpatialMeasureValue(
-            SpatialMeasureType::Density
-        )
-    );
-    
-    spatialEntityTree.put(
         "area",
         spatialEntity->getSpatialMeasureValue(
             SpatialMeasureType::Area
@@ -45,6 +31,20 @@ void SpatialTemporalDataWriter::addSpatialMeasuresValuesToTree(const std::shared
         "perimeter",
         spatialEntity->getSpatialMeasureValue(
             SpatialMeasureType::Perimeter
+        )
+    );
+    
+    spatialEntityTree.put(
+        "clusteredness",
+        spatialEntity->getSpatialMeasureValue(
+            SpatialMeasureType::Clusteredness
+        )
+    );
+    
+    spatialEntityTree.put(
+        "density",
+        spatialEntity->getSpatialMeasureValue(
+            SpatialMeasureType::Density
         )
     );
     

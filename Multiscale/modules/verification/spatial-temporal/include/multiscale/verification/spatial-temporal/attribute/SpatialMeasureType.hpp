@@ -17,10 +17,10 @@ namespace multiscale {
 
         //! Enumeration for representing the types of spatial measures
         enum class SpatialMeasureType : unsigned int {
-            Clusteredness                     = 0,    /*!< The clusteredness of a spatial entity */
-            Density                              ,    /*!< The density of a spatial entity */
-            Area                                 ,    /*!< The area of a spatial entity */
+            Area                              = 0,    /*!< The area of a spatial entity */
             Perimeter                            ,    /*!< The perimeter of a spatial entity */
+            Clusteredness                        ,    /*!< The clusteredness of a spatial entity */
+            Density                              ,    /*!< The density of a spatial entity */
             DistanceFromOrigin                   ,    /*!< The distance of a spatial entity from origin */
             Angle                                ,    /*!< The angle */
             TriangleMeasure                      ,    /*!< The measure indicating how triangular is the shape of the spatial entity */
