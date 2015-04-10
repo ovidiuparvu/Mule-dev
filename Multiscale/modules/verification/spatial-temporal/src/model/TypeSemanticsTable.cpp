@@ -2,7 +2,7 @@
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/util/XmlValidator.hpp"
 #include "multiscale/verification/spatial-temporal/exception/SpatialTemporalException.hpp"
-#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
+#include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
 #include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
 
 using namespace multiscale::verification;
@@ -168,7 +168,7 @@ bool
 TypeSemanticsTable::areDefaultSemanticCriteriaValues(const std::string
                                                           &semanticCriteriaValues) const {
     return (
-        semanticCriteriaValues.compare(SemanticType::DEFAULT_VALUE) == 0
+        semanticCriteriaValues.compare(ScaleAndSubsystem::DEFAULT_VALUE) == 0
     );
 }
 

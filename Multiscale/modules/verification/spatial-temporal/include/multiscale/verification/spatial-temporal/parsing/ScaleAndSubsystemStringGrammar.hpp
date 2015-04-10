@@ -1,5 +1,5 @@
-#ifndef SEMANTICTYPESTRINGGRAMMAR_HPP
-#define SEMANTICTYPESTRINGGRAMMAR_HPP
+#ifndef SCALEANDSUBSYSTEMSTRINGGRAMMAR_HPP
+#define SCALEANDSUBSYSTEMSTRINGGRAMMAR_HPP
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -16,9 +16,9 @@ namespace multiscale {
         namespace phoenix = boost::phoenix;
         namespace qi = boost::spirit::qi;
 
-        //! The grammar for parsing semantic type string statements
+        //! The grammar for parsing scale and subsystem string statements
         template <typename Iterator>
-        class SemanticTypeStringGrammar
+        class ScaleAndSubsystemStringGrammar
             : public qi::grammar<Iterator, std::string(), qi::space_type> {
 
             private:
@@ -26,13 +26,13 @@ namespace multiscale {
                 // Rules
 
                 qi::rule<Iterator, std::string(), qi::space_type>
-                    semanticTypeStringRule;                         /*!< The rule for parsing a string representing
-                                                                         a semantic type */
+                    scaleAndSubsystemStringRule;                    /*!< The rule for parsing a string representing
+                                                                         a scale and subsystem */
 
 
             public:
 
-                SemanticTypeStringGrammar();
+                ScaleAndSubsystemStringGrammar();
 
             private:
 
@@ -56,7 +56,7 @@ namespace multiscale {
 
 
                 // Constants
-                static const std::string SEMANTIC_CRITERION_STRING_PATTERN;
+                static const std::string SCALE_AND_SUBSYSTEM_STRING_PATTERN;
 
         };
 

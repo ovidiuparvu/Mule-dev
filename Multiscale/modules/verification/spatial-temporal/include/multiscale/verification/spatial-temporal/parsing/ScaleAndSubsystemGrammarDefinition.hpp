@@ -1,8 +1,8 @@
-#ifndef SEMANTICTYPEGRAMMARDEFINITION_HPP
-#define SEMANTICTYPEGRAMMARDEFINITION_HPP
+#ifndef SCALEANDSUBSYSTEMGRAMMARDEFINITION_HPP
+#define SCALEANDSUBSYSTEMGRAMMARDEFINITION_HPP
 
 #include "multiscale/verification/spatial-temporal/handler/UnexpectedTokenErrorHandler.hpp"
-#include "multiscale/verification/spatial-temporal/parsing/SemanticTypeGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/ScaleAndSubsystemGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -20,14 +20,14 @@ namespace multiscale {
             handleUnexpectedTokenError = UnexpectedTokenErrorHandler();
 
         template <typename Iterator>
-        SemanticTypeGrammar<Iterator>::SemanticTypeGrammar()
-            : SemanticTypeGrammar::base_type(semanticTypeRule, "semanticTypeRule") {
+        ScaleAndSubsystemGrammar<Iterator>::ScaleAndSubsystemGrammar()
+            : ScaleAndSubsystemGrammar::base_type(scaleAndSubsystemRule, "scaleAndSubsystemRule") {
             initialise();
         }
 
         //! Initialisation function
         template <typename Iterator>
-        void SemanticTypeGrammar<Iterator>::initialise() {
+        void ScaleAndSubsystemGrammar<Iterator>::initialise() {
             initialiseGrammar();
             initialiseDebugSupport();
             initialiseErrorHandlingSupport();
@@ -35,14 +35,14 @@ namespace multiscale {
 
         //! Initialise the grammar
         template <typename Iterator>
-        void SemanticTypeGrammar<Iterator>::initialiseGrammar() {
-            semanticTypeRule
-                =   semanticTypeStringRule;
+        void ScaleAndSubsystemGrammar<Iterator>::initialiseGrammar() {
+            scaleAndSubsystemRule
+                =   scaleAndSubsystemStringRule;
         }
 
         //! Initialise debug support
         template <typename Iterator>
-        void SemanticTypeGrammar<Iterator>::initialiseDebugSupport() {
+        void ScaleAndSubsystemGrammar<Iterator>::initialiseDebugSupport() {
             assignNamesToRules();
 
             // TODO: Uncomment this function call in case of debugging
@@ -51,19 +51,19 @@ namespace multiscale {
 
         //! Assign names to the rules
         template <typename Iterator>
-        void SemanticTypeGrammar<Iterator>::assignNamesToRules() {
-            semanticTypeRule.name("semanticTypeRule");
+        void ScaleAndSubsystemGrammar<Iterator>::assignNamesToRules() {
+            scaleAndSubsystemRule.name("scaleAndSubsystemRule");
         }
 
         //! Initialise the debugging of rules
         template <typename Iterator>
-        void SemanticTypeGrammar<Iterator>::initialiseRulesDebugging() {
-            debug(semanticTypeRule);
+        void ScaleAndSubsystemGrammar<Iterator>::initialiseRulesDebugging() {
+            debug(scaleAndSubsystemRule);
         }
 
         //! Initialise the error handling routines
         template <typename Iterator>
-        void SemanticTypeGrammar<Iterator>::initialiseErrorHandlingSupport() {
+        void ScaleAndSubsystemGrammar<Iterator>::initialiseErrorHandlingSupport() {
             // Do nothing
         }
 

@@ -3,12 +3,12 @@
 
 #include "multiscale/verification/spatial-temporal/attribute/BinaryNumericSpatialAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/PrimarySpatialMeasureCollectionAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/SemanticTypeAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ScaleAndSubsystemAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/SpatialMeasureCollectionAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/UnaryNumericSpatialAttribute.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/BinaryNumericMeasureGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/ComparatorGrammar.hpp"
-#include "multiscale/verification/spatial-temporal/parsing/SemanticTypeGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/ScaleAndSubsystemGrammar.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/SymbolTables.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/UnaryNumericMeasureGrammar.hpp"
 

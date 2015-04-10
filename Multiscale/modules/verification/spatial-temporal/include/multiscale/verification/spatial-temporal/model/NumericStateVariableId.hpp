@@ -1,7 +1,7 @@
 #ifndef NUMERICSTATEVARIABLEID_HPP
 #define NUMERICSTATEVARIABLEID_HPP
 
-#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
+#include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
 
 #include <string>
 
@@ -21,7 +21,7 @@ namespace multiscale {
             public:
 
                 NumericStateVariableId(const std::string &name,
-                                       const std::string &semanticType = SemanticType::DEFAULT_VALUE);
+                                       const std::string &semanticType = ScaleAndSubsystem::DEFAULT_VALUE);
 
                 ~NumericStateVariableId();
 

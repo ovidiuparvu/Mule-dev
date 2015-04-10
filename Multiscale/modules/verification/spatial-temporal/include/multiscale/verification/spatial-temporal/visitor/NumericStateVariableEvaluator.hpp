@@ -3,7 +3,7 @@
 
 #include "multiscale/exception/MultiscaleException.hpp"
 #include "multiscale/verification/spatial-temporal/attribute/NumericStateVariableAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/visitor/SemanticTypeEvaluator.hpp"
+#include "multiscale/verification/spatial-temporal/visitor/ScaleAndSubsystemEvaluator.hpp"
 
 
 namespace multiscale {
@@ -26,10 +26,10 @@ namespace multiscale {
                                        const TypeSemanticsTable &typeSemanticsTable) {
                     // Obtain the semantic type
                     std::string semanticType = numericStateVariable.semanticType.get_value_or(
-                                                   SemanticTypeAttribute()
+                                                   ScaleAndSubsystemAttribute()
                                                ).semanticType;
 
-                    // Validate the semantic type
+                    // Validate the scale and subsystem
                     SemanticTypeEvaluator::validate(semanticType, typeSemanticsTable);
 
                     // Return the value of the numeric state variable

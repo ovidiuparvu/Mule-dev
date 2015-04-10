@@ -51,7 +51,7 @@ namespace multiscale {
                         '('
                         > qi::lit("type")
                         > '='
-                        > semanticTypeRule
+                        > scaleAndSubsystemRule
                         > ')'
                     );
         }

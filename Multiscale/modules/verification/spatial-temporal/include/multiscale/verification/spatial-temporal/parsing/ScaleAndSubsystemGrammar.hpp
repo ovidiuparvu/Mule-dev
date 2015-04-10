@@ -1,8 +1,8 @@
-#ifndef SEMANTICTYPEGRAMMAR_HPP
-#define SEMANTICTYPEGRAMMAR_HPP
+#ifndef SCALEANDSUBSYSTEMGRAMMAR_HPP
+#define SCALEANDSUBSYSTEMGRAMMAR_HPP
 
-#include "multiscale/verification/spatial-temporal/attribute/SemanticTypeAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/parsing/SemanticTypeStringGrammar.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ScaleAndSubsystemAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/ScaleAndSubsystemStringGrammar.hpp"
 
 #include <boost/config/warning_disable.hpp>
 #include <boost/spirit/include/qi.hpp>
@@ -18,27 +18,27 @@ namespace multiscale {
         namespace phoenix = boost::phoenix;
         namespace qi = boost::spirit::qi;
 
-        //! The grammar for parsing semantic type statements
+        //! The grammar for parsing scale and subsystem statements
         template <typename Iterator>
-        class SemanticTypeGrammar
-            : public qi::grammar<Iterator, SemanticTypeAttribute(), qi::space_type> {
+        class ScaleAndSubsystemGrammar
+            : public qi::grammar<Iterator, ScaleAndSubsystemAttribute(), qi::space_type> {
 
             private:
 
                 // Grammars
 
-                SemanticTypeStringGrammar<Iterator>
-                    semanticTypeStringRule;                     /*!< The rule for parsing a string representing
-                                                                     a semantic type */
+                ScaleAndSubsystemStringGrammar<Iterator>
+                    scaleAndSubsystemStringRule;                /*!< The rule for parsing a string representing
+                                                                     a scale and subsystem */
 
                 // Rules
 
-                qi::rule<Iterator, SemanticTypeAttribute(), qi::space_type>
-                    semanticTypeRule;                           /*!< The rule for parsing a semantic type */
+                qi::rule<Iterator, ScaleAndSubsystemAttribute(), qi::space_type>
+                    scaleAndSubsystemRule;                      /*!< The rule for parsing a scale and subsystem */
 
             public:
 
-                SemanticTypeGrammar();
+                ScaleAndSubsystemGrammar();
 
             private:
 

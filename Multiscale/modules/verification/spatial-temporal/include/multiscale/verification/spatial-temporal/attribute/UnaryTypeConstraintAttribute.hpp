@@ -2,7 +2,7 @@
 #define UNARYTYPECONSTRAINTATTRIBUTE_HPP
 
 #include "multiscale/verification/spatial-temporal/attribute/ComparatorAttribute.hpp"
-#include "multiscale/verification/spatial-temporal/attribute/SemanticTypeAttribute.hpp"
+#include "multiscale/verification/spatial-temporal/attribute/ScaleAndSubsystemAttribute.hpp"
 
 #include <boost/fusion/include/adapt_struct.hpp>
 
@@ -16,8 +16,8 @@ namespace multiscale {
 
             public:
 
-                ComparatorAttribute   comparator;     /*!< The comparator */
-                SemanticTypeAttribute semanticType;   /*!< The considered semantic type */
+                ComparatorAttribute         comparator;           /*!< The comparator */
+                ScaleAndSubsystemAttribute  scaleAndSubsystem;    /*!< The considered scale and subsystem */
 
         };
 
@@ -29,7 +29,7 @@ namespace multiscale {
 BOOST_FUSION_ADAPT_STRUCT(
     multiscale::verification::UnaryTypeConstraintAttribute,
     (multiscale::verification::ComparatorAttribute, comparator)
-    (multiscale::verification::SemanticTypeAttribute, semanticType)
+    (multiscale::verification::ScaleAndSubsystemAttribute, scaleAndSubsystem)
 )
 
 

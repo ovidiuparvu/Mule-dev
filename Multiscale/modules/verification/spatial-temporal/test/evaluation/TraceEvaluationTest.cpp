@@ -4,8 +4,8 @@ using namespace multiscaletest;
 
 
 TraceEvaluationTest::TraceEvaluationTest() : nrOfTimePoints(12),
-                                             aNumericStateVariableId("A", SemanticType::DEFAULT_VALUE),
-                                             bNumericStateVariableId("B", SemanticType::DEFAULT_VALUE),
+                                             aNumericStateVariableId("A", ScaleAndSubsystem::DEFAULT_VALUE),
+                                             bNumericStateVariableId("B", ScaleAndSubsystem::DEFAULT_VALUE),
                                              aWithTypeNumericStateVariableId("A", SEMANTIC_TYPE_ORGAN_KIDNEY),
                                              bWithTypeNumericStateVariableId("B", SEMANTIC_TYPE_ORGAN_KIDNEY),
                                              cNumericStateVariableId("C", SEMANTIC_TYPE_ORGAN_HEART),

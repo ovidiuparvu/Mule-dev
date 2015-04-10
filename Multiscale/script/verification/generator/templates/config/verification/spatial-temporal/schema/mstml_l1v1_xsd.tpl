@@ -56,21 +56,21 @@
     </xs:complexType>
 
     <xs:complexType name="SpatialEntityType">
-        <xs:sequence>
+        <xs:all>
         /*{% for spatial_measure in spatial_measures %}*/
             <xs:element name="/*{{ spatial_measure.name }}*/" type="/*{{ spatial_measure.name|first_to_upper }}*/Type"/>
         /*{% endfor %}*/
-        </xs:sequence>
+        </xs:all>
         
         <xs:attribute name="spatialType" type="SpatialMetaType" use="required"/>
         <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType"/>
     </xs:complexType>
 
     <xs:complexType name="NumericStateVariableType">
-        <xs:sequence>
+        <xs:all>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="value" type="xs:double"/>
-        </xs:sequence>
+        </xs:all>
         
         <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType"/>
     </xs:complexType>

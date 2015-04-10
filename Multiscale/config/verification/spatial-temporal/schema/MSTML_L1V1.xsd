@@ -41,10 +41,10 @@
                     <xs:selector xpath="spatialEntity"/>
                     <xs:field xpath="@spatialType"/>
                     <xs:field xpath="@scaleAndSubsystem"/>
-                    <xs:field xpath="clusteredness"/>
-                    <xs:field xpath="density"/>
                     <xs:field xpath="area"/>
                     <xs:field xpath="perimeter"/>
+                    <xs:field xpath="clusteredness"/>
+                    <xs:field xpath="density"/>
                     <xs:field xpath="distanceFromOrigin"/>
                     <xs:field xpath="angle"/>
                     <xs:field xpath="triangleMeasure"/>
@@ -67,11 +67,11 @@
     </xs:complexType>
 
     <xs:complexType name="SpatialEntityType">
-        <xs:sequence>
-            <xs:element name="clusteredness" type="ClusterednessType"/>
-            <xs:element name="density" type="DensityType"/>
+        <xs:all>
             <xs:element name="area" type="AreaType"/>
             <xs:element name="perimeter" type="PerimeterType"/>
+            <xs:element name="clusteredness" type="ClusterednessType"/>
+            <xs:element name="density" type="DensityType"/>
             <xs:element name="distanceFromOrigin" type="DistanceFromOriginType"/>
             <xs:element name="angle" type="AngleType"/>
             <xs:element name="triangleMeasure" type="TriangleMeasureType"/>
@@ -79,17 +79,17 @@
             <xs:element name="circleMeasure" type="CircleMeasureType"/>
             <xs:element name="centroidX" type="CentroidXType"/>
             <xs:element name="centroidY" type="CentroidYType"/>
-        </xs:sequence>
+        </xs:all>
         
         <xs:attribute name="spatialType" type="SpatialMetaType" use="required"/>
         <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType"/>
     </xs:complexType>
 
     <xs:complexType name="NumericStateVariableType">
-        <xs:sequence>
+        <xs:all>
             <xs:element name="name" type="xs:string"/>
             <xs:element name="value" type="xs:double"/>
-        </xs:sequence>
+        </xs:all>
         
         <xs:attribute name="scaleAndSubsystem" type="ScaleAndSubsystemType"/>
     </xs:complexType>
@@ -102,20 +102,6 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="ClusterednessType">
-        <xs:restriction base="xs:double">
-            <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="1"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="DensityType">
-        <xs:restriction base="xs:double">
-            <xs:minInclusive value="0"/>
-            <xs:maxInclusive value="1"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
     <xs:simpleType name="AreaType">
         <xs:restriction base="xs:double">
             <xs:minInclusive value="0"/>
@@ -127,6 +113,20 @@
         <xs:restriction base="xs:double">
             <xs:minInclusive value="0"/>
             <xs:maxInclusive value="1E+37"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="ClusterednessType">
+        <xs:restriction base="xs:double">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="DensityType">
+        <xs:restriction base="xs:double">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
         </xs:restriction>
     </xs:simpleType>
     

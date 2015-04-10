@@ -1,4 +1,4 @@
-#include "multiscale/verification/spatial-temporal/parsing/SemanticTypeGrammarDefinition.hpp"
+#include "multiscale/verification/spatial-temporal/parsing/ScaleAndSubsystemGrammarDefinition.hpp"
 
 using namespace multiscale::verification;
 
@@ -7,4 +7,4 @@ using namespace multiscale::verification;
 typedef std::string::const_iterator iteratorType;
 
 // Explicitly instantiate the template for the given iterator type
-template class SemanticTypeGrammar<iteratorType>;
+template class ScaleAndSubsystemGrammar<iteratorType>;

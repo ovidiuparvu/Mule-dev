@@ -3,7 +3,7 @@
 #include "multiscale/util/Filesystem.hpp"
 #include "multiscale/util/XmlValidator.hpp"
 #include "multiscale/verification/spatial-temporal/data/SpatialTemporalDataReader.hpp"
-#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
+#include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
 
 #include <iterator>
 #include <limits>
@@ -205,7 +205,7 @@ SpatialTemporalDataReader::addNumericStateVariableToTimePoint(const pt::ptree &n
 
     NumericStateVariableId numericStateVariableId(
         name,
-        semanticType.get_value_or(SemanticType::DEFAULT_VALUE)
+        semanticType.get_value_or(ScaleAndSubsystem::DEFAULT_VALUE)
     );
 
     timePoint.addNumericStateVariable(numericStateVariableId, value);
@@ -232,7 +232,7 @@ SpatialTemporalDataReader::setSpatialEntitySemanticTypeValue(const pt::ptree &sp
                                                      );
 
     spatialEntity->setSemanticType(
-        semanticTypeValue.get_value_or(SemanticType::DEFAULT_VALUE)
+        semanticTypeValue.get_value_or(ScaleAndSubsystem::DEFAULT_VALUE)
     );
 }
 

@@ -5,7 +5,7 @@
 #include "multiscale/exception/TestException.hpp"
 #include "multiscale/util/StringManipulator.hpp"
 #include "multiscale/verification/spatial-temporal/model/NumericStateVariableId.hpp"
-#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
+#include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
 #include "multiscale/verification/spatial-temporal/model/TypeSemanticsTable.hpp"
 #include "multiscale/verification/spatial-temporal/parsing/Parser.hpp"
 

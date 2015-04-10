@@ -1,4 +1,4 @@
-#include "multiscale/verification/spatial-temporal/model/SemanticType.hpp"
+#include "multiscale/verification/spatial-temporal/model/ScaleAndSubsystem.hpp"
 #include "multiscale/verification/spatial-temporal/model/SpatialEntity.hpp"
 #include "multiscale/util/Numeric.hpp"
 #include "multiscale/util/StringManipulator.hpp"
@@ -9,7 +9,7 @@ using namespace multiscale::verification::spatialmeasure;
 
 
 SpatialEntity::SpatialEntity() {
-    semanticType         = SemanticType::DEFAULT_VALUE;
+    semanticType         = ScaleAndSubsystem::DEFAULT_VALUE;
     spatialMeasureValues = std::vector<double>(NR_SPATIAL_MEASURE_TYPES, 0);
 }
 

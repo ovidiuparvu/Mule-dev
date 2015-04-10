@@ -143,8 +143,13 @@ namespace multiscale {
                 TimePoint operator() (const UnaryTypeConstraintAttribute &primaryConstraint) const {
                     ComparatorType comparatorType = primaryConstraint.comparator.comparatorType;
 
-                    return evaluateUnaryTypeConstraint(comparatorType, primaryConstraint.semanticType,
-                                                       constraintTimePoint);
+                    return (
+                        evaluateUnaryScaleAndSubsystemConstraint(
+                            comparatorType,
+                            primaryConstraint.scaleAndSubsystem,
+                            constraintTimePoint
+                        )
+                   );
                 }
 
                 //! Overloading the "()" operator for the UnarySpatialConstraintAttribute alternative
@@ -216,33 +221,37 @@ namespace multiscale {
                     return constrainedTimePoint;
                 }
 
-                //! Evaluate the unary type constraint
-                /*! Evaluate the unary type constraint considering the given spatial measure, comparator,
-                 *  semantic type and timepoint
+                //! Evaluate the unary scale and subsystem constraint
+                /*! Evaluate the unary scale and subsystem constraint considering the given spatial measure,
+                 *  comparator, scale and subsystem and timepoint
                  *
-                 * \param comparator    The comparator type
-                 * \param semanticType  The semantic type
-                 * \param timePoint     The considered timepoint
+                 * \param comparator        The comparator type
+                 * \param scaleAndSubsystem The scale and subsystem
+                 * \param timePoint         The considered timepoint
                  */
-                TimePoint evaluateUnaryTypeConstraint(const ComparatorType &comparator,
-                                                      const SemanticTypeAttribute &semanticType,
-                                                      TimePoint &timePoint) const {
+                TimePoint evaluateUnaryScaleAndSubsystemConstraint(
+                    const ComparatorType &comparator,
+                    const ScaleAndSubsystemAttribute &scaleAndSubsystem,
+                    TimePoint &timePoint
+                ) const {
                     TimePoint unaryConstraintTimePoint(timePoint);
 
-                    evaluateTypeConstraint(unaryConstraintTimePoint, comparator, semanticType);
+                    // TODO: Refactor rename UnaryTypeConstraint => UnaryScaleAndSubsystemConstraint (Check if
+                    // similar attributes exist for numeric state variables)
+                    evaluateScaleAndSubsystemConstraint(unaryConstraintTimePoint, comparator, scaleAndSubsystem);
 
                     return unaryConstraintTimePoint;
                 }
 
-                //! Filter the timepoint's spatial entities considering the type of each spatial entity
+                //! Filter the timepoint's spatial entities considering the scale and subsystem of each spatial entity
                 /*!
-                 * \param timePoint     The timepoint storing the collection of spatial entities which
-                 *                      will be filtered
-                 * \param comparator    The type of the comparator
-                 * \param semanticType  The semantic type
+                 * \param timePoint         The timepoint storing the collection of spatial entities which
+                 *                          will be filtered
+                 * \param comparator        The type of the comparator
+                 * \param scaleAndSubsystem The scale and susbsytem
                  */
-                void evaluateTypeConstraint(TimePoint &timePoint, const ComparatorType &comparator,
-                                            const SemanticTypeAttribute &semanticType) const {
+                void evaluateScaleAndSubsystemConstraint(TimePoint &timePoint, const ComparatorType &comparator,
+                                                         const ScaleAndSubsystemAttribute &scaleAndSubsystem) const {
                     std::bitset<NR_SUBSET_SPECIFIC_TYPES> consideredSpatialEntityTypes
                         = timePoint.getConsideredSpatialEntityTypes();
 
@@ -250,8 +259,12 @@ namespace multiscale {
                         if (consideredSpatialEntityTypes[i] == true) {
                             SubsetSpecificType subsetSpecificType = subsetspecific::computeSubsetSpecificType(i);
 
-                            filterSpatialEntitiesWrtType(timePoint, subsetSpecificType, comparator,
-                                                         semanticType);
+                            filterSpatialEntitiesWrtScaleAndSubsystem(
+                                timePoint,
+                                subsetSpecificType,
+                                comparator,
+                                scaleAndSubsystem
+                            );
                         }
                     }
                 }
@@ -355,70 +368,72 @@ namespace multiscale {
                     }
                 }
 
-                //! Remove from the timepoint the spatial entities which fail to meet the type constraint
+                //! Remove from timepoint the spatial entities which fail to meet the scale and subsystem constraint
                 /*!
                  * \param timePoint             The timepoint which will be filtered
-                 * \param spatialEntityType     The considered spatial entity type
+                 * \param subsetSpecificType    The considered subset specific type
                  * \param comparator            The type of the comparator
-                 * \param semanticType          The semantic type
+                 * \param scaleAndSubsystem     The scaleAndSubsystem type
                  */
-                void filterSpatialEntitiesWrtType(
-                    TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
-                    const ComparatorType &comparator, const SemanticTypeAttribute &semanticType
+                void filterSpatialEntitiesWrtScaleAndSubsystem(
+                    TimePoint &timePoint, const SubsetSpecificType &subsetSpecificType,
+                    const ComparatorType &comparator, const ScaleAndSubsystemAttribute &scaleAndSubsystem
                 ) const {
-                    // Obtain the right hand side semantic type
-                    std::string rhsSemanticType = semanticType.semanticType;
+                    // Obtain the right hand side scale and subsystem
+                    std::string rhsScaleAndSubsystem = scaleAndSubsystem.scaleAndSubsystem;
 
-                    // Validate the semantic type
-                    SemanticTypeEvaluator::validate(rhsSemanticType, typeSemanticsTable);
+                    // Validate the scale and subsystem
+                    ScaleAndSubsystemEvaluator::validate(rhsScaleAndSubsystem, typeSemanticsTable);
 
-                    // Filter the spatial entities with respect to the semantic type
+                    // Filter the spatial entities with respect to the scale and subsystem
                     return (
-                        filterSpatialEntitiesWrtType(
+                        filterSpatialEntitiesWrtScaleAndSubsystem(
                             timePoint,
-                            spatialEntityType,
+                            subsetSpecificType,
                             comparator,
-                            rhsSemanticType
+                            rhsScaleAndSubsystem
                         )
                     );
                 }
 
-                //! Remove from the timepoint the spatial entities which fail to meet the type constraint
-                /*! The assumption for this method is that the provided semantic type exists in the
+                //! Remove from timepoint the spatial entities which fail to meet the scale and subsystem constraint
+                /*! The assumption for this method is that the provided scale and subsystem exists in the
                  *  type semantics table.
                  *
                  * \param timePoint             The timepoint which will be filtered
                  * \param spatialEntityType     The considered spatial entity type
                  * \param comparator            The type of the comparator
-                 * \param semanticType          The semantic type
+                 * \param scaleAndSubsystem     The scale and subsystem
                  */
                 void filterSpatialEntitiesWrtType(
                     TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
-                    const ComparatorType &comparator, const std::string &semanticType
+                    const ComparatorType &comparator, const std::string &scaleAndSubsystem
                 ) const {
                     if (comparator == ComparatorType::Equal) {
-                        filterSpatialEntitiesWrtTypeConsideringEqualComparator(
-                            timePoint, spatialEntityType, semanticType
+                        filterSpatialEntitiesWrtScaleAndSubsystemConsideringEqualComparator(
+                            timePoint, spatialEntityType, scaleAndSubsystem
                         );
                     } else {
-                        filterSpatialEntitiesWrtTypeConsideringNonEqualComparator(
-                            timePoint, spatialEntityType, comparator, semanticType
+                        filterSpatialEntitiesWrtScaleAndSubsystemConsideringNonEqualComparator(
+                            timePoint, spatialEntityType, comparator, scaleAndSubsystem
                         );
                     }
                 }
 
-                //! Remove from the timepoint the spatial entities which fail to meet the type constraint
+                // TODO: Continue from here
+
+                //! Remove from timepoint the spatial entities which fail to meet the scale and subsystem constraint
                 /*! The assumption for this method is that the considered comparator is "=".
                  *
                  * In this case the type semantics table is NOT used.
                  *
                  * \param timePoint             The timepoint which will be filtered
                  * \param spatialEntityType     The considered spatial entity type
-                 * \param rhsSemanticType       The semantic type on the right of the comparator
+                 * \param rhsScaleAndSubsystem  The scale and subsystem on the right hand side of the comparator
                  */
-                void filterSpatialEntitiesWrtTypeConsideringEqualComparator(
+                void filterSpatialEntitiesWrtScaleAndSubsystemConsideringEqualComparator(
                     TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
-                    const std::string &rhsSemanticType
+                    const std::string &rhsScaleAndSubsystem
                 ) const {
                     auto beginIt = timePoint.getSpatialEntitiesBeginIterator(spatialEntityType);
                     auto endIt   = timePoint.getSpatialEntitiesEndIterator(spatialEntityType);
@@ -427,7 +442,7 @@ namespace multiscale {
                     while (beginIt != endIt) {
                         std::string lhsTypeValue = ((*beginIt)->getSemanticType());
 
-                        if (lhsTypeValue.compare(rhsSemanticType) != 0) {
+                        if (lhsTypeValue.compare(rhsScaleAndSubsystem) != 0) {
                             beginIt = timePoint.removeSpatialEntity(beginIt, spatialEntityType);
                         } else {
                             beginIt++;
@@ -445,7 +460,7 @@ namespace multiscale {
                  * \param comparator            The type of the comparator
                  * \param rhsSemanticType       The semantic type on the right of the comparator
                  */
-                void filterSpatialEntitiesWrtTypeConsideringNonEqualComparator(
+                void filterSpatialEntitiesWrtScaleAndSubsystemConsideringNonEqualComparator(
                     TimePoint &timePoint, const SubsetSpecificType &spatialEntityType,
                     const ComparatorType &comparator, const std::string &rhsSemanticType
                 ) const {
